@@ -1,0 +1,906 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "022201-1-online",
+  "title": "022201-1-online",
+  "variant": "pdf",
+  "pages": 8,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "AFFILIATIONS",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-affiliations"
+    },
+    {
+      "level": 1,
+      "title": "ABSTRACT",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-001-abstract"
+    },
+    {
+      "level": 1,
+      "title": "INTRODUCTION",
+      "number": "I",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-002-i-introduction"
+    },
+    {
+      "level": 1,
+      "title": "THE ABSTRACT CLUSTER EXPANSION",
+      "number": "II",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-ii-the-abstract-cluster-expansion"
+    },
+    {
+      "level": 1,
+      "title": "THE QUANTUM CLUSTER EXPANSION",
+      "number": "III",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-iii-the-quantum-cluster-expansion"
+    },
+    {
+      "level": 1,
+      "title": "APPROXIMATION ALGORITHM",
+      "number": "IV",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-iv-approximation-algorithm"
+    },
+    {
+      "level": 1,
+      "title": "CONCLUSION & OUTLOOK",
+      "number": "V",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-v-conclusion-outlook"
+    },
+    {
+      "level": 1,
+      "title": "ACKNOWLEDGMENTS",
+      "number": null,
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-007-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "PROOF OF LEMMA 2",
+      "number": "Appendix A",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-appendix-a-proof-of-lemma-2"
+    },
+    {
+      "level": 1,
+      "title": "PROOF OF LEMMA 4 AND LEMMA 7",
+      "number": "Appendix B",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-appendix-b-proof-of-lemma-4-and-lemma-7"
+    },
+    {
+      "level": 1,
+      "title": "DATA AVAILABILITY",
+      "number": null,
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-data-availability"
+    },
+    {
+      "level": 1,
+      "title": "REFERENCES",
+      "number": null,
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-011-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 140,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "efficient algorithms",
+          "heading": false
+        },
+        {
+          "term": "tyler",
+          "heading": false
+        },
+        {
+          "term": "approximating quantum",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "february",
+          "heading": false
+        }
+      ],
+      "extract": " View Online  Export Citation RESEARCH ARTICLE | FEBRUARY 01 2021 Efficient algorithms for approximating quantum partition functions Ryan L. Mann  ; Tyler Helmuth J. Math. Phys. 62, 022201 (2021) https://doi.org/10.1063/5.0013689 Articles You May Be Interested In Renormalization group transformations near the critical point: Some rigorous results J. Math. Phys. (November 2011) Loss and recovery of Gibbsianness",
+      "extractCut": true,
+      "blocks": [
+        "library/022201-1-online/blocks/prose-sec-front-matter",
+        "library/022201-1-online/blocks/figure-img-p001-1",
+        "library/022201-1-online/blocks/figure-img-p001-2",
+        "library/022201-1-online/blocks/figure-img-p001-3",
+        "library/022201-1-online/blocks/figure-img-p002-1",
+        "library/022201-1-online/blocks/figure-img-p002-2",
+        "library/022201-1-online/blocks/figure-img-p002-3",
+        "library/022201-1-online/blocks/figure-img-p002-4"
+      ]
+    },
+    {
+      "id": "sec-000-affiliations",
+      "number": null,
+      "title": "AFFILIATIONS",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 26,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bristol",
+          "heading": false
+        },
+        {
+          "term": "url",
+          "heading": false
+        },
+        {
+          "term": "mail",
+          "heading": false
+        }
+      ],
+      "extract": "School of Mathematics, University of Bristol, Bristol BS8 1UG, United Kingdom a)Author to whom correspondence should be addressed: mail@ryanmann.org. URL: http://www.ryanmann.org. b)Electronic mail: tyler.helmuth@durham.ac.uk. URL: http://www.tylerhelmuth.net.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-abstract",
+      "number": null,
+      "title": "ABSTRACT",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 94,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cluster expansion",
+          "heading": false
+        },
+        {
+          "term": "bounded-degree",
+          "heading": false
+        },
+        {
+          "term": "regts",
+          "heading": false
+        }
+      ],
+      "extract": "We establish a polynomial-time approximation algorithm for partition functions of quantum spin models at high temperature. Our algorithm is based on the quantum cluster expansion of Netoˇcný and Redig and the cluster expansion approach to designing algorithms due to Helmuth, Perkins, and Regts. Similar results have previously been obtained by related methods, and our main contribution is a simple and slightly",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-i-introduction",
+      "number": "I",
+      "title": "INTRODUCTION",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 694,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cluster expansion",
+          "heading": false
+        },
+        {
+          "term": "classical algorithms",
+          "heading": false
+        },
+        {
+          "term": "abstract cluster",
+          "heading": false
+        },
+        {
+          "term": "runtime",
+          "heading": false
+        },
+        {
+          "term": "polynomial time",
+          "heading": false
+        },
+        {
+          "term": "quantum models",
+          "heading": false
+        },
+        {
+          "term": "polynomial-time",
+          "heading": false
+        },
+        {
+          "term": "regts",
+          "heading": false
+        }
+      ],
+      "extract": "Classical algorithms for approximating partition functions of quantum models that make use of cluster expansions have occurred in two recent papers.1,2 In this paper, we provide a simple and concise exposition of how to construct such algorithms, with the intent of making the technique accessible to a wide audience. A quantum spin system is modelled by a hypergraph G = (X, E). At each vertex x of G, there is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-ii-the-abstract-cluster-expansion",
+      "number": "II",
+      "title": "THE ABSTRACT CLUSTER EXPANSION",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 348,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cluster expansion",
+          "heading": true
+        },
+        {
+          "term": "abstract polymer",
+          "heading": false
+        },
+        {
+          "term": "incompatibility graph",
+          "heading": false
+        },
+        {
+          "term": "polymer model",
+          "heading": false
+        },
+        {
+          "term": "series expansions",
+          "heading": false
+        },
+        {
+          "term": "incompatible",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        },
+        {
+          "term": "perturbations",
+          "heading": false
+        }
+      ],
+      "extract": "The cluster expansion is a powerful tool from mathematical physics that allows one to express, via power series expansions, perturbations of a well-understood reference model. When the perturbations are sufficiently small, the power series expansions are convergent and allow one to draw many conclusions regarding correlation decay, zero-freeness, and other related properties. This method was originally introduced by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-iii-the-quantum-cluster-expansion",
+      "number": "III",
+      "title": "THE QUANTUM CLUSTER EXPANSION",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 341,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cluster expansion",
+          "heading": true
+        },
+        {
+          "term": "abstract polymer",
+          "heading": false
+        },
+        {
+          "term": "polymer model",
+          "heading": false
+        },
+        {
+          "term": "eγmγ",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": false
+        },
+        {
+          "term": "model representation",
+          "heading": false
+        },
+        {
+          "term": "spin system",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we shall show how the partition function of a quantum spin system admits an abstract polymer representation and hence an abstract cluster expansion. We return to the more general setting of hypergraphs for the remainder of this section. Consider a quantum spin system modeled by the hypergraph G = (X, E) with interaction Φ, where at each vertex x of G, there is a d-dimensional Hilbert space Hx with d",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-iv-approximation-algorithm",
+      "number": "IV",
+      "title": "APPROXIMATION ALGORITHM",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 505,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "truncated cluster",
+          "heading": false
+        },
+        {
+          "term": "time exp",
+          "heading": false
+        },
+        {
+          "term": "cluster expansion",
+          "heading": false
+        },
+        {
+          "term": "maximum degree",
+          "heading": false
+        },
+        {
+          "term": "algorithm",
+          "heading": true
+        },
+        {
+          "term": "approximation",
+          "heading": true
+        },
+        {
+          "term": "ursell function",
+          "heading": false
+        },
+        {
+          "term": "e4δ",
+          "heading": false
+        }
+      ],
+      "extract": "We now establish our approximation algorithm. First, we show that the truncated cluster expansion provides a good approximation to log(ZG(β)). Netoˇcný and Redig3 provided a sufficient condition for the convergence of the quantum cluster expansion based on the formalism of Kotecký and Preiss.20 In the following lemma, we follow their analysis in the setting of bounded-degree graphs. In particular, we obtain",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-v-conclusion-outlook",
+      "number": "V",
+      "title": "CONCLUSION & OUTLOOK",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 140,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spin systems",
+          "heading": false
+        },
+        {
+          "term": "quantum systems",
+          "heading": false
+        },
+        {
+          "term": "expansion methods",
+          "heading": false
+        },
+        {
+          "term": "algorithms based",
+          "heading": false
+        }
+      ],
+      "extract": "We have discussed how classical algorithms based on cluster expansion methods apply to quantum spin systems at high temperature. Our focus has been on conveying the simplicity of the method, which has appeared previously in other forms.1,2 We note that it may be possible to use the Markov chain polymer approach of Ref. 25 to obtain an algorithm with an improved runtime. For discrete classical spin systems, expansion",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-acknowledgments",
+      "number": null,
+      "title": "ACKNOWLEDGMENTS",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 50,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "epsrc grant",
+          "heading": false
+        },
+        {
+          "term": "ashley",
+          "heading": false
+        },
+        {
+          "term": "montanaro",
+          "heading": false
+        }
+      ],
+      "extract": "We thank Michael Bremner, Adrian Chapman, Ashley Montanaro, and Will Perkins for helpful discussions. R.L.M. was supported by the QuantERA ERA-NET Cofund in Quantum Technologies implemented within the European Union’s Horizon 2020 Programme (QuantAlgo project) and EPSRC Grant Nos. EP/L021005/1 and EP/R043957/1. T.H. was supported by EPSRC Grant No. EP/P003656/1.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-appendix-a-proof-of-lemma-2",
+      "number": "Appendix A",
+      "title": "PROOF OF LEMMA 2",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 503,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sequential polymers",
+          "heading": false
+        },
+        {
+          "term": "hyperedges",
+          "heading": false
+        },
+        {
+          "term": "admissible",
+          "heading": false
+        },
+        {
+          "term": "eγmγ",
+          "heading": false
+        },
+        {
+          "term": "permutations",
+          "heading": false
+        },
+        {
+          "term": "proof",
+          "heading": true
+        },
+        {
+          "term": "disjoint",
+          "heading": false
+        }
+      ],
+      "extract": "Lemma 2 (restatement). The partition function ZG(β) admits the following abstract polymer model representation: ZG(β) = ∑ Γ∈G ∏ γ∈Γ wγ, where wγ ∶= (−β)∥γ∥ ∥γ∥!∏e∈Eγmγ(e)! Tr ⎡⎢⎢⎢⎢⎣ ∑ σ∈S∥γ∥ ∥γ∥ ∏ i=1 Φ(γσ(i)) ⎤⎥⎥⎥⎥⎦ . Proof. Our proof follows the work of Netoˇcný and Redig.3 By definition, ZG(β) = Tr[e−βHG] = ∞ ∑ n=0 (−β)n n! Tr ⎡⎢⎢⎢⎢⎣ ⎛ ⎝∑ e∈E(G) Φ(e)⎞ ⎠ n⎤⎥⎥⎥⎥⎦ = ∞ ∑ n=0 (−β)n n! ∑ e1,...,en∈E(G) Tr[ n ∏ i=1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-appendix-b-proof-of-lemma-4-and-lemma-7",
+      "number": "Appendix B",
+      "title": "PROOF OF LEMMA 4 AND LEMMA 7",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 592,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e2δ",
+          "heading": false
+        },
+        {
+          "term": "eγmγ",
+          "heading": false
+        },
+        {
+          "term": "polymer",
+          "heading": false
+        },
+        {
+          "term": "time exp",
+          "heading": false
+        },
+        {
+          "term": "e4δ",
+          "heading": false
+        },
+        {
+          "term": "cluster expansion",
+          "heading": false
+        },
+        {
+          "term": "restatement",
+          "heading": false
+        },
+        {
+          "term": "doi",
+          "heading": false
+        }
+      ],
+      "extract": "Lemma 4. (restatement). Fix Δ ∈Z+. Let G = (V, E) be a graph of maximum degree at most Δ, and let β be a complex number such that ∣β∣≤ 1 e4Δ. The cluster expansion for log(ZG(β)) converges absolutely, ZG(β) ≠0, and for m ∈Z+, ∣Tm(ZG(β)) −log(ZG(β))∣≤∣V∣e−m. Proof. For convenience, we normalize the trace so that Tr(I) = 1. Note that this is equivalent to a rescaling of the partition function by a multiplicative",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-data-availability",
+      "number": null,
+      "title": "DATA AVAILABILITY",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 8,
+      "summary": null,
+      "keywords": [],
+      "extract": "No new data were created during this study.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-references",
+      "number": null,
+      "title": "REFERENCES",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 546,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "annual acm",
+          "heading": false
+        },
+        {
+          "term": "annual ieee",
+          "heading": false
+        },
+        {
+          "term": "ieee symposium",
+          "heading": false
+        },
+        {
+          "term": "acm sigact",
+          "heading": false
+        },
+        {
+          "term": "fuer informatik",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "perkins",
+          "heading": false
+        },
+        {
+          "term": "royal society",
+          "heading": false
+        }
+      ],
+      "extract": "1A. W. Harrow, S. Mehraban, and M. Soleimanifar, in Proceedings of the 52nd Annual ACM SIGACT Symposium on Theory of Computing (ACM, 2020), pp. 378–386; arXiv:1910.09071. 2T. Kuwahara, K. Kato, and F. G. Brandão, Phys. Rev. Lett. 124, 220601 (2020); arXiv:1910.09425. 3K. Netoˇcný and F. Redig, J. Stat. Phys. 117, 521 (2004); arXiv:math-ph/0404018. 4T. Helmuth, W. Perkins, and G. Regts, Probab. Theory Relat. Fields",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "sequential polymer",
+      "heading": false
+    },
+    {
+      "term": "abstract polymer",
+      "heading": false
+    },
+    {
+      "term": "cluster expansion",
+      "heading": true
+    },
+    {
+      "term": "polymer model",
+      "heading": false
+    },
+    {
+      "term": "quantum cluster",
+      "heading": true
+    },
+    {
+      "term": "truncated cluster",
+      "heading": false
+    },
+    {
+      "term": "quantum partition",
+      "heading": false
+    },
+    {
+      "term": "quantum spin",
+      "heading": false
+    },
+    {
+      "term": "algorithms based",
+      "heading": false
+    },
+    {
+      "term": "partition function",
+      "heading": false
+    },
+    {
+      "term": "classical algorithms",
+      "heading": false
+    },
+    {
+      "term": "efficient algorithms",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-2",
+      "file": "images/img-p001-2.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-3",
+      "file": "images/img-p001-3.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p002-1",
+      "file": "images/img-p002-1.png",
+      "page": 2,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p002-2",
+      "file": "images/img-p002-2.png",
+      "page": 2,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p002-3",
+      "file": "images/img-p002-3.png",
+      "page": 2,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p002-4",
+      "file": "images/img-p002-4.png",
+      "page": 2,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 12,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 13,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 7
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p8); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 13 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/022201-1-online"
+  }
+}

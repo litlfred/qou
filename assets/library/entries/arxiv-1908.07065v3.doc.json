@@ -1,0 +1,1731 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1908.07065v3",
+  "title": "Non-perturbative approaches to the quantum Seiberg–Witten curve",
+  "variant": "pdf",
+  "pages": 47,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The all-orders WKB method",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-the-all-orders-wkb-method"
+    },
+    {
+      "level": 1,
+      "title": "Quantum periods from TBA equations",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-quantum-periods-from-tba-equations"
+    },
+    {
+      "level": 2,
+      "title": "Review of the TBA equations of Gaiotto–Moore–Neitzke",
+      "number": "3.1",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-31-review-of-the-tba-equations-of-gaiottomoorene"
+    },
+    {
+      "level": 2,
+      "title": "TBA equations for the modified Mathieu equation",
+      "number": "3.2",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-32-tba-equations-for-the-modified-mathieu-equati"
+    },
+    {
+      "level": 3,
+      "title": "Strong coupling region",
+      "number": "3.2.1",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-321-strong-coupling-region"
+    },
+    {
+      "level": 3,
+      "title": "Weak coupling region",
+      "number": "3.2.2",
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-322-weak-coupling-region"
+    },
+    {
+      "level": 2,
+      "title": "Solving the TBA equations in the strong coupling region",
+      "number": "3.3",
+      "page": 18,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-33-solving-the-tba-equations-in-the-strong-coupl"
+    },
+    {
+      "level": 1,
+      "title": "Quantum periods from instanton calculus",
+      "number": "4",
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-4-quantum-periods-from-instanton-calculus"
+    },
+    {
+      "level": 2,
+      "title": "Review of instanton calculus",
+      "number": "4.1",
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-41-review-of-instanton-calculus"
+    },
+    {
+      "level": 2,
+      "title": "Comparison to Borel resummation",
+      "number": "4.2",
+      "page": 25,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-42-comparison-to-borel-resummation"
+    },
+    {
+      "level": 1,
+      "title": "The Fredholm determinant from topological string theory",
+      "number": "5",
+      "page": 29,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-5-the-fredholm-determinant-from-topological-stri"
+    },
+    {
+      "level": 2,
+      "title": "A closed formula and its derivation",
+      "number": "5.1",
+      "page": 30,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-51-a-closed-formula-and-its-derivation"
+    },
+    {
+      "level": 2,
+      "title": "Tests of our formula",
+      "number": "5.2",
+      "page": 31,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-52-tests-of-our-formula"
+    },
+    {
+      "level": 2,
+      "title": "Comparison to Zamolodchikov's TBA equation",
+      "number": "5.3",
+      "page": 33,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-53-comparison-to-zamolodchikovs-tba-equation"
+    },
+    {
+      "level": 1,
+      "title": "On the modified Mathieu operator and Painlevé III3",
+      "number": "6",
+      "page": 36,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-6-on-the-modified-mathieu-operator-and-painlevé"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": "7",
+      "page": 37,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-7-conclusions"
+    },
+    {
+      "level": 1,
+      "title": "A The four dimensional SU(N) spectral determinant",
+      "number": null,
+      "page": 38,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-a-the-four-dimensional-sun-spectral-determinant"
+    },
+    {
+      "level": 1,
+      "title": "B Zamolodchikov's TBA equation for the modified Mathieu equation",
+      "number": null,
+      "page": 40,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-b-zamolodchikovs-tba-equation-for-the-modified-m"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "0",
+      "labelEnd": "1",
+      "words": 173,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathieu operator",
+          "heading": false
+        },
+        {
+          "term": "non-perturbative approaches",
+          "heading": false
+        },
+        {
+          "term": "witten curve",
+          "heading": false
+        },
+        {
+          "term": "unige",
+          "heading": false
+        },
+        {
+          "term": "marcos",
+          "heading": false
+        },
+        {
+          "term": "jie",
+          "heading": false
+        }
+      ],
+      "extract": "Prepared for submission to JHEP Non-perturbative approaches to the quantum Seiberg–Witten curve Alba Grassia, Jie Gub and Marcos Mari˜nob aSimons Center for Geometry and Physics, SUNY, Stony Brook, NY, 1194-3636, USA b D´epartement de Physique Th´eorique et Section de Math´ematiques, Universit´e de Gen`eve, Gen`eve, CH-1211 Switzerland E-mail: agrassi@scgp.stonybrook.edu, jie.gu@unige.ch, marcos.marino@unige.ch",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1908.07065v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 974,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite gmn",
+          "heading": false
+        },
+        {
+          "term": "cite ghm",
+          "heading": false
+        },
+        {
+          "term": "quantum periods",
+          "heading": false
+        },
+        {
+          "term": "modified mathieu",
+          "heading": false
+        },
+        {
+          "term": "cite post-zamo",
+          "heading": false
+        },
+        {
+          "term": "cite mirmor",
+          "heading": false
+        },
+        {
+          "term": "mathieu operator",
+          "heading": false
+        },
+        {
+          "term": "supersymmetric gauge",
+          "heading": false
+        }
+      ],
+      "extract": "In recent years, many interesting and surprising relations have been obtained between quantum mechanical systems, on one hand, and supersymmetric gauge theories and topological strings, on the other hand. One example of such a relation is the gauge/Bethe correspondence of \\cite{ns}, which connects quantum integrable systems to instanton calculus in gauge theory. A second example is the topological string/spectral",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-all-orders-wkb-method",
+      "number": "2",
+      "title": "The all-orders WKB method",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 8,
+      "labelStart": "3",
+      "labelEnd": "7",
+      "words": 1758,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wkb method",
+          "heading": true
+        },
+        {
+          "term": "zeta hbar",
+          "heading": false
+        },
+        {
+          "term": "frac hbar",
+          "heading": false
+        },
+        {
+          "term": "infty hbar",
+          "heading": false
+        },
+        {
+          "term": "hbar int",
+          "heading": false
+        },
+        {
+          "term": "borel--pad transforms",
+          "heading": false
+        },
+        {
+          "term": "borel summable",
+          "heading": false
+        },
+        {
+          "term": "wkb curve",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{wkb} Our first approach to the quantum SW curve will be based on the so-called exact WKB method, see for example \\cite{voros,voros-quartic,ddpham,in-exactwkb}. We will now summarize the basic ingredients of the theory. The Schr\\\"odinger equation for a non-relativistic particle in a potential $V(x)$ and with energy $E$ reads as follows: \\be \\label{schrodinger} -\\hbar^2 \\psi''(x) + (V(x)-E) \\psi(x)=0. \\ee The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-quantum-periods-from-tba-equations",
+      "number": "3",
+      "title": "Quantum periods from TBA equations",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 38,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\label{tbagmn} In this section we study the TBA equations which control the analytic properties of the quantum periods of the modified Mathieu equation. We set $\\Lambda=1$ throughout the section.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-31-review-of-the-tba-equations-of-gaiottomoorene",
+      "number": "3.1",
+      "title": "Review of the TBA equations of Gaiotto–Moore–Neitzke",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 594,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tba equations",
+          "heading": true
+        },
+        {
+          "term": "zeta log",
+          "heading": false
+        },
+        {
+          "term": "zeta right",
+          "heading": false
+        },
+        {
+          "term": "gamma right",
+          "heading": false
+        },
+        {
+          "term": "gamma int",
+          "heading": false
+        },
+        {
+          "term": "cite gmn",
+          "heading": false
+        },
+        {
+          "term": "phi theta",
+          "heading": false
+        },
+        {
+          "term": "int ell",
+          "heading": false
+        }
+      ],
+      "extract": "The TBA equations we will obtain are conformal limits \\cite{oper} of the integral equations proposed by Gaiotto--Moore--Neitzke (GMN) in \\cite{gmn} to describe the hyperK\\\"ahler metric on the Coulomb branch of $\\CN=2$ theories compactified on $\\IR^3 \\times \\IS^1_R$, where $R$ is the compactification radius. We will now review some basic aspects of these equations which will be useful in the following. The basic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-32-tba-equations-for-the-modified-mathieu-equati",
+      "number": "3.2",
+      "title": "TBA equations for the modified Mathieu equation",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 414,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tba equations",
+          "heading": true
+        },
+        {
+          "term": "chi gamma",
+          "heading": false
+        },
+        {
+          "term": "cite gmn",
+          "heading": false
+        },
+        {
+          "term": "gamma rangle",
+          "heading": false
+        },
+        {
+          "term": "bps spectrum",
+          "heading": false
+        },
+        {
+          "term": "quad zeta",
+          "heading": false
+        },
+        {
+          "term": "qquad chi",
+          "heading": false
+        },
+        {
+          "term": "cite cdorey",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sc:SW-TBA} Building on \\cite{oper, ims}, we expect to have a general correspondence between the mathematical description of BPS states in \\cite{gmn,gmn2}, and the ``resurgent\" properties of the quantum periods associated to the corresponding SW curve. As noted in \\cite{oper}, this correspondence involves the conformal limit of the TBA equations of \\cite{gmn}, which is given by \\begin{equation} R\\to 0 \\ ,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-321-strong-coupling-region",
+      "number": "3.2.1",
+      "title": "Strong coupling region",
+      "level": 3,
+      "pageStart": 11,
+      "pageEnd": 15,
+      "labelStart": "10",
+      "labelEnd": "14",
+      "words": 1227,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tfrac hbar",
+          "heading": false
+        },
+        {
+          "term": "phi theta",
+          "heading": false
+        },
+        {
+          "term": "frac hbar",
+          "heading": false
+        },
+        {
+          "term": "widetilde epsilon",
+          "heading": false
+        },
+        {
+          "term": "hbar log",
+          "heading": false
+        },
+        {
+          "term": "theta right",
+          "heading": false
+        },
+        {
+          "term": "theta int",
+          "heading": false
+        },
+        {
+          "term": "lateral borel",
+          "heading": false
+        }
+      ],
+      "extract": "We start with the region $\\CW$ inside the curve of marginal stability. The spectrum consists of one monopole with charge \\begin{equation} \\gamma_m=(0,1) \\end{equation} and one dyon with charge \\begin{equation} \\gamma_d=(1,1), \\end{equation} see \\cite{sw,fb,selfdual} (we follow the conventions in \\cite{fb}). We also have the corresponding antiparticles, carrying opposite charges. Then, the only nonzero coefficients",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-322-weak-coupling-region",
+      "number": "3.2.2",
+      "title": "Weak coupling region",
+      "level": 3,
+      "pageStart": 15,
+      "pageEnd": 18,
+      "labelStart": "14",
+      "labelEnd": "17",
+      "words": 1139,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "epsilon ell",
+          "heading": false
+        },
+        {
+          "term": "phi ell",
+          "heading": false
+        },
+        {
+          "term": "phi theta",
+          "heading": false
+        },
+        {
+          "term": "widetilde epsilon",
+          "heading": false
+        },
+        {
+          "term": "tfrac hbar",
+          "heading": false
+        },
+        {
+          "term": "ell gamma",
+          "heading": false
+        },
+        {
+          "term": "hbar log",
+          "heading": false
+        },
+        {
+          "term": "equation widetilde",
+          "heading": false
+        }
+      ],
+      "extract": "Let us now consider the region outside the curve of marginal stability. The spectrum consists of dyons with charge $\\pm \\gamma_n$, where \\begin{equation} \\gamma_n= (n,1), \\qquad n \\in \\IZ, \\end{equation} and $W$ boson with charges $\\pm \\gamma_e$, where \\begin{equation} \\gamma_e=(1,0). \\end{equation} From (\\ref{cem}) we conclude that \\begin{equation} c_e(\\gamma_n)=-1 \\end{equation} and \\begin{equation}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-33-solving-the-tba-equations-in-the-strong-coupl",
+      "number": "3.3",
+      "title": "Solving the TBA equations in the strong coupling region",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "17",
+      "labelEnd": "19",
+      "words": 1045,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tba equations",
+          "heading": true
+        },
+        {
+          "term": "ctba admits",
+          "heading": false
+        },
+        {
+          "term": "theta rightarrow",
+          "heading": false
+        },
+        {
+          "term": "eqref u0tba",
+          "heading": false
+        },
+        {
+          "term": "dyon period",
+          "heading": false
+        },
+        {
+          "term": "equation epsilon",
+          "heading": false
+        },
+        {
+          "term": "rightarrow infty",
+          "heading": false
+        },
+        {
+          "term": "quantum periods",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{tbau0} As we have argued, Borel sums of quantum periods are solutions to the TBA equations \\eqref{eq:cTBA-1},\\eqref{eq:cTBA-2}. In principle the resummed quantum periods can be computed from these TBA equations by using the dictionaries \\eqref{eq:TBA-dict-1} and \\eqref{eq:TBA-dict-2}. In practice, however, these equations are difficult to use. First of all, one needs information on the boundary conditions at",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-quantum-periods-from-instanton-calculus",
+      "number": "4",
+      "title": "Quantum periods from instanton calculus",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 97,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "instanton",
+          "heading": true
+        },
+        {
+          "term": "periods",
+          "heading": true
+        },
+        {
+          "term": "resummation",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{res} Instanton calculus \\cite{n,ns} leads to a resummation of the quantum periods of the modified Mathieu equation \\eqref{QP}, as pointed out in \\cite{mirmor}. This produces exact functions of $\\hbar$ which we will denote by \\begin{equation} \\Pi_{A,B}^{\\rm ex} (E,\\hbar). \\end{equation} In this section we explain this resummation in detail and we compare it to the Borel resummation obtained in the context of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-41-review-of-instanton-calculus",
+      "number": "4.1",
+      "title": "Review of instanton calculus",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 25,
+      "labelStart": "20",
+      "labelEnd": "24",
+      "words": 1757,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hbar lambda",
+          "heading": false
+        },
+        {
+          "term": "sqrt hbar",
+          "heading": false
+        },
+        {
+          "term": "hbar right",
+          "heading": false
+        },
+        {
+          "term": "hbar left",
+          "heading": false
+        },
+        {
+          "term": "instanton calculus",
+          "heading": true
+        },
+        {
+          "term": "frac hbar",
+          "heading": false
+        },
+        {
+          "term": "infty hbar",
+          "heading": false
+        },
+        {
+          "term": "hbar around",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ic} Let us first review some basic ingredients of instanton calculus in the 4d $N=2$ SYM with gauge group $G=SU(N)$ \\cite{n,no2,ns, Flume:2002az, bfmt}. We denote a partition (or Young tableaux) by \\be Y=(y_1, y_2, \\cdots),\\ee its transposed by \\be Y^t=(y_1^t, y_2^t, \\cdots),\\ee and a vector of Young tableaux as \\begin{equation} \\label{Y-vec} \\boldsymbol{Y}=(Y_1, \\cdots, Y_N). \\end{equation} It is useful to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-42-comparison-to-borel-resummation",
+      "number": "4.2",
+      "title": "Comparison to Borel resummation",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 29,
+      "labelStart": "24",
+      "labelEnd": "28",
+      "words": 1426,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "borel resummation",
+          "heading": true
+        },
+        {
+          "term": "frac hbar",
+          "heading": false
+        },
+        {
+          "term": "hbar log",
+          "heading": false
+        },
+        {
+          "term": "borel summable",
+          "heading": false
+        },
+        {
+          "term": "lateral borel",
+          "heading": false
+        },
+        {
+          "term": "stabilised digits",
+          "heading": false
+        },
+        {
+          "term": "midrule multirow",
+          "heading": false
+        },
+        {
+          "term": "text red",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{bo} We now have two different approaches to the calculation of (resummed) quantum periods: on the one hand, we have the Borel resummation of the all-orders WKB expansion in $\\hbar^2$, which is also calculated by the TBA equations of section \\ref{tbagmn}. On the other hand, instanton calculus gives a different resummation, based on a convergent expansion in $\\Lambda$, as a function of $\\hbar$. An obvious",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-5-the-fredholm-determinant-from-topological-stri",
+      "number": "5",
+      "title": "The Fredholm determinant from topological string theory",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 386,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fredholm determinant",
+          "heading": true
+        },
+        {
+          "term": "topological string",
+          "heading": true
+        },
+        {
+          "term": "string theory",
+          "heading": true
+        },
+        {
+          "term": "cite ghm",
+          "heading": false
+        },
+        {
+          "term": "modified mathieu",
+          "heading": false
+        },
+        {
+          "term": "sum ell",
+          "heading": false
+        },
+        {
+          "term": "mathieu operator",
+          "heading": false
+        },
+        {
+          "term": "spectral traces",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{tssst} Let $\\mO$ be an operator on $L^2(\\IR)$ such that $\\mO^{-1}$ is of trace class. Then, $\\mO$ has a discrete spectrum $\\{E_n\\}_{n\\geq 0}$, and its Fredholm determinant \\be \\label{fdm} \\Xi(E)={\\rm det}\\left(1-E \\mO^{-1} \\right) =\\prod_{n\\geq0}\\left({1-{E \\over E_n}}\\right) \\ee is an entire function of $E$ whose zeros give the spectrum of $\\mO$: $\\Xi(E_n)=0$ (see e.g. \\cite{simon-paper} for these and other",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-51-a-closed-formula-and-its-derivation",
+      "number": "5.1",
+      "title": "A closed formula and its derivation",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "29",
+      "labelEnd": "30",
+      "words": 587,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hbar partial",
+          "heading": false
+        },
+        {
+          "term": "hbar right",
+          "heading": false
+        },
+        {
+          "term": "hbar left",
+          "heading": false
+        },
+        {
+          "term": "coth left",
+          "heading": false
+        },
+        {
+          "term": "quad kappa",
+          "heading": false
+        },
+        {
+          "term": "sinh left",
+          "heading": false
+        },
+        {
+          "term": "tanh left",
+          "heading": false
+        },
+        {
+          "term": "cite ghm",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{deri} By using the approach of \\cite{ghm,gm3} we find the following expression for the spectral determinant of \\eqref{eq:schrodinger}\\footnote{While presenting these results at the conference {\\it Irregular singularities in Quantum Field Theory} (http://irregular.rd.ciencias.ulisboa.pt/conference), S. Lukyanov informed us that he had independently derived this result \\cite{PCL} by using completely different",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-52-tests-of-our-formula",
+      "number": "5.2",
+      "title": "Tests of our formula",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 33,
+      "labelStart": "30",
+      "labelEnd": "32",
+      "words": 848,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hbar partial",
+          "heading": false
+        },
+        {
+          "term": "hbar right",
+          "heading": false
+        },
+        {
+          "term": "hbar log",
+          "heading": false
+        },
+        {
+          "term": "partial alpha",
+          "heading": false
+        },
+        {
+          "term": "gamma left",
+          "heading": false
+        },
+        {
+          "term": "ref gammadef",
+          "heading": false
+        },
+        {
+          "term": "lambda right",
+          "heading": false
+        },
+        {
+          "term": "exp left",
+          "heading": false
+        }
+      ],
+      "extract": "We will now test the expression (\\ref{sd}) in several ways. A first simple test is that the zeros of $\\Xi(E)$ give the correct spectrum of the modified Mathieu operator. This should be expected from the general results of \\cite{gm3}, but it is instructive to check it explicitly. The zeros correspond to the vanishing of the $\\cosh$ in (\\ref{sd}), and by using (\\ref{abpe}) we find, \\be \\label{eqref} \\partial_{a}F_{\\rm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-53-comparison-to-zamolodchikovs-tba-equation",
+      "number": "5.3",
+      "title": "Comparison to Zamolodchikov's TBA equation",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 36,
+      "labelStart": "32",
+      "labelEnd": "35",
+      "words": 910,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tba equation",
+          "heading": true
+        },
+        {
+          "term": "eqref zamobc",
+          "heading": false
+        },
+        {
+          "term": "hbar right",
+          "heading": false
+        },
+        {
+          "term": "hbar left",
+          "heading": false
+        },
+        {
+          "term": "frac hbar",
+          "heading": false
+        },
+        {
+          "term": "lambda hbar",
+          "heading": false
+        },
+        {
+          "term": "cite post-zamo",
+          "heading": false
+        },
+        {
+          "term": "hbar partial",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{comp-zamo} An additional test of our formula (\\ref{sd}) comes from a comparison with \\cite{post-zamo}. Inspired by the ODE/IM correspondence \\cite{dt,ddt}, Zamolodchikov found in \\cite{post-zamo} a TBA equation which computes precisely the spectral determinant \\eqref{sd}. Let us state the main result of \\cite{post-zamo}, referring to Appendix \\ref{appendixzamo} for more details. Let $\\epsilon(\\theta, P)$ be a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-6-on-the-modified-mathieu-operator-and-painlevé",
+      "number": "6",
+      "title": "On the modified Mathieu operator and Painlevé III3",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 496,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modified mathieu",
+          "heading": true
+        },
+        {
+          "term": "mathieu operator",
+          "heading": true
+        },
+        {
+          "term": "lambda hbar",
+          "heading": false
+        },
+        {
+          "term": "hbar right",
+          "heading": false
+        },
+        {
+          "term": "frac hbar",
+          "heading": false
+        },
+        {
+          "term": "cite gil",
+          "heading": false
+        },
+        {
+          "term": "cite bgt",
+          "heading": false
+        },
+        {
+          "term": "cite ghm",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{mathieu-painleve} It was observed by many authors \\cite{Lukyanov:2011wd, PCL, nok} that the movable poles of Painlev\\'e $\\rm III_3$ are somehow related to Mathieu functions. In particular in \\cite{ sciarappa2}, based on \\cite{bgt}, it was observed that the zeros of the Painlev\\'e $\\rm III_3$ $\\tau$ function compute the spectrum of modified Mathieu (with a suitable dictionary). From the view point of the TS/ST",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-7-conclusions",
+      "number": "7",
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": "36",
+      "labelEnd": "37",
+      "words": 983,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tba equations",
+          "heading": false
+        },
+        {
+          "term": "cite gmn",
+          "heading": false
+        },
+        {
+          "term": "full tba",
+          "heading": false
+        },
+        {
+          "term": "cite oper",
+          "heading": false
+        },
+        {
+          "term": "quantum periods",
+          "heading": false
+        },
+        {
+          "term": "modified mathieu",
+          "heading": false
+        },
+        {
+          "term": "mathieu operator",
+          "heading": false
+        },
+        {
+          "term": "resummed quantum",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{concl} In this paper we have used non-perturbative techniques inspired by supersymmetric gauge theory and topological string theory to study the quantization of the Seiberg--Witten curve of $\\CN=2$, $SU(2)$ super Yang--Mills theory, which gives the modified Mathieu operator. On the one hand, building upon \\cite{gmn, gmn2, oper, ims}, we have obtained integral equations for the Borel resummation of the quantum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-a-the-four-dimensional-sun-spectral-determinant",
+      "number": null,
+      "title": "A The four dimensional SU(N) spectral determinant",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 40,
+      "labelStart": "37",
+      "labelEnd": "39",
+      "words": 732,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exp fns",
+          "heading": false
+        },
+        {
+          "term": "spectral determinant",
+          "heading": true
+        },
+        {
+          "term": "four dimensional",
+          "heading": true
+        },
+        {
+          "term": "csch",
+          "heading": false
+        },
+        {
+          "term": "discrete spectrum",
+          "heading": false
+        },
+        {
+          "term": "fredholm",
+          "heading": false
+        },
+        {
+          "term": "sinh",
+          "heading": false
+        },
+        {
+          "term": "mirror",
+          "heading": false
+        }
+      ],
+      "extract": "The four dimensional SU(N) spectral determinant In this Appendix we explain how the exact formula (5.6) can be extended to the family of operators studied in [18]. These operators have the form, HN = ΛN \u0000ep + e−p\u0001 + N−1 X k=0 (−1)kxN−khk, [x, p] = iℏ, (A.1) where N ≥2 is a positive integer and we set h0 = 1, h1 = 0. They can be regarded as deformations of the standard non-relativistic Schr¨odinger operators with a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-b-zamolodchikovs-tba-equation-for-the-modified-m",
+      "number": null,
+      "title": "B Zamolodchikov's TBA equation for the modified Mathieu equation",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 47,
+      "labelStart": "39",
+      "labelEnd": "46",
+      "words": 3024,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tba equation",
+          "heading": true
+        },
+        {
+          "term": "mathieu equation",
+          "heading": true
+        },
+        {
+          "term": "zamolodchikov",
+          "heading": true
+        },
+        {
+          "term": "nekrasov shatashvili",
+          "heading": false
+        },
+        {
+          "term": "anharmonic oscillators",
+          "heading": false
+        },
+        {
+          "term": "annales henri",
+          "heading": false
+        },
+        {
+          "term": "thermodynamic bethe",
+          "heading": false
+        },
+        {
+          "term": "exact wkb",
+          "heading": false
+        }
+      ],
+      "extract": "In [116] Zamolodchikov considered the thermodynamic TBA ansatz for the sinh-Gordon model. This model depends on the parameter b ∈C, and we introduce Q = b + 1 b, (B.1) as well as p = b2 1 + b2 , a = 1 −2p = 1 −b2 1 + b2 . (B.2) The TBA equation for this theory is given by ϵ(θ) = mR cosh(θ) −(φ ⋆L) (θ), (B.3) – 39 – In this equation, R is the radius of the circle where the theory lives, m is the mass of the particle",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Introduction"
+        ]
+      },
+      "found_not_listed": {
+        "count": 1,
+        "items": [
+          "6 On the modiﬁed Mathieu operator and Painlev´e III3"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "equation hbar",
+      "heading": false
+    },
+    {
+      "term": "hbar right",
+      "heading": false
+    },
+    {
+      "term": "hbar left",
+      "heading": false
+    },
+    {
+      "term": "zeta hbar",
+      "heading": false
+    },
+    {
+      "term": "hbar log",
+      "heading": false
+    },
+    {
+      "term": "frac hbar",
+      "heading": false
+    },
+    {
+      "term": "hbar lambda",
+      "heading": false
+    },
+    {
+      "term": "hbar partial",
+      "heading": false
+    },
+    {
+      "term": "hbar int",
+      "heading": false
+    },
+    {
+      "term": "quad hbar",
+      "heading": false
+    },
+    {
+      "term": "tba equation",
+      "heading": true
+    },
+    {
+      "term": "infty hbar",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "0",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "28",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 30,
+      "label": "29",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 31,
+      "label": "30",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 32,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "32",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 34,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 36,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "36",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 38,
+      "label": "37",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 39,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "39",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 41,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 45,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 46,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Poles of the Borel–Pad´e transforms, which would accumulate to branch cuts for the Borel transform of the quantum periods ΠA(E, ℏ) (a) and ΠB(E, ℏ) (b) at u = 0 and Λ = 1. The red points are the central charges of the BPS states which contribute to the branch points, and their electromagnetic charge",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Poles of the Borel–Pad´e transforms, which would accumulate to branch cuts for the Borel transforms of the quantum periods ΠA(u, ℏ) (a) and ΠB(u, ℏ) (b) at u = 4 and Λ = 1. The red points are the central charges of the BPS states which contribute to the branch points, and their electromagnetic charg",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Correspondence between the mathematical structures in the resurgent approach to the WKB method, and those in the theory of BPS states",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Discontinuity across the ray arg(ℏ) = 0 for ΠB(u = 0, ℏ= 1) computed by lateral Borel resummation and by using (3.42) with increasing number of terms in the asymptotic series",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "Discontinuity of ΠA(u = 1 + 4i, ℏ= 1) across the rays associated to BPS states γ = (0, −1), (1, 1), computed by lateral Borel resummation and by using (3.65),(3.66) with up to 193 terms in the asymptotic series. Only stabilised digits are listed",
+      "page": 17,
+      "pageLabel": "16",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Poles of the Borel–Pad´e transforms, which would accumulate to branch cuts for the Borel transform of the quantum periods ΠA(E, ℏ) (a) and ΠB(E, ℏ) (b) at u = 1 + 4i and Λ = 1",
+      "page": 18,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "Discontinuity of ΠB(u = 1 + 4i, ℏ= 1) across the rays associated to BPS states γ = (1, 1), (1, 0), computed by lateral Borel resummation and by using (3.67),(3.68) with up to 193 terms in the asymptotic series. Only stabilised digits are listed",
+      "page": 18,
+      "pageLabel": "17",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "5",
+      "title": "Quantum dyon period at u = 0. ℏ= 1",
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "6",
+      "title": "Quantum dyon period at u = 1/3",
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "7",
+      "title": "Quantum monopole period at u = 1/3",
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "8",
+      "title": "Borel sum of quantum A period at u = 4 and ℏ= 1. Underlined are stabilised digits",
+      "page": 26,
+      "pageLabel": "25",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Poles of the Borel–Pad´e transform of the “reduced” series Πred",
+      "page": 27,
+      "pageLabel": "26",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "9",
+      "title": "Comparison between the Borel sum of the “reduced” quantum B period Πred",
+      "page": 28,
+      "pageLabel": "27",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "10",
+      "title": "Numerical veriﬁcation of the characteristic exponent formula (4.50) at u = 0 and ℏ= 1/4, with increasing number of terms for the lateral Borel resummations on the r.h.s.. All the stabilised digits (underlined) are in agreement",
+      "page": 28,
+      "pageLabel": "27",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "11",
+      "title": "The second spectral trace Z2 as computed from (5.9) for ℏ= 3π and Λ = 1. The",
+      "page": 33,
+      "pageLabel": "32",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "12",
+      "title": "The un-normalized spectral determinant as computed by using instanton counting",
+      "page": 35,
+      "pageLabel": "34",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 19,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 20,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "4 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "12 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p40); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 10
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 20 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1908.07065v3"
+  }
+}

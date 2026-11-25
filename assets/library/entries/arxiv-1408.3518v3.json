@@ -1,0 +1,321 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1408.3518v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1408.3518v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction.",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "We consider a general framework for solving linear programs (LPs) and integer-linear programs (ILPs) of the form\n\\begin{equation} \\label{themilp}\n  \\min\\set{\\,\\vecc^\\T\\vex\\ :\\ A\\vex=\\veb,\\ \\ve 0\\leq\\vex\\leq\\veu,\\ \\vex\\in X\\,},\n\\end{equation}\nwhere $A\\in\\Z^{d\\times n}$, $\\veb\\in\\Z^d$, $\\vecc\\in\\Z^n$, and where $X=\\R^n$ (LP) or $X=\\Z^n$ (ILP). We focus on solution algorithms that are based on an \\emph{augmentation procedure}. At each iteration, we have a current feasible point $\\vex_k$. An \\emph{augmentation direction} $\\vez$ has $\\vex_k + \\alpha\\vez$ feasible for some $\\alpha>0$ (which implies",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1408.3518v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1408.3518v3  [math.OC]  15 Jan 2015\nOn Augmentation Algorithms for Linear\nand Integer-Linear Programming:\nFrom Edmonds-Karp to Bland and Beyond\nJes´us A. De Loera\nDepartment of Mathematics\nUniversity of California\nOne Shields Avenue\nDavis, CA 95616 USA\ndeloera@math.ucdavis.edu\nhttp://www.math.ucdavis.edu/∼deloera\nRaymond Hemmecke\nZentrum Mathematik\nTechnische Universit¨at M¨unchen\n85747 Garching bei M¨unchen, Germany\nhemmecke@tum.de\nhttp://www-m9.ma.tum.de/Allgemeines/RaymondHemmecke\nJon Lee\nDepartment of Industrial and Operations Engineering\nUniversity of Michigan\n1205 Beal Avenue\nAnn A",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1408.3518v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Our Contributions",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-11-our-contributions.md",
+      "narrative": null,
+      "content": "The main contribution of this paper is an extension of Bland's theorem beyond LP to ILP.\nOur main results and proofs extend what Bland did for circuits to Graver bases. We look at several  augmentation rules.  \nAlthough they are very similar, our results here are naturally divided into the LP and ILP cases, with small but important \ntechnical changes. Also, depending on whether variables are restricted to be integers or not, we rely on different sets as the set \nof allowable augmentation directions, which we denote by $\\cal T (A)$. The set $\\cal T(A)$ will change depending on the case.\n\nIn wha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1408.3518v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proofs",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-2-proofs.md",
+      "narrative": null,
+      "content": "We present the proofs to the above results in separate subsections. We will use the following  lemma (a slight variation from Theorem 3.1 in \\cite{Ahuja+Magnanti+Orlin}) which  establishes the bounds we claim once we can guarantee sufficient improvement at each iteration:\n\\begin{lemma}\n\\label{Lemma: Sufficient improvement leads to polynomial algorithm}\n\nLet $\\epsilon>0$ be given. Moreover, let $H$ denote the difference between maximum and minimum objective-function values of the LP/ILP problem in $n$ variables.\nSuppose that $f^k=\\vecc^\\T \\vex_k$ is the objective-function value of the solution",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1408.3518v3/blocks/cor-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "cor-sec-005-04.md",
+      "narrative": null,
+      "content": "For discrete steepest descent, no direction from G(A) is chosen twice as an augmenting direction. Therefore, the number of steepest-descent augmentations needed to reach an optimal solution is bounded by |G(A)| and thus is independent of b, c and the initial solution z0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1408.3518v3/blocks/lem-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "lem-sec-005-01.md",
+      "narrative": null,
+      "content": "Let xk be a feasible solution, and let z be an associated steepest descent direction. Then there is some augmentation direction g ∈G(A) from xk, with −c⊺g/∥g∥1 ≥−c⊺z/∥z∥1. De Loera, Hemmecke and Lee: Augmentation in Linear and Integer Linear Programming",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1408.3518v3/blocks/lem-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "lem-sec-005-02.md",
+      "narrative": null,
+      "content": "Let xk be a feasible solution, let αs be a steepest-descent augmentation relative to xk, and let xk+1 := xk + αs. Let βt be a steepest-descent augmentation relative to xk+1. Then we have −c⊺s/∥s∥1 ≥−c⊺t/∥t∥1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1408.3518v3/blocks/lem-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "lem-sec-005-03.md",
+      "narrative": null,
+      "content": "Let xk be a feasible solution and let α1z1,...,αjzj be the following steepest-descent augmentations applied to xk. If z1 and zj do not have the same sign-pattern from {≤0,≥0} n, then we have −c⊺z1/∥z1∥1 > −c⊺zj/∥zj∥1. De Loera, Hemmecke and Lee: Augmentation in Linear and Integer Linear Programming",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1408.3518v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Lemma ??: Discrete deepest descent.",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-211-proof-of-lemma-discrete-deepest-descent.md",
+      "narrative": null,
+      "content": "We observe that\n0 > c⊺(xmin −xk) = c⊺X\nαigi =\nX\nαic⊺gi ≥−(2n −2)∆\nwhere ∆> 0 is the largest value of −αc⊺z over all z ∈G(A) and integer α > 0 for which xk + αz is\nfeasible. Rewriting this, we get\n∆≥c⊺(xk −xmin)\n2n −2\n.\nNow let αz be the discrete deepest-descent augmentation applied to xk, leading to xk+1 := xk +αz.\nThen we get ∆= −αc⊺z and\nc⊺(xk −xk+1) = −αc⊺z = ∆≥c⊺(xk −xmin)\n2n −2\n.\nThus, we have a factor of β = 1/(2n −2) of objective-function decrease at each augmentation,\nleading to the desired polynomial number of augmentations via Lemma 3 taking ǫ = 1. In this case,\nwe get the number of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1408.3518v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of part (a) of Theorem ??: Discrete Dantzig descent.",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-212-proof-of-part-a-of-theorem-discrete-dantzig.md",
+      "narrative": null,
+      "content": "We observe that\n0 > c⊺(xmin −xk) = c⊺X\nαigi =\nX\nαic⊺gi ≥−∆0\nX\nαi ≥−(2n −2)∆0αmax,\nwhere this time ∆0 > 0 denotes the greatest value of −c⊺z over all z ∈G(A) for which xk +z is still\nfeasible and where αmax = max{αi }. Rewriting this, we get\n∆0 ≥c⊺(xk −xmin)\n(2n −2)αmax\n.\nNow let αz be the discrete Dantzig-descent augmentation applied to xk, leading to xk+1 := xk +αz.\nThen we get\nc⊺(xk −xk+1) = −αc⊺z = α∆0 ≥∆0 ≥c⊺(xk −xmin)\n(2n −2)αmax\n≥c⊺(x0 −xmin)\n(2n −2)γ\n,\nwhere γ is the maximum entry in any feasible integer solution (or, equivalently, in any vertex of PI).\nThus, we have a factor of β = 1/(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1408.3518v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of part (b) of of Theorem ??: Discrete steepest descent.",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-213-proof-of-part-b-of-of-theorem-discrete-steep.md",
+      "narrative": null,
+      "content": "We begin with\na series of lemmas. Note that the proof for the LP case follows exactly the same lines, since we do\nnot use integrality of the components in our arguments.\nLemma 4.\nLet xk be a feasible solution, and let z be an associated steepest descent direction.\nThen there is some augmentation direction g ∈G(A) from xk, with −c⊺g/∥g∥1 ≥−c⊺z/∥z∥1.\nDe Loera, Hemmecke and Lee: Augmentation in Linear and Integer Linear Programming\n10\nProof. There is a sign-compatible representation z = Pαigi via elements gi ∈G(A). Observe\nthat due to the sign-compatible representation, xk +αigi is also feasible",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1408.3518v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Lemma ?? and Theorem ??",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-006-22-proof-of-lemma-and-theorem.md",
+      "narrative": null,
+      "content": "Let us assume that xk is a non-optimal feasible\nsolution, and let xmin be an optimal solution to the LP. Then there exists a (sign-compatible)\nrepresentation\nxmin −xk =\nX\nαigi,\nwith αi > 0 and with αigi ⊑xmin −xk. Moreover, due to Carath´eodory theorem, at most n sum-\nmands are needed in such a representation. Again, sign-compatibility of the representation xmin −\nxk = Pαigi implies that for all i the vectors xk + αigi and xmin −αigi are all feasible solutions.\nLet us now analyze what happens for each choice of augmentation rule:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1408.3518v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Lemma ?? for Discrete deepest descent.",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-007-221-proof-of-lemma-for-discrete-deepest-descent.md",
+      "narrative": null,
+      "content": "We observe that\n0 > c⊺(xmin −xk) = c⊺X\nαigi =\nX\nαic⊺gi ≥−n∆\nwhere ∆> 0 is the largest value of −αc⊺z over all z ∈C(A) and α > 0 for which xk +αz is feasible.\nRewriting this, we get\n∆≥c⊺(xk −xmin)\nn\n.\nDe Loera, Hemmecke and Lee: Augmentation in Linear and Integer Linear Programming\n12\nNow let αz be the discrete deepest-descent augmentation applied to xk, leading to xk+1 := xk +αz.\nThen we get ∆= −αc⊺z and\nc⊺(xk −xk+1) = −αc⊺z = ∆≥c⊺(xk −xmin)\nn\n.\nThus, we have a factor of β = 1/n of objective-function value decrease at each augmentation. Apply-\ning Lemma 3 with ǫ = 1/δ then yields a solution ¯x",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1408.3518v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of part (a) of Theorem ??: Discrete Dantzig descent.",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-008-222-proof-of-part-a-of-theorem-discrete-dantzig.md",
+      "narrative": null,
+      "content": "In order to avoid\nzig-zagging (see example in Section 4 of [19] and the details of how to avoid this), we must augment\nto a vertex with lower objective-function value after each discrete Dantzig-descent augmentation.\nFor this, we need at most n discrete Dantzig-descent augmentations within smaller and smaller\nfaces of P. Let xk be a vertex of the given polyhedron. Again we observe that\n0 > c⊺(xmin −xk) = c⊺X\nαigi =\nX\nαic⊺gi ≥−∆0\nX\nαi ≥−n∆αmax,\nwhere ∆0 > 0 is the greatest value of −c⊺z over all z ∈C(A) for which xk + λz is feasible for\nsuﬃciently small λ > 0 and where αmax = max{αi }. Rewritin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1408.3518v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of part (b) of Theorem ??: Discrete steepest descent.",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-009-223-proof-of-part-b-of-theorem-discrete-steepest.md",
+      "narrative": null,
+      "content": "The proof here\nfollows exactly the same lines of the proof to Theorem 1, part (c).\nDe Loera, Hemmecke and Lee: Augmentation in Linear and Integer Linear Programming\n13",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1408.3518v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem ??.",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-010-23-proof-of-theorem.md",
+      "narrative": null,
+      "content": "If we keep A and B ﬁxed and let N vary, the binary encoding\nlengths of the Graver bases of [A,B](N) are bounded by a polynomial in N, see [14]. More precisely,\nthere is a constant g(A,B), the so-called Graver complexity of A and B (see [22, 30, 3]), given by\nmax{∥g∥1 : g ∈G(BG(A))},\nsuch that\n\nG \u0000[A,B](N)\u0001\n\n ≤\n\u0012\nN\ng(A,B)\n\u0013\n\nG \u0000[A,B](g(A,B))\u0001\n\n ∈O \u0000N g(A,B)\u0001.\nThis means that we can ﬁnd a steepest-descent direction in G\n\u0000[A,B](N)\u0001\nin time polynomial in N\nand by Theorems 1 and 2, parts (c), the number of steepest-descent augmentations to pass from any\nfeasible solution x0 to an optimal solution i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1408.3518v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Concluding remarks",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-011-3-concluding-remarks.md",
+      "narrative": null,
+      "content": "Through the notion of Graver basis, we have obtained extensions of\nclassical results of Bland, Edmonds, and Karp. Our new version applies now to the case of integer-\nlinear programs. As a consequence we have also derived the ﬁrst-ever strongly polynomial-time\nalgorithm for N-fold integer-linear optimization. Our new results also show that Kitahara-Mizuno-\nstyle bounds [24] hold in larger generality to include augmentations that go through the interior\nof the polytope and are not restricted to edges. Theorem 1 is in fact an ILP extension of those\nbounds too.\nThere are at least three interesting",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

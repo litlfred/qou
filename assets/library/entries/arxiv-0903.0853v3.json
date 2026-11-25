@@ -1,0 +1,2682 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0903.0853v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0903.0853v3  [math.QA]  30 Jan 2012\nJean-Pierre Ramis\nJacques Sauloy\nChanggui Zhang\nLOCAL ANALYTIC\nCLASSIFICATION OF\nq-DIFFERENCE EQUATIONS\nJean-Pierre Ramis\nInstitut de France (Acad´emie des Sciences) and Laboratoire ´Emile Picard,\nInstitut de Math´ematiques, CNRS UMR 5219, U.F.R. M.I.G., Universit´e\nPaul Sabatier (Toulouse 3), 31062 Toulouse CEDEX 9.\nE-mail : ramis.jean-pierre@wanadoo.fr\nJacques Sauloy\nLaboratoire ´Emile Picard, Institut de Math´ematiques, CNRS UMR 5219,\nU.F.R. M.I.G., Universit´e Paul Sabatier (Toulouse 3), 31062 Toulouse\nCEDEX 9.\nE-mail : sauloy@math.univ-toulouse.fr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The problem",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-000-1-the-problem.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The generalized Riemann problem and the allied problems",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-11-the-generalized-riemann-problem-and-the-allie.md",
+      "narrative": null,
+      "content": "[]{#subsection:GRP label=\"subsection:GRP\"}\n\nThis paper is a contribution to a large program stated and begun by G.D. Birkhoff in the beginning of XXth century [@Birkhoff1]: *the generalized Riemann problem for linear differential equations and the allied problems for linear difference and $q$-difference equations*. Such problems are now called *Riemann-Hilbert-Birkhoff problems*. Today the state of achievement of the program *as it was formulated by Birkhoff* in [@Birkhoff1] is the following:\n\n-   For linear *differential* equations the problem is completely closed (both in the regular-singula",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Birkhoff-Guenther program",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-12-the-birkhoff-guenther-program.md",
+      "narrative": null,
+      "content": "[]{#subsection:BG label=\"subsection:BG\"}\n\nWe quote the conclusion of [@Birkhoff3], it contains a program which is one of our central motivations for the present work. We shall call it *Birkhoff-Guenther program*.\\\n*Up to the present time, the theory of $q$-difference equations has lagged noticeabely behind the sister theories of linear difference and $q$-difference equations. In the opinion of the authors, the use of the canonical system, as formulated above in a special case, is destined to carry the theory of $q$-difference equations to a comparable degree of completeness. This program inclu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "What this paper could contain but does not",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-13-what-this-paper-could-contain-but-does-not.md",
+      "narrative": null,
+      "content": "[]{#subsection:WTPC label=\"subsection:WTPC\"}\n\nBefore describing the contents of the paper in the following paragraph, we shall first say briefly what it could contain but does not.\\\nThe kernel of the present work is the detailed proofs of some results announced in [@RSZ1], [@RSZ2] and in various seminars and conferences between 2004 and 2006, but there are also some new results in the same spirit and some examples.\\\nIn this paper, we limit ourselves to the case $\\left |q\\right |\\neq 1$. The problem of classification in the case $\\left |q\\right |=1$ involves diophantine conditions, it remains o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "About the asumption that the slopes are integral",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-131-about-the-asumption-that-the-slopes-are-inte.md",
+      "narrative": null,
+      "content": "[]{#subsubsection:integralslopes label=\"subsubsection:integralslopes\"}\n\nThe \"abstract\" part of our paper does not require any assumption on the slopes : that means general structure theorems, *e.g.* theorem [\\[theo:schemadesmodules\\]](#theo:schemadesmodules){reference-type=\"ref\" reference=\"theo:schemadesmodules\"} and proposition [\\[prop:schemadesmodulesqGevrey\\]](#prop:schemadesmodulesqGevrey){reference-type=\"ref\" reference=\"prop:schemadesmodulesqGevrey\"}. The same is true of the decomposition of the local Galois group of an irregular equation as a semi-direct product of the formal group by a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Contents of the paper",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "../sections/sec-005-2-contents-of-the-paper.md",
+      "narrative": null,
+      "content": "[]{#section:contents label=\"section:contents\"}\n\nWe shall classify analytically isoformal $q$-difference equations. That is, we consider analytic $q$-difference modules together with an isomorphism of their formalisation with a given formal $q$-difference module, and we consider equivalences preserving this additional structure. This is in adequation to the corresponding problem for differential equations, see for instance [@BV].\\\nThe isoformal analytic classes form an affine space, we shall give *three descriptions* of this space respectively in chapters [\\[chapter:isoformalclasses\\]](#chapter",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "About the wealth of summation processes",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-006-21-about-the-wealth-of-summation-processes.md",
+      "narrative": null,
+      "content": "It is important to notice that the construction of $q$-analogs of classical objects (special functions...) is not canonical, there are in general several \"good\\\" $q$-analogs. So there are several $q$-analogs of the Borel-Laplace summation (and multisummation)[^1]: there are several choices for Borel and Laplace kernels (depending on a choice of $q$-analog of the exponential function) and several choices of the integration contours (continuous or discrete in Jackson style) [@RamisPanorama], [@rz], [@zh1; @zh2; @zh3]. The paper [@LuZ] studies a case where distinct processes give the same result,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General notations",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-3-general-notations.md",
+      "narrative": null,
+      "content": "[]{#section:generalnotations label=\"section:generalnotations\"}\n\nGenerally speaking, in the text, the sentence $A := B$ means that the term $A$ is defined by formula $B$. Numbered equations are numbered according to the chapter they appear in: thus, equation (2.3) is the third numbered equation in chapter 2.\\\nBut for some changes, the notations are the same as in [@RSZ1], [@RSZ2], etc. Here are the most useful ones[^1].\\\n[]{#not1 label=\"not1\"} We write ${{\\mathbf C}\\{z\\}}$ the ring of convergent power series (holomorphic germs at $0 \\in {\\mathbf C}$) and ${{\\mathbf C}(\\{z\\})}$ its field of frac",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Theta Functions",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-008-31-theta-functions.md",
+      "narrative": null,
+      "content": "[]{#subsection:thetafunctions label=\"subsection:thetafunctions\"}\n\nJacobi theta functions pervade the theory of $q$-difference equations. We shall mostly have use for two slightly different forms of them.\\\nIn chapter [\\[chapter:asymptotictheory\\]](#chapter:asymptotictheory){reference-type=\"ref\" reference=\"chapter:asymptotictheory\"}, we shall use: []{#not6 label=\"not6\"} $$\\label{eqn:tripleproduit}\n\\theta(z;q) := \\sum_{n\\in{\\mathbf Z}} q^{-n(n-1)/2} z^n =\n\\prod_{n\\in{\\mathbf N}}(1 - q^{-n-1})(1 + q^{-n} z)(1 + q^{-n-1}/z).$$ The second equality is Jacobi's celebrated triple product formula. When",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-acknowledgements.md",
+      "narrative": null,
+      "content": "During the final redaction of this work, the first author beneffited of a support of the ANR *Galois* (Programme Blanc) and was invited by the departement of mathematics of Tokyo University (College of Arts and Science, Komaba). During the same period, the second author benefitted of a semester CRCT by the Université Toulouse 3 and was successively invited by University of Valladolid (Departamento de Algebra, Geometria and Topologia), Université des Sciences et Technologies de Lille (Laboratoire Paul Painlevé) and Institut Mathématique de Jussieu (Équipe de Topologie et Géométrie Algébriques);",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The category of $q$-difference modules",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-010-4-the-category-of-q-difference-modules.md",
+      "narrative": null,
+      "content": "General references for this section are [57], [51].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some general facts about difference modules",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-011-41-some-general-facts-about-difference-modules.md",
+      "narrative": null,
+      "content": "[]{#subsection:generalitiesdiffmods label=\"subsection:generalitiesdiffmods\"}\n\nHere, we also refer to the classical litterature about difference fields, like [@Cohn] and [@Franke] (see also [@Ore]). A detailed proof of many elementary algebraic facts can be found in [@LDVS]. We shall also use specific results proved in appendix [\\[chapter:ISOGRAD\\]](#chapter:ISOGRAD){reference-type=\"ref\" reference=\"chapter:ISOGRAD\"}.\\\nWe call *difference field*[^1] a pair $(K,\\sigma)$, where $K$ is a (commutative) field and $\\sigma$ a field automorphism of $K$. We write indifferently $\\sigma(x)$ or $\\sigma x$ t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unity",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-012-411-unity.md",
+      "narrative": null,
+      "content": "An important particular object is the *unity* []{#not15 label=\"not15\"} $\\underline{1}$, which may be described either as $(K,\\sigma)$ or as ${\\mathcal{D}}/{\\mathcal{D}}P$ with $P = \\sigma - 1$. For any difference module $M = (E,\\Phi)$ the $K^{\\sigma}$-vector space $\\text{Hom}(\\underline{1},M)$ can be identified with the kernel of the $K^{\\sigma}$-linear map $\\Phi - Id: E \\rightarrow E$; in case $M =(K^{n},\\Phi_{A})$, this boils down to the space $\\{X \\in K^{n} ~ | ~\\sigma X = A X\\}$ of solutions of a \"$\\sigma$-difference system\"; whence our definition of $\\Phi_{A}$. The *functor of solutions*",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Internal Hom",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-013-412-internal-hom.md",
+      "narrative": null,
+      "content": "Let $M = (E,\\Phi)$ and $N = (F,\\Psi)$. The map $T_{\\Phi,\\Psi}: f \\mapsto \\Psi \\circ f \\circ \\Phi^{-1}$ is a semi-linear automorphism of the $K$-vector space $\\mathcal{L}_{K}(E,F)$, whence a difference []{#not16 label=\"not16\"} module $\\underline{\\text{Hom}}(M,N) := \\bigl(\\mathcal{L}_{K}(E,F),T_{\\Phi,\\Psi}\\bigr)$. Then one has $\\underline{\\text{Hom}}(\\underline{1},M) = M$ and $\\Gamma\\bigl(\\underline{\\text{Hom}}(M,N)\\bigr) = \\text{Hom}(M,N)$. The *dual* of $M$ is $M^{\\vee} := \\underline{\\text{Hom}}(M,\\underline{1})$, so that $\\text{Hom}(M,\\underline{1}) = \\Gamma(M^{\\vee})$. For instance, the dual",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tensor product",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-014-413-tensor-product.md",
+      "narrative": null,
+      "content": "Let $M = (E,\\Phi)$ and $N = (F,\\Psi)$. The map $\\Phi \\otimes \\Psi: x \\otimes y \\mapsto \\Phi(x) \\otimes \\Psi(y)$ from $E \\otimes_{K} F$ to itself is well defined and it is a semi-linear automorphism, whence a difference module []{#not17 label=\"not17\"} $M \\otimes N = (E \\otimes_{K} F,\\Phi \\otimes \\Psi)$. The obvious morphism yields the adjunction relation : $$\\text{Hom}\\bigl(M,\\underline{\\text{Hom}}(N,P)\\bigr) = \\text{Hom}(M \\otimes N,P).$$ We also have functorial isomorphisms $\\underline{1} \\otimes M = M$ and $\\underline{\\text{Hom}}(M,N) = M^{\\vee} \\otimes N$. The classical computation of the r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extension of scalars",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-015-414-extension-of-scalars.md",
+      "narrative": null,
+      "content": "An extension difference field $(K',\\sigma')$ of $(K,\\sigma)$ consists in an extension $K'$ of $K$ and an automorphism $\\sigma'$ of $K'$ which restricts to $\\sigma$ on $K$. Any difference module $M = (E,\\Phi)$ over $(K,\\sigma)$ then gives rise to a difference module $M' = (E',\\Phi')$ over $(K',\\sigma')$, where $E' := K' \\otimes_{K} E$ and $\\Phi' := \\sigma' \\otimes \\Phi$ is defined the same way as above. We then write $\\Gamma_{K'}(M)$ the ${K'}^{\\sigma'}$-vector space $\\Gamma(M')$. The *functor of solutions (with values) in $K'$* is defined as $M \\leadsto \\Gamma(M')$; it is left exact and $K^{\\s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The functor of solutions",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-016-421-the-functor-of-solutions.md",
+      "narrative": null,
+      "content": "[]{#subsubsection:functorofsolutions label=\"subsubsection:functorofsolutions\"}\n\nIt is customary in ${\\mathcal{D}}$-module theory to call *solution* of $M$ a morphism $M \\rightarrow \\underline{1}$. Indeed, a solution of ${\\mathcal{D}}/{\\mathcal{D}}P$ is then an element of $\\text{Ker~}P$. We took the dual convention, yielding a *covariant* ${\\mathbf C}$-linear left exact functor $\\Gamma$ for the following reason. To any analytic $q$-difference module $M = ({{\\mathbf C}(\\{z\\})}^{n},\\Phi_{A})$, one can associate a holomorphic vector bundle $F_{A}$ over the elliptic curve (or complex torus) ${\\math",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Newton polygon and the slope filtration",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "../sections/sec-017-5-the-newton-polygon-and-the-slope-filtration.md",
+      "narrative": null,
+      "content": "[]{#section:Newtonetfiltration label=\"section:Newtonetfiltration\"}\n\nWe summarize results from [@JSFIL][^1].\n\n## The Newton polygon {#subsection:Newtonpolygon}\n\nThe contents of this section are valid as well in the analytic as in the formal setting. To the (analytic or formal) $q$-difference operator $P = \\sum a_{i} \\sigma_q^{i} \\in {{\\mathcal{D}}_{q}}$, we associate the *Newton polygon* []{#not19 label=\"not19\"} $N(P)$, defined as the convex hull of $\\{(i,j) \\in {\\mathbf Z}^{2} ~ | ~j \\geq v_{0}(a_{i})\\}$, where $v_{0}$ denotes the $z$-adic valuation in ${{\\mathbf C}(\\{z\\})},{{\\mathbf C}((z))}$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pure modules",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-018-52-pure-modules.md",
+      "narrative": null,
+      "content": "[]{#subsection:puremodules label=\"subsection:puremodules\"}\n\nWe call *pure isoclinic (of slope $\\mu$)* a module $M$ such that $S(M) = \\{\\mu\\}$ and *pure* a direct sum of pure isoclinic modules. We call *fuchsian* a pure isoclinic module of slope $0$. The following description is valid whether $K = {{\\mathbf C}((z))}$ or ${{\\mathbf C}(\\{z\\})}$.\n\n::: lemm\n[]{#lemm:puremodules label=\"lemm:puremodules\"} (i) A pure isoclinic module of slope $\\mu$ over $K$ can be written: $$M \\simeq {{\\mathcal{D}}_{q}}/{{\\mathcal{D}}_{q}}P, \\text{~~where~~}\nP = a_{n} \\sigma_q^{n} + a_{n-1} \\sigma_q^{n-1} + \\cdots + a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pure modules with integral slopes",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-019-521-pure-modules-with-integral-slopes.md",
+      "narrative": null,
+      "content": "ule is equivalent to some module (Kn, ΦA) with A ∈GLn(C).\nOne may\nmoreover require that A has all its eigenvalues in the fundamental annulus:\n∀λ ∈SpA , 1 ≤|λ| < |q| .\nIndeed, one can do this using gauge transforms by shearing matrices, like in\n[48, 1.1.1].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The slope filtration",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-020-53-the-slope-filtration.md",
+      "narrative": null,
+      "content": "19\nLast, two fuchsian modules (Kn, ΦA), (Kn′, ΦA′) with A ∈GLn(C),\nA′ ∈GLn′(C) having all their eigenvalues in the fundamental annulus are\nisomorphic if and only if the matrices A, A′ are similar (so that n = n′).\nIt follows that any pure isoclinic module of slope µ is equivalent to some\nmodule (Kn, ΦzµA) with A ∈GLn(C), the matrix A having all its eigen-\nvalues in the fundamental annulus; and that two such modules (Kn, ΦzµA),\n(Kn′, ΦzµA′) are isomorphic if and only if the matrices A, A′ are similar.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pure modules of arbitrary slopes",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-021-522-pure-modules-of-arbitrary-slopes.md",
+      "narrative": null,
+      "content": "The classification of pure modules of arbitrary (not necessarily integral) slopes was obtained by van der Put and Reversat in [@vdPR]. It is cousin to the classification by Atiyah of vector bundles over an elliptic curve, which it allows to recover in a simple and elegant way. Although we shall not need it, we briefly recall that result.\\\nThe first step is the classification of irreducible (that is, simple) modules. An irreducible $q$-difference module $M$ is automaticaly pure isoclinic of slope say $\\mu$. We write $\\mu = d/r$ with $d,r$ coprime and may assume that $r \\geq 2$ (the case $r = 1$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Formal case",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-022-531-formal-case.md",
+      "narrative": null,
+      "content": "Any $q$-difference operator $P$ over ${{\\mathbf C}((z))}$ admits, for all $\\mu \\in S(P)$, a factorisation $P = Q R$ with $S(Q) = \\{\\mu\\}$ and $S(R) = S(P) \\setminus \\{\\mu\\}$. As a consequence, writing $M_{(\\mu)}$ []{#not22 label=\"not22\"} the biggest pure submodule of slope $\\mu$ of $M$, one has $\\text{rk~}M_{(\\mu)} = r_{M}(\\mu)$ and $S(M/M_{(\\mu)}) = S(M) \\setminus \\{\\mu\\}$. Moreover, all modules are pure: $$M = \\bigoplus_{\\mu \\in S(M)} M_{(\\mu)}.$$ The above splitting is canonical, functorial (preserved by morphisms) and compatible with all tensor operations (tensor product, internal Hom, dua",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application to the analytic isoformal classification",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-023-6-application-to-the-analytic-isoformal-classifi.md",
+      "narrative": null,
+      "content": "[]{#section:analyticisoformalclassification label=\"section:analyticisoformalclassification\"}\n\nThe formal classification of analytic $q$-difference modules is equivalent to the classification of pure modules: the formal class of $M$ is equal to the formal class of ${\\text{gr}}M$, and the latter is essentially the same thing as the analytic class of ${\\text{gr}}M$. The classification of pure modules has been described in paragraph [\\[subsection:puremodules\\]](#subsection:puremodules){reference-type=\"ref\" reference=\"subsection:puremodules\"}.\\\nLet us fix a formal class, that is, a pure module: $$M",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A prototypal example and the $q$-Borel transformation",
+      "pageStart": 28,
+      "pageEnd": 31,
+      "target": "../sections/sec-024-61-a-prototypal-example-and-the-q-borel-transfor.md",
+      "narrative": null,
+      "content": "[]{#subsection:prototypal label=\"subsection:prototypal\"}\n\nTo give a feeling of the situation encountered we introduce at once a prototypal example. To begin with, we only assume that $K := {{\\mathbf C}(\\{z\\})}$ or $K := {{\\mathbf C}((z))}$ without choosing. This will allow us to treat both the formal and the analytical situations, and to see clearly the difference.\\\nLet $P_{1} := (K,\\Phi_1) = (K,\\sigma_q)$ and $P_{2} := (K,\\Phi_z) = (K,z^{-1} \\sigma_q)$. These pure isoclinic modules of respective slopes $0$ and $1$ correspond to the rank $1$ systems $\\sigma_qf = f$ and $\\sigma_qf = z f$. The p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case of two slopes",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-025-62-the-case-of-two-slopes.md",
+      "narrative": null,
+      "content": "[]{#subsection:thecaseoftwoslopes label=\"subsection:thecaseoftwoslopes\"}\n\nThe case $k = 1$ is of course trivial. The case where $k = 2$ is \"linear\" or \"abelian\": the set of classes is naturally a finite dimensional vector space over ${\\mathbf C}$. We call it \"one level case\", because the *$q$-Gevrey level* $\\mu_{2} - \\mu_{1}$ (see the paragraph [\\[subsection:qGevreylevels\\]](#subsection:qGevreylevels){reference-type=\"ref\" reference=\"subsection:qGevreylevels\"} of the general notations in the introduction for its definition) is the fundamental parameter. This will be illustrated in section [\\[se",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Matricial description",
+      "pageStart": 32,
+      "pageEnd": 35,
+      "target": "../sections/sec-026-63-matricial-description.md",
+      "narrative": null,
+      "content": "[]{#subsection:matricialdescriptionofF(P1,...,Pk) label=\"subsection:matricialdescriptionofF(P1,...,Pk)\"}\n\nWe now go for a preliminary matricial description, valid without any restriction on the slopes (number or integrity). Details can be found in appendix [\\[chapter:ISOGRAD\\]](#chapter:ISOGRAD){reference-type=\"ref\" reference=\"chapter:ISOGRAD\"}. From the theorem [\\[theo:slopefiltration\\]](#theo:slopefiltration){reference-type=\"ref\" reference=\"theo:slopefiltration\"}, we deduce that each analytic $q$-difference module $M$ with $S(M) = \\{\\mu_{1},\\ldots,\\mu_{k}\\}$, these slopes being indexed in in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Isoformal analytic classes of analytic $q$-difference modules",
+      "pageStart": 35,
+      "pageEnd": 35,
+      "target": "../sections/sec-027-7-isoformal-analytic-classes-of-analytic-q-diffe.md",
+      "narrative": null,
+      "content": "We shall now specialize the results of the appendix A, in particular its\nsection A.7, to the case of q-diﬀerence modules (1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extension classes of analytic $q$-difference modules",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "../sections/sec-028-71-extension-classes-of-analytic-q-difference-mo.md",
+      "narrative": null,
+      "content": "[]{#subsection:extensionsofqdifferencemodules label=\"subsection:extensionsofqdifferencemodules\"}\n\nFrom here on, we consider only analytic $q$-difference modules and the base field is ${{\\mathbf C}(\\{z\\})}$ (except for brief indications about the formal case).\n\n::: theo\n[]{#theo:dimensiondeuxpentes label=\"theo:dimensiondeuxpentes\"} Let $M,N$ be pure modules of ranks $r,s \\in {\\mathbf N}^{*}$ and slopes $\\mu < \\nu \\in {\\mathbf Q}$. Then $\\dim_{{\\mathbf C}} {\\mathcal{F}}(M,N) = r s(\\nu - \\mu)$.\n:::\n\n::: proof\n*Proof.* Since ${\\mathcal{F}}(M,N) \\simeq \\text{Ext}^{1}(N,M) \\simeq \\Gamma^{1}(N^{\\vee}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Index theorems and irregularity",
+      "pageStart": 38,
+      "pageEnd": 40,
+      "target": "../sections/sec-029-8-index-theorems-and-irregularity.md",
+      "narrative": null,
+      "content": "[]{#section:indextheorems label=\"section:indextheorems\"}\n\nWe shall now give some complements to the results in [\\[subsection:extensionsofqdifferencemodules\\]](#subsection:extensionsofqdifferencemodules){reference-type=\"ref\" reference=\"subsection:extensionsofqdifferencemodules\"}, in the form of index theorems. They mostly originate in the works [@Bezivin] of Bézivin[^1] and also in [@RamisGrowth]: the difference here is merely the adaptation to our formalism. Although not strictly necessary for what follows, these results allow for an interpretation of $\\dim {\\mathcal{F}}(P_{1},\\ldots,P_{k})$ (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The index in the general case",
+      "pageStart": 40,
+      "pageEnd": 42,
+      "target": "../sections/sec-030-82-the-index-in-the-general-case.md",
+      "narrative": null,
+      "content": "Generally speaking, there is no simple formula for the dimensions of the kernel and cokernel of a $q$-difference operator $P$. However, if $P$ has integral slopes[^1], we can factor it into operators of degree $1$, and then use proposition [\\[prop:indices\\]](#prop:indices){reference-type=\"ref\" reference=\"prop:indices\"} and linear algebra to deduce:\n\n1.  The ${\\mathbf C}$-linear map $P: f \\mapsto P.f$ from $K$ to itself has an index, that is finite dimensional kernel and cokernel.\n\n2.  The index of $P$, that is the integer $\\chi(P) := \\dim \\text{Ker~}P - \\dim \\text{Coker~} P$ is the sum of indi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Explicit description of ${\\mathcal{F}}(P_{1},\\ldots,P_{k})$ in the case of integral slopes",
+      "pageStart": 42,
+      "pageEnd": 43,
+      "target": "../sections/sec-031-9-explicit-description-of-mathcalfp-1ldotsp-k-in.md",
+      "narrative": null,
+      "content": "[]{#section:explicitdescription label=\"section:explicitdescription\"}\n\n***FROM NOW ON, WE ASSUME THAT THE SLOPES ARE INTEGRAL:*** $\\mu_{1},\\ldots,\\mu_{k} \\in {\\mathbf Z}$.\\\nIt is then possible to make the results of sections [\\[section:isoformalclasses\\]](#section:isoformalclasses){reference-type=\"ref\" reference=\"section:isoformalclasses\"} and [\\[section:indextheorems\\]](#section:indextheorems){reference-type=\"ref\" reference=\"section:indextheorems\"} more algorithmic by using the matricial description of paragraph [\\[subsection:matricialdescriptionofF(P1,\\...,Pk)\\]](#subsection:matricialdescript",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Analytic classification with $2$ integral slopes",
+      "pageStart": 43,
+      "pageEnd": 45,
+      "target": "../sections/sec-032-91-analytic-classification-with-2-integral-slope.md",
+      "narrative": null,
+      "content": "[]{#subsection:twointegralslopes label=\"subsection:twointegralslopes\"}\n\nFrom the results of [\\[subsection:extensionsofqdifferencemodules\\]](#subsection:extensionsofqdifferencemodules){reference-type=\"ref\" reference=\"subsection:extensionsofqdifferencemodules\"}, we get the following result for the case of two slopes. Here, and after, we write, for $\\mu < \\nu \\in {\\mathbf Z}$: $$\\label{not36}\nK_{\\mu,\\nu} := \\sum_{i=0}^{\\nu - \\mu - 1} {\\mathbf C}z^{i} \\text{~or, at will:~}\nK_{\\mu,\\nu} := \\sum_{i=\\mu}^{\\nu - 1} {\\mathbf C}z^{i}.$$ (The second choice is motivated by good tensor properties, see for i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Birkhoff-Guenther normal form",
+      "pageStart": 45,
+      "pageEnd": 47,
+      "target": "../sections/sec-033-92-the-birkhoff-guenther-normal-form.md",
+      "narrative": null,
+      "content": "[]{#subsection:BGNF label=\"subsection:BGNF\"}\n\nGoing from two slopes to general case rests on the following remark. The functor $M \\leadsto M' := M_{\\leq \\mu_{k-1}}$ induces an onto mapping ${\\mathcal{F}}(P_{1},\\ldots,P_{k}) \\rightarrow {\\mathcal{F}}(P_{1},\\ldots,P_{k-1})$. The inverse image in ${\\mathcal{F}}(P_{1},\\ldots,P_{k})$ of the class of $M'$ in ${\\mathcal{F}}(P_{1},\\ldots,P_{k-1})$ is in natural one-to-one correspondance with the space $\\text{Ext}^{1}(P_{k},M')$. The latter is a ${\\mathbf C}$-vector space of dimension $\\sum\\limits_{1 \\leq j < k} r_{j} r_{k} (\\mu_{k} - \\mu_{j})$. This f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computational consequences of the Birkhoff-Guenther normal form",
+      "pageStart": 47,
+      "pageEnd": 48,
+      "target": "../sections/sec-034-93-computational-consequences-of-the-birkhoff-gu.md",
+      "narrative": null,
+      "content": "[]{#subsection:computnormalform label=\"subsection:computnormalform\"}\n\nLet $A_{0}$ be as in [\\[eqn:formestandarddiagonaleentiere\\]](#eqn:formestandarddiagonaleentiere){reference-type=\"eqref\" reference=\"eqn:formestandarddiagonaleentiere\"} and $A_{U} = A$ as in [\\[eqn:formestandardtriangulaireentiere\\]](#eqn:formestandardtriangulaireentiere){reference-type=\"eqref\" reference=\"eqn:formestandardtriangulaireentiere\"}. Looking for $\\hat{F} \\in {\\mathfrak{G}}({{\\mathbf C}((z))})$ such that $\\hat{F}[A_{0}] = A$ amounts, with notation [\\[eqn:isoplat\\]](#eqn:isoplat){reference-type=\"eqref\" reference=\"eqn:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Interpolation by $q$-Gevrey classes",
+      "pageStart": 48,
+      "pageEnd": 49,
+      "target": "../sections/sec-035-10-interpolation-by-q-gevrey-classes.md",
+      "narrative": null,
+      "content": "[]{#section:qGevreyinterpolation label=\"section:qGevreyinterpolation\"}\n\nWe shall now extend the previous results to $q$-Gevrey classification. We use here notations from paragraph [\\[subsection:qGevreylevels\\]](#subsection:qGevreylevels){reference-type=\"ref\" reference=\"subsection:qGevreylevels\"} of the general notations in the introduction.\n\n## $q$-Gevrey extension spaces {#subsection:qGevreyExt}\n\n### $q$-Gevrey extensions for arbitrary slopes\n\nIf one repaces the field ${{\\mathbf C}(\\{z\\})}$ by the field ${{{\\mathbf C}((z))}_{q;s}}$ of $q$-Gevrey series of level $s >0$ and ${{\\mathcal{D}}_{q}}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Isoformal $q$-Gevrey classification",
+      "pageStart": 49,
+      "pageEnd": 49,
+      "target": "../sections/sec-036-102-isoformal-q-gevrey-classification.md",
+      "narrative": null,
+      "content": "[]{#subsection:qGevreymoduli label=\"subsection:qGevreymoduli\"}\n\n### $q$-Gevrey classification for arbitrary slopes\n\nOne can state the moduli problem for $q$-Gevrey classification at order $s$, that is, over the field ${{{\\mathbf C}((z))}_{q;s}}$ of $q$-Gevrey series of order $s >0$ (see subsection [\\[subsection:qGevreyExt\\]](#subsection:qGevreyExt){reference-type=\"ref\" reference=\"subsection:qGevreyExt\"}). From proposition [\\[prop:dimensiondeuxpentesqGevrey\\]](#prop:dimensiondeuxpentesqGevrey){reference-type=\"ref\" reference=\"prop:dimensiondeuxpentesqGevrey\"}, one gets, by the same argument as b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Another kind of $q$-Gevrey interpolation",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "../sections/sec-037-103-another-kind-of-q-gevrey-interpolation.md",
+      "narrative": null,
+      "content": "A somewhat symmetric problem is to describe the space of analytic classes within a fixed $q$-Gevrey class. This can be done in a similar way. We fix a matrix $A_{U_{0}}$ where $U_{0} \\in \n\\prod\\limits_{1 \\leq i < j \\leq k}{\\text{Mat}}_{r_{i},r_{j}}(K_{\\mu_{i},\\mu_{j} })$ is such that $U_{i,j} = 0$ for $\\mu_{j} - \\mu_{i} \\geq 1/s$ (any $q$-Gevrey class contains such a matrix). This characterizes a well defined $q$-Gevrey class and the space of analytic classes within this $q$-Gevrey class is an affine space of dimension $\\sum\\limits_{1 \\leq i < j \\leq k \\atop \\mu_{j} - \\mu_{i} \\geq 1/s} \nr_{i}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics",
+      "pageStart": 51,
+      "pageEnd": 53,
+      "target": "../sections/sec-038-11-asymptotics.md",
+      "narrative": null,
+      "content": "[]{#section:asymptotics label=\"section:asymptotics\"}\n\nWe shall need a $q$-analogue of asymptotics *in the sense of Poincaré*. In chapter [\\[chapter:asymptotictheory\\]](#chapter:asymptotictheory){reference-type=\"ref\" reference=\"chapter:asymptotictheory\"} we shall develop a more restrictive notion of asymptotics.\\\nThe underlying idea, coming from the thesis [@JLM] of Jose-Luis Martins, is that an asymptotic theory is related to a dynamical system. In the \"classical\" case of Poincaré asymptotics for ordinary differential equations, say locally at $0$ in ${\\mathbf C}^{*}$, the dynamical system is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotic expansions and ${\\mathcal C}^{\\infty}$ functions in Whitney sense",
+      "pageStart": 53,
+      "pageEnd": 58,
+      "target": "../sections/sec-039-112-asymptotic-expansions-and-mathcal-cinfty-fun.md",
+      "narrative": null,
+      "content": "[]{#subsubtion:asymptoticsandWhitney label=\"subsubtion:asymptoticsandWhitney\"}\n\n::: lemm\n[]{#lemm:ascle label=\"lemm:ascle\"} Let $U$ be a $\\Sigma$-invariant open set of ${\\mathbf C}$ and $f \\in {\\mathscr{A}}(U_{\\infty})$. Let $K\\subset U$ be an invariant strict subset.\n\n-   There exists a positive constant $C_K$ (depending on $f$) such that, for all $z_1,z_2 \\in K \\cup \\{ 0\\}$: $$\\left |f(z_1)-f(z_2) \\right |\\leq C_K \\left |z_1 - z_2 \\right |.$$\n\n-   For all $n\\in{\\mathbf N}$ there exists a positive constant $C_{K,n}$ (depending on $f$) such that, for all $z_1,z_2\\in K\\cup\\{ 0\\}$: $$\\left |f(z_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Existence of asymptotic solutions",
+      "pageStart": 58,
+      "pageEnd": 62,
+      "target": "../sections/sec-040-12-existence-of-asymptotic-solutions.md",
+      "narrative": null,
+      "content": "[]{#section:existasymptsols label=\"section:existasymptsols\"}\n\nWe call *adequate* an open subset ${\\mathbf C}^{*}$ of the form $q^{-{\\mathbf N}} U_{0}$, where the $q^{-k} U_{0}, k \\geq 0$ are pairwise disjoint. Clearly, ${\\mathscr{A}}_{0}(U_{\\infty})$ is a ${{\\mathbf C}(\\{z\\})}$-vector space stable under $\\sigma_q$. In particular, any $q$-difference operator $P := \\sigma_q^{n} + a_{1} \\sigma_q^{n-1} + \\cdots + a_{n} \\in {{\\mathcal{D}}_{q}}$ defines a ${\\mathbf C}$-linear endomorphism $P: f \\mapsto P f = \\sigma_q^{n}(f) + a_{1} \\sigma_q^{n-1} + \\cdots + a_{n} f$ of ${\\mathscr{A}}_{0}(U_{\\infty})",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The fundamental isomorphism",
+      "pageStart": 62,
+      "pageEnd": 65,
+      "target": "../sections/sec-041-13-the-fundamental-isomorphism.md",
+      "narrative": null,
+      "content": "[]{#section:fundamentalisomorphism label=\"section:fundamentalisomorphism\"}\n\n[]{#not48 label=\"not48\"} We write $\\Lambda_I := I_n + {\\text{Mat}}_n({\\mathscr{A}}_0)$ for the subsheaf of groups of ${\\text{GL}}_n({\\mathscr{A}})$ made up of matrices infinitely tangent to the identity and, if $G$ is an algebraic subgroup of ${\\text{GL}}_n({\\mathbf C})$, we put $\\Lambda_I^G := \\Lambda_I \\cap G({\\mathscr{A}})$. In particular $\\Lambda_I^{{\\mathfrak{G}}}$ is a sheaf of triangular matrices of the form [\\[eqn:isoplat\\]](#eqn:isoplat){reference-type=\"eqref\" reference=\"eqn:isoplat\"} with all the $F_{i,j}$ in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometric interpretation of the elements of $H^1({\\mathbf{E}_{q}};\\Lambda_I)$",
+      "pageStart": 65,
+      "pageEnd": 70,
+      "target": "../sections/sec-042-132-geometric-interpretation-of-the-elements-of.md",
+      "narrative": null,
+      "content": "[]{#subsection:geometricinterpretation label=\"subsection:geometricinterpretation\"}\n\nWe need some results on regularly separated subsets of the euclidean space ${\\mathbf R}^2$. We first recall some definitions.\n\nIf $X \\subset {\\mathbf R}^n$ is a closed subset of the euclidean space ${\\mathbf R}^n$, we denote by ${\\mathscr{E}}(X)$ the algebra []{#not53 label=\"not53\"} of $\\mathcal{C}^{\\infty}$ functions in Whitney sense on $X$ (*cf.* [@Ma1]).\n\nWe recall the *Whitney extension theorem*: if $Y \\subset X$ are closed subset of ${\\mathbf R}^n$, the restriction map ${\\mathscr{E}}(X) \\rightarrow {\\maths",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The isoformal classification by the cohomology of the Stokes sheaf",
+      "pageStart": 70,
+      "pageEnd": 70,
+      "target": "../sections/sec-043-14-the-isoformal-classification-by-the-cohomolog.md",
+      "narrative": null,
+      "content": "[]{#section:theisoformalclassificationJP label=\"section:theisoformalclassificationJP\"}\n\nWe will see that the constructions of the preceding paragraph are compatible with discrete dynamical systems data and deduce a new version of the analytic isoformal classification. We use notations from section [\\[section:analyticisoformalclassification\\]](#section:analyticisoformalclassification){reference-type=\"ref\" reference=\"section:analyticisoformalclassification\"}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The second main theorem",
+      "pageStart": 70,
+      "pageEnd": 73,
+      "target": "../sections/sec-044-141-the-second-main-theorem.md",
+      "narrative": null,
+      "content": "[]{#subsection:thesecondmaintheorem label=\"subsection:thesecondmaintheorem\"}\n\nBefore going on, let us make some preliminary remarks. Let $M_{0} := P_{1} \\oplus \\cdots \\oplus P_{k}$ be a pure module. Represent it by a matrix $A_0$ with the same form as in [\\[eqn:formestandarddiagonaleentiere\\]](#eqn:formestandarddiagonaleentiere){reference-type=\"eqref\" reference=\"eqn:formestandarddiagonaleentiere\"}. Assume moreover that $A_{0}$ is in Birkhoff-Guenther normal form as found in [\\[subsection:BGNF\\]](#subsection:BGNF){reference-type=\"ref\" reference=\"subsection:BGNF\"}.\\\nWe saw in proposition [\\[prop",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some preparatory notations and results",
+      "pageStart": 73,
+      "pageEnd": 73,
+      "target": "../sections/sec-045-15-some-preparatory-notations-and-results.md",
+      "narrative": null,
+      "content": "[]{#section:preparatorymaterial label=\"section:preparatorymaterial\"}\n\nIn this section, we will introduce some notations related to elliptic curves ${\\mathbf{E}_{q}}$ and to Jacobi theta function.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Divisors and sectors on the elliptic curve ${\\mathbf{E}_{q}} = {\\mathbf C}^*/q^{\\mathbf Z}$",
+      "pageStart": 73,
+      "pageEnd": 77,
+      "target": "../sections/sec-046-151-divisors-and-sectors-on-the-elliptic-curve-m.md",
+      "narrative": null,
+      "content": "[]{#subsection:divisorsonEq label=\"subsection:divisorsonEq\"}\n\nThe projection $p: {\\mathbf C}^{*} \\rightarrow {\\mathbf{E}_{q}}$ and the discrete logarithmic $q$-spiral $[\\lambda;q]$ were defined in the general notations, section [\\[section:generalnotations\\]](#section:generalnotations){reference-type=\"ref\" reference=\"section:generalnotations\"}. In this chapter, we shall usually shorten the latter notation into $[\\lambda] := [\\lambda;q]$. We call *divisor* a finite formal sum of weighted such $q$-spirals: []{#not57 label=\"not57\"} $$\\Lambda = \\nu_1 [\\lambda_1] + \\cdots + \\nu_m [\\lambda_m], \n\\text",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-047",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Jacobi Theta function, $q$-exponential growth and $q$-Gevrey series",
+      "pageStart": 77,
+      "pageEnd": 79,
+      "target": "../sections/sec-047-152-jacobi-theta-function-q-exponential-growth-a.md",
+      "narrative": null,
+      "content": "[]{#subsection:JacobiTheta label=\"subsection:JacobiTheta\"}\n\nJacobi's theta function $\\theta(z;q) = \\theta(z)$ was defined by equation [\\[eqn:tripleproduit\\]](#eqn:tripleproduit){reference-type=\"eqref\" reference=\"eqn:tripleproduit\"} page . From its functional equation, one draws: $$\\forall (z,n) \\in {\\mathbf C}^* \\times {\\mathbf Z}~,~\n\\theta(q^nz)=q^{n(n+1)/2}~z^{n}~\\theta(z).$$ Moreover, for all $z\\in{\\mathbf C}^*$, one has: $$\\label{not65}\n\\left |\\theta(z) \\right |\\leq \ne(z) := e(z;q) :=\\theta\\left(\\left |z\\right |;\\left |q \\right |\\right).$$\n\n::: lemm\n[]{#lemm:thetamin0 label=\"lemm:thetamin0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-048",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics relative to a divisor",
+      "pageStart": 79,
+      "pageEnd": 80,
+      "target": "../sections/sec-048-16-asymptotics-relative-to-a-divisor.md",
+      "narrative": null,
+      "content": "[]{#section:asymptoticsreldivisor label=\"section:asymptoticsreldivisor\"}\n\nIn this section, we fix a divisor $\\Lambda := \\nu_1[\\lambda_1] + \\cdots +\\nu_m[\\lambda_m]$ and we write $\\nu := \\left |\\Lambda \\right |= \\nu_1 + \\cdots + \\nu_m$. Without loss of generality, we make the following\\\n**ASSUMPTION:**\\\nThe complex numbers $\\lambda_i$ are pairwise distinct and such that: $$\\label{hypothese:lambdas}\n1\\leq \\left |\\lambda_1 \\right |\\leq \\left |\\lambda_2 \\right |\\leq \n\\cdots \\leq  \\left |\\lambda_m \\right |< \\left |q\\lambda_1 \\right |.$$\n\n::: defi\n[]{#defi:ALambda label=\"defi:ALambda\"} Let $f \\in {\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-049",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics and residues (I)",
+      "pageStart": 80,
+      "pageEnd": 85,
+      "target": "../sections/sec-049-161-asymptotics-and-residues-i.md",
+      "narrative": null,
+      "content": "[]{#subsection:residusI label=\"subsection:residusI\"}\n\nWhen $\\nu=1$, divisor $\\Lambda$ reduces to $[\\lambda]$ and the above definition coincides with the definition of ${\\mathbb A}_{q;1}^{[\\lambda;q]}$ in []{#not69 label=\"not69\"} [@zh3], [@rz]. After [@rz], one has $f \\in {\\mathbb A}_q^{[\\lambda]}$ if, and only if, there exists an integer $N \\in {\\mathbf N}$, a $q$-Gevrey sequence $(c_n)_{n\\ge N}$ of order $(-1)$ and a function $h$ holomorphic near $z=0$ such that, for any $z\\in S([\\lambda],0;|\\lambda q^{-N}|)$: $$f(z) = \\sum_{n\\ge N} ~ \\dfrac{c_n}{z-q^{-n}\\lambda} + h(z).$$\n\nIn the sequel, we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-050",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics and residues (II)",
+      "pageStart": 85,
+      "pageEnd": 89,
+      "target": "../sections/sec-050-162-asymptotics-and-residues-ii.md",
+      "narrative": null,
+      "content": "[]{#subsection:residusII label=\"subsection:residusII\"}\n\nAfter [@rz], for any $f \\in {\\mathbb A}_q^{[\\lambda]}$, the function $z \\mapsto F(z) := \\theta(-\\frac z\\lambda)~f(z)$ is analytic in some punctured disk $0 < \\left |z \\right |< \\left |\\lambda q^{-N} \\right |$, with (at most) a first order $q$-exponential growth when $z$ goes to $0$, and such that its restriction to the $q$-spiral $[\\lambda]$ has at most a growth of $q$-Gevrey order $0$[^1]. In order to extend this result to a general divisor $\\Lambda$ (with degree $\\nu > 1$), we introduce the following definition.\n\n::: defi\n[]{#defi:Lambd",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-051",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From a $q$-Gevrey power series to an entire function",
+      "pageStart": 89,
+      "pageEnd": 92,
+      "target": "../sections/sec-051-171-from-a-q-gevrey-power-series-to-an-entire-fu.md",
+      "narrative": null,
+      "content": "[]{#subsection:qGevreytoentire label=\"subsection:qGevreytoentire\"}\n\nAs before, let $\\Lambda = \\sum\\limits_{1\\le i\\le m}\\nu_i[\\lambda_i]$ be a divisor and let $\\theta_\\Lambda$ be the associated theta function given by the relation [\\[eqn:thetalambda\\]](#eqn:thetalambda){reference-type=\"eqref\" reference=\"eqn:thetalambda\"}.\n\n::: lemm\n[]{#lemm:thetatronque label=\"lemm:thetatronque\"} Consider the Laurent series expansion $\\sum\\limits_{n\\in{\\mathbf Z}} \\beta_n~z^n$ of $\\theta_\\Lambda$.\n\n1.  For all $(k, r) \\in {\\mathbf Z}^2$, one has: $$\\label{eqn:beta}\n    \\beta_{k\\nu+r} = \\left(\\frac L{q^r}\\right)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-052",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The $q$-Gevrey theorem of Borel-Ritt",
+      "pageStart": 92,
+      "pageEnd": 94,
+      "target": "../sections/sec-052-172-the-q-gevrey-theorem-of-borel-ritt.md",
+      "narrative": null,
+      "content": "[]{#subsection:qGevreyBorelRitt label=\"subsection:qGevreyBorelRitt\"}\n\nThe main result of this paragraph is the following[^1].\n\n::: theo\n[]{#theo:BorelRitt label=\"theo:BorelRitt\"} The mapping $J$ sending an element $f$ to its asymptotic expansion is a surjective linear map from the ${\\mathbf C}$-vector space ${\\mathbb A}_{q}^{\\Lambda}$ to the ${\\mathbf C}$-vector space ${{\\mathbf C}[[z]]}_{q;1/\\nu}$.\n:::\n\n::: proof\n*Proof.* Let $\\hat f = \\sum\\limits_{n\\ge 0}a_nz^n$ be a $q$-Gevrey series of order $1/\\nu$ and let $F$ be the function defined in proposition [\\[prop:ftheta\\]](#prop:ftheta){referenc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-053",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Flat functions with respect to a divisor",
+      "pageStart": 94,
+      "pageEnd": 95,
+      "target": "../sections/sec-053-173-flat-functions-with-respect-to-a-divisor.md",
+      "narrative": null,
+      "content": "[]{#subsection:flatfunctions label=\"subsection:flatfunctions\"}\n\nIn the proof of theorem [\\[theo:BorelRitt\\]](#theo:BorelRitt){reference-type=\"ref\" reference=\"theo:BorelRitt\"}, function $F$ was defined up to a function of the form $\\dfrac{P}{\\theta_\\Lambda}$, where $P$ is a polynomial in $z$ and $z^{-1}$. We shall see that, if $h$ denotes a meromorphic function at $z=0$, then $\\dfrac{h}{\\theta_\\Lambda}$ represents a function with trivial asymptotic expansion, that is, $\\dfrac{h}{\\theta_\\Lambda} \\in \\text{Ker~}J$ with notations from theorem [\\[theo:BorelRitt\\]](#theo:BorelRitt){reference-type=\"r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-054",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relative divisors and multisummable functions",
+      "pageStart": 95,
+      "pageEnd": 95,
+      "target": "../sections/sec-054-18-relative-divisors-and-multisummable-functions.md",
+      "narrative": null,
+      "content": "[]{#section:relativedivisorsandmultisummable label=\"section:relativedivisorsandmultisummable\"}\n\nTheorems [\\[theo:BorelRitt\\]](#theo:BorelRitt){reference-type=\"ref\" reference=\"theo:BorelRitt\"} and [\\[theo:Lambdaplate\\]](#theo:Lambdaplate){reference-type=\"ref\" reference=\"theo:Lambdaplate\"} show that, for each divisor $\\Lambda$ with degree $\\nu \\in {\\mathbf N}^*$, the datum of a $q$-Gevrey series of order $1/\\nu$ is equivalent to the datum of an element in space ${\\mathbb A}_q^\\Lambda$ together with a function of the form $\\dfrac{h}{\\theta_\\Lambda}$ for some $h \\in {{\\mathbf C}(\\{z\\})}$. When stu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-055",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relative divisors and two levels asymptotics",
+      "pageStart": 95,
+      "pageEnd": 96,
+      "target": "../sections/sec-055-181-relative-divisors-and-two-levels-asymptotics.md",
+      "narrative": null,
+      "content": "[]{#subsection:relativedivisorsandtwolevels label=\"subsection:relativedivisorsandtwolevels\"}\n\nLet $\\Lambda^\\prime$, $\\Lambda$ be two divisors. Assume that $\\Lambda^\\prime < \\Lambda$, meaning that $\\Lambda^\\prime = \\sum\\limits_{1\\le i\\le m}\\nu_i^\\prime[\\lambda_i]$, that $\\Lambda = \\sum\\limits_{1\\le i\\le m}\\nu_i[\\lambda_i]$, $0 \\leq \\nu_i^\\prime \\leq \\nu_i$, $\\nu_i > 0$ and that $\\left |\\Lambda \\right |> \\left |\\Lambda^\\prime \\right |$.\n\n::: defi\n[]{#defi:diviseurrelatif label=\"defi:diviseurrelatif\"} []{#not76 label=\"not76\"} Let $\\Lambda^\\prime < \\Lambda$ and let $F$ be a function defined and an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-056",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Multisummable functions",
+      "pageStart": 96,
+      "pageEnd": 99,
+      "target": "../sections/sec-056-182-multisummable-functions.md",
+      "narrative": null,
+      "content": "[]{#subsection:multisummable label=\"subsection:multisummable\"}\n\nMore generally, let $$\\Lambda_1 < \\Lambda_1 + \\Lambda_2 < \\cdots <\n\\Lambda_1 + \\Lambda_2 + \\cdots + \\Lambda_m= \\Lambda.$$ For $i$ from $1$ to $m+1$, put []{#not77 label=\"not77\"} $$\\begin{aligned}\n\\Lambda_{\\ge i} &:= \\sum\\limits_{j\\ge i}\\Lambda_j \\\\\n\\text{and~}\n\\Lambda_{\\le i} &:= \\sum\\limits_{j\\le i}\\Lambda_j.\n\\end{aligned}$$ Also, we will write $\\Lambda_{\\ge m+1} = \\Lambda_{\\le 0} = {\\bf O}$, where ${\\bf O}$ stands for the null divisor, and $\\Lambda_{\\ge 0} = \\Lambda_{\\le m} = \\Lambda$. For short, we shall call $(\\Lambda_1,\\Lambd",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-057",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Analytic classification of linear $q$-difference equations",
+      "pageStart": 99,
+      "pageEnd": 100,
+      "target": "../sections/sec-057-19-analytic-classification-of-linear-q-differenc.md",
+      "narrative": null,
+      "content": "[]{#section:analyticclassificationCZ label=\"section:analyticclassificationCZ\"}\n\nWe now return to the classification problem, with the notations of chapter [\\[chapter:isoformalclasses\\]](#chapter:isoformalclasses){reference-type=\"ref\" reference=\"chapter:isoformalclasses\"}. In particular, we consider a block diagonal matrice $A_{0}$ as in [\\[eqn:formestandarddiagonaleentiere\\]](#eqn:formestandarddiagonaleentiere){reference-type=\"eqref\" reference=\"eqn:formestandarddiagonaleentiere\"} page , and the corresponding space ${\\mathcal{F}}(P_{1},\\ldots,P_{k})$ of isoformal analytic classes within the for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-058",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summability of formal solutions",
+      "pageStart": 100,
+      "pageEnd": 105,
+      "target": "../sections/sec-058-191-summability-of-formal-solutions.md",
+      "narrative": null,
+      "content": "[]{#subsection:sommabilite label=\"subsection:sommabilite\"}\n\nConsider the equation [\\[eqn:conjugaison\\]](#eqn:conjugaison){reference-type=\"eqref\" reference=\"eqn:conjugaison\"} and keep the notation [\\[eqn:formestandardtriangulaireentiere\\]](#eqn:formestandardtriangulaireentiere){reference-type=\"eqref\" reference=\"eqn:formestandardtriangulaireentiere\"}. To each pair $(i,j)$ such that $i < j$, we associate a divisor $\\Lambda_{i,j}$ with degree $\\mu_j - \\mu_i$; we assume that $\\Lambda_{i+1,j} < \\Lambda_{i,j} < \\Lambda_{i,j+1}$, meaning that $\\Lambda_{i,j} = \\sum\\limits_{\\ell=i}^{j-1}\\Lambda_{\\ell,\\e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/ex-sec-059-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 105,
+      "pageEnd": 107,
+      "target": "ex-sec-059-01.md",
+      "narrative": null,
+      "content": "— Setting Au := \u0012z−1 z−1u \u0013 , with u ∈C({z}), and F = \u00121 f \u0013 , we saw that Au = F[A0] ⇐⇒zσqf −f = u. This admits a unique formal solution ˆf, which can be computed by iterating the z-adically contracting operator f 7→−u+zσqf. If A is in Birkhoﬀ-Guenther normal form, u ∈C and ˆf = −u Q (the Tshakaloﬀseries). We want f to be meromorphic on some punctured neighborhood of 0 in C∗, which we write f ∈M(C∗, 0), and to have (in germ) half q-spirals of poles. For simplicity, we shall assume that u is holomorphic on C∗, so that f will have to be meromorphic on the whole of C∗with complete q-spirals of p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-059",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Privileged cocycles",
+      "pageStart": 105,
+      "pageEnd": 107,
+      "target": "../sections/sec-059-20-privileged-cocycles.md",
+      "narrative": null,
+      "content": "In ”applications”, it is sometimes desirable to have explicit cocycles to\nwork with instead of cohomology classes. We shall now describe cocycles with\nnice properties, that can be explicitly computed from a matrix in standard\nform. Most of the proofs of what follows are consequences of theorem 5.5.3.\nHowever, they can also be obtained through the more elementary approach\nof [50], which we shall brieﬂy summarize here in subsection 6.1.1.\nFix A0 as in (3.1) page 36 and let M0 be the corresponding pure module.\nAll notations that follow are relative to this A0 and M0. Recall from section\n1.3 at th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-060",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Privileged cocycles",
+      "pageStart": 107,
+      "pageEnd": 110,
+      "target": "../sections/sec-060-202-privileged-cocycles.md",
+      "narrative": null,
+      "content": "[]{#section:privilegedcocycles label=\"section:privilegedcocycles\"}\n\nIn \\\"applications\\\", it is sometimes desirable to have explicit cocycles to work with instead of cohomology classes. We shall now describe cocycles with nice properties, that can be explicitly computed from a matrix in standard form. Most of the proofs of what follows are consequences of theorem [\\[theo:sommabilite\\]](#theo:sommabilite){reference-type=\"ref\" reference=\"theo:sommabilite\"}. However, they can also be obtained through the more elementary approach of [@JSStokes], which we shall briefly summarize here in subsection [",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-061",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "D'evissage $q$-Gevrey",
+      "pageStart": 110,
+      "pageEnd": 110,
+      "target": "../sections/sec-061-21-devissage-q-gevrey.md",
+      "narrative": null,
+      "content": "[]{#section:devissageqGevrey label=\"section:devissageqGevrey\"}\n\nThe following results come mostly from [@JSStokes].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-062",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The abelian case of two slopes",
+      "pageStart": 110,
+      "pageEnd": 111,
+      "target": "../sections/sec-062-211-the-abelian-case-of-two-slopes.md",
+      "narrative": null,
+      "content": "[]{#subsection:abeliancase label=\"subsection:abeliancase\"}\n\nWhen the Newton polygon of $M_{0}$ has only two slopes $\\mu < \\nu$ with multiplicities $r,s$, so that we can write: $$A_{0} = \\begin{pmatrix} z^{\\mu} B & 0 \\\\ 0 & z^{\\nu} C \\end{pmatrix},\n\\quad B \\in {\\text{GL}}_{r}({\\mathbf C}), \\; C \\in {\\text{GL}}_{s}({\\mathbf C}),$$ then the unipotent group ${\\mathfrak{G}}_{A_{0}}$ is isomorphic to the vector space ${\\text{Mat}}_{r,s}$ through the isomorphism: $$F \\mapsto \\begin{pmatrix} I_{r} & F \\\\ 0 & I_{s} \\end{pmatrix}$$ from the latter to the former. Accordingly, the sheaf of unipotent group",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-063",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A sequence of central extensions",
+      "pageStart": 111,
+      "pageEnd": 112,
+      "target": "../sections/sec-063-212-a-sequence-of-central-extensions.md",
+      "narrative": null,
+      "content": "[]{#subsection:centralextensions label=\"subsection:centralextensions\"}\n\n[]{#not91 label=\"not91\"} For simplicity, we write ${\\mathfrak{G}}$ for ${\\mathfrak{G}}_{A_{0}}$. The Lie algebra ${\\mathfrak{g}}$ of ${\\mathfrak{G}}$ consists in all nilpotent matrices of the form: $$\\begin{pmatrix}\n0_{r_{1}}  & \\ldots & \\ldots & \\ldots & \\ldots \\\\\n\\ldots & \\ldots & \\ldots  & F_{i,j} & \\ldots \\\\\n0      & \\ldots & \\ldots   & \\ldots & \\ldots \\\\\n\\ldots & 0 & \\ldots  & \\ldots & \\ldots \\\\\n0      & \\ldots & 0       & \\ldots & 0_{r_{k}}    \n\\end{pmatrix},$$ where $0_r$ is the square null matrix of size $r$ and wh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-064",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Explicit computation",
+      "pageStart": 112,
+      "pageEnd": 114,
+      "target": "../sections/sec-064-213-explicit-computation.md",
+      "narrative": null,
+      "content": "[]{#subsection:explicitcomputation label=\"subsection:explicitcomputation\"}\n\nWe want to make more explicit theorem [\\[theo:devissageH1\\]](#theo:devissageH1){reference-type=\"ref\" reference=\"theo:devissageH1\"}.\\\nSo we assume that $A,A'$ represent two classes in $H^{1}({\\mathbf{E}_{q}},\\Lambda/\\Lambda^{\\geq \\delta+1})$ having the same image in $H^{1}({\\mathbf{E}_{q}},\\Lambda/\\Lambda^{\\geq \\delta})$. Up to an analytic gauge transform, the situation just described can be made explicit as follows. Assume that $A,A'$ have graded part $A_{0}$ and are in Birkhoff-Guenther normal form. Assume moreover th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-065",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Vector bundles associated to $q$-difference modules",
+      "pageStart": 114,
+      "pageEnd": 114,
+      "target": "../sections/sec-065-22-vector-bundles-associated-to-q-difference-mod.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-066",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The general construction",
+      "pageStart": 114,
+      "pageEnd": 115,
+      "target": "../sections/sec-066-221-the-general-construction.md",
+      "narrative": null,
+      "content": "[]{#subsection:vectorbundles label=\"subsection:vectorbundles\"}\n\nFor details on the following, see [@JSfvqde]. To any $q$-difference module $M$ over ${{\\mathbf C}(\\{z\\})}$, one can associate []{#not95 label=\"not95\"} a holomorphic vector bundle ${\\mathcal{F}}_{M}$ over ${\\mathbf{E}_{q}}$ in such a way that the correspondence $M \\leadsto {\\mathcal{F}}_{M}$ is functorial and that the functor is faithful, exact and compatible with tensor products and duals. If one restricts to pure isoclinic modules with a fixed slope, the functor is moreover *fully* faithful (this follows immediately from the case",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-067",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sheaf theoretical interpretation of irregularity",
+      "pageStart": 115,
+      "pageEnd": 118,
+      "target": "../sections/sec-067-222-sheaf-theoretical-interpretation-of-irregula.md",
+      "narrative": null,
+      "content": "[]{#subsection:sheaftheoreticirregularity label=\"subsection:sheaftheoreticirregularity\"}\n\nWe interpret here in sheaf theoretical terms the formula relating irregularity and the dimension of $\\dim {\\mathcal{F}}(P_{1},\\ldots,P_{k})$ given in subsection [\\[subsection:algebraicirregularity\\]](#subsection:algebraicirregularity){reference-type=\"ref\" reference=\"subsection:algebraicirregularity\"}.\\\nActually, the irregularity of $\\underline{\\text{End}}(M_{0})$ comes from its positive part: $$\\label{not97}\n\\underline{\\text{End}}^{> 0}(M_{0}) = \n\\bigoplus_{1 \\leq i < j \\leq k} \\underline{\\text{Hom}}(P_{i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-068",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notations",
+      "pageStart": 118,
+      "pageEnd": 118,
+      "target": "../sections/sec-068-2221-notations.md",
+      "narrative": null,
+      "content": "We use some notations from $q$-calculus for this chapter only. Let $p \\in {\\mathbf C}$ be such that $0 < \\left |p \\right |< 1$, *e.g.* $p := q^{-1}$. Let $a,a_{1},\\ldots,a_{k} \\in {\\mathbf C}$ and $n \\in {\\mathbf N}$. The *$q$-Pochhammer symbols* are: []{#not98 label=\"not98\"} $$\\begin{aligned}\n\\index{$q$-Pochhammer symbol}\n(a;p)_{n} & := \\prod_{0 \\leq i < n} (1 - a p^{i}), \\\\\n(a;p)_{\\infty} & := \\prod_{i = 0}^{\\infty} (1 - a p^{i}), \\\\\n(a_{1},\\ldots,a_{k};p)_{n} & := \\prod_{j=1}^{k} (a_{j};p)_{n}, \\\\\n(a_{1},\\ldots,a_{k};p)_{\\infty} & := \\prod_{j=1}^{k} (a_{j};p)_{\\infty}.\n\\end{aligned}$$ Note",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-069",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The $q$-Euler equation and confluent basic hypergeometric series",
+      "pageStart": 118,
+      "pageEnd": 119,
+      "target": "../sections/sec-069-23-the-q-euler-equation-and-confluent-basic-hype.md",
+      "narrative": null,
+      "content": "[]{#section:qEuler label=\"section:qEuler\"}\n\nConsider a $q$-difference system of rank $2$ and level $1$ (that is, its slopes are $\\mu,\\mu+1$ for some $\\mu \\in {\\mathbf Z}$). Through some analytic gauge transformation, its matrix can be put in the form $b z^{\\mu} ~ \\begin{pmatrix} 1 & u \\\\ 0 & a z \\end{pmatrix}$, where $a,b \\in {\\mathbf C}^{*}$, $\\mu \\in {\\mathbf Z}$ and $u \\in {{\\mathbf C}(\\{z\\})}$. The $b z^{\\mu}$ factor corresponds to a tensor product by a rank one object $L$, which does not affect the Stokes phenomenon, nor the isoformal classification, *i.e.* the map $M \\leadsto L \\otimes M",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-070",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A digest on the $q$-Euler equation",
+      "pageStart": 119,
+      "pageEnd": 119,
+      "target": "../sections/sec-070-231-a-digest-on-the-q-euler-equation.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-071",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Formal solution",
+      "pageStart": 119,
+      "pageEnd": 119,
+      "target": "../sections/sec-071-2311-formal-solution.md",
+      "narrative": null,
+      "content": "We obtain it, for instance, by iterating the $z$-adically contracting operator $f \\mapsto -u + a z \\sigma_qf$. One finds the fixed point: $$\\hat{f} = - \\sum_{n \\geq 0} a^{n} q^{n(n-1)/2} z^{n} \\sigma_q^{n} u.$$ If $u$ is a constant, the right hand side is just $- u \\text{\\tencyr\\cyracc Ch}(a z)$. If $u = \\sum\\limits_{k >> - \\infty} u_{k} z^{k}$, then $\\hat{f} = - \\sum\\limits_{k >> - \\infty} u_{k} z^{k} \\text{\\tencyr\\cyracc Ch}(q^{k} a z)$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-072",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Birkhoff-Guenther normal form",
+      "pageStart": 119,
+      "pageEnd": 121,
+      "target": "../sections/sec-072-2312-birkhoff-guenther-normal-form.md",
+      "narrative": null,
+      "content": "There is a unique $\\alpha \\in {\\mathbf C}$ such that, setting $v := u - \\alpha$, the unique formal solution of $a z \\sigma_qf - f = v$ is convergent. Indeed, putting $v = \\sum\\limits_{k >> - \\infty} v_{k} z^{k}$, from the relation $a q^{n-1} f_{n-1} - f_{n} = v_{n}$, we draw that $\\sum\\limits_{n \\in {\\mathbf Z}} a_{n} q^{-n(n-1)/2} v_{n} = 0$, which also writes: $\\alpha = {\\mathcal{B}_{q,1}}u(a^{-1})$, where, as usual (see definition [\\[defi:qBorel\\]](#defi:qBorel){reference-type=\"ref\" reference=\"defi:qBorel\"}, page ), ${\\mathcal{B}_{q,1}}u(\\xi) = \\sum\\limits_{k >> - \\infty} u_{k} q^{-k(k-1)/2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-073",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some confluent basic hypergeometric functions",
+      "pageStart": 121,
+      "pageEnd": 122,
+      "target": "../sections/sec-073-232-some-confluent-basic-hypergeometric-function.md",
+      "narrative": null,
+      "content": "[]{#subsection:confluenthypergeom label=\"subsection:confluenthypergeom\"}\n\nUsual basic hypergeometrics series have the form: $$\\label{not103}\n{}_{2} \\Phi_{1}(a,b;c;q,z) := \\sum_{n \\geq 0}\n\\dfrac{(a,b;q^{-1})_{n}}{(c,q^{-1};q^{-1})_{n}} z^{n}~,~\n\\text{~where~} a,b,c \\in {\\mathbf C}^{*}.$$ (Remember that here, $\\left |q \\right |> 1$.) Writing for short $F(z)$ this series, the rescaling $F(- q^{-1} z/c)$ degenerates, when $c \\to \\infty$, into a *confluent* basic hypergeometrics series: $$\\phi(a,b;q,z) := \\sum_{n \\geq 0}\n\\dfrac{(a,b;q^{-1})_{n}}{(q^{-1};q^{-1})_{n}} q^{n(n+1)/2} z^{n}~,~\n\\text{~whe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-074",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some special cases",
+      "pageStart": 122,
+      "pageEnd": 124,
+      "target": "../sections/sec-074-233-some-special-cases.md",
+      "narrative": null,
+      "content": "[]{#subsection:specialcases label=\"subsection:specialcases\"}\n\nTaking $a := b := q^{-1}$ yields: $$\\hat{f} = \\sum_{n \\geq 0} (q^{-1};q^{-1})_{n} q^{n(n+1)/2} z^{n}.$$ The recurrence relation $\\dfrac{u_{n+1}}{u_{n}} = q^{n+1} - 1$ immediately gives the non homogeneous equation $q z \\sigma_qf - (1+z) f = -1$. This, in turn, boils down to the straight $q$-Euler equation by setting $g := \\dfrac{z}{(-q^{-1} z;q^{-1})_{\\infty}} f$, so that $z \\sigma_qg - g = \\dfrac{- z}{(-z;q^{-1})_{\\infty}} \\cdot$\\\nTaking $a := b := 0$ yields: $$\\hat{f} = \\sum_{n \\geq 0} \\dfrac{1}{(q^{-1};q^{-1})_{n}} q^{n(n+1)/2} z",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-075",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The symmetric square of the $q$-Euler equation",
+      "pageStart": 124,
+      "pageEnd": 125,
+      "target": "../sections/sec-075-24-the-symmetric-square-of-the-q-euler-equation.md",
+      "narrative": null,
+      "content": "[]{#section:qEulersquare label=\"section:qEulersquare\"}\n\nThis will be our only example with more than two slopes. Consider the square $\\hat Y := \\text{\\tencyr\\cyracc Ch}^{2}$ of the Tshakaloff series: $$\\hat Y(z) = \\left(\\sum_{n\\ge 0}q^{n(n-1)/2} z^n\\right)^2.$$ As we shall see in section [\\[section:qEulersquareanalytic\\]](#section:qEulersquareanalytic){reference-type=\"ref\" reference=\"section:qEulersquareanalytic\"}, the series $\\hat Y = \\text{\\tencyr\\cyracc Ch}^{2}$ does not support the same process of analytic summation as $\\text{\\tencyr\\cyracc Ch}$ itself. This comes from the fact that the Ne",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-076",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebraic aspects",
+      "pageStart": 125,
+      "pageEnd": 125,
+      "target": "../sections/sec-076-241-algebraic-aspects.md",
+      "narrative": null,
+      "content": "satisﬁed by Q is nothing but the cohomological equation for\n\u00121\n−1\n0\nz\n\u0013\n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-077",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Newton polygon of a symmetric square",
+      "pageStart": 125,
+      "pageEnd": 127,
+      "target": "../sections/sec-077-2411-newton-polygon-of-a-symmetric-square.md",
+      "narrative": null,
+      "content": "To find the equation satisfied by a product of two functions, one uses the tensor product of two systems or modules; for a square, one uses likewise the symmetric square.\\\nLet $M = (V,\\Phi)$ be a $q$-difference module and $T^{2} M := M \\otimes M = (V \\otimes V,\\Phi \\otimes \\Phi)$ its tensor square. The linear automorphism $x \\otimes y \\mapsto y \\otimes x$ commutes with $\\Phi \\otimes \\Phi$, so that it actually defines an involutive $q$-difference automorphism of $M \\otimes M$, and a splitting: $$\\label{not105}\nT^{2} M = S^{2} M \\oplus \\Lambda^{2} M.$$ If $M$ has slopes $\\mu_{1},\\ldots,\\mu_{k}$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-078",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebraic summation of the square of the Tshakaloff series",
+      "pageStart": 127,
+      "pageEnd": 127,
+      "target": "../sections/sec-078-2412-algebraic-summation-of-the-square-of-the-ts.md",
+      "narrative": null,
+      "content": "The fact that $F[A_{0}] = A \\Rightarrow S^{2} F[B_{0}] = B$ is purely algebraic and stays true of the sum in direction $\\overline{c}$, so that one gets the following sums: $$S_{\\overline{c}} G = S^{2} (S_{\\overline{c}} F) =\n\\begin{pmatrix} 1 & 2 f_{\\overline{c}} & f_{\\overline{c}}^{2} \\\\ \n0 & 1 & f_{\\overline{c}} \\\\ 0 & 0 & 1 \\end{pmatrix}.$$ Moreover, observing that $x \\mapsto \\begin{pmatrix} 1 & 2 x & x^{2} \\\\ \n0 & 1 & x \\\\ 0 & 0 & 1 \\end{pmatrix}$ is a morphism from ${\\mathbf C}$ ${\\mathbf C}$ to ${\\text{GL}}_{3}({\\mathbf C})$, one gets the explicit formula for the cocycle: $$S_{\\overline{c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-079",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Analytic aspects",
+      "pageStart": 127,
+      "pageEnd": 127,
+      "target": "../sections/sec-079-242-analytic-aspects.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-080",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The square of the Tshakaloff series is not summable with one level",
+      "pageStart": 127,
+      "pageEnd": 128,
+      "target": "../sections/sec-080-2421-the-square-of-the-tshakaloff-series-is-not.md",
+      "narrative": null,
+      "content": "Consider the square $\\hat Y := \\text{\\tencyr\\cyracc Ch}^{2}$ of the Tshakaloff series: $$\\hat Y(z) = \\left(\\sum_{n\\ge 0}q^{n(n-1)/2} z^n\\right)^2.$$ Its $q$-Borel transform ${\\mathcal{B}_{q,1}}\\hat Y$ (at level $1$) can be computed from the following simple remark: $$\\hat f(z) = \\sum_{n\\ge 0} a_n z^n \\text{~and~} \\hat g \\in{{\\mathbf C}[[z]]}\n\\Longleftrightarrow\n{\\mathcal{B}_{q,1}}(\\hat f \\hat g) =\n\\sum_{n \\ge 0} a_n q^{-n(n-1)/2} \\xi^n {\\mathcal{B}_{q,1}}\\hat g(q^{-n} \\xi).$$ It follows that, if $P(\\xi) = {\\mathcal{B}_{q,1}}\\hat Y(\\xi){\\prod_{n\\ge 0}(1-q^{-n}\\xi)}$, then $P$ is an entire funct",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-081",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Multisummability",
+      "pageStart": 128,
+      "pageEnd": 129,
+      "target": "../sections/sec-081-2422-multisummability.md",
+      "narrative": null,
+      "content": "::: prop\nLet $\\lambda$, $\\mu\\in{\\mathbf C}^*$ and let $f\\in{\\mathbb A}_q^{[\\lambda]}$ and $g\\in_q^{[\\mu]}$.\n\n1.  If $[\\lambda] = [\\mu]$, then $fg \\in {\\mathbb O}_{([\\lambda],\\lambda])}^{2[\\lambda]}$.\n\n2.  If $[\\lambda] \\neq [\\mu]$, then, generically $fg \\notin \n    {\\mathbb O}_{([\\lambda],[\\mu])}^{[\\lambda]+[\\mu]}\\cup \n    {\\mathbb O}_{([\\mu],[\\lambda])}^{[\\lambda]+[\\mu]}$.\n:::\n\n::: proof\n*Proof.* Write $f = F/\\theta_\\lambda$, $g=G/\\theta_\\mu$; from theorem [\\[theo:fF\\]](#theo:fF){reference-type=\"ref\" reference=\"theo:fF\"}, one gets $F \\in {\\mathbb E}_0^{[\\lambda]}$ and $G\\in {\\mathbb E}_0^{[\\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-082",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From the Mock Theta functions to the $q$-Euler equation",
+      "pageStart": 129,
+      "pageEnd": 129,
+      "target": "../sections/sec-082-25-from-the-mock-theta-functions-to-the-q-euler.md",
+      "narrative": null,
+      "content": "123\none has:\n(fλ)2 ∈O2[λ]\n([λ],λ]),\nand this is the solution provided by theorem 5.5.3 for equation (7.4) with\nΛ = 2[λ] and Λ1 = Λ2 = [λ]. However, if [λ]̸ = [µ], then fλfµ is not the\nsolution provided by that theorem with Λ = [λ]+[µ] and {Λ1, Λ2} = {[λ], [µ]}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-083",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Possibility of a multisummation process",
+      "pageStart": 129,
+      "pageEnd": 132,
+      "target": "../sections/sec-083-2423-possibility-of-a-multisummation-process.md",
+      "narrative": null,
+      "content": "presently known to yield the solution of (7.4) in the spirit of theorem 5.5.3\nwith Λ = [λ] + [µ]. A multisummation algorithm does exist in a very diﬀerent\nsetting, due to the third author. The following result shows its similarity to\nclassical Borel-Laplace summation.\nTheorem 7.2.3. — In (7.4), we have L = (zσq −1)(z2σq −1) and the series\nˆY is (1, 1/2)-summable by the following process:\nˆf =\nX\nn≥0\nanzn\nBq,1\n−→\nϕ :=\nX\nn≥0\nanq−n(n−1)/2ξn\nA∗\nq;1,1/2\n−→\nf ∗\n1\nL∗\nq;1/2\n−→f ∗\n(1,1/2).\nFor a basic introduction to this method and explanation of the notations\nabove, see [19], which contains further re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/rem-sec-083-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 129,
+      "pageEnd": 132,
+      "target": "rem-sec-083-02.md",
+      "narrative": null,
+      "content": "— The parameter λ := α/β is linked to monodromy. Indeed, the local Galois group of (7.7) at 0 is the set of matrices \u0012γ(α) γ(β) \u0013 , where CHAPTER 7. EXAMPLES OF THE STOKES PHENOMENON γ runs through the group endomorphisms of C∗that send q to 1; and the local monodromy group is the rank 2 free abelian subgroup with generators corresponding to two particular choices of γ described in [49].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/thm-sec-083-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 129,
+      "pageEnd": 132,
+      "target": "thm-sec-083-01.md",
+      "narrative": null,
+      "content": "— In (7.4), we have L = (zσq −1)(z2σq −1) and the series ˆY is (1, 1/2)-summable by the following process: ˆf = X n≥0 anzn Bq,1 −→ ϕ := X n≥0 anq−n(n−1)/2ξn A∗ q;1,1/2 −→ f ∗ L∗ q;1/2 −→f ∗ (1,1/2). For a basic introduction to this method and explanation of the notations above, see [19], which contains further references to this work.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-084",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Back to the the Mock Theta function",
+      "pageStart": 132,
+      "pageEnd": 133,
+      "target": "../sections/sec-084-252-back-to-the-the-mock-theta-function.md",
+      "narrative": null,
+      "content": "study φ, ψ, ν, ρ by setting x = 1 in s(α, β; q, x).\n(The function χ involves\nx = −q and f, ω will not comply the condition β/α̸ ∈qZ: in [63], their study\nis distinct, though similar.) Up to the knowledge of standard q-functions, one\nis reduced to the study of:\nU(λ) := Uλ(1) and V (λ) := Vλ(1).\nThese are solutions of the q-diﬀerence equations:\nU(qλ) −λU(λ/q) = (1 −λ) θ(qλ; q2)\n(q, q; q)∞\n,\nV (qλ) −qλV (λ/q) = (1 −λ)θ(λ/q; q2)\n(q, q; q)∞\n·\nUpon setting:\nU(λ) =: θ(λ; q2)\n(q, q; q)∞\nY (λ) and V (λ) =: θ(λ/q; q2)\n(q, q; q)∞\nZ(λ),\nwe ﬁnd that both Y and Z are solutions of the q-diﬀerence equation:\nX",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-085",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From class numbers of quadratic forms to the $q$-Euler equation",
+      "pageStart": 133,
+      "pageEnd": 133,
+      "target": "../sections/sec-085-26-from-class-numbers-of-quadratic-forms-to-the.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-086",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Birkhoff-Guenther normal form",
+      "pageStart": 133,
+      "pageEnd": 133,
+      "target": "../sections/sec-086-2532-birkhoff-guenther-normal-form.md",
+      "narrative": null,
+      "content": "7.3.3.2. Birkhoﬀ-Guenther normal form. — According to section 3.3, we see\nthat our equation is already in Birkhoﬀ-Guenther normal form. Actually, it is\nthe equation for f such that\n\u00121\nf\n0\n1\n\u0013\nis an isomorphism from\n\u00121\n0\n0\n√qz2\n\u0013\nto\n\u00121\nz −1\n0\n√qz2\n\u0013\n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-087",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Privileged cocycles",
+      "pageStart": 133,
+      "pageEnd": 134,
+      "target": "../sections/sec-087-2533-privileged-cocycles.md",
+      "narrative": null,
+      "content": "There is here an obvious isomorphism of\nΛI(M0) with the vector bundle F1/√qz2 (cf. 3.1.1).\n(More generally, if\nA0 =\n\u0012a\n0\n0\nbzδ\n\u0013\n, then ΛI(M0) ≃Fa/bzδ.) The privileged cocycles of 6.1 are\nbest obtained by the elementary approach of [50] as follows. We look for a\nsolution fc =\ng\nθ2q,c\nwith g holomorphic over C∗. The corresponding equation\nis √qc2σqg −g = (z −1)θ2\nq,c. Writing θq2 =: P τnzn, we see that:\nfc =\n1\nθ2q,c\nX\nn∈Z\n(τn−1c −τn)c−n\n√qc2qn −1\nzn.\nThis is the only solution with poles only on [−c; q] and at most double. It\nmakes sense only for √qc2̸ ∈qZ, which prohibits four values c ∈Eq. The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-088",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The generating series for the class numbers",
+      "pageStart": 134,
+      "pageEnd": 134,
+      "target": "../sections/sec-088-261-the-generating-series-for-the-class-numbers.md",
+      "narrative": null,
+      "content": "[]{#subsection:generatingseries label=\"subsection:generatingseries\"}\n\nConsider the quadratic forms $a x^{2} + 2 h x y + b y^{2}$, with $a,b,h \\in {\\mathbf Z}$, $a,b$ not both even (\"uneven forms\"), and $D := a b - h^{2} > 0$, up to the usual equivalence. For any $D \\in {\\mathbf N}^{*}$, write $F(D)$ the (finite) number of classes of such forms. []{#not112 label=\"not112\"}\n\n::: theo\n[]{#theo:Mordell1916 label=\"theo:Mordell1916\"} Let $f_{0,1}(x) = f_{0,1}(x,\\omega)$ be the unique entire function solution of the system: $$\\begin{cases}\nf_{0,1}(x+1) = f_{0,1}(x), \\\\\nf_{0,1}(x+\\omega) + f_{0,1}(x) =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-089",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Modular relations",
+      "pageStart": 134,
+      "pageEnd": 135,
+      "target": "../sections/sec-089-262-modular-relations.md",
+      "narrative": null,
+      "content": "[]{#section:modularity label=\"section:modularity\"}\n\nIn order to obtain modular and asymptotic properties for the generating series of theorem [\\[theo:Mordell1916\\]](#theo:Mordell1916){reference-type=\"ref\" reference=\"theo:Mordell1916\"}, Mordell generalized his results in 1933. We extract the part illustrating our point. Mordell sets: $$f(x) = f(x,\\omega) := \n\\dfrac{1}{{\\text{i}}} \\sum_{m~odd} \n\\dfrac{(-1)^{(m-1)/2} e^{{\\text{i}}\\pi (m^{2} \\omega/4 + m x)}}{1 + e^{{\\text{i}}\\pi \\omega m}} \\cdot$$ This the unique entire function solution of the system: $$\\begin{cases}\nf(x+1) + f(x) = 0, \\\\\nf(x+\\o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-090",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Related other examples",
+      "pageStart": 135,
+      "pageEnd": 137,
+      "target": "../sections/sec-090-263-related-other-examples.md",
+      "narrative": null,
+      "content": "lowing formula of Hardy and Ramanujan:\n1\n√−iω\nZ +∞\n−∞\ne−iπ(t−ix)2/ω\ncosh πt\ndt =\nZ +∞\n−∞\neiπωt2−2πtx\ncosh πt\ndt\ncan be proved along similar lines, by noting that both sides are entire solutions\nof the system:\n\n\n\n\n\nΦ(x −1) + Φ(x) = 2eiπ(x−1/2)2/ω\n√−iω\n,\nΦ(x + ω) + eiπ(2x+ω)Φ(x) = 2eiπ(3ω/4+x)\nand that the latter admits only one such solution.\nAPPENDIX A\nCLASSIFICATION OF ISOGRADED FILTERED\nDIFFERENCE MODULES\nIn this appendix, we tackle a general classiﬁcation problem, actually an\nalgebraic version of the isoformal analytic classiﬁcation problem of section\n2.3. We ﬁrst describe in section A",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-091",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General setting of the problem",
+      "pageStart": 137,
+      "pageEnd": 140,
+      "target": "../sections/sec-091-a-general-setting-of-the-problem.md",
+      "narrative": null,
+      "content": "Let C a commutative ring and C an abelian C-linear category. We ﬁx a\nﬁnitely graded object:\nP = P1 ⊕· · · ⊕Pk,\nand intend to classify pairs (M, u) made up of a ﬁnitely ﬁltered object:\nM = (0 = M0 ⊂M1 ⊂· · · ⊂Mk = M),\nand of an isomorphism from grM to P:\nu = (ui : Mi/Mi−1 ≃Pi)1≤i≤k.\nAs easily checked, it amounts to the same as giving k exact sequences:\n0 →Mi−1\nwi\n→Mi\nvi→Pi →0.\n1. This is all the more necessary since the work [40] by the ﬁrst two authors strongly\nrelies on this explicit description.\n132\nAPPENDIX A. CLASSIFICATION OF ISOGRADED FILTERED DIFFERENCE MODULES\nThe pairs (M, u) and (M′,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-092",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The devissage",
+      "pageStart": 140,
+      "pageEnd": 141,
+      "target": "../sections/sec-092-a2-the-devissage.md",
+      "narrative": null,
+      "content": "F(P1, . . . , Pk) carries the structure of an aﬃne space over C, and to compute\nits dimension. The case k = 2 suggests that we should assume the C-modules\nExt(Pj, Pi) to be free of ﬁnite rank.\n(As we shall see, the only pairs that\nmatter are those with i < j.) Then, aiming at an induction argument, one\ninvokes a natural onto mapping:\nF(P1, . . . , Pk) −→F(P1, . . . , Pk−1),\nsending the class of (M, u) deﬁned as above to the class of (M′, u′) deﬁned by:\nM′ = (0 = M0 ⊂M1 ⊂· · · ⊂Mk−1 = M′) and u′ = (ui)1≤i≤k−1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-093",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Difference modules over difference rings",
+      "pageStart": 141,
+      "pageEnd": 141,
+      "target": "../sections/sec-093-b-difference-modules-over-difference-rings.md",
+      "narrative": null,
+      "content": "135\nThe preimage of the class of (M′, u′) described above is identiﬁed with\nExt(Pk, M′); and note that Ext(Pk, M′) indeed only depends (up to a canon-\nical isomorphism) on the class of (M′, u′). Under the assumptions we shall\nchoose, we shall see that Ext(Pk, M′) can in turn be unscrewed (d´eviss´e)\nin the Ext(Pk, Pi) for i < k, and we expect to get a space with dimension\nP\n1≤i<j≤k\ndim Ext(Pj, Pi).\nRemark A.1.1. — Once described the space F(P1, . . . , Pk), one can ask for\nthe seemingly more natural problem of the classiﬁcation of those objects M\nsuch that grM ≃P (without prescribing the “pola",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-094",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Difference rings, difference operators",
+      "pageStart": 141,
+      "pageEnd": 142,
+      "target": "../sections/sec-094-b1-difference-rings-difference-operators.md",
+      "narrative": null,
+      "content": "Let K be a com-\nmutative ring and σ a ring automorphism of K. As noticed in 2.1.1, most\nconstructions and statements about diﬀerence ﬁelds and modules remain\nvalid over the diﬀerence ring (K, σ). Our favorite examples are, of course,\n(C{z}, σq), (C({z}), σq), (C[[z]], σq) and (C((z)), σq).\n136\nAPPENDIX A. CLASSIFICATION OF ISOGRADED FILTERED DIFFERENCE MODULES\nMore precisely, we shall assume the following situation. Let C be a commu-\ntative ring (we may think of the the ﬁeld C of complex numbers, or else some\narbitrary ﬁeld of “constants”). Assume that K is a commutative C-algebra\nand σ a C-al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/ex-sec-095-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 142,
+      "pageEnd": 145,
+      "target": "ex-sec-095-01.md",
+      "narrative": null,
+      "content": "2.2. — We write 1 and call unit diﬀerence module the DK,σ- module (K, σ). As a DK,σ-module, is isomorphic to DK,σ/DK,σ(σ −1). For any invertible matrix A ∈GLn(K), putting ΦA(X) := A−1(σX), we deﬁne a diﬀerence module (Kn, ΦA). For instance, if n = 1 and A = (1), this is 1. Any diﬀerence module (V, Φ) such that V is free over K is isomorphic to some (Kn, ΦA). We write DiffMod(K, σ) the full subcategory of ModDK,σ with objects the diﬀerence modules over K. Like ModDK,σ, it is abelian and C-linear. Thus, monomorphisms, epimorphisms, isomorphisms and exact sequences in DiffMod(K, σ) are the same t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prop-sec-095-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 142,
+      "pageEnd": 145,
+      "target": "prop-sec-095-03.md",
+      "narrative": null,
+      "content": "2.5. — The functor M ❀Γ(M) from diﬀerence modules to C-modules is left exact, and one has an identiﬁcation: Γ(M) = {v ∈V | Φ(v) = v}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-095",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Difference modules over difference rings",
+      "pageStart": 142,
+      "pageEnd": 145,
+      "target": "../sections/sec-095-b2-difference-modules-over-difference-rings.md",
+      "narrative": null,
+      "content": "in the category ModDK,σ of left DK,σ-modules. We shall give two alternative\nA.2. DIFFERENCE MODULES OVER DIFFERENCE RINGS\n137\ndescription of these modules.\nTo a left DK,σ-module M, we associate the pair (V, Φ), where the K-module\nV is obtained from M by restriction of scalars and where Φ is the σ-linear (or\nsemi-linear) automorphism of V deﬁned by x 7→σ.x (external multiplication\nin the DK,σ-module M). The property of σ-linearity means:\n∀λ ∈K , ∀x ∈V , Φ(λx) = σ(λ)Φ(x).\nConversely, from such a pair (V, Φ), we can recover M as the DK,σ-\nmodule having V\nas underlying group and the external produ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/rem-sec-095-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 142,
+      "pageEnd": 145,
+      "target": "rem-sec-095-02.md",
+      "narrative": null,
+      "content": "2.3. — Many constructions still make sense, and many proper- ties remain true, and moreover useful, without the projectiveness or ﬁnite- ness conditions. For instance, one may want to consider diﬀerence exten- sion rings of (K, σ), that is, diﬀerence rings (K′, σ′) such that K ⊂K′ and σ′ |K = σ; in some interesting cases, K′ is not a ﬁnite K-module: for instance, C({z}) ⊂C((z)). We will sometimes brieﬂy mention these generalisations, for future reference. A.2.3. The functor Γ. — Let M := (V, Φ) and N := (W, Ψ) two diﬀerence modules. Write Lσ(V, W) := LK(V, σ∗W) the K-module of σ- linear maps f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/rem-sec-095-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 142,
+      "pageEnd": 145,
+      "target": "rem-sec-095-04.md",
+      "narrative": null,
+      "content": "2.6. — The contents of this paragraph remain valid without con- ditions for all DK,σ-modules.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prop-sec-096-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 145,
+      "pageEnd": 147,
+      "target": "prop-sec-096-01.md",
+      "narrative": null,
+      "content": "2.7. — The tensor product in DiffMod(K, σ) is associa- tive, commutative, bifunctorial (covariant in each argument) and exact. More- over, there are canonical isomorphisms: 1 ⊗M ≃M ≃M ⊗1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-096",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tensor products",
+      "pageStart": 145,
+      "pageEnd": 147,
+      "target": "../sections/sec-096-b4-tensor-products.md",
+      "narrative": null,
+      "content": "ence modules. According to [11, §3, no 3], one has a canonical isomorphism:\nσ∗(V ⊗K W) ≃σ∗V ⊗K σ∗W.\nIt follows that there is a unique σ-linear isomorphism:\nΦ ⊗Ψ : V ⊗K W →σ∗(V ⊗K W)\nsuch that x ⊗y 7→Φ(x) ⊗Ψ(y). This makes the tensor product M ⊗N :=\n(V ⊗K W, Φ ⊗Ψ) into a diﬀerence module. Note however that the result is\nnot a tensor product of DK,σ-modules.\n140\nAPPENDIX A. CLASSIFICATION OF ISOGRADED FILTERED DIFFERENCE MODULES\nProposition A.2.7. — The tensor product in DiffMod(K, σ) is associa-\ntive, commutative, bifunctorial (covariant in each argument) and exact. More-\nover, there are canoni",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/rem-sec-096-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 145,
+      "pageEnd": 147,
+      "target": "rem-sec-096-02.md",
+      "narrative": null,
+      "content": "2.8. — The contents of this paragraph remain valid without con- ditions for all DK,σ-modules, except for the exactness in the proposition: this remains true for K-projective DK,σ-modules but reduces to right exactness for general DK,σ-modules. A.2.5. Internal Hom. — Let M := (V, Φ) and N := (W, Ψ) two diﬀerence modules; then LK(V, W) is projective of ﬁnite rank over K. For any K-linear map u : V →W, the map Ψ ◦u ◦Φ−1 is K-linear. The map Γ : u 7→ Ψ ◦u ◦Φ−1 from LK(V, W) to itself is a K-linear automorphism, whence a diﬀerence module: Hom(M, N) := \u0000LK(V, W), Γ \u0001 . This is called an “internal Ho",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/rem-sec-096-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 145,
+      "pageEnd": 147,
+      "target": "rem-sec-096-04.md",
+      "narrative": null,
+      "content": "2.10. — The contents of this paragraph remain valid without conditions for all DK,σ-modules.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/thm-sec-096-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 145,
+      "pageEnd": 147,
+      "target": "thm-sec-096-03.md",
+      "narrative": null,
+      "content": "2.9. — Let M := (V, Φ), M′ := (V ′, Φ′) and N := (W, Ψ) be three diﬀerence modules. There is a canonical functorial isomorphism: Hom \u0000M, Hom(M′, N) \u0001 ≃Hom(M ⊗M′, N).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/cor-sec-097-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 147,
+      "pageEnd": 148,
+      "target": "cor-sec-097-02.md",
+      "narrative": null,
+      "content": "2.13. — We have a canonical and functorial isomorphism of diﬀerence modules: M∨⊗N ≃Hom(M, N).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prop-sec-097-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 147,
+      "pageEnd": 148,
+      "target": "prop-sec-097-01.md",
+      "narrative": null,
+      "content": "2.11. — For any three diﬀerence modules, ν induces a canonical and functorial isomorphism of diﬀerence modules: Hom(M, M′) ⊗N ≃Hom(M, M′ ⊗N).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-097",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Duality",
+      "pageStart": 147,
+      "pageEnd": 148,
+      "target": "../sections/sec-097-b6-duality.md",
+      "narrative": null,
+      "content": "cording to [11, §4.2], the canonical morphism:\nν : LK(V, V ′) ⊗K W →LK(V, V ′ ⊗K W)\nis a monomorphism if W is projective and an isomorphism if V or W is pro-\njective of ﬁnite rank. One checks that the following diagram is commutative:\nLK(V, V ′) ⊗K W\n\u000f\nν\n/ LK(V, V ′ ⊗K W)\n\u000f\nLK(V, V ′) ⊗K W\nν\n/ LK(V, V ′ ⊗K W)\nThe left vertical map is given by: f ⊗w 7→(Φ′ ◦f ◦Φ−1) ⊗Ψ(w), while the\nright vertical map is given by: g 7→(Φ′ ⊗Ψ) ◦g ◦Φ−1.\nProposition A.2.11. — For any three diﬀerence modules, ν induces a\ncanonical and functorial isomorphism of diﬀerence modules:\nHom(M, M′) ⊗N ≃Hom(M, M′ ⊗N).\nProof. —",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/rem-sec-097-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 147,
+      "pageEnd": 148,
+      "target": "rem-sec-097-03.md",
+      "narrative": null,
+      "content": "2.14. — Part of these conclusions stay true for more general DK,σ-modules. In the proposition, as well as in the corollary, the map is a monomorphism if M is an arbitrary DK,σ-module and N is a K-projective DK,σ-module; and an isomorphism if M or N is a diﬀerence module, the other being an arbitrary DK,σ-module. APPENDIX A. CLASSIFICATION OF ISOGRADED FILTERED DIFFERENCE MODULES",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-098",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finitely filtered difference modules",
+      "pageStart": 148,
+      "pageEnd": 148,
+      "target": "../sections/sec-098-c-finitely-filtered-difference-modules.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-099",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Isograded classification of difference modules",
+      "pageStart": 148,
+      "pageEnd": 148,
+      "target": "../sections/sec-099-c1-isograded-classification-of-difference-module.md",
+      "narrative": null,
+      "content": "be a diﬀerence ring, with K is a commutative C-algebra and σ a C-algebra\nautomorphism.\nRecall from the previous section that a diﬀerence module\nover K is a left DK,σ-module which is projective of ﬁnite rank as a K-module\nand that the category DiffMod(K, σ) of diﬀerence modules is abelian and\nC-linear. Diﬀerence modules over K can be realized as pairs (E, Φ), where E\nis a projective K-module of ﬁnite rank and Φ is a semi-linear automorphism\nof E. In this description, a morphism of diﬀerence modules from (E, Φ) to\n(F, Ψ) is a map u ∈LK(E, F) such that Ψ ◦u = u ◦Φ.\nAs an instance of the general p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-100",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Matricial description of difference modules",
+      "pageStart": 148,
+      "pageEnd": 149,
+      "target": "../sections/sec-100-c2-matricial-description-of-difference-modules.md",
+      "narrative": null,
+      "content": "Here, we\nassume that the K-module E is free of ﬁnite rank n. This assumption will\nbe maintained in A.3.3 and A.4.2, where we pursue the matricial description.\nWe then see that the diﬀerence module M = (E, Φ) is then isomorphic to\nsome (Kn, ΦA) (example A.2.2).\nIndeed, choosing a basis B allows one to\nidentify E with Kn. It is then clear that Φ(B) is also a basis of E, whence\nthe existence of A ∈GLn(K) such that Φ(B) = BA−1. If x ∈E has the\ncoordinate column vector X ∈Kn in basis B, i.e. if x = BX, computing\nΦ(x) = Φ(BX) = Φ(B)σ(X) = BA−1σ(X) shows that Φ(x) ∈E has the\nA.3. FINITELY FILTERED DI",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/rem-sec-100-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 148,
+      "pageEnd": 149,
+      "target": "rem-sec-100-01.md",
+      "narrative": null,
+      "content": "3.1. — A similar description can be given for free modules of inﬁnite rank. Such a K-module is isomorphic to K(I), and one should replace GLn(K) by GLI(K) and Matp,n(K) by MatJ×I(K). Inﬁnite “matrices” are to be understood as follows: elements of EndK(K(I)) are families (ai,j) of elements of K indexed by I × I and such that each column (j ﬁxed) has ﬁnite support. The set MatI(K) := EndK(K(I)) is a unitary ring and GLI(K) := AutK(K(I)) is its group of units. There is a similar condition for MatJ×I(K).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-101",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Matricial description of filtered difference modules",
+      "pageStart": 149,
+      "pageEnd": 151,
+      "target": "../sections/sec-101-c3-matricial-description-of-filtered-difference.md",
+      "narrative": null,
+      "content": "Pi = (Gi, Ψi) (1 ≤i ≤k) be diﬀerence modules such that each K-module Gi is\nfree of ﬁnite rank ri . For each Gi, choose a basis Di, and write Bi ∈GLri(K)\nthe invertible matrix such that Ψi(Di) = DiBi.\nLet M be a ﬁnitely ﬁltered diﬀerence module with associated graded module\nP = P1 ⊕· · · ⊕Pk; more precisely, M = (0 = M0 ⊂M1 ⊂· · · ⊂Mk = M) is\nequipped with an isomorphism u = (ui : Mi/Mi−1 ≃Pi)1≤i≤k from grM to P.\nLetting Mi = (Ei, Φi), one builds a basis Bi of Ei by induction on i = 1, . . . , k\nin such a way that Bi−1 ⊂Bi and that B′\ni := Bi \\ Bi−1 lifts Di via ui (showing\nby the way that K-mo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-102",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extensions of difference modules",
+      "pageStart": 151,
+      "pageEnd": 155,
+      "target": "../sections/sec-102-d-extensions-of-difference-modules.md",
+      "narrative": null,
+      "content": "145\nProposition A.3.2. — The map sending U to the class of (Kn, ΦAU ) induces\na bijection from the quotient of the set\nQ\n1≤i<j≤k\nMatri,rj(K) under the action\nof the group G(K) onto the set F(P1, . . . , Pk).\nRemark A.3.3. — The point of the above trivial and rather long construc-\ntion of triangular matrices is not so much that adequate bases exist, but that,\nby choosing such triangular forms, one implicitly ﬁxes the structural isomor-\nphisms Mi/Mi−1 ≃Pi.\nA.4. Extensions of diﬀerence modules\nLet 0 →M′ →M →M′′ →0 an exact sequence in ModDK,σ. If M′, M′′ are\ndiﬀerence modules, so is M (it is proj",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/rem-sec-102-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 151,
+      "pageEnd": 155,
+      "target": "rem-sec-102-01.md",
+      "narrative": null,
+      "content": "3.3. — The point of the above trivial and rather long construc- tion of triangular matrices is not so much that adequate bases exist, but that, by choosing such triangular forms, one implicitly ﬁxes the structural isomor- phisms Mi/Mi−1 ≃Pi. A.4. Extensions of diﬀerence modules Let 0 →M′ →M →M′′ →0 an exact sequence in ModDK,σ. If M′, M′′ are diﬀerence modules, so is M (it is projective of ﬁnite rank because we have a split sequence of K-modules). The calculus of extensions is therefore the same in DiffMod(K, σ) as in ModDK,σ and we will simply write Ext(M′′, M′) the group ExtDK,σ(M′′, M′) of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/thm-sec-102-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 151,
+      "pageEnd": 155,
+      "target": "thm-sec-102-02.md",
+      "narrative": null,
+      "content": "4.1. — The map u 7→θu from Lσ(E, F) to Ext(M, N) is func- torial in M and in N, C-linear, and its kernel is the image of the C-linear map: tΦ,Ψ : LK(E, F) →Lσ(E, F), f 7→Ψ ◦f −f ◦Φ. A.4. EXTENSIONS OF DIFFERENCE MODULES",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/cor-sec-103-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 155,
+      "pageEnd": 155,
+      "target": "cor-sec-103-01.md",
+      "narrative": null,
+      "content": "4.3. — The homology of the complex of solutions is H0 = Hom(M, N) and H1 = Ext(M, N), and these equalities are functorial.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/cor-sec-103-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 155,
+      "pageEnd": 155,
+      "target": "cor-sec-103-02.md",
+      "narrative": null,
+      "content": "4.4. — From the exact sequence 0 →N ′ →N →N ′′ →0, one deduces the “cohomology long exact sequence”: 0 →Hom(M, N ′) →Hom(M, N) →Hom(M, N ′′) →Ext(M, N ′) →Ext(M, N) →Ext(M, N ′′) →0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/cor-sec-104-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 155,
+      "pageEnd": 156,
+      "target": "cor-sec-104-01.md",
+      "narrative": null,
+      "content": "4.5. — The C-module Ext1(N, M) is thereby identiﬁed with the cokernel of the endomorphism X 7→(σX)B −AX of Matm,n(K).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-103",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The complex of solutions",
+      "pageStart": 155,
+      "pageEnd": 155,
+      "target": "../sections/sec-103-d1-the-complex-of-solutions.md",
+      "narrative": null,
+      "content": "A.4.1. The complex of solutions. — The following is sometimes consid-\nered as a diﬀerence analog of the de Rham complex in one variable, see for\ninstance [2, 54].\nDeﬁnition A.4.2. — We call complex of solutions of M in N the following\ncomplex of C-modules:\ntΦ,Ψ : LK(E, F) →Lσ(E, F),\nf 7→Ψ ◦f −f ◦Φ.\nconcentrated in degrees 0 and 1.\nIt is indeed clear that the source and target are C-modules, that the map\ntΦ,Ψ does send the source to the target and that it is C-linear.\nCorollary A.4.3. — The homology of the complex of solutions is H0 =\nHom(M, N) and H1 = Ext(M, N), and these equalities are funct",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-104",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Matricial description of extensions of difference modules",
+      "pageStart": 155,
+      "pageEnd": 156,
+      "target": "../sections/sec-104-d2-matricial-description-of-extensions-of-differ.md",
+      "narrative": null,
+      "content": "We now assume E, F to be free of ﬁnite rank over K and accordingly identify\nthem with M = (Km, ΦA), A ∈GLm(K) and N = (Kn, ΦB), B ∈GLn(K).\nAn extension of N by M then takes the form R = (Km+n, ΦC), where\nC =\n\u0012 A\nU\n0n,m\nB\n\u0013\nfor some rectangular matrix U ∈Matm,n(K); we shall write\n150\nAPPENDIX A. CLASSIFICATION OF ISOGRADED FILTERED DIFFERENCE MODULES\nC = CU. The injection M →R and the projection R →N have as respective\nmatrices\n\u0012 Im\n0n,m\n\u0013\nand\n\u00000n,m\nIn\n\u0001\n. The extension thus deﬁned will be denoted\nRU.\nA morphism of extensions RU\n→RV\nis a matrix of the form F\n=\n\u0012 Im\nX\n0n,m\nIn\n\u0013\nfor some rectangu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prop-sec-105-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 156,
+      "pageEnd": 158,
+      "target": "prop-sec-105-01.md",
+      "narrative": null,
+      "content": "5.1. — Let M, N be two diﬀerence modules over (K, σ). One has a functorial isomorphism of C′-modules: ExtDK′,σ′(C′ ⊗C M, C′ ⊗C N) ≃C′ ⊗C ExtDK,σ(M, N), and a functorial epimorphism of C′-modules: C′ ⊗C HomDK,σ(M, N) →HomDK′,σ′(C′ ⊗C M, C′ ⊗C N).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prop-sec-105-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 156,
+      "pageEnd": 158,
+      "target": "prop-sec-105-02.md",
+      "narrative": null,
+      "content": "5.2. — Let 0 = M0 ⊂M1 ⊂· · · ⊂Mk = M be a k-ﬁltration with associated graded module P1 ⊕· · · ⊕Pk. Then, setting M′ i := C′ ⊗C Mi and P ′ i := C′ ⊗C Pi, we get a k-ﬁltration 0 = M′ 0 ⊂M′ 1 ⊂· · · ⊂M′ k = M′ with associated graded module P ′ 1 ⊕· · · ⊕P ′ k.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-105",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extension of scalars",
+      "pageStart": 156,
+      "pageEnd": 158,
+      "target": "../sections/sec-105-e-extension-of-scalars.md",
+      "narrative": null,
+      "content": "We want to see F(P1, . . . , Pk) as a scheme over C, that is as a representable\nfunctor C′ ❀F(C′ ⊗C P1, . . . , C′ ⊗C Pk) from commutative C-algebras to\nsets. To that end, we shall extend what we did to a “relative” situation.\nLet C′ be a commutative C-algebra. We set:\nK′ := C′ ⊗C K and σ′ := 1 ⊗C σ.\nThen K′ is a commutative C′-algebra and σ′ an automorphism of that C′-\nalgebra. Moreover:\nDK′,σ′ := K′ < σ′, σ′−1 >= K′ ⊗K DK,σ = C′ ⊗C DK,σ.\nThese equalities should be interpreted as natural (functorial) isomorphisms.\nFrom any diﬀerence module M = (E, Φ) over (K, σ), one gets a diﬀerence\nmodule M",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-106",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Our moduli space",
+      "pageStart": 158,
+      "pageEnd": 159,
+      "target": "../sections/sec-106-f-our-moduli-space.md",
+      "narrative": null,
+      "content": "To simplify, herebelow, instead of saying “the functor F is represented by\nan aﬃne space over C (with dimension d)”, we shall say “the functor F is an\naﬃne space over C (with dimension d)”. This is just the usual identiﬁcation\nof a scheme with the space it represents.\nTheorem A.6.1. — Assume that, for 1 ≤i < j ≤k, one has Hom(Pj, Pi) =\n0 and that the C-module Ext(Pj, Pi) is free of ﬁnite rank δi,j. Then the functor\nC′ ❀F(C′) := F(C′ ⊗C P1, . . . , C′ ⊗C Pk) is an aﬃne space over C with\ndimension\nP\n1≤i<j≤k\nδi,j.\nProof. — When k = 1, it is trivial. When k = 2, writing V the free C-module\nof ﬁnit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/cor-sec-107-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 159,
+      "pageEnd": 160,
+      "target": "cor-sec-107-02.md",
+      "narrative": null,
+      "content": "6.4. — Each ﬁber Ext(P ′ k, M′) is isomorphic to V ′ k as a scheme over C′.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prop-sec-107-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 159,
+      "pageEnd": 160,
+      "target": "prop-sec-107-01.md",
+      "narrative": null,
+      "content": "6.3. — Let C′ be a commutative C-algebra and let M′ be a diﬀerence module over K′ := C′ ⊗C K, equipped with a (k −1)-ﬁltration: 0 = M′ 0 ⊂M′ 1 ⊂· · · ⊂M′ k−1 = M′ such that grM′ ≃P ′ 1 ⊕· · · ⊕P ′ k−1 (as usual, P ′ i := C′ ⊗C Pi). Then the functor in commutative C′-algebras C′′ ❀Ext(C′′ ⊗C Pk, C′′ ⊗C′ M′) is an aﬃne space over C′ with dimension P 1≤i≤k δi,k.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-107",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Structure of the fibers",
+      "pageStart": 159,
+      "pageEnd": 160,
+      "target": "../sections/sec-107-f1-structure-of-the-fibers.md",
+      "narrative": null,
+      "content": "rem, we need an auxiliary result. Remember that, all along, we assume that\nHom(Pj, Pi) = 0 for 1 ≤i < j ≤k.\nProposition A.6.3. — Let C′ be a commutative C-algebra and let M′ be\na diﬀerence module over K′ := C′ ⊗C K, equipped with a (k −1)-ﬁltration:\n0 = M′\n0 ⊂M′\n1 ⊂· · · ⊂M′\nk−1 = M′ such that grM′ ≃P ′\n1 ⊕· · · ⊕P ′\nk−1\n(as usual, P ′\ni := C′ ⊗C Pi).\nThen the functor in commutative C′-algebras\nC′′ ❀Ext(C′′ ⊗C Pk, C′′ ⊗C′ M′) is an aﬃne space over C′ with dimension\nP\n1≤i≤k\nδi,k.\nProof. — After proposition A.5.1,\nthis is the functor C′′\n❀\nC′′ ⊗C′\nExt(P ′\nk, M′).\nFrom each exact sequence 0 →M′\ni",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-108",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "End of the proof of theorem",
+      "pageStart": 160,
+      "pageEnd": 161,
+      "target": "../sections/sec-108-f2-end-of-the-proof-of-theorem.md",
+      "narrative": null,
+      "content": "the theorem. Besides functor F(C′), we consider the functor C′ ❀G(C′) :=\nF(C′ ⊗C P1, . . . , C′ ⊗C Pk−1), of which we assume, by induction, that it is an\naﬃne space of dimension\nP\n1≤i<j≤k−1\nδi,j. The natural transformation from F\nto G is the one described in A.1.2. An element b ∈G(C′) is the class of a\npair (M′, u′), a (k −1)-ﬁltered object over C′, and the corresponding ﬁber is\nthe one studied in the above auxiliary proposition A.6.3. The lemma A.6.2 of\nBabbitt and Varadarajan then allows us to conclude.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/cor-sec-109-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 161,
+      "pageEnd": 163,
+      "target": "cor-sec-109-03.md",
+      "narrative": null,
+      "content": "7.3. — Let M = (E, Φ). The complex of solutions of M: E Φ−Id −→E has cohomology Γ(M), Γ1(M).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/cor-sec-109-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 161,
+      "pageEnd": 163,
+      "target": "cor-sec-109-05.md",
+      "narrative": null,
+      "content": "7.5. — Let M = D/DP. Then, for any dual P ∨of P, the complex: K P ∨(σ) −→K has cohomology Γ(M), Γ1(M).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prop-sec-109-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 161,
+      "pageEnd": 163,
+      "target": "prop-sec-109-01.md",
+      "narrative": null,
+      "content": "7.1. — Let M := D/DP and N := (F, Ψ) two diﬀerence modules. Then Exti(M, N) = 0 for i ≥2 and there is an exact sequence of C-vector spaces: 0 →Hom(M, N) →F P (Ψ) −→F →Ext1(M, N) →0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-109",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extension classes of difference modules",
+      "pageStart": 161,
+      "pageEnd": 163,
+      "target": "../sections/sec-109-g-extension-classes-of-difference-modules.md",
+      "narrative": null,
+      "content": "155\nLooking at the proof of A.6.2, one moreover sees that, if all ﬁbers of u :\nF →G are isomorphic to a same aﬃne space V (up to obvious extension of\nthe base), then there is an isomorphism F ≃V ×C G such that u corresponds\nto the second projection. With the previous notations, we see that, writing\nFℓthe functor C′ ❀F(C′ ⊗C P1, . . . , C′ ⊗C Pℓ), corollary A.6.3 gives an\nisomorphism of schemes:\nFℓ≃Fℓ−1 × Vℓ.\nBy induction, we conclude:\nCorollary A.6.5. — The functor in C-algebras C′ ❀F(C′⊗C P1, . . . , C′⊗C\nPk) is isomorphic to the functor C′ ❀L\n1≤i<j≤ℓExt(C′⊗C Pk, C′⊗C Pi). That\nis, we have an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/rem-sec-109-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 161,
+      "pageEnd": 163,
+      "target": "rem-sec-109-02.md",
+      "narrative": null,
+      "content": "7.2. — The complex F P (Ψ) −→F (in degrees 0 and 1) thus has cohomology Hom(M, N), Ext1(M, N). This is clearly functorial in N. On the other hand, there is a part of arbitrariness in the choice of P, but, after [12] §6.1, the homotopy class of the complex depends on M alone.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/rem-sec-109-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 161,
+      "pageEnd": 163,
+      "target": "rem-sec-109-04.md",
+      "narrative": null,
+      "content": "7.4. — Applying the corollary to M∨⊗N implies that the map f 7→Ψ ◦f ◦Φ−1 −f has kernel Hom(M, N) (which is obvious) and that its cokernel is in one-to-one correspondance with Ext1(M, N), which is similar to the conclusion of theorem A.4.1. However, in this way, we do not get the identiﬁcation of the operations on extensions: this would be possible using [12, §6.3].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/ex-sec-110-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 163,
+      "pageEnd": 163,
+      "target": "ex-sec-110-01.md",
+      "narrative": null,
+      "content": "7.6. — For u ∈K∗= GL1(K), where K = C({z}) or C((z)), put Mu := (K, Φu) = Dq/Dq(σq −u−1). A dual of σq −u−1 is, for instance, σq −u. One has M∨ u = Mu−1 and Mu ⊗Mv = Muv. From the corollaries above, we draw that K u−1σq−1 −→ K, resp. K σq−u −→K has cohomology Γ(Mu), Γ1(Mu). From the proposition, we draw that K v−1σq−u−1 −→ K has cohomology Hom(Mu, Mv), Ext1(Mu, Mv). A.8. The cohomological equation We here prepare the grounds for the examples of chapter 7 by giving some practical recipes.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-110",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The cohomological equation",
+      "pageStart": 163,
+      "pageEnd": 163,
+      "target": "../sections/sec-110-h-the-cohomological-equation.md",
+      "narrative": null,
+      "content": "157\nProof. — In the proposition, take N := 1 = (K, σ).\nThis gives Γ(M∨),\nΓ1(M∨) as cohomology of K\nP (σ)\n−→K. Now, replace M by M∨. (Of course, no\nfunctoriality here!)\nExample A.7.6. — For u ∈K∗= GL1(K), where K = C({z}) or C((z)),\nput Mu := (K, Φu) = Dq/Dq(σq −u−1). A dual of σq −u−1 is, for instance,\nσq −u. One has M∨\nu = Mu−1 and Mu ⊗Mv = Muv.\nFrom the corollaries above, we draw that K\nu−1σq−1\n−→\nK, resp. K\nσq−u\n−→K has\ncohomology Γ(Mu), Γ1(Mu). From the proposition, we draw that K\nv−1σq−u−1\n−→\nK has cohomology Hom(Mu, Mv), Ext1(Mu, Mv).\nA.8. The cohomological equation\nWe here prepare the g",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-111",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some inhomogeneous equations",
+      "pageStart": 163,
+      "pageEnd": 164,
+      "target": "../sections/sec-111-h1-some-inhomogeneous-equations.md",
+      "narrative": null,
+      "content": "diﬀerential equations, many interesting examples come in dimension 2; see for\ninstance example 3.3.2 page 38 , and the more detailed studies of chapter 2,\nparagraph 2.3.1 and chapter 7, section 7.1.\nSo let a, b ∈K∗and u ∈K. Extensions of Mb := (K, Φb) by Ma := (K, Φa)\nhave form Na,b,u := (K2, ΦAu) where Au :=\n\u0012a\nu\n0\nb\n\u0013\n.\nAn isomorphism of\nextensions from Na,b,u to Na,b,v would be a matrix F :=\n\u00121\nf\n0\n1\n\u0013\nsuch that\nbσf −af = v −u. More generally, the space Ext(Mb, Ma) is isomorphic to the\ncokernel of the C-linear map bσ−a from K to itself. We shall call cohomological\nequation the following ﬁrs",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0903.0853v3/blocks/prose-sec-112",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A homotopy",
+      "pageStart": 164,
+      "pageEnd": 176,
+      "target": "../sections/sec-112-h2-a-homotopy.md",
+      "narrative": null,
+      "content": "the equivalence of various computations above. Let (K, σ) be a diﬀerence ﬁeld\nwith constant ﬁeld C. The σ-diﬀerence operator P := σn + a1σn−1 + · · · + an\ngives rise to a C-linear complex K\nP→K. Writing AP the companion matrix\ndescribed in 2.1.2.1, we also have a complex Kn\n∆\n→Kn, where we have set\nA.8. THE COHOMOLOGICAL EQUATION\n159\n∆:= σ −AP . We then have a morphism of complexes:\nK\nP\n−−−−→K\nV\ny\nI\ny\nKn\n∆\n−−−−→Kn\n, where V (f) :=\n\n\n\n\n\nf\nσqf\n...\nσn−1\nq\nf\n\n\n\n\nand I(g) :=\n\n\n\n\n\n0\n...\n0\ng\n\n\n\n\n.\n(The equality ∆◦V = I ◦P is obvious.) We now introduce the operators\nPi := σn−i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

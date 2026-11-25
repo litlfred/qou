@@ -1,0 +1,215 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1409.0435v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1409.0435v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "We consider Toeplitz determinants of the form\n\\begin{equation}\\label{Toeplitz}\nD_n(f) = \\det(f_{j-k})_{j,k=0,\\ldots, n-1},\\qquad f_{j} = \\frac{1}{2\\pi} \\int_{0}^{2\\pi} f(e^{i\\theta}) e^{-ij\\theta} d\\theta,\n\\end{equation}\nwhere the symbol $f$ is given by\n\\begin{equation}\\label{symbol}\nf(e^{i\\theta}) = e^{W(e^{i\\theta})}\\ \\times\\ \n\\begin{cases}\n1,&\\mbox{ for $-\\theta_0\\leq \\theta\\leq \\theta_0$,}\\\\\ns,&\\mbox{ for $\\theta_0<\\theta<2\\pi-\\theta_0$,}\n\\end{cases}\n\\end{equation}\nand $f_{k}$ is the $k$-th Fourier coefficient of $f$. The symbol depends on the parameters $s\\in [0,1]$ and $\\theta_0 \\in (0,\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0435v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Asymptotics for Toeplitz determinants: perturbation of\nsymbols with a gap\nChristophe Charlier∗and Tom Claeys∗\nSeptember 14, 2018\nAbstract\nWe study the determinants of Toeplitz matrices as the size of the matrices tends\nto inﬁnity, in the particular case where the symbol has two jump discontinuities and\ntends to zero on an arc of the unit circle at a suﬃciently fast rate. We generalize an\nasymptotic expansion by Widom [22], which was known for symbols supported on\nan arc. We highlight applications of our results in the Circular Unitary Ensemble\nand in the study of Fredholm determinants associat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0435v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application 1: the Circular Unitary Ensemble",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-application-1-the-circular-unitary-ensemble.md",
+      "narrative": null,
+      "content": "Consider the Circular Unitary Ensemble (CUE) which is the set of unitary $n\\times n$ matrices with the Haar measure.\nThe eigenvalues $e^{i\\theta_1},\\ldots, e^{i\\theta_n}$ in this ensemble have the joint probability distribution\n\\begin{equation}\\label{jpdf}\n\\frac{1}{(2\\pi)^n n!}\\prod_{1\\leq j<k\\leq n}|e^{i\\theta_j}-e^{i\\theta_k}|^2 \\prod_{j=1}^nd\\theta_j,\\qquad \\theta_1,\\ldots, \\theta_n\\in [0,2\\pi).\n\\end{equation}\nDefine the random variable $X=X_{\\theta_0}$ as the number of eigenvalues of a CUE matrix on the arc $\\gamma=\\{e^{i\\theta}:-\\theta_0\\leq \\theta\\leq \\theta_0\\}$. The average value of $X",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0435v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application 2: sine kernel determinants",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-application-2-sine-kernel-determinants.md",
+      "narrative": null,
+      "content": "\\label{section: Fredholm}\nIn the double scaling limit where $n\\to\\infty$ and $\\theta_0$ approaches $\\pi$ at rate $\\bigO(1/n)$, the Toeplitz determinant $D_n(s,\\theta_0,0)$ converges to the Fredholm determinant of the operator $1-(1-s)K_y$, where $K_y$ is the integral operator acting on $(-y,y)$ with kernel $\\frac{\\sin\\pi(x-t)}{\\pi(x-t)}$: we have \\cite[formulas (236)-(241)]{DIK-hist}\n\\begin{equation}\\label{Toeplitz Fredholm}\n\\lim_{n\\to\\infty}D_n(s,\\theta_0=\\pi (1-\\frac{2y}{n}),0)=\\det(1-(1-s)K_y),\n\\end{equation}\nwhere the operator $K_y$ is defined by\n\\begin{equation}\n(K_{y} g)(x)=\\int_{-y}^{y}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0435v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outline",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-outline.md",
+      "narrative": null,
+      "content": "In Section \\ref{section: diff id}, we will derive identities which express $\\frac{d}{ds}\\ln D_n(s,\\theta_0,W)$ in terms of orthogonal polynomials on the unit circle.\nIn Section \\ref{section: eq}, we will study an equilibrium problem which is crucial to obtain asymptotics for the orthogonal polynomials. In Section \\ref{section: RH}, we will obtain asymptotics for the orthogonal polynomials as the degree tends to infinity, via the Riemann-Hilbert (RH) method. An important novel feature in the RH analysis is the construction of a {\\em modified Bessel parametrix} compared to Bessel parametrices th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0435v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Equilibrium measures",
+      "pageStart": 10,
+      "pageEnd": 16,
+      "target": "../sections/sec-004-3-equilibrium-measures.md",
+      "narrative": null,
+      "content": "\\label{section: eq}\n\nIt will be convenient to introduce a new parameter $x \\in \\mathbb{R}^{+} \\cup \\{+\\infty\\}$ defined by\n\\begin{equation}\\label{sx}\ns = e^{-xn},\n\\end{equation}\nsuch that $f$ can be written as $f(e^{i\\theta}) = e^{W(e^{i\\theta})}e^{-nV(e^{i\\theta})}$, where \n\\begin{equation}\\label{V}\nV(e^{i\\theta}) = \\begin{cases}\n0, & \\mbox{ for } e^{i\\theta} \\in \\gamma, \\\\\nx, & \\mbox{ for } e^{i\\theta} \\in S_{1} \\setminus \\gamma.\n\\end{cases}\n\\end{equation}\nAn important ingredient for the large $n$ analysis of the orthogonal polynomials and the RH problem for $Y$ is the following minimization",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0435v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Global parametrix",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-005-43-global-parametrix.md",
+      "narrative": null,
+      "content": "Ignoring the exponentially small jumps for $S$ and small neighborhoods of $z_0, \\overline{z_0}$, $-1$, we are led to the following RH problem:\n\n\\subsubsection{RH problem for $P^{(\\infty)}$}\n\\begin{itemize}\n\\item[(a)] $P^{(\\infty)} : \\mathbb{C}\\setminus \\gamma \\to \\mathbb{C}^{2\\times 2}$ is analytic.\n\\item[(b)] $P^{(\\infty)}$ has the jump\n\\begin{equation}\\label{jump Pinfty}\nP^{(\\infty)}_+(z)=P^{(\\infty)}_-(z)\\begin{pmatrix} 0&e^{W(z)}\\\\-e^{-W(z)}&0\n\\end{pmatrix},\\qquad z\\in\\gamma\\setminus\\{z_{0},\\overline{z_{0}}\\}.\n\\end{equation}\n\\item[(c)] $P^{(\\infty)}(z) = I + \\bigO(z^{-1})$ as $z \\to \\infty",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0435v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bessel model RH problem",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-006-441-bessel-model-rh-problem.md",
+      "narrative": null,
+      "content": "We will construct $P$ in terms of a model RH problem for which the solution is constructed using Bessel functions.\nConsider the following model RH problem:\n\n\n\\subsubsection{RH problem for $\\Psi$}\n\n\\begin{itemize}\n\\item[(a)] $\\Psi : \\mathbb{C} \\setminus \\Sigma_{\\Psi} \\to \\mathbb{C}^{2\\times 2}$ is analytic, where $\\Sigma_{\\Psi} = \\mathbb{R}^{-} \\cup \\{ xe^{\\pm\\frac{2\\pi }{3}i} : x \\in \\mathbb{R}^{+} \\}$, with the orientation from $\\infty$ towards $0$ for the three half-lines.\n\\item[(b)] $\\Psi$ satisfies the jump conditions\n\\begin{equation*}\n\\begin{array}{l l}\n\\Psi_{+}(\\zeta) = \\Psi_{-}(\\zeta) \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0435v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Construction of the local parametrix",
+      "pageStart": 20,
+      "pageEnd": 26,
+      "target": "../sections/sec-007-443-construction-of-the-local-parametrix.md",
+      "narrative": null,
+      "content": "We construct $P$ as follows,\n\\begin{equation}\\label{Explicit_P}\nP(z)=E(z)\\widehat\\Psi(n^2\\zeta(z))e^{-\\frac{n}{2}\\phi(z)\\sigma_3}e^{-\\frac{1}{2}W(z)\\sigma_{3}},\n\\end{equation}\nwhere $E$ is an analytic function in $D(z_0,r)$, and where\n$\\zeta(z) = \\frac{1}{16} \\phi(z)^{2}$. By (\\ref{phi int}), we have that $\\zeta(z)$ is a conformal map near $z_0$, and that $\\zeta(z_0)=0$. Moreover, $\\zeta$ maps $\\gamma\\cap D(z_0,r)$ to part of the real line. We now fix the lens-shaped contours $\\gamma_-$ and $\\gamma_+$ by requiring that $\\zeta(\\gamma_-\\cup\\gamma_+)\\subset \\Sigma_{\\widehat\\Psi}$.\n\nFor any analyt",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0435v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Heuristic discussion of the asymptotics for $s>e^{-x_cn}$",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-008-54-heuristic-discussion-of-the-asymptotics-for-s.md",
+      "narrative": null,
+      "content": "\\label{section: elliptic}\n\nAs $n\\to\\infty$ with $s=e^{-xn}>e^{-(x_c-\\delta)n}$, $\\delta>0$, it is expected that the behavior of the Toeplitz determinants $D_n(s,\\theta_0,W)$ is very different from the behavior described in Theorem \\ref{theorem: extensionWidom}. As shown in Proposition \\ref{thm200}, the equilibrium measure is then supported on two disjoint arcs. In the RH analysis, that means that the RH problem for the global parametrix $P^{(\\infty)}$ will become more involved. It is well understood that $P^{(\\infty)}$ can then be constructed using elliptic $\\theta$-functions, see e.g.\\ \\cite{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0435v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "../sections/sec-009-acknowledgements.md",
+      "narrative": null,
+      "content": "The authors are grateful to Igor Krasovsky for useful discussions and for sharing an early\nversion of [6], and to Alexander Bufetov for useful discussions. They were supported\nby the Belgian Interuniversity Attraction Pole P07/18 and by F.R.S.-F.N.R.S. TC was\nalso supported by the European Research Council under the European Union’s Seventh\nFramework Programme (FP/2007/2013)/ ERC Grant Agreement n. 307074.\n26\nReferences\n[1] J. Baik, P. Deift, and K. Johansson, On the distribution of the length of the longest\nincreasing subsequence of random permutations, J. Amer. Math. Soc. 12 (1999),\n1119–117",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

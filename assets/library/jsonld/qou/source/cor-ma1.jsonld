@@ -1,0 +1,71 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cor-ma1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Overpartitions, lattice paths and Rogers-Ramanujan identities",
+  "contains": [
+    "library/cor-ma1/sections/page-001",
+    "library/cor-ma1/sections/page-002",
+    "library/cor-ma1/sections/page-003",
+    "library/cor-ma1/sections/page-004",
+    "library/cor-ma1/sections/page-005",
+    "library/cor-ma1/sections/page-006",
+    "library/cor-ma1/sections/page-007",
+    "library/cor-ma1/sections/page-008",
+    "library/cor-ma1/sections/page-009",
+    "library/cor-ma1/sections/page-010",
+    "library/cor-ma1/sections/page-011",
+    "library/cor-ma1/sections/page-012",
+    "library/cor-ma1/sections/page-013",
+    "library/cor-ma1/sections/page-014",
+    "library/cor-ma1/sections/page-015",
+    "library/cor-ma1/sections/page-016",
+    "library/cor-ma1/sections/page-017",
+    "library/cor-ma1/sections/page-018",
+    "library/cor-ma1/sections/page-019",
+    "library/cor-ma1/sections/page-020",
+    "library/cor-ma1/sections/page-021",
+    "library/cor-ma1/sections/page-022",
+    "library/cor-ma1/sections/page-023",
+    "library/cor-ma1/sections/page-024",
+    "library/cor-ma1/sections/page-025",
+    "library/cor-ma1/sections/page-026"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Corteel & Mallet, Overpartitions, lattice paths, and Rogers-Ramanujan identities (HAL hal-00017295) — extends Andrews, Bressoud and Burge to overpartitions via successive ranks and generalized…\n\n**Overpartitions, lattice paths, and Rogers-Ramanujan identities** — Sylvie Corteel and Olivier Mallet. HAL hal-00017295 v2, submitted 21 Dec 2006.\n\nExtends partition-theoretic work of Andrews, Bressoud and Burge to overpartitions, defining successive ranks, generalized Durfee squares, and generalized lattice paths in that setting.\n\n**Why it may bear here.** Rogers-Ramanujan identities and the Rogers dilogarithm are named in this corpus's Φ_q / Li₂^q context-sorting; this is the partition-combinatorics side. Thematic adjacency, not an established use.\n\n**Extraction caveat.** The held PDF opens with HAL deposit boilerplate, so its automatic title read that boilerplate; the real title page is the second page.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01AWgkrPkXGZ1Hb2UmMmFMcP",
+        "date": "2026-08-15"
+      },
+      "drafted_at": "2026-08-15"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "cor-ma1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "cor-ma1.pdf",
+    "source_sha256": "d90c91dcd82bfcab19801d10649fe8a95f11d017378a5d37abcf7fd31f26dddc",
+    "pages": 26,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2607.29018v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "The Aldous property for normal Cayley graphs on symmetric groups",
+      "dcterms:creator": [
+        "Lv∗1, Chenhui",
+        "Zhou2, Sanming"
+      ],
+      "dcterms:identifier": "https://arxiv.org/abs/2607.29018",
+      "dcterms:abstract": "Aldous’ spectral gap conjecture states that the random walk and the interchange process on any connected graph have the same spectral gap, or, equivalently, the second largest eigenvalue of any connected Cayley graph on the symmetric group Sn with respect to a set of transpositions is achieved by the standard representation of Sn. This celebrated conjecture, proved in its general form in 2010, has inspired much interest in searching for other Cayley graphs on Sn possessing this property, now known as the Aldous property. In this paper, we first prove that for n ≥5 at most one of a normal Cayley graph on Sn and its complement can possess the Aldous property except when these two graphs are 2Kn!/2 and Kn!/2,n!/2 respectively. We then determine, for sufficiently large n, all normal Cayley graphs Cay(Sn, S) that have the Aldous property, except for the case when S contains a permutation with support size in {2, 3, . . . , n−2} and a permutation with support size in {n−1, n}, but not all permutations with support size n are contained in S. In particular, we show that a non-complete normal Cayley graph Cay(Sn, S) does not have the Aldous property if all permutations in S have support size n −1 or n, or all permutations with support size n are contained in S, thereby solving an open problem posed by Li, Xia and Zhou in 2023. Along the way we determine all normal Cayley graphs on Sn that are line graphs, and classify all normal Cayley graphs on Sn with the strictly second largest eigenvalue at most 1.",
+      "dcterms:source": "library/arxiv-2607.29018v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2607.29018v1"
+    }
+  ]
+}

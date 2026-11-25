@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-rigid-monoidal-structural-gap-invariance",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:rigid-monoidal-structural-gap-invariance",
+  "kind": "proposition",
+  "title": "Convention-independence of the structural gap: the brane-tower factors through the rigid monoidal Markov trace on the Type-B-folded Hecke category",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-spin-involution-lp-dual-invariance",
+    "papers/quantum-observable-universe/blocks/conj-brane-tower-z-habiro"
+  ],
+  "tags": [
+    "rigid-monoidal",
+    "type-b-folding",
+    "kashiwara-crystal",
+    "structural-gap",
+    "convention-invariance",
+    "categorical-unification"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.RigidMonoidalStructuralGapInvariance",
+  "text": "prop-rigid-monoidal-structural-gap-invariance.md",
+  "leanSource": "prop-rigid-monoidal-structural-gap-invariance.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,282 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-gr-qc-0407052v1",
+  "title": "Black hole entropy in loop quantum gravity",
+  "variant": "pdf",
+  "pages": 10,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2621,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hole entropy",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "horizon area",
+          "heading": false
+        },
+        {
+          "term": "leading behaviour",
+          "heading": false
+        },
+        {
+          "term": "whole domain",
+          "heading": false
+        },
+        {
+          "term": "zeroes",
+          "heading": false
+        },
+        {
+          "term": "hawking formula",
+          "heading": false
+        },
+        {
+          "term": "microscopic states",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:gr-qc/0407052v1 14 Jul 2004 Black hole entropy in Loop Quantum Gravity Krzysztof A. Meissner Institute of Theoretical Physics, Warsaw University Ho˙za 69, 00-681 Warsaw, Poland, Abstract We calculate the black hole entropy in Loop Quantum Gravity as a function of the horizon area and provide the exact formula for the leading and sub-leading terms. By comparison with the Bekenstein– Hawking formula we uniquely",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-gr-qc-0407052v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 180,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "hole entropy",
+          "heading": false
+        },
+        {
+          "term": "ashtekar",
+          "heading": false
+        },
+        {
+          "term": "lewandowski",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        }
+      ],
+      "extract": "[1] G. t’Hooft, Nucl. Phys. B335 (1990) 138. [2] L. Susskind, Some Speculations about Black Hole Entropy in String Theory, hep-th/9309145. [3] E. Halyo, A. Rajaraman, L. Susskind, Phys.Lett. B392 (1997) 319. [4] G.T. Horowitz, J. Polchinski, Phys.Rev. D55 (1997) 6189. [5] T. Damour, G. Veneziano, Nucl.Phys. B568 (2000) 93. [6] L. Smolin, J.Math.Phys. 36 (1995) 6417. 9 [7] C. Rovelli, Phys.Rev.Lett. 77 (1996) 3288.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "black hole",
+      "heading": false
+    },
+    {
+      "term": "hole entropy",
+      "heading": false
+    },
+    {
+      "term": "horizon area",
+      "heading": false
+    },
+    {
+      "term": "lewandowski",
+      "heading": false
+    },
+    {
+      "term": "ashtekar",
+      "heading": false
+    },
+    {
+      "term": "gr-qc",
+      "heading": false
+    },
+    {
+      "term": "leading behaviour",
+      "heading": false
+    },
+    {
+      "term": "whole domain",
+      "heading": false
+    },
+    {
+      "term": "quantum gravity",
+      "heading": false
+    },
+    {
+      "term": "zeroes",
+      "heading": false
+    },
+    {
+      "term": "hawking formula",
+      "heading": false
+    },
+    {
+      "term": "meissner",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 1,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p9); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-gr-qc-0407052v1"
+  }
+}

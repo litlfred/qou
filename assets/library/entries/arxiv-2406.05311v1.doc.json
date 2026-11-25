@@ -1,0 +1,1989 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2406.05311v1",
+  "title": "arxiv-2406.05311v1",
+  "variant": "pdf",
+  "pages": 34,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "A Murnaghan–Nakayama rule for (classic) cohomology",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-a-murnaghannakayama-rule-for-classic-cohomolog"
+    },
+    {
+      "level": 2,
+      "title": "Cohomology of the flag manifold",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-cohomology-of-the-flag-manifold"
+    },
+    {
+      "level": 2,
+      "title": "k-Bruhat order",
+      "number": "2.2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-k-bruhat-order"
+    },
+    {
+      "level": 2,
+      "title": "Grassmannian–Bruhat order",
+      "number": "2.3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-grassmannianbruhat-order"
+    },
+    {
+      "level": 2,
+      "title": "Minimal permutations",
+      "number": "2.4",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-minimal-permutations"
+    },
+    {
+      "level": 2,
+      "title": "A Murnaghan–Nakayama rule for H*Fn",
+      "number": "2.5",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-25-a-murnaghannakayama-rule-for-hfn"
+    },
+    {
+      "level": 1,
+      "title": "A Murnaghan–Nakayama rule for quantum cohomology",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-3-a-murnaghannakayama-rule-for-quantum-cohomolog"
+    },
+    {
+      "level": 2,
+      "title": "Quantum cohomology ring of the flag manifold",
+      "number": "3.1",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-31-quantum-cohomology-ring-of-the-flag-manifold"
+    },
+    {
+      "level": 2,
+      "title": "Quantum k-Bruhat order",
+      "number": "3.2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-32-quantum-k-bruhat-order"
+    },
+    {
+      "level": 2,
+      "title": "Minimal intervals",
+      "number": "3.3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-33-minimal-intervals"
+    },
+    {
+      "level": 2,
+      "title": "The Murnaghan–Nakayama rule for qH*Fn",
+      "number": "3.4",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-34-the-murnaghannakayama-rule-for-qhfn"
+    },
+    {
+      "level": 2,
+      "title": "Remarks regarding [Thm. 15]MPP",
+      "number": "3.5",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Quantum equals classical",
+      "number": "4",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-4-quantum-equals-classical"
+    },
+    {
+      "level": 1,
+      "title": "Left operators",
+      "number": "5",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-5-left-operators"
+    },
+    {
+      "level": 2,
+      "title": "Definition of the left operators",
+      "number": "5.1",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-51-definition-of-the-left-operators"
+    },
+    {
+      "level": 2,
+      "title": "Flattening and (u,k)-equivalence",
+      "number": "5.2",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Diagrammatic notation",
+      "number": "5.3",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-53-diagrammatic-notation"
+    },
+    {
+      "level": 2,
+      "title": "Symmetries of the quantum k-Bruhat order",
+      "number": "5.4",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-54-symmetries-of-the-quantum-k-bruhat-order"
+    },
+    {
+      "level": 2,
+      "title": "Degree two relations",
+      "number": "5.5",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-55-degree-two-relations"
+    },
+    {
+      "level": 2,
+      "title": "Crossing products",
+      "number": "5.6",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-56-crossing-products"
+    },
+    {
+      "level": 2,
+      "title": "Paths",
+      "number": "5.7",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-57-paths"
+    },
+    {
+      "level": 2,
+      "title": "Products of trees",
+      "number": "5.8",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-58-products-of-trees"
+    },
+    {
+      "level": 2,
+      "title": "Example",
+      "number": null,
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-example"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 5.1",
+      "number": "5.9",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-59-proof-of-theorem-51"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 123,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schubert class",
+          "heading": false
+        },
+        {
+          "term": "saliola",
+          "heading": false
+        },
+        {
+          "term": "colmenarejo",
+          "heading": false
+        },
+        {
+          "term": "hook",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:2406.05311v1 [math.CO] 8 Jun 2024 Draft of June 11, 2024 A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD C. BENEDETTI, N. BERGERON, L. COLMENAREJO, F. SALIOLA, AND F. SOTTILE Abstract. In this paper, we give a rule for the multiplication of a Schubert class by a tautological class in the (small) quantum cohomology ring of the ﬂag manifold. As an inter- mediate step, we establish a formula for the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2406.05311v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 906,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gave murnaghan--nakayama",
+          "heading": false
+        },
+        {
+          "term": "murnaghan--nakayama rule",
+          "heading": false
+        },
+        {
+          "term": "murnaghan--nakayama formula",
+          "heading": false
+        },
+        {
+          "term": "mpp thm",
+          "heading": false
+        },
+        {
+          "term": "quantum-equals-classical",
+          "heading": false
+        },
+        {
+          "term": "flag variety",
+          "heading": false
+        },
+        {
+          "term": "hook quantum",
+          "heading": false
+        },
+        {
+          "term": "quantum bruhat",
+          "heading": false
+        }
+      ],
+      "extract": "The is a method for computing values of the irreducible characters of symmetric groups [@Mu37; @Na41a; @Na41b]. Under the identification of the character ring with the ring of symmetric functions, it translates into a rule for the multiplication of a Schur symmetric function by a Newton power sum. As explained in [@MorrisonSottile Sect. 2], in the cohomology ring of a Grassmannian, the Murnaghan--Nakayama formula is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-a-murnaghannakayama-rule-for-classic-cohomolog",
+      "number": "2",
+      "title": "A Murnaghan–Nakayama rule for (classic) cohomology",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 98,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "murnaghan--nakayama rule",
+          "heading": false
+        },
+        {
+          "term": "flag manifold",
+          "heading": false
+        },
+        {
+          "term": "cohomology",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec:classic-mn-rule label=\"sec:classic-mn-rule\"} We review combinatorial models for the cohomology ring of the flag manifold. We omit the precise definitions of the flag manifold and its cohomology as the combinatorial models will suffice for our purposes; the interested reader can consult [@Fu97]. Then we deduce a formula for the product of a Schubert polynomial and a hook Schur function from which we deduce",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-cohomology-of-the-flag-manifold",
+      "number": "2.1",
+      "title": "Cohomology of the flag manifold",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 438,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "color magenta",
+          "heading": false
+        },
+        {
+          "term": "color royalblue",
+          "heading": false
+        },
+        {
+          "term": "magenta rule",
+          "heading": false
+        },
+        {
+          "term": "cdot mathfrak",
+          "heading": false
+        },
+        {
+          "term": "schubert polynomial",
+          "heading": false
+        },
+        {
+          "term": "mathbb ell",
+          "heading": false
+        },
+        {
+          "term": "basis mathfrak",
+          "heading": false
+        },
+        {
+          "term": "pieri-formulas-version",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#cohomology-ring-of-the-flag-manifold label=\"cohomology-ring-of-the-flag-manifold\"} Let $n\\in{\\mathbb N}$ be a positive integer and write ${\\mathbb F}\\ell_n$ for the manifold of complete flags in ${\\mathbb C}^n$. We let $H^*{\\mathbb F}\\ell_n$ denote its cohomology ring with coefficients in ${\\mathbb Z}$. This is a free ${\\mathbb Z}$-module with a distinguished basis $\\{{\\mathfrak S}_w\\}_{w \\in S_n}$ of which are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-k-bruhat-order",
+      "number": "2.2",
+      "title": "k-Bruhat order",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 428,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "color magenta",
+          "heading": false
+        },
+        {
+          "term": "magenta rule",
+          "heading": false
+        },
+        {
+          "term": "hspace",
+          "heading": false
+        },
+        {
+          "term": "raisebox",
+          "heading": false
+        },
+        {
+          "term": "peakless",
+          "heading": false
+        },
+        {
+          "term": "classical-monk-formula",
+          "heading": false
+        },
+        {
+          "term": "bruhat order",
+          "heading": false
+        },
+        {
+          "term": "chain",
+          "heading": false
+        }
+      ],
+      "extract": "The terms appearing in Monk's Formula [\\[classical-Monk-formula\\]](#classical-Monk-formula){reference-type=\"eqref\" reference=\"classical-Monk-formula\"} define a partial order on $S_n$ graded by $\\ell(u)$. Define the by the covering relation $${{\\color{RoyalBlue}u\\lessdot_k u (i,j)}} \\qquad\\text{if}\\quad 1 \\leq i\\leq k<j \\leq n \\quad\\text{and}\\quad \\ell(u)+1=\\ell(u(i,j))\\,.$$ That is, $u\\lessdot_k u (i,j)$ if and only",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-grassmannianbruhat-order",
+      "number": "2.3",
+      "title": "Grassmannian–Bruhat order",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 423,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bruhat order",
+          "heading": true
+        },
+        {
+          "term": "gbo",
+          "heading": false
+        },
+        {
+          "term": "grassmannian",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#SS:GBO label=\"SS:GBO\"} We will make use of a second partial order on $S_n$ that is defined using the $k$-Bruhat order. Define the on $S_n$ by $${\\color{RoyalBlue}\\eta\\preceq\\zeta} \\qquad\\text{if}\\quad \\begin{array}{c} \\text{there exists $u \\in S_n$ and $1\\leq k < n$ with $u\\leq_k \\eta u\\leq_k\\zeta u$.} \\end{array}$$ This is a graded partial order on $S_n$ with minimal element the identity permutation $e$. Its",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-minimal-permutations",
+      "number": "2.4",
+      "title": "Minimal permutations",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 1362,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "peakless chain",
+          "heading": false
+        },
+        {
+          "term": "dotsb zeta",
+          "heading": false
+        },
+        {
+          "term": "peakless partition",
+          "heading": false
+        },
+        {
+          "term": "preceq simeq",
+          "heading": false
+        },
+        {
+          "term": "preceq times",
+          "heading": false
+        },
+        {
+          "term": "permutation zeta",
+          "heading": false
+        },
+        {
+          "term": "dotsb mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#minimal-permutations label=\"minimal-permutations\"} A permutation $\\zeta$ is if ${\\mathcal L}(\\zeta) = \\#\\mathop{\\mathrm{supp}}(\\zeta) - s(\\zeta)$, where ${\\color{RoyalBlue}s(\\zeta)}$ is the number of (nontrivial) cycles in the factorization of $\\zeta$ into disjoint cycles. Minimality is a central concept in this paper. This terminology (introduced in [@BS-Bruhat]) arises from the inequality ${\\mathcal L}(\\zeta)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-25-a-murnaghannakayama-rule-for-hfn",
+      "number": "2.5",
+      "title": "A Murnaghan–Nakayama rule for H*Fn",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 320,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathfrak zeta",
+          "heading": false
+        },
+        {
+          "term": "leq zeta",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "powersumhook",
+          "heading": false
+        },
+        {
+          "term": "schubert-times-hook-via-peakless-chains",
+          "heading": false
+        },
+        {
+          "term": "classical hook",
+          "heading": false
+        },
+        {
+          "term": "classical-coeffs",
+          "heading": false
+        },
+        {
+          "term": "dotsc",
+          "heading": false
+        }
+      ],
+      "extract": "We recall the following special case of Formula [\\[eq:classical-coeffs\\]](#eq:classical-coeffs){reference-type=\"eqref\" reference=\"eq:classical-coeffs\"}, which is [@So96 Cor. 9]. ::: proposition []{#pieri-formulas-version-2 label=\"pieri-formulas-version-2\"} Let $u \\in S_n$, $a\\leq k$, and $b\\leq n{-}k$. Then $$\\label{eq:schubert-times-hook-via-peakless-chains} {\\mathfrak S}_u(x)\\cdot s_{(b,1^{a-1})}(x_1,\\dotsc,x_k)\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-a-murnaghannakayama-rule-for-quantum-cohomolog",
+      "number": "3",
+      "title": "A Murnaghan–Nakayama rule for quantum cohomology",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 44,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "classic-mn-rule",
+          "heading": false
+        },
+        {
+          "term": "mathbb ell",
+          "heading": false
+        },
+        {
+          "term": "cohomology ring",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#S:qCoh label=\"S:qCoh\"} The (small) quantum cohomology ring $qH^*{\\mathbb F}\\ell_n$ of the flag manifold is a deformation of the ordinary cohomology ring $H^*{\\mathbb F}\\ell_n$ whose product encodes the three-point Gromov--Witten invariants of ${\\mathbb F}\\ell_n$. We describe this ring and extend the main objects from Section [\\[sec:classic-mn-rule\\]](#sec:classic-mn-rule){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-31-quantum-cohomology-ring-of-the-flag-manifold",
+      "number": "3.1",
+      "title": "Quantum cohomology ring of the flag manifold",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 354,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "royalblue mathfrak",
+          "heading": false
+        },
+        {
+          "term": "color royalblue",
+          "heading": false
+        },
+        {
+          "term": "ast mathfrak",
+          "heading": false
+        },
+        {
+          "term": "mathbb ell",
+          "heading": false
+        },
+        {
+          "term": "classes mathfrak",
+          "heading": false
+        },
+        {
+          "term": "leq ell",
+          "heading": false
+        },
+        {
+          "term": "dotsc",
+          "heading": false
+        },
+        {
+          "term": "schubert classes",
+          "heading": false
+        }
+      ],
+      "extract": "As a ${\\mathbb Z}$-module, we have $$qH^*{\\mathbb F}\\ell_n\\ =\\ {\\mathbb Z}[q_1,\\dotsc,q_{n-1}] \\otimes_{\\mathbb Z}H^*{\\mathbb F}\\ell_n\\,,$$ where $q_1,\\dotsc,q_{n-1}$ are indeterminates. To simplify notation, write ${\\mathbb Z}[q]$ for ${\\mathbb Z}[q_1,\\dotsc,q_{n-1}]$, and use multiindex notation, for $\\alpha\\in{\\mathbb N}^{n-1}$, we have ${\\color{RoyalBlue}q^\\alpha}\\vcentcolon= q_1^{\\alpha_1}\\dotsb",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-32-quantum-k-bruhat-order",
+      "number": "3.2",
+      "title": "Quantum k-Bruhat order",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 373,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "color magenta",
+          "heading": false
+        },
+        {
+          "term": "magenta rule",
+          "heading": false
+        },
+        {
+          "term": "color royalblue",
+          "heading": false
+        },
+        {
+          "term": "hspace",
+          "heading": false
+        },
+        {
+          "term": "raisebox",
+          "heading": false
+        },
+        {
+          "term": "quantum-monk-formula",
+          "heading": false
+        },
+        {
+          "term": "nothing-in-between-is-in-between",
+          "heading": false
+        },
+        {
+          "term": "quantum bruhat",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#quantum-k-bruhat-order label=\"quantum-k-bruhat-order\"} The terms appearing in the quantum Monk formula [\\[quantum-Monk-formula\\]](#quantum-Monk-formula){reference-type=\"eqref\" reference=\"quantum-Monk-formula\"} define a ranked partial order on the (infinite) set $${\\color{RoyalBlue}S_n[q]}\\ \\vcentcolon=\\ \\big\\{ q^\\alpha u \\mid u\\in S_n \\text{ and } \\alpha\\in{\\mathbb N}^{n-1}\\big\\}\\,.$$ The on $S_n[q]$ is defined",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-33-minimal-intervals",
+      "number": "3.3",
+      "title": "Minimal intervals",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "color magenta",
+          "heading": false
+        },
+        {
+          "term": "magenta rule",
+          "heading": false
+        },
+        {
+          "term": "hspace",
+          "heading": false
+        },
+        {
+          "term": "raisebox",
+          "heading": false
+        },
+        {
+          "term": "minimal-permutations",
+          "heading": false
+        },
+        {
+          "term": "minimal",
+          "heading": true
+        },
+        {
+          "term": "quantum bruhat",
+          "heading": false
+        },
+        {
+          "term": "bruhat order",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:Qminim label=\"sec:Qminim\"} As far as we know, there is no analog of the Grassmannian--Bruhat order related to the quantum $k$-Bruhat order, and so rather than speak of minimal permutations (as we did in the classical case; see Section [\\[minimal-permutations\\]](#minimal-permutations){reference-type=\"ref\" reference=\"minimal-permutations\"}), we work instead with certain intervals in the quantum $k$-Bruhat",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-34-the-murnaghannakayama-rule-for-qhfn",
+      "number": "3.4",
+      "title": "The Murnaghan–Nakayama rule for qH*Fn",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 863,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mpp thm",
+          "heading": false
+        },
+        {
+          "term": "classical hook",
+          "heading": false
+        },
+        {
+          "term": "alpha mathfrak",
+          "heading": false
+        },
+        {
+          "term": "hook product",
+          "heading": false
+        },
+        {
+          "term": "mathfrak ast",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "classical-schubert-times-powersum",
+          "heading": false
+        },
+        {
+          "term": "mathrm supp",
+          "heading": false
+        }
+      ],
+      "extract": "As for Corollary [\\[C:classical-schubert-times-powersum\\]](#C:classical-schubert-times-powersum){reference-type=\"ref\" reference=\"C:classical-schubert-times-powersum\"}, we derive the quantum Murnaghan--Nakayama formula from an intermediate result describing the quantum product of a Schubert class ${\\mathfrak S}_u$ by a quantum hook Schur polynomial $s_{(b, 1^{a-1})}^q(x_1,\\dotsc,x_k)$. ::: theorem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-4-quantum-equals-classical",
+      "number": "4",
+      "title": "Quantum equals classical",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": "12",
+      "labelEnd": "15",
+      "words": 1671,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "color magenta",
+          "heading": false
+        },
+        {
+          "term": "magenta rule",
+          "heading": false
+        },
+        {
+          "term": "color red",
+          "heading": false
+        },
+        {
+          "term": "red raisebox",
+          "heading": false
+        },
+        {
+          "term": "color royalblue",
+          "heading": false
+        },
+        {
+          "term": "alpha raisebox",
+          "heading": false
+        },
+        {
+          "term": "underline color",
+          "heading": false
+        },
+        {
+          "term": "alpha overline",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#quantum-equals-classical label=\"quantum-equals-classical\"} A recurring theme in quantum Schubert calculus is that oftentimes the numerical part ${\\color{RoyalBlue}N^{w,\\alpha}_{u,v}}\\vcentcolon=q^{-\\alpha}C^{q^\\alpha w}_{u,v}(\\in{\\mathbb N})$ of a quantum Littlewood--Richardson number (a Gromov--Witten invariant) is naturally identified with a related classical Littlewood--Richardson number $c^{w'}_{u',v'}$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-5-left-operators",
+      "number": "5",
+      "title": "Left operators",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 374,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbf mathop",
+          "heading": false
+        },
+        {
+          "term": "operator mathbf",
+          "heading": false
+        },
+        {
+          "term": "composition mathbf",
+          "heading": false
+        },
+        {
+          "term": "postnikov cyclic",
+          "heading": false
+        },
+        {
+          "term": "scriptstyle bullet",
+          "heading": false
+        },
+        {
+          "term": "postnikov symmetry",
+          "heading": false
+        },
+        {
+          "term": "bullet alpha",
+          "heading": false
+        },
+        {
+          "term": "mathrm scriptstyle",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#left-operators label=\"left-operators\"} We will prove the following quantum analog of the first part of Proposition [\\[P:peaklessChains\\]](#P:peaklessChains){reference-type=\"ref\" reference=\"P:peaklessChains\"}. ::: theorem []{#Th:nonZero label=\"Th:nonZero\"} Let $u,w\\in S_n$ and $q^\\alpha w\\in S_n[q]$ be such that $[u,q^\\alpha w]^q_k$ is a minimal interval. Then there is a hook partition $\\lambda$ with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-51-definition-of-the-left-operators",
+      "number": "5.1",
+      "title": "Definition of the left operators",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 19,
+      "labelStart": "15",
+      "labelEnd": "19",
+      "words": 2433,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbf mathop",
+          "heading": false
+        },
+        {
+          "term": "scriptstyle bullet",
+          "heading": false
+        },
+        {
+          "term": "royalblue mathbf",
+          "heading": false
+        },
+        {
+          "term": "dotsb mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathrm scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "flattens mathbf",
+          "heading": false
+        },
+        {
+          "term": "operators mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathrm supp",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#SS:monoid label=\"SS:monoid\"} We first recall the results of [@BS-Monoid] concerning saturated chains in the classical $k$-Bruhat order and then extend part of its approach to the quantum $k$-Bruhat order. ### Classical left operators {#SS:classical-left-operators} Let ${\\mathcal F}_n$ be the free monoid generated by the $\\binom{n}{2}$ symbols $\\{{\\color{RoyalBlue}{\\mathbf v}_{a,b}} \\mid a<b \\mbox{ with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-53-diagrammatic-notation",
+      "number": "5.3",
+      "title": "Diagrammatic notation",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 287,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "equiv amp",
+          "heading": false
+        },
+        {
+          "term": "picture valuediagram",
+          "heading": false
+        },
+        {
+          "term": "padding",
+          "heading": false
+        },
+        {
+          "term": "diagrammatic notation",
+          "heading": true
+        },
+        {
+          "term": "mathbf end",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "array qquad",
+          "heading": false
+        },
+        {
+          "term": "put",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#SS:diagrammatic-notation label=\"SS:diagrammatic-notation\"} We introduce a diagrammatic notation for compositions of operators ${\\mathbf v}_{ab}$, which will facilitate our study of relations among them. Figure [1](#fig:classical-relations){reference-type=\"ref\" reference=\"fig:classical-relations\"} depicts the relations among classical operators in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-54-symmetries-of-the-quantum-k-bruhat-order",
+      "number": "5.4",
+      "title": "Symmetries of the quantum k-Bruhat order",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 23,
+      "labelStart": "20",
+      "labelEnd": "23",
+      "words": 1695,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "color magenta",
+          "heading": false
+        },
+        {
+          "term": "magenta rule",
+          "heading": false
+        },
+        {
+          "term": "lessdot mathfrak",
+          "heading": false
+        },
+        {
+          "term": "mathbf mathfrak",
+          "heading": false
+        },
+        {
+          "term": "lessdot n-k",
+          "heading": false
+        },
+        {
+          "term": "color royalblue",
+          "heading": false
+        },
+        {
+          "term": "padding",
+          "heading": false
+        },
+        {
+          "term": "bullet mathfrak",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:actions-on-left-operators label=\"sec:actions-on-left-operators\"} Operations that preserve the $k$-Bruhat order (its symmetries) played a role in many results in [@BS-Bruhat]. We identify three operations preserving the quantum $k$-Bruhat order, which are symmetries of that order. These induce three operations on the operators ${\\mathbf v}_{ab}$ that preserve equivalence to ${\\mathbf 0}$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-55-degree-two-relations",
+      "number": "5.5",
+      "title": "Degree two relations",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 26,
+      "labelStart": "23",
+      "labelEnd": "26",
+      "words": 1177,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "equiv valuediagram",
+          "heading": false
+        },
+        {
+          "term": "equiv amp",
+          "heading": false
+        },
+        {
+          "term": "quad valuediagram",
+          "heading": false
+        },
+        {
+          "term": "compositions mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf mathop",
+          "heading": false
+        },
+        {
+          "term": "color magenta",
+          "heading": false
+        },
+        {
+          "term": "bullet raisebox",
+          "heading": false
+        },
+        {
+          "term": "magenta rule",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#S:degreeTwo label=\"S:degreeTwo\"} Given a composition ${\\mathbf v}$ involving quantum operators, in Section [\\[SS:monoid\\]](#SS:monoid){reference-type=\"ref\" reference=\"SS:monoid\"} we developed the notions of equivalence to zero (${\\mathbf v}\\equiv{\\mathbf 0}$), of ${\\mathbf v}$ being nonzero (${\\mathbf v}\\not\\equiv{\\mathbf 0}$), and the notion of $(u,k)$-equivalence for nonzero compositions ${\\mathbf v}$. We do",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-56-crossing-products",
+      "number": "5.6",
+      "title": "Crossing products",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 827,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbf mathop",
+          "heading": false
+        },
+        {
+          "term": "equiv mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf big",
+          "heading": false
+        },
+        {
+          "term": "composition mathbf",
+          "heading": false
+        },
+        {
+          "term": "operator mathbf",
+          "heading": false
+        },
+        {
+          "term": "neq mathbf",
+          "heading": false
+        },
+        {
+          "term": "k-action",
+          "heading": false
+        },
+        {
+          "term": "mathrm supp",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#crossing-products label=\"crossing-products\"} For a composition ${\\mathbf v}={\\mathbf v}_{a_rb_r}\\cdots {\\mathbf v}_{a_1b_1}$, let $\\min({\\mathbf v})$ and $\\max({\\mathbf v})$ be the minimum and maximum elements of its support, $\\{a_r,b_r,\\dots, a_1,b_1\\}$. A composition ${\\mathbf v}$ defines a (multi)graph whose vertices are its support. It has one edge between $a$ and $b$ for each operator ${\\mathbf v}_{ab}$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-57-paths",
+      "number": "5.7",
+      "title": "Paths",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": "27",
+      "labelEnd": "29",
+      "words": 1241,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dotsb mathbf",
+          "heading": false
+        },
+        {
+          "term": "array valuediagram",
+          "heading": false
+        },
+        {
+          "term": "qquad valuediagram",
+          "heading": false
+        },
+        {
+          "term": "path mathbf",
+          "heading": false
+        },
+        {
+          "term": "critical windows",
+          "heading": false
+        },
+        {
+          "term": "alpha dotsb",
+          "heading": false
+        },
+        {
+          "term": "composition mathbf",
+          "heading": false
+        },
+        {
+          "term": "omitting mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ss:Paths label=\"ss:Paths\"} We turn our attention to nonzero paths and simply call them paths from now on. Thus a composition ${\\mathbf v}={\\mathbf v}_{a_r b_r}\\dotsb{\\mathbf v}_{a_1 b_1}$ is a if it is nonzero, its graph is a path with $a_1$ or $b_1$ an endpoint, and $\\#(\\{a_i,b_i\\}\\cap\\{a_{i+1},b_{i+1}\\})=1$ for all $i$. ::: remark []{#rem:yellow label=\"rem:yellow\"} As in Figure",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-58-products-of-trees",
+      "number": "5.8",
+      "title": "Products of trees",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "29",
+      "labelEnd": "30",
+      "words": 385,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "composition mathbf",
+          "heading": false
+        },
+        {
+          "term": "neq mathbf",
+          "heading": false
+        },
+        {
+          "term": "trees",
+          "heading": true
+        },
+        {
+          "term": "mathrm supp",
+          "heading": false
+        },
+        {
+          "term": "permutation zeta",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "main-theorem",
+          "heading": false
+        },
+        {
+          "term": "mathrm scriptstyle",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#SS:trees label=\"SS:trees\"} A nonzero composition ${\\mathbf v}=\\mathbf{T}_k \\cdots \\mathbf{T}_2 \\mathbf{T}_1$ is a if each $\\mathbf{T}_i$ is a tree and each pair of trees has noncrossing supports. A forest is minimal, so that each pair of trees commute, and commuting them gives an equivalent operator. ::: theorem []{#main-theorem label=\"main-theorem\"} Suppose that ${\\mathbf v}$ is a forest. Let $u\\in S_n$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-example",
+      "number": null,
+      "title": "Example",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 685,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbf mathop",
+          "heading": false
+        },
+        {
+          "term": "array valuediagram",
+          "heading": false
+        },
+        {
+          "term": "trees mathbf",
+          "heading": false
+        },
+        {
+          "term": "cdots mathbf",
+          "heading": false
+        },
+        {
+          "term": "equiv mathbf",
+          "heading": false
+        },
+        {
+          "term": "dotsb mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathrm supp",
+          "heading": false
+        },
+        {
+          "term": "alpha mathfrak",
+          "heading": false
+        }
+      ],
+      "extract": "We illustrate Proposition [\\[BS2002\\]](#BS2002){reference-type=\"ref\" reference=\"BS2002\"} with a sequence of equivalences on a classical tree. $$\\begin{array}{c} \\valuediagram[scale=1, padding=1]{{3, 4}, {1, 3}, {5, 6}, {3, 5}, {5, 7}, {2, 5}} \\end{array} \\equiv \\begin{array}{c} \\valuediagram[scale=1, xmax=7, padding=1]{{5, 6},{3, 4},{2, 3},{1, 2},{2, 7},{3, 5}} \\end{array} \\equiv \\begin{array}{c}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-59-proof-of-theorem-51",
+      "number": "5.9",
+      "title": "Proof of Theorem 5.1",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": "31",
+      "labelEnd": "32",
+      "words": 241,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "classical interval",
+          "heading": false
+        },
+        {
+          "term": "minimal interval",
+          "heading": false
+        },
+        {
+          "term": "peakless",
+          "heading": false
+        },
+        {
+          "term": "w0w",
+          "heading": false
+        },
+        {
+          "term": "forest",
+          "heading": false
+        }
+      ],
+      "extract": "k be a minimal interval, and consider a composition v corresponding to some saturated chain in [u, qαw]q k. Then v •k u = qαw. As explained in Section 3.3, as [u, qαw]q k is a minimal interval, ℓ(qαw)−ℓ(u) = # supp(wu−1)−s(wu−1). This implies that the graph of v contains no cycles, and is therefore a forest. As v is nonzero, it is a forest. QUANTUM MURNAGHAN–NAKAYAMA RULE 32 By Theorem 5.23, v is (u, k)-equivalent",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": "32",
+      "labelEnd": "32",
+      "words": 71,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nserc",
+          "heading": false
+        },
+        {
+          "term": "saliola",
+          "heading": false
+        },
+        {
+          "term": "andes",
+          "heading": false
+        }
+      ],
+      "extract": "The authors want to thank the Algebraic Combinatorics Working Seminar at the Fields Institute where this project started in 2016. Benedetti thanks Grant FAPA of the Faculty of Science of Universidad de Los Andes. Bergeron is partially supported by NSERC and the York Research Chair in Applied Algebra. Colmenarejo was partially supported by the AMS-Simons Travel grant. Saliola is partially supported by NSERC. Sottile",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 34,
+      "labelStart": "32",
+      "labelEnd": "34",
+      "words": 901,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frank sottile",
+          "heading": false
+        },
+        {
+          "term": "mike zabrocki",
+          "heading": false
+        },
+        {
+          "term": "montr eal",
+          "heading": false
+        },
+        {
+          "term": "des espaces",
+          "heading": false
+        },
+        {
+          "term": "saliola",
+          "heading": false
+        },
+        {
+          "term": "ﬂag manifolds",
+          "heading": false
+        },
+        {
+          "term": "bergeron",
+          "heading": false
+        },
+        {
+          "term": "email address",
+          "heading": false
+        }
+      ],
+      "extract": "1. Sami H. Assaf and Peter McNamara, A Pieri rule for skew shapes, JCTA 118 (2011), no. 1, 277–290. 2. Jason Bandlow, Anne Schilling, and Mike Zabrocki, The Murnaghan–Nakayama rule for k-Schur func- tions, J. Combin. Theory Ser. A 118 (2011), no. 5, 1588–1607. 3. C. Benedetti, N. Bergeron, L. Colmenarejo, F. Saliola, and F. Sottile, A Murnaghan-Nakayama rule for quantum cohomology of the ﬂag manifold, S´em. Lothar.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "color magenta",
+      "heading": false
+    },
+    {
+      "term": "mathbf mathfrak",
+      "heading": false
+    },
+    {
+      "term": "mathbf mathop",
+      "heading": false
+    },
+    {
+      "term": "royalblue mathbf",
+      "heading": false
+    },
+    {
+      "term": "alpha mathbf",
+      "heading": false
+    },
+    {
+      "term": "magenta rule",
+      "heading": false
+    },
+    {
+      "term": "dotsb mathbf",
+      "heading": false
+    },
+    {
+      "term": "vcentcolon mathbf",
+      "heading": false
+    },
+    {
+      "term": "alpha raisebox",
+      "heading": false
+    },
+    {
+      "term": "bullet mathbf",
+      "heading": false
+    },
+    {
+      "term": "operators mathbf",
+      "heading": false
+    },
+    {
+      "term": "equiv mathbf",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Two intervals in k-Bruhat orders on Sn. the 3-Bruhat order on S7. The interval on the left has a peakless chain (colored in blue); its ‘middle’ chain has labels 5, 3, 2, 4, so it is peakless of height 3, but the other interval has no peakless chains",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Intervals in the Grassmannian–Bruhat order. 2.4. Minimal permutations. A permutation ζ is minimal if L(ζ) = # supp(ζ) −s(ζ), where s(ζ) is the number of (nontrivial) cycles in the factorization of ζ into disjoint cycles",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "If ζ · η is a noncrossing product, then the interval [e, ζ · η]⪯is isomorphic to the product of the intervals [e, ζ]⪯and [e, η]⪯, and the chains in [e, ζ · η]⪯are shuﬄes of chains in each of the factors",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Two levels of the quantum 2-Bruhat order on S4[q] above 14",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Two minimal quantum intervals. Note that q1,5q2,4 = q1,4q2,5 = q1q2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Two minimal intervals in the quantum 5-Bruhat order on S8[q]. As this has height 3 (as does the minimal permutation (1, 6, 7, 3, 5)), we see that",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Diagrammatic notation for the relations (5.1) among classical operators",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Actions of o, ω0, and ρ on the rightmost interval of Figure 5. These operators act on each chain in the respective orders. Each row in Figure 9 shows the",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Actions of o, ω0, and ρ on chains from rightmost interval of Figure 5. diagrams for all ﬁve chains in one of the four intervals, with the ﬁrst row from the rightmost interval of Figure 5 and subsequent rows for the indicated interval in Figure 8",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Crossing compositions of (1)(i). They all are equivalent to 0. (in the ﬁrst column) are zero by (5.1)(ii). Lemma 5.12 implies the rest are zero",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Relations of Lemma 5.16(1)(iii). the ﬁrst row are mapped to each other by o, the four in the remaining rows form an orbit",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "The six compositions in (2)(i) are all equivalent to 0. o and ρ. Consider the leftmost operator in Figure 12. Writing a < b < c for its support, let u ∈",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "The twelve compositions of (2)(ii) are all equivalent to 0. the joint action of o, w0, and ρ. As the classical compositions (ﬁrst and fourth in each row) among them are zero by (5.1)(ii), all twelve are zero by Lemma 5.12",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "Remaining compositions of two operators. under the joint action of o and ρ. It suﬃces to show that one is nonzero and inequivalent",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "Some nonzero paths. Rows are on the left and columns are on the right. A composition v = varbr · · ·va1b1 of classical operators is a connected classical row if",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "A connected row is a particular instance of a path. Similarly, a composition v = varbr · · · va1b1 of classical operators is a connected classical",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "The operator on the right is a classical column as it is the product of two noncrossing connected classical columns. The operator on the left is a column as it can be cyclically shifted to the classical column",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 27,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 26,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "17 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p32); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 26 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2406.05311v1"
+  }
+}

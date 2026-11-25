@@ -1,0 +1,1246 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "ds15v1-2008",
+  "blocks": [
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Rogers-Ramanujan-Slater Type Identities\n\nJames Mc Laughlin\n\nDepartment of Mathematics, 124 Anderson Hall,\nWest Chester University, West Chester, PA 19383 USA\njmclaughlin@wcupa.edu\n\nAndrew V. Sills\n\nDepartment of Mathematical Sciences,\n203 Georgia Avenue, Georgia Southern University, Statesboro, GA 30460 USA\nasills@georgiasouthern.edu\n\nPeter Zimmer\n\nDepartment of Mathematics, 124 Anderson Hall,\nWest Chester University, West Chester, PA 19383 USA\npzimmer@wcupa.edu\n\nSubmitted: Apr 6, 2008; Accepted: May 24, 2008; Published: May 31, 2008\nMathematics Subject Classification: 33D15, 05A17, 05A19, 11B",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/cor-page-002-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "cor-page-002-01.md",
+      "narrative": null,
+      "content": "f(a) = (4 Doo (Buler [20])) (1.1.8)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "for |ab| < 1. It is called a theta function, despite the lack of a theta in the notation,\nbecause it is equivalent, via change of variable, to the theta function of Jacobi [46, p.\n463]:\n\nO(z, Ww) = > (=1)\"w\" e2\", (1.1.2)\nwhere |w| < 1.\nThe following special cases of f(a,b) arise so often that they were given there own\nspecial notation by Ramanujan [9, p. 11]:\n\ne(q) = f(4,9) (1.1.3)\nv(@) = f(a\") (1.1.4)\nf(-@) = f(-4,-¢). (1.1.5)\nRamanujan further defines\n_ fea’ 0°)\nx(q) = Fa (1.1.6)\n\nOne of the most important results in the theory of theta functions is that they can be\nexpressed as infinite pro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "Quintuple product identity.\n\nQ(w, 2) := f(—we?, —w?a) + wf (—wa, —w*2?)\n_ f(wart, x) f(-—wa*, —wa?)\n~ f(-—w?, -w*)\n\n1 —2,w; W)oo(war-?, Wr; W) oo. (1.1.12)\n\n= (-wa7\n\nBailey [14, p. 220, Eq. (4.1)] showed how certain linear combinations of theta series\ncan be simplified to a single theta series:\n\nfq? P27) + 2h(P2,q27) = flee\"). (1.1.13)\n\n1.2. Bailey Pairs and Bailey’s lemma\n\nOf central importance are the two Rogers-Ramanujan identities, which each assert the\nequality of a certain q-series with a ratio of theta functions:\n\nyt _ fea’, -0’)\nG(q) = dX Cran er (1.2.1)\npre) _ fea-')\nH(q) = dX Gae7 He",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "Ramanujan [9, 10] discovered a number of identities of this type. W. N. Bailey studied\nRogers’s work and as a result was able to simplify and extend it in [12, 13]. L. J. Slater\nused and extended Bailey’s methods to obtain a large collection of identities of Rogers-\nRamanujan type in [40, 41].\n\nBailey’s transform. If\n\nBn = > OpUn—rUn+r (1.2.3)\nr=0\n\nand so\n\nWn = > OpUr—nUr-ns (1.2.4)\nthen - x\n\n> AnYn = > BnOn-\n\nn=0 n=0\nProof.\n\noo Oe) oo ur oo\ny Ann = y y On Or Ur—nUrtn = y y bp OnUr—n Urn = y 6,8,\nr=0\n\nn=0 n=0 r=n r=0 n=0\noO\nBailey does not use his transform in the most general setting, but rat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/cor-page-005-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "cor-page-005-01.md",
+      "narrative": null,
+      "content": "lee) 1 lee) So 2\"q\" Pale, a) = Sead (cx, q) (1.2.8) n=0 £4) oo r=0 . n mc . 2) 8 (a 2) _ (= £9; vi fo} > ag’ (-4 Pry (x 2) (1 2 9) da 1 (4. 0)nBal@.@) = Toray Caney rea 2. =0 , r=0 , ’ oe _» OO nt gt (r+1)/2 1 an n(n+1 2 (_ ( XQ) oo vg (— )r aq xq a,(x,q) (1.2.10) dX UYnBu(a, 4) = (XQ) oo dX (—2q)r (",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/cor-page-005-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "cor-page-005-02.md",
+      "narrative": null,
+      "content": "Soa\" Ball. @) = AG Sod a,(1.9) (PBL) n=0 r=0 Soa\" (-4 P nba 2) = Toy alta (TBL) n=0 r=0 So at'Y(-1),8)(1,4) = ag) (SIBL) = —— p(-g) & 1+",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/cor-page-005-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "cor-page-005-03.md",
+      "narrative": null,
+      "content": "co aye ?(—G)nBn (4,4) =z! re) Pa,-(q, 4) (S2BL) y(-9) & 1 foe} foe} oe renal) = Soda) Para, 9)- (FBL) n=0 r=0",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "Proof. See Andrews [8, pp. 25-27, Theorem 3.3]. Oo\n\nCorollary 2.\n\nlee) 1 lee)\nSo 2\"q\" Pale, a) = Sead (cx, q) (1.2.8)\nn=0 £4) oo r=0\n. n mc . 2) 8 (a 2) _ (= £9; vi fo} > ag’ (-4 Pry (x 2) (1 2 9)\nda 1 (4. 0)nBal@.@) = Toray Caney rea 2.\n=0 , r=0 , ’\noe _» OO nt gt (r+1)/2 1\nan n(n+1 2 (_ ( XQ) oo vg (— )r\naq xq a,(x,q) (1.2.10)\ndX UYnBu(a, 4) = (XQ) oo dX (—2q)r (\nProof. Let n, pz — oo in (1.2.7) to obtain\noe (-1))a gi FtY/2(p,), ;\n» ny q)\n=0 1\n— x yo GV (pr\n= a,(a,q). (1.2.11)\n\n—~ s Teala\n\nTo obtain (1.2.9), jet pi > oo in (1.2.11). To obtain (1.2.9), in (1.2.11), set py = —/@\nand replace q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/ex-page-006-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "ex-page-006-01.md",
+      "narrative": null,
+      "content": "The pair (an(,q), Gn(2, (-1)Pargr@r-V??",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "Proof. To obtain (S2BL), set x = q and pp = ~gq in (1.2.11).\n\nL = py =q in (1.2.11).\n\nExample 5. The pair (an(,q), Gn(2,\n\n(-1)Pargr@r-V??\n\nq)), where\n\n(1— 2¢?\")(e)n\n\nTo obtain (FBL), set\n\none THe\nand 1\nPla) = Ty\nform a Bailey pair.\nProof.\nan(e,q) = Sp ore\n\n0 (Q)n—r (29) n4r\n\nr\nn\n\n__ 1 (Gr ¢_gyrgnrrr-D2g, (4\n(DnltMn dX logy, 1)\"q (2, q)\n\n2 (= 2 Er or?\n\n~ (@n(#4)n dX (q)r(1 — x)(agr*!),. q\n\na So lava)\" (6)? ()\n(@)n(@a)n P25 (Van (Va) (ea) (ea/de CP\n\nSORE TE 7 (by Jackson's gy stm; se [22, Ba, (11-21)\n1\n\n~ (a)\n\nOo\n\nNow that we have a Bailey pair in hand, it can be inserted into the various limiti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "oo\nd= ( yrgn' 5n—1)/2\nn=\n\n—oo\n\nww\n\niz q)\n3\nied (by (1.1.7)\n\nthe extremes of which are the first Rogers-Ramanujan identity.\nUpon inserting a and (1.2.13) into (TBL), we obtain\n\nyee = (eden yn grin 1) ae)\nn=0\neT De yrgnn-V)\n\naa\nb(—4)\n\nthe extremes of which are the first Ramanujan-Slater/Géllnitz-Gordon identity.\nFinally, inserting (1.2.12) and (1.2.13) into (S1BL), we obtain\n\n(by (1.1.7))\n\nico qhrtb/?( 1) .\n\ndX On “=F 25 (Ee rg a+r)\n\n=P 0) ty (1.1.7)\n\nthe extremes of which are a special case of Lebesgue’s identity (L), which appears in\nSlater’s list [41] as Eq. (12).\n\n1.3. Some More General q-Se",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "Identity 8 (Lebesgue).\n\noo Gg’ *D/?(a)n\n<= (On\n(Lebesgue [30]; cf. Andrews [6, p. 21, Cor. 2.7])\n\nIdentity 9 (Heine’s g-analog of GauB’s sum).\n\n(49; 7) o0(—@)oo =\n\n(C/a)oo _ > (=1rergrh? YP (a)n (H)\n(C)oo 10 a(g)n(e)n\n([26]; cf. Gasper and Rahman [22, Eq. (II.8)])\nIdentity 10 (Andrews’ g-analog of Gauf’s 2Fi(\n\n4) sum).\n(\n\n(aq; 1) 00 (bq; 1) oo _ oe (a Ln b)pqrant) )/2\nPICO 2 eb (AG)\n\n(Andrews [4, p. 526, Eq. (1.8)]; cf. Gasper and Rahman [22, Eq. (IL.11)])\nIdentity 11 (Andrews’ g-analog of Bailey’s ne sum).\n\n(cq/b; 4? )oo(bes Pao Aart c aa )\nAB\nCMCC me)\n(Andrews [4, p. 526, Eq. (1.9)]; cf. Gas",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "2.1  gq-series Expansions of Constants and Theta Functions\n\n0= > ((E) with z = —1) (2.1.1)\nn=0\n= ; (=1)\"¢\" ogers D\nl= d Pan (Rogers [37, p. 333 (4)]) (2.1.2)\n1= > a (M.-S.-Z. [34, Eq. (2.3)]) (2.1.3)\n_ °° ghn-Y/2\n2= dX (ae (2.1.4)\nf(-—d = Soe pra PP +4\") (Euler; S. 1) (2.1.5)\nn=0\n! -y qv uler > (C) with z=\nFca = dX ae (Euler [20]; (C) with z = q) (2.1.6)\n\n»=- yr grin) 2a) n\nn=0 —9)n\n(Starcher [44, p. 805, (3.6)]; (H) witha =-c=q) (2.1.7)\n\nn(n+1) /2( (-l)n\n\na\n\nn=0 Mn\n(Starcher (44, p. 805, (3.7)]; (H) with a= —l,c=q) (2.1.8)\niad jr q’ 24n— ld —4@q)\n= => rn (Starcher [44, p. 807, (3.14)]) (2.1.9",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "Cf CO (__4)n,n?/__. 2\nfa =9) = > Ura\" (CGT n (Ramanujan [10, Entry 5.3.6]; S$. 4) (2.2.2)\n\n£1.07) GeO ?-aP)n\nweg 4am (223)\n= 250 Caan P)n (H) (2.2.4)\nn=0 (Q)on41\n\nf( So gnin+1)/2\nfe =>! a ((E) with z=q;8.2) (2.3.1)\nn=0 n\nf=) ye __brgnen)\ne(-@) dX (-GP nel? Pn (8.5) (232)\nLa) = S (Dn (Ramanujan [10, Ent. 4.2.8]; S. 6c) (2.3.3)\nFa ~ 2+ Ween famannjan [10, Ent. 4.2.8]; 8. 8\n= > ee (Ramanujan [10, Entry 4.2.9]) (2.3.4)\nn=0 n\\Q ntl\nmu = > a (Ramanujan [10, Entry 5.3.3]) (2.3.5)\n“m0 17 dan\na = > vot Pn (Ramanujan [10, 4.2.10]; S. 48) (2.3.6)\n~ n=0 2n\n\nFp Een ((E) with z=q;S8.7) (2.4.1)\n\nMaa =o) _ x",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "~ y —p. ((L) with a=—q?) (2.4.6)\n\nn=0\n= > a ((H); Ramanujan [10, Ent. 1.7.13]) (2.4.7)\nn=0 an+1\n=> mee. ((H) witha=-1,c=\\@) (2.48)\nn=0 mn\nfa?) weer) ackson ne 3):\nTCP) => un (Jackson [28, p. 179, line -3]; S. 9) (2.4.9)\nf(a, ia) _ . q™ (Don c\nv(-9) »> (PP )n(@s an (S.10c) (2.4.10)\nee =f = an GT)n (8.66) (2.4.11)\nn=0 , 2n\nc( 3 co n(n+2) 2\naoe -y! — oe Gn (S. 67) (2.4.12)\nn=0 , n\na0) a _@@(—a)on\ny(-@) dX (GP )nvildts Mn (S11) (2.4.13)\n£G-@8) Gem? (-Pi Gn\ny(-@) ~ dX (q)on+1(-43 @?)n (S. 65) (2.4.14)\n\nMD (PSP nt\n\nRe \\alay (M.-S.-Z. [34, Eq. (2.3)]) (2.4.15)\n\nSs\n=\n|\nOQ\nto\nOQ\nto\n=\n1\nve\n\n_ py 74 oo n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "_ _ f(-4, —q') _ oS (—1)\"qr@n-2)\nx(-q) A (q) = f(-®) ~ dX HG P@nlGiAn\n\n(Rogers a p. 330 (5)]; S. 15)\n\ngrrr?)\n7 “Lc nels Gn\nRoxajen [9, p. 252 (11.2.7)])\nfe? =) ra\n960) =F = ean\n(Rogers [36, p. 339, Ex. 2]; S. 19)\n_ fea) sae\nb(-q) (Gn\n(Rogers [37, p. 331, abv (7)]; S. 16)\n: 2 3 o% n?\nx(-7)G(@ = fe. ) dX CTO\n(Rogers [36, p. 330]; S. 20)\n\nf tu 5) ico yr ghin+?)\naye (GP)n\n\n=a nels An\n\na 2G [34, Eq. (2.7)])\n\nue me Sarat\n\n(B.-M--S. ho Pa @an)\nHanda _ Ca =e _ > - -_ — (8. 17)\nSona _ fore _ y = — - = (S. 99-)\n\n2.6 Mod 6 Identities\n\nf(-,-@) SG PGP n\nf(-?) » (=a)2n(¥5@?)n\n(B-M.-S. [16, Eq. (2.13)])\n\nTHE",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "f(a =P) gO 'a Pn\nv(-9) (GS )n\namanujan [10, Entry 4.2.11], Stanton [43 2.6.2\nR E )\nA 8 _< am .\n= i (Ramanujan [10, Ent. 4.2.7]; S. 25) (2.6.3)\n-9) n=0\noo yr g\nA i 0 = Yo ((E) with z=—V@;$. 23) (2.6.4)\nn=0\n\nflea =P) os PO(HOn\ny(—4) (GP )n+i(Q)n\n(Ramanujan (10, Entry 4.2.12], Bailey [11, p. 72, Eq. (10)]; S. 22) (2.6.5)\n\nA) + Pniln (8.26) (2.6.6)\n=v ae (M.-S.-Z. [34]) (2.6.7)\nn=0 , n ”\n5 © 2n(nt1)(_ 7. 72\nFey ~ dX a (8. 27) (2.6.8)\nSOPHO Py nl(-F Pn\n7 » (2; Pon\n((R1) with a = q; Stanton [43]) (2.6.9)\nSP\") (—45 7 )n\n~ Onan (2.6.10)\n\nfag) _ > P'(-G Pn\n; (GP) Pn\n(B.-M.-S. [16, Eq. (2.13)}) (2.6.11)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "AGP) LVL )n\ng(-P) dX (don\nAED) _ SGP )n\nV-Q (an\n(Ramanujan [7, p. 178 (3.1)], [10, Ent. 5.2.3]; S. 29)\n\n1 _ oo gh r-Y(@: q)n\nGE,P;P)0o <Z (Q)3n\n(special case of (H); cf. Corteel and Savage [19})\n1 _ oo gh r+ D/2(¢4- q)n\n\nGP.PiPo (anv\n(special case of (H); cf. Corteel and Savage [19])\n\n2.7 The Rogers-Selberg Mod 7 Identities\n\n2n(n+1)\n\nf(-¢,-@°) > q\n\nFa) Cara ar ae (Rogers [37, p. 331 (6)]; S. 31)\n\nn=0\nf(-@,-@) 7 ico grrr)\nFB = dX Carnes (Rogers [36, p. 342]; S. 32)\nf(-d,-7) _< er\nFa = dX Gh@)s(cam (Rogers [36, p. 339]; S. 33)\n\n2.8 Mod 8 Identities\n2.8.1 Triple Products\n\nf(-a-9) GS GPOP)(-GP)n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 15",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/page-015.md",
+      "narrative": null,
+      "content": "co\n\ng” (4 0)n\nw(-q) = (PP )n\n(Ramanujan [10, Ent. 1.7.11, 4.2.15]; S. 36)\nf(=G 9) POPP ($4: P)n(=O)n\np(—49) n=O (Q)an+i\n(Ramanujan [10, Entry 1.7.6]; S. 35)\nFP =P) POPE HPP n\ny(-4) (GP )niil(Qn\n(Ramanujan [10, Entry 1.7.5])\nLP =P) POMP ($4: P)n(=O)n\ny(—49) 0 (Q)an+i\n(Ramanujan {10, Entry 1.7.8]; S. 37)\nF(sat a\") POMP“ Pn\n9(—4) <= (Dn(Ga\")n\n(Ramanujan [10, Entry 1.7.4])\n\n£40) Gert)\n\n7C#) ~ 24 Wan (S. 38)\n{G.e) ae\n\nf(-@) ~ d (Ven\n\n(Jackson [28, p. 170, 5th Eq.]; S. 39)\n\nfaa) _ > PP (— 1G n(-P: Gn\nV-P) SPP )l(Pi dn\n((R2) with a = q?/?)\nSP (=a: P)on\n(BP )nlPs Fn\n((R2) a = q?; Gessel-Stanton [24, (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 16",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/page-016.md",
+      "narrative": null,
+      "content": "2.8.2 Quintuple products\n\n_ > (LP )n ((H) with a = 1, c= V7 S. 47) (2.8.15)\n\nn=0\n\n2.9 Mod 9 Identities\n\nflea) — BP @an41\n- ; = ; : 2.9.1\nf(-@) » (25 )n(Gs Gants (29-1)\n(Bailey [12, p. 422, (1.7)]; S. 40c)\nf(-@, —q') _ oo Pre) (g)an(1 _ gn*?)\n\nFB) PPG Pane 292)\n(Bailey [12, p. 422, (1.8)]; S. 41c)\nf(-<d.-@) SF (an\nf(-@) » (4; @)n (Gs Pan 293)\n((R1) a = —q?; Bailey [12, p. 422, (1.6)]; S. 42c)\nf(-0,-0) — Sa (1) n(-G Pn (2.9.4)\n\nWg) ($12222, nl 25 Pan\n\n(M.-S. [33, Eq. (1.13)])\na” (G5; ®)n1(-G Pn\n\n=1+\n(97: @)on(G75 G7 )n—1\n\nn=1\n\n(S. 113) (2.9.5)\n\n2.10 Mod 10 Identities\n2.10.1 Triple Products\n\nico",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 17",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/page-017.md",
+      "narrative": null,
+      "content": "H(ag?) _ fl-a?.=d) _ Ss _gmerr?\n7 dX CE @)n+1(Q)n\n(Rogers [37, p. 330 (2), line 2]; S. 44)\nGP) _ fea) _ SS gone\nx(—q) f(-9) (GP )n(Dn\n(Rogers [36, p. 341, Ex. 1]; S. 46)\ngnanth/2\n> Som (4.9) n+1(Q)n\n(Rogers [37, p. 330 (2), line 1))\n\n2.10.2 Quintuple Products\n\nAP) Q@,-a A POMMP (—@)n\n\n= = (S. 62)\n\nx(-g) (9g) A (ant\ngn nD? (—q)\n\nn\n\nn=0 (G)on\n(Rogers [37, p. 332 (12), 1st Eq.])\nHP?) QQ =) a PrP? (an\nx(q) (a) (ants\n(Rogers [37, p. 332 (12), 2nd Eq.]; S. 63)\n\n2.12 Mod 12 identities\n2.12.1 Triple Products\n\nf(-a,-¢\") > ger?) (= P)n(1 — qt)\n\nTa ansa (8. 49¢)\nFP =) POP '(HG Pn\nf(-q » (Q)2n+1\n\n(Ramanuj",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 18",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/page-018.md",
+      "narrative": null,
+      "content": "(Ramanujan [9, Ent. 11.3.1]; S. 29)\nfaa. =a\") VG Panes\n\nf-G) Ga ans\nf(-@,-0) SP\" (GP )an\n7a) aa\n((R1) with a = —,/q; S. 53)\n£(-P.-P) GPO (-4 0 )n\nv(-q) » (GP nid Tn\nf(-d', —q) = mQn-l)(_¢: )n\n\nq\n(PP )n(P37)n\n\n3\n\nf(-@, -q) _ > ge (qe; @)3n\nw(—q>) — (q?; @?) (qs @)on\n\n(S. 54c)\n\n(S. 55)\n\n(S. 27)\n\n(S. 52)\n\n((R2) a = —q'/3; Dyson [13, p. 9, Eq. (7.5)])\n\nf(-a-q!) > P\" (PsP) 3n41\n\nHP) aT Maal — F\n\n(Dyson [13, p. 9, Eq. (7.6)])\n\nf(a q) oo g?'\\\"*?) (—@)n\nf(-@) n=0 (GP )nti(Qn+1\n\nf(q’, q°) _ 1 + ¢ ~ g’*?) (—9q)n1(—Q)n42\nf(-a (-g0-@) (q)ont2\n£0.07). a (-Q)n-1\nfa 44 @PAnlDn\nfaa) Sar (-G@)en+1\nf(-@) » (4:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 19",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/page-019.md",
+      "narrative": null,
+      "content": "2.12.2 Quintuple Products\n\nQa, 9) _ ~ getve(-1; G)n(—n\n~(—4) n=O (q)on(—1)n\nQPP) Pe? (-@: Pn\ny(-q) n=0 (Qent\nQD) 4 re GP nl-dn\ny(—9) (q)an(Q)n—1\nQa, 7) _ iad qQherrDi2(@; @)n(—@)n\ny-ad | (q)an+1(@)n\n\n2.14 Mod 14 Identities\n2.14.1 Triple Products\n\nf(-@, —q'’) 7 co ghin+?)\nf —q) 7 » (4; P)n+i(Qn\nfl-@, —q'°) 7 oo qrnt))\nf(-4) 7 » (4; P)n+i(Qn\n\nAg. -d A M@YP(-an\n> (Gan\n\nQg =P) Rare P? (an\n\ny(—4) => (q)\n\n)\n\nn(n+3 ae\n\n2n+1\n\nQn\n\nn=0 (Q)an+1\n\nTHE ELECTRONIC JOURNAL OF COMBINATORICS 15 (2008), #DS15\n\n((R1) with a = \\/q; S. 53-)\n\n(M.-S. [32, Eq. (1.22)])\n\n(M.-S. [32, Eq. (1.24)})\n\n(M.-S. [32, Eq. (1.27)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 20",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/page-020.md",
+      "narrative": null,
+      "content": "2.15 Mod 15 Identities\n\nbn? —4\n\nf(-a-a\") > PG a n—G4s Pn\n(—4°) nal (Fon\n\nf(-@, -¢'3) oo P(e; ¢ 5) (gs P41\n=1- >\nI(-@) — (9; @? Jan\nf(-¢@,-a) (GF Pn (PP nt\n=1-)¢ -\nI(-@) — (9; @? Jan\nfea =a\") > P(g; P ns Pn\nf(-@) (on\nf(-0. =P) — BOG PwC Pn\nf(-@) » (P; Pan\n\n3\nll\n°\n\nPP (PP )nl@s@)n\n\n(9°; g°)an\n\nwm\nTv\n\nray\n~I\n\n|\n\nray\n2\n\nIl\n\nMe\n\n3\nll\n°\n\n2.16 Mod 16 Identities\n2.16.1 Triple Products\n\n((R1) with a = —q'3/5)\n((R1) with a = —q\"/*)\n((R1) with a = —q?/*)\n((R1) with a = —q7/*)\n((R1) with a = —q?/*)\n\n((R1) with a = —q'/*)\n\nf-P.-d4) GO P)\"(-G A nl-—GH Tn\nw(—q) »\nf(=a', =a\") > ge) (—P sgn\n\nw(-q) (GP )nv(Gs F",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 21",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/page-021.md",
+      "narrative": null,
+      "content": "iad qr 2 (—@?: @2)n-2(1 + grt?)\n\n= q\n_ a= gaa) * n=2 (a)an\n(M.-S.-Z. [34])\nwe q) =1+ = (Pn (F@n (S. 72)\n=1+ = oo (Gessel-Stanton [24, Eq. (7.13)])\n\nn=1\n\n2.16.2 Quintuple Products\n\nQd,-g Se\nica 4m (S. 83)\nQ(¢, -@) 7 oo ghent)) s\nf(-@ ~ dX (Q)on+1 ( , 84)\n_ > _— (Starcher [44, p. 809, Eq. (3.29)]; S. 85)\nn=0 2n\naa, —q) 7 oo gn n+1)\nf(-@ ~ y (q Jon+1 (Ss. 86)\n\n2.18 Mod 18 Identities\n2.18.1 Triple Products\n\nf=P =P?) ROP PPP )nl—Dn41\n~(-4) n=O (Q)on+2(@)n\n(Dyson [12, p. 434 (D1)]; S. 76)\nf(-d°, -¢\"\") _ gD (—g) (Gs Gn\n~(-4) n=0 (Q)n(Qenti\n(Dyson [12, p. 434 (D2)|; S. 77c)\nf(-@, -¢q) =] . POMP (GB B)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 22",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/page-022.md",
+      "narrative": null,
+      "content": "a = » heh (M.-S. [32], Eq. (1.4)) (2.18.5)\na = » pes (M.-S. [32], Eq. (1.5)) (2.18.6)\na = » ee (MLS. (32), Bq. (1.6) (2.18.7)\na =1+ > Tie — \") (M-S. [32], Eq. (1.7)) (2.18.8)\ni =e > Pe ns 24\") (ML-S. [32], Eq. (18) (2.18.9)\nQE See em)\na )_ » a (MS. [32], Eq. (1.10)) (2.18.11)\n2.20 Mod 20 Identities\n\n2.20.1 Triple Products\n\nA(q') — f(-d',-d'8) ane?\nx(-q) U(-a) » (Q)ant1\nGq’) _ f(-@.-a?) Sa\nx(-g) (-g) » (q)an\n\n2.20.2 Quintuple Products\n\nG(—4) _ Q(q, —q) _ oe gery\nx(-4) f(-9) n=0 (Q)an\n(Rogers [36, p. 332, Eq. (13)]; S. 99)\nG(q') _ Q(q\"°, -@’) _ On?\nx(—9) f(-@) (Gon\n(Rogers [36, p. 331 above (5)]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 23",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/page-023.md",
+      "narrative": null,
+      "content": "(Rogers [36, p. 331, Eq. (6)]; S. 94)\n\nH(q') _ Qa\", =a‘) re)\nx(—4) f(-4@) (Gone\n\n(Rogers [36, p. 331, Eq. (7)]; S. 96)\n\nQa, =a) Sa\" (-4. Pn\n\nv(-4) (PP )an\nQa\". -F) Gl )(-G Pn\nv(-4) » (P:@)an\n_ > rer) (=G: net\n0 (PP ant\n2.24 Mod 24 Identities\noa ee ans Lan\n\n(-1;¢7)n\n\nn=0\n\nQ(q?, =P) — Aa (=0 On\nw(-@) » (?? 39 2 Von\n\nQa? =@) — a (—G P)n(-15 Pn\nv(-9) » (—1L@?)n(P Pon\n\nn( (n-+2)( 3. 6),\n\na Sg ae q\nOy 4 = pnt\n\nQi? =\") _ > gre) (~G5 ? )ng(— 9: )n(L — P\"*?)\nv(-4) = (-P PnP Ponta\n\nQ 12 ico : a q®)n—1(2 + 2n)\nay +\" me te a ;\n\nTHE ELECTRONIC JOURNAL OF COMBINATORICS 15 (2008), #DS15\n\n(S. 100c)\n\n(S. 95)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 24",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/page-024.md",
+      "narrative": null,
+      "content": "Qa\") yy S g\" (=a: 4 )n(4°4°)n—1( + 22?”\n\n(2; Pon (G5 @)n-1\n\nQa? a) _ > P(g n(=G Pn\n( (PP )ansi(G Pn\n\n)\n\nQa?) _ > PO) (G8: n= P neil — Pr?\n1( _\n\n(275 7 )ont2(97; @?)n\n\nQ(q?.=@) _ > PO) (“PP )nl=05 Pn\n=0 (Q)2n(—@)2n41(—93 P)n\n\n(M.-S. [32, Eq. (1.18)})\n(2.24.8)\n\n(S. 110c)\n\n(2.24.9)\n\n(S. 108c)\n\n(2.24.10)\n\n(M.-S. [32, Eq. (1.21)])\n\n\" (2.24.11)\nQG?, =P) — BR POM (-P PO )n(—F Pn\n= M.-S. [32, Eq. (1.23\n(-4@) dX (G5 Pont (-—G Pn ( [ : 4 ( )\n(2.24.12)\nQa? =F) Ba (—8 7 n(—F Fn\n= M.-S. [32, Eq. (1.25\n(-4@) » (G75 @)ont1(—G @)n ( : a ( )\n(2.24.13)\nQGP .9) OM (-P PnP Pn\n= : M.-S. [32, Eq. (1.26\nOP) Waal dal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 25",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/page-025.md",
+      "narrative": null,
+      "content": "LP =18) SLOPE Pn\nf(-@ << (g)ans1(Q)n\nf(-q, —q') 7 q”. (q°; @)n—1\n\nf(-@ ~h* 1 (Qen-1(G)n\n\nn=\n\n2.28 Mod 28 Identities\n\n(Dyson [12, p.\n\n(Dyson [12, p.\n\nQq4,-d — Re )'(-G Pn\n(4) => (P:@?)2n\n\nQa, -8) Sa (-GP)n\nW(—q) => (P:@)on\n\nQi =-@) POP) (—G 7 nti\nw(—4) => (@?; 4?) ont\n\nll\n°\n\nn\n\n2.32 Mod 32 Identities\n\n16 q’)\noo ) =14 ea gq”\n\nQa’, —q') _ hesd inte) ! _\nf(-@) n=0 (q\nQa’, —q°) _ oe ghin+?) (-¢ P)n\nf(-4@) n=0 (q\n\n2.36 Mod 36 Identities\n2.36.1 Triple Products\n\nf=, -33) ged\n\n434 (B3)]; S. 92)\n\n434 (B4)]; S. 93)\n\n(S. 118)\n\n(S. 117)\n\n(S. 119)\n\n(S. 121)\n\n((H) with ag = —c = q*/”)\n\n(S. 123)\n\n\\n(=4; f nti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 26",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/page-026.md",
+      "narrative": null,
+      "content": "‘(—q, -¢q 7)\nP(-a?, = Jars ee DP n-U(-GP)n\nw(-q) “(V3 P )an- mC Pn\n\n(Dyson [12, p. 434, Eq. (C3)]; S. 114) (2.36.4)\n\n2.36.2 Quintuple Products\n\nQ(q oo 2n(n+1) 3. 6 n\nsay = 2s Gantt (MS: B83) 2365)\nn=0 ‘ , ”\niad mn? (3. 76\noe a = > -* va = (Ramanujan [10, Ent. 5.3.4]) (2.36.6)\nn=0 , mh ”\nQ(¢8, q@) 7 oo Prr+d (@?; q)n\nTP) 24 Wma Pn (S124) (28617)\nQ(q8,q7 2 g2nln+2) (3. gS),\nHay eG malrth (S-128) 2368)\n\n3. q-series expansions of sums of ratios of theta func-\ntions\n\nSlater’s list contains quite a few identities between q-series and sums of two or more ratios\nof theta functions.\n\n3.8 Mod 8 Identity",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 27",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/page-027.md",
+      "narrative": null,
+      "content": "3.12 Mod 12 Identities\n\nf(-¢,-7) +4f(-a,-\") Sa (HLA n\n\nFl—a) on (S. 47)\nf(-@,-4\") — af(-a-!) SB POO(-L@)n\n\nFla) ~e (S. 48)\n\n3.15 Mod 15 Identities\n\nf(a, @) _ af (?, q) 7 ico gh Ort D/2(_@),\n\n= S. 62\ny(—49) << (Q)ant1 ( )\nC8 n(3n—1)/2(__\n= ga can (Rogers [37, p. 332])\nn=0 (q)on\n\nfdi.¢) -af(a¢) _ < Gre Pan\n\ny(—4) 7 10 (Q)an4a\n\n3.16 Mod 16 Identities\n\nf(a.) +aF(P.q4) _ > gh) (—g)on\ny(-4’) n=0 (Q)onsi(q4s Gn\nf=, =a\") tafe? =a) POM (HP an\ny(-@) n=0 (Qonsi(—4; )n\nflea’, —a\") + af(-¢, a\") _ > gla )n(-G Pn\nv(-9) n=O (P37 )on\nf=, =a\") = af—@ =) SA POPOL nh Pn\nva) an (Pan\n3.18 Mod 18 Identities\n\nf(-¢°,-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 28",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../sections/page-028.md",
+      "narrative": null,
+      "content": "f(-@,-@) — af(-¢@, -¢*) mmr D2 (—g) (Gs\n\n\\n—1\n\n/\n=1 S. 75) (3.18.3\np(—49) > (q)n—1(q)2n ( _\n3.21 Mod 21 Identities\nSo n(n) /2(_\nSal’.4 awed oe) _ = a. d — an (Rogers [37, p. 331 (1)]; S. 81) (3.21.1)\n_ e SO n(ntl1)/\nfa’, erie ”) = dX a — an (Rogers [37, p. 331 (1)]; S. 80) (3.21.2)\n5 5 SO n(nt+3)/\nfa’, o — ga\") _ =x qn — Dn (Rogers (37, p. 331 (1)); 8. 82) (3.21.3)\n\n3.24 Mod 24 Identities\n\nfla.a®) = af.) _ a\nf(-@) ~ dX (Qen\nfq 10. q*) — q 2t(C, 2 ¢’?) _ od qrentl)\nF-a) Oma\n_ iad gren-))\n=> (q)2n\n(9) = PLGP) ened\nf(-@) 7 dX (Q)on+1\nfaa\") + af (Ge?) _ > Pr) (~G: qn\nf(-@) 7 (Q)ons1(—9?; @?)n\n\nll",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 29",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/page-029.md",
+      "narrative": null,
+      "content": "fg ey dhea 330%) _ 7? gre ( eral a\") (ML-s. (33, Eq. (1.6)])\n(3.27.4)\n\n6 ay ap ty ag _\nf(-.-4 wae gi) 3 q SL v) (S. 88c)\n(3.27.5)\nf(-a,~4 ala =\") yee (S. 89c)\n(3.27.6)\n\n3.30 Mod 30 Identities\n\nfata\") alana\") _ » (Rogers [36, p. 333]; $.99) (3.30.1)\na ¢°) “> - (S.98) (3.30.2)\nfer Thad) “> ae (Rogers (36, p. 334]); 8. 94) (3.30.3)\nf(a, ae hae _ » aes (S. 96) (3.30.4)\nf(a, ri) afl g) y enn (S. 100c) (3.30.5)\nfq, Pei gy _ > pas (8. 95) (3.30.6)\n_ » pee (S. 97) (3.30.7)\n\n3.32 Mod 32 Identities\n\nf(0.P)- PF _ =: Pe? (=P P)na(=@) net\np(—4 = (q)ans2\n\nf(g.) = it °°) ) yr Pea )n(-an\np(—49) n=0 (Q)an+1\n\nT",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 30",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../sections/page-030.md",
+      "narrative": null,
+      "content": "n(n+1)/2\n\n(= @)n(—Qn+i(l — g\"*)\n\n(q)ant2\n\n£@°,.P)- PGE?) Sa\ny(—9) >\n\nf(a a8) -PFC.0) 6 Ger vy? (4G @)\\n(—G)n\n(4) 7 > (Q)ont1\nf(q'8,a'®) — af (a4 ght D2 (5 gn a(—n\nyiy\ny(—-4) > (q)2n\n\n(3.32.3)\n\n(S. 105) (3.32.4)\n\n(S. 104) (3.32.5)\n\nfaa\") + f(a?) = FPP) - PLE) =24y0 Qe (0s Pn—a(=D)n\ny(-4) — (G)on\n(S. 101c) (3.32.6)\nf(¢?,@°) +af(¢,@\") _ a f(g, ¢3) _ af (i,q?) _ oo gD? (—@?: g?)n(—G)n41\n~(—4) n=0 (Q)an+2\n(S. 102) (3.32.7)\n3.36 Mod 36 Identities\nc 15 21 3 _ 33 oo n(n+1) ( 2. 72\nflea? -@) + PF, = Puy Se a (s. 107)\ne(-@ ) n=0 @ Joni (4; qd Nn\n(3.36.1)\nf-8,-?) + & f(-a Sg 33: n(=0 Pn\n= 33, Eq. (1.30\ny",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 31",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/page-031.md",
+      "narrative": null,
+      "content": "3.42 Mod 42 Identities\nf(a?) = gf GP) LOPE Pn\nv(-9) (PP )an\nfq?) - FFG .a) _ 3 gq” (-4 Pn\nw(-q) = (P5P)an\nf(q3, 7°) _ fq, q’) _ hesd q+?) (—¢; P) nt\n\nw(-4)\n\n3.48 Mod 48 Identities\n\n7 a) (P79? )on+1\n\nf(a, 7?) _ af (q™, @4) 7 grin) (-¢ P)n—\nf(-9) a x\nf(¢?, 7°) _ f(g? ¢ qr -9q a) \\n— 1\nf(-4) “tt yeep (Q)2n\nFPP) = PFPA) LOO EPP )n\nf(-9) << (dante\nMP.) - FG a) _ > PY (=G. Pn\nf(-9) (ant\n((H) with aq = —c = q°/*)\n\nPe LOOP VHP Pn\n\n3.54 Mod 54 Identities\n\nf(-@\",\n\n-P) +0 f(-¢,-¢\")\n\nn=0 (Q)on+2\n\n2n?\n\nge” (P52 )n\n\nf(-@)\n\nf(-98,-@') + &f(-@,-@\")\n\nPrint) (\n\n(P73 P)on(G3 Gn\nP50 )n\n\nf(-@)\n\nf(-¢?, -a) +. a°f(-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 32",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/page-032.md",
+      "narrative": null,
+      "content": "PP a) = FPA) SA PEO a nog ann (S. 127) (3.64.2)\nv(-4) — (Pa? )2n\n6/20 4d) 5 ed 60 © n(n+2) ¢\nPP a) = P Fah) yn a : Onsst- gig')n (S. 128¢) (3.64.3)\nw(-q) n=0 (PP ans\nLG?.2\") = PFC) _ => LO) (9; P nnl-G )n (S. 129) (3.64.4)\nv(—4) — (75 )ont2\n\nf@?.a\") +af@4,0%) — PFE.) — Ff.)\n\nv(-9)\n- me —__ Gn (S. 130) (3.64.5)\n3.108 Mod 108 Identities\nf(—@3, <2!) — 25° f(q®, g) + 2g! f(q-3, 111) Jays PP )n\nf(-9) < (=G)n(Qan+2\n(B-M.-S. [16, Eq. (3.18)]) (3.18.1)\nf(a? =9\"*) = 20 GPP) + 2a\" F(P0') payer Pi? )n\nfa} = Q)ant2\n° -M-S. [16, . (3.17)])  (3.108.2)\nfa, —a'®) = 2 FPP) + 22° FG payor PG)\nf(-9) 0 Q)en+1\n(B-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prop-page-033-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "prop-page-033-01.md",
+      "narrative": null,
+      "content": "If a particularly nice form of the infinite product was observed, then that form of the product is recorded in the table.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 33",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../sections/page-033.md",
+      "narrative": null,
+      "content": "4 Equivalent Products in Slater’s List\n\nThere is no canonical way to represent ratios of theta functions, and it often happens\nthat two seemingly different products are in fact equivalent. The table below summarizes\nsuch occurrences in Slater’s list. If a particularly nice form of the infinite product was\nobserved, then that form of the product is recorded in the table.\n\nHnsiG = 7\") (S. 1)\nHoi. +4\") SV=S5=-S8.9=\n(S. 52) = (S. 84) = (S. 85)\nHnsid- 7\") (S. 3) = (8. 23)\nHi =\") - ¢\"”) (S. 4)\nHnsiG +4\") (S. 5-) = (S. 9) = (S. 52)\n= (S. 84) = (S. 85)\nLn +o\" D0 +9\") = FP )/0 = 9\") (8. 6)\nTri +¢\") (S.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 34",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../sections/page-034.md",
+      "narrative": null,
+      "content": "Tns1 1/0 — @\");n £ 0,+4 (mod 10) (S. 46) = (S. 62)\nTht 0+) S47) = (S10)\n= (8. 54)+9x(S. 49\n(S. 48) = (S.54)—qx(S. 49)\nT]ns1 1/0 — @\");n £ 0,+1 (mod 12) (S. 49)\nTns11/ — @\");n £ 0,2 (mod 12) (S. 50)\nHnsi1/G— 9\");n £0 (mod 4) (S. 51) = (S. 8)\n= (8. 11) = (S. 64)\nTana) B= 85)\n= (S. 9) = (S. 84)\n= (8. 85)\nTIns11/G -— ¢\");n 0,45 (mod 12) (S. 54)\n(S. 55) = (S. 57-)\n(S. 57) = (S. 55-)\nT]ns1 1/0 — @\");n ¥ 0,42 (mod 14) (S. 59)\nTns11/ — @\");n £ 0,+4 (mod 14) (S. 60)\nTIns11/G — ¢\");n # 0,46 (mod 14) (S. 61)\nTIns11/G -— ¢\");n € 0,44 (mod 10) (S. 62) = (S. 46)\nT]ns11/( — ¢\");n £ 0,42 (mod 10) (S. 63) = (S",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 35",
+      "pageStart": 35,
+      "pageEnd": 35,
+      "target": "../sections/page-035.md",
+      "narrative": null,
+      "content": "Tns1 1/ — @\");n = £1, £4, +6, +7 (mod 16) (S. 86) = (S. 38)\nTIns11/G -— ¢\");n = +1,+4+5 (mod 12) (S. 87) = (S. 27)\n(S. 88)= (S. 91)—q?x(S. 90\n(S. 89)= (S. 93)=qx(8. 9)\nT]ns1 1/0 — @\");n ¥ 0,£3 (mod 27) (S. 90)\nTns1 1/0 — @\");n € 0,£6 (mod 27) (S. 91)\nToi 1/0 — ¢\");n £0 (mod 9) (S. 92)\nTIns1 1/0 — ¢\");n 4 0, +12 (mod 27) (S. 93)\nT]nsi 1/0 — a\"); n ¥ 0,10, +3,+4,+7 (mod 20) (S. 94) = (S. 17-)\n(S. 95)= (S. 97)\nTnsi 1/( — ¢\");n odd or n = +8 (mod 20) (S. 96)\n(S. 97) = (S. 95)\nToi 1/( — 9\"); odd or n = +4 (mod 20) (S. 98) = (S. 79)\nT]nsi 1/0 - 9\"); n = £2, +3, +4, £5, +6,+7 (mod 20) (S. 99)\n(S. 105",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 36",
+      "pageStart": 36,
+      "pageEnd": 36,
+      "target": "../sections/page-036.md",
+      "narrative": null,
+      "content": "let us define the corresponding false theta series as\n\noo oo\n_ So ar DP nO DP _ Se are DPD?\nn=0 n=1\n\nNotice that although f(a,b) = f(b, a), in general, U(a,b) 4 V(b, a).\n\nL.J. Rogers [37] studied q-series expansions for many instances of f(+q*,-+q°) and\nW(+q°, +9), which he called theta (resp. false theta) series of order (a + 3)/2.\n\nA false theta series identity for the series Y(+gq®, +q°) arises from the same Bailey pair\nas the Rogers-Ramanujan type identity with product f(+q*,+q\")/e(—q). A designation\nof the form (F. n) means that the identity is the false theta analog of (S. n), the nth\nid",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 37",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "target": "../sections/page-037.md",
+      "narrative": null,
+      "content": "5.3 False Theta Series Identities of Order 3\n\n2\n\nom\n\nRogers [37, p. 333 (4)]; F. 26\nAG Pn (Rogers [ (4)]: F. 26)\n\n. ico (-1) grin)\nv(—¢, —¢) = a (Rogers [37, p. 333 (4)]; F. 22; F. 28)\nn=0 Gq )nt1\n\njr grr) /2(\n\n= Gant\n3nt\n\nES G@)an+1\n\nco\n\n-y\n\n= (2; enti\n\njr grr) Pq )3 n(1 _ g\"*?)\n\ns\n\n5.4 False Theta Series Identities of Order 4\n\niad (—1)\"qr*D/?2(—@)n\nU(—¢°,-4°) = }) —— _\n( ) d (4; P)n41\n(Rogers [37, p. 333 (5)])\n; iad yng) P(- ?; ?)n\nw(- 6 _¢@? _— (=\nCa) = 0G Dan\n\n(Rogers [37, p. 333 (5)])\n& —1)r n(n+1)/2 n(—G; 2 n\nw(-9,-«) = 74 y\"q . (@n(=4: ¥\")\nn=0 (q Q)2n+1\n(Ramanujan [9, p. 257, Eq. (11.5.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 38",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "../sections/page-038.md",
+      "narrative": null,
+      "content": "5.8 False Theta Series Identities of Order 2\n\n(—)rgrerPP@)n\n(q)on\n\nMe\n\nv(P,q') — q¥(¢,¢\") (Rogers [37, p. 333 (2)])\n\nll\n°\n\n(5.8.1)\n\n(-1)rgr@r+d/2 (Q)n\n\n@ (Rogers [37, p. 333 (2)]; F. 62)\n2n+1\n\nMe\n\nVga) +q¥(¢,q)\n\nll\n°\n\n(5.8.2)\n\n(- 1)\" ge\" (n+))/2(q),,\n\n(Qonui (Rogers [37, p. 333 (2)])\n\nwe\n\nV(q',q'\"') +q¥(q,q\"4) =\n\nll\n°\n\n(5.8.3)\n\n5.9 False Theta Series Identities of Order 9\n\noo yr ghin+3) 2 @;@) (M.-S. (32, Eq. (1.32)]) (5.9.1)\n\nyt —@)n(—4)n+1\n\nico yr qrnt))/2 _ pp. 9\nG5 )n\nHa 8) +0) =\n(M \"8. (32, . 1341) (5.9.2)\n. oo —1)\"qr (n+3) 1/2 (q3. q 3),\nw 15 3) _ (\noo dX (1+ 4\"*\") (gant\n(Dyson [12, J6;",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 39",
+      "pageStart": 39,
+      "pageEnd": 39,
+      "target": "../sections/page-039.md",
+      "narrative": null,
+      "content": "Oo (1) nyn(n+1)/2\nU(g?,¢\") —q¥(q.d') = ye (Rogers [37, p. 332 (1)]; F. 81)\nn=0 2n\n(5.11.2)\n. . oo 1)\" n(n+3)/2 n\nvag?) +a.) = oe (Rogers [37, p. 332 (1)]; F. 82)\nn=0 q)2n-41\n(5.11.3)\n5.16 False Theta Series Identities of Order 16\n: (<1) gh? Q\\ng(—P3 Pn\nU(—¢°, —q2) = ( + ;\n(-¢°, -¢°*) » oma\n(M.-S.-Z be Eq. (2.14)]; F. 103) (5.16.1)\n. oo jr q’ — ) (4; q)\nU(q2, @°) + qh(q’, Dr\\~G Tn\n(@,q\"°) +4 yay Gn,\n(M.-S.-Z. [34, Eq. (2.15); F. 106) (5.16.2)\n5.18 False Theta Series Identities of Order 18\n- ico —1)rgnt) (—@; )n\nU(q2!, —q\"°) — qu(@?\", -@°) = ( i\nie) a9) dX (P34) )n(—45 Dane\n(M.-S. [32, Eq. (1.31",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 40",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../sections/page-040.md",
+      "narrative": null,
+      "content": "(M.-S. [32, Eq. (1.40)]) (5.18.6)\n\n6 Inter-Dependence Between Identities\n\nA number of pairs of identities on Slater’s list are easily seen to be equivalent, either by\nsimply replacing g by —q (for example, $24 and $30), replacing gq by q? (for example, S2\nand $7), specializing a free parameter in a general series = product identity (for example,\nS8) or rearranging the finite g-products on the series side (for example, $10 and S47).\n\nAfter eliminating one of each such pair of identities from the list of identities, a natural\nquestion is: how independent from each other are the identities in the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 41",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../sections/page-041.md",
+      "narrative": null,
+      "content": "oo qr 7)\"\n\nn \"1\n\nD7\n\n-yr\n\n(G7) aca Pn (1 Poo\n> qr —\"(—y)” -~ _ *2n( yr\n(9/6 PnP Pm = Ole P xo \\n\nqh rian ye Gr — mn\n(73 4)n(GQn (3 Goo = (45 4\")\n3 (b; Pn ghr-Di2(—y)r _ (: ») oo ani\n(bs D)nl(G Dn SAPP (0G Pal V3 Don\noo grr ae 7)\" a g! (3n?—3n)/' /2(— by)”\n (b:Q)nlG On Dx D4 \\n(b; Q)n(15 Dn\ny qn\" qs?) * “7\"(=4/0: don\n24 G/0 Dil Dn a Cran PP; P)n(—10 Pn\n3 (a: Q)ng™ *\"(by/a)” s! tal q)ngrer Van\nA (bg; nl D WG Dn (= Dw SK (= nl Dn\nIf n is a positive integer, then\nico gr tm) )24 ym co qr (m?+m) )/2pm\n(—bq\";q\")oo ——_§_—§—§__ = (49; 1) Candee\nLo (—bq;q”)m(G5 Dm ar 4G; Q)nm(9\"; G”)m\noe q” P+ngn od q (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 42",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../sections/page-042.md",
+      "narrative": null,
+      "content": "(3n? +n)/2q2n\n\nS (@54)nd _ (0G: Q)0 5! =a; ng? (ag) (6.1.21)\n— (9; @)n —AaY;, q)o0 “= (49,9 @)n\n\nSome of the identities above are derived from other identities above, as limiting cases.\nHowever, we list them explicitly to have the available for what follows below. Several\nfollow from identities in Andrews’ two papers [1], [2] and some also follow from identities\nin Ramanujan’s notebooks.\n\nThe transformation at (6.1.2) is a limiting case of a g-analogue of the Kummer-\nThomae-Whipple formula (see [22], page 72, equation 3.2.7), which in turn is a limiting\ncase of Sear’s 43 transformation formula",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 43",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../sections/page-043.md",
+      "narrative": null,
+      "content": "Note that the case a = q in (6.1.5) implies that, for |g) < 1 and y € C,\nico qh rian\n\na es\n“= (=9, )n+1\n\nThe tables are to be understood as follows: let the parameters have the specified values\nin the specified transformations (listed in the first column), and then, if applicable, make\nthe indicated base changes in either both sides of the transformation or else recognize\nthat one of the series equals the series in the corresponding identity, after the indicated\nbase change.\n\nFor example, from row one of Table 3, if the indicated substitutions are made in\nTransformation 6.1.13, we get that\n\nic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 44",
+      "pageStart": 44,
+      "pageEnd": 44,
+      "target": "../sections/page-044.md",
+      "narrative": null,
+      "content": "These identities are somewhat reminiscent of the following identities of Gessel and Stanton\n[24]:\n\n. an) Jong 3 5 8.8 (=@?; 1 )oo\nir (8; PB) n(Pi Wn ee (5 d\")oo | 61.24)\n>, ae Jon qr ten _ (a =a Moca a, (6.1.25)\nn= :@) 2n+1 (-@; qd 4) nH (q 74 Joo\nTransform. | Identity a b 7 base change\n6.1.4 8.2 0 q\n6.1.4 8.3 1 q\n6.1.3 S.4 | —q'/? | -q¢ | —¢/? qo\n6.1.4 S.9 1 -g q-@\n6.1.3 S.10 -1 q q q-\n6.1.3 $.11 -q |q@ ¢ q-@\n6.1.4 $.52 1 —ql? q-@\n6.1.4 S.47 -1 qi? qo @\n\nTable 2: Identities deriving directly from general transformations.\n\n6.2 Inter-dependence of Identities via the Jacobi Triple Product\nIdenti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 45",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../sections/page-045.md",
+      "narrative": null,
+      "content": "Transf. | Left Right a b Y base change\n6.1.13 S6 $29 -1 qi? | -qi? | qo. -4\n6.1.6 $44 $14 g\n6.1.7 S17 $14 -¢\n6.1.8 S16 $14 —¢\n6.1.11 S16 S97 -q gl? q- 7g - —4\n6.1.9 S96 $14 gi? (qoP)q-¢\n6.1.6 S46 S18 q\n6.1.7 S20 S18 -~4q\n6.1.8 S99 S18 -¢\n6.1.9 S79 $18 ql? qe-Pq-¢\n6.1.11 | S20 S19 -—q | qi? qo\n6.1.13 | S22 S50 -q | qi? | ¢@? qo\n6.1.3 $25 $48 | —q'/?2 | -¢ ql? qo\n6.1.13 | S27 $28 | —q'/? | -—q'/? 1 qe @\n6.1.3 S28 | (2.6.2) | -q | 4 q qo @\n6.1.16 | S29 $48 |g? ] -1 qo?\n6.1.16 | S50 | (2.6.2) | g¥?2 | —-¢ q— gil?\n6.1.4 $34 $38 | —q'/? ql? qo\n6.1.4 S36 $39 | —q\\/? ql? qo\n6.1.12 | S38 | 6.1.25 qi q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 46",
+      "pageStart": 46,
+      "pageEnd": 46,
+      "target": "../sections/page-046.md",
+      "narrative": null,
+      "content": "= PGP 00 — (PPP oc\n— FEO PGP 27: (m = 3)\n34 14 crue\n\n= (-9?, =F, 0°: 0 — (-4\n=~ F (-9\"°, = 3848 Poo + P\n\nNote that the right sides required some elementary manipulations in the cases m = 3 and\nm= 4,\nNow suppose we have a finite set of “Series S; = Product P;” identities (1 <i <n).\n\nClearly\ni=1 i=l\n\nholds for any set of complex constants a;. If, for a certain set of a;, (6.2.3) follows as\na consequence of the Jacobi triple product identity, then we say the identities S; = P,,\n1<i<nare JTP-dependent, in the sense that any one identity can be derived from\nthe other n — 1 identities taken together",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-047",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 47",
+      "pageStart": 47,
+      "pageEnd": 47,
+      "target": "../sections/page-047.md",
+      "narrative": null,
+      "content": "Here also the right sides required some elementary manipulations in the cases m = 3 and\nm= 4.\nSecondly, replace q by q? and set « = —q to get\n\n(4: Deo\n\n(9: da (-q',-¢', 0°: Bo — 24(-0°, -0°, 0°: Joo, (m=2) (6.2.5)\n= (P2050) — 29(9 0,095 0\" Joc (m= 3)\n= (-9\"°, -9'°, Fs goo — 2q(-9\"4, - 4°, gg)\n+ 29-9\", -9\" asd Jac, (m= 4)\n\nThe table is to be understood as follows: in each case it is easily checked that the\ncombinations of q-series from the indicated identities sums to the indicated value; that\nthe same combination of the corresponding products in the indicated identities sums to\nthe same value",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/lem-page-048-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 48,
+      "pageEnd": 48,
+      "target": "lem-page-048-01.md",
+      "narrative": null,
+      "content": "Let a1, dz, ..., Gn; by, be, ..., Dn be non-zero complex numbers such that i) a, A q’a;, for alli Aj and alln € Z, ti) ayag...An = bybg...b,. Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-048",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 48",
+      "pageStart": 48,
+      "pageEnd": 48,
+      "target": "../sections/page-048.md",
+      "narrative": null,
+      "content": ": (<4: 7 )oo\n\nS111-¢?xS116=1 6.2.4)|ma3 X\n6.24) mas i von\n\nI: oo\n\n$126-qx$128=1 6.2.4) maa X\n(6.2.4) |m=a (Fa)\n\n$127-°xS129=1 (6.2.4)|m=4 * Cad oe\n(ease)\n\n$78-29¢xS876=1 (6.2.5) |ma3 X ~ ite\n(9; Doo\n\n§104-qx$103=1 (6.2.5) |m=a X ce\n\nTable 4: Sets of JTP-dependent identities.\n\nA similar consideration of $53 +qxS55 yields\n\n3 @” (-—G @)on(1 _ gin _ g8rt2 _ ge\") _ (q; Doo\na GOna Caos\n\nLikewise, considering $40, $41 and $42 (each with qg replaced by q°), together with\nthe m = 3 case of (6.2.2), yields\n\n3 go Jan( (1 _ gi ton _ gre + got t8n + qitt8n _ got 8) _ (9; Q)ec\n“ (P; 2 nls @ )2n+1 (2: Po\n\n6.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-049",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 49",
+      "pageStart": 49,
+      "pageEnd": 49,
+      "target": "../sections/page-049.md",
+      "narrative": null,
+      "content": "The dependence of identities via (6.3.1) is more tenuous than dependence via series-\nequivalence or the Jacobi triple product. We give the following example to illustrate the\nconcept. If we replace q by q’° in (6.3.2) and set\n\n{a1, @2, a3; bi, be, bs} = (1,-7.5, -97, @F,\nthen after a little simplification we get that\n\not lag, —F, a: lo — (PP. -8, -0 7 Joo = 0. (6.3.3)\n\nala.4,-9°,—4\"34\nThis identity can be rearranged to give\n(q°; g\") 20 4 G5\") 20 (6.3.4)\n(1.2, -P Bd Joo (0-1, 9g\" )oc\n\n(-4,-4.P30)oo =\nSimilarly, if we replace g by q’° in (6.3.2) and set\n{a1, a2, a3; bi, be, bs} = {1,-3.9 \"4,\nwe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-050",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 50",
+      "pageStart": 50,
+      "pageEnd": 50,
+      "target": "../sections/page-050.md",
+      "narrative": null,
+      "content": "That\n\n(PP G5 q Jo 5 (qd Joo 4\n(4; W044) oo (45 9) 20(4 9) o0( =, = 44, = 9°, — 47g\" oo\nfollows from (6.3.7). We say that pairs of identities which are dependent via (6.3.1) are\nW-dependent.\nWe give one other example of a pair of identities are W-dependent. The first is S.56:\noo n(n-+2) _g. gil. gid. ql2\nirr — 6a Pd oo (6.3.10)\n(G5 P nvilG Gaon (9; Doo\nThe second is 33 be\n= = n 3, 3 . ool; co\nir os r —.4 PPP )oo(=F Doo (6.3.11)\n(4; 9)\n\nn=!\n\nIt is easy to check (by re-indexing, as \"ow that\n\niad n(n+2)\n\n» tar oak ta _ -— 20 C q Gnd” =1.\n\nn= nao S44 2) +1 (G5 Q)n+1\n\nThat 3. 1112. g6- 6 1 p12. 12\n(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-051",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 51",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../sections/page-051.md",
+      "narrative": null,
+      "content": "[BP | (PBL) | (TBL) | (SIBL) | (S2BL) | (FBL) |\n\nAl | S98 S117\n\nA2| soa sso | (5.11.1)\nA3 | S99 S118 Sg1_ | (5.11.2)\nA4 | S96 S119 $82 | (5.11.3)\nA5 | $83 $100 (3.15.2) | (5.8.1)\nAG | S84 $62 | (5.8.2)\nA7 | S85 S95 (5.8.3)\nA8 S97 S63\n\nBI | S18 536 SI S13\n\nB2 | S14 $34\n\nB3 S8\n\nCI | Sol S79 (2.10.3)\n\nc3 | S60 $45 | (5.5.1)\nc4 | $59 (2.20.1) $43 | (5.5.2)\nC5 | (2.10.6) S52\n\nC6 | S46 $26 | (5.3.1)\nc7 | S44 $22 | (5.3.2)\nD5 (5.4.1)\nD6 (2.8.6) | (5.4.2)\nEl | S3 S25\n\nE2 | $3 S4\n\nE3 | S7 (2.6.2) $2 | (5.0.1)\nFl | 939 | S29, S23-\n\nF2 | $38 $28 | (5.3.2)\nF3 | S9 (2.2.4)\n\nGi [$33 | S20, S2i-\n\nG2 | $31 $1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-052",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 52",
+      "pageStart": 52,
+      "pageEnd": 52,
+      "target": "../sections/page-052.md",
+      "narrative": null,
+      "content": "117 | S56 S69 $37. | (5.4.3)\n118 | $50 S68 $35 | (5.4.4)\nwt | S93 S14 S73\n\nJ2 | sss | S108, $113 S74\n\nJ3 | S89 S111 S75 | (5.9.4)\nJ4 | $124 $109 S107 | (5.18.5)\nJ5 | S125 $110\n\nJe | $90 S112 S76 | (5.9.3)\nKi | S121 $126 S101\n\nK2 | $120 $127 S104\n\nK3 | S51 S130 S105\n\nK4 $70 S106 | (5.16.2)\nK5 | $123 $128 $102\n\nK6 | $122 $129 $103 | (5.16.1)\nL2 | $53 (2.8.12)\n\nM2 | S57\n\nM3 | S55\n\nTable 5: Slater’s Bailey pairs and associated identities\n\n7.2 Duality of Bailey pairs\n\nWe recall that Andrews showed in [5] that if (a,(a,¢), Gn(a,q)) is a Bailey pair relative\nto a, then (a*(a,q), G*(a, q)) is also a B",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-053",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 53",
+      "pageStart": 53,
+      "pageEnd": 53,
+      "target": "../sections/page-053.md",
+      "narrative": null,
+      "content": "Bn(a,q)) into the equation\n\n3s\n\n1\n\nDnaag gna (e (7.2.1)\n\nBn(a,q) =\nr=0\n\nuse Mathematica to compute 3,(a, q) for low values of n and hopefully recognize the form\nof 3,(a, q) for arbitrary n. If this does not work, then we try substituting the stated value\nfor B,(a,q) into (7.2.1), and use Mathematica to compute successive values for a,,(a, g),\nagain try to find the formula for a,,(a,q). Of course there is the possibility that the pair\nderived in this way is not the pair Slater intended. This could happen if, for example,\nSlater incorrectly stated an(a,q), but this a,(a,q) is part of an entirely",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-054",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 54",
+      "pageStart": 54,
+      "pageEnd": 54,
+      "target": "../sections/page-054.md",
+      "narrative": null,
+      "content": "K.1 K.2 L.A L.3\n\nK.3 K.4 L.2 L.2\nK.5 K.6 L.4* L.6\nL.5* L.5*\n\nTable 6: A * indicates a typographic error in Slater’s\nPaper, corrected versions of these Bailey pairs are given\nbelow. The five new Bailey pairs (7.2.2)—(7.2.6) are also\nstated below.\n\nThe new Bailey pairs found (by deriving the duals of Bailey pairs given by Slater\nwhose duals were not given by her) are the following.\n\n=n(n+3)\n(yea =e)\nAn = a= 7.2.2\nc=) (@=4) (7.2.2)\n—1)\" —n(n+3)/2\nBn = ( Ya\n(G4)n\n(—1) (qr? rt 9/21 _ q”) 4 girs )/2(1 _ q’t'))\nOn = ; a=q 7.2.3\n— (a=a) (7.23)\n3 cv\n (Ga)n\nOm =(-1)\"q” (\"+a\"), (@=1) (7.2.4)\nOn. = (-1)\"q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-055",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 55",
+      "pageStart": 55,
+      "pageEnd": 55,
+      "target": "../sections/page-055.md",
+      "narrative": null,
+      "content": "Corrected Bailey pairs\n\nTHE ELECTRONIC JOURNAL OF COMBINATORICS 15 (2008), #DS15\n\nBP An Bn\n(—1)\"gr?-n(1—gin +2) gn\nE6 (=?) (—4,959)n\nok _4)n,—n (1-1) (=1)\"q-\"\nE7 (-1)\"q (1=q) (—4.9;9)n\nH.1* q” (q? +q°2) oe\n(q?..9:4)n\nL.15* n2 (a3) (<a? :a)n\n(1+q?) (4? :4)n(4?:4?)n\nmk n(n) n (=ha)n\nL.5 q (1+q\") (4:9)n(q47)n\n(2n+1)\nox nQn+t) (140 : ) (<at a? )on\nM.2 q (1447) (q?;q)2n\n(2n+1)\npax | (_47)\\n, nent) (14 : ) (qtiq2 Jon\nM.3 ( 1) q 4 (1—qt) (q7;q)2n\nCorrected Bailey pairs\nBP Q2n Qn+1 Bn\n. qe (1-4) (es (1-0-8) :\nG2 d-va) Q-va) (32 sa)n (42542)\nGs qa (1-9?\"*2) qos (1-0-\"-4) Carat\n* (va) (va) (a2 4)n(0s0)n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-056",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 56",
+      "pageStart": 56,
+      "pageEnd": 56,
+      "target": "../sections/page-056.md",
+      "narrative": null,
+      "content": ": ; n(—Jeg2\nL.8* (—1)\"q@\" (q” 4 a) (—1)\"@\" (ert _ q”) g(-lig*)n\n\n(4,979?) n\n\nant+4 2 11 2n+3 ag?\n1.16* —1)n Qn? (1+q°\"\" 2) —1)rtlg2n +2n+3 (+9 ) (<a Jn\n( ) q (1+q2) ( ) 4 (121?) (@2:42)n (12 42a) n\nn(n—1)\nL.4* (—1)rgrr-D (1 +\") 0 q_ 2\n\n“——I._,i tI.\n(—9? :q)n(q7 397 )an\n\nCorrected Bailey pair\n\nBP A3n-1 A3n A3n+1 Bn\n3n(3n~1) “ 3.9g3)y,—\nKI 0 fue a\") | 0 | aia\n\n8 Conclusion\n\nWe have only touched on a small part of the Rogers-Ramanujan story in this survey.\nThe main goal has been to present an expanded version of Slater’s list with the earliest\nknown reference to each identity in the literature. S",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-057",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 57",
+      "pageStart": 57,
+      "pageEnd": 57,
+      "target": "../sections/page-057.md",
+      "narrative": null,
+      "content": "Acknowledgements\n\nAs with any long list of identities, keyed into ETRX by hand, there are bound to be\ntypographical errors, and errors of omission. Accordingly, the authors would like to\nthank in advance the kind readers who will bring such errors, omissions, and updates to\nour attention, so that we can make this survey as useful to our readers as possible.\n\nReferences\n\n[1] G. E. Andrews, On basic hypergeometric series, mock theta functions, and partitions\nI, Quart. J. Math. Oxford Ser. (2) 17 (1966) 64-80.\n\n[2} G. E. Andrews, On basic hypergeometric series, mock theta functions, and partition",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-058",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 58",
+      "pageStart": 58,
+      "pageEnd": 58,
+      "target": "../sections/page-058.md",
+      "narrative": null,
+      "content": "[16]\n\n[17]\n[18]\n\n[19]\n[20]\n[21]\n\n[22]\n[23]\n\n[24]\n[25]\n\n[26]\n\n[27]\n[28]\n\n[29]\n\n[30]\n[31]\n[32]\n[33]\n\n[34]\n\nD. Bowman, J. McLaughlin, and A. V. Sills, Some more identities of Rogers-\nRamanujan type, Ramanujan J., to appear.\n\nS. Cooper, The quintuple product identity, Int. J. Number Thoery 2 (2006), 115-161.\n\nS. Cooper and M. D. Hirschhorn, On some infinite product identities. Rocky Moun-\ntain J. Math. 31 (2001), 131-139.\n\nS. Corteel and C. D. Savage, q-Series identities for compositions constrained by the\nratio of consecutive parts, preprint, 2008.\n\nL. Euler, Introduction to analysis of the infin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ds15v1-2008/blocks/prose-page-059",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 59",
+      "pageStart": 59,
+      "pageEnd": 59,
+      "target": "../sections/page-059.md",
+      "narrative": null,
+      "content": "[35] S. Ramanujan, The Lost Notebook and Other Unpublished Papers, Narosa, New Delhi,\n1988.\n\n[36] L. J. Rogers, Second memoir on the expansion of certain infinite products, Proc.\nLondon Math. Soc. 25 (1894) 318-343.\n\n[37] L. J. Rogers, On two theorems of combinatory analysis and some allied identities,\nProc. London Math. Soc. 16 (1917) 315-336.\n\n[38] A. V. Sills, On identities of the Rogers-Ramanujan type, Ramanujan J. 11 (2006)\n403-429.\n\n[39] A. V. Sills, Identities of the Rogers-Ramanujan-Slater type, Int. J. Number Theory\n3 (2007) 293-323.\n\n[40] L. J. Slater, A new proof of Rogers’s transfo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-brane-boundary",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:brane-boundary",
+  "kind": "proposition",
+  "title": "Structure of the defining boundary",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-brane-boundary",
+    "papers/quantum-observable-universe/blocks/def-descent-involution",
+    "papers/quantum-observable-universe/blocks/def-quantum-characteristic-classes"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-brane-boundary"
+  ],
+  "tags": [
+    "brane-boundary",
+    "codimension",
+    "blow-up",
+    "chirality"
+  ],
+  "leanRef": "qou:QOU.LiftingDescent.brane_boundary_structure",
+  "text": "brane-boundary-structure.md",
+  "leanSource": "brane-boundary-structure.lean",
+  "provenance": "authored"
+}

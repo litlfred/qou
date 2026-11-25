@@ -1,0 +1,69 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2509.04267v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Quantum Cocycle Invariants of Knots from Yang-Baxter Cohomology",
+  "contains": [
+    "library/arxiv-2509.04267v3/sections/sec-front-matter",
+    "library/arxiv-2509.04267v3/sections/sec-000",
+    "library/arxiv-2509.04267v3/sections/sec-001",
+    "library/arxiv-2509.04267v3/sections/sec-002",
+    "library/arxiv-2509.04267v3/sections/sec-003",
+    "library/arxiv-2509.04267v3/sections/sec-004",
+    "library/arxiv-2509.04267v3/sections/sec-005",
+    "library/arxiv-2509.04267v3/sections/sec-006",
+    "library/arxiv-2509.04267v3/sections/sec-007",
+    "library/arxiv-2509.04267v3/sections/sec-008",
+    "library/arxiv-2509.04267v3/sections/sec-009",
+    "library/arxiv-2509.04267v3/sections/sec-010",
+    "library/arxiv-2509.04267v3/sections/sec-011",
+    "library/arxiv-2509.04267v3/sections/sec-012",
+    "library/arxiv-2509.04267v3/sections/sec-013"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Quantum Cocycle Invariants of Knots from Yang-Baxter Cohomology — Yang-Baxter operators (YBOs) have been employed to construct quantum knot invari- ants.\n\n**Quantum Cocycle Invariants of Knots from Yang-Baxter Cohomology**\n\n*MASAHICO SAITO AND EMANUELE ZAPPALA*\n\n33 pp, 15 sections.\n\n**Abstract.** Yang-Baxter operators (YBOs) have been employed to construct quantum knot invari- ants. More recently, cohomology theories for YBOs have been independently developed, drawing inspiration from analogous theories for quandles and other discrete algebraic structures. Quandle cohomology, in particular, gives rise to cocycle invariants for knots via 2-cocycles, which are closely related to quandle extensions, and knotted surfaces via 3-cocycles. These quandle cocycle knot invariants have also been shown to admit interpretations as quantum invariants. Similarly, 2-cocycles in Yang-Baxter cohomology can be interpreted in terms of deformations of YBOs. Building on these parallels, we introduce quantum cocycle invariants of knots using 2- cocycles of Yang–Baxter cohomology, from the perspective of deformation theory.\n\n**Outline.** Front matter; 2 Preliminaries; 2.1 Knot invariants from closed braids and tra; 2.2 Knot invariants using maxima/minima; 3 Yang-Baxter cohomology; 3.1 YB cohomology in low dimensions; 3.2 YB cohomology in higher dimensions; 4 Quantum cocycle invariants via traces; 5 Examples via traces; 5.1 Invariants from deformations of the transp; 5.2 Invariants from the tensor version of quan; 6 Quantum cocycle invariants via maxima/minima; 7 Examples via maxima/minima; 8 Higher order invariants; 9 The Jones and Alexander polynomials as highe",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2509.04267&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2509.04267v3",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2509.04267v3.pdf",
+    "source_sha256": "9843b9dd71d1ec7453c4c83a98a954871870e6ba7425e9cc155b09298751596e",
+    "pages": 33,
+    "arxiv": {
+      "id": "2509.04267",
+      "version": "3",
+      "primary_class": "math.GT",
+      "stamp_date": "14 Nov 2025"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

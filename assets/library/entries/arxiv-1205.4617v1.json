@@ -1,0 +1,101 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1205.4617v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1205.4617v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1205.4617v1  [physics.gen-ph]  29 Feb 2012\nQuaternion Octonion Reformulation of Grand\nUniﬁed Theories\nPushpa(1), P. S. Bisht(1,2), Tianjun Li(2) and O. P. S. Negi(1.2)\nJune 15, 2021\n1.Department of Physics, Kumaun University, S. S. J. Campus, Almora -\n263601 (U.K.), India\n2. Institute of Theoretical Physics,Chinese Academy of Sciences, Zhong Guan\nCun East Street 55, P. O. Box 2735, Beijing 100190, P. R. China.\nEmail-pushpakalauni60@yahoo.co.in; ps_bisht 123@rediﬀmail.com;\ntli@itp.ac.cn; ops_negi@yahoo.co.in\nAbstract\nIn this paper, Grand Uniﬁed theories are discussed in terms of quater-\nn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1205.4617v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In spite of all the successes of the Standard Model (SM) of elementary\nparticles, it leaves many unresolved questions to be considered as\nthe complete theory of matter. The next attempt is described as a\ngrand unified theory (GUT) with more symmetry and reduces to the Standard\nModel at lower energies. It is thus considered as an attempt to describe\nthe physics at higher energies where the three gauge interactions\n(namely the electromagnetic, weak, and strong interactions) of the\nStandard Model are merged into one single interaction characterized\nby one larger gauge symmetry with one unified co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1205.4617v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SU(5) Gauge Symmetry",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-su5-gauge-symmetry.md",
+      "narrative": null,
+      "content": "\\begin{spacing}{1.5}\nGrand Unified Theories \\cite{key-19} are based on the mathematical\nsymmetry group $SU(5)$. The gauge group of the Glashow - Salam -\nWeinberg theory $SU(2)\\times U(1)$ and the $SU(3)$ group of the\nstrong interaction are the constituents of a larger symmetry. The\nsimplest group that incorporates the product $SU(3)$$_{C}$$\\times$$SU(2)_{L}$$\\times$$U(1)$\nas a subgroup is $SU(5)$. An arbitrary unitary matrix can be represented\nin terms of an exponential of a Hermitian matrix $H$ as \\cite{key-20},\n\\begin{align}\n\\widehat{U}=e^{i\\hat{H}}\\:,\\: & \\widehat{H}^{\\dagger}=H;\\label{eq:1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1205.4617v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quaternion-Octonion Reformulation of SU(5) gauge Symmetry",
+      "pageStart": 5,
+      "pageEnd": 11,
+      "target": "../sections/sec-002-3-quaternion-octonion-reformulation-of-su5-gauge.md",
+      "narrative": null,
+      "content": "\\begin{spacing}{1.5}\nLet us break up a $5\\times5$ square matrix $SU(5)$  into four blocks,\nconsisting of two smaller squares and two rectangles. The upper left\n- hand corner block denotes a $3\\times3$ matrix while the lower right-hand\ncorner block describes a $2\\times2$ matrix. Off-diagonal upper right\n- hand and lower left - hand corners consist respectively the $3\\times2$\nand $2\\times3$ rectangular matrices. The generators are described\nin such a way that the first eight generators are associated with\nthe generators of $SU(3)$ symmetry as\n\n\\begin{align}\nL_{a}= & \\left(\\begin{array}{cc}\n\\lamb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1205.4617v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion and Conclusion",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "../sections/sec-003-4-discussion-and-conclusion.md",
+      "narrative": null,
+      "content": "\\begin{spacing}{1.5}\nWe have already shown earlier \\cite{key-8} that the quaternion and\noctonion gauge theories contain the magnetic monopole. As such, the\nreformulation of grand unified theories (GUTs) in terms of the gauge\ngroup $SU(5)$ and its splitting to $SU(3)_{C}\\times SU(2)\\times U(1)$\nmay lead to the simultaneous existence of two different gauge theories\nassociated with electric and magnetic charges ( i.e. dyons). This\nthis approach may be used as the milestone for the unification of\nfundamental interaction at one end and the existence of magnetic monopole\nat other end so that the una",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

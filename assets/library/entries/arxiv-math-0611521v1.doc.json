@@ -1,0 +1,761 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0611521v1",
+  "title": "The q-analogue of the wild fundamental group",
+  "variant": "pdf",
+  "pages": 22,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Prerequisites (mostly from , , and )",
+      "number": "2",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "General facts",
+      "number": "2.1",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-21-general-facts"
+    },
+    {
+      "level": 2,
+      "title": "Filtration by the slopes",
+      "number": "2.2",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-22-filtration-by-the-slopes"
+    },
+    {
+      "level": 2,
+      "title": "Stokes operators",
+      "number": "2.3",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-23-stokes-operators"
+    },
+    {
+      "level": 1,
+      "title": "Stokes operators and alien derivations",
+      "number": "3",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-3-stokes-operators-and-alien-derivations"
+    },
+    {
+      "level": 2,
+      "title": "Stokes operators are galois",
+      "number": "3.1",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-31-stokes-operators-are-galois"
+    },
+    {
+      "level": 2,
+      "title": "Alien derivations and $q$-Borel transform",
+      "number": "3.2",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-32-alien-derivations-and-q-borel-transform"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion",
+      "number": "4",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-4-conclusion"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 75,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "galoisian",
+          "heading": false
+        },
+        {
+          "term": "stokes",
+          "heading": false
+        },
+        {
+          "term": "alien",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0611521v1 [math.QA] 17 Nov 2006 THE q-ANALOGUE OF THE WILD FUNDAMENTAL GROUP (I) J.-P. Ramis∗, J. Sauloy † Abstract We describe an explicit construction of galoisian Stokes operators for irregular linear q-difference equations. These operators are parameterized by the points of an elliptic curve minus a ﬁnite set of singularities. Taking residues at these singularities, one gets q-analogues of alien",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0611521v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 5271,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbf dot",
+          "heading": false
+        },
+        {
+          "term": "pro-algebraic completion",
+          "heading": false
+        },
+        {
+          "term": "hat mathbf",
+          "heading": false
+        },
+        {
+          "term": "pro-algebraic group",
+          "heading": false
+        },
+        {
+          "term": "mathcal mathbf",
+          "heading": false
+        },
+        {
+          "term": "alien derivations",
+          "heading": false
+        },
+        {
+          "term": "complex pro-algebraic",
+          "heading": false
+        },
+        {
+          "term": "tannakian galois",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper we return to the local analytic classification of $q$-difference modules. In [@RSZ1] we gave such a classification in Birkhoff style [@Birkhoff1; @Birkhoff2], using normal forms and index theorems. In [@JSSTO] (cf. also [@RSZ], [@RSZ2]) appears a classification using non abelian cohomology of sheaves on an elliptic curve. Here our aim is to give a classification based upon a \"fundamental group\" and its",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-21-general-facts",
+      "number": "2.1",
+      "title": "General facts",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 726,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ring mathbf",
+          "heading": false
+        },
+        {
+          "term": "fractions mathbf",
+          "heading": false
+        },
+        {
+          "term": "subset mathbf",
+          "heading": false
+        },
+        {
+          "term": "times mathbf",
+          "heading": false
+        },
+        {
+          "term": "ring mathcal",
+          "heading": false
+        },
+        {
+          "term": "field mathcal",
+          "heading": false
+        },
+        {
+          "term": "tilde mathcal",
+          "heading": false
+        },
+        {
+          "term": "written mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsection:generalfacts label=\"subsection:generalfacts\"} #### Notations, general conventions. We fix $q \\in {\\mathbf C}$ such that $|q| > 1$. We then define the automorphism $\\sigma_q$ on various rings, fields or spaces of functions by putting $\\sigma_qf(z) = f(qz)$. This holds in particular for the ring ${{\\mathbf C}\\{z\\}}$ of convergent power series and its field of fractions ${{\\mathbf C}(\\{z\\})}$, the ring",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-22-filtration-by-the-slopes",
+      "number": "2.2",
+      "title": "Filtration by the slopes",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1133,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "filtration",
+          "heading": true
+        },
+        {
+          "term": "pure isoclinic",
+          "heading": false
+        },
+        {
+          "term": "mathbf times",
+          "heading": false
+        },
+        {
+          "term": "field mathbf",
+          "heading": false
+        },
+        {
+          "term": "group mathfrak",
+          "heading": false
+        },
+        {
+          "term": "algebra mathfrak",
+          "heading": false
+        },
+        {
+          "term": "filtration label",
+          "heading": false
+        },
+        {
+          "term": "pure modules",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsection:filtration label=\"subsection:filtration\"} #### The filtration and the associated graded module. The module $M$ is said to be pure isoclinic of slope $\\mu$ if $S(M) = \\{\\mu\\}$ and fuchsian if moreover $\\mu = 0$. Direct sums of pure isoclinic modules are called pure modules [^1]: they are irregular objects without wild monodromy, as follows from [@RSZ] and [@JSSTO]. The tannakian subcategory of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-23-stokes-operators",
+      "number": "2.3",
+      "title": "Stokes operators",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 855,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "onelevelequation delta",
+          "heading": false
+        },
+        {
+          "term": "onelevelequation forall",
+          "heading": false
+        },
+        {
+          "term": "conditionpolaire",
+          "heading": false
+        },
+        {
+          "term": "theta delta",
+          "heading": false
+        },
+        {
+          "term": "overline hat",
+          "heading": false
+        },
+        {
+          "term": "sigma theta",
+          "heading": false
+        },
+        {
+          "term": "text mat",
+          "heading": false
+        },
+        {
+          "term": "mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsection:Stokesoperators label=\"subsection:Stokesoperators\"} #### Algebraic summation. The following computations are extracted from [@JSSTO]. We need the following theta function of Jacobi: $\\theta_{q}(z) = \\sum_{n \\in {\\mathbf Z}} q^{-n(n+1)/2} z^{n}$. It is holomorphic in ${\\mathbf C}^{*}$ with simple zeroes, all located on the discrete $q$-spiral $[-1;q]$. It satisfies the functional equation:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-stokes-operators-and-alien-derivations",
+      "number": "3",
+      "title": "Stokes operators and alien derivations",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 5,
+      "summary": null,
+      "keywords": [],
+      "extract": "Stokes operators and alien derivations",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-31-stokes-operators-are-galois",
+      "number": "3.1",
+      "title": "Stokes operators are galois",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 990,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overline hat",
+          "heading": false
+        },
+        {
+          "term": "delta overline",
+          "heading": false
+        },
+        {
+          "term": "lie-like otimes",
+          "heading": false
+        },
+        {
+          "term": "dot delta",
+          "heading": false
+        },
+        {
+          "term": "cup overline",
+          "heading": false
+        },
+        {
+          "term": "hat omega",
+          "heading": false
+        },
+        {
+          "term": "alien derivations",
+          "heading": false
+        },
+        {
+          "term": "otimes compatibility",
+          "heading": false
+        }
+      ],
+      "extract": "We take on the notations of section [\\[subsection:filtration\\]](#subsection:filtration){reference-type=\"ref\" reference=\"subsection:filtration\"} and consider moreover another object $B$, to which we apply similar notations: graded $B_{0}$, diagonal blocks $B_{j}$ corresponding to slopes $\\nu_{j}$ with multiplicities $s_{j}$, etc. ::: lemma []{#lemma:tensfonctrestreint label=\"lemma:tensfonctrestreint\"} (i) Assume the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-32-alien-derivations-and-q-borel-transform",
+      "number": "3.2",
+      "title": "Alien derivations and $q$-Borel transform",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1518,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes mathbf",
+          "heading": false
+        },
+        {
+          "term": "beta delta",
+          "heading": false
+        },
+        {
+          "term": "dot delta",
+          "heading": false
+        },
+        {
+          "term": "onelevelequation",
+          "heading": false
+        },
+        {
+          "term": "theta delta",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "dfrac theta",
+          "heading": false
+        },
+        {
+          "term": "delta text",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\delta \\in {\\mathbf N}^{*}$ and assume that the matrix $A$ of ([\\[equation:forme-canonique\\]](#equation:forme-canonique){reference-type=\"ref\" reference=\"equation:forme-canonique\"}) has only null blocks $U_{i,j}$ for $\\mu_{j} - \\mu_{i} < \\delta$. Then, in the computation ([\\[equation:calculrecursifhat(F)\\]](#equation:calculrecursifhat(F)){reference-type=\"ref\" reference=\"equation:calculrecursifhat(F)\"}), we find",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-conclusion",
+      "number": "4",
+      "title": "Conclusion",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1265,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alien derivations",
+          "heading": false
+        },
+        {
+          "term": "derivations dot",
+          "heading": false
+        },
+        {
+          "term": "stokes phenomena",
+          "heading": false
+        },
+        {
+          "term": "confluence",
+          "heading": false
+        },
+        {
+          "term": "tannakian galois",
+          "heading": false
+        },
+        {
+          "term": "dot delta",
+          "heading": false
+        },
+        {
+          "term": "difference case",
+          "heading": false
+        },
+        {
+          "term": "theta factors",
+          "heading": false
+        }
+      ],
+      "extract": "The construction of the alien derivations in the differential and $q$-difference case are apparently quite different. In fact, it is possible to reformulate things in the differential case to exhibit some analogy; one can mimick the constructions of the $q$-difference case: in place of a meromorphic function of a $q$-direction of summation in $E_q$, one gets in the differential case a locally constant function of a",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathcal mathbf",
+      "heading": false
+    },
+    {
+      "term": "mathbf dot",
+      "heading": false
+    },
+    {
+      "term": "hat mathbf",
+      "heading": false
+    },
+    {
+      "term": "otimes mathbf",
+      "heading": false
+    },
+    {
+      "term": "mathbf rightarrow",
+      "heading": false
+    },
+    {
+      "term": "log mathbf",
+      "heading": false
+    },
+    {
+      "term": "group mathbf",
+      "heading": false
+    },
+    {
+      "term": "mathbf module",
+      "heading": false
+    },
+    {
+      "term": "mathbf times",
+      "heading": false
+    },
+    {
+      "term": "mathbf vector",
+      "heading": false
+    },
+    {
+      "term": "oplus mathbf",
+      "heading": false
+    },
+    {
+      "term": "fractions mathbf",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0611521v1"
+  }
+}

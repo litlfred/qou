@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2311.15631v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Classification of connected étale algebras in pre-modular fusion categories up to rank three",
+      "dcterms:creator": [
+        "KIKUCHI, Ken"
+      ],
+      "dcterms:issued": "D:20240502",
+      "dcterms:identifier": "https://arxiv.org/abs/2311.15631",
+      "dcterms:abstract": "We classify connected ´etale algebras A’s in pre-modular fusion categories B with rank(B) ≤3 including degenerate and non-(pseudo-)unitary ones. We comment on Lagrangian algebras and physical applications to ground state degeneracy and proof of spontaneous B-symmetry breaking.",
+      "dcterms:source": "library/arxiv-2311.15631v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2311.15631v3"
+    }
+  ]
+}

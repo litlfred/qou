@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-bohr-radius-categorical-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:bohr-radius-categorical-interpretation",
+  "kind": "remark",
+  "title": "Novelty of the purely Hecke-algebraic Bohr recovery",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-bohr-radius-categorical"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-bohr-radius-categorical",
+  "text": "bohr-radius-categorical-interpretation.md",
+  "provenance": "authored"
+}

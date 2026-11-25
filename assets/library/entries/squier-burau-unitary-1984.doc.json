@@ -1,0 +1,237 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "squier-burau-unitary-1984",
+  "title": "squier-burau-unitary-1984",
+  "variant": "pdf",
+  "pages": 4,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "/J:5„-GL„_,(Z[M-'])",
+      "number": null,
+      "page": 1,
+      "pageLabel": "199",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-j5-gl-zm"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "199",
+      "labelEnd": "199",
+      "words": 95,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "burau representation",
+          "heading": false
+        },
+        {
+          "term": "attacking",
+          "heading": false
+        },
+        {
+          "term": "squier",
+          "heading": false
+        }
+      ],
+      "extract": "PROCEEDINGS OF THE AMERICAN MATHEMATICAL SOCIETY Volume 90. Number 2, February 1984 THE BURAU REPRESENTATION IS UNITARY CRAIG C. SQUIEr' Abstract. A slight modification of the Burau representation of the braid group is shown to be unitary relative to an explicitly defined Hermitian form. This gives a partial answer to the problem of identifying the image of the Burau representation and provides a tool for attacking",
+      "extractCut": true,
+      "blocks": [
+        "library/squier-burau-unitary-1984/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-j5-gl-zm",
+      "number": null,
+      "title": "/J:5„-GL„_,(Z[M-'])",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "199",
+      "labelEnd": "202",
+      "words": 1320,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "burau representation",
+          "heading": false
+        },
+        {
+          "term": "santa barbara",
+          "heading": false
+        },
+        {
+          "term": "unitary reflection",
+          "heading": false
+        },
+        {
+          "term": "nonzero entries",
+          "heading": false
+        },
+        {
+          "term": "eaa",
+          "heading": false
+        },
+        {
+          "term": "laurent polynomial",
+          "heading": false
+        },
+        {
+          "term": "let denote",
+          "heading": false
+        },
+        {
+          "term": "squier",
+          "heading": false
+        }
+      ],
+      "extract": "of the braid group Bn. We contribute the following partial answer to Birman's question, where, for M a matrix over Z[t, t~l], M* denotes the conjugate-transpose of M and the conjugate of p(t) in Z[t, i\"1] is defined to bep(r_l). Theorem. There exists a nonsingular (n — 1) X (w — 1) matrix J0 over Z[t, t']] such that for each w in Bn it follows that ß(w)*J0ß(w) — J0. (See §§1 and 2 below for notation.) View Z[t, r']",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "burau representation",
+      "heading": false
+    },
+    {
+      "term": "unitary relative",
+      "heading": false
+    },
+    {
+      "term": "unitary reflection",
+      "heading": false
+    },
+    {
+      "term": "santa barbara",
+      "heading": false
+    },
+    {
+      "term": "slight modification",
+      "heading": false
+    },
+    {
+      "term": "squier",
+      "heading": false
+    },
+    {
+      "term": "hermitian form",
+      "heading": false
+    },
+    {
+      "term": "braid group",
+      "heading": false
+    },
+    {
+      "term": "partial answer",
+      "heading": false
+    },
+    {
+      "term": "american mathematical",
+      "heading": false
+    },
+    {
+      "term": "nonzero entries",
+      "heading": false
+    },
+    {
+      "term": "mathematical society",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "199",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "200",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "201",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "202",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 1,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p1); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/squier-burau-unitary-1984"
+  }
+}

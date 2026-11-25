@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0006057v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Finite Quantum Groupoids and Their Applications",
+      "dcterms:creator": [
+        "NIKSHYCH, DMITRI",
+        "VAINERMAN, LEONID"
+      ],
+      "dcterms:issued": "D:20180212",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0006057",
+      "dcterms:abstract": "We give a survey of the theory of ﬁnite quantum groupoids (weak Hopf algebras), including foundations of the theory and applications to ﬁnite depth subfactors, dynamical deformations of quantum groups, and invariants of knots and 3-manifolds.",
+      "dcterms:source": "library/arxiv-math-0006057v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0006057v2"
+    }
+  ]
+}

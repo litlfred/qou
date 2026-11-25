@@ -1,0 +1,44 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/milnor-1982-hyperbolic-geometry-the-first-150-years/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "milnor-1982-hyperbolic-geometry-the-first-150-years",
+  "contains": [
+    "library/milnor-1982-hyperbolic-geometry-the-first-150-years/sections/sec-front-matter",
+    "library/milnor-1982-hyperbolic-geometry-the-first-150-years/sections/sec-000",
+    "library/milnor-1982-hyperbolic-geometry-the-first-150-years/sections/sec-001"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Hyperbolic geometry: The first 150 years — 3 sections: Front matter; U~>PSL2C which is uniquely determi; of Humbert. Here (-D/ri) is a gene\n\n**Hyperbolic geometry: The first 150 years**\n\n*AMERICAN MATHEMATICAL SOCIETY*\n\n16 pp, 3 sections.\n\n**Outline.** Front matter; h U~>PSL2C which is uniquely determined, up to; 21 of Humbert. Here (-D/ri) is a generalized q",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "milnor-1982-hyperbolic-geometry-the-first-150-years",
+    "title_source": "slug",
+    "source_file": "milnor-1982-hyperbolic-geometry-the-first-150-years.pdf",
+    "source_sha256": "d444d7a61af54c7c3be374149917560103b614bd2afa02c6d0cb54fb06c4063f",
+    "pages": 16,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

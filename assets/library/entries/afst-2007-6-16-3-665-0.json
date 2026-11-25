@@ -1,0 +1,1085 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "afst-2007-6-16-3-665-0",
+  "blocks": [
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "ANNALES\nDE LA FACULTÉ\nDES SCIENCES\nMathématiques\nMARIUS VAN DER PUT, MARC REVERSAT\nGalois theory of q-difference equations\nTome XVI, no 3 (2007), p. 665-718.\n<http://afst.cedram.org/item?id=AFST_2007_6_16_3_665_0>\n© Université Paul Sabatier, Toulouse, 2007, tous droits réservés.\nL’accès aux articles de la revue « Annales de la faculté des sci-\nences de Toulouse Mathématiques » (http://afst.cedram.org/), implique\nl’accord avec les conditions générales d’utilisation (http://afst.cedram.\norg/legal/). Toute reproduction en tout ou partie cet article sous quelque\nforme que ce soit pour tout usage a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Choose q ∈C with 0 < |q| < 1. The main theme of this paper is the study\nof linear q-diﬀerence equations over the ﬁeld K of germs of meromorphic\nfunctions at 0. A more detailed and systematic treatment of classiﬁcation\nand moduli is developed as a continuation of [vdP-S1] (Chapter 12), [vdP-\nR] and [vdP]. It turns out that a diﬀerence module M over K induces in a\nfunctorial way a vector bundle v(M) on the Tate curve Eq := C∗/qZ (this is\ndone here for all slopes, the case of integral slopes has been treated in [Sau1]\nand [Sau2]). As a corollary one rediscovers Atiyah’s classiﬁcation ([At]) of\nth",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classiﬁcation of q-diﬀerence equations",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-1-classiﬁcation-of-q-diﬀerence-equations.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some notation and formulas",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-11-some-notation-and-formulas.md",
+      "narrative": null,
+      "content": "A diﬀerence ring is a commutative R with a given automorphism φ.\nThe skew ring of diﬀerence operators R[Φ, Φ−1], consists of the ﬁnite for-\nmal sums \u0002\nn∈Z anΦn with all an ∈R. The multiplication is deﬁned by\nΦr = φ(r)Φ. A diﬀerence module M is a left R[Φ, Φ−1]-module which is\nfree and ﬁnitely generated as R-module. The action ΦM of Φ on M is an\nadditive bijection satisfying ΦM(rm) = φ(r)ΦM(m). Thus we may describe\na diﬀerence module as a pair (M, F), with F an additive bijective map and\nsuch that F(fm) = φ(m)F(m) holds.\nAs before we choose q ∈C with 0 < |q| < 1. Further we ﬁx τ in\nthe complex",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/lem-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "lem-sec-003-01.md",
+      "narrative": null,
+      "content": "— Mglobal = C[z, z−1] ⊗C V and consequently the natural morphism K ⊗C[z,z−1] Mglobal →M is an isomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Regular singular diﬀerence modules",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-12-regular-singular-diﬀerence-modules.md",
+      "narrative": null,
+      "content": "We recall some classical results (a modern proof is given in [vdP-S1]).\nThe classiﬁcation of regular singular modules over K and \u0003K are similar and\nwe restrict our attention to q-diﬀerence modules M over K. A diﬀerence\nmodule over K is called regular singular if there exists a lattice M 0 ⊂M\nover C{z} (i.e., M 0 = C{z}e1 ⊕· · ·⊕C{z}em for some K-basis {e1, . . . , em}\nof M) which is invariant under Φ and Φ−1 (or in later terminology, M is pure\nof slope 0). Then M can uniquely be written as K ⊗C V where V is a ﬁnite\ndimensional vector space over C provided with a linear map A : V →V\nsuch that a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The slope ﬁltration",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-13-the-slope-ﬁltration.md",
+      "narrative": null,
+      "content": "We describe here the slope ﬁltration and give references for more details\nand proofs. It is well known that any diﬀerence module M over K contains\na cyclic vector. This means that there exists an element e ∈M such that the\nhomomorphism K[Φ, Φ−1] →M, given by \u0002 anΦn \u0004→\u0002 anΦn(e), is surjec-\ntive (compare Lemma 4.1). Thus M is isomorphic to K[Φ, Φ−1]/K[Φ, Φ−1]L\nfor some L of the form Φd+ad−1Φd−1+· · ·+a0, with all ai ∈K and a0̸ = 0.\nThe diﬀerence operator L has a Newton polygon. For completeness we re-\ncall its deﬁnition. Let ord :\n\u0003K →Z ∪{+∞} denote the order function\non \u0003K∗extended by ord(0) =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/cor-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "cor-sec-005-02.md",
+      "narrative": null,
+      "content": "— Proposition 1.3 remains valid if \u0003K is replaced by K.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/cor-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "Indecomposable modules",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "cor-sec-005-03.md",
+      "narrative": null,
+      "content": "— (1) Let M be an indecomposable diﬀerence module over \u0003K. Then there are unique integers t, n, m and cn ∈C∗with n, m ⩾1, g.c.d.(t, n) = 1, |q| < |cn| ⩽1 such that M is isomorphic with Res(E(czt/n)) ⊗\u0003 K Um. (2) Let M be an indecomposable pure diﬀerence module over K, then there are unique t, n, m, cn as above such that M ∼= Res(E(czt/n)) ⊗K Um.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/cor-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "cor-sec-005-04.md",
+      "narrative": null,
+      "content": "— Let M be a pure diﬀerence module over K with slope t n where g.c.d.(t, n) = 1 and n > 1. There exists a diﬀerence module N – 672 – Galois theory of q-diﬀerence equations over Kn such that Res(N) ∼= M. The module N is not unique. A similar statement holds for pure q-diﬀerence modules over \u0003K.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/def-sec-005-05",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "def-sec-005-05.md",
+      "narrative": null,
+      "content": "— Mglobal for a pure module M over K. Suppose that the slope λ of the pure module M over K is an integer. Then Kf ⊗K M, where Kf is the module deﬁned by Φf = z−λf, is pure of slope 0. It follows that M has a unique ﬁnite dimensional C-linear subspace W, such that W is invariant under the operator z−λΦ and the restriction A ∈ GL(W) has the property that every eigenvalue c of A satisﬁes |q| < |c| ⩽1. Moreover, the canonical K-linear map K ⊗W →M is a bijection. For any C-linear operator L on M and any c ∈C, one writes Eigen(L, c) for the generalized eigenspace of L for the eigenvalue c. In other",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "The irreducible modules over \u0003K",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "— (1) E depends only on t, n, cn. (2) E is irreducible of dimension n and has slope t/n. The algebra of the \u0003K-linear endomorphisms of E, commuting with Φ, is C. (3) For any irreducible diﬀerence module I there are unique t, n and cn with n ⩾1, g.c.d.(t, n) = 1 and |q| < |cn| ⩽1, such that I ∼= Res(E(czt/n)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classiﬁcation of pure modules over \u0003K and K",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-14-classiﬁcation-of-pure-modules-over-k-and-k.md",
+      "narrative": null,
+      "content": "Let F ⊂G be a ﬁnite extension of diﬀerence ﬁelds. Let M be a diﬀerence\nmodule over G. Then Res(M) (the restriction of M to F) denotes M,\nconsidered as a diﬀerence module over F. One observes that\ndimF Res(M) = [G : F] · dimG M.\nPut \u0003Kn = \u0003K(z1/n) for any integer n ⩾1. We apply the above restriction\nto the extension \u0003K ⊂\u0003Kn in order to construct all irreducible modules over\n\u0003K. Consider integers t, n with n ⩾1 and g.c.d.(t, n) = 1 and c ∈C∗with\n|q|1/n < |c| ⩽1. Let E(czt/n) := \u0003Kne denote the diﬀerence module over \u0003Kn\ngiven by Φ(e) = czt/ne. Put E := Res(E(czt/n)).\nProposition 1.3 (The irreduci",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "— N \u0004→(K∞⊗N, D) is an equivalence of Tannakian categories.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pure diﬀerence modules over K∞with descent data",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-141-pure-diﬀerence-modules-over-kwith-descent-da.md",
+      "narrative": null,
+      "content": "K∞denotes the algebraic closure of K and Gal denotes the Galois group\nof K∞/K. Let M be a diﬀerence module over K∞. Descent data D for M\nmeans a map σ ∈Gal \u0004→D(σ) satisfying:\nD(σ) is a σ-linear bijection on M, D(σ) commutes with Φ,\nD(σ1)D(σ2) = D(σ1σ2) and the stabilizer of any m ∈M, i.e., the group\n{σ ∈Gal | D(σ)m = m}, is an open subgroup of Gal.\nOne associates to a diﬀerence module N over K the module M := K∞⊗\nN with descent data given by D(σ)(f ⊗n) = σ(f) ⊗n for all f ∈K∞and\nn ∈N. This induces a functor from the category of the diﬀerence modules\nover K to the category of the diﬀerence modu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/lem-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 21,
+      "target": "lem-sec-007-01.md",
+      "narrative": null,
+      "content": "— There are isomorphisms ker(Φ−1, M) →H0(Eq, v(M)) and coker(Φ−1, M) →H1(Eq, v(M)) between these functors deﬁned on the category of the admissible diﬀerence modules M over O.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Vector bundles and q-diﬀerence modules",
+      "pageStart": 13,
+      "pageEnd": 21,
+      "target": "../sections/sec-007-2-vector-bundles-and-q-diﬀerence-modules.md",
+      "narrative": null,
+      "content": "We recall that O denotes the algebra of the holomorphic functions on\nC∗and that a diﬀerence module M over O is a left module over the ring\nO[Φ, Φ−1], free of some rank m < ∞over O. Further pr : C∗→Eq := C∗/qZ\ndenotes the canonical map. One associates to M the vector bundle v(M) of\nrank m on Eq given by v(M)(U) = {f ∈O(pr−1U)⊗OM| Φ(f) = f}, where,\nfor any open V ⊂C∗, O(V ) is the algebra of the holomorphic functions on V .\nOn the other hand, let a vector bundle M of rank m on Eq be given. Then\nN := pr∗M is a vector bundle on C∗provided with a natural isomorphism\nσ∗\nqN →N, where σq is the map σq",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/thm-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 21,
+      "target": "thm-sec-007-02.md",
+      "narrative": null,
+      "content": "— The functor v from the category of the split diﬀerence modules over K to the category of the vector bundles on Eq is bijective on isomorphy classes of objects. This bijection respects tensor products.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/thm-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 21,
+      "target": "thm-sec-007-03.md",
+      "narrative": null,
+      "content": "— Let M be a pure diﬀerence module over K with slope λ < 0. The maps (1) coker(Φ −1, Mglobal) →coker(Φ −1, O ⊗C[z,z−1] Mglobal) (2) coker(Φ −1, Mglobal) →coker(Φ −1, K ⊗C[z,z−1] Mglobal) are isomorphisms. Moreover, coker(Φ −1, Mglobal) is canonical isomorphic to H1(Eq, v(M)) and has dimension −λ · dimKM over C. Before starting the technical proof we study the simplest example: Mglobal = C[z, z−1]e with Φe = z−1e . An element of O ⊗Mglobal = Oe has the form \u0002 anzne. By Examples 2.2, v(O ⊗Mglobal) = OEq(−[1]) and by Lemma 2.1, one has ker(Φ −1, O ⊗ Mglobal) = H0(Eq, OEq(−[1])) = 0. Consider the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/ex-sec-008-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "ex-sec-008-01.md",
+      "narrative": null,
+      "content": "— S = P1 ⊕P2, with pure modules P1, P2 of slopes λ1 < λ2. Any element in U has the form u = 1 + u1,2 with u1,2 : P2 →P1 a K-linear map. Further v := a−1uΦaΦ−1 satisﬁes v1,2 = u1,2 −a1,2 + Φ(a1,2). Here Φ(a1,2) denotes the action of Φ on the element a1,2 of the pure module B := HomK(P2, P1) = P ∗ 2 ⊗P1. The map B →F(C) yields an isomorphism coker(Φ −1, B) →F(C). For any C-algebra R, one obtains in the same way one isomorphism coker(Φ −1, R ⊗C B) →F(R). In 2.6, one has deﬁned the C-vector space Repr(B) ⊂Bglobal ⊂B of representatives for coker(Φ −1, B). One intro- duces the functor Fo by Fo(R) =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Moduli spaces for q-diﬀerence equations",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "../sections/sec-008-3-moduli-spaces-for-q-diﬀerence-equations.md",
+      "narrative": null,
+      "content": "For a diﬀerence module M over K we consider again the slope ﬁltra-\ntion 0 = M0 ⊂M1 ⊂· · · ⊂Mr. One associates to M the graded module\ngr(M) := ⊕r\ni=1Mi/Mi−1. The aim is to produce a moduli space for the col-\nlection of all q-diﬀerence modules over K with a ﬁxed gr(M). This problem\nis the theme of [R-S-Z]. As Ch. Zhang has remarked, the problem is already\npresent in a paper of G. Birkhoﬀand P.E. Guenther, see [Bir]. Here we treat\nthe general case (i.e., arbitrary, rational slopes).\nFix a split diﬀerence module S = P1 ⊕P2 ⊕· · · ⊕Pr (with r ⩾2)\nover K such that each Pi is pure of slope λi and λ1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/thm-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "thm-sec-008-02.md",
+      "narrative": null,
+      "content": "— Let S = P1 ⊕· · ·⊕Pr be a direct sum of pure modules with slopes λ1 < · · · < λr. The functor F associated to S is represented by a free polynomial ring over C in N := \u0002 i<j(λj −λi) · dimK Pi · dimK Pj variables. Equivalently, F, seen as a contravariant functor from C-schemes to sets, is represented by the aﬃne space AN C .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/lem-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 30,
+      "target": "lem-sec-009-01.md",
+      "narrative": null,
+      "content": "— Any global diﬀerence module has a cyclic vector.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Global diﬀerence modules",
+      "pageStart": 25,
+      "pageEnd": 30,
+      "target": "../sections/sec-009-4-global-diﬀerence-modules.md",
+      "narrative": null,
+      "content": "The skew ring D\n:=\nC[z, z−1][Φ, Φ−1] is deﬁned by the relation\nΦz = qzΦ. We recall that a global diﬀerence module is a left D-module\nN, which is as C[z, z−1]-module, ﬁnitely generated and free.\nIt suﬃces in fact to assume that N is ﬁnitely generated as C[z, z−1]-\nmodule. Indeed, let N0 denote the torsion submodule of N and let I ⊂\nC[z, z−1] denote the anihilator ideal of N0. Then N0 and I are invariant\nunder the action of Φ and φ. This implies I = (1), N0 = {0} and N is free.\nLemma 4.1. — Any global diﬀerence module has a cyclic vector.\nProof. — We imitate the proof of [vdP-S2], Proposition 2.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/thm-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 30,
+      "target": "thm-sec-009-02.md",
+      "narrative": null,
+      "content": "— The functor T from the category of the global diﬀer- ence modules with ascending slope ﬁltration to the category of the diﬀerence modules over K, given by N \u0004→K ⊗C[z,z−1] N, is an equivalence of Tan- nakian categories. Remarks 4.4. — For a given module M over K, the global module with ascending slope ﬁltration N with T(N) = K ⊗N ∼= M has the property that C({z−1}) ⊗N is a diﬀerence module over the ﬁeld C({z−1}) which is a direct sum of pure modules. Indeed, C({z−1}) ⊗N has both an ascending and a descending slope ﬁltration. In other words, N is an algebraic vector bundle above P1 −{0, ∞} wit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/cor-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "cor-sec-011-02.md",
+      "narrative": null,
+      "content": "— The universal ring Univrs for the category of reg- ular singular q-diﬀerence modules over K is K[{e(c)}, ℓ]. The restrictions Γrs, ∆rs of Γ, ∆to the universal ring Univrs commute and are topological generators for the group Grs of all automorphisms of the diﬀerence ring Univrs. We introduce some Tannakian categories. The ﬁrst one RegSingK con- sists of the regular singular diﬀerence modules over K. The second one, called Tuples1, has as objects the tuples (V, ΓV , ∆V ) where V is a ﬁnite dimensional vector space over C and ΓV , ∆V are com- muting elements in GL(V ) and such that all their ei",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/cor-sec-011-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "cor-sec-011-04.md",
+      "narrative": null,
+      "content": "— The category of the regular singular diﬀerence mod- ules over K is Tannakian equivalent to a full subcategory of connections on Eq. In section 6, this equivalence will be made explicit. This result is, in a diﬀerent form, present in the work of J. Sauloy, see [R-S-Z].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/lem-sec-011-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "lem-sec-011-03.md",
+      "narrative": null,
+      "content": "— There are equivalences of Tannakian categories RegSingK →Tuples1 →Unitcirc .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prop-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "prop-sec-011-01.md",
+      "narrative": null,
+      "content": "— Γ, ∆, D are topological generators for Guniv.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Galois group of a q-diﬀerence module",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../sections/sec-010-5-the-galois-group-of-a-q-diﬀerence-module.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Universal Picard-Vessiot extensions",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "../sections/sec-011-51-universal-picard-vessiot-extensions.md",
+      "narrative": null,
+      "content": "We recall that a diﬀerence module M over K is split if M is a direct\nsum of pure modules. A split diﬀerence module M over K has a Picard-\nVessiot extension PV (M) and the (diﬀerence) Galois group is the group\nof the automorphisms of PV (M)/K which commute with the action of φ\non PV (M). The universal Picard-Vessiot extension Univ for the family of\nall split modules over K is the direct limit of all PV (M). The universal\ndiﬀerence Galois group Guniv is the group of all K-automorphisms of Univ\nwhich commute with the action of φ on Univ. The restriction of Guniv to\nthe subring PV (M) ⊂Univ is the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prop-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "prop-sec-012-01.md",
+      "narrative": null,
+      "content": "— F is an equivalence between the Tannakian cate- gories of the split diﬀerence modules over K and Tuples2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Galois groups for split modules over K",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "../sections/sec-012-52-galois-groups-for-split-modules-over-k.md",
+      "narrative": null,
+      "content": "Now we extend the above to larger categories. We introduce a category\nTuples2 as follows. The objects are tuples\n(V, {Vλ}λ∈Q, ΓV , ∆V ), satisfying :\n– 696 –\nGalois theory of q-diﬀerence equations\n(a) V is a ﬁnite dimensional vector space over C.\n(b) V is the direct sum of the subspaces Vλ (and thus there are only ﬁnitely\nmany λ with Vλ̸ = 0).\n(c) ΓV , ∆V are invertible operators on V respecting the direct sum decom-\nposition and such that all their eigenvalues are on the unit circle S1 = {z ∈\nC| |z| = 1}.\n(d) ΓV ∆V Γ−1\nV ∆−1 acts on each Vλ as multiplication by e2πiλ.\nA morphism (V, {Vλ}, ΓV",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/cor-sec-013-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "cor-sec-013-04.md",
+      "narrative": null,
+      "content": "— The canonical map coker(Φ −1, N) →(H(λ) ⊗ V (N))<Γ,∆> (i.e., the elements invariant under the group generated by Γ and ∆) is an isomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/cor-sec-013-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "cor-sec-013-05.md",
+      "narrative": null,
+      "content": "— The exact sequences 0 →P1 →M →P2 →0 (with P1, P2 pure modules with slopes λ1 < λ2 and solution spaces V1, V2) are in bijection with the elements of (H(λ1 −λ2) ⊗Hom(V2, V1))<Γ,∆>.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/lem-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "lem-sec-013-01.md",
+      "narrative": null,
+      "content": "— Let N be a pure module with slope λ < 0. The canonical map a \u0004→1 ⊗a from N to Univ ⊗K N induces an injective map coker(Φ −1, N) →coker(Φ −1, Univ ⊗K N) whose image consists of the elements which are invariant under the universal group Guniv.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/lem-sec-013-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "lem-sec-013-02.md",
+      "narrative": null,
+      "content": "— Let N be a pure module with slope λ < 0 and solution space V (N). Then coker(Φ −1, N) can be identiﬁed with the C-linear sub- space of (coker(φ −1, K[{e(c)}, ℓ]e(z−λ)) ⊗C V (N), consisting of the elements invariant under Γ and ∆.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/lem-sec-013-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "lem-sec-013-03.md",
+      "narrative": null,
+      "content": "— Let λ < 0. The subspace H(λ) :={⊕|q|−λ<|c|⩽1Ce(cz−λ)}[ℓ] of K[{e(c)}, ℓ]e(z−λ) has the following properties: H(λ) →coker(φ −1, K[{e(c)}, ℓ]e(z−λ)) is bijective and H(λ) is invariant under the actions of Γ, ∆and D.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Galois groups for modules over K with two slopes",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "../sections/sec-013-53-galois-groups-for-modules-over-k-with-two-slo.md",
+      "narrative": null,
+      "content": "Let the q-diﬀerence module M over K be given by an exact sequence\n0 →P1 →M →P2 →0, where P1, P2 are pure with slopes λ1 < λ2. The\nPicard-Vessiot ring PV (M) of M contains PV (P1 ⊕P2), the Picard-Vessiot\nring of P1 ⊕P2. Thus there is an exact sequence 1 →H →G →G′ →1,\nwhere G and G′ are the diﬀerence Galois groups of M and P1 ⊕P2. The\ngroup G′ has been calculated in subsections 5.1 and 5.2. Further, H is the\ndiﬀerence Galois group of the extension PV (P1 ⊕P2) ⊂PV (M).\nLet V1, V2, V denote the solution spaces for P1, P2, M. There is an obvi-\nous exact sequence 0 →V1 →V →V2 →0. The space V1 is inv",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/thm-sec-013-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "thm-sec-013-06.md",
+      "narrative": null,
+      "content": "— Let the diﬀerence module M be given by an exact sequence 0 →P1 →M →P2 →0 with P1, P2 pure modules with slopes λ1 < λ2. Let V1, V2 denote the solution spaces of P1, P2 and write V = V1 ⊕V2 for the solution space of M. Let ξ ∈coker(Φ −1, Hom(P2, P1)) and its image ξ′ ∈(H(λ1 −λ2) ⊗Hom(V2, V1))<Γ,∆> which represents the exact sequence. Deﬁne W ⊂Hom(V2, V1) to be the smallest subspace such that ξ′ ∈H(λ1 −λ2) ⊗C W. Then: The diﬀerence Galois group G ⊂GL(V ) of M is the semi-direct product G = H ⋊G′ with: G′ = {g ∈G|g(Vi) = Vi for i = 1, 2} is the diﬀerence – 700 – Galois theory of q-diﬀerence equa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Modules over K with more slopes",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-014-54-modules-over-k-with-more-slopes.md",
+      "narrative": null,
+      "content": "We describe here the diﬀerence Galois group for the general case. The\nproof follows straightforward from the case of two slopes. Consider a q-\ndiﬀerence module M over K with slope ﬁltration 0 = M0 ⊂M1 ⊂· · · ⊂\nMr = M. Write gr(M) = P1 ⊕· · · ⊕Pr where Pi is pure of slope λi and\nλ1 < · · · < λr. According to Remarks 2.5, part (1), M is given by an\nelement ξ = {ξi,j} in \n\ni<j Fo\ni,j(C) ∼= \n\ni<j coker(Φ−1, Hom(Pj, Pi)). Using\nthe unique direct sum decomposition of \u0003K ⊗M = ⊕\u0003K ⊗Pi one ﬁnds a\ncanonical decomposition V = V1 ⊕· · · ⊕Vr of the solution space V of M,\nwhere Vi stands for the solution sp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/ex-sec-015-04",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 47,
+      "target": "ex-sec-015-04.md",
+      "narrative": null,
+      "content": "— N = Ke1 + Ke2 with Φe1 = (−z)te1, Φe2 = e2 + pe1, t ∈Z, t > 0 and p ∈K. We may suppose p ∈C[z, z−1]. The aim is to produce a connection ∇: Oe1 + Oe2 →1 Θt Odz z ⊗O (Oe1 + Oe2) , such that ∇commutes with Φ and ∇induces for the pure module Ke1 and Ke2 the connections of Theorem 6.3. Consider the inclusion Oe1+Oe2 ⊂Of1+Of2 with f1 = Θ−te1, f2 = e2. Then Φf1 = f1 and Φf2 = f2+pΘtf1. We propose ∇f1 = 0 and ∇f2 = ω⊗f1 with ω ∈O dz z . The condition Φ∇= ∇Φ is equivalent to (φ−1)(ω) = d(pΘt). The equation is solved as follows. There exists f ∈O with (φ −1)(f) = pΘt −c where c is the constant term of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/ex-sec-015-05",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 47,
+      "target": "ex-sec-015-05.md",
+      "narrative": null,
+      "content": "— N = P1 ⊕P2 with P1, P2 global modules with slopes t1 < t2, t = t2 −t1 ∈Z and Φ given by Φ(p1 + p2) = Φ1p1 + ℓ(Φ2p2) + Φ2p2 for some C[z, z−1]-linear map ℓ: P2 →P1. Put Q1 = C[z, z−1]e ⊗P1 with Φ(e) = (−z)te and t = t2 −t1 and put Q2 = P2. Then O ⊗P1 is embedded into O ⊗Q1 by p \u0004→Θte ⊗p. Now Φ on O ⊗Q1 + O ⊗Q2 is given by Φ(e ⊗p1 + p2) = (−z)te ⊗Φ1(p1) + Θte ⊗ℓ(Φ2p2) + Φ2(p2) . ∇on O ⊗Q1 + O ⊗Q2 will be given by a formula of the type: ∇(e ⊗p1) = −t dΘ Θ e ⊗p1 + e ⊗∇1p1, where ∇i are the connections for Pi imposed by",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/lem-sec-015-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 47,
+      "target": "lem-sec-015-07.md",
+      "narrative": null,
+      "content": "— (1) Let P be a pure global module of slope 0. There is a canonical C-linear map f ∈O ⊗P →ω(f) ∈O dz z ⊗P satisfying (Φ − 1)ω(f) = ∇f. Further ω(Φ(f)) = Φ(ω(f)). (2) Let (Q1, Φ1), (Q2, Φ2) denote two pure global modules of the same slope and let ℓ: Q2 →Q1 be a C[z, z−1]-linear map. Deﬁne the pure module N = Q1 ⊕Q2 by Φ(q1 + q2) = Φ1(q1) + Φ2(q2) + ℓ(Φ2(q2)). The connection on O ⊗N, deﬁned by Theorem 6.3 coincides with the connection ∇given by the formula ∇(q1 +q2) = ∇1(q1)+∇2(q2)+ω(ℓ)(q2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Realizing q-diﬀerence modules over K as connections on the elliptic curve E = C∗/qZ",
+      "pageStart": 39,
+      "pageEnd": 47,
+      "target": "../sections/sec-015-6-realizing-q-diﬀerence-modules-over-k-as-connec.md",
+      "narrative": null,
+      "content": "on the elliptic curve E = C∗/qZ\nAs in section 2 we associate to any diﬀerence module M over K a vector\nbundle v(M) on the elliptic curve Eq. The aim is to provide v(M) with\na suitable connection. The following theorem gives an explicit version of\nCorollary 5.4.\nTheorem 6.1 (Regular singular q-difference modules). — Let\na, b denote the generators of π1(Eq), corresponding to the shifts u \u0004→u +\n1, u \u0004→u + τ on the universal covering Cu of Eq. Let i :< Γrs, ∆rs >→\nπ1(Eq) denote the isomorphism given by Γrs \u0004→a, ∆rs \u0004→b.\nFor every regular singular diﬀerence module M over K, corresponding\nto a repre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/rem-sec-015-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 47,
+      "target": "rem-sec-015-03.md",
+      "narrative": null,
+      "content": "— The following example shows that the functor of Theorem 6.3 is not fully faithful. Put N = Ke with Φ(e) = (−z)te and t > 0. Then v(N) = OEq(t · [1]) and ∇N is induced by d : OEq →ΩEq, using the inclusion OEq ⊂OEq(t · [1]). In this case, ker(Φ −1, N) = 0 and {ξ ∈ H0(Eq, v(N))| ∇Nξ = 0} has dimension 1. We want to extend the functor of Theorem 6.3 to the category of all diﬀerence modules over K. We start with an example.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/thm-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Regular singular q-difference modules",
+      "pageStart": 39,
+      "pageEnd": 47,
+      "target": "thm-sec-015-01.md",
+      "narrative": null,
+      "content": "— Let a, b denote the generators of π1(Eq), corresponding to the shifts u \u0004→u + 1, u \u0004→u + τ on the universal covering Cu of Eq. Let i :< Γrs, ∆rs >→ π1(Eq) denote the isomorphism given by Γrs \u0004→a, ∆rs \u0004→b. For every regular singular diﬀerence module M over K, corresponding to a representation ρ of < Γrs, ∆rs >, there exists a unique ‘unit circle’ connection ∇M on v(M), corresponding to a representation ρ′ of π1(Eq), such that ρ = i ◦ρ′. This induces a Tannakian equivalence between the category of the regular singular diﬀerence modules over K and a full subcategory of the category of all ‘unit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/thm-sec-015-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 47,
+      "target": "thm-sec-015-02.md",
+      "narrative": null,
+      "content": "— There exists a functor N \u0004→(v(N), ∇N) from the cat- egory of the split diﬀerence modules over K to the category of the con- nections on Eq with at most a regular singularity at 1 ∈Eq. This func- tor extends the one deﬁned in Theorem 6.1. Moreover, the functor N \u0004→ (v(N), ∇N) commutes with tensor products and is faithful.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/thm-sec-015-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 47,
+      "target": "thm-sec-015-06.md",
+      "narrative": null,
+      "content": "Further ∇p2 = ∇2p2 + m(p2) where m : O ⊗P2 →O dz z ⊗Q1 is a yet unknown O-linear map. Thus m is an element of O dz z ⊗O T with T = O ⊗C[z,z−1] (P ∗ 2 ⊗Q1). We note that P ∗ 2 ⊗Q1 is a pure global module of slope 0. Write ˜ℓ: O ⊗P2 ℓ→O ⊗P1 ⊂O ⊗Q1. Thus ˜l is an element of T. The condition Φ∇= ∇Φ is equivalent to ΦT (m) −m = ∇T (˜ℓ), where ΦT and ∇T denote the Φ-action and the connection for T. According to Lemma 6.6, there is a canonical solution m for this equa- tion. The corresponding ∇induces a connection ∇N : v(N) →ΩEq(t[1]) ⊗ v(N) with a pole at 1 ∈Eq of order at most t. Further ∇N induces",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/thm-sec-015-08",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 47,
+      "target": "thm-sec-015-08.md",
+      "narrative": null,
+      "content": "— There exists a C-linear functor N \u0004→(v(N), ∇N) from the category of the diﬀerence modules N over K with integer slopes to the category of the connections on Eq with at most a pole at the point 1 ∈Eq. This functor extends the one of Theorem 6.3, is faithful and commutes with tensor products.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/thm-sec-015-09",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 47,
+      "target": "thm-sec-015-09.md",
+      "narrative": null,
+      "content": "The above construction applied to N3 = N1 ⊗N2 embeds O ⊗N3 into the tensor product of the pure modules O ⊗Mi. According to",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/lem-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 47,
+      "pageEnd": 49,
+      "target": "lem-sec-016-01.md",
+      "narrative": null,
+      "content": "— There exists an explicit pair (F, φ) of an algebraically closed ﬁeld F and an automorphism φ, such that F ⊃\u0003K and φ extends the given automorphism of \u0003K. The pair (F, φ) induces automorphisms of the algebraic closures of \u0003K and K extending the given φ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/lem-sec-016-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 47,
+      "pageEnd": 49,
+      "target": "lem-sec-016-02.md",
+      "narrative": null,
+      "content": "— Let \u0003K ⊂L be an extension of degree m < ∞such that φ extends to an automorphism of L. Then L = \u0003K(z1/m). A similar statement holds for K replacing \u0003K.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Positive characteristic",
+      "pageStart": 47,
+      "pageEnd": 49,
+      "target": "../sections/sec-016-7-positive-characteristic.md",
+      "narrative": null,
+      "content": "Atiyah’s paper makes some excursions to positive characteristic. Here,\nwe do the same for q-diﬀerence equations. We replace the ﬁeld C by a ﬁeld C\nwhich is algebraically closed and complete for a non trivial non archimedean\nvaluation. The case where C has characteristic 0 (i.e., C ⊃Qp for some\nprime p) is not very interesting since most of the preceeding results can be\ncopied from the complex case with the help of some rigid analysis.\nIn this section we consider an algebraically closed ﬁeld C of characteristic\np > 0, complete with respect to a non trivial valuation. Further we choose\na q ∈C wi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/ex-sec-017-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 53,
+      "target": "ex-sec-017-01.md",
+      "narrative": null,
+      "content": "— The extension \u0003K ⊂\u0003K(z1/p) is the Picard-Vessiot exten- sion for the diﬀerence equation φ(y) = q1/py. Its diﬀerence Galois group is the group µp,C. More generally, \u0003K(z1/n) is the Picard-Vessiot extension of an equation φ(y) = qt/ny with (t, n) = 1 and its diﬀerence Galois group is µn,C. We recall that µn,C = Spec(C[t]/(tn −1)), with co-multiplication given by t \u0004→t ⊗t.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/ex-sec-017-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 53,
+      "target": "ex-sec-017-02.md",
+      "narrative": null,
+      "content": "— Equation φ(y) = cy with c ∈C∗. Suppose that for all n ⩾1 the only solution of φ(y) = cny in \u0003K is y = 0, then the Picard-Vessiot extension is \u0003K[Y, Y −1] with φ(Y ) = cY and the diﬀerence Galois group is Gm,C. Suppose that there exists a non zero y ∈\u0003K such that φ(y) = cay for some a ⩾1. Then c has the form ζqt/n with ζ a primitive dth root of unity and n ⩾1, (t, n) = 1. We consider the two equations φ(y) = qt/ny and φ(y) = ζy separately. The ﬁrst equation is considered in example 1. The second equation has Picard-Vessiot ring \u0003K[y] with equation yd = 1 and φ(y) = ζy. This ring has obviously",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/ex-sec-017-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 53,
+      "target": "ex-sec-017-03.md",
+      "narrative": null,
+      "content": "— M = \u0003K(z1/n)e, Φe = zt/ne with n ⩾1, (t, n) = (p, n) = 1. The corresponding scalar equation is φn(y) = qt(n−1)/2zty. By deﬁnition, PV contains an invertible element α satisfying the equation. Any other solution y has the form ˜yα with φn(˜y) = ˜y. Hence PV contains \u0003K[y1] with yn 1 = 1 and φ(y1) = ζny1 where ζn is a primitive nth root of unity. The invertible element u := φ(α)α−1 satisﬁes the equation φn(u) = qtu. All solutions of the latter equation have the form zt/ny with φny = y. Thus y is an invertible element of C[y1]. It follows that zt/n and z1/n are in PV . After changing α we may s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/ex-sec-017-04",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 53,
+      "target": "ex-sec-017-04.md",
+      "narrative": null,
+      "content": "One considers the diﬀerence module M = \u0003K(z1/p)e with Φe = zt/pe (and 1 ⩽t < p), seen as diﬀerence module of dimension p over \u0003K. A corresponding scalar equation is φp(y) = qt(n−1)/2zty. The method of example 4 yields that the Picard-Vessiot extension for M is PV = \u0003K(z1/p)[ℓ1, α, α−1], satisfying the following rules: ℓp 1 −ℓ1 = 0 and φ(ℓ1) = ℓ1 + 1, α is transcendental over \u0003K and φ(α) = zt/pα. The inclusion – 715 – Marius van der Put, Marc Reversat \u0003K(z1/p)[ℓ1] ⊂\u0003K(z1/p)[ℓ1, α, α−1], induces an exact for the diﬀerence Galois group G 1 →Gm →G →Z/pZ × µp →1 . The group Z/pZ × µp is the diﬀeren",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Picard-Vessiot theory and examples",
+      "pageStart": 49,
+      "pageEnd": 53,
+      "target": "../sections/sec-017-71-picard-vessiot-theory-and-examples.md",
+      "narrative": null,
+      "content": "Consider a ﬁeld F provided with an automorphism φ of inﬁnite order.\nThe ﬁeld of constants C := {f ∈F| φ(f) = f} is supposed to be alge-\nbraically closed. A diﬀerence module M is a ﬁnite dimensional vector space\nover F, provided with a bijective additive map Φ : M →M satisfying\nΦ(fm) = φ(f)Φ(m). After choosing a basis of M over F, the equation\nΦ(m) = m translates into a matrix diﬀerence equation y = Aφ(y) with\nA ∈GLn(F).\nA Picard-Vessiot ring PV for M (or y = Aφ(y)) is a commutative F-\nalgebra with unit element satisfying\n1. An extension of φ as automorphism of PV is given.\n2. PV has no φ-invar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The universal diﬀerence ring over \u0003K",
+      "pageStart": 53,
+      "pageEnd": 54,
+      "target": "../sections/sec-018-72-the-universal-diﬀerence-ring-over-k.md",
+      "narrative": null,
+      "content": "The above examples and the classiﬁcation of the indecomposable dif-\nference modules over \u0003K lead to the following description of the univer-\nsal Picard-Vessiot ring Univ of \u0003K. Let \u0003K+ denote the union of the ﬁelds\n\u0003K(z1/n) (for all n ⩾1). One introduces symbols e(czλ) for c ∈C∗, λ ∈Q\nand ℓk for k ∈Z, k ⩾1. Then Univ = \u0003K+[{ℓk}k⩾1{e(czλ)}]. The only\nrelations are e(c1zλ1) · e(c2zλ2) = e(c1c2zλ1+λ2); e(qλ) = z−λ for λ ∈Q\n(including e(1) = 1); ℓp\nk −ℓk = 0 for all k ⩾1. The action of φ on Univ is\ngiven by:\nφ acts on \u0003K+ by φ(\u0002 aλzλ) = \u0002 aλqλzλ,\nczλφ(e(czλ)) = e(czλ),\nφℓ1 = ℓ1 + 1,\n(φ −1)ℓk =\n\nℓk",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/afst-2007-6-16-3-665-0/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bibliography",
+      "pageStart": 54,
+      "pageEnd": 55,
+      "target": "../sections/sec-019-bibliography.md",
+      "narrative": null,
+      "content": "[At]\nAtiyah (M.F.). — Vector bundles on elliptic curves, Proc.London.Math. Soc.,\n7, 414-452 (1957).\n[Bir]\nCollected mathematical papers of George David Birkhoﬀ, Volume 1. Dover pub-\nlications, 1968.\n[For]\nForster (O.), Riemannsche Fl¨ache, Heidelberger Taschenb¨ucher, Springer Ver-\nlag (1977).\n[Fr-vdP] Fresnel (J.), van der Put (M.), Rigid Analytic Geometry and its Applica-\ntions, Progress in Math., 218, 2004.\n[vdP]\nvan der Put (M.), Skew diﬀerential ﬁelds, diﬀerential and diﬀerence equations,\nAst´erisque, 296, p. 191-207 (2004).\n[vdP-R]\nvan der Put (M.), Reversat (M.), Krichever modules for d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,734 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1502.02882v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/conj-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "[9]",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "conj-sec-000-01.md",
+      "narrative": null,
+      "content": "Every fusion category admits a pivotal structure. The main idea we use in this article is that, in fact, there is a well-deﬁned way to make sense of diagrams which employ both left and right dual structure maps together, such as (1), even without a pivotal structure. The rule (at least for simple objects V ) is that if left and right dual structure maps appear in a diagram, then they cannot be chosen independently but must be correlated in the following way: when paired together, they must give the fusion dimension of V . The fusion dimension of V is a certain positive number canonically assoc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nIn this paper we ﬁx our ground ﬁeld to be C.\nA fusion category is a rigid\nsemisimple linear monoidal category with ﬁnitely many isomorphism classes of\nsimple objects and whose unit object is simple. A basic example of a fusion\ncategory is the category of representations of a ﬁnite group; in this way the\nstudy of fusion categories can be regarded as a common generalization of group\ntheory and representation theory.\nFor an overview on fusion categories, see\n[21, 5].\nMany of the basic results on fusion categories were obtained by Etingof,\nNikshych and Ostrik in [9]. These results inc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Fusion categories via string diagrams\nBruce Bartlett\nAbstract\nWe use the string diagram calculus to give graphical proofs of the\nbasic results of Etingof, Nikshych and Ostrik [9] on fusion categories.\nThese results include: the quadruple dual is canonically isomorphic to\nthe identity, positivity of the paired dimensions, and Ocneanu rigidity.\nWe introduce the pairing convention as a convenient graphical framework\nfor working with fusion categories. We use this framework to express the\npivotal operators as a product of the apex associator monodromy and the\npivotal indicators. We also characteri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "String diagrams",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-2-string-diagrams.md",
+      "narrative": null,
+      "content": "\\label{string_sec}\nIn this section we explain our conventions regarding the string diagram calculus.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conventions for general monoidal categories",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-21-conventions-for-general-monoidal-categories.md",
+      "narrative": null,
+      "content": "\\label{string_conventions}\nThe string diagram calculus for a monoidal category $\\cat{C}$ is well-known (see \\cite{s11-sgc} or \\cite[Chap. 4]{BBthesis} for an overview). Each diagram refers to a certain morphism in $\\cat{C}$. Our diagrams go from top to bottom, so that a morphism $f : A \\rightarrow B \\otimes C$ is drawn as\n\\[\n\\ig{d60.pdf} \\, .\n\\] \nIn these pictures there is no explicit parenthesis scheme on the input and output tensor products. Thus it is often supposed that one needs a a strict monoidal category in order to make this calculus well-defined. In fact, this is not so --- the calcu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conventions for fusion categories",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-22-conventions-for-fusion-categories.md",
+      "narrative": null,
+      "content": "A fusion category is a rigid semisimple linear monoidal category with finitely many isomorphism classes of simple objects and whose unit object is simple \\cite{e06-2vect}. In a fusion category, the associators feature explicitly in the graphical calculus as follows. Suppose we fix a representative set of simple objects $X_i$, $i \\in I$, and choose trivalent bases\n\\begin{equation} \\label{basis_choice}\n e_\\alpha : X_i \\rightarrow X_j \\otimes X_k  \\quad \\text{ drawn as } \\ig{d81.pdf}\n \\end{equation}\nfor each hom-set $\\Hom(X_i, X_j \\otimes X_k)$. (We will always choose the canonical basis elements",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The pivotal operators on a fusion category",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-3-the-pivotal-operators-on-a-fusion-category.md",
+      "narrative": null,
+      "content": "In this section we define the pairing convention and the pivotal operators on a fusion category. We prove that the paired dimensions are positive, and we compute the pivotal operators in terms of the apex associator monodromy and the pivotal indicators. We show that the pivotal operators are monoidal and identify them with the double dual functor.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fusion and Frobenius-Peron dimensions",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-31-fusion-and-frobenius-peron-dimensions.md",
+      "narrative": null,
+      "content": "\\label{fusion_frobenius}\n\nWe recall the following from \\cite{eno02-ofc}. In a fusion  category $\\cat{C}$ over $\\mathbb{C}$, every simple object $X_i$ has two canonical dimensions, which are positive real numbers: its {\\em Frobenius-Perron} dimension $d^+_i$ and its {\\em fusion} dimension $d_i$. \n\n\\begin{defn}[see \\cite{eno02-ofc}] The {\\em Frobenius-Perron dimensions} $d^+_j$ of the simple objects $X_j$ are the unique positive real numbers satisfying\n\\begin{equation}\n d^+_j d^+_k = \\sum_i N^i_{jk} d^+_i  \\label{FPeqn}\n\\end{equation}\nwhere $N^i_{jk} = \\dim \\Hom(X_i, X_j \\otimes X_k)$. That is,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The pairing convention",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-32-the-pairing-convention.md",
+      "narrative": null,
+      "content": "The pairing convention\nDeﬁnition 3.5. A root choice on a fusion category is a symmetric choice {di}\nof square roots of the paired dimensions; that is, one which satisﬁes\nd2\ni = d{i,i∗} and di = di∗for all i ∈I.\n1The notion of a paired dimension is due to M¨uger [18, Prop 2.4], where it is written as\nd2(X), but not named explicitly. The terminology and notation is our own.\n8\nThe utility of a root choice is that it allows the following diagrammatic\nconvention.\nPairing convention. Whenever a unit\nwhich is part of a unit-\ncounit pair expressing a simple object X∗\ni as a right dual of Xi appears\nto",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/rem-sec-006-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "rem-sec-006-01.md",
+      "narrative": null,
+      "content": "We will presently show in Theorem 3.19 that the paired dimen- sions d{i,i∗} are positive real numbers. From then on, we will always work with the canonical root choice on a fusion category given by the positive square roots. Although we will not need it in this paper, we can extend the pairing conven- tion to all objects in C, not just simple ones. Namely, suppose V ∈C. For each representative simple object Xi, choose a basis ei,α : Xi →V for Hom(Xi, V ), with corresponding dual basis ˆei,α : V →Xi. If, in a diagram, a unit which is part of a unit-counit pair (η, ϵ) expressing V ∗as a right du",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Further graphical conventions",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-007-321-further-graphical-conventions.md",
+      "narrative": null,
+      "content": "Fix a root choice $\\{d_i\\}$, $i \\in I$. We introduce the following notation. For an endomorphism of a simple object $f : X_i \\rightarrow X_i$, we will write $\\langle f \\rangle \\in \\mathbb{C}$ for the scalar satisfying $f = \\langle f \\rangle \\, \\id_{X_i}$. In string diagrams, \n\\begin{equation} \\label{extract_scalar}\n \\ba \\ig{h1.pdf} \\ea \\, = \\, \\langle f \\rangle \\, \\ba \\ig{h2.pdf} \\ea  \\, .\n\\end{equation}\nWe can extract the scalar $\\langle f \\rangle$ by pre- and post-composing both sides with the cup and cap maps, using the pairing convention with respect to the root choice. This gives\n\\begin{e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The pivotal operators",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-008-33-the-pivotal-operators.md",
+      "narrative": null,
+      "content": "\\label{piv_op_sec}\nUsing the pairing convention, we can diagrammatically define involutions on the fusion vector spaces.\n\\begin{defn} Let $\\{d_i\\}$ be a root choice on $\\cat{C}$. The {\\em pivotal operators} \n\\[\nT^i_{jk} \\colon \\Hom(X_i, X_j \\otimes X_k) \\rightarrow \\Hom(X_i, X_j \\otimes X_k)\n\\] \nare defined by\n \\begin{equation} \\label{defn_piv_operator}\n  \\ba \\ig{e290.pdf} \\ea \\mapsto \\ba \\ig{e291.pdf} \\ea.\n \\end{equation}\nwhere the pairing convention has been used.\n\\end{defn}\n\\noindent That is, to evaluate the right hand side of \\eqref{defn_piv_operator}, make an arbitrary choice of right dua",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Positivity of paired dimensions",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-009-34-positivity-of-paired-dimensions.md",
+      "narrative": null,
+      "content": "In this subsection, we show that the paired dimensions $d_{\\{i,i^*\\}}$ are positive real numbers.\n\nThe first step is to show that a root choice gives rise to a `twisted' homomorphism from the Grothendieck ring to $\\mathbb{C}$, which is to be compared with \\eqref{FPeqn}.\n\n\\begin{prop}[{cf. \\cite[pg. 593]{eno02-ofc}}]\\label{homprop} In any root choice $\\{d_i\\}$, we have \n\\[\nd_j d_k = \\displaystyle \\sum_i \\Tr (T^i_{jk}) \\, d_i.\n\\]\n\\end{prop}\n\\begin{proof} \\begin{align*}\n d_j d_k &= \\ba \\ig{e213.pdf} \\ea \\\\\n  &= \\ba \\ig{e214.pdf} \\ea \\\\\n  &= \\sum_{i,\\alpha} \\ba \\ig{e215.pdf} \\ea \\\\\n &= \\sum_{i,\\al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The pivotal operators as a monoidal functor",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-010-35-the-pivotal-operators-as-a-monoidal-functor.md",
+      "narrative": null,
+      "content": "\\label{piv_monoidal}\nWe want to precisely relate the pivotal operators with the more traditional notion of the `double dual functor'. We first need to show that the pivotal operators can be viewed as equipping the identity functor with coherence isomorphisms making it into a monoidal functor. \n\n\\begin{lem} \\label{extend}Suppose $F,G : \\cat{D} \\rightarrow \\cat{D}'$ are linear functors between semisimple categories. Let $\\theta_{i} : F(X_i) \\rightarrow G(X_i)$ be a collection of maps, where $X_i$ ranges over the representatives of the simple objects of $\\cat{D}$. Then there exists a unique natur",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The pivotal operators are the double dual functor",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-011-36-the-pivotal-operators-are-the-double-dual-fun.md",
+      "narrative": null,
+      "content": "\\label{pivops}\nOur approach to the `double dual functor' on a fusion category $\\cat{C}$ been to encode it in a canonical monoidal endofunctor $\\mathcal{T} : \\cat{C} \\rightarrow \\cat{C}$, whose underlying functor is simply the identity. The advantage of our approach is that it is canonical, not requiring arbitrary choices of duals for objects. Such fixed initial choices of duals tend to complicate calculations, as the expression for $\\omega_{V,W}$ in equation \\eqref{defn_omega} below shows.  We now connect our approach to the usual approach, taking more care than is common in the literature.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Explicit formula for the pivotal operators",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-012-4-explicit-formula-for-the-pivotal-operators.md",
+      "narrative": null,
+      "content": "\\label{explicit_sec}\nIn this section we express the pivotal operators $T^i_{jk}$ directly in terms of the associators of the fusion category. More precisely, we introduce the {\\em apex-associator monodromy} and the {\\em pivotal indicators}, and in Theorem \\ref{formula_piv} we express $T^i_{jk}$ as the product of the pivotal indicators with the conjugate of the apex-associator monodromy.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/cor-sec-014-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 24,
+      "target": "cor-sec-014-03.md",
+      "narrative": null,
+      "content": "The paired dimensions compute as d{i,i∗} = ai∗ai .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/ex-sec-014-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 24,
+      "target": "ex-sec-014-01.md",
+      "narrative": null,
+      "content": "In the Yang-Lee category, we read oﬀfrom (7) that aτ = −1 2(1+ √ 5). In category E, we read oﬀfrom (10) that ax = 1 + √ 3; similarly ay = 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/ex-sec-014-05",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 24,
+      "target": "ex-sec-014-05.md",
+      "narrative": null,
+      "content": "In the Yang-Lee category, we read oﬀfrom (7) that p(τ) = −1. In category E, we read oﬀfrom (10) that p(x) = 1, similarly p(y) = 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/lem-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "lem-sec-013-01.md",
+      "narrative": null,
+      "content": "The pivotal operator T i jk computes as the conjugate of the mon- odromy of the cyclic operators: T i jk = Y −1Ti∗jkY Note that the statement of the lemma is well-deﬁned since the right-hand side is independent of the right dual structure maps needed to deﬁne Y (the dependency cancels due to the Y −1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/lem-sec-014-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 24,
+      "target": "lem-sec-014-02.md",
+      "narrative": null,
+      "content": "For each i ∈I, (ηi, ϵi) satisfy the rigidity equations furnishing Xi∗as a right dual of Xi.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/lem-sec-014-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 24,
+      "target": "lem-sec-014-04.md",
+      "narrative": null,
+      "content": "There exists a choice of basis of the ηi such that ai = ai∗for all i ∈I.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Monodromy interpretation of the pivotal operators",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-013-41-monodromy-interpretation-of-the-pivotal-opera.md",
+      "narrative": null,
+      "content": "Monodromy interpretation of the pivotal operators\nWe can write the pivotal operators T i\njk as the conjugate of a product of cyclic\noperators, deﬁned as follows. Write Vijk = Hom(1, Xi ⊗(Xj ⊗Xk)).\nDeﬁnition 4.1. In a fusion category, the cyclic operators Cijk : Vijk →Vkij\nare deﬁned as follows, using the pairing convention:\n7→\nThe monodromy of the cyclic operators is the operator Tijk on Vijk given as the\ncomposite\nTijk = Vijk\nCijk\n−→Vkij\nCkij\n−→Vjki\nCjki\n−→Vijk .\nWrite Y and Y −1 for the ‘yanking’ maps\nY : Hom(Xi, Xj ⊗Xk) ⇄Hom(1, X∗\ni ⊗Xj ⊗Xk)\ndeﬁned by making some choice of structure maps eq",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The pivotal indicators",
+      "pageStart": 21,
+      "pageEnd": 24,
+      "target": "../sections/sec-014-42-the-pivotal-indicators.md",
+      "narrative": null,
+      "content": "The pivotal indicators\nIn this subsection we compute the paired dimensions explicitly and deﬁne the\npivotal indicators.\n21\nLet C be a fusion category, with representative simple objects Xi, i ∈I.\nThe right duality induces a map ∗: I →I with ∗∗= id. Choose for each i ∈I\na nonzero map ηi : 1 →Xi∗⊗Xi:\nDeﬁne ˆηi : Xi∗⊗Xi →1 as the linear dual of ηi, so that\n= 1\nfor all i ∈I. Deﬁne the complex numbers ai as the coeﬃcients appearing in the\nassociator expansion\n= ai\n+ other terms.\n(26)\nSimilarly deﬁne bi as the coeﬃcients appearing in the inverse associator expan-\nsion\n= bi\n+ other terms.\n(27)\nClearl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/rem-sec-013-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "rem-sec-013-02.md",
+      "narrative": null,
+      "content": "In the special case i = j = k, the trace of the cyclic operator Ciii is closely related, but not equal, to the 3rd Frobenius-Schur indicator ν3(Xi) of Xi, as deﬁned in [23]. The indicator ν3(Xi) needs a pivotal structure γ for its deﬁnition, whence we will write it as νγ 3 (Xi), whereas the cyclic operator Ciii is well-deﬁned on the underlying fusion category. The 3rd Frobenius-Schur indicator νγ 3 (Xi) is deﬁned as the trace of an operator whose graphical formula is identical to the inverse of the formula for Ciii in Deﬁnition 4.1, except it is to be interpreted using the pivotal structure γ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/rem-sec-014-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 24,
+      "target": "rem-sec-014-06.md",
+      "narrative": null,
+      "content": "As in Remark 4.3, the pivotal indicator p(Xi) of a self-dual simple object is closely related, but not equal to, the 2nd Frobenius-Schur in- dicator ν2(Xi) of a self-dual simple object, as deﬁned in [23]. The former is deﬁned using only the underlying fusion category, while the latter depends on a pivotal structure γ, whence we can write it as νγ 2 (Xi). The precise relationship is νγ 2 (Xi) = γip(Xi) where γi = ±1 is the sign associated to the self-dual object Xi in the pivotal structure γ (see Section 5.1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Formula for the pivotal operators",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-015-43-formula-for-the-pivotal-operators.md",
+      "narrative": null,
+      "content": "\\label{Form_piv_op}\nWe now show how to compute the pivotal operators directly in terms of the associator matrix elements. More precisely, we express them in terms of the {\\em apex associator monodromy}.\n\\begin{defn} The {\\em apex associators} are the associator matrix elements where the top strand is the identity\\footnote{Thus they form a sharp angle diagrammatically, hence the name.}:\n\\begin{equation} \\label{apex_1}\n \\ig{d19.pdf} = \\sum_\\beta (S_{ijk})_{\\beta \\alpha} \\ig{d20.pdf}\n\\end{equation}\nThat is, $(S_{ijk})_{\\beta \\alpha} = (F^1_{ijk})_{\\eta_{i^*} i^* \\alpha}^{\\eta_k k^* \\beta}$. The {",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pivotal structures",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-016-5-pivotal-structures.md",
+      "narrative": null,
+      "content": "\\label{piv_struc_sec}\nIn this section we characterize pivotal structures as solutions of an explicit set of equations over the complex numbers. We also define fusion homomorphisms, and discuss the sphericalization of a fusion category.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Explicit equations for pivotal structures",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-017-51-explicit-equations-for-pivotal-structures.md",
+      "narrative": null,
+      "content": "\\label{Explicit_equations} \n\nIn Section \\ref{piv_monoidal} we showed that, by using the pairing convention, every fusion category over $\\mathbb{C}$ comes equipped with a canonical monoidal endofunctor $T : \\cat{C} \\rightarrow \\cat{C}$, the pivotal endofunctor, whose underlying functor is simply the identity, with the pivotal operators $T^i_{jk}$ supplying the coherence isomorphisms.\n\nOn the other hand, a {\\em pivotal structure} on a fusion category is usually defined (see eg. \\cite{eno02-ofc, bw99-sc}) by making choices of right duals $(V^*, \\eta_V, \\epsilon_V)$ for every object $V$ as in Sect",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fusion homomorphisms",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-018-52-fusion-homomorphisms.md",
+      "narrative": null,
+      "content": "We write $[\\cat{C}]$ for the Grothendieck ring of a fusion category. The following property of quantum dimensions is well-known.\n\\begin{lem} Given a pivotal structure $\\gamma$ on a fusion category $\\cat{C}$, the quantum dimension map $\\dim_{\\gamma} \\colon [\\cat{C}] \\rightarrow\n\\mathbb{C}$ which sends $[V] \\mapsto \\dim_\\gamma (V)$ satisfies the following:\n \\begin{itemize}\n  \\item It is a ring homomorphism,\n  \\item $\\dim_\\gamma [X_i] \\dim_\\gamma [X_i^*] = d_{\\{i,i^*\\}}$ for all\nsimple objects $X_i$.\n \\end{itemize}\n\\end{lem}\nThis motivates the following definition.\n\\begin{defn} Let $\\cat{C}$ be a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/cor-sec-019-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "cf. [9, Prop 5.14]",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "cor-sec-019-02.md",
+      "narrative": null,
+      "content": "The sphericalization ˜C of a fusion category C carries a canonical spherical structure, in which the quantum dimension of a simple object Xsi i in ˜C computes in terms of the fusion dimension di of Xi in C as dim(Xsi i ) = sidi . (39)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/ex-sec-019-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "ex-sec-019-03.md",
+      "narrative": null,
+      "content": "The sphericalization of the Yang-Lee category has simple ob- jects 1+, 1−, τ +, τ −. The fusion rules are τ +τ + = 1−, 1−1−= 1+, τ ±1−= 1−τ ± = τ ∓, and dim(τ ±) = ±dτ = ±(φ −1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/lem-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "lem-sec-019-01.md",
+      "narrative": null,
+      "content": "The sphericalization ˜C of C has simple objects Xsi i where Xi is a simple object in C, and si = ±1. The fusion hom-vector spaces in ˜C compute in terms of the decompositions of the fusion hom-sets in C (see (19)) as Hom ˜ C(Xsi i , Xsj j ⊗Xsk k ) = HomC(Xi, Xj ⊗Xk)sisjsk . (36) The associator in ˜C is the pullback of the associator in C. The forgetful tensor functor F : ˜C →C sends Xσ i 7→Xi. The pivotal symbols ˜ϵ of ˜C compute in terms of the pivotal symbols ϵ of C as ˜ϵ(i,si) (j,sj)(k,sk) = sisjsk . (37)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/lem-sec-019-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "lem-sec-019-04.md",
+      "narrative": null,
+      "content": "The Frobenius-Perron and fusion dimensions in ˜C are the same as in C, that is, d+ (Xi,si) = d+ Xi and d(Xi,si) = di.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sphericalization of a fusion category",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "../sections/sec-019-53-sphericalization-of-a-fusion-category.md",
+      "narrative": null,
+      "content": "Sphericalization of a fusion category\nWe have seen in Corollary 3.28 that every fusion category C over C comes\nequipped with a canonical monoidal action of Z/2Z. The ‘equivariantization’\nwith respect to this action deﬁnes a new fusion category admitting a canonical\nspherical structure.\nRecall (see eg. [24]) that a monoidal action of a group G on a monoidal\ncategory C is a monoidal functor F : BG →Aut⊗(C), where BG is the group\nG thought of as a one-object category, and Aut⊗(C) is the monoidal category\nof monoidal endofunctors of C.\nDeﬁnition 5.12. The equivariantization CG is the monoidal cate",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ocneanu rigidity",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../sections/sec-020-6-ocneanu-rigidity.md",
+      "narrative": null,
+      "content": "\\label{ocneanu_sec}\nIn \\cite[Appendix E6]{k05-aes} Kitaev gave a diagrammatic proof that the Davydov-Yetter cohomology \\cite{yetter1998-braided, yetter2003-abelian, davydov1997-twisting} of a unitary fusion category vanishes in positive degrees. In this section we show that the pairing convention enables us to extend Kitaev's graphical proof to all fusion categories.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The tangent complex",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "../sections/sec-021-61-the-tangent-complex.md",
+      "narrative": null,
+      "content": "In this subsection we recall the definition of the Yetter-Davydov cohomology of a fusion category $\\cat{C}$ \\cite{yetter1998-braided, yetter2003-abelian, davydov1997-twisting}. Define the functor \n\\[\nT_n : \\underbrace{\\cat{C} \\boxtimes \\cdots \\boxtimes \\cat{C}}_{n \\text{ times}} \\rightarrow \\cat{C}\n\\]\nby $T_n(A_1, \\ldots, A_n) = A_1 \\otimes \\cdots \\otimes A_n$, parenthesized from left-to-right for definiteness, and define $C^n = \\End(T_n)$, the vector space of natural endomorphisms of $T_n$. For $n=0$, set $C^0 = \\mathbb{C}$. In terms of representative simple objects $X_i$, $i \\in I$, we have",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/ex-sec-022-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "ex-sec-022-02.md",
+      "narrative": null,
+      "content": "For a 2-cocycle A ∈Z2(C), that is, a collection of linear opera- tors Ai jk satisfying (43),the vanishing of H2(C) means that Ai jk must take the form Ai jk = (cj −ci + ck) id (47) for some scalars ci, cj, ck. This conclusion is perhaps not immediately evident from (43). Even if we assume that the Ai jk in (43) are diagonal (which is also not immediately clear from dA = 0) i.e. (Ai jk)αβ = δαβ ai jk,α, then (43) becomes the equation at jk,ω −as it,θ + as mk,γ −am ij,δ = 0 whenever (F s ijk)θtω δmγ̸ = 0. (48) The vanishing of H2(C) means that the equations (48) must force the ai jk, α to all be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/lem-sec-022-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "lem-sec-022-01.md",
+      "narrative": null,
+      "content": "In the pairing convention for the graphical calculus associated to a fusion category, we have X α,p dp = X k dk where dp are the fusion dimensions, X is an arbitrary object, and f : Xk ⊗X → Xk ⊗X is an arbitrary morphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1502.02882v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Vanishing of cohomology",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "../sections/sec-022-62-vanishing-of-cohomology.md",
+      "narrative": null,
+      "content": "Vanishing of cohomology\nWe will need the following ‘handleslide’ identity.\n32\nLemma 6.5. In the pairing convention for the graphical calculus associated to\na fusion category, we have\nX\nα,p\ndp\n=\nX\nk\ndk\nwhere dp are the fusion dimensions, X is an arbitrary object, and f : Xk ⊗X →\nXk ⊗X is an arbitrary morphism.\nProof.\nLHS =\nX\np,α\ndp\n= dk\nX\np,α\n(44)\nwhere in the ﬁrst equality the pairing convention is being used, and in the second\nequality we transformed the old basis vectors eα and ˆeα (which were written just\nas α and ˆα in the diagrams) into new basis vectors fα ∈Hom(Xp∗, Xi ⊗Xk∗)\nand ˆfβ ∈Hom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

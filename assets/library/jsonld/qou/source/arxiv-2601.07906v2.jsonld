@@ -1,0 +1,88 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2601.07906v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A universal sum over topologies in 3d gravity",
+  "contains": [
+    "library/arxiv-2601.07906v2/sections/sec-front-matter",
+    "library/arxiv-2601.07906v2/sections/sec-000",
+    "library/arxiv-2601.07906v2/sections/sec-001",
+    "library/arxiv-2601.07906v2/sections/sec-002",
+    "library/arxiv-2601.07906v2/sections/sec-003",
+    "library/arxiv-2601.07906v2/sections/sec-004",
+    "library/arxiv-2601.07906v2/sections/sec-005",
+    "library/arxiv-2601.07906v2/sections/sec-006",
+    "library/arxiv-2601.07906v2/sections/sec-007",
+    "library/arxiv-2601.07906v2/sections/sec-008",
+    "library/arxiv-2601.07906v2/sections/sec-009",
+    "library/arxiv-2601.07906v2/sections/sec-010",
+    "library/arxiv-2601.07906v2/sections/sec-011",
+    "library/arxiv-2601.07906v2/sections/sec-012",
+    "library/arxiv-2601.07906v2/sections/sec-013",
+    "library/arxiv-2601.07906v2/sections/sec-014",
+    "library/arxiv-2601.07906v2/sections/sec-015",
+    "library/arxiv-2601.07906v2/sections/sec-016",
+    "library/arxiv-2601.07906v2/sections/sec-017",
+    "library/arxiv-2601.07906v2/sections/sec-018",
+    "library/arxiv-2601.07906v2/sections/sec-019",
+    "library/arxiv-2601.07906v2/sections/sec-020",
+    "library/arxiv-2601.07906v2/sections/sec-021",
+    "library/arxiv-2601.07906v2/sections/sec-022",
+    "library/arxiv-2601.07906v2/sections/sec-023",
+    "library/arxiv-2601.07906v2/sections/sec-024",
+    "library/arxiv-2601.07906v2/sections/sec-025",
+    "library/arxiv-2601.07906v2/sections/sec-026",
+    "library/arxiv-2601.07906v2/sections/sec-027",
+    "library/arxiv-2601.07906v2/sections/sec-028",
+    "library/arxiv-2601.07906v2/sections/sec-029",
+    "library/arxiv-2601.07906v2/sections/sec-030",
+    "library/arxiv-2601.07906v2/sections/sec-031",
+    "library/arxiv-2601.07906v2/sections/sec-032"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS3 quantum gravity and its relationship with the statistical interpretation of the boundary theory.\n\n**A universal sum over topologies in 3d gravity**\n\n*Alexandre Belin1,2, Scott Collier3,4, Lorenz Eberhardt5, Diego Liska6,7, Boris*\n\n117 pp, 34 sections.\n\n**Abstract.** We explore the sum over topologies in AdS3 quantum gravity and its relationship with the statistical interpretation of the boundary theory. We formulate a statistical version of the conformal bootstrap that systematizes the universal sta- tistical properties of high-energy CFT2 data. We identify a series of surgery moves on bulk manifolds that precisely reflect the requirements of typicality and crossing symmetry of the boundary ensemble. These surgery moves generate a large num- ber of bulk manifolds that have to be included in any reasonable definition of the gravitational path integral. We show that this procedure generates only on-shell (hyperbolic) manifolds, although it does not produce all of them. These proofs rely on structure theorems of 3-manifolds, which non-trivially interact with the require- ments of the statistical boundary ensemble.\n\n**Outline.** Front matter; Introduction; The statistical bootstrap; Kinematic constraints; Crossing symmetry and modular invariance; Typicality and index contractions; Spectral statistics; Summing over handlebodies; The mapping class group; Handlebodies as conformal blocks; Fixed-P partition functions; The handlebody sum is crossing symmetric; Minimal completion of the handlebody sum; Handlebodies are not sufficient; The gravitational machine; The gravitational machine is hyperbolic; What 3-manifolds are generated?; The gravitational machine at work",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2601.07906&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2601.07906v2",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2601.07906v2.pdf",
+    "source_sha256": "e69b1bf37f2c75b067d792f3b780054879ff55f652bfe2ffdda8738c67a82977",
+    "pages": 117,
+    "arxiv": {
+      "id": "2601.07906",
+      "version": "2",
+      "primary_class": "hep-th",
+      "stamp_date": "25 Mar 2026"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

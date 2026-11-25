@@ -1,0 +1,118 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-ph-9612303v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-ph-9612303v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-ph/9612303v1  9 Dec 1996\nPreprint IFUNAM\nFT96-13\nDecember 1996\nhep-ph/9612303n\nThe q-deformed quark model :\nquantum isospin and q-hadrons\nM. Klein-Kreisler and M. Ruiz-Altaba†\nInstituto de F´ısica\nUniversidad Nacional Aut´onoma de M´exico\nA.P. 20-364, 01000 M´exico D.F.\nWe consider the possibility that the SU(2) isospin symmetry, exact in strong inter-\nactions but only approximate in nature, is in fact a quantum group.\nUsing a doublet\nof q-quarks, we build the wavefuntions of π-mesons, nucleons and ∆baryons. We redo\nthe usual quark model computation for the magnetic moments and mass",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9612303v1/blocks/prop-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 8,
+      "target": "prop-sec-001-01.md",
+      "narrative": null,
+      "content": "Taking the experimental value of ∆mπ = m± π −m0 π = 4.59 MeV, takes us then to the real value q = 0.324.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9612303v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "One of the most beautiful and old ideas in particle physics is the isospin invariance\nof strong interactions, discovered by Heisenberg. It constitutes one of the keystones of\nthe quark model, which later became current algebra and eventually ‘t Hooft’s standard\nmodel of strong interactions, namely quantum chromodynamics. Its success in a variety\nof predictions makes it a fundamental conceptual tool for the understanding of many low-\nenergy phenomena and properties of hadrons. The quantitative predictions, however, are\ncorrected by the electromagnetic interactions and, of course, the full QCD.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9612303v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The quantum isospin group and its possible relevance to physics",
+      "pageStart": 2,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-2-the-quantum-isospin-group-and-its-possible-rel.md",
+      "narrative": null,
+      "content": "Given the SU(2) algebra, it is possible to q-deform it to obtain the quantum group\nUq(sℓ(2)), with generators I+, I−and Iz, subject to the commutation relations\n[I3, I±] = ±I± ,\n[I+, I−] = qI3 −q−I3\nq −q−1\n(2.1)\n1\nIn the limit q →1, one recovers the usual SU(2) with the help of L’Hospital’s rule. Let\nus point out the well-known but crucial fact that the mere commutation relations (2.1)\nconstitute only, per se, a curious and rather ugly redeﬁnition of the generators of SU(2)\n[2]. No new physics may arise from just q-deforming (that is, q-redeﬁning) the algebra.\nThe meat of the matter lies in th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9612303v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions and outlook",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-6-conclusions-and-outlook.md",
+      "narrative": null,
+      "content": "As noted in section 2 above, we have restricted ourselves to static predictions of the\n(q-deformed) quark model. They are satisfactory for the nucleons but not so for the pions.\nWe can ﬁt the parameter q from the magnetic moments of the nucleons, and recover their\nmasses in the usual way. It may be that the π0 is not amenable to such a simple picture,\nexceptionally rather than generically. After all, it is the lightest hadron, an almost massless\ngoldstone boson, with the extremely long lifetime involving the chiral anomaly, and so on.\nLet us emphasize that q disappears from the mass formulae a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9612303v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-references.md",
+      "narrative": null,
+      "content": "[1]\nM. Jimbo, The quantum group Uq(sℓ(2)) and its representations, Springer (1992)\nTokyo.\n[2]\nA. Polychronakos, Mod. Phys. Lett. A5 (1990) 2325 .\n[3]\nG. Fiore and P. Schupp , Nucl. Phys. B470 (1996) 211.\n[4]\nJ.Wess, O. Ogievetskii, M. Pillin, W.B. Schimdke and B. Zumino, Proceedings of\nthe 22nd Intl. Conf. on Diﬀerential Geometry Methods in Theoretical Physics, World\nScientiﬁc (1993) Singapore; ;\nH. Ruegg and V.N. Tolstoi, Lett. Math. Phys. 32 (1994) 85.\n[5]\nF. Halzen and A.D. Martin, Quarks and leptons: an introductory course, Wiley (1984)\nNew York.\n[6]\nL.N. Lipatov, JETP Lett. 59 (1994) 596;",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

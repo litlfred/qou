@@ -1,0 +1,1288 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "1104248094",
+  "blocks": [
+    {
+      "id": "library/1104248094/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "© Springer-Verlag",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-springer-verlag.md",
+      "narrative": null,
+      "content": "Hochschild and Cyclic Homology of Quantum Groups\nPing Feng1'* and Boris Tsygan2'**\n1 Department of Physics, Harvard University, Cambridge, MA 02138, USA\n2 Department of Mathematics, Harvard University, Cambridge, MA 02138, USA\nReceived October 23, 1990; in revised form February 20, 1991\nAbstract. For an arbitrary complex linear semisimple Lie group G, we consider\nHopf algebras of the deformations of the formal and algebraic functions on G.\nThe Hochschild and cyclic homology of these Hopf algebras are computed when\nthe value of the deformation parameter is generic.\nTable of Contents",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1104248094/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-1-introduction.md",
+      "narrative": null,
+      "content": "481\n2. Definitions of Hochschild and Cyclic Homology \n484\n3. Quantum Groups \n488\n4. A Spectral Sequence \n493\n5. The Lie Algebra Homology \n500\n5.1. Formal Functions \n501\n5.2. Algebraic Functions \n502\n6. Hochschild and Cyclic Homology of Quantum Groups \n505\n6.1. Quantum Formal Groups \n506\n6.2. Quantum Algebraic Groups \n506\nAppendix A. Notations about Calculus on Lie Groups \n515\nAppendix B. Example G = SL(2, C) \n516\n1. Introduction\nAccording to Gelfand, the category of locally compact topological spaces is\nequivalent to the category of commutative C*-algebras. Also, the category of affine\nThe mai",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1104248094/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Commun. Math. Phys. 140, 481-521 (1991) \nCommunications in\nMathematical\nPhysics",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1104248094/blocks/cor-sec-002-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "2.5",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "cor-sec-002-05.md",
+      "narrative": null,
+      "content": "HH+(A) = H+(C.(A\\ d) = Tor£μ, /c), where A is considered as a right A-module via p defined in (2.15), and k is considered as a left A-module via the counit ε. It is this new complex that we are going to use for computing the Hochschild",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/def-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "2.2",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "def-sec-002-02.md",
+      "narrative": null,
+      "content": "A Hopf algebra A over k is a k-bimodule A together with morphisms m, i, Δ, ε, S, A® A—-+A ε i A — » k — + A, s (2.5) such that they satisfy the following axioms:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/ex-sec-002-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "2.3",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "ex-sec-002-03.md",
+      "narrative": null,
+      "content": "Let G be complex algebraic group, g its Lie algebra, (7(g) the universal enveloping algebra, C[G] the algebraic functions on G. U(g) is made into a Hopf algebra by Vxeg, Δ(x)= l®x ε(x) - 0, S(χ)= -x. (2.14) Hochschild and Cyclic Homology of Quantum Groups C[G] is made into a Hopf algebra by V/eC[G], 0,/zeG, (Δ(f))(g,h) = f(gh\\ \\ (2.15) where e is the identity of G. The formal functions on G in the vicinity of identity, C^G), can be viewed as a Hopf algebra dual to the universal enveloping algebra (7(g).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "2.1",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "1) (Hochschild-Kostant-Rosenberg) HHn(A) = Ω n(X\\ 2) HCn(A) = Ω n(X)/dΩ n~",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/prop-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "2.4",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "prop-sec-002-04.md",
+      "narrative": null,
+      "content": "1) ξ:CH(A)^Ca(A)9 2) ξd = bξ, i.e., the following diagram is commutative, Cΐ(A)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definitions of Hochschild and Cyclic Homology",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-2-definitions-of-hochschild-and-cyclic-homology.md",
+      "narrative": null,
+      "content": "Here we recall the definitions and basic properties of Hochschild and cyclic\nhomology [8, 44, 14, 27]. Let A be an associative algebra over a commutative unital\nring fe, fccA In this paper /c = C, or C((/ι)), the ring of Laurent series. The\nHochschild homology of A, denoted by HH^(A\\ is defined to be the homology of\nthe following complex\n-., \n(2.1)\nwhere Cn(A) = A®\nn + l, and b\\Cn(A)-+Cn-ι(A) such that\nn-l\n= Σ (-iy«\ni = 0\n4-(-l)Xα0®α1(x)...(x)αn_1. \n(2.2)\nThe cyclic homology of A, denoted by HC+(A)9 is defined to be the total\nhomology of the following double complex\n(2.3)\nwhere B\\Cn(A)^Cn + 1(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1104248094/blocks/cor-sec-003-12",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "3.12",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "cor-sec-003-12.md",
+      "narrative": null,
+      "content": "The Poisson Hopf algebra (C f(G), π) has a unique quantization",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/def-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "3.1",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "def-sec-003-01.md",
+      "narrative": null,
+      "content": "A Lie group G is called a Poisson Lie Group if it is a Poisson manifold such that the group multiplication G x G -> G is a Poisson map, where G x G is equipped with the product Poisson structure. The Poisson structure is specified by a bivect or field π, the Poisson tensor, V/, 06C°°(M). (3.1) A map φ:M-+N between two Poisson manifolds is a Poisson map if {Φ*f,Φ*g}M = {f,g}N",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/def-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "3.2",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "def-sec-003-02.md",
+      "narrative": null,
+      "content": "Let g be a Lie algebra over C, g* iίs dual We say that (g) is a Lie bialgebra if there is a Lie algebra structure on g* such the map <5:g-> Λ 2g dual to the Lie bracket [,]: Λ 2g*->g* is a 1-cocycle with the adjoint action of g on Λ 2g. The following theorem states the relations between Poisson Lie groups and Lie bialgebras.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/def-sec-003-08",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "3.8",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "def-sec-003-08.md",
+      "narrative": null,
+      "content": "A Poisson Hopf algebra is a commutative Hopf algebra with a compatible Poisson bracket, i.e., {a,bc} = b{a,c} + {a,b}c. We also have the dual object, co-Poisson Hopf algebra. p. Feng and B. Tsygan",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/def-sec-003-10",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "3.10",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "def-sec-003-10.md",
+      "narrative": null,
+      "content": "A quantization of Poisson Hopf algebra A0 over C is a Hopf algebra A over C [[/*]] such that (a) A/hA = A0 as Hopf algebra over C, (b) A is a free C[[/z]]-wodw/£, (c) Vα, be A, (ab — ba)/hmod(h)= (αmod(/ι), ft mod (/z)}, where {,} is the Poisson bracket of AQ. The notion of quantization of co-Poisson Hopf algebra is similar.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/def-sec-003-14",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "3.14",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "def-sec-003-14.md",
+      "narrative": null,
+      "content": "Let C{(G) be the h-adic completion of A f h(G)®C[[h]]C((h)) and Ch[G] the h-adic completion o/^[G]®C[[fj]]C((/0). See [31, 29, 35] for more discussion of Cft[G]. It is called quantum coordinate algebra there. For the purpose of this paper we do not need an explicit construction ofCΛ[G].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/ex-sec-003-15",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "3.15",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "ex-sec-003-15.md",
+      "narrative": null,
+      "content": "G = SL(2, C), g = s/(2, C). t/h(g) is a Hopf algebra generated by H,E +, E~ via em =-H, S(£±)=-e ±fΈ±. (3.16) Ch[G] is a Hopf algebra generated by a,b,c,d via ab = e~ hba, ac = e~ Hca, db = e hbd, dc = e kcd, Hochschild and Cyclic Homology of Quantum Groups be = cb, ad-da = (e' h - e h)bc, ad - e' hbc = 1, a i)-( χ ί) < \"> \\c d/ \\c d/ \\c a) where \" indicates matrix multiplication, | = α, S(ft)=-Λ, S(c)=-έΓ*c.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-003-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "3.4",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "lem-sec-003-04.md",
+      "narrative": null,
+      "content": "The bilinear form < , > on gc ^ g 0 g defined by <(*ι,yι),(*2,}>2)>= &B(xι,x2) -B(yl9y2)) (3.10) identifies a c©n c with k*.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-003-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "3.5",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "lem-sec-003-05.md",
+      "narrative": null,
+      "content": "* The Lie bracket o/g*^a c©n c, [,]:Λ 2g*->g* induces a map δ:g-+ Λ 2g of the following form: adx(R), Vxeg, (3.12) and R = * Σ E α Λ E _ α . (3.13) ^α>0 The proof is left to the reader. We write down the map δ here: ) = £_ βΛfί β— - Σ Nβι1E_βΛE_Γ (3.14) 2/?,y>0,0 + y = α where α > 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-003-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "3.6",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "lem-sec-003-06.md",
+      "narrative": null,
+      "content": "For any xeg = kc c gc, yeg* ^ a cφn c c gc, [x,y]:=-(adj();)-ady*(x)), (3.15) coincides with the Lie bracket ofgc = k c©a c©n c.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/prop-sec-003-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "3.7",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "prop-sec-003-07.md",
+      "narrative": null,
+      "content": "1) (kc, ac © nc, gc) is a Manin triple', 2) (G, π), π(g) = lg*R — rg*R,for geG, is a Poisson Lie group.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum Groups",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "../sections/sec-003-3-quantum-groups.md",
+      "narrative": null,
+      "content": "later in Sect. 6.\n3. Quantum Groups\nBy quantum group we mean the Hopf algebra (over C[[/z]]) of the formal\ndeformation of the functions on a group. We will start with a connected, complex,\nsemi-simple Lie group G and consider the formal deformation of formal functions\nHochschild and Cyclic Homology of Quantum Groups \n489\nC\nf(G) and algebraic functions C[G], resulting in respectively quantum formal\ngroup C{(G) and quantum algebraic group Cή[G]. The data we need for the formal\ndeformation is a Poisson Lie group structure on G, which we refer to as the\nquasίclassical limit of quantum groups. Dual",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1104248094/blocks/thm-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "3.3",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "thm-sec-003-03.md",
+      "narrative": null,
+      "content": "[11] 1) Let G be connected and simply connected, then there is one to one correspondence between Poisson Lie group structures on G and Lie bialgebra structures on g;",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/thm-sec-003-09",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "3.9",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "thm-sec-003-09.md",
+      "narrative": null,
+      "content": "[11] 1) The Lie bialgebra structure (g,(5) induces a unique co-Poisson Hopf algebra structure on (7(g); 2) The Poisson Lie group structure (G, π) induces a unique Poisson Hopf algebra structure on C[G], and on C f(G); C f(G) is dual to l/(g). This gives the quasiclassical limit of our quantum groups.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/thm-sec-003-11",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "3.11",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "thm-sec-003-11.md",
+      "narrative": null,
+      "content": "[11] The co-Poisson Hopf algebra (U(g),δ) has a unique quantization UΛ(g). This is the quantized universal enveloping algebra of Drinfeld and Jimbo [11,21].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/thm-sec-003-13",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "3.13",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "thm-sec-003-13.md",
+      "narrative": null,
+      "content": "The Poisson Hopf algebra (C[G],π) has a quantization Ah[G~\\.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "4.1",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "E>=HHn(A0) = Ω n(Kc), where the differential forms take algebraic or formal coefficients. The main result of this section is the following theorem.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "4.3",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "lem-sec-004-03.md",
+      "narrative": null,
+      "content": "V/o^eAo^ Ej-^Ej has the form dί(f0®fι)=-(X rJi)(e)(Y a-f a)f0, (4.4) where y fl/0 = <^co>rf/0>, (4.5) / = <MβO. (4.6)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "4.4",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "lem-sec-004-04.md",
+      "narrative": null,
+      "content": "w/iere σ(J α) = 7 α — / α, so σ defines a representation o/g* on A0. Proo/. It is simple calculation. We remark that [7*, 7 &] - Af F c, where Λf is the structure constant of g*, is equivalent to the requirement that the Poisson bracket defined by {/l9/2} = (π,dfι Λ d/2> satisfies Jacobi identity. Consider the Lie algebra homology of g* with coefficients in A09H^(g*9A0)9 where g* acts on A0 via σ. It can be computed by the standard complex . , (4.8) where dg*:A0® Λ ng*->A 0( P. Feng and B. Tsygan is such that = Σ (-i)'~ i = l + Σ (-1Γ''\"1 Λ .. Λ Λ (4.9) And we have seen that ££ = H+(Eϊ, dj, wi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-004-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "4.5",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "lem-sec-004-05.md",
+      "narrative": null,
+      "content": "1) The following diagram is commutative ί-X n®ΛV^ - 2) >/ introduces an isomorphism of complexes.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-004-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "4.7",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "lem-sec-004-08.md",
+      "narrative": null,
+      "content": "[28]. Y a coincides with the infinitesimal left translation of J αeg* c gc on the open Kc orbit of the Gc homogeneous space GC/ACNC. Therefore the Y a action on A0 coincides with the left translation by g* c gc on , (4.13) where C ?(GC) denotes either C α(Gc) or C f(Gc) depending on whether A0 is algebraic or formal functions on Kc.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-004-09",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "4.8",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "lem-sec-004-09.md",
+      "narrative": null,
+      "content": "The zeroth order term of σ can be written as (4.14) where H l p,H r p are respectively left, right invariant vector fields on Kc such that they coincide at the identity with (4.15)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-004-10",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "4.9",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "lem-sec-004-10.md",
+      "narrative": null,
+      "content": "y>=Pa(y); ^ (4.17) 2) V X eg c= gc, and ωr(e) = yeg* c gc, X) = p.^y*\"), (4.18) where pΛ is thought of as a linear form on gc = k c@a c©n c which only takes non-zero value on ac.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-004-12",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "4.7",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "lem-sec-004-12.md",
+      "narrative": null,
+      "content": "ensures the vector field part. For the zero order part, on the one hand,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-004-13",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "4.11",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "lem-sec-004-13.md",
+      "narrative": null,
+      "content": "Let V be a representation of g* = ac 0 nc, then //*(g*, V) is the total homology of the following double complex 0<— V® Λ 2ac^- K®n c® Λ 2ac<— V® Λ 2n c® Λ 2a c< 0<— K K®n c®a c +— V® Λ 2n c®a c F®nc V® Λ 2n c (4.22) where d(g V) denotes the standard boundary operator for Lie algebra homology as defined in (4.9), and ac acts on Λ*n c by ad. This is due to the fact that g* is the semi-direct product of ac and nc. The proof is straightforward. p. Feng and B. Tsygan",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/prop-sec-004-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "4.6",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "prop-sec-004-06.md",
+      "narrative": null,
+      "content": "E* = //π(g*, AQ\\ where g* acts on A0 by σ as in Lemma (4.4).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/prop-sec-004-11",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "4.10",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "prop-sec-004-11.md",
+      "narrative": null,
+      "content": "The σ0 action on A0 coincides with the left translation by g* = ac®ncegc on A0 ^ {fεC Ί(Gc)\\f(ge x) = e»™f(g\\ Vg€Gc,Xeg*}, (4.21) where C?(GC) denotes either Ca(Gc) or Cf(Gc).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Spectral Sequence",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "../sections/sec-004-4-a-spectral-sequence.md",
+      "narrative": null,
+      "content": "We start the computation of the Hochschild and cyclic homology of quantum\ngroups in this section. Our major technical tool is the spectral sequence.\nFirst a remark about notation. Note we have natural identification Kc ^ G.\nIn this and the next section we will use Kc to denote the complex Lie group G\nand reserve G for the real Lie group structure of G. All Lie algebras are complex\nLie algebras and we will use the identification g £ kc, g* = ac0nc without further\nnotice.\nWe will denote quantum group C{(XC), or CΛ[XC] by A and the corresponding\nundeformed Hopf algebra by A0. The h (Planck consta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1104248094/blocks/rem-sec-004-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "rem-sec-004-07.md",
+      "narrative": null,
+      "content": "In [3] Brylinsky defines a complex associated with any Poisson manifold. We remark that the complex (E.,d^\\ which we have identified with the standard complex of the Lie algebra homology //^(g*, A0)9 is isomorphic to the Brylinsky complex associated with the Poisson Lie group (Kc,π). This is most evident if we use the standard complex for the Hochschild homology.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/thm-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "4.2",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "thm-sec-004-02.md",
+      "narrative": null,
+      "content": "E n=Hn(g\\AQ\\ i.e., the E 2 term is the Lie algebra homology of g* = ac@nc with coefficient in A0. For any ^feg*, the action of X on A0 is where pa is the half sum of the positive restricted roots and σ0(X) coincides with the infinitesimal left translation o/Xeg* c:gc on Here C ?(GC) denotes either C f(Gc) ( formal functions) or C α(Gc) (rational functions on GC which are regular on KCACNC) depending on whether AQ is formal or algebraic functions on Kc. The rest of the section is for the proof of this theorem. We will identify the complex (JE. 1,^) as the complex for the Lie algebra homology /^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/cor-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "5.1.2",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "cor-sec-005-02.md",
+      "narrative": null,
+      "content": "For feC f(Kc)n/C f(Kc)n+ί,xεU(g)n, we have <x,σω/> = <adJ(x),/>. (5.5) Note that C f(Kc)JC f(Kc)n+1^(U(g)JU(g)) f^(S^g)y^S n(g^ where S\" Hochschild and Cyclic Homology of Quantum Groups denotes the n th symmetric power. Therefore the E 1 of the spectral sequence of the filtered complex C.(g*, C /(XC)) is H(g*, S n(g*)), where g* acts on S\"(g) by ad.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "4.11",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "lem-sec-005-03.md",
+      "narrative": null,
+      "content": "Note that ac acts on both Λ*n c and S\"(g*) semisimply with non-positive weight. Thus if we compute the ac-homology first we immediately see that the spectral sequence is degenerate at the first term and yields the above result.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "5.1.1",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "Vyeg*, feC f(Kc)n, we have σ(y)feC f(Kc)n. Therefore the complex C.(g*,C /(Xc)) is a filtered complex.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Lie Algebra Homology",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-005-5-the-lie-algebra-homology.md",
+      "narrative": null,
+      "content": "In the previous section we have identified the E\n2 of the spectral sequence leading\nto the Hochschild homology of quantum groups with the Lie algebra homology\nof g* with coefficients in A0. In this section we will compute this Lie algebra\nhomology. Here we will have to treat the formal and algebraic functions separately.\n5.1. Formal Functions. Recall that we have the identification:\nC^Kc)^{fEC^Gc)\\f(ge\nx) \n= e^f(g\\\\/geGc,Xeg^} \n(5.1)\non which g and g* act by infinitesimal left translation /. / extends naturally to a\nleft action of 17 (g) on C\n/(KC), and the pairing\n<*,/> = (/(x)/)(4 \nVxel/(g),",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1104248094/blocks/thm-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "5.1.4",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "thm-sec-005-04.md",
+      "narrative": null,
+      "content": "Hn(g\\ C'(KC)) * C'(TC) ® Λ«ac ^ β» (Tc). (5.8) Note that we have completeness of filtration in (5.4) because we are dealing",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/def-sec-006-04",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "5.2.4",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "def-sec-006-04.md",
+      "narrative": null,
+      "content": "[18]. Let V be a Harish-Chandra module for G, then vea* is a homology exponent of H^(nC9 V) if HH^.(nc, V)v ^0, where #*( nc> JOv = generalized (v — pa) eίgenspace of #*(nc, V). (5.14) A leading homology exponent is one that cannot be expressed as the sum of another homology exponents and a non-zero sum of negative restricted roots, i.e., leading homology exponents are the largest ones with respect to the obvious partial order induced by the positive restricted roots. The shift by pa is to make the notation compatible with Harish-Chandra's labelling of the infinitesimal characters of Z(gc), th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "5.2.1",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "lem-sec-006-01.md",
+      "narrative": null,
+      "content": "σ and σ0 commute with the right translation by the Carton subalgebra o/g",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "5.2.2",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "lem-sec-006-02.md",
+      "narrative": null,
+      "content": "[5]. Any Harish-Chandra module is finitely generated over U(nc). Hochschild and Cyclic Homology of Quantum Groups",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "5.2.3",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "lem-sec-006-03.md",
+      "narrative": null,
+      "content": "[18]. The nc-homology of any Harish-Chandra module is a Harish-Chandra module for MA (which in our case is TA). So nc-homology of Harish-Chandra module is finite dimensional, and decomposes into Jordan cells under the action of tcφac. We define the generalized eίgenspace with generalized eigenvalue μea* to be the largest subspace on which x — μ(x) acts nilpotently for all xeac. Note T acts semisimply on C[XC] and Fλ, thus also acts semisimply on H ^(n^ Vλ). But in general ac does not act semisimply on Vλ so we expect some non-trivial Jordan cells in H^(nc, Vλ) with respect to the action of ac.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-006-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "5.2.5",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "lem-sec-006-05.md",
+      "narrative": null,
+      "content": "(Schmid's Vanishing Theorem [18, 38]). Let vbea leading homology exponents, then Hn(nc, V}v = 0, unless n = 0. The best we can hope now is that zero is the leading homology exponent. Then only //0(nc, Vλ) contributes to the ac-homology, therefore the spectral sequence of the double complex (4.22) is degenerate at E 2, i.e., HΛ(acθnc, Vλ) = E* ^ E n = Hn(*c,H0(nc, Vλ)) * C /(Λ)® Λ\"ac, (5.15) where l(λ) is the number of irreducible Jordan cells in #0(nc, Kλ)0. Actually zero is a leading exponent (thus the unique one) as a consequence of the following lemma, which also gives the dimension of H0(a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-006-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "5.2.6",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "lem-sec-006-06.md",
+      "narrative": null,
+      "content": "(Osborne's Conjecture [18]). Let V be a Harish-Chandra module of G, ΘG(V] the global character, then (5.16) where. G' is the set of the regular semisimple elements of G. (TA) is specified as follows: P. Feng and B. Tsygan (TA)~ = interior, in TA, of the set (5.17) p j where A ~ is the negative Weyl chamber cut out by the positive restricted root system, A' = {aeA\\e«(a) < 0, VαeΦ +(gc,ac)}. The restriction to G' is to avoid certain singularities in the global character, and the restriction to (TA)~ is to avoid complicated sign conventions. Actually every T^l-character is completely determined b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-006-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "5.2.7",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "lem-sec-006-07.md",
+      "narrative": null,
+      "content": "(Frobenius Reciprocity Theorem [5]). Let V be a Harish-Chandra module for G, Uff v be a (T,ac)-module such that T acts by character σ and ac acts by vea*. Then we have Hom^ίFJnd^^)) ^ Hom(r>tcθac)(tf0(nc, K), I7σ§v). (5.20) The isomorphism in the reciprocity theorem is given as follows. For ΦeHom(X>gc)(K, Ind?^(l/,iV)), define φ:V-^υσ^ φ(υ)=Φ(υ}(e\\ Vt eK (5.21) It is easy to see that φeHom(T tcθflc)(#0(nc, V\\ Uσ t V) and Φis uniquely determined by Φ Note the right-hand side of (5.20) only counts the irreducible Jordan cells of tc0ac, but tc acts semisimply so it only counts those of ac. This i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Formal Functions",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "../sections/sec-006-51-formal-functions.md",
+      "narrative": null,
+      "content": "This is the reason for us to treat formal and algebraic functions separately.\n5.2. Algebraic Functions. Now we do not have a nice filtration for C[XC] as we\nhave for C\nf(Kc), so we have to look for other ways to compute the Lie algebra\nhomology for algebraic functions. First of all we notice the following\nLemma (5.2.1). σ and σ0 commute with the right translation by the Carton subalgebra\no/g\nProof. Right translation corresponds to the action of left invariant vector field.\nV/ίeh, notice that [H\nl\n9ωr]=Q and adH(R) = Q, it is obvious that we have\n[H*,σ(J\nfl)] = 0. This should also be obvious fr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1104248094/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "5.2.8",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "where l(λ) is the number of elements on the orbit generated by Weyl group W(g, h) through λ in the weight lattice yl(g, h).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hochschild and Cyclic Homology of Quantum Groups",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-007-6-hochschild-and-cyclic-homology-of-quantum-grou.md",
+      "narrative": null,
+      "content": "505\nirreducible Jordan cells in #0(nc, KA)0 is the number of the elements in the orbit\ngenerated by W through λ in the weight lattice A. This number l(λ) is smaller than\nI W\\ when / is singular and there are indeed non-trivial Jordan cells. We thus have\nthe following\nProposition (5.2.8).\nwhere l(λ) is the number of elements on the orbit generated by Weyl group W(g, h)\nthrough λ in the weight lattice yl(g, h).\nRemark. When we identify the (E.\n1,^) with the Lie algebra homology in Sect. 4,\nwe find that g* acts on C[G] by σ(J\na)= Ύ\na-f\\ where Y\na is the usual dressing\ntransformation and f\na is a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1104248094/blocks/rem-sec-007-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "rem-sec-007-02.md",
+      "narrative": null,
+      "content": "When we identify the (E. 1,^) with the Lie algebra homology in Sect. 4, we find that g* acts on C[G] by σ(J a)= Ύ a-f\\ where Y a is the usual dressing transformation and f a is a multiplication operator. This / α plays an unimportant role in computation of homology for formal functions. Actually one can replace σ with σ (y](J a) = Y a - y/ α,yeC, and get the same Lie algebra homology. But it is absolutely crucial for the algebraic functions. Different values of γ would change the homology drastically. Incidentally the computation is the easiest for y = 1 since f a provides first of all the rig",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/thm-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "5.2.9",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "thm-sec-007-03.md",
+      "narrative": null,
+      "content": "# π(g*, C[XC]) = C[JVG] <g> Λ«ac s A,[ΛΓG]. (5.23) We thus obtain the Lie algebra homology for the algebraic case by applying a series of results from representation theory. Note the answer is different from that of the formal case. There we get differential forms on the unquantized maximal torus (with formal coefficients of course), here we have those differential forms (with algebraic coefficients) which are closely related to the normalizer of Tc in Kc. The Lie algebra homology is the E 2 of the spectral sequence of Sect. 4 which converges to the Hochschild homology of quantum groups. The c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/cor-sec-009-10",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "6.2.9",
+      "pageStart": 26,
+      "pageEnd": 36,
+      "target": "cor-sec-009-10.md",
+      "narrative": null,
+      "content": "wePF provides a trace τ\" for Mλ if and only if w is maximal relative to λ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "6.2.1",
+      "pageStart": 26,
+      "pageEnd": 36,
+      "target": "lem-sec-009-01.md",
+      "narrative": null,
+      "content": "Let A, B be associative algebras, M' left A-module, M right A-module; φ:A^>B algebra homomorphism. Then there is a spectral sequence with ( ' j",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "6.2.2",
+      "pageStart": 26,
+      "pageEnd": 36,
+      "target": "lem-sec-009-02.md",
+      "narrative": null,
+      "content": "Denote the double complex (6.6) by 3~or B^(3~or^(M,B\\k) and the standard complex for Tor^ by 3~or^. There is a quasί-isomorphίsm of complexes 3Γorl(3~or*(M, B\\ k) -> Γoι*(M ®AB, k).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-009-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "6.2.5",
+      "pageStart": 26,
+      "pageEnd": 36,
+      "target": "lem-sec-009-06.md",
+      "narrative": null,
+      "content": "The actions of £/(hc) and CΛ[G] on M commute.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-009-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "6.2.6",
+      "pageStart": 26,
+      "pageEnd": 36,
+      "target": "lem-sec-009-07.md",
+      "narrative": null,
+      "content": "Let a,b,c,d be the generators of Ch[SL2] as in Example (3.14). There are two families of traces for Cfc[SL2], denoted by τ*,τ*, where n is an integer P. Feng and B. Tsygan and n 7^ 0 for τ s n. The following are the only non-zero values of the traces: (1) n>0 ~ + \" ^O; (6.10) l-q2k+n (2) n<0 *c fc) =",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-009-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "6.2.7",
+      "pageStart": 26,
+      "pageEnd": 36,
+      "target": "lem-sec-009-08.md",
+      "narrative": null,
+      "content": "τ™(n1,n2, ..,nl) is a trace. It vanishes identically unless (6.17) When n1,n2,...,nl are thus fixed, τj > = τj >(«1,n2,...,nj) takes non-zero values only on Mλ. Different elements of Weyl group give linearly independent traces.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-009-09",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "6.2.8",
+      "pageStart": 26,
+      "pageEnd": 36,
+      "target": "lem-sec-009-09.md",
+      "narrative": null,
+      "content": "Let Pw(/l) and P'w(λ) be two paths corresponding to two choices of minimal representations for w. Then P^(λ) has stationary points if and only if P'J(λ) has.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-009-11",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "6.2.10",
+      "pageStart": 26,
+      "pageEnd": 36,
+      "target": "lem-sec-009-11.md",
+      "narrative": null,
+      "content": "For any λeΛ, the number ofWeyl group elements that are maximal relative to λ equals to \\Θλ\\, the number of points on the orbit (9λ generated by the Weyl group W through λ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/prop-sec-009-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "6.2.3",
+      "pageStart": 26,
+      "pageEnd": 36,
+      "target": "prop-sec-009-03.md",
+      "narrative": null,
+      "content": "The spectral sequence leading to the Hochschild homology of Cή[G] is degenerate at E 2, i.e., HHflCJίG] ) * tf/g*, C[G] ) <g> C((Λ)X if and only if",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum Formal Groups",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-008-61-quantum-formal-groups.md",
+      "narrative": null,
+      "content": "enveloping algebra Uh(g) the Cartan subalgebra is not quantized, i.e., there is a\nnatural Hopf algebra homomorphism\nl/Λ(g). \n(6.1)\nThis induces a homomorphism of Hopf algebras\nand morphism between the complexes (2.16) for their Hochschild homologies, thus\nalso induces morphisms between the associated \nspectral sequences. For\nC\nf(H)®cC((h)) \nthe spectral sequence is trivial and we have E\nl^E\n2^ \n^\nJE°° ^ Ωf(H)9 where Ωf denotes the differential forms with formal coefficients.\nProposition (5.1.4) shows the *F induces an isomorphism for the second term in\nthe spectral sequence. Note the filtratio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1104248094/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum Algebraic Groups",
+      "pageStart": 26,
+      "pageEnd": 36,
+      "target": "../sections/sec-009-62-quantum-algebraic-groups.md",
+      "narrative": null,
+      "content": "2\nthat the spectral sequence leading to the Hochschild homology is also degenerate\nat E\n2 for the algebraic case.\nIn the formal case the E\n2 term turns out to be that of the Cartan subgroup.\nSince the Cartan subgroup is unquantized, the comparison theorem immediately\nyields the Hochschild and cyclic homology in the formal case. But now the E\n2\n2 The proof in our first draft was incomplete, as was pointed to us independently by J. Block\nand E. Getzler\nHochschild and Cyclic Homology of Quantum Groups \n507\nterm is related to the normalizer of the Cartan subgroup. Since there is no\nunquantized nor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1104248094/blocks/thm-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "6.1.1",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "thm-sec-008-01.md",
+      "narrative": null,
+      "content": "Ψ induces an isomorphism for the Hochschild homology, i.e., HHn(C{(G)) s Ω}(H) ® C((Λ)), (6.3) where H is the Cartan subgroup of G. The Hochschild homology may be considered as the E 1 term of the spectral sequence associated with the double complex for the cyclic homology. The above theorem shows that Ψ induces an isomorphism for the E l term. Again by comparison theorem we have",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/thm-sec-009-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "6.2.4",
+      "pageStart": 26,
+      "pageEnd": 36,
+      "target": "thm-sec-009-04.md",
+      "narrative": null,
+      "content": "c, (6.7) where M = A = C/,[G], and A acts on M by p.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/thm-sec-009-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "6.2.4",
+      "pageStart": 26,
+      "pageEnd": 36,
+      "target": "thm-sec-009-05.md",
+      "narrative": null,
+      "content": "together assert that the spectral sequence induced by the Planck constant for the Hochschild homology is indeed degenerate at E 2. In computing the Lie algebra homology HM(g*,C[G]) we use the fact that the g* action on C[G] commutes with the infinitesimal right translation by the Cartan subalgebra hc. We decomposes C[G] according to this right translation C[G] = © Vλ, Hochschild and Cyclic Homology of Quantum Groups where A is the weight lattice, and we get λeΛ We observe that this decomposition also holds at the quantum level. Recall the Cartan subalgebra is not quantized. We define an action",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/thm-sec-009-12",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "6.2.11",
+      "pageStart": 26,
+      "pageEnd": 36,
+      "target": "thm-sec-009-12.md",
+      "narrative": null,
+      "content": "The Hochschίld homology of the quantum algebraic group is where Ωn\\_No] is defined in (5.22). The last thing we are going to compute in this paper is the cyclic homology of the quantum algebraic groups. This is now fairly easy when we know the Hochschild homology. Recall HC^(A) is computed by the double complex where b and B are defined at the beginning of Sect. 2. The Hochschild homology is only the E 1 term of the spectral sequence associated with the double complex. The complex for E 2 is — HH i < B o B ^--. (6.26) HH0< As is well-known from [10,17], the derivation of r(H), Hehc on A induce",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/ex-sec-010-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "3.14",
+      "pageStart": 36,
+      "pageEnd": 42,
+      "target": "ex-sec-010-01.md",
+      "narrative": null,
+      "content": "So we will not repeat those definitions. B.I. The Quasiclassical Limit. We start with the computation of #n(g*,C[G]). i/i o \\ i/o ι\\ i/o o\\ . , . f H = - , E+ = - , JE_ =- is a basis for g,L ,L ,L the 4\\o -i/ 2\\o o; 2\\ι oy dual basis for g*. The action of g* on C[G] as defined in Proposition (4.4) is as follows: \\-b—, (B.I) dd l ' a da u ,r",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/lem-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "6.2.6",
+      "pageStart": 36,
+      "pageEnd": 42,
+      "target": "lem-sec-010-02.md",
+      "narrative": null,
+      "content": "The family of traces τ e n is easy to understand. They correspond to the unquantized Cartan subgroup. How to understand the τ*, n Φ 0? The answer is that while τ e n corresponds to the point-like symplectic leaves, τ^ corresponds to the extended symplectic leaves in the Poisson Lie group (SL2, π). In [42] Soibelman and Vaksman construct irreducible modules for Ch[Sl/(2)] corresponding to the symplectic leaves of the Poisson Lie group SU(2). They work with the compact quantum group and we work with the complex quantum group. The difference is not important in the discussion here. For the trivia",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1104248094/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example G = SL(2, C)",
+      "pageStart": 36,
+      "pageEnd": 42,
+      "target": "../sections/sec-010-appendix-b-example-g-sl2-c.md",
+      "narrative": null,
+      "content": "The quantum algebraic group structure is as discussed in Sect. 3, specifically in\nExample (3.14). So we will not repeat those definitions.\nB.I. The Quasiclassical Limit. We start with the computation of #n(g*,C[G]).\ni/i \no \\ \ni/o ι\\ \ni/o o\\ . \n, . f\nH = - \n, E+ = - \n, JE_ =- \nis a basis for g,L ,L ,L the\n4\\o -i/ \n2\\o o; \n2\\ι oy\ndual basis for g*. The action of g* on C[G] as defined in Proposition (4.4) is as\nfollows:\n\\-b—, \n(B.I)\ndd \nl '\na\nda\nu \n,r \n3\n \nL\n d \nd \nj d\nwhere N = a \n\\-b \n\\-c \n\\-d —.\nda \ndb \ndc \ndd\nWe choose a basis for C[G] as follows\nXp^n:=a\npb\nq(bc)\nn, \np,qeZ, \nn^O, \n(B.2)\nwhere",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/hecke-alg/sections/page-069",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 69",
+  "pageStart": 69,
+  "pageEnd": 69,
+  "contains": [
+    "library/hecke-alg/blocks/prose-page-069",
+    "library/hecke-alg/blocks/thm-page-069-01",
+    "library/hecke-alg/blocks/lem-page-069-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hecke-alg/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hecke-alg/manifest.jsonld",
+  "provenance": "ingested"
+}

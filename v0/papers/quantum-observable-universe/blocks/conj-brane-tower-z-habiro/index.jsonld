@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-brane-tower-z-habiro",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:brane-tower-z-habiro",
+  "kind": "conjecture",
+  "title": "Brane tower lives in the $z$-Habiro ring",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-z-habiro-ring",
+    "papers/quantum-observable-universe/blocks/def-habiro-ring",
+    "papers/quantum-observable-universe/blocks/cor-quantum-dilogarithm"
+  ],
+  "tags": [
+    "tier:S",
+    "brane-tower",
+    "habiro-ring",
+    "cyclotomic-completion",
+    "regularization",
+    "quantum-dilogarithm",
+    "open-problem",
+    "partial-refutation-six-families",
+    "closure-2026-05-11",
+    "phase-3-leverage-15-users",
+    "algebraic-cauchy-limit-half-open"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.BraneTowerZHabiro",
+  "text": "brane-tower-z-habiro.md",
+  "leanSource": "brane-tower-z-habiro.lean",
+  "provenance": "authored"
+}

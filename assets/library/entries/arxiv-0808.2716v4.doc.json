@@ -1,0 +1,2175 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0808.2716v4",
+  "title": "arxiv-0808.2716v4",
+  "variant": "pdf",
+  "pages": 44,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Cusp shapes and areas",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-cusp-shapes-and-areas"
+    },
+    {
+      "level": 2,
+      "title": "Cusp area and link diagrams",
+      "number": "1.2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-cusp-area-and-link-diagrams"
+    },
+    {
+      "level": 2,
+      "title": "Applications to hyperbolic Dehn filling",
+      "number": "1.3",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-applications-to-hyperbolic-dehn-filling"
+    },
+    {
+      "level": 2,
+      "title": "Volume and Jones polynomial invariants",
+      "number": "1.4",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-volume-and-jones-polynomial-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Organization",
+      "number": "1.5",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-15-organization"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": "1.6",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-16-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "The canonical triangulation of a Farey manifold",
+      "number": "2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-2-the-canonical-triangulation-of-a-farey-manifol"
+    },
+    {
+      "level": 2,
+      "title": "The Ford domain and its dual",
+      "number": "2.1",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-21-the-ford-domain-and-its-dual"
+    },
+    {
+      "level": 2,
+      "title": "Once–punctured torus bundles",
+      "number": "2.2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-22-oncepunctured-torus-bundles"
+    },
+    {
+      "level": 2,
+      "title": "4–punctured sphere bundles",
+      "number": "2.3",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-23-4punctured-sphere-bundles"
+    },
+    {
+      "level": 2,
+      "title": "Two-bridge links",
+      "number": "2.4",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-24-two-bridge-links"
+    },
+    {
+      "level": 1,
+      "title": "Geometric estimates for Ford domains",
+      "number": "3",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-3-geometric-estimates-for-ford-domains"
+    },
+    {
+      "level": 2,
+      "title": "Estimates for triangulated hyperbolic 3–manifolds",
+      "number": "3.1",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-31-estimates-for-triangulated-hyperbolic-3manifo"
+    },
+    {
+      "level": 2,
+      "title": "Parameterization by radii of Ford domain faces",
+      "number": "3.2",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-32-parameterization-by-radii-of-ford-domain-face"
+    },
+    {
+      "level": 2,
+      "title": "Horosphere estimate",
+      "number": "3.3",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-33-horosphere-estimate"
+    },
+    {
+      "level": 2,
+      "title": "The length of a meridian",
+      "number": "3.4",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-34-the-length-of-a-meridian"
+    },
+    {
+      "level": 1,
+      "title": "Cusp area estimates",
+      "number": "4",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-4-cusp-area-estimates"
+    },
+    {
+      "level": 2,
+      "title": "Punctured–torus bundles",
+      "number": "4.1",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-41-puncturedtorus-bundles"
+    },
+    {
+      "level": 2,
+      "title": "4–punctured sphere bundles",
+      "number": "4.2",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-42-4punctured-sphere-bundles"
+    },
+    {
+      "level": 2,
+      "title": "2–bridge links",
+      "number": "4.3",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-43-2bridge-links"
+    },
+    {
+      "level": 1,
+      "title": "Volume estimates for closed 3–braids",
+      "number": "5",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-5-volume-estimates-for-closed-3braids"
+    },
+    {
+      "level": 2,
+      "title": "A normal form for 3–braids",
+      "number": "5.1",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-51-a-normal-form-for-3braids"
+    },
+    {
+      "level": 2,
+      "title": "Hyperbolic 3–braids",
+      "number": "5.2",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-52-hyperbolic-3braids"
+    },
+    {
+      "level": 2,
+      "title": "Volume estimates",
+      "number": "5.3",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-53-volume-estimates"
+    },
+    {
+      "level": 1,
+      "title": "The Jones polynomial and volume of closed 3–braids",
+      "number": "6",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-6-the-jones-polynomial-and-volume-of-closed-3bra"
+    },
+    {
+      "level": 2,
+      "title": "The Jones polynomials of generic 3–braids",
+      "number": "6.1",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-61-the-jones-polynomials-of-generic-3braids"
+    },
+    {
+      "level": 2,
+      "title": "Connections to volume",
+      "number": "6.2",
+      "page": 40,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-62-connections-to-volume"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 42,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 137,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cusp area",
+          "heading": false
+        },
+        {
+          "term": "farey",
+          "heading": false
+        },
+        {
+          "term": "xiao-song",
+          "heading": false
+        },
+        {
+          "term": "punctured",
+          "heading": false
+        },
+        {
+          "term": "efstratia",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0808.2716v4 [math.GT] 11 Feb 2010 CUSP AREAS OF FAREY MANIFOLDS AND APPLICATIONS TO KNOT THEORY DAVID FUTER, EFSTRATIA KALFAGIANNI, AND JESSICA S. PURCELL Abstract. This paper gives the ﬁrst explicit, two–sided estimates on the cusp area of once– punctured torus bundles, 4–punctured sphere bundles, and 2–bridge link complements. The input for these estimates is purely combinatorial data coming from the Farey",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0808.2716v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 252,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "farey manifolds",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifold",
+          "heading": false
+        },
+        {
+          "term": "tesselation",
+          "heading": false
+        },
+        {
+          "term": "intro",
+          "heading": false
+        },
+        {
+          "term": "thurston",
+          "heading": false
+        },
+        {
+          "term": "punctured",
+          "heading": false
+        },
+        {
+          "term": "bounds",
+          "heading": false
+        },
+        {
+          "term": "dehn",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:intro label=\"sec:intro\"} Around 1980, Thurston proved that 3--manifolds with torus boundary decompose into pieces that admit locally homogeneous geometric structures [@thurston:survey], and that in an appropriate sense the most common such structure is hyperbolic [@thurston:notes]. By Mostow--Prasad rigidity, a hyperbolic structure is unique for such a manifold, and thus the geometry of a hyperbolic manifold",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-cusp-shapes-and-areas",
+      "number": "1.1",
+      "title": "Cusp shapes and areas",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 904,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cusp shapes",
+          "heading": true
+        },
+        {
+          "term": "maximal horoball",
+          "heading": false
+        },
+        {
+          "term": "horoball neighborhoods",
+          "heading": false
+        },
+        {
+          "term": "cusp metrics",
+          "heading": false
+        },
+        {
+          "term": "horoball size",
+          "heading": false
+        },
+        {
+          "term": "cusp area",
+          "heading": false
+        },
+        {
+          "term": "punctured torus",
+          "heading": false
+        },
+        {
+          "term": "bmatrix end",
+          "heading": false
+        }
+      ],
+      "extract": "In a finite--volume hyperbolic 3--manifold $M$, a horoball neighborhood of a torus boundary component becomes a *cusp*, homeomorphic to $T^2\\times[0,\\infty)$. Mostow--Prasad rigidity implies that each cross-sectional torus $T^2$ is endowed with a flat metric, or *cusp shape*, that is determined up to similarity by the topology of $M$. When $M$ has a single torus boundary component, we may expand a horoball",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-cusp-area-and-link-diagrams",
+      "number": "1.2",
+      "title": "Cusp area and link diagrams",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 557,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cusp area",
+          "heading": true
+        },
+        {
+          "term": "bridge knots",
+          "heading": false
+        },
+        {
+          "term": "bridge links",
+          "heading": false
+        },
+        {
+          "term": "alternating diagram",
+          "heading": false
+        },
+        {
+          "term": "maximal cusp",
+          "heading": false
+        },
+        {
+          "term": "cusp metric",
+          "heading": false
+        },
+        {
+          "term": "twist region",
+          "heading": false
+        },
+        {
+          "term": "twist number",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:diagram-intro label=\"sec:diagram-intro\"} A closely related class of manifolds are complements of 2--bridge links. Using similar techniques, in this paper we are also able to bound the lengths of slopes on maximal cusps in hyperbolic 2--bridge links. Since all 2--bridge links can be represented by an alternating diagram, our results give further evidence for a conjectural picture of the cusp shapes and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-applications-to-hyperbolic-dehn-filling",
+      "number": "1.3",
+      "title": "Applications to hyperbolic Dehn filling",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 558,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dehn filling",
+          "heading": true
+        },
+        {
+          "term": "hyperbolic-3braid",
+          "heading": false
+        },
+        {
+          "term": "ptorus-area",
+          "heading": false
+        },
+        {
+          "term": "non-trivial dehn",
+          "heading": false
+        },
+        {
+          "term": "cdots sigma",
+          "heading": false
+        },
+        {
+          "term": "ptorus-volume",
+          "heading": false
+        },
+        {
+          "term": "filling along",
+          "heading": false
+        },
+        {
+          "term": "braid-volume",
+          "heading": false
+        }
+      ],
+      "extract": "The shapes of the cusps and their actual metrics give information not just on the 3--manifold itself, but also on the Dehn fillings of that manifold. For example, modulo the geometrization conjecture, several theorems imply that Dehn fillings on slopes of sufficient length yield hyperbolic manifolds (these are the $2\\pi$--Theorem, due to Gromov and Thurston [@bleiler-hodgson]; the 6--Theorem, due to Agol",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-volume-and-jones-polynomial-invariants",
+      "number": "1.4",
+      "title": "Volume and Jones polynomial invariants",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 817,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jones polynomial",
+          "heading": true
+        },
+        {
+          "term": "next--to--last coefficients",
+          "heading": false
+        },
+        {
+          "term": "braid-volume",
+          "heading": false
+        },
+        {
+          "term": "counterexample",
+          "heading": false
+        },
+        {
+          "term": "volume",
+          "heading": true
+        },
+        {
+          "term": "smallsetminus",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic knot",
+          "heading": false
+        },
+        {
+          "term": "knot invariants",
+          "heading": false
+        }
+      ],
+      "extract": "The volume estimate of Theorem [\\[thm:3braid-volume\\]](#thm:3braid-volume){reference-type=\"ref\" reference=\"thm:3braid-volume\"} has a very interesting application to conjectures on the relationship of the volume to the Jones polynomial invariants of hyperbolic knots. For a knot $K$, let $$J_K(t)= \\alpha_K t^m+ \\beta_K t^{m-1}+ \\ldots + \\beta'_K t^{r+1}+ \\alpha'_K t^r$$ denote the Jones polynomial of $K$. We will",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-15-organization",
+      "number": "1.5",
+      "title": "Organization",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 85,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "farey-ford",
+          "heading": false
+        },
+        {
+          "term": "jones3braids",
+          "heading": false
+        },
+        {
+          "term": "cusp area",
+          "heading": false
+        },
+        {
+          "term": "volume3braids",
+          "heading": false
+        },
+        {
+          "term": "cusp-area",
+          "heading": false
+        }
+      ],
+      "extract": "We begin by discussing Farey manifolds. In Section [\\[sec:farey-ford\\]](#sec:farey-ford){reference-type=\"ref\" reference=\"sec:farey-ford\"}, we describe the canonical triangulations of the three families of Farey manifolds. In Section [\\[sec:horosphere\\]](#sec:horosphere){reference-type=\"ref\" reference=\"sec:horosphere\"}, we show that the universal cover of one of these manifolds must contain a number of maximal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-16-acknowledgements",
+      "number": "1.6",
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 78,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "horosize",
+          "heading": false
+        },
+        {
+          "term": "revisions",
+          "heading": false
+        },
+        {
+          "term": "françois",
+          "heading": false
+        },
+        {
+          "term": "kofman",
+          "heading": false
+        }
+      ],
+      "extract": "We thank Ian Agol for a number of helpful comments, and in particular for getting us started in the right direction towards Proposition [\\[prop:horosize\\]](#prop:horosize){reference-type=\"ref\" reference=\"prop:horosize\"}. We thank François Guéritaud for enlightening discussions about punctured torus bundles. In order to generate Table [\\[table:jones\\]](#table:jones){reference-type=\"ref\" reference=\"table:jones\"} on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-2-the-canonical-triangulation-of-a-farey-manifol",
+      "number": "2",
+      "title": "The canonical triangulation of a Farey manifold",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 86,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "farey",
+          "heading": true
+        },
+        {
+          "term": "farey manifolds",
+          "heading": false
+        },
+        {
+          "term": "canonical polyhedral",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:farey-ford label=\"sec:farey-ford\"} In this section, we review the canonical triangulations of Farey manifolds. We begin by recalling the definition of the Ford domain and the canonical polyhedral decomposition that is its dual. We then describe the combinatorics of the canonical polyhedral decomposition for each of the three families of Farey manifolds; for the manifolds in question, it is always a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-21-the-ford-domain-and-its-dual",
+      "number": "2.1",
+      "title": "The Ford domain and its dual",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 313,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ford domain",
+          "heading": true
+        },
+        {
+          "term": "horoball neighborhood",
+          "heading": false
+        },
+        {
+          "term": "floyd--hatcher triangulation",
+          "heading": false
+        },
+        {
+          "term": "fundamental domain",
+          "heading": false
+        },
+        {
+          "term": "canonical polyhedral",
+          "heading": false
+        },
+        {
+          "term": "polyhedral decomposition",
+          "heading": false
+        },
+        {
+          "term": "guéritaud",
+          "heading": false
+        },
+        {
+          "term": "fundamental region",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:ford-rev label=\"sec:ford-rev\"} For a hyperbolic manifold $M$ with a single cusp, expand a horoball neighborhood about the cusp. In the universal cover ${\\mathbb{H}}^3$, this neighborhood lifts to a disjoint collection of horoballs. In the upper half space model for ${\\mathbb{H}}^3$, we may ensure that one of these horoballs is centered on the point at infinity. Select vertical planes in ${\\mathbb{H}}^3$ that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-22-oncepunctured-torus-bundles",
+      "number": "2.2",
+      "title": "Once–punctured torus bundles",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1282,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "punctured torus",
+          "heading": true
+        },
+        {
+          "term": "pleated surfaces",
+          "heading": false
+        },
+        {
+          "term": "farey tesselation",
+          "heading": false
+        },
+        {
+          "term": "varphi crosses",
+          "heading": false
+        },
+        {
+          "term": "monodromy varphi",
+          "heading": false
+        },
+        {
+          "term": "bi-infinite word",
+          "heading": false
+        },
+        {
+          "term": "gamma varphi",
+          "heading": false
+        },
+        {
+          "term": "word omega",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:ptorus label=\"sec:ptorus\"} Let $V_\\varphi$ be a hyperbolic punctured torus bundle with monodromy $\\varphi$. The mapping class group of the punctured torus is isomorphic to $SL_2({\\mathbb{Z}})$. By a well--known argument that we recall below, either $\\varphi$ or $-\\varphi$ is conjugate to an element of the form $$\\Omega = R^{a_1}L^{b_1}\\cdots R^{a_s}L^{b_s},$$ where $a_i, b_i$ are positive integers, and $R$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-23-4punctured-sphere-bundles",
+      "number": "2.3",
+      "title": "4–punctured sphere bundles",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 529,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "punctured sphere",
+          "heading": true
+        },
+        {
+          "term": "sphere bundles",
+          "heading": true
+        },
+        {
+          "term": "punctured torus",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic punctured",
+          "heading": false
+        },
+        {
+          "term": "corresponding punctured",
+          "heading": false
+        },
+        {
+          "term": "ford domain",
+          "heading": false
+        },
+        {
+          "term": "equivariant cusp",
+          "heading": false
+        },
+        {
+          "term": "cusp neighborhood",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:4ps label=\"sec:4ps\"} Consider the universal abelian cover $X := {\\mathbb{R}}^2 {\\smallsetminus}{\\mathbb{Z}}^2$ of the punctured torus, and define the following transformations of $X$: $$\\alpha(x,y) = (x+1, y), \\quad \\beta(x,y) = (x,y+1), \\quad \\sigma(x,y) = (-x,-y).$$ Then one obtains the punctured torus as $T = X/\\langle\\alpha, \\beta \\rangle$ and the $4$--punctured sphere as $S = X/\\langle\\alpha^2, \\beta^2,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-24-two-bridge-links",
+      "number": "2.4",
+      "title": "Two-bridge links",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 630,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "two-bridge",
+          "heading": true
+        },
+        {
+          "term": "pillowcase together",
+          "heading": false
+        },
+        {
+          "term": "punctured sphere",
+          "heading": false
+        },
+        {
+          "term": "layered triangulation",
+          "heading": false
+        },
+        {
+          "term": "two-bridge link",
+          "heading": false
+        },
+        {
+          "term": "bridge link",
+          "heading": false
+        },
+        {
+          "term": "two-bridge figure",
+          "heading": false
+        },
+        {
+          "term": "sphere bundle",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:2bridge label=\"sec:2bridge\"} If a $4$--punctured sphere bundle $N$ is cut along a pleated fiber $S$, the result is a manifold homeomorphic to $S \\times I$, equipped with an ideal triangulation. To recover $N$, we reglue the top of this *product region* $S \\times I$ to the bottom along faces of this triangulation. Meanwhile, the complement of a two-bridge link $K$ also contains a product region $S \\times I$:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-3-geometric-estimates-for-ford-domains",
+      "number": "3",
+      "title": "Geometric estimates for Ford domains",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 77,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ford domains",
+          "heading": true
+        },
+        {
+          "term": "triangle-ineq",
+          "heading": false
+        },
+        {
+          "term": "length-non-canonical",
+          "heading": false
+        },
+        {
+          "term": "horosize",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:horosphere label=\"sec:horosphere\"} This section contains a number of geometric estimates on the Ford domains of Farey manifolds. We begin with a few estimates (Lemmas [\\[lemma:triangle-ineq\\]](#lemma:triangle-ineq){reference-type=\"ref\" reference=\"lemma:triangle-ineq\"}--[\\[lemma:length-non-canonical\\]](#lemma:length-non-canonical){reference-type=\"ref\" reference=\"lemma:length-non-canonical\"}) that apply to all",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-31-estimates-for-triangulated-hyperbolic-3manifo",
+      "number": "3.1",
+      "title": "Estimates for triangulated hyperbolic 3–manifolds",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1585,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ford domain",
+          "heading": false
+        },
+        {
+          "term": "euclidean hemispheres",
+          "heading": false
+        },
+        {
+          "term": "hemisphere face",
+          "heading": false
+        },
+        {
+          "term": "adjacent faces",
+          "heading": false
+        },
+        {
+          "term": "euclidean distance",
+          "heading": false
+        },
+        {
+          "term": "euclidean reflection",
+          "heading": false
+        },
+        {
+          "term": "geodesic running",
+          "heading": false
+        },
+        {
+          "term": "vertical geodesic",
+          "heading": false
+        }
+      ],
+      "extract": "Recall from Section [\\[sec:ford-rev\\]](#sec:ford-rev){reference-type=\"ref\" reference=\"sec:ford-rev\"} that the Ford domain of a cusped hyperbolic manifold $M$ is a union of finite--sided polyhedra, with one ideal vertex for each cusp of $M$. Consider those faces of the Ford domain which do not meet an ideal vertex. These consist of points that are equidistant from two or more lifts of a cusp into ${\\mathbb{H}}^3$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-32-parameterization-by-radii-of-ford-domain-face",
+      "number": "3.2",
+      "title": "Parameterization by radii of Ford domain faces",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1429,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ford domain",
+          "heading": true
+        },
+        {
+          "term": "cos beta",
+          "heading": false
+        },
+        {
+          "term": "largest horosphere",
+          "heading": false
+        },
+        {
+          "term": "circles meet",
+          "heading": false
+        },
+        {
+          "term": "beta alpha",
+          "heading": false
+        },
+        {
+          "term": "faces",
+          "heading": true
+        },
+        {
+          "term": "angle beta",
+          "heading": false
+        },
+        {
+          "term": "beta sin",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:param label=\"subsec:param\"} We now restrict our attention to the case of Farey manifolds. Suppose, for the moment, that $M$ is a punctured torus bundle. Consider one zigzag of $M$; this is a punctured torus $T$. From the canonical triangulation on $M$, $T$ inherits a triangulation. Edges are dual to faces of the Ford domain of $M$. Since $T$ is a punctured torus, there are only three edges in a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-33-horosphere-estimate",
+      "number": "3.3",
+      "title": "Horosphere estimate",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1327,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta eta",
+          "heading": false
+        },
+        {
+          "term": "horosphere",
+          "heading": true
+        },
+        {
+          "term": "cos eta",
+          "heading": false
+        },
+        {
+          "term": "horosize",
+          "heading": false
+        },
+        {
+          "term": "angles theta",
+          "heading": false
+        },
+        {
+          "term": "every zigzag",
+          "heading": false
+        },
+        {
+          "term": "acute angle",
+          "heading": false
+        },
+        {
+          "term": "ford domain",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:large-horosphere label=\"subsec:large-horosphere\"} We can now show that each zigzag contains a large horosphere. ::: prop []{#prop:horosize label=\"prop:horosize\"} Let $M$ be a Farey manifold. If $M$ is a $4$--punctured sphere bundle or two--bridge link complement, denote its meridian length by $\\mu$; if $M$ is a punctured torus bundle, denote its meridian length by $2\\mu$. (See Definition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-34-the-length-of-a-meridian",
+      "number": "3.4",
+      "title": "The length of a meridian",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 432,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "meridian",
+          "heading": true
+        },
+        {
+          "term": "equivariant cusp",
+          "heading": false
+        },
+        {
+          "term": "length-non-canonical",
+          "heading": false
+        },
+        {
+          "term": "cusp neighborhood",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic distance",
+          "heading": false
+        },
+        {
+          "term": "horosize",
+          "heading": false
+        },
+        {
+          "term": "euclidean distance",
+          "heading": false
+        },
+        {
+          "term": "horoball",
+          "heading": false
+        }
+      ],
+      "extract": "To make the estimate of Proposition [\\[prop:horosize\\]](#prop:horosize){reference-type=\"ref\" reference=\"prop:horosize\"} independent of $\\mu$, we prove a bound on the value of $\\mu$. We note that the following lemma is the *only* result in this section that does not apply to all Farey manifolds: it fails for 2--bridge links. ::: lemma In an equivariant cusp of a 4--punctured sphere bundle $M$, $\\mu \\geq \\sqrt{2}$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-4-cusp-area-estimates",
+      "number": "4",
+      "title": "Cusp area estimates",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 56,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cusp-area",
+          "heading": false
+        },
+        {
+          "term": "horosphere",
+          "heading": false
+        },
+        {
+          "term": "area",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec:cusp-area label=\"sec:cusp-area\"} In this section, we apply the results of Section [\\[sec:horosphere\\]](#sec:horosphere){reference-type=\"ref\" reference=\"sec:horosphere\"} to prove quantitative estimates on the cusp area of Farey manifolds. For most of the section, we shall focus on punctured torus bundles. At the end of the section, we will generalize these results to $4$--punctured sphere bundles and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-41-puncturedtorus-bundles",
+      "number": "4.1",
+      "title": "Punctured–torus bundles",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2267,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "punctured--torus bundle",
+          "heading": false
+        },
+        {
+          "term": "disjoint horospheres",
+          "heading": false
+        },
+        {
+          "term": "ptorus-area",
+          "heading": false
+        },
+        {
+          "term": "punctured",
+          "heading": true
+        },
+        {
+          "term": "disjoint disks",
+          "heading": false
+        },
+        {
+          "term": "horoball neighborhood",
+          "heading": false
+        },
+        {
+          "term": "cusp neighborhood",
+          "heading": false
+        },
+        {
+          "term": "syllables containing",
+          "heading": false
+        }
+      ],
+      "extract": "We shall prove the following result: ::: theorem []{#thm:ptorus-area label=\"thm:ptorus-area\"} Let $M$ be a punctured--torus bundle with monodromy $$\\Omega = \\pm R^{p_1}L^{q_1} \\cdots R^{p_s}L^{q_s}.$$ Let $C$ be a maximal horoball neighborhood about the cusp of $M$. Then $$0.1885 \\, s \\: \\approx \\: \\frac{16 \\sqrt{3}}{147} \\, s \\: \\leq \\: {\\rm area}({\\partial}C) \\:<\\: 2 \\sqrt{3} \\, \\frac{v_8}{v_3} \\, s \\: \\approx \\:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-42-4punctured-sphere-bundles",
+      "number": "4.2",
+      "title": "4–punctured sphere bundles",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 404,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "punctured sphere",
+          "heading": true
+        },
+        {
+          "term": "cusp neighborhood",
+          "heading": false
+        },
+        {
+          "term": "preferred puncture",
+          "heading": false
+        },
+        {
+          "term": "sphere bundle",
+          "heading": false
+        },
+        {
+          "term": "punctured torus",
+          "heading": false
+        },
+        {
+          "term": "area",
+          "heading": false
+        },
+        {
+          "term": "least factor",
+          "heading": false
+        },
+        {
+          "term": "closed curve",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem 4.7. Let N be a 4–punctured sphere bundle with monodromy Ω= Rp1Lq1 · · · RpsLqs, and with the property that the monodromy ﬁxes one preferred boundary circle of the 4–holed sphere. Let D be the maximal horoball neighborhood of the cusp corresponding to this preferred puncture, and let γ be any simple closed curve on ∂D that is transverse to the ﬁbers. Then area(∂D) ≥16 √ 3 147 s and ℓ(γ) ≥8 √ 3 147 s. Proof.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-43-2bridge-links",
+      "number": "4.3",
+      "title": "2–bridge links",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 665,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bridge",
+          "heading": true
+        },
+        {
+          "term": "pleated surface",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "least sqrt",
+          "heading": false
+        },
+        {
+          "term": "bridge link",
+          "heading": false
+        },
+        {
+          "term": "disjoint-disks",
+          "heading": false
+        },
+        {
+          "term": "edge-count",
+          "heading": false
+        },
+        {
+          "term": "ptorus-area",
+          "heading": false
+        }
+      ],
+      "extract": "::: theorem []{#thm:2bridge label=\"thm:2bridge\"} Let $K$ be a 2--bridge link in $S^3$, whose reduced alternating diagram has twist number $t$. Let $C$ be a maximal neighborhood about the cusps of $S^3 {\\smallsetminus}K$, in which the two cusps have equal volume if $K$ has two components. Then $$\\frac{8\\sqrt{3}}{147}\\,(t-1) \\: \\leq \\: {\\rm area}({\\partial}C) \\: <\\: 2\\sqrt{3}\\,\\, \\frac{v_8}{v_3}\\,(t-1).$$ Furthermore,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-5-volume-estimates-for-closed-3braids",
+      "number": "5",
+      "title": "Volume estimates for closed 3–braids",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 32,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "closed braids",
+          "heading": true
+        },
+        {
+          "term": "ps-area",
+          "heading": false
+        },
+        {
+          "term": "cusp-area",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:volume3braids label=\"sec:volume3braids\"} In this section, we give a complete characterization of the closed $3$--braids whose complements are hyperbolic. Then, we apply Theorem [\\[thm:4ps-area\\]](#thm:4ps-area){reference-type=\"ref\" reference=\"thm:4ps-area\"} from Section [\\[sec:cusp-area\\]](#sec:cusp-area){reference-type=\"ref\" reference=\"sec:cusp-area\"} to obtain volume estimates for closed $3$--braids.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-022-51-a-normal-form-for-3braids",
+      "number": "5.1",
+      "title": "A normal form for 3–braids",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 577,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "normal form",
+          "heading": true
+        },
+        {
+          "term": "schreier normal",
+          "heading": false
+        },
+        {
+          "term": "braids",
+          "heading": true
+        },
+        {
+          "term": "begin bmatrix",
+          "heading": false
+        },
+        {
+          "term": "bmatrix end",
+          "heading": false
+        },
+        {
+          "term": "braid-generators",
+          "heading": false
+        },
+        {
+          "term": "ptorus",
+          "heading": false
+        },
+        {
+          "term": "punctured sphere",
+          "heading": false
+        }
+      ],
+      "extract": "We begin with some notation. Let $\\sigma_1$ and $\\sigma_2$ be generators for $B_3$, the braid group on three strands, as in Figure [\\[fig:3braid-generators\\]](#fig:3braid-generators){reference-type=\"ref\" reference=\"fig:3braid-generators\"}. Thus a positive word in $\\sigma_1$ and $\\sigma_2^{-1}$ represents an alternating braid diagram. Let $C = (\\sigma_1 \\sigma_2)^3$ denote a full twist of all three strands; $C$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-52-hyperbolic-3braids",
+      "number": "5.2",
+      "title": "Hyperbolic 3–braids",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2934,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vert ell",
+          "heading": false
+        },
+        {
+          "term": "left vert",
+          "heading": false
+        },
+        {
+          "term": "right vert",
+          "heading": false
+        },
+        {
+          "term": "vert leq",
+          "heading": false
+        },
+        {
+          "term": "sim sigma",
+          "heading": false
+        },
+        {
+          "term": "braids",
+          "heading": true
+        },
+        {
+          "term": "murasugi proposition",
+          "heading": false
+        },
+        {
+          "term": "torus link",
+          "heading": false
+        }
+      ],
+      "extract": "Our goal in this subsection is to show that the $3$--braids whose closure is a hyperbolic link can be easily identified from their Schreier normal form. Because a closed braid presentation of a link $K$ comes with a natural orientation, we need to consider all possible orientations on components of $K$ that are consistent with $K$ being a 3--braid. In the lemmas that lead up to Theorem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-53-volume-estimates",
+      "number": "5.3",
+      "title": "Volume estimates",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 737,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid-volume",
+          "heading": false
+        },
+        {
+          "term": "twist regions",
+          "heading": false
+        },
+        {
+          "term": "generalized twist",
+          "heading": false
+        },
+        {
+          "term": "mathrm gen",
+          "heading": false
+        },
+        {
+          "term": "braid word",
+          "heading": false
+        },
+        {
+          "term": "cdots sigma",
+          "heading": false
+        },
+        {
+          "term": "diagram-intro",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic-3braid",
+          "heading": false
+        }
+      ],
+      "extract": "For sufficiently long generic $3$--braids, the methods of the previous sections estimate hyperbolic volume. ::: theorem []{#thm:3braid-volume label=\"thm:3braid-volume\"} Let $K= \\hat{w}$ be the closure of a generic 3--braid $w \\sim C^k \\sigma_1^{p_1} \\sigma_2^{-q_1} \\cdots \\sigma_1^{p_s} \\sigma_2^{-q_s}$, where $p_i$, $q_i$ are all positive and $w \\nsim \\sigma_1^p\\sigma_2^{-q}$. Then $K$ is hyperbolic, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-6-the-jones-polynomial-and-volume-of-closed-3bra",
+      "number": "6",
+      "title": "The Jones polynomial and volume of closed 3–braids",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 91,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jones polynomial",
+          "heading": true
+        },
+        {
+          "term": "braid-volume",
+          "heading": false
+        },
+        {
+          "term": "jones3braids",
+          "heading": false
+        },
+        {
+          "term": "counterexample",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:jones3braids label=\"sec:jones3braids\"} In this section, we will apply the previous results to the Jones polynomial of a closed 3--braid. We begin by relating the Jones polynomial of a closed $3$--braid to the Schreier normal form of the braid. By applying Theorem [\\[thm:3braid-volume\\]](#thm:3braid-volume){reference-type=\"ref\" reference=\"thm:3braid-volume\"}, we will show in Theorem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-61-the-jones-polynomials-of-generic-3braids",
+      "number": "6.1",
+      "title": "The Jones polynomials of generic 3–braids",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 40,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3530,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jones-2nd",
+          "heading": false
+        },
+        {
+          "term": "vert zeta",
+          "heading": false
+        },
+        {
+          "term": "vert beta",
+          "heading": false
+        },
+        {
+          "term": "jones-1st",
+          "heading": false
+        },
+        {
+          "term": "vert leq",
+          "heading": false
+        },
+        {
+          "term": "vert alpha",
+          "heading": false
+        },
+        {
+          "term": "jones polynomials",
+          "heading": true
+        },
+        {
+          "term": "left vert",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:generic-jones label=\"subsec:generic-jones\"} In the case that $K$ is the closure of a 3--braid, we need to relate the Jones polynomial to the Schreier normal form of the braid. (See Theorem [\\[thm:schreier-normal\\]](#thm:schreier-normal){reference-type=\"ref\" reference=\"thm:schreier-normal\"}.) Here, we will concern ourselves with 3--braids whose Schreier normal forms are *generic*. That is, we will consider",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-62-connections-to-volume",
+      "number": "6.2",
+      "title": "Connections to volume",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 42,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1221,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jones-2nd",
+          "heading": false
+        },
+        {
+          "term": "jones-1st",
+          "heading": false
+        },
+        {
+          "term": "vert zeta",
+          "heading": false
+        },
+        {
+          "term": "qquad mbox",
+          "heading": false
+        },
+        {
+          "term": "qquad beta",
+          "heading": false
+        },
+        {
+          "term": "braid-volume",
+          "heading": false
+        },
+        {
+          "term": "quad mbox",
+          "heading": false
+        },
+        {
+          "term": "zeta right",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:volume-jones label=\"subsec:volume-jones\"} Proposition [\\[prop:3-braids\\]](#prop:3-braids){reference-type=\"ref\" reference=\"prop:3-braids\"} and Theorem [\\[thm:3braid-volume\\]](#thm:3braid-volume){reference-type=\"ref\" reference=\"thm:3braid-volume\"} immediately imply the following. ::: theorem Let $K$ be a hyperbolic closed $3$--braid. From the Jones polynomial $J_K(t)$, define ${\\zeta_K}, {\\zeta'_K}$ as in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1277,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "david futer",
+          "heading": false
+        },
+        {
+          "term": "acta math",
+          "heading": false
+        },
+        {
+          "term": "efstratia kalfagianni",
+          "heading": false
+        },
+        {
+          "term": "hirotaka akiyoshi",
+          "heading": false
+        },
+        {
+          "term": "ilya kofman",
+          "heading": false
+        },
+        {
+          "term": "fran cois",
+          "heading": false
+        },
+        {
+          "term": "once-punctured torus",
+          "heading": false
+        },
+        {
+          "term": "urikaisekikenky usho",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Colin Adams, Waist size for cusps in hyperbolic 3-manifolds II, Preprint. [2] , Hyperbolic 3-manifolds with two generators, Comm. Anal. Geom. 4 (1996), no. 1-2, 181–206. [3] Colin Adams, A. Colestock, J. Fowler, W. Gillam, and E. Katerman, Cusp size bounds from singular surfaces in hyperbolic 3-manifolds, Trans. Amer. Math. Soc. 358 (2006), no. 2, 727–741 (electronic). [4] Ian Agol, Bounds on exceptional Dehn",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "cusp torus",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic punctured",
+      "heading": false
+    },
+    {
+      "term": "cusp area",
+      "heading": true
+    },
+    {
+      "term": "maximal cusp",
+      "heading": false
+    },
+    {
+      "term": "cusp neighborhood",
+      "heading": false
+    },
+    {
+      "term": "punctured sphere",
+      "heading": true
+    },
+    {
+      "term": "equivariant cusp",
+      "heading": false
+    },
+    {
+      "term": "cusp corresponding",
+      "heading": false
+    },
+    {
+      "term": "ford domain",
+      "heading": true
+    },
+    {
+      "term": "cusp metrics",
+      "heading": false
+    },
+    {
+      "term": "cusp shapes",
+      "heading": true
+    },
+    {
+      "term": "hyperbolic bridge",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Braid group generators σ1 and σ2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Copies of ideal tetrahedra in the cover (R2∖Z2) × R of T × R. SL2(Z). By a well–known argument that we recall below, either ϕ or −ϕ is conjugate to an",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Zigzags on the boundary torus of a punctured torus bundle. The pleated surfaces in this ﬁgure correspond to a sub-word RL4R4L ⊂Ω",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "(a) An alternating braid between two pillowcases, described by the word Ω= R3L2R. (b) The corresponding two-bridge link K(Ω)",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Euclidean distances in the universal cover of a zigzag. The translation from the left-most to the right-most edge represents one meridian in a punctured torus, or two meridians in a 4–punctured sphere",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "(a) The circles of FA, FB, C(β). (b) The value of β for which the faces meet in a single point",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "The region of allowable values for a and b in Proposition 3.6",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "A zigzag. Here the dotted circles correspond to faces of the Ford domain. Recall the corners of the zigzag are geometric duals of these faces",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "The only possible words between two triangles that share a vertex are S RR · · · R F and S LL · · · L F, where S and F (start and ﬁnish) can both",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Case 1 of Lemma 5.4: two ways to add the core of a solid torus to a (2, n) torus link",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Resolutions of a crossing Starting with any D, let sA(D) (resp. sB(D)) denote the crossing–free diagram obtained by applying the A–resolution (resp",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "The head and tail of the Jones polynomial for the ﬁrst few values of s in Proposition 6.7. These values were computed independently by two pieces of software: jpclosed.c by Nathan Broaddus and the Mathematica package KnotTheory‘ by Dror Bar-Natan",
+      "page": 41,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 29,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 30,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "11 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p42); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 30 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0808.2716v4"
+  }
+}

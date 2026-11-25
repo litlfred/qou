@@ -1,0 +1,165 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0409565v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0409565v2/blocks/ex-sec-000-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "ex-sec-000-01.md",
+      "narrative": null,
+      "content": "1.1. Let A be the polynomial algebra k[x1, · · · , xn] and consider the ideal m = (x1, · · · , xn). Taking a graded lexicographic ordering on A with xi < xj if i < j, m2 has a Gr¨obner basis given by {xixj}. Thus the quotient A/m2 is an n + 1-dimensional k-vector space with a basis given by: A/m2 = k{1, x1, · · · , xn} ∗Both authors were supported under a NSF VIGRE grant. 1.2. If g is a lie algebra with lie bracket [ , ]g over k then one forms the universal enveloping algebra Ug as the quotient of the tensor or free algebra T g on g by the two sided ideal J: J = (xy −yx −[x, y]g |x, y ∈g֒ →T g",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0409565v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction.",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Introduction.\nThere have been several generalizations of Gr¨obner basis theory, coming in one\nof two ﬂavors: noncommutative theory and theories for working over special\nground rings, e.g. Euclidean domains, PID’s or UFD’s. For an overview of the\ntheory of such rings see [1]. Over a ﬁeld, one of the main uses of a Gr¨obner\nbasis is to ﬁnd a basis for the quotient of an algebra A by a (left or two-sided)\nideal I. Let us consider two examples for k a (commutative) ﬁeld (with unity)\nwhose quotient algebras can be readily described through the known Gr¨obner\nbasis theory.\nExample 1.\n1.1. Let A be t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409565v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0409565v2  [math.RA]  14 Oct 2004\nUnital Gr¨obner Bases over Aribtrary\nCommutative Ground Rings\nFrederick Leitner, Robert Pawloski∗\nJune 1, 2017\nAbstract\nLet R be a commutative ring with unity and a let A be a not necessarily\ncommutative R-algebra which is free as an R-module. If I is an ideal in A,\none can ask when A/I is also free as an R-module. We show that if A has\nan admissible system and I has a unital Gr¨obner basis then A/I is free as\nan R-module. We prove a version of Buchberger’s theorem over R and, as\na corollary, we obtain a Gr¨obner basis proof of the Poincare-Birkhoﬀ-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409565v2/blocks/thm-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "thm-sec-000-02.md",
+      "narrative": null,
+      "content": "Let R be a commutative algebra with unity. Let A be an R- algebra which is free as an R-module and without quasi-zeros. Let (B, <) be an admissible system on A and let I be a two-sided ideal of A with a unital Gr¨obner basis G. Deﬁne ˜O(G) to be the free R-module spanned by the monomials which do not occur as leading monomials of members of G. Then: 1. There is a k-module isomorphism A/I ≃˜O(G) of free R-modules. 2. A = I ⊕˜O(G) For the case of a left ideal I, or for the case where A has quasi-zeros, one only need to combine the techniques in [3] with ours. As a corollary we obtain the PBW the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0409565v2/blocks/cor-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "PBW",
+      "pageStart": 2,
+      "pageEnd": 10,
+      "target": "cor-sec-001-04.md",
+      "narrative": null,
+      "content": "Let g be a lie algebra over R, a commutative ring with unity, with lie bracket [ , ]g. Then: Ug = T g/J where J = (xy −yx −[x, y]g |x, y ∈g֒ →T g) is isomorphic as an R-module to Sg, the symmetric algebra on g.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0409565v2/blocks/lem-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "[4]",
+      "pageStart": 2,
+      "pageEnd": 10,
+      "target": "lem-sec-001-01.md",
+      "narrative": null,
+      "content": "Let R be a commutative ring with unity, A an R-algebra which is free as an R-module, (B, <) an admissible system on A, and let I be a two sided ideal of A which is generated by a unital Gr¨obner basis: G = {gγ | γ ∈Γ}. Then in the division algorithm, we may choose hi ∈I so that hi = gγi for some γi ∈Γ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0409565v2/blocks/prop-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 10,
+      "target": "prop-sec-001-02.md",
+      "narrative": null,
+      "content": "Let R be a commutative ring with unity, A an R-algebra which is free as an R-module, (B, <) an admissible system on A. Let α ∈B and suppose that f1, · · · , fn ∈A satisfy LM (fi) = α and LC (fi) ∈R×. Then if: f := X i cifi ci ∈R∗ satisﬁes LM (f) < α then we may write: f = X i̸=j di,jSi,j where the Si,j are the S-polynomials about fi and fj given by: Si,j := 1 ai fi −1 aj fj ai := LC (fi) , aj := LC (fj) ∈R×",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0409565v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unital Gröbner Bases.",
+      "pageStart": 2,
+      "pageEnd": 10,
+      "target": "../sections/sec-001-unital-gröbner-bases.md",
+      "narrative": null,
+      "content": "Unital Gr¨obner Bases.\nThroughout this section R is a commutative ring with unity and A an R-algebra\nwith no quasi-zeros, i.e. elements a ∈A such that for all b, c ∈A not both 1\none has bac = 0. For brevity, we only state and prove the results in the case of\na two-sided ideal. We take time to ﬁx notation, following closely that of ([3]),\n2\nDeﬁnition 3.\nLet A be an R-algebra with multiplication · (and without quasi-zeros).\nChoose a set of (algebra) generators A = R⟨xi|i ∈Λ⟩for some index set\nΛ.\n3.1. Let α be a ﬁnite length word in Λ, i.e. an ordered expression:\nα = α1α2 · · · αn\nαi ∈Λ\nThen a mo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409565v2/blocks/thm-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Buchberger",
+      "pageStart": 2,
+      "pageEnd": 10,
+      "target": "thm-sec-001-03.md",
+      "narrative": null,
+      "content": "Let R be a commutative ring with unity, A an R-algebra which is free as an R-module, (B, <) an admissible system on A. Let I ≤A be an ideal generated by a unital set: G := {gγ | γ ∈Γ} for some index set Γ. Then G is a Gr¨obner basis for I if and only if all S- polynomials for G have zero remainder under the division algorithm.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

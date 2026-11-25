@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0801.0083v4",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "CENTRAL EXTENSIONS OF GERBES",
+      "dcterms:creator": [
+        "YEKUTIELI, AMNON"
+      ],
+      "dcterms:issued": "D:20210722",
+      "dcterms:identifier": "https://arxiv.org/abs/0801.0083",
+      "dcterms:abstract": "We introduce the notion of central extension of gerbes on a topo- logical space X. We show that there are obstruction classes to lifting objects and isomorphisms in a central extension. We also discuss pronilpotent gerbes. These results are used in the paper [Ye] to study twisted deformation quanti- zation on algebraic varieties.",
+      "dcterms:source": "library/arxiv-0801.0083v4/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0801.0083v4"
+    }
+  ]
+}

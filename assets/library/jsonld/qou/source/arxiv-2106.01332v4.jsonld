@@ -1,0 +1,69 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2106.01332v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Braided matter interactions in quantum gravity via 1 -handle attachment",
+  "contains": [
+    "library/arxiv-2106.01332v4/sections/sec-front-matter",
+    "library/arxiv-2106.01332v4/sections/sec-000",
+    "library/arxiv-2106.01332v4/sections/sec-001",
+    "library/arxiv-2106.01332v4/sections/sec-002",
+    "library/arxiv-2106.01332v4/sections/sec-003",
+    "library/arxiv-2106.01332v4/sections/sec-004",
+    "library/arxiv-2106.01332v4/sections/sec-005",
+    "library/arxiv-2106.01332v4/sections/sec-006",
+    "library/arxiv-2106.01332v4/sections/sec-007",
+    "library/arxiv-2106.01332v4/sections/sec-008",
+    "library/arxiv-2106.01332v4/sections/sec-009",
+    "library/arxiv-2106.01332v4/sections/sec-010",
+    "library/arxiv-2106.01332v4/sections/sec-011",
+    "library/arxiv-2106.01332v4/sections/sec-012"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Braided matter interactions in quantum gravity via 1 -handle attachment — 14 sections: Front matter; I Introduction; II A topological model of composit\n\n**Braided matter interactions in quantum gravity via 1 -handle attachment**\n\n*Niels Gresnigt,1, ∗Antonino Marcianò,2, 3, † and Emanuele Zappala4, ‡*\n\n15 pp, 14 sections.\n\n**Outline.** Front matter; I Introduction; II A topological model of composite preons; III Theories on ribbon graphs; A The evolution algebra; IV Leptons and quarks as topological excitatio; A The trivalent scheme; V Ribbon networks embedded into 3-manifolds; A Surgery on 3-manifolds; B Braid dynamics via surgery; VI Isotopy invariants of braided networks; A Examples and Computations; VII Possible pre-geometric unification of matt; Acknowledgement",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2106.01332&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2106.01332v4",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "2106.01332v4.pdf",
+    "source_sha256": "44c19a99624997bfbc59bdd31e9e1f3bdf8ed67ce44ef8e239bf2cd45244ce41",
+    "pages": 15,
+    "arxiv": {
+      "id": "2106.01332",
+      "version": "4",
+      "primary_class": "gr-qc",
+      "stamp_date": "11 Sep 2021"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

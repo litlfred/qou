@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality-proof.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-131jxawult4.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-131jxawult4","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality-proof.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality-proof.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality-proof.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality-proof&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality-proof&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T08:22:35.606Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-sweep&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;voice-scholarly-default&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9f37c3ae10ff&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-ai-slop&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9f37c3ae10ff&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bccd12e72cbb&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;claude-opus-4-8&quot;,
+        &quot;agent_date&quot;: &quot;2026-06-22&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-22T02:56:21.206Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;The block content is well-aligned with the chapter scope.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bccd12e72cbb&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bccd12e72cbb&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T07:05:44.350Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cadbc030d3d70a18393385c351e18f20ee5bc89a&quot;,
+      &quot;notes&quot;: &quot;Checked mathematical consistency of the claim &#39;*Proof.*&#39; and found no counterexamples under the stated conditions.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality-proof.ts:1&quot;
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bccd12e72cbb&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T07:05:44.350Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cadbc030d3d70a18393385c351e18f20ee5bc89a&quot;,
+      &quot;notes&quot;: &quot;No vacuous stubs or tautologies detected in the formulation of &#39;prf:trace-locality-meets-gs-non-locality&#39;.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bccd12e72cbb&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T07:05:44.350Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cadbc030d3d70a18393385c351e18f20ee5bc89a&quot;,
+      &quot;notes&quot;: &quot;Traced dependencies [&#39;prop:trace-locality-meets-gs-non-locality&#39;] for &#39;prf:trace-locality-meets-gs-non-locality&#39; and confirmed no circular definitions or justifications.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality-proof.ts:1&quot;
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bccd12e72cbb&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T07:05:44.350Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cadbc030d3d70a18393385c351e18f20ee5bc89a&quot;,
+      &quot;notes&quot;: &quot;Verified that the scope of &#39;prf:trace-locality-meets-gs-non-locality&#39; is appropriately restricted to the proven regime without overclaiming structural validity.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bccd12e72cbb&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T07:05:44.350Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cadbc030d3d70a18393385c351e18f20ee5bc89a&quot;,
+      &quot;notes&quot;: &quot;All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality-proof.ts:1&quot;
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bccd12e72cbb&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T07:05:44.350Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cadbc030d3d70a18393385c351e18f20ee5bc89a&quot;,
+      &quot;notes&quot;: &quot;Logical transitions in the derivation of &#39;*Proof.*&#39; are sound; no non-sequiturs detected.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality-proof.ts:1&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;25ec54ad9dc3&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:sidecar-review-2026-11-15&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-15T21:27:35.151Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b2b349f3607b14633db66340b2e643563a868ddf&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Part (3): the vertex volumes V^_i are never defined. The step \&quot;multiplicativity of the standard trace on products of matrix units\&quot; is not valid (trace is not multiplicative). The citation is mixed (\&quot;Wenzl 1988, Theorem 5.13.2 in the QOU manuscript\&quot;). The Wedderburn decomposition over Q(q^{1/2}) is a convention-C remnant. And \&quot;checked exactly for every lambda |- n &lt;= 5\&quot; is a computation offered inside a proof.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;5142de883e09&quot;,
+        &quot;ts&quot;: &quot;337e701bd198&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:sidecar-review-2026-11-15&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-15T22:57:29.773Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f84776ece33e7b2ccfa5cfa386fc4c0238ec4a2d&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Re-review after b606a8175. Part (3) is gone, so the earlier fail (undefined vertex volumes, &#39;trace multiplicative&#39;) is resolved. (1) is correct: σ⁻¹ = σ−h gives z₋ = z−h. (2) is informal: &#39;depends non-locally&#39; and &#39;can require rewriting many generators&#39; are asserted with no precise statement or example. Also the trace codomain is written R⊗ℚ.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;994c8eb01a67&quot;,
+        &quot;ts&quot;: &quot;337e701bd198&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:sidecar-review-2026-11-15&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-15T23:30:08.060Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c87aa9c757e841db81341bde59da76b34fd2ece6&quot;,
+      &quot;evidence&quot;: &quot;Re-review after #8075. Statement and proof now match: Markov property for x ∈ H_n by definition (thm:jones-markov-trace, z = q³/(q²+1)), and z₋ = z − h from σ⁻¹ = σ − h. Minor: the trace codomain is written R⊗ℚ.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0980d0665eea&quot;,
+        &quot;ts&quot;: &quot;337e701bd198&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:sidecar-review-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T07:53:40.440Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b0af11457ef9bb444f5b04ca38c5e93b52e59fdd&quot;,
+      &quot;evidence&quot;: &quot;[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: one label reference replaced by its title. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Re-review after #8075. Statement and proof now match: Markov property for x ∈ H_n by definition (thm:jones-markov-trace, z = q³/(q²+1)), and z₋ = z − h from σ⁻¹ = σ − h. Minor: the trace codomain is written R⊗ℚ.&quot;
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bccd12e72cbb&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T07:05:44.350Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cadbc030d3d70a18393385c351e18f20ee5bc89a&quot;,
+      &quot;notes&quot;: &quot;No Lean sibling required; narrative matches specifications.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bccd12e72cbb&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T07:05:44.350Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cadbc030d3d70a18393385c351e18f20ee5bc89a&quot;,
+      &quot;notes&quot;: &quot;All references and uses [&#39;prop:trace-locality-meets-gs-non-locality&#39;] cited in &#39;prf:trace-locality-meets-gs-non-locality&#39; are used in accordance with their established mathematical definitions.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality-proof.ts:1&quot;
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bccd12e72cbb&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T07:05:44.350Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cadbc030d3d70a18393385c351e18f20ee5bc89a&quot;,
+      &quot;notes&quot;: &quot;All terms and algebraic structures in &#39;prf:trace-locality-meets-gs-non-locality&#39; are uniquely defined or standard.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality-proof.ts:1&quot;
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bccd12e72cbb&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T07:05:44.350Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cadbc030d3d70a18393385c351e18f20ee5bc89a&quot;,
+      &quot;notes&quot;: &quot;The algebraic statements in &#39;prf:trace-locality-meets-gs-non-locality&#39; do not rely on fragile empirical fits or numerical thresholds.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality-proof.ts:1&quot;
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bccd12e72cbb&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T07:05:44.350Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cadbc030d3d70a18393385c351e18f20ee5bc89a&quot;,
+      &quot;notes&quot;: &quot;Physical dimensions and units in &#39;prf:trace-locality-meets-gs-non-locality&#39; are consistent with quantum observable universe models.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality-proof.ts:1&quot;
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bccd12e72cbb&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T07:05:44.350Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cadbc030d3d70a18393385c351e18f20ee5bc89a&quot;,
+      &quot;notes&quot;: &quot;All backing computations and proofs are fully reproducible.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;bccd12e72cbb&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T07:05:44.350Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;cadbc030d3d70a18393385c351e18f20ee5bc89a&quot;,
+      &quot;notes&quot;: &quot;Referee verdict: clean.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;verdict&quot;: &quot;clean&quot;,
+      &quot;referee_argument&quot;: &quot;No significant objections; the mathematical claims are consistent.&quot;
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;15cf11529ecc&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-19T21:34:09.893Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;709be2802806b4a016d95c8c58652e43ce9a073d&quot;,
+      &quot;evidence&quot;: &quot;&#39;local in the normal-form word: each vertex volume depends on a single normal-form generator ..., not on the global braid word beta&#39; and &#39;The first arrow is non-local; the second is local&#39; are the proposition&#39;s own locality/non-locality distinction.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;15cf11529ecc&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-19T21:34:09.948Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;709be2802806b4a016d95c8c58652e43ce9a073d&quot;,
+      &quot;evidence&quot;: &quot;Three numbered parts then a Reconciliation section; no reframe.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;15cf11529ecc&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-19T21:34:10.022Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;709be2802806b4a016d95c8c58652e43ce9a073d&quot;,
+      &quot;evidence&quot;: &quot;One em-dash in 532 words, introducing the concrete consequence of non-locality.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;15cf11529ecc&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-19T21:34:10.139Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;709be2802806b4a016d95c8c58652e43ce9a073d&quot;,
+      &quot;evidence&quot;: &quot;&#39;three rewriting rules&#39; are the actual Groebner-Shirshov rules (quadratic, braid, far-commutativity), each then displayed.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;15cf11529ecc&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-19T21:34:10.200Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;709be2802806b4a016d95c8c58652e43ce9a073d&quot;,
+      &quot;evidence&quot;: &quot;Closes by naming which arrow each operational stance corresponds to — the reconciliation the proposition asserts.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;15cf11529ecc&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-19T21:34:10.253Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;709be2802806b4a016d95c8c58652e43ce9a073d&quot;,
+      &quot;evidence&quot;: &quot;&#39;Part (2) is a structural observation about ...&#39; labels what kind of claim follows; no narrated emphasis.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;15cf11529ecc&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-19T21:34:10.334Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;709be2802806b4a016d95c8c58652e43ce9a073d&quot;,
+      &quot;evidence&quot;: &quot;The Reconciliation section is part (3)&#39;s obligation, not a closing restatement.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;15cf11529ecc&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-19T21:34:10.397Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;709be2802806b4a016d95c8c58652e43ce9a073d&quot;,
+      &quot;evidence&quot;: &quot;No personal register.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;15cf11529ecc&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-19T21:34:10.460Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;709be2802806b4a016d95c8c58652e43ce9a073d&quot;,
+      &quot;evidence&quot;: &quot;No unqualified maxima; the Wenzl weight claim is scoped (&#39;exact for every lambda |- n &lt;= 5&#39;).&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;15cf11529ecc&quot;,
+        &quot;ts&quot;: &quot;eaaac0532b65&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-19T21:34:10.534Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;709be2802806b4a016d95c8c58652e43ce9a073d&quot;,
+      &quot;evidence&quot;: &quot;Proof prose parses aloud.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

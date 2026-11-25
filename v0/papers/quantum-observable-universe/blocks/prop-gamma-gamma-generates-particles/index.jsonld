@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-gamma-gamma-generates-particles",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:gamma-gamma-generates-particles",
+  "kind": "proposition",
+  "title": "$\\gamma\\gamma$ production generates the operator basis",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-breit-wheeler-pair-production"
+  ],
+  "tags": [
+    "photon",
+    "pair-production",
+    "gamma-gamma",
+    "hecke-algebra",
+    "generation",
+    "chirality",
+    "knot-operator"
+  ],
+  "leanRef": "qou:QOU.MassTheory.Archimedean.GammaGammaGeneration.gamma_gamma_span_top",
+  "text": "gamma-gamma-generates-particles.md",
+  "leanSource": "gamma-gamma-generates-particles.lean",
+  "provenance": "authored"
+}

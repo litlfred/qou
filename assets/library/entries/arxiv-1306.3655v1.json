@@ -1,0 +1,194 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1306.3655v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1306.3655v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Partitions are denoted here by $\\lambda, \\mu,\\nu,$ etc., and a partition is identified with its Young diagram. As usual, $\\lambda'$ denotes the conjugate partition of $\\lambda$. We write $\\lambda\\vdash n$ if $\\lambda$ is a partition of $n$. When the characteristic of the base field is zero, the partitions $\\lambda\\vdash n$ are in a one-to-one correspondence with the irreducible $S_n$-characters, denoted $\\chi^\\lambda$, [@jameskerber], [@macdonald], [@sagan]. An integer-combination of irreducible characters is called a virtual character.\n\nWe construct certain virtual characters $\\psi_{\\nu,n}$ o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1306.3655v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The virtual Sn-characters ,n",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-2-the-virtual-sn-characters-n.md",
+      "narrative": null,
+      "content": "[]{#section2 label=\"section2\"} Let $\\nu=(\\nu_1,\\nu_2,\\ldots)\\vdash k$, and $n\\ge 2k+2$. First form $\\nu^{(1)}=(\\nu_1+n-k,\\nu_2,\\nu_3,\\ldots)$. This is the diagram $\\nu$ with $n-k$ additional boxes attached to its first row. Now pull these added $n-k$ boxes down and left around the diagram $\\nu$ as follows. Think of these $n-k$ boxes as a train pulled by the first (i.e. left) cell. And pull it down and left around $\\nu$ so that the result is a partition (containing $\\nu$). We call this process \\\"going around $\\nu$\\\", see Example [\\[v2\\]](#v2){reference-type=\"ref\" reference=\"v2\"}. This process,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1306.3655v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1306.3655v1  [math.RT]  16 Jun 2013\nThe Murnaghan-Nakayama rule and some virtual Sn\ncharacters\nAmitai Regev\nMathematics Department\nThe Weizmann Institute\nRehovot 76100\nIsrael\nAugust 21, 2021\nAbstract. We construct certain virtual characters for the symmetric groups, then compute\na formula which calculates the values of these virtual characters.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1306.3655v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The general construction",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-21-the-general-construction.md",
+      "narrative": null,
+      "content": "[]{#section2.1 label=\"section2.1\"}\n\n::: defn\n[]{#height1 label=\"height1\"} 1.  Let $n\\ge k$, $\\nu\\vdash k$, and $\\eta\\vdash n$. We shall assume that $n\\ge 2k+2$. Assume $\\nu \\le\\eta$ and that $S$ is a part of the rim of $\\eta$ such that $\\eta\\setminus S=\\nu$, then we write $\\eta=\\nu*S$. Let $h(S)$ denote the height of $S$.\n\n.  Given such $\\eta=\\nu*S$, we say that \\\"$S$ covers $\\nu$\\\" if $\\nu'_1\\le h(S)$. Otherwise $S$ covers only an upper part of $\\nu$.\n\n.  Given $\\nu\\vdash k,$ we start by constructing $\\nu*S_1$. Here $S_1$ is the one row of length $n-k$, added to the first row of $\\nu$. Clearl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1306.3655v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A formula for ,n()",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-3-a-formula-for-n.md",
+      "narrative": null,
+      "content": "Our aim is to prove the following formula.\n\n::: thm\n[]{#v4 label=\"v4\"}\n\nLet $\\nu=(\\nu_1,\\nu_2,\\ldots )\\vdash k$, $n\\ge 2k+2$ . Let $\\mu=(\\mu_1,\\mu_2,\\ldots )\\vdash n$, and denote $\\bar\\mu=(\\mu_2,\\mu_3,\\ldots)$, so $\\mu_1=n-k$ if and only if $\\bar\\mu\\vdash k$. Then\n\n$$\\begin{aligned}\n\\label{general.conjecture}\n\\psi_{\\nu,n}(\\mu)=\\begin{cases}\\chi^\\nu(\\bar\\mu)\\cdot(n-k) & if  ~\\mu_1= n-k\n\\\\\n0 & if ~\\mu_1\\ne n-k\\\\\n\\end{cases}\n\\end{aligned}$$\n:::\n\nThe proof is given below.\n\nLet $n\\ge 2k+2$ and let $\\nu\\vdash k$, so $(n-k,\\nu)$ is a partition of $n$. Let $\\lambda\\vdash n$ and assume $\\chi^\\lambda_{(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1306.3655v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The proof of Theorem 3.1",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-31-the-proof-of-theorem-31.md",
+      "narrative": null,
+      "content": "Apply [\\[usemn3\\]](#usemn3){reference-type=\"eqref\" reference=\"usemn3\"} and Corollary [\\[centralizer2\\]](#centralizer2){reference-type=\"ref\" reference=\"centralizer2\"}: With $\\rho$ and $\\nu$ denoting partitions of $k$ and $\\mu$ partitions of $n$ we have $$\\left[\\chi^\\rho_\\nu\\right]\\left[ \\psi_{\\rho,n}(\\mu)\\right]\n=\\left[\\sum_{\\lambda\\vdash n}\\chi^\\lambda _{(n-k,\\nu)}\\cdot\\chi^\\lambda_\\mu \\right]\n=\\left[\\begin{cases}|Z_{S_k}(\\nu)|\\cdot(n-k) & if ~\\bar\\mu=\\nu\n\\\\\n0 & if~ \\bar\\mu\\ne \\nu.\\\\\n\\end{cases}\n\\right]=$$ $$\\begin{aligned}\n\\label{usemn31}\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1306.3655v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-32-applications.md",
+      "narrative": null,
+      "content": "::: example\n1. In Example [\\[v2\\]](#v2){reference-type=\"ref\" reference=\"v2\"}.1 we saw that $\\psi_{\\emptyset,n}= \\sum_{j=0}^{n-1}(-1)^j\\chi^{(n-j,1^j)}.$ Theorem [\\[v4\\]](#v4){reference-type=\"ref\" reference=\"v4\"} with $k=0$ then implies that $$\\begin{aligned}\n\\label{general.conjecture}\n  \\psi_{\\emptyset,n}(\\mu)= \\sum_{j=0}^{n-1}(-1)^j\\chi^{(n-j,1^j)}(\\mu) =\\begin{cases}n & if  ~\\mu= (n)\n\\\\\n0 & if ~\\mu\\ne (n)\\\\\n\\end{cases}\n\\end{aligned}$$\n\n2. Similarly, by Example [\\[v2\\]](#v2){reference-type=\"ref\" reference=\"v2\"}.2, $~\\psi_{(1),n}=\\chi^{(n)}+\\sum_{j=0}^{n-4}(-1)^{j+1}\\chi^{(n-2-j,2,1^j)} + (-1)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1306.3655v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Final remarks",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-4-final-remarks.md",
+      "narrative": null,
+      "content": "::: remark\n[]{#(1) label=\"(1)\"} Let $n\\ge 4$ and let $A_n$ be the set of partitions obtained by walking around $\\nu=(1)$: $$A_n=\\{(n),(1^n)\\}\\cup\\{(r,2,1^{n-2-r})\\mid 2\\le r\\le n-2\\}.$$ Then $$\\begin{aligned}\n\\label{(1)2}\n\\sum_{\\lambda\\in A_n}f^\\lambda=(n-4)\\cdot 2^{n-2}+4.\n\\end{aligned}$$\n\n::: proof\n*Proof.* Let $\\lambda=(r,2,1^{n-2-r})$, then $$f^\\lambda=\\frac{n!}{(r-2)! (n-2-r)! r (n-r) (n-1)}=\\frac{n(n-2)(n-3)}{r(n-r)}{n-4\\choose r-2}.$$ Thus, omitting $\\lambda\\in \\{(n),(1^n)\\}$, we need to show that $$\\begin{aligned}\n\\label{wz}\n\\sum_{r=0}^{n-4}\\frac{n(n-2)(n-3)}{r(n-r)}{n-4\\choose r-2} =(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1306.3655v1/blocks/conj-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "conj-sec-007-01.md",
+      "narrative": null,
+      "content": "We conjecture that when n is even, the highest power of t+1 which divides pn(t) is 2, while when n is odd, the highest power on t + 1 which divides pn(t) is 1. One also conjectures positiveness and unimodality on the coeﬃcients of these polynomials. Additional conjecture is as follows. Denote p2k+1(t) = (t+1)·q2k+1(t), then q2k+1(−1) = −2. References [1] G. James and A. Kerber, The Representation Theory of the Symmetric Group, Ency- clopedia of Math. Vol. 16, Addison-Wesley Publishing Company. [2] I. G. Macdonald, Symmetric Functions and Hall Polynomials, Second Edition (1995). [3] A. Regev, L",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1306.3655v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The polynomials p,n(t)",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-007-41-the-polynomials-pnt.md",
+      "narrative": null,
+      "content": "Recall Equation (15), replace minus 1 by t and get the polynomials\npν,n(t) =\nn−k\nX\nj=1\nf ν∗Sj · tj.\n(19)\nIn the case ν is empty we get p∅,n(t) = (t+1)n−1. Denote p(1),n(t) = pn(t) in the case ν = (1).\nBy direct computations we got the following polynomials, for 1 ≤n ≤9.\np4(t) = (t + 1)2\np5(t) = (t + 1)(t2 + 4t + 1)\np6(t) = (t + 1)2(t2 + 7t + 1)\np7(t) = (t + 1)(t4 + 13t3 + 22t2 + 13t + 1)\np8(t) = (t + 1)2(t4 + 18t3 + 27t2 + 18t + 1)\np9(t) = (t + 1)(t6 + 26t5 + 79t4 + 110t3 + 79t2 + 26t + 1)\np10(t) = (t + 1)2(t6 + 33t5 + 93t4 + 131t3 + 93t2 + 33t + 1)\nBy (15) pn(t) is divisible by t + 1 for all",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "crmath-2011-349-19-20-1037-0",
+  "blocks": [
+    {
+      "id": "library/crmath-2011-349-19-20-1037-0/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/crmath-2011-349-19-20-1037-0/blocks/figure-img-p001-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/crmath-2011-349-19-20-1037-0/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classiﬁcation analytique et théorie de Galois locales des modules aux q-différences à pentes non entières",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-classiﬁcation-analytique-et-théorie-de-galois-lo.md",
+      "narrative": null,
+      "content": "aux q-différences 4 pentes non entiéres\n\nLocal analytic classification and local Galois theory of q-difference modules\nwith non integral slopes\n\nVirginie Bugeaud\n\nUniversité Paul-Sabatier, institut de mathématiques de Toulouse, 118, route de Narbonne, F31062 Toulouse cedex 9, France\n\nINFO ARTICLE RESUME\n\nHistorique de l'article: Van der Put et Reversat ont décrit la forme d'un module aux q-différences pur 4 pente non\nRegu le 19 avril 2011 entiére. Nous en déduisons des descriptions matricielles explicites des classes analytiques\nAccepté le 6 septembre 2011 isoformelles et du groupe de Galois f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/crmath-2011-349-19-20-1037-0/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notations",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-001-notations.md",
+      "narrative": null,
+      "content": "Le corps des séries de Laurent convergentes sera noté K = C({z}) = C{z}[z~'] et RK désignera le corps des séries formelles\nC((z)) = C[[z]][z~!]. Soit q € C* tel que |g| > 1, on définit l’opérateur o, automorphisme de K (ou R) par o(f(z)) = f (qz).\n\nUn module aux q-différences sera un couple M = (K\", ®,) ot! ®4 est un automorphisme o-linéaire de K\" défini par\n@4(X) = A~'a(X), A € GL,(K). Un morphisme de modules aux q-différences de (K\", ®,) dans (K?, g) est une matrice\nF €Mpn(K) telle que o(F)A = BF.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/crmath-2011-349-19-20-1037-0/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-1-introduction.md",
+      "narrative": null,
+      "content": "A un module aux q-différences, on peut associer un polygone de Newton (cf. [5]), et les pentes de ce polygone, qui sont\nrationnelles, sont les pentes du module aux q-différences. Un module pur isocline (c’est 4 dire qui n’a qu’une seule pente), 4\npente entiére jz € Z, admet une forme normale oii la matrice A est du type z“C, C € GLy(C). M. van der Put et M. Reversat\ndans [2], ont donné une forme normale pour les modules purs 4 pente non entiére. Ils montrent qu’un module irréductible\n\nAdresse e-mail : virginie.bugeaud@math.univ-toulouse.fr.\n\n1631-073X/$ - see front matter © 2011 Académie des s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/crmath-2011-349-19-20-1037-0/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "C. R. Acad. Sci. Paris, Ser. | 349 (2011) 1037-1039\n\nContents lists available at SciVerse ScienceDirect\n\nC. R. Acad. Sci. Paris, Ser. I\n\nELSEVIER www.sciencedirect.com\n\nEquations différentielles",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/crmath-2011-349-19-20-1037-0/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classiﬁcation analytique isoformelle à deux pentes",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-003-2-classiﬁcation-analytique-isoformelle-à-deux-pe.md",
+      "narrative": null,
+      "content": "pentes non entières en cherchant une forme normale de Birkhoff-Guenther. Dans une deuxième partie, nous calculerons les\nopérateurs de Stokes associés à un module irréductible. Dans la troisième partie, nous donnerons une description matricielle\nexplicite du groupe de Galois formel (déjà décrit par van der Put et Reversat). Ces résultats ouvrent la voie à une description\ncomplète explicite du groupe de Galois des équations aux q-différences.\n2. Classiﬁcation analytique isoformelle à deux pentes\nDans [4], les auteurs étudient l’ensemble des classes analytiques isoformelles et les décrivent dans",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/crmath-2011-349-19-20-1037-0/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Opérateurs de Stokes",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-004-3-opérateurs-de-stokes.md",
+      "narrative": null,
+      "content": "3. Opérateurs de Stokes\nA un module aux q-différences M = (K n,ΦA) où, sans perte de généralité, la matrice A est peut-être prise dans\nGLn(C[z, z−1]), on associe un ﬁbré vectoriel holomorphe FM sur la courbe elliptique Eq = C∗/qZ, déﬁni par FM =\nC∗×Cn\n(z,X)∼(qz,A(z)X) (cf. [8]). Dans [6] ou [8], si M est pur isocline de pente entière négative, on a un isomorphisme du type\nF(M, 1) ∼= H1(Eq,FM), obtenu grâce à la construction de «cocycles privilégiés».\nDans cette partie, la même démarche est adoptée pour le cas où M = E = E(r,−d,b) est un module aux q-différences\nirréductible de pente non entièr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/crmath-2011-349-19-20-1037-0/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Groupe de Galois formel",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-005-4-groupe-de-galois-formel.md",
+      "narrative": null,
+      "content": "Van der Put et Reversat ont décrit dans [2] le groupe de Galois formel des équations aux q-différences sur ˆK du point de\nvue algébrique, en tant qu’extension de Picard–Vessiot. Nous donnons ici, une description matricielle explicite de ce groupe\ndans le but d’avoir une description explicite de son effet sur les Stokes (sur lesquels il opère par conjugaison).\nLe groupe de Galois des équations aux q-différences G(0) est déﬁni dans [7], et plus généralement dans [3], par voie\ntannakienne (cf. [1]), comme l’ensemble des automorphismes tenseur-compatibles d’un foncteur ﬁbre ωz0, z0 ∈C∗. Dans [3],",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/crmath-2011-349-19-20-1037-0/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Références",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-006-références.md",
+      "narrative": null,
+      "content": "[1] Pierre Deligne, James Milne, Tannakian Categories, in: Lecture Notes in Mathematics, vol. 900, Springer, Berlin/Heidelberg, 1981, pp. 101–228.\n[2] Marius van der Put, Marc Reversat, Galois theory of q-difference equations, Ann. Fac. Sci. Toulouse Math. (6) 16 (3) (2007) 665–718.\n[3] Jean-Pierre Ramis, Jacques Sauloy, The q-analogue of the wild fundamental group. I, in: Algebraic, Analytic and Geometric Aspects of Complex Differen-\ntial Equations and Their Deformations, Painlevé Hierarchies, in: RIMS Kôkyûroku Bessatsu, vol. B2, Res. Inst. Math. Sci. (RIMS), Kyoto, 2007, pp. 167–193.\n[4] Je",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

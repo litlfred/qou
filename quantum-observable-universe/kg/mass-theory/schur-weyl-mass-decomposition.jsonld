@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-schur-weyl-mass-decomposition",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:schur-weyl-mass-decomposition",
+  "kind": "proposition",
+  "title": "Schur–Weyl decomposition of the atomic mass trace",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-markov-pair-z2",
+    "papers/quantum-observable-universe/blocks/prop-shell-schur-weyl-self-duality"
+  ],
+  "tags": [
+    "schur-weyl",
+    "wedderburn",
+    "mass",
+    "hook-product",
+    "partition",
+    "hecke-algebra"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.SchurWeylMassDecomposition",
+  "text": "schur-weyl-mass-decomposition.md",
+  "leanSource": "schur-weyl-mass-decomposition.lean",
+  "provenance": "authored"
+}

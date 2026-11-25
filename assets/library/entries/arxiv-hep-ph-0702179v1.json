@@ -1,0 +1,120 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-ph-0702179v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-ph-0702179v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Chiral symmetry of massless Quantum Chromodynamics has become the key tool in the study of the very low-energy domain of strong interactions (typically $E \\sim M_{\\pi}$), where QCD turns non-perturbative. It is indeed the guiding principle in the construction of Chiral Perturbation Theory ($\\chi PT$), the effective field theory of QCD in this energy region [@Weinberg:1978kz; @Gasser:1983yg; @Gasser:1984gg]. The $\\chi PT$ Lagrangian has a perturbative structure guided by powers of external momenta and light quark masses. It involves the multiplet of pseudoGoldstone bosons, i.e. pseudoscalar mes",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0702179v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-ph/0702179v1  18 Feb 2007\nLarge-NC estimate of the chiral low-energy constants ∗\nJ. Portol´es\nInstituto de F´ısica Corpuscular, IFIC, CSIC-Universitat de Val`encia,\nApt. Correus 22085, E-46071 Val`encia, Spain\nChiral low-energy constants incorporate short-distance information from\nthe dynamics involving heavier degrees of freedom not present in the chiral\nLagrangian. We have studied the contribution of the lightest resonances\nto the chiral low-energy constants, up to O(p6), within a systematic proce-\ndure guided by the large-NC limit of QCD and also including short-distance\nasymptoti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0702179v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The role of Resonance Chiral Theory",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-the-role-of-resonance-chiral-theory.md",
+      "narrative": null,
+      "content": "As illustrated in the ${\\cal O}(p^4)$ case \\cite{Ecker:1988te,Ecker:1989yg} a procedure to systematically determine\nthe resonance contributions to the LECs in $\\chi PT$ is available. Essentially the idea is to construct a Lagrangian\ntheory in terms of resonances, pseudoscalar mesons and auxiliary fields respecting the underlying chiral symmetry. Then,\nupon integration of the heavier states, the $\\chi PT$ Lagrangian is recovered. The outcome of this first step is that\nLECs are traded by the equally unknown couplings of the resonance Lagrangian though, at this point, one may also notice\nrelation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0702179v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Resonance contributions to the O(p6) LECs",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-resonance-contributions-to-the-op6-lecs.md",
+      "narrative": null,
+      "content": "In Ref. [11] we have constructed the RχT Lagrangian needed to evalu-\nate the resonance contributions to the O(p6) LECs in Eq. (2). It has the\nfollowing structure :\nLRχT = LχP T\n2\n+ LGB\n4\n+ LGB\n6\n+ LR\nkin + LR\n(2) + LR\n(4) + LRR\n(2) + LRRR\n(0)\n+ Lε . (5)\nThe inclusion of spin-1 resonances has been performed within the antisym-\nmetric tensor formalism. However there are independent contributions to\nthe O(p6) LECs coming from odd-intrinsic-parity couplings involving spin-1\nresonances in the Proca formalism. These are included in Lε. In the above\nrepresentation it can be shown [7] that, at O(p4),",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0702179v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "K3 decays : determination of f+K0 -(0)",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-k3-decays-determination-of-fk0--0.md",
+      "narrative": null,
+      "content": "+\n(0)\nKℓ3 decays have the potential to provide one of the most accurate de-\nterminations of the Vus CKM element. The main uncertainty in extracting\nthis parameter comes from theoretical calculations of the vector form factor\nf K0π−\n+\n(0) deﬁned by :\n⟨π−(p) | sγµu | K0(q) ⟩= f K0π−\n+\n(t) (q + p)µ + f K0π−\n−\n(t) (q −p)µ ,\n(6)\nwith t = (q −p)2. Deviations of f K0π−\n+\n(0) from unity (the octet symmetry\nlimit) are of second order in the SU(3) breaking :\nf K0π−\n+\n(0) = 1 + fp4 + fp6 + ...\n(7)\nThe ﬁrst correction is O(p4) in χPT, through one loop calculation and no\nlocal terms, and it gives fp4 = −0.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0702179v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Perspective",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-perspective.md",
+      "narrative": null,
+      "content": "The study of the resonance energy region is essential for the understanding of hadron phenomenology driven by non-perturbative QCD : hadronic tau decays, final-state interactions, kaon decays, etc.\n\n$R \\chi T$ is a systematic setting that allows to implement known features of QCD into a Lagrangian framework. We have shown that it provides sensible results but much more work is still needed to reach a better understanding both on the phenomenology and on the underlying ideas that joint together in this formulation.\n\n# Acknowledgements\n\nI wish to thank M. Krawczyk, G. Pancheri and H. Czyz for th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

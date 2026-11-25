@@ -1,0 +1,581 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1203.6041v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prop-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "prop-sec-001-01.md",
+      "narrative": null,
+      "content": "Direct access to the matrix elements related to decays is missing in the Euclidean formulations of lattice QCD.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prop-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "prop-sec-001-02.md",
+      "narrative": null,
+      "content": "The price to be paid is that the relevant symmetry group in the lattice calculation is signiﬁcantly reduced.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prop-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "prop-sec-001-03.md",
+      "narrative": null,
+      "content": "Other studies of ππ I = 2 scattering in lattice QCD ([23–25]) have largely limited themselves to the threshold behavior of the scat- tering amplitude in S-wave, as expressed by the scatter- ing length.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "S and D-wave phase shifts in isospin-2 scattering from lattice QCD",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-s-and-d-wave-phase-shifts-in-isospin-2-scatterin.md",
+      "narrative": null,
+      "content": "Jozef J. Dudek,1, 2, ∗Robert G. Edwards,1, † and Christopher E. Thomas3, ‡\n(for the Hadron Spectrum Collaboration)\n1Jeﬀerson Laboratory, 12000 Jeﬀerson Avenue, Newport News, VA 23606, USA\n2Department of Physics, Old Dominion University, Norfolk, VA 23529, USA\n3School of Mathematics, Trinity College, Dublin 2, Ireland\nThe isospin-2 ππ system provides a useful testing ground for determining elastic hadron scat-\ntering parameters from ﬁnite-volume spectra obtained using lattice QCD computations. A reliable\ndetermination of the excited state spectrum of two pions in a cubic box follows from variat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "I Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-i-introduction.md",
+      "narrative": null,
+      "content": "QCD is the accepted underlying theory of the strong\ninteractions, and the properties of the spectrum and in-\nteractions of hadrons should be calculable from it using\na suitable regularization scheme for the quark and gluon\nﬁelds. A particularly convenient approach is to consider\nthe theory on a ﬁnite lattice of space-time points so as to\nadmit a numerical method of solution. While signiﬁcant\nprogress has been made recently in determining the single\nparticle spectrum of hadrons, describing the resonances\nseen in scattering experiments in terms of eigenstates of\nQCD has remained a challenge to l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "JLAB-THY-12-1504\nTCDMATH 12-03",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "II Operator construction",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-ii-operator-construction.md",
+      "narrative": null,
+      "content": "In order to calculate scattering amplitudes we must\nextract multi-hadron energy levels with high precision\nand so need interpolating operators that eﬃciently in-\nterpolate these multi-hadron states. To achieve this we\nconsider operators constructed from the product of two\nhadron operators projected onto deﬁnite total momen-\ntum,⃗P, and transforming as a deﬁnite irreducible rep-\nresentation of the appropriate symmetry group, lattice\nirrep3 Λ, with irrep row, µ,\nh\nOΛµ(⃗P)\ni†\n=\nX\nµ1,µ2⃗\nk1,⃗k2⃗\nk1+⃗k2=⃗P\nC(⃗PΛµ;⃗k1Λ1µ1;⃗k2Λ2µ2)\n×\nh\nOΛ1µ1(⃗k1)\ni† h\nOΛ2µ2(⃗k2)\ni†\n. (3)\nHere OΛ1,µ1(⃗k1) and OΛ2,µ2(⃗",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Single-hadron operators",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-a-single-hadron-operators.md",
+      "narrative": null,
+      "content": "Respecting the reduced symmetry of a ﬁnite cubic lat-\ntice, the JP = 0−pion at rest subduces onto the one-\ndimensional ΛP = A−\n1 irrep of the double-cover octa-\nhedral group with parity, OD\nh . In Refs. [11, 12] we dis-\ncussed how operators with a deﬁnite continuum JP and\nJz-component M, OJP ,M(⃗k =⃗0), can be constructed out\nof fermion bilinears featuring gauge-covariant derivatives\nand Dirac gamma matrices; the extension to baryons was\ndescribed in Ref. [14]. The appropriate lattice operators\nwere formed by subducing these continuum operators into\noctahedral group irreps. Table II summarises",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Multi-hadron operators",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-b-multi-hadron-operators.md",
+      "narrative": null,
+      "content": "In general, a ππ creation operator can be constructed\nfrom the product of two single-pion creation operators,\n(ππ)[⃗k1,⃗k2]†⃗\nP ,Λ,µ\n=\nX⃗\nk1∈{⃗k1}⋆⃗\nk2∈{⃗k2}⋆⃗\nk1+⃗k2=⃗P\nC(⃗P, Λ, µ;⃗k1;⃗k2) π†(⃗k1) π†(⃗k2) ,\n(5)\nwhere π(⃗k) is a single-pion operator and C is a Clebsch-\nGordan coeﬃcient for Λ1 ⊗Λ2 →Λ with Λ1,2 = A−\n1 of\nOD\nh if⃗k1,2 =⃗0 and Λ1,2 = A2 of LG(⃗k1,2) if⃗k1,2̸ =⃗0,\nand where Λ is an irrep of LG(⃗P). For present purposes,\nthe particular construction of π(⃗k) from quark and gluon\nﬁelds is not important.\nIt is only necessary that π(⃗k)\ntransforms in the appropriate lattice irrep.\nThe s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "III Distillation and correlator construction",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-iii-distillation-and-correlator-construction.md",
+      "narrative": null,
+      "content": "CONSTRUCTION\nWithin distillation [30], we construct operators capable\nof interpolating a single pion of momentum⃗k from the\nvacuum as\nπ†(⃗k, t) =\nX⃗\nx\nei⃗k·⃗x h\n¯ψ2σΓ†\nt2σψ\ni\n(⃗x, t),\n(6)\nwhere the Γt are, in general, operators acting in space,\ncolor and Dirac spin on a time slice, t, whose explicit con-\nstruction is described in detail in Ref. [27]. The quark\nﬁelds ψ in Equation 6 are acted upon by a distillation\nsmearing operator 2σ that emphasizes the low momen-\ntum quark and gluon modes that dominate low mass\nhadrons. This smearing operator is deﬁned as\n2ij\nσ (⃗x,⃗y; t) =\nNvecs\nX\nn=1\neσ2λn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "IV Optimised pion operators",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-iv-optimised-pion-operators.md",
+      "narrative": null,
+      "content": "In our previous study of ππ isospin-2 scattering [7] we\nmade use only of the simplest composite QCD operators\ncapable of interpolating a pion, ∼¯ψ2σγ52σψ (Eq. 6 with\nΓ = γ5) where the distillation smearing operator 2σ in\nEq. 7 took on two diﬀerent values of the smearing weight\nσ. As well as interpolating the ground-state pion from\nthe vacuum, this operator has signiﬁcant amplitudes to\ninterpolate various excited mesons with pion quantum\nnumbers (π⋆). In correlation functions, the contribution\nof the excited states will die away more rapidly than the\nground-state (see the decomposition in Equat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "V Pion mass and dispersion relation",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-007-v-pion-mass-and-dispersion-relation.md",
+      "narrative": null,
+      "content": "As well as the volume dependence of energies of multi-\nhadron states owing to hadron interactions suggested by\n 5\n 10\n 15\n 20\n 25\n 30\nFIG. 1. Contributions of ground state (n = 0) pion (red) and\nexcited pion states (other colors) to the single pion correlator\nat zero momentum, C(t) =\n\n\u0000 ¯ψ2γ52ψ\n\u0001\n(t) ·\n\u0000 ¯ψ2γ52ψ\n\u0001\n(0)\n\nand Nvecs = 162 on the 243 lattice. Summed contribution of\nall states indicated by the grey curve. Excited state pions are\nobserved to contribute signiﬁcantly until t ≳20 at. (Excited\nstate contributions determined from the results of variational\nanalysis using a large operator",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "VI Effects of finite temporal extent",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-008-vi-effects-of-finite-temporal-extent.md",
+      "narrative": null,
+      "content": "EXTENT\nOur extractions of ﬁnite-volume ππ energy spectra fol-\nlow from analysis of the time-dependence of correlation\nfunctions and the form of these time-dependencies is af-\nfected by the ﬁnite temporal extent of the lattice. The\nsize of ﬁnite-T eﬀects are generically determined by the\nsize of e−mπT , which while small on these lattices, is large\nenough for its eﬀects to be visible, particularly in the ππ\nsector.\nAs an explicit example of a systematic eﬀect whose\norigin will turn out to be the ﬁnite temporal extent\nof the lattice, we show in Figure 5 the eﬀective mass\nof a very simple “ππ” co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Finite-T effects for correlators at rest",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-009-a-finite-t-effects-for-correlators-at-rest.md",
+      "narrative": null,
+      "content": "Let us begin by considering a correlator constructed\nusing pion interpolating ﬁelds of deﬁnite momentum,\nC⃗k′\n1,⃗k′\n2⃗\nk1,⃗k2 (t) =\n\nπ−⃗\nk′\n1(t)π−⃗\nk′\n2(t) · π+⃗\nk1(0)π+⃗\nk2(0)\n\n,\nwhere in this section the operator π+ interpolates a posi-\ntively charged pion from the vacuum. In practice we will\nalways project these products into deﬁnite little group\nirreps, Λ, for a given⃗P =⃗k1 +⃗k2 =⃗k′\n1 +⃗k′\n2 as described\nin Section II. With anti-periodic boundary conditions in\nthe ﬁnite time direction, two-point correlators have the\ndecomposition8\nC(t) =\n\nO′(t)O(0)\n\n= tr\n\u0002\ne−HT O′(t)O†(0)\n\u0003\n/tr\n\u0002\ne−HT \u0003",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Finite-T effects for correlators in-flight",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-010-b-finite-t-effects-for-correlators-in-flight.md",
+      "narrative": null,
+      "content": "The unwanted contributions to correlators “in-ﬂight”\n(⃗P̸ =⃗0) are not time-independent and cannot be removed\nby simply shifting in time. Following equation (13), they\ntake the generic form\n(z⃗k1)2 (z−⃗k1+⃗P )2 \u0002\nδ⃗k′\n1,⃗k1 + δ⃗k′\n1,−⃗k1+⃗P\n\u0003\n×\n\u0002\ne−Eπ(⃗k′\n1) T e−(Eπ(−⃗k′\n1+⃗P )−Eπ(⃗k′\n1))t\n+ e−Eπ(−⃗k′\n1+⃗P ) T e−(Eπ(⃗k′\n1)−Eπ(−⃗k′\n1+⃗P ))t\u0003\n,\nwhere the contributions of largest magnitude occur if ei-\nther⃗k′\n1 or −⃗k′\n1 +⃗P are equal to zero as then the ﬁnite-T\nsuppression factor is only e−mπT . The largest “polluting”\nterm in this case would not be a constant but rather have\na time dependence",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "VII Finite-volume spectrum",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-011-vii-finite-volume-spectrum.md",
+      "narrative": null,
+      "content": "We compute correlator matrices in each irrep⃗P, Λ\nusing the basis of operators deﬁned in Section II. Af-\nter modifying the correlator matrix with the appropriate\nweighting and/or shifting as described in the previous\nsection, the spectrum is obtained by solution of the gen-\neralised eigenvalue problem, equation 9.\nEach irrep is\nconsidered independently and the entire procedure is re-\npeated on each of the three lattice volumes. The two-pion\noperators used are given in Table V and the number of\noperators for each⃗P and irrep are given in Table VI.\nWe illustrate the method here with the example",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Example of =[0,0,1], = A1",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-012-a-example-of-001-a1.md",
+      "narrative": null,
+      "content": "As an explicit example of our variational ﬁtting pro-\ncedure consider the⃗P = [0, 0, 1], A1 irrep evaluated on\nthe L/as = 24 lattice.\nOur basis of operators here is\nobtained by applying equation 5 and is thus of the form\n\u0000ππ\n\u0001[⃗k1,⃗k2]†\n[001],A1 =\nX⃗\nk1∈{⃗k1}⋆⃗\nk2∈{⃗k2}⋆⃗\nk1+⃗k2=[001]\nC([0, 0, 1], A1;⃗k1;⃗k2) π†(⃗k1) π†(⃗k2)\n(24)\nwith constructions using the pion momenta given in\nTable V. This gives a correlation matrix, C(t), of di-\nmension 7.\nIn order to remove the largest ﬁnite-T ef-\nfects, as discussed in the previous section, the weighted-\nshifted correlation matrix, beC(t) is formed, usi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Volume dependence of spectra",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "../sections/sec-013-b-volume-dependence-of-spectra.md",
+      "narrative": null,
+      "content": "We perform this analysis procedure independently for\neach⃗P, Λ on each volume. The energies obtained are in\nthe frame in which the lattice is at rest, and can be more\nusefully expressed in the ππ center-of-momentum frame,\nEcm =\nq\nE2\nlat −|⃗P|2\n\u0000atEcm\n\u0001\n=\n\u0014\u0000atElat\n\u00012 −1\nξ2\n\u0010\n2π\nL/as\n\u00112\nn2⃗\nP\n\u00151/2\n(26)\nwhere we use the anisotropy, ξ, determined from the pion\ndispersion relation in Section V. In Figures 12,13,14,15\nwe show the volume dependence of the extracted center-\nof-momentum frame energy spectrum along with the en-\nergies of pairs of non-interacting pions carrying various\nallowed lattice mo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "VIII Phase-shifts from finite-volume spectra",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-014-viii-phase-shifts-from-finite-volume-spectra.md",
+      "narrative": null,
+      "content": "SPECTRA\nThe formalism to relate the amplitude for two-particle\nelastic scattering in partial waves labelled by angular mo-\nmentum ℓ, to the spectrum of states in a ﬁnite cubic spa-\ntial volume, is laid down in [2], with extensions to the\ncase of a moving frame presented in [16–18].\nBecause\nwe are considering ππ scattering in isospin-2 where only\neven ℓoccur, there is a one-to-one correspondence be-\ntween the irreps of the symmetry group relevant for the\nL¨uscher formalism in a moving frame and the little group\nirreps13 and so we will refer to the little group irreps.\nThe formalism can be compa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prop-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "prop-sec-015-01.md",
+      "narrative": null,
+      "content": "In order to demonstrate the formalism, we will brieﬂy break away from analysis of lattice QCD obtained ﬁnite- volume spectra to consider a simple toy-model of ππ scat- tering in which the scattering amplitudes are known to us.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prop-sec-015-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "prop-sec-015-02.md",
+      "narrative": null,
+      "content": "The problem to be solved in lattice QCD is actually the inverse of that just described - we start with the ﬁnite-volume spectrum determined through analysis of correlation functions and want to ﬁnd the phase-shifts as a function of scattering momentum.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prop-sec-015-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "prop-sec-015-03.md",
+      "narrative": null,
+      "content": "We do not present this trivial result here, but we will return to this “global ﬁtting” method in the next section when we consider the ﬁnite-volume spectrum obtained from lattice QCD computations.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A A toy model of scattering",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "../sections/sec-015-a-a-toy-model-of-scattering.md",
+      "narrative": null,
+      "content": "In order to demonstrate the formalism, we will brieﬂy\nbreak away from analysis of lattice QCD obtained ﬁnite-\nvolume spectra to consider a simple toy-model of ππ scat-\ntering in which the scattering amplitudes are known to\nus. The toy model is built from an eﬀective range pa-\nrameterisation of elastic scattering in ℓ= 0, 2, 4 partial\nwaves. We have\np2ℓ+1\ncm\ncot δ(pcm) = 1\naℓ\n+ 1\n2rℓp2\ncm,\n(29)\nwith parameters\na0 = −0.8 GeV−1, r0 = +2.5 GeV−1,\na2 = −2.4 GeV−5, r2 ≡0,\na4 = −5.0 GeV−9, r4 ≡0,\nwhich happens to reasonably describe the experimental\nππ I = 2 scattering data up to a momentum pcm ∼\n0.6",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prop-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 27,
+      "target": "prop-sec-016-01.md",
+      "narrative": null,
+      "content": "We associated a systematic error with our imperfect knowledge of them that was found to be always smaller than the statistical uncertainty.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Lattice QCD data",
+      "pageStart": 22,
+      "pageEnd": 27,
+      "target": "../sections/sec-016-b-lattice-qcd-data.md",
+      "narrative": null,
+      "content": "We now return to consideration of the ﬁnite-volume\nspectrum presented in Section VII. The ﬁrst step in our\n“level-by-level” approach is to solve for δ2,4 using pairs of\nsimultaneous equations 27. Pairs of levels below inelastic\nthreshold that can be used to yield estimates for δ2,4 are\npresented in Table VIII and are displayed by the ﬁlled\npoints in Figures 20, 21. δ4 is observed to be statisti-\ncally compatible with zero throughout the elastic region.\nThere are also levels in irreps whose leading contribution\nis from ℓ= 2 that do not pair and cannot be analysed\nusing a simultaneous solution -",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-017-acknowledgments.md",
+      "narrative": null,
+      "content": "We thank our colleagues within the Hadron Spectrum\nCollaboration. Chroma [40] and QUDA [41, 42] were used\nto perform this work on clusters at Jeﬀerson Labora-\ntory under the USQCD Initiative and the LQCD ARRA\nproject. Gauge conﬁgurations were generated using re-\nsources awarded from the U.S. Department of Energy IN-\nCITE program at Oak Ridge National Lab, the NSF Ter-\nagrid at the Texas Advanced Computer Center and the\nPittsburgh Supercomputer Center, as well as at Jeﬀerson\nLab. RGE and JJD acknowledge support from U.S. De-\npartment of Energy contract DE-AC05-06OR23177, un-\nder which Jeﬀerson",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Multi-particle operators",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-018-a-multi-particle-operators.md",
+      "narrative": null,
+      "content": "In this appendix we give a generalisation of and fur-",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Operator construction",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-019-1-operator-construction.md",
+      "narrative": null,
+      "content": "In Section A 1 we describe our general multi-particle op-\nerator construction and in Section A 2 discuss the method\nused to calculate the Clebsch-Gordan coeﬃcients.\nIn\nSection A 3 we state our conventions for the lattice ir-\nreps and choices of rotations before giving some exam-\nple Clebsch-Gordan coeﬃcients in Section A 4. Further\nClebsch-Gordan coeﬃcients are given in supplementary\nmaterial [43].\n1.\nOperator construction\nHere we describe our construction of multi-particle op-\nerators, generalising the discussion in Section II. We will\nconsider two-particle operators but the procedure can be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Induced representation method for calculating Clebsch-Gordan coefficients",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-020-2-induced-representation-method-for-calculating.md",
+      "narrative": null,
+      "content": "Induced representation method for calculating\nClebsch-Gordan coeﬃcients\nWe use the projection formula with the induced rep-\nresentation [44] to construct the Clebsch-Gordan coeﬃ-\ncients for Λ1 ⊗Λ2 →Λ where Λ1, Λ2 and Λ are each\nirreps of, respectively, groups G1, G2 and G.\nFor our\npurposes, these groups will be the double cover of the\noctahedral group, OD\nh , or a little group ⊂OD\nh .\nA group, G, can be partitioned into cosets by a sub-\ngroup H ⊂G. Two elements x, y ∈G are in the same left\ncoset17 if and only if y−1x ∈H. One coset, containing\nthe identity element, will be the subgroup H itself",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lattice and little group conventions and rotations",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-021-3-lattice-and-little-group-conventions-and-rotat.md",
+      "narrative": null,
+      "content": "rotations\nAs described in Ref. [27], we break the (active) rotation\nR appearing in Eq. A1 into two stages: R = RlatRref.\nThe ﬁrst rotation, Rref, takes (0, 0, |⃗p|) into⃗pref, where⃗\npref is a reference direction for momenta of type⃗p (i.e. for\n{⃗p}⋆). In Table X we give the speciﬁc rotations that we\nuse for Rref. We use the same convention as in Ref. [27],\nnamely that a rotation Rφ,θ,ψ = e−iφ ˆ\nJze−iθ ˆ\nJye−iψ ˆ\nJz ro-\ntates around the z-axis by ψ, then around the y-axis by\nθ and ﬁnally around the z-axis by φ (with a ﬁxed coordi-\nnate system). In Table XI we give the rotations, Rlat, for\neach",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6041v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Clebsch-Gordan coefficients",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "../sections/sec-022-4-clebsch-gordan-coefficients.md",
+      "narrative": null,
+      "content": "Clebsch-Gordan coeﬃcients\nClebsch-Gordan coeﬃcients for zero total momentum\n(⃗P =⃗k1 +⃗k2 =⃗0) with⃗k1 =⃗k2 =⃗0 are given in\nRef. [28]. Example Clebsch-Gordan coeﬃcients for⃗P =⃗0\nwith⃗k1 = −⃗k2̸ =⃗0 are presented in Tables XVI-XVIII;\nothers are given in supplementary material [43]. We show\nClebsch-Gordan coeﬃcients for A1 ⊗A1 →Λ; those for\nA2 ⊗A2 are identical, and those for A1 ⊗A2 and A2 ⊗A1\nfollow by switching the target irrep’s parity, Λ± →Λ∓.\nThe cases of non-zero total momentum where⃗k1 =⃗0\nand⃗P =⃗k2̸ =⃗0 (or⃗k2 =⃗0 and⃗P =⃗k1̸ =⃗0) are trivial\nbecause there is only one momentum in the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

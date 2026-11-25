@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-beta-eq-ln-q-dictionary",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:beta-eq-ln-q-dictionary",
+  "kind": "proposition",
+  "title": "The $\\beta = \\ln q$ partition-function dictionary",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-exp-entire"
+  ],
+  "tags": [
+    "partition-function",
+    "markov-trace",
+    "temperature",
+    "wedderburn",
+    "categorical"
+  ],
+  "leanRef": "qou:QOU.Core.QBetaEnergyDictionary.boltzmann_energyOf",
+  "text": "beta-eq-ln-q-dictionary.md",
+  "provenance": "authored"
+}

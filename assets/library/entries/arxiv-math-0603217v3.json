@@ -1,0 +1,120 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0603217v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0603217v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "For a knot $K$ in the three-sphere $S^3$, one can define the colored Jones polynomial $J_N(K;t)$ as the quantum invariant corresponding to the $N$-dimensional irreducible representation of the Lie algebra $sl(2;\\mathbb{C})$ [@Jones:BULAM385; @Kirillov/Reshetikhin:1989] (see also [@Kirby/Melvin:INVEM1991]).\n\nThe volume conjecture [@Kashaev:LETMP97; @Murakami/Murakami:ACTAM12001] states that the limit of $\\log\\left(J_N\\bigl(K;\\exp(2\\pi\\sqrt{-1})\\bigr)\\right)/N$ would determine the simplicial volume of the knot complement $S^3\\setminus{K}$. In [@Murakami/Yokota:JREIA] Y. Yokota and the author pro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0603217v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A conjecture",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-a-conjecture.md",
+      "narrative": null,
+      "content": "Let $K$ be a knot in $S^3$. Denote by $J_N(K;q)$ the colored Jones polynomial associated to the $N$-dimensional irreducible representation of the Lie algebra $sl(2,\\mathbb{C})$ [@Kirillov/Reshetikhin:1989]. We normalize it so that $J_2(K;q)$ is the Jones polynomial [@Jones:BULAM385] and that $J_N(U;q)=1$, where $U$ is the unknot.\n\nWe propose the following conjecture as a version of the volume conjecture.\n\n::: conj\n[]{#conj:parameterization label=\"conj:parameterization\"} There exists an open subset $\\mathcal{O}_{K}$ of $\\mathbb{C}$ such that for any $u\\in\\mathcal{O}_{K}$ the following limit exi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0603217v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0603217v3  [math.GT]  15 Apr 2006\nA VERSION OF THE VOLUME CONJECTURE\nHITOSHI MURAKAMI\nAbstract. We propose a version of the volume conjecture that would relate a\ncertain limit of the colored Jones polynomials of a knot to the volume function\ndeﬁned by a representation of the fundamental group of the knot complement\nto the special linear group of degree two over complex numbers.\nWe also\nconﬁrm the conjecture for the ﬁgure-eight knot and torus knots. This version\nis diﬀerent from S. Gukov’s because of a choice of polarization.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0603217v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-3-proof.md",
+      "narrative": null,
+      "content": "In this section we prove Conjecture [\\[conj:parameterization\\]](#conj:parameterization){reference-type=\"ref\" reference=\"conj:parameterization\"} for torus knots. (To be honest, [\\[eq:volume\\]](#eq:volume){reference-type=\"eqref\" reference=\"eq:volume\"} is proved only up to a constant, that is, we prove [\\[eq:Schlafli\\]](#eq:Schlafli){reference-type=\"eqref\" reference=\"eq:Schlafli\"} instead.)\n\nLet $T(a,b)$ be the torus knot of type $(a,b)$, where $a$ and $b$ are coprime integers with $a>1$ and $b>1$. Then the author proved in [@Murakami:INTJM62004 Theorem 1.1] the following theorem.\n\n::: thm\nSuppos",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0603217v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comments",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-4-comments.md",
+      "narrative": null,
+      "content": "In [@Gukov:COMMP2005 (5.29)], Gukov proposed the following conjecture.\n\n::: conj\n[@Gukov:COMMP2005][]{#conj:Gukov label=\"conj:Gukov\"} Let $K$ be a knot in the three-sphere. For $a\\in\\mathbb{C}\\setminus\\mathbb{Q}$, define the function $l(a)$ as follows: $$\\label{eq:lambda}\n  l(a):=\n  -\\frac{d}{d\\,a}\n  \\left\\{\n    a\\lim_{N\\to\\infty}\n    \\frac{\\log{J_N\\left(K;\\exp(2\\pi{a}\\sqrt{-1}/N)\\right)}}{N}\n  \\right\\}.$$ Then the pair $\\left(\\exp\\bigl(l(a)\\bigr),-\\exp(\\pi{a}\\sqrt{-1})\\right)$ is a zero of the $A$-polynomial of $K$ introduced in [@Cooper/Culler/Gillet/Long/Shalen:INVEM1994].\n:::\n\nUsing our pa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0603217v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-references.md",
+      "narrative": null,
+      "content": "References\n[1] D. Cooper, M. Culler, H. Gillet, D. D. Long, and P. B. Shalen, Plane curves associated to\ncharacter varieties of 3-manifolds, Invent. Math. 118 (1994), no. 1, 47–84.\n[2] S. Garoufalidis and T. T. Q. Le, An analytic version of the Melvin-Morton-Rozansky Con-\njecture, arXiv:math.GT/0503641.\n[3]\n, Asymptotics of the colored Jones function of a knot, arXiv:math.GT/0508100.\n[4] S. Gukov, Three-dimensional quantum gravity, Chern-Simons theory, and the A-polynomial,\nComm. Math. Phys. 255 (2005), no. 3, 577–627.\n[5] V. F. R. Jones, A polynomial invariant for knots via von Neumann algebr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

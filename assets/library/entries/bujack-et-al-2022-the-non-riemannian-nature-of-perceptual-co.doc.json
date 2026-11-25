@@ -1,0 +1,929 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co",
+  "title": "The non-Riemannian nature of perceptual color space",
+  "variant": "pdf",
+  "pages": 10,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Experiment",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-experiment"
+    },
+    {
+      "level": 1,
+      "title": "Analysis",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-analysis"
+    },
+    {
+      "level": 1,
+      "title": "Results",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-results"
+    },
+    {
+      "level": 1,
+      "title": "Limitations and Mitigations",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-limitations-and-mitigations"
+    },
+    {
+      "level": 1,
+      "title": "Discussion",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-004-discussion"
+    },
+    {
+      "level": 1,
+      "title": "Materials and Methods",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-materials-and-methods"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 2367,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perceived color",
+          "heading": false
+        },
+        {
+          "term": "diminishing returns",
+          "heading": false
+        },
+        {
+          "term": "color perception",
+          "heading": false
+        },
+        {
+          "term": "riemannian color",
+          "heading": false
+        },
+        {
+          "term": "perceptual color",
+          "heading": false
+        },
+        {
+          "term": "color differences",
+          "heading": false
+        },
+        {
+          "term": "color diﬀerences",
+          "heading": false
+        },
+        {
+          "term": "euclidean color",
+          "heading": false
+        }
+      ],
+      "extract": "RESEARCH ARTICLE PSYCHOLOGICAL AND COGNITIVE SCIENCEMS The non-Riemannian nature of perceptual color space Roxana Bujacka,1 , Emily Tetia,b, Jonah Millera, Elektra Caﬀreya,c, and Terece L. Turtona Edited by Brian Wandell, Stanford University, Stanford, CA; received October 28, 2021; accepted March 13, 2022 The scientific community generally agrees on the theory, introduced by Riemann and furthered by Helmholtz and",
+      "extractCut": true,
+      "blocks": [
+        "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/prose-sec-front-matter",
+        "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/figure-img-p002-1",
+        "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/figure-img-p002-2",
+        "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/figure-img-p003-1",
+        "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/figure-img-p003-2",
+        "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/figure-img-p003-3",
+        "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/figure-img-p003-4",
+        "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/figure-img-p003-5",
+        "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/blocks/figure-img-p003-6"
+      ]
+    },
+    {
+      "id": "sec-000-experiment",
+      "number": null,
+      "title": "Experiment",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 542,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diminishing returns",
+          "heading": false
+        },
+        {
+          "term": "riemannian color",
+          "heading": false
+        },
+        {
+          "term": "hue superimportance",
+          "heading": false
+        },
+        {
+          "term": "color space",
+          "heading": false
+        },
+        {
+          "term": "neutral axis",
+          "heading": false
+        },
+        {
+          "term": "geodesic",
+          "heading": false
+        },
+        {
+          "term": "task",
+          "heading": false
+        },
+        {
+          "term": "experiments",
+          "heading": false
+        }
+      ],
+      "extract": "Yet, the principle of diminishing returns contradicts the pre- vailing paradigm of a Riemannian color space. Assume that color space is Riemannian and that γ is a geodesic between the colors A = γ(t0) and C = γ(t2) containing the point B = γ(t1) with t0 < t1 < t2. Then, the part of γ between A and B, γ1 = γ|t0,t1, is a geodesic, as is the part between B and C.§ Therefore, the dis- tances between the three points in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-analysis",
+      "number": null,
+      "title": "Analysis",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 1208,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diminishing returns",
+          "heading": false
+        },
+        {
+          "term": "afc experiment",
+          "heading": false
+        },
+        {
+          "term": "binary responses",
+          "heading": false
+        },
+        {
+          "term": "afc task",
+          "heading": false
+        },
+        {
+          "term": "returns exist",
+          "heading": false
+        },
+        {
+          "term": "perceptual scale",
+          "heading": false
+        },
+        {
+          "term": "mle",
+          "heading": false
+        },
+        {
+          "term": "larger differences",
+          "heading": false
+        }
+      ],
+      "extract": "of this type of experiment requires more assumptions to derive a continuous scale from binary responses, compared with Likert- scale or open-ended tasks. As a consequence, in all existing models, additivity of small differences is inherent. Our analysis uses the underlying theory without requiring this additivity. Analysis Regression to Investigate Diminishing Returns. We denote the differences in a triad (t1, ref ,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-results",
+      "number": null,
+      "title": "Results",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 982,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "participants responses",
+          "heading": false
+        },
+        {
+          "term": "spline function",
+          "heading": false
+        },
+        {
+          "term": "perceived difference",
+          "heading": false
+        },
+        {
+          "term": "perceived strengths",
+          "heading": false
+        },
+        {
+          "term": "diminishing returns",
+          "heading": false
+        },
+        {
+          "term": "spline form",
+          "heading": false
+        },
+        {
+          "term": "regression line",
+          "heading": false
+        },
+        {
+          "term": "learned scaling",
+          "heading": false
+        }
+      ],
+      "extract": "Regression. The best-fit regression line produces the coefficients in Table 1. The coefficient of interest is significantly negative (β¯d = −0.005, p < 0.001), supporting the existence of dimin- ishing returns. This coefficient indicates that the frequency that participants select a given test approaches chance when differ- ences are larger. This effect can be seen in Fig. 5, showing how participants’ responses are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-limitations-and-mitigations",
+      "number": null,
+      "title": "Limitations and Mitigations",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 1094,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cie rgb",
+          "heading": false
+        },
+        {
+          "term": "crispening effect",
+          "heading": false
+        },
+        {
+          "term": "cie xyz",
+          "heading": false
+        },
+        {
+          "term": "cie cam",
+          "heading": false
+        },
+        {
+          "term": "measured perceived",
+          "heading": false
+        },
+        {
+          "term": "spaces cie",
+          "heading": false
+        },
+        {
+          "term": "diminishing returns",
+          "heading": false
+        },
+        {
+          "term": "perceived distances",
+          "heading": false
+        }
+      ],
+      "extract": "There are two assumptions that we make throughout our work that could limit the generality of our results. We discuss them here and explain the design and verification choices that we made to mitigate them. Inﬂuence of the Background. The background can have a strong influence on the way colors are perceived (63). We, therefore, keep the background constant across all experiments. The crispening effect causes colors",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-discussion",
+      "number": null,
+      "title": "Discussion",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 318,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "color differences",
+          "heading": false
+        },
+        {
+          "term": "perceived differences",
+          "heading": false
+        },
+        {
+          "term": "perceptual color",
+          "heading": false
+        },
+        {
+          "term": "weber fechner",
+          "heading": false
+        },
+        {
+          "term": "whole color",
+          "heading": false
+        },
+        {
+          "term": "color space",
+          "heading": false
+        },
+        {
+          "term": "absolute differences",
+          "heading": false
+        },
+        {
+          "term": "diminishing returns",
+          "heading": false
+        }
+      ],
+      "extract": "The concavity of the scaling function f in Fig. 9 is significant, demonstrating the hypothesized existence of diminishing returns in color difference perception. This reveals the non-Riemannian structure of perceptual color space, contradicting the current scientific paradigm. It is particularly interesting that the best fit suggests a loga- rithmic relationship between perceived differences and absolute",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-materials-and-methods",
+      "number": null,
+      "title": "Materials and Methods",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 2539,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "color vision",
+          "heading": false
+        },
+        {
+          "term": "color differences",
+          "heading": false
+        },
+        {
+          "term": "perceptual color",
+          "heading": false
+        },
+        {
+          "term": "perceived color",
+          "heading": false
+        },
+        {
+          "term": "color res",
+          "heading": false
+        },
+        {
+          "term": "color metrics",
+          "heading": false
+        },
+        {
+          "term": "non-euclidean color",
+          "heading": false
+        },
+        {
+          "term": "color science",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we describe our experimental design in full detail. Participants were asked to judge two differences using a triad arrangement of stimuli, as shown in Fig. 4. Differences in the triad ranged from small, barely perceptible differences to large,obvious differences.The triads were constructed from stimuli described by CIE LAB coordinates, where a∗, b∗= 0 and L∗is variable. These triads are determined",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "perceived color",
+      "heading": false
+    },
+    {
+      "term": "diminishing returns",
+      "heading": true
+    },
+    {
+      "term": "perceptual color",
+      "heading": false
+    },
+    {
+      "term": "color perception",
+      "heading": false
+    },
+    {
+      "term": "color differences",
+      "heading": false
+    },
+    {
+      "term": "riemannian color",
+      "heading": false
+    },
+    {
+      "term": "color metrics",
+      "heading": false
+    },
+    {
+      "term": "non-euclidean color",
+      "heading": false
+    },
+    {
+      "term": "color space",
+      "heading": true
+    },
+    {
+      "term": "human color",
+      "heading": false
+    },
+    {
+      "term": "perceived distances",
+      "heading": false
+    },
+    {
+      "term": "perceived strengths",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Diminishing returns imply that large color diﬀerences appear less than the sum of their parts. This image is a purely ﬁgurative illustration of how this phenomenon could potentially occur, even though this speciﬁc geometry is not suggested in this paper. If an isoluminant plane through color space (",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Geodesics (shortest paths computed with the shooting method) between the corners of the sRGB cube in CIE LAB with its non-Euclidean metric",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Thurstonian distance perception (58) of a triad modeled with (solid) and without (dashed) additivity with an example scaling function f(Δψ) =",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Two triads with the same diﬀerence in diﬀerences Δd = 12.5 in",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Degree of consensus is the absolute value of selecting a given test minus 50%. The negative slope of the lines indicates that participants’ responses tend toward chance with increasing average diﬀerence in the triad, despite the diﬀerence of diﬀerences remaining constant. A 95% CI around each line i",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Coeﬃcients of the regression line Coeﬃcient",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Models were trained using data from all triads; however, accuracy is visualized across the five levels of the standard. We see here that the baseline accuracy is much lower for triads with darker standards",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Optimal perceptual function g from Eq. 17 mapping L∗values to perceived grayness, ψ. The shaded region indicates the middle 95% of all learned models across test sets and bootstrapped training sets",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Optimal diﬀerence scaling function f from Eq. 17 using the spline with four control points. The shaded region indicates the middle 95% of all learned models across test sets and bootstrapped training sets",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Optimal diﬀerence scaling functions using the hypothesized functions. The shaded region indicates the middle 95% of all learned models across test sets and bootstrapped training sets",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Photograph of Bernhard Riemann used to illustrate the impact of the non-Riemannianness for the computation of the intrinsic mean",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Representation of the triads used for simulations and experimental study. Each point represents ﬁve distinct experimental triads, each with a",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p002-1",
+      "file": "images/img-p002-1.png",
+      "page": 2,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p002-2",
+      "file": "images/img-p002-2.png",
+      "page": 2,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-2",
+      "file": "images/img-p003-2.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-3",
+      "file": "images/img-p003-3.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-4",
+      "file": "images/img-p003-4.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-5",
+      "file": "images/img-p003-5.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-6",
+      "file": "images/img-p003-6.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-1",
+      "file": "images/img-p004-1.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-1",
+      "file": "images/img-p005-1.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-2",
+      "file": "images/img-p005-2.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-3",
+      "file": "images/img-p005-3.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-4",
+      "file": "images/img-p005-4.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-5",
+      "file": "images/img-p005-5.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-6",
+      "file": "images/img-p005-6.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-7",
+      "file": "images/img-p005-7.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-1",
+      "file": "images/img-p007-1.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-2",
+      "file": "images/img-p007-2.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-3",
+      "file": "images/img-p007-3.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-4",
+      "file": "images/img-p007-4.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-5",
+      "file": "images/img-p007-5.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p008-1",
+      "file": "images/img-p008-1.png",
+      "page": 8,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 23
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co"
+  }
+}

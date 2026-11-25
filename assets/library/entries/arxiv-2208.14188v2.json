@@ -1,0 +1,443 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2208.14188v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Prepared for submission to JHEP\nKIAS-P22064\nResurgence in complex Chern-Simons theory at\ngeneric levels\nZhihao Duana Jie Gub\naKorea Institute for Advanced Study\n85 Hoegiro, Dongdaemun-gu, Seoul 02455, Korea\nbSchool of Phyiscs and Shing-Tung Yau Center\nSoutheast University, Nanjing 210096, China\nE-mail: xduanz@kias.re.kr, eij.ug.phys@gmail.com\nAbstract: In this note we study the resurgent structure of sl(2, C) Chern-Simons state\nintegral model on knot complements S3\\41, S3\\52 with generic discrete level k ≥1 and\nwith small boundary holonomy deformation. The coeﬃcients of the saddle point expans",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\label{sc:intr}\n\n\nComplex Chern-Simons theory remains an active field of research that\nlinks up many fields in both physics and mathematics.  From the\nphysics side, $sl(2,\\IC)$ Chern-Simons theory was first considered in\n\\cite{Witten:1988hc} as a means to describe three dimensional quantum\ngravity on Lorentzian spacetime with positive cosmological constant.\nLater a beautiful connection was revealed between $sl(N,\\IC)$\nChern-Simons theory and 3d $N=2$ superconformal field theories by the\nname of the 3d-3d correspondence\n\\cite{Dimofte:2010tz,Terashima:2011qi,Dimofte:2011ju,Dimofte:2013iv}\n(see \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Resurgent structure of complex Chern-Simons theory at generic level",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-2-resurgent-structure-of-complex-chern-simons-th.md",
+      "narrative": null,
+      "content": "Resurgent structure of complex Chern-Simons theory at generic level",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Perturbative complex Chern-Simons theory at generic level",
+      "pageStart": 4,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-21-perturbative-complex-chern-simons-theory-at-g.md",
+      "narrative": null,
+      "content": "The $sl(2,\\IC)$ Chern-Simons theory on a three manifold $M$ has action\n\\begin{equation}\n  I_{k,s} = t S_{\\text{CS}}(A) + \\tilde{t} S_{\\text{CS}}(\\overline{A})\n\\end{equation}\nwhere $S_{\\text{CS}}(A)$ is the three dimensional Chern-Simons action\n\\begin{equation}\n  S_{\\text{CS}}(A) = \\frac{1}{4\\pi}\\int_M \\Tr (A\\wedge\\rd A + \\frac{2}{3}A\\wedge\n  A\\wedge A),\n\\end{equation}\n$A$ is a connection of the $sl(2,\\IC)$ bundle over $M$, and\n$\\overline{A}$ its complex conjugation.\n\nThe couplings $t,\\tilde{t}$ can be split as\n\\begin{equation}\n  t = \\frac{1}{2}(k+\\ri s),\\quad \\tilde{t} =\\frac{1}{2}(k-\\ri s).\n\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Resurgent structure of complex Chern-Simons theory",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "../sections/sec-003-22-resurgent-structure-of-complex-chern-simons-t.md",
+      "narrative": null,
+      "content": "The power series $\\varphi_{\\gamma}^{(k,\\s_*)}(u,n;\\tau)$ are\nasymptotic.  To make sense of them, we need to apply the resurgence\ntheory \\cite{Ecalle,Mitschi:2016fxp} (see reviews\n\\cite{Marino:2012zq,Dorigoni:2014hea,Aniceto:2018bis} by physicists).\nGenerically in physics perturbation series are asymptotic.  The\ncoefficients grow factorially due to the proliferation of Feynman\ndiagrams\\footnote{Renormalons can also contribute to factorial growth\n  of coefficients in a general QFT, but they are absent in complex\n  Chern-Simons theory.},\n\\begin{equation}\n  f(\\tau) = \\sum_{\\ell=0}^\\infty a_n\\tau^n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stokes constants and BPS invariants",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-004-23-stokes-constants-and-bps-invariants.md",
+      "narrative": null,
+      "content": "An interesting discovery concerning the Stokes constants extracted\nfrom the Stokes automorphisms $\\mf{S}_{\\pm}^{(k=1)}(\\tx,\\tq)$ was made\nin \\cite{Garoufalidis:2020xec,Garoufalidis:2020nut}: they were\nidentified with the BPS invariants of the 3d SCFT $T_2[M]$ related to\nthe $sl(2,\\IC)$ Chern-Simons theory on $M= S^3\\backslash K$ by the\n3d-3d correspondence \\cite{Dimofte:2011ju}.  In particular, the\nentries of $\\mf{S}_{+}^{(k=1)}(\\tx,\\tq)$ (respectively\n$\\mf{S}_{-}^{(k=1)}(\\tx,\\tq)$), which are power series in\n$\\IZ[\\tx^{\\pm 1}][[\\tq]]$ (respectively\n$\\IZ[\\tx^{\\pm 1}][[\\tq^{-1}]]$), were identif",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Figure eight",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-005-3-figure-eight.md",
+      "narrative": null,
+      "content": "Figure eight",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotic series",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "../sections/sec-006-31-asymptotic-series.md",
+      "narrative": null,
+      "content": "\\label{sc:41.asymp}\n\nThe state integral of figure eight knot at level $k$ is already given\nas a one-dimensional integral in \\cite{Andersen:2016ugz}\n\\begin{align}\n  \\chi^{(k)}_{\\knot{4}_1}(\\mu,n;\\tau) =\n  &\\frac{\\eta_k}{k}\\sum_{m\\in \\IZ_k}\\int_{\\IR+\\ri\\imag(c_\\bb)-\\ri|\\mu|-\\ri 0}\\rd \\sigma\n    \\mc{Z}^{(k)}_\\bb[\\Delta](\\sigma-\\mu,m-n)\n    \\mc{Z}^{(k)}_\\bb[\\Delta](\\sigma,m)\\nn\n  &\\phantom{==}\\times(-1)^m\n    \\re^{\\frac{\\pi\\ri}{k}((\\sigma-c_\\bb)^2-2(\\mu-\\sigma+c_\\bb)^2-m^2+2(n-m)^2)},\n      \\label{eq:chi-41}\n\\end{align}\nwhere $\\eta_k = \\exp \\frac{\\pi\\ri}{6}(k+2 c_\\bb^2/k)$.\nThis can be derived fro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Holomorphic blocks",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-007-32-holomorphic-blocks.md",
+      "narrative": null,
+      "content": "\\label{sc:41.blocks}\n\nOne happy fact of state integral model of knot $\\knot{4}_1$ at level 1\nis that when $\\imag{\\bb}\\neq 0$, it can be evaluated by summing over\nresidues and it factorises to products of $q$- and $\\tq$-series\n\\cite{Garoufalidis:2013rca}, i.e., the holomorphic blocks\n\\cite{Beem:2012mb}.  In addition, variants known as the descendants of\nthe state integral can be written, which also enjoys factorisation.\nThis fact turns out to be very useful in the resurgence analysis, as\nthe Stokes matrices can be written in terms of them\n\\cite{Garoufalidis:2020xec,Garoufalidis:2020nut}.  We fi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Resurgent structure",
+      "pageStart": 21,
+      "pageEnd": 24,
+      "target": "../sections/sec-008-33-resurgent-structure.md",
+      "narrative": null,
+      "content": "\\label{sc:41.lvlk}\n\n\\begin{figure}\n  \\centering\n  \\includegraphics[height=6cm]{fig8_regions_m_peacock}\n  \\caption{Singular points of the Borel transform of the vector of\n    trans-series of the $sl(2,\\IC)$ Chern-Simons theory at level $k=1$\n    on the complement of the knot $\\knot{4}_1$.}\n  \\label{fg:sing.k1.41}\n\\end{figure}\n\nWe collect the trans-series associated to the geometric and conjugate\nflat connections in a vector\n\\begin{equation}\n  \\Phi_{\\knot{4}_1}^{(k)}(x;\\tau) =\n  \\begin{pmatrix}\n    \\Phi_{\\knot{4}_1}^{(k,\\s_1)}\\\\\n    \\Phi_{\\knot{4}_1}^{(k,\\s_2)}\n  \\end{pmatrix}(x;\\tau).\n\\end{equa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Three twists",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-009-4-three-twists.md",
+      "narrative": null,
+      "content": "Three twists",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotic series",
+      "pageStart": 24,
+      "pageEnd": 30,
+      "target": "../sections/sec-010-41-asymptotic-series.md",
+      "narrative": null,
+      "content": "\\label{sc:41.asymp}\n\nThe state integral of figure eight knot at level $k$ is already given\nas a one-dimensional integral in \\cite{Andersen:2016ugz}\n\\begin{align}\n  \\chi^{(k)}_{\\knot{4}_1}(\\mu,n;\\tau) =\n  &\\frac{\\eta_k}{k}\\sum_{m\\in \\IZ_k}\\int_{\\IR+\\ri\\imag(c_\\bb)-\\ri|\\mu|-\\ri 0}\\rd \\sigma\n    \\mc{Z}^{(k)}_\\bb[\\Delta](\\sigma-\\mu,m-n)\n    \\mc{Z}^{(k)}_\\bb[\\Delta](\\sigma,m)\\nn\n  &\\phantom{==}\\times(-1)^m\n    \\re^{\\frac{\\pi\\ri}{k}((\\sigma-c_\\bb)^2-2(\\mu-\\sigma+c_\\bb)^2-m^2+2(n-m)^2)},\n      \\label{eq:chi-41}\n\\end{align}\nwhere $\\eta_k = \\exp \\frac{\\pi\\ri}{6}(k+2 c_\\bb^2/k)$.\nThis can be derived fro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Holomorphic blocks",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "../sections/sec-011-42-holomorphic-blocks.md",
+      "narrative": null,
+      "content": "Holomorphic blocks\nAs in the example of knot 41, here we introduce descendants of the state integral and\ndemonstrate their property of factorisation into holomorphic blocks.\nThe descendant state integral for the knot 52 takes the form,\nχ(k)\n52;r,s(µ, n; b) =(ηk)3\nk\nX\nm∈Zk\nZ\nC\ndσZ(k)\nb [∆](σ, m)Z(k)\nb [∆](σ + µ, m + n)Z(k)\nb [∆](σ −µ, m −n)\n× (−1)ne\nπi\nk (−(σ+µ−cb)2−(σ−µ−cb)2−µ2+(m+n)2+(m−n)2+n2)\n×e\n2πi\nk (−i(rb+sb−1)(cb−σ)+(r−s)m),\n(4.22)\nwhere the contour of integral C is such that it asymptotes at both ±∞to the horizontal\nline Im σ = σ0 with σ0 < Im(cb) −| Re(rb + sb−1)| but is deformed near",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Resurgent structure",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "../sections/sec-012-43-resurgent-structure.md",
+      "narrative": null,
+      "content": "\\label{sc:41.lvlk}\n\n\\begin{figure}\n  \\centering\n  \\includegraphics[height=6cm]{fig8_regions_m_peacock}\n  \\caption{Singular points of the Borel transform of the vector of\n    trans-series of the $sl(2,\\IC)$ Chern-Simons theory at level $k=1$\n    on the complement of the knot $\\knot{4}_1$.}\n  \\label{fg:sing.k1.41}\n\\end{figure}\n\nWe collect the trans-series associated to the geometric and conjugate\nflat connections in a vector\n\\begin{equation}\n  \\Phi_{\\knot{4}_1}^{(k)}(x;\\tau) =\n  \\begin{pmatrix}\n    \\Phi_{\\knot{4}_1}^{(k,\\s_1)}\\\\\n    \\Phi_{\\knot{4}_1}^{(k,\\s_2)}\n  \\end{pmatrix}(x;\\tau).\n\\end{equa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion and discussion",
+      "pageStart": 34,
+      "pageEnd": 38,
+      "target": "../sections/sec-013-5-conclusion-and-discussion.md",
+      "narrative": null,
+      "content": "\\label{sc:con}\n\nIn this short note we study the resurgent properties of the\n$sl(2,\\IC)$ Chern-Simons state integral model on knot complemnets\n$S^3\\backslash \\knot{4}_1$, $S^3\\backslash \\knot{5}_2$ at generic\nlevel $k\\geq 1$.\n\nWhen the level $k$ increases, the saddle point expansion of the $sl(2,\\IC)$\nChern-Simons state integral becomes\nincreasingly more complicated.\nBut there are several interesting universal featrues.\n\nFirst of all, the coefficients of the power series always live in the\ntrace field of the knot extended by the holonomy paramter $x$.\n\nSecond, these power series enjoy universal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Tetrahedron partition function at level k",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-014-a-tetrahedron-partition-function-at-level-k.md",
+      "narrative": null,
+      "content": "Tetrahedron partition function at level k\nThe partition function of sl(2, C) Chern-Simons theory at level k on an ideal tetrahedron\nis given by\nZ(k)\nb [∆](µ, n) =\nY\n(r,s)∈Γ(k;n)\nΦb(cb −1\nk(µ + ibr + ib−1s))\n(A.1)\nwhere\nΓ(k; n) = {(r, s) ∈Z2 | 0 ≤r, s < k, r −s ≡n(mod k)}\n(A.2)\nand cb = i\n2(b+b−1). Φb(x) is Faddeev’s quantum dilogarithm. This deﬁnes a meromorphic\nfunction of µ ∈C for each n ∈Zk, and it is deﬁned for all values of b with b2 in the cut\nplane C′ = C\\R≤0.\nWhen Im b > 0 or Im b < 0, it has the factorisation form\nZ(k)\nb [∆](µ, n) = (qx−1; q)∞(˜q−1˜x−1; ˜q−1)∞\n(A.3)\n– 37 –\nwhere we us",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.1 Fundamental properties",
+      "pageStart": 39,
+      "pageEnd": 39,
+      "target": "../sections/sec-015-a1-fundamental-properties.md",
+      "narrative": null,
+      "content": "Fundamental properties\n• Inversion relation\nZ(k)\nb [∆](cb + x, n)Z(k)\nb [∆](cb −x, −n) = (−1)ne\nπi\nk (x2−n2)η−1\nk ,\n(A.5)\nwhere\nηk = eπi(k+2c2\nbk−1)/6.\n(A.6)\nNote that this implies the special value\nZ(k)\nb [∆](cb, 0)2 = η−1\nk .\n(A.7)\n• Quasi-periodicity (Faddeev’s diﬀerence equations). For x, b ∈C, Im(b)̸ = 0, n ∈Z\nZ(k)\nb [∆]\n\u0000x −ib±1, n ± 1\n\u0001\n= Z(k)\nb [∆](x, n)\n\u00001 −q±x−1\n±\n\u0001−1\nZ(k)\nb [∆]\n\u0000x + ib±1, n ∓1\n\u0001\n= Z(k)\nb [∆](x, n)\n\u00001 −x−1\n±\n\u0001\n.\n(A.8)\nwhere q+ = q, q−= ˜q, x+ = x, x−= ˜x.\n• Asymptotic behavior\nZ(k)\nb [∆](µ, n) ∼\n(\ne\nπi\nk (cb−µ)2\nRe(µ) ≪0\n1\nRe(µ) ≫0.\n(A.9)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.2 Zeros and poles",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-016-a2-zeros-and-poles.md",
+      "narrative": null,
+      "content": "Zeros and poles\nFor Im(b) > 0, the tetrahedron partition function Z(k)\nb [∆](x, n) has zeros\n(\nx = 2cb + ib−1l + ib m\nn = l −m (mod k)\n(A.10)\nand poles\n(\nx = −ib−1l −ib m\nn = m −l (mod k)\n(A.11)\nfor l, m ∈Z≥0, and the residue is\nk\n2πb−1\n(q; q)∞\n(˜q; ˜q)∞\n1\n(q; q)m\n1\n(˜q−1; ˜q−1)l\n.\n(A.12)\n– 38 –",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.3 Integral identities",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../sections/sec-017-a3-integral-identities.md",
+      "narrative": null,
+      "content": "Integral identities\nThe tetrahedron partition function has the following property of Fourier transformation,\n1\nk\nX\nn∈Zk\nZ\nR+cb\nduZ(k)\nb [∆](u, n)e\n2πi\nk (uw−nm) = Z(k)\nb [∆](w, m)(−1)me−πi\nk ((w−cb)2−m2)+ πi\n12 (k+8c2\nbk−1).\n(A.13)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.4 Semi-classical limit",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../sections/sec-018-a4-semi-classical-limit.md",
+      "narrative": null,
+      "content": "Semi-classical limit\nIn the double scaling limit\nb →0,\nµ →∞,\nbµ ﬁxed\n(A.14)\nthe tetrahedron partition function has the asymptotic expansion\nlog Z(k)\nb [∆](µ, m) =\n∞\nX\nℓ=0\n(2πib2)ℓ−1\nℓ!\nX\nj∈Zk\nBℓ(j/k) Li2−ℓ\n\u0010\ne\n2πi\nk (j+m)e−2πbµ\nk\n\u0011\n.\n(A.15)\nAlternatively, deﬁne\nD(k)\nb (u, m) = Z(k)\nb [∆](cb −\n√\nku, m).\n(A.16)\nIn the double scaling limit\nb →0,\nu →∞,\nbu ﬁxed,\n(A.17)\nit has the asymptotic expansion\nlog D(k)\nb (u, m) =\n∞\nX\nℓ=0\n(2πib2)ℓ−1\nℓ!\nX\nj∈Zk\nBℓ(1 −1\n2k −j\nk) Li2−ℓ(e−πi\nk (1+2j−2m)e\n2πbu\n√\nk ).\n(A.18)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Power series of state integrals at different levels",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../sections/sec-019-b-power-series-of-state-integrals-at-different-l.md",
+      "narrative": null,
+      "content": "Power series of state integrals at diﬀerent levels",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.1 Knot 41",
+      "pageStart": 40,
+      "pageEnd": 42,
+      "target": "../sections/sec-020-b1-knot-41.md",
+      "narrative": null,
+      "content": "Knot 41\nAt level k = 2, the power series are\n(ω(k=2,σj)\n41\n(x))−1ϕ(k=2,σj)\n41\n(x; τ\n2πi) = 1 + a(σj)\n1\n(x)τ + a(σj)\n2\n(x)τ 2 + a(σj)\n3\n(x)τ + O(τ 4), (B.1)\n– 39 –\nwhere a(σj)\n1\n(x) is given in (3.21) and some additional coeﬃcients are\na(σj)\n2\n(x) =(1 + 12x + 46x2 −576x3 + 1413x4 + 1608x5 + 202x6 + 7788x7 + 3258x8 −34572x9\n+ 1094x10 + 27816x11 −3555x12 + 27816x13 + 1094x14 −34572x15 + 3258x16\n+ 7788x17 + 202x18 + 1608x19 + 1413x20 −576x21 + 46x22 + 12x23 + x24)/\n(4608(−1 −x + x2)3(1 −x + x2)3(−1 + x + x2)3(1 + x + x2)3),\n(B.2a)\na(σj)\n3\n(x) = −((5 −8550x −10329x2 −84870x3 + 534081x4 + 156600x5 +",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.14188v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.2 Knot 52",
+      "pageStart": 42,
+      "pageEnd": 46,
+      "target": "../sections/sec-021-b2-knot-52.md",
+      "narrative": null,
+      "content": "Knot 52\nAt level k = 2, the power series are\n(ω(k=2,σj)\n52\n(x))−1ϕ(k=2,σj)\n52\n(x; τ\n2πi) = 1 + a(σj)\n1\nτ + a(σj)\n2\nτ 2 + O(τ 3),\n(B.6)\nwhere\na(σj)\n1\n=(1 + 6x + 14x2 −30x3 −245x4 −216x5 + 944x6 + 1428x7 −1231x8 −2346x9 + 1326x10\n+ 3042x11 −1873x12 −6168x13 −3400x14 −2556x15 −3935x16 −4950x17 −5474x18\n−4950x19 −3935x20 −2556x21 −3400x22 −6168x23 −1873x24 + 3042x25 + 1326x26\n−2346x27 −1231x28 + 1428x29 + 944x30 −216x31 −245x32 −30x33 + 14x34 + 6x35\n+ x36 + (−1 −3x −10x2 + 15x3 + 262x4 + 381x5 −964x6 −2118x7 + 697x8 + 2886x9\n+ 469x10 −873x11 + 1656x12 + 4797x13 + 2911x14 + 903x15 + 899x16 + 984x17",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

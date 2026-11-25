@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-momentum-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-momentum-remark",
+  "kind": "remark",
+  "title": "Writhe equality, trace form and canonicity of the q-momentum",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-momentum",
+    "papers/quantum-observable-universe/blocks/rem-markov-moves-brane-tower"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-momentum",
+  "text": "q-momentum-remark.md",
+  "provenance": "authored"
+}

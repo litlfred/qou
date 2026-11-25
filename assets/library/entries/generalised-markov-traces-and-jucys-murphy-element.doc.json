@@ -1,0 +1,783 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "generalised-markov-traces-and-jucys-murphy-element",
+  "title": "generalised-markov-traces-and-jucys-murphy-element",
+  "variant": "pdf",
+  "pages": 10,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Iwahori-Hecke algebras and multiplicative Jucys-Murphy elements",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-iwahori-hecke-algebras-and-multiplicative-jucys"
+    },
+    {
+      "level": 1,
+      "title": "Coxeter groups",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-coxeter-groups"
+    },
+    {
+      "level": 2,
+      "title": "Iwahori-Hecke algebras",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-iwahori-hecke-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Trace functional and a pairing on H(W,S)",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-trace-functional-and-a-pairing-on-hws"
+    },
+    {
+      "level": 2,
+      "title": "`Full twist' and Jucys-Murphy elements",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-full-twist-and-jucys-murphy-elements"
+    },
+    {
+      "level": 2,
+      "title": "Some central elements in the classical Iwahori-Hecke algebras",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-some-central-elements-in-the-classical-iwahori-h"
+    },
+    {
+      "level": 1,
+      "title": "Markov traces",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-markov-traces"
+    },
+    {
+      "level": 2,
+      "title": "Markov traces via Jucys-Murphy elements",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-markov-traces-via-jucys-murphy-elements"
+    },
+    {
+      "level": 2,
+      "title": "General Markov traces in types B, D",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-general-markov-traces-in-types-b-d"
+    },
+    {
+      "level": 1,
+      "title": "Geometric Markov traces",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-geometric-markov-traces"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 47,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kostiantyn tolmachov",
+          "heading": false
+        },
+        {
+          "term": "utc",
+          "heading": false
+        },
+        {
+          "term": "jagiellonian",
+          "heading": false
+        }
+      ],
+      "extract": "Glasgow Mathematical Journal (2026), 1–10 doi:10.1017/S0017089526101050 RESEARCH ARTICLE Generalised Markov traces and Jucys–Murphy elements Kostiantyn Tolmachov1 and Heorhii Zhylinskyi2 1University of Hamburg, Germany 2Jagiellonian University, Poland Corresponding author: Kostiantyn Tolmachov; Email: tolmak@khtos.com Received: 6 November 2025 UTC; Revised: 6 May 2026 UTC; Accepted: 14 June 2026 UTC",
+      "extractCut": false,
+      "blocks": [
+        "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prose-sec-front-matter",
+        "library/generalised-markov-traces-and-jucys-murphy-element/blocks/figure-img-p001-1",
+        "library/generalised-markov-traces-and-jucys-murphy-element/blocks/figure-img-p001-2"
+      ]
+    },
+    {
+      "id": "sec-000-iwahori-hecke-algebras",
+      "number": null,
+      "title": "Iwahori-Hecke algebras",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 56,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "crystallographic",
+          "heading": false
+        },
+        {
+          "term": "jucys",
+          "heading": false
+        },
+        {
+          "term": "generalises",
+          "heading": false
+        }
+      ],
+      "extract": "2020 Mathematics Subject Classiﬁcation: Primary - 20C08, 57K14, 57K18 Abstract We give a simple construction of Markov traces for Iwahori–Hecke algebras associated with the crystallographic Coxeter groups of types An, Bn and Dn. In types B and D, it is new and generalises a known construction in type A employing symmetric polynomials in multiplicative Jucys–Murphy elements.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 478,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jucys murphy",
+          "heading": false
+        },
+        {
+          "term": "iwahori hecke",
+          "heading": false
+        },
+        {
+          "term": "markov traces",
+          "heading": false
+        },
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        },
+        {
+          "term": "markov moves",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "hecke category",
+          "heading": false
+        },
+        {
+          "term": "murphy elements",
+          "heading": false
+        }
+      ],
+      "extract": "A two-variable link invariant – the HOMFLY-PT polynomial – can be recovered using a family of trace functions on Iwahori–Hecke algebras in type A satisfying analogues of the conditions in Markov’s the- orem for the braid group (usually called ‘Markov moves’) [10]. The analogues of Markov moves can be formulated for Iwahori–Hecke algebras of other Coxeter groups, leading to a general notion of the Markov trace, see,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-coxeter-groups",
+      "number": null,
+      "title": "Coxeter groups",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 132,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "markov traces",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "iwahori",
+          "heading": false
+        },
+        {
+          "term": "warm-up",
+          "heading": false
+        }
+      ],
+      "extract": "and Iwahori–Hecke algebras. In Section 2.5, we deﬁne a family of commuting elements in Iwahori– Hecke algebras of type A, B, D coming from the extended aﬃne Hecke algebra in type A. See [16] for the history and an alternative deﬁnition. We follow [17] in our treatment of these elements. In Section 3, we ﬁrst deﬁne the Markov traces and give, as a warm-up, a construction of a Markov trace deﬁned by a uniform formula",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-iwahori-hecke-algebras-and-multiplicative-jucys",
+      "number": null,
+      "title": "Iwahori-Hecke algebras and multiplicative Jucys-Murphy elements",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 547,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mij",
+          "heading": false
+        },
+        {
+          "term": "tsi",
+          "heading": false
+        },
+        {
+          "term": "coxeter system",
+          "heading": false
+        },
+        {
+          "term": "coxeter diagram",
+          "heading": false
+        },
+        {
+          "term": "iwahori hecke",
+          "heading": false
+        },
+        {
+          "term": "coxeter groups",
+          "heading": false
+        },
+        {
+          "term": "unequal parameters",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        }
+      ],
+      "extract": "2.1. Coxeter groups Let (W, S), S = {s1, . . . , sn}, be a Coxeter system. Thus, W is a group with a presentation (s0, . . . , sn|(sisj)mij = e), where mij ∈Z+ ∪{∞}, with mii = 1, mji = mij ≥2 if i̸ = j, and mij = ∞means that there is no relation included for the pair si, sj. Such a presentation is read oﬀthe Coxeter diagram of (W, S) in a standard way: such a diagram is a non-oriented graph with S as a set of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-trace-functional-and-a-pairing-on-hws",
+      "number": null,
+      "title": "Trace functional and a pairing on H(W,S)",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 239,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pairing",
+          "heading": true
+        },
+        {
+          "term": "functional",
+          "heading": true
+        },
+        {
+          "term": "a-linear",
+          "heading": false
+        },
+        {
+          "term": "spana",
+          "heading": false
+        }
+      ],
+      "extract": "Let x →x be the Kazhdan–Lusztig involution on H(W, S). It is a Q-algebra involution, deﬁned by the assignments v = v−1, tw = t−1 w−1. Let ω : H(W, S) stand for the A-linear algebra anti-involution deﬁned by ω(tw) = tw−1. For h ∈H(W, S), x ∈W, let hx stand for the t−1 x -coeﬃcient of h in the basis t−1 w , where w runs through W. Let τ : H(W, S) →A be a functional deﬁned by τ(h) = he, where e ∈W is the unit. For h,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-full-twist-and-jucys-murphy-elements",
+      "number": null,
+      "title": "`Full twist' and Jucys-Murphy elements",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 397,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jucys murphy",
+          "heading": false
+        },
+        {
+          "term": "murphy elements",
+          "heading": false
+        },
+        {
+          "term": "iwahori hecke",
+          "heading": false
+        },
+        {
+          "term": "classical types",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "proposition",
+          "heading": false
+        },
+        {
+          "term": "embedding",
+          "heading": false
+        }
+      ],
+      "extract": "Assume that (W, S) is of ﬁnite type. Let w0 stand for the longest element in W with respect to the Bruhat length. Let S(W, S) = t−2 w0 ∈H(W, S). In classical types, we will write S(Xn) ∈H(Xn), when X is A, B or D, or simply S when the type is clear from the context. The following proposition is also standard: Proposition 2.4.1. The element S(W, S) is central in H(W, S). We will need the following ‘Serre property’ of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-some-central-elements-in-the-classical-iwahori-h",
+      "number": null,
+      "title": "Some central elements in the classical Iwahori-Hecke algebras",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 462,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aﬃne hecke",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "t1t",
+          "heading": false
+        },
+        {
+          "term": "central",
+          "heading": true
+        },
+        {
+          "term": "subalgebra",
+          "heading": false
+        },
+        {
+          "term": "elements",
+          "heading": true
+        }
+      ],
+      "extract": "In this section, we follow [17]. Let Haff(An−1) be the aﬃne Hecke algebra associated with the root datum of GLn. It is a unital algebra over A generated by the elements t1, . . . , tn−1 and \u0006±1 1 , where t1, . . . , tn−1 satisfy the relations of the Iwahori–Hecke algebra of type An−1 and, additionally, the following relations hold: (iii) t1\u00061t1\u00061 = \u00061t1\u00061t1, (iv) ti\u00061 = \u00061ti for i > 1. Inductively deﬁne \u0006i =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-markov-traces",
+      "number": null,
+      "title": "Markov traces",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-markov-traces-via-jucys-murphy-elements",
+      "number": null,
+      "title": "Markov traces via Jucys-Murphy elements",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 567,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "markov",
+          "heading": true
+        },
+        {
+          "term": "markov trace",
+          "heading": false
+        },
+        {
+          "term": "markov move",
+          "heading": false
+        },
+        {
+          "term": "trζn",
+          "heading": false
+        },
+        {
+          "term": "link invariants",
+          "heading": false
+        },
+        {
+          "term": "generalisation",
+          "heading": false
+        },
+        {
+          "term": "functionals",
+          "heading": false
+        },
+        {
+          "term": "elements",
+          "heading": true
+        }
+      ],
+      "extract": "Deﬁnition 3.1.1. Let R be a commutative A-algebra. A family (φn) of A-linear functionals φn : H(Xn) → R, where X is A−1, B or D and n ∈Z≥1 (n ∈Z≥2 in type D) is called a Markov trace if there are elements μ, ρ ∈R such that the following conditions are satisﬁed: (M1) φn is a trace function, that is, φn(hh′) = φn(h′h). This property is a generalisation of the ﬁrst Markov move from the theory of link invariants. Recall",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-general-markov-traces-in-types-b-d",
+      "number": null,
+      "title": "General Markov traces in types B, D",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 946,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trace trd",
+          "heading": false
+        },
+        {
+          "term": "markov",
+          "heading": true
+        },
+        {
+          "term": "u2n",
+          "heading": false
+        },
+        {
+          "term": "trb",
+          "heading": false
+        },
+        {
+          "term": "spana",
+          "heading": false
+        },
+        {
+          "term": "degree monomial",
+          "heading": false
+        },
+        {
+          "term": "trx",
+          "heading": false
+        },
+        {
+          "term": "normalisation",
+          "heading": false
+        }
+      ],
+      "extract": "In type A, the classical result of Jones and Ocneanu [10] says that a Markov trace with given constants ρ, μ is deﬁned uniquely up to an overall scaling. Thus, Theorem 3.1.4 gives a general description of a Markov trace in type A. In types B, D, the general description of Markov traces was obtained by Geck and Lambropoulou [3, 5]. We recall their results. For n ≥1, deﬁne the elements Tn = tn−1 . . . t1t0t−1 1 . . .",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-geometric-markov-traces",
+      "number": null,
+      "title": "Geometric Markov traces",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 1140,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "markov traces",
+          "heading": true
+        },
+        {
+          "term": "geometric markov",
+          "heading": true
+        },
+        {
+          "term": "traces trb",
+          "heading": false
+        },
+        {
+          "term": "trd",
+          "heading": false
+        },
+        {
+          "term": "khovanov rozansky",
+          "heading": false
+        },
+        {
+          "term": "rozansky homology",
+          "heading": false
+        },
+        {
+          "term": "jucys murphy",
+          "heading": false
+        },
+        {
+          "term": "aﬃne hecke",
+          "heading": false
+        }
+      ],
+      "extract": "Markov traces trB n : Hv,v(Bn) →A(a), trD n : H(Dn) →A(a) studied in [7, 20] are specialisations of traces trX n,y satisfying the extension of the properties (U1) and (M2) for the embeddings B0 →B1 and D1 → D2, D0 →D1. Since these traces are of geometric origin, we call them ‘geometric Markov traces’. In particular, these traces satisfy trB 1(t0) = v −v−1, trD 1 (t1) = v −v−1, trD 2 (t1t1′) = (v −v−1)2. The",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "iwahori hecke",
+      "heading": false
+    },
+    {
+      "term": "markov traces",
+      "heading": true
+    },
+    {
+      "term": "jucys murphy",
+      "heading": false
+    },
+    {
+      "term": "kostiantyn tolmachov",
+      "heading": false
+    },
+    {
+      "term": "hecke algebras",
+      "heading": false
+    },
+    {
+      "term": "traces trb",
+      "heading": false
+    },
+    {
+      "term": "aﬃne hecke",
+      "heading": false
+    },
+    {
+      "term": "murphy elements",
+      "heading": false
+    },
+    {
+      "term": "trace trd",
+      "heading": false
+    },
+    {
+      "term": "heorhii zhylinskyi",
+      "heading": false
+    },
+    {
+      "term": "geometric markov",
+      "heading": true
+    },
+    {
+      "term": "ﬁnite hecke",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-2",
+      "file": "images/img-p001-2.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p8); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/generalised-markov-traces-and-jucys-murphy-element"
+  }
+}

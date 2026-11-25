@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-habiro-residue-sum-equivalence",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:habiro-residue-sum-equivalence",
+  "kind": "proposition",
+  "title": "Habiro completion ≡ Gröbner–Shirshov residue spectral sum (equivalence)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-full-pole-structure-mass-trace"
+  ],
+  "cites": [
+    "references/habiro2004",
+    "references/jones1987"
+  ],
+  "tags": [
+    "habiro-ring",
+    "cyclotomic-completion",
+    "markov-trace",
+    "residue",
+    "spectral-sequence",
+    "equivalence",
+    "computational-witness"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.HabiroResidueSumEquivalence",
+  "text": "habiro-residue-sum-equivalence.md",
+  "leanSource": "habiro-residue-sum-equivalence.lean",
+  "provenance": "authored"
+}

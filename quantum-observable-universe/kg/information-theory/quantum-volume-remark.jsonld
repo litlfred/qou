@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-quantum-volume-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:quantum-volume-remark",
+  "kind": "remark",
+  "title": "Quantum volume of a homogeneous gas",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-volume"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-volume",
+  "tags": [
+    "definition-commentary"
+  ],
+  "text": "quantum-volume-remark.md",
+  "provenance": "authored"
+}

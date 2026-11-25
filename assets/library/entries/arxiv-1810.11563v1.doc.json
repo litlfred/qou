@@ -1,0 +1,3937 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1810.11563v1",
+  "title": "Three Lectures on Complexity and Black Holes",
+  "variant": "pdf",
+  "pages": 84,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "I Lecture I: Hilbert Space is Huge",
+      "number": null,
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-i-lecture-i-hilbert-space-is-huge"
+    },
+    {
+      "level": 2,
+      "title": "Preface",
+      "number": "1",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-preface"
+    },
+    {
+      "level": 2,
+      "title": "How Huge?",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-how-huge"
+    },
+    {
+      "level": 2,
+      "title": "Volume of CP(N)",
+      "number": "3",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-volume-of-cpn"
+    },
+    {
+      "level": 2,
+      "title": "Relative Complexity",
+      "number": "4",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-4-relative-complexity"
+    },
+    {
+      "level": 2,
+      "title": "Dual Role of Unitaries",
+      "number": "5",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-5-dual-role-of-unitaries"
+    },
+    {
+      "level": 2,
+      "title": "Volume of SU(2K)",
+      "number": "6",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-6-volume-of-su2k"
+    },
+    {
+      "level": 2,
+      "title": "Exploring SU(2K)",
+      "number": "7",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-7-exploring-su2k"
+    },
+    {
+      "level": 3,
+      "title": "Relative Complexity of Unitaries",
+      "number": "7.1",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-71-relative-complexity-of-unitaries"
+    },
+    {
+      "level": 3,
+      "title": "Complexity is Discontinuous",
+      "number": "7.2",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-72-complexity-is-discontinuous"
+    },
+    {
+      "level": 2,
+      "title": "Graph Theory Perspective",
+      "number": "8",
+      "page": 17,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-8-graph-theory-perspective"
+    },
+    {
+      "level": 3,
+      "title": "Collisions and Loops",
+      "number": "8.1",
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-81-collisions-and-loops"
+    },
+    {
+      "level": 2,
+      "title": "The Second Law of Quantum Complexity",
+      "number": "9",
+      "page": 26,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-9-the-second-law-of-quantum-complexity"
+    },
+    {
+      "level": 3,
+      "title": "Hamiltonian Evolution",
+      "number": "9.1",
+      "page": 30,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-91-hamiltonian-evolution"
+    },
+    {
+      "level": 1,
+      "title": "II Lecture II: Black Holes and the Second Law of Complexity",
+      "number": null,
+      "page": 32,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-ii-lecture-ii-black-holes-and-the-second-law-of"
+    },
+    {
+      "level": 2,
+      "title": "Preface",
+      "number": "10",
+      "page": 32,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-10-preface"
+    },
+    {
+      "level": 2,
+      "title": "The Black Hole-Quantum Circuit Correspondence",
+      "number": "11",
+      "page": 33,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-11-the-black-hole-quantum-circuit-correspondence"
+    },
+    {
+      "level": 3,
+      "title": "Two Problems",
+      "number": "11.1",
+      "page": 33,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-111-two-problems"
+    },
+    {
+      "level": 3,
+      "title": "Circuits and Black Holes",
+      "number": "11.2",
+      "page": 34,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-112-circuits-and-black-holes"
+    },
+    {
+      "level": 2,
+      "title": "The Growth of Wormholes",
+      "number": "12",
+      "page": 35,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-12-the-growth-of-wormholes"
+    },
+    {
+      "level": 3,
+      "title": "Properties of Growth",
+      "number": "12.1",
+      "page": 40,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-121-properties-of-growth"
+    },
+    {
+      "level": 3,
+      "title": "Rindler Time and CV",
+      "number": "12.2",
+      "page": 41,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-122-rindler-time-and-cv"
+    },
+    {
+      "level": 2,
+      "title": "Exponential Time Breakdown of GR",
+      "number": "13",
+      "page": 43,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-13-exponential-time-breakdown-of-gr"
+    },
+    {
+      "level": 3,
+      "title": "C=V",
+      "number": "13.1",
+      "page": 44,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-131-cv"
+    },
+    {
+      "level": 2,
+      "title": "Precursors",
+      "number": "14",
+      "page": 45,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-14-precursors"
+    },
+    {
+      "level": 3,
+      "title": "The Epidemic Model",
+      "number": "14.1",
+      "page": 45,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-141-the-epidemic-model"
+    },
+    {
+      "level": 3,
+      "title": "Lyapunov and Rindler",
+      "number": "14.2",
+      "page": 49,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-142-lyapunov-and-rindler"
+    },
+    {
+      "level": 2,
+      "title": "Precursors and Black Holes",
+      "number": "15",
+      "page": 51,
+      "pageLabel": "50",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-15-precursors-and-black-holes"
+    },
+    {
+      "level": 3,
+      "title": "Instability of White Holes",
+      "number": "15.1",
+      "page": 54,
+      "pageLabel": "53",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-151-instability-of-white-holes"
+    },
+    {
+      "level": 2,
+      "title": "Complexity and Firewalls",
+      "number": "16",
+      "page": 55,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-16-complexity-and-firewalls"
+    },
+    {
+      "level": 3,
+      "title": "Firewalls are Fragile",
+      "number": "16.1",
+      "page": 59,
+      "pageLabel": "58",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-161-firewalls-are-fragile"
+    },
+    {
+      "level": 3,
+      "title": "What Happens After Exponential Time?",
+      "number": "16.2",
+      "page": 60,
+      "pageLabel": "59",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-162-what-happens-after-exponential-time"
+    },
+    {
+      "level": 3,
+      "title": "The Fragility of Complexity Equilibrium",
+      "number": "16.3",
+      "page": 63,
+      "pageLabel": "62",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-163-the-fragility-of-complexity-equilibrium"
+    },
+    {
+      "level": 2,
+      "title": "Do Typical States have Firewalls?",
+      "number": "17",
+      "page": 64,
+      "pageLabel": "63",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-17-do-typical-states-have-firewalls"
+    },
+    {
+      "level": 3,
+      "title": "AdS Black Holes",
+      "number": "17.1",
+      "page": 64,
+      "pageLabel": "63",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-171-ads-black-holes"
+    },
+    {
+      "level": 3,
+      "title": "Evaporating Black Holes",
+      "number": "17.2",
+      "page": 65,
+      "pageLabel": "64",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-172-evaporating-black-holes"
+    },
+    {
+      "level": 1,
+      "title": "III Lecture III: The Thermodynamics of Complexity",
+      "number": null,
+      "page": 66,
+      "pageLabel": "65",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-iii-lecture-iii-the-thermodynamics-of-complexity"
+    },
+    {
+      "level": 2,
+      "title": "Preface",
+      "number": "18",
+      "page": 67,
+      "pageLabel": "66",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-18-preface"
+    },
+    {
+      "level": 2,
+      "title": "Negentropy",
+      "number": "19",
+      "page": 68,
+      "pageLabel": "67",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-19-negentropy"
+    },
+    {
+      "level": 2,
+      "title": "Uncomplexity",
+      "number": "20",
+      "page": 69,
+      "pageLabel": "68",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-20-uncomplexity"
+    },
+    {
+      "level": 3,
+      "title": "The Auxiliary System",
+      "number": "20.1",
+      "page": 69,
+      "pageLabel": "68",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-201-the-auxiliary-system"
+    },
+    {
+      "level": 3,
+      "title": "Combining Auxiliary Systems",
+      "number": "20.2",
+      "page": 70,
+      "pageLabel": "69",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-202-combining-auxiliary-systems"
+    },
+    {
+      "level": 2,
+      "title": "Uncomplexity as a Resource",
+      "number": "21",
+      "page": 72,
+      "pageLabel": "71",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-21-uncomplexity-as-a-resource"
+    },
+    {
+      "level": 2,
+      "title": "The Power of One Clean Qubit",
+      "number": "22",
+      "page": 73,
+      "pageLabel": "72",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-22-the-power-of-one-clean-qubit"
+    },
+    {
+      "level": 3,
+      "title": "The Protocol",
+      "number": "22.1",
+      "page": 73,
+      "pageLabel": "72",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-221-the-protocol"
+    },
+    {
+      "level": 3,
+      "title": "Expending Uncomplexity and Negentropy",
+      "number": "22.2",
+      "page": 75,
+      "pageLabel": "74",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-222-expending-uncomplexity-and-negentropy"
+    },
+    {
+      "level": 2,
+      "title": "Spacetime and Uncomplexity",
+      "number": "23",
+      "page": 76,
+      "pageLabel": "75",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-23-spacetime-and-uncomplexity"
+    },
+    {
+      "level": 3,
+      "title": "CA",
+      "number": "23.1",
+      "page": 76,
+      "pageLabel": "75",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-231-ca"
+    },
+    {
+      "level": 3,
+      "title": "Geometric Interpretation of Uncomplexity",
+      "number": "23.2",
+      "page": 77,
+      "pageLabel": "76",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-232-geometric-interpretation-of-uncomplexity"
+    },
+    {
+      "level": 1,
+      "title": "IV Conclusion",
+      "number": null,
+      "page": 80,
+      "pageLabel": "79",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-049-iv-conclusion"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1072,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black holes",
+          "heading": false
+        },
+        {
+          "term": "complexity preface",
+          "heading": false
+        },
+        {
+          "term": "relative complexity",
+          "heading": false
+        },
+        {
+          "term": "quantum complexity",
+          "heading": false
+        },
+        {
+          "term": "uncomplexity",
+          "heading": false
+        },
+        {
+          "term": "clean qubit",
+          "heading": false
+        },
+        {
+          "term": "firewalls",
+          "heading": false
+        },
+        {
+          "term": "rindler",
+          "heading": false
+        }
+      ],
+      "extract": "Three Lectures on Complexity and Black Holes Leonard Susskind Stanford Institute for Theoretical Physics and Department of Physics, Stanford University, Stanford, CA 94305-4060, USA Abstract This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The ﬁrst lecture describes the meaning of quantum complexity, the analogy between",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1810.11563v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-i-lecture-i-hilbert-space-is-huge",
+      "number": null,
+      "title": "I Lecture I: Hilbert Space is Huge",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 6,
+      "summary": null,
+      "keywords": [],
+      "extract": "Lecture I: Hilbert Space is Huge",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-1-preface",
+      "number": "1",
+      "title": "Preface",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 594,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "relative complexity",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "region behind",
+          "heading": false
+        },
+        {
+          "term": "hole interior",
+          "heading": false
+        },
+        {
+          "term": "horizon",
+          "heading": false
+        },
+        {
+          "term": "quantum system",
+          "heading": false
+        },
+        {
+          "term": "quantum states",
+          "heading": false
+        },
+        {
+          "term": "nielsen approach",
+          "heading": false
+        }
+      ],
+      "extract": "These lectures are a tale of two metrics on the same space---the space of states of a quantum system of $K$ qubits. One metric is familiar to you and the other probably very unfamiliar. They are extremely different measures of the distance between quantum states and they have different purposes. The two metrics are totally dissimilar. One, the inner product metric, is small in the sense that no two points are more",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-how-huge",
+      "number": "2",
+      "title": "How Huge?",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 205,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "logstates",
+          "heading": false
+        },
+        {
+          "term": "regulate",
+          "heading": false
+        },
+        {
+          "term": "total number",
+          "heading": false
+        },
+        {
+          "term": "states",
+          "heading": false
+        },
+        {
+          "term": "infinities",
+          "heading": false
+        }
+      ],
+      "extract": "Let's consider the space of states of $K$ qubits and make a simple estimate of its size. By size I don't mean the dimensionality of the space defined by the number of mutually orthogonal vectors. I mean something more like the total number of unit vectors. It's of course infinite but we can regulate it. The dimension of the Hilbert space is $2^K$ and a general vector has the form, $$|\\Psi\\ra = \\sum_1^{2^K} \\alpha_i",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-volume-of-cpn",
+      "number": "3",
+      "title": "Volume of CP(N)",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 311,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "radius epsilon",
+          "heading": false
+        },
+        {
+          "term": "count states",
+          "heading": false
+        },
+        {
+          "term": "volume",
+          "heading": true
+        },
+        {
+          "term": "balls-in-cp",
+          "heading": false
+        },
+        {
+          "term": "epsilon-ball",
+          "heading": false
+        },
+        {
+          "term": "approx left",
+          "heading": false
+        },
+        {
+          "term": "balls",
+          "heading": false
+        },
+        {
+          "term": "entropy",
+          "heading": false
+        }
+      ],
+      "extract": "To do any kind of rigorous counting of points in a continuous space we have to coarse-grain the space. An example is counting states in classical statistical mechanics where we coarse grain, replacing points by little balls of radius $\\epsilon.$ This allows us to count states, for example to define entropy, \\be S=\\log{(\\#states)} \\label{entropy} \\ee at the cost an additive term, $\\Delta\\log{\\epsilon}$, $\\Delta$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-relative-complexity",
+      "number": "4",
+      "title": "Relative Complexity",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 733,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "relative complexity",
+          "heading": true
+        },
+        {
+          "term": "qubit gates",
+          "heading": false
+        },
+        {
+          "term": "pile",
+          "heading": false
+        },
+        {
+          "term": "coherent superposition",
+          "heading": false
+        },
+        {
+          "term": "simple operations",
+          "heading": false
+        },
+        {
+          "term": "off",
+          "heading": false
+        },
+        {
+          "term": "distance",
+          "heading": false
+        },
+        {
+          "term": "machine",
+          "heading": false
+        }
+      ],
+      "extract": "The enormity of the space of states of quantum systems begs the question of how to measure the distance between states. Are some states close to each other and others enormously far? The usual metric in state space (by which I mean $CP(N)$) is the inner-product metric. It's also called the Fubini-Study (FS) metric. The FS distance between two vectors $|A\\ra$ and $|B\\ra$ is, \\be d_{fs}(A,B) = \\arccos{|\\la A |B\\ra|}.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-dual-role-of-unitaries",
+      "number": "5",
+      "title": "Dual Role of Unitaries",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 225,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unitaries",
+          "heading": true
+        },
+        {
+          "term": "dual role",
+          "heading": true
+        },
+        {
+          "term": "unitary operators",
+          "heading": false
+        },
+        {
+          "term": "entangled states",
+          "heading": false
+        },
+        {
+          "term": "uij",
+          "heading": false
+        }
+      ],
+      "extract": "Dual Role of Unitaries Complexity can be deﬁned for states2, but in many ways it is more natural to start with the complexity of operations that you can do to a system. That means the complexity of unitary operators. Unitary matrices have a dual role in quantum information theory. First of all they are the matrix representation of unitary operators, U = X Uij|i⟩⟨j| (5.9) 1There are still details associated with how",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-6-volume-of-su2k",
+      "number": "6",
+      "title": "Volume of SU(2K)",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 203,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volume",
+          "heading": true
+        },
+        {
+          "term": "unitaries",
+          "heading": false
+        },
+        {
+          "term": "entangled",
+          "heading": false
+        },
+        {
+          "term": "epsilon-ball",
+          "heading": false
+        }
+      ],
+      "extract": "Volume of SU(2K) Let’s make a more reﬁned calculation of the number of operators in SU(N) by dividing its volume by the volume of an epsilon ball of the same dimensionality (the dimension of SU(N) is N 2−1.). The volume of SU(N) is https://arxiv.org/abs/math-ph/0210033 V [SU(N)] = 2π (N+2)(N−1) 2 1!2!3!....(N −1)! (6.12) 3The bar in ¯J indicates time reversal or in relativistic quantum ﬁeld theory the CPT operation.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-7-exploring-su2k",
+      "number": "7",
+      "title": "Exploring SU(2K)",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 14,
+      "labelStart": "10",
+      "labelEnd": "13",
+      "words": 575,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "k-local all-to-all",
+          "heading": false
+        },
+        {
+          "term": "all-to-all circuit",
+          "heading": false
+        },
+        {
+          "term": "circuit architecture",
+          "heading": false
+        },
+        {
+          "term": "gates act",
+          "heading": false
+        },
+        {
+          "term": "local circuit",
+          "heading": false
+        },
+        {
+          "term": "qubits",
+          "heading": false
+        },
+        {
+          "term": "auxiliary system",
+          "heading": false
+        },
+        {
+          "term": "unitary operator",
+          "heading": false
+        }
+      ],
+      "extract": "Exploring SU(2K) We’ve seen that the space of unitary operators is gigantic. Now I want to discuss how to move through it. I’ve already hinted that we don’t make big complexity jumps, but instead move in little steps called gates. A sequence of gates is called a circuit although it has nothing to do with periodicity. It’s just a name. Deﬁnition: A k-local gate is a nontrivial k-qubit unitary operator chosen from",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-71-relative-complexity-of-unitaries",
+      "number": "7.1",
+      "title": "Relative Complexity of Unitaries",
+      "level": 3,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 437,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "relative complexity",
+          "heading": true
+        },
+        {
+          "term": "unitaries",
+          "heading": true
+        },
+        {
+          "term": "label ggggv",
+          "heading": false
+        },
+        {
+          "term": "inner product",
+          "heading": false
+        },
+        {
+          "term": "product metric",
+          "heading": false
+        },
+        {
+          "term": "product distance",
+          "heading": false
+        },
+        {
+          "term": "dag",
+          "heading": false
+        },
+        {
+          "term": "right-invariant",
+          "heading": false
+        }
+      ],
+      "extract": "The standard inner product metric for unitaries is similar to the inner product metric for states. In fact if we think of unitaries as the wave functions of maximally entangled systems then it is the inner product for such states. The inner product distance between $U$ and $V$ is, \\be d(UV) = \\arccos \\ |\\Tr U^{\\dag}V| \\ee where $\\Tr$ means the normalized trace defined so that $\\Tr I =1.$ For the same reasons that I",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-72-complexity-is-discontinuous",
+      "number": "7.2",
+      "title": "Complexity is Discontinuous",
+      "level": 3,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 238,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "complexity",
+          "heading": true
+        },
+        {
+          "term": "ref ggggv",
+          "heading": false
+        },
+        {
+          "term": "relative complexity",
+          "heading": false
+        },
+        {
+          "term": "discontinuous",
+          "heading": true
+        },
+        {
+          "term": "tolerance",
+          "heading": false
+        },
+        {
+          "term": "epsilon",
+          "heading": false
+        }
+      ],
+      "extract": "\\bn In describing relative complexity I've suppressed issues having to do with coarse-graining by epsilon balls. For example in \\ref{uggggv}, \\ref{U=ggggV2}, \\ref{U=ggggV3}, and \\ref{U=ggggV4} I ignored the phrase, \\it to within a tolerance epsilon.\\rm \\ In fact as epsilon becomes small it takes an ever increasing number of gates to achieve that tolerance. The increase is only logarithmic in $\\frac{1}{\\epsilon}$ but",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-8-graph-theory-perspective",
+      "number": "8",
+      "title": "Graph Theory Perspective",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 21,
+      "labelStart": "16",
+      "labelEnd": "20",
+      "words": 876,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circuit graph",
+          "heading": false
+        },
+        {
+          "term": "suk",
+          "heading": false
+        },
+        {
+          "term": "grows outward",
+          "heading": false
+        },
+        {
+          "term": "relative complexity",
+          "heading": false
+        },
+        {
+          "term": "bi-invariant metric",
+          "heading": false
+        },
+        {
+          "term": "center includegraphics",
+          "heading": false
+        },
+        {
+          "term": "assuming no-collisions",
+          "heading": false
+        },
+        {
+          "term": "pdf caption",
+          "heading": false
+        }
+      ],
+      "extract": "Circuits can be usefully described using graph theory\\footnote{See also Henry Lin, ``Caley Graphs and Complexity Geometry\", \\url{https://arxiv.org/pdf/1808.06620.pdf}.}. I'll call a graph describing a circuit a \\it circuit graph.\\rm Let's begin at the identity and act with a circuit of depth one, in other words a circuit of a single step with $K/2$ gates. For simplicity let's assume the allowed gate set is a single",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-81-collisions-and-loops",
+      "number": "8.1",
+      "title": "Collisions and Loops",
+      "level": 3,
+      "pageStart": 21,
+      "pageEnd": 26,
+      "labelStart": "20",
+      "labelEnd": "25",
+      "words": 931,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "collisions",
+          "heading": true
+        },
+        {
+          "term": "expander end",
+          "heading": false
+        },
+        {
+          "term": "loops",
+          "heading": true
+        },
+        {
+          "term": "label expander",
+          "heading": false
+        },
+        {
+          "term": "bethe end",
+          "heading": false
+        },
+        {
+          "term": "center includegraphics",
+          "heading": false
+        },
+        {
+          "term": "pdf caption",
+          "heading": false
+        },
+        {
+          "term": "ref bethe",
+          "heading": false
+        }
+      ],
+      "extract": "Each vertex of the tree represents a unitary operator and for that reason we can think of the tree as being embedded in $SU(2^K).$ Suppose a collision does occur. This means that two leaves of the tree are located at the same point is $\\suk.$ We can represent this by drawing the two leaves as a single leaf as in figure \\ref{collision}. \\begin{figure}[H] \\begin{center} \\includegraphics[scale=.4]{collision.pdf}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-9-the-second-law-of-quantum-complexity",
+      "number": "9",
+      "title": "The Second Law of Quantum Complexity",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 30,
+      "labelStart": "25",
+      "labelEnd": "29",
+      "words": 1276,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "complexity",
+          "heading": true
+        },
+        {
+          "term": "maximum complexity",
+          "heading": false
+        },
+        {
+          "term": "fictitious entropy",
+          "heading": false
+        },
+        {
+          "term": "auxiliary entropy",
+          "heading": false
+        },
+        {
+          "term": "complexity equilibrium",
+          "heading": false
+        },
+        {
+          "term": "red trajectory",
+          "heading": false
+        },
+        {
+          "term": "green trajectory",
+          "heading": false
+        },
+        {
+          "term": "trajectory continues",
+          "heading": false
+        }
+      ],
+      "extract": "I'm not sure why complexity theorists never remarked on the similarity of quantum complexity and classical entropy, or the existence of a second law of complexity\\footnote{There is a very interesting paper by Zurek in which he argues that that the classical entopy of a system is the ensemble average of the Kolmogorov algorithmic complexity of states in phase space. [W. Zurek, Phys.\\ Rev.\\ A {\\bf 40}, 4731 (1989)]",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-91-hamiltonian-evolution",
+      "number": "9.1",
+      "title": "Hamiltonian Evolution",
+      "level": 3,
+      "pageStart": 30,
+      "pageEnd": 32,
+      "labelStart": "29",
+      "labelEnd": "31",
+      "words": 413,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "ref csims",
+          "heading": false
+        },
+        {
+          "term": "suk",
+          "heading": false
+        },
+        {
+          "term": "thermal equilibrium",
+          "heading": false
+        },
+        {
+          "term": "recurrence time",
+          "heading": false
+        },
+        {
+          "term": "complexity",
+          "heading": false
+        },
+        {
+          "term": "hamiltonian",
+          "heading": true
+        },
+        {
+          "term": "horizon",
+          "heading": false
+        }
+      ],
+      "extract": "In the live lectures at PiTP I ran out of time before I had a chance to discuss how complexity evolves when a system's dynamics is governed by a time independent \\kl \\ Hamiltonian. In that case the constraint of energy conservation restricts the motion of $U(t)$ to lie on a relatively low dimensional subspace of \\Suk. Let's write $U(t)$ in the form, \\bea U(t) \\eq e^{\\-iHt} \\cr \\cr \\eq \\sum_{i=1}^{2^K} |E_i\\ra \\la",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-ii-lecture-ii-black-holes-and-the-second-law-of",
+      "number": null,
+      "title": "II Lecture II: Black Holes and the Second Law of Complexity",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": "31",
+      "labelEnd": "31",
+      "words": 10,
+      "summary": null,
+      "keywords": [],
+      "extract": "Lecture II: Black Holes and the Second Law of Complexity",
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-10-preface",
+      "number": "10",
+      "title": "Preface",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": "31",
+      "labelEnd": "32",
+      "words": 220,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "entropy increases",
+          "heading": false
+        },
+        {
+          "term": "thermal equilibrium",
+          "heading": false
+        },
+        {
+          "term": "horizon",
+          "heading": false
+        },
+        {
+          "term": "preface",
+          "heading": true
+        },
+        {
+          "term": "controls",
+          "heading": false
+        }
+      ],
+      "extract": "Preface When a star collapses a horizon forms and its area grows until it reaches its ﬁnal value. This is visible from outside the horizon and is known to be a manifestation of a statisitcal law, the second law of thermodynamics: Entropy increases until thermal equilibrium is reached. There is another similar but less well-known phenomenon: the growth of the spatial volume behind the horizon of the black hole. At",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-11-the-black-hole-quantum-circuit-correspondence",
+      "number": "11",
+      "title": "The Black Hole-Quantum Circuit Correspondence",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 33,
+      "labelStart": "32",
+      "labelEnd": "32",
+      "words": 245,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black",
+          "heading": true
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "qubits",
+          "heading": false
+        },
+        {
+          "term": "time tau",
+          "heading": false
+        },
+        {
+          "term": "circuit",
+          "heading": true
+        },
+        {
+          "term": "entropy",
+          "heading": false
+        }
+      ],
+      "extract": "Complexity is mostly studied in computer science departments. The language is that of \\it bits, qubits, \\rm and logical \\it gates\\rm, not Hamiltonians and quantum fields. At the present time there is no completely consistent framework in which a black hole can be represented as a finite collection of qubits, the kind of system for which complexity is a reasonably well formulated concept. I will not try to fill the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-111-two-problems",
+      "number": "11.1",
+      "title": "Two Problems",
+      "level": 3,
+      "pageStart": 33,
+      "pageEnd": 34,
+      "labelStart": "32",
+      "labelEnd": "33",
+      "words": 376,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "extract bob",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "one-sided wormhole",
+          "heading": false
+        },
+        {
+          "term": "alice",
+          "heading": false
+        },
+        {
+          "term": "quantum computer",
+          "heading": false
+        },
+        {
+          "term": "state psi",
+          "heading": false
+        },
+        {
+          "term": "morning",
+          "heading": false
+        },
+        {
+          "term": "she",
+          "heading": false
+        }
+      ],
+      "extract": "Let us consider two problems: \\begin{enumerate} \\item One evening before going to sleep Alice decided to record a single bit $x$ in her quantum computer, so she put the computer into the state $|\\Psi_0\\ra = |x00...000\\ra$ with $x$ either equal to $0$ or $1.$ Her intention was to come back the next morning and to retrieve $x$. But unfortunately she accidentally left the computer running all night, gate by gate",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-112-circuits-and-black-holes",
+      "number": "11.2",
+      "title": "Circuits and Black Holes",
+      "level": 3,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": "33",
+      "labelEnd": "34",
+      "words": 271,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black holes",
+          "heading": true
+        },
+        {
+          "term": "qubits",
+          "heading": false
+        },
+        {
+          "term": "syk",
+          "heading": false
+        },
+        {
+          "term": "entropy",
+          "heading": false
+        },
+        {
+          "term": "interact",
+          "heading": false
+        },
+        {
+          "term": "system",
+          "heading": false
+        },
+        {
+          "term": "infinite",
+          "heading": false
+        }
+      ],
+      "extract": "The properties of black holes suggest that a description in terms of qubits should have a particular form. First, how many qubits do we need? To fully and exactly describe the black hole and the infinite AdS-like space surrounding it we need an infinite number, but that's like saying that in order to exactly describe the solar system we need all of the degrees of freedom out to the cosmic horizon. Clearly that is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-12-the-growth-of-wormholes",
+      "number": "12",
+      "title": "The Growth of Wormholes",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 40,
+      "labelStart": "34",
+      "labelEnd": "39",
+      "words": 1137,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "slices behind",
+          "heading": false
+        },
+        {
+          "term": "maximal slices",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "ads black",
+          "heading": false
+        },
+        {
+          "term": "ref foliated-btz",
+          "heading": false
+        },
+        {
+          "term": "thermal equilibrium",
+          "heading": false
+        },
+        {
+          "term": "anchoring time",
+          "heading": false
+        },
+        {
+          "term": "darker blue",
+          "heading": false
+        }
+      ],
+      "extract": "Wormholes or Einstein-Rosen bridges grow with time. To illustrate this fact we examine the Penrose diagram \\ref{Foliated-BTZ2} of an AdS ``eternal\" black hole, or what is really two entangled black holes connected by an Einstein-Rosen bridge. \\begin{figure}[H] \\begin{center} \\includegraphics[scale=.3]{Foliated-BTZ2.pdf} \\caption{Penrose diagram for an AdS eternal black hole. The diagram is foliated by maximal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-121-properties-of-growth",
+      "number": "12.1",
+      "title": "Properties of Growth",
+      "level": 3,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": "39",
+      "labelEnd": "40",
+      "words": 183,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "growth",
+          "heading": true
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "ads",
+          "heading": false
+        },
+        {
+          "term": "two-sided case",
+          "heading": false
+        },
+        {
+          "term": "dcdt",
+          "heading": false
+        }
+      ],
+      "extract": "Let's review some facts about the growth of wormhole volume that follow from the black hole geometry. First of all, except for an early transient, lasting about a thermal time, the growth is linear with time. In the two-sided case the rate of growth of the volume satisfies, \\be \\frac{dV(t)}{dt} \\sim l_{ads}A T \\label{Vdot} \\ee where $t$ is the anchoring time, $A$ is the horizon area, $T$ is the black hole",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-122-rindler-time-and-cv",
+      "number": "12.2",
+      "title": "Rindler Time and CV",
+      "level": 3,
+      "pageStart": 41,
+      "pageEnd": 43,
+      "labelStart": "40",
+      "labelEnd": "42",
+      "words": 519,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rindler time",
+          "heading": true
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "non-extremal black",
+          "heading": false
+        },
+        {
+          "term": "circuit time",
+          "heading": false
+        },
+        {
+          "term": "sub-exponential time",
+          "heading": false
+        },
+        {
+          "term": "cirkuit",
+          "heading": false
+        },
+        {
+          "term": "complexity",
+          "heading": false
+        },
+        {
+          "term": "quantum circuits",
+          "heading": false
+        }
+      ],
+      "extract": "The standard architecture for quantum circuits (explained in Lecture I) is illustrated in figure \\ref{cirkuit}. \\begin{figure}[H] \\begin{center} \\includegraphics[scale=.4]{cirkuit.pdf} \\caption{} \\label{cirkuit} \\end{center} \\end{figure} We assume that the circuit comes equipped with a clock, and in each time-step $K/2$ gates act. For sub-exponential time the number of gates in a circuit corresponds to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-13-exponential-time-breakdown-of-gr",
+      "number": "13",
+      "title": "Exponential Time Breakdown of GR",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 44,
+      "labelStart": "42",
+      "labelEnd": "43",
+      "words": 466,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exponential time",
+          "heading": true
+        },
+        {
+          "term": "wormhole",
+          "heading": false
+        },
+        {
+          "term": "recurrence time",
+          "heading": false
+        },
+        {
+          "term": "black holes",
+          "heading": false
+        },
+        {
+          "term": "orthogonal states",
+          "heading": false
+        },
+        {
+          "term": "quantum recurrence",
+          "heading": false
+        },
+        {
+          "term": "time scale",
+          "heading": false
+        },
+        {
+          "term": "sim exp",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{expTbreakdown} According to classical general relativity an Einstein-Rosen bridge (ERB), or a one-sided bridge-to-nowhere, grows forever. It is interesting that this growth is bounded by quantum mechanics. To see why we consider a diagnostic of the length of the wormhole, namely the equal time correlation between CFT fields outside the black hole horizons. If the two fields are on the same side then the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-131-cv",
+      "number": "13.1",
+      "title": "C=V",
+      "level": 3,
+      "pageStart": 44,
+      "pageEnd": 45,
+      "labelStart": "43",
+      "labelEnd": "44",
+      "words": 172,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum complexity",
+          "heading": false
+        },
+        {
+          "term": "bounce",
+          "heading": false
+        },
+        {
+          "term": "entropy",
+          "heading": false
+        },
+        {
+          "term": "thermal",
+          "heading": false
+        }
+      ],
+      "extract": "Let's come back now to the puzzle: what grows long after thermal equilibrium is attained? I only know one thing that has all the right features: quantum complexity. As I explained in Lecture I, quantum complexity has many of the characteristics of entropy but on a grand exponential time scale. It may be thought of as the entropy of the classical auxiliary system $\\CA$ that I defined in Lecture I. To relate",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-14-precursors",
+      "number": "14",
+      "title": "Precursors",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 45,
+      "labelStart": "44",
+      "labelEnd": "44",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "Precursors",
+      "extractCut": false
+    },
+    {
+      "id": "sec-025-141-the-epidemic-model",
+      "number": "14.1",
+      "title": "The Epidemic Model",
+      "level": 3,
+      "pageStart": 45,
+      "pageEnd": 49,
+      "labelStart": "44",
+      "labelEnd": "48",
+      "words": 769,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "epidemic",
+          "heading": true
+        },
+        {
+          "term": "ref precursor-circuit",
+          "heading": false
+        },
+        {
+          "term": "precursor-circuit end",
+          "heading": false
+        },
+        {
+          "term": "label precursor-circuit",
+          "heading": false
+        },
+        {
+          "term": "precursor operator",
+          "heading": false
+        },
+        {
+          "term": "infected",
+          "heading": false
+        },
+        {
+          "term": "quantum circuit",
+          "heading": false
+        },
+        {
+          "term": "gates",
+          "heading": false
+        }
+      ],
+      "extract": "The best source of confirmation of the $\\CC=V$ hypothesis is to perturb the evolution of the black hole, and see if the correspondence between GR and quantum circuits continues to hold. For example we may allow some time-dependent perturbations to the CFT Hamiltonian and calculate the effect on the black hole geometry. At the same time we may study the effects of time-dependent perturbations on the complexity of a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-142-lyapunov-and-rindler",
+      "number": "14.2",
+      "title": "Lyapunov and Rindler",
+      "level": 3,
+      "pageStart": 49,
+      "pageEnd": 51,
+      "labelStart": "48",
+      "labelEnd": "50",
+      "words": 367,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rindler",
+          "heading": true
+        },
+        {
+          "term": "ref expgro",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "rindler time",
+          "heading": false
+        },
+        {
+          "term": "lyapunov",
+          "heading": true
+        },
+        {
+          "term": "complexity",
+          "heading": false
+        },
+        {
+          "term": "center includegraphics",
+          "heading": false
+        },
+        {
+          "term": "pdf caption",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Sec: Lyap and Rind} Let's come back to the relation between circuit clock time and Rindler time. You may think that the arguments were not very compelling but equations \\ref{difference equ} through \\ref{expgro} provide a quantitative basis for the identification. The exponential growth in \\ref{expgro} is expected and should be compared with the OTOC theory of scrambling, especially as applied to black holes.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-15-precursors-and-black-holes",
+      "number": "15",
+      "title": "Precursors and Black Holes",
+      "level": 2,
+      "pageStart": 51,
+      "pageEnd": 54,
+      "labelStart": "50",
+      "labelEnd": "53",
+      "words": 639,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shock wave",
+          "heading": false
+        },
+        {
+          "term": "maximal slice",
+          "heading": false
+        },
+        {
+          "term": "black",
+          "heading": true
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "thermal quantum",
+          "heading": false
+        },
+        {
+          "term": "shock-wave",
+          "heading": false
+        },
+        {
+          "term": "tfd",
+          "heading": false
+        },
+        {
+          "term": "center includegraphics",
+          "heading": false
+        }
+      ],
+      "extract": "In defining precursor operators in AdS/CFT it is tempting to identify the single qubit operator $W$ with a local low-dimension CFT field. However, local fields when they act inject infinite energy into the CFT system and this is not what we want. The remedy is to smear the field over a time interval. We would like the energy of the field to be such that it would increase the entropy of the black hole by one thermal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-151-instability-of-white-holes",
+      "number": "15.1",
+      "title": "Instability of White Holes",
+      "level": 3,
+      "pageStart": 54,
+      "pageEnd": 55,
+      "labelStart": "53",
+      "labelEnd": "54",
+      "words": 418,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "white",
+          "heading": true
+        },
+        {
+          "term": "entropy bounce",
+          "heading": false
+        },
+        {
+          "term": "white hole",
+          "heading": false
+        },
+        {
+          "term": "hole region",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "decreasing complexity",
+          "heading": false
+        },
+        {
+          "term": "confined gas",
+          "heading": false
+        },
+        {
+          "term": "tau right",
+          "heading": false
+        }
+      ],
+      "extract": "Earlier I talked about the meaning of the bounce in figure \\ref{Foliated-BTZ2} . It resembles the entropy bounce of a confined gas if one constrains the gas to be in a very low entropy state at $t=0$. Let me give names to the various regions of the Penrose diagram. The left and right shaded regions are the left and right black hole exteriors. The upper un-shaded region is the black hole interior in which the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-16-complexity-and-firewalls",
+      "number": "16",
+      "title": "Complexity and Firewalls",
+      "level": 2,
+      "pageStart": 55,
+      "pageEnd": 59,
+      "labelStart": "54",
+      "labelEnd": "58",
+      "words": 1199,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shock wave",
+          "heading": false
+        },
+        {
+          "term": "complexity",
+          "heading": true
+        },
+        {
+          "term": "remote past",
+          "heading": false
+        },
+        {
+          "term": "firewalls",
+          "heading": true
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "decreasing complexity",
+          "heading": false
+        },
+        {
+          "term": "past light-cone",
+          "heading": false
+        },
+        {
+          "term": "planckian region",
+          "heading": false
+        }
+      ],
+      "extract": "Let me come now to the subject of firewalls. A firewall is supposed to be an extremely intense high energy shock wave propagating on or just behind the horizon. There are two paradoxes, both of which were claimed to be solved by firewalls. One is connected with entanglement and the other with ``typicality.\" The paradox of multiple entanglements is solved by the ER=EPR principle and I will not discuss it further. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-161-firewalls-are-fragile",
+      "number": "16.1",
+      "title": "Firewalls are Fragile",
+      "level": 3,
+      "pageStart": 59,
+      "pageEnd": 60,
+      "labelStart": "58",
+      "labelEnd": "59",
+      "words": 354,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shock wave",
+          "heading": false
+        },
+        {
+          "term": "fragile",
+          "heading": true
+        },
+        {
+          "term": "thermal photon",
+          "heading": false
+        },
+        {
+          "term": "original shock",
+          "heading": false
+        },
+        {
+          "term": "firewalls",
+          "heading": true
+        },
+        {
+          "term": "scrambling time",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "single thermal",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Sec: fragile FW} \\begin{figure}[H] \\begin{center} \\includegraphics[scale=.4]{kick.pdf} \\caption{An intially super-Planckian shockwave will be ``kicked\" into the singularity by a single thermal quantum. The green region is the Plankian region.} \\label{kick} \\end{center} \\end{figure} The photon and the shock wave will undergo a high energy collision. On can think about the collision from the point of view of a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-162-what-happens-after-exponential-time",
+      "number": "16.2",
+      "title": "What Happens After Exponential Time?",
+      "level": 3,
+      "pageStart": 60,
+      "pageEnd": 63,
+      "labelStart": "59",
+      "labelEnd": "62",
+      "words": 721,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exponential time",
+          "heading": true
+        },
+        {
+          "term": "boost symmetry",
+          "heading": false
+        },
+        {
+          "term": "complexity equilibrium",
+          "heading": false
+        },
+        {
+          "term": "tfd",
+          "heading": false
+        },
+        {
+          "term": "label boost",
+          "heading": false
+        },
+        {
+          "term": "bob",
+          "heading": false
+        },
+        {
+          "term": "recurrence time",
+          "heading": false
+        },
+        {
+          "term": "alice perturbation",
+          "heading": false
+        }
+      ],
+      "extract": "Let's suppose that it is true that once complexity equilibrium is established, there is a high probability for a firewall. How stable is that firewall? The naive answer is that equilibrium is stable and not likely to be significantly disturbed by butterflies. That is true for ordinary thermal equilibrium but complexity equilibrium is different. Recall from Lecture I that the transition from growing complexity to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-163-the-fragility-of-complexity-equilibrium",
+      "number": "16.3",
+      "title": "The Fragility of Complexity Equilibrium",
+      "level": 3,
+      "pageStart": 63,
+      "pageEnd": 64,
+      "labelStart": "62",
+      "labelEnd": "63",
+      "words": 374,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "complexity equilibrium",
+          "heading": true
+        },
+        {
+          "term": "thermal equilibrium",
+          "heading": false
+        },
+        {
+          "term": "thermal photon",
+          "heading": false
+        },
+        {
+          "term": "maximum complexity",
+          "heading": false
+        },
+        {
+          "term": "maximal complexity",
+          "heading": false
+        },
+        {
+          "term": "maximum entropy",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "exponential time",
+          "heading": false
+        }
+      ],
+      "extract": "Let's take the default position: If there is no reason to believe that firewalls don't occur when the complexity stops increasing, then they probably do occur. How stable would such a firewall be? The naive answer is that equilibrium is stable and not likely to be significantly disturbed by butterflies. That is true for ordinary thermal equilibrium, say of a gas of $N$ classical molecules. Thermal equilibrium is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-17-do-typical-states-have-firewalls",
+      "number": "17",
+      "title": "Do Typical States have Firewalls?",
+      "level": 2,
+      "pageStart": 64,
+      "pageEnd": 64,
+      "labelStart": "63",
+      "labelEnd": "63",
+      "words": 40,
+      "summary": null,
+      "keywords": [],
+      "extract": "Does a typical state of black hole entangled with a second \\it purifying \\rm system have a firewall? The answer is subtle and depends on what we mean by typical. There are a number of different situations.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-034-171-ads-black-holes",
+      "number": "17.1",
+      "title": "AdS Black Holes",
+      "level": 3,
+      "pageStart": 64,
+      "pageEnd": 65,
+      "labelStart": "63",
+      "labelEnd": "64",
+      "words": 373,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black holes",
+          "heading": true
+        },
+        {
+          "term": "complexity equilibrium",
+          "heading": false
+        },
+        {
+          "term": "ads",
+          "heading": true
+        },
+        {
+          "term": "firewalls",
+          "heading": false
+        },
+        {
+          "term": "long time",
+          "heading": false
+        },
+        {
+          "term": "overwhelming",
+          "heading": false
+        },
+        {
+          "term": "states",
+          "heading": false
+        },
+        {
+          "term": "exceptional",
+          "heading": false
+        }
+      ],
+      "extract": "First of all for black holes in AdS which cannot evaporate, but which are entangled through wormholes to other AdS black holes: \\bi \\item Almost all states of the entangled system are maximally complex. If we accept the default position---without an argument against a firewall, a given maximally complex state has a high likelihood of having a firewall---then almost all states are likely to have firewalls. To be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-172-evaporating-black-holes",
+      "number": "17.2",
+      "title": "Evaporating Black Holes",
+      "level": 3,
+      "pageStart": 65,
+      "pageEnd": 67,
+      "labelStart": "64",
+      "labelEnd": "66",
+      "words": 432,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "evaporating black",
+          "heading": true
+        },
+        {
+          "term": "black holes",
+          "heading": true
+        },
+        {
+          "term": "hole shrinks",
+          "heading": false
+        },
+        {
+          "term": "complexity growth",
+          "heading": false
+        },
+        {
+          "term": "evaporation process",
+          "heading": false
+        },
+        {
+          "term": "radiation",
+          "heading": false
+        },
+        {
+          "term": "chaotic interactions",
+          "heading": false
+        },
+        {
+          "term": "ﬁrewall",
+          "heading": false
+        }
+      ],
+      "extract": "Evaporating Black Holes Finally there are black holes in asymptotically ﬂat space that can evaporate. Such black holes may start out in low complexity pure states. As they evaporate and shrink they become entangled with their own evaporation products, so that by the Page time the en- tanglement is close to maximal. One might think that as the black hole becomes small the complexity must decrease, leading to a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-iii-lecture-iii-the-thermodynamics-of-complexity",
+      "number": null,
+      "title": "III Lecture III: The Thermodynamics of Complexity",
+      "level": 1,
+      "pageStart": 67,
+      "pageEnd": 67,
+      "labelStart": "66",
+      "labelEnd": "66",
+      "words": 6,
+      "summary": null,
+      "keywords": [],
+      "extract": "Lecture III: The Thermodynamics of Complexity",
+      "extractCut": false
+    },
+    {
+      "id": "sec-037-18-preface",
+      "number": "18",
+      "title": "Preface",
+      "level": 2,
+      "pageStart": 67,
+      "pageEnd": 68,
+      "labelStart": "66",
+      "labelEnd": "67",
+      "words": 357,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "negentropy",
+          "heading": false
+        },
+        {
+          "term": "resource theory",
+          "heading": false
+        },
+        {
+          "term": "entropy",
+          "heading": false
+        },
+        {
+          "term": "preface",
+          "heading": true
+        },
+        {
+          "term": "amount",
+          "heading": false
+        },
+        {
+          "term": "extracted",
+          "heading": false
+        },
+        {
+          "term": "thermodynamics",
+          "heading": false
+        },
+        {
+          "term": "equilibrium",
+          "heading": false
+        }
+      ],
+      "extract": "Preface This lecture is about the thermodynamics of complexity—thermodynamics as nineteenth century steam engineers would have understood the term. The question of that day was: How do you quantify the amount of mechanical work that can be extracted from a given amount of energy? Entropy was of course the key concept. Entropy, or more properly, the lack of entropy is a resource for doing work. What exactly is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-19-negentropy",
+      "number": "19",
+      "title": "Negentropy",
+      "level": 2,
+      "pageStart": 68,
+      "pageEnd": 69,
+      "labelStart": "67",
+      "labelEnd": "68",
+      "words": 270,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "negentropy",
+          "heading": true
+        },
+        {
+          "term": "total entropy",
+          "heading": false
+        },
+        {
+          "term": "box-uncor",
+          "heading": false
+        },
+        {
+          "term": "box-cor",
+          "heading": false
+        },
+        {
+          "term": "microstates",
+          "heading": false
+        },
+        {
+          "term": "center includegraphics",
+          "heading": false
+        },
+        {
+          "term": "pdf caption",
+          "heading": false
+        },
+        {
+          "term": "begin center",
+          "heading": false
+        }
+      ],
+      "extract": "\\bn Let's begin with some examples of negentropy. Consider a box of gas composed of $n$ classical particles. The microstate of the box is defined by $n$ points in the phase space of a single particle. The macrostate can be described thermodynamically in terms of a much smaller number of thermodynamic variables including entropy. If the entropy is maximal (subject to some constraint) then the gas is in equilibrium",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-20-uncomplexity",
+      "number": "20",
+      "title": "Uncomplexity",
+      "level": 2,
+      "pageStart": 69,
+      "pageEnd": 69,
+      "labelStart": "68",
+      "labelEnd": "68",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "Uncomplexity",
+      "extractCut": false
+    },
+    {
+      "id": "sec-040-201-the-auxiliary-system",
+      "number": "20.1",
+      "title": "The Auxiliary System",
+      "level": 3,
+      "pageStart": 69,
+      "pageEnd": 70,
+      "labelStart": "68",
+      "labelEnd": "69",
+      "words": 502,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "complexity equilibrium",
+          "heading": false
+        },
+        {
+          "term": "auxiliary system",
+          "heading": true
+        },
+        {
+          "term": "thermal equilibrium",
+          "heading": false
+        },
+        {
+          "term": "state complexity",
+          "heading": false
+        },
+        {
+          "term": "unentangled state",
+          "heading": false
+        },
+        {
+          "term": "uncomplexity",
+          "heading": false
+        },
+        {
+          "term": "simple unentangled",
+          "heading": false
+        },
+        {
+          "term": "negentropy",
+          "heading": false
+        }
+      ],
+      "extract": "Instead of using operator complexity I'm going to work with state complexity for the rest of this lecture. State complexity is the number of gates that it takes to go from a simple unentangled state of $K$ qubits to the state in question. Physical states can be described as normalized vectors in the Hilbert space of $K$ qubits with the phase modded out. In other words they are points on $CP(2^K - 1).$ The evolution",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-202-combining-auxiliary-systems",
+      "number": "20.2",
+      "title": "Combining Auxiliary Systems",
+      "level": 3,
+      "pageStart": 70,
+      "pageEnd": 72,
+      "labelStart": "69",
+      "labelEnd": "71",
+      "words": 514,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "auxiliary",
+          "heading": true
+        },
+        {
+          "term": "auxiliary system",
+          "heading": false
+        },
+        {
+          "term": "actual complexity",
+          "heading": false
+        },
+        {
+          "term": "single qubit",
+          "heading": false
+        },
+        {
+          "term": "relative complexity",
+          "heading": false
+        },
+        {
+          "term": "ref box-cor",
+          "heading": false
+        },
+        {
+          "term": "ref psi",
+          "heading": false
+        },
+        {
+          "term": "combined system",
+          "heading": false
+        }
+      ],
+      "extract": "In thermodynamics it is important to understand how systems combine, as for example, when we combined two boxes of gas. The question arises: What does it mean to combine two auxiliary systems? For example suppose $\\CA$ is the auxiliary system corresponding to some quantum system $\\CQ$. Is there a quantum system whose auxiliary is two copies of $\\CA$? The first thing that comes to mind is to simply double the quantum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-21-uncomplexity-as-a-resource",
+      "number": "21",
+      "title": "Uncomplexity as a Resource",
+      "level": 2,
+      "pageStart": 72,
+      "pageEnd": 73,
+      "labelStart": "71",
+      "labelEnd": "72",
+      "words": 306,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uncomplexity",
+          "heading": true
+        },
+        {
+          "term": "clean qubit",
+          "heading": false
+        },
+        {
+          "term": "computational work",
+          "heading": false
+        },
+        {
+          "term": "single clean",
+          "heading": false
+        },
+        {
+          "term": "reversible",
+          "heading": false
+        },
+        {
+          "term": "resource",
+          "heading": true
+        },
+        {
+          "term": "adding single",
+          "heading": false
+        },
+        {
+          "term": "measurements",
+          "heading": false
+        }
+      ],
+      "extract": "In discussing computational work it is helpful to separate what can be done by reversible (unitary) operations from what can be done by applying measurements. Starting with a maximally complex state, or any other state, the complexity can be eliminated by measuring all Pauli $Z$ operators. The outcome will be a unentangled product state which can be brought to the state $|000...0\\ra$ by applying no more than $K$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-22-the-power-of-one-clean-qubit",
+      "number": "22",
+      "title": "The Power of One Clean Qubit",
+      "level": 2,
+      "pageStart": 73,
+      "pageEnd": 73,
+      "labelStart": "72",
+      "labelEnd": "72",
+      "words": 355,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clean qubit",
+          "heading": true
+        },
+        {
+          "term": "single qubit",
+          "heading": false
+        },
+        {
+          "term": "adding single",
+          "heading": false
+        },
+        {
+          "term": "patrick",
+          "heading": false
+        },
+        {
+          "term": "power",
+          "heading": true
+        },
+        {
+          "term": "quantum information",
+          "heading": false
+        },
+        {
+          "term": "him",
+          "heading": false
+        },
+        {
+          "term": "trace",
+          "heading": false
+        }
+      ],
+      "extract": "That a resource analogous to negentropy can be vastly increased by merely adding a single qubit seems very counterintuitive. If I told you that by adding a single molecule to a gas of $10^{30}$ molecules in thermal equilibrium, it would allow you to extract a large amount of useful work you would probably dismiss the claim as nonsense. You would of course be right. When I first thought about the fact that a single",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-221-the-protocol",
+      "number": "22.1",
+      "title": "The Protocol",
+      "level": 3,
+      "pageStart": 73,
+      "pageEnd": 75,
+      "labelStart": "72",
+      "labelEnd": "74",
+      "words": 411,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clean qubit",
+          "heading": false
+        },
+        {
+          "term": "clean end",
+          "heading": false
+        },
+        {
+          "term": "ref clean",
+          "heading": false
+        },
+        {
+          "term": "label clean",
+          "heading": false
+        },
+        {
+          "term": "frac dag",
+          "heading": false
+        },
+        {
+          "term": "frac big",
+          "heading": false
+        },
+        {
+          "term": "dag right",
+          "heading": false
+        },
+        {
+          "term": "sqrt big",
+          "heading": false
+        }
+      ],
+      "extract": "Here is the circuit that accomplishes the task: \\begin{figure}[H] \\begin{center} \\includegraphics[scale=.2]{clean1.pdf} \\caption{} \\label{Clean1} \\end{center} \\end{figure} Let me explain figure \\ref{Clean1}. The initial state is, \\be |\\Psi\\ra = |max\\ra \\otimes |0\\ra \\ee The single-qubit gates $H$ are Hadamard gates, which have the following action, \\bea H |0\\ra &=& \\frac{1}{\\sqrt 2} \\big{(}|0\\ra + |1\\ra\\big{)} \\cr H",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-222-expending-uncomplexity-and-negentropy",
+      "number": "22.2",
+      "title": "Expending Uncomplexity and Negentropy",
+      "level": 3,
+      "pageStart": 75,
+      "pageEnd": 76,
+      "labelStart": "74",
+      "labelEnd": "75",
+      "words": 67,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uncomplexity",
+          "heading": true
+        },
+        {
+          "term": "expending",
+          "heading": true
+        },
+        {
+          "term": "negentropy",
+          "heading": true
+        }
+      ],
+      "extract": "Expending Uncomplexity and Negentropy The uncomplexity of |max⟩is zero but by adding the clean qubit we bought ourselves an uncomplexity 2K. But the action of the circuit will inevitably increase the complexity by roughly the number of applied gates. Assuming that 22.89 is the minimal description of G then we can expect the increase of complexity to be of order n which is also the complexity 74",
+      "extractCut": false
+    },
+    {
+      "id": "sec-046-231-ca",
+      "number": "23.1",
+      "title": "CA",
+      "level": 3,
+      "pageStart": 76,
+      "pageEnd": 76,
+      "labelStart": "75",
+      "labelEnd": "75",
+      "words": 156,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clean qubit",
+          "heading": false
+        },
+        {
+          "term": "single qubit",
+          "heading": false
+        },
+        {
+          "term": "negentropy",
+          "heading": false
+        },
+        {
+          "term": "uncomplexity",
+          "heading": false
+        }
+      ],
+      "extract": "2K to \u00002K −C(G) \u0001 . In other words the computational work in computing TrG expends an uncomplexity equal to the complexity of G. In this example uncomplexity is not the only resource we made use of. A maximally complex state is also a state of maximum entropy which in this case is S = K log 2. The addition of the clean qubit does not change the entropy, but after the circuit has acted the clean qubit is no longer",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-23-spacetime-and-uncomplexity",
+      "number": "23",
+      "title": "Spacetime and Uncomplexity",
+      "level": 2,
+      "pageStart": 76,
+      "pageEnd": 77,
+      "labelStart": "75",
+      "labelEnd": "76",
+      "words": 264,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wdw patch",
+          "heading": false
+        },
+        {
+          "term": "uncomplexity",
+          "heading": true
+        },
+        {
+          "term": "space-time volume",
+          "heading": false
+        },
+        {
+          "term": "gravitational aspects",
+          "heading": false
+        },
+        {
+          "term": "horizon",
+          "heading": false
+        },
+        {
+          "term": "complexity",
+          "heading": false
+        },
+        {
+          "term": "portion",
+          "heading": false
+        }
+      ],
+      "extract": "Spacetime and Uncomplexity Now I want to return to the gravitational aspects of complexity, or more to the point, the gravitational aspects of uncomplexity. 23.1 CA In these lectures I haven’t spoken yet about the the complexity-action correspondence (D. Carmi, R. C. Myers and P. Rath, https://arxiv.org/pdf/1612.00433.pdf A. Brown, D. A. Roberts, L. Susskind, B. Swingle and Y. Zhao, https://arxiv.org/pdf/1509.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-232-geometric-interpretation-of-uncomplexity",
+      "number": "23.2",
+      "title": "Geometric Interpretation of Uncomplexity",
+      "level": 3,
+      "pageStart": 77,
+      "pageEnd": 80,
+      "labelStart": "76",
+      "labelEnd": "79",
+      "words": 397,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uncomplexity",
+          "heading": true
+        },
+        {
+          "term": "wdw patch",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "patch behind",
+          "heading": false
+        },
+        {
+          "term": "spacetime volume",
+          "heading": false
+        },
+        {
+          "term": "thermal photon",
+          "heading": false
+        },
+        {
+          "term": "exponential time",
+          "heading": false
+        },
+        {
+          "term": "ﬁrewalls",
+          "heading": false
+        }
+      ],
+      "extract": "Geometric Interpretation of Uncomplexity Figure 39 illustrates a one-sided AdS black hole formed by the collapse of some matter. In the upper right corner the small slash-mark indicates the exponential time at which the complexity becomes maximal. In Lecture II I explained the reasons for thinking that a 76 breakdown of classical GR and possibly the occurrence of ﬁrewalls might take place at this time. The ﬁgure",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-iv-conclusion",
+      "number": null,
+      "title": "IV Conclusion",
+      "level": 1,
+      "pageStart": 80,
+      "pageEnd": 84,
+      "labelStart": "79",
+      "labelEnd": "83",
+      "words": 1196,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wormhole length",
+          "heading": false
+        },
+        {
+          "term": "black holes",
+          "heading": false
+        },
+        {
+          "term": "statistical tendencies",
+          "heading": false
+        },
+        {
+          "term": "complexity equilibrium",
+          "heading": false
+        },
+        {
+          "term": "statistical tendency",
+          "heading": false
+        },
+        {
+          "term": "quantum complexity",
+          "heading": false
+        },
+        {
+          "term": "shorter geodesic",
+          "heading": false
+        },
+        {
+          "term": "ads cft",
+          "heading": false
+        }
+      ],
+      "extract": "Conclusion To me, the idea that computational complexity might govern the interior geometries of black holes was startling. Complexity, especially quantum complexity, is such a subtle and 79 ﬁnespun quantity that ordinarily it is impossible to measure or even to compute. What makes complexity so tenuous is that it is deﬁned as a global minimum, whereas in most physical contexts local minima are the relevant things.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 1,
+        "items": [
+          "23.2 Geometric Interpretation of Uncomplexity"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [
+      "figure 21",
+      "figure 27",
+      "figure 28",
+      "figure 29",
+      "figure 30"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "complexity equilibrium",
+      "heading": true
+    },
+    {
+      "term": "state complexity",
+      "heading": false
+    },
+    {
+      "term": "quantum complexity",
+      "heading": true
+    },
+    {
+      "term": "complexity growth",
+      "heading": false
+    },
+    {
+      "term": "complexity grows",
+      "heading": true
+    },
+    {
+      "term": "maximum complexity",
+      "heading": false
+    },
+    {
+      "term": "black hole",
+      "heading": true
+    },
+    {
+      "term": "maximal complexity",
+      "heading": false
+    },
+    {
+      "term": "complexity footnote",
+      "heading": false
+    },
+    {
+      "term": "complexity increases",
+      "heading": false
+    },
+    {
+      "term": "complexity metric",
+      "heading": false
+    },
+    {
+      "term": "relative complexity",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 27,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "29",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 31,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "31",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 33,
+      "label": "32",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 34,
+      "label": "33",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 35,
+      "label": "34",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 36,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 39,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "39",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 41,
+      "label": "40",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 42,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "42",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 44,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 45,
+      "label": "44",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 46,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 48,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 49,
+      "label": "48",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 50,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 51,
+      "label": "50",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 52,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 53,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 54,
+      "label": "53",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 55,
+      "label": "54",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 56,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 57,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 58,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 59,
+      "label": "58",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 60,
+      "label": "59",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 61,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 62,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 63,
+      "label": "62",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 64,
+      "label": "63",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 65,
+      "label": "64",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 66,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 67,
+      "label": "66",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 68,
+      "label": "67",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 69,
+      "label": "68",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 70,
+      "label": "69",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 71,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 72,
+      "label": "71",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 73,
+      "label": "72",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 74,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 75,
+      "label": "74",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 76,
+      "label": "75",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 77,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 78,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 79,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 80,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 81,
+      "label": "80",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 82,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 83,
+      "label": "82",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 84,
+      "label": "83",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Time ﬂows from left to right. A gate acts on an incoming state of two-qubits to give an outgoing state",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "k-local all-to-all circuit",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Spatially local circuit",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Standard circuit architecture. Note that in each step the gates all commute because they act on non-overlapping qubits",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The auxiliary system: The evolution of the unitary operator U(t) can be thought of as the motion of a classical particle moving through the group space SU(2K)",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Relative-C",
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Vertex with d = 8",
+      "page": 18,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Regular tree with degree 8, depth 2",
+      "page": 19,
+      "pageLabel": "18",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Two views of the circuit tree. On the left is an abstract decision tree. The complexity of the unitary leaf grows linearly with the number of steps from the identity at the center. Relative complexity is proportional to the number of steps between leaves",
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Two paths collide on the same epsilon-ball",
+      "page": 22,
+      "pageLabel": "21",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Regular tree with degree 3",
+      "page": 23,
+      "pageLabel": "22",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Graph ceases being a tree and doubles back. Since a group-space is homogeneous the structure must look the same from every vertex. The shortest loops (girth of graph) is of order 4K. Thus the red loop is too short. The loops must look more like the blue loop",
+      "page": 24,
+      "pageLabel": "23",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "50-vertex, (almost) regular d = 4 expander. Generated by some AI optimization protocol",
+      "page": 25,
+      "pageLabel": "24",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "120 vertex, regular d = 4 Ramanujan-expander. Quoting Donetti, et al.: “Some remarks on its topological properties are in order. The average distance 3.714 is relatively small (i.e. one reaches any of the 120 nodes starting from any arbitrary origin in less than four steps, on average.” Note: log 12",
+      "page": 26,
+      "pageLabel": "25",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "Evolution of complexity with time. The ragged red curve is the evolution for a speciﬁc instance of an ensemble. The smooth curve is the ensemble average",
+      "page": 29,
+      "pageLabel": "28",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "The left panel shows a (red) trajectory beginning at the identity and proceeding outward along toward greater complexity",
+      "page": 29,
+      "pageLabel": "28",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "Penrose diagram for an AdS eternal black hole. The diagram is foliated by maximal slices. The darker blue portions of the slices represent the wormhole behind the horizons. The volume of the slices “bounces,” decreasing in the lower part of the diagram, and increasing in the upper part",
+      "page": 36,
+      "pageLabel": "35",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "18",
+      "title": "One sided AdS black hole formed by collapse",
+      "page": 38,
+      "pageLabel": "37",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "19",
+      "title": "One sided AdS black hole foliated by maximal slices. The dark portions of the slices represents the region behind the horizon, i.e., the bridge to nowhere",
+      "page": 39,
+      "pageLabel": "38",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "20",
+      "title": "The grey areas are not covered by the maximal-slice foliation",
+      "page": 40,
+      "pageLabel": "39",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "22",
+      "title": "Circuit for a precursor",
+      "page": 46,
+      "pageLabel": "45",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "23",
+      "title": "Each infected (blue) qubit infects each each qubit that it interacts with. The epidemic grows until all qubits are infected",
+      "page": 47,
+      "pageLabel": "46",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "24",
+      "title": "Uninfected gates cancel with their mirror images",
+      "page": 47,
+      "pageLabel": "46",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "25",
+      "title": "size as a function of time",
+      "page": 50,
+      "pageLabel": "49",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "26",
+      "title": "as a function of time",
+      "page": 50,
+      "pageLabel": "49",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "31",
+      "title": "An initially super-Planckian shockwave will eventually separate from the Planckian region and fall into the singularity. This occurs just at the Eddington-Finkelstein time when the complexity stops decreasing",
+      "page": 58,
+      "pageLabel": "57",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "32",
+      "title": "An intially super-Planckian shockwave will be “kicked” into the singularity by a single thermal quantum. The green region is the Plankian region",
+      "page": 59,
+      "pageLabel": "58",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p012-1",
+      "file": "images/img-p012-1.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-2",
+      "file": "images/img-p012-2.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-3",
+      "file": "images/img-p012-3.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-1",
+      "file": "images/img-p013-1.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-1",
+      "file": "images/img-p014-1.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-1",
+      "file": "images/img-p015-1.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-1",
+      "file": "images/img-p018-1.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p019-1",
+      "file": "images/img-p019-1.png",
+      "page": 19,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p021-1",
+      "file": "images/img-p021-1.png",
+      "page": 21,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-1",
+      "file": "images/img-p022-1.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p023-1",
+      "file": "images/img-p023-1.png",
+      "page": 23,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p024-1",
+      "file": "images/img-p024-1.png",
+      "page": 24,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p025-1",
+      "file": "images/img-p025-1.png",
+      "page": 25,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p026-1",
+      "file": "images/img-p026-1.png",
+      "page": 26,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p029-1",
+      "file": "images/img-p029-1.png",
+      "page": 29,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p029-2",
+      "file": "images/img-p029-2.png",
+      "page": 29,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p036-1",
+      "file": "images/img-p036-1.png",
+      "page": 36,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p038-1",
+      "file": "images/img-p038-1.png",
+      "page": 38,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p039-1",
+      "file": "images/img-p039-1.png",
+      "page": 39,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p040-1",
+      "file": "images/img-p040-1.png",
+      "page": 40,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p041-1",
+      "file": "images/img-p041-1.png",
+      "page": 41,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p046-1",
+      "file": "images/img-p046-1.png",
+      "page": 46,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p047-1",
+      "file": "images/img-p047-1.png",
+      "page": 47,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p047-2",
+      "file": "images/img-p047-2.png",
+      "page": 47,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p050-1",
+      "file": "images/img-p050-1.png",
+      "page": 50,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p050-2",
+      "file": "images/img-p050-2.png",
+      "page": 50,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p052-1",
+      "file": "images/img-p052-1.png",
+      "page": 52,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p053-1",
+      "file": "images/img-p053-1.png",
+      "page": 53,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p056-1",
+      "file": "images/img-p056-1.png",
+      "page": 56,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p056-2",
+      "file": "images/img-p056-2.png",
+      "page": 56,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p058-1",
+      "file": "images/img-p058-1.png",
+      "page": 58,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p059-1",
+      "file": "images/img-p059-1.png",
+      "page": 59,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p062-1",
+      "file": "images/img-p062-1.png",
+      "page": 62,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p068-1",
+      "file": "images/img-p068-1.png",
+      "page": 68,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p068-2",
+      "file": "images/img-p068-2.png",
+      "page": 68,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p074-1",
+      "file": "images/img-p074-1.png",
+      "page": 74,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p075-1",
+      "file": "images/img-p075-1.png",
+      "page": 75,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p077-1",
+      "file": "images/img-p077-1.png",
+      "page": 77,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p078-1",
+      "file": "images/img-p078-1.png",
+      "page": 78,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p079-1",
+      "file": "images/img-p079-1.png",
+      "page": 79,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p080-1",
+      "file": "images/img-p080-1.png",
+      "page": 80,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p082-1",
+      "file": "images/img-p082-1.png",
+      "page": 82,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 50,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 51,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 42
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 18
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 51 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1810.11563v1"
+  }
+}

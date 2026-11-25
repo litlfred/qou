@@ -1,0 +1,895 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0801.0083v4",
+  "title": "arxiv-0801.0083v4",
+  "variant": "pdf",
+  "pages": 36,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "0",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-0-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Recalling some Facts on 2-Categories",
+      "number": "1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-recalling-some-facts-on-2-categories"
+    },
+    {
+      "level": 1,
+      "title": "Prestacks on a Topological Space",
+      "number": "2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-prestacks-on-a-topological-space"
+    },
+    {
+      "level": 1,
+      "title": "Extensions of Gerbes",
+      "number": "3",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-extensions-of-gerbes"
+    },
+    {
+      "level": 1,
+      "title": "Obstruction Classes",
+      "number": "4",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-4-obstruction-classes"
+    },
+    {
+      "level": 1,
+      "title": "Sufficient Conditions for Existence of Obstruction Classes",
+      "number": "5",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-5-sufficient-conditions-for-existence-of-obstruc"
+    },
+    {
+      "level": 1,
+      "title": "Pronilpotent Gerbes",
+      "number": "6",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-6-pronilpotent-gerbes"
+    },
+    {
+      "level": 1,
+      "title": "Fake Global Objects of Gerbes",
+      "number": "7",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-7-fake-global-objects-of-gerbes"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 36,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 66,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gerbes",
+          "heading": false
+        },
+        {
+          "term": "central extension",
+          "heading": false
+        },
+        {
+          "term": "quanti",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0801.0083v4 [math.AG] 18 Feb 2010 CENTRAL EXTENSIONS OF GERBES AMNON YEKUTIELI Abstract. We introduce the notion of central extension of gerbes on a topo- logical space X. We show that there are obstruction classes to lifting objects and isomorphisms in a central extension. We also discuss pronilpotent gerbes. These results are used in the paper [Ye] to study twisted deformation quanti- zation on algebraic",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0801.0083v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-0-introduction",
+      "number": "0",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1012,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gerbe mrm",
+          "heading": false
+        },
+        {
+          "term": "groupoid gerbe",
+          "heading": false
+        },
+        {
+          "term": "gerbe xar",
+          "heading": false
+        },
+        {
+          "term": "gauge gerbe",
+          "heading": false
+        },
+        {
+          "term": "iso mcal",
+          "heading": false
+        },
+        {
+          "term": "check mrm",
+          "heading": false
+        },
+        {
+          "term": "global deformations",
+          "heading": false
+        },
+        {
+          "term": "obstruction class",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec.Int} A {\\em gerbe} $\\gerbe{G}$ on a topological space $X$ is the geometric version of a connected nonempty groupoid. Thus $\\gerbe{G}$ associates a groupoid $\\gerbe{G}(U)$ to any open set $U \\subset X$, and to any inclusion $V \\subset U$ of open sets there is a restriction functor $\\gerbe{G}(U) \\to \\gerbe{G}(V)$. These have to satisfy a lot of conditions (for the benefit of the reader we have included a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-recalling-some-facts-on-2-categories",
+      "number": "1",
+      "title": "Recalling some Facts on 2-Categories",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2062,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twocat cat",
+          "heading": false
+        },
+        {
+          "term": "bsym cat",
+          "heading": false
+        },
+        {
+          "term": "twocat bigl",
+          "heading": false
+        },
+        {
+          "term": "hom twocat",
+          "heading": false
+        },
+        {
+          "term": "eta cat",
+          "heading": false
+        },
+        {
+          "term": "category twocat",
+          "heading": false
+        },
+        {
+          "term": "cat circ",
+          "heading": false
+        },
+        {
+          "term": "bsym twoto",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec.recall} There are several sources in the literature on $2$-categories and prestacks, e.g.\\ \\cite{Be}, \\cite{Gi}, \\cite{Ma}, \\cite{Mo}, \\cite{Le}, \\cite{KS} and \\cite{Br}. Unfortunately there is disagreement on terminology among the sources, and hence we feel it is better to start with an exposition of the conventions we adopted, and a recollection some facts. First we must establish some set-theoretical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-prestacks-on-a-topological-space",
+      "number": "2",
+      "title": "Prestacks on a Topological Space",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1953,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prestack gerbe",
+          "heading": false
+        },
+        {
+          "term": "gerbe opn",
+          "heading": false
+        },
+        {
+          "term": "bsym gerbe",
+          "heading": false
+        },
+        {
+          "term": "cat prestack",
+          "heading": false
+        },
+        {
+          "term": "til gerbe",
+          "heading": false
+        },
+        {
+          "term": "gerbe twoiso",
+          "heading": false
+        },
+        {
+          "term": "groupoids gerbe",
+          "heading": false
+        },
+        {
+          "term": "rest gerbe",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:prest} Let $X$ be a topological space. We need some notation for open coverings. Let $U \\subset X$ be an open set, and let $\\bsym{U} = \\{ U_k \\}_{k \\in K}$ be an open covering of $U$, i.e.\\ $U = \\bigcup_{k \\in K} U_k$. Given $k_0, \\ldots, k_m \\in K$ we write \\[ U_{k_0, \\ldots, k_m} := U_{i_0} \\cap \\cdots \\cap U_{k_m} . \\] Let $\\mcal{S}$ be a sheaf of sets on $X$. For an open set $U \\subset X$ we denote by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-extensions-of-gerbes",
+      "number": "3",
+      "title": "Extensions of Gerbes",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3288,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subgroupoid gerbe",
+          "heading": false
+        },
+        {
+          "term": "gerbe xar",
+          "heading": false
+        },
+        {
+          "term": "bar gerbe",
+          "heading": false
+        },
+        {
+          "term": "subgroupoid cat",
+          "heading": false
+        },
+        {
+          "term": "gerbe bigl",
+          "heading": false
+        },
+        {
+          "term": "morphism gerbe",
+          "heading": false
+        },
+        {
+          "term": "iso gerbe",
+          "heading": false
+        },
+        {
+          "term": "tors gerbe",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec.ext} We begin by taking certain basic notions about groups (such as normal subgroup and center) and generalizing them to groupoids. As a matter of convenience we often refer to a functor $F : \\cat{G} \\to \\cat{H}$ between groupoids as a morphism. (Indeed this is a $1$-morphism in the $2$-category $\\twocat{Groupoid}$ of groupoids.) \\begin{dfn} \\label{dfn:3} Let $\\cat{G}$ be a groupoid. A {\\em normal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-obstruction-classes",
+      "number": "4",
+      "title": "Obstruction Classes",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2346,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bsym gerbe",
+          "heading": false
+        },
+        {
+          "term": "gerbe xar",
+          "heading": false
+        },
+        {
+          "term": "covering bsym",
+          "heading": false
+        },
+        {
+          "term": "refines bsym",
+          "heading": false
+        },
+        {
+          "term": "circ phi",
+          "heading": false
+        },
+        {
+          "term": "ech cocycle",
+          "heading": false
+        },
+        {
+          "term": "replacing bsym",
+          "heading": false
+        },
+        {
+          "term": "suppose bsym",
+          "heading": false
+        }
+      ],
+      "extract": "We fix a topological space $X$. Given a sheaf $\\mcal{N}$ of abelian groups on $X$, and an open covering $\\bsym{U} = \\{ U_k \\}_{k \\in K}$ of $X$, there are the \\v{C}ech cohomology groups $\\check{\\mrm{H}}^p(\\bsym{U}, \\mcal{N})$ for $p \\geq 0$. Passing to the limit over all such open coverings we obtain the \\v{C}ech cohomology groups $\\check{\\mrm{H}}^p(X, \\mcal{N})$. {} From here until the end of this section we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-sufficient-conditions-for-existence-of-obstruc",
+      "number": "5",
+      "title": "Sufficient Conditions for Existence of Obstruction Classes",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1567,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mcal acyclic",
+          "heading": false
+        },
+        {
+          "term": "mcal torsor",
+          "heading": false
+        },
+        {
+          "term": "enough mcal",
+          "heading": false
+        },
+        {
+          "term": "gerbe bigl",
+          "heading": false
+        },
+        {
+          "term": "coherent mcal",
+          "heading": false
+        },
+        {
+          "term": "mcal module",
+          "heading": false
+        },
+        {
+          "term": "xar gerbe",
+          "heading": false
+        },
+        {
+          "term": "let mcal",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec.suff} Let $\\mcal{N}$ be a sheaf of abelian groups on a topological space $X$. The operation in $\\mcal{N}$ is multiplication. We denote by $\\mrm{H}^i (X, \\mcal{N})$ the derived functor sheaf cohomology. An open set $U \\subset X$ will be called {\\em $\\mcal{N}$-acyclic} if the sheaf cohomology satisfies $\\mrm{H}^i (U, \\mcal{N}) = 1$ for all $i > 0$. Now suppose $\\bsym{U} = \\{ U_k \\}_{k \\in K}$ is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-6-pronilpotent-gerbes",
+      "number": "6",
+      "title": "Pronilpotent Gerbes",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1750,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "filtration gerbe",
+          "heading": false
+        },
+        {
+          "term": "sheaf gerbe",
+          "heading": false
+        },
+        {
+          "term": "circ gerbe",
+          "heading": false
+        },
+        {
+          "term": "filtration mcal",
+          "heading": false
+        },
+        {
+          "term": "groupoid gerbe",
+          "heading": false
+        },
+        {
+          "term": "groups gerbe",
+          "heading": false
+        },
+        {
+          "term": "let gerbe",
+          "heading": false
+        },
+        {
+          "term": "suppose gerbe",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:pronilp} Let $X$ be a topological space. Recall that given an inverse system $\\{ \\mcal{G}_p \\}_{p \\in \\N}$ of sheaves of groups on $X$, its inverse limit is the sheaf of groups $\\opn{lim}_{\\leftarrow p} \\, \\mcal{G}_p$ whose group of sections on an open set $U$ is \\[ \\Gamma(U, \\opn{lim}_{\\leftarrow p} \\, \\mcal{G}_p) = \\opn{lim}_{\\leftarrow p} \\, \\Gamma(U, \\mcal{G}_p) . \\] \\begin{dfn} \\label{dfn.10} Let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-7-fake-global-objects-of-gerbes",
+      "number": "7",
+      "title": "Fake Global Objects of Gerbes",
+      "level": 1,
+      "pageStart": 33,
+      "pageEnd": 36,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1478,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gerbe mrm",
+          "heading": false
+        },
+        {
+          "term": "fake global",
+          "heading": true
+        },
+        {
+          "term": "mcal mrm",
+          "heading": false
+        },
+        {
+          "term": "bar gerbe",
+          "heading": false
+        },
+        {
+          "term": "deformation gerbe",
+          "heading": false
+        },
+        {
+          "term": "gerbe xar",
+          "heading": false
+        },
+        {
+          "term": "mcal mbb",
+          "heading": false
+        },
+        {
+          "term": "hbar mcal",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec.fake} In this section $X$ is some topological space. We will study a gerbe $\\gerbe{G}$ on $X$, with center $\\mrm{Z}(\\gerbe{G})$, and the central extension of gerbes \\begin{equation} \\label{eqn:11} 1 \\to \\mrm{Z}(\\gerbe{G}) \\to \\gerbe{G} \\xar{F} \\gerbe{G} / \\mrm{Z}(\\gerbe{G}) \\to 1 . \\end{equation} \\begin{dfn} An object $i \\in \\opn{Ob}\\, \\bigl( \\gerbe{G} / \\mrm{Z}(\\gerbe{G}) \\bigr)(X)$ is called a {\\em fake",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 36,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 234,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "springer",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        },
+        {
+          "term": "gerbes",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "deformations",
+          "heading": false
+        },
+        {
+          "term": "grothendieck",
+          "heading": false
+        },
+        {
+          "term": "quantization",
+          "heading": false
+        }
+      ],
+      "extract": "[Be] J. Benabou, Introduction to bicategories, in “Report of the Midwest Category Seminar I”, LNM 47, Springer, 1967, pp. 1-77. [BK] R. Bezrukavnikov and D. Kaledin, Fedosov quantization in algebraic context, Moscow Math. J. 4, no. 3 (2004), 559-592. [Br] L. Breen, Notes on 1- and 2-gerbes, arXiv:math/0611317v2 at http://arxiv.org. [CA] Bourbaki, “Commutative Algebra”, Chapters 1-7, Springer, 1989. [Gi] J. Giraud,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "gerbe opn",
+      "heading": false
+    },
+    {
+      "term": "gerbe mrm",
+      "heading": false
+    },
+    {
+      "term": "bsym gerbe",
+      "heading": false
+    },
+    {
+      "term": "gerbe xar",
+      "heading": false
+    },
+    {
+      "term": "circ gerbe",
+      "heading": false
+    },
+    {
+      "term": "sheaf gerbe",
+      "heading": false
+    },
+    {
+      "term": "gerbe bigl",
+      "heading": false
+    },
+    {
+      "term": "mcal mrm",
+      "heading": false
+    },
+    {
+      "term": "subgroupoid gerbe",
+      "heading": false
+    },
+    {
+      "term": "gerbe twoiso",
+      "heading": false
+    },
+    {
+      "term": "morphism gerbe",
+      "heading": false
+    },
+    {
+      "term": "gerbe end",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p36); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0801.0083v4"
+  }
+}

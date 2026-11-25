@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-qbeta-canonical-markov-weights-explicit-instance",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:qbeta-canonical-markov-weights-explicit-instance",
+  "kind": "proposition",
+  "title": "Explicit $\\sqrt q$-bearing instance of $\\mathbf{CanonicalMarkovWeightsH3}$ (class is inhabitable)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-qbeta-per-block-chi-closed-forms",
+    "papers/quantum-observable-universe/blocks/prop-qbeta-delta-tau-canonical-conditional-q2-minus-1-factor"
+  ],
+  "cites": [
+    "references/wenzl1988",
+    "references/hoefsmit1974"
+  ],
+  "tags": [
+    "qbeta",
+    "canonical",
+    "instance",
+    "markov-weights",
+    "sqrt-q-bearing",
+    "3b-cond"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.QBetaCanonicalMarkovWeightsInstance.explicitInstance",
+  "text": "qbeta-canonical-markov-weights-explicit-instance.md",
+  "provenance": "authored"
+}

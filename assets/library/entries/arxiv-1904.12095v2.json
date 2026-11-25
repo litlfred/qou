@@ -1,0 +1,249 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1904.12095v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1904.12095v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Veriﬁed computations for\nclosed hyperbolic 3-manifolds\nMatthias Goerner\nAbstract.\nExtending methods ﬁrst used by Casson, we show how to verify a hyper-\nbolic structure on a ﬁnite triangulation of a closed 3-manifold using interval arith-\nmetic methods. A key ingredient is a new theoretical result (akin to a theorem by\nNeumann-Zagier and Moser for ideal triangulations upon which HIKMOT is based)\nshowing that there is a redundancy among the edge equations if the edges avoid “gim-\nbal lock”. We successfully test the algorithm on known examples such as the ori-\nentable closed manifolds in the Hodg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.12095v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Up to isometry, a finite hyperbolic 3-simplex is determined by its $6$ edge parameters, by which we mean either the edge lengths $l_{ij}$ or the respective entries of its vertex Gram matrix $v_{ij}=-\\cosh(l_{ij})$. Thus, an assignment of a parameter to each edge of a finite triangulation $\\mathcal{T}$ of a closed 3-manifold determines a hyperbolic structure for each $3$-simplex of $\\mathcal{T}\\!{}$. If certain conditions are fulfilled, the hyperbolic structures on the individual simplices are compatible and form a hyperbolic structure on the manifold (see [@heardThesis] and Section [\\[sec:hypS",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.12095v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hyperbolic structures on finite triangulations",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-hyperbolic-structures-on-finite-triangulations.md",
+      "narrative": null,
+      "content": "[]{#sec:hypStru label=\"sec:hypStru\"}\n\nConsider the isometry class of a positively oriented, finite geodesic simplex $\\Delta$ with vertices labeled $0, \\dots, 3$ in $\\mathbb H^3$. We briefly review the relationship of the edge lengths and the angles of $\\Delta$ following [@heardThesis] with one difference though: we use a slightly simpler definition for the vertex Gram matrix $G$ where all diagonal entries are $-1$ since we are not interested in generalized simplices here. To be consistent with the vertex labels, we $0$-index the rows and columns of a matrix (so $m_{00}$ denotes the top left-mo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.12095v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cocycles",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-3-cocycles.md",
+      "narrative": null,
+      "content": "[]{#sec:cocycles label=\"sec:cocycles\"}\n\nWe will describe how to compute a representation[^1] $\\pi_1(\\mathcal{T})\\to\\mathrm{PGL}_{2}(\\mathbb C)$ from an assignment of parameters $\\nu_e$ as in Theorem [\\[thm:hypStruct\\]](#thm:hypStruct){reference-type=\"ref\" reference=\"thm:hypStruct\"} using cocycles inspired by [@higherGluingEqns Section 9] as follows:\n\n::: definition\nLet $\\mathcal{G}$ be a group and $X$ be a space with a polyhedral decomposition. A $\\mathcal{G}$-cocycle on $X$ is an assignment of elements in $\\mathcal{G}$ to the oriented edges of $X$ such that the product around each face is the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.12095v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extending cocycles on genus 0 surfaces",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-003-4-extending-cocycles-on-genus-0-surfaces.md",
+      "narrative": null,
+      "content": "[]{#sec:vertexCocycles label=\"sec:vertexCocycles\"}\n\nLet us define a punctured topological polyhedron which we will use as model for a \"vertex link\" of $\\hat\\mathcal{T}$ when removing some prisms.\n\n::: definition\n[]{#def:puncTopPolyhed label=\"def:puncTopPolyhed\"} Let $L$ be a topological polyhedron, i.e., a decomposition of an oriented $2$-sphere into polygons. Let $P_1, \\dots, P_p$ be selected two-cells of $L$ such that $\\partial P_i \\cap \\partial P_j \\not =\\emptyset$ for all $i\\not=j$. We call $(L,L\\setminus \\bigcup P_l)$ a punctured topological polyhedron.\n:::\n\nThe complex $L\\setminus \\bigcu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.12095v2/blocks/figure-img-p012-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../images/img-p012-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1904.12095v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extending cocycles on triangulations",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-004-5-extending-cocycles-on-triangulations.md",
+      "narrative": null,
+      "content": "[]{#sec:extendCocycles label=\"sec:extendCocycles\"}\n\nLet $\\mathcal{T}$ be a triangulation with an assignment of edge parameters $\\nu_e<-1$ such that each $G_\\Delta$ is realized (i.e., fulfills the conditions of Lemma [\\[lemma:singleGeomSimp\\]](#lemma:singleGeomSimp){reference-type=\"ref\" reference=\"lemma:singleGeomSimp\"}). Let $E^\\sim \\cup E^==E(\\mathcal{T})$ be a partition of the edges into two disjoint sets where $|E^\\sim| = 3o$ with $o=|V(\\mathcal{T})|$ being the number of vertices of $\\mathcal{T}$. Assume that we know that $\\Theta_e=2\\pi$ for every edge $e\\in E^=$, but we only know that $\\Th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.12095v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples of (non-)gimbal lock",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-005-6-examples-of-non-gimbal-lock.md",
+      "narrative": null,
+      "content": "[]{#section:examples label=\"section:examples\"}\n\nThis section is giving examples where the condition $\\Theta_e=2\\pi$ from Theorem [\\[thm:hypStruct\\]](#thm:hypStruct){reference-type=\"ref\" reference=\"thm:hypStruct\"} is known to be fulfilled for most but not all edges. Let $\\mathcal{T}$ be a finite, orientable triangulation with $o$ vertices and $m$ edges. We partition the edges as $E^\\sim=\\{e^\\sim_1,\\dots,e^\\sim_l\\}$ and $E^==\\{e^=_1,\\dots,e^=_{m-l}\\}$ depending on whether we know that $\\Theta_e$ is close to or, respectively, exactly equal to $2\\pi$.\n\nGeometrically, this yields a singular hyperbo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.12095v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algorithm",
+      "pageStart": 15,
+      "pageEnd": 20,
+      "target": "../sections/sec-006-7-algorithm.md",
+      "narrative": null,
+      "content": "[]{#sec:algo label=\"sec:algo\"}\n\n## Overview\n\nLet $\\mathcal{T}$ be an oriented, finite 3-dimensional triangulation. Let $o=V(\\mathcal{T})$ be the number of vertices and index the edges $E(\\mathcal{T})=\\{e_1,\\dots,e_m\\}$. Assume we are given floating-point approximations for the edge parameters $\\nu_{e_1},\\dots,\\nu_{e_m}$ such that the $\\Theta_{e_1}, \\dots, \\Theta_{e_m}$ are approximately $2\\pi$ (e.g, using the program Orb [@orb] based on the methods described in [@heardThesis Section 2.2]).\n\nWe will either fail in one of the steps or obtain intervals $\\underline{\\overline{\\nu_{e_1}}},\\dots,\\und",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.12095v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-007-8-results.md",
+      "narrative": null,
+      "content": "[]{#sec:results label=\"sec:results\"}\n\nOur implementation of the algorithm in Section [\\[sec:algo\\]](#sec:algo){reference-type=\"ref\" reference=\"sec:algo\"} is available at [@veriClosedRepo]. Lists of all knots and links from Theorem [\\[thm:hyperbolicBranchedDoubleCovers\\]](#thm:hyperbolicBranchedDoubleCovers){reference-type=\"ref\" reference=\"thm:hyperbolicBranchedDoubleCovers\"} as well as the isomorphism signatures of the finite triangulations we used are available at [@veriClosedData].\n\nTo produce the input to the algorithm, we used SnapPy [@SnapPy] to produce a finite triangulation of a manifol",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.12095v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "../sections/sec-008-9-discussion.md",
+      "narrative": null,
+      "content": "[]{#sec:discussion label=\"sec:discussion\"}\n\nLet $\\mathcal{T}$ be a finite, orientable triangulation with $o$ vertices and $m$ edges. We have proven that $\\mathcal{T}$ admits a hyperbolic structure if the checks in each step of the algorithm in Section [\\[sec:algo\\]](#sec:algo){reference-type=\"ref\" reference=\"sec:algo\"} pass. But are there hyperbolic structures which the algorithm cannot verify --- even as we increase the precision and give the algorithm better and better approximations of the edge lengths of the hyperbolic structure as input?\n\nWe conjecture that such hyperbolic structures are",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.12095v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix: The uncited theorem HIKMOT relies on",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "../sections/sec-009-10-appendix-the-uncited-theorem-hikmot-relies-on.md",
+      "narrative": null,
+      "content": "As pointed out in the introduction, the full system of equations for ﬁnding a hyperbolic\nstructure on a triangulation fails to have rank equal to the number of variables in both\nthe ﬁnite and ideal case. Thus, veriﬁcation by interval methods in the ideal case also\nrelies on a theorem showing that if a suitable subsystem is fulﬁlled, all equations are\nfulﬁlled. Unfortunately, the paper [HIK+16] did not cite this crucial theorem correctly.\nWe want to point out that the algorithm in [HIK+16] is correct and its implementation\ncan be trusted since the theorem it relies on has been proven by [Mos09,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1904.12095v2/blocks/thm-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "thm-sec-009-01.md",
+      "narrative": null,
+      "content": "The matrix (A|B) has rank m−o. Pick m−o linearly independent rows of (A|B) and consider the system of equations consisting of the corresponding m −o edge equations and the o cusp equations. (a) Any solution to this system fulﬁlls the remaining o edge equations as well. (b) Near a geometric solution, the Jacobian of this system of equations is invertible. Note that (a) is sufﬁcient for an algorithm to prove a manifold to be hyperbolic. State- ment (b) ensures that such an algorithm succeeds if given a solution close enough to the geometric one. [NZ85] states the rank of (A|B) but assumes hyperb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2507.19896v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Generalized Markov traces and Jucys-Murphy elements",
+      "dcterms:creator": [
+        "Kostiantyn Tolmachov, Heorhii Zhylinskyi"
+      ],
+      "dcterms:identifier": "https://arxiv.org/abs/2507.19896",
+      "dcterms:abstract": "We give a simple construction of Markov traces for Iwahori-Hecke algebras associated with infinite series of crystallographic Coxeter groups. In types B and D it is new, and generalizes a known construction in type A employing symmetric polynomials in multiplicative Jucys-Murphy elements.",
+      "dcterms:source": "library/arxiv-2507.19896v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2507.19896v1"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0302267v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Groupes fondamentaux motiviques de Tate mixte",
+      "dcterms:issued": "D:20180528",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0302267",
+      "dcterms:abstract": "We deﬁne the category of mixed Tate motives over the ring of S-integers of a number ﬁeld. We deﬁne the motivic fundamental group (made unipotent) of a unirational variety over a number ﬁeld. We apply this to the study of the motivic fundamental group of the projective line punctured at zero, inﬁnity and all N-th roots of unity. ∗Research partially supported by NSF Grant DMS-0099390",
+      "dcterms:source": "library/arxiv-math-0302267v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0302267v2"
+    }
+  ]
+}

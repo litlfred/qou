@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2412.02281v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Explicit evaluation of the q -Stokes matrices for certain conﬂuent hypergeometric q -diﬀerence equations",
+      "dcterms:creator": [
+        "Jinghong Lin, Yiming Ma",
+        "Xu, Xiaomeng"
+      ],
+      "dcterms:issued": "D:20241203",
+      "dcterms:identifier": "https://arxiv.org/abs/2412.02281",
+      "dcterms:abstract": "We prove a connection formula for the basic hypergeomtric function nϕn−1 (a1, ..., an−1, 0; b1, ..., bn−1; q, z) by using the q-Borel resummation. As an application, we compute q-Stokes matrices of a special conﬂuent hypergeometric q-diﬀerence system with an irregular singularity. We show that by letting q →1, the q-Stokes matrices recover the known expressions of the Stokes matrices of the corresponding conﬂuent hypergeometric diﬀerential system.",
+      "dcterms:source": "library/arxiv-2412.02281v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2412.02281v1"
+    }
+  ]
+}

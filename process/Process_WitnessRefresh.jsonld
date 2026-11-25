@@ -1,0 +1,97 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/process/Process_WitnessRefresh.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_WitnessRefresh",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Process",
+      "name": "Refresh computation witnesses",
+      "summary": "Bring qou's computation witnesses back in line with the producers that write them, without a witness ever being rewritten that the owner did not approve.",
+      "description": "Bring qou's computation witnesses back in line with the producers that write them, without a witness ever being rewritten that the owner did not approve. Owner, 2026-10-04: \"all witnesses tools will need to go into the KG\"; this is the process those Tools run in.\n\nA WITNESS IS CONTENT HERE. Its numbers are what the paper quotes, so the owner's rule that a migration changes no mathematics applies to it, and so does the ask-first rule for refreshing one. That is why the decision sits in the owner's lane between the measurement and the re-run, and why nothing before it writes a file: the dry run and the parity check both work on the committed tree or a scratch copy of it.\n\nTHE PLAN IS `run_pipeline.py --dry-run --content-only`, UNCHANGED. The process does not re-derive staleness; it calls the pipeline's own answer through the `witness-refresh-plan` Tool, so the list a person approves is exactly the list the pipeline would act on.",
+      "enforcement": "strict",
+      "sourcePath": "processes/content/witness-refresh.bpmn",
+      "sourceUrl": "https://github.com/litlfred/qou/blob/main/processes/content/witness-refresh.bpmn",
+      "startNode": [
+        "https://litlfred.github.io/qou/process/Process_WitnessRefresh/node/StartEvent_Due"
+      ],
+      "nodeCount": 10,
+      "flowCount": 9,
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_WitnessRefresh#flow/Flow_1",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_WitnessRefresh",
+      "from": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/node/StartEvent_Due",
+      "to": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/node/Task_Plan",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_WitnessRefresh#flow/Flow_2",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_WitnessRefresh",
+      "from": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/node/Task_Plan",
+      "to": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/node/Task_Parity",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_WitnessRefresh#flow/Flow_3",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_WitnessRefresh",
+      "from": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/node/Task_Parity",
+      "to": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/node/Task_Approve",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_WitnessRefresh#flow/Flow_4",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_WitnessRefresh",
+      "from": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/node/Task_Approve",
+      "to": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/node/Gateway_Approved",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_WitnessRefresh#flow/Flow_5",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "name": "yes",
+      "partOf": "https://litlfred.github.io/qou/process/Process_WitnessRefresh",
+      "from": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/node/Gateway_Approved",
+      "to": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/node/Task_Run",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_WitnessRefresh#flow/Flow_6",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "name": "no",
+      "partOf": "https://litlfred.github.io/qou/process/Process_WitnessRefresh",
+      "from": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/node/Gateway_Approved",
+      "to": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/node/EndEvent_Unchanged",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_WitnessRefresh#flow/Flow_7",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_WitnessRefresh",
+      "from": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/node/Task_Run",
+      "to": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/node/Task_Gates",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_WitnessRefresh#flow/Flow_8",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_WitnessRefresh",
+      "from": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/node/Task_Gates",
+      "to": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/node/Task_Commit",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_WitnessRefresh#flow/Flow_9",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_WitnessRefresh",
+      "from": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/node/Task_Commit",
+      "to": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/node/EndEvent_Refreshed",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    }
+  ]
+}

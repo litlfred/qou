@@ -1,0 +1,344 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2510.21576v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2510.21576v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relativistic corrections for lepton-nucleus scattering in the short-time approximation",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-relativistic-corrections-for-lepton-nucleus-scat.md",
+      "narrative": null,
+      "content": "L. Andreoli1,2,∗R. Weiss3,† G. Chambers-Wall3,‡ A. Gnech1,2,§ S. Pastore3,4,¶ M. Piarulli3,4,∗∗and S. Gandolfi5\n1Department of Physics, Old Dominion University, Norfolk, VA 23529, USA\n2Theory Center, Jefferson Lab, Newport News, VA 23610, USA\n3Department of Physics, Washington University in Saint Louis, Saint Louis, MO 63130, USA\n4McDonnell Center for the Space Sciences at Washington University in St. Louis, MO 63130, USA\n5Theoretical Division, Los Alamos National Laboratory, Los Alamos, NM 87545, USA\nWe present an approach for including relativistic corrections in lepton-nucleus scattering ca",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2510.21576v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec:intro label=\"sec:intro\"} In recent years, significant progress has been made in calculating inclusive cross sections for lepton scattering from nuclei [@Rocco:2020jlx; @Bacca:2014tla] using the microscopic, or *ab initio*, approach [@10.3389/fphy.2020.00379]. This framework allows for the inclusion of many-nucleon correlations and electroweak currents, which are essential for delivering theoretical predictions that explain the available experimental data. Specifically, nuclear wave functions are determined by solving the many-nucleon Hamiltonian, which typically includes a kinetic term",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2510.21576v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Electron-nucleus scattering cross section",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-electron-nucleus-scattering-cross-section.md",
+      "narrative": null,
+      "content": "[]{#sec:xsec label=\"sec:xsec\"}\n\nThe inclusive double-differential cross section for electron scattering from a nucleus is written in terms of the longitudinal, $R_L$, and transverse, $R_T$, response functions as: $$\\begin{aligned}\n\\label{eq:diff_cross_section}\n    \\begin{split}\n       \\left(\\frac{d^2\\sigma}{d\\varepsilon^\\prime d\\Omega}\\right)_e=&\\left(\\frac{d\\sigma}{d\\Omega}\\right)_M\\left[\\left(\\frac{Q^2}{{q}^2}\\right)^2R_L(q,\\omega)\\right.\n        \\\\\n        &\\left.+\\left(\\tan^2{\\frac{\\theta}{2}}+\\frac{1}{2}\\frac{Q^2}{{q}^2}\\right) R_T({q},\\omega) \\right],\n    \\end{split}\n\\end{aligned}$$ wher",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2510.21576v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "One-Body Electromagnetic Current",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-one-body-electromagnetic-current.md",
+      "narrative": null,
+      "content": "[]{#sec:currents label=\"sec:currents\"} The covariant relativistic expression for the one-body electromagnetic current operator is given by [@Carlson:1997qn] $$\\begin{aligned}\n\\label{eq:relvector}\n    j^\\mu=\\bar{u}(\\boldsymbol{p}^\\prime s')\\left[{F}_1\\gamma^\\mu+i\\sigma^{\\mu\\nu}q_\\nu\\frac{{F}_2}{2m}\\right]u(\\boldsymbol{p}s),\n\\end{aligned}$$ where $\\boldsymbol{p}$ ($\\boldsymbol{p}^\\prime$) is the initial (final) nucleon momentum with mass $m$ and spin $s$ ($s'$) and we omit, here and in the following, the index that specifies the $i$-th nucleon. The Dirac spinors and gamma matrices are denoted by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2510.21576v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Low-momentum transfer nonrelativistic reduction",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-low-momentum-transfer-nonrelativistic-reduction.md",
+      "narrative": null,
+      "content": "Traditional many-body calculations [@Carlson:1997qn; @Bacca:2014tla] adopt a nonrelativistic reduction of the single-nucleon covariant current given in Eq. ([\\[eq:relvector\\]](#eq:relvector){reference-type=\"ref\" reference=\"eq:relvector\"}). The expansion is based on the assumption that both $p$ and $p'$ (and thus $q$) are small compared to the nucleon mass. At leading order (LO), this approach leads to the following expressions in coordinate space for the charge, $\\rho=j^0$, and current, $\\boldsymbol{j}_\\perp$, operators: $$\\begin{aligned}\n \\label{eq:charge_NR_LO}\n    \\rho=&{G_E} e^{i\\boldsymbo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2510.21576v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "High-momentum transfer nonrelativistic reduction",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-high-momentum-transfer-nonrelativistic-reduction.md",
+      "narrative": null,
+      "content": "[]{#sec:relativistic_current label=\"sec:relativistic_current\"} For momentum transfer $q \\sim m$ or greater, relativistic effects become important in two main ways. First, the electromagnetic current operators require a proper nonrelativistic reduction. Second, the final states, which play a significant role in the nuclear response functions, may include high-momentum knocked-out nucleons, whose kinetic energies should be calculated relativistically for accurate results. In this section, we focus on determining the nonrelativistic reduction of the electromagnetic currents at high-momentum trans",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2510.21576v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparing low- and high-momentum transfer nonrelativistic reductions",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-006-comparing-low--and-high-momentum-transfer-nonrel.md",
+      "narrative": null,
+      "content": "[]{#sec:comparing label=\"sec:comparing\"}\n\nIn this section, we compare the low-momentum transfer nonrelativistic reduction at LO of the single nucleon charge and current operators -- given in Eqs. [\\[eq:charge_NR_LO\\]](#eq:charge_NR_LO){reference-type=\"eqref\" reference=\"eq:charge_NR_LO\"} and [\\[eq:transverse_NR_LO\\]](#eq:transverse_NR_LO){reference-type=\"eqref\" reference=\"eq:transverse_NR_LO\"} -- with the corresponding expressions obtained in the high-momentum transfer regime -- Eqs. [\\[eq:rho_p0\\]](#eq:rho_p0){reference-type=\"eqref\" reference=\"eq:rho_p0\"} and [\\[eq:current_p0\\]](#eq:current_p0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2510.21576v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Short-time approximation",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-007-short-time-approximation.md",
+      "narrative": null,
+      "content": "[]{#sec:STA label=\"sec:STA\"}\n\nIn this section, we briefly sketch the Short-Time-Approximation (STA) algorithm in the context of Variational Monte Carlo calculations and defer the interested reader to Refs. [@Pastore:2019urn; @Andreoli:2024ovl] for more details. We also compare our results with those of Refs. [@Pastore:2019urn; @Andreoli:2021cxo], which used the low-$q$ nonrelativistic reduction of the single-nucleon covariant current.\n\nThe STA evaluates the response functions within a factorization scheme that includes two-nucleon dynamics at the interaction vertex [@Pastore:2019urn]. The resp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2510.21576v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relativistic Final-States Kinematics",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-008-relativistic-final-states-kinematics.md",
+      "narrative": null,
+      "content": "[]{#sec:relativistic_kinematics label=\"sec:relativistic_kinematics\"}\n\nWe now turn our attention to relativistic effects in the energies of the active nucleons in the final state. Since we are restricting our attention to the quasi-elastic peak, the dominant contribution to the cross section arises from electrons scattering from low-momentum nucleons in the ground state. Relativistic effects in the treatment of the ground state wave function are therefore not considered. They may become important in kinematics that probe large-momentum initial-state nucleons, for example in experiments studying",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2510.21576v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-009-results.md",
+      "narrative": null,
+      "content": "[]{#sec:results label=\"sec:results\"} In this section, we present our results for both response functions and inclusive double differential cross sections for electron scattering from $^3$He and $^4$He based on the *high-$q$ nonrelativistic reduction of the single-nucleon covariant electromagnetic current* and *inclusive of relativistic kinematics in the two-nucleon final states*. These results will be denoted in what follows with 'STA($n$)' with $n=0$ or $1$ depending on whether we use the one-body currents up to $(p/m)^0$ -- Eqs. [\\[eq:rho_p0\\]](#eq:rho_p0){reference-type=\"eqref\" reference=\"e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2510.21576v1/blocks/figure-img-p009-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../images/img-p009-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2510.21576v1/blocks/figure-img-p009-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../images/img-p009-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2510.21576v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "High-q expansion scheme and relativistic final-state kinematics",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-010-high-q-expansion-scheme-and-relativistic-final-s.md",
+      "narrative": null,
+      "content": "In order to analyze the combined impact of the high-$q$ expansion scheme and the relativistic final-state kinematics, we examine the $^3$He response functions at $q=700$ MeV/$c$, where the conventional STA failed to explain the data [@Andreoli:2021cxo]. We begin with the longitudinal response function shown in the left panel of Fig. [\\[fig:responses_delta\\]](#fig:responses_delta){reference-type=\"ref\" reference=\"fig:responses_delta\"} along with the experimental data. The conventional STA calculation is displayed by the solid blue line. To isolate the effect of the high-$q$ expansion scheme for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2510.21576v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Convergence of the high-q expansion scheme",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-011-convergence-of-the-high-q-expansion-scheme.md",
+      "narrative": null,
+      "content": "Next, we examine the convergence of the high-$q$ expansion scheme by comparing the STA(0) and STA(1) calculations for the $^3$He and $^4$He response functions at two values of momentum transfer, namely $q=500$ and $700$ MeV/$c$. The $^3$He ($^4$He) longitudinal and transverse response functions are shown in the top (bottom) panels of Fig. [\\[fig:responses_final\\]](#fig:responses_final){reference-type=\"ref\" reference=\"fig:responses_final\"}, along with the experimental data. In the case of $^3$He, we also show the Spectral Function results from Ref. [@Andreoli:2021cxo] (orange solid lines).\n\nThe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2510.21576v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cross Sections",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-012-cross-sections.md",
+      "narrative": null,
+      "content": "To calculate double differential cross sections, response functions are evaluated for a set of values of $q$ in the range 300-1400 MeV/$c$, using the interpolation scheme described in Ref. [@Andreoli:2024ovl]. This allows us to generate response functions for arbitrary values of $q$ on a finer grid required for the determination of the cross section. In Figs. [\\[fig:cross_sections_he3_p1\\]](#fig:cross_sections_he3_p1){reference-type=\"ref\" reference=\"fig:cross_sections_he3_p1\"} and [\\[fig:cross_sections_he4_p1\\]](#fig:cross_sections_he4_p1){reference-type=\"ref\" reference=\"fig:cross_sections_he4",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2510.21576v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-013-conclusions.md",
+      "narrative": null,
+      "content": "[]{#sec:conclusion label=\"sec:conclusion\"} In this work, we have presented an extension of the STA that includes relativistic effects and allows us to provide accurate predictions for large-momentum-transfer quasielastic reactions. Such effects enter via the currents, describing the interaction of the lepton with the nucleus, as well as via the final-state energy of struck nucleons.\n\nFor the currents, an expansion of the covariant one-body expression is used, in which only the initial momentum of the nucleon is assumed to be small. It provides an accurate description for quasielastic kinematic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2510.21576v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "../sections/sec-014-acknowledgments.md",
+      "narrative": null,
+      "content": "We are thankful for useful discussions with S. Jeschon-\nnek.\nWe also thank G. B. King, M. Macedo-Lima,\nJ. Carlson and R. B. Wiringa for interesting discussions\nat various stages of this work.\nL. A. and R. W. con-\ntributed equally to this work. This work is supported\nby the US Department of Energy under Contracts No.\nDE-SC0021027 (G. C.-W., S. P.), DE-AC05-06OR23177\n(L. A, A. G), a 2021 Early Career Award number DE-\nSC0022002 (M. P.), and the NUCLEI SciDAC program\n(S. P., M. P.).\nG. C.-W. acknowledges support from\nthe NSF Graduate Research Fellowship Program under\nGrant No.\nDGE-213989.\nWe thank",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2510.21576v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison with the Rosenbluth cross section",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-015-comparison-with-the-rosenbluth-cross-section.md",
+      "narrative": null,
+      "content": "section\nIn the limit of a single static nucleon in the initial state,\nour LO expressions for the charge and current operators,\nEqs. (20) and (21), should lead to the well-known Rosen-\nbluth cross section. In this limit, using Eq. (20), the\nlongitudinal response function becomes\nRL(q, ω) = α2(q)G2\nEδ(m + ω −\np\nq2 + m2).\n(A1)\nNotice that the particle has momentum q in the final\nstate. The transverse response function becomes\nRT =\n\u00122mτqe\nq2\n\u00132\nG2\nMα2(q)2q2δ(m + ω −\np\nq2 + m2)\n(A2)\nusing Eq. (21). The operator σ × q = q(σ × ˆz) gives the\nfactor q2. The σ operator flips the spin but the relevant\nsp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

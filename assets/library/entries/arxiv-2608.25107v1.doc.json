@@ -1,0 +1,1653 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2608.25107v1",
+  "title": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples",
+  "variant": "pdf",
+  "pages": 22,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-adonis-a-differentiable-generator-of-neutrino-in"
+    },
+    {
+      "level": 2,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-introduction"
+    },
+    {
+      "level": 3,
+      "title": "Differentiable programming in particle physics",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-differentiable-programming-in-particle-physics"
+    },
+    {
+      "level": 2,
+      "title": "A Differentiable Neutrino Event Generator",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-a-differentiable-neutrino-event-generator"
+    },
+    {
+      "level": 3,
+      "title": "Differentiability by reweighting",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-differentiability-by-reweighting"
+    },
+    {
+      "level": 3,
+      "title": "Nuclear ground-state reweighting",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-nuclear-ground-state-reweighting"
+    },
+    {
+      "level": 3,
+      "title": "Hard-scattering amplitudes",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-hard-scattering-amplitudes"
+    },
+    {
+      "level": 3,
+      "title": "Intranuclear cascade",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-intranuclear-cascade"
+    },
+    {
+      "level": 3,
+      "title": "Channel normalisations",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-channel-normalisations"
+    },
+    {
+      "level": 3,
+      "title": "Differentiable events and observables",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-differentiable-events-and-observables"
+    },
+    {
+      "level": 3,
+      "title": "Gradients and higher-order derivatives",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-gradients-and-higher-order-derivatives"
+    },
+    {
+      "level": 2,
+      "title": "Validation",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-validation"
+    },
+    {
+      "level": 2,
+      "title": "Gradient information",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-gradient-information"
+    },
+    {
+      "level": 2,
+      "title": "Parameter Inference and Uncertainty Quantification",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-parameter-inference-and-uncertainty-quantificati"
+    },
+    {
+      "level": 3,
+      "title": "Computational cost",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-computational-cost"
+    },
+    {
+      "level": 2,
+      "title": "Unfolding",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-unfolding"
+    },
+    {
+      "level": 2,
+      "title": "Conclusions",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-conclusions"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-acknowledgments"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Additional validation distributions",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-additional-validation-distributions"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-adonis-a-differentiable-generator-of-neutrino-in",
+      "number": null,
+      "title": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 222,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "differentiable neutrino",
+          "heading": true
+        },
+        {
+          "term": "neutrino interaction",
+          "heading": true
+        },
+        {
+          "term": "adonis",
+          "heading": true
+        },
+        {
+          "term": "reweighting",
+          "heading": false
+        },
+        {
+          "term": "design",
+          "heading": false
+        },
+        {
+          "term": "event",
+          "heading": false
+        },
+        {
+          "term": "probes",
+          "heading": false
+        },
+        {
+          "term": "response",
+          "heading": false
+        }
+      ],
+      "extract": "C´esar Jes´us-Valls1, ∗ 1European Organization for Nuclear Research (CERN), 1211 Geneva 23, Switzerland Neutrino interaction generators are central to precision oscillation analyses, but conventional imple- mentations do not directly provide derivatives of their predictions with respect to physics parame- ters, leaving analyses to obtain this dependence through reweighting, finite differences or external response",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 1044,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "neutrino oscillation",
+          "heading": false
+        },
+        {
+          "term": "accelerator neutrino",
+          "heading": false
+        },
+        {
+          "term": "neutrino--nucleus interaction",
+          "heading": false
+        },
+        {
+          "term": "event generator",
+          "heading": false
+        },
+        {
+          "term": "oscillation experiments",
+          "heading": false
+        },
+        {
+          "term": "parameter inference",
+          "heading": false
+        },
+        {
+          "term": "observable predictions",
+          "heading": false
+        },
+        {
+          "term": "nikolakopoulos",
+          "heading": false
+        }
+      ],
+      "extract": "Neutrino oscillation experiments have entered a precision era. The determination of the leptonic charge-parity (CP)-violating phase, the resolution of the neutrino mass ordering, and the increasingly stringent tests of the three-flavour paradigm all rest on comparing measured event rates against predictions at the percent level [@T2K:2025wet; @NOvA:2025tmb; @DUNE:2020jqi; @Hyper-Kamiokande:2025fci]. Because",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-differentiable-programming-in-particle-physics",
+      "number": null,
+      "title": "Differentiable programming in particle physics",
+      "level": 3,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 202,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "differentiable",
+          "heading": true
+        },
+        {
+          "term": "detector",
+          "heading": false
+        },
+        {
+          "term": "physics",
+          "heading": true
+        },
+        {
+          "term": "programming",
+          "heading": true
+        },
+        {
+          "term": "modelling",
+          "heading": false
+        },
+        {
+          "term": "emerging",
+          "heading": false
+        },
+        {
+          "term": "inputs",
+          "heading": false
+        },
+        {
+          "term": "mode",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:intro_diffprog label=\"sec:intro_diffprog\"} Differentiable programming makes a simulation differentiable in its own inputs, so that derivatives of the prediction are produced by the program rather than reconstructed outside it. Automatic differentiation [@Baydin:2015tfa] decomposes a program into elementary operations and applies the chain rule through each of them, giving the exact derivative of the output",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-a-differentiable-neutrino-event-generator",
+      "number": null,
+      "title": "A Differentiable Neutrino Event Generator",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 585,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "intranuclear cascade",
+          "heading": false
+        },
+        {
+          "term": "differentiable",
+          "heading": true
+        },
+        {
+          "term": "isaacson",
+          "heading": false
+        },
+        {
+          "term": "gpu",
+          "heading": false
+        },
+        {
+          "term": "fit performance",
+          "heading": false
+        },
+        {
+          "term": "event",
+          "heading": true
+        },
+        {
+          "term": "cpu core",
+          "heading": false
+        },
+        {
+          "term": "achilles",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:adonis label=\"sec:adonis\"} We developed [ADoNIS]{.smallcaps}, **A** **D**ifferentiable generat**O**r of **N**eutrino **I**nteraction **S**amples, a JAX-based open-source neutrino event generator[^1]. [ADoNIS]{.smallcaps} follows the interaction physics choices of the ACHILLES generator [@Isaacson:2020wlx; @Isaacson:2022cwh; @Isaacson:2025cnk], implemented in a fully differentiable manner, and so provides",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-differentiability-by-reweighting",
+      "number": null,
+      "title": "Differentiability by reweighting",
+      "level": 3,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 526,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adonis reweighting",
+          "heading": false
+        },
+        {
+          "term": "adonis cascade",
+          "heading": false
+        },
+        {
+          "term": "adonis nucleus",
+          "heading": false
+        },
+        {
+          "term": "nominal",
+          "heading": false
+        },
+        {
+          "term": "differentiability",
+          "heading": true
+        },
+        {
+          "term": "per-event",
+          "heading": false
+        },
+        {
+          "term": "theta",
+          "heading": false
+        },
+        {
+          "term": "underbrace",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:adonis_reweighting label=\"sec:adonis_reweighting\"} A neutrino event generator is an intrinsically stochastic program: it samples a neutrino energy from a flux, an interaction channel, a struck nucleon from the nuclear ground state, a hard-scattering kinematic configuration from a squared amplitude, where applicable the hadronisation of the produced partonic state, and final-state interactions as the outgoing",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-nuclear-ground-state-reweighting",
+      "number": null,
+      "title": "Nuclear ground-state reweighting",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 406,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "src mev",
+          "heading": false
+        },
+        {
+          "term": "adonis nucleus",
+          "heading": false
+        },
+        {
+          "term": "struck nucleon",
+          "heading": false
+        },
+        {
+          "term": "removal energy",
+          "heading": false
+        },
+        {
+          "term": "tabulated spectral",
+          "heading": false
+        },
+        {
+          "term": "mathbf",
+          "heading": false
+        },
+        {
+          "term": "one-sided",
+          "heading": false
+        },
+        {
+          "term": "ground-state",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec:adonis_nucleus label=\"sec:adonis_nucleus\"} The target nucleus is described by a spectral function, the probability density for finding the struck nucleon with momentum $|\\mathbf{p}|$ and removal energy $E$ [@Isaacson:2020wlx]. At generation, the struck nucleon is sampled from the tabulated spectral function by importance sampling, with density proportional to $|\\mathbf{p}|^2 S(|\\mathbf{p}|,E)$, and its",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-hard-scattering-amplitudes",
+      "number": null,
+      "title": "Hard-scattering amplitudes",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 1301,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adonis vertex",
+          "heading": false
+        },
+        {
+          "term": "adonis amplitudes",
+          "heading": false
+        },
+        {
+          "term": "adonis quad",
+          "heading": false
+        },
+        {
+          "term": "adonis weight",
+          "heading": false
+        },
+        {
+          "term": "charged-current resonant",
+          "heading": false
+        },
+        {
+          "term": "quasi-elastic scattering",
+          "heading": false
+        },
+        {
+          "term": "coupled-channels amplitudes",
+          "heading": false
+        },
+        {
+          "term": "axial form",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:adonis_amplitudes label=\"sec:adonis_amplitudes\"} At the interaction vertex the event is weighted by the squared electroweak amplitude for the selected channel: quasi-elastic scattering, governed by the nucleon axial and vector form factors, and resonant pion production, described by the dynamical coupled-channels amplitudes used in ACHILLES [@Isaacson:2022cwh; @Nakamura:2015rta]. Evaluating these amplitudes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-intranuclear-cascade",
+      "number": null,
+      "title": "Intranuclear cascade",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 787,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adonis cascade",
+          "heading": false
+        },
+        {
+          "term": "adonis amplitudes",
+          "heading": false
+        },
+        {
+          "term": "adonis weight",
+          "heading": false
+        },
+        {
+          "term": "stored history",
+          "heading": false
+        },
+        {
+          "term": "cex",
+          "heading": false
+        },
+        {
+          "term": "hadron interacts",
+          "heading": false
+        },
+        {
+          "term": "nominal",
+          "heading": false
+        },
+        {
+          "term": "charge exchange",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:adonis_cascade label=\"sec:adonis_cascade\"} The hadrons produced at the vertex propagate through the residual nucleus and undergo final-state interactions, modelled with a JAX re-implementation of the intranuclear cascade used in ACHILLES [@Isaacson:2020wlx]: elastic and inelastic nucleon--nucleon and pion--nucleon scattering, pion absorption, and charge exchange. Everything at the vertex is a smooth function",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-channel-normalisations",
+      "number": null,
+      "title": "Channel normalisations",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 39,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adonis norms",
+          "heading": false
+        },
+        {
+          "term": "quasi-elastic",
+          "heading": false
+        },
+        {
+          "term": "resonant",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:adonis_norms label=\"sec:adonis_norms\"} The last two parameters, $N_{\\rm QE}$ and $N_{\\rm RES}$, multiply the weights of the quasi-elastic and resonant samples as a whole. They therefore change no within-channel kinematic shape, but control the relative rates of the two interaction channels.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-differentiable-events-and-observables",
+      "number": null,
+      "title": "Differentiable events and observables",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 325,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adonis binned",
+          "heading": false
+        },
+        {
+          "term": "adonis events",
+          "heading": false
+        },
+        {
+          "term": "adonis cascade",
+          "heading": false
+        },
+        {
+          "term": "adonis nucleus",
+          "heading": false
+        },
+        {
+          "term": "adonis weight",
+          "heading": false
+        },
+        {
+          "term": "differentiable",
+          "heading": true
+        },
+        {
+          "term": "bin",
+          "heading": false
+        },
+        {
+          "term": "differentiability",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:adonis_events label=\"sec:adonis_events\"} The result of the generation is a bank in which every event carries, alongside its final-state kinematics, the records of Secs. [\\[sec:adonis_nucleus\\]](#sec:adonis_nucleus){reference-type=\"ref\" reference=\"sec:adonis_nucleus\"}--[\\[sec:adonis_cascade\\]](#sec:adonis_cascade){reference-type=\"ref\" reference=\"sec:adonis_cascade\"} that render its weight $w_i(\\bm\\theta)$ of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-gradients-and-higher-order-derivatives",
+      "number": null,
+      "title": "Gradients and higher-order derivatives",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 164,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adonis gradients",
+          "heading": false
+        },
+        {
+          "term": "partial theta",
+          "heading": false
+        },
+        {
+          "term": "frac partial",
+          "heading": false
+        },
+        {
+          "term": "per-event",
+          "heading": false
+        },
+        {
+          "term": "fitting",
+          "heading": false
+        },
+        {
+          "term": "fisher",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:adonis_gradients label=\"sec:adonis_gradients\"} Because $\\bm\\theta \\mapsto \\{w_i\\}$ is a JAX function, the Jacobian of the binned prediction, $$J_{bk} = \\frac{\\partial m_b}{\\partial\\theta_k},$$ is obtained by automatic differentiation. As the map takes few inputs (the parameter vector) to many outputs (the per-event weights, reduced to bins), we evaluate it in forward mode. A single Jacobian-vector product",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-validation",
+      "number": null,
+      "title": "Validation",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 765,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "validation",
+          "heading": true
+        },
+        {
+          "term": "val minerva",
+          "heading": false
+        },
+        {
+          "term": "val t2k",
+          "heading": false
+        },
+        {
+          "term": "double-differential cross",
+          "heading": false
+        },
+        {
+          "term": "microboone",
+          "heading": false
+        },
+        {
+          "term": "achilles",
+          "heading": false
+        },
+        {
+          "term": "nucleus absorption",
+          "heading": false
+        },
+        {
+          "term": "reaction cross",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:validation label=\"sec:validation\"} [ADoNIS]{.smallcaps} implements the same underlying physics choices as ACHILLES, enabling a direct validation against its predictions. Ref. [@Isaacson:2025cnk] compares ACHILLES with a broad set of measurements; here we reproduce representative comparisons with [ADoNIS]{.smallcaps} and ACHILLES overlaid, spanning different probes, interaction channels, target nuclei and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-gradient-information",
+      "number": null,
+      "title": "Gradient information",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 1385,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adonis gradients",
+          "heading": false
+        },
+        {
+          "term": "adonis fisher",
+          "heading": false
+        },
+        {
+          "term": "minerva",
+          "heading": false
+        },
+        {
+          "term": "microboone",
+          "heading": false
+        },
+        {
+          "term": "t2k",
+          "heading": false
+        },
+        {
+          "term": "neutrino samples",
+          "heading": false
+        },
+        {
+          "term": "gradient shape",
+          "heading": false
+        },
+        {
+          "term": "probe subsets",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:jacobian label=\"sec:jacobian\"} ::: figure* ![image](multisample_grad_per_bin){width=\"\\\\linewidth\"} ::: Neutrino--nucleus scattering is being probed by an increasingly broad set of measurements. The Fermilab short-baseline programme [@MicroBooNE:2015bmn] now has all three of its liquid-argon detectors operating---MicroBooNE [@MicroBooNE:2016pwy], ICARUS [@ICARUS:2023gpo] and SBND [@SBND:2025lha]---providing a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-parameter-inference-and-uncertainty-quantificati",
+      "number": null,
+      "title": "Parameter Inference and Uncertainty Quantification",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 14,
+      "labelStart": "10",
+      "labelEnd": "14",
+      "words": 2215,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uncertainty quantification",
+          "heading": true
+        },
+        {
+          "term": "adonis fisher",
+          "heading": false
+        },
+        {
+          "term": "adonis reweighting",
+          "heading": false
+        },
+        {
+          "term": "injected truth",
+          "heading": false
+        },
+        {
+          "term": "adonis events",
+          "heading": false
+        },
+        {
+          "term": "inference",
+          "heading": true
+        },
+        {
+          "term": "differentiable prediction",
+          "heading": false
+        },
+        {
+          "term": "fit performance",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:fitting label=\"sec:fitting\"} ::: figure* ![image](Asimov_xsec_samples){width=\"\\\\linewidth\"} ::: This section illustrates how a differentiable event generator constructed as described above can be used directly for parameter inference and uncertainty quantification. In [ADoNIS]{.smallcaps}, the derivative of any observable built from the events is available by construction (Sec.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-computational-cost",
+      "number": null,
+      "title": "Computational cost",
+      "level": 3,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 968,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "migrad supplied",
+          "heading": false
+        },
+        {
+          "term": "adonis fisher",
+          "heading": false
+        },
+        {
+          "term": "fit performance",
+          "heading": false
+        },
+        {
+          "term": "nuts",
+          "heading": false
+        },
+        {
+          "term": "fluctuated fits",
+          "heading": false
+        },
+        {
+          "term": "posterior",
+          "heading": false
+        },
+        {
+          "term": "mcmc",
+          "heading": false
+        },
+        {
+          "term": "cost",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec:fit_performance label=\"sec:fit_performance\"} Built-in derivative information can be exploited at every computational stage of the inference demonstrated above. We benchmark its impact in three representative tasks: locating the best fit, evaluating the curvature entering uncertainty quantification, and sampling the full posterior with MCMC. Unless otherwise stated, all performance tests are carried out in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-unfolding",
+      "number": null,
+      "title": "Unfolding",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "17",
+      "words": 1193,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "truth bins",
+          "heading": false
+        },
+        {
+          "term": "reconstructed bins",
+          "heading": false
+        },
+        {
+          "term": "truth bin",
+          "heading": false
+        },
+        {
+          "term": "mev bins",
+          "heading": false
+        },
+        {
+          "term": "unfold budget",
+          "heading": false
+        },
+        {
+          "term": "unfold corr",
+          "heading": false
+        },
+        {
+          "term": "signal templates",
+          "heading": false
+        },
+        {
+          "term": "reconstructed kinematics",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:unfolding label=\"sec:unfolding\"} The previous section used the differentiable prediction directly in truth space to constrain interaction-model parameters. The same machinery can also be carried through the detector response, allowing the signal in true kinematics to be extracted from reconstructed data while fitting flux, detector and interaction-model nuisance parameters simultaneously. This is the setting",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-conclusions",
+      "number": null,
+      "title": "Conclusions",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 414,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "differentiable neutrino",
+          "heading": false
+        },
+        {
+          "term": "intranuclear cascade",
+          "heading": false
+        },
+        {
+          "term": "event generators",
+          "heading": false
+        },
+        {
+          "term": "smallcaps",
+          "heading": false
+        },
+        {
+          "term": "adonis",
+          "heading": false
+        },
+        {
+          "term": "two-body currents",
+          "heading": false
+        },
+        {
+          "term": "differentiability",
+          "heading": false
+        },
+        {
+          "term": "unfolding",
+          "heading": false
+        }
+      ],
+      "extract": "We have presented [ADoNIS]{.smallcaps}, a fully differentiable neutrino interaction event generator. By separating stochastic event generation from the differentiable reweighting of the resulting event bank, [ADoNIS]{.smallcaps} propagates exact derivatives through the nuclear ground state, hard-scattering amplitudes and intranuclear cascade without modifying the underlying interaction physics. Its agreement with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 22,
+      "labelStart": "17",
+      "labelEnd": "22",
+      "words": 3444,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hep-ex",
+          "heading": false
+        },
+        {
+          "term": "nucl-th",
+          "heading": false
+        },
+        {
+          "term": "hep-ph",
+          "heading": false
+        },
+        {
+          "term": "enez",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "barbaro",
+          "heading": false
+        },
+        {
+          "term": "megias",
+          "heading": false
+        }
+      ],
+      "extract": "The author acknowledges fruitful discussions with A. Lovato, O. Alterkait and C. Wilkinson. This work was supported by compute credits from Anthropic’s AI for Science program. 4 https://github.com/cesarjesusvalls/ADoNIS [1] S. Abubakar et al. (T2K, NOvA), Nature 646, 818 (2025), arXiv:2510.19888 [hep-ex]. [2] S. Abubakar et al. (NOvA), Phys. Rev. Lett. 136, 011802 (2026), arXiv:2509.04361 [hep-ex]. [3] B. Abi et al.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-additional-validation-distributions",
+      "number": null,
+      "title": "Additional validation distributions",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 405,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "achilles",
+          "heading": false
+        },
+        {
+          "term": "dpt",
+          "heading": false
+        },
+        {
+          "term": "adonis",
+          "heading": false
+        },
+        {
+          "term": "validation",
+          "heading": true
+        },
+        {
+          "term": "mev",
+          "heading": false
+        }
+      ],
+      "extract": "The remaining comparisons between ADoNIS and ACHILLES for the validation distributions of Ref. [90] are shown below. 0 200 400 600 800 1000 δpT [MeV/c] 0.0 0.2 0.4 0.6 0.8 1.0 dσ/dx [nb] 1e−7 / Total / QE / RES 0.0 0.5 1.0 1.5 2.0 2.5 3.0 δαT [rad] 0 2 4 6 8 1e−6 0 500 1000 1500 2000 pμ [MeV/c] 0 1 2 3 4 5 1e−8 −0.50 −0.25 0.00 0.25 0.50 0.75 1.00 cos θμ 0 1 2 3 1e−5 FIG. 13. ADoNIS (solid) vs. ACHILLES (dashed).",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "adonis cascade",
+      "heading": true
+    },
+    {
+      "term": "adonis reweighting",
+      "heading": false
+    },
+    {
+      "term": "adonis events",
+      "heading": false
+    },
+    {
+      "term": "adonis nucleus",
+      "heading": true
+    },
+    {
+      "term": "adonis fisher",
+      "heading": false
+    },
+    {
+      "term": "adonis gradients",
+      "heading": false
+    },
+    {
+      "term": "adonis vertex",
+      "heading": false
+    },
+    {
+      "term": "adonis amplitudes",
+      "heading": false
+    },
+    {
+      "term": "adonis weight",
+      "heading": false
+    },
+    {
+      "term": "adonis binned",
+      "heading": false
+    },
+    {
+      "term": "adonis norms",
+      "heading": false
+    },
+    {
+      "term": "adonis quad",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "ADoNIS (solid) vs. ACHILLES (dashed). MINERvA CC0π on 12C at ⟨Eν⟩≈3 GeV, with the signal definition of Ref. [138]: the TKI variables δαT , pn, δpT and δϕT , and the proton and muon kinematics",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "ADoNIS (solid) vs. ACHILLES (dashed)",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "ADoNIS (solid) vs. ACHILLES (dashed). Inclusive",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "ADoNIS (solid) vs. ACHILLES (dashed). π+–nucleus absorption and reaction cross sections on carbon and argon as a function of pion momentum [145–147], testing the intranuclear cascade in isolation",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Signed per-bin parameter response δθkJik/σi, with each row normalised to its own peak, for the 17 parameters retained for inference and highlighted in Fig. 6, across the samples and fitted bins shown in Fig. 7",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Marginalised parameter constraints σpost/σprior for samples aggregated by probe type and for all samples combined. Cells with σpost/σprior < 0.5 are highlighted in orange",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Every observable entering the fit, before and after it. Points are the Asimov data with the per-bin uncertainty used in the fit; hollow points are the bins removed by the Monte Carlo error mask. The pre-fit curve is the prediction at nominal and the post-fit curve the prediction at the recovered par",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "(a) Recovery of the 17 fitted parameters, in units of the reference width δθk defined in Sec. IV. Every parameter returns to its injected truth",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Four parameters of the fit in two dimensions. Below the diagonal, the parameter pairs are shown over a wide range",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Unfolded T2K CC0π double-differential cross section in two of the nine cos θµ slices, for a closure test and for a dataset in which the true signal is increased by 20%",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Uncertainty on the 58 unfolded templates as statistical and systematic contributions are successively included",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Post-fit correlation matrix of the 196 fitted parameters: 58 signal templates c, 10 flux parameters f, 12 crosssection parameters θ and 116 detector parameters d",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "ADoNIS (solid) vs. ACHILLES (dashed)",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "ADoNIS (solid) vs. ACHILLES (dashed)",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "ADoNIS (solid) vs. ACHILLES (dashed). Micro- BooNE CC1p0π on 40Ar [142]: δpT in slices of δαT",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "ADoNIS (solid) vs. ACHILLES (dashed). e4ν ob-",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p009-1",
+      "file": "images/img-p009-1.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-2",
+      "file": "images/img-p009-2.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-1",
+      "file": "images/img-p010-1.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-2",
+      "file": "images/img-p010-2.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-1",
+      "file": "images/img-p013-1.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-2",
+      "file": "images/img-p013-2.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-3",
+      "file": "images/img-p013-3.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-4",
+      "file": "images/img-p013-4.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-5",
+      "file": "images/img-p013-5.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-6",
+      "file": "images/img-p013-6.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-1",
+      "file": "images/img-p016-1.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-2",
+      "file": "images/img-p016-2.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 21,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 19,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 12,
+      "note": "16 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 19 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2608.25107v1"
+  }
+}

@@ -1,0 +1,1375 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2404.03933v2",
+  "title": "arxiv-2404.03933v2",
+  "variant": "pdf",
+  "pages": 44,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Algebra Uq(sl2) and its representations",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-algebra-uqsl2-and-its-representations"
+    },
+    {
+      "level": 1,
+      "title": "Decomposition of tensor powers of T(1) over Uq(sl2)",
+      "number": "3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-decomposition-of-tensor-powers-of-t1-over-uqsl"
+    },
+    {
+      "level": 1,
+      "title": "Restriction from Uq(sl2) to uq(sl2)",
+      "number": "4",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-restriction-from-uqsl2-to-uqsl2"
+    },
+    {
+      "level": 1,
+      "title": "Recursive formulae for Uq(sl2) and uq(sl2) tensor products.",
+      "number": "5",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-recursive-formulae-for-uqsl2-and-uqsl2-tensor"
+    },
+    {
+      "level": 1,
+      "title": "Multiplicities and lattice paths",
+      "number": "6",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-multiplicities-and-lattice-paths"
+    },
+    {
+      "level": 1,
+      "title": "Integral formula for multiplicities",
+      "number": "7",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-7-integral-formula-for-multiplicities"
+    },
+    {
+      "level": 1,
+      "title": "Probabilistic measures on the tensor product decomposition",
+      "number": "8",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-8-probabilistic-measures-on-the-tensor-product-d"
+    },
+    {
+      "level": 1,
+      "title": "The asymptotic of the character and Plancherel measures for Uq(sl2)",
+      "number": "9",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-9-the-asymptotic-of-the-character-and-plancherel"
+    },
+    {
+      "level": 1,
+      "title": "The asymptotic of probability measures for uq(sl2)",
+      "number": "10",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-10-the-asymptotic-of-probability-measures-for-uq"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Gaussian binomial coefficients",
+      "number": null,
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-appendix-a-gaussian-binomial-coefficients"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B. Proof of Theorem 6.3",
+      "number": null,
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-appendix-b-proof-of-theorem-63"
+    },
+    {
+      "level": 1,
+      "title": "Appendix C. Proof of Theorems 9.1, 9.2, 9.3",
+      "number": null,
+      "page": 38,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-appendix-c-proof-of-theorems-91-92-93"
+    },
+    {
+      "level": 1,
+      "title": "Appendix D. Proof of Theorem 9.4",
+      "number": null,
+      "page": 41,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-appendix-d-proof-of-theorem-94"
+    },
+    {
+      "level": 1,
+      "title": "Appendix E. Proof of Theorems 9.5 and 9.6",
+      "number": null,
+      "page": 42,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-appendix-e-proof-of-theorems-95-and-96"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 43,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 118,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tensor powers",
+          "heading": false
+        },
+        {
+          "term": "tilting modules",
+          "heading": false
+        },
+        {
+          "term": "dimensional irreducible",
+          "heading": false
+        },
+        {
+          "term": "postnova",
+          "heading": false
+        }
+      ],
+      "extract": "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN ROOTS OF UNITY. ANNA LACHOWSKA, OLGA POSTNOVA, NICOLAI RESHETIKHIN, AND DMITRY SOLOVYEV Dedicated to the memory of A. M. Vershik. Abstract. We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of unity into direct sums of tilting modules. We derive a combinatorial formula for multiplicity of",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2404.03933v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": "4",
+      "words": 1635,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "indecomposable tilting",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "tilting modules",
+          "heading": false
+        },
+        {
+          "term": "tilt prod",
+          "heading": false
+        },
+        {
+          "term": "quantum mathfrak",
+          "heading": false
+        },
+        {
+          "term": "qsl",
+          "heading": false
+        },
+        {
+          "term": "tilting components",
+          "heading": false
+        },
+        {
+          "term": "prthu",
+          "heading": false
+        }
+      ],
+      "extract": "## A typical problem in asymptotical representation theory, the subject pioneered by A. M. Vershik, is the study of infinite sequences of branching rules. For example, if $A_n$, $n\\in\\mathbb{Z}_{>0}$ is a sequence of associative algebras, $V_n$ is a sequence of finite dimensional[^1] representations of $A_n$ and $B_n\\subset A_n$ is a sequence of subalgebras, consider restrictions of $V_n$ to $B_n$. We have:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-algebra-uqsl2-and-its-representations",
+      "number": "2",
+      "title": "Algebra Uq(sl2) and its representations",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 9,
+      "labelStart": "4",
+      "labelEnd": "9",
+      "words": 2393,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilting modules",
+          "heading": false
+        },
+        {
+          "term": "tilt prod",
+          "heading": false
+        },
+        {
+          "term": "tilt prop",
+          "heading": false
+        },
+        {
+          "term": "tilt char",
+          "heading": false
+        },
+        {
+          "term": "otimes mathcal",
+          "heading": false
+        },
+        {
+          "term": "indecomposable tilting",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "weyl modules",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#one label=\"one\"} ## Hopf algebra $U_q(\\mathfrak{sl}_2)$ {#qsl2} Let $v$ be a formal parameter and consider the $\\mathbb{Q}(v)$-algebra $U_v(\\mathfrak{sl}_2)$ generated by $E, F, K^{\\pm1}$ with relations $$K K^{-1} = K^{-1}K =1 , \\quad \\quad K E = v^2 E K , \\quad \\quad K F = v^{-2} F K ,$$ $$EF - F E = \\frac{K - K^{-1}}{v - v^{-1}} .$$ This is a Hopf algebra with the coproduct, counit and the antipode given by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-decomposition-of-tensor-powers-of-t1-over-uqsl",
+      "number": "3",
+      "title": "Decomposition of tensor powers of T(1) over Uq(sl2)",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 766,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilt char",
+          "heading": false
+        },
+        {
+          "term": "comb coef",
+          "heading": false
+        },
+        {
+          "term": "tilt prod",
+          "heading": false
+        },
+        {
+          "term": "tilt prop",
+          "heading": false
+        },
+        {
+          "term": "bigoplus leq",
+          "heading": false
+        },
+        {
+          "term": "tilting characters",
+          "heading": false
+        },
+        {
+          "term": "oplus bigoplus",
+          "heading": false
+        },
+        {
+          "term": "substack leq",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#tp label=\"tp\"} We are interested in the tensor powers of the module $L(1)$ over the quantum group $U_q(\\mathfrak{sl}_2)$, given explicitly by the following action of the generators: $$F v_1 = v_{-1} \\quad \\quad F v_{-1} =0 , \\quad \\quad Ev_1= 0, \\quad \\quad Ev_{-1} = v_1 .$$ $$Kv_1 = q v_1, \\quad \\quad Kv_{-1} = q^{-1} v_{-1} .$$ $$E^{(l)} v_i =0, \\quad \\quad F^{(l)} v_i =0, \\quad \\quad i=1, -1 .$$ Since $L(1)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-restriction-from-uqsl2-to-uqsl2",
+      "number": "4",
+      "title": "Restriction from Uq(sl2) to uq(sl2)",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": null,
+      "words": 550,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilting modules",
+          "heading": false
+        },
+        {
+          "term": "tensor powers",
+          "heading": false
+        },
+        {
+          "term": "mod",
+          "heading": false
+        },
+        {
+          "term": "quantum group",
+          "heading": false
+        },
+        {
+          "term": "multiplicities",
+          "heading": false
+        },
+        {
+          "term": "odd",
+          "heading": false
+        },
+        {
+          "term": "following decomposition",
+          "heading": false
+        }
+      ],
+      "extract": "Let U0 q ⊂Uq(sl2) denote the subalgebra of Uq(sl2) generated by K±1, \u0014 K; c t \u0015 for t ≥ 0, c ∈Z. Let u± q ⊂uq denote the subalgebras of uq generated by F and E respectively. Using Theorem 2.11, we can obtain the following result for the restriction of the tilting modules over the algebra u− q U0 q u+ q : Corollary 4.1. Restricting Theorem 3.1 over the algebra u− q U0 q u+ q , we obtain after a change of variables",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-recursive-formulae-for-uqsl2-and-uqsl2-tensor",
+      "number": "5",
+      "title": "Recursive formulae for Uq(sl2) and uq(sl2) tensor products.",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": "14",
+      "words": 285,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quad leq",
+          "heading": false
+        },
+        {
+          "term": "quad geq",
+          "heading": false
+        },
+        {
+          "term": "nonumber end",
+          "heading": false
+        },
+        {
+          "term": "quad text",
+          "heading": false
+        },
+        {
+          "term": "oplus",
+          "heading": false
+        },
+        {
+          "term": "otimes",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#recursion label=\"recursion\"} Denote by $T(lk_1 + k_0)$ the indecomposable tilting module over $U_q ({\\mathfrak{s}l}_2)$ of type 1 with the highest weight $lk_1 + k_0$, with $0 \\leq k_0 \\leq l-1$, $k_1 \\geq 0$. Note that modules $T(k)=L(k)=W(k)$ are irreducible when $0\\leq k\\leq l-1$ or $k=lk_1-1$. Then we have: $$\\begin{aligned} \\label{A} T(k_0) \\otimes T(1) &=& T(k_0+1) \\oplus T(k_0 -1), \\quad 0 \\leq k_0 \\leq",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-multiplicities-and-lattice-paths",
+      "number": "6",
+      "title": "Multiplicities and lattice paths",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 18,
+      "labelStart": "14",
+      "labelEnd": "18",
+      "words": 1308,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lattice paths",
+          "heading": true
+        },
+        {
+          "term": "multiplicities",
+          "heading": true
+        },
+        {
+          "term": "node leq",
+          "heading": false
+        },
+        {
+          "term": "lattice walk",
+          "heading": false
+        },
+        {
+          "term": "elementary steps",
+          "heading": false
+        },
+        {
+          "term": "n-l rfloor",
+          "heading": false
+        },
+        {
+          "term": "steps mathbb",
+          "heading": false
+        },
+        {
+          "term": "lfloor frac",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#rec-mult label=\"rec-mult\"} Here we reformulate the problem of tensor power decomposition over $U_q(\\mathfrak{sl}_2)$ and $u_q(\\mathfrak{sl}_2)$ resolved in the previous section in terms of counting lattice paths on the set of dominant weights for the corresponding quantum groups and will give a combinatorial derivation of multiplicity formulae for $T(1)^{\\otimes N}$ derived before. ## Lattice path model for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-integral-formula-for-multiplicities",
+      "number": "7",
+      "title": "Integral formula for multiplicities",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 21,
+      "labelStart": "18",
+      "labelEnd": "21",
+      "words": 890,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "comb coef",
+          "heading": false
+        },
+        {
+          "term": "aligned mathrm",
+          "heading": false
+        },
+        {
+          "term": "tilting modules",
+          "heading": false
+        },
+        {
+          "term": "weyl modules",
+          "heading": false
+        },
+        {
+          "term": "frac x-x",
+          "heading": false
+        },
+        {
+          "term": "isomlw",
+          "heading": false
+        },
+        {
+          "term": "quad mathrm",
+          "heading": false
+        },
+        {
+          "term": "integral formula",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#rec-int label=\"rec-int\"} ## Characters of tilting and Weyl modules. We define the character of an $U_q(\\mathfrak{sl}_2)$-module $V$ as the Laurent polynomial (see section [\\[modules\\]](#modules){reference-type=\"ref\" reference=\"modules\"}) as $$\\mathrm{ch}_V (x)=\\sum_j \\dim V_j x^j$$ Here the sum is taken over weight subspaces of $V$ and $i$ ranges over all possible weights that occur in $V$. We will treat $x$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-8-probabilistic-measures-on-the-tensor-product-d",
+      "number": "8",
+      "title": "Probabilistic measures on the tensor product decomposition",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": "21",
+      "labelEnd": "23",
+      "words": 632,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "mathrm dim",
+          "heading": false
+        },
+        {
+          "term": "quantum plancherel",
+          "heading": false
+        },
+        {
+          "term": "character measure",
+          "heading": false
+        },
+        {
+          "term": "quad leq",
+          "heading": false
+        },
+        {
+          "term": "a-u-steps",
+          "heading": false
+        },
+        {
+          "term": "tilting modules",
+          "heading": false
+        },
+        {
+          "term": "fchar",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#probmeas label=\"probmeas\"} Here we introduce some natural probabilistic measures on indecomposable components of $T(1)^{\\otimes N}$ for big and small quantum $\\mathfrak{sl}_2$ and we show that they are all induced by Markov processes. ## The character and the Plancherel measures for $U_q(\\mathfrak{sl}_2)$ Let $X^{(l)}_N$ be the set of tilting modules of $U_q(\\mathfrak{sl}_2)$ that occur in the decomposition of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-9-the-asymptotic-of-the-character-and-plancherel",
+      "number": "9",
+      "title": "The asymptotic of the character and Plancherel measures for Uq(sl2)",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 28,
+      "labelStart": "23",
+      "labelEnd": "28",
+      "words": 2268,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "l-k big",
+          "heading": false
+        },
+        {
+          "term": "frac l-k",
+          "heading": false
+        },
+        {
+          "term": "n-k big",
+          "heading": false
+        },
+        {
+          "term": "frac mathrm",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "frac gamma",
+          "heading": false
+        },
+        {
+          "term": "character measure",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#as9 label=\"as9\"} In this section we will compute the asymptotic of the character and the Plancherel measures on tilting submodules of $T(1)^{\\otimes N}$ when $N\\to \\infty$. We will start with computing the asymptotic of the multiplicity of $T(k)\\subset T(1)^{\\otimes N}$. ## The asymptotic of the multiplicity function Note that in the tensor product $T(1)^{\\otimes N}$ only submodules $T(k)$ with $k\\equiv N",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-10-the-asymptotic-of-probability-measures-for-uq",
+      "number": "10",
+      "title": "The asymptotic of probability measures for uq(sl2)",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 30,
+      "labelStart": "28",
+      "labelEnd": "30",
+      "words": 898,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm prob",
+          "heading": false
+        },
+        {
+          "term": "plancherel measures",
+          "heading": false
+        },
+        {
+          "term": "markov processes",
+          "heading": false
+        },
+        {
+          "term": "probabilities mathrm",
+          "heading": false
+        },
+        {
+          "term": "markov process",
+          "heading": false
+        },
+        {
+          "term": "frac mathrm",
+          "heading": false
+        },
+        {
+          "term": "dots mathrm",
+          "heading": false
+        },
+        {
+          "term": "secplanch",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#as10 label=\"as10\"} ## Corresponding Markov processes ### Probabilistic measures induced by Markov processes Let $X$ be a countable set. A *local Markov process* on $X$ is a collection of transition probabilities $\\{\\mathrm{Prob}(x\\to y)\\}_{x,y\\in X}$, i.e. $0\\leq \\mathrm{Prob}(x\\to y)\\leq 1$, such that - for each $x$ there are only finitely many $y$ such that $\\mathrm{Prob}(x\\to y)\\neq 0$, - $\\sum\\limits_y",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-appendix-a-gaussian-binomial-coefficients",
+      "number": null,
+      "title": "Appendix A. Gaussian binomial coefficients",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "30",
+      "labelEnd": null,
+      "words": 388,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "binomial",
+          "heading": true
+        },
+        {
+          "term": "q2l",
+          "heading": false
+        },
+        {
+          "term": "gaussian",
+          "heading": true
+        }
+      ],
+      "extract": "Let v be a formal parameter. The Gaussian binomial coefficient for m ∈Z, r ∈Z≥0, is defined as follows \u0014 m r \u0015 = r Y s=1 vm−s+1 −v−m+s−1 vs −v−s ∈Z[v, v−1]. We also define for n ≥0 the quantum numbers [n] = vn −v−n v −v−1 , [n]! = n Y s=1 vs −v−s v −v−1 . If 0 ≤r ≤m, then \u0014 m r \u0015 = [m]! [r]![m −r]!. Now let q = e πi l , where l is an odd integer ≥3, so that q2l = 1 and qk̸ = 1 for any 1 ≤k < 2l. Proposition A.1. Let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-appendix-b-proof-of-theorem-63",
+      "number": null,
+      "title": "Appendix B. Proof of Theorem 6.3",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1952,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "odd p2j",
+          "heading": false
+        },
+        {
+          "term": "olga postnova",
+          "heading": false
+        },
+        {
+          "term": "even q2j",
+          "heading": false
+        },
+        {
+          "term": "dmitry solovyev",
+          "heading": false
+        },
+        {
+          "term": "anna lachowska",
+          "heading": false
+        },
+        {
+          "term": "m2j",
+          "heading": false
+        },
+        {
+          "term": "nicolai reshetikhin",
+          "heading": false
+        },
+        {
+          "term": "auxiliary lattice",
+          "heading": false
+        }
+      ],
+      "extract": "B.1. Proof of theorem 6.3 (a). Proof. Consider the counting formula for lattice path in the auxiliary model [PS] Mj (M,N) = 2j−2\u0000⌊N−(j−1)l+1 4l ⌋ X k=0 Pj(k)F (N) M+4kl + ⌊N−jl 4l ⌋ X k=0 Pj(k)F (N) M−4kl−2jl − − ⌊N−(j+1)l+1 4l ⌋ X k=0 Qj(k)F (N) M+2l+4kl − ⌊N−(j+2)l 4l ⌋ X k=0 Qj(k)F (N) M−4kl−2(j+1)l \u0001 , (18) 32 ANNA LACHOWSKA, OLGA POSTNOVA, NICOLAI RESHETIKHIN, AND DMITRY SOLOVYEV where Pj(k) = ⌊j 2 ⌋ X i=0 \u0012j",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-appendix-c-proof-of-theorems-91-92-93",
+      "number": null,
+      "title": "Appendix C. Proof of Theorems 9.1, 9.2, 9.3",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 41,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1146,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "πln",
+          "heading": false
+        },
+        {
+          "term": "k1l",
+          "heading": false
+        },
+        {
+          "term": "vicinity",
+          "heading": false
+        },
+        {
+          "term": "here summation",
+          "heading": false
+        },
+        {
+          "term": "bounded test",
+          "heading": false
+        },
+        {
+          "term": "critical point",
+          "heading": false
+        },
+        {
+          "term": "riemann sum",
+          "heading": false
+        },
+        {
+          "term": "increments",
+          "heading": false
+        }
+      ],
+      "extract": "C.1. Proof of Theorem 9.1. Proof. Consider the case k0̸ = l −1. Since N ≡k mod 2, we can write k1 = 2s + γ where s →∞. The asymptotic of a jth term from the first sum in (4) is (2lN1 + N0)!(k1l + k0 + 2jl + 1) \u0000 2lN1+N0−k1l−k0−2jl 2 \u0001 ! \u0000 2lN1+N0+k1l+k0+2jl 2 + 1 \u0001 ! = (2ξlN1 + γl + k0 + 2jl + 1) 2lN1(1+ξ)+γl+k0+2jl 2 + 1 × × N0 Y m=1 (2lN1 + m) (2lN1)! \u0000 1−ξ−ϵ− 2 2lN1 \u0001 ! \u0000 1+ξ+ϵ+ 2 2lN1 \u0001 ! = Here k0 + γl + 2jl ±",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-appendix-d-proof-of-theorem-94",
+      "number": null,
+      "title": "Appendix D. Proof of Theorem 9.4",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 42,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 169,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lbu n1e",
+          "heading": false
+        },
+        {
+          "term": "cht",
+          "heading": false
+        },
+        {
+          "term": "b2l",
+          "heading": false
+        }
+      ],
+      "extract": "Proof. For k0̸ = l −1 we get chT(k)(et) (chT(1)(et))N = elbu −e−lbu u p 2N1e−u2l 2 2−2lN1−N0 \u0012 1 + O \u0012 1 N1 \u0013\u0013 , and for k0 = l −1 chT(lk1+l−1)(et) (chT(1)(et))N = elbu −e−lbu 2u p 2N1e−u2l 2 2−2lN1−N0 \u0012 1 + O \u0012 1 N1 \u0013\u0013 , so, expanding (11) in the vicinity of the critical point, where ξ = b √2N1 , for the considered pointwise asymptotic of the character measure we get a product of two densities p(l) N (b, k0; u) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-appendix-e-proof-of-theorems-95-and-96",
+      "number": null,
+      "title": "Appendix E. Proof of Theorems 9.5 and 9.6",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 43,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 324,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "k1l",
+          "heading": false
+        },
+        {
+          "term": "cht",
+          "heading": false
+        },
+        {
+          "term": "n1l",
+          "heading": false
+        }
+      ],
+      "extract": "E.1. Proof of Theorem 9.5. Proof. Note that N = k + 2a for some a finite nonnegative integer, so N0 −k0 + l(2s + γ) = 2a and is divisible by 2. At most only 2s + 1 terms will appear in M(l) T(k)(N), their asymptotic is given by N!(k1l + k0 + 2jl + 1) \u0000 N−k1l−k0−2jl 2 \u0001 ! \u0000 N+k1l+k0+2jl 2 + 1 \u0001 ! = (2N1l −l(2s + γ) + k0 + 2jl + 1) QN0 m=1(2lN1 + m) \u0000 N0−k0+l(2s+γ)−2jl 2 \u0001 !(2lN1 + N0+k0−l(2s+γ)+2jl 2 + 1 \u0001 × ×",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 665,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "saint petersburg",
+          "heading": false
+        },
+        {
+          "term": "nauchnykh seminarov",
+          "heading": false
+        },
+        {
+          "term": "zapiski nauchnykh",
+          "heading": false
+        },
+        {
+          "term": "wen kexin",
+          "heading": false
+        },
+        {
+          "term": "postnova",
+          "heading": false
+        },
+        {
+          "term": "arxiv preprint",
+          "heading": false
+        },
+        {
+          "term": "uq-tilting modules",
+          "heading": false
+        },
+        {
+          "term": "email address",
+          "heading": false
+        }
+      ],
+      "extract": "References [And92] H.H. Andersen, Tensor products of quantized tilting modules, Comm. Math. Phys. 149, 149-159 (1992) [APW1] H.H. Andersen, P. Polo. Wen Kexin, Representations of quantum algebras, Invent. math. 104, 1-59 (1991) [APW2] H.H. Andersen, P. Polo. Wen Kexin, Injective modules for quantum algebras, Amer. J. Math., 114, no. 3, 571-604 (1992) [AT] H.H. Andersen, D. Tubbenhauer, Diagram categories for",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Introduction"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "tilting modules",
+      "heading": false
+    },
+    {
+      "term": "indecomposable tilting",
+      "heading": false
+    },
+    {
+      "term": "tilting characters",
+      "heading": false
+    },
+    {
+      "term": "tensor powers",
+      "heading": true
+    },
+    {
+      "term": "quad leq",
+      "heading": false
+    },
+    {
+      "term": "quantum mathfrak",
+      "heading": false
+    },
+    {
+      "term": "mathbb geq",
+      "heading": false
+    },
+    {
+      "term": "frac mathrm",
+      "heading": false
+    },
+    {
+      "term": "tilting components",
+      "heading": false
+    },
+    {
+      "term": "sum leq",
+      "heading": false
+    },
+    {
+      "term": "weyl modules",
+      "heading": false
+    },
+    {
+      "term": "sum otimes",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The set of elementary steps SU, where red arrows denote steps of multiplicity 2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Two paths with elementary steps from SU. Red lines indicate elementary steps with multiplicity 2. A vertex with coordinate (k, N) represents the highest weight k of the tilting module T(k) ⊂T(1)⊗N. The number of lattice paths from the origin to (k, N) is the multiplicity M(l)",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The set of elementary steps Su, where red arrows denote steps of multiplicity 2",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Two paths with elementary steps from Su",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Twisting of the auxiliary lattice into a cylinder",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 16,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 17,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "5 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p43); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 10
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 17 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2404.03933v2"
+  }
+}

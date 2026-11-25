@@ -1,0 +1,441 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1712.03058v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Iterated ﬁltering methods for Markov process\nepidemic models\nTheresa Stocks1\n1Department of Mathematics, Stockholm University, Sweden\nThis manuscript is a preprint of a Chapter to appear in the Handbook\nof Infectious Disease Data Analysis, Held, L., Hens, N., O’Neill, P.D.\nand Wallinga, J. (Eds.). Chapman & Hall/CRC, 2018. Please use\nthe book for possible citations.\nChapter Abstract\nDynamic epidemic models have proven valuable for public health decision makers\nas they provide useful insights into the understanding and prevention of infectious\ndiseases.\nHowever, inference for these types of mod",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-11-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nIn this chapter we describe how iterated ﬁltering methods (Ionides et al.,\n2006, 2015) can be used to analyze available infectious disease outbreak data\nin the form of time series. The centerpiece of these methods is the assump-\ntion that the outbreak data can be modeled as a noisy and only partially\nobserved realization of a disease transmission process that is assumed to be a\nMarkov process (King et al., 2016). The general inference approach is to (i)\nformulate a suitable Markovian transmission process; (ii) connect the data to\nthe transmission process via some suitable observat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Iterated filtering methods for POMP",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-1-iterated-filtering-methods-for-pomp.md",
+      "narrative": null,
+      "content": "2\nand describe in some detail how to ﬁt this model to outbreak data consisting\nof the number of newly reported cases aggregated over time intervals, e.g.\nweeks. However, the methods can be easily extended to more complicated\nsettings, several of which will be discussed here.\nThe chapter is structured as follows: Section 1.2 gives a short overview about",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Likelihood-based inference",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-12-likelihood-based-inference.md",
+      "narrative": null,
+      "content": "Section 1.3 we introduce the model class of partially observed Markov pro-\ncesses and explain how to formulate and evaluate the likelihood of such\nmodels with particle ﬁlters.\nIn Section 1.4 we present the iterated ﬁlter-\ning algorithm and demonstrate its use by a simple example in Section 1.5.\nIn Section 1.6 we discuss possible extensions of this example and, in Sec-\ntion 1.7, illustrate how the method can be applied to a real-world problem\nwhich accommodates most of the complications mentioned. Both examples\nare accompanied by source code and instructions which can be found online\nat Stocks",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The likelihood approach",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-121-the-likelihood-approach.md",
+      "narrative": null,
+      "content": "The idea behind likelihood-based inference is the following. Suppose we have data in the form of a sequence of $N$ observations $\\bm{y}^*_{1:N}$ at times $t_1,\\dots ,t_N$ and a model for the data $f(\\bm{y}_{1:N};\\bm{\\theta})$ where $f$ is typically a probability mass or density function parametrized by a vector of parameters denoted by $\\bm{\\theta}$. In our context $\\bm{y}^*_{1:N}$ might, for example, represent the weekly number of newly reported cases over a certain period of time and $\\bm{\\theta}$ might contain the parameters of a suitable Markovian epidemic transmission model. In order to c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Practical challenges",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-122-practical-challenges.md",
+      "narrative": null,
+      "content": "In principle, the optimization problem in ([\\[mle\\]](#mle){reference-type=\"ref\" reference=\"mle\"}) looks rather straightforward, however, there are a number of challenges in practice. Firstly, the evaluation of $\\mathcal{L}$ can be difficult because the function might not be available in closed form. Secondly, even if evaluation is possible, it might be very hard to derive the first and higher order derivatives of $\\mathcal{L}$ analytically or even numerically which are needed for numerical optimization methods, cf. [@Nocedal1999]. In this case we need derivative-free optimizers. Those optimize",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Inference for partially observed Markov processes (POMP)",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-13-inference-for-partially-observed-markov-proce.md",
+      "narrative": null,
+      "content": "processes (POMP)\nIn the literature partially observed Markov processes are also known as hid-\nden state space models or stochastic dynamical systems. The main assump-\ntion is that at discrete points in time we observe some noisy aspect of the\ntrue underlying Markov process which is itself often continuous in time. In",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Likelihood of a POMP",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-131-likelihood-of-a-pomp.md",
+      "narrative": null,
+      "content": "A POMP consists of two model components, (i) an unobserved Markov process $\\{\\bm{X}(t;\\bm{\\theta}): t \\geq 0 \\}$, which can be discrete or continuous in time, and (ii) an observation model which describes how the data collected at discrete points in time $t_1,\\dots ,t_N$, is connected to the transmission model. For notational convenience, we write $\\bm{X}_n=\\bm{X}(t_n;\\bm{\\theta})$ and $\\bm{X}_{0:N}=(\\bm{X}_0,\\dots,\\bm{X}_N)$. In our application, the process $\\bm{X}_{0:N}$ describes the dynamics of the disease spread, e.g. in the case of the simple Markovian SIR model $\\bm{X}_n= (S(t_n),I(t_n)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Evaluation of the likelihood",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-007-132-evaluation-of-the-likelihood.md",
+      "narrative": null,
+      "content": "[]{#evaluation label=\"evaluation\"} Before addressing the question of how to maximize the likelihood in ([\\[lik\\]](#lik){reference-type=\"ref\" reference=\"lik\"}) in an efficient way, we have to first think about how we actually evaluate $\\mathcal{L}$ for a given parameter vector $\\bm{\\theta}$. In the special case that the underlying transmission model is deterministic and the initial values are given, $\\bm{X}_n=\\bm{x}_n(\\bm{\\theta})$ is a non-random function of $\\bm{\\theta}$ for each $n$, hence $f_{\\bm{X}_n|\\bm{X}_{n-1}}$and $f_{\\bm{X}_0}$ are point masses. The likelihood equation ([\\[lik\\]](#lik",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Particle filter",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-008-133-particle-filter.md",
+      "narrative": null,
+      "content": "One standard approach to solve a high dimensional integral as in Equation ([\\[lik\\]](#lik){reference-type=\"ref\" reference=\"lik\"}) is to approximate the integral by Monte Carlo methods. However, as it will turn out, for the model class at hand, this approach is highly inefficient in practice. Nevertheless, we will demonstrate this approach first, in order to introduce the reader to the problem. Readers unfamiliar with Monte Carlo methods might want to consult the relevant literature, e.g. [@Robert2004; @pfilter].\\\nThe basic idea is that the likelihood in Equation ([\\[lik\\]](#lik){reference-type",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Iterated filtering methods",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-009-14-iterated-filtering-methods.md",
+      "narrative": null,
+      "content": "[]{#iterated_filtering label=\"iterated_filtering\"} Iterated filtering is a simulation-based method to find the MLE which takes advantage of the structure of POMP models and particle filters. It was first introduced by [@ionides06] and further improved in [@Ionides2015]. The iterated filtering method uses the property that it is easy to simulate from $f_{\\bm{X}_n|\\bm{X}_{n-1}}$ while the likelihood is not tractable directly. The basic idea is that a particle filter is applied to a model in which the parameter vector for each particle is following a random walk. As iterations progress, the inten",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algorithm",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-010-141-algorithm.md",
+      "narrative": null,
+      "content": "[]{#mif_algorithm label=\"mif_algorithm\"} In the following we present the pseudocode for iterated filtering as implemented in the `mif2` function in the `R` package `pomp` and explain how to draw samples from $f_{\\bm{X}_n|\\bm{X}_{n-1}}$.\\\n**Pseudocode iterated filtering (`mif2`)** cf. [@Ionides2015]\\\n**Input:** Simulators for $f_{\\bm{X}_0}(\\bm{x}_0;\\boldsymbol{\\theta})$ and $f_{\\bm{X}_n|\\bm{X}_{n-1}}(\\bm{x}_n| \\bm{x}_{n-1}; \\boldsymbol{\\theta})$; evaluator for $f_{\\bm{Y}_n|\\bm{X}_n}(\\bm{y}_n|\\bm{x}_n;\\boldsymbol{\\theta})$; data $\\bm{y}^*_{1:N}$\\\n**Algorithmic parameters:** \\# of iterations $M$;",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Iterated filtering for SIR model given incidence data",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-011-15-iterated-filtering-for-sir-model-given-incide.md",
+      "narrative": null,
+      "content": "dence data",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The problem of interest",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-012-151-the-problem-of-interest.md",
+      "narrative": null,
+      "content": "Typical infectious disease data collected by public health authorities often consists of reported incidences in given time periods. Other important characteristics of an epidemic such as recovery times of the individual or contact network are not observed. The method presented is a useful tool to analyze routinely collected surveillance data because it gives insights into the mechanism of disease spread which is crucial if one wants to e.g. assess the risk of emerging pathogens or evaluate the impact of control measures such as vaccination.\\\nIn this section we describe how to carry out inferen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Formulation of a POMP model",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-013-152-formulation-of-a-pomp-model.md",
+      "narrative": null,
+      "content": "We will first formulate a Markov transmission model and in a second step relate the data to the transmission model via some observation model which then gives us $f_{\\bm{Y}_n|\\bm{X}_{n}}$.\\\n**Transmission model** As transmission model we choose a stochastic SIR model among a closed population of $\\mathcal{N}$ individuals where $\\bm{X}(t)=(S(t), I(t), R(t))$ denotes the number of susceptible, infectious and recovered individuals at time $t$. Individuals are mixing homogeneously and $\\beta$ is the average number of infectious contacts an infectious individual has per time unit. Furthermore, we a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Inference",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-014-153-inference.md",
+      "narrative": null,
+      "content": "In the following we perform inference for the two epidemiological parameters $\\beta$ and $\\gamma$ on a set of simulated data from the model where we apply the iterated filtering algorithm presented in Section [\\[iterated_filtering\\]](#iterated_filtering){reference-type=\"ref\" reference=\"iterated_filtering\"}.\\\n**Data** We consider a closed population with $\\mathcal{N}=10\\ 000$ individuals of whom one is initially infectious and the rest are susceptible. A realization from the model presented above with $\\beta=1$ and $\\gamma=0.5$ for $N=50$ weeks where $t_n=n$ for $n=1,\\dots,N$ was simulated. Fig",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Practical advice",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-015-154-practical-advice.md",
+      "narrative": null,
+      "content": "[]{#tips label=\"tips\"} In the `R` package `pomp` a partially observed Markov process together with observations in the form of a uni- or multivariate time series can be represented via a so called `pomp` object. The whole package's functionality such as simulation and inference is centered around this object. Depending on which functions one would like to use, the model can be implemented by specifying some or all model components. In order to help identify possible error sources that can occur while applying the algorithm we now describe a few practical hints.\\\nThe first step after constructi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extensions",
+      "pageStart": 18,
+      "pageEnd": 21,
+      "target": "../sections/sec-016-16-extensions.md",
+      "narrative": null,
+      "content": "[]{#complications label=\"complications\"} In the previous section we used a simple model to explain the concept of iterated filtering in order to facilitate understanding. However, reality is often way more complicated than this toy example. In the following we discuss some important complications of infectious disease data and how they can be included in POMP models.\\\n**Underreporting** Underreporting is a common problem appearing in surveillance data and is usually the more pronounced the less severe the disease is. It arises for different reasons e.g. it can result from asymptomatic cases, c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rotavirus example",
+      "pageStart": 21,
+      "pageEnd": 24,
+      "target": "../sections/sec-017-17-rotavirus-example.md",
+      "narrative": null,
+      "content": "[]{#rota_example label=\"rota_example\"} After presenting a simple toy example as a proof of concept, we now give a short illustration of a real-world problem which accommodates some of the complications presented in the previous section and was analyzed with iterated filtering. A detailed description of the model and inference results can be found in [@Stocks2017].\\\nThe data which were analyzed in that paper are the weekly reported number of new laboratory-confirmed rotavirus cases among children, adults and elderly from 2001 until 2008 in Germany, scaled up by an underreporting rate (cf. Secti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/figure-img-p023-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../images/img-p023-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Concluding comments",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-018-18-concluding-comments.md",
+      "narrative": null,
+      "content": "[]{#comments label=\"comments\"}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pros and cons of iterated filtering methods for outbreak data",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-019-181-pros-and-cons-of-iterated-filtering-methods.md",
+      "narrative": null,
+      "content": "The method we have described has many positive aspects. First of all, as illustrated in this chapter, the method is highly flexible and can be easily adapted to many different situations of interest. The great strength of the method is that one only needs to simulate from the transmission model if the complete likelihood is not directly tractable. Facilitated by the `R` package `pomp` the method is very straightforward to implement and can be easily adapted for a wide range of settings. The package is optimized for computational efficiency, in particular the simulation functions (such as `eule",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.03058v3/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Further reading",
+      "pageStart": 25,
+      "pageEnd": 29,
+      "target": "../sections/sec-020-182-further-reading.md",
+      "narrative": null,
+      "content": "Further reading\nFor the reader interested in more details about the theoretical background\nof iterated ﬁltering methods we recommend Ionides et al. (2006) and Ionides\net al. (2015) for further reading. For the reader interested in learning how\nto work with the R package pomp we recommend the study of King et al.\n(2016) and to follow some of the very comprehensive online tutorials available\nthrough King (2017). The package has already been applied to answer many\ndiﬀerent epidemiological questions for diﬀerent infectious diseases, e.g. for\ncholera (King et al., 2008), measles (He et al., 2010),",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

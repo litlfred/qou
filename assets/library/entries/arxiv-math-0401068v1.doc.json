@@ -1,0 +1,512 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0401068v1",
+  "title": "arxiv-math-0401068v1",
+  "variant": "pdf",
+  "pages": 12,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Main Theorem",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-main-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem ??",
+      "number": "3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-proof-of-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Observations",
+      "number": "4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-observations"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 53,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "a-polynomial",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0401068v1 [math.GT] 8 Jan 2004 THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS TOSHIE TAKATA Abstract. @We show that for a twist knot, the A-polynomial can be obtained from recur- rences for the summand in Masbaum’s formula of the colored Jones polynomial. Our result supports the AJ conjecture due to S.Garoufalidis.",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-math-0401068v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 527,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "paule riese",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "knot colored",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "twist knot",
+          "heading": false
+        },
+        {
+          "term": "recursive relation",
+          "heading": false
+        },
+        {
+          "term": "peripheral ideal",
+          "heading": false
+        },
+        {
+          "term": "eight knot",
+          "heading": false
+        }
+      ],
+      "extract": "The colored Jones polynomial is a one variable polynomial invariant of a knot colored with irreducible finite dimensional representation of $sl(2,\\mathbb{C})$ [@Turaev:INVEM88]. The original Jones polynomial [@Jones:link_polynomials] corresponds to the colored Jones polynomial of a knot colored with the irreducible 2-dimensional representation. On the other hand, in [@Cooper/Culler/Gillet/Long/Shalen:INVEM94],",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-main-theorem",
+      "number": "2",
+      "title": "Main Theorem",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 618,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hoste shanahan",
+          "heading": false
+        },
+        {
+          "term": "label eqn",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "masbaum formula",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        },
+        {
+          "term": "twist knot",
+          "heading": false
+        },
+        {
+          "term": "main",
+          "heading": true
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        }
+      ],
+      "extract": "We start with the review of the definition of the $A$-polynomial of a knot $K$ in $S^3$ (see [@Cooper/Culler/Gillet/Long/Shalen:INVEM94] ). Let $M_K$ be the complement of $K$ and $R(M_K)$ the set of all representations of $\\pi_1(M_K)$ into $SL(2,\\mathbb{C})$. The set $R(M_K)$ is an affine algebraic variety. Noting that $SL(2,\\mathbb{C})$ acts on representations by conjugation, we restrict our attention to the subset",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-proof-of-theorem",
+      "number": "3",
+      "title": "Proof of Theorem ??",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": "3",
+      "labelEnd": "6",
+      "words": 786,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "y2p",
+          "heading": false
+        },
+        {
+          "term": "bkp",
+          "heading": false
+        },
+        {
+          "term": "akp",
+          "heading": false
+        },
+        {
+          "term": "recursive relation",
+          "heading": false
+        },
+        {
+          "term": "shanahan",
+          "heading": false
+        },
+        {
+          "term": "twist knot",
+          "heading": false
+        }
+      ],
+      "extract": "Let Kp be the twist knot pictured in Figure 1. To prove Theorem 2.2, we use the following formula for the A-polynomial of the twist knot Kp due to Hoste and Shanahan in [5]. Theorem 3.1. (Hoste-Shanahan [5]) For p̸ = −1, 0, 1, 2, AKp(l, m) is given recusively by (6) AKp(l, m) = \u001a cAKp−1(l, m) −dAKp−2(l, m), p > 0, cAKp+1(l, m) −dAKp+2(l, m), p < 0, where c = −l + l2 + 2lm2 + m4 + 2lm4 + l2m4 + 2lm6 + m8 −lm8, d =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-observations",
+      "number": "4",
+      "title": "Observations",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 11,
+      "labelStart": "6",
+      "labelEnd": "11",
+      "words": 2539,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "times left",
+          "heading": false
+        },
+        {
+          "term": "frac left",
+          "heading": false
+        },
+        {
+          "term": "proper hypergeometric",
+          "heading": false
+        },
+        {
+          "term": "left hand",
+          "heading": false
+        },
+        {
+          "term": "inhomogeneous recursive",
+          "heading": false
+        },
+        {
+          "term": "wilf-zeilberger algorithm",
+          "heading": false
+        },
+        {
+          "term": "free recurrence",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        }
+      ],
+      "extract": "We start with reviewing Wilf-Zeilberger's algorithm. For more details, we refer to [@Garoufalidis/Le:math.GT] and [@Garoufalidis:math.GT]. A disctrete function $F(n,{\\bf k})$ is called proper $q$-hypergeometric if it is one of the form $$F(n,{\\bf k})=\\frac {\\prod_{s}(A_s;q)_{a_s n+{\\bf b}_s\\cdot {\\bf k} +c_s}} {\\prod_{t}(B_t;q)_{u_t n+{\\bf v}_t\\cdot {\\bf k} +w_t}} q^{A(n,{\\bf k})}\\xi^{\\bf k},$$ where ${\\bf",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 382,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "niigata",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic knots",
+          "heading": false
+        },
+        {
+          "term": "riese",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        },
+        {
+          "term": "a-polynomial",
+          "heading": false
+        },
+        {
+          "term": "murakami",
+          "heading": false
+        }
+      ],
+      "extract": "[1] D. Cooper, M. Culler, H. Gillet, D.D. Long, and P. B. Shalen, Plane curves associated to character varieties of 3-manifolds, Invent. Math. 118 (1994), no. 1, 47–84. [2] C. Frohman, R. Gelca, and W. Lofaro, The A-polynomial from the noncommutative viewpoint, Trans. Amer. Math. Soc. 354 (2001), no. 2, 735–747. [3] S. Garoufalidis, On the characteristic and deformation varieties of a knot, (math.GT/0306230). [4] S.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "colored jones",
+      "heading": false
+    },
+    {
+      "term": "knot colored",
+      "heading": false
+    },
+    {
+      "term": "hoste shanahan",
+      "heading": false
+    },
+    {
+      "term": "twist knot",
+      "heading": false
+    },
+    {
+      "term": "jones polynomial",
+      "heading": false
+    },
+    {
+      "term": "masbaum formula",
+      "heading": false
+    },
+    {
+      "term": "recursive relation",
+      "heading": false
+    },
+    {
+      "term": "paule riese",
+      "heading": false
+    },
+    {
+      "term": "inhomogeneous recursive",
+      "heading": false
+    },
+    {
+      "term": "knot pictured",
+      "heading": false
+    },
+    {
+      "term": "recall masbaum",
+      "heading": false
+    },
+    {
+      "term": "eight knot",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 5,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 6,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p11); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0401068v1"
+  }
+}

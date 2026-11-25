@@ -1,0 +1,1639 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0508291v1",
+  "title": "arxiv-math-0508291v1",
+  "variant": "pdf",
+  "pages": 52,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Stein's Method for Normal Approximation",
+      "number": "2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-steins-method-for-normal-approximation"
+    },
+    {
+      "level": 1,
+      "title": "Finite groups",
+      "number": "3",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-finite-groups"
+    },
+    {
+      "level": 2,
+      "title": "Background from representation theory",
+      "number": "3.1",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-31-background-from-representation-theory"
+    },
+    {
+      "level": 2,
+      "title": "Central limit theorems for character ratios",
+      "number": "3.2",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-32-central-limit-theorems-for-character-ratios"
+    },
+    {
+      "level": 2,
+      "title": "Example: Cayley Graphs of the Symmetric Group",
+      "number": "3.3",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-33-example-cayley-graphs-of-the-symmetric-group"
+    },
+    {
+      "level": 1,
+      "title": "Gelfand pairs",
+      "number": "4",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-4-gelfand-pairs"
+    },
+    {
+      "level": 2,
+      "title": "Background from representation theory",
+      "number": "4.1",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-41-background-from-representation-theory"
+    },
+    {
+      "level": 2,
+      "title": "Central limit theorem for spherical functions",
+      "number": "4.2",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-42-central-limit-theorem-for-spherical-functions"
+    },
+    {
+      "level": 2,
+      "title": "Example: The Hypercube",
+      "number": "4.3",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-43-example-the-hypercube"
+    },
+    {
+      "level": 2,
+      "title": "Example: Graphs on Perfect Matchings",
+      "number": "4.4",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-44-example-graphs-on-perfect-matchings"
+    },
+    {
+      "level": 1,
+      "title": "Twisted Gelfand Pairs",
+      "number": "5",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-5-twisted-gelfand-pairs"
+    },
+    {
+      "level": 2,
+      "title": "Background from representation theory",
+      "number": "5.1",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-51-background-from-representation-theory"
+    },
+    {
+      "level": 2,
+      "title": "Markov chains on strict partitions",
+      "number": "5.2",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-52-markov-chains-on-strict-partitions"
+    },
+    {
+      "level": 2,
+      "title": "Central limit theorem for shifted Plancherel measure",
+      "number": "5.3",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-53-central-limit-theorem-for-shifted-plancherel"
+    },
+    {
+      "level": 1,
+      "title": "Association Schemes",
+      "number": "6",
+      "page": 42,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-6-association-schemes"
+    },
+    {
+      "level": 2,
+      "title": "Background on association schemes",
+      "number": "6.1",
+      "page": 42,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-61-background-on-association-schemes"
+    },
+    {
+      "level": 2,
+      "title": "Central limit theorem for the spectrum",
+      "number": "6.2",
+      "page": 44,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-62-central-limit-theorem-for-the-spectrum"
+    },
+    {
+      "level": 2,
+      "title": "Example: Hamming Scheme",
+      "number": "6.3",
+      "page": 49,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-63-example-hamming-scheme"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": "7",
+      "page": 50,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-7-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 50,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 278,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stein method",
+          "heading": false
+        },
+        {
+          "term": "character ratios",
+          "heading": false
+        },
+        {
+          "term": "random character",
+          "heading": false
+        },
+        {
+          "term": "gelfand pairs",
+          "heading": false
+        },
+        {
+          "term": "normal approximation",
+          "heading": false
+        },
+        {
+          "term": "limit theorems",
+          "heading": false
+        },
+        {
+          "term": "central limit",
+          "heading": false
+        },
+        {
+          "term": "pittsburgh",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0508291v1 [math.CO] 16 Aug 2005 Stein’s Method and Random Character Ratios Running head: Stein’s Method and Random Character Ratios Version of 8/13/05 By Jason Fulman University of Pittsburgh Department of Mathematics, 301 Thackeray Hall, Pittsburgh PA 15260 email: fulman@math.pitt.edu Abstract: Stein’s method is used to prove limit theorems for random character ratios. Tools are developed for four types",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0508291v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1675,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stein method",
+          "heading": false
+        },
+        {
+          "term": "kerov central",
+          "heading": false
+        },
+        {
+          "term": "gelfand pair",
+          "heading": false
+        },
+        {
+          "term": "twisted gelfand",
+          "heading": false
+        },
+        {
+          "term": "random walk",
+          "heading": false
+        },
+        {
+          "term": "exchangeable pair",
+          "heading": false
+        },
+        {
+          "term": "ref gelfand",
+          "heading": false
+        },
+        {
+          "term": "chi lambda",
+          "heading": false
+        }
+      ],
+      "extract": "Given a fixed $m \\times m$ matrix, it is natural to study the distribution of its eigenvalues, where each eigenvalue is chosen with probability $\\frac{1}{m}$. As a motivating example around which discussion can be centered, consider the $n! \\times n!$ transition matrix for random walk on the symmetric group $S_n$, where the generating set consists of all $i$-cycles. Diaconis and Shahshahani \\cite{DS} proved that the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-steins-method-for-normal-approximation",
+      "number": "2",
+      "title": "Stein's Method for Normal Approximation",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 765,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stein method",
+          "heading": true
+        },
+        {
+          "term": "exchangeable pair",
+          "heading": false
+        },
+        {
+          "term": "w'-w",
+          "heading": false
+        },
+        {
+          "term": "ref steinbound",
+          "heading": false
+        },
+        {
+          "term": "sqrt var",
+          "heading": false
+        },
+        {
+          "term": "cite stn",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{stein} In this section we briefly review Stein's method for normal approximation, using the method of exchangeable pairs \\cite{Stn}. One can also use couplings to prove normal approximations by Stein's method (see \\cite{Re} for a survey), but the exchangeable pairs approach is effective for our purposes. For a survey discussing both exchangeable pairs and couplings, the paper \\cite{RR2} can be consulted. Two",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-finite-groups",
+      "number": "3",
+      "title": "Finite groups",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 78,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dsh",
+          "heading": false
+        },
+        {
+          "term": "recalls",
+          "heading": false
+        },
+        {
+          "term": "organization",
+          "heading": false
+        }
+      ],
+      "extract": "This section uses Stein’s method to study the spectrum of random walk on a ﬁnite group G, where the generating set is a conjugacy class C which satisﬁes C = C−1. As will be explained in Subsection 3.1, by [DSh] this is 7 equivalent to studying the distribution of the character ratio χλ(C) dim(λ) where λ is chosen from the Plancherel measure of the group G. The organization of this section is as follows. Subsection",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-31-background-from-representation-theory",
+      "number": "3.1",
+      "title": "Background from representation theory",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 689,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cdots chi",
+          "heading": false
+        },
+        {
+          "term": "overline chi",
+          "heading": false
+        },
+        {
+          "term": "frac chi",
+          "heading": false
+        },
+        {
+          "term": "sum chi",
+          "heading": false
+        },
+        {
+          "term": "frac dim",
+          "heading": false
+        },
+        {
+          "term": "ref countsol",
+          "heading": false
+        },
+        {
+          "term": "label orth",
+          "heading": false
+        },
+        {
+          "term": "orth let",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{rtgroup} We recall facts from the representation theory of finite groups, referring the reader to \\cite{Sa} or \\cite{Se} for more details. In what follows, $\\chi$ denotes a character of the finite group $G$, $dim(\\chi)$ is the dimension of the corresponding representation, and $Irr(G)$ is the set of all irreducible characters of $G$. Also $\\overline{z}$ denotes complex conjugate of a number $z$. \\begin{lemma}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-32-central-limit-theorems-for-character-ratios",
+      "number": "3.2",
+      "title": "Central limit theorems for character ratios",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1491,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chi tau",
+          "heading": false
+        },
+        {
+          "term": "chi rho",
+          "heading": false
+        },
+        {
+          "term": "chi lambda",
+          "heading": false
+        },
+        {
+          "term": "frac chi",
+          "heading": false
+        },
+        {
+          "term": "rho dim",
+          "heading": false
+        },
+        {
+          "term": "overline chi",
+          "heading": false
+        },
+        {
+          "term": "sum chi",
+          "heading": false
+        },
+        {
+          "term": "chain tau",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{groupCLT} The goal of this subsection is to prove a central limit theorem for the random variable $W$ defined by $W(\\lambda) = \\frac{|C|^{1/2} \\chi^{\\lambda}(C)}{dim(\\lambda)}$, where $C$ is a fixed conjugacy class such that $C=C^{-1}$ and $\\lambda$ is random from the Plancherel measure of $G$. For this purpose, it is useful to construct a Markov chain on the set of irreducible representations of $G$ as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-33-example-cayley-graphs-of-the-symmetric-group",
+      "number": "3.3",
+      "title": "Example: Cayley Graphs of the Symmetric Group",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 617,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n-2i fixed",
+          "heading": false
+        },
+        {
+          "term": "i-cycles",
+          "heading": false
+        },
+        {
+          "term": "conjugacy class",
+          "heading": false
+        },
+        {
+          "term": "chi tau",
+          "heading": false
+        },
+        {
+          "term": "frac chi",
+          "heading": false
+        },
+        {
+          "term": "symmetric group",
+          "heading": true
+        },
+        {
+          "term": "error term",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Sn} This subsection applies the theory of Subsection \\ref{groupCLT} to the case where the group is $S_n$ and $C$ is the conjugacy class of $i$-cycles. It is useful to recall some facts about the symmetric group. Since $K=K^{-1}$ for all conjugacy classes $K$ of $S_n$, Lemma \\ref{inverse} implies that all irreducible characters of $S_n$ are real valued. Also it is elementary that $|K| = \\frac{n!}{\\prod_j",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-gelfand-pairs",
+      "number": "4",
+      "title": "Gelfand pairs",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 128,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gelfand pairs",
+          "heading": true
+        },
+        {
+          "term": "central limit",
+          "heading": false
+        },
+        {
+          "term": "limit theorem",
+          "heading": false
+        },
+        {
+          "term": "hypercube",
+          "heading": false
+        }
+      ],
+      "extract": "If G is a ﬁnite group and K is a subgroup of G such that the induced representation 1G K is multiplicity free, then the pair (G, K) is called a Gelfand pair. This section shows that the results of Section 3 have an analog for Gelfand pairs. Subsection 4.1 discusses the representation theory of Gelfand pairs. Sub- section 4.2 derives a general central limit theorem for random spherical func- tions of a Gelfand pair.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-41-background-from-representation-theory",
+      "number": "4.1",
+      "title": "Background from representation theory",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 823,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "double cosets",
+          "heading": false
+        },
+        {
+          "term": "biinvariant probability",
+          "heading": false
+        },
+        {
+          "term": "random walk",
+          "heading": false
+        },
+        {
+          "term": "gelfand pair",
+          "heading": false
+        },
+        {
+          "term": "right cosets",
+          "heading": false
+        },
+        {
+          "term": "symmetric gelfand",
+          "heading": false
+        },
+        {
+          "term": "mac",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        }
+      ],
+      "extract": "about the representation theory of Gelfand pairs. A useful reference is Chap- ter 7 of [Mac]. The induced representation 1G K decomposes in a multiplicity free way as ⊕s r=0Vr, where V0 denotes the trivial representation of G. Let dr denote the dimension of Vr. For 0 ≤r ≤s, let ωr denote the corresponding spherical function on G, deﬁned by ωr(x) = 1 |K| X k∈K χ(r)(x−1k) where χ(r) is the character of Vr. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-42-central-limit-theorem-for-spherical-functions",
+      "number": "4.2",
+      "title": "Central limit theorem for spherical functions",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1333,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac omega",
+          "heading": false
+        },
+        {
+          "term": "overline omega",
+          "heading": false
+        },
+        {
+          "term": "sum omega",
+          "heading": false
+        },
+        {
+          "term": "choose omega",
+          "heading": false
+        },
+        {
+          "term": "k-m choose",
+          "heading": false
+        },
+        {
+          "term": "spherical functions",
+          "heading": true
+        },
+        {
+          "term": "eqnarray left",
+          "heading": false
+        },
+        {
+          "term": "ref steinsat",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{gelfandCLT} The aim of this subsection is to prove a central limit theorem for the random variable $W$ defined by $W(i)=\\frac{|K_u|^{1/2}}{|K|^{1/2}} \\omega_i(g_u)$. Here $g_u$ is fixed satisfying $Kg_uK= K g_u^{-1}K$ and $i$ is random from the Plancherel measure of the Gelfand pair $(G,K)$. It is not assumed that the Gelfand pair $(G,K)$ is symmetric. To construct an exchangeable pair to be used for Stein's",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-43-example-the-hypercube",
+      "number": "4.3",
+      "title": "Example: The Hypercube",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 851,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hypercube",
+          "heading": true
+        },
+        {
+          "term": "birth-death chain",
+          "heading": false
+        },
+        {
+          "term": "choose omega",
+          "heading": false
+        },
+        {
+          "term": "sqrt omega",
+          "heading": false
+        },
+        {
+          "term": "random walk",
+          "heading": false
+        },
+        {
+          "term": "frac choose",
+          "heading": false
+        },
+        {
+          "term": "ref rinrot",
+          "heading": false
+        },
+        {
+          "term": "ref birth",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{hypercube} The $n$ dimensional hypercube $\\zz_2^n$ consists of $n$-tuples of 0's and 1's. Random walk on it proceeds by picking a random coordinate and changing it. The spectrum of this random walk is well known; for each $0 \\leq i \\leq n$ there is an eigenvalue $1-\\frac{2i}{n}$ occurring with multiplicity ${n \\choose i}$ (see for instance page 28 of \\cite{Di}). Thus by the usual central limit theorem for the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-44-example-graphs-on-perfect-matchings",
+      "number": "4.4",
+      "title": "Example: Graphs on Perfect Matchings",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1261,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perfect matchings",
+          "heading": true
+        },
+        {
+          "term": "matchings delta",
+          "heading": false
+        },
+        {
+          "term": "omega lambda",
+          "heading": false
+        },
+        {
+          "term": "n-2i",
+          "heading": false
+        },
+        {
+          "term": "ref term1gp",
+          "heading": false
+        },
+        {
+          "term": "frac alpha",
+          "heading": false
+        },
+        {
+          "term": "jack alpha",
+          "heading": false
+        },
+        {
+          "term": "cite dhol",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{matching} In this example $G=S_{2n}$ and $K$ is the hyperoctahedral group of signed permutations on $n$ symbols, of size $2^n n!$. This Gelfand pair is discussed at length in Chapter 7 of \\cite{Mac} and in Section 3 of \\cite{HSS}, to which we refer the reader for proofs of facts in the next two paragraphs. Another useful reference is \\cite{DHol}. The induced representation $1_K^G$ decomposes as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-5-twisted-gelfand-pairs",
+      "number": "5",
+      "title": "Twisted Gelfand Pairs",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 484,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gelfand pairs",
+          "heading": true
+        },
+        {
+          "term": "strict partitions",
+          "heading": false
+        },
+        {
+          "term": "shifted plancherel",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "random variable",
+          "heading": false
+        },
+        {
+          "term": "random projective",
+          "heading": false
+        },
+        {
+          "term": "ivanov",
+          "heading": false
+        },
+        {
+          "term": "parameterizes",
+          "heading": false
+        }
+      ],
+      "extract": "Let G be a ﬁnite group and H a subgroup of G. If φ is a linear charac- ter of H such that the induced representation IndG H(φ) is multiplicity free, 28 then (G, H, φ) is referred to as a twisted Gelfand pair (this terminology was introduced in [Stm]). The approach taken in this section is a bit diﬀerent than that in the sections on ﬁnite groups and Gelfand pairs. Due both to a lack of interesting examples which are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-51-background-from-representation-theory",
+      "number": "5.1",
+      "title": "Background from representation theory",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1187,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted gelfand",
+          "heading": false
+        },
+        {
+          "term": "gelfand pairs",
+          "heading": false
+        },
+        {
+          "term": "stm",
+          "heading": false
+        },
+        {
+          "term": "s2i",
+          "heading": false
+        },
+        {
+          "term": "mac",
+          "heading": false
+        },
+        {
+          "term": "exchangeable pair",
+          "heading": false
+        },
+        {
+          "term": "s2j",
+          "heading": false
+        },
+        {
+          "term": "s2n",
+          "heading": false
+        }
+      ],
+      "extract": "studies a Markov chain to be used in the construction of an exchangeable pair for a Stein’s method proof of Theorem 5.2. This is more subtle than the corresponding treatment in earlier sections and involves interesting com- binatorics, since the “obvious” adaptation of the construction for Gelfand pairs does not work. Subsection 5.3 studies the exchangeable pair arising from the Markov chain in Section 5.2, and uses",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-52-markov-chains-on-strict-partitions",
+      "number": "5.2",
+      "title": "Markov chains on strict partitions",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 730,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eta nearrow",
+          "heading": false
+        },
+        {
+          "term": "nearrow rho",
+          "heading": false
+        },
+        {
+          "term": "nearrow lambda",
+          "heading": false
+        },
+        {
+          "term": "atop eta",
+          "heading": false
+        },
+        {
+          "term": "perp lambda",
+          "heading": false
+        },
+        {
+          "term": "eta rangle",
+          "heading": false
+        },
+        {
+          "term": "langle eta",
+          "heading": false
+        },
+        {
+          "term": "frac rho",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{exchange} This subsection discusses a Markov chain on $DP(n)$ to be used in defining an exchangeable pair for the proof of Theorem \\ref{projerror}. Motivated by constructions in the group and Gelfand pair cases, it would be natural, for $\\tau$ a fixed element of $DP(n)$, to define a ``Markov chain'' $J_{\\tau}$ on $DP(n)$ with transition ``probabilities'' \\[ J_{\\tau}(\\lambda,\\rho) :=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-53-central-limit-theorem-for-shifted-plancherel",
+      "number": "5.3",
+      "title": "Central limit theorem for shifted Plancherel measure",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 42,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2254,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac n-l",
+          "heading": false
+        },
+        {
+          "term": "lambda tau",
+          "heading": false
+        },
+        {
+          "term": "frac rho",
+          "heading": false
+        },
+        {
+          "term": "tau right",
+          "heading": false
+        },
+        {
+          "term": "ref torthog",
+          "heading": false
+        },
+        {
+          "term": "shifted plancherel",
+          "heading": true
+        },
+        {
+          "term": "tau sum",
+          "heading": false
+        },
+        {
+          "term": "rho left",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{twCLT} This subsection studies the statistic $W=\\sqrt{ \\frac{n!}{z_{\\mu} 2^{n-l(\\mu)}}} \\frac{X^{\\lambda}_{\\mu}}{g_{\\lambda}}$, where $\\mu \\in OP(n)$ is fixed and $\\lambda \\in DP(n)$ is chosen from shifted Plancherel measure. The main goal is a proof of Theorem \\ref{projerror}. Using $L$, one constructs an exchangeable pair $(W,W')$ as follows. Choose $\\lambda$ from the shifted Plancherel measure on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-6-association-schemes",
+      "number": "6",
+      "title": "Association Schemes",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 42,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 124,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "association",
+          "heading": true
+        },
+        {
+          "term": "ref assocclt",
+          "heading": false
+        },
+        {
+          "term": "association scheme",
+          "heading": false
+        },
+        {
+          "term": "hamming",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{assoc} This final section adapts techniques from earlier sections to study the spectrum of an adjacency matrix of an association scheme. As is well known (see for instance Chapter 3 of \\cite{BI}) this includes the spectrum a distance regular graph as a special case. Subsection \\ref{rtassoc} discusses needed facts about association schemes. Subsection \\ref{assocCLT} derives a general central limit theorem for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-61-background-on-association-schemes",
+      "number": "6.1",
+      "title": "Background on association schemes",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 771,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "association schemes",
+          "heading": true
+        },
+        {
+          "term": "ref asorthog",
+          "heading": false
+        },
+        {
+          "term": "cdots phi",
+          "heading": false
+        },
+        {
+          "term": "label asorthog",
+          "heading": false
+        },
+        {
+          "term": "ref ascountsol",
+          "heading": false
+        },
+        {
+          "term": "sum phi",
+          "heading": false
+        },
+        {
+          "term": "enumerate item",
+          "heading": false
+        },
+        {
+          "term": "frac sum",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{rtassoc} This subsection gives preliminaries about association schemes, using notation from \\cite{MS}. Another useful reference is \\cite{BI}, and what we call association schemes some authors call symmetric association schemes. {\\bf Definition}. An association scheme with $n$ classes consists of a finite set $X$ with $n+1$ relations $R_0,\\cdots,R_n$ defined on $X$ which satisfy: \\begin{enumerate} \\item Each",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-62-central-limit-theorem-for-the-spectrum",
+      "number": "6.2",
+      "title": "Central limit theorem for the spectrum",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 49,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1214,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac phi",
+          "heading": false
+        },
+        {
+          "term": "k-m choose",
+          "heading": false
+        },
+        {
+          "term": "ref ascountsol",
+          "heading": false
+        },
+        {
+          "term": "frac sum",
+          "heading": false
+        },
+        {
+          "term": "w'-w",
+          "heading": false
+        },
+        {
+          "term": "ref asorthog",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{assocCLT} Recall that the goal is to study Plancherel measure of association schemes, which chooses $i \\in \\{0,\\cdots,n\\}$ with probability $\\frac{\\mu_i}{|X|}$. More precisely, for $s$ fixed, a central limit theorem is proved for the random variable $W$ whose value at $i \\in \\{0,\\cdots,n \\}$ is $\\frac{\\phi_s(i)}{\\sqrt{v_s}}$. Given $t \\in \\{0,\\cdots,n\\}$, we define a Markov chain $L_t$ on the set",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-63-example-hamming-scheme",
+      "number": "6.3",
+      "title": "Example: Hamming Scheme",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 50,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 744,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hamming scheme",
+          "heading": true
+        },
+        {
+          "term": "ref asmains",
+          "heading": false
+        },
+        {
+          "term": "frac phi",
+          "heading": false
+        },
+        {
+          "term": "sqrt frac",
+          "heading": false
+        },
+        {
+          "term": "hamming graph",
+          "heading": false
+        },
+        {
+          "term": "probability frac",
+          "heading": false
+        },
+        {
+          "term": "term sqrt",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Hamming} This subsection illustrates the theory of Subsection \\ref{assocCLT} for the Hamming scheme $H(d,q)$, where $d,q$ are positive integers and $q \\geq 2$. To begin we recall the definition of $H(d,q)$ and its basic properties, referring the reader to Chapter 3 of \\cite{BI} for more details. The elements $X$ of $H(d,q)$ are d-tuples of numbers chosen from $\\{1,\\cdots,q\\}$; clearly $|X|=q^d$. A pair",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-7-acknowledgements",
+      "number": "7",
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 50,
+      "pageEnd": 50,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 12,
+      "summary": null,
+      "keywords": [],
+      "extract": "The author was supported by NSA grant H98230-05-1-0031 and NSF grant DMS-0503901.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-020-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 50,
+      "pageEnd": 52,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 946,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "preprint math",
+          "heading": false
+        },
+        {
+          "term": "stein method",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "random walks",
+          "heading": false
+        },
+        {
+          "term": "fulman",
+          "heading": false
+        },
+        {
+          "term": "symmetric groups",
+          "heading": false
+        },
+        {
+          "term": "statistics lecture",
+          "heading": false
+        },
+        {
+          "term": "character ratios",
+          "heading": false
+        }
+      ],
+      "extract": "[AlD] Aldous, D. and Diaconis, P., Longest increasing subsequences: from patience sort- ing to the Baik-Deift-Johansson theorem, Bull. Amer. Math. Soc. 36 (1999), 413- 432. [BaI] Bannai, E. and Ito, T., Algebraic combinatorics, I. Association schemes, Ben- jamin/Cummings Publishing Co., Inc., Menlo Park, CA, 1984. [Bi] Biane, P., Permutation model for semi-circular systems and quantum random walks, Paciﬁc J. Math.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "plancherel measure",
+      "heading": true
+    },
+    {
+      "term": "eqnarray frac",
+      "heading": false
+    },
+    {
+      "term": "probability frac",
+      "heading": false
+    },
+    {
+      "term": "frac right",
+      "heading": false
+    },
+    {
+      "term": "frac lambda",
+      "heading": false
+    },
+    {
+      "term": "w'-w leq",
+      "heading": false
+    },
+    {
+      "term": "frac tau",
+      "heading": false
+    },
+    {
+      "term": "frac sum",
+      "heading": false
+    },
+    {
+      "term": "frac left",
+      "heading": false
+    },
+    {
+      "term": "frac sqrt",
+      "heading": false
+    },
+    {
+      "term": "frac choose",
+      "heading": false
+    },
+    {
+      "term": "frac chi",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 21,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 22,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p50); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 22 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0508291v1"
+  }
+}

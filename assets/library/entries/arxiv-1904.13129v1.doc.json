@@ -1,0 +1,882 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1904.13129v1",
+  "title": "On the regularity of critical points for O’Hara’s knot energies: From smoothness to analyticity",
+  "variant": "pdf",
+  "pages": 24,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "Fractional Sobolev spaces",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-fractional-sobolev-spaces"
+    },
+    {
+      "level": 2,
+      "title": "Properties of analytic functions",
+      "number": "2.2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-properties-of-analytic-functions"
+    },
+    {
+      "level": 2,
+      "title": "Faà di Bruno's formula",
+      "number": "2.3",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Decomposition of the first variation of E",
+      "number": "3",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-decomposition-of-the-first-variation-of-e"
+    },
+    {
+      "level": 1,
+      "title": "An estimate for the Q term",
+      "number": "4",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-4-an-estimate-for-the-q-term"
+    },
+    {
+      "level": 1,
+      "title": "A fractional leibniz rule and the form of PT Q",
+      "number": "5",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-5-a-fractional-leibniz-rule-and-the-form-of-pt-q"
+    },
+    {
+      "level": 1,
+      "title": "The form of the lower order remainder terms R1 and R2",
+      "number": "6",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-6-the-form-of-the-lower-order-remainder-terms-r1"
+    },
+    {
+      "level": 1,
+      "title": "Proof of the main theorem by Cauchy's method of majorants",
+      "number": "7",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-7-proof-of-the-main-theorem-by-cauchys-method-of"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 105,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hara knot",
+          "heading": false
+        },
+        {
+          "term": "critical points",
+          "heading": false
+        },
+        {
+          "term": "length constraint",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1904.13129v1 [math.AP] 30 Apr 2019 On the regularity of critical points for O’Hara’s knot energies: From smoothness to analyticity. Nicole Vorderobermeier Abstract. We prove the analyticity of smooth critical points for O’Hara’s knot energies Eα,p, with p = 1 and 2 < α < 3, subject to a ﬁxed length constraint. This implies, together with the main result in [BR13], that bounded energy critical points of Eα,1",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1904.13129v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1295,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "o'hara energies",
+          "heading": false
+        },
+        {
+          "term": "o'hara energy",
+          "heading": false
+        },
+        {
+          "term": "o'hara knot",
+          "heading": false
+        },
+        {
+          "term": "mathcal alpha",
+          "heading": false
+        },
+        {
+          "term": "möbius energy",
+          "heading": false
+        },
+        {
+          "term": "dot gamma",
+          "heading": false
+        },
+        {
+          "term": "fhw theor",
+          "heading": false
+        },
+        {
+          "term": "curve gamma",
+          "heading": false
+        }
+      ],
+      "extract": "Knots have always played an important role in arts and crafts, commerce and trade, as well as in our everyday life. Therefore they naturally became a topic of interest for mathematicians. During the 19th century the study of knots strongly influenced the development of topology [@TvdG96]. Today the theory of knots appears in several branches of mathematics such as in calculus of variations, geometric analysis,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 182,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hara energies",
+          "heading": false
+        },
+        {
+          "term": "orthogonal projection",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst variation",
+          "heading": false
+        },
+        {
+          "term": "preliminaries",
+          "heading": true
+        },
+        {
+          "term": "estimates",
+          "heading": false
+        }
+      ],
+      "extract": "3 we decompose the ﬁrst variation of O’Hara’s energies into the orthogonal projec- tion of a main part Qα and two remaining parts Rα 1 and Rα 2 of lower order. The main part Qα and its derivatives are estimated in Section 4. Since the orthogonal projection of Qα appears in the ﬁrst variation of O’Hara’s energies, we estimate the tangential part of Qα using new estimates for a kind of fractional derivative of a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-fractional-sobolev-spaces",
+      "number": "2.1",
+      "title": "Fractional Sobolev spaces",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 280,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sobolev",
+          "heading": true
+        },
+        {
+          "term": "mathbb",
+          "heading": false
+        },
+        {
+          "term": "integer geq",
+          "heading": false
+        },
+        {
+          "term": "sobolev space",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "fourier series",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:fractionalsobolevspaces label=\"sec:fractionalsobolevspaces\"} We denote by $|\\cdot |$ the Euclidean norm on $\\mathbb{C}^n$ for any integer $n\\geq 1$. In this article we work with closed curves on the periodic domain $\\mathbb{R}/ \\mathbb{Z}$ so that a curve $f: \\mathbb{R}\\rightarrow \\mathbb{R}^n$ is periodic with unit periodicity. We know that for any $f\\in L^2(\\mathbb{R}/ \\mathbb{Z}, \\mathbb{C}^n)$ the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-properties-of-analytic-functions",
+      "number": "2.2",
+      "title": "Properties of analytic functions",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 551,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "analytic functions",
+          "heading": true
+        },
+        {
+          "term": "multiindex alpha",
+          "heading": false
+        },
+        {
+          "term": "subseteq mathbb",
+          "heading": false
+        },
+        {
+          "term": "omega subseteq",
+          "heading": false
+        },
+        {
+          "term": "partial alpha",
+          "heading": false
+        },
+        {
+          "term": "aligned partial",
+          "heading": false
+        },
+        {
+          "term": "every multiindex",
+          "heading": false
+        },
+        {
+          "term": "frac alpha",
+          "heading": false
+        }
+      ],
+      "extract": "We shortly recall some basic characteristics of analytic functions. More information on analytic functions can be found for instance in [@E98 Chap. 6.4] and [@F95 Chap. 1, D]. It is well-known that analytic functions can be characterized by [@KP02 Prop. 2.2.10] and a standard covering argument as follows: ::: thm []{#thm:Tayloranalytic label=\"thm:Tayloranalytic\"} A function $f\\in C^\\infty (\\Omega,\\mathbb{R}^n)$ on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-decomposition-of-the-first-variation-of-e",
+      "number": "3",
+      "title": "Decomposition of the first variation of E",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 723,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dot gamma",
+          "heading": false
+        },
+        {
+          "term": "perp dot",
+          "heading": false
+        },
+        {
+          "term": "ddot gamma",
+          "heading": false
+        },
+        {
+          "term": "alpha gamma",
+          "heading": false
+        },
+        {
+          "term": "varepsilon gamma",
+          "heading": false
+        },
+        {
+          "term": "mathbb dot",
+          "heading": false
+        },
+        {
+          "term": "downarrow alpha",
+          "heading": false
+        },
+        {
+          "term": "frac gamma",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#section:decomposition label=\"section:decomposition\"} Results concerning the differentiability of O'Hara's knot energies go back to the paper [@FHW94] where the Gâteaux differentiability and the $L^2$-gradient of the Möbius energy $\\mathcal{E}^{2}$ was derived. Subsequently, a linearized version for the gradient of the Möbius energy was given by He [@H00 Lem. 2.2] in the context of the heat flow. An application",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-an-estimate-for-the-q-term",
+      "number": "4",
+      "title": "An estimate for the Q term",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 580,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha gamma",
+          "heading": false
+        },
+        {
+          "term": "varepsilon downarrow",
+          "heading": false
+        },
+        {
+          "term": "widetilde alpha",
+          "heading": false
+        },
+        {
+          "term": "widehat alpha",
+          "heading": false
+        },
+        {
+          "term": "alpha mathrm",
+          "heading": false
+        },
+        {
+          "term": "alpha int",
+          "heading": false
+        },
+        {
+          "term": "alpha hat",
+          "heading": false
+        },
+        {
+          "term": "langle alpha",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:maintermQ label=\"sec:maintermQ\"} Let the quantities $$\\begin{aligned} q_k^{(\\alpha)} := \\begin{cases} \\frac{4\\pi}{|k|^{\\alpha +1}} \\int_0^\\pi \\frac{(k\\tau)^2 - 2 + 2\\cos(k\\tau)}{\\tau^{2+\\alpha}} \\mathrm{d}\\tau & \\quad k\\neq 0, \\\\ 0 & \\quad k = 0 \\end{cases} \\end{aligned}$$ and set $$\\begin{aligned} \\lambda_k^{(\\alpha)} := \\int_0^{k\\pi} \\frac{\\sin (\\tau)}{\\tau^{\\alpha - 1}} \\mathrm{d} \\tau. \\end{aligned}$$ We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-5-a-fractional-leibniz-rule-and-the-form-of-pt-q",
+      "number": "5",
+      "title": "A fractional leibniz rule and the form of PT Q",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1985,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "beta varepsilon",
+          "heading": false
+        },
+        {
+          "term": "beta widehat",
+          "heading": false
+        },
+        {
+          "term": "beta nonumber",
+          "heading": false
+        },
+        {
+          "term": "int varepsilon",
+          "heading": false
+        },
+        {
+          "term": "varepsilon frac",
+          "heading": false
+        },
+        {
+          "term": "bilinearht",
+          "heading": false
+        },
+        {
+          "term": "beta mathrm",
+          "heading": false
+        },
+        {
+          "term": "g-q infty",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:bilinearHilberttransform label=\"sec:bilinearHilberttransform\"} Let $\\gamma \\in C^\\infty(\\mathbb{R}/ \\mathbb{Z},\\mathbb{R}^n)$ be a closed simple curve parametrized by arc-length. Recall that in the decomposed first variation of O'Hara's range of energies $\\mathcal{E}^\\alpha$, for $2 < \\alpha < 3$, there appears the orthogonal projection of the main part $Q^\\alpha \\gamma$, which is given by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-6-the-form-of-the-lower-order-remainder-terms-r1",
+      "number": "6",
+      "title": "The form of the lower order remainder terms R1 and R2",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1115,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ddot gamma",
+          "heading": false
+        },
+        {
+          "term": "int ddot",
+          "heading": false
+        },
+        {
+          "term": "dot gamma",
+          "heading": false
+        },
+        {
+          "term": "alpha gamma",
+          "heading": false
+        },
+        {
+          "term": "perp dot",
+          "heading": false
+        },
+        {
+          "term": "mathrm alpha",
+          "heading": false
+        },
+        {
+          "term": "varepsilon gamma",
+          "heading": false
+        },
+        {
+          "term": "mathsf alpha",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:remaining parts label=\"sec:remaining parts\"} We show that the orthogonal projection of the truncated remainder terms of the decomposition of $\\delta \\mathcal{E}^\\alpha$ found in Section [\\[section:decomposition\\]](#section:decomposition){reference-type=\"ref\" reference=\"section:decomposition\"} can be expressed as multiple integrals of analytic functions. Let $0 < \\varepsilon \\leq \\frac{1}{2}$, $x\\in [0,1]$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-7-proof-of-the-main-theorem-by-cauchys-method-of",
+      "number": "7",
+      "title": "Proof of the main theorem by Cauchy's method of majorants",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2314,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "l-k gamma",
+          "heading": false
+        },
+        {
+          "term": "dot gamma",
+          "heading": false
+        },
+        {
+          "term": "perp dot",
+          "heading": false
+        },
+        {
+          "term": "alpha dot",
+          "heading": false
+        },
+        {
+          "term": "partial l-k",
+          "heading": false
+        },
+        {
+          "term": "varepsilon gamma",
+          "heading": false
+        },
+        {
+          "term": "gamma nonumber",
+          "heading": false
+        },
+        {
+          "term": "ddot gamma",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:mainpart label=\"sec:mainpart\"} We now turn to the proof of Theorem [\\[main\\]](#main){reference-type=\"ref\" reference=\"main\"}. Our strategy is to first establish a recursive estimate for $\\|\\partial^l \\gamma \\|_{H^{\\alpha -1} }$ from which we can infer, by Cauchy's method of majorants, the analyticity of the curve $\\gamma$. Let $m := 1 > \\frac{1}{2}$ and $\\gamma = (\\gamma_1,\\ldots, \\gamma_n) :\\mathbb{R}/",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 551,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hara knot",
+          "heading": false
+        },
+        {
+          "term": "knot energies",
+          "heading": false
+        },
+        {
+          "term": "möbius energy",
+          "heading": false
+        },
+        {
+          "term": "repulsive knot",
+          "heading": false
+        },
+        {
+          "term": "pseudodiﬀerential calculus",
+          "heading": false
+        },
+        {
+          "term": "energy functionals",
+          "heading": false
+        },
+        {
+          "term": "advanced texts",
+          "heading": false
+        },
+        {
+          "term": "blatt",
+          "heading": false
+        }
+      ],
+      "extract": "[ACF+03] A. Abrams, J. Cantarella, J. H. G. Fu, M. Ghomi, and R. Howard, Circles minimize most knot energies, Topology 42 (2003), no. 2, 381–394. [AF03] R. A. Adams and J. J. F. Fournier, Sobolev spaces, Second, Pure and Applied Mathe- matics (Amsterdam), vol. 140, Elsevier/Academic Press, Amsterdam, 2003. [Bla12] S. Blatt, Boundedness and regularizing eﬀects of O’Hara’s knot energies, J. Knot Theory Ramiﬁcations 21",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathbb alpha",
+      "heading": false
+    },
+    {
+      "term": "alpha dot",
+      "heading": false
+    },
+    {
+      "term": "alpha gamma",
+      "heading": false
+    },
+    {
+      "term": "varepsilon gamma",
+      "heading": false
+    },
+    {
+      "term": "alpha mathrm",
+      "heading": false
+    },
+    {
+      "term": "alpha frac",
+      "heading": false
+    },
+    {
+      "term": "alpha int",
+      "heading": false
+    },
+    {
+      "term": "widetilde alpha",
+      "heading": false
+    },
+    {
+      "term": "ddot gamma",
+      "heading": false
+    },
+    {
+      "term": "alpha leq",
+      "heading": false
+    },
+    {
+      "term": "alpha perp",
+      "heading": false
+    },
+    {
+      "term": "alpha nonumber",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p23); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 8
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1904.13129v1"
+  }
+}

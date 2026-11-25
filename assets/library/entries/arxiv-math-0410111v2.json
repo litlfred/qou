@@ -1,0 +1,101 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0410111v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0410111v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Mixed integer non-linear programs combine the hardness of combinatorial explosion with the non-convexity of non-linear functions. For example, the well-known optimality conditions developed for differentiable objective functions have no meaning when the variables are discrete. Thus, it is perhaps not surprising that already linear integer programming with general quadratic constraints is undecidable [@jeroslow]. Nevertheless, when the number of variables is fixed discrete optimization problems often become tractable and efficient polynomial algorithms exist (e.g. [@bar; @khachiyanporkolab; @le",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410111v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0410111v2  [math.OC]  31 May 2005\nInteger Polynomial Optimization in Fixed Dimension\nJes´us A. De Loera\nUniversity of California, Dept. of Mathematics, Davis CA 95616, USA\nemail: deloera@math.ucdavis.edu\nhttp://www.math.ucdavis.edu/~deloera\nRaymond Hemmecke\nOtto-von-Guericke-Universit¨at Magdeburg, FMA/IMO, Universit¨atsplatz 2, 39106 Magdeburg, Germany\nemail: hemmecke@imo.math.uni-magdeburg.de\nhttp://www.math.uni-magdeburg.de/~hemmecke\nMatthias K¨oppe\nOtto-von-Guericke-Universit¨at Magdeburg, FMA/IMO, Universit¨atsplatz 2, 39106 Magdeburg, Germany\nemail: mkoeppe@imo.math.uni-magdeb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410111v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computational Complexity Bounds",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-2-computational-complexity-bounds.md",
+      "narrative": null,
+      "content": "[]{#bounds label=\"bounds\"}\n\nAll the results we present refer to the complexity model where the number of operations is given in terms of the input size measured in the standard binary encoding. The results of H. W. Lenstra Jr. [@lenstra] imply the entry of Table [\\[gogo\\]](#gogo){reference-type=\"ref\" reference=\"gogo\"} marked with $(*)$, i.e. solving linear integer programming problems with a fixed number of variables can be done in time polynomial in the size of the input. More recently, Khachiyan and Porkolab [@khachiyanporkolab] have proved that in fixed dimension, the problem of minimizing",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410111v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FPTAS for Optimizing Non-Negative Polynomials over Integer Points of Polytopes",
+      "pageStart": 2,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-3-fptas-for-optimizing-non-negative-polynomials.md",
+      "narrative": null,
+      "content": "[]{#algo label=\"algo\"}\n\nConsider now a polynomial function $f \\in\n\\mathbb Z[x_1,x_2, \\dots ,x_d]$ of maximum total degree $D$ and a convex polytope $P=\\{x | Ax \\leq b\\}$ where $A$ is an $m \\times\nd$ integral matrix and $b$ is an integral $m$-vector. The purpose of this section is to present an algorithm to generate lower and upper bounds $L_k,U_k$ to the integer global optimum value of $$\\hbox{maximize} \\ f(x_1,\\dots,x_d) \\  \\hbox\n{subject to} \\  (x_1,\\dots,x_d) \\in P \\cap \\mathbb Z^d.$$ We should also remark that in our algorithm the polynomial objective function $f$ can be arbitrary (e.g. no",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410111v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An extension to the mixed integer case",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-4-an-extension-to-the-mixed-integer-case.md",
+      "narrative": null,
+      "content": "Now, we wish to discuss extensions of Theorem [\\[main\\]](#main){reference-type=\"ref\" reference=\"main\"} to the mixed integer scenario. If some of the variables are allowed to be continuous then we can describe the task as $$\\hbox{maximize} \\ f(x,y) \\ \\hbox{subject to} \\ \\{ (x,y) | Ax+By \\leq\nb, \\ \\hbox{with} \\ x_i \\in \\mathbb Z\\ \\hbox{and} \\ y_i \\in \\mathbb R\\}.$$ Consider the sequence of integer polynomial optimization problems $\\hbox{optimize} \\ f(x,\\frac{y}{n}) \\ \\hbox{subject to}\\ (x,y) \\in\n\\Gamma_n=\\{ (x,y) | Ax+B(\\frac{y}{n}) \\leq b, \\ \\hbox{with} \\ x_i \\in\n\\mathbb Z\\ \\hbox{and} \\ y_i \\in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

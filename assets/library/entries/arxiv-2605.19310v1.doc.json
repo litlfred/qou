@@ -1,0 +1,672 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2605.19310v1",
+  "title": "A Fourier-Free Density-Increment Proof of Roth's Theorem",
+  "variant": "pdf",
+  "pages": 10,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Notation",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-notation"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "3",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-preliminaries"
+    },
+    {
+      "level": 1,
+      "title": "No progressions imply large energy",
+      "number": "4",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-no-progressions-imply-large-energy"
+    },
+    {
+      "level": 1,
+      "title": "Large energy implies a modular density increment",
+      "number": "5",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-large-energy-implies-a-modular-density-increme"
+    },
+    {
+      "level": 1,
+      "title": "Finding a genuine integer progression",
+      "number": "6",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-6-finding-a-genuine-integer-progression"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Roth's theorem and the quantitative bound",
+      "number": "7",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-7-proof-of-roths-theorem-and-the-quantitative-bo"
+    },
+    {
+      "level": 1,
+      "title": "Further remarks",
+      "number": "8",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-8-further-remarks"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 41,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "roth theorem",
+          "heading": false
+        },
+        {
+          "term": "fourier-free",
+          "heading": false
+        },
+        {
+          "term": "density-increment",
+          "heading": false
+        }
+      ],
+      "extract": "A FOURIER-FREE DENSITY-INCREMENT PROOF OF ROTH’S THEOREM MARK LEWKO Abstract. We give an elementary, Fourier-free proof of Roth’s theorem. The proof follows Roth’s original density-increment strategy, but replaces the usual Fourier-analytic step with a direct combinatorial argument involving averages over sub-progressions.",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-2605.19310v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 366,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "roth original",
+          "heading": false
+        },
+        {
+          "term": "roth theorem",
+          "heading": false
+        },
+        {
+          "term": "three-term arithmetic",
+          "heading": false
+        },
+        {
+          "term": "arithmetic progression",
+          "heading": false
+        },
+        {
+          "term": "szemerédi",
+          "heading": false
+        },
+        {
+          "term": "nontrivial three-term",
+          "heading": false
+        },
+        {
+          "term": "density-increment",
+          "heading": false
+        },
+        {
+          "term": "furstenberg",
+          "heading": false
+        }
+      ],
+      "extract": "In 1953, Roth proved that every subset of the integers of positive upper density contains a nontrivial three-term arithmetic progression. This can be stated in the following finite form. ::: theorem []{#thm:roth label=\"thm:roth\"} For every $\\alpha>0$, if $N$ is sufficiently large, then every set $A\\subset\\{0,1,\\ldots,N-1\\}$ with $\\lvert A\\rvert\\geq\\alpha N$ contains a three-term arithmetic progression",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-notation",
+      "number": "2",
+      "title": "Notation",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 50,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lesssim",
+          "heading": false
+        },
+        {
+          "term": "gtrsim",
+          "heading": false
+        },
+        {
+          "term": "mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "We write $A\\lesssim B$ to mean $A\\leq CB$ for a positive absolute constant $C$, and similarly $A\\gtrsim B$. We write $A\\sim B$ when both $A\\lesssim B$ and $B\\lesssim A$ hold. All implicit constants are absolute. For a prime $m$, write $\\mathbb{Z}_m=\\mathbb{Z}/m\\mathbb{Z}$ and $\\mathbb{Z}_m^\\times=\\mathbb{Z}_m\\setminus\\{0\\}$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-3-preliminaries",
+      "number": "3",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 255,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbb left",
+          "heading": false
+        },
+        {
+          "term": "non-negativity",
+          "heading": false
+        },
+        {
+          "term": "lambda",
+          "heading": false
+        },
+        {
+          "term": "pos",
+          "heading": false
+        },
+        {
+          "term": "progression",
+          "heading": false
+        },
+        {
+          "term": "sum",
+          "heading": false
+        }
+      ],
+      "extract": "Write $[N]=\\{0,\\ldots,N-1\\}$ and choose a prime $m$ with $4N<m<8N$, which we may do by Bertrand's postulate. We embed $[N]$ in $\\mathbb{Z}_m$ in the obvious way. The point of choosing $m>2N$ is that a three-term progression in $\\mathbb{Z}_m$ whose terms all lie in $[N]$ is a genuine integer progression. Let $\\alpha=\\lvert A\\rvert/N$ be the density of $A$ in $[N]$, and define $f=\\mathbf{1}_A-\\alpha\\mathbf{1}_{[N]}$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-no-progressions-imply-large-energy",
+      "number": "4",
+      "title": "No progressions imply large energy",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 510,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lvert rvert",
+          "heading": false
+        },
+        {
+          "term": "rvert lesssim",
+          "heading": false
+        },
+        {
+          "term": "lvert lambda",
+          "heading": false
+        },
+        {
+          "term": "progressions",
+          "heading": true
+        },
+        {
+          "term": "gtrsim alpha",
+          "heading": false
+        },
+        {
+          "term": "three-term progressions",
+          "heading": false
+        },
+        {
+          "term": "aligned lvert",
+          "heading": false
+        },
+        {
+          "term": "lesssim mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "For functions $f_1,f_2,f_3\\colon\\mathbb{Z}_m\\to\\mathbb R$, define $$\\Lambda(f_1,f_2,f_3):=\\sum_{x,r\\in\\mathbb{Z}_m} f_1(x)f_2(x+r)f_3(x+2r).$$ If $A\\subset [N]\\subset\\mathbb{Z}_m$, then $\\Lambda(\\mathbf{1}_A,\\mathbf{1}_A,\\mathbf{1}_A)$ is the number of three-term arithmetic progressions in $A$, including the trivial progressions with $r=0$. Hence, if $A$ contains no nontrivial three-term progressions, then",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-large-energy-implies-a-modular-density-increme",
+      "number": "5",
+      "title": "Large energy implies a modular density increment",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 573,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lvert rvert",
+          "heading": false
+        },
+        {
+          "term": "rvert ell",
+          "heading": false
+        },
+        {
+          "term": "mathbb lvert",
+          "heading": false
+        },
+        {
+          "term": "ell lesssim",
+          "heading": false
+        },
+        {
+          "term": "sum lvert",
+          "heading": false
+        },
+        {
+          "term": "beta ell",
+          "heading": false
+        },
+        {
+          "term": "leq ell",
+          "heading": false
+        },
+        {
+          "term": "alpha ell",
+          "heading": false
+        }
+      ],
+      "extract": "Our next goal is to find a long modular progression on which $f$ has positive average. For an integer $1\\leq \\ell<m/2$ and a step $d\\in\\mathbb{Z}_m$, set $$S_d(x):=\\sum_{i=0}^{\\ell-1}f(x+id),\\qquad V_d:=\\sum_{x\\in\\mathbb{Z}_m}\\lvert S_d(x)\\rvert^2.$$ Thus $S_d(x)$ is the sum of $f$ on the length-$\\ell$ modular progression starting at $x$ with step $d$, and $V_d$ is the second moment of these sums as $x$ varies. :::",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-finding-a-genuine-integer-progression",
+      "number": "6",
+      "title": "Finding a genuine integer progression",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 568,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rvert gtrsim",
+          "heading": false
+        },
+        {
+          "term": "lvert rvert",
+          "heading": false
+        },
+        {
+          "term": "ell gtrsim",
+          "heading": false
+        },
+        {
+          "term": "gtrsim eta",
+          "heading": false
+        },
+        {
+          "term": "gtrsim alpha",
+          "heading": false
+        },
+        {
+          "term": "progression",
+          "heading": true
+        },
+        {
+          "term": "rvert geq",
+          "heading": false
+        },
+        {
+          "term": "cap rvert",
+          "heading": false
+        }
+      ],
+      "extract": "We now show how to pass from a density increment on a modular progression to one on a genuine integer progression. ::: lemma []{#lem:rect label=\"lem:rect\"} Suppose $d\\in\\mathbb{Z}_m^\\times$ and $x\\in\\mathbb{Z}_m$ satisfy $\\sum_{i=0}^{\\ell-1}f(x+id)\\geq\\eta\\ell$ for some $0<\\eta\\leq1$. If $\\ell\\gtrsim\\eta^{-2}$, then there is an arithmetic progression $P\\subset[N]$ such that $$\\lvert P\\rvert\\gtrsim\\eta\\sqrt{\\ell}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-proof-of-roths-theorem-and-the-quantitative-bo",
+      "number": "7",
+      "title": "Proof of Roth's theorem and the quantitative bound",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 401,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "increment",
+          "heading": false
+        },
+        {
+          "term": "alpha lvert",
+          "heading": false
+        },
+        {
+          "term": "roth",
+          "heading": true
+        },
+        {
+          "term": "lvert rvert",
+          "heading": false
+        },
+        {
+          "term": "alpha geq",
+          "heading": false
+        },
+        {
+          "term": "geq log",
+          "heading": false
+        },
+        {
+          "term": "least alpha",
+          "heading": false
+        },
+        {
+          "term": "ap-free",
+          "heading": false
+        }
+      ],
+      "extract": "::: proof *Proof of Theorem [\\[thm:roth\\]](#thm:roth){reference-type=\"ref\" reference=\"thm:roth\"}.* Fix $\\alpha_0>0$ and suppose, for contradiction, that there are arbitrarily large $N$ and 3AP-free sets $A\\subset[N]$ with $\\lvert A\\rvert\\geq\\alpha_0N$. Applying Proposition [\\[prop:increment\\]](#prop:increment){reference-type=\"ref\" reference=\"prop:increment\"}, then rescaling the progression it gives back to an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-8-further-remarks",
+      "number": "8",
+      "title": "Further remarks",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 379,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lvert widehat",
+          "heading": false
+        },
+        {
+          "term": "mathbb lvert",
+          "heading": false
+        },
+        {
+          "term": "frac1m sum",
+          "heading": false
+        },
+        {
+          "term": "roth theorem",
+          "heading": false
+        },
+        {
+          "term": "rvert",
+          "heading": false
+        },
+        {
+          "term": "gowers",
+          "heading": false
+        }
+      ],
+      "extract": "Although the proof above is written without Fourier analysis, several of the steps have a simple Fourier interpretation. Let $e(x)=e^{2\\pi i x/m}$ and $\\widehat f(\\xi)=\\sum_{x\\in\\mathbb{Z}_m} f(x)e(-\\xi x)$. One then has $\\widehat R(\\xi)=\\lvert\\widehat f(\\xi)\\rvert^2$. Hence Parseval gives $$\\mathcal E(f)=\\sum_{t\\in\\mathbb{Z}_m}R(t)^2= \\frac1m\\sum_{\\xi\\in\\mathbb{Z}_m}\\lvert\\widehat f(\\xi)\\rvert^4.$$ Thus, up to the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "lvert rvert",
+      "heading": false
+    },
+    {
+      "term": "rvert lesssim",
+      "heading": false
+    },
+    {
+      "term": "rvert gtrsim",
+      "heading": false
+    },
+    {
+      "term": "rvert alpha",
+      "heading": false
+    },
+    {
+      "term": "mathbb lvert",
+      "heading": false
+    },
+    {
+      "term": "rvert leq",
+      "heading": false
+    },
+    {
+      "term": "rvert ell",
+      "heading": false
+    },
+    {
+      "term": "sum lvert",
+      "heading": false
+    },
+    {
+      "term": "rvert geq",
+      "heading": false
+    },
+    {
+      "term": "lvert lambda",
+      "heading": false
+    },
+    {
+      "term": "frac lvert",
+      "heading": false
+    },
+    {
+      "term": "lvert widehat",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2605.19310v1"
+  }
+}

@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-1fk7ev8zdx7.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-1fk7ev8zdx7","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Fixed: the `docs/audits/` and `docs/coordination/` links and the time-stamped working notes no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T12:00:00Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-rereview&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;771cfe471535&quot;,
+        &quot;ts&quot;: &quot;f2688033d390&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:22:00.897Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;Seven negation shapes, but the block IS a self-retraction and each marks a specific withdrawn claim: &#39;root-found, not interpolated&#39;, &#39;not an independent third determination&#39;, &#39;These are not close agreements ...; they are the absence of a measurement&#39;, &#39;a two-way tension ..., not a three-way picture&#39;, &#39;not a singularity of the underlying object&#39;. Substantive-contrast false-positive class; density is a property of the genre.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;771cfe471535&quot;,
+        &quot;ts&quot;: &quot;f2688033d390&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:22:00.960Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;&#39;The supporting statistics do not rescue it&#39; and &#39;The same arithmetic denies the converse&#39; are argumentative topic sentences that the following text discharges quantitatively; &#39;Both remain true and neither is evidence, because ...&#39; carries its weight in the because-clause, which is the block&#39;s actual argument.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;771cfe471535&quot;,
+        &quot;ts&quot;: &quot;f2688033d390&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:22:01.013Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;FIXES APPLIED (2 of 4 dashes, both dodging a full stop): (1) &#39;sits $80.30\\%$ of the way from the proton end of that window — the same figure.&#39; -&gt; &#39;... of that window, the same figure.&#39;; (2) &#39;$dq^{*}/d\\mathfrak{Q}_\\beta \\approx -0.539$ — a sharper $\\mathfrak{Q}_\\beta$ measurement directly sharpens ...&#39; -&gt; &#39;$... \\approx -0.539$. A sharper $\\mathfrak{Q}_\\beta$ measurement directly sharpens ...&#39;. The two remaining dashes are true appositives (the bar-even-point gloss; the &#39;61% of |c_3|&#39; gloss).&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;771cfe471535&quot;,
+        &quot;ts&quot;: &quot;f2688033d390&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:22:01.066Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;No reflex triples; the two-item &#39;First ... Second ...&#39; and the three ppb comparisons are forced by the data.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;771cfe471535&quot;,
+        &quot;ts&quot;: &quot;f2688033d390&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:22:01.110Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;Block ends on the probe and witness citation.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;771cfe471535&quot;,
+        &quot;ts&quot;: &quot;f2688033d390&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:22:01.162Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;&#39;The residual empirical content must be stated with its error bar, because the error bar dominates it&#39; states a methodological requirement and then meets it; &#39;Two calibrating facts sharpen how q* may be used&#39; is structural signposting, not narrated emphasis.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;771cfe471535&quot;,
+        &quot;ts&quot;: &quot;f2688033d390&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:22:01.206Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;The one-line &#39;So the mu-p substrate tension is a two-way tension ..., not a three-way picture&#39; is the corpus-level payload of the preceding argument and is followed by three further paragraphs; not a terminal restatement.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;771cfe471535&quot;,
+        &quot;ts&quot;: &quot;f2688033d390&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:22:01.265Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;No personal register; the retraction is stated without apology or hedging warmth.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;771cfe471535&quot;,
+        &quot;ts&quot;: &quot;f2688033d390&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:22:01.331Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;&#39;the famous hypersensitivity&#39; is the only inflation and it is idiomatic. NOTE: the number it attaches to is wrong — see trap-nonspeakable notes.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;771cfe471535&quot;,
+        &quot;ts&quot;: &quot;f2688033d390&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f01&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:22:01.398Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;Long sentences but each is well-structured with commas and semicolons doing real work; no noun-chain stalls.&quot;,
+      &quot;notes&quot;: &quot;RECOMPUTED EVERY NUMERIC IN THIS BLOCK. VERIFIED: q* = 1.10997859303152 lies strictly between the proton and muon anchors, 80.276% of the way muon-ward; window (2.02020024, 2.06934258) width 0.0491423; Vol(4_1)=2.0298832 sits 80.2961% from the proton end; sigma(c_3)=1.262 = 61.0% of |c_3(p)|; 0.0313 sigma (proton) and 0.00767 sigma (muon); band [0.8073, 3.3313]; 51.36x wider than the window; 31.98x / 130.3x sharper Q_beta needed. THREE FINDINGS: (1) &#39;the famous hypersensitivity $dc_3/dq \\approx 4.7\\times10^{6}$&#39; is WRONG and is contradicted by the block&#39;s own next clause and its own cited witness. Three independent recomputations give 3.84e6: the secant from the block&#39;s own two anchor c_3 values = 3.83746e6; 2.37 x (1/u^3) with the canonical u = 0.00852 = 3.83204e6; and the witness&#39;s own data/hypersensitivity_decomp/S_prime_qstar = 3838404.458 with inv_u_cubed = 1618467.41 (ratio 2.3717 = the quoted prefactor). 4.7e6 would require u = 0.0079595. PROPOSED: &#39;$dc_3/dq \\approx 3.84\\times10^{6}$&#39;. (2) &#39;$\\approx 367\\times$ more precise&#39; is 22 ppb / 0.06 ppb = 366.67, the SUPERSEDED proton precision; the live figure is 0.017 ppb, giving 1294x, and the companion &#39;$\\approx 0.0007\\%$ muon-ward&#39; recomputes to 0.000744% at 0.06 ppb but 0.00006% at 0.017 ppb. Pin-currency only — the argument strengthens under the tighter value. Witness carries the same stale 366.7. (3) The CITED WITNESS asserts the claim this block retracts: assertions[2] &#39;qstar_is_decay_sector_not_mass_mean&#39; has source &#39;... q* is an independent decay-sector determination of q0&#39;, passed true, allPassed true. The .md was corrected; probe and witness were not. Also witness data/q_star/frac_muon_ward_pct = 80.29605 is the Vol(4_1)-in-window fraction stored under the q_star key; the recorded q*&#39;s actual position is 80.27627%.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

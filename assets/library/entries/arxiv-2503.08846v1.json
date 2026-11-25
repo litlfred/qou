@@ -1,0 +1,664 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2503.08846v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "A Tutorial on Knots and Quantum Mechanics\nDmitry Melnikov\nInternational Institute of Physics, Federal University of Rio Grande do Norte,\nCampus Universit´ario, Lagoa Nova, Natal-RN 59078-970, Brazil\nAbstract\nThese notes review a description of quantum mechanics in terms of the topology of spaces, basing\non the axioms of Topological Quantum Field Theory and path integral formalism. In this description\nquantum states and operators are encoded by the topology of spaces that are used as modules to build\nthe quantum mechanical model, while expectation values and probabilities are given by topologic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nPhysics contributed to the birth of knot theory in the 19th century, when Lord Kelvin hypothesized that\natoms are knotted vortices of aether [1]. Although the idea was doomed to fail,1 it is said to inspire the\nfirst knot classification by Peter Guthrie Tait. Tait’s knot table had significant impact on developing\nknot theory as a branch of pure mathematics, a subfield of topology. Until late 20th century advances in\nknot theory were predominantly limited to math.\nIn 1980s new connections between knot theory and physics started to emerge. Vaughn Jones discovers\na new type of topolo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/figure-img-p004-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/figure-img-p004-5",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-5.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/figure-img-p004-7",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-7.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/figure-img-p004-8",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-8.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basics of knot theory",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-basics-of-knot-theory.md",
+      "narrative": null,
+      "content": "Basics of knot theory\nIn this section we give a minimal introduction to knots and their topological invariants, necessary to\nmake quantum mechanical computations. Introductory material into knot theory can be found in these\nbooks [18,42,43].\nWe understand a knot K as a map of a circle S1 into an ambient three-dimensional space R3. For\nexample:2\nK :\n−→\n.\n(1)\nThe trivial map takes S1 into a circle in R3, which is called the unknot.\nSimilarly, we define a link through a collection of circles, L : S1 × S1 × · · · × S1 →R3:\nL :\n−→\n.\n(2)\nWe will use the notion of a knot (or link) diagram, which is a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topological invariants from matrix traces",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-topological-invariants-from-matrix-traces.md",
+      "narrative": null,
+      "content": "Topological invariants from matrix traces\nIt will be useful to review a few important steps explaining the origin of the Jones polynomial, as they\nwill also be helpful for later applications.\nAn important object is the (Artin) braid group.\nThis group is a generalization of the group of\npermutations of n elements and can be defined in terms of n −1 generators:\nBn := {bk, k = 1, . . . , n −1| bibi+1bi = bi+1bibi+1, i = 1, . . . , n −2; bibj = bjbi, |i −j| > 1} .\n(10)\nIn other words, group Bn consists of all words constructed of n −1 letters bk, satisfying the above\nrelations. The relations are t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Skein relation",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-skein-relation.md",
+      "narrative": null,
+      "content": "Skein relation\nTo construct an explicit example of a Markov trace it is convenient to introduce another structure, the\nTemperley-Lieb algebra TLn [48]. Similarly the to the braid group, it can be introduced via generators\nas follows:\nTLn := {uk, k = 1, . . . , n −1| u2\ni = d · ui, i = 1, . . . n −1; uiui+1ui = ui, i = 1, . . . , n −2;\nui+1uiui+1 = ui+1, i = 1, . . . , n −2; uiuj = ujui, |i −j| > 1} ,\n(18)\nwhere d is a C-number. Since the above relations define an algebra, all its elements belong to a vector\nspace. The first relation makes this space finite-dimensional. The dimension of TLn is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bracket and Jones polynomials",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-bracket-and-jones-polynomials.md",
+      "narrative": null,
+      "content": "Bracket and Jones polynomials\nSkein relation and Hecke algebras allow to compute Markov traces diagrammatically, without explicitly\ndefining matrix representations [45]. Recall that we agreed to substitute any disconnected circle by the\n8\nnumber d = −A2 −A−2. First, one can check that the diagrammatic closure of a braid has the Markov\nproperty. Applying the skein relation one finds that\nβn\n= A\nβn\n+ A−1\nβn\n= −A−3\nβn\n.\n(29)\nNote that we are not simply using the I Reidemeister move here, but rather the algebraic properties of\nbraids. It is therefore not so trivial to conclude that the second diag",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Matrix representation",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-005-matrix-representation.md",
+      "narrative": null,
+      "content": "Matrix representation\nTo complete the review of knot calculus let us give an alternative way of computing the bracket polynomial\nusing an explicit matrix representation of the braid group and Temperley-Lieb algebra. This method can\nbe extracted from papers of Kauffman an others [53–55]. See [56] for a recent short compilation of the\nidea.\nLet us start from matrix\nR =\n\n\n\n\nA\nA −A−3\nA−1\nA−1\n0\nA\n\n\n\n.\n(33)\nThis matrix is mentioned in [10] as R matrix of A1 Toda system [57]. It can be thought of as acting on\na tensor product of two two-dimensional vector spaces, R : V ⊗V →V ⊗V . Using this m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topological bits",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-topological-bits.md",
+      "narrative": null,
+      "content": "Topological bits\nIn this section we will explain how knots can be used in the description of quantum mechanics. In fact, the\nmain idea was already anticipated in the last section, when we introduce a matrix description of knots and\ntheir invariants. In this section we will put this idea on a more formal ground using methods of category\ntheory, following the definition given by Michael Atiyah [19]. Only very basic notions of categories will\nbe used, and they will be explained. The main message that will be conveyed is that basic objects of\nquantum mechanics, such as states operators and Hilbert",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topological Quantum Field Theory",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-007-topological-quantum-field-theory.md",
+      "narrative": null,
+      "content": "Topological Quantum Field Theory\nTheories whose description does not explicitly or implicitly use the spacetime metric are called topolog-\nical [15, 20]. Metric independence means that observables of such theories do not depend on distances.\nThis imposes powerful constraints on the theory, one of which is vanishing Hamiltonian.\nRecall that the stress-energy tensor can be obtained by the variation of the action of a nongravitational\ntheory with respect to the background metric:\nT µν = −\n2\n√−g\nδS\nδgµν\n.\n(54)\nIf the theory is metric independent, all the components of the stress-energy tensor are",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/figure-img-p014-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/figure-img-p016-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../images/img-p016-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topological Quantum Mechanics",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "../sections/sec-008-topological-quantum-mechanics.md",
+      "narrative": null,
+      "content": "Topological Quantum Mechanics\nLet us imagine the most simple situation: a one-dimensional TQFT. We will follow a physics-level\nexposition in [59]. See [60,61] for a more formal mathematical construction.\n16\nA 0+1 dimensional quantum field theory is called quantum mechanics, so we will consider a topological\nquantum mechanics. In this case, the role of (0-dimensional) Σ will be played by a collection of points.\nFor our convenience, we will organize the points along a line, as for the braids, or circuit diagrams, since\nit will be natural to think of lines attached to the points as their evolutio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chern-Simons theory",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "../sections/sec-009-chern-simons-theory.md",
+      "narrative": null,
+      "content": "Chern-Simons theory\nIn this section we will briefly review how the model described in the previous section emerges from a\nthree-dimensional quantum gauge theory. The review will be rather imprecise and its understanding is\nnot necessary for discussion of the applications in the next section, but it might provide some additional\nintuition about the connection between topology, quantum mechanics gauge and conformal field theories\n(CFT). The main reference here is the work of Edward Witten on Chern-Simons theory and Jones\npolynomials [20]. Further details can be found in lecture notes [62].\nNonab",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/figure-img-p020-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../images/img-p020-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/figure-img-p020-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../images/img-p020-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/figure-img-p022-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/figure-img-p022-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/figure-img-p022-5",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-5.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/figure-img-p023-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../images/img-p023-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "TQFT in the Semiclassical Limit",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-010-tqft-in-the-semiclassical-limit.md",
+      "narrative": null,
+      "content": "TQFT in the Semiclassical Limit\nIn Chern-Simons theory, the coupling constant k (also called the level of Chern-Simons theory) appears as\na factor multiplying the Lagrangian, e.g. (79). Hence, it has a role similar to the inverse Planck constant.\nIn particular, the limit k →∞localizes the path integral on classical configurations, computing the\nsemiclassical wavefunction (83). It is instructive to learn what happens with the topological model in\nthis limit.\nFirst, equations (90) and (92) instruct us that the classical limit corresponds to taking A →1. In\nthis limit the skein relation takes a s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum Entanglement",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-011-quantum-entanglement.md",
+      "narrative": null,
+      "content": "Quantum Entanglement\nIn the previous section we described an approach in which some quantum states can be understood\nas topological configurations (spaces).\nIn this section we will show how this approach can be useful\nto understand and interpret fundamental concepts of quantum mechanics.\nThe main subject of the\ndiscussion will be quantum entanglement.\nThe idea that entanglement can be thought as of topological tangling has been in the market for\na while. Intuitive, but not rigorous, diagrammatic depiction of systems entangled in different ways is\ncommon in quantum information literature, cf. [",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topological Tangling and Quantum Entanglement",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "../sections/sec-012-topological-tangling-and-quantum-entanglement.md",
+      "narrative": null,
+      "content": "Topological Tangling and Quantum Entanglement\nQuantum entanglement is a property of quantum mechanical systems quantified by correlations.\nA\ncanonical example of quantum entanglement is the correlation in the Einstein-Podolsky-Rosen (EPR) or\nBell pair [90]. An EPR-Bell pair can be represented by a pair of spins in the state\n|Φ+⟩:=\n1\n√\n2 (|0⟩⊗|0⟩+ |1⟩⊗|1⟩) .\n(102)\n24\nEither of the spins can be measured in the state |0⟩or |1⟩with a 50 percent probability. The correlation\nis exhibited in the property that if one spin is measured in either of the two states, the state of the other,\nupon the first",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SLOCC Classification",
+      "pageStart": 26,
+      "pageEnd": 33,
+      "target": "../sections/sec-013-slocc-classification.md",
+      "narrative": null,
+      "content": "SLOCC Classification\nIn the previous section we made an observation that disconnected topologies correspond to separable\nstates in quantum theory, while connected ones are avatars of entangled states. In most cases we would\nlike to have more information about the system. In particular, one may be interested in quantifying the\namount of the correlation, or detail its structure. It is straightforward to elaborate on the previous idea\nand suggest that different kind of topologies encode different types and amounts of entanglement. The\ngeneral problem, however, is to make such a classification use",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Entropy of Entanglement",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "../sections/sec-014-entropy-of-entanglement.md",
+      "narrative": null,
+      "content": "Entropy of Entanglement\nSo far we avoided working with a precise quantitative measure of entanglement. In this section we will\ndiscuss the von Neumann entropy, which provides one of the most common measures, and try to explain\nwhy it is natural for the topological formulation of quantum mechanics.\nThe von Neumann, or entanglement entropy is defined in terms of density matrices. If a state is\npure, that is we have complete access to the information about it, encapsulated in a vector |Ψ⟩, then the\ndensity matrix associated with the state is given by the “square” of the state vector:\nρ = |Ψ⟩⟨Ψ| .",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Inequalities for the Entanglement entropy",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "../sections/sec-015-inequalities-for-the-entanglement-entropy.md",
+      "narrative": null,
+      "content": "Inequalities for the Entanglement entropy\nIn the previous parts of section 4 we discussed expression of quantum entanglement in terms of topology\nand showed how a specific measure of entanglement – the von Neumann entropy – gets a topological\nexpression. In this part we will discuss the entropy a little further and explain some of its well-known\nproperties in topological terms. Specifically, we will consider inequalities satisfied by the entanglement\nentropy. The discussion becomes the most simple if we restrict ourselves to the limit of large k and of\nlarge Hilbert spaces (that is Hilbert spa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum Teleportation",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "../sections/sec-016-quantum-teleportation.md",
+      "narrative": null,
+      "content": "algorithms.\nwhere A + B and B + C denote the complements of A + B and B + C respectively.\nAgain, in the\nconnectome limit, this directly converts into the strong subadditivity (161). We see that in this case the\n“obstacle” is the existence of correlations between A and C.\nStrong subadditivity is notoriously difficult to prove in general [104], but for the special class of states\nthat we consider here it comes almost for free. Many more known inequalities can be tested in this way\nand some new ones can be designed [86,102]. It is important to keep in mind that in generic quantum\nstates the relat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum Algorithms",
+      "pageStart": 38,
+      "pageEnd": 40,
+      "target": "../sections/sec-017-quantum-algorithms.md",
+      "narrative": null,
+      "content": "Quantum Algorithms\nAs another set of applications of the topological visualization of quantum mechanics let us consider\na pair of basic quantum algorithms. Quantum algorithms exploiting quantum correlations should be\nthe most natural target for such a study. The example of the EPR pair puzzles us with the apparent\ninstantaneity of interactions between causally separated particles.\nQuantum teleportation is a basic\nalgorithm that capitalizes on this effect making an arbitrary state “instantaneously” available in a distant\nlab. Superdense coding is another example. We will discuss topological rea",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dense Coding",
+      "pageStart": 40,
+      "pageEnd": 42,
+      "target": "../sections/sec-018-dense-coding.md",
+      "narrative": null,
+      "content": "Dense Coding\nSuperdense, or, simply, dense coding is a protocol closely related to quantum teleportation.\nIt uses\nentanglement properties in a very similar way, allowing to use a quantum channel to simultaneously\ntransmit more than a single bit of classical information. In the textbook version Alice and Bob share an\nentangled pair of qubits, so that Bob can encode two classical bits of information, sending only one qubit\nto Alice. The circuit diagram of the corresponding protocol is shown in figure 4 (right).\nInitially, Bob and Alice share an entangled pair of qubits |Φ+⟩, where we label Φ+\nA",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outlook",
+      "pageStart": 42,
+      "pageEnd": 43,
+      "target": "../sections/sec-019-outlook.md",
+      "narrative": null,
+      "content": "Outlook\nHopefully the present notes convincingly demonstrate the potential and functionality of topology and, in\nparticular, knot theory in the discussion of quantum mechanics. We have shown that states and operators\ncan be thought as of topological spaces, equipped with a set of basic operations, such as braiding. The\nformalism of topological quantum field theories, or path integral formalism, gave precise mathematical\n42\nmeaning to such an association. The approach of the notes was to use the association directly to de-\nrive properties of quantum mechanics from topology, before ascertaining",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Multipartite Entanglement",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "../sections/sec-020-multipartite-entanglement.md",
+      "narrative": null,
+      "content": "Multipartite Entanglement\nIn section 4.2 we reviewed classification of bipartite entanglement and showed that a classification similar\nto SLOCC is possible in terms of the number of connections (Wilson lines) held by the two subsystems.\nHow does this classification works for multipartite systems?\nFor a 3-qubit system the SLOCC classification expects four distinct classes, two of which are bisep-\narable (either all three qubits are separable, or two of them in the Bell-type entanglement). The other\ntwo classes correspond to genuinely tripartite entanglement: the GHZ class and the W class [95].",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2503.08846v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum Gravity",
+      "pageStart": 44,
+      "pageEnd": 51,
+      "target": "../sections/sec-021-quantum-gravity.md",
+      "narrative": null,
+      "content": "Quantum Gravity\nKnot theory explicitly appears in the construction of states of loop quantum gravity [101,110]. Quantum\nstates in this theory are similar to the Chern-Simons states used in this review, although they are based\non closed lines, or closed networks, which are analogs of conformal blocks mentioned here, but with no\nopen ends. Consequently, some questions addressed in this review, such as properties of multipartite\nentanglement, can be studied in the context of loop quantum gravity, using similar techniques. See [111]\nfor a recent example.\nIn the string theory approach to quantum gr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

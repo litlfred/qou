@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-shell-schur-weyl-self-duality",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:shell-schur-weyl-self-duality",
+  "kind": "proposition",
+  "title": "Schur-Weyl justification of shell-operator self-duality",
+  "cites": [
+    "references/kassel1995",
+    "references/mathas1999",
+    "references/dipper-james1986"
+  ],
+  "tags": [
+    "schur-weyl",
+    "representation-duality",
+    "shell-closure",
+    "conjugate-partition",
+    "self-duality",
+    "quantum-group",
+    "sigma-shell"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.ShellSchurWeylSelfDuality.fixed_iff_coeff_symm",
+  "text": "shell-schur-weyl-self-duality.md",
+  "leanSource": "shell-schur-weyl-self-duality.lean",
+  "provenance": "authored"
+}

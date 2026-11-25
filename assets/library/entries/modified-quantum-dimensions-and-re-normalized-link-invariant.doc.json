@@ -1,0 +1,765 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "modified-quantum-dimensions-and-re-normalized-link-invariant",
+  "title": "Modified quantum dimensions and re-normalized link invariants",
+  "variant": "pdf",
+  "pages": 18,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "196",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Ribbon Ab-categories",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "197",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-ribbon-ab-categories"
+    },
+    {
+      "level": 1,
+      "title": "The invariant F' of closed ribbon graphs",
+      "number": "3",
+      "page": 4,
+      "pageLabel": "198",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-the-invariant-f-of-closed-ribbon-graphs"
+    },
+    {
+      "level": 1,
+      "title": "The quasi-functor F'",
+      "number": "4",
+      "page": 6,
+      "pageLabel": "200",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-the-quasi-functor-f"
+    },
+    {
+      "level": 1,
+      "title": "Properties of dJ and F'",
+      "number": "5",
+      "page": 10,
+      "pageLabel": "204",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-properties-of-dj-and-f"
+    },
+    {
+      "level": 1,
+      "title": "Examples",
+      "number": "6",
+      "page": 13,
+      "pageLabel": "207",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-examples"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 18,
+      "pageLabel": "212",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "196",
+      "words": 169,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bertrand patureau-mirand",
+          "heading": false
+        },
+        {
+          "term": "re-normalized link",
+          "heading": false
+        },
+        {
+          "term": "modiﬁed quantum",
+          "heading": false
+        },
+        {
+          "term": "compositio math",
+          "heading": false
+        },
+        {
+          "term": "nathan geer",
+          "heading": false
+        },
+        {
+          "term": "vladimir turaev",
+          "heading": false
+        }
+      ],
+      "extract": "COMPOSITIO MATHEMATICA Modiﬁed quantum dimensions and re-normalized link invariants Nathan Geer, Bertrand Patureau-Mirand and Vladimir Turaev Compositio Math. 145 (2009), 196–212. doi:10.1112/S0010437X08003795 FOUNDATION COMPOSITIO MATHEMATICA Compositio Math. 145 (2009) 196–212 doi:10.1112/S0010437X08003795 Modiﬁed quantum dimensions and re-normalized link invariants Nathan Geer, Bertrand Patureau-Mirand and",
+      "extractCut": true,
+      "blocks": [
+        "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prose-sec-front-matter",
+        "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p001-1",
+        "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p001-2",
+        "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p001-3",
+        "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p002-1"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "196",
+      "labelEnd": "197",
+      "words": 703,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "c-colored ribbon",
+          "heading": false
+        },
+        {
+          "term": "ribbon graphs",
+          "heading": false
+        },
+        {
+          "term": "ambidextrous object",
+          "heading": false
+        },
+        {
+          "term": "link invariants",
+          "heading": false
+        },
+        {
+          "term": "ribbon categories",
+          "heading": false
+        },
+        {
+          "term": "modiﬁed dimensions",
+          "heading": false
+        },
+        {
+          "term": "turaev link",
+          "heading": false
+        },
+        {
+          "term": "components labeled",
+          "heading": false
+        }
+      ],
+      "extract": "One obstruction to applications of quantum link invariants associated with a ribbon category C stems from the fact that certain simple (irreducible) objects of C may have zero quantum dimensions. If the dimension of a simple object V ∈Ob(C) is zero, then the quantum invariants of all (framed oriented) links with components labeled by V are equal to zero. A well-known topological trick allows us to derive possibly",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-ribbon-ab-categories",
+      "number": "2",
+      "title": "Ribbon Ab-categories",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "197",
+      "labelEnd": "198",
+      "words": 325,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ribbon ab-category",
+          "heading": false
+        },
+        {
+          "term": "strict tensor",
+          "heading": false
+        },
+        {
+          "term": "tensor category",
+          "heading": false
+        },
+        {
+          "term": "associativity constraint",
+          "heading": false
+        },
+        {
+          "term": "tensor product",
+          "heading": false
+        },
+        {
+          "term": "dimc",
+          "heading": false
+        },
+        {
+          "term": "unit constraints",
+          "heading": false
+        }
+      ],
+      "extract": "We describe the concept of a ribbon Ab-category (for details see [Tur94]). A tensor category C is a category equipped with a covariant bifunctor ⊗: C × C →C called the tensor product, a unit object I, an associativity constraint, and left and right unit constraints such that the triangle and pentagon axioms hold. When the associativity constraint and the left and right unit constraints are all identities we say that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-the-invariant-f-of-closed-ribbon-graphs",
+      "number": "3",
+      "title": "The invariant F' of closed ribbon graphs",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "198",
+      "labelEnd": "200",
+      "words": 984,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ribbon graphs",
+          "heading": true
+        },
+        {
+          "term": "c-colored ribbon",
+          "heading": false
+        },
+        {
+          "term": "ambidextrous elements",
+          "heading": false
+        },
+        {
+          "term": "closed c-colored",
+          "heading": false
+        },
+        {
+          "term": "idv",
+          "heading": false
+        },
+        {
+          "term": "ribc",
+          "heading": false
+        },
+        {
+          "term": "dimc",
+          "heading": false
+        },
+        {
+          "term": "idw",
+          "heading": false
+        }
+      ],
+      "extract": "Let C be a strict ribbon Ab-category with ground ring K and the set of objects Ob(C). We assume everywhere that K is an integral domain with ﬁeld of fractions F. For any object V of C and any endomorphism f of V ⊗V , set trL(f) = (dV ⊗IdV ) ◦(IdV ∗⊗f) ◦(b′ V ⊗IdV ) ∈End(V ), trR(f) = (IdV ⊗d′ V ) ◦(f ⊗IdV ∗) ◦(IdV ⊗bV ) ∈End(V ). An object V of C is called ambidextrous if trL(f) = trR(f) for all f ∈End(V ⊗V ). The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-the-quasi-functor-f",
+      "number": "4",
+      "title": "The quasi-functor F'",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 10,
+      "labelStart": "200",
+      "labelEnd": "204",
+      "words": 1277,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monoidal e-bimodule",
+          "heading": false
+        },
+        {
+          "term": "riba",
+          "heading": false
+        },
+        {
+          "term": "quasi-functor",
+          "heading": true
+        },
+        {
+          "term": "coupon labeled",
+          "heading": false
+        },
+        {
+          "term": "functor home",
+          "heading": false
+        },
+        {
+          "term": "homc",
+          "heading": false
+        },
+        {
+          "term": "c-colored ribbon",
+          "heading": false
+        },
+        {
+          "term": "ribc",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we extend the invariant F ′ to C-colored ribbon graphs with endpoints. This leads us to a notion of a quasi-functor which we brieﬂy discuss in a more general setting. This section is essentially independent from the rest of the paper. Let E be a category. Given a map M : Ob(E) × Ob(E) →Sets we use the notation m ∈M to mean that there exist two objects X and Y of E such that m ∈M(X, Y ). Modified",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-properties-of-dj-and-f",
+      "number": "5",
+      "title": "Properties of dJ and F'",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 13,
+      "labelStart": "204",
+      "labelEnd": "207",
+      "words": 1394,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ambidextrous object",
+          "heading": false
+        },
+        {
+          "term": "simple ambidextrous",
+          "heading": false
+        },
+        {
+          "term": "c-colored ribbon",
+          "heading": false
+        },
+        {
+          "term": "w-colored component",
+          "heading": false
+        },
+        {
+          "term": "dimc",
+          "heading": false
+        },
+        {
+          "term": "component labeled",
+          "heading": false
+        },
+        {
+          "term": "re-normalized link",
+          "heading": false
+        },
+        {
+          "term": "ribbon graph",
+          "heading": false
+        }
+      ],
+      "extract": "The following lemma shows that the function dJ satisfying the conditions of Theorem 3 is essentially unique. Lemma 11. Let J ∈Ob(C) be a simple ambidextrous object such that J ∈A(J). Suppose that d : A(J) →F is a function such that the construction of Theorem 3 with dJ replaced by d yields a well-deﬁned invariant for all L ∈LA(J). Then d = dJ for an appropriate choice of d0. Proof. Let L be the Hopf link with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-examples",
+      "number": "6",
+      "title": "Examples",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 18,
+      "labelStart": "207",
+      "labelEnd": "212",
+      "words": 2542,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gp08b",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite-dimensional g-module",
+          "heading": false
+        },
+        {
+          "term": "ribbon ab-category",
+          "heading": false
+        },
+        {
+          "term": "typical modules",
+          "heading": false
+        },
+        {
+          "term": "simple g-module",
+          "heading": false
+        },
+        {
+          "term": "re-normalized link",
+          "heading": false
+        },
+        {
+          "term": "colored alexander",
+          "heading": false
+        },
+        {
+          "term": "link invariants",
+          "heading": false
+        }
+      ],
+      "extract": "We give three classes of examples of ambidextrous objects and associated re-normalized link invariants. 6.1 Link invariants from Lie algebras Let g be a simple Lie algebra and let Uq(g) be the Drinfeld–Jimbo C(q)-algebra associated to g (see [Tur94, § XI.6]). (Note here that q is not a root of unity.) Let C be the category of ﬁnite- dimensional Uq(g)-modules. It is well known that C is a ribbon Ab-category with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "212",
+      "labelEnd": "212",
+      "words": 248,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "geer",
+          "heading": false
+        },
+        {
+          "term": "link invariants",
+          "heading": false
+        },
+        {
+          "term": "patureau-mirand",
+          "heading": false
+        },
+        {
+          "term": "quantum invariants",
+          "heading": false
+        },
+        {
+          "term": "indiana",
+          "heading": false
+        },
+        {
+          "term": "bertrand",
+          "heading": false
+        },
+        {
+          "term": "universit",
+          "heading": false
+        },
+        {
+          "term": "multivariable",
+          "heading": false
+        }
+      ],
+      "extract": "ADO92 Y. Akutsu, T. Deguchi and T. Ohtsuki, Invariants of colored links, J. Knot Theory Ramiﬁcations 1 (1992), 161–184. GP08a N. Geer and B. Patureau-Mirand, On the colored HOMFLY-PT, multivariable and Kashaev link invariants, Commun. Contemp. Math. 10, Suppl. 1 (2008), 993–1011. GP08b N. Geer and B. Patureau-Mirand, Multivariable link invariants arising from Lie superalgebras of type I, Paciﬁc J. Math. 238 (2008),",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "c-colored ribbon",
+      "heading": false
+    },
+    {
+      "term": "ambidextrous objects",
+      "heading": false
+    },
+    {
+      "term": "simple ambidextrous",
+      "heading": false
+    },
+    {
+      "term": "re-normalized link",
+      "heading": false
+    },
+    {
+      "term": "ribbon ab-category",
+      "heading": false
+    },
+    {
+      "term": "turaev link",
+      "heading": false
+    },
+    {
+      "term": "link invariants",
+      "heading": false
+    },
+    {
+      "term": "ribbon graphs",
+      "heading": true
+    },
+    {
+      "term": "ambidextrous elements",
+      "heading": false
+    },
+    {
+      "term": "ribbon functor",
+      "heading": false
+    },
+    {
+      "term": "bertrand patureau-mirand",
+      "heading": false
+    },
+    {
+      "term": "turaev quantum",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "196",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "197",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "198",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "199",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "200",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "201",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "202",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "203",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "204",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "205",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "206",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "207",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "208",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "209",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "210",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "211",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "212",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-2",
+      "file": "images/img-p001-2.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-3",
+      "file": "images/img-p001-3.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p002-1",
+      "file": "images/img-p002-1.png",
+      "page": 2,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-1",
+      "file": "images/img-p009-1.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-750",
+      "file": "images/img-p009-750.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-751",
+      "file": "images/img-p009-751.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-1500",
+      "file": "images/img-p009-1500.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-1",
+      "file": "images/img-p010-1.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-1",
+      "file": "images/img-p011-1.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-2",
+      "file": "images/img-p011-2.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 11
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p18); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/modified-quantum-dimensions-and-re-normalized-link-invariant"
+  }
+}

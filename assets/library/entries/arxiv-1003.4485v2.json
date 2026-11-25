@@ -1,0 +1,367 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1003.4485v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1003.4485v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\label{introduction}\n\nHigher gauge theory is a generalization of gauge theory that describes\nparallel transport, not just for point particles, but also for\nhigher-dimensional extended objects.  It is a beautiful new branch of\nmathematics, with a lot of room left for exploration.  It has already\nbeen applied to string theory and loop quantum gravity---or more\nspecifically, spin foam models.  This should not be surprising, since\nwhile these rival approaches to quantum gravity disagree about almost\neverything, they both agree that point particles are not enough: we\nneed higher-dimensional extende",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4485v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1003.4485v2  [hep-th]  18 Feb 2015\nAn Invitation to Higher Gauge Theory\nJohn C. Baez and John Huerta\nDepartment of Mathematics, University of California\nRiverside, California 92521\nUSA\nemail: baez@math.ucr.edu\nhuerta@math.ucr.edu\nMarch 24, 2010\nAbstract",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4485v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Categories and Connections",
+      "pageStart": 3,
+      "pageEnd": 11,
+      "target": "../sections/sec-001-2-categories-and-connections.md",
+      "narrative": null,
+      "content": "\\label{connections}\n\nA category consists of objects, which we draw as dots:\n\\[ \\bullet \\,\\, x \\]\nand morphisms between objects, which we draw as arrows between dots:\n\\[\n\\xymatrix{\n   x \\bullet \\ar@/^1pc/[rr]^{f}\n&& \\bullet y\n}\n\\]\nYou should think of objects as `things' and morphisms as\n`processes'.  The main thing you can do in a category is \ntake a morphism from $x$ to $y$ and a morphism from $y$ to $z$:\n\\[\n\\xymatrix{\n   x \\bullet \\ar@/^1pc/[rr]^{f}\n&& \\bullet y \\ar@/^1pc/[rr]^{g}\n    && \\bullet z\n}\n\\]\nand `compose' them to get a morphism from $x$ to $z$:\n\\[\n\\xymatrix{\n   x \\bullet \\ar@/^2pc/",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4485v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2-Categories and 2-Connections",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-002-3-2-categories-and-2-connections.md",
+      "narrative": null,
+      "content": "\\label{2-connections}\n\nNow we want to climb up one dimension, and talk about `2-connections'.\nA connection tells us how particles transform as they move along\npaths.  A 2-connection will also tell us how \\emph{strings} transform as \nthey sweep out \\emph{surfaces}.  To make this idea precise, we need to take\neverything we said in the previous section and boost the dimension\nby one.  Instead of categories, we need `2-categories'.  Instead of\ngroups, we need `2-groups'.  Instead of the path groupoid, we need the\n`path 2-groupoid'.  And instead of functors, we need `2-functors'.\nWhen we understand",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4485v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2-Categories",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-003-31-2-categories.md",
+      "narrative": null,
+      "content": "Sets have elements.  Categories have elements, usually\ncalled `objects', but also morphisms between these.  \nIn an `$n$-category', we go further and include 2-morphisms \nbetween morphisms, 3-morphisms between 2-morphisms,... and so \non up to the $n$th level.  We are beginning to see $n$-categories \nprovide an algebraic language for $n$-dimensional structures \nin physics \\cite{BaezLauda:prehistory}.  Higher gauge theory is just \none place where this is happening. \n\nAnyone learning $n$-categories needs to start with \n2-categories \\cite{Lack}.  A \\define{2-category} consists of:\n\\begin{itemize}\n\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4485v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Path 2-Groupoids",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-004-32-path-2-groupoids.md",
+      "narrative": null,
+      "content": "Path groupoids play a big though often neglected role in physics: the\npath groupoid of a spacetime manifold describes all the possible\nmotions of a point particle in that spacetime.  The path 2-groupoid\ndoes the same thing for particles \\textit{and strings}.\n\nFirst of all, a {\\bf 2-groupoid} is a 2-category where:\n\\begin{itemize}\n\\item\nEvery morphism $f \\maps x \\to y$ has an \\define{inverse},\n$f^{-1} \\maps y \\to x$, such that:\n\\[      f^{-1} f = 1_x  \n\\quad \\textrm{and} \\quad\nf f^{-1} = 1_y . \\]\n\\item\nEvery 2-morphism $\\alpha \\maps f \\To g$ has a \\define{vertical inverse},\n$\\alpha^{-1}_{\\textr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4485v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2-Groups",
+      "pageStart": 15,
+      "pageEnd": 21,
+      "target": "../sections/sec-005-33-2-groups.md",
+      "narrative": null,
+      "content": "Just as a group was a groupoid with one object, we define a\n\\define{2-group} to be a 2-groupoid with one object.  This definition\nis so elegant that it may be hard to understand at first!  So, it will\nbe useful to take a 2-group $\\G$ and chop it into four bite-sized\npieces of data, giving a `crossed module' $(G,H,t,\\alpha)$.  Indeed,\n2-groups were originally introduced in the guise of crossed modules by\nthe famous topologist J.\\ H.\\ C.\\ Whitehead \\cite{Whitehead}.  In\n1950, with help from Mac Lane \\cite{MW}, he used crossed modules to\ngeneralize the fundamental group of a space to what we migh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4485v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2-Connections",
+      "pageStart": 21,
+      "pageEnd": 27,
+      "target": "../sections/sec-006-34-2-connections.md",
+      "narrative": null,
+      "content": "A 2-connection is a recipe for parallel transporting both\n0-dimensional and 1-dimensional objects---say, particles and\nstrings.  Just as we can describe a connection on a trivial bundle\nusing a Lie-algebra valued differential form, we can describe a\n2-connection using a \\emph{pair} of differential forms.  But there is\na deeper way of understanding 2-connections.  Just as a connection was\nrevealed to be a smooth functor\n\\[           \\hol \\maps \\P_1(M) \\to G  \\]\nfor some Lie group $G$, a 2-connection will turn out to be a \nsmooth 2-functor \n\\[   \\hol \\maps \\P_2(M) \\to \\G \\]\nfor some Lie 2-group",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4485v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples and Applications",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-007-4-examples-and-applications.md",
+      "narrative": null,
+      "content": "\\label{examples}\n\nNow let us give some examples of Lie 2-groups, and see what higher\ngauge theory can do with these examples.  We will build these examples\nusing crossed modules.  Throughout what follows, $\\G$ is a Lie 2-group\nwhose corresponding crossed module is $(G,H,t,\\alpha)$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4485v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Shifted Abelian Groups",
+      "pageStart": 27,
+      "pageEnd": 32,
+      "target": "../sections/sec-008-41-shifted-abelian-groups.md",
+      "narrative": null,
+      "content": "\\label{abelian}\n\nAny group $G$ automatically gives a 2-group where $H$ is \ntrivial.  Then higher gauge theory reduces to ordinary gauge theory.  \nBut to see what is \\emph{new} about higher gauge theory, let us\ninstead suppose that $G$ is the trivial group. \nThen $t$ and $\\alpha$ are forced to be trivial, and $t$ is\nautomatically $G$-equivariant.  On the other hand, the Peiffer identity\n\\[\n\t\\alpha(t(h))h'  =  hh'h^{-1} \n\\]\nis not automatic: it holds if and only if $H$ is abelian!  \n\nThere is also a nice picture proof that $H$ must be abelian when\n$G$ is trivial.  We simply move two elements of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4485v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Poincaré 2-Group",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-009-42-the-poincaré-2-group.md",
+      "narrative": null,
+      "content": "\\label{poincare}\n\nSuppose we have a representation $\\alpha$ of a Lie group $G$ on a\nfinite-dimensional vector space $H$.  We can regard $H$ as an abelian\nLie group with addition as the group operation.  This lets us\nregard $\\alpha$ as an action of $G$ on this abelian Lie group.\nSo, we can build a 2-group $\\G$ where:\n\\begin{itemize}\n\\item $G$ is any Lie group,\n\\item $H$ is any vector space,\n\\item $\\alpha$ is the representation of $G$ on $H$, and\n\\item $t$ is trivial.\n\\end{itemize}\nIn particular, note that the Peiffer identity holds.  In this way, we\nsee that any group representation gives a cro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4485v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tangent 2-Groups",
+      "pageStart": 33,
+      "pageEnd": 37,
+      "target": "../sections/sec-010-43-tangent-2-groups.md",
+      "narrative": null,
+      "content": "\\label{tangent}\n\nWe have seen that any group representation gives a 2-group.  But any\nLie group $G$ has a representation on its own Lie algebra: the adjoint\nrepresentation.  This lets us build a 2-group from the crossed module\nwhere:\n\\begin{itemize}\n\\item $G$ is any Lie group,\n\\item $H$ is $\\g$ regarded as a vector space and thus an abelian\nLie group, \n\\item $\\alpha$ is the adjoint representation, and\n\\item $t$ is trivial.\n\\end{itemize}\nWe call this the \\define{tangent 2-group} $\\T G$ of the Lie group $G$.\nWhy?  We have already seen that for any Lie 2-group, the group of all\n2-morphisms is the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4485v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Inner Automorphism 2-Groups",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-011-44-inner-automorphism-2-groups.md",
+      "narrative": null,
+      "content": "\\label{inner}\n\nThere is also a Lie 2-group where:\n\\begin{itemize}\n\\item $G$ is any Lie group,\n\\item $H = G$,\n\\item $t$ is the identity map,\n\\item $\\alpha$ is conjugation:\n\\[ \\alpha(g) h = ghg^{-1}. \\]\n\\end{itemize}\nFollowing Roberts and Schreiber \\cite{RobertsSchreiber} we call this\nthe \\define{inner automorphism 2-group} of $G$, and denote it by\n$\\INN(G)$.  We explain this terminology in the next\nsection.  \n\nA 2-connection on the trivial $\\INN(G)$-2-bundle over a manifold\nconsists of a $\\g$-valued 1-form $A$ and a $\\g$-valued 2-form $B$ such\nthat\n\\[  B = F  \\]\nsince $\\dt$ is now the identity.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4485v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Automorphism 2-Groups",
+      "pageStart": 38,
+      "pageEnd": 40,
+      "target": "../sections/sec-012-45-automorphism-2-groups.md",
+      "narrative": null,
+      "content": "\\label{automorphism}\n\nThe inner automorphism group of the previous section is\nclosely related to the \\define{automorphism 2-group} $\\AUT(H)$, \ndefined using the crossed module where:\n\\begin{itemize}\n\\item $G = \\Aut(H)$,\n\\item $H$ is any Lie group,\n\\item $t \\maps H \\to \\Aut(H)$ sends any group element to the operation\nof conjugating by that element,\n\\item $\\alpha \\maps \\Aut(H) \\to \\Aut(H)$ is the identity.\n\\end{itemize}\nWe use the term `automorphism 2-group' because $\\AUT(H)$ really is the\n2-group of symmetries of $H$.  Lie groups form a 2-category, any object\nin a 2-category has a 2-group of s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4485v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "String 2-Groups",
+      "pageStart": 40,
+      "pageEnd": 44,
+      "target": "../sections/sec-013-46-string-2-groups.md",
+      "narrative": null,
+      "content": "\\label{string}\n\nThe Lie 2-groups discussed so far are easy to construct.  The string\n2-group is considerably more subtle.  Ultimately it forces upon us\na deeper conception of what a Lie 2-group really is, and a more\nsophisticated approach to higher gauge theory.  Treated in proper\ndetail, these topics would carry us far beyond the limits of this\nquick introduction.  But it would be a shame not to mention them at\nall.\n\nSuppose we have a central extension of a Lie group $G$ by an\nabelian Lie group $A$.  In other words,\nsuppose we have a short exact sequence of Lie groups\n\\[   1 \\to A \\to H \\stac",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4485v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Further Topics",
+      "pageStart": 44,
+      "pageEnd": 44,
+      "target": "../sections/sec-014-5-further-topics.md",
+      "narrative": null,
+      "content": "Further Topics\nSo far our introduction to higher gauge theory has neglected the most important",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4485v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gauge Transformations",
+      "pageStart": 44,
+      "pageEnd": 46,
+      "target": "../sections/sec-015-51-gauge-transformations.md",
+      "narrative": null,
+      "content": "\\label{gauge}\n\nFirst consider ordinary gauge theory.  Suppose that $M$ is a manifold\nand $G$ is a Lie group.  Then a \\define{gauge transformation} on the\ntrivial principal $G$-bundle over $M$ simply amounts to a smooth\nfunction\n\\[              g \\maps M \\to G , \\]\nwhile a connection on this bundle can be seen as a $\\g$-valued 1-form.  \nA gauge transformation $g$ acts on a connection $A$ to give a new connection\n$A'$ as follows:\n\\[            A' = g A g^{-1} + g\\, dg^{-1}   .\\]\nThis formula makes literal sense if $G$ is a group of matrices: then\n$\\g$ also consists of matrices, so we can freely",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4485v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Curvature",
+      "pageStart": 46,
+      "pageEnd": 47,
+      "target": "../sections/sec-016-52-curvature.md",
+      "narrative": null,
+      "content": "\\label{curvature}\n\nSuppose $\\G$ is a Lie 2-group whose crossed module is $(G,H,t,\n\\alpha)$, and let $(\\g,\\h,\\dt,\\dalpha)$ be the corresponding\ndifferential crossed module.  Suppose we have a \\define{connection} on\nthe trivial $\\G$-2-bundle over $M$: that is, a $\\g$-valued 1-form $A$\nand an $\\h$-valued 2-form $B$.  \n\nAs in ordinary gauge theory, we may define the \\define{curvature} of\nthis connection to be the $\\g$-valued 2-form given by:\n\\[                 F = dA + A \\wedge A  .\\]\nWe also have another $\\g$-valued 2-form, the \\define{fake curvature}\n$F - \\dt(B)$.  Recall from Section \\ref{2-con",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4485v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nontrivial 2-Bundles",
+      "pageStart": 47,
+      "pageEnd": 60,
+      "target": "../sections/sec-017-53-nontrivial-2-bundles.md",
+      "narrative": null,
+      "content": "\\label{nontrivial}\n\nSo far we have implicitly been looking at 2-connections on trivial\n2-bundles.  This is fine locally.  But there are also interesting\nissues involving nontrivial 2-bundles, which become crucial when we\nwork globally.   \n\nA careful treatment of 2-bundles would require some work, and the\nreader interested in this topic would do well to start with Moerdijk's\nintroductory paper on `stacks' and `gerbes' \\cite{Moerdijk}.  Here we\ntake a less sophisticated approach: we simply describe how to build a\nprincipal 2-bundle and put a 2-connection on it.  Since we do not say\nwhen two prin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

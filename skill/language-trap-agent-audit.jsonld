@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/language-trap-agent-audit.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/language-trap-agent-audit",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "language-trap-agent-audit",
+      "title": "/language-trap-agent-audit — per-block agentic trap audit",
+      "description": "Thorough per-block agentic audit of the ten language-trap categories (owner spec 2026-08-15) — full-context judgement over every prose-bearing content block, agent reviewer entries in the QA sidecar, small fixes applied inline, structural fixes flagged.",
+      "instructionsPath": "skills/local/language-trap-agent-audit.md",
+      "instructionLines": 257,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

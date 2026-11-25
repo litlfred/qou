@@ -1,0 +1,329 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2205.01282v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2205.01282v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec:intro label=\"sec:intro\"}\n\nIn this paper, we study Witten--Reshetikhin--Turaev (WRT) invariants. They are quantum invariants of $3$-manifolds constructed by Witten [@Witten] from a physical viewpoint and constructed by Reshetikhin--Turaev [@Reshetikhin-Turaev Theorem 3.3.2] from a mathematical viewpoint. The Witten's asymptotic expansion conjecture plays a central role in studying WRT invariants. It claims that the Chern-Simons invariants and the Reidemeister torsions appear in the asymptotic expansion of WRT invariants. This conjecture is proved by Lawrence--Zagier [@LZ] for the Poinca",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.01282v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL\nBLOCKS FOR PLUMBED HOMOLOGY SPHERES\nYUYA MURAKAMI\nAbstract. In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed\n3-manifolds.\nTheir conjecture states that Witten–Reshetikhin–Turaev (WRT) invariants are radial\nlimits of homological blocks, which are q-series introduced by them for plumbed 3-manifolds with\nnegative definite linking matrices.\nThe most difficult point in our proof is to prove the vanishing\nof weighted Gauss sums that appear in coefficients of negative degree in asymptotic expansions of\nhomolo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.01282v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgement",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-acknowledgement.md",
+      "narrative": null,
+      "content": "[]{#sec:acknowledgement label=\"sec:acknowledgement\"}\n\nThe author would like to show the greatest appreciation to Takuya Yamauchi for giving many pieces of advice. The author would like to thank Takuya Yamauchi, Yuji Terashima, Kazuhiro Hikami, Toshiki Matsusaka for giving many comments. The author is deeply grateful to Akihito Mori for a lot of discussion. I thank the referees for their helpful suggestions and comments which improved the presentation of our paper. The author is supported by JSPS KAKENHI Grant Number JP 20J20308 and JP23KJ1675.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.01282v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic notations for plumbing graphs",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-2-basic-notations-for-plumbing-graphs.md",
+      "narrative": null,
+      "content": "[]{#sec:fund_data label=\"sec:fund_data\"}\n\nIn this section, we list some notations for plumbing graphs and their basic properties, which we use throughout this paper.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.01282v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notations for graphs",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-21-notations-for-graphs.md",
+      "narrative": null,
+      "content": "[]{#subsec:graph label=\"subsec:graph\"}\n\nIn this subsection, we prepare settings for graphs. As in [\\[sec:intro\\]](#sec:intro){reference-type=\"ref\" reference=\"sec:intro\"}, let $\\Gamma = (V, E, (w_v)_{v \\in V})$ be a plumbing graph and $W$ be its linking matrix such that it is negative definite and $\\det W = \\pm 1$. Here we consider the edge set $E$ as the subset of $\\{ \\{ v, v' \\} \\mid v, v' \\in V \\}$. We identify $M_{\\abs{V}}(\\Z)$ and $\\End(\\Z^V)$ and consider $W$ as the element of $\\End(\\Z^V)$. We remark that $w_v \\in \\Z_{<0}$ for any vertex $v \\in V$.\n\nFor two plumbing graphs $\\Gamma$ and $\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.01282v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The inverse matrix of the linking matrix",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-22-the-inverse-matrix-of-the-linking-matrix.md",
+      "narrative": null,
+      "content": "[]{#subsec:S label=\"subsec:S\"}\n\nIn this subsection, we calculate the inverse matrix of the linking matrix.\n\nLet $S \\in \\Aut(\\Q^{V_{\\ge 2}}) \\cap \\End(\\Z^{V_{\\ge 2}})$ be the $V_{\\ge 2} \\times V_{\\ge 2}$ submatrix of $-W^{-1} \\in \\Aut(\\Q^V)$. Here we recall $V_{\\ge 2} = \\{ v \\in V \\mid \\deg v \\ge 2 \\}$. We also denote $T \\coloneqq  -W_1^{-1} W_{1, \\ge 2}$. Here we remark that $S$ is positive definite since $W$ is negative definite.\n\nThe inverse matrices $W^{-1}$ and $S^{-1}$ have the following properties.\n\n::: prop\n[]{#prop:S label=\"prop:S\"}\n\n1.  []{#item:prop:S1 label=\"item:prop:S1\"} $$-W^{-1}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.01282v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Periodic maps determined by the linking matrix",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-23-periodic-maps-determined-by-the-linking-matri.md",
+      "narrative": null,
+      "content": "[]{#subsec:char label=\"subsec:char\"}\n\nIn this subsection, we introduce periodic maps determined by the linking matrix and prove its basic properties.\n\nFor each vertex $v \\in V_{\\ge 2}$, let $$\\calS_v\n\\coloneqq\n\\left\\{ \\frac{1}{2}\\deg(v) - 1 + \\sum_{i \\in \\overline{v}} \\frac{l_i}{2w_i} \\relmiddle{|} (l_i)_{i \\in \\overline{v}} \\in \\{ \\pm 1 \\}^{\\overline{v}} \\right\\}$$ Here we set $\\calS_v \\coloneqq \\left\\{ \\deg(v)/2 - 1 \\right\\}$ if $\\overline{v} = \\emptyset$. We also define the periodic map $\\veps_v \\colon \\frac{1}{2M_v}\\Z/\\Z \\to \\{ 0, \\pm 1 \\}$ by $$\\veps_v(\\alpha_v) \\coloneqq \n\\begin{dcases}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.01282v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rational functions determined by the linking matrix",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-24-rational-functions-determined-by-the-linking.md",
+      "narrative": null,
+      "content": "[]{#subsec:rat_func label=\"subsec:rat_func\"}\n\nIn this subsection, we introduce rational functions determined by the linking matrix and prove its basic properties.\n\nFor a vertex $v \\in V_{\\ge 2}$ and complex variable $q$, define a rational function $$G_v (q) \\coloneqq (q^{M_{v}} - q^{-M_{v}})^{2 - \\deg(v)} \\prod_{i \\in \\overline{v}} \\left( q^{M_{v} / w_{i}} - q^{-M_{v} / w_{i}} \\right).$$\n\nIt has the following Laurent expansion.\n\n::: rem\n[]{#rem:G_v_symmetry label=\"rem:G_v_symmetry\"} $G_v(q^{-1}) = (-1)^{\\deg (v) + \\abs{\\overline{v}}} G_v(q)$.\n:::\n\nThe rational function $G_v (q)$ has the follow",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.01282v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calculations of WRT invariants",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-007-3-calculations-of-wrt-invariants.md",
+      "narrative": null,
+      "content": "[]{#sec:WRT label=\"sec:WRT\"}\n\nIn this section, we calculate WRT invariants of the plumbed homology sphere $M(\\Gamma)$. Our starting point is the following expression by [@GPPV].\n\n::: prop\n$$\\begin{aligned}\n        \\mathop{\\mathrm{WRT}}_k(M(\\Gamma))\n        =\n        \\frac{\\bm{e}(\\abs{V}/8) \\zeta_{4k}^{-\\sum_{v \\in V} (w_{v} + 3)}}\n        {2 \\sqrt{2k}^{\\abs{V}} (\\zeta_{2k} - \\zeta_{2k}^{-1})}\n        \\sum_{\\mu \\in (\\Z \\smallsetminus k\\Z)^V/2k\\Z^V} \\zeta_{4k}^{{}^t\\!\\mu W \\mu}\n        \\prod_{v \\in V} \\left( \\zeta_{2k}^{\\mu_v} - \\zeta_{2k}^{-\\mu_v} \\right)^{2-\\deg(v)}.\n    \n\\end{aligned}$$\n:::",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.01282v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Expressions of homological blocks as false theta functions",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-008-4-expressions-of-homological-blocks-as-false-the.md",
+      "narrative": null,
+      "content": "[]{#sec:HB_false label=\"sec:HB_false\"}\n\nIn this section, we represent the homological block of $M(\\Gamma)$ as a false theta function.\n\nFor the plumbed homology sphere $M(\\Gamma)$, the homological block $\\widehat{Z}_{\\Gamma} (q)$ is defined as follows.\n\n::: dfn\nThe homological block of the plumbed homology sphere $M(\\Gamma)$ is defined as $$\\widehat{Z}_{\\Gamma} (q) \n    = \n    2^{-\\abs{V}} q^{-\\sum_{v \\in V} (w_{v} + 3)/4} \n    \\mathrm{p.v.} \\int_{\\abs{z_{v}}=1, v \\in V} \\Theta_{-W,\\delta }(q; z)\n    \\prod_{v \\in V} (z_{v} - 1/z_{v})^{2 - \\deg(v)} \\frac{dz_{v}}{2\\pi\\sqrt{-1}z_{v}},$$ where $\\ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.01282v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An asymtotic formula",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-009-5-an-asymtotic-formula.md",
+      "narrative": null,
+      "content": "[]{#sec:asymp label=\"sec:asymp\"}\n\nIn this section, we develop an asymptotic formula which we need to calculate radial limits of homological blocks.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.01282v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymtotic formulas obtained from Euler–Maclaurin summation formula",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-010-51-asymtotic-formulas-obtained-from-eulermaclaur.md",
+      "narrative": null,
+      "content": "[]{#subsec:Euler--Maclaurin label=\"subsec:Euler--Maclaurin\"}\n\nSome useful methods have been developed to calculate radial limits of false theta functions. The method of Lawrence--Zagier [@LZ p. 98, Proposition] is the beginning of these. Lawrence--Zagier [@LZ] developed it by using $L$-functions for periodic maps. Zagier [@Zagier_asymptotic] collected many techniques to calculate asymptotic expansions of infinite series. In particular, [@Zagier_asymptotic Equation (44)] is the very powerful method followed by the Euler--Maclaurin summation formula. In our setting, these methods deal with the c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.01282v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymtotic expansion of infinite series with weighted Gauss sums",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-011-52-asymtotic-expansion-of-infinite-series-with-w.md",
+      "narrative": null,
+      "content": "[]{#subsec:asymp_Gauss label=\"subsec:asymp_Gauss\"}\n\nIn this subsection, we study a family of infinite series $F(f; t)$ with weighted Gauss sums, which involves both WRT invariants and homological blocks. We start with the following asymptotic formula following from [\\[prop:Euler\\--Maclaurin_poly\\]](#prop:Euler--Maclaurin_poly){reference-type=\"ref\" reference=\"prop:Euler--Maclaurin_poly\"}. In the following statement, we use notations $\\varepsilon, \\calS, Q$ and so on, which we prepared in [\\[sec:fund_data,sec:HB_false\\]](#sec:fund_data,sec:HB_false){reference-type=\"ref\" reference=\"sec:fund_data,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.01282v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A proof of the main theorem",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-012-6-a-proof-of-the-main-theorem.md",
+      "narrative": null,
+      "content": "[]{#sec:proof_main label=\"sec:proof_main\"}\n\nLet $$F(\\bm{t}) \\coloneqq\n\\sum_{ \\mu \\in \\Z^{V_{\\ge 2}} / 2kS \\left(\\Z^{V_{\\ge 2}} \\right) } \n\\bm{e} \\left( -\\frac{1}{4k} {}^t\\!\\mu S^{-1} \\mu \\right) \n\\prod_{v \\in V_{\\ge 2}} G_v \\left( \\zeta_{2kM_v}^{\\mu_v} e^{-t_v/2M_v} \\right).$$ In this section, we prove holomorphy of this meromorphic function at $\\bm{t} = 0$ (that is, vanishings of $c_n$) and our main result.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.01282v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The main result",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-013-61-the-main-result.md",
+      "narrative": null,
+      "content": "[]{#subsec:proof_main label=\"subsec:proof_main\"}\n\nIn this subsection, we state our main result without a proof.\n\n::: prop\n[]{#prop:Gauss_vanish label=\"prop:Gauss_vanish\"}\n\n1.  []{#item:prop:Gauss_vanish1 label=\"item:prop:Gauss_vanish1\"} For each vertex $v \\in V_{\\ge 3}$, the order of $F(\\bm{t})$ at $t_v=0$ satisfies $$\\ord_{t_v = 0} F(\\bm{t})\n            \\ge\n            \\min \\{ 0, \\abs{\\overline{v}} + 2 - \\deg(v) \\}.$$\n\n2.  []{#item:prop:Gauss_vanish2 label=\"item:prop:Gauss_vanish2\"} If $\\abs{\\overline{v}} + 2 - \\deg(v) > 0$ for each vertex $v \\in V_{\\ge 3}$, then the meromorphic function $F(f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.01282v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A proof of the main result",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-014-62-a-proof-of-the-main-result.md",
+      "narrative": null,
+      "content": "[]{#subsec:Gauss_vanish_proof label=\"subsec:Gauss_vanish_proof\"}\n\nFinally, we prove [\\[prop:Gauss_vanish\\]](#prop:Gauss_vanish){reference-type=\"ref\" reference=\"prop:Gauss_vanish\"}. We need the following lemma.\n\n::: lem\n[]{#lem:Gauss_sum_indep label=\"lem:Gauss_sum_indep\"} Let $k, M \\in \\Z \\smallsetminus \\{ 0 \\}$ and $a, b \\in \\Z$ be integers such that $\\gcd(a, M) = 1$. For $\\alpha \\in \\frac{1}{2M}\\Z$ such that $\\gcd(2M \\alpha, M) = 1$, the complex number $$\\sum_{\\mu \\in \\Z/k\\Z + \\alpha} \\bm{e} \\left( \\frac{M}{k} \\left( a \\mu^2 + b \\mu \\right) \\right)$$ depends only on $M\\alpha^2, M\\alpha \\bmod",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.01282v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-015-references.md",
+      "narrative": null,
+      "content": "[AH12]\nJ. E. Andersen and B. Himpel. The Witten–Reshetikhin–Turaev invariants of finite order mapping tori II.\nQuantum Topol., 3(3-4):377–421, 2012.\n[AM22]\nJ. E. Andersen and W. Misteg˚ard. Resurgence analysis of quantum invariants of Seifert fibered homology\nspheres. Journal of the London Mathematical Society, 105(2):709–764, 2022.\n[And13]\nJ. E. Andersen. The Witten–Reshetikhin–Turaev invariants of finite order mapping tori I. J. Reine Angew.\nMath., 681:1–38, 2013.\n[AS64]\nMilton Abramowitz and Irene A. Stegun. Handbook of mathematical functions with formulas, graphs, and\nmathematical tables,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

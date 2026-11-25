@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/motivicperiodsandp1minus3pointsv3",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Motivic periods and P^1 minus 3 points",
+      "dcterms:creator": [
+        "Brown∗, Francis"
+      ],
+      "dcterms:issued": "D:20140719",
+      "dcterms:abstract": "This is a review of the theory of the motivic fundamental group of the projective line minus three points, and its relation to multiple zeta values. Mathematics Subject Classiﬁcation (2010). Primary 11M32; Secondary 14C15.",
+      "dcterms:source": "library/motivicperiodsandp1minus3pointsv3/manifest.jsonld",
+      "dcterms:hasVersion": "library/motivicperiodsandp1minus3pointsv3"
+    }
+  ]
+}

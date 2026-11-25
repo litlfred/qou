@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/session-intent.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/session-intent",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "session-intent",
+      "title": "/session-intent — durable session intent + results",
+      "description": "Session-start intent declaration + session-end results recording, against the goal-scoped master ledger and queue file. Enforces the durable-handoff discipline so any agent can pick up another's thread.",
+      "instructionsPath": "skills/local/session-intent.md",
+      "instructionLines": 208,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

@@ -1,0 +1,1111 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "1104248094",
+  "title": "1104248094",
+  "variant": "pdf",
+  "pages": 42,
+  "tocSource": "inferred",
+  "tocMethod": "contents",
+  "toc": [
+    {
+      "level": 1,
+      "title": "© Springer-Verlag",
+      "number": null,
+      "page": null,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "contents"
+      ],
+      "source": "inferred",
+      "section": "sec-000-springer-verlag"
+    },
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.55,
+      "evidence": [
+        "contents",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Definitions of Hochschild and Cyclic Homology",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "484",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-002-2-definitions-of-hochschild-and-cyclic-homology"
+    },
+    {
+      "level": 1,
+      "title": "Quantum Groups",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "488",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-003-3-quantum-groups"
+    },
+    {
+      "level": 1,
+      "title": "A Spectral Sequence",
+      "number": "4",
+      "page": 13,
+      "pageLabel": "493",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-004-4-a-spectral-sequence"
+    },
+    {
+      "level": 1,
+      "title": "The Lie Algebra Homology",
+      "number": "5",
+      "page": 20,
+      "pageLabel": "500",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-005-5-the-lie-algebra-homology"
+    },
+    {
+      "level": 2,
+      "title": "Formal Functions",
+      "number": "5.1",
+      "page": 21,
+      "pageLabel": "501",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-006-51-formal-functions"
+    },
+    {
+      "level": 2,
+      "title": "Algebraic Functions",
+      "number": "5.2",
+      "page": 22,
+      "pageLabel": "502",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Hochschild and Cyclic Homology of Quantum Groups",
+      "number": "6",
+      "page": 25,
+      "pageLabel": "505",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-007-6-hochschild-and-cyclic-homology-of-quantum-grou"
+    },
+    {
+      "level": 2,
+      "title": "Quantum Formal Groups",
+      "number": "6.1",
+      "page": 26,
+      "pageLabel": "506",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-008-61-quantum-formal-groups"
+    },
+    {
+      "level": 2,
+      "title": "Quantum Algebraic Groups",
+      "number": "6.2",
+      "page": 26,
+      "pageLabel": "506",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-009-62-quantum-algebraic-groups"
+    },
+    {
+      "level": 1,
+      "title": "Notations about Calculus on Lie Groups",
+      "number": "Appendix A",
+      "page": 35,
+      "pageLabel": "515",
+      "confidence": 0.55,
+      "evidence": [
+        "contents",
+        "number"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Example G = SL(2, C)",
+      "number": "Appendix B",
+      "page": 36,
+      "pageLabel": "516",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-010-appendix-b-example-g-sl2-c"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 10,
+      "summary": null,
+      "keywords": [],
+      "extract": "Commun. Math. Phys. 140, 481-521 (1991) Communications in Mathematical Physics",
+      "extractCut": false,
+      "blocks": [
+        "library/1104248094/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-springer-verlag",
+      "number": null,
+      "title": "© Springer-Verlag",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 90,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "harvard university",
+          "heading": false
+        },
+        {
+          "term": "cyclic homology",
+          "heading": false
+        },
+        {
+          "term": "hopf algebras",
+          "heading": false
+        }
+      ],
+      "extract": "Hochschild and Cyclic Homology of Quantum Groups Ping Feng1'* and Boris Tsygan2'** 1 Department of Physics, Harvard University, Cambridge, MA 02138, USA 2 Department of Mathematics, Harvard University, Cambridge, MA 02138, USA Received October 23, 1990; in revised form February 20, 1991 Abstract. For an arbitrary complex linear semisimple Lie group G, we consider Hopf algebras of the deformations of the formal and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": "484",
+      "words": 1347,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hochschild homology",
+          "heading": false
+        },
+        {
+          "term": "non-commutative differential",
+          "heading": false
+        },
+        {
+          "term": "cyclic homology",
+          "heading": false
+        },
+        {
+          "term": "non-commutative spaces",
+          "heading": false
+        },
+        {
+          "term": "hochschild homological",
+          "heading": false
+        },
+        {
+          "term": "non-commutative algebraic",
+          "heading": false
+        },
+        {
+          "term": "non-commutative tori",
+          "heading": false
+        },
+        {
+          "term": "symplectic leaves",
+          "heading": false
+        }
+      ],
+      "extract": "481 2. Definitions of Hochschild and Cyclic Homology 484 3. Quantum Groups 488 4. A Spectral Sequence 493 5. The Lie Algebra Homology 500 5.1. Formal Functions 501 5.2. Algebraic Functions 502 6. Hochschild and Cyclic Homology of Quantum Groups 505 6.1. Quantum Formal Groups 506 6.2. Quantum Algebraic Groups 506 Appendix A. Notations about Calculus on Lie Groups 515 Appendix B. Example G = SL(2, C) 516 1.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-definitions-of-hochschild-and-cyclic-homology",
+      "number": "2",
+      "title": "Definitions of Hochschild and Cyclic Homology",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 8,
+      "labelStart": "484",
+      "labelEnd": "488",
+      "words": 914,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hochschild homology",
+          "heading": true
+        },
+        {
+          "term": "cyclic homology",
+          "heading": true
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "enveloping algebra",
+          "heading": false
+        },
+        {
+          "term": "rham cohomology",
+          "heading": false
+        },
+        {
+          "term": "universal enveloping",
+          "heading": false
+        },
+        {
+          "term": "following complex",
+          "heading": false
+        },
+        {
+          "term": "n-l",
+          "heading": false
+        }
+      ],
+      "extract": "Here we recall the definitions and basic properties of Hochschild and cyclic homology [8, 44, 14, 27]. Let A be an associative algebra over a commutative unital ring fe, fccA In this paper /c = C, or C((/ι)), the ring of Laurent series. The Hochschild homology of A, denoted by HH^(A\\ is defined to be the homology of the following complex -., (2.1) where Cn(A) = A® n + l, and b\\Cn(A)-+Cn-ι(A) such that n-l = Σ (-iy«",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-quantum-groups",
+      "number": "3",
+      "title": "Quantum Groups",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 13,
+      "labelStart": "488",
+      "labelEnd": "493",
+      "words": 1548,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poisson hopf",
+          "heading": false
+        },
+        {
+          "term": "poisson lie",
+          "heading": false
+        },
+        {
+          "term": "quantum groups",
+          "heading": true
+        },
+        {
+          "term": "poisson bracket",
+          "heading": false
+        },
+        {
+          "term": "lie bialgebra",
+          "heading": false
+        },
+        {
+          "term": "poisson structure",
+          "heading": false
+        },
+        {
+          "term": "poisson map",
+          "heading": false
+        },
+        {
+          "term": "semi-simple lie",
+          "heading": false
+        }
+      ],
+      "extract": "later in Sect. 6. 3. Quantum Groups By quantum group we mean the Hopf algebra (over C[[/z]]) of the formal deformation of the functions on a group. We will start with a connected, complex, semi-simple Lie group G and consider the formal deformation of formal functions Hochschild and Cyclic Homology of Quantum Groups 489 C f(G) and algebraic functions C[G], resulting in respectively quantum formal group C{(G) and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-a-spectral-sequence",
+      "number": "4",
+      "title": "A Spectral Sequence",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 20,
+      "labelStart": "493",
+      "labelEnd": "500",
+      "words": 1897,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hochschild homology",
+          "heading": false
+        },
+        {
+          "term": "spectral sequence",
+          "heading": true
+        },
+        {
+          "term": "poisson lie",
+          "heading": false
+        },
+        {
+          "term": "cyclic homology",
+          "heading": false
+        },
+        {
+          "term": "algebra homology",
+          "heading": false
+        },
+        {
+          "term": "left translation",
+          "heading": false
+        },
+        {
+          "term": "filtered complex",
+          "heading": false
+        },
+        {
+          "term": "lie group",
+          "heading": false
+        }
+      ],
+      "extract": "We start the computation of the Hochschild and cyclic homology of quantum groups in this section. Our major technical tool is the spectral sequence. First a remark about notation. Note we have natural identification Kc ^ G. In this and the next section we will use Kc to denote the complex Lie group G and reserve G for the real Lie group structure of G. All Lie algebras are complex Lie algebras and we will use the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-the-lie-algebra-homology",
+      "number": "5",
+      "title": "The Lie Algebra Homology",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "500",
+      "labelEnd": "501",
+      "words": 632,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "algebra homology",
+          "heading": true
+        },
+        {
+          "term": "lie algebra",
+          "heading": true
+        },
+        {
+          "term": "filtered complex",
+          "heading": false
+        },
+        {
+          "term": "spectral sequence",
+          "heading": false
+        },
+        {
+          "term": "formal functions",
+          "heading": false
+        },
+        {
+          "term": "left action",
+          "heading": false
+        },
+        {
+          "term": "coproduct",
+          "heading": false
+        },
+        {
+          "term": "algebraic functions",
+          "heading": false
+        }
+      ],
+      "extract": "In the previous section we have identified the E 2 of the spectral sequence leading to the Hochschild homology of quantum groups with the Lie algebra homology of g* with coefficients in A0. In this section we will compute this Lie algebra homology. Here we will have to treat the formal and algebraic functions separately. 5.1. Formal Functions. Recall that we have the identification: C^Kc)^{fEC^Gc)\\f(ge x) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-51-formal-functions",
+      "number": "5.1",
+      "title": "Formal Functions",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 25,
+      "labelStart": "501",
+      "labelEnd": "505",
+      "words": 1550,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homology exponent",
+          "heading": false
+        },
+        {
+          "term": "leading homology",
+          "heading": false
+        },
+        {
+          "term": "jordan cells",
+          "heading": false
+        },
+        {
+          "term": "restricted roots",
+          "heading": false
+        },
+        {
+          "term": "ac-homology",
+          "heading": false
+        },
+        {
+          "term": "irreducible jordan",
+          "heading": false
+        },
+        {
+          "term": "right translation",
+          "heading": false
+        },
+        {
+          "term": "algebraic functions",
+          "heading": false
+        }
+      ],
+      "extract": "This is the reason for us to treat formal and algebraic functions separately. 5.2. Algebraic Functions. Now we do not have a nice filtration for C[XC] as we have for C f(Kc), so we have to look for other ways to compute the Lie algebra homology for algebraic functions. First of all we notice the following Lemma (5.2.1). σ and σ0 commute with the right translation by the Carton subalgebra o/g Proof. Right translation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-6-hochschild-and-cyclic-homology-of-quantum-grou",
+      "number": "6",
+      "title": "Hochschild and Cyclic Homology of Quantum Groups",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "505",
+      "labelEnd": "506",
+      "words": 504,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hochschild homology",
+          "heading": true
+        },
+        {
+          "term": "cyclic homology",
+          "heading": true
+        },
+        {
+          "term": "quantum groups",
+          "heading": true
+        },
+        {
+          "term": "algebra homology",
+          "heading": false
+        },
+        {
+          "term": "jordan cells",
+          "heading": false
+        },
+        {
+          "term": "normalizer",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "orbit generated",
+          "heading": false
+        }
+      ],
+      "extract": "505 irreducible Jordan cells in #0(nc, KA)0 is the number of the elements in the orbit generated by W through λ in the weight lattice A. This number l(λ) is smaller than I W\\ when / is singular and there are indeed non-trivial Jordan cells. We thus have the following Proposition (5.2.8). where l(λ) is the number of elements on the orbit generated by Weyl group W(g, h) through λ in the weight lattice yl(g, h).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-61-quantum-formal-groups",
+      "number": "6.1",
+      "title": "Quantum Formal Groups",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "506",
+      "labelEnd": "506",
+      "words": 271,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hochschild homology",
+          "heading": false
+        },
+        {
+          "term": "cyclic homology",
+          "heading": false
+        },
+        {
+          "term": "cartan subgroup",
+          "heading": false
+        },
+        {
+          "term": "formal",
+          "heading": true
+        },
+        {
+          "term": "spectral sequence",
+          "heading": false
+        },
+        {
+          "term": "hcn",
+          "heading": false
+        }
+      ],
+      "extract": "enveloping algebra Uh(g) the Cartan subalgebra is not quantized, i.e., there is a natural Hopf algebra homomorphism l/Λ(g). (6.1) This induces a homomorphism of Hopf algebras and morphism between the complexes (2.16) for their Hochschild homologies, thus also induces morphisms between the associated spectral sequences. For C f(H)®cC((h)) the spectral sequence is trivial and we have E l^E 2^ ^ JE°° ^ Ωf(H)9 where Ωf",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-62-quantum-algebraic-groups",
+      "number": "6.2",
+      "title": "Quantum Algebraic Groups",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 36,
+      "labelStart": "506",
+      "labelEnd": "516",
+      "words": 3167,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hochschild homology",
+          "heading": false
+        },
+        {
+          "term": "quantum groups",
+          "heading": true
+        },
+        {
+          "term": "quantum algebraic",
+          "heading": true
+        },
+        {
+          "term": "cartan subgroup",
+          "heading": false
+        },
+        {
+          "term": "spectral sequence",
+          "heading": false
+        },
+        {
+          "term": "cyclic homology",
+          "heading": false
+        },
+        {
+          "term": "cartan subalgebra",
+          "heading": false
+        },
+        {
+          "term": "g-weyl group",
+          "heading": false
+        }
+      ],
+      "extract": "2 that the spectral sequence leading to the Hochschild homology is also degenerate at E 2 for the algebraic case. In the formal case the E 2 term turns out to be that of the Cartan subgroup. Since the Cartan subgroup is unquantized, the comparison theorem immediately yields the Hochschild and cyclic homology in the formal case. But now the E 2 2 The proof in our first draft was incomplete, as was pointed to us",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-appendix-b-example-g-sl2-c",
+      "number": "Appendix B",
+      "title": "Example G = SL(2, C)",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 42,
+      "labelStart": "516",
+      "labelEnd": null,
+      "words": 1948,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hochschild homology",
+          "heading": false
+        },
+        {
+          "term": "cyclic homology",
+          "heading": false
+        },
+        {
+          "term": "non-commutative differential",
+          "heading": false
+        },
+        {
+          "term": "poisson lie",
+          "heading": false
+        },
+        {
+          "term": "algebra homology",
+          "heading": false
+        },
+        {
+          "term": "symplectic leaves",
+          "heading": false
+        },
+        {
+          "term": "lie groups",
+          "heading": false
+        },
+        {
+          "term": "tsygan",
+          "heading": false
+        }
+      ],
+      "extract": "The quantum algebraic group structure is as discussed in Sect. 3, specifically in Example (3.14). So we will not repeat those definitions. B.I. The Quasiclassical Limit. We start with the computation of #n(g*,C[G]). i/i o \\ i/o ι\\ i/o o\\ . , . f H = - , E+ = - , JE_ =- is a basis for g,L ,L ,L the 4\\o -i/ 2\\o o; 2\\ι oy dual basis for g*. The action of g* on C[G] as defined in Proposition (4.4) is as follows: \\-b—,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 4,
+        "items": [
+          "© Springer-Verlag",
+          "Received October 23, 1990; in revised form February 20,",
+          "Introduction",
+          "Notations about Calculus on Lie Groups"
+        ]
+      },
+      "found_not_listed": {
+        "count": 3,
+        "items": [
+          "1 Associativity:",
+          "5 Connection Axiom:",
+          "2 Let G be connected and semi-simple, then every Poisson Lie group structure on G has the following form:"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "hochschild homology",
+      "heading": true
+    },
+    {
+      "term": "cyclic homology",
+      "heading": true
+    },
+    {
+      "term": "algebra homology",
+      "heading": true
+    },
+    {
+      "term": "leading homology",
+      "heading": false
+    },
+    {
+      "term": "hochschild homological",
+      "heading": false
+    },
+    {
+      "term": "homology exponent",
+      "heading": false
+    },
+    {
+      "term": "lie algebra",
+      "heading": true
+    },
+    {
+      "term": "total homology",
+      "heading": false
+    },
+    {
+      "term": "poisson lie",
+      "heading": false
+    },
+    {
+      "term": "lie groups",
+      "heading": true
+    },
+    {
+      "term": "quantum formal",
+      "heading": true
+    },
+    {
+      "term": "hopf algebra",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "482",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "483",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "484",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "485",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "486",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "487",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "488",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "489",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "490",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "491",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "492",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "493",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "494",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "495",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "496",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "497",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "498",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "499",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "500",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "501",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "502",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "503",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "504",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "505",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "506",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "507",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "508",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "509",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "510",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "511",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "512",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "513",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "514",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "515",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "516",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "517",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "518",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "519",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "520",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "521",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 13,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p36); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/1104248094"
+  }
+}

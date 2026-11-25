@@ -1,0 +1,672 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-9910019v1",
+  "title": "Symmetrized random permutations",
+  "variant": "pdf",
+  "pages": 17,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Tracy-Widom distribution functions",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-tracy-widom-distribution-functions"
+    },
+    {
+      "level": 1,
+      "title": "Main Results",
+      "number": "3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-main-results"
+    },
+    {
+      "level": 1,
+      "title": "Applications and related topics",
+      "number": "4",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-applications-and-related-topics"
+    },
+    {
+      "level": 2,
+      "title": "Random involutions and random signed involutions",
+      "number": "4.1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-41-random-involutions-and-random-signed-involuti"
+    },
+    {
+      "level": 2,
+      "title": "Random turn vicious walker model",
+      "number": "4.3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-43-random-turn-vicious-walker-model"
+    },
+    {
+      "level": 2,
+      "title": "Symmetrized versions of Johansson's model",
+      "number": "4.4",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-44-symmetrized-versions-of-johanssons-model"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 16,
+      "summary": null,
+      "keywords": [],
+      "extract": "arXiv:math/9910019v1 [math.CO] 5 Oct 1999 Symmetrized random permutations Jinho Baik∗and Eric M. Rains† September 23, 1999",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-math-9910019v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "4",
+      "words": 1360,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gue fluctuation",
+          "heading": false
+        },
+        {
+          "term": "text gue",
+          "heading": false
+        },
+        {
+          "term": "ref sec-result",
+          "heading": false
+        },
+        {
+          "term": "goe",
+          "heading": false
+        },
+        {
+          "term": "limiting distribution",
+          "heading": false
+        },
+        {
+          "term": "gse",
+          "heading": false
+        },
+        {
+          "term": "tsymmu",
+          "heading": false
+        },
+        {
+          "term": "alpha sqrt",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec-intro} Suppose that we are selecting $n$ points, $p_1,p_2,\\cdots,p_n$, at random in a rectangle, say $R=[0,1]\\times[0,1]$ (see Figure \\ref{fig-randompoints}). We denote by $\\pi$ the configuration of $n$ random points. With probability 1, no two points have same $x$-coordinates nor $y$-coordinates. An up/right path of $\\pi$ is a collection of points $p_{i_1},p_{i_2},\\cdots,p_{i_k}$ such that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-tracy-widom-distribution-functions",
+      "number": "2",
+      "title": "Tracy-Widom distribution functions",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": "4",
+      "labelEnd": "7",
+      "words": 1220,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "infty symmu",
+          "heading": false
+        },
+        {
+          "term": "infty symmo",
+          "heading": false
+        },
+        {
+          "term": "rhp eqref",
+          "heading": false
+        },
+        {
+          "term": "tracy-widom",
+          "heading": true
+        },
+        {
+          "term": "frac bigr",
+          "heading": false
+        },
+        {
+          "term": "frac bigl",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec-dist} Let $u(x)$ be the solution of the Painlev\\'e II (PII) equation, \\begin{equation}\\label{as10} u_{xx}=2u^3+xu, \\end{equation} with the boundary condition \\begin{equation}\\label{as11} u(x)\\sim -Ai(x)\\quad\\text{as}\\quad x\\to +\\infty, \\end{equation} where $Ai$ is the Airy function. The proof of the (global) existence and the uniqueness of the solution was first established in \\cite{HM} : the asymptotics",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-main-results",
+      "number": "3",
+      "title": "Main Results",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 943,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chi symmu",
+          "heading": false
+        },
+        {
+          "term": "frac symmu",
+          "heading": false
+        },
+        {
+          "term": "chi symmo",
+          "heading": false
+        },
+        {
+          "term": "prob bigl",
+          "heading": false
+        },
+        {
+          "term": "chi symms",
+          "heading": false
+        },
+        {
+          "term": "chi symmuu",
+          "heading": false
+        },
+        {
+          "term": "infty prob",
+          "heading": false
+        },
+        {
+          "term": "sqrt alpha",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec-result} As in the Introduction, let $N$ denote $n, 2n+m, 2n+m,2n,4n+2m_++2m_-$ for each of $\\tsymmU, \\tsymmO, \\tsymmS, \\tsymmUU, \\tsymmu$ case respectively. We scale the random variables : for permutations and involutions, \\begin{equation} \\chi^\\symmU_n = \\frac{L^\\symmU_n-2\\sqrt{N}}{N^{1/6}}, \\qquad \\chi^\\symmO_{n,m} = \\frac{L^{\\symmO}_{n,m}-2\\sqrt{N}}{N^{1/6}}, \\qquad \\chi^\\symmS_{n,m} =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-applications-and-related-topics",
+      "number": "4",
+      "title": "Applications and related topics",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "Applications and related topics",
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-41-random-involutions-and-random-signed-involuti",
+      "number": "4.1",
+      "title": "Random involutions and random signed involutions",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 996,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "signed involutions",
+          "heading": true
+        },
+        {
+          "term": "tilde symmu",
+          "heading": false
+        },
+        {
+          "term": "beta plancherel",
+          "heading": false
+        },
+        {
+          "term": "random young",
+          "heading": false
+        },
+        {
+          "term": "young tableaux",
+          "heading": false
+        },
+        {
+          "term": "prob biggl",
+          "heading": false
+        },
+        {
+          "term": "increasing subsequence",
+          "heading": false
+        },
+        {
+          "term": "longest increasing",
+          "heading": false
+        }
+      ],
+      "extract": "The ensemble $S^\\symmO_{n,m}$ is the set of involutions with $n$ 2-cycles and $m$ 1-cycles. In the previous section, we considered the limiting statistics when $n$ and $m$ are related by $m=[\\sqrt{2n}\\alpha]$ with $\\alpha$ being finite ; either fixed or $\\alpha\\to 1$ with certain rate. It is of interest to consider the whole set of involutions without constraints on the number of fixed points. Similarly, the signed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-43-random-turn-vicious-walker-model",
+      "number": "4.3",
+      "title": "Random turn vicious walker model",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 421,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "young tableaux",
+          "heading": false
+        },
+        {
+          "term": "leftmost particle",
+          "heading": false
+        },
+        {
+          "term": "random",
+          "heading": true
+        },
+        {
+          "term": "time steps",
+          "heading": false
+        },
+        {
+          "term": "left site",
+          "heading": false
+        },
+        {
+          "term": "increasing subsequence",
+          "heading": false
+        },
+        {
+          "term": "longest increasing",
+          "heading": false
+        },
+        {
+          "term": "cite forrester",
+          "heading": false
+        }
+      ],
+      "extract": "Random permutations and random involutions arise also in certain random walk process in a one dimensional integer lattice. We call a particle left-movable (resp. right-movable) if its left (resp. right) site is vacant. Initially, $p$ particles are located at the points $1,2,3,\\cdots,p$. At each time step $t$ ($t=1,2,\\cdots$), one particle among the left-movable particles is selected at random, and is moved to its",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-44-symmetrized-versions-of-johanssons-model",
+      "number": "4.4",
+      "title": "Symmetrized versions of Johansson's model",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 17,
+      "labelStart": "12",
+      "labelEnd": "17",
+      "words": 1547,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e-print math",
+          "heading": false
+        },
+        {
+          "term": "johansson",
+          "heading": true
+        },
+        {
+          "term": "increasing subsequences",
+          "heading": false
+        },
+        {
+          "term": "longest increasing",
+          "heading": false
+        },
+        {
+          "term": "monotone subsequences",
+          "heading": false
+        },
+        {
+          "term": "random permutations",
+          "heading": false
+        },
+        {
+          "term": "random matrices",
+          "heading": false
+        },
+        {
+          "term": "deift",
+          "heading": false
+        }
+      ],
+      "extract": "In [22], Johansson introduced a certain model which has several probabilistic interpretations, as a randomly growing Young diagram, a totally asymmetric one dimensional exclusion process, a certain zero-temperature directed polymer in a random environment or as a kind of ﬁrst-passage site percolation model. Here we consider the symmetrized versions. The limiting distributions are parallel to the results of Section 3",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "symmu sqrt",
+      "heading": false
+    },
+    {
+      "term": "infty symmu",
+      "heading": false
+    },
+    {
+      "term": "random gue",
+      "heading": false
+    },
+    {
+      "term": "frac symmu",
+      "heading": false
+    },
+    {
+      "term": "gue fluctuation",
+      "heading": false
+    },
+    {
+      "term": "goe fluctuation",
+      "heading": false
+    },
+    {
+      "term": "chi symmu",
+      "heading": false
+    },
+    {
+      "term": "random young",
+      "heading": true
+    },
+    {
+      "term": "infty symmo",
+      "heading": false
+    },
+    {
+      "term": "tilde symmu",
+      "heading": false
+    },
+    {
+      "term": "random involutions",
+      "heading": true
+    },
+    {
+      "term": "text gue",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "random points in a rectangle",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "random turn vicious walkers and Young tableaux",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "2 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p12); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-9910019v1"
+  }
+}

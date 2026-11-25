@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/directory/qa.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/directory/qa",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Subgraph",
+      "name": "qa",
+      "path": "test/results/",
+      "contentSource": {
+        "@id": "https://github.com/litlfred/qou/tree/cat/cat-harness/qa-reports",
+        "kind": "branch",
+        "branch": "cat/cat-harness/qa-reports",
+        "keyedBy": "commit",
+        "declaredIn": "storage"
+      },
+      "holdsGraph": [
+        "https://litlfred.github.io/cat-harness/v0/ns/graphTypology/qa"
+      ],
+      "description": "What a QA process produced about this folio, published to the qa-reports branch keyed by commit and never committed (owner ruling 2026-10-04, decision 11: QA results go to the cat-harness qa-reports store). It holds what the writers declared under `qa.writers` produce (owner decision 2026-11-24, the integrated QA page): the compute-QA verdicts, one qou-compute-qa/v1 file per gate under compute-qa/ (scripts/compute-qa.py, TOOLS T7, bean qou-4dj1), the Lean vacuity/axiom audit under lean/, and the rendered-paper record under rendering/. Published by .github/workflows/compute-qa.yml (a caller of the platform's layer-qa-publish.yml) and, after a merge, by scripts/qa-publish-local.sh. The directory is gitignored except for a .gitkeep, so it is present in every checkout and a reader never mistakes an absent directory for a clean run. Story S3, bean qou-4rhu.",
+      "fileCount": 4,
+      "inSubgraph": "https://litlfred.github.io/qou/directory/qa"
+    }
+  ]
+}

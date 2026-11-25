@@ -1,0 +1,60 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2104.06067v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2104.06067v1",
+  "contains": [
+    "library/arxiv-2104.06067v1/sections/sec-front-matter",
+    "library/arxiv-2104.06067v1/sections/sec-000",
+    "library/arxiv-2104.06067v1/sections/sec-001",
+    "library/arxiv-2104.06067v1/sections/sec-002",
+    "library/arxiv-2104.06067v1/sections/sec-003",
+    "library/arxiv-2104.06067v1/sections/sec-004",
+    "library/arxiv-2104.06067v1/sections/sec-005"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On irreducible characters of the Iwahori-Hecke algebra in type A — We use vertex operators to compute irreducible characters of the Iwahori-Hecke algebra of type A.\n\n**On irreducible characters of the Iwahori-Hecke algebra in type A**\n\n*TYPE A*\n\n21 pp, 7 sections.\n\n**Abstract.** We use vertex operators to compute irreducible characters of the Iwahori-Hecke algebra of type A. Two general formulas are given for the irreducible characters in terms of those of the symmetric groups or the Iwahori-Hecke algebras in lower degrees. Explicit formulas are derived for the irreducible characters labeled by hooks and two-row partitions. Using duality, we also formulate a determinant type Murnaghan-Nakayama formula and give another proof of Ram’s combinatorial Murnaghan-Nakayama formula. As applications, we study super-characters of the Iwahori-Hecke algebra as well as the bitrace of the regular representation and provide a simple proof of the Halverson-Luduc-Ram formula.\n\n**Outline.** Front matter; 1 Introduction; 2 Vertex operators and character values (q); 3 Applications of the hook and two-row formula; 4 Determinant type Murnaghan-Nakayama rule; 5 The bitrace of the regular representation; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2104.06067&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2104.06067v1",
+    "title_source": "slug",
+    "source_file": "2104.06067v1.pdf",
+    "source_sha256": "750303181ca019ba16d94fa009a6505e6ede47d1b9ac2976f9d84ed69b0e01e8",
+    "pages": 21,
+    "arxiv": {
+      "id": "2104.06067",
+      "version": "1",
+      "primary_class": "math.QA",
+      "stamp_date": "13 Apr 2021"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

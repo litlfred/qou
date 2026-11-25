@@ -1,0 +1,585 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0410233v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivation",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-11-motivation.md",
+      "narrative": null,
+      "content": "The interplay between geometry and topology is an important theme in the study of 3--manifolds. Since Thurston's work in the late 1970's, it has been known that any Haken 3--manifold has a geometric decomposition [@thurston]. Recently Perelman has announced a proof that any closed, orientable 3--manifold has such a decomposition (the geometrization conjecture). However, it is important not only to know the existence of a geometric structure on a 3--manifold, but also to understand the relation between that structure and the topological description of the manifold.\n\nOften a 3--manifold is descr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0410233v4  [math.GT]  23 Jul 2008\nCUSP SHAPES UNDER CONE DEFORMATION\nJESSICA S. PURCELL\nAbstract. A horospherical torus about a cusp of a hyperbolic manifold\ninherits a Euclidean similarity structure, called a cusp shape. We bound\nthe change in cusp shape when the hyperbolic structure of the manifold\nis deformed via cone deformation preserving the cusp. The bounds are\nin terms of the change in structure in a neighborhood of the singular\nlocus alone.\nWe then apply this result to provide information on the cusp shape of\nmany hyperbolic knots, given only a diagram of the knot. Speciﬁca",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cusp shapes",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-13-cusp-shapes.md",
+      "narrative": null,
+      "content": "3\nHowever, as far as we are aware, the results of this paper are the ﬁrst of\ntheir kind giving actual geometric bounds on cusp shape based only on a\ndiagram.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cone deformations",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-12-cone-deformations.md",
+      "narrative": null,
+      "content": "Our primary technique is cone deformation, which we will now describe. Using properties of cone deformations, we obtain geometric information on the topological process of Dehn filling.\n\n::: define\nGiven a manifold $M$ with torus boundary $\\partial M$ and specified slope $s$ on $\\partial M$, we obtain a new manifold by gluing a solid torus to $\\partial M$ such that $s$ bounds a disk in the solid torus. This is called the *Dehn filling of $M$ along $s$*, or sometimes *Dehn surgery*, and the resulting manifold is denoted $M(s)$. More generally, if $M$ has $n$ torus boundary components with slope",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications to knot theory",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-14-applications-to-knot-theory.md",
+      "narrative": null,
+      "content": "In the last part of this paper we give specific applications of Theorem [\\[thm:main-norm-height\\]](#thm:main-norm-height){reference-type=\"ref\" reference=\"thm:main-norm-height\"}. We determine bounds on the cusp shape of a knot based solely on a diagram of that knot.\n\nBefore we state the results, we review some definitions.\n\n::: define\nLet $K \\subset S^3$ be a knot with diagram $D(K)$. Define a *twist region* to be a region of $D(K)$ where two strands of the diagram twist around each other maximally. Precisely, if $D(K)$ is viewed as a 4--valent planar graph with over--under crossing information",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Organization of this paper",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-15-organization-of-this-paper.md",
+      "narrative": null,
+      "content": "[]{#sec:organize label=\"sec:organize\"}\n\nIn Section [\\[sec:deform-cone\\]](#sec:deform-cone){reference-type=\"ref\" reference=\"sec:deform-cone\"}, we review background information on cone deformations.\n\nIn Section [\\[sec:cusp-est\\]](#sec:cusp-est){reference-type=\"ref\" reference=\"sec:cusp-est\"}, we begin the proofs of Theorems [\\[thm:main-cusp\\]](#thm:main-cusp){reference-type=\"ref\" reference=\"thm:main-cusp\"}, [\\[thm:main-norm-length\\]](#thm:main-norm-length){reference-type=\"ref\" reference=\"thm:main-norm-length\"}, and [\\[thm:main-norm-height\\]](#thm:main-norm-height){reference-type=\"ref\" reference=\"",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-16-acknowledgments.md",
+      "narrative": null,
+      "content": "helpful conversations. We lean heavily on his results with Craig Hodgson.\nHis willingness to clarify, explain, and correct has made this paper possible.\nWe would also like to thank the referee for very carefully reading this paper,\nand for many helpful suggestions, corrections, and comments.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background on Cone Deformation",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-007-2-background-on-cone-deformation.md",
+      "narrative": null,
+      "content": "In this section, we will recall deﬁnitions associated with cone deformations\nand review relevant results from work of Hodgson and Kerckhoﬀ([13], [14]).\nDeﬁnition 2.1. Let M be a 3–manifold containing a closed 1–manifold\nΣ. A hyperbolic cone structure on M is an incomplete hyperbolic structure\non X = M −Σ, whose completion is singular along Σ. A cross section of a\ncomponent of Σ is a hyperbolic cone with angle α, where α is constant along\nthat component. (For a more complete description of the metric on M, see\n[13].) The set Σ is called the singular locus of M. M with this structure is\ncalled a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Infinitesimal deformations",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-008-21-infinitesimal-deformations.md",
+      "narrative": null,
+      "content": "Now, we may study deformations by considering possible \"derivatives at time $t$\" of $X_t$, or infinitesimal deformations of hyperbolic structure,\n\nfor any time $t$.\n\nEach of these infinitesimal deformations corresponds to an element in a certain cohomology group $H^1(X; E)$, where recall $X=M-\\Sigma$. We will be manipulating elements of $H^1(X;E)$, so we recall some information on their structure.\n\n### Cohomology\n\nGiven $\\omega$ in $H^1(X;E)$, $\\omega$ is a one--form on $X$ with values in the vector bundle $E$ of infinitesimal isometries of $X$. The bundle $E$ has fiber $sl(2,{\\mathbb{C}})$, w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Boundary terms",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-009-22-boundary-terms.md",
+      "narrative": null,
+      "content": "[]{#subsec:boundary-terms label=\"subsec:boundary-terms\"}\n\nOur proof of Theorem [\\[thm:main-cusp\\]](#thm:main-cusp){reference-type=\"ref\" reference=\"thm:main-cusp\"} will involve certain boundary terms. In this section, we define these terms. We explain how they arise and recall certain properties. They will be used in the proof of Theorem [\\[thm:main-cusp\\]](#thm:main-cusp){reference-type=\"ref\" reference=\"thm:main-cusp\"}.\n\nUsing results of the last section, we may always assume that we have a harmonic representative $\\omega = \\eta + i*D\\eta$. Thus $\\eta$ satisfies equation ([\\[eqn:d\\*deta\\]](#eq",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Change in Cusp Shape",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-010-3-change-in-cusp-shape.md",
+      "narrative": null,
+      "content": "In Section 2, we set up notation and reviewed known results. Given this\ninformation, we are ready to begin the proof of Theorem 1.2.\nCUSP SHAPES UNDER CONE DEFORMATION",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Boundary relations",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-011-31-boundary-relations.md",
+      "narrative": null,
+      "content": "Restrict to the case when we have a single cusp.\n\nWe will let $U$ be a horoball neighborhood of the one cusp, and $V_1$, ..., $V_n$ be tubular neighborhoods of the components of the singular locus $\\Sigma$, each with radius $R$. Here, we are letting $n$ be the total number of components of $\\Sigma$. We will assume throughout that these neighborhoods are chosen such that all intersections of distinct neighborhoods are trivial.\n\nLet $\\omega \\in H^1(X;E)$ correspond to a harmonic infinitesimal deformation of hyperbolic structure at time $t$, and decompose $\\omega$ in tubular neighborhoods and hor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Teichmüller Space",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-012-32-teichmüller-space.md",
+      "narrative": null,
+      "content": "We now turn our attention to the term $(a^2+b^2)$ in Lemma [\\[lemma:b_U=area\\]](#lemma:b_U=area){reference-type=\"ref\" reference=\"lemma:b_U=area\"}. This term is closely related to the change in metric of the torus $\\partial U$.\n\nUnder the hyperbolic metric on $X=M-\\Sigma$, the boundary $\\partial U$ inherits a Euclidean structure. This gives a point in the Teichmüller space of the torus, $\\mathcal{T}(T^2)$.\n\n::: remark\nWe view $\\mathcal{T}(T^2)$ as the space of flat structures on the torus. To each flat structure $\\zeta$ is associated a unit area Euclidean metric $g_{\\zeta}$, and vice versa. How",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Normalized lengths on the torus",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-013-33-normalized-lengths-on-the-torus.md",
+      "narrative": null,
+      "content": "[]{#sec:normlength label=\"sec:normlength\"}\n\nWe are interested in determining how *normalized lengths* of curves on the torus $\\partial U$ change over the deformation.\n\n::: define\nLet $\\beta$ be a slope on the torus $T$, that is, an isotopy class of simple closed curves. The normalized length of $\\beta$ is defined to be: $$\\mbox{Normalized length}(\\beta) =\n  \\frac{\\mbox{Length}(\\beta)}{\\sqrt{\\mbox{Area}(T)}},$$ where $\\mbox{Length}(\\beta)$ is defined to be the length of a geodesic representative of $\\beta$ on $T$.\n:::\n\n::: lemma\nLet $\\beta$ be a slope on $\\partial U_t$. Let $L_t(\\beta)$ denote",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bounding the boundary terms",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-014-4-bounding-the-boundary-terms.md",
+      "narrative": null,
+      "content": "4. Bounding the boundary terms\nIn this section, we ﬁnish the proofs of Theorems 1.2 and 1.3 by ﬁnding a\nparameterization of the cone deformation for which we may bound the sum\nP bj.\nIn order to bound P bj, we need more explicit formulas for the bj. Recall\nthat bj was deﬁned in Deﬁnition 2.2 as:\nbj = bVj(η0, η0).\nHere η0 is the real part of the 1–form ω0 in the j-th component Vj of a\ntubular neighborhood of the singular locus. Thus we begin by revisiting our\ndecomposition of ω0 in Vj.\n18\nJESSICA S. PURCELL",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Convex combinations of deformations",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-015-41-convex-combinations-of-deformations.md",
+      "narrative": null,
+      "content": "[]{#subsec:convex label=\"subsec:convex\"}\n\nRecall that corresponding to an infinitesimal deformation is the 1--form $\\omega_0$. We want $\\omega_0$ to have certain desired properties.\n\nBy equation ([\\[eqn:omega_0-decomp\\]](#eqn:omega_0-decomp){reference-type=\"ref\" reference=\"eqn:omega_0-decomp\"}), we can decompose $\\omega_0 =\n(\\omega_0)_j$ in $V_j$ as $$(\\omega_0)_j =u_j\\, \\omega_m + (x_j+iy_j)\\,\\omega_\\ell,$$ with $u_j$, $x_j$, and $y_j$ in ${\\mathbb{R}}$, and where $\\omega_m$ and $\\omega_\\ell$ were computed in [@hk:cone-rigid].\n\nIn [@hk:univ], it was shown that if the singular locus has just o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Selecting local deformations",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-016-42-selecting-local-deformations.md",
+      "narrative": null,
+      "content": "[]{#subsec:Vnonempty label=\"subsec:Vnonempty\"}\n\nEach choice of $\\bar{s} = (s_1, \\dots, s_n)$ corresponds to a local deformation with 1--form $(\\omega_0)_j$ expressed in $V_j$ as in equation ([\\[eqn:omega_0-S\\]](#eqn:omega_0-S){reference-type=\"ref\" reference=\"eqn:omega_0-S\"}). In terms of the deformation, varying $\\bar{s}$ varies the rates at which the cone angles are changing (instantaneously). When $\\bar{s}=(1, \\dots, 1)$, all cone angles are changing at the same rate. It might be convenient to let $\\bar{s}=(1, \\dots, 1)$, to simplify calculations. However, such a choice may not give us the b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Boundary bound",
+      "pageStart": 21,
+      "pageEnd": 28,
+      "target": "../sections/sec-017-43-boundary-bound.md",
+      "narrative": null,
+      "content": "\\label{subsec:bd}\n\nIn this subsection, we will show that\n\nthere exists a parameterization of the cone deformation such that the\nsum of the terms $b_j$ is of order $n$.  We first need two lemmas.\nLemma \\ref{lemma:b_j-bound} gives us an initial bound on each $b_j$.\nLemma \\ref{lemma:choose-S} will allow us to improve this bound.  It is\nin the proof of Lemma \\ref{lemma:b_j-bound}, giving the initial bounds\non the $b_j$, that we use the positivity result of Lemma\n\\ref{lemma:Vnonempty}.\n\nFinally, in Theorem \\ref{thm:bound-bdry-time} at the end of this\nsubsection, we put these lemmas together to reco",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/lem-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 31,
+      "target": "lem-sec-018-01.md",
+      "narrative": null,
+      "content": "Suppose M is a hyperbolic cone manifold with one cusp, and with singular locus Σ. Suppose the tube radius R about the singular locus is at least log(2/ √ 3). Then there exists a horoball neighborhood U of the cusp such that the meridian of ∂U has length at least 1 −e−2R.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bounding the meridian",
+      "pageStart": 28,
+      "pageEnd": 31,
+      "target": "../sections/sec-018-5-bounding-the-meridian.md",
+      "narrative": null,
+      "content": "We now show that the length of the shortest nontrivial simple closed curve\non the cusp torus is bounded throughout the cone deformation, provided the\ntube radius about the singular locus stays large. Recall here that we are\ncalling this shortest curve the meridian of the torus. The following lemma\nis the last piece needed to complete the proof of Theorem 1.4.\nLemma 5.1. Suppose M is a hyperbolic cone manifold with one cusp, and\nwith singular locus Σ. Suppose the tube radius R about the singular locus is\nat least log(2/\n√\n3). Then there exists a horoball neighborhood U of the cusp\nsuch that the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/thm-sec-018-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 31,
+      "target": "thm-sec-018-02.md",
+      "narrative": null,
+      "content": "Let M = Xτ be a hyperbolic 3–manifold with a cusp, and let X = X0 be a hyperbolic 3–manifold which can be joined to M by a smooth family of hyperbolic cone manifolds Xt with tube radius at least R1 ≥0.56, and with n components of the singular locus. Let Ut be a horoball neighborhood about the cusp. Let h(M) denote the normalized height of the cusp torus ∂Uτ. Let h(X) denote the normalized height of ∂U0. Then the hyperbolic cone deformation can be parameterized such that the change in normalized height is bounded in terms of R1 alone: −(2π)2 p n C(R1) (1 −e−2R1) √ ≤h(M) −h(X) ≤(2π)2 p n C(R1) (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cusp shapes of hyperbolic knots",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-019-6-cusp-shapes-of-hyperbolic-knots.md",
+      "narrative": null,
+      "content": "We will now apply the results of the previous sections to determine bounds on the shapes of cusps of knot complements. In particular, let $K$ be a hyperbolic knot with a prime, twist reduced diagram, where prime and twist reduced are defined in Definitions [\\[def:prime\\]](#def:prime){reference-type=\"ref\" reference=\"def:prime\"} and [\\[def:twred\\]](#def:twred){reference-type=\"ref\" reference=\"def:twred\"}. We will bound the normalized height of the cusp of $S^3-K$, using Theorem [\\[thm:main-norm-height\\]](#thm:main-norm-height){reference-type=\"ref\" reference=\"thm:main-norm-height\"}. We need the fo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An initial manifold",
+      "pageStart": 31,
+      "pageEnd": 39,
+      "target": "../sections/sec-020-61-an-initial-manifold.md",
+      "narrative": null,
+      "content": "[]{#subsec:init label=\"subsec:init\"}\n\nBegin with a prime, twist reduced diagram of the knot $K$. At each twist region of the diagram, add a closed curve encircling two strands, called a *crossing circle*. We now have a diagram of a link, which we call $J$. The link complement $S^3-J$ is homeomorphic to the complement of the link $L$ obtained from $J$ by removing pairs of crossings from each twist region. See Figure [1](#fig:knot-decomp){reference-type=\"ref\" reference=\"fig:knot-decomp\"}.\n\n<figure id=\"fig:knot-decomp\">\n<div class=\"center\">\n<embed src=\"figures/knot-decomp.eps\" />\n</div>\n<figcapti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/cor-sec-022-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "cor-sec-022-02.md",
+      "narrative": null,
+      "content": "Let K be as in the previous theorem, with at least c ≥145 crossings in each twist region. Then when the meridian of the cusp of S3−K is normalized to have length 1, the height of the cusp satisﬁes: H ≥n (0.81544)2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/lem-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 39,
+      "target": "lem-sec-021-01.md",
+      "narrative": null,
+      "content": "Let K, L be as above, such that we have a cone deformation from S3 −L to S3 −K. Fix R1 ≥0.531. Then R ≥R1 throughout the deformation provided the number of crossings in each twist region is at least I(R1), where I(R1) is deﬁned in equation (24).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finding values for tube radius",
+      "pageStart": 39,
+      "pageEnd": 39,
+      "target": "../sections/sec-021-62-finding-values-for-tube-radius.md",
+      "narrative": null,
+      "content": "radius remains larger than R1 = 0.56 throughout the cone deformation. We\ncan do so by again applying work of Hodgson and Kerckhoﬀ[14]. They\nshow that in the neighborhood of the j-th component of the singular locus,\nwe can increase the cone angle from 0 to 2π, maintaining the tube radius\nR ≥R1, provided equation (24) of the proof of Lemma 4.3 holds.\nThat is, consider a particular component of the singular locus Σj. The\nsingular locus consists of crossing circles of the link L. At the j-th crossing\ncircle, the hyperbolic cone deformation performs Dehn ﬁlling along a slope of\nthe form 1/nj. Let L",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem ??",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "../sections/sec-022-63-proof-of-theorem.md",
+      "narrative": null,
+      "content": "Theorem 1.8 Let K be a knot in S3 which admits a prime, twist reduced\ndiagram with a total of n ≥2 twist regions, with each twist region containing\nat least c ≥116 crossings.\nIn a hyperbolic structure on S3 −K, take a\nhoroball neighborhood U about K. Normalize so that the meridian on ∂U\nhas length 1. Then the height H of the cusp of S3 −K satisﬁes:\nH ≥n (1 −f(c))2.\nHere f(c) is a positive function of c which approaches 0 as c increases to\ninﬁnity. Additionally, H ≤n(√n −1 + f(c))2.\nProof. If K admits a prime, twist reduced diagram with at least 2 twist\nregions, then we may form the augmented l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/thm-sec-022-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "thm-sec-022-01.md",
+      "narrative": null,
+      "content": "Let K be a knot in S3 which admits a prime, twist reduced diagram with a total of n ≥2 twist regions, with each twist region containing at least c ≥116 crossings. In a hyperbolic structure on S3 −K, take a horoball neighborhood U about K. Normalize so that the meridian on ∂U has length 1. Then the height H of the cusp of S3 −K satisﬁes: H ≥n (1 −f(c))2. Here f(c) is a positive function of c which approaches 0 as c increases to inﬁnity. Additionally, H ≤n(√n −1 + f(c))2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example: 2–bridge knots",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "../sections/sec-023-64-example-2bridge-knots.md",
+      "narrative": null,
+      "content": "[]{#subsec:2bridge label=\"subsec:2bridge\"}\n\nThe requirement of Theorem [\\[thm:main-knot-cusp\\]](#thm:main-knot-cusp){reference-type=\"ref\" reference=\"thm:main-knot-cusp\"} that there be at least $116$ crossings per twist region was based on the worst case analysis. This came from Proposition [\\[prop:proj-height\\]](#prop:proj-height){reference-type=\"ref\" reference=\"prop:proj-height\"}, in which we showed that in the worst possible case, the normalized length of a slope was at least the square root of the number of crossings. When we are dealing with particular classes of knots, we can often make s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0410233v4/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 44,
+      "pageEnd": 46,
+      "target": "../sections/sec-024-references.md",
+      "narrative": null,
+      "content": "[1] Colin C. Adams, Augmented alternating link complements are hyperbolic, Low-\ndimensional topology and Kleinian groups (Coventry/Durham, 1984), London Math.\nSoc. Lecture Note Ser., vol. 112, Cambridge Univ. Press, Cambridge, 1986, pp. 115–\n130, MR0903861, Zbl 0632.57008.\n[2]\n, Waist size for cusps in hyperbolic 3-manifolds, Topology 41 (2002), no. 2,\n257–270, MR1876890, Zbl 0985.57012.\nCUSP SHAPES UNDER CONE DEFORMATION\n45\n[3] Ian Agol, Bounds on exceptional Dehn ﬁlling, Geom. Topol. 4 (2000), 431–449,\nMR1799796, Zbl 0959.57009.\n[4] Ian Agol, Peter A. Storm, and William P. Thurston, Lower bo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

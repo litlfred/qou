@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/block-density.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/block-density",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "block-density",
+      "title": "Block Density — Topic Coherence and Table Extraction Skill",
+      "description": "Audits individual content blocks for single-topic coherence, length, and embedded tables.  Blocks that cover multiple topics or exceed ~2/3 of a page should be split; large tables (>5 rows) must be their own `table` block.  Child blocks from a split may belong in different chapters than the parent.",
+      "instructionsPath": "skills/local/block-density.md",
+      "instructionLines": 115,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

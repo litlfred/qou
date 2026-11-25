@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2306.13098v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Three generations of colored fermions with S 3 family symmetry from Cayley-Dickson sedenions",
+      "dcterms:creator": [
+        "Gresnigt1⋆, Niels G.",
+        "Gourlay1, Liam",
+        "Varma1, Abhinav"
+      ],
+      "dcterms:issued": "D:20240216",
+      "dcterms:identifier": "https://arxiv.org/abs/2306.13098",
+      "dcterms:abstract": "An algebraic representation of three generations of fermions with SU(3)C color symmetry based on the Cayley-Dickson algebra of sedenions S is constructed. Recent constructions based on division algebras convincingly describe a single generation of leptons and quarks with Standard Model gauge symmetries. Nonetheless, an algebraic origin for the existence of exactly three generations has proven difficult to sub- stantiate. We motivate S as a natural algebraic candidate to describe three generations with SU(3)C gauge symmetry. We initially represent one generation of leptons and quarks in terms of two minimal left ideals of Cℓ(6), generated from a subset of all left actions of the complex sedenions on themselves. Subsequently we employ the finite group S3, which are automorphisms of S but not of O to generate two additional generations. Given the relative obscurity of sedenions, efforts have been made to present the material in a self-contained manner.",
+      "dcterms:source": "library/arxiv-2306.13098v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2306.13098v2"
+    }
+  ]
+}

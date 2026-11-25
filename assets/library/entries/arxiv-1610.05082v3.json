@@ -1,0 +1,454 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1610.05082v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction and statement of results",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction-and-statement-of-results.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cumulants in the Ising model",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-11-cumulants-in-the-ising-model.md",
+      "narrative": null,
+      "content": "The Ising model is a mathematical model of ferro-magnetism in statistical physics. It was introduced in 1920 by Wilhelm Lenz who gave it as a problem to his Ph.D. student Ernst Ising [@Ising]. It can be defined on any finite graph, but we restrict ourselves to finite subsets $\\Lambda$ of $\\mathbb{Z}^d$. For any lattice site $i \\in \\Lambda$, there is a random variable $\\sigma_i$ which is equal to either $1$ or $-1$ and represents the *spin* at site $i$. A *spin configuration* $\\omega = (\\sigma_i (\\omega))_{i \\in \\Lambda}$ is an assignment of spins to every site of $\\Lambda$.\n\nThe distribution o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL\nJEHANNE DOUSSE AND VALENTIN F´ERAY\nAbstract. Weighted dependency graphs have been recently introduced by the second author, as a\ntoolbox to prove central limit theorems. In this paper, we prove that spins in the d-dimensional Ising\nmodel display such a weighted dependency structure. We use this to obtain various central limit\ntheorems for the number of occurrences of local and global patterns in a growing box.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weighted dependency graphs",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-12-weighted-dependency-graphs.md",
+      "narrative": null,
+      "content": "duced in [8], is a toolbox to prove central limit theorems.\nIt extends the well-known concept of\ndependency graphs; see [1, 16].\nThroughout the article, a weighted graph is a graph such that a weight we in [0, 1] is associated with\neach edge e, where a weight 0 is the same as no edge. Informally, that a family of random variables\n{Ya, a ∈A} admits a weighted graph G as weighted dependency graph means the following:\n• G has vertex-set A, i.e. we have one vertex in G per variable in {Ya, a ∈A};\n• the smaller the weight of an edge {a, b} is, the closer to independent Ya and Yb should be. In\nparti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Central limit theorems",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-13-central-limit-theorems.md",
+      "narrative": null,
+      "content": "Central limit theorems (CLTs) play a key role in probability theory and have also been a subject of interest in the study of the Ising model. We refer to the second edition of Georgii's classical book [@Georgii2011 Bibliographic Notes on Section 8.2, p469] for an overview of the different methods used to get such results.\n\nThe theory of weighted dependency graphs gives access to CLTs for the number of occurrences of *patterns of spins* in a growing box $\\Lambda_{n} := [-n,n]^d$. To illustrate this, we consider two kinds of patterns: *local* and *global* patterns.\n\nWe define a *local pattern* $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Ising model",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-21-the-ising-model.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outline of the paper",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-14-outline-of-the-paper.md",
+      "narrative": null,
+      "content": "The remainder of the paper is organised as follows. In Section [\\[sec:prelim\\]](#sec:prelim){reference-type=\"ref\" reference=\"sec:prelim\"}, we give some preliminary definitions and basic results about the Ising model, the theory of joint cumulants and weighted dependency graphs. In Section [\\[sec:cluster\\]](#sec:cluster){reference-type=\"ref\" reference=\"sec:cluster\"}, we discuss the cluster expansion for the Ising model in the three different regimes we consider (high magnetic field, very high temperature, very low temperature) and deduce bounds on joint cumulants. In Section [\\[sec:clt\\]](#sec:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-006-2-preliminaries.md",
+      "narrative": null,
+      "content": "2.1. The Ising model. We consider the Ising model on a ﬁnite subset Λ of Zd. We use the notation\nof [10], that we deﬁne now.\nLet EΛ := {{i, j} ⊂Λ : ∥i −j∥1 = 1} be the set of nearest neighbour pairs in Λ. (Here, and through-\nout the paper, ∥i −j∥1 denotes the graph distance in Zd between two points i and j.) To each spin\nconﬁguration ω, we associate its Hamiltonian\nHΛ;β,h(ω) := −β\nX\n{i,j}∈EΛ\nσi(ω)σj(ω) −h\nX\ni∈Λ\nσi(ω),\nwhere β ≥0 and h are two real parameters, respectively called inverse temperature and magnetic ﬁeld.\nThe probability of a spin conﬁguration ω is given by the Gibbs distribution\nµ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Joint cumulants",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-007-22-joint-cumulants.md",
+      "narrative": null,
+      "content": "[]{#sec:cumulants label=\"sec:cumulants\"} As usual in the physics literature (and as done in the introduction), we use the notation $\\langle f \\rangle$ for the expectation of $f(X)$ (adding parameters of the measure as indices if necessary). For random variables $X_1,\\dots,X_r$ on the same probability space with finite moments, we define their *joint cumulant* (or *mixed cumulant*) as $$\\kappa (X_1,\\dots,X_r) = [t_1 \\dots t_r] \\log \n\\big\\langle \\exp(t_1 X_1 + \\dots + t_r X_r) \\big\\rangle.\n    \\label{EqDefCumulant}$$ The notation $[t_1 \\dots t_r] F$ stands here for the coefficient of $t_1 \\dots",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spanning trees of maximal weight and tree lengths",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-008-23-spanning-trees-of-maximal-weight-and-tree-len.md",
+      "narrative": null,
+      "content": "Deﬁnition 2.1. A spanning tree of a graph L = (V, E) is a subset E′ of E such that (V, E′) is a tree.\nIf G is an edge-weighted graph, we deﬁne the weight w(T) of a spanning tree of G as the product of\nthe weights of the edges in T. The maximum weight of a spanning tree of G is denoted M\n\u0000G\n\u0001\n.\nWe will be mainly interested in the case where V is a ﬁnite subset A of Zd, E consists of all pairs of\nvertices and the weights are of the form w(i, j) = ε∥i−j∥1 for some positive constant ε < 1. We denote\nthis weighted graph by GA. Then, for a spanning tree T of GA,\nw(T) = ε\nP\n(i,j)∈T ∥i−j∥1,\nand the ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weighted dependency graphs",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-009-24-weighted-dependency-graphs.md",
+      "narrative": null,
+      "content": "7\nx1 = (0, 1)\nx2 = (1, 0)\nx3 = (0, −1)\nx4 = (−1, 0)\n2\n1\nℓT(A) = 4\nℓ′\nT(A) = 6\nFigure 1. The two tree lengths on an example\nProposition 2.2. For all A = {x1, . . . , xn} ﬁnite subset of Zd, we have\nℓT (A) ≤ℓ′\nT (A) ≤2ℓT (A).\n2.4. Weighted dependency graphs. Weighted dependency graphs have been introduced by the\nsecond author in [8]. The following is a simpliﬁed deﬁnition, suﬃcient for the purpose of this paper\n(it corresponds to the case Ψ ≡1 of the general deﬁnition, given in [8]).\nDeﬁnition 2.3. Let {Yα, α ∈A} be a family of random variables with ﬁnite moments, living in the\nsame probability",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/thm-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "thm-sec-009-01.md",
+      "narrative": null,
+      "content": "Suppose that, for each n, {Yn,i, 1 ≤j ≤Nn} is a family of random variables with ﬁnite moments deﬁned on the same probability space. Let C = (Cr)r≥1 be a ﬁxed sequence that does not depend on n. Assume that, for each n, one has a C-weighted dependency graph Gn for {Yn,i, 1 ≤j ≤Nn} and denote ∆n −1 its maximal weighted degree. Let Xn = PNn i=1 Yn,i and v2 n = V ar(Xn). Assume that there exists a sequence (an), an integer s ≥3 and a real number v such that (1) v2 n a2n −−−−→ n→∞v2, (2) for all n, a2 n ≤C2Nn∆n, (3) \u0012Nn ∆n \u0013 1 s ∆n an −−−−→ n→∞0. Then in distribution, Xn −E(Xn) an d −−−−→ n→∞N(0, v",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cluster expansions and bounds on joint cumulants",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-010-3-cluster-expansions-and-bounds-on-joint-cumulan.md",
+      "narrative": null,
+      "content": "[]{#sec:cluster label=\"sec:cluster\"}\n\nThe cluster expansion is a powerful tool in statistical mechanics, which consists in studying a system in terms of macroscopic geometrical objects instead of considering its original microscopic components. It was introduced in a work of Mayer and Montroll [@Mayer] studying molecular distribution and has since been used in several other topics; for the Ising model, see for example [@Farrell] or Chapter $5$ of [@Velenik]. In this section, we will use the cluster expansion in three different regimes of the Ising model to prove the bounds on joint cumulants o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "At very high temperature, without magnetic field",
+      "pageStart": 8,
+      "pageEnd": 12,
+      "target": "../sections/sec-011-31-at-very-high-temperature-without-magnetic-fie.md",
+      "narrative": null,
+      "content": "[]{#Sect:CE_HT label=\"Sect:CE_HT\"}\n\n### The cluster expansion of the (multivariate) moment generating function\n\nLet us start with the regime where $h=0$ and $\\beta$ is sufficiently small (very high temperature).\n\nFix a finite domain $\\Lambda \\subset \\mathbb{Z}^d$ and let $A=\\{x_1,\\dots,x_r\\}$ be a set of points in $\\Lambda$. We consider the (multivariate) moment generating function $$\\left\\langle \\exp\\left(\\sum_{j=1}^r t_j \\sigma_{x_j} \\right) \\right\\rangle_{\\Lambda;\\beta,0} = \n\\frac{\\sum_{\\omega \\in \\Omega_{\\Lambda}} \n\\exp\\left(\\sum_{j=1}^r t_j \\sigma_{x_j}(\\omega) \\right) e^{-H_{\\Lambda;\\bet",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "At very low temperature, without magnetic field",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "../sections/sec-012-32-at-very-low-temperature-without-magnetic-fiel.md",
+      "narrative": null,
+      "content": "[]{#Sect:CE_LT label=\"Sect:CE_LT\"}\n\n### The cluster expansion of the partition function\n\nWe now turn to the regime without magnetic field ($h=0$) and very low temperature ($\\beta$ large). Intuitively, in that case, the spin configurations with fewer pairs of neighbours having opposite spins appear with higher probability. To emphasize the role of these pairs, we rewrite the Hamiltonian as follows: $$H^{\\eta}_{\\Lambda;\\beta, h} (\\omega)= -\\beta |E^{\\eta}_{\\Lambda}| -\\beta \\sum_{\\{i,j\\} \\in \\mathcal{E}^{\\eta}_{\\Lambda} } (\\sigma_i(\\omega) \\sigma_j(\\omega) - 1).$$ The only non-zero terms in the s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/cor-sec-015-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "cor-sec-015-03.md",
+      "narrative": null,
+      "content": "Suppose that either h > h1 or (h = 0 and β < β1) or (h = 0 and β > β2). The limit v2 := lim n→∞ v2 n |Λn| = X i∈Zd ⟨σ0; σi⟩β,h is ﬁnite.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/lem-sec-015-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "lem-sec-015-02.md",
+      "narrative": null,
+      "content": "[6, Lemma V.7.1] The limit v2 := lim n→∞ v2 n |Λn| exists as an extended real valued number and v2 = X i∈Zd ⟨σ0; σi⟩β,h. But by Theorem 1.1, in the regimes we consider, the cumulants (so in particular the covariance) are exponentially small, so the sum is absolutely convergent and we actually have the stronger statement:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weighted dependency graph for the i's and central limit theorem for the magnetization",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-013-41-weighted-dependency-graph-for-the-is-and-cent.md",
+      "narrative": null,
+      "content": "JEHANNE DOUSSE AND VALENTIN F´ERAY",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "With a strong magnetic field",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-014-33-with-a-strong-magnetic-field.md",
+      "narrative": null,
+      "content": "[]{#SectBoundMF label=\"SectBoundMF\"} The last regime we consider is the Ising model with a strong magnetic field, *i.e.* $h$ is bigger than some value $h_1>0$ ($h_1$ is to be determined later). The case of negative $h$ (smaller than $-h_1<0$) is obviously symmetric.\n\nIn this regime, there is also a well-known cluster expansion for the partition function [@Velenik Section 5.7]. Let us present it briefly.\n\nFix $\\Lambda \\subset \\mathbb{Z}^d$ and consider the Ising model on $\\Lambda$ with $+$ boundary conditions. We first write its partition function in a suitable form. For a subset $\\Lambda^-$ of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weighted dependency graphs and central limit theorems",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "../sections/sec-015-4-weighted-dependency-graphs-and-central-limit-t.md",
+      "narrative": null,
+      "content": "We will now use the bounds on cumulants obtained in the previous section to show that the family\nof random variables {σi : i ∈Zd} has a weighted dependency graph, and we will use this fact to\ndeduce central limit theorems. We consider any of the regimes studied in the previous section: very\nhigh temperature, or very low temperature with + boundary condition, or strong magnetic ﬁeld with\nany boundary condition. To have uniform notation, we omit from now on the notation of the boundary\ncondition in low temperature.\n4.1. Weighted dependency graph for the σi’s and central limit theorem for the mag",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/thm-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "thm-sec-015-01.md",
+      "narrative": null,
+      "content": "Consider the Ising model on Zd, with inverse temperature β and magnetic ﬁeld h, such that either h > h1(d) or (h = 0; β < β1(d)) or (h = 0; β > β2(d)). Then, for some v, Sn −E(Sn) p |Λn| d −−−−→ n→∞N(0, v2). JEHANNE DOUSSE AND VALENTIN F´ERAY Moreover v2 > 0 so the Gaussian law is non-degenerate. We start by a lemma of [6] on the asymptotics of the variance of Sn.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Central limit theorem for occurrences of given patterns",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "../sections/sec-016-42-central-limit-theorem-for-occurrences-of-give.md",
+      "narrative": null,
+      "content": "[]{#sec:wdgconfig label=\"sec:wdgconfig\"}\n\n### Power of weighted dependency graphs\n\nA major advantage of the theory of weighted dependency graphs is that this structure is stable by taking *powers*.\n\n::: definition\nLet $G$ be an edge-weighted graph with vertex set $A$ and weight function $w$; we also consider a positive integer $m$. We denote by $\\mathrm{MSet}_{\\leq m}(A)$ the subset of multisets of elements of $A$ with cardinality at most $m$. Then the $m$-th power $G^m$ of $G$ is by definition the graph with vertex-set $\\mathrm{MSet}_{\\leq m}(A)$ and where the weight between $I$ and $J$ is gi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-017-acknowledgements.md",
+      "narrative": null,
+      "content": "The authors are grateful to H. Duminil-Copin, R. Kotecký and D. Ueltschi for discussions on cluster expansions and bounds on cumulants in the Ising model.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.05082v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-018-references.md",
+      "narrative": null,
+      "content": "[1] P. Baldi and Y. Rinott, On normal approximations of distributions in terms of dependency graphs, Ann. Prob.,\n(1989), pp. 1646–1650.\n[2] M. B´ona, On three diﬀerent notions of monotone subsequences, in Permutation Patterns, vol. 376 of London Math.\nSoc. Lecture Note Series, Cambridge University Press, 2010, pp. 89–113.\n[3] B. Chern, P. Diaconis, D. Kane, and R. Rhoades, Central limit theorems for some set partition statistics, Adv.\nAppl. Math., 70 (2015), pp. 92–105.\n[4] M. Duneau, D. Iagolnitzer, and B. Souillard, Decrease properties of truncated correlation functions and ana-\nlyticity pro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,681 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1912.13486v2",
+  "title": "Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds",
+  "variant": "pdf",
+  "pages": 21,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Supersymmetric index on S2 q S1 and factorization",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-supersymmetric-index-on-s2-q-s1-and-factorizat"
+    },
+    {
+      "level": 2,
+      "title": "Supersymmetric index, factorization, and D2 q S1 partition function",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-supersymmetric-index-factorization-and-d2-q-s"
+    },
+    {
+      "level": 2,
+      "title": "Analysis on homological block and index of lens space theory",
+      "number": "2.2",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-analysis-on-homological-block-and-index-of-le"
+    },
+    {
+      "level": 1,
+      "title": "Supersymmetric index of a 3d N=2 theory on S2 q S1 for plumbed 3-manifolds",
+      "number": "3",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-supersymmetric-index-of-a-3d-n2-theory-on-s2-q"
+    },
+    {
+      "level": 2,
+      "title": "Engineering a 3d N=2 theory T[M3] from homological blocks",
+      "number": "3.1",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-31-engineering-a-3d-n2-theory-tm3-from-homologic"
+    },
+    {
+      "level": 2,
+      "title": "Index for an effective description of T[M3]",
+      "number": "3.2",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-32-index-for-an-effective-description-of-tm3"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "0",
+      "labelEnd": "1",
+      "words": 103,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plumbed manifolds",
+          "heading": false
+        },
+        {
+          "term": "supersymmetric index",
+          "heading": false
+        },
+        {
+          "term": "hee-joong",
+          "heading": false
+        }
+      ],
+      "extract": "Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds Hee-Joong Chung Yau Mathematical Sciences Center, Tsinghua University, Beijing 100084, China Abstract: We consider the S2 ×q S1 supersymmetric index of a 3d N = 2 theory T[M3] when M3 is a plumbed 3-manifold. We engineer an eﬀective description of T[M3] from the expression of the homological block for plumbed 3-manifolds as a D2 ×q S1 partition",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1912.13486v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 603,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plumbed manifolds",
+          "heading": false
+        },
+        {
+          "term": "wrt invariants",
+          "heading": false
+        },
+        {
+          "term": "gukov-pei-putrov-vafa",
+          "heading": false
+        },
+        {
+          "term": "homological block",
+          "heading": false
+        },
+        {
+          "term": "supersymmetric index",
+          "heading": false
+        },
+        {
+          "term": "times supersymmetric",
+          "heading": false
+        },
+        {
+          "term": "effective description",
+          "heading": false
+        },
+        {
+          "term": "kirby moves",
+          "heading": false
+        }
+      ],
+      "extract": "The categorification of the Witten-Reshetikhin-Turaev (WRT) invariants for closed 3-manifolds has not been known. This is because firstly the integrality for the WRT invariants was not obvious. However, recently, a conjecture in [@Gukov-Putrov-Vafa; @Gukov-Pei-Putrov-Vafa] states that the WRT invariant can be expressed in a specific way in terms of the $q$-series with integer powers and integer coefficients, which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-supersymmetric-index-on-s2-q-s1-and-factorizat",
+      "number": "2",
+      "title": "Supersymmetric index on S2 q S1 and factorization",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 37,
+      "summary": null,
+      "keywords": [],
+      "extract": "We discuss the index and its factorization that are relevant to later discussion. We also review the lens space theory, which is a well known example in the context of the homological block and the index.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-supersymmetric-index-factorization-and-d2-q-s",
+      "number": "2.1",
+      "title": "Supersymmetric index, factorization, and D2 q S1 partition function",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 9,
+      "labelStart": "2",
+      "labelEnd": "8",
+      "words": 2482,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac i-m",
+          "heading": false
+        },
+        {
+          "term": "supersymmetric index",
+          "heading": true
+        },
+        {
+          "term": "frac hbar",
+          "heading": false
+        },
+        {
+          "term": "hbar big",
+          "heading": false
+        },
+        {
+          "term": "adj frac",
+          "heading": false
+        },
+        {
+          "term": "infty theta",
+          "heading": false
+        },
+        {
+          "term": "leq theta",
+          "heading": false
+        },
+        {
+          "term": "aligned s-s",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ssec:factorization label=\"ssec:factorization\"} We begin with a brief review on the formula for the index of the 3d $\\mathcal{N}=2$ theory with a Lagrangian description at the UV. ### Supersymmetric index on $S^2 \\times_q S^1$ The supersymmetric index on $S^2 \\times_q S^1$ with fugacities for flavor symmetries turned on was obtained in [@Kapustin-Willett] based on [@KimS; @Imamura-Yokoyama]. The 1-loop",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-analysis-on-homological-block-and-index-of-le",
+      "number": "2.2",
+      "title": "Analysis on homological block and index of lens space theory",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 716,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homological block",
+          "heading": true
+        },
+        {
+          "term": "lens space",
+          "heading": true
+        },
+        {
+          "term": "oint prod",
+          "heading": false
+        },
+        {
+          "term": "infty bigg",
+          "heading": false
+        },
+        {
+          "term": "theta cdot",
+          "heading": false
+        },
+        {
+          "term": "prod frac",
+          "heading": false
+        },
+        {
+          "term": "prod leq",
+          "heading": false
+        },
+        {
+          "term": "aligned widehat",
+          "heading": false
+        }
+      ],
+      "extract": "When the 3-manifold is a lens space $M_3 = L(p,1) \\simeq S^3/\\mathbb{Z}_p$, the corresponding 3d $\\mathcal{N}=2$ theory $T[L(p,1)]$ has been discussed in [@Gadde-Gukov-Putrov-4manifold; @Chung-Dimofte-Gukov-Sulkowski; @Gukov-Pei] and more recently in [@Gukov-Putrov-Vafa; @Gukov-Pei-Putrov-Vafa] in the context of homological blocks. Since our analysis for the plumbed 3-manifolds can be regarded as an extrapolation of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-supersymmetric-index-of-a-3d-n2-theory-on-s2-q",
+      "number": "3",
+      "title": "Supersymmetric index of a 3d N=2 theory on S2 q S1 for plumbed 3-manifolds",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 76,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plumbed",
+          "heading": true
+        },
+        {
+          "term": "index",
+          "heading": true
+        },
+        {
+          "term": "plumbing",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we would like to extend the discussion above to the case of plumbed 3-manifolds. After having an effective description of a 3d $\\mathcal{N}=2$ theory $T[M_3]$ for a plumbing graph from the homological blocks, we obtain the index of $T[M_3]$ and discuss the invariance of it under the 3d Kirby moves. We also give some remarks on the topologically twisted index of $T[M_3]$ on $S^2 \\times_q S^1$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-31-engineering-a-3d-n2-theory-tm3-from-homologic",
+      "number": "3.1",
+      "title": "Engineering a 3d N=2 theory T[M3] from homological blocks",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 14,
+      "labelStart": "10",
+      "labelEnd": "13",
+      "words": 1979,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homological blocks",
+          "heading": true
+        },
+        {
+          "term": "multiplet phi",
+          "heading": false
+        },
+        {
+          "term": "chiral multiplet",
+          "heading": false
+        },
+        {
+          "term": "vector multiplet",
+          "heading": false
+        },
+        {
+          "term": "vec frac",
+          "heading": false
+        },
+        {
+          "term": "v-s",
+          "heading": false
+        },
+        {
+          "term": "mathbb vec",
+          "heading": false
+        },
+        {
+          "term": "plumbing graph",
+          "heading": false
+        }
+      ],
+      "extract": "We consider the case $G=SU(2)$ with $t$ turned off. The homological block for a plumbed 3-manifold with $G=SU(2)$ [@Gukov-Pei-Putrov-Vafa; @Gukov-Manolescu] is given by $$\\begin{aligned} \\widehat{Z}_b (q) = (-1)^{\\pi} q^{\\frac{1}{4}(3 \\sigma - \\sum_v w_v)} \\text{ v.p.} \\oint_{|s_v|=1} \\prod_{v \\in \\text{Vertices}} \\frac{ds_v}{2\\pi i s_v} (s_v - s_v^{-1})^{2- \\text{deg}(v)} \\Theta_b^{-M}(\\vec{s}) \\label{plmb-orig}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-32-index-for-an-effective-description-of-tm3",
+      "number": "3.2",
+      "title": "Index for an effective description of T[M3]",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 21,
+      "labelStart": "13",
+      "labelEnd": "20",
+      "words": 3570,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dzv πizv",
+          "heading": false
+        },
+        {
+          "term": "plumbing graph",
+          "heading": false
+        },
+        {
+          "term": "kirby move",
+          "heading": false
+        },
+        {
+          "term": "reﬁned index",
+          "heading": false
+        },
+        {
+          "term": "vertices dzv",
+          "heading": false
+        },
+        {
+          "term": "original plumbing",
+          "heading": false
+        },
+        {
+          "term": "superconformal index",
+          "heading": false
+        },
+        {
+          "term": "chern-simons contributions",
+          "heading": false
+        }
+      ],
+      "extract": "Index for an eﬀective description of T[M3] From the calculations above, with t = 1 we would have plumbing graph homological block index eﬀective description v ∈vertex ⇝ (zv −z−1 v )2 ⇝ ∥(zv −z−1 v )∥2 id VN , Φ+ R=2,D (v1, v2) ∈edge ⇝(zv1 −z−1 v1 )−1(zv2 −z−1 v2 )−1 ⇝ ∥(zv1 −z−1 v1 )(zv2 −z−1 v2 )∥−2 id Φ− R=0,D , Φ0 R=0,N −Mv,v′ ⇝ Θ−M b (⃗s; q) ⇝z−2Mv,vmv v or (zmv′ v zmv v′ )−2Mv,v′ CS levels −Mv,v′ (3.5) The S2",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "homological block",
+      "heading": true
+    },
+    {
+      "term": "supersymmetric index",
+      "heading": true
+    },
+    {
+      "term": "plumbed manifolds",
+      "heading": true
+    },
+    {
+      "term": "chiral multiplet",
+      "heading": false
+    },
+    {
+      "term": "aligned theta",
+      "heading": false
+    },
+    {
+      "term": "multiplet phi",
+      "heading": false
+    },
+    {
+      "term": "twisted index",
+      "heading": false
+    },
+    {
+      "term": "frac i-m",
+      "heading": false
+    },
+    {
+      "term": "aligned mathcal",
+      "heading": false
+    },
+    {
+      "term": "regularized index",
+      "heading": false
+    },
+    {
+      "term": "reﬁned index",
+      "heading": false
+    },
+    {
+      "term": "aligned prod",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "0",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "3d Kirby move 1",
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "3d Kirby move 2",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "3d Kirby move 3",
+      "page": 17,
+      "pageLabel": "16",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "3 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p14); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 15
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1912.13486v2"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2202.01613v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "The neutron-proton mass difference",
+      "dcterms:creator": [
+        "Rome, Italy"
+      ],
+      "dcterms:issued": "D:20220204",
+      "dcterms:identifier": "https://arxiv.org/abs/2202.01613",
+      "dcterms:source": "library/arxiv-2202.01613v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2202.01613v1"
+    }
+  ]
+}

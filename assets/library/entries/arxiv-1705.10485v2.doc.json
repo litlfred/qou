@@ -1,0 +1,1979 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1705.10485v2",
+  "title": "Mod-φ convergence, II: Estimates on the speed of convergence",
+  "variant": "pdf",
+  "pages": 53,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Mod-$\\phi$ convergence",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-11-mod-phi-convergence"
+    },
+    {
+      "level": 2,
+      "title": "Results and outline of the paper",
+      "number": "1.2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-12-results-and-outline-of-the-paper"
+    },
+    {
+      "level": 2,
+      "title": "Stable distributions and mod-stable convergence",
+      "number": "1.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-13-stable-distributions-and-mod-stable-convergen"
+    },
+    {
+      "level": 1,
+      "title": "Speed of convergence estimates",
+      "number": "2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-2-speed-of-convergence-estimates"
+    },
+    {
+      "level": 2,
+      "title": "The notion of zone of control",
+      "number": "2.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-21-the-notion-of-zone-of-control"
+    },
+    {
+      "level": 2,
+      "title": "Spaces of test functions",
+      "number": "2.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-22-spaces-of-test-functions"
+    },
+    {
+      "level": 2,
+      "title": "Estimates for test functions",
+      "number": "2.3",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-23-estimates-for-test-functions"
+    },
+    {
+      "level": 2,
+      "title": "Smoothing techniques",
+      "number": "2.4",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-24-smoothing-techniques"
+    },
+    {
+      "level": 2,
+      "title": "Bounds on the Kolmogorov distance",
+      "number": "2.5",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-25-bounds-on-the-kolmogorov-distance"
+    },
+    {
+      "level": 1,
+      "title": "Examples with an explicit Fourier transform",
+      "number": "3",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-3-examples-with-an-explicit-fourier-transform"
+    },
+    {
+      "level": 2,
+      "title": "Sums of independent random variables",
+      "number": "3.1",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-31-sums-of-independent-random-variables"
+    },
+    {
+      "level": 2,
+      "title": "Winding number of a planar Brownian motion",
+      "number": "3.2",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-32-winding-number-of-a-planar-brownian-motion"
+    },
+    {
+      "level": 2,
+      "title": "Approximation of a stable law by compound Poisson laws",
+      "number": "3.3",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-33-approximation-of-a-stable-law-by-compound-poi"
+    },
+    {
+      "level": 2,
+      "title": "Convergence of Ornstein--Uhlenbeck processes to stable laws",
+      "number": "3.4",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-34-convergence-of-ornstein--uhlenbeck-processes"
+    },
+    {
+      "level": 2,
+      "title": "Logarithms of characteristic polynomials of random matrices",
+      "number": "3.5",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-35-logarithms-of-characteristic-polynomials-of-r"
+    },
+    {
+      "level": 1,
+      "title": "Cumulants and dependency graphs",
+      "number": "4",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-016-4-cumulants-and-dependency-graphs"
+    },
+    {
+      "level": 2,
+      "title": "Cumulants, zone of control and Kolmogorov bound",
+      "number": "4.1",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-017-41-cumulants-zone-of-control-and-kolmogorov-boun"
+    },
+    {
+      "level": 2,
+      "title": "Dependency graphs",
+      "number": "4.2",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-018-42-dependency-graphs"
+    },
+    {
+      "level": 2,
+      "title": "Unbounded random variables and truncation methods",
+      "number": "4.3",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-019-43-unbounded-random-variables-and-truncation-met"
+    },
+    {
+      "level": 1,
+      "title": "Ising model and Markov chains",
+      "number": "5",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-020-5-ising-model-and-markov-chains"
+    },
+    {
+      "level": 2,
+      "title": "Weighted graphs and spanning trees",
+      "number": "5.1",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-021-51-weighted-graphs-and-spanning-trees"
+    },
+    {
+      "level": 2,
+      "title": "Uniform weighted dependency graphs",
+      "number": "5.2",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-022-52-uniform-weighted-dependency-graphs"
+    },
+    {
+      "level": 2,
+      "title": "Magnetization of the Ising model",
+      "number": "5.3",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-023-53-magnetization-of-the-ising-model"
+    },
+    {
+      "level": 2,
+      "title": "Functionals of Markov chains",
+      "number": "5.4",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-024-54-functionals-of-markov-chains"
+    },
+    {
+      "level": 2,
+      "title": "The case of linear functionals of the empirical measure",
+      "number": "5.5",
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-025-55-the-case-of-linear-functionals-of-the-empiric"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 140,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mod-φ convergence",
+          "heading": false
+        },
+        {
+          "term": "speed",
+          "heading": false
+        },
+        {
+          "term": "laws",
+          "heading": false
+        },
+        {
+          "term": "estimates",
+          "heading": false
+        },
+        {
+          "term": "esseen",
+          "heading": false
+        }
+      ],
+      "extract": "Mod-φ convergence, II: Estimates on the speed of convergence Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali Abstract In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-φ convergence. Namely, we deﬁne a notion of zone of control, closely related to mod-φ convergence, and we prove estimates of Berry–Esseen type under this",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1705.10485v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-mod-phi-convergence",
+      "number": "1.1",
+      "title": "Mod-$\\phi$ convergence",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 634,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phi convergence",
+          "heading": true
+        },
+        {
+          "term": "mod phi",
+          "heading": true
+        },
+        {
+          "term": "law phi",
+          "heading": false
+        },
+        {
+          "term": "stable distribution",
+          "heading": false
+        },
+        {
+          "term": "background stable",
+          "heading": false
+        },
+        {
+          "term": "converges mod",
+          "heading": false
+        },
+        {
+          "term": "mathbb converges",
+          "heading": false
+        },
+        {
+          "term": "poisson law",
+          "heading": false
+        }
+      ],
+      "extract": "Let $(X_n)_{n \\in \\mathbb{N}}$ be a sequence of real-valued random variables. In many situations, there exists a scale $s_n$ and a limiting law $\\phi$ which is infinitely divisible, such that $(X_n/s_n)_{n\\in \\mathbb{N}}$ converges in law towards $\\phi$. For instance, in the classical central limit theorem, if $X_n=\\sum_{i=1}^n A_i$ is a sum of centered i.i.d. random variables with $\\mathbb{E}[(A_1)^2]<\\infty$, then",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-results-and-outline-of-the-paper",
+      "number": "1.2",
+      "title": "Results and outline of the paper",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": "2",
+      "labelEnd": "5",
+      "words": 1548,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cumulants zone",
+          "heading": false
+        },
+        {
+          "term": "cumulants kol",
+          "heading": false
+        },
+        {
+          "term": "kol ising",
+          "heading": false
+        },
+        {
+          "term": "zone clt",
+          "heading": false
+        },
+        {
+          "term": "kolmogorov distance",
+          "heading": false
+        },
+        {
+          "term": "mathrm kol",
+          "heading": false
+        },
+        {
+          "term": "testfunctions",
+          "heading": false
+        },
+        {
+          "term": "uniform bounds",
+          "heading": false
+        }
+      ],
+      "extract": "We take as reference law a stable distribution $\\phi$ of index $\\alpha \\in (0,2]$. Let $(X_n)_{n\\in \\mathbb{N}}$ be a sequence of variables that admits a zone of control (this notion will be defined in Definition [\\[def:zone\\]](#def:zone){reference-type=\"ref\" reference=\"def:zone\"}; this is closely related to the mod-$\\phi$ convergence of $(X_n)_{n\\in \\mathbb{N}}$). As we will see in Proposition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-stable-distributions-and-mod-stable-convergen",
+      "number": "1.3",
+      "title": "Stable distributions and mod-stable convergence",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 412,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stable distributions",
+          "heading": true
+        },
+        {
+          "term": "lévy distribution",
+          "heading": false
+        },
+        {
+          "term": "lévy exponent",
+          "heading": false
+        },
+        {
+          "term": "frac beta",
+          "heading": false
+        },
+        {
+          "term": "exponent eta",
+          "heading": false
+        },
+        {
+          "term": "alpha neq",
+          "heading": false
+        },
+        {
+          "term": "alpha right",
+          "heading": false
+        },
+        {
+          "term": "alpha end",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Sect:Background_Stable label=\"Sect:Background_Stable\"} Let us recall briefly the classification of stable distributions (see [@Sato99 Chapter 3]). Fix $c>0$ (the *scale* parameter), $\\alpha \\in (0,2]$ (the *stability* parameter), and $\\beta \\in [-1,1]$ (the *skewness* parameter). ::: definition The stable distribution of parameters $(c,\\alpha,\\beta)$ is the infinitely divisible law $\\phi=\\phi_{c,\\alpha,\\beta}$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-2-speed-of-convergence-estimates",
+      "number": "2",
+      "title": "Speed of convergence estimates",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 438,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zone clt",
+          "heading": false
+        },
+        {
+          "term": "dkol",
+          "heading": false
+        },
+        {
+          "term": "estimates",
+          "heading": true
+        },
+        {
+          "term": "berry",
+          "heading": false
+        },
+        {
+          "term": "speed",
+          "heading": true
+        },
+        {
+          "term": "fourier transforms",
+          "heading": false
+        },
+        {
+          "term": "distribution phi",
+          "heading": false
+        },
+        {
+          "term": "mapsto leq",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:testfunctions label=\"sec:testfunctions\"} The goal of this section is to introduce the notion of zone of control (Section [\\[sec:zone\\]](#sec:zone){reference-type=\"ref\" reference=\"sec:zone\"}) and to estimate the speed of convergence in the resulting central limit theorem. More precisely, we take as reference law a stable distribution $\\phi_{c,\\alpha,\\beta}$ and a sequence $(X_n)_{n \\in \\mathbb{N}}$ that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-21-the-notion-of-zone-of-control",
+      "number": "2.1",
+      "title": "The notion of zone of control",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 582,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zone",
+          "heading": true
+        },
+        {
+          "term": "zone label",
+          "heading": false
+        },
+        {
+          "term": "phi convergence",
+          "heading": false
+        },
+        {
+          "term": "beta convergence",
+          "heading": false
+        },
+        {
+          "term": "control",
+          "heading": true
+        },
+        {
+          "term": "alpha leq",
+          "heading": false
+        },
+        {
+          "term": "frac alpha",
+          "heading": false
+        },
+        {
+          "term": "hyp",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:zone label=\"sec:zone\"} ::: definition []{#def:zone label=\"def:zone\"} Let $(X_n)_{n \\in \\mathbb{N}}$ be a sequence of real random variables, $\\phi_{c,\\alpha,\\beta}$ a reference stable law, and $(t_n)_{n \\in \\mathbb{N}}$ a sequence growing to infinity. Consider the following assertions: 1. []{#hyp:firstcondition label=\"hyp:firstcondition\"} Fix $v > 0$, $w > 0$ and $\\gamma \\in \\mathbb{R}$. There exists a zone",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-22-spaces-of-test-functions",
+      "number": "2.2",
+      "title": "Spaces of test functions",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 12,
+      "labelStart": "8",
+      "labelEnd": "12",
+      "words": 2166,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vphantom widehat",
+          "heading": false
+        },
+        {
+          "term": "vphantom g-g",
+          "heading": false
+        },
+        {
+          "term": "langle vphantom",
+          "heading": false
+        },
+        {
+          "term": "vphantom mathrm",
+          "heading": false
+        },
+        {
+          "term": "phi vphantom",
+          "heading": false
+        },
+        {
+          "term": "psi vphantom",
+          "heading": false
+        },
+        {
+          "term": "vphantom right",
+          "heading": false
+        },
+        {
+          "term": "partial vphantom",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:distributions label=\"subsec:distributions\"} Until the end of Section [\\[sec:testfunctions\\]](#sec:testfunctions){reference-type=\"ref\" reference=\"sec:testfunctions\"}, all the spaces of functions considered will be spaces of complex valued functions on the real line. If $f \\in \\mathrm{L}^1(\\mathbb{R})$, we denote its Fourier transform $$\\widehat{f}(\\xi)=\\int_{\\mathbb{R}} \\E^{\\I",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-23-estimates-for-test-functions",
+      "number": "2.3",
+      "title": "Estimates for test functions",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 452,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gamma alpha",
+          "heading": false
+        },
+        {
+          "term": "frac alpha",
+          "heading": false
+        },
+        {
+          "term": "frac widehat",
+          "heading": false
+        },
+        {
+          "term": "test functions",
+          "heading": true
+        },
+        {
+          "term": "alpha leq",
+          "heading": false
+        },
+        {
+          "term": "alpha right",
+          "heading": false
+        },
+        {
+          "term": "alpha left",
+          "heading": false
+        },
+        {
+          "term": "widehat phi",
+          "heading": false
+        }
+      ],
+      "extract": "We now give an estimate of $\\mathbb{E}[f_n(Y_n)]-\\mathbb{E}[f_n(Y)]$, where $(f_n)_{n \\in \\mathbb{N}}$ is a sequence of test functions in $\\mathscr{T}_0(\\mathbb{R})$ or $\\mathscr{T}_1(\\mathbb{R})$, and $(Y_n)_{n\\in\\mathbb{N}}$ is a sequence of random variables associated to a sequence $(X_n)_{n\\in \\mathbb{N}}$ which has a zone of control. ::: proposition []{#prop:zonedistribution label=\"prop:zonedistribution\"} Let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-24-smoothing-techniques",
+      "number": "2.4",
+      "title": "Smoothing techniques",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": "14",
+      "labelEnd": "17",
+      "words": 1220,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rho varepsilon",
+          "heading": false
+        },
+        {
+          "term": "leq varepsilon",
+          "heading": false
+        },
+        {
+          "term": "mathbb varepsilon",
+          "heading": false
+        },
+        {
+          "term": "infty varepsilon",
+          "heading": false
+        },
+        {
+          "term": "frac varepsilon",
+          "heading": false
+        },
+        {
+          "term": "varepsilon mathrm",
+          "heading": false
+        },
+        {
+          "term": "varepsilon right",
+          "heading": false
+        },
+        {
+          "term": "mathrm sinc",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:smoothing label=\"subsec:smoothing\"} We now explain how to relate the estimates on test functions or distributions to estimates on the Kolmogorov distance. The main tool with respect to this problem is the following: ::: lemma []{#lem:kernelD1 label=\"lem:kernelD1\"} There exists a function $\\rho$ (called kernel) on $\\mathbb{R}$ with the following properties. 1. The kernel $\\rho$ is non-negative, with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-25-bounds-on-the-kolmogorov-distance",
+      "number": "2.5",
+      "title": "Bounds on the Kolmogorov distance",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 491,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kolmogorov",
+          "heading": true
+        },
+        {
+          "term": "alpha gamma",
+          "heading": false
+        },
+        {
+          "term": "frac alpha",
+          "heading": false
+        },
+        {
+          "term": "tfrac alpha",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "gamma leq",
+          "heading": false
+        },
+        {
+          "term": "mathrm kol",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:berry label=\"sec:berry\"} We are now ready to get an estimate for the Komogorov distance under a zone of control hypothesis. ::: theorem []{#thm:kolmogorov label=\"thm:kolmogorov\"} Fix a reference stable distribution $\\phi_{c,\\alpha,\\beta}$ and consider a sequence $(X_n)_{n \\in \\mathbb{N}}$ of random variables with a zone of control $[-K(t_n)^\\gamma,K(t_n)^\\gamma]$ of *index* $(v,w)$. Assume in addition that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-3-examples-with-an-explicit-fourier-transform",
+      "number": "3",
+      "title": "Examples with an explicit Fourier transform",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-31-sums-of-independent-random-variables",
+      "number": "3.1",
+      "title": "Sums of independent random variables",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 918,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leq frac",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": true
+        },
+        {
+          "term": "frac sigma",
+          "heading": false
+        },
+        {
+          "term": "frac alpha",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "right frac",
+          "heading": false
+        },
+        {
+          "term": "frac rho",
+          "heading": false
+        },
+        {
+          "term": "leq left",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:independent label=\"subsec:independent\"} As a direct application of Theorem [\\[thm:kolmogorov\\]](#thm:kolmogorov){reference-type=\"ref\" reference=\"thm:kolmogorov\"}, one recovers the classical Berry--Esseen estimates. Let $(A_n)_{n \\in \\mathbb{N}}$ be a sequence of centered i.i.d. random variables with a third moment. We denote $\\mathbb{E}[(A_i)^2]=\\sigma^2$ and $\\mathbb{E}[|A_i|^3]=\\rho$. Set",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-32-winding-number-of-a-planar-brownian-motion",
+      "number": "3.2",
+      "title": "Winding number of a planar Brownian motion",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 438,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "planar brownian",
+          "heading": true
+        },
+        {
+          "term": "brownian motion",
+          "heading": true
+        },
+        {
+          "term": "winding number",
+          "heading": true
+        },
+        {
+          "term": "frac gamma",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "frac log",
+          "heading": false
+        },
+        {
+          "term": "gamma leq",
+          "heading": false
+        },
+        {
+          "term": "infty frac",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Sect:Winding label=\"Sect:Winding\"} In this section, we consider a standard planar Brownian motion $(Z_t)_{t \\in \\mathbb{R}_+}$ starting from $z=1$. It is well known that, a.s., $Z_t$ never touches the origin. One can thus write $Z_t=R_t\\,\\E^{\\I\\varphi_t}$, for continuous functions $t\\mapsto R_t$ and $t\\mapsto \\varphi_t$, where $\\varphi_0=0$, see Figure [1](#fig:winding){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-33-approximation-of-a-stable-law-by-compound-poi",
+      "number": "3.3",
+      "title": "Approximation of a stable law by compound Poisson laws",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 24,
+      "labelStart": "21",
+      "labelEnd": "24",
+      "words": 1040,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac eta",
+          "heading": false
+        },
+        {
+          "term": "frac beta",
+          "heading": false
+        },
+        {
+          "term": "leq frac",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "mathrm kol",
+          "heading": false
+        },
+        {
+          "term": "aligned left",
+          "heading": false
+        },
+        {
+          "term": "right leq",
+          "heading": false
+        },
+        {
+          "term": "law",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#subsec:compoundpoisson label=\"subsec:compoundpoisson\"} Let $\\phi_{c,\\alpha,\\beta}$ be a stable law; the Lévy--Khintchine formula for its exponent allows one to write $$\\E^{\\eta_{c,\\alpha,\\beta}(\\I\\xi)} = \\begin{cases} \\E^{-|c\\xi|^2} &\\text{if }\\alpha=2,\\\\ \\exp\\left(\\I m\\xi+\\int_{\\mathbb{R}}(\\E^{\\I \\xi x}-1-1_{|x|<1}\\I\\xi x)\\,\\pi_{c,\\alpha,\\beta}(\\!\\,d\\hspace*{-0.3mm}{x})\\right)& \\text{if }\\alpha\\in(0,2),",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-34-convergence-of-ornstein--uhlenbeck-processes",
+      "number": "3.4",
+      "title": "Convergence of Ornstein--Uhlenbeck processes to stable laws",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": "24",
+      "labelEnd": "26",
+      "words": 761,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ornstein--uhlenbeck",
+          "heading": true
+        },
+        {
+          "term": "ornstein--uhlenbeck process",
+          "heading": false
+        },
+        {
+          "term": "widehat phi",
+          "heading": false
+        },
+        {
+          "term": "self-decomposable law",
+          "heading": false
+        },
+        {
+          "term": "alpha neq",
+          "heading": false
+        },
+        {
+          "term": "lévy--khintchine triplet",
+          "heading": false
+        },
+        {
+          "term": "frac alpha",
+          "heading": false
+        },
+        {
+          "term": "ornstein label",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:ornstein label=\"subsec:ornstein\"} Another way to approximate a stable law $\\phi_{c,\\alpha,\\beta}$ is by using the marginales of a random process of Ornstein--Uhlenbeck type. Consider more generally a self-decomposable law $\\phi$ on $\\mathbb{R}$, that is an infinitely divisible distribution such that for any $b\\in (0,1)$, there exists a probability measure $p_b$ on $\\mathbb{R}$ such that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-35-logarithms-of-characteristic-polynomials-of-r",
+      "number": "3.5",
+      "title": "Logarithms of characteristic polynomials of random matrices",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 28,
+      "labelStart": "26",
+      "labelEnd": "28",
+      "words": 889,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widetilde theta",
+          "heading": false
+        },
+        {
+          "term": "widetilde frac",
+          "heading": false
+        },
+        {
+          "term": "mathrm haar",
+          "heading": false
+        },
+        {
+          "term": "mathrm usp",
+          "heading": false
+        },
+        {
+          "term": "frac zeta",
+          "heading": false
+        },
+        {
+          "term": "frac log",
+          "heading": false
+        },
+        {
+          "term": "frac gamma",
+          "heading": false
+        },
+        {
+          "term": "mod-gaussian convergence",
+          "heading": false
+        }
+      ],
+      "extract": "In [@KN12 Sections 3 and 4] and [@FMN16 Section 7.5], the mod-Gaussian convergence of the following random variables was proven: ::: center random matrix $M_n$ random variable $X_n$ parameters $t_n$ residue $\\theta(\\xi)$ ---------------------------------- ------------------------------------------------------------- -------------------- ------------------------------------------------- $\\mathrm{Haar}(\\mathrm{U}(n))$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-4-cumulants-and-dependency-graphs",
+      "number": "4",
+      "title": "Cumulants and dependency graphs",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": "28",
+      "labelEnd": "28",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-017-41-cumulants-zone-of-control-and-kolmogorov-boun",
+      "number": "4.1",
+      "title": "Cumulants, zone of control and Kolmogorov bound",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 31,
+      "labelStart": "28",
+      "labelEnd": "31",
+      "words": 1278,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cumulants zone",
+          "heading": true
+        },
+        {
+          "term": "cumulants kol",
+          "heading": false
+        },
+        {
+          "term": "mathrm kol",
+          "heading": false
+        },
+        {
+          "term": "frac widetilde",
+          "heading": false
+        },
+        {
+          "term": "frac varepsilon",
+          "heading": false
+        },
+        {
+          "term": "frac kappa",
+          "heading": false
+        },
+        {
+          "term": "mathrm var",
+          "heading": false
+        },
+        {
+          "term": "widetilde sigma",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we will see that appropriate bounds on the cumulants of a sequence of random variables $(S_n)_{n \\in \\mathbb{N}}$ imply the existence of a large zone of control for a renormalized version of $S_n$. In this whole section and in the next one, the reference stable law is the *standard Gaussian law.* We also assume that the random variables $S_n$ are centered. Let us first recall the definition of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-42-dependency-graphs",
+      "number": "4.2",
+      "title": "Dependency graphs",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 35,
+      "labelStart": "31",
+      "labelEnd": "35",
+      "words": 1661,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dependency graphs",
+          "heading": true
+        },
+        {
+          "term": "cumulants kol",
+          "heading": false
+        },
+        {
+          "term": "mathrm kol",
+          "heading": false
+        },
+        {
+          "term": "kol left",
+          "heading": false
+        },
+        {
+          "term": "mathrm var",
+          "heading": false
+        },
+        {
+          "term": "random erdös--rényi",
+          "heading": false
+        },
+        {
+          "term": "random walks",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:dependency label=\"subsec:dependency\"} In this paragraph, we will see that the uniform bounds on cumulants are satisfied for sums $S_n = \\sum_{i=1}^n A_{i,n}$ of dependent random variables with specific dependency structure. More precisely, if $(A_v)_{v \\in V}$ is a family of real valued random variables, we call *dependency graph* for this family a graph $G=(V,E)$ with the following property: if $V_1$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-43-unbounded-random-variables-and-truncation-met",
+      "number": "4.3",
+      "title": "Unbounded random variables and truncation methods",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 40,
+      "labelStart": "35",
+      "labelEnd": "40",
+      "words": 1718,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm kol",
+          "heading": false
+        },
+        {
+          "term": "unbounded",
+          "heading": true
+        },
+        {
+          "term": "cumulants kol",
+          "heading": false
+        },
+        {
+          "term": "mathrm var",
+          "heading": false
+        },
+        {
+          "term": "kol left",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": true
+        },
+        {
+          "term": "mathrm cov",
+          "heading": false
+        },
+        {
+          "term": "frac mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "A possible generalization regards sums of *unbounded* random variables. In the following, we develop a truncation method that yields a criterion of asymptotic normality similar to Lyapunov's condition (see [@Bil95 Chapter 27]). A small modification of this method would similarly yield a Lindeberg type criterion. Let $S_n = \\sum_{i=1}^{N_n} A_{i,n}$ be a sum of centered random variables, with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-5-ising-model-and-markov-chains",
+      "number": "5",
+      "title": "Ising model and Markov chains",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 40,
+      "labelStart": "40",
+      "labelEnd": "40",
+      "words": 74,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dependency graph",
+          "heading": false
+        },
+        {
+          "term": "boundcumulantuwdg",
+          "heading": false
+        },
+        {
+          "term": "uniform bounds",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:markov label=\"sec:markov\"} In this section, we present examples of random variables that admit uniform bounds on cumulants, which do not come from dependency graphs. Their structure is nevertheless not so different since the variables that we consider write as sums of random variables that are *weakly dependent*. The technique to prove uniform bounds on cumulants relies then on the notion of *uniform",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-51-weighted-graphs-and-spanning-trees",
+      "number": "5.1",
+      "title": "Weighted graphs and spanning trees",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": "40",
+      "labelEnd": "41",
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spanning",
+          "heading": true
+        },
+        {
+          "term": "spanning tree",
+          "heading": false
+        },
+        {
+          "term": "weighted graph",
+          "heading": false
+        },
+        {
+          "term": "edge",
+          "heading": false
+        },
+        {
+          "term": "vertices",
+          "heading": false
+        }
+      ],
+      "extract": "An *edge-weighted graph* $G$, or *weighted graph* for short, is a graph $G$ in which each edge $e$ is assigned a weight $w_G(e)$. Here we restrict ourselves to weights $w_G(e)$ with $w_G(e) \\in \\mathbb{R}_+$. Edges not in the graph can be thought of as edges of weight $0$, all our definitions being consistent with this convention. If $B$ is a multiset of vertices of $G$, we can consider the graph $G[B]$ induced by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-52-uniform-weighted-dependency-graphs",
+      "number": "5.2",
+      "title": "Uniform weighted dependency graphs",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 42,
+      "labelStart": "41",
+      "labelEnd": "42",
+      "words": 823,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weighted dependency",
+          "heading": true
+        },
+        {
+          "term": "uniform weighted",
+          "heading": true
+        },
+        {
+          "term": "dependency graph",
+          "heading": false
+        },
+        {
+          "term": "cumulants kol",
+          "heading": false
+        },
+        {
+          "term": "classical dependency",
+          "heading": false
+        },
+        {
+          "term": "boundcumulantuwdg",
+          "heading": false
+        },
+        {
+          "term": "boundcumulant",
+          "heading": false
+        },
+        {
+          "term": "left kappa",
+          "heading": false
+        }
+      ],
+      "extract": "If $A_1,\\ldots,A_r$ are real-valued random variables, there is a notion of joint cumulant that generalize the cumulants of Section [\\[sec:dependency\\]](#sec:dependency){reference-type=\"ref\" reference=\"sec:dependency\"}: $$\\kappa(A_1,A_2,\\ldots,A_r) = [z_1z_2\\cdots z_r]\\left(\\log \\mathbb{E}[\\E^{z_1A_1+z_2A_2+\\cdots+z_rA_r}]\\right).$$ The joint cumulants are multilinear and symmetric functionals of $A_1,\\ldots,A_r$. On",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-53-magnetization-of-the-ising-model",
+      "number": "5.3",
+      "title": "Magnetization of the Ising model",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 44,
+      "labelStart": "42",
+      "labelEnd": "44",
+      "words": 834,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ising model",
+          "heading": true
+        },
+        {
+          "term": "cumu ising",
+          "heading": false
+        },
+        {
+          "term": "kol ising",
+          "heading": false
+        },
+        {
+          "term": "lambda beta",
+          "heading": false
+        },
+        {
+          "term": "ising label",
+          "heading": false
+        },
+        {
+          "term": "configuration sigma",
+          "heading": false
+        },
+        {
+          "term": "tfrac delta",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:Ising label=\"subsec:Ising\"} We consider here the nearest-neighbour Ising model on a finite subset $\\Lambda$ of $\\mathbb{Z}^d$ with a quadratic potential, *i.e.* for a *spin configuration* $\\sigma$ in $\\{-1,+1\\}^{\\Lambda}$, its energy is given by $$\\mathcal{H}^\\Lambda_{\\beta,h}(w)= - \\beta\\!\\!\\! \\sum_{\\substack{ i,j \\in \\Lambda \\\\ \\{i,j\\} \\in E_{\\mathbb{Z}^d}}} \\!\\!\\! \\sigma_i\\sigma_j\\,\\,\\,-h \\sum_{i \\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-54-functionals-of-markov-chains",
+      "number": "5.4",
+      "title": "Functionals of Markov chains",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 49,
+      "labelStart": "44",
+      "labelEnd": "49",
+      "words": 2855,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boolean cumulants",
+          "heading": false
+        },
+        {
+          "term": "cumulants kol",
+          "heading": false
+        },
+        {
+          "term": "uwdg markov",
+          "heading": false
+        },
+        {
+          "term": "bound boolean",
+          "heading": false
+        },
+        {
+          "term": "eta conserve",
+          "heading": false
+        },
+        {
+          "term": "classical cumulants",
+          "heading": false
+        },
+        {
+          "term": "conserve poids",
+          "heading": false
+        },
+        {
+          "term": "clt janson",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we consider a discrete time Markov chain $(M_t)_{t \\ge 0}$ on a finite state space $\\mathfrak{X}$, which is ergodic (irreducible and aperiodic) with invariant measure $\\pi$. Its transition matrix is denoted $P$. To simplify the discussion, we shall also assume that the Markov chain is stationary, that is to say that the initial measure (*i.e.* the law of $M_0$) is $\\pi$; most results have easy",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-55-the-case-of-linear-functionals-of-the-empiric",
+      "number": "5.5",
+      "title": "The case of linear functionals of the empirical measure",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 53,
+      "labelStart": "49",
+      "labelEnd": "53",
+      "words": 2341,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "markov chains",
+          "heading": false
+        },
+        {
+          "term": "mod-gaussian convergence",
+          "heading": false
+        },
+        {
+          "term": "ashkan nikeghbali",
+          "heading": false
+        },
+        {
+          "term": "berry esseen",
+          "heading": false
+        },
+        {
+          "term": "linear functionals",
+          "heading": true
+        },
+        {
+          "term": "mod-φ convergence",
+          "heading": false
+        },
+        {
+          "term": "ergodic markov",
+          "heading": false
+        },
+        {
+          "term": "markov processes",
+          "heading": false
+        }
+      ],
+      "extract": "As a particular case of Theorem 55, one recovers the central limit theorem for linear functionals of empirical measures of Markov chains, that are random variables Yn = Sn −E[Sn] √n = 1 √n n X t=1 (f(Xt) −π(f)) with f : X →R ﬁxed function (independent of the time t). Thus, assuming for instance limn→∞Var(Yn) = Σ2(f) > 0, we have dKol Sn −E[Sn] p Var(Sn) , NR(0, 1) ! ≤77 ∥f∥∞ √ M Σ(f) !3 \u00121 + θP 1 −θP \u00132 1 √n (13) 50",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 1",
+      "figure 2",
+      "figure 3"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathrm kol",
+      "heading": false
+    },
+    {
+      "term": "frac mathbb",
+      "heading": false
+    },
+    {
+      "term": "kol left",
+      "heading": false
+    },
+    {
+      "term": "cumulants kol",
+      "heading": false
+    },
+    {
+      "term": "leq mathbb",
+      "heading": false
+    },
+    {
+      "term": "frac right",
+      "heading": false
+    },
+    {
+      "term": "cumulants zone",
+      "heading": true
+    },
+    {
+      "term": "aligned mathbb",
+      "heading": false
+    },
+    {
+      "term": "sqrt mathbb",
+      "heading": false
+    },
+    {
+      "term": "alpha frac",
+      "heading": false
+    },
+    {
+      "term": "zone clt",
+      "heading": false
+    },
+    {
+      "term": "mathbb varepsilon",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "For all a, ε, fa,ε is an approximation of the Heaviside function 1(−∞,a], and one has the following properties: Proposition 18. The function fa,ε is a smooth test distribution in T1(R) whose derivative ∂fa,ε has its",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 26,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 27,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p49); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 11
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 27 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1705.10485v2"
+  }
+}

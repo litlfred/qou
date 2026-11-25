@@ -1,0 +1,1067 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0203273v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0203273v3  [math.CT]  12 Oct 2002\nNILPOTENCE, RADICAUX ET STRUCTURES MONO¨IDALES\nYVES ANDR´E ET BRUNO KAHN\nAVEC UN APPENDICE DE PETER O’SULLIVAN\nTABLE DES MATI`ERES\nIntroduction\n3\nI. Radicaux et nilpotence\n7\n1.\nId´eaux et radicaux\n7\n2.\ncat´egories de Wedderburn\n15\n3.\nRadical inﬁni et nilpotence renforc´ee\n22\n4.\nRadical et extension des scalaires\n23\n5.\nExtensions des scalaires na¨ıve et non na¨ıve\n26\nII. Radical et rigidit´e\n30\n6.\nG´en´eralit´es\n30\n7.\nTraces\n35\n8.\nTh´eor`emes de structure\n45\n9.\nLe Pair et l’Impair\n50\n10.\nExemples et compl´ements\n55\nIII. Sections\n58\n11.\nCohomologie de",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 3,
+      "pageEnd": 9,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "En algèbre non commutative, on rencontre d'abord, par ordre de complexité croissant, les anneaux semi-simples, puis les anneaux semi-primaires, c'est-à-dire les extensions d'un anneau semi-simple par un idéal nilpotent (le radical). Parmi ces derniers, le cas où l'anneau semi-simple est en fait une algèbre séparable est particulièrement agréable puisque, d'après un théorème classique de Wedderburn, l'extension par le radical se scinde.\n\nPar ailleurs, en renversant la tautologie qui identifie tout anneau à une catégorie additive à un seul objet, on peut considérer les catégories additives comme",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Alg`ebres `a plusieurs objets",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "../sections/sec-001-13-algebres-a-plusieurs-objets.md",
+      "narrative": null,
+      "content": "[]{#1.3 label=\"1.3\"} Dans cet article, nous adoptons le point de vue de B. Mitchell [@mitchell] et considérons les $K$-catégories comme des \"$K$-algèbres (associatives) à plusieurs objets\\\".\n\nSuivant ce point de vue, un idéal (bilatère) ${\\mathcal{I}}$ d'une $K$-catégorie ${\\mathcal{A}}$ est la donnée, pour tout couple d'objets $(A,B)$, d'un sous-$K$-module de ${\\mathcal{I}}(A,B)\\allowbreak \\subset\n{\\mathcal{A}}(A,B)$ tel que pour tout couple de morphismes $(f \\in {\\mathcal{A}}(A,A'), g \\in\n{\\mathcal{A}}(B,B'))$, on ait $g{\\mathcal{I}}(A',B)f \\subset {\\mathcal{I}}(A,B')$.\n\nOn peut alors former",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Radical",
+      "pageStart": 13,
+      "pageEnd": 23,
+      "target": "../sections/sec-002-14-radical.md",
+      "narrative": null,
+      "content": "On démontre [@kelly] que $$\\begin{gathered}\n{\\operatorname{rad}}({\\mathcal{A}})(A,B)=\\\\\n\\{f\\in {\\mathcal{A}}(A,B)\\mid\n\\text{pour tout}\\ g\\in\n{\\mathcal{A}}(B,A), 1_A-gf \\text{  est\ninversible}\\}\n\\end{gathered}$$ définit un idéal ${\\operatorname{rad}}({\\mathcal{A}})$ de ${\\mathcal{A}}$.\n\n::: defn\n[]{#D1 label=\"D1\"} Cet idéal s'appelle le *radical* de ${\\mathcal{A}}$.\n:::\n\nSi ${\\mathcal{A}}$ est une $K$-algèbre, vue comme $K$-catégorie à un seul objet, on retrouve une définition du radical de Jacobson.\n\n::: rem\n[]{#gabriel label=\"gabriel\"} Un autre radical a été introduit dans la thèse de Gabriel",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Radical et extension des scalaires",
+      "pageStart": 23,
+      "pageEnd": 35,
+      "target": "../sections/sec-003-4-radical-et-extension-des-scalaires.md",
+      "narrative": null,
+      "content": "[]{#s3 label=\"s3\"}\n\n##  \n\nIl est connu que le radical d'une algèbre se comporte \"mal\\\" par extension des scalaires en général, *cf.* [@alg], [@rowen]. La situation s'améliore toutefois dans le cas \"de Wedderburn\\\".\n\n::: prop\n[]{#L5 label=\"L5\"} 1) Soit $L/K$ une extension de corps. Soit $A$ une $K$-algèbre de Wedderburn, *i.e.* ${\\operatorname{rad}}(A)$ est nilpotent et $A/{\\operatorname{rad}}(A)$ est séparable. Alors\\\na) ${\\operatorname{rad}}(A\\otimes_K L)\\cap A= {\\operatorname{rad}}(A)$,\\\nb) ${\\operatorname{rad}}(A)\\otimes_K L= \n{\\operatorname{rad}}(A\\otimes_K L)$,\\\nc) $A\\otimes_K L$ est de W",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Traces",
+      "pageStart": 35,
+      "pageEnd": 50,
+      "target": "../sections/sec-004-7-traces.md",
+      "narrative": null,
+      "content": "*Dans tout ce paragraphe, on suppose que $({\\mathcal{A}},\\bullet)$ est $K$-linéaire monoı̈dale rigide, symétrique, et que $End({\\bf 1}) =K$* (en revanche, on ne suppose pas ${\\mathcal{A}}$ abélienne).\n\n## Traces et idéal ${\\mathcal{N}}$ {#traces}\n\nRappelons que la *trace* d'un endomorphisme $h\\in\n{\\mathcal{A}}(C,C)$ est l'élément $tr(h) \\in K= End({\\bf 1})$ défini par $$\\varepsilon_C \\circ R_{C^\\vee, C} \\circ({\\iota_{CC}}^{-1}(h) ): {\\bf\n1 }\\to {\\bf 1},$$ où $\\varepsilon_C:   C\\bullet C^\\vee \\to  {\\bf 1}$ est l'évaluation. Dans la situation symétrique dans laquelle nous nous plaçons, la formul",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fondements",
+      "pageStart": 50,
+      "pageEnd": 55,
+      "target": "../sections/sec-005-91-fondements.md",
+      "narrative": null,
+      "content": "::: defn\n[]{#dkim.1 label=\"dkim.1\"} a) Un objet $A\\in {\\mathcal{A}}$ est *pairement de dimension finie au sens de Kimura* s'il existe un entier $n>0$ tel que $\\Lambda^n(A)=0$.\\\nb) Un objet $A\\in {\\mathcal{A}}$ est *impairement de dimension finie au sens de Kimura* s'il existe un entier $n>0$ tel que $\\mathbf{S}^n(A)=0$.\\\nc) Un objet $A\\in {\\mathcal{A}}$ est *de dimension finie au sens de Kimura* s'il admet une décomposition en somme directe $A=A_+\\oplus A_-$ telle que $A_+$ soit pairement de dimension finie et $A_-$ soit impairement de dimension finie.\n:::\n\nCette définition a été introduite pa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Trois contre-exemples",
+      "pageStart": 55,
+      "pageEnd": 58,
+      "target": "../sections/sec-006-101-trois-contre-exemples.md",
+      "narrative": null,
+      "content": "[]{#3contrex label=\"3contrex\"} Voici trois exemples de catégories monoı̈dales $K$-linéaires symétriques et rigides, vérifiant $End({\\bf 1})=K$, abéliennes, de Wedderburn, mais *dont le radical n'est pas un idéal monoı̈dal*.\n\n::: contrex\n[]{#super label=\"super\"}\n\nPartons de $D=K[\\varepsilon],\\varepsilon^2=0$, vue comme super-algèbre ($\\varepsilon$ placé en degré impair). On considère le super-groupe algébrique $GL(1\\vert 1, D)$. Son groupe de points est donné par les matrices $2\\times 2$ inversibles du type $$\\begin{pmatrix} a &\\varepsilon b \\\\\n\\varepsilon c & d\n\\end{pmatrix}, a,b,c,d \\in K, a\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cohomologie de Hochschild-Mitchell",
+      "pageStart": 58,
+      "pageEnd": 59,
+      "target": "../sections/sec-007-11-cohomologie-de-hochschild-mitchell.md",
+      "narrative": null,
+      "content": "[]{#hochschild label=\"hochschild\"}[]{#s4 label=\"s4\"}\n\n## Produit tensoriel de $K$-catégories {#prodtens}\n\nIci, $K$ désigne de nouveau un anneau commutatif unitaire quelconque.\n\n::: defn\n[]{#D5 label=\"D5\"} (*cf.* [@mitchell §11]). Soient ${\\mathcal{A}},{\\mathcal{B}}$ deux $K$-catégories. Le *produit tensoriel* de ${\\mathcal{A}}$ par ${\\mathcal{B}}$ est la $K$-catégorie ${\\mathcal{A}}\\boxtimes_K{\\mathcal{B}}$ dont les objets sont les couples $(A,B)$ ($A\\in {\\mathcal{A}},\nB\\in\n{\\mathcal{B}}$), avec $$({\\mathcal{A}}\\boxtimes_K {\\mathcal{B}})((A, B),(A', B'))={\\mathcal{A}}(A,A')\\otimes_K\n{\\mathcal{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complexe de Hochschild-Mitchell",
+      "pageStart": 59,
+      "pageEnd": 63,
+      "target": "../sections/sec-008-112-complexe-de-hochschild-mitchell.md",
+      "narrative": null,
+      "content": "[]{#7.2 label=\"7.2\"} Soit ${\\mathcal{A}}$ une petite $K$-catégorie, telle que pour tout $(A,B)\\in\n{\\mathcal{A}}\\times {\\mathcal{A}}$, ${\\mathcal{A}}(A,B)$ soit un $K$-module projectif.\n\nNotons $C_*({\\mathcal{A}})$ le complexe de Hochschild de ${\\mathcal{A}}$ [@mitchell § 17]: c'est un complexe de ${{\\mathcal{A}}}^e$-modules tel que $$\\scriptstyle \nC_m({\\mathcal{A}})(A,B)=\\displaystyle\\bigoplus_{A_0,\\dots,A_{m}}\n\\scriptstyle\n\\scriptstyle\nA(A,A_0)\\otimes_K{\\mathcal{A}}(A_0,A_1)\\otimes_K\\dots\\otimes_K{\\mathcal{A}}(A_{m-1}\n,A_m) \n\\otimes_K {\\mathcal{A}}(A_m,B),\\quad m\\geq 0$$ où $(A_0,\\dots,A_m)$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Variantes relatives",
+      "pageStart": 63,
+      "pageEnd": 65,
+      "target": "../sections/sec-009-122-variantes-relatives.md",
+      "narrative": null,
+      "content": "::: prop\n[]{#P3 label=\"P3\"} Soit $T:{\\mathcal{B}}\\to {\\mathcal{A}}$ un $K$-foncteur radiciel entre deux petites $K$-catégories de Wedderburn. Notons $\\bar {\\mathcal{A}}={\\mathcal{A}}/{\\operatorname{rad}}({\\mathcal{A}})$, $\\bar {\\mathcal{B}}={\\mathcal{B}}/{\\operatorname{rad}}({\\mathcal{B}})$ et $\\bar T:\\bar\n{\\mathcal{B}}\\to \\bar {\\mathcal{A}}$ le foncteur induit. Soit $s_{\\mathcal{A}}:\\bar{\\mathcal{A}}\\to {\\mathcal{A}}$ (*resp.* $s_{\\mathcal{B}}:\\bar{\\mathcal{B}}\\to {\\mathcal{B}}$ ) une section de la projection canonique. Alors il existe un système $(u_X)$ d'éléments de $1_{T(X)}+ {\\operatornam",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sorites",
+      "pageStart": 65,
+      "pageEnd": 67,
+      "target": "../sections/sec-010-133-sorites.md",
+      "narrative": null,
+      "content": "Pour cela, quelques sorites sont n´ecessaires.\n13.3.1. Sorite. Soit (s, ˜s) : (B, ⊤) →(A, •) un foncteur mono¨ıdal, et soit u : s ⇒t\nun isomorphisme naturel de s sur un autre foncteur t. Alors il existe une unique\nstructure mono¨ıdale ˜t sur t faisant de u un morphisme de foncteurs mono¨ıdaux.\nD´emonstration. D´eﬁnissons\n˜tA,B = uA⊤B˜sA,B(uA • uB)−1\n(cf. (13.1)). Il faut voir que ˜t est compatible avec les contraintes d’associativit´e et\nd’unit´e. Cela r´esulte de calculs triviaux (d’o`u le terme “sorite”), ce que nous laissons\nau lecteur sceptique le soin de v´eriﬁer.\n□\n19Une cat´egorie mono¨",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prop-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 67,
+      "pageEnd": 70,
+      "target": "prop-sec-011-01.md",
+      "narrative": null,
+      "content": "Soient (A, •), ¯ A, πA comme dans le th´eor`eme 13.2.1. Si en outre A est mono¨ıdale stricte, a) Il existe une section mono¨ıdale stricte s de πA. b) Toute autre section mono¨ıdale stricte de πA est isomorphe `a s. YVES ANDR´E ET BRUNO KAHN c) Toute section mono¨ıdale de πA est naturellement isomorphe `a une section mono- ¨ıdale stricte de πA. 13.5. R´eductions. Commenc¸ons par une r´eduction du probl`eme en deux lemmes. 13.5.1. Lemme. La proposition 13.4.2 d´ecoule de l’´enonc´e correspondant pour la cat´egorie mono¨ıdale stricte K-lin´eaire A⊕. D´emonstration. Soit S une section mono¨ıdale s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "La construction de Mac Lane",
+      "pageStart": 67,
+      "pageEnd": 70,
+      "target": "../sections/sec-011-1341-la-construction-de-mac-lane.md",
+      "narrative": null,
+      "content": "(A, •), on associe une petite cat´egorie mono¨ıdale stricte (Astr, ⊤), et deux foncteurs\nmono¨ıdaux B\nu\n→\n←\nv A, avec u strict, tels que le compos´e uv soit le foncteur mono¨ıdal\nidentique de A (les foncteurs sous-jacents `a u et v sont donc quasi-inverses).\nRappelons cette construction : on prend pour objets de Astr les mots (ﬁnis) dont\nles lettres sont les objets de A. Les morphismes entre mots sont les morphismes\nentre les objets de A correspondants obtenus par parenth´esage canonique (toutes\nles parenth`eses commencent au d´ebut du mot). Le produit ⊤, souvent omis de la\nnotation, est donn´",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Une relation de cocycle, I",
+      "pageStart": 70,
+      "pageEnd": 70,
+      "target": "../sections/sec-012-1362-une-relation-de-cocycle-i.md",
+      "narrative": null,
+      "content": "Supposons $r\\ge\n1$ et trouvée une famille $u_A^{(r)}$ vérifiant la condition (ii) du lemme [\\[l4\\]](#l4){reference-type=\"ref\" reference=\"l4\"}. Quitte à remplacer $s$ par $s_r$, on peut supposer $s_r=s$, $u^{(r)}=1$. On a donc $\\tilde s_{A,B}\\in 1+{\\mathcal{R}}(A\\bullet B)^r$ pour tout couple d'objets $(A,B)$. Posons $n_{A,B}=1_{A\\bullet \nB}-\\tilde\ns_{A,B}\\in{\\mathcal{R}}(A\\bullet B)^r$. La relation [\\[coh1\\]](#coh1){reference-type=\"eqref\" reference=\"coh1\"} se réécrit alors $$\\begin{gathered}\n(1_{A\\bullet B\\bullet \nC}-n_{A\\bullet B,C})\\circ ((1_{A\\bullet\nB}-n_{A,B})\\bullet \n1_C)\\\\\n=(1_{A\\bullet",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Une relation de cocycle, II",
+      "pageStart": 70,
+      "pageEnd": 71,
+      "target": "../sections/sec-013-1363-une-relation-de-cocycle-ii.md",
+      "narrative": null,
+      "content": "de 2-cocycle, et la congruence (13.5) `a une relation de 2-cobord. Pour donner corps\n`a ces impressions, introduisons encore quelques notations.\nSi w = A1A2 . . . Am est un mot form´e d’objets de A, notons\n•w l’objet A1 •A2 •\n· · · • Am de A ou ¯\nA (notation plus commode que celle u(w) utilis´ee plus haut) ;\nnotons les formules\n•\n( [\n•w1\n•w2) =\n•\n[\nw1w2\n•\n∅= 1.\nPour tout A ∈A, posons R(A)[r] = R(A)r/R(A)r+1. On peut faire op´erer les\nmots `a gauche et `a droite sur le K-espace vectoriel\nR[r] =\nY\nw\nR(\n•w)[r]\nNILPOTENCE, RADICAUX ET STRUCTURES MONO¨IDALES\n71\nde la mani`ere suivante :\n(w0 · m)(w)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Une relation de cocycle, I",
+      "pageStart": 71,
+      "pageEnd": 73,
+      "target": "../sections/sec-014-1366-une-relation-de-cocycle-i.md",
+      "narrative": null,
+      "content": "tenant en mesure d’interpr´eter (13.4) comme relation de 2-cocycle de Hochschild\npour l’alg`ebre K⟨Ob(A)⟩.\nEn effet, reprenons la famille (nA,B) ci-dessus. Avec les notations pr´ec´edentes,\non a une famille induite\n¯nAB ∈R(AB)[r].\nOn d´eﬁnit alors une 2-cochaˆıne de Hochschild ¯n pour K⟨Ob(A)⟩`a valeurs dans\nle K⟨Ob(A)⟩-bimodule R[r], en associant `a tout couple de mots non vides (w0, w1)\nl’´el´ement ¯nw0,w1 ∈R[r] d´eﬁni par\n¯nw0,w1(w) =\n(\n¯n •\nw0,\n•\nw1\nsi w0w1 = w,\n0\nsinon.\nCalculons le bord de Hochschild de ¯n :\n(d2(¯n))w0,w1,w2 = w0 · ¯nw1,w2 −¯nw0w1,w2 + ¯nw0,w1w2 −¯nw0,w1 · w2.\nSa w-compo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Une relation de cocycle, II",
+      "pageStart": 73,
+      "pageEnd": 74,
+      "target": "../sections/sec-015-1367-une-relation-de-cocycle-ii.md",
+      "narrative": null,
+      "content": "2-cocycle et (13.7) comme une relation de cobord, on proc`ede comme ci-dessus en\nintroduisant un K⟨Ob(A)⟩-bimodule appropri´e.\nNotons que l’action de A sur R[r] = Rr/Rr+1 se factorise en une action de ¯\nA.\nEn particulier, on peut se dispenser d’´ecrire la section s dans (13.6) et (13.7).\nPour tout mot w = A1 . . . Am en les objets de A, notons\n¯\nA(w) = ¯\nA(A1) • · · · • ¯\nA(Am) ⊂¯\nA(\n•w).\nOn a ¯\nA(ww′) = ¯\nA(w) ¯\nA(w′).\nNotons ensuite C(w)[r] le centralisateur de ¯\nA(w) dans R(\n•w)[r] :\nC(w)[r] = {x ∈R(\n•w)[r] | ad(a)(x) = 0 ∀a ∈¯\nA(w)}.\nOn note encore\nM(w)[r] = R(\n•w)[r]/C(w)[r]\net\nadw : R(\n•",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preuve de b)",
+      "pageStart": 74,
+      "pageEnd": 76,
+      "target": "../sections/sec-016-1369-preuve-de-b.md",
+      "narrative": null,
+      "content": "[]{#prb label=\"prb\"} Soient $s,s'$ deux sections monoı̈dales strictes de $\\pi_{\\mathcal{A}}$. Il s'agit de montrer qu'il existe une famille $(u_A)_{A\\in\n{\\mathcal{A}}}, u_A \\in 1_A +{\\mathcal{R}}(A,A)$, telle que pour tous $A,B\\in {\\mathcal{A}}$ on ait $s'(f)= u_As(f)(u_A)^{-1}$ pour tout $f\\in \n\\bar{\\mathcal{A}}(A)$ et $$u_{A\\bullet B}=u_A\\bullet u_B.$$\n\nNous allons montrer:\n\n::: lemme\n[]{#l6 label=\"l6\"} Il existe une famille double $(u_A^{(r)})_{A\\in{\\mathcal{A}},r\\ge 1}$, avec $u_A^{(r)}\\in1+{\\mathcal{R}}(A)$, ayant les propriétés suivantes:\n\n::: thlist\n$u_A^{(r+1)}\\equiv u_A^{(r)}\\pmod{{\\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Variantes",
+      "pageStart": 76,
+      "pageEnd": 79,
+      "target": "../sections/sec-017-137-variantes.md",
+      "narrative": null,
+      "content": "Voici un avatar monoı̈dal de la proposition [\\[P3\\]](#P3){reference-type=\"ref\" reference=\"P3\"}.\n\n::: prop\n[]{#P3' label=\"P3'\"} Soit $({\\mathcal{B}}, \\bullet)$ une autre catégorie monoı̈dale vérifiant les hypothèses du théorème [\\[T2\\]](#T2){reference-type=\"ref\" reference=\"T2\"}. Soit $T:{\\mathcal{B}}\\to\n{\\mathcal{A}}$ un $K$-foncteur monoı̈dal radiciel. Notons $\\bar T:\\bar\n{\\mathcal{B}}\\to \\bar {\\mathcal{A}}$ le foncteur induit.\\\nSoit $s_{\\mathcal{A}}:\\bar{\\mathcal{A}}\\to {\\mathcal{A}}$ (*resp.* $s_{\\mathcal{B}}:\\bar{\\mathcal{B}}\\to {\\mathcal{B}}$ ) une section monoı̈dale de la projection canon",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prop-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 112,
+      "target": "prop-sec-018-01.md",
+      "narrative": null,
+      "content": "a) Il existe un automorphisme (non mono¨ıdal) u de s tel que, pour tout couple d’objets A, B ∈A, on ait (15.6) s( ¯RA,B) = u−1 B•A˜sB,ARA,B(uA • uB)˜s−1 A,B. b) On a l’identit´e (15.7) s( ¯RB,A)s( ¯RA,B) = ˜sA,BRB,ARA,B(u2 A • u2 B)˜s−1 A,Bu−2 A•B. D´emonstration. a) En tenant compte du sorite 15.2.3, on applique la proposition 13.7.1 dans la situation B = Asym, T = (IdA, R), sA = sB = s. b) Remarquons les relations de commutation uB•As( ¯RA,B) = s( ¯RA,B)uA•B, due au fait que u est un automorphisme du foncteur s, et RA,B(uA • uB) = (uB • uA)RA,B, due au fait que R est un tressage. On d´eduit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prop-sec-018-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 112,
+      "target": "prop-sec-018-02.md",
+      "narrative": null,
+      "content": "Pour une section mono¨ıdale (s, ˜s), les conditions suivantes sont ´equivalentes : (i) ¯Rs est un tressage (notation du sorite 15.2.4). (ii) Il existe un automorphisme (non mono¨ıdal) v de IdA tel qu’on ait, pour u comme dans la proposition 15.3.1, l’identit´e (uA • uB)˜s−1 A,Bu−1 A•B˜sA,B = (vA • vB)v−1 A•B. Si ces conditions sont v´eriﬁ´ees, le tressage ¯Rs ne d´epend pas du choix de s : pour un choix de v comme dans (ii), il est donn´e par la formule ˜RA,B = RA,B(vA • vB)v−1 A•B. D´emonstration. En utilisant la formule (15.8), on obtient l’identit´e R−1 A,B ¯Rs A,B = (uA • uB)˜s−1 A,Bu−1 A•",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prop-sec-018-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 112,
+      "target": "prop-sec-018-03.md",
+      "narrative": null,
+      "content": "a) L’´el´ement e = e(R) ∈N ∪{∞} et les ´el´ements ¯nA,B de C[e](AB) ne d´ependent pas du choix de s : ils ne d´ependent que de R. Si A est stricte, on a les identit´es ¯nA,B•C = ( ¯RA,B • 1C)−1(1B • ¯nA,C)( ¯RA,B • 1C) + ¯nA,B • 1C (15.9) ¯nA•B,C = (1A • ¯RB,C)−1(¯nA,C • 1B)(1A • ¯RB,C) + 1A • ¯nB,C (15.10) la seconde pouvant aussi s’´ecrire ¯nA•B,C = ( ¯RB,A • 1C)(1B • ¯nA,C)( ¯RB,A • 1C)−1 + 1A • ¯nB,C. (15.11) b) L’´el´ement ¯e ∈N ∪{∞} ne d´epend pas du choix de s : il ne d´epend que de ¯R. On a ¯e > e, et ¯e = ∞si et seulement si les conditions de la proposition 15.3.3 sont v´eriﬁ´ees. c)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prop-sec-018-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 112,
+      "target": "prop-sec-018-04.md",
+      "narrative": null,
+      "content": "On a un foncteur canonique TG du groupo¨ıde connexe G⊗ u (G) des sections mono¨ıdales de πG vers la cat´egorie des monomorphismes de G vers un groupe pro-r´eductif, qui associe `a la section s le monomorphisme G֒ →Gs. En particulier, pour deux sections mono¨ıdales s, t, les groupes Gs et Gt sont K- isomorphes. □ 18.2.5. ´Eclairons et compl´etons cette construction `a l’aide des r´esultats du para- graphe 14. Notons Γu(G) = (Eu, Su) le groupo¨ıde afﬁne scind´e unipotent transitif sur S⊗associ´e `a A = RepK(G) par le th´eor`eme 14.3.3 : on a Γu(G)(K) = G⊗(G). Par ailleurs, la cat´egorie tannakie",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prop-sec-018-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 112,
+      "target": "prop-sec-018-05.md",
+      "narrative": null,
+      "content": "Pour tout ´epimorphisme ϕ : Gs → →H, le centralisateur de ϕ ◦s♯(G) dans H est ´egal au produit ϕ(Us) × Z(H). YVES ANDR´E ET BRUNO KAHN [Noter que ce produit est direct, puisque l’intersection de ϕ(Us) et de Z(H) est un groupe unipotent de type multiplicatif.] D´emonstration. Par souci de clart´e, notons plus pr´ecis´ement ω = ωG. Consid´erons le foncteur f = (s♯)∗◦ϕ∗: RepK(H) →RepK(G) : on remarque que ωG ◦f = ωH. Appliquons le lemme 18.2.1 : on obtient que l’homomorphisme Aut⊗(f) → Aut⊗(ωH) = H est injectif, d’image le centralisateur de l’image de Aut⊗(ωG) = G dans H. Il reste `a calculer Aut",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prop-sec-018-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 112,
+      "target": "prop-sec-018-06.md",
+      "narrative": null,
+      "content": "a) Pour toute section s comme ci-dessus, tout homomorphisme ϕ de G vers un groupe pro-r´eductif H se prolonge en un homomorphisme ψ : Gs → H. D´emonstration. On a un diagramme commutatif RepK(G) ωG −−−−→V ecK ϕ∗ր πG y RepK(H) ¯ϕ∗ −−−−→RepK(G)/RG o`u par souci de clart´e on note ωG le foncteur ﬁbre canonique de RepK(G). On a ωH = ωG ◦ϕ∗. Remarquons que ¯ϕ∗est exact, puisque la cat´egorie RepK(H) est semi-simple. Il est aussi ﬁd`ele : si A ∈RepK(H), le noyau de l’homomorphisme induit par ¯ϕ∗ de l’anneau R des endomorphismes de A vers l’anneau des endomorphismes de ¯ϕ∗(A) est l’image r´eciproqu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prop-sec-018-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 112,
+      "target": "prop-sec-018-07.md",
+      "narrative": null,
+      "content": "Soient G un K-groupe afﬁne s, t deux sections mono¨ıdales de πG, Gs et Gt les K-groupes r´eductifs attach´es s et t, u un isomorphisme mono¨ıdal de s sur t et ˆu : Gs ∼ −→Gt l’isomorphisme correspondant (cf. (18.1)). Soient enﬁn H un autre K-groupe afﬁne H et f : Gs →H, g : Gt →H deux homomorphis- mes. Supposons que f ◦s♯et g ◦t♯soient conjugu´es par un ´el´ement de H(K). Alors il en est de mˆeme de f et g ◦ˆu. D´emonstration. On se ram`ene imm´ediatement au cas o`u s = t, puis au cas o`u f ◦s♯= g ◦s♯. On a, au niveau des cat´egories de repr´esentations, une ´egalit´e de foncteurs : (s♯)∗◦f ∗=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prop-sec-018-08",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 112,
+      "target": "prop-sec-018-08.md",
+      "narrative": null,
+      "content": "Supposons K alg´ebriquement clos. `A isomorphisme unique pr`es dans Gaﬀ(K), l’homomorphisme ΛG : G →pRed(G) est caract´eris´e par les deux propri´et´es suivantes : (i) pRed(G) est pro-r´eductif ; (ii) ΛG induit une bijection entre les classes d’isomorphismes de repr´esenta- tions ind´ecomposables de G et de pRed(G). D´emonstration. Il est clair que ΛG a les propri´et´es annonc´ees. Pour la r´eciproque, la propri´et´e universelle de pRed(G) nous ram`ene `a d´emontrer l’´enonc´e suivant : si f : H →M est un homomorphisme de groupes pro-r´eductifs qui induit une bijection sur les classes d’isomor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prop-sec-018-09",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 112,
+      "target": "prop-sec-018-09.md",
+      "narrative": null,
+      "content": "Si G est pro-unipotent, pRed(G) est pro-semi-simple simple- ment connexe. YVES ANDR´E ET BRUNO KAHN D´emonstration. D’apr`es le lemme 19.4.1, Gs est connexe. Pour montrer qu’il est semi-simple, on raisonne de mˆeme : soit G′ s son groupe d´eriv´e. Alors Γ = Gs/G′ s est un pro-tore. Comme G est pro-unipotent, Hom(G, Γ) = 1 ; la proposition 18.2.9 implique alors que Hom(Gs, Γ) = 1. Donc Γ = 1. Enﬁn, soit H un groupe pro-semi-simple connexe quelconque, et soit ˜H son revˆetement universel. On a un diagramme commutatif : H1 K(Gs, ˜H) −−−−→H1 K(G, ˜H) y y H1 K(Gs, H) −−−−→H1 K(G, H). Les propos",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prop-sec-018-10",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 112,
+      "target": "prop-sec-018-10.md",
+      "narrative": null,
+      "content": "a) Soit G2 →G1 un morphisme faiblement ´epi de K-sch´emas en groupes afﬁnes. Alors le morphisme pRed(G2) →pRed(G1) correspondant est faiblement ´epi. b) Soit G3 →G2 →G1 →1 une suite faiblement exacte de K-sch´emas en groupes afﬁnes. Alors on a un diagramme commutatif de suites faiblement exactes dans GaﬀK : G3 −−−−→ G2 −−−−→ G1 −−−−→1 y y y pRed(G3) −−−−→pRed(G2) −−−−→pRed(G1) −−−−→1. D´emonstration. Cela r´esulte imm´ediatement du th´eor`eme 19.3.1 et du lemme 19.2.2 (comme un adjoint `a gauche commute aux limites inductives quelconques, le th´eo- r`eme 19.3.1 fournit des propri´et´es d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prop-sec-018-11",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 112,
+      "target": "prop-sec-018-11.md",
+      "narrative": null,
+      "content": "a) Pour tout G alg´ebrique, on a une suite exacte 1 →pRed(G0)⊳→pRed(G) →G/G0 →1 o`u G0 est la composante neutre de G. b) Si G est connexe, soit P un K-sous-groupe parabolique de G. Alors pRed(P) → pRed(G) est ´epi. c) Si G →H est ´epi, pRed(G) →pRed(H) est ´epi. D´emonstration. a) ´Ecrivons G = lim ←−Gi, o`u les Gi = G/Ni sont de dimension ﬁnie : alors, pour tout i, G0 i est l’image de G0 dans Gi. Comme le syst`eme des G0 i est de Mittag-Lefﬂer, on a un diagramme commutatif de suites exactes courtes : 1 −−−−→ G0 −−−−→ G −−−−→ G/G0 −−−−→1 A y y B y 1 −−−−→lim ←−G0 i −−−−→lim ←−Gi −−−−→lim",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prop-sec-018-12",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 112,
+      "target": "prop-sec-018-12.md",
+      "narrative": null,
+      "content": "Pour tout K-groupe G et tout K-groupe pro-r´eductif H, on a pRed(G × H) = pRed(G) × H. D´emonstration. On peut raisonner dans Gaﬀ(K). Soit M une repr´esentation de G × H. Comme H est r´eductif, la restriction de M `a H est semi-simple, donc l’alg`ebre EndH(M) est semi-simple et AutH(M) = EndH(M)∗est le groupe des K-points d’un groupe r´eductif H′ ; on a un homomorphisme G →H′. Ce dernier se prolonge en un homomorphisme pRed(G) →H′, ce qui veut dire que l’action de G × H sur M s’´etend en une action de pRed(G) × H. Consid´erons le morphisme canonique (dans GredK) f : pRed(G × H) → pRed(G)×H. En",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Le paysage discret",
+      "pageStart": 79,
+      "pageEnd": 112,
+      "target": "../sections/sec-018-141-le-paysage-discret.md",
+      "narrative": null,
+      "content": "14.1.1. Le cas non mono¨ıdal. Soit A une petite K-cat´egorie de Wedderburn. Con-\nsid´erons la cat´egorie G(A) dont les objets sont les sections de πA, un morphisme de\ns vers s′ ´etant une famille (uA)A∈A comme dans le th´eor`eme 12.1.1 b) et le com-\npos´e de deux morphismes (uA), (vA) ´etant (vAuA). (Comme nous l’a fait remarquer\nA. Brugui`eres, les morphismes de G(A) s’interpr`etent aussi comme les transforma-\ntions naturelles entre sections de πA se projetant sur l’identit´e dans ¯\nA.) Alors G(A)\nest un petit groupo¨ıde : le groupo¨ıde des sections de πA. Le contenu du th´eor`eme\n12.1.1 a) (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extension des scalaires",
+      "pageStart": 112,
+      "pageEnd": 115,
+      "target": "../sections/sec-019-1414-extension-des-scalaires.md",
+      "narrative": null,
+      "content": "pos´e de caract´eristique nulle), pour un K-groupe afﬁne G et une extension L/K, il\ny a lieu de distinguer entre les L-groupes afﬁnes pRed(G×K L) et pRed(G)×K L.\nPar la propri´et´e universelle de pRed, on a toujours un morphisme naturel\n(19.4)\npRed(G ×K L) →pRed(G) ×K L.\nNous verrons ci-dessous que ce morphisme n’est pas un isomorphisme en g´en´eral.\nPar contre :\n19.6.1. Th´eor`eme. Si L/K est ﬁnie, (19.4) est un isomorphisme.\n(Il sufﬁt en fait que L/K soit alg´ebrique, cf. th. C.3.)\nD´emonstration. Rappelons que dans ce cas, l’extension des scalaires `a la Saavedra\nest d´eﬁnie sur A = RepK(G)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prop-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "cf. [40]",
+      "pageStart": 115,
+      "pageEnd": 119,
+      "target": "prop-sec-020-01.md",
+      "narrative": null,
+      "content": "Soit H′ un sous-groupe r´eductif ferm´e d’un groupe r´eductif H. Alors le centralisateur de H′ dans H est r´eductif. D´emonstration. Soit U le radical unipotent de ce centralisateur CH(H′). Il s’agit de montrer que tout homomorphisme f : Ga →U est trivial. Un tel homomorphis- me s’´etend en un homomorphisme g : Ga × H′ →H, puis, d’apr`es la proposition 19.4.9 et le th´eor`eme 19.5.1, en un homomorphisme g′ : SL2 × H′ →H. On a donc un homomorphisme f ′ : SL2 →CH(H′) qui prolonge f. La compos´ee de f ′ avec la projection CH(H′) →CH(H′)/U est triviale (puisqu’il en est de mˆeme de f). On en d´edu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prop-sec-020-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 115,
+      "pageEnd": 119,
+      "target": "prop-sec-020-02.md",
+      "narrative": null,
+      "content": "Soient V, W deux repr´esentations de G, et n un entier > 0. Les conditions suivantes sont ´equivalentes : i) V ∼= W, ii) V ⊗n ∼= W ⊗n. D´emonstration. Comme pr´ec´edemment, le probl`eme se ram`ene au probl`eme ana- logue avec G remplac´e par le groupe r´eductif connexe GV ⊕W. Via l’homomor- phisme “caract`ere”, i) (resp. ii)) se traduit par l’´egalit´e ch(V ) = ch(W) (resp. ch(V )n = ch(W)n) de polynˆomes de Laurent en les poids fondamentaux, `a coef- ﬁcients entiers positifs. Or tout polynˆome de Laurent `a coefﬁcients entiers positifs est d´etermin´e par sa puissance n-i`eme. □ NILPOTENCE, R",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extension des scalaires",
+      "pageStart": 115,
+      "pageEnd": 119,
+      "target": "../sections/sec-020-196-extension-des-scalaires.md",
+      "narrative": null,
+      "content": "La r´eponse est donn´ee dans l’appendice C : ceci se produit si et seulement si G\nest de dimension ﬁnie et son radical unipotent U est de dimension ≤1. De plus,\npRed(G) est alors produit semi-direct de G/U par SL2.\nUn cas ´eclairant est celui du produit semi-direct G de SL2 par Ga × Ga (d´eﬁni\npar la repr´esentation standard de SL2). Ce cas a ´et´e examin´e dans [46]. L’auteur y\nmontre que pour tout n ≥1, l’alg`ebre de Lie sl2n+1 contient une copie de Lie G\nmais aucune sous-alg`ebre de Lie semi-simple interm´ediaire. Comme on sait par la\nproposition 19.4.2 et le corollaire 19.4.5 que pRed(G) e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Objets projectifs et injectifs",
+      "pageStart": 119,
+      "pageEnd": 126,
+      "target": "../sections/sec-021-a1-objets-projectifs-et-injectifs.md",
+      "narrative": null,
+      "content": "gorie ab´elienne K-lin´eaire A–Mod des A-modules (`a gauche) poss`ede assez d’in-\njectifs et de projectifs. Pour les projectifs, nous allons retrouver ce fait de mani`ere\nconstructive.\nA.1.1. Lemme. Soit f : M →N un homomorphisme de A-modules. Alors\na) f est un ´epimorphisme si et seulement si f(A) : M(A) →N(A) est un ´epimor-\nphisme pour tout A ∈A.\nb) f est un monomorphisme si et seulement si f(A) : M(A) →N(A) est un\nmonomorphisme pour tout A ∈A.\nc) f est un isomorphisme si et seulement si f(A) : M(A) →N(A) est un isomor-\nphisme pour tout A ∈A.\nD´emonstration. a) Soit C = Coker f : on a C(A)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Erratum `a",
+      "pageStart": 126,
+      "pageEnd": 126,
+      "target": "../sections/sec-022-b-erratum-a.md",
+      "narrative": null,
+      "content": "O. Gabber nous a fait remarquer que la preuve de [1, Prop. 6] ´etait (encore)\nincompl`ete. Le probl`eme est que la d´emonstration donn´ee dans loc. cit. s’applique `a\nun motif de la forme h(X), o`u X est une vari´et´e projective lisse, mais pas a priori `a\nun motif g´en´eral M. Plus pr´ecis´ement, si M est effectif (pour ﬁxer les id´ees) et que\nle projecteur de K¨unneth pair de M est alg´ebrique, il n’est pas clair qu’on puisse\nchoisir une vari´et´e X telle que h(X) contienne M en facteur direct et telle que le\nprojecteur de K¨unneth pair de X soit alg´ebrique.\nVoici deux mani`eres de corriger",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Premi`ere correction",
+      "pageStart": 126,
+      "pageEnd": 127,
+      "target": "../sections/sec-023-b1-premiere-correction.md",
+      "narrative": null,
+      "content": "sufﬁt de supposer que le corps de base k est de type ﬁni sur Fp.\nB.1.1. Lemme. Soient H : Motrat →Modf-L une cohomologie de Weil classique\n`a coefﬁcients dans une Q-alg`ebre commutative semi-simple L et MotH la cat´ego-\nrie des k-motifs H-homologiques `a coefﬁcients rationnels. Pour tout A ∈MotH,\nnotons\nH+(A) =\nM\ni pair\nHi(A), H−(A) =\nM\ni impair\nHi(A).\nAlors, pour A, B ∈MotH, on a\nRH(A, B) =\n{f ∈MotH(A, B) | ∀g ∈MotH(B, A), ∀i ∈Z, trHi(g ◦f) = 0}\n= {f ∈MotH(A, B) | ∀g ∈MotH(B, A), trH+(g ◦f) = trH−(g ◦f) = 0},\no`u RH est le radical de MotH.\nD´emonstration. D’apr`es [1, prop. 5], MotH est semi-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Seconde correction",
+      "pageStart": 127,
+      "pageEnd": 127,
+      "target": "../sections/sec-024-b2-seconde-correction.md",
+      "narrative": null,
+      "content": "toute cohomologie de Weil, classique ou non.\nD’apr`es le th´eor`eme 9.2.1 c), pour toute cohomologie de Weil H on a Mot±\nH =\n(MotH)kim. D’autre part, la proposition 9.1.14 implique que le foncteur (MotH)kim\n→(Motnum)kim est essentiellement surjectif. Ainsi, Mot±\nnum = (Motnum)kim\npour toute cohomologie de Weil H.\n□\nTable de concordance pour les r´ef´erences de [1].\n– Preuve du th´eor`eme 1 : remplacer [3, 6.7.3] par [3, 8.2.2].\n– Preuve de la proposition 2 : remplacer [3, 6.7.9 et 1.4.2b] par [3, 8.3.1 et\n1.4.4b].\n– D´ebut de 2 : remplacer [3, 9.2.1, 9.7.3, 11.3.5] par [3, 13.2.1, 13.7.1, 15.3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finite dimensionality of reductive envelopes, by Peter O'Sullivan",
+      "pageStart": 127,
+      "pageEnd": 128,
+      "target": "../sections/sec-025-c-finite-dimensionality-of-reductive-envelopes-b.md",
+      "narrative": null,
+      "content": "PETER O’SULLIVAN\nThe object of this appendix is to determine when proreductive envelopes are ﬁ-\nnite dimensional and when their formation is compatible with extension of scalars.\nLet k be a ﬁeld of characteristic 0, and let H be an afﬁne k-group. Then the prore-\nductive envelope of H is ﬁnite dimensional if and only if H is ﬁnite dimensional\nwith prounipotent radical of dimension ≤1 (Theorem C.5). This is a consequence\n128\nYVES ANDR´E ET BRUNO KAHN\nof Theorem C.1 characterising the afﬁne k-groups with prounipotent radical of di-\nmension ≤1 as those whose representations are “rigid”. If the pro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/lem-sec-026-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 128,
+      "pageEnd": 138,
+      "target": "lem-sec-026-01.md",
+      "narrative": null,
+      "content": "1. Suppose that k is algebraically closed. Let M be a connected reduc- tive k-group and let V be a representation of M. Denote by P the set of dominant weights of M relative to some maximal torus T and Borel subgroup B ⊃T of M, and for each µ ∈P let Vµ be a representation of M with highest weight µ. Then if τ ∈P is such that τ + λ ∈P for each λ in the set Λ of weights of V , there is an M-isomorphism V ⊗k Vτ ≃L λ∈Λ V m(λ) τ+λ , where m(λ) is the multiplicity of λ in V .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/lem-sec-026-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 128,
+      "pageEnd": 138,
+      "target": "lem-sec-026-02.md",
+      "narrative": null,
+      "content": "2. Suppose that k is algebraically closed. Let M be a non-commutative connected reductive k-group and let V be a faithful irreducible representation of M. Suppose that V has, relative to some maximal torus of M, at most 3 distinct NILPOTENCE, RADICAUX ET STRUCTURES MONO¨IDALES non-zero weights. Then either the derived group M′ of M is simple of type A1 and V is of dimension 2 or 3, or M′ is simple of type A2 and V is of dimension 3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/lem-sec-026-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 128,
+      "pageEnd": 138,
+      "target": "lem-sec-026-03.md",
+      "narrative": null,
+      "content": "3. Suppose that k is algebraically closed. Let M be a connected reduc- tive k-group and let V be a representation of M which is either the direct sum of two non-isomorphic 1-dimensional representations or is irreducible of dimension 2 or 3. Then there exists a family (V i j , ri j, si j)i,j∈N, with the V i j irreducible represen- tations of M and the ri j : V ⊗k V i j →V i+1 j and si j : V ⊗k V i j+1 →V i j non-zero M-homomorphisms, such that : (i) for each integer m the V i j with i −j = m are pairwise non-isomorphic ; (ii) the restrictions of ri+1 j ◦(V ⊗ri j) : V ⊗k V ⊗k V i j →V i+2 j , si",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/lem-sec-026-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 128,
+      "pageEnd": 138,
+      "target": "lem-sec-026-04.md",
+      "narrative": null,
+      "content": "4. Suppose that k is algebraically closed, and let H be a connected afﬁne k-group with prounipotent radical of dimension > 1. Then there exists a rep- resentation of H over the afﬁne line A1 with ﬁbres at k-points of A1 pairwise non-isomorphic.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/lem-sec-026-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 128,
+      "pageEnd": 138,
+      "target": "lem-sec-026-05.md",
+      "narrative": null,
+      "content": "3 hold. Write A1 = Spec(k[t]), and deﬁne a family (Ei j, f i j, gi j)i,j∈N of free OA1-modules of ﬁnite type Ei j and OA1-homomorphisms f i j : Ei j →Ei+1 j , gi j : Ei j+1 →Ei j by E0 0 = E1 0 = E0 1 = E2 1 = E1 2 = E2 2 = OA1, E1 1 = O2 A1, Ei j = 0 for all other i, j, and f 0 0 = g0 0 = f 1 2 = g2 1 = 1 and f 0 1 = \u00001 \u0001 , g1 0 = (1, −t), g1 1 = \u00000 \u0001 , f 1 1 = (−1, 1). The non-zero E, f, g thus form a commutative diagram (C.8) OA1 −−−−→OA1 y(0 1) y1 OA1 (1 0) −−−−→O2 A1 (−1,1) −−−−→OA1 y1 y(1,−t) OA1 −−−−→OA1 Now set V = L i,j∈N V i j ⊗Ei j and let µ : V ⊗k V →V have component V ⊗k V",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/lem-sec-026-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 128,
+      "pageEnd": 138,
+      "target": "lem-sec-026-06.md",
+      "narrative": null,
+      "content": "5. Let H be an afﬁne k-group with prounipotent radical U of dimension ≤1. Then there exists a k-homomorphism H →GL(2) with restriction to U an embedding. If g is such a k-homomorphism and p : H →H/U is the projection then every indecomposable representation of H is isomorphic to g∗V ⊗k p∗W for some representation V of GL(2) and W of H/U.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/lem-sec-026-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 128,
+      "pageEnd": 138,
+      "target": "lem-sec-026-07.md",
+      "narrative": null,
+      "content": "6. Let H be an afﬁne k-group, let k′ be an extension of k, and let V ′ be a representation of H over k′. (i) If H is proreductive then V ′ is a direct summand of some V ⊗k k′. (ii) If k′ is algebraic over k then V ′ is a direct summand of some V ⊗k k′. (iii) If k is algebraically closed and V ′ is a direct summand of V ⊗k k′, then V ′ ≃V0 ⊗k k′ for some direct summand V0 of V .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Families of representations",
+      "pageStart": 128,
+      "pageEnd": 138,
+      "target": "../sections/sec-026-c1-families-of-representations.md",
+      "narrative": null,
+      "content": "rems C.1 and C.2. The proofs are based on Lemmas C.4 and C.5. Lemma C.5 is\nnecessary also for the proof of Theorem C.4.\nLemma C.1. Suppose that k is algebraically closed. Let M be a connected reduc-\ntive k-group and let V be a representation of M. Denote by P the set of dominant\nweights of M relative to some maximal torus T and Borel subgroup B ⊃T of M,\nand for each µ ∈P let Vµ be a representation of M with highest weight µ. Then if\nτ ∈P is such that τ + λ ∈P for each λ in the set Λ of weights of V , there is an\nM-isomorphism V ⊗k Vτ ≃L\nλ∈Λ V m(λ)\nτ+λ , where m(λ) is the multiplicity of λ in\nV",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/thm-sec-026-08",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 128,
+      "pageEnd": 138,
+      "target": "thm-sec-026-08.md",
+      "narrative": null,
+      "content": "1. If H is an afﬁne k-group the following conditions are equivalent : (a) the prounipotent radical of H is of dimension ≤1 ; (b) for every k-scheme S of ﬁnite type and family V of representations of H over S, there is a ﬁnite extension k′ of k and a stratiﬁcation of Sk′ by locally closed subschemes such that the family Vk′ of representations of Hk′ over Sk′ is constant along each stratum ; NILPOTENCE, RADICAUX ET STRUCTURES MONO¨IDALES (c) for every k-scheme S of ﬁnite type and family V of representations of H over S, the set of H-isomorphism classes of the ﬁbres of V at k-points of S is ﬁnite",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/thm-sec-026-09",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 128,
+      "pageEnd": 138,
+      "target": "thm-sec-026-09.md",
+      "narrative": null,
+      "content": "2. Let H be an afﬁne k-group and let k′ be an extension of k. Then every representation of H over k′ is a direct summand of a representation deﬁned over k if and only if either k′ is algebraic over k or the prounipotent radical of H has dimension ≤1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/lem-sec-027-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 138,
+      "pageEnd": 146,
+      "target": "lem-sec-027-01.md",
+      "narrative": null,
+      "content": "7. Let f : H →K be a k-homomorphism from an afﬁne k-group to a proreductive k-group. Then (i) f is universal if and only if f is minimal and each representation of H is a direct summand of f ∗V for some representation V of K. (ii) If f is minimal then fk′ : Hk′ →Kk′ is minimal for any extension k′ of k. (iii) If f is universal then fk′ : Hk′ →Kk′ is universal for any algebraic exten- sion k′ of k.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/lem-sec-027-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 138,
+      "pageEnd": 146,
+      "target": "lem-sec-027-04.md",
+      "narrative": null,
+      "content": "5, and so universal by Lemma C.7(i). Given h as in (ii), h⋊M is by universality of f ⋊M the composite of f ⋊M with a k-homomorphism SL(2)⋊M →K ⋊M, necessarily of the form l⋊M for some M-homomorphism l. Thus h = lf. If also h = l′f for an M-homomorphism l′, then l and l′ are by universality of f conjugate by a unique k-point α of the prounipotent radical of the centraliser of h. This implies that lk′ and l′ k′ are conjugate by mα for any extension k′ of k and m ∈M(k′). Since M stabilises the centraliser of h and so the prounipotent radical of this centraliser, M ﬁxes α by uniqueness. □ An afﬁne",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/lem-sec-027-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 138,
+      "pageEnd": 146,
+      "target": "lem-sec-027-05.md",
+      "narrative": null,
+      "content": "8. If k is algebraically closed then a connected ﬁnite dimensional reduc- tive k-group has only a ﬁnite number of non-isomorphic irreducible representations of given dimension and determinant.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application to proreductive envelopes",
+      "pageStart": 138,
+      "pageEnd": 146,
+      "target": "../sections/sec-027-c2-application-to-proreductive-envelopes.md",
+      "narrative": null,
+      "content": "velopes it will be convenient to use the following terminology. Let f : H →K be\na k-homomorphism from an afﬁne k-group to a proreductive k-group. Call f uni-\nversal if each k-homomorphism H →K′ to a proreductive K′ factors, uniquely\nup to conjugation by a k-point of K′, through f. Equivalently, f is universal if its\nconjugacy class is the embedding of H into its proreductive envelope. Th´eor`eme\n19.3.1 states that for each H there exists a universal f. Call f minimal if f factors\nthrough no proper proreductive subgroup of K. If L is proreductive, h : H →L is\nuniversal, and f = lh, then f is un",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/thm-sec-027-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 138,
+      "pageEnd": 146,
+      "target": "thm-sec-027-02.md",
+      "narrative": null,
+      "content": "3. Let H be an afﬁne k-group and let k′ be an extension of k. Then the canonical morphism p Red(Hk′) →p Red(H)k′ is an isomorphism if and only if either k′ is algebraic over k or the prounipotent radical of H is of dimension ≤1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/thm-sec-027-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 138,
+      "pageEnd": 146,
+      "target": "thm-sec-027-03.md",
+      "narrative": null,
+      "content": "4. Let U be a unipotent k-group of dimension 1, equipped with an action of the proreductive k-group M. Then (i) There exists an M-embedding U →SL(2) for some action of M on SL(2). (ii) If f : U →SL(2) is an M-embedding and h : U →K is an M-homomorphism with K proreductive, then there is an M-homomorphism l : SL(2) →K, unique up to conjugation by a k-point of K ﬁxed by M, such that h = lf. YVES ANDR´E ET BRUNO KAHN (iii) If f : U →SL(2) is an M-embedding then (the conjugacy class of) f ⋊M : U ⋊M →SL(2) ⋊M is the embedding of U ⋊M into its proreductive envelope.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203273v3/blocks/thm-sec-027-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 138,
+      "pageEnd": 146,
+      "target": "thm-sec-027-06.md",
+      "narrative": null,
+      "content": "5. The proreductive envelope of an afﬁne k-group H is of ﬁnite type over k (resp. ﬁnite dimensional) if and only if H is of ﬁnite type over k (resp. ﬁnite dimensional) and the prounipotent radical of H is of dimension ≤1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

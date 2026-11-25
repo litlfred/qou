@@ -1,0 +1,471 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1103.2082v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/conj-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "conj-sec-002-01.md",
+      "narrative": null,
+      "content": "See [GPM10, GKT10] and references therein. On the algebra side of the picture the second author worked jointly with Geer and Patureau-Mirand to provide a ribbon categorical framework for modiﬁed trace and dimension functions and considered a number of examples coming from representation theory [GKP10]. They showed that these functions generalize well known results from representation theory as well as giving entirely new insights. For example, this point of view leads to a natural generalization of a conjecture by Kac and Wakimoto for complex Lie superalgebras. Recently Serganova proved the or",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1.1.",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-001-11.md",
+      "narrative": null,
+      "content": "deﬁnition of a category, Rep(St), which interpolates among the representations overF of the\nvarious symmetric groups [Del07]. Somewhat more precisely: when t is not a nonnegative\ninteger, the category Re p(St) is semisimple and when t is a nonnegative integer, then a\nnatural quotient of Re p(St) is equivalent to the category of representations over F of the\nsymmetric group on t letters.\nAxiomatizing Deligne’s construction, Knop gave a number of additional examples of in-\nterpolating categories, including representations of ﬁnite general linear groups and of wreath\nproducts [Kno06, Kno07]. More",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1.2.",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-12.md",
+      "narrative": null,
+      "content": "category. It is well understood that categories with a tensor and duality structure play an\nimportant role in low-dimensional topology. The basic idea is to start with some suitable\ncategory (called a ribbon category) which admits a tensor product and braiding isomorphisms\ncV,W :V⊗W→W⊗V.\nDate: August 30, 2021.\n2000 Mathematics Subject Classiﬁcation. Primary 18D10, 20C30.\nResearch of the second author was partially supported by NSF grant DMS-0734226 and NSA grant\nH98230-11-1-0127.\n1\narXiv:1103.2082v1  [math.RT]  10 Mar 2011\nfor all V and W in the category. One uses the category to create invari",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1.3.",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-13.md",
+      "narrative": null,
+      "content": "nontrivial ideal in Rep(St) always admits a modiﬁed trace. This is remarkable as all known\nexistence proofs and all previous examples of modiﬁed traces involve an abelian category.\nDeligne’s category, which is only abelian when t is not a nonnegative integer, provides the\nﬁrst example of a nonabelian ribbon category which admits modiﬁed traces.\nA second interesting outcome of our investigation is the following observation. In [GKP10]\nifC is a F -linear category and X is an object with EndC(X)/ Rad (EndC(X))∼=F , then X\nis called ambidextrous if the canonical map\nEndC(X)→ EndC(X)/ Rad (EndC(X))",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1.4.",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-004-14.md",
+      "narrative": null,
+      "content": "category to construct nontrivial topological invariants is when the category has a symmetric\nbraiding. That is,\ncW,V◦cV,W = IdV⊗W\nfor all objects V and W . Knot theoretically, this corresponds to over- and under-crossings\nbeing equal. Such categories yield only trivial topological invariants. Deligne’s category has\na symmetric braiding. This motivates the search for categories with nonsymmetric braiding\narising from Rep(St).\nIn Section 6.1 we deﬁne a graded variant of Deligne’s category, grRep(St)q, and prove that\nthere is a “degrading” functorF : grRep(St)q→ Rep(St). Using this functor we can",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1.5.",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-005-15.md",
+      "narrative": null,
+      "content": "Deligne’s construction naturally generalizes to a wide variety of settings within representation\ntheory. We expect that modiﬁed traces should exist for many of these other categories and it\nwould be interesting to investigate this question. Deligne’s category Re p(St) has a relatively\nelementary structure (for example, it has a single nontrivial tensor ideal) and we expect that\nstudying modiﬁed traces in these other settings will be signiﬁcantly more involved.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-006-16-acknowledgements.md",
+      "narrative": null,
+      "content": "This paper began during a fortuitous meeting of the authors at a workshop on Combinatorial Representation Theory in March 2010 at the Mathematics Forschungsinstitut Oberwolfach in Germany.  We are grateful to the staff of the Institute for an excellent working environment and to the organizers for arranging a stimulating workshop.  The majority of the work on this paper was done while the first author was enjoying a position at the Technische Universit\\\"at M\\\"unchen; he would like to thank the university for providing an excellent research environment.  The second author would also like to tha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ribbon Categories and Traces",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-007-2-ribbon-categories-and-traces.md",
+      "narrative": null,
+      "content": "\\label{S:ribboncategories}   The authors of \\cite{GKP} define modified trace functions for ideals in ribbon categories.  In this section we give a brief overview of this theory but refer the reader to the above paper for further details and proofs. \n\n\n\\subsection{Ribbon Categories}\\label{SS:ribboncats}  For notation and the general setup of ribbon categories our references are \\cite{Tu} and \\cite{Kas}.  A \\emph{tensor category} $\\cat$ is a category equipped with a covariant\nbifunctor \n\\[\n\\otimes :\\cat \\times \\cat\\rightarrow \\cat\n\\]\ncalled the tensor product, a unit object $\\unit$, an associati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Traces in Ribbon Categories",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-008-23-traces-in-ribbon-categories.md",
+      "narrative": null,
+      "content": "\\label{SS:traces} For any objects $V,W$ of $\\cat$ and $f \\in \\End_{\\cat}( V \\otimes W)$, set\n\\begin{equation}\\label{E:trL}\n\\tr_{L}(f)=(\\ev_{V}\\otimes \\Id_{W})(\\Id_{V^{*}}\\otimes\nf)(\\coev'_{V}\\otimes \\Id_{W}) \\in \\End_{\\cat}(W),\n\\end{equation} and\n\\begin{equation}\\label{E:trR}\n\\tr_{R}(f)=(\\Id_{V}\\otimes \\ev'_{W})  (f \\otimes \\Id_{W^{*}})\n(\\Id_{V}\\otimes \\coev _{W}) \\in \\End_{\\cat}(V).\n\\end{equation}\n\n\n\\begin{definition}\\label{D:trace}  If $\\ideal$ is an ideal in $\\cat$, then a \\emph{trace on $\\ideal$} is a family of linear functions\n$$\\mt = \\{\\mt_V:\\End_\\cat(V)\\rightarrow K\\}$$\nwhere $V$ runs o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tensor Ideals in a Ribbon Category",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-009-24-tensor-ideals-in-a-ribbon-category.md",
+      "narrative": null,
+      "content": "in [CO11, CO]. As we need both, we deﬁne it here and discuss the relationship with the\nearlier deﬁnition. To distinguish the two we call these tensor ideals. They are deﬁned via\nmorphisms as follows.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2.5.",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-010-25.md",
+      "narrative": null,
+      "content": "J(X,Y )⊆ HomC(X,Y )\nfor all pairs of objects X,Y inC subject to the following two conditions:\n(1) ghk∈I(X,W ) for each k∈ HomC(X,Y ), h∈J(Y,Z ), and g∈ HomC(Z,W ).\n(2) g⊗ IdZ∈J(X⊗Z,Y ⊗Z) for every object Z and every g∈J(X,Y ).\nTrivially, for every pair of objectsX andY one can take J(X,Y ) = 0 and obtain a tensor\nideal; similarly, for every pair of objects one can take J(X,Y ) = HomC(X,Y ). A tensor\nideal J is called proper if J(X,Y ) is a proper nonzero subspace of Hom C(X,Y ) for at least\none pair of objects X and Y inC.\n2.5. If I is an ideal ofC in the sense of Deﬁnition 2.1, then one can d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2.6.",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-011-26.md",
+      "narrative": null,
+      "content": "(1) If I is an ideal of C, thenI =I(J(I)).\n(2) If J is a tensor ideal of C, then J(I(J))⊆J. That is,\nJ(I(J))(X,Y )⊆J(X,Y )\nfor all pairs of objects X,Y .\n(3) The ideal I is the zero ideal if and only if J(I) is the zero tensor ideal.\n(4) The ideal I is the entire category C if and only if\nJ(I)(X,Y ) = HomC(X,Y )\nfor all pairs of objects X,Y inC.\n(5) If C has a unique proper tensor ideal, say J, andI is a proper ideal of C, thenI is\nthe unique proper ideal and I =I(J).\n2.6. A fundamental example of a tensor ideal is the so-called negligible morphisms. Namely,\nlet C be a ribbon category and call",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A trace on the ideal of negligibles in Rep(S0)",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-012-4-a-trace-on-the-ideal-of-negligibles-in-reps0.md",
+      "narrative": null,
+      "content": "\\label{0trace}\n\nWe first work out the easiest example when the category is  $\\uRep(S_0)$.  In this case everything can be computed explicitly.  \n\n\n\n\\subsection{Defining the Trace Function} \n\nConsider the indecomposable object $L(\\Box)$ in the category $\\uRep(S_0)$.  We will define a trace on the ideal $\\ideal_{L(\\Box)}$ by verifying by explicit computation that $L(\\Box)$ admits an ambidextrous trace.  \n\n In order to define such a trace, we study the endomorphisms of the object $L(\\Box)\\otimes L(\\Box)$.\nBy \\cite[Proposition 6.1]{CO1} we can identify $\\End(L(\\Box))$ with the partition algebra $F",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dimensions in the Non-Semisimple Block",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-013-42-dimensions-in-the-non-semisimple-block.md",
+      "narrative": null,
+      "content": "\\label{Dimsec}  By \\cite[Theorem 6.4]{CO1} the category $\\uRep(S_0)$ has a unique nontrivial block.  The indecomposables in this block can be described explicitly and are denoted by $L_n=L((1^n))$ for $n \\in \\Z_{\\geq 0}$.   In this section we compute the modified dimensions $\\md_{\\mt}\\left( L_n\\right)$ for all $n>0$.  \n\nRecall that any indecomposable object in $\\uRep(S_0)$ is of the form $([n], e)$ for some primitive idempotent $e\\in FP_n(0)$ (see \\cite[Proposition 2.20(2)]{CO1}).  Moreover, $A:=([n], e)$ is the direct summand of $B:=([n], \\id_n)=L(\\Box)\\otimes ([n-1], \\id_{n-1})$ where the in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A trace on the ideal of negligibles in Rep(St) when tZ0",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-014-5-a-trace-on-the-ideal-of-negligibles-in-repst-w.md",
+      "narrative": null,
+      "content": "We now consider the general case when $t$ is a nonnegative integer.  Let $\\mN$ be the tensor ideal of negligible morphisms and let $\\ideal = \\ideal (\\mN )$. Recall that by definition we call the objects of $\\ideal$ \\emph{negligible}.  In this section we show there exists a nonzero trace on $\\ideal$ in $\\uRep(S_t)$ when $t$ is a nonnegative integer.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notation",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-015-51-notation.md",
+      "narrative": null,
+      "content": "Given $\\sigma\\in S_n$ and $I\\subset\\{1,\\ldots, n\\}$, let $\\sigma_I$ denote the partition diagram obtained from the partition diagram for $\\sigma$ by removing all edges adjacent to top vertices labelled by elements of $I$.  Also, for $i\\in\\{1,\\ldots, n\\}$ we write $\\sigma_i=\\sigma_{\\{i\\}}$.\nFor example, if \n$$\\includegraphics{trace8.pdf}.$$\nGiven $n\\in\\mathbb{N}$, write $x_n=(1_{S_n})_n$ where $1_{S_n}$ is the identity permutation in $S_n$.\nFinally, let $S_n^-:=\\{\\sigma_i~|~\\sigma\\in S_n, 1\\leq i\\leq n\\}$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Object Mn",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-016-52-the-object-mn.md",
+      "narrative": null,
+      "content": "\\label{SS:Mndef}   Let $M_n:=([n], s_n)\\in\\uRep(S_t)$ where $s_n$ is as in Equation~\\ref{E:sndef}.  \n\n\\begin{proposition}\\label{decM} We have the following results about $M_{n}$.\n\\begin{enumerate}\n\\item $M_n= L((1^n))$ in $\\uRep(S_0)$ for all $n\\geq 0$.\n\\item $M_n=L((1^n))\\oplus L((1^{n-1}))$ in $\\uRep(S_t)$ for all $n>0$ whenever $t\\not=0$.\n\\end{enumerate}\n\\end{proposition}\n\n\\begin{proof} (1) This is \\cite[Proposition 6.1]{CO1}.\n\n(2)  Notice $\\Lift_t(M_n)=([n], s_n)$ for all $t\\in F$ (see \\cite[\\S3.2]{CO1}).  In particular, $\\Lift_t(M_n)=\\Lift_0(M_n)$ for all $t\\in F$.  Hence, by part (1) alo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An Ambidextrous Trace on Mn",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-017-53-an-ambidextrous-trace-on-mn.md",
+      "narrative": null,
+      "content": "\\label{SS:Mnambi}  Suppose $t\\in F$ and $n>0$.   By Corollary~\\ref{Mbasis}, to define a linear functional on $\\End_{\\uRep(S_t)}(M_n)$ it suffices to give the values of the linear functional on $s_n$ and $s_nx_ns_n$.  Let $\\mt_n$ be the following linear map:\n$$\\begin{array}{rcl}\n\\mt_n:\\End_{\\uRep(S_t)}(M_n)&\\to& F\\\\\ns_n & \\mapsto & 1\\\\\ns_nx_ns_n&\\mapsto&1\\\\\n\\end{array}$$ \nNotice that $\\mt_1$ is the ambidextrous trace on $M_1=L(\\Box)$ in $\\uRep(S_0)$ studied in section \\ref{0trace}.    \nIn this section we will show that $\\mt_n$ is an ambidextrous trace on $M_n$ in $\\uRep(S_t)$ for all $t\\in F$,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/prop-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "prop-sec-018-01.md",
+      "narrative": null,
+      "content": "Letq∈F\\{0}. Then there is a faithful functor F : grRep(St)q→ Rep(St). This functor is induced by the functor F0 : grRep0(St)q→ Rep0(St) given by setting F0([a,b ]) = [a +b] for all a,b∈ Z≥0. On morphisms, F0 is the identity; that is, for f∈ HomgrRep0(St)([a,b ], [c,d ])⊆FPa+b,c+d, we set F0(f) =f : [a +b]→ [c +d].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "6.1.",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-018-61.md",
+      "narrative": null,
+      "content": "as follows. The objects are all pairs [ a,b ] for all a,b ∈ Z≥0. We put a Z-grading on the\nobjects of the category by setting the degree of [ a,b ] to be a−b.\nThe morphisms are given by\nHomgrRep0(St) ([a,b ], [c,d ]) =\n{\nFPa+b,c+d, when a−b =c−d;\n0, else.\nThe composition of morphisms is given by the same vertical concatenation of diagrams rule\nas in the deﬁnition of Deligne’s category Re p0(St). By deﬁnition the morphisms preserve\nthe Z-grading.\nDeﬁne the tensor product on grRe p0(St) by\n[a,b ]⊗ [c,d ] = [a +c,b +d]\nand on morphisms by horizontal concatenation of diagrams just as in Deligne’s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/rem-sec-018-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "rem-sec-018-02.md",
+      "narrative": null,
+      "content": "It is straightforward to verify that F is a tensor functor (i.e. F(X⊗Y ) = F(X)⊗F (Y ) for all objects X and Y ,F(1) = 1, and preserves the associativity and unit constraints) and that it preserves duals (i.e.F(X∗) =F(X)∗ for all objects X and preserves the evaluation and coevaluation morphisms). IfV,W are homogeneous objects in grRep(St)q with V of degree r∈ Z and W of degree s∈ Z, then F(cV,W ) =qrscF (V ),F (W ), where cF (V ),F (W ) is the braiding in the category Re p(St). Similarly, F(θV ) =qr2 θF (V ), where θF (V ) is the twist in the category Re p(St). Thus the functorF preserves brai",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/rem-sec-018-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "rem-sec-018-04.md",
+      "narrative": null,
+      "content": "Fix a nonnegative integer n and ﬁx a,b ∈ Z≥0 such that a +b = n. Let sn ∈ FPn,n be as in Equation 4.5. Then Ma,b := ([a,b ],sn) is an object of grRe p(St)q andF(Ma,b) = Mn, the object of Re p(St) deﬁned in Section 5.2 and shown to admit an ambidextrous trace in Section 5.3. By the previous theorem, the object Ma,b in grRep(St)q admits an ambidextrous trace. In particular, say we ﬁx a,b so that a−b⁄= 0 and ﬁx q∈F not a root of unity 3. Then Ma,b is homogeneous of degree a−b and it is not diﬃcult to see that if K is an oriented framed knot, then the invariant obtained by labeling K by Ma,b is th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/thm-sec-018-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "thm-sec-018-03.md",
+      "narrative": null,
+      "content": "Let V be an object of grRep(St)q such that F(V ) admits an ambidextrous trace tF (V ) : EndRep(St)(F(V ))→F. Then the map t : EndgrRep(St)q(V )→F given by g↦→ tF (V )(F(g)) deﬁnes an ambidextrous trace on V .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1103.2082v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "references",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-019-references.md",
+      "narrative": null,
+      "content": "[BK01] Bojko Bakalov and Alexander Kirillov, Jr., Lectures on tensor categories and modular functors ,\nUniversity Lecture Series, vol. 21, American Mathematical Society, Providence, RI, 2001.\n[BKN] Brian D. Boe, Jonathan R. Kujawa, and Daniel K. Nakano, Complexity for modules over the\nclassical Lie superalgebra gl(m|n), in preparation.\n[CO] Jonathan Comes and Victor Ostrik, On Deligne’s category Repab(St), in preparation.\n[CO11] , On blocks of Deligne’s category Rep(St), Advances in Mathematics 226 (2011), no. 2,\n1331 – 1377.\n[CW] Jonathan Comes and Benjamin Wilson, Deligne’s category Rep(GLδ)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

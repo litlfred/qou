@@ -1,0 +1,462 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2603.12136v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Folding Mixed-Integer Linear Programs and\nReflection Symmetries\nRolf van der Hulst\nUniversity of Twente, Enschede, The Netherlands.\nAbstract\nFor mixed-integer linear programming and linear programming it is well known\nthat symmetries can have a negative impact on the performance of branch-\nand-bound and linear optimization algorithms. A common strategy to handle\nsymmetries in linear programs is to reduce the dimension of the linear program by\naggregating symmetric variables and solving a linear program of reduced dimen-\nsion. In their work Dimension Reduction via Color Refinement (DRCR), Grohe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "In many problems in mathematical optimization, symmetries arise naturally. For the representative MIPLIB 2017 collection [@Gleixner2021], at least 47% of the instances in the collection contains some permutation or reflection symmetry [@Hojny2025-si]. Symmetry can pose a serious challenge for (spatial) branch-and-cut algorithms in mixed-integer linear programming (MILP) and mixed-integer nonlinear programming (MINLP). If symmetries are not handled adequately, they may cause a branch-and-cut algorithm to repeatedly explore symmetric parts of the search space [@Margot2010]. In the worst case, al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Contribution",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-contribution.md",
+      "narrative": null,
+      "content": "We extend the DRCR procedure from [11] in several directions. First of all, we show\nthat DRCR for Linear Programs can be extended to reflection symmetries, which\narise from the action of signed permutation matrices on linear programs. Our main\nidea for realizing this uses two transformations. First, we reformulate the original\nLP by centering the origin at the center of the variable domains using an affine\ntransformation. Then, we split each variable into two variables, where one variable\ncorresponds to the positive domain and one variable corresponds to the negative\ndomain. We show that by ap",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outline",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-outline.md",
+      "narrative": null,
+      "content": "In Section 2 we introduce DRCR in further detail and define relevant notation.\nSection 3 extends DRCR to also handle reflection symmetries that arise from signed\npermutation matrices. In Section 4, we explore how DRCR can be extended and\nspecialized for mixed-integer linear programs. In Section 5, we formulate a DRCR\nalgorithm that detects reflection symmetries in MILP problems. Section 6 presents\ncomputational experiments on MIPLIB 2017.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dimension Reduction via Color Refinement",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-dimension-reduction-via-color-refinement.md",
+      "narrative": null,
+      "content": "[]{#sec_notation label=\"sec_notation\"}\n\nLet $V$ and $W$ be two disjoint finite sets. Throughout this work, we will index matrices with the sets $V$ and $W$ for the rows and columns, respectively, and denote any matrix $A$ indexed by $V$ and $W$ using $A\\in \\R^{V\\times W}$. Its elements are indexed using $A_{v,w}$ for $v\\in V$, $w\\in W$. For $P\\subseteq V$, $Q\\subseteq W$ we use $A_{P,Q}$ to denote the submatrix induced by $P$ and $Q$ that contains all elements $A_{v,w}$ for $(v,w) \\in P\\times Q$. For vectors, we use similar notation such as $b\\in \\R^V$ and $b_v$ for $v\\in V$ to denote the vect",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Equitable partitions and fractional automorphisms",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-equitable-partitions-and-fractional-automorphism.md",
+      "narrative": null,
+      "content": "First, we introduce equitable partitions of linear programs as presented in [@Grohe2014]. Given a matrix $A\\in \\R^{V\\times W}$, DRCR iteratively computes partitions $\\MP_i$ and $\\MQ_i$ of $V$ and $W$, the rows and columns of $A$. Let $\\MP_0 = \\{ V\\}$ and $\\MQ_0 = \\{ W\\}$. A partition $(\\MP,\\MQ)$ of the rows and columns of $A$ is said to be *equitable* if for all $P\\in \\MP,Q\\in\\MQ$ it holds that $$\\begin{aligned}\n    \\label{eq_folding_row_sums}\n    \\sum_{w\\in Q} A_{v,w} &= \\sum_{w\\in Q} A_{v',w}\\text{ for all } v,v'\\in P\\\\\n    \\label{eq_folding_col_sums}\n    \\sum_{v\\in P} A_{v,w} &= \\sum_{v\\in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dimension Reduction of a Linear Program",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-dimension-reduction-of-a-linear-program.md",
+      "narrative": null,
+      "content": "Throughout this work, we consider the following linear program in standard form.\n\n$$\\label{lp_orig_signed}\n    \\min \\,\\transpose{c} x \\text{  s.t. } A x = b,~\\ell \\leq x \\leq u  \\tag{$F(A,b,\\ell,u,c)$}$$ with $A\\in \\R^{V\\times W}$, $b\\in \\R^V$, $\\ell_w \\in \\R \\cup \\{-\\infty\\}$ and $u\\in \\R\\cup \\{\\infty\\}$ such that $\\ell_w \\leq u_w$ for all $w\\in W$. We use $F(A,b,\\ell,u,c)$ to denote the linear program, and we define its feasible region as $P(A,b,\\ell, u) \\coloneqq \\{ x\\in \\R^W \\mid A x = b, \\ell \\leq x \\leq u\\}$. For the linear program $F(A,b,\\ell, u, c)$ and a partition $\\MP$ of $V$ and a p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extending DRCR to reflection symmetries",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-extending-drcr-to-reflection-symmetries.md",
+      "narrative": null,
+      "content": "[]{#sec_reflection_symmetry label=\"sec_reflection_symmetry\"} As mentioned in the introduction, the DRCR algorithm presented in [@Grohe2014] only detects automorphisms that arise from permutation matrices, whereas the theory they formulate supports more general linear symmetries of the constraint matrix. In [@Bodi2013] it is shown that for linear programs the projection to the fixed space of the symmetry group works for any linear group, rather than just the symmetries arising from permutation matrices. The algorithm presented in [@Bodi2013] uses reflection symmetries generated by the signed pe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Centering the linear program",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-centering-the-linear-program.md",
+      "narrative": null,
+      "content": "Initially, we consider the linear program $F(A,b,\\ell,u,c)$. In order to detect reflection symmetries, we would like to center each variable at the center of its domain. This can be achieved using an affine transformation that offsets the variables.\n\n::: proposition\n[]{#thm_affine_equivalent label=\"thm_affine_equivalent\"} For any scalar $\\delta \\in \\R$, $x \\in P(A,b,\\ell,u)$ holds if and only if $x'\\coloneqq x - \\delta \\in P(A,b- A \\delta,\\ell - \\delta,u- \\delta)$ holds. Moreover, $\\transpose{c} x' = \\transpose{c} x - \\transpose{c} \\delta$ holds.\n:::\n\n::: proof\n*Proof.* It is sufficient to obs",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Split reformulations of linear programs",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-008-split-reformulations-of-linear-programs.md",
+      "narrative": null,
+      "content": "In both papers [@Hojny2025-si] and [@Christophel2014], the authors reduce the problem of finding reflection symmetries to finding permutation symmetries by adding both the original and the complemented variables to the auxiliary graph used for symmetry detection. For linear programs, a similar effect can be achieved by splitting each variable $x$ as $x=x^+ - x^-$, where $x^+$ represents the positive domain of $x$ and $x^-$ corresponds to the negative domain of $x$. We introduce the notion of a *split reformulation* to achieve such a reformulation.\n\n::: definition\n[]{#def_split_reform label=\"de",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Equitable partitions of split reformulations",
+      "pageStart": 16,
+      "pageEnd": 22,
+      "target": "../sections/sec-009-equitable-partitions-of-split-reformulations.md",
+      "narrative": null,
+      "content": "Throughout this section, we investigate the structure of equitable partitions of the split reformulation $F_S(A,b,\\ell,u,c)$ for an arbitrary linear program $F(A,b,\\ell,u,c)$ with $\\ell \\leq \\zerovec$ and $u\\geq \\zerovec$.\n\nRecall that for a split reformulation, its variable index sets $\\widehat{W} = \\widehat{W}^+ \\cup \\widehat{W}^-$ and $\\widehat{V} = \\widehat{V}^+ \\cup \\widehat{V}^-$ correspond to the original and negated variables and constraints, respectively. For $x\\in \\{-1,1\\}$, we will use the synonyms $\\widehat{V}^x\\coloneqq \\begin{cases}\n    \\widehat{V}^+ \\text{ if $x= 1$}\\\\\n    \\wide",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reducing the split reformulation",
+      "pageStart": 22,
+      "pageEnd": 28,
+      "target": "../sections/sec-010-reducing-the-split-reformulation.md",
+      "narrative": null,
+      "content": "Now that we have a good understanding of the equitable partitions of split reformulations, we can consider how they can be used to reduce their dimension. In this section, we consider a linear program $F(A,b,\\ell,u,c)$ and its split reformulation $F_S(A,b,\\ell,u,c)$. We apply [\\[thm_lp_folding\\]](#thm_lp_folding){reference-type=\"ref\" reference=\"thm_lp_folding\"} to the split reformulation using a symmetric equitable partition $(\\widehat{\\MP},\\widehat{\\MQ})$ to obtain a smaller linear program.\\\nTo clarify the effect of the symmetric equitable partition on $F_S(A,b,\\ell,u,c)$, we partition the ro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Choosing the affine offset",
+      "pageStart": 28,
+      "pageEnd": 32,
+      "target": "../sections/sec-011-choosing-the-affine-offset.md",
+      "narrative": null,
+      "content": "[]{#sec_choosing_affine_offset label=\"sec_choosing_affine_offset\"} In order to apply reflection reductions to arbitrary linear programs, we had to introduce the affine offset $\\delta$ to ensure that the lower bounds were nonpositive and the upper bounds were nonnegative. Given $\\delta$, the linear transformation that is represented by the $\\pm1$ scaling vectors $\\lambda$ and $\\gamma$ follows automatically from the symmetric equitable partition of the split reformulation. In this section, we argue how to choose $\\delta$. In previous work, Hojny [@Hojny2025-si] chooses $\\delta$ to be the center",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison with reflection symmetries",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "../sections/sec-012-comparison-with-reflection-symmetries.md",
+      "narrative": null,
+      "content": "Next, we will show that reflection reductions generalize reflection symmetries. First let us define reflection symmetries more formally. A *permutation matrix* $B$ is a square binary matrix with exactly one nonzero element with value $1$ in each row and column. It is well known that the inverse $B^{-1}$ is again a permutation matrix, which corresponds to the inverse permutation of the permutation given by $B$. A *signed permutation matrix* is a square $\\{-1,0,1\\}$-matrix with exactly one nonzero element in each row and column. Note that each signed permutation matrix $B$ can be decomposed as $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Detecting reflection reductions",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "../sections/sec-013-detecting-reflection-reductions.md",
+      "narrative": null,
+      "content": "[]{#sec_lp_algorithm label=\"sec_lp_algorithm\"} In order to detect reflection reductions, it suffices to compute symmetric equitable partitions of the split reformulation form by [\\[thm_refl_reduction\\]](#thm_refl_reduction){reference-type=\"ref\" reference=\"thm_refl_reduction\"}. Thus, we can directly reuse the algorithm formulated in [@Grohe2014], which relies on the fast color refinement algorithm by Paige and Tarjan [@Paige1987]. Since the split reformulation consists of four copies of the constraint matrix, we can detect symmetric equitable partitions, and thus reflection reductions, in ident",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dimension Reduction for Mixed-Integer Linear Programs",
+      "pageStart": 37,
+      "pageEnd": 44,
+      "target": "../sections/sec-014-dimension-reduction-for-mixed-integer-linear-pro.md",
+      "narrative": null,
+      "content": "[]{#sec_dimred_milp label=\"sec_dimred_milp\"}\n\nThroughout this section we consider a mixed-integer linear program given by a linear program $F(A,b,\\ell,u,c)$ with $A\\in\\R^{V\\times W}$, $b\\in \\R^V$, $\\ell, u, c \\in \\R^W$ and integer variables $W_I \\subseteq W$. For any partition $\\MQ$ of $W$ that is compatible with $W_I$, we use $\\MQ_I \\coloneqq \\{Q \\in \\MQ \\mid Q \\subseteq W_I\\}$ to denote the corresponding partition over the integer variables.\\\nLet us consider the effect of DRCR in context of mixed-integer linear programs. For the mixed-integer linear program given by $F(A,b,\\ell,u,c)$ and int",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Affine TU decompositions for mixed-integer linear programs",
+      "pageStart": 44,
+      "pageEnd": 45,
+      "target": "../sections/sec-015-affine-tu-decompositions-for-mixed-integer-linea.md",
+      "narrative": null,
+      "content": "We consider a mixed-integer linear program with variables $(x,y,z,\\omega) \\in \\Z^{W^1} \\times \\Z^{W^2} \\times \\R^{W^3} \\times \\M^{W^4_I}$, where $W^4_I\\subseteq W^4$ are the integer variables in $W^4$. We use $W_I = W^1 \\cup W^2 \\cup W^4_I$ to denote the integer variables and $W = W^1\\cup W^2 \\cup W^3 \\cup W^4$ to denote all variables. The linear relaxation of the integer program is of the form: $$\\begin{aligned}\n    P \\coloneqq \\{A x + B y + C z = b,~ D x + E y + F \\omega = g,~ \\ell \\leq \\transpose{\\begin{bmatrix}\n        x &\n        y &\n        z &\n        \\omega\n    \\end{bmatrix}} \\leq u \\}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example: Generalized Assignment problem",
+      "pageStart": 45,
+      "pageEnd": 48,
+      "target": "../sections/sec-016-example-generalized-assignment-problem.md",
+      "narrative": null,
+      "content": "[]{#sec_example label=\"sec_example\"} Consider the generalized assignment problem, where one computes an assignment of $J$ items with sizes $a_j, ~j\\in J$ to $I$ knapsacks with capacity $C_i$ such that we maximize the sum of profits $\\sum_{j\\in J} c_j$ such that the capacities on the knapsacks are not exceeded. This can be modeled as an integer program using the binary variables $x_{ij} = \\begin{cases}\n    1 &\\text{ if $j$ is packed into knapsack $i$}\\\\\n    0 &\\text{ otherwise}\n\\end{cases}$ for all $i\\in I, j\\in J$.\n\n$$\\label{eq_mk_orig}\n\\begin{align}\n\\max\\quad & \\sum_{i\\in I}\\sum_{j\\in J} c_j",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Detecting DRCR for mixed-integer linear programs",
+      "pageStart": 48,
+      "pageEnd": 55,
+      "target": "../sections/sec-017-detecting-drcr-for-mixed-integer-linear-programs.md",
+      "narrative": null,
+      "content": "[]{#sec_algorithm label=\"sec_algorithm\"} Next, let us formulate an algorithm to detect the reductions described in [\\[thm_milp_folding\\]](#thm_milp_folding){reference-type=\"ref\" reference=\"thm_milp_folding\"}. To achieve such a reduction, we need to balance two conditions: we would like the partition $\\MQ$ to be as coarse as possible, but [\\[thm_milp_folding_condition\\]](#thm_milp_folding_condition){reference-type=\"eqref\" reference=\"thm_milp_folding_condition\"} must also hold. These two objectives naturally conflict with each other, as a coarse partition of the integer variables requires us to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computational Results",
+      "pageStart": 55,
+      "pageEnd": 56,
+      "target": "../sections/sec-018-computational-results.md",
+      "narrative": null,
+      "content": "[]{#sec_results label=\"sec_results\"}\n\nIn order to validate the developed algorithms, we perform experiments on linear programming and mixed-integer linear programming problems.\n\nand the reflection reduction detection algorithm are implemented in C++ and are publicly available [@VanDerHulstFolding]. The implementation of  uses the network matrix augmentation algorithms described in [@RowNetworkMatrixPaper] and [@BixbyWagner1988] to recognize totally unimodular matrices, which are also publicly available [@VanDerHulstMatrec]. All experiments are run on a AMD Ryzen 2600 CPU with 16GB of memory. P",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Folding reflection symmetries for Linear Programs",
+      "pageStart": 56,
+      "pageEnd": 57,
+      "target": "../sections/sec-019-folding-reflection-symmetries-for-linear-program.md",
+      "narrative": null,
+      "content": "[]{#sec_lp_folding_results label=\"sec_lp_folding_results\"} As a baseline, we compare our dimension reduction algorithm against DRCR as described in [@Grohe2014]. The improved DRCR algorithm as presented [\\[sec_reflection_symmetry\\]](#sec_reflection_symmetry){reference-type=\"ref\" reference=\"sec_reflection_symmetry\"} is denoted by R-DRCR.\n\nWe use the linear programming relaxations of problems in the MIPLIB 2017 collection dataset [@Gleixner2021], which contains 1065 instances. We exclude the 10 largest instances due to memory requirements, and any instances with the (nonlinear) indicator constra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Folding symmetries in Mixed-Integer Linear Programming",
+      "pageStart": 57,
+      "pageEnd": 60,
+      "target": "../sections/sec-020-folding-symmetries-in-mixed-integer-linear-progr.md",
+      "narrative": null,
+      "content": "[]{#sec_milp_folding_results label=\"sec_milp_folding_results\"} Next, we evaluate the impact of [\\[algo_eos\\]](#algo_eos){reference-type=\"ref\" reference=\"algo_eos\"} on the solution of mixed-integer linear programs. As before, we consider the MIPLIB 2017 collection dataset [@Gleixner2021]. We exclude the 10 largest instances and any instances with indicator constraints.\n\nFor our experiments, we consider two configurations of [\\[algo_eos\\]](#algo_eos){reference-type=\"ref\" reference=\"algo_eos\"}. We use R-DRCR-N to indicate the version that detects network matrices, and R-DRCR-T to indicate the ver",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion",
+      "pageStart": 60,
+      "pageEnd": 69,
+      "target": "../sections/sec-021-discussion.md",
+      "narrative": null,
+      "content": "We will follow the structure of the paper, and first evaluate the extension to reflection symmetries for linear programming and then the extension to mixed-integer linear programs.\\\nIn [\\[sec_reflection_symmetry\\]](#sec_reflection_symmetry){reference-type=\"ref\" reference=\"sec_reflection_symmetry\"}, we extended DRCR to reflection symmetries of linear programs. There are several ways in which the current work can still be extended. First of all, we note that it is possible to extend the detection of reflection symmetries to not just use a primal affine offset $\\delta$ but to also introduce a *du",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2603.12136v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Experimental results",
+      "pageStart": 69,
+      "pageEnd": 70,
+      "target": "../sections/sec-022-experimental-results.md",
+      "narrative": null,
+      "content": "Table\nA1: Comparison of DRCR and R-DRCR on the linear relaxation of\nMIPLIB2017 instances.\nOriginal\nDRCR\nR-DRCR\ninstance\nrows\ncolumns\ntime\niters\nrows\ncolumns\ntime\niters\nrows\ncolumns\nacademictimetablebig\n146304\n154686\n155.04\n36162\n130415\n121047\n259.45\n38111\n121759\n111881\nacademictimetablesmall\n17258\n25550\n0.59\n2969\n13727\n9096\n0.88\n3030\n13442\n8845\nbab3\n22500\n393401\n1085.09\n353260\n22500\n393401\n1133.28\n350161\n22578\n393401\nbrazil3\n3876\n13002\n7.46\n24655\n3278\n5604\n3.25\n15098\n2842\n3642\nbts4-cta\n34301\n74259\n0.62\n5578\n34013\n74115\n0.63\n5579\n34013\n74115\ncryptanalysiskb128n5obj14\n68508\n33549\n11.53\n20225\n502",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-gluing-certification-mechanical-reach",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:gluing-certification-mechanical-reach",
+  "kind": "theorem",
+  "title": "The exact gluing verification is mechanical to degree 14 and 14 tetrahedra: neither predicted ceiling exists",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-gluing-equations-do-not-detect-hyperbolicity"
+  ],
+  "cites": [
+    "references/thurston1978",
+    "references/neumann-zagier1985"
+  ],
+  "tags": [
+    "hyperbolic-volume",
+    "gluing-equations",
+    "cusp-equations",
+    "ideal-triangulation",
+    "shape-field",
+    "codegen",
+    "certificates"
+  ],
+  "leanRef": "qou:BraidKnotOctonion.GeneratedCertifiedHigh.Cert10100.satisfiesEdgeEquations",
+  "text": "gluing-certification-mechanical-reach.md",
+  "provenance": "authored"
+}

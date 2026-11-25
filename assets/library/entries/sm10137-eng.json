@@ -1,0 +1,757 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "sm10137-eng",
+  "blocks": [
+    {
+      "id": "library/sm10137-eng/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§1 Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "For f ∈L∞(R+) ∩L1(R+) consider the Bessel kernel\nBf(x, y) =\nZ\nR+\nt√xyJν(xt)Jν(yt)f(t) dt,\n(1.1)\nwhere Jν is the Bessel function of order ν. Fix ν > −1. The kernel (1.1) induces\na bounded linear operator on L2(R+), which we will also denote by Bf. We let B1\nbe equal to the identity operator. We refer to Bf as the Bessel operator.\nFor any h ∈L∞(X) we also let h denote the operator of pointwise multiplication\nby this function in L2(X). Let χA(x) be the characteristic function of the subset A.\nIn this work we consider the Fredholm determinant det(I + χ[0,R]Bfχ[0,R]) for\nR > 0 and a sufficiently sm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sm10137-eng/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Sbornik: Mathematics\n215:12 1607–1632\nMatematicheski˘ı Sbornik\n215:12 30–55\nDOI: https://doi.org/10.4213/sm10137e\nRate of convergence in the central limit theorem\nfor the determinantal point process with Bessel kernel\nS. M. Gorbunov\nAbstract. We consider a family of linear operators diagonalized by the\nHankel transform.\nWe express explicitly the Fredholm determinants of\nthese operators, as restricted to L2[0, R], so that the rate of their conver-\ngence as R →∞can be found. We use the link between these determinants\nand the distribution of additive functionals in a determinantal point process\nw",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sm10137-eng/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§2 Statement of the result",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-statement-of-the-result.md",
+      "narrative": null,
+      "content": "For a function f ∈L1(R) ∩L∞(R) we define its Fourier transform by\nbf(λ) = 1\n2π\nZ\nR\ne−iλxf(x) dx.\nHere and below, if f is defined on R+, then we extend it to an even function.\nIn this case the Fourier transform coincides with the cosine transform. Recall that\nthe Sobolev p-seminorm of a function f on R+ is\n∥f∥2\n˙Hp =\nZ\nR+\n| bf(λ)|2|λ|2p dλ.\nFor an integer p we have ∥f∥˙Hp = (2π)−1/2∥f (p)∥L2(R+) by Parseval’s theorem. We\nset ∥f∥Hp = ∥f∥L2(R+)+∥f∥˙Hp and define the Sobolev space Hp(R+)={f ∈L2(R+):\n∥f∥Hp <+∞} to be a Banach space with the norm ∥· ∥Hp. The Sobolev space Hp(R)\non the real line is d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sm10137-eng/blocks/rem-sec-001-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "rem-sec-001-02.md",
+      "narrative": null,
+      "content": "Again, we mention the cases ν = ±1/2. Substituting Bb = Wb ∓Hb into the formula for QB R(b) we obtain QB R(b) = det(I ∓χ[R,∞)Heb−−b+χ[R,∞)). (2.3) We have used the following facts: We−b = We−b−We−b+, Web± = eWb± and Web−He−b+Web+ = Heb−−b+. (For the first two identities, see § 6. For the last one, see [5], § II.) Indeed, the expres- sion (2.3) for the remainder coincides with the one obtained by Basor, Ehrhardt and Widom in [5], formula (3).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "Let b ∈B. Then for any R > 0 det(χ[0,R]Bebχ[0,R]) = exp(RcB 1 (b) + cB 2 (b) + cB 3 (b))QB R(b), (2.1) where cB 1 (b) = bb(0), cB 2 (b) = −ν 2 b(0), cB 3 (b) = 1 Z R+ x(bb(x))2 dx and QB R(b) = det(χ[R,∞)Web−Be−bWeb+χ[R,∞)). There exists a positive constant C such that for any R ⩾1 and b ∈B the following estimate holds |QB R(b) −1| ⩽Ce4∥b+∥L∞ √ R L(b) exp \u0012Ce4∥b+∥L∞ √ R L(b) \u0013 , (2.2) where L(b) = (1 + ∥xb′(x)∥2 L∞+ ∥b∥2 ˙B)∥b∥˙B.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/thm-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "thm-sec-001-03.md",
+      "narrative": null,
+      "content": "Let b ∈B be a real-valued function, satisfying cB 3 (b) = 1/2. Then there exists a constant C = C(L(b), ∥b+∥L∞) providing the following estimate for the Kolmogorov–Smirnov distance for any R ⩾1 sup x |FR,b(x) −FN (x)| ⩽ C log R. (2.4)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/lem-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "lem-sec-002-03.md",
+      "narrative": null,
+      "content": "For b ∈H1(R+) ∩L1(R+) we have det(χ[0,R]Bebχ[0,R]) = exp(RcB 1 (b)) det(χ[0,R]We−b+BebWe−b−χ[0,R]). (3.4) By contrast to the proof of Theorem 3, it is not known if We−b+BebWe−b−−I is trace class, so the Jacobi–Dodgson identity cannot be applied directly. However, one can observe that equality (3.2) means that the ratio of the determinants in the left-hand side does not depend on R. In our case we can use an analogue of the Jacobi–Dodgson identity (Corollary 2) to show the independence of this ratio of R.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/lem-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "lem-sec-002-04.md",
+      "narrative": null,
+      "content": "Let b ∈H1(R+) ∩L1(R+), and let χ[R,∞)(Be−b −We−b)χ[R,∞) be a trace-class operator for each R > 0. Then there exists Z(b) such that for all R > 0 we have det(χ[0,R]We−b+BebWe−b−χ[0,R]) det(χ[R,∞)Web−Be−bWeb+χ[R,∞)) = Z(b). (3.5) Observe that the denominator in (3.5) equals QB R(b). The central step in the proof of Theorem 1 is as follows.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/lem-sec-002-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "lem-sec-002-05.md",
+      "narrative": null,
+      "content": "For b ∈L1(R+)∩L∞(R+) such that ∥b∥˙B < ∞and z ∈C the operator χ[R,∞)(Bb+z −Wb+z)χ[R,∞) is trace class for any R > 0. There exists a constant C such that for any R ⩾1, z ∈C and b satisfying the conditions above we have ∥χ[R,∞)(Bb+z −Wb+z)χ[R,∞)∥J1 ⩽ C √ R ∥b∥˙B. (3.6) The operator QB R(b) is related to the operator in Lemma 3 by formula (8.5) below. This allows us to obtain estimate (2.2). Further, the asymptotic for the numerator in (3.5) follows from Lemma 1 and an asymptotic result of Basor and Ehrhardt (see Theorem 6). This proves that Z(b) = exp(cB 2 (b) + cB 3 (b)). The rest of the paper",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§3 Structure of the paper",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-3-structure-of-the-paper.md",
+      "narrative": null,
+      "content": "First recall the result of Basor and Chen and the main steps of its proof.\nTheorem 3. For f ∈H1(R) ∩L1(R) we have\ndet(χ[0,R]Wef χ[0,R]) = exp(RcS\n1 (f) + cS\n2 (f))QS\nR(f),\nwhere\ncS\n1 (f) = bf(0),\ncS\n2 (f) = 1\n2\nZ\nR+\nx bf(x) bf(−x) dx\nand\nQS\nR(f) = det(χ[R,∞)Wef−We−f+We−f−Wef+χ[R,∞)).\nRemark 2. We state Theorem 3 under assumptions different from [2] to outline\nclearer the proof of Theorem 1.\nThe proof consists of three main steps.\nStep 1. The properties of Wiener–Hopf factorization give the following identity:\ndet(χ[0,R]Wef χ[0,R]) = exp(RcS\n1 (f)) det(χ[0,R]We−f+Wef We−f−χ[0,R]).\n(3.1)\nStep 2.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sm10137-eng/blocks/rem-sec-002-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "rem-sec-002-02.md",
+      "narrative": null,
+      "content": "We state Theorem 3 under assumptions different from [2] to outline clearer the proof of Theorem 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/thm-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "thm-sec-002-01.md",
+      "narrative": null,
+      "content": "For f ∈H1(R) ∩L1(R) we have det(χ[0,R]Wef χ[0,R]) = exp(RcS 1 (f) + cS 2 (f))QS R(f), where cS 1 (f) = bf(0), cS 2 (f) = 1 Z R+ x bf(x) bf(−x) dx and QS R(f) = det(χ[R,∞)Wef−We−f+We−f−Wef+χ[R,∞)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/def-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "def-sec-003-01.md",
+      "narrative": null,
+      "content": "The operator K on L2(E) is locally trace class if for each bounded measurable subset B of E the operator χBKχB is trace class. Let J loc (L2(E)) denote the space of locally trace-class operators. Recall that for K ∈J1 the Fredholm determinant det(I + K) is well defined, which is equal to a product, det(I + K) = Q λ∈σ(K)(1 + λ), by Lidskii’s theorem. It is continuous with respect to the trace norm. We also define the regularized determinant by det 2(I + K) = exp(−Tr(K)) det(I + K). It is continuous with respect to the Hilbert–Schmidt norm, so it can extended by continuity to all operators in J2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§4 Trace class and Hilbert–Schmidt operators",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-4-trace-class-and-hilbertschmidt-operators.md",
+      "narrative": null,
+      "content": "Here and below we denote the ideals of trace-class and Hilbert–Schmidt operators\nby J1 and J2, respectively. For more details of the theory, we refer the reader to [24]\nand [22]. We let E denote R or R+ = [0, ∞).\nDefinition 1. The operator K on L2(E) is locally trace class if for each bounded\nmeasurable subset B of E the operator χBKχB is trace class. Let J loc\n1\n(L2(E))\ndenote the space of locally trace-class operators.\nRecall that for K ∈J1 the Fredholm determinant det(I + K) is well defined,\nwhich is equal to a product, det(I + K) = Q\nλ∈σ(K)(1 + λ), by Lidskii’s theorem.\nIt is continuous wi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sm10137-eng/blocks/thm-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[22], Theorem 3.11.9",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "thm-sec-003-02.md",
+      "narrative": null,
+      "content": "Let K be a continuous kernel on [a, b]2 induc- ing a positive self-adjoint operator K on L2[a, b]. Then the operator K is trace class. In addition, for any trace-class K with continuous kernel we have Tr(K) = Z b a K(x, x) dx. (4.1) We refer to (4.1) as the calculation of the trace over the diagonal. Recall that the kernel of an integral operator is defined almost everywhere on [a, b]2. Thus, for an operator satisfying the assumptions of Theorem 4, for- mula (4.1) can fail to hold after we change the kernel on the diagonal, although the induced operator remains the same. This explains the assu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/thm-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[15], Theorem 2.2",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "thm-sec-003-03.md",
+      "narrative": null,
+      "content": "For A, B ∈B(H) such that [A, B] ∈J1 we have eAeBe−A−B −I ∈J1. For the Fredholm determinant we have ln det(eAeBe−A−B) = 1 2 Tr([A, B]). (4.3)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/def-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "def-sec-004-01.md",
+      "narrative": null,
+      "content": "A point process PK on Conf(E) is determinantal if there exists an operator K ∈J loc (L2(E)) satisfying the following condition: for any bounded measurable function f with compact support B = supp f EKΨ1+f = det(I + fKχB). (5.1) We consider the limit distribution of SR f = Sf(x/R) as R →∞for the determinan- tal point process with Bessel kernel PJν on R+ [26] induced by the operator Bχ[0,1].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/lem-sec-004-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "lem-sec-004-05.md",
+      "narrative": null,
+      "content": "We proceed differently by proving the equality between the extended determinants of I +fF−1χ[−π,π]F and I +fBχ[0,1] and the Fredholm determinants of I + χ[0,2π]Wfχ[0,2π] and I + χ[0,1]Bfχ[0,1], respectively. Note that by Theorem 4 we can take the kernel of Bχ[0,1] to be equal to (1.1), and the kernel of F−1χ[−π,π]F to be sin(π(x −y))/(π(x −y)). It is straightforward to see in both cases that the integrals over the diagonals of the kernels coincide. Now we show that the regularized determinants coincide. This is a consequence of unitary invariance. Recall that Bχ[0,1] is unitarily equivalent to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/prop-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "prop-sec-004-03.md",
+      "narrative": null,
+      "content": "For f ∈L1(E) ∩L∞(E) we have EJνΨR 1+f = det(I + χ[0,R]Bfχ[0,R]) (5.2) and ESΨR 1+f = det(I + χ[0,2πR]Wfχ[0,2πR]). (5.3) The Laplace transform of additive functionals is expressed in terms of multi- plicative functionals by the formula EeλSR b = EΨR eλb. By Proposition 1 it is equal to the Fredholm determinant det(χ[0,R]Beλbχ[0,R]) for PJν and to det(χ[0,2πR]Weλbχ[0,2πR]) for the sine process. To prove Proposition 1 we follow Bufetov (see [13], § 2.9). We extend the class of functions for which (5.1) holds. Let K be a Hilbert–Schmidt self-adjoint operator on L2(E). We choose its kernel K to coi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/prop-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "prop-sec-004-04.md",
+      "narrative": null,
+      "content": "If f ∈L1(E, dµΠ) ∩L∞(E, dµΠ), then Ψ1+f ∈L1(Conf(E), PΠ) and EΠΨ1+f = det(I + fΠ). (5.5) In other words, multiplicative functionals define a continuous mapping Ψ1+(−) : L∞(E, dµΠ) ∩L1(E, dµΠ) →L1(Conf(E), PΠ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§5 A link between the Bessel operator and the determinantal point process with Bessel kernel",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-5-a-link-between-the-bessel-operator-and-the-det.md",
+      "narrative": null,
+      "content": "and the determinantal point process with Bessel kernel\nLet E be R or R+ = [0, ∞). Recall that a configuration on E is a discrete subset\nof E. We denote the set of configurations by Conf(E). It can be endowed with\na σ-algebra of measurable subsets X (for instance, see [25]). A point process P is\ndefined to be a probability measure on (Conf(E), X).\nFor a measurable function f : E →C we define two measurable functions on\nconfigurations by the following formulae:\nSf(X) =\nX\nx∈X\nf(x)\nand\nΨ1+f(X) =\nY\nx∈X\n(1 + f(x));\nthey are called additive and multiplicative functionals, respectively.\nDefinition 2.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sm10137-eng/blocks/thm-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "thm-sec-004-02.md",
+      "narrative": null,
+      "content": "describes the limit under consideration for the sine process PS on R induced by the operator F−1χ[−π,π]F on L2(R). To be precise, we formulate the following statement.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/lem-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "[3], Proposition 5.2",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "lem-sec-005-01.md",
+      "narrative": null,
+      "content": "Let a be a function on R such that ∥a∥H1/2 + ∥ba∥L1 < ∞. Then F−1aF is an integral operator on L2(R) with kernel k(x, y) = ba(x −y).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/prop-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "prop-sec-005-02.md",
+      "narrative": null,
+      "content": "1. The map W H± 1 (R) : f 7→Wf defines Banach algebra homo- morphisms H± 1 (R) ⊕C →B(L2(R+)). 2. For b± ∈H± 1 (R) ⊕C we have χ[0,R]Wb+ = χ[0,R]Wb+χ[0,R], Wb+χ[R,∞) = χ[R,∞)Wb+χ[R,∞), Wb−χ[0,R] = χ[0,R]Wb−χ[0,R], χ[R,∞)Wb−= χ[R,∞)Wb−χ[R,∞). 3. For b± ∈H± 1 (R) ⊕C we have Wb−Wb+ = Wb−b+ . In particular, Web± = exp(Wb±) and Web = exp(Wb−) exp(Wb+).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§6 Wiener–Hopf factorization on $H_1(\\mathbb{R})$",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-6-wienerhopf-factorization-on-h-1mathbbr.md",
+      "narrative": null,
+      "content": "Recall that the Wiener–Hopf operator as a map W: f 7→Wf, L∞(R) →\nB(L2(R+)) is not a Banach algebra homomorphism. But it can be restricted to\nsome subalgebras on which it preserves multiplication.\nRecall that H1(R) is a Banach algebra. The spaces\nH±\n1 (R) = {f ∈H1(R): supp bf ⊂R±}\nare Banach subalgebras since supp( bf ∗bg) ⊂supp bf + supp bg. The operators P± =\nF−1χR±F map H1(R) into itself and P±H1(R) = H±\n1 (R). Then W, as restricted\nto H±\n1 (R), is a Banach algebra homomorphism. As before, we consider H1(R+) to\nbe embedded in H1(R) by an even continuation, which defines a decomposition for\nf",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sm10137-eng/blocks/cor-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 20,
+      "target": "cor-sec-006-03.md",
+      "narrative": null,
+      "content": "There exists a constant C such that for any kernel K of an integral operator on L2(R+) with the estimates |K(x, y)| ⩽ A (x + y)2 and |∂yK(x, y)| ⩽ A (x + y)2 , x, y > 0, for some constant A, for any R > 0 we have ∥χ[R,∞)Kχ[R,∞)∥J1 ⩽AC \u0012 1 R + √ R \u0013 . (7.4)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/lem-sec-006-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 20,
+      "target": "lem-sec-006-05.md",
+      "narrative": null,
+      "content": "There exists a constant C such that for any a ∈L1(R+) ∩L∞(R+) satisfying ∥a∥˙B < ∞we have (1) ∥a′′∥L1 ⩽C(∥a∥˙H1 + ∥a∥˙H2 + ∥ta(t)∥˙H2); (2) ∥ta′′′(t)∥L1 ⩽C(∥a∥˙H3 + ∥a∥˙H1 + ∥ta(t)∥˙H2 + ∥t2a(t)∥˙H3); (3) limt→+∞a(t) = 0, limt→+∞a′(t) = 0 and limt→+∞ta′′(t) = 0; (4) |a′(0)| ⩽∥a∥˙H1 + ∥a∥˙H2 . In particular, the above estimates are bounded by C∥a∥˙B.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 20,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "Let K be an integral operator on L2[R, ∞) with kernel K(x, y) = Z R+ a(t)h1(x, t)h2(y, t) dt, where h1, h2 and a are some measurable functions. Then the estimate ∥K∥J1 ⩽ Z ∞ |a(t)| \u0012Z ∞ R |h1(x, t)|2 dx \u00131/2\u0012Z ∞ R |h2(y, t)|2 dy \u00131/2 dt (7.1) holds, provided that the right-hand side is finite.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/prop-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 20,
+      "target": "prop-sec-006-02.md",
+      "narrative": null,
+      "content": "Let the kernel K(x, y) of an integral operator K be absolutely con- tinuous with respect to y on [a, b]. Assume that K = Kχ[a,b]. Consider the operator ∂yK with kernel ∂K(x, y)/∂y and assume that ∂yK ∈J2. Then ∥K∥J1 ⩽∥K∥+ (b −a) √ ∥∂yK∥J2. (7.3)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/prop-sec-006-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[3], Lemma 2.6",
+      "pageStart": 12,
+      "pageEnd": 20,
+      "target": "prop-sec-006-04.md",
+      "narrative": null,
+      "content": "We have Z ∞ \u0012 J(xt)J(yt) −2 π cos(xt −ϕν) cos(yt −ϕν) \u0013 dt = −sin(2ϕν) π(x + y). (7.9) Lastly, we establish some properties of the function spaces we have introduced.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§7 Proof of Lemma 3",
+      "pageStart": 12,
+      "pageEnd": 20,
+      "target": "../sections/sec-006-7-proof-of-lemma-3.md",
+      "narrative": null,
+      "content": "In this section we establish Lemma 3. Our calculations follow Basor and Ehrhardt\n(see [3], Lemmas 2.6–2.8). The section is structured as follows. In Propositions 4\nand 5 and Corollary 1 we establish estimates for the trace norms of integral opera-\ntors with kernels of certain form. Then we recall the necessary properties of Bessel\nfunctions and their derivatives. We end the preparations to the proof by Lemma 5,\nestablishing some properties of the function spaces in question. The rest of the\nsection is devoted to the proof of Lemma 3 itself.\nProposition 4. Let K be an integral operator on L2[R,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sm10137-eng/blocks/cor-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 25,
+      "target": "cor-sec-007-02.md",
+      "narrative": null,
+      "content": "Let P1 and P2 be two commuting orthogonal projections in a sepa- rable Hilbert space H. Let Qi = I −Pi, i = 1, 2. Then det(P1AP1) det(Q1A−1Q1) = det(P2AP2) det(Q2A−1Q2), (8.2) if A is invertible, A −I ∈J2(H) and all Fredholm determinants are well defined.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/cor-sec-007-07",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 25,
+      "target": "cor-sec-007-07.md",
+      "narrative": null,
+      "content": "we also have Q1 = χ[R1,∞) and Q2 = χ[R2,∞). Using the second and third assertions of Proposition 3 we can write QiA−1Qi = χ[Ri,∞) + χ[Ri,∞)Web−χ[Ri,∞)Re−bχ[Ri,∞)Web+χ[Ri,∞), (8.5) where Rb = Bb−Wb. Hence by the assumptions and since Re−b is Hilbert–Schmidt, we can apply Corollary 2 to obtain det(χ[0,R1]We−b+BebWe−b−χ[0,R1]) det(χ[R1,∞)Web−Be−bWeb+χ[R1,∞)) = det(χ[0,R2]We−b+BebWe−b−χ[0,R2]) det(χ[R2,∞)Web−Be−bWeb+χ[R2,∞)) = Z(b), (8.6) where all Fredholm determinants are well defined.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/lem-sec-007-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "see [3], Lemmas 3.1 and 3.2",
+      "pageStart": 20,
+      "pageEnd": 25,
+      "target": "lem-sec-007-06.md",
+      "narrative": null,
+      "content": "For b ∈H1(R+) ∩L1(R+) the operators χ[0,1]Bb and χ[0,1]Wb are Hilbert–Schmidt.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/lem-sec-007-09",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 25,
+      "target": "lem-sec-007-09.md",
+      "narrative": null,
+      "content": "Let b ∈B. Then eb −1 ∈L1 ∩L∞. There exists a constant C such that for any b ∈B we have ∥eb∥˙B ⩽C exp(∥b∥L∞)(1 + ∥xb′(x)∥2 L∞+ ∥b∥2 ˙B)∥b∥˙B.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/lem-sec-007-10",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 25,
+      "target": "lem-sec-007-10.md",
+      "narrative": null,
+      "content": "There exists a constant C such that for any b ∈B we have",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[23], Proposition 6.2.9",
+      "pageStart": 20,
+      "pageEnd": 25,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "Let A be an invertible operator on a sep- arable Hilbert space H and A −I ∈J1(H). Let P be an orthogonal projection in H and Q = I −P . Then det(PAP) = det(A) det(QA−1Q). (8.1) We use the following variation of this identity.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/prop-sec-007-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 25,
+      "target": "prop-sec-007-04.md",
+      "narrative": null,
+      "content": "we have det(RnP1AP1Rn) det(Q1(RnARn)−1Q1) = det(RnP2AP2Rn) det(Q2(RnARn)−1Q2) = det(RnARn). (8.3) It remains to show that (RnARn)−1 −RnA−1Rn J1(H) −−−−→0 as n →∞. For the above difference we have (Rn + RnKRn)−1 −Rn(I + K)−1Rn = (RnKRn)2(Rn + RnKRn)−1 −RnK2(I + K)−1Rn, where (Rn + RnKRn)−1 →(I + K)−1 and Rn →I strongly, and (RnKRn)2 →K and RnK2 →K2 in the trace norm since K ∈J2(H). Therefore, we have lim n→∞det(Qi(RnARn)−1Qi) = lim n→∞det(RnQiA−1QiRn) = det(QiA−1Qi). Equality (8.2) follows by taking limits in (8.3) as n →∞. The corollary is proved. Let us extend the definition (1.1) to all func",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§8 Proof of Theorems 1 and 2",
+      "pageStart": 20,
+      "pageEnd": 25,
+      "target": "../sections/sec-007-8-proof-of-theorems-1-and-2.md",
+      "narrative": null,
+      "content": "Recall the Jacobi–Dodgson identity.\nProposition 7 ([23], Proposition 6.2.9). Let A be an invertible operator on a sep-\narable Hilbert space H and A −I ∈J1(H). Let P be an orthogonal projection in H\nand Q = I −P . Then\ndet(PAP) = det(A) det(QA−1Q).\n(8.1)\nWe use the following variation of this identity.\nCorollary 2. Let P1 and P2 be two commuting orthogonal projections in a sepa-\nrable Hilbert space H. Let Qi = I −Pi, i = 1, 2. Then\ndet(P1AP1)\ndet(Q1A−1Q1) =\ndet(P2AP2)\ndet(Q2A−1Q2),\n(8.2)\nif A is invertible, A −I ∈J2(H) and all Fredholm determinants are well defined.\nRemark 3. It is not required",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/sm10137-eng/blocks/rem-sec-007-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 25,
+      "target": "rem-sec-007-03.md",
+      "narrative": null,
+      "content": "It is not required that A −I ∈J1(H) in this statement.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/thm-sec-007-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 25,
+      "target": "thm-sec-007-05.md",
+      "narrative": null,
+      "content": "The following statement, completing the argument, can be verified directly.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/thm-sec-007-08",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[3], Theorem 1.1",
+      "pageStart": 20,
+      "pageEnd": 25,
+      "target": "thm-sec-007-08.md",
+      "narrative": null,
+      "content": "Suppose the function b ∈L1(R+) ∩L∞(R+) sat- isfies the following conditions: • b is continuous and piecewise C2-smooth on [0, ∞); • limt→∞b(t) = 0; • (1 + t)−1/2b′(t) ∈L1(R+), b′′(t) ∈L1(R+). Then the following asymptotic formula holds as R →∞: det(χ[0,R]Bebχ[0,R]) = exp(RcB 1 (b) + cB 2 (b) + cB 3 (b))QB R(b), QB R(b) →1, (8.7) where the cB i (b) are as in Theorem 1. By Lemma 5 the functions in B satisfy the assumptions of Theorem 5. The following lemma shows that for each b ∈B the function e−b satisfies the assumption of Lemma 3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/sm10137-eng/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bibliography",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-008-bibliography.md",
+      "narrative": null,
+      "content": "[1] Zhigang Bao and Yukun He, Quantitative CLT for linear eigenvalue statistics of\nWigner matrices, arXiv: 2103.05402.\n[2] E. L. Basor and Yang Chen, “A note on Wiener–Hopf determinants and the\nBorodin–Okounkov identity”, Integral Equations Operator Theory 45:3 (2003),\n301–308.\n[3] E. L. Basor and T. Ehrhardt, “Asymptotics of determinants of Bessel operators”,\nComm. Math. Phys. 234:3 (2003), 491–516.\n[4] E. L. Basor and T. Ehrhardt, Determinant computations for some classes of\nToeplitz–Hankel matrices, arXiv: 0804.3073.\n[5] E. L. Basor, T. Ehrhardt and H. Widom, On the determinant of a certain",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

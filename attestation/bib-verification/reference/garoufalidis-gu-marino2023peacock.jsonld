@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/attestation/bib-verification/reference/garoufalidis-gu-marino2023peacock.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/attestation/bib-verification/reference/garoufalidis-gu-marino2023peacock",
+      "@type": "https://litlfred.github.io/cat-harness/v0/ns/QaAttestation",
+      "title": "bib-verification attestation: reference garoufalidis-gu-marino2023peacock",
+      "description": "The bib-verification judgements recorded for reference garoufalidis-gu-marino2023peacock, each pinned to the hash it attested.",
+      "sourceKind": "bib-verification",
+      "sourcePath": "test/attestations/bib-verification/reference/garoufalidis-gu-marino2023peacock.attestations.json",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/attestations"
+    }
+  ]
+}

@@ -1,0 +1,2532 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1507.03238v3",
+  "title": "arxiv-1507.03238v3",
+  "variant": "pdf",
+  "pages": 26,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Motivation: Thurston's gluing equations",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-motivation-thurstons-gluing-equations"
+    },
+    {
+      "level": 2,
+      "title": "Decorated representations",
+      "number": "1.2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-decorated-representations"
+    },
+    {
+      "level": 2,
+      "title": "Ptolemy varieties in brief",
+      "number": "1.3",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-ptolemy-varieties-in-brief"
+    },
+    {
+      "level": 2,
+      "title": "Statement of results",
+      "number": "1.4",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-statement-of-results"
+    },
+    {
+      "level": 2,
+      "title": "Definition and computation of the refined Ptolemy varieties - an overview",
+      "number": "1.5",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-15-definition-and-computation-of-the-refined-pto"
+    },
+    {
+      "level": 1,
+      "title": "Ptolemy coordinates, decorations and cocycles",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-2-ptolemy-coordinates-decorations-and-cocycles"
+    },
+    {
+      "level": 2,
+      "title": "Ptolemy assignments",
+      "number": "2.1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-21-ptolemy-assignments"
+    },
+    {
+      "level": 2,
+      "title": "Decorations",
+      "number": "2.2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-22-decorations"
+    },
+    {
+      "level": 2,
+      "title": "Natural cocycles",
+      "number": "2.3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-23-natural-cocycles"
+    },
+    {
+      "level": 2,
+      "title": "The diagonal action",
+      "number": "2.4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-24-the-diagonal-action"
+    },
+    {
+      "level": 2,
+      "title": "The fundamental correspondence",
+      "number": "2.5",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-25-the-fundamental-correspondence"
+    },
+    {
+      "level": 1,
+      "title": "Other variants of the Ptolemy variety",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-3-other-variants-of-the-ptolemy-variety"
+    },
+    {
+      "level": 2,
+      "title": "Ptolemy coordinates for `39`42`\"613A``45`47`\"603APSL(2,C)-representations",
+      "number": "3.1",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Non-boundary-unipotent representations",
+      "number": "3.2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-32-non-boundary-unipotent-representations"
+    },
+    {
+      "level": 1,
+      "title": "Generalization of the fundamental correspondence",
+      "number": "4",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-4-generalization-of-the-fundamental-corresponden"
+    },
+    {
+      "level": 2,
+      "title": "Cocycles, and the action by coboundaries",
+      "number": "4.1",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-41-cocycles-and-the-action-by-coboundaries"
+    },
+    {
+      "level": 2,
+      "title": "Bruhat cocycles",
+      "number": "4.2",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-42-bruhat-cocycles"
+    },
+    {
+      "level": 2,
+      "title": "`39`42`\"613A``45`47`\"603APSL(2,C)-representations",
+      "number": "4.3",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Non-boundary-unipotent representations",
+      "number": "4.4",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-44-non-boundary-unipotent-representations"
+    },
+    {
+      "level": 1,
+      "title": "The edge relations",
+      "number": "5",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-5-the-edge-relations"
+    },
+    {
+      "level": 2,
+      "title": "Edge relations for `39`42`\"613A``45`47`\"603APSL(2,C) Ptolemy assignments",
+      "number": "5.1",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Edge relations for enhanced Ptolemy assignments",
+      "number": "5.2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-52-edge-relations-for-enhanced-ptolemy-assignmen"
+    },
+    {
+      "level": 1,
+      "title": "Transitive edge sets and degeneracy types",
+      "number": "6",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-6-transitive-edge-sets-and-degeneracy-types"
+    },
+    {
+      "level": 2,
+      "title": "Decorations, Ptolemy assignments and Bruhat cocycles",
+      "number": "6.1",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-61-decorations-ptolemy-assignments-and-bruhat-co"
+    },
+    {
+      "level": 2,
+      "title": "The totally degenerate edge set",
+      "number": "6.2",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-62-the-totally-degenerate-edge-set"
+    },
+    {
+      "level": 1,
+      "title": "The Ptolemy variety of a transitive edge set",
+      "number": "7",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-7-the-ptolemy-variety-of-a-transitive-edge-set"
+    },
+    {
+      "level": 2,
+      "title": "Edge-degenerate edge sets",
+      "number": "7.1",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-71-edge-degenerate-edge-sets"
+    },
+    {
+      "level": 2,
+      "title": "Embeddings in affine space",
+      "number": "7.2",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-72-embeddings-in-affine-space"
+    },
+    {
+      "level": 2,
+      "title": "Face-degenerate edge sets",
+      "number": "7.3",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-73-face-degenerate-edge-sets"
+    },
+    {
+      "level": 2,
+      "title": "Simplex-degenerate edge sets",
+      "number": "7.4",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-74-simplex-degenerate-edge-sets"
+    },
+    {
+      "level": 1,
+      "title": "The invariant Ptolemy varieties",
+      "number": "8",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-8-the-invariant-ptolemy-varieties"
+    },
+    {
+      "level": 2,
+      "title": "Affine coverings",
+      "number": "8.1",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-81-affine-coverings"
+    },
+    {
+      "level": 1,
+      "title": "The reduced Ptolemy varieties",
+      "number": "9",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-9-the-reduced-ptolemy-varieties"
+    },
+    {
+      "level": 1,
+      "title": "Summary of the proofs of main results",
+      "number": "10",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-10-summary-of-the-proofs-of-main-results"
+    },
+    {
+      "level": 1,
+      "title": "Examples",
+      "number": "11",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-11-examples"
+    },
+    {
+      "level": 2,
+      "title": "The Ptolemy variety P(T)",
+      "number": "11.1",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-111-the-ptolemy-variety-pt"
+    },
+    {
+      "level": 2,
+      "title": "The Ptolemy varieties P(T)",
+      "number": "11.2",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-112-the-ptolemy-varieties-pt"
+    },
+    {
+      "level": 2,
+      "title": "The Ptolemy variety EP(T) and the A-polynomial",
+      "number": "11.3",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-113-the-ptolemy-variety-ept-and-the-a-polynomial"
+    },
+    {
+      "level": 2,
+      "title": "Recovering the representations",
+      "number": "11.4",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-114-recovering-the-representations"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgment",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-acknowledgment"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 143,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptolemy variety",
+          "heading": false
+        },
+        {
+          "term": "equation variety",
+          "heading": false
+        },
+        {
+          "term": "boundary-unipotent",
+          "heading": false
+        },
+        {
+          "term": "gluing equation",
+          "heading": false
+        }
+      ],
+      "extract": "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES MATTHIAS GOERNER AND CHRISTIAN K. ZICKERT Abstract. The Ptolemy variety for SL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M. It is closely related to Thurston’s gluing equation variety. The Ptolemy variety maps naturally to the set of conjugacy classes of boundary-unipotent SL(2, C)- representations, but (like the gluing equation",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1507.03238v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 242,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boundary-unipotent mathop",
+          "heading": false
+        },
+        {
+          "term": "ptolemy variety",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "ptolemy coordinates",
+          "heading": false
+        },
+        {
+          "term": "mathrm psl",
+          "heading": false
+        },
+        {
+          "term": "define refined",
+          "heading": false
+        },
+        {
+          "term": "garoufalidisthurstonzickert",
+          "heading": false
+        }
+      ],
+      "extract": "The Ptolemy variety $P_n(\\mathcal T)$ of a topological ideal triangulation $\\mathcal T$ of a compact $3$-manifold $M$ was defined by Garoufalidis, Thurston and Zickert [@GaroufalidisThurstonZickert]. It gives coordinates (called Ptolemy coordinates) for boundary-unipotent $\\mathop{\\mathrm{SL}}(n,\\mathbb C)$-representations of $\\pi_1(M)$ in the sense that each point in $P_n(\\mathcal T)$ determines a representation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-motivation-thurstons-gluing-equations",
+      "number": "1.1",
+      "title": "Motivation: Thurston's gluing equations",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 297,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "thurston gluing",
+          "heading": true
+        },
+        {
+          "term": "gluing equations",
+          "heading": true
+        },
+        {
+          "term": "generalized variety",
+          "heading": false
+        },
+        {
+          "term": "generalized dihedral",
+          "heading": false
+        },
+        {
+          "term": "segerman",
+          "heading": false
+        },
+        {
+          "term": "dihedral group",
+          "heading": false
+        },
+        {
+          "term": "irreducible representations",
+          "heading": false
+        }
+      ],
+      "extract": "In his famous notes Thurston [@ThurstonNotes] wrote down a system of polynomial equations (called *gluing equations*) for a compact 3-manifold $M$ with a topological ideal triangulation. The system consists of a variable (called a *shape*) $z_i$ for each simplex, and an equation for each edge. The set of solutions with $z_i\\in\\mathbb CP^1\\setminus\\{0,1,\\infty\\}$ is called the *gluing equation variety*, and each",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-decorated-representations",
+      "number": "1.2",
+      "title": "Decorated representations",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 201,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "decorated",
+          "heading": true
+        },
+        {
+          "term": "decorations",
+          "heading": false
+        },
+        {
+          "term": "mathrm psl",
+          "heading": false
+        },
+        {
+          "term": "thurston gluing",
+          "heading": false
+        },
+        {
+          "term": "gluing equations",
+          "heading": false
+        },
+        {
+          "term": "boundary-borel",
+          "heading": false
+        },
+        {
+          "term": "rho",
+          "heading": false
+        }
+      ],
+      "extract": "A convenient language for studying both the gluing equation variety and the Ptolemy variety is that of *decorated representations* (see [@ZickertDuke; @GaroufalidisThurstonZickert]). We give a brief overview assuming for simplicity that $M$ has a single torus boundary component (the general case and precise definitions are recalled in Section [\\[sec:Decorations\\]](#sec:Decorations){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-ptolemy-varieties-in-brief",
+      "number": "1.3",
+      "title": "Ptolemy varieties in brief",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 257,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptolemy",
+          "heading": true
+        },
+        {
+          "term": "boundary-unipotent mathop",
+          "heading": false
+        },
+        {
+          "term": "ptolemy variety",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "enhancedpslexample",
+          "heading": false
+        },
+        {
+          "term": "othervariants",
+          "heading": false
+        },
+        {
+          "term": "mathrm red",
+          "heading": false
+        },
+        {
+          "term": "ptdeccocreview",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:PtolemyBrief label=\"sec:PtolemyBrief\"} The Ptolemy variety $P(\\mathcal T)$ is given by a *Ptolemy coordinate* for each edge and a *Ptolemy relation* for each simplex, and consists of the set of solutions where each coordinate is nonzero (see Section [\\[sec:PtDecCocReview\\]](#sec:PtDecCocReview){reference-type=\"ref\" reference=\"sec:PtDecCocReview\"} for a more detailed review). Just like the gluing equation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-statement-of-results",
+      "number": "1.4",
+      "title": "Statement of results",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 592,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boundary-nondegenerate representations",
+          "heading": false
+        },
+        {
+          "term": "txt boundary-unipotent",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "decorated boundary-unipotent",
+          "heading": false
+        },
+        {
+          "term": "big mathop",
+          "heading": false
+        },
+        {
+          "term": "mainresult",
+          "heading": false
+        },
+        {
+          "term": "mathrm conj",
+          "heading": false
+        },
+        {
+          "term": "totallydegenerate",
+          "heading": false
+        }
+      ],
+      "extract": "We briefly state our main results about the triangulation independent Ptolemy varieties. A summary of their definition is given in Section [\\[sec:Algorithm\\]](#sec:Algorithm){reference-type=\"ref\" reference=\"sec:Algorithm\"}, and explicit computations are given in Section [\\[sec:Examples\\]](#sec:Examples){reference-type=\"ref\" reference=\"sec:Examples\"}. Let $M$ be a compact, orientable $3$-manifold with non-empty",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-15-definition-and-computation-of-the-refined-pto",
+      "number": "1.5",
+      "title": "Definition and computation of the refined Ptolemy varieties - an overview",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 666,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptolemy",
+          "heading": true
+        },
+        {
+          "term": "transitive edge",
+          "heading": false
+        },
+        {
+          "term": "degenerate face",
+          "heading": false
+        },
+        {
+          "term": "ptolemy variety",
+          "heading": false
+        },
+        {
+          "term": "degenerate simplex",
+          "heading": false
+        },
+        {
+          "term": "invariantptolemy",
+          "heading": false
+        },
+        {
+          "term": "triangulation mathcal",
+          "heading": false
+        },
+        {
+          "term": "ptolemy coordinates",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:Algorithm label=\"sec:Algorithm\"} We consider only $\\overline P(\\mathcal T)$ here. The modified variants are defined and computed in a similar way. As mentioned earlier, a decorated representation defines Ptolemy coordinates, and thus gives rise to a distinguished set of edges, namely those having Ptolemy coordinate zero. The idea is to consider all possible such sets. It turns out that they have to satisfy a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-2-ptolemy-coordinates-decorations-and-cocycles",
+      "number": "2",
+      "title": "Ptolemy coordinates, decorations and cocycles",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 93,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptdeccocreview",
+          "heading": false
+        },
+        {
+          "term": "widetilde",
+          "heading": false
+        },
+        {
+          "term": "scalerel",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:PtDecCocReview label=\"sec:PtDecCocReview\"} This section summarizes results of [@GaroufalidisThurstonZickert] and [@GaroufalidisGoernerZickert]; see also [@PtolemyField] for a review of the case when $n=2$ with many worked out examples. Let $M$ be a compact, orientable $3$-manifold with non-empty boundary and let $\\widetilde M$ be the universal cover of $M$. Let $\\widehat M$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-21-ptolemy-assignments",
+      "number": "2.1",
+      "title": "Ptolemy assignments",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 224,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptolemy",
+          "heading": true
+        },
+        {
+          "term": "ptolemy assignment",
+          "heading": false
+        },
+        {
+          "term": "ptolemy variety",
+          "heading": false
+        },
+        {
+          "term": "ordered simplex",
+          "heading": false
+        },
+        {
+          "term": "simplex delta",
+          "heading": false
+        },
+        {
+          "term": "edge orientation",
+          "heading": false
+        },
+        {
+          "term": "orientation relations",
+          "heading": false
+        }
+      ],
+      "extract": "Fix a (topological ideal) triangulation $\\mathcal T$ of $M$. An *ordered simplex* is a simplex together with an ordering of its vertices. ::: definition A *Ptolemy assignment* on an ordered simplex $\\Delta$ is an assignment of a nonzero complex number $c_{ij}$ to each oriented edge $\\varepsilon_{ij}$ of $\\Delta$ satisfying the *Ptolemy relation* $$\\label{eq:PtolemyRelation} c_{03}c_{12}+c_{01}c_{23}=c_{02}c_{13},$$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-22-decorations",
+      "number": "2.2",
+      "title": "Decorations",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 572,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "decorations",
+          "heading": true
+        },
+        {
+          "term": "boundary-nondegenerate",
+          "heading": false
+        },
+        {
+          "term": "freedom label",
+          "heading": false
+        },
+        {
+          "term": "let rho",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "component partial",
+          "heading": false
+        },
+        {
+          "term": "boundary-borel",
+          "heading": false
+        },
+        {
+          "term": "widetilde",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:Decorations label=\"sec:Decorations\"} Let $B\\subset\\mathop{\\mathrm{SL}}(2,\\mathbb C)$ denote the subgroup of upper triangular matrices, and $P$ the subgroup of upper triangular matrices with $1$'s on the diagonal. Let $G=\\mathop{\\mathrm{SL}}(2,\\mathbb C)$ and let $H\\subset G$ denote either $P$ or $B$. ::: definition A $(G,H)$-representation is a representation $\\pi_1(M)\\to G$ taking each peripheral subgroup",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-23-natural-cocycles",
+      "number": "2.3",
+      "title": "Natural cocycles",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 166,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "itm",
+          "heading": false
+        },
+        {
+          "term": "naturalcocycle label",
+          "heading": false
+        },
+        {
+          "term": "truncated simplex",
+          "heading": false
+        },
+        {
+          "term": "fundamentalcorrespondence",
+          "heading": false
+        },
+        {
+          "term": "natural cocycle",
+          "heading": false
+        },
+        {
+          "term": "overline mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:NaturalCocycle label=\"sec:NaturalCocycle\"} The triangulation $\\mathcal T$ of $M$ induces a decomposition $\\overline \\mathcal T$ of $M$ by truncated simplices. ::: definition []{#def:NaturalCocycle label=\"def:NaturalCocycle\"} A *natural cocycle* on a truncated simplex $\\overline\\Delta$ is a labeling of the oriented edges by elements in $\\mathop{\\mathrm{SL}}(2,\\mathbb C)$ such that 1. []{#itm:1 label=\"itm:1\"}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-24-the-diagonal-action",
+      "number": "2.4",
+      "title": "The diagonal action",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 48,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diagonal action",
+          "heading": true
+        },
+        {
+          "term": "ptolemy assignments",
+          "heading": false
+        },
+        {
+          "term": "natural cocycles",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:DiagonalAction label=\"sec:DiagonalAction\"} If $c$ is the number of boundary components and $T\\subset G$ is the subgroup of diagonal matrices, the torus $T^c$ acts on $P$-decorations, Ptolemy assignments and natural cocycles. This action is called the *diagonal action* and is illustrated in Figure [1](#fig:DiagonalAction){reference-type=\"ref\" reference=\"fig:DiagonalAction\"}. ::: definition The quotient of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-25-the-fundamental-correspondence",
+      "number": "2.5",
+      "title": "The fundamental correspondence",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 180,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fundamentalcorrespondence",
+          "heading": false
+        },
+        {
+          "term": "overset text",
+          "heading": false
+        },
+        {
+          "term": "nongenericdecoration",
+          "heading": false
+        },
+        {
+          "term": "correspondence",
+          "heading": true
+        }
+      ],
+      "extract": "The following result is proved in [@GaroufalidisThurstonZickert] for $\\mathop{\\mathrm{SL}}(n,\\mathbb C)$. For $n=2$ the correspondence is particularly simple, and is illustrated in Figure [1](#fig:FundamentalCorrespondence){reference-type=\"ref\" reference=\"fig:FundamentalCorrespondence\"}. ::: theorem We have a one-to-one-correspondence $$\\label{eq:FundamentalCorrespondence} \\left\\{\\text{Generic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-3-other-variants-of-the-ptolemy-variety",
+      "number": "3",
+      "title": "Other variants of the Ptolemy variety",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 354,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptolemy variety",
+          "heading": true
+        },
+        {
+          "term": "fundamentalcorrespondence",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "ptolemy relations",
+          "heading": false
+        },
+        {
+          "term": "mathrm psl",
+          "heading": false
+        },
+        {
+          "term": "boundary-unipotent representations",
+          "heading": false
+        },
+        {
+          "term": "variety sigma",
+          "heading": false
+        },
+        {
+          "term": "class sigma",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:OtherVariants label=\"sec:OtherVariants\"} Section [0.1](#sec:PSLPtolemy){reference-type=\"ref\" reference=\"sec:PSLPtolemy\"} summarizes results in [@GaroufalidisThurstonZickert] (see also [@PtolemyField]). Section [\\[sec:Enhanced\\]](#sec:Enhanced){reference-type=\"ref\" reference=\"sec:Enhanced\"} summarizes results in [@ZickertEnhancedPtolemy]. ## Ptolemy coordinates for $\\mathop{\\mathrm{PSL}}(2,\\mathbb",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-32-non-boundary-unipotent-representations",
+      "number": "3.2",
+      "title": "Non-boundary-unipotent representations",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 556,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fattened decomposition",
+          "heading": false
+        },
+        {
+          "term": "zickertenhancedptolemy sec",
+          "heading": false
+        },
+        {
+          "term": "fattened natural",
+          "heading": false
+        },
+        {
+          "term": "face pairing",
+          "heading": false
+        },
+        {
+          "term": "fundrectidentifications",
+          "heading": false
+        },
+        {
+          "term": "pairing edges",
+          "heading": false
+        },
+        {
+          "term": "overline mathcal",
+          "heading": false
+        },
+        {
+          "term": "fundamentalcorrespondence",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:Enhanced label=\"sec:Enhanced\"} Assume that each boundary component $\\partial_s M$ is a torus, and that we have fixed a meridian $\\mu_s$ and a longitude $\\lambda_s$ in $H_1(\\partial_s M)$. The definition of $\\mathcal EP(\\mathcal T)$ involves a choice of *fundamental rectangle* $R_s$ for each boundary component $\\partial_s M$, such that the triangulation induced on the torus obtained by identifying the sides",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-4-generalization-of-the-fundamental-corresponden",
+      "number": "4",
+      "title": "Generalization of the fundamental correspondence",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 165,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptolemy coordinates",
+          "heading": false
+        },
+        {
+          "term": "ptolemy assignment",
+          "heading": false
+        },
+        {
+          "term": "ptolemy variety",
+          "heading": false
+        },
+        {
+          "term": "nongenericdecoration",
+          "heading": false
+        },
+        {
+          "term": "invariantptolemy",
+          "heading": false
+        },
+        {
+          "term": "fundamentalcorrespondence",
+          "heading": false
+        }
+      ],
+      "extract": "The fundamental correspondence between *generic* decorations, Ptolemy assignments, and natural cocycles plays an important role. The Ptolemy variety gives explicit coordinates enabling concrete computations, the decorations establish the link to group homology allowing for explicit computation of the Cheeger-Chern-Simons class [@GaroufalidisThurstonZickert], and the natural cocycles allow us to explicitly recover a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-41-cocycles-and-the-action-by-coboundaries",
+      "number": "4.1",
+      "title": "Cocycles, and the action by coboundaries",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 223,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zero-cochain eta",
+          "heading": false
+        },
+        {
+          "term": "cocycle tau",
+          "heading": false
+        },
+        {
+          "term": "itm",
+          "heading": false
+        },
+        {
+          "term": "overline mathcal",
+          "heading": false
+        },
+        {
+          "term": "eta colon",
+          "heading": false
+        },
+        {
+          "term": "naturalcocycle",
+          "heading": false
+        },
+        {
+          "term": "coboundary action",
+          "heading": false
+        },
+        {
+          "term": "oriented edge",
+          "heading": false
+        }
+      ],
+      "extract": "Let $G=\\mathop{\\mathrm{SL}}(2,\\mathbb C)$. Recall that the triangulation $\\mathcal T$ induces a decomposition $\\overline\\mathcal T$ of $M$ by truncated simplices. ::: definition A *$G$-cocycle* on $M$ is a labeling of the oriented edges of $M$ satisfying [\\[itm:1\\]](#itm:1){reference-type=\"ref\" reference=\"itm:1\"} and [\\[itm:2\\]](#itm:2){reference-type=\"ref\" reference=\"itm:2\"} of Definition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-42-bruhat-cocycles",
+      "number": "4.2",
+      "title": "Bruhat cocycles",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 883,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bruhat cocycles",
+          "heading": true
+        },
+        {
+          "term": "fattened bruhat",
+          "heading": false
+        },
+        {
+          "term": "scalerel widetilde",
+          "heading": false
+        },
+        {
+          "term": "bruhat decomposition",
+          "heading": false
+        },
+        {
+          "term": "onetoonegeneral",
+          "heading": false
+        },
+        {
+          "term": "cocycle tau",
+          "heading": false
+        },
+        {
+          "term": "exists bruhat",
+          "heading": false
+        },
+        {
+          "term": "widetilde overline",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:BruhatCocycle label=\"sec:BruhatCocycle\"} ::: definition A *Bruhat cocycle* is a natural cocycle as in Definition [\\[def:NaturalCocycle\\]](#def:NaturalCocycle){reference-type=\"ref\" reference=\"def:NaturalCocycle\"}, but where long edges may be either diagonal or counter-diagonal. A zero-cochain $\\eta\\colon V(\\overline\\mathcal T)\\to P$ *preserves* a Bruhat cocycle $\\tau$ if $\\eta\\tau$ is again a Bruhat cocycle.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-44-non-boundary-unipotent-representations",
+      "number": "4.4",
+      "title": "Non-boundary-unipotent representations",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 96,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fattened bruhat",
+          "heading": false
+        },
+        {
+          "term": "fattened decomposition",
+          "heading": false
+        },
+        {
+          "term": "bruhat cocycle",
+          "heading": false
+        }
+      ],
+      "extract": "4.4. Non-boundary-unipotent representations. Let M be as in Section 3.2. Recall that a decoration of ρ: π1(M) →SL(2, C) is a ρ-equivariant assignment of P-cosets to the triangular faces of eT . A fattened Bruhat cocycle is a cocycle on the fattened decomposition restricting to a Bruhat cocycle on each truncated simplex and labeling each face pairing edge by diagonal elements. Theorem 4.11. There is a one-to-one",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-5-the-edge-relations",
+      "number": "5",
+      "title": "The edge relations",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 532,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "edge relations",
+          "heading": true
+        },
+        {
+          "term": "ptolemy assignments",
+          "heading": false
+        },
+        {
+          "term": "ptolemy coordinates",
+          "heading": false
+        },
+        {
+          "term": "edgerelations",
+          "heading": false
+        },
+        {
+          "term": "edgerelationequivalence",
+          "heading": false
+        },
+        {
+          "term": "common edge",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "identification relations",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:EdgeRelations label=\"sec:EdgeRelations\"} We now define a relation among the Ptolemy coordinates of a decorated (boundary-unipotent) representation. This relation is a consequence of the Ptolemy relations in the case when all Ptolemy coordinates are nonzero, but if some Ptolemy coordinates are zero, this relation is independent of the Ptolemy relations. Hence, when defining the invariant Ptolemy variety this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-52-edge-relations-for-enhanced-ptolemy-assignmen",
+      "number": "5.2",
+      "title": "Edge relations for enhanced Ptolemy assignments",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "edge relations",
+          "heading": true
+        },
+        {
+          "term": "edgerelationequivalence",
+          "heading": false
+        },
+        {
+          "term": "ptolemy",
+          "heading": true
+        },
+        {
+          "term": "prod big",
+          "heading": false
+        }
+      ],
+      "extract": "Let $c$ be an enhanced Ptolemy assignment on $K$ where all the Ptolemy coordinates of the top and and bottom edges of $K$ are nonzero. The identification relations are given by $c_{12,k}=t_kh_kc_{13,k-1}$, $c_{02,k}=b_kh_kc_{03,k-1}$ and $c_{01,k}=c_{01,k-1}t_kb_k$, where the $t_k$, $b_k$ and $h_k$ are monomials in the $m_s$ and $l_s$ (see Figure [\\[fig:FatEdgeNbh\\]](#fig:FatEdgeNbh){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-6-transitive-edge-sets-and-degeneracy-types",
+      "number": "6",
+      "title": "Transitive edge sets and degeneracy types",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 347,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transitive edge",
+          "heading": true
+        },
+        {
+          "term": "zero-edges",
+          "heading": false
+        },
+        {
+          "term": "degenerate faces",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "ptolemy coordinates",
+          "heading": false
+        },
+        {
+          "term": "textbf",
+          "heading": false
+        },
+        {
+          "term": "transitivedec",
+          "heading": false
+        },
+        {
+          "term": "partitiontype",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:TransitiveEdgeSets label=\"sec:TransitiveEdgeSets\"} Note that a decoration $D$ determines a distinguished subset of the edge set of $\\mathcal T$, namely those whose Ptolemy coordinates are zero. We refer to this subset as the *zero-set* of $D$. ::: definition []{#def:TransitiveEdgeSubset label=\"def:TransitiveEdgeSubset\"} A *transitive edge set* is a subset $E$ of the edges of $\\mathcal T$ such that if two",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-61-decorations-ptolemy-assignments-and-bruhat-co",
+      "number": "6.1",
+      "title": "Decorations, Ptolemy assignments and Bruhat cocycles",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transitivedec",
+          "heading": false
+        },
+        {
+          "term": "onetoonegeneral",
+          "heading": false
+        },
+        {
+          "term": "ptolemy",
+          "heading": true
+        },
+        {
+          "term": "zero-edges",
+          "heading": false
+        }
+      ],
+      "extract": "::: definition Let $E\\in\\mathop{\\mathrm{T}}(\\mathcal T)$. A decoration is of *type $E$* if its zero-edges agree with $E$. A Bruhat cocycle $\\tau$ has *type $E$* if the set of long edges that are diagonal agrees with the zero-edges of $E$. A Ptolemy assignment has type $E$ if the set of edges whose Ptolemy coordinate is zero agrees with the zero-edges of $E$. ::: Note that the one-to-one-correspondence in Theorem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-62-the-totally-degenerate-edge-set",
+      "number": "6.2",
+      "title": "The totally degenerate edge set",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 98,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "totallydegenerate label",
+          "heading": false
+        },
+        {
+          "term": "degenerate",
+          "heading": true
+        },
+        {
+          "term": "decoration",
+          "heading": false
+        },
+        {
+          "term": "reducible representation",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:TotallyDegenerate label=\"sec:TotallyDegenerate\"} ::: proposition []{#prop:TotallyDegenerate label=\"prop:TotallyDegenerate\"} If a decoration of a representation $\\rho$ is totally degenerate, then $\\rho$ is reducible. ::: ::: proof *Proof.* If all Ptolemy coordinates are zero, the decoration must take all ideal vertices of $\\widetilde M$ to the same $B$-coset. This is only possible if $\\rho$ is reducible. ◻",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-7-the-ptolemy-variety-of-a-transitive-edge-set",
+      "number": "7",
+      "title": "The Ptolemy variety of a transitive edge set",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 53,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "invariantptolemy",
+          "heading": false
+        },
+        {
+          "term": "ptolemy",
+          "heading": true
+        },
+        {
+          "term": "transitive",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec:InvariantPtolemy label=\"sec:InvariantPtolemy\"} We now define a Ptolemy variety $P(\\mathcal T,E)$ for each transitive edge set $E$, which is not totally degenerate. We shall see that this variety parametrizes decorations of type $E$, and that the representation corresponding to an element in $P(\\mathcal T,E)$ can be recovered explicitly via the corresponding Bruhat cocycle.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-024-71-edge-degenerate-edge-sets",
+      "number": "7.1",
+      "title": "Edge-degenerate edge sets",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 809,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "edge-degenerate",
+          "heading": true
+        },
+        {
+          "term": "txt bruhat",
+          "heading": false
+        },
+        {
+          "term": "choppedcocycle",
+          "heading": false
+        },
+        {
+          "term": "ptolemy assignment",
+          "heading": false
+        },
+        {
+          "term": "bruhat cocycle",
+          "heading": false
+        },
+        {
+          "term": "ptolemymild",
+          "heading": false
+        },
+        {
+          "term": "oneonemild",
+          "heading": false
+        },
+        {
+          "term": "txt decorated",
+          "heading": false
+        }
+      ],
+      "extract": "Let $E\\in\\mathop{\\mathrm{T}}(\\mathcal T)$ be edge-degenerate. Then each face of $\\mathcal T$ has at most one zero-edge. ::: proposition []{#prop:RecoverDec label=\"prop:RecoverDec\"} Let $c$ be a Ptolemy assignment on a simplex $\\Delta$. If each face has at most one Ptolemy coordinate which is zero, then $c$ is the Ptolemy assignment of a unique decoration. ::: ::: proof *Proof.* By reordering the vertices if",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-72-embeddings-in-affine-space",
+      "number": "7.2",
+      "title": "Embeddings in affine space",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 438,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "affine space",
+          "heading": true
+        },
+        {
+          "term": "virtual edge",
+          "heading": false
+        },
+        {
+          "term": "ring mathcal",
+          "heading": false
+        },
+        {
+          "term": "ptolemy coordinate",
+          "heading": false
+        },
+        {
+          "term": "widetilde setminus",
+          "heading": false
+        },
+        {
+          "term": "mathcal determines",
+          "heading": false
+        },
+        {
+          "term": "embeddings",
+          "heading": true
+        },
+        {
+          "term": "choppedcocycle",
+          "heading": false
+        }
+      ],
+      "extract": "::: definition []{#def:VirtualEdges label=\"def:VirtualEdges\"} A *virtual edge* of $M$ is an element in the set $$V(M) =\\big(I(\\widetilde M)\\times I(\\widetilde M)\\big)\\big/\\pi_1(M)$$ of pairs of ideal points in $\\widetilde M$ up to the $\\pi_1(M)$-action. ::: Given an ideal triangulation $\\mathcal T$, each oriented edge $e$ of $\\mathcal T$ determines a virtual edge, namely the orbit of $(e_0,e_1)$. Hence, $\\mathcal T$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-73-face-degenerate-edge-sets",
+      "number": "7.3",
+      "title": "Face-degenerate edge sets",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 321,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "face-degenerate",
+          "heading": true
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "oneonemild",
+          "heading": false
+        },
+        {
+          "term": "degenerate faces",
+          "heading": false
+        },
+        {
+          "term": "oneonemildenhanced",
+          "heading": false
+        },
+        {
+          "term": "oneonemildsigma",
+          "heading": false
+        },
+        {
+          "term": "let mathcal",
+          "heading": false
+        },
+        {
+          "term": "performing move",
+          "heading": false
+        }
+      ],
+      "extract": "::: definition []{#def:Descendant label=\"def:Descendant\"} Let $\\mathcal T'$ be a triangulation whose edge set contains that of $\\mathcal T$. A *descendant* of $E\\in\\mathop{\\mathrm{T}}(\\mathcal T)$ is an element $E'\\in\\mathop{\\mathrm{T}}(\\mathcal T')$ such that $E'$ agrees with $E$ on the edges of $\\mathcal T$. If $E'\\in\\mathop{\\mathrm{T}}(\\mathcal T')$ is a descendent of $E\\in\\mathop{\\mathrm{T}}(\\mathcal T)$ we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-74-simplex-degenerate-edge-sets",
+      "number": "7.4",
+      "title": "Simplex-degenerate edge sets",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 235,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "simplex-degenerate",
+          "heading": true
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "degenerate simplices",
+          "heading": false
+        },
+        {
+          "term": "oneonemoderate",
+          "heading": false
+        },
+        {
+          "term": "oneonemild",
+          "heading": false
+        },
+        {
+          "term": "oneonemildenhanced",
+          "heading": false
+        },
+        {
+          "term": "oneonemildsigma",
+          "heading": false
+        },
+        {
+          "term": "non-degenerate simplex",
+          "heading": false
+        }
+      ],
+      "extract": "Given a simplex-degenerate edge set $E\\in \\mathop{\\mathrm{T}}(\\mathcal T)$. Let $d(E)$ denote the number of degenerate simplices. ::: lemma Let $E\\in \\mathop{\\mathrm{T}}(\\mathcal T)$ be simplex-degenerate and let $\\mathcal T'$ be a triangulation obtained from $\\mathcal T$ be performing a 2-3 move at a face between a degenerate and a non-degenerate simplex. Then $E$ has a unique descendant $E'\\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-8-the-invariant-ptolemy-varieties",
+      "number": "8",
+      "title": "The invariant Ptolemy varieties",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 89,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptolemy",
+          "heading": true
+        },
+        {
+          "term": "ptolemymild",
+          "heading": false
+        },
+        {
+          "term": "ptolemy variety",
+          "heading": false
+        },
+        {
+          "term": "ptolemymoderate",
+          "heading": false
+        },
+        {
+          "term": "ptolemywild",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:Invariant label=\"sec:Invariant\"} For the non-degenerate edge set $E$, define $P(\\mathcal T,E)$ to be the standard Ptolemy variety (Definition [\\[def:PtolemyVariety\\]](#def:PtolemyVariety){reference-type=\"ref\" reference=\"def:PtolemyVariety\"}). The Ptolemy variety for the other types were defined in Definitions [\\[def:PtolemyMild\\]](#def:PtolemyMild){reference-type=\"ref\" reference=\"def:PtolemyMild\"},",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-81-affine-coverings",
+      "number": "8.1",
+      "title": "Affine coverings",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 499,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "triangulation mathcal",
+          "heading": false
+        },
+        {
+          "term": "ptolemy varieties",
+          "heading": false
+        },
+        {
+          "term": "transitive edge",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "affine",
+          "heading": true
+        },
+        {
+          "term": "ptolemymoderate",
+          "heading": false
+        },
+        {
+          "term": "ptolemywild",
+          "heading": false
+        },
+        {
+          "term": "invariant ptolemy",
+          "heading": false
+        }
+      ],
+      "extract": "A priori, the invariant Ptolemy varieties are only unions of quasi-affine subsets of $A(V(M))$. ::: proposition []{#prop:ProofAffine label=\"prop:ProofAffine\"} The invariant Ptolemy varieties are indeed varieties. Changing the triangulation changes the varieties by biregular isomorphisms. ::: ::: proof *Proof.* We prove this for $\\overline P(\\mathcal T)$; the proof for the other variants are identical. We must prove",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-9-the-reduced-ptolemy-varieties",
+      "number": "9",
+      "title": "The reduced Ptolemy varieties",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 287,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reduced ptolemy",
+          "heading": true
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm red",
+          "heading": false
+        },
+        {
+          "term": "ptolemy variety",
+          "heading": false
+        },
+        {
+          "term": "ptolemy coordinates",
+          "heading": false
+        },
+        {
+          "term": "nonzero edges",
+          "heading": false
+        },
+        {
+          "term": "ptolemyfield",
+          "heading": false
+        },
+        {
+          "term": "edge-degenerate",
+          "heading": false
+        }
+      ],
+      "extract": "The diagonal action on decorations, Ptolemy assignments, and natural cocycles extends canonically to the case where some of the Ptolemy coordinates are zero and some of the long edges are diagonal instead of counterdiagonal. We define the reduced Ptolemy variety $\\overline P_{\\mathop{\\mathrm{red}}}(\\mathcal T)$ to be the quotient of $\\overline P(\\mathcal T)$ by the diagonal action. In [@PtolemyField] we showed that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-10-summary-of-the-proofs-of-main-results",
+      "number": "10",
+      "title": "Summary of the proofs of main results",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 43,
+      "summary": null,
+      "keywords": [],
+      "extract": "Theorem 1.2 is an immediate consequence of Theorem 7.19 and Proposition 8.2. Theorem 1.4 follows from Corollary 2.14. Theorem 1.5 follows from Theorem 7.19 and the analogue of Corol- lary 2.14 for PSL(2, C). Theorem 1.6 follows from Theorem 7.19 and Corollary 2.14.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-032-11-examples",
+      "number": "11",
+      "title": "Examples",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 249,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "edge-degenerate edge",
+          "heading": false
+        },
+        {
+          "term": "transitive edge",
+          "heading": false
+        },
+        {
+          "term": "degenerate edge",
+          "heading": false
+        },
+        {
+          "term": "around edge",
+          "heading": false
+        },
+        {
+          "term": "totallydegenerate",
+          "heading": false
+        },
+        {
+          "term": "edge relation",
+          "heading": false
+        },
+        {
+          "term": "census triangulation",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:Examples label=\"sec:Examples\"} Let $M$ be the manifold `m009` from the SnapPy census [@SnapPy]. The census triangulation $\\mathcal T$ of $M$ is shown in Figure [1](#fig:Trigm009){reference-type=\"ref\" reference=\"fig:Trigm009\"}. <figure id=\"fig:Trigm009\"> <figcaption>Census triangulation of <code>m009</code>. The signs on the faces indicate the obstruction cocycle <span class=\"math",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-111-the-ptolemy-variety-pt",
+      "number": "11.1",
+      "title": "The Ptolemy variety P(T)",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 122,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pslptolemy",
+          "heading": false
+        },
+        {
+          "term": "ptolemy",
+          "heading": true
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:SLexample label=\"sec:SLexample\"} The identification relations corresponding to the three edges are $$\\begin{gathered} c_{23,0}=-c_{23,2}=-c_{01,1}=c_{01,2}=-c_{01,0}=-c_{23,1}\\\\ c_{13,0}=c_{12,1}=-c_{13,2}=-c_{03,1}=c_{13,0}\\\\ c_{13,1}=c_{03,2}=c_{02,0}=c_{12,2}=-c_{02,1}=c_{03,0}=c_{02,2}=c_{12,0}. \\end{gathered}$$ Letting $x=c_{23,0}$, $y=c_{13,0}$ and $z=c_{13,1}$, the Ptolemy relations",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-112-the-ptolemy-varieties-pt",
+      "number": "11.2",
+      "title": "The Ptolemy varieties P(T)",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 24,
+      "labelStart": "22",
+      "labelEnd": "24",
+      "words": 645,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptolemy",
+          "heading": true
+        },
+        {
+          "term": "eta varepsilon",
+          "heading": false
+        },
+        {
+          "term": "ptolemy variety",
+          "heading": false
+        },
+        {
+          "term": "quad eta",
+          "heading": false
+        },
+        {
+          "term": "ptolemy relations",
+          "heading": false
+        },
+        {
+          "term": "quad sigma",
+          "heading": false
+        },
+        {
+          "term": "reduced ptolemy",
+          "heading": false
+        },
+        {
+          "term": "overline sigma",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:PSLexample label=\"sec:PSLexample\"} An elementary cohomology computation shows that $H^2(\\widehat M;\\mathbb Z/2\\mathbb Z)=\\mathbb Z/2\\mathbb Z\\oplus\\mathbb Z/2\\mathbb Z$ and that the three non-trivial classes are represented by cocycles $\\sigma^i\\in C^2(\\widehat M;\\mathbb Z/2\\mathbb Z)$ whose restrictions $\\sigma^i_k$ to the $k$th simplex of $\\mathcal T$ are given by $$\\begin{aligned}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-113-the-ptolemy-variety-ept-and-the-a-polynomial",
+      "number": "11.3",
+      "title": "The Ptolemy variety EP(T) and the A-polynomial",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 379,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overset",
+          "heading": false
+        },
+        {
+          "term": "fundrectidentifications",
+          "heading": false
+        },
+        {
+          "term": "edgeequationsenhanced",
+          "heading": false
+        },
+        {
+          "term": "ptolemy",
+          "heading": true
+        },
+        {
+          "term": "apolyexample",
+          "heading": false
+        },
+        {
+          "term": "ptolemy relations",
+          "heading": false
+        },
+        {
+          "term": "begin gathered",
+          "heading": false
+        },
+        {
+          "term": "end gathered",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:Apolyexample label=\"sec:Apolyexample\"} A fundamental rectangle for the boundary of $M$ is shown in Figure [1](#fig:FundamentalRectangle){reference-type=\"ref\" reference=\"fig:FundamentalRectangle\"}. Using the rules illustrated in Figure [\\[fig:FundRectIdentifications\\]](#fig:FundRectIdentifications){reference-type=\"ref\" reference=\"fig:FundRectIdentifications\"} we obtain that the identification relations are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-114-recovering-the-representations",
+      "number": "11.4",
+      "title": "Recovering the representations",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 590,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pmatrix frac",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "aligned beta",
+          "heading": false
+        },
+        {
+          "term": "begin smallmatrix",
+          "heading": false
+        },
+        {
+          "term": "sigma mathop",
+          "heading": false
+        },
+        {
+          "term": "qquad begin",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:RecoverRepExample label=\"sec:RecoverRepExample\"} The dual triangulation of `m009` has an oriented edge for each of the face pairings $a$, $b$, $c$, $d$, $t_1$, and $t_2$. The edges $t_1$ and $t_2$ form a maximal tree, so the fundamental group of `m009` is generated by $a$, $b$, $c$, and $d$. By inspecting Figure [\\[fig:FundamentalRectangle\\]](#fig:FundamentalRectangle){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-acknowledgment",
+      "number": null,
+      "title": "Acknowledgment",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "helpful discussions.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-038-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 292,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matthias goerner",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "christian",
+          "heading": false
+        },
+        {
+          "term": "zickert",
+          "heading": false
+        },
+        {
+          "term": "duke math",
+          "heading": false
+        },
+        {
+          "term": "koseleﬀ",
+          "heading": false
+        },
+        {
+          "term": "e-mail address",
+          "heading": false
+        },
+        {
+          "term": "rouillier",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Wieb Bosma, John Cannon, and Catherine Playoust. The Magma algebra system. I. The user language. J. Symbolic Comput., 24(3-4):235–265, 1997. Computational algebra and number theory (London, 1993). [2] Danny Calegari. Real places and torus bundles. Geom. Dedicata, 118:209–227, 2006. [3] Marc Culler, Nathan M. Dunﬁeld, and Jeﬀery R. Weeks. SnapPy, a computer program for studying the geometry and topology of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 5",
+      "figure 9",
+      "figure 10",
+      "figure 14"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "ptolemy variety",
+      "heading": true
+    },
+    {
+      "term": "mathop mathrm",
+      "heading": false
+    },
+    {
+      "term": "ptolemy coordinates",
+      "heading": true
+    },
+    {
+      "term": "ptolemy relations",
+      "heading": true
+    },
+    {
+      "term": "ptolemy assignment",
+      "heading": true
+    },
+    {
+      "term": "enhanced ptolemy",
+      "heading": true
+    },
+    {
+      "term": "boundary-unipotent mathop",
+      "heading": false
+    },
+    {
+      "term": "reduced ptolemy",
+      "heading": true
+    },
+    {
+      "term": "variety mathcal",
+      "heading": false
+    },
+    {
+      "term": "independent ptolemy",
+      "heading": false
+    },
+    {
+      "term": "invariant ptolemy",
+      "heading": true
+    },
+    {
+      "term": "ptolemy varieties",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The diagonal action on decorations, Ptolemy assignments and natural cocycles",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The fundamental correspondence",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The identiﬁcation relations for a face pairing α",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Face pairing edges and the fundamental correspondence",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The natural cocycle from a decoration",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "A Ptolemy assignment on K",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Bruhat cocycle on K (near top vertex)",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Natural cocycle after removing a neigborhood of a zero-edge",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "The cocycle extends if and only if the edge relation holds",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "A 2-3 move, facedegenerate edge set",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "Census triangulation of m009. The signs on the faces indicate the",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "Fundamental rectangle for m009",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 42,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 40,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "12 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p26); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 40 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1507.03238v3"
+  }
+}

@@ -1,0 +1,1074 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2210.09583v1",
+  "title": "arxiv-2210.09583v1",
+  "variant": "pdf",
+  "pages": 17,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Results",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-results"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": "1.2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "osp(1|2) braid invariant",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-2-osp12-braid-invariant"
+    },
+    {
+      "level": 1,
+      "title": "Explanation using representation theory",
+      "number": "3",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-explanation-using-representation-theory"
+    },
+    {
+      "level": 2,
+      "title": "Parameters",
+      "number": "3.1",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-31-parameters"
+    },
+    {
+      "level": 2,
+      "title": "Quantum covering group",
+      "number": "3.2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-32-quantum-covering-group"
+    },
+    {
+      "level": 2,
+      "title": "Uq,-modules",
+      "number": "3.3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Clark's osp(1|2) invariant",
+      "number": "3.4",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Representation theoretic definiton of J\"0362J",
+      "number": "3.5",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-35-representation-theoretic-definiton-of-j0362j"
+    },
+    {
+      "level": 1,
+      "title": "Two Categorifications",
+      "number": "4",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-4-two-categorifications"
+    },
+    {
+      "level": 2,
+      "title": "Normal Khovanov Homology",
+      "number": "4.1",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-41-normal-khovanov-homology"
+    },
+    {
+      "level": 2,
+      "title": "e-graded Khovanov Homology",
+      "number": "4.2",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-42-e-graded-khovanov-homology"
+    },
+    {
+      "level": 3,
+      "title": "R1",
+      "number": "4.2.1",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-421-r1"
+    },
+    {
+      "level": 3,
+      "title": "Categorification of J\"0362J",
+      "number": "4.2.2",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-422-categorification-of-j0362j"
+    },
+    {
+      "level": 2,
+      "title": "e-graded Covering Khovanov Homology",
+      "number": "4.3",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-43-e-graded-covering-khovanov-homology"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 160,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "osp",
+          "heading": false
+        },
+        {
+          "term": "link invariant",
+          "heading": false
+        },
+        {
+          "term": "khovanov homology",
+          "heading": false
+        },
+        {
+          "term": "clark",
+          "heading": false
+        },
+        {
+          "term": "uncolored",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:2210.09583v1 [math.QA] 18 Oct 2022 A NEW PRESENTATION OF THE osp(1|2)-POLYNOMIAL LINK INVARIANT AND CATEGORIFICATION MARK EBERT Abstract. There is a known connection between the osp(1|2n) polynomial knot invariant Jn K and the so(2n + 1) knot invariant soJn K studied by Clark [10] and Blumen [4]. In the rank one case, the uncolored Uq(osp(1|2)) link invariant is equal to the Ut−1q(sl2) link invariant where t2",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2210.09583v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 411,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "osp lambda",
+          "heading": false
+        },
+        {
+          "term": "odd khovanov",
+          "heading": false
+        },
+        {
+          "term": "khovanov homology",
+          "heading": false
+        },
+        {
+          "term": "kac-moody superalgebra",
+          "heading": false
+        },
+        {
+          "term": "odd categorification",
+          "heading": false
+        },
+        {
+          "term": "odd link",
+          "heading": false
+        },
+        {
+          "term": "homology theories",
+          "heading": false
+        },
+        {
+          "term": "thick",
+          "heading": false
+        }
+      ],
+      "extract": "The Reshetikhin-Turaev invariants are a family of link-invariants constructed from the representation theory of quantum groups \\cite{RT90}. Examples of such invariants include the HOMFLY-PT polynomial and the colored Jones polynomial. Following Khovanov's pioneering work categorifying the Jones polynomial \\cite{K00}, and the subsequent work of many others\\cite{Kh03, Sus07, KR08a, KR08b, MS09}, Webster categorified",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-results",
+      "number": "1.1",
+      "title": "Results",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 332,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "osp",
+          "heading": false
+        },
+        {
+          "term": "khovanov homology",
+          "heading": false
+        },
+        {
+          "term": "clark",
+          "heading": false
+        },
+        {
+          "term": "link invariant",
+          "heading": false
+        },
+        {
+          "term": "oriented links",
+          "heading": false
+        },
+        {
+          "term": "twistors",
+          "heading": false
+        },
+        {
+          "term": "grading",
+          "heading": false
+        },
+        {
+          "term": "representation theory",
+          "heading": false
+        }
+      ],
+      "extract": "the future, then we can get odd link homology theories categorifying invariants obtained through the RT process on quantum supergroups. The Uq(osp(1|2n)) link invariant has been deﬁned using Markov traces on the Birman-Wenzl- Murakami algebra[4]. Clark [10] produced the colored Uq(osp(1|2n)) invariant from the representation theory of the quantum covering group Uq,π(osp(1|2n)) a la Turaev [33]. A notable result from",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-acknowledgements",
+      "number": "1.2",
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 44,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "army",
+          "heading": false
+        },
+        {
+          "term": "dms",
+          "heading": false
+        },
+        {
+          "term": "oﬃce",
+          "heading": false
+        }
+      ],
+      "extract": "their helpful comments on this article. M.E was partially supported by NSF grants DMS-1902092 and DMS-2200419, the Army Research Oﬃce award W911NF-20-1-0075, and the Simons Foundation collaboration grant on New Structures in Low-dimensional topology. A NEW PRESENTATION OF THE osp(1|2)-POLYNOMIAL LINK INVARIANT AND CATEGORIFICATION",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-2-osp12-braid-invariant",
+      "number": "2",
+      "title": "osp(1|2) braid invariant",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1448,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "osp",
+          "heading": true
+        },
+        {
+          "term": "uncolored osp",
+          "heading": false
+        },
+        {
+          "term": "braid",
+          "heading": true
+        },
+        {
+          "term": "btr",
+          "heading": false
+        },
+        {
+          "term": "temperley lieb",
+          "heading": false
+        },
+        {
+          "term": "mark ebert",
+          "heading": false
+        },
+        {
+          "term": "markov trace",
+          "heading": false
+        },
+        {
+          "term": "markov moves",
+          "heading": false
+        }
+      ],
+      "extract": "2. osp(1|2) braid invariant In this paper, τ is an indeterminant such that τ4 = 1, and π := τ 2. We also deﬁne the rings Rτ = R[τ]/(τ4 −1) Rπ = R[π]/(π2 −1) Deﬁnition 2.1. Given n ∈ N and d ∈ Zτ[q, q−1], the Temperley-Lieb algebra T Ln(d) is deﬁned as the Zτ[q, q−1]-algebra with generators {1, E1, . . . , En−1} with relations. (1) EiEj = EjEi for |i −j| > 1 (2) EiEi±1Ei = Ei (3) E2 i = dEi We can also think of it as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-explanation-using-representation-theory",
+      "number": "3",
+      "title": "Explanation using representation theory",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 88,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "representation-theoretic definition",
+          "heading": false
+        },
+        {
+          "term": "clark",
+          "heading": false
+        },
+        {
+          "term": "representation theory",
+          "heading": true
+        },
+        {
+          "term": "osp",
+          "heading": false
+        }
+      ],
+      "extract": "Blumen\\cite{Blu09} was the first to show the connection between the $\\mf{so}$ and $\\mf{osp}$ link invariants, but Clark\\cite{C} was able to formulate the $\\mf{osp}(1|2)$-invariant using the representation theory of the quantum covering group $U_{q,\\pi}(\\mf{sl}_2)$. We give an overview of the quantum covering group $U_{q,\\pi}$ defined by Clark Hill and Wang \\cite{CHW} and its representation theory in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-31-parameters",
+      "number": "3.1",
+      "title": "Parameters",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 201,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tau varepsilon",
+          "heading": false
+        },
+        {
+          "term": "tau module",
+          "heading": false
+        },
+        {
+          "term": "formal parameter",
+          "heading": false
+        },
+        {
+          "term": "borrow",
+          "heading": false
+        },
+        {
+          "term": "align",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:3.1} \\begin{notation} We borrow much of our notation in this section from \\cite{C}. Given an element $m$ in some $\\Z\\times \\Z_2$-graded module $M$, we denote $p(m)$ to be the parity of $m$, $|m|$ denotes the $\\Z$-degree of $m$ and $||m||=(|m|,p(m))$. \\end{notation} Let us review some notions from \\cite[Section 2.2]{C}. Let $t\\in \\C$ such that $t^2=-1$. Let $q$ be a formal parameter, let $\\tau$ be a formal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-32-quantum-covering-group",
+      "number": "3.2",
+      "title": "Quantum covering group",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1215,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "basis m-2k",
+          "heading": false
+        },
+        {
+          "term": "pmatrix tau",
+          "heading": false
+        },
+        {
+          "term": "tikzpicture tau",
+          "heading": false
+        },
+        {
+          "term": "pmatrix qquad",
+          "heading": false
+        },
+        {
+          "term": "otimes qquad",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "align end",
+          "heading": false
+        },
+        {
+          "term": "qquad hackcenter",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:covering-group} \\begin{definition}{\\cite{CHW}} The quantum covering group $U_{q,\\pi}:=U_{q,\\pi}(\\mf{sl}_2)$ is the $\\Q(q,t)^\\tau$-algebra with generators $E,F,K^{\\pm 1},J$, subject to the relations \\begin{align}\\label{quantum-covering-group} J^2&=1 & JK&=KJ \\\\ JE&=EJ & JF&=FJ \\\\ KE&=q^2EK & KF&=q^{-2}FK \\\\ EF-\\pi FE &= \\frac{JK-K^{-1}}{\\pi q-q^{-1}} \\end{align} \\end{definition} It has structure of a Hopf",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-35-representation-theoretic-definiton-of-j0362j",
+      "number": "3.5",
+      "title": "Representation theoretic definiton of J\"0362J",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 786,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "align hackcenter",
+          "heading": false
+        },
+        {
+          "term": "tikzpicture tau",
+          "heading": false
+        },
+        {
+          "term": "hackcenter begin",
+          "heading": false
+        },
+        {
+          "term": "pmatrix tau",
+          "heading": false
+        },
+        {
+          "term": "end tikzpicture",
+          "heading": false
+        },
+        {
+          "term": "otimes overset",
+          "heading": false
+        },
+        {
+          "term": "tau qtr",
+          "heading": false
+        },
+        {
+          "term": "thick",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Sec:Our-method} For the purposes of categorification, we want to define the invariant $\\hat{J}$ defined in section 1 using $U_{q,\\pi}$-module homomorphisms. To do this, we need to define $U_{q,\\pi}$-module homomorphisms $u: \\Q(q,t)^\\tau \\to V \\otimes V$ and $n: V \\otimes V \\to \\Q(q,t)^\\tau$ satisfying the relation $\\tau R_{1,1}=\\tau \\Id -q un$. Then this gives the $\\mf{sl}_2$ invariant in the variable",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-two-categorifications",
+      "number": "4",
+      "title": "Two Categorifications",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 470,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e-graded module",
+          "heading": false
+        },
+        {
+          "term": "cat vect",
+          "heading": false
+        },
+        {
+          "term": "khovanov homology",
+          "heading": false
+        },
+        {
+          "term": "let cat",
+          "heading": false
+        },
+        {
+          "term": "times graded",
+          "heading": false
+        },
+        {
+          "term": "tau text",
+          "heading": false
+        },
+        {
+          "term": "graded vector",
+          "heading": false
+        },
+        {
+          "term": "text dim",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:cat} As we know from \\cite{C,Blu09}, the $\\mf{osp}(1|2)$ polynomial (and hence our invariant $\\hat{J}$) is practically identical to the Jones polynomial. Now that we have this Kauffman-bracket type definition of $\\hat{J}$, it should not come as much of a surprise that one can categorify this invariant using a homology theory that is practically identical to Khovanov homology. Indeed, we show in this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-41-normal-khovanov-homology",
+      "number": "4.1",
+      "title": "Normal Khovanov Homology",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 235,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "khovanov homology",
+          "heading": true
+        },
+        {
+          "term": "saddle cobordism",
+          "heading": false
+        },
+        {
+          "term": "cohomological degree",
+          "heading": false
+        },
+        {
+          "term": "chain complex",
+          "heading": false
+        },
+        {
+          "term": "crossing",
+          "heading": false
+        },
+        {
+          "term": "cube",
+          "heading": false
+        }
+      ],
+      "extract": "We briefly recall how the complex $Kh(L)$ for Khovanov homology of an oriented link $L$ with is defined. We use notation similar to \\cite{BN2, P} to define the Khovanov complexes so that we can easily reference it again when we look at a similar e-graded version of covering Khovanov homology. Let $X$ be a crossing in $L$, and $L_0, L_1$ denote the diagram obtained by replacing $X$ with its $0$ and $1$-resolution",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-42-e-graded-khovanov-homology",
+      "number": "4.2",
+      "title": "e-graded Khovanov Homology",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 480,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "khovanov homology",
+          "heading": true
+        },
+        {
+          "term": "e-graded",
+          "heading": true
+        },
+        {
+          "term": "cat cob",
+          "heading": false
+        },
+        {
+          "term": "hackcenter begin",
+          "heading": false
+        },
+        {
+          "term": "underline hackcenter",
+          "heading": false
+        },
+        {
+          "term": "cat r-emod",
+          "heading": false
+        },
+        {
+          "term": "begin tikzpicture",
+          "heading": false
+        },
+        {
+          "term": "end tikzpicture",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section: e-Khov} We construct the e-graded version of Khovanov homology in a nearly identical manner. We can define an e-grading on $\\cat{2Cob}$ by adding formal objects $\\Sigma\\{(a,b)\\}$ for every $1$-manifold $\\Sigma$ and $(a,b)\\in \\Z \\times \\Z_4$, and defining the degree $deg(W)$ of a cobordism $W:\\Sigma_0\\{(m,m')\\}\\to \\Sigma_{1}\\{(n,n')\\}$ by \\[ deg(W)=(\\chi(W)+n-m, -\\chi(W)+n'-m') \\] Pants cobordisms",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-421-r1",
+      "number": "4.2.1",
+      "title": "R1",
+      "level": 3,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 145,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subcomplex",
+          "heading": false
+        },
+        {
+          "term": "testament",
+          "heading": false
+        },
+        {
+          "term": "osp",
+          "heading": false
+        }
+      ],
+      "extract": "as a testament to how the arguments for Khovanov homology work verbatim for this homology theory. 4.2.1. R1. C := C ! = \u0014 0 → \u0012 A ⊗C \u0012\u0013\u0013 {(0, 1)} m →C \u0012\u0013 {(1, 0)} →0 \u0015 {(1, 2)} where the ﬁrst non-zero term is in homological degree 0. Recall that m(1 ⊗a) = a, and that A = R 1 ⊕RX, so C has an acyclic subcomplex C′. C′ = \u0014 0 → \u0012 R 1 ⊗C \u0012\u0013\u0013 {(0, 1)} m →C \u0012\u0013 {(1, 0)} →0 \u0015 {(1, 2)} Taking the quotient of C by this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-422-categorification-of-j0362j",
+      "number": "4.2.2",
+      "title": "Categorification of J\"0362J",
+      "level": 3,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 119,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e-graded",
+          "heading": false
+        },
+        {
+          "term": "categoriﬁcation",
+          "heading": false
+        },
+        {
+          "term": "matches",
+          "heading": false
+        }
+      ],
+      "extract": "Deﬁnition 4.9. Let C be a chain complex and denote the term in cohomological degree r by Cr. Then deﬁne the e-graded Euler characteristic χq,τ of this complex by χq,τ(C) = X r∈Z (−1)rdimq,τ(Cr). Theorem 4.10. bJ(L) = χq,τ(C(L)) Proof. If D is a collection of k disjoint circles, then C(D) = 0 →A⊗k →0. So χq,τ(C(D)) = (τ −1q + τq−1)k. Let D1, D2, D3 be diagrams that diﬀer as shown below D1 D2 D3 Then C(D1) is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-43-e-graded-covering-khovanov-homology",
+      "number": "4.3",
+      "title": "e-graded Covering Khovanov Homology",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 591,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "khovanov homology",
+          "heading": true
+        },
+        {
+          "term": "covering khovanov",
+          "heading": true
+        },
+        {
+          "term": "e-graded",
+          "heading": true
+        },
+        {
+          "term": "e-graded supermodules",
+          "heading": false
+        },
+        {
+          "term": "ekh cov",
+          "heading": false
+        },
+        {
+          "term": "e-graded version",
+          "heading": false
+        },
+        {
+          "term": "mathcal cov",
+          "heading": false
+        },
+        {
+          "term": "chronological cobordisms",
+          "heading": false
+        }
+      ],
+      "extract": "Let $R=\\Z^\\pi$ for the remainder of the paper. This section assumes prior knowledge of Putyra's work on Covering Khovanov homology \\cite{P}. For the sake of brevity we omit most of the technical details and definitions involving \"chronology\". Covering Khovanov homology constructs a chain complex of modules over the ring $\\mathbf{k}:=\\Z[X,Y,Z]/(X^2=Y^2=1)$ such that the homology of the chain complex if we specialize",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 646,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mikhail khovanov",
+          "heading": false
+        },
+        {
+          "term": "khovanov homology",
+          "heading": false
+        },
+        {
+          "term": "sean clark",
+          "heading": false
+        },
+        {
+          "term": "odd khovanov",
+          "heading": false
+        },
+        {
+          "term": "quantum supergroups",
+          "heading": false
+        },
+        {
+          "term": "quantum osp",
+          "heading": false
+        },
+        {
+          "term": "quantum topol",
+          "heading": false
+        },
+        {
+          "term": "quantum kac-moody",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Dorit Aharonov, Vaughan Jones, and Zeph Landau. A polynomial quantum algorithm for approximating the Jones polynomial. In STOC’06: Proceedings of the 38th Annual ACM Symposium on Theory of Computing, pages 427–436. ACM, New York, 2006. [2] Dror Bar-Natan. On Khovanov’s categoriﬁcation of the Jones polynomial. Algebr. Geom. Topol., 2:337–370, 2002. [3] Dror Bar-Natan. Khovanov’s homology for tangles and",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "khovanov homology",
+      "heading": true
+    },
+    {
+      "term": "uncolored osp",
+      "heading": false
+    },
+    {
+      "term": "osp lambda",
+      "heading": false
+    },
+    {
+      "term": "quantum osp",
+      "heading": false
+    },
+    {
+      "term": "covering khovanov",
+      "heading": true
+    },
+    {
+      "term": "odd khovanov",
+      "heading": false
+    },
+    {
+      "term": "align hackcenter",
+      "heading": false
+    },
+    {
+      "term": "align otimes",
+      "heading": false
+    },
+    {
+      "term": "tikzpicture tau",
+      "heading": false
+    },
+    {
+      "term": "link homology",
+      "heading": false
+    },
+    {
+      "term": "khovanov complex",
+      "heading": false
+    },
+    {
+      "term": "clark cite",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 17,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 16,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p16); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 16 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2210.09583v1"
+  }
+}

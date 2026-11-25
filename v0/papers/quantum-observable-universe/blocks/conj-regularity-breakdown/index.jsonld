@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-regularity-breakdown",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:regularity-breakdown",
+  "kind": "conjecture",
+  "title": "Regularity breakdown at $q = 1$ and a discretely self-similar blow-up scenario",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-q-ns-wellposedness",
+    "papers/quantum-observable-universe/blocks/prop-q-turbulence-spectrum",
+    "papers/quantum-observable-universe/blocks/rem-hamilton-jacobi-phase",
+    "papers/quantum-observable-universe/blocks/def-leray-profile",
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter"
+  ],
+  "cites": [
+    "references/leray1934",
+    "references/necas-ruzicka-sverak1996",
+    "references/tsai1998",
+    "references/seregin2012",
+    "references/chae2013adss",
+    "references/chae-wolf2016dss",
+    "references/bradshaw-tsai2018survey"
+  ],
+  "tags": [
+    "tier:famous",
+    "navier-stokes",
+    "millennium-problem",
+    "regularity",
+    "critical-exponent",
+    "blowup",
+    "discretely-self-similar"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.RegularityBreakdown",
+  "text": "regularity-breakdown.md",
+  "leanSource": "regularity-breakdown.lean",
+  "provenance": "authored"
+}

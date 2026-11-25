@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1012.4090v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Generalized Skyrme Crystals",
+      "dcterms:creator": [
+        "Loboa, J. Silva",
+        "∗",
+        "Warda, R. S."
+      ],
+      "dcterms:issued": "D:20220421",
+      "dcterms:identifier": "https://arxiv.org/abs/1012.4090",
+      "dcterms:abstract": "This letter deals with triply-periodic (crystalline) solutions in a family of Skyrme systems, namely where the ﬁeld takes values in the squashed 3-sphere. The family includes the standard Skyrme model (round 3-sphere), and the Skyrme- Faddeev case (maximal squashing). In the round case, the lowest-energy crystal is the well-known cubic lattice of half-skyrmions; but in the squashed case the minimal-energy crystal structures turn out to be diﬀerent. We describe some of the solutions that arise, including arrays of vortices and multi-sheeted structures.",
+      "dcterms:source": "library/arxiv-1012.4090v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1012.4090v1"
+    }
+  ]
+}

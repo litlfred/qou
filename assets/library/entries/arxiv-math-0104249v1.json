@@ -1,0 +1,265 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0104249v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0104249v1/blocks/lem-sec-front-matter-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 9,
+      "target": "lem-sec-front-matter-04.md",
+      "narrative": null,
+      "content": "For the value (4) there holds the integral presentation I = −1 2πi Z M+i∞ M−i∞ πb cotb πt · R(t) dt, (12) where M ∈R is an arbitrary positive constant from the interval n < M < cn.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0104249v1/blocks/lem-sec-front-matter-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 9,
+      "target": "lem-sec-front-matter-05.md",
+      "narrative": null,
+      "content": "For the sum (4) there holds the asymptotic relation I = ˜I · (−1)n(2√πn )a+b−bc(2π)b na−1 · \u00001 + O(n−1) \u0001 as n →∞, where ˜I = ˜In := −1 2πi Z M sinb πnτ · cotb πnτ · enf(τ) · g(τ) dτ, (14) f(τ) = (a + b −bc)2 log 2 + b(τ + c) log(τ + c) + b(−τ + c) log(−τ + c) + (a + b)(τ −1) log(τ −1) −(a + b)(τ + 1) log(τ + 1), g(τ) = (τ + c)b/2(−τ + c)b/2 (τ + 1)(a+b)/2(τ −1)(a+b)/2 , and the contour M is a vertical line ℜ(τ) = µ, 1 < µ < c, oriented from bottom to top. We mean the functions f(τ) and g(τ) in the complex τ-plane cut along the rays (−∞, 1] and [c, +∞), where we choose that branches of the log",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0104249v1/blocks/lem-sec-front-matter-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 9,
+      "target": "lem-sec-front-matter-06.md",
+      "narrative": null,
+      "content": "Suppose the root µ1 ∈(c, +∞) of the polynomial (18) satisﬁes the condition µ1 ≤c + c2 −1 · min \u001a b 2(a + b), 1 3c \u001b . (19) Then all solutions of equation (17) in the domain ℜ(τ) > 0 are exhausted by the following list: (a) the “real” solution µ1 ± i0 for λ = ±b, where a sign ‘+’ (a sign ‘−’) in the record ±i0 coinsides with the sign of λ and corresponds to upper (respectively, lower) bank of the cut [c, +∞); (b) a real solution µ0 ∈(1, c) for λ = 0; (c) a complex solution τλ ∈(1, c) for 0 < |λ| < b; in addition, the sign of ℑ(τλ) coinsides with the sign of λ, and τλ = τ−λ. The set of solutions",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0104249v1/blocks/lem-sec-front-matter-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 9,
+      "target": "lem-sec-front-matter-07.md",
+      "narrative": null,
+      "content": "Let λ ∈R, |λ| ≤b, and let τλ be the (unique) solution of equation (17) in the domain ℜ(τ) > 0. Then there holds the asymptotic formula |Jn,λ| = enℜ(f0(τλ))|g(τλ)| (2πn|f ′′(τλ)|)1/2 · \u00001 + O(n−1) \u0001 as n →∞, where f0(τ) := f(τ) −f ′(τ)τ = (a + b −bc)2 log 2 + bc log(τ + c) + bc log(−τ + c) −(a + b) log(τ + 1) −(a + b) log(τ −1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0104249v1/blocks/lem-sec-front-matter-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 9,
+      "target": "lem-sec-front-matter-08.md",
+      "narrative": null,
+      "content": "Suppose condition (19) is satisﬁed. Then for the linear forms (5) there holds the limit relation κ := lim sup n→∞ log |In| n = ℜ(f0(µ)) = log 22(a+b−bc)|µ + c|bc|µ −c|bc |µ + 1|a+b|µ −1|a+b , (21) where µ is a real root (i.e., µ1) of the polynomial (18) from the interval (c, +∞) for b = 1, or a root of this polynomial in the domain ℑ(τ) > 0 with a maximal possible part ℜ(µ) for b > 1. In the case b = 1 the limit superior in (21) can be replaced by the ordinary one.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0104249v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 9,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0104249v1  [math.NT]  26 Apr 2001\nIRRATIONALITY OF VALUES OF ZETA-FUNCTION\nW. Zudilin\n1.\nIntroduction. The irrationality of values of the zeta-function ζ(s) at odd\nintegers s ≥3 is one of the most attractive problems in number theory. Inspite of a\ndeceptive simplicity and more than two-hundred-year history of the problem, all done\nin this direction can easily be counted. It was only 1978, when Ap´ery [A] obtained\nthe irrationality of ζ(3) by a presentation of “nice” rational approximations to this\nnumber. During next years the phenomenon of Ap´ery’s sequence was recomprehended\nmore",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0104249v1/blocks/thm-sec-front-matter-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 9,
+      "target": "thm-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "There exist odd integers a1 ≤145 and a2 ≤1971 such that the numbers 1, ζ(3), ζ(a1), ζ(a2) are linearly independent over Q.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0104249v1/blocks/thm-sec-front-matter-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 9,
+      "target": "thm-sec-front-matter-02.md",
+      "narrative": null,
+      "content": "improves corresponding result from [R2], where the linear independence of numbers 1, ζ(3), ζ(a) was established for some a ≤169. 2000 Mathematics Subject Classiﬁcation. Primary 11J72; Secondary 33C60. 1After ﬁnishing this paper the author knew that Rivoal [R3] had independently obtained the claim of Theorem 1 for the ﬁrst collection in (1) by another generalization of his construction from [R1].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0104249v1/blocks/thm-sec-front-matter-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 9,
+      "target": "thm-sec-front-matter-03.md",
+      "narrative": null,
+      "content": "For each odd integer a ≥3 there holds the absolute estimate δ(a) > 0.395 log a > 2 3 · log a 1 + log 2. (2) We stress that our proofs of Theorems 1–4 exploit calculations via the saddle point method (Section 4) and ideologically leans on the works [N2], [He]. An improvelment of arithmetic estimates (i.e., of denominators of numerical linear forms) in the spirit of [H2], [RV] (Section 3) allows us to sharpen the lower estimate of δ(a) in Theo- rems 3, 4 for small values of a. In Section 5 we obtain not only an upper bound but also precise asymptotics of coeﬃcients of linear forms. Finally, we p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0104249v1/blocks/lem-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 16,
+      "target": "lem-sec-000-01.md",
+      "narrative": null,
+      "content": "Dl veliqiny (4) spravedlivo integralьnoe predstavlenie I = −1 2πi Z M+i∞ M−i∞ πb ctgb πt · R(t) dt, (12) gde M ∈R – proizvolьna posto nna iz intervala n < M < cn. Dokazatelьstvo. Rassmotrim podyntegralьnu\u0018 funkci\u0018 v (12) na kon- ture pr mougolьnika P s verxinami M ±iN, N + 1 2 ±iN, gde celoe qislo N dostatoqno veliko, N > cn. Raskladyva funkci\u0018 (3) v r d Te\u001alora v ok- restnosti t = k ∈Z i polьzu sь predstavleniem (11), soglasno integralьno\u001a teoreme Koxi poluqaem 2πi Z P πb ctgb πt · R(t) dt = X M<k⩽N Rest=k \u0000πb ctgb πt · R(t) \u0001 = X M<k⩽N R(b−1)(k) (b −1)! . (13) Na storonah [N + 1 2 −iN, N + 1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0104249v1/blocks/lem-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 16,
+      "target": "lem-sec-000-02.md",
+      "narrative": null,
+      "content": "Pri n →∞dl summy (4) vypolneno I = ˜I · (−1)n(2√πn )a+b−bc(2π)b na−1 · \u00001 + O(n−1) \u0001 , gde ˜I = ˜In := −1 2πi Z M sinb πnτ · ctgb πnτ · enf(τ) · g(τ) dτ, (14) f(τ) = (a + b −bc)2 log 2 + b(τ + c) log(τ + c) + b(−τ + c) log(−τ + c) + (a + b)(τ −1) log(τ −1) −(a + b)(τ + 1) log(τ + 1), g(τ) = (τ + c)b/2(−τ + c)b/2 (τ + 1)(a+b)/2(τ −1)(a+b)/2 , a kontur M – vertikalьna pr ma Re τ = µ, 1 < µ < c, prohodima snizu vverh. My rassmatrivaem funkcii f(τ) i g(τ) v τ-ploskosti s razrezami vdolь luqe\u001a (−∞, 1] i [c, +∞), fiksiru vetvi logarifmov, prinima\u0018wie de\u001astvi- telьnye znaqeni na intervale (1, c) vewe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0104249v1/blocks/lem-sec-000-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 16,
+      "target": "lem-sec-000-03.md",
+      "narrative": null,
+      "content": "Pustь korenь µ1 ∈(c, +∞) mnogoqlena (18) udovletvor et ne- ravenstvu µ1 ⩽c + c2 −1 · min \u001a b 2(a + b), 1 3c \u001b . (19) Togda v oblasti Re τ > 0 vse rexeni uravneni (17) isqerpyva\u0018ts sle- du\u0018wim spiskom: a) “vewestvennoe” rexenie µ1 ± i0 dl λ = ±b, gde znak ‘+’ (znak ‘−’) v zapisi ±i0 sovpadaet so zn´akom λ i otveqaet verhnemu (niжnemu) beregu razreza [c, +∞); b) vewestvennoe rexenie µ0 ∈(1, c) dl λ = 0; v) kompleksnoe rexenie τλ ∈(1, c) dl 0 < |λ| < b, pri зtom znak Im τλ sovpadaet so zn´akom λ i τλ = τ−λ. Mnoжestvo rexeni\u001a uravneni (17) obrazu\u0018t v poluploskosti Re τ > 0 glad- ku\u0018 zamknutu\u0018 kriv",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0104249v1/blocks/lem-sec-000-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 16,
+      "target": "lem-sec-000-04.md",
+      "narrative": null,
+      "content": "Pustь λ ∈R, |λ| ⩽b, i τλ – (edinstvennoe) rexenie urav- neni (17) v oblasti Re τ > 0. Togda pri n →∞spravedliva asimptotiqeska formula |Jn,λ| = en Re f0(τλ)|g(τλ)| (2πn|f ′′(τλ)|)1/2 · \u00001 + O(n−1) \u0001 , gde f0(τ) := f(τ) −f ′(τ)τ = (a + b −bc)2 log 2 + bc log(τ + c) + bc log(−τ + c) −(a + b) log(τ + 1) −(a + b) log(τ −1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0104249v1/blocks/lem-sec-000-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 16,
+      "target": "lem-sec-000-05.md",
+      "narrative": null,
+      "content": "Pustь vypolneno uslovie (19). Togda dl line\u001anyh form (5) spravedlivo predelьnoe sootnoxenie κ := lim n→∞ log |In| n = Re f0(µ) = log 22(a+b−bc)|µ + c|bc|µ −c|bc |µ + 1|a+b|µ −1|a+b , (21) gde µ – vewestvenny\u001a korenь µ1 mnogoqlena (18) iz intervala (c, +∞) v sluqae b = 1 i korenь зtogo mnogoqlena v oblasti Im τ > 0 s maksimalьno vozmoжno\u001a qastь\u0018 Re µ v sluqae b > 1. Dl b = 1 verhni\u001a predel v (21) moжno zamenitь na obyqny\u001a. Dokazatelьstvo. Vse rexeni uravneni (17) v oblasti Re τ > 0 dl neqetnyh λ = k odnovremenno vl \u0018ts korn mi mnogoqlena (18). Rutinna proverka pokazyvaet, qto uslovie (19) obesp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0104249v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ob irracionalьnosti znaqeni\u001a dzeta-funkcii",
+      "pageStart": 9,
+      "pageEnd": 16,
+      "target": "../sections/sec-000-ob-irracionalьnosti-znaqeni-dzeta-funkcii.md",
+      "narrative": null,
+      "content": "V. V. Zudilin\n1. Vvedenie. Problema irracionalьnosti znaqeni\u001a dzeta-funkcii ζ(s)\nv neqetnyh toqkah s ⩾3 \u001fvl\u001fets\u001f odno\u001a iz samyh prit\u001fgatelьnyh v teorii\nqisel. Nesmotr\u001f na obmanqivu\u0018 prostotu i bolee qem dvuhvekovu\u0018 isto-\nri\u0018, poluqennye v зtom napravlenii rezulьtaty moжno peresqitatь na\npalьcah. Lixь v 1978 g. Aperi [A] udalosь ustanovitь irracionalьnostь\nζ(3), predъ\u001fviv posledovatelьnostь “horoxih” racionalьnyh pribliжeni\u001a\ndl\u001f зtogo qisla. V dalьne\u001axem fenomen posledovatelьnosti Aperi byl ne-\nodnokratno pereosmyslen s toqki zreni\u001f razliqnyh analitiqeskih metodov\n(sm. [N2] i citirovannu\u0018 tam b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

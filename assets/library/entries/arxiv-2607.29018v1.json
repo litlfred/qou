@@ -1,0 +1,232 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2607.29018v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2607.29018v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "The Aldous property for normal Cayley graphs on\nsymmetric groups\nChenhui Lv∗1 and Sanming Zhou2\n1School of Mathematical Sciences, University of Science and Technology of China, Hefei 230026,\nPeople’s Republic of China\n2School of Mathematics and Statistics, The University of Melbourne, Parkville, VIC 3010,\nAustralia\nAugust 3, 2026\nAbstract\nAldous’ spectral gap conjecture states that the random walk and the interchange\nprocess on any connected graph have the same spectral gap, or, equivalently, the second\nlargest eigenvalue of any connected Cayley graph on the symmetric group Sn with\nrespect to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.29018v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec:intro label=\"sec:intro\"}\n\nAll graphs considered in this paper are finite and undirected with no loops or parallel edges. The order of a graph is meant to be its number of vertices. Denote by $A(\\Gamma)$ the adjacency matrix of a graph $\\Gamma$, and call its eigenvalues the *eigenvalues* of $\\Gamma$. Since $A(\\Gamma)$ is a real symmetric matrix, the eigenvalues of $\\Gamma$ are real numbers, and we order them as $\\lambda_1(\\Gamma) \\geq \\lambda_2(\\Gamma) \\geq \\dots \\geq \\lambda_n(\\Gamma)$, where $n$ is the order of $\\Gamma$. Similarly, for a real symmetric matrix $M$, we write $\\lambda_i(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.29018v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Aldous' spectral gap conjecture",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-11-aldous-spectral-gap-conjecture.md",
+      "narrative": null,
+      "content": "Given a graph $\\Gamma$ on $[n] = \\{1, 2, \\ldots, n\\}$, we may identify each edge $\\{i,j\\}$ of $\\Gamma$ with the transposition $(i\\ j)$ of the symmetric group $S_n$ on $[n]$. Let $T(\\Gamma)$ be the set of such transpositions of $S_n$. Then $\\mathrm{Cay}(S_n, T(\\Gamma))$ is a Cayley graph on $S_n$ associated with $\\Gamma$. It is readily seen that $\\mathrm{Cay}(S_n, T(\\Gamma))$ is connected whenever $\\Gamma$ is connected. Around 1992, Aldous [@A1] formulated a stunning conjecture, which is widely known as *Aldous' spectral gap conjecture*. It asserts that any connected graph $\\Gamma$ and its asso",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.29018v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main results",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-12-main-results.md",
+      "narrative": null,
+      "content": "A subset $S$ of $S_n \\setminus \\{e\\}$ is called [@PP] a *normal set* in $S_n$ if it is the union of some conjugacy classes of $S_n$. Since in $S_n$ every element is conjugate to its inverse element, a Cayley graph $\\mathrm{Cay}(S_n,S)$ on $S_n$ is normal if and only if $S$ is a normal set in $S_n$. Clearly, for a normal set $S$ in $S_n$, the set $$S^c=(S_n\\setminus\\{e\\})\\setminus S$$ is also a normal set in $S_n$, and moreover $\\mathrm{Cay}(S_n,S)$ and $\\mathrm{Cay}(S_n,S^c)$ are complements of each other. Throughout the paper, we denote by $K_n$ the complete graph of order $n$, by $K_{m,n}$ t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.29018v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-2-preliminaries.md",
+      "narrative": null,
+      "content": "and Corollary 1.5 in Section 4. To prove Theorem 1.6, we first need to determine all normal\nCayley graphs on Sn that are line graphs (see Theorem 5.1). Using this and the classifica-\ntion [31] of connected regular graphs with second largest eigenvalue at most 1, we obtain a\nclassification of all normal Cayley graphs on Sn whose strictly second largest eigenvalue is\nat most 1 (see Theorem 5.5). With the help of this classification, which is of interest for its\nown sake, we prove Theorem 1.6 and Corollary 1.7 in Section 6.\n2\nPreliminaries\nThe reader is referred to [18, 19, 29, 32] for general re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.29018v1/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "cf. [27, Proposition 2.3]",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "There exists a positive integer N0 such that for every n ≥N0 and any γ ⊢n with |fix(γ)| ≥2, we have max ζ⊢n ζ /∈{(n),(1n)} ˜χζ(γ) = ˜χ(n−1,1)(γ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2607.29018v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-3-proof-of-theorem.md",
+      "narrative": null,
+      "content": "Lemma 2.1 (cf. [27, Proposition 2.3]). There exists a positive integer N0 such that for every\nn ≥N0 and any γ ⊢n with |fix(γ)| ≥2, we have\nmax\nζ⊢n\nζ /∈{(n),(1n)}\n˜χζ(γ) = ˜χ(n−1,1)(γ).\n3\nProof of Theorem 1.2\nProof of Theorem 1.2. Let n ≥5, and let S be a nonempty normal set in Sn with S̸ = Sn\\{e}.\nAssume first that either S or Sc is equal to An \\ {e}. Without loss of generality, we may\nassume that S = An \\ {e}. Then Cay(Sn, S) ∼= 2Kn!/2 has spectrum\n\u001a\u0010\nn!\n2 −1\n\u00112 , (−1)n!−2\n\u001b\n.\nThe eigenvalue n!\n2 −1 is attained by both ρ(n) and ρ(1n), while the strictly second largest\neigenvalue −1 is attaine",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.29018v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proofs of Theorem and Corollary",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-4-proofs-of-theorem-and-corollary.md",
+      "narrative": null,
+      "content": "Proof of Theorem 1.3. Let N0 be the positive integer in Lemma 2.1. Let N = max{N0, 5}\nand n ≥N. Let S be a nonempty normal set in Sn such that 2 ≤|supp(σ)| ≤n −2 for all\nσ ∈S. Since S is normal, ⟨S⟩is a nontrivial normal subgroup of Sn and hence is either Sn\nor An. Since Cay(Sn, S) is normal, by (6), its eigenvalue corresponding to a partition β ⊢n\nis\nλβ =\nX\nσ∈S\n˜χβ(σ).\n(a) Assume first that O(S) = ∅. Then S ⊆An and hence ⟨S⟩= An. Thus Cay(Sn, S) is\ndisconnected with two isomorphic connected components. Consequently, the largest eigen-\nvalue |S| of Cay(Sn, S) has multiplicity 2 and is attained",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.29018v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Normal Cayley graphs on symmetric groups with strictly second largest eigenvalue at most 1",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-5-normal-cayley-graphs-on-symmetric-groups-with.md",
+      "narrative": null,
+      "content": "[]{#line-graph label=\"line-graph\"}\n\nThis section is a preparation for our proof of Theorem [\\[thm:main2\\]](#thm:main2){reference-type=\"ref\" reference=\"thm:main2\"} to be given in the next section. However, the main results in this section, Theorems [\\[class-linegraph\\]](#class-linegraph){reference-type=\"ref\" reference=\"class-linegraph\"} and [\\[sn-cay-sec-1\\]](#sn-cay-sec-1){reference-type=\"ref\" reference=\"sn-cay-sec-1\"}, are also of interest for their own sake.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.29018v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Normal Cayley graphs on $S_n$ that are line graphs",
+      "pageStart": 12,
+      "pageEnd": 17,
+      "target": "../sections/sec-007-51-normal-cayley-graphs-on-s-n-that-are-line-gra.md",
+      "narrative": null,
+      "content": "The *line graph* of a graph $\\Gamma$ is the graph whose vertices correspond to the edges of $\\Gamma$, where two vertices are adjacent if and only if the corresponding edges in $\\Gamma$ share exactly one end-vertex. A graph is called a *line graph* if it is isomorphic to the line graph of some graph. The following result gives a classification of normal Cayley graphs on $S_n$ that are line graphs.\n\n::: thm\n[]{#class-linegraph label=\"class-linegraph\"} Let $n\\ge 2$, and let $S$ be a nonempty normal set in $S_n$. Then $\\mathrm{Cay}(S_n,S)$ is a line graph if and only if one of the following holds:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.29018v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Normal Cayley graphs on $S_n$ with strictly second largest eigenvalue at most $1$",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-008-52-normal-cayley-graphs-on-s-n-with-strictly-sec.md",
+      "narrative": null,
+      "content": "A *cocktail party graph* is a graph obtained from a complete graph with even order by deleting a perfect matching. In 2010, Stanić [@Stanic2010] obtained the following complete classification of connected regular graphs with the second largest eigenvalue at most $1$.\n\n::: thm\n[]{#second-ev-1 label=\"second-ev-1\"} Every connected regular graph with the second largest eigenvalue at most $1$ is the complement of a (not necessarily connected) regular graph, where each connected component is either a connected regular line graph, a cocktail party graph, or one of the 187 exceptional connected regula",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.29018v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proofs of Theorem and Corollary",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "../sections/sec-009-6-proofs-of-theorem-and-corollary.md",
+      "narrative": null,
+      "content": "With the preparation in the previous section, we can finally prove Theorem 1.6 and Corollary\n1.7.\nProof of Theorem 1.6. Let n ≥5, and let S be a nonempty normal set in Sn. Let AS, BS and\nCS be as in (3). Then S = AS ∪BS ∪CS. Since Cay(Sn, S) is normal, by (6) and Table 1,\nits eigenvalue corresponding to the partition (n −1, 1) is\nλ(n−1,1) =\nX\nσ∈S\n˜χ(n−1,1)(σ)\n=\n1\nn −1\nX\nσ∈S\n(|fix(σ)| −1)\n=\n1\nn −1\n\nX\nσ∈AS\n(|fix(σ)| −1) −\nX\nσ∈CS\n1\n\n\n=\n1\nn −1\n\n\n\nX\nσ∈AS\n|fix(σ)|\n\n−(|AS| + |CS|)\n\n.\n(12)\nBy our assumption (5) and equation (12), we have λ(n−1,1) ≤1.\nNecessity. Suppose that Cay(Sn, S) has",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

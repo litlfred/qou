@@ -1,0 +1,971 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "birkhoff-generalizedriemannproblem-1913",
+  "blocks": [
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/figure-img-p001-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Generalized Riemann Problem for Linear Differential Equations and the Allied Problems for Linear Difference and q-Difference Equations [pp. 521-568]",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-the-generalized-riemann-problem-for-linear-diffe.md",
+      "narrative": null,
+      "content": "Problems for Linear Difference and q-Difference Equations\n \nAuthor(s): George D. Birkhoff",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proceedings of the American Academy of Arts and Sciences, Vol. 49, No. 9 (Oct., 1913), pp. 519-568",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-proceedings-of-the-american-academy-of-arts-and.md",
+      "narrative": null,
+      "content": "No. 9 (Oct., 1913), pp. 521-568\n \nPublished by: American Academy of Arts & Sciences \nStable URL: https://www.jstor.org/stable/20025482\nJSTOR is a not-for-profit service that helps scholars, researchers, and students discover, use, and build upon a wide \nrange of content in a trusted digital archive. We use information technology and tools to increase productivity and \nfacilitate new forms of scholarship. For more information about JSTOR, please contact support@jstor.org. \n \nYour use of the JSTOR archive indicates your acceptance of the Terms & Conditions of Use, available at \nhttps://about.jst",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "522",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-522.md",
+      "narrative": null,
+      "content": "classic form was first solved by Hilbert.4 His treatment and Plemelj's\n elegant completion thereof5 reposed alike upon a certain theorem\n whose proof was made by means of the Fredholm theory. Owing\n to the deep-seated analogy between linear differential and difference\n and g-difference equations, I have been able to apply a convenient\n extension of the same theorem in all cases; my proof is based on a\n method of successive approximations.\n Inasmuch as I have been able to simplify Hubert's and Plemelj's\n treatment of the classic Riemann problem, I have ventured to include\n my treatment of it al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "523",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-523.md",
+      "narrative": null,
+      "content": "points of C. These restric-,\n tions on a (x) ensure that we\n can choose regular curves Di\n and D2, within and without\n C respectively, and osculating\n C at the points where a (x) is\n not analytic (Fig. 1) in such a\n way that on the continua lim\n ited by Di, D2, we have\n (1)\n \\a{x)\\^K,\n a (x) ? a (x)\n Fig. 1.\n <K;\n in these continua a (x) is defined as the analytic extension of a (x) on\n C. It is possible to extend further the definition of a (x) throughout\n the ring formed by C\\, C2 in such wise that inequalities of the type\n (1) hold; for this purpose it is clearly sufficient to choose real a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "524",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-524.md",
+      "narrative": null,
+      "content": "provided that x lies between C and C& since the function rp(x) g+(x)\n is analytic in the ring C, C\\ and continuous along its boundary. Thus\n we may write\n t-!a=f\"'l\"'\"t\n 27rV-? lJci ? ?^\n The first integrand on the right-hand side is continuous in x and t, for\n t on C and x in the ring 0, C2 unless x ? t, when the integrand is not\n defined; in the neighborhood of a pair of values x = t, the integrand\n remains finite by (1). Hence the first integral approaches a continu\n ous limit as x approaches the boundary. Inasmuch as t is restricted\n to lie on C\\ in the second integrand, the same statement",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "525",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-525.md",
+      "narrative": null,
+      "content": "Now modify the contour C of integration in (4) to D;. The integrand\nis analytic in-¢ over the continua enclosed by C and Dj, so that the\nvalue of the integral will not thereby be altered. (It must be remem-\nbered that x lies without C in (4).) From this modified form of (4)\nwe obtain\n\n(9) IP@issz | [| oat f PO alt,\n\nupon applying (8) and (1).\n\nBut the two integrals which appear in the right hand member of\nthis inequality tend to zero as the unspecified integer p increases; in\nfact we have |7 (x) | < 1 within C so that 7? (x) tends uniformly to\nzero in any closed continuum within C, as p become",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "526",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-526.md",
+      "narrative": null,
+      "content": "and (6) likewise by\n (60 /- (z)+t-*(x) g-{x)a{x) = ) fr*\n 2tt V?1 Jc\n 2tt V? 1 Jc2 t ? x\n From these two equations there results at once\n (70 f+ (x) -1 (x) = r~p (x) g- (x) a (x) along C.\n In order to develop an inequality for the modulus of f+(x) in this\n case, we note that the contour C in (40 may be modified to D2. The\n modification yields\n -p(x) -dt\n (90 irWI^Pj f\\r-*(f)dt\\+ f\n 2tt ( Jd2 JCzl t ? X\n where L is the maximum of | g~(x) | along C. But | r~p(x) | tends to\n zero for x outside of C as p becomes infinite, since for such an x we\n have | t(x) | > 1. We conclude therefore that for an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "527",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-007-527.md",
+      "narrative": null,
+      "content": "for the unit matrix (%) in which d? = 1, <5# = 0 for l 9? j, and A~l(x)\n stands for the matrix inverse to A(x). The matrices F+{x), G+(x),\n F~(x), G~{x) are to be determined to satisfy (11), the first two as\n matrices of regular inner functions and the last two as matrices of\n regular outer functions. The matrix products on the right hand side\n are the customary matrix products, and the factors rp (x), r~p{x) stand\n for the matrices (rp (x) <5??) and {r~p (x) ?#) respectively.\n It may be proved without difficulty that for p taken large enough\n a solution of these equations exists. To effect th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "528",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-008-528.md",
+      "narrative": null,
+      "content": "where the third subscript on the functions corresponds to the subscript\n on the matrix. We have already obtained a solution of an equation\n of the form\n /+ 0*0 ? /\" (x) = tp (x) qi,\\,m-i+ (x) aX;- Or) along C\n (compare with (7)) in the form of a definite integral. By forming\n the sum of f+(x) and/-(a:) for X = 1,. .,n we obtain for every I and j,\n elements Pij>m+ (x) and Pij^m~ (x) which form the elements of Pm+(x)\n and Pm~0r) with the desired property (14).\n Likewise we can break up the second one of the mth pair of matrix\n equations (14) into n2 equations. A solution may here be built up in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "529",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-009-529.md",
+      "narrative": null,
+      "content": "The matrices F~(x), F+(x), G~(x), G+(x) thus obtained will satisfy\n (11), as appears from (12) by letting n become infinite.\n ? 4. Application to the Solution of a Single Matrix Equation.\n Multiply the second matrix equation (11) on the right by\n tp(x)A(x) and subtract it, member for member, from the first equation\n (11). There results\n (16) F+ (x) = rp (a?) [/ + 0- (x)] A (x) along C.\n Inasmuch as G~{x) reduces to a matrix of zero elements at x = oo,\n the determinant of I + G~(x) and also of F+(x) is not identically zero.\n The matrix equation (16) admits of further simplification. In fact\n th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "530",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-010-530.md",
+      "narrative": null,
+      "content": "PROCEEDINGS OF THE AMERICAN ACADEMY.\n ? 5. Further Properties of <p(r) and ^r(x).\n It is necessary for us to investigate further the nature of any solu\n tion <p (r), ^ (x) of (17) in the neighborhood of the curve C. In the\n first place, it is to be observed that at points of C where all of the\n elements of A(x) are analytic, the same is true of the elements of $(x)\n and S0f(x) ; in truth, the equation (17) shows us that analytic extension\n is possible across the curve at such points.\n We shall prove that the elements of these matrices possess derivatives\n of all orders, continuous at all point",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "531",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-011-531.md",
+      "narrative": null,
+      "content": "If now x be made to approach a point r0 of C, and if y be taken as the\n foot of the normal from x to C, this term approaches a limit which is\n continuous along C. In fact the factor (t ? y)k/(t ? x)k remains finite\n for t along C, and approaches the limit 1 uniformly save in the vicinity\n of aro- Thus if x (and y also of course) approaches x0, dk-x^ (x)/dxk~l\n approaches a limit along C continuous for an arbitrary r0.\n A similar proof shows that ty(x) has derivatives of all orders, con\n tinuous outside of and along C. This proof is based on the fact that\n the elements of A~l{x) satisfy the res",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "532",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-012-532.md",
+      "narrative": null,
+      "content": "x ? c by one unit, without the introduction of further zeros of | $(x) |\n or | ^(r) | in the finite plane.\n An entirely similar process eliminates a zero of | ty(x) | without C,\n or a zero of | $(r) | and \\^(x) | along C. In consequence of the\n results of ? 5, if either of these functions vanishes along C, the other\n does also, both at least to the first order.\n This process may be continued so long as there remain zeros of\n &(x) or ^(r). It must however finally come to an end. If this were\n not the fact it would follow at once that both | $(x) | and | ty(x) | have\n a zero of infinite multipli",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "533",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-013-533.md",
+      "narrative": null,
+      "content": "or become infinite to finite order at x = a. To obtain such a solution\n &(x), S^Or) it is only necessary to divide each element of <&(x), ^(x)\n by a suitable power of x ? a, so chosen as to make each element of\n these matrices analytic at x = oo ; and then to apply the normaliza\n tion above indicated, letting l/x ? a replace x. The curve C can also\n be taken to be a simply closed analytic curve which passes through\n x= oo.\n The main part of the conclusion that has been deduced above w\n obtained by Hilbert and Plemelj (loc. cit.) with the aid of the Fredhol\n theory of linear integral equations.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "534",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-014-534.md",
+      "narrative": null,
+      "content": "vanish, there exists a matrix $(r) with the folloivmg properties:\n (1) each element of ^(x) Is analytic except along Ch. . ., Cr and at an\n arbitrary point x ~ a where the elements may become infinite to finite\n order; \\ $(x) j nowhere vanishes save possibly atx = a;\n (2) the elements of <i>(r) are continuous and unlimitedly dlfferentlable\n along each curve Ct- from either side, analytic from either side save at\n points of intersection of the curves, or at those points where an element of\n Ai(x) fails to be analytic, or at x = a; If a lies on a curve Ci} the matrix\n (x ? a)z Ai(x) [or x~lAi(x)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "535",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-015-535.md",
+      "narrative": null,
+      "content": "of the curves or at those points where an element of Ai (x) fails to be\n analytic;\n xi^+ U (x) = , i^_ U (x) (i = 1,. . ., k),\n ( j ,4m+1+ U(x)*k(x) = [,4m+1- ?(x)*k{x)] Ak+1(xk?.\n The condition (30 necessitates that U (x) is analytic at any point\n of d (i = 1,. . ., k) and throughout the extended plane save at a and\n at points of Ck+i. The condition (30 gives us in addition\n *4m+i+ U(x) = [xJ^+r U(x)]$k(xk+1)Ak+1(xk+1)<?>k-i(xk+1).\n Conversely if U(x) satisfies these conditions (10, (20j (30 it is ap\n parent that $?+1 (x), given by (22), will satisfy the conditions prescribed\n for <?>0r) in t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "536",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-016-536.md",
+      "narrative": null,
+      "content": "at the point. Thus the elements of (23) are unlimitedly differentiable\n in the neighborhood of such a point along CkH- The same is true at\n more complicated points of intersection or points of contact, as a\n similar argument shows.\n The theorem is now demonstrated, at least for the case when a\n does not lie on a curve &,..., Cr. If a does lie on such a curve, we\n first choose an ol which is not on these curves to replace a, and then\n resort to the simple device used at the close of ? 6 to replace a' by a.\n Part II: The Problem of Riemann and its Generalization.\n ? 8. On Cauchy Matrices.\n Let T",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "537",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-017-537.md",
+      "narrative": null,
+      "content": "where L is a matrix of constants. In fact we have\n dT(d _ dl'jx) n\n X -. ? X j O.\n ax ax\n But the matrix x dlr{x) / dx\n KI'(x), K= (kj?\n Thus we obtain\n dT(x)\n dx\n KV Or) C = EC- C-lT (x) C = LT (x).\n ? 9. The Monodromic Group Problem.\n The most elementary existence theorems for ordinary linear differ\n ential equations show that the linear differential system\n (24) d^=zR^x) 7W\n admits a ?matrix solution Y(x) whose elements are analytic in the\n finite plane at every ordinary point where the elements of R(x) are\n analytic, and analytic at infinity if the elements of R(x) vanish to at\n least the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "538",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-018-538.md",
+      "narrative": null,
+      "content": "such wise that the combined circuit is reducible to a point, it is clear\n that\n (25)\n 1 m J- m-1 J-l ? J- y\n a necessary relation between the matrices Th..., Tm.\n The problem of Riemann is the following: For assigned points\n a\\,...,am and assigned matrices T\\,...,Tm for which (25) holds, to\n construct a matrix Y(x) of functions of determinant not identically\n zero, with elements analytic save at ah. . .,am where these elements\n are finite or become infinite to finite order, and undergoing a transfor\n mation to Y(x) Ti as x makes a positive circuit of at-(i = 1,. . ., ni).\n A solution of this p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "539",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-019-539.md",
+      "narrative": null,
+      "content": "By slightly modifying each element of A(x) along a small segment\n near either end of the arc of D within C? for I = 1,. . ., m, it is possible\n to obtain a matrix A(x) whose elements are analytic save at the end\n points of these segments, and unlimitedly differentiable along D.\n Such a matrix A(x) satisfies all of the conditions necessary for the\n application of the preliminary theorem in the case r = 1.\n Taking D as the curve and A(x) as the matrix, we can affirm the\n existence of a certain matrix <p(r), possessing in particular the property\n (28) x? + $ (a:) = [,!?- $ (*)] A fr),\n the approa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "540",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-020-540.md",
+      "narrative": null,
+      "content": "(31) x + 3> Or) = [xT?r $ Or)] Ai (x?)9 Ai (x) = U (x) Zrl (x~ai).\n (I = 1,. . ., m).\n This suggests another application of the preliminary theorem, since\n the curves C\\,. . .,Cm and the matrices Ai(x),. . ., Am(x) of known\n functions satisfy the necessary restrictions.\n Let <I>0r) be the solution given by the theorem for a = am, and let\n Zi(x),. . .,Zm(x), Z(x), be defined as equal to $(x) within d,. . ., Cm\n and outside of these curves respectively. These functions will then\n satisfy (30). Let Y(x) be defined by (29). This matrix is clearly\n composed of elements analytic without and along C\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "541",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-021-541.md",
+      "narrative": null,
+      "content": "functions analytic of determinant not zero In the vicinity of ai and under\n going a transformation to Z?(x) T\\, . . ., Zm(x) Tm as x makes a positive\n circuit of a\\, . . ., am respectively. There exists then a matrix Yix) of\n functions of determinant not zero for x 9^ a\\,. . ., am and analytic\n save at these points, which undergoes a transformation to Y (x) Ti as x\n makes a positive circuit of a{ (i = 1,. . .m); furthermore Y(x) is prop\n erly equivalent to Z\\ (x),. . . ,Zm-\\(x) at a\\,. . ., am-\\ and properly or im\n properly equivalent to Zm (x) at am.\n The result above stated is obtained when",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "542",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-022-542.md",
+      "narrative": null,
+      "content": "The matrix of elements on the right can be written in the form\n (x?am)kl(aii+bii(x?am) + ...),..., (x-am)fc?(% + &in(x?am) + . . .)\n (33).\n (x?am)kl(anl+bni(x?am) + ...),..., (x?am)kn(ann+bnn(x ? am) + ...)\n Here it is supposed that the exponents of the Cauchy matrix do not\n differ by integers; but a similar form can be found in all cases. In\n each column of Y(x) the highest possible power of x ? am is exhibited\n which leaves the coefficients of this power analytic in character at\n x am.\n If | atj | 9e 0 we can write this matrix in the form A{x)I' (x ? am\n where V (x) is the matrix (xkj?ij), a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "543",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-023-543.md",
+      "narrative": null,
+      "content": "1, 0,.0\n C2\n (x ? am)1 , 1,.0\n Cn\n (x ? am)1' 0,.1\n Inasmuch as | P(\n at x = am, this m\n secured for Y(x)\n clearly make all\n vided fi t^ 0. In\n without altering \n Inasmuch as | Y\n steps of this typ\n Y(x) C has the \n stage is reached \n belonging to Tm \n When F(r) has t\n of a linear diffe\n x = a\\,...,am and\n proved.13 The el\n functions whose n\n and whose denom\n ? 12. Irregular\n The Cauchy mat\n which a matrix so\n equivalent at a r\n possible matrix Z\n differential syst\n rational, is prope\n It is convenient\n order of any po\n then p + 1 is said\n According to the\n x = oo is proper\n 13 Schlesinger\nThi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "544",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-024-544.md",
+      "narrative": null,
+      "content": "is improperly equivalent to a Cauchy matrix which at x = 0 undergoes\n a transformation inverse to that which Y Or) undergoes at x = oo.\n Here we take m = 2, ax = 0, w? = oo. The condition T2Ti = / is\n satisfied.\n By means of a modification precisely like that of ? 11 we can make\n Z{x) properly equivalent to a suitable Cauchy matrix at x = 0, and\n yet preserve the other properties listed in ? 10.\n Now consider\n Rl{x) = d^z-Hx).\n Since | Z | (x) \\ 9e 0 for x 9? 0, oo, and since Z(x) and dZ(x)/dx\n undergo the same substitution about x = 0, the elements of Ri(x) are\n single-valued, and analytic fo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "545",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-025-545.md",
+      "narrative": null,
+      "content": "In order not to introduce artificial difficulties we shall consider the\n regular singular point to be of rank zero. To this case the above\n argument applies also, and the canonical system is that satisfied by a\n Cauchy matrix.\n If Y(x) is the matrix solution of a differential system (24) in which\n the elements of R(x) are rational, the above argument shows that at\n each of its singular points ah. . ., am, Y(x) is properly equivalent to\n the matrix solutions Zi(x),. . ., Zm(x ? am) of canonical differential\n systems.\n Conversely the results of ? 10 lead to the conclusion that given\n Ti,...,Tm s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "546",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-026-546.md",
+      "narrative": null,
+      "content": "where | si;- | 9e 0. The quantities ah. . ., an are the roots of the char\n acteristic equation alluded to, and the series s?? (x) are in general di\n vergent. We shall assume for the time being that no three of the\n points ai,. . ., an lie on the same straight line in the complex plane.\n Let now n, . . ., rN denote the N = n(n ? 1) (p + 1) arguments\n in order of increasing angular magnitude such that for some j and\n h (j * k)\n (36) 3i {(a,- ? ak) xp+\" ) = 0, arg x = rm.\n Here \"9t\" denotes \"the real part of\". Let us write tn+1 = n + 2w,\n and let jm and km denote the value of j and k correspondin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "547",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-027-547.md",
+      "narrative": null,
+      "content": "and of determinant not zero. At x = 0 these matrices are properly\n equivalent to a Cauchy matrix. These further facts come at once\n from the form of (34).\n Conversely let us prove that if Zi (x), . . ., Z^ (x) exist possessing\n such properties, they are all matrix solutions of one and the same\n canonical system (34).19\n In the first place it is clear that the matrix\n P(x) = xdZ^Zm-lix) (m = 1, . . ., N)\n is defined in each sector rm ^ arg x < rm+i (I = 1, . . ., N) and hence\n is defined in the entire plane. Now Zm+i (x) is obtained from Zm (x)\n by multiplication on the right by the matrix\n J-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "548",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-028-548.md",
+      "narrative": null,
+      "content": "Thus P(x) is represented asymptotically in the complete vicinity of\n x = oo by (39). But we have formally\n (40) ^_(^{(4^ +3)^ + 4^}).\n If (35) and (40) be used in evaluating the expression (39), it is seen\n that each element of P{x) is given asymptotically by a power series\n in descending integral powers of x, with leading term in xp+l or lower\n power of x. It follows that the elements of P(x) are analytic or have a\n pole of at most the (p+l)th order at x = oo . Hence the elements of\n P(x) are polynomials of degree at most p + 1.\n The central problem of the irregular singular point is, for a g",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "549",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-029-549.md",
+      "narrative": null,
+      "content": "where x in Am (x) is taken along arg x = t'm, and the determinations\n of T(x) chosen are obtained from one another by allowing arg x to\n increase from t\\ to tn. The matrix Am (x) thus defined is analytic\n along its line save at x = 0. Also Am (r) ? 7 is a matrix whose only\n non-zero element is\n CmeVkmW-pJmWxrkm-rim.\n Now we have\n xv+i xp\n Pkm (x) ? pjm (x) = (akm ? ajm) ~~TTl + (Am ? ?imY?\n + . . . + (\\km ? ^jm)xy\n which quantity by definition of jm, km has a negative real part for x\n along the ray arg x = t m, at least when | x | is sufficiently large. In\n consequence of the form of this non-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "550",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-030-550.md",
+      "narrative": null,
+      "content": "Now write for m = 1,. . ., Ar + 1\n Zm Or) = $ Or) T Or) (r'm ^ arg x ^ r'm+i).\n From (41) and (42) there results along arg x = t'to+i\n Zm+i Or) = ZmOr) [I + Cm], \\x\\^.r.\n The functions Zm (x) may accordingly be continued analytically across\n each ray arg x = Tm and represent matrices analytic for | x | ^ r, of\n determinant not zero. The relation (43) leads to the conclusion that\n Zmix) ?? Six) (r'm^ arga^rVi)\n where S(r) is of the desired form (35), and thence to the conclusion\n that this asymptotic representation is valid for rw ^ arg x < rTO+i.\n The relation between Zjv+i (x) and Zi (r) is t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "551",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-031-551.md",
+      "narrative": null,
+      "content": "of curved rays so chosen that the real part of only one of the differences\n Pi (x) ? Pj (x) changes sign along the ray, and thence to apply the\n preliminary theorem in much the same fashion as before. If two or\n more polynomials p\\ (x),. . ., pn (x) are identical it is not necessary to\n modify the nature of the rays.\n Furthermore it would be possible to construct an analogous existence\n proof when S(x) has for its elements so-called anormal serles.\n In other words, the results here obtained are of an entirely general\n nature.\n ? 15. The Generalized Rlemann Problem.\n Trie problem which I propos",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "552",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-032-552.md",
+      "narrative": null,
+      "content": "This second condition is satisfied if the elementary divisors associated\n with Ti and T{ are the same.\n With the understanding that the two conditions of compatibility are\n satisfied, we can assert that there exist m + 1 canonical systems with\n the prescribed characteristic constants at xi,. . ., xm+1 and with solu\n tions Vi(x),. . ., Vm+i (r) undergoing a transformation to V\\ (x) T\\,...,\n Vm+\\ Tm+i as x makes a positive circuit of xh. . . xm+i respectively.\n Hence there will exist a matrix Y (r) of elements analytic and of de\n terminant not zero save at xh. . ., xm+\\, properly equivalent to V",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "553",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "../sections/sec-033-553.md",
+      "narrative": null,
+      "content": "associated properly equivalent canonical system has characteristic\n constants only modified as stated.\n Now we have\n I Y(x) | - \\S(x)\\\n in the complete vicinity of x = oo y which is made up of the sectors\n (ti,t2), . . . (rN,TN+i). It follows that the series for | S (x) \\ converges\n and hence must be of the form\n ePi(*)+. +PnW -xp(a-{-h . . . ), a 9? 0,\n V x J\n so that always\n f\\ + . . + rn ^ p.\n But the above reductions increase r? + + rn\n | S(x) | or the value of p, and so must terminate.\n We can state then that either a solution of the \n a modified problem In which the constants rh . . .,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "554",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-034-554.md",
+      "narrative": null,
+      "content": "there exist two matrix solutions Y~ (x) and Y+ (x), with elements\n analytic in the finite plane save for poles, such that Y~ (x) S (x) in\n any left half plane and Y+ (x) ** S (r) in any right half plane.25 The\n existence of such a solution was proved by N?rlund and Galbrun by\n methods based on the Laplace transformation somewhat earlier.26\n These matrices Y~ (x) and Y+ (x) are connected by a relation\n (46) Y- (r) = 7+ (.r) P (x)\n where P (x) is evidently a matrix of periodic functions of period 1.\n From the form of (44) it appears that Y~ (r) is a matrix of entire\n functions, while Y+ (.r) is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "555",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-035-555.md",
+      "narrative": null,
+      "content": "? 17. Solution of the Problem of ? 16.\n In order to treat the problem of ? 16 we apply the preliminary\n theorem. We shall take r = 1, and take C\\ to be the axis of imagi\n narles in the complex plane unless | P(x) | = 0 at a point of that axis.\n The matrix A\\ (x) is taken equal to\n T Or) P Or) T'1 (x), T (x) = (x\"* (pj(r?)x zr%),\n except near to x = 0, where it is chosen in any way so as to satisfy the\n restrictions of the preliminary theorem there (compare ? 9). Since\n the elements of T(x) are in general multiple-valued functions of x,\n it is necessary to specify which branch of T(x) to select",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "556",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-036-556.md",
+      "narrative": null,
+      "content": "naries is obtained from that on the right-hand side by a complete\n positive circuit of x = 0, during which T(x) changes from\n (x?x (pje-?)x xrJ?ij) to (e2^ VI? V VZ?rix?x (pje~?)x xrJOi?).\n The Ith. diagonal element of Ai(x) may now be written\n while the element in the Ith row and jth column of A (r) (i 9? j) may\n be written\n ?MXy-n Tl-lxpxpi*xri-rj [Cij(0)e-2^-l) V~l* + _ . + C{j(/?-tt].\n Bearing (49) in mind we readily perceive that A\\(x) does have the\n indicated properties along the lower half of the axis of imaginaries.\n According to the preliminary theorem we can then determine a\n matrix",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "557",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-037-557.md",
+      "narrative": null,
+      "content": "Let us now apply the preliminary theorem a second time, taking\n r = 1, and for C? a circle with center at the origin and radius so large\n as to include within it all those points of the axis of imaginaries at\n which an element of A\\(x) as chosen above is not analytic, and also\n so as not to pass through a zero of | Y~(x) |.\n In this second application of the theorem we choose ^fiOr) to be\n [F~(r)]_1, and in this way satisfy the restrictions of the theorem.\n Furthermore let us take a = oo.\n Along the circle C\\ we have for the solution $(r)\n (52) ? $ (*) = [,!?- $ (*)] [Y- (x{)}-\\\n where the app",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "558",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-038-558.md",
+      "narrative": null,
+      "content": "One further remark comes in appropriately at this point. The\n definition of 7 (x) and Y\"(x) ensured that | Y~ (x) | and | 7+ (x) | do\n not vanish to the left or right of the axis of imaginarles respectively,\n save possibly for x = oo . Hence | Y~(x) | and | 7+(r) | do not vanish\n in these left or right half planes respectively.\n We may now enter upon a series of modifications of 7(r) which will\n preserve the above stated properties and secure in addition that the\n determinant of the leading coefficients of S(x) is not zero. To this\n end we write the matrix Six) in the form\n I x'\"(p1er'>)*xr*(a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "559",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "../sections/sec-039-559.md",
+      "narrative": null,
+      "content": "indeed any simple analytic curve without a horizontal tangent and\n with vertical asymptote, provided that \\ P(x) \\ 9e- 0 along the curve.\n If the equality sign obtains in (49) it will be necessary to employ\n a curve with asymptote not quite in the vertical and to employ half\n planes not bounded by a vertical line.\n It is also possible to replace S(x) by certain anormal forms,29 and\n thus extend the above results to the most general case.\n Our conclusion may be summed up as follows : There exists a linear\n difference system (44) with matrix solutions Y~{x), Y+{x) which either\n possesses prescri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "560",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "../sections/sec-040-560.md",
+      "narrative": null,
+      "content": "and let g? (x) be a solution of the g-difference equation of the type (54)\n (55) g (qx) = (r - m) g (x)\n for m = a{. If one takes for new variable\n Y(x) = gi(x)...g,(x)Y(x),\n a new matrix equation (54) in Y{x) is obtained with Q(x) polynomial\n in x.\n Let us write\n = logr\n logg'\n In terms of this new variable a solution of (55) for m = 0 is\n qHt2-t)m\n For m 9e- 0, the transformation\n _ ,? log x loga\n x = mx, y (r) = ?* v~1 l?s q mlos Q y (i)\n takes (55) to the normal form\n (56) y(qx) = (1 ~x)y(x).\n Two solutions of this equation are\n (57)\n Vao W= q*^ Qe\n 1 ? - 1 ? ?\n [ x qx\n as one may verify b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "561",
+      "pageStart": 42,
+      "pageEnd": 43,
+      "target": "../sections/sec-041-561.md",
+      "narrative": null,
+      "content": "result may be expressed as follows: There exist in general two matrix\n solutions\n [ 70 (a?) = (xpj Oij (r))\n I Yao(x) = q*(t ?(x-Jbvix)),\n where each function a# (x) is analytic at x = 0, and each function b^ (x)\n is analytic at x = oo ; and where furthermore the determinants of the\n leading coefficients of a^ (x) and b{j (x) at x = 0 and x = oo respec\n tively are not zero. It is only the case when such series exist that\n will be here considered.\n It follows at once from (54) that 70 (x) is a matrix of functions ana\n lytic for x 9e- 0, oo, and that Y~ (x) is a matrix of functions analytic in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "562",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "../sections/sec-042-562.md",
+      "narrative": null,
+      "content": "belong to the periods = 1, o/ = 2W? l/logg, and let ABCD\n be a parallelogram with vertices\n .1 i i . 27tVZ7I 27rV=Ti\n r0, a:0 +1, ?t0 + 1 H-,-, .r0 H-1-,\n logg logg\n respectively. At homologous points of BC and AD, P(t) has t\n value, since P(t + 1) =P(t).\n To obtain the relation between P(t) at homologous points \n and DC we consider first the matrix\n (59) P(x)=Yx-i(x)Yo(x).\n It is apparent from the form of the elements of 70(r) near x\n given by (58) that, if a positive circuit of x = 0 be made\n will change to Y0(x)K, where\n K= (e^oj^?ij);\n likewise, upon a similar circuit, 7^ (x) will change t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "563",
+      "pageStart": 44,
+      "pageEnd": 45,
+      "target": "../sections/sec-043-563.md",
+      "narrative": null,
+      "content": "(63)\n We have also seen that\n (61) pij(t+ 1) =pij(t).\n Now let us attempt to satisfy (60) and (61) by writing\n (62) pij (t) = ceat2+uo- (t ? ai)...a(t ? aM),\n where cr(t) is the Weierstrass sigma function belonging to the periods\n , 27T-VITT\n CO = 1, co = ?-.-,\n logg\n which satisfies the relations\n logg ) _\n a(t+l) = - e'<?+*) a (t), 772^-^1 - n' = 2tt V~l.\n logg\n The above choice of co and co' meets the requirement 9t (co'/co) > 0,\n since | g | > 1.\n A direct substitution into (61) determines\n (64) a= ?v%, b = iy2:ai+/?irV=i:+2?irV=l,\n ? i=\\\n in which k denotes any integer. If th\n and a direc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "564",
+      "pageStart": 45,
+      "pageEnd": 46,
+      "target": "../sections/sec-044-564.md",
+      "narrative": null,
+      "content": "provided that\n (67) Z^ = ^ + ft-n\n xti logg\n This is of course under the assumption that Pij(t) \n in the form (62). But this fact may be proved at\n be any function which satisfies (60) and (61), and <?\n one above obtained. The function \\f/(t)/$ (t) is\n analytic save for poles, and can therefore be exp\n of products of sigma functions\n n<r(t ? Ti) . . (T(t?yk) R\n <r(t ? ?i)...<r(t ? ?k)\n But this quotient when multiplied by 4> (t), wh\n product of sigma functions, must yield \\p (t), an e\n necessitates that for each zero of a (t ? jj) i\n (i = 1, . . ., p) there must be a congruent zero x\n the deno",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "565",
+      "pageStart": 46,
+      "pageEnd": 47,
+      "target": "../sections/sec-045-565.md",
+      "narrative": null,
+      "content": "The relation (68) with the explicit values of y0(x), y^(x) and p (x)\n substituted in is essentially one of the fundamental product formulas\n for the sigma function.\n ? 20. The q-Dlfference Equation Problem.\n It is now easy to show that conversely if 70 (x), 7^ (x) are matrices\n of functions of the form (58) in the vicinity of x = 0 and x = oo\n respectively, analytic for x 9e- 0, oo, save for poles, and if the matrix\n P(x), defined by the relation 70 (x) = 7M (x)P (x), is composed of\n elements Pij(x) which are left unchanged wThen x is replaced by qx,\n then 70 (x) and 7^ (x) are matrix solution",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "566",
+      "pageStart": 47,
+      "pageEnd": 48,
+      "target": "../sections/sec-046-566.md",
+      "narrative": null,
+      "content": "wise any Ith column of 7^ (x) is only determined up to a constant\n factor h{. This fact appears from (58). The effect is to allow one\n to replace c^ in pij(x) by ffijlh{, and thus vary at will 2 n ? 1 of the\n characteristic constants c#. There remain then essentially only\n 2 n + n2 (p + 1) - n2 - (2n ? 1) or n2 \\x + 1\n characteristic constants. It is readily verified that these constants\n are all invariant under a transformation 7(.r) = CY(x), where C is\n an arbitrary matrix of constants.\n But the equation (54) involves n2(p +1) arbitrary coefficients in\n Q(x) of which there are n2 (p + 1) ? (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-047",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "567",
+      "pageStart": 48,
+      "pageEnd": 49,
+      "target": "../sections/sec-047-567.md",
+      "narrative": null,
+      "content": "According to the theorem there exists a matrix $(r) such that\n (71) ' J%+*(x) = [,H -*(*)Mi(*i),\n where x\\ is an arbitrary point of d and the + and ? signs denote\n approach to x? from within and without C\\ respectively; the matrix\n &(x) possesses certain other properties: it is composed of elements\n analytic for x not on C\\, save at a point a which we shall take to be at\n infinity; furthermore its determinant does not vanish in the finite\n plane.\n Let us denote by TJ$ (x) the matrix <p (x) within Ch and its\n analytic extension across C\\\\ similarly by U^ (x) let us denote the\n matrix <p(r) with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/birkhoff-generalizedriemannproblem-1913/blocks/prose-sec-048",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "568",
+      "pageStart": 49,
+      "pageEnd": 49,
+      "target": "../sections/sec-048-568.md",
+      "narrative": null,
+      "content": "It is deserving of notice that the properties stated above determine\n the location of the poles of the elements of 7X (x), namely at the zeros\n of | P(x) | within the loop, the maximum order of the pole of any\n element being precisely the order of the corresponding zero of | P(x) |.\n This is an immediate consequence of the relation.\n 1'??= Y0(x)P-Hx).\n Harvard University,\n Cambridge, Mass.\nThis content downloaded from \n\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u000045.67.99.10 on Sat, 01 Aug 2026 11:05:59 UTC\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

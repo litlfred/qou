@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/detangler-integration-watcher.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/detangler-integration-watcher",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "detangler-integration-watcher",
+      "title": "/detangler-integration-watcher",
+      "description": "Structural-QA integration watcher — watches origin/main + open active PRs + newly-opened PRs for organisational changes (paper / chapter manifest edits, new blocks, edited `uses[]` / `kind` / `label` / `interprets` / `defines` / `tags`, block renames) and runs the editor's detanglement skill suite (`content-graph` H1-H7, `chapter-complexity-review` graph energy, `block-density-audit` R1-R3, `critical-path-analysis` chains) on every detected change. Queues findings, auto-discharges mechanical fixes (intra-section swap, table extraction R3), escalates section splits / merges / cross-chapter moves / new sections to the author. Inherits shared mechanics (Monitor, subscriptions, queue, ledger, idle sweep, author-ask, watch-prepared-PRs, witness-drift recovery, billing-quick-fail flake, post-completion one-voice, sibling-PR comment protocol) from `local/integration-watcher`.",
+      "instructionsPath": "skills/local/detangler-integration-watcher.md",
+      "instructionLines": 689,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

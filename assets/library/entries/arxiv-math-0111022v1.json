@@ -1,0 +1,44 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0111022v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0111022v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivation",
+      "pageStart": 1,
+      "pageEnd": 11,
+      "target": "../sections/sec-000-1-motivation.md",
+      "narrative": null,
+      "content": "In [@CL] a family of noncommutative deformations $S^{4,\\theta }$ of the four dimensional sphere has been introduced from the instanton algebra. Concretely, the algebra of functions on $S^{4,\\theta }$ is given by the generators $t,\\alpha ,\\alpha ^{*},\\beta ,\\beta ^{*}$ and relations $$\\begin{aligned}\n\\alpha \\alpha ^{*} &=&\\alpha ^{*}\\alpha ,\\ \\beta \\beta ^{*}=\\beta ^{*}\\beta\n\\\\\n\\alpha \\beta &=&\\lambda \\beta \\alpha ,\\ \\alpha ^{*}\\beta =\\overline{\\lambda }\n\\beta \\alpha ^{*} \\\\\n0 &=&\\alpha \\alpha ^{*}+\\beta \\beta ^{*}+t^2-t\n\\end{aligned}$$ and the requirement that $t$ commutes with all the other g",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111022v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0111022v1  [math.QA]  2 Nov 2001\nSome remarks on q-deformed multiple\npolylogarithms\nKarl-Georg Schlesinger\nErwin Schr¨odinger Institute for Mathematical Physics\nBoltzmanngasse 9\nA-1090 Vienna, Austria\ne-mail: kgschles@esi.ac.at\nAbstract\nWe introduce general q-deformed multiple polylogarithms which\neven in the dilogarithm case diﬀer slightly from the deformation usu-\nally discussed in the literature. The merit of the deformation as sug-\ngested, here, is that q-deformed multiple polylogarithms deﬁne an\nalgebra, then (as in the undeformed case). For the special case of q-\ndeformed mult",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

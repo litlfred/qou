@@ -1,0 +1,37 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2407.04744v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Magnetic structure of A ≤ 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods",
+      "dcterms:creator": [
+        "Pastore1",
+        "4",
+        "Piarulli1, § M.",
+        "4",
+        "Schiavilla2, ¶ R.",
+        "3",
+        "Wiringa5††, ∗∗and R. B."
+      ],
+      "dcterms:issued": "D:20241206",
+      "dcterms:identifier": "https://arxiv.org/abs/2407.04744",
+      "dcterms:source": "library/arxiv-2407.04744v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2407.04744v2"
+    }
+  ]
+}

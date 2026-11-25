@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/yuasa-rims-kokyuroku-2163-05/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "yuasa-rims-kokyuroku-2163-05",
+  "contains": [
+    "library/yuasa-rims-kokyuroku-2163-05/sections/page-001",
+    "library/yuasa-rims-kokyuroku-2163-05/sections/page-002",
+    "library/yuasa-rims-kokyuroku-2163-05/sections/page-003",
+    "library/yuasa-rims-kokyuroku-2163-05/sections/page-004",
+    "library/yuasa-rims-kokyuroku-2163-05/sections/page-005",
+    "library/yuasa-rims-kokyuroku-2163-05/sections/page-006",
+    "library/yuasa-rims-kokyuroku-2163-05/sections/page-007",
+    "library/yuasa-rims-kokyuroku-2163-05/sections/page-008",
+    "library/yuasa-rims-kokyuroku-2163-05/sections/page-009",
+    "library/yuasa-rims-kokyuroku-2163-05/sections/page-010",
+    "library/yuasa-rims-kokyuroku-2163-05/sections/page-011"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Twist formulas for one-row colored A_2 webs and sl_3 tails of (2,2m)-torus links — 11 sections: Page 1; Page 2; Page 3\n\n**Twist formulas for one-row colored A_2 webs and sl_3 tails of (2,2m)-torus links**\n\n11 pp, 11 sections.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "yuasa-rims-kokyuroku-2163-05",
+    "title_source": "slug",
+    "source_file": "yuasa-rims-kokyuroku-2163-05.pdf",
+    "source_sha256": "fa2a585b45c2185dc336fe7024a1cf892350dc2a57a85c0c12529528ba2361fe",
+    "pages": 11,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

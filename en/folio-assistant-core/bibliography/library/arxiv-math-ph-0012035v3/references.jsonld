@@ -1,0 +1,29 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-ph-0012035v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Non-Abelian Stokes theorem in action",
+      "dcterms:issued": "D:20181022",
+      "dcterms:identifier": "https://arxiv.org/abs/math-ph/0012035",
+      "dcterms:abstract": "In this short review main issues related to the non-Abelian Stokes theorem have been addressed. The two principal approaches to the non- Abelian Stokes theorem, operator and two variants (coherent-state and holomorphic) of the path-integral one, have been formulated in their sim- plest possible forms. A recent generalization for a knotted loop as well as a suggestion concerning higher-degree forms have been also included. Non- perturbative applications of the non-Abelian Stokes theorem, to (semi-)to- pological gauge theories, have been presented.",
+      "dcterms:source": "library/arxiv-math-ph-0012035v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-ph-0012035v3"
+    }
+  ]
+}

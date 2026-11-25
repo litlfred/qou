@@ -1,0 +1,89 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0601458v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS",
+  "contains": [
+    "library/arxiv-math-0601458v1/sections/sec-front-matter",
+    "library/arxiv-math-0601458v1/sections/sec-000",
+    "library/arxiv-math-0601458v1/sections/sec-001",
+    "library/arxiv-math-0601458v1/sections/sec-002",
+    "library/arxiv-math-0601458v1/sections/sec-003",
+    "library/arxiv-math-0601458v1/sections/sec-004",
+    "library/arxiv-math-0601458v1/sections/sec-005",
+    "library/arxiv-math-0601458v1/sections/sec-006",
+    "library/arxiv-math-0601458v1/sections/sec-007",
+    "library/arxiv-math-0601458v1/sections/sec-008",
+    "library/arxiv-math-0601458v1/sections/sec-009",
+    "library/arxiv-math-0601458v1/sections/sec-010",
+    "library/arxiv-math-0601458v1/sections/sec-011",
+    "library/arxiv-math-0601458v1/sections/sec-012",
+    "library/arxiv-math-0601458v1/sections/sec-013",
+    "library/arxiv-math-0601458v1/sections/sec-014",
+    "library/arxiv-math-0601458v1/sections/sec-015",
+    "library/arxiv-math-0601458v1/sections/sec-016",
+    "library/arxiv-math-0601458v1/sections/sec-017",
+    "library/arxiv-math-0601458v1/sections/sec-018",
+    "library/arxiv-math-0601458v1/sections/sec-019",
+    "library/arxiv-math-0601458v1/sections/sec-020",
+    "library/arxiv-math-0601458v1/sections/sec-021",
+    "library/arxiv-math-0601458v1/sections/sec-022",
+    "library/arxiv-math-0601458v1/sections/sec-023",
+    "library/arxiv-math-0601458v1/sections/sec-024",
+    "library/arxiv-math-0601458v1/sections/sec-025",
+    "library/arxiv-math-0601458v1/sections/sec-026",
+    "library/arxiv-math-0601458v1/sections/sec-027"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS — Interest in combinatorial interpretations of mathematical entities stems from the convenience of the concrete models they provide.\n\n**CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS**\n\n*JEFFREY MORTON*\n\n68 pp, 29 sections.\n\n**Abstract.** Interest in combinatorial interpretations of mathematical entities stems from the convenience of the concrete models they provide. Finding a bijective proof of a seemingly obscure identity can reveal unsuspected signiﬁ- cance to it. Finding a combinatorial model for some mathematical entity is a particular instance of the process called “categoriﬁcation”. Examples include the interpretation of N as the Burnside rig of the category of ﬁnite sets with product and coproduct, and the interpretation of N[x] as the category of com- binatorial species. This has interesting applications to quantum mechanics, and in particular the quantum harmonic oscillator, via Joyal’s “species”, a new generalization called “stuﬀtypes”, and operators between these, which can be represented as rudimentary Feynman diagrams for the oscillator.\n\n**Outline.** Front matter; 1 Introduction; 2 Structure Types; 2.1 Categorification of N and N [[z]]; 3 Structure Types and the Harmonic Oscillator; 3.1 The Quantum Harmonic Oscillator; 3.2 Structure Types and the Weyl Algebra; 4 Stuff Types; 4.1 Groupoids; 4.2 Stuff Types as a Generalization of Structu; 4.3 Stuff Types As Power Series; 4.4 Forgetful Functors: Properties, Structure,; 5 Stuff Types And Quantum Mechanics; 5.1 Inner Product of Stuff Types; 5.2 Stuff Operators; 5.3 Feynman Diagrams and Stuff Operators; 6 M-Stuff Types And Quantum Mechanics; 6.1 M-Stuff Types",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0601458&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0601458v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0601458v1.pdf",
+    "source_sha256": "ef34611620cfd0bd4f2242e448ce23f82032c6a92447d5bbfcec63e3ce6eb3d4",
+    "pages": 68,
+    "arxiv": {
+      "id": "math/0601458",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "19 Jan 2006"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,1103 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0608414v1",
+  "title": "Exponential Asymptotics, Transseries, and Generalized Borel Summation for Analytic, Nonlinear, Rank-One Systems of Ordinary Differential Equations",
+  "variant": "pdf",
+  "pages": 47,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction and main results",
+      "number": null,
+      "page": 44,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Proofs and further results",
+      "number": null,
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-proofs-and-further-results"
+    },
+    {
+      "level": 3,
+      "title": "Outline of the proofs of the main results",
+      "number": null,
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-outline-of-the-proofs-of-the-main-results"
+    },
+    {
+      "level": 3,
+      "title": "The convolution equation away from Stokes rays",
+      "number": null,
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-the-convolution-equation-away-from-stokes-rays"
+    },
+    {
+      "level": 3,
+      "title": "Behavior of Y0(p) near p=1.",
+      "number": null,
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-behavior-of-y0p-near-p1"
+    },
+    {
+      "level": 3,
+      "title": "The solutions of (1.25) on [0,1+]",
+      "number": null,
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-the-solutions-of-125-on-01"
+    },
+    {
+      "level": 3,
+      "title": "The solutions of (1.25) on [0,)",
+      "number": null,
+      "page": 28,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-the-solutions-of-125-on-0"
+    },
+    {
+      "level": 3,
+      "title": "Correspondence with formal solutions",
+      "number": null,
+      "page": 30,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-correspondence-with-formal-solutions"
+    },
+    {
+      "level": 3,
+      "title": "Analytic structure and averaging",
+      "number": null,
+      "page": 38,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-analytic-structure-and-averaging"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 44,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-acknowledgments"
+    },
+    {
+      "level": 2,
+      "title": "Appendix",
+      "number": null,
+      "page": 44,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-appendix"
+    },
+    {
+      "level": 3,
+      "title": "Example of non-typical behavior",
+      "number": null,
+      "page": 44,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-example-of-non-typical-behavior"
+    },
+    {
+      "level": 3,
+      "title": "AC(f*g) versus AC(f)*AC(g)",
+      "number": null,
+      "page": 45,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-acfg-versus-acfacg"
+    },
+    {
+      "level": 3,
+      "title": "Useful formulas",
+      "number": null,
+      "page": 46,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-useful-formulas"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3275,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "analytic continuations",
+          "heading": false
+        },
+        {
+          "term": "laplace transformable",
+          "heading": false
+        },
+        {
+          "term": "laplace transform",
+          "heading": false
+        },
+        {
+          "term": "stokes rays",
+          "heading": false
+        },
+        {
+          "term": "borel summable",
+          "heading": false
+        },
+        {
+          "term": "formal solutions",
+          "heading": false
+        },
+        {
+          "term": "stokes line",
+          "heading": false
+        },
+        {
+          "term": "yba",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0608414v1 [math.CA] 16 Aug 2006 Exponential asymptotics, trans-series and generalized Borel summation for analytic nonlinear rank one systems of ODE’s Ovidiu Costin ∗ Abstract For analytic nonlinear systems of ordinary diﬀerential equations, under some non-degeneracy and integrability conditions we prove that the formal exponential series solutions (trans-series) at an irregular singularity of rank one",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0608414v1/blocks/prose-sec-front-matter",
+        "library/arxiv-math-0608414v1/blocks/prop-sec-front-matter-01",
+        "library/arxiv-math-0608414v1/blocks/thm-sec-front-matter-02",
+        "library/arxiv-math-0608414v1/blocks/prop-sec-front-matter-03",
+        "library/arxiv-math-0608414v1/blocks/thm-sec-front-matter-04",
+        "library/arxiv-math-0608414v1/blocks/thm-sec-front-matter-05"
+      ]
+    },
+    {
+      "id": "sec-000-proofs-and-further-results",
+      "number": null,
+      "title": "Proofs and further results",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "Proofs and further results",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-outline-of-the-proofs-of-the-main-results",
+      "number": null,
+      "title": "Outline of the proofs of the main results",
+      "level": 3,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 315,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "laplace transformable",
+          "heading": false
+        },
+        {
+          "term": "proofs",
+          "heading": true
+        },
+        {
+          "term": "loc",
+          "heading": false
+        },
+        {
+          "term": "outline",
+          "heading": true
+        },
+        {
+          "term": "solutions",
+          "heading": false
+        },
+        {
+          "term": "ray",
+          "heading": false
+        },
+        {
+          "term": "convolution",
+          "heading": false
+        },
+        {
+          "term": "main",
+          "heading": true
+        }
+      ],
+      "extract": "Outline of the proofs of the main results To show the results stated in the previous section, we ﬁrst obtain the general solution in L1 loc of the convolution system (1.27) in D and then, separately, on the Stokes line R+. We show that along a ray in D, the solution is unique whereas along the ray R+ there is a one-parameter family of solutions of 11 the system, branching oﬀat p = 1. We show that any L1 loc solution",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-the-convolution-equation-away-from-stokes-rays",
+      "number": null,
+      "title": "The convolution equation away from Stokes rays",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1603,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "laplace transformable",
+          "heading": false
+        },
+        {
+          "term": "lray",
+          "heading": false
+        },
+        {
+          "term": "uniform norm",
+          "heading": false
+        },
+        {
+          "term": "lφy",
+          "heading": false
+        },
+        {
+          "term": "unique solution",
+          "heading": false
+        },
+        {
+          "term": "loc",
+          "heading": false
+        },
+        {
+          "term": "analyticity",
+          "heading": false
+        },
+        {
+          "term": "rays",
+          "heading": true
+        }
+      ],
+      "extract": "The convolution equation away from Stokes rays For any star-shaped set E in the complex plane containing the origin (i.e., a region such that the origin can be connected with any other point in E by a straight line segment contained in E) we denote by Lray(E) the set of functions which are locally integrable along each ray in E. Proposition 6 There is a unique solution of (1.25) in Lray(D) (cf. (1.11)) namely Y0 =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-behavior-of-y0p-near-p1",
+      "number": null,
+      "title": "Behavior of Y0(p) near p=1.",
+      "level": 3,
+      "pageStart": 18,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1314,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ˆγc",
+          "heading": false
+        },
+        {
+          "term": "ˆbc",
+          "heading": false
+        },
+        {
+          "term": "analytic",
+          "heading": false
+        },
+        {
+          "term": "norm",
+          "heading": false
+        },
+        {
+          "term": "const",
+          "heading": false
+        },
+        {
+          "term": "integration",
+          "heading": false
+        }
+      ],
+      "extract": "Let Y0 be the unique solution in Lray(D) of (1.25) and let ǫ > 0 be small. Deﬁne 18 H(p) := \u001a Y0(p) for p ∈D ,|p| < 1 −ǫ 0 otherwise and h(1 −p) := Y0(p) −H(p) (2.20) In terms of h, for real z = 1 −p, z < ǫ, the equation (1.25) reads: −(1 −z)h(z) = F1(z) −ˆΛh(z) + ˆB Z z ǫ h(s)ds + N (H + h) (2.21) where F1(1 −s) := F0(s) −ˆB Z 1−ǫ 0 H(s)ds Proposition 18 i) For small ǫ, H∗l(1 + z) extends to an analytic function in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-the-solutions-of-125-on-01",
+      "number": null,
+      "title": "The solutions of (1.25) on [0,1+]",
+      "level": 3,
+      "pageStart": 23,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1012,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yba",
+          "heading": false
+        },
+        {
+          "term": "ˆγc",
+          "heading": false
+        },
+        {
+          "term": "solutions",
+          "heading": true
+        },
+        {
+          "term": "diﬀerent values",
+          "heading": false
+        },
+        {
+          "term": "norm",
+          "heading": false
+        },
+        {
+          "term": "initial condition",
+          "heading": false
+        },
+        {
+          "term": "interval",
+          "heading": false
+        },
+        {
+          "term": "loc",
+          "heading": false
+        }
+      ],
+      "extract": "Let Y0 be the solution given by Proposition 6, take ǫ small enough and denote by Oǫ a neighborhood in C of width ǫ of the interval [0, 1 + ǫ]. 23 Remark 21 . Y0 ∈L1(Oǫ). As φ →±0, Y0(peiφ) →Y± 0 (p) in the sense of L1([0, 1 + ǫ]) and also in the sense of pointwise convergence for p̸ = 1, where Y± 0 := \u001a Y0(p) p < 1 (1 −p ± 0i)β−1a1(p) + a2(p) p > 1 (β̸ = 1) Y± 0 := \u001a Y0(p) p < 1 ln(1 −p ± 0i)a1(p) + a2(p) p > 1 (β =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-the-solutions-of-125-on-0",
+      "number": null,
+      "title": "The solutions of (1.25) on [0,)",
+      "level": 3,
+      "pageStart": 28,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 794,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "loc",
+          "heading": false
+        },
+        {
+          "term": "transformable",
+          "heading": false
+        },
+        {
+          "term": "lgl",
+          "heading": false
+        },
+        {
+          "term": "laplace",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we show that the leading asymptotic behavior of Yp as p → 1+ determines a unique solution of (1.25) in L1 loc(R+). Furthermore, any L1 loc solution of (1.25) is exponentially bounded at inﬁnity and thus Laplace transformable. We also study some properties of these solutions and of their Laplace transforms. Let H be a solution of (1.25) on an interval [0, 1 + ǫ], which we extend to R+ letting H(p) = 0",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-correspondence-with-formal-solutions",
+      "number": null,
+      "title": "Correspondence with formal solutions",
+      "level": 3,
+      "pageStart": 30,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2346,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "formal solutions",
+          "heading": true
+        },
+        {
+          "term": "formal power",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        },
+        {
+          "term": "loc",
+          "heading": false
+        },
+        {
+          "term": "equating",
+          "heading": false
+        },
+        {
+          "term": "perturbations",
+          "heading": false
+        },
+        {
+          "term": "coeﬃcients",
+          "heading": false
+        },
+        {
+          "term": "laplace",
+          "heading": false
+        }
+      ],
+      "extract": "Correspondence with formal solutions Finally we consider formal solutions for large argument of the diﬀerential equation, in the diﬀerential algebra generated by formal power series (in decreasing powers of the large variable) and (decreasing) exponentials, i.e. solutions as formal asymptotic expansions. The theory of formal solutions is classical ([12], [9] [10]); see also [2] for a vast and very interesting",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-analytic-structure-and-averaging",
+      "number": null,
+      "title": "Analytic structure and averaging",
+      "level": 3,
+      "pageStart": 38,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1524,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yba",
+          "heading": false
+        },
+        {
+          "term": "analytic",
+          "heading": true
+        },
+        {
+          "term": "averaging",
+          "heading": true
+        },
+        {
+          "term": "plane neighborhood",
+          "heading": false
+        },
+        {
+          "term": "half plane",
+          "heading": false
+        },
+        {
+          "term": "upper half",
+          "heading": false
+        },
+        {
+          "term": "lower half",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite number",
+          "heading": false
+        }
+      ],
+      "extract": "Analytic structure and averaging Having the general structure of the solutions of (1.25) given in Proposition 3 and in Lemma 36 we can obtain various analytic identities. The function Y± 0 := Y± has been deﬁned in the previous section. 38 Proposition 37 For m ≥0, Y− m = Y+ m + ∞ X k=1 \u0012m + k m \u0013 Sk β(Y+ m+k · H) ◦τk (2.86) Proof. Y− 0 (p) is a particular solution of (1.25). It follows from Lemma 36 that the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 47,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prof",
+          "heading": false
+        },
+        {
+          "term": "acknowledgments",
+          "heading": true
+        },
+        {
+          "term": "encouragements",
+          "heading": false
+        }
+      ],
+      "extract": "Acknowledgments The author would like to thank Professors Michael Berry, Percy Deift and Jean Ecalle for very interesting discussions. Special thanks are due to Prof. Martin Kruskal for long and illuminating debates and, together with Prof. Joel Lebowitz, for their continued support and encouragements throughout this work.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-appendix",
+      "number": null,
+      "title": "Appendix",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "Appendix",
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-example-of-non-typical-behavior",
+      "number": null,
+      "title": "Example of non-typical behavior",
+      "level": 3,
+      "pageStart": 44,
+      "pageEnd": 45,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 192,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "laplace transform",
+          "heading": false
+        },
+        {
+          "term": "inverse laplace",
+          "heading": false
+        },
+        {
+          "term": "general solution",
+          "heading": false
+        }
+      ],
+      "extract": "Example of non-typical behavior Consider the equation f ′ = −f −1 2xf + 1 x −1 2x2 (A.1) The general solution of this equation is given by 44 f = 1 x + Cx−1/2e−x = Z ∞ 0 \u0012 p + C √p −1H(1 −p) \u0013 dp (A.2) We see that the asymptotic series of f for x →∞, ℜ(x) > 0, ˜y0 = 1/x. The inverse Laplace transform of f is L−1f = p + C √p −1H(1 −p) (A.3) i) The Stokes constant is zero and Y0 = B(˜y0) = p is entire. ii) All",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-acfg-versus-acfacg",
+      "number": null,
+      "title": "AC(f*g) versus AC(f)*AC(g)",
+      "level": 3,
+      "pageStart": 45,
+      "pageEnd": 46,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 273,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "branch point",
+          "heading": false
+        },
+        {
+          "term": "cide",
+          "heading": false
+        },
+        {
+          "term": "commuted",
+          "heading": false
+        },
+        {
+          "term": "clusion",
+          "heading": false
+        }
+      ],
+      "extract": "Typically, the analytic continuation along curve in W1 which is not homo- topic to a straight line will not commute with convolution. For example, in equation (A.4), B(˜y0)−+ ∗B(˜y0)−+̸ = [B(˜y0) ∗B(˜y0)]−+, as it can be seen from Remark 42 below (or by direct calculation). This situation is generic: Remark 42 Let y be a function satisfying the conditions stated in Proposi- tion 41 and assume that p = 1 is a branch",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-useful-formulas",
+      "number": null,
+      "title": "Useful formulas",
+      "level": 3,
+      "pageStart": 46,
+      "pageEnd": 47,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 293,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "berry proc",
+          "heading": false
+        },
+        {
+          "term": "ecalle",
+          "heading": false
+        },
+        {
+          "term": "segur",
+          "heading": false
+        },
+        {
+          "term": "ordinary diﬀerential",
+          "heading": false
+        },
+        {
+          "term": "braaksma",
+          "heading": false
+        },
+        {
+          "term": "sibuya",
+          "heading": false
+        },
+        {
+          "term": "lond",
+          "heading": false
+        }
+      ],
+      "extract": "Useful formulas B( 1 xn) = pn−1 Γ(n) or L(pn) = Γ(n + 1) xn+1 (A.7) pq ∗pr = Γ(q + 1)Γ(r + 1) Γ(q + r + 2) pq+r+1 (A.8) with f1,2(p) := p 7→H(p −k1,2)g1,2(p −k1,2) we have \u0010 f1 ∗f2 \u0011 (p) = H(p −k1 −k2) \u0010 g1 ∗g2 \u0011 (p −k1 −k2) (A.9) References [1] J. Ecalle Fonctions Resurgentes, Publications Mathematiques D’Orsay, 1981 [2] J. Ecalle in Bifurcations and periodic orbits of vector ﬁelds NATO ASI Series, Vol. 408, 1993",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "loc solution",
+      "heading": false
+    },
+    {
+      "term": "laplace transformable",
+      "heading": false
+    },
+    {
+      "term": "formal solution",
+      "heading": false
+    },
+    {
+      "term": "unique solution",
+      "heading": false
+    },
+    {
+      "term": "yba",
+      "heading": false
+    },
+    {
+      "term": "analytic continuations",
+      "heading": false
+    },
+    {
+      "term": "general solution",
+      "heading": false
+    },
+    {
+      "term": "convolution equation",
+      "heading": true
+    },
+    {
+      "term": "transformable along",
+      "heading": false
+    },
+    {
+      "term": "laplace transform",
+      "heading": false
+    },
+    {
+      "term": "analytic properties",
+      "heading": false
+    },
+    {
+      "term": "analytic functions",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The region W1. The dotted line is one of the paths that generate R1. Using notations similar to those of Ecalle, we symbolize the paths in R1 by",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 14,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 14,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p46); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 14 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0608414v1"
+  }
+}

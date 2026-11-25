@@ -1,0 +1,156 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0612592v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0612592v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0612592v1  [math.AC]  20 Dec 2006\nAnalytic q-diﬀerence equations\nMarius van der Put\nDepartment of Mathematics, University of Groningen, P.O.Box 800,\n9700 AV Groningen, The Netherlands, mvdput@math.rug.nl\nIntroduction\nA complex number q with 0 < |q| < 1 is ﬁxed. By an analytic q-diﬀerence\nequation we mean an equation which can be represented by a matrix equation\nY (z) = A(z)Y (qz) where A(z) is an invertible n × n-matrix with coeﬃcients\nin the ﬁeld K = C({z}) of the convergent Laurent series and where Y (z)\nis a vector of size n. The aim of this paper is to give an overview of our\npr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0612592v1/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "iii",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "translates in terms of $M$ into $V:=\\{a\\in R\\otimes _FM|\\ \\Phi (a)=a\\}$ is a vector space over $C$ and the natural map $R\\otimes _CV\\rightarrow R\\otimes _FM$ is an isomorphisms.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0612592v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Difference equations in general",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-difference-equations-in-general.md",
+      "narrative": null,
+      "content": "A difference field $F$ is a field provided with an automorphism $\\phi$ of infinite order. A scalar linear difference equation is an equation of the form $$\\phi ^n(y)+a_{n-1}\\phi ^{n-1}(y)+\\cdots +a_1\\phi (y) +a_0y=0\\,$$ with given $a_i\\in F$ and, say, $a_0\\neq 0$. As in the case of linear differential equations, one can transform this equation into a matrix difference equation, i.e., an equation of the form $Y=A\\phi (Y)$, where $A$ is a given invertible $n\\times n$-matrix with coefficients in $F$ and $Y$ denotes a vector of length $n$. On the vector space $M=F^n$ one considers the operator $\\P",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0612592v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "First examples of q-difference equations",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-first-examples-of-q-difference-equations.md",
+      "narrative": null,
+      "content": "This exposition is concerned with the difference field $K=\\mathbb{C}(\\{z\\})$, i.e., the field of convergent Laurent series over $\\mathbb{C}$, provided with the automorphism $\\phi$ given by $\\phi (z)=qz$, where $q$ is a fixed complex number satisfying $0<|q|<1$. In order to define $\\phi$ on the algebraic closure $K_\\infty =\\cup _{n\\geq 1} K_n$, with $K_n:=\\mathbb{C}(\\{z^{1/n}\\})$, of $K$ we choose a $\\tau \\in \\mathbb{C}$ with $\\Im (\\tau )>0$ such that $q=e^{2\\pi i \\tau}$. Define $q^\\lambda$ for $\\lambda \\in \\mathbb{Q}$ (or any $\\lambda \\in \\mathbb{C}$) as $e^{2\\pi i\\lambda \\tau}$. Then the acti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0612592v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Towards a classification of modules",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-towards-a-classification-of-modules.md",
+      "narrative": null,
+      "content": "We present here the 'classics' by G.D. Birkhof, P.E. Guenther, C.R. Adams et al. and 'modern' work by J.-P. Ramis, Ch. Zhang, J. Sauloy, A. Duval, M.F. Singer, M. van der Put, M. Reversat et al., concerning $q$-difference equations over $K$.\n\nLet $K[\\Phi ,\\Phi ^{-1}]$ be the skew ring of difference operators. The elements of this ring are the finite formal sums $\\sum _{n\\in \\mathbb{Z}}a_n\\Phi ^n$ and the multiplication is given by the rule $\\Phi \\cdot f\n=\\phi (f)\\Phi$. This ring is (left and right) Euclidean. Any difference module $(M,\\Phi _M)$ can be seen as a left $K[\\Phi ,\\Phi ^{-1}]$-modul",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0612592v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Moduli spaces for difference modules",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-moduli-spaces-for-difference-modules.md",
+      "narrative": null,
+      "content": "Fix a split difference module $S=P_1\\oplus \\cdots \\oplus P_r$ over $K$, where $P_i$ is pure with slope $\\lambda _i$ and $\\lambda _1<\\cdots <\\lambda _r$. The problem is to classify the difference modules $M$ over $K$ such that $gr(M)$ is isomorphic to $S$. The collection of the isomorphy classes is a rather ugly object due to the fact that $S$ has many automorphisms.\n\nA better way to formulate the problem is to consider pairs $(M,f)$ consisting of a difference module $M$ and an isomorphism $f:gr(M)\\rightarrow S$. Two pairs $(M_1,f_1), (M_2,f_2)$ are called *equivalent* if there exists an isomor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0612592v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Difference Galois groups",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-004-difference-galois-groups.md",
+      "narrative": null,
+      "content": "In the last section a complete, however complicated, classification of the difference modules over $K$ is given. Using this classification we will be able to give a complete description of the difference Galois groups. The difference Galois group of a module $M$ will be denoted by $Gal(M)$.We start with the easiest case and build up to the general case.\\\n(1) *Regular singular modules*.\\\nWe recall that a regular singular module has the form $M=K\\otimes _{\\mathbb{C}}W$ and $\\Phi (f\\otimes w)=\\phi (f)\\otimes A(w)$ with $A\\in {\\rm GL}(W)$. We normalize $A$ such that the eigenvalues of $A$ have abs",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0612592v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Universal Picard-Vessiot rings and universal difference Galois groups",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "../sections/sec-005-universal-picard-vessiot-rings-and-universal-dif.md",
+      "narrative": null,
+      "content": "We start by explaining some notions and constructions (see also \\[P-S2\\]).\n\nAn *affine group scheme $G$ over $\\mathbb{C}$* is given by a $\\mathbb{C}$-algebra $A$ provided with the structure of a Hopf-algebra. The latter is defined by a triple $(m,e,i)$ of $\\mathbb{C}$-algebra morphisms:\\\n(a) $m:A\\rightarrow A\\otimes _\\mathbb{C}A$ (the co-multiplication)\\\n(b) $e:A\\rightarrow \\mathbb{C}$ with $e(1)=1$ (the co-unit element),\\\n(c) $i:A\\rightarrow A$ is an isomorphism (the co-inverse).\\\nPut $G:=Spec(A)$. The induced map $m^*:G\\times G\\rightarrow G$ is the multiplication, further $e^*:Spec(\\mathbb{C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

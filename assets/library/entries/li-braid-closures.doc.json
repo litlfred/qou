@@ -1,0 +1,793 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "li-braid-closures",
+  "title": "Knot polynomials on braid closures",
+  "variant": "pdf",
+  "pages": 16,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "The braid group",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-the-braid-group"
+    },
+    {
+      "level": 2,
+      "title": "Young diagrams",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-young-diagrams"
+    },
+    {
+      "level": 2,
+      "title": "Specht modules of the Hecke algebra",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-specht-modules-of-the-hecke-algebra"
+    },
+    {
+      "level": 2,
+      "title": "The HOMFLYPT polynomial",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-the-homflypt-polynomial"
+    },
+    {
+      "level": 1,
+      "title": "Closures of 3-braids",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-closures-of-3-braids"
+    },
+    {
+      "level": 2,
+      "title": "Split Links",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-split-links"
+    },
+    {
+      "level": 2,
+      "title": "Knots",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-knots"
+    },
+    {
+      "level": 2,
+      "title": "4-braids and beyond",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-4-braids-and-beyond"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-acknowledgments"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 81,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid closures",
+          "heading": false
+        },
+        {
+          "term": "eddy",
+          "heading": false
+        },
+        {
+          "term": "non-split",
+          "heading": false
+        }
+      ],
+      "extract": "Knot polynomials on braid closures Eddy Li January 29, 2025 Abstract We explore properties of the Jones and Alexander polynomials of braid closures of braids of index 3. We analyze how the evaluations of these polynomials at t = −1 force implications regarding the topological structure of the braid closure, such as its number of circles or the existence of splittings. As a consequence, we construct an infinite",
+      "extractCut": true,
+      "blocks": [
+        "library/li-braid-closures/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 551,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hopf link",
+          "heading": false
+        },
+        {
+          "term": "split link",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "xˆγm",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "circles",
+          "heading": false
+        },
+        {
+          "term": "braid index",
+          "heading": false
+        },
+        {
+          "term": "homflypt",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction A knot is an embedding of the circle S1 in S3, while a link is an embedding of several circles in S3. Through the remainder of this paper, we tacitly work with tame links only. Definition 1.1. A splitting of a link L is a manifold B ⊂S3\\L such that B is homeomorphic to S2 and L intersects both connected components of S3 \\ B. Informally, this occurs exactly when L can be separated into two rigid",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-preliminaries",
+      "number": null,
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "Preliminaries",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-the-braid-group",
+      "number": null,
+      "title": "The braid group",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 228,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid group",
+          "heading": true
+        },
+        {
+          "term": "braid closure",
+          "heading": false
+        },
+        {
+          "term": "bottom row",
+          "heading": false
+        },
+        {
+          "term": "top row",
+          "heading": false
+        },
+        {
+          "term": "σiσi",
+          "heading": false
+        }
+      ],
+      "extract": "The braid group Let n be a positive integer. Definition 2.1. The braid group Bn is generated by σ1, σ2, . . . , σn−1 with relations σiσi+1σi = σi+1σiσi+1 and σiσj = σjσi if |i −j| ≥2. Naturally, elements of Bn are called braids. 2 We can diagrammatically depict σi as σi = 1 2 i n · · · · · · . Under this interpretation, each braid can be viewed as consisting of n strands of string, each connecting a point in the top",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-young-diagrams",
+      "number": null,
+      "title": "Young diagrams",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 149,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "young diagrams",
+          "heading": true
+        },
+        {
+          "term": "hook length",
+          "heading": false
+        },
+        {
+          "term": "boxes",
+          "heading": false
+        }
+      ],
+      "extract": "Young diagrams Now we discuss partitions of n and their Young diagrams. Definition 2.6. Let λ ⊢n be a partition. For a box b ∈λ in its Young diagram, the hook length h(b) is the number of boxes directly below or to the right to b, including b itself. Let r(b) be the number of rows below the topmost row that b resides in, and define c(b) analogously but in comparison to the leftmost column. Example 2.7 ([4, Example",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-specht-modules-of-the-hecke-algebra",
+      "number": null,
+      "title": "Specht modules of the Hecke algebra",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 1003,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "specht modules",
+          "heading": true
+        },
+        {
+          "term": "hecke algebra",
+          "heading": true
+        },
+        {
+          "term": "burau representation",
+          "heading": false
+        },
+        {
+          "term": "hook length",
+          "heading": false
+        },
+        {
+          "term": "q2z",
+          "heading": false
+        },
+        {
+          "term": "gigi",
+          "heading": false
+        },
+        {
+          "term": "trivial representation",
+          "heading": false
+        },
+        {
+          "term": "deform",
+          "heading": false
+        }
+      ],
+      "extract": "Specht modules of the Hecke algebra We now introduce the Hecke algebra. Definition 2.8. For q ∈C\\{0}, the Hecke algebra Hn(q) is the generated by g1, g2, . . . , gn−1 with relations (gi −q)(gi + 1) = 0, gigi+1gi = gi+1gigi+1, and gigj = gjgi if |i −j| ≥2. There is a canonical epimorphism π: C[Bn] →Hn(q) satisfying π(σi) = gi for all i. It is well-known that the irreducible representations of C[Sn] are the Specht",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-the-homflypt-polynomial",
+      "number": null,
+      "title": "The HOMFLYPT polynomial",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 489,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homflypt polynomial",
+          "heading": true
+        },
+        {
+          "term": "jones normalization",
+          "heading": false
+        },
+        {
+          "term": "xˆα",
+          "heading": false
+        },
+        {
+          "term": "vˆα",
+          "heading": false
+        },
+        {
+          "term": "specialization",
+          "heading": false
+        },
+        {
+          "term": "ocneanu",
+          "heading": false
+        },
+        {
+          "term": "weights",
+          "heading": false
+        },
+        {
+          "term": "exact sequence",
+          "heading": false
+        }
+      ],
+      "extract": "The HOMFLYPT polynomial In [1, Section 6], Jones proposed a multivariable polynomial link invariant XL(q, Λ), which reduces to the Jones polynomial under the specialization q = Λ = t and to the Alexander polynomial under the specialization q = 1 Λ = t. We recall the key definitions organized in [4]. Definition 2.16 ([6, Theorem 1.1]). Let λ ⊢n be a partition. The Ocneanu weight corre- sponding to λ is the product Ωλ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-closures-of-3-braids",
+      "number": null,
+      "title": "Closures of 3-braids",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 278,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vˆα",
+          "heading": false
+        },
+        {
+          "term": "closures",
+          "heading": true
+        },
+        {
+          "term": "alexander polynomials",
+          "heading": false
+        },
+        {
+          "term": "xˆα",
+          "heading": false
+        },
+        {
+          "term": "braids",
+          "heading": true
+        }
+      ],
+      "extract": "Closures of 3-braids We investigate the Jones and Alexander polynomials of 3-braid closures at −1. Recall from Examples 2.12 and 2.13 that S(1,1,1) q is the sign representation, where each gi acts as −1, while S(3) q is the trivial representation, where each gi acts as q. When q = −1, the representations become isomorphic, so χ(1,1,1)(α) = χ(3)(α). Hence Vˆα(−1) = ( √ −1)e(α)−2(2χ(1,1,1)(α) −χ(2,1)(α)) and ∆ˆα(−1) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-split-links",
+      "number": null,
+      "title": "Split Links",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 13,
+      "labelStart": "9",
+      "labelEnd": "13",
+      "words": 1524,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "split links",
+          "heading": true
+        },
+        {
+          "term": "t6m",
+          "heading": false
+        },
+        {
+          "term": "m1m2m",
+          "heading": false
+        },
+        {
+          "term": "bab",
+          "heading": false
+        },
+        {
+          "term": "m1m2m1m",
+          "heading": false
+        },
+        {
+          "term": "braid closure",
+          "heading": false
+        },
+        {
+          "term": "bounding torus",
+          "heading": false
+        },
+        {
+          "term": "t12m",
+          "heading": false
+        }
+      ],
+      "extract": "Split Links From from Proposition 1.3 we have VL(−1) = ∆L(−1) = 0 for all split links. We show that this condition is not sufficient. Corollary 3.3. Let α ∈B3. Then Vˆα(−1) = ∆ˆα(−1) = 0 if and only if tr ϕ(α) = 2. Proof. Immediate by Proposition 3.2. The following result is due to Serre [8]. Proposition 3.4 ([8, Theorem 2.1.4]). The group SL2(Z) has presentation SL2(Z) ∼= ⟨s, t | s4 = 1, (st)3 = s2⟩ where the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-knots",
+      "number": null,
+      "title": "Knots",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 842,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "knot iff",
+          "heading": false
+        },
+        {
+          "term": "deleting instances",
+          "heading": false
+        },
+        {
+          "term": "vˆα",
+          "heading": false
+        },
+        {
+          "term": "m2m",
+          "heading": false
+        },
+        {
+          "term": "s1s2s1s",
+          "heading": false
+        },
+        {
+          "term": "m1m",
+          "heading": false
+        },
+        {
+          "term": "trivial braid",
+          "heading": false
+        },
+        {
+          "term": "mod",
+          "heading": false
+        }
+      ],
+      "extract": "Knots Recall from Proposition 3.9 the natural homomorphism ψ: B3 →S3 from the braid group to the symmetric group, given by ψ(σi) = (i i + 1). The number of circles in the link ˆα is determined by the cycle type of ψ(α), with ˆα being a knot iff ψ(α) is a 3-cycle. Proposition 3.12. Braids α1, α2 ∈B3 satisfy ψ(α1) = ψ(α2) iff ϕ(α1) ≡ϕ(α2) (mod 2). Proof. It suffices to show that α ∈B3 satisfies ψ(α) = e iff ϕ(α) ≡I",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-4-braids-and-beyond",
+      "number": null,
+      "title": "4-braids and beyond",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 152,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braids",
+          "heading": true
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "vˆα",
+          "heading": false
+        }
+      ],
+      "extract": "4-braids and beyond Consider the Jones polynomial of 4-braid closures. In particular, Example 2.19 yields that Vˆα(t) = −( √ t)e(α)((1 + t + t2 + t3 + t4)χ(1,1,1,1)(α) + (t + t2 + t3)χ(2,1,1)(α) + t2χ(2,2)(α)) t3/2 + t5/2 for α ∈B4. Substituting t = −1, it must then be the case that χ(1,1,1,1)(α) −χ(2,1,1)(α) + χ(2,2)(α) = 0 for all α ∈B4 upon specialization to t = −1, which can also seen to be true as, applying",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 201,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "acknowledgments",
+          "heading": true
+        },
+        {
+          "term": "math",
+          "heading": false
+        },
+        {
+          "term": "proc",
+          "heading": false
+        },
+        {
+          "term": "author",
+          "heading": false
+        },
+        {
+          "term": "braid",
+          "heading": false
+        },
+        {
+          "term": "research",
+          "heading": false
+        }
+      ],
+      "extract": "Acknowledgments The author expresses his gratitude towards Kenta Suzuki for his teaching and guidance throughout the research period. The author also extends his appreciation to the MIT PRIMES program for making this research opportunity possible. References [1] V. F. R. Jones. Hecke algebra representations of braid groups and link polynomials. Ann. of Math. (2), 126(2):335–388, 1987. [2] Shalom Eliahou, Louis H.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "braid closures",
+      "heading": false
+    },
+    {
+      "term": "braid index",
+      "heading": false
+    },
+    {
+      "term": "trivial braid",
+      "heading": false
+    },
+    {
+      "term": "braid group",
+      "heading": true
+    },
+    {
+      "term": "vˆα",
+      "heading": false
+    },
+    {
+      "term": "braid exponent",
+      "heading": false
+    },
+    {
+      "term": "jones polynomial",
+      "heading": false
+    },
+    {
+      "term": "alexander polynomial",
+      "heading": false
+    },
+    {
+      "term": "homflypt polynomial",
+      "heading": true
+    },
+    {
+      "term": "split link",
+      "heading": false
+    },
+    {
+      "term": "jones normalization",
+      "heading": false
+    },
+    {
+      "term": "oriented link",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p15); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/li-braid-closures"
+  }
+}

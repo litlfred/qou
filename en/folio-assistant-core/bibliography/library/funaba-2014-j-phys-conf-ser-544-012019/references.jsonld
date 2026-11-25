@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/funaba-2014-j-phys-conf-ser-544-012019",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Conference Series",
+      "dcterms:creator": [
+        "ACCESS, OPEN"
+      ],
+      "dcterms:issued": "D:20140915",
+      "bibo:doi": "10.1088/1742-6596/544/1/012019",
+      "dcterms:identifier": "https://doi.org/10.1088/1742-6596/544/1/012019",
+      "dcterms:source": "library/funaba-2014-j-phys-conf-ser-544-012019/manifest.jsonld",
+      "dcterms:hasVersion": "library/funaba-2014-j-phys-conf-ser-544-012019"
+    }
+  ]
+}

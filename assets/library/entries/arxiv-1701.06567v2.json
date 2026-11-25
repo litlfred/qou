@@ -1,0 +1,777 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1701.06567v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Preprint typeset in JHEP style - HYPER VERSION\nBPS spectra and 3-manifold invariants\nSergei Gukov1, Du Pei1,2, Pavel Putrov3, Cumrun Vafa4\n1 Walter Burke Institute for Theoretical Physics, California Institute of Technology,\nPasadena, CA 91125, USA\n2 Center for Quantum Geometry of Moduli Spaces, Deparment of Mathematics, University\nof Aarhus, DK-8000, Denmark\n3 School of Natural Sciences, Institute for Advanced Study, Princeton, NJ 08540, USA\n4 Jeﬀerson Physical Laboratory, Harvard University, Cambridge, MA 02138, USA\nAbstract: We provide a physical deﬁnition of new homological invariants Ha(M",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Can we hear the shape of a drum? Much like harmonics of a musical instrument, spectra of quantum systems contain wealth of useful information. Of particular interest are supersymmetric or the so-called BPS states which, depending on the problem at hand, can manifest themselves either as minimal surfaces, or solutions to partial differential equations, or other \"extremal\" objects. Thus, a spectrum of BPS states in Calabi-Yau compactifications can be used to reconstruct the geometry of the Calabi-Yau space itself and, as we explain in this paper, spectra of BPS states play a similar role in low-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fivebranes on 3-manifolds and categorification of WRT invariant",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-fivebranes-on-3-manifolds-and-categorification.md",
+      "narrative": null,
+      "content": "[]{#sec:summary label=\"sec:summary\"}\n\nThe goal of this section is to introduce the key players and their interrelation. To keep the discussion simple and concrete, we choose the gauge group to be $G=SU(2)$ for most of it, and then in section [\\[sec:higherrk\\]](#sec:higherrk){reference-type=\"ref\" reference=\"sec:higherrk\"} briefly comment how everything can be generalized to higher ranks.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-21-preliminaries.md",
+      "narrative": null,
+      "content": "[]{#sec:preliminaries label=\"sec:preliminaries\"}\n\nBefore we present a mathematically-friendly summary of our proposal and the physics behind it, we need to introduce some notations, especially those relevant to abelian flat connections that will be central in our discussion.\n\nConsider a closed and connected 3-manifold $M_3$, with $\\partial M_3=\\emptyset$. In order to present the results in full generality, it will be useful to consider the linking pairing on the torsion part of $H_1(M_3,{\\mathbb Z})$: $$\\begin{array}{cccc}\n        {\\ell k}: & {\\mathrm{Tor}\\,}H_1(M_3)\\otimes {\\mathrm{Tor}\\,}H_1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "$D^2\\times S^1$ partition function of $T[M_3]$ and WRT invariant",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-22-d2times-s1-partition-function-of-tm-3-and-wrt.md",
+      "narrative": null,
+      "content": "[]{#sec:summaryConj label=\"sec:summaryConj\"}\n\nNow we are ready to present a slightly generalized and improved version of the results from [@Gukov:2016gkn sec. 6].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Categorification of WRT invaraiant",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-categorification-of-wrt-invaraiant.md",
+      "narrative": null,
+      "content": "Let $Z_{SU(2)_k}[M_3]$ be the partition function of $SU(2)$ Chern-Simons theory with \"bare\" level $(k-2)$ on $M_3$, also known as the WRT invariant. We use the standard \"physics\" normalization where $$Z_{SU(2)_k}\\left[S^2\\times S^1\\right]=1,$$ and $$Z_{SU(2)_k}\\left[S^3\\right]=\\sqrt{\\frac2k}\\sin\\left(\\frac\\pi k\\right).$$ The following conjecture was proposed in [@Gukov:2016gkn].[^1]\n\n::: conj\nThe WRT invariant can be decomposed into the following form: $$Z_{SU(2)_k}[M_3]=(i\\sqrt{2k})^{b_1(M_3)-1}\\sum_{a,b\\;\\in \\;\\atop{\\mathrm{Tor}\\,}H_1(M_3,{\\mathbb Z})/{\\mathbb Z}_2}e^{2\\pi ik{\\ell k}(a,a)}\\,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Physics behind the proposal",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-physics-behind-the-proposal.md",
+      "narrative": null,
+      "content": "From physics point of view, the homological invariants ${\\mathcal H}_a[M_3]$ can be realized by the following M-theory geometry, $$\\begin{aligned}\n\\begin{matrix}\n{\\mbox {\\textrm{$N$ fivebranes:}}}~~~\\qquad & {\\mathbb R}& \\times & M_3& \\times & D^2  \\\\ \\qquad & &\n&   \\cap &  & \\cap \\\\\n{\\mbox{\\rm space-time:}}~~~\\qquad & {\\mathbb R}&  \\times  & T^*M_3 & \\times & TN   \\\\ \\qquad &\n&  &  \\circlearrowright &  & \\circlearrowright   \\\\\n{\\mbox{\\rm symmetries:}}~~~\\qquad & &  & \\text{``$U(1)_N$''} &   &  U(1)_q\\times U(1)_R .\n\\end{matrix}\n\\label{CatGeom1}\n\\end{aligned}$$ or, equivalently, any of its dua",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Resurgence in 3d ${\\mathcal N}=2$ theories",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-006-resurgence-in-3d-mathcal-n2-theories.md",
+      "narrative": null,
+      "content": "The phenomenon of non-abelian contributions being distributed among the abelian ones can be translated entirely into the language of 3d ${\\mathcal N}=2$ field theories. In fact, this phenomenon is not limited to theories $T[M_3]$ associated with 3-manifolds and should be regarded more broadly, as a decomposition of BPS quantities in gapless (conformal) theories into BPS spectra of its massive deformations.\n\nThanks to supersymmetric localization, partition functions of 3d ${\\mathcal N}=2$ theories on $D^2\\times_q S^1$ can be reduced to finite-dimensional integrals, which in the limit $q = e^{\\h",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Realization in terms of counting solutions of differential equations",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-007-23-realization-in-terms-of-counting-solutions-of.md",
+      "narrative": null,
+      "content": "In the previous section we defined homological invariants of 3-manifolds ${\\mathcal H}_a[M_3]$ as Hilbert spaces of 6d (2,0) theory on $M_3\\times D^2\\times {\\mathbb R}$ where ${\\mathbb R}$ is the time direction. It is possible to give another definition that, in a sense, is closer to the definition of instanton [@MR956166] or monopole (Seiberg-Witten) Floer homology of 3-manifolds [@kronheimer2007monopoles] familiar to many topologists. We will mostly follow [@Witten:2011zz], where the detailed discussion can be found.\n\nLet us represent $D^2$ as a cigar fibered over ${\\mathbb R}_+$ with fibers",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Surgeries, triangulations, and Atiyah-Floer",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-008-24-surgeries-triangulations-and-atiyah-floer.md",
+      "narrative": null,
+      "content": "In order to give a mathematical formulation of the homological invariants that can be useful for practical calculations on an arbitrary 3-manifold, the starting point must be a construction of the 3-manifold itself.\n\nThen, different ways to present the same 3-manifold may lead to different but equivalent definitions of ${\\mathcal H}_a[M_3]$ which, in physics, correspond to different ways of looking at the fivebrane system [\\[CatGeom1\\]](#CatGeom1){reference-type=\"eqref\" reference=\"CatGeom1\"}.\n\nFor example, in addition to its original combinatorial definition [@khovanov1999categorification], th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Superconformal index of $T[M_3]$ and its factorization",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-009-25-superconformal-index-of-tm-3-and-its-factoriz.md",
+      "narrative": null,
+      "content": "Although the new invariants $\\widehat{Z}_a(q)$ and their categorification ${\\mathcal H}_a[M_3]$ have a direct connection to the WRT invariant via ([\\[WRT-decomposition\\]](#WRT-decomposition){reference-type=\"ref\" reference=\"WRT-decomposition\"}), from the viewpoint of 3d ${\\mathcal N}=2$ theory $T[M_3;SU(2)]$, it is not the most natural or simplest object to consider. The main reason is that, in principle, there are infinitely many possible boundary conditions that could be considered.[^1] Identifying the correct subset that appears in ([\\[BlockD2S1\\]](#BlockD2S1){reference-type=\"ref\" reference=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Further refinement",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-010-26-further-refinement.md",
+      "narrative": null,
+      "content": "As we discussed above, for Seifert 3-manifolds the theory $T[M_3]$ has an extra $U(1)_{\\beta}$ flavor symmetry. In particular, this is the case for $M_3=L(p,1)$, which will serve as an important example to us later. This flavor symmetry in $T[M_3]$ results in the presence of an extra ${\\mathbb Z}$-grading in homological invariants ${\\mathcal H}_{D^2}$ and ${\\mathcal H}_{S^2}$ considered in the previous sections and a possibility to consider the corresponding refined indices (equivariant Euler characteristics): $$\\widehat{Z}_a(q;t)=\\sum_{i\\in {\\mathbb Z}+\\Delta_a,\\atop j,\\ell \\in{\\mathbb Z}}q^{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topologically twisted index of $T[M_3]$",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-011-27-topologically-twisted-index-of-tm-3.md",
+      "narrative": null,
+      "content": "Another interesting invariant of $M_3$ which can be realized as an observable of $T[M_3]$ and has a categorification by construction is the topologically twisted index on $S^2\\times S^1$ [@Benini:2015noa]. Namely, one can consider the 3d ${\\mathcal N}=2$ theory $T[M_3]$ with a background value of the $U(1)_R$-symmetry connection equal to the spin connection on $S^2$. In terms of the effective 2d ${\\mathcal N}=(2,2)$ theory obtained by compactifying $T[M_3]$ on $S^1$, this is the familiar A-twist along the $S^2$.\n\nThe topologically twisted index and the underlying homological invariant of $M_3$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalization to $U(N)$",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-012-28-generalization-to-un.md",
+      "narrative": null,
+      "content": "[]{#sec:higherrk label=\"sec:higherrk\"}\n\nFor simplicity, in this paper we mostly consider Chern-Simons theory on $M_3$ with gauge group being $G=SU(2)$ and the 3d/3d dual theory $T[M_3;SU(2)]$. However, in principle, everything we say above and below for $SU(2)$ can be easily generalized to the $SU(N)$ or $U(N)$ case; there are no obstructions for that. In particular, the formulae appearing in Conjecture [\\[Conjecture1\\]](#Conjecture1){reference-type=\"ref\" reference=\"Conjecture1\"} generalize as follows for $G = U(N)$: $$Z_{U(N)_k}[M_3]=(i\\sqrt{2k})^{N(b_1(M_3)-1)/2}\\sum_{a\\;\\in \\;({\\mathrm{Tor}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relation to open GW invariants on $T^*M_3$",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "../sections/sec-013-29-relation-to-open-gw-invariants-on-tm-3.md",
+      "narrative": null,
+      "content": "Consider $U(N)$ level-$k$ Chern-Simon theory on a rational homology sphere $M_3$, $$b_1(M_3) \\; = \\; 0 \\,,$$ *i.e.* $H_1(M_3,{\\mathbb Z})={\\mathrm{Tor}\\,}H_1(M_3,{\\mathbb Z})$ is a finite abelian group. (What follows can be considered as a generalization from the case $H_1(M_3,{\\mathbb Z})\\cong {\\mathbb Z}$ considered in [@Labastida:2000yw]).\n\nSimilar to the $SU(2)$ case, $\\sum_{i=1}^N{\\ell k}(a_i,a_i)=\\mathrm{CS}(a)$ is the Chern-Simons invariant of the abelian flat connection $a$, and $Z_a(q)$ is a Borel resummation [@Gukov:2016njj] of the asymptotic expansion around $a$. Correspondingly, $\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Langlands duality and flat connections",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "../sections/sec-014-210-langlands-duality-and-flat-connections.md",
+      "narrative": null,
+      "content": "[]{#sec:Langlands label=\"sec:Langlands\"}\n\nMotivated by the results of this paper, combined with [@Gukov:2016njj], we can make another conjecture:\n\n::: conj\nLet $G$ be a compact Lie group (not necessarily of ADE type) and $^LG$ its Langlands dual. Then, under S-duality, the boundary condition ${\\mathcal B}_a$ corresponding to a connected component in ${\\mathcal M}_{\\text{flat}}^{\\text{ab}} (M_3, G_{{\\mathbb C}})$ of $G_{{\\mathbb C}}$ flat connections on a 3-manifold $M_3$ maps to $${\\mathcal B}_a \\quad \\mapsto \\quad\n{}^L{\\mathcal B}_a \\; = \\; \\sum_{{b \\atop \\text{abelian}}} S^{ab} \\; (\\, {\\math",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-015-3-examples.md",
+      "narrative": null,
+      "content": "In this section, we present many examples, illustrating the general proposal outlined in the previous section. In particular, our goal is two-fold: first, we wish to use the proposed physics definition of the new homological invariants ${\\mathcal H}_a[M_3]$ to compute them in many concrete examples, to the extent that one can start exploring the structure of the results and explicitly test the Conjectures [\\[Conjecture1\\]](#Conjecture1){reference-type=\"ref\" reference=\"Conjecture1\"} and [\\[Conjecture2\\]](#Conjecture2){reference-type=\"ref\" reference=\"Conjecture2\"}, which is our second goal. We s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Categorifying the index",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-016-311-categorifying-the-index.md",
+      "narrative": null,
+      "content": "As $T[S^3,U(N)]$ is dual to a system of free chirals, its space of BPS states on $S^2$ --- which gives the homological invariant associated with $M_3 = S^3$ --- factorizes as product $${\\mathcal H}(S^3) \\; = \\; {\\mathcal H}_2 \\otimes {\\mathcal H}_4 \\otimes \\ldots \\otimes {\\mathcal H}_{2N},$$ where ${\\mathcal H}_{2i}$ is the BPS Hilbert space of a single 3d ${\\mathcal N}=2$ chiral multiplet with R-charge $2i$ and $U(1)_{\\beta}$ flavor charge $i$. Thus, we now turn to the problem of categorifying the index of a free chiral multiplet.\n\nRecall that for a 3d ${\\mathcal N}=2$ chiral multiplet $\\Phi$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The $t=q^{\\beta}$ reduction from BPS spectral sequence",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "../sections/sec-017-312-the-tqbeta-reduction-from-bps-spectral-seque.md",
+      "narrative": null,
+      "content": "[]{#sec:Spec label=\"sec:Spec\"}\n\nOne interesting property of the invariants [\\[Index-UN-free\\]](#Index-UN-free){reference-type=\"eqref\" reference=\"Index-UN-free\"} and [\\[CI\\]](#CI){reference-type=\"eqref\" reference=\"CI\"} is their behavior under the specialization $t=q^{\\beta}$ with $\\beta\\in {\\mathbb Z}$. First, they all become polynomial after taking this limit. For example, $${\\mathcal I}_{r,f=1} (q,t) \\quad \\overset{t=q^\\beta}{\\longrightarrow}\\quad \\prod_{j=0}^{\\infty} \\frac{1 - q^{1-r/2-\\beta+j}}{1- q^{r/2+\\beta+j}}=(q^{1-r/2-\\beta};q)_{r+2\\beta-1},$$ is simply a polynomial (as opposed to a p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Refined superconformal index",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "../sections/sec-018-321-refined-superconformal-index.md",
+      "narrative": null,
+      "content": "We now move to the case of M3 = L(p, 1) ∼= S3/Zp. The theory T[L(p, 1), U(N)] is an N = 2\nChern-Simons theory at level p, with a chiral multiplet Φ in the adjoint representation with\nR-charge R(Φ) = 2 [54,66,67]. Its superconformal index is given by (see e.g. [68])\nIU(N)(q, t) =\nX\nm1⩾···⩾mN∈Z\n1\n|Wm|\nZ\n|zi|=1\nY\nj\ndzj\n2πizj\nN\nY\ni\n(zi)pmi\nN\nY\ni̸=j\nt−|mi−mj|/2q−R|mi−mj|/4 ×\n\u0012\n1 −q|mi−mj|/2 zi\nzj\n\u0013 N\nY\ni̸=j\n\u0010 zj\nzi t−1q|mi−mj|/2+1−R/2; q\n\u0011\n∞\n\u0010\nzi\nzj tq|mi−mj|/2+R/2; q\n\u0011\n∞\n×\n\"\n(t−1q1−R/2; q)∞\n(tqR/2; q)∞\n#N\n.\n(3.29)\nHere R stands for the R-charge of the adjoint chiral multiplet Φ and the fugacity t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topologically twisted index of $T[L(p,1)]$",
+      "pageStart": 34,
+      "pageEnd": 39,
+      "target": "../sections/sec-019-322-topologically-twisted-index-of-tlp1.md",
+      "narrative": null,
+      "content": "For group G = SU(2), the topologically twisted index (reﬁned by angular momentum) of\nT[L(p, 1)] reads [56]:\nItop(q, t) = 1\n2\nX\nm∈Z\nZ\nJK\ndz\n2πiz\nz2(p+2)m q−m (1 −z2qm)(1 −z−2qm)\n(z2tq1−m; q)2m−1(z−2tq1+m; q)−2m−1(tq; q)−1\n,\n(3.43)\nwhere, as usual, the Pochhammer symbol with negative integer in the subscript is deﬁned via\nthe following identity:\n(x; q)n =\n1\n(xqn; q)−n\n.\n(3.44)\nThe contour in (3.54) is chosen according to the Jeﬀrey-Kirwan residue prescription. Namely,\nwe either choose poles at z = 0, z = ±\n√\nt q··· or at z = ∞, z = ±1/\n√\nt q···. The result is\nstrikingly simple:\nItop(q, t) =\n\n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cyclotomic expansion",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "../sections/sec-020-324-cyclotomic-expansion.md",
+      "narrative": null,
+      "content": "[]{#sec:cyclotomic label=\"sec:cyclotomic\"}\n\nIn this secition we show how to obtain expression for $\\widehat{Z}_a(1/q,t)$ with $|q|<1$ using what is usually called the *cyclotomic expansion*.\n\nLet us first consider the general construction. Let $F(q,t)$ be some function of $q$ and $t$, and suppose we know its restrictions at $t=q^\\beta$, with $\\beta\\in{\\mathbb Z}$, $$F^{(\\beta)}(q)\\equiv F(q,q^\\beta).$$ Then, one can write the following formal cyclotomic-like expansion for $F(q,t)$: $$F(q,t)=\\sum_{m=0}^\\infty\\widetilde{F}^{(m)}(q)\\cdot\\frac{t^m(1/t;q)_m}{(q;q)_m}.\n    \\label{cyclotomic}$$ The c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Positivity of coefficients",
+      "pageStart": 41,
+      "pageEnd": 43,
+      "target": "../sections/sec-021-325-positivity-of-coefficients.md",
+      "narrative": null,
+      "content": "In [@Gukov:2016gkn], it was shown that, up to an overall $\\pm$ sign, the refined homological blocks (with or without contribution from the Cartan component of the adjoint chiral) have the following positivity property: $$\\begin{aligned}\\label{block-pos}\n\\pm \\widehat{Z}_a(q,-t) \\quad & \\in \\quad q^{\\Delta_a} {\\mathbb Z}_+[t][[q]] \\\\\n\\pm (-qt;q)_\\infty\\widehat{Z}_a(q,-t) \\quad & \\in \\quad q^{\\Delta_a} {\\mathbb Z}_+[t][[q]]\n\\end{aligned}$$\n\nso that it is naturally to conjecture that $\\pm \\widehat{Z}_a(q,-t)$ actually coincides with the Poincaré polynomial of the underlying doubly graded homology",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison with refined CS",
+      "pageStart": 43,
+      "pageEnd": 47,
+      "target": "../sections/sec-022-326-comparison-with-refined-cs.md",
+      "narrative": null,
+      "content": "[]{#sec:refCS label=\"sec:refCS\"}\n\nLet $R_n$ denote by a representation of $SU(2)$ of dimension $n$. The Hilbert space of the refined Chern-Simons theory [@Aganagic:2011sg] on $T^2$ is the same as in the unrefined case. Namely, it is generated by integral representations of the affine Kac-Moody algebra at \"bare\" level $k-2$, which in our notations[^1] have $n = 1,\\ldots,k-1$: $${\\mathcal H}_{T^2}=\\bigoplus_{n=1}^{k-1} {\\mathbb C}|R_n\\rangle.$$ Let $$q=e^{\\frac{2\\pi i}{k+2\\beta}},\\quad\\text{and} \\quad t=q^\\beta.$$ The $T$ and $S$ matrices read (up to simple $q,t$-independent phase factors) $$T_{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Homological blocks and WRT invariant",
+      "pageStart": 47,
+      "pageEnd": 48,
+      "target": "../sections/sec-023-331-homological-blocks-and-wrt-invariant.md",
+      "narrative": null,
+      "content": "Consider the partition function of $T[M_3]$ on $D^2\\times S^1$ with the following 2d ${\\mathcal N}=(0,2)$ boundary conditions (which generalize the boundary conditions for $T[L(p,1)]$ that produce $\\widehat{Z}_a(q,t)$):\n\n-   Neumann for ${\\mathcal N}=2$ vector multiplet,\n\n-   Neumann for adjoint chiral $\\Sigma$,\n\n-   Dirichlet for $g$ adjoint chirals $\\Phi_i$,\n\n-   Neumann for $g$ adjoint chirals $\\widetilde\\Phi_i$,\n\n-   3d vector multiplet is coupled to modules of ${\\mathbb Z}_2$-orbifolded $\\sqrt{2p}{\\mathbb Z}$ lattice VOA by gauging its flavor symmetry. Note that when $p=0$ the boundary co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Factorization of the superconformal index",
+      "pageStart": 48,
+      "pageEnd": 50,
+      "target": "../sections/sec-024-332-factorization-of-the-superconformal-index.md",
+      "narrative": null,
+      "content": "The superconformal index of 3d N = 2 theory (3.120) reads\nIT[M3](q, t) =\nX\nm≥0\n1\n|Wm|\nZ\n|z|=1\ndz\n2πiz z2pm (1 −z±2qm) q−2m(1−g) t−2m(1−g)×\n(z±2qmt−1; q)∞(t−1; q)∞\n(z±2qm+1t)∞(qt; q)∞\n×\ng\nY\ni=1\n(z±2u−1\ni qm+1; q)∞(u−1\ni q; q)∞\n(z±2uiqm; q)∞(ui; q)∞\n·\n(z±2tuiqm+1; q)∞(tuiq; q)∞\n(z±2t−1u−1\ni qm; q)∞(t−1u−1\ni ; q)∞\n.\n(3.129)\nUnlike in the case of Lens spaces (g = 0), now there is some ambiguity in the choice of the\ncontour, because if |t| = 1 there are poles at |z| = 1. The natural physical choice assumes that\n|q| < 1 and |ui| = |t−1u−1\ni | = qϵ with ϵ > 0, which corresponds to choosing an inﬁnite",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/ex-sec-025-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 55,
+      "target": "ex-sec-025-01.md",
+      "narrative": null,
+      "content": "-2 -2 -2 -2 -2 -2 -2 -2 (3.153) H1(M3) = 0 (3.154) bZ0 = q−3/2(1 −q −q3 −q7 + q8 + q14 + q20 + q29 −q31 −q42 + · · · ) (3.155)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/ex-sec-025-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 55,
+      "target": "ex-sec-025-02.md",
+      "narrative": null,
+      "content": "-1 -4 -3 -6 -1 -2 -1 Kirby ∼ -1 -3 -3 -4 (3.156) H1(M3) = Z3 (3.157) bZ =",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/ex-sec-025-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 55,
+      "target": "ex-sec-025-03.md",
+      "narrative": null,
+      "content": "(non-Seifert) -2 -3 -2 -2 -2 -3 (3.159) H1(M3) = Z13 (3.160) bZ = 1        q−1/2(2 −2q + 2q2 −2q4 + 4q5 + 6q10 + 8q11 −4q13 + 2q14 + 4q15 + O \u0010 q18\u0011 ) q5/26(−3 + 2q + 2q2 −4q3 −2q7 −q8 + 2q9 −q10 + 2q12 −4q13 + 2q16 + O \u0010 q18\u0011 ) q7/26(4 + q + 2q3 −2q4 −2q6 −3q7 −2q8 −2q10 −q11 −2q13 −4q14 −2q15 −4q16 + O \u0010 q18\u0011 ) q−7/26(−3 −3q2 + 2q4 −2q5 + 4q7 + 2q8 + 2q9 + 2q10 + 4q12 + 4q13 + 4q14 + 2q15 + O \u0010 q18\u0011 ) q−11/26(−1 + 2q −2q2 + 4q3 −3q6 −2q7 + 4q8 −2q9 + 2q11 + 2q13 + q14 −2q16 + O \u0010 q17\u0011 ) q−5/26(2 + 2q2 −q3 −3q5 −2q6 + 2q7 −4q8 −2q10 −2q11 −2q12 −2q13 −5q15 −2q16 + O \u0010 q17\u0011 ) q−15/26(−1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison with refined CS",
+      "pageStart": 50,
+      "pageEnd": 55,
+      "target": "../sections/sec-025-333-comparison-with-refined-cs.md",
+      "narrative": null,
+      "content": "In the notations of section 3.2.6, the partition function of reﬁned Chern-Simons theory on\nM3 = O(−p) →Σg reads [19]:\nZref. CS\nSU(2) [M3] =\nk−1\nX\nn=1\ngg−1\nn\n(S1n)2−2g(Tnn)−p =\n=\nk−1\nX\nn=1\nq−pn2\n4 −pnβ\n2 −pβ2\n4\nβ\nY\nj=0\n(q−n+j+β\n2\n−q\nn+j+β\n2\n)1−g(q−n−j+β\n2\n−q\nn−j+β\n2\n)1−g.\n(3.138)\nBy repeating manipulations in section 3.2.6, we arrive at (up to a simple overall factor)\nZref. CS\nSU(2) [M3] =\nX\na,b∈Zp/Z2\ne2πi(k+2β)CS(a) · Sab · bZ(ref.CS;β)\nb\n(q)\n(3.139)\n41It is important to keep in mind that the terms in this decomposition are not merely contributions of the\ncorresponding connected components of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Problems on the $T[M_3]$ side",
+      "pageStart": 55,
+      "pageEnd": 55,
+      "target": "../sections/sec-026-342-problems-on-the-tm-3-side.md",
+      "narrative": null,
+      "content": "One may wish to carry out the categorification program for $M_3(\\Gamma)$ as well. However, it is not obvious how to write a correct expression for superconformal or topologically twisted index of the 3d ${\\mathcal N}=2$ theory $T[M_3]$ because the UV description with ${\\mathcal N}=2$ supersymmetry of its certain components (see the paragraph above Section [\\[sec:plumbing-blocks\\]](#sec:plumbing-blocks){reference-type=\"ref\" reference=\"sec:plumbing-blocks\"}) is not known. In particular, there is no known Lagrangian description for half-BPS T-duality walls in ${\\mathcal N}=4$ super-Yang-Mills the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Adding knots and links into $M_3$",
+      "pageStart": 55,
+      "pageEnd": 56,
+      "target": "../sections/sec-027-4-adding-knots-and-links-into-m-3.md",
+      "narrative": null,
+      "content": "The goal of this section is to incorporate knots and links in a non-trivial 3-manifold $M_3$ and produce the corresponding homological invariants. In particular, it will give us the very first examples where *both* knots and 3-manifolds are non-trivial.\n\nThe physical setup that we use to make concrete predictions for the new homological invariants ${\\mathcal H}_a[M_3;K,{\\mathcal R}]$ was already briefly mentioned in [\\[conifoldphases\\]](#conifoldphases){reference-type=\"eqref\" reference=\"conifoldphases\"}. As before, $K$ denotes a knot in $M_3$ while ${\\mathcal R}$ denotes a representation (colo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Links in $M_3$ and line operators in $T[M_3]$",
+      "pageStart": 56,
+      "pageEnd": 60,
+      "target": "../sections/sec-028-41-links-in-m-3-and-line-operators-in-tm-3.md",
+      "narrative": null,
+      "content": "[]{#sec:knots label=\"sec:knots\"}\n\nConsider a knot $K$ in $M_3$ colored by a representation ${\\mathcal R}$ of $G$. As described above, it corresponds to a certain half-BPS line operator $\\Gamma_{K,{\\mathcal R}}$ in $T[M_3;G]$: $$(K,{\\mathcal R})\\;\\longmapsto \\; \\Gamma_{K,{\\mathcal R}}\\;\\in\\;{\\mathcal C}.\n    \\label{Knots-LineOps}$$ where ${\\mathcal C}$ is the category of BPS line operators in ${\\mathcal N}=2$ SCFT $T[M_3,G]$. The homological invariant for a combined system of a knot and a 3-manifold is then given by the BPS Hilbert space of $T[M_3]$ on the disk $D^2$ with $\\Gamma_{K,{\\mathcal R",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Links in $S^2\\times S^1$ and Rozansky's proposal",
+      "pageStart": 60,
+      "pageEnd": 63,
+      "target": "../sections/sec-029-42-links-in-s2times-s1-and-rozanskys-proposal.md",
+      "narrative": null,
+      "content": "[]{#sec:Roz label=\"sec:Roz\"}\n\nFor $M_3=S^2\\times S^1$, the theory $T[M_3]$ is a particular case of ([\\[TCircFib\\]](#TCircFib){reference-type=\"ref\" reference=\"TCircFib\"}) with $p=0$ and $g=0$, that is the theory of 3d ${\\mathcal N}=2$ vector multiplet with gauge group ${\\mathcal G}=G=SU(2)$. In this case $\\mathrm{Tor}\\,H_1(M_3,{\\mathbb Z})=0$ and the only independent Wilson loop in $T[M_3]$ is the trivial Wilson loop. Also, there is only one homological block $\\widehat{Z}_0$. Therefore, for an arbitrary representation $\\lambda$ of $SU(2)$, the decomposition [\\[WilsonDec\\]](#WilsonDec){reference",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Links in $L(p,1)$",
+      "pageStart": 63,
+      "pageEnd": 64,
+      "target": "../sections/sec-030-43-links-in-lp1.md",
+      "narrative": null,
+      "content": "For $M_3=L(p,1)$, or more generally $M_3=O(-p)\\rightarrow \\Sigma_g$, we have $\\Lambda_{M_3}= {\\mathbb Z}_p/{\\mathbb Z}_2$ and the basic Wilson loops in $T[M_3]$ are given by $W_{\\lambda}$ with $\\lambda=0,\\ldots, p$.[^1] These correspond to the \"$\\lambda$-cablings\" of the unknot [\\[Gamma-Lp1\\]](#Gamma-Lp1){reference-type=\"eqref\" reference=\"Gamma-Lp1\"} wrapping the Hopf fiber of $L(p,1)$.\n\nMore generally, for plumbed $M_3$ (see section [\\[sec:plumbed\\]](#sec:plumbed){reference-type=\"ref\" reference=\"sec:plumbed\"}), if $(K^{\\lambda}, {\\mathcal R}_{\\lambda})$ is a $\\lambda$-cabling of the unknot wr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unrefined index of $T[L(p,1)]$ with Wilson loops",
+      "pageStart": 64,
+      "pageEnd": 65,
+      "target": "../sections/sec-031-431-unrefined-index-of-tlp1-with-wilson-loops.md",
+      "narrative": null,
+      "content": "[]{#sec:LensWilson label=\"sec:LensWilson\"}\n\nThe unrefined superconformal index --- with contribution of the Cartan component of the adjoint chiral removed, as in [\\[I-UN-unref\\]](#I-UN-unref){reference-type=\"eqref\" reference=\"I-UN-unref\"} --- with the Wilson line inserted at the north pole reads: $$\\label{SU2Int}\n\\begin{aligned}\n\\langle W_\\lambda\\rangle\\equiv     {\\mathcal I}(q;W_\\lambda) & =  \\frac{1}{2} \\sum_{m \\in \\mathbb{Z}} \\int \\frac{dz}{2\\pi i z} z^{ p m}\\cdot \\chi_\\lambda(q^{m/2}z)\\\\\n&\\ \\ \\ \\times \\left( q^{2 \\left| m \\right|}+q^{-2 \\left| m \\right|}+4 - 2 \\left(q^{ \\left| m \\right|}+q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Refinement and categorification",
+      "pageStart": 65,
+      "pageEnd": 66,
+      "target": "../sections/sec-032-432-refinement-and-categorification.md",
+      "narrative": null,
+      "content": "The reﬁned version of (4.43) reads\n(qt; q)∞bZa(q, t; Wλ) =\n1\n|Wb|\nZ\ndz\n2πiz\n(z2; q)∞(z−2; q)∞\n(z2tq; q)∞(z−2tq; q)∞\nχλ(z)\nX\nn∈pZ+b\nqn2/p z2n .\n(4.48)\nOne can show that it has the positivity property (3.87) and, therefore, can be interpreted as\nthe Poincar´e polynomial of the homological invariant that categoriﬁes SU(2) WRT invariants\nof M3 = L(p, 1) with knots wrapping the Hopf ﬁber.\nFor example, consider M3 = L(5, 1).\nWith our choice of G = SU(2), it has three\nabelian ﬂat connections and, correspondingly, three homological blocks, all tabulated in [27,\nsec.6]. Now, we can see that incorporati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison with refined CS",
+      "pageStart": 66,
+      "pageEnd": 72,
+      "target": "../sections/sec-033-44-comparison-with-refined-cs.md",
+      "narrative": null,
+      "content": "In this section, we wish to compare the categoriﬁcation of WRT invariants of knots in 3-\nmanifolds considered in the previous section with analogous calculations using the tools of\nreﬁned CS theory and DAHA [19,72]. To the best of our knowledge, such calculations (that\ninvolve both knots and 3-manifolds) were not done in the literature on reﬁned Chern-Simons\ntheory.\nLet us consider the unknot K wrapping the Hopf ﬁber in M3 = L(p, 1) and colored by\nan irreducible representation R = λ. Note, that now the representation λ (whose weight we\ndenote by the same letter) does represent the “color” of K",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cabling in $M_3$ versus color in $T[M_3]$",
+      "pageStart": 72,
+      "pageEnd": 74,
+      "target": "../sections/sec-034-b-cabling-in-m-3-versus-color-in-tm-3.md",
+      "narrative": null,
+      "content": "Here, we illustrate a delicate feature of 3d/3d correspondence that shows up at the categorical\nlevel when knots are introduced in M3. (The issue goes away if one looks at the problem\nwithout knots or at the decategoriﬁed level.) Namely, we compare 3d N = 2 theory T[M3]\non D2 × S1 to quantum group invariants of M3 and their categoriﬁcation. As explained in\nsection 4.1 and illustrated in Figure 1, introducing knots and links in M3 corresponds to\nadding a line operator (“impurity”) of a suitable type in T[M3].\nA curious aspect of this correspondence is that the representation λ (“color”) of the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1701.06567v2/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Categorification of the Turaev-Viro invariants",
+      "pageStart": 74,
+      "pageEnd": 81,
+      "target": "../sections/sec-035-c-categorification-of-the-turaev-viro-invariants.md",
+      "narrative": null,
+      "content": "The aim of this paper is to introduce and study new three-manifold invariants. Along the way,\nwe have seen the important roles played by boundary conditions, abelian ﬂat connections,\nhomological blocks, reﬁnement, and line operators. Here, we outline how these ideas can be\napplied to categoriﬁcation of the Turaev-Viro invariants.\nDeﬁned via a state-sum model, the Turaev-Viro (TV) invariants [93] involve a “counting”\nproblem from the start. This motivates a series of questions: do TV invariants of M3 have\na natural home in physics? Could it be that they are counting BPS states associated with\nt",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

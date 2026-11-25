@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder-context.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-2fsyo8e388n.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-2fsyo8e388n","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder-context.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder-context.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder-context.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder-context&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder-context&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Fixed. \&quot;The doc&#39;s earlier $c_4 = b^2 + 1/2$ form is superseded; the audit shows it was 9.5% off the empirical value\&quot; -&gt; \&quot;The earlier $c_4 = b^2 + 1/2$ form is superseded: it is 9.5% off the empirical value\&quot;; \&quot;Sub-ppb agreement at $q_0$ is therefore Subgoal-2 territory (research-grade) **conditional on** the Habiro-element upgrade\&quot; -&gt; \&quot;... is therefore still research-grade and **conditional on** the Habiro-element upgrade\&quot;. The 9.5% and 0.9% figures, the non-monotonicity argument and the conditionality are unchanged.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T12:00:00Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-rereview&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6632b9782c1e&quot;,
+        &quot;ts&quot;: &quot;d4d59753eec8&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:35:17.550Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;Remark, read in full (long block, ~1200 words). Nine of ten categories clean. Negation-contrast instances are all substantive tier statements (&#39;a genuine result and not a derivation&#39;, &#39;structural near-matches rather than exact Taylor coefficients&#39;, &#39;conditional on the Habiro-element upgrade, not an unconditional derivation&#39;) -- these ARE the anti-laundering content, documented false-positive class. Em-dash density is moderate (about six spaced dashes) but each is a definitional gloss inside a bullet or a true appositive, not a substitute for sentence structure. No triples, no warmth, no aphorism; the block ends on a technical suggestion (KLR basis / Khovanov-Rozansky spectral sequence). RIGOR PASS: recomputed u = 0.0085172346 (block: 0.00852), 1/u = 117.409 (block: 117), log10(1/u) = 2.0697 (block: 2.07), b^2 = 0.75270211 (block: 0.7527), the b^2-vs-0.7656 gap = 1.685 percent (block: 1.7 percent), and Q_beta/(Q_beta+m_e) = 0.60490 (block: 0.605). All correct.&quot;,
+      &quot;notes&quot;: &quot;FIVE FINDINGS. (1) c_5 CONTRADICTS ITS OWN PROPOSITION -- see the verdict on prop:q-beta-categorical-precision-ladder. This block says c_5 = c_3^2*3 + b (twice: in the mixing-pattern list and in open question 2); the proposition&#39;s boxed formula and tables 1 and 2 say c_5 = -(b^2+1/2). I recomputed and THIS BLOCK IS THE CORRECT ONE: with u^5 = 4.4822186e-11, c_5 = +12.8675841 contributes +0.5768 ppb and carries table 2&#39;s N=4 residual of -0.57 ppb to +0.0068 ppb, matching the published &#39;~0 ppb&#39; and table 3&#39;s &#39;+0.04 ppb&#39;; the -(b^2+1/2) form contributes only -0.0561 ppb and would leave -0.63 ppb. The proposition needs correcting, not this remark. (2) STALE c_3 VALUE: &#39;c_3: -2.010 at the muon-pin q_0, -2.069 at the m_p-pin q_0&#39;. Per AGENTS.md the muon-pin c_3 is -2.02020024; -2.0097 is the SUPERSEDED pre-#1422 value that -2.010 rounds to. The stale pair implies a cross-anchor swing of 2.85 percent, whereas the current pair gives 2.37478 percent. AGENTS.md flags this exact stale figure as the source of the corpus&#39;s &#39;2.98%/2.88%&#39; numbers. (3) SWEEP DAMAGE, three sites: the section heading &#39;canonical precision ladder&#39; (read: &#39;Numerical precision ladder&#39;), &#39;Verified at q_0 via the canonical formalism at 50 dps&#39;, and &#39;From the canonical formalism:&#39; before the epsilon_DeltaS formula. All three are the documented token substitution where a script name belonged; I could not recover the names, so none was fixed. (4) PIN CURRENCY vs THE LIVE DASHBOARD: the block claims the N=3 rung beats the 7.80 ppb target and that N&gt;=4 reaches sub-ppb on Q_beta. AGENTS.md records the live per-observable dashboard at 1279 ppb for Q_beta (a 164x miss), explicitly noting that the sub-ppb Habiro result was against the PRE-re-pin muon q_0 and has not been refreshed since the 2026-05-28 proton re-pin. The block&#39;s precision claims should be scoped to the muon-era run. (5) CONVENTION C, as for the proposition: the ladder is C-frame throughout via z in alpha, already scoped corpus-wide by bean qou-cds1.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6632b9782c1e&quot;,
+        &quot;ts&quot;: &quot;d4d59753eec8&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:35:17.586Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;Remark, read in full (long block, ~1200 words). Nine of ten categories clean. Negation-contrast instances are all substantive tier statements (&#39;a genuine result and not a derivation&#39;, &#39;structural near-matches rather than exact Taylor coefficients&#39;, &#39;conditional on the Habiro-element upgrade, not an unconditional derivation&#39;) -- these ARE the anti-laundering content, documented false-positive class. Em-dash density is moderate (about six spaced dashes) but each is a definitional gloss inside a bullet or a true appositive, not a substitute for sentence structure. No triples, no warmth, no aphorism; the block ends on a technical suggestion (KLR basis / Khovanov-Rozansky spectral sequence). RIGOR PASS: recomputed u = 0.0085172346 (block: 0.00852), 1/u = 117.409 (block: 117), log10(1/u) = 2.0697 (block: 2.07), b^2 = 0.75270211 (block: 0.7527), the b^2-vs-0.7656 gap = 1.685 percent (block: 1.7 percent), and Q_beta/(Q_beta+m_e) = 0.60490 (block: 0.605). All correct.&quot;,
+      &quot;notes&quot;: &quot;FIVE FINDINGS. (1) c_5 CONTRADICTS ITS OWN PROPOSITION -- see the verdict on prop:q-beta-categorical-precision-ladder. This block says c_5 = c_3^2*3 + b (twice: in the mixing-pattern list and in open question 2); the proposition&#39;s boxed formula and tables 1 and 2 say c_5 = -(b^2+1/2). I recomputed and THIS BLOCK IS THE CORRECT ONE: with u^5 = 4.4822186e-11, c_5 = +12.8675841 contributes +0.5768 ppb and carries table 2&#39;s N=4 residual of -0.57 ppb to +0.0068 ppb, matching the published &#39;~0 ppb&#39; and table 3&#39;s &#39;+0.04 ppb&#39;; the -(b^2+1/2) form contributes only -0.0561 ppb and would leave -0.63 ppb. The proposition needs correcting, not this remark. (2) STALE c_3 VALUE: &#39;c_3: -2.010 at the muon-pin q_0, -2.069 at the m_p-pin q_0&#39;. Per AGENTS.md the muon-pin c_3 is -2.02020024; -2.0097 is the SUPERSEDED pre-#1422 value that -2.010 rounds to. The stale pair implies a cross-anchor swing of 2.85 percent, whereas the current pair gives 2.37478 percent. AGENTS.md flags this exact stale figure as the source of the corpus&#39;s &#39;2.98%/2.88%&#39; numbers. (3) SWEEP DAMAGE, three sites: the section heading &#39;canonical precision ladder&#39; (read: &#39;Numerical precision ladder&#39;), &#39;Verified at q_0 via the canonical formalism at 50 dps&#39;, and &#39;From the canonical formalism:&#39; before the epsilon_DeltaS formula. All three are the documented token substitution where a script name belonged; I could not recover the names, so none was fixed. (4) PIN CURRENCY vs THE LIVE DASHBOARD: the block claims the N=3 rung beats the 7.80 ppb target and that N&gt;=4 reaches sub-ppb on Q_beta. AGENTS.md records the live per-observable dashboard at 1279 ppb for Q_beta (a 164x miss), explicitly noting that the sub-ppb Habiro result was against the PRE-re-pin muon q_0 and has not been refreshed since the 2026-05-28 proton re-pin. The block&#39;s precision claims should be scoped to the muon-era run. (5) CONVENTION C, as for the proposition: the ladder is C-frame throughout via z in alpha, already scoped corpus-wide by bean qou-cds1.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6632b9782c1e&quot;,
+        &quot;ts&quot;: &quot;d4d59753eec8&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:35:17.625Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;Remark, read in full (long block, ~1200 words). Nine of ten categories clean. Negation-contrast instances are all substantive tier statements (&#39;a genuine result and not a derivation&#39;, &#39;structural near-matches rather than exact Taylor coefficients&#39;, &#39;conditional on the Habiro-element upgrade, not an unconditional derivation&#39;) -- these ARE the anti-laundering content, documented false-positive class. Em-dash density is moderate (about six spaced dashes) but each is a definitional gloss inside a bullet or a true appositive, not a substitute for sentence structure. No triples, no warmth, no aphorism; the block ends on a technical suggestion (KLR basis / Khovanov-Rozansky spectral sequence). RIGOR PASS: recomputed u = 0.0085172346 (block: 0.00852), 1/u = 117.409 (block: 117), log10(1/u) = 2.0697 (block: 2.07), b^2 = 0.75270211 (block: 0.7527), the b^2-vs-0.7656 gap = 1.685 percent (block: 1.7 percent), and Q_beta/(Q_beta+m_e) = 0.60490 (block: 0.605). All correct.&quot;,
+      &quot;notes&quot;: &quot;FIVE FINDINGS. (1) c_5 CONTRADICTS ITS OWN PROPOSITION -- see the verdict on prop:q-beta-categorical-precision-ladder. This block says c_5 = c_3^2*3 + b (twice: in the mixing-pattern list and in open question 2); the proposition&#39;s boxed formula and tables 1 and 2 say c_5 = -(b^2+1/2). I recomputed and THIS BLOCK IS THE CORRECT ONE: with u^5 = 4.4822186e-11, c_5 = +12.8675841 contributes +0.5768 ppb and carries table 2&#39;s N=4 residual of -0.57 ppb to +0.0068 ppb, matching the published &#39;~0 ppb&#39; and table 3&#39;s &#39;+0.04 ppb&#39;; the -(b^2+1/2) form contributes only -0.0561 ppb and would leave -0.63 ppb. The proposition needs correcting, not this remark. (2) STALE c_3 VALUE: &#39;c_3: -2.010 at the muon-pin q_0, -2.069 at the m_p-pin q_0&#39;. Per AGENTS.md the muon-pin c_3 is -2.02020024; -2.0097 is the SUPERSEDED pre-#1422 value that -2.010 rounds to. The stale pair implies a cross-anchor swing of 2.85 percent, whereas the current pair gives 2.37478 percent. AGENTS.md flags this exact stale figure as the source of the corpus&#39;s &#39;2.98%/2.88%&#39; numbers. (3) SWEEP DAMAGE, three sites: the section heading &#39;canonical precision ladder&#39; (read: &#39;Numerical precision ladder&#39;), &#39;Verified at q_0 via the canonical formalism at 50 dps&#39;, and &#39;From the canonical formalism:&#39; before the epsilon_DeltaS formula. All three are the documented token substitution where a script name belonged; I could not recover the names, so none was fixed. (4) PIN CURRENCY vs THE LIVE DASHBOARD: the block claims the N=3 rung beats the 7.80 ppb target and that N&gt;=4 reaches sub-ppb on Q_beta. AGENTS.md records the live per-observable dashboard at 1279 ppb for Q_beta (a 164x miss), explicitly noting that the sub-ppb Habiro result was against the PRE-re-pin muon q_0 and has not been refreshed since the 2026-05-28 proton re-pin. The block&#39;s precision claims should be scoped to the muon-era run. (5) CONVENTION C, as for the proposition: the ladder is C-frame throughout via z in alpha, already scoped corpus-wide by bean qou-cds1.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6632b9782c1e&quot;,
+        &quot;ts&quot;: &quot;d4d59753eec8&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:35:17.662Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;Remark, read in full (long block, ~1200 words). Nine of ten categories clean. Negation-contrast instances are all substantive tier statements (&#39;a genuine result and not a derivation&#39;, &#39;structural near-matches rather than exact Taylor coefficients&#39;, &#39;conditional on the Habiro-element upgrade, not an unconditional derivation&#39;) -- these ARE the anti-laundering content, documented false-positive class. Em-dash density is moderate (about six spaced dashes) but each is a definitional gloss inside a bullet or a true appositive, not a substitute for sentence structure. No triples, no warmth, no aphorism; the block ends on a technical suggestion (KLR basis / Khovanov-Rozansky spectral sequence). RIGOR PASS: recomputed u = 0.0085172346 (block: 0.00852), 1/u = 117.409 (block: 117), log10(1/u) = 2.0697 (block: 2.07), b^2 = 0.75270211 (block: 0.7527), the b^2-vs-0.7656 gap = 1.685 percent (block: 1.7 percent), and Q_beta/(Q_beta+m_e) = 0.60490 (block: 0.605). All correct.&quot;,
+      &quot;notes&quot;: &quot;FIVE FINDINGS. (1) c_5 CONTRADICTS ITS OWN PROPOSITION -- see the verdict on prop:q-beta-categorical-precision-ladder. This block says c_5 = c_3^2*3 + b (twice: in the mixing-pattern list and in open question 2); the proposition&#39;s boxed formula and tables 1 and 2 say c_5 = -(b^2+1/2). I recomputed and THIS BLOCK IS THE CORRECT ONE: with u^5 = 4.4822186e-11, c_5 = +12.8675841 contributes +0.5768 ppb and carries table 2&#39;s N=4 residual of -0.57 ppb to +0.0068 ppb, matching the published &#39;~0 ppb&#39; and table 3&#39;s &#39;+0.04 ppb&#39;; the -(b^2+1/2) form contributes only -0.0561 ppb and would leave -0.63 ppb. The proposition needs correcting, not this remark. (2) STALE c_3 VALUE: &#39;c_3: -2.010 at the muon-pin q_0, -2.069 at the m_p-pin q_0&#39;. Per AGENTS.md the muon-pin c_3 is -2.02020024; -2.0097 is the SUPERSEDED pre-#1422 value that -2.010 rounds to. The stale pair implies a cross-anchor swing of 2.85 percent, whereas the current pair gives 2.37478 percent. AGENTS.md flags this exact stale figure as the source of the corpus&#39;s &#39;2.98%/2.88%&#39; numbers. (3) SWEEP DAMAGE, three sites: the section heading &#39;canonical precision ladder&#39; (read: &#39;Numerical precision ladder&#39;), &#39;Verified at q_0 via the canonical formalism at 50 dps&#39;, and &#39;From the canonical formalism:&#39; before the epsilon_DeltaS formula. All three are the documented token substitution where a script name belonged; I could not recover the names, so none was fixed. (4) PIN CURRENCY vs THE LIVE DASHBOARD: the block claims the N=3 rung beats the 7.80 ppb target and that N&gt;=4 reaches sub-ppb on Q_beta. AGENTS.md records the live per-observable dashboard at 1279 ppb for Q_beta (a 164x miss), explicitly noting that the sub-ppb Habiro result was against the PRE-re-pin muon q_0 and has not been refreshed since the 2026-05-28 proton re-pin. The block&#39;s precision claims should be scoped to the muon-era run. (5) CONVENTION C, as for the proposition: the ladder is C-frame throughout via z in alpha, already scoped corpus-wide by bean qou-cds1.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6632b9782c1e&quot;,
+        &quot;ts&quot;: &quot;d4d59753eec8&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:35:17.699Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;Remark, read in full (long block, ~1200 words). Nine of ten categories clean. Negation-contrast instances are all substantive tier statements (&#39;a genuine result and not a derivation&#39;, &#39;structural near-matches rather than exact Taylor coefficients&#39;, &#39;conditional on the Habiro-element upgrade, not an unconditional derivation&#39;) -- these ARE the anti-laundering content, documented false-positive class. Em-dash density is moderate (about six spaced dashes) but each is a definitional gloss inside a bullet or a true appositive, not a substitute for sentence structure. No triples, no warmth, no aphorism; the block ends on a technical suggestion (KLR basis / Khovanov-Rozansky spectral sequence). RIGOR PASS: recomputed u = 0.0085172346 (block: 0.00852), 1/u = 117.409 (block: 117), log10(1/u) = 2.0697 (block: 2.07), b^2 = 0.75270211 (block: 0.7527), the b^2-vs-0.7656 gap = 1.685 percent (block: 1.7 percent), and Q_beta/(Q_beta+m_e) = 0.60490 (block: 0.605). All correct.&quot;,
+      &quot;notes&quot;: &quot;FIVE FINDINGS. (1) c_5 CONTRADICTS ITS OWN PROPOSITION -- see the verdict on prop:q-beta-categorical-precision-ladder. This block says c_5 = c_3^2*3 + b (twice: in the mixing-pattern list and in open question 2); the proposition&#39;s boxed formula and tables 1 and 2 say c_5 = -(b^2+1/2). I recomputed and THIS BLOCK IS THE CORRECT ONE: with u^5 = 4.4822186e-11, c_5 = +12.8675841 contributes +0.5768 ppb and carries table 2&#39;s N=4 residual of -0.57 ppb to +0.0068 ppb, matching the published &#39;~0 ppb&#39; and table 3&#39;s &#39;+0.04 ppb&#39;; the -(b^2+1/2) form contributes only -0.0561 ppb and would leave -0.63 ppb. The proposition needs correcting, not this remark. (2) STALE c_3 VALUE: &#39;c_3: -2.010 at the muon-pin q_0, -2.069 at the m_p-pin q_0&#39;. Per AGENTS.md the muon-pin c_3 is -2.02020024; -2.0097 is the SUPERSEDED pre-#1422 value that -2.010 rounds to. The stale pair implies a cross-anchor swing of 2.85 percent, whereas the current pair gives 2.37478 percent. AGENTS.md flags this exact stale figure as the source of the corpus&#39;s &#39;2.98%/2.88%&#39; numbers. (3) SWEEP DAMAGE, three sites: the section heading &#39;canonical precision ladder&#39; (read: &#39;Numerical precision ladder&#39;), &#39;Verified at q_0 via the canonical formalism at 50 dps&#39;, and &#39;From the canonical formalism:&#39; before the epsilon_DeltaS formula. All three are the documented token substitution where a script name belonged; I could not recover the names, so none was fixed. (4) PIN CURRENCY vs THE LIVE DASHBOARD: the block claims the N=3 rung beats the 7.80 ppb target and that N&gt;=4 reaches sub-ppb on Q_beta. AGENTS.md records the live per-observable dashboard at 1279 ppb for Q_beta (a 164x miss), explicitly noting that the sub-ppb Habiro result was against the PRE-re-pin muon q_0 and has not been refreshed since the 2026-05-28 proton re-pin. The block&#39;s precision claims should be scoped to the muon-era run. (5) CONVENTION C, as for the proposition: the ladder is C-frame throughout via z in alpha, already scoped corpus-wide by bean qou-cds1.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6632b9782c1e&quot;,
+        &quot;ts&quot;: &quot;d4d59753eec8&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:35:17.739Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;One confirmed instance, FIXED INLINE. The sentence &#39;A near-match that beats the experimental target is a genuine result *and* not a derivation; both facts are reported, neither suppressed.&#39; narrated the document&#39;s own reporting stance rather than placing the emphasis. The tiering content lives entirely in the first clause; the second only announced that nothing was being hidden. Everything else in the block that looks like meta-commentary is not: &#39;read with the truncation order&#39;, &#39;see the truncation-order section above&#39; and the open-questions framing are ordinary cross-referencing.&quot;,
+      &quot;notes&quot;: &quot;FIX APPLIED (1 sentence, pure prose, no math, no meaning change). BEFORE: &#39;...is a genuine result *and* not a derivation; both facts are reported, neither suppressed. The permanent upgrade is...&#39; AFTER: &#39;...is a genuine result *and* not a derivation. The permanent upgrade is...&#39; Math delimiters re-verified after the edit (8 occurrences of the display marker, balanced).&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6632b9782c1e&quot;,
+        &quot;ts&quot;: &quot;d4d59753eec8&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:35:17.777Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;Remark, read in full (long block, ~1200 words). Nine of ten categories clean. Negation-contrast instances are all substantive tier statements (&#39;a genuine result and not a derivation&#39;, &#39;structural near-matches rather than exact Taylor coefficients&#39;, &#39;conditional on the Habiro-element upgrade, not an unconditional derivation&#39;) -- these ARE the anti-laundering content, documented false-positive class. Em-dash density is moderate (about six spaced dashes) but each is a definitional gloss inside a bullet or a true appositive, not a substitute for sentence structure. No triples, no warmth, no aphorism; the block ends on a technical suggestion (KLR basis / Khovanov-Rozansky spectral sequence). RIGOR PASS: recomputed u = 0.0085172346 (block: 0.00852), 1/u = 117.409 (block: 117), log10(1/u) = 2.0697 (block: 2.07), b^2 = 0.75270211 (block: 0.7527), the b^2-vs-0.7656 gap = 1.685 percent (block: 1.7 percent), and Q_beta/(Q_beta+m_e) = 0.60490 (block: 0.605). All correct.&quot;,
+      &quot;notes&quot;: &quot;FIVE FINDINGS. (1) c_5 CONTRADICTS ITS OWN PROPOSITION -- see the verdict on prop:q-beta-categorical-precision-ladder. This block says c_5 = c_3^2*3 + b (twice: in the mixing-pattern list and in open question 2); the proposition&#39;s boxed formula and tables 1 and 2 say c_5 = -(b^2+1/2). I recomputed and THIS BLOCK IS THE CORRECT ONE: with u^5 = 4.4822186e-11, c_5 = +12.8675841 contributes +0.5768 ppb and carries table 2&#39;s N=4 residual of -0.57 ppb to +0.0068 ppb, matching the published &#39;~0 ppb&#39; and table 3&#39;s &#39;+0.04 ppb&#39;; the -(b^2+1/2) form contributes only -0.0561 ppb and would leave -0.63 ppb. The proposition needs correcting, not this remark. (2) STALE c_3 VALUE: &#39;c_3: -2.010 at the muon-pin q_0, -2.069 at the m_p-pin q_0&#39;. Per AGENTS.md the muon-pin c_3 is -2.02020024; -2.0097 is the SUPERSEDED pre-#1422 value that -2.010 rounds to. The stale pair implies a cross-anchor swing of 2.85 percent, whereas the current pair gives 2.37478 percent. AGENTS.md flags this exact stale figure as the source of the corpus&#39;s &#39;2.98%/2.88%&#39; numbers. (3) SWEEP DAMAGE, three sites: the section heading &#39;canonical precision ladder&#39; (read: &#39;Numerical precision ladder&#39;), &#39;Verified at q_0 via the canonical formalism at 50 dps&#39;, and &#39;From the canonical formalism:&#39; before the epsilon_DeltaS formula. All three are the documented token substitution where a script name belonged; I could not recover the names, so none was fixed. (4) PIN CURRENCY vs THE LIVE DASHBOARD: the block claims the N=3 rung beats the 7.80 ppb target and that N&gt;=4 reaches sub-ppb on Q_beta. AGENTS.md records the live per-observable dashboard at 1279 ppb for Q_beta (a 164x miss), explicitly noting that the sub-ppb Habiro result was against the PRE-re-pin muon q_0 and has not been refreshed since the 2026-05-28 proton re-pin. The block&#39;s precision claims should be scoped to the muon-era run. (5) CONVENTION C, as for the proposition: the ladder is C-frame throughout via z in alpha, already scoped corpus-wide by bean qou-cds1.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6632b9782c1e&quot;,
+        &quot;ts&quot;: &quot;d4d59753eec8&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:35:17.814Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;Remark, read in full (long block, ~1200 words). Nine of ten categories clean. Negation-contrast instances are all substantive tier statements (&#39;a genuine result and not a derivation&#39;, &#39;structural near-matches rather than exact Taylor coefficients&#39;, &#39;conditional on the Habiro-element upgrade, not an unconditional derivation&#39;) -- these ARE the anti-laundering content, documented false-positive class. Em-dash density is moderate (about six spaced dashes) but each is a definitional gloss inside a bullet or a true appositive, not a substitute for sentence structure. No triples, no warmth, no aphorism; the block ends on a technical suggestion (KLR basis / Khovanov-Rozansky spectral sequence). RIGOR PASS: recomputed u = 0.0085172346 (block: 0.00852), 1/u = 117.409 (block: 117), log10(1/u) = 2.0697 (block: 2.07), b^2 = 0.75270211 (block: 0.7527), the b^2-vs-0.7656 gap = 1.685 percent (block: 1.7 percent), and Q_beta/(Q_beta+m_e) = 0.60490 (block: 0.605). All correct.&quot;,
+      &quot;notes&quot;: &quot;FIVE FINDINGS. (1) c_5 CONTRADICTS ITS OWN PROPOSITION -- see the verdict on prop:q-beta-categorical-precision-ladder. This block says c_5 = c_3^2*3 + b (twice: in the mixing-pattern list and in open question 2); the proposition&#39;s boxed formula and tables 1 and 2 say c_5 = -(b^2+1/2). I recomputed and THIS BLOCK IS THE CORRECT ONE: with u^5 = 4.4822186e-11, c_5 = +12.8675841 contributes +0.5768 ppb and carries table 2&#39;s N=4 residual of -0.57 ppb to +0.0068 ppb, matching the published &#39;~0 ppb&#39; and table 3&#39;s &#39;+0.04 ppb&#39;; the -(b^2+1/2) form contributes only -0.0561 ppb and would leave -0.63 ppb. The proposition needs correcting, not this remark. (2) STALE c_3 VALUE: &#39;c_3: -2.010 at the muon-pin q_0, -2.069 at the m_p-pin q_0&#39;. Per AGENTS.md the muon-pin c_3 is -2.02020024; -2.0097 is the SUPERSEDED pre-#1422 value that -2.010 rounds to. The stale pair implies a cross-anchor swing of 2.85 percent, whereas the current pair gives 2.37478 percent. AGENTS.md flags this exact stale figure as the source of the corpus&#39;s &#39;2.98%/2.88%&#39; numbers. (3) SWEEP DAMAGE, three sites: the section heading &#39;canonical precision ladder&#39; (read: &#39;Numerical precision ladder&#39;), &#39;Verified at q_0 via the canonical formalism at 50 dps&#39;, and &#39;From the canonical formalism:&#39; before the epsilon_DeltaS formula. All three are the documented token substitution where a script name belonged; I could not recover the names, so none was fixed. (4) PIN CURRENCY vs THE LIVE DASHBOARD: the block claims the N=3 rung beats the 7.80 ppb target and that N&gt;=4 reaches sub-ppb on Q_beta. AGENTS.md records the live per-observable dashboard at 1279 ppb for Q_beta (a 164x miss), explicitly noting that the sub-ppb Habiro result was against the PRE-re-pin muon q_0 and has not been refreshed since the 2026-05-28 proton re-pin. The block&#39;s precision claims should be scoped to the muon-era run. (5) CONVENTION C, as for the proposition: the ladder is C-frame throughout via z in alpha, already scoped corpus-wide by bean qou-cds1.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6632b9782c1e&quot;,
+        &quot;ts&quot;: &quot;d4d59753eec8&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:35:17.851Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;Remark, read in full (long block, ~1200 words). Nine of ten categories clean. Negation-contrast instances are all substantive tier statements (&#39;a genuine result and not a derivation&#39;, &#39;structural near-matches rather than exact Taylor coefficients&#39;, &#39;conditional on the Habiro-element upgrade, not an unconditional derivation&#39;) -- these ARE the anti-laundering content, documented false-positive class. Em-dash density is moderate (about six spaced dashes) but each is a definitional gloss inside a bullet or a true appositive, not a substitute for sentence structure. No triples, no warmth, no aphorism; the block ends on a technical suggestion (KLR basis / Khovanov-Rozansky spectral sequence). RIGOR PASS: recomputed u = 0.0085172346 (block: 0.00852), 1/u = 117.409 (block: 117), log10(1/u) = 2.0697 (block: 2.07), b^2 = 0.75270211 (block: 0.7527), the b^2-vs-0.7656 gap = 1.685 percent (block: 1.7 percent), and Q_beta/(Q_beta+m_e) = 0.60490 (block: 0.605). All correct.&quot;,
+      &quot;notes&quot;: &quot;FIVE FINDINGS. (1) c_5 CONTRADICTS ITS OWN PROPOSITION -- see the verdict on prop:q-beta-categorical-precision-ladder. This block says c_5 = c_3^2*3 + b (twice: in the mixing-pattern list and in open question 2); the proposition&#39;s boxed formula and tables 1 and 2 say c_5 = -(b^2+1/2). I recomputed and THIS BLOCK IS THE CORRECT ONE: with u^5 = 4.4822186e-11, c_5 = +12.8675841 contributes +0.5768 ppb and carries table 2&#39;s N=4 residual of -0.57 ppb to +0.0068 ppb, matching the published &#39;~0 ppb&#39; and table 3&#39;s &#39;+0.04 ppb&#39;; the -(b^2+1/2) form contributes only -0.0561 ppb and would leave -0.63 ppb. The proposition needs correcting, not this remark. (2) STALE c_3 VALUE: &#39;c_3: -2.010 at the muon-pin q_0, -2.069 at the m_p-pin q_0&#39;. Per AGENTS.md the muon-pin c_3 is -2.02020024; -2.0097 is the SUPERSEDED pre-#1422 value that -2.010 rounds to. The stale pair implies a cross-anchor swing of 2.85 percent, whereas the current pair gives 2.37478 percent. AGENTS.md flags this exact stale figure as the source of the corpus&#39;s &#39;2.98%/2.88%&#39; numbers. (3) SWEEP DAMAGE, three sites: the section heading &#39;canonical precision ladder&#39; (read: &#39;Numerical precision ladder&#39;), &#39;Verified at q_0 via the canonical formalism at 50 dps&#39;, and &#39;From the canonical formalism:&#39; before the epsilon_DeltaS formula. All three are the documented token substitution where a script name belonged; I could not recover the names, so none was fixed. (4) PIN CURRENCY vs THE LIVE DASHBOARD: the block claims the N=3 rung beats the 7.80 ppb target and that N&gt;=4 reaches sub-ppb on Q_beta. AGENTS.md records the live per-observable dashboard at 1279 ppb for Q_beta (a 164x miss), explicitly noting that the sub-ppb Habiro result was against the PRE-re-pin muon q_0 and has not been refreshed since the 2026-05-28 proton re-pin. The block&#39;s precision claims should be scoped to the muon-era run. (5) CONVENTION C, as for the proposition: the ladder is C-frame throughout via z in alpha, already scoped corpus-wide by bean qou-cds1.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6632b9782c1e&quot;,
+        &quot;ts&quot;: &quot;d4d59753eec8&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:35:17.893Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;Remark, read in full (long block, ~1200 words). Nine of ten categories clean. Negation-contrast instances are all substantive tier statements (&#39;a genuine result and not a derivation&#39;, &#39;structural near-matches rather than exact Taylor coefficients&#39;, &#39;conditional on the Habiro-element upgrade, not an unconditional derivation&#39;) -- these ARE the anti-laundering content, documented false-positive class. Em-dash density is moderate (about six spaced dashes) but each is a definitional gloss inside a bullet or a true appositive, not a substitute for sentence structure. No triples, no warmth, no aphorism; the block ends on a technical suggestion (KLR basis / Khovanov-Rozansky spectral sequence). RIGOR PASS: recomputed u = 0.0085172346 (block: 0.00852), 1/u = 117.409 (block: 117), log10(1/u) = 2.0697 (block: 2.07), b^2 = 0.75270211 (block: 0.7527), the b^2-vs-0.7656 gap = 1.685 percent (block: 1.7 percent), and Q_beta/(Q_beta+m_e) = 0.60490 (block: 0.605). All correct.&quot;,
+      &quot;notes&quot;: &quot;FIVE FINDINGS. (1) c_5 CONTRADICTS ITS OWN PROPOSITION -- see the verdict on prop:q-beta-categorical-precision-ladder. This block says c_5 = c_3^2*3 + b (twice: in the mixing-pattern list and in open question 2); the proposition&#39;s boxed formula and tables 1 and 2 say c_5 = -(b^2+1/2). I recomputed and THIS BLOCK IS THE CORRECT ONE: with u^5 = 4.4822186e-11, c_5 = +12.8675841 contributes +0.5768 ppb and carries table 2&#39;s N=4 residual of -0.57 ppb to +0.0068 ppb, matching the published &#39;~0 ppb&#39; and table 3&#39;s &#39;+0.04 ppb&#39;; the -(b^2+1/2) form contributes only -0.0561 ppb and would leave -0.63 ppb. The proposition needs correcting, not this remark. (2) STALE c_3 VALUE: &#39;c_3: -2.010 at the muon-pin q_0, -2.069 at the m_p-pin q_0&#39;. Per AGENTS.md the muon-pin c_3 is -2.02020024; -2.0097 is the SUPERSEDED pre-#1422 value that -2.010 rounds to. The stale pair implies a cross-anchor swing of 2.85 percent, whereas the current pair gives 2.37478 percent. AGENTS.md flags this exact stale figure as the source of the corpus&#39;s &#39;2.98%/2.88%&#39; numbers. (3) SWEEP DAMAGE, three sites: the section heading &#39;canonical precision ladder&#39; (read: &#39;Numerical precision ladder&#39;), &#39;Verified at q_0 via the canonical formalism at 50 dps&#39;, and &#39;From the canonical formalism:&#39; before the epsilon_DeltaS formula. All three are the documented token substitution where a script name belonged; I could not recover the names, so none was fixed. (4) PIN CURRENCY vs THE LIVE DASHBOARD: the block claims the N=3 rung beats the 7.80 ppb target and that N&gt;=4 reaches sub-ppb on Q_beta. AGENTS.md records the live per-observable dashboard at 1279 ppb for Q_beta (a 164x miss), explicitly noting that the sub-ppb Habiro result was against the PRE-re-pin muon q_0 and has not been refreshed since the 2026-05-28 proton re-pin. The block&#39;s precision claims should be scoped to the muon-era run. (5) CONVENTION C, as for the proposition: the ladder is C-frame throughout via z in alpha, already scoped corpus-wide by bean qou-cds1.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

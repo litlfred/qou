@@ -1,0 +1,1062 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-9810105v2",
+  "title": "arxiv-math-9810105v2",
+  "variant": "pdf",
+  "pages": 60,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Riemann-Hilbert Theory",
+      "number": "2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-riemann-hilbert-theory"
+    },
+    {
+      "level": 1,
+      "title": "Connection to the Toda Lattice and the Painlev'e III Equation",
+      "number": "3",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-connection-to-the-toda-lattice-and-the-painlev"
+    },
+    {
+      "level": 1,
+      "title": "Equilibrium Measure and $g$-function",
+      "number": "4",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "$\\mathbf{ 0\\leq \\gamma \\le 1}$",
+      "number": "5",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "$\\mathbf{\\gamma > 1}$",
+      "number": "6",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Asymptotics of $\\mathbf{\\phi_n(\\lambda)}$ as $\\mathbf{ n\\to\\infty}$",
+      "number": "7",
+      "page": 43,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "De-Poissonization Lemmas",
+      "number": "8",
+      "page": 50,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-8-de-poissonization-lemmas"
+    },
+    {
+      "level": 1,
+      "title": "Proofs of main Theorems",
+      "number": "9",
+      "page": 51,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-9-proofs-of-main-theorems"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 141,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "increasing subsequence",
+          "heading": false
+        },
+        {
+          "term": "distribution function",
+          "heading": false
+        },
+        {
+          "term": "deift",
+          "heading": false
+        },
+        {
+          "term": "riemann-hilbert",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/9810105v2 [math.CO] 26 Mar 1999 ON THE DISTRIBUTION OF THE LENGTH OF THE LONGEST INCREASING SUBSEQUENCE OF RANDOM PERMUTATIONS JINHO BAIK, PERCY DEIFT, AND KURT JOHANSSON Abstract. The authors consider the length, lN, of the length of the longest increasing subsequence of a random permutation of N numbers. The main result in this paper is a proof that the distribution function for lN, suitably centered",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-9810105v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3585,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eqref e-j",
+          "heading": false
+        },
+        {
+          "term": "eqref e-y",
+          "heading": false
+        },
+        {
+          "term": "rhp eqref",
+          "heading": false
+        },
+        {
+          "term": "label e-j",
+          "heading": false
+        },
+        {
+          "term": "sqrt lambda",
+          "heading": false
+        },
+        {
+          "term": "cite dvz",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda cos",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s-intro} Let $S_N$ be the group of permutations of $1,2,\\dots,N$. If $\\pi\\in S_N$, we say that $\\pi(i_1),\\cdots,\\pi(i_k)$ is an increasing subsequence in $\\pi$ if $i_1<i_2< \\cdots <i_k$ and $\\pi(i_1) < \\pi(i_2) < \\cdots < \\pi(i_k)$. Let $l_N(\\pi)$ be the length of the longest increasing subsequence. For example, if $N=5$ and $\\pi$ is the permutation $5\\ \\ 1\\ \\ 3\\ \\ 2\\ \\ 4$ (in one-line notation : thus",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-riemann-hilbert-theory",
+      "number": "2",
+      "title": "Riemann-Hilbert Theory",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2903,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sigma pii",
+          "heading": false
+        },
+        {
+          "term": "theta pii",
+          "heading": false
+        },
+        {
+          "term": "file pii",
+          "heading": false
+        },
+        {
+          "term": "omega pii",
+          "heading": false
+        },
+        {
+          "term": "split pii",
+          "heading": false
+        },
+        {
+          "term": "pii end",
+          "heading": false
+        },
+        {
+          "term": "centerline epsfig",
+          "heading": false
+        },
+        {
+          "term": "equivalent rhp",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s-PII} In this section, we first summarize some basic facts about RHP's in general, and then discuss the RHP for the PII equation in some detail. Basic references for RHP's are \\cite{CG}, \\cite{GK}, and the material on PII is taken from \\cite{DZ}. \\medskip Let $\\Sigma$ be an oriented curve in the plane (see, for example, Figure~\\ref{fig-rh1}). \\begin{figure}[ht] \\centerline{\\epsfig{file=rh1.eps, width=6cm}}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-connection-to-the-toda-lattice-and-the-painlev",
+      "number": "3",
+      "title": "Connection to the Toda Lattice and the Painlev'e III Equation",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 50,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 12695,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eqref e-z",
+          "heading": false
+        },
+        {
+          "term": "frac pii",
+          "heading": false
+        },
+        {
+          "term": "e-z text",
+          "heading": false
+        },
+        {
+          "term": "e-z begin",
+          "heading": false
+        },
+        {
+          "term": "sigma pii",
+          "heading": false
+        },
+        {
+          "term": "label e-z",
+          "heading": false
+        },
+        {
+          "term": "e-z below",
+          "heading": false
+        },
+        {
+          "term": "rhp eqref",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s-TL} In this Section, we discuss the connection of the RHP~\\eqref{e-Y} for $\\kappa^2_k$ and the RHP for the Toda lattice and the Painlev\\'e III equation. In the RH context, the connection results from the specific form of the weight, $e^{\\sqrt{\\lambda}(z+z^{-1})}$. Connections can also be seen from the Toeplitz determinant/orthogonal polynomial point of view as in \\cite{PS}, \\cite{Hi} and \\cite{Wi}. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-8-de-poissonization-lemmas",
+      "number": "8",
+      "title": "De-Poissonization Lemmas",
+      "level": 1,
+      "pageStart": 50,
+      "pageEnd": 51,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 514,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "geq sqrt",
+          "heading": false
+        },
+        {
+          "term": "sqrt log",
+          "heading": false
+        },
+        {
+          "term": "sqrt frac",
+          "heading": false
+        },
+        {
+          "term": "label lem-dep",
+          "heading": false
+        },
+        {
+          "term": "ref lem-dep",
+          "heading": false
+        },
+        {
+          "term": "qquad geq",
+          "heading": false
+        },
+        {
+          "term": "equation phi",
+          "heading": false
+        },
+        {
+          "term": "sum geq",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s- dep} In this section, we present two Lemmas which show that $\\phi_n(N)$ is a good approximation of $q_{n,N}=f_{N,n}/N!$. We need a Lemma showing the monotonicity of $q_{n,N}$ in $N$. The statement and proof can be found in \\cite{Johan}. \\begin{lem}\\label{lem-dep1} For all $n,N\\geq 1$, \\begin{equation*} q_{n,N+1} \\le q_{n,N}. \\end{equation*} \\end{lem} Using this monotonicity result, the following",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-9-proofs-of-main-theorems",
+      "number": "9",
+      "title": "Proofs of main Theorems",
+      "level": 1,
+      "pageStart": 51,
+      "pageEnd": 60,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3512,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "percy deift",
+          "heading": false
+        },
+        {
+          "term": "t-r mclaughlin",
+          "heading": false
+        },
+        {
+          "term": "increasing subsequences",
+          "heading": false
+        },
+        {
+          "term": "jinho baik",
+          "heading": false
+        },
+        {
+          "term": "longest increasing",
+          "heading": false
+        },
+        {
+          "term": "kurt johansson",
+          "heading": false
+        },
+        {
+          "term": "lanl e-print",
+          "heading": false
+        },
+        {
+          "term": "e-print math",
+          "heading": false
+        }
+      ],
+      "extract": "In this Section, we prove the main Theorems. Proof of Theorem 1.1 Assume for deﬁniteness that t < 0. For t ≥0, the calculation is similar. From the deﬁnition of qn,N ≡fN,n N! , FN(t) = Prob(lN −2 √ N N 1/6 ≤t) = q[2 √ N+tN 1/6],N. (9.1) Set n = [2 √ N + tN 1/6]. 52 JINHO BAIK, PERCY DEIFT, AND KURT JOHANSSON As t is ﬁxed, observe that 0 ≤n ≤N, as N →∞. Using Lemma 8.2 with any ﬁxed value of m > 0, we have φn(µ(m) N",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "theta pii",
+      "heading": false
+    },
+    {
+      "term": "pii equation",
+      "heading": false
+    },
+    {
+      "term": "frac pii",
+      "heading": false
+    },
+    {
+      "term": "sigma pii",
+      "heading": false
+    },
+    {
+      "term": "split pii",
+      "heading": false
+    },
+    {
+      "term": "pii end",
+      "heading": false
+    },
+    {
+      "term": "file pii",
+      "heading": false
+    },
+    {
+      "term": "rhp eqref",
+      "heading": false
+    },
+    {
+      "term": "e-z begin",
+      "heading": false
+    },
+    {
+      "term": "e-z text",
+      "heading": false
+    },
+    {
+      "term": "omega pii",
+      "heading": false
+    },
+    {
+      "term": "sqrt bigr",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 58,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "vention, the (+)-side (resp., (−)-side) of an arc in Σ lies to the left (resp., right)",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "smooth map from Σ0 →Gl(n, C), for some n. If Σ is unbounded, we require that",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "vP II and ΣP II",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "p = −q = 1, r = 0 case ; ΣP II,1",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "ΣP II,2 and vP II,2 For the ﬁrst of the two equivalent RHP’s advertised above, we consider Figure 5,",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "ΣP II,3 The second of the equivalent RHP’s is restricted to the case x < 0, and we",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "branch cut of log(z −eiθ)",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Σ(3) and Ω(3) Introduce Σ(3) = Σ(3)(γ) = Σ(3)",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "small (in fact, any number 0 < ǫ < 1 would do.) so that z →u(z) is a bijection",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Σ and Σ(3)",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "We consider case (iii). Set γ = 1 +",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "\u0012 0",
+      "page": 38,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Σ′′ and vΨ",
+      "page": 39,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "ǫ′′ suﬃciently small so that z →λ(z) is a bijection from Oξ onto an open neighborhood",
+      "page": 40,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 6,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p51); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-9810105v2"
+  }
+}

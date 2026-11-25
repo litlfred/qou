@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-topological-mass-cat-descended",
+  "@type": [
+    "folio-assistant-sci:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:topological-mass-cat-descended",
+  "kind": "proof",
+  "title": "Proof that the descended term equals the base-level mass",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-topological-mass-cat-descended"
+  ],
+  "text": "topological-mass-cat-descended-proof.md",
+  "provenance": "authored"
+}

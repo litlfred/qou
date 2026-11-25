@@ -1,0 +1,1064 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1608.02961v3",
+  "title": "Perturbative and nonperturbative aspects of complex Chern-Simons Theory Contents",
+  "variant": "pdf",
+  "pages": 33,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Warmup: quantization of H(T2)",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-warmup-quantization-of-ht2"
+    },
+    {
+      "level": 2,
+      "title": "Equivariant quantization",
+      "number": "2.1",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-equivariant-quantization"
+    },
+    {
+      "level": 2,
+      "title": "Holomorphic polarizations and CFT",
+      "number": "2.2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-holomorphic-polarizations-and-cft"
+    },
+    {
+      "level": 1,
+      "title": "Complex Chern-Simons theory as a TQFT?",
+      "number": "3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-complex-chern-simons-theory-as-a-tqft"
+    },
+    {
+      "level": 2,
+      "title": "Symmetries, regularizations, and the 3d-3d correspondence",
+      "number": "3.1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-31-symmetries-regularizations-and-the-3d-3d-corr"
+    },
+    {
+      "level": 1,
+      "title": "Three connections to three-manifold topology",
+      "number": "4",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-4-three-connections-to-three-manifold-topology"
+    },
+    {
+      "level": 2,
+      "title": "Hyperbolic volumes, twisted torsion, and large N",
+      "number": "4.1",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-41-hyperbolic-volumes-twisted-torsion-and-large"
+    },
+    {
+      "level": 2,
+      "title": "State-integral models and angle structures",
+      "number": "4.2",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-42-state-integral-models-and-angle-structures"
+    },
+    {
+      "level": 2,
+      "title": "Embedded surfaces and M2 branes in the 3d index (k=0)",
+      "number": "4.3",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-43-embedded-surfaces-and-m2-branes-in-the-3d-ind"
+    },
+    {
+      "level": 1,
+      "title": "The Quantum Modularity Conjecture",
+      "number": "5",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-5-the-quantum-modularity-conjecture"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 356,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "d-3d correspondence",
+          "heading": false
+        },
+        {
+          "term": "complex chern-simons",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        },
+        {
+          "term": "tudor",
+          "heading": false
+        },
+        {
+          "term": "partition functions",
+          "heading": false
+        },
+        {
+          "term": "tqft",
+          "heading": false
+        },
+        {
+          "term": "supersymmetric",
+          "heading": false
+        }
+      ],
+      "extract": "Perturbative and nonperturbative aspects of complex Chern-Simons Theory Tudor Dimofte Perimeter Institute for Theoretical Physics, 31 Caroline St. N, Waterloo, ON N2J 2Y5, Canada (on leave) Department of Mathematics, University of California, Davis, CA 95616, USA tudor@math.ucdavis.edu Abstract We present an elementary review of some aspects of Chern-Simons theory with complex gauge group SL(N, C). We discuss some",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1608.02961v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 1246,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "complex chern-simons",
+          "heading": false
+        },
+        {
+          "term": "cite digukovpei",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        },
+        {
+          "term": "dicf cite",
+          "heading": false
+        },
+        {
+          "term": "chern-simons partition",
+          "heading": false
+        },
+        {
+          "term": "spaces calh",
+          "heading": false
+        },
+        {
+          "term": "d-3d correspondence",
+          "heading": false
+        },
+        {
+          "term": "string m-theory",
+          "heading": false
+        }
+      ],
+      "extract": "Chern-Simons theory with complex gauge group came to prominence in the late 80's, partly as a tool for understanding three-dimensional gravity with a negative cosmological constant \\cite{DIAT-CSgrav, DIWitten-gravCS, DIWitten-top, DIWitten-cx}. Many early developments were due to Witten. Since then, it has found a multitude of applications and deep connections with many parts of theoretical physics and mathematics.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-warmup-quantization-of-ht2",
+      "number": "2",
+      "title": "Warmup: quantization of H(T2)",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 8,
+      "labelStart": "4",
+      "labelEnd": "8",
+      "words": 1780,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dibe calp",
+          "heading": false
+        },
+        {
+          "term": "dibe omega",
+          "heading": false
+        },
+        {
+          "term": "dibe frac",
+          "heading": false
+        },
+        {
+          "term": "cala wedge",
+          "heading": false
+        },
+        {
+          "term": "array diee",
+          "heading": false
+        },
+        {
+          "term": "dibe label",
+          "heading": false
+        },
+        {
+          "term": "form dibe",
+          "heading": false
+        },
+        {
+          "term": "find dibe",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{DI.sec:quant} To get a feel for the structure of complex Chern-Simons theory, we begin with a (seemingly) elementary exercise: the quantization of the phase space that $SL(2,\\BC)$ Chern-Simons theory attaches to a two-torus. First, some generalities. As discussed in \\cite{DIWitten-cx}, the action of complex Chern-Simons theory on a Euclidean three-manifold $M$ takes the form \\DIbe I_{k,s} =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-equivariant-quantization",
+      "number": "2.1",
+      "title": "Equivariant quantization",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 470,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hilbert space",
+          "heading": false
+        },
+        {
+          "term": "calh",
+          "heading": false
+        },
+        {
+          "term": "hitchin moduli",
+          "heading": false
+        },
+        {
+          "term": "calm",
+          "heading": false
+        },
+        {
+          "term": "dibe",
+          "heading": false
+        },
+        {
+          "term": "diee",
+          "heading": false
+        },
+        {
+          "term": "diie",
+          "heading": false
+        },
+        {
+          "term": "text dim",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{DI.sec:equiv} There are several things to notice about \\eqref{DI.Hks}. Perhaps the most salient is that, unlike in the case of Chern-Simons theory with compact gauge group \\cite{DIWit-Jones, DIaxelrod-witten}, the Hilbert space is infinite-dimensional. This is no surprise, since it comes from quantizing a noncompact phase space. One may also recognize the $\\BC^{2k}$ factor as being related to the standard",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-holomorphic-polarizations-and-cft",
+      "number": "2.2",
+      "title": "Holomorphic polarizations and CFT",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 382,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cala bar",
+          "heading": false
+        },
+        {
+          "term": "cft",
+          "heading": true
+        },
+        {
+          "term": "complex polarization",
+          "heading": false
+        },
+        {
+          "term": "holomorphic polarization",
+          "heading": false
+        },
+        {
+          "term": "real polarization",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        },
+        {
+          "term": "boundary cft",
+          "heading": false
+        },
+        {
+          "term": "flat connection",
+          "heading": false
+        }
+      ],
+      "extract": "Often in geometric quantization of Chern-Simons theory, one uses a holomorphic polarization instead of the real polarization above. In Chern-Simons theory with compact gauge group (\\DIcf\\ \\cite{DIaxelrod-witten}), this means to choose a complex structure `$\\tau$' on a surface $\\Sigma$, to write the connection one-form as $A = A_zdz+A_{\\bar z}d\\bar z$ in local complex coordinates, and, when quantizing, to define the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-complex-chern-simons-theory-as-a-tqft",
+      "number": "3",
+      "title": "Complex Chern-Simons theory as a TQFT?",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 885,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "complex chern-simons",
+          "heading": true
+        },
+        {
+          "term": "calb alpha",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": true
+        },
+        {
+          "term": "widetilde calb",
+          "heading": false
+        },
+        {
+          "term": "flat connections",
+          "heading": false
+        },
+        {
+          "term": "dibe calz",
+          "heading": false
+        },
+        {
+          "term": "gamma alpha",
+          "heading": false
+        },
+        {
+          "term": "chern-simons path",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{DI.sec:TQFT} Now, having seen very explicitly that complex Chern-Simons Hilbert spaces are infinite-dimensional (and exactly how they're infinite-dimensional), let us think a bit about the properties of partition functions. For a closed three-manifold $M$, it is expected that the complex Chern-Simons partition function takes the form \\DIbe \\CalZ[M]_{k,s} = \\sum_{\\text{flat $\\alpha$}}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-31-symmetries-regularizations-and-the-3d-3d-corr",
+      "number": "3.1",
+      "title": "Symmetries, regularizations, and the 3d-3d correspondence",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 808,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "d-3d correspondence",
+          "heading": true
+        },
+        {
+          "term": "caln superconformal",
+          "heading": false
+        },
+        {
+          "term": "cite dicdgs",
+          "heading": false
+        },
+        {
+          "term": "chern-simons partition",
+          "heading": false
+        },
+        {
+          "term": "superconformal theories",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        },
+        {
+          "term": "lens space",
+          "heading": false
+        },
+        {
+          "term": "dipeike",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{DI.sec:sym} In principle, the 3d-3d correspondence itself may suffice to resolve the difficulties with cutting and gluing in complex Chern-Simons theory. \\footnote{We will not review the 3d-3d correspondence here. For recent reviews and discussions, especially in the context of Chern-Simons theory and TQFT, see \\cite{DID-volume, DICDGS, DIGukovPei, DIPeiKe} as well as the related \\cite{DIYamazaki-defects}.}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-three-connections-to-three-manifold-topology",
+      "number": "4",
+      "title": "Three connections to three-manifold topology",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 110,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": false
+        },
+        {
+          "term": "connections",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{DI.sec:topol} As discussed in Section \\ref{DI.sec:TQFT}, the partition function of Chern-Simons theory with gauge group $G_\\BC$ will take a finite, well-defined value on manifolds $M$ that only admit finitely many flat $G_\\BC$ connections. For $G_\\BC=SL(2,\\BC)$ and possibly $G_\\BC=SL(N,\\BC)$, hyperbolic manifolds are expected to be of this type. (Indeed, there exist systematic computations of partition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-41-hyperbolic-volumes-twisted-torsion-and-large",
+      "number": "4.1",
+      "title": "Hyperbolic volumes, twisted torsion, and large N",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 905,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calb alpha",
+          "heading": false
+        },
+        {
+          "term": "flat alpha",
+          "heading": false
+        },
+        {
+          "term": "dibe calz",
+          "heading": false
+        },
+        {
+          "term": "widetilde calb",
+          "heading": false
+        },
+        {
+          "term": "alpha frac",
+          "heading": false
+        },
+        {
+          "term": "connection alpha",
+          "heading": false
+        },
+        {
+          "term": "text flat",
+          "heading": false
+        },
+        {
+          "term": "cite digukov",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{DI.sec:vol} The most fundamental relation between complex Chern-Simons theory and hyperbolic geometry has been understood for a long time, and concerns the semi-classical asymptotic expansion of partition functions \\cite{DIWitten-gravCS} (see also \\cite{DIgukov-2003, DIGukovMurakami}). It is easiest to formulate it first in terms of the ``holomorphic blocks'' $\\CalB_\\alpha,\\,\\widetilde\\CalB_\\alpha$ appearing",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-42-state-integral-models-and-angle-structures",
+      "number": "4.2",
+      "title": "State-integral models and angle structures",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 20,
+      "labelStart": "15",
+      "labelEnd": "20",
+      "words": 2192,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dibe calz",
+          "heading": false
+        },
+        {
+          "term": "angle structures",
+          "heading": true
+        },
+        {
+          "term": "r-charges rho",
+          "heading": false
+        },
+        {
+          "term": "cite did-levelk",
+          "heading": false
+        },
+        {
+          "term": "prod calz",
+          "heading": false
+        },
+        {
+          "term": "cite dikashand",
+          "heading": false
+        },
+        {
+          "term": "cite didgg",
+          "heading": false
+        },
+        {
+          "term": "function calz",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{DI.sec:angle} When $M= S^3\\bs K$ is an oriented hyperbolic knot or link complement (or, more generally, an oriented hyperbolic manifold with non-empty boundary of genus $\\geq 1$), there exists a systematic construction of $SL(2,\\BC)$ Chern-Simons partition functions $\\CalZ[M]_{k,s}$ for all levels $k,s$. The full definition of these partition functions appears in \\cite{DIGar-index, DIGHRS-index} for $k=0$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-43-embedded-surfaces-and-m2-branes-in-the-3d-ind",
+      "number": "4.3",
+      "title": "Embedded surfaces and M2 branes in the 3d index (k=0)",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 1243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dibe calz",
+          "heading": false
+        },
+        {
+          "term": "calo sigma",
+          "heading": false
+        },
+        {
+          "term": "index calz",
+          "heading": false
+        },
+        {
+          "term": "incompressible surfaces",
+          "heading": false
+        },
+        {
+          "term": "cite didgg-index",
+          "heading": false
+        },
+        {
+          "term": "counts surfaces",
+          "heading": false
+        },
+        {
+          "term": "branes",
+          "heading": true
+        },
+        {
+          "term": "operator calo",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{DI.sec:M2} The partition function of complex Chern-Simons theory at level $k=0$ is rather special. Via the 3d-3d correspondence, it takes the form of a supersymmetric index \\cite{DIDGG-index}. Schematically: \\DIbe \\CalZ[M]_{k=0,s} = \\CalZ[\\text{$T[M]$ on $S^2\\!\\times_q\\!S^1$}] = \\text{Tr}_{\\CalH[\\text{$T[M]$ on $S^2$}]} (-1)^Rq^{\\frac{R}{2}+J_3}\\,, \\label{DI.index} \\DIee with $q=\\exp\\frac{4\\pi}{2}$ as usual.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-5-the-quantum-modularity-conjecture",
+      "number": "5",
+      "title": "The Quantum Modularity Conjecture",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 33,
+      "labelStart": "22",
+      "labelEnd": "33",
+      "words": 3231,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum modularity",
+          "heading": true
+        },
+        {
+          "term": "modularity conjecture",
+          "heading": true
+        },
+        {
+          "term": "chern-simons gauge",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        },
+        {
+          "term": "search publications",
+          "heading": false
+        },
+        {
+          "term": "complex chern-simons",
+          "heading": false
+        },
+        {
+          "term": "d-3d correspondence",
+          "heading": false
+        },
+        {
+          "term": "squashed three-sphere",
+          "heading": false
+        }
+      ],
+      "extract": "The Quantum Modularity Conjecture Our ﬁnal topic concerns the relation between complex Chern-Simons theory and Zagier’s Quantum Modularity Conjecture (QMC) [36]. Strictly speaking, the QMC concerns certain limits of colored Jones polynomials of knots in S3. Physically, colored Jones polynomials have to do with SU(2) Chern-Simons theory. However, by embedding SU(2) theory into a holomorphic sector of SL(2, C) theory,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "dibe calz",
+      "heading": false
+    },
+    {
+      "term": "chern-simons partition",
+      "heading": false
+    },
+    {
+      "term": "chern-simons theory",
+      "heading": true
+    },
+    {
+      "term": "chern-simons hilbert",
+      "heading": false
+    },
+    {
+      "term": "complex chern-simons",
+      "heading": true
+    },
+    {
+      "term": "chern-simons gauge",
+      "heading": false
+    },
+    {
+      "term": "dibe text",
+      "heading": false
+    },
+    {
+      "term": "dibe frac",
+      "heading": false
+    },
+    {
+      "term": "dibe calp",
+      "heading": false
+    },
+    {
+      "term": "quantum chern-simons",
+      "heading": false
+    },
+    {
+      "term": "array diee",
+      "heading": false
+    },
+    {
+      "term": "dibe label",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "4.1",
+      "title": "Ideal (i.e. truncated) tetrahedra, glued together along their large hexagonal faces to form an ideal triangulation of a knot complement M. The small triangular faces at truncated vertices become part of the boundary of M",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.2",
+      "title": "Left: dihedral angles assigned to edges of an oriented ideal tetrahedron, obeying",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.3",
+      "title": "Three incompressible surfaces inside an ideal tetrahedron, corresponding to three unconstrained operators in the theory T[∆]",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5.1",
+      "title": "The graph of JK(α)/JK(1/α) when K is the ﬁgure-eight knot, from [36]. Another observation of [36] is that, for hyperbolic several knots, the ratio JK(α)/JK(γ(α))",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "4 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p22); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 15
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1608.02961v3"
+  }
+}

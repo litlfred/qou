@@ -1,0 +1,844 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "104171-qt-83",
+  "blocks": [
+    {
+      "id": "library/104171-qt-83/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Quantum Topol. 7 (2016), 669–735\nDOI 10.4171/QT/83\nQuantum Topology\n© European Mathematical Society\nOn the asymptotic expansion\nof the Kashaev invariant of the 52 knot\nTomotada Ohtsuki1\nAbstract. We give a presentation of the asymptotic expansion of the Kashaev invariant of\nthe 52 knot. As the volume conjecture states, the leading term of the expansion presents\nthe hyperbolic volume and the Chern–Simons invariant of the complement of the 52 knot.\nFurther, we obtain a method to compute the full Poincare asymptotics to all orders of the\nKashaev invariant of the 52 knot.\nMathematics Subject Class",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-qt-83/blocks/prop-sec-000-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 7,
+      "target": "prop-sec-000-05.md",
+      "narrative": null,
+      "content": "In Section 4, we calculate the sum corresponding to the inte- grals of Section 3 by the Poisson summation formula, and show Proposition 4.6. In Section 5, we give a proof of Theorem 1.1 by using the Poisson summation formula (Proposition 4.6) and the saddle point method (Proposition 3.5). The author would like to thank Yoshiyuki Yokota for many helpful comments on the volume conjecture and the calculation of the Kashaevinvariant, and Takashi Kumagai for many helpful comments on the calculation of the saddle point method and the Poisson summation formula. The author would also like to thank Tud",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 7,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "In [16] and [17] Kashaev deﬁned the Kashaev invariant hLiN 2 C of a link L for\nN D 2; 3; \u0001 \u0001 \u0001 by using the quantum dilogarithm. In [18] he conjectured that, for\nany hyperbolic link L,\n2\u0019 \u0001 lim\nN!1\nloghLiN\nN\nD vol.S 3 \u0000 L/;\nwhere “vol” denotes the hyperbolic volume, and gave evidence for the conjecture\nfor the ﬁgure-eight knot, the 52 knot and the 61 knot, by formal calculations. In\n1999, H. Murakami and J. Murakami [24] proved that the Kashaev invariant hLiN\nof any link L is equal to the N-colored Jones polynomial JN .LI e2\u0019\np\n\u00001=N/ of\nL evaluated at e2\u0019\np\n\u00001=N, where JN .LI q/ denotes the in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-qt-83/blocks/rem-sec-000-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 7,
+      "target": "rem-sec-000-02.md",
+      "narrative": null,
+      "content": "The author has written the ﬁrst version of this paper in August 2011. In February 2012, [2] was uploaded in the arXiv, in which Dimofte and Garoufalidis deﬁne a formal power series from an ideal tetrahedral decomposition of a knot complement, which is expected to be equal to the asymptotic expansion of the Kashaev invariant of the knot.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/rem-sec-000-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 7,
+      "target": "rem-sec-000-03.md",
+      "narrative": null,
+      "content": "The right-hand side of (1) is equal to 2\u0019 p \u00001&, and it is called the complex volume. It is known, see e.g. [45], that the complex volume can be expressed by a critical value of the potential function. It is also known, see e.g. [10], that the complex volume can be regarded as the SL.2; C/ Chern–Simons invariant.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/rem-sec-000-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 7,
+      "target": "rem-sec-000-04.md",
+      "narrative": null,
+      "content": "The normalization of the above mentioned Reidemeister torsion is the cohomological Reidemeister torsion associated with the meridian used in [23]. We note that the twisted Reidemeister torsion in [4] is the twisted Reidemeister torsion associated with the longitude, and it can be changed to the twisted Reidemeister torsion associated with the meridian by [29, Théorème 4.1] as mentioned in [23]. The paper is organized as follows. In Section 2, we review deﬁnitions and ba- sic properties of the notation used in this paper. In Section 3, we calculate the asymptotic expansion of Gaussian integrals",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 7,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "The asymptotic expansion of the Kashaev invariant h52iN of the 52 knot is given by the form h52iN D eN&N 3=2! \u0001 \u0010 1 C d X iD1 \u0014i \u0001 \u00102\u0019 p \u00001 N \u0011i C O \u0010 N dC1 \u0011\u0011 ;",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/lem-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "lem-sec-001-01.md",
+      "narrative": null,
+      "content": "We put 0 D ¹.t; s/ 2  j 0:04 \u0014 t \u0014 0:4; 0:05 \u0014 s \u0014 0:4; t C s \u0014 0:6º: Then, the following domain ¹.t; s/ 2 R2 j Re yV .t; s/ \u0015 &R \u0000 \"º (11) is included in 0 for some suﬃciently small \" > 0. We give a proof of the lemma in Appendix D. we can graphically observe the inclusion of the lemma in Figure 1. On the asymptotic expansion of the Kashaev invariant of the 52 knot We put 00 D ¹.t; s/ 2  j 0:04 \u0014 t \u0014 0:9; 0:05 \u0014 s \u0014 0:9º: (12) By Lemma B.1, V.t; s/ uniformly converges to yV .t; s/ as N ! 1 in this domain. By this uniform convergence, we can restrict 00 to 0 later. Before this restricti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calculation of the Kashaev invariant of the 5_2 knot",
+      "pageStart": 7,
+      "pageEnd": 14,
+      "target": "../sections/sec-001-calculation-of-the-kashaev-invariant-of-the-5-2.md",
+      "narrative": null,
+      "content": "In this section, we review the deﬁnition of the Kashaev invariant and the cal-\nculation of the Kashaev invariant h52iN of the 52 knot in Section 2.1. Further,\nwe continue to calculate the value of h52iN toward its asymptotic expansion in\nSection 2.2.\n2.1. The Kashaev invariant of the 52 knot. In this section, we review the\ndeﬁnition of the Kashaev invariant of oriented knots, and review the calculation\nof the Kashaev invariant h52iN of the 52 knot, which are due to Yokota [43].\nThe aim of this section is to show (7) which gives the value of h52iN .\nLet N be an integer \u0015 2. We put q D exp.2\u0019\np",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-qt-83/blocks/prop-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 25,
+      "target": "prop-sec-002-01.md",
+      "narrative": null,
+      "content": "For a non-zero a 2 C, the domain ¹z 2 C j Re az2 < 0º has two connected components. We choose z0; z1 from the two components respectively. Let C be a path from z0 to z1 in C. .See Figure 2./ Then, there exists \" > 0 such that Z C eN\u0001az2dz D p\u0019 p\u0000a \u0001 p N C O.e\u0000\"N/; where we choose the sign of p\u0000a such that Rez1 p\u0000a > 0. We note that \" depends on z0, z1 and a. On the asymptotic expansion of the Kashaev invariant of the 52 knot z0 z1 \u00001 p \u0000a p \u0000a C Figure 2. The domain ¹z 2 C j Re az2 < 0º is shaded.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/prop-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 25,
+      "target": "prop-sec-002-02.md",
+      "narrative": null,
+      "content": "Let a be a non-zero complex number, and let .z/ and r.z/ be holomorphic functions of the form .z/ D az2 C r.z/; r.z/ D b3z3 C b4z4 C \u0001 \u0001 \u0001 ; deﬁned in a neighborhood of 0. The domain ¹z 2 C j Re .z/ < 0º (15) has two connected components in a neighborhood of 0. We choose z0; z1 from these two components respectively. Let C be a path from z0 to z1 in C. .See Figure 3./ Then, Z C eN .z/dz D p\u0019 p\u0000a \u0001 p N \u0010 1 C d X kD1 \u0015k N k C O \u0010 N dC1 \u0011\u0011 ; for any d, where we choose the sign of p\u0000a similarly as in Proposition 3.1, and \u0015k’s are constants given by using coeﬃcients of the expansion of .z/; such pr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/prop-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 25,
+      "target": "prop-sec-002-04.md",
+      "narrative": null,
+      "content": "Let A; D be as above. Then, there exists \" > 0 such that Z D eN\u0001zTAzdz D \u0019n=2 N n=2p det.\u0000A/ C O.e\u0000\"N/; where we put dz D dz1 \u0001 \u0001 \u0001 dzn, and we choose the sign of p det.\u0000A/ as above. T. Ohtsuki",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/prop-sec-002-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 25,
+      "target": "prop-sec-002-05.md",
+      "narrative": null,
+      "content": "Let A be a non-singular symmetric complex n\u0002n matrix, and let .z/ and r.z/ be holomorphic functions of the form .z/ D zTAz C r.z/; (25a) r.z/ D r.z1; \u0001 \u0001 \u0001 ; zn/ D X i;j;k bijkzizj zk C X i;j;k;l cijklzizj zkzl C \u0001 \u0001 \u0001 ; (25b) deﬁned in a neighborhood of 0 2 Cn. The restriction of the domain ¹z 2 Cn j Re .z/ < 0º (26) to a neighborhood of 0 2 Cn is homotopy equivalent to S n\u00001. Let D be an oriented n-ball embedded in Cn such that @D is included in the domain (26) whose inclusion is homotopic to a homotopy equivalence to the above S n\u00001 in the domain (26). Then, Z D eN .z/dz D \u0019n=2 N n=2p det.\u0000",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calculation by the saddle point method",
+      "pageStart": 14,
+      "pageEnd": 25,
+      "target": "../sections/sec-002-calculation-by-the-saddle-point-method.md",
+      "narrative": null,
+      "content": "In this section, we calculate Gaussian integrals by the saddle point method.\nWe calculate a Gaussian integral in Proposition 3.1, a Gaussian integral with per-\nturbative terms in Proposition 3.2, and multi-variable cases in Propositions 3.4\nand 3.5. We use Proposition 3.5 in the proof of Theorem 1.1 in Section 5. For the\nsaddle point method, see e.g. [39].\nProposition 3.1. For a non-zero a 2 C, the domain ¹z 2 C j Re az2 < 0º has two\nconnected components. We choose z0; z1 from the two components respectively.\nLet C be a path from z0 to z1 in C. .See Figure 2./ Then, there exists \" > 0 such\ntha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-qt-83/blocks/rem-sec-002-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 25,
+      "target": "rem-sec-002-03.md",
+      "narrative": null,
+      "content": "We can extend Proposition 3.2 to the case where .z/ depends on N in such a way that .z/ is of the form .z/ D 0.z/ C 1.z/ 1 N C 2.z/ 1 N 2 C \u0001 \u0001 \u0001 C m.z/ 1 N m C rm.z/ N mC1 ; (23) where i.z/’s are holomorphic functions independent of N, and we assume that 0.z/ satisﬁes the assumption of the proposition and jrm.z/j is bounded by a constant which is independent of N. Then, eN .z/ D .z/eN 0.z/, where we put",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/rem-sec-002-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 25,
+      "target": "rem-sec-002-06.md",
+      "narrative": null,
+      "content": "Similarly as Remark 3.3, we can extend Proposition 3.5 to the case where .z/ depends on N in such a way that .z/ is of the form .z/ D 0.z/ C 1.z/ 1 N C 2.z/ 1 N 2 C \u0001 \u0001 \u0001 C m.z/ 1 N m C rm.z/ N mC1 ; (29) where i.z/’s are holomorphic functions independent of N, and we assume that 0.z/ satisﬁes the assumption of the proposition and jrm.z/j is bounded by a constant which is independent of N.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/prop-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 36,
+      "target": "prop-sec-003-01.md",
+      "narrative": null,
+      "content": "Let a; c be complex numbers satisfying that Rea < 0; j Im cj < \u0000\u0019 2 Re1 a: We put ƒ D ° k N C c 2 C ˇˇˇ k 2 Z; b0 \u0014 k N \u0014 b1 ± and C D ¹t C c 2 C j t 2 R; b0 \u0014 t \u0014 b1º for some b0; b1 2 R and \"0 > 0 satisfying that Re.b0 C c/ < 0 < Re.b1 C c/ and Re a.bi C c/2 < \u0000\"0 .i D 0; 1/; see Figure 4. Then, there exists \" > 0 such that N X z2ƒ eN\u0001az2 D Z C eN\u0001az2dz C O.e\u0000\"N/: We note that \" depends on a, c and \"0. b0 C c b1 C c ƒ Figure 4. The domain ¹z 2 C j Re az2 < 0º is shaded.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/prop-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 36,
+      "target": "prop-sec-003-02.md",
+      "narrative": null,
+      "content": "We put ƒ D ° k N C c 2 C ˇˇˇ k 2 Z; b0 \u0014 k N \u0014 b1 ± ; and C D ¹t C c 2 C j t 2 R; b0 \u0014 t \u0014 b1º for some b0; b1 2 R and c 2 C. Let a be a complex number whose real part is negative, let ı0 be a real positive number, and let .z/ be a holomorphic function of the form .z/ D az2 C b3z3 C b4z4 C \u0001 \u0001 \u0001 ; deﬁned in a neighborhood of 0 including the ı0-neighborhood of C. The do- main (15) has two connected components in a neighborhood of 0. We assume that b0Cc and b1Cc are in these two components respectively, and Re .bi Cc/ < \u0000\"0 .i D 0; 1/ for some \"0 > 0. .See Figure 5./ Further, we assume that b0 C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/prop-sec-003-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 36,
+      "target": "prop-sec-003-05.md",
+      "narrative": null,
+      "content": "For c 2 Cn and an oriented n-ball D0 in Rn, we put ƒ D ° 1 N k C c 2 Cn ˇˇˇ k 2 Zn; 1 N k 2 D0± ; and D D ¹z C c 2 Cn j z 2 D0 \u001a Rnº: Let A be a non-singular symmetric complex n\u0002n matrix such that Re.A\u00001/ is negative deﬁnite. We assume that @D is included in the domain (24). Further, we assume that .Im c/T m < \u0000\u0019 2 mT \u0001 Re.A\u00001/ \u0001 m for any m 2 Zn\u0000¹0º. Then N n X z2ƒ eN\u0001zTAz D Z D eN\u0001zTAzdz C O.e\u0000N\"/; for some \" > 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/prop-sec-003-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 36,
+      "target": "prop-sec-003-06.md",
+      "narrative": null,
+      "content": "For c 2 Cn and an oriented n-ball D0 in Rn, we put ƒ D ° 1 N k C c 2 Cn ˇˇˇ k 2 Zn; 1 N k 2 D0± ; and D D ¹z C c 2 Cn j z 2 D0 \u001a Rnº: Let A be a non-singular symmetric complex n \u0002 n matrix, and let .z/ be a holomorphic function of the form (25) deﬁned in a neighborhood of 0 Cn including D. We assume that @D is included in the domain ® z 2 Cn j Re .z/ < \u0000\"0 ¯ for some \"0 > 0. Further, we assume that there exist ıi; ı0 i > 0 .i D 1; \u0001 \u0001 \u0001 ; n/ such that @D is null-homotopic in ¹w C ı p \u00001ei 2 Cn j w 2 D; ı 2 Œ0; ıi; Re. .w C ı p \u00001ei/ \u0000 2\u0019ı/ < 0º; (41) and @D is null-homotopic in ¹w \u0000 ı p \u00001ei",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calculation by the Poisson summation formula",
+      "pageStart": 25,
+      "pageEnd": 36,
+      "target": "../sections/sec-003-calculation-by-the-poisson-summation-formula.md",
+      "narrative": null,
+      "content": "In this section, we calculate the sums corresponding to the integrals of the propo-\nsitions in the previous section by the Poisson summation formula. Corresponding\nto Propositions 3.1, 3.2, 3.4 and 3.5 in the previous section, we show Proposi-\ntions 4.1, 4.2, 4.5, and 4.6 in this section. We use Proposition 4.6 in the proof of\nTheorem 1.1 in Section 5. We remark that the Poisson summation formula has also\nbeen used in the study of large level asymptotics of quantum invariants of Seifert\n3-manifolds [13], [14], [30], [31], [32].\nRecall (see e.g. [33]) that the Poisson summation formula states t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-qt-83/blocks/rem-sec-003-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 36,
+      "target": "rem-sec-003-03.md",
+      "narrative": null,
+      "content": "The assumptions (33) and (34) of Proposition 4.2 can be replaced with the condition that there exist positive integers m0; m1 and positive real numbers ı0; ı1 such that for any integer m satisfying that \u0000m0 < m < 0 or 0 < m < m1, Z C eN. .w/\u00002\u0019 p \u00001m.w\u0000c//dw D O.e\u0000N\"/ for some \" > 0, and b0 C c and b1 C c are in the same connected component of ¹w C ı p \u00001 2 C j w 2 C; ı 2 Œ0; ı1; Re. .w C ı p \u00001/ \u0000 2\u0019ım1/ < 0º; and they are in the same connected component of ¹w \u0000 ı p \u00001 2 C j w 2 C; ı 2 Œ0; ı0; Re. .w \u0000 ı p \u00001/ \u0000 2\u0019ım0/ < 0º:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/rem-sec-003-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 36,
+      "target": "rem-sec-003-04.md",
+      "narrative": null,
+      "content": "Proposition 4.2 can naturally be extended to the case where the holomorphic function .z/ depends on N, if .z/ uniformly converges to 0.z/ as N ! 1, and 0.z/ satisﬁes the assumption of the proposition, and j 00.z/ C 0.z/2j is bounded by a constant which is independent of N. In this case, (39) holds for suﬃciently large N, and hence, (38) holds. Therefore, Propo- sition 4.2 also holds in this case, where we note that we can choose \" independently of N. We generalize Proposition 4.1 to the case of n variables.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/rem-sec-003-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 36,
+      "target": "rem-sec-003-07.md",
+      "narrative": null,
+      "content": "The assumptions (41) and (42) of Proposition 4.6 can be modiﬁed similarly as in Remark 4.3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/rem-sec-003-08",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 36,
+      "target": "rem-sec-003-08.md",
+      "narrative": null,
+      "content": "Similarly as in Remark 4.4, Proposition 4.6 can naturally be ex- tended to the case where the holomorphic function .z/ depends on N, if .z/ uniformly converges to 0.z/ as N ! 1, and 0.z/ satisﬁes the assumption of the proposition, and j‰.z/j is bounded by a constant which is independent of N. Similarly as in Remark 4.4, we can also choose \" independently of N in this case.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 55,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "We can put xc D x0 C x1„ C O.„2/ and yc D y0 C y1„ C O.„2/ for some x1; y1 2 C in a suﬃciently small neighborhood of .x0; y0/ .i.e., for suﬃciently large N/. Here, O.„2/ means that the absolute value of the error term is bounded by C„2 with a constant C which is independent of N. We calculate x1 and y1, as follows. We put x D e2\u0019 p \u00001\u0001t and y D e2\u0019 p \u00001\u0001s. From the deﬁnition of V.t; s/ and Proposition A.1, we have @ @t V.t; s/ D \u0000 log \u0010 1 \u0000 1 x \u0011 \u0000 2\u0019 p \u00001 \u0010 t C s \u0000 1 2 \u0000 1 2N \u0011 C O.„2/; (50a) and @ @s V.t; s/ D \u00002 log \u0010 1 \u0000 1 y \u0011 \u0000 2\u0019 p \u00001 \u0010 t C 2s \u0000 1 \u0000 1 2N \u0011 C O.„2/: (50b) Then, since .tc;",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/lem-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 55,
+      "target": "lem-sec-004-02.md",
+      "narrative": null,
+      "content": "Under the notation in the proof of Theorem 1.1, exp.NV.tc; sc// D eN&e\u0000\u0019 p \u00001=4.1 \u0000 y0/1=2.1 C .C1 C C2/„ C O.„2//; where we put C1 D 184.\u000016y2 0 C 33y0 C 9/; C2 D 1 24.2y2 0 \u0000 5y0/:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/lem-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 55,
+      "target": "lem-sec-004-03.md",
+      "narrative": null,
+      "content": "Under the notation in the proof of Theorem 1.1, VttVss \u0000 V 2 ts D \u00004\u00192.\u00002y0 \u0000 1/.1 \u0000 2C3„ C O.„2//; .VttVss \u0000 V 2 ts/\u00001=2 D 2\u0019 p \u00001 .\u00002y0 \u0000 1/\u00001=2.1 C C3„ C O.„2//; where we put C3 D 1 46.8y2 0 \u0000 17y0 C 9/:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/lem-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 55,
+      "target": "lem-sec-004-04.md",
+      "narrative": null,
+      "content": "Under the notation in the proof of Theorem 1.1, \u00151 D C4 C C5; where we put C4 D 1 92.2y2 0 C 15y0/ and C5 D \u00001 3174.197y2 0 C 127y0 C 227/:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/lem-sec-004-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Yokota [44]",
+      "pageStart": 36,
+      "pageEnd": 55,
+      "target": "lem-sec-004-05.md",
+      "narrative": null,
+      "content": "Fixing .t; s/ 2 0 and ı2 2 R, we regard ft;s.X; ı2/ as a function of X 2 R. (1) If t C s \u0015 1 2, then ft;s.X; ı2/ is monotonically increasing for X 2 R. (2) If t C s < 1 2, then ft;s.X; ı2/ has a unique minimal point at X D g1.t; s/, where g1.t; s/ D 1 2\u0019 log sin 2\u0019.t C s/ sin 2\u0019s ; i.e., ft;s.X; ı2/ is monotonically decreasing for X < g1.t; s/, and is mono- tonically increasing for X > g1.t; s/.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/lem-sec-004-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Yokota [44]",
+      "pageStart": 36,
+      "pageEnd": 55,
+      "target": "lem-sec-004-06.md",
+      "narrative": null,
+      "content": "Fixing .t; s/ 2 0 and ı1 2 R, we regard ft;s.ı1; Y / as a function of Y 2 R. (1) If t C 2s \u0015 1, then ft;s.ı1; Y / is monotonically increasing for Y 2 R. (2) If t C 2s < 1, then ft;s.ı1; Y / has a unique minimal point at Y D g2.t; s/, where g2.t; s/ D 1 2\u0019 log sin \u0019.t C 2s/ sin \u0019t ; i.e., ft;s.ı1; Y / is monotonically decreasing for Y < g2.t; s/, and is mono- tonically increasing for Y > g2.t; s/.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/lem-sec-004-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Yokota [44]",
+      "pageStart": 36,
+      "pageEnd": 55,
+      "target": "lem-sec-004-07.md",
+      "narrative": null,
+      "content": "When we apply Proposition 3.5 .saddle point method/ to .46/, the assumption of Proposition 3.5 holds.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/lem-sec-004-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 55,
+      "target": "lem-sec-004-08.md",
+      "narrative": null,
+      "content": "When we apply Proposition 4.6 to .14/, the assumptions of Proposi- tion 4.6 hold.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/lem-sec-004-09",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 55,
+      "target": "lem-sec-004-09.md",
+      "narrative": null,
+      "content": "The assumption .41/ holds for i D 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/lem-sec-004-10",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 55,
+      "target": "lem-sec-004-10.md",
+      "narrative": null,
+      "content": "The assumption .42/ holds for i D 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/lem-sec-004-11",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 55,
+      "target": "lem-sec-004-11.md",
+      "narrative": null,
+      "content": "The assumption .41/ holds for i D 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/lem-sec-004-12",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 55,
+      "target": "lem-sec-004-12.md",
+      "narrative": null,
+      "content": "The assumption (42) holds for i D 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1.1",
+      "pageStart": 36,
+      "pageEnd": 55,
+      "target": "../sections/sec-004-proof-of-theorem-11.md",
+      "narrative": null,
+      "content": "In this section, we give a proof of Theorem 1.1. In Section 5.1, we give a proof of\nthe theorem by using lemmas proved in Sections 5.2, 5.3, and 5.4. In Section 5.2,\nwe show lemmas which calculate the asymptotic expansion.\nIn Section 5.3,\nwe show a lemma which veriﬁes the assumption of the saddle point method.\nIn Section 5.4, we show a lemma which veriﬁes the assumption of the Poisson\nsummation formula.\n5.1. Proof of Theorem 1.1. In this section, we give a proof of Theorem 1.1, which\npresents the asymptotic expansion of the Kashaev invariant h52iN of the 52 knot.\nTo obtain the asymptotic expan",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-qt-83/blocks/lem-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 58,
+      "target": "lem-sec-005-02.md",
+      "narrative": null,
+      "content": "2. For any t 2 C with 0 < Re t < 1, '.t/ C '.1 \u0000 t/ D 2\u0019 p \u00001 \u0010 \u0000 N \u0010 t 2 \u0000 t C 1 \u0011 C 24N \u0011 :",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/lem-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 58,
+      "target": "lem-sec-005-03.md",
+      "narrative": null,
+      "content": "3 (Kashaev). We have ' \u0010 1 2N \u0011 D N 2\u0019 p \u00001 \u00192 6 C 1 2 log N C \u0019 p \u00001 \u0000 \u0019 p \u00001 12N and ' \u0010 1 \u0000 1 2N \u0011 D N 2\u0019 p \u00001 \u00192 6 \u0000 1 2 log N C \u0019 p \u00001 \u0000 \u0019 p \u00001 12N :",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 58,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "1. We ﬁx any suﬃciently small ı > 0 and any M > 0. Let d be any non-negative integer. Then, in the domain ¹t 2 C j ı \u0014 Re t \u0014 1 \u0000 ı; j Im tj \u0014 Mº; (69) '.t/ and '.k/.t/ are presented by '.t/ D N 2\u0019 p \u00001 ˆd.e2\u0019 p \u00001t/ C O \u0010 N 2dC1 \u0011 ; (70) '.k/.t/ D N 2\u0019 p \u00001 \u0010 d dt \u0011k ˆd.e2\u0019 p \u00001t/ C O \u0010 N 2dC1 \u0011 ; (71) for each k > 0, where O.1=N 2dC1/ means the error term whose absolute value is bounded by C=N 2dC1 for some C > 0, which is independent of t (but possibly dependent on ı). In particular, N '.t/ uniformly converges to 2\u0019 p \u00001 Li2.e2\u0019 p \u00001t/ in the do- main .69/, and N '0.t/ uniformly converges t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Properties of phi (t)",
+      "pageStart": 55,
+      "pageEnd": 58,
+      "target": "../sections/sec-005-properties-of-phi-t.md",
+      "narrative": null,
+      "content": "In this appendix, we review some basic properties of '.t/.\nWe put „ D 2\u0019\np\n\u00001=N, and put\nˆd.z/ D Li2.z/ C\nX\n1\u0014k\u0014d\n„2kc2k \u0001\n\u0010\nz d\ndz\n\u00112k\u00002\nz\n1 \u0000 z ;\nwhere we deﬁne c2k by\ny=2\nsinh.y=2/ D\nX\nk\u00150\nc2ky2k:\nProposition A.1. We ﬁx any suﬃciently small ı > 0 and any M > 0. Let d be\nany non-negative integer. Then, in the domain\n¹t 2 C j ı \u0014 Re t \u0014 1 \u0000 ı; j Im tj \u0014 Mº;\n(69)\n'.t/ and '.k/.t/ are presented by\n'.t/ D\nN\n2\u0019\np\n\u00001\nˆd.e2\u0019\np\n\u00001t/ C O\n\u0010\n1\nN 2dC1\n\u0011\n;\n(70)\n'.k/.t/ D\nN\n2\u0019\np\n\u00001\n\u0010 d\ndt\n\u0011k\nˆd.e2\u0019\np\n\u00001t/ C O\n\u0010\n1\nN 2dC1\n\u0011\n;\n(71)\nfor each k > 0, where O.1=N 2dC1/ means the error term whose absolute value\ni",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-qt-83/blocks/lem-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 60,
+      "target": "lem-sec-006-01.md",
+      "narrative": null,
+      "content": "1. Let m be any non-negative integer. Then, in the domain 00 of .12/, V.t; s/ is presented by the form V.t; s/ D yV .t; s/CV1.t; s/ 1 N CV2.t; s/ 1 N 2 C\u0001 \u0001 \u0001CVm.t; s/ 1 N m CRm.t; s/ N mC1 where Vi.t; s/’s are holomorphic functions independent of N, and jRm.t; s/j is bounded by a constant which is independent of N. In particular, V.t; s/ uniformly converges to yV .t; s/ in the domain 00.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/lem-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 60,
+      "target": "lem-sec-006-02.md",
+      "narrative": null,
+      "content": "2. Let i and j be any non-negative integers. Then, in the domain 00, ˇˇ @iCj @it@j sV.t; s/ ˇˇ is bounded by a constant which is independent of N.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/104171-qt-83/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Convergence of V(t,s) to hat V(t,s)",
+      "pageStart": 58,
+      "pageEnd": 60,
+      "target": "../sections/sec-006-convergence-of-vts-to-hat-vts.md",
+      "narrative": null,
+      "content": "When we apply the saddle point method and the Poisson summation formula to\nV.t; s/, it is necessary to note how V.t; s/ converges to yV .t; s/ as N ! 1. In this\nappendix, we verify that this convergence is suitable in those applications.\nWe recall that in Section 2.2 we put V.t; s/ and yV .t; s/ by\nV.t; s/ D 1\nN .\u0000'.1 \u0000 t/ \u0000 2'.1 \u0000 s// \u00001\n2\u0019\np\n\u00001\n\u00192\n6\n\u0000 2\u0019\np\n\u00001\n\u00101\n2\n\u0010\nt C s \u0000 1\n2N\n\u00112\nC 1\n2s2 \u0000 1\n2t \u0000 s C 1\n6\n\u0011\n\u0000 3\u0019\np\n\u00001\n4N\nC \u0019\np\n\u00001\n4N 2\nOn the asymptotic expansion of the Kashaev invariant of the 52 knot\n727\nand\nyV .t; s/ D\n1\n2\u0019\np\n\u00001\n\u0010\n\u0000 Li2.e\u00002\u0019\np\n\u00001t/ \u0000 2 Li2.e\u00002\u0019\np\n\u00001s/ \u0000 \u00192\n6\n\u0011\n\u0000 2\u0019\np\n\u00001\n\u00101",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-qt-83/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Critical points of V(t,s) and hat V(t,s)",
+      "pageStart": 60,
+      "pageEnd": 62,
+      "target": "../sections/sec-007-critical-points-of-vts-and-hat-vts.md",
+      "narrative": null,
+      "content": "In this appendix, we show a proof of Lemma 5.1.\nWe put „ D 2\u0019\np\n\u00001=N, and use the notation in Section 5.2. By Proposi-\ntion A.1, we can put\n1\nN '0.1 \u0000 t/ D \u0000 log.1 \u0000 e\u00002\u0019\np\n\u00001t/ C r.t; „/„2\nfor some smooth function r.t; „/ of t and „. Then, from the deﬁnition of V.t; s/,\nwe have\n@\n@t V.t; s/ D \u0000 log\n\u0010\n1 \u0000 1\nx\n\u0011\n\u0000 2\u0019\np\n\u00001\n\u0010\nt C s \u0000 1\n2 \u0000 1\n2N\n\u0011\nC r.t; „/„2;\n@\n@s V.t; s/ D \u00002 log\n\u0010\n1 \u0000 1\ny\n\u0011\n\u0000 2\u0019\np\n\u00001\n\u0010\nt C 2s \u0000 1 \u0000 1\n2N\n\u0011\nC 2r.s; „/„2:\nHence, a critical point of V.t; s/ is a solution of\n8\nˆˆˆ<\nˆˆˆ:\n\u0010\n1 \u0000 1\nx\n\u0011\n.\u0000q\u00001=2xy/ D er.t;„/„2;\n\u0010\n1 \u0000 1\ny\n\u00112\nq\u00001=2xy2 D e2r.s;„/„2:\nThis is rewritten as\n8\n<",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-qt-83/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Lemma 2.1",
+      "pageStart": 62,
+      "pageEnd": 63,
+      "target": "../sections/sec-008-proof-of-lemma-21.md",
+      "narrative": null,
+      "content": "In this appendix, we give a proof of Lemma 2.1.\nProof of Lemma 2.1. We put\nƒ.t/ D Re\n\u0010\n1\n2\u0019\np\n\u00001\nLi2.e2\u0019\np\n\u00001t/\n\u0011\nfor t 2 R. We note that this function has period 1, and ƒ.\u0000t/ D \u0000ƒ.t/. Since\nƒ0.t/ D \u0000 log.2 sin \u0019t/\nfor 0 < t < 1, the behavior of ƒ.t/ is as follows.\nt\n0\n\u0001 \u0001 \u0001\n1\n6\n\u0001 \u0001 \u0001\n1\n2\n\u0001 \u0001 \u0001\n5\n6\n\u0001 \u0001 \u0001\n1\nƒ.t/\n0\n!\nƒ. 1\n6/\n!\n0\n!\n\u0000ƒ. 1\n6/\n!\n0\nHere, ƒ. 1\n6/ D 0:161533 : : :. See Figure 6 for the graph of ƒ.t/.\n0.6\n0.2\n0.4\n0.8\n−\n−\n−\n0.05\n0.05\n0.10\n0.10\n0.15\n0.15\n1.0\nFigure 6. The graph of ƒ.t/ for 0 \u0014 t \u0014 1.\nWe consider the domain\n¹.t; s/ 2 R2 j Re yV .t; s/ \u0015 &Rº:\n(79)\nFor t; s 2 R,\nRe yV .t; s/",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/104171-qt-83/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 63,
+      "pageEnd": 67,
+      "target": "../sections/sec-009-references.md",
+      "narrative": null,
+      "content": "[1] J. E. Andersen and S. K. Hansen, Asymptotics of the quantum invariants for surg-\neries on the ﬁgure 8 knot. J. Knot Theory Ramiﬁcations 15 (2006), no. 4, 479–548.\nMR 2221531 Zbl 1102.57007\n[2] T. D. Dimofte and S. Garoufalidis, The quantum content of the gluing equations.\nGeom. Topol. 17 (2013), no. 3, 1253–1315. MR 3073925 Zbl 1283.57017\n732\nT. Ohtsuki\n[3] T. Dimofte, S. Gukov, J. Lenells, and D. Zagier, Exact results for perturbative Chern–\nSimons theory with complex gauge group. Commun. Number Theory Phys. 3 (2009),\nno. 2, 363–443. MR 2551896 Zbl 1214.81151\n[4] J. Dubois, V. Huynh, and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

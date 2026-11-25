@@ -1,0 +1,44 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s2-0-0097316595900136-main/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "PII: 0097-3165(95)90013-6",
+  "contains": [
+    "library/1-s2-0-0097316595900136-main/sections/sec-front-matter",
+    "library/1-s2-0-0097316595900136-main/sections/sec-000"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A q-Rational Murnaghan-Nakayama Rule — 2 sections: Front matter; THE q-RATIONAL MURNAGHAN-NAKAYAMA\n\n**A q-Rational Murnaghan-Nakayama Rule**\n\n*Macalester College, Saint Paul, Minnesota 55105*\n\n18 pp, 2 sections.\n\n**Outline.** Front matter; 3 THE q-RATIONAL MURNAGHAN-NAKAYAMA RULE",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "1-s2-0-0097316595900136-main",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "1-s2.0-0097316595900136-main.pdf",
+    "source_sha256": "c92d3e85b3dec20a86b4452420a09811900ce6edf67cddec7478b59edae98316",
+    "pages": 18,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

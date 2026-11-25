@@ -1,0 +1,65 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2211.08164v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2211.08164v2",
+  "contains": [
+    "library/arxiv-2211.08164v2/sections/sec-front-matter",
+    "library/arxiv-2211.08164v2/sections/sec-000",
+    "library/arxiv-2211.08164v2/sections/sec-001",
+    "library/arxiv-2211.08164v2/sections/sec-002",
+    "library/arxiv-2211.08164v2/sections/sec-003",
+    "library/arxiv-2211.08164v2/sections/sec-004",
+    "library/arxiv-2211.08164v2/sections/sec-005",
+    "library/arxiv-2211.08164v2/sections/sec-006",
+    "library/arxiv-2211.08164v2/sections/sec-007",
+    "library/arxiv-2211.08164v2/sections/sec-008",
+    "library/arxiv-2211.08164v2/sections/sec-009",
+    "library/arxiv-2211.08164v2/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS — In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann\n\n**INFINITELY MANY RIEMANN SURFACES WITH A TRANSITIVE ACTION ON THE WEIERSTRASS POINTS**\n\n*SEBASTIÁN REYES-CAROCCA AND PIETRO SPEZIALI*\n\n10 pp, 12 sections.\n\n**Abstract.** In this short note, we prove the existence of inﬁnitely many pairwise non-isomorphic, non-hyperelliptic Riemann surfaces with automorphism group act- ing transitively on the Weierstrass points. We also ﬁnd all compact Riemann sur- faces with automorphism group acting transitively on the Weierstrass points, under the assumption that they are simple.\n\n**Outline.** Front matter; 1 Introduction and statement of the result; 2 A family of Riemann surfaces; 3 Proof of the main theorem; 4 Simple Weierstrass points; 5 Future directions and final comments; The action on C3; The Jacobian variety; New examples; The case of positive characteristic; Acknowledgement; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2211.08164&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2211.08164v2",
+    "title_source": "slug",
+    "source_file": "2211.08164v2.pdf",
+    "source_sha256": "aff9ff3ef5ac28be3bd457a9e79832ec60e7a69b95c070e09043659fc75d6ce6",
+    "pages": 10,
+    "arxiv": {
+      "id": "2211.08164",
+      "version": "2",
+      "primary_class": "math.AG",
+      "stamp_date": "16 Apr 2024"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/lin-wang1999.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-178112n22ei.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-178112n22ei","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/lin-wang1999.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/lin-wang1999.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/lin-wang1999.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;lin-wang1999&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 418,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3-spheres.pdf&quot;
+      },
+      &quot;id&quot;: &quot;lin-wang1999&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;core&quot;,
+        &quot;rationale&quot;: &quot;IDENTIFICATION FINDING: the filename says &#39;Ohtsuki-99&#39; but the front matter identifies a 1999 Acta Mathematica Sinica (English Series) 15(3) 293-316 article by Xiaosong Lin and Zhenghan Wang, ON Ohtsuki&#39;s invariants — Ohtsuki is the subject, not an author. Anyone joining this row by filename will mis-key it. The paper gives explicit surgery formulae for Ohtsuki&#39;s rational invariants lambda_n of integral homology 3-spheres extracted from the Reshetikhin-Turaev SU(2) invariants, plus integrality results. It is core for one specific reason: it prints an independently computed numerical value of lambda_2 for the corpus&#39;s own keystone manifold, giving the Sigma(2,3,5) false-theta transcription a falsifiable external check it currently has none of. Citation status checked all three ways: no ref() id (no Lin, no Wang, no Ohtsuki lambda_n entry among the 481 ids), no cite{} in content/**/*.md, no &#39;-- Ref:&#39; in content/**/*.lean. Corpus-grep before declaring the gap: docs/audits/, content/, computations/, docs/coordination/ carry no Casson-invariant or Ohtsuki-series-of-a-3-manifold work at all (every &#39;Casson&#39; hit is Casson-Rivin angle-structure duality), so no prior agent has already run this check. Note the same Ohtsuki-name collision as the sibling document: this is the lambda_n(M) series of homology spheres, not the 4_1 Kashaev kappa-tower of QOU/QBeta/OhtsukiTowerBarParity.lean.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;Section 5, Example (1), p. 304&quot;,
+            &quot;statement&quot;: &quot;If M is the Poincare homology 3-sphere Sigma(2,3,5), realised as +1-surgery on the right-handed trefoil, then lambda_2(M) = 39. (Companion: Sigma(2,3,7) from +1-surgery on the left-handed trefoil has lambda_2 = 63.)&quot;,
+            &quot;useForFolio&quot;: &quot;A parameter-free external number for the second Ohtsuki coefficient of S^3/2I. Expanding the corpus&#39;s Sigma(2,3,5) false theta in h = q-1 must reproduce it (together with lambda_1 = 6 lambda_Casson = ±6, the trefoil having a_2 = 1). This is the falsifiable check the keystone transcription lacks. Caveat that must be settled before the comparison means anything: Lin-Wang&#39;s orientation is +1-surgery on the RIGHT-handed trefoil, and their own Remark on the same page gives lambda_2(Mbar) = lambda_2(M) + lambda_1(M) under orientation reversal — so the corpus&#39;s orientation convention has to be fixed first, or the check will fail for a bookkeeping reason rather than a mathematical one.&quot;,
+            &quot;targets&quot;: [
+              &quot;computations/probes/keystone_colored_sigma235_wrt.py&quot;,
+              &quot;computations/lr_modulus_identification_sigma235.py&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Theorem 1.1 (p. 293) and Corollary 5.1 (p. 303), strengthened at Theorem 7.1&quot;,
+            &quot;statement&quot;: &quot;lambda_2(M) is an integer divisible by 3 for every integral homology 3-sphere M; lambda_1(M) is in 6Z (lambda_1 = 6 times the Casson invariant, Murakami).&quot;,
+            &quot;useForFolio&quot;: &quot;An integrality sieve on any lambda_n the corpus extracts from its own Sigma(2,3,5) series: a transcription that yields a non-integer, or an integer not divisible by 3 at n=2, is wrong independently of any numerical tolerance. Cheap, exact, and it fails loudly — the right kind of gate for a transcription check. Consistent with the quoted value (39 = 3 x 13).&quot;,
+            &quot;targets&quot;: [
+              &quot;computations/probes/keystone_colored_sigma235_wrt.py&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Theorem 5.1 (p. 302) with Theorem 5.2 and Corollary 5.3 (p. 303-304)&quot;,
+            &quot;statement&quot;: &quot;Explicit surgery formulae expressing lambda_1 and lambda_2 of a manifold obtained by Dehn surgery on a unit-framed algebraically split link as sums over sublinks; specialised to 1/n-surgery on a knot K these express lambda_2 through Vassiliev invariants read off the Conway and Jones polynomials of K, and give lambda_2(M)/3 = mu(M) mod 2 with mu the Rokhlin invariant.&quot;,
+            &quot;useForFolio&quot;: &quot;Supplies a second, independent route to the same numbers that does not pass through the false theta at all: it computes lambda_n(Sigma(2,3,5)) from the Jones polynomial of the trefoil, an object the corpus already has full machinery for (Markov trace on H_n(q)). Two independent in-corpus computations of the same lambda_2 would make the check self-contained rather than dependent on a quoted literature value.&quot;,
+            &quot;targets&quot;: [
+              &quot;computations/lr_modulus_identification_sigma235.py&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;add-reference&quot;,
+            &quot;rationale&quot;: &quot;Orphan with no ref() entry. The entry must be keyed on Lin and Wang, not Ohtsuki — the filename invites exactly the wrong join, and the sweep has already recorded one wrong-join incident of this shape in the ledger. Metadata belongs in references.ts only.&quot;,
+            &quot;target&quot;: &quot;folio/schema/references.ts&quot;,
+            &quot;bean&quot;: &quot;qou-k8uf&quot;
+          },
+          {
+            &quot;action&quot;: &quot;compute-check&quot;,
+            &quot;rationale&quot;: &quot;Expand the corpus&#39;s Sigma(2,3,5) series in h = q-1 and compare lambda_1 against ±6 and lambda_2 against 39, after fixing the orientation convention against Lin-Wang&#39;s right-handed-trefoil normalisation; apply the lambda_2 in 3Z sieve as a precondition. This validates the transcription that the whole colored-WRT keystone step rests on. The external values are comparison targets, never inputs to be wired.&quot;,
+            &quot;target&quot;: &quot;computations/probes/keystone_colored_sigma235_wrt.py&quot;,
+            &quot;bean&quot;: &quot;qou-5rou&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-09T00:10:43.091Z&quot;,
+        &quot;source_sha&quot;: &quot;3fb38d4cfd20&quot;
+      },
+      &quot;note&quot;: &quot;Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \&quot;held but uncitable\&quot;; the join already existed on the references.ts side.&quot;,
+      &quot;verified_at&quot;: &quot;2026-09-03T04:37:40Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-5&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

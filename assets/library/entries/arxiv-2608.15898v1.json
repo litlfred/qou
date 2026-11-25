@@ -1,0 +1,44 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2608.15898v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2608.15898v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Universality and Kinematic Dependence of Hadronization Effects\nin DIS Global Event Shapes\nRadja Boughezal,1, ∗Haotian Cao,1, 2, † Zhong-Bo Kang,3, 4, 2, ‡\nXiaohui Liu,5, 6, § Sonny Mantry,7, ¶ and Frank Petriello1, ∗∗\n1Northwestern University, Evanston, IL, USA\n2Center for Frontiers in Nuclear Science, Stony Brook University, Stony Brook, NY 11794, USA\n3Department of Physics and Astronomy, University of California, Los Angeles, CA 90095, USA\n4Mani L. Bhaumik Institute for Theoretical Physics,\nUniversity of California, Los Angeles, CA 90095, USA\n5School of Physics and Astronomy, Beijing Normal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2608.15898v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "s = 105 GeV",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-000-200-s-105-gev.md",
+      "narrative": null,
+      "content": "s = 105 GeV\n2\n1\nDIS thrust\n1a\n1\nFIG. 2: Kinematic dependence of 2Ω1 for DIS thrust\n(red), τ1 (green), and τ1a (black). There is no (x, Q2)\nkinematic dependence for DIS thrust and τ1a. For τ1,\nthe dashed, solid, and dotted green curves correspond\nto Q2 = [200, 400, 800] GeV2, respectively.\nFor τ1a, one can explicitly check that RB,J = 1 in\nthe ξ ≪QH limit. This implies that τ1a corresponds to\na special case where the kinematic dependence exactly\ncancels so that it has the same functional dependence on\nShemi. as Sthrust, as first shown in Ref. [27]. However,\nfor τ1, RB,J = RB,J, leading to a non",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

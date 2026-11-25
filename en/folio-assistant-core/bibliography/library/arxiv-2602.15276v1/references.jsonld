@@ -1,0 +1,41 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2602.15276v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Compact Q-balls and Q-shells within a $CP^N$ Skyrme-Faddeev type model",
+      "dcterms:creator": [
+        "Cola¸co, E. L.",
+        "1",
+        "Klimas, ∗P.",
+        "1",
+        "Livramento, † L. R.",
+        "2",
+        "3",
+        "Sawado, ‡ N.",
+        "4",
+        "§",
+        "Yanai5, S.",
+        "¶"
+      ],
+      "dcterms:identifier": "https://arxiv.org/abs/2602.15276",
+      "dcterms:source": "library/arxiv-2602.15276v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2602.15276v1"
+    }
+  ]
+}

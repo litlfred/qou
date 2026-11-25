@@ -1,0 +1,169 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-ph-0210230v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-ph-0210230v2/blocks/prop-page-001-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "prop-page-001-01.md",
+      "narrative": null,
+      "content": "It is shown that constraints on the heavy sector of the model parameters are diﬀerent when going beyond tree-level physics.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0210230v2/blocks/prop-page-001-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "prop-page-001-02.md",
+      "narrative": null,
+      "content": "In fact, in our case, the only useful constraints on the model can be obtained from the one-loop level calculation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0210230v2/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "arXiv:hep-ph/0210230v2  3 Jan 2003\n1\nThe Minimal Left-Right Symmetric Model and Radiative Corrections to\nthe Muon Decay\nM. Czakona, J. Gluzab, J. Hejczykc\naInstitut f¨ur Theoretische Physik, Universit¨at Karlsruhe, D-76128 Karlsruhe, Germany\nbDESY Zeuthen, Platanenallee 6, D-15738 Zeuthen, Germany\nc Institute of Physics, University of Silesia, Uniwersytecka 4, PL-40-007 Katowice, Poland\nA self-consistent version of the left-right (LR) symmetric model is used to examine tree- as well as one-loop level\nradiative corrections to the muon decay. It is shown that constraints on the heavy sector of t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0210230v2/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "2\n1.1. Muon decay at tree level: no bounds\non charged current parameters\nAs a low energy process, with a momentum\ntransfer small relative to the involved gauge bo-\nson mass, the muon decay can be conveniently\ndescribed by a four-fermion interaction. For very\nsmall neutrino masses, neglecting the mixing be-\ntween them, the Lagrangian can be written in the\nform\n−L\n=\nX\ni,j=L,R\n¯cij¯eγαPiνe¯νµγαPjµ.\n(2)\nwhere (g = gL = gR):\n¯cLL\n=\ng2\n2M 2\nW1\n(cos2 ξ + β sin2 ξ),\n(3)\n¯cRR\n=\ng2\n2M 2\nW1\n(sin2 ξ + β cos2 ξ),\n(4)\n¯cRL = ¯cLR\n=\ng2\n2M 2\nW1\n(−1 + β) sin ξ cos ξ.\n(5)\nβ =\nM2\nW1\nM2\nW2 , ξ is the mixing betwe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0210230v2/blocks/prop-page-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "prop-page-003-01.md",
+      "narrative": null,
+      "content": "90 % C.L. region for the allowed βξ2 and ∆r parameters.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0210230v2/blocks/prop-page-003-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "prop-page-003-02.md",
+      "narrative": null,
+      "content": "This enables us to ﬁnd (anal- ogous to the SM) the counterterm of the sine squared of the Weinberg angle as function of masses and their counterterms1 δ(s2 W )LR = 2c2 W (δM 2 Z2 + δM 2 Z1) ⟨S⟩ − 2c2 W (δM 2 W2 + δM 2 W1) ⟨S⟩ 1For versions of the LR model with more free parameters (e.g. gL̸ = gR) the situation would be quite diﬀerent: s2 W would not be predictable in terms of gauge boson masses and their counter terms), but would have to be tuned to experimental data).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0210230v2/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "3\n−0.007\n−0.004\n−0.001\n0.002\n0.005\n0.008\nβζ\n2\n0.03\n0.032\n0.034\n0.036\n0.038\n0.04\n0.042\n∆r\nFigure 1. 90 % C.L. region for the allowed βξ2\nand ∆r parameters.\n1.2. Constraints on the model parameters\nfrom the one-loop level\nOblique radiative corrections to this process\nhave been considered in the frame of the MLRM\nin [10].\nFurther analysis has been given in [5].\nThough the model has more free parameters (see\ne.g.\n[2,5]), namely two gauge coplings g\n=\ne/ sinΘW and g′ = e/√cos 2ΘW altogether with\nthree VEVs: κ1, κ2 (connected with the bidou-\nblet Φ) and vR (connected with the right handed\ntriplet ∆R",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0210230v2/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "4\nSM case.\n500\n1500\n2500\n3500\n4500\nvR  [GeV]\n0.0\n0.1\n0.2\n ∆r\n(b)\n(a)\n(c)\n(a’)\n(b’)\n(c’)\nFigure 3. ∆r as function of vR. Sets with and\nwithout primes show results for three heavy neu-\ntrino masses with mN = 100 GeV and mN = 2\nTeV respectively. The lines describe diﬀerent val-\nues of Higgs scalar masses: (a) is for all Higgs\nmasses MH = 1 TeV; (b) is for MH = 5 TeV; (c)\nis for MH = 10 TeV.\nIn Figs. 2-4 the contributions to the ∆r param-\neter deﬁned as2\n∆r\n=\n(s2\nW )SM\n(s2\nW )LR\n(∆r)LR + (s2\nW )SM\n(s2\nW )LR\n−1,\n(∆r)LR\n=\n \n−ΠT\nW1(0) −δM 2\nW1\nM 2\nW1\n+ 2δe\ne\n−\n(δs2\nW )LR\n(s2\nW )LR\n+ δ\n\u0013\n(12)\n2To make",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0210230v2/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "5\ndicted in the MLRM model without knowledge\nof the vR scale and furthermore that for larger\nvR the dependence will lead only to a very crude\nbound.\nThe results shown here (for details, see [5,10])\njustify again our statements considered in [13].\nIt has been concluded there, that the only sensi-\nble way to confront a model beyond the SM with\nthe experimental data is to renormalize it self-\nconsistently as it does not necessarily embed the\nSM structure of radiative corrections. If this is\nnot done, parameters which depend strongly on\nquantum eﬀects should be left free in ﬁts, though\nessential p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

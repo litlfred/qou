@@ -1,0 +1,1856 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0812.2426v1",
+  "title": "arxiv-0812.2426v1",
+  "variant": "pdf",
+  "pages": 19,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Conventions and notations",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-conventions-and-notations"
+    },
+    {
+      "level": 2,
+      "title": "Autonomous categories",
+      "number": "1.1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-11-autonomous-categories"
+    },
+    {
+      "level": 2,
+      "title": "Sovereign categories",
+      "number": "1.2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-12-sovereign-categories"
+    },
+    {
+      "level": 2,
+      "title": "Braided categories",
+      "number": "1.3",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-13-braided-categories"
+    },
+    {
+      "level": 2,
+      "title": "Ribbon categories",
+      "number": "1.4",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-14-ribbon-categories"
+    },
+    {
+      "level": 2,
+      "title": "Coends",
+      "number": "1.5",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-15-coends"
+    },
+    {
+      "level": 2,
+      "title": "Coends of autonomous categories",
+      "number": "1.6",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-16-coends-of-autonomous-categories"
+    },
+    {
+      "level": 2,
+      "title": "Dimension of sovereign categories",
+      "number": "1.7",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-17-dimension-of-sovereign-categories"
+    },
+    {
+      "level": 2,
+      "title": "Fusion categories",
+      "number": "1.8",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-18-fusion-categories"
+    },
+    {
+      "level": 1,
+      "title": "Quantum invariants and Hopf diagrams",
+      "number": "2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-2-quantum-invariants-and-hopf-diagrams"
+    },
+    {
+      "level": 2,
+      "title": "Constructing quantum invariants",
+      "number": "2.1",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-21-constructing-quantum-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Kirby elements and quantum invariants",
+      "number": "2.2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-22-kirby-elements-and-quantum-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Hopf diagrams",
+      "number": "2.3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-23-hopf-diagrams"
+    },
+    {
+      "level": 1,
+      "title": "Hopf monads",
+      "number": "3",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-3-hopf-monads"
+    },
+    {
+      "level": 2,
+      "title": "Monads",
+      "number": "3.1",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Modules over a monad",
+      "number": "3.2",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-32-modules-over-a-monad"
+    },
+    {
+      "level": 2,
+      "title": "The philosophy",
+      "number": "3.3",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-016-33-the-philosophy"
+    },
+    {
+      "level": 2,
+      "title": "Bimonads",
+      "number": "3.4",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-017-34-bimonads"
+    },
+    {
+      "level": 2,
+      "title": "Antipodes",
+      "number": "3.5",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-018-35-antipodes"
+    },
+    {
+      "level": 2,
+      "title": "Hopf monads",
+      "number": "3.6",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-019-36-hopf-monads"
+    },
+    {
+      "level": 2,
+      "title": "Quasitriangular Hopf monads",
+      "number": "3.7",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-020-37-quasitriangular-hopf-monads"
+    },
+    {
+      "level": 2,
+      "title": "Ribbon Hopf monads",
+      "number": "3.8",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-021-38-ribbon-hopf-monads"
+    },
+    {
+      "level": 2,
+      "title": "Relations with modules",
+      "number": "3.9",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-022-39-relations-with-modules"
+    },
+    {
+      "level": 1,
+      "title": "Quantum double of Hopf monads",
+      "number": "4",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-023-4-quantum-double-of-hopf-monads"
+    },
+    {
+      "level": 2,
+      "title": "The center of an monoidal category category",
+      "number": "4.1",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-025-41-the-center-of-an-monoidal-category-category"
+    },
+    {
+      "level": 2,
+      "title": "The double of a Hopf monad",
+      "number": "4.2",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-024-42-the-double-of-a-hopf-monad"
+    },
+    {
+      "level": 2,
+      "title": "The coend of a category of modules over a Hopf monad",
+      "number": "4.3",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-026-43-the-coend-of-a-category-of-modules-over-a-hop"
+    },
+    {
+      "level": 1,
+      "title": "Reshetikhin-Turaev invariants from categorical centers",
+      "number": "5",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-027-5-reshetikhin-turaev-invariants-from-categorical"
+    },
+    {
+      "level": 2,
+      "title": "On the center of a fusion category",
+      "number": "5.1",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-028-51-on-the-center-of-a-fusion-category"
+    },
+    {
+      "level": 2,
+      "title": "The coend of the center of a fusion category",
+      "number": "5.2",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-029-52-the-coend-of-the-center-of-a-fusion-category"
+    },
+    {
+      "level": 2,
+      "title": "Computing $\\mathrm{RT}_{\\mathcal{Z}(\\mathcal{C})}(M^3)$ from $\\mathcal{C}$",
+      "number": "5.3",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 195,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hopf monad",
+          "heading": false
+        },
+        {
+          "term": "invari ant",
+          "heading": false
+        },
+        {
+          "term": "reshetikhin-turaev",
+          "heading": false
+        },
+        {
+          "term": "coend",
+          "heading": false
+        },
+        {
+          "term": "category",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0812.2426v1 [math.QA] 12 Dec 2008 CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS ALAIN BRUGUI`ERES AND ALEXIS VIRELIZIER Abstract. A theorem of M¨uger asserts that the center Z(C) of a spherical k-linear category C is a modular category if k is an algebraically closed ﬁeld and the dimension of C is invertible. We generalize this result to the case where k is an arbitrary commutative ring, without",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0812.2426v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-1-conventions-and-notations",
+      "number": "1",
+      "title": "Conventions and notations",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 928,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hopf monads",
+          "heading": false
+        },
+        {
+          "term": "reshetikhin-turaev invariants",
+          "heading": false
+        },
+        {
+          "term": "spherical fusion",
+          "heading": false
+        },
+        {
+          "term": "spherical category",
+          "heading": false
+        },
+        {
+          "term": "modular fusion",
+          "heading": false
+        },
+        {
+          "term": "lyubashenko invariant",
+          "heading": false
+        },
+        {
+          "term": "hopf diagrams",
+          "heading": false
+        },
+        {
+          "term": "turaev-viro invariant",
+          "heading": false
+        }
+      ],
+      "extract": "Conventions and notations 3 2. Quantum invariants and Hopf diagrams 5 3. Hopf monads 11 4. Quantum double of Hopf monads 14 5. Reshetikhin-Turaev invariants from categorical centers 16 References 19 Introduction In the early 90’s, two new ‘quantum’ invariants of 3-manifolds were introduced: the Reshetikhin-Turaev invariant, and the Turaev-Viro invariant. The deﬁnition of the Reshetikhin-Turaev invariant RTB [RT91,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-11-autonomous-categories",
+      "number": "1.1",
+      "title": "Autonomous categories",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 537,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "autonomous categories",
+          "heading": true
+        },
+        {
+          "term": "hopf monads",
+          "heading": false
+        },
+        {
+          "term": "autonomous category",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "spherical fusion",
+          "heading": false
+        },
+        {
+          "term": "idy",
+          "heading": false
+        },
+        {
+          "term": "centralizable",
+          "heading": false
+        }
+      ],
+      "extract": "provide examples of Hopf monads. If fact, any monoidal adjunction between autonomous categories gives rise to a Hopf monad. It turns out that much of the theory of ﬁnite-dimensional Hopf algebras extends to Hopf monads, see [BV07]. In Section 3, we recall a few results on Hopf monads. The whole point of introducing Hopf monads here is that they provide an al- gebraic interpretation of the center construction [BV08].",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-12-sovereign-categories",
+      "number": "1.2",
+      "title": "Sovereign categories",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 82,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leftidx vee",
+          "heading": false
+        },
+        {
+          "term": "sovereign",
+          "heading": true
+        },
+        {
+          "term": "mathrm coev",
+          "heading": false
+        },
+        {
+          "term": "sovereign category",
+          "heading": false
+        },
+        {
+          "term": "widetilde mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "A *sovereign category* is a left autonomous category endowed with a strong monoidal natural transformation $\\phi_X\\colon X \\to \\leftidx{^{\\vee\\vee}}{\\!X}{}$. Such a transformation is then an isomorphism. A sovereign category is actually autonomous. Furthermore, in a sovereign category $\\mathcal{C}$, one can define the *left and right traces* of an endomorphism $f\\colon X \\to X$ as: $$\\begin{aligned}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-13-braided-categories",
+      "number": "1.3",
+      "title": "Braided categories",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 28,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes tau",
+          "heading": false
+        },
+        {
+          "term": "otimes mathrm",
+          "heading": false
+        },
+        {
+          "term": "braided",
+          "heading": true
+        }
+      ],
+      "extract": "A *braided* category is a monoidal category endowed with a *braiding*, that is, a natural isomorphism $\\tau_{X,Y} \\colon X \\otimes Y \\to Y \\otimes X$ satisfying: $\\tau_{X,Y\\otimes Z}=(\\mathrm{id}_Y \\otimes \\tau_{X,Z})(\\tau_{X,Y} \\otimes \\mathrm{id}_Z)$ and $\\tau_{X \\otimes Y,Z}=(\\tau_{X,Z} \\otimes \\mathrm{id}_Y)(\\mathrm{id}_X \\otimes \\tau_{Y,Z})$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-14-ribbon-categories",
+      "number": "1.4",
+      "title": "Ribbon categories",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 65,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leftidx vee",
+          "heading": false
+        },
+        {
+          "term": "theta otimes",
+          "heading": false
+        },
+        {
+          "term": "ribbon",
+          "heading": true
+        }
+      ],
+      "extract": "A *twist* on a braided category $\\mathcal{B}$ is a natural isomorphism $\\theta_X \\colon X \\to X$ satisfying: $\\theta_{X\\otimes Y}=(\\theta_X \\otimes \\theta_Y)\\tau_{Y,X}\\tau_{X,Y}$. If $\\mathcal{B}$ is braided and autonomous, a twist $\\theta$ on $\\mathcal{B}$ is *self-dual* if $\\leftidx{^\\vee}{\\!(}{}\\theta_X)=\\theta_{\\leftidx{^\\vee}{\\!X}{}}$ (or, equivalently, $(\\theta_X{)}^\\vee=\\theta_{{X}^\\vee}$). A *ribbon",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-15-coends",
+      "number": "1.5",
+      "title": "Coends",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 125,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dinatural transformation",
+          "heading": false
+        },
+        {
+          "term": "mathcal",
+          "heading": false
+        },
+        {
+          "term": "coend",
+          "heading": false
+        },
+        {
+          "term": "colon",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sect-coend label=\"sect-coend\"} Let $\\mathcal{C}$, $\\mathcal{D}$ be categories and $F\\colon\\mathcal{C}^\\mathrm{op}\\times \\mathcal{C}\\to \\mathcal{D}$ be a functor. A *dinatural transformation* from the functor $F$ to an object $D$ of $\\mathcal{D}$ is family $d=\\{d_X \\colon F(X,X) \\to D\\}_{X \\in \\mathrm{Ob}(\\mathcal{C})}$ of morphisms in $\\mathcal{D}$ satisfying the dinaturality condition: $$d_X F(f,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-16-coends-of-autonomous-categories",
+      "number": "1.6",
+      "title": "Coends of autonomous categories",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 94,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leftidx vee",
+          "heading": false
+        },
+        {
+          "term": "sect-coend-cat",
+          "heading": false
+        },
+        {
+          "term": "autonomous",
+          "heading": true
+        },
+        {
+          "term": "mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sect-coend-cat label=\"sect-coend-cat\"} Let $\\mathcal{C}$ be an autonomous category. If it exists, the coend $C=\\int^{X \\in \\mathcal{C}} \\leftidx{^\\vee}{\\!X}{} \\otimes X$ of the functor $F\\colon \\mathcal{C}^\\mathrm{op}\\times \\mathcal{C}\\to \\mathcal{C}$ defined by $F(X,Y)=\\leftidx{^\\vee}{\\!X}{}\\otimes Y$ is called the *coend of $\\mathcal{C}$*. The object $C$ is then a coalgebra in $\\mathcal{C}$ which coacts",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-17-dimension-of-sovereign-categories",
+      "number": "1.7",
+      "title": "Dimension of sovereign categories",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 75,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sovereign",
+          "heading": true
+        },
+        {
+          "term": "right dimensions",
+          "heading": false
+        },
+        {
+          "term": "coend",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\mathcal{C}$ be a sovereign category which admits a coend. The *left* and *right dimensions of $\\mathcal{C}$* are defined respectively as the left and right dimensions of its coend. These dimensions are actually independent of the choice of sovereign structure on $\\mathcal{C}$. If they coincide (for instance when $\\mathcal{C}$ is a ribbon category or $\\mathcal{C}$ is a fusion category), they are called the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-18-fusion-categories",
+      "number": "1.8",
+      "title": "Fusion categories",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leftidx vee",
+          "heading": false
+        },
+        {
+          "term": "sovereign fusion",
+          "heading": false
+        },
+        {
+          "term": "rank bbbk",
+          "heading": false
+        },
+        {
+          "term": "dim mathcal",
+          "heading": false
+        },
+        {
+          "term": "alpha leq",
+          "heading": false
+        },
+        {
+          "term": "category mathcal",
+          "heading": false
+        },
+        {
+          "term": "hom mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathrm hom",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sect-fusion label=\"sect-fusion\"} A *fusion category* over a commutative ring $\\Bbbk$ is a $\\Bbbk$-linear autonomous category $\\mathcal{C}$ endowed with a finite family $\\{V_i\\}_{i \\in I}$ of objects of $\\mathcal{C}$ satisfying: - $\\mathrm{Hom}_\\mathcal{C}(V_i,V_j)=\\delta_{i,j} \\, \\Bbbk$ for all $i,j \\in I$; - each object of $\\mathcal{C}$ is a finite direct sum of objects of $\\{V_i\\}_{i \\in I}$; - $\\mathbb{1}$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-2-quantum-invariants-and-hopf-diagrams",
+      "number": "2",
+      "title": "Quantum invariants and Hopf diagrams",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 23,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#Sect-invquant label=\"Sect-invquant\"} In this section, we review a general construction of quantum invariants (of Reshetikhin-Turaev type) and a method for computing them via Hopf diagrams.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-21-constructing-quantum-invariants",
+      "number": "2.1",
+      "title": "Constructing quantum invariants",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 319,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "delta psfrag",
+          "heading": false
+        },
+        {
+          "term": "scalebox",
+          "heading": false
+        },
+        {
+          "term": "cdots otimes",
+          "heading": false
+        },
+        {
+          "term": "colon otimes",
+          "heading": false
+        },
+        {
+          "term": "height includegraphics",
+          "heading": false
+        },
+        {
+          "term": "ribbon string",
+          "heading": false
+        },
+        {
+          "term": "sect-coend-cat",
+          "heading": false
+        },
+        {
+          "term": "sect-hdiag",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sect-construct label=\"sect-construct\"} Let $\\mathcal{B}$ be a ribbon autonomous category ($\\mathcal{B}$ is not necessarily linear). Assume that $\\mathcal{B}$ admits a coend: $$C=\\int^{Y \\in \\mathcal{B}} \\leftidx{^\\vee}{\\!Y}{} \\otimes Y,$$ with universal coaction $\\delta_Y \\colon Y \\to Y \\otimes C$ (see Section [\\[sect-coend-cat\\]](#sect-coend-cat){reference-type=\"ref\" reference=\"sect-coend-cat\"}). In particular,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-22-kirby-elements-and-quantum-invariants",
+      "number": "2.2",
+      "title": "Kirby elements and quantum invariants",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 742,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "normalizable kirby",
+          "heading": false
+        },
+        {
+          "term": "tau mathcal",
+          "heading": false
+        },
+        {
+          "term": "theta alpha",
+          "heading": false
+        },
+        {
+          "term": "alpha otimes",
+          "heading": false
+        },
+        {
+          "term": "kirby element",
+          "heading": false
+        },
+        {
+          "term": "leftidx vee",
+          "heading": false
+        },
+        {
+          "term": "otimes mathrm",
+          "heading": false
+        },
+        {
+          "term": "dim mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sect-kirby label=\"sect-kirby\"} As in the previous section, let $\\mathcal{B}$ be a ribbon autonomous category with a coend $C$. In this setting, $\\Bbbk=\\mathrm{End}_\\mathcal{C}(\\mathbb{1})$ is a commutative monoid. Let $L$ be a framed link in $S^3$ with $n$ components. There always exists a (non-unique) ribbon $n$-string link $T$ such that $L$ is isotopic to the closure of $T$. For $\\alpha \\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-23-hopf-diagrams",
+      "number": "2.3",
+      "title": "Hopf diagrams",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1244,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hopf diagrams",
+          "heading": true
+        },
+        {
+          "term": "mathrm rsl",
+          "heading": false
+        },
+        {
+          "term": "omega psfrag",
+          "heading": false
+        },
+        {
+          "term": "height scalebox",
+          "heading": false
+        },
+        {
+          "term": "theta psfrag",
+          "heading": false
+        },
+        {
+          "term": "scalebox includegraphics",
+          "heading": false
+        },
+        {
+          "term": "mathcal iag",
+          "heading": false
+        },
+        {
+          "term": "ribbon string",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sect-Hdiag label=\"sect-Hdiag\"} For a precise treatment of the theory of Hopf diagrams, we refer to [@BV1]. Note that Habiro, shortly after us, had similar results in [@Hab1]. Briefly speaking, a *Hopf diagram* is a planar diagram, with inputs but no output, obtained by stacking the generators of Figure [1](#gensHdiag){reference-type=\"ref\" reference=\"gensHdiag\"} (diagrams are read from bottom to top). Examples of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-3-hopf-monads",
+      "number": "3",
+      "title": "Hopf monads",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 117,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monads",
+          "heading": true
+        },
+        {
+          "term": "colon mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathrm end",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Sect-monad label=\"Sect-monad\"} In this section, we review some facts on Hopf monads [@BV2]. ## Monads Let $\\mathcal{C}$ be a category. Recall that the category $\\mathrm{End}(\\mathcal{C})$ of endofunctors of $\\mathcal{C}$ is strict monoidal with composition for monoidal product and identity functor $1_\\mathcal{C}$ for unit object. A *monad* on $\\mathcal{C}$ (also called a *triple*) is an algebra in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-32-modules-over-a-monad",
+      "number": "3.2",
+      "title": "Modules over a monad",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 123,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modules",
+          "heading": true
+        },
+        {
+          "term": "morphism",
+          "heading": false
+        },
+        {
+          "term": "idm",
+          "heading": false
+        }
+      ],
+      "extract": "on an object M of C is a morphism r: T (M) →M in C such that: rT (r) = rµM and rηM = idM. The pair (M, r) is then called a T -module in C, or just a T -module3. Given two T -modules (M, r) and (N, s) in C, a morphism f ∈HomC(M, N) is said to be T -linear if fr = sT (f). This gives rise to the category T -C of T -modules, with composition inherited from C. We will denote UT : T - C →C the forgetful functor of T",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-33-the-philosophy",
+      "number": "3.3",
+      "title": "The philosophy",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 99,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hopf monad",
+          "heading": false
+        },
+        {
+          "term": "thm-bihopfmon",
+          "heading": false
+        },
+        {
+          "term": "category mbox",
+          "heading": false
+        },
+        {
+          "term": "structural morphisms",
+          "heading": false
+        }
+      ],
+      "extract": "Roughly speaking, a monad $T$ on a monoidal category $\\mathcal{C}$ is a bimonad, a Hopf monad, a quasitriangular Hopf monad, or a ribbon Hopf monad if the category $T\\mbox{-}\\,\\mathcal{C}$ of $T$-modules is respectively monoidal, autonomous, braided, or ribbon, in such a way the forgetful functor $U_T \\colon T\\mbox{-}\\,\\mathcal{C}\\to \\mathcal{C}$ is strict monoidal. The key point is that these categorical properties",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-34-bimonads",
+      "number": "3.4",
+      "title": "Bimonads",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 92,
+      "summary": null,
+      "keywords": [],
+      "extract": "endowed with a natural transformation T2(X, Y ): T (X ⊗Y ) →T (X) ⊗T (Y ) and a morphism T0 : T (1) → 1 satisfying: (idT (X) ⊗T2(Y, Z))T2(X, Y ⊗Z) = (T2(X, Y ) ⊗idT (Z))T2(X ⊗Y, Z); (idT (X) ⊗T0)T2(X, 1) = idT (X) = (T0 ⊗idT (X))T2(1, X); T2(X, Y )µX⊗Y = (µX ⊗µY )T2(T (X), T (Y ))T (T2(X, Y )); T0µ 1 = T0T (T0); T2(X, Y )ηX⊗Y = (ηX ⊗ηY ); T0η 1 = id 1; for all objects X, Y, Z of C.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-018-35-antipodes",
+      "number": "3.5",
+      "title": "Antipodes",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 265,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "antipodes",
+          "heading": true
+        },
+        {
+          "term": "right antipode",
+          "heading": false
+        },
+        {
+          "term": "left antipode",
+          "heading": false
+        },
+        {
+          "term": "hopf monad",
+          "heading": false
+        },
+        {
+          "term": "idt",
+          "heading": false
+        }
+      ],
+      "extract": "If C is left autonomous, then a left antipode for T is a natural transformation sl = {sl X : T (∨T (X)) →∨X}X∈Ob(C) satisfying: T0T (evX)T (∨ηX ⊗idX) = evT (X)(sl T (X)T (∨µX) ⊗idT (X))T2(∨T (X), X); (ηX ⊗id∨X)coevXT0 = (µX ⊗sl X)T2(T (X), ∨T (X))T (coevT (X)). Likewise, if C is right autonomous, then a right antipode for T is a natural transformation sr = {sr X : T (T (X)∨) →X∨}X∈Ob(C) satisfying: T0T ( eevX)T (idX",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-36-hopf-monads",
+      "number": "3.6",
+      "title": "Hopf monads",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 116,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hopf monads",
+          "heading": true
+        },
+        {
+          "term": "hopf algebras",
+          "heading": false
+        },
+        {
+          "term": "autonomous",
+          "heading": false
+        }
+      ],
+      "extract": "3.6. Hopf monads. A Hopf monad is a bimonad on an autonomous category which has a left antipode and a right antipode. Hopf monads generalize Hopf algebras to a non-braided (and non-linear) setting. Furthermore they are much more general: for example, if C, D are two autonomous categories and U : D →C is a strong monoidal functor which admits a left adjoint F : C →D, then T = UF is a Hopf monad on C (see [BV07,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-37-quasitriangular-hopf-monads",
+      "number": "3.7",
+      "title": "Quasitriangular Hopf monads",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 103,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes mathrm",
+          "heading": false
+        },
+        {
+          "term": "hopf monad",
+          "heading": false
+        },
+        {
+          "term": "mathrm matrix",
+          "heading": false
+        },
+        {
+          "term": "begin split",
+          "heading": false
+        }
+      ],
+      "extract": "Let $T$ be a Hopf monad on an autonomous category $\\mathcal{C}$. An *$\\mathrm{R}$-matrix* for $T$ is a natural transformation $R_X,Y\\colon X \\otimes Y \\to T(Y) \\otimes T(X)$ satisfying: $$\\begin{aligned} & (\\mu_Y \\otimes \\mu_X)R_{T(X),T(Y)}T_2(X,Y)=(\\mu_Y \\otimes \\mu_X)T_2(T(Y),T(X))T(R_{X,Y}); \\\\ \\begin{split} & (\\mathrm{id}_{T(Z)} \\otimes T_2(X,Y))R_{X \\otimes Y,Z} \\\\ & \\phantom{XXXXXX}=(\\mu_Z \\otimes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-38-ribbon-hopf-monads",
+      "number": "3.8",
+      "title": "Ribbon Hopf monads",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 137,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hopf monad",
+          "heading": false
+        },
+        {
+          "term": "leftidx vee",
+          "heading": false
+        },
+        {
+          "term": "quasitriangular hopf",
+          "heading": false
+        },
+        {
+          "term": "autonomous category",
+          "heading": false
+        }
+      ],
+      "extract": "Let $T$ be a quasitriangular Hopf monad $T$ on an autonomous category $\\mathcal{C}$. A *twist* for $T$ is a central and $*$-invertible natural transformation $\\theta_X \\colon X \\to T(X)$ satisfying: $$T_2(X,Y) \\theta_{X \\otimes Y}=(\\mu_X \\theta_{T(X)} \\mu_X \\otimes \\mu_Y \\theta_{T(Y)} \\mu_Y) R_{T(Y),T(X)} R_{X,Y}.$$ Here central and $*$-invertible means central and invertible in the monoid",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-39-relations-with-modules",
+      "number": "3.9",
+      "title": "Relations with modules",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 403,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "autonomous mathcal",
+          "heading": false
+        },
+        {
+          "term": "leftidx vee",
+          "heading": false
+        },
+        {
+          "term": "hopf monad",
+          "heading": false
+        },
+        {
+          "term": "mathrm coev",
+          "heading": false
+        },
+        {
+          "term": "right autonomous",
+          "heading": false
+        },
+        {
+          "term": "left autonomous",
+          "heading": false
+        },
+        {
+          "term": "category mbox",
+          "heading": false
+        },
+        {
+          "term": "bimonad",
+          "heading": false
+        }
+      ],
+      "extract": "The notions of bimonads, Hopf monads, quasitriangular Hopf monads, or ribbon Hopf monads have a natural interpretation in terms of the category of modules over the underlying monad. We summarize these properties in the following theorem: ::: thm []{#thm-biHopfmon label=\"thm-biHopfmon\"} 1. Let $T$ be a monad on a monoidal category $\\mathcal{C}$. If $T$ is a bimonad, then the category $T\\mbox{-}\\,\\mathcal{C}$ of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-4-quantum-double-of-hopf-monads",
+      "number": "4",
+      "title": "Quantum double of Hopf monads",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-024-42-the-double-of-a-hopf-monad",
+      "number": "4.2",
+      "title": "The double of a Hopf monad",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 10,
+      "summary": null,
+      "keywords": [],
+      "extract": "its relations with the center construction (see [BV08] for details).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-025-41-the-center-of-an-monoidal-category-category",
+      "number": "4.1",
+      "title": "The center of an monoidal category category",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 889,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hopf monad",
+          "heading": false
+        },
+        {
+          "term": "comonoidal distributive",
+          "heading": false
+        },
+        {
+          "term": "quasitriangular hopf",
+          "heading": false
+        },
+        {
+          "term": "distributive law",
+          "heading": false
+        },
+        {
+          "term": "autonomous category",
+          "heading": false
+        },
+        {
+          "term": "centralizable",
+          "heading": false
+        },
+        {
+          "term": "braided category",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        }
+      ],
+      "extract": "egory. Recall that the center of C is the category Z(C) deﬁned as follows: the objects are pairs (M, σ), where M is an object of C and σY : M ⊗Y →Y ⊗M is a natural isomorphism verifying σY ⊗Z = (idY ⊗σZ)(σY ⊗idZ). A morphism f : (M, σ) →(M ′, σ′) in Z(C) is a morphism f : M →M ′ in C which satisﬁes (idY ⊗f)σY = σ′ Y (f ⊗idY ). The composition and identities are inherited from that of C. The center Z(C) of C is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-43-the-coend-of-a-category-of-modules-over-a-hop",
+      "number": "4.3",
+      "title": "The coend of a category of modules over a Hopf monad",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 216,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hopf monad",
+          "heading": true
+        },
+        {
+          "term": "leftidx vee",
+          "heading": false
+        },
+        {
+          "term": "colon leftidx",
+          "heading": false
+        },
+        {
+          "term": "centralizable hopf",
+          "heading": false
+        },
+        {
+          "term": "coend",
+          "heading": true
+        },
+        {
+          "term": "category mbox",
+          "heading": false
+        },
+        {
+          "term": "mathbb bigr",
+          "heading": false
+        }
+      ],
+      "extract": "Let $T$ be a centralizable Hopf monad on an autonomous category $\\mathcal{C}$. Denote $Z_T$ its centralizer, $i_{X,Y} \\colon \\leftidx{^\\vee}{\\!T(Y)}{} \\otimes X \\otimes Y \\to Z_T(X)$ its associated universal dinatural transformation, and $\\Omega\\colon TZ_T \\to Z_TT$ the canonical distributive law of $T$ over $Z_T$. Then : ::: thm []{#thm-coend label=\"thm-coend\"} The category $T\\mbox{-}\\,\\mathcal{C}$ of $T$-modules",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-5-reshetikhin-turaev-invariants-from-categorical",
+      "number": "5",
+      "title": "Reshetikhin-Turaev invariants from categorical centers",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 37,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sect-rt",
+          "heading": false
+        },
+        {
+          "term": "mathcal",
+          "heading": false
+        },
+        {
+          "term": "invariants",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sect-RT label=\"sect-RT\"} In this section, we treat in details the case of the center $\\mathcal{Z}(\\mathcal{C})$ of a spherical fusion category $\\mathcal{C}$. This leads to an explicit algorithm for computing Reshetikhin-Turaev-like invariants defined using $\\mathcal{Z}(\\mathcal{C})$ in terms of $\\mathcal{C}$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-028-51-on-the-center-of-a-fusion-category",
+      "number": "5.1",
+      "title": "On the center of a fusion category",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 396,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fusion category",
+          "heading": true
+        },
+        {
+          "term": "leftidx vee",
+          "heading": false
+        },
+        {
+          "term": "hopf monad",
+          "heading": false
+        },
+        {
+          "term": "sect-fusion",
+          "heading": false
+        },
+        {
+          "term": "alpha leq",
+          "heading": false
+        },
+        {
+          "term": "dim mathcal",
+          "heading": false
+        },
+        {
+          "term": "spherical fusion",
+          "heading": false
+        },
+        {
+          "term": "sum substack",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sect-centerfusion label=\"sect-centerfusion\"} Fix a commutative ring $\\Bbbk$. Let $\\mathcal{C}$ be a fusion category over $\\Bbbk$ (see Section [\\[sect-fusion\\]](#sect-fusion){reference-type=\"ref\" reference=\"sect-fusion\"}). Then the trivial Hopf monad $1_\\mathcal{C}$ is centralizable. Its centralizer $Z=Z_{1_\\mathcal{C}}$ is: $$Z(X)=\\bigoplus_{i \\in I} \\leftidx{^\\vee}{\\!V}{}_i \\otimes X \\otimes V_i,$$ with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-52-the-coend-of-the-center-of-a-fusion-category",
+      "number": "5.2",
+      "title": "The coend of the center of a fusion category",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1064,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leftidx vee",
+          "heading": false
+        },
+        {
+          "term": "leq leftidx",
+          "heading": false
+        },
+        {
+          "term": "otimes leftidx",
+          "heading": false
+        },
+        {
+          "term": "fusion category",
+          "heading": true
+        },
+        {
+          "term": "coend",
+          "heading": true
+        },
+        {
+          "term": "tau mathcal",
+          "heading": false
+        },
+        {
+          "term": "dim mathcal",
+          "heading": false
+        },
+        {
+          "term": "lambda bbbk",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sect-fusioncoend label=\"sect-fusioncoend\"} Let us describe the structure of the coend $(C,r)$ of $Z\\mbox{-}\\,\\mathcal{C}\\cong \\mathcal{Z}(\\mathcal{C})$, where $\\mathcal{C}$ is a spherical fusion category. Recall that $C$ is an object of $\\mathcal{C}$ and $r\\colon Z(C) \\to C$ is an action of $Z$ on $C$. From Theorem [\\[thm-coend\\]](#thm-coend){reference-type=\"ref\" reference=\"thm-coend\"}, we get: $$C=\\bigoplus_{j",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathcal leftidx",
+      "heading": false
+    },
+    {
+      "term": "leftidx vee",
+      "heading": false
+    },
+    {
+      "term": "autonomous mathcal",
+      "heading": false
+    },
+    {
+      "term": "hopf monad",
+      "heading": true
+    },
+    {
+      "term": "otimes leftidx",
+      "heading": false
+    },
+    {
+      "term": "category mathcal",
+      "heading": false
+    },
+    {
+      "term": "colon leftidx",
+      "heading": false
+    },
+    {
+      "term": "mathcal mathrm",
+      "heading": true
+    },
+    {
+      "term": "ribbon autonomous",
+      "heading": false
+    },
+    {
+      "term": "theta leftidx",
+      "heading": false
+    },
+    {
+      "term": "dim mathcal",
+      "heading": false
+    },
+    {
+      "term": "tau mathcal",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Generators of Hopf diagrams",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Examples of Hopf diagrams",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Relations on Hopf diagrams",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Composition of Hopf diagrams",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Rules for transforming Hopf diagrams to tangles",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "From Hopf diagrams to ribbon string links",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Structural morphisms of Z",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Structural morphisms of the coend of Z(C)",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 32,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 31,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "8 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p1); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 31 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0812.2426v1"
+  }
+}

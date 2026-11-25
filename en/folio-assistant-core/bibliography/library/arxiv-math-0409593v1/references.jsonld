@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0409593v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Categorification of sl_2 and braid groups",
+      "dcterms:creator": [
+        "ROUQUIER, RAPHAËL"
+      ],
+      "dcterms:issued": "D:20181026",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0409593",
+      "dcterms:source": "library/arxiv-math-0409593v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0409593v1"
+    }
+  ]
+}

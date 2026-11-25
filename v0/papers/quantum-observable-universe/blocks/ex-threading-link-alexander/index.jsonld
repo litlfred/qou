@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-threading-link-alexander",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:threading-link-alexander",
+  "kind": "example",
+  "title": "Alexander and reduced Alexander polynomial of the threading link $T(2,N)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-threading-link"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-threading-link",
+  "tags": [
+    "threading",
+    "torus-link",
+    "alexander-polynomial",
+    "molecular"
+  ],
+  "text": "threading-link-alexander.md",
+  "provenance": "authored"
+}

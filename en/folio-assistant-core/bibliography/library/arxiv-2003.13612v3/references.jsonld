@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2003.13612v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "On the mass difference between proton and neutron",
+      "dcterms:creator": [
+        "Gasser, J.",
+        "Leutwyler, H."
+      ],
+      "dcterms:issued": "D:20210124",
+      "dcterms:identifier": "https://arxiv.org/abs/2003.13612",
+      "dcterms:abstract": "The Cottingham formula expresses the electromagnetic part of the mass of a particle in terms of the virtual Compton scattering amplitude. At large photon momenta, this amplitude is dominated by short distance singularities associated with operators of spin 0 and spin 2. In the diﬀerence between proton and neutron, chiral symmetry suppresses the spin 0 term. Although the angular integration removes the spin 2 singularities altogether, the various pieces occurring in the standard decomposition of the Cottingham formula do pick up such contributions. These approach asymp- totics extremely slowly because the relevant Wilson coeﬃcients only fall oﬀlogarithmically. We rewrite the formula in such a way that the leading spin 2 contributions are avoided ab initio. Using a sum rule that follows from Reggeon dominance, the numerical evaluation of the e.m. part of the mass diﬀerence between proton and neutron yields mQED = 0.58 ± 0.16 MeV. The result indicates that the inelastic contributions are small compared to the elastic ones.",
+      "dcterms:source": "library/arxiv-2003.13612v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2003.13612v3"
+    }
+  ]
+}

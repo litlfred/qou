@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-brings-is-qou-verification",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:brings-is-qou-verification",
+  "kind": "remark",
+  "title": "Verification of the QOU data for Bring's surface",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-three-euler-characteristics",
+    "papers/quantum-observable-universe/blocks/prop-brings-is-qou",
+    "papers/quantum-observable-universe/blocks/def-brings-surface",
+    "papers/quantum-observable-universe/blocks/thm-qu-to-qou"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-brings-is-qou",
+  "cites": [
+    "references/woronowicz1987-twisted-su2",
+    "references/braden-disney-hogg-2022"
+  ],
+  "text": "brings-is-qou-verification.md",
+  "provenance": "authored"
+}

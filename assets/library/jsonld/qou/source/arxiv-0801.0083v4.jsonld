@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0801.0083v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0801.0083v4",
+  "contains": [
+    "library/arxiv-0801.0083v4/sections/sec-front-matter",
+    "library/arxiv-0801.0083v4/sections/sec-000",
+    "library/arxiv-0801.0083v4/sections/sec-001",
+    "library/arxiv-0801.0083v4/sections/sec-002",
+    "library/arxiv-0801.0083v4/sections/sec-003",
+    "library/arxiv-0801.0083v4/sections/sec-004",
+    "library/arxiv-0801.0083v4/sections/sec-005",
+    "library/arxiv-0801.0083v4/sections/sec-006",
+    "library/arxiv-0801.0083v4/sections/sec-007",
+    "library/arxiv-0801.0083v4/sections/sec-008"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "CENTRAL EXTENSIONS OF GERBES — We introduce the notion of central extension of gerbes on a topo- logical space X.\n\n**CENTRAL EXTENSIONS OF GERBES**\n\n*AMNON YEKUTIELI*\n\n36 pp, 10 sections.\n\n**Abstract.** We introduce the notion of central extension of gerbes on a topo- logical space X. We show that there are obstruction classes to lifting objects and isomorphisms in a central extension. We also discuss pronilpotent gerbes. These results are used in the paper [Ye] to study twisted deformation quanti- zation on algebraic varieties.\n\n**Outline.** Front matter; 0 Introduction; 1 Recalling some Facts on 2-Categories; 2 Prestacks on a Topological Space; 3 Extensions of Gerbes; 4 Obstruction Classes; 5 Sufficient Conditions for Existence of Obstr; 6 Pronilpotent Gerbes; 7 Fake Global Objects of Gerbes; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0801.0083&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0801.0083v4",
+    "title_source": "slug",
+    "source_file": "0801.0083v4.pdf",
+    "source_sha256": "8e38b9e56d2467095ccd08f0b61a1ae8b7d08cd2a46a52e8b20afcf84e3c8ba4",
+    "pages": 36,
+    "arxiv": {
+      "id": "0801.0083",
+      "version": "4",
+      "primary_class": "math.AG",
+      "stamp_date": "18 Feb 2010"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

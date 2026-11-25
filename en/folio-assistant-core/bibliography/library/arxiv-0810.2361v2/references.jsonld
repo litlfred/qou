@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0810.2361v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "2-VECTOR SPACES AND GROUPOIDS",
+      "dcterms:creator": [
+        "MORTON, JEFFREY C."
+      ],
+      "dcterms:issued": "D:20180528",
+      "dcterms:identifier": "https://arxiv.org/abs/0810.2361",
+      "dcterms:abstract": "This paper describes a relationship between essentially ﬁnite groupoids and 2-vector spaces. In particular, we show to construct 2-vector spaces of Vect-valued presheaves on such groupoids. We deﬁne 2-linear maps corre- sponding to functors between groupoids in both a covariant and contravariant way, which are ambidextrous adjoints. This is used to construct a representation— a weak functor—from Span(FinGpd) (the bicategory of essentially ﬁnite groupoids and spans of groupoids) into 2Vect. In this paper we prove this and give the construction in detail.",
+      "dcterms:source": "library/arxiv-0810.2361v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0810.2361v2"
+    }
+  ]
+}

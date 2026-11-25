@@ -1,0 +1,158 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0305423v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0305423v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0305423v3  [math.RT]  11 Nov 2003\nStein’s Method and Plancherel Measure of the Symmetric Group\nRunning head: Stein’s Method and Plancherel Measure\nBy Jason Fulman\nUniversity of Pittsburgh\nDepartment of Mathematics\n301 Thackeray Hall\nPittsburgh, PA 15260\nEmail: fulman@math.pitt.edu\nAbstract: We initiate a Stein’s method approach to the study of the\nPlancherel measure of the symmetric group. A new proof of Kerov’s central\nlimit theorem for character ratios of random representations of the symmet-\nric group on transpositions is obtained; the proof gives an error term. The\nconstruction",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0305423v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "It is accurate to state that one of the most important developments in probability theory in the last century was Stein's method. Stein's method is a highly original technique and has been useful in proving normal and Poisson approximation theorems in probability problems with limited information such as the knowledge of only a few moments of the random variable. Stein's method can be difficult to work with and often the bounds arising are not sharp, even in simple problems. But it sometimes is the only option available and has been a smashing success in Poisson approximation in computational",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0305423v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Harmonic functions and exchangeable pairs",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-2-harmonic-functions-and-exchangeable-pairs.md",
+      "narrative": null,
+      "content": "\\label{harmonic} \n\n\tTo begin we recall the theory of harmonic functions on Bratelli diagrams. This is a beautiful subject with deep connections to probability theory and representation theory. Two excellent surveys are \\cite{K2} and \\cite{BO}.\n\n\tThe basic set-up is as follows. One starts with a\nBratteli diagram; that is an oriented graded graph $\\Gamma= \\cup_{n \\geq 0} \\Gamma_n$ such that\n\n\\begin{enumerate}\n\\item $\\Gamma_0$ is a single vertex $\\emptyset$.\n\\item If the starting vertex of an edge is in $\\Gamma_i$, then its end vertex is in $\\Gamma_{i+1}$.\n\\item Every vertex has at least one outg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0305423v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Irreducible characters of the symmetric group",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-3-irreducible-characters-of-the-symmetric-group.md",
+      "narrative": null,
+      "content": "\\label{repreview}\n\n\tThis section collects properties we will use about\n\tcharacters of irreducible representations of the symmetric\n\tgroup. For more background on this topic, see the book\n\t\\cite{Sa}. Lemmas \\ref{orth1}, \\ref{mult}, and $\\ref{real}$ are\n\twell known. Lemma \\ref{countsol} is known but not well\n\tknown. Lemmas \\ref{induced}, \\ref{parents} are elementary\n\tconsequences of known facts but perhaps new.\n\n\tThroughout $\\overline{z}$ denotes the complex conjugate of $z$, and $Irr(G)$ denotes the set of characters of irreducible representations of a finite group $G$. The notation $dim(\\chi)$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0305423v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stein's method and Kerov's central limit theorem",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-003-4-steins-method-and-kerovs-central-limit-theorem.md",
+      "narrative": null,
+      "content": "\\label{provebound}\n\n\tIn this section we prove Theorem \\ref{maintheorem}. Recall\n\tthat $W(\\lambda) = \\frac{(n-1)}{\\sqrt{2}}\n\t\\frac{\\chi^{\\lambda}(12)}{dim(\\lambda)}$ and that the\n\tPlancherel measure chooses a partition $\\lambda$ with\n\tprobability $\\frac{dim(\\lambda)^2}{n!}$. If $n=1$ we use the convention that $W=0$. Then Lemma\n\t\\ref{countsol} implies the known fact that the mean and\n\tvariance of $W$ are $0$ and $1-\\frac{1}{n}$ respectively. This\n\twill also follow from Stein's method.\n\n\tIn fact there is an explicit formula (due to Frobenius\n\\cite{Fr}) \\[ \\frac{\\chi^{\\lambda}(12)}{dim(\\lambda)}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0305423v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotic multiplicities in tensor products of representations",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "../sections/sec-004-5-asymptotic-multiplicities-in-tensor-products-o.md",
+      "narrative": null,
+      "content": "\\label{decompose}\n\n\tThis section gives an intruiging method for understanding some\n\tasymptotic aspects of the decomposition of tensor products of\n\tcertain representations of the symmetric group. A recent paper\n\twhich investigates this topic from the viewpoint of free\n\tprobability theory is \\cite{Bi}. However the methods and\n\tresults are completely different from those presented\n\there. The main new idea of this section is to use spectral\n\ttheory of Markov chains. This is further developed in\n\t\\cite{F} (connections with card shuffling, generalization to\n\tother groups) and in \\cite{Fu2} (generali",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0305423v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-005-6-acknowledgements.md",
+      "narrative": null,
+      "content": "The author was partially supported by National Security Agency grant MDA904-03-1-0049.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0305423v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-006-references.md",
+      "narrative": null,
+      "content": "[AlD]\nAldous, D. and Diaconis, P., Longest increasing subsequences: from patience sort-\ning to the Baik-Deift-Johansson theorem, Bull. AMS (N.S.) 36 (1999), 413-432.\n[ArGG] Arratia, R., Goldstein, L. and Gordon, L., Poisson approximation and the Chen-\nStein method. Statist. Sci. 5 (1990), 403-434.\n[BHJ] Barbour, A.D., Holst, L., and Janson, S., Poisson approximation. Oxford Science\nPublications. Clarendon Press, Oxford university Press, New York, 1992.\n[Bi]\nBiane, P., Representations of symmetric groups and free probability, Adv. Math.\n138 (1998), 126-181.\n[BOO] Borodin, A., Okounkov, A., and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

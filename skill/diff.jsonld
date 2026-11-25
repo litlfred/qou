@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/diff.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/diff",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "diff",
+      "title": "Diff — Content Block Change Report",
+      "description": "Show per-block content changes with viewer links, changelog, and undo impact analysis",
+      "instructionsPath": "skills/local/diff.md",
+      "instructionLines": 128,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1611.09182v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Standard model physics from an algebra?",
+      "dcterms:creator": [
+        "Furey, C."
+      ],
+      "dcterms:issued": "D:20161129",
+      "dcterms:identifier": "https://arxiv.org/abs/1611.09182",
+      "dcterms:source": "library/arxiv-1611.09182v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1611.09182v1"
+    }
+  ]
+}

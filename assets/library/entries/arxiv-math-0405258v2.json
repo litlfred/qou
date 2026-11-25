@@ -1,0 +1,232 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0405258v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0405258v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In Part I of this series \\cite{MSp1} we introduced the concept of\nsecond order freeness as the mathematical concept for dealing with\nthe large $N$ limit of fluctuations of $N\\times N$-random matrices.\nWhereas Voiculescu's freeness (of first order) provides the crucial\nnotion behind the leading order of expectations of traces, our\nsecond order freeness is intended to describe in a similar way the\nstructure of leading orders of global fluctuations, i.e., of\nvariances of traces. In Part I we showed how fluctuations of\nGaussian and Wishart random matrices can be understood from this\nperspective. H",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405258v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0405258v2  [math.OA]  27 Jun 2005\nSECOND ORDER FREENESS AND FLUCTUATIONS\nOF RANDOM MATRICES:\nII. UNITARY RANDOM MATRICES\nJAMES A. MINGO (∗), PIOTR ´SNIADY (‡), AND ROLAND SPEICHER (∗)(†)\nAbstract. We extend the relation between random matrices and\nfree probability theory from the level of expectations to the level of\nﬂuctuations. We show how the concept of “second order freeness”,\nwhich was introduced in Part I, allows one to understand global\nﬂuctuations of Haar distributed unitary random matrices. In par-\nticular, independence between the unitary ensemble and another\nensemble goes",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405258v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-preliminaries.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405258v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The lattice of partitions",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-21-the-lattice-of-partitions.md",
+      "narrative": null,
+      "content": "For natural numbers $m,n\\in\\NN$ with $m<n$, we denote by $[m,n]$ the\ninterval of natural numbers between $m$ and $n$, i.e.,\n$$[m,n]:=\\{m,m+1,m+2,\\dots,n-1,n\\}$$ and $[m] = [1, m]$.\nFor a matrix $A=(a_{ij})_{i,j=1}^N$, we denote by $\\Tr$ the\nunnormalized and by $\\tr$ the normalized trace,\n$$\\Tr(A):=\\sum_{i=1}^N a_{ii},\\qquad \\tr(A):=\\frac 1N \\Tr(A).$$\n\nWe say that $A=\\{A_1,\\dots,A_k\\}$ is a partition of the set $[1,n]$ if\nthe subsets $A_i$ are disjoint, non-empty,\nand their union is equal to $[1,n]$. We call $A_1,\\dots,A_k$ the\nblocks of the partition $A$. For a permutation $\\pi\\in S_n$ we say",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405258v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Permutations",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-22-permutations.md",
+      "narrative": null,
+      "content": "We will denote the set of permutations on $n$ elements by $S_n$.  We\nwill quite often use the cycle notation for such permutations, i.e.,\n$\\pi=(i_1,i_2,\\dots,i_r)$ is a cycle which sends $i_k$ to $i_{k+1}$\n($k=1,\\dots,r$), where $i_{r+1}=i_1$.\n\n\n\\subsubsection{Length function}\n\nFor a partition $\\pi\\in S_n$ we denote by $\\#(\\pi)$ the number of\ncycles of $\\pi$ and by $\\vert\\pi\\vert$ the minimal number of\ntranspositions needed to write $\\pi$ as a product of transpositions.\nNote that one has\n$$\\vert\\pi\\vert+\\#(\\pi)=n\\qquad\\text{for all $\\pi\\in S_n$}.$$\n\n\n\\subsubsection{Non-crossing permutations}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405258v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A triangle inequality",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-23-a-triangle-inequality.md",
+      "narrative": null,
+      "content": "Let $\\{A_1, \\dots , A_k\\}$ be a partition of $[n]$.\nIf, for $1\\leq i\\leq k$, $\\pi_i$ is a permutation of the set $A_i$\nwe denote by $\\pi_1\\times \\cdots\\times \\pi_k\\in S_n$ the\nconcatenation of these permutations. We say that\n$\\pi=\\pi_1\\times\\cdots\\times \\pi_k$ is a cycle decomposition if\nadditionally every factor $\\pi_i$ is a cycle.\n\n\\begin{notation}\n1) For $A\\in\\cP(n)$ we put $| A|:=n-\\#(A)$ \\\\\n2) For any $\\pi \\in S_n$ and any $\\pi$-invariant $A\\in\\cP(n)$\nwe put\n$$| (A,\\pi) |:=2\\vert A\\vert-\\vert\\pi\\vert.$$\n\\end{notation} \n\n\\begin{lemma}\\label{triangleinequality}\n1 ) For all $A,B\\in\\cP(n)$ we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405258v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Haar distributed unitary random matrices and the Weingarten function",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-24-haar-distributed-unitary-random-matrices-and.md",
+      "narrative": null,
+      "content": "In the following we will be interested in the asymptotics of special\nmatrix integrals over the group $\\UU(N)$ of unitary $N\\times\nN$-matrices. We always equip the compact group $\\UU(N)$ with its\nHaar probability measure and accordingly distributed random matrices\nwe shall call \\emph{Haar distributed unitary random matrices}. Thus\nthe expectation $\\EE$ over this ensemble is given by integrating\nwith respect to the Haar measure.\n\nThe expectation of products of entries of Haar distributed unitary\nrandom matrices can be described in terms of a special function on\nthe permutation group. Since such",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405258v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Second order freeness",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-25-second-order-freeness.md",
+      "narrative": null,
+      "content": "In \\cite{MSp1}, we introduced the concept of second order freeness\nwhich is intended to capture the structure of the fluctuation\nfunctionals for random matrices arising in the limit $N\\to\\infty$,\nin the same way as the usual freeness captures the structure of the\nexpectation of the trace in the limit. We recall the relevant\nnotations and definitions.\n\n\\begin{definition}\nA \\emph{second order non-commutative probability space}\n$(\\cA,\\ab \\ff_1,\\ff_2)$ consists of a unital algebra $\\cA$, a\ntracial linear functional\n$$\\ff_1:\\cA\\to\\CC \\qquad\\text{with}\\qquad\n\\ff(1)=1$$ and a bilinear functional\n$$\\f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405258v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotic second order freeness for unitary random matrices",
+      "pageStart": 10,
+      "pageEnd": 27,
+      "target": "../sections/sec-007-3-asymptotic-second-order-freeness-for-unitary-r.md",
+      "narrative": null,
+      "content": "\\begin{notation}\\label{notation1}\nSuppose $\\epsilon : [2l] \\rightarrow \\{-1, 1\\}$ is such that\n$\\sum_{i=1}^{2l} \\epsilon_i = 0$. We write $\\epsilon^{-1}(1) = \\{\np_1, p_2, \\dots , p_l\\}$ and $\\epsilon^{-1}(-1) = \\{q_1, q_2, \\dots\n, q_l\\}$, with $p_1 < p_2 < \\cdots < p_l$ and $q_1 < q_2 < \\cdots <\nq_l$. Let $S^{(\\epsilon)}_{2l}$ be the permutations $\\pi$ in\n$S_{2l}$ such that $\\pi$ takes $\\{p_1,\\dots,p_l\\}$ onto\n$\\{q_1,\\dots,q_l\\}$ and vice versa. Given a $\\pi$ in\n$S^{(\\epsilon)}_{2l}$ we may extract a pair of permutations\n$\\alpha_\\pi$ and $\\beta_\\pi$ in $S_l$ from the equations \n\n\\begin{equatio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405258v2/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "There has been much interest in global fluctuations of random matrices, in particular, since it was observed that for large classes of one-matrix models these fluctuations are universal.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0405258v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Failure of Universality for multi-matrix models",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "../sections/sec-008-4-failure-of-universality-for-multi-matrix-model.md",
+      "narrative": null,
+      "content": "In this section we want to make the meaning of second order freeness\nfor fluctuations of random matrices more explicit and relate this\nwith the question of universality of such fluctuations. There has\nbeen much interest in global fluctuations of random matrices, in\nparticular, since it was observed that for large classes of\none-matrix models these fluctuations are universal. In the physical\nliterature this observation goes at least back to Politzer \\cite{P},\nculminating in the paper of Ambj\\o{}rn et al. \\cite{AJM}, whereas a\nproof on the mathematical level of rigour is due to Johansson\n\\cite{J",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405258v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-009-references.md",
+      "narrative": null,
+      "content": "[AJM] J. Ambjørn, J. Jurkiewicz, and Y. Makeenko: Multiloop correlators for\ntwo-dimensional quantum gravity, Phys. Lett. 251B (1990), 517-524.\n[B]\nP. Biane: Some properties of crossings and partitions. Discrete Math. 175\n(1997), no. 1-3, 41–53.\n[C]\nB. Collins: Moments and cumulants of polynomial random variables of uni-\ntary groups, the Itzykson-Zuber integral, and free probability. IMRN, 2003,\nno. 17, 953-982.\n[C´S]\nB. Collins and P. ´Sniady:\nIntegration with respect to the Haar mea-\nsure on\nunitary,\northogonal and\nsymplectic group. Preprint,\n2004.\nmath-ph/0402073.\n[D]\nP. Diaconis: Patterns i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

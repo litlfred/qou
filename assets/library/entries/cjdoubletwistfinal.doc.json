@@ -1,0 +1,1214 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "cjdoubletwistfinal",
+  "title": "cjdoubletwistfinal",
+  "variant": "pdf",
+  "pages": 24,
+  "tocSource": "undetermined",
+  "tocMethod": "regex",
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 318,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "double twist",
+          "heading": false
+        },
+        {
+          "term": "twist knots",
+          "heading": false
+        },
+        {
+          "term": "kontsevich-zagier",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "integers correspond",
+          "heading": false
+        },
+        {
+          "term": "cyclotomic expansion",
+          "heading": false
+        },
+        {
+          "term": "half-twists",
+          "heading": false
+        }
+      ],
+      "extract": "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS JEREMY LOVEJOY AND ROBERT OSBURN In memory of Toshie Takata Abstract. Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(−m,−p) and K(−m,p) where m and p are positive integers. In the (−m, −p) case, this leads to new families of q-hypergeometric series generalizing the",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-001"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 207,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "double twist",
+          "heading": false
+        },
+        {
+          "term": "twist knots",
+          "heading": false
+        },
+        {
+          "term": "mirror image",
+          "heading": false
+        }
+      ],
+      "extract": "2 JEREMY LOVEJOY AND ROBERT OSBURN 2m 2p Figure 1. Double twist knots and JN(K(m,−p); q) = X n≥0 n=nm≥nm−1≥···≥n1≥0 n=sp≥sp−1≥···≥s1≥0 (q1+N)n(q1−N)n(−1)nq−(n+1 2 ) m−1 Y i=1 qn2 i +ni \u0014 ni+1 ni \u0015 p−1 Y j=1 q−sj−sj+1sj \u0014 sj+1 sj \u0015 . (1.2) Here we have used the usual q-binomial coeﬃcient \u0014 n k \u0015 = \u0014 n k \u0015 q := (q)n (q)n−k(q)k (1.3) with the standard q-hypergeometric notation (a)n = (a; q)n := n−1 Y k=0 (1 −aqk).",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-002"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 280,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n2p",
+          "heading": false
+        },
+        {
+          "term": "n4n",
+          "heading": false
+        },
+        {
+          "term": "n5n",
+          "heading": false
+        }
+      ],
+      "extract": "THE COLORED JONES POLYNOMIAL FOR DOUBLE TWIST KNOTS 3 where 1 ≤i < j ≤2mp −1 with m ∤i and γi,m = ( 1, if i ≡1, . . . , m −1 (mod 2m), −1 otherwise (1.6) where 1 ≤i ≤2mp −2. Our ﬁrst main result is the following. Theorem 1.1. For positive integers m and p, we have JN(K(−m,−p); q) = q1−N X N−1≥n2mp−1≥···≥n1≥0 (q1−N)n2mp−1(−1)n2mp−1q−( n2mp−1+1 2 ) Y 1≤i<j≤2mp−1 m∤i qϵi,j,mninj × 2p−1 Y i=1 (−1)nmiq(−1)iNnmi+(nmi+1 2",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-003",
+        "library/cjdoubletwistfinal/blocks/thm-page-003-01"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 271,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n2mp",
+          "heading": false
+        },
+        {
+          "term": "n4n",
+          "heading": false
+        },
+        {
+          "term": "n5n",
+          "heading": false
+        }
+      ],
+      "extract": "4 JEREMY LOVEJOY AND ROBERT OSBURN where 1 ≤i < j ≤2mp with m ∤i and βi,m =      1, if i ≡1, . . . , m −1 (mod 2m), −1 if i ≡m + 1, . . . , 2m −1 (mod 2m), 0, otherwise (1.11) where 1 ≤i ≤2mp −1. Our second main result is the following. Theorem 1.2. For positive integers m and p, we have JN(K(−m,p); q) = X N−1≥n2mp≥···≥n1≥0 (q1−N)n2mp(−1)n2mpq−( n2mp+1 2 ) Y 1≤i<j≤2mp m∤i q∆i,j,mninj × 2p−1 Y i=1",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-004",
+        "library/cjdoubletwistfinal/blocks/thm-page-004-01"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 334,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kontsevich-zagier series",
+          "heading": false
+        },
+        {
+          "term": "kontsevich-zagier functions",
+          "heading": false
+        },
+        {
+          "term": "unimodal sequences",
+          "heading": false
+        },
+        {
+          "term": "n2mp",
+          "heading": false
+        },
+        {
+          "term": "nth root",
+          "heading": false
+        }
+      ],
+      "extract": "THE COLORED JONES POLYNOMIAL FOR DOUBLE TWIST KNOTS 5 and Um,p(x; q) = X n≥0 n=nm≥nm−1≥···≥n1≥0 n=sp≥sp−1≥···≥s1≥0 (−xq)n(−x−1q)nqn m−1 Y i=1 qn2 i +ni \u0014 ni+1 ni \u0015 p−1 Y j=1 qs2 j+sj \u0014 sj+1 sj \u0015 . (1.16) Note that if ζN is any Nth root of unity, we have Fm,p(ζN) = JN(K(−m,−p); ζN) (1.17) and Um,p(−1; ζN) = JN(K(m,p); ζN). (1.18) The base case F1,1(q) is q times the Kontsevich-Zagier series, F(q) := X n≥0 (q)n,",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-005",
+        "library/cjdoubletwistfinal/blocks/cor-page-005-01"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 388,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "preliminaries",
+          "heading": false
+        },
+        {
+          "term": "unity",
+          "heading": false
+        },
+        {
+          "term": "generalized",
+          "heading": false
+        },
+        {
+          "term": "roots",
+          "heading": false
+        },
+        {
+          "term": "theorems",
+          "heading": false
+        },
+        {
+          "term": "quantum",
+          "heading": false
+        }
+      ],
+      "extract": "6 JEREMY LOVEJOY AND ROBERT OSBURN and Um,p(x; q) = X n≥0 n=nm≥nm−1≥···≥n1≥0 n=sp≥sp−1≥···≥s1≥0 (−xq)n(−x−1q)n(−1)nq−(n+1 2 ) m−1 Y i=1 qn2 i +ni \u0014 ni+1 ni \u0015 p−1 Y j=1 q−sj−sj+1sj \u0014 sj+1 sj \u0015 . (1.25) Neither Fm,p(q) nor Um,p(x; q) is deﬁned anywhere except at roots of unity. Note that Fm,p(ζN) = JN(K(−m,p); ζN) (1.26) and Um,p(−1; ζN) = JN(K(m,−p); ζN). (1.27) As a result of (1.4), (1.26) and (1.27), we immediately",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-006",
+        "library/cjdoubletwistfinal/blocks/cor-page-006-01"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 337,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "σik nik",
+          "heading": false
+        },
+        {
+          "term": "twist knots",
+          "heading": false
+        },
+        {
+          "term": "double twist",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        }
+      ],
+      "extract": "THE COLORED JONES POLYNOMIAL FOR DOUBLE TWIST KNOTS 7 Consider the family of 2-bridge knots b(l, t) [5]. The main result in [28] is an explicit formula for the colored Jones polynomial of b(l, t)∗. Theorem 2.1. We have JN(b(l, t)∗; q) = X N−1≥np′≥...≥n1≥0 qa(n)N+b1(n)+b2(n)X(n) (2.3) where2 a(n) = −1 2 p′ X j=1 p′ X k=r′(j) (σik + σip′+1−k) ! (nj −nj−1) −1 2 p′−1 X j=1 (σj+1 + σp′+1−j)nj −1 2(σp′ + 1)np′ − p′ X j=1",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-007",
+        "library/cjdoubletwistfinal/blocks/thm-page-007-01"
+      ]
+    },
+    {
+      "id": "page-008",
+      "number": null,
+      "title": "Page 8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 501,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "σik σip",
+          "heading": false
+        },
+        {
+          "term": "σik alternates",
+          "heading": false
+        },
+        {
+          "term": "compute σik",
+          "heading": false
+        },
+        {
+          "term": "jth interval",
+          "heading": false
+        },
+        {
+          "term": "ﬁnal interval",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst interval",
+          "heading": false
+        }
+      ],
+      "extract": "8 JEREMY LOVEJOY AND ROBERT OSBURN Lemma 2.2. For l = 4mp −1 and t = 4mp −2p −1, we have (i) σj = \u001a 1 if j ≡1, 2, . . . , m (mod 2m) −1 if j ≡0, m + 1, . . . , 2m −1 (mod 2m). (ii) To compute ik, apply the following algorithm. Divide the integers from 1 to p′ into 2m −1 intervals, each of length p, and a ﬁnal interval of length p −1. The value of ik is 2m(p −k) + m in the ﬁrst interval and 1 −(2m(p −k) + m) in the",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-008",
+        "library/cjdoubletwistfinal/blocks/lem-page-008-01"
+      ]
+    },
+    {
+      "id": "page-009",
+      "number": null,
+      "title": "Page 9",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 314,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n4j",
+          "heading": false
+        },
+        {
+          "term": "σik",
+          "heading": false
+        },
+        {
+          "term": "jn2j",
+          "heading": false
+        }
+      ],
+      "extract": "THE COLORED JONES POLYNOMIAL FOR DOUBLE TWIST KNOTS 9 (ii) σj+1 + σp′+1−j =    2 if j ≡0 (mod 2m) −2 if j ≡m (mod 2m) 0 otherwise. We now illustrate the computation of a(n) and b1(n) + b2(n) for l = 8p −1 and t = 6p −1. The routine evaluation of X(n) is left to the reader. First, we take m = 2 in Lemmas 2.2 and 2.3 to obtain σj = \u001a 1 if j ≡1, 2 (mod 4) −1 if j ≡0, 3 (mod 4), (2.4) ik =        4(p −k) + 2",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-009"
+      ]
+    },
+    {
+      "id": "page-010",
+      "number": null,
+      "title": "Page 10",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 392,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "σik nik",
+          "heading": false
+        },
+        {
+          "term": "n4j",
+          "heading": false
+        },
+        {
+          "term": "n4p",
+          "heading": false
+        },
+        {
+          "term": "jn2j",
+          "heading": false
+        }
+      ],
+      "extract": "10 JEREMY LOVEJOY AND ROBERT OSBURN − 4p−1 X k=p+1 nik−1 = − 2p X k=p+1 nik−1 + 3p X k=2p+1 nik−1 + 4p−1 X k=3p+1 nik−1 ! = − p X j=1 (n4j−2 + n4j−4) + p−1 X j−1 n4j−1 ! , (2.10) 4p−1 X k=p+1 1 + σik 2 nik = 3p X k=2p+1 nik = p X j=1 n4j−3, (2.11) 1 2 4p−2 X j=1 (σj+1 −σj)nj = 2p−1 X j=1 (−1)jn2j (2.12) and b2(n) = 3p−1 X k=p+1 1 + σik 2 nik−1 = 3p−1 X k=2p+1 nik−1 = p X j=2 n4j−4. (2.13) By (2.9)–(2.13), the sum of",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-010"
+      ]
+    },
+    {
+      "id": "page-011",
+      "number": null,
+      "title": "Page 11",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 252,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n4j",
+          "heading": false
+        },
+        {
+          "term": "n4p",
+          "heading": false
+        },
+        {
+          "term": "nik",
+          "heading": false
+        },
+        {
+          "term": "reindexing",
+          "heading": false
+        },
+        {
+          "term": "eighth",
+          "heading": false
+        }
+      ],
+      "extract": "THE COLORED JONES POLYNOMIAL FOR DOUBLE TWIST KNOTS 11 + p X j=1 j X j′=1 (n4j−1 −n4j−2)(n4j′−3 −n4j′−4) − p X j=1 j X j′=2 (n4j−3 −n4j−4)(n4j′−4 −n4j′−5). (2.15) Finally, using (2.4) and (2.5), then reindexing and simplifying gives the eighth term in b1(n), 4p−1 X j=1 σj \u0010r′(j) X k=1 (nik −nik−1) \u0011 nj−1 = p X j=1 σ4j−3 \u00103p−j+1 X k=1 (nik −nik−1) \u0011 n4j−4 + p X j=1 σ4j−2 \u0010p−j+1 X k=1 (nik −nik−1) \u0011 n4j−3 + p−1 X j=1",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-011"
+      ]
+    },
+    {
+      "id": "page-012",
+      "number": null,
+      "title": "Page 12",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n4j",
+          "heading": false
+        },
+        {
+          "term": "n2mj",
+          "heading": false
+        },
+        {
+          "term": "n4p",
+          "heading": false
+        },
+        {
+          "term": "jnmj",
+          "heading": false
+        }
+      ],
+      "extract": "12 JEREMY LOVEJOY AND ROBERT OSBURN 1 + n4p−1 + p X j=1 (n4j−3 −n4j−2 −n4j−1) − p X j=1 j X j′=2 (n4j−2 −n4j−3)(n4j′−5 −n4j′−6) − p X j=1 j X j′=2 (n4j−2 −n4j−3)(n4j′−4 −n4j′−5) + p X j=1 j X j′=1 (n4j−1 −n4j−2)(n4j′−3 −n4j′−4) − p X j=1 j X j′=2 (n4j−3 −n4j−4)(n4j′−4 −n4j′−5) + p X j=1 j−1 X j′=1 (n4j′−1 −n4j′−3) + p X j=j′ (n4j′−1 −n4j′−4) ! n4j−4 + p X j=1 p X j′=j (n4j′−2 −n4j′−3) ! n4j−3 − p−1 X j=1 p X j′=j+1",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-012"
+      ]
+    },
+    {
+      "id": "page-013",
+      "number": null,
+      "title": "Page 13",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 180,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n2mj",
+          "heading": false
+        },
+        {
+          "term": "n2mp",
+          "heading": false
+        },
+        {
+          "term": "nn2mp",
+          "heading": false
+        }
+      ],
+      "extract": "THE COLORED JONES POLYNOMIAL FOR DOUBLE TWIST KNOTS 13 + p X j=1 p X j′=j (n2mj′−m −n2mj′−m−1) ! n2mj−m−1 − p−1 X j=1 p X j′=j+1 (n2mj′−1 −n2mj′−2m) + n2mj ! n2mj−1 − m−1 X s=1 p X j=1 j X j′=1 (n2mj′−m+s −n2mj′−m−s) + p X j′=j+1 (n2mj′−m+s−1 −n2mj′−m−s) ! n2mj−m+s−1. (3.2) Also, by (2.1) and (2.2) X(n) = (−1)n2mp−1q−Nn2mp−1 (q)N−1(q)n2mp−1 (q)N−n2mp−1−1 × p Y j=1 (−1)n2mj−1−n2mj−mq 1 2 m P s=1",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-013"
+      ]
+    },
+    {
+      "id": "page-014",
+      "number": null,
+      "title": "Page 14",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 221,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n2mj mn2mj",
+          "heading": false
+        },
+        {
+          "term": "n2mi",
+          "heading": false
+        },
+        {
+          "term": "nini",
+          "heading": false
+        },
+        {
+          "term": "mninj",
+          "heading": false
+        }
+      ],
+      "extract": "14 JEREMY LOVEJOY AND ROBERT OSBURN − m−1 X s=1 p X j=1 j X j′=1 (n2mj′−m+s −n2mj′−m−s) + p X j′=j+1 (n2mj′−m+s−1 −n2mj′−m−s) ! n2mj−m+s−1 + p X j=1 \"\u0012n2mj−2m+1 + 1 2 \u0013 −n2mj−2m+1n2mj−2m + \u0012n2mj−m−1 2 \u0013 −n2mj−mn2mj−m−1 + 1 2 m−1 X s=2 (n2mj−2m+s −n2mj−2m+s−1)(n2mj−2m+s −n2mj−2m+s−1 + 1) # (3.4) equals X 1≤i<j≤2mp−1 m∤i ϵi,j,mninj − 2mp−2 X i=1 nini+1 (3.5) where ϵi,j,m is given by (1.5). Here, we have used the fact",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-014"
+      ]
+    },
+    {
+      "id": "page-015",
+      "number": null,
+      "title": "Page 15",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 271,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n2mj mn2mj",
+          "heading": false
+        },
+        {
+          "term": "n2mj kn2mj",
+          "heading": false
+        },
+        {
+          "term": "telescopes",
+          "heading": false
+        },
+        {
+          "term": "simpliﬁcation",
+          "heading": false
+        },
+        {
+          "term": "cancels",
+          "heading": false
+        }
+      ],
+      "extract": "THE COLORED JONES POLYNOMIAL FOR DOUBLE TWIST KNOTS 15 L7 + L8 = p−1 X j=0 m−1 X i=1 n2 2mj+i − p−1 X j=0 m X i=1 n2mj+i−1n2mj+i. (3.9) Next, observe that both L1 and L2 simplify as the sum on k′ telescopes in each case. Thus, L1 = m−1 X k=1 p X j=1 j X j′=1 (n2mj−k −n2mj−k−1)(n2mj′−2m+k −n2mj′−2m) (3.10) L2 = − m X k=1 p X j=1 j X j′=1 (n2mj−m−k+1 −n2mj−m−k)(n2mj′−2m −n2mj′−3m+k−1). (3.11) Now, splitting L1 into",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-015"
+      ]
+    },
+    {
+      "id": "page-016",
+      "number": null,
+      "title": "Page 16",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 363,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n2mj sn2mj",
+          "heading": false
+        },
+        {
+          "term": "n2mj kn2mj",
+          "heading": false
+        },
+        {
+          "term": "n2mj mn2mj",
+          "heading": false
+        },
+        {
+          "term": "n2mjn2mj",
+          "heading": false
+        },
+        {
+          "term": "line",
+          "heading": false
+        }
+      ],
+      "extract": "16 JEREMY LOVEJOY AND ROBERT OSBURN then this cancels with the fourth sum of (3.12) and the second sum of (3.13). Putting all of this together and expanding sums we have that (3.4) equals m−1 X k=1 p X j=1 j X j′=1 n2mj−kn2mj′−2m+k − m−1 X k=1 p X j=1 j X j′=1 n2mj−k−1n2mj′−2m+k + m X k=1 p X j=1 j X j′=1 n2mj−m−k+1n2mj′−3m+k−1 − m X k=1 p X j=1 j X j′=1 n2mj−m−kn2mj′−3m+k−1 + m−1 X s=1 p X j=1 j−1 X j′=1",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-016"
+      ]
+    },
+    {
+      "id": "page-017",
+      "number": null,
+      "title": "Page 17",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 369,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n2mj sn2mj",
+          "heading": false
+        },
+        {
+          "term": "n2mj mn2mj",
+          "heading": false
+        },
+        {
+          "term": "n2mj kn2mj",
+          "heading": false
+        },
+        {
+          "term": "penultimate line",
+          "heading": false
+        },
+        {
+          "term": "line cancels",
+          "heading": false
+        },
+        {
+          "term": "sixth line",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst sum",
+          "heading": false
+        }
+      ],
+      "extract": "THE COLORED JONES POLYNOMIAL FOR DOUBLE TWIST KNOTS 17 We now remove the k = m term from the second sum in (3.15) and note that what remains cancels with the second sum in the penultimate line of (3.14). In total, this yields that (3.4) equals m−1 X k=1 p X j=1 j X j′=1 n2mj−kn2mj′−2m+k − m−1 X k=1 p X j=1 j X j′=1 n2mj−k−1n2mj′−2m+k + m X k=1 p X j=1 j−1 X j′=1 n2mj−m−k+1n2mj′−m+k−1 − p X j=1 j−1 X j′=1",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-017"
+      ]
+    },
+    {
+      "id": "page-018",
+      "number": null,
+      "title": "Page 18",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 312,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n2mj sn2mj",
+          "heading": false
+        },
+        {
+          "term": "line",
+          "heading": false
+        },
+        {
+          "term": "jnmj",
+          "heading": false
+        },
+        {
+          "term": "mod",
+          "heading": false
+        },
+        {
+          "term": "jeremy",
+          "heading": false
+        }
+      ],
+      "extract": "18 JEREMY LOVEJOY AND ROBERT OSBURN + m−1 X s=1 p X j=1 j−1 X j′=1 n2mj′−sn2mj−2m+s−1 + m−1 X s=1 p X j=1 j X j′=1 n2mj′−m−sn2mj−m+s−1 − m−1 X s=1 p X j=1 j−1 X j′=1 n2mj′−2m+sn2mj−2m+s−1 − m−1 X s=1 p X j=1 j−1 X j′=1 n2mj′−m+sn2mj−m+s−1 − m X s=2 p X j′=1 j−1 X j′=1 n2mj′−2m+s−1n2mj−2m+s−1 − m X s=2 p−1 X j=1 p X j′=j+1 n2mj−m+s−1n2mj′−m+s−1 − m−1 X s=1 p X j=1 n2mj−m+sn2mj−m+s−1 − p−1 X j=0 m X i=0",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-018"
+      ]
+    },
+    {
+      "id": "page-019",
+      "number": null,
+      "title": "Page 19",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 191,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n2mj",
+          "heading": false
+        },
+        {
+          "term": "n2mp",
+          "heading": false
+        },
+        {
+          "term": "nn2mp",
+          "heading": false
+        },
+        {
+          "term": "n2mpq",
+          "heading": false
+        }
+      ],
+      "extract": "THE COLORED JONES POLYNOMIAL FOR DOUBLE TWIST KNOTS 19 − p X j=1 p X j′=j (n2mj′−m+1 −n2mj′−m) ! n2mj−m − m−1 X s=1 p X j=1 j−1 X j′=1 (n2mj′−m+s −n2mj′−m−s) + p X j′=j (n2mj′−m+s+1 −n2mj′−m−s) ! n2mj−m+s. (3.19) Also, by (2.1) and (2.2) X(n) = (−1)n2mpq−Nn2mp (q)N−1(q)n2mp (q)N−n2mp−1 × p Y j=1 (−1)n2mj−n2mj−mq 1 2 m P s=1 (n2mj−2m+s−n2mj−2m+s−1)(n2mj−2m+s−n2mj−2m+s−1+1) 2m Y s=1 (q)n2mj−2m+s−n2mj−2m+s−1 . (3.20)",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-019"
+      ]
+    },
+    {
+      "id": "page-020",
+      "number": null,
+      "title": "Page 20",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 278,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n2mj",
+          "heading": false
+        },
+        {
+          "term": "ˆli",
+          "heading": false
+        },
+        {
+          "term": "telescopes",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst sum",
+          "heading": false
+        },
+        {
+          "term": "double sum",
+          "heading": false
+        }
+      ],
+      "extract": "20 JEREMY LOVEJOY AND ROBERT OSBURN + 1 2 m−1 X s=2 (n2mj−2m+s −n2mj−2m+s−1)(n2mj−2m+s −n2mj−2m+s−1 + 1) # (3.21) equals X 1≤i<j≤2mp m∤i ∆i,j,mninj (3.22) where ∆i,j,m is given by (1.10). Here, we have used (3.7), (3.8) and the fact that p X j=1 \"m−1 X i=0 n2mj−2m+i − 2m−1 X i=m+1 n2mj−2m+i # = 2mp−1 X i=1 βi,mni + p−1 X i=1 n2mi (3.23) where βi,m is given by (1.11). We now sketch how to go from (3.21) to (3.22).",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-020"
+      ]
+    },
+    {
+      "id": "page-021",
+      "number": null,
+      "title": "Page 21",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 308,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n2mj sn2mj",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst sum",
+          "heading": false
+        },
+        {
+          "term": "line",
+          "heading": false
+        },
+        {
+          "term": "kn2mj",
+          "heading": false
+        }
+      ],
+      "extract": "THE COLORED JONES POLYNOMIAL FOR DOUBLE TWIST KNOTS 21 m−1 X k=1 p X j=1 j X j′=1 n2mj−k+1n2mj′−2m+k − m−1 X k=1 p X j=1 j X j′=1 n2mj−kn2mj′−2m+k + m−1 X s=1 p X j=2 j X j′=2 n2mj−m−s+1n2mj′−3m+s − m−1 X s=1 p X j=2 j X j′=2 n2mj−m−sn2mj′−3m+s + m−1 X s=1 p X j=1 j X j′=1 n2mj′−sn2mj−2m+s − m−1 X s=1 p X j=1 j X j′=1 n2mj′−2m+sn2mj−2m+s + m−1 X s=1 p X j=1 p X j′=j+1 n2mj′−sn2mj−2m+s − m−1 X s=1 p X j=1 p X j′=j+1",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-021"
+      ]
+    },
+    {
+      "id": "page-022",
+      "number": null,
+      "title": "Page 22",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 410,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n2mj sn2mj",
+          "heading": false
+        },
+        {
+          "term": "fourth line",
+          "heading": false
+        },
+        {
+          "term": "torus knots",
+          "heading": false
+        },
+        {
+          "term": "mod",
+          "heading": false
+        },
+        {
+          "term": "term",
+          "heading": false
+        },
+        {
+          "term": "generalized",
+          "heading": false
+        }
+      ],
+      "extract": "22 JEREMY LOVEJOY AND ROBERT OSBURN − m−1 X s=1 p X j=1 p X j′=j n2mj′−m+s+1n2mj−m+s + m−1 X s=1 p X j=1 p X j′=j n2mj′−m−sn2mj−m+s − p−1 X j=0 m X i=2 n2mj+i−1n2mj+i. (3.27) Now, the last line of (3.27) is just the j′ = j term of the fourth line. In the second line, perform the shift j′ →j′ + 1 and start the sum at j = 1. The second sum on this line then cancels with the second sum of penultimate line, except for",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-022"
+      ]
+    },
+    {
+      "id": "page-023",
+      "number": null,
+      "title": "Page 23",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 571,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum modularity",
+          "heading": false
+        },
+        {
+          "term": "torus knots",
+          "heading": false
+        },
+        {
+          "term": "quantum modular",
+          "heading": false
+        },
+        {
+          "term": "congruences",
+          "heading": false
+        },
+        {
+          "term": "theta series",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "hikami",
+          "heading": false
+        },
+        {
+          "term": "modular forms",
+          "heading": false
+        }
+      ],
+      "extract": "THE COLORED JONES POLYNOMIAL FOR DOUBLE TWIST KNOTS 23 the duality in Theorem 1.3, much more is known in the case of torus knots. For example, the functions Ft(q) have explicit quantum modular properties which were given by Hikami [15]. For the case of torus knots T(3,2t), see Corollary 4.1 in [9]. As for (4.2), it can be written in terms of indeﬁnite ternary theta series [18]. It is natural to ask whether the",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-023"
+      ]
+    },
+    {
+      "id": "page-024",
+      "number": null,
+      "title": "Page 24",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 375,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uniﬁed witten-reshetikhin-turaev",
+          "heading": false
+        },
+        {
+          "term": "lovejoy",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "witten-reshetikhin-turaev invariants",
+          "heading": false
+        },
+        {
+          "term": "twist knots",
+          "heading": false
+        },
+        {
+          "term": "osburn",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "theory ramiﬁcations",
+          "heading": false
+        }
+      ],
+      "extract": "24 JEREMY LOVEJOY AND ROBERT OSBURN [16] K. Hikami, Asymptotics of the colored Jones polynomial and the A-polynomial, Nuclear Phys. B 773 (2007), no. 3, 184–202. [17] K. Hikami, Hecke type formula for uniﬁed Witten-Reshetikhin-Turaev invariants as higher-order mock theta functions, Int. Math. Res. Not. IMRN 2007, no. 7, Art. ID rnm 022, 32pp. [18] K. Hikami, J. Lovejoy, Torus knots and quantum modular forms, Res.",
+      "extractCut": true,
+      "blocks": [
+        "library/cjdoubletwistfinal/blocks/prose-page-024"
+      ]
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "n2mj sn2mj",
+      "heading": false
+    },
+    {
+      "term": "n2mj mn2mj",
+      "heading": false
+    },
+    {
+      "term": "n2mj kn2mj",
+      "heading": false
+    },
+    {
+      "term": "jeremy lovejoy",
+      "heading": false
+    },
+    {
+      "term": "σik nik",
+      "heading": false
+    },
+    {
+      "term": "robert osburn",
+      "heading": false
+    },
+    {
+      "term": "n4j",
+      "heading": false
+    },
+    {
+      "term": "twist knots",
+      "heading": true
+    },
+    {
+      "term": "double twist",
+      "heading": true
+    },
+    {
+      "term": "colored jones",
+      "heading": false
+    },
+    {
+      "term": "σik σip",
+      "heading": false
+    },
+    {
+      "term": "double sum",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Double twist knots",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 24,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p23); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 24 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/cjdoubletwistfinal"
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1203.6551v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1203.6551v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Thurston and Jørgensen (see [@Th]) showed that the set of volumes of finite volume orientable complete hyperbolic $3$-manifolds is a closed, non-discrete, well ordered subset of $\\mathbb{R}_{>0}$ of order type $\\omega^\\omega$. Further, the number $N(v)$ of complete orientable hyperbolic $3$-manifolds of volume $v$ is finite for all $v\\in \\mathbb{R}_{>0}$. In this paper we study how $N(v)$ varies with $v$.\n\nThere has been much work on determining the lowest volumes in various classes of hyperbolic 3-manifolds. The work of Gabai-Meyerhoff-Milley ([@GMM1; @GMM2; @M]) shows that the Weeks manifold",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6551v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1203.6551v1  [math.GT]  29 Mar 2012\nOn the number of hyperbolic 3-manifolds of a given volume\nCraig Hodgson and Hidetoshi Masai\nAbstract. The work of Jørgensen and Thurston shows that there is a ﬁnite\nnumber N(v) of orientable hyperbolic 3-manifolds with any given volume v.\nWe show that there is an inﬁnite sequence of closed orientable hyperbolic 3-\nmanifolds, obtained by Dehn ﬁlling on the ﬁgure eight knot complement, that\nare uniquely determined by their volumes. This gives a sequence of distinct\nvolumes xi converging to the volume of the ﬁgure eight knot complement with\nN(xi) = 1 for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6551v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hyperbolic Dehn fillings determined by their volumes",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-2-hyperbolic-dehn-fillings-determined-by-their-v.md",
+      "narrative": null,
+      "content": "[]{#cusped_hyp label=\"cusped_hyp\"}\n\nLet $M$ be a cusped hyperbolic 3-manifold and let $T$ be a horospherical torus cross section of one of the cusps of $M$. Choose an oriented basis for $H_1(T;\\mathbb{Z}) \\cong \\mathbb{Z}^2$, called the \"meridian\" and \"longitude\" for $T$, and let $M(a,b)$ be the result of Dehn filling along the simple closed curve with homology class $(a,b) \\in H_1(T;\\mathbb{Z}) \\cong \\mathbb{Z}^2$.\n\nLet $A$ denote the area of $T$ and $L(a,b)$ the length of the geodesic on $T$ with homology class $(a,b)$. Then we will study the quadratic form $$\\label{eq1}\nQ(a,b) = {L(a,b)^2 \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6551v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dehn filling on the figure eight knot complement and its sister",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-3-dehn-filling-on-the-figure-eight-knot-compleme.md",
+      "narrative": null,
+      "content": "In this section we study the closed hyperbolic manifolds obtained by Dehn filling on the figure eight knot complement and its sister, denoted $m004$ and $m003$ respectively in SnapPea notation. We will use the ideas described in the previous section to prove the following.\n\n::: thm\n[]{#closed_unique label=\"closed_unique\"} There is an infinite sequence of hyperbolic Dehn fillings $M(a_i,b_i)$ on the figure eight knot complement $M=m004$ with $a_i^2+12b_i^2 \\to  \\infty$ such that if $N$ is any orientable hyperbolic 3-manifold with $\\text{Vol} (N)=\\text{Vol} (M(a_i,b_i))$ then $N$ is homeomorphic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6551v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dehn filling on the Whitehead link complement and its sister",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "../sections/sec-003-4-dehn-filling-on-the-whitehead-link-complement.md",
+      "narrative": null,
+      "content": "We now study the 1-cusped hyperbolic 3-manifolds obtained by Dehn filling on the Whitehead link complement and its sister, the complement of the $(-2,3,8)$-pretzel link, denoted $m129$ and $m125$ respectively in SnapPea notation. Note that each of these manifolds has a symmetry interchanging the cusps, so it suffices to consider Dehn fillings on cusp 0. See also [@HMW; @NR] and [@AD] for detailed discussions of the geometry and topology of these manifolds and their Dehn fillings.\n\nThe main result of this section is the following:\n\n::: thm\n[]{#cusped_unique label=\"cusped_unique\"} There is an in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6551v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Higher order terms in the Neumann-Zagier asymptotic formula",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-004-5-higher-order-terms-in-the-neumann-zagier-asymp.md",
+      "narrative": null,
+      "content": "[]{#degree4_NZ label=\"degree4_NZ\"}\n\nLet $M$ be a cusped hyperbolic 3-manifold with horospherical torus cross section $T$, and chose meridian and longitude generators for $H_1(T)=\\mathbb{Z}^2$ as in section [\\[cusped_hyp\\]](#cusped_hyp){reference-type=\"ref\" reference=\"cusped_hyp\"}. Let $u,v$ denote the logarithms of the holonomies of the meridian and longitude respectively, chosen so that $u=v=0$ at the complete hyperbolic structure on $M$. Then $-v$ has a power series expansion $$\\label{eq21}\n -v = \\sum_{n=1}^\\infty   c_n u^n ,$$ where $c_n=0$ for all even $n$ and $c_1 = -\\tau$ where $\\tau$ is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6551v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hyperbolic graphs with parabolic meridians",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "../sections/sec-005-6-hyperbolic-graphs-with-parabolic-meridians.md",
+      "narrative": null,
+      "content": "[]{#sec.Vol label=\"sec.Vol\"} In this section, we recall some results on hyperbolic graphs in $S^3$ with parabolic meridians; for details see [@HHMP] and [@Mas]. In this paper, spatial graphs may contain link components, and we regard every link as a spatial graph without vertices. We use the word *link* to emphasize that the graph does not have any vertices. Let $G$ be a spatial trivalent graph in $S^3$ and let $N$ be a manifold obtained from $S^3\\setminus G$ by removing an open regular neighbourhood of each vertex. Then $N$ is a manifold with boundary consisting of thrice punctured spheres, o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6551v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Associated circle packings and cusp moduli",
+      "pageStart": 18,
+      "pageEnd": 21,
+      "target": "../sections/sec-006-7-associated-circle-packings-and-cusp-moduli.md",
+      "narrative": null,
+      "content": "[]{#pack label=\"pack\"} In this section we study the circle packing corresponding to the hyperbolic graph $W_n$ shown in Figure [1](#fig.graphW){reference-type=\"ref\" reference=\"fig.graphW\"}.\n\n![Graph $W_n$ with $2n+2$ vertices](graphW2.eps){#fig.graphW}\n\nThe two isometric polyhedra in the decomposition of the complement of $W_n$ described in section [\\[sec.Vol\\]](#sec.Vol){reference-type=\"ref\" reference=\"sec.Vol\"} are obtained by gluing together $n$ regular ideal octahedra (see Figure [2](#fig.graphW2){reference-type=\"ref\" reference=\"fig.graphW2\"} (right)). Therefore the volume of its complemen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6551v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Construction of different manifolds sharing the same volume",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-007-8-construction-of-different-manifolds-sharing-th.md",
+      "narrative": null,
+      "content": "[]{#const label=\"const\"} We start with the graph with $2n$ vertices shown in Figure [1](#fig.source){reference-type=\"ref\" reference=\"fig.source\"}. This graph is obtained by applying the gluing move in Lemma [\\[Vol\\]](#Vol){reference-type=\"ref\" reference=\"Vol\"} $n+1$ times to $W_{2n}$.\n\n![Starting point: graph with $2n$ vertices (represented by circles)](source1_1.eps){#fig.source}\n\nFirst, we label every remaining pair of thrice punctured spheres by an element of $\\{0,1\\}$. For each such pair we apply Lemma [\\[Vol\\]](#Vol){reference-type=\"ref\" reference=\"Vol\"} as follows. We glue the pair of th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6551v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some Open Questions",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-008-9-some-open-questions.md",
+      "narrative": null,
+      "content": "1.  Find additional exact values of $N(v)$ or upper bounds on $N(v)$.\n\n2.  (Gromov [@Gr], 1979) Is $N(v)$ locally bounded?\n\n    This reduces to the question of whether the number of manifolds with a given volume $v$ is uniformly bounded amongst all hyperbolic Dehn fillings on any given cusped hyperbolic 3-manifold.\n\n3.  What is the largest volume $< v_\\omega= 2.029883\\ldots$ of a closed hyperbolic 3-manifold that does not arise from Dehn filling of $m004$ or $m003$? (This would allow us to make the result of Theorem [\\[closed_unique\\]](#closed_unique){reference-type=\"ref\" reference=\"closed_uni",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.6551v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-009-references.md",
+      "narrative": null,
+      "content": "[1] J. W. Aaber and N. M. Dunﬁeld, Closed surface bundles of least volume, Algebr. Geom.\nTopol. 10 (2010), 2315–2342.\n[2] C. Adams, Thrice-punctured spheres in hyperbolic 3-manifolds, Trans. Amer. Math. Soc. 287\n(1985), no. 2, 645-656.\n[3] I. Agol, Bounds on exceptional Dehn ﬁlling. Geom. Topol. 4 (2000), 431–449.\n[4] I. Agol, The minimal volume orientable hyperbolic 2-cusped 3-manifolds. Proc. Amer. Math.\nSoc. 138 (2010), 3723–3732.\n[5] M. Belolipetsky, T. Gelander, A. Lubotzky and A. Shalev, Counting arithmetic lattices and\nsurfaces, Annals of Math. (2) 172 (2010), no. 3, 2197–2221.\n[6] M. B",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

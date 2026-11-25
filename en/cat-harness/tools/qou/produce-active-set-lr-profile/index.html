@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="../../../../../assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="../../../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  
+
+  
+
+  <script src="../../../../../assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+
+
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>produce-active-set-lr-profile — Tool | Quantum Observable Universe</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="produce-active-set-lr-profile — Tool" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Produce active-set-lr-scaling-profile.witness.json" />
+<meta name="twitter:description" property="og:description" content="Produce active-set-lr-scaling-profile.witness.json" />
+<link rel="canonical" href="https://litlfred.github.io/qou/en/cat-harness/tools/qou/produce-active-set-lr-profile/" />
+<meta property="og:url" content="https://litlfred.github.io/qou/en/cat-harness/tools/qou/produce-active-set-lr-profile/" />
+<meta property="og:site_name" content="Quantum Observable Universe" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="produce-active-set-lr-profile — Tool" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Produce active-set-lr-scaling-profile.witness.json","headline":"produce-active-set-lr-profile — Tool","url":"https://litlfred.github.io/qou/en/cat-harness/tools/qou/produce-active-set-lr-profile/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <script type="application/json" id="fa-site-scheme">{"scheme": "dark"}</script><!-- fa-first-paint:begin -->
+<script>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+<style>html{background-color:#27262b}html[data-fa-scheme="light"]{background-color:#ffffff}</style>
+<!-- fa-first-paint:end --><meta name="fa-render-regions" content="1">
+<script>document.documentElement.setAttribute("data-fa-render","pending");</script><style>
+  .bpmn-figure {
+    overflow-x: auto;
+    background: #fff;
+    border: 1px solid rgba(128, 128, 128, 0.35);
+    border-radius: 6px;
+    margin: 1em 0 0.4em;
+  }
+  .bpmn-figure img {
+    display: block;
+    width: 100%;
+    min-width: 1200px;
+    max-width: none;
+  }
+  .bpmn-source {
+    margin-top: 0;
+    font-size: 0.75rem;
+  }
+</style><script type="application/json" id="fa-translation-meta">{
+  "lang": "en",
+  "translationStatus": "",
+  "translationSource": "",
+  "supportedLocales": ["ar","zh","en","fr","ru","es"],
+  "availableLocales": null,
+  "translationQa":{
+    "key": "page.translation",
+    "slug": "en-cat-harness-tools-qou-produce-active-set-lr-profile-index",
+    "src": "../../../../../assets/qa/en-cat-harness-tools-qou-produce-active-set-lr-profile-index/page.translation.json",
+    "index": "../../../../../assets/qa/en-cat-harness-tools-qou-produce-active-set-lr-profile-index/qa-index.json",
+    "list": "../../../../../assets/qa/translation-qa-pages.json"
+  },
+  "sweep":{
+    "absent": "qou publishes no translation QA sweep on this site",
+    "run": false,
+    "sweptAt": "",
+    "totalPages": 0,
+    "pagesWithTranslations": 0,
+    "complete": false
+  },
+  "statusSrc":"../../../../../assets/translation-status/index.json",
+  "reviewSrc":"../../../../../assets/translation-status/review.json"
+}</script><script type="application/json" id="fa-navbar-row" data-fa-row-src="harness-data"></script><script type="application/json" id="fa-site-links">{"kg":"https://litlfred.github.io/folio-assistant/qou/","jsonld":"https://litlfred.github.io/folio-assistant/qou/qou.jsonld","source":"https://github.com/litlfred/qou"}</script><meta name="fa-site-index-src" content="../../../../../assets/harness/site.json">
+<meta name="fa-todo-src" content="../../../../../assets/todos/index.json"><meta name="fa-todo-graph" content="../../../../../todos.jsonld"><meta name="fa-zoom-src" content="../../../../../assets/semantic-zoom.json"><meta name="fa-tiles" content="" data-fa-src="harness-data">
+<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;]"><meta name="fa-baseurl" content="../../../../.."><meta name="fa-staging" content=""><meta name="fa-search-index" content="">
+
+<link rel="alternate" type="application/ld+json" href="https://litlfred.github.io/qou/tools/produce-active-set-lr-profile.jsonld"><meta name="fa-beans-src" content="../../../../../assets/beans/index.json"><meta name="fa-processes-src" content="../../../../../subgraph/index.jsonld"><meta name="fa-build-src" content="../../../../../build.json"><link rel="stylesheet" href="../../../../../assets/css/navbar-row.css?v=263225e79ed9">
+<link rel="stylesheet" href="../../../../../assets/css/docs-ui.css?v=4c7265cca407"><link rel="stylesheet" href="../../../../../assets/css/narrow-viewport.css?v=173ef819dbf2"><link rel="stylesheet" href="../../../../../assets/css/themes.css?v=5c199f8420d3"><link rel="stylesheet" href="../../../../../assets/css/uml.css?v=e677f91cbf66"><link rel="stylesheet" href="../../../../../assets/css/avatars.css?v=996b3ffe2ab3"><script type="application/json" id="fa-declared-kinds">["attestations","beans","code","computation-witness","folio","fsh-guts","lake-cache","lean","library","mn-chi-cache","processes","qa","references","tools","trace-cache","typologies","wheel-cache","xbot-relaxation-ckpt"]</script><script src="../../../../../assets/js/harness-data.js" defer></script><script src="../../../../../assets/js/kg-render.js" defer></script><script src="../../../../../assets/js/navbar-row.js?v=fb3cd5c0d28c" defer></script>
+<script src="../../../../../assets/js/docs-ui.js?v=cae1ad7ba8e7" defer></script><script src="../../../../../assets/js/edit-links.js?v=7b072444cbb5" defer></script><script src="../../../../../assets/js/translation-review.js?v=3ab638979d22" defer></script><script src="../../../../../assets/js/code-highlight.js?v=0f94772226c3" defer></script><style>
+  .folio-landing { position: relative; margin: 0 0 2rem; }
+
+  /* WHAT IS LEFT HERE, AND WHY IT IS SO LITTLE.
+     `landing.html` emits exactly one folio-landing class —
+     `folio-landing folio-landing--plain` — the no-stickies fallback, which
+     renders the description and no art. The art path moved to the sticky
+     board (`fa-sticky--backdrop` in docs-ui.css), which composites text into
+     the picture through a declared `textRegion` and a scrim.
+
+     So this block used to carry fourteen selectors of which ELEVEN matched
+     nothing: every rule reaching for `folio-landing__art`,
+     `folio-landing__text` or `folio-landing--no-region`. Measured before they
+     were cut — those three classes appear in no markup in this repository and
+     on none of the 331 published pages that were inlining the CSS for them.
+     CSS has no error for a selector that matches nothing, which is the same
+     silence that let `.fa-sticky--backdrop > .fa-sticky-art` ship wrong.
+
+     The reasoning did not go with them. The blend-direction argument for the
+     fade is now at `.fa-sticky--backdrop::before`, where a scrim replaces it;
+     the region, overflow and breakpoint-parity lessons were already
+     re-derived and better stated on `.fa-landing-sticky--fixed`. What is NOT
+     carried over is the `cqw` container-query sizing: the successor scales
+     through `--fa-text-scale` rather than container queries, so a note about
+     `container-type` not being its own query container would be advice about
+     a mechanism nothing here uses. Bean `alox`, issue #873. */
+  .folio-landing--plain {
+    position: static; width: auto; height: auto; color: inherit;
+  }
+  .folio-landing--plain p { font-size: inherit; font-weight: inherit; }
+</style>
+
+<link rel="stylesheet" href="../../../../../assets/css/navbar.css"><script src="../../../../../assets/navbar/rail-2dtsu7qepqi.js" defer></script><script src="../../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../../assets/page-layout.js" defer data-fa-page-layout></script><script src="../../../../../assets/draft-banner.js" defer data-fa-page-layout></script><noscript data-fa-draft-noscript><link rel="stylesheet" href="../../../../../assets/draft-banner-noscript.css"></noscript><meta name="fa-pinned-data" content="../../../../.."></head>
+
+<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../../..">{"data":"rail-2dtsu7qepqi","here":"/en/cat-harness/tools/qou/produce-active-set-lr-profile/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#skills-it-satisfies","label":"Skills it satisfies","children":[{"href":"#compute-integration-watcher","label":"compute-integration-watcher","depth":1}],"fold":"1 sub-section"},{"href":"#inputs-and-outputs","label":"Inputs and outputs"},{"href":"#processes-and-tasks","label":"Processes and tasks"},{"href":"#how-it-is-deployed-and-reached","label":"How it is deployed and reached"},{"href":"#what-it-is-made-of","label":"What it is made of"},{"href":"#linked-data","label":"Linked data"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">Quantum Observable Universe</a></nav>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header fa-site-bar fa-page-bar"><a class="fa-page-bar-home" href="../../../../../">Quantum Observable Universe</a>
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Quantum Observable Universe" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search Quantum Observable Universe</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+<span class="fa-page-bar-locale" data-fa-slot="locale"></span></div>
+
+    <div class="main-content-wrap">
+      
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <script type="application/ld+json">{"@context":"https://litlfred.github.io/qou/qou.context.jsonld","@id":"https://litlfred.github.io/qou/tools/produce-active-set-lr-profile.jsonld","@type":"https://litlfred.github.io/cat-harness/v0/ns/Tool","partOf":"https://litlfred.github.io/qou/qou.jsonld","name":"produce-active-set-lr-profile","title":"Produce active-set-lr-scaling-profile.witness.json","description":"Run the computation `computations/active_set_lr_profile.py`, which writes `computations/active-set-lr-scaling-profile.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/mass-theory/active-set-trace-concentration.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.","install":{"none":true},"invoke":{"shell":"python3 -u computations/active_set_lr_profile.py"},"io":{"inputs":[],"outputs":[{"name":"active-set-lr-scaling-profile","schema":"https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath","description":"`computations/active-set-lr-scaling-profile.witness.json`, a computation-witness node."}]},"satisfies":["compute-integration-watcher"],"requirements":{"runtime":["python3"],"network":false},"downstream":{"output":"computations/active-set-lr-scaling-profile.witness.json","inputs":["computations/active_set_lr_profile.py"],"judgedAt":"checkout"}}</script>
+
+<style>.cd { max-width: none; height: auto; display: block; } .cd-box { fill: var(--fa-uml-schema, #e9edf3); stroke: var(--fa-uml-edge, #1b2432); stroke-width: 1; } .cd-box.cd-skill { fill: var(--fa-uml-scenario, #e8f0ee); } .cd-box.cd-sel { stroke: #2f5d9e; stroke-width: 2.2; } .cd-box.cd-ext { fill: var(--fa-uml-other, #f4f4f1); stroke-dasharray: 2 3; } .cd-box.cd-und { fill: var(--fa-uml-other, #f4f4f1); stroke-dasharray: 5 4; } .cd-t { fill: var(--fa-uml-edge, #1b2432); font: 600 12px ui-monospace, Menlo, Consolas, monospace; } .cd-st { fill: #4a5568; font: 10px ui-monospace, Menlo, Consolas, monospace; } .cd-f { fill: var(--fa-uml-edge, #1b2432); font: 11px ui-monospace, Menlo, Consolas, monospace; } .cd-c { fill: #4a5568; } .cd-k { fill: #7a3e9d; font-style: italic; } .cd-n-note { fill: #8a4b00; font: italic 11px ui-sans-serif, system-ui, sans-serif; } .cd-e { stroke: var(--fa-uml-edge, #1b2432); fill: none; stroke-width: 1.2; } .cd-e.cd-id { stroke-dasharray: 5 4; } .cd-l { fill: var(--fa-uml-edge, #1b2432); font: 10.5px ui-monospace, Menlo, Consolas, monospace; } .cd-lb { fill: #fbfcfd; } .cd-genhead { fill: #fbfcfd; stroke: var(--fa-uml-edge, #1b2432); stroke-width: 1.2; } .cd-tiphead { fill: none; stroke: var(--fa-uml-edge, #1b2432); stroke-width: 1.3; } .cd-diahead { fill: var(--fa-uml-edge, #1b2432); } .cd-a { cursor: pointer; } .cd-a .cd-ty { fill: #2f5d9e; text-decoration: underline; } .cd-a:hover .cd-t, .cd-a:focus-visible .cd-t { fill: #2f5d9e; text-decoration: underline; } .cd-wrap { overflow-x: auto; background: #fbfcfd; border: 1px solid #d5dbe3; border-radius: 6px; padding: 8px; margin: 8px 0 16px; }</style>
+
+<h1 id="produce-active-set-lr-scaling-profilewitnessjson">
+  
+  
+    <a href="#produce-active-set-lr-scaling-profilewitnessjson" class="anchor-heading" aria-labelledby="produce-active-set-lr-scaling-profilewitnessjson"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Produce active-set-lr-scaling-profile.witness.json
+  
+  
+</h1>
+    
+
+<p>Run the computation <code class="language-plaintext highlighter-rouge">computations/active_set_lr_profile.py</code>, which writes <code class="language-plaintext highlighter-rouge">computations/active-set-lr-scaling-profile.witness.json</code>. Wired from 1 content block(s): <code class="language-plaintext highlighter-rouge">folio/quantum-observable-universe/mass-theory/active-set-trace-concentration.ts</code>. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform’s <code class="language-plaintext highlighter-rouge">witness-parity</code> Tool.</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tool</td>
+      <td><code class="language-plaintext highlighter-rouge">produce-active-set-lr-profile</code></td>
+    </tr>
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://litlfred.github.io/qou/tools/produce-active-set-lr-profile.jsonld"><code class="language-plaintext highlighter-rouge">https://litlfred.github.io/qou/tools/produce-active-set-lr-profile.jsonld</code></a></td>
+    </tr>
+    <tr>
+      <td>part of</td>
+      <td><a href="https://litlfred.github.io/qou/qou.jsonld"><code class="language-plaintext highlighter-rouge">https://litlfred.github.io/qou/qou.jsonld</code></a></td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td><a href="https://litlfred.github.io/cat-harness/v0/ns/Tool"><code class="language-plaintext highlighter-rouge">https://litlfred.github.io/cat-harness/v0/ns/Tool</code></a></td>
+    </tr>
+    <tr>
+      <td>declared by</td>
+      <td><a href="../"><code class="language-plaintext highlighter-rouge">qou</code></a></td>
+    </tr>
+    <tr>
+      <td>invoked</td>
+      <td><code class="language-plaintext highlighter-rouge">shell</code></td>
+    </tr>
+    <tr>
+      <td>qa</td>
+      <td><a href="https://github.com/litlfred/qou/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
+    </tr>
+  </tbody>
+</table></div>
+<h2 id="skills-it-satisfies">
+  
+  
+    <a href="#skills-it-satisfies" class="anchor-heading" aria-labelledby="skills-it-satisfies"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Skills it satisfies
+  
+  
+</h2>
+    
+
+<p>A skill states the capability; this Tool is one way to exercise it. Each skill’s declared input and output contract follows, where it has one.</p>
+<h3 id="compute-integration-watcher">
+  
+  
+    <a href="#compute-integration-watcher" class="anchor-heading" aria-labelledby="compute-integration-watcher"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code class="language-plaintext highlighter-rouge">compute-integration-watcher</code>
+  
+  
+</h3>
+    
+
+<p>Cross-layer wiring auditor — watches for newly-landed formal/analytic improvements (proofs, propositions, lemmas, axiom→theorem upgrades, witness data) on the default branch AND on open PRs, and checks whether each one has been wired into the production compute chain. Complements <code class="language-plaintext highlighter-rouge">compute-audit</code> (which scans for performance/correctness antipatterns inside scripts). Runs in two modes: REACTIVE (watch new commits / PR events) and IDLE-SWEEP (walk all existing content blocks and audit wiring).</p>
+
+<p>Source: <code class="language-plaintext highlighter-rouge">folio-assistant-sci/skills/content/folio-paper-adapter/compute-integration-watcher.md</code>.</p>
+
+<p>Also satisfied by: <a href="../produce-li-2-q-util/"><code class="language-plaintext highlighter-rouge">produce-li-2-q-util</code></a>, <a href="../produce-a-operator-a-operator-extract-at-level/"><code class="language-plaintext highlighter-rouge">produce-a-operator-a-operator-extract-at-level</code></a>, <a href="../produce-all-nuclides-sdp-admissibility-mp/"><code class="language-plaintext highlighter-rouge">produce-all-nuclides-sdp-admissibility-mp</code></a>, <a href="../produce-alpha-em-4pi-fixed-point-solve/"><code class="language-plaintext highlighter-rouge">produce-alpha-em-4pi-fixed-point-solve</code></a>, <a href="../produce-alpha-em-schwinger-ladder-probe/"><code class="language-plaintext highlighter-rouge">produce-alpha-em-schwinger-ladder-probe</code></a>, <a href="../produce-alpha-alpha-em-q-difference-fourier/"><code class="language-plaintext highlighter-rouge">produce-alpha-alpha-em-q-difference-fourier</code></a>, <a href="../produce-alpha-alpha-em-shift-chain/"><code class="language-plaintext highlighter-rouge">produce-alpha-alpha-em-shift-chain</code></a>, <a href="../produce-alpha-alpha-shift-torus/"><code class="language-plaintext highlighter-rouge">produce-alpha-alpha-shift-torus</code></a>, <a href="../produce-atom-level-wedderburn-tower/"><code class="language-plaintext highlighter-rouge">produce-atom-level-wedderburn-tower</code></a>, <a href="../produce-atomic-chirality-residue/"><code class="language-plaintext highlighter-rouge">produce-atomic-chirality-residue</code></a>, <a href="../produce-atomic-tr-m-mpfr-50dps/"><code class="language-plaintext highlighter-rouge">produce-atomic-tr-m-mpfr-50dps</code></a>, <a href="../produce-audits-brundan-kleshchev-audit/"><code class="language-plaintext highlighter-rouge">produce-audits-brundan-kleshchev-audit</code></a>, <a href="../produce-audits-dimq-regularisation-schemes-probe/"><code class="language-plaintext highlighter-rouge">produce-audits-dimq-regularisation-schemes-probe</code></a>, <a href="../produce-b-over-a-evaluator/"><code class="language-plaintext highlighter-rouge">produce-b-over-a-evaluator</code></a>, <a href="../produce-basis-knot-tables/"><code class="language-plaintext highlighter-rouge">produce-basis-knot-tables</code></a>, <a href="../produce-benzene-assembly-spine/"><code class="language-plaintext highlighter-rouge">produce-benzene-assembly-spine</code></a>, <a href="../produce-binding-block-multiplicative/"><code class="language-plaintext highlighter-rouge">produce-binding-block-multiplicative</code></a>, <a href="../produce-binding-depth-stratified-knot-weighted/"><code class="language-plaintext highlighter-rouge">produce-binding-depth-stratified-knot-weighted</code></a>, <a href="../produce-borromean-markov-trace-h-expansion-50dps/"><code class="language-plaintext highlighter-rouge">produce-borromean-markov-trace-h-expansion-50dps</code></a>, <a href="../produce-borromean-axial-coupling/"><code class="language-plaintext highlighter-rouge">produce-borromean-axial-coupling</code></a>, <a href="../produce-bring-chiral-fibre-figure/"><code class="language-plaintext highlighter-rouge">produce-bring-chiral-fibre-figure</code></a>, <a href="../produce-bring-trefoil-cinquefoil-channel/"><code class="language-plaintext highlighter-rouge">produce-bring-trefoil-cinquefoil-channel</code></a>, <a href="../produce-bring-trilog-zeta5-depth-3/"><code class="language-plaintext highlighter-rouge">produce-bring-trilog-zeta5-depth-3</code></a>, <a href="../produce-c-k-beta-decay-witness/"><code class="language-plaintext highlighter-rouge">produce-c-k-beta-decay-witness</code></a>, <a href="../produce-canonical-isospin-pyhecke/"><code class="language-plaintext highlighter-rouge">produce-canonical-isospin-pyhecke</code></a>, <a href="../produce-canonical-mass-table-extended/"><code class="language-plaintext highlighter-rouge">produce-canonical-mass-table-extended</code></a>, <a href="../produce-canonical-mass/"><code class="language-plaintext highlighter-rouge">produce-canonical-mass</code></a>, <a href="../produce-canonical-tr-m-via-branching/"><code class="language-plaintext highlighter-rouge">produce-canonical-tr-m-via-branching</code></a>, <a href="../produce-casimir-d6-qcorrection-structure/"><code class="language-plaintext highlighter-rouge">produce-casimir-d6-qcorrection-structure</code></a>, <a href="../produce-catalan-binding/"><code class="language-plaintext highlighter-rouge">produce-catalan-binding</code></a>, <a href="../produce-ch-bond-writhe-lp/"><code class="language-plaintext highlighter-rouge">produce-ch-bond-writhe-lp</code></a>, <a href="../produce-charm-mass-tower-probe/"><code class="language-plaintext highlighter-rouge">produce-charm-mass-tower-probe</code></a>, <a href="../produce-chi-convention-audit/"><code class="language-plaintext highlighter-rouge">produce-chi-convention-audit</code></a>, <a href="../produce-chi-sym-alt-closed-form/"><code class="language-plaintext highlighter-rouge">produce-chi-sym-alt-closed-form</code></a>, <a href="../produce-chirality-avg-content/"><code class="language-plaintext highlighter-rouge">produce-chirality-avg-content</code></a>, <a href="../produce-cl-n-l-value-decomposition/"><code class="language-plaintext highlighter-rouge">produce-cl-n-l-value-decomposition</code></a>, <a href="../produce-cl3-zeta5-orbit-sum/"><code class="language-plaintext highlighter-rouge">produce-cl3-zeta5-orbit-sum</code></a>, <a href="../produce-cl3-zeta5-pslq-search/"><code class="language-plaintext highlighter-rouge">produce-cl3-zeta5-pslq-search</code></a>, <a href="../produce-co-bond-order-active-set/"><code class="language-plaintext highlighter-rouge">produce-co-bond-order-active-set</code></a>, <a href="../produce-codata-masses/"><code class="language-plaintext highlighter-rouge">produce-codata-masses</code></a>, <a href="../produce-confinement-operator-selection/"><code class="language-plaintext highlighter-rouge">produce-confinement-operator-selection</code></a>, <a href="../produce-crystal-pole-order/"><code class="language-plaintext highlighter-rouge">produce-crystal-pole-order</code></a>, <a href="../produce-cyclotomic-depth3-dimension-pslq/"><code class="language-plaintext highlighter-rouge">produce-cyclotomic-depth3-dimension-pslq</code></a>, <a href="../produce-cyclotomic-trilog-imaginary/"><code class="language-plaintext highlighter-rouge">produce-cyclotomic-trilog-imaginary</code></a>, <a href="../produce-d-density-derivation/"><code class="language-plaintext highlighter-rouge">produce-d-density-derivation</code></a>, <a href="../produce-d-from-scratch/"><code class="language-plaintext highlighter-rouge">produce-d-from-scratch</code></a>, <a href="../produce-delta-lambda-fr-identity-phase5c/"><code class="language-plaintext highlighter-rouge">produce-delta-lambda-fr-identity-phase5c</code></a>, <a href="../produce-delta-lambda-value-witness/"><code class="language-plaintext highlighter-rouge">produce-delta-lambda-value-witness</code></a>, <a href="../produce-delta-lambda-z-coefficient-and-slope/"><code class="language-plaintext highlighter-rouge">produce-delta-lambda-z-coefficient-and-slope</code></a>, <a href="../produce-delta-q-decoration/"><code class="language-plaintext highlighter-rouge">produce-delta-q-decoration</code></a>, <a href="../produce-delta-q-h-bracket-identity/"><code class="language-plaintext highlighter-rouge">produce-delta-q-h-bracket-identity</code></a>, <a href="../produce-demazure-markov-trace/"><code class="language-plaintext highlighter-rouge">produce-demazure-markov-trace</code></a>, <a href="../produce-derive-m-baryon-volume-form/"><code class="language-plaintext highlighter-rouge">produce-derive-m-baryon-volume-form</code></a>, <a href="../produce-embeddable-knot-operator/"><code class="language-plaintext highlighter-rouge">produce-embeddable-knot-operator</code></a>, <a href="../produce-gb-depth-period-bring-fig8/"><code class="language-plaintext highlighter-rouge">produce-gb-depth-period-bring-fig8</code></a>, <a href="../produce-gb-filtration-jet-order-reader/"><code class="language-plaintext highlighter-rouge">produce-gb-filtration-jet-order-reader</code></a>, <a href="../produce-gb-filtration-jet-tracker/"><code class="language-plaintext highlighter-rouge">produce-gb-filtration-jet-tracker</code></a>, <a href="../produce-gram-matrix-dual/"><code class="language-plaintext highlighter-rouge">produce-gram-matrix-dual</code></a>, <a href="../produce-h2-integer-lp/"><code class="language-plaintext highlighter-rouge">produce-h2-integer-lp</code></a>, <a href="../produce-h2s-chirality-residue-s3-holonomy/"><code class="language-plaintext highlighter-rouge">produce-h2s-chirality-residue-s3-holonomy</code></a>, <a href="../produce-habiro-habiro-exact-mass-endomorphism/"><code class="language-plaintext highlighter-rouge">produce-habiro-habiro-exact-mass-endomorphism</code></a>, <a href="../produce-hadron-knot-table/"><code class="language-plaintext highlighter-rouge">produce-hadron-knot-table</code></a>, <a href="../produce-hbond-categorical-action/"><code class="language-plaintext highlighter-rouge">produce-hbond-categorical-action</code></a>, <a href="../produce-hbond-vdw-sdp/"><code class="language-plaintext highlighter-rouge">produce-hbond-vdw-sdp</code></a>, <a href="../produce-hecke-hecke-crossed-module-q8/"><code class="language-plaintext highlighter-rouge">produce-hecke-hecke-crossed-module-q8</code></a>, <a href="../produce-hh-vertex-volume/"><code class="language-plaintext highlighter-rouge">produce-hh-vertex-volume</code></a>, <a href="../produce-hoefsmit-b-squared-reconciliation/"><code class="language-plaintext highlighter-rouge">produce-hoefsmit-b-squared-reconciliation</code></a>, <a href="../produce-hyperbolic-volumes/"><code class="language-plaintext highlighter-rouge">produce-hyperbolic-volumes</code></a>, <a href="../produce-interface-composition/"><code class="language-plaintext highlighter-rouge">produce-interface-composition</code></a>, <a href="../produce-isospin-mass-tower-collapse/"><code class="language-plaintext highlighter-rouge">produce-isospin-mass-tower-collapse</code></a>, <a href="../produce-jet-knot-invariants/"><code class="language-plaintext highlighter-rouge">produce-jet-knot-invariants</code></a>, <a href="../produce-jet-tower-delta-max/"><code class="language-plaintext highlighter-rouge">produce-jet-tower-delta-max</code></a>, <a href="../produce-jonquiere-cyclotomic-general/"><code class="language-plaintext highlighter-rouge">produce-jonquiere-cyclotomic-general</code></a>, <a href="../produce-knot-operator-lp-selection/"><code class="language-plaintext highlighter-rouge">produce-knot-operator-lp-selection</code></a>, <a href="../produce-knot-volumes/"><code class="language-plaintext highlighter-rouge">produce-knot-volumes</code></a>, <a href="../produce-kummer-reflection-zeta5/"><code class="language-plaintext highlighter-rouge">produce-kummer-reflection-zeta5</code></a>, <a href="../produce-lambda-scale-rd-h4-half-symmetric/"><code class="language-plaintext highlighter-rouge">produce-lambda-scale-rd-h4-half-symmetric</code></a>, <a href="../produce-lever1-cyclotomic-boundary-keystone-conjecture/"><code class="language-plaintext highlighter-rouge">produce-lever1-cyclotomic-boundary-keystone-conjecture</code></a>, <a href="../produce-lp-confinement-nf-forcing/"><code class="language-plaintext highlighter-rouge">produce-lp-confinement-nf-forcing</code></a>, <a href="../produce-lr-fusion-self-conj-test/"><code class="language-plaintext highlighter-rouge">produce-lr-fusion-self-conj-test</code></a>, <a href="../produce-m-p-substrate-identity-50dps/"><code class="language-plaintext highlighter-rouge">produce-m-p-substrate-identity-50dps</code></a>, <a href="../produce-markov-markov-peel-atomic-witness/"><code class="language-plaintext highlighter-rouge">produce-markov-markov-peel-atomic-witness</code></a>, <a href="../produce-markov-markov-peel/"><code class="language-plaintext highlighter-rouge">produce-markov-markov-peel</code></a>, <a href="../produce-markov-markov-pipeline-cross-validator/"><code class="language-plaintext highlighter-rouge">produce-markov-markov-pipeline-cross-validator</code></a>, <a href="../produce-markov-markov-substrate-realizer/"><code class="language-plaintext highlighter-rouge">produce-markov-markov-substrate-realizer</code></a>, <a href="../produce-markov-markov-trace-atomic-proton-full/"><code class="language-plaintext highlighter-rouge">produce-markov-markov-trace-atomic-proton-full</code></a>, <a href="../produce-markov-markov-trace-canonical/"><code class="language-plaintext highlighter-rouge">produce-markov-markov-trace-canonical</code></a>, <a href="../produce-markov-markov-trace-recursive/"><code class="language-plaintext highlighter-rouge">produce-markov-markov-trace-recursive</code></a>, <a href="../produce-mass-formula-6term-mpfr-50dps/"><code class="language-plaintext highlighter-rouge">produce-mass-formula-6term-mpfr-50dps</code></a>, <a href="../produce-mass-table-ppb/"><code class="language-plaintext highlighter-rouge">produce-mass-table-ppb</code></a>, <a href="../produce-mass-from-q-symbolic/"><code class="language-plaintext highlighter-rouge">produce-mass-from-q-symbolic</code></a>, <a href="../produce-meson-em-sinh-closed-form/"><code class="language-plaintext highlighter-rouge">produce-meson-em-sinh-closed-form</code></a>, <a href="../produce-mn-flavor-split-h4-plancherel/"><code class="language-plaintext highlighter-rouge">produce-mn-flavor-split-h4-plancherel</code></a>, <a href="../produce-molecular-angle-symmetric-block-general/"><code class="language-plaintext highlighter-rouge">produce-molecular-angle-symmetric-block-general</code></a>, <a href="../produce-molecular-experimental-refs/"><code class="language-plaintext highlighter-rouge">produce-molecular-experimental-refs</code></a>, <a href="../produce-mu-substrate-tension-audit-100dps/"><code class="language-plaintext highlighter-rouge">produce-mu-substrate-tension-audit-100dps</code></a>, <a href="../produce-n-sym-numerical-anchor/"><code class="language-plaintext highlighter-rouge">produce-n-sym-numerical-anchor</code></a>, <a href="../produce-nf-transition-lifting/"><code class="language-plaintext highlighter-rouge">produce-nf-transition-lifting</code></a>, <a href="../produce-observations-neutron-prediction-comparison-probe/"><code class="language-plaintext highlighter-rouge">produce-observations-neutron-prediction-comparison-probe</code></a>, <a href="../produce-observations-stability-cubic-table-from-probe/"><code class="language-plaintext highlighter-rouge">produce-observations-stability-cubic-table-from-probe</code></a>, <a href="../produce-operator-selection-lp-symbolic-qq/"><code class="language-plaintext highlighter-rouge">produce-operator-selection-lp-symbolic-qq</code></a>, <a href="../produce-optimised-magic-verifier/"><code class="language-plaintext highlighter-rouge">produce-optimised-magic-verifier</code></a>, <a href="../produce-option-e-phase1-h3-cross-check/"><code class="language-plaintext highlighter-rouge">produce-option-e-phase1-h3-cross-check</code></a>, <a href="../produce-pentagon-reduction-li2q/"><code class="language-plaintext highlighter-rouge">produce-pentagon-reduction-li2q</code></a>, <a href="../produce-per-braid-tower/"><code class="language-plaintext highlighter-rouge">produce-per-braid-tower</code></a>, <a href="../produce-per-nucleon-shift-derivation/"><code class="language-plaintext highlighter-rouge">produce-per-nucleon-shift-derivation</code></a>, <a href="../produce-per-observable-100x-status/"><code class="language-plaintext highlighter-rouge">produce-per-observable-100x-status</code></a>, <a href="../produce-photon-ir-zero-mode-bring/"><code class="language-plaintext highlighter-rouge">produce-photon-ir-zero-mode-bring</code></a>, <a href="../produce-photon-operator-table/"><code class="language-plaintext highlighter-rouge">produce-photon-operator-table</code></a>, <a href="../produce-probe-flavor-dressed-mass-from-substrate-split/"><code class="language-plaintext highlighter-rouge">produce-probe-flavor-dressed-mass-from-substrate-split</code></a>, <a href="../produce-probe-he4-canonical-tr-m-fingerprint/"><code class="language-plaintext highlighter-rouge">produce-probe-he4-canonical-tr-m-fingerprint</code></a>, <a href="../produce-probe-inter-knot-decoupling/"><code class="language-plaintext highlighter-rouge">produce-probe-inter-knot-decoupling</code></a>, <a href="../produce-probe-operator-valued-ansatze-from-mass-endo/"><code class="language-plaintext highlighter-rouge">produce-probe-operator-valued-ansatze-from-mass-endo</code></a>, <a href="../produce-probe-q-beta-operator-valued-n3/"><code class="language-plaintext highlighter-rouge">produce-probe-q-beta-operator-valued-n3</code></a>, <a href="../produce-probes-aomega-bps-sector-nondegeneracy/"><code class="language-plaintext highlighter-rouge">produce-probes-aomega-bps-sector-nondegeneracy</code></a>, <a href="../produce-probes-archimedean-knot-eigenbasis-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-archimedean-knot-eigenbasis-probe</code></a>, <a href="../produce-probes-body-number-expansion-classical-floor-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-body-number-expansion-classical-floor-probe</code></a>, <a href="../produce-probes-casimir-hoefsmit-additivity-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-casimir-hoefsmit-additivity-probe</code></a>, <a href="../produce-probes-colour-cubic-branch-monodromy-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-colour-cubic-branch-monodromy-probe</code></a>, <a href="../produce-probes-colour-mu-bar-monodromy-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-colour-mu-bar-monodromy-probe</code></a>, <a href="../produce-probes-commutative-chirality-vanishes-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-commutative-chirality-vanishes-probe</code></a>, <a href="../produce-probes-em-coupling-projection-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-em-coupling-projection-probe</code></a>, <a href="../produce-probes-ew-higgs-sdp-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-ew-higgs-sdp-probe</code></a>, <a href="../produce-probes-explicit-central-idempotent-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-explicit-central-idempotent-probe</code></a>, <a href="../produce-probes-flavor-split-substrate-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-flavor-split-substrate-probe</code></a>, <a href="../produce-probes-frobenius-gram-matrix-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-frobenius-gram-matrix-probe</code></a>, <a href="../produce-probes-full-twist-root-of-unity-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-full-twist-root-of-unity-probe</code></a>, <a href="../produce-probes-gap-a4-t15-character-polynomial-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-gap-a4-t15-character-polynomial-probe</code></a>, <a href="../produce-probes-gauge-coupling-uniqueness-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-gauge-coupling-uniqueness-probe</code></a>, <a href="../produce-probes-h2-gg-electron-h2-gg-electron-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-h2-gg-electron-h2-gg-electron-probe</code></a>, <a href="../produce-probes-habiro-expansion-atomic-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-habiro-expansion-atomic-probe</code></a>, <a href="../produce-probes-habiro-frobenius-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-habiro-frobenius-probe</code></a>, <a href="../produce-probes-he4-sdp-compositional-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-he4-sdp-compositional-probe</code></a>, <a href="../produce-probes-hecke-1d-irrep-closed-form-character-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-hecke-1d-irrep-closed-form-character-probe</code></a>, <a href="../produce-probes-hecke-markov-transition-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-hecke-markov-transition-probe</code></a>, <a href="../produce-probes-hoefsmit-seminormal-form-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-hoefsmit-seminormal-form-probe</code></a>, <a href="../produce-probes-jucys-murphy-central-elements-qou-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-jucys-murphy-central-elements-qou-probe</code></a>, <a href="../produce-probes-knot-factor-amphicheiral-bd-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-knot-factor-amphicheiral-bd-probe</code></a>, <a href="../produce-probes-knot-factor-borromean-composite-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-knot-factor-borromean-composite-probe</code></a>, <a href="../produce-probes-pauli-factor-wedderburn-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-pauli-factor-wedderburn-probe</code></a>, <a href="../produce-probes-piece-a-corner-removal-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-piece-a-corner-removal-probe</code></a>, <a href="../produce-probes-plancherel-weight-boundedness-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-plancherel-weight-boundedness-probe</code></a>, <a href="../produce-probes-poly-q-proof-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-poly-q-proof-probe</code></a>, <a href="../produce-probes-probe-d-dressing-is-proton-net/"><code class="language-plaintext highlighter-rouge">produce-probes-probe-d-dressing-is-proton-net</code></a>, <a href="../produce-probes-qbeta-route75-multiknot-gluing-symbolic-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-qbeta-route75-multiknot-gluing-symbolic-probe</code></a>, <a href="../produce-probes-r2core-schwinger-measure-explore-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-r2core-schwinger-measure-explore-probe</code></a>, <a href="../produce-probes-reeb-5g-unit-anchor-scan/"><code class="language-plaintext highlighter-rouge">produce-probes-reeb-5g-unit-anchor-scan</code></a>, <a href="../produce-probes-reeb-g-structural-identity-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-reeb-g-structural-identity-probe</code></a>, <a href="../produce-probes-spectrahedral-phase-collapse-frame-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-spectrahedral-phase-collapse-frame-probe</code></a>, <a href="../produce-probes-symbolic-character-table-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-symbolic-character-table-probe</code></a>, <a href="../produce-probes-three-parameters-wedderburn-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-three-parameters-wedderburn-probe</code></a>, <a href="../produce-probes-y-lambda-cyclotomic-factorization-probe/"><code class="language-plaintext highlighter-rouge">produce-probes-y-lambda-cyclotomic-factorization-probe</code></a>, <a href="../produce-proton-residual-rootcause/"><code class="language-plaintext highlighter-rouge">produce-proton-residual-rootcause</code></a>, <a href="../produce-q-beta-form-a-n1-extension/"><code class="language-plaintext highlighter-rouge">produce-q-beta-form-a-n1-extension</code></a>, <a href="../produce-q-beta-predicted/"><code class="language-plaintext highlighter-rouge">produce-q-beta-predicted</code></a>, <a href="../produce-q-pinning-50-digit/"><code class="language-plaintext highlighter-rouge">produce-q-pinning-50-digit</code></a>, <a href="../produce-q-pochhammer-seed/"><code class="language-plaintext highlighter-rouge">produce-q-pochhammer-seed</code></a>, <a href="../produce-q-spectral-truncation-tower/"><code class="language-plaintext highlighter-rouge">produce-q-spectral-truncation-tower</code></a>, <a href="../produce-qbeta-kashaev-remainder-omega-grade-probe/"><code class="language-plaintext highlighter-rouge">produce-qbeta-kashaev-remainder-omega-grade-probe</code></a>, <a href="../produce-qbeta-qbessel-jackson-contiguity/"><code class="language-plaintext highlighter-rouge">produce-qbeta-qbessel-jackson-contiguity</code></a>, <a href="../produce-qbeta-qbessel-second-order-qdifference-equation/"><code class="language-plaintext highlighter-rouge">produce-qbeta-qbessel-second-order-qdifference-equation</code></a>, <a href="../produce-qbeta-qbeta-bar-even-kernel-invariant-probe/"><code class="language-plaintext highlighter-rouge">produce-qbeta-qbeta-bar-even-kernel-invariant-probe</code></a>, <a href="../produce-qbeta-qbeta-c-k-recursion-scaffold/"><code class="language-plaintext highlighter-rouge">produce-qbeta-qbeta-c-k-recursion-scaffold</code></a>, <a href="../produce-qbeta-qbeta-ck-cache/"><code class="language-plaintext highlighter-rouge">produce-qbeta-qbeta-ck-cache</code></a>, <a href="../produce-qbeta-qbeta-ck-sseries-operator-match-probe/"><code class="language-plaintext highlighter-rouge">produce-qbeta-qbeta-ck-sseries-operator-match-probe</code></a>, <a href="../produce-qbeta-qbeta-ck-truncation-bias-correction-probe/"><code class="language-plaintext highlighter-rouge">produce-qbeta-qbeta-ck-truncation-bias-correction-probe</code></a>, <a href="../produce-qbeta-qbeta-ck-truncation-order-analysis/"><code class="language-plaintext highlighter-rouge">produce-qbeta-qbeta-ck-truncation-order-analysis</code></a>, <a href="../produce-qbeta-qbeta-cos-resummation-d-probe/"><code class="language-plaintext highlighter-rouge">produce-qbeta-qbeta-cos-resummation-d-probe</code></a>, <a href="../produce-qbeta-qbeta-decay-sdp-full-ck/"><code class="language-plaintext highlighter-rouge">produce-qbeta-qbeta-decay-sdp-full-ck</code></a>, <a href="../produce-qbeta-qbeta-direction-sanity-gate-probe/"><code class="language-plaintext highlighter-rouge">produce-qbeta-qbeta-direction-sanity-gate-probe</code></a>, <a href="../produce-qbeta-qbeta-habiro-f-from-shape-collapse/"><code class="language-plaintext highlighter-rouge">produce-qbeta-qbeta-habiro-f-from-shape-collapse</code></a>, <a href="../produce-qbeta-qbeta-markov-trace-norm-probe/"><code class="language-plaintext highlighter-rouge">produce-qbeta-qbeta-markov-trace-norm-probe</code></a>, <a href="../produce-qbeta-qbeta-odd-carrier-sector-decomposition/"><code class="language-plaintext highlighter-rouge">produce-qbeta-qbeta-odd-carrier-sector-decomposition</code></a>, <a href="../produce-qbeta-qbeta-per-block-paper-closed-forms/"><code class="language-plaintext highlighter-rouge">produce-qbeta-qbeta-per-block-paper-closed-forms</code></a>, <a href="../produce-qbeta-qbeta-precision-ladder-n5/"><code class="language-plaintext highlighter-rouge">produce-qbeta-qbeta-precision-ladder-n5</code></a>, <a href="../produce-qbeta-qbeta-q-eq-one-shadow-gate-probe/"><code class="language-plaintext highlighter-rouge">produce-qbeta-qbeta-q-eq-one-shadow-gate-probe</code></a>, <a href="../produce-qbeta-qbeta-qbessel-contiguity-cfinite/"><code class="language-plaintext highlighter-rouge">produce-qbeta-qbeta-qbessel-contiguity-cfinite</code></a>, <a href="../produce-qbeta-qbeta-radius-of-convergence-gate-probe/"><code class="language-plaintext highlighter-rouge">produce-qbeta-qbeta-radius-of-convergence-gate-probe</code></a>, <a href="../produce-qbeta-qbeta-silver-ratio-pell-lucas-ck/"><code class="language-plaintext highlighter-rouge">produce-qbeta-qbeta-silver-ratio-pell-lucas-ck</code></a>, <a href="../produce-qbeta-qbeta-silver-rationals/"><code class="language-plaintext highlighter-rouge">produce-qbeta-qbeta-silver-rationals</code></a>, <a href="../produce-qbeta-qbeta-symbolic-chain-alpha-b/"><code class="language-plaintext highlighter-rouge">produce-qbeta-qbeta-symbolic-chain-alpha-b</code></a>, <a href="../produce-reeb-flow-garside-closed-form-verification/"><code class="language-plaintext highlighter-rouge">produce-reeb-flow-garside-closed-form-verification</code></a>, <a href="../produce-rho-k-graded-atomic-mass/"><code class="language-plaintext highlighter-rouge">produce-rho-k-graded-atomic-mass</code></a>, <a href="../produce-rho-k-h3a-co-casimir/"><code class="language-plaintext highlighter-rouge">produce-rho-k-h3a-co-casimir</code></a>, <a href="../produce-rho-k-h3a-refinement/"><code class="language-plaintext highlighter-rouge">produce-rho-k-h3a-refinement</code></a>, <a href="../produce-rigid-monoidal-gap-invariance-check/"><code class="language-plaintext highlighter-rouge">produce-rigid-monoidal-gap-invariance-check</code></a>, <a href="../produce-rosso-jones-three-strand-delta-q/"><code class="language-plaintext highlighter-rouge">produce-rosso-jones-three-strand-delta-q</code></a>, <a href="../produce-rt-c23-singlet-sign-core/"><code class="language-plaintext highlighter-rouge">produce-rt-c23-singlet-sign-core</code></a>, <a href="../produce-sdp-gamma-gamma-to-qqbar/"><code class="language-plaintext highlighter-rouge">produce-sdp-gamma-gamma-to-qqbar</code></a>, <a href="../produce-shift-from-nf-basis/"><code class="language-plaintext highlighter-rouge">produce-shift-from-nf-basis</code></a>, <a href="../produce-sigma-f-electron-shell-chain/"><code class="language-plaintext highlighter-rouge">produce-sigma-f-electron-shell-chain</code></a>, <a href="../produce-sigma-shell-from-beta-chain/"><code class="language-plaintext highlighter-rouge">produce-sigma-shell-from-beta-chain</code></a>, <a href="../produce-spectral-decomposition-qvalue-d/"><code class="language-plaintext highlighter-rouge">produce-spectral-decomposition-qvalue-d</code></a>, <a href="../produce-staircase-ew-residual-conjecture/"><code class="language-plaintext highlighter-rouge">produce-staircase-ew-residual-conjecture</code></a>, <a href="../produce-substrate-deuteron-tower-fusion-frame-probe/"><code class="language-plaintext highlighter-rouge">produce-substrate-deuteron-tower-fusion-frame-probe</code></a>, <a href="../produce-substrate-hecke-core/"><code class="language-plaintext highlighter-rouge">produce-substrate-hecke-core</code></a>, <a href="../produce-substrate-toroidal-level-selection-three-strand-probe/"><code class="language-plaintext highlighter-rouge">produce-substrate-toroidal-level-selection-three-strand-probe</code></a>, <a href="../produce-substrate-whipple-rotation-involution-probe/"><code class="language-plaintext highlighter-rouge">produce-substrate-whipple-rotation-involution-probe</code></a>, <a href="../produce-sweeps-paper-six-term-isotope-sweep/"><code class="language-plaintext highlighter-rouge">produce-sweeps-paper-six-term-isotope-sweep</code></a>, <a href="../produce-term6-full-pole-sum/"><code class="language-plaintext highlighter-rouge">produce-term6-full-pole-sum</code></a>, <a href="../produce-term6-residues-at-roots/"><code class="language-plaintext highlighter-rouge">produce-term6-residues-at-roots</code></a>, <a href="../produce-term7-alpha5-crystal-derivation/"><code class="language-plaintext highlighter-rouge">produce-term7-alpha5-crystal-derivation</code></a>, <a href="../produce-toffoli-lp-stability/"><code class="language-plaintext highlighter-rouge">produce-toffoli-lp-stability</code></a>, <a href="../produce-tr-m-q-hecke-seminormal/"><code class="language-plaintext highlighter-rouge">produce-tr-m-q-hecke-seminormal</code></a>, <a href="../produce-two-filtration-bridge-small-cases/"><code class="language-plaintext highlighter-rouge">produce-two-filtration-bridge-small-cases</code></a>, <a href="../produce-universal-ilp/"><code class="language-plaintext highlighter-rouge">produce-universal-ilp</code></a>, <a href="../produce-vdw-pskew-sinh-probe/"><code class="language-plaintext highlighter-rouge">produce-vdw-pskew-sinh-probe</code></a>, <a href="../produce-weak-symmetric-normalization-value/"><code class="language-plaintext highlighter-rouge">produce-weak-symmetric-normalization-value</code></a>, <a href="../produce-wedderburn-mass-table-convention-d/"><code class="language-plaintext highlighter-rouge">produce-wedderburn-mass-table-convention-d</code></a>, <a href="../produce-y-lambda-macdonald-telescope/"><code class="language-plaintext highlighter-rouge">produce-y-lambda-macdonald-telescope</code></a>, <a href="../produce-qou-mass-src-qou-mass-api/"><code class="language-plaintext highlighter-rouge">produce-qou-mass-src-qou-mass-api</code></a>, <a href="../produce-tools-hecke-engine-src-gb-nf-reducer-rs/"><code class="language-plaintext highlighter-rouge">produce-tools-hecke-engine-src-gb-nf-reducer-rs</code></a>, <a href="../produce-tools-pyhecke-python-pyhecke-wedderburn/"><code class="language-plaintext highlighter-rouge">produce-tools-pyhecke-python-pyhecke-wedderburn</code></a>.</p>
+
+<p>The skill declares no I/O contract (<code class="language-plaintext highlighter-rouge">schemas/skills/compute-integration-watcher/{input,output}.schema.json</code>).</p>
+<h2 id="inputs-and-outputs">
+  
+  
+    <a href="#inputs-and-outputs" class="anchor-heading" aria-labelledby="inputs-and-outputs"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Inputs and outputs
+  
+  
+</h2>
+    
+
+<p>Each port names a shared type by IRI, so two Tools for one skill can be checked for interchangeability.</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>port</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
+      <th>constraint</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>out</td>
+      <td><code class="language-plaintext highlighter-rouge">active-set-lr-scaling-profile</code></td>
+      <td><a href="https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath"><code class="language-plaintext highlighter-rouge">RepoPath</code></a></td>
+      <td> </td>
+      <td><code class="language-plaintext highlighter-rouge">computations/active-set-lr-scaling-profile.witness.json</code>, a computation-witness node.</td>
+      <td>string · pattern <code class="language-plaintext highlighter-rouge">^[A-Za-z0-9._][A-Za-z0-9._/-]*$</code> · A path relative to the repository root. No <code class="language-plaintext highlighter-rouge">..</code> segments.</td>
+    </tr>
+  </tbody>
+</table></div>
+<h2 id="processes-and-tasks">
+  
+  
+    <a href="#processes-and-tasks" class="anchor-heading" aria-labelledby="processes-and-tasks"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Processes and tasks
+  
+  
+</h2>
+    
+
+<p>No process step names a skill this Tool satisfies.</p>
+<h2 id="how-it-is-deployed-and-reached">
+  
+  
+    <a href="#how-it-is-deployed-and-reached" class="anchor-heading" aria-labelledby="how-it-is-deployed-and-reached"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> How it is deployed and reached
+  
+  
+</h2>
+    
+
+<ul>
+  <li><strong>Command line.</strong> From the repository root: <code class="language-plaintext highlighter-rouge">python3 -u computations/active_set_lr_profile.py</code>.</li>
+  <li><strong>GitHub Actions.</strong> No workflow in this checkout runs its command.</li>
+</ul>
+
+<p>As an API: <a href="../api/#produce-active-set-lr-profile">its operation</a> in the <a href="../openapi.json">OpenAPI document</a> and the <a href="../mcp-tools.json">MCP tool list</a> of its layer.</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>install</td>
+      <td><code class="language-plaintext highlighter-rouge">none</code></td>
+    </tr>
+    <tr>
+      <td>runtime</td>
+      <td><code class="language-plaintext highlighter-rouge">python3</code></td>
+    </tr>
+    <tr>
+      <td>network</td>
+      <td>no</td>
+    </tr>
+  </tbody>
+</table></div>
+<h2 id="what-it-is-made-of">
+  
+  
+    <a href="#what-it-is-made-of" class="anchor-heading" aria-labelledby="what-it-is-made-of"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> What it is made of
+  
+  
+</h2>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>role</th>
+      <th>file</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>script</td>
+      <td><a href="https://github.com/litlfred/qou/blob/HEAD/computations/active_set_lr_profile.py"><code class="language-plaintext highlighter-rouge">computations/active_set_lr_profile.py</code></a></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>It keeps a downstream output current:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"output"</span><span class="p">:</span><span class="w"> </span><span class="s2">"computations/active-set-lr-scaling-profile.witness.json"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"inputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"computations/active_set_lr_profile.py"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"judgedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"checkout"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<h2 id="linked-data">
+  
+  
+    <a href="#linked-data" class="anchor-heading" aria-labelledby="linked-data"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Linked data
+  
+  
+</h2>
+    
+
+<p>The Tool is published as its own JSON-LD document at its IRI, <a href="https://litlfred.github.io/qou/tools/produce-active-set-lr-profile.jsonld"><code class="language-plaintext highlighter-rouge">https://litlfred.github.io/qou/tools/produce-active-set-lr-profile.jsonld</code></a>, <code class="language-plaintext highlighter-rouge">partOf</code> its layer’s document. The node below is the definition this page was drawn from, and is embedded in the page as <code class="language-plaintext highlighter-rouge">application/ld+json</code>.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://litlfred.github.io/qou/qou.context.jsonld"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://litlfred.github.io/qou/tools/produce-active-set-lr-profile.jsonld"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://litlfred.github.io/cat-harness/v0/ns/Tool"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"partOf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://litlfred.github.io/qou/qou.jsonld"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"produce-active-set-lr-profile"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Produce active-set-lr-scaling-profile.witness.json"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Run the computation `computations/active_set_lr_profile.py`, which writes `computations/active-set-lr-scaling-profile.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/mass-theory/active-set-trace-concentration.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"install"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"none"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"invoke"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"shell"</span><span class="p">:</span><span class="w"> </span><span class="s2">"python3 -u computations/active_set_lr_profile.py"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"io"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"inputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"outputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active-set-lr-scaling-profile"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"`computations/active-set-lr-scaling-profile.witness.json`, a computation-witness node."</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"satisfies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"compute-integration-watcher"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"requirements"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"runtime"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"python3"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"network"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"downstream"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"output"</span><span class="p">:</span><span class="w"> </span><span class="s2">"computations/active-set-lr-scaling-profile.witness.json"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"inputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"computations/active_set_lr_profile.py"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"judgedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"checkout"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+          
+
+          
+            
+          
+        </main>
+        
+<hr>
+<footer>
+  
+
+  <p class="text-small mb-0">Quantum Observable Universe — built with <a href="https://litlfred.github.io/folio-assistant/">folio-assistant</a>.</p><p class="text-small mb-0 fa-build-stamp">
+  deployed
+  <a href="https://github.com/litlfred/folio-assistant/actions"><code>dev</code></a></p>
+
+
+  
+</footer>
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+    
+  
+</body>
+</html>

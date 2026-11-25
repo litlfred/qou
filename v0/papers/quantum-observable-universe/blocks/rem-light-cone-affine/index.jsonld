@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-light-cone-affine",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:light-cone-affine",
+  "kind": "remark",
+  "title": "Light cone of an affine chart",
+  "interprets": "papers/quantum-observable-universe/blocks/def-briggs-klein-chart",
+  "tags": [
+    "archimedean-universe",
+    "light-cone",
+    "affine-chart"
+  ],
+  "text": "light-cone-affine.md",
+  "provenance": "authored"
+}

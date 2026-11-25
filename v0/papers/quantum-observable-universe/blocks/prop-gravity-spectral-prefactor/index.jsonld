@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-gravity-spectral-prefactor",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:gravity-spectral-prefactor",
+  "kind": "proposition",
+  "title": "Catalan's $G$ as the universal-residue prefactor of the unified mass formula",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-confinement-categorical",
+    "papers/quantum-observable-universe/blocks/conj-binding-scale-catalan"
+  ],
+  "tags": [
+    "catalan-constant",
+    "borromean-volume",
+    "universal-residue",
+    "plancherel",
+    "macroscopic-stratum"
+  ],
+  "leanRef": "qou:QOU.Observations.gravity_spectral_prefactor",
+  "text": "gravity-spectral-prefactor.md",
+  "leanSource": "gravity-spectral-prefactor.lean",
+  "provenance": "authored"
+}

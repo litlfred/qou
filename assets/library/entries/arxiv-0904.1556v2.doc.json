@@ -1,0 +1,1864 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0904.1556v2",
+  "title": "The Algebra of Grand Uniﬁed Theories",
+  "variant": "pdf",
+  "pages": 73,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Guide to Further Reading",
+      "number": "1.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-guide-to-further-reading"
+    },
+    {
+      "level": 1,
+      "title": "The Standard Model",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-the-standard-model"
+    },
+    {
+      "level": 2,
+      "title": "Isospin and SU(2)",
+      "number": "2.1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-21-isospin-and-su2"
+    },
+    {
+      "level": 2,
+      "title": "The Fundamental Fermions",
+      "number": "2.2",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-22-the-fundamental-fermions"
+    },
+    {
+      "level": 3,
+      "title": "Quarks",
+      "number": "2.2.1",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-221-quarks"
+    },
+    {
+      "level": 3,
+      "title": "Leptons",
+      "number": "2.2.2",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-222-leptons"
+    },
+    {
+      "level": 2,
+      "title": "The Fundamental Forces",
+      "number": "2.3",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-23-the-fundamental-forces"
+    },
+    {
+      "level": 3,
+      "title": "Isospin and SU(2), Redux",
+      "number": "2.3.1",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-231-isospin-and-su2-redux"
+    },
+    {
+      "level": 3,
+      "title": "Hypercharge and U(1)",
+      "number": "2.3.2",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-232-hypercharge-and-u1"
+    },
+    {
+      "level": 3,
+      "title": "Electroweak Symmetry Breaking",
+      "number": "2.3.3",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-233-electroweak-symmetry-breaking"
+    },
+    {
+      "level": 3,
+      "title": "Color and SU(3)",
+      "number": "2.3.4",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-234-color-and-su3"
+    },
+    {
+      "level": 2,
+      "title": "The Standard Model Representation",
+      "number": "2.4",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-24-the-standard-model-representation"
+    },
+    {
+      "level": 2,
+      "title": "Generations",
+      "number": "2.5",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-25-generations"
+    },
+    {
+      "level": 1,
+      "title": "Grand Unified Theories",
+      "number": "3",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-3-grand-unified-theories"
+    },
+    {
+      "level": 2,
+      "title": "The SU(5) GUT",
+      "number": "3.1",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-31-the-su5-gut"
+    },
+    {
+      "level": 2,
+      "title": "The Spin(10) Theory",
+      "number": "3.2",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-32-the-spin10-theory"
+    },
+    {
+      "level": 2,
+      "title": "The Pati–Salam Model",
+      "number": "3.3",
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-33-the-patisalam-model"
+    },
+    {
+      "level": 2,
+      "title": "The Route to Spin(10) via Pati–Salam",
+      "number": "3.4",
+      "page": 55,
+      "pageLabel": "55",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-34-the-route-to-spin10-via-patisalam"
+    },
+    {
+      "level": 2,
+      "title": "The Question of Compatibility",
+      "number": "3.5",
+      "page": 62,
+      "pageLabel": "62",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-35-the-question-of-compatibility"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion",
+      "number": "4",
+      "page": 65,
+      "pageLabel": "65",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-4-conclusion"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 163,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grand uniﬁed",
+          "heading": false
+        },
+        {
+          "term": "uniﬁed theories",
+          "heading": false
+        },
+        {
+          "term": "georgi",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "struggling",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0904.1556v2 [hep-th] 1 May 2010 The Algebra of Grand Uniﬁed Theories John Baez and John Huerta Department of Mathematics University of California Riverside, CA 92521 USA November 26, 2024 Abstract The Standard Model is the best tested and most widely accepted theory of elementary particles we have today. It may seem complicated and arbitrary, but it has hidden patterns that are revealed by the relationship",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0904.1556v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "4",
+      "words": 1793,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pati--salam model",
+          "heading": false
+        },
+        {
+          "term": "grand unification",
+          "heading": false
+        },
+        {
+          "term": "grand unified",
+          "heading": false
+        },
+        {
+          "term": "pati salam",
+          "heading": false
+        },
+        {
+          "term": "unified theories",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "physicists call",
+          "heading": false
+        },
+        {
+          "term": "particle physics",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:introduction label=\"sec:introduction\"} The Standard Model of particle physics is one of the greatest triumphs of physics. This theory is our best attempt to describe all the particles and all the forces of nature\\... *except* gravity. It does a great job of fitting experiments we can do in the lab. But physicists are dissatisfied with it. There are three main reasons. First, it leaves out gravity: that force",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-guide-to-further-reading",
+      "number": "1.1",
+      "title": "Guide to Further Reading",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 233,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lie algebras",
+          "heading": false
+        },
+        {
+          "term": "lie groups",
+          "heading": false
+        },
+        {
+          "term": "reading",
+          "heading": true
+        },
+        {
+          "term": "familiarity",
+          "heading": false
+        },
+        {
+          "term": "guide",
+          "heading": true
+        },
+        {
+          "term": "particle physics",
+          "heading": false
+        }
+      ],
+      "extract": "Guide to Further Reading We have tried to limit our prerequisites to the bare minimum. This includes basic facts about Lie groups, Lie algebras, and their representations—especially ﬁnite- dimensional unitary representations of compact Lie groups. We will not need the structure theory for simple Lie groups. We do, however, assume a little familiarity with the classical Lie groups GL(n), SL(n), O(n), SO(n), U(n), and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-the-standard-model",
+      "number": "2",
+      "title": "The Standard Model",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 676,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "electrons",
+          "heading": false
+        },
+        {
+          "term": "gauge boson",
+          "heading": false
+        },
+        {
+          "term": "electromagnetic interactions",
+          "heading": false
+        },
+        {
+          "term": "opposite charges",
+          "heading": false
+        },
+        {
+          "term": "protons",
+          "heading": false
+        },
+        {
+          "term": "fundamental fermions",
+          "heading": false
+        },
+        {
+          "term": "repelled",
+          "heading": false
+        },
+        {
+          "term": "neutrons",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:sm label=\"sec:sm\"} Today, most educated people know that the world is made of atoms, and that atoms, in turn, are made of electrons, protons, and neutrons. The electrons orbit a dense nucleus made of protons and neutrons, and as the outermost layer of any atom's structure, they are responsible for all chemistry. They are held close to the nucleus by electromagnetic forces: the electrons carry a negative",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-21-isospin-and-su2",
+      "number": "2.1",
+      "title": "Isospin and SU(2)",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 13,
+      "labelStart": "6",
+      "labelEnd": "13",
+      "words": 2728,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "isospin",
+          "heading": true
+        },
+        {
+          "term": "absorbing pions",
+          "heading": false
+        },
+        {
+          "term": "nucleons absorbing",
+          "heading": false
+        },
+        {
+          "term": "strong force",
+          "heading": false
+        },
+        {
+          "term": "intertwining operator",
+          "heading": false
+        },
+        {
+          "term": "isospin representation",
+          "heading": false
+        },
+        {
+          "term": "otimes mathfrak",
+          "heading": false
+        },
+        {
+          "term": "sym mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:isospin label=\"sec:isospin\"} Because like charges repel, it is remarkable that the atomic nucleus stays together. After all, the protons are all positively charged and are repelled from each other electrically. To hold these particles so closely together, physicists hypothesized a new force, the **strong force**, strong enough to overcome the electric repulsion of the protons. It must be strongest only at",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-22-the-fundamental-fermions",
+      "number": "2.2",
+      "title": "The Fundamental Fermions",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 3,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#sec:fermions label=\"sec:fermions\"}",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-221-quarks",
+      "number": "2.2.1",
+      "title": "Quarks",
+      "level": 3,
+      "pageStart": 13,
+      "pageEnd": 17,
+      "labelStart": "13",
+      "labelEnd": "17",
+      "words": 2010,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quarks",
+          "heading": true
+        },
+        {
+          "term": "mathbb otimes",
+          "heading": false
+        },
+        {
+          "term": "pions live",
+          "heading": false
+        },
+        {
+          "term": "otimes overline",
+          "heading": false
+        },
+        {
+          "term": "down quarks",
+          "heading": false
+        },
+        {
+          "term": "quark flavors",
+          "heading": false
+        },
+        {
+          "term": "otimes quad",
+          "heading": false
+        },
+        {
+          "term": "isospin states",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:quarks label=\"sec:quarks\"} In the last section, we learned how Heisenberg unified the proton and neutron into the nucleon, and that Yukawa proposed that nucleons interact by exchanging pions. This viewpoint turned out to be at least approximately true, but it was based on the idea that the proton, neutron and pions were all fundamental particles without internal structure, which was not ultimately supported",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-222-leptons",
+      "number": "2.2.2",
+      "title": "Leptons",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "17",
+      "labelEnd": "19",
+      "words": 892,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "right-handed neutrino",
+          "heading": false
+        },
+        {
+          "term": "left-handed electron",
+          "heading": false
+        },
+        {
+          "term": "weak isospin",
+          "heading": false
+        },
+        {
+          "term": "weak force",
+          "heading": false
+        },
+        {
+          "term": "left-handed particles",
+          "heading": false
+        },
+        {
+          "term": "weak interactions",
+          "heading": false
+        },
+        {
+          "term": "leptons",
+          "heading": true
+        },
+        {
+          "term": "quark frac",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:leptons label=\"sec:leptons\"} With the quarks and electron, we have met all the fundamental fermions required to make atoms, and almost all of the particles we need to discuss the Standard Model. Only one player remains to be introduced: the **neutrino**, $\\nu$. This particle completes the **first generation** of fundamental fermions: 1em ::: center **The First Generation of Fermions --- Charge**",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-23-the-fundamental-forces",
+      "number": "2.3",
+      "title": "The Fundamental Forces",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 3,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#sec:forces label=\"sec:forces\"}",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-231-isospin-and-su2-redux",
+      "number": "2.3.1",
+      "title": "Isospin and SU(2), Redux",
+      "level": 3,
+      "pageStart": 19,
+      "pageEnd": 22,
+      "labelStart": "19",
+      "labelEnd": "22",
+      "words": 610,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "left-handed leptons",
+          "heading": false
+        },
+        {
+          "term": "left-handed fermions",
+          "heading": false
+        },
+        {
+          "term": "isospin",
+          "heading": true
+        },
+        {
+          "term": "left-handed quarks",
+          "heading": false
+        },
+        {
+          "term": "right-handed electron",
+          "heading": false
+        },
+        {
+          "term": "redux",
+          "heading": true
+        },
+        {
+          "term": "weak isospin",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:redux label=\"sec:redux\"} The tale we told of isospin in Section [\\[sec:isospin\\]](#sec:isospin){reference-type=\"ref\" reference=\"sec:isospin\"} only concerned the strong force, which binds nucleons together into nuclei. We learned about an approximation in which nucleons live in the fundamental rep ${\\mathbb C}^2$ of the isospin symmetry group ${\\rm SU}(2)$, and that they interact by exchanging pions, which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-232-hypercharge-and-u1",
+      "number": "2.3.2",
+      "title": "Hypercharge and U(1)",
+      "level": 3,
+      "pageStart": 22,
+      "pageEnd": 25,
+      "labelStart": "22",
+      "labelEnd": "25",
+      "words": 1052,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hypercharge",
+          "heading": true
+        },
+        {
+          "term": "weak hypercharge",
+          "heading": false
+        },
+        {
+          "term": "left-handed leptons",
+          "heading": false
+        },
+        {
+          "term": "array ccccrcr",
+          "heading": false
+        },
+        {
+          "term": "weak isospin",
+          "heading": false
+        },
+        {
+          "term": "left-handed quarks",
+          "heading": false
+        },
+        {
+          "term": "right-handed neutrino",
+          "heading": false
+        },
+        {
+          "term": "right-handed electron",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:hypercharge label=\"sec:hypercharge\"} In Section [\\[sec:leptons\\]](#sec:leptons){reference-type=\"ref\" reference=\"sec:leptons\"}, we saw how to extend the notion of isospin to weak isospin, which proved to be more fundamental, since we saw in Section [\\[sec:redux\\]](#sec:redux){reference-type=\"ref\" reference=\"sec:redux\"} how this gives rise to interactions among left-handed fermions mediated via $W$ bosons. We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-233-electroweak-symmetry-breaking",
+      "number": "2.3.3",
+      "title": "Electroweak Symmetry Breaking",
+      "level": 3,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": "25",
+      "labelEnd": "27",
+      "words": 584,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symmetry breaking",
+          "heading": true
+        },
+        {
+          "term": "electroweak",
+          "heading": true
+        },
+        {
+          "term": "higgs boson",
+          "heading": false
+        },
+        {
+          "term": "weak force",
+          "heading": false
+        },
+        {
+          "term": "gauge bosons",
+          "heading": false
+        },
+        {
+          "term": "higgs mechanism",
+          "heading": false
+        },
+        {
+          "term": "mathbb oplus",
+          "heading": false
+        },
+        {
+          "term": "mathbb otimes",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:electroweak label=\"sec:electroweak\"} In the Standard Model, electromagnetism and the weak force are unified into the electroweak force. This is is a ${\\rm U}(1) \\times {\\rm SU}(2)$ gauge theory, and without saying so, we just told you all about it in sections [\\[sec:redux\\]](#sec:redux){reference-type=\"ref\" reference=\"sec:redux\"} and [\\[sec:hypercharge\\]](#sec:hypercharge){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-234-color-and-su3",
+      "number": "2.3.4",
+      "title": "Color and SU(3)",
+      "level": 3,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": "27",
+      "labelEnd": "28",
+      "words": 458,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "strong force",
+          "heading": false
+        },
+        {
+          "term": "white mathbb",
+          "heading": false
+        },
+        {
+          "term": "weak force",
+          "heading": false
+        },
+        {
+          "term": "left-handed down",
+          "heading": false
+        },
+        {
+          "term": "electron white",
+          "heading": false
+        },
+        {
+          "term": "gauge bosons",
+          "heading": false
+        },
+        {
+          "term": "down quarks",
+          "heading": false
+        },
+        {
+          "term": "color",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec:color label=\"sec:color\"} There is one more fundamental force in the Standard Model: the **strong force**. We have already met this force, as the force that keeps the nucleus together, but we discussed it before we knew that protons and neutrons are made of quarks. Now we need a force to keep quarks together inside the nucleons, and quark confinement tells us it must be a very strong force indeed. It is this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-24-the-standard-model-representation",
+      "number": "2.4",
+      "title": "The Standard Model Representation",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 30,
+      "labelStart": "28",
+      "labelEnd": "30",
+      "words": 569,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "standard model",
+          "heading": true
+        },
+        {
+          "term": "model representation",
+          "heading": true
+        },
+        {
+          "term": "mathbb otimes",
+          "heading": false
+        },
+        {
+          "term": "right-handed neutrino",
+          "heading": false
+        },
+        {
+          "term": "gauge bosons",
+          "heading": false
+        },
+        {
+          "term": "frac otimes",
+          "heading": false
+        },
+        {
+          "term": "smrep",
+          "heading": false
+        },
+        {
+          "term": "oplus quad",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:smrep label=\"sec:smrep\"} We are now in a position to put the entire Standard Model together in a single picture, much as we combined the isospin ${\\rm SU}(2)$ and hypercharge ${\\rm U}(1)$ into the electroweak gauge group, ${\\rm U}(1) \\times {\\rm SU}(2)$, in Section [\\[sec:electroweak\\]](#sec:electroweak){reference-type=\"ref\" reference=\"sec:electroweak\"}. We then tensored the hypercharge ${\\rm U}(1)$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-25-generations",
+      "number": "2.5",
+      "title": "Generations",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 590,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "muon neutrino",
+          "heading": false
+        },
+        {
+          "term": "generations",
+          "heading": true
+        },
+        {
+          "term": "name symbol",
+          "heading": false
+        },
+        {
+          "term": "electron",
+          "heading": false
+        },
+        {
+          "term": "strong force",
+          "heading": false
+        },
+        {
+          "term": "leptons",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "antifermions",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:generations label=\"sec:generations\"} Our description of the Standard Model is almost at an end. We have told you about its gauge group, ${G_{\\mbox{\\rm SM}}}$, its representation $F \\oplus F^*$ on the first generation of fermions and antifermions, and a bit about how these fermions interact by exchanging gauge bosons, which live in the complexified adjoint rep of ${G_{\\mbox{\\rm SM}}}$. For the grand unified",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-3-grand-unified-theories",
+      "number": "3",
+      "title": "Grand Unified Theories",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": "31",
+      "labelEnd": "32",
+      "words": 406,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "guts",
+          "heading": false
+        },
+        {
+          "term": "empirical evidence",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "lower energies",
+          "heading": false
+        },
+        {
+          "term": "quarks come",
+          "heading": false
+        },
+        {
+          "term": "laws",
+          "heading": false
+        },
+        {
+          "term": "symmetries",
+          "heading": false
+        },
+        {
+          "term": "grand",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec:guts label=\"sec:guts\"} Not all of the symmetries of ${G_{\\mbox{\\rm SM}}}$, the gauge group of the Standard Model, are actually seen in ordinary life. This is because some of the symmetries are 'spontaneously broken'. This means that while they are symmetries of the laws of physics, they are not symmetries of the vacuum. To see these symmetries we need to do experiments at very high energies, where the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-31-the-su5-gut",
+      "number": "3.1",
+      "title": "The SU(5) GUT",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 42,
+      "labelStart": "32",
+      "labelEnd": "42",
+      "words": 4065,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overline wedge",
+          "heading": false
+        },
+        {
+          "term": "mathbb oplus",
+          "heading": false
+        },
+        {
+          "term": "mathbb otimes",
+          "heading": false
+        },
+        {
+          "term": "oplus lambda",
+          "heading": false
+        },
+        {
+          "term": "array overline",
+          "heading": false
+        },
+        {
+          "term": "rangle oplus",
+          "heading": false
+        },
+        {
+          "term": "cong oplus",
+          "heading": false
+        },
+        {
+          "term": "oplus langle",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:su(5) label=\"sec:su(5)\"} The ${\\rm SU}(5)$ grand unified theory appeared in a 1974 paper by Howard Georgi and Sheldon Glashow [@{GeorgiGlashow:su(5)}]. It was the first grand unified theory, and is still considered the prototypical example. As such, there are many accounts of it in the physics literature. The textbooks by Ross [@ross:gut] and Mohapatra [@mohapatra:us] both devote an entire chapter to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-32-the-spin10-theory",
+      "number": "3.2",
+      "title": "The Spin(10) Theory",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 48,
+      "labelStart": "42",
+      "labelEnd": "48",
+      "words": 2429,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wedge rho",
+          "heading": false
+        },
+        {
+          "term": "oplus lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda mathbb",
+          "heading": false
+        },
+        {
+          "term": "spin",
+          "heading": true
+        },
+        {
+          "term": "rho mathfrak",
+          "heading": false
+        },
+        {
+          "term": "cliff module",
+          "heading": false
+        },
+        {
+          "term": "cdots wedge",
+          "heading": false
+        },
+        {
+          "term": "rep lambda",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:so(10) label=\"sec:so(10)\"} We now turn our attention to another grand unified theory. Physicists call it the '${\\rm SO}(10)$ theory', but we shall call it the ${\\rm Spin}(10)$ theory, because the Lie group involved is really ${\\rm Spin}(10)$, the double cover of ${\\rm SO}(10)$. This theory appeared in a 1974 paper by Georgi [@{georgi:so(10)}], shortly after his paper with Glashow on the ${\\rm SU}(5)$ theory.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-33-the-patisalam-model",
+      "number": "3.3",
+      "title": "The Pati–Salam Model",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 55,
+      "labelStart": "48",
+      "labelEnd": "55",
+      "words": 2878,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pati--salam code",
+          "heading": false
+        },
+        {
+          "term": "pati--salam model",
+          "heading": false
+        },
+        {
+          "term": "pati--salam representation",
+          "heading": false
+        },
+        {
+          "term": "otimes overline",
+          "heading": false
+        },
+        {
+          "term": "mathbb otimes",
+          "heading": false
+        },
+        {
+          "term": "mathbb oplus",
+          "heading": false
+        },
+        {
+          "term": "right-handed particles",
+          "heading": false
+        },
+        {
+          "term": "right-handed fermions",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:g(2,2,4) label=\"sec:g(2,2,4)\"} Next we turn to a unified theory that is not so 'grand': its gauge group is not a simple Lie group, as it was for the ${\\rm SU}(5)$ and ${\\rm Spin}(10)$ theories. This theory is called the Pati--Salam model, after its inventors [@PatiSalam:model]; it has gauge group ${\\rm SU}(2) \\times {\\rm SU}(2) \\times {\\rm SU}(4)$, which is merely semisimple. We might imagine the ${\\rm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-34-the-route-to-spin10-via-patisalam",
+      "number": "3.4",
+      "title": "The Route to Spin(10) via Pati–Salam",
+      "level": 2,
+      "pageStart": 55,
+      "pageEnd": 62,
+      "labelStart": "55",
+      "labelEnd": "62",
+      "words": 2331,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pati--salam model",
+          "heading": false
+        },
+        {
+          "term": "pati--salam representation",
+          "heading": false
+        },
+        {
+          "term": "oplus mathfrak",
+          "heading": false
+        },
+        {
+          "term": "spin",
+          "heading": true
+        },
+        {
+          "term": "mathbb oplus",
+          "heading": false
+        },
+        {
+          "term": "oplus lambda",
+          "heading": false
+        },
+        {
+          "term": "pati--salam label",
+          "heading": false
+        },
+        {
+          "term": "pati salam",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec:route label=\"sec:route\"} In the last section, we showed how the Pati--Salam model answers two questions about the Standard Model: > Why are quarks and leptons so similar? Why are left and right so different? We were able to describe leptons as a fourth color of quark, 'white', and treat right-handed and left-handed particles on a more equal footing. Neither of these ideas worked on its own, but together,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-35-the-question-of-compatibility",
+      "number": "3.5",
+      "title": "The Question of Compatibility",
+      "level": 2,
+      "pageStart": 62,
+      "pageEnd": 65,
+      "labelStart": "62",
+      "labelEnd": "65",
+      "words": 518,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xymatrix mbox",
+          "heading": false
+        },
+        {
+          "term": "cube commute",
+          "heading": false
+        },
+        {
+          "term": "lambda mathbb",
+          "heading": false
+        },
+        {
+          "term": "otimes lambda",
+          "heading": false
+        },
+        {
+          "term": "route",
+          "heading": false
+        },
+        {
+          "term": "bottom face",
+          "heading": false
+        },
+        {
+          "term": "top face",
+          "heading": false
+        },
+        {
+          "term": "pscode",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:compatibility label=\"sec:compatibility\"} We now have two routes to the ${\\rm Spin}(10)$ theory. In Section [\\[sec:so(10)\\]](#sec:so(10)){reference-type=\"ref\" reference=\"sec:so(10)\"} we saw how to reach it via the ${\\rm SU}(5)$ theory: $$\\xymatrix{ {G_{\\mbox{\\rm SM}}}\\ar[r]^-\\phi \\ar[d] & {\\rm SU}(5) \\ar[r]^-\\psi \\ar[d] & {\\rm Spin}(10) \\ar[d] \\\\ {\\rm U}(F \\oplus F^*) \\ar[r]^-{{\\rm U}(f)} & {\\rm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-4-conclusion",
+      "number": "4",
+      "title": "Conclusion",
+      "level": 1,
+      "pageStart": 65,
+      "pageEnd": 73,
+      "labelStart": "65",
+      "labelEnd": "73",
+      "words": 2900,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbb oplus",
+          "heading": false
+        },
+        {
+          "term": "oplus lambda",
+          "heading": false
+        },
+        {
+          "term": "mbox grading",
+          "heading": false
+        },
+        {
+          "term": "rangle oplus",
+          "heading": false
+        },
+        {
+          "term": "oplus langle",
+          "heading": false
+        },
+        {
+          "term": "xymatrix mbox",
+          "heading": false
+        },
+        {
+          "term": "mbox splitting",
+          "heading": false
+        },
+        {
+          "term": "matter-antimatter grading",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:conclusion label=\"sec:conclusion\"} We have studied three different grand unified theories: the ${\\rm SU}(5)$, ${\\rm Spin}(4) \\times {\\rm Spin}(6)$ and ${\\rm Spin}(10)$ theories. The ${\\rm SU}(5)$ and ${\\rm Spin}(4) \\times {\\rm Spin}(6)$ theories were based on different visions about how to extend the Standard Model. However, we saw that both of these theories can be extended to the ${\\rm Spin}(10)$ theory,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathbb oplus",
+      "heading": false
+    },
+    {
+      "term": "mathbb otimes",
+      "heading": false
+    },
+    {
+      "term": "right-handed particles",
+      "heading": false
+    },
+    {
+      "term": "right-handed fermions",
+      "heading": false
+    },
+    {
+      "term": "lambda mathbb",
+      "heading": false
+    },
+    {
+      "term": "left-handed particles",
+      "heading": false
+    },
+    {
+      "term": "electron mathbb",
+      "heading": false
+    },
+    {
+      "term": "mathbb times",
+      "heading": false
+    },
+    {
+      "term": "mathbb overline",
+      "heading": false
+    },
+    {
+      "term": "representation mathbb",
+      "heading": false
+    },
+    {
+      "term": "mathbb rep",
+      "heading": false
+    },
+    {
+      "term": "cong mathbb",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 71,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 73,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The nucleons absorbing pions",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "A nucleon absorbs a pion. Here we see a nucleon coming in, absorbing a pion, and leaving",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "The Standard Model Representation Name",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Gauge bosons",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "Hypercharge relations",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "Binary code for ﬁrst-generation fermions, where c = r, g, b and",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "5",
+      "title": "Pati–Salam code for ﬁrst-generation fermions, where c = r, g, b and",
+      "page": 55,
+      "pageLabel": "55",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "6",
+      "title": "Pati–Salam binary code for ﬁrst-generation fermions, where c = r, g, b and c = gb, br, rg",
+      "page": 61,
+      "pageLabel": "61",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 21,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 22,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "2 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "6 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 22 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0904.1556v2"
+  }
+}

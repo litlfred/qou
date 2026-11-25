@@ -1,0 +1,139 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2404.19155v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2404.19155v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Octahedral coordinates from the Wirtinger presentation\nCalvin McPhail-Snyder\nDuke University\ncalvin@sl2.site\nAbstract\nLet ρ be a representation of a knot group (or more generally, the funda-\nmental group of a tangle complement) into SL2(C) expressed in terms of\nthe Wirtinger generators of a diagram D. This diagram also determines\nan ideal triangulation of the complement called the octahedral decompo-\nsition. ρ induces a hyperbolic structure on the complement of D, and in\nthis note we give a direct algebraic formula for the geometric parameters\nof the octahedral decomposition induced by this st",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2404.19155v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Studying representations of knot and $3$-manifold groups into $\\slg$ is important in low-dimensional topology. The isometry group of hyperbolic $3$-space is $\\pslg$, so this problem is closely related to the study of hyperbolic structures [@ThurstonNotes]. While one can study representations algebraically, say via the Wirtinger presentation of the knot group, it is sometimes better to work more geometrically. For example, for geometric invariants like the hyperbolic volume it is usually better to work with the geometric parameters of an ideal triangulation of the knot complement than directly",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2404.19155v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Octahedral colorings",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-octahedral-colorings.md",
+      "narrative": null,
+      "content": "[]{#sec:octahedral-colorings label=\"sec:octahedral-colorings\"}\n\n::: definition\nThe of a tangle $T$ is its complement as a submanifold of $[0,1]^{3}$. We write $\\pi(T)$ for the fundamental group of the complement. Suppose $T$ has $n$ incoming and $m$ outgoing boundary points and let $D$ be a diagram of $T$. We can think of $D$ as a decorated $4$-valent graph $G$ embedded in $[0,1] \\times [0,1]$ with $n$ edges intersecting $[0,1] \\times \\left\\{ \\def\\given{\\ \\middle| \\ }  0 \\right\\}$ and $m$ edges intersecting $[0,1] \\times \\left\\{ \\def\\given{\\ \\middle| \\ }  1 \\right\\}$. We assign names to variou",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2404.19155v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The holonomy of an octahedral coloring",
+      "pageStart": 7,
+      "pageEnd": 13,
+      "target": "../sections/sec-002-the-holonomy-of-an-octahedral-coloring.md",
+      "narrative": null,
+      "content": "[]{#sec:holonomy label=\"sec:holonomy\"}\n\nIn this section we define the holonomy representation of an octahedral coloring and show that it is compatible with our method of assigning an octahedral coloring to a shadowed decorated $\\slg$-coloring, thus justifying [\\[def:associated-octahedral\\]](#def:associated-octahedral){reference-type=\"ref\" reference=\"def:associated-octahedral\"}. To define the holonomy we must first introduce a groupoid presentation of $\\pi(D)$.\n\nRecall the characterization of a group $G$ as a category with a single object $\\bullet$ and an invertible morphism $g : \\bullet \\to \\b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2404.19155v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gauge transformations",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-003-gauge-transformations.md",
+      "narrative": null,
+      "content": "[]{#sec:gauge-transformations label=\"sec:gauge-transformations\"}\n\nIn this section we discuss how gauge transformation (conjugation) of the representation $\\rho$ interacts with the decorations and shadows. In this context it is natural to break gauge transformations into two separate types. We then use gauge transformations to prove that every decorated representation is gauge-equivalent to an admissible one (i.e.one that is the holonomy of an octahedral coloring).\n\n::: definition\nLet $i \\mapsto (g_i, L_i)$, $j \\mapsto u_j$ be a decorated shadow $\\slg$ coloring of a tangle diagram $D$. A of it",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2404.19155v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Shape parameters and the potential function",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "../sections/sec-004-shape-parameters-and-the-potential-function.md",
+      "narrative": null,
+      "content": "[]{#sec:potential label=\"sec:potential\"}\n\nOne way to subdivide the octahedral decomposition is to split the octahedron at each crossing into four tetrahedra as in [1](#fig:shape-parameters-diagram){reference-type=\"ref\" reference=\"fig:shape-parameters-diagram\"}, with one for each region touching the crossing. We can geometrize the tetrahedra by placing their vertices in the boundary at infinity of hyperbolic space, i.e. $\\psp$. Such geometric ideal tetrahedra are determined up to congruence by the cross-ratio of their vertices, usually called the . In this case these parameters are given by [\\[",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2404.19155v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bibliography",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-005-bibliography.md",
+      "narrative": null,
+      "content": "18\n[DG12] N. M. Dunfield and S. Garoufalidis,\n“Incompressibility criteria for spun-normal\nsurfaces”. arXiv doi\n[KC25] S. Kim and P. Choi, Diagram.site:\nBoundary parabolic representations for knots\nThe existence of analytic critical points of ΦD,µ has previously been studied, and we can\nexpress our results in this context. An edge of an ideal triangulation of a knot complement is\n(homtopically) peripherial if it is homotopic to a curve in the boundary of a regular neighborhood\nof the knot.\nCorollary 5.9. Let D be a diagram of a hyperbolic knot.\n(a) The edges of the four-term octahedral decompos",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

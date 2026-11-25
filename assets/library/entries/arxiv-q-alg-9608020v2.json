@@ -1,0 +1,211 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-q-alg-9608020v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-q-alg-9608020v2/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "arXiv:q-alg/9608020v2  8 Sep 1997\nSHIFTED JACK POLYNOMIALS, BINOMIAL\nFORMULA, AND APPLICATIONS\nA. Okounkov1and G. Olshanski2\nAbstract. In this note we prove an explicit binomial formula for Jack polynomials\nand discuss some applications of it.\n1. Jack polynomials ([M,St]). In this note we use the parameter\nθ = 1/α\ninverse to the standard parameter α for Jack polynomials. Jack symmetric poly-\nnomials Pλ(x1, . . . , xn; θ) are eigenfunctions of Sekiguchi diﬀerential operators\nD(u; θ) = V (x)−1 det\n\u0014\nxn−j\ni\n\u0012\nxi\n∂\n∂xi\n+ (n −j)θ + u\n\u0013\u0015\n1≤i,j≤n\n,\nD(u; θ) Pλ(x; θ) =\n Y\ni\n(λi + (n −i)θ + u)\n!\nPλ(x; θ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9608020v2/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "2\nA. OKOUNKOV AND G. OLSHANSKI\n2. Shifted Jack polynomials ([S1,OO,Ok1,KS,Ok3]). Denote by Λθ(n) the al-\ngebra of polynomials f(x1, . . . , xn) that are symmetric in variables xi −θi. We\ncall such polynomials shifted symmetric.\nBy (1.1) one has the Harish-Chandra\nisomorphism\n(2.1)\nD(n; θ) →Λθ(n)\nwhich takes an operator D ∈D(n; θ) to the polynomial d ∈Λθ(n) such that\nD Pλ(x; θ) = d(λ) Pλ(x; θ) .\nIf D is of order k then deg d = k.\nLet µ be a partition (also viewed as a diagram). Recall that for a square s =\n(i, j) ∈µ the numbers\na(s) = µi −j,\na′(s) = j −1,\nl(s) = µ′\nj −i,\nl′(s) = i −1,\nare calle",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9608020v2/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "SHIFTED JACK POLYNOMIALS, BINOMIAL FORMULA, AND APPLICATIONS\n3\nparticular, they provide an eﬀective proof of the existence of P ∗\nµ(x; θ) and a diﬀerent\nproof of (2.2) and (2.3).\nWe call these polynomials shifted Jack polynomials. They are a degenerate case\nof shifted Macdonald polynomials [Kn,S2,Ok3].\nIt easily follows from the deﬁnition that P ∗\nµ(x; θ) are stable, that is\nP ∗\nµ(x1, . . ., xn, 0; θ) = P ∗\nµ(x1, . . ., xn; θ)\nprovided µ has at most n parts. Hence, one can consider shifted Jack polynomials\nin inﬁnitely many variables.\nThe following combinatorial formula for shifted Jack polyno",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9608020v2/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "4\nA. OKOUNKOV AND G. OLSHANSKI\nLet O1 be the local ring of symmetric rational functions regular at the point\n(3.3)\n¯1 = (1, . . ., 1)\nand let m1 ⊂O1 be its maximal ideal. We call functionals\nψ ∈\n\u0000O1/mk\n1\n\u0001∗⊂O∗\n1\nsymmetric distributions of order ≤k supported at the point ¯1 deﬁned in (3.3).\nDenote by S1 the space of all symmetric distributions supported at ¯1. Looking at\nthe highest derivatives one easily proves that the map\n(3.4)\nD(n; θ) →S1\nwhich takes an operator D to the distribution ψD\nψD(f) = (D f)(1, . . ., 1)\nis an order preserving isomorphism of linear spaces.\nProof of the theorem. Con",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9608020v2/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "SHIFTED JACK POLYNOMIALS, BINOMIAL FORMULA, AND APPLICATIONS\n5\nRemark. The coeﬃcients\n\u0000λ\nµ\n\u0001\nθ in the expansion\nPλ(1 + x1, . . ., 1 + xn; θ)\nPλ(1, . . ., 1; θ)\n=\nµ\n\u0012λ\nµ\n\u0013\nθ\nPµ(x1, . . . , xn; θ)\nPµ(1, . . ., 1; θ)\n.\nare called the generalized binomial coeﬃcients. They were studied by C. Bingham\n[Bi] in the special case θ = 1/2, using group–theoretical methods, and by M. Lassalle\n[La] for general θ. Then a proof of the main results announced in [La] was proposed\nby J. Kaneko (see [K], section 5). Our theorem says that this binomial coeﬃcient\n(3.8)\n\u0012λ\nµ\n\u0013\nθ\n= P ∗\nµ(λ; θ)\nH(µ)\nis a shifted symmet",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9608020v2/blocks/prop-page-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "prop-page-006-01.md",
+      "narrative": null,
+      "content": "(5.2) θ-dim λ/µ θ-dim λ = P ∗ µ(λ; θ) |λ|(|λ| −1) · · ·(|λ| −|µ| + 1) . This proposition can be deduced from (3.8) and [La,K] (see the remark above), but it easier to give a direct proof, which uses the very same argument as in [OO], section 9. First one proves that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9608020v2/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "6\nA. OKOUNKOV AND G. OLSHANSKI\nwhere the second equality is based on the binomial formula and the last equality\nfollows from (2.3)\n□.\nWe call F(l, x; θ) the Bessel functions. They are in the same relation to Jack\npolynomials as ordinary Bessel functions to Jacobi polynomials. They are eigen-\nfunctions of the corresponding degeneration of Sekiguchi operators. The formula\n(4.2) makes obvious the following known symmetry\nF(l, x; θ) = F(x, l; θ) .\nLet H(n, R) denote the space of real symmetric matrices of order n, let X, Y ∈\nH(n, R), and let x = (x1, . . ., xn) and y = (y1, . . . , yn) be the spec",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9608020v2/blocks/lem-page-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "lem-page-007-01.md",
+      "narrative": null,
+      "content": "(5.3) ( X xi −|µ|)P ∗ µ(x; θ) = X |λ|=|µ|+1 θ-dim λ/µ P ∗ λ(x; θ) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9608020v2/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "SHIFTED JACK POLYNOMIALS, BINOMIAL FORMULA, AND APPLICATIONS\n7\nLemma.\n(5.3)\n(\nX\nxi −|µ|)P ∗\nµ(x; θ) =\nX\n|λ|=|µ|+1\nθ-dim λ/µ P ∗\nλ(x; θ) .\nProof. Let f be the diﬀerence of the LHS and RHS in (5.3). By (2.3) and (5.1) we\nhave deg f ≤|µ|. One easily checks that f(ν) = 0 for all |ν| ≤|µ|. It follows that\nf = 0.\n□\nApplying this lemma k times, where k = |λ| −|µ|, we obtain\n(5.4) (\nX\nxi −|µ|) · · · (\nX\nxi −|µ|−k +1)P ∗\nµ(x; θ) =\nX\n|ν|=|µ|+k\nθ-dim ν/µ P ∗\nν (x; θ) .\nEvaluation of (5.4) at x = λ gives\n(5.5)\n(|λ| −|µ|)! P ∗\nµ(λ) = θ-dim λ/µ P ∗\nλ(λ) .\nIn particular, for µ = ∅one has\n(5.6)\n|λ|! = θ-dim λ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9608020v2/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "8\nA. OKOUNKOV AND G. OLSHANSKI\nProposition. If µ has < n parts then\nPµ(λ) =\n1\nC(µ, n)\n1\nV (λ)2θ−1\nZ λ1\nλ2\ndν1. . .\nZ λn−1\nλn\ndνn−1 Pµ(ν) V (ν) Π(λ, ν; θ) .\nHere λ1 ≥· · · ≥λn are arbitrary real (this assumption is not essential since\nPµ is symmetric). If θ = 1, 2, . . . then the integrand is holomorphic and λ can be\narbitrary complex. Iteration of this proposition together with (1.2) gives an integral\nrepresentation for all Jack polynomials.\nThis proposition was ﬁrst obtained by G. Olshanski (unpublished) for special\nvalues θ = 1/2, 1, 2 by using the group theoretic interpretation of the corre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9608020v2/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "SHIFTED JACK POLYNOMIALS, BINOMIAL FORMULA, AND APPLICATIONS\n9\n[Op]\nE. M. Opdam, Dunkl operators, Bessel functions, and the discriminant of a ﬁnite Coxeter\ngroup, Compos. Math. 85 (1993), 333-373.\n[OV]\nG. Olshanski and A. Vershik, Ergodic unitarily invariant measures on the space of inﬁnite\nHermitian matrices, in Contemporary Mathematical Physics. F. A. Berezin’s memorial\nvolume (R. L. Dobrushin, R. A. Minlos, M. A. Shubin, A. M. Vershik, eds.), American\nMathematical Society Translations, Series 2, Vol. 175 (Advances in the Mathematical Sci-\nences — 31), Amer. Math. Soc., Providence, R.I., 199",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

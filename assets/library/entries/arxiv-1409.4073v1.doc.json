@@ -1,0 +1,989 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1409.4073v1",
+  "title": "arxiv-1409.4073v1",
+  "variant": "pdf",
+  "pages": 35,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Notation",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-notation"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries on sheaves and fibered categories",
+      "number": "1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-1-preliminaries-on-sheaves-and-fibered-categorie"
+    },
+    {
+      "level": 1,
+      "title": "Sheafification functors.",
+      "number": "2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-2-sheafification-functors"
+    },
+    {
+      "level": 2,
+      "title": "Sheafifying R-linear functors.",
+      "number": "2.1",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-21-sheafifying-r-linear-functors"
+    },
+    {
+      "level": 2,
+      "title": "Sheafifying R-linear monoidal functors.",
+      "number": "2.2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-22-sheafifying-r-linear-monoidal-functors"
+    },
+    {
+      "level": 1,
+      "title": "Yoneda embeddings.",
+      "number": "3",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-3-yoneda-embeddings"
+    },
+    {
+      "level": 1,
+      "title": "Group schemes and representations.",
+      "number": "4",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-4-group-schemes-and-representations"
+    },
+    {
+      "level": 1,
+      "title": "Tannaka reconstruction for stacks with the resolution property.",
+      "number": "5",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-5-tannaka-reconstruction-for-stacks-with-the-res"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-references"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 84,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homogeneous sheaﬁﬁcation",
+          "heading": false
+        },
+        {
+          "term": "tannaka reconstruction",
+          "heading": false
+        },
+        {
+          "term": "functors",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1409.4073v1 [math.AG] 14 Sep 2014 SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI Abstract. We introduce “sheaﬁﬁcation” functors from categories of (lax monoidal) linear functors to categories of quasi-coherent sheaves (of algebras) of stacks. They generalize the homogeneous sheaﬁﬁcation of graded modules for projective schemes and have applications in the theory of non-abelian Galois covers",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1409.4073v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": "5",
+      "words": 2592,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shc arr",
+          "heading": false
+        },
+        {
+          "term": "arr stx",
+          "heading": false
+        },
+        {
+          "term": "qcoh stx",
+          "heading": false
+        },
+        {
+          "term": "shc mathop",
+          "heading": false
+        },
+        {
+          "term": "textup qcoh",
+          "heading": false
+        },
+        {
+          "term": "textup lex",
+          "heading": false
+        },
+        {
+          "term": "shp shc",
+          "heading": false
+        },
+        {
+          "term": "loc stx",
+          "heading": false
+        }
+      ],
+      "extract": "If $G$ is an affine group scheme over a field $k$, classical Tannaka's reconstruction problem consists in reconstructing the group $G$ from $\\mathop{\\mathrm{\\textup{Rep}}}^{G}k$, its category of finite representations: if $F\\colon\\mathop{\\mathrm{\\textup{Rep}}}^{G}k\\arr\\mathop{\\mathrm{\\textup{Vect}}}k$ is the forgetful functor then $G$ is canonically isomorphic to the sheaf of automorphisms of $F$ (opportunely",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-notation",
+      "number": null,
+      "title": "Notation",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 234,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arr stx",
+          "heading": false
+        },
+        {
+          "term": "textup aff",
+          "heading": false
+        },
+        {
+          "term": "mathrm textup",
+          "heading": false
+        },
+        {
+          "term": "textup spec",
+          "heading": false
+        },
+        {
+          "term": "fpqc stack",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "maps arr",
+          "heading": false
+        },
+        {
+          "term": "fibered category",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper we work over a base commutative, associative ring $R$ with unity. If not stated otherwise a fiber category will be a category fibered in groupoids over $\\mathop{\\mathrm{\\textup{Aff}}}/R$, the category of affine schemes over $\\mathop{\\mathrm{\\textup{Spec}}}R$, or, equivalently, the opposite of the category of $R$-algebras. A scheme or an algebraic space $X$ over $\\mathop{\\mathrm{\\textup{Spec}}}R$ will",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 31,
+      "summary": null,
+      "keywords": [],
+      "extract": "I would like to thank Jarod Alper, David Rydh, Daniel Schäppi, Mattia Talpo and Angelo Vistoli for the useful conversations I had with them and all the suggestions they gave me.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-1-preliminaries-on-sheaves-and-fibered-categorie",
+      "number": "1",
+      "title": "Preliminaries on sheaves and fibered categories",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 9,
+      "labelStart": "5",
+      "labelEnd": "9",
+      "words": 2268,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fpqc atlas",
+          "heading": false
+        },
+        {
+          "term": "qcoh extends",
+          "heading": false
+        },
+        {
+          "term": "equivalence qcoh",
+          "heading": false
+        },
+        {
+          "term": "quasi-coherent sheaves",
+          "heading": false
+        },
+        {
+          "term": "pseudo-algebraic map",
+          "heading": false
+        },
+        {
+          "term": "fibered categories",
+          "heading": true
+        },
+        {
+          "term": "called pseudo-algebraic",
+          "heading": false
+        },
+        {
+          "term": "quasi-coherent sheaf",
+          "heading": false
+        }
+      ],
+      "extract": "Preliminaries on sheaves and fibered categories Let π: X −→Aﬀ/R be a ﬁbered category. There is a functor of rings OX : X op −→(Sets) deﬁned by OX (ξ) = H0(Oπ(ξ)), so that (X, OX ) is a ringed category. A presheaf of OX -modules on X is a functor F : X op −→(Sets) together with an H0(Oπ(ξ))-module structure on F(ξ) for all ξ ∈X such that, if ξ −→η is a map on X, then the map F(η) −→F(ξ) is H0(Oπ(η))- linear. Morphism",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-2-sheafification-functors",
+      "number": "2",
+      "title": "Sheafification functors.",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 284,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stx arr",
+          "heading": false
+        },
+        {
+          "term": "qcoh stx",
+          "heading": false
+        },
+        {
+          "term": "odi stx",
+          "heading": false
+        },
+        {
+          "term": "shd arr",
+          "heading": false
+        },
+        {
+          "term": "textup qcoh",
+          "heading": false
+        },
+        {
+          "term": "colon shd",
+          "heading": false
+        },
+        {
+          "term": "sheafification",
+          "heading": true
+        },
+        {
+          "term": "mathrm textup",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we define and describe particular functors that generalize sheafification functors for affine schemes or projective schemes. The idea is to interpret the category of modules or graded modules respectively as a category of $R$-linear functors. More precisely: ::: defn Given a fibered category $\\stX$ over a ring $R$, an $R$-algebra $A$ and a subcategory $\\shD$ of $\\mathop{\\mathrm{\\textup{QCoh}}}\\stX$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-21-sheafifying-r-linear-functors",
+      "number": "2.1",
+      "title": "Sheafifying R-linear functors.",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 14,
+      "labelStart": "10",
+      "labelEnd": "14",
+      "words": 2562,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shc arr",
+          "heading": false
+        },
+        {
+          "term": "arr stx",
+          "heading": false
+        },
+        {
+          "term": "arr shg",
+          "heading": false
+        },
+        {
+          "term": "arr shf",
+          "heading": false
+        },
+        {
+          "term": "arr shh",
+          "heading": false
+        },
+        {
+          "term": "shc mathop",
+          "heading": false
+        },
+        {
+          "term": "sty arr",
+          "heading": false
+        },
+        {
+          "term": "textup qcoh",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we want to explicitly describe sheafification functors for small subcategories of $\\mathop{\\mathrm{\\textup{QCoh}}}\\stX$. In particular we fix a *small* (and non empty) subcategory $\\shC$ of $\\mathop{\\mathrm{\\textup{QCoh}}}\\stX$. In the construction of the sheafification functors we will make use of the coend construction in the settings of categories enriched over categories of modules over a ring.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-22-sheafifying-r-linear-monoidal-functors",
+      "number": "2.2",
+      "title": "Sheafifying R-linear monoidal functors.",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 972,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stx alb",
+          "heading": false
+        },
+        {
+          "term": "alb arr",
+          "heading": false
+        },
+        {
+          "term": "stx ala",
+          "heading": false
+        },
+        {
+          "term": "shc arr",
+          "heading": false
+        },
+        {
+          "term": "odi stx",
+          "heading": false
+        },
+        {
+          "term": "stx mathop",
+          "heading": false
+        },
+        {
+          "term": "qrings stx",
+          "heading": false
+        },
+        {
+          "term": "qalg stx",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we show how \"ring structures\" on a quasi-coherent sheaf over $\\stX$ correspond to \"monoidal\" structures on the corresponding Yoneda functor. We start setting up some definitions: ::: defn []{#def: pseudo monoidal commutativi associative label=\"def: pseudo monoidal commutativi associative\"} Let $\\catC$ and $\\catD$ be $R$-linear symmetric monoidal categories. A (contravariant) *pseudo-monoidal* functor",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-yoneda-embeddings",
+      "number": "3",
+      "title": "Yoneda embeddings.",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 26,
+      "labelStart": "16",
+      "labelEnd": "26",
+      "words": 5750,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shd shc",
+          "heading": false
+        },
+        {
+          "term": "shc arr",
+          "heading": false
+        },
+        {
+          "term": "lex shc",
+          "heading": false
+        },
+        {
+          "term": "shd stx",
+          "heading": false
+        },
+        {
+          "term": "textup lex",
+          "heading": false
+        },
+        {
+          "term": "arr shf",
+          "heading": false
+        },
+        {
+          "term": "qcoh shd",
+          "heading": false
+        },
+        {
+          "term": "arr shg",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we address the problem of when the Yoneda functor $\\mathop{\\mathrm{\\textup{QCoh}}}_{A}\\stX\\arr\\L_{R}(\\shC,A)$ is fully faithful and describe its essential image. This will led us to the notion of generating category and left exactness for functors in $\\L_{R}(\\shC,A)$. We fix an $R$-algebra $A$ and a fibered category $\\stX$. We assume that our fibered category $\\stX$ is pseudo-algebraic, that is we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-group-schemes-and-representations",
+      "number": "4",
+      "title": "Group schemes and representations.",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 727,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "locg mod",
+          "heading": false
+        },
+        {
+          "term": "modg",
+          "heading": false
+        },
+        {
+          "term": "group schemes",
+          "heading": true
+        },
+        {
+          "term": "exact functors",
+          "heading": false
+        },
+        {
+          "term": "homg",
+          "heading": false
+        },
+        {
+          "term": "ﬁltered direct",
+          "heading": false
+        },
+        {
+          "term": "g-equivariant",
+          "heading": false
+        },
+        {
+          "term": "short exact",
+          "heading": false
+        }
+      ],
+      "extract": "Group schemes and representations. Let G be a ﬂat and aﬃne group scheme over R. In this section we want to interpret the results obtained in the case X = BR G, the stack of G-torsors for the fpqc topology, which is a quasi-compact fpqc stack with aﬃne diagonal. If A is an R-algebra, by standard theory we have that QCohA BR G is the category ModG A of G-comodules over A. Recall that the regular representation R[G] of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-5-tannaka-reconstruction-for-stacks-with-the-res",
+      "number": "5",
+      "title": "Tannaka reconstruction for stacks with the resolution property.",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 35,
+      "labelStart": "27",
+      "labelEnd": "35",
+      "words": 4571,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arr stx",
+          "heading": false
+        },
+        {
+          "term": "arr shc",
+          "heading": false
+        },
+        {
+          "term": "arr shf",
+          "heading": false
+        },
+        {
+          "term": "odi stx",
+          "heading": false
+        },
+        {
+          "term": "arr sty",
+          "heading": false
+        },
+        {
+          "term": "fib stx",
+          "heading": false
+        },
+        {
+          "term": "arr mathop",
+          "heading": false
+        },
+        {
+          "term": "textup mathop",
+          "heading": false
+        }
+      ],
+      "extract": "::: defn A (contravariant) monoidal functor $\\Omega\\colon\\catC\\arr\\catD$ between symmetric monoidal categories is called *strong* if the maps $$\\Omega_{V}\\otimes\\Omega_{W}\\arr\\Omega_{V\\otimes W}$$ are isomorphisms for all $V,W\\in\\catC$ and the map $J\\arr F_{I}$ is an isomorphism, where $I$ and $J$ are the unities of $\\catC$ and $\\catD$ respectively. ::: In this section we want to understand what sheaves of algebras",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 35,
+      "labelStart": "35",
+      "labelEnd": "35",
+      "words": 284,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tannaka duality",
+          "heading": false
+        },
+        {
+          "term": "martin brandenburg",
+          "heading": false
+        },
+        {
+          "term": "stacks",
+          "heading": false
+        },
+        {
+          "term": "tonini",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "ramiﬁed",
+          "heading": false
+        },
+        {
+          "term": "toric",
+          "heading": false
+        },
+        {
+          "term": "mathematik",
+          "heading": false
+        }
+      ],
+      "extract": "[BC12] Martin Brandenburg and Alexandru Chirvasitu, Tensor functors between categories of quasi-coherent sheaves, arxiv:1202.5147 (2012), 21. [Bha14] Bhargav Bhatt, Algebraization and Tannaka duality, arxiv:1404.7483 (2014), 35. [Bra14] Martin Brandenburg, Tensor categorical foundations of algebraic geometry, Ph.D. thesis, 2014, p. 251. [Bro13] Michael Broshi, G-torsors over a Dedekind scheme, Journal of Pure and",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "arr stx",
+      "heading": false
+    },
+    {
+      "term": "shc stx",
+      "heading": false
+    },
+    {
+      "term": "textup arr",
+      "heading": false
+    },
+    {
+      "term": "qcoh stx",
+      "heading": false
+    },
+    {
+      "term": "stx mathop",
+      "heading": false
+    },
+    {
+      "term": "shd stx",
+      "heading": false
+    },
+    {
+      "term": "arr shf",
+      "heading": false
+    },
+    {
+      "term": "stx shg",
+      "heading": false
+    },
+    {
+      "term": "odi stx",
+      "heading": false
+    },
+    {
+      "term": "arrdi stx",
+      "heading": false
+    },
+    {
+      "term": "mathrm textup",
+      "heading": false
+    },
+    {
+      "term": "colon stx",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 12,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p35); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1409.4073v1"
+  }
+}

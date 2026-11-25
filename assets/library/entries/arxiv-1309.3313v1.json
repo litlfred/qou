@@ -1,0 +1,256 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1309.3313v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1309.3313v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "I Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-i-introduction.md",
+      "narrative": null,
+      "content": "The Chiral Perturbation Theory (CHPT) has been tremendously successful in describing low-energy hadronic properties in the non-perturbative regime of Quantum Chromodynamics (QCD). Some of the major goals of low-energy QCD are the study of hadronic form factors, which reflect the static structure, and the investigation of the dynamical hadronic response to the external electromagnetic field via electric and magnetic polarizabilities. To study the dependence of the electric and magnetic polarizabilities on the photon energy, we use the relativistic CHPT while applying the multipole expansion app",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.3313v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "II Pion Form Factor",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-ii-pion-form-factor.md",
+      "narrative": null,
+      "content": "The spatial pion electromagnetic form factor has been addressed in [@Ga84; @NR; @JK; @FC; @IBG; @MT] and is under experimental study currently [@Fpi]. To investigate the behavior of the pion form factor experimentally at momentum transfers $Q^{2}>0.3\\, GeV^{2}$ and in the transitional region between long-distance and short-distance QCD, one must use the charged pion electroproduction process. The two-fold differential cross section for the exclusive pion electroproduction can be parametrized by a well known formula [@EP1] in terms of photoabsorption cross sections, where each term corresponds",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.3313v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Hadron Structure in Chiral Perturbation Theory\nA. Aleksejevs∗\nGrenfell campus of Memorial University, Newfoundland, Canada\nS. Barkanova†\nAcadia University, Nova Scotia, Canada\nWe present our predictions for meson form factors for the SU(3) octet and investigate their\nimpact on the pion electroproduction cross sections. The electric and magnetic polarizabilities of\nthe SU(3) octet of mesons and baryons are analyzed in detail. These extensive calculations are\nmade possible by the recent implementation of semi-automatized calculations in fully-relativistic\nchiral perturbation theory, which allows",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.3313v1/blocks/figure-img-p002-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1309.3313v1/blocks/figure-img-p003-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1309.3313v1/blocks/figure-img-p003-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1309.3313v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "III Dynamical Polarizabilities of Mesons",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-iii-dynamical-polarizabilities-of-mesons.md",
+      "narrative": null,
+      "content": "Experimentally, a unique opportunity to study the dynamical structure of hadrons over a wide kinematic range is provided by Compton scattering. In the non-relativistic approximation, the Hamiltonian related to the meson internal structure can be represented as $$\\begin{aligned}\nH_{eff}=-\\frac{1}{2}4\\pi\\alpha_{E}\\vec{E}^{2}-\\frac{1}{2}4\\pi\\beta_{M}\\vec{H}^{2},\\label{eq:6}\n\\end{aligned}$$ where $\\alpha_{E}$ and $\\beta_{M}$ are electric and magnetic polarizabilities of the meson, respectively. Up to now, only charged and neutral pion polarizabilities have been measured, producing a broad range of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.3313v1/blocks/figure-img-p005-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1309.3313v1/blocks/figure-img-p005-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1309.3313v1/blocks/prop-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "prop-sec-003-01.md",
+      "narrative": null,
+      "content": "A Lagrangian which describes nucleon-to-resonance radiative transition is given in the form of a contact term: $$\\begin{aligned} & \\displaystyle{\\mathcal{L}^{\\Delta N\\gamma}=i\\Theta\\frac{e}{\\Lambda}\\bar{N}\\gamma^{\\mu}\\gamma_{5}Q\\Delta^{\\nu}F_{\\mu\\nu},}\\nonumber \\\\ \\label{eq:9-1}\\\\ & F_{\\mu\\nu}=\\partial_{\\mu}\\mathcal{A}_{\\nu}-\\partial_{\\nu}\\mathcal{A}_{\\mu}.\\nonumber \\end{aligned}$$ Here, $\\Lambda\\sim1\\, GeV$ is the scale of chiral symmetry breaking and $\\Theta$ is the coupling strength, determined from the branching ratio of the radiative decay, $\\Delta\\rightarrow N\\gamma$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1309.3313v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "IV Dynamical Polarizabilities of Baryons",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-iv-dynamical-polarizabilities-of-baryons.md",
+      "narrative": null,
+      "content": "The electric and magnetic polarizabilities of baryons introduce an additional contribution into the effective Hamiltonian for baryons in the electromagnetic field in the same way as defined in Eq.(6). The current PDG [@PDG] experimental values for the electric and magnetic polarizabilities for proton and neutron are (in units of $10^{-4} \\mbox{fm}^3$): $$\\begin{aligned}\n\\alpha_{p}=12.0\\pm0.6; &  & \\beta_{p}=1.9\\pm0.5;\\\\\n\\alpha_{n}=11.6\\pm1.5; &  & \\beta_{n}=3.7\\pm2.0 \\space .\n\\end{aligned}$$ In order to evaluate polarizabilities theoretically, one can use Compton scattering and relate an ampli",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.3313v1/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1309.3313v1/blocks/figure-img-p006-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1309.3313v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "VI Acknowledgements",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-vi-acknowledgements.md",
+      "narrative": null,
+      "content": "This work has been supported by the Natu-\nral Sciences and Engineering Research Council\nof Canada (NSERC).\n[1] J. Gasser and H. Leutwyler, Ann. Phys. 158, 142 (1984).\n[2] V. A. Nesterenko and A. V. Radyushkin, Phys. Lett.\nB115 410 (1982); A.V. Radyushkin, Nucl. Phys. A532\n141 (1991).\n[3] R. Jakob and P. Kroll, Phys. Lett. B315 463 (1993).\n[4] F. Cardarelli et al., Phys. Lett. B332 (1994) 1; Phys.\nLett. B357 267 (1995).\n[5] H. Ito, W. W. Buck and F. Gross, Phys. Rev. C 45 (1992)\n(1918).\n[6] P. Maris and P. C. Tandy, preprint nucl-th/0005015.\n[7] V. Tadevosyan et al., Phys. Rev. C 75, 055205 (20",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

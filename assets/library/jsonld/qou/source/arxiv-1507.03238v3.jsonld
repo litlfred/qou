@@ -1,0 +1,93 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1507.03238v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1507.03238v3",
+  "contains": [
+    "library/arxiv-1507.03238v3/sections/sec-front-matter",
+    "library/arxiv-1507.03238v3/sections/sec-000",
+    "library/arxiv-1507.03238v3/sections/sec-001",
+    "library/arxiv-1507.03238v3/sections/sec-002",
+    "library/arxiv-1507.03238v3/sections/sec-003",
+    "library/arxiv-1507.03238v3/sections/sec-004",
+    "library/arxiv-1507.03238v3/sections/sec-005",
+    "library/arxiv-1507.03238v3/sections/sec-006",
+    "library/arxiv-1507.03238v3/sections/sec-007",
+    "library/arxiv-1507.03238v3/sections/sec-008",
+    "library/arxiv-1507.03238v3/sections/sec-009",
+    "library/arxiv-1507.03238v3/sections/sec-010",
+    "library/arxiv-1507.03238v3/sections/sec-011",
+    "library/arxiv-1507.03238v3/sections/sec-012",
+    "library/arxiv-1507.03238v3/sections/sec-013",
+    "library/arxiv-1507.03238v3/sections/sec-014",
+    "library/arxiv-1507.03238v3/sections/sec-015",
+    "library/arxiv-1507.03238v3/sections/sec-016",
+    "library/arxiv-1507.03238v3/sections/sec-017",
+    "library/arxiv-1507.03238v3/sections/sec-018",
+    "library/arxiv-1507.03238v3/sections/sec-019",
+    "library/arxiv-1507.03238v3/sections/sec-020",
+    "library/arxiv-1507.03238v3/sections/sec-021",
+    "library/arxiv-1507.03238v3/sections/sec-022",
+    "library/arxiv-1507.03238v3/sections/sec-023",
+    "library/arxiv-1507.03238v3/sections/sec-024",
+    "library/arxiv-1507.03238v3/sections/sec-025",
+    "library/arxiv-1507.03238v3/sections/sec-026",
+    "library/arxiv-1507.03238v3/sections/sec-027",
+    "library/arxiv-1507.03238v3/sections/sec-028",
+    "library/arxiv-1507.03238v3/sections/sec-029",
+    "library/arxiv-1507.03238v3/sections/sec-030",
+    "library/arxiv-1507.03238v3/sections/sec-031",
+    "library/arxiv-1507.03238v3/sections/sec-032",
+    "library/arxiv-1507.03238v3/sections/sec-033",
+    "library/arxiv-1507.03238v3/sections/sec-034",
+    "library/arxiv-1507.03238v3/sections/sec-035",
+    "library/arxiv-1507.03238v3/sections/sec-036",
+    "library/arxiv-1507.03238v3/sections/sec-037",
+    "library/arxiv-1507.03238v3/sections/sec-038"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety for SL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M.\n\n**TRIANGULATION INDEPENDENT PTOLEMY VARIETIES**\n\n*MATTHIAS GOERNER AND CHRISTIAN K. ZICKERT*\n\n26 pp, 40 sections.\n\n**Abstract.** The Ptolemy variety for SL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M. It is closely related to Thurston’s gluing equation variety. The Ptolemy variety maps naturally to the set of conjugacy classes of boundary-unipotent SL(2, C)- representations, but (like the gluing equation variety) it depends on the triangulation, and may miss several components of representations. In this paper, we deﬁne a Ptolemy variety, which is independent of the choice of triangulation, and detects all boundary-unipotent irre- ducible SL(2, C)-representations. We also deﬁne variants of the Ptolemy variety for PSL(2, C)- representations, and representations that are not necessarily boundary-unipotent. In particu- lar, we obtain an algorithm to compute all irreducible SL(2, C)-characters as well as the full A-polynomial. All the varieties are topological invariants of M.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Motivation: Thurston's gluing equations; 1.2 Decorated representations; 1.3 Ptolemy varieties in brief; 1.4 Statement of results; 1.5 Definition and computation of the refined ; 2 Ptolemy coordinates, decorations and cocycle; 2.1 Ptolemy assignments; 2.2 Decorations; 2.3 Natural cocycles; 2.4 The diagonal action; 2.5 The fundamental correspondence; 3 Other variants of the Ptolemy variety; 3.2 Non-boundary-unipotent representations; 4 Generalization of the fundamental correspond; 4.1 Cocycles, and the action by coboundaries; 4.2 Bruhat cocycles",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1507.03238&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1507.03238v3",
+    "title_source": "slug",
+    "source_file": "1507.03238v3.pdf",
+    "source_sha256": "1da6a5498c08a521d6f91a617336e0fd9a5aaea0fbcf8d5c0452b2c4d6f52b91",
+    "pages": 26,
+    "arxiv": {
+      "id": "1507.03238",
+      "version": "3",
+      "primary_class": "math.GT",
+      "stamp_date": "7 Dec 2017"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

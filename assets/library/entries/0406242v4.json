@@ -1,0 +1,863 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "0406242v4",
+  "blocks": [
+    {
+      "id": "library/0406242v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nLet T := (R2∖Z2)/Z2 be the once-punctured torus endowed with its differential\nstructure and an orientation. The group G of isotopy classes of orientation-preserving\ndiffeomorphisms ϕ: T →T (or the mapping class group of T) is identiﬁed as\nG ≃SL2(Z), so each such map ϕ has well-deﬁned eigenvalues in C. For [ϕ] in G,\ndeﬁne the punctured torus bundle\nVϕ := T × [0, 1]/ ∼\nwhere ∼identiﬁes (x, 0) with (ϕ(x), 1) for all x in T. Then Vϕ is a differentiable\noriented 3–manifold, well-deﬁned up to diffeomorphism. Thurston’s Hyperbolization\nTheorem [21] implies the following theorem as a very",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Geometry & Topology 10 (2006) 1239–1284\n1239\narXiv version: fonts, pagination and layout may vary from GT published version\nOn canonical triangulations of once-punctured\ntorus bundles and two-bridge link complements\nFRANC¸OIS GU´ERITAUD\nAPPENDIX BY DAVID FUTER\nWe prove the hyperbolization theorem for punctured torus bundles and two-bridge\nlink complements by decomposing them into ideal tetrahedra which are then given\nhyperbolic structures, following Rivin’s volume maximization principle.\n57M50; 57M27\n`A la m´emoire de Pierre Philipps",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "If ϕ has two distinct real eigenvalues, the punctured torus bundle Vϕ admits a ﬁnite-volume, complete hyperbolic metric. The aim of this paper is to prove Theorem 1.1 by elementary and, to some extent, constructive arguments. The strategy is to exhibit a canonical, geodesic triangulation H of Vϕ into ideal tetrahedra (hyperbolic tetrahedra whose vertices are at inﬁnity). Combinatorially, H (sometimes called the Floyd–Hatcher or monodromy triangulation) is found by expressing a certain conjugate of ±ϕ as a product of positive transvection matrices. Once such combinatorial data for a triangulati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conjugacy in SL(2,Z) and the Farey tesselation",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-conjugacy-in-sl2z-and-the-farey-tesselation.md",
+      "narrative": null,
+      "content": "Proposition 2.1 Let ϕ be an element of SL2(Z) with two distinct eigenvalues in R∗\n+.\nThen the conjugacy class of ϕ in SL2(Z) contains an element of the form\nAϕA−1 =\n\u00121\na1\n0\n1\n\u0013\u0012 1\n0\nb1\n1\n\u0013\n\u00121\na2\n0\n1\n\u0013\u0012 1\n0\nb2\n1\n\u0013\n. . .\n\u00121\nan\n0\n1\n\u0013\u0012 1\n0\nbn\n1\n\u0013\nwhere n > 0 and the ai and bi are positive integers. Moreover, the right hand side is\nunique up to cyclic permutation of the factors\n\u0000 1 ai\n0 1\n\u0001\u0000 1 0\nbi 1\n\u0001\n. Conversely, any nonempty\nproduct of such factors is an element of SL2(Z) with two distinct eigenvalues in R∗\n+.\nWe sketch a proof of this popular fact, mainly in order to introduce the cyclic word",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The canonical triangulation",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-3-the-canonical-triangulation.md",
+      "narrative": null,
+      "content": "The canonical triangulation",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Diagonal exchanges",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-31-diagonal-exchanges.md",
+      "narrative": null,
+      "content": "Diagonal exchanges\nThere is another well-known interpretation of the Farey tessellation F of the hyperbolic\nplane H2. Under the canonical identiﬁcation H1(T, Z) ≃Z2, where T is the punctured\ntorus deﬁned in the Introduction, each rational number in the boundary bR = R ∪{∞}\nof H2 can be seen as a slope, ie a proper isotopy class of properly embedded lines\nin T, going from the puncture to itself. The action of SL2(Z) on bQ coincides with\nthe action of the mapping class group G of T on rational slopes. The edges of the\nFarey tessellation F connect exactly the pairs of rational numbers whose corre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tetrahedra",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-32-tetrahedra.md",
+      "narrative": null,
+      "content": "Tetrahedra\nAs before, let ϕ be an element of SL2(Z) with two distinct eigenvalues in R∗\n+. In the\nproof of Proposition 2.1, we introduced the triangles t0, t1, . . . crossed by the axis D\nof ϕ. In view of the above, this yields a nonbacktracking path of diagonal exchanges\nbetween some triangulation (associated to t0) and its pushforward by ϕ (associated to\ntm).\nMore precisely, when the oriented line D crosses an edge e of the Farey tessellation,\ne comes with a transverse orientation.\nSo we can deﬁne the top (resp. bottom)\ntriangulation τ+(e) (resp. τ−(e)) of the punctured torus T as being the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Combinatorics of the torus at infinity",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-4-combinatorics-of-the-torus-at-infinity.md",
+      "narrative": null,
+      "content": "Combinatorics of the torus at inﬁnity\nThe manifold Vϕ is naturally homeomorphic to the interior of a compact manifold with\nboundary, denoted by Vϕ and deﬁned as a bundle over the circle with ﬁber T −δ,\nwhere δ is a regular neighborhood of the puncture.\nGeometry & Topology 10 (2006)\nCanonical triangulations\n1245\nR D\n\u0012 1\n1\n0\n1\n\u0013\nL D\n\u0012 1\n0\n1\n1\n\u0013\nFigure 2\nThe torus at inﬁnity of the manifold Vϕ is the boundary of Vϕ, namely a topological\ntorus. The links of the vertices of the tetrahedra ∆i provide a tessellation A of the torus\nat inﬁnity into topological triangles. In this section we investigate",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finding positive angles",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-5-finding-positive-angles.md",
+      "narrative": null,
+      "content": "Finding positive angles\nThe tetrahedra ∆i and ∆i+1 have two common triangular faces whose union forms\na pleated punctured torus Σ properly isotopic to T × {∗} in T × R. Moreover, Σ\nreceives a transverse “upward” orientation from the R–factor. Suppose all tetrahedra\n∆i are endowed with dihedral angles. Let e be an edge of Σ: if the sum of all dihedral\nangles at e below Σ is π + α, we call α the pleating angle of Σ at e.\nIn this section we ﬁnd positive dihedral angles for the ideal tetrahedra ∆i. More\nprecisely, we describe the convex space Π of positive angles xi, yi, zi for the ∆i such\nthat:\n(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hyperbolic volume",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-6-hyperbolic-volume.md",
+      "narrative": null,
+      "content": "Hyperbolic volume\nOur goal for the remainder of the paper is to ﬁnd a point (wi) of P where the tetrahedra\nﬁt together so as to yield a complete hyperbolic structure on Vϕ. This section is devoted\nGeometry & Topology 10 (2006)\nCanonical triangulations\n1251\nto checking that this is the same as ﬁnding in P a critical point of the total hyperbolic\nvolume, an approach pioneered by Rivin [22]. A few facts concerning the volume of\nideal tetrahedra will be needed.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/lem-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Rivin, Chan–Hodgson",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "lem-sec-009-01.md",
+      "narrative": null,
+      "content": "On the open afﬁne polyhedron P of sequences (wi) satisfying (3), deﬁne the volume functional V as the sum of the hyperbolic volumes of tetrahedra ∆i with dihedral angles xi, yi, zi, as given by Figure 5. Then (wi) is a critical point for V in P if and only if the gluing of the tetrahedra ∆i deﬁnes a complete ﬁnite-volume hyperbolic structure on the punctured torus bundle Vϕ. Proof This now standard fact holds for general ideal triangulations as well (see for example Chan [9] or Rivin [22]). The following proof, however, is deliberately speciﬁc to the example at hand. This will enable us to int",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406242v4/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "The function V can be continuously extended by 0 to all nonnegative triples (x, y, z) such that x + y + z = π. If d dt(xt, yt, zt) = (X, Y, Z) then (5) exp \u0012−d dt V(xt, yt, zt) \u0013 = sinX xt sinY yt sinZ zt. Proof Straightforward. We will always apply this formula exactly in the form it is stated, because it will usually make the right hand side simplest.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Volume of an ideal tetrahedron",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-008-61-volume-of-an-ideal-tetrahedron.md",
+      "narrative": null,
+      "content": "Volume of an ideal tetrahedron\nThe volume of a hyperbolic tetrahedron whose dihedral angles are x, y, z > 0 is\n(4)\nV(x, y, z) = −\nZ x\n0\nlog (2 sin u) du −\nZ y\n0\nlog (2 sin u) du −\nZ z\n0\nlog (2 sin u) du\n(we refer to Milnor [17] for a proof). Since\nR π\n0 log (2 sin u) du = 0, Equation (4) easily\nimplies the following proposition.\nProposition 6.1 The function V can be continuously extended by 0 to all nonnegative\ntriples (x, y, z) such that x + y + z = π. If d\ndt(xt, yt, zt) = (X, Y, Z) then\n(5)\nexp\n\u0012−d\ndt V(xt, yt, zt)\n\u0013\n= sinX xt sinY yt sinZ zt.\nProof Straightforward. We will always apply thi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Critical volume and trivial holonomy",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-62-critical-volume-and-trivial-holonomy.md",
+      "narrative": null,
+      "content": "Critical volume and trivial holonomy\nLemma 6.2 (Rivin, Chan–Hodgson) On the open afﬁne polyhedron P of sequences\n(wi) satisfying (3), deﬁne the volume functional V as the sum of the hyperbolic volumes\nof tetrahedra ∆i with dihedral angles xi, yi, zi, as given by Figure 5. Then (wi) is a\ncritical point for V in P if and only if the gluing of the tetrahedra ∆i deﬁnes a complete\nﬁnite-volume hyperbolic structure on the punctured torus bundle Vϕ.\nProof This now standard fact holds for general ideal triangulations as well (see for\nexample Chan [9] or Rivin [22]). The following proof, however, is de",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/prop-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "prop-sec-010-01.md",
+      "narrative": null,
+      "content": "The volume of an ideal tetrahedron is a concave function of its dihedral angles. Proof This follows from Proposition 6.1, whose notations we use again: xt, yt, zt are the dihedral angles. By symmetry we may assume x0, y0 ≤π/2. Assume further that xt, yt, zt are afﬁne functions of t with ﬁrst-degree coefﬁcients X, Y, Z. Proposition 6.1 implies −dV/dt = X log sin xt + Y log sin yt + Z log sin zt, and by differentiating we obtain −d2V/dt2|t=0 = X2 cot x0 + Y2 cot y0 + Z2 cot z0 = X2 cot x0 + Y2 cot y0 + (X + Y)2 1 −cot x0 cot y0 cot x0 + cot y0 = (X + Y)2 + (X cot x0 −Y cot y0)2 cot x0 + cot y0 ≥",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406242v4/blocks/prop-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Simple degeneracy",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "prop-sec-010-02.md",
+      "narrative": null,
+      "content": "If (Qt)t≥0 is a smooth family of ideal tetrahedra with dihedral angles xt, yt, zt such that x0, y0 ∈(0, π); z0 = 0 and dzt dt |t=0 > 0, then dV dt |t=0 = +∞. Proof Simply check that the right hand side of (5) goes to 0 as t goes to 0. We call this situation simple degeneracy because the limiting triangle has only one vanishing angle (two of its vertices are therefore collapsed).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406242v4/blocks/prop-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Double degeneracy",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "prop-sec-010-03.md",
+      "narrative": null,
+      "content": "If (Qt)t≥0 is a smooth family of ideal tetrahedra satisfying (x0, y0, z0) = (0, 0, π) and d dt|t=0(xt, yt, zt) = (1 + λ, 1 −λ, −2) with λ ∈(−1, 1), then exp −dV dt",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Behavior of the volume functional",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-010-63-behavior-of-the-volume-functional.md",
+      "narrative": null,
+      "content": "Behavior of the volume functional\nAs a consequence of Lemma 6.2, to prove Theorem 1.1 we only need to ﬁnd a critical\npoint of the volume functional V in the open polyhedron P of cyclic sequences (wi)\nsatisfying the conditions (3). A few more facts about the volume of ideal hyperbolic\ntetrahedra will be needed.\nBy Proposition 6.1, the volume functional V continuously extends to the (compact)\nclosure ¯P of the polyhedron P (the space ¯P is deﬁned by turning the conditions\n(3) to weak inequalities, or taking the limits in Rm of sequences of P). Then V has\nwell-deﬁned extrema on ¯P, which are auto",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/prop-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "prop-sec-011-01.md",
+      "narrative": null,
+      "content": "If for some index i, one of the numbers xi, yi, zi is 0, then two of them are 0 and the third is π. In other words, there are no simple degeneracies, only double degeneracies. Proof If not, consider an afﬁne segment from (wi) to some interior point of P. By",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406242v4/blocks/prop-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Domino effect",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "prop-sec-011-02.md",
+      "narrative": null,
+      "content": "If two consecutive tetrahedra ∆i−1, ∆i are ﬂat, then ∆i+1 is ﬂat, too. Proof We use only Figure 5 and the deductions recorded in (3). There are three cases: (1) If i is not a hinge index, ﬂatness of ∆i implies wi−1 + wi+1 ∈{0, π}. By the range condition 0 ≤w ≤π 2 , this implies wi+1 ∈{0, π 2 }, so ∆i+1 is ﬂat. (2) If i is a hinge index and wi = π 2 , we must have |wi−1 −wi+1| = π 2 , so by the range condition, wi+1 is 0 or π 2 , and ∆i+1 is ﬂat. (3) If i is a hinge index and wi = 0, we have |wi+1 −wi−1| ≤0 so wi+1 = wi−1. But ∆i−1 is assumed ﬂat, and therefore so is ∆i+1. Note that ﬂatness of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406242v4/blocks/prop-sec-011-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "prop-sec-011-03.md",
+      "narrative": null,
+      "content": "If ∆i is ﬂat, then i is a hinge index and wi = 0. Geometry & Topology 10 (2006) Franc¸ois Gu´eritaud and David Futer Proof In all other cases, the proof of Proposition 7.2 actually forces ∆i+1 to be ﬂat, which triggers a domino effect: all ∆j’s are ﬂat, and the volume is 0 — certainly not maximal. Easy Fact 7.4 If ABC is a Euclidean triangle with positive angles and edge lengths a, b, c, then a = b ⇐⇒ bA = bB ⇐⇒ sin bA = sin bB a < b ⇐⇒ bA < bB ⇐⇒ sin bA < sin bB. The volume V is still supposed maximal, and we assume that some tetrahedra ∆i are ﬂat, ie that some hinge parameters wi vanish. Pla",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ruling out some degeneracies",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-011-7-ruling-out-some-degeneracies.md",
+      "narrative": null,
+      "content": "Ruling out some degeneracies\nFrom now on, we ﬁx (wi) in the compact polyhedron ¯P at a point which maximizes the\ntotal hyperbolic volume of all tetrahedra. To prove that (wi) is critical for the volume\nV , we only need to make sure that (wi) lies in the interior P of ¯P, ie that all xi, yi, zi lie\nin (0, π).\nProposition 7.1 If for some index i, one of the numbers xi, yi, zi is 0, then two of\nthem are 0 and the third is π. In other words, there are no simple degeneracies, only\ndouble degeneracies.\nProof If not, consider an afﬁne segment from (wi) to some interior point of P. By\nProposition 6.7,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/lem-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "lem-sec-012-01.md",
+      "narrative": null,
+      "content": "Suppose w0 = 0, so that Ωcontains a subword L|RkL with k ≥2, or L|Rk|L with k ≥3 (in the latter case, the second bar indicates that wk vanishes as well as w0). The corresponding fan admits a complete Euclidean structure with boundary (with angles prescribed by the wi’s). Moreover, let Q, P, T be the lengths of the segments of the broken line corresponding to the ﬁrst R, in the order indicated in Figure 9 (P, T are the sides adjacent to the apex in a ﬂat upward-pointing grey [hinge] triangle, in the sense of Figure 3). Then Q < P + T . u0 u0 u2 u0 k\u00002 u0 \u00001 P ukC1 u\u00001 uk u1 Q u0 k\u00001 u0 T uk\u00001 u",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A geometrical lemma",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "../sections/sec-012-8-a-geometrical-lemma.md",
+      "narrative": null,
+      "content": "A geometrical lemma\nDeﬁnition 8.1 In the universal cover of the tessellation A of the torus at inﬁnity of\nVϕ (Figure 4), a fan is a sequence of at least three consecutive layers, such that the ﬁrst\nand last layers are grey and all layers in between are white. Fans are in bijection with\nthe subwords of Ωof the form RLkR or LRkL with k ≥2 (see the remarks to Figure 4\nin Section 4).\nGeometry & Topology 10 (2006)\nCanonical triangulations\n1259\nLemma 8.2 Suppose w0 = 0, so that Ωcontains a subword L|RkL with k ≥2, or\nL|Rk|L with k ≥3 (in the latter case, the second bar indicates that wk vanishes as",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ruling out all degeneracies",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-013-9-ruling-out-all-degeneracies.md",
+      "narrative": null,
+      "content": "Ruling out all degeneracies\nEasy Fact 9.1 If U and V are positive constants, the function deﬁned on (−1, 1) by\nf(λ) := 1 −λ2\n4\nU(1 + λ\n1 −λV)λ\ntakes the value\nU\n(1+V)(1+V−1) for some λ. It is in fact an absolute minimum: indeed,\n(log f)′(λ) = log\nh1 + λ\n1 −λV\ni\n,\nso f is minimal when the bracket is 1, and the result follows by direct computation.\nNow we can prove that the conﬁguration . . . RR|L . . . (and similarly . . . LL|R . . . )\nnever occurs, which will imply Theorem 1.1. The strategy is to suppose RR|L appears,\nie wj = 0 for some j (for notational convenience we assume j = 2). Next, rep",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Case 1: RR|LR",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-014-91-case-1-rrlr.md",
+      "narrative": null,
+      "content": "Case 1: RR|LR\nAccording to Figure 5, the angles are as follows. Note the relation w1 = w3 =: A, a\nconsequence of the hinge condition (3)-iii.\nΩ\nR\nR\n|\nL\nR\ni\n0\n1\n2\n3\n4\nwi\nu\nA + λε\n0 + ε\nA\nv\nxi\nξ −A −λε\n−u + 2A + 2λε −ε\n(1 −λ)ε\nε + A −v\n.\nyi\nη + A + λε\nu + ε\n(1 + λ)ε\n−ε + A + v\n.\nzi\nπ −2u\nπ −2A −2λε\nπ −2ε\nπ −2A\n.\nWe have u = w0 > 0 because L|RR|LR is impossible (according to the discussion after\n7.4). Thus, ∆0 is not ﬂat: if −1 < λ < 1, then ε can take small positive values without\nGeometry & Topology 10 (2006)\n1262\nFranc¸ois Gu´eritaud and David Futer\nmaking any of the xi, yi, zi negative. With",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Case 2: RR|LL",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-015-92-case-2-rrll.md",
+      "narrative": null,
+      "content": "Case 2: RR|LL\nΩ\nR\nR\n|\nL\nL\ni\n0\n1\n2\n3\n4\nwi\nu\nA + λε\n0 + ε\nA\nv\nxi\nξ −A −λε\n−u + 2A + 2λε −ε\n(1 −λ)ε\nε + v\nA + ξ′\nyi\nη + A + λε\nu + ε\n(1 + λ)ε\n−ε + 2A −v\n−A + η′\nzi\nπ −2u\nπ −2A −2λε\nπ −2ε\nπ −2A\nπ −2v\nFirst consider the value of A. Since there can be no vertical bars immediately before or\nafter RR|LL, the tetrahedra ∆0, ∆1, ∆3, ∆4 have positive angles, so the parameter A\nGeometry & Topology 10 (2006)\nCanonical triangulations\n1263\n(which does not contribute to the angles of any other tetrahedra) can vary freely in an\nopen interval when ε = 0. So A must be critical giving\n1 = exp −∂V\n∂A\n\nε=0 = sin y0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/prop-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "prop-sec-016-01.md",
+      "narrative": null,
+      "content": "The fan which corresponds to RN can be embedded into C with nodes at complex coordinates ± cot b and intermediary vertices cot(a + sb) where −1 ≤s ≤N + 1; similarly, the fan corresponding to LM can be embedded into C (possibly with a different scaling factor) with nodes ± cot b′ and intermediary vertices cot(a′ + sb′) where −1 ≤s ≤M + 1 (see Figure 11). \u0000 cot b0 cot AN cot b cot A0 \u0000 cot b cot A\u00001 As WD a C sb cot A0 M\u00001 cot A0 cot A0 MC1 cot AN \u00001 A0 s WD a0 C sb0 cot A0 cot A1 cot A2 cot AN C1 cot b0 cot A0 \u00001 cot A0 M cot A0 Figure 11 Proof There are several things to check. First, the cong",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A numerical example",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "../sections/sec-016-10-a-numerical-example.md",
+      "narrative": null,
+      "content": "A numerical example: RNLM\nIn this section we ﬁx two large enough integers N and M and investigate the behavior\nof the angles for Ω= RNLM: the angles made positive by the previous computations\nwill turn out to be very small. We will directly construct a Euclidean realization of\nFigure 4, automatically unique up to isometry. Since N and M are large, there exist\nsmall complex numbers a, a′, b, b′ such that\n(6)\n\u001a sin a\n=\ni tan b cos b′\nsin a′\n=\n−i tan b′ cos b\nwhere\n\u001a b\n=\n(π −2a)/N\nb′\n=\n(π −2a′)/M.\nGeometry & Topology 10 (2006)\n1264\nFranc¸ois Gu´eritaud and David Futer\nA way to compute a, a′ is to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Once-punctured tori and 4–punctured spheres",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-017-11-once-punctured-tori-and-4punctured-spheres.md",
+      "narrative": null,
+      "content": "Once-punctured tori and 4–punctured spheres\nTheorem 1.1 is still true if we replace the once-punctured torus T by the 4–punctured\nsphere S, and the map ϕ: T →T by an orientation-preserving homeomorphism\nϕS : S →S (of course, we must specify how the “eigenvalues” of ϕS are deﬁned). In\nfact, the tetrahedra of the resulting manifold VϕS and of Vϕ are metrically the same;\nonly the combinatorics of their gluing changes a little.\nDeﬁne R := R2∖Z2 and the maps α, β, σ : R →R characterized by α(x) = x + (1, 0);\nβ(x) = x + (0, 1); σ(x) = −x. Then we have natural identiﬁcations T = R/⟨α, β⟩and\nS = R/⟨α2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Geometric triangulations of two-bridge link complements",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-018-a-geometric-triangulations-of-two-bridge-link-co.md",
+      "narrative": null,
+      "content": "Geometric triangulations of two-bridge link\ncomplements\nDAVID FUTER\nThis appendix applies Gu´eritaud’s techniques to ﬁnd geometric triangulations for the\nhyperbolic two-bridge knot and link complements. These ideal triangulations are, in\nessence, the monodromy triangulations of 4–punctured sphere bundles, closed off in a\nslightly different way. They were constructed and studied in great detail by Sakuma and\nWeeks [23]. Akiyoshi, Sakuma, Wada and Yamashita have announced a proof that these\ntriangulations are, in fact, geometrically canonical [5], which is a stronger statement\nthan our result.\nW",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.1 Braids and two-bridge links",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-019-a1-braids-and-two-bridge-links.md",
+      "narrative": null,
+      "content": "Braids and two-bridge links\nLet S be a 4–punctured sphere, visualized concretely as a square pillowcase with\nthe corners removed. A 4–string braid between two pillowcases, one interior and\none exterior, deﬁnes a so-called product region S×I. We will restrict our attention to\nalternating braids in which the top right strand is free of crossings. (See Figure 13 (a).)\n\n(a)\n(b)\nFigure 13: (a) An alternating braid between two pillowcases, described by the word Ω= R3L2R\n(b) The corresponding two-bridge link K(Ω)\nThe mapping class ϕ: S →S induced by this braid can be described by a word\nΩ:=\n\u001a Ra1La2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/thm-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "thm-sec-019-01.md",
+      "narrative": null,
+      "content": "1 The two-bridge link K(Ω) is hyperbolic if and only if Ωhas two or more syllables. Just as with punctured torus bundles, we will give a direct proof of the “if” direction of this theorem by ﬁnding a geometric ideal triangulation of the link complement. The “only if” direction is immediate: a word with a single syllable produces a link with a single twist region, which must be a torus link.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.2 The ideal triangulation",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "../sections/sec-020-a2-the-ideal-triangulation.md",
+      "narrative": null,
+      "content": "The ideal triangulation\nThe word Ωdescribes a monodromy triangulation of the product region S×I, in exactly\nthe same fashion as for 4–punctured sphere bundles. In fact, because this product\nregion is the complement of a braid in the part of S3 bounded by the two pillowcases,\nwe can locate the edges of the triangulation concretely in the projection diagram.\nLet c = Pn\ni=1 ai be the length of Ω. Each letter Ωi (1 ≤i ≤c), and thus each crossing\nin the alternating braid, corresponds to a 4–punctured sphere Si ⊂S3∖K, with the four\nstrands of K seen in Figure 14 passing through the four punctures. T",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.3 Combinatorics at the cusp",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "../sections/sec-021-a3-combinatorics-at-the-cusp.md",
+      "narrative": null,
+      "content": "To describe the combinatorics of the boundary component(s) of S°\\K, we will first\nfocus on the product region between the pleated surfaces S, and S,. In the layered\ntriangulation of this product region, each layer A; consists of two tetrahedra, Dj and\nD‘, as in Figure 16. It is clear from the figure that each tetrahedron has exactly one\nvertex at each puncture of S;, ie at each strand of the 4—string braid between S; and\nS.. Since the combinatorics of the four strands are identical, let us focus on a single\npuncture of the 4—punctured sphere.\n\nThe tetrahedron layer A; intersects the neighborho",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.4 Angle structures and volume",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-022-a4-angle-structures-and-volume.md",
+      "narrative": null,
+      "content": "Angle structures and volume\nFollowing Section 5 of the main article, we will parameterize the dihedral angles of\nthe tetrahedra by pleating angles on the pleated 4–punctured spheres. Each sphere Si\ndescribed above has a natural transverse orientation that points (equivalently) toward\nthe inside of the link projection, toward increasing indices, and upward in Figure 18.\nJust as in Section 5, for any edge e ⊂Si, we can deﬁne the pleating angle α to be the\n(signed) external angle at e, with signs chosen so that α is positive whenever the angle\nabove e is less than π.\nOn the pleated sphere Si+1 li",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/lem-sec-023-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 40,
+      "target": "lem-sec-023-01.md",
+      "narrative": null,
+      "content": "5 Recall the word Ω= Ra1La2 · · · , and suppose that the hinge layer ∆a1 has ﬂattened, with wa1 = 0. Then the fan corresponding to Ra1L admits a complete Euclidean structure with boundary along Sa1 . Let Q, P, T be the lengths of the segments of the broken line in which Sa1 intersects the cusp, as in Figure 20. Then Q < P + T . Of course, the analogous statement holds near the end of Ω. Proof Note that, by Lemma A.4, we have a1 ≥2. For all 1 ≤i ≤a1 −2, the parameter wi can vary in a small interval, and no generality is lost in assuming that ∂V/∂wi = 0. (Otherwise, volume is easy to increase.)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.5 Flat tetrahedra never maximize volume",
+      "pageStart": 37,
+      "pageEnd": 40,
+      "target": "../sections/sec-023-a5-flat-tetrahedra-never-maximize-volume.md",
+      "narrative": null,
+      "content": "Flat tetrahedra never maximize volume\nThe proof that the maximum of V occurs in the interior of P closely tracks Section 7–\nSection 9 of Gu´eritaud’s paper. We begin by ruling out many types of degeneracies on\n∂¯P.\nLemma A.4 Let (w1, . . . , wc−1) be the point of ¯P at which the volume functional V\nattains its maximum. Then (wi) has the following properties:\n(1) For each i, if one of xi, yi, zi is 0, then two are 0, ie ∆i is ﬂat.\nGeometry & Topology 10 (2006)\n1276\nFranc¸ois Gu´eritaud and David Futer\n(2) If ∆i is ﬂat, then wi = 0.\n(3) If ∆i is ﬂat, then i is a hinge index, not equal to 1 or c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/cor-sec-025-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "cor-sec-025-02.md",
+      "narrative": null,
+      "content": "2 Let Vϕ be a 4–punctured sphere bundle deﬁned by the cyclic word Ω= Ra1Lb1 · · · RanLbn . Then 4n v3 ≤Vol(Vϕ) < 4n v8.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Applications",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../sections/sec-024-b-applications.md",
+      "narrative": null,
+      "content": "Applications\nOur construction of geometric triangulations using volume maximization methods has\nseveral corollaries that relate hyperbolic geometry (of bundles and links) to combinatorics\n(of the Farey complex and link diagrams).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.1 Volume estimates for bundles",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "../sections/sec-025-b1-volume-estimates-for-bundles.md",
+      "narrative": null,
+      "content": "Volume estimates for bundles\nTheorem B.1 Let Vϕ be a once-punctured torus bundle deﬁned by the cyclic word\nΩ= Ra1Lb1 · · · RanLbn . Then\n2n v3 ≤Vol(Vϕ) < 2n v8,\nwhere v3 ≈1.0149 is the volume of a regular ideal tetrahedron and v8 ≈3.6638 is the\nvolume of a regular ideal octahedron. Both of these bounds are sharp.\nThis is a sharp, quantitative version of Brock’s result in [8], in the special case of\npunctured torus bundles. The upper bound is not new; it is a special case of [2, Corollary\n2.4].\nProof To prove the lower bound on volume, we exhibit a particular angle structure.\nIt follows from th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/thm-sec-025-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "thm-sec-025-01.md",
+      "narrative": null,
+      "content": "1 Let Vϕ be a once-punctured torus bundle deﬁned by the cyclic word Ω= Ra1Lb1 · · · RanLbn . Then 2n v3 ≤Vol(Vϕ) < 2n v8, where v3 ≈1.0149 is the volume of a regular ideal tetrahedron and v8 ≈3.6638 is the volume of a regular ideal octahedron. Both of these bounds are sharp. This is a sharp, quantitative version of Brock’s result in [8], in the special case of punctured torus bundles. The upper bound is not new; it is a special case of [2, Corollary 2.4]. Proof To prove the lower bound on volume, we exhibit a particular angle structure. It follows from the proof of Theorem 1.1 that the volume",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.2 Volume estimates for links",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "../sections/sec-026-b2-volume-estimates-for-links.md",
+      "narrative": null,
+      "content": "Volume estimates for links\nThe volumes of link complements can also be estimated in terms of diagrams. We\nsay that a link diagram D is reduced if no single crossing separates D. Its twist\nnumber tw(D) is the number of equivalence classes of crossings, where two crossings\nare considered equivalent if there is a loop in the projection plane intersecting D\ntransversely precisely in the two crossings. When the diagram D depicts a two-bridge\nlink constructed from a braid, as in Figure 13, tw(D) is precisely the number of syllables\nof the word Ωdescribing the braid.\nTheorem B.3 Let D be a reduced al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/thm-sec-026-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "thm-sec-026-01.md",
+      "narrative": null,
+      "content": "3 Let D be a reduced alternating diagram of a hyperbolic two-bridge link K. Then 2v3 tw(D) −2.7066 < Vol(S3∖K) < 2v8(tw(D) −1). The upper bound is sharp, and the lower bound is asymptotically sharp. There are known diagrammatic volume bounds for the general class of alternating links. On the lower side, Agol, Storm, and W Thurston proved that the volume of an alternating link is at least v8 2 (tw(D) −2) [3], improving an earlier bound due to Lackenby [14]. On the upper side, Agol and D Thurston proved an asymptotically sharp bound of 10v3(tw(D) −1) [14, Appendix]. Numerically, Theorem B.3 impr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406242v4/blocks/thm-sec-026-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "thm-sec-026-02.md",
+      "narrative": null,
+      "content": "3 only relies on the explicit study of angled triangulations. P P ) Figure 21: A ﬂype in a diagram of a two-bridge link. The shaded rectangle P is a pillowcase of the braid. Proof First, we claim that it sufﬁces to consider a diagram D like the one in Fig- ure 13, constructed from an alternating braid with one free strand. By the Menasco– Thistlethwaite ﬂyping theorem [16], any pair of reduced alternating diagrams of K are related by a sequence of ﬂypes, as in Figure 21. It is easy to check that the twist number of a diagram is invariant under ﬂypes. Thus the number of syllables of the word Ωi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0406242v4/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.3 Hyperbolic geodesics seen in the projection plane",
+      "pageStart": 44,
+      "pageEnd": 46,
+      "target": "../sections/sec-027-b3-hyperbolic-geodesics-seen-in-the-projection-p.md",
+      "narrative": null,
+      "content": "Hyperbolic geodesics seen in the projection plane\nFor any link diagram D, a crossing arc is a segment perpendicular to the projection plane\nthat connects the upper strand of a crossing to the lower strand of the same crossing.\nMorwen Thistlethwaite has conjectured that in any reduced alternating diagram of\na hyperbolic link K, every crossing arc is isotopic to a hyperbolic geodesic. As a\nconsequence of Theorem A.1, we can prove this in the case of two-bridge links.\nTheorem B.4 Let D be a reduced alternating diagram of a hyperbolic two-bridge\nlink K. Then every crossing arc of D is isotopic to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0406242v4/blocks/thm-sec-027-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 46,
+      "target": "thm-sec-027-01.md",
+      "narrative": null,
+      "content": "4 Let D be a reduced alternating diagram of a hyperbolic two-bridge link K. Then every crossing arc of D is isotopic to an edge in the Sakuma–Weeks triangulation of S3∖K, and thus to a geodesic. In fact, still more is true: each edge of the triangulation is dual to a face of the Ford–Voronoi domain of S3∖K [5]. Proof We begin by observing that the statement is true for a diagram D0 as in Figure 13, constructed from an alternating braid with one free strand. Every crossing of D0 corresponds to a 4–punctured sphere pleated along edges of our triangulation. As Figure 15 illustrates, the crossing",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

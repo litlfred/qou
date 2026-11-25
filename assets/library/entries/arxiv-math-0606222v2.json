@@ -1,0 +1,422 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0606222v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0606222v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Let $\\mathbb{F}$ be a local field and let $\\mathcal{K}_{\\mathbb{F}}$ be the maximal compact subgroup of $\\hbox{GL}_d(\\mathbb{F})$. That is, $$\\label{KF}\n\\mathcal{K}_{\\mathbb{F}}=\n\\begin{cases}\n\\hbox{O}(d)\\qquad &\\hbox{ if } \\mathbb{F}=\\mathbb{R},\\\\\n\\hbox{U}(d)\\qquad &\\hbox{ if } \\mathbb{F}=\\mathbb{C},\\\\\n\\hbox{GL}_d(\\mathcal{O})\\qquad &\\hbox{ if } \\mathbb{F}\\,\\,\n\\hbox{non-Archimedean,}\n\\end{cases}$$ where in the latter case $\\mathcal{O}$ denotes the ring of integers of $\\mathbb{F}$. Let $\\mathcal{G}(n,d;\\mathbb{F})$ be the Grassmannian of $n$-dimensional subspaces of a fixed $d$-dimensional vec",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606222v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0606222v2  [math.QA]  8 Nov 2006\nQUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN\nDEGENERATIONS\nURI ONN AND JASPER V. STOKMAN\nAbstract. We derive explicit dimension formulas for irreducible MF-spherical KF-re-\npresentations where KF is the maximal compact subgroup of the general linear group\nGLd(F) over a local ﬁeld F and MF is a closed subgroup of KF such that KF/MF re-\nalizes the Grassmannian of n-dimensional F-subspaces of Fd. We explore the fact that\n(KF, MF) is a Gelfand pair whose associated zonal spherical functions identify with vari-\nous degenerations of the multivariable littl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606222v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Multivariable little q-Jacobi polynomials",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-multivariable-little-q-jacobi-polynomials.md",
+      "narrative": null,
+      "content": "[]{#qJsection label=\"qJsection\"}\n\nImportant in our approach is the fact that (quantum) dimensions of irreducible spherical representations associated to quantum, real/complex and $p$-adic Grassmannians are degenerations of a generalized dimension formula involving multivariable little $q$-Jacobi polynomials, which we now introduce. We work over the field $\\mathbb{E}$ (see [\\[Fz\\]](#Fz){reference-type=\"eqref\" reference=\"Fz\"}), although in the present situation $c$ and $d$ are dummy parameters and could just as well be omitted (in contrast to the Macdonald-Koornwinder and multivariable big $q$-J",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606222v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "CQG algebras and quantum dimensions",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-3-cqg-algebras-and-quantum-dimensions.md",
+      "narrative": null,
+      "content": "[]{#CQG label=\"CQG\"}\n\nThe category of Compact Quantum Group algebras ([CQG ]{.sans-serif}) is a full subcategory of the category of Hopf $*$-algebras that includes the standard noncommutative deformations of algebras of representative functions on compact Lie groups. In particular, [CQG ]{.sans-serif}algebras are Hopf $*$-algebras with positive definite Haar functionals which have natural analogs of the Peter-Weyl decomposition and the Schur orthogonality relations. This leads to the notion of the quantum dimension of an irreducible, finite dimensional comodule over a given [CQG ]{.sans-serif}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606222v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Grassmannians over local fields",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-4-grassmannians-over-local-fields.md",
+      "narrative": null,
+      "content": "[]{#local label=\"local\"}\n\nIn this section we specialize the general theory of the previous section to the classical examples arising from Grassmannians over local fields.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606222v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Grassmann representation over local fields",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-41-the-grassmann-representation-over-local-field.md",
+      "narrative": null,
+      "content": "[]{#Gr label=\"Gr\"} Consider the commutative [CQG ]{.sans-serif}algebra $A=\\mathbb{C}(\\mathcal{K})$ of representative functions on a compact topological group $\\mathcal{K}$. The Hopf $*$-algebra structures are given by $$\\Delta(f)(g,g^\\prime)=f(gg^\\prime), \\quad \\epsilon(f)=f(e),\n\\quad S(f)(g)=f(g^{-1}), \\quad f^*(g)=\\overline{f(g)},$$ where $g,g^\\prime\\in \\mathcal{K}$, $f\\in \\mathbb{C}(\\mathcal{K})$, $e\\in \\mathcal{K}$ is the unit element of $\\mathcal{K}$, and where we have used the natural identification $\\mathbb{C}(\\mathcal{K})\\otimes \\mathbb{C}(\\mathcal{K})\\simeq \\mathbb{C}(\\mathcal{K}\\time",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606222v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Irreducible constituents and dimension formulas: the Archimedean case",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "../sections/sec-005-42-irreducible-constituents-and-dimension-formul.md",
+      "narrative": null,
+      "content": "[]{#cG label=\"cG\"}\n\nThe harmonic analysis corresponding to the complex and real Grassmannian is classical by now. It relates to special cases of harmonic analysis on compact symmetric spaces. To emphasize the similarities with the non-Archimedean case and the quantum case, we now shortly describe the relevant results for the complex Grassmannian $\\mathcal{G}(n,d;\\mathbb{C})$, following closely the presentation in [@DS Section 2]. For the real case, we refer to [@JC] and especially to [@Su] (the presentation in [@Su] is very close to the (quantum) complex case as discussed in this paper).\n\nTo a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606222v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Irreducible constituents and dimension formulas: the non-Archimedean case",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-006-43-irreducible-constituents-and-dimension-formul.md",
+      "narrative": null,
+      "content": "[]{#repp label=\"repp\"}\n\nIn this subsection we fix a non-Archimedean local field $\\mathbb{F}$. Let $\\mathcal{O}$ denote the ring of integers and $\\mathfrak{p}$ the maximal ideal. The Grassmann representation $\\mathbb{C}\\bigl(\\mathcal{G}(n,d;\\mathbb{F})\\bigr)$ was studied in [@Hill] and later in [@BO1; @BO2]. Therein it is shown that the irreducible $\\mathcal{M}_{\\mathbb{F}}$-spherical $\\mathcal{K}_{\\mathbb{F}}$-representations are also parameterized by $\\Lambda_n$. We now proceed to recall the explicit construction of the irreducibles. The path to the construction of these representations is co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606222v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The standard quantum complex Grassmannian",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-007-5-the-standard-quantum-complex-grassmannian.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606222v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The CQG algebra of quantum representative functions on K",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "../sections/sec-008-51-the-cqg-algebra-of-quantum-representative-fun.md",
+      "narrative": null,
+      "content": "Let $\\mathcal{U}_q$ be the quantized universal enveloping algebra of $\\mathfrak{gl}_n(\\mathbb{C})$, where $0<q<1$. As a unital algebra it is generated by the analogs $x_i,y_i$ ($i=1,\\ldots,d-1$) of the standard positive and negative simple root vectors of $\\mathfrak{gl}_n(\\mathbb{C})$ and by the Cartan type elements $K_j^{\\pm 1}$ ($j=1,\\ldots,d$). For the defining relations, as well as for the explicit formulas turning $\\mathcal{U}_q$ into a Hopf algebra, we refer to [@OS]. We view $\\mathcal{U}_q$ as a Hopf $*$-algebra, with $*$-structure determined by $$x_j^*=q^{-1}y_jK_jK_{j+1}^{-1},\\qquad y",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606222v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The quantum Grassmann representation",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-009-52-the-quantum-grassmann-representation.md",
+      "narrative": null,
+      "content": "[]{#qGr label=\"qGr\"}\n\nIn this subsection we discuss the standard quantum analog of the complex Grassmannian $\\mathcal{G}(n,d;\\mathbb{C})\\simeq \\mathcal{K}/\\mathcal{M}$ and its associated quantum Grassmann representation $\\mathbb{C}_q(\\mathcal{K}/\\mathcal{M})$. The one-parameter family of quantum complex Grassmannians from [@NDS] is discussed separately in Section [\\[quantum\\]](#quantum){reference-type=\"ref\" reference=\"quantum\"}.\n\nWe define a Gelfand pair $(\\mathbb{C}_q(\\mathcal{K}), \\mathbb{C}_q(\\mathcal{M}))$ of [CQG ]{.sans-serif}algebras as follows. Write $\\mathfrak{m}^{\\mathbb{C}}\\simeq\\ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606222v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum dimension formulas",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-010-53-quantum-dimension-formulas.md",
+      "narrative": null,
+      "content": "[]{#QDF label=\"QDF\"}\n\nThe quantum dimensions of the irreducible spherical $\\mathcal{U}_q$-representations $V_\\lambda^q$ ($\\lambda\\in\\Lambda_n$) have the following explicit closed expressions.\n\n::: prop\n[]{#quantumcomplexformula label=\"quantumcomplexformula\"} For $\\lambda\\in\\Lambda_n$ we have $$\\label{qcf}\n\\begin{split}\n\\hbox{Dim}_{q}\\bigl(V_{\\lambda}^{q}\\bigr)&=q^{2(2n-d-1)|\\lambda|-4(\\rho,\\lambda)}\n\\prod_{i=1}^n\\frac{\\bigl(q^{2(1+\\lambda_i+\\rho_i)};q^2\\bigr)_{d-2n}^2}\n{\\bigl(q^{2(1+\\rho_i)};q^2\\bigr)_{d-2n}^2}\n\\frac{(1-q^{2(d-2n+1+2(\\lambda_i+\\rho_i))})}\n{(1-q^{2(d-2n+1+2\\rho_i)})}\\\\\n&\\qquad\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606222v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Evaluation formulas",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-011-6-evaluation-formulas.md",
+      "narrative": null,
+      "content": "[]{#evaluation label=\"evaluation\"}\n\nIn this section we derive evaluation formulas for multivariable little and big $q$-Jacobi polynomials by degenerating evaluation formulas for the Macdonald-Koornwinder polynomials [@K]. Evaluation formulas for Macdonald-Koornwinder polynomials have been obtained in [@vD], [@Sa] and [@S2]. The evaluation formulas for the multivariable little $q$-Jacobi polynomials are used in the next section to obtain explicit expressions for the generalized dimensions $D_q$ (see [\\[Dgeneralized\\]](#Dgeneralized){reference-type=\"eqref\" reference=\"Dgeneralized\"}) and their de",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606222v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Macdonald-Koornwinder polynomials",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "../sections/sec-012-61-macdonald-koornwinder-polynomials.md",
+      "narrative": null,
+      "content": "Recall our notation $\\mathbb{E}=\\mathbb{C}(a,b,c,d,q,t)$ for the field of rational functions in six indeterminates $a,b,c,d,q$ and $t$. Let $W=S_n\\ltimes \\{\\pm 1\\}^n$, acting on $\\mathbb{Z}^n$ by permutations and sign-changes of the coordinates, and acting on the algebra $\\mathbb{E}[z^{\\pm 1}]=\\mathbb{E}[z_1^{\\pm 1},\\ldots,z_n^{\\pm 1}]$ by permutations and inversions of the independent variables $z_i$. The cone $\\Lambda_n\\subset \\mathbb{Z}^n$ is a fundamental domain for the $W$-action on $\\mathbb{Z}^n$. The dominance order on $\\Lambda_n$ is the partial order $\\leq$ defined by $\\lambda\\leq\\mu$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606222v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Multivariable little q-Jacobi polynomials",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "../sections/sec-013-62-multivariable-little-q-jacobi-polynomials.md",
+      "narrative": null,
+      "content": "little q-Jacobi polynomials P L\nλ (z) = P L\nλ (z; a, b; q, t) from Section 2. We ﬁrst shortly discuss\nevaluation formulas for one-variable little q-Jacobi polynomials (n = 1), in which case\nthe evaluation formulas can be derived directly from the explicit expressions of the little\nq-Jacobi polynomials as basic hypergeometric series. In fact, the monic one-variable little\nq-Jacobi polynomial is independent of t and is given explicitly as\nP L\nm(z) =\n\u0000qb; q\n\u0001\nm\n\u0000qm+1ab; q\n\u0001\nm(qb)m 3φ2\n\u0012\nq−m, qm+1ab, qbz\nqb, 0\n; q, q\n\u0013\n=\n\u0000qa; q\n\u0001\nm\n\u0000qm+1ab; q\n\u0001\nm\n(−1)mq\n1\n2m(m−1)\n2φ1\n\u0012\nq−m, qm+1ab\nqa\n; q, qz\n\u0013\n(6.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606222v2/blocks/thm-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "thm-sec-013-01.md",
+      "narrative": null,
+      "content": "For λ ∈Λn we have the evaluation formulas (6.11) P L λ (0) = ∆λ n Y i=1 \u0000qatn−i, qabtn−i; q \u0001 λi \u0000qabt2(n−i); q \u0001 2λi (−1)λiq 2 λi(λi−1), QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS (6.12) P L λ (tρ) = ∆λ n Y i=1 \u0000qbtn−i, qabtn−i; q \u0001 λi \u0000qabt2(n−i); q \u0001 2λi \u0000aqλitn−i\u0001λi, (6.13) P L λ (q−1b−1t−ρ) = ∆λ n Y i=1 \u0000qbtn−i, qabtn−i; q \u0001 λi \u0000qabt2(n−i); q \u0001 2λi \u0000qbtn−i\u0001λi.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0606222v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Multivariable big q-Jacobi polynomials",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-014-63-multivariable-big-q-jacobi-polynomials.md",
+      "narrative": null,
+      "content": "We repeat the techniques and arguments of the previous subsection to derive evaluation formulas for multivariable big $q$-Jacobi polynomials. The monic multivariable big $q$-Jacobi polynomial $$P_\\lambda^B(z)=P_\\lambda^B(z;a,b,c,d;q,t)\\in\\ \\mathbb{E}[z]^S$$ of degree $\\lambda\\in\\Lambda_n$ is of the form $$\\label{expansionB}\nP_\\lambda^B(z)=\\widetilde{m}_\\lambda(z)+\\sum_{\\mu\\in\\Lambda: \\mu<\\lambda}c_{\\lambda,\\mu}^B\\widetilde{m}_{\\mu}(z)$$ for certain coefficients $c_{\\lambda,\\mu}^B=c_{\\lambda,\\mu}^B(a,b,c,d;q,t)\\in \\mathbb{E}$. Similarly as for the Koornwinder polynomials and the multivariable l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606222v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalized dimension formulas",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-015-7-generalized-dimension-formulas.md",
+      "narrative": null,
+      "content": "[]{#Dimensionsection label=\"Dimensionsection\"}\n\nIn this section we consider the generalized dimensions $D_q(\\lambda;a,b;t)$ (see [\\[Dgeneralized\\]](#Dgeneralized){reference-type=\"eqref\" reference=\"Dgeneralized\"}) in detail. We suppress the dependence on the parameters $a,b$ and $t$ as much as possible, so we write $D_q(\\lambda)=D_q(\\lambda;a,b;t)$. We will show in Section [\\[quantum\\]](#quantum){reference-type=\"ref\" reference=\"quantum\"} that $D_q(\\lambda)$ for specialized parameters gives the quantum dimension for the irreducible spherical representation $V_\\lambda^q$ ($\\lambda\\in\\Lambda_n$) a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606222v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalized quantum dimensions",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "../sections/sec-016-71-generalized-quantum-dimensions.md",
+      "narrative": null,
+      "content": "We begin by giving an explicit expression for the generalized dimension $D_q(\\lambda)$.\n\n::: lem\n[]{#explicitD label=\"explicitD\"} We have $$D_q(\\lambda)=a^{-|\\lambda|}t^{-2(\\rho,\\lambda)}\\prod_{i=1}^nv_i(\\lambda_i;q)\n\\prod_{1\\leq j<k\\leq n}w_{j,k}^+(\\lambda_j+\\lambda_k;q)w_{j,k}^-(\\lambda_j-\\lambda_k;q),\\qquad \\lambda\\in\\Lambda_n,$$ where $v_i(m;q)$, $w_{j,k}^{\\pm}(m;q)$ for $m\\in\\mathbb{Z}_+$ are given by $$\\begin{split}\nv_i(m;q)&=\\frac{\\bigl(at^{n-i}, q^{-1}abt^{n-i};q\\bigr)_m}\n{\\bigl(qt^{n-i},bt^{n-i};q\\bigr)_m}\\frac{(1-q^{2m-1}abt^{2(n-i)})}\n{(1-q^{-1}abt^{2(n-i)})},\\\\\nw_{j,k}^+(m;q)&=\\fra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606222v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalized p-adic dimensions",
+      "pageStart": 32,
+      "pageEnd": 35,
+      "target": "../sections/sec-017-72-generalized-p-adic-dimensions.md",
+      "narrative": null,
+      "content": "[]{#Genpdim label=\"Genpdim\"}\n\nIn this subsection we consider the $p$-adic degeneration of the generalized quantum dimension $D_q(\\lambda)$ and we relate it to the complex dimension of the $\\mathcal{M}_{\\mathbb{F}}$-spherical irreducible $\\mathcal{K}_{\\mathbb{F}}$-representation $V_\\lambda^{\\mathbb{F}}$ for non-Archimedean local fields $\\mathbb{F}$ (see Section [\\[local\\]](#local){reference-type=\"ref\" reference=\"local\"}). Denote $\\delta_{k,l}$ ($k,l\\in\\mathbb{Z}$) for the Kronecker delta function: it is one if $k=l$ and zero otherwise.\n\n::: lem\n[]{#specialq=0 label=\"specialq=0\"} The functions $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606222v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The one-parameter family of quantum complex Grassmannians",
+      "pageStart": 35,
+      "pageEnd": 40,
+      "target": "../sections/sec-018-8-the-one-parameter-family-of-quantum-complex-gr.md",
+      "narrative": null,
+      "content": "[]{#quantum label=\"quantum\"}\n\nIn this section we consider the one-parameter family of quantum complex Grassmannians from [@NDS], [@DS] and [@OS] (see also [@L] for the general theory of harmonic analysis on quantum compact symmetric spaces). This more general set-up does no longer fit into the framework of quantum Gelfand pairs associated to [CQG]{.sans-serif} algebras as discussed in Section [\\[CQG\\]](#CQG){reference-type=\"ref\" reference=\"CQG\"}, since the role of the quantum subgroup is replaced by a suitable infinitesimal counterpart, depending on an additional continuous parameter.\n\nIn [@ND",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0606222v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "../sections/sec-019-references.md",
+      "narrative": null,
+      "content": "[1]\nU. Bader, U. Onn, Geometric representations of GL(n, R), cellular Hecke algebras and the embed-\nding problem, JPAA (to appear), math.RT/0411461.\n[2]\nU. Bader, U. Onn, On some geometric representations of GLn(O), math.RT/0404408.\n[3]\nJ.-F. van Diejen, Self-dual Koornwinder-Macdonald polynomials, Invent. Math. 126 (1996), 319–\n339.\n[4]\nM.S. Dijkhuizen, T.H. Koornwinder, CQG algebras: a direct algebraic approach to compact quantum\ngroups, Lett. Math. Phys. 32 (1994), 315–330.\n[5]\nM.S. Dijkhuizen, J.V. Stokman, Some limit transitions between BC type orthogonal polynomials\ninterpreted on quantu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

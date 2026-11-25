@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/0310280v4/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The construction of transversal clasp annuli",
+  "pageStart": 8,
+  "pageEnd": 13,
+  "contains": [
+    "library/0310280v4/blocks/prose-sec-003",
+    "library/0310280v4/blocks/lem-sec-003-01",
+    "library/0310280v4/blocks/lem-sec-003-02",
+    "library/0310280v4/blocks/prop-sec-003-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0310280v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0310280v4/manifest.jsonld",
+  "provenance": "ingested"
+}

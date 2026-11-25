@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0606222v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS",
+      "dcterms:creator": [
+        "ONN, URI",
+        "STOKMAN, JASPER V."
+      ],
+      "dcterms:issued": "D:20181029",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0606222",
+      "dcterms:abstract": "We derive explicit dimension formulas for irreducible MF-spherical KF-re- presentations where KF is the maximal compact subgroup of the general linear group GLd(F) over a local ﬁeld F and MF is a closed subgroup of KF such that KF/MF re- alizes the Grassmannian of n-dimensional F-subspaces of Fd. We explore the fact that (KF, MF) is a Gelfand pair whose associated zonal spherical functions identify with vari- ous degenerations of the multivariable little q-Jacobi polynomials. As a result, we are led to consider generalized dimensions deﬁned in terms of evaluations and quadratic norms of multivariable little q-Jacobi polynomials, which interpolate between the various classi- cal dimensions. The generalized dimensions themselves are shown to have representation theoretic interpretations as the quantum dimensions of irreducible spherical quantum rep- resentations associated to quantum complex Grassmannians.",
+      "dcterms:source": "library/arxiv-math-0606222v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0606222v2"
+    }
+  ]
+}

@@ -1,0 +1,1835 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1208.1663v2",
+  "title": "arxiv-1208.1663v2",
+  "variant": "pdf",
+  "pages": 29,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Index structures, angle structures and the 3D index",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-index-structures-angle-structures-and-the-3d-i"
+    },
+    {
+      "level": 2,
+      "title": "Index structures",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Angle structures",
+      "number": "2.2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-22-angle-structures"
+    },
+    {
+      "level": 2,
+      "title": "The Neumann-Zagier matrices",
+      "number": "2.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-23-the-neumann-zagier-matrices"
+    },
+    {
+      "level": 2,
+      "title": "On the topological invariance of the index",
+      "number": "2.4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-24-on-the-topological-invariance-of-the-index"
+    },
+    {
+      "level": 1,
+      "title": "Axioms for the tetrahedron index",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-3-axioms-for-the-tetrahedron-index"
+    },
+    {
+      "level": 1,
+      "title": "Properties of a tetrahedron index",
+      "number": "4",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-4-properties-of-a-tetrahedron-index"
+    },
+    {
+      "level": 2,
+      "title": "Part (d) of Theorem 3.2",
+      "number": "4.1",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-41-part-d-of-theorem-32"
+    },
+    {
+      "level": 2,
+      "title": "The rank of V: part (a) of Theorem 3.2",
+      "number": "4.2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-42-the-rank-of-v-part-a-of-theorem-32"
+    },
+    {
+      "level": 2,
+      "title": "The rank of V+: part (b) of Theorem 3.2",
+      "number": "4.3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-43-the-rank-of-v-part-b-of-theorem-32"
+    },
+    {
+      "level": 2,
+      "title": "Proof of triality: part (c) of Theorem 3.2",
+      "number": "4.4",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-44-proof-of-triality-part-c-of-theorem-32"
+    },
+    {
+      "level": 2,
+      "title": "I is a tetrahedron index",
+      "number": "4.5",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The degree of I",
+      "number": "4.6",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-46-the-degree-of-i"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 3.7",
+      "number": "4.7",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-47-proof-of-theorem-37"
+    },
+    {
+      "level": 1,
+      "title": "Convergence of the 3D index",
+      "number": "5",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-5-convergence-of-the-3d-index"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 2.4",
+      "number": "5.1",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-51-proof-of-theorem-24"
+    },
+    {
+      "level": 2,
+      "title": "An independent proof of convergence for strict index structures",
+      "number": "5.2",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-52-an-independent-proof-of-convergence-for-stric"
+    },
+    {
+      "level": 1,
+      "title": "Invariance of the 3D index under 23 moves and 20 moves",
+      "number": "6",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-6-invariance-of-the-3d-index-under-23-moves-and"
+    },
+    {
+      "level": 2,
+      "title": "Invariance under the 32 move",
+      "number": "6.1",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Invariance under the 23 move",
+      "number": "6.2",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "An ideal triangulation of m136",
+      "number": "6.3",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-63-an-ideal-triangulation-of-m136"
+    },
+    {
+      "level": 2,
+      "title": "An ideal triangulation of m064",
+      "number": "6.4",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-64-an-ideal-triangulation-of-m064"
+    },
+    {
+      "level": 2,
+      "title": "An ideal triangulation with no index structure",
+      "number": "6.5",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-65-an-ideal-triangulation-with-no-index-structur"
+    },
+    {
+      "level": 2,
+      "title": "Invariance under the 2 0 move",
+      "number": "6.6",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgment",
+      "number": "6.7",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-67-acknowledgment"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. I satisfies the pentagon identity",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-appendix-a-i-satisfies-the-pentagon-identity"
+    },
+    {
+      "level": 2,
+      "title": "A.1. A generating series proof of the pentagon identity",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-a1-a-generating-series-proof-of-the-pentagon-ide"
+    },
+    {
+      "level": 2,
+      "title": "A.2. A second proof of the pentagon identity",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-a2-a-second-proof-of-the-pentagon-identity"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B. The tetrahedron index and the quantum dilogarithm",
+      "number": null,
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-appendix-b-the-tetrahedron-index-and-the-quantum"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 413,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tetrahedron index",
+          "heading": false
+        },
+        {
+          "term": "index structures",
+          "heading": false
+        },
+        {
+          "term": "angle structures",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        },
+        {
+          "term": "pentagon identity",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "moves",
+          "heading": false
+        }
+      ],
+      "extract": "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES STAVROS GAROUFALIDIS With an appendix by Sander Zwegers Abstract. The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary components. For a ﬁxed 2r tuple of integers, the index takes values in the set of q-series with integer coeﬃcients. Our goal is to give an axiomatic",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1208.1663v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 444,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "index mathcal",
+          "heading": false
+        },
+        {
+          "term": "index delta",
+          "heading": false
+        },
+        {
+          "term": "tetrahedron index",
+          "heading": false
+        },
+        {
+          "term": "gauge theories",
+          "heading": false
+        },
+        {
+          "term": "triangulation mathcal",
+          "heading": false
+        },
+        {
+          "term": "dgg",
+          "heading": false
+        },
+        {
+          "term": "gauge theory",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.intro label=\"sec.intro\"} In a series of papers [@DGG1; @DGG2], Dimofte-Gaiotto-Gukov studied topological gauge theories using as input an ideal triangulation $\\mathcal T$ of a 3-manifold $M$. These gauge theories play an important role in - Chern-Simons perturbation theory (that fits well with the earlier work on quantum Riemann surfaces of [@D1] and the later work on the perturbative invariants of [@DG]), -",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-index-structures-angle-structures-and-the-3d-i",
+      "number": "2",
+      "title": "Index structures, angle structures and the 3D index",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 720,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbf supports",
+          "heading": false
+        },
+        {
+          "term": "index structures",
+          "heading": true
+        },
+        {
+          "term": "imconv",
+          "heading": false
+        },
+        {
+          "term": "qquad mathbf",
+          "heading": false
+        },
+        {
+          "term": "matrices mathbf",
+          "heading": false
+        },
+        {
+          "term": "let mathbf",
+          "heading": false
+        },
+        {
+          "term": "glr label",
+          "heading": false
+        },
+        {
+          "term": "supports strict",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.results label=\"sec.results\"} ## Index structures {#sub.index} Consider two $r \\times s$ matrices $\\mathbf A$ and $\\mathbf B$ with integer entries and a column vector $v \\in \\mathbb Z^r$, and let $\\mathbf M=(\\mathbf A | \\mathbf B | v)$. ::: definition []{#def.strictindex label=\"def.strictindex\"} (a) We say that $\\mathbf M$ supports an *index structure* if the rank of $(\\mathbf A | \\mathbf B)$ is $r$ and for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-22-angle-structures",
+      "number": "2.2",
+      "title": "Angle structures",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 384,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "angle structures",
+          "heading": true
+        },
+        {
+          "term": "strict angle",
+          "heading": false
+        },
+        {
+          "term": "generalized angle",
+          "heading": false
+        },
+        {
+          "term": "angles around",
+          "heading": false
+        },
+        {
+          "term": "hrs",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        },
+        {
+          "term": "normal surfaces",
+          "heading": false
+        },
+        {
+          "term": "tetrahedron",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.angle label=\"sub.angle\"} In this section we define the 3D index of an ideal triangulation. A *generalized angle structure* on a combinatorial ideal tetrahedron $\\Delta$ is an assignment of real numbers (called *angles*) at each edge of $\\Delta$ such that the sum of the three angles around each vertex is $1$.[^1] It is easy to see that opposite edges are assigned the same angle, thus a generalized angle",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-23-the-neumann-zagier-matrices",
+      "number": "2.3",
+      "title": "The Neumann-Zagier matrices",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 658,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bar mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf alpha",
+          "heading": false
+        },
+        {
+          "term": "mathbf gamma",
+          "heading": false
+        },
+        {
+          "term": "strict angle",
+          "heading": false
+        },
+        {
+          "term": "index mathcal",
+          "heading": false
+        },
+        {
+          "term": "angle structure",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "mathcal admits",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.NZ label=\"sub.NZ\"} Fix is an oriented ideal triangulation $\\mathcal T$ with $N$ tetrahedra of a 3-manifold $M$ with torii boundary components. Sssign variables $Z_i,Z'_i,Z''_i$ at the opposite edges of each tetrahedron $\\Delta_i$ respecting its orientation as in Figure [1](#fig.tetZZZ){reference-type=\"ref\" reference=\"fig.tetZZZ\"}. <figure id=\"fig.tetZZZ\"> <div class=\"center\"> <embed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-24-on-the-topological-invariance-of-the-index",
+      "number": "2.4",
+      "title": "On the topological invariance of the index",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 504,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "index",
+          "heading": true
+        },
+        {
+          "term": "strict angle",
+          "heading": false
+        },
+        {
+          "term": "widetilde mathcal",
+          "heading": false
+        },
+        {
+          "term": "triangulations mathcal",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulations",
+          "heading": false
+        },
+        {
+          "term": "admits strict",
+          "heading": false
+        },
+        {
+          "term": "index structure",
+          "heading": false
+        },
+        {
+          "term": "mathcal mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.invariance label=\"sub.invariance\"} Physics predicts that when defined, the 3D index $I_{\\mathcal T}$ depends only on the underlying 3-manifold $M$. Recall that [@HRS] prove that every hyperbolic 3-manifold $M$ that satisfies $$\\label{eq.H12} H_1(M,\\mathbb Z/2)\\to H_1(M,\\partial M,\\mathbb Z/2) \\qquad \\text{is the zero map}$$ (eg. a hyperbolic link complement) admits an ideal triangulation with a strict angle",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-axioms-for-the-tetrahedron-index",
+      "number": "3",
+      "title": "Axioms for the tetrahedron index",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 1004,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tetrahedron index",
+          "heading": true
+        },
+        {
+          "term": "mathbb delta",
+          "heading": false
+        },
+        {
+          "term": "delta satisfies",
+          "heading": false
+        },
+        {
+          "term": "axioms",
+          "heading": true
+        },
+        {
+          "term": "pentagon",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.axioms label=\"sec.axioms\"} In this section we discuss an axiomatic approach to the tetrahedron index. Let $\\mathbb Z((q^{1/2}))$ (resp., $\\mathbb Z[[q^{1/2}]]$) denote the ring of series of the form $$f(q)=\\sum_{n \\in \\frac{1}{2}\\mathbb Z} a_{n} q^{n}$$ where there exists $n_0=n_0(f)$ such that $a_n=0$ for all $n < n_0$ (resp., $n < 0$). For $f(q) \\in \\mathbb Z((q^{1/2}))$, its *degree* $\\delta(f(q))$ is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-properties-of-a-tetrahedron-index",
+      "number": "4",
+      "title": "Properties of a tetrahedron index",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-41-part-d-of-theorem-32",
+      "number": "4.1",
+      "title": "Part (d) of Theorem 3.2",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 27,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rec",
+          "heading": false
+        },
+        {
+          "term": "rec1a",
+          "heading": false
+        },
+        {
+          "term": "rec2a",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.partd label=\"sub.partd\"} Consider a function $f(m,e)$ of two discrete integer variables $e,m$ which satisfies Equations [\\[eq.rec1\\]](#eq.rec1){reference-type=\"eqref\" reference=\"eq.rec1\"} and [\\[eq.rec2\\]](#eq.rec2){reference-type=\"ref\" reference=\"eq.rec2\"}. An application of the `HolonomicFunctions.m` computer algebra package [@Kou] implies that $f(m,e)$ also satisfies equations",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-42-the-rank-of-v-part-a-of-theorem-32",
+      "number": "4.2",
+      "title": "The rank of V: part (a) of Theorem 3.2",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 64,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rec",
+          "heading": false
+        },
+        {
+          "term": "rankv",
+          "heading": false
+        },
+        {
+          "term": "kou",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.rankV label=\"sub.rankV\"} An application of the `HolonomicFunctions.m` computer algebra package [@Kou] implies that the linear $q$-difference operators corresponding to the recursions of Equations [\\[eq.rec1\\]](#eq.rec1){reference-type=\"eqref\" reference=\"eq.rec1\"} and [\\[eq.rec2\\]](#eq.rec2){reference-type=\"eqref\" reference=\"eq.rec2\"} is a Gröbner basis and the corresponding module has rank $2$. Said",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-43-the-rank-of-v-part-b-of-theorem-32",
+      "number": "4.3",
+      "title": "The rank of V+: part (b) of Theorem 3.2",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 542,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rec",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "partd",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "array end",
+          "heading": false
+        },
+        {
+          "term": "rankv",
+          "heading": false
+        },
+        {
+          "term": "linear equations",
+          "heading": false
+        },
+        {
+          "term": "linear combination",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.rankV+ label=\"sub.rankV+\"} Consider a function $f(m,e)$ of two discrete integer variables $e,m$ which satisfies Equations [\\[eq.rec1\\]](#eq.rec1){reference-type=\"eqref\" reference=\"eq.rec1\"} and [\\[eq.rec2\\]](#eq.rec2){reference-type=\"ref\" reference=\"eq.rec2\"}. Section [\\[sub.partd\\]](#sub.partd){reference-type=\"ref\" reference=\"sub.partd\"} implies that $f(0,e)$ satisfies the 3-term recursion",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-44-proof-of-triality-part-c-of-theorem-32",
+      "number": "4.4",
+      "title": "Proof of triality: part (c) of Theorem 3.2",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 553,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rec",
+          "heading": false
+        },
+        {
+          "term": "qdl",
+          "heading": false
+        },
+        {
+          "term": "e-m",
+          "heading": false
+        },
+        {
+          "term": "satisfies equation",
+          "heading": false
+        },
+        {
+          "term": "frac",
+          "heading": false
+        },
+        {
+          "term": "prop",
+          "heading": false
+        },
+        {
+          "term": "thm",
+          "heading": false
+        },
+        {
+          "term": "eqref",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.prop.S3 label=\"sub.prop.S3\"} In this section we prove part (c) of Theorem [\\[thm.1\\]](#thm.1){reference-type=\"ref\" reference=\"thm.1\"}. Equation [\\[eq.Z3\\]](#eq.Z3){reference-type=\"eqref\" reference=\"eq.Z3\"} concerns the following $\\mathbb Z/3$-action on $V$. ::: definition []{#def.Sf label=\"def.Sf\"} Consider the action $f \\mapsto Sf$ on a function $f: \\mathbb Z^2 \\longrightarrow\\mathbb Z((q^{1/2}))$ given by:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-46-the-degree-of-i",
+      "number": "4.6",
+      "title": "The degree of I",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 165,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "degid",
+          "heading": false
+        },
+        {
+          "term": "isindex",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "lem",
+          "heading": false
+        },
+        {
+          "term": "fan",
+          "heading": false
+        },
+        {
+          "term": "sub",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.degDI label=\"sub.degDI\"} ::: proof *Proof.* (of Lemma [\\[lem.degID\\]](#lem.degID){reference-type=\"ref\" reference=\"lem.degID\"}) Consider the fan $F$ of $\\mathbb R^2$ with rays $(1,0)$, $(0,1)$ and $(1,-1)$. Observe that the linear transformation $(m,e)\\mapsto(e,-e-m)$ (which appears in Definition [\\[def.Sf\\]](#def.Sf){reference-type=\"ref\" reference=\"def.Sf\"}) rotates the three cones of the fan $F$, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-47-proof-of-theorem-37",
+      "number": "4.7",
+      "title": "Proof of Theorem 3.7",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 124,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "degid",
+          "heading": false
+        },
+        {
+          "term": "isindex",
+          "heading": false
+        },
+        {
+          "term": "delta satisfies",
+          "heading": false
+        },
+        {
+          "term": "pentagon",
+          "heading": false
+        },
+        {
+          "term": "sub",
+          "heading": false
+        },
+        {
+          "term": "thm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.thm.2 label=\"sub.thm.2\"} First we show that $I_{\\Delta}$ satisfies the required equations: - $I_{\\Delta}\\in V$ from Section [\\[sub.isindex\\]](#sub.isindex){reference-type=\"ref\" reference=\"sub.isindex\"}. Lemma [\\[lem.degID\\]](#lem.degID){reference-type=\"ref\" reference=\"lem.degID\"} and Equation [\\[eq.degID\\]](#eq.degID){reference-type=\"eqref\" reference=\"eq.degID\"} manifestly imply that $\\delta(I_{\\Delta}(m,e))",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-5-convergence-of-the-3d-index",
+      "number": "5",
+      "title": "Convergence of the 3D index",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-51-proof-of-theorem-24",
+      "number": "5.1",
+      "title": "Proof of Theorem 2.4",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 1339,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "piece-wise quadratic",
+          "heading": false
+        },
+        {
+          "term": "αiai",
+          "heading": false
+        },
+        {
+          "term": "farkas",
+          "heading": false
+        },
+        {
+          "term": "index structure",
+          "heading": false
+        },
+        {
+          "term": "summand",
+          "heading": false
+        },
+        {
+          "term": "exist",
+          "heading": false
+        },
+        {
+          "term": "inequalities",
+          "heading": false
+        },
+        {
+          "term": "cone",
+          "heading": false
+        }
+      ],
+      "extract": "known lemma due to Farkas [30]. Lemma 5.1. Fix ﬁnite collections A = {a1, . . . , ar} and B = {b1, . . . , bs} of vectors in RN. The following are equivalent: (a) there does not exist v̸ = 0 such that ai · v ≥0 for i = 1, . . . , r and bj · v = 0 for j = 1, . . . , s. (b) A ∪B span RN and there exist αi > 0 for i = 1, . . . , r and γj ∈R for j = 1, . . . , s such that 0 = P i αiai + P j γjbj. Proof. (a) is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-52-an-independent-proof-of-convergence-for-stric",
+      "number": "5.2",
+      "title": "An independent proof of convergence for strict index structures",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 608,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "strict index",
+          "heading": true
+        },
+        {
+          "term": "imconv",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "alpha gamma",
+          "heading": false
+        },
+        {
+          "term": "alpha geq",
+          "heading": false
+        },
+        {
+          "term": "admits strict",
+          "heading": false
+        },
+        {
+          "term": "frac beta",
+          "heading": false
+        },
+        {
+          "term": "strict label",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.independent.strict label=\"sub.independent.strict\"} Theorem [\\[thm.IMconv\\]](#thm.IMconv){reference-type=\"ref\" reference=\"thm.IMconv\"} implies that $I_{\\mathbf M}$ converges when $\\mathbf M$ admits a strict index structure. In this section we give an independent proof of this fact without using the restriction of the summand of the index to a ray. ::: proposition []{#prop.IMconv.strict",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-6-invariance-of-the-3d-index-under-23-moves-and",
+      "number": "6",
+      "title": "Invariance of the 3D index under 23 moves and 20 moves",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 21,
+      "labelStart": "18",
+      "labelEnd": "21",
+      "words": 1375,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widetilde bar",
+          "heading": false
+        },
+        {
+          "term": "bar mathbf",
+          "heading": false
+        },
+        {
+          "term": "pmatrix bar",
+          "heading": false
+        },
+        {
+          "term": "widetilde mathcal",
+          "heading": false
+        },
+        {
+          "term": "qquad widetilde",
+          "heading": false
+        },
+        {
+          "term": "bar quad",
+          "heading": false
+        },
+        {
+          "term": "bar end",
+          "heading": false
+        },
+        {
+          "term": "mathbf begin",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.23 label=\"sec.23\"} ## Invariance under the $3\\to 2$ move {#sub.3-2} Consider two ideal triangulations $\\mathcal T$ and $\\widetilde{\\mathcal T}$ with $N$ and $N+1$ tetrahedra, respectively, related by a $2-3$ move shown in Figure [1](#fig.23too){reference-type=\"ref\" reference=\"fig.23too\"}. <figure id=\"fig.23too\"> <div class=\"center\"> <embed src=\"draws/23.pdf\" /> </div> <figcaption>A <span class=\"math",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-63-an-ideal-triangulation-of-m136",
+      "number": "6.3",
+      "title": "An ideal triangulation of m136",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 658,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "array ccccccc",
+          "heading": false
+        },
+        {
+          "term": "ccccccc end",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "ccc",
+          "heading": false
+        },
+        {
+          "term": "bar mathbf",
+          "heading": false
+        },
+        {
+          "term": "generalized angle",
+          "heading": false
+        },
+        {
+          "term": "angle structure",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.m136 label=\"sub.m136\"} Let $\\mathcal T$ denote the ideal triangulation [@HRS Ex.7.7] of the 1-cusped census manifold `m136` using 7 tetrahedra. Its gluing equation matrices around the edges are given by: $$\\begin{aligned} \\bar{\\mathbf A} &=\\left( \\begin{array}{ccccccc} 1 & 0 & 0 & 0 & 1 & 1 & 1 \\\\ 0 & 0 & 0 & 1 & 0 & 1 & 0 \\\\ 0 & 0 & 1 & 0 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 & 0 & 0 & 0 \\\\ 1 & 0 & 0 & 0 & 0 & 0 & 0",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-64-an-ideal-triangulation-of-m064",
+      "number": "6.4",
+      "title": "An ideal triangulation of m064",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 291,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "array ccccccc",
+          "heading": false
+        },
+        {
+          "term": "ccccccc end",
+          "heading": false
+        },
+        {
+          "term": "bar mathbf",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.m064 label=\"sub.m064\"} There is an explicit triangulation of `m064` that uses 7 ideal tetrahedra, communicated to us by Henry Segerman. Its gluing equation matrices are given by $$\\begin{aligned} \\bar{\\mathbf A} &=\\left( \\begin{array}{ccccccc} 2 & 0 & 1 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 & 0 & 0 \\\\ 0 & 2 & 1 & 1 & 1 & 1 & 0 \\\\ 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 0 & 0",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-65-an-ideal-triangulation-with-no-index-structur",
+      "number": "6.5",
+      "title": "An ideal triangulation with no index structure",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 338,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ideal triangulation",
+          "heading": true
+        },
+        {
+          "term": "index structure",
+          "heading": true
+        },
+        {
+          "term": "leftrightarrow move",
+          "heading": false
+        },
+        {
+          "term": "sum delta",
+          "heading": false
+        },
+        {
+          "term": "qdl",
+          "heading": false
+        },
+        {
+          "term": "generalized angle",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "gluing equations",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.noindex label=\"sub.noindex\"} Consider an ideal triangulation $\\mathcal T$ which contains an edge $e$ and a tetrahedron $\\Delta_1$ such that goes around $e$ five times with shapes $Z$, $Z'$, $Z'$, $Z''$ and $Z''$. Suppose that no other tetrahedron touches $e$. Then the equation for a generalized angle structure around $e$ reads $$\\alpha+ 2 \\beta+ 2 \\gamma=2, \\qquad \\alpha+ \\beta+ \\gamma=1$$ This forces",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-67-acknowledgment",
+      "number": "6.7",
+      "title": "Acknowledgment",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 56,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "author wishes",
+          "heading": false
+        },
+        {
+          "term": "clay",
+          "heading": false
+        },
+        {
+          "term": "blekherman",
+          "heading": false
+        }
+      ],
+      "extract": "The author wishes to thank Greg Blekherman, Nathan Dunfield, Christoph Koutschan, Henry Segerman and Josephine Yu for enlightening conversations. The author wishes to especially thank Tudor Dimofte for explaining the 3D index, and for his generous sharing of his ideas. The work was initiated during a Clay Conference in Oxford, UK. The author wishes to thank the Clay Institute and Oxford University for their",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-appendix-a-i-satisfies-the-pentagon-identity",
+      "number": null,
+      "title": "Appendix A. I satisfies the pentagon identity",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 45,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pentagon",
+          "heading": true
+        },
+        {
+          "term": "cursion",
+          "heading": false
+        },
+        {
+          "term": "sander",
+          "heading": false
+        }
+      ],
+      "extract": "by Sander Zwegers There are several proofs of the key pentagon identity of the tetrahedron index I∆. The proofs may use an integral representation of the quantum dilogarithm, or q-holonomic re- cursion relations, or algebraic identities of generating series of q-series of Nahm type [10].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-022-a1-a-generating-series-proof-of-the-pentagon-ide",
+      "number": null,
+      "title": "A.1. A generating series proof of the pentagon identity",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 26,
+      "labelStart": "23",
+      "labelEnd": "26",
+      "words": 675,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "x1z",
+          "heading": false
+        },
+        {
+          "term": "x2z",
+          "heading": false
+        },
+        {
+          "term": "z1z",
+          "heading": false
+        },
+        {
+          "term": "rxr",
+          "heading": false
+        },
+        {
+          "term": "e3fe",
+          "heading": false
+        },
+        {
+          "term": "qe1e2fe",
+          "heading": false
+        },
+        {
+          "term": "qe1x",
+          "heading": false
+        },
+        {
+          "term": "qe2x",
+          "heading": false
+        }
+      ],
+      "extract": "prove that I∆satisﬁes the pentagon identity using generating series. We will abbreviate the Pochhammer symbol (x; q)∞= ∞ Y n=0 (1 −xqn) by (x)∞= (x; q)∞. The proof • starts from an associativity identity (z1z2)∞ (z1)∞(z2)∞ · (x1z−1 1 q)∞(x2z−1 2 q)∞ (x1x2z−1 1 z−1 2 q)∞ = (x1z−1 1 q)∞ (z1)∞ · (x2z−1 2 q)∞ (z2)∞ · (z1z2)∞ (x1x2z−1 1 z−1 2 q)∞ that uses 4 additional variables {x1, x2, z1, z2} in addition to the 4",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-a2-a-second-proof-of-the-pentagon-identity",
+      "number": null,
+      "title": "A.2. A second proof of the pentagon identity",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 267,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "r1r",
+          "heading": false
+        },
+        {
+          "term": "n2q",
+          "heading": false
+        },
+        {
+          "term": "pentagon",
+          "heading": true
+        },
+        {
+          "term": "both sides",
+          "heading": false
+        }
+      ],
+      "extract": "of the pentagon identity using 1 (q)m(q)n = X r,s,t r+s=m s+t=n qrt (q)r(q)s(q)t , qmn (q)m(q)n = X r,s,t r+s=m s+t=n (−1)sq 1 2 s2−1 2 s (q)r(q)s(q)t = X s (−1)sq 1 2 s2−1 2 s (q)m−s(q)n−s(q)s . (A.3) The ﬁrst identity is well-known [29, Eqn.(13)], and the second follows from the ﬁrst by replacing q by q−1 and multiplying both sides by (−1)m+nq−1 2 (m−n)2−1 2 (m+n). Using these equations, we will show here that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-appendix-b-the-tetrahedron-index-and-the-quantum",
+      "number": null,
+      "title": "Appendix B. The tetrahedron index and the quantum dilogarithm",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": "27",
+      "labelEnd": "28",
+      "words": 314,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum dilogarithm",
+          "heading": true
+        },
+        {
+          "term": "recursions",
+          "heading": false
+        },
+        {
+          "term": "tetrahedron",
+          "heading": true
+        },
+        {
+          "term": "dex",
+          "heading": false
+        }
+      ],
+      "extract": "Gukov-Gaiotto-Dimofte came up with the beautiful formula (1.2)for the tetrahedron in- dex from a Fourier transform of the quantum dilogarithm. For completeness, we include this relation here, taken from [5]. The quantum dilogarithm of Faddeev and Kashaev is a fundamental building block of quantum topology [8, 14, 13]. The q-series version of this analytic function is given by (B.1) L(m, x, q) = (q−m 2 +1x−1)∞ (q−m 2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 617,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tudor dimofte",
+          "heading": false
+        },
+        {
+          "term": "bernd sturmfels",
+          "heading": false
+        },
+        {
+          "term": "stephan tillmann",
+          "heading": false
+        },
+        {
+          "term": "sergei gukov",
+          "heading": false
+        },
+        {
+          "term": "doron zeilberger",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "davide gaiotto",
+          "heading": false
+        },
+        {
+          "term": "modern phys",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Michel Brion and Mich`ele Vergne. Residue formulae, vector partition functions and lattice points in rational polytopes. J. Amer. Math. Soc., 10(4):797–833, 1997. [2] Benjamin A. Burton. Regina: Normal surface and 3-manifold topology software. http://regina. sourceforge.net. [3] Patrick J. Callahan, Martin V. Hildebrand, and Jeﬀrey R. Weeks. A census of cusped hyperbolic 3- manifolds. Math. Comp.,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "strict index",
+      "heading": true
+    },
+    {
+      "term": "strict angle",
+      "heading": true
+    },
+    {
+      "term": "index delta",
+      "heading": false
+    },
+    {
+      "term": "index mathcal",
+      "heading": false
+    },
+    {
+      "term": "tetrahedron index",
+      "heading": true
+    },
+    {
+      "term": "index structure",
+      "heading": true
+    },
+    {
+      "term": "index label",
+      "heading": false
+    },
+    {
+      "term": "mathbb delta",
+      "heading": false
+    },
+    {
+      "term": "bar mathbf",
+      "heading": false
+    },
+    {
+      "term": "alpha mathbf",
+      "heading": false
+    },
+    {
+      "term": "move sub",
+      "heading": false
+    },
+    {
+      "term": "generalized angle",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Angles of a tetrahedron. A generalized angle structure is strict if α, β, γ > 0. Let T denote an ideal triangulation of an oriented 3-manifold M with torus boundary. A generalized angle structure on T is the assignment of angles at each tetrahedron of T such that the sum of angles around every edge",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Shapes of a tetrahedron. so-called Neumann-Zagier matrices that encode the exponents of the gluing equations of T , originally introduced by Thurston [20, 25]. In terms of these matrices, a generalized angle",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "A 2–3 move: a bipyramid split into N tetrahedra for T and N + 1 tetrahedra for eT",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The degree of the tetrahedron index",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The degree of the tetrahedron index. If ρ = Nk0 is a ﬁxed ray, let x = BTk0 = (x1, . . . , xs) and y = ATk0 = (y1, . . . , ys)",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Piece-wise quadratic and linear functions δ2 and δ1",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "A piece-wise linear function L+",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "A 2 −3 move. The above ﬁgure matches the conventions of [7, Sec.3.6]. For a variable, matrix or vector f associated to T , we will denote by ef the corresponding variable, matrix or vector associated",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 31,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 27,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "8 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p28); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 8
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 27 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1208.1663v2"
+  }
+}

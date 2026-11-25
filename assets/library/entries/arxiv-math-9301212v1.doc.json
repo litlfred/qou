@@ -1,0 +1,378 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-9301212v1",
+  "title": "arxiv-math-9301212v1",
+  "variant": "pdf",
+  "pages": 5,
+  "tocSource": "undetermined",
+  "tocMethod": "regex",
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 389,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "round circles",
+          "heading": false
+        },
+        {
+          "term": "obius transformations",
+          "heading": false
+        },
+        {
+          "term": "rapid resolution",
+          "heading": false
+        },
+        {
+          "term": "grant dms",
+          "heading": false
+        },
+        {
+          "term": "nsf grant",
+          "heading": false
+        },
+        {
+          "term": "least energy",
+          "heading": false
+        },
+        {
+          "term": "rectiﬁable",
+          "heading": false
+        },
+        {
+          "term": "american mathematical",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/9301212v1 [math.GT] 1 Jan 1993 APPEARED IN BULLETIN OF THE AMERICAN MATHEMATICAL SOCIETY Volume 28, Number 1, January 1993, Pages 99-103 M¨OBIUS INVARIANCE OF KNOT ENERGY Steve Bryson, Michael H. Freedman, Zheng-Xu He, and Zhenghan Wang Abstract. A physically natural potential energy for simple closed curves in R3 is shown to be invariant under M¨obius transformations. This leads to the rapid resolution",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-9301212v1/blocks/prose-page-001",
+        "library/arxiv-math-9301212v1/blocks/thm-page-001-01"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 485,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "obius invariance",
+          "heading": false
+        },
+        {
+          "term": "obius transformation",
+          "heading": false
+        },
+        {
+          "term": "rectiﬁable",
+          "heading": false
+        },
+        {
+          "term": "closed minimizer",
+          "heading": false
+        },
+        {
+          "term": "energy threshold",
+          "heading": false
+        },
+        {
+          "term": "newtonian potential",
+          "heading": false
+        },
+        {
+          "term": "knot types",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite energy",
+          "heading": false
+        }
+      ],
+      "extract": "2 STEVE BRYSON, M. H. FREEDMAN, Z.-X. HE, AND ZHENGHAN WANG Theorem B. If K is a smooth prime (not a connected sum) knot, then there exists a simple closed rectiﬁable γK of knot type K with E(γK) ≤E(γ) for all rectiﬁable loops γ which are topologically ambient isotopic to K. Theorem C. Any minimizer γK, as above, will enjoy some regularity. With an arc length parametrization, γK will be in C1,1. Several results of",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-9301212v1/blocks/prose-page-002",
+        "library/arxiv-math-9301212v1/blocks/thm-page-002-01",
+        "library/arxiv-math-9301212v1/blocks/thm-page-002-02",
+        "library/arxiv-math-9301212v1/blocks/thm-page-002-03",
+        "library/arxiv-math-9301212v1/blocks/cor-page-002-04",
+        "library/arxiv-math-9301212v1/blocks/thm-page-002-05"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 389,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "obius invariance",
+          "heading": false
+        },
+        {
+          "term": "limε",
+          "heading": false
+        },
+        {
+          "term": "rectiﬁable",
+          "heading": false
+        },
+        {
+          "term": "invariance property",
+          "heading": false
+        },
+        {
+          "term": "generalized derivative",
+          "heading": false
+        },
+        {
+          "term": "arclength",
+          "heading": false
+        },
+        {
+          "term": "ﬁbers",
+          "heading": false
+        }
+      ],
+      "extract": "M ¨OBIUS INVARIANCE OF KNOT ENERGY 3 of radius ε, Bε, only in its boundary Sε, then γK∩Sε consists of (at most) one point. The idea is that if γK ∩Sε is disconnected, inverting an arc of γK\\Sε into Bε will lower energy while preserving the knot type. Thus there is a continuous projection from the ε-neighborhood of γK to γK given by “closest point” π: Nε(γK) →γK. We prove that the ﬁbers π−1(pt) are all geometric",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-9301212v1/blocks/prose-page-003"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 253,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adriano",
+          "heading": false
+        },
+        {
+          "term": "fred",
+          "heading": false
+        },
+        {
+          "term": "bryson",
+          "heading": false
+        }
+      ],
+      "extract": "4 STEVE BRYSON, M. H. FREEDMAN, Z.-X. HE, AND ZHENGHAN WANG where L = Length(I(γ)) and ε+ = ε+(u) = D((I ◦γ)(u), (I ◦γ)(u + ε)) = s(u + ε) −s(u) = Z u+ε u f(w) dw = f(u)ε + ε2 Z 1 0 (1 −t)f ′(u + εt) dt and ε−= ε−(u) = D((I ◦γ)(u −ε), (I ◦γ)(u)) = f(u)ε −ε2 Z 1 0 (1 −t)f ′(u −εt) dt. Since |f ′(w)| is uniformly bounded, we have 1 ε+ = 1 f(u)ε \" 1 1 + (ε/f(u)) R 1 0 (1 −t)f ′(u + εt) dt # = 1 f(u)ε \u0014 1 − ε f(u) Z 1 0",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-9301212v1/blocks/prose-page-004"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 190,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "energy functionals",
+          "heading": false
+        },
+        {
+          "term": "e-mail address",
+          "heading": false
+        },
+        {
+          "term": "nasa",
+          "heading": false
+        },
+        {
+          "term": "bryson",
+          "heading": false
+        },
+        {
+          "term": "freedman",
+          "heading": false
+        },
+        {
+          "term": "california",
+          "heading": false
+        }
+      ],
+      "extract": "M ¨OBIUS INVARIANCE OF KNOT ENERGY 5 References [A] K. Ahara, Energy of a knot, screened at Topology Conf., Univ. of Hawaii, August 1990, K. H. Dovermann, organizer. [FH] M. H. Freedman and Z.-X. He, On the ‘energy’ of knots and unknots (to appear). [O1] Jun O’Hara, Energy of a knot, Topology 30 (1991), 241–247. [O2] , Family of energy functionals of knots, Topology Appl. (to appear). [O3] , Energy functionals of",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-9301212v1/blocks/prose-page-005"
+      ]
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "obius invariance",
+      "heading": false
+    },
+    {
+      "term": "steve bryson",
+      "heading": false
+    },
+    {
+      "term": "knot energy",
+      "heading": false
+    },
+    {
+      "term": "obius transformation",
+      "heading": false
+    },
+    {
+      "term": "rectiﬁable loops",
+      "heading": false
+    },
+    {
+      "term": "rectiﬁable lines",
+      "heading": false
+    },
+    {
+      "term": "obius invariant",
+      "heading": false
+    },
+    {
+      "term": "zhenghan wang",
+      "heading": false
+    },
+    {
+      "term": "energy threshold",
+      "heading": false
+    },
+    {
+      "term": "energy less",
+      "heading": false
+    },
+    {
+      "term": "energy functionals",
+      "heading": false
+    },
+    {
+      "term": "ﬁnite energy",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 5,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p5); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-9301212v1"
+  }
+}

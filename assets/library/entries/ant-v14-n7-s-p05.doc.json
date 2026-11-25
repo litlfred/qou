@@ -1,0 +1,1127 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "ant-v14-n7-s-p05",
+  "title": "ant-v14-n7-s-p05",
+  "variant": "pdf",
+  "pages": 52,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1801",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "X+ ∈SH(k) is dualizable. In particular, we can associate to X a natural Euler characteristic χ(X/k) ∈EndSH(k)(1k), deﬁned as the composition",
+      "number": "T",
+      "page": 1,
+      "pageLabel": "1801",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-t-x-shk-is-dualizable-in-particular-we-can-assoc"
+    },
+    {
+      "level": 1,
+      "title": "Duality and Euler characteristics",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "1804",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-2-duality-and-euler-characteristics"
+    },
+    {
+      "level": 1,
+      "title": "SL-oriented motivic spectra",
+      "number": "3",
+      "page": 13,
+      "pageLabel": "1813",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-3-sl-oriented-motivic-spectra"
+    },
+    {
+      "level": 1,
+      "title": "Projective pushforward in twisted cohomology",
+      "number": "4",
+      "page": 21,
+      "pageLabel": "1821",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-4-projective-pushforward-in-twisted-cohomology"
+    },
+    {
+      "level": 1,
+      "title": "Motivic Gauss–Bonnet",
+      "number": "5",
+      "page": 26,
+      "pageLabel": "1826",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-5-motivic-gaussbonnet"
+    },
+    {
+      "level": 1,
+      "title": "SL-oriented cohomology theories",
+      "number": "6",
+      "page": 27,
+      "pageLabel": "1827",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-6-sl-oriented-cohomology-theories"
+    },
+    {
+      "level": 1,
+      "title": "Comparison isomorphisms",
+      "number": "7",
+      "page": 31,
+      "pageLabel": "1831",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-7-comparison-isomorphisms"
+    },
+    {
+      "level": 1,
+      "title": "Applications",
+      "number": "8",
+      "page": 36,
+      "pageLabel": "1836",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-8-applications"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 50,
+      "pageLabel": "1850",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-009-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 50,
+      "pageLabel": "1850",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-010-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1801",
+      "labelEnd": "1801",
+      "words": 113,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "motivic gauss",
+          "heading": false
+        },
+        {
+          "term": "motivic cohomology",
+          "heading": false
+        },
+        {
+          "term": "gauss bonnet",
+          "heading": false
+        },
+        {
+          "term": "euler characteristic",
+          "heading": false
+        }
+      ],
+      "extract": "msp ALGEBRA AND NUMBER THEORY 14:7 (2020) https://doi.org/10.2140/ant.2020.14.1801 Motivic Gauss–Bonnet formulas Marc Levine and Arpon Raksit The apparatus of motivic stable homotopy theory provides a notion of Euler characteristic for smooth projective varieties, valued in the Grothendieck–Witt ring of the base ﬁeld. Previous work of the ﬁrst author and recent work of Déglise, Jin and Khan established a motivic",
+      "extractCut": true,
+      "blocks": [
+        "library/ant-v14-n7-s-p05/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1801",
+      "labelEnd": "1801",
+      "words": 135,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "motivic",
+          "heading": false
+        },
+        {
+          "term": "sl-oriented",
+          "heading": false
+        },
+        {
+          "term": "introduction",
+          "heading": true
+        },
+        {
+          "term": "k-scheme",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction 2. Duality and Euler characteristics 1804 3. SL-oriented motivic spectra 1813 4. Projective pushforward in twisted cohomology 1821 5. Motivic Gauss–Bonnet 1826 6. SL-oriented cohomology theories 1827 7. Comparison isomorphisms 1831 8. Applications 1836 Acknowledgements 1850 References 1850 1. Introduction Let k be a ﬁeld and let X be a smooth projective k-scheme. Let SH(k) denote the motivic stable",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-t-x-shk-is-dualizable-in-particular-we-can-assoc",
+      "number": "T",
+      "title": "X+ ∈SH(k) is dualizable. In particular, we can associate to X a natural Euler characteristic χ(X/k) ∈EndSH(k)(1k), deﬁned as the composition",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1801",
+      "labelEnd": "1804",
+      "words": 1493,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "euler characteristic",
+          "heading": true
+        },
+        {
+          "term": "sl-oriented motivic",
+          "heading": false
+        },
+        {
+          "term": "sl-oriented theories",
+          "heading": false
+        },
+        {
+          "term": "motivic gauss",
+          "heading": false
+        },
+        {
+          "term": "motivic ring",
+          "heading": false
+        },
+        {
+          "term": "motivic cohomology",
+          "heading": false
+        },
+        {
+          "term": "gauss bonnet",
+          "heading": false
+        },
+        {
+          "term": "hermitian k-theory",
+          "heading": false
+        }
+      ],
+      "extract": "associate to X a natural Euler characteristic χ(X/k) ∈EndSH(k)(1k), deﬁned as the composition 1k δ→6∞ T X+ ∧k (6∞ T X+)∨τ→(6∞ T X+)∨∧k 6∞ T X+ ϵ→1k, where the maps δ and ϵ are the coevaluation and evaluation that comprise the duality, and τ is the symmetry isomorphism. MSC2010: primary 14F42; secondary 55N20, 55N35. Keywords: motivic homotopy theory, Chow ring, Euler characteristics, hermitian K-theory. 1801 1802",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-duality-and-euler-characteristics",
+      "number": "2",
+      "title": "Duality and Euler characteristics",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 13,
+      "labelStart": "1804",
+      "labelEnd": "1813",
+      "words": 3213,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xtx n1x",
+          "heading": false
+        },
+        {
+          "term": "write thx",
+          "heading": false
+        },
+        {
+          "term": "schb",
+          "heading": false
+        },
+        {
+          "term": "marc levine",
+          "heading": false
+        },
+        {
+          "term": "category spc",
+          "heading": false
+        },
+        {
+          "term": "arpon raksit",
+          "heading": false
+        },
+        {
+          "term": "lci morphism",
+          "heading": false
+        },
+        {
+          "term": "motivic gauss",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we review the strong dualizability of smooth projective schemes as objects of the stable motivic homotopy category, which supplies a notion of Euler characteristic for these schemes. We also recall a result from [Levine 2017b] that gives an alternative characterization of this Euler characteristic. Motivic Gauss–Bonnet formulas 1805 2A. Preliminaries. Let us ﬁrst recall the basic framework of stable",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-sl-oriented-motivic-spectra",
+      "number": "3",
+      "title": "SL-oriented motivic spectra",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 21,
+      "labelStart": "1813",
+      "labelEnd": "1821",
+      "words": 2790,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sl-oriented motivic",
+          "heading": true
+        },
+        {
+          "term": "thv e2r",
+          "heading": false
+        },
+        {
+          "term": "twisted e-cohomology",
+          "heading": false
+        },
+        {
+          "term": "map thv",
+          "heading": false
+        },
+        {
+          "term": "class thv",
+          "heading": false
+        },
+        {
+          "term": "thom isomorphism",
+          "heading": false
+        },
+        {
+          "term": "thv induces",
+          "heading": false
+        },
+        {
+          "term": "canonical thom",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we discuss the deﬁnition and basic features of SL-oriented motivic spectra. This is treated in [Ananyevskiy 2016a] in the context of the motivic stable homotopy category SH(k) for k a ﬁeld. Essentially all of the constructions in [op. cit.] go through without change in the setting of a separated noetherian base-scheme B of ﬁnite Krull dimension; the most one needs to do is replace a few arguments",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-projective-pushforward-in-twisted-cohomology",
+      "number": "4",
+      "title": "Projective pushforward in twisted cohomology",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 26,
+      "labelStart": "1821",
+      "labelEnd": "1826",
+      "words": 1486,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "projective pushforward",
+          "heading": true
+        },
+        {
+          "term": "applying homsh",
+          "heading": false
+        },
+        {
+          "term": "sl-oriented motivic",
+          "heading": false
+        },
+        {
+          "term": "composition idsh",
+          "heading": false
+        },
+        {
+          "term": "arpon raksit",
+          "heading": false
+        },
+        {
+          "term": "e2r",
+          "heading": false
+        },
+        {
+          "term": "motivic spectrum",
+          "heading": false
+        },
+        {
+          "term": "marc levine",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we describe how one gets projective pushforward maps in twisted E-cohomology for E an SL-oriented motivic spectrum. We rely on the six-functor formalism. This is a bit different from the treatment of projective pushforward given by Ananyevskiy [2016a]: in that treatment, one relies on the factorization of an arbitrary projective morphism Y →X into a closed immersion Y →X × PN followed by a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-motivic-gaussbonnet",
+      "number": "5",
+      "title": "Motivic Gauss–Bonnet",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "1826",
+      "labelEnd": "1827",
+      "words": 344,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "motivic gauss",
+          "heading": true
+        },
+        {
+          "term": "gauss bonnet",
+          "heading": true
+        },
+        {
+          "term": "homsh",
+          "heading": false
+        },
+        {
+          "term": "sl-oriented motivic",
+          "heading": false
+        },
+        {
+          "term": "thx",
+          "heading": false
+        },
+        {
+          "term": "thtx",
+          "heading": false
+        }
+      ],
+      "extract": "Deﬁnition 5.1. Let p : V →X be a rank r vector bundle on some X ∈SmB, and let E ∈SH(B) be an SL-oriented motivic ring spectrum. The Euler class eE(V ) ∈E2r,r(X, det−1 V ) is deﬁned as eE(V ) := s∗s∗(1E X); 1E X ∈E0,0(X) the unit. Remark 5.2. By Lemma 4.5, eE(V ):=s∗s∗(1E X)= ¯s∗thV , where ¯s : X →ThX(V ) is the map induced by s. Theorem 5.3 (motivic Gauss–Bonnet). Let E ∈SH(B) be an SL-oriented motivic ring",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-6-sl-oriented-cohomology-theories",
+      "number": "6",
+      "title": "SL-oriented cohomology theories",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 31,
+      "labelStart": "1827",
+      "labelEnd": "1831",
+      "words": 1527,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sl-oriented cohomology",
+          "heading": true
+        },
+        {
+          "term": "proper pushforward",
+          "heading": false
+        },
+        {
+          "term": "smb",
+          "heading": false
+        },
+        {
+          "term": "pushforward maps",
+          "heading": false
+        },
+        {
+          "term": "line bundle",
+          "heading": false
+        },
+        {
+          "term": "sm-lb",
+          "heading": false
+        },
+        {
+          "term": "proper morphism",
+          "heading": false
+        },
+        {
+          "term": "gauss bonnet",
+          "heading": false
+        }
+      ],
+      "extract": "Our ultimate goal is to apply the Gauss–Bonnet theorem of Section 5 when projective pushforwards are deﬁned on a representable cohomology theory in some concrete manner, not necessarily relying on the six-functor formalism. For this, we need a suitable axiomatization for such theories; we use a modiﬁcation of the axioms of Panin and Smirnov [Panin 2003; 2009]. As before, our base-scheme B is a noetherian, separated",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-7-comparison-isomorphisms",
+      "number": "7",
+      "title": "Comparison isomorphisms",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 36,
+      "labelStart": "1831",
+      "labelEnd": "1836",
+      "words": 2209,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sl-oriented motivic",
+          "heading": false
+        },
+        {
+          "term": "pushforward maps",
+          "heading": false
+        },
+        {
+          "term": "panin",
+          "heading": false
+        },
+        {
+          "term": "some smb",
+          "heading": false
+        },
+        {
+          "term": "arpon raksit",
+          "heading": false
+        },
+        {
+          "term": "closed immersion",
+          "heading": false
+        },
+        {
+          "term": "general base-scheme",
+          "heading": false
+        },
+        {
+          "term": "marc levine",
+          "heading": false
+        }
+      ],
+      "extract": "We recall the element η ∈HomSH(B)(1B, S−1,−1∧1B) induced by the map of B-schemes η : A2\\{0} →P1, η(a, b) = (a : b). As every E ∈SH(B) is a module for 1B, we have the map ×η : E →S−1,−1 ∧E for each x ∈SH(B). We say that η acts invertibly on E if ×η is an isomorphism in SH(B). We consider the following situation: ﬁx an SL-oriented motivic spectrum E ∈SH(B). This gives us the twisted cohomology theory E∗,∗underlying",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-8-applications",
+      "number": "8",
+      "title": "Applications",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 50,
+      "labelStart": "1836",
+      "labelEnd": "1850",
+      "words": 5925,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gl-oriented motivic",
+          "heading": false
+        },
+        {
+          "term": "kmw",
+          "heading": false
+        },
+        {
+          "term": "map degk",
+          "heading": false
+        },
+        {
+          "term": "gauss bonnet",
+          "heading": false
+        },
+        {
+          "term": "morel isomorphism",
+          "heading": false
+        },
+        {
+          "term": "thom isomorphism",
+          "heading": false
+        },
+        {
+          "term": "let smk",
+          "heading": false
+        },
+        {
+          "term": "degree degk",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we apply the motivic Gauss–Bonnet formula of Section 5 and the comparison results of Section 7 to various speciﬁc SL-oriented cohomology theories, and thereby make computations of the motivic Euler characteristic χ(X/B) in different contexts. 8A. Motivic cohomology and cohomology of the Milnor K-theory sheaves. We work over the base- scheme B = Spec k, with k a perfect ﬁeld. In SH(k) we have the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 50,
+      "pageEnd": 50,
+      "labelStart": "1850",
+      "labelEnd": "1850",
+      "words": 177,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "j-p",
+          "heading": false
+        },
+        {
+          "term": "thank",
+          "heading": false
+        },
+        {
+          "term": "cisinki",
+          "heading": false
+        },
+        {
+          "term": "transregio",
+          "heading": false
+        },
+        {
+          "term": "søren",
+          "heading": false
+        }
+      ],
+      "extract": "Both authors thank the referees for detailed comments and suggestions, which helped us correct a number of ambiguities in an earlier version and have greatly improved the exposition. (Raksit) I would like to thank my PhD advisor, Søren Galatius, for many suggestions and ideas that led to my thinking about the questions discussed in this paper. I would also like to thank Tony Feng and Jesse Silliman for helpful",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 50,
+      "pageEnd": 52,
+      "labelStart": "1850",
+      "labelEnd": null,
+      "words": 941,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chow witt",
+          "heading": false
+        },
+        {
+          "term": "zbl",
+          "heading": false
+        },
+        {
+          "term": "grothendieck witt",
+          "heading": false
+        },
+        {
+          "term": "a1-homotopy theory",
+          "heading": false
+        },
+        {
+          "term": "algebraic k-theory",
+          "heading": false
+        },
+        {
+          "term": "panin",
+          "heading": false
+        },
+        {
+          "term": "witt groups",
+          "heading": false
+        },
+        {
+          "term": "milnor k-theory",
+          "heading": false
+        }
+      ],
+      "extract": "[Abelson 1976] H. Abelson, “On the Euler characteristic of real varieties”, Michigan Math. J. 23:3 (1976), 267–271. MR Zbl [Ananyevskiy 2016a] A. Ananyevskiy, “On the push-forwards for motivic cohomology theories with invertible stable Hopf element”, Manuscripta Math. 150:1-2 (2016), 21–44. MR Zbl [Ananyevskiy 2016b] A. Ananyevskiy, “On the relation of special linear algebraic cobordism to Witt groups”, Homology",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "sl-oriented motivic",
+      "heading": true
+    },
+    {
+      "term": "motivic gauss",
+      "heading": true
+    },
+    {
+      "term": "motivic spectrum",
+      "heading": false
+    },
+    {
+      "term": "motivic cohomology",
+      "heading": false
+    },
+    {
+      "term": "gauss bonnet",
+      "heading": true
+    },
+    {
+      "term": "motivic euler",
+      "heading": false
+    },
+    {
+      "term": "motivic homotopy",
+      "heading": false
+    },
+    {
+      "term": "gl-oriented motivic",
+      "heading": false
+    },
+    {
+      "term": "arpon raksit",
+      "heading": false
+    },
+    {
+      "term": "motivic commutative",
+      "heading": false
+    },
+    {
+      "term": "motivic ring",
+      "heading": false
+    },
+    {
+      "term": "marc levine",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1801",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1802",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "1803",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "1804",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "1805",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "1806",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "1807",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "1808",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "1809",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "1810",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "1811",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "1812",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "1813",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "1814",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "1815",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "1816",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "1817",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "1818",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "1819",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "1820",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "1821",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "1822",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "1823",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "1824",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "1825",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "1826",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "1827",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "1828",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "1829",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "1830",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "1831",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "1832",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "1833",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "1834",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "1835",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "1836",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "1837",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "1838",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "1839",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "1840",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "1841",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "1842",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "1843",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "1844",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "1845",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "1846",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "1847",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "1848",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "1849",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "1850",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "1851",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p50); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/ant-v14-n7-s-p05"
+  }
+}

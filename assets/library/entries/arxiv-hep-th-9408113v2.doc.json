@@ -1,0 +1,1547 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-9408113v2",
+  "title": "Dilogarithm identities",
+  "variant": "pdf",
+  "pages": 96,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction.",
+      "number": "0",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-0-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Ubiquity of polylogarithms.",
+      "number": "0.1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-01-ubiquity-of-polylogarithms"
+    },
+    {
+      "level": 2,
+      "title": "Dilogarithm.",
+      "number": "0.2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-02-dilogarithm"
+    },
+    {
+      "level": 2,
+      "title": "Accessible dilogarithm relations.",
+      "number": "1.2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-12-accessible-dilogarithm-relations"
+    },
+    {
+      "level": 2,
+      "title": "Dilogarithm identities and conformal weights.",
+      "number": "1.3",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-13-dilogarithm-identities-and-conformal-weights"
+    },
+    {
+      "level": 2,
+      "title": "Kuniba-Nakanishi’s dilogarithm conjecture.",
+      "number": "1.4",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-14-kuniba-nakanishis-dilogarithm-conjecture"
+    },
+    {
+      "level": 2,
+      "title": "Exercises to Section 1.",
+      "number": "1.6",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-16-exercises-to-section-1"
+    },
+    {
+      "level": 2,
+      "title": "Dilogarithm and partitions.",
+      "number": "2.1",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-21-dilogarithm-and-partitions"
+    },
+    {
+      "level": 2,
+      "title": "Dilogarithm and characters of the aﬃne Kac-Moody algebras.",
+      "number": "2.2",
+      "page": 53,
+      "pageLabel": "53",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-22-dilogarithm-and-characters-of-the-aﬃne-kac-mo"
+    },
+    {
+      "level": 2,
+      "title": "Connection with crystal basis.",
+      "number": "2.4",
+      "page": 60,
+      "pageLabel": "60",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-24-connection-with-crystal-basis"
+    },
+    {
+      "level": 2,
+      "title": "Quantum dilogarithm.",
+      "number": "2.5",
+      "page": 79,
+      "pageLabel": "79",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-25-quantum-dilogarithm"
+    },
+    {
+      "level": 2,
+      "title": "References*",
+      "number": null,
+      "page": 89,
+      "pageLabel": "89",
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-011-references"
+    },
+    {
+      "level": 2,
+      "title": "K.Lloyd), London Math. Soc., Lecture Note Series, No.82, Cambridge University",
+      "number": "E",
+      "page": 95,
+      "pageLabel": "95",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-012-e-klloyd-london-math-soc-lecture-note-series-no8"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 234,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dilogarithm identities",
+          "heading": false
+        },
+        {
+          "term": "branching functions",
+          "heading": false
+        },
+        {
+          "term": "lewin",
+          "heading": false
+        },
+        {
+          "term": "crystal",
+          "heading": false
+        },
+        {
+          "term": "tokyo",
+          "heading": false
+        },
+        {
+          "term": "proven",
+          "heading": false
+        },
+        {
+          "term": "connection",
+          "heading": false
+        },
+        {
+          "term": "mathematical",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-th/9408113v2 25 Aug 1994 DILOGARITHM IDENTITIES ANATOL N. KIRILLOV Department of Mathematical Sciences, University of Tokyo, Komaba, Meguro-ku, Tokyo 153, Japan and Steklov Mathematical Institute, Fontanka 27, St.Petersburg, 191011, Russia ABSTRACT We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view. We prove that",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9408113v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-0-introduction",
+      "number": "0",
+      "title": "Introduction.",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 201,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperlogarithm",
+          "heading": false
+        },
+        {
+          "term": "lik",
+          "heading": false
+        },
+        {
+          "term": "analytic continuation",
+          "heading": false
+        },
+        {
+          "term": "polylogarithm",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper we consider mainly the properties of dilogarithm related to the so-called accessibility problem, representation theory of Virasoro and Kac-Moody algebras, and Conformal Field Theory (CFT). The remarkable and mysterious dilogarithm [Za2], [Za3] will be the main hero of our paper, but we start with deﬁnition and list some applications of more general and may be even more amazing functions: polylogarithm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-01-ubiquity-of-polylogarithms",
+      "number": "0.1",
+      "title": "Ubiquity of polylogarithms.",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 268,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kirillov",
+          "heading": false
+        },
+        {
+          "term": "suslin",
+          "heading": false
+        },
+        {
+          "term": "goncharov",
+          "heading": false
+        },
+        {
+          "term": "zagier",
+          "heading": false
+        },
+        {
+          "term": "drinfeld",
+          "heading": false
+        },
+        {
+          "term": "bloch",
+          "heading": false
+        },
+        {
+          "term": "borel",
+          "heading": false
+        }
+      ],
+      "extract": "The polylogarithm and hyperlogarithm have many intriguing properties and have ap- peared in various branches of mathematics and physics. We mention the following ones: — volumes of polytopes in hyperbolic and spheric geometry (N. Lobachevsky (1836), L. Schl¨aﬂi (1852), H. Coxeter (1935), G. Kneser (1936), . . .) — volumes of 3-dim hyperbolic manifolds (S. Kojima, J. Milnor, W. Neumann, T. Yoshida, D. Zagier, ...) —",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-02-dilogarithm",
+      "number": "0.2",
+      "title": "Dilogarithm.",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 10,
+      "labelStart": "3",
+      "labelEnd": "10",
+      "words": 2784,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wigner-bloch dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "rogers dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm identities",
+          "heading": false
+        },
+        {
+          "term": "single-valued dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "euler dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "ray multivariable",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm relations",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm identity",
+          "heading": false
+        }
+      ],
+      "extract": "0.2. Dilogarithm. The main subject of this paper is the dilogarithm identities. More exactly, we are study the relations of the following type N i=1 L(xi) = cπ2 6 , (0.3) where L(x) is the Rogers dilogarithm, all xi are assumed to be the algebraic and c is a rational number. The main problems we are interested in are the following: i) how to ﬁnd/classify the relations of type (0.3), ii) how one can prove a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-12-accessible-dilogarithm-relations",
+      "number": "1.2",
+      "title": "Accessible dilogarithm relations.",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 23,
+      "labelStart": "10",
+      "labelEnd": "23",
+      "words": 5104,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lewin identities",
+          "heading": false
+        },
+        {
+          "term": "lewin dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "lewin single-variable",
+          "heading": false
+        },
+        {
+          "term": "accessibility",
+          "heading": false
+        },
+        {
+          "term": "watson relations",
+          "heading": false
+        },
+        {
+          "term": "single-variable functional",
+          "heading": false
+        },
+        {
+          "term": "duplication formula",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm identity",
+          "heading": false
+        }
+      ],
+      "extract": "1.2.1. Accessibility of Coxeter’s and Lewin’s identities. It is easy to see from (1.3) and (1.7) that L(1) = π2 6 , L(−1) = −π2 12, L(1 2) = π2 12, (L.Euler, 1768); (1.10) L(1 2( √ 5 −1)) = π2 10, L(1 2(3 − √ 5)) = π2 15, (J.Landen, 1780). Proof. Let us put ρ := 1 2( √ 5 −1). It is clear that ρ2 + ρ = 1. So we have L(ρ2) = L(1 −ρ) = L(1) −L(ρ). Now we use the Abel formula (1.7) L(ρ2) = 2L(ρ) −2L \u0012 ρ 1 + ρ \u0013 = 2L(ρ)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-13-dilogarithm-identities-and-conformal-weights",
+      "number": "1.3",
+      "title": "Dilogarithm identities and conformal weights.",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 26,
+      "labelStart": "23",
+      "labelEnd": "26",
+      "words": 918,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sin exp",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm",
+          "heading": true
+        },
+        {
+          "term": "ﬁve-term relation",
+          "heading": false
+        },
+        {
+          "term": "modiﬁed bernoulli",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm identity",
+          "heading": false
+        },
+        {
+          "term": "bernoulli polynomial",
+          "heading": false
+        },
+        {
+          "term": "π2b",
+          "heading": false
+        },
+        {
+          "term": "rel",
+          "heading": false
+        }
+      ],
+      "extract": "Let us consider the following dilogarithm sum n−1 X k=1 r X m=1 L \u0012 sin kϕ · sin(n −k)ϕ sin(m + k)ϕ · sin(m + n −k)ϕ \u0013 := π2 6 s(j, n, r), where ϕ = (j + 1)π n + r , 0 ≤2j ≤n + r −2 and g.c.d. (j + 1, n + r) = 1. 24 Anatol N. Kirillov Theorem 2 (A.N. Kirillov [Kir7]). 1. We have s(j, n, r) = 6(r + n) [ n−1 2 ] X k=0 {1 6 −B2 ((n −1 −2k)θ)} −1 4{2n2 + 1 + 3(−1)n}, (1.28) where θ = j + 1 n + r, and B2(x) = −1 π2 ∞ X",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-14-kuniba-nakanishis-dilogarithm-conjecture",
+      "number": "1.4",
+      "title": "Kuniba-Nakanishi’s dilogarithm conjecture.",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 31,
+      "labelStart": "26",
+      "labelEnd": "31",
+      "words": 1479,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kuniba-nakanishi",
+          "heading": true
+        },
+        {
+          "term": "dilogarithm",
+          "heading": true
+        },
+        {
+          "term": "principal branch",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm identities",
+          "heading": false
+        },
+        {
+          "term": "amk",
+          "heading": false
+        },
+        {
+          "term": "q2m",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        },
+        {
+          "term": "integration contour",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that the dilogarithm function is deﬁned by Li2(z) = ∞ X n=1 zn n2 , (|z| < 1). By using the integral representation Li2(z) = − Z z 0 log(1 −t) t dt, (1.32) Li2(z) can be analytically continued as a multivalued complex function to the complex plane cut along the real axis from 1 to +∞. In the sequel the principal branch of diloga- rithm which can be deﬁned by taking the principal branch of logarithm function",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-16-exercises-to-section-1",
+      "number": "1.6",
+      "title": "Exercises to Section 1.",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 34,
+      "labelStart": "31",
+      "labelEnd": "34",
+      "words": 1096,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "single-variable functional",
+          "heading": false
+        },
+        {
+          "term": "accessibility",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm identities",
+          "heading": false
+        },
+        {
+          "term": "functional equations",
+          "heading": false
+        },
+        {
+          "term": "lewin",
+          "heading": false
+        },
+        {
+          "term": "following dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "nine-term",
+          "heading": false
+        },
+        {
+          "term": "loxton",
+          "heading": false
+        }
+      ],
+      "extract": "1.6. Exercises to Section 1. 1. Using the integral representation (1.1) for the Euler dilogarithm Li2(x), prove the simple single-variable functional equations i) Li2(z) + Li2(−z) = 1 2Li2(z2), ii) Li2(z) + Li2(−z) = Li −2(1) −log z log(1 −z), (L. Euler, 1768), iii) Li2(−z) + Li2 \u0012 −1 z \u0013 = 2Li2(−1) −1 2 log2(z). 2. Prove the following ﬁve-term, two-variable functional equations i) Li2 \u0014 x 1 −x · y 1 −y \u0015 = Li2 \u0014 x",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-21-dilogarithm-and-partitions",
+      "number": "2.1",
+      "title": "Dilogarithm and partitions.",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 53,
+      "labelStart": "34",
+      "labelEnd": "53",
+      "words": 5858,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bailey pair",
+          "heading": false
+        },
+        {
+          "term": "bailey lemma",
+          "heading": false
+        },
+        {
+          "term": "gordon andrews",
+          "heading": false
+        },
+        {
+          "term": "andrews identity",
+          "heading": false
+        },
+        {
+          "term": "bressoud identity",
+          "heading": false
+        },
+        {
+          "term": "bailey transform",
+          "heading": false
+        },
+        {
+          "term": "form bailey",
+          "heading": false
+        },
+        {
+          "term": "rogers-ramanujan identities",
+          "heading": false
+        }
+      ],
+      "extract": "2.1.1. Rogers-Ramanujan and Gordon-Andrews identities Theorem C. Let a be an integer, 1 ≤a ≤k + 1. Then i) (Gordon-Andrews) X n1,...,nk qN2 1 +...+N2 k+Na+...+Nk (q)n1 . . . (q)nk = Y n̸≡0, ±a mod (2k+3) (1 −qn)−1 = (2.1.a) = (q)−1 ∞ X m∈Z (−1)mq 1 2 [m(m+1)(2k+3)−am], (2.1.b) ii) (G¨ollnitz-Gordon-Andrews) X n1,...,nk (−q; q2)N1qN2 1 +N2 2 +···+N2 k+Na+...+Nk (q2; q2)n1 . . . (q2; q2)nk = Y n̸ ≡2(mod 4) n̸ ≡0, ±(2a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-22-dilogarithm-and-characters-of-the-aﬃne-kac-mo",
+      "number": "2.2",
+      "title": "Dilogarithm and characters of the aﬃne Kac-Moody algebras.",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 60,
+      "labelStart": "53",
+      "labelEnd": "60",
+      "words": 2356,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dilogarithm",
+          "heading": true
+        },
+        {
+          "term": "bloch group",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm identities",
+          "heading": false
+        },
+        {
+          "term": "chv",
+          "heading": false
+        },
+        {
+          "term": "pmp",
+          "heading": false
+        },
+        {
+          "term": "primary ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm identity",
+          "heading": false
+        },
+        {
+          "term": "real ﬁeld",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem E (Kac-Wakimoto [KW2]). Let chV k r be the character of level k represen- tation V (kΛ0) of the aﬃne Kac-Moody Lie algebra c slr. Then lim q→1(1 −q) log chV k r = π2 6 (r2 −1)k r + k . Theorem 10. We have ch(V (kΛ0)) = X λ∈Zr−1 + Θk λ(z)ck λ(q), where Θk λ(z) := Θk λ(z1, . . ., zr−1) = X m∈Zr−1 zkm+λq 1 2 kmAr−1mt+mAr−1λt, (2.19) ck λ(q) = 1 (q)r−1 ∞ X n=(na i ) q 1 2 n(Ar−1⊗T −1 k−1)nt Q a,i(q)na i , k ≥2;",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-24-connection-with-crystal-basis",
+      "number": "2.4",
+      "title": "Connection with crystal basis.",
+      "level": 2,
+      "pageStart": 60,
+      "pageEnd": 79,
+      "labelStart": "60",
+      "labelEnd": "79",
+      "words": 6429,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "maj",
+          "heading": false
+        },
+        {
+          "term": "highest weight",
+          "heading": false
+        },
+        {
+          "term": "restricted path",
+          "heading": false
+        },
+        {
+          "term": "wij",
+          "heading": false
+        },
+        {
+          "term": "weight function",
+          "heading": false
+        },
+        {
+          "term": "sty",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm identities",
+          "heading": false
+        },
+        {
+          "term": "qnn",
+          "heading": false
+        }
+      ],
+      "extract": "2.4.1. Level 1 vacuum representation Λ0 of the aﬃne Lie algebra c sln. Theorem 11. Let µ = (µ1, . . ., µn) be a composition. Then X λ, l(λ)≤n Kλ,µ · Kλ, (1|λ|)(q) = qn(µ′) \u0014 |µ| µ1, . . ., µn \u0015 q , (2.28) where \u0014 N m1, . . ., mn \u0015 q := (q)N (q)m1 . . . (q)mn is the q-analog of multinomial coeﬃcient (N = m1 + · · · + mn). Let us explain notation. Here i) Kλ,µ is the so-called Kostka number, which is equal to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-25-quantum-dilogarithm",
+      "number": "2.5",
+      "title": "Quantum dilogarithm.",
+      "level": 2,
+      "pageStart": 79,
+      "pageEnd": 89,
+      "labelStart": "79",
+      "labelEnd": "89",
+      "words": 2816,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum dilogarithm",
+          "heading": true
+        },
+        {
+          "term": "β1x",
+          "heading": false
+        },
+        {
+          "term": "β2x",
+          "heading": false
+        },
+        {
+          "term": "α2x",
+          "heading": false
+        },
+        {
+          "term": "α1x",
+          "heading": false
+        },
+        {
+          "term": "α1α β1β",
+          "heading": false
+        },
+        {
+          "term": "qba",
+          "heading": false
+        },
+        {
+          "term": "q2ba",
+          "heading": false
+        }
+      ],
+      "extract": "2.5. Quantum dilogarithm. Let us remind that the Euler dilogarithm Li2(x) is deﬁned for 0 ≤x ≤1 by Li2(x) = X n≥1 xn n2 . Deﬁnition 9 (q-analog of Euler’s dilogarithm or quantum dilogarithm). Quantum dilogarithm Li2(x; q) is the following formal series Li2(x; q) = X n≥1 xn n(1 −qn). (2.52) Before stating the basic properties of the quantum dilogarithm, let us remind the deﬁnition of the two q-exponential functions",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-references",
+      "number": null,
+      "title": "References*",
+      "level": 2,
+      "pageStart": 89,
+      "pageEnd": 95,
+      "labelStart": "89",
+      "labelEnd": "95",
+      "words": 2636,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rogers-ramanujan identities",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm identities",
+          "heading": false
+        },
+        {
+          "term": "virasoro characters",
+          "heading": false
+        },
+        {
+          "term": "bethe ansatz",
+          "heading": false
+        },
+        {
+          "term": "soviet math",
+          "heading": false
+        },
+        {
+          "term": "rogers dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "virasoro algebra",
+          "heading": false
+        },
+        {
+          "term": "contemporary math",
+          "heading": false
+        }
+      ],
+      "extract": "References* [A] K. Aomoto. Addition theorem of Abel type for hyper-logarithms. Nagoya Math. J., 1982, v.88, 55-71. [AL] D. Acreman and J.H. Loxton. Asymptotic analysis of Ramanujan pairs. Aequat. Math., 1986, v.30, 106-117. [An1] G. Andrews. The theory of partitions. Addison-Wesley Publishing Company, 1976. [An2] G. Andrews. Multiple series Rogers-Ramanujan type identities. Paciﬁc J. Math., 1984, v.114, 267-283.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-e-klloyd-london-math-soc-lecture-note-series-no8",
+      "number": "E",
+      "title": "K.Lloyd), London Math. Soc., Lecture Note Series, No.82, Cambridge University",
+      "level": 2,
+      "pageStart": 95,
+      "pageEnd": 96,
+      "labelStart": "95",
+      "labelEnd": null,
+      "words": 315,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dedekind zeta-functions",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": true
+        },
+        {
+          "term": "remarkable dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "algebraic k-theory",
+          "heading": false
+        },
+        {
+          "term": "terhoeven",
+          "heading": false
+        },
+        {
+          "term": "soc",
+          "heading": true
+        },
+        {
+          "term": "algebraic geometry",
+          "heading": false
+        },
+        {
+          "term": "varchenko",
+          "heading": false
+        }
+      ],
+      "extract": "Press, Cambridge, 1983, 187-199. [Stn2] R.P. Stanley. The stable behavior of some characters of SL(n, C). Linear and Multil. Algebra, 1984, v.16, 3-27. [Stm] J.R. Stembridge. Hall-Littlewood polynomials, plane partitions and the Rogers-Rama- nujan identities. Trans Amer. Math. Soc., 1990, v.319, 469-498. [Su] A.A. Suslin. K3 of a ﬁeld and the Bloch group. Proc. of the Steklov Inst. of Math., 1991, v.4, 217-239. [Te]",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "dilogarithm identities",
+      "heading": true
+    },
+    {
+      "term": "lewin dilogarithm",
+      "heading": false
+    },
+    {
+      "term": "rogers dilogarithm",
+      "heading": false
+    },
+    {
+      "term": "dilogarithm identity",
+      "heading": false
+    },
+    {
+      "term": "dilogarithm relations",
+      "heading": true
+    },
+    {
+      "term": "euler dilogarithm",
+      "heading": false
+    },
+    {
+      "term": "dilogarithm function",
+      "heading": false
+    },
+    {
+      "term": "following dilogarithm",
+      "heading": false
+    },
+    {
+      "term": "wigner-bloch dilogarithm",
+      "heading": false
+    },
+    {
+      "term": "quantum dilogarithm",
+      "heading": true
+    },
+    {
+      "term": "dilogarithm sum",
+      "heading": false
+    },
+    {
+      "term": "single-valued dilogarithm",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 69,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "70",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 71,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "72",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 73,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 74,
+      "label": "74",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 75,
+      "label": "75",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 76,
+      "label": "76",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 77,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 78,
+      "label": "78",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 79,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 80,
+      "label": "80",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 81,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 82,
+      "label": "82",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 83,
+      "label": "83",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 84,
+      "label": "84",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 85,
+      "label": "85",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 86,
+      "label": "86",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 87,
+      "label": "87",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 88,
+      "label": "88",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 89,
+      "label": "89",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 90,
+      "label": "90",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 91,
+      "label": "91",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 92,
+      "label": "92",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 93,
+      "label": "93",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 94,
+      "label": "94",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 95,
+      "label": "95",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 96,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 13,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 14,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 21
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 14 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-9408113v2"
+  }
+}

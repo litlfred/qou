@@ -1,0 +1,3070 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1303.0720v2",
+  "title": "arxiv-1303.0720v2",
+  "variant": "pdf",
+  "pages": 41,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Overview",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-overview"
+    },
+    {
+      "level": 1,
+      "title": "Weighted polyanalytic Bergman spaces and kernels",
+      "number": "2",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-weighted-polyanalytic-bergman-spaces-and-kerne"
+    },
+    {
+      "level": 2,
+      "title": "Basic notation",
+      "number": "2.1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-basic-notation"
+    },
+    {
+      "level": 2,
+      "title": "The weighted Bergman spaces and kernels",
+      "number": "2.2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-the-weighted-bergman-spaces-and-kernels"
+    },
+    {
+      "level": 2,
+      "title": "The weighted polyanalytic Bergman spaces and kernels",
+      "number": "2.3",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-the-weighted-polyanalytic-bergman-spaces-and"
+    },
+    {
+      "level": 2,
+      "title": "The polyanalytic Bergman space in the model case of the unit disk with constant weight",
+      "number": "2.4",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-the-polyanalytic-bergman-space-in-the-model-c"
+    },
+    {
+      "level": 1,
+      "title": "Musings on polyanalytic Bergman metrics",
+      "number": "3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-3-musings-on-polyanalytic-bergman-metrics"
+    },
+    {
+      "level": 2,
+      "title": "Bergman's first metric",
+      "number": "3.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Bergman's second metric",
+      "number": "3.2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The first polyanalytic Bergman metric",
+      "number": "3.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-33-the-first-polyanalytic-bergman-metric"
+    },
+    {
+      "level": 2,
+      "title": "The second polyanalytic Bergman metric",
+      "number": "3.4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-34-the-second-polyanalytic-bergman-metric"
+    },
+    {
+      "level": 2,
+      "title": "The two polyanalytic Bergman metrics in the model case of the unit disk with constant weight",
+      "number": "3.5",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-35-the-two-polyanalytic-bergman-metrics-in-the-m"
+    },
+    {
+      "level": 1,
+      "title": "Interlude: a priori control on point evaluations",
+      "number": "4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-4-interlude-a-priori-control-on-point-evaluation"
+    },
+    {
+      "level": 2,
+      "title": "Introductory comments",
+      "number": "4.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-41-introductory-comments"
+    },
+    {
+      "level": 2,
+      "title": "The basic estimate",
+      "number": "4.2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-42-the-basic-estimate"
+    },
+    {
+      "level": 2,
+      "title": "Applications of the basic estimate",
+      "number": "4.3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-43-applications-of-the-basic-estimate"
+    },
+    {
+      "level": 2,
+      "title": "The effective estimate of the point evaluation",
+      "number": "4.4",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-44-the-effective-estimate-of-the-point-evaluatio"
+    },
+    {
+      "level": 1,
+      "title": "Asymptotic expansion of polyanalytic Bergman kernels",
+      "number": "5",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-5-asymptotic-expansion-of-polyanalytic-bergman-k"
+    },
+    {
+      "level": 2,
+      "title": "The weighted polyanalytic Bergman space and kernel for power weights",
+      "number": "5.1",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-51-the-weighted-polyanalytic-bergman-space-and-k"
+    },
+    {
+      "level": 2,
+      "title": "Weighted Bergman kernel expansions for power weights",
+      "number": "5.2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-52-weighted-bergman-kernel-expansions-for-power"
+    },
+    {
+      "level": 2,
+      "title": "The connection with random normal matrix theory",
+      "number": "5.3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-53-the-connection-with-random-normal-matrix-theo"
+    },
+    {
+      "level": 2,
+      "title": "The polyanalytic Bergman spaces and Landau levels",
+      "number": "5.4",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-54-the-polyanalytic-bergman-spaces-and-landau-le"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotic analysis of weighted polyanalytic Bergman kernels",
+      "number": "5.5",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-55-asymptotic-analysis-of-weighted-polyanalytic"
+    },
+    {
+      "level": 1,
+      "title": "Tools from the approach of Berman-Berndtsson-Sjöstrand",
+      "number": "6",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-6-tools-from-the-approach-of-berman-berndtsson-s"
+    },
+    {
+      "level": 2,
+      "title": "Assumptions on the potential",
+      "number": "6.1",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-61-assumptions-on-the-potential"
+    },
+    {
+      "level": 2,
+      "title": "The phase function",
+      "number": "6.2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-62-the-phase-function"
+    },
+    {
+      "level": 2,
+      "title": "Approximate local reproducing and Bergman kernels",
+      "number": "6.3",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-63-approximate-local-reproducing-and-bergman-ker"
+    },
+    {
+      "level": 2,
+      "title": "A differential operator and negligible amplitudes",
+      "number": "6.4",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-64-a-differential-operator-and-negligible-amplit"
+    },
+    {
+      "level": 2,
+      "title": "A formal diffusion operator and the characterization of negligible amplitudes",
+      "number": "6.5",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-65-a-formal-diffusion-operator-and-the-character"
+    },
+    {
+      "level": 2,
+      "title": "The local asymptotics for the weighted Bergman kernel: the corrective algorithm",
+      "number": "6.6",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-66-the-local-asymptotics-for-the-weighted-bergma"
+    },
+    {
+      "level": 1,
+      "title": "The kernel expansion algorithm for bianalytic functions",
+      "number": "7",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-7-the-kernel-expansion-algorithm-for-bianalytic"
+    },
+    {
+      "level": 2,
+      "title": "The local ring and module",
+      "number": "7.1",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-71-the-local-ring-and-module"
+    },
+    {
+      "level": 2,
+      "title": "The initial approximate local bi-reproducing kernel",
+      "number": "7.2",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-72-the-initial-approximate-local-bi-reproducing"
+    },
+    {
+      "level": 2,
+      "title": "Approximate local kernels",
+      "number": "7.3",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-73-approximate-local-kernels"
+    },
+    {
+      "level": 2,
+      "title": "Bi-negligible amplitudes",
+      "number": "7.4",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-74-bi-negligible-amplitudes"
+    },
+    {
+      "level": 2,
+      "title": "The characterization of bi-negligible amplitudes",
+      "number": "7.5",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-75-the-characterization-of-bi-negligible-amplitu"
+    },
+    {
+      "level": 2,
+      "title": "The local uniqueness criterion for bianalytic kernels",
+      "number": "7.6",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-76-the-local-uniqueness-criterion-for-bianalytic"
+    },
+    {
+      "level": 2,
+      "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective algorithm I",
+      "number": "7.7",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-77-the-local-asymptotics-for-the-weighted-bianal"
+    },
+    {
+      "level": 2,
+      "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective algorithm II",
+      "number": "7.8",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-78-the-local-asymptotics-for-the-weighted-bianal"
+    },
+    {
+      "level": 2,
+      "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective algorithm III",
+      "number": "7.9",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-79-the-local-asymptotics-for-the-weighted-bianal"
+    },
+    {
+      "level": 1,
+      "title": "A priori diagonal estimates of weighted Bergman kernels",
+      "number": "8",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-8-a-priori-diagonal-estimates-of-weighted-bergma"
+    },
+    {
+      "level": 2,
+      "title": "Estimation of point evaluations for local weighted Bergman spaces",
+      "number": "8.1",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-81-estimation-of-point-evaluations-for-local-wei"
+    },
+    {
+      "level": 2,
+      "title": "Estimation of the weighted Bergman kernel on the diagonal",
+      "number": "8.2",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-82-estimation-of-the-weighted-bergman-kernel-on"
+    },
+    {
+      "level": 1,
+      "title": "Bergman kernels: from local to global",
+      "number": "9",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-9-bergman-kernels-from-local-to-global"
+    },
+    {
+      "level": 2,
+      "title": "Purpose of the section",
+      "number": "9.1",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-91-purpose-of-the-section"
+    },
+    {
+      "level": 2,
+      "title": "The basic pointwise estimate",
+      "number": "9.2",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-92-the-basic-pointwise-estimate"
+    },
+    {
+      "level": 2,
+      "title": "Analysis of the first term in the pointwise estimate",
+      "number": "9.3",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-93-analysis-of-the-first-term-in-the-pointwise-e"
+    },
+    {
+      "level": 2,
+      "title": "Analysis of the second term in the pointwise estimate I",
+      "number": "9.4",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-94-analysis-of-the-second-term-in-the-pointwise"
+    },
+    {
+      "level": 2,
+      "title": "Digression on Hörmander-type estimates and an obstacle problem",
+      "number": "9.5",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-95-digression-on-hörmander-type-estimates-and-an"
+    },
+    {
+      "level": 2,
+      "title": "Analysis of the second term in the pointwise estimate II",
+      "number": "9.6",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-96-analysis-of-the-second-term-in-the-pointwise"
+    },
+    {
+      "level": 2,
+      "title": "The pointwise distance to the weighted Bergman kernel",
+      "number": "9.7",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-97-the-pointwise-distance-to-the-weighted-bergma"
+    },
+    {
+      "level": 1,
+      "title": "Bianalytic extensions of Bergman's metrics and asymptotic analysis",
+      "number": "10",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-049-10-bianalytic-extensions-of-bergmans-metrics-and"
+    },
+    {
+      "level": 2,
+      "title": "Purpose of the section",
+      "number": "10.1",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-050-101-purpose-of-the-section"
+    },
+    {
+      "level": 2,
+      "title": "Bergman's first metric",
+      "number": "10.2",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Bergman's second metric",
+      "number": "10.3",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-051-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 199,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bergman kernel",
+          "heading": false
+        },
+        {
+          "term": "bergman space",
+          "heading": false
+        },
+        {
+          "term": "vector-valued holomorphic",
+          "heading": false
+        },
+        {
+          "term": "metric",
+          "heading": false
+        },
+        {
+          "term": "asymptotic",
+          "heading": false
+        },
+        {
+          "term": "functions",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1303.0720v2 [math.CV] 9 Mar 2013 ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS ANTTI HAIMI AND HAAKAN HEDENMALM Abstract. We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight. This gives us a q-analytic Bergman kernel, which we use to extend the Bergman metric to this context. We recall that f is q-analytic if ¯∂q f = 0 for the given positive",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1303.0720v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-overview",
+      "number": "1",
+      "title": "Overview",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 212,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bianalytic bergman",
+          "heading": false
+        },
+        {
+          "term": "bergman metrics",
+          "heading": false
+        },
+        {
+          "term": "bergman spaces",
+          "heading": false
+        },
+        {
+          "term": "musing-bm",
+          "heading": false
+        },
+        {
+          "term": "sec-interlude",
+          "heading": false
+        },
+        {
+          "term": "polyanalytic",
+          "heading": false
+        },
+        {
+          "term": "asymptotic expansion",
+          "heading": false
+        },
+        {
+          "term": "reference-type",
+          "heading": false
+        }
+      ],
+      "extract": "In Section [\\[WPABSK\\]](#WPABSK){reference-type=\"ref\" reference=\"WPABSK\"}, we define, in the one-variable context, the weighted Bergman spaces and their polyanalytic extensions, and in Section [\\[musing-BM\\]](#musing-BM){reference-type=\"ref\" reference=\"musing-BM\"}, we consider the various possible ramifications for Bergman metrics. It should be remarked that the polyanalytic Bergman spaces can be understood as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-weighted-polyanalytic-bergman-spaces-and-kerne",
+      "number": "2",
+      "title": "Weighted polyanalytic Bergman spaces and kernels",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-basic-notation",
+      "number": "2.1",
+      "title": "Basic notation",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 167,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partial bigg",
+          "heading": false
+        },
+        {
+          "term": "frac bigg",
+          "heading": false
+        },
+        {
+          "term": "partial mathrm",
+          "heading": false
+        },
+        {
+          "term": "bar partial",
+          "heading": false
+        },
+        {
+          "term": "let mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "We let ${\\mathbb C}$ denote the complex plane and ${\\mathbb R}$ the real line. For $z_0\\in{\\mathbb C}$ and positive real $r$, let ${\\mathbb D}(z_0,r)$ be the open disk centered at $z_0$ with radius $r$; moreover, we let ${\\mathbb T}(z_0,r)$ be the boundary of ${\\mathbb D}(z_0,r)$ (which is a circle). When $z_0=0$ and $r=1$, we simplify the notation to ${\\mathbb D}:={\\mathbb D}(0,1)$ and ${\\mathbb T}:={\\mathbb",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-the-weighted-bergman-spaces-and-kernels",
+      "number": "2.2",
+      "title": "The weighted Bergman spaces and kernels",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 276,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weighted bergman",
+          "heading": true
+        },
+        {
+          "term": "int omega",
+          "heading": false
+        },
+        {
+          "term": "let omega",
+          "heading": false
+        },
+        {
+          "term": "eq-bk",
+          "heading": false
+        },
+        {
+          "term": "bergman kernel",
+          "heading": false
+        },
+        {
+          "term": "subsec-wb",
+          "heading": false
+        },
+        {
+          "term": "mathrm",
+          "heading": false
+        },
+        {
+          "term": "orthonormal basis",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec-wB label=\"subsec-wB\"} Let $\\Omega$ be a domain in ${\\mathbb C}$, and let $\\omega:\\Omega\\to{\\mathbb R}_+$ be a continuous function ($\\omega$ is frequently called a *weight*). Here, we write ${\\mathbb R}_+:=]0,+\\infty[$ for the positive half-axis. The space $L^2(\\Omega,\\omega)$ is the weighted $L^2$-space on $\\Omega$ with finite norm $$\\|f\\|_{L^2(\\Omega,\\omega)}^2:=\\int_\\Omega",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-the-weighted-polyanalytic-bergman-spaces-and",
+      "number": "2.3",
+      "title": "The weighted polyanalytic Bergman spaces and kernels",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 674,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polyanalytic bergman",
+          "heading": true
+        },
+        {
+          "term": "weighted polyanalytic",
+          "heading": true
+        },
+        {
+          "term": "mathbf phi",
+          "heading": false
+        },
+        {
+          "term": "omega times",
+          "heading": false
+        },
+        {
+          "term": "vector-valued holomorphic",
+          "heading": false
+        },
+        {
+          "term": "bergman kernel",
+          "heading": false
+        },
+        {
+          "term": "weight omega",
+          "heading": false
+        },
+        {
+          "term": "cdots bar",
+          "heading": false
+        }
+      ],
+      "extract": "Given an integer $q=1,2,3,\\ldots$, a continuous function $f:\\Omega\\to{\\mathbb C}$ is said to be *$q$-analytic (or $q$-holomorphic) in $\\Omega$* if it solves the partial differential equation $$\\bar\\partial_z^q f(z)=0,\\qquad z\\in\\Omega,$$ in the sense of distribution theory. So the $1$-analytic functions are just the ordinary holomorphic functions. A function $f$ is said to be *polyanalytic* if it is $q$-analytic for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-the-polyanalytic-bergman-space-in-the-model-c",
+      "number": "2.4",
+      "title": "The polyanalytic Bergman space in the model case of the unit disk with constant weight",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 172,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "binom frac",
+          "heading": false
+        },
+        {
+          "term": "sum binom",
+          "heading": false
+        },
+        {
+          "term": "q-j",
+          "heading": false
+        },
+        {
+          "term": "bigg",
+          "heading": false
+        }
+      ],
+      "extract": "For $q=1,2,3,\\ldots$, we consider the spaces $\\mathrm{PA}^2_q({\\mathbb D}):=\\mathrm{PA}^2_q({\\mathbb D},\\pi^{-1})$ where the domain is the unit disk ${\\mathbb D}$ and the weight is $\\omega(z)\\equiv1/\\pi$. The corresponding reproducing kernel $K_q$ was obtained Koshelev [@koselev]: $$K_q(z,w)=q\\sum_{j=0}^{q-1}(-1)^j\\binom{q}{j+1}\\binom{q+j}{q} \\frac{(1-w\\bar z)^{q-j-1}|z-w|^{2j}}{(1-z\\bar w)^{q+j+1}}.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-musings-on-polyanalytic-bergman-metrics",
+      "number": "3",
+      "title": "Musings on polyanalytic Bergman metrics",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 352,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bergman",
+          "heading": true
+        },
+        {
+          "term": "bergman metric",
+          "heading": false
+        },
+        {
+          "term": "mathrm omega",
+          "heading": false
+        },
+        {
+          "term": "vardelta log",
+          "heading": false
+        },
+        {
+          "term": "metric subsec-bm",
+          "heading": false
+        },
+        {
+          "term": "bergman kernel",
+          "heading": false
+        },
+        {
+          "term": "text ding",
+          "heading": false
+        },
+        {
+          "term": "varkappa text",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#musing-BM label=\"musing-BM\"} ## Bergman's first metric {#subsec-BM} Stefan Bergman [@Berg] considered the Bergman kernel for the weight $\\omega(z)\\equiv1$ only. He also introduced the so-called *Bergman metric* in two different ways. We will now discuss the ramifications of Bergman's ideas in the presence of a non-trivial weight $\\omega$. We interpret the introduction of the weight $\\omega$ as equipping the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-33-the-first-polyanalytic-bergman-metric",
+      "number": "3.3",
+      "title": "The first polyanalytic Bergman metric",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 423,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bergman",
+          "heading": true
+        },
+        {
+          "term": "label eq-bk",
+          "heading": false
+        },
+        {
+          "term": "bar epsilon",
+          "heading": false
+        },
+        {
+          "term": "mathbf otimes",
+          "heading": false
+        },
+        {
+          "term": "eq-bm",
+          "heading": false
+        },
+        {
+          "term": "bergman kernel",
+          "heading": false
+        },
+        {
+          "term": "partial mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf phi",
+          "heading": false
+        }
+      ],
+      "extract": "We continue the setting of the preceding subsection. Following in the footsteps of Bergman (see Subsection [\\[subsec-BM\\]](#subsec-BM){reference-type=\"ref\" reference=\"subsec-BM\"}), we would like to introduce polyanalytic analogues of Bergman's first and second metrics, respectively. Let us first discuss a property of the weighted Bergman kernel $K=K_1$ (with $q=1$). *The function $K(z,w)$ on $\\Omega\\times\\Omega$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-34-the-second-polyanalytic-bergman-metric",
+      "number": "3.4",
+      "title": "The second polyanalytic Bergman metric",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 199,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm vert",
+          "heading": false
+        },
+        {
+          "term": "mathrm epsilon",
+          "heading": false
+        },
+        {
+          "term": "epsilon partial",
+          "heading": false
+        },
+        {
+          "term": "mathrm bar",
+          "heading": false
+        },
+        {
+          "term": "vert mathop",
+          "heading": false
+        },
+        {
+          "term": "bergman",
+          "heading": true
+        },
+        {
+          "term": "metric",
+          "heading": true
+        },
+        {
+          "term": "eq-bpam",
+          "heading": false
+        }
+      ],
+      "extract": "We turn to Bergman's second metric. The function $$L_q(z,z'):=\\log\\mathbf{E}_{\\otimes2}[K_q](z,z';z,z') \\label{eq-Lfun1}$$ is basic to the analysis, where the expression on the right-hand side is as in [\\[eq-bk4\\]](#eq-bk4){reference-type=\"eqref\" reference=\"eq-bk4\"}. We think of $(z,\\bar z')$ as holomorphic coordinates, and form the corresponding Bergman metric:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-35-the-two-polyanalytic-bergman-metrics-in-the-m",
+      "number": "3.5",
+      "title": "The two polyanalytic Bergman metrics in the model case of the unit disk with constant weight",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 232,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bar epsilon",
+          "heading": false
+        },
+        {
+          "term": "epsilon frac",
+          "heading": false
+        },
+        {
+          "term": "epsilon text",
+          "heading": false
+        },
+        {
+          "term": "bergman",
+          "heading": true
+        },
+        {
+          "term": "eq-bm",
+          "heading": false
+        },
+        {
+          "term": "eq-bpam",
+          "heading": false
+        },
+        {
+          "term": "text ding",
+          "heading": false
+        }
+      ],
+      "extract": "To make this presentation as simple as possible, we now focus our attention on the biholomorphic (bianalytic) case $q=2$. Then $$\\mathbf{E}_{\\otimes2}[K_2](z,z';z,z')= 4\\frac{1-|z'|^2}{(1-|z|^2)^3}+6\\frac{|z-z'|^2}{(1-|z|^2)^4},$$ and if we substitute $z'=z+\\epsilon$, the result is $$\\begin{gathered} \\mathbf{E}_{\\otimes2}[K_2](z,z+\\epsilon;z,z+\\epsilon)=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-4-interlude-a-priori-control-on-point-evaluation",
+      "number": "4",
+      "title": "Interlude: a priori control on point evaluations",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-41-introductory-comments",
+      "number": "4.1",
+      "title": "Introductory comments",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 105,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subharmonic",
+          "heading": false
+        },
+        {
+          "term": "mathrm psi",
+          "heading": false
+        },
+        {
+          "term": "sub-mean",
+          "heading": false
+        },
+        {
+          "term": "mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "Let us consider the unit disk ${\\mathbb D}$, and a given subharmonic function $\\psi:{\\mathbb D}\\to{\\mathbb R}$. If $u:{\\mathbb D}\\to{\\mathbb C}$ is holomorphic and nontrivial, then $\\log|u|$ is subharmonic. Then $\\log|u|+\\psi$ is subharmonic, and by convexity, $|u|^2\\mathrm{e}^{2\\psi}$ is subharmonic as well. By the sub-mean value property of subharmonic functions, we have the estimate",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-42-the-basic-estimate",
+      "number": "4.2",
+      "title": "The basic estimate",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 354,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zeta psi",
+          "heading": false
+        },
+        {
+          "term": "bigg mathrm",
+          "heading": false
+        },
+        {
+          "term": "bar zeta",
+          "heading": false
+        },
+        {
+          "term": "int bigg",
+          "heading": false
+        },
+        {
+          "term": "frac mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm leq",
+          "heading": false
+        },
+        {
+          "term": "mathbb bar",
+          "heading": false
+        },
+        {
+          "term": "bianalytic",
+          "heading": false
+        }
+      ],
+      "extract": "We begin with a lemma. We decompose the given bianalytic function as $u(z)= u_1(z)+c\\bar z+|z|^2u_2(z)$, where $c$ is a constant and $u_j$ is holomorphic for $j=1,2$. Let $\\mathrm{d}s(z) :=|\\mathrm{d}z|$ denote arc length measure. ::: lem []{#lem1 label=\"lem1\"} If $u(z)= u_1(z)+c\\bar z+|z|^2u_2(z)$ is bianalytic and $\\psi$ is subharmonic in ${\\mathbb D}$, then $$\\int_0^1 \\bigg| u_1(0) + r^2 u_2(0) + \\frac{cr}{\\pi}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-43-applications-of-the-basic-estimate",
+      "number": "4.3",
+      "title": "Applications of the basic estimate",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 339,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm psi",
+          "heading": false
+        },
+        {
+          "term": "bigg mathrm",
+          "heading": false
+        },
+        {
+          "term": "zeta psi",
+          "heading": false
+        },
+        {
+          "term": "mathrm int",
+          "heading": false
+        },
+        {
+          "term": "mathbb mathrm",
+          "heading": false
+        },
+        {
+          "term": "frac mathrm",
+          "heading": false
+        },
+        {
+          "term": "pointwiseneg label",
+          "heading": false
+        },
+        {
+          "term": "mathrm leq",
+          "heading": false
+        }
+      ],
+      "extract": "We can now estimate rather trivially the $\\bar\\partial$-derivative at the origin. ::: prop []{#pointwiseneg0 label=\"pointwiseneg0\"} If $u(z)$ is bianalytic and $\\psi$ is subharmonic in ${\\mathbb D}$, then $$|\\bar\\partial u(0)|^2\\le\\frac{3}{\\pi}\\mathrm{e}^{-2\\psi(0)}\\int_{{\\mathbb D}}|u|^2\\mathrm{e}^{2\\psi}\\mathrm{d}A.$$ ::: ::: proof *Proof.* We apply Lemma [\\[lem1\\]](#lem1){reference-type=\"ref\" reference=\"lem1\"} to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-44-the-effective-estimate-of-the-point-evaluatio",
+      "number": "4.4",
+      "title": "The effective estimate of the point evaluation",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 307,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pointwiseneg",
+          "heading": false
+        },
+        {
+          "term": "riesz",
+          "heading": false
+        },
+        {
+          "term": "mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "The problem with Proposition [\\[pointwiseneg\\]](#pointwiseneg){reference-type=\"ref\" reference=\"pointwiseneg\"} as it stands is the need to assume that $\\psi\\le0$. We now show how to reduce the assumption to a minimum. Given a positive Borel measure $\\mu$ on ${\\mathbb D}$ with finite *Riesz mass* $$\\int_{\\mathbb D}(1-|z|^2)\\mathrm{d}\\mu(z)<+\\infty,$$ we associate the *Green potential* $\\mathbf{G}(\\mu)$, which is given",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-5-asymptotic-expansion-of-polyanalytic-bergman-k",
+      "number": "5",
+      "title": "Asymptotic expansion of polyanalytic Bergman kernels",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-016-51-the-weighted-polyanalytic-bergman-space-and-k",
+      "number": "5.1",
+      "title": "The weighted polyanalytic Bergman space and kernel for power weights",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 248,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polyanalytic",
+          "heading": true
+        },
+        {
+          "term": "bergman",
+          "heading": true
+        },
+        {
+          "term": "kernel",
+          "heading": true
+        },
+        {
+          "term": "weighted",
+          "heading": true
+        },
+        {
+          "term": "subsec-wpbspw",
+          "heading": false
+        },
+        {
+          "term": "mathrm",
+          "heading": false
+        },
+        {
+          "term": "omega",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec-wpbspw label=\"subsec-wpbspw\"} As before, $\\Omega$ is a domain in ${\\mathbb C}$, and we consider weights of the form $\\omega=\\mathrm{e}^{-2mQ}$, where $Q$ is a real-valued potential (function) on $\\Omega$ and $m$ a scaling parameter, which is real and positive, and we are interested in the asymptotics as $m\\to+\\infty$. By abuse of notation, we may at times refer to $Q$ as a weight. We may interpret this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-52-weighted-bergman-kernel-expansions-for-power",
+      "number": "5.2",
+      "title": "Weighted Bergman kernel expansions for power weights",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 453,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weighted bergman",
+          "heading": true
+        },
+        {
+          "term": "bergman kernel",
+          "heading": true
+        },
+        {
+          "term": "lfun langle",
+          "heading": false
+        },
+        {
+          "term": "line bundle",
+          "heading": false
+        },
+        {
+          "term": "omega mathrm",
+          "heading": false
+        },
+        {
+          "term": "tian",
+          "heading": false
+        },
+        {
+          "term": "vardelta",
+          "heading": false
+        },
+        {
+          "term": "weights",
+          "heading": true
+        }
+      ],
+      "extract": "We should observe first that the above setting of power weights $\\omega=\\mathrm{e}^{-2mQ}$ has a natural extension to the setting of line bundles over (usually compact) complex manifolds in one or more dimensions. As the Bergman kernel is of geometric importance, it has been studied extensively in the line bundle setting (see, e.g., [@mm]). To make matters more precise, suppose we are given a (compact) complex",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-53-the-connection-with-random-normal-matrix-theo",
+      "number": "5.3",
+      "title": "The connection with random normal matrix theory",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 165,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reproducing kernels",
+          "heading": false
+        },
+        {
+          "term": "random normal",
+          "heading": true
+        },
+        {
+          "term": "subsec-wpbspw",
+          "heading": false
+        },
+        {
+          "term": "ahm",
+          "heading": false
+        },
+        {
+          "term": "normal matrices",
+          "heading": false
+        }
+      ],
+      "extract": "Apart from to the connection with to geometry, Bergman kernels have also been studied for the connection to the theory of random normal matrices. See, e.g., the papers [@ahm1], [@ahm2], [@ahm3] ,[@ber]. The joint probability density of the eigenvalues may be expressed in terms of the reproducing kernels of the spaces of polynomials $$\\mathrm{Pol}_{n,m} := \\mathrm{span}_{0 \\leq j \\leq n-1} z^j \\subset L^2 ({\\mathbb",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-54-the-polyanalytic-bergman-spaces-and-landau-le",
+      "number": "5.4",
+      "title": "The polyanalytic Bergman spaces and Landau levels",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 222,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "landau levels",
+          "heading": true
+        },
+        {
+          "term": "ominus mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathbf mathrm",
+          "heading": false
+        },
+        {
+          "term": "tilde vardelta",
+          "heading": false
+        },
+        {
+          "term": "delta mathrm",
+          "heading": false
+        },
+        {
+          "term": "subsec-wpbspw",
+          "heading": false
+        },
+        {
+          "term": "polyanalytic",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#subsec-landau label=\"subsec-landau\"} The polyanalytic spaces $\\mathrm{PA}^2_{q,m}$ (see Subsection [\\[subsec-wpbspw\\]](#subsec-wpbspw){reference-type=\"ref\" reference=\"subsec-wpbspw\"}) have been considered in, e.g., [@vasil], [@abreu], [@mo], and [@hh], focusing on $\\Omega={\\mathbb C}$ and the quadratic potential $Q(z)= |z|^2$, so that the corresponding weight $\\omega(z)=\\mathrm{e}^{-2m\\vert z\\vert^2}$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-55-asymptotic-analysis-of-weighted-polyanalytic",
+      "number": "5.5",
+      "title": "Asymptotic analysis of weighted polyanalytic Bergman kernels",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 741,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac vardelta",
+          "heading": false
+        },
+        {
+          "term": "asymptotic analysis",
+          "heading": true
+        },
+        {
+          "term": "blowupthm",
+          "heading": false
+        },
+        {
+          "term": "lfun",
+          "heading": false
+        },
+        {
+          "term": "local blow-up",
+          "heading": false
+        },
+        {
+          "term": "polyanalytic",
+          "heading": true
+        },
+        {
+          "term": "bergman kernel",
+          "heading": false
+        },
+        {
+          "term": "weight mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "It is our aim is to supply an algorithm to compute a near-diagonal asymptotic expansion of the weighted polyanalytic Bergman kernel $K_{q,m}$ as $m$ tends to infinity. Under suitable assumptions on the potential $Q$, the kernel has -- up to an error term -- the (local) expansion $$K_{q,m}(z,w)\\sim \\big\\{ m^{q} \\Lfun^q_{0}(z, w) + m^{q-1}\\Lfun^q_{1}(z, w)+\\dots + m^{q-k}\\Lfun^q_{k}(z,w) \\big\\}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-6-tools-from-the-approach-of-berman-berndtsson-s",
+      "number": "6",
+      "title": "Tools from the approach of Berman-Berndtsson-Sjöstrand",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 25,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section, we review some aspects of the approach of [@bbs] in the one complex variable context (see, e.g., [@ahm1] for an extensive presentation).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-022-61-assumptions-on-the-potential",
+      "number": "6.1",
+      "title": "Assumptions on the potential",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 227,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bar partial",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "vardelta",
+          "heading": false
+        },
+        {
+          "term": "subsec-assq",
+          "heading": false
+        },
+        {
+          "term": "w-z",
+          "heading": false
+        },
+        {
+          "term": "potential",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#subsec-assQ label=\"subsec-assQ\"} We fix a $C^\\infty$-smooth simply connected bounded domain $\\Omega$. The potential $Q:\\bar\\Omega\\to{\\mathbb R}$ is assumed real-analytically smooth. This assumption simplifies the choice of polarization $Q(z,w)$, as there is then a unique choice which is holomorphic in $(z,\\bar w)$ locally near the diagonal $z=w$. Fix an arbitrary point $z_0 \\in \\Omega$. We will carryout a local",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-62-the-phase-function",
+      "number": "6.2",
+      "title": "The phase function",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 162,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "w-z",
+          "heading": false
+        },
+        {
+          "term": "partial theta",
+          "heading": false
+        },
+        {
+          "term": "phase function",
+          "heading": true
+        },
+        {
+          "term": "qtaylor",
+          "heading": false
+        },
+        {
+          "term": "bar partial",
+          "heading": false
+        }
+      ],
+      "extract": "We now introduce the *phase function*: $$\\theta(z,w) = \\frac{ Q(w) - Q(z,w)}{w-z},\\qquad z\\ne w.$$ Clearly, the phase function $\\theta(z,w)$ is holomorphic in $z$ and real-analytic in $w$. We extend it by continuity to the diagonal: $\\theta(z, z):=\\partial_z Q(z)$. In terms of the phase function, our assumption [\\[Qtaylor\\]](#Qtaylor){reference-type=\"eqref\" reference=\"Qtaylor\"} asks that $$\\begin{gathered}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-63-approximate-local-reproducing-and-bergman-ker",
+      "number": "6.3",
+      "title": "Approximate local reproducing and Bergman kernels",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 654,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "local reproducing",
+          "heading": true
+        },
+        {
+          "term": "local bergman",
+          "heading": true
+        },
+        {
+          "term": "approximate local",
+          "heading": true
+        },
+        {
+          "term": "z-w mathrm",
+          "heading": false
+        },
+        {
+          "term": "z-w bigg",
+          "heading": false
+        },
+        {
+          "term": "w-z mathrm",
+          "heading": false
+        },
+        {
+          "term": "reproducing kernel",
+          "heading": false
+        },
+        {
+          "term": "omega bigg",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec-5.3 label=\"subsec-5.3\"} In [@bbs], the point of departure is an approximate reproducing identity for functions in $\\mathrm{A}^2_m$. To state the result, we define the kernel $$M_m(z,w) := \\frac{2m}{\\pi} \\mathrm{e}^{2mQ(z,w)}\\bar\\partial_w\\theta(z,w). \\label{eq-Mm}$$ This kernel is for obvious reasons only defined in some fixed neighborhood of the diagonal. We shall be concerned with the (small) bidisk",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-64-a-differential-operator-and-negligible-amplit",
+      "number": "6.4",
+      "title": "A differential operator and negligible amplitudes",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 232,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boldsymbol nabla",
+          "heading": false
+        },
+        {
+          "term": "theta boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "theta bar",
+          "heading": false
+        },
+        {
+          "term": "mathbf mathrm",
+          "heading": false
+        },
+        {
+          "term": "label eq-fundid",
+          "heading": false
+        },
+        {
+          "term": "partial theta",
+          "heading": false
+        },
+        {
+          "term": "big mathrm",
+          "heading": false
+        },
+        {
+          "term": "z-w",
+          "heading": false
+        }
+      ],
+      "extract": "The corrective algorithm involves the differential operator $$\\boldsymbol{\\nabla}:= \\frac{1}{\\bar\\partial_w\\theta} \\bar \\partial_w + 2m{\\mathbf M}_{z-w} \\label{nabladef}$$ and a (formal) diffusion operator ${\\mathbf S}$ which will be described in detail later on. In [\\[nabladef\\]](#nabladef){reference-type=\"eqref\" reference=\"nabladef\"} and more generally in the sequel, ${\\mathbf M}$ with a subscript stands for the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-65-a-formal-diffusion-operator-and-the-character",
+      "number": "6.5",
+      "title": "A formal diffusion operator and the characterization of negligible amplitudes",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 771,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "z-w pmb",
+          "heading": false
+        },
+        {
+          "term": "partial pmb",
+          "heading": false
+        },
+        {
+          "term": "theta pmb",
+          "heading": false
+        },
+        {
+          "term": "mathbf z-w",
+          "heading": false
+        },
+        {
+          "term": "mathbf boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "nabla mathbf",
+          "heading": false
+        },
+        {
+          "term": "diffusion operator",
+          "heading": true
+        },
+        {
+          "term": "rangle mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "Next, to define the diffusion operator ${\\mathbf S}$, we need the two differential operators $${{\\pmb{\\partial}}}_w=\\partial_w-\\frac{\\partial_w\\theta}{\\bar\\partial_{w}\\theta} \\bar\\partial_{w},\\qquad {\\pmb{\\partial}}_\\theta= \\frac{1}{\\bar\\partial_{w}\\theta}\\bar\\partial_{w}. \\label{eq-coordch1}$$ These operators come from the change of variables $(z,w, \\bar w) \\to (z, w, \\theta)$, but this is of no real significance",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-66-the-local-asymptotics-for-the-weighted-bergma",
+      "number": "6.6",
+      "title": "The local asymptotics for the weighted Bergman kernel: the corrective algorithm",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 685,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lfun bar",
+          "heading": false
+        },
+        {
+          "term": "lfun langle",
+          "heading": false
+        },
+        {
+          "term": "frac lfun",
+          "heading": false
+        },
+        {
+          "term": "bergman kernel",
+          "heading": true
+        },
+        {
+          "term": "partial pmb",
+          "heading": false
+        },
+        {
+          "term": "theta bigg",
+          "heading": false
+        },
+        {
+          "term": "mathbf z-w",
+          "heading": false
+        },
+        {
+          "term": "label negliampeq",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec-5.6 label=\"subsec-5.6\"} We recall from Subsection [\\[subsec-5.3\\]](#subsec-5.3){reference-type=\"ref\" reference=\"subsec-5.3\"} that the kernel $M_m(z,w)$ given by [\\[eq-Mm\\]](#eq-Mm){reference-type=\"eqref\" reference=\"eq-Mm\"} is a local reproducing kernel $\\mathrm{mod}(\\mathrm{e}^{-\\delta_0 m})$ (see Proposition [\\[negliprop\\]](#negliprop){reference-type=\"ref\" reference=\"negliprop\"}). The kernel $M_m(z,w)$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-7-the-kernel-expansion-algorithm-for-bianalytic",
+      "number": "7",
+      "title": "The kernel expansion algorithm for bianalytic functions",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-029-71-the-local-ring-and-module",
+      "number": "7.1",
+      "title": "The local ring and module",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 53,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "infty smooth",
+          "heading": false
+        },
+        {
+          "term": "mathfrak",
+          "heading": false
+        },
+        {
+          "term": "module",
+          "heading": true
+        }
+      ],
+      "extract": "We recall that ${\\mathfrak R}_1$ is the algebra of all functions $f(z,w)$ that are holomorphic in $z$ and $C^\\infty$-smooth in $w$ (near the diagonal $z=w$). We will now need also the ${\\mathfrak R}_1$-module ${\\mathfrak R}_q$ of all functions $f(z,w)$ that are $q$-analytic in $z$ and $C^\\infty$-smooth in $w$ (near the diagonal $z=w$). Here, we focus the attention to the case $q=2$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-030-72-the-initial-approximate-local-bi-reproducing",
+      "number": "7.2",
+      "title": "The initial approximate local bi-reproducing kernel",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 529,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bigg bar",
+          "heading": false
+        },
+        {
+          "term": "bar w-z",
+          "heading": false
+        },
+        {
+          "term": "bigg mathrm",
+          "heading": false
+        },
+        {
+          "term": "partial bigg",
+          "heading": false
+        },
+        {
+          "term": "theta bigg",
+          "heading": false
+        },
+        {
+          "term": "gathered bigg",
+          "heading": false
+        },
+        {
+          "term": "bigg frac",
+          "heading": false
+        },
+        {
+          "term": "bigg int",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec-6.2 label=\"subsec-6.2\"} We now turn our attention to the space $\\mathrm{PA}^2_{q,m}$ with $q=2$ (the bianalytic case). The first step is to find the analogue in this setting of the kernel $M_m$ given by [\\[eq-Mm\\]](#eq-Mm){reference-type=\"eqref\" reference=\"eq-Mm\"}, and then to obtain an approximate reproducing identity similar to [\\[reproeq1\\]](#reproeq1){reference-type=\"eqref\" reference=\"reproeq1\"}. We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-73-approximate-local-kernels",
+      "number": "7.3",
+      "title": "Approximate local kernels",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 207,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "approximate local",
+          "heading": true
+        },
+        {
+          "term": "bi-reproducing kernel",
+          "heading": false
+        },
+        {
+          "term": "bianalytic bergman",
+          "heading": false
+        },
+        {
+          "term": "mathrm delta",
+          "heading": false
+        },
+        {
+          "term": "kernel text",
+          "heading": false
+        },
+        {
+          "term": "neglipropbi",
+          "heading": false
+        },
+        {
+          "term": "biholomorphic",
+          "heading": false
+        }
+      ],
+      "extract": "We will interpret Proposition [\\[neglipropbi\\]](#neglipropbi){reference-type=\"ref\" reference=\"neglipropbi\"} as saying that the function $M_{2,m}(z,w)$ is a local bi-reproducing kernel $\\text{mod}(m\\mathrm{e}^{-\\delta m})$, with $\\delta=\\delta_0>0$. Generally, we say that a function $L_m(z,w)$ defined on ${\\mathbb D}(z_0,r)$ and biholomorphic in $z$ is a *a local bi-reproducing kernel* $\\text{mod}(\\mathrm{e}^{-\\delta",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-74-bi-negligible-amplitudes",
+      "number": "7.4",
+      "title": "Bi-negligible amplitudes",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 288,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta bar",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol nabla",
+          "heading": false
+        },
+        {
+          "term": "bar partial",
+          "heading": false
+        },
+        {
+          "term": "big bar",
+          "heading": false
+        },
+        {
+          "term": "label bianalnegliampli",
+          "heading": false
+        },
+        {
+          "term": "theta mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathbf bar",
+          "heading": false
+        },
+        {
+          "term": "partial chi",
+          "heading": false
+        }
+      ],
+      "extract": "We recall the definition of the differential operator $\\boldsymbol{\\nabla}$ in [\\[nabladef\\]](#nabladef){reference-type=\"eqref\" reference=\"nabladef\"}. By squaring the operator identity [\\[eq-fundid0.1\\]](#eq-fundid0.1){reference-type=\"eqref\" reference=\"eq-fundid0.1\"}, we arrive at $$\\big\\{{\\mathbf M}_{\\bar \\partial_w \\theta} \\boldsymbol{\\nabla} {\\mathbf M}_{\\bar \\partial_w \\theta} \\boldsymbol{\\nabla}A(z,w) \\big\\}\\,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-75-the-characterization-of-bi-negligible-amplitu",
+      "number": "7.5",
+      "title": "The characterization of bi-negligible amplitudes",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 669,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbf z-w",
+          "heading": false
+        },
+        {
+          "term": "mathbf boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "nabla mathbf",
+          "heading": false
+        },
+        {
+          "term": "rangle mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf bar",
+          "heading": false
+        },
+        {
+          "term": "z-w alpha",
+          "heading": false
+        },
+        {
+          "term": "theta mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf beta",
+          "heading": false
+        }
+      ],
+      "extract": "We need to find the bianalytic analogue of Proposition [\\[prop-neglampl1\\]](#prop-neglampl1){reference-type=\"ref\" reference=\"prop-neglampl1\"}, so that we can tell when we have a bi-negligible amplitude. To formulate the criterion, we first need to define the operator ${\\mathbf N}$. We note that a function $f\\in{\\mathfrak R}_2$ has a unique decomposition $f(z,w)=f_1(z,w)+\\bar z f_2(z,w)$, where $f_1$ and $f_2$ are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-76-the-local-uniqueness-criterion-for-bianalytic",
+      "number": "7.6",
+      "title": "The local uniqueness criterion for bianalytic kernels",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 293,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "z-w mathfrak",
+          "heading": false
+        },
+        {
+          "term": "mathbf z-w",
+          "heading": false
+        },
+        {
+          "term": "bar partial",
+          "heading": false
+        },
+        {
+          "term": "uniqueness",
+          "heading": true
+        },
+        {
+          "term": "biholomorphic",
+          "heading": false
+        },
+        {
+          "term": "lem-uniq",
+          "heading": false
+        },
+        {
+          "term": "equiv holds",
+          "heading": false
+        }
+      ],
+      "extract": "For $F(z,w)$ holomorphic in $(z,\\bar w)$ near the diagonal $z=w$ in ${\\mathbb C}^2$, it is well-known that the diagonal is a set of uniqueness. In particular, the assumption $F\\in{\\mathbf M}_{z-w}{\\mathfrak R}_1$ implies that $F(z,w)\\equiv0$ holds near the diagonal. We need the analogous criterion for functions biholomorphic in each of the variables $(z,\\bar w)$. ::: lem Suppose $F\\in{\\mathfrak R}_2$, so that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-77-the-local-asymptotics-for-the-weighted-bianal",
+      "number": "7.7",
+      "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective algorithm I",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 28,
+      "labelStart": "25",
+      "labelEnd": "28",
+      "words": 1432,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "z-w pmb",
+          "heading": false
+        },
+        {
+          "term": "mathbf pmb",
+          "heading": false
+        },
+        {
+          "term": "bar pmb",
+          "heading": false
+        },
+        {
+          "term": "partial pmb",
+          "heading": false
+        },
+        {
+          "term": "frac pmb",
+          "heading": false
+        },
+        {
+          "term": "bar lfun",
+          "heading": false
+        },
+        {
+          "term": "lfun j-i",
+          "heading": false
+        },
+        {
+          "term": "bigg mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec-I label=\"subsec-I\"} The implementation of the corrective algorithm is rather analogous to the holomorphic situation of Subsection [\\[subsec-5.6\\]](#subsec-5.6){reference-type=\"ref\" reference=\"subsec-5.6\"}. However, since there are certain differences, we explain everything in rather great detail. We recall from Subsection [\\[subsec-6.2\\]](#subsec-6.2){reference-type=\"ref\" reference=\"subsec-6.2\"} that the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-78-the-local-asymptotics-for-the-weighted-bianal",
+      "number": "7.8",
+      "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective algorithm II",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 200,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "z-w pmb",
+          "heading": false
+        },
+        {
+          "term": "mathbf pmb",
+          "heading": false
+        },
+        {
+          "term": "partial pmb",
+          "heading": false
+        },
+        {
+          "term": "bar lfun",
+          "heading": false
+        },
+        {
+          "term": "lfun frac",
+          "heading": false
+        },
+        {
+          "term": "determines lfun",
+          "heading": false
+        },
+        {
+          "term": "theta bar",
+          "heading": false
+        },
+        {
+          "term": "bar bigg",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec-II label=\"subsec-II\"} Here, we show how to combine the given criteria involving ${\\mathbf S}$ and ${\\mathbf S}'$ in a single criterion for $\\Lfun_j^2$, which we explain for $j=0,1$. We first observe first that [\\[eq-4.13\\'\\]](#eq-4.13'){reference-type=\"eqref\" reference=\"eq-4.13'\"} and [\\[eq-4.16.3\\]](#eq-4.16.3){reference-type=\"eqref\" reference=\"eq-4.16.3\"} may be united in a single condition: $${\\mathbf",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-79-the-local-asymptotics-for-the-weighted-bianal",
+      "number": "7.9",
+      "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective algorithm III",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 31,
+      "labelStart": "29",
+      "labelEnd": "31",
+      "words": 1130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "z-w pmb",
+          "heading": false
+        },
+        {
+          "term": "lfun pmb",
+          "heading": false
+        },
+        {
+          "term": "bar pmb",
+          "heading": false
+        },
+        {
+          "term": "partial pmb",
+          "heading": false
+        },
+        {
+          "term": "theta pmb",
+          "heading": false
+        },
+        {
+          "term": "mathbf pmb",
+          "heading": false
+        },
+        {
+          "term": "frac pmb",
+          "heading": false
+        },
+        {
+          "term": "z-w bigg",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec-III label=\"subsec-III\"} We continue the analysis of the corrective algorithm, with the aim to obtain concrete expressions for $\\Lfun_j^2$, for $j=0,1,2$. To simplify the notation, we shall at times write $$\\lambda(z,w)=\\lambda_Q(z,w):=\\partial_z\\bar\\partial_w Q(z,w), \\label{eq-beta1}$$ and sometimes we abbreviate $\\lambda=\\lambda(z,w)$. The function $\\lambda(z,w)$ has the interpretation of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-8-a-priori-diagonal-estimates-of-weighted-bergma",
+      "number": "8",
+      "title": "A priori diagonal estimates of weighted Bergman kernels",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": "31",
+      "labelEnd": "31",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-039-81-estimation-of-point-evaluations-for-local-wei",
+      "number": "8.1",
+      "title": "Estimation of point evaluations for local weighted Bergman spaces",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 33,
+      "labelStart": "31",
+      "labelEnd": "33",
+      "words": 326,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vardelta psi",
+          "heading": false
+        },
+        {
+          "term": "delta mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathbb mathrm",
+          "heading": false
+        },
+        {
+          "term": "delta int",
+          "heading": false
+        },
+        {
+          "term": "subharmonic",
+          "heading": false
+        },
+        {
+          "term": "sec-interlude",
+          "heading": false
+        },
+        {
+          "term": "pointwise",
+          "heading": false
+        },
+        {
+          "term": "pointwiseneg",
+          "heading": false
+        }
+      ],
+      "extract": "The spaces $\\mathrm{PA}^2_{q,m}$ considered in this paper involve the weight $\\mathrm{e}^{-2mQ}$, where (locally at least) $Q$ is subharmonic and smooth. The estimates we derived in Section [\\[sec-interlude\\]](#sec-interlude){reference-type=\"ref\" reference=\"sec-interlude\"} for $q=2$ do not apply immediately, as the weights considered there had rather the converse property of being exponentials of subharmonic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-82-estimation-of-the-weighted-bergman-kernel-on",
+      "number": "8.2",
+      "title": "Estimation of the weighted Bergman kernel on the diagonal",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 33,
+      "labelStart": "33",
+      "labelEnd": "33",
+      "words": 115,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bergman",
+          "heading": true
+        },
+        {
+          "term": "pointwise",
+          "heading": false
+        },
+        {
+          "term": "weighted",
+          "heading": true
+        },
+        {
+          "term": "mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "We recall that $\\mathrm{PA}^2_{2,m}$ is the weighted bianalytic Bergman space on the domain $\\Omega$ in ${\\mathbb C}$, supplied with the weight $\\mathrm{e}^{-2mQ}$. The associated reproducing kernel is written $K_{2,m}$. ::: cor []{#cor-8.2 label=\"cor-8.2\"} Suppose that $z_0\\in\\Omega$ is such that ${\\mathbb D}(z_0,\\delta)\\Subset\\Omega$ for some positive $\\delta$. Suppose moreover that $Q$ is $C^{1,1}$-smooth and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-9-bergman-kernels-from-local-to-global",
+      "number": "9",
+      "title": "Bergman kernels: from local to global",
+      "level": 1,
+      "pageStart": 33,
+      "pageEnd": 33,
+      "labelStart": "33",
+      "labelEnd": "33",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-042-91-purpose-of-the-section",
+      "number": "9.1",
+      "title": "Purpose of the section",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 33,
+      "labelStart": "33",
+      "labelEnd": "33",
+      "words": 14,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section we show how the approximate local Bergman kernels actually provide asymptotics for the weighted bianalytic Bergman kernel $K_{2,m}$ pointwise near the diagonal.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-043-92-the-basic-pointwise-estimate",
+      "number": "9.2",
+      "title": "The basic pointwise estimate",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 34,
+      "labelStart": "33",
+      "labelEnd": "34",
+      "words": 244,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lfun langle",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "mathbf langle",
+          "heading": false
+        },
+        {
+          "term": "chi big",
+          "heading": false
+        },
+        {
+          "term": "bianalytic bergman",
+          "heading": false
+        },
+        {
+          "term": "weighted bianalytic",
+          "heading": false
+        },
+        {
+          "term": "subsec-iii",
+          "heading": false
+        },
+        {
+          "term": "negliampeq",
+          "heading": false
+        }
+      ],
+      "extract": "We let the potential $Q$, the point $z_0$, the radius $r$, and the cut-off function $\\chi_0$ be as in Subsections [\\[subsec-assQ\\]](#subsec-assQ){reference-type=\"ref\" reference=\"subsec-assQ\"} and [\\[subsec-5.3\\]](#subsec-5.3){reference-type=\"ref\" reference=\"subsec-5.3\"}, with the additional requirement mentioned in Subsection [\\[subsec-6.2\\]](#subsec-6.2){reference-type=\"ref\" reference=\"subsec-6.2\"}. In particular,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-93-analysis-of-the-first-term-in-the-pointwise-e",
+      "number": "9.3",
+      "title": "Analysis of the first term in the pointwise estimate",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": "34",
+      "labelEnd": "35",
+      "words": 486,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta pmb",
+          "heading": false
+        },
+        {
+          "term": "pmb partial",
+          "heading": false
+        },
+        {
+          "term": "theta mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf langle",
+          "heading": false
+        },
+        {
+          "term": "mathbf bar",
+          "heading": false
+        },
+        {
+          "term": "gathered mathbf",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "lfun langle",
+          "heading": false
+        }
+      ],
+      "extract": "In the sequel, $k$ is a *fixed nonegative integer*. To estimate the first term on the right-hand side of [\\[glob1\\]](#glob1){reference-type=\"eqref\" reference=\"glob1\"}, we use that $K^{\\langle k\\rangle}_{2,m}$ is a local reproducing kernel $\\mathrm{mod}(m^{-k})$, which is expressed by [\\[negliampeq2.b\\]](#negliampeq2.b){reference-type=\"eqref\" reference=\"negliampeq2.b\"}. Before we go into that, we observe that if $u$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-94-analysis-of-the-second-term-in-the-pointwise",
+      "number": "9.4",
+      "title": "Analysis of the second term in the pointwise estimate I",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 35,
+      "labelStart": "35",
+      "labelEnd": "35",
+      "words": 232,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vardelta phi",
+          "heading": false
+        },
+        {
+          "term": "frac vardelta",
+          "heading": false
+        },
+        {
+          "term": "log vardelta",
+          "heading": false
+        },
+        {
+          "term": "mathrm phi",
+          "heading": false
+        },
+        {
+          "term": "hörmander estimates",
+          "heading": false
+        },
+        {
+          "term": "omega mathrm",
+          "heading": false
+        },
+        {
+          "term": "bar partial",
+          "heading": false
+        },
+        {
+          "term": "mathrm loc",
+          "heading": false
+        }
+      ],
+      "extract": "We proceed to estimate the second term on the right-hand side of [\\[glob1\\]](#glob1){reference-type=\"eqref\" reference=\"glob1\"}. We write $$\\label{eq-defv0} v_0(z):=K^{\\langle k\\rangle}_{2,m}(w,z) \\chi_0(z)-{\\mathbf P}_{2,m}[K^{\\langle k\\rangle}_{2,m}(\\cdot,w)\\chi_0](z),$$ and realize that $v=v_0$ is the norm minimal solution in $L^2(\\Omega,\\mathrm{e}^{-2mQ})$ of the partial differential equation $$\\bar\\partial^2_z",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-95-digression-on-hörmander-type-estimates-and-an",
+      "number": "9.5",
+      "title": "Digression on Hörmander-type estimates and an obstacle problem",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 257,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subharmonic functions",
+          "heading": false
+        },
+        {
+          "term": "vardelta quad",
+          "heading": false
+        },
+        {
+          "term": "prop-hormiter",
+          "heading": false
+        },
+        {
+          "term": "bergman kernel",
+          "heading": false
+        },
+        {
+          "term": "ahm",
+          "heading": false
+        },
+        {
+          "term": "quad text",
+          "heading": false
+        },
+        {
+          "term": "frac log",
+          "heading": false
+        }
+      ],
+      "extract": "We should like to apply Proposition [\\[prop-hormiter\\]](#prop-hormiter){reference-type=\"ref\" reference=\"prop-hormiter\"} with $\\phi:=mQ$. Then we need the assumptions of the proposition to be valid: $$\\label{eq-9.4.1} \\varDelta Q>0\\quad\\text{and}\\quad\\frac{1}{2\\varDelta Q}\\varDelta\\log\\varDelta Q>-m \\quad\\text{on}\\,\\,\\,\\Omega.$$ The latter criterion apparently gets easier to fulfill as $m$ grows. In the analytic case",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-96-analysis-of-the-second-term-in-the-pointwise",
+      "number": "9.6",
+      "title": "Analysis of the second term in the pointwise estimate II",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "36",
+      "labelEnd": "37",
+      "words": 325,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lfun langle",
+          "heading": false
+        },
+        {
+          "term": "big lfun",
+          "heading": false
+        },
+        {
+          "term": "partial lfun",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "big bar",
+          "heading": false
+        },
+        {
+          "term": "partial chi",
+          "heading": false
+        },
+        {
+          "term": "prop-hormiter",
+          "heading": false
+        },
+        {
+          "term": "big mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "As we apply Proposition [\\[prop-hormiter\\]](#prop-hormiter){reference-type=\"ref\" reference=\"prop-hormiter\"} to $\\phi=mQ$, the result is the following. ::: prop Let $\\Omega$ be a domain in ${\\mathbb C}$ and suppose $Q:\\Omega\\to{\\mathbb R}$ is $C^4$-smooth with both $\\varDelta Q>0$ on $\\Omega$ and $$\\kappa:=\\sup_{\\Omega}\\frac{1}{2\\varDelta Q}\\varDelta \\log\\frac{1}{\\varDelta Q}<+\\infty.$$ Assume that $f\\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-97-the-pointwise-distance-to-the-weighted-bergma",
+      "number": "9.7",
+      "title": "The pointwise distance to the weighted Bergman kernel",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": "37",
+      "labelEnd": "37",
+      "words": 278,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lfun langle",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "frac vardelta",
+          "heading": false
+        },
+        {
+          "term": "blowupthm",
+          "heading": false
+        },
+        {
+          "term": "rem-aa",
+          "heading": false
+        },
+        {
+          "term": "subsec-assq",
+          "heading": false
+        },
+        {
+          "term": "glob",
+          "heading": false
+        },
+        {
+          "term": "kernel",
+          "heading": true
+        }
+      ],
+      "extract": "Here, we apply the estimates [\\[eq-9.2.8\\]](#eq-9.2.8){reference-type=\"eqref\" reference=\"eq-9.2.8\"} and [\\[eq-9.6.3\\]](#eq-9.6.3){reference-type=\"eqref\" reference=\"eq-9.6.3\"} with the (basic) estimate [\\[glob1\\]](#glob1){reference-type=\"eqref\" reference=\"glob1\"}. As before, the integer $k$ is fixed. ::: thm []{#thm-9.3 label=\"thm-9.3\"} Let $\\Omega$ be a domain in ${\\mathbb C}$ and suppose $Q:\\Omega\\to{\\mathbb R}$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-10-bianalytic-extensions-of-bergmans-metrics-and",
+      "number": "10",
+      "title": "Bianalytic extensions of Bergman's metrics and asymptotic analysis",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": "37",
+      "labelEnd": "37",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-050-101-purpose-of-the-section",
+      "number": "10.1",
+      "title": "Purpose of the section",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 40,
+      "labelStart": "37",
+      "labelEnd": "40",
+      "words": 1064,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "haakan hedenmalm",
+          "heading": false
+        },
+        {
+          "term": "antti haimi",
+          "heading": false
+        },
+        {
+          "term": "bergman ﬁrst",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst metric",
+          "heading": false
+        },
+        {
+          "term": "abschnitt",
+          "heading": false
+        },
+        {
+          "term": "bianalytic",
+          "heading": false
+        },
+        {
+          "term": "rescaled",
+          "heading": false
+        },
+        {
+          "term": "kernel",
+          "heading": false
+        }
+      ],
+      "extract": "Sections 7 (see especially Remark 7.6) and 9 to form asymptotic expressions for Bergman’s ﬁrst and second metric (see Section 3) in the context of ω = e−2mQ. We will generally assume that the assumptions of Theorem 9.3 are fulﬁlled, so that the local analysis of Section 7 gives the global weighted bianalytic Bergman kernel with high precision. 38 ANTTI HAIMI AND HAAKAN HEDENMALM 10.2. Bergman’s ﬁrst metric. Our",
+      "extractCut": true
+    },
+    {
+      "id": "sec-051-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": "40",
+      "labelEnd": "41",
+      "words": 693,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bergman kernel",
+          "heading": false
+        },
+        {
+          "term": "enseignement mathématique",
+          "heading": false
+        },
+        {
+          "term": "bergman spaces",
+          "heading": false
+        },
+        {
+          "term": "polyanalytic functions",
+          "heading": false
+        },
+        {
+          "term": "hedenmalm",
+          "heading": false
+        },
+        {
+          "term": "kähler metrics",
+          "heading": false
+        },
+        {
+          "term": "makarov",
+          "heading": false
+        },
+        {
+          "term": "tian-yau-zelditch",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Abreu, L., Sampling and interpolation in Bargmann-Fock spaces of polyanalytic functions. Appl. Comp. Harm. Anal. 29 (2010), 287-302. [2] Ameur, Y., Hedenmalm, H., Makarov, N., Berezin transform in polynomial Bergman spaces. Comm. Pure Appl. Math. 63 (2010) no. 12, 1533-1584. [3] Ameur, Y., Hedenmalm, H., Makarov, N., Fluctuations of eigenvalues of random normal matrices. Duke Math. J. 159 (2011), 31-81. [4]",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathrm bar",
+      "heading": false
+    },
+    {
+      "term": "z-w mathrm",
+      "heading": false
+    },
+    {
+      "term": "partial mathrm",
+      "heading": false
+    },
+    {
+      "term": "mathbf mathrm",
+      "heading": false
+    },
+    {
+      "term": "bar lfun",
+      "heading": false
+    },
+    {
+      "term": "mathrm omega",
+      "heading": false
+    },
+    {
+      "term": "bigg mathrm",
+      "heading": false
+    },
+    {
+      "term": "bar pmb",
+      "heading": false
+    },
+    {
+      "term": "mathbb mathrm",
+      "heading": false
+    },
+    {
+      "term": "frac mathrm",
+      "heading": false
+    },
+    {
+      "term": "theta mathrm",
+      "heading": false
+    },
+    {
+      "term": "kernel mathrm",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 56,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 53,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p40); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 53 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1303.0720v2"
+  }
+}

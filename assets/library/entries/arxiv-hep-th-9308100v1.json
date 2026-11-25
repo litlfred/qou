@@ -1,0 +1,196 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-9308100v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-9308100v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ABSTRACT",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-abstract.md",
+      "narrative": null,
+      "content": "Analysis of several gedanken experiments indicates that black hole complementarity\ncannot be ruled out on the basis of known physical principles. Experiments designed by\noutside observers to disprove the existence of a quantum-mechanical stretched horizon require\nknowledge of Planck-scale eﬀects for their analysis. Observers who fall through the event\nhorizon after sampling the Hawking radiation cannot discover duplicate information inside\nthe black hole before hitting the singularity. Experiments by outside observers to detect\nbaryon number violation will yield signiﬁcant eﬀects well outside",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9308100v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-th/9308100v1  20 Aug 1993\nSU-ITP-93-19\nAugust 1993\nhep-th/9308100\nGedanken Experiments Involving Black Holes\nLeonard Susskind,\n⋆and L´arus Thorlacius,\n†\nDepartment of Physics\nStanford University, Stanford, CA 94305-4060",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9308100v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-1-introduction.md",
+      "narrative": null,
+      "content": "One of the most interesting open questions in theoretical physics is whether the unitary\nevolution of states in quantum theory is violated by gravitational eﬀects [1]. The debate\nhas centered on the process of black hole formation and evaporation, where, at the semi-\nclassical level, almost no information about the initial quantum state of the infalling matter\nappears to be carried by the ﬁnal outgoing Hawking radiation. Our viewpoint in this paper\nis a conservative one as far as quantum theory is concerned. We shall assume that outside\nobservers can apply standard quantum mechanical rules to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9308100v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Experiments in Rindler Space",
+      "pageStart": 4,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-2-experiments-in-rindler-space.md",
+      "narrative": null,
+      "content": "Before considering ﬁnite mass black holes it is instructive to consider the simpler geom-\netry of Rindler space which can be viewed as the exterior region close to the horizon in the\nlimit of inﬁnite black hole mass. It is also isomorphic to the region of ﬂat four-dimensional\nMinkowski space deﬁned by |z| > |t|, z > 0, shown in Figure 1.\nWe introduce Rindler coordinates R, ω as follows,\nt = R sinh ω ,\nz = R cosh ω .\n(2.1)\nNote that R is a spacelike coordinate and ω is time-like. The Rindler line element is\nds2 = −R2 dω2 + dR2 + dx2 + dy2 .\n(2.2)\nThe Rindler Hamiltonian generates translations o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9308100v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Experiments Outside Black Holes",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "../sections/sec-003-3-experiments-outside-black-holes.md",
+      "narrative": null,
+      "content": "The event horizon of Rindler space can be viewed as a black hole event horizon in the\nlimit of inﬁnite mass. Any attempt by external observers to determine the physical presence\nof an information storing membrane outside a black hole event horizon will run into planckian\nobstacles just as in Rindler space. The discussion of the gedanken experiments of the previous\nsection carries over to this case as the reader can easily check. In this case we deﬁne the\nstretched horizon as the time-like surface where the area of the transverse two-sphere is larger\nthan at the null event horizon by order one",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9308100v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Experiments Performed Inside Black Holes",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "../sections/sec-004-4-experiments-performed-inside-black-holes.md",
+      "narrative": null,
+      "content": "In this section we shall consider a class of experiments which explore quantum corre-\nlations between events on both sides of the event horizon. In particular, we are interested\nin contradictions which arise from the apparent duplication of quantum information. If the\nHawking radiation is to faithfully encode the infalling information, while the infalling matter\ncrosses the event horizon without disruption, one might be led to infer such duplication [2].\nThis would violate the linearity of quantum mechanics. So long as any single observer can\nnever learn the results of experiments performed on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9308100v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Information Retention Time",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-005-5-information-retention-time.md",
+      "narrative": null,
+      "content": "We wish to deﬁne a measure of the “lifetime” of information stored in a thermalized\nsystem, K, such as a black hole stretched horizon or a thermal cavity. Suppose at time\nt = 0, the system K is in some pure state ψ which is a typical member of a thermal ensemble\nwith energy E and temperature T. Furthermore, let N(E) be the number of possible states\nat energy E. To begin with, the system has zero ﬁne grained entropy and coarse grained\nentropy equal to log N.\nWe assume that the system K radiates thermal radiation for a time t. At the end of this\ntime K is no longer in a pure state since it is co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9308100v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Experiments Involving Time Reversal",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-006-6-experiments-involving-time-reversal.md",
+      "narrative": null,
+      "content": "The time reversal of the formation and evaporation of a black hole has been a subject\nof controversy. Confusion about white holes and CPT easily arises when one contemplates\ninformation loss. This confusion is straightforwardly resolved in a theory with a quantum\nmechanical stretched horizon. Let us consider a black hole formed from the collapse of a\ndiﬀuse cloud of elephants. The evaporation products consist of an outgoing train of thermal\nradiation whose temperature increases with time from\n1\n8πM initially to temperatures ap-\nproaching the Planck scale at the end. The postulate of the validi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9308100v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-007-7-summary.md",
+      "narrative": null,
+      "content": "In this paper we have analysed a number of gedanken experiments to illustrate the\nconsistency of the following two hypotheses:\n1) To an outside observer all information falling onto a black hole is stored and ther-\nmalized on the stretched horizon until it is radiated during evaporation. The thermalization\ninvolves processes which wash out baryon number.\n2) To an infalling observer no exceptional phenomenon such as information bleaching or\nsigniﬁcant baryon number violation will take place upon crossing the horizon.\nAn observer hovering near the horizon experiences enormous proper acceleration",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9308100v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "REFERENCES",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-008-references.md",
+      "narrative": null,
+      "content": "1. S. W. Hawking, Comm. Math. Phys. 43 (1975), 199, Phys. Rev. D14 (1976), 2460.\n2. L. Susskind, L. Thorlacius, and J. Uglum, The Stretched Horizon and Black Hole\nComplementarity, Stanford University preprint, SU-ITP-93-15, hepth/9306069, June\n1993, to appear in Phys. Rev. D.\n3. J. Preskill, private communication at the ITP, UC Santa Barbara Conference on\n“Quantum Aspects of Black Holes”, June 21-26, 1993.\n4. G. ’t Hooft, Nucl. Phys. B335 (1990), 138, Physica Scripta T36 (1991), 247, and\nreferences therein.\n5. L. Susskind, String Theory and the Principle of Black Hole Complementarity, Stanford",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

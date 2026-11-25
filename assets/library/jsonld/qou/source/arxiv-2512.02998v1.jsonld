@@ -1,0 +1,70 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2512.02998v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Stability of knot equivalence at low regularity, and symmetric critical knots for the M\\\"obius energy",
+  "contains": [
+    "library/arxiv-2512.02998v1/sections/sec-front-matter",
+    "library/arxiv-2512.02998v1/sections/sec-000",
+    "library/arxiv-2512.02998v1/sections/sec-001",
+    "library/arxiv-2512.02998v1/sections/sec-002",
+    "library/arxiv-2512.02998v1/sections/sec-003",
+    "library/arxiv-2512.02998v1/sections/sec-004",
+    "library/arxiv-2512.02998v1/sections/sec-005",
+    "library/arxiv-2512.02998v1/sections/sec-006",
+    "library/arxiv-2512.02998v1/sections/sec-007",
+    "library/arxiv-2512.02998v1/sections/sec-008",
+    "library/arxiv-2512.02998v1/sections/sec-009",
+    "library/arxiv-2512.02998v1/sections/sec-010",
+    "library/arxiv-2512.02998v1/sections/sec-011",
+    "library/arxiv-2512.02998v1/sections/sec-012",
+    "library/arxiv-2512.02998v1/sections/sec-013",
+    "library/arxiv-2512.02998v1/sections/sec-014"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Stability of knot equivalence at low regularity, and symmetric critical knots for the M\\\"obius energy — We present sufficient criteria for the equivalence of tame knots at low regularity.\n\n**Stability of knot equivalence at low regularity, and symmetric critical knots for the M\\\"obius energy**\n\n*SIMON BLATT, ALEXANDRA GILSBACH, PHILIPP REITER, AND HEIKO VON DER MOSEL*\n\n32 pp, 16 sections.\n\n**Abstract.** We present sufficient criteria for the equivalence of tame knots at low regularity. To this end, we introduce a localized version of Gromov’s distortion for any closed path-connected subset of Rn. If two such sets have local Gromov distortion below a universal dimension- dependent constant gn at some scale, and if their Hausdorff-distance is less than one quarter of that scale, we can show that the fundamental groups of their complements are isomorphic. In addition, we construct this isomorphism so that it restricts to the corresponding peripheral subgroups as an isomorphism as well. Applied to the images of one-dimensional knots it follows that two knots are equivalent if their Hausdorff-distance is bounded in terms of the scale under which their local Gromov distortion is controlled.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Motivation; 1.2 Isomorphic fundamental groups via localize; 1.3 Stability of knot equivalence; 1.4 Symmetric critical points for scale-invari; 1.5 Strategy and outline of the paper; 2 Sets with local distortion below a quarter c; 3 Pseudo-gradient flow for the distance functi; 4 Isomorphisms of fundamental groups; 5 Stability of knot equivalence; 6 Harmonic substitution; 7 Weak fractional compactness; 8 Symmetric critical knots; Acknowledgements; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2512.02998&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2512.02998v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2512.02998v1.pdf",
+    "source_sha256": "146ff93cd70baad4d0eb036180471abaaf4324d7b0e795651e73976e93381998",
+    "pages": 32,
+    "arxiv": {
+      "id": "2512.02998",
+      "version": "1",
+      "primary_class": "math.GT",
+      "stamp_date": "2 Dec 2025"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

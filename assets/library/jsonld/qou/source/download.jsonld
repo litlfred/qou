@@ -1,0 +1,54 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Concentration of empirical distribution functions with applications to non-i.i.d. models",
+  "contains": [
+    "library/download/sections/sec-front-matter",
+    "library/download/sections/sec-000",
+    "library/download/sections/sec-001",
+    "library/download/sections/sec-002",
+    "library/download/sections/sec-003",
+    "library/download/sections/sec-004",
+    "library/download/sections/sec-005",
+    "library/download/sections/sec-006",
+    "library/download/sections/sec-007",
+    "library/download/sections/sec-008",
+    "library/download/sections/sec-009",
+    "library/download/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Concentration of empirical distribution functions with applications to non-i.i.d. models — 12 sections: Front matter; Introduction; Empirical Poincaré inequalities\n\n**Concentration of empirical distribution functions with applications to non-i.i.d. models**\n\n*S.G. BOBKOV1 and F. GÖTZE2*\n\n30 pp, 12 sections.\n\n**Outline.** Front matter; Introduction; Empirical Poincaré inequalities; Proof of Theorem 1.1; Large deviations above the mean; Empirical log-Sobolev inequalities; Local behavior of empirical distributions; Bounds on the Kolmogorov distance. Proof of Th; High-dimensional random matrices; Appendix; Acknowledgements; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "download",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "Download.pdf",
+    "source_sha256": "ca9639465b08d34c6d7aeb0ed967ca253d2faae143f9280fa32d23d44b3609f4",
+    "pages": 30,
+    "arxiv": null,
+    "doi": "10.3150/10-BEJ254",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,506 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0506456v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 10,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\noindent In this paper we investigate the large level\nasymptotics of the Reshetikhin--Turaev invariants of the\n$3$--manifolds obtained by doing surgery on the figure $8$\nknot with an arbitrary rational surgery coefficient. Let $X$\nbe a closed oriented $3$--manifold and let $\\tau_r(X)$ be the\nRT--invariant of $X$ associated to $\\frsl_{2}(\\C)$ at level\n$r$, some integer $\\geq 2$. The investigations of this paper\nare motivated by the following conjecture.\n\n\n\\begin{conjecture}[Asymptotic expansion conjecture\n(AEC)]\\label{conj:AEC}\nThere exist constants (depending on X) $d_j \\in \\Q$ and\n$b_j \\in \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0506456v1  [math.QA]  22 Jun 2005\nJournal of Knot Theory and Its Ramiﬁcations\nc⃝World Scientiﬁc Publishing Company\nASYMPTOTICS OF THE QUANTUM INVARIANTS FOR SURGERIES\nON THE FIGURE 8 KNOT\nJØRGEN ELLEGAARD ANDERSEN ∗†\nDepartment of Mathematical Sciences\nUniversity of Aarhus, Building 530, Ny Munkegade, 8000 Aarhus, Denmark\nandersen@imf.au.dk\nSØREN KOLD HANSEN\nDepartment of Mathematics, Kansas State University\n138 Cardwell Hall, Manhattan, KS 66506, USA\nhansen@math.ksu.edu\nReceived (Leave 1 inch blank space for publisher.)\nRevised\nABSTRACT\nWe investigate the Reshetikhin–Turaev invaria",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The RT-invariant for surgeries on the figure $8$ knot",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-001-2-the-rt-invariant-for-surgeries-on-the-figure-8.md",
+      "narrative": null,
+      "content": "\\noindent This section is primarily intended to introduce\nnotation. Moreover, we present some preliminary formulas for\nthe colored Jones polynomial of the figure $8$ knot and for\nthe RT--invariants of the $3$--manifolds $M_{p/q}$.\n\nLet $t=\\exp(2\\pi \\I /(4r))$, $r$ an integer $\\geq 2$, and let\n$U_{t}$ be the modular Hopf algebra considered in\n\\cite[Sec.~8]{[27]}, i.e.\\ $U_{t}$ is a finite-dimensional\nfactor of the quantum group $U_{\\xi}(\\frsl_{2}(\\C))$,\n$\\xi=t^{4}$. (In \\cite{[27]}, and in most literature on the\nsubject, $\\xi$ is denoted $q$, but we use in this paper $q$\nto mean something diffe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A complex double contour integral formula for $\\tau_{r}(M_{p/q})$",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-002-3-a-complex-double-contour-integral-formula-for.md",
+      "narrative": null,
+      "content": "\\noindent In this section we derive a complex double contour\nintegral formula for the RT--invariants $\\tau_{r}(M_{p/q})$ by\nusing methods similar to Kashaev \\cite{[14]}. When we consider\nthe expression for the summand in the multi sum\n(\\ref{eq:inv2}), we see that the expression as it stands only\nmakes sense for non-negative integers $m$. In order to make\nsense of this expression for arbitrary complex values for $m$,\nlet us consider the quantum dilogarithm of Faddeev\n$$\nS_{\\gamma}(\\zeta) = \\exp \\left( \\frac{1}{4} \\int_{C_{R}}\n\\frac{e^{\\zeta z}}{\\sinh(\\pi z)\\sinh(\\gamma z)z} \\dte z\\right)\n$$\ndef",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The large $r$ asymptotics of $J'_K(r)$ and $\\tau_{r}(M_{p/q})$",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-003-4-the-large-r-asymptotics-of-j-kr-and-tau-rm-pq.md",
+      "narrative": null,
+      "content": "\\noindent In this section we investigate the large $r$\nasymptotics of $\\tau_{r}(M_{p/q})$ or more precisely the\nleading term of this asymptotics, using the saddle point\nmethod. We begin by calculating the large $r$ asymptotics of\n$J_{K}'(r)$ using the expression (\\ref{eq:contourfigure8}).\nThis calculation will demonstrate the use of the saddle point\nmethod and will serve as a warm up for the more difficult\nconsiderations of the asymptotics of $\\tau_{r}(M_{p/q})$ in the\nfinal part of this section.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Semiclassical asymptotics of the quantum dilogarithm",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-004-41-semiclassical-asymptotics-of-the-quantum-dilo.md",
+      "narrative": null,
+      "content": "\\noindent It is well-known that the semiclassical asymptotics,\ni.e.\\ the small $\\gamma$ asymptotics of the quantum dilogarithm\n$S_\\gamma$, is given by Euler's dilogarithm\n\\begin{equation}\\label{eq:dilog}\n\\Li_{2}(z) = -\\int_{0}^{z} \\frac{\\Log (1-w)}{w} \\dte w\n\\end{equation}\nfor $z \\in \\C \\sm ]1,\\infty[$. Here and elsewhere $\\Log$\ndenotes the principal logarithm. For $\\zeta \\in \\C$ satisfying\neither $\\rea(\\zeta) = \\pm \\pi$ and $\\ima(\\zeta) \\geq 0$ or\n$|\\rea(\\zeta)| < \\pi$ one can check (see Appendix A) that\n$$\n\\frac{1}{2\\I \\gamma} \\Li _{2} (-e^{\\I \\zeta} ) =\n\\frac{1}{4} \\int_{C_{R}}\n\\frac{e^{\\ze",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/lem-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "lem-sec-005-01.md",
+      "narrative": null,
+      "content": "The leading order large r asymptotics of J′ K(r) is given by J′ K(r) ∼3−1/4r3/2 exp \u0010 r 2πVol(K) \u0011 . (4.33) In fact J′ K(r) = 3−1/4r3/2 exp \u0010 r 2π Vol(K) \u0011 + O \u0010 rLog(r) exp \u0010 r 2πVol(K) \u0011\u0011 in the limit r →∞. Asymptotics of the quantum invariants for the ﬁgure 8 knot In particular lim r→∞ 2πLog(J′ K(r)) r = Vol(K) as predicted by the volume conjecture of Kashaev [14] and Murakami, Murakami [24] and as proven by Ekholm and others, see [22]. However, the arguments of Ekholm and others can’t see the ﬁner details of the asymptotic behaviour (4.33), namely the polynomial part 3−1/4r3/2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The large $r$ asymptotics of $J_{K}'(r)$",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "../sections/sec-005-42-the-large-r-asymptotics-of-j-kr.md",
+      "narrative": null,
+      "content": "K(r)\nWe calculate the leading term of the large r asymptotics of J′\nK(r), using the saddle\npoint method like Kashaev [14]. Our calculation supplements the calculation of\nKashaev with the required analytic error estimates. Let\nC2\nr = C(ε)\n=\n[\n√\n−1 + ε, −\n√\n−1 + ε] + [−\n√\n−1 + ε, 1 −ε −\n√\n−1]\n+[1 −ε −\n√\n−1, 1 −ε +\n√\n−1] + [1 −ε +\n√\n−1, ε +\n√\n−1],\nwhere ε ∈]0, 1\n4r[. We let C+(ε) be the part of the contour C(ε) above the real axes\nand C−(ε) the part below the real axes. By (3.21) we have\nJ′\nK(r) =\n√−1r2\n2\n(J+(r, ε) + J−(r, ε)) ,\nwhere\nJ±(r, ε) =\nZ\nC±(ε)\ntan(πrx)gr(x)dx.\nAway from the real axis, t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/rem-sec-005-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "rem-sec-005-02.md",
+      "narrative": null,
+      "content": "The complement S3 \\ K of the ﬁgure 8 knot can be decomposed into two ideal hyperbolic tetrahedra each parametrized by a certain complex number. This decomposition then deﬁnes a hyperbolic structure on this complement if and only if a certain set of conditions is satisﬁed. In fact, if the complex parameters for the two tetrahedra are respectively a and b, then these conditions are equivalent to a = b and b2 −b + 1 = 0, which is equation (4.32) after substituting b for z. We refer to [23, Sec. 3] for more details. This phenomenon, that one ﬁnds the hyperbolicity equation for the knot complement",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The large $r$ asymptotics of $\\tau_{r}(M_{p/q})$",
+      "pageStart": 19,
+      "pageEnd": 29,
+      "target": "../sections/sec-006-43-the-large-r-asymptotics-of-tau-rm-pq.md",
+      "narrative": null,
+      "content": "\\noindent We calculate the leading term of the large $r$\nasymptotics of $J_{K}'(r)$, using the saddle point\nmethod like Kashaev \\cite{[14]}. Our calculation supplements\nthe calculation of Kashaev with the required analytic error\nestimates. Let\n\\begin{eqnarray*}\nC_{r}^{2} = C(\\vep) &=& [\\I+\\vep,-\\I+\\vep]\n+ [-\\I+\\vep,1-\\vep-\\I] \\\\\n&& + [1-\\vep-\\I,1-\\vep+\\I] + [1-\\vep+\\I,\\vep+\\I],\n\\end{eqnarray*}\nwhere $\\vep \\in ]0, \\frac{1}{4r}[$. We let $C_{+}(\\vep)$ be the\npart of the contour $C(\\vep)$ above the real axes and\n$C_{-}(\\vep)$ the part below the real axes. By\n(\\ref{eq:contourfigure8}) we have\n$$\nJ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classical Chern--Simons theory on $M_{p/q}$",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-007-5-classical-chern--simons-theory-on-m-pq.md",
+      "narrative": null,
+      "content": "\\noindent In this section we will describe the classical\ntheory, that is the classical Chern--Simons theory on the\nmanifolds $M_{p/q}$. The $\\SU(2)$ Chern--Simons functional is\na map with values in $\\R/\\Z$ defined on the set $\\mA$ of gauge\nequivalence classes of connections in a principal $\\SU(2)$\nbundle on $M_{p/q}$ (all such bundles being trivializable).\nInside $\\mA$ sits the moduli space $\\mM_{p/q}$ of flat\n$\\SU(2)$--connections on $M_{p/q}$, that is the set of\nclassical solutions to the $\\SU(2)$ Chern--Simons field theory.\nRecall that\n\\[\\mM_{p/q} = \\Hom(\\pi_{1}(M_{p/q}),\\SU(2))/\\SU(2) \\]\nf",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The moduli space of flat $\\mbox{\\rm SU}(2)$--connections on $M_{p/q}$",
+      "pageStart": 30,
+      "pageEnd": 35,
+      "target": "../sections/sec-008-51-the-moduli-space-of-flat-mboxrm-su2--connecti.md",
+      "narrative": null,
+      "content": "\\noindent In the following\n$\\pi=\\pi_{1}\\left( S^{3} \\sm \\nbd (K) \\right)$ denotes the knot\ngroup of the figure $8$ knot. We have a presentation\n\\begin{equation}\\label{eq:pi}\n\\pi = \\la \\, x,y\\, | wx=yw \\,\\ra,\n\\end{equation}\nwhere $w=[x^{-1},y]$, and where $\\mu=x$ and\n$\\lambda=yx^{-1}y^{-1}x^{2}y^{-1}x^{-1}y$ are the elements of\n$\\pi$ corresponding to the meridian and the preferred longitude\nof $K$. The $\\SL(2,\\C)$ representation variety of $\\pi$ was\nanalyzed by Riley \\cite{[28]}, \\cite{[29]} relevant to our\nwork. Consider a group $G$ given by a presentation\n$$\nG = \\la \\, x,y\\, | wx=yw \\,\\ra,\n$$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chern--Simons invariants",
+      "pageStart": 35,
+      "pageEnd": 39,
+      "target": "../sections/sec-009-52-chern--simons-invariants.md",
+      "narrative": null,
+      "content": "\\noindent We begin by recalling formulas from \\cite{[18]} for\nthe Chern--Simons invariants of the flat $\\SU(2)$--connections\non $M_{p/q}$. The basic tool will be \\refthm{thm:KK} below due\nto P.\\ A.\\ Kirk and E.\\ P.\\ Klassen.\n\nLet $M$ be a closed oriented $3$--manifold with a knot $K$ in\nits interior and let $X$ be the complement of a tubular\nneighborhood of $K$ in $M$. Moreover, let $\\mu$ be a meridian\nof $K$ and $\\lambda$ a longitude, both in $\\partial X$. Let $G$\nbe $\\SU(2)$ or $\\SL(2,\\C)$. If $\\rho : \\pi_{1}(X) \\to G$ is a\nrepresentation, then $\\rho$ extends to a $G$--representation of\n$\\pi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/cor-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 70,
+      "target": "cor-sec-010-02.md",
+      "narrative": null,
+      "content": "The surjection ϕ in Theorem 7 restricts to a surjection from the set of critical points (x, y) of Ψa,b n , a, b, n ∈Z, with (x, y) ∈S onto the set of representations ρ(s,u) : π1(Mp/q) →SL(2, C), (s, u) ∈˜ N , which are equivalent to SU(2)–representations of π1(Mp/q).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/cor-sec-010-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 70,
+      "target": "cor-sec-010-05.md",
+      "narrative": null,
+      "content": "Let (x, y) ∈C2 such that ρ(eπix,e2πiy−1) is equivalent to a nonabelian SU(2)–representation of π1(Mp/q). Let (x′, y′) ∈C2 such that (eπix′, e2πiy′) = (eπix, e2πiy) and Re(x′) ∈] −1, 1] and Re(y′) ∈] −1/2, 1/2]. Moreover, let n = q \u0012 y′ + p 2qx′ + i 2π \u0010 Log \u0010 1 −e2πi(x+y)\u0011 −Log \u0010 1 −e2πi(x−y)\u0011\u0011\u0013 , b = x′ + i 2π \u0010 Log \u0010 1 −e2πi(x+y)\u0011 + Log \u0010 1 −e2πi(x−y)\u0011\u0011 . Then θ := x′/2 ∈[−1/3, −1/6] ∪[1/6, 1/3] and b =    −1, θ ∈[−1/3, −1/4] 0, θ ∈] −1/4, −1/6] ∪[1/6, 1/4] 1, θ ∈]1/4, 1/3]. Moreover, n ∈Z and (x′, y′) is a critical point of Ψ0,b n and CS(¯ρθ,ε) = Ψ0,b n (x′, y′) (mod Z), where ε ∈{±} wit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/cor-sec-010-08",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 70,
+      "target": "cor-sec-010-08.md",
+      "narrative": null,
+      "content": "Let a, b, n ∈Z and let (x, y) be a critical point of Ψa,b n with e2πix ∈S1 and e2πiy ∈R. Then Im \u0000Ψa,b n (x, y) \u0001 = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/cor-sec-010-10",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 70,
+      "target": "cor-sec-010-10.md",
+      "narrative": null,
+      "content": "stationary points leading to such exponential growth do not contribute to the large r asymptotics of ¯τr(Mp/q), see also Theorem 4.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/lem-sec-010-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 70,
+      "target": "lem-sec-010-06.md",
+      "narrative": null,
+      "content": "Let a, b, n ∈Z and assume that (x, y) is a critical point of Ψa,b n . Let l, k ∈Z and put a′ = a + l, b′ = b + 2k, and n′ = n + pk. Then (x + 2k, y + l) is a critical point of Ψa′,b′ n′ and Ψa′,b′ n′ (x + 2k, y + l) −Ψa,b n (x, y) ≡0 (mod Z).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/lem-sec-010-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 70,
+      "target": "lem-sec-010-07.md",
+      "narrative": null,
+      "content": "Let a, b, n ∈Z and let (x, y) be a critical point of Ψa,b n . Then Im \u0000Ψa,b n (x, y) \u0001 = 4π2 \u0010 D \u0010 e2πi(x+y)\u0011 −D \u0010 e2πi(x−y)\u0011\u0011 . We note that D is analytic on C \\ {0, 1} and continuous on C. Moreover, D satisﬁes the identities D(z) + D(¯z) = 0, D(z) + D(1/z) = 0 (5.80) for all z ∈C \\ {0}. From this we have",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/lem-sec-010-11",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 70,
+      "target": "lem-sec-010-11.md",
+      "narrative": null,
+      "content": "Let the situation be as in (5.78). Then Ψ0,b(θ) n(θ) (2θ, y) −Ψ0,b(−θ) n(−θ) (−2θ, y) ≡0 (mod Z). To prove this and (5.78) we need the technical Lemma 8 below keeping track of branches of the logarithm in certain expressions. Let I = [−1/3, −1/6] ∪[1/6, 1/3] and put Q± 1 (θ) = 1 −(1 + u±(θ))−1 e4πiθ, Q± 2 (θ) = 1 −(1 + u±(θ)) e4πiθ (5.81) for θ ∈I, where u± are deﬁned in Proposition 2. We also put Q± 3 (θ) = 1 + u±(θ). Asymptotics of the quantum invariants for the ﬁgure 8 knot",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/lem-sec-010-12",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 70,
+      "target": "lem-sec-010-12.md",
+      "narrative": null,
+      "content": "We have Log \u0000Q± 1 (θ) \u0001 + Log \u0000Q± 2 (θ) \u0001 = Log \u0000Q± 1 (θ)Q± 2 (θ) \u0001 (5.82) and Q± 1 (θ)Q± 2 (θ) = e4πiθ (5.83) for all θ ∈I. Moreover Log \u0000Q± 1 (θ) \u0001 + Log \u0000Q± 3 (θ) \u0001 −Log \u0000Q± 2 (θ) \u0001 = Log \u0012Q± 1 (θ)Q± 3 (θ) Q± 2 (θ) \u0013 + e±(θ)2πi (5.84) for all θ ∈I, where e+(θ) = \u001a 1, θ ∈]1/6, 1/4], 0, θ ∈]1/4, 1/3[, and e−(θ) = 1 −e+(θ) for θ ∈]1/6, 1/3[, e±(−1/4) = e±(1/4), e±(θ) = 1 −e±(−θ) for θ ∈I \\ {±1/6, ±1/4, ±1/3}, and e±(θ) = 0 for θ ∈{±1/6, ±1/3}. Finally Q± 1 (θ)Q± 3 (θ) Q± 2 (θ) = L±(θ) (5.85) for all θ ∈I, where L± are given by Proposition 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/lem-sec-010-13",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 70,
+      "target": "lem-sec-010-13.md",
+      "narrative": null,
+      "content": "Let s ∈C∗and let u± be the two solutions to φ(s2, u) = 0. Then (1 + u+)(1 + u−) = 1, and λ11(s, u+)λ11(s, u−) = 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A comparison between Chern--Simons invariants and critical values of the phase functions $\\Phi_{n}^{a,b}$",
+      "pageStart": 39,
+      "pageEnd": 70,
+      "target": "../sections/sec-010-53-a-comparison-between-chern--simons-invariants.md",
+      "narrative": null,
+      "content": "of the phase functions Φa,b\nn\nThe purpose of this section is to combine the Chern–Simons theory described in the\nprevious two sections with the asymptotic analysis in Sec. 4.3. First we will describe\na correspondence between the critical points of the phase functions Φa,b\nn\nin (4.36)\nand the nonabelian SL(2, C)–representations of π1(Mp/q). Thereafter we will show\nthat the set of Chern–Simons invariants of ﬂat irreducible SU(2)–connections on\nMp/q is a certain subset of the critical values of the functions Φa,b\nn . Like in Sec. 4.3\nwe will most of the time work with the shifted phase functions",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/rem-sec-010-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 70,
+      "target": "rem-sec-010-04.md",
+      "narrative": null,
+      "content": "i) In general we have Φa,b n = Ψa+b,a−b n , so there is a ono to one cor- respondence between the phase functions Φa,b n and the phase functions Ψa′,b′ n with a′ + b′ even. If (x, y) is a critical point of Ψa′,b′ n with a′ + b′ odd, then (x, y) is also a critical point of Ψa′+1,b′ n−q by Theorem 8. In that way we see that any critical point of one of the functions Ψa′,b′ n is also a critical point of one of the functions Φa,b n . ii) Assume that |p/q| > √ 20 and assume that (xj, yj), j = 1, 2, are degenerate critical points of phase functions Φa,b n belonging to S. Let vj = eπixj and wj = e2πi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/rem-sec-010-09",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 70,
+      "target": "rem-sec-010-09.md",
+      "narrative": null,
+      "content": "Let (v, w) be a non-zero solution to (4.41) and (4.42). Then (¯v, ¯w) is also a solution to these two equations as already observed. Let z = v2 and write (z, w) = (e2πix, e2πiy). Then (¯z, ¯w) = (e−2πi¯x, e−2πi¯y). If (x, y) is a critical point of Ψa,b n , then (−¯x, −¯y) is a critical point of Ψ−a,−b −n . By Lemma 6 and (5.80) we have Im \u0000Ψa,b n (x, y) \u0001 = −Im \u0010 Ψ−a,−b −n (−¯x, −¯y) \u0011 . Hence, if this value is diﬀerent from zero, then either exp(2πirΨ−a,−b −n (−¯x, −¯y)) or exp(2πirΨa,b n (x, y)) grows exponentially. We note that by Conjecture 3 and",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/rem-sec-010-14",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 70,
+      "target": "rem-sec-010-14.md",
+      "narrative": null,
+      "content": "If u± = u±(v) are the two solutions to φ(v2, u) = 0 for v ∈C∗ﬁxed, then λ11(v, u−) = λ11(v, u+)−1 by Lemma 9. By the proof of Theorem 7 we there- fore conclude that (v, 1 + uε), ε ∈{±}, is a solution to (4.41) and (4.42) if and only if (v, 1 + u−ε) is a solution to (4.42) and vp = \u0012 w −v2 1 −v2w \u0013q . (5.92) If we work with the invariants τr instead of the invariants ¯τr, then by (2.16) we have to change p/q to −p/q everywhere in the above. The equation (4.42) will be the same but (4.41) will change to (5.92). If (v, u) ∈˜ N then we ﬁnd as in the proof of Theorem 7 that (v, w) = (v, u + 1) is a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/thm-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 70,
+      "target": "thm-sec-010-01.md",
+      "narrative": null,
+      "content": "The map (x, y) 7→ρ(eπix,e2πiy−1) gives a surjection ϕ from the set of critical points (x, y) of the functions Ψa,b n , a, b, n ∈Z, with x /∈Z onto the set of representations ρ(s,u) : π →SL(2, C), (s, u) ∈˜ N , which extend to SL(2, C)– representations of π1(Mp/q). If (x, y) is a critical point, let us say of Ψa,b n , then (x + 2k, y + l) is a critical point of Ψa+l,b+2k n+pk for any k, l ∈Z, so ϕ−1(ϕ(x, y)) = { (x + 2k, y + l) | k, l ∈Z } if x /∈Z.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0506456v1/blocks/thm-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 70,
+      "target": "thm-sec-010-03.md",
+      "narrative": null,
+      "content": "Let (x, y) ∈C2 such that ρ(eπix,e2πiy−1) is equivalent to a nonabelian SU(2)–representation of π1(Mp/q) and choose in accordance with Theorem 7 integers a, b, n such that (x, y) is a critical point of Ψa,b n . If a′, b′, n′ is another such set of integers, then b′ = b and a′ + n′/q = a + n/q. In fact we have a + n q = y + p 2qx + i 2π \u0010 Log \u0010 1 −e2πi(x+y)\u0011 −Log \u0010 1 −e2πi(x−y)\u0011\u0011 , b = x + i 2π \u0010 Log \u0010 1 −e2πi(x+y)\u0011 + Log \u0010 1 −e2πi(x−y)\u0011\u0011 . Moreover, for any such set of integers a, b, n we have CS(¯ρθ,ε) = Ψa,b n (x, y) (mod Z), where θ ∈[−1/3, −1/6] ∪[1/6, 1/3] and ε ∈{±} with e2πiθ = eπix and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

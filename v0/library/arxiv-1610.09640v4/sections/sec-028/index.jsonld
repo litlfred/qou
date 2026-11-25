@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-028",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "DG Rings and Modules",
+  "pageStart": 59,
+  "pageEnd": 62,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-028",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-028-01",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-028-02",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-028-03",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-028-04",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-028-05",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-028-06",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-028-07",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-028-08",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-028-09",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-028-10"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

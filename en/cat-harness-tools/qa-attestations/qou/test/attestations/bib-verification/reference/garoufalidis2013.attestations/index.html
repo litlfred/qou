@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/garoufalidis2013.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-9sln5323c1.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-9sln5323c1","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/garoufalidis2013.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/garoufalidis2013.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/garoufalidis2013.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;garoufalidis2013&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 240,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/arxiv-1304.2705v1/1304.2705v1.pdf&quot;
+      },
+      &quot;id&quot;: &quot;garoufalidis2013&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;core&quot;,
+        &quot;rationale&quot;: &quot;This is the paper that writes the 4_1 state integral as an explicit BILINEAR combination of a q-series and a q-tilde-series, and identifies the resulting power series as Kontsevich-Soibelman admissible with the Nahm/gluing equation as its q -&gt; 1 limit. Both are objects the folio already reasons about without this anchor: conj:modular-s-transform-q-q-tilde (D14) conjectures that every Hecke quantity continues to the modular parameter and pairs q with q-tilde, citing only kashaev1997 / neumann-zagier1985 / kashaev-tirkkonen2014; and conj:stokes-dt-bps-bridge + thm:aomega-fourone-dt-count run the 4_1 resurgent-Stokes/DT route on the Garoufalidis-Gu-Marino q-series whose origin is exactly the factorisation proved here. The sibling garoufalidis-kashaev2015 (&#39;Evaluation of state integrals at rational points&#39;) is already registered; this earlier companion, which supplies the factorisation itself, is not. Corpus-grep: no ref() entry, no title match, no Lean -- Ref:.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;Cor. 1.7(a), eq. (14)-(15)&quot;,
+            &quot;statement&quot;: &quot;The Andersen-Kashaev state integral of the figure-eight knot factorises as I_{4_1}(b) = -(i/2)(q/q~)^{1/24}( b·G(q)g(q~) - b^{-1}·G(q~)g(q) ), an explicit bilinear pairing of two q-hypergeometric series evaluated at q and at the modular partner q~.&quot;,
+            &quot;useForFolio&quot;: &quot;A proved, explicit instance of the q &lt;-&gt; q~ pairing that conj:modular-s-transform-q-q-tilde asserts abstractly (its Open R&amp;D item 1 asks precisely for framework quantities with well-defined modular continuation). It is also the source of the two 4_1 q-series whose Stokes matrix supplies the certified S^+(0)_{01} = 3 datum feeding A_omega(4_1).&quot;,
+            &quot;targets&quot;: [
+              &quot;conj:modular-s-transform-q-q-tilde&quot;,
+              &quot;thm:aomega-fourone-dt-count&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Lemma 1.5(a), eq. (10)&quot;,
+            &quot;statement&quot;: &quot;F_{A,B}(q^{-1}, x) = F~_{A,B}(q, x) — inverting q exchanges the series with its modular partner.&quot;,
+            &quot;useForFolio&quot;: &quot;Directly relevant to the folio&#39;s bar-vs-S-transform bookkeeping: the D14 block argues that only q_0^{-1} ~ 0.901 lands in the upper half-plane, so the modular sector is intrinsically bar-symmetric. This lemma is the literature statement of that bar/modular exchange at the level of the q-series themselves.&quot;,
+            &quot;targets&quot;: [
+              &quot;conj:modular-s-transform-q-q-tilde&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Cor. 1.6(b), eq. (12)&quot;,
+            &quot;statement&quot;: &quot;F is an admissible power series in the sense of Kontsevich-Soibelman [KS11, §6]; the limit omega(x) = lim_{q-&gt;1} omega(q,x) exists and satisfies the Nahm/gluing equation (1 - omega)^B = (-1)^A x·omega^A.&quot;,
+            &quot;useForFolio&quot;: &quot;Bridges the 4_1 q-series to the Kontsevich-Soibelman wall-crossing framework that conj:stokes-dt-bps-bridge invokes when it identifies the Stokes constant with Omega_DT — a named, published link between the knot&#39;s q-series and the DT machinery, rather than an asserted one.&quot;,
+            &quot;targets&quot;: [
+              &quot;conj:stokes-dt-bps-bridge&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;add-reference&quot;,
+            &quot;rationale&quot;: &quot;Orphan; three distinct downstream uses. The companion garoufalidis-kashaev2015 is already registered, so the key should follow that naming.&quot;,
+            &quot;target&quot;: &quot;folio/schema/references.ts (new id, e.g. garoufalidis-kashaev2013)&quot;,
+            &quot;bean&quot;: &quot;qou-5mkt&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;conj:modular-s-transform-q-q-tilde asserts modular continuation and a q&lt;-&gt;q~ duality with no explicit factorisation anchor in its cites[] (kashaev1997, neumann-zagier1985, kashaev-tirkkonen2014). Cor. 1.7 is a proved instance.&quot;,
+            &quot;target&quot;: &quot;conj:modular-s-transform-q-q-tilde&quot;,
+            &quot;bean&quot;: &quot;qou-kmtw&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;conj:stokes-dt-bps-bridge invokes Kontsevich-Soibelman DT data for the knot&#39;s q-difference structure; Cor. 1.6(b) is the published statement that these knot q-series are KS-admissible.&quot;,
+            &quot;target&quot;: &quot;conj:stokes-dt-bps-bridge&quot;,
+            &quot;bean&quot;: &quot;qou-iakc&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T00:00:00Z&quot;,
+        &quot;source_sha&quot;: &quot;cb07e66e418e&quot;
+      },
+      &quot;note&quot;: &quot;Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \&quot;held but uncitable\&quot;; the join already existed on the references.ts side.&quot;,
+      &quot;verified_at&quot;: &quot;2026-09-03T04:37:40Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-5&quot;
+      }
+    }
+  },
+  {
+    &quot;position&quot;: 401,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/stateintegralsqseries/state.integrals.qseries.pdf&quot;
+      },
+      &quot;id&quot;: &quot;garoufalidis2013&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;core&quot;,
+        &quot;rationale&quot;: &quot;Garoufalidis-Kashaev, &#39;From state integrals to q-series&#39;: a detailed proof, for a family of one-dimensional state integrals I_{A,B}(b) = int Phi_b(x)^B exp(-A pi i x^2) dx, that such integrals equal finite sums of products of a q-series and a q-tilde-series, with q = exp(2 pi i b^2) and q-tilde = exp(-2 pi i / b^2); the mechanism is the factorized structure of Faddeev&#39;s quantum dilogarithm Phi_b = (e^{2 pi b(x+c_b)}; q)_infty / (e^{2 pi b^{-1}(x-c_b)}; q-tilde)_infty together with its pole structure and the residue theorem, and the worked applications are the state-integral invariants of the 4_1 and 5_2 knots. That factorization IS the object the corpus&#39;s live c_3 bar-odd front is built on: docs/audits/2026-07-25-5two-gk-bridge-attack.md (beans qou-reat, o3cv, jtii, exes) works entirely with &#39;the GK bilinear block pairing Z = sum M_{sigma sigma&#39;} B_sigma(q) B-tilde_{sigma&#39;}(q-tilde)&#39; and its state-integral dressing, and the corpus&#39;s registered sources for it are GK 1411.6062 (evaluation at rational points) and GGM (peacock patterns) -- the theorem that produces the bilinear q / q-tilde block form in the first place has no ref() entry, and both of its worked knots are exactly the corpus&#39;s two.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;Thm. 1.1&quot;,
+            &quot;statement&quot;: &quot;The one-dimensional state integral I_{A,B}(b) equals a finite sum of products of a q-series and a q-tilde-series, obtained by residues from the factorized form of Phi_b, with generating series F_{A,B}(q,x).&quot;,
+            &quot;useForFolio&quot;: &quot;The theorem that licenses the bilinear block form Z = sum M B_sigma(q) B-tilde_{sigma&#39;}(q-tilde) on which the 5_2 GK-bridge attack&#39;s 440 pre-registered entry comparisons and its block-row-selection successor are built; currently used with no citation for the factorization itself.&quot;,
+            &quot;targets&quot;: [
+              &quot;conj:stokes-dt-bps-bridge&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Cor. 1.7 and Cor. 1.8&quot;,
+            &quot;statement&quot;: &quot;Explicit q / q-tilde factorizations of the state-integral invariants of the 4_1 and 5_2 knots.&quot;,
+            &quot;useForFolio&quot;: &quot;The 4_1 and 5_2 block series the corpus&#39;s bilinear-bridge probes construct and compare against the Habiro-face targets; the corpus&#39;s gate for the 4_1 case currently cites the b=1 closed form of GK 1411.6062 instead.&quot;,
+            &quot;targets&quot;: [
+              &quot;conj:stokes-dt-bps-bridge&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;add-reference&quot;,
+            &quot;rationale&quot;: &quot;The factorization theorem underlying the corpus&#39;s entire GK bilinear-block programme (4_1 and 5_2 both worked) has no bibliography entry, while the downstream GK and GGM papers do.&quot;,
+            &quot;target&quot;: &quot;conj:stokes-dt-bps-bridge&quot;,
+            &quot;bean&quot;: &quot;qou-rcr0&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;The block asserting the Stokes/DT state-integral bridge should cite the theorem that produces the q / q-tilde bilinear block structure it uses.&quot;,
+            &quot;target&quot;: &quot;conj:stokes-dt-bps-bridge&quot;,
+            &quot;bean&quot;: &quot;qou-9g1w&quot;
+          },
+          {
+            &quot;action&quot;: &quot;new-remark&quot;,
+            &quot;rationale&quot;: &quot;Record the scope honestly: Thm 1.1 is proved for the ONE-dimensional family I_{A,B}; the general multi-dimensional statement is described as well known to experts but not proved here. Any corpus use beyond 4_1 / 5_2 should say which case it is relying on.&quot;,
+            &quot;target&quot;: &quot;conj:stokes-dt-bps-bridge&quot;,
+            &quot;bean&quot;: &quot;qou-au0u&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T23:34:05.459Z&quot;,
+        &quot;source_sha&quot;: &quot;a5e86443f35e&quot;
+      },
+      &quot;note&quot;: &quot;Bib key backfilled from duplicate copy of arxiv-1304.2705v1, which carries this key. The row carried `id: null`, which read as \&quot;held but uncitable\&quot;; the join already existed on the references.ts side.&quot;,
+      &quot;verified_at&quot;: &quot;2026-09-03T04:37:40Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-5&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

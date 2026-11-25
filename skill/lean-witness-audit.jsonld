@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/lean-witness-audit.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/lean-witness-audit",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "lean-witness-audit",
+      "title": "Lean Witness Audit Skill",
+      "description": "Audit Python computation scripts that produce witness statements for Lean formalization. Verify witnesses are complete, self-documenting, use paper notation, link to a content block, and emit Lean-compatible declarations. Detects staleness via script content hash and git commit SHA.",
+      "instructionsPath": "skills/local/lean-witness-audit.md",
+      "instructionLines": 207,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

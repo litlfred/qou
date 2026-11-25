@@ -1,0 +1,818 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0607416v6",
+  "title": "arxiv-math-0607416v6",
+  "variant": "pdf",
+  "pages": 23,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Main Results",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-main-results"
+    },
+    {
+      "level": 2,
+      "title": "Hyperbolicity and Stability Preservers",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-hyperbolicity-and-stability-preservers"
+    },
+    {
+      "level": 2,
+      "title": "Preservers of Polynomials with Zeros in a Closed Circular Domain or Its Boundary",
+      "number": "2.2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-preservers-of-polynomials-with-zeros-in-a-clo"
+    },
+    {
+      "level": 1,
+      "title": "Proofs of the Main Results",
+      "number": "3",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-proofs-of-the-main-results"
+    },
+    {
+      "level": 2,
+      "title": "Hyperbolic and Stable Polynomials",
+      "number": "3.1",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-31-hyperbolic-and-stable-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "The Transcendental Characterization",
+      "number": "3.2",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-32-the-transcendental-characterization"
+    },
+    {
+      "level": 2,
+      "title": "Closed Circular Domains and Their Boundaries",
+      "number": "3.3",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-33-closed-circular-domains-and-their-boundaries"
+    },
+    {
+      "level": 1,
+      "title": "Open Problems",
+      "number": "4",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-4-open-problems"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 102,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "olya-schur",
+          "heading": false
+        },
+        {
+          "term": "circular",
+          "heading": false
+        },
+        {
+          "term": "petter",
+          "heading": false
+        },
+        {
+          "term": "domains",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0607416v6 [math.CV] 27 Jul 2008 P´OLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES JULIUS BORCEA AND PETTER BR¨AND´EN Abstract. We characterize all linear operators on ﬁnite or inﬁnite-dimensio- nal polynomial spaces that preserve the property of having the zero set inside a prescribed region Ω⊆C for arbitrary closed circular domains Ω(i.e., images of the closed unit disk under a",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0607416v6/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1233,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "laguerre-p olya",
+          "heading": false
+        },
+        {
+          "term": "half-plane cite",
+          "heading": false
+        },
+        {
+          "term": "laguerre cite",
+          "heading": false
+        },
+        {
+          "term": "olya class",
+          "heading": false
+        },
+        {
+          "term": "closed half-plane",
+          "heading": false
+        },
+        {
+          "term": "cite lag",
+          "heading": false
+        },
+        {
+          "term": "transcendental characterizations",
+          "heading": false
+        },
+        {
+          "term": "problems ref",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s1} Some of the main challenges in the theory of distribution of zeros of polynomials and transcendental entire functions concern the description of linear operators that preserve certain prescribed (``good'') properties. Notwithstanding their fundamental character, most of these problems are in fact still open as they turn out to be surprisingly difficult in full generality. Two outstanding questions among",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-main-results",
+      "number": "2",
+      "title": "Main Results",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-hyperbolicity-and-stability-preservers",
+      "number": "2.1",
+      "title": "Hyperbolicity and Stability Preservers",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1717,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stability preservers",
+          "heading": true
+        },
+        {
+          "term": "hyperbolicity",
+          "heading": true
+        },
+        {
+          "term": "preserves hyperbolicity",
+          "heading": false
+        },
+        {
+          "term": "interlacing zeros",
+          "heading": false
+        },
+        {
+          "term": "itemize item",
+          "heading": false
+        },
+        {
+          "term": "alpha leq",
+          "heading": false
+        },
+        {
+          "term": "real stability",
+          "heading": false
+        },
+        {
+          "term": "beta leq",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ss21} To formulate the complete answers to Problems~\\ref{pb1}--\\ref{pb2} for $\\RR$ and the half-plane $\\{z \\in \\CC: \\Im(z) \\leq 0\\}$ we need to introduce some notation. As in \\cite{BBS} -- and following the commonly used terminology in e.g.~the theory of partial differential equations \\cite{ABG} -- we call a non-zero univariate polynomial with real coefficients {\\em hyperbolic} if all its zeros are real. Such",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-preservers-of-polynomials-with-zeros-in-a-clo",
+      "number": "2.2",
+      "title": "Preservers of Polynomials with Zeros in a Closed Circular Domain or Its Boundary",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1219,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circular domain",
+          "heading": true
+        },
+        {
+          "term": "closed circular",
+          "heading": true
+        },
+        {
+          "term": "open circular",
+          "heading": false
+        },
+        {
+          "term": "obius transformation",
+          "heading": false
+        },
+        {
+          "term": "eqref mobius",
+          "heading": false
+        },
+        {
+          "term": "transformation phi",
+          "heading": false
+        },
+        {
+          "term": "ref circularregion",
+          "heading": false
+        },
+        {
+          "term": "itemize item",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ss22} Recall that a M\\\"obius transformation is a bijective conformal map of the extended complex plane, i.e., a map $\\Phi : \\CC\\cup \\{\\infty\\} \\rightarrow \\CC \\cup \\{\\infty\\}$ given by \\begin{equation}\\label{mobius} \\Phi(z)= \\frac {az+b}{cz+d}, \\quad a,b,c,d \\in \\CC,\\, ad-bc \\neq 0. \\end{equation} The inverse of $\\Phi$ is then given by $$ \\Phi^{-1}(z)= \\frac{dz-b}{-cz+a}. $$ \\begin{definition}\\label{def-circ}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-proofs-of-the-main-results",
+      "number": "3",
+      "title": "Proofs of the Main Results",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-31-hyperbolic-and-stable-polynomials",
+      "number": "3.1",
+      "title": "Hyperbolic and Stable Polynomials",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3029,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperbolic polynomials",
+          "heading": true
+        },
+        {
+          "term": "hyperbolicity preserver",
+          "heading": false
+        },
+        {
+          "term": "obreschkoff theorem",
+          "heading": false
+        },
+        {
+          "term": "stable",
+          "heading": true
+        },
+        {
+          "term": "ref finitestab",
+          "heading": false
+        },
+        {
+          "term": "deg leq",
+          "heading": false
+        },
+        {
+          "term": "ref finitehyp",
+          "heading": false
+        },
+        {
+          "term": "preserves hyperbolicity",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ss31} If the zeros of two hyperbolic polynomials $f,g\\in\\HH_1(\\bR)$ interlace then the {\\em Wronskian} $W[f,g]:=f'g-fg'$ is either non-negative or non-positive on the whole real axis $\\RR$. \\begin{definition}\\label{def-pp} Given $f,g \\in \\HH_1(\\bR)$ we say that $f$ and $g$ are in {\\em proper position}, denoted $f \\ll g$, if the zeros of $f$ and $g$ interlace and $W[f,g] \\leq 0$. \\end{definition} For technical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-32-the-transcendental-characterization",
+      "number": "3.2",
+      "title": "The Transcendental Characterization",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1193,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leq mbox",
+          "heading": false
+        },
+        {
+          "term": "szasz",
+          "heading": false
+        },
+        {
+          "term": "binom lambda",
+          "heading": false
+        },
+        {
+          "term": "zeta",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "asz",
+          "heading": false
+        },
+        {
+          "term": "zeros",
+          "heading": false
+        },
+        {
+          "term": "leftrightarrow",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ss32} We will need the following lemma due to Sz\\'asz, see \\cite[Lemma 3]{szasz}. \\begin{lemma}[Sz\\'asz]\\label{szasz} Let $m,n\\in\\bN$ with $m\\le n$ and $f(z)=\\sum_{k=m}^{n}c_kz^k\\in\\bC[z]$. If $f(z)\\in\\HH_1(\\CC)$ and $c_mc_n \\neq 0$ then for any $r\\ge 0$ one has $$ |f(z)| \\leq |c_m|r^m\\exp \\left(r\\frac{|c_{m+1}|}{|c_m|} +3r^2\\frac{|c_{m+1}|^2}{|c_m|^2}+3r^2\\frac{|c_{m+2}|}{|c_m|}\\right) $$ whenever $|z| \\leq",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-33-closed-circular-domains-and-their-boundaries",
+      "number": "3.3",
+      "title": "Closed Circular Domains and Their Boundaries",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2149,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overline stable",
+          "heading": false
+        },
+        {
+          "term": "stable polynomial",
+          "heading": false
+        },
+        {
+          "term": "partial stable",
+          "heading": false
+        },
+        {
+          "term": "ref circularregion",
+          "heading": false
+        },
+        {
+          "term": "ref fifi",
+          "heading": false
+        },
+        {
+          "term": "real stable",
+          "heading": false
+        },
+        {
+          "term": "let phi",
+          "heading": false
+        },
+        {
+          "term": "itemize item",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ss33} Recall Definitions~\\ref{def1} and~\\ref{def-circ}, Notation~\\ref{not-sets} and the linear operators $\\phi_n$ introduced in Notation~\\ref{not-fi}. In particular, an $H$-stable polynomial in the sense of Definition~\\ref{def-circ} is precisely a stable polynomial in the sense of Definition~\\ref{def1}. \\begin{lemma}\\label{save} Let $T : \\CC_n[z] \\rightarrow \\CC_m[z]$ be a linear operator and suppose $m$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-open-problems",
+      "number": "4",
+      "title": "Open Problems",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 570,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite bbcv",
+          "heading": false
+        },
+        {
+          "term": "iserles",
+          "heading": false
+        },
+        {
+          "term": "transformations preserving",
+          "heading": false
+        },
+        {
+          "term": "linear transformations",
+          "heading": false
+        },
+        {
+          "term": "multiplier sequences",
+          "heading": false
+        },
+        {
+          "term": "olya",
+          "heading": false
+        },
+        {
+          "term": "real roots",
+          "heading": false
+        },
+        {
+          "term": "problems",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{s4} As we already noted in \\S \\ref{s1}, Problems \\ref{pb1} and \\ref{pb2} have a long and distinguished history. In this paper we completely solved them for a particularly relevant type of sets, namely all closed circular domains and their boundaries. Among the most interesting remaining cases that are currently under investigation we mention: \\begin{enumerate} \\item[(a)] $\\Omega$ is an open circular domain,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 902,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reellen wurzeln",
+          "heading": false
+        },
+        {
+          "term": "olya frequency",
+          "heading": false
+        },
+        {
+          "term": "lauter reellen",
+          "heading": false
+        },
+        {
+          "term": "uber die",
+          "heading": false
+        },
+        {
+          "term": "acta math",
+          "heading": false
+        },
+        {
+          "term": "csordas",
+          "heading": false
+        },
+        {
+          "term": "mit lauter",
+          "heading": false
+        },
+        {
+          "term": "duke math",
+          "heading": false
+        }
+      ],
+      "extract": "[1] A. Aleman, D. Beliaev, H. Hedenmalm, Real zero polynomials and P´olya-Schur type theorems, J. Anal. Math. 94 (2004), 49–60. [2] M. F. Atiyah, R. Bott, L. G˙arding, Lacunas for hyperbolic diﬀerential operators with constant coeﬃcients I, Acta Math. 124 (1970), 109–189. [3] J. Borcea, P. Br¨and´en, Multivariate P´olya-Schur classiﬁcation problems in the Weyl algebra, arXiv:math/0606360. [4] J. Borcea, P.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "stable polynomials",
+      "heading": true
+    },
+    {
+      "term": "real zeros",
+      "heading": false
+    },
+    {
+      "term": "interlacing zeros",
+      "heading": false
+    },
+    {
+      "term": "itemize item",
+      "heading": false
+    },
+    {
+      "term": "stability preserver",
+      "heading": false
+    },
+    {
+      "term": "partial stable",
+      "heading": false
+    },
+    {
+      "term": "olya cite",
+      "heading": false
+    },
+    {
+      "term": "open circular",
+      "heading": false
+    },
+    {
+      "term": "begin itemize",
+      "heading": false
+    },
+    {
+      "term": "overline stable",
+      "heading": false
+    },
+    {
+      "term": "whose zeros",
+      "heading": false
+    },
+    {
+      "term": "end itemize",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p21); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0607416v6"
+  }
+}

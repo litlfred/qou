@@ -1,0 +1,481 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-9712256v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "arXiv:hep-th/9712256v2  27 Jun 1998\nLPM-97/03\nhep-th/9712256\nON STRUCTURE CONSTANTS AND FUSION RULES IN THE\nSL(2, C)/SU(2) WZNW MODEL\nJ. TESCHNER\nAbstract. A closed formula for the structure constants in the SL(2,C)/SU(2) WZNW model\nis derived by a method previously used in Liouville theory.\nWith the help of a reﬂection\namplitude that follows from the structure constants one obtains a proposal for the fusion rules\nfrom canonical quantization. Taken together these pieces of information allow an unambigous\ndeﬁnition of any genus zero n-point function.\n1. Introduction\nLittle is known about confor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "2\nJ. TESCHNER\nand SL(2, R) by Gelfand, Naimark and Bargmann was the starting point for the representation\ntheory of noncomapct groups in general.\nThe present paper is part of a series of three papers on that subject. The ﬁrst one [T1] studies\nthe semiclassical or mini-superspace limit in detail. The theory essentially reduces to harmonic\nanalysis on the symmetric space H+\n3 , so a rather complete and rigorous treatment is possible\nin this limit. This nicely illustrates how the new qualitative features of the H+\n3 WZNW model\ncompared to compact CFT’s can be understood from the point of view of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 1\n3\nThe starting point of the present discussion will be the following action\nS = 1\nπ\nZ ∞\n−∞\ndτ\nZ 2π\n0\ndσ\n\u0000∂+φ∂−φ + ∂+u∂−¯ue−2φ\u0001\n,\n(2)\nwhere τ and σ denote the time and (periodic) space variables respectively. This action may be\nobtained [Ga] from a SL(2, C)-WZNW model by gauging the SU(2) subgroup in the Lagrangian\nformalism.\nAnyway, action (2) deﬁnes a sigma-model with target H+\n3 that will be shown to\npossess conformal invariance via canonical quantization.\n2.1. Canonical quantization. Introducing the canonical momenta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "4\nJ. TESCHNER\nThe quantum Hamiltonian, normal ordered corresponding to the choice of Fock vacuum then\nreads\nH =HF + HI\nHF =2(P 2 + ibP) +\n∞\nX\nk=1\n\u00002a−kak + 2¯a−k¯ak + Πv,−kvk + v−kΠv,k −Π¯v,−k¯vk −¯v−kΠ¯v,k\n\u0001\nHI =2\nZ 2π\n0\ndσ\n2π Πv(σ)Π¯v(σ) : e2bϕ :\n(10)\nThe operator H will initially be considered to act in the space S of all\nΨ =\nX\nI\nAIΩΨI(q, v, ¯v),\n(11)\nwhere the AI are monomials in the oscillators labelled by suitable multi-indices I, and the\nfunctions ΨI(h) ∈C∞\nc (H+\n3 ) are assumed to be nonzero only for ﬁnitely many I.\nOne has to note however the following problem: There does not seem to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 2\n5\nOne may then ﬁnally deﬁne the space of states V as the completion of S w.r.t. ∥.∥\n2.2. Current algebra. In terms of the canonical variables one may construct the currents\nJ−(σ) =iΠ¯v(σ)\nJ0(σ) = + i : ¯v(σ)Π¯v(σ) : +ib−1\n2\n\u0000Πϕ(σ) + ϕ′(σ)\n\u0001\nJ+(σ) = −i\n\u0010\nk¯v′(σ)+ : (¯v(σ))2Π¯v(σ) : +b−1¯v(σ)\n\u0000Πϕ(σ) + ϕ′(σ)\n\u0001\n+ Πv(σ) : e2bϕ(σ) :\n\u0011\n,\n(19)\nas well as currents ¯Ja(σ) obtained by hermitian conjugation. The two crucial properties satisﬁed\nby these deﬁnitions are:\n(1) The currents have the following commutation relations with H",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "6\nJ. TESCHNER\nsatisﬁes\n[Hµ, Ja\nµ(σ)] = −i∂σJa\nµ(σ)\n[Hµ, ¯Ja\nµ(σ)] = i∂σ ¯Ja\nµ(σ)\n(25)\nfor any value of µ. By taking the value µ = 1 one recovers the canonical Hamiltonian of the\nH+\n3 -WZNW model.\n2.3. The Spectrum. The decompostion of the space of states into irreducible representations\nof the current algebra sl2 ⊕sl2 was found in [Ga] by explicitely evaluating the path integral on\nthe torus. The result was then shown to agree with the deﬁnition of the partition function via\nZ(q, u) = |q|−ck\n12 TrH qL0 ¯q\n¯L0e2πi(uJ0\n0 −¯u ¯J0\n0 )\n(26)\nif the trace is performed over the space H spanned by L2(H",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 3\n7\nwhich are irreducible by the results in [T2]. It is important to note that although one has chiral\nfactorization on the level of the algebra, one has no factorization of the representation Pj in\nthe form Rj ⊗¯Rj, where Rj (resp. ¯Rj) are irreducible representations of the current algebras\ngenerated by Ja\nn (resp. ¯Ja\nn).\nBy the Sugawara construction one then also gets an action of two commuting Virasoro algebras\n(generators Ln, ¯Ln) on ˆS(H+\n3 ) resp. Pj. States Ψ ∈S+\n3 satisfy\nL0Ψ = −t−1QΨ,\n¯L0Ψ = −t−1QΨ,\nand LnΨ = 0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "8\nJ. TESCHNER\nThe corresponding primary ﬁelds Φ[Ψ(j; x|.)|z) will be denoted Φj(x|z). The transformation\nlaw (36) may then be reformulated as the following OPE\nJa(z)Φj(x|w) =\n1\nz −wDa\nj Φj(x|w),\n¯Ja(¯z)Φj(x|w) =\n1\n¯z −¯w\n¯Da\nj Φj(x|w)\n(38)\nwhere the diﬀerential operators Da\nj representing sl2 are\nD+\nj = −¯x2∂¯x + 2j¯x\nD0\nj = −¯x∂¯x −j\nD−\nj = ∂¯x,\n(39)\nthe ¯Da\nj their complex conjugates.\nThe representations with spin j and −j −1 are equivalent for j /∈Z. This implies that the\noperators Φj(x|z) and Φ−j−1(x|z) must be related by a relation of the form\nΦ−j−1(x|z) = −R(j)2j + 1\nπ\nZ\nC\nd2x′ |x −x′|−4",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 4\n9\nIn order to use the current algebra symmetries to get information on n-point functions for\nn > 3 one postulates operator product expansions of the form\nΦj2(x2|z2)Φj1(x1|z1) =\nZ\nS\ndµ(j) |z2 −z1|2(hj−h2−h1)\n×\n∞\nX\nn,¯n=0\n(z2 −z1)n(z2 −z1)¯nOj\nn¯n\n\u0002 j2\nx2\nj1\nx1\n\u0003\n(z1).\n(44)\nThe measure dµ(j) was introduced to simplify notation as one will in general have to sum over\ndiscrete as well as continuous sets of j.\nRequiring that both sides of (44) transform the same way under the current algebra allows to\nexpress the operators O",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "10\nJ. TESCHNER\nA fundamental physical requirement, which is equivalent to mutual locality of primary ﬁelds,\nis that the expansions (48) and (49) into s-channel and t-channel conformal blocks produce the\nsame correlation functions (crossing symmetry). One may hope to infer from the equality of the\ntwo decompositions (48), (49) the existence of fusion relations by an argument similar to that\ngiven for RCFT in [MS]:\nFs,j21\nh\nj4\nx4\nj3\nx3\nj2\nx2\nj1\nx1\ni\n(z4, . . . , z1) =\nZ\ndµ(j32) Fj21j32\nh\nj3j2\nj4j1\ni\nFt,j32\nh\nj4\nx4\nj2\nx2\nj3\nx3\nj1\nx1\ni\n(z4, . . . , z1)\n(50)\nIndeed, in order to make up an argument",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 5\n11\nwhere Ja(x|z) = exJ−\n0 Ja(z)e−xJ−\n0 .\n4.2. The method, assumptions. The method to be used will consist of considering four\npoint functions in which one of the operators is a degenerate ﬁeld Φr,s, the others generic. The\nmain assumption will be that these four point functions are crossing symmetric. More precisely\nthe assumption is that the conditions (51) for crossing symmetry with four generic ﬁelds are\ncompatible with those considered here.\nThe considered four point functions will satisfy degeneracy equations in ad",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "12\nJ. TESCHNER\nand ∆= j1 + j2 + j3 −j4. There are now three independent solutions in the s-channel case\ncorresponding to j21 = j1 ∓t/2 as well as j21 = −j1 −1 + t/2. They will be denoted F\n1,2\ns±\nand F\n1,2\ns× respectively. The fusion matrices F 1,2\nστ are deﬁned similarly as in (57), with obvious\nmodiﬁcations. Again the explicit expressions for conformal blocks and fusion matrices are to be\nfound in the appendix.\n4.4. Liouville case. It will turn out that parts of the analysis are closely related to the corre-\nsponding analysis for Liouville theory [TL]. This will not only allow to simplify so",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 6\n13\nwhere µL(b) represents the only leftover freedom, which corresponds to the cosmological constant.\nInserting this into (60) yields the functional relation for CL(α3, α2, α1) derived in [TL]:\nCL(α3, α2, α1 + b)\nCL(α3, α2, α1)\n=\n\u0000µL(b)\n\u0001−1γ(b(2α1 + b))γ(2bα1)γ(b(α3 + α4 −α1 −b))\nγ(b(α1 + α3 −α4))γ(b(α1 + α4 −α3))γ(b(α1 + α3 + α4 −b) −1).\nA second functional equation is of course obtained by b →b−1 and µL(b) →˜µL(b−1) These two\nfunctional equations are solved by an expression of the form\nCL(α1, α2, α3) =\n(µL(b))−b−1(α1+α",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "14\nJ. TESCHNER\nIn terms of the G’s it is therefore easy to write the most general crossing invariant and single\nvalued combination of conformal blocks: To simplify notation I will drop the superscript (1,2)\nand subscript s in the following.\nΨ ≡< Φj4 . . . Φj1 >=\nX\nσ=+,−\nEL\nσGσ(x, z)Gσ(¯x, ¯z) + EDGs(x, z)Gs(¯x, ¯z),\nwhere ED is arbitrary. Written in the F-basis of conformal blocks there appear non-diagonal\nterms:\nΨ =EL\n+F+ ¯F+ +\n\u0000EL\n−a2\n−+ EDb2\n−\n\u0001\nF−¯F−+\n\u0000EL\n−a2\n× + EDb2\n×)F× ¯F×\n+ (EL\n−a−a× + EDb−b×)\n\u0010\nF−¯F× + F× ¯F−\n\u0011\n,\n(63)\nwhere the abbreviations Fσ ≡Fσ(x, z), ¯Fσ ≡Fσ(¯x, ¯z) have been us",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 15",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/page-015.md",
+      "narrative": null,
+      "content": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 7\n15\n5. Fusion rules\nFusion rules are the rules determining the set of irreducible representations contributing in\nthe decomposition of the vector obtained by acting with a primary ﬁeld Φj2(x|z) on a primary\nstate Ψj1.\nIn most current algebra representations relevant in the present context there are no nullvectors\n(cf. [T2]). The determination of fusion rules is therefore not an algebraic issue: In [T2] it is\nshown that chiral vertex operators between three representations with spins j3, j2, j1 exist for\na certain range o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 16",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/page-016.md",
+      "narrative": null,
+      "content": "16\nJ. TESCHNER\nrapidly converging (like ∼exp(−ebq)).\nSuppressing the diverging solution means that there\nmust be a ﬁxed relation F −\nN = R(j)F +\nN between F ±\nN , thereby deﬁning an operator R(j). This\nis nothing but the statement that the interaction term in the H+\n3 -Hamiltonian acts perfectly\nreﬂecting as the “Liouville-wall” does [S][P].\nThese considerations lead to the conjecture that for any given value of j and vectors F(v, ¯v) ∈\nFj there exists a unique solution Ψj[F] of HΨE = EΨE, E = t−1j(j + 1) in F ⊗C∞(H+\n3 ) that\nhas asymptotics (71) with F + ≡F, F −\nN = R(j)F +\nN and which conver",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 17",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/page-017.md",
+      "narrative": null,
+      "content": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 8\n17\nIn terms of the Φj\nµ¯µ(z) the primary ﬁeld transformation law takes the following form:\n[J+\nn , Φj\nµ¯µ(z)] =zn\n\u0012\n¯µ ∂2\n∂¯µ2 −2j ∂\n∂¯µ\n\u0013\nΦj\nµ¯µ(z)\n[J−\nn , Φj\nµ¯µ(z)] = −¯µΦj\nµ¯µ(z)\n[J0\nn, Φj\nµ¯µ(z)] = zn\n\u0012\n¯µ ∂\n∂¯µ −j\n\u0013\nΦj\nµ¯µ(z).\n(79)\nIt is a diﬃcult task to ﬁnd such operators in terms of the elementary operators used in canonical\nquantization. What can be found is again the q →−∞asymptotics of such an operator: In\nthis asymptotics one may replace Ja\nn, ¯Ja\nn by Ia\nn, ¯Ia\nn. The conditions obtained from (79) by that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 18",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/page-018.md",
+      "narrative": null,
+      "content": "18\nJ. TESCHNER\ncontributions.\nThis procedure allows to unambigously deﬁne the fusion rules of two generic\noperators.\n5.4. Consistency of fusion rules with structure constants. The fusion rules for the de-\ngenerate ﬁelds are severely restricted by the additional diﬀerential equations they satisfy. It is a\nnontrivial check on the previously obtained results on structure constants and fusion rules that\nby analytic continuing the OPE from the range (83) to i.e. j1 = j±\nr,s one indeed exactly recovers\nthe restricted fusion rules of degenerate ﬁelds.\nThe basic mechanism is as follows: If one sets i.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 19",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/page-019.md",
+      "narrative": null,
+      "content": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 9\n19\noneself that for any pole of Υ−1(α1 + α2 −b\n2iσ)Υ−1(α1 + α2 −b\n2 + iσ) that is missed one gets\nan additional pole from Υ−1(α1 −α2 + b\n2 −iσ)Υ−1(α2 −α1 + b\n2 −iσ).\nIt follows that analytic continuation of the operator product expansion (44) indeed yields the\ncorrect fusion rules for the operator product expansion of a degenerate and a generic ﬁeld when\nthe proposed fusion rules and structure constants are used.\nTo see that also the coeﬃcients are correctly reproduced it suﬃces to note that recursion\nrelations for the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 20",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/page-020.md",
+      "narrative": null,
+      "content": "20\nJ. TESCHNER\n7. Appendix\n7.1. Solutions to the Liouville decoupling equations. In order to write down the solutions,\nintroduce the parameters\nu = b(α1 + α3 + α4 −3b/2) −1\n¯u = b−1(α1 + α3 + α4 −3b−1/2) −1\nv = b(α1 + α3 −α4 −b/2)\n¯v = b−1(α1 + α3 −α4 −b−1/2)\nw = b(2α1 −b)\n¯w = b−1(2α1 −b−1)\nThen the solutions to the decoupling equation (59) that correspond to s-channel conformal blocks\nare given by\nF\nL2,1\ns+\n=\nzbα1(1 −z)bα3F(u, v, w; z)\nF\nL2,1\ns−\n=\nz1−b(α1−b)(1 −z)bα3F(u −w + 1, v −w + 1, 2 −w; z),\nwhereas the solutions for the t-channel are\nF\nL2,1\nt+\n=\nzbα1(1 −z)bα3F(u, v, u + v −w + 1; 1 −z",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 21",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/page-021.md",
+      "narrative": null,
+      "content": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 11\n21\nin the limit of ﬁrst taking z →0, then x →0. A set of normalized solutions for the s- and\nt-channel are then given by (t−= t−1)\nF\n2,1\ns+ =\nzt−j1(1 −z)t−j3\n\u0010\nF(u + 1, v, w; z) −x v\nwF(u + 1, v + 1, w + 1; z)\n\u0011\nF\n2,1\ns−=\nz−t−(j1+1)(1 −z)t−j3\u0010\nxF(u −w + 1, v −w + 1, 1 −w; z) −\nz u −w + 1\n1 −w\nF(u −w + 2, v −w + 1, 2 −w; z)\n\u0011\n,\nF\n2,1\nt+ =\n(1 −z)t−j3zt−j1\u0010\nF(u + 1, v, u + v −w + 1; 1 −z) +\n(1 −x)\nv\nu + v −w + 1F(u + 1, v + 1, u + v −w + 2; 1 −z)\n\u0011\nF\n2,1\nt−=\n(1 −z)−t−(j3+1)zt−j1\n\u0010\n(1 −x)F(w −u, w −v, w −u −v; 1 −z) −\n(1 −",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 22",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/page-022.md",
+      "narrative": null,
+      "content": "22\nJ. TESCHNER\nChap. III, pp. 55-65, each of them can be expressed in terms of the function F1 itself, for which\none has representations\nF1(α, β, β′, γ; x, z) =\nΓ(γ)\nΓ(α)Γ(γ −α)\nZ 1\n0\ndt tα−1(1 −t)γ−α−1(1 −xt)−β(1 −zt)−β′\n(88)\nor as the power series\nF1(α, β, β′, γ; x, z) =\n∞\nX\nn,m=0\n(α)m+n(β)m(β′)n\nγm+n\nxm\nm!\nyn\nn!\nThe task now is to identify solutions to the F1 equations with conformal blocks corresponding\nto deﬁnite intermediate representations. The s-channel conformal blocks should be of the form\n[T2]\nFs =\n∞\nX\nn=0\nzs+nfn(x),\nf0(x) =\nX\nm=0\nxr+mgn\n(89)\nIt may be shown that for generic (i.e. n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 23",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/page-023.md",
+      "narrative": null,
+      "content": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 12\n23\ncomplicated since none of the solutions given in loc. cit. has the required asymptotic behavior.\nConsider however\nZ8 = x−αF1\n\u0012\nα, α + 1 −γ, β′, α + 1 −β; 1\nx, z\nx\n\u0013\nFrom the power series expansion of F1 one easily sees that Z8 is analytic as function of z in a\nneighborhood of z = 0 and\nZ8|z=0 = x−αF(α, α + 1 −γ; α + 1 −β; 1/x),\nwhere F(α, β, γ, x) is the ordinary hypergeometric function. This is rewritten in terms of func-\ntions with simple asymptotics for x →0 by using standard results on the analytic continuation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 24",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/page-024.md",
+      "narrative": null,
+      "content": "24\nJ. TESCHNER\nF\n1,2\ns× =Γ(γ −β)\nΓ(1 −β)\n \nΓ(2 −γ)Γ(γ −β −β′ −α)\nΓ(γ −β −β′)Γ(1 −α)\nF\n1,2\nt+ −eπiγ Γ(2 −γ)Γ(α + β′ −γ)\nΓ(1 + α −γ)Γ(β′)\nF\n1,2\nt−\n+ eπiγ\n\u0012\neπi(β+β′−γ) sin πγ\nsin πβ −\nsin π(γ −α)\nsin π(γ −α −β′)\n\u0013 Γ(2 −γ)Γ(α + β + β′ −γ)\nΓ(β)Γ(1 + α + β′ −γ)\nF\n1,2\nt×\n!\n7.3.2. Alternative choice of basis for conformal blocks. An important simpliﬁcation of the fusion\nrelations is achieved by using the following linear combinations of the conformal blocks:\nG\n1,2\ns+ =F\n1,2\ns+\nG\n1,2\ns−=Γ(β + β′)Γ(1 + β −γ)\nΓ(β)Γ(β + β′ + 1 −γ)F\n1,2\ns× + Γ(β + β′)Γ(γ −β −1)\nΓ(γ −1)Γ(β′)\nF\n1,2\ns−\nG\n1,2\ns× =Γ(1 −β)Γ(1 +",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9712256v2/blocks/prose-page-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 25",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/page-025.md",
+      "narrative": null,
+      "content": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 13\n25\none ﬁnds that G\n1,2\ns+, G\n1,2\ns−, G\n1,2\nt+, G\n1,2\nt−reduce to F\nL1,2\ns+ , F\nL1,2\ns−, F\nL1,2\nt+ , F\nL1,2\nt−\nrespectively for x →z. G×\nhowever will not be analytic in x around x = z but rather behave as\nGs ∼(x −z)1−β−β′(C1 + O(x −z))\nReferences\n[Ga] C. Gawedzki: Non-compact WZW conformal ﬁeld theories, in: Proceedings of NATO ASI Cargese 1991,\neds. J. Fr¨olich, G. ’t Hooft, A. Jaﬀe, G. Mack, P.K. Mitter, R. Stora. Plenum Press, 1992, pp. 247-274\n[Wa] Wakimoto: Fock Representation of the Aﬃne Lie Algebra A(1)\n1 , Comm.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

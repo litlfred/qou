@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0905.0228v4",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS",
+      "dcterms:creator": [
+        "CIGLER, JOHANN",
+        "ZENG, JIANG"
+      ],
+      "dcterms:issued": "D:20210709",
+      "dcterms:identifier": "https://arxiv.org/abs/0905.0228",
+      "dcterms:abstract": "Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite polynomials. In this paper we consider a new family of q-Hermite polynomials and prove several curious properties about these polynomials. One striking property is the connection with q-Fibonacci and q-Lucas polynomials. The latter relation yields a generalization of the Touchard-Riordan formula.",
+      "dcterms:source": "library/arxiv-0905.0228v4/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0905.0228v4"
+    }
+  ]
+}

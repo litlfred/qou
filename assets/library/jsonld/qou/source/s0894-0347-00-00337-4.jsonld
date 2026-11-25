@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0894-0347-00-00337-4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "s0894-0347-00-00337-4",
+  "contains": [
+    "library/s0894-0347-00-00337-4/sections/sec-front-matter",
+    "library/s0894-0347-00-00337-4/sections/sec-000",
+    "library/s0894-0347-00-00337-4/sections/sec-001",
+    "library/s0894-0347-00-00337-4/sections/sec-002",
+    "library/s0894-0347-00-00337-4/sections/sec-003",
+    "library/s0894-0347-00-00337-4/sections/sec-004",
+    "library/s0894-0347-00-00337-4/sections/sec-005",
+    "library/s0894-0347-00-00337-4/sections/sec-006",
+    "library/s0894-0347-00-00337-4/sections/sec-007",
+    "library/s0894-0347-00-00337-4/sections/sec-008",
+    "library/s0894-0347-00-00337-4/sections/sec-009",
+    "library/s0894-0347-00-00337-4/sections/sec-010",
+    "library/s0894-0347-00-00337-4/sections/sec-011",
+    "library/s0894-0347-00-00337-4/sections/sec-012",
+    "library/s0894-0347-00-00337-4/sections/sec-013",
+    "library/s0894-0347-00-00337-4/sections/sec-014",
+    "library/s0894-0347-00-00337-4/sections/sec-015",
+    "library/s0894-0347-00-00337-4/sections/sec-016",
+    "library/s0894-0347-00-00337-4/sections/sec-017",
+    "library/s0894-0347-00-00337-4/sections/sec-018",
+    "library/s0894-0347-00-00337-4/sections/sec-019",
+    "library/s0894-0347-00-00337-4/sections/sec-020"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(00)00337-4 — 22 sections: Front matter; Plancherel measures; Introduction\n\n**AMERICAN MATHEMATICAL SOCIETY S 0894-0347(00)00337-4**\n\n*Article electronically published on April 13, 2000*\n\n35 pp, 22 sections.\n\n**Outline.** Front matter; 1.1 Plancherel measures; 1 Introduction; 1.2 Poissonization and correlation functions; 1.3 Asymptotics in the bulk of the spectrum; 1.4 Behavior near the edge of the spectrum and; 1.5 Poissonization and depoissonization; 1.6 Organization of the paper; 2 Correlation functions of the measures M; 2.3 Various formulas for the kernel J; 2.4 Commuting difference operator; 3 Correlation functions in the bulk of the spe; 4 Edge of the spectrum: Convergence to the Air; 4.1 Results and strategy of proof; 4.3 Depoissonization and proof of Theorem ??; Appendix A. General properties of determinanta; A.1. Fredholm determinants and determinantal p; A.2. Correlation functions of determinantal pr",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "s0894-0347-00-00337-4",
+    "title_source": "slug",
+    "source_file": "S0894-0347-00-00337-4.pdf",
+    "source_sha256": "1c6848281fc2804c49c895e8bb56a7513d39ffa2be8d41c7bf7dd74615aeaf27",
+    "pages": 35,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,308 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-9907032v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-9907032v1/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "It was observed in [@rivid; @rvol] that this was a special case of the problem of characterizing the *Delaunay tessellations* of singular Euclidean surfaces -- there is a canonical way to associate ideal polyhedra to Delaunay triangulations of a convex flat disk with convex polygonal boundary.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9907032v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "In the paper [@steiner] we gave the following description of the angles of ideal polyhedra in $\\mathbf{H}^3$: let $P$ be a combinatorial polyhedron, and let $A: E(P) \\rightarrow [0, \\pi)$ be a function. Then, there exists an ideal polyhedron combinatorially equivalent to $P$, such that the exterior angle at every edge $e$ is given by $A(e)$ if and only if the sum of $A(e)$ over all edges adjacent to a vertex of $P$ is equal to $2\\pi,$ while the sum of $A(e)$ over any *nontrivial cutset* of edges of $P$ (that is, a collection of edges which separates the $1$-skeleton of $P$, but which are not a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9907032v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/9907032v1  [math.GT]  6 Jul 1999\nCombinatorial optimization in geometry1\nIgor Rivin Mathematics Institute, Warwick University\nCoventry, The United Kingdom\nand\nMathematics Department, California Institute of Technology\nPasadena, CA 91125\ncurrent address:\nInstitut des Hautes ´Etudes Scientiﬁques,\n35 Route de Chartres, 91440, Bures-sur-Yvette, France\nIn this paper we extend and unify the results of [20] and [19]. As a consequence, the results of\n[20] are generalized from the framework of ideal polyhedra in H3 to that of singular Euclidean\nstructures on surfaces, possibly with an inﬁnit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9907032v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-1-background.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9907032v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Singular similarity structures.",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-11-singular-similarity-structures.md",
+      "narrative": null,
+      "content": "Consider an oriented surface $S$, possibly with boundary, and with a number of distinguished points $\\{p_1, \\ldots, p_n\\}$. A *similarity structure* on $S$ is given by an atlas for $S\n\\backslash \\{p_1, \\ldots, p_n\\}$, such that the transition maps are Euclidean similarities. A similarity structure induces a holonomy representation $H_s$ of $\\Gamma = \\pi_1(S \\backslash \\{p_1, \\ldots,\np_n\\})$ into the similarity $\\mathrm{Sim\\:}(\\mathbf{E}^2)\\simeq\n\\widetilde{\\mathbf{C}^*}$, where the tilde indicates the universal cover. We define the *dilatational holonomy* as the induced representation $H_d:\n\\G",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9907032v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Necessary conditions on dihedral angles",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-2-necessary-conditions-on-dihedral-angles.md",
+      "narrative": null,
+      "content": "[]{#necessary label=\"necessary\"}\n\nIn order for the linear program $L$ to have any chance of having a solution, the dihedral angles $\\Delta$ must satisfy some constraints. Indeed, suppose $L$ has a solution.\n\n::: condition\n[]{#dihpos label=\"dihpos\"} All of the dihedral angles must be positive.\n:::\n\nFurthermore, the sum of all of the dihedral angles of all of the edges of $T$ must be equal to the sum of all of the angles of all of the faces of $T,$ or $F(T) \\pi$. On the other hand, it is almost equally obvious that if $t_1, \\dots, t_n \\in F(T)$ is is some proper subset of the faces of $T$, then",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9907032v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sufficiency of conditions 2.1 and 2.2",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-3-sufficiency-of-conditions-21-and-22.md",
+      "narrative": null,
+      "content": "[]{#suff label=\"suff\"}\n\nSomewhat surprisingly, the trivial conditions [\\[dihpos\\]](#dihpos){reference-type=\"ref\" reference=\"dihpos\"} and [\\[sumdih\\]](#sumdih){reference-type=\"ref\" reference=\"sumdih\"} guarantees that the linear program $L$ has a solution:\n\n::: theorem\n[]{#mainthm label=\"mainthm\"} Let $T$ be a semi-simplicial triangulation of a surface $S$, possibly with boundary, let $\\Delta:E(T)\\rightarrow (0, \\pi]$ be a function on the edges of $T$, $H_d$ a representation $\\pi_1 (S \\backslash V(T))\n\\rightarrow \\mathbf{R}$. There exists a similarity structure with holonomy $H_d$ on $S$, with t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9907032v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dihedral angles of Delaunay triangulations",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-4-dihedral-angles-of-delaunay-triangulations.md",
+      "narrative": null,
+      "content": "[]{#dihsec label=\"dihsec\"}\n\nIn the preceding section it was shown that in order for the linear program $L$ to have a solution, it is necessary and sufficient that the putative dihedral angles $\\delta(e)$ satisfy the inequalities [\\[dihpos\\]](#dihpos){reference-type=\"ref\" reference=\"dihpos\"} and [\\[sumdih\\]](#sumdih){reference-type=\"ref\" reference=\"sumdih\"}. Below, we use these to derive another set of necessary conditions [\\[kappaineq\\]](#kappaineq){reference-type=\"ref\" reference=\"kappaineq\"}, and show that under the additional assumption that the original dihedral angles do not exceed $\\pi$,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9907032v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some corollaries and refinements",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-41-some-corollaries-and-refinements.md",
+      "narrative": null,
+      "content": "[]{#corref label=\"corref\"}\n\nHere are some easy consequences of Theorem [\\[kappaineq\\]](#kappaineq){reference-type=\"ref\" reference=\"kappaineq\"}:\n\nSpecial case 1\n\n:   $\\mathcal{F} = T$. Then, since $E^\\prime(\\mathcal{F}) =\n    \\emptyset$, we just get the Gauss-Bonnet theorem (with curvature defined in terms of the dihedral angles).\n\nSpecial case 2\n\n:   The complement of $\\mathcal{F}$ is an annulus containing no vertices of $T$ -- this corresponds to a simple cycle in the Poincaré dual $T^*$. For every edge in $E^\\prime(\\mathcal{F})$, $n_e = 2$. Theorem [\\[kappaineq\\]](#kappaineq){reference-type=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9907032v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A network flow approach",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-007-5-a-network-flow-approach.md",
+      "narrative": null,
+      "content": "[]{#nflow label=\"nflow\"}\n\nThere is an alternative way to prove Theorem [\\[maindual\\]](#maindual){reference-type=\"ref\" reference=\"maindual\"} which uses the Max Flow-Min Cut theorem of network flow instead of the duality theorem of linear programming. It should be noted that the difference between the two arguments is largely superficial, since the proof of Theorem [\\[maindual\\]](#maindual){reference-type=\"ref\" reference=\"maindual\"} can be seen to essentially prove the Max Flow-Min Cut theorem. There are two reasons to set up the question as a result on network flow. The first is that the proof",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9907032v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Delaunay triangulations of infinite sets of points",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "../sections/sec-008-6-delaunay-triangulations-of-infinite-sets-of-po.md",
+      "narrative": null,
+      "content": "[]{#ideal label=\"ideal\"} In this section we will show that theorem [\\[mainthm\\]](#mainthm){reference-type=\"ref\" reference=\"mainthm\"} for singular Euclidean structures can be extended without change to infinite locally finite complexes:\n\n::: theorem\n[]{#infmain label=\"infmain\"} Let $T$ be an infinite but locally finite complex, and let $\\Delta:\nE(T) \\rightarrow (0, \\pi]$. Then there exists a singular euclidean structure on $T$, with cone points at vertices of $T$, whose Delaunay triangulation is combinatorially equivalent to $T$, and whose dihedral angles are given by $\\Delta$ if and only if ea",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9907032v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Remarks and Corollaries",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-009-61-remarks-and-corollaries.md",
+      "narrative": null,
+      "content": "Let us assume that the complex $T$ has no boundary, and that the function $\\Delta$ is such that all of the cone angles (computed using Lemma [\\[cona\\]](#cona){reference-type=\"ref\" reference=\"cona\"}) are equal to $2\\pi$, so that any realization is Euclidean (and hence can be developed into the plane). Then, we can combine theorems [\\[infmain\\]](#infmain){reference-type=\"ref\" reference=\"infmain\"} and [\\[andreevthm\\]](#andreevthm){reference-type=\"ref\" reference=\"andreevthm\"} to get\n\n::: corollary\n[]{#infandreev label=\"infandreev\"} Let $T$ be an infinite locally finite triangulation, and let $\\Del",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9907032v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Delaunay cells in moduli space",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-010-7-delaunay-cells-in-moduli-space.md",
+      "narrative": null,
+      "content": "[]{#moduli label=\"moduli\"} In the Introduction we alluded to the cell decomposition of the moduli space $\\mathcal{M}$ of Euclidean structures, where the cells are given by Euclidean structures where the Delaunay triangulation has a fixed combinatorial type $T$. Each cell is a convex polytope $\\mathcal{P}(T)$, and the results above can be used to describe the combinatorial and geometric structure of $\\mathcal{P}(T)$ in some detail, although some interesting questions (discussed at the end of this section) remain open.\n\nConsider a codimension $1$ face $f$ of $\\mathcal{P}(T)$. The face $f$ may be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9907032v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computational complexity",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-011-8-computational-complexity.md",
+      "narrative": null,
+      "content": "[]{#complexsec label=\"complexsec\"}\n\nConsider the following two decision problems:\n\nProblem 1\n\n:   Let $\\mathcal{T}$ be a simplicial complex, homeomorphic to a surface $S$ (possibly with boundary), and let $\\alpha: V(\\mathcal{T}) \\rightarrow\n    {\\bf R}^+$ be an assignment of cone angles to the vertices of $\\mathcal{T}$. Does there exist a Euclidean structure $E$ on $S$ with the prescribed cone angles, such that the Delaunay triangulation of $(S,\n    E)$ is combinatorially equivalent to $\\mathcal{T}$?\n\nProblem 2\n\n:   Let $\\mathcal{T}$ be a simplicial complex, homeomorphic to a surface $S$ (poss",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9907032v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some applications to combinatorial geometry",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-012-9-some-applications-to-combinatorial-geometry.md",
+      "narrative": null,
+      "content": "[]{#someapps label=\"someapps\"}\n\nA well-known theorem of Steinitz says that every three-connected planar graph can be realized as the $1$-skeleton of a convex polyhedron in $R^{3}$, while a famous theorem of Aleksandrov states that every Euclidean metric on $S^{2}$ with positively curved cone-points can be realized as the induced metric on the surface of a convex polyhedron in $R^{3}$. Below, we show a negative result, which should be compared with the final example of [@rit]:\n\n::: theorem\n[]{#badtri label=\"badtri\"} There exist infinitely many triangulations of $S^{2}$ which can not be realized",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9907032v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Linear hyperbolic structures on $3$-manifolds",
+      "pageStart": 23,
+      "pageEnd": 27,
+      "target": "../sections/sec-013-10-linear-hyperbolic-structures-on-3-manifolds.md",
+      "narrative": null,
+      "content": "[]{#lhyp label=\"lhyp\"}\n\nAs explained in [@rvol], the study of Euclidean triangulations on surfaces is essentially equivalent to the study of hyperbolic ideally triangulated complexes, which are combinatorially just cones over the triangulated surface. Hence, the contents of this section are closely related to the subject-matter of much of the rest of the paper, in more than just the linear programming approach.\n\nConsider a $3$-manifold $M^3$ with boundary a collection of tori, and consider a topological ideal triangulation $T$ of $M^3$. We would like to know when there is a complete hyperbolic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

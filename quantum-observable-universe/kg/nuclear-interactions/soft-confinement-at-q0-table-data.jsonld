@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-soft-confinement-at-q0-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:soft-confinement-at-q0-table-data",
+  "kind": "table",
+  "title": "Data table from rem:soft-confinement-at-q0",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-soft-confinement-at-q0"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "soft-confinement-at-q0-table-data.md",
+  "provenance": "authored"
+}

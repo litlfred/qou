@@ -1,0 +1,845 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-quant-ph-0606114v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abstract",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-abstract.md",
+      "narrative": null,
+      "content": "We review the q-deformed spin network approach to Topological Quantum Field\nTheory and apply these methods to produce unitary representations of the braid\ngroups that are dense in the unitary groups. Our methods are rooted in the\nbracket state sum model for the Jones polynomial. We give our results for a\nlarge class of representations based on values for the bracket polynomial that\nare roots of unity. We make a separate and self-contained study of the quan-\ntum universal Fibonacci model in this framework. We apply our results to\ngive quantum algorithms for the computation of the colored Jones",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:quant-ph/0606114v3  9 Feb 2007\nq - Deformed Spin Networks, Knot\nPolynomials and Anyonic Topological\nQuantum Computation\nLouis H. Kauﬀman\nDepartment of Mathematics, Statistics\nand Computer Science (m/c 249)\n851 South Morgan Street\nUniversity of Illinois at Chicago\nChicago, Illinois 60607-7045\n<kauﬀman@uic.edu>\nand\nSamuel J. Lomonaco Jr.\nDepartment of Computer Science and Electrical Engineering\nUniversity of Maryland Baltimore County\n1000 Hilltop Circle, Baltimore, MD 21250\n<lomonaco@umbc.edu>",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-0-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nThis paper describes the background for topological quantum computing in\nterms of Temperley–Lieb recoupling theory. This is a recoupling theory that\ngeneralizes standard angular momentum recoupling theory, generalizes the\nPenrose theory of spin networks and is inherently topological. Temperley–Lieb\nrecoupling Theory is based on the bracket polynomial model [34, 41] for the\nJones polynomial. It is built in terms of diagrammatic combinatorial topology.\nThe same structure can be explained in terms of the SU(2)q quantum group,\nand has relationships with functional integration and Witt",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Knots and Braids",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-1-knots-and-braids.md",
+      "narrative": null,
+      "content": "Knots and Braids\nThe purpose of this section is to give a quick introduction to the diagrammatic\ntheory of knots, links and braids. A knot is an embedding of a circle in three-\ndimensional space, taken up to ambient isotopy.\nThe problem of deciding\nwhether two knots are isotopic is an example of a placement problem, a problem\nof studying the topological forms that can be made by placing one space inside\nanother. In the case of knot theory we consider the placements of a circle inside\nthree dimensional space. There are many applications of the theory of knots.\nTopology is a background for the p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Braid Generators",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-braid-generators.md",
+      "narrative": null,
+      "content": "1\ns\n1-1\ns\n= 1\n1\ns\n2\ns\n1\ns\n2\ns\n1\ns\n2\ns\n=\n1\ns\n3\ns\n1\ns\n3\ns\n=\nFigure 4 - Braid Generators.\nAmbient isotopy is mathematically the same as the equivalence relation\ngenerated on diagrams by the Reidemeister moves.\nThese moves are illus-\ntrated in Figure 3. Each move is performed on a local part of the diagram\nthat is topologically identical to the part of the diagram illustrated in this\nﬁgure (these ﬁgures are representative examples of the types of Reidemeister\nmoves) without changing the rest of the diagram. The Reidemeister moves are\nuseful in doing combinatorial topology with knots and links, not",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hopf Link",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-hopf-link.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Figure Eight Knot",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-figure-eight-knot.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Trefoil Knot",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-trefoil-knot.md",
+      "narrative": null,
+      "content": "Figure 5 - Closing Braids to form knots and links.\nb",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "CL(b)",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-007-clb.md",
+      "narrative": null,
+      "content": "Figure 6 - Borromean Rings as a Braid Closure.\nAnother signiﬁcant structure related to knots and links is the Artin Braid\nGroup. A braid is an embedding of a collection of strands that have their ends\ntop and bottom row points in two rows of points that are set one above the\nother with respect to a choice of vertical. The strands are not individually\nknotted and they are disjoint from one another. See Figures 4, 5 and 6 for\nillustrations of braids and moves on braids. Braids can be multiplied by at-\ntaching the bottom row of one braid to the top row of the other braid. Taken\nup to ambient isot",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum Mechanics and Quantum Computation",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-008-2-quantum-mechanics-and-quantum-computation.md",
+      "narrative": null,
+      "content": "tation\nWe shall quickly indicate the basic principles of quantum mechanics.\nThe\nquantum information context encapsulates a concise model of quantum theory:\nThe initial state of a quantum process is a vector |v⟩in a complex vector\nspace H. Measurement returns basis elements β of H with probability\n|⟨β |v⟩|2/⟨v |v⟩\nwhere ⟨v |w⟩= v†w with v† the conjugate transpose of v. A physical process oc-\ncurs in steps |v⟩−→U |v⟩= |Uv⟩where U is a unitary linear transformation.\nNote that since ⟨Uv |Uw⟩= ⟨v |U†U|w⟩= ⟨v |w⟩= when U is unitary, it\nfollows that probability is preserved in the course of a quantum",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "What is a Quantum Computer?",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-009-21-what-is-a-quantum-computer.md",
+      "narrative": null,
+      "content": "What is a Quantum Computer?\nA quantum computer is, abstractly, a composition U of unitary transforma-\ntions, together with an initial state and a choice of measurement basis. One\nruns the computer by repeatedly initializing it, and then measuring the result\nof applying the unitary transformation U to the initial state. The results of\nthese measurements are then analyzed for the desired information that the\ncomputer was set to determine. The key to using the computer is the design\nof the initial state and the design of the composition of unitary transforma-\ntions. The reader should consult [65]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Universal Gates",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-010-22-universal-gates.md",
+      "narrative": null,
+      "content": "Universal Gates\nA two-qubit gate G is a unitary linear mapping G : V ⊗V −→V where V is\na two complex dimensional vector space. We say that the gate G is universal\nfor quantum computation (or just universal) if G together with local unitary\ntransformations (unitary transformations from V to V ) generates all unitary\ntransformations of the complex vector space of dimension 2n to itself. It is well-\nknown [65] that CNOT is a universal gate. (On the standard basis, CNOT is\nthe identity when the ﬁrst qubit is 0, and it ﬂips the second qbit, leaving the\nﬁrst alone, when the ﬁrst qubit is 1.)\nA gate",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/rem-sec-010-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "rem-sec-010-01.md",
+      "narrative": null,
+      "content": "A two-qubit pure state |φ⟩= a|00⟩+ b|01⟩+ c|10⟩+ d|11⟩ is entangled exactly when (ad −bc)̸ = 0. It is easy to use this fact to check when a speciﬁc matrix is, or is not, entangling.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/rem-sec-010-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "rem-sec-010-02.md",
+      "narrative": null,
+      "content": "There are many gates other than CNOT that can be used as universal gates in the presence of local unitary transformations. Some of these are themselves topological (unitary solutions to the Yang-Baxter equation, see [52, 81]) and themselves generate representations of the Artin Braid Group. Replacing CNOT by a solution to the Yang-Baxter equation does not place the local unitary transformations as part of the corresponding representation of the braid group. Thus such substitutions connote only a partial solution to creating topological quantum computation. In this paper we are concerned with b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/lem-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 21,
+      "target": "lem-sec-011-02.md",
+      "narrative": null,
+      "content": "eaiebjeci = cos(b)ei(a+c) +sin(b)ei(a−c)j. Hence any element of SU(2) can be written in the form eaiebjeci. for appropriate choices of angles a, b, c. In fact, if u and v are linearly independent unit vectors in R3, then any element of SU(2) can be written in the form eauebvecu for appropriate choices of the real numbers a, b, c.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SU(2) Representations of the Artin Braid Group",
+      "pageStart": 15,
+      "pageEnd": 21,
+      "target": "../sections/sec-011-3-su2-representations-of-the-artin-braid-group.md",
+      "narrative": null,
+      "content": "Group\nThe purpose of this section is to determine all the representations of the three\nstrand Artin braid group B3 to the special unitary group SU(2) and concomi-\ntantly to the unitary group U(2). One regards the groups SU(2) and U(2) as\nacting on a single qubit, and so U(2) is usually regarded as the group of local\nunitary transformations in a quantum information setting. If one is looking\nfor a coherent way to represent all unitary transformations by way of braids,\nthen U(2) is the place to start. Here we will show that there are many rep-\nresentations of the three-strand braid group that ge",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/thm-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 21,
+      "target": "thm-sec-011-01.md",
+      "narrative": null,
+      "content": "If g = a + bu and h = c + dv are pure unit quaternions,then, without loss of generality, the braid relation ghg = hgh is true if and only if h = a + bv, and φg(v) = φh−1(u). Furthermore, given that g = a + bu and h = a+bv, the condition φg(v) = φh−1(u) is satisﬁed if and only if u·v = a2−b2 2b2 when u̸ = v. If u = v then then g = h and the braid relation is trivially satisﬁed.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Bracket Polynomial and the Jones Polynomial",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-012-4-the-bracket-polynomial-and-the-jones-polynomia.md",
+      "narrative": null,
+      "content": "nomial\nWe now discuss the Jones polynomial. We shall construct the Jones polynomial\nby using the bracket state summation model [34]. The bracket polynomial,\ninvariant under Reidmeister moves II and III, can be normalized to give an\ninvariant of all three Reidemeister moves. This normalized invariant, with a\nchange of variable, is the Jones polynomial [32, 33]. The Jones polynomial was\noriginally discovered by a diﬀerent method than the one given here.\nThe bracket polynomial , < K > = < K > (A), assigns to each unoriented\nlink diagram K a Laurent polynomial in the variable A, such that\n1. If K",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "or",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "../sections/sec-013-or.md",
+      "narrative": null,
+      "content": "the removal of the curl from the corresponding diagram.\nThe bracket is invariant under regular isotopy and can be normalized to an\ninvariant of ambient isotopy by the deﬁnition\nfK(A) = (−A3)−w(K) < K > (A),\nwhere we chose an orientation for K, and where w(K) is the sum of the crossing\nsigns of the oriented link K. w(K) is called the writhe of K. The convention\nfor crossing signs is shown in Figure 8.\nor\nor\n+\n-\n+\n+\n-\n-\n+\n-\nFigure 8 - Crossing Signs and Curls\nOne useful consequence of these formulas is the following switching formula\nA < χ > −A−1 < χ >= (A2 −A−2) < ≍> .\nNote that in these conven",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/rem-sec-013-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "rem-sec-013-01.md",
+      "narrative": null,
+      "content": "By a change of variables one obtains the original Jones polynomial, VK(t), for oriented knots and links from the normalized bracket: VK(t) = fK(t−1 4).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/rem-sec-013-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "rem-sec-013-02.md",
+      "narrative": null,
+      "content": "The bracket polynomial provides a connection between knot theory and physics, in that the state summation expression for it exhibits it as a generalized partition function deﬁned on the knot diagram. Partition functions are ubiquitous in statistical mechanics, where they express the summation over all states of the physical system of probability weighting functions for the individual states. Such physical partition functions contain large amounts of information about the corresponding physical system. Some of this information is directly present in the properties of the function, such as the l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum Computation of the Jones Polynomial",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "../sections/sec-014-41-quantum-computation-of-the-jones-polynomial.md",
+      "narrative": null,
+      "content": "Quantum Computation of the Jones Polynomial\nQuantum algorithms for computing the Jones polynomial have been discussed\nelsewhere. See [46, 52, 1, 54, 2, 79]. Here, as an example, we give a local\nunitary representation that can be used to compute the Jones polynomial for\nclosures of 3-braids. We analyse this representation by making explicit how\nthe bracket polynomial is computed from it, and showing how the quantum\ncomputation devolves to ﬁnding the trace of a unitary transformation.\nThe idea behind the construction of this representation depends upon the\nalgebra generated by two single qubit d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Hadamard Test",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-015-the-hadamard-test.md",
+      "narrative": null,
+      "content": "In order to (quantum) compute the trace of a unitary matrix U, one can use\nthe Hadamard test to obtain the diagonal matrix elements ⟨ψ|U|ψ⟩of U. The\ntrace is then the sum of these matrix elements as |ψ⟩runs over an orthonormal\nbasis for the vector space. We ﬁrst obtain\n1\n2 + 1\n2Re⟨ψ|U|ψ⟩\nas an expectation by applying the Hadamard gate H\nH|0⟩= 1\n√\n2(|0⟩+ |1⟩)\nH|1⟩= 1\n√\n2(|0⟩−|1⟩)\nto the ﬁrst qubit of\nCU ◦(H ⊗1)|0⟩|ψ⟩= 1\n√\n2(|0⟩⊗|ψ⟩+ |1⟩⊗U|ψ⟩.\nHere CU denotes controlled U, acting as U when the control bit is |1⟩and the\nidentity mapping when the control bit is |0⟩. We measure the expectation for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum Topology, Cobordism Categories, Temperley-Lieb Algebra and Topological Quantum Field Theory",
+      "pageStart": 29,
+      "pageEnd": 33,
+      "target": "../sections/sec-016-5-quantum-topology-cobordism-categories-temperle.md",
+      "narrative": null,
+      "content": "Temperley-Lieb Algebra and Topological Quan-\ntum Field Theory\nThe purpose of this section is to discuss the general idea behind topological\nquantum ﬁeld theory, and to illustrate its application to basic quantum me-\nchanics and quantum mechanical formalism. It is useful in this regard to have\navailable the concept of category, and we shall begin the section by discussing\nthis far-reaching mathematical concept.\nDeﬁnition. A category Cat consists in two related collections:\n1. Obj(Cat), the objects of Cat, and\n2. Morph(Cat), the morphisms of Cat.\nsatisfying the following axioms:\n1. Each morphism",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Identity",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "../sections/sec-017-identity.md",
+      "narrative": null,
+      "content": "p\nf: p                 p\np\np\np\n*\np\np\n*\nFigure 10 - Elementary Cobordisms\nIn Figure 11, we have indicated more morphisms in Cob[0], and we have\nnamed the morphisms just discussed as\n|Ω⟩: p ⊗p −→∗,\n⟨Θ| : ∗−→p ⊗p.\nThe point to notice is that the usual conventions for handling Dirac bra-kets\nare essentially the same as the compostion rules in this topological category.\nThus in Figure 11 we have that\n⟨Θ| ◦|Ω⟩= ⟨Θ|Ω⟩: ∗−→∗\nrepresents a cobordism from the empty manifold to itself. This cobordism is\ntopologically a circle and, in the Dirac formalism is interpreted as a scalar.\nIn order to interpret th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SU = US = U",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "../sections/sec-018-su-us-u.md",
+      "narrative": null,
+      "content": "SU = US = U\nFigure 12 - Permutations\n<    |\n|    >\n1\n<    |\n|    >\n1\n =\n =\nP\nQ\n|     >\n<     |\n1\n1\n{\n} {\n}\nΘ\nΘ\nΩ\nΩ\nΘ\nΩ\n{\n}\n}\n{\nFigure 13 - Projectors in Tensor Lines and Elementary Topology\nGetting back to the contents of Figure 11, note how the zero dimensional\ncobordism category has structural parallels to the Dirac ket–bra formalism\nU = |Ω⟩⟨Θ|\nUU = |Ω⟩⟨Θ|Ω⟩⟨Θ| = ⟨Θ|Ω⟩|Ω⟩⟨Θ| = ⟨Θ|Ω⟩U.\nIn the cobordism category, the bra–ket and ket–bra formalism is seen as pat-\nterns of connection of the one-manifolds that realize the cobordisms.\nNow view Figure 12. This Figure illustrates a morphism S in Cob",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "PQP P",
+      "pageStart": 38,
+      "pageEnd": 41,
+      "target": "../sections/sec-019-pqp-p.md",
+      "narrative": null,
+      "content": "=\n = R\nR\n1\n =\nFigure 14 - The Basic Temperley-Lieb Relation\nφ\n|    >\nψ\n|    >\nΘ\nΩ\nΩ\nΘ\nφ\n|    >\nψ\n|    >\nΩ\nΘ\nφ\n|    >\nψ\n|    >\n =\n|     >\n<     |\nΘ\n|     >\nΩ\n<     |\nΩ\nΘ\nFigure 15 - The Key to Teleportation\nFigure 15 illustrates the staightening of |Θ⟩and ⟨Ω|, and the straightening\nof a composition of these applied to |ψ⟩, resulting in |φ⟩. In the left-hand\npart of the bottom of Figure 15 we illustrate the preparation of the tensor\nproduct |Θ⟩⊗|ψ⟩followed by a successful measurement by ⟨Ω| in the second\ntwo tensor factors. The resulting single qubit state, as seen by straightening,\nis |φ⟩= Θ ◦Ω",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Braiding and Topological Quantum Field Theory",
+      "pageStart": 41,
+      "pageEnd": 43,
+      "target": "../sections/sec-020-6-braiding-and-topological-quantum-field-theory.md",
+      "narrative": null,
+      "content": "ory\nThe purpose of this section is to discuss in a very general way how braid-\ning is related to topological quantum ﬁeld theory. In the section to follow,\nwe will use the Temperley-Lieb recoupling theory to produce specﬁc unitary\nrepresentations of the Artin braid group.\nThe ideas in the subject of topological quantum ﬁeld theory (TQFT) are\nwell expressed in the book [5] by Michael Atiyah and the paper [78] by Edward\nWitten. Here is Atiyah’s deﬁnition:\nDeﬁnition. A TQFT in dimension d is a functor Z(Σ) from the cobordism\ncategory Cob[d] to the category V ect of vector spaces and linear mappin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Trinion",
+      "pageStart": 43,
+      "pageEnd": 51,
+      "target": "../sections/sec-021-trinion.md",
+      "narrative": null,
+      "content": "Figure 17 - Decomposition of a Surface into Trinions\na\nb\nc\nd\ne\nf\na\nb\nc\nε\nV(           )\nV(                                )\nε\nFigure 18 - Trivalent Vectors\n=\nFigure 19 - Trinion Associativity\nA\nB\nC\nA\nB\nC\n=\nFigure 20 - Tube Twist\nFrom the point of view that we shall take in this paper, the key to the\nmathematical structure of three-dimensional TQFT lies in the trivalent graphs,\nincluding the braiding of grapical arcs. We can think of these braided graphs\nas representing idealized Feynman diagrams, with the trivalent vertex as the\nbasic particle interaction vertex, and the braiding of lines repr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B = F RF",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../sections/sec-022-b-f-rf.md",
+      "narrative": null,
+      "content": "B = F   RF\n-1\nF -1\nFigure 28 - A More Complex Braiding Operator\nA key point in the application of TQFT to quantum information theory\nis contained in the structure illustrated in Figure 28. There we show a more\ncomplex braiding operator, based on the composition of recoupling with the\nelementary braiding at a vertex. (This structure is implicit in the Hexagon\nidentity of Figure 27.) The new braiding operator is a source of unitary rep-\nresentations of braid group in situations (which exist mathematically) where\nthe recoupling transformations are themselves unitary. This kind of pattern is\nutili",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spin Networks and Temperley-Lieb Recoupling Theory",
+      "pageStart": 51,
+      "pageEnd": 52,
+      "target": "../sections/sec-023-7-spin-networks-and-temperley-lieb-recoupling-th.md",
+      "narrative": null,
+      "content": "pling Theory\nIn this section we discuss a combinatorial construction for spin networks that\ngeneralizes the original construction of Roger Penrose. The result of this gen-\neralization is a structure that satisﬁes all the properties of a graphical TQFT\nas described in the previous section, and specializes to classical angular mo-\nmentum recoupling theory in the limit of its basic variable. The construction\nis based on the properties of the bracket polynomial (as already described in\nSection 4). A complete description of this theory can be found in the book\n“Temperley-Lieb Recoupling Theory and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "n strands",
+      "pageStart": 52,
+      "pageEnd": 56,
+      "target": "../sections/sec-024-n-strands.md",
+      "narrative": null,
+      "content": "=\nn\nn\n=\n(A    )\n-3 t(   )\nσ\n~σ\n(1/{n}!) Σ\nσ ε Sn\n~\n=\nA\nA-1\n= -A2\n-2\n- A\n=\n+\n{n}! = Σ\nσ ε Sn\n(A    )t(   )\nσ\n-4\n=\nn\nn\n= 0\n= d\nFigure 29 - Basic Projectors\n=\n−1/δ\n=\n−∆    /∆\nn\nn+1\nn 1 1\nn 1\n1\nn\n1\n=\n2\nδ\n∆\n1\n∆\n=\n-1= 0\n∆0\n∆n+1 =\n∆n -\nn-1\nFigure 30 - Two Strand Projector\na\nb\nc\ni\nj\nk\na\nb\nc\ni + j = a\nj + k = b\ni + k = c\nFigure 31 -Vertex\nIn Figure 29 we indicate how the basic projector (symmetrizer, Jones-Wenzl\nprojector)\nis constructed on the basis of the bracket polynomial expansion. In this tech-\nnology a symmetrizer is a sum of tangles on n strands (for a chosen integer n).\nThe tangles are made by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tet",
+      "pageStart": 56,
+      "pageEnd": 57,
+      "target": "../sections/sec-025-tet.md",
+      "narrative": null,
+      "content": "a b\nc d\ni\nk\ni\nFigure 34 - Tetrahedron Network\n{ }\na b\nc d\ni\nj\nΣ\n=\nj\na\na\nb\nb\nc\nc\nd\nd\ni\nj\nk\nΣ\n=\nj\nΘ(   ,   ,   )\na\nΘ(   ,   ,   )\nc d\n∆\nb j\nj\nj δ j\nk\nk\n{ }\na b\nc d\ni\nj\n=\nΘ(   ,   ,   )\na\nΘ(   ,   ,   )\nc d\n∆\nb\n{ }\na b\nc d\ni\nk\nk\nk\nk\n=\nΘ(   ,   ,   )\n{\n}\na b\nc d\ni\nk\n[\n]\nTet\na b\nc d\ni\nk\nΘ(   ,   ,   )\nk\nk\nd\nc\na b\n∆j\n∆j\n∆k\nFigure 35 - Tetrahedron Formula for Recoupling Coeﬃcients\nFinally, there is the braiding relation, as illustrated in Figure 36.\na b\nc\nλ\na\na\nb\nb\nc\nc\n(a+b-c)/2\n(a'+b'-c')/2\nx' = x(x+2)\na b\nc\nλ\n=\n= (-1)\nA\nFigure 36 - Local Braiding Formula\nWith the braiding relation in place, this q-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Evaluations",
+      "pageStart": 57,
+      "pageEnd": 58,
+      "target": "../sections/sec-026-71-evaluations.md",
+      "narrative": null,
+      "content": "Evaluations\nIn this section we discuss the structure of the evaluations for ∆n and the\ntheta and tetrahedral networks. We refer to [36] for the details behind these\nformulas. Recall that ∆n is the bracket evaluation of the closure of the n-\nstrand projector, as illustrated in Figure 32. For the bracket variable A, one\nﬁnds that\n∆n = (−1)nA2n+2 −A−2n−2\nA2 −A−2\n.\nOne sometimes writes the quantum integer\n[n] = (−1)n−1∆n−1 = A2n −A−2n\nA2 −A−2 .\nIf\nA = eiπ/2r\nwhere r is a positive integer, then\n∆n = (−1)nsin((n + 1)π/r)\nsin(π/r)\n.\nHere the corresponding quantum integer is\n[n] = sin(nπ/r)\nsin(π/r) .",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/lem-sec-027-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 64,
+      "target": "lem-sec-027-01.md",
+      "narrative": null,
+      "content": "For the bracket evaluation at the root of unity A = eiπ/2r the factor f(a, b, c) = q√∆a∆b∆c q Θ(a, b, c) is real, and can be taken to be a positive real number for (a, b, c) admissible (i.e. a + b + c ≤2r −4).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetry and Unitarity",
+      "pageStart": 58,
+      "pageEnd": 64,
+      "target": "../sections/sec-027-72-symmetry-and-unitarity.md",
+      "narrative": null,
+      "content": "Symmetry and Unitarity\nThe formula for the recoupling coeﬃcients given in Figure 35 has less symmetry\nthan is actually inherent in the structure of the situation. By multiplying all\nthe vertices by an appropriate factor, we can reconﬁgure the formulas in this\ntheory so that the revised recoupling transformation is orthogonal, in the sense\nthat its transpose is equal to its inverse. This is a very useful fact. It means\nthat when the resulting matrices are real, then the recoupling transformations\nare unitary. We shall see particular applications of this viewpoint later in the\npaper.\nFigure 37 i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/thm-sec-027-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 64,
+      "target": "thm-sec-027-02.md",
+      "narrative": null,
+      "content": "In the Temperley-Lieb theory we obtain unitary (in fact real orthogonal) recoupling transformations when the bracket variable A has the form A = eiπ/2r for r a positive integer. Thus we obtain families of unitary representations of the Artin braid group from the recoupling theory at these roots of unity.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fibonacci Particles",
+      "pageStart": 64,
+      "pageEnd": 66,
+      "target": "../sections/sec-028-8-fibonacci-particles.md",
+      "narrative": null,
+      "content": "Fibonacci Particles\nIn this section and the next we detail how the Fibonacci model for anyonic\nquantum computing [56, 67] can be constructed by using a version of the two-\nstranded bracket polynomial and a generalization of Penrose spin networks.\nThis is a fragment of the Temperly-Lieb recoupling theory [36]. We already\ngave in the preceding sections a general discussion of the theory of spin net-\nworks and their relationship with quantum computing.\nThe Fibonacci model is a TQFT that is based on a single “particle” with\ntwo states that we shall call the marked state and the unmarked state. The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "dim(V ) = 2",
+      "pageStart": 66,
+      "pageEnd": 66,
+      "target": "../sections/sec-029-dimv-2.md",
+      "narrative": null,
+      "content": "dim(V         ) = 2",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "dim(V ) = 1",
+      "pageStart": 66,
+      "pageEnd": 68,
+      "target": "../sections/sec-030-dimv-1.md",
+      "narrative": null,
+      "content": "P\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nP\nFigure 44 - Fibonacci Trees\nFrom here on we shall denote the Fibonacii particle by the letter P. Thus\nthe two possible interactions of P with itself are as follows.\n1. P, P −→∗\n2. P, P −→P\nIn Figure 43 we indicate in small tree diagrams the two possible interactions\nof the particle P with itself.\nIn the ﬁrst interaction the particle vanishes,\nproducing the asterix. In the second interaction the particle a single copy of\nP is produced. These are the two basic actions of a single distinction relative\nto itself, and they constitute our formalism for this very elementar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tree of squences with no occurence of **",
+      "pageStart": 68,
+      "pageEnd": 68,
+      "target": "../sections/sec-031-tree-of-squences-with-no-occurence-of.md",
+      "narrative": null,
+      "content": "Tree of squences with no occurence of **\nFigure 45 - Fibonacci Sequence",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Fibonacci Recoupling Model",
+      "pageStart": 68,
+      "pageEnd": 70,
+      "target": "../sections/sec-032-9-the-fibonacci-recoupling-model.md",
+      "narrative": null,
+      "content": "The Fibonacci Recoupling Model\nWe now show how to make a model for recoupling the Fibonacci particle by\nusing the Temperley Lieb recoupling theory and the bracket polynomial. Ev-\nerything we do in this section will be based on the 2-projector, its properties\nand evaluations based on the bracket polynomial model for the Jones poly-\nnomial. While we have outlined the general recoupling theory based on the\nbracket polynomial in earlier sections of this paper, the present section is self-\ncontained, using only basic information about the bracket polyonmial, and the\nessential properties of the 2-pr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Forbidden Process",
+      "pageStart": 70,
+      "pageEnd": 80,
+      "target": "../sections/sec-033-forbidden-process.md",
+      "narrative": null,
+      "content": "Process\nFigure 47 - Fibonacci Particle as 2-Projector\nNote that in Figure 47 we have adopted a single strand notation for the particle\ninteractions, with a solid strand corresponding to the marked particle, a dotted\nstrand (or nothing) corresponding to the unmarked particle. A dark vertex\nindicates either an interaction point, or it may be used to indicate the single\nstrand is shorthand for two ordinary strands. Remember that these are all\nshorthand expressions for underlying bracket polynomial calculations.\nIn Figures 48, 49, 50, 51, 52 and 53 we have provided complete diagram-\nmatic calculat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum Computation of Colored Jones Polynomials and the Witten-Reshetikhin- Turaev Invariant",
+      "pageStart": 80,
+      "pageEnd": 83,
+      "target": "../sections/sec-034-10-quantum-computation-of-colored-jones-polynomi.md",
+      "narrative": null,
+      "content": "Polynomials and the Witten-Reshetikhin-\nTuraev Invariant\nIn this section we make some brief comments on the quantum computation\nof colored Jones polynomials. This material will be expanded in a subsequent\npublication.\n= 0\na\nb\nif b = 0\nΣ\n=\n0\n0\n0\n=\nx\ny\n,\nx\ny\n0\nB(x,y)\n0\n0\n0\n=\na\na\na\na a a\na\na\na\na\nΣ\n=\nx\ny\n,\nx\ny\n0\nB(x,y)\na\na\n=\n0\na\na\nB(0,0)\n0\n0\n= B(0,0) ∆a\n(     ) 2\nB\nP(B)\nFigure 57 - Evaluation of the Plat Closure of a Braid\nFirst, consider Figure 57. In that ﬁgure we illustrate the calculation of the\nevalutation of the (a) - colored bracket polynomial for the plat closure P(B) of\na braid B. The rea",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 83,
+      "pageEnd": 88,
+      "target": "../sections/sec-035-references.md",
+      "narrative": null,
+      "content": "[1] D. Aharonov, V. Jones, Z. Landau, A polynomial quantum algorithm for\napproximating the Jones polynomial, quant-ph/0511096.\n[2] D. Aharonov, I. Arad, The BQP-hardness of approximating the Jones\npolynomial, quant-ph/0605181.\n[3] Y.Akutsu and M.Wadati. Knot invariants and critical statistical systems.\nJ.Phys.Soc.Japan 56 (1987)839-842.\n[4] J.W.Alexander.\nTopological\ninvariants\nof\nknots\nand\nlinks.Trans.Amer.Math.Soc. 20 (1923) .275-306.\n[5] M.F. Atiyah, The Geometry and Physics of Knots, Cambridge University\nPress, 1990.\n[6] Ashtekar,Abhay, Rovelli, Carlo and Smolin,Lee [1992], “Weaving a Clas",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

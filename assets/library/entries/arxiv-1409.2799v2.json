@@ -1,0 +1,348 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1409.2799v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1409.2799v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\n1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2799v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The framework",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-11-the-framework.md",
+      "narrative": null,
+      "content": "\\label{sub-intropart1}\n\nIn this paper we study the quantum group \n$\\Uq=\\Uq(\\mathfrak{sl}_2)$, where $q$ is \na root of unity, its category of \ntilting modules $\\T$ and the category \nof projective endofunctors $\\Endo(\\T)$ \ncombinatorially and diagrammatically.\n\n\n\n\nEverything we do is completely explicit and ``down to earth'', \nbut motivated and deduced from a general machinery that \ncomes, from the side of representation theory, from \npioneering work of Soergel~\\cite{soe1}, \nBeilinson-Ginzburg-Soergel~\\cite{bgs}, \nKazhdan-Lusztig~\\cite{kalu} and \nStroppel~\\cite{st2}, and from the side of \ncombin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2799v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1409.2799v2  [math.QA]  31 Dec 2015\nDIAGRAM CATEGORIES FOR Uq-TILTING MODULES AT ROOTS OF UNITY\nHENNING HAAHR ANDERSEN AND DANIEL TUBBENHAUER\nABSTRACT. We give a diagrammatic presentation of the category of Uq(sl2)-tilting modules T for\nq being a root of unity and introduce a grading on T. This grading is a “root of unity phenomenon”\nand might lead to new insights about link and 3-manifold invariants deduced from T. We also give a\ndiagrammatic category for the (graded) projective endofunctors on T, indicate how our results could\ngeneralize and collect some “well-known” facts to give a re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2799v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An outline of the paper",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-12-an-outline-of-the-paper.md",
+      "narrative": null,
+      "content": "\\label{sub-intropart2}\nThe paper is organized as follows.\n\\begin{itemize}\n\\item Section~\\ref{sec-tilting} contains \nthe definition and some basic properties of the category \nof $\\Uq$-tilting modules $\\T$ as well as the category of projective \nendofunctors of it. Most of Section~\\ref{sec-tilting} is known, \nbut we have included some new observations.\n\\item In Section~\\ref{sec-quiver} we recall Khovanov-Seidel's $m$-quiver \nalgebra $\\Am$ and introduce the ``infinite version'' $\\Ai$. \nWe show that the regular blocks of \n$\\T$ embed into the\nmodule category of $\\Ai$. \nSince $\\Ai$ is naturally grade",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2799v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The tilting category T",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-2-the-tilting-category-t.md",
+      "narrative": null,
+      "content": "\\label{sec-tilting}\n\nIn this section we describe the category $\\T$ of \n$\\Uq=\\Uq(\\mathfrak{sl}_2)$-tilting modules for the quantum enveloping \nalgebra\\footnote{We like to work over the cyclotomic field $\\bC$, but any field of characteristic zero containing $q$ would work.} of $\\mathfrak{sl}_2$ at a fixed root of unity $q$.\nWe give a hopefully self-contained summary of the results in the $\\mathfrak{sl}_2$ case \nsince most results are either spread out over the \nliterature or only mentioned implicitly. But \nwe have also included some new observations related to our context.\n\n\n\nWe mostly follow~\\c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2799v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum groups at roots of unity",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-21-quantum-groups-at-roots-of-unity.md",
+      "narrative": null,
+      "content": "\\label{sub-qroot}\nBefore we start, let us fix some notions.\nGiven $a\\in\\bZ$ and $b\\in\\bN$, let\n\\begin{gather*}\n[a]=\\frac{v^a-v^{-a}}{v-v^{-1}}=v^{a-1}+v^{a-3}+\\dots+v^{-a+1}+v^{-a+1},\\quad\\quad[b]!=[1][2]\\cdots [b-1][b],\\\\\n\\qbin{a}{b}=\\frac{[a][a-1]\\cdots[a-b+2][a-b+1]}{[b]!}\\in\\bZ[v,v^{-1}].\n\\end{gather*}\nbe the \\textit{quantum integer}, the \\textit{quantum factorial} and \nthe \\textit{quantum binomial}.\nBy convention, $[0]!=1$.\n\n\n\\begin{defn}\\label{def-qv} The \\textit{quantum special linear algebra} $\\Uv(\\mathfrak{sl}_2)$ \nis the associative, unital $\\bQ(v)$-algebra \ngenerated by $K,K^{-1},E$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2799v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weyl modules, dual Weyl modules and simple modules",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-22-weyl-modules-dual-weyl-modules-and-simple-mod.md",
+      "narrative": null,
+      "content": "\\label{sub-wsmod}\n\n\n\n\\begin{defn}(\\textbf{Weyl, dual Weyl and simple modules})\\label{defn-weyl}\nLet $i\\in\\bN$ and denote \nby $\\Vn i$ the $i$\\textit{-th Weyl module}. \nThis is the $\\bC$-vector space \nwith basis $m_0,\\dots,m_i$ and an $\\Uq$-action defined by\n\\[\nKm_k=q^{i-2k}m_k,\\quad\\quad E^{(j)}m_k=\\qbin{i-k+j}{j}m_{k-j},\\quad\\quad F^{(j)}m_k=\\qbin{k+j}{j}m_{k+j},\n\\]\nwith the convention that $m_{<0}=m_{>i}=0$. \nThe \\textit{$i$-th dual Weyl module}, \ndenoted by $\\dVn i$, is obtained from \n$\\Vn i$ by taking the dual, that is, \n$\\Hom_{\\mathbb{Q}(q)}(\\Vn i,\\bC)=(\\Delta_q(i))^*=\\dVn i$.\n\\end{defn}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2799v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tilting modules and the tilting category T",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-23-tilting-modules-and-the-tilting-category-t.md",
+      "narrative": null,
+      "content": "\\label{sub-tiltmod}\n\\begin{defn}(\\textbf{$\\Delta$- and $\\nabla$-filtration})\\label{defn-filt}\nWe say that a $\\Uq$-module $M$ has \na $\\Delta$\\textit{-filtration} if there exists a descending sequence of \n$\\Uq$-submodules\n\\[\nM=F_{0}\\supset F_1\\supset\\cdots\\supset F_i\\supset\\dots,\\quad\\quad\\bigcap_{i=0}^{\\infty}F_i=0,\n\\]\nsuch that for all $i=0,1\\dots$ we have \n$F_{i}/F_{i+1}\\cong \\Vn{i^{\\prime}}$ for \nsome $i^{\\prime}\\in\\bN$. A $\\nabla$\\textit{-filtration} is \ndefined similarly, but using \n$\\dVn{i^{\\prime}}$ instead of \n$\\Vn{i^{\\prime}}$ and an ascending sequence of $\\Uq$-submodules, that is\n\\[\n0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2799v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The linkage principle and blocks",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-24-the-linkage-principle-and-blocks.md",
+      "narrative": null,
+      "content": "\\label{sub-blocks}\nConsider the alcove $\\mathcal A_0$ \nand its closure $\\bar{\\mathcal A}_0$ given by\n\\[\n\\mathcal A_0=\\{k\\in\\bZ\\mid -1<k<l-1\\},\\quad\\quad\\bar{\\mathcal A}_0=\\{k\\in\\bZ\\mid -1\\leq k \\leq l-1\\}.\n\\]\nWe call $\\mathcal A_0$ the \\textit{fundamental alcove}. \nAny other alcove in $\\bZ_{\\geq -1}$ is \nclearly of the form $\\mathcal A_0+il$ for \nsome $i\\in\\bN$. Moreover, we call \n$-1,l-1\\in\\bar{\\mathcal A}_0-\\mathcal A_0$ \\textit{walls of $\\mathcal A_0$}.\n\n\n\n\nThe \\textit{affine Weyl group} is \n$W_l=\\langle s_{r},t_{r}\\mid r\\in\\bZ\\rangle$ where $s_{r}$ and $t_r$ act on $\\bZ$ via\n\\[\ns_{r}.k=-k-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2799v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Translation functors",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-008-25-translation-functors.md",
+      "narrative": null,
+      "content": "\\label{sub-translation}\nFix $\\lambda\\in\\mathcal A_0$ and \n$\\mu\\in\\bar{\\mathcal{A}}_0-\\mathcal A_0$. Set $\\nu=|\\lambda-\\mu|$ \n(in fact, $\\nu=|\\lambda_i-\\mu_i|$ for all \n$i\\in\\bN$ and $\\nu$ will stay in $\\bar{\\mathcal{A}}_0$). \nRecall that there is a unique simple \n$\\Uq$-module $\\Ln{\\nu}\\cong\\Tn{\\nu}$.\nDenote by $p_{\\lambda}\\colon\\T\\to\\T_{\\lambda}$ the \n\\textit{projection onto the block} $\\T_{\\lambda}$ functor. Similarly for $\\mu$.\n\n\n\n\\begin{defn}(\\textbf{Onto and out of the wall})\\label{defn-onout}\nGiven $\\lambda$ and $\\mu$, we define \ntwo functors via\n\\[\n\\mathcal T_{\\lambda}^{\\mu}\\colon\\T_{\\la",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2799v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Khovanov-Seidel quiver algebra and gradings",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-009-3-the-khovanov-seidel-quiver-algebra-and-grading.md",
+      "narrative": null,
+      "content": "\\label{sec-quiver}\n\nIn the present section\\footnote{We use \\textit{right} modules in this \nsection and read from right to left: we think of the paths \nin the quiver as applying morphisms/functors. The reason for this \nwill become clear in Subsection~\\ref{sub-ainfty}.} we identify \nthe quiver for the blocks $\\T_{\\lambda}$. We show how the \nquiver description can be used to define a grading on $\\T$. We \nobtain a grading on $\\Endo(\\T)$ as well.\n\n\n\nAdditionally, we show how the translation functors of $\\T_{\\lambda}$ \ncan be used to get a categorification of the action of the \nbraid group on the (s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2799v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Combinatorics of the graded, right Qm- and Ain-modules",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-010-32-combinatorics-of-the-graded-right-qm--and-ain.md",
+      "narrative": null,
+      "content": "\\label{sub-ammod}\nRecall that, if $A$ denotes some \ngraded $\\bC$-algebra, then a (right) \n$A$-module $M$ is called \\textit{$\\bZ$-graded} (or simply \\textit{graded}), if\n\\[\nM=\\bigoplus_{k\\in\\bZ}M^k\\quad\\text{and}\\quad M^k\\cdot A^{k^{\\prime}}\\subset M^{k+k^{\\prime}}.\n\\]\nAn $A$-module homomorphism between \ngraded modules $f\\colon M\\to N$ is called \n\\textit{degree preserving}, if $f(M^k)\\subset N^k$ \nfor all $k\\in\\bZ$ and \\textit{homogeneous \n(of degree $d\\in\\bZ$)} if $f(M^k)\\subset N^{k+d}$ for all $k\\in\\bZ$.\nWe denote by $\\ModgrA$ the category of \n\\textit{graded}, finitely generated $A$-modules",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2799v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Endofunctors on pMod-Qm and pMod-Qin",
+      "pageStart": 20,
+      "pageEnd": 27,
+      "target": "../sections/sec-011-33-endofunctors-on-pmod-qm-and-pmod-qin.md",
+      "narrative": null,
+      "content": "\\label{sub-endo}\nSet\\footnote{Note that we use a different convention than Khovanov and Seidel for the gradings by shifting ${}_iP$ down by one.} \n$B_i=P_i\\otimes_{\\bC}{}_iP\\langle -1\\rangle$ for all \nindices $i=1,\\dots,m$. Note that the $B_i$'s are \ngraded $\\Am$-bimodules with the tensor product \n$p\\otimes p^{\\prime}$ of degree $l(p\\otimes p^{\\prime})=l(p)+l(p^{\\prime})$ \nfor $p$ of degree $l(p)$ and $p^{\\prime}$ of degree $l(p^{\\prime})$. \nWe define functors\n\\[\n\\mathcal U_i\\colon \\pModgrAm\\to \\pModgrAm,\\;\\mathcal U_i= \\cdot \\otimes_{\\Am}B_i\\quad\\text{for}\\quad i=1,\\dots,m.\n\\]\nNote that we ha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2799v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The tilting category T and its graded counterpart Tgr",
+      "pageStart": 27,
+      "pageEnd": 31,
+      "target": "../sections/sec-012-35-the-tilting-category-t-and-its-graded-counter.md",
+      "narrative": null,
+      "content": "\\label{sub-grad}\nIn this subsection we discuss the \nconsequences of Theorems~\\ref{thm-struktursatz1} \nand~\\ref{thm-struktursatz2} with respect to the \nquestion how the path length grading $l(\\cdot)$ \n(see Definition~\\ref{def-ksquiver1}) of \nKhovanov-Seidel's $\\infty$-quiver algebra relates \nto the tilting category $\\T$. We point out that this is non-trivial since Theorems~\\ref{thm-struktursatz1} and~\\ref{thm-struktursatz2} only say that \n$\\T_{\\lambda}(\\leq \\bbm)$ and $\\T_{\\lambda}$ are \nisomorphic to subcategories of $\\pModAm$ and $\\pModAi$.\n\n\n\nRecall that, for every graded algebra $A$, there",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2799v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Diagrams for the graded tilting category Tgr",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-013-4-diagrams-for-the-graded-tilting-category-tgr.md",
+      "narrative": null,
+      "content": "\\label{sec-dia}\n\nIn this section we give the diagrammatic presentation of \nthe (graded) tilting category $\\Tgrl$ and the category of \nits projective endofunctors $\\Endo(\\Tgrl)$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2799v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The basics: diagrammatic categories, additive closures and Karoubi envelopes",
+      "pageStart": 31,
+      "pageEnd": 46,
+      "target": "../sections/sec-014-41-the-basics-diagrammatic-categories-additive-c.md",
+      "narrative": null,
+      "content": "\\label{sub-basiccats}\nWe consider \\textit{diagrammatic} categories \nin the following. We encourage the reader \nto take a look in the rather extensive literature \n(in the authors opinion, a good start is~\\cite[Section 2]{lau1}).\nAlthough these categories \nhave a natural $2$-categorical structure, \nwe phrase everything in terms of $1$-categories.\n\n\n\nFurthermore, we note that we \\textit{only} use \n$\\bC$-linear categories. Recall that a category \n$\\mathcal C$ is called $\\bC$\\textit{-linear} if each \nhom-space $\\Hom_{\\mathcal C}(O,O^{\\prime})$ for \n$O,O^{\\prime}\\in\\Ob(\\mathcal C)$ has the \nstructur",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2799v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Diagram categories for Endo(Tgrl)",
+      "pageStart": 46,
+      "pageEnd": 48,
+      "target": "../sections/sec-015-45-diagram-categories-for-endotgrl.md",
+      "narrative": null,
+      "content": "\\label{sub-projdia}\n\n\n\nWe denote by $\\overline{\\Mat}(\\mathcal C)$ \nliterally the same category as $\\Mat(\\mathcal C)$, \nbut we allow \\textit{countable} direct sums as \nobjects and \\textit{finitely supported} matrices as morphisms.\nWe carefully distinguish between \nred $r$ and green $g$ on one hand \nand $s,t\\in W_l$ on the other. We \nthink of an \\textit{alternating} \nsequence (of length $i\\geq 0$) of the \nformer $x_{i-grg}$ to correspond (under \nTheorem~\\ref{thm-diafortilt}) to $\\Tn{\\bbi}$ and \nof \\textit{any} sequence of the latter $x=x_i\\dots x_2x_1$ \nto correspond to $\\Theta_x=\\Theta_{x_i}\\ci",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.2799v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 48,
+      "pageEnd": 50,
+      "target": "../sections/sec-016-references.md",
+      "narrative": null,
+      "content": "[1] H.H. Andersen. Tensor products of quantized tilting modules. Comm. Math. Phys., 149(1):149–159, 1992. URL:\nhttp://projecteuclid.org/euclid.cmp/1104251142.\n[2] H.H. Andersen. The strong linkage principle for quantum groups at roots of 1. J. Algebra, 260(1):2–15, 2003.\ndoi:10.1016/S0021-8693(02)00618-X.\n[3] H.H. Andersen, J.C. Jantzen, and W. Soergel. Representations of quantum groups at a pth root of unity and of\nsemisimple groups in characteristic p: independence of p. Ast´erisque, (220):321, 1994.\n[4] H.H. Andersen and M. Kaneda. Rigidity of tilting modules. Mosc. Math. J., 11(1):1–39, 18",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,476 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0410111v2",
+  "title": "createdbydvipdf",
+  "variant": "pdf",
+  "pages": 7,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Computational Complexity Bounds",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-computational-complexity-bounds"
+    },
+    {
+      "level": 1,
+      "title": "FPTAS for Optimizing Non-Negative Polynomials over Integer Points of Polytopes",
+      "number": "3",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-fptas-for-optimizing-non-negative-polynomials"
+    },
+    {
+      "level": 1,
+      "title": "An extension to the mixed integer case",
+      "number": "4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-an-extension-to-the-mixed-integer-case"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 186,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fma imo",
+          "heading": false
+        },
+        {
+          "term": "magdeburg",
+          "heading": false
+        },
+        {
+          "term": "germany email",
+          "heading": false
+        },
+        {
+          "term": "uni-magdeburg",
+          "heading": false
+        },
+        {
+          "term": "computational complexity",
+          "heading": false
+        },
+        {
+          "term": "subject classiﬁcation",
+          "heading": false
+        },
+        {
+          "term": "integer polynomial",
+          "heading": false
+        },
+        {
+          "term": "hemmecke",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0410111v2 [math.OC] 31 May 2005 Integer Polynomial Optimization in Fixed Dimension Jes´us A. De Loera University of California, Dept. of Mathematics, Davis CA 95616, USA email: deloera@math.ucdavis.edu http://www.math.ucdavis.edu/~deloera Raymond Hemmecke Otto-von-Guericke-Universit¨at Magdeburg, FMA/IMO, Universit¨atsplatz 2, 39106 Magdeburg, Germany email: hemmecke@imo.math.uni-magdeburg.de",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0410111v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 513,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hbox maximize",
+          "heading": false
+        },
+        {
+          "term": "rightarrow undecidable",
+          "heading": false
+        },
+        {
+          "term": "hbox subject",
+          "heading": false
+        },
+        {
+          "term": "integer non-linear",
+          "heading": false
+        },
+        {
+          "term": "rational polytope",
+          "heading": false
+        },
+        {
+          "term": "integer variables",
+          "heading": false
+        },
+        {
+          "term": "lower bounds",
+          "heading": false
+        },
+        {
+          "term": "convex rational",
+          "heading": false
+        }
+      ],
+      "extract": "Mixed integer non-linear programs combine the hardness of combinatorial explosion with the non-convexity of non-linear functions. For example, the well-known optimality conditions developed for differentiable objective functions have no meaning when the variables are discrete. Thus, it is perhaps not surprising that already linear integer programming with general quadratic constraints is undecidable [@jeroslow].",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-computational-complexity-bounds",
+      "number": "2",
+      "title": "Computational Complexity Bounds",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 454,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gogo",
+          "heading": false
+        },
+        {
+          "term": "jeroslow",
+          "heading": false
+        },
+        {
+          "term": "complexity",
+          "heading": true
+        },
+        {
+          "term": "polynomial constraints",
+          "heading": false
+        },
+        {
+          "term": "np-complete",
+          "heading": false
+        },
+        {
+          "term": "minimizing",
+          "heading": false
+        },
+        {
+          "term": "recursive function",
+          "heading": false
+        },
+        {
+          "term": "bounds",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#bounds label=\"bounds\"} All the results we present refer to the complexity model where the number of operations is given in terms of the input size measured in the standard binary encoding. The results of H. W. Lenstra Jr. [@lenstra] imply the entry of Table [\\[gogo\\]](#gogo){reference-type=\"ref\" reference=\"gogo\"} marked with $(*)$, i.e. solving linear integer programming problems with a fixed number of variables",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-fptas-for-optimizing-non-negative-polynomials",
+      "number": "3",
+      "title": "FPTAS for Optimizing Non-Negative Polynomials over Integer Points of Polytopes",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 6,
+      "labelStart": "2",
+      "labelEnd": "6",
+      "words": 2498,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cap mathbb",
+          "heading": false
+        },
+        {
+          "term": "leq epsilon",
+          "heading": false
+        },
+        {
+          "term": "mathbb alpha",
+          "heading": false
+        },
+        {
+          "term": "limits alpha",
+          "heading": false
+        },
+        {
+          "term": "frac partial",
+          "heading": false
+        },
+        {
+          "term": "partial cdot",
+          "heading": false
+        },
+        {
+          "term": "barvinok representation",
+          "heading": false
+        },
+        {
+          "term": "lceil rceil",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#algo label=\"algo\"} Consider now a polynomial function $f \\in \\mathbb Z[x_1,x_2, \\dots ,x_d]$ of maximum total degree $D$ and a convex polytope $P=\\{x | Ax \\leq b\\}$ where $A$ is an $m \\times d$ integral matrix and $b$ is an integral $m$-vector. The purpose of this section is to present an algorithm to generate lower and upper bounds $L_k,U_k$ to the integer global optimum value of $$\\hbox{maximize} \\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-an-extension-to-the-mixed-integer-case",
+      "number": "4",
+      "title": "An extension to the mixed integer case",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 813,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hbox maximize",
+          "heading": false
+        },
+        {
+          "term": "mixed integer",
+          "heading": true
+        },
+        {
+          "term": "mathbb hbox",
+          "heading": false
+        },
+        {
+          "term": "hbox subject",
+          "heading": false
+        },
+        {
+          "term": "optimal values",
+          "heading": false
+        },
+        {
+          "term": "cap mathbb",
+          "heading": false
+        },
+        {
+          "term": "whose optimal",
+          "heading": false
+        },
+        {
+          "term": "optimum",
+          "heading": false
+        }
+      ],
+      "extract": "Now, we wish to discuss extensions of Theorem [\\[main\\]](#main){reference-type=\"ref\" reference=\"main\"} to the mixed integer scenario. If some of the variables are allowed to be continuous then we can describe the task as $$\\hbox{maximize} \\ f(x,y) \\ \\hbox{subject to} \\ \\{ (x,y) | Ax+By \\leq b, \\ \\hbox{with} \\ x_i \\in \\mathbb Z\\ \\hbox{and} \\ y_i \\in \\mathbb R\\}.$$ Consider the sequence of integer polynomial",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathbb hbox",
+      "heading": false
+    },
+    {
+      "term": "hbox maximize",
+      "heading": false
+    },
+    {
+      "term": "hbox subject",
+      "heading": false
+    },
+    {
+      "term": "polynomial objective",
+      "heading": false
+    },
+    {
+      "term": "integer polynomial",
+      "heading": false
+    },
+    {
+      "term": "polynomial optimization",
+      "heading": false
+    },
+    {
+      "term": "convex polytope",
+      "heading": false
+    },
+    {
+      "term": "cap mathbb",
+      "heading": false
+    },
+    {
+      "term": "integer variables",
+      "heading": false
+    },
+    {
+      "term": "mathbb leq",
+      "heading": false
+    },
+    {
+      "term": "rational polytope",
+      "heading": false
+    },
+    {
+      "term": "integer programming",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Computational complexity of problem (1) in ﬁxed dimension",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0410111v2"
+  }
+}

@@ -1,0 +1,534 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0911.1038v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotic representation theory of symmetric groups",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-001-11-asymptotic-representation-theory-of-symmetric.md",
+      "narrative": null,
+      "content": "*What can we say about the representations of the symmetric groups $\\mathfrak{S}(n)$ in the limit $n\\to\\infty$?* This very general question is the subject of investigations of *the asymptotic representation theory of the symmetric groups*. Even though for almost any question of the representation theory of the symmetric groups the answer is known, usually this answer is given by a combinatorial algorithm (for example, Murnaghan-Nakayama rule or Littlewood-Richardson rule) involving manipulations with boxes of a Young diagram. As $n$, the number of boxes, tends to infinity, such combinatorial a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotic shape of Young diagrams",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-12-asymptotic-shape-of-young-diagrams.md",
+      "narrative": null,
+      "content": "In this article we study the scaling of *balanced Young diagrams* which means that a Young diagram with $n$ boxes is assumed to have at most $O(\\sqrt{n})$ rows and columns. This scaling almost inevitably leads to the concept of *(asymptotic) shape* of a Young diagram: roughly speaking, we disregard the information about the number of boxes of a Young diagram and we are interested only how the Young diagram looks in large-scale perspective. More precisely, this concept of (asymptotic) shape of a Young diagram corresponds to the *dilated Young diagram* $\\frac{1}{\\sqrt{n}} \\lambda$ which, roughly",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0911.1038v2  [math.CO]  12 Mar 2012\nASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS:\nSTRUCTURE OF KEROV CHARACTER POLYNOMIALS\nMACIEJ DOŁ ˛EGA AND PIOTR ´SNIADY\nABSTRACT. We study asymptotics of characters of the symmetric groups\non a ﬁxed conjugacy class. It was proved by Kerov that such a character\ncan be expressed as a polynomial in free cumulants of the Young dia-\ngram (certain functionals describing the shape of the Young diagram).\nWe show that for each genus there exists a universal symmetric polyno-\nmial which gives the coefﬁcients of the part of Kerov character polyno-\nmials with th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "How to normalize the characters?",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-13-how-to-normalize-the-characters.md",
+      "narrative": null,
+      "content": "*How should we normalize the characters of the symmetric groups in order to obtain some meaningful asymptotic quantities?* The answer for this question was given by [@Biane2003] who gave the following definition. For any permutation $\\pi\\in \\mathfrak{S}(k)$ and an irreducible representation $\\rho^\\lambda$ of the symmetric group $\\mathfrak{S}(n)$ corresponding to the Young diagram $\\lambda$ we define the *normalized character* $$\\label{eq:character}\n \\Sigma^\\lambda_\\pi =\\begin{cases} \\underbrace{n(n-1)\\cdots (n-k+1)}_{k \\text{\nfactors}} \\frac{\\mathop{\\mathrm{Tr}}\\rho^\\lambda(\\pi)}{\\text{dimensi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "How to describe the shape of a Young diagram?",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-14-how-to-describe-the-shape-of-a-young-diagram.md",
+      "narrative": null,
+      "content": "A natural question arises: *how to choose parameters which describe the shape of a Young diagram in the most convenient way?* A very interesting answer for this question was proposed by Biane [@Biane1998] who for a (generalized) Young diagram $\\lambda$ defined a family of parameters $R_2^{\\lambda},R_3^{\\lambda},\\dots$, called *free cumulants* of $\\lambda$.\n\nThe original definition of free cumulants of $\\lambda$ given by Biane is quite involved (free cumulants of a Young diagram are Speicher's *free cumulants* [@NicaSpeicher2006] --- related to Voiculescu's *free probability theory* [@Voiculesc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Free cumulants",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-005-15-free-cumulants.md",
+      "narrative": null,
+      "content": "We define the *free cumulants* $R_2^\\lambda,R_3^\\lambda,\\dots$ as\n\n$$R_{k}^\\lambda = \\lim_{s\\to\\infty} \\frac{1}{s^{k}}\n\\Sigma^{s\\lambda}_{k-1},$$\n\nin other words each free cumulant is asymptotically the dominant term of the character on a cycle of appropriate length in the limit when the Young diagram tends\n\nto infinity.\n\nOne of the reasons why free cumulants are so useful in asymptotic representation theory is that they are homogeneous with respect to dilations of the Young diagrams, namely $$R^{s\\lambda}_k = s^k R^{\\lambda}_k.$$",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Kerov character polynomials",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-006-16-kerov-character-polynomials.md",
+      "narrative": null,
+      "content": "It turns out that free cumulants can be used not only to provide asymptotic approximations for the characters of symmetric groups, but also for exact formulas. Kerov during a talk in Institut Henri Poincaré in January 2000 [@Kerov2000talk] announced the following result (the first published proof was given by Biane [@Biane2003]): for each permutation $\\pi$ there exists a unique universal polynomial $K_{\\pi}$ with integer coefficients, called *Kerov character polynomial*, with a property that\n\n$$\\Sigma^{\\lambda}_\\pi =\nK_{\\pi}(R_2^{\\lambda},R_3^\\lambda,\\dots)$$\n\nholds true for any\n\nYoung diagram",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Genus expansion",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-007-17-genus-expansion.md",
+      "narrative": null,
+      "content": "It is convenient to consider a gradation with respect to which the degree of the free cumulant $R_k$ is equal to $k$. We denote by $K_{k,d}$ the homogeneous part of degree $d$ of the Kerov character polynomial $K_k$. One of the results announced by Kerov [@Kerov2000talk] was that the only non-zero polynomials $K_{k,d}$ are of the form $K_{k,k+1-2g}$ where $g\\geq 0$ is an integer. It is possible to give some topological meaning to many calculations related to Kerov polynomials in which the integer $g$ can be interpreted as the genus of the resulting two-dimensional surface. For this reason, stu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The main result: proof of some conjectures of Lassalle",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-008-18-the-main-result-proof-of-some-conjectures-of.md",
+      "narrative": null,
+      "content": "Lassalle announced as a conjecture [@Lassalle-preprint2007] that there is an additional structure in the genus expansion of Kerov polynomials. He claimed that for a fixed genus $g$ there exists a symmetric function $f_g$ which describes polynomials $K_{k,k+1-2g}$ and which is independent of $k$. Before presenting his conjectures we need to prepare some notations.\n\nA partition $\\mu=(\\mu_1\\geq \\mu_2\\geq \\cdots)$ is a weakly decreasing sequence of nonnegative integers with finitely many non-zero elements. The non-zero $\\mu_i$ in a partition $\\mu$ are called the parts of $\\mu$. We will denote by $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General idea of the proof",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-009-19-general-idea-of-the-proof.md",
+      "narrative": null,
+      "content": "For a given positive integer $g$ we define a symmetric function $k(\\mu) := |\\mu|+2g-1 = p_1(\\mu) + 2g - 1$, therefore for a given symmetric functions $f_g$ and $h_g$ we can define symmetric functions $\\tilde{f}_g(\\mu) := k(\\mu) \\binom{k(\\mu)+1}{3} f_g(\\mu)$ and $\\tilde{h}_g(\\mu) := k(\\mu) \\binom{k(\\mu)+1}{3} h_g(\\mu)$. We notice that in equations [\\[eq:lassalle1\\]](#eq:lassalle1){reference-type=\"eqref\" reference=\"eq:lassalle1\"} and [\\[eq:lassalle6\\]](#eq:lassalle6){reference-type=\"eqref\" reference=\"eq:lassalle6\"} we sum over all partitions $\\mu$ which satisfy $k(\\mu) = k$. Therefore the follow",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Goulden-Rattan formula and existence of symmetric polynomials",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-010-2-goulden-rattan-formula-and-existence-of-symmet.md",
+      "narrative": null,
+      "content": "POLYNOMIALS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Power series P",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-011-21-power-series-p.md",
+      "narrative": null,
+      "content": "Following Goulden and Rattan [@GouldenRattan2007] we define\n\n$$C(t)=\\frac{1}{1-\\sum_{i\\geq 2}\\mathcal{R}_i t^i} = \n\n\n\n\\sum_{\\mu} t^{|\\mu|} l(\\mu)!\\ \\mathcal{R}_\\mu.$$ Let $D=t \\frac{d}{dt}$\n\nand define for $m\\geq 1$\n\n$$P_m(t)=-\\frac{1}{m!}C(t)\\big(D+m-2\\big)C(t)\\cdots\n\\big(D+1\\big)C(t)DC(t).$$\n\nFor example, we have $$\\begin{aligned}\n\\nonumber P_1(t)&=-C(t),\\\\ \n\\nonumber P_2(t)&=-\\frac{1}{2}C(t)DC(t),\\\\\n\\nonumber\n\nP_3(t)&\n=-\\frac{1}{6}\nC(t)(D+1)C(t)DC(t) \\\\\n\\nonumber &= -\\frac{1}{6}\\left[C(t)DC(t)DC(t) + C(t)^2DC(t)\\right] \\\\\n\\nonumber &= \n-\\frac{1}{6}\n\\left[C(t)D\\big(C(t)\\cdot DC(t)\\big) + C(t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Polynomial structure of coefficients of P",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-012-22-polynomial-structure-of-coefficients-of-p.md",
+      "narrative": null,
+      "content": "::: definition\nIf $f$ is a symmetric function of degree $d$ and $2g\\geq 2$ is an integer then the formal power series $$\\label{eq:postac-F-nice}\nF(t)=  \\sum_{\\mu}  t^{|\\mu|}\n\\big(l(\\mu) + 2g - 2\\big)!\\ f(\\mu)\\ \\mathcal{R}_\\mu$$ will be called *a power-sum of the first kind with degree $d$ and genus $g$* and the formal power series $$\\label{eq:postac-F-vnice}\nF(t)=  \\sum_{\\mu}  t^{|\\mu|}(2g-1)^{l(\\mu)}\\ f(\\mu)\\ \\mathcal{Q}_\\mu$$ will be called *a power-sum of the second kind with degree $d$ and genus $g$*.\n:::\n\n::: lemma\n[]{#lem:nice label=\"lem:nice\"}  \n\n1.  []{#case1 label=\"case1\"} $C(t)$ is a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Goulden-Rattan formula",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-013-23-goulden-rattan-formula.md",
+      "narrative": null,
+      "content": "mial symmetric function in variables x1, x2, . . . . In this paper we consider\nthe particular evaluation of the monomial symmetric function at xi = i, for\ni = 1, . . . , k −1, and xi = 0, for i ≥k, and write this as ˆmλ. Let A(t) be a\nformal power series. We denote the coefﬁcient of tk in A(t) by [tk]A(t).\nTheorem 2.5 (Goulden and Rattan [GR07]). For g ≥1, k ≥2g −1,\n(12)\nΣk,k+1−2g = −1\nk[tk+1−2g]\nX\n|λ|=2g\nˆmλ\nPλ(t)\nC(t) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Proposition ??",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-014-24-proof-of-proposition.md",
+      "narrative": null,
+      "content": "Proof of Proposition 1.2. Equation (12) can be written in the form\nk Σk,k+1−2g = −[tk+1−2g]\nX\n|λ|=2g\nˆmλ\nPλ(t)\nC(t) .\nThe evaluation of the power sum symmetric function\nˆps = 1s + · · · + (k −1)s\nanalogous to that for ˆmλ is a polynomial in k of degree s + 1; it follows\nimmediately that the evaluation of the power-sum symmetric function ˆpλ is\na polynomial in k of degree |λ| + l(λ). The monomial symmetric function\nmλ is a linear combination of power-sum symmetric functions pµ, where\neach partition µ which appears in this linear combination is obtained from\npartition λ by gluing some of their p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Divisibility of polynomials",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-015-3-divisibility-of-polynomials.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Implications of divisibility",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "../sections/sec-016-31-implications-of-divisibility.md",
+      "narrative": null,
+      "content": "At this step we proved Proposition [\\[prop:main-prop\\]](#prop:main-prop){reference-type=\"ref\" reference=\"prop:main-prop\"}. In order to prove Theorem [\\[theo:main\\]](#theo:main){reference-type=\"ref\" reference=\"theo:main\"} we would like to show that for each integer $g\n\\geq 1$, functions $\\tilde{f}_g$ and $\\tilde{h}_g$ are divisible by the symmetric function $$(p_1 + 2g -1)\\frac{(p_1 + 2g)(p_1 + 2g -1)(p_1 + 2g\n-2)}{3!},$$ where $p_1$ denotes the power symmetric function. By word divisible we mean that there exist symmetric functions $f_g$ and $h_\\mu$ such that $$\\tilde{f}_g = (p_1 + 2g -1)\\frac",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/thm-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Goulden and Rattan [GR07]",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "thm-sec-013-01.md",
+      "narrative": null,
+      "content": "For g ≥1, k ≥2g −1, (12) Σk,k+1−2g = −1 k[tk+1−2g] X |λ|=2g ˆmλ Pλ(t) C(t) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the main result",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-017-33-proof-of-the-main-result.md",
+      "narrative": null,
+      "content": "MACIEJ DOŁ ˛EGA AND PIOTR ´SNIADY\np the following number\nX\nν≥µ\n(2g −1)l(ν)\u0000l(ν) −1\n\u0001\n! h(ν) =\np\n\"X\nν≥µ\n(2g −1)l(ν)\u0000l(ν) −1\n\u0001\n! ˜h(ν)\n#\n+\nX\nν≥µ\n(2g −1)l(ν)\u0000l(ν) −1\n\u0001\n! s(ν′)\nis divisible by p, where for ν = (ν1, ν2, . . . ) we denote ν′ = (ν2, ν3, . . . ).\nNotice that the set of values of ν′ which contribute to the right hand side\ndoes not depend on the choice of p, because only ν1 depends on the choice\nof p. Thus we proved that for inﬁnitely many prime numbers p the second\nsummand on the right hand side does not depend on the choice of p and is\na ﬁxed integer divisible by all these prime numbe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Divisibility",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-018-32-divisibility.md",
+      "narrative": null,
+      "content": "In order to prove Theorem [\\[theo:main\\]](#theo:main){reference-type=\"ref\" reference=\"theo:main\"} we would like to apply Lemma [\\[lem:sie-dzieli\\]](#lem:sie-dzieli){reference-type=\"ref\" reference=\"lem:sie-dzieli\"} to Kerov polynomials. For this, we need some interesting arithmetic properties of coefficients of Kerov polynomials. The next lemma, which was formulated as a conjecture by Światosław Gal [@Gal], shows some properties of these kind.\n\n::: lemma\n[]{#lem:div label=\"lem:div\"} If $p$ is an odd prime number then\n\n1.  []{#lem:gal_a label=\"lem:gal_a\"} $\\frac{\\Sigma_{p}-R_{p+1}+2 R_2}{p}$,\n\n2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/lem-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "lem-sec-020-01.md",
+      "narrative": null,
+      "content": "The following abstract equalities hold: (16)X µ∪ρ=ν mλ(µ)(l(µ) + 2g −2)! l(µ)! uµuρ = mλ(ν) l(λ) + 2g −1 (l(ν) + 2g −2)! l(ν)! uν; (17) X µ∪ρ=ν mλ(µ)(2g −1)l(µ)z−1 µ z−1 ρ = \u00122g −1 2g \u0013l(λ) mλ(ν)(2g)l(ν)z−1 ν . STRUCTURE OF KEROV CHARACTER POLYNOMIALS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Technical lemmas",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-019-4-technical-lemmas.md",
+      "narrative": null,
+      "content": "[]{#sec:technical label=\"sec:technical\"}\n\nIn this Section we prove all technical lemmas we used in this article.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Identities on symmetric functions",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-020-41-identities-on-symmetric-functions.md",
+      "narrative": null,
+      "content": "Lemma 4.1. The following abstract equalities hold:\n(16)X\nµ∪ρ=ν\nmλ(µ)(l(µ) + 2g −2)!\nl(µ)!\nuµuρ =\nmλ(ν)\nl(λ) + 2g −1\n(l(ν) + 2g −2)!\nl(ν)!\nuν;\n(17)\nX\nµ∪ρ=ν\nmλ(µ)(2g −1)l(µ)z−1\nµ z−1\nρ\n=\n\u00122g −1\n2g\n\u0013l(λ)\nmλ(ν)(2g)l(ν)z−1\nν .\nSTRUCTURE OF KEROV CHARACTER POLYNOMIALS\n19\nProof. From the deﬁnition of the monomial symmetric function we know\nthat mλ(µ) = 0 for all partitions µ such that l(µ) < l(λ). We use an identity\nthat for every integer n such that l(λ) ≤n ≤l(ν) we have\n(18)\n\u0012l(ν) −l(λ)\nn −l(λ)\n\u0013\nmλ(ν) =\nX\nµ∪ρ=ν,\nl(µ)=n\nmλ(µ)\n Y\ni≥1\nmi(ν)!\nmi(µ)! mi(ρ)!\n!\n.\nIndeed,\nX\nµ∪ρ=ν,\nl(µ)=n\nmλ(µ)\n Y\ni≥1\nmi(ν",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Lemma ??",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-021-42-proof-of-lemma.md",
+      "narrative": null,
+      "content": "Proof of Lemma 3.1. Let l be ﬁxed; we will use backward induction over\nk. For k = l we know that f(µk) = 0 for inﬁnitely many choices of µk.\nIn other words, polynomial f has inﬁnitely many zeros hence f = 0, as\nclaimed.\nLet us assume that the inductive assertion holds for some k ≤l. We can\nwrite\nf(xk−1, . . . , xl) =\nX\n0≤i≤N\nxi\nk−1 fi(xk, . . . , xl)\nSTRUCTURE OF KEROV CHARACTER POLYNOMIALS\n21\nfor some N. Let us ﬁx integers µk, . . . , µl bigger than 1 which satisfy\n(14) and (13). Then we can ﬁnd inﬁnitely many integer numbers µk−1 for\nwhich the vector (µk−1, . . . , µl) satisﬁes both (14) and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Arithmetic properties of Kerov polynomials",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "../sections/sec-022-43-arithmetic-properties-of-kerov-polynomials.md",
+      "narrative": null,
+      "content": "### Auxiliary results\n\nWe present two theorems we need to prove Lemma [\\[lem:div\\]](#lem:div){reference-type=\"ref\" reference=\"lem:div\"}.\n\n::: theorem\n[]{#theo:dfs label=\"theo:dfs\"} Let $k\\geq 1$ and let $s_2,s_3,\\dots$ be a sequence of non-negative integers with only finitely many non-zero elements. The coefficient of $R_2^{s_2} R_3^{s_3} \\cdots$ in the Kerov polynomial $K_{k}$ is equal to the number of triples $(\\sigma_1,\\sigma_2,q)$ with the following properties:\n\n1.  []{#enum:first-condition label=\"enum:first-condition\"} $\\sigma_1,\\sigma_2$ is a factorization of the cycle; in other words $\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-023-acknowledgments.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.1038v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-024-references.md",
+      "narrative": null,
+      "content": "STRUCTURE OF KEROV CHARACTER POLYNOMIALS\n25\n[B2][ap]P(a) = [B2]P(1) = [B2]Σp+1.\nSince p is odd, the expansion of Σp+1 into Boolean cumulants contains only\nsummands which are of odd degree [Bia03]; it follows that [ap]P(a) = 0.\nIn this way we proved that P(a) is a polynomial of degree p −1 which\ntakes the same value for all a ∈{1, . . . , p −1}. Polynomial\neP(a) = −B3ap−1 + P(0)\nhas the same properties. It follows that P −eP has degree at most p −2\nwhich takes the same value for all a ∈{1, . . . , p −1} hence it must be\nequal to the constant. It follows that eP = P.\nΣp+1 = P(1) = −B3 + Rp+2.\nOb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

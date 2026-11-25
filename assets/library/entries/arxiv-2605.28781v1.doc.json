@@ -1,0 +1,1309 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2605.28781v1",
+  "title": "The sum-product conjecture is false for real numbers",
+  "variant": "pdf",
+  "pages": 25,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Many sums and products",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-many-sums-and-products"
+    },
+    {
+      "level": 2,
+      "title": "Linear equations in a multiplicative group",
+      "number": "1.2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-linear-equations-in-a-multiplicative-group"
+    },
+    {
+      "level": 2,
+      "title": "Sum-product in other settings",
+      "number": "1.3",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-sum-product-in-other-settings"
+    },
+    {
+      "level": 2,
+      "title": "The role of AI in this proof",
+      "number": null,
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-the-role-of-ai-in-this-proof"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "Sketch of the construction",
+      "number": "2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-2-sketch-of-the-construction"
+    },
+    {
+      "level": 1,
+      "title": "Algebraic number theory",
+      "number": "3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-3-algebraic-number-theory"
+    },
+    {
+      "level": 2,
+      "title": "The additive lattice",
+      "number": "3.1",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-31-the-additive-lattice"
+    },
+    {
+      "level": 2,
+      "title": "The unit lattice",
+      "number": "3.2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-32-the-unit-lattice"
+    },
+    {
+      "level": 1,
+      "title": "The construction",
+      "number": "4",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-4-the-construction"
+    },
+    {
+      "level": 1,
+      "title": "Numerical estimates",
+      "number": "5",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-5-numerical-estimates"
+    },
+    {
+      "level": 1,
+      "title": "Linear equations in a multiplicative group",
+      "number": "6",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-6-linear-equations-in-a-multiplicative-group"
+    },
+    {
+      "level": 1,
+      "title": "Variants",
+      "number": "7",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-7-variants"
+    },
+    {
+      "level": 2,
+      "title": "The p-adics",
+      "number": "7.1",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-71-the-p-adics"
+    },
+    {
+      "level": 2,
+      "title": "Finite fields",
+      "number": "7.2",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-72-finite-fields"
+    },
+    {
+      "level": 2,
+      "title": "Function fields",
+      "number": "7.3",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-73-function-fields"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 143,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sum-product conjecture",
+          "heading": false
+        },
+        {
+          "term": "disprove",
+          "heading": false
+        },
+        {
+          "term": "dmitrii",
+          "heading": false
+        },
+        {
+          "term": "p-adics",
+          "heading": false
+        }
+      ],
+      "extract": "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS THOMAS F. BLOOM, WILL SAWIN, CARL SCHILDKRAUT, AND DMITRII ZHELEZOV Abstract. We disprove the sum-product conjecture for real numbers by con- structing arbitrarily large A ⊂R (whose elements are algebraic integers in a number field of degree ≍log|A|) such that max(|A + A| , |AA|) ≤|A|2−c where c > 0 is an absolute constant. We also disprove the many sums and",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2605.28781v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 660,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathclose right",
+          "heading": false
+        },
+        {
+          "term": "left mathclose",
+          "heading": false
+        },
+        {
+          "term": "mathopen left",
+          "heading": false
+        },
+        {
+          "term": "leq mathopen",
+          "heading": false
+        },
+        {
+          "term": "geq mathopen",
+          "heading": false
+        },
+        {
+          "term": "th-headline",
+          "heading": false
+        },
+        {
+          "term": "sum-product conjecture",
+          "heading": false
+        },
+        {
+          "term": "right epsilon",
+          "heading": false
+        }
+      ],
+      "extract": "Given any finite set $A$ in some ring we define the sum set and product set of $A$ as $$A+A=\\{a+b: a,b\\in A\\}\\quad\\textrm{and}\\quad AA=\\{ ab : a,b\\in A\\}.$$ The sum-product conjecture in a given ring is that at least one of these must grow near-maximally; more precisely $$\\label{eq-sp}\\max(\\mathopen{}\\left| A+A\\mathclose{}\\right|,\\mathopen{}\\left| AA\\mathclose{}\\right|)\\geq \\mathopen{}\\left|",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-many-sums-and-products",
+      "number": "1.1",
+      "title": "Many sums and products",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 270,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathclose right",
+          "heading": false
+        },
+        {
+          "term": "left mathclose",
+          "heading": false
+        },
+        {
+          "term": "mathopen left",
+          "heading": false
+        },
+        {
+          "term": "geq mathopen",
+          "heading": false
+        },
+        {
+          "term": "leq mathopen",
+          "heading": false
+        },
+        {
+          "term": "right epsilon",
+          "heading": false
+        },
+        {
+          "term": "sec-linear",
+          "heading": false
+        },
+        {
+          "term": "subset mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "Erdős [@Er77] also made the stronger conjecture that, for any $k\\geq 2$ and $\\epsilon>0$, $$\\max(\\mathopen{}\\left| kA\\mathclose{}\\right|,\\lvert A^{(k)}\\rvert) \\gg_{k,\\epsilon}\\mathopen{}\\left| A\\mathclose{}\\right|^{k-\\epsilon},$$ where $kA$ and $A^{(k)}$ denote the $k$-fold sum set and $k$-fold product set, respectively. (Once again this was for $A\\subset \\mathbb{Z}$ originally, but Erdős and Szemerédi [@ErSz83]",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-linear-equations-in-a-multiplicative-group",
+      "number": "1.2",
+      "title": "Linear equations in a multiplicative group",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 230,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sec-linear",
+          "heading": false
+        },
+        {
+          "term": "th-linearmain",
+          "heading": false
+        },
+        {
+          "term": "multiplicative",
+          "heading": true
+        },
+        {
+          "term": "equation cdots",
+          "heading": false
+        },
+        {
+          "term": "absolute constant",
+          "heading": false
+        },
+        {
+          "term": "mathcal times",
+          "heading": false
+        }
+      ],
+      "extract": "Another application of our construction is to provide new lower bounds for the number of solutions to linear equations in a multiplicative group. ::: theorem []{#th-linearmain label=\"th-linearmain\"} There is an absolute constant $C>1$ such that the following holds. Let $k\\geq C$ be any integer. There exist infinitely many $d\\geq 2$ and multiplicative groups $\\Gamma\\leq\\mathbb{R}^\\times$ of rank $\\leq d$ such that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-sum-product-in-other-settings",
+      "number": "1.3",
+      "title": "Sum-product in other settings",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 359,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathclose right",
+          "heading": false
+        },
+        {
+          "term": "left mathclose",
+          "heading": false
+        },
+        {
+          "term": "mathopen left",
+          "heading": false
+        },
+        {
+          "term": "sum-product",
+          "heading": true
+        },
+        {
+          "term": "leq mathopen",
+          "heading": false
+        },
+        {
+          "term": "sum-product problem",
+          "heading": false
+        },
+        {
+          "term": "finite-field-main",
+          "heading": false
+        },
+        {
+          "term": "subset mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "Finally, in Section [\\[sec-variants\\]](#sec-variants){reference-type=\"ref\" reference=\"sec-variants\"} we discuss variants of our construction. We first obtain, via only a slight modification of the argument, analogues of all of the above results for $A\\subset \\mathbb{Q}_p$ for any prime $p$. The second variant, obtained by taking the construction in $\\mathbb{Q}_p$ 'modulo $p$' in a suitable sense, provides an upper",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-the-role-of-ai-in-this-proof",
+      "number": null,
+      "title": "The role of AI in this proof",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 101,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lem-unitsep",
+          "heading": false
+        },
+        {
+          "term": "unit distance",
+          "heading": false
+        },
+        {
+          "term": "counterexample",
+          "heading": false
+        },
+        {
+          "term": "disproving",
+          "heading": false
+        }
+      ],
+      "extract": "The authors were inspired to revisit the possibility of disproving the sum-product conjecture using number fields of large degree by the recent OpenAI counterexample to the unit distance conjecture (see [@ABGLSSTWW2026UnitDistance]). Curiously, the final construction given here required far less number theoretic input than the unit distance counterexample. GPT-5.5 Pro was used as a sounding board in the early stages",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 89,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "th-linearmain",
+          "heading": false
+        },
+        {
+          "term": "research fellow",
+          "heading": false
+        },
+        {
+          "term": "akshat",
+          "heading": false
+        }
+      ],
+      "extract": "We thank Akshat Mudgal for clarifying the quantitative aspects of [@Mu24], and suggesting that our construction could also be used to prove something like Theorem [\\[th-linearmain\\]](#th-linearmain){reference-type=\"ref\" reference=\"th-linearmain\"}. We thank Jacob Fox and Sarah Peluse for many helpful comments and Spencer Dembner for his careful reading of an earlier version of this article. TB is a Royal Society",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-2-sketch-of-the-construction",
+      "number": "2",
+      "title": "Sketch of the construction",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 992,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leq mathopen",
+          "heading": false
+        },
+        {
+          "term": "mathclose right",
+          "heading": false
+        },
+        {
+          "term": "left mathclose",
+          "heading": false
+        },
+        {
+          "term": "right epsilon",
+          "heading": false
+        },
+        {
+          "term": "additive lattice",
+          "heading": false
+        },
+        {
+          "term": "regulator control",
+          "heading": false
+        },
+        {
+          "term": "geometric progression",
+          "heading": false
+        },
+        {
+          "term": "left sigma",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we give a sketch of the construction which is used to prove Theorem [\\[th-main\\]](#th-main){reference-type=\"ref\" reference=\"th-main\"}. The construction is a high-dimensional version of the standard Balog--Wooley example first introduced in [@BalogWooleyLowEnergy]. In its simplest one-dimensional form, one takes $$A=GP,$$ where $G$ is a short geometric progression and $P$ is an interval. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-algebraic-number-theory",
+      "number": "3",
+      "title": "Algebraic number theory",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 303,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "th-tower",
+          "heading": false
+        },
+        {
+          "term": "algebraic number",
+          "heading": true
+        },
+        {
+          "term": "delta leq",
+          "heading": false
+        },
+        {
+          "term": "number theory",
+          "heading": true
+        },
+        {
+          "term": "lem-regbound",
+          "heading": false
+        },
+        {
+          "term": "real number",
+          "heading": false
+        },
+        {
+          "term": "algebraic integers",
+          "heading": false
+        },
+        {
+          "term": "lattices",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we review the necessary concepts required from algebraic number theory; with the exception of Theorem [\\[th-tower\\]](#th-tower){reference-type=\"ref\" reference=\"th-tower\"}, these are all classical results that can be found in most textbooks on the subject. Let $K$ be a totally real number field of degree $d$ over $\\mathbb{Q}$, and let $\\Delta_K$ be the discriminant of $K$ (which is strictly positive",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-31-the-additive-lattice",
+      "number": "3.1",
+      "title": "The additive lattice",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 270,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rvert leq",
+          "heading": false
+        },
+        {
+          "term": "leq lvert",
+          "heading": false
+        },
+        {
+          "term": "lvert sigma",
+          "heading": false
+        },
+        {
+          "term": "mathclose right",
+          "heading": false
+        },
+        {
+          "term": "left mathclose",
+          "heading": false
+        },
+        {
+          "term": "mathopen left",
+          "heading": false
+        },
+        {
+          "term": "lattice",
+          "heading": true
+        },
+        {
+          "term": "infty leq",
+          "heading": false
+        }
+      ],
+      "extract": "The ring of algebraic integers $\\mathcal{O}_K$ can be viewed as a lattice of rank $d$ in $\\mathbb{R}^d$ via the Minkowski embedding $$\\alpha \\mapsto (\\sigma_1(\\alpha),\\ldots,\\sigma_d(\\alpha)),$$ where $\\sigma_1,\\ldots,\\sigma_d$ are the embeddings $\\sigma_i\\colon K\\hookrightarrow \\mathbb{R}$. The covolume of this lattice is $\\Delta_K^{1/2}$ (see [@La70 V, Lemma 2]). We write $$B^+(X) = \\{ \\alpha \\in \\mathcal{O}_K :",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-32-the-unit-lattice",
+      "number": "3.2",
+      "title": "The unit lattice",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 409,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "log mathopen",
+          "heading": false
+        },
+        {
+          "term": "mathclose right",
+          "heading": false
+        },
+        {
+          "term": "left mathclose",
+          "heading": false
+        },
+        {
+          "term": "lvert sigma",
+          "heading": false
+        },
+        {
+          "term": "lem-ball",
+          "heading": false
+        },
+        {
+          "term": "lem-ball-mult",
+          "heading": false
+        },
+        {
+          "term": "lem-unitsep",
+          "heading": false
+        },
+        {
+          "term": "infty leq",
+          "heading": false
+        }
+      ],
+      "extract": "The group of units $\\mathcal{O}_K^\\times$ of $K$ is the set of algebraic integers $\\alpha$ such that $\\alpha^{-1}$ is also an algebraic integer. By Dirichlet's unit theorem (see, for example, [@Ne99 Chapter 1.7]) the group of units (modulo the roots of unity) $\\mathcal{O}_K^\\times/\\{\\pm 1\\}$ can be viewed as a lattice of rank $d-1$ in $\\mathbb{R}^{d}$ via the embedding $$u\\mapsto (\\log \\mathopen{}\\left|",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-4-the-construction",
+      "number": "4",
+      "title": "The construction",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 858,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leq mathopen",
+          "heading": false
+        },
+        {
+          "term": "delta mathopen",
+          "heading": false
+        },
+        {
+          "term": "mathclose right",
+          "heading": false
+        },
+        {
+          "term": "left mathclose",
+          "heading": false
+        },
+        {
+          "term": "rvert leq",
+          "heading": false
+        },
+        {
+          "term": "th-mainmult",
+          "heading": false
+        },
+        {
+          "term": "lem-regbound",
+          "heading": false
+        },
+        {
+          "term": "lem-ball-mult",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we use the algebraic number theory facts of the previous section to prove Theorems [\\[th-main\\]](#th-main){reference-type=\"ref\" reference=\"th-main\"} and [\\[th-mainmult\\]](#th-mainmult){reference-type=\"ref\" reference=\"th-mainmult\"}. ::: lemma []{#lem-main label=\"lem-main\"} There exists an absolute constant $c>0$ such that the following holds. Let $K$ be a totally real number field of degree $d\\geq 2$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-5-numerical-estimates",
+      "number": "5",
+      "title": "Numerical estimates",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 526,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "split primes",
+          "heading": false
+        },
+        {
+          "term": "xey",
+          "heading": false
+        },
+        {
+          "term": "constants",
+          "heading": false
+        },
+        {
+          "term": "sketch",
+          "heading": false
+        },
+        {
+          "term": "proofs",
+          "heading": false
+        },
+        {
+          "term": "version",
+          "heading": false
+        },
+        {
+          "term": "presented",
+          "heading": false
+        },
+        {
+          "term": "argument",
+          "heading": false
+        }
+      ],
+      "extract": "We have not tried to keep track of explicit constants in the proofs above, since these would obscure the main ideas of the proof, and the calculations become quite messy. In this section we sketch what a quantified version of the construction would give, yielding in particular c ≥0.00000087. We have not made any attempt to change the structure of the argument, even slightly, to optimize the constants. Doing so would",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-6-linear-equations-in-a-multiplicative-group",
+      "number": "6",
+      "title": "Linear equations in a multiplicative group",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 651,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multiplicative group",
+          "heading": true
+        },
+        {
+          "term": "non-degenerate solutions",
+          "heading": false
+        },
+        {
+          "term": "least exp",
+          "heading": false
+        },
+        {
+          "term": "improved",
+          "heading": false
+        },
+        {
+          "term": "rank",
+          "heading": false
+        },
+        {
+          "term": "some constant",
+          "heading": false
+        },
+        {
+          "term": "dependence",
+          "heading": false
+        },
+        {
+          "term": "concerned",
+          "heading": false
+        }
+      ],
+      "extract": "Let Γ ≤C× be a multiplicative group. A natural question is how many solutions the equation (6.1) x1 + · · · + xk = 1 can have with xi ∈Γ. We are concerned only with non-degenerate solutions, which are those such that P i∈I xi̸ = 0 for every non-empty I ⊆{1, . . . , k}. Building on a sequence of earlier results, Evertse, Schlickewei, and Schmidt [16] proved the following. Theorem 6.1 (Evertse-Schlickewei-Schmidt). If",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-7-variants",
+      "number": "7",
+      "title": "Variants",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 534,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sum-product conjecture",
+          "heading": false
+        },
+        {
+          "term": "minor modifications",
+          "heading": false
+        },
+        {
+          "term": "disproves",
+          "heading": false
+        },
+        {
+          "term": "constant depending",
+          "heading": false
+        },
+        {
+          "term": "left-hand side",
+          "heading": false
+        },
+        {
+          "term": "some constant",
+          "heading": false
+        },
+        {
+          "term": "variants",
+          "heading": true
+        },
+        {
+          "term": "number field",
+          "heading": false
+        }
+      ],
+      "extract": "A related question is to bound the number of solutions to (6.1) in the group of units O× K. Evertse [14] proved that the number of solutions to x1 + x2 = 1 with x1, x2 ∈O× K is at most 3 · 73d, where d is the degree of K. (Such xi are often called ‘exceptional units’.) Niklasch [34] considered this question further and in particular, generalising a conjecture of Stewart (see [15, p.120]), conjectured [34, Conjecture",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-71-the-p-adics",
+      "number": "7.1",
+      "title": "The p-adics",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 633,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lem-main",
+          "heading": false
+        },
+        {
+          "term": "inertia group",
+          "heading": false
+        },
+        {
+          "term": "inertia subgroup",
+          "heading": false
+        },
+        {
+          "term": "galois group",
+          "heading": false
+        },
+        {
+          "term": "sqrt mid",
+          "heading": false
+        },
+        {
+          "term": "ramified",
+          "heading": false
+        },
+        {
+          "term": "th-headline",
+          "heading": false
+        },
+        {
+          "term": "th-tower",
+          "heading": false
+        }
+      ],
+      "extract": "We now explain the $p$-adic variant. If the field $K$ in Lemma [\\[lem-main\\]](#lem-main){reference-type=\"ref\" reference=\"lem-main\"} has a prime lying over $p$ that is split, for example, if $p$ splits completely in $K$, then $K$ embeds into $\\mathbb Q_p$ and thus the set $A \\subseteq \\mathcal O_K$ constructed in Lemma [\\[lem-main\\]](#lem-main){reference-type=\"ref\" reference=\"lem-main\"} embeds into $\\mathbb Z_p$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-72-finite-fields",
+      "number": "7.2",
+      "title": "Finite fields",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 596,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "th-headline",
+          "heading": false
+        },
+        {
+          "term": "lem-main",
+          "heading": false
+        },
+        {
+          "term": "th-main",
+          "heading": false
+        },
+        {
+          "term": "delta geq",
+          "heading": false
+        }
+      ],
+      "extract": "::: theorem []{#finite-field-main label=\"finite-field-main\"} There exist constants $c>0$ and $f<1$ such that for each $\\delta \\in (0,1)$, for each prime $p$ sufficiently large depending on $\\delta$, there exists $A \\subset \\mathbb F_p$ with $p^{f\\delta}< \\mathopen{}\\left| A\\mathclose{}\\right| < p^{\\delta}$ and $\\max(\\mathopen{}\\left| A+A\\mathclose{}\\right|,\\mathopen{}\\left| AA\\mathclose{}\\right|)\\leq",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-73-function-fields",
+      "number": "7.3",
+      "title": "Function fields",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2571,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "log mathopen",
+          "heading": false
+        },
+        {
+          "term": "leq mathopen",
+          "heading": false
+        },
+        {
+          "term": "frac mathopen",
+          "heading": false
+        },
+        {
+          "term": "operatorname pic",
+          "heading": false
+        },
+        {
+          "term": "geq mathopen",
+          "heading": false
+        },
+        {
+          "term": "left mathclose",
+          "heading": false
+        },
+        {
+          "term": "mathclose right",
+          "heading": false
+        },
+        {
+          "term": "subseteq mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "We now construct counterexamples to the sum-product conjecture in fields of characteristic $p$. The constructions will lie in a sequence of fields $\\mathbb F_q(C_i)$ for a sequence of algebraic curves $C_i$, and hence give counterexamples to the sum-product conjecture in any field containing all of them as subfields, such as $\\overline{\\mathbb F_q(t)}$ or $\\mathbb F_q((t))$ (since our curves $C_i$ will have rational",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1137,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "melanie matchett",
+          "heading": false
+        },
+        {
+          "term": "matchett wood",
+          "heading": false
+        },
+        {
+          "term": "sum-product problem",
+          "heading": false
+        },
+        {
+          "term": "sum-product estimate",
+          "heading": false
+        },
+        {
+          "term": "urgen neukirch",
+          "heading": false
+        },
+        {
+          "term": "dmitrii zhelezov",
+          "heading": false
+        },
+        {
+          "term": "christian maire",
+          "heading": false
+        },
+        {
+          "term": "mathematische nachrichten",
+          "heading": false
+        }
+      ],
+      "extract": "[1] R. Agrawal, T. F. Bloom, and G. Petridis. More on the sum-product problem for integers with few prime factors. arXiv:2512.04931, 2025. 6 [2] Noga Alon, Thomas F. Bloom, W. T. Gowers, Daniel Litt, Will Sawin, Arul Shankar, Jacob Tsimerman, Victor Wang, and Melanie Matchett Wood. Remarks on the disproof of the unit distance conjecture, 2026. 10.48550/arXiv.2605.20695. 1.3, 5 [3] Francesco Amoroso and Evelina",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "leq mathopen",
+      "heading": false
+    },
+    {
+      "term": "geq mathopen",
+      "heading": false
+    },
+    {
+      "term": "mathclose right",
+      "heading": false
+    },
+    {
+      "term": "left mathclose",
+      "heading": false
+    },
+    {
+      "term": "log mathopen",
+      "heading": false
+    },
+    {
+      "term": "frac mathopen",
+      "heading": false
+    },
+    {
+      "term": "delta mathopen",
+      "heading": false
+    },
+    {
+      "term": "quad mathopen",
+      "heading": false
+    },
+    {
+      "term": "rvert leq",
+      "heading": false
+    },
+    {
+      "term": "leq lvert",
+      "heading": false
+    },
+    {
+      "term": "sum-product conjecture",
+      "heading": false
+    },
+    {
+      "term": "sum-product theorem",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 18,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 19,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p23); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 19 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2605.28781v1"
+  }
+}

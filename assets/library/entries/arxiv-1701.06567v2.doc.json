@@ -1,0 +1,3008 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1701.06567v2",
+  "title": "BPS spectra and 3-manifold invariants",
+  "variant": "pdf",
+  "pages": 81,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Fivebranes on 3-manifolds and categorification of WRT invariant",
+      "number": "2",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-fivebranes-on-3-manifolds-and-categorification"
+    },
+    {
+      "level": 2,
+      "title": "Preliminaries",
+      "number": "2.1",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-21-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "$D^2\\times S^1$ partition function of $T[M_3]$ and WRT invariant",
+      "number": "2.2",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-22-d2times-s1-partition-function-of-tm-3-and-wrt"
+    },
+    {
+      "level": 3,
+      "title": "Categorification of WRT invaraiant",
+      "number": null,
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-categorification-of-wrt-invaraiant"
+    },
+    {
+      "level": 3,
+      "title": "Physics behind the proposal",
+      "number": null,
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-physics-behind-the-proposal"
+    },
+    {
+      "level": 3,
+      "title": "Resurgence in 3d ${\\mathcal N}=2$ theories",
+      "number": null,
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-resurgence-in-3d-mathcal-n2-theories"
+    },
+    {
+      "level": 2,
+      "title": "Realization in terms of counting solutions of differential equations",
+      "number": "2.3",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-23-realization-in-terms-of-counting-solutions-of"
+    },
+    {
+      "level": 2,
+      "title": "Surgeries, triangulations, and Atiyah-Floer",
+      "number": "2.4",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-24-surgeries-triangulations-and-atiyah-floer"
+    },
+    {
+      "level": 2,
+      "title": "Superconformal index of $T[M_3]$ and its factorization",
+      "number": "2.5",
+      "page": 18,
+      "pageLabel": "17",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-25-superconformal-index-of-tm-3-and-its-factoriz"
+    },
+    {
+      "level": 2,
+      "title": "Further refinement",
+      "number": "2.6",
+      "page": 19,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-26-further-refinement"
+    },
+    {
+      "level": 2,
+      "title": "Topologically twisted index of $T[M_3]$",
+      "number": "2.7",
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-27-topologically-twisted-index-of-tm-3"
+    },
+    {
+      "level": 2,
+      "title": "Generalization to $U(N)$",
+      "number": "2.8",
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-28-generalization-to-un"
+    },
+    {
+      "level": 2,
+      "title": "Relation to open GW invariants on $T^*M_3$",
+      "number": "2.9",
+      "page": 22,
+      "pageLabel": "21",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-29-relation-to-open-gw-invariants-on-tm-3"
+    },
+    {
+      "level": 2,
+      "title": "Langlands duality and flat connections",
+      "number": "2.10",
+      "page": 24,
+      "pageLabel": "23",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-210-langlands-duality-and-flat-connections"
+    },
+    {
+      "level": 1,
+      "title": "Examples",
+      "number": "3",
+      "page": 27,
+      "pageLabel": "26",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-3-examples"
+    },
+    {
+      "level": 2,
+      "title": "$M_3=S^3$",
+      "number": "3.1",
+      "page": 27,
+      "pageLabel": "26",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Categorifying the index",
+      "number": "3.1.1",
+      "page": 29,
+      "pageLabel": "28",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-016-311-categorifying-the-index"
+    },
+    {
+      "level": 3,
+      "title": "The $t=q^{\\beta}$ reduction from BPS spectral sequence",
+      "number": "3.1.2",
+      "page": 30,
+      "pageLabel": "29",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-017-312-the-tqbeta-reduction-from-bps-spectral-seque"
+    },
+    {
+      "level": 2,
+      "title": "$M_3=L(p,1)$",
+      "number": "3.2",
+      "page": 32,
+      "pageLabel": "31",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Refined superconformal index",
+      "number": "3.2.1",
+      "page": 32,
+      "pageLabel": "31",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-018-321-refined-superconformal-index"
+    },
+    {
+      "level": 3,
+      "title": "Topologically twisted index of $T[L(p,1)]$",
+      "number": "3.2.2",
+      "page": 34,
+      "pageLabel": "33",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-019-322-topologically-twisted-index-of-tlp1"
+    },
+    {
+      "level": 3,
+      "title": "Cyclotomic expansion",
+      "number": "3.2.4",
+      "page": 39,
+      "pageLabel": "38",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-020-324-cyclotomic-expansion"
+    },
+    {
+      "level": 3,
+      "title": "Positivity of coefficients",
+      "number": "3.2.5",
+      "page": 41,
+      "pageLabel": "40",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-021-325-positivity-of-coefficients"
+    },
+    {
+      "level": 3,
+      "title": "Comparison with refined CS",
+      "number": "3.2.6",
+      "page": 43,
+      "pageLabel": "42",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-022-326-comparison-with-refined-cs"
+    },
+    {
+      "level": 2,
+      "title": "$M_3=O(-p)\\rightarrow \\Sigma_g$",
+      "number": "3.3",
+      "page": 46,
+      "pageLabel": "45",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Homological blocks and WRT invariant",
+      "number": "3.3.1",
+      "page": 47,
+      "pageLabel": "46",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-023-331-homological-blocks-and-wrt-invariant"
+    },
+    {
+      "level": 3,
+      "title": "Factorization of the superconformal index",
+      "number": "3.3.2",
+      "page": 48,
+      "pageLabel": "47",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-024-332-factorization-of-the-superconformal-index"
+    },
+    {
+      "level": 3,
+      "title": "Comparison with refined CS",
+      "number": "3.3.3",
+      "page": 50,
+      "pageLabel": "49",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-025-333-comparison-with-refined-cs"
+    },
+    {
+      "level": 2,
+      "title": "${M_3}=\\text{plumbed}$",
+      "number": "3.4",
+      "page": 51,
+      "pageLabel": "50",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Homological blocks $\\widehat{Z}_a$",
+      "number": "3.4.1",
+      "page": 52,
+      "pageLabel": "51",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Problems on the $T[M_3]$ side",
+      "number": "3.4.2",
+      "page": 55,
+      "pageLabel": "54",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-026-342-problems-on-the-tm-3-side"
+    },
+    {
+      "level": 1,
+      "title": "Adding knots and links into $M_3$",
+      "number": "4",
+      "page": 55,
+      "pageLabel": "54",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-027-4-adding-knots-and-links-into-m-3"
+    },
+    {
+      "level": 2,
+      "title": "Links in $M_3$ and line operators in $T[M_3]$",
+      "number": "4.1",
+      "page": 56,
+      "pageLabel": "55",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-028-41-links-in-m-3-and-line-operators-in-tm-3"
+    },
+    {
+      "level": 2,
+      "title": "Links in $S^2\\times S^1$ and Rozansky's proposal",
+      "number": "4.2",
+      "page": 60,
+      "pageLabel": "59",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-029-42-links-in-s2times-s1-and-rozanskys-proposal"
+    },
+    {
+      "level": 2,
+      "title": "Links in $L(p,1)$",
+      "number": "4.3",
+      "page": 63,
+      "pageLabel": "62",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-030-43-links-in-lp1"
+    },
+    {
+      "level": 3,
+      "title": "Unrefined index of $T[L(p,1)]$ with Wilson loops",
+      "number": "4.3.1",
+      "page": 64,
+      "pageLabel": "63",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-031-431-unrefined-index-of-tlp1-with-wilson-loops"
+    },
+    {
+      "level": 3,
+      "title": "Refinement and categorification",
+      "number": "4.3.2",
+      "page": 65,
+      "pageLabel": "64",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-032-432-refinement-and-categorification"
+    },
+    {
+      "level": 2,
+      "title": "Comparison with refined CS",
+      "number": "4.4",
+      "page": 66,
+      "pageLabel": "65",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-033-44-comparison-with-refined-cs"
+    },
+    {
+      "level": 1,
+      "title": "Cabling in $M_3$ versus color in $T[M_3]$",
+      "number": "B",
+      "page": 72,
+      "pageLabel": "71",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-034-b-cabling-in-m-3-versus-color-in-tm-3"
+    },
+    {
+      "level": 1,
+      "title": "Categorification of the Turaev-Viro invariants",
+      "number": "C",
+      "page": 74,
+      "pageLabel": "73",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-035-c-categorification-of-the-turaev-viro-invariants"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 514,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "superconformal index",
+          "heading": false
+        },
+        {
+          "term": "plumbed manifolds",
+          "heading": false
+        },
+        {
+          "term": "wrt invariant",
+          "heading": false
+        },
+        {
+          "term": "twisted index",
+          "heading": false
+        },
+        {
+          "term": "homological blocks",
+          "heading": false
+        },
+        {
+          "term": "categoriﬁcation",
+          "heading": false
+        },
+        {
+          "term": "ﬂat connections",
+          "heading": false
+        },
+        {
+          "term": "reﬁned",
+          "heading": false
+        }
+      ],
+      "extract": "Preprint typeset in JHEP style - HYPER VERSION BPS spectra and 3-manifold invariants Sergei Gukov1, Du Pei1,2, Pavel Putrov3, Cumrun Vafa4 1 Walter Burke Institute for Theoretical Physics, California Institute of Technology, Pasadena, CA 91125, USA 2 Center for Quantum Geometry of Moduli Spaces, Deparment of Mathematics, University of Aarhus, DK-8000, Denmark 3 School of Natural Sciences, Institute for Advanced",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1701.06567v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": "2",
+      "labelEnd": "5",
+      "words": 1450,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homological invariants",
+          "heading": false
+        },
+        {
+          "term": "wrt invariants",
+          "heading": false
+        },
+        {
+          "term": "bps hilbert",
+          "heading": false
+        },
+        {
+          "term": "flat connections",
+          "heading": false
+        },
+        {
+          "term": "bps states",
+          "heading": false
+        },
+        {
+          "term": "floer homology",
+          "heading": false
+        },
+        {
+          "term": "corresponding homological",
+          "heading": false
+        },
+        {
+          "term": "abelian flat",
+          "heading": false
+        }
+      ],
+      "extract": "Can we hear the shape of a drum? Much like harmonics of a musical instrument, spectra of quantum systems contain wealth of useful information. Of particular interest are supersymmetric or the so-called BPS states which, depending on the problem at hand, can manifest themselves either as minimal surfaces, or solutions to partial differential equations, or other \"extremal\" objects. Thus, a spectrum of BPS states in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-fivebranes-on-3-manifolds-and-categorification",
+      "number": "2",
+      "title": "Fivebranes on 3-manifolds and categorification of WRT invariant",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 50,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "higherrk",
+          "heading": false
+        },
+        {
+          "term": "players",
+          "heading": false
+        },
+        {
+          "term": "interrelation",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:summary label=\"sec:summary\"} The goal of this section is to introduce the key players and their interrelation. To keep the discussion simple and concrete, we choose the gauge group to be $G=SU(2)$ for most of it, and then in section [\\[sec:higherrk\\]](#sec:higherrk){reference-type=\"ref\" reference=\"sec:higherrk\"} briefly comment how everything can be generalized to higher ranks.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-preliminaries",
+      "number": "2.1",
+      "title": "Preliminaries",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 235,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm tor",
+          "heading": false
+        },
+        {
+          "term": "flat connections",
+          "heading": false
+        },
+        {
+          "term": "text flat",
+          "heading": false
+        },
+        {
+          "term": "abelian flat",
+          "heading": false
+        },
+        {
+          "term": "summaryconj",
+          "heading": false
+        },
+        {
+          "term": "flat left",
+          "heading": false
+        },
+        {
+          "term": "preliminaries",
+          "heading": true
+        },
+        {
+          "term": "mathcal text",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:preliminaries label=\"sec:preliminaries\"} Before we present a mathematically-friendly summary of our proposal and the physics behind it, we need to introduce some notations, especially those relevant to abelian flat connections that will be central in our discussion. Consider a closed and connected 3-manifold $M_3$, with $\\partial M_3=\\emptyset$. In order to present the results in full generality, it will be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-d2times-s1-partition-function-of-tm-3-and-wrt",
+      "number": "2.2",
+      "title": "$D^2\\times S^1$ partition function of $T[M_3]$ and WRT invariant",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 19,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#sec:summaryConj label=\"sec:summaryConj\"} Now we are ready to present a slightly generalized and improved version of the results from [@Gukov:2016gkn sec. 6].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-categorification-of-wrt-invaraiant",
+      "number": null,
+      "title": "Categorification of WRT invaraiant",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 762,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wrt-decomposition",
+          "heading": false
+        },
+        {
+          "term": "wrt",
+          "heading": true
+        },
+        {
+          "term": "mathrm tor",
+          "heading": false
+        },
+        {
+          "term": "mathbb mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathbb delta",
+          "heading": false
+        },
+        {
+          "term": "invariants widehat",
+          "heading": false
+        },
+        {
+          "term": "block-qseries",
+          "heading": false
+        },
+        {
+          "term": "categorification",
+          "heading": true
+        }
+      ],
+      "extract": "Let $Z_{SU(2)_k}[M_3]$ be the partition function of $SU(2)$ Chern-Simons theory with \"bare\" level $(k-2)$ on $M_3$, also known as the WRT invariant. We use the standard \"physics\" normalization where $$Z_{SU(2)_k}\\left[S^2\\times S^1\\right]=1,$$ and $$Z_{SU(2)_k}\\left[S^3\\right]=\\sqrt{\\frac2k}\\sin\\left(\\frac\\pi k\\right).$$ The following conjecture was proposed in [@Gukov:2016gkn].[^1] ::: conj The WRT invariant can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-physics-behind-the-proposal",
+      "number": null,
+      "title": "Physics behind the proposal",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": "8",
+      "labelEnd": "11",
+      "words": 1608,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "m2-branes ending",
+          "heading": false
+        },
+        {
+          "term": "d3-branes ending",
+          "heading": false
+        },
+        {
+          "term": "catgeom",
+          "heading": false
+        },
+        {
+          "term": "mathrm tor",
+          "heading": false
+        },
+        {
+          "term": "mathbb times",
+          "heading": false
+        },
+        {
+          "term": "bps particles",
+          "heading": false
+        },
+        {
+          "term": "bps states",
+          "heading": false
+        },
+        {
+          "term": "iib string",
+          "heading": false
+        }
+      ],
+      "extract": "From physics point of view, the homological invariants ${\\mathcal H}_a[M_3]$ can be realized by the following M-theory geometry, $$\\begin{aligned} \\begin{matrix} {\\mbox {\\textrm{$N$ fivebranes:}}}~~~\\qquad & {\\mathbb R}& \\times & M_3& \\times & D^2 \\\\ \\qquad & & & \\cap & & \\cap \\\\ {\\mbox{\\rm space-time:}}~~~\\qquad & {\\mathbb R}& \\times & T^*M_3 & \\times & TN \\\\ \\qquad & & & \\circlearrowright & & \\circlearrowright \\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-resurgence-in-3d-mathcal-n2-theories",
+      "number": null,
+      "title": "Resurgence in 3d ${\\mathcal N}=2$ theories",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 531,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathcal theories",
+          "heading": true
+        },
+        {
+          "term": "hbar widetilde",
+          "heading": false
+        },
+        {
+          "term": "frac hbar",
+          "heading": false
+        },
+        {
+          "term": "critical points",
+          "heading": false
+        },
+        {
+          "term": "resurgent analysis",
+          "heading": false
+        },
+        {
+          "term": "njj",
+          "heading": false
+        },
+        {
+          "term": "towers",
+          "heading": false
+        },
+        {
+          "term": "vacua",
+          "heading": false
+        }
+      ],
+      "extract": "The phenomenon of non-abelian contributions being distributed among the abelian ones can be translated entirely into the language of 3d ${\\mathcal N}=2$ field theories. In fact, this phenomenon is not limited to theories $T[M_3]$ associated with 3-manifolds and should be regarded more broadly, as a decomposition of BPS quantities in gapless (conformal) theories into BPS spectra of its massive deformations. Thanks to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-23-realization-in-terms-of-counting-solutions-of",
+      "number": "2.3",
+      "title": "Realization in terms of counting solutions of differential equations",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 1167,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "differential equations",
+          "heading": true
+        },
+        {
+          "term": "flat connections",
+          "heading": false
+        },
+        {
+          "term": "cigar",
+          "heading": false
+        },
+        {
+          "term": "mathbb times",
+          "heading": false
+        },
+        {
+          "term": "bps hilbert",
+          "heading": false
+        },
+        {
+          "term": "decategorified level",
+          "heading": false
+        },
+        {
+          "term": "text grav",
+          "heading": false
+        },
+        {
+          "term": "abelian flat",
+          "heading": false
+        }
+      ],
+      "extract": "In the previous section we defined homological invariants of 3-manifolds ${\\mathcal H}_a[M_3]$ as Hilbert spaces of 6d (2,0) theory on $M_3\\times D^2\\times {\\mathbb R}$ where ${\\mathbb R}$ is the time direction. It is possible to give another definition that, in a sense, is closer to the definition of instanton [@MR956166] or monopole (Seiberg-Witten) Floer homology of 3-manifolds [@kronheimer2007monopoles] familiar",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-24-surgeries-triangulations-and-atiyah-floer",
+      "number": "2.4",
+      "title": "Surgeries, triangulations, and Atiyah-Floer",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "15",
+      "labelEnd": "17",
+      "words": 1061,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homology mathcal",
+          "heading": false
+        },
+        {
+          "term": "floer homology",
+          "heading": false
+        },
+        {
+          "term": "colored unknot",
+          "heading": false
+        },
+        {
+          "term": "manifold homology",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "homological invariants",
+          "heading": false
+        },
+        {
+          "term": "poincaré polynomial",
+          "heading": false
+        },
+        {
+          "term": "reducible flat",
+          "heading": false
+        }
+      ],
+      "extract": "In order to give a mathematical formulation of the homological invariants that can be useful for practical calculations on an arbitrary 3-manifold, the starting point must be a construction of the 3-manifold itself. Then, different ways to present the same 3-manifold may lead to different but equivalent definitions of ${\\mathcal H}_a[M_3]$ which, in physics, correspond to different ways of looking at the fivebrane",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-25-superconformal-index-of-tm-3-and-its-factoriz",
+      "number": "2.5",
+      "title": "Superconformal index of $T[M_3]$ and its factorization",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 422,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wrt-decomposition",
+          "heading": false
+        },
+        {
+          "term": "blockd2s",
+          "heading": false
+        },
+        {
+          "term": "widehat",
+          "heading": false
+        },
+        {
+          "term": "mathcal",
+          "heading": false
+        },
+        {
+          "term": "superconformal",
+          "heading": true
+        },
+        {
+          "term": "cecotti",
+          "heading": false
+        },
+        {
+          "term": "index",
+          "heading": true
+        },
+        {
+          "term": "partition function",
+          "heading": false
+        }
+      ],
+      "extract": "Although the new invariants $\\widehat{Z}_a(q)$ and their categorification ${\\mathcal H}_a[M_3]$ have a direct connection to the WRT invariant via ([\\[WRT-decomposition\\]](#WRT-decomposition){reference-type=\"ref\" reference=\"WRT-decomposition\"}), from the viewpoint of 3d ${\\mathcal N}=2$ theory $T[M_3;SU(2)]$, it is not the most natural or simplest object to consider. The main reason is that, in principle, there are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-26-further-refinement",
+      "number": "2.6",
+      "title": "Further refinement",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 319,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbb ell",
+          "heading": false
+        },
+        {
+          "term": "indexfactorization",
+          "heading": false
+        },
+        {
+          "term": "refined indices",
+          "heading": false
+        },
+        {
+          "term": "dim mathcal",
+          "heading": false
+        },
+        {
+          "term": "flavor symmetry",
+          "heading": false
+        },
+        {
+          "term": "homological invariants",
+          "heading": false
+        }
+      ],
+      "extract": "As we discussed above, for Seifert 3-manifolds the theory $T[M_3]$ has an extra $U(1)_{\\beta}$ flavor symmetry. In particular, this is the case for $M_3=L(p,1)$, which will serve as an important example to us later. This flavor symmetry in $T[M_3]$ results in the presence of an extra ${\\mathbb Z}$-grading in homological invariants ${\\mathcal H}_{D^2}$ and ${\\mathcal H}_{S^2}$ considered in the previous sections and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-27-topologically-twisted-index-of-tm-3",
+      "number": "2.7",
+      "title": "Topologically twisted index of $T[M_3]$",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 325,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted index",
+          "heading": true
+        },
+        {
+          "term": "superconformal index",
+          "heading": false
+        },
+        {
+          "term": "index mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathcal text",
+          "heading": false
+        },
+        {
+          "term": "text top",
+          "heading": false
+        },
+        {
+          "term": "times index",
+          "heading": false
+        },
+        {
+          "term": "indexrefdecomp",
+          "heading": false
+        },
+        {
+          "term": "halves",
+          "heading": false
+        }
+      ],
+      "extract": "Another interesting invariant of $M_3$ which can be realized as an observable of $T[M_3]$ and has a categorification by construction is the topologically twisted index on $S^2\\times S^1$ [@Benini:2015noa]. Namely, one can consider the 3d ${\\mathcal N}=2$ theory $T[M_3]$ with a background value of the $U(1)_R$-symmetry connection equal to the spin connection on $S^2$. In terms of the effective 2d ${\\mathcal N}=(2,2)$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-28-generalization-to-un",
+      "number": "2.8",
+      "title": "Generalization to $U(N)$",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 329,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm tor",
+          "heading": false
+        },
+        {
+          "term": "mathcal widehat",
+          "heading": false
+        },
+        {
+          "term": "itop-decomp",
+          "heading": false
+        },
+        {
+          "term": "summaryconj",
+          "heading": false
+        },
+        {
+          "term": "flat connections",
+          "heading": false
+        },
+        {
+          "term": "indexrefdecomp",
+          "heading": false
+        },
+        {
+          "term": "catgeom",
+          "heading": false
+        },
+        {
+          "term": "mathcal text",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:higherrk label=\"sec:higherrk\"} For simplicity, in this paper we mostly consider Chern-Simons theory on $M_3$ with gauge group being $G=SU(2)$ and the 3d/3d dual theory $T[M_3;SU(2)]$. However, in principle, everything we say above and below for $SU(2)$ can be easily generalized to the $SU(N)$ or $U(N)$ case; there are no obstructions for that. In particular, the formulae appearing in Conjecture",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-29-relation-to-open-gw-invariants-on-tm-3",
+      "number": "2.9",
+      "title": "Relation to open GW invariants on $T^*M_3$",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 24,
+      "labelStart": "21",
+      "labelEnd": "23",
+      "words": 605,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ftop",
+          "heading": false
+        },
+        {
+          "term": "text pert",
+          "heading": false
+        },
+        {
+          "term": "mathbb left",
+          "heading": false
+        },
+        {
+          "term": "widehat text",
+          "heading": false
+        },
+        {
+          "term": "text stab",
+          "heading": false
+        },
+        {
+          "term": "otimes mathbb",
+          "heading": false
+        },
+        {
+          "term": "text top",
+          "heading": false
+        },
+        {
+          "term": "cong mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "Consider $U(N)$ level-$k$ Chern-Simon theory on a rational homology sphere $M_3$, $$b_1(M_3) \\; = \\; 0 \\,,$$ *i.e.* $H_1(M_3,{\\mathbb Z})={\\mathrm{Tor}\\,}H_1(M_3,{\\mathbb Z})$ is a finite abelian group. (What follows can be considered as a generalization from the case $H_1(M_3,{\\mathbb Z})\\cong {\\mathbb Z}$ considered in [@Labastida:2000yw]). Similar to the $SU(2)$ case, $\\sum_{i=1}^N{\\ell",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-210-langlands-duality-and-flat-connections",
+      "number": "2.10",
+      "title": "Langlands duality and flat connections",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 27,
+      "labelStart": "23",
+      "labelEnd": "26",
+      "words": 1480,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conifoldphases",
+          "heading": false
+        },
+        {
+          "term": "langlands",
+          "heading": true
+        },
+        {
+          "term": "homfly-pt homology",
+          "heading": false
+        },
+        {
+          "term": "catgeom",
+          "heading": false
+        },
+        {
+          "term": "flat connections",
+          "heading": true
+        },
+        {
+          "term": "colored homfly-pt",
+          "heading": false
+        },
+        {
+          "term": "homfly-pt polynomial",
+          "heading": false
+        },
+        {
+          "term": "mathcal text",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:Langlands label=\"sec:Langlands\"} Motivated by the results of this paper, combined with [@Gukov:2016njj], we can make another conjecture: ::: conj Let $G$ be a compact Lie group (not necessarily of ADE type) and $^LG$ its Langlands dual. Then, under S-duality, the boundary condition ${\\mathcal B}_a$ corresponding to a connected component in ${\\mathcal M}_{\\text{flat}}^{\\text{ab}} (M_3, G_{{\\mathbb C}})$ of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-3-examples",
+      "number": "3",
+      "title": "Examples",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": "26",
+      "labelEnd": "28",
+      "words": 592,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "free chirals",
+          "heading": false
+        },
+        {
+          "term": "index-un-free",
+          "heading": false
+        },
+        {
+          "term": "homological block",
+          "heading": false
+        },
+        {
+          "term": "prod frac",
+          "heading": false
+        },
+        {
+          "term": "widehat",
+          "heading": false
+        },
+        {
+          "term": "indexrefdecomp",
+          "heading": false
+        },
+        {
+          "term": "chiral multiplet",
+          "heading": false
+        },
+        {
+          "term": "infty right",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we present many examples, illustrating the general proposal outlined in the previous section. In particular, our goal is two-fold: first, we wish to use the proposed physics definition of the new homological invariants ${\\mathcal H}_a[M_3]$ to compute them in many concrete examples, to the extent that one can start exploring the structure of the results and explicitly test the Conjectures",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-311-categorifying-the-index",
+      "number": "3.1.1",
+      "title": "Categorifying the index",
+      "level": 3,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 559,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathcal chiral",
+          "heading": false
+        },
+        {
+          "term": "ell prod",
+          "heading": false
+        },
+        {
+          "term": "mathcal otimes",
+          "heading": false
+        },
+        {
+          "term": "mathbb ell",
+          "heading": false
+        },
+        {
+          "term": "dim mathcal",
+          "heading": false
+        },
+        {
+          "term": "frac partial",
+          "heading": false
+        },
+        {
+          "term": "chiral multiplet",
+          "heading": false
+        },
+        {
+          "term": "partial overline",
+          "heading": false
+        }
+      ],
+      "extract": "As $T[S^3,U(N)]$ is dual to a system of free chirals, its space of BPS states on $S^2$ --- which gives the homological invariant associated with $M_3 = S^3$ --- factorizes as product $${\\mathcal H}(S^3) \\; = \\; {\\mathcal H}_2 \\otimes {\\mathcal H}_4 \\otimes \\ldots \\otimes {\\mathcal H}_{2N},$$ where ${\\mathcal H}_{2i}$ is the BPS Hilbert space of a single 3d ${\\mathcal N}=2$ chiral multiplet with R-charge $2i$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-312-the-tqbeta-reduction-from-bps-spectral-seque",
+      "number": "3.1.2",
+      "title": "The $t=q^{\\beta}$ reduction from BPS spectral sequence",
+      "level": 3,
+      "pageStart": 30,
+      "pageEnd": 32,
+      "labelStart": "29",
+      "labelEnd": "31",
+      "words": 808,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overline psi",
+          "heading": false
+        },
+        {
+          "term": "beta overline",
+          "heading": false
+        },
+        {
+          "term": "overline zeta",
+          "heading": false
+        },
+        {
+          "term": "partial overline",
+          "heading": false
+        },
+        {
+          "term": "delta overline",
+          "heading": false
+        },
+        {
+          "term": "bps",
+          "heading": true
+        },
+        {
+          "term": "mathcal bullet",
+          "heading": false
+        },
+        {
+          "term": "setting beta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:Spec label=\"sec:Spec\"} One interesting property of the invariants [\\[Index-UN-free\\]](#Index-UN-free){reference-type=\"eqref\" reference=\"Index-UN-free\"} and [\\[CI\\]](#CI){reference-type=\"eqref\" reference=\"CI\"} is their behavior under the specialization $t=q^{\\beta}$ with $\\beta\\in {\\mathbb Z}$. First, they all become polynomial after taking this limit. For example, $${\\mathcal I}_{r,f=1} (q,t) \\quad",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-321-refined-superconformal-index",
+      "number": "3.2.1",
+      "title": "Refined superconformal index",
+      "level": 3,
+      "pageStart": 32,
+      "pageEnd": 34,
+      "labelStart": "31",
+      "labelEnd": "33",
+      "words": 591,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "superconformal index",
+          "heading": true
+        },
+        {
+          "term": "bza",
+          "heading": false
+        },
+        {
+          "term": "chiral multiplet",
+          "heading": false
+        },
+        {
+          "term": "unreﬁned case",
+          "heading": false
+        },
+        {
+          "term": "adjoint chiral",
+          "heading": false
+        },
+        {
+          "term": "homological blocks",
+          "heading": false
+        },
+        {
+          "term": "dzi",
+          "heading": false
+        },
+        {
+          "term": "sab",
+          "heading": false
+        }
+      ],
+      "extract": "We now move to the case of M3 = L(p, 1) ∼= S3/Zp. The theory T[L(p, 1), U(N)] is an N = 2 Chern-Simons theory at level p, with a chiral multiplet Φ in the adjoint representation with R-charge R(Φ) = 2 [54,66,67]. Its superconformal index is given by (see e.g. [68]) IU(N)(q, t) = X m1⩾···⩾mN∈Z 1 |Wm| Z |zi|=1 Y j dzj 2πizj N Y i (zi)pmi N Y i̸=j t−|mi−mj|/2q−R|mi−mj|/4 × \u0012 1 −q|mi−mj|/2 zi zj \u0013 N Y i̸=j \u0010 zj zi",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-322-topologically-twisted-index-of-tlp1",
+      "number": "3.2.2",
+      "title": "Topologically twisted index of $T[L(p,1)]$",
+      "level": 3,
+      "pageStart": 34,
+      "pageEnd": 39,
+      "labelStart": "33",
+      "labelEnd": "38",
+      "words": 1985,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted index",
+          "heading": true
+        },
+        {
+          "term": "superconformal index",
+          "heading": false
+        },
+        {
+          "term": "t2q",
+          "heading": false
+        },
+        {
+          "term": "bza",
+          "heading": false
+        },
+        {
+          "term": "semi-stable stratum",
+          "heading": false
+        },
+        {
+          "term": "moduli stack",
+          "heading": false
+        },
+        {
+          "term": "unreﬁned limit",
+          "heading": false
+        },
+        {
+          "term": "bgc",
+          "heading": false
+        }
+      ],
+      "extract": "For group G = SU(2), the topologically twisted index (reﬁned by angular momentum) of T[L(p, 1)] reads [56]: Itop(q, t) = 1 2 X m∈Z Z JK dz 2πiz z2(p+2)m q−m (1 −z2qm)(1 −z−2qm) (z2tq1−m; q)2m−1(z−2tq1+m; q)−2m−1(tq; q)−1 , (3.43) where, as usual, the Pochhammer symbol with negative integer in the subscript is deﬁned via the following identity: (x; q)n = 1 (xqn; q)−n . (3.44) The contour in (3.54) is chosen according",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-324-cyclotomic-expansion",
+      "number": "3.2.4",
+      "title": "Cyclotomic expansion",
+      "level": 3,
+      "pageStart": 39,
+      "pageEnd": 41,
+      "labelStart": "38",
+      "labelEnd": "40",
+      "words": 793,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cyclotomic expansion",
+          "heading": true
+        },
+        {
+          "term": "widetilde widehat",
+          "heading": false
+        },
+        {
+          "term": "cdot widehat",
+          "heading": false
+        },
+        {
+          "term": "infty widetilde",
+          "heading": false
+        },
+        {
+          "term": "coefficients widetilde",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "qquad left",
+          "heading": false
+        },
+        {
+          "term": "blockbeta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:cyclotomic label=\"sec:cyclotomic\"} In this secition we show how to obtain expression for $\\widehat{Z}_a(1/q,t)$ with $|q|<1$ using what is usually called the *cyclotomic expansion*. Let us first consider the general construction. Let $F(q,t)$ be some function of $q$ and $t$, and suppose we know its restrictions at $t=q^\\beta$, with $\\beta\\in{\\mathbb Z}$, $$F^{(\\beta)}(q)\\equiv F(q,q^\\beta).$$ Then, one can",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-325-positivity-of-coefficients",
+      "number": "3.2.5",
+      "title": "Positivity of coefficients",
+      "level": 3,
+      "pageStart": 41,
+      "pageEnd": 43,
+      "labelStart": "40",
+      "labelEnd": "42",
+      "words": 840,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "positivity",
+          "heading": true
+        },
+        {
+          "term": "homological-flavor locking",
+          "heading": false
+        },
+        {
+          "term": "homological blocks",
+          "heading": false
+        },
+        {
+          "term": "index mathcal",
+          "heading": false
+        },
+        {
+          "term": "blocks widehat",
+          "heading": false
+        },
+        {
+          "term": "mathcal text",
+          "heading": false
+        },
+        {
+          "term": "superconformal index",
+          "heading": false
+        },
+        {
+          "term": "lambda mathfrak",
+          "heading": false
+        }
+      ],
+      "extract": "In [@Gukov:2016gkn], it was shown that, up to an overall $\\pm$ sign, the refined homological blocks (with or without contribution from the Cartan component of the adjoint chiral) have the following positivity property: $$\\begin{aligned}\\label{block-pos} \\pm \\widehat{Z}_a(q,-t) \\quad & \\in \\quad q^{\\Delta_a} {\\mathbb Z}_+[t][[q]] \\\\ \\pm (-qt;q)_\\infty\\widehat{Z}_a(q,-t) \\quad & \\in \\quad q^{\\Delta_a} {\\mathbb",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-326-comparison-with-refined-cs",
+      "number": "3.2.6",
+      "title": "Comparison with refined CS",
+      "level": 3,
+      "pageStart": 43,
+      "pageEnd": 47,
+      "labelStart": "42",
+      "labelEnd": "46",
+      "words": 1000,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "beta frac",
+          "heading": false
+        },
+        {
+          "term": "beta text",
+          "heading": false
+        },
+        {
+          "term": "prod beta",
+          "heading": false
+        },
+        {
+          "term": "n-j beta",
+          "heading": false
+        },
+        {
+          "term": "beta sum",
+          "heading": false
+        },
+        {
+          "term": "refined",
+          "heading": true
+        },
+        {
+          "term": "beta times",
+          "heading": false
+        },
+        {
+          "term": "frac mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:refCS label=\"sec:refCS\"} Let $R_n$ denote by a representation of $SU(2)$ of dimension $n$. The Hilbert space of the refined Chern-Simons theory [@Aganagic:2011sg] on $T^2$ is the same as in the unrefined case. Namely, it is generated by integral representations of the affine Kac-Moody algebra at \"bare\" level $k-2$, which in our notations[^1] have $n = 1,\\ldots,k-1$: $${\\mathcal H}_{T^2}=\\bigoplus_{n=1}^{k-1}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-331-homological-blocks-and-wrt-invariant",
+      "number": "3.3.1",
+      "title": "Homological blocks and WRT invariant",
+      "level": 3,
+      "pageStart": 47,
+      "pageEnd": 48,
+      "labelStart": "46",
+      "labelEnd": "47",
+      "words": 456,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cdot frac",
+          "heading": false
+        },
+        {
+          "term": "adjoint chirals",
+          "heading": false
+        },
+        {
+          "term": "frac mathcal",
+          "heading": false
+        },
+        {
+          "term": "infty times",
+          "heading": false
+        },
+        {
+          "term": "frac ell",
+          "heading": false
+        },
+        {
+          "term": "laplacezp",
+          "heading": false
+        },
+        {
+          "term": "szp",
+          "heading": false
+        },
+        {
+          "term": "prod frac",
+          "heading": false
+        }
+      ],
+      "extract": "Consider the partition function of $T[M_3]$ on $D^2\\times S^1$ with the following 2d ${\\mathcal N}=(0,2)$ boundary conditions (which generalize the boundary conditions for $T[L(p,1)]$ that produce $\\widehat{Z}_a(q,t)$): - Neumann for ${\\mathcal N}=2$ vector multiplet, - Neumann for adjoint chiral $\\Sigma$, - Dirichlet for $g$ adjoint chirals $\\Phi_i$, - Neumann for $g$ adjoint chirals $\\widetilde\\Phi_i$, - 3d vector",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-332-factorization-of-the-superconformal-index",
+      "number": "3.3.2",
+      "title": "Factorization of the superconformal index",
+      "level": 3,
+      "pageStart": 48,
+      "pageEnd": 50,
+      "labelStart": "47",
+      "labelEnd": "49",
+      "words": 807,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "superconformal index",
+          "heading": true
+        },
+        {
+          "term": "bza",
+          "heading": false
+        },
+        {
+          "term": "physical choice",
+          "heading": false
+        },
+        {
+          "term": "contour",
+          "heading": false
+        },
+        {
+          "term": "ﬂat connections",
+          "heading": false
+        },
+        {
+          "term": "itm",
+          "heading": false
+        },
+        {
+          "term": "wrt invariant",
+          "heading": false
+        },
+        {
+          "term": "corresponds",
+          "heading": false
+        }
+      ],
+      "extract": "The superconformal index of 3d N = 2 theory (3.120) reads IT[M3](q, t) = X m≥0 1 |Wm| Z |z|=1 dz 2πiz z2pm (1 −z±2qm) q−2m(1−g) t−2m(1−g)× (z±2qmt−1; q)∞(t−1; q)∞ (z±2qm+1t)∞(qt; q)∞ × g Y i=1 (z±2u−1 i qm+1; q)∞(u−1 i q; q)∞ (z±2uiqm; q)∞(ui; q)∞ · (z±2tuiqm+1; q)∞(tuiq; q)∞ (z±2t−1u−1 i qm; q)∞(t−1u−1 i ; q)∞ . (3.129) Unlike in the case of Lens spaces (g = 0), now there is some ambiguity in the choice of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-333-comparison-with-refined-cs",
+      "number": "3.3.3",
+      "title": "Comparison with refined CS",
+      "level": 3,
+      "pageStart": 50,
+      "pageEnd": 55,
+      "labelStart": "49",
+      "labelEnd": "54",
+      "words": 1377,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plumbing graph",
+          "heading": false
+        },
+        {
+          "term": "blocks bza",
+          "heading": false
+        },
+        {
+          "term": "dzv πizv",
+          "heading": false
+        },
+        {
+          "term": "mzl",
+          "heading": false
+        },
+        {
+          "term": "kirby moves",
+          "heading": false
+        },
+        {
+          "term": "vertices dzv",
+          "heading": false
+        },
+        {
+          "term": "ﬂat connections",
+          "heading": false
+        },
+        {
+          "term": "homological blocks",
+          "heading": false
+        }
+      ],
+      "extract": "In the notations of section 3.2.6, the partition function of reﬁned Chern-Simons theory on M3 = O(−p) →Σg reads [19]: Zref. CS SU(2) [M3] = k−1 X n=1 gg−1 n (S1n)2−2g(Tnn)−p = = k−1 X n=1 q−pn2 4 −pnβ 2 −pβ2 4 β Y j=0 (q−n+j+β 2 −q n+j+β 2 )1−g(q−n−j+β 2 −q n−j+β 2 )1−g. (3.138) By repeating manipulations in section 3.2.6, we arrive at (up to a simple overall factor) Zref. CS SU(2) [M3] = X a,b∈Zp/Z2 e2πi(k+2β)CS(a)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-342-problems-on-the-tm-3-side",
+      "number": "3.4.2",
+      "title": "Problems on the $T[M_3]$ side",
+      "level": 3,
+      "pageStart": 55,
+      "pageEnd": 55,
+      "labelStart": "54",
+      "labelEnd": "54",
+      "words": 263,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gang",
+          "heading": false
+        },
+        {
+          "term": "sqa",
+          "heading": false
+        },
+        {
+          "term": "superconformal",
+          "heading": false
+        },
+        {
+          "term": "moves",
+          "heading": false
+        },
+        {
+          "term": "plumbing",
+          "heading": false
+        },
+        {
+          "term": "kirby",
+          "heading": false
+        },
+        {
+          "term": "dimofte",
+          "heading": false
+        },
+        {
+          "term": "categorification",
+          "heading": false
+        }
+      ],
+      "extract": "One may wish to carry out the categorification program for $M_3(\\Gamma)$ as well. However, it is not obvious how to write a correct expression for superconformal or topologically twisted index of the 3d ${\\mathcal N}=2$ theory $T[M_3]$ because the UV description with ${\\mathcal N}=2$ supersymmetry of its certain components (see the paragraph above Section",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-4-adding-knots-and-links-into-m-3",
+      "number": "4",
+      "title": "Adding knots and links into $M_3$",
+      "level": 1,
+      "pageStart": 55,
+      "pageEnd": 56,
+      "labelStart": "54",
+      "labelEnd": "55",
+      "words": 547,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "catgeom",
+          "heading": false
+        },
+        {
+          "term": "impurity",
+          "heading": false
+        },
+        {
+          "term": "conifoldphases",
+          "heading": false
+        },
+        {
+          "term": "knots",
+          "heading": true
+        },
+        {
+          "term": "links",
+          "heading": true
+        },
+        {
+          "term": "m2-branes",
+          "heading": false
+        },
+        {
+          "term": "qquad mathbb",
+          "heading": false
+        },
+        {
+          "term": "mathbb times",
+          "heading": false
+        }
+      ],
+      "extract": "The goal of this section is to incorporate knots and links in a non-trivial 3-manifold $M_3$ and produce the corresponding homological invariants. In particular, it will give us the very first examples where *both* knots and 3-manifolds are non-trivial. The physical setup that we use to make concrete predictions for the new homological invariants ${\\mathcal H}_a[M_3;K,{\\mathcal R}]$ was already briefly mentioned in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-41-links-in-m-3-and-line-operators-in-tm-3",
+      "number": "4.1",
+      "title": "Links in $M_3$ and line operators in $T[M_3]$",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 60,
+      "labelStart": "55",
+      "labelEnd": "59",
+      "words": 1908,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "line operators",
+          "heading": true
+        },
+        {
+          "term": "half-bps line",
+          "heading": false
+        },
+        {
+          "term": "mathcal lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda atop",
+          "heading": false
+        },
+        {
+          "term": "mathcal gamma",
+          "heading": false
+        },
+        {
+          "term": "wilson line",
+          "heading": false
+        },
+        {
+          "term": "mathcal text",
+          "heading": false
+        },
+        {
+          "term": "catgeom",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:knots label=\"sec:knots\"} Consider a knot $K$ in $M_3$ colored by a representation ${\\mathcal R}$ of $G$. As described above, it corresponds to a certain half-BPS line operator $\\Gamma_{K,{\\mathcal R}}$ in $T[M_3;G]$: $$(K,{\\mathcal R})\\;\\longmapsto \\; \\Gamma_{K,{\\mathcal R}}\\;\\in\\;{\\mathcal C}. \\label{Knots-LineOps}$$ where ${\\mathcal C}$ is the category of BPS line operators in ${\\mathcal N}=2$ SCFT",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-42-links-in-s2times-s1-and-rozanskys-proposal",
+      "number": "4.2",
+      "title": "Links in $S^2\\times S^1$ and Rozansky's proposal",
+      "level": 2,
+      "pageStart": 60,
+      "pageEnd": 63,
+      "labelStart": "59",
+      "labelEnd": "62",
+      "words": 1121,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathcal lambda",
+          "heading": false
+        },
+        {
+          "term": "choose n-l",
+          "heading": false
+        },
+        {
+          "term": "rozansky",
+          "heading": true
+        },
+        {
+          "term": "deg mathfrak",
+          "heading": false
+        },
+        {
+          "term": "wilsondec",
+          "heading": false
+        },
+        {
+          "term": "wilson loops",
+          "heading": false
+        },
+        {
+          "term": "mathfrak degree",
+          "heading": false
+        },
+        {
+          "term": "otimes mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:Roz label=\"sec:Roz\"} For $M_3=S^2\\times S^1$, the theory $T[M_3]$ is a particular case of ([\\[TCircFib\\]](#TCircFib){reference-type=\"ref\" reference=\"TCircFib\"}) with $p=0$ and $g=0$, that is the theory of 3d ${\\mathcal N}=2$ vector multiplet with gauge group ${\\mathcal G}=G=SU(2)$. In this case $\\mathrm{Tor}\\,H_1(M_3,{\\mathbb Z})=0$ and the only independent Wilson loop in $T[M_3]$ is the trivial Wilson loop.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-43-links-in-lp1",
+      "number": "4.3",
+      "title": "Links in $L(p,1)$",
+      "level": 2,
+      "pageStart": 63,
+      "pageEnd": 64,
+      "labelStart": "62",
+      "labelEnd": "63",
+      "words": 129,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gamma-lp",
+          "heading": false
+        },
+        {
+          "term": "plumbed",
+          "heading": false
+        },
+        {
+          "term": "hopf fiber",
+          "heading": false
+        },
+        {
+          "term": "lambda",
+          "heading": false
+        }
+      ],
+      "extract": "For $M_3=L(p,1)$, or more generally $M_3=O(-p)\\rightarrow \\Sigma_g$, we have $\\Lambda_{M_3}= {\\mathbb Z}_p/{\\mathbb Z}_2$ and the basic Wilson loops in $T[M_3]$ are given by $W_{\\lambda}$ with $\\lambda=0,\\ldots, p$.[^1] These correspond to the \"$\\lambda$-cablings\" of the unknot [\\[Gamma-Lp1\\]](#Gamma-Lp1){reference-type=\"eqref\" reference=\"Gamma-Lp1\"} wrapping the Hopf fiber of $L(p,1)$. More generally, for plumbed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-431-unrefined-index-of-tlp1-with-wilson-loops",
+      "number": "4.3.1",
+      "title": "Unrefined index of $T[L(p,1)]$ with Wilson loops",
+      "level": 3,
+      "pageStart": 64,
+      "pageEnd": 65,
+      "labelStart": "63",
+      "labelEnd": "64",
+      "words": 427,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "blocks widehat",
+          "heading": false
+        },
+        {
+          "term": "lambda rangle",
+          "heading": false
+        },
+        {
+          "term": "lambda langle",
+          "heading": false
+        },
+        {
+          "term": "chi lambda",
+          "heading": false
+        },
+        {
+          "term": "wilson",
+          "heading": true
+        },
+        {
+          "term": "homological blocks",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "left right",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:LensWilson label=\"sec:LensWilson\"} The unrefined superconformal index --- with contribution of the Cartan component of the adjoint chiral removed, as in [\\[I-UN-unref\\]](#I-UN-unref){reference-type=\"eqref\" reference=\"I-UN-unref\"} --- with the Wilson line inserted at the north pole reads: $$\\label{SU2Int} \\begin{aligned} \\langle W_\\lambda\\rangle\\equiv {\\mathcal I}(q;W_\\lambda) & = \\frac{1}{2} \\sum_{m \\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-432-refinement-and-categorification",
+      "number": "4.3.2",
+      "title": "Refinement and categorification",
+      "level": 3,
+      "pageStart": 65,
+      "pageEnd": 66,
+      "labelStart": "64",
+      "labelEnd": "65",
+      "words": 495,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homological blocks",
+          "heading": false
+        },
+        {
+          "term": "hopf ﬁber",
+          "heading": false
+        },
+        {
+          "term": "poincar polynomial",
+          "heading": false
+        },
+        {
+          "term": "unknot",
+          "heading": false
+        },
+        {
+          "term": "wrapping",
+          "heading": false
+        }
+      ],
+      "extract": "The reﬁned version of (4.43) reads (qt; q)∞bZa(q, t; Wλ) = 1 |Wb| Z dz 2πiz (z2; q)∞(z−2; q)∞ (z2tq; q)∞(z−2tq; q)∞ χλ(z) X n∈pZ+b qn2/p z2n . (4.48) One can show that it has the positivity property (3.87) and, therefore, can be interpreted as the Poincar´e polynomial of the homological invariant that categoriﬁes SU(2) WRT invariants of M3 = L(p, 1) with knots wrapping the Hopf ﬁber. For example, consider M3 = L(5,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-44-comparison-with-refined-cs",
+      "number": "4.4",
+      "title": "Comparison with refined CS",
+      "level": 2,
+      "pageStart": 66,
+      "pageEnd": 72,
+      "labelStart": "65",
+      "labelEnd": "71",
+      "words": 2089,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mzl",
+          "heading": false
+        },
+        {
+          "term": "bzb",
+          "heading": false
+        },
+        {
+          "term": "wrt invariant",
+          "heading": false
+        },
+        {
+          "term": "unknot wrapping",
+          "heading": false
+        },
+        {
+          "term": "plumbed manifolds",
+          "heading": false
+        },
+        {
+          "term": "grant phy",
+          "heading": false
+        },
+        {
+          "term": "macdonald polynomial",
+          "heading": false
+        },
+        {
+          "term": "hopf ﬁber",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we wish to compare the categoriﬁcation of WRT invariants of knots in 3- manifolds considered in the previous section with analogous calculations using the tools of reﬁned CS theory and DAHA [19,72]. To the best of our knowledge, such calculations (that involve both knots and 3-manifolds) were not done in the literature on reﬁned Chern-Simons theory. Let us consider the unknot K wrapping the Hopf",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-b-cabling-in-m-3-versus-color-in-tm-3",
+      "number": "B",
+      "title": "Cabling in $M_3$ versus color in $T[M_3]$",
+      "level": 1,
+      "pageStart": 72,
+      "pageEnd": 74,
+      "labelStart": "71",
+      "labelEnd": "73",
+      "words": 776,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cabling",
+          "heading": true
+        },
+        {
+          "term": "decategoriﬁed level",
+          "heading": false
+        },
+        {
+          "term": "color",
+          "heading": true
+        },
+        {
+          "term": "cabling data",
+          "heading": false
+        },
+        {
+          "term": "wilson line",
+          "heading": false
+        },
+        {
+          "term": "line operators",
+          "heading": false
+        },
+        {
+          "term": "unknot",
+          "heading": false
+        },
+        {
+          "term": "grading",
+          "heading": false
+        }
+      ],
+      "extract": "Here, we illustrate a delicate feature of 3d/3d correspondence that shows up at the categorical level when knots are introduced in M3. (The issue goes away if one looks at the problem without knots or at the decategoriﬁed level.) Namely, we compare 3d N = 2 theory T[M3] on D2 × S1 to quantum group invariants of M3 and their categoriﬁcation. As explained in section 4.1 and illustrated in Figure 1, introducing knots",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-c-categorification-of-the-turaev-viro-invariants",
+      "number": "C",
+      "title": "Categorification of the Turaev-Viro invariants",
+      "level": 1,
+      "pageStart": 74,
+      "pageEnd": 81,
+      "labelStart": "73",
+      "labelEnd": "80",
+      "words": 2737,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vortex loops",
+          "heading": false
+        },
+        {
+          "term": "homological invariants",
+          "heading": false
+        },
+        {
+          "term": "turaev-viro",
+          "heading": true
+        },
+        {
+          "term": "homological blocks",
+          "heading": false
+        },
+        {
+          "term": "superconformal index",
+          "heading": false
+        },
+        {
+          "term": "ﬂat connections",
+          "heading": false
+        },
+        {
+          "term": "wilson loops",
+          "heading": false
+        },
+        {
+          "term": "jhep",
+          "heading": false
+        }
+      ],
+      "extract": "The aim of this paper is to introduce and study new three-manifold invariants. Along the way, we have seen the important roles played by boundary conditions, abelian ﬂat connections, homological blocks, reﬁnement, and line operators. Here, we outline how these ideas can be applied to categoriﬁcation of the Turaev-Viro invariants. Deﬁned via a state-sum model, the Turaev-Viro (TV) invariants [93] involve a “counting”",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "t = qβ reduction"
+        ]
+      },
+      "found_not_listed": {
+        "count": 6,
+        "items": [
+          "4 Adding knots and links into M3",
+          "2.9 Relation to open GW invariants on T ∗M3",
+          "3.4.1 Homological blocks bZa",
+          "4 Adding knots and links into M3",
+          "4.2 Links in S2 × S1 and Rozansky’s proposal",
+          "4.3.2 Reﬁnement and categoriﬁcation"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathcal widehat",
+      "heading": false
+    },
+    {
+      "term": "mathbb mathcal",
+      "heading": false
+    },
+    {
+      "term": "mathcal text",
+      "heading": false
+    },
+    {
+      "term": "index mathcal",
+      "heading": false
+    },
+    {
+      "term": "invariants mathcal",
+      "heading": false
+    },
+    {
+      "term": "homology mathcal",
+      "heading": false
+    },
+    {
+      "term": "frac mathcal",
+      "heading": false
+    },
+    {
+      "term": "mathcal theory",
+      "heading": false
+    },
+    {
+      "term": "homological invariants",
+      "heading": false
+    },
+    {
+      "term": "mathbb times",
+      "heading": false
+    },
+    {
+      "term": "mathcal lambda",
+      "heading": false
+    },
+    {
+      "term": "mathbb ell",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 31,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 48,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 49,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 51,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 52,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 56,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 71,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 73,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 74,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 75,
+      "label": "74",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 76,
+      "label": "75",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 77,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 78,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 79,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 80,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 81,
+      "label": "80",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The space of BPS states in 3d N = 2 theory on R × D2 with an impurity, relevant to the physical realization of Heegaard Floer homology HF(M3), monopole Floer homology HM(M3), as well as categoriﬁcation of WRT invariants of 3-manifolds with knots",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Another representation of the background in Figure 1",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Critical points of f",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "The reduced Poincar´e polynomial of the bottom row of the HOMFLY-PT homology for simple knots colored by λ = □. The unreduced HOMFLY-PT homology is inﬁnite-dimensional and its Poincar´e “polynomial” is, in fact, a power series in q and t",
+      "page": 26,
+      "pageLabel": "25",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Pole structure of the integrands in (3.122) and (3.129). The green contour corresponds to a choice of the contour γ such that in the t →1 limit it agrees with the principal-value prescription in (3.127) which reproduces the WRT invariant. The blue contour is the standard physical choice of contour f",
+      "page": 49,
+      "pageLabel": "48",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "An example of a plumbing graph Γ (left) and the corresponding link L(Γ) of framed unknots",
+      "page": 51,
+      "pageLabel": "50",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "3d Kirby moves that relate plumbing graphs which result in homeomorphic 3-manifolds",
+      "page": 52,
+      "pageLabel": "51",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Braid representations of 2-, 3and 4-cables of unknot with framing 1",
+      "page": 72,
+      "pageLabel": "71",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 41,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 37,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 1,
+      "note": "7 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p74); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 74
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 37 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1701.06567v2"
+  }
+}

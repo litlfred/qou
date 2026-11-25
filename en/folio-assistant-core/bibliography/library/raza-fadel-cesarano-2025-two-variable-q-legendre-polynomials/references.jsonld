@@ -1,0 +1,35 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Two-variable q-Legendre polynomials",
+      "dcterms:creator": [
+        "N.1, Raza",
+        "M.1, Fadel",
+        "2",
+        "Cesarano3, C."
+      ],
+      "dcterms:issued": "D:20250128",
+      "bibo:doi": "10.15330/cmp.17.1.14-26",
+      "dcterms:identifier": "https://doi.org/10.15330/cmp.17.1.14-26",
+      "dcterms:source": "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/manifest.jsonld",
+      "dcterms:hasVersion": "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials"
+    }
+  ]
+}

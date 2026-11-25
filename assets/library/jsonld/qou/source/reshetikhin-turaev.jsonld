@@ -1,0 +1,59 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/reshetikhin-turaev/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Ribbon graphs and their invaraints derived from quantum groups",
+  "contains": [
+    "library/reshetikhin-turaev/sections/sec-front-matter",
+    "library/reshetikhin-turaev/sections/sec-000",
+    "library/reshetikhin-turaev/sections/sec-001",
+    "library/reshetikhin-turaev/sections/sec-002",
+    "library/reshetikhin-turaev/sections/sec-003",
+    "library/reshetikhin-turaev/sections/sec-004",
+    "library/reshetikhin-turaev/sections/sec-005",
+    "library/reshetikhin-turaev/sections/sec-006",
+    "library/reshetikhin-turaev/sections/sec-007",
+    "library/reshetikhin-turaev/sections/sec-008",
+    "library/reshetikhin-turaev/sections/sec-009",
+    "library/reshetikhin-turaev/sections/sec-010",
+    "library/reshetikhin-turaev/sections/sec-011",
+    "library/reshetikhin-turaev/sections/sec-012",
+    "library/reshetikhin-turaev/sections/sec-013",
+    "library/reshetikhin-turaev/sections/sec-014",
+    "library/reshetikhin-turaev/sections/sec-015"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Ribbon graphs and their invariants derived from quantum groups — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented.\n\n**Ribbon graphs and their invariants derived from quantum groups**\n\n*Ribbon Graphs and Their Invariants Derived*\n\n26 pp, 17 sections.\n\n**Abstract.** The generalization of Jones polynomial of links to the case of graphs in R 3 is presented. It is constructed as the functor from the category of graphs to the category of representations of the quantum group.\n\n**Outline.** Front matter; 1 Introduction; 2 Compact Braided Categories; 3 Quasitriangular and Ribbon Hopf Algebras; 4 Coloured Ribbon Graphs; I vl vl vl; 5 The Main Theorem; 5.3 Lemma. Figure 8 presents a generating set ; 6 Applications and Generalizations of Theorem ; 7 Examples; f V~ ~Va|; R=exp(~H|; Jm~,,~; In]q!; 24 N. Yu. Reshetikhin and V. G. Turaev sional ; 2 [j+m]![j_m]l[jl_ml]l[jz_m2]lUl +j2_j]![2j+ l; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "reshetikhin-turaev",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "Reshetikhin_Turaev.pdf",
+    "source_sha256": "7ead97555a25d357e952ba0ede5147f9e1a252e5fbcaa2e4de31d2b91edc0171",
+    "pages": 26,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

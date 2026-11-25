@@ -1,0 +1,447 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0710.4405v1",
+  "title": "arxiv-0710.4405v1",
+  "variant": "pdf",
+  "pages": 8,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Tools : Large-NC and QCD asymptotic constraints",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-tools-large-nc-and-qcd-asymptotic-constraints"
+    },
+    {
+      "level": 1,
+      "title": "Status and Prospects",
+      "number": null,
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-status-and-prospects"
+    },
+    {
+      "level": 2,
+      "title": "O(p4)",
+      "number": null,
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-op4"
+    },
+    {
+      "level": 2,
+      "title": "O(p6)",
+      "number": null,
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-op6"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 109,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chiral low-energy",
+          "heading": false
+        },
+        {
+          "term": "low-energy constants",
+          "heading": false
+        },
+        {
+          "term": "csic-universitat",
+          "heading": false
+        },
+        {
+          "term": "status",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0710.4405v1 [hep-ph] 24 Oct 2007 Chiral Low-Energy Constants : Status and Prospects ∗ J. Portol´es Instituto de F´ısica Corpuscular, IFIC, CSIC-Universitat de Val`encia, Apt. Correus 22085, E-46071 Val`encia, Spain Chiral low-energy constants (LECs) carry the information of short- distance dynamics involving heavier degrees of freedom not present in the chiral Lagrangian. Our knowledge of the LECs is",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0710.4405v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 692,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cal chi",
+          "heading": false
+        },
+        {
+          "term": "chiral lecs",
+          "heading": false
+        },
+        {
+          "term": "chi sim",
+          "heading": false
+        },
+        {
+          "term": "lambda chi",
+          "heading": false
+        },
+        {
+          "term": "partonic qcd",
+          "heading": false
+        },
+        {
+          "term": "chiral symmetry",
+          "heading": false
+        },
+        {
+          "term": "perturbative expansion",
+          "heading": false
+        },
+        {
+          "term": "heavier degrees",
+          "heading": false
+        }
+      ],
+      "extract": "Chiral symmetry of massless Quantum Chromodynamics has turned to be a key tool in order to deal with the low-energy domain of strong interactions (typically $E \\sim M_{\\pi}$) where hadron dynamics is not appropriately described by partonic QCD. It is indeed the guiding principle in the construction of Chiral Perturbation Theory ($\\chi PT$) [@Weinberg:1978kz; @Gasser:1983yg; @Gasser:1984gg] that intends to be the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-tools-large-nc-and-qcd-asymptotic-constraints",
+      "number": null,
+      "title": "Tools : Large-NC and QCD asymptotic constraints",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 787,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cal chi",
+          "heading": false
+        },
+        {
+          "term": "goldstone mesons",
+          "heading": false
+        },
+        {
+          "term": "cite ecker",
+          "heading": false
+        },
+        {
+          "term": "resonance fields",
+          "heading": false
+        },
+        {
+          "term": "cite peris",
+          "heading": false
+        },
+        {
+          "term": "qcd",
+          "heading": true
+        },
+        {
+          "term": "chiral symmetry",
+          "heading": false
+        },
+        {
+          "term": "underlying chiral",
+          "heading": false
+        }
+      ],
+      "extract": "As illustrated in the ${\\cal O}(p^4)$ case \\cite{Ecker:1988te,Ecker:1989yg} a procedure to systematically disclose the structure of the resonance contributions to the LECs in $\\chi PT$ is available. The key point is to construct a Lagrangian theory that includes resonances, Goldstone bosons and auxiliary fields respecting the underlying chiral symmetry. There are several tools that allow us to grab important",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-status-and-prospects",
+      "number": null,
+      "title": "Status and Prospects",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 19,
+      "summary": null,
+      "keywords": [],
+      "extract": "3. Status and Prospects I comment brieﬂy the present status and several developments on our knowledge of chiral LECs.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-op4",
+      "number": null,
+      "title": "O(p4)",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 95,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "resonances",
+          "heading": false
+        },
+        {
+          "term": "doscalar",
+          "heading": false
+        },
+        {
+          "term": "lecs",
+          "heading": false
+        }
+      ],
+      "extract": "Contributions from the lightest multiplets of vector resonances (JP C = 1−−) to SU(2) [2] and vector, axial-vector (1++), scalar (0++) and pseu- doscalar (0−+) resonances to SU(3) [7] LECs are in general good agreement with those values extracted from observables [18], showing that those res- onances saturate the phenomenological values. This has been lately con- ﬁrmed by the inclusion of one multiplet of resonances",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-op6",
+      "number": null,
+      "title": "O(p6)",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1104,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hep-ph",
+          "heading": false
+        },
+        {
+          "term": "annals phys",
+          "heading": false
+        },
+        {
+          "term": "portol",
+          "heading": false
+        },
+        {
+          "term": "ecker",
+          "heading": false
+        },
+        {
+          "term": "pich",
+          "heading": false
+        },
+        {
+          "term": "resonance contributions",
+          "heading": false
+        },
+        {
+          "term": "chiral lecs",
+          "heading": false
+        },
+        {
+          "term": "rafael",
+          "heading": false
+        }
+      ],
+      "extract": "tially obtain : ℓr i = δi7 F 2 8B0ms + ai + bi x + O(x2) , i = 1, ..., 7 , (5) where x = M2 K/(16π2F 2) and ms is the mass of the strange quark. Here ai = ai(Lj, lK) arise at O(p4) and bi = bi(Lj, Ck, lK) at O(p6), with lK = log(M2 K/µ2). The dependence on the strange quark or kaon mass is explic- itly stated above. In addition, and for later discussion, the bi parameters can be written as bi = p0,i + p1,ilK +",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "chiral lecs",
+      "heading": false
+    },
+    {
+      "term": "chiral lagrangian",
+      "heading": false
+    },
+    {
+      "term": "cal chi",
+      "heading": false
+    },
+    {
+      "term": "cite ecker",
+      "heading": false
+    },
+    {
+      "term": "resonance contributions",
+      "heading": false
+    },
+    {
+      "term": "chiral low-energy",
+      "heading": false
+    },
+    {
+      "term": "chiral symmetry",
+      "heading": false
+    },
+    {
+      "term": "resonance fields",
+      "heading": false
+    },
+    {
+      "term": "partonic qcd",
+      "heading": false
+    },
+    {
+      "term": "underlying chiral",
+      "heading": false
+    },
+    {
+      "term": "chi sim",
+      "heading": false
+    },
+    {
+      "term": "lambda chi",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 5,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 6,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p5); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0710.4405v1"
+  }
+}

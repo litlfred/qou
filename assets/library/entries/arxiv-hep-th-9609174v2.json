@@ -1,0 +1,194 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-9609174v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-9609174v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-th/9609174v2  23 Sep 1996\nITP-UH-16/96\nNBI-HE-96-43\nNORDITA-96/59\nhep-th/9609174\nUniversality of random matrices in the microscopic limit\nand the Dirac operator spectrum\nG. Akemann∗, P. H. Damgaard†, U. Magnea‡ and S. Nishigaki§\n∗Institut f¨ur Theoretische Physik, Universit¨at Hannover\nAppelstraße 2, D-30167 Hannover, Germany\n† §The Niels Bohr Institute / ‡NORDITA\nBlegdamsvej 17, DK-2100 Copenhagen Ø, Denmark\nAbstract\nWe prove the universality of correlation functions of chiral unitary and unitary ensembles of ran-\ndom matrices in the microscopic limit. The essence of the proof consi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9609174v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Consider a four-dimensional gauge theory coupled to fermions\nin given representations of the gauge group, and with given global\n(and possibly spontaneously broken) flavor symmetries. \nIn the chiral limit, the associated Dirac operator \n${\\rm i} D\\!\\llap{/}$ anticommutes with $\\gamma_5$,\n\\begin{equation}\n\\{{\\rm i} D\\!\\llap{/},\\gamma_5\\} ~=~ 0 ~.\n\\end{equation}\nThis means that the associated eigenvalues of ${\\rm i} D\\!\\llap{/}$,\ndefined by\n${\\rm i} D\\!\\llap{/}\\,\\phi_n = \\lambda_n\\phi_n$ \nappear symmetrically around zero:\n$\\pm\\lambda_n$. The corresponding eigenfunctions are, for $\\lambda_n\n\\neq 0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9609174v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chiral unitary ensembles",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-chiral-unitary-ensembles.md",
+      "narrative": null,
+      "content": "In this section we consider the chiral unitary ensemble:\n\\begin{equation}\nZ=\\int \\d M \\, {\\rm det}^{N_f} M\\, \\exp \n\\left\\{ -\\frac{N}{2} {\\rm tr}\\, V(M^2) \\right\\},\\ \\ \\ \nV(M^2)=\\sum_{k\\geq 1} \\frac{g_k}{k}M^{2k},\\ \\ \\ N_f=0,1,\\cdots\n\\label{partition} \n\\end{equation}\nwhere $M$ stands for an $(N+N')\\times (N+N')$ block hermitian matrix\nwhose non-zero components are $N\\times N'$ complex matrices\non the off-diagonals,\n\\begin{equation}\nM=\n\\left(\n\\begin{array}{cc}\n0&W^\\dagger\\\\\nW&0\n\\end{array}\\right)\n\\end{equation}\nand $\\d M$ the Haar measure of $W$.\nWe take  $N\\leq N'$ without loss of generality.\nA",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9609174v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics of orthogonal polynomials",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-21-asymptotics-of-orthogonal-polynomials.md",
+      "narrative": null,
+      "content": "We shall prove the following theorem on the asymptotic behavior \nof these orthogonal polynomials:\n\\begin{quote}\n{\\bf Theorem 1}:\\  \n{\\it\nLet $\\{P^{(\\alpha)}_n(\\lambda)\\}_{n=0,1,\\cdots}$ be \nthe set of polynomials orthogonal \nwith respect to the measure} \n\\[\n\\d \\lambda\\, \\lambda^\\alpha\\,\\e^{-N\\,V(\\lambda)},\\ \\ \\ \nV(\\lambda)=\\sum_{k\\geq 1} \\frac{g_k}{k}\\,\\lambda^k,\\ \\ \\ \n\\alpha=0,1,\\cdots\n\\]\n{\\it over the range $[0,\\infty)$, whose moments are all finite.\nIf the polynomials can be normalized according to \n$P^{(\\alpha)}_n(0)=1$,\nthen, for fixed $x=N^2\\lambda$ and $t=n/N$, \nthe following limiting r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9609174v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Universal correlations",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-22-universal-correlations.md",
+      "narrative": null,
+      "content": "\\noindent\nTheorem 1 can be used to establish a remarkable universal form of\nspectral correlators of the model (\\ref{chUE1}).\nWe shall consider\nthe spectral density $\\rho(\\lambda)$, and \nhigher order correlators, in the\nsame microscopic limit as above.\n\n\\vspace{12pt}\\noindent\nTo begin, we recall the expression for \nthe integration kernel $K_N(\\lambda,\\mu)$ \nassociated with the eigenvalue problem\nfor the positive-definite hermitian\nmatrix $H=W^\\dagger W$,\n\\begin{eqnarray}\nK_N(\\lambda,\\mu)\\!&\\!=\\!&\\!\n(\\lambda\\,\\mu)^{\\alpha/2}\\,\n\\e^{-\\frac{N}{2}(V(\\lambda)+V(\\mu))} \\,\n\\frac1N \\sum_{i=0}^{N-1} \n\\fr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9609174v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unitary ensembles",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-3-unitary-ensembles.md",
+      "narrative": null,
+      "content": "Unitary ensembles\nIn this section we consider the unitary ensemble:\nZ =\nZ\ndM det2αM e−NtrV (M2),\nV (M2) =\nX\nk≥1\ngk\n2kM2k,\nα = 0, 1, · · ·\n(3.1)\nwhere M stands for an N ×N hermitian matrix and dM its Haar measure. This model shares the\nsame global symmetries with a Euclidean three-dimensional SU(Nc ≥3) gauge theory coupled to\nNf = 2α massless fermions in the fundamental representation [13]. The partition function (3.1)\nis expressible in terms of the eigenvalues after integration over the angular U(N) coordinates\nZ =\nZ ∞\n−∞\nN\nY\ni=1\n\u0010\ndλi λ2α\ni\ne−NV (λ2\ni )\u0011 \n\ndet\ni,j λj−1\ni\n\n2\n.\n(3.2)\nTherefore",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9609174v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics of orthogonal polynomials",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "../sections/sec-005-31-asymptotics-of-orthogonal-polynomials.md",
+      "narrative": null,
+      "content": "Asymptotics of orthogonal polynomials\nWe shall prove the following theorem‡ on the asymptotic behavior of these orthogonal polynomi-\nals:\nTheorem 2: Let {P (α)\nn\n(λ)}n=0,1,··· be the set of polynomials orthogonal with respect\nto the measure\ndλ λ2α e−NV (λ2),\nV (λ2) =\nX\nk≥1\ngk\n2k λ2k,\nα = 0, 1, · · ·\nover the range (−∞, ∞), whose moments are all ﬁnite. If the polynomials can be\nnormalized according to P (α)\n2n (0) = P (α)\n2n+1\n′(0) = 1, then, for ﬁxed x = N λ and t =\n2n/N, the following limiting relations hold:\nlim\nN→∞P (α)\n2n ( x\nN )\n\nn=Nt/2\n= Γ(α + 1\n2)\nJα−1\n2 (u(t)x)\n(u(t)x/2)α−1\n2\n,\n(3.4a)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9609174v2/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "Let {P (α) n (λ)}n=0,1,··· be the set of polynomials orthogonal with respect to the measure dλ λ2α e−NV (λ2), V (λ2) = X k≥1 gk 2k λ2k, α = 0, 1, · · · over the range (−∞, ∞), whose moments are all ﬁnite. If the polynomials can be normalized according to P (α) 2n (0) = P (α) 2n+1 ′(0) = 1, then, for ﬁxed x = N λ and t = 2n/N, the following limiting relations hold: lim N→∞P (α) 2n ( x N )",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9609174v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Universal correlations",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-006-32-universal-correlations.md",
+      "narrative": null,
+      "content": "Universal correlations\nThe integration kernel associated with the eigenvalue problem of M is (for brevity we set N =\nodd = 2N + 1)\nKN(λ, µ)=(λ µ)α e−N\n2 (V (λ2)+V (µ2)) 1\nN\nN−1\nX\nn=0\nP (α)\nn\n(λ)P (α)\nn\n(µ)\nh(α)\nn\n=(λ µ)α e−N\n2 (V (λ2)+V (µ2)) 1\nN\n N\nX\nn=0\n1\nh(α)\n2n\n!\nP (α)\n2N +1(λ)P (α)\n2N (µ) −P (α)\n2N (λ)P (α)\n2N +1(µ)\nλ −µ\n.(3.29)\nHere use is made of the Christoﬀel-Darboux identity, and the proportionality constant in the\nsecond line is determined by matching O(λ0µ0) terms. Noting that the orthogonality relation\n(3.3) in the microscopic limit\n2\nN 2α+1\nZ ∞\n0\ndx x2α P (α)\n2n ( x\nN )\n\nn=Nt/2\nP",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9609174v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion and speculation",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "../sections/sec-007-4-conclusion-and-speculation.md",
+      "narrative": null,
+      "content": "\\noindent\nIn the present work we have proven two theorems\nconcerning the asymptotic behavior of orthogonal polynomials \nfor a broad class of measures. \nThey show a remarkable asymptotic universality \nnear the origin, a relation previously only known for the classical\northogonal polynomials of generalized Laguerre and Jacobi type \\cite{Sze}. \nFurthermore, we have used this highly universal behavior \nto prove universality\nconjectures regarding the spectral densities and their\n$s$-point correlators in the microscopic limit.\n\n\\vspace{12pt}\\noindent\nAll of these proofs refer to the zero-dimensional",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

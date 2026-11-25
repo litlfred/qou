@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p01/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "ant-v14-n7-s-p01",
+  "contains": [
+    "library/ant-v14-n7-s-p01/sections/sec-front-matter",
+    "library/ant-v14-n7-s-p01/sections/sec-000",
+    "library/ant-v14-n7-s-p01/sections/sec-001",
+    "library/ant-v14-n7-s-p01/sections/sec-002",
+    "library/ant-v14-n7-s-p01/sections/sec-003",
+    "library/ant-v14-n7-s-p01/sections/sec-004",
+    "library/ant-v14-n7-s-p01/sections/sec-005",
+    "library/ant-v14-n7-s-p01/sections/sec-006",
+    "library/ant-v14-n7-s-p01/sections/sec-007",
+    "library/ant-v14-n7-s-p01/sections/sec-008",
+    "library/ant-v14-n7-s-p01/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "p-adic Asai L-functions of Bianchi modular forms — 11 sections: Front matter; Introduction; Preliminaries and notation\n\n**p-adic Asai L-functions of Bianchi modular forms**\n\n*David Loeffler and Chris Williams*\n\n42 pp, 11 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries and notation; 3 Siegel units and weight 2 Asai–Eisenstein el; 4 Proving the norm relations (Theorem 3.13); 5 Asai–Eisenstein elements in higher weights; 6 The p-adic Asai L-function; 7 Interpolation of critical L-values; Appendix: An integral formula for the Asai L-f; Acknowledgements; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "ant-v14-n7-s-p01",
+    "title_source": "slug",
+    "source_file": "ant-v14-n7-s-p01.pdf",
+    "source_sha256": "976199bfca4ac08637d4b6e7feb7ebc0d953381cf9ffe54fbce5bfa95c4ae139",
+    "pages": 42,
+    "arxiv": null,
+    "doi": "10.2140/ant.2020.14.1669",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

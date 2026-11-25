@@ -1,0 +1,1284 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1202.0067v3",
+  "title": "arxiv-1202.0067v3",
+  "variant": "pdf",
+  "pages": 33,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Character deflations",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-character-deflations"
+    },
+    {
+      "level": 2,
+      "title": "Some special cases",
+      "number": "1.2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-some-special-cases"
+    },
+    {
+      "level": 2,
+      "title": "Outline of the paper",
+      "number": "1.3",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-outline-of-the-paper"
+    },
+    {
+      "level": 1,
+      "title": "Deflation by averaging",
+      "number": "2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-2-deflation-by-averaging"
+    },
+    {
+      "level": 1,
+      "title": "Skew characters",
+      "number": "3",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-3-skew-characters"
+    },
+    {
+      "level": 2,
+      "title": "Quotients of skew-partitions",
+      "number": "3.1",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-31-quotients-of-skew-partitions"
+    },
+    {
+      "level": 2,
+      "title": "A model for induction from a Young subgroup",
+      "number": "3.2",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-32-a-model-for-induction-from-a-young-subgroup"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 3.3",
+      "number": "3.3",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-33-proof-of-theorem-33"
+    },
+    {
+      "level": 2,
+      "title": "Example",
+      "number": "3.4",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-34-example"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 1.5",
+      "number": "4",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-4-proof-of-theorem-15"
+    },
+    {
+      "level": 1,
+      "title": "An application to Foulkes' Conjecture",
+      "number": "5",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-5-an-application-to-foulkes-conjecture"
+    },
+    {
+      "level": 1,
+      "title": "Generalized deflations",
+      "number": "6",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-6-generalized-deflations"
+    },
+    {
+      "level": 1,
+      "title": "Symmetric functions",
+      "number": "7",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-7-symmetric-functions"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 175,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "murnaghan nakayama",
+          "heading": false
+        },
+        {
+          "term": "foulkes conjecture",
+          "heading": false
+        },
+        {
+          "term": "nakayama rule",
+          "heading": false
+        },
+        {
+          "term": "smn",
+          "heading": false
+        },
+        {
+          "term": "deﬂation",
+          "heading": false
+        }
+      ],
+      "extract": "CHARACTER DEFLATIONS AND A GENERALIZATION OF THE MURNAGHAN–NAKAYAMA RULE ANTON EVSEEV, ROWENA PAGET AND MARK WILDON Abstract. Given natural numbers m and n, we deﬁne a deﬂation map from the characters of the symmetric group Smn to the characters of Sn. This map is obtained by ﬁrst restricting a character of Smn to the wreath product Sm ≀Sn, and then taking the sum of the irreducible constituents of the restricted",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1202.0067v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 233,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "foulkes conjecture",
+          "heading": false
+        },
+        {
+          "term": "hookdefl",
+          "heading": false
+        },
+        {
+          "term": "littlewood--richardson rule",
+          "heading": false
+        },
+        {
+          "term": "murnaghan--nakayama rule",
+          "heading": false
+        },
+        {
+          "term": "young rule",
+          "heading": false
+        },
+        {
+          "term": "foulkesgraph",
+          "heading": false
+        },
+        {
+          "term": "foulkesgraphscomp",
+          "heading": false
+        },
+        {
+          "term": "thm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:intro label=\"sec:intro\"} Tableaux combinatorics is a pivotal theme in the representation theory of the symmetric groups. Fundamental results in this area include the Murnaghan--Nakayama rule for the values taken by irreducible characters of symmetric groups and the Littlewood--Richardson rule (as well as its special case, Young's rule), which determines the restrictions of irreducible characters to Young",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-character-deflations",
+      "number": "1.1",
+      "title": "Character deflations",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1438,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "border strip",
+          "heading": false
+        },
+        {
+          "term": "border-strip tableau",
+          "heading": false
+        },
+        {
+          "term": "def vartheta",
+          "heading": false
+        },
+        {
+          "term": "border-strip tableaux",
+          "heading": false
+        },
+        {
+          "term": "def hskip",
+          "heading": false
+        },
+        {
+          "term": "strip labelled",
+          "heading": false
+        },
+        {
+          "term": "res vartheta",
+          "heading": false
+        },
+        {
+          "term": "mathrm def",
+          "heading": false
+        }
+      ],
+      "extract": "We now introduce the ideas needed to state Theorem [\\[thm:cd\\]](#thm:cd){reference-type=\"ref\" reference=\"thm:cd\"}. By a construction originally due to Frobenius, the irreducible characters of the symmetric group $S_r$ are canonically labelled by the partitions of $r$. As is usual, we write $\\chi^\\lambda$ for the irreducible character labelled by the partition $\\lambda$, and $\\chi^{\\lambda / \\mu}$ for the character",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-some-special-cases",
+      "number": "1.2",
+      "title": "Some special cases",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 391,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "defres decomp",
+          "heading": false
+        },
+        {
+          "term": "skew-partition lambda",
+          "heading": false
+        },
+        {
+          "term": "decomp sgn",
+          "heading": false
+        },
+        {
+          "term": "murnaghan--nakayama rule",
+          "heading": false
+        },
+        {
+          "term": "border strip",
+          "heading": false
+        },
+        {
+          "term": "chi lambda",
+          "heading": false
+        },
+        {
+          "term": "def hskip",
+          "heading": false
+        },
+        {
+          "term": "shape lambda",
+          "heading": false
+        }
+      ],
+      "extract": "It is clear than if $m=1$ then $\\mathop{\\mathrm{Def\\hskip-0.3pt res}}_{S_n} \\chi= \\chi$ for any character $\\chi$ of $S_n$, and so the special case $m=1$ of Theorem [\\[thm:cd\\]](#thm:cd){reference-type=\"ref\" reference=\"thm:cd\"} asserts that $\\chi^{\\lambda / \\mu} (g) = a_{\\lambda/ \\mu , \\gamma}$ for any skew-partition $\\lambda / \\mu$ of $n$ and any element $g \\in S_n$ of cycle type $\\gamma$. Equivalently,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-outline-of-the-paper",
+      "number": "1.3",
+      "title": "Outline of the paper",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 418,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cycle deflation",
+          "heading": false
+        },
+        {
+          "term": "deflation special",
+          "heading": false
+        },
+        {
+          "term": "foulkes conjecture",
+          "heading": false
+        },
+        {
+          "term": "vartheta chi",
+          "heading": false
+        },
+        {
+          "term": "def hskip",
+          "heading": false
+        },
+        {
+          "term": "res chi",
+          "heading": false
+        },
+        {
+          "term": "chi lambda",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "The remainder of the paper proceeds as follows. Throughout, we shall adopt the convention that if $\\alpha$ is a partition of $r \\in \\mathbf{N}$, then $g_\\alpha \\in S_r$ is an element of cycle type $\\alpha$, and $z_\\alpha$ is the size of the centralizer of $g_\\alpha$ in $S_r$. (The choice of $g_\\alpha$ within the conjugacy class is irrelevant.) If $\\alpha = (\\alpha_1,\\ldots,\\alpha_k)$, we write $n\\alpha =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-2-deflation-by-averaging",
+      "number": "2",
+      "title": "Deflation by averaging",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 962,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deflation",
+          "heading": true
+        },
+        {
+          "term": "widetilde theta",
+          "heading": false
+        },
+        {
+          "term": "theta psi",
+          "heading": false
+        },
+        {
+          "term": "defres theta",
+          "heading": false
+        },
+        {
+          "term": "theta times",
+          "heading": false
+        },
+        {
+          "term": "def theta",
+          "heading": false
+        },
+        {
+          "term": "times inf",
+          "heading": false
+        },
+        {
+          "term": "let theta",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:averaging} Let $m$, $n \\in \\N$. We shall think of $S_m \\wr S_n$ as the group of permutations of \\[ \\{1,\\ldots, m\\} \\times \\{1,\\ldots, n\\} \\] that leaves invariant the set of blocks of the form $\\Delta_j = \\{(1,j), \\ldots, (m,j)\\}$, $1 \\le j \\le n$. Given $h_1, \\ldots, h_n \\in S_m$ and $g \\in S_n$, we write $(h_1,\\ldots,h_n;g)$ for the permutation which sends $(i,j)$ to $(h_{gj} i,gj)$. This left action is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-skew-characters",
+      "number": "3",
+      "title": "Skew characters",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 48,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "skew",
+          "heading": true
+        },
+        {
+          "term": "ind",
+          "heading": false
+        },
+        {
+          "term": "abacus",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:skew label=\"sec:skew\"} In this section we state and prove a result on the values of skew characters on elements of the form $g_{n\\alpha}$ (Theorem [\\[thm:ind\\]](#thm:ind){reference-type=\"ref\" reference=\"thm:ind\"}). First, we give the necessary combinatorial definitions. In several arguments we shall refer to James' abacus notation for partitions, as described in [@JK page 78].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-31-quotients-of-skew-partitions",
+      "number": "3.1",
+      "title": "Quotients of skew-partitions",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 534,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "runner abacus",
+          "heading": false
+        },
+        {
+          "term": "abacus display",
+          "heading": false
+        },
+        {
+          "term": "skew-partitions",
+          "heading": true
+        },
+        {
+          "term": "chi lambda",
+          "heading": false
+        },
+        {
+          "term": "quotients",
+          "heading": true
+        },
+        {
+          "term": "shape lambda",
+          "heading": false
+        },
+        {
+          "term": "border-strip tableau",
+          "heading": false
+        },
+        {
+          "term": "bead moves",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:quotients label=\"subsec:quotients\"} We shall define $n$-quotients and $n$-signs for the following class of skew-partitions. ::: definition []{#def:n_dec label=\"def:n_dec\"} Let $m$, $n \\in \\mathbf{N}$. We say that a skew-partition $\\lambda /\\mu$ of $mn$ is *$n$-decomposable* if there exists a border-strip tableau of shape $\\lambda / \\mu$ and type $(n^m)$. ::: ::: definition []{#def:n_quo label=\"def:n_quo\"}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-32-a-model-for-induction-from-a-young-subgroup",
+      "number": "3.2",
+      "title": "A model for induction from a Young subgroup",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 315,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "young subgroup",
+          "heading": true
+        },
+        {
+          "term": "sℓn",
+          "heading": false
+        },
+        {
+          "term": "indsm",
+          "heading": false
+        },
+        {
+          "term": "gαn",
+          "heading": false
+        }
+      ],
+      "extract": "general result on the values of a character induced from a Young subgroup will be used in the proof of Theorem 3.3. (The notation is chosen to be consistent with this later use.) CHARACTER DEFLATIONS 11 Lemma 3.4. Let (ℓ0, . . . , ℓn−1) be a composition of m ∈N. For each i ∈ {0, . . . , n −1}, let ϑi be a character of Sℓi. If g ∈Sm then IndSm Sℓ0×···×Sℓn−1(ϑ0 × · · · × ϑn−1)(g) = X t ϑ0(gα0(t)) . . . ϑn−1(gαn−1(t))",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-33-proof-of-theorem-33",
+      "number": "3.3",
+      "title": "Proof of Theorem 3.3",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 988,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "border-strip tableaux",
+          "heading": false
+        },
+        {
+          "term": "border-strip tableau",
+          "heading": false
+        },
+        {
+          "term": "border strip",
+          "heading": false
+        },
+        {
+          "term": "murnaghan nakayama",
+          "heading": false
+        },
+        {
+          "term": "sgn",
+          "heading": false
+        },
+        {
+          "term": "n-decomposable",
+          "heading": false
+        },
+        {
+          "term": "nakayama rule",
+          "heading": false
+        },
+        {
+          "term": "indsm",
+          "heading": false
+        }
+      ],
+      "extract": "of mn. Let α be a partition of m. If there is a border-strip tableau of shape λ/µ and type nα then it is clear from the abacus that λ/µ is n-decomposable. Hence if λ/µ is not n-decomposable then, by the Murnaghan–Nakayama rule, χλ/µ(gnα) = 0. We may therefore assume that λ/µ is n-decomposable. Let ℓi = |λ(i)/µ(i)| for each i ∈{0, . . . , n −1} and let H = Sℓ0 × · · · × Sℓn−1. To show that (4) χλ/µ(gnα) = εn(λ/µ)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-34-example",
+      "number": "3.4",
+      "title": "Example",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 507,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "border-strip tableaux",
+          "heading": false
+        },
+        {
+          "term": "quotient border-strip",
+          "heading": false
+        },
+        {
+          "term": "tabloids",
+          "heading": false
+        },
+        {
+          "term": "border",
+          "heading": false
+        },
+        {
+          "term": "shape",
+          "heading": false
+        },
+        {
+          "term": "tableau",
+          "heading": false
+        },
+        {
+          "term": "bijection",
+          "heading": false
+        }
+      ],
+      "extract": "proof of Theorem 3.3. Let λ/µ = (8, 5, 3, 2, 2, 2)/(2, 2, 1, 1, 1). Any border- strip tableau of shape λ/µ and type (35) has either two or four 3-border- strips of height 1, with the rest of height 0, so ε3(λ/µ) = 1. Let α = (2, 1, 1, 1). By the Murnaghan–Nakayama rule, χλ/µ(g3α) is the sum of the signs of the four border-strip tableaux of type λ/µ and type 3α = (6, 3, 3, 3) 14 ANTON EVSEEV, ROWENA PAGET AND MARK",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-4-proof-of-theorem-15",
+      "number": "4",
+      "title": "Proof of Theorem 1.5",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1493,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bead moves",
+          "heading": false
+        },
+        {
+          "term": "n-decomposable",
+          "heading": false
+        },
+        {
+          "term": "horizontal strip",
+          "heading": false
+        },
+        {
+          "term": "border strips",
+          "heading": false
+        },
+        {
+          "term": "abacus display",
+          "heading": false
+        },
+        {
+          "term": "skew-partition",
+          "heading": false
+        },
+        {
+          "term": "rowena paget",
+          "heading": false
+        },
+        {
+          "term": "anton evseev",
+          "heading": false
+        }
+      ],
+      "extract": "We shall prove Theorem 1.5 by induction on the number of parts of γ. Most of the work occurs in proving the base case when γ has a single part. In the ﬁrst step we combine the results of §3 and §4. For later use in §6, we state the following proposition for a general deﬂation map. CHARACTER DEFLATIONS 15 Proposition 4.1. Let m, n ∈N, let ϑ be an irreducible character of Sm, and let λ/µ be a skew-partition of mn. Let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-5-an-application-to-foulkes-conjecture",
+      "number": "5",
+      "title": "An application to Foulkes' Conjecture",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 970,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "foulkes conjecture",
+          "heading": true
+        },
+        {
+          "term": "ell displaystyle",
+          "heading": false
+        },
+        {
+          "term": "foulkes label",
+          "heading": false
+        },
+        {
+          "term": "left displaystyle",
+          "heading": false
+        },
+        {
+          "term": "displaystyle frac",
+          "heading": false
+        },
+        {
+          "term": "displaystyle sum",
+          "heading": false
+        },
+        {
+          "term": "ell chi",
+          "heading": false
+        },
+        {
+          "term": "res ell",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:Foulkes label=\"sec:Foulkes\"} For $m$, $n \\in \\mathbf{N}$, let $\\phi^{(m^n)}$ be the permutation character of $S_{mn}$ acting on all unordered set partitions of $\\{1,2,\\ldots,mn\\}$ into $n$ sets each of size $m$. Equivalently, $\\phi^{(m^n)} = \\mathop{\\mathrm{Ind}}_{S_m \\wr S_n}^{S_{mn}} 1$. Foulkes' Conjecture asserts that if $m \\le n$ then $$\\left< \\phi^{(m^n)}, \\chi^\\lambda \\right> \\ge \\left< \\phi^{(n^m)},",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-6-generalized-deflations",
+      "number": "6",
+      "title": "Generalized deflations",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3608,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gen basecase",
+          "heading": false
+        },
+        {
+          "term": "def hskip",
+          "heading": false
+        },
+        {
+          "term": "defres decomp",
+          "heading": false
+        },
+        {
+          "term": "vartheta chi",
+          "heading": false
+        },
+        {
+          "term": "res vartheta",
+          "heading": false
+        },
+        {
+          "term": "chi kappa",
+          "heading": false
+        },
+        {
+          "term": "sgn chi",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:gendef label=\"sec:gendef\"} In this section we discuss deflation with respect to an arbitrary irreducible character $\\vartheta$ of $S_m$. In the case where $\\vartheta$ is labelled by a hook partition, $\\vartheta=\\chi^{(a,1^b)}$ where $a+b=m$, we give a combinatorial description, generalizing Theorem [\\[thm:cd\\]](#thm:cd){reference-type=\"ref\" reference=\"thm:cd\"}. We also prove some other general results, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-7-symmetric-functions",
+      "number": "7",
+      "title": "Symmetric functions",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 518,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chi lambda",
+          "heading": false
+        },
+        {
+          "term": "circ beta",
+          "heading": false
+        },
+        {
+          "term": "gamma circ",
+          "heading": false
+        },
+        {
+          "term": "dlt",
+          "heading": false
+        },
+        {
+          "term": "langle lambda",
+          "heading": false
+        },
+        {
+          "term": "beta rangle",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "res chi",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:concl label=\"sec:concl\"} Finally, we discuss the translation of our results into the language of symmetric functions. The following well-known facts can be found in [@Macdonald1995 Chapter I]. Let $\\Lambda$ be the ring of symmetric functions with integer coefficients in variables $x_1, x_2,\\ldots$, and let $R=\\bigoplus_{n\\ge 0} \\, \\mathcal{C}(S_n)$. There is a well-known canonical ring isomorphism",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 17,
+      "summary": null,
+      "keywords": [],
+      "extract": "The authors would like to thank Prof. Christine Bessenrodt for supplying the reference to Farahat's paper [@Farahat1954].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 536,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rowena paget",
+          "heading": false
+        },
+        {
+          "term": "mark wildon",
+          "heading": false
+        },
+        {
+          "term": "anton evseev",
+          "heading": false
+        },
+        {
+          "term": "foulkes",
+          "heading": false
+        },
+        {
+          "term": "robinson",
+          "heading": false
+        },
+        {
+          "term": "e-mail address",
+          "heading": false
+        },
+        {
+          "term": "kerber",
+          "heading": false
+        },
+        {
+          "term": "kent",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Brion, M. Stable properties of plethysm: on two conjectures of Foulkes. Manuscripta Math., 80 (1993) 347–371. [2] Dent, S., and Siemons, J. On a conjecture of Foulkes. J. Algebra, 226(1):236–249, 2000. [3] D´esarm´enien, J., Leclerc, B., and Thibon, J. Y. Hall-Littlewood functions and Kostka-Foulkes polynomials in representation theory. S´em. Lothar. de Combin., 32 (1994), Art. B32c, approx. 38 pp. [4] Dixon, J.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "border-strip tableau",
+      "heading": true
+    },
+    {
+      "term": "border strip",
+      "heading": false
+    },
+    {
+      "term": "skew-partition lambda",
+      "heading": false
+    },
+    {
+      "term": "character chi",
+      "heading": false
+    },
+    {
+      "term": "def hskip",
+      "heading": false
+    },
+    {
+      "term": "sgn chi",
+      "heading": false
+    },
+    {
+      "term": "border-strip tableaux",
+      "heading": true
+    },
+    {
+      "term": "res chi",
+      "heading": false
+    },
+    {
+      "term": "vartheta chi",
+      "heading": false
+    },
+    {
+      "term": "shape lambda",
+      "heading": false
+    },
+    {
+      "term": "mathrm def",
+      "heading": false
+    },
+    {
+      "term": "character deflations",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "A border-strip tableau of shape (8, 5, 3, 2, 2, 2)/(2, 2, 1, 1, 1) and type (6, 3, 3, 3)",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The bijection in Proposition 3.6 between border-strip tableaux of shape (8, 5, 3, 2, 2, 2)/(2, 2, 1, 1, 1) and type (6, 3, 3, 3) and 3-quotient border-strip tableaux of the same shape and type (2, 1, 1, 1)",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The left-hand graph shows log2",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The top graph shows log2",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 16,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 17,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "4 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p31); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 17 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1202.0067v3"
+  }
+}

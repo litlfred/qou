@@ -1,0 +1,1457 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-23it252zg2w.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-23it252zg2w","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] The pipeline unit is gone: \&quot;Every algebraic downstream block that relies on the mass tower routes through this infinite series\&quot; no longer appears. The surviving \&quot;Markov-trace audit on ${}^3\\mathrm{He}$\&quot; is a mathematical verification, as its own next sentence says (\&quot;Verify $|\\mathrm{tr}_M(\\beta_{{}^3\\mathrm{He}})|$ at $q_0$ against the canonical reducer\&quot;).&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T12:00:00Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-rereview&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;milnor-amalgamated-flow&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Rewrote mass-endomorphism_seq1.md adhering to strict Milnor criteria and brevity. Removed verbose passive constructs, smoothed transitions, left math and table structures intact.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.136884Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;milnor-editor&quot;,
+        &quot;version&quot;: &quot;v1&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.136884Z&quot;
+      },
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;544794928d9e&quot;,
+        &quot;ts&quot;: &quot;9483045ba9e2&quot;,
+        &quot;lean&quot;: &quot;f8545ec8a6eb&quot;
+      }
+    }
+  ],
+  &quot;proof-narrative-lean-equiv&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-statement-integrity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-self-assuming-projection&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-trivial-true&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-false-premise&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-decide-masking&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-unused-hypotheses&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-rater-strategy-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-rater-goal-plausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies proof-rater-goal-plausibility. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    }
+  ],
+  &quot;proof-rater-novelty&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies fit-section-chapter. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly separating fundamental mathematical formulas cleanly from isolated algebraic constraints.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:25:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7504e419214fe0897e30364ab40a3f220fc3f8e7&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {},
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-false-claim. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly separating fundamental mathematical formulas cleanly from isolated algebraic constraints.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:25:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7504e419214fe0897e30364ab40a3f220fc3f8e7&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). No instance found.&quot;
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-vacuous. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly separating fundamental mathematical formulas cleanly from isolated algebraic constraints.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:25:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7504e419214fe0897e30364ab40a3f220fc3f8e7&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). No instance found.&quot;
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-circular. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly separating fundamental mathematical formulas cleanly from isolated algebraic constraints.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:25:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7504e419214fe0897e30364ab40a3f220fc3f8e7&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). No instance found.&quot;
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-overclaim. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly separating fundamental mathematical formulas cleanly from isolated algebraic constraints.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:25:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7504e419214fe0897e30364ab40a3f220fc3f8e7&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;7532588eb09f&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;,
+        &quot;lean&quot;: &quot;42c7d546262a&quot;,
+        &quot;lean_statement&quot;: &quot;742d2f1255d3&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:50:53.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;96874d030c6a066b4ef4d26783e43b7d6b3d1447&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the edited paragraph (158ac1a4a) and its neighbours at PR #8892 head 96874d030c. The new paragraph states the absolute 938.272 MeV as a fit (μ_u fitted to CODATA m_p), which matches the absolute-mass excision ruling. Two pre-existing claims nearby are not supported in this block: &#39;The structural content (pair formula, splitting isolation, binding energy) is categorically derived&#39;, and the previous paragraph&#39;s &#39;Φ_q ... gives the correct binding energy differences between nuclei&#39;. The binding magnitude is open in the corpus (qou-brng). Cross-block: observations/terminal-resolution-proof.md still says &#39;the hadronic masses are determined without free parameters&#39;, which this paragraph now contradicts.&quot;,
+      &quot;notes&quot;: &quot;Report only.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;,
+        &quot;lean&quot;: &quot;42c7d546262a&quot;,
+        &quot;lean_statement&quot;: &quot;742d2f1255d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:empirical-claims-cleanup-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:53:43.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e286d40a6ca9d857bbc15ada632b05d6c9494e52&quot;,
+      &quot;evidence&quot;: &quot;Resolved for this block: Φ_q is &#39;the candidate for&#39; binding-energy differences, the binding magnitude is stated open, and binding energy is dropped from the &#39;categorically derived&#39; list. Cross-block: observations/terminal-resolution-proof.md still says hadronic masses are &#39;determined without free parameters&#39;; not changed here (a proof block whose conclusion is an absolute-mass claim).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). Phi_q is now &#39;the candidate for&#39; binding-energy differences and &#39;the binding magnitude remains open&#39; (consistent with qou-brng); binding energy is dropped from the &#39;categorically derived&#39; list. Resolves the previous minor finding. Cross-block: observations/terminal-resolution-proof.md still says &#39;the hadronic masses are determined without free parameters&#39;, which this block contradicts; outside this PR.&quot;
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-hidden-dof. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly separating fundamental mathematical formulas cleanly from isolated algebraic constraints.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:25:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7504e419214fe0897e30364ab40a3f220fc3f8e7&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). No instance found.&quot;
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-non-sequitur. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly separating fundamental mathematical formulas cleanly from isolated algebraic constraints.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:25:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7504e419214fe0897e30364ab40a3f220fc3f8e7&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). No instance found.&quot;
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-lean-narrative-divergence. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly separating fundamental mathematical formulas cleanly from isolated algebraic constraints.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:25:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7504e419214fe0897e30364ab40a3f220fc3f8e7&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). No instance found.&quot;
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-citation-misuse. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly separating fundamental mathematical formulas cleanly from isolated algebraic constraints.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:25:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7504e419214fe0897e30364ab40a3f220fc3f8e7&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). No instance found.&quot;
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-definitional-ambiguity. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly separating fundamental mathematical formulas cleanly from isolated algebraic constraints.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:25:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7504e419214fe0897e30364ab40a3f220fc3f8e7&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). Line 130 writes &#39;Phi_q = sum log|V_i|&#39; while line 76 defines Phi_q(z) = prod_k (1 - q^{-k} z)^{-1}; one symbol names two different objects. Pre-existing wording in a sentence this PR edited.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-empirical-fragility. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly separating fundamental mathematical formulas cleanly from isolated algebraic constraints.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:25:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7504e419214fe0897e30364ab40a3f220fc3f8e7&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). No instance found.&quot;
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-physical-implausibility. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly separating fundamental mathematical formulas cleanly from isolated algebraic constraints.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:25:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7504e419214fe0897e30364ab40a3f220fc3f8e7&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). No instance found.&quot;
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-reproducibility. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly separating fundamental mathematical formulas cleanly from isolated algebraic constraints.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:25:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7504e419214fe0897e30364ab40a3f220fc3f8e7&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). No instance found.&quot;
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-referee-verdict. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly separating fundamental mathematical formulas cleanly from isolated algebraic constraints.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:25:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7504e419214fe0897e30364ab40a3f220fc3f8e7&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). No instance found.&quot;
+    }
+  ],
+  &quot;expo-milnor-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:16:30.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;715a9a708c210d840f41c621cb20b53301cf19b6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-19&quot;
+      },
+      &quot;evidence&quot;: &quot;Block is quite long, consider breaking it up for clarity.&quot;
+    }
+  ],
+  &quot;milnor-brevity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block properly satisfies milnor-brevity. The content accurately reflects the necessary properties without overclaiming.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:21.966149Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound numeric mapping honestly separating fundamental mathematical formulas cleanly from isolated algebraic constraints.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:25:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7504e419214fe0897e30364ab40a3f220fc3f8e7&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;voice-scholarly-default&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;544794928d9e&quot;,
+        &quot;ts&quot;: &quot;9483045ba9e2&quot;,
+        &quot;lean&quot;: &quot;f8545ec8a6eb&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-ai-slop&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;544794928d9e&quot;,
+        &quot;ts&quot;: &quot;9483045ba9e2&quot;,
+        &quot;lean&quot;: &quot;f8545ec8a6eb&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3eb154d47241&quot;,
+        &quot;ts&quot;: &quot;9483045ba9e2&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:h00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:34:02.369Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;57fb41eac0d2ac3ef7e22b4159a297c2999d10f7&quot;,
+      &quot;evidence&quot;: &quot;Many negations, all substantive scoping: \&quot;not load-bearing\&quot;, \&quot;It does not depend on the closed-form conjecture below\&quot;, \&quot;not required for the structural derivations\&quot;, \&quot;It is not a finite element of H_n(R,q) for any n\&quot;, \&quot;without any complex-analytic limit\&quot;, \&quot;not single-nucleon absolute masses\&quot;. Every one marks a real limitation the block imposes on itself, which is this block&#39;s central virtue.&quot;,
+      &quot;notes&quot;: &quot;No change.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;7532588eb09f&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;,
+        &quot;lean&quot;: &quot;42c7d546262a&quot;,
+        &quot;lean_statement&quot;: &quot;742d2f1255d3&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:50:53.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;96874d030c6a066b4ef4d26783e43b7d6b3d1447&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the edited paragraph (158ac1a4a) and its neighbours at PR #8892 head 96874d030c. &#39;so the MeV value is a fit, not a prediction&#39; follows &#39;The framework does not predict the proton mass in MeV&#39; two clauses earlier; the second negation repeats the first.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;,
+        &quot;lean&quot;: &quot;42c7d546262a&quot;,
+        &quot;lean_statement&quot;: &quot;742d2f1255d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:empirical-claims-cleanup-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:53:43.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e286d40a6ca9d857bbc15ada632b05d6c9494e52&quot;,
+      &quot;evidence&quot;: &quot;Resolved: &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). &#39;so the MeV value is a fit&#39; no longer repeats the preceding negation; &#39;does not predict the proton mass in MeV&#39; states the claim directly.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3eb154d47241&quot;,
+        &quot;ts&quot;: &quot;9483045ba9e2&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:h00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:34:02.411Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;57fb41eac0d2ac3ef7e22b4159a297c2999d10f7&quot;,
+      &quot;evidence&quot;: &quot;No setup-then-reframe; the block is organised as labelled sections and worked cases.&quot;,
+      &quot;notes&quot;: &quot;No change.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). No instance of this construction in the block.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3eb154d47241&quot;,
+        &quot;ts&quot;: &quot;9483045ba9e2&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:h00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:34:02.454Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;57fb41eac0d2ac3ef7e22b4159a297c2999d10f7&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Nine em-dashes in one block, eight of them UNSPACED and all in the identical noun-then-appositive shape: \&quot;explicitly-expressing its NF decomposition\&quot;, \&quot;in H_n(R,q)-a finite-rank Hecke element\&quot;, \&quot;the Jones polynomial J(K;q)-a Laurent polynomial\&quot;, \&quot;in [0.85, 1.0]-at the boundary\&quot;, \&quot;z-Habiro completion-analogous to\&quot;, \&quot;a brane tower effect-the accumulated quantum dilogarithm\&quot;, \&quot;growing with N-a categorically defined object\&quot;, \&quot;the same decomposition-using weights that produce Vol(K)\&quot;. The repetition of one construction eight times is the density tell the category is for; individually each is defensible.&quot;,
+      &quot;notes&quot;: &quot;STRUCTURAL (eight sites spread across the block; a partial fix leaves the punctuation inconsistent), not edited. Proposed: convert the appositives to commas or relative clauses (\&quot;the Jones polynomial J(K;q), a Laurent polynomial in q^{1/2}\&quot;) and keep at most the two that are genuinely parenthetical.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). Seven unspaced em dashes remain (lines 1, 20, 56, 99, 118, 138 and one more), all in the same noun-then-appositive shape. Pre-existing on main; this PR neither adds nor removes any.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3eb154d47241&quot;,
+        &quot;ts&quot;: &quot;9483045ba9e2&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:h00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:34:02.498Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;57fb41eac0d2ac3ef7e22b4159a297c2999d10f7&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;\&quot;*Two partial mitigations are documented, though neither universally closes the gap:*\&quot; is followed by a numbered list of THREE items - (1) the z-Habiro completion, (2) the magic-shell structural term, (3) the Markov-trace audit on 3-He. The announced count does not match the list. Item 3 is also not a mitigation but a verification task (\&quot;Verify &quot;,
+      &quot;notes&quot;: &quot;tr_M| ... to confirm the structural gap is real\&quot;), which is what makes it read as an appended third.|STRUCTURAL (deciding whether item 3 is a mitigation or a check is a content judgement), not edited. Proposed: either restore \&quot;Two\&quot; by moving item 3 out as a separate verification note, or change \&quot;Two\&quot; to \&quot;Three\&quot; and drop \&quot;though neither\&quot; (which also assumes two).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). The &#39;Two partial mitigations&#39; list now has two items, so the count mismatch recorded by agent:h00 is gone (fixed before this PR). No rhythmic list of three.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3eb154d47241&quot;,
+        &quot;ts&quot;: &quot;9483045ba9e2&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:h00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:34:02.539Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;57fb41eac0d2ac3ef7e22b4159a297c2999d10f7&quot;,
+      &quot;evidence&quot;: &quot;The block ends on a three-item consequence list under \&quot;If the conjecture holds\&quot;, which is content. The section-final \&quot;The mass is almost entirely a brane tower effect-the accumulated quantum dilogarithm across exceptional divisors\&quot; is the closest thing to a flourish, but it names a mechanism.&quot;,
+      &quot;notes&quot;: &quot;No change.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). No instance of this construction in the block.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3eb154d47241&quot;,
+        &quot;ts&quot;: &quot;9483045ba9e2&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:h00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:34:02.582Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;57fb41eac0d2ac3ef7e22b4159a297c2999d10f7&quot;,
+      &quot;evidence&quot;: &quot;\&quot;The scope of this conjecture is as follows\&quot; is a structural announcement in a section whose job is scoping; no narration of emphasis.&quot;,
+      &quot;notes&quot;: &quot;No change.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). No instance of this construction in the block.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3eb154d47241&quot;,
+        &quot;ts&quot;: &quot;9483045ba9e2&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:h00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:34:02.624Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;57fb41eac0d2ac3ef7e22b4159a297c2999d10f7&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;\&quot;The scope of a failure is therefore exactly this: the tower formula remains correct as an infinite series, and the closed form is a convenience.\&quot; This is a block-final restatement of the paragraph immediately above it, which already said \&quot;If this conjecture fails ..., the algebraic mass formula remains valid as the infinite series\&quot; and, one bullet earlier, \&quot;It serves symbolic computation but is not required for the structural derivations in this paper\&quot;. The sentence adds nothing and the \&quot;therefore\&quot; points at no new inference.&quot;,
+      &quot;notes&quot;: &quot;FIX IS SAFE BUT NOT APPLIED - the sentence sits between two math-bearing paragraphs and its removal is a judgement about how much scoping repetition the author wants, which the batch rules put on the structural side. Proposed: delete the sentence outright; the two preceding statements carry it.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). Line 24, &#39;The scope of a failure is therefore exactly this: the tower formula remains correct as an infinite series, and the closed form is a convenience.&#39;, restates line 22 and the bullet before it. Pre-existing on main and untouched by this PR; severity kept as previously recorded (agent:h00).&quot;,
+      &quot;severity&quot;: &quot;major&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3eb154d47241&quot;,
+        &quot;ts&quot;: &quot;9483045ba9e2&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:h00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:34:02.665Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;57fb41eac0d2ac3ef7e22b4159a297c2999d10f7&quot;,
+      &quot;evidence&quot;: &quot;No personal register.&quot;,
+      &quot;notes&quot;: &quot;No change.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). No instance of this construction in the block.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3eb154d47241&quot;,
+        &quot;ts&quot;: &quot;9483045ba9e2&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:h00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:34:02.708Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;57fb41eac0d2ac3ef7e22b4159a297c2999d10f7&quot;,
+      &quot;evidence&quot;: &quot;No superlative wording, and the absolute-mass paragraph is explicitly compliant (\&quot;the absolute scale is calibrated - consistent with absolute mass in MeV not being a framework prediction\&quot;). Substantive findings are in the notes.&quot;,
+      &quot;notes&quot;: &quot;MOST NUMBERS IN THIS BLOCK VERIFY - recorded so a later pass need not redo them. Tower-convergence table, recomputed as partial sums of Li_2(q^{-2}) = sum x^n/n^2 at x = q_0^{-2} = 0.811653754 (mpmath 40 dps): N=1 -&gt; 73.8875%, N=3 -&gt; 94.2887%, N=10 -&gt; 99.7474%, N=20 -&gt; 99.9898%, against printed 73.9 / 94.3 / 99.75 / 99.99. All four correct. 1/hbar_q = 10.0927, printed \&quot;approx 10\&quot;, correct. Phi_q(0.989) = 671094 and Phi_q(1) = 901389 from the block&#39;s own product formula, printed \&quot;6.7e5\&quot; and \&quot;9e5\&quot;, both correct. Jones polynomial of the trefoil -q^{-4}+q^{-3}+q^{-1} and Vol(trefoil) = 0, correct. All three ratio columns of the single-level table are internally consistent (0.911/1.165 = 0.782; -125.2/-89.8 = 1.394; 1.184/0.852 = 1.390) and CODATA n/p = 939.56542/938.27209 = 1.001378, printed 1.001, correct. TWO GENUINE DISCREPANCIES, both flagged not fixed: (1) The \&quot;Descended vs transient\&quot; table CONTRADICTS the block&#39;s own Statement display for its first row. The Statement asserts tr_M(Phi^trans) = Vol(K_beta)/hbar_q^2 - |tr_M(rho(beta))|. For the trefoil the block itself states Vol = 0, so that formula gives -0.551 - yet the table reports +111.86. The table value is instead Li_2(q^{-2})/hbar_q^2 = 111.8955 (the vacuum-drag mechanism the corpus uses for the volume-zero trefoil), so the row is right and the headline equation simply does not cover it. The block never says so. (2) The 4_1 row is off by 0.4%: Vol(4_1)/hbar_q^2 = 206.7683 and minus |tr_M| = 206.5863, against the printed 207.40; back-solving 207.40 + 0.182 implies Vol(4_1) = 2.03787 rather than 2.0298832. Minor third item: the ratio column reads 1137x where 207.40/0.182 = 1139.6 - consistent with the desc column being a rounding of ~0.18241, but not reproducible from the printed digits. Also note the tower table cannot discriminate the q_0 pins: proton and muon agree to well beyond the four printed figures.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;23e1607cc968&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;,
+        &quot;lean&quot;: &quot;42c7d546262a&quot;,
+        &quot;lean_statement&quot;: &quot;742d2f1255d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:nuclear-electron-migration-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:41:19.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4462291792db2960aeddb6ad2c5595c8a0af760&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the edited lines after 51200e27d. Ruling fix: the table row no longer labels the electron a trefoil (word not recorded; authorNote caveat), and candidate (a) states only tr_M(e⁻·4₁) = tr_M(e⁻) with e⁻ = σ₀σ₁σ₀ instead of &#39;acts as the identity on the trefoil&#39;. Other pre-existing items in this block (absolute 938.272 MeV, line 134) were not reviewed in this pass.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;7532588eb09f&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;,
+        &quot;lean&quot;: &quot;42c7d546262a&quot;,
+        &quot;lean_statement&quot;: &quot;742d2f1255d3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:empirical-claims-cleanup-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:45:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;11f43db9cf7606bbebbff5c1a86d171ecec9065c&quot;,
+      &quot;evidence&quot;: &quot;Re-read of the edited paragraph (158ac1a4a): the absolute 938.272 MeV is now stated as a fit (μ_u fitted to CODATA m_p), not a framework value, per the absolute-mass excision ruling.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). No instance of this construction in the block.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;3eb154d47241&quot;,
+        &quot;ts&quot;: &quot;9483045ba9e2&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:h00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T03:34:02.748Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;57fb41eac0d2ac3ef7e22b4159a297c2999d10f7&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;\&quot;the accumulated quantum dilogarithm across exceptional divisors\&quot; and \&quot;cyclotomic-denominator structure\&quot; are dense but parse aloud.&quot;,
+      &quot;notes&quot;: &quot;Separate symbol-collision note for the coordinating session, not a trap: Phi_q carries two incompatible meanings in this one block - defined as the infinite product Phi_q(z) = prod_k (1 - q^{-k} z)^{-1} in the \&quot;Encoding requirements\&quot; section, then used as \&quot;The quantum dilogarithm Phi_q = sum log|hat V_i|\&quot; in the single-level table paragraph. A sum of logs and an infinite product of that form are different objects; one of the two needs renaming.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cf0834c2d66e&quot;,
+        &quot;ts&quot;: &quot;1c0ba0fe3092&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:57:36.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2e0a771e5497037b13f7ef357afde027f3733a75&quot;,
+      &quot;evidence&quot;: &quot;Full re-read of the block at PR #8892 head 2e0a771e54 (Phi_q is &#39;the candidate for&#39; binding-energy differences and the binding magnitude is stated open; &#39;binding energy&#39; dropped from the categorically-derived list; &#39;a fit, not a prediction&#39; -&gt; &#39;a fit&#39;; display math reflowed). No instance of this construction in the block.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

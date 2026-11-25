@@ -1,0 +1,342 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "di-cairano-2022-j-phys-commun-6-015002",
+  "blocks": [
+    {
+      "id": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/figure-img-p001-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Journal of Physics\nCommunications\n     \n      \nPAPER • OPEN ACCESS\nOn the derivation of a Nonlinear Generalized\nLangevin Equation\nTo cite this article: Loris Di Cairano 2022 J. Phys. Commun. 6 015002\n \nView the article online for updates and enhancements.\nYou may also like\nA study of non-linear Langevin dynamics\nunder non-Gaussian noise with quartic\ncumulant\nChandan Jana\n-\nLangevin equation in systems with also\nnegative temperatures\nMarco Baldovin, Andrea Puglisi and\nAngelo Vulpiani\n-\nLangevin equation with potential of mean\nforce: the case of anchored bath\nAlex V Plyukhin\n-\nThis content was d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/figure-img-p002-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State-of-art",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-11-state-of-art.md",
+      "narrative": null,
+      "content": "The generalized Langevin equation (GLE) is an important mathematical tool for investigating a wide class of\nboth quantum and classical diffusive phenomena [1] and it is an extension of the Langevin equation [2]. The\nmajor advantage of GLE-based approaches is the reduction of the number of degrees of freedom which describe\nthe system-environment interactions. For example, in case of a particle moving in a given environment, instead\nof solving the Newton’s equations of motions for the system and for each particles of the environment, one can\njust focus on the velocity vector, U, of the diffusing",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction to the problem",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-12-introduction-to-the-problem.md",
+      "narrative": null,
+      "content": "In this section, we revisit and formalize the theoretical derivation of a GLE introduced by Zwanzig [31] putting in\nevidence what are the main inconsistencies and giving an insight about how to overcome them.\nThe physical system that Zwanzig considered is composed by a subsystem that we call heavy particle\ndescribed by the variable X ≔(Q, P) where Q is the generalized coordinate and P the conjugated momentum and\na heat bath which is a set of N particles whose state is described by the collective variables Y ≔(q, p) with the same\nmeaning as before.\nThe whole Hamiltonian of this system is given",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Criticism",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-121-criticism.md",
+      "narrative": null,
+      "content": "We now explain our main criticism to the Zwanzig’s derivation showing that the deﬁnitions (8) and (9) provided\nby Zwanzig yield a FDR which is inconsistent with the standard deﬁnition [3]. The main reason of this\ninconsistency can be better explained by means of the following argument. In writing the Hamiltonian for two\ninteracting systems, all the information about the nature of the interaction is contained in the potential function\nwhich gives a fully microscopic and detailed description of system. Conversely, in the (generalized) Langevin\nequation, one just takes into account a coarse-grain",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notation",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-13-notation.md",
+      "narrative": null,
+      "content": "In this section, we formalize the derivation introduced in the previous section.\n\nWe consider a Hamiltonian function describing a classical physical system composed bya heat bath (P)\ninteracting with a heavy particle (Z). The heat bath consists of N particles with mass m = 1 smaller than the\nheavier particle mass M.\n\nWe assume that the system is embedded in the three dimensional physical space R? so that the phase space,\ndenoted byT, isa subset of R&Y x R°N x R° x R°. Therefore, the heat bath conjugated coordinates are:\n\nN N\n[%:= er e€ RY, Qe =>)ae e ERY, a=x,y,z (19)\ni=1 i=1\nwhere we have int",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Formal derivation of a nonlinear GLE",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-2-formal-derivation-of-a-nonlinear-gle.md",
+      "narrative": null,
+      "content": "In this section, inspired by the work of Zwanzig, we will derive a nonlinear GLE and deﬁne the kernel matrix and\nnoise term in such a way to be able (i) to recover the standard deﬁnition of FDR, (ii) to deﬁne a continuum limit\nwithout any ulterior adjustments.\nIn the section 2.1, we show that, by choosing a suitable potential function, one can always recast the starting\nHamiltonian into an Hamiltonian of the same form given in equation (3). In section 2.2, we show that, an\nappropriate manipulation of the equilibrium map allows to naturally deﬁne the correct kernel matrix and noise\nvector.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General setting: study of the equilibrium map",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-21-general-setting-study-of-the-equilibrium-map.md",
+      "narrative": null,
+      "content": "Let us ﬁrst clarify the role and the physical meaning of the map a :i\n3\n3\n\n\n\n.\nFirst of all, we note that each element of the set a X\ni\ni\nN\n1\n{\n( )}= plays the role of an equilibrium conﬁguration of\nthe respective heat bath particle for any ﬁxed X\n3\n\nÎ\n. In fact, one can demonstrate [33] that such equilibrium\nmap can be always derived once that a generic interaction potential is given.\nIn practice, given any Hamiltonian function of the form\nP I X Q\nP X\nI Q\nQ X\nH\nH\n, ,\n,\n,\n,\n,\n,\n(\n) ≔\n(\n)\n(\n)\n(\n)\n+\n+\nH\nV\nB\nP\nwhere\nP X\nH\n,\n(\n)\nB\nand\nI Q\nH\n,\n(\n)\nP\nare given in (20) and\nQ X\n,\n(\n)\nV\nis a rather",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples of a possible equilibrium map.",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-007-211-examples-of-a-possible-equilibrium-map.md",
+      "narrative": null,
+      "content": "Let us consider a Lennard-Jones-like interaction potential of the form\n\n\n\n\nQ X\nX\nq\nX\nq\n,\n4\n,\n25\nLJ\ni\nN\ni\ni\ni\ni\ni\ni\ni\n1\n12\n⎜\n⎟\n⎜\n⎟\n⎡\n⎣\n⎢⎛\n⎝\n⎞\n⎠\n⎛\n⎝\n⎞\n⎠\n⎤\n⎦\n⎥\n(\n) ≔\n(\n)\nå h\ns\ns\n-\n-\n-\n=\n\n\nV\nwhere the parameters\n,i\ni\n\ns h Î\nhave the dimension of an energy and a length, respectively; lastly,\ni\n\nÎ\n\nare\ndimensionless parameters. Note that we do not consider any mutual interaction between the heat bath particles.\nThe requirement (23), namely:\n*\nQ\nX\n0\n,\n,\nq\nLJ\ni\n(\n)\n\n=\nV\nwhere\n\n*\n*\n*\nQ\nq\nq\n,\n, N\n1\n{\n}\n=\nis the equilibrium conﬁguration of the heat bath, yields\n\n\n*\nX\nq\ni\nN\n2\n,\n1,\n.\ni\ni\ni\n2\n1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalization of the equilibrium map",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-008-22-generalization-of-the-equilibrium-map.md",
+      "narrative": null,
+      "content": "In order to make our derivation as general as possible, we assume to have n heavy particle position-dependent\nfunctions,\nX\nfI\nI\nn\n1\n{ ( )} = , such that each ai map can be written as a sum of these functions weighted with different\nparameters\ni I,\n\nh\nÎ\nwhich, in turn, represent the interaction strength.\nThus, we have:\na X\nX\nf\n,\n31\ni\nI\nn\ni I I\n1\n,\n( ) ≔\n( )\n(\n)\nå h\n=\nEssentially, the main trick is to separate, in the equilibrium map, the dependence by X from the dependence by\nthe parameters ηi,I, so that the fI-functions do not depend on such parameters. Although each function fI could\nhave a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Alternative derivation",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-009-23-alternative-derivation.md",
+      "narrative": null,
+      "content": "2.3. Alternative derivation\nThe system of Hamilton’s equations of motion (22) based on the Hamiltonian (33) written as a system of second\norder differential equations reads:\nX\na\nX\nK Q\na X\nX\nt\nt\nt\nt\nV\nt ,\n34\nX\nX\nt\nT\nẗ\n( )\n(\n( ))\n(\n( )\n(\n( )))\n(\n( ))\n(\n)\n( )\n( )\n= \n-\n- \nQ\nK Q\na X\nt\nt\nt\n.\n35̈\n( )\n(\n( )\n(\n( )))\n(\n)\n= -\n-\nWe note that equation (35) is linear in the heat bath-variables Q, this allows us to apply the Laplace transform\nmethod [24–26]. Hence, the Laplace transform of equation (35) is\n\nQ\nK\nQ\nQ\nKa X\ns\ns\ns\ns\n1\n0\n0\n.\n36\n2\n1\n( )\n(\n)\n[\n( )\n( )\n(\n( ))]\n(\n)\n=\n+\n+\n+\n~\n~\n-\nIOP Publishing\n\nJ.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-010-3-conclusion.md",
+      "narrative": null,
+      "content": "We have showed that in order to obtain a kernel matrix which contains the parameters of the interactions and,\nthereby, that admits a thermodynamics limit as proposed by Zwanzig, we have to pay attention to the definition of\nequilibrium map a which plays a fundamental role.\n\nIn fact, its mathematical structure needs to be specified somehow so to distinguish the contributions given\nby the interaction parameters and the functional dependence on X. In so doing, one obtains a nonlinear\ngeneralized Langevin equation (see equation (45)) where the kernel matrix and noise vector explicitly depend on\nth",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-011-acknowledgments.md",
+      "narrative": null,
+      "content": "We wish to thank Prof. Benjamin Stamm and Dr. Vania Calandrini for important suggestions, advises and for a\ncareful reading of this work.\nWe thank the anonymous Reviewers for their constructive criticisms and precious suggestions.\nThis work was supported by the Jülich-Aachen Research Alliance Center for Simulation and Data Science\n(JARA-CSD) School for Simulation and Data Science (SSD).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Data availability statement",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-012-data-availability-statement.md",
+      "narrative": null,
+      "content": "All data that support the ﬁndings of this study are included within the article (and any supplementary ﬁles).\nORCID iDs\nLoris Di Cairano\nhttps://orcid.org/0000-0001-5859-4188",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-013-references.md",
+      "narrative": null,
+      "content": "[1] Cortés E, West B J and Lindenberg K 1985 J. Chem. Phys. 82 2708–17\n[2] Langevin P 1908 Compt. Rendus 146 530–3\n[3] Kubo R 1966 Rep. Prog. Phys. 29 255\n[4] Di Cairano L, Stamm B and Calandrini V 2021 Biophys. J. 120 4722–37\n[5] Jeon J H, Monne H M S, Javanainen M and Metzler R 2012 Phys. Rev. Lett. 109 188103\n[6] Javanainen M, Hammaren H, Monticelli L, Jeon J H, Miettinen M S, Martinez-Seara H, Metzler R and Vattulainen I 2013 Faraday\nDiscuss. 161 397–417\n[7] Metzler R, Jeon J H and Cherstvy A 2016 Biochimica et Biophysica Acta (BBA)-Biomembranes 1858 2451–67\n[8] Grimm M, Jeney S and Franos",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

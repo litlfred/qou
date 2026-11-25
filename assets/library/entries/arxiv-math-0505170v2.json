@@ -1,0 +1,101 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0505170v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0505170v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-0-introduction.md",
+      "narrative": null,
+      "content": "Let K be a ﬁeld of characteristic 0. For any natural number q let K[t0, . . . , tq]\nbe the polynomial algebra, and let ∆q\nK be the geometric q-dimensional simplex\n∆q\nK := Spec K[t0, . . . , tq]/(t0 + · · · + tq −1).\nOur main result is the following theorem.\nTheorem 0.1. Let G be a unipotent algebraic group over K, let X be a K-scheme,\nlet Z be a G-torsor over X, and let Y be any X-scheme. Suppose f = (f0, . . . , fq)\nis a sequence of X-morphisms fi : Y →Z. Then there is an X-morphism\nwavG(f) : ∆q\nK × Y →Z\ncalled the weighted average, such that the operation wavG is symmetric, simplicial,\nfunct",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0505170v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0505170v2  [math.RT]  12 Jan 2006\nAN AVERAGING PROCESS FOR UNIPOTENT GROUP\nACTIONS\nAMNON YEKUTIELI\nAbstract. We present an averaging process for sections of a torsor under a\nunipotent group. This process allows one to integrate local sections of such a\ntorsor into a global simplicial section. The results of this paper have applica-\ntions to deformation quantization of algebraic varieties.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0505170v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Averaging Process",
+      "pageStart": 2,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-1-the-averaging-process.md",
+      "narrative": null,
+      "content": "\\label{sec1}\n\nThroughout the paper $\\K$ denotes a fixed base field of \ncharacteristic $0$. All schemes and all morphisms are over $\\K$.\n\nWe begin by recalling some standard facts about the combinatorics\nof simplicial objects. \nLet $\\bsym{\\Delta}$ denote the category with objects the ordered \nsets $[q] := \\{ 0, 1, \\ldots, q \\}$, $q \\in \\mbb{N}$. The \nmorphisms $[p] \\to [q]$ are the order preserving functions,\nand we write\n$\\bsym{\\Delta}^q_p := \\opn{Hom}_{\\bsym{\\Delta}}([p], [q])$. \nThe $i$-th co-face map \n$\\partial^i : [p] \\to [p + 1]$\nis the injective function that does not take the value $i$;",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0505170v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Simplicial Sections",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-2-simplicial-sections.md",
+      "narrative": null,
+      "content": "\\label{sec2}\n\nIn this section we show how the averaging process is used to \nobtain simplicial sections of certain bundles. \n\nSuppose $H$ and $G$ are affine group schemes over $\\K$, and $H$ \nacts on $G$ by automorphisms. Namely there is a morphism of \nschemes $H \\times G \\to G$ which  for every $\\K$-scheme $Y$ \ninduces a group homomorphism\n$H(Y) \\to \\opn{Aut}_{\\cat{Groups}}(G(Y))$.\nThen $H \\times G$ has a structure of a group scheme, and we denote \nthis group by $H \\ltimes G$; it is a geometric semi-direct \nproduct. \n\nRecall that an affine group scheme $G$ is called\n{\\em pro-unipotent} if it is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0505170v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-references.md",
+      "narrative": null,
+      "content": "[Bo] R. Bott, “Lectures on Characteristic Classes and Polarizations” , Lecture Notes in Math.\n279, Springer, Berlin, 1972.\n[Gk] I.M. Gelfand and D.A. Kazhdan, Some problems of differential geometry and the cal-\n\nculation of cohomologies of Lie algebras of vector fields, Soviet Math. Dokl. 12 (1971),\nno. 5, 1367-1370.\n\n[Ho] G. Hochschild, “Basic Theory of Algebraic Groups and Lie Algebras,” Springer, 1981.\n\n[HY] R. Hiibl and A. Yekutieli, Adelic Chern forms and applications, Amer. J. Math. 121\n(1999), 797-839.\n\n[Ko] M. Kontsevich, Deformation quantization of Poisson manifolds, Lett. Math. Phys.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

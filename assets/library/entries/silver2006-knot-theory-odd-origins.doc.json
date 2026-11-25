@@ -1,0 +1,864 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "silver2006-knot-theory-odd-origins",
+  "title": "silver2006-knot-theory-odd-origins",
+  "variant": "pdf",
+  "pages": 8,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "G. Tait",
+      "number": "P",
+      "page": 2,
+      "pageLabel": "159",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-p-g-tait"
+    },
+    {
+      "level": 1,
+      "title": "Smoke-ring Science",
+      "number": null,
+      "page": 3,
+      "pageLabel": "160",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-smoke-ring-science"
+    },
+    {
+      "level": 1,
+      "title": "The Unseen Universe",
+      "number": null,
+      "page": 6,
+      "pageLabel": "163",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-the-unseen-universe"
+    },
+    {
+      "level": 1,
+      "title": "Tait’s Program",
+      "number": null,
+      "page": 7,
+      "pageLabel": "164",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-taits-program"
+    },
+    {
+      "level": 1,
+      "title": "The Meaning of Knots",
+      "number": null,
+      "page": 8,
+      "pageLabel": "165",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-the-meaning-of-knots"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgment",
+      "number": null,
+      "page": 8,
+      "pageLabel": "165",
+      "confidence": 0.8,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-005-acknowledgment"
+    },
+    {
+      "level": 1,
+      "title": "Bibliography",
+      "number": null,
+      "page": 8,
+      "pageLabel": "165",
+      "confidence": 0.8,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-006-bibliography"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "158",
+      "labelEnd": "159",
+      "words": 1036,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "william thomson",
+          "heading": false
+        },
+        {
+          "term": "scottish physicists",
+          "heading": false
+        },
+        {
+          "term": "lord kelvin",
+          "heading": false
+        },
+        {
+          "term": "south alabama",
+          "heading": false
+        },
+        {
+          "term": "million years",
+          "heading": false
+        },
+        {
+          "term": "grew out",
+          "heading": false
+        },
+        {
+          "term": "knot theory",
+          "heading": false
+        },
+        {
+          "term": "years old",
+          "heading": false
+        }
+      ],
+      "extract": "T ake a length of rope, loop and weave it around itself and connect its ends. The re- sult, of course, is a knot. Creating a knot seems simple, yet knot theory is one of the most active fields in mathematics today, yielding thousands of peer-reviewed ar- ticles over the past decade. There’s even an aca- demic journal devoted entirely to knot theory. One reason for its popularity is the conviction that knots have",
+      "extractCut": true,
+      "blocks": [
+        "library/silver2006-knot-theory-odd-origins/blocks/prose-sec-front-matter",
+        "library/silver2006-knot-theory-odd-origins/blocks/recommendation-sec-front-matter-01",
+        "library/silver2006-knot-theory-odd-origins/blocks/figure-img-p002-1",
+        "library/silver2006-knot-theory-odd-origins/blocks/table-001"
+      ]
+    },
+    {
+      "id": "sec-000-p-g-tait",
+      "number": "P",
+      "title": "G. Tait",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "159",
+      "labelEnd": "160",
+      "words": 351,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tait",
+          "heading": true
+        },
+        {
+          "term": "guthrie tait",
+          "heading": false
+        },
+        {
+          "term": "peter guthrie",
+          "heading": false
+        },
+        {
+          "term": "thomson",
+          "heading": false
+        },
+        {
+          "term": "vortex motion",
+          "heading": false
+        },
+        {
+          "term": "smoke",
+          "heading": false
+        },
+        {
+          "term": "earth",
+          "heading": false
+        },
+        {
+          "term": "active",
+          "heading": false
+        }
+      ],
+      "extract": "Unlike Thomson, Peter Guthrie Tait did make senior wrangler of his class at Cambridge. Tait, born in 1831, was aggressive, argumentative and fiercely loyal to Thomson. “We never agreed to differ,” Thomson wrote in a 1901 obituary for his lifelong friend and collaborator, “[we] always fought it out. But it was almost as great a plea- sure to fight with Tait as to agree with him.” Figure 1. A smoke ring rises above",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-smoke-ring-science",
+      "number": null,
+      "title": "Smoke-ring Science",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": "160",
+      "labelEnd": "163",
+      "words": 1938,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "smoke-ring",
+          "heading": true
+        },
+        {
+          "term": "smoke rings",
+          "heading": false
+        },
+        {
+          "term": "vortex rings",
+          "heading": false
+        },
+        {
+          "term": "thomson vortex-atom",
+          "heading": false
+        },
+        {
+          "term": "tait regarded",
+          "heading": false
+        },
+        {
+          "term": "smoke-ring box",
+          "heading": false
+        },
+        {
+          "term": "vortex motion",
+          "heading": false
+        },
+        {
+          "term": "william thomson",
+          "heading": false
+        }
+      ],
+      "extract": "Victorian scientists, including Thomson and Tait, believed in the existence of an invisible, perfect fluid called the ether, a notion that origi- nated with Aristotle. Such a medium seemed essential if, say, the Sun were to exert its gravi- tational pull on the Earth. Thomson sought to come up with a mechanical model of the ether that would explain how it interacted with phys- ical phenomena. Thomson was also",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-the-unseen-universe",
+      "number": null,
+      "title": "The Unseen Universe",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "163",
+      "labelEnd": "164",
+      "words": 858,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unseen universe",
+          "heading": true
+        },
+        {
+          "term": "invisible universe",
+          "heading": false
+        },
+        {
+          "term": "tait",
+          "heading": false
+        },
+        {
+          "term": "miracles",
+          "heading": false
+        },
+        {
+          "term": "uni verse",
+          "heading": false
+        },
+        {
+          "term": "ether",
+          "heading": false
+        },
+        {
+          "term": "visible uni",
+          "heading": false
+        },
+        {
+          "term": "ordinary molecules",
+          "heading": false
+        }
+      ],
+      "extract": "The success of Newton’s mechanical vision of the universe was a source of national pride for Victorian-era Britain, but the materialistic phi- losophy it spawned caused some unease. If all phenomena could be scientifically explained, then so could miracles, including religious miracles. The certainty of revelation would be at risk. One popular response was to turn to spiritu- alism, which became widely popular in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-taits-program",
+      "number": null,
+      "title": "Tait’s Program",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "164",
+      "labelEnd": "165",
+      "words": 469,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tait",
+          "heading": true
+        },
+        {
+          "term": "sent tait",
+          "heading": false
+        },
+        {
+          "term": "tait began",
+          "heading": false
+        },
+        {
+          "term": "perfect universe",
+          "heading": false
+        },
+        {
+          "term": "rigor ous",
+          "heading": false
+        },
+        {
+          "term": "tables extend",
+          "heading": false
+        },
+        {
+          "term": "through crossings",
+          "heading": false
+        },
+        {
+          "term": "current tables",
+          "heading": false
+        }
+      ],
+      "extract": "In 1878, Tait began an ambitious program of cataloging knots, which, if the vortex-atom theory was correct, would actually be a sort of table of elements. Tait did not have rigor- ous techniques for showing that his pictures represented different knots, but he did have sound geometric intuition and courage. (By the 1920s, techniques of Henri Poincaré and James Alexander could verify that Tait’s tables were",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-the-meaning-of-knots",
+      "number": null,
+      "title": "The Meaning of Knots",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "165",
+      "labelEnd": "165",
+      "words": 360,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tait",
+          "heading": false
+        },
+        {
+          "term": "knots",
+          "heading": true
+        },
+        {
+          "term": "knot theory",
+          "heading": false
+        },
+        {
+          "term": "imagine",
+          "heading": false
+        },
+        {
+          "term": "thomson",
+          "heading": false
+        },
+        {
+          "term": "years",
+          "heading": false
+        },
+        {
+          "term": "beautiful",
+          "heading": false
+        },
+        {
+          "term": "research",
+          "heading": false
+        }
+      ],
+      "extract": "Thomson’s confidence and aesthetic judgment combined with Tait’s enthusiasm and philo- sophical nature to promote the first sustained research program in knot theory. Maxwell con- tributed as well by providing Tait with a steady stream of ideas and encouragement. Research into knots continues, but the vor- tex-atom theory faded like Tait’s smoke rings. Thomson, however, remained hopeful in his 1889 presidential",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-acknowledgment",
+      "number": null,
+      "title": "Acknowledgment",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "165",
+      "labelEnd": "165",
+      "words": 18,
+      "summary": null,
+      "keywords": [],
+      "extract": "The author would like to thank Karen Parshall for her comments on an earlier version of this article.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-bibliography",
+      "number": null,
+      "title": "Bibliography",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "165",
+      "labelEnd": "165",
+      "words": 279,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "james clerk",
+          "heading": false
+        },
+        {
+          "term": "cambridge university",
+          "heading": false
+        },
+        {
+          "term": "university press",
+          "heading": false
+        },
+        {
+          "term": "maxwell",
+          "heading": false
+        },
+        {
+          "term": "epple",
+          "heading": false
+        },
+        {
+          "term": "macmillan",
+          "heading": false
+        },
+        {
+          "term": "tait",
+          "heading": false
+        },
+        {
+          "term": "scientific",
+          "heading": false
+        }
+      ],
+      "extract": "Campell, L., and W. Garnet. 1882. The Life of James Clerk Maxwell. London: Macmillan and Co. Epple, M. 1998. Topology, matter, and space, I: Topo- logical notions in 19th-century natural philosophy. Archive for History of Exact Sciences 52:297–392. Epple, M. 1999. Geometric aspects in the development of knot theory. In History of Topology, ed. I. M. James. Amsterdam: North-Holland, 301–358. Helmholtz, H. 1867. On",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "tait smoke",
+      "heading": true
+    },
+    {
+      "term": "guthrie tait",
+      "heading": true
+    },
+    {
+      "term": "sent tait",
+      "heading": false
+    },
+    {
+      "term": "tait began",
+      "heading": true
+    },
+    {
+      "term": "like tait",
+      "heading": false
+    },
+    {
+      "term": "tait worked",
+      "heading": false
+    },
+    {
+      "term": "tait regarded",
+      "heading": false
+    },
+    {
+      "term": "thomson vortex-atom",
+      "heading": true
+    },
+    {
+      "term": "william thomson",
+      "heading": true
+    },
+    {
+      "term": "thomson wrote",
+      "heading": false
+    },
+    {
+      "term": "smoke rings",
+      "heading": true
+    },
+    {
+      "term": "vortex rings",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "158",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "159",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "160",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "161",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "162",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "163",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "164",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "165",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "A smoke ring rises above Mount Etna, an active volcano on the island of Sicily. Rings such as this one are caused by small emissions of smoke from narrow vents on the volcano; they can reach more than 600 feet in diameter and remain stable for more than 10 minutes. In 1867, Scottish physicist Peter",
+      "page": 2,
+      "pageLabel": "159",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "In 1867, Peter Guthrie Tait constructed a box to study smoke rings. He placed a towel on one end, carved a circular hole on the other end and placed ammonia and sulfuric acid inside the box. Striking the towel would cause smoke rings to emerge through the hole. As smoke reached the opening, it would",
+      "page": 4,
+      "pageLabel": "161",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "William Thomson’s vortex-atom theory arose out of his observations of Tait’s experiments with smoke rings. The arrows around the smoke ring at left indicate the direction of the vortex motion. Air pushes against the greater surface area of the outer part of the ring, moving the ring in the direction",
+      "page": 4,
+      "pageLabel": "161",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "In a paper published in 1858, Hermann von Helmholtz described the motion of vortex rings in a perfect fluid. He concluded that if two rings (here, one blue and one green) moved in the same direction on the same plane, the first ring would enlarge and slow down, and the second ring would shrink and p",
+      "page": 5,
+      "pageLabel": "162",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "James Clerk Maxwell, a friend of Thomson and Tait, became interested in their work on vortices and used this zoetrope to examine the interactions of three rings. As the zoetrope spun, it would appear to viewers watching through the openings on the outside that the rings drawn on the interior band we",
+      "page": 6,
+      "pageLabel": "163",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "In The Unseen Universe, authors Tait and Balfour Stewart hypothesized about the nature of the universe. They postulated that just as a smoke ring is composed of ordinary molecules, so too those molecules might be vortex rings of “something much finer and more subtle than themselves.” In this sketch,",
+      "page": 7,
+      "pageLabel": "164",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "In an effort to develop a table of elements based on the vortex-atom theory, Tait began to classify knots according to the number of crossings. The seven simplest knots, above, extend through six crossings. Tait eventually built tables through ten-crossing knots. Current tables extend through 16 cro",
+      "page": 7,
+      "pageLabel": "164",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p002-1",
+      "file": "images/img-p002-1.png",
+      "page": 2,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-2",
+      "file": "images/img-p003-2.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-3",
+      "file": "images/img-p003-3.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-4",
+      "file": "images/img-p003-4.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-1",
+      "file": "images/img-p004-1.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-2",
+      "file": "images/img-p004-2.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-4",
+      "file": "images/img-p004-4.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-6",
+      "file": "images/img-p004-6.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-1",
+      "file": "images/img-p005-1.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-2",
+      "file": "images/img-p005-2.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-3",
+      "file": "images/img-p005-3.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-1",
+      "file": "images/img-p007-1.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "tables": [
+    {
+      "label": "Table 1",
+      "caption": "",
+      "pages": [
+        1
+      ],
+      "columns": [
+        {
+          "titles": "Knot The The modern stud physicists to appl Daniel S. Silver"
+        },
+        {
+          "titles": "ory’s Odd Origins y of knots grew out an attempt by three 19th-century Scottish y knot theory to fundamental questions about the universe"
+        }
+      ],
+      "rows": [
+        [
+          "",
+          "Take a length of rope, loop and weave it one until it appears identical to the other—but around itself and connect its ends. The re- showing that two knots are different is difficult sult, of course, is a knot. because the possible contortions are infinite. Creating a knot seems simple, yet knot theory Knot theory includes the study of links, is one of the most active fields in mathematics which consist of any number of knots (called today, yielding thousands of peer-reviewed ar- components) intertwined in any manner. A ticles over the past decade. There’s even an aca- popular motif in ancient Rome, links were often demic journal devoted entirely to knot theory. added to mosaics adorning homes and temples. One reason for its popularity is the conviction Celtic knot and link patterns, the best examples that knots have profound implications for fields of which can be found in the Book of Kells, ap- other than mathematics. Already knot theory peared in Ireland in the 7th century and spread has been applied to subjects as diverse as quan- from there to Scotland. tum mechanics and genetics. But these are only In the 19th century, knots became a subject of the latest of a number of attempts to use knots mathematical, and not just artistic, interest. Jo- to untangle some of science’s mysteries. hann Carl Friedrich Gauss (1777–1855), the son In fact, knot theory grew out of a bold (and of a bricklayer and the greatest mathematician wildly misguided) effort to develop an early of his day, was the first to discover a nontrivial “theory of everything.” Two 19th-century Scot- fact about links. In 1833, he showed that the tish physicists, William Thomson and Peter number of “intertwinings,” what we call today Guthrie Tait, believed that chemical elements the linking number of two knots, can be com- were knotted tubes of ether, which, given the puted by an integral. Gauss discussed knots contemporary state of physics, might have with his doctoral student, Johann Benedict List- explained the nature of atoms and how they ing (1808–1882), who later coined the word to- acted. A third Scottish physicist, James Clerk pology, a combination of the Greek words topos Maxwell, famous for his work on electromag- (place) and logos (reason), to describe the new netism, encouraged Thomson and Tait in the geometry of position. development of this “vortex-atom theory.” Gauss and Listing were both curious about No solid evidence for Thomson’s vortex- knots, but further progress required someone atom theory was ever found, and today it is obsessed with the topic. long forgotten. But the attempt to apply knot theory to fundamental questions about science, Lord Kelvin the ultimate nature of matter and even the exis- William Thomson was a brilliant mathemati- tence of an afterlife is an inspiring tale. Today, cian and physicist. He was also unreasonably scientists are often accused of being excessively confident. As a Cambridge undergraduate he narrow in their research. This colorful triumvi- was so sure that he would be senior wrangler, rate of Scottish physicists would have been free the student who scored highest on the gruel- of any such charges. ing mathematical tripos examination, that after This is the story of a magnificent failure. taking the test he told his servant to find out who was second wrangler. “You, sir,” was the Knot History servant’s devastating reply. The most fundamental question in knot the- Thomson’s interests were diverse. From the ory is determining whether two knots are the late 1850s to the mid-1860s, Thomson contrib- same. Mathematicians usually regard knots as uted to the efforts to lay the first trans-Atlantic identical if one can be deformed—stretched or telegraph cable, and, in 1866, he was knighted twisted, but never broken—so that it looks ex- for his work. (He became Lord Kelvin, or more actly like the other. It is relatively easy to prove precisely, Baron Kelvin of Largs, 26 years later.) that two knots are the same—simply deform In 1858, he invented the mirror galvanometer"
+        ]
+      ],
+      "narratives": {},
+      "csv": "tables/table-1.csv"
+    },
+    {
+      "label": "Table 2",
+      "caption": "",
+      "pages": [
+        8
+      ],
+      "columns": [
+        {
+          "titles": "meant that the corresponding vortex atoms The vortex-atom theory represented what would be very complicated. Tait then produced we might call the first attempt at a physical a table of “the first seven orders of knottiness” application of knot theory. Since then, knot (knots with up to seven crossings), but even theory techniques have made their way into that was insufficient. fluid dynamics, solar physics, DNA research Knots with eight or more crossings, wrote and quantum computation. But the physical Tait, “are not likely to be attacked by a rigor- significance of knots remains elusive. ous process until the methods are immensely It is possible that a knot, like its simpler simplified.” It would take someone with “the geometric cousin, the circle, represents a fun- requisite leisure,” as he put it, to extend the list damental relation of quantities. Two thousand further. Inspired by Tait, others did become in- years of reflection on Euclid’s geometry have volved. The Reverend Thomas P. Kirkman sent produced many abstract applications. It is un- Tait a redundant list of 10-crossing knots. Tait derstandable if a few more years of thought worked hard to weed out duplications. When are needed before we can break free from an Charles Little, a mathematician and civil engi- overly literal view of knots and links. When neer at Nebraska State University, sent Tait his we finally understand their deepest nature, own list, there was some slight disagreement, profound physical applications will blossom. but Tait successfully located his single error be- And it will be beautiful. fore publication. Kirkman also sent Tait a list of 1,581 knots with 11 crossings, but Tait decided Acknowledgment he could spare no more time for the project. The author would like to thank Karen Parshall for Others would take up his labor. Tabulation, her comments on an earlier version of this article. although no longer the sole focus of knot theo- ry, continues. Current tables extend through 16 Bibliography crossings and contain about 1.7 million entries. Campell, L., and W. Garnet. 1882. The Life of James Clerk Morwen Thistlethwaite of the University of Maxwell. London: Macmillan and Co. Tennessee is in the process of completing a table Epple, M. 1998. Topology, matter, and space, I: Topo- of 17-crossing knots. logical notions in 19th-century natural philosophy. Archive for History of Exact Sciences 52:297–392. Epple, M. 1999. Geometric aspects in the development The Meaning of Knots of knot theory. In History of Topology, ed. I. M. James. Thomson’s confidence and aesthetic judgment Amsterdam: North-Holland, 301–358. combined with Tait’s enthusiasm and philo- Helmholtz, H. 1867. On the integrals of the hydrody- sophical nature to promote the first sustained namical equations, which express vortex motion. research program in knot theory. Maxwell con- Philosophical Magazine ser. 4, 33:485–512. tributed as well by providing Tait with a steady Hoste, J., M. Thistlethwaite and J. Weeks. 1998. The first 1,701,936 knots. The Mathematical Intelligencer 20:33–48. stream of ideas and encouragement. Knott, C. G. 1911. Life and Scientific Work of P. G. Tait. Research into knots continues, but the vor- Cambridge: Cambridge University Press. tex-atom theory faded like Tait’s smoke rings. Laplace, P. 1820. Essai philosophique sur les probabilités. Thomson, however, remained hopeful in his 1889 Trans. F. L. Emory. New York: Dover, 1951. presidential address to the Institution of Electrical Lindley, D. 2004. Degrees Kelvin: A Tale of Genius, Invention, Engineers. One can well imagine him thinking, and Tragedy. Washington, D.C.: Joseph Henry Press. “Too bad, it would have been beautiful”: Maxwell, J. C. 1965. The Scientific Papers of James Clerk Max- well, ed. W. D. Niven. Mineola: Dover Publications. And here, I am afraid I must end by saying Maxwell, J. C. 1990, 1995, 2002. The Scientific Letters and that the difficulties are so great in the way Papers of James Clerk Maxwell. 3 vols., ed. P. M. Har- man. Cambridge: Cambridge University Press. of forming anything like a comprehen- Poincaré, H. 1956. Mathematical creation. In The World sive theory that we cannot even imagine of Mathematics, ed. J. R. Newman. New York: Simon a finger-post pointing to a way that leads and Schuster, 1956. Vol. IV, 2041–2050. us towards the explanation. That is not Stewart, B., and P. G. Tait. 1881. The Unseen Universe putting it too strongly. I can only say we or Physical Speculations on a Future State. London: cannot now imagine it. But this time next MacMillan and Co. year,—this time ten years,—this time one Thomson, W. 1890. Mathematical and Physical Papers, III. Cambridge: Cambridge University Press. hundred years,—probably it will be just Tyndall, J. 1874. Address Delivered Before the British As- as easy as we think it is to understand that sociation Assembled at Belfast, with Additions. London: glass of water, which seems now so plain Longmans, Green, and Co. and simple. I cannot doubt but that these things, which now seem to us so mysteri- ous, will be no mysteries at all; that the For relevant Web links, consult this issue of scales will fall from our eyes; that we shall American Scientist Online: learn to look on things in a different way— http://www.americanscientist.org/ when that which is now a difficulty will IssueTOC/issue/821 be the only common-sense and intelligible way of looking at the subject."
+        },
+        {
+          "titles": ""
+        }
+      ],
+      "rows": [
+        [
+          "",
+          "For relevant Web links, consult this issue of American Scientist Online: http://www.americanscientist.org/ IssueTOC/issue/821"
+        ]
+      ],
+      "narratives": {},
+      "csv": "tables/table-2.csv"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "contents from inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 14,
+      "note": "14 kept (14 raster, 0 vector); 5 vector render(s) not yet inspected; 7 caption(s) read off the pages"
+    },
+    {
+      "kind": "tables",
+      "state": "found",
+      "count": 2,
+      "note": "drafts; backend pdfplumber 0.11.10; 1 candidate(s) dropped: under two columns or no row under the header; 5 dropped as prose cut into columns (a word cut at a quarter or more of the cell boundaries)"
+    },
+    {
+      "kind": "references",
+      "state": "found",
+      "count": 16
+    },
+    {
+      "kind": "glossary",
+      "state": "not-extracted",
+      "note": "the instance declares no glossary directory to hold the scheme"
+    },
+    {
+      "kind": "footnotes",
+      "state": "partial",
+      "note": "no footnote linked to a mark; 4 foot-of-page line(s) no mark calls, kept for a reader to judge"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/silver2006-knot-theory-odd-origins"
+  }
+}

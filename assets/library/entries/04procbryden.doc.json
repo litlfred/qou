@@ -1,0 +1,2515 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "04procbryden",
+  "title": "cofor.dvi",
+  "variant": "pdf",
+  "pages": 18,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "A two-parameter family of manifolds",
+      "number": "2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-a-two-parameter-family-of-manifolds"
+    },
+    {
+      "level": 1,
+      "title": "Computer calculations of Ohtsuki series",
+      "number": "3",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-computer-calculations-of-ohtsuki-series"
+    },
+    {
+      "level": 1,
+      "title": "Results and conjectures",
+      "number": "4",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-results-and-conjectures"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": "5",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-conclusions"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": "6",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-005-6-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-006-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 179,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nori jacoby",
+          "heading": false
+        },
+        {
+          "term": "seifert ﬁbred",
+          "heading": false
+        },
+        {
+          "term": "π2σ",
+          "heading": false
+        },
+        {
+          "term": "ohtsuki series",
+          "heading": false
+        },
+        {
+          "term": "integer homology",
+          "heading": false
+        },
+        {
+          "term": "conjectures",
+          "heading": false
+        }
+      ],
+      "extract": "Some computations of Ohtsuki series Nori Jacoby (nori jacoby@hotmail.com) and Ruth Lawrence (ruthel@ma.huji.ac.il) Einstein Institute of Mathematics, Hebrew University, Givat Ram 91904 Jerusalem, ISRAEL Abstract. We present some computational data on Ohtsuki series for a two pa- rameter family of integer homology spheres obtained by surgery around what we call ‘2–strand knots’, closures of the simplest rational",
+      "extractCut": true,
+      "blocks": [
+        "library/04procbryden/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1038,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "seifert ﬁbred",
+          "heading": false
+        },
+        {
+          "term": "ﬁbred manifolds",
+          "heading": false
+        },
+        {
+          "term": "jacoby",
+          "heading": false
+        },
+        {
+          "term": "quantum symbols",
+          "heading": false
+        },
+        {
+          "term": "state sum",
+          "heading": false
+        },
+        {
+          "term": "homology sphere",
+          "heading": false
+        },
+        {
+          "term": "ohtsuki series",
+          "heading": false
+        },
+        {
+          "term": "uqsl",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction Suppose that M is a compact oriented 3–manifold without boundary. The sl2 Witten-Reshetikhin-Turaev invariant (see (Wi), (RT)) is a complex number invariant ZK(M, L) of embeddings of links L in M, dependent on an integer K. It is known that for links in S3, ZK(S3, L) is a polynomial in q = exp 2πi K and q−1, namely the generalised Jones polynomial of the link L. Now assume that M is a rational homology",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-a-two-parameter-family-of-manifolds",
+      "number": "2",
+      "title": "A two-parameter family of manifolds",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1197,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬁxed parities",
+          "heading": false
+        },
+        {
+          "term": "clebsch-gordan constraint",
+          "heading": false
+        },
+        {
+          "term": "ohtsuki series",
+          "heading": false
+        },
+        {
+          "term": "framed knot",
+          "heading": false
+        },
+        {
+          "term": "relative orientations",
+          "heading": false
+        },
+        {
+          "term": "knot diagram",
+          "heading": false
+        },
+        {
+          "term": "manifolds",
+          "heading": true
+        },
+        {
+          "term": "crossings",
+          "heading": false
+        }
+      ],
+      "extract": "A two-parameter family of manifolds 2.1. Definition of the manifolds Let K(( S T )) be the knot obtained by connecting two tangles each of which consists of two strands simply braided, with S and T crossings respectively, the two tangles being connected as shown in Figure 1. Negative S and/or T result in crossings of opposite orientation. Here, K(( S T )) will be a knot (and not a link) when S and T are not both",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-computer-calculations-of-ohtsuki-series",
+      "number": "3",
+      "title": "Computer calculations of Ohtsuki series",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 838,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ohtsuki series",
+          "heading": true
+        },
+        {
+          "term": "digits precision",
+          "heading": false
+        },
+        {
+          "term": "signiﬁcant ﬁgures",
+          "heading": false
+        },
+        {
+          "term": "higher precision",
+          "heading": false
+        },
+        {
+          "term": "computer",
+          "heading": true
+        },
+        {
+          "term": "individual terms",
+          "heading": false
+        },
+        {
+          "term": "factorials",
+          "heading": false
+        },
+        {
+          "term": "routines",
+          "heading": false
+        }
+      ],
+      "extract": "Computer calculations of Ohtsuki series Using (3), ZK(M± (( S T ))) can be computed for all the K −1 diﬀerent Kth roots of unity, q = qs = exp 2πis K (1 ≤s < K) for ﬁxed S, T and prime K. From these values, the coeﬃcients am,K(M± (( S T ))) ∈Z can be found in (1) where we assume that they vanish past the (K −2)th. Namely, one solves the following linear system of size K −1, ZK|q=qs = K−2 \u0001 m=0 am,K.(qs −1)m , (5)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-results-and-conjectures",
+      "number": "4",
+      "title": "Results and conjectures",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1026,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plotted against",
+          "heading": false
+        },
+        {
+          "term": "seifert ﬁbred",
+          "heading": false
+        },
+        {
+          "term": "π2σ",
+          "heading": false
+        },
+        {
+          "term": "ohtsuki series",
+          "heading": false
+        },
+        {
+          "term": "jacoby",
+          "heading": false
+        },
+        {
+          "term": "slopes",
+          "heading": false
+        },
+        {
+          "term": "both even",
+          "heading": false
+        },
+        {
+          "term": "conjectures",
+          "heading": true
+        }
+      ],
+      "extract": "Results and conjectures 4.1. Individual Ohtsuki series For small K (up to 100), it turns out that the number of states is ≈K2.9 (rather than K3) while the running time is ≈K4.2 (rather than K4) due to the increase in computational time of each summand and initialization procedures, for the larger values of K. For M+ (( 3 2 )) discussed above ((S, T, U) = (−2, −3, 6)), K < 137 was suﬃcient to 63 N. Jacoby & R.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-conclusions",
+      "number": "5",
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 369,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ohtsuki series",
+          "heading": false
+        },
+        {
+          "term": "slope",
+          "heading": false
+        },
+        {
+          "term": "knot diagram",
+          "heading": false
+        },
+        {
+          "term": "arbitrary knot",
+          "heading": false
+        },
+        {
+          "term": "numerical data",
+          "heading": false
+        },
+        {
+          "term": "conclusions",
+          "heading": true
+        },
+        {
+          "term": "complexity",
+          "heading": false
+        },
+        {
+          "term": "surgery",
+          "heading": false
+        }
+      ],
+      "extract": "Conclusions We have presented numerical data on Ohtsuki series for a 2-parameter family of integer homology 3-spheres (which includes some hyperbolic manifolds), which led to the conjectural introduction of a ‘new’ invari- ant of manifolds, which we called the slope. For Seifert ﬁbred manifolds this is known to exist. The numerical data indicates that the slope (assuming it exists) is quadratic in the two parameters",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-acknowledgements",
+      "number": "6",
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 84,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bryden",
+          "heading": false
+        },
+        {
+          "term": "acknowledgements",
+          "heading": true
+        },
+        {
+          "term": "bsf",
+          "heading": false
+        }
+      ],
+      "extract": "Acknowledgements The authors would like to thank Dror Bar-Natan, Thang Le, Lev Rozan- sky and Dylan Thurston for many conversations on the subject of computations of 3-manifold invariants. They would also like to thank John Bryden for the invitation to the very stimulating NATO-PIMS Advanced Research Workshop in Calgary during August 2001, which he organised on the subject of ‘New Techniques in Topological Field",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 338,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "witten-reshetikhin-turaev invariants",
+          "heading": false
+        },
+        {
+          "term": "invariants dominate",
+          "heading": false
+        },
+        {
+          "term": "homology spheres",
+          "heading": false
+        },
+        {
+          "term": "princeton university",
+          "heading": false
+        },
+        {
+          "term": "witten invariant",
+          "heading": false
+        },
+        {
+          "term": "rational homology",
+          "heading": false
+        },
+        {
+          "term": "jacoby",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        }
+      ],
+      "extract": "[B-NG] D. Bar-Natan, S. Garoufalidis, On the Melvin-Morton-Rozansky Conjecture, Invent. Math. 125, 103-133 (1996). [Ja] N. Jacoby, Computations of Ohtsuki series for surgery on 2-strand knots, M.Sc. thesis, Hebrew University (Jerusalem, 2002). [Je] L.C. Jeﬀrey, Chern-Simons-Witten Invariants of Lens Spaces and Torus Bun- dles, and the Semiclassical Approximation, Commun. Math. Phys. 147, 563–604 (1992). [KL] L.H.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 5"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "ohtsuki series",
+      "heading": true
+    },
+    {
+      "term": "nori jacoby",
+      "heading": false
+    },
+    {
+      "term": "ﬁbred manifolds",
+      "heading": false
+    },
+    {
+      "term": "seifert ﬁbred",
+      "heading": false
+    },
+    {
+      "term": "rational homology",
+      "heading": false
+    },
+    {
+      "term": "rational coeﬃcients",
+      "heading": false
+    },
+    {
+      "term": "homology spheres",
+      "heading": false
+    },
+    {
+      "term": "some computations",
+      "heading": false
+    },
+    {
+      "term": "surgery around",
+      "heading": false
+    },
+    {
+      "term": "rational tangles",
+      "heading": false
+    },
+    {
+      "term": "numerical precision",
+      "heading": false
+    },
+    {
+      "term": "manifold invariants",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Knot family K(( S",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Allowed states for K(( S",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Recombination",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Relative sizes of ZK and its summands against s",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Graph of slopes for S = −3 and T even",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Graph of slopes for S and T even, against T",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-2",
+      "file": "images/img-p006-2.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-3",
+      "file": "images/img-p006-3.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-4",
+      "file": "images/img-p006-4.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-5",
+      "file": "images/img-p006-5.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-8",
+      "file": "images/img-p006-8.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-9",
+      "file": "images/img-p006-9.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-10",
+      "file": "images/img-p006-10.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-11",
+      "file": "images/img-p006-11.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-12",
+      "file": "images/img-p006-12.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-14",
+      "file": "images/img-p006-14.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-15",
+      "file": "images/img-p006-15.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-17",
+      "file": "images/img-p006-17.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-19",
+      "file": "images/img-p006-19.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-21",
+      "file": "images/img-p006-21.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-22",
+      "file": "images/img-p006-22.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-24",
+      "file": "images/img-p006-24.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-25",
+      "file": "images/img-p006-25.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-26",
+      "file": "images/img-p006-26.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-27",
+      "file": "images/img-p006-27.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-28",
+      "file": "images/img-p006-28.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-30",
+      "file": "images/img-p006-30.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-34",
+      "file": "images/img-p006-34.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-36",
+      "file": "images/img-p006-36.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-37",
+      "file": "images/img-p006-37.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-39",
+      "file": "images/img-p006-39.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-40",
+      "file": "images/img-p006-40.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-41",
+      "file": "images/img-p006-41.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-42",
+      "file": "images/img-p006-42.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-43",
+      "file": "images/img-p006-43.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-44",
+      "file": "images/img-p006-44.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-45",
+      "file": "images/img-p006-45.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-46",
+      "file": "images/img-p006-46.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-1",
+      "file": "images/img-p007-1.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-2",
+      "file": "images/img-p007-2.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-4",
+      "file": "images/img-p007-4.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-5",
+      "file": "images/img-p007-5.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-22",
+      "file": "images/img-p007-22.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-25",
+      "file": "images/img-p007-25.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-27",
+      "file": "images/img-p007-27.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-28",
+      "file": "images/img-p007-28.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-29",
+      "file": "images/img-p007-29.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-32",
+      "file": "images/img-p007-32.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-33",
+      "file": "images/img-p007-33.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-35",
+      "file": "images/img-p007-35.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-36",
+      "file": "images/img-p007-36.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-38",
+      "file": "images/img-p007-38.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-39",
+      "file": "images/img-p007-39.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-40",
+      "file": "images/img-p007-40.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-43",
+      "file": "images/img-p007-43.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-44",
+      "file": "images/img-p007-44.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-45",
+      "file": "images/img-p007-45.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-46",
+      "file": "images/img-p007-46.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-47",
+      "file": "images/img-p007-47.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-48",
+      "file": "images/img-p007-48.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-50",
+      "file": "images/img-p007-50.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-51",
+      "file": "images/img-p007-51.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-52",
+      "file": "images/img-p007-52.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-53",
+      "file": "images/img-p007-53.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-57",
+      "file": "images/img-p007-57.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-58",
+      "file": "images/img-p007-58.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-59",
+      "file": "images/img-p007-59.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-60",
+      "file": "images/img-p007-60.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-61",
+      "file": "images/img-p007-61.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-62",
+      "file": "images/img-p007-62.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-65",
+      "file": "images/img-p007-65.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-66",
+      "file": "images/img-p007-66.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-67",
+      "file": "images/img-p007-67.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-68",
+      "file": "images/img-p007-68.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-69",
+      "file": "images/img-p007-69.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-70",
+      "file": "images/img-p007-70.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-71",
+      "file": "images/img-p007-71.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-72",
+      "file": "images/img-p007-72.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-73",
+      "file": "images/img-p007-73.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-75",
+      "file": "images/img-p007-75.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-76",
+      "file": "images/img-p007-76.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-77",
+      "file": "images/img-p007-77.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-78",
+      "file": "images/img-p007-78.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-79",
+      "file": "images/img-p007-79.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-80",
+      "file": "images/img-p007-80.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-81",
+      "file": "images/img-p007-81.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-82",
+      "file": "images/img-p007-82.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-1",
+      "file": "images/img-p010-1.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-17",
+      "file": "images/img-p010-17.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-30",
+      "file": "images/img-p010-30.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-31",
+      "file": "images/img-p010-31.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-32",
+      "file": "images/img-p010-32.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-47",
+      "file": "images/img-p010-47.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-54",
+      "file": "images/img-p010-54.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-56",
+      "file": "images/img-p010-56.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-57",
+      "file": "images/img-p010-57.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-58",
+      "file": "images/img-p010-58.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-59",
+      "file": "images/img-p010-59.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-60",
+      "file": "images/img-p010-60.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-61",
+      "file": "images/img-p010-61.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-62",
+      "file": "images/img-p010-62.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-64",
+      "file": "images/img-p010-64.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-65",
+      "file": "images/img-p010-65.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-66",
+      "file": "images/img-p010-66.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-67",
+      "file": "images/img-p010-67.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-72",
+      "file": "images/img-p010-72.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-74",
+      "file": "images/img-p010-74.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-76",
+      "file": "images/img-p010-76.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-77",
+      "file": "images/img-p010-77.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-78",
+      "file": "images/img-p010-78.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-80",
+      "file": "images/img-p010-80.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-81",
+      "file": "images/img-p010-81.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-82",
+      "file": "images/img-p010-82.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-83",
+      "file": "images/img-p010-83.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-84",
+      "file": "images/img-p010-84.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-85",
+      "file": "images/img-p010-85.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-86",
+      "file": "images/img-p010-86.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-89",
+      "file": "images/img-p010-89.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-90",
+      "file": "images/img-p010-90.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-92",
+      "file": "images/img-p010-92.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-93",
+      "file": "images/img-p010-93.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-94",
+      "file": "images/img-p010-94.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-95",
+      "file": "images/img-p010-95.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-96",
+      "file": "images/img-p010-96.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-97",
+      "file": "images/img-p010-97.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-98",
+      "file": "images/img-p010-98.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-99",
+      "file": "images/img-p010-99.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-100",
+      "file": "images/img-p010-100.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-101",
+      "file": "images/img-p010-101.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-1",
+      "file": "images/img-p014-1.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-11",
+      "file": "images/img-p014-11.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-13",
+      "file": "images/img-p014-13.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-14",
+      "file": "images/img-p014-14.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-16",
+      "file": "images/img-p014-16.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-20",
+      "file": "images/img-p014-20.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-44",
+      "file": "images/img-p014-44.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-47",
+      "file": "images/img-p014-47.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-48",
+      "file": "images/img-p014-48.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-49",
+      "file": "images/img-p014-49.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-51",
+      "file": "images/img-p014-51.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-52",
+      "file": "images/img-p014-52.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-53",
+      "file": "images/img-p014-53.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-54",
+      "file": "images/img-p014-54.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-56",
+      "file": "images/img-p014-56.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-58",
+      "file": "images/img-p014-58.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-59",
+      "file": "images/img-p014-59.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-60",
+      "file": "images/img-p014-60.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-61",
+      "file": "images/img-p014-61.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-62",
+      "file": "images/img-p014-62.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-63",
+      "file": "images/img-p014-63.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-64",
+      "file": "images/img-p014-64.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-65",
+      "file": "images/img-p014-65.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-66",
+      "file": "images/img-p014-66.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-1",
+      "file": "images/img-p015-1.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-2",
+      "file": "images/img-p015-2.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-3",
+      "file": "images/img-p015-3.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-4",
+      "file": "images/img-p015-4.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-5",
+      "file": "images/img-p015-5.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-6",
+      "file": "images/img-p015-6.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-8",
+      "file": "images/img-p015-8.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-9",
+      "file": "images/img-p015-9.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-10",
+      "file": "images/img-p015-10.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-11",
+      "file": "images/img-p015-11.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-13",
+      "file": "images/img-p015-13.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-17",
+      "file": "images/img-p015-17.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-20",
+      "file": "images/img-p015-20.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-25",
+      "file": "images/img-p015-25.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-26",
+      "file": "images/img-p015-26.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-27",
+      "file": "images/img-p015-27.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-29",
+      "file": "images/img-p015-29.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-30",
+      "file": "images/img-p015-30.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-31",
+      "file": "images/img-p015-31.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-32",
+      "file": "images/img-p015-32.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-62",
+      "file": "images/img-p015-62.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-66",
+      "file": "images/img-p015-66.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-69",
+      "file": "images/img-p015-69.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-77",
+      "file": "images/img-p015-77.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-82",
+      "file": "images/img-p015-82.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-85",
+      "file": "images/img-p015-85.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-89",
+      "file": "images/img-p015-89.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-93",
+      "file": "images/img-p015-93.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-94",
+      "file": "images/img-p015-94.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-97",
+      "file": "images/img-p015-97.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-101",
+      "file": "images/img-p015-101.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-102",
+      "file": "images/img-p015-102.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-104",
+      "file": "images/img-p015-104.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-105",
+      "file": "images/img-p015-105.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-106",
+      "file": "images/img-p015-106.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-107",
+      "file": "images/img-p015-107.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-109",
+      "file": "images/img-p015-109.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-110",
+      "file": "images/img-p015-110.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-111",
+      "file": "images/img-p015-111.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-114",
+      "file": "images/img-p015-114.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-115",
+      "file": "images/img-p015-115.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-117",
+      "file": "images/img-p015-117.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-118",
+      "file": "images/img-p015-118.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-119",
+      "file": "images/img-p015-119.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-121",
+      "file": "images/img-p015-121.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-123",
+      "file": "images/img-p015-123.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-124",
+      "file": "images/img-p015-124.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-126",
+      "file": "images/img-p015-126.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-127",
+      "file": "images/img-p015-127.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-129",
+      "file": "images/img-p015-129.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-130",
+      "file": "images/img-p015-130.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-131",
+      "file": "images/img-p015-131.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-132",
+      "file": "images/img-p015-132.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-133",
+      "file": "images/img-p015-133.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-136",
+      "file": "images/img-p015-136.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-137",
+      "file": "images/img-p015-137.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-139",
+      "file": "images/img-p015-139.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-142",
+      "file": "images/img-p015-142.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-145",
+      "file": "images/img-p015-145.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-148",
+      "file": "images/img-p015-148.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-153",
+      "file": "images/img-p015-153.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-154",
+      "file": "images/img-p015-154.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-155",
+      "file": "images/img-p015-155.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-158",
+      "file": "images/img-p015-158.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-160",
+      "file": "images/img-p015-160.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-162",
+      "file": "images/img-p015-162.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-163",
+      "file": "images/img-p015-163.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-164",
+      "file": "images/img-p015-164.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-165",
+      "file": "images/img-p015-165.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-166",
+      "file": "images/img-p015-166.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-167",
+      "file": "images/img-p015-167.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-168",
+      "file": "images/img-p015-168.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-169",
+      "file": "images/img-p015-169.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-170",
+      "file": "images/img-p015-170.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-177",
+      "file": "images/img-p015-177.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-178",
+      "file": "images/img-p015-178.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-179",
+      "file": "images/img-p015-179.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-180",
+      "file": "images/img-p015-180.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-184",
+      "file": "images/img-p015-184.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-192",
+      "file": "images/img-p015-192.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-204",
+      "file": "images/img-p015-204.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-208",
+      "file": "images/img-p015-208.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-216",
+      "file": "images/img-p015-216.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-217",
+      "file": "images/img-p015-217.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-218",
+      "file": "images/img-p015-218.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-219",
+      "file": "images/img-p015-219.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-220",
+      "file": "images/img-p015-220.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-221",
+      "file": "images/img-p015-221.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-223",
+      "file": "images/img-p015-223.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-224",
+      "file": "images/img-p015-224.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-225",
+      "file": "images/img-p015-225.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-226",
+      "file": "images/img-p015-226.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-227",
+      "file": "images/img-p015-227.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-231",
+      "file": "images/img-p015-231.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-233",
+      "file": "images/img-p015-233.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-235",
+      "file": "images/img-p015-235.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-236",
+      "file": "images/img-p015-236.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-237",
+      "file": "images/img-p015-237.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-238",
+      "file": "images/img-p015-238.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-239",
+      "file": "images/img-p015-239.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 248
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p17); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/04procbryden"
+  }
+}

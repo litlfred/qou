@@ -1,0 +1,608 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-9408045v1",
+  "title": "Constrained analysis of topologically massive gravity",
+  "variant": "pdf",
+  "pages": 15,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-abstract"
+    },
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "I",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-001-i-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Hilbert-Einstein theory in a weak gravitational ﬁeld",
+      "number": "II",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-ii-hilbert-einstein-theory-in-a-weak-gravitation"
+    },
+    {
+      "level": 1,
+      "title": "Topologically massive gravitation",
+      "number": "III",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-iii-topologically-massive-gravitation"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion",
+      "number": "IV",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-004-iv-conclusion"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgment",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-005-acknowledgment"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-006-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 33,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "barcelos-neto",
+          "heading": false
+        },
+        {
+          "term": "caixa",
+          "heading": false
+        },
+        {
+          "term": "postal",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-th/9408045v1 8 Aug 1994 IF-UFRJ-21/94 Constrained analysis of topologically massive gravity J. Barcelos-Neto ∗and T.G. Dargam Instituto de F´ısica Universidade Federal do Rio de Janeiro RJ 21945-970 - Caixa Postal 68528 - Brazil",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-hep-th-9408045v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-abstract",
+      "number": null,
+      "title": "Abstract",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 53,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "barcelos",
+          "heading": false
+        },
+        {
+          "term": "nce",
+          "heading": false
+        },
+        {
+          "term": "ift",
+          "heading": false
+        }
+      ],
+      "extract": "We quantize the Einstein gravity in the formalism of weak gravitational ﬁelds by using the constrained Hamiltonian method. Special emphasis is given to the 2+1 spacetime dimensional case where a (topological) Chern-Simons term is added to the Lagrangian. PACS: 03.70.+k; 04.20.Fy; 11.30.-j (∗) Electronic mails: ift03001 @ ufrj and barcelos @ vms1.nce.ufrj.br 1",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-i-introduction",
+      "number": "I",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 383,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "einstein",
+          "heading": false
+        },
+        {
+          "term": "qft",
+          "heading": false
+        },
+        {
+          "term": "advent",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite theory",
+          "heading": false
+        },
+        {
+          "term": "physical degree",
+          "heading": false
+        },
+        {
+          "term": "gravity",
+          "heading": false
+        },
+        {
+          "term": "supersymmetry",
+          "heading": false
+        },
+        {
+          "term": "dimensions",
+          "heading": false
+        }
+      ],
+      "extract": "One of the ultimate goals of the quantum ﬁeld theory (QFT) is the quantization of gravity. It is well-known that usual rules of quantization when applied to the Einstein Lagrangian for the gravitational ﬁeld do not lead to a ﬁnite theory in a sense that inﬁnities cannot be eliminated by means of regularization and renormalization procedures [1]. With the advent of supersymmetry and strings [2] there was the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-ii-hilbert-einstein-theory-in-a-weak-gravitation",
+      "number": "II",
+      "title": "Hilbert-Einstein theory in a weak gravitational ﬁeld",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 7,
+      "labelStart": "3",
+      "labelEnd": "7",
+      "words": 1041,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "πij hij",
+          "heading": false
+        },
+        {
+          "term": "ihj jhij",
+          "heading": false
+        },
+        {
+          "term": "dirac brackets",
+          "heading": false
+        },
+        {
+          "term": "secondary constraints",
+          "heading": false
+        },
+        {
+          "term": "π0i",
+          "heading": false
+        },
+        {
+          "term": "lagrange multipliers",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst-class",
+          "heading": false
+        },
+        {
+          "term": "ηij",
+          "heading": false
+        }
+      ],
+      "extract": "The Hilbert-Einstein Lagrangian reads L = 1 2κ2 √−g R , (2.1) where κ is the Einstein constant and we shall use the following ﬂat metric convention diag. (+, −, . . ., −). At it was said in the introduction, we are not making here any re- striction to the spacetime dimensions D. Considering weak gravitational ﬁelds we take the expansion around the ﬂat space geometry as gµν(x) = ηµν −κ hµν(x) . (2.2) Introducing",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-iii-topologically-massive-gravitation",
+      "number": "III",
+      "title": "Topologically massive gravitation",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 14,
+      "labelStart": "7",
+      "labelEnd": "14",
+      "words": 1491,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ihk ihi",
+          "heading": false
+        },
+        {
+          "term": "ihj ihk",
+          "heading": false
+        },
+        {
+          "term": "ih0j ihjk",
+          "heading": false
+        },
+        {
+          "term": "πij hij",
+          "heading": false
+        },
+        {
+          "term": "ihi jhj",
+          "heading": false
+        },
+        {
+          "term": "ihi jhk",
+          "heading": false
+        },
+        {
+          "term": "ihi khkj",
+          "heading": false
+        },
+        {
+          "term": "khkj ǫij",
+          "heading": false
+        }
+      ],
+      "extract": "When the spacetime dimension is odd, it is possible to introduce a CS term in the Lagrangian. In this section we concentrate on the 2+1 case. The corresponding CS Lagrangian reads 7 LCS = 1 µ ǫλµν Γρ λσ \u0000∂µ Γσ ρν + 2 3 Γσ µξ Γξ νρ \u0001 . (3.1) Considering the expansion of weak gravitational ﬁelds given by (2.2) we get LCS = κ2 2µ ǫλµν \u0010 ∂σhρ λ ∂ρ∂µhσ ν −∂σhρ λ ∂σ∂µhρν \u0011 . (3.2) Making the separation of space and time",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-iv-conclusion",
+      "number": "IV",
+      "title": "Conclusion",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 82,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gravitational",
+          "heading": false
+        },
+        {
+          "term": "quantization",
+          "heading": false
+        },
+        {
+          "term": "quantize",
+          "heading": false
+        }
+      ],
+      "extract": "We have studied the quantization of the Einstein gravitational theory in the formalism of weak gravitational ﬁelds. This is a high constrained system and we have used the Hamiltonian Dirac method to quantize it. We have given a particular emphasis to the case of the spacetime dimension D=2+1 where a CS term can be added. The ﬁnal propagators in this case exhibit a massive (topological) pole. This result is in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-acknowledgment",
+      "number": null,
+      "title": "Acknowledgment",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 21,
+      "summary": null,
+      "keywords": [],
+      "extract": "This work was supported in part by Conselho Nacional de Desenvolvimento Cient´ıﬁ- co e Tecnol´ogico - CNPq (Brazilian Research Agency). 14",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 241,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "barcelos-neto",
+          "heading": false
+        },
+        {
+          "term": "references therein",
+          "heading": false
+        },
+        {
+          "term": "deser",
+          "heading": false
+        },
+        {
+          "term": "university press",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "cambridge",
+          "heading": false
+        }
+      ],
+      "extract": "[1] See, for example, N.D. Birrel and P.C.W. Davies: Quantum ﬁelds in curved space (Cambridge University Press, Cambridge, 1984) and references therein. [2] See for example, M.B. Green, J.H. Schwarz and E.Witten, Superstring theory (Cam- bridge University Press, Cambridge, 1984) and references therein. [3] S.Deser, R. Jackiw and S. Templeton, Phys. Rev. Lett. 48 (1982) 975; Ann. Phys. (NY) 140 (1982) 372. [4] S.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "hij ηij",
+      "heading": false
+    },
+    {
+      "term": "πij hij",
+      "heading": false
+    },
+    {
+      "term": "ihj ihk",
+      "heading": false
+    },
+    {
+      "term": "ihj jhij",
+      "heading": false
+    },
+    {
+      "term": "ih0j ihjk",
+      "heading": false
+    },
+    {
+      "term": "ihk ihi",
+      "heading": false
+    },
+    {
+      "term": "ihi jhj",
+      "heading": false
+    },
+    {
+      "term": "ihi jhk",
+      "heading": false
+    },
+    {
+      "term": "ihi khkj",
+      "heading": false
+    },
+    {
+      "term": "kkkl ηij",
+      "heading": false
+    },
+    {
+      "term": "gravitational ﬁelds",
+      "heading": false
+    },
+    {
+      "term": "ﬁrst-class constraints",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p15); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-9408045v1"
+  }
+}

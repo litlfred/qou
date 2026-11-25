@@ -1,0 +1,56 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bn/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "bn.dvi",
+  "contains": [
+    "library/bn/sections/sec-front-matter",
+    "library/bn/sections/sec-000",
+    "library/bn/sections/sec-001",
+    "library/bn/sections/sec-002",
+    "library/bn/sections/sec-003",
+    "library/bn/sections/sec-004",
+    "library/bn/sections/sec-005",
+    "library/bn/sections/sec-006",
+    "library/bn/sections/sec-007",
+    "library/bn/sections/sec-008",
+    "library/bn/sections/sec-009",
+    "library/bn/sections/sec-010",
+    "library/bn/sections/sec-011",
+    "library/bn/sections/sec-012"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Braid groups and Hodge theory — This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cover- ings of P1, highlighting their\n\n**Braid groups and Hodge theory**\n\n*Curtis T. McMullen*\n\n64 pp, 14 sections.\n\n**Abstract.** This paper gives an account of the unitary representations of the braid group that arise via the Hodge theory of cyclic branched cover- ings of P1, highlighting their connections with ergodic theory, complex reﬂection groups, moduli spaces of 1-forms and open problems in sur- face topology.\n\n**Outline.** Front matter; 1 Introduction; 2 Topological preliminaries; 3 From Hodge theory to topology; 4 Action of the braid group; 5 Complex reﬂection groups; 6 The period map; 7 Arithmetic groups; 8 Factors of the Jacobian; 9 Deﬁnite integrals; 10 Complex hyperbolic geometry; 11 Lifting homological symmetries; 12 The hyperelliptic case; 13 Polygons and Teichm¨uller curves",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "bn",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "bn.pdf",
+    "source_sha256": "95ed0908ceb54a1cc20733cc63cb258df47ebf634095bee421bf6cf6abe3b7ca",
+    "pages": 64,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,2464 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2501.03424v1",
+  "title": "Soergel bimodules and Kazhdan-Lusztig polynomials",
+  "variant": "pdf",
+  "pages": 23,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Coxeter Systems, Hecke algebras, and Kazhdan-Lusztig preliminaries",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-coxeter-systems-hecke-algebras-and-kazhdan-luszt"
+    },
+    {
+      "level": 2,
+      "title": "Coxeter Systems",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Remark:",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-remark"
+    },
+    {
+      "level": 2,
+      "title": "Hecke algebras",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Example",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-example"
+    },
+    {
+      "level": 2,
+      "title": "Kazhdan-Lusztig polynomials, and a basis for the Hecke algebra",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-kazhdan-lusztig-polynomials-and-a-basis-for-the"
+    },
+    {
+      "level": 3,
+      "title": "Lemma:",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-lemma"
+    },
+    {
+      "level": 3,
+      "title": "Lemma:",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-lemma"
+    },
+    {
+      "level": 1,
+      "title": "Soergel Bimodules",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-soergel-bimodules"
+    },
+    {
+      "level": 2,
+      "title": "Easing into it",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-easing-into-it"
+    },
+    {
+      "level": 3,
+      "title": "Theorem (Chevalley-Shephard-Todd)",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-theorem-chevalley-shephard-todd"
+    },
+    {
+      "level": 3,
+      "title": "Example",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-example"
+    },
+    {
+      "level": 2,
+      "title": "Bott-Samelson bimodules",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-bott-samelson-bimodules"
+    },
+    {
+      "level": 3,
+      "title": "Example of Soergel bimodule",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-example-of-soergel-bimodule"
+    },
+    {
+      "level": 3,
+      "title": "Lemma",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-lemma"
+    },
+    {
+      "level": 3,
+      "title": "Example",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-example"
+    },
+    {
+      "level": 3,
+      "title": "Remark",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-remark"
+    },
+    {
+      "level": 2,
+      "title": "Grothendieck groups, Soergel's categorization",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-grothendieck-groups-soergels-categorization"
+    },
+    {
+      "level": 3,
+      "title": "Definition",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-definition"
+    },
+    {
+      "level": 3,
+      "title": "Soergel's Categorification theorem",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-soergels-categorification-theorem"
+    },
+    {
+      "level": 3,
+      "title": "Soergel's Hom formula",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-soergels-hom-formula"
+    },
+    {
+      "level": 3,
+      "title": "Soergel's conjecture",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-soergels-conjecture"
+    },
+    {
+      "level": 3,
+      "title": "Important Remark",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-important-remark"
+    },
+    {
+      "level": 1,
+      "title": "Historical Interlude: The Kazhdan-Lusztig conjectures",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-historical-interlude-the-kazhdan-lusztig-conject"
+    },
+    {
+      "level": 2,
+      "title": "Briefly recognizing some Lie theory",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-briefly-recognizing-some-lie-theory"
+    },
+    {
+      "level": 3,
+      "title": "Definition: Category O",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-definition-category-o"
+    },
+    {
+      "level": 3,
+      "title": "Definition: Soergel module",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-definition-soergel-module"
+    },
+    {
+      "level": 2,
+      "title": "Back to Kazhdan-Lusztig",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-back-to-kazhdan-lusztig"
+    },
+    {
+      "level": 3,
+      "title": "Theorem",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-theorem"
+    },
+    {
+      "level": 3,
+      "title": "The Kazhdan-Lusztig conjecture",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-the-kazhdan-lusztig-conjecture"
+    },
+    {
+      "level": 3,
+      "title": "Kazhdan-Lusztig Inversion Formula",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-kazhdan-lusztig-inversion-formula"
+    },
+    {
+      "level": 3,
+      "title": "Theorem (Polo)",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-theorem-polo"
+    },
+    {
+      "level": 2,
+      "title": "More on positivity",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-more-on-positivity"
+    },
+    {
+      "level": 3,
+      "title": "Flag and Schubert varieties",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-flag-and-schubert-varieties"
+    },
+    {
+      "level": 1,
+      "title": "Soergel's Proof of the Kazhdan-Lusztig conjecture",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-soergels-proof-of-the-kazhdan-lusztig-conjecture"
+    },
+    {
+      "level": 2,
+      "title": "The V-functor",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-the-v-functor"
+    },
+    {
+      "level": 3,
+      "title": "Definition",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-definition"
+    },
+    {
+      "level": 3,
+      "title": "Theorem",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-theorem"
+    },
+    {
+      "level": 3,
+      "title": "Theorem",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Translation functors",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-translation-functors"
+    },
+    {
+      "level": 3,
+      "title": "Lemma",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-lemma"
+    },
+    {
+      "level": 3,
+      "title": "Lemma",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-lemma"
+    },
+    {
+      "level": 3,
+      "title": "Lemma",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-lemma"
+    },
+    {
+      "level": 3,
+      "title": "Corollary",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-corollary"
+    },
+    {
+      "level": 2,
+      "title": "Projectives",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-projectives"
+    },
+    {
+      "level": 3,
+      "title": "Proposition",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-proposition"
+    },
+    {
+      "level": 2,
+      "title": "Recontextualizing Soergel modules from Bott-Samelson modules",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-recontextualizing-soergel-modules-from-bott-same"
+    },
+    {
+      "level": 3,
+      "title": "Definition",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-definition"
+    },
+    {
+      "level": 3,
+      "title": "Proposition",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-proposition"
+    },
+    {
+      "level": 2,
+      "title": "Proving the Kazhdan-Lusztig conjecture",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-proving-the-kazhdan-lusztig-conjecture"
+    },
+    {
+      "level": 3,
+      "title": "Restating the conjecture",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-restating-the-conjecture"
+    },
+    {
+      "level": 3,
+      "title": "Proposition",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-proposition"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-references"
+    },
+    {
+      "level": 1,
+      "title": "Appendic Miscellany",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-appendic-miscellany"
+    },
+    {
+      "level": 2,
+      "title": "Computation of",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-computation-of"
+    },
+    {
+      "level": 2,
+      "title": "Geometric representation of a Coxeter system",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-geometric-representation-of-a-coxeter-system"
+    },
+    {
+      "level": 2,
+      "title": "A fun but ancillary category",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-049-a-fun-but-ancillary-category"
+    },
+    {
+      "level": 2,
+      "title": "In aid of lemma 4.2.3,",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-050-in-aid-of-lemma-423"
+    },
+    {
+      "level": 3,
+      "title": "Proposition",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-051-proposition"
+    },
+    {
+      "level": 2,
+      "title": "Berstein-Gelfand-Gelfand Reciprocity",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-052-berstein-gelfand-gelfand-reciprocity"
+    },
+    {
+      "level": 3,
+      "title": "BGG Reciprocity",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-053-bgg-reciprocity"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": "4",
+      "words": 2312,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        },
+        {
+          "term": "kazhdan-lusztig conjecture",
+          "heading": false
+        },
+        {
+          "term": "kazhdan-lusztig polynomials",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "coxeter systems",
+          "heading": false
+        },
+        {
+          "term": "bott-samelson",
+          "heading": false
+        },
+        {
+          "term": "reciprocity",
+          "heading": false
+        },
+        {
+          "term": "categoriﬁcation",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:2501.03424v1 [math.RT] 6 Jan 2025 Soergel bimodules and Kazhdan-Lusztig polynomials ethan eugene wynner University of California, Berkeley Abstract This paper presents an exposition of Soergel bimodules, the categoriﬁcation of Hecke alge- bras, and their applications to various topics in Kazhdan-Lusztig theory. We ultimately exposit a few of Soergel’s main results, which allowed him to give alternative proofs,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2501.03424v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-coxeter-systems-hecke-algebras-and-kazhdan-luszt",
+      "number": null,
+      "title": "Coxeter Systems, Hecke algebras, and Kazhdan-Lusztig preliminaries",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 157,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coxeter",
+          "heading": true
+        },
+        {
+          "term": "textit coxeter",
+          "heading": false
+        },
+        {
+          "term": "systems",
+          "heading": true
+        }
+      ],
+      "extract": "\\end{center} \\subsection{Coxeter Systems} Suppose $W$ is a group, and $S \\subset W$ is a finite subset consisting of generators of $W.$ Let $(m_{st})_{s,t \\in S}$ be a matrix satisfying $$m_{st} = m_{ts} \\in \\{1,2,\\ldots\\} \\cup \\{\\infty\\} $$ with $m_{ss} = 1$ for every $s \\in S$. We say that the pair $(W,S)$ is a \\textit{Coxeter system}, and $W$ a \\textit{Coxeter group}, if $W$ admits the presentation $$W = \\langle",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-remark",
+      "number": null,
+      "title": "Remark:",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 200,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "underbrace delta",
+          "heading": false
+        },
+        {
+          "term": "delta ldots",
+          "heading": false
+        },
+        {
+          "term": "mapsto varphi",
+          "heading": false
+        },
+        {
+          "term": "alpha",
+          "heading": false
+        },
+        {
+          "term": "reflections",
+          "heading": false
+        },
+        {
+          "term": "textit",
+          "heading": false
+        }
+      ],
+      "extract": "A Weyl group $W$ is a Coxeter group. \\\\ Indeed, if $\\g$ is a complex semisimple Lie algebra, and $\\h$ its Cartan (maximal toral) subalgebra, $W$ is generated by reflections across root hyperplanes, given by operators $s_\\alpha: \\h^* \\rightarrow \\h^*$, with $$s_\\alpha(\\lambda) = \\lambda - \\dfrac{2(\\lambda, \\alpha)}{(\\alpha,\\alpha)}\\alpha.$$ Here $\\alpha \\in R$, where $R$ denotes the root system of $\\g$, and ( , ) is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-example",
+      "number": null,
+      "title": "Example",
+      "level": 3,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 127,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "longleftrightarrow",
+          "heading": false
+        },
+        {
+          "term": "laughey",
+          "heading": false
+        },
+        {
+          "term": "varphi",
+          "heading": false
+        },
+        {
+          "term": "textit",
+          "heading": false
+        }
+      ],
+      "extract": "Let $R = \\Z,$ with specialization $ \\varphi: v \\mapsto 1.$ Then $\\mathcal{H}_\\varphi = \\Z \\otimes_{\\Z[v, v^{-1}]} \\mathcal{H}$ is isomorphic to the group algebra $\\Z[W]$ with $\\delta_s \\mapsto s, \\text{ } \\forall s \\in S.$ \\\\ \\textit{Proof:} Define $$\\varphi: \\Z[v, v^{-1}] \\rightarrow \\Z, \\text{ }v \\mapsto 1.$$ Then $$\\delta^2_s = (1^{-1} - 1)\\delta_s + 1 = 1 = \\delta_{id}.$$ Hence $\\delta^2_s$ satisfies the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-kazhdan-lusztig-polynomials-and-a-basis-for-the",
+      "number": null,
+      "title": "Kazhdan-Lusztig polynomials, and a basis for the Hecke algebra",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 109,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kazhdan-lusztig",
+          "heading": true
+        },
+        {
+          "term": "textit kazhdan-lusztig",
+          "heading": false
+        },
+        {
+          "term": "delta",
+          "heading": false
+        }
+      ],
+      "extract": "Let $x \\in W$, and define $$\\delta_x = \\delta_{s_1}\\delta_{s_2}\\cdots\\delta_{s_m},$$ for a reduced expression $\\Tilde{x} = (s_1, s_2, \\ldots s_m).$ We call the involution $\\mathcal{H} \\rightarrow \\mathcal{H},$ $h \\mapsto \\bar{h}$ defined by $$\\bar{\\delta} = \\delta^{-1}_s = \\delta_s + (v - v^{-1}),$$ the \\textit{Kazhdan-Lusztig involution.} We define the \\textit{Kazhdan-Lusztig basis} of $\\mathcal{H}$ to be the set",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-lemma",
+      "number": null,
+      "title": "Lemma:",
+      "level": 3,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 80,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kazhdan-lusztig basis",
+          "heading": false
+        },
+        {
+          "term": "textit",
+          "heading": false
+        },
+        {
+          "term": "laughey",
+          "heading": false
+        }
+      ],
+      "extract": "\\textit{A Kazhdan-Lusztig basis is unique.} \\\\ A tidy proof of this lemma can be found in \\ref{ref2} \\subsubsection{Lemma:} \\textit{For every $s \\in S,$ the Kazhdan-Lusztig basis element $b_s$ has the form $b_s = \\delta_s + v$} \\\\ \\textit{Proof:} $\\delta_s + v$ satisfies the degree bounded form by definition, and we have $$\\overline{\\delta_s + v} = \\delta^{-1}_s + v^{-1} = \\delta_s + (v - v^{-1}) + v^{-1} = \\delta_s",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-soergel-bimodules",
+      "number": null,
+      "title": "Soergel Bimodules",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Soergel Bimodules",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-easing-into-it",
+      "number": null,
+      "title": "Easing into it",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 81,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "text sym",
+          "heading": false
+        },
+        {
+          "term": "varpi",
+          "heading": false
+        },
+        {
+          "term": "deg",
+          "heading": false
+        }
+      ],
+      "extract": "Let $(W,S)$ be a Coxeter system, and let $V$ be its geometric representation\\ref{app2} over $\\R$. Let $\\varPi = \\{\\alpha_s \\st s \\in S\\}$ be the set of simple roots, forming a basis of $V$ indexed by simple reflections. Let $$R = \\text{Sym}(V) = \\bigoplus_{i \\in \\Z_{\\ge 0}}\\text{Sym}^i(V)$$ be the symmetric algebra of $V,$ understood here as a $\\Z$-graded algebra where deg($V$) = 2. Then $R$ can be stated",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-theorem-chevalley-shephard-todd",
+      "number": null,
+      "title": "Theorem (Chevalley-Shephard-Todd)",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 48,
+      "summary": null,
+      "keywords": [],
+      "extract": "Theorem (Chevalley-Shephard-Todd) Let I ⊂S be a subset such that WI = ⟨I⟩⊂W is ﬁnite. Then the ring of WI-invariants RWI = {x ∈R | w · x = x, ∀w ∈W} is a polynomial ring, and R is a Z-graded free module over RWI of ﬁnite rank.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-example",
+      "number": null,
+      "title": "Example",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 92,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "w-action",
+          "heading": false
+        },
+        {
+          "term": "reﬂection",
+          "heading": false
+        },
+        {
+          "term": "bimodules",
+          "heading": false
+        }
+      ],
+      "extract": "Example Let W be the Weyl group of g = sl2, i.e. W = S2, such that S = {s}, i.e. WI is generated by a single reﬂection. Letting R = R[α], the W-action is given by s(α) = −α. Thus Rs = R[α2]. It follows that R has the decomposition R = Rs ⊕(Rs · α). More generally, in a Coxeter system any polynomial P ∈R can be written P = a + bαs, where a, b ∈Rs. Since deg(αs) = 2, we have R ∼= Rs ⊕Rs(−2) as graded bimodules.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-bott-samelson-bimodules",
+      "number": null,
+      "title": "Bott-Samelson bimodules",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 178,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bott-samelson",
+          "heading": true
+        },
+        {
+          "term": "graded bimodule",
+          "heading": false
+        },
+        {
+          "term": "cdots otimes",
+          "heading": false
+        },
+        {
+          "term": "sum otimes",
+          "heading": false
+        },
+        {
+          "term": "gbim",
+          "heading": false
+        }
+      ],
+      "extract": "Let $B_s$ for $s \\in S$ denote the graded $R$-bimodule $$B_s = R \\otimes_{R^s}R(1),$$ where $R(1)$ is obtained by shifting down by 1. That is, $M(1)^i \\equiv M^{i-1}.$ Elements in $B_s$ are expressable as sums $$\\sum_i f_i \\otimes g_i, \\text{ }f_i, g_i \\in R.$$ Given a reduced expression $\\underbar{$w$} = (s_1, \\ldots s_n).$ We define the Bott-Samelson bimodule to be the graded $R$-bimodule $$BS(\\underbar{$w$}) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-example-of-soergel-bimodule",
+      "number": null,
+      "title": "Example of Soergel bimodule",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 313,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel bimodule",
+          "heading": true
+        },
+        {
+          "term": "bott-samelson bimodules",
+          "heading": false
+        },
+        {
+          "term": "grading shifts",
+          "heading": false
+        },
+        {
+          "term": "z-graded",
+          "heading": false
+        },
+        {
+          "term": "homogenous",
+          "heading": false
+        },
+        {
+          "term": "polynomial ring",
+          "heading": false
+        }
+      ],
+      "extract": "Example of Soergel bimodule Consider the polynomial ring R = k[x, y, z] where k is a ﬁeld not of characteristic 2, and consider the action of S3 on R, characterized by simple reﬂections s and r, where s · µ(x, y, z) = µ(y, x, z) and r · µ(x, y, z) = µ(x, z, y). Hence Rs is the polynomial ring k[x + y, xy, z], and Rr is k[x + y + z, xy + xz + yz, xyz]. We take deg(x, y, z) = 2. Then R(1) is R shifted down by 1, which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-lemma",
+      "number": null,
+      "title": "Lemma",
+      "level": 3,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 200,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rmr",
+          "heading": false
+        },
+        {
+          "term": "bsbs",
+          "heading": false
+        },
+        {
+          "term": "bsv",
+          "heading": false
+        }
+      ],
+      "extract": "2.2.2 Lemma Suppose M is a graded R-bimodule generated by a homogenous element m ∈M. Then M is indecomposable. Proof: We have M = RmR. Let d = deg(m). Then M d = R0mR0,. Suppose that M = L ⊕N. Then M d = Ld ⊕N d, so we can say WLOG m ∈L. Then M = R · m · R ⊂L, which implies that N d = 0, so that M = RmR ⊂N, i.e. N = 0. 2.2.3 Example Now we can formulate another example in type A1, wherein W = S2, generated by the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-remark",
+      "number": null,
+      "title": "Remark",
+      "level": 3,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 139,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mst",
+          "heading": false
+        },
+        {
+          "term": "subrings",
+          "heading": false
+        },
+        {
+          "term": "reﬂecting",
+          "heading": false
+        }
+      ],
+      "extract": "Remark Whenever s̸ = t and mst̸ = ∞, R is generated by subrings Rs and Rt. We observe that BsBt ≃R ⊗Rs R ⊗Rt R(2) and BtBs ≃R ⊗Rt R ⊗Rs R(2) are indecomposable, since they are not generated by the 1-tensor 1 ⊗1 ⊗1, which in turn implies that Bs and Bt are not isomorphic. 8 Subremark It is important now to collect ourselves and remember that R = Sym(V ), where V is the geometric representation of W. As a polynomial",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-grothendieck-groups-soergels-categorization",
+      "number": null,
+      "title": "Grothendieck groups, Soergel's categorization",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 123,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "text bim",
+          "heading": false
+        },
+        {
+          "term": "soergel",
+          "heading": true
+        },
+        {
+          "term": "mathbb text",
+          "heading": false
+        },
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        }
+      ],
+      "extract": "Probably the most important technical attribute of Soergel bimodules is their role as the \"categorification\" of the Hecke algebra, and their connection to the Kazhdan-Lusztig basis of said Hecke algebra. In pursuit of properly expositing this, we will interface now with one of the many beautiful constructions in math, the Grothendieck group. \\\\ The \\textit{split Grothendieck group} $[\\mathbb{S}\\text{Bim}]_\\oplus$ of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-definition",
+      "number": null,
+      "title": "Definition",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 94,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chi",
+          "heading": false
+        },
+        {
+          "term": "delta",
+          "heading": false
+        },
+        {
+          "term": "oplus",
+          "heading": false
+        }
+      ],
+      "extract": "The \\textit{character} $\\chi$ of a Soergel bimodule $B$ is defined as the element $$\\chi(B) = \\sum_{x \\in W}v^{l(x)}h_x(B)\\delta_x$$ of $\\mathcal{H}.$ We have $h_{id}(B_s) = v^{+1}$ and $h_s(B_s) = v^{-1},$ and thus $\\chi(B_s) = v\\delta_{id} + v - v^{-1}\\delta_s = v + \\delta_s.$ Thus, wonderfully, $\\chi(B_s) = b_s $ for every $s \\in S.$ It follows that $\\chi(B \\oplus B') = \\chi(B) + \\chi(B')$ and $\\chi(B(1)) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-soergels-categorification-theorem",
+      "number": null,
+      "title": "Soergel's Categorification theorem",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 79,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "text bim",
+          "heading": false
+        },
+        {
+          "term": "item textit",
+          "heading": false
+        },
+        {
+          "term": "mathbb text",
+          "heading": false
+        },
+        {
+          "term": "text mapsto",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{enumerate} \\item \\textit{There exists a $\\Z[v^{\\pm 1}]$-algebra homomorphism} $$\\phi: \\mathcal{H} \\rightarrow [\\mathbb{S}\\text{Bim}]_\\oplus, \\text{ }b_s \\mapsto [B_s]$$ \\textit{for each $s \\in S$.} \\item \\textit{$W$ is in bijection with the set of indecomposable objects in $\\mathbb{S}\\text{Bim}$ mod shift and isomorphism. Formally, } $$W \\longleftrightarrow \\{\\text{indecomposable objects} \\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-soergels-hom-formula",
+      "number": null,
+      "title": "Soergel's Hom formula",
+      "level": 3,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 71,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel",
+          "heading": true
+        },
+        {
+          "term": "hom",
+          "heading": true
+        },
+        {
+          "term": "hom bullet",
+          "heading": false
+        }
+      ],
+      "extract": "\\textit{For any Soergel bimodules $B, B'$, the graded $R$-bimodule hom space $\\Hom^\\bullet_{\\mathbb{S}\\text{Bim}}(B, B')$ is free as a graded left (resp., right) $R$-module. Moreover, } $$\\text{gr(rank)}\\Hom^\\bullet_{\\mathbb{S}\\text{Bim}}(B, B') = (\\chi(B), \\chi(B')),$$ \\textit{where ( , ) is the standard form on $\\mathcal{H}.$} \\subsubsection{} Soergel's Hom formula motivates what we call \\textit{Soergel's",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-soergels-conjecture",
+      "number": null,
+      "title": "Soergel's conjecture",
+      "level": 3,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 14,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\textit{For every $x \\in W$, $\\chi(B_x) = b_x.$ Equivalently, the Kazhdan-Lusztig polynomial $h_{x,y} = h_x(B_y)$.}",
+      "extractCut": false
+    },
+    {
+      "id": "sec-018-important-remark",
+      "number": null,
+      "title": "Important Remark",
+      "level": 3,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 103,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel",
+          "heading": false
+        },
+        {
+          "term": "newpage",
+          "heading": false
+        },
+        {
+          "term": "exceed",
+          "heading": false
+        }
+      ],
+      "extract": "A positive result of Soergel's Conjecture has a very important implication in the larger theory. That is, it implies the \\textit{Kazhdan-Lusztig positivity conjecture,} which asserts that the coefficients of $h_{x,y}$ are non-negative. Indeed, $h_x(B)$ lies in $\\Z_{\\ge 0}[v^{\\pm 1}]$ for any Soergel bimodule $B.$ \\subsubsection{} We will now go further into some of the historical context in Lie theory and Category",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-historical-interlude-the-kazhdan-lusztig-conject",
+      "number": null,
+      "title": "Historical Interlude: The Kazhdan-Lusztig conjectures",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 5,
+      "summary": null,
+      "keywords": [],
+      "extract": "Historical Interlude: The Kazhdan-Lusztig conjectures",
+      "extractCut": false
+    },
+    {
+      "id": "sec-020-briefly-recognizing-some-lie-theory",
+      "number": null,
+      "title": "Briefly recognizing some Lie theory",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 82,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lambda text",
+          "heading": false
+        },
+        {
+          "term": "text forall",
+          "heading": false
+        },
+        {
+          "term": "oplus",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\g$ be a complex semisimple Lie algebra. We have the decomposition $$\\g = \\mf{n}_+ \\oplus \\h \\oplus \\mf{n}_-$$ with $\\h$ the Cartan subalgebra of $\\g$ and $\\mf{n}_\\pm = \\bigoplus_{\\alpha \\in R_+} \\g_\\alpha.$ The \\textit{Borel subalgebra} $\\mf{b}$ is the subalgebra $\\mf{b} = \\mf{n}_+ \\oplus \\h.$ Under the relations $$hv_\\lambda = \\langle h, \\lambda\\rangle v_\\lambda \\text{ }\\forall h \\in \\h$$ $$xv_\\lambda = 0",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-definition-category-o",
+      "number": null,
+      "title": "Definition: Category O",
+      "level": 3,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 99,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "épaisse",
+          "heading": false
+        },
+        {
+          "term": "lambda",
+          "heading": false
+        },
+        {
+          "term": "category",
+          "heading": true
+        },
+        {
+          "term": "mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "\\textit{Category} $\\mathcal{O}$ is the abelian full subcategory of Rep($\\g$) with $$V = \\bigoplus_{\\lambda \\in \\h^*} V[\\lambda]$$ where $V[\\lambda]$ are weight spaces\\footnote{$V[\\lambda] := \\{v \\in V \\st hv = \\lambda(h)v \\text{ } \\forall h \\in \\h\\}$}. Further, we ask that $V$ is finitely generated, and the action of $\\mf{n}_+$ on $V$ is locally finite. Notice that the set of Verma modules $\\{M_\\lambda \\st \\lambda",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-definition-soergel-module",
+      "number": null,
+      "title": "Definition: Soergel module",
+      "level": 3,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 175,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel module",
+          "heading": true
+        },
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        },
+        {
+          "term": "text sym",
+          "heading": false
+        },
+        {
+          "term": "coxeter system",
+          "heading": false
+        },
+        {
+          "term": "textit",
+          "heading": false
+        }
+      ],
+      "extract": "We have already spent a good chunk of this paper talking about Soergel bimodules without any discussion of a \\textit{Soergel module.} This is for good reason, since Soergel modules are obtained via an a priori construction of Soergel bimodules, using some relevant information in this section. We do this now, given our complex semisimple Lie algebra $\\g$ and its Weyl group $W,$ which has the structure of a Coxeter",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-back-to-kazhdan-lusztig",
+      "number": null,
+      "title": "Back to Kazhdan-Lusztig",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 86,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kazhdan-lusztig",
+          "heading": true
+        },
+        {
+          "term": "weyl group",
+          "heading": false
+        },
+        {
+          "term": "bernstein-gelfand-gelfand",
+          "heading": false
+        }
+      ],
+      "extract": "Recall the Kazhdan-Lusztig basis $\\{b_w \\st w \\in W\\}$ of the Hecke algebra $\\mathcal{H},$ given a Coxeter system $(W,S).$ We want to know what this has to do with a Weyl group $W.$ $\\mathcal{H}$ also admits a standard basis $\\{\\delta_w \\st w \\in W\\},$ and the translation matrix from the KL basis to the standard one is upper triangular with respect to Bruhat order. We have $$b_x = \\sum_{y \\le x}h_{y,x}(v)\\delta_y,$$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-theorem",
+      "number": null,
+      "title": "Theorem",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 49,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\textit{If $\\Hom(M_\\mu, M_\\eta) = 1,$ then there exists a dominant weight $\\lambda \\in \\h^*$ and $x,y \\in W$ such that} $$\\mu = x \\cdot \\lambda, \\eta = y \\cdot \\lambda,$$ with $x \\ge y$ in Bruhat order. This brings us our seminal conjecture, stated as follows.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-025-the-kazhdan-lusztig-conjecture",
+      "number": null,
+      "title": "The Kazhdan-Lusztig conjecture",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 45,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "focal",
+          "heading": false
+        },
+        {
+          "term": "cdot",
+          "heading": false
+        },
+        {
+          "term": "conjecture",
+          "heading": true
+        }
+      ],
+      "extract": "\\textit{ For every $x,y \\in W,$ the following holds:} $$[M_{(y\\cdot 0)} : L_{(x \\cdot 0)}] = h_{y,x}(1).$$ This conjecture is the focal application of Soergel bimodules. In the near future, we will cover this in more depth. Kazhdan and Lusztig also proved the following formula, the",
+      "extractCut": false
+    },
+    {
+      "id": "sec-026-kazhdan-lusztig-inversion-formula",
+      "number": null,
+      "title": "Kazhdan-Lusztig Inversion Formula",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 101,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kazhdan-lusztig",
+          "heading": true
+        },
+        {
+          "term": "shedding",
+          "heading": false
+        },
+        {
+          "term": "polo",
+          "heading": false
+        }
+      ],
+      "extract": "Let $w_0 \\in W$ be the longest eleemnt. For every $x,y \\in W,$ we have the identity $$\\sum_{z \\in W}(-1)^{l(y) + l(x)}h_{z,x}(v)h_{zw_0, yw_0}(v) = \\begin{cases} 1 \\text{ if } x = y \\\\ 0 \\text{ else} \\end{cases}$$ Along with the previous conjecture, this implies a similar identity in the Grothendieck group of $\\mathcal{O}$: $$[L_{(y\\cdot 0)}] = \\sum_{y \\le x}(-1)^{l(y) + l(x)}h_{xw_0, yw_0}(1)[M_{(x\\cdot 0)}].$$ At",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-theorem-polo",
+      "number": null,
+      "title": "Theorem (Polo)",
+      "level": 3,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 23,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\textit{For any monic polynomial $q \\in \\Z_{\\ge 0}[v^2]$, there exist numbers $m$ and $N$ such that} $$v_mq = h_{y,x}(v)$$ \\textit{for $x,y \\in S_N$.}",
+      "extractCut": false
+    },
+    {
+      "id": "sec-028-more-on-positivity",
+      "number": null,
+      "title": "More on positivity",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 38,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kazhdan-lusztig",
+          "heading": false
+        },
+        {
+          "term": "we'll",
+          "heading": false
+        },
+        {
+          "term": "kazhdan",
+          "heading": false
+        }
+      ],
+      "extract": "Recall the conjecture from earlier of Kazhdan-Lusztig, stating that Kazhdan-Lusztig polynomials have non-negative coefficients. The original proof (done by Kazhdan and Lusztig) required the geometric notion of flag varieties. We'll briefly introduce this here.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-029-flag-and-schubert-varieties",
+      "number": null,
+      "title": "Flag and Schubert varieties",
+      "level": 3,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 93,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bwb",
+          "heading": false
+        },
+        {
+          "term": "schubert",
+          "heading": true
+        },
+        {
+          "term": "textit",
+          "heading": false
+        }
+      ],
+      "extract": "Recall the decomposition of $\\g$ by $$\\g = \\mf{n}_+ \\oplus \\h \\oplus \\mf{n}_-$$ Let $G$ denote the simply connected Lie group corresponding to $\\g,$ and let $B, U$ be the subgroups of $G$ corresponding to the Borel subalgebra $\\mf{b}$ and $\\mf{n}_+,$ respectively. Then the \\textit{flag variety} is defined to be the quotient $G/B$. Considering $U$-orbits (equivalently, left $B$-orbits), we obtain the \\textit{Bruhat",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-soergels-proof-of-the-kazhdan-lusztig-conjecture",
+      "number": null,
+      "title": "Soergel's Proof of the Kazhdan-Lusztig conjecture",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-031-the-v-functor",
+      "number": null,
+      "title": "The V-functor",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 33,
+      "summary": null,
+      "keywords": [],
+      "extract": "The V-functor Soergel’s proof makes use of two important functors. One of them, denoted V, connects the subcategory O0 to Soergel modules, which we have just deﬁned in the previous section. In pursuit",
+      "extractCut": false
+    },
+    {
+      "id": "sec-032-definition",
+      "number": null,
+      "title": "Definition",
+      "level": 3,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 143,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel module",
+          "heading": false
+        },
+        {
+          "term": "coinvariant",
+          "heading": false
+        },
+        {
+          "term": "graded",
+          "heading": false
+        },
+        {
+          "term": "c-modules",
+          "heading": false
+        }
+      ],
+      "extract": "passes freely through every tensor product (⊗Rs) in a Bott-Samelson bimodule BS(w). This implies two things. One is that f ∈RWI will act the same on the right and left of any Soergel bimodule. Secondly, if f is of strictly positive degree, it will act as zero on any Soergel module. A deﬁnition here clariﬁes this acknowledgement: 4.1.1 Deﬁnition If W is ﬁnite, let RWI + be the graded subspace of RWI containing",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-theorem",
+      "number": null,
+      "title": "Theorem",
+      "level": 3,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 57,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ungraded",
+          "heading": false
+        },
+        {
+          "term": "c-modules",
+          "heading": false
+        },
+        {
+          "term": "modules",
+          "heading": false
+        }
+      ],
+      "extract": "4.1.2 Theorem There is a canonical isomorphism End(Pr(w0·0)) ≃V(Pr(w0·0)) ≃C. Using this, we view V as a functor V : O0 →mod-C where mod-C are ungraded right C-modules. Consequently, 4.1.3 Theorem Let ProjO0 ⊂O0 be the full subcategory of projective modules. Then 1. V|ProjO0 is fully faithful. 2. V(Pr(x·0)) ≃Bx as ungraded modules for every x ∈W.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-034-translation-functors",
+      "number": null,
+      "title": "Translation functors",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 196,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "translation",
+          "heading": true
+        },
+        {
+          "term": "root system",
+          "heading": false
+        },
+        {
+          "term": "w-action",
+          "heading": false
+        },
+        {
+          "term": "functors",
+          "heading": true
+        }
+      ],
+      "extract": "Translation functors Fixing the decomposition of g = n+ ⊕h ⊕n−, the weight lattice P ⊂h∗, root system3 R±, simple roots Π, and the Weyl group W, we consider the W-action on h∗, given by w · λ = w(λ + ρ) −ρ, for w ∈W, λ ∈h∗, ρ = 1 2 P α∈R+ α. Then O has the decomposition O = M λ∈h∗/W Oλ, with simple objects {L(w·λ) | w ∈W} in each Oλ. 4.2.1 Let λ ∈h∗. Deﬁne ιλ : Oλ֒ →O, πλ : O ։ Oλ as the inclusion and projection,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-lemma",
+      "number": null,
+      "title": "Lemma",
+      "level": 3,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 307,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mws",
+          "heading": false
+        },
+        {
+          "term": "translation functors",
+          "heading": false
+        },
+        {
+          "term": "dominant integral",
+          "heading": false
+        },
+        {
+          "term": "projective modules",
+          "heading": false
+        },
+        {
+          "term": "biadjoint",
+          "heading": false
+        }
+      ],
+      "extract": "Lemma Suppose that λ, µ ∈h∗are compatible. Then the translation functors Oλ Oµ T µ λ T λ µ are biadjoint. Proof: If Vη is deﬁned as it is above, then V ∗ η = V(−w0η) where w0 is the longest element in W. Then T λ µ = πλ ◦(V ∗⊗(−)) ◦ιµ. The desired result follows from the fact that V ⊗(−) and V ∗⊗(−) are biadjoint. 4.2.3 Lemma Translation functors send projective modules to projective modules. Proof of this fact",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-corollary",
+      "number": null,
+      "title": "Corollary",
+      "level": 3,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 21,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\textit{The group isomorphism} $$[\\mathcal{O}_0] \\rightarrow \\Z[W], \\text{ } [M_w] \\mapsto w$$ \\textit{intertwines the map induced by $\\Theta_s$ with right multiplication by $1 + s$. }",
+      "extractCut": false
+    },
+    {
+      "id": "sec-037-projectives",
+      "number": null,
+      "title": "Projectives",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 9,
+      "summary": null,
+      "keywords": [],
+      "extract": "Let $\\text{Pr}_{(w \\cdot 0)}$ be denoted as $\\text{Pr}_w$ going forward.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-038-proposition",
+      "number": null,
+      "title": "Proposition",
+      "level": 3,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 194,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dim hom",
+          "heading": false
+        },
+        {
+          "term": "simeq bigoplus",
+          "heading": false
+        },
+        {
+          "term": "textit",
+          "heading": false
+        },
+        {
+          "term": "projective object",
+          "heading": false
+        },
+        {
+          "term": "text",
+          "heading": false
+        },
+        {
+          "term": "filtration",
+          "heading": false
+        }
+      ],
+      "extract": "\\textit{The set} $\\{\\text{Pr}_w \\st w \\in W\\}$ \\textit{is the set of non-isomorphic indecomposable projective objects in} $\\mathcal{O}_0.$ \\textit{Moreover, every projective object $Q \\in \\mathcal{O}_0$ is isomorphic to a finite direct sum } $$Q \\simeq \\bigoplus_{w \\in W}\\text{Pr}^{\\oplus m(\\text{Pr}_w, Q)}_w$$ \\textit{for unique multiplicites } $m(\\text{Pr}_w, Q) \\ge 0$, with $m(\\text{Pr}_w, Q) = \\dim \\Hom(Q,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-recontextualizing-soergel-modules-from-bott-same",
+      "number": null,
+      "title": "Recontextualizing Soergel modules from Bott-Samelson modules",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 79,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel modules",
+          "heading": true
+        },
+        {
+          "term": "bott-samelson",
+          "heading": true
+        },
+        {
+          "term": "recontextualizing",
+          "heading": true
+        }
+      ],
+      "extract": "Recontextualizing Soergel modules from Bott-Samelson modules We now take an arbitrary Coxeter system (W, S) and a W-representation h over some ﬁeld k. Let R = Sym(h∗) with deg(h∗) = 2. Consider the subcategories SBim(h, W) of Soergel bimodules and BSBim(h, W) of Bott-Samelson bimodules. Recall that Soergel modules are obtained via these respective bimodules. We have to be a little tricky here and view k as a graded",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-definition",
+      "number": null,
+      "title": "Definition",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 170,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel modules",
+          "heading": false
+        },
+        {
+          "term": "gmod-r",
+          "heading": false
+        },
+        {
+          "term": "sbim",
+          "heading": false
+        },
+        {
+          "term": "direct summands",
+          "heading": false
+        }
+      ],
+      "extract": "Deﬁnition Let w = (s1, . . . , sm) be a reduced expression for w. The Bott-Samelson module BS(w) is the graded right R-module BS(w) = k ⊗R BS(w) = k ⊗R Bs1 ⊗R · · · ⊗R Bsm ≃k ⊗R R ⊗Rs1 R ⊗Rs2 · · · ⊗Rsm R(m). Now we can see more clearly how we get our Soergel modules. Explicitly, they’re any graded right R-modules isomorphic to a ﬁnite direct sum of shifts of direct summands of Bott-Samelson modules. Our subcategory",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-proposition",
+      "number": null,
+      "title": "Proposition",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 152,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sbim",
+          "heading": false
+        },
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        },
+        {
+          "term": "split grothendieck",
+          "heading": false
+        },
+        {
+          "term": "grothendieck group",
+          "heading": false
+        }
+      ],
+      "extract": "Proposition If W is ﬁnite, and h is reﬂection faithful, the assignment k ⊗R Hom• R-gmod-R(B, B′) −→Hom• gmod-R(k ⊗R B, k ⊗R B′) is an isomorphism for any Soergel bimodules B, B′. Before we move into the ﬁnal part of the story, recall that Soergel bimodules give the categori- ﬁcation of the Hecke algebra H, and that the split Grothendieck group is a Z[v, v−1]-algebra with the isomorphism [SBim(h, W)]⊕≃H. When we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-proving-the-kazhdan-lusztig-conjecture",
+      "number": null,
+      "title": "Proving the Kazhdan-Lusztig conjecture",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "Proving the Kazhdan-Lusztig conjecture",
+      "extractCut": false
+    },
+    {
+      "id": "sec-043-restating-the-conjecture",
+      "number": null,
+      "title": "Restating the conjecture",
+      "level": 3,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 108,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kazhdan-lusztig conjecture",
+          "heading": false
+        },
+        {
+          "term": "restating",
+          "heading": true
+        },
+        {
+          "term": "prx",
+          "heading": false
+        }
+      ],
+      "extract": "Restating the conjecture The Kazhdan-Lusztig conjecture states that for a complex semisimple Lie algebra g, and any x, y in the Weyl group W, [My : Lx] = hy,x(1) where hy,x(1) is the value of the Kazhdan-Lusztig polynomial hy,x(v) at v = 1. By Bernstein- Gelfand-Gelfand reciprocity6.5, the Kazhdan-Lusztig conjecture is equivalent to stating (Prx : My) = hy,x(1). Using the correspondence [O0] ≃Z[W] in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-proposition",
+      "number": null,
+      "title": "Proposition",
+      "level": 3,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 194,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel conjecture",
+          "heading": false
+        },
+        {
+          "term": "prx",
+          "heading": false
+        },
+        {
+          "term": "prz",
+          "heading": false
+        },
+        {
+          "term": "kazhdan-lusztig conjecture",
+          "heading": false
+        }
+      ],
+      "extract": "4.5.2 Proposition 2 Let g be a complex semisimple Lie algebra. Then Soergel’s conjecture for the geometric repre- sentation of its Weyl group W implies the Kazhdan-Lusztig conjecture for g. Proof: We will begin by induction on Bruhat order. We have Prid = Mid, which implies that [Prid] = id = bid|v=1. Let x > id in Bruhat order. Choose s ∈S such that xs < s, and take x = ws, where w < x. Then ΘsPrw ≃Prx ⊕ M z<x",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 233,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        },
+        {
+          "term": "item label",
+          "heading": false
+        },
+        {
+          "term": "cambridge university",
+          "heading": false
+        },
+        {
+          "term": "coxeter groups",
+          "heading": false
+        },
+        {
+          "term": "university press",
+          "heading": false
+        },
+        {
+          "term": "uber",
+          "heading": false
+        },
+        {
+          "term": "kazhdan-lusztig",
+          "heading": false
+        },
+        {
+          "term": "involutions",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{references} \\end{center} \\begin{enumerate} \\item\\label{ref1} A. Doña Mateo, Soergel bimodules and HOMFLY-PT homology. University of Edinburgh https://www.maths.ed.ac.uk/~adona/files/part-iii-essay.pdf \\item\\label{ref2} B. Elias, S. Makisumi, U. Thiel, G. Williamson, Introduction to Soergel Bimodules. Springer (2021) \\item P. Etingof, S. Gelaki, D. Nikshych, V. Ostrik, Tensor Categories. Mathematical Surveys",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-appendic-miscellany",
+      "number": null,
+      "title": "Appendic Miscellany",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Appendic Miscellany",
+      "extractCut": false
+    },
+    {
+      "id": "sec-047-computation-of",
+      "number": null,
+      "title": "Computation of",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 68,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lambda dfrac",
+          "heading": false
+        },
+        {
+          "term": "alpha lambda",
+          "heading": false
+        },
+        {
+          "term": "alpha big",
+          "heading": false
+        },
+        {
+          "term": "bigg",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{app1} $s^2_\\alpha = e. $ We have $$s_\\alpha(s_\\alpha(\\lambda)) = s_\\alpha\\Big(\\lambda - 2\\dfrac{(\\lambda, \\alpha)}{(\\alpha, \\alpha)}\\alpha\\Big) = \\Big(\\lambda - 2\\dfrac{(\\lambda, \\alpha)}{(\\alpha, \\alpha)}\\alpha\\Big) - \\Bigg(2\\dfrac{((\\lambda - 2\\frac{(\\lambda, \\alpha)}{(\\alpha, \\alpha)}\\alpha), \\alpha)}{(\\alpha, \\alpha)}\\alpha\\Bigg) $$ $$= \\Big(\\lambda - 2\\dfrac{(\\lambda, \\alpha)}{(\\alpha,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-geometric-representation-of-a-coxeter-system",
+      "number": null,
+      "title": "Geometric representation of a Coxeter system",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 71,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "imporant",
+          "heading": false
+        },
+        {
+          "term": "coxeter",
+          "heading": true
+        },
+        {
+          "term": "textit",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{app2} The \\textit{geometric representation} of a Coxeter system $(W,S)$ is a representation $V$ of $W$ wherein $V$ is a real vector space equipped with basis $\\{\\alpha_s \\st s \\in S\\}$, and bilinear form $$(\\text{ } , \\text{ }) := (\\alpha_s, \\alpha_t) = -\\cos\\dfrac{\\pi}{m_{st}}$$ We are also given the familiar action of $W$ on $V$ with $$s(\\lambda) = \\lambda - 2(\\lambda, \\alpha_s)\\alpha_s.$$ Imporant thing:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-a-fun-but-ancillary-category",
+      "number": null,
+      "title": "A fun but ancillary category",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 143,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gbim",
+          "heading": false
+        },
+        {
+          "term": "category",
+          "heading": true
+        },
+        {
+          "term": "graded",
+          "heading": false
+        },
+        {
+          "term": "tensor product",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{app3} Let $R$-gbim$_{qc}$ denote the category of graded $R$-bimodules. We equip this with a shift functor $(n)$ which sends, for each $n \\in \\Z,$ $M \\mapsto M(n),$ where $M(n)$ denotes the usual grading on $R$-modules. Also, we give $R$-gbim$_{qc}$ the tensor product $\\otimes_R$, giving $R$-gbim$_{qc}$ the structure of a monoidal category. Here the subscript \"qc\" stands for quasi-coherent, in that there is no",
+      "extractCut": true
+    },
+    {
+      "id": "sec-050-in-aid-of-lemma-423",
+      "number": null,
+      "title": "In aid of lemma 4.2.3,",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 12,
+      "summary": null,
+      "keywords": [],
+      "extract": "In aid of lemma 4.2.3, we prove the result of the following",
+      "extractCut": false
+    },
+    {
+      "id": "sec-051-proposition",
+      "number": null,
+      "title": "Proposition",
+      "level": 3,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 283,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homa",
+          "heading": false
+        },
+        {
+          "term": "short exact",
+          "heading": false
+        },
+        {
+          "term": "exact sequence",
+          "heading": false
+        },
+        {
+          "term": "homb",
+          "heading": false
+        },
+        {
+          "term": "projective objects",
+          "heading": false
+        },
+        {
+          "term": "left adjoint",
+          "heading": false
+        }
+      ],
+      "extract": "Proposition Let A, B be abelian categories, and let F : A →B, G : B →A be functors. If F is left adjoint to G and G is exact, then F sends projective objects to projective objects. Proof: Recall that an object P in an abelian category is projective if and only if the functor HomA(P, −) : A →Ab is exact. With the above setup, let P ∈A be a projective object. Then, for every short exact sequence 0 X′ X X′′ 0 the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-052-berstein-gelfand-gelfand-reciprocity",
+      "number": null,
+      "title": "Berstein-Gelfand-Gelfand Reciprocity",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 76,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "berstein-gelfand-gelfand",
+          "heading": true
+        },
+        {
+          "term": "reciprocity",
+          "heading": true
+        },
+        {
+          "term": "lambda",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{app5} For a complex semisimple Lie algebra $\\g,$ let $\\mathcal{C}$ denote the subcategory of $U(\\g)$-Mod consisting of modules $V$ admitting finite dimensional weight spaces. For $V \\in \\mathcal{C},$ a weight $\\lambda \\in \\h^*,$ and weight space $V[\\lambda],$ we take $V[\\lambda]^*$ to be all $f \\in V^*$ that vanish on $V[\\mu]$ where $\\mu \\ne \\lambda.$ The dual module $\\mathbf{D}(V)$ is defined by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-053-bgg-reciprocity",
+      "number": null,
+      "title": "BGG Reciprocity",
+      "level": 3,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 14,
+      "summary": null,
+      "keywords": [],
+      "extract": "BGG Reciprocity (Prλ : Mµ) = [D(Mλ) : Lλ] = [Mµ : Lλ]. 23",
+      "extractCut": false
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 1,
+        "items": [
+          "2 W is in bijection with the set of indecomposable objects in SBim mod shift and isomorphism."
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "textit soergel",
+      "heading": false
+    },
+    {
+      "term": "soergel bimodules",
+      "heading": true
+    },
+    {
+      "term": "textit kazhdan-lusztig",
+      "heading": false
+    },
+    {
+      "term": "soergel modules",
+      "heading": true
+    },
+    {
+      "term": "textit coxeter",
+      "heading": false
+    },
+    {
+      "term": "soergel conjecture",
+      "heading": true
+    },
+    {
+      "term": "soergel hom",
+      "heading": true
+    },
+    {
+      "term": "recontextualizing soergel",
+      "heading": true
+    },
+    {
+      "term": "item textit",
+      "heading": false
+    },
+    {
+      "term": "textit proof",
+      "heading": false
+    },
+    {
+      "term": "graded bimodules",
+      "heading": false
+    },
+    {
+      "term": "bott-samelson bimodules",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "contents",
+      "confidence": 0.6
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 61,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 55,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p20); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 55 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2501.03424v1"
+  }
+}

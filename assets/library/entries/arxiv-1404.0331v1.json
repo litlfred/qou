@@ -1,0 +1,393 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1404.0331v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1404.0331v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The colored Jones polynomial",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-01-the-colored-jones-polynomial.md",
+      "narrative": null,
+      "content": "torus knots, some classes of two-bridge knots and pretzel knots, and most cabled knots\nover torus knots. The strong AJ conjecture, formulated by Sikora, relates the A-ideal\nand the colored Jones polynomial of a knot. It was conﬁrmed for all torus knots. In this\npaper we conﬁrm the strong AJ conjecture for most cabled knots over torus knots.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0331v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-001-0-introduction.md",
+      "narrative": null,
+      "content": "0.1. The colored Jones polynomial. For a knot K in S3 and a positive integer n,\nlet JK(n) ∈Z[t±1] denote the n-colored Jones polynomial of K with zero-framing. The\npolynomial JK(n) is the quantum link invariant, as deﬁned by Reshetikhin and Turaev\n[RT], associated to the Lie algebra sl2(C), with the color n standing for the irreducible\nsl2(C)-module Vn of dimension n. Here we use the functorial normalization, i.e. the one\nfor which the colored Jones polynomial of the unknot U is\nJU(n) = [n] := t2n −t−2n\nt2 −t−2 .\nIt is known that JK(1) = 1 and JK(2) is the usual Jones polynomial [Jo]. The colo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0331v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The recurrence ideal and recurrence polynomial",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-02-the-recurrence-ideal-and-recurrence-polynomia.md",
+      "narrative": null,
+      "content": "Consider a discrete function $f: \\BZ \\to \\CR:=\\BC[t^{\\pm 1}]$ and define the linear operators $L, M$ acting on such functions by\n$$(Lf)(n) := f(n+1), \\qquad (Mf )(n) := t^{2n} f(n).$$\nIt is easy to see that $LM = t^2 ML$, and that $L^{\\pm 1}, M^{\\pm 1}$ generate the quantum torus $\\CT$, a non-commutative ring with presentation\n$$ \\mathcal T := \\mathbb \\CR\\langle L^{\\pm1}, M^{\\pm 1} \\rangle/ (LM - t^2 ML).$$\n\nLet $$\\mathcal A_K := \\{ P \\in \\mathcal T \\mid  P J_K=0\\},$$ which is a left-ideal of $\\mathcal T$, called the {\\em recurrence ideal} of $K$. It was proved in \\cite{GL} that for every knot",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0331v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1404.0331v1  [math.GT]  1 Apr 2014\nTHE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS\nANH T. TRAN\nAbstract. The AJ conjecture, formulated by Garoufalidis, relates the A-polynomial",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0331v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The AJ conjecture",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-003-03-the-aj-conjecture.md",
+      "narrative": null,
+      "content": "The colored Jones polynomials are powerful invariants of knots, but little is known about their relationship with classical invariants like the fundamental group. Inspired by the theory of noncommutative A-ideals of Frohman, Gelca and Lofaro \\cite{FGL, Ge} and the theory of $q$-holonomicity of quantum invariants of Garoufalidis and Le \\cite{GL}, Garoufalidis \\cite{Ga04} formulated the following conjecture that relates the A-polynomial and the colored Jones polynomial of a knot in the 3-pshere.\n\n\\begin{conjecture}{\\bf (AJ conjecture)} For every knot $K$ in $S^3$, $\\alpha_K \\mid_{t=-1}$ is equal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0331v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main result",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-004-04-main-result.md",
+      "narrative": null,
+      "content": "For a finitely generated group $G$, let $\\chi(G)$ denote the $SL_2(\\BC)$-character variety of $G$, see \\cite{CS}. For a manifold $Y$ we use $\\chi(Y)$ also to denote $\\chi(\\pi_1(Y))$. Suppose  $G=\\BZ^2$.\nEvery pair  of generators $\\mu, \\lambda$ will define an isomorphism\nbetween $\\chi(G)$ and $(\\BC^*)^2/\\tau$, where $(\\BC^*)^2$ is the\nset of non-zero complex pairs $(M,L)$ and $\\tau$ is the involution\n$\\tau(M,L):=(M^{-1},L^{-1})$. For an algebraic set $V$ (over $\\BC$), let $\\BC[V]$ denote the ring\nof regular functions on $V$.  For example, $\\BC[(\\BC^*)^2/\\tau]=\n\\ft^\\sigma$, the $\\sigma$-invarian",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0331v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Plan of the paper",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-005-05-plan-of-the-paper.md",
+      "narrative": null,
+      "content": "In Section \\ref{cjp} we prove some properties of the colored Jones polynomial of cabled knots. In Section \\ref{general} we prove a result about the relationship between the AJ conjecture and the strong AJ conjecture, and consequently prove one part of Theorem \\ref{th2}. The proof of the other part of Theorem \\ref{th2} is given in Sections \\ref{q>2}--\\ref{s=2}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0331v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgment",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-006-06-acknowledgment.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0331v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Colored Jones polynomial of cabled knots",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-007-1-the-colored-jones-polynomial-of-cabled-knots.md",
+      "narrative": null,
+      "content": "\\label{cjp}\n\nBy \\cite{Mo}, the formula for the colored Jones polynomial of the $(r,s)$-cabled knot $K^{(r,s)}$ over a knot $K$ is given by\n\\begin{equation}\n\\label{cjp-cable}\nJ_{K^{(r,s)}}(n)= t^{-rs(n^2-1)} \\sum_{j=-\\frac{n-1}{2}}^{\\frac{n-1}{2}} t^{4rj(js+1)} J_K(2sj+1).\n\\end{equation}\n\n\\begin{lemma}\n\\label{J_C}\nOne has\n\\begin{eqnarray*}\n&& J_{K^{(r,s)}}(n+2) - t^{-4rs(n+1)} J_{K^{(r,s)}}(n) \\\\\n&=& t^{-2rs(n+1)} \\left( t^{2r(n+1)}J_{K}(s(n+1)+1) - t^{-2r(n+1)}J_{K}(s(n+1)-1) \\right).\n\\end{eqnarray*}\n\\end{lemma}\n\n\\begin{proof}\nFrom Eq. \\eqref{cjp-cable} we have\n\\begin{eqnarray*}\n&& J_{K^{(r,s)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0331v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On the strong AJ conjecture",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-008-2-on-the-strong-aj-conjecture.md",
+      "narrative": null,
+      "content": "\\label{general}\n\nLet $\\ve$ be the map reducing $t=-1$.\n\n\\begin{lemma}\n\\label{AJ}\nSuppose the AJ conjecture holds true for a knot $K$ and the A-polynomial $A_K$ does not have any non-trivial $M$-factors. Then $\\sqrt{\\ve(\\CA_K^{\\sigma})} \\subset \\fp$.\n\\end{lemma}\n\n\\begin{proof}\nSince the AJ conjecture holds true for $K$, we have $\\ve(\\alpha_K)=f(M)A_K$ for some non-zero $f(M) \\in \\BC(M)$. For every $\\delta \\in \\CA_K$, by \\cite[Lemma 2.5]{Tr}, there exist $g(t,M) \\in \\BC[t^{\\pm 1},M]$ and $\\gamma \\in \\CT$ such that $\\delta=\\frac{1}{g(t,M)}\\,\\gamma\\,\\alpha_K$ and $\\varepsilon (g) \\not= 0$. It foll",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0331v1/blocks/lem-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "lem-sec-009-01.md",
+      "narrative": null,
+      "content": "For all positive integers m, one has (L2m −t−4pqm2M−2pqm)JT ∈R[M±1].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0331v1/blocks/prop-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "prop-sec-009-02.md",
+      "narrative": null,
+      "content": "One has (L2M2pqs2 + L−2M−2pqs2 −t4r−4pqs −t−4r+4pqs+8pqs2)G1 ∈ R[M±1], (L2M2pqs2 + L−2M−2pqs2 −t−4r+4pqs −t4r−4pqs+8pqs2)G2 ∈ R[M±1].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0331v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Case s>2 is odd and q>2",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-009-3-case-s2-is-odd-and-q2.md",
+      "narrative": null,
+      "content": "From [Tr, Lemma 1.1] we have JT(n + 2) −t−4pq(n+1)JT(n) ∈R[t±2n], i.e.\n(3.1)\n(L2 −t−4pqM−2pq)JT ∈R[M±1].\nLemma 3.1. For all positive integers m, one has\n(L2m −t−4pqm2M−2pqm)JT ∈R[M±1].\nProof. From (3.1) we have (L2M2pq −t4pq)JT ∈R[M±1]. It follows that\n((L2M2pq)m −t4pqm)JT ∈R[M±1].\nSince (L2M2pq)m = t−4pqm(m−1)L2mM2pqm, we have (L2mM2pqm −t4pqm2)JT ∈R[M±1].\nThe lemma follows since L2mM2pqm = t8pqm2M2pqmL2m.\n□\nProposition 3.2. One has\n(L2M2pqs2 + L−2M−2pqs2 −t4r−4pqs −t−4r+4pqs+8pqs2)G1\n∈\nR[M±1],\n(L2M2pqs2 + L−2M−2pqs2 −t−4r+4pqs −t4r−4pqs+8pqs2)G2\n∈\nR[M±1].\nProof. From Lemma 3.1 we have\nJT(s(n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0331v1/blocks/lem-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "lem-sec-010-01.md",
+      "narrative": null,
+      "content": "When q = 2, for all positive integers m, one has (Lm −(−1)mt−2pm2M−2pm)JT ∈R[M±1].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0331v1/blocks/prop-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "prop-sec-010-02.md",
+      "narrative": null,
+      "content": "When q = 2 and s is odd, one has (LM2ps2 + L−1M−2ps2 + t2r−2ps(s+2) + t−2r+2ps(3s+2))G1 ∈ R[M±1], (LM2ps2 + L−1M−2ps2 + t−2r−2ps(s−2) + t2r+2ps(3s−2))G2 ∈ R[M±1].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0331v1/blocks/prop-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "prop-sec-011-01.md",
+      "narrative": null,
+      "content": "When s is even, one has (LMpqs2 + L−1M−pqs2 −t2r−pqs(s+2) −t−2r+pqs(3s+2))G1 ∈ R[M±1], (LMpqs2 + L−1M−pqs2 −t−2r−pqs(s−2) −t2r+pqs(3s−2))G2 ∈ R[M±1]. ANH T. TRAN",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0331v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Case s>2 is odd and q=2",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-010-4-case-s2-is-odd-and-q2.md",
+      "narrative": null,
+      "content": "From [Tr, Lemma 1.5] we have JT(n + 1) + t−2p(2n+1)JT(n) ∈R[t±2n], i.e.\n(4.1)\n(L + t−2pM−2p)JT ∈R[M±1].\nLemma 4.1. When q = 2, for all positive integers m, one has\n(Lm −(−1)mt−2pm2M−2pm)JT ∈R[M±1].\nProof. From (4.1) we have (LM2p + t2p)JT ∈R[M±1]. It follows that\n((LM2p)m −(−t2p)m)JT ∈R[M±1].\nSince (LM2p)m = t−2pm(m−1)LmM2pm, we have (LmM2pm −(−1)mt2pm2)JT ∈R[M±1].\nThe lemma follows since LmM2pm = t4pm2M2pmLm.\n□\nProposition 4.2. When q = 2 and s is odd, one has\n(LM2ps2 + L−1M−2ps2 + t2r−2ps(s+2) + t−2r+2ps(3s+2))G1\n∈\nR[M±1],\n(LM2ps2 + L−1M−2ps2 + t−2r−2ps(s−2) + t2r+2ps(3s−2))G2\n∈\nR[M±1].\nProo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0331v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Case s>2 is even",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-011-5-case-s2-is-even.md",
+      "narrative": null,
+      "content": "Proposition 5.1. When s is even, one has\n(LMpqs2 + L−1M−pqs2 −t2r−pqs(s+2) −t−2r+pqs(3s+2))G1\n∈\nR[M±1],\n(LMpqs2 + L−1M−pqs2 −t−2r−pqs(s−2) −t2r+pqs(3s−2))G2\n∈\nR[M±1].\n8\nANH T. TRAN\nProof. From Lemma 3.1 we have\nJT(s(n + 2) + 1) −t−pqs(2sn+3s+2)JT(s(n + 1) + 1) ∈R[t±2n].\nIt follows that G1(n + 1) −t2r−pqs(2sn+3s+2)G1(n) ∈R[t±2n]. Hence\n(L −t2r−pqs(3s+2)M−pqs2)G1 ∈R[M±1],\nwhich implies that (LMpqs2 −t2r−pqs(s+2))G1 ∈R[M±1]. Hence\n(1 −t−2r+2pq(s+2)L−1M−2ps2)(LMpqs2 −t2r−pqs(s+2))G1 ∈R[M±1].\nThe proof for G2 is similar.\n□\nBy applying Proposition 5.1, we can show that p ⊂\np\nε(Aσ\nC) as in Section 3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0331v1/blocks/prop-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "prop-sec-012-01.md",
+      "narrative": null,
+      "content": "One has (LM4pq + L−1M−4pq −1 −t8pq)G ∈R[M±1].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0331v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Case s=2",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-012-6-case-s2.md",
+      "narrative": null,
+      "content": "In the case s = 2 we let G(n) = JK(2n + 1). Then, by Lemma 1.2, we have\n(6.1)\nMr(L + t−2rM−2r)JC = G.\nProposition 6.1. One has\n(LM4pq + L−1M−4pq −1 −t8pq)G ∈R[M±1].\nProof. From [Tr, Lemma 1.1] we have\nJT(2n + 3) −t−8pq(n+1)JT(2n + 1) ∈R[t±2n],\ni.e. (L −t−8pqM−4pq)G ∈R[M±1]. It follows that (LM4pq −1)G ∈R[M±1]. Hence\n(1 −L−1M−4pq)(LM4pq −1)G ∈R[M±1].\nThe proposition follows.\n□\nLet P = LM4pq + L−1M−4pq −1 −t8pq. Note that σ(P) = P. By Proposition 6.1 we\nhave PG ∈R[M±1]. By Lemma 2.3, we can choose Q ∈R[L±1] such that σ(Q) = Q,\nε(Q) = (L + L−1 −2)m for some m ≥1, and Q(PG) = 0. Eq. (6.1) then imp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0331v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-013-references.md",
+      "narrative": null,
+      "content": "References\n[CCGLS] D. Cooper, M. Culler, H. Gillet, D. Long and P. Shalen, Plane curves associated to character\nvarieties of 3-manifolds, Invent. Math. 118 (1994), pp. 47–84.\n[CS]\nM. Culler and P. Shalen, Varieties of group representations and splittings of 3-manifolds, Ann.\nof Math. (2) 117 (1983), no. 1, 109–146.\n[FGL]\nC. Frohman, R. Gelca, and W. Lofaro, The A-polynomial from the noncommutative viewpoint,\nTrans. Amer. Math. Soc. 354 (2002), no. 2, 735–747.\n[Ga1]\nS. Garoufalidis, Diﬀerence and diﬀerential equations for the colored Jones function, J. Knot\nTheory and Its Ramiﬁcations 17 (2008)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}
