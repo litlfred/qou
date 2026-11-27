@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T19:18:03Z
+updated_at: 2026-11-27T19:22:33Z
 parent: qou-dk7p
 ---
 
@@ -67,3 +67,6 @@ KEY for research leg (p.854, Remark 2 after 5.8): without 5.3, obstruction to li
 
 
 2026-11-27 CORRECTION: TCompat is Drinfeld's (5.14) itself (page-012 line 95: A + g(A,B)^-1 B g(A,B) + g(A,C)^-1 C g(A,C) = 0 for A+B+C=0), a defining GRT1 condition. The repo's '(5.13)/(5.14)' labels are Drinfeld's (5.12)/(5.13). The grt-in-krv framing is withdrawn; the decision card on it was withdrawn. #9591 (stacked on #9585): HexagonUniversal.lean, hexagon_act_U4_universal (needs phi's hexagon only at the universal family). exp516.py: Exp for group law (5.16), Exp(psi)=sum L^k(1)/k!, L(x)=D_psi(x)+x psi, satisfies (5.12)-(5.15) through degree 8 for sigma3 (exact Q). Open: (5.12),(5.14) preserved by (5.16); linear-equation uniqueness argument; Phi∘g ≡ Phi+y.
+
+
+2026-11-27: #9575 merged. #9595 (stacked on #9591): GRTClosure.lean, comp_inv512 and comp_tcompat: law (5.16) preserves (5.12),(5.14) for evaluations in a nil ideal; with #9580/#9591 all four GRT1 conditions closed under (5.16) at evaluation level. Open: g1∘g2 as truncated polynomial; flow/uniqueness argument for Exp(y) in GRT1; Phi∘g ≡ Phi+y.
