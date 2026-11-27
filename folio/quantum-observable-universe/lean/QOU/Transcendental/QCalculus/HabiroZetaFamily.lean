@@ -1,6 +1,11 @@
 /-
 # ζ-indexed families, archimedean layer — the structure the bracket inhabits
 
+**Transcendental subgraph (moved from `QCalculus/` 2026-11-27, bean `qou-gfsr`).**
+Only the archimedean evaluation lives here (`ℂ`, `ζ₈ = e^{πi/4}`, the real `√2`).
+The algebraic facts (bar invariance, Galois equivariance, `[2]_{ζ₄} = 0`,
+`[2]_{ζ₈}² = 2`) are proved over any field in `QCalculus.HabiroBracket`.
+
 Completes the Lean half of bean qou-zt3h (T4 of the Habiro attack
 plan). The GSWZ picture (arXiv:2412.04241, `library/arxiv-2412.04241v2/2412.04241v2.pdf`)
 organizes a Habiro-module element as a family of fibres over the roots
@@ -42,7 +47,7 @@ phase-4.
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -/
-import QCalculus.HabiroBracketFamily
+import QOU.Transcendental.QCalculus.HabiroBracketFamily
 
 namespace QOU.Machinery.CoxeterParabolic
 
@@ -83,9 +88,7 @@ noncomputable def bracketZetaFamily : ZetaFamily where
 /-- The inhabitant's ζ₄ fibre is the monodromy-point modular zero. -/
 theorem bracketZetaFamily_zeta4 : bracketZetaFamily.toFun I = 0 := by
   show bracketFamily I = 0
-  unfold bracketFamily
-  rw [Complex.inv_I]
-  ring
+  exact bracket_eq_zero_of_sq_eq_neg_one Complex.I_sq
 
 /-- The inhabitant's ζ₈ fibre is `√2` — the Q_β witness point. -/
 theorem bracketZetaFamily_zeta8 :
