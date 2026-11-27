@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-27T20:11:35Z
-updated_at: 2026-11-27T22:04:29Z
+updated_at: 2026-11-27T22:10:09Z
 parent: qou-myts
 ---
 
@@ -26,3 +26,7 @@ The n−p EM term needs a derived energy-to-length map. All representations are 
 
 
 2026-11-27T22:05Z correction (from the electron-weight thread, checked by #9767): on the mass chart the n−p cell is m_n − m_p = −2/w_e m_e = −0.319 MeV, because w_e > 0 (CAL-1). That is the opposite sign to the log chart's +0.289 MeV, with the same size. So the mass chart misses the sign as well as the size. My earlier note above, giving +0.319, is wrong on the sign.
+
+
+
+2026-11-27T22:30Z PR #9777 (audit §8): q-NS (q² from the #9752 Haar budget) and combinatorial factors (f^(2,1) = 2, Molien sum = 1, #9747 writhe ratio ≤ 1) neither supply the cell's ~4× nor fix its sign. Common factors cancel in τ_p/τ_n. A factor on E keeps the sign, and the largest derived one is q₀² = 1.232. A factor on the ratio would need q∂log g < −2 to flip the sign. Scope (a). The open part is the scale E or a second nucleon element (route 2), plus the orientation question in #9767.
