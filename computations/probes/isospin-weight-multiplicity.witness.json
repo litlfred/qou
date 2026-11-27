@@ -1,0 +1,84 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-27T22:22:51.519004+00:00",
+  "commitSha": "c1f3f7c5ac579b79d4dacec545014db6c384cea0",
+  "assertions": [
+    {
+      "name": "n_rows",
+      "computed": "1010",
+      "expected": "1010",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "no_term_median_92.68",
+      "computed": "92.68",
+      "expected": "92.68",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "weight_le_rechecked_M<60",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "isospin-weight-multiplicity",
+  "scriptFile": "isospin_weight_multiplicity_probe.py",
+  "scriptHash": "cba162a05336",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "mpmath": "1.4.1",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/isospin_weight_multiplicity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/isospin_weight_multiplicity_probe.py"
+  },
+  "description": "Size of the isospin multiplicity term: weight count C(3A, n_d) and lowest block dimension, energy map B += alpha ln(count) ASSUMED; Table 3.4b Q_beta medians as a comparison only (Lean QOU.Nuclear.IsospinWeightMultiplicity).",
+  "data": {
+    "alpha_MeV": "3.74445965994161",
+    "table_3_4b_median_rel_pct": {
+      "no_term": "92.6874",
+      "weight": "84.2593",
+      "block": "91.6119"
+    },
+    "samples": {
+      "48Ca": {
+        "weight_share_MeV": "-0.82677",
+        "gaussian_-alpha*2Tz^2/N_MeV": "-0.832102",
+        "classical_23*(N-Z)^2/A_MeV": "-30.6667"
+      },
+      "56Fe": {
+        "weight_share_MeV": "-0.177267",
+        "gaussian_-alpha*2Tz^2/N_MeV": "-0.178308",
+        "classical_23*(N-Z)^2/A_MeV": "-6.57143"
+      },
+      "132Sn": {
+        "weight_share_MeV": "-4.83436",
+        "gaussian_-alpha*2Tz^2/N_MeV": "-4.84132",
+        "classical_23*(N-Z)^2/A_MeV": "-178.424"
+      },
+      "208Pb": {
+        "weight_share_MeV": "-5.80421",
+        "gaussian_-alpha*2Tz^2/N_MeV": "-5.80871",
+        "classical_23*(N-Z)^2/A_MeV": "-214.077"
+      }
+    }
+  }
+}
