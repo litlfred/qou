@@ -11,7 +11,7 @@ substrate parameter `q` agrees with its measured value within the
 uncertainty `Δq` — is an *empirical consistency* statement about an
 opaque substrate parameter.  No faithful Mathlib structure reduces it,
 so this is pattern C of the vacuity-fix playbook: the context class is
-the carrier of the substrate data, and `LocalSubstrateQ` **names** the
+the carrier of the substrate data, and `LocalAetherQ` **names** the
 conditional conjecture as a `Prop` (it is honestly *not asserted* — no
 `theorem … := ⟨ctx.claim_*⟩` self-assuming projection; an instance
 discharging it is the open conditional claim).
@@ -42,11 +42,14 @@ locally measured value within the measurement uncertainty:
   `|q − q_measured| ≤ Δq`.
 
 This is the §3b "name the conditional conjecture" disposition (pattern
-C): `LocalSubstrateQ ctx` is the proposition the manuscript conjectures
+C): `LocalAetherQ ctx` is the proposition the manuscript conjectures
 for the substrate data `ctx`; the open state is honestly represented by
 the absence of an instance.  It is *not* a self-assuming projection. -/
 -- Ref: [leitner2026] quantum-observable-universe/observations/local-substrate-q.ts
-def LocalSubstrateQ (ctx : LocalSubstrateQContext) : Prop :=
+def LocalAetherQ (ctx : LocalSubstrateQContext) : Prop :=
     |ctx.q - ctx.q_measured| ≤ ctx.Δq
+
+@[deprecated LocalAetherQ (since := "2026-11-27")]
+abbrev LocalSubstrateQ := @LocalAetherQ
 
 end QOU.Experimental

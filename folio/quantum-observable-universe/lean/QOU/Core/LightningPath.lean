@@ -65,7 +65,7 @@ lake exe graph QOU.LightningPath   -- renders the full dependency DAG
 ```
 
 The resulting graph shows the critical path from `FrobeniusHopfData` through
-`ArchimedeanSubstrateField`, `TopologicalMassDecomposition`, `ArchimedeanMassFormula`,
+`ArchimedeanAetherField`, `TopologicalMassDecomposition`, `ArchimedeanMassFormula`,
 and `HadronicMass` to `CODATAChain.end_to_end`.
 -/
 

@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:flavor-split-aether",
   renamedFrom: ["prop:flavor-split-substrate"],
-  lean: { ref: "qou:QOU.MassTheory.HadronicMass.flavor_split_substrate",
+  lean: { ref: "qou:QOU.MassTheory.HadronicMass.flavor_split_aether",
     validation: "not_checked",
   },
   title: "Closed and factored forms of the aether flavor split",

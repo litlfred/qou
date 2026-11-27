@@ -37,29 +37,29 @@ namespace QOU.InformationTheory
     unit-normalised full circuit.
 
     LaTeX: `\label{sec:planck-info-unit}`, `\label{rem:planck-length-share-vs-total}` -/
-noncomputable def reebStepShare {M : Type*} (sp : ArchimedeanSubstrateField M)
+noncomputable def reebStepShare {M : Type*} (sp : ArchimedeanAetherField M)
     (p : M) : ℝ :=
   quantumPlanckConstant sp p
 
 /-- The per-step Reeb share is non-negative. -/
-theorem reebStepShare_nonneg {M : Type*} (sp : ArchimedeanSubstrateField M)
+theorem reebStepShare_nonneg {M : Type*} (sp : ArchimedeanAetherField M)
     (p : M) : 0 ≤ reebStepShare sp p :=
   quantumPlanckConstant_nonneg sp p
 
 /-- The per-step Reeb share is strictly bounded above by `1`. -/
-theorem reebStepShare_lt_one {M : Type*} (sp : ArchimedeanSubstrateField M)
+theorem reebStepShare_lt_one {M : Type*} (sp : ArchimedeanAetherField M)
     (p : M) : reebStepShare sp p < 1 :=
   quantumPlanckConstant_lt_one sp p
 
 /-- The per-step Reeb share vanishes at classicality (`q(p) = 1`). -/
-theorem reebStepShare_classical {M : Type*} (sp : ArchimedeanSubstrateField M)
+theorem reebStepShare_classical {M : Type*} (sp : ArchimedeanAetherField M)
     (p : M) (hq : sp.field p = 1) :
     reebStepShare sp p = 0 :=
   planck_classical_limit sp p hq
 
 /-- **Local Planck circuit time** `t_P(p) = ℏ_q(p)⁻¹`: the number of elementary
     Reeb shares in one full Reeb circuit at `p ∈ M`. -/
-noncomputable def planckCircuitTime {M : Type*} (sp : ArchimedeanSubstrateField M)
+noncomputable def planckCircuitTime {M : Type*} (sp : ArchimedeanAetherField M)
     (p : M) : ℝ :=
   (reebStepShare sp p)⁻¹
 
@@ -71,7 +71,7 @@ def normalisedReebCircuit : ℝ := 1
     per-step Reeb share `ℏ_q(p)` and the circuit tick `t_P(p)` equals the
     unit-normalised Reeb circuit (`1`). -/
 theorem reebStepShare_mul_planckCircuitTime {M : Type*}
-    (sp : ArchimedeanSubstrateField M) (p : M) (hq : sp.field p > 1) :
+    (sp : ArchimedeanAetherField M) (p : M) (hq : sp.field p > 1) :
     reebStepShare sp p * planckCircuitTime sp p = normalisedReebCircuit := by
   unfold planckCircuitTime normalisedReebCircuit reebStepShare quantumPlanckConstant
   have hq_pos : 0 < sp.field p := by linarith
@@ -85,15 +85,15 @@ theorem reebStepShare_mul_planckCircuitTime {M : Type*}
 /-- Compatibility alias retained for external callers; prefer `reebStepShare`
     for the per-step share `ℏ_q(p)` and `normalisedReebCircuit` for the unit
     circuit `ℏ_q · t_P = 1`. -/
-noncomputable abbrev localPlanckLength {M : Type*} (sp : ArchimedeanSubstrateField M)
+noncomputable abbrev localPlanckLength {M : Type*} (sp : ArchimedeanAetherField M)
     (p : M) : ℝ :=
   reebStepShare sp p
 
-theorem localPlanckLength_nonneg {M : Type*} (sp : ArchimedeanSubstrateField M)
+theorem localPlanckLength_nonneg {M : Type*} (sp : ArchimedeanAetherField M)
     (p : M) : 0 ≤ localPlanckLength sp p :=
   reebStepShare_nonneg sp p
 
-theorem localPlanckLength_classical {M : Type*} (sp : ArchimedeanSubstrateField M)
+theorem localPlanckLength_classical {M : Type*} (sp : ArchimedeanAetherField M)
     (p : M) (hq : sp.field p = 1) :
     localPlanckLength sp p = 0 :=
   reebStepShare_classical sp p hq
@@ -106,12 +106,12 @@ theorem localPlanckLength_classical {M : Type*} (sp : ArchimedeanSubstrateField 
     deep-quantum regime (`q → ∞`, rate → 1).
 
     LaTeX: `\label{sec:time-info}` -/
-noncomputable def informationRate {M : Type*} (sp : ArchimedeanSubstrateField M)
+noncomputable def informationRate {M : Type*} (sp : ArchimedeanAetherField M)
     (p : M) : ℝ :=
   quantumPlanckConstant sp p
 
 /-- The information rate is bounded in `[0, 1)`. -/
-theorem informationRate_bounded {M : Type*} (sp : ArchimedeanSubstrateField M)
+theorem informationRate_bounded {M : Type*} (sp : ArchimedeanAetherField M)
     (p : M) : 0 ≤ informationRate sp p ∧ informationRate sp p < 1 :=
   ⟨quantumPlanckConstant_nonneg sp p, quantumPlanckConstant_lt_one sp p⟩
 
@@ -132,7 +132,7 @@ theorem informationRate_bounded {M : Type*} (sp : ArchimedeanSubstrateField M)
     LaTeX: `\label{sec:big-bang-info}` -/
 structure DeepQuantumRegime (M : Type*) where
   /-- The substrate parameter. -/
-  sp : ArchimedeanSubstrateField M
+  sp : ArchimedeanAetherField M
   /-- The point where the regime holds. -/
   point : M
   /-- The deep-quantum threshold Q > 1 (e.g. Q = φ² ≈ 2.618). -/
@@ -150,7 +150,7 @@ structure DeepQuantumRegime (M : Type*) where
     LaTeX: `\label{sec:big-bang-info}` (contrast) -/
 structure ClassicalRegime (M : Type*) where
   /-- The substrate parameter. -/
-  sp : ArchimedeanSubstrateField M
+  sp : ArchimedeanAetherField M
   /-- The point where the regime holds. -/
   point : M
   /-- `q(p) = 1` at this point (classicality). -/

@@ -11,7 +11,7 @@ export default definition({
   ],
   cites: ["tate1967"],
   lean: {
-    ref: "qou:QOU.BringsSurface.AdelicSubstrate",
+    ref: "qou:QOU.BringsSurface.AdelicBaseRing",
     validation: "not_checked",
   },
 });

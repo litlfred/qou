@@ -1,4 +1,4 @@
-import QOU.Core.SubstrateParameter
+import QOU.Core.AetherParameter
 
 /-!
 # QOU.qLieBracket
@@ -10,7 +10,7 @@ That file no longer exists — the library was split, and `qLieBracket` now live
 
 The q-deformed Lie bracket is the **archimedean** realisation of the
 categorical q-Lie bracket. It is stated over `ℝ` because the substrate
-parameter `q = sp.field p : ℝ` (`ArchimedeanSubstrateField.field`) is an
+parameter `q = sp.field p : ℝ` (`ArchimedeanAetherField.field`) is an
 ℝ-valued field with `q(p) ≥ 1`; the coefficient `q⁻¹` and the Planck
 constant `1 − q⁻¹` therefore live on the archimedean side of the
 substrate→archimedean wall.
@@ -26,14 +26,14 @@ namespace QOU
     evaluated pointwise at `p : M`, with `q = sp.field p`.
 
     LaTeX: `\label{def:q-lie-bracket}` -/
-noncomputable def qLieBracket {M : Type*} (sp : ArchimedeanSubstrateField M)
+noncomputable def qLieBracket {M : Type*} (sp : ArchimedeanAetherField M)
     (bracket_VW : M → ℝ) (thetaV_LxiW : M → ℝ) (thetaW_LxiV : M → ℝ)
     (p : M) : ℝ :=
   (sp.field p)⁻¹ * bracket_VW p +
     (1 - (sp.field p)⁻¹) * (thetaV_LxiW p - thetaW_LxiV p)
 
 /-- The q-deformed Lie bracket recovers the classical bracket at `q = 1`. -/
-theorem qLieBracket_classical {M : Type*} (sp : ArchimedeanSubstrateField M)
+theorem qLieBracket_classical {M : Type*} (sp : ArchimedeanAetherField M)
     (bracket_VW thetaV_LxiW thetaW_LxiV : M → ℝ) (p : M) (hq : sp.field p = 1) :
     qLieBracket sp bracket_VW thetaV_LxiW thetaW_LxiV p = bracket_VW p := by
   simp [qLieBracket, hq, inv_one, sub_self, one_mul, zero_mul, add_zero]

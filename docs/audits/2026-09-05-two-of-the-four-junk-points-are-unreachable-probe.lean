@@ -9,14 +9,14 @@ PR #6839 reported *"the weaker-form count is FOUR, not the two anticipated"* and
 four junk points in the archimedean twins. That count is **wrong in context**, and this
 file is the correction.
 
-`QOU.ArchimedeanSubstrateField` (`QuantumObservableUniverse/SubstrateParameter.lean:88`)
+`QOU.ArchimedeanAetherField` (`QuantumObservableUniverse/AetherParameter.lean:88`)
 carries an axiom:
 
 ```lean
 field_ge_one : ∀ (p : M), 1 ≤ field p
 ```
 
-Every archimedean twin in `MathConstants.lean` takes an `ArchimedeanSubstrateField` and
+Every archimedean twin in `MathConstants.lean` takes an `ArchimedeanAetherField` and
 evaluates at `sp.field p`. So `q ≥ 1` **always**, and a junk point at `q < 1` cannot be
 reached through the library's own API.
 
@@ -34,7 +34,7 @@ their declarations and check what is actually being quantified over. A junk valu
 argument the type forbids is not a defect; it is unreachable code.
 
 **What survives, and it is sharper than before.** `q = 1` satisfies `1 ≤ q`, and
-`SubstrateParameter.lean`'s own docstring says *"`q(p) = 1` is the classical limit"* —
+`AetherParameter.lean`'s own docstring says *"`q(p) = 1` is the classical limit"* —
 so it is not merely reachable but a named, meaningful point of the model. And
 `speedOfLight`'s own docstring says it *"diverges at classicality (q → 1)"*. The
 declaration returns `0` there. That is a live defect at a distinguished point, which

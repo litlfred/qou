@@ -14,7 +14,7 @@ This file is verified standalone.  `ReebAlgebraData` below is a
 file-local three-field carrier — object, multiplication, unit — inlined
 so the derivation block elaborates without an inter-sibling import.  It
 is **not** the Frobenius–Hopf substrate, which is the eight-field
-`FrobeniusHopfSubstrate` of `frobenius-hopf-substrate.lean`
+`FrobeniusHopfAether` of `frobenius-hopf-substrate.lean`
 (`def:frobenius-hopf-aether`) and carries eleven laws this one does
 not, the two antipode axioms among them.
 
@@ -23,7 +23,7 @@ withdrawn: they are different structures with different obligations, so
 there is nothing to synchronise.  What the old wording produced was a
 *fully qualified* name collision — this carrier, the canonical
 structure, and a third in `substrate-self-duality.lean` all declared
-`QOU.AlgebraicSubstrate.FrobeniusHopfSubstrate` — latent only because
+`QOU.AlgebraicSubstrate.FrobeniusHopfAether` — latent only because
 nothing imports two of them.  Bean `qou-hmhw`.
 -/
 
@@ -40,9 +40,9 @@ universe u v
     Reeb derivation below consumes, and nothing else.
 
     This is a file-local minimal carrier, **not** a Frobenius–Hopf
-    substrate.  It was named `FrobeniusHopfSubstrate` until 2026-09-15,
+    substrate.  It was named `FrobeniusHopfAether` until 2026-09-15,
     which collided — at the *fully qualified* name
-    `QOU.AlgebraicSubstrate.FrobeniusHopfSubstrate` — with the canonical
+    `QOU.AlgebraicSubstrate.FrobeniusHopfAether` — with the canonical
     eight-field structure in `frobenius-hopf-substrate.lean` and with a
     third three-field carrier in `substrate-self-duality.lean`.  Nothing
     imported two of the three, so the collision was latent rather than a

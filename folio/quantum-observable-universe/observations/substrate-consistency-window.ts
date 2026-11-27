@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:aether-consistency-window",
   renamedFrom: ["prop:substrate-consistency-window"],
-  lean: { ref: "qou:QOU.Observations.substrate_consistency_window", validation: "not_checked" },
+  lean: { ref: "qou:QOU.Observations.aether_consistency_window", validation: "not_checked" },
   title: "Overdetermination of the aether parameter",
   tags: [
     "substrate-parameter",
@@ -24,7 +24,7 @@ export default proposition({
       date: "2026-08-08",
       body:
         "**§7c base-ring note (archimedean specialisation).** " +
-        "The `ℝ` of `substrate_consistency_window.lean` are **measurement " +
+        "The `ℝ` of `aether_consistency_window.lean` are **measurement " +
         "windows**: `epsilon : ℕ → ℝ` is the half-width of the measurement " +
         "window for each independent measurement class, and `q_lo k = q* - ε " +
         "k`, `q_hi k = q* + ε k` are that class's experimental bounds on the " +

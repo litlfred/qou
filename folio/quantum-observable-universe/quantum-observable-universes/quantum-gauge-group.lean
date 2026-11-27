@@ -23,7 +23,7 @@ Extracted from folio/quantum-observable-universe/lean/ for content-block co-loca
 Source: folio/quantum-observable-universe/lean/QOU/QuantumGaugeGroup.lean (monolithic).
 That file no longer exists — the library was split, and `QuantumGaugeGroup` now lives at
   folio/quantum-observable-universe/lean/QOU/Glossary.lean
-  folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/SubstrateParameter.lean
+  folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/AetherParameter.lean
 -/
 
 open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory
@@ -41,18 +41,21 @@ abbrev R_q := LaurentPolynomial ℤ
 
     Re-declared from the sibling block `substrate-parameter.lean`
     (`def:aether-parameter`) so this sibling is a self-contained
-    compilation unit — importing the library `SubstrateParameter`
+    compilation unit — importing the library `AetherParameter`
     module would collide with its own `QuantumGaugeGroup`
     declaration.  Keep field-for-field in sync with the sibling. -/
-structure SubstrateParameter (M : Type*) where
+structure AetherParameter (M : Type*) where
   /-- The categorical substrate field `q : M → R_q`. -/
   field : M → R_q
+
+@[deprecated AetherParameter (since := "2026-11-27")]
+abbrev SubstrateParameter := @AetherParameter
 
 /-- **Quantum gauge group** in the ℂ realisation: the family of quantum
     groups `{SU_{q(p)}(2)}_{p ∈ M}` obtained by deforming `SU(2)` pointwise.
 
     LaTeX: `\label{def:quantum-gauge-group}` -/
-structure QuantumGaugeGroup (M : Type*) extends SubstrateParameter M where
+structure QuantumGaugeGroup (M : Type*) extends AetherParameter M where
   /-- The quantum group at each point (opaque type family). -/
   groupAt : M → Type*
 

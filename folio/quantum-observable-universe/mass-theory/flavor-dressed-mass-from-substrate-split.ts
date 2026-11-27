@@ -23,7 +23,7 @@ export default proposition({
         "Re-verified rather than taken on trust: appending a `False` derivation " +
         "to the sibling unchanged compiles, exit 0. `F`, `M_N` and `q` are " +
         "mutually unconstrained, so the constant dressing `μ ≡ 1` forces " +
-        "`substrate_split_factor 2 = 0` while that expression is concretely " +
+        "`aether_split_factor 2 = 0` while that expression is concretely " +
         "positive.\n\n" +
         "Sibling deleted; all three of its declarations exist in the library, " +
         "which carries the honest §3b-cond form — a `DressedMassSubstrateSplit` " +

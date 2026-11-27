@@ -2,7 +2,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Linarith
 
 /-!
-# QOU.Observations.substrate_consistency_window
+# QOU.Observations.aether_consistency_window
 
 **Canonical declaration** for content block
 [`prop:aether-consistency-window`](../../../quantum-observable-universe/observations/substrate-consistency-window.md): *Overdetermination of the substrate parameter*.
@@ -12,7 +12,7 @@ This module states the manuscript claim conditional on the §3b hypothesis class
 
 namespace QOU.Observations
 
-/-- Abstract context for the `substrate_consistency_window` claim — manuscript-themed
+/-- Abstract context for the `aether_consistency_window` claim — manuscript-themed
     typed fields below. -/
 class SubstrateConsistencyWindowContext where
   /-- The categorical object / monoidal structure. -/
@@ -48,7 +48,7 @@ overlap.
 
 The Lean encoding below derives the equality from the hypothesis class. -/
 -- Ref: [leitner2026] quantum-observable-universe/observations/substrate-consistency-window.ts
-theorem substrate_consistency_window (ctx : SubstrateConsistencyWindowContext)
+theorem aether_consistency_window (ctx : SubstrateConsistencyWindowContext)
     [hc : SubstrateConsistencyWindowConjecture ctx] :
     ∀ k : ℕ, k < ctx.n_classes →
       ctx.q_lo k ≤ ctx.q_star ∧ ctx.q_star ≤ ctx.q_hi k := by
@@ -58,5 +58,7 @@ theorem substrate_consistency_window (ctx : SubstrateConsistencyWindowContext)
   constructor
   · linarith
   · linarith
+
+@[deprecated (since := "2026-11-27")] alias substrate_consistency_window := aether_consistency_window
 
 end QOU.Observations

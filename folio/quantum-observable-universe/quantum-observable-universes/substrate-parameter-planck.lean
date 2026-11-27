@@ -2,7 +2,7 @@ import Mathlib.Data.Complex.Basic
 import Mathlib.Tactic
 
 /-!
-# QOU.AlgebraicSubstrate.SubstrateParameterPlanck
+# QOU.AlgebraicSubstrate.AetherParameterPlanck
 
 Substrate parameter and quantum Planck constant.
 
@@ -13,17 +13,20 @@ set_option autoImplicit false
 
 namespace QOU.AlgebraicSubstrate
 
-/-- **SubstrateParameterPlanck**: the deformation parameter `q ∈ ℂ*`
+/-- **AetherParameterPlanck**: the deformation parameter `q ∈ ℂ*`
     and the derived quantum Planck constant `ℏ_q = 1 - q⁻¹`.
 
     LaTeX: `\label{def:aether-parameter-planck}` -/
-structure SubstrateParameterPlanck where
+structure AetherParameterPlanck where
   /-- The substrate parameter `q ∈ ℂ`, nonzero. -/
   q : ℂ
   /-- `q ≠ 0`, ensuring the Hopf algebra is well-defined. -/
   hq_ne_zero : q ≠ 0
   /-- The quantum Planck constant `ℏ_q = 1 - q⁻¹`. -/
   hbar_q : ℂ := 1 - q⁻¹
+
+@[deprecated AetherParameterPlanck (since := "2026-11-27")]
+abbrev SubstrateParameterPlanck := @AetherParameterPlanck
 
 /-- When `q ≠ 1`, the quantum Planck constant `ℏ_q = 1 - q⁻¹` is nonzero.
 
@@ -33,7 +36,7 @@ structure SubstrateParameterPlanck where
     This is the definitional content of `\hbar_q = 1 - q^{-1}` in the
     narrative. -/
 -- Ref: [leitner2026] Chapter 8, §1
-theorem hbar_q_ne_zero (p : SubstrateParameterPlanck)
+theorem hbar_q_ne_zero (p : AetherParameterPlanck)
     (hdef : p.hbar_q = 1 - p.q⁻¹) (hq1 : p.q ≠ 1) :
     p.hbar_q ≠ 0 := by
   rw [hdef]

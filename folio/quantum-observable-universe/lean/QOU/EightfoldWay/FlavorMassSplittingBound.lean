@@ -85,8 +85,8 @@ theorem substrate_to_bound_ratio {R : Type*} [Field R]
 
 /-- At `q > 1`, the substrate split factor is strictly positive. -/
 -- Ref: [leitner2026] braids-and-knots/flavor-mass-splitting-bound
-private lemma substrate_split_factor_pos {q : ℝ} (hq : 1 < q) :
-    0 < substrate_split_factor q := by
+private lemma aether_split_factor_pos {q : ℝ} (hq : 1 < q) :
+    0 < aether_split_factor q := by
   have hq0 : 0 < q := by linarith
   have hq_ne : q ≠ 0 := ne_of_gt hq0
   have hq_inv_pos : 0 < q⁻¹ := inv_pos.mpr hq0
@@ -103,10 +103,12 @@ private lemma substrate_split_factor_pos {q : ℝ} (hq : 1 < q) :
   have h_sqrt_qinv : 0 < Real.sqrt q⁻¹ := Real.sqrt_pos.mpr hq_inv_pos
   have h_sqrt_sum_pos : 0 < Real.sqrt q + Real.sqrt q⁻¹ := by linarith
   have h_qpqinv_pos : 0 < q + q⁻¹ := by linarith
-  unfold substrate_split_factor
+  unfold aether_split_factor
   apply mul_pos
   · apply div_pos (mul_pos (pow_pos hsub_q1 2) h_one_sub_q4_inv) (by norm_num)
   · exact div_pos h_sqrt_sum_pos h_qpqinv_pos
+
+@[deprecated (since := "2026-11-27")] alias substrate_split_factor_pos := aether_split_factor_pos
 
 /-- The Skein-side AM-GM inequality:  at `q > 1`,
     `√q + √q⁻¹ < 3·(q + q⁻¹)`.  Used to derive the strict upper
@@ -176,7 +178,7 @@ theorem flavor_mass_splitting_bound_of_split
     (hM : 0 < M_N) (hq : 1 < q)
     (h_derive :
       F.μ Flavor.down - F.μ Flavor.up
-        = M_N * substrate_split_factor q) :
+        = M_N * aether_split_factor q) :
     0 < F.μ Flavor.down - F.μ Flavor.up ∧
     F.μ Flavor.down - F.μ Flavor.up
       < M_N * (((q - 1)/q)^2 * (q - q⁻¹) * (q + q⁻¹)) := by
@@ -211,17 +213,17 @@ theorem flavor_mass_splitting_bound_of_split
     have := h_ratio
     rw [div_eq_iff hdenom_ne] at this
     linarith
-  -- substrate_split_factor q = ((q-1)/q)² · (q-q⁻¹) · (√q + √q⁻¹) / 3
+  -- aether_split_factor q = ((q-1)/q)² · (q-q⁻¹) · (√q + √q⁻¹) / 3
   have h_factor_form :
-      substrate_split_factor q
+      aether_split_factor q
         = ((q - 1) / q) ^ 2 * (q - q⁻¹) *
             (Real.sqrt q + Real.sqrt q⁻¹) / 3 := by
-    unfold substrate_split_factor
+    unfold aether_split_factor
     rw [h_numerator_form]
     field_simp
   -- Strict upper bound on the factor.
   have h_factor_lt :
-      substrate_split_factor q
+      aether_split_factor q
         < ((q - 1) / q) ^ 2 * (q - q⁻¹) * (q + q⁻¹) := by
     rw [h_factor_form]
     have h_prefactor_pos :
@@ -244,7 +246,7 @@ theorem flavor_mass_splitting_bound_of_split
     exact key
   refine ⟨?_, ?_⟩
   · rw [h_derive]
-    exact mul_pos hM (substrate_split_factor_pos hq)
+    exact mul_pos hM (aether_split_factor_pos hq)
   · rw [h_derive]
     exact mul_lt_mul_of_pos_left h_factor_lt hM
 

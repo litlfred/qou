@@ -1,5 +1,5 @@
 import QOU.Core.Basic
-import QOU.Core.SubstrateParameter
+import QOU.Core.AetherParameter
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Preadditive.Basic
 import Mathlib.Algebra.Order.Field.Basic
@@ -9,11 +9,11 @@ import Mathlib.RingTheory.Real.Irrational
 
 
 /-!
-# QOU.SubstrateParameter.ofReebDecomposition
+# QOU.AetherParameter.ofReebDecomposition
 
 Existence of the substrate parameter: given a Reeb derivation and
 weight decomposition, the interpolated differential d_q is constructed
-and yields a valid `SubstrateParameter`.
+and yields a valid `AetherParameter`.
 
 LaTeX: `\label{thm:aether-parameter-exists}`
 
@@ -50,7 +50,7 @@ content upstream of `ι` stays over `R_q` (or a generic `R`). What lives here is
 the *evaluated* parameter `q₀ = ι(q) ≈ 1.10998`, which is a real number, and
 statements about it.
 
-`SubstrateParameter` (in `QOU.QuantumObservableUniverse.SubstrateParameter`) is
+`AetherParameter` (in `QOU.QuantumObservableUniverse.AetherParameter`) is
 declared with `field : M → ℝ`, so any constructor producing one produces
 evaluated values; that is what forces `ℝ` in the signatures below. Its three
 axioms do **not** all sit on the same side of `ι`:
@@ -83,16 +83,16 @@ universe u v
 
     Given `q₀ > 1` that is not a root of unity (e.g., `q₀`
     transcendental), the constant field `q(p) = q₀` defines a valid
-    `SubstrateParameter M` for any type `M`.
+    `AetherParameter M` for any type `M`.
 
     This is the simplest constructor; non-constant substrate fields
     arise from the Reeb flow parameterisation.
 
     Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 -/
-noncomputable def ArchimedeanSubstrateField.ofConstant
+noncomputable def ArchimedeanAetherField.ofConstant
     (M : Type*) (q₀ : ℝ) (hq_ge : 1 ≤ q₀)
     (hq_root : ∀ (k : ℕ), k ≥ 1 → q₀ ^ k ≠ 1) :
-    ArchimedeanSubstrateField M :=
+    ArchimedeanAetherField M :=
   { field := fun _ => q₀
     field_ge_one := fun _ => hq_ge
     not_root_of_unity := fun _ k hk => hq_root k hk }
@@ -223,7 +223,7 @@ structure CategoricalReeb (C : Type u) [Category.{v} C]
 
     Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 -/
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
-noncomputable def ArchimedeanSubstrateField.ofReebDecomposition
+noncomputable def ArchimedeanAetherField.ofReebDecomposition
     {C : Type*} [CategoryTheory.Category C]
     [CategoryTheory.MonoidalCategory C] [Preadditive C]
     (M : Type*) (wd : WeightDecomposition C)
@@ -235,7 +235,7 @@ noncomputable def ArchimedeanSubstrateField.ofReebDecomposition
     -- forms, ensuring `d_q = q⁻¹ d + ℏ_q · π_V ∘ d` is well-typed.
     -- (A `/-- … -/` docstring is not legal between binders; only `--` is.)
     (wd_reeb_compat : wd.forms = reeb.forms) :
-    ArchimedeanSubstrateField M :=
+    ArchimedeanAetherField M :=
   -- Step 1: Build the interpolated differential at q₀.
   -- This uses the Reeb data (d, π_V from wd/reeb) to define d_q.
   let _interp := InterpolatedDifferential.mk' q₀ hq_pos
@@ -243,7 +243,7 @@ noncomputable def ArchimedeanSubstrateField.ofReebDecomposition
   -- (from reeb) act on the same forms object, so the interpolation
   -- d_q = q⁻¹ · d + (1 − q⁻¹) · π_V ∘ d is well-typed in C.
   let _ := wd_reeb_compat
-  -- Step 3: The SubstrateParameter records q₀ as a constant field.
+  -- Step 3: The AetherParameter records q₀ as a constant field.
   -- The interpolated differential d_q is the categorical witness that
   -- this q₀ produces a valid deformation; the field axioms (positivity,
   -- lower bound, no roots of unity) are inherited from q₀.

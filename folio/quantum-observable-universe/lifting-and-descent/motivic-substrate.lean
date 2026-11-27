@@ -46,7 +46,7 @@ inductive Place : Type
 
 /-- **The motivic substrate** (axiomatic class).
 
-    `MotivicSubstrate K0 Mhat Target` axiomatises the QOU motivic
+    `MotivicBaseRing K0 Mhat Target` axiomatises the QOU motivic
     substrate over:
     * `K0` — the Grothendieck ring `K₀(Var_k)`.
     * `Mhat` — the dimension-completed localization
@@ -76,7 +76,7 @@ inductive Place : Type
     an extension class.
 
     Ref: [kontsevich1995], [denef-loeser2001], [tate1967]. -/
-class MotivicSubstrate
+class MotivicBaseRing
     (K0 Mhat : Type*) [CommRing K0] [CommRing Mhat]
     (Target : Place → Type*) [∀ v, CommRing (Target v)] where
   /-- The Lefschetz motive `𝕃 = [𝔸¹] ∈ K₀(Var_k)`. -/
@@ -129,5 +129,8 @@ class MotivicSubstrate
       Ref: [tate1967]. -/
   nonarchimedean_nontrivial :
     ∃ p : Nat.Primes, Nontrivial (Target (Place.finite p))
+
+@[deprecated MotivicBaseRing (since := "2026-11-27")]
+abbrev MotivicSubstrate := @MotivicBaseRing
 
 end QOU.AlgebraicSubstrate

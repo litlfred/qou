@@ -29,7 +29,7 @@ namespace QOU.Information
     **🛑 Carries content only for `q > 1`.** The docstring used to say this
     "diverges at classicality (q → 1)". As a statement about the mathematics that
     is right; as a statement about *this declaration* it is false, and in the
-    direction that matters. `ArchimedeanSubstrateField` requires `1 ≤ q`, so
+    direction that matters. `ArchimedeanAetherField` requires `1 ≤ q`, so
     `q = 1` is not excluded — it is the **boundary** of the bound and the point
     the structure's own docstring names "the classical limit". There
     `sp.field p - 1 = 0`, and Lean's `1/0 = 0`, so this returns **`0`**: the
@@ -46,7 +46,7 @@ namespace QOU.Information
     `docs/audits/2026-09-05-the-archimedean-suffix-convention-is-the-wrong-instrument.md`.
 
     Label: def:information-speed-of-light -/
-noncomputable def speedOfLight {M : Type*} (sp : ArchimedeanSubstrateField M)
+noncomputable def speedOfLight {M : Type*} (sp : ArchimedeanAetherField M)
     (p : M) : ℝ :=
   1 / (sp.field p - 1)
 
@@ -55,7 +55,7 @@ noncomputable def speedOfLight {M : Type*} (sp : ArchimedeanSubstrateField M)
 /-- **Operational entropy** at a point p ∈ M.
     η_q(p) = (2q(p) - 1) / q(p)^3.
     Label: def:operational-entropy -/
-noncomputable def operationalEntropy {M : Type*} (sp : ArchimedeanSubstrateField M)
+noncomputable def operationalEntropy {M : Type*} (sp : ArchimedeanAetherField M)
     (p : M) : ℝ :=
   (2 * sp.field p - 1) / sp.field p ^ 3
 
@@ -64,7 +64,7 @@ noncomputable def operationalEntropy {M : Type*} (sp : ArchimedeanSubstrateField
 /-- **Hausdorff dimension** of the Julia set at substrate parameter q.
     d_H(q) = (2q - 1)^2 / q^3.
     Label: rem:hausdorff-dimension-recurrence -/
-noncomputable def hausdorffDimension {M : Type*} (sp : ArchimedeanSubstrateField M)
+noncomputable def hausdorffDimension {M : Type*} (sp : ArchimedeanAetherField M)
     (p : M) : ℝ :=
   (2 * sp.field p - 1) ^ 2 / sp.field p ^ 3
 
@@ -74,7 +74,7 @@ noncomputable def hausdorffDimension {M : Type*} (sp : ArchimedeanSubstrateField
     G(q) = c_q^3 · ℏ_q / S_cell(q)
     where S_cell(q) = η_q · ℏ_q^2 / (1 - ℏ_q^2).
     Label: def:gravitational-constant -/
-noncomputable def gravitationalConstant {M : Type*} (sp : ArchimedeanSubstrateField M)
+noncomputable def gravitationalConstant {M : Type*} (sp : ArchimedeanAetherField M)
     (p : M) : ℝ :=
   let q := sp.field p
   let c := 1 / (q - 1)
@@ -87,7 +87,7 @@ noncomputable def gravitationalConstant {M : Type*} (sp : ArchimedeanSubstrateFi
 
 /-- At classicality (q = 1), the Hausdorff dimension equals 1
     (the Julia set degenerates to the unit circle). -/
-theorem hausdorffDimension_classical {M : Type*} (sp : ArchimedeanSubstrateField M)
+theorem hausdorffDimension_classical {M : Type*} (sp : ArchimedeanAetherField M)
     (p : M) (hq : sp.field p = 1) :
     hausdorffDimension sp p = 1 := by
   unfold hausdorffDimension
@@ -131,7 +131,7 @@ private lemma planck_identity (q : ℝ) (hq_gt : q > 1) :
 /-- In Planck units, G_Planck = G(q) · (ℏ_q / c_q)^2 = 1 for all q > 1.
     This expresses the fact that the gravitational constant, when measured
     in the natural units set by ℏ_q and c_q, is unity. -/
-theorem gravitationalConstant_planck_units {M : Type*} (sp : ArchimedeanSubstrateField M)
+theorem gravitationalConstant_planck_units {M : Type*} (sp : ArchimedeanAetherField M)
     (p : M) (hq : sp.field p > 1) :
     gravitationalConstant sp p *
       (quantumPlanckConstant sp p / speedOfLight sp p) ^ 2 = 1 := by
@@ -139,7 +139,7 @@ theorem gravitationalConstant_planck_units {M : Type*} (sp : ArchimedeanSubstrat
   exact planck_identity (sp.field p) hq
 
 /-- The speed of light is positive when q > 1. -/
-theorem speedOfLight_positive {M : Type*} (sp : ArchimedeanSubstrateField M)
+theorem speedOfLight_positive {M : Type*} (sp : ArchimedeanAetherField M)
     (p : M) (hq : sp.field p > 1) :
     0 < speedOfLight sp p := by
   unfold speedOfLight
@@ -148,7 +148,7 @@ theorem speedOfLight_positive {M : Type*} (sp : ArchimedeanSubstrateField M)
 
 /-- **At classicality this declaration returns `0`, not a divergence.**
 
-    `ArchimedeanSubstrateField` bounds `1 ≤ q`, so `q = 1` is permitted — it is the
+    `ArchimedeanAetherField` bounds `1 ≤ q`, so `q = 1` is permitted — it is the
     boundary of that bound, and the structure names it the classical limit. There the
     denominator is `0` and Lean's `1/0 = 0`.
 
@@ -156,7 +156,7 @@ theorem speedOfLight_positive {M : Type*} (sp : ArchimedeanSubstrateField M)
     rather than only from a reader's arithmetic, and so that `speedOfLight_positive`'s
     `q > 1` hypothesis reads as **load-bearing** rather than incidental: it is exactly
     the hypothesis that excludes this point. -/
-theorem speedOfLight_junk_at_classicality {M : Type*} (sp : ArchimedeanSubstrateField M)
+theorem speedOfLight_junk_at_classicality {M : Type*} (sp : ArchimedeanAetherField M)
     (p : M) (hq : sp.field p = 1) :
     speedOfLight sp p = 0 := by
   unfold speedOfLight
@@ -165,7 +165,7 @@ theorem speedOfLight_junk_at_classicality {M : Type*} (sp : ArchimedeanSubstrate
 
 /-- The operational entropy approaches 1 as q → 1.
     At q = 1 exactly, η_q = (2·1 - 1) / 1^3 = 1. -/
-theorem operationalEntropy_classical {M : Type*} (sp : ArchimedeanSubstrateField M)
+theorem operationalEntropy_classical {M : Type*} (sp : ArchimedeanAetherField M)
     (p : M) (hq : sp.field p = 1) :
     operationalEntropy sp p = 1 := by
   unfold operationalEntropy

@@ -6,7 +6,7 @@ export default proposition({
   ],
   label: "prop:local-aether-q",
   renamedFrom: ["prop:local-substrate-q"],
-  lean: { ref: "qou:QOU.Experimental.LocalSubstrateQ",
+  lean: { ref: "qou:QOU.Experimental.LocalAetherQ",
     validation: "not_checked",
   },
   title: "Local Value of the Aether Parameter",

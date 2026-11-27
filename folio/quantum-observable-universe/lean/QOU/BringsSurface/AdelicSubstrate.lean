@@ -1,7 +1,7 @@
 import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.AlgebraicSubstrate.AdelicSubstrate — adelic substrate interface
+# QOU.AlgebraicSubstrate.AdelicBaseRing — adelic substrate interface
 
 Formalizes `def:adelic-base-ring`.
 
@@ -35,7 +35,7 @@ namespace QOU.AlgebraicSubstrate
 
     Encodes the rational adele ring `𝔸_ℚ = ℝ × ∏'_p ℚ_p` as
     used by Tate's adelic Fourier analysis. -/
-structure AdelicSubstrate where
+structure AdelicBaseRing where
   /-- The carrier ring of the substrate. -/
   Carrier : Type*
   /-- Local non-archimedean rings, indexed by rational primes. -/
@@ -44,5 +44,8 @@ structure AdelicSubstrate where
   archimedean : Carrier → ℝ
   /-- Non-archimedean projection π_p : A → Loc p at each prime p. -/
   nonArchimedean : (p : Nat) → Carrier → Loc p
+
+@[deprecated AdelicBaseRing (since := "2026-11-27")]
+abbrev AdelicSubstrate := @AdelicBaseRing
 
 end QOU.AlgebraicSubstrate
