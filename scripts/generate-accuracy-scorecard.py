@@ -668,6 +668,8 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
     coul_dhe = _m(cc["derived_coulomb_dHe_MeV"])
     coul_ame = _m(cc["ame_split_MeV"])
     coul_rel = (coul_dhe - coul_ame) / coul_ame
+    coul_frac = _m(cc["fraction_of_split_covered"])
+    coul_short = _m(cc["remaining_factor"])
     mirror_mean = _m(mn["ratio_mean"])
     mirror_rms = _m(mn["ratio_rms_scatter"])
     mirror_rel = mirror_mean - mpf(1)
@@ -716,8 +718,8 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
         ),
         (
             f"| Bare topological ${{}}^3\\mathrm{{H}}\\text{{--}}{{}}^3\\mathrm{{He}}$ Coulomb | `{_fmt_fixed(coul_dhe, 4)} MeV` | "
-            f"`{_fmt_fixed(coul_ame, 4)} MeV` | `{_fmt_fixed(coul_rel * HUNDRED, 2, signed=True)}%` (`29.0%` covered) | "
-            f"`{_fmt_ppq(coul_rel)}` | `3.45x` short | {_st('coulomb_3h_3he')}: zero-fit $\\tanh(\\ln q_0) B_{{pp}}$; nuclear-geometry factor open |"
+            f"`{_fmt_fixed(coul_ame, 4)} MeV` | `{_fmt_fixed(coul_rel * HUNDRED, 2, signed=True)}%` (`{_fmt_fixed(coul_frac * HUNDRED, 1)}%` covered) | "
+            f"`{_fmt_ppq(coul_rel)}` | `{_fmt_fixed(coul_short, 2)}x` short | {_st('coulomb_3h_3he')}: zero-fit $\\tanh(\\ln q_0) B_{{pp}}$ on the ruled nucleon word; scope-limited negative, nuclear-geometry factor open |"
         ),
         (
             f"| Mirror-nuclei Coulomb systematics ($N={len(mn['mirror_pairs'])}$, $A=3\\text{{--}}39$) | "
@@ -1067,6 +1069,7 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
         "MOLECULAR_ROWS": "\n".join(mol_rows),
         "ALPHA_CS_REL_PPB": _fmt_fixed(alpha_cs_ppb, 2, signed=True),
         "TANH_LN_Q0": _fmt_fixed(tanh_ln_q0, 6),
+        "COULOMB_3H3HE_COVERED_PCT": _fmt_fixed(coul_frac * HUNDRED, 1),
         "MIRROR_MEAN_RATIO": _fmt_fixed(mirror_mean, 4),
         "MIRROR_RMS_PCT": _fmt_fixed(mirror_rms * HUNDRED, 2),
         "BETA_BENCHMARK_ROWS": "\n".join(beta_bench_rows),
