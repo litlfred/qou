@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-10-12T20:38:54Z
-updated_at: 2026-11-27T22:10:00Z
+updated_at: 2026-11-28T00:30:00Z
 parent: qou-533l
 ---
 
@@ -51,3 +51,9 @@ APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2
 
 Item 4(a) partly done: MathlibExt/CechLocalLog.lean proves a local real lift exists when each transition function misses a point (Circle.localLog, AvoidsPoints, avoidsPoints_of_overlap, exists_isRealLift_of_avoids, chernClassOfAvoids). Sorry-free, standard axioms.
 Still open: avoidance after refinement for an arbitrary cocycle (needs a fine-cover argument), then (b)–(d) as above.
+
+## 2026-11-27 (thread "Build sheaves and Čech Chern class in Lean")
+
+- PR #9842, MathlibExt/CechChernClassH2.lean: c₁ as a class in H2 U C(-,ℤ) and in the colimit Ȟ² over open covers. Lift independence, gauge invariance (Chern cochains of hγh⁻¹ and γ are equal for h = exp(is)), [c₁] = 1 iff a real-cocycle logarithm exists, additivity, Kummer with closed quotient θ (C(T,ℤ) has no n-torsion), open covers directed by pairwise intersection, and c₁ = 0 in Ȟ² iff a real-cocycle log exists on an open refinement.
+- PR #9850, QOU/Transcendental/MathlibExt/ContSheafTorsor.lean: item 4(c) for sheaf torsors. C(-,G) is a sheaf on Opens X; C(-,G)-torsors trivialised on an open cover ↔ G-valued 1-cocycles (cocycleTorsor + descentIso); a trivialised U(1)-torsor with local real lifts reduces to a C(-,ℝ)-torsor iff its Chern cochain is an integer coboundary.
+Still open: (a') real lifts after refinement for an arbitrary cocycle (needs paracompactness or a Lebesgue-number argument); Ȟ²(X; C(-,ℤ)) ≅ H²(X; ℤ); FiberBundle comparison; (d) c₁ = e = χ, Poincaré–Hopf.
