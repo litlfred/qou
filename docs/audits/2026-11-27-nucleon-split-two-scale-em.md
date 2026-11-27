@@ -148,3 +148,38 @@ while `M` comes from the mass-formula chart mixes the two charts. The overall-sc
 reduces to the open chart question of #9718 §"Not settled" (the mass-formula chart's electron
 weight), which the electron-weight thread is working on (#9725). This is a reduction, not a
 derivation. It is scope (a) for the log chart.
+
+## 8. Can a q-NS or combinatorial factor supply the ~4×, or fix the sign? (follow-up)
+
+Probe: [`np_cell_candidate_factors_probe.py`](../../computations/probes/nucleon_split_two_scale/np_cell_candidate_factors_probe.py).
+
+The cell is `E·log(τ_p/τ_n)` with `τ_p/τ_n = q²` on every tower level (`markov_forces_K`,
+`strandWeight_flip`, `spectator_ratio`). A candidate factor `g` can enter in only three places:
+
+1. **On `τ_p` and `τ_n` jointly.** It cancels from the ratio (`spectator_ratio`).
+2. **On the scale `E`.** Both charts scale by `g > 0`, so the size changes by `g` and the sign does not.
+3. **On the ratio itself.** This changes the exponent, which `markov_forces_K` forbids for one block.
+   Even then, the cell's mass-chart weight would become `2 + q·∂_q log g`, so the sign flips only if
+   `q·∂_q log g < −2`.
+
+| candidate | source | `g` | `q·∂_q log g` |
+|---|---|---|---|
+| block multiplicity `f^(2,1)` | combinatorics | 2 | 0 |
+| Molien Plancherel sum (ruled Φ_k weight) | combinatorics | 1 exactly | 0 |
+| writhe ratio `e/(N(N−1))`, chain, `A = 1` | #9747 | 0 | 0 |
+| writhe ratio, full twist | #9747 | 1 | 0 |
+| Haar budget factor `q²` | #9752 | 1.232 | +2 |
+
+**Comparison boundary.** The measured split is 4.48× the log-chart cell and 4.05× the mass-chart cell
+in magnitude. The largest derived candidate on `E` is `q₀² = 1.232`, and #9752 itself states that it
+does not fix the Cartan scale. Multiplying `E` by `f^(2,1) = 2` would be a choice, not a derivation,
+and it would still fall short.
+
+**Sign.** No candidate has `q·∂_q log g < −2`, and positive factors never change a sign. The sign
+question is the orientation question of #9767 (`L_e < 0 < w_e`, `sign_agree_iff`), which is put to
+the owner. It is not a missing factor.
+
+**Scope (a).** None of these q-NS or combinatorial factors, alone or multiplied together, supplies the
+cell's ~4× or its sign. This is not a structural exclusion: a factor on `E` derived from elsewhere is
+not ruled out. What it shows is that the shortfall sits in the scale `E`, or in a second element for the
+two nucleons (route 2 of the full-tower audit), and not in multiplicities or normalisations.
