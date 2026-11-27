@@ -176,6 +176,44 @@ theorem funLinear_lieDerivAlt {n : ℕ} {ω : L [⋀^Fin n]→ₗ[R] A} (h : Fun
     exact (funLinear_curryLeft (funLinear_ceDAlt h) X).add
       (funLinear_ceDAlt (funLinear_curryLeft h X))
 
+/-- A function-linear form, read as an `A`-linear map of one slot. -/
+def FunLinear.slotMap {n : ℕ} {ω : L [⋀^Fin n]→ₗ[R] A} (h : FunLinear ω) (v : Fin n → L)
+    (i : Fin n) : L →ₗ[A] A where
+  toFun X := ω (Function.update v i X)
+  map_add' X Y := ω.map_update_add v i X Y
+  map_smul' a X := by rw [h]; rfl
+
+/-- **Tensors are determined on a spanning set.** Two function-linear forms that agree on
+every tuple of fields drawn from a set `S` spanning `L` over the functions `A` are equal.
+For smooth fields on a finite-dimensional space, `S` is the constant fields. -/
+theorem FunLinear.eq_of_span {n : ℕ} {ω η : L [⋀^Fin n]→ₗ[R] A} (hω : FunLinear ω)
+    (hη : FunLinear η) {S : Set L} (hS : Submodule.span A S = ⊤)
+    (h : ∀ v : Fin n → L, (∀ i, v i ∈ S) → ω v = η v) : ω = η := by
+  have key : ∀ m : ℕ, ∀ v : Fin n → L, (∀ i : Fin n, m ≤ (i : ℕ) → v i ∈ S) →
+      ω v = η v := by
+    intro m
+    induction m with
+    | zero => intro v hv; exact h v fun i => hv i (Nat.zero_le _)
+    | succ m ih =>
+      intro v hv
+      by_cases hm : m < n
+      · have hlin : hω.slotMap v ⟨m, hm⟩ = hη.slotMap v ⟨m, hm⟩ := by
+          apply LinearMap.ext_on hS
+          intro s hs
+          apply ih
+          intro i hi
+          by_cases hii : i = ⟨m, hm⟩
+          · subst hii; simpa using hs
+          · rw [Function.update_of_ne hii]
+            apply hv
+            have : (i : ℕ) ≠ m := fun e => hii (Fin.ext e)
+            omega
+        have := LinearMap.congr_fun hlin (v ⟨m, hm⟩)
+        simpa [FunLinear.slotMap, Function.update_eq_self] using this
+      · exact ih v fun i hi => hv i (by have := i.2; omega)
+  ext v
+  exact key n v fun i hi => absurd i.2 (by omega)
+
 end QOU.LieDerivative
 
 /-! ### The model: derivations of a commutative algebra -/

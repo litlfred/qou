@@ -30,7 +30,8 @@ Main results:
   and constant fields, transported from the algebraic `cartan_formula`.
 
 Scope: constant vector fields only, so the bracket part of `d` is zero. Non-constant fields
-(Mathlib's `VectorField.lieBracket`) need `C^∞(E)`-linear cochains and are not covered here.
+(Mathlib's `VectorField.lieBracket`) are covered by
+`QOU.Transcendental.Calculus.SmoothVectorFields`, through `C^∞(E)`-linear cochains.
 Sorry-free; no empirical value enters this file. Bean `qou-pn77`.
 -/
 
