@@ -269,6 +269,85 @@ def collect_wired_witnesses(repo_root: Path) -> set[str]:
     return wired
 
 
+def _is_decimal_or_inf(x) -> bool:
+    if x in ("+inf", "-inf"):
+        return True
+    if not isinstance(x, str):
+        return False
+    from decimal import Decimal, InvalidOperation
+    try:
+        return Decimal(x).is_finite()  # syntax check; no float64
+    except InvalidOperation:
+        return False
+
+
+def check_unidentified_intervals(path: Path) -> list[str]:
+    """Validate the interval shape for dual/primal coordinates the LP leaves
+    undetermined (owner ruling 2026-11-25, bean `qou-fu8c`, answer
+    "1 intervals").
+
+    A producer may publish such a coordinate as `null` instead of an
+    arbitrary solver point, provided the null is explained:
+
+      * per-row dict: `u_identified: false` requires `u_lambda_star: null`
+        and `u_lambda_star_interval: [lo, hi]`; `x_identified: false`
+        likewise requires `x_star: null` and `x_star_interval`;
+      * list form: a `null` entry in `y_star` / `x_star` requires a sibling
+        `y_star_interval` / `x_star_interval` list of the same length with
+        an interval at that index.
+
+    An interval is two decimal strings (or "+inf"/"-inf") with lo <= hi.
+    Returns a list of problems; empty means the shape is accepted. A witness
+    with no nulls is untouched by this check.
+    """
+    data = json.loads(path.read_text())
+    problems: list[str] = []
+
+    def _iv_ok(iv) -> bool:
+        if not (isinstance(iv, list) and len(iv) == 2
+                and all(_is_decimal_or_inf(v) for v in iv)):
+            return False
+        lo, hi = iv
+        if lo == "+inf" or hi == "-inf":
+            return False
+        if lo == "-inf" or hi == "+inf":
+            return True
+        from fractions import Fraction  # exact comparison, no float64
+        return Fraction(lo) <= Fraction(hi)
+
+    def walk(o, at):
+        if isinstance(o, dict):
+            for flag, val, ivk in (("u_identified", "u_lambda_star",
+                                    "u_lambda_star_interval"),
+                                   ("x_identified", "x_star", "x_star_interval")):
+                if o.get(flag) is False:
+                    if o.get(val) is not None:
+                        problems.append(f"{at}: {flag} false but {val} not null")
+                    if not _iv_ok(o.get(ivk)):
+                        problems.append(f"{at}: {flag} false without a valid {ivk}")
+            for lk in ("y_star", "x_star"):
+                v = o.get(lk)
+                if isinstance(v, list) and any(e is None for e in v) \
+                        and all(not isinstance(e, list) for e in v):
+                    ivs = o.get(lk + "_interval")
+                    if not (isinstance(ivs, list) and len(ivs) == len(v)):
+                        problems.append(f"{at}.{lk}: null entries without a "
+                                        f"same-length {lk}_interval list")
+                    else:
+                        for i, e in enumerate(v):
+                            if e is None and not _iv_ok(ivs[i]):
+                                problems.append(f"{at}.{lk}[{i}]: null without "
+                                                "a valid interval")
+            for k, v in o.items():
+                walk(v, f"{at}.{k}")
+        elif isinstance(o, list):
+            for i, e in enumerate(o):
+                walk(e, f"{at}[{i}]")
+
+    walk(data, "<root>")
+    return problems
+
+
 def main(argv: list[str]) -> int:
     strict = "--strict" in argv
     strict_wired = "--strict-wired" in argv
@@ -358,6 +437,11 @@ def main(argv: list[str]) -> int:
     failures = []
     for w, reason in flagged:
         result = verify_dual_present(w)
+        iv_problems = check_unidentified_intervals(w)
+        if iv_problems:
+            result = dict(result, ok=False,
+                          missing=list(result.get("missing", []))
+                          + [f"interval shape: {p}" for p in iv_problems[:3]])
         if not result["ok"]:
             failures.append((w, reason, result))
 

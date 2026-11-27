@@ -115,16 +115,54 @@ def a_K_closed(A: int) -> float:
 
 
 
+# ── Unidentified dual coordinates: publish intervals (owner ruling 2026-11-25)
+#
+# Owner ruling, card 3 on bean `qou-fu8c`, answer "1 intervals": a dual value
+# the LP leaves undetermined is published as an INTERVAL, not as whatever point
+# the solver happened to return.
+#
+# Why the LP leaves some undetermined (probe `probes/ak_lp_dual_face/`, exact
+# rational simplex, PR #9420): `G = diag(|c|)`, so on a row with
+# `c_lambda = y_lambda * chi^lambda = 0` the dual `u_lambda` appears in no dual
+# constraint and not in the dual objective. Its only constraint is its own bound
+# `u_lambda >= 0`, so it ranges over [0, +inf) on the optimal dual face. The
+# 2026-11-24 move of those values by exactly x1e-4 (#9395) was the solver
+# picking a different point of that face. On `c != 0` rows `u = 1` is
+# identified, as are `y0_star` (= 0), the degeneracy flag and `a_K` (null).
+#
+# The primal is degenerate the same way: with k >= 2 zero-cost rows the mass may
+# sit on any of them, so each such `x_lambda` ranges over [-M, n + M(k-1)]
+# (the solver's box `x >= -M`, `n = tr_M`). With k = 1 it is identified, x = n.
+UNIDENTIFIED_DUAL = ["0", "+inf"]
+M_BOUND = mp.mpf(10) ** 6  # passed to the solver explicitly so the interval's M is the solver's
+
+# Under convention D every weight with l(lambda) >= 3 is EXACTLY zero:
+# `QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows` (sorry-free,
+# general n, any field with q^2 + 1 != 0; bean `qou-u2jg`). The helium-4 chi
+# cache was computed at 50 dps and carries residues of 1e-73 .. 1e-149 there
+# instead of exact zeros (the other five caches, at 80 dps, carry 0.0). Those
+# rows are therefore set to exact zero here, on the strength of the theorem,
+# and the dropped residue is reported per atom (`l3_residue_*`), not hidden.
+# A residue above this guard would not be residue, and the producer refuses.
+CONVENTION_D_WEIGHT_FAMILY = "markov_y_lambda_convention_D"
+L3_RESIDUE_GUARD = mp.mpf(10) ** -40
+
+
 def _dual_sum_companions(per_partition) -> dict:
-    """50-dps companions for the two `u_lambda_star` sums, when available."""
-    if not any("u_lambda_star_str" in r for r in per_partition):
+    """50-dps companions for the two `u_lambda_star` sums, when available.
+
+    Summed over IDENTIFIED rows only (owner ruling 2026-11-25, see
+    `UNIDENTIFIED_DUAL` below): an unidentified row carries
+    `u_lambda_star_str = None` and `is_active = None`, and is skipped.
+    """
+    if not any(r.get("u_lambda_star_str") is not None for r in per_partition):
         return {}
     with mp.workdps(50):
         chi = mp.mpf(0)
         sc = mp.mpf(0)
         for r in per_partition:
             s = r.get("u_lambda_star_str")
-            if s is None or not r.get("is_active"):
+            if s is None or not r.get("u_identified") or not r.get("is_active"):
                 continue
             v = mp.mpf(s)
             if r.get("self_conjugate"):
@@ -151,12 +189,28 @@ def solve_atom_lp(atom: str) -> dict:
     y_lams = []
     chi_lams = []
     contribs = []
+    conv_D = data.get("weight_family") == CONVENTION_D_WEIGHT_FAMILY
+    l3_residue_max = mp.mpf(0)
+    l3_residue_rows = 0
     for row in data["by_partition"]:
         lam = list(row["partition"])
         partitions.append(lam)
-        y_lams.append(mp.mpf(row["y_lambda"]))
+        y_l = mp.mpf(row["y_lambda"])
+        c_l = mp.mpf(row["contribution"])
+        if conv_D and len(lam) >= 3 and (y_l != 0 or c_l != 0):
+            res = max(abs(y_l), abs(c_l))
+            if res > L3_RESIDUE_GUARD:
+                raise ValueError(
+                    f"{atom}: l(lambda)>=3 row {lam} carries |value| "
+                    f"{mp.nstr(res, 5)} > {mp.nstr(L3_RESIDUE_GUARD, 2)} in a "
+                    "convention-D cache; that is not residue, refusing to zero it")
+            l3_residue_max = max(l3_residue_max, res)
+            l3_residue_rows += 1
+            y_l = mp.mpf(0)
+            c_l = mp.mpf(0)
+        y_lams.append(y_l)
         chi_lams.append(mp.mpf(row["chi_lambda"]))
-        contribs.append(mp.mpf(row["contribution"]))
+        contribs.append(c_l)
 
     d = len(partitions)
     # t_λ = y_λ · χ^λ (the Wedderburn block contribution to tr_M)
@@ -185,11 +239,23 @@ def solve_atom_lp(atom: str) -> dict:
     # silently choosing by whether the Rust binary happened to be built;
     # pinning `clarabel` answers it, and QOU_REQUIRE_CLARABEL=1 makes a
     # missing binary an error instead of a changed answer. Bean `qou/ftuv`.
-    result = solve_operator_selection_lp(t, G, n_target, backend="clarabel")
+    result = solve_operator_selection_lp(
+        t, G, n_target, backend="clarabel", M_bound=float(M_BOUND))
+
+    # Rows the LP does not determine (see UNIDENTIFIED_DUAL above).
+    zero_rows = {i for i, c in enumerate(contribs) if c == 0}
+    k_zero = len(zero_rows)
+    x_unidentified = zero_rows if k_zero >= 2 else set()
+    x_interval = [
+        mp.nstr(-M_BOUND, 20),
+        mp.nstr(n_target + M_BOUND * (k_zero - 1), 50),
+    ]
 
     # Map LP dual back to partition labels.
     per_partition = []
     for i, lam in enumerate(partitions):
+        u_id = i not in zero_rows
+        x_id = i not in x_unidentified
         per_partition.append({
             "partition": lam,
             "self_conjugate": is_self_conjugate(lam),
@@ -197,32 +263,49 @@ def solve_atom_lp(atom: str) -> dict:
             "y_lambda": y_lams[i],
             "chi_lambda": chi_lams[i],
             "contribution": contribs[i],
-            "x_star": result.x_star[i],
-            "u_lambda_star": result.y_star[i],
+            "x_star": result.x_star[i] if x_id else None,
+            "x_identified": x_id,
+            **({} if x_id else {"x_star_interval": x_interval}),
+            "u_lambda_star": result.y_star[i] if u_id else None,
+            "u_identified": u_id,
+            **({} if u_id else {"u_lambda_star_interval": UNIDENTIFIED_DUAL}),
             # The per-partition SLICE needs its own companion. The row-level
             # `x_star`/`y_star` are shadowed by `provenance()` above, but
             # re-slicing them per partition drops the digits again — the same
             # truncation one level deeper, and 308 of this witness's carved
             # f64s were exactly this. `x_star_str`/`y_star_str` hold the
             # solver's 50-dps decimals, so the slice is free.
-            **({"x_star_str": result.x_star_str[i]}
+            **({"x_star_str": result.x_star_str[i] if x_id else None}
                if result.x_star_str is not None else {}),
-            **({"u_lambda_star_str": result.y_star_str[i]}
+            **({"u_lambda_star_str": result.y_star_str[i] if u_id else None}
                if result.y_star_str is not None else {}),
-            "is_active": (i in result.active_set),
+            # Activity is `u > dual_tol`, so on an unidentified row it is a
+            # property of the solver's point, not of the LP: null.
+            "is_active": (i in result.active_set) if u_id else None,
         })
 
     # a_K extraction: dual sum on chirality-active blocks.
+    # Over IDENTIFIED rows only (owner ruling 2026-11-25). An unidentified
+    # row's `u` is any point of [0, +inf), so including it would publish the
+    # solver's choice; the scope is stated in `dual_sums_scope`.
     chirality_dual_sum = sum(
         r["u_lambda_star"]
         for r in per_partition
-        if not r["self_conjugate"] and r["is_active"]
+        if r["u_identified"] and not r["self_conjugate"] and r["is_active"]
     )
     sc_dual_sum = sum(
         r["u_lambda_star"]
         for r in per_partition
-        if r["self_conjugate"] and r["is_active"]
+        if r["u_identified"] and r["self_conjugate"] and r["is_active"]
     )
+    active_identified = [i for i in result.active_set if i not in zero_rows]
+
+    def _mask(vals, unid):
+        return None if vals is None else [
+            None if i in unid else v for i, v in enumerate(vals)]
+
+    def _intervals(n_rows, unid, iv):
+        return [iv if i in unid else None for i in range(n_rows)]
     u0_star = result.y0_star
 
     # `a_K` is recovered by normalising the chirality dual sum by the net
@@ -268,10 +351,23 @@ def solve_atom_lp(atom: str) -> dict:
         "Z": Z, "N": N, "A": A,
         "tr_M_atom": tr_M_atom,
         # LP fields per AGENTS.md §LP/SDP duals first-class infra
-        "x_star": list(result.x_star),
+        # `x_star` / `y_star` carry null where the LP does not determine the
+        # coordinate; the matching `*_interval` list gives its range there
+        # (null where identified). Owner ruling 2026-11-25, bean `qou-fu8c`.
+        "x_star": _mask(list(result.x_star), x_unidentified),
+        "x_star_interval": _intervals(d, x_unidentified, x_interval),
         "y0_star": result.y0_star,
-        "y_star": list(result.y_star),
-        "active_set": list(result.active_set),
+        "y_star": _mask(list(result.y_star), zero_rows),
+        "y_star_interval": _intervals(d, zero_rows, UNIDENTIFIED_DUAL),
+        "active_set": active_identified,
+        "active_set_scope": (
+            "identified rows only: rows with c_lambda = 0 have u in [0, +inf) "
+            "on the optimal dual face, so their activity is undetermined and "
+            "they are listed in unidentified_dual_rows instead"),
+        "unidentified_dual_rows": sorted(zero_rows),
+        "unidentified_primal_rows": sorted(x_unidentified),
+        "l3_residue_rows_zeroed": l3_residue_rows,
+        "l3_residue_max_abs": mp.nstr(l3_residue_max, 20),
         "primal_obj": result.primal_obj,
         "dual_obj": result.dual_obj,
         "duality_gap": result.duality_gap,
@@ -281,10 +377,18 @@ def solve_atom_lp(atom: str) -> dict:
         # its own provenance, so a clarabel-MPFR solve is indistinguishable
         # from a scipy one in the committed artifact.
         **provenance(result),
+        # provenance() re-emits the solver's full-precision decimals for every
+        # coordinate; mask the unidentified ones there too, or the solver's
+        # point leaks back in through the `_str` companions.
+        **{k: _mask(v, unid)
+           for k, unid in (("x_star_str", x_unidentified),
+                           ("y_star_str", zero_rows))
+           for v in [provenance(result).get(k)] if v is not None},
         # Item B extraction
         "u0_star": u0_star,
         "chirality_dual_sum": chirality_dual_sum,
         "self_conjugate_dual_sum": sc_dual_sum,
+        "dual_sums_scope": "identified active rows only (c_lambda != 0)",
         # Both sums are over `u_lambda_star`, which carries a 50-dps
         # companion per partition, so the sum has one too — summing the f64
         # view and recording only that would drop the digits at the last step
@@ -296,7 +400,8 @@ def solve_atom_lp(atom: str) -> dict:
         "dual_vs_C_ppm": dual_vs_C_ppm,
         "per_partition": per_partition,
         "n_partitions": d,
-        "n_active": len(result.active_set),
+        "n_active": len(active_identified),
+        "n_active_scope": "identified rows only",
     }
 
 
@@ -334,6 +439,20 @@ def main() -> int:
         "wires the SDP-attribution path and surfaces the "
         "block-diagonal LP's degeneracy as an empirical finding."
     )
+
+    w.add_caveat(
+        "Unidentified dual coordinates are published as intervals (owner "
+        "ruling 2026-11-25, bean qou-fu8c, answer '1 intervals'). On every "
+        "row with c_lambda = 0 the LP leaves u_lambda free on [0, +inf): "
+        "u_lambda_star is null, u_lambda_star_interval = ['0', '+inf'], "
+        "u_identified = false, is_active = null. active_set, n_active and the "
+        "two dual sums are computed over identified rows only. x_star is null "
+        "with an interval on zero-cost rows when an atom has two or more. "
+        "Helium-4's l>=3 cache residues (<= ~1e-73) are set to exact zero per "
+        "ocneanuWeight_conventionD_eq_zero_of_three_rows; see "
+        "l3_residue_max_abs. Probe: computations/probes/ak_lp_dual_face/."
+    )
+    w.add_parameter("M_bound", mp.nstr(M_BOUND, 20))
 
     rows = []
     for atom in ATOM_CHI:
@@ -383,6 +502,16 @@ def main() -> int:
                 source="LP solve via scipy linprog",
             )
             continue
+        _undet = [i for i, p in enumerate(r["per_partition"])
+                  if not p["u_identified"]]
+        _zero = [i for i, p in enumerate(r["per_partition"])
+                 if p["contribution"] == 0]
+        w.add_assertion(
+            f"unidentified_dual_rows_eq_zero_cost_rows[{r['atom']}]",
+            computed=_undet == _zero,
+            expected=True,
+            source="probes/ak_lp_dual_face (PR #9420): u is free on c=0 rows only",
+        )
         w.add_assertion(
             f"lp_feasible[{r['atom']}]",
             computed=r["feasible"],
