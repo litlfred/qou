@@ -98,5 +98,15 @@ Step A has landed (#9643). Step B starts with the part that does not depend on `
   hypothesis `hR` of `quasiYBE_of_hexagon`, and the truncated `exp(h t / 2)` is such a
   polynomial.
 
-Next, still independent of `Φ`: the four-strand family in `A^{⊗4}` and the truncated evaluation
-map `U4 N → (A^{⊗4})[h]/(h^N)` through `UniversalDK.lift`. After that, `Φ` from stage 5 is plugged in.
+`QOU/BraidsAndKnots/HAdicDrinfeld/FourStrand.lean` adds the four-strand part:
+
+- `CasimirData.dk4`: the six leg copies of `t` in `A^{⊗4}` form a `DK4` family. The near relations
+  are `dk3` pushed along the four inclusions that each omit one strand. The far relations hold
+  because the legs sit in disjoint tensor factors.
+- `evalU4` (for any `ℚ`-algebra, with a central nilpotent `z`) and `CasimirData.evalU4` (with
+  `c ∈ k`, `c ^ N = 0`): the algebra map `U4 N → A^{⊗4}`, `tᵢⱼ ↦ c tᵢⱼ`, built through
+  `UniversalDK.lift`. With `k = ℚ[h]/(h^N)` and `c = h`, this is the truncated h-adic evaluation.
+
+What is left is to apply `evalU4` to the stage-5 rational associator and transport its pentagon
+and hexagon. Before that, `R = exp(h t / 2)` truncated at `h^N` must be checked against the
+hexagon `(Δ ⊗ id)(R) = Φ₃₁₂ R₁₃ Φ₁₃₂⁻¹ R₂₃ Φ`.
