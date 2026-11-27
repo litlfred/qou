@@ -4154,14 +4154,28 @@ first-order behaviour of $A$ near $p$.
   \label{def:observation}
   \blockannot[compiled]{def:observation}{QOU.Core.Intent}{quantum-observable-universe/quantum-observable-universes/observation.md}
   \uses{def:substrate-parameter, def:categorical-point, prop:fibre-functor-atlas}
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with state bundle $\mathcal{S} \to M$. Let $p \colon \mathbf{1} \to A$ be a categorical point, and let $U \subset M$ be an open causal neighbourhood of $p$. An \textbf{observation} on $U$ is a pair $(\mathfrak{O}, \epsilon)$ where $\epsilon \in \{+1, -1\}$ is the direction and $\mathfrak{O} \in \Gamma\bigl(U, \mathrm{Ad}(J^1 \mathcal{S})\bigr)$ is a section of the adjoint bundle of the $1$-jet prolongation of $\mathcal{S}$.
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with state bundle $\mathcal{S} \to M$, and let $p \colon \mathbf{1} \to A$ be a categorical point. Let $R$ be a commutative ring containing $\mathbb{Q}$, let $h = q - q^{-1}$, and let $H_n = H_n(R[[h]], q)$ be the Hecke algebra over the formal power series ring in $h$. Write
 
-The section $\mathfrak{O}$ satisfies:
+\[
+  W_1 = \mathrm{span}\{\sigma_0,\ \sigma_1,\ \sigma_0\sigma_1^{-1}\} \subset H_3
+\]
+for the span of the three non-identity terms of the photon $\gamma =\allowbreak{} 1 +\allowbreak{} \varphi_0\sigma_0 +\allowbreak{} \varphi_1\sigma_1 +\allowbreak{} \varphi_{01}\,\sigma_0\sigma_1^{-1}$ (the photon is defined in the chapter on Bring's surface).
+
+An \textbf{observation} at $p$ (also called an \emph{intent} at $p$) is a pair $(w_p, \delta q_p)$ consisting of:
 
 \begin{enumerate}
-  \item \textbf{Frobenius compatibility:} The observation preserves the Frobenius form on $U$. The trace is preserved.
-  \item \textbf{Adjoint backreaction:} The observation acts on the colour fibre via the adjoint representation of $G$. The section $\mathfrak{O}_p$ rotates the colour degrees of freedom, shifting the substrate parameter $q \mapsto q' = q + \delta q$ via the Hopf coaction $\delta q(p) =\allowbreak{} \int_A(\mathfrak{O}_p(a_{(1)})S(a_{(2)}))$.
+  \item \textbf{A probe direction} $w_p \in h\,W_1[[h]]$. It acts on a closed state $\psi$ by conjugation, $\psi \mapsto\allowbreak{} e^{w_p}\,\psi\,e^{-w_p}$. The exponential converges in the $h$-adic topology because $w_p$ is divisible by $h$. The first-order change is the commutator $[w_p, \psi]$. Conjugation preserves every trace, so the Frobenius form is preserved.
+  \item \textbf{A substrate deformation} $\delta q_p \in R$, which shifts the substrate parameter $q \mapsto q' = q + \delta q_p$.
 \end{enumerate}
+
+Two observations at the same point with directions $w_1, w_2$ fail to commute by
+
+\[
+  e^{w_1} e^{w_2} e^{-w_1} e^{-w_2} = 1 + [w_1, w_2] + O(h^3),
+\]
+and the first-order term $[w_1, w_2]$ is the $q$-curvature of the two-observer parallelogram (see the remark that follows).
+
+The direction $w_p$ is a vector in a $3$-dimensional space, not a choice between a forward crossing $\sigma_i$ and a backward crossing $\sigma_i^{-1}$. The first-order data are taken in $h\,W_1$ rather than in the $1$-jet space $\mathfrak{m}_p/\mathfrak{m}_p^2$ because that space is zero at any character of a semisimple Hecke fibre: $(\sigma -\allowbreak{} q)^2 =\allowbreak{} -(q +\allowbreak{} q^{-1})(\sigma -\allowbreak{} q)$, so $\sigma - q \in \mathfrak{m}_p^2$ whenever $q + q^{-1}$ is invertible.
 \end{definition}
 
 \phantomsection\label{rem:observation-physical-roles}\begin{proposition}[{Observation increases quantum energy and deforms the action}]
@@ -4211,9 +4225,9 @@ observation must preserve the trace.  $\square$
   \blockannot[compiled]{prop:germ-commutator-q-curvature}{QOU.LocalQ.ObservationParallelogram.commutator_eq_curvature}{quantum-observable-universe/quantum-observable-universes/germ-commutator-q-curvature.md}
   \uses{def:observation, def:q-flat-connection, rem:two-observer-parallelogram}
 \emph{At a point $p$, let two independent observations
-(\hyperref[def:observation]{observation}) perturb the substrate parameter by
-germ-level increments $\delta q_1, \delta q_2$ in the germ algebra
-$A/\mathfrak{m}_p^2$. Their commutator equals the $q$-curvature $F_q$
+(\hyperref[def:observation]{observation}) have probe directions $\delta q_1 := w_1$ and $\delta q_2 := w_2$ in
+$h\,W_1[[h]]$, viewed as increments in the non-commutative Hecke algebra
+$H_n(R[[h]], q)$. Their commutator equals the $q$-curvature $F_q$
 of the $q$-connection (a $q$-flat connection, defined in the $q$-Geometric Langlands chapter)
 evaluated on the loop spanned by the two observation directions:}
 
