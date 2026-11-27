@@ -11,8 +11,8 @@ stripped before matching. This is a measurement, not a verdict on any one file.
 | quantity | count |
 |---|---:|
 | Lean modules (paper package tree) | 4001 |
-| inside the boundary `QOU/Transcendental/` | 29 |
-| outside, using a transcendental/analytic API directly | 679 |
+| inside the boundary `QOU/Transcendental/` | 30 |
+| outside, using a transcendental/analytic API directly | 678 |
 | outside, algebraic but importing one transitively (tainted) | 280 |
 | outside, algebraic and import-clean (pure) | 3013 |
 
@@ -20,9 +20,9 @@ stripped before matching. This is a measurement, not a verdict on any one file.
 
 | class | modules | matched API |
 |---|---:|---|
-| transcendental-function | 478 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
-| real-completion | 160 | `\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bReal\.sSup\b|\bReal\.sInf\b|\bReal\.iSup\b|\bReal\.iInf\…` |
-| analysis | 322 | `\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTe…` |
+| transcendental-function | 477 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
+| real-completion | 159 | `\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bReal\.sSup\b|\bReal\.sInf\b|\bReal\.iSup\b|\bReal\.iInf\…` |
+| analysis | 321 | `\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTe…` |
 
 Modules whose only use is `real-completion` (`Real.sqrt`, `sSup`, …): 68. These are the cheapest to move:
 `Real.sqrt` of an algebraic number is algebraic, so most of them can become a root in an
@@ -32,7 +32,7 @@ algebraic extension.
 
 | directory | modules |
 |---|---:|
-| `QOU/MassTheory` | 151 |
+| `QOU/MassTheory` | 150 |
 | `BraidKnotOctonion` | 143 |
 | `QOU/Nuclear` | 104 |
 | `MathlibExt` | 95 |
