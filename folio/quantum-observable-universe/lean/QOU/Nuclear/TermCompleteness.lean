@@ -4,6 +4,7 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import HeckeTemperleyLieb.TemperleyLiebTower
 import QOU.Nuclear.BlockChargeSectorTrace
 import BraidKnotOctonion.QuantumSl2Fundamental
+import QOU.Nuclear.TwoRowNormalisation
 
 /-!
 # When is a list of mass, binding or decay terms complete?
@@ -55,8 +56,11 @@ two-row braid weight, the braid channel's rank `0` at **every** `n` (`isEndo_lis
 `isEndo_rCheckAt_inv`, on top of `QuantumSl2Fundamental.isEndo_rCheckAt`), and its `n = 3`
 consequence that one word cannot split `n` from `p` (`braid_channel_has_no_np_split`).
 
-Not proved here: Wigner–Eckart for `U_q(sl₂)` tensor operators. The rank caps of `flavour` and
-`em` are encoded in `Channel.maxRank`, not derived. The per-formula audit is
+The rank caps of `flavour` (`≤ 1`) and `em` (`≤ 2`) are derived from the block index set at
+level `2·body` (`maxRank_eq_bodyRanks`, `bodyRank_qdim`). That derivation rests on one cited
+standard input, `V^* ≅ V` for the fundamental of `U_q(sl₂)` (so
+`End(V^{⊗b}) ≅ V^{⊗2b}` under the adjoint action), and on Clebsch–Gordan for the cap `r ≤ 2T`.
+Neither isomorphism is proved here. The per-formula audit is
 `docs/audits/2026-11-27-term-completeness-ledger.md`.
 -/
 
@@ -248,6 +252,67 @@ theorem isEndo_rCheckAt_inv (hq : q ≠ 0) (hq2 : q - q⁻¹ ≠ 0) (m k : ℕ) 
   isEndo_sub (isEndo_rCheckAt q hq hq2 m k) (isEndo_smul _ (isEndo_one _))
 
 end BraidRankZero
+
+/-! ## Where the flavour and EM rank caps come from
+
+A `b`-body operator lives in `End(V^{⊗b}) ≅ V^{⊗b} ⊗ (V^{⊗b})^* ≅ V^{⊗2b}` as a module for the
+adjoint action of `U_q(sl₂)`. The first `≅` is linear algebra. The second uses `V^* ≅ V` for
+the fundamental, which is standard and **cited here, not proved** ([kassel1995] VII). So the
+ranks a `b`-body operator can carry are the spins of `V^{⊗2b}`. Those are the two-row blocks
+of level `2b`, with `T = b − k`. This is the same block index set as above, one level up:
+`{0, …, b}` (`bodyRanks_eq`). With `b = 1` for `flavour` and `b = 2` for `em`, this is
+`Channel.maxRank` (`maxRank_eq_bodyRanks`). The quantum dimensions balance, by the corpus's
+general-`n` normalisation: `Σ_r d(2b, b−r)·[2r+1]_q = [2]_q^{2b}` (`bodyRank_qdim`).
+
+The cap `r ≤ 2T` inside a multiplet is the same argument for one spin-`T` irrep:
+`End(V_T) ≅ V_T ⊗ V_T ≅ ⊕_{r=0}^{2T} V_r` (Clebsch–Gordan, cited). Its dimension check is
+`multiplet_rank_count`. -/
+
+section RankCaps
+
+/-- How many bodies an operator channel acts on. The braid channel is not capped this way:
+its rank is `0` because it commutes with `U_q(sl₂)` (`isEndo_list_prod`). -/
+def Channel.body : Channel → ℕ
+  | .braid => 0
+  | .flavour => 1
+  | .em => 2
+
+/-- The ranks a `b`-body operator can carry: the spins `T = b − k` of `V^{⊗2b}`, one per
+two-row block of level `2b`. -/
+def bodyRanks (b : ℕ) : Finset ℕ := (blocks (2 * b)).image (fun k => b - k)
+
+/-- **A `b`-body operator carries exactly the ranks `0, …, b`.** -/
+theorem bodyRanks_eq (b : ℕ) : bodyRanks b = range (b + 1) := by
+  ext r
+  simp only [bodyRanks, blocks, mem_image, mem_range]
+  constructor
+  · rintro ⟨k, -, rfl⟩; omega
+  · intro hr; exact ⟨b - r, by omega, by omega⟩
+
+/-- **The channel caps are the block index set at level `2·body`.** -/
+theorem maxRank_eq_bodyRanks (c : Channel) :
+    range (c.maxRank + 1) = bodyRanks c.body := by
+  rw [bodyRanks_eq]; cases c <;> rfl
+
+/-- **Quantum dimensions balance on `End(V^{⊗b})`.** With `r = b − k`, the summand is
+`d(2b, b−r)·[2r+1]_q / [2]_q^{2b}`: rank `r` appears `d(2b, b−r)` times, each copy of
+quantum dimension `[2r+1]_q`, and the total is that of `End(V^{⊗b})`. This is
+`TwoRowNormalisation.levelSum_eq_one` at level `2b`. -/
+theorem bodyRank_qdim {R : Type*} [Field R] (q : R) (hq : q ≠ 0) (hq' : q - q⁻¹ ≠ 0)
+    (hs : q + q⁻¹ ≠ 0) (b : ℕ) :
+    ∑ k ∈ range (2 * b + 1), QOU.QBeta.TwoRowNormalisation.ballot (2 * b) k
+        * QOU.QBeta.TemperleyLiebTower.yw q (2 * b) (2 * b + 1 - 2 * k) = 1 :=
+  QOU.QBeta.TwoRowNormalisation.levelSum_eq_one q hq hq' hs (2 * b)
+
+/-- **Dimension check for the multiplet cap.** `Σ_{r=0}^{2T} (2r+1) = (2T+1)²`: the spins
+`0, …, 2T` fill `End(V_T)` exactly, so no rank above `2T` fits. Here `t = 2T`. -/
+theorem multiplet_rank_count (t : ℕ) :
+    ∑ r ∈ range (t + 1), (2 * r + 1) = (t + 1) ^ 2 := by
+  induction t with
+  | zero => simp
+  | succ t ih => rw [sum_range_succ, ih]; ring
+
+end RankCaps
 
 /-! ## The index set at the levels the audit uses -/
 

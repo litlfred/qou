@@ -61,8 +61,18 @@ needs its own coefficient. In particular each needs its own energy scale.
 **Scope.** The ledger certifies completeness *for a given word*. Which braid word represents a
 nucleus (the chain versus a 3D plaquette) is a separate axis, and the ledger cannot see it. The
 two known word-level facts are `ChainBindingNoSaturationPeak` and `AmeBindingNotPairwise`
-(`b₃ ≠ 0`). The rank caps of `flavour` and `em` are encoded as data (`Channel.maxRank`) and are
-not proved in Lean, because that needs Wigner–Eckart for `U_q(sl₂)`. That braid traces have rank 0 is proved at every `n`.
+(`b₃ ≠ 0`). That braid traces have rank 0 is proved at every `n`.
+
+**Where the flavour and EM caps come from.** A `b`-body operator lives in
+`End(V^{⊗b}) ≅ V^{⊗b} ⊗ (V^{⊗b})^* ≅ V^{⊗2b}` under the adjoint action of `U_q(sl₂)`. So its
+ranks are the spins of `V^{⊗2b}`: the two-row blocks of level `2b`, with `T = b − k`. That
+gives `{0, …, b}` (`bodyRanks_eq`). With `b = 1` for flavour and `b = 2` for EM this is exactly
+the cap table (`maxRank_eq_bodyRanks`). The quantum dimensions balance:
+`Σ_r d(2b, b−r)·[2r+1]_q = [2]_q^{2b}` (`bodyRank_qdim`, which is the corpus's
+`levelSum_eq_one` at level `2b`). The cap `r ≤ 2T` is Clebsch–Gordan for
+`End(V_T) ≅ ⊕_{r≤2T} V_r`, and its dimension check is `multiplet_rank_count`. Two standard
+inputs are cited and not proved: `V^* ≅ V` for the fundamental, and the Clebsch–Gordan
+isomorphism. So the caps are derived from the block index set, modulo those two citations.
 
 ## 3. The index set at the levels in use
 
