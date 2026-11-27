@@ -249,5 +249,73 @@ theorem chain_coeff_mul_A (A : ℚ) (hA : 2 ≤ A) :
 /-- Non-vacuity at `A = 2` (`²H`, `N = 6`, one bond): coefficient `2/30 = 1/15`. -/
 example : ttCoeff (3 * 2) (2 - 1) = 1 / 15 := by norm_num [ttCoeff]
 
+/-! ## 5. A sign-independent bound: the writhe is at most the letter count
+
+Sections 1–4 give the coefficient as `e/(N(N−1))` but leave the writhe `e` of the
+nucleus word open. The bound below needs no sign for any bond letter. A word of `ℓ`
+letters, each `σ_i` or `σ_i⁻¹`, has `|e| ≤ ℓ`; the nucleon core `(σ_aσ_b⁻¹)³` has
+`e = 0`. With the strand layout (`QOU.Mass.StrandLayoutForcesChain`: a single generator
+joins two nucleons only at `3k+2`, and then they are consecutive), a word with one
+bridge letter per nucleon boundary has `ℓ = A − 1` bond letters, so
+`|coeff| ≤ 2/(9A)` whatever their signs. -/
+
+/-- One letter: `σ_i` (`true`) or `σ_i⁻¹` (`false`). -/
+def letter {n : ℕ} (x : Fin n × Bool) : FreeGroup (Fin n) :=
+  if x.2 then FreeGroup.of x.1 else (FreeGroup.of x.1)⁻¹
+
+/-- The word spelled by a list of signed letters. -/
+def wordOf {n : ℕ} (l : List (Fin n × Bool)) : FreeGroup (Fin n) := (l.map letter).prod
+
+theorem writhe_letter {n : ℕ} (x : Fin n × Bool) :
+    Multiplicative.toAdd (writhe (letter x)) = if x.2 then 1 else -1 := by
+  unfold letter; split_ifs <;> simp [writhe, FreeGroup.lift_apply_of]
+
+/-- **`|e(w)| ≤ ℓ(w)`**, for any signs. -/
+theorem abs_writhe_wordOf_le {n : ℕ} (l : List (Fin n × Bool)) :
+    |(Multiplicative.toAdd (writhe (wordOf l)) : ℤ)| ≤ l.length := by
+  induction l with
+  | nil => simp [wordOf]
+  | cons x l ih =>
+    have h : Multiplicative.toAdd (writhe (wordOf (x :: l)))
+        = Multiplicative.toAdd (writhe (letter x)) + Multiplicative.toAdd (writhe (wordOf l)) := by
+      simp [wordOf, map_mul, toAdd_mul]
+    rw [h, writhe_letter]
+    have hx : |((if x.2 then 1 else -1 : ℤ))| = 1 := by split_ifs <;> simp
+    calc _ ≤ |((if x.2 then 1 else -1 : ℤ))| + |(Multiplicative.toAdd (writhe (wordOf l)) : ℤ)| :=
+          abs_add_le _ _
+      _ ≤ 1 + (l.length : ℤ) := by rw [hx]; linarith
+      _ = ((x :: l).length : ℤ) := by simp; ring
+
+/-- **The nucleon core `(σ_aσ_b⁻¹)³` has writhe `0`**, for any two generators. -/
+theorem writhe_core {n : ℕ} (a b : Fin n) :
+    writhe ((FreeGroup.of a * (FreeGroup.of b)⁻¹) ^ 3) = 1 := by
+  simp [writhe, FreeGroup.lift_apply_of, map_pow]
+
+/-- A writhe-zero factor (such as a nucleon core) does not change the writhe. -/
+theorem writhe_mul_of_writhe_eq_one {n : ℕ} {c : FreeGroup (Fin n)} (hc : writhe c = 1)
+    (w : FreeGroup (Fin n)) : writhe (c * w) = writhe w := by
+  rw [map_mul, hc, one_mul]
+
+/-- **Sign-independent coefficient bound:** `|e| ≤ ℓ` gives
+`|ttCoeff(3A, e)| ≤ 2ℓ/(3A(3A−1))`. -/
+theorem abs_ttCoeff_le (A ℓ e : ℚ) (hA : 1 ≤ A) (he : |e| ≤ ℓ) :
+    |ttCoeff (3 * A) e| ≤ 2 * ℓ / (3 * A * (3 * A - 1)) := by
+  unfold ttCoeff
+  have hden : 0 < 3 * A * (3 * A - 1) := by nlinarith
+  rw [abs_div, abs_of_pos hden, abs_mul, abs_two]
+  exact div_le_div_of_nonneg_right (by linarith) hden.le
+
+/-- **With at most `A − 1` bond letters, `|coeff| ≤ 2/(9A)` for every choice of signs.** -/
+theorem abs_ttCoeff_le_of_chain (A e : ℚ) (hA : 1 ≤ A) (he : |e| ≤ A - 1) :
+    |ttCoeff (3 * A) e| ≤ 2 / (9 * A) := by
+  refine (abs_ttCoeff_le A (A - 1) e hA he).trans ?_
+  have hden : 0 < 3 * A * (3 * A - 1) := by nlinarith
+  have h9 : 0 < 9 * A := by linarith
+  rw [div_le_div_iff₀ hden h9]; nlinarith
+
+/-- Non-vacuity: a chain of three letters with mixed signs has writhe `1`, inside the bound. -/
+example : Multiplicative.toAdd (writhe (wordOf [((0 : Fin 3), true), (1, false), (2, true)])) = 1 := by
+  simp [wordOf, letter, writhe, FreeGroup.lift_apply_of]
+
 end QOU.Nuclear.IsospinTwistWrithe
 
