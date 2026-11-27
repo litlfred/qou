@@ -1,13 +1,13 @@
 ---
 # qou-aawz
 title: 'GAP: is there a NON-TRIVIAL FrobeniusHopfData? the corpus only exhibits A = 1'
-status: todo
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T19:59:47Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-27T22:05:00Z
 parent: qou-ddmn
 ---
 
@@ -204,3 +204,13 @@ State unchanged: `QOU.IdemLine.model` is the only non-trivial `FrobeniusHopfData
 ## 2026-11-21 — superseded-premise check (owner instruction 2026-11-21, physics-scope sibling)
 
 Checked against `docs/coordination/owner-rulings.md` on main: no superseded premise found (L± photon, virtual photons, pre-Nov-15 γγ letters, T(2,n_s), convention C, one-term trace, trefoil-as-electron, c₂ = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory).
+
+## 2026-11-27 — resolved: yes (PR #9759)
+
+`QOU.Z2Witness.frobHopfA` is a non-trivial `FrobeniusHopfData`: `A = Fun(ℤ/2, R)` in
+`Rep_R(ℤ/2)` (free finite modules), Haar-sum Frobenius form, `Δ(e_g) = e_g ⊗ e_g`,
+`S` = translation. All 15 axioms hold over any commutative ring. It extends to a full
+`QuantumObservableUniverse` (`QOU.Z2Witness.nonempty_qou_z2`, needs `1 ≠ 0` and `2` a unit;
+axioms propext/choice/Quot.sound only). Rigidity over a ring: `QOU/Core/FreeFinRigid.lean`.
+Owner ruling 2026-11-27: this is a consistency theorem only; `exists_instance` keeps its
+sorry until a q-faithful witness exists (bean `qou-b5w7`).
