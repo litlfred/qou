@@ -1,4 +1,4 @@
-import QOU.Nuclear.FiveTwoEnvelopeAssembly
+import QOU.Transcendental.Nuclear.FiveTwoEnvelopeAssembly
 import Mathlib.Analysis.SpecialFunctions.Complex.Log
 
 /-!

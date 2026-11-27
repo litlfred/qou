@@ -1,4 +1,4 @@
-import QOU.Nuclear.FiveTwoRootStructure
+import QOU.Transcendental.Nuclear.FiveTwoRootStructure
 
 /-!
 # The branch pinning, end to end: `Σⱼ log(1 − x·yⱼ) = log x`

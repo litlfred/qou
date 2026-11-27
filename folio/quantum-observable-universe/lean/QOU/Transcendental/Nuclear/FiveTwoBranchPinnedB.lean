@@ -1,4 +1,4 @@
-import QOU.Nuclear.FiveTwoEnvelopeWiring
+import QOU.Transcendental.Nuclear.FiveTwoEnvelopeWiring
 
 /-!
 # The *other* branch integer: `Σⱼ log(1 − yⱼ/x) = −log x`

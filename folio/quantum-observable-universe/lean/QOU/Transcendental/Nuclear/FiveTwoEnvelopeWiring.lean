@@ -1,4 +1,4 @@
-import QOU.Nuclear.FiveTwoBranchPinned
+import QOU.Transcendental.Nuclear.FiveTwoBranchPinned
 import QOU.Transcendental.QCalculus.ComplexDilogarithmDeriv
 
 /-!

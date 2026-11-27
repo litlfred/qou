@@ -1,4 +1,4 @@
-import QOU.Nuclear.FiveTwoEnvelopeSum
+import QOU.Transcendental.Nuclear.FiveTwoEnvelopeSum
 import QOU.MassTheory.BranchIntegerPinning
 import MathlibExt.ConstantOffOnePoint
 import Mathlib.Analysis.Calculus.Deriv.Prod
