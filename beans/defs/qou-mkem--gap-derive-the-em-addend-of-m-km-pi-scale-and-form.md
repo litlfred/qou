@@ -5,7 +5,9 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-20T08:13:33Z
-updated_at: 2026-11-20T08:13:33Z
+updated_at: 2026-11-27T15:10:00Z
+tags:
+    - compute-accuracy
 parent: qou-3l2l
 ---
 
@@ -24,3 +26,9 @@ order-2-jet forms inside 263.6 ppb, so the FORM choice does not move the verdict
 
 Assessment (not a corpus claim): the addend is ~4 % of the measured pi+- EM splitting
 (49.5 vs 1261 MeV^2) and does not have Dashen-LO structure; a derivation must say which object it is.
+
+**2026-11-27 (compute-accuracy C5, PR #9449).** Still open; label **Selected**. Since 2026-11-24 the factor is a
+proper-time integral over [e^-1,1] U [1,1+hbar_q] (`meson_em_schwinger_proper_time_decomp`), but the UV endpoint
+1+hbar_q vs q is not fixed by any corpus object (gap -log(1-hbar_q^2) > 0, +51 vs +967 ppb), and the Dashen sign
+identity shows the term is not the leading EM shift. Scale (alpha/pi)*m_pi^2 still chosen. α_em is not the blocker
+(Lipschitz bound, <= 0.048 ppb across sorry-free arms). Audit docs/audits/2026-11-27-mk-mpi-selection-status.md.

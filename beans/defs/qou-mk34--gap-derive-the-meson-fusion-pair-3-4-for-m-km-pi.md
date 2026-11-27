@@ -5,7 +5,9 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-20T08:13:33Z
-updated_at: 2026-11-20T08:13:33Z
+updated_at: 2026-11-27T15:10:00Z
+tags:
+    - compute-accuracy
 parent: qou-3l2l
 ---
 
@@ -28,3 +30,10 @@ What would close it: a definition of K and pi as Hecke/Wedderburn objects (stran
 quark content s vs u/d) from which [3]_q[4]_q follows without reference to PDG. Choosing another
 pair because it fits better is forbidden (selection against target). Until closed, the row
 m_K/m_pi is not parameter-free regardless of the alpha_em sorry.
+
+**2026-11-27 (compute-accuracy C5, PR #9449, branch claude/mk-mpi-status-2026-11-27).** Still open; label **Selected**.
+New Lean `QOU.EightfoldWay.MesonRatioSelectionStatus` (generic Field, sorry-free): every function of the pion/kaon
+clasp words agrees at q = 1 (`clasp_reading_pion_eq_kaon`), so no polynomial ratio N/D with N(1) = D(1) != 0 equals
+[3]_q[4]_q as an identity in q (`unit_ratio_reading_ne_p34`). Scope (b), invariant = q=1 odd-clasp collapse vs
+[3]_1[4]_1 = 12. Does NOT exclude a chosen channel (dim_q(V2 x Sym2 W3*) = [3][4], 2026-11-24); choosing it is the
+premise this bean asks to derive. Audit docs/audits/2026-11-27-mk-mpi-selection-status.md.
