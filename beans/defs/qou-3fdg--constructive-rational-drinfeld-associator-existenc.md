@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T22:58:03Z
+updated_at: 2026-11-27T23:07:39Z
 parent: qou-dk7p
 ---
 
@@ -170,3 +170,12 @@ Still open: the K-tower; a concrete realisation; the braid relation in U(t3) ⋊
 
 
 **2026-11-27 — compatibility hypothesis dropped (PR #9810, stacked on #9807).** `rational_associator_compatible_of_groupLikeTower` (AssociatorRealign.lean, sorry-free, axioms propext/Classical.choice/Quot.sound): GroupLikeKAssociatorTower K E + ε(E)=1 already gives the compatible rational sequence; CompatibleGroupLikeKAssociatorTower is no longer needed. Route: `exists_grt_layer` = Drinfeld Prop 5.5 at one degree (two rational group-like associators mod d+1 agreeing mod FF d differ by a homogeneous primitive h ∈ grt), then `realign` moves every level's K-associator onto the prescribed rational one with one exp(h) shift. Still open: full Prop 5.5 (single g ∈ GRT₁ mod N) not stated (not needed); the analytic input GroupLikeKAssociatorTower itself; restating quasiYBE_compatible_of_tower on the weaker hypothesis (follow-up). Audit §17g. Bean stays open.
+
+
+## 2026-11-27 — PR #9815 (branch claude/grt-h4-2026-11-27, based on main)
+Scope cut by Carl to "Furusho first". This PR contains part (0) and the obstruction formalization only.
+- PROVED (sorry-free, axioms: propext/Classical.choice/Quot.sound):
+  - quasiYBE_compatible_of_groupLikeTower: a GroupLikeKAssociatorTower gives a compatible rational Φ with AssocU4, GL and quasi-YBE at every level.
+  - Obstruction.lean: GL_add_iff; obsLin/obstruction; lift_iff_obsLin, lift_iff_homog, lift_iff_primitive (a one-degree lift exists iff the obstruction is in the image of a linear map); field independence (liftSolvableOver_iff, lift_iff_liftSolvableOver); obstruction_mem_range_of_groupLikeK; compatible_of_obstructionVanishes.
+- STILL OPEN: AssociatorObstructionVanishes E, i.e. ∀ d ≥ 1, ∀ Φ with AssocU4 d E Φ and GL d Φ, the obstruction lies in obsLin d '' FF d. That is the H⁴-type vanishing, not attempted per scope. The converse (a compatible tower ⇒ vanishing) is also unformalized, because it needs AssocU4 level monotonicity (a map U4 M → U4 N).
+- Audit §17h. Bean left open.
