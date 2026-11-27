@@ -51,7 +51,7 @@ Companion probe (both branches, plus the test-power bound on the restated gate):
 -/
 
 import Mathlib.Algebra.BigOperators.Intervals
-import Mathlib.Analysis.SpecificLimits.Basic
+import QOU.Core.CutLimit
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
@@ -182,8 +182,8 @@ Stated with that index as an explicit hypothesis `N`, so the proof is elementary
 and the statement is exactly what is used downstream. -/
 theorem qPoch_not_tendsto_zero_of_one_lt {q : ℝ} (hq : 1 < q) (N : ℕ)
     (hN : ∀ n, N ≤ n → 2 ≤ q ^ (n + 1)) :
-    ¬ Filter.Tendsto (fun n => qPoch q n) Filter.atTop (nhds 0) := by
-  intro htend
+    ¬ QOU.Core.CutLimit.ConvergesTo (fun n => qPoch q n) 0 := by
+  intro hconv
   -- the moduli are non-decreasing from `N` on, so they stay `≥ |(q;q)_N| > 0`
   have hmono : ∀ m, |qPoch q N| ≤ |qPoch q (N + m)| := by
     intro m
@@ -196,13 +196,10 @@ theorem qPoch_not_tendsto_zero_of_one_lt {q : ℝ} (hq : 1 < q) (N : ℕ)
           _ ≤ |qPoch q (N + k + 1)| := hstep
           _ = |qPoch q (N + (k + 1))| := by ring_nf
   have hpos : 0 < |qPoch q N| := abs_pos.mpr (qPoch_ne_zero_of_one_lt hq N)
-  -- but convergence to `0` forces the modulus below `|(q;q)_N|` eventually
-  have := (htend.eventually (Metric.ball_mem_nhds (0 : ℝ) hpos))
-  rw [Filter.eventually_atTop] at this
-  obtain ⟨M, hM⟩ := this
+  -- but the located cut at `0` puts the modulus below `|(q;q)_N|` eventually
+  obtain ⟨M, hM⟩ := QOU.Core.CutLimit.tendstoEps_of_convergesTo hconv _ hpos
   have hlt : |qPoch q (N + M)| < |qPoch q N| := by
-    have := hM (N + M) (by omega)
-    simpa [Real.dist_eq, sub_zero] using this
+    simpa [sub_zero] using hM (N + M) (by omega)
   exact absurd (hmono M) (not_le.mpr hlt)
 
 /-- **Contrapositive, as used.** If a real point admits the limit that a
@@ -213,7 +210,7 @@ The substrate anchor `q₀ ≈ 1.10998` satisfies `1 < q₀`, so `qou-qb8e` item
 asks for the value of an object that has none at that point. -/
 theorem no_continuous_evaluation_of_one_lt {q : ℝ} (N : ℕ)
     (hN : ∀ n, N ≤ n → 2 ≤ q ^ (n + 1))
-    (h : Filter.Tendsto (fun n => qPoch q n) Filter.atTop (nhds 0)) : ¬ (1 < q) :=
+    (h : QOU.Core.CutLimit.ConvergesTo (fun n => qPoch q n) 0) : ¬ (1 < q) :=
   fun hq => qPoch_not_tendsto_zero_of_one_lt hq N hN h
 
 

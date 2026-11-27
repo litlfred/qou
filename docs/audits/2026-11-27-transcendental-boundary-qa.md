@@ -12,9 +12,9 @@ stripped before matching. This is a measurement, not a verdict on any one file.
 |---|---:|
 | Lean modules (paper package tree) | 4000 |
 | inside the boundary `QOU/Transcendental/` | 26 |
-| outside, using a transcendental/analytic API directly | 686 |
+| outside, using a transcendental/analytic API directly | 683 |
 | outside, algebraic but importing one transitively (tainted) | 281 |
-| outside, algebraic and import-clean (pure) | 3007 |
+| outside, algebraic and import-clean (pure) | 3010 |
 
 ## Direct use by class
 
@@ -22,7 +22,7 @@ stripped before matching. This is a measurement, not a verdict on any one file.
 |---|---:|---|
 | transcendental-function | 481 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
 | real-completion | 161 | `\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bReal\.sSup\b|\bReal\.sInf\b|\bReal\.iSup\b|\bReal\.iInf\…` |
-| analysis | 326 | `\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTe…` |
+| analysis | 323 | `\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTe…` |
 
 Modules whose only use is `real-completion` (`Real.sqrt`, `sSup`, …): 68. These are the cheapest to move:
 `Real.sqrt` of an algebraic number is algebraic, so most of them can become a root in an
@@ -34,10 +34,10 @@ algebraic extension.
 |---|---:|
 | `QOU/MassTheory` | 151 |
 | `BraidKnotOctonion` | 145 |
-| `QOU/Nuclear` | 105 |
+| `QOU/Nuclear` | 104 |
 | `MathlibExt` | 95 |
 | `QOU/BraidsAndKnots` | 42 |
-| `QCalculus` | 40 |
+| `QCalculus` | 38 |
 | `HeckeTemperleyLieb` | 17 |
 | `QOU/Observations` | 15 |
 | `QOU/BringsSurface` | 14 |
