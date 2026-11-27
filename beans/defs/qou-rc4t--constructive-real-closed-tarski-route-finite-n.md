@@ -1,14 +1,14 @@
 ---
 # qou-rc4t
 title: 'Constructive: real-closed (Tarski) route for finite-N comparisons'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - constructive
     - volume-conjecture
 created_at: 2026-11-27T17:25:00Z
-updated_at: 2026-11-27T17:25:00Z
+updated_at: 2026-11-27T17:55:00Z
 parent: qou-dk7p
 ---
 Owner standing pick (recommended option) 2026-11-27, alternative raised
@@ -25,3 +25,9 @@ Scope: finite N only. The N -> infinity limit stays on [Coev E]
 
 Not adopted, recorded as options: topos-internal Dedekind reals (moves the
 axiom, large); order-only MacNeille cut (special case of the Lawvere cut).
+
+## 2026-11-27 progress (PR #9527, head 7092958ad66)
+- QOU/Core/TarskiSign.lean: Bernstein / Taylor-shift positivity certificates over any ordered field; root exclusion (bisection without IVT); Gonshor windows `follow`/`signPrefix` (first sign + iff 0 < alpha); `pos_of_window` (decision depth = birthday of deciding window); `gonshorCut` located in Archimedean K with no Coev.
+- QOU/Core/TarskiSignKashaev.lean: <4_1>_N over any comm ring (Dickson identity proved); <4_1>_5 = 48+4c mod Psi_5, <4_1>_7 = 103+25c+11c^2 mod Psi_7; embedding = sign "+"; prefixes + - + - and + + - -; 50 < <4_1>_5 <= 51, 139 < <4_1>_7, <4_1>_5 < <4_1>_7; c_5 located without Coev.
+- Birthday caveat recorded: irrational algebraics are born on day omega; birthdays grade the windows, not the numbers.
+Still open: Bernstein completeness (degree elevation); locatedness without the bounds hypothesis (integer phase); certificate generator for general N; appendix-surreals exposition block.
