@@ -51,6 +51,8 @@ import QOU.Core.KashaevHermitianCertificate
 import QOU.Core.TarskiSignKashaevGen
 import QOU.Core.KashaevHabiroBridge
 import QCalculus.HabiroDoubleTwist
+import QCalculus.HabiroColoredJones
+import QCalculus.HabiroTrefoil
 import QOU.Core.TarskiSignUnbounded
 import QOU.Core.TarskiSignBernstein
 import QOU.Core.TarskiSignKashaevGen2
@@ -103,6 +105,7 @@ import MathlibExt.ConstantOffOnePoint
 import QOU.Transcendental.MassTheory.ClausenDoubleAngleSeries
 import QOU.Transcendental.MassTheory.Cl2PentagonFromBlochWigner
 import QOU.Transcendental.MassTheory.BlochGroupComplex
+import QOU.Transcendental.MassTheory.MuonCarrierHeckeObstruction
 import QOU.MassTheory.BranchIntegerPinning
 -- Weierstrass primary-factor estimate ‖1 - E_p(z)‖ ≤ ‖z‖^{p+1}: the Mathlib-gap
 -- infrastructure that closes PI-2 of QOU.Mathlib.HadamardFactorization.
@@ -325,9 +328,9 @@ import QOU.Transcendental.BraidKnotOctonion.FigureEightVolumeLiterature
 import BraidKnotOctonion.NeumannZagierParity
 import BraidKnotOctonion.MortonFranksWilliams
 import BraidKnotOctonion.HomflySkeinReference
-import BraidKnotOctonion.FigureEightQuarticCoefficient
+import QOU.Transcendental.BraidKnotOctonion.FigureEightQuarticCoefficient
 import QOU.BraidsAndKnots.PerNeutronLadder
-import BraidKnotOctonion.IdealTriangulation
+import QOU.Transcendental.BraidKnotOctonion.IdealTriangulation
 import BraidKnotOctonion.ManifoldVolumeBridge
 import BraidKnotOctonion.ManifoldVolumePositive
 import CompactQuantumMetrics.Bicommutant
@@ -382,25 +385,25 @@ import BraidKnotOctonion.PLRegularNbhd
 import BraidKnotOctonion.PLStar
 import BraidKnotOctonion.PLBall
 import BraidKnotOctonion.PLDeltaEquiv
-import BraidKnotOctonion.FiveTwoVolumeConstant
-import BraidKnotOctonion.FiveTwoAngleSum
-import BraidKnotOctonion.FiveTwoNinthPower
-import BraidKnotOctonion.FiveTwoVolumeChord
-import BraidKnotOctonion.FiveTwoShapeBounds
-import BraidKnotOctonion.FigureEightTriangulation
+import QOU.Transcendental.BraidKnotOctonion.FiveTwoVolumeConstant
+import QOU.Transcendental.BraidKnotOctonion.FiveTwoAngleSum
+import QOU.Transcendental.BraidKnotOctonion.FiveTwoNinthPower
+import QOU.Transcendental.BraidKnotOctonion.FiveTwoVolumeChord
+import QOU.Transcendental.BraidKnotOctonion.FiveTwoShapeBounds
+import QOU.Transcendental.BraidKnotOctonion.FigureEightTriangulation
 import BraidKnotOctonion.AngleStructureUniqueness
-import BraidKnotOctonion.IdealTetLawOfSines
+import QOU.Transcendental.BraidKnotOctonion.IdealTetLawOfSines
 import QOU.Transcendental.BraidKnotOctonion.KummerDilogHalf
-import BraidKnotOctonion.KummerRadial
-import BraidKnotOctonion.KummerUnitCircle
-import BraidKnotOctonion.RivinConcavity
+import QOU.Transcendental.BraidKnotOctonion.KummerRadial
+import QOU.Transcendental.BraidKnotOctonion.KummerUnitCircle
+import QOU.Transcendental.BraidKnotOctonion.RivinConcavity
 import BraidKnotOctonion.SymmetricOptimum
-import BraidKnotOctonion.WhiteheadVolumeConjecture
+import QOU.Transcendental.BraidKnotOctonion.WhiteheadVolumeConjecture
 import QOU.Transcendental.BraidKnotOctonion.KashaevProdEndpoint
 import QOU.Transcendental.BraidKnotOctonion.KashaevReflectionTrapezoid
 import QOU.Transcendental.BraidKnotOctonion.KashaevEndpointSplit
-import BraidKnotOctonion.LogSincNearZero
-import BraidKnotOctonion.LobNearZero
+import QOU.Transcendental.BraidKnotOctonion.LogSincNearZero
+import QOU.Transcendental.BraidKnotOctonion.LobNearZero
 import QOU.Transcendental.BraidKnotOctonion.KashaevAsymptotic
 import QOU.Transcendental.BraidKnotOctonion.KashaevArgmax
 import QOU.Transcendental.BraidKnotOctonion.LobTaylorSaddle
@@ -417,7 +420,7 @@ import QOU.Transcendental.BraidKnotOctonion.KashaevFullSum
 import QOU.Transcendental.BraidKnotOctonion.KashaevAsymptoticBounds
 import QOU.Transcendental.BraidKnotOctonion.KashaevCSigma
 import QOU.Transcendental.BraidKnotOctonion.WhiteheadSaddleClausen
-import BraidKnotOctonion.WhiteheadLowerRate
+import QOU.Transcendental.BraidKnotOctonion.WhiteheadLowerRate
 import QOU.BraidsAndKnots.KnotTheory
 import QOU.BraidsAndKnots.Brunnian
 import QOU.BraidsAndKnots.KnotRegistry
@@ -715,11 +718,11 @@ import QOU.Transcendental.MassTheory.CatalanClausenBridge
 import MathlibExt.IdealTetrahedronConcavity
 import QOU.Transcendental.BraidKnotOctonion.LobachevskyDerivative
 import QOU.MassTheory.IdealTetrahedronShapeBridge
-import BraidKnotOctonion.IdealTetrahedronVolumeConcavity
+import QOU.Transcendental.BraidKnotOctonion.IdealTetrahedronVolumeConcavity
 import QOU.Transcendental.BraidKnotOctonion.LobachevskyMaximum
-import BraidKnotOctonion.LobMonotonicity
+import QOU.Transcendental.BraidKnotOctonion.LobMonotonicity
 import BraidKnotOctonion.BlochWignerNonneg
-import BraidKnotOctonion.BlochWignerPositive
+import QOU.Transcendental.BraidKnotOctonion.BlochWignerPositive
 import QOU.Transcendental.MassTheory.HyperbolicVolumeMeasure
 import QOU.Transcendental.MassTheory.HyperbolicVolumeInversion
 import QOU.Transcendental.MassTheory.HyperbolicQuotient
@@ -964,6 +967,7 @@ import QOU.Nuclear.BarOddLadderShape
 -- explicitly on the lake command line, so a plain `lake build` never checked
 -- them and no CI run would have caught a regression in any of them.
 import QOU.Nuclear.InterfaceScalar
+import QOU.Nuclear.IsospinCasimirTwist
 import QOU.Nuclear.GramSignature
 import QOU.Nuclear.PairingSeesCommutator
 import QOU.Nuclear.GluonVertexPsdParity
@@ -1946,6 +1950,7 @@ import QOU.StandardModel.OctonionColourTripletComplexType
 import QOU.StandardModel.GaugeHeckeCanonicalFaithfulness
 import QOU.Core.FlavouredQuantumObservableUniverse
 import QOU.Core.FlavourCentralPhase
+import QOU.Core.FlavourLabelCarrier
 import QOU.StandardModel.OctonionCubeRootPhase
 import QOU.StandardModel.ColourTripletCommutant
 import QOU.StandardModel.ElectroweakBringSchwingerBridge

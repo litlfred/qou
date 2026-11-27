@@ -1,7 +1,7 @@
 import Mathlib.Analysis.Convex.Jensen
 import Mathlib.Tactic
 import BraidKnotOctonion.SymmetricOptimum
-import BraidKnotOctonion.IdealTetrahedronVolumeConcave
+import QOU.Transcendental.BraidKnotOctonion.IdealTetrahedronVolumeConcave
 
 /-!
 # QOU.Knot.AngleStructureUniqueness — uniqueness of the angle-structure optimum

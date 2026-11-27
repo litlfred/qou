@@ -4,7 +4,7 @@ import ToricConicOpt.TypeBFoldedCrystalCombinatorics
 import MathlibExt.ClausenFunctionMathlibFiller
 import QOU.Transcendental.MassTheory.BlochWignerMathlibFiller
 import QOU.Transcendental.MathlibExt.BlochWignerLobachevsky
-import BraidKnotOctonion.CatalanValueBounds
+import QOU.Transcendental.BraidKnotOctonion.CatalanValueBounds
 
 
 /-!

@@ -104,7 +104,7 @@ How to read it:
   `B_ruled_em_MeV = B_ruled − E_EM` and `m_ruled_em_MeV`, on top of the ruled binding of
   PR #9675, whose strong bond is `T_z`-even, so the `T_z` dependence is counted once. Existing
   fields are unchanged and no scorecard table reads the new ones yet.
-  Result: **11,756 of 14,970** nuclei have `B_ruled_em < 0`. The ruled strong law grows by
+  Result: **11,756 of 14,972** nuclei have `B_ruled_em < 0`. The ruled strong law grows by
   about 2.53 MeV per nucleon (⁵⁶Fe: 139.4 MeV against AME 492.3), while `E_EM` grows like
   `Z²/A^{1/3}` (⁵⁶Fe: 116.2 MeV; ²⁰⁸Pb: 766.5 MeV against `B_ruled` 524.7). So once the EM
   channel is present, the strong channel's underbinding shows as unbound heavy nuclei. This is

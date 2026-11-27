@@ -232,3 +232,69 @@ not exclude a sum with a derived q-dependent coefficient.
 No single derived object gives both particles. The q-volume gives the muon and misses the electron;
 the trace gives the electron and misses the muon. A joint object needs a derived reason for the
 relative weight of its trace part and its volume part. Here that weight is forced only at q = 1.
+
+## 10. Is there a canonical Hecke or trace chart for the muon? (added 2026-11-27)
+
+Bean `qou-91w7`, open item "canonical chart". Lean:
+`QOU/Transcendental/MassTheory/MuonCarrierHeckeObstruction.lean` (sorry-free; `#print axioms`
+gives only `propext`, `Classical.choice`, `Quot.sound`; behind the transcendental boundary because
+it uses limits). Probe: `computations/probes/muon_carrier_hecke_probe.py` (5/5, proton pin, nothing
+fitted). Short answer: **no finite Hecke chart can be shown to carry the muon, and the one
+canonical infinite reading found is off by the electron's writhe.** Three findings.
+
+### 10.1 Finite Hecke charts: a rationality obstruction (structural, scope (b) relative to an open problem)
+
+Every convention-D or HOMFLY-normalised Markov trace of a word in H_n(q) is an element of ℚ(q):
+the Ocneanu weights, the seminormal matrices and the HOMFLY unknot factor δ all have entries in
+ℚ(q). So is every finite sum, product or quotient of such traces, at any braid index. The Lean
+proves (`rational_chart_leading_coeff`, and `_hbar` for ℏ_q = 1 − q⁻¹): if f = P/Q with
+P, Q ∈ K[X] and ℏ_q²·f(q) → V ≠ 0 as q → 1, then V ∈ K. The proof factors out the root at 1 from
+P and Q and compares orders; no numerics enter.
+
+Consequence: a finite Hecke chart with rational structure constants whose weight ratio behaves
+like Vol(4₁)/ℏ_q² would prove Vol(4₁) ∈ ℚ; with algebraic constants, Vol(4₁) algebraic. Both are
+open (Vol(4₁) = 6·Λ(π/3) is a rational multiple of √3·L(χ₋₃, 2), whose irrationality is not
+known) and are believed false. So this is not an unconditional exclusion. It says that any such
+chart would settle an open problem in number theory, and it explains audit §8's "510× short":
+the single trace τ(4₁)/τ_e is finite at q = 1, and no finite combination can do better unless
+Vol(4₁) is rational. The volume can only enter through an infinite sum or a limit.
+
+### 10.2 The canonical infinite object: the q-volume is the ℏ-derivative of the quantum dilogarithm
+
+The Hecke-side source of hyperbolic volume is the quantum dilogarithm
+P(z; q) = ∏_{k≥0}(1 − z q⁻ᵏ). Kashaev and colored-Jones state sums of 4₁ are built from its
+factors, and log P ~ −Li₂(z)/ℏ_q: the volume sits at order 1/ℏ, in the exponent. The probe
+confirms this for the Kashaev invariant: d log⟨4₁⟩_N/dN → Vol(4₁)/2π (1.016 at N = 200 → 400,
+the residue being the known (3/2) log N term).
+
+The order-two carrier appears canonically as the q-log-derivative of this object:
+
+  G(z; q) = (q ∂_q log P)(zq; q),
+
+termwise exact in Lean (`qvolume_term_log_deriv`) and checked to 10⁻⁶⁹ at q₀ for the full sum.
+This explains §9's q-volume G: it is not an ad hoc series but the "energy" w = q ∂_q log Z of the
+quantum dilogarithm, and it is why ℏ_q = 1 − q⁻¹ and not log q.
+
+### 10.3 But the same reading puts the electron at its writhe (scope (a) negative)
+
+Applied to the electron's own trace τ_e = q³(q⁴+1)/(q²+1)², the same reading gives
+q ∂_q log τ_e → 3 at q = 1 (`tau_electron_log_deriv_at_one`: τ_e(1) = 1/2, τ_e'(1) = 3/2). The 3
+is the writhe of σ₀σ₁σ₀; the Ocneanu factor y₍₃₎ is bar-invariant and contributes 0. Then the
+carrier of this reading is ℏ²·w_μ/w_e → Vol/3, not Vol (`energy_reading_ne_carrier`). At q₀ the
+ratio w_μ/w_e = 64.69, which is 0.313 of the carrier 206.77. Without framing, the electron's energy
+weight vanishes at q = 1 and the pole order becomes 3. Dividing by the writhe to recover Vol would
+be a fit and is not done.
+
+This is a scope-(a) negative: the energy reading, applied uniformly to both particles, does not
+give the carrier. It does not exclude a reading that weighs the electron differently for a derived
+reason.
+
+### 10.4 What this leaves open
+
+- The carrier's ℏ_q-shape and the role of G are now explained (10.2). The coefficient is not: the
+  natural uniform reading gives 1/3 (10.3), and §9's sum family needs the unexplained c = 1/2.
+  Both are statements about the electron's weight, so the open item narrows again to "derive 𝔈_e",
+  as §5 already said.
+- A canonical chart, if one exists, has to be transcendental (10.1). It belongs in
+  `QOU/Transcendental/`, and it cannot be a finite Hecke trace without settling the irrationality
+  of L(χ₋₃, 2).

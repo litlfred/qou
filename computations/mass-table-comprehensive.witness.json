@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-27T20:53:13.604992+00:00",
-  "commitSha": "6553618bb9d50735d5ea2584181bffb329764c04",
+  "computedAt": "2026-11-27T21:10:31.192975+00:00",
+  "commitSha": "9244221710f076661306089454c295e8931af121",
   "assertions": [
     {
       "name": "all_A_leq_4_masses_computed",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 326050,
+  "durationMs": 323334,
   "computation": "mass-table-comprehensive",
   "scriptFile": "mass_table_comprehensive.py",
   "scriptHash": "556e8238c5a3",
-  "scriptCommitSha": "8f435ca48056e055fb39d08906c5fd786b224694",
+  "scriptCommitSha": "6a8ea47009dc6eef9437edd31c67dd79a15c74ff",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

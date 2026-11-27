@@ -1,4 +1,4 @@
-import BraidKnotOctonion.KummerUnitCircle
+import QOU.Transcendental.BraidKnotOctonion.KummerUnitCircle
 
 /-!
 # The Bloch–Suslin uniqueness class, restated over `ℂ` (issue #7942)

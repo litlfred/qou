@@ -25,7 +25,7 @@ is a `0/0`.  We use its Laurent-polynomial representative `vdvBeltFused`
 continuous extension of the ratio through the root.
 -/
 
-import BraidKnotOctonion.WhiteheadLinkScaffold
+import QOU.Transcendental.BraidKnotOctonion.WhiteheadLinkScaffold
 
 namespace QOU.Knot.FigureEightVolume
 

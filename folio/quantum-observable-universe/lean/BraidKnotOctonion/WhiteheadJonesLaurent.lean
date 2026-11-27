@@ -1,4 +1,4 @@
-import BraidKnotOctonion.WhiteheadBraidVolumeConjecture
+import QOU.Transcendental.BraidKnotOctonion.WhiteheadBraidVolumeConjecture
 import Mathlib.Algebra.Polynomial.Laurent
 import QCalculus.GaussianBinomial
 
