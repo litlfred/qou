@@ -7,13 +7,47 @@ the dim-2310 kernel A/B at 18m26s vs 35.6s). None of them time
 
 This probe does. Kernel arm only; one timed call per isotope, A = 2..4.
 
-MEASURED SO FAR (2026-09-12, this container, pyhecke_native 0.9.0, COMPUTE_DPS):
+MEASURED 2026-11-27 (main @ 22b1f41, pyhecke_native 0.9.0 built in-container
+with `maturin build --release`, kernel asserted, COMPUTE_DPS = 70, defaults
+k_exact = k_max = 11; ONE FRESH PROCESS PER ISOTOPE via `--iso`, rows from
+`--out` checkpoint lines; 4-core cloud container):
+
+    2H   A=2    49.652 s   ok   boot 2810f9a9
+    3H   A=3    82.396 s   ok   boot 2810f9a9   <- the row 2026-09-12 never got
+    3He  A=3    75.020 s   ok   boot 93c6c22a
+    4He  A=4   112.754 s   ok   boot 93c6c22a
+
+The container rebooted between the 3H and 3He runs (boot id changed). Each
+row is one uninterrupted process on one boot, so every row is a complete
+measurement; the two pairs are on different boots of the same container
+class, so compare WITHIN a pair first.
+
+2H is 16.5x faster than the 816.811 s row below at the same configuration.
+The likely cause is code: the LP kernel was made
+10-12x faster with byte-identical output on 2026-11-21 (`ffbcef8388`) and its
+call was memoised on 2026-10-13 (`157032dffa`). Not separated here: how much of
+the 16.5x is each, and how much is the container. The 2026-09-12 rows are
+therefore NOT comparable to these as a scaling series; quote each set with its
+date.
+
+Scaling on the 2026-11-27 rows: A=2 -> A=3 is x1.66 (3H) / x1.51 (3He), and
+A=3 -> A=4 is x1.37 (3H) / x1.50 (3He). That is four points at A <= 4. It does
+not settle the bean title ("binding compute cannot scale"), which is a claim
+about large A.
+
+The `value` column printed by these runs is NOT a binding prediction: per the
+2026-11-15 gamma-gamma ruling the old `atom_braid_word_3A` letters are
+superseded for binding numbers. This is a TIMING measurement only.
+
+Historical rows (2026-09-12), kept as recorded:
+
+MEASURED (2026-09-12, this container, pyhecke_native 0.9.0, COMPUTE_DPS):
 
     2H   A=2   816.811 s   ok      (13.6 min)
     2H   A=2   818.807 s   ok      -- independent earlier run, 0.24 % apart
     3H   A=3   NO RESULT           -- see below
 
-**The A=3 row is NOT a measurement and must not be quoted as one.** The run
+**The 2026-09-12 A=3 row was NOT a measurement and must not be quoted as one** (superseded by the 2026-11-27 rows above). The run
 started 3H at 12:34:31 UTC and the process was gone by 18:04 with no output and
 no traceback -- but the CONTAINER REBOOTED at 17:55 (`who -b`), and the script's
 own `timeout 21000` would not have fired until ~18:11. So the arm was killed by
@@ -98,21 +132,71 @@ assert H._HAS_LP_KERNEL, (
 )
 
 ISOS = [(1, 1, "2H"), (1, 2, "3H"), (2, 1, "3He"), (2, 2, "4He")]
+
+# Per-isotope checkpointing (2026-11-27, bean `qou-sv7h`): a reclaim must leave
+# partial evidence, not a blank file. `--iso 3H` picks isotopes (default: all
+# four); `--out FILE.jsonl` appends one JSON line per event, flushed and
+# fsynced: a `start` line, a `heartbeat` line every `--heartbeat` seconds while
+# the call runs (elapsed seconds + kernel boot id, so a reboot is visible as a
+# boot-id change or a heartbeat gap), and a `done` line with the row. The last
+# heartbeat of an unfinished call is a LOWER BOUND on its wall time only if the
+# heartbeats are contiguous and the boot id never changed.
+import argparse, os, threading, socket
+ap = argparse.ArgumentParser()
+ap.add_argument("--iso", nargs="*", default=None)
+ap.add_argument("--out", default=None)
+ap.add_argument("--heartbeat", type=float, default=300.0)
+args = ap.parse_args()
+if args.iso:
+    ISOS = [t for t in ISOS if t[2] in args.iso]
+
+
+def _boot_id():
+    try:
+        return Path("/proc/sys/kernel/random/boot_id").read_text().strip()
+    except OSError:
+        return None
+
+
+def _log(rec):
+    if not args.out:
+        return
+    rec = {"utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+           "pid": os.getpid(), "host": socket.gethostname(), "boot_id": _boot_id(), **rec}
+    with open(args.out, "a") as f:
+        f.write(json.dumps(rec) + "\n")
+        f.flush()
+        os.fsync(f.fileno())
+
+
 out = []
 for Z, N, name in ISOS:
     A = Z + N
+    _log({"event": "start", "iso": name, "A": A, "kernel": bool(H._HAS_LP_KERNEL), "dps": DPS})
     t0 = time.perf_counter()
+    stop = threading.Event()
+
+    def _beat(name=name, A=A, t0=t0, stop=stop):
+        while not stop.wait(args.heartbeat):
+            _log({"event": "heartbeat", "iso": name, "A": A,
+                  "elapsed_s": round(time.perf_counter() - t0, 1)})
+
+    hb = threading.Thread(target=_beat, daemon=True)
+    hb.start()
     try:
         r = H.binding_energy(Z, N)
         dt = time.perf_counter() - t0
         val = (mp.nstr(r, 25) if isinstance(r, mp.mpf)
                else {k: (mp.nstr(v, 25) if isinstance(v, mp.mpf) else repr(v)) for k, v in r.items()}
                if isinstance(r, dict) else repr(r))
-        out.append({"iso": name, "A": A, "sec": round(dt, 3), "ok": True, "value": val})
+        row = {"iso": name, "A": A, "sec": round(dt, 3), "ok": True, "value": val}
         print(f"  {name:>4}  A={A}  {dt:10.3f}s  ok", flush=True)
     except Exception as e:
         dt = time.perf_counter() - t0
-        out.append({"iso": name, "A": A, "sec": round(dt, 3), "ok": False,
-                    "error": f"{type(e).__name__}: {e}"})
+        row = {"iso": name, "A": A, "sec": round(dt, 3), "ok": False,
+               "error": f"{type(e).__name__}: {e}"}
         print(f"  {name:>4}  A={A}  {dt:10.3f}s  {type(e).__name__}: {e}", flush=True)
+    stop.set()
+    out.append(row)
+    _log({"event": "done", **row})
 print(json.dumps(out, indent=1), flush=True)
