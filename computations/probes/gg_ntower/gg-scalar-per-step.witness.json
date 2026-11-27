@@ -9,7 +9,8 @@
   "qou-ales"
  ],
  "q0": "1.1099785827513808075916690956107688798744991218736",
- "q0Anchor": "physical_proton",
+ "q0Anchor": "proton",
+ "q0AnchorReason": "evaluates the exact Q(q) closed forms at the proton-pinned q0 (Q0_STR) for the F_required straddle only",
  "markov_convention": "D (z = q^3/(q^2+1))",
  "compute_dps": 70,
  "checks": {
