@@ -2,8 +2,10 @@
 
 Date: 2026-11-27. Probe: `computations/probes/coulomb_shape_factor_qbessel_probe.py`
 (pre-registered in its own commit before the first run at q₀). Witness:
-`computations/probes/coulomb-shape-factor-qbessel-probe.witness.json`. Scope (a): not wired to
-`coulomb_energy.py` or the scorecard.
+`computations/probes/coulomb-shape-factor-qbessel-probe.witness.json`. Lean:
+`QOU/Nuclear/CoulombShellShapeFactor.lean` (sorry-free). Wired into `coulomb_energy.py` for
+A ≤ 4 only (owner instruction 2026-11-27: "wire in what is derived. keep probes and options
+documented"; "formalize first!"). See §Wiring.
 
 ## What is computed
 
@@ -68,8 +70,67 @@ Primary / uniform ball = 1.1189 (+11.9 %). Primary / required = 0.9973 (−0.27 
 ## What this does not do
 
 * It gives no radius. `r_rms` still needs the open energy-scale map.
-* It is not wired into `coulomb_energy.py`. Wiring it would replace the 3/5 ball with
-  f = 0.520011 and needs an owner decision.
-* No Lean file: no toolchain in this session. The natural formal statement (dilation
-  invariance of `E · r_rms` for shell configurations, over a linear ordered field) is a
-  follow-up.
+* It gives no radius for the wired path either: `coulomb_energy.py` keeps the selected
+  R = λ̄_π·A^{1/3} and uses r_rms = √(3/5)·R. That radius choice is the remaining
+  selection (bean qou-usft, radius half).
+
+## Lean
+
+`folio/quantum-observable-universe/lean/QOU/Nuclear/CoulombShellShapeFactor.lean`, over a
+linearly ordered field, lean-direct exit 0, axioms propext / Classical.choice / Quot.sound:
+
+* `shellEnergy_dilate`, `shellMoment_dilate`: E(λr) = E/λ, M₂(λr) = λ²M₂.
+* `shapeFactorSq_dilate`: f² = E²M₂/Q⁵ is invariant under every dilation λ > 0.
+* `shapeFactorSq_charge_scale`: invariant under rescaling the charges (normalisation drops out).
+* `shapeFactorSq_lattice_shift`: on r_k = p^k, the shift p^{k+n} gives the same f² — every
+  dilate of the q-Hankel state has the same f.
+* `shapeFactorSq_single_shell`: one shell has f² = 1/4 (non-vacuity).
+
+The probe now also evaluates the literal Lean double sum and asserts it equals the cumulative
+form used for speed (|Δf| = 7.8e-62). The value 0.520011 itself is computed, not proved; the
+q-Hankel orthogonality is cited (Koelink–Swarttouw), not formalised.
+
+## Wiring (A ≤ 4 only) and options kept
+
+`coulomb_energy.shape_factor(A, shape=...)`:
+
+| option | meaning | used by default for |
+|---|---|---|
+| `"derived"` (default) | q-Hankel f for A ≤ 4, uniform ball for A ≥ 5 | everything |
+| `"uniform_ball"` | classical √(3/5)·(3/5) ≈ 0.4648 in f units | the old behaviour, byte-identical |
+| `"qhankel"` | q-Hankel f at every A | comparison only |
+
+Why A ≤ 4: the derivation assumes one s-wave state (ν = 1/2); at A ≤ 4 every nucleon is in 0s.
+At A ≥ 5 the p shell is occupied and the single-state form is outside its own hypothesis, so
+the classical ball stays there, labelled as a classical import. Extending it to the shell model
+is a separate derivation.
+
+## What the wiring does to the consumers (measured, honest)
+
+The derived f is larger than the ball's, and the selected radius is unchanged, so every A ≤ 4
+Coulomb energy rises by 11.9 %:
+
+| quantity | ball (old) | derived (new) |
+|---|---|---|
+| E_C(Z=2, A=3) MeV | 0.8474 | 0.9482 |
+| E_C(Z=2, A=4) MeV | 0.7699 | 0.8615 |
+| ³H/³He: ΔB_AME / ΔE_C | 0.901 | 0.806 |
+| `coulomb-mirror-killswitch` worst-case mirror error | 17 % | 24 % |
+| `binding-wn-kernel` `csb_A3_mirror_residual` | 0.0098 | 0.0215 |
+
+So at A = 3 the derived shape makes the mirror split **worse**. The old 0.901 came from a
+selected radius together with an imported 3/5, and those two partly cancelled. Removing one
+import removes the cancellation. This is information about the radius, not a reason to keep
+the ball. The killswitch assertion
+`derived_coulomb_reproduces_every_mirror_split_within_nolen_schiffer_scale` (threshold 20 %)
+will fail when that probe is next run. It is left as is and must not be relaxed.
+
+`mirror_split_continuum_em_probe.py` builds its own prediction from the 3/5 uniform-sphere form,
+and its rescale cross-check compared that against the canonical path. It now asks for
+`shape="uniform_ball"` explicitly, so it still compares like with like. Its payload is unchanged.
+
+Consumer witnesses were **not** regenerated in this PR. The container's environment was degraded
+(mpmath pinned to 1.3.0 by sympy, no `pyhecke_native`), and one regeneration truncated
+`canonical-isotope-witness-index` (z_max 118 → 20). Under the fast-merge ruling, they are
+refreshed after the merge: the 17 `coulomb_energy` consumers. The figures above were measured
+with a re-run in this container and are not committed numbers.
