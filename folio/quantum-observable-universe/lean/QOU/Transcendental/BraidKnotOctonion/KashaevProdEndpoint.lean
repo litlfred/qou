@@ -40,7 +40,7 @@
   -- Ref: [leitner2026] QOU/Knot/Clausen.lean          (the O(log N) estimate)
   -- Ref: [leitner2026] computations/probes/one_loop_c_sigma_tetrahedral_probe.py
 -/
-import BraidKnotOctonion.FigureEightVolume
+import QOU.Transcendental.BraidKnotOctonion.FigureEightVolume
 import MathlibExt.RootsOfUnityProduct
 
 namespace QOU.Knot.FigureEightVolume

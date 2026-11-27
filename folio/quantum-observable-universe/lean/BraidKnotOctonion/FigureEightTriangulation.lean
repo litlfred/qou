@@ -44,7 +44,7 @@
   -- Ref: [milnor1982]
 -/
 import BraidKnotOctonion.IdealTriangulation
-import BraidKnotOctonion.FigureEightVolume
+import QOU.Transcendental.BraidKnotOctonion.FigureEightVolume
 
 namespace QOU.Knot.FigureEightTri
 
