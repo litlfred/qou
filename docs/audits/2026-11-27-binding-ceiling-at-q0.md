@@ -75,9 +75,12 @@ Consequence: merges `≤ n − ⌈log₂(n+1)⌉`, against `n − 1` without rea
 `c ≥ 3` (`six_strands_three_cycles`), so with the parity lemma of part 1 the bond merges at most 2,
 which is the A = 2 row above. The bond is even because every pure-junction bond is an even permutation.
 
-The bound is sharp for `n ≤ 30`: cycle lengths `1, 2, 4, …` attain it (computed, not proved). The
-all-levels condition gives the same maximum for `n ≤ 9`, so the extra levels do not tighten it
-classically. Exhaustive count of passing permutations by merges at `n = 9`:
+The bound is sharp for every `n` (proved, `ClassicalReading3MergeBound.max_merges_eq`): the positive cycle
+lengths `n + 1 − 2^d, 2^(d−1), …, 2, 1` with `2^d ≤ n < 2^(d+1)` satisfy the monotonicity hypothesis, which
+matches the computation for `n ≤ 30`. The all-levels condition has the same maximum for every `n`
+(`exists_allLevels_clog` with `clog_le_of_allLevels`; the binary layout passes at every level `m ≤ n`),
+which matches the computation for `n ≤ 9`, so the extra levels do not tighten it classically. The
+restriction to level `m` is modelled on cycle labels there, not derived from `E_{n→m}`. Exhaustive count of passing permutations by merges at `n = 9`:
 `{0: 1, 1: 35, 2: 409, 3: 2457, 4: 7988, 5: 1368}`.
 
 The bridge from characters to `a_k` is cited, not formalised. The theorem is stated on cycle-length
