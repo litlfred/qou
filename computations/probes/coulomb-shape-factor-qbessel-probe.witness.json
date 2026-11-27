@@ -1,0 +1,115 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-27T20:23:12.130420+00:00",
+  "commitSha": "dd01a5fbd4af107cb95fb7cf73445c5bc85eaa3c",
+  "assertions": [
+    {
+      "name": "qhankel_norm_at_q0",
+      "computed": "1.0",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "1e-25",
+      "source": "Koelink–Swarttouw q-Hankel orthogonality, m = 0"
+    },
+    {
+      "name": "qhankel_overlap_m1_at_q0",
+      "computed": "-3.0885e-61",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-25",
+      "source": "Koelink–Swarttouw q-Hankel orthogonality, m = 1"
+    },
+    {
+      "name": "primary_f_positive_finite",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sanity only"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "coulomb-shape-factor-qbessel-probe",
+  "scriptFile": "coulomb_shape_factor_qbessel_probe.py",
+  "scriptHash": "29e1ef0756ed",
+  "scriptCommitSha": "dd01a5fbd4af107cb95fb7cf73445c5bc85eaa3c",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "mpmath": "1.4.1",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/coulomb_shape_factor_qbessel_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/coulomb_shape_factor_qbessel_probe.py"
+  },
+  "description": "Bean qou-usft shape half: scale-free Coulomb shape factor f = E_C·r_rms/Q² for the q-Hankel (Hahn–Exton, E_q(2)) l = 0 state J_{1/2}(p^k; p²), p = 1/q0, on the full Jackson lattice p^Z with measure x d_p x — normalisable without a box, unique up to q^Z dilation, so f is well defined while no radius is. Concentric-shell 3-D electrostatics. Alternates (ν = 0, p = 1/q0², q-uniform ball) reported, never selected. Classical shapes and the 3He required f are comparison only. Scope (a).",
+  "data": {
+    "rows": {
+      "primary_nu_half_p_1_over_q0": {
+        "nu": "0.5",
+        "p": "0.900918283955741492160822882481093936014741626610536921744785",
+        "f": "0.520010562994850862465840107226616923677672899831771179340096",
+        "E": "0.377164181159436960858088830738302244238371030385635885381851",
+        "r_rms": "1.37873793157211044077437241626089971112621692660467142234923",
+        "k_range": [
+          -30,
+          447
+        ]
+      },
+      "alt_a_nu_0_p_1_over_q0": {
+        "nu": "0.0",
+        "p": "0.900918283955741492160822882481093936014741626610536921744785",
+        "f": "0.528300209335999959962804626586021858025916224757608293388021",
+        "E": "0.373564660523758175297506296243456387795884860576536489877206",
+        "r_rms": "1.41421356237309504880168872420969807856967187537694807317668",
+        "k_range": [
+          -30,
+          668
+        ]
+      },
+      "alt_b_nu_half_p_1_over_q0sq": {
+        "nu": "0.5",
+        "p": "0.811653754365758058132214822141752124918532537796475209752038",
+        "f": "0.516542873991184463662284844100888417788155077127804501355542",
+        "E": "0.383768014653766559425351834532473550050766751409329676104254",
+        "r_rms": "1.34597687735182065353134482186595897636735719606242432507025",
+        "k_range": [
+          -22,
+          226
+        ]
+      },
+      "alt_c_q_uniform_ball_p_1_over_q0": {
+        "f": "0.465383344094887676795827262347765020918970173377932358828561"
+      }
+    },
+    "classical_comparison": {
+      "uniform_ball": "0.4647580015448899981578279039240442216396331787109375",
+      "gaussian": "0.48860251190291992262615394793101586401462554931640625",
+      "exponential": "0.5412658773652740951121131729451008141040802001953125",
+      "box_s_wave_sin2": "0.474800552889098289996937040221493311633139801346194453339093"
+    },
+    "required_f_3He_comparison_only": "0.5214134",
+    "qhankel_orthogonality_at_q0": {
+      "0": "1.0",
+      "1": "-3.08852228913673430514236727315993531850680543348015098458809e-61",
+      "2": "-1.56608393989124793777233025419615723537483939009650467688688e-61"
+    },
+    "q_scan_primary_context_only": {
+      "1.05": "0.52243368880078737821977267553176566546846709168918337739128",
+      "1.2": "0.516787485657773859581159869093705447329318887311556814248605",
+      "1.5": "0.513227743234014651434822308476207869666172728084011698706615",
+      "2": "0.51928678636768828277302857315308703951239442608314690570168"
+    }
+  }
+}
