@@ -1,0 +1,2645 @@
+{
+ "schema": "transcendental-boundary/v1",
+ "boundary": "QOU/Transcendental/",
+ "modules": {
+  "BraidKnotOctonion/BWVacuumRowConcrete.lean": [
+   "real-completion"
+  ],
+  "BraidKnotOctonion/BlochWignerPositive.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/BorromeanMomentScalingExclusion.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/BorromeanVolume.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/BraidGroupNStrand.lean": [
+   "real-completion"
+  ],
+  "BraidKnotOctonion/BringResidueEnergy.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/BringTrilogImaginaryTateRational.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/CSMarginCorrelationConstant.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/CatalanValueBounds.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/CechEdgeSubdiv.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/CechGenus4Good.lean": [
+   "analysis",
+   "real-completion"
+  ],
+  "BraidKnotOctonion/CechNerveTetrahedron.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/CechSphereComparison.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/CechSubdivMesh.lean": [
+   "real-completion"
+  ],
+  "BraidKnotOctonion/Clausen.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/ClausenValueBounds.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/ClosureComponentsSignInvariant.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/ColSuperstandardEigen.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/ColourCubicBranchLocus.lean": [
+   "real-completion"
+  ],
+  "BraidKnotOctonion/ColourCubicDiscriminant.lean": [
+   "real-completion"
+  ],
+  "BraidKnotOctonion/ColourStructureConstantCommutator.lean": [
+   "real-completion"
+  ],
+  "BraidKnotOctonion/ContentVarianceLeadingConstant.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/CyclotomicCl3OrbitSum.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/CyclotomicLValueDecomposition.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/CyclotomicOrbitSumAllDepths.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/CyclotomicTrilogImaginary.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/DepthStratifiedWeightRequirements.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/EulerMaclaurinFirst.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/F3_eps6_leading_eq_neg_2b_cubed.lean": [
+   "real-completion"
+  ],
+  "BraidKnotOctonion/FigureEightComplexVolume.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/FigureEightDeformedMeridianWinding.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/FigureEightQuarticCoefficient.lean": [
+   "real-completion"
+  ],
+  "BraidKnotOctonion/FigureEightTriangulation.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/FigureEightVolume.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/FigureEightVolumeLiterature.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/FigureEightVolumeSaddle.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/FigureEightVolumeSqueeze.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/FiveTwoAngleSum.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/FiveTwoNinthPower.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/FiveTwoShapeBounds.lean": [
+   "real-completion"
+  ],
+  "BraidKnotOctonion/FiveTwoVolumeChord.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/FiveTwoVolumeConstant.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/FlatTetrahedra.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/GSFiltrationUnitObstruction.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/HeckeCarrierSemisimpleReal.lean": [
+   "real-completion"
+  ],
+  "BraidKnotOctonion/IcosahedralCharacterGoldenRatio.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/IdealTetLawOfSines.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/IdealTetrahedronVolumeConcave.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/IdealTetrahedronVolumeConcavity.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/IdealTriangulation.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/JonquiereCyclotomicTateRationality.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/Kashaev.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/KashaevArgmax.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/KashaevAsymptotic.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/KashaevAsymptoticBounds.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/KashaevBeyondWindow.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/KashaevCSigma.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/KashaevEndpointSplit.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/KashaevFullSum.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/KashaevLogAsymptotic.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/KashaevPeakValue.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/KashaevProdEndpoint.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/KashaevRatioExpansion.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/KashaevReflectionTrapezoid.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/KashaevSaddleWindow.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/KashaevTailBound.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/KashaevWindowAssembly.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/KashaevWindowSum.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/KeystoneC8SuperExpBound.lean": [
+   "real-completion"
+  ],
+  "BraidKnotOctonion/KeystoneHabiroInfiniteRigidity.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/KeystoneHabiroRootFamily.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/KeystoneHeckeMTC.lean": [
+   "real-completion"
+  ],
+  "BraidKnotOctonion/KeystoneLRAmplitudeReal.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/KeystonePFGroundStateIsingInstance.lean": [
+   "real-completion"
+  ],
+  "BraidKnotOctonion/KeystoneVerlindeSMatrixBridge.lean": [
+   "real-completion"
+  ],
+  "BraidKnotOctonion/KummerDilogHalf.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/KummerRadial.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/KummerUnitCircle.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/L6a4VolumeMaximum.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/LNaturalConcaveForm.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/Li2qUniqueness.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/LobMonotonicity.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/LobNearZero.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/LobTaylorSaddle.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/LobachevskyDerivative.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/LobachevskyMaximum.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/LogFactorialStirling.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/LogSincNearZero.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/LogSineCellDefect.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/LogSineRiemannForm.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/LogSineSharpConstant.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/LogSineSingularPart.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/LogSineSmoothPart.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/M004VolumeMaximum.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/M1DescentDPPConvergence.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/MilnorVassilievGrading.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/Model/GLnFaithful.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/MultiTetVolumeConcave.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/OS/Category.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/OS/Interpret.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/OS/Monoidal.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/OS/Syntax.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/OS/Universal.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/PLAlexander.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/PLAmbientIsotopy.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/PLC1Bridge.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/PLC1Estimates.lean": [
+   "real-completion"
+  ],
+  "BraidKnotOctonion/PLC1Uniform.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/PLConeMap.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/PLDeltaEquiv.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/PLDeltaIsotopy.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/PLDeltaMove.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/PLHomeo.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/PLLipschitz.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/PLLipschitzPiecewise.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/PLMaps.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/PLMoveVertexGlue.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/PLMoveVertexNear.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/PLParamBiLip.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/PLPerturb.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/PLPrismPush.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/PLPush.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/PLRegularProjection.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/PLStability.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/PolynomialShadowRigidity.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/QRogersPentagonArchimedean.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/QuantumGLCommutant.lean": [
+   "real-completion"
+  ],
+  "BraidKnotOctonion/QuantumGLHWSpecht.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/QuantumGLHWSpechtId.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/RivinConcavity.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/RivinConcavitySimplex.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/SincDeriv.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/ThreeCalibrationInputs.lean": [
+   "real-completion"
+  ],
+  "BraidKnotOctonion/TrMHopfSigma1SqClosedForm.lean": [
+   "real-completion"
+  ],
+  "BraidKnotOctonion/WhiteheadBraidVolumeConjecture.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/WhiteheadChainVolume.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/WhiteheadInnerGaussianProof.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/WhiteheadJonesLaurent.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/WhiteheadLemma1Derived.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/WhiteheadLemma1RootOfUnity.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/WhiteheadLemma4Reduction.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/WhiteheadLinkScaffold.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/WhiteheadLowerRate.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/WhiteheadMajorantRate.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/WhiteheadMasterErrRate.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/WhiteheadOuterGaussianWindow.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/WhiteheadPhaseAlgebra.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/WhiteheadSaddleClausen.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/WhiteheadTailDecay.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/WhiteheadVolumeConjecture.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/WhiteheadVolumeConjectureUnconditional.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/WhiteheadWindowTaylor.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/YoungDiagramKernelPincer.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/jet_convergence_classical_limit.lean": [
+   "analysis"
+  ],
+  "BraidKnotOctonion/lagrange_resolvent_transform.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/nonabelian_stokes_surface_boundary_stokes.lean": [
+   "transcendental-function"
+  ],
+  "BraidKnotOctonion/terms_2_6_higher_operations.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "CompactQuantumMetrics/Bicommutant.lean": [
+   "transcendental-function"
+  ],
+  "CompactQuantumMetrics/FiniteRieffelQuantumMetric.lean": [
+   "transcendental-function"
+  ],
+  "CompactQuantumMetrics/FrobeniusInnerProduct.lean": [
+   "real-completion"
+  ],
+  "CompactQuantumMetrics/SDPStrongDuality.lean": [
+   "analysis",
+   "real-completion"
+  ],
+  "HeckeTemperleyLieb/BraidWordInvariance.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/BruhatConverse.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/BruhatReflection.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/BruhatSubword.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/ChannelRangeGrowthClass.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/CompositionYoung.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/CoxeterA3Instantiation.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/CoxeterCommutingTransversal.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/CoxeterDeletion.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/CoxeterDihedralDescent.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/CoxeterDihedralOrder.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/CoxeterGeometricRepresentation.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/CoxeterGeometricRepresentationFull.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/CoxeterParabolicCoset.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/CoxeterParabolicTransversal.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/CoxeterRankTwo.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/CoxeterReflectionCocycle.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/CoxeterTitsResidueCollapse.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/ForcedLinkNormalisation.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/HabiroMagnitudeA3.lean": [
+   "analysis"
+  ],
+  "HeckeTemperleyLieb/HeckeH2WedderburnReal.lean": [
+   "real-completion"
+  ],
+  "HeckeTemperleyLieb/HeckeTauAssignmentCanonicity.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/HoefsmitV21CosSymmetrization.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/JucysMurphy.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/KZTwoStrandHecke.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/MarkovAxiomsPrimitive.lean": [
+   "real-completion"
+  ],
+  "HeckeTemperleyLieb/MarkovConventionSeparation.lean": [
+   "real-completion"
+  ],
+  "HeckeTemperleyLieb/Matsumoto.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/OVBaseSeminormalVector.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/QHookBound.lean": [
+   "real-completion"
+  ],
+  "HeckeTemperleyLieb/QPlancherel.lean": [
+   "real-completion"
+  ],
+  "HeckeTemperleyLieb/SeminormalV21Trace.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/Specht.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/SpechtAbsolutelyIrreducible.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/SpechtCharFreeStandardBasis.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/SpechtClassification.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/SpechtCrossKappa.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/SpechtDominanceCore.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/SpechtIrreducible.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/SpechtStandardBasisCore.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/SpechtTriangularCore.lean": [
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/SubstrateRegime.lean": [
+   "real-completion"
+  ],
+  "HeckeTemperleyLieb/SymmetrySignAmGm.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/TwSpanning.lean": [
+   "real-completion"
+  ],
+  "HeckeTemperleyLieb/YoungChannelVertex.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/AlternatingZetaTwo.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/ArgumentPrinciple.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/ArgumentPrincipleAnnulus.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/BlochWignerLobachevsky.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/BorelLaplace.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/BorelResummation.lean": [
+   "analysis"
+  ],
+  "MathlibExt/BorelWatson.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "MathlibExt/BorelWatsonSector.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/BorelWatsonSectorFull.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/BorelWatsonSectorTransport.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/BorelWatsonShift.lean": [
+   "analysis"
+  ],
+  "MathlibExt/BorelWatsonShiftFull.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/BorelWatsonUniqueness.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/BoundedMeromorphicLiouville.lean": [
+   "analysis"
+  ],
+  "MathlibExt/C1GevreyLinearCoeff.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/CauchyBinet.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/CechChernClass.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/CechColimit.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/CechColimitConverse.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/CechGerbe.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/CircleIntegralFinsetSum.lean": [
+   "analysis"
+  ],
+  "MathlibExt/Clausen.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/ClausenFunctionMathlibFiller.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/CombinatorialMapEuler.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/CombinatorialMapQuotient.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/ComplexGaussianSumNonCancellation.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/CompositeEulerMaclaurin.lean": [
+   "analysis"
+  ],
+  "MathlibExt/ConstantOffOnePoint.lean": [
+   "analysis"
+  ],
+  "MathlibExt/CoproductDescent.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/Core.lean": [
+   "real-completion"
+  ],
+  "MathlibExt/CorrectedTrapezoid.lean": [
+   "analysis"
+  ],
+  "MathlibExt/CoshCosSeparation.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/CycleCountSwap.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/DilogPartAConvergence.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/DilogPartARiemannSum.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/DilogPartBBoundarySeed.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/DilogPartBBranchPointSum.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/DilogPartBIteratedLimit.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/DilogPartBWP1Capstone.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/DilogReflection.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/DilogarithmArchimedeanLimit.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/DirichletL.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/Dolbeault.lean": [
+   "analysis"
+  ],
+  "MathlibExt/DoublyPeriodicLiouville.lean": [
+   "analysis"
+  ],
+  "MathlibExt/EDCoherentLocality.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "MathlibExt/EllipticAnnulusDescent.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/EllipticAnnulusWinding.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/EllipticDivisorDegree.lean": [
+   "analysis"
+  ],
+  "MathlibExt/ExponentOfConvergence.lean": [
+   "analysis"
+  ],
+  "MathlibExt/ExponentialGrowthRate.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/FibrationExactness.lean": [
+   "analysis"
+  ],
+  "MathlibExt/FiveTwoAbelFiveTerm.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/FiveTwoRogersReflection.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/FiveTwoSaddleSumRule.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/GaussianShearIntegral.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "MathlibExt/GaussianSumBound.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "MathlibExt/GaussianTailBound.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "MathlibExt/GaussianThetaBound.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "MathlibExt/GaussianThetaSum.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "MathlibExt/GaussianTiltedSum.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "MathlibExt/GaussianWindowSum.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "MathlibExt/GermStabiliserCyclic.lean": [
+   "analysis"
+  ],
+  "MathlibExt/GibbsRatioMonotonicity.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/H4VertexEnergy.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/HadamardFactorization.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/HadamardZeroFree.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/HalfPlaneNonCancellation.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/IdealTetrahedronConcavity.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/ImplicitScalar.lean": [
+   "analysis"
+  ],
+  "MathlibExt/JensenZeroCounting.lean": [
+   "analysis"
+  ],
+  "MathlibExt/KZHolonomy/BraidGeometry.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/KZHolonomy/FlatTransport.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/KZHolonomy/KZForm.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/LiouvilleThird.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/LocalCocycleTransport.lean": [
+   "analysis"
+  ],
+  "MathlibExt/MahlerJensen.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/ManifoldForms.lean": [
+   "analysis"
+  ],
+  "MathlibExt/MapGenusNonneg.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/MeromorphicPuncturedBounded.lean": [
+   "analysis"
+  ],
+  "MathlibExt/OneLoopPrefactorInvariance.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "MathlibExt/ParallelogramContour.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/PathLebesgue.lean": [
+   "analysis"
+  ],
+  "MathlibExt/PeriodicDense.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/PermInversion.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/Polylogarithm.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/PresheafCentralExtensionObstruction.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/QGevreyOrder.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/QuadraticIrrationalBadlyApproximable.lean": [
+   "real-completion"
+  ],
+  "MathlibExt/RatioEntireOfSameDivisor.lean": [
+   "analysis"
+  ],
+  "MathlibExt/RigidityReductionScope.lean": [
+   "analysis"
+  ],
+  "MathlibExt/RootsOfUnityProduct.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/RothContradiction.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/RothFinalAssembly.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/RothIndexGap.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/RothIntegerChain.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/RothNormalisation.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/RothRealLadder.lean": [
+   "real-completion"
+  ],
+  "MathlibExt/RpowAlgebra.lean": [
+   "real-completion"
+  ],
+  "MathlibExt/SelectionBound.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/SinCubeBounds.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/SplayPoisson.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/StirlingRobbins.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "MathlibExt/StirlingUpperBound.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "MathlibExt/StokesJump.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "MathlibExt/StrictConcaveOnSegments.lean": [
+   "analysis"
+  ],
+  "MathlibExt/TauRhoHodgeLiftInterface.lean": [
+   "transcendental-function"
+  ],
+  "MathlibExt/TaylorRemainder.lean": [
+   "analysis"
+  ],
+  "MathlibExt/TrapezoidRule.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "MathlibExt/WeierstrassFactorEstimate.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QCalculus/CanonicalProductGrowth.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QCalculus/ComplexDilogBridge.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QCalculus/ComplexDilogarithm.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QCalculus/ComplexDilogarithmDeriv.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QCalculus/ComplexDilogarithmInversion.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QCalculus/ComplexDilogarithmLanden.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QCalculus/ComplexDilogarithmOnCut.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QCalculus/ComplexDilogarithmSlit.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QCalculus/ComplexRogersDilog.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QCalculus/CyclicDilogPentagon.lean": [
+   "transcendental-function"
+  ],
+  "QCalculus/DilogPartBFaddeevScaling.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QCalculus/FaddeevCompactCurve.lean": [
+   "analysis"
+  ],
+  "QCalculus/FaddeevPhiBRealIntegral.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QCalculus/FaddeevPhiUniquenessAssembly.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QCalculus/FaddeevQuantumDilogarithm.lean": [
+   "transcendental-function"
+  ],
+  "QCalculus/FaddeevRatioPeriodic.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QCalculus/FaddeevRigidityMeromorphic.lean": [
+   "analysis"
+  ],
+  "QCalculus/FaddeevRigidityReduction.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QCalculus/FaddeevStripGrowthUniqueness.lean": [
+   "transcendental-function"
+  ],
+  "QCalculus/FaddeevUniquenessBoundedCapstone.lean": [
+   "transcendental-function"
+  ],
+  "QCalculus/FaddeevUniquenessCapstone.lean": [
+   "transcendental-function"
+  ],
+  "QCalculus/FiveTwoComplexPentagon.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QCalculus/HabiroBracketFamily.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QCalculus/HabiroEvaluationTrichotomy.lean": [
+   "analysis"
+  ],
+  "QCalculus/HabiroTailAction.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QCalculus/HabiroZetaFamily.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QCalculus/HadamardApplicability.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QCalculus/HadamardAssembly.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QCalculus/HadamardMinimumModulus.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QCalculus/HadamardQuotient.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QCalculus/LiTwoNegOne.lean": [
+   "transcendental-function"
+  ],
+  "QCalculus/PhiBFibreExtension.lean": [
+   "transcendental-function"
+  ],
+  "QCalculus/PhiBProd.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QCalculus/PhiBProdDivisor.lean": [
+   "transcendental-function"
+  ],
+  "QCalculus/PhiBProdFactorAnalytic.lean": [
+   "transcendental-function"
+  ],
+  "QCalculus/PhiBProdLociDensity.lean": [
+   "transcendental-function"
+  ],
+  "QCalculus/PhiBProdProductConvergence.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QCalculus/PhiBProdUniquenessComplete.lean": [
+   "transcendental-function"
+  ],
+  "QCalculus/PhiBProdUniquenessFinal.lean": [
+   "transcendental-function"
+  ],
+  "QCalculus/PhiBProdZeroIsolation.lean": [
+   "transcendental-function"
+  ],
+  "QCalculus/QHeatKernelHabiroExpansion.lean": [
+   "analysis"
+  ],
+  "QCalculus/RogersDilogInflection.lean": [
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/AssociatorKZ.lean": [
+   "analysis"
+  ],
+  "QOU/BraidsAndKnots/BarSymmetricBarAntiSymmetricIdentities.lean": [
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/BindingScaleCandidates.lean": [
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/BondCutSymmetryFibreTowerBound.lean": [
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/BondCutSymmetryLogBound.lean": [
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/BondCutSymmetryNoSignDefiniteLogBound.lean": [
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/BringFiberActionInstance.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/Cl3Zeta5PslqIndependence.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/DeltaLambdaSignRule.lean": [
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/Drinfeld/Braiding.lean": [
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/Drinfeld/BraidingVV.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/Drinfeld/Hexagon.lean": [
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/Drinfeld/RibbonDH.lean": [
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/DrinfeldAssociator.lean": [
+   "analysis"
+  ],
+  "QOU/BraidsAndKnots/Flat2D.lean": [
+   "analysis"
+  ],
+  "QOU/BraidsAndKnots/FuchsianAnalytic.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/FuchsianParam.lean": [
+   "analysis"
+  ],
+  "QOU/BraidsAndKnots/HiggsCategoricalMassFormula.lean": [
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/InterNucleonChannelColorTube.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/JHopfQOneProvenance.lean": [
+   "real-completion"
+  ],
+  "QOU/BraidsAndKnots/KZ4.lean": [
+   "analysis"
+  ],
+  "QOU/BraidsAndKnots/KZComplex.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/KZCorner.lean": [
+   "analysis"
+  ],
+  "QOU/BraidsAndKnots/KZEdge.lean": [
+   "analysis"
+  ],
+  "QOU/BraidsAndKnots/KZFunctorial.lean": [
+   "analysis"
+  ],
+  "QOU/BraidsAndKnots/KZHalfMonodromy.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/KZHexagon.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/KZIntertwine.lean": [
+   "analysis"
+  ],
+  "QOU/BraidsAndKnots/KeystoneN5LevelSixSuffices.lean": [
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/LadderConventionLocalisation.lean": [
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/MuonKashaevReading.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/QBetaCKRecursionKernelConstraints.lean": [
+   "real-completion"
+  ],
+  "QOU/BraidsAndKnots/QBetaCategoricalPrecisionLadder.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/QBetaPerBlockChiClosedForms.lean": [
+   "analysis",
+   "real-completion"
+  ],
+  "QOU/BraidsAndKnots/QBetaQStarClosedFormExclusion.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/QBetaReebSinhParity.lean": [
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/SmallHbar.lean": [
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/SubstrateEWHypotheses.lean": [
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/TwoRoutesProtonMass.lean": [
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/WeakVertexCouplingNormalisationArchimedean.lean": [
+   "analysis"
+  ],
+  "QOU/BraidsAndKnots/WignerSU4FromSpinIsospin.lean": [
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/YoungDiagramKernelA2MomentSkeleton.lean": [
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/ZigZag.lean": [
+   "analysis"
+  ],
+  "QOU/BraidsAndKnots/mobius_frobenius_kernel.lean": [
+   "analysis"
+  ],
+  "QOU/BraidsAndKnots/nsi_q_deformed_kernel.lean": [
+   "analysis"
+  ],
+  "QOU/BraidsAndKnots/volume_perturbation.lean": [
+   "real-completion"
+  ],
+  "QOU/BringsSurface/BringHeckeCommensurability.lean": [
+   "real-completion"
+  ],
+  "QOU/BringsSurface/BringHeckeNoOrderThree.lean": [
+   "real-completion"
+  ],
+  "QOU/BringsSurface/BringLatticeSpan.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/BringsSurface/BringUTContactChirality.lean": [
+   "transcendental-function"
+  ],
+  "QOU/BringsSurface/ChartStep.lean": [
+   "analysis"
+  ],
+  "QOU/BringsSurface/ConditionalClasses.lean": [
+   "analysis"
+  ],
+  "QOU/BringsSurface/ConditionalCorollaries.lean": [
+   "analysis"
+  ],
+  "QOU/BringsSurface/IdentityTheorem.lean": [
+   "analysis"
+  ],
+  "QOU/BringsSurface/MetallicHierarchy.lean": [
+   "real-completion"
+  ],
+  "QOU/BringsSurface/MetallicLPIdentities.lean": [
+   "real-completion"
+  ],
+  "QOU/BringsSurface/MobiusKernel.lean": [
+   "analysis"
+  ],
+  "QOU/BringsSurface/OhtsukiKappaDependence.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/BringsSurface/ScratchZeta5.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/BringsSurface/collatz_contact_boundary.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/BringsSurface/zeta5_residue_monodromy.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/Confinement/FigureEightVolumeBridge.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Confinement/MostowRigidity.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Confinement/WeakChiralityRootLabel.lean": [
+   "analysis"
+  ],
+  "QOU/Confinement/WedderburnMassFormula.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Confinement/atomic_nf_witness.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Confinement/silver_ratio_beta_decay_null.lean": [
+   "analysis",
+   "real-completion"
+  ],
+  "QOU/Core/CategoricalDynamics.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Core/CategoricalFoundations.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Core/CategoricalHamiltonianLegendre.lean": [
+   "analysis",
+   "real-completion"
+  ],
+  "QOU/Core/CategoricalHiggsIdempotent.lean": [
+   "real-completion"
+  ],
+  "QOU/Core/FrechetShohat.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/Core/Infra.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Core/KnotFactorFrobeniusPairing.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Core/ProtonMassEMSignBlock.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Core/QAnalysisUniquenessCounterexamples.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Core/QBetaEnergyDictionary.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Core/QExpEntire.lean": [
+   "analysis"
+  ],
+  "QOU/Core/ReebHamiltonianChartBridgeReal.lean": [
+   "real-completion"
+  ],
+  "QOU/Core/StieltjesCompactDeterminacy.lean": [
+   "analysis"
+  ],
+  "QOU/Core/observation_energy.lean": [
+   "analysis"
+  ],
+  "QOU/Core/u1EquivariantReduction.lean": [
+   "transcendental-function"
+  ],
+  "QOU/EightfoldWay/DressedMassFromSubstrateSplit.lean": [
+   "real-completion"
+  ],
+  "QOU/EightfoldWay/FlavorMassSplittingBound.lean": [
+   "real-completion"
+  ],
+  "QOU/EightfoldWay/MesonKaonPionSchwingerBridge.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/FluidDynamics/BeltramiSteadyEuler.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/FluidDynamics/DSSObstructions.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/FluidDynamics/DSSTailMatching.lean": [
+   "analysis"
+  ],
+  "QOU/FluidDynamics/GaugeFieldFluidDynamics.lean": [
+   "transcendental-function"
+  ],
+  "QOU/FluidDynamics/GeometricDepletion.lean": [
+   "real-completion"
+  ],
+  "QOU/FluidDynamics/burgers_core_strain_cap.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/FluidDynamics/p1_nonlinear_uniqueness.lean": [
+   "transcendental-function"
+  ],
+  "QOU/FluidDynamics/q_ns_alpha_dissipation_bound.lean": [
+   "analysis"
+  ],
+  "QOU/FluidDynamics/q_ns_energy_and_decay.lean": [
+   "transcendental-function"
+  ],
+  "QOU/FluidDynamics/q_ns_enstrophy_order_parameter.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/FluidDynamics/q_ns_part_a_paths.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/FluidDynamics/q_ns_wellposedness.lean": [
+   "transcendental-function"
+  ],
+  "QOU/FluidDynamics/q_turbulence_spectrum.lean": [
+   "transcendental-function"
+  ],
+  "QOU/InformationTheory/ComputationalHorizon.lean": [
+   "transcendental-function"
+  ],
+  "QOU/InformationTheory/HeckeLogDecomposition.lean": [
+   "transcendental-function"
+  ],
+  "QOU/InformationTheory/QCollatz.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/InformationTheory/toffoli_transfer_matrix.lean": [
+   "real-completion"
+  ],
+  "QOU/LiftingDescent/ChenMultiplicativeIntegralBridge.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/LiftingDescent/MultiplicativeIntegralCurvature.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/LiftingDescent/PBWFilteredData.lean": [
+   "transcendental-function"
+  ],
+  "QOU/LiftingDescent/PBWFormalGroup.lean": [
+   "transcendental-function"
+  ],
+  "QOU/LiftingDescent/PBWIntegration.lean": [
+   "transcendental-function"
+  ],
+  "QOU/LiftingDescent/tm_dilogarithm_evaluation.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/A4InterfaceMagnitude.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/AlphaEmFormCConditionalContent.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/AlphaEmTwoLoopBlochSchwinger.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/ArchimedeanLimitDomain.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/ArchimedeanLimitEndpoints.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/ArchimedeanLimitNegative.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/ArchimedeanTraceBridge.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/B4NonSaturatingBracket.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/BalancedKernelConfluence.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/BalancedKernelTightness.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/BalancedMomentConfluence.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/BalancedThetaLimit.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/BarReflectionGridSelectionReal.lean": [
+   "real-completion"
+  ],
+  "QOU/MassTheory/BindingLawClassInvariants.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/BindingMassRung.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/BindingRecurrenceSpectral.lean": [
+   "real-completion"
+  ],
+  "QOU/MassTheory/BlochGroupComplex.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/BlochRigidity/Abstract.lean": [
+   "analysis",
+   "real-completion"
+  ],
+  "QOU/MassTheory/BlochRigidity/Derivative.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/BlochRigidity/Growth.lean": [
+   "real-completion"
+  ],
+  "QOU/MassTheory/BlochRigidity/Holomorphic.lean": [
+   "analysis",
+   "real-completion"
+  ],
+  "QOU/MassTheory/BlochRigidity/Reflection.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/BlochRigidity/Regularity.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/BlochRigidity/Vanishing.lean": [
+   "analysis",
+   "real-completion"
+  ],
+  "QOU/MassTheory/BlochSuslinComplex.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/BlochWignerFiveTermInstance.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/BlochWignerMathlibFiller.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/BlochWignerSymmetry.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/BlockMeasureBindingFormArchimedean.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/BorelProperTimeMoment.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/BorromeanVolumeCatalan.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/BranchIntegerPinning.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/BranchingConvergence.lean": [
+   "real-completion"
+  ],
+  "QOU/MassTheory/BridgeAColourSplit.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/BridgeADeligneKZ.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/BridgeAStokesNBody.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/BringSchwingerNormalizationDerivation.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/BringZeroModeClausenWitness.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/CatalanClausenBridge.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/ChainTraceFactor.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/Cl2PentagonFromBlochWigner.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/ClassicalLogBindingCycleCount.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/ClassicalTraceFloorParity.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/ClausenDoubleAngleSeries.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/ClosureNormalisationDefect.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/ComplexDilogReflectionExt.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/ComplexVolumeFibreDescent.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/ComplexVolumeZeta4Partner.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/ConeAngleIdentity.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/ConvolutionFlowFibre.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/CoordinationBulkCriterion.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/CoordinationSurfaceDeficit.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/CostOrderSensitivity.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/DeuteronTwoBodyKernel.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/DilogNaStokesOrdering.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/DilogPartBAEAssembly.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/DilogPartBAEFinal.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/DilogPartBBorelCantelli.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/DilogPartBBranchPhase.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/DilogPartBBranchPointLimit.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/DilogPartBEulerTail.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/DilogPartBJointAssembly.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/DilogPartBRiemannTail.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/DilogPartBWP1Refutation.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/DilogPartBWindowMeasure.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/DiprotonResponseClosedForm.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/DiprotonSecondOrder.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/EmCouplingBringZeroMode.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/EmMeasureGaussBonnet.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/FHWExponentWindow.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/FiveTwoOhtsukiBridge.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/FlipSymmetryAtOne.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/FreeEnergyReadingIsSigned.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/GammaGammaEscapesSingleCrossing.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/GammaGammaIsospinChannel.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/GammaGammaSelectorH3.lean": [
+   "real-completion"
+  ],
+  "QOU/MassTheory/GammaGammaVertexEigenvalues.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/GroundStateOrderingRefutation.lean": [
+   "real-completion"
+  ],
+  "QOU/MassTheory/GrowingWidthCutShapeExclusion.lean": [
+   "real-completion"
+  ],
+  "QOU/MassTheory/HyperbolicConformalAngle.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/HyperbolicDihedralAngle.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/HyperbolicGeodesic.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/HyperbolicGeodesicZAxis.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/HyperbolicGeodesicZAxisUniqueness.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/HyperbolicMetric.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/HyperbolicMetricSeparation.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/HyperbolicNormalization.lean": [
+   "real-completion"
+  ],
+  "QOU/MassTheory/HyperbolicQuotient.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/HyperbolicSurfaceLaw.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/HyperbolicVolumeFubini.lean": [
+   "analysis",
+   "real-completion"
+  ],
+  "QOU/MassTheory/HyperbolicVolumeInversion.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/HyperbolicVolumeMeasure.lean": [
+   "analysis",
+   "real-completion"
+  ],
+  "QOU/MassTheory/HyperbolicVolumeTranscendence.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/IdealTetEqChimney.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/IdealTetFacesFromInscribedTriangle.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/IdealTetFromVertices.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/IdealTetObtuseReduction.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/IdealTetVolumeChimneyBridge.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/IdealTetrahedronRegion.lean": [
+   "analysis",
+   "real-completion"
+  ],
+  "QOU/MassTheory/IdealTetrahedronShapeBridge.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/InterfaceVertexArity.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/IntraOrderingInvariance.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/InvolutionSelectionRule.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/KZHolonomy/ArtinGeneration.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/KZHolonomy/BraidGauge.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/KZHolonomy/ConfConnected.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/KZHolonomy/ConfGeneric.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/KZHolonomy/ConfRegions.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/KZHolonomy/Continuity.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/KZHolonomy/LocalMonodromy.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/KZUnitModulusPrune.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/KappaWritheAsymptote.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/KohnoAssembly.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/KohnoAssemblyGL.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/KohnoTwoPoint.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/KohnoWeighted.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/LinearChainBondFactorization.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/LobAnalytic.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/LobBarrier.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/LobachevskyDerivativeAnalytic.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/MagnusSumAbsEigBound.lean": [
+   "real-completion"
+  ],
+  "QOU/MassTheory/MarginalRatioExtensivity.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/MassDerivation.lean": [
+   "real-completion"
+  ],
+  "QOU/MassTheory/MassTowerOpenProblemsClasses.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/MassVolDensity.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/MobiusEnergy.lean": [
+   "real-completion"
+  ],
+  "QOU/MassTheory/MobiusMutualChannel.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/MobiusRegulator.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/MostowIdealTetVolume.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/MultiplicityNotExtensive.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/NZBarEvenVolumeFace.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/ObtuseTiling.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/ObtuseWedgeDegenerate.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/OrthoschemeBaseIntegral.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/OrthoschemeLambdaSum.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/OrthoschemePolarReduction.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/OrthoschemeRotation.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/OrthoschemeTiling.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/OrthoschemeWedgePair.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/OwnSectorFromWeightGrading.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/PhotonIRZeroMode.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/ProtonQ3OcneanuSlopes.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/ProtonQ3SchurElement.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/PsdDetOneTrace.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/QReebEigenphaseCompact.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/QbetaFmapPowerClassPrune.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/ReebLinkingCWF.lean": [
+   "real-completion"
+  ],
+  "QOU/MassTheory/RelativeReebDatum.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/SWGaussianLogNormalMoments.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/SchwingerMeasureShape.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/SegmentCollisionDatum.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/SpuriousClosureBinding.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/StokesSingularCountAffine.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/TetVolAnalytic.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/ThreeDividesKBreaks.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/ThreeSubstantiveMathlibFillers.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/TorusInflection.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/TotallyGeodesicFaces.lean": [
+   "real-completion"
+  ],
+  "QOU/MassTheory/TowerHeightAttack.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/TropicalClassTransport.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/TwistedPeriodEigenvalueRatio.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/TwoBodyInterfaceBond.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/UICLogSummandEven.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/UICPerBlockLogSymmetryCurvature.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/WStdSuperExponential.lean": [
+   "real-completion"
+  ],
+  "QOU/MassTheory/WhiteheadVolumeCatalan.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/Zeta4ComplexVolumeModerator.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/eos_borromean_cfl.lean": [
+   "transcendental-function"
+  ],
+  "QOU/MassTheory/pair_skein_mass_formula.lean": [
+   "real-completion"
+  ],
+  "QOU/MassTheory/tau_leptonic_universality.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/AfreeThetaConstraint.lean": [
+   "real-completion"
+  ],
+  "QOU/Nuclear/ArgUPhaseBranchSelection.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/BarEvenForcesStationarity.lean": [
+   "analysis"
+  ],
+  "QOU/Nuclear/BarEvenJetArchimedean.lean": [
+   "analysis"
+  ],
+  "QOU/Nuclear/BarOddLadderShape.lean": [
+   "analysis"
+  ],
+  "QOU/Nuclear/BetaVertexBudget.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/BondDecayRates.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/BondScaleUniversality.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/BoostFactorNZNormalization.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/BraidImageEigenphaseAlgebraic.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/BraidImageEigenphaseExclusion.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/C1ConnectionAlgebraicIdentities.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/C1ConnectionPoles.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/C1RamifiedLeadingBlocks.lean": [
+   "real-completion"
+  ],
+  "QOU/Nuclear/C1SeriesConvergence.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/C1ThetaZeroLocus.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/ChannelMeridianIdentification.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/CharacterDoubling.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/ColourReconnectionStokesAssembly.lean": [
+   "real-completion"
+  ],
+  "QOU/Nuclear/CoshHolonomyAndGPMTBaseBridge.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/CosineParametrisationUnfalsifiable.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/CrossNucleonPairWedderburnZRemoval.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/DEigenphaseRealOrImaginary.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/DLadderRadiusAlgebraicity.lean": [
+   "analysis",
+   "real-completion"
+  ],
+  "QOU/Nuclear/DecayLadderConventionDPositivity.lean": [
+   "real-completion"
+  ],
+  "QOU/Nuclear/DeltaCouplingSubstrateForm.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/DeltaLambdaBindingAssembly.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/DeltaLambdaT5Assembly.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/DilogTheoryArchimedean.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/DiscriminantCurveInQ.lean": [
+   "real-completion"
+  ],
+  "QOU/Nuclear/E0WeightAllWords.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/E0WeightCandidates.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/ECatBlockDecomposition.lean": [
+   "analysis"
+  ],
+  "QOU/Nuclear/EigenphaseCarrierClassicalLimit.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/EigenphaseCarrierVacuity.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/EigenphaseQuantization.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/EllipticRTheta.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/FiveTwoArgSector.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/FiveTwoBranchByArgument.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/FiveTwoBranchPinned.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/FiveTwoBranchPinnedB.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/FiveTwoCurveDeriv.lean": [
+   "analysis"
+  ],
+  "QOU/Nuclear/FiveTwoDeformedSaddle.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/FiveTwoDiscriminant.lean": [
+   "analysis",
+   "real-completion"
+  ],
+  "QOU/Nuclear/FiveTwoEnvelopeAssembly.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/FiveTwoEnvelopeInstance.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/FiveTwoEnvelopeSum.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/FiveTwoEnvelopeWiring.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/FiveTwoExtendIdentification.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/FiveTwoFlattenedPentagon.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/FiveTwoLevelSevenAssembly.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/FiveTwoLevelSevenBridge.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/FiveTwoPairSaddle.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/FiveTwoReflectionDischarged.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/FiveTwoRootLabelling.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/FiveTwoRootStructure.lean": [
+   "analysis",
+   "real-completion"
+  ],
+  "QOU/Nuclear/FiveTwoStepALogAlgebra.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/FiveTwoSumRuleIntegrand.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/FiveTwoTransport.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/FloorRemainderFromDerivedShapeFields.lean": [
+   "analysis"
+  ],
+  "QOU/Nuclear/HadronChargeLineCoulomb.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/HolonomySpectrumSignObstruction.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/ImQAnchorCarrier.lean": [
+   "analysis"
+  ],
+  "QOU/Nuclear/InterfaceScalar.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/LadderCoeffNormalisation.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/LadderCosClash.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/LadderFactorBound.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/LadderUniformBound.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/LeverLogDerivative.lean": [
+   "analysis"
+  ],
+  "QOU/Nuclear/LogFormUniqueness.lean": [
+   "analysis"
+  ],
+  "QOU/Nuclear/LogTraceAdditiveEnergy.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/MBetaV21Spectrum.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/McPhailSnyderBridgeExclusion.lean": [
+   "analysis"
+  ],
+  "QOU/Nuclear/MeridianLinearBarOdd.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/MeromorphicSameOrder.lean": [
+   "analysis"
+  ],
+  "QOU/Nuclear/MonodromyDatumRigidity.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/N1FactorUniqueness.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/NeutronHeavierSign.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/NewtonRealityInvariance.lean": [
+   "analysis"
+  ],
+  "QOU/Nuclear/NucleonSplitGibbsCoulomb.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/NucleonSplitSingleElement.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/ObservableComplexVolumeVsFullPotential.lean": [
+   "real-completion"
+  ],
+  "QOU/Nuclear/OhtsukiKappaVsCkSign.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/OhtsukiNZBridgeScale.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/OneInstantonNormalization.lean": [
+   "analysis"
+  ],
+  "QOU/Nuclear/OptionELevelAcceptanceTest.lean": [
+   "analysis"
+  ],
+  "QOU/Nuclear/PhiBProdStripBound.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/PhiBProdStripLowerBound.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/PhiBProdUniquenessAssembly.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/PhiBProdUniquenessMeromorphic.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/PhiBSArgumentIdentification.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/PhibSaddleA1Exact.lean": [
+   "real-completion"
+  ],
+  "QOU/Nuclear/PhotonVertexEigenphase.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/PretzelRemainderFromPtolemy.lean": [
+   "analysis"
+  ],
+  "QOU/Nuclear/Qsqrt3SaddleArithmetic.lean": [
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/ReebTowerJacobiAnger.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/SilverRatioCounitExclusion.lean": [
+   "real-completion"
+  ],
+  "QOU/Nuclear/SingleCrossingAlwaysBinds.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/SpectatorEnergyMap.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/Stokes3LargeOrderAmplitude.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/StrandWeightSplit.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/TensorCouplingCannotUnbindSinglet.lean": [
+   "real-completion"
+  ],
+  "QOU/Nuclear/ThomaeJacksonCoulombAndAlphaTunneling.lean": [
+   "real-completion"
+  ],
+  "QOU/Nuclear/ToroidalHarmonicsBasis.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/TwoChannelTotalBindingFloor.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/UnitaryLineNoEnergy.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/WeightSpaceNucleon.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Nuclear/WindingGFTransform.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/Observations/Basic.lean": [
+   "real-completion"
+  ],
+  "QOU/Observations/CODATAChain.lean": [
+   "real-completion"
+  ],
+  "QOU/Observations/Calculations.lean": [
+   "real-completion"
+  ],
+  "QOU/Observations/CasimirEpsilonVacuum.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/Observations/CasimirModeCountFunctor.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/Observations/CasimirNStability.lean": [
+   "real-completion"
+  ],
+  "QOU/Observations/CasimirZetaPrefactor.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Observations/Conjectures.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/Observations/CrossingDiscriminantThetaFree.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Observations/DeBroglieBoostedReebPhase.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Observations/DiophantineBirthday.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Observations/EnergyScaleMap.lean": [
+   "analysis"
+  ],
+  "QOU/Observations/HyperrealLimitTransfer.lean": [
+   "analysis"
+  ],
+  "QOU/Observations/QCltNonCommutative.lean": [
+   "analysis"
+  ],
+  "QOU/Observations/QPlancherelAsymptoticSkeleton.lean": [
+   "analysis",
+   "real-completion"
+  ],
+  "QOU/Observations/QVolumeCarrier.lean": [
+   "analysis"
+  ],
+  "QOU/Observations/collatz_three_forms.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Observations/collatz_three_forms_bridge.lean": [
+   "transcendental-function"
+  ],
+  "QOU/Observations/h2_lp_dual_binding.lean": [
+   "transcendental-function"
+  ],
+  "QOU/StandardModel/AlphaEmT35Linchpin.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/StandardModel/ComponentFraming.lean": [
+   "transcendental-function"
+  ],
+  "QOU/StandardModel/ElectroweakBosonThresholdsAndWeinberg.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/StandardModel/ElectroweakBringSchwingerBridge.lean": [
+   "transcendental-function"
+  ],
+  "QOU/StandardModel/ElectroweakVevFixedPointDecomposition.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/StandardModel/ElectroweakVevGaps.lean": [
+   "transcendental-function"
+  ],
+  "QOU/StandardModel/FormBVersusCSTowerClassicalLimit.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/StandardModel/LowCrossingThreeBraidTauSelection.lean": [
+   "transcendental-function"
+  ],
+  "QOU/StandardModel/QuaternionicElectroweak.lean": [
+   "transcendental-function"
+  ],
+  "QOU/StandardModel/QuaternionicSpectralResolvents.lean": [
+   "transcendental-function"
+  ],
+  "QOU/StandardModel/RibbonPantBernKosowerGluonVertex.lean": [
+   "analysis",
+   "real-completion",
+   "transcendental-function"
+  ],
+  "QOU/StandardModel/StokesPhaseSignChirality.lean": [
+   "transcendental-function"
+  ],
+  "QOU/StandardModel/StrongCPWritheCancellationAndStringTension.lean": [
+   "transcendental-function"
+  ],
+  "QOU/StandardModel/Su3Su2U1Z6GroupAndCommutant.lean": [
+   "transcendental-function"
+  ],
+  "QOU/StandardModel/TypeBFoldingChiralityObstruction.lean": [
+   "transcendental-function"
+  ],
+  "ToricConicOpt/EDMultiplier.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "ToricConicOpt/GramNearness.lean": [
+   "real-completion"
+  ],
+  "ToricConicOpt/LagrangianCollisionFlow.lean": [
+   "analysis"
+  ],
+  "TwistedFrobeniusHopf/SplayBialgebra.lean": [
+   "transcendental-function"
+  ]
+ }
+}
