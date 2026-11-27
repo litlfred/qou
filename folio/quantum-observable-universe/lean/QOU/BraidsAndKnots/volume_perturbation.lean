@@ -62,8 +62,11 @@ class VolumePerturbationContext where
   δΦ : ℕ → ℝ
   /-- The Markov-reduced strand amplitude at level `k` after peeling `z²`. -/
   strandAmplitude : ℕ → ℝ
-  /-- Definitional link: the Markov parameter `z = 1 / (√q + 1/√q)`. -/
-  z_def : z = 1 / (Real.sqrt q + 1 / Real.sqrt q)
+  /-- The square root of `q` as a symbol, `t² = q` (bean `qou-dk7p`). -/
+  t : ℝ
+  t_sq : t ^ 2 = q
+  /-- Definitional link: the Markov parameter `z = 1 / (t + 1/t)`, `t = √q`. -/
+  z_def : z = 1 / (t + 1 / t)
   /-- Reduction 1 (Markov stabilization peel): going from `H_k` to `H_{k+1}`
       contributes a factor `z²` times the Markov-reduced strand amplitude. -/
   markov_peel_factor : ∀ k : ℕ, 4 ≤ k →
@@ -85,24 +88,26 @@ theorem volume_perturbation [ctx : VolumePerturbationContext] :
   simp only [qIntSym, mul_assoc]
 
 /-- Canonical concrete instance of `VolumePerturbationContext` for any
-    substrate parameter `q₀` and figure-eight volume `Vol₀`. -/
-noncomputable def canonicalVolumePerturbationContext (q₀ Vol₀ : ℝ) :
+    square-root symbol `t₀` (so `q = t₀²`) and volume `Vol₀`. -/
+noncomputable def canonicalVolumePerturbationContext (t₀ Vol₀ : ℝ) :
     VolumePerturbationContext where
-  q := q₀
-  z := 1 / (Real.sqrt q₀ + 1 / Real.sqrt q₀)
+  q := t₀ ^ 2
+  z := 1 / (t₀ + 1 / t₀)
   Vol_41 := Vol₀
   δΦ := fun k =>
-    (1 / (Real.sqrt q₀ + 1 / Real.sqrt q₀)) ^ 2 *
-      (Vol₀ * QOU.QInteger.qIntBalZ q₀ ((k : ℤ) - 3))
+    (1 / (t₀ + 1 / t₀)) ^ 2 *
+      (Vol₀ * QOU.QInteger.qIntBalZ (t₀ ^ 2) ((k : ℤ) - 3))
   strandAmplitude := fun k =>
-    Vol₀ * QOU.QInteger.qIntBalZ q₀ ((k : ℤ) - 3)
+    Vol₀ * QOU.QInteger.qIntBalZ (t₀ ^ 2) ((k : ℤ) - 3)
+  t := t₀
+  t_sq := rfl
   z_def := rfl
   markov_peel_factor := fun _ _ => rfl
   strand_amplitude_eq := fun _ _ => rfl
 
 /-- `VolumePerturbationContext` is non-vacuously inhabitable. -/
 theorem nonempty_volumePerturbationContext : Nonempty VolumePerturbationContext :=
-  ⟨canonicalVolumePerturbationContext 2 (203 / 100)⟩
+  ⟨canonicalVolumePerturbationContext 2 1⟩
 
 end QOU.BraidKnot
 

@@ -609,7 +609,7 @@ import BraidKnotOctonion.HeckeSemisimpleGeneral
 import BraidKnotOctonion.HeckeSemisimpleReal
 import HeckeTemperleyLieb.HeckeCarrierEquiv
 import BraidKnotOctonion.HeckeCarrierSemisimple
-import BraidKnotOctonion.HeckeCarrierSemisimpleReal
+import QOU.Transcendental.BraidKnotOctonion.HeckeCarrierSemisimpleReal
 import HeckeTemperleyLieb.GenericParameter
 import HeckeTemperleyLieb.GenericParameterReal
 import BraidKnotOctonion.HeckeWedderburnDataGeneral
@@ -1958,7 +1958,7 @@ import QOU.BraidsAndKnots.IsospinMurphyOctet
 import QOU.Core.CategoricalLagrangianTwoTermBridge
 import QOU.Core.CategoricalHamiltonianLegendre
 import QOU.Core.ReebHamiltonianChartBridge
-import QOU.Core.ReebHamiltonianChartBridgeReal
+import QOU.Transcendental.Core.ReebHamiltonianChartBridgeReal
 import QOU.Core.AffineCausalityCone
 import QOU.Core.ReebWorldlineSignature
 import QOU.Core.BoostCovarianceRigidity

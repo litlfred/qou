@@ -16,7 +16,7 @@ the Planck tick and the rest energy `𝔈 = 𝔪 c_q²`:
 This file proves that the two families agree, so the Reeb module's `categoricalEnergy` is the
 rest value of the Legendre worldline Hamiltonian, and its share-scaled form is the hadronic
 energy scale `E₀ = m_e / (q (q - 1))`. All statements are over a generic field `K`; the
-comparison with the ℝ-valued Legendre worldline energy is in `ReebHamiltonianChartBridgeReal`.
+comparison with the ℝ-valued Legendre worldline energy is in `QOU.Transcendental.Core.ReebHamiltonianChartBridgeReal`.
 
 Scope: these are identifications between existing definitions. They do not derive
 `def:mass-energy`; the derivation in `CategoricalHamiltonianLegendre` remains conditional on the
