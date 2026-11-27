@@ -71,6 +71,7 @@ from _li_2_q_util import (  # noqa: E402
 )
 from canonical_mass import proton_neutron_mass_mev  # noqa: E402  (canonical facade)
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+from coulomb_isospin_channel import em_energy_mev, r_rms_cal3_conditional  # noqa: E402  (EM channel, gap G3)
 from codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 # Upstream hash records captured before the WitnessBuilder exists;
@@ -636,6 +637,14 @@ def main() -> int:
         # "Fix the Q_beta ladder sign" thread; the old "> 0" guard was copied from
         # m_symbolic and silently dropped rows).
         m_ruled = (m_unbound_approx - B_ruled) if (m_unbound_approx is not None and (rb is not None or A == 1)) else None
+        # EM channel (gap G3, PR #9691, owner card 2026-11-27 "wire with the bond-slope fix"):
+        # E_EM = eps*Z(Z-1)/2, eps = 2 f alpha hbar_c / r_rms, f = q-Hankel (PR #9665).
+        # Subtracted from the RULED binding only, whose strong bond is T_z-even, so the
+        # T_z dependence is counted once. r_rms is OPEN: the CAL-3 length (coefficient
+        # selected, A^{1/3} assumed) is carried as a labelled conditional.
+        E_EM = em_energy_mev(Z, A, r_rms_cal3_conditional(A)) if (rb and Z >= 2) else mp.mpf(0)
+        B_ruled_em = (B_ruled - E_EM) if rb else None
+        m_ruled_em = (m_unbound_approx - B_ruled_em) if (m_unbound_approx is not None and B_ruled_em is not None) else None
         m_symbolic = (m_unbound_approx - B_pred) if (m_unbound_approx is not None and (B_pred > 0 or A == 1)) else None
         m_approx = (m_unbound_approx - B_qCLT) if (m_unbound_approx is not None and (B_qCLT > 0 or A == 1)) else None
         B_AME = AME_BINDING.get(name, mp.mpf(0))
@@ -699,6 +708,11 @@ def main() -> int:
             # of which: braid-channel isospin twist -kappa*T(T+1) (G2, PR #9685)
             "B_twist_MeV": _dp(B_twist) if A >= 2 else None,
             "m_ruled_MeV": _dp(m_ruled) if m_ruled else None,
+            # Ruled binding minus the EM channel (gap G3, PR #9691). E_EM is CONDITIONAL
+            # on the CAL-3 length; the charge structure a + b T_z + c T_z^2 is exact.
+            "E_EM_MeV": _dp(E_EM) if E_EM else None,
+            "B_ruled_em_MeV": _dp(B_ruled_em) if B_ruled_em is not None else None,
+            "m_ruled_em_MeV": _dp(m_ruled_em) if m_ruled_em is not None else None,
             "B_AME_MeV": _dp(B_AME),
             "B_err_pct": _dp(B_err_pct, 4) if B_err_pct is not None else None,
             "binding_method": B_method,

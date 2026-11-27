@@ -69,6 +69,8 @@ change any strong-binding witness; it is an additive term reported alongside the
 """
 from __future__ import annotations
 
+import functools
+import json
 import sys
 from pathlib import Path
 
@@ -164,6 +166,59 @@ R0_FM = LAMBDA_BAR_PI_FM
 # Compton inversions ℏc/mass." Beans qou-mumr, qou-adwi.
 UNIFORM_SPHERE_FACTOR = mp.mpf(3) / 5
 
+# ── the shape factor: DERIVED for the s-shell (2026-11-27, bean qou-usft) ─────
+# f in E_C = f·Q²/r_rms. For a uniform ball f = (3/5)·√(3/5) = 0.464758.
+# The q-Hankel (Hahn–Exton, E_q(2)) l = 0 state J_{1/2}(p^k; p²), p = 1/q₀, on the
+# full Jackson lattice gives f = 0.520011 with no box and no length
+# (computations/probes/coulomb_shape_factor_qbessel_probe.py, pre-registered;
+# Lean QOU/Nuclear/CoulombShellShapeFactor.lean proves f is dilation-invariant, so
+# it fixes no radius). Owner, 2026-11-27: "wire in what is derived. keep probes and
+# options documented."
+#
+# SCOPE — where the derivation applies, and nowhere else:
+#   A ≤ 4  every nucleon sits in the l = 0 (0s) shell, 2 spin × 2 isospin, so the
+#          charge density IS an l = 0 density. f = 0.520011 is used.
+#   A ≥ 5  p-shell and higher occupy; no derived shape exists. The uniform ball
+#          3/5 stays, and it is still a classical import.
+# The cut is the derivation's own hypothesis (Pauli filling of 0s), not a choice
+# made against any residual.
+#
+# The radius is unchanged: R stays the equivalent-uniform-sphere radius
+# λ̄_π·A^{1/3}, so r_rms = √(3/5)·R and E_C = f·Z(Z−1)·αħc/(√(3/5)·R). At A ≤ 4 this
+# multiplies E_C by f/0.464758 = 1.11888 against the ball.
+#
+# OPTIONS kept, never selected (values from the probe witness):
+#   uniform_ball          0.464758  (shipped 3/5; also the q-Neumann ground state's
+#                                    classical limit; q-uniform ball at q₀ 0.465383)
+#   qhankel nu=0          0.528300  (2-D weight-0 E_q(2) channel read as 3-D)
+#   qhankel step 1/q0²    0.516543  (the other reading of "base q₀")
+#   Gaussian / exponential 0.488603 / 0.541266 (classical, comparison only)
+# Use coulomb_energy_mev(Z, A, shape="uniform_ball") to reproduce the old value.
+S_SHELL_MAX_A = 4
+_QHANKEL_WITNESS = (Path(__file__).resolve().parent / "probes"
+                    / "coulomb-shape-factor-qbessel-probe.witness.json")
+
+
+@functools.lru_cache(maxsize=None)
+def qhankel_shape_factor() -> "mp.mpf":
+    """f = 0.520011… read from the pre-registered probe's witness (primary row)."""
+    d = json.loads(_QHANKEL_WITNESS.read_text())
+    return mp.mpf(d["data"]["rows"]["primary_nu_half_p_1_over_q0"]["f"])
+
+
+def shape_factor(A: int, shape: str = "derived") -> "mp.mpf":
+    """Shape factor f (E_C = f·Q²/r_rms). shape: "derived" (q-Hankel for A ≤ 4,
+    uniform ball above), "uniform_ball", or "qhankel" (forced, any A — a stated
+    extrapolation outside the s-shell)."""
+    ball = UNIFORM_SPHERE_FACTOR * mp.sqrt(UNIFORM_SPHERE_FACTOR)
+    if shape == "uniform_ball":
+        return ball
+    if shape == "qhankel":
+        return qhankel_shape_factor()
+    if shape == "derived":
+        return qhankel_shape_factor() if A <= S_SHELL_MAX_A else ball
+    raise ValueError(f"unknown shape {shape!r}")
+
 
 def alpha_em_hbar_c_mev_fm() -> "mp.mpf":
     """α_EM·ℏc in MeV·fm, with α_EM DERIVED from q₀ (not CODATA)."""
@@ -182,8 +237,12 @@ def nuclear_radius_fm(A: int) -> "mp.mpf":
     return R0_FM * mp.mpf(A) ** (mp.mpf(1) / 3)
 
 
-def coulomb_energy_mev(Z: int, A: int) -> "mp.mpf":
-    """Electrostatic energy E_C = (3/5)·Z(Z−1)·α_EM·ℏc/(r₀·A^{1/3}) in MeV.
+def coulomb_energy_mev(Z: int, A: int, shape: str = "derived") -> "mp.mpf":
+    """Electrostatic energy E_C = f·Z(Z−1)·α_EM·ℏc/r_rms in MeV, r_rms = √(3/5)·r₀·A^{1/3}.
+
+    f is the derived q-Hankel shape factor for A ≤ 4 and the uniform ball (3/5,
+    i.e. E_C = (3/5)·Z(Z−1)·α_EM·ℏc/R) above; see the SCOPE block. shape=
+    "uniform_ball" reproduces the pre-2026-11-27 value at every A.
 
     Z = proton number, A = mass number. Returns 0 for Z < 2 (no proton pair).
     This is the energy by which the EM repulsion REDUCES the net nuclear binding.
@@ -192,17 +251,17 @@ def coulomb_energy_mev(Z: int, A: int) -> "mp.mpf":
     float64 return, so callers that wrap it in `mp.mpf(str(...))` are unaffected."""
     if Z < 2 or A < 1:
         return _as_formattable_mpf(mp.mpf(0))
+    r_rms = mp.sqrt(UNIFORM_SPHERE_FACTOR) * nuclear_radius_fm(A)
     return _as_formattable_mpf(
-        UNIFORM_SPHERE_FACTOR * Z * (Z - 1)
-        * alpha_em_hbar_c_mev_fm() / nuclear_radius_fm(A)
+        shape_factor(A, shape) * Z * (Z - 1) * alpha_em_hbar_c_mev_fm() / r_rms
     )
 
 
-def mirror_displacement_mev(Z_hi: int, Z_lo: int, A: int) -> "mp.mpf":
+def mirror_displacement_mev(Z_hi: int, Z_lo: int, A: int, shape: str = "derived") -> "mp.mpf":
     """Coulomb displacement energy ΔE_C = E_C(Z_hi, A) − E_C(Z_lo, A) for a mirror
     pair at fixed A (Z_hi > Z_lo). Positive: the higher-Z member is less bound by ΔE_C.
     On a charge-symmetric strong core this equals the mirror binding split B(lo) − B(hi)."""
-    return _as_formattable_mpf(coulomb_energy_mev(Z_hi, A) - coulomb_energy_mev(Z_lo, A))
+    return _as_formattable_mpf(coulomb_energy_mev(Z_hi, A, shape) - coulomb_energy_mev(Z_lo, A, shape))
 
 
 if __name__ == "__main__":

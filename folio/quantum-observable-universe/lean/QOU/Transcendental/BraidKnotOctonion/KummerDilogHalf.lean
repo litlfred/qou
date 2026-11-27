@@ -89,10 +89,10 @@
 
   -- Ref: [zagier1986], [milnor1982]
 -/
-import BraidKnotOctonion.KummerUnitCircle
+import QOU.Transcendental.BraidKnotOctonion.KummerUnitCircle
 import QOU.Transcendental.QCalculus.ComplexDilogarithmDeriv
 import QOU.Transcendental.QCalculus.ComplexDilogarithmInversion
-import BraidKnotOctonion.Clausen
+import QOU.Transcendental.BraidKnotOctonion.Clausen
 
 namespace QOU.Knot.Kummer
 

@@ -1,5 +1,5 @@
 import QOU.Transcendental.QCalculus.ComplexRogersDilog
-import BraidKnotOctonion.KummerRadial
+import QOU.Transcendental.BraidKnotOctonion.KummerRadial
 import Mathlib.Analysis.NormedSpace.Connected
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.LinearAlgebra.Complex.FiniteDimensional

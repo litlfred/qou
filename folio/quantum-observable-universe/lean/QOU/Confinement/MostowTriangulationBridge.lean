@@ -51,7 +51,7 @@
   -- Ref: [thurston1978] Ch. 4 (the gluing-equation solution the bridge would need)
 -/
 import QOU.Confinement.MostowRigidity
-import BraidKnotOctonion.ManifoldVolumeBridge
+import QOU.Transcendental.BraidKnotOctonion.ManifoldVolumeBridge
 
 namespace QOU.Encounter.MostowTriangulationBridge
 

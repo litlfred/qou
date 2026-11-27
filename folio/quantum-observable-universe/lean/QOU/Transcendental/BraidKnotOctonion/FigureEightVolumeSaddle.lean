@@ -31,7 +31,7 @@
 -/
 
 import QOU.Transcendental.BraidKnotOctonion.FigureEightVolume
-import BraidKnotOctonion.Clausen
+import QOU.Transcendental.BraidKnotOctonion.Clausen
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 import Mathlib.Topology.Order.LocalExtr
 import Mathlib.Topology.Order.Compact
