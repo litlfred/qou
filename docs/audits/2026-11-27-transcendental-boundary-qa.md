@@ -10,8 +10,8 @@ stripped before matching. This is a measurement, not a verdict on any one file.
 
 | quantity | count |
 |---|---:|
-| Lean modules (paper package tree) | 4005 |
-| inside the boundary `QOU/Transcendental/` | 94 |
+| Lean modules (paper package tree) | 4006 |
+| inside the boundary `QOU/Transcendental/` | 95 |
 | outside, using a transcendental/analytic API directly | 614 |
 | outside, algebraic but importing one transitively (tainted) | 273 |
 | outside, algebraic and import-clean (pure) | 3024 |
