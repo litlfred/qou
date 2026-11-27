@@ -1412,3 +1412,61 @@ degree below `d`, but that needs `AssocU4 M E Φ → AssocU4 N E Φ` for `N ≤ 
 `obstruction_mem_range_of_groupLikeK` and `compatible_of_obstructionVanishes` shows only
 `propext`, `Classical.choice`, `Quot.sound`. The `RationalAssociator/` directory and this audit
 are byte-identical between the verified base and `origin/main` after rebase. No `lake build`.
+## 17i. Furusho: `μ² = 24c` in degree 2, and pentagon ⇒ hexagon modulo the Lie statement (bean `qou-3fdg`)
+
+**Target.** Furusho (Ann. Math. 171 (2010)): a group-like `φ` satisfying the pentagon satisfies the
+hexagons for a unique `μ`, with `μ² = 24 · (coefficient of [A, B])`. Then: restate the hypothesis
+`GroupLikeKAssociatorTower` in a pentagon-only form.
+
+**Proved** (`RationalAssociator/FurushoReduction.lean`, sorry-free, algebraic over `ℚ`):
+
+- `hexagon_mu_iff`. With the `𝔱₃` relations, the hexagon for `φ_c = 1 + c[A, B]` and the
+  truncated `exp(μx/2)` holds modulo degree 3 iff `(c − μ²/24)·[t₁₂, t₂₃] = 0`. This is Furusho's
+  `μ² = 24c` in the lowest degree where it says anything.
+- `truncU4`, `pentagon_trunc`, `AssocU4.trunc`: the truncation `U4 N → U4 M` for `M ≤ N`
+  (generators to generators), and the pentagon and associator conditions descend along it.
+- `assocU4_succ_of_pentagon`. One degree of the reduction. If `Φ` carries the level invariant at
+  degree `d ≥ 1`, is group-like modulo `FF2 (d+1)`, and satisfies the pentagon in `U4 (d+1)`, then
+  `PentagonHexagonLie d` makes it an associator in `U4 (d+1)`. Proof: `levelStep` gives a genuine
+  associator `Φ + x`; `−x` is primitive modulo `FF2 (d+1)`; `exists_primitive_layer` gives its
+  homogeneous primitive layer `k`; the defects of `Φ` are `−assocLin x = assocLin k`; the pentagon
+  makes the pentagon component of `assocLin k` vanish; `PentagonHexagonLie d` kills the rest.
+- `assocU4_of_pentagon`, `assocU4_iff_pentagon`. Induction from degree 3 (`levelInv_three` builds
+  the invariant there from the tower). Under `GroupLikeKAssociatorTower K E` and
+  `PentagonHexagonLie d` for all `d ≥ 3`: for `N ≥ 3` and `Φ` group-like modulo `FF2 N`,
+  `AssocU4 N E Φ ↔ AssocU4 3 E Φ ∧ Pentagon_N Φ`.
+
+**The remaining statement** is a `def … : Prop`, neither assumed as an axiom nor proved:
+
+```lean
+def PentagonHexagonLie (d : ℕ) : Prop :=
+  ∀ h : F2, Homog d h → IsPrimitive h → (assocLin (d + 1) h).2.2 = 0 → assocLin (d + 1) h = 0
+```
+
+A homogeneous Lie element of degree `d` (primitive = Lie, by §17a) whose linearised pentagon
+vanishes in `U4 (d+1)` satisfies all the linearised associator equations there. By hand
+computation (not formalised): true at `d = 1`, and false at `d = 2`, where `h = [A, B]` has zero
+linearised pentagon and linearised hexagon `−3[t₁₂, t₂₃]`. The `d = 2` failure is the `μ` freedom
+that `hexagon_mu_iff` records; the reduction therefore starts at degree 3 and takes
+`AssocU4 3 E Φ` as input. For `d ≥ 3` it is the Lie-algebra form of Furusho's theorem
+(`grt₁` cut out by the pentagon alone, in degrees ≥ 3), which is a hard theorem and is not proved
+here.
+
+**What this does not do.** It does not shrink `GroupLikeKAssociatorTower` to a pentagon-only
+hypothesis. Each step compares `Φ` with a genuine group-like `K`-associator taken from the tower,
+so the hexagon enters through the tower. The result is that, given the tower and the Lie
+statement, the hexagon is redundant for rational group-like solutions normalised in degree 2.
+Whether Furusho's own group-level deduction also uses an existing associator (the KZ one) is not
+settled here: the paper is not in `library/`, so I could not check.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on `FurushoReduction.lean` exits 0 with
+no output, against the symlink overlay used for §17g. `#print axioms` on `hexagon_mu_iff`,
+`AssocU4.trunc`, `assocU4_succ_of_pentagon`, `levelInv_three`, `assocU4_of_pentagon` and
+`assocU4_iff_pentagon` shows only `propext`, `Classical.choice`, `Quot.sound`. No `lake build`
+was run. Does not touch `claude/grt-h4-2026-11-27` (quasiYBE restatement, lift obstruction).
+
+**Relation to §17h.** §17h (`Obstruction.lean`, merged as #9815) states the remaining input of the
+degree-by-degree construction as `AssociatorObstructionVanishes E`. That obstruction includes the
+linearised hexagon. `PentagonHexagonLie` addresses a different question: whether the hexagon
+part of the obstruction is implied by its pentagon part, for Lie elements of degree `d ≥ 3`. The
+two statements are independent, and this file does not use `Obstruction.lean`.
