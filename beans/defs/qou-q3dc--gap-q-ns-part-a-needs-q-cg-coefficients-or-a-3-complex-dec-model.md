@@ -50,3 +50,9 @@ Open: build the 3D-calculus vector fields on OqSU2 and get the sign and size of 
 - Left-invariant fields of (ε,χ)-twisted derivations are one-sided twisted; `cartanField`: (ε − χ_u)/c gives c⁻¹(f − R_u f), the one-sided qDiff, so its budget is −c·φ(Du·Du).
 - Correction: `theta3D` (HK σ) is the cocycle twist, not the Leibniz twist; #9558 docstring and audit doc now say so.
 - Still open: Woronowicz's exact Cartan functional and u (Woronowicz 1987 not in library); off-diagonal fields; coassociativity; Haar state; Part A (qou-pa7n).
+
+## 2026-11-27 — Woronowicz's Cartan field pinned (PR #9573)
+
+- From Woronowicz 1987 (owner upload, now library/woronowicz1987-twisted-su2): χ₁ = (ε − f₁)/(1 − ν⁻²), f₁ = diag char at ν⁻² ((2.2), (2.5)); values (2.3) and Leibniz (2.7) proved in `OqSU2WoronowiczCartan.lean`.
+- Dictionary: β = −νγ*, δ = α*, q = ν. So u = q⁻², c = 1 − q⁻²; one-sided budget −c·φ(Du·Du) = (q⁻² − 1)φ(Du·Du).
+- Still open: sign (positivity, *-structure), χ₀/χ₂ (separate thread B), Haar (thread C), Part A (qou-pa7n).
