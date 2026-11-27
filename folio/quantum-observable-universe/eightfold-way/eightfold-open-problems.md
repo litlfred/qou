@@ -36,7 +36,7 @@ the list cannot silently break the pointers.
 | Meson mass splitting; the GMO **deviation** | **partially resolved** (sign), **open** (magnitude): rational quantum Casimir gives $(4M_K - 3M_\eta - M_\pi)/(M_\pi - M_\eta) = -((q-1)/(q+1))^2$ (**proved**, matching both meson $+$ and baryon $-$ signs at $q_0$), but accounts for only $1.21\%$ of the $6.43\%$ meson deviation; $\eta$--$\eta'$ mixing remains open | [meson mass splitting](#rem:meson-mass-splitting), item *The Gell-Mann--Okubo deviation* |
 | Spin–flavour–colour selection of the Young symmetriser | **reduced to two labelled inputs**: given Fermi statistics and a colour singlet, the spin $\otimes$ flavour factor is forced symmetric, and at $N_c = 3$ the colour singlet is unique up to scale (**proved**, `ColourSingletSelectionRule.lean`). **Open**: deriving either input from the braid structure; the Cauchy pairing of spin $3/2$ with the decuplet stays cited | item *Spin--flavour--colour selection rule* |
 | Truncation ("freeze-out") mechanism | **open**: heuristic, no derivation | item *Truncation mechanism* |
-| Three generations | **open**: not addressed here | item *Three generations* |
+| Three generations | **reduced to one labelled premise**: if a lepton $T(2,n)$ must bound its minimal Seifert surface inside $\Sigma_4$ along an *essential* curve, the admissible windings are exactly $n \in \{3,5,7\}$, $g(\Sigma_4) - 1 = 3$ of them; the same criterion removes $n = 1$ and $n = 9$ (**proved** downstream of the cited curve classification, `EssentialSeparatingLeptonCount.lean`). **Open**: deriving the essentiality premise; and the count is of *sided* curves, since up to the complement involution $k \mapsto 4-k$ there are $2$ types | item *Three generations* |
 
 The chapter cannot do without **$N = 3$**: the meson octet, the baryon
 multiplets, and every quark row of the dictionary are conditional on a
@@ -295,6 +295,31 @@ Gell-Mann--Nishijima relation.
    The $A_2$ root system and eightfold-way classification are
    generation-independent.  Why there are exactly three generations
    of fermions is a separate open problem (T6), not addressed here.
+
+   **Reduction to one premise.**  The Seifert-genus filter
+   $g(T(2,n)) = (n-1)/2 \le g(\Sigma_4) = 4$ admits $n \in \{3,5,7,9\}$.
+   Refine its own premise rather than adding a filter: the minimal Seifert
+   surface $F$ of the lepton sits in the aether surface $\Sigma_4$, so
+   $\partial F$ is a separating curve with sides of genus $k = g(K)$ and
+   $4 - k$.  *Premise (labelled, not derived):* a lepton is stable on the
+   aether only if $\partial F$ is essential (not null-homotopic).  By the
+   cited classification (a separating curve is null-homotopic iff it bounds a
+   disk; Epstein 1966, Farb--Margalit §1.3), this means $0 < k < 4$, so
+   $n \in \{3, 5, 7\}$, and for a genus-$g$ aether there are exactly $g - 1$
+   generations.  The single criterion removes both ends: $n = 1$ (the
+   Seifert side is a disk) and $n = 9$ (the complement is a disk).  Among all
+   torus knots the essential ones are $T(2,3), T(2,5), T(2,7), T(3,4)$.
+   All of this is sorry-free in `QOU/BringsSurface/EssentialSeparatingLeptonCount.lean`,
+   with no empirical input.
+
+   *What stays open.*  (i) The essentiality premise itself.  (ii) The count
+   is of curves with a chosen side; the complement involution $k \mapsto 4-k$
+   pairs $n = 3 \leftrightarrow 7$ and fixes $n = 5$, so up to that
+   involution there are only $2$ curve types.  Whether the electron and the
+   tau are distinct or complementary views of one curve type is not settled,
+   and this is the same three-versus-two tension that the $S_5$-equivariant
+   filter shows (bean `qou-xtcl`).  (iii) Why leptons are the two-strand
+   ladder is the dictionary's premise; $T(3,4)$ also passes.
 
 7. **Spin--flavour--colour selection rule.**
    The identification $\lambda = (3) \leftrightarrow$ decuplet,
