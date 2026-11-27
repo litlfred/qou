@@ -958,6 +958,7 @@ import QOU.Nuclear.BarOddLadderShape
 -- explicitly on the lake command line, so a plain `lake build` never checked
 -- them and no CI run would have caught a regression in any of them.
 import QOU.Nuclear.InterfaceScalar
+import QOU.Nuclear.IsospinCasimirTwist
 import QOU.Nuclear.GramSignature
 import QOU.Nuclear.PairingSeesCommutator
 import QOU.Nuclear.GluonVertexPsdParity
