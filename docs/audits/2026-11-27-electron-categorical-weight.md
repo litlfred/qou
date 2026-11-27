@@ -247,3 +247,29 @@ Here `linkSum = Σ` of the signs of the crossings between different components `
 **Volume-order rule.** `QOU/Observations/VolumeOrderRule.lean`; probe `volume_order_rule_probe.py` (4/4). Generation `g` gets the `g`-th smallest hyperbolic knot volume: `4₁`, then `5₂`. Both are cited theorems: Cao–Meyerhoff, and Gabai–Haraway–Meyerhoff–Thurston–Yarmola. On the volume chart this gives `m_τ/m_μ = Vol(5₂)/Vol(4₁) = 1.39324`, which does not depend on q (`ratio_q_free`). Comparison only: the measured ratio is 16.817, so the rule is a factor 0.0828 low (`m_τ/m_e = 288.08` against 3477.23). The rule is **refuted** as the tau carrier on the volume chart. It is not adjusted.
 
 **Reading (convolution operators).** A knot `K` gives a central element of `U_q(𝔤)`. It acts on `A = O_q(SU(2))` by convolution, as `J_N(K)/[N]` on the colour-`N` Peter–Weyl block. At real `q` that spectrum is Laurent polynomials. The volume appears only as the growth `exp(N·Vol/2π)` at `q = e^{2πi/N}` (Kashaev). That is the only place `Vol(4₁)` enters the muon's `Vol/ℏ²`.
+
+## 13. Knot convolution operators (owner: "The knot convolution operators in 𝔤 give the volume of knots implicated"; card "Convolution operator in Lean")
+
+**Lean.** `QOU/Observations/KnotConvolutionOperator.lean` and `QOU/Transcendental/MassTheory/KnotConvolutionVolume.lean`. No `sorry`, no new axiom. Probe `computations/probes/coloured_ladder/knot_convolution_operator_probe.py` (5/5).
+
+| statement | Lean |
+|---|---|
+| a knot acts on `A = ⊕_N End(V_N)^*` by one scalar per Peter–Weyl block, centrally | `ConvOp.act`, `act_mul_left`, `act_mul_right` |
+| composition multiplies scalars; connected sum is composition | `act_comp`, `ofJones_connSum` |
+| Habiro's 4₁ sum `J'_N(4₁;Q) = Σ_m Π_j (Q^N + Q^{−N} − Q^{j+1} − Q^{−j−1})` | `habiroJ41` |
+| at `Q^N = 1` it equals the corpus Kashaev sum `Σ habiro41` | `habiroJ41_at_root` |
+| `J'_2(4₁) = Q² − Q + 1 − Q⁻¹ + Q⁻²`; with `Q = q²`, the 4₁ ring mass is `[2]·J'_2` (probe) | `habiroJ41_two` |
+| volume = growth `(2π/N) log c_N(ζ_N)`, additive under composition | `growth_comp` |
+| bounded `log` means zero volume | `growth_of_bounded` |
+
+**Reading.** The ring (trace) chart is the N = 2 block of the operator at real `q`. The volume chart is the growth of the same operator's scalars at `q = ζ_N`, as N → ∞. These are two readings of one operator. The probe shows the 4₁ growth approaching `Vol(4₁)` (2.0277 at N = 800, after removing the one-loop `(3/2) log N`). For the ruled words `Δ^{2k+1}` (torus-type closures), the Kashaev scalars grow only polynomially, so `growth_of_bounded`-type behaviour gives volume 0 (cited, not proved here). The muon's `Vol(4₁)/ℏ²` is therefore a reading of the 4₁ operator, not of the muon's word. Which operator a lepton carries is still open.
+
+## 14. Which convolution operator does a lepton carry? The universality ladder is volume-blind
+
+**Lean.** `QOU/Transcendental/MassTheory/UniversalityVolumeBlind.lean`. No `sorry`, no new axiom.
+
+Under the universality ruling the generations differ only by full twists `Δ²`, which are central in `B₃`. In the convolution picture `Δ²` acts on each spin-`J` part of `V_N^{⊗3}` by a ribbon scalar `q^{integer}` (§12). So generation `k` has colour-`N` invariant `Σ_J a_J r_J^k`, where the `a_J` come from `Δ` alone. At `q = ζ_N` every `|r_J| = 1` (`norm_twist_eq_one`). Hence `‖Σ_J a_J r_J^k‖ ≤ Σ_J ‖a_J‖` for every `k` (`universality_envelope`), and no generation's Kashaev growth exceeds that of the `k`-free envelope (`universality_growth_le`).
+
+**Consequence.** Adding full twists cannot add volume, so the universality ladder is volume-degenerate. Combined with §12 (wrong-way ring masses) and `prop:vol-through-tau`, this means neither the trace chart nor the volume chart of the ladder words produces the lepton hierarchy. A hyperbolic carrier has to come from a factor that is neither central nor periodic.
+
+**Where a hyperbolic carrier can come from (Nielsen–Thurston).** `B₃/Z(B₃) ≅ PSL(2,ℤ)` via `σ₁ ↦ [[1,1],[0,1]]`, `σ₂ ↦ [[1,0],[−1,1]]`. A braid is periodic, reducible or pseudo-Anosov according as `|tr| < 2`, `= 2` or `> 2`. `Δ` is periodic. The pseudo-Anosov element of least trace (3, dilatation `φ²`) is `σ₁σ₂⁻¹`, and the closure of its square is `4₁`. That is the corpus muon carrier. This is offered as a selector to derive, not adopted here.
