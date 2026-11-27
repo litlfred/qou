@@ -32,3 +32,7 @@ Same PR #8150 as qou-2a2o, same verification and the same caveat: bring_integral
 ## 2026-11-22 applicability review (wave-2 sibling bring-riemann-gerbes, session_01Qmmkt7Jw9nSDCzSdsd8hLX)
 
 APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2026-11-22: photon with fixed constant 1, γγ linking neutrality, derived quark charges, potential-energy sign, m_p = m_n at q = 1, gluon open, electron σ₀σ₁σ₀ with T(2,n) as backup, S₅ two-test rule, T(A) tangent algebra) and git log on the Lean/content paths since the last update. Unchanged since 2026-11-21: κ₀ = e is not derived from a ℤ-kernel central extension; bring_integral_euler_nonzero in #8150 is −6 by rfl. Critical note: 'chiral Seifert linking residue' in the 2026-11-16 note uses Seifert linking language that predates the 2026-11-22 linking-neutrality ruling for γγ words; it is a separate object (surface linking), so no conflict, but do not read it as a charge statement.
+
+## 2026-11-27 — χ = −6 chain thread (session_01VQDpPbyS5NspZ1YQT2xsE6, PR #9726)
+
+Reviewed for the χ = −6 chain thread. Still missing: (i) local real lifts and (ii) deg c₁(TΣ₄) = χ (Poincaré–Hopf, a Mathlib gap). Not attempted. Stays open.

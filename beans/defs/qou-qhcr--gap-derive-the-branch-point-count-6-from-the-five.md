@@ -558,3 +558,8 @@ APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2
 
 ## 2026-11-23 — WS4 Consolidation Update (PR #9189)
 - Consolidated Riemann-surface chart step + identity theorem (`QOU/RiemannSurface/ChartStep.lean`, `IdentityTheorem.lean`, discharging `hloc` via `isCyclic_stabilizer_of_faithful`; `#8750` + `#9133`) into Ready PR https://github.com/litlfred/qou/pull/9189 (`b5d39499b04`). Branch-point count 6 derivation remains open.
+
+## 2026-11-27 — χ = −6 chain thread (session_01VQDpPbyS5NspZ1YQT2xsE6, PR #9726)
+
+New route, PR #9726 (`BraidKnotOctonion/A5LeastHyperbolicChi.lean`, sorry-free). **−6 is the largest Euler characteristic of a hyperbolic surface with an A₅-action** (free on edges/faces, cyclic vertex stabilisers): `chi_le_neg_six_of_A5_map`. Uses only Riemann–Hurwitz and the element orders of A₅; no G3, no S₅, no genus window. Attained by (0; 2,5,5), so 6 = 60 × 1/10 (largest hyperbolic χ_orb with periods {2,3,5} is −1/10). Explicit A₅ Cayley map with χ = −6 in `computations/probes/a5_least_hyperbolic_chi_probe.py` (14/14, exact).
+This replaces G3 + S₅ by an extremal selection principle ("least hyperbolic A₅-surface"). Whether an axiom supplies it is an owner question (card in the project thread). G2 (`qou-khmu`) is still needed. The 6 is still not derived from the five axioms. Stays open.

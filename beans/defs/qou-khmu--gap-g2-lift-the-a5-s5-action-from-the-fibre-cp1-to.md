@@ -29,3 +29,7 @@ APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2
 ## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
 
 Parent set to `qou-6qbv`: old parent `qou-qhcr` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.
+
+## 2026-11-27 — χ = −6 chain thread (session_01VQDpPbyS5NspZ1YQT2xsE6, PR #9726)
+
+PR #9726 shows the chain needs, besides the cell structure, only G2 plus either (G3 + S₅) or the least-hyperbolic selection principle. So G2 is now the one structural input common to every route. Not attempted; still open.

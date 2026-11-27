@@ -108,3 +108,7 @@ State on main: PR #7747 merged 2026-11-15 (perpetual obstruction scoped, axiom y
 ## 2026-11-22 applicability review (wave-2 sibling bring-riemann-gerbes, session_01Qmmkt7Jw9nSDCzSdsd8hLX)
 
 APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2026-11-22: photon with fixed constant 1, γγ linking neutrality, derived quark charges, potential-energy sign, m_p = m_n at q = 1, gluon open, electron σ₀σ₁σ₀ with T(2,n) as backup, S₅ two-test rule, T(A) tangent algebra) and git log on the Lean/content paths since the last update. No ruling or landed result since 2026-11-21 changes it; the band 𝓑 is still defined nowhere, so the coefficient group stays an owner call. PR #8150 still open; the caveat recorded 2026-11-21 (its lemmas are integer arithmetic named as cohomology, the lemma this bean declined to add) still stands.
+
+## 2026-11-27 — χ = −6 chain thread (session_01VQDpPbyS5NspZ1YQT2xsE6, PR #9726)
+
+Reviewed for the χ = −6 chain thread. No change: the band question is still an owner definition, and PR #9726 does not touch κ₀. Stays open.

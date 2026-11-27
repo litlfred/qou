@@ -31,3 +31,7 @@ APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2
 ## 2026-11-22 tracker hygiene (qou-w3yy, owner-approved)
 
 Parent set to `qou-6qbv`: old parent `qou-qhcr` is not an epic/milestone/feature; re-pointed to its nearest legal ancestor. No change to this bean's scope or status.
+
+## 2026-11-27 — χ = −6 chain thread (session_01VQDpPbyS5NspZ1YQT2xsE6, PR #9726)
+
+PR #9726: G3 is no longer necessary for χ = −6 if the least-hyperbolic selection principle is adopted (`chi_le_neg_six_of_A5_map`: any hyperbolic A₅-map has χ ≤ −6, attained). G3 itself is unchanged and stays open.

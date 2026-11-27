@@ -205,3 +205,7 @@ layering. What is now proved, sorry-free, on branch `claude/project-thread-gd72m
 Still open: whether an H₄ Farey layering exists at all (the face-size argument above).
 Route 2 lets the Bring route proceed without answering it. No energy has been chosen
 (preregistration §2), so this bean stays open.
+
+## 2026-11-27 — χ = −6 chain thread (session_01VQDpPbyS5NspZ1YQT2xsE6, PR #9726)
+
+Reviewed for the χ = −6 chain thread. Route 2 (commensurability) still bypasses the layering; the residual existence question is unchanged. Not attempted.
