@@ -10,7 +10,7 @@ The model takes three measured inputs: the electron mass, the proton-to-electron
 | Neutron mass (MeV) | $939.1085$ | $939.5654$ | $-486$ ppm | Conditional |
 | Neutron–proton mass difference (MeV) | $0.8364$ | $1.2933$ | $-35.3\%$ | Conditional |
 | Neutron $\beta$-decay $Q$-value (MeV) | $0.3254$ | $0.7823$ | $-58.4\%$ | Conditional |
-| $\beta^-$ decays of nuclei, exothermic | $0$ of $1009$ | $1009$ of $1009$ | median $142\%$ in $Q$ | Open |
+| $\beta^-$ decays of nuclei, exothermic | $1009$ of $1009$ | $1009$ of $1009$ | median $93\%$ in $Q$ | Open |
 | Deuteron binding (MeV) | $2.265$ | $2.225$ | $+1.8\%$ | Selected |
 | Deuteron binding, ruled trace pipeline (MeV) | $0.00636$ | $2.22457$ | $-99.7\%$ | Conditional |
 | Helium-4 binding (MeV) | $29.33$ | $28.30$ | $+3.7\%$ | Selected |
