@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-27T19:22:45.618637+00:00",
-  "commitSha": "4385186b3f5a905f5c8cddb12c01299c49bd904d",
+  "computedAt": "2026-11-27T20:18:47.514867+00:00",
+  "commitSha": "1691f141b451b305a0191ea8009d2f5f72e50957",
   "assertions": [
     {
       "name": "H_every_q0_passer_has_components_merging_at_most_2",
@@ -17,8 +17,8 @@
   "durationMs": 6,
   "computation": "binding-merge-cap-per-component",
   "scriptFile": "merge_cap_summary.py",
-  "scriptHash": "ba1783dd4461",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "510b36bc5caa",
+  "scriptCommitSha": "9f8929fe5653b48f13d8e3d2ff281d1d5911911e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,6 +44,14 @@
   "description": "PROBE (bean qou-brng, brief C2 front B): per-support-component merge counts of every gamma-gamma bond word in the reading-3 censuses at the proton-pin q0 (A = 2, 3, 4). Tests (H): every q0-passing word has each support component merging <= 2. Counts only; no ratio; AME not read; nothing fitted or wired.",
   "auditOnly": "docs/audits/2026-11-27-binding-merge-cap-invariant.md",
   "data": {
+    "rows_per_source": {
+      "A2-L6-census": 5334,
+      "A3-L4-census": 1360,
+      "A4-L4-checkpoint": 302,
+      "merge-cap-A4-L5-m4-c1": 34,
+      "merge-cap-A4-L5-m6-c2": 84,
+      "merge-cap-A4-L5-m8-c2": 8
+    },
     "tallies": {
       "A2-L6-census": {
         "pass_q0=False,classical=False,max_component_merges=2,components=1": 1267,
@@ -66,14 +74,34 @@
         "pass_q0=True,classical=False,max_component_merges=2,components=1": 2,
         "pass_q0=True,classical=True,max_component_merges=2,components=1": 26
       },
+      "A4-L4-checkpoint": {
+        "pass_q0=False,classical=False,max_component_merges=2,components=2": 2,
+        "pass_q0=False,classical=False,max_component_merges=2,components=3": 91,
+        "pass_q0=False,classical=False,max_component_merges=4,components=2": 79,
+        "pass_q0=False,classical=False,max_component_merges=4,components=3": 8,
+        "pass_q0=False,classical=False,max_component_merges=6,components=2": 22,
+        "pass_q0=False,classical=False,max_component_merges=8,components=1": 4,
+        "pass_q0=False,classical=True,max_component_merges=2,components=2": 12,
+        "pass_q0=False,classical=True,max_component_merges=4,components=2": 72,
+        "pass_q0=True,classical=True,max_component_merges=2,components=2": 12
+      },
       "merge-cap-A4-L5-m4-c1": {
-        "pass_q0=False,classical=True,max_component_merges=4,components=1": 3
+        "pass_q0=False,classical=True,max_component_merges=4,components=1": 34
+      },
+      "merge-cap-A4-L5-m6-c2": {
+        "pass_q0=False,classical=True,max_component_merges=4,components=2": 84
+      },
+      "merge-cap-A4-L5-m8-c2": {
+        "pass_q0=False,classical=True,max_component_merges=4,components=2": 8
       }
     },
     "marginal_failures": {
       "A3-L4-census: classical value on every q0-failing cell is 0 = True": 120,
-      "merge-cap-A4-L5-m4-c1: classical value on every q0-failing cell is 0 = False": 1,
-      "merge-cap-A4-L5-m4-c1: classical value on every q0-failing cell is 0 = True": 2
+      "merge-cap-A4-L5-m4-c1: classical value on every q0-failing cell is 0 = False": 7,
+      "merge-cap-A4-L5-m4-c1: classical value on every q0-failing cell is 0 = True": 27,
+      "merge-cap-A4-L5-m6-c2: classical value on every q0-failing cell is 0 = True": 79,
+      "merge-cap-A4-L5-m6-c2: classical value on every q0-failing cell is 0 = False": 5,
+      "merge-cap-A4-L5-m8-c2: classical value on every q0-failing cell is 0 = True": 8
     },
     "violations_of_H": []
   },

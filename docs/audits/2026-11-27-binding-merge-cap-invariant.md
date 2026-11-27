@@ -1,9 +1,10 @@
 # The q₀ merge cap counts merges per support component
 
-**Date** 2026-11-27 · **Brief** C2 front B (epic `qou-myts`) · **Bean** `qou-brng`
+**Date** 2026-11-27 · **PR** #9618 · **Brief** C2 front B (epic `qou-myts`) · **Bean** `qou-brng`
 **Follows** [`2026-11-27-binding-ceiling-at-q0.md`](2026-11-27-binding-ceiling-at-q0.md) (§6 open item 1)
 **Lean** [`QOU/MassTheory/MergeComponentAdditivity.lean`](../../folio/quantum-observable-universe/lean/QOU/MassTheory/MergeComponentAdditivity.lean): sorry-free, lean-direct exit 0 (`-DautoImplicit=false -s 65536`), `#print axioms` = `[propext, Classical.choice, Quot.sound]`
 **Probes** [`computations/probes/binding_merge_cap/`](../../computations/probes/binding_merge_cap/): corpus seminormal helpers, convention D, proton pin, mpmath; no float arithmetic, no ratio, AME not read.
+**Gates** `scripts/precision-gates.sh --changed`: two reds, both from files this branch does not touch (`raw-float64`: `probes/light_nuclei_a2_a3/binding-scale-tl.witness.json`; `value-copy`: `probes/gg_ntower/gg_scalar_per_step_probe.py:96`). The new witness and producers add none.
 **Scope** (a) for every numerical statement. The Lean statement is exact and contains no `q₀` and no empirical number. Nothing fitted, selected, or wired.
 
 ## 0. Result
@@ -24,7 +25,7 @@ components)`.
 - `A = 4`: `V2V3V4V8` has two components, `V2V3V4` (strands 2–6) and `V8` (strands 8–10), each
   merging 2. (H) allows it.
 - Test of (H) where it makes a prediction: at `A = 4`, length 5, all **34/34** commutation classes
-  of single-component four-merge words that pass reading 3 classically fail at `q₀`. RESULTS_62_82
+  of single-component four-merge words that pass reading 3 classically fail at `q₀`. Likewise all **84/84** two-component classes merging 6 and all **8/8** merging 8 (each has a component merging 4) fail at `q₀`: **126 predictions, 126 confirmed, 0 passes**.
 
 The hypothesis as first stated, "about 2 merges per bonded junction group / per connected component
 of the **nucleon** bond graph", is **falsified at `A = 4`**: every population word bonds all three
@@ -60,9 +61,16 @@ Tallies from `binding-merge-cap-per-component.witness.json` (producer `merge_cap
 |---|---|---|---|---|---|
 | A = 2, length ≤ 6 (census) | 5334 | 408 | 729 | 0 | 0 |
 | A = 3, length ≤ 4 (census) | 1360 | 28 | 147 | 0 | 96 |
-| A = 4, length ≤ 4 (sweep checkpoint, rows at run time) | ROWS_A4 | PASS_A4 | — | 0 | CL_A4 |
+| A = 4, length ≤ 4 (sweep checkpoint, rows at run time) | 302 | 12 | 96 | 0 | 72 |
 | A = 4, length 5, one component, merges 4 (classes) | 34 | 0 | 34 | 0 | 34 |
-RESULTS_TABLE
+| A = 4, length 5, two components, merges 6 (classes) | 84 | 0 | 84 | 0 | 84 |
+| A = 4, length 5, two components, merges 8 (classes) | 8 | 0 | 8 | 0 | 8 |
+
+The `A = 4` length ≤ 4 sweep is another process's run (`binding_ceiling_q0_a4_probe.py`), read-only
+here at 302 of 1392 rows; it runs the 96 classically admissible words first, so all of those are in.
+Its 12 `q₀` passers are the commutation and rotation variants of `V2V3V4 · V8`.
+The length-5 rows are one representative per commutation class (`V(s)V(t) = V(t)V(s)` for `|s − t| ≥ 3`,
+an equality of Hecke elements).
 
 At `A = 2` the classical cap already gives 2 (the six-strand theorem of part 2), so `A = 2` does not
 test (H). It does show that `q₀` pass is **not a function of the permutation**: for many single
@@ -76,8 +84,8 @@ At `A = 3` all 120 classically admissible four-merge words fail at `q₀` **only
 classical two-row character is exactly 0** (Young's rule value `a_k − a_{k−1} = 0` of the restriction
 to level `m`). They are on the boundary of classical reading 3, and the deformation tips those zeros
 negative. Most failing cells are at the top level, `(5,4)` and `(6,3)` on 9 strands. This marginal
-pattern is not general: at `A = 4` some single-component failures include a cell that is
-classically positive.
+pattern is not general: at `A = 4`, length 5, 12 of the 126 failures include a cell that is
+classically positive (7 single-component, 5 two-component).
 
 The 24 two-component four-merge words at `A = 3` are commutation variants of `{V1V2 or V2V1} ×
 {V5V6 or V6V5}` (components on strands 1–4 and 5–8). Each component merges 2, so (H) allows them, yet
