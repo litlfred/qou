@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-27T21:52:11Z
-updated_at: 2026-11-27T22:23:22Z
+updated_at: 2026-11-27T22:52:47Z
 parent: qou-myts
 ---
 
@@ -24,3 +24,5 @@ Open: bond-letter signs (G5); quark-level T3 writhe (#4618) would add an odd-in-
 2026-11-27 (c1f3f7c5a): on γγ-selected words (cores (σ0σ1⁻¹)³, bond (σ2σ3⁻¹)³) the writhe is 0 (GammaGammaWordSelection.writhe_eq_zero), so det^{N(N-1)} = 1 on every block: the braid-channel T(T+1) term is exactly 0 at any A (seminormal_det_gammaGamma_pow). Symmetry energy must come from block multiplicity, another functional, or non-γγ words. Not covered: nuc11_interleaved quark block.
 
 2026-11-27 (335b6c7e2, PR #9747): multiplicity term. Lean IsospinWeightMultiplicity: d(N,k)=C(N,k)-C(N,k-1), Σ_{j≤k} d = C(N,k) (weight count = sum of blocks T≥|Tz|), log-free Gaussian bound C(2M,M-s)(M+s+s²) ≤ C(2M,M)(M+s). Weight count has no ln(2T+1); shape (N-Z)²/A from counting. Open: the energy map (count→energy); probe with ASSUMED B += α ln(count): share tracks -α·2Tz²/N to 1%, ~37x below classical; Table 3.4b median 92.7→84.3% (comparison only). Nothing wired; #9706 closed by Carl.
+
+2026-11-27 (21058a2b1): Carl 'use qCLT'. q-CLT m2=1 at every q (qGaussMoment_two) so -2Tz^2/N coefficient unchanged; q enters at m4=2+q. Markov (conv D quantum trace) sector weight C(N,k)q^{N-k}qi^k: sum=(q+qi)^N (markov_sector_sum), mirror product = C(N,k)^2 no q (markov_sector_mirror). q-weighting adds only odd q^{2Tz}; even part classical. 37x stays in scale/energy map.
