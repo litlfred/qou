@@ -122,8 +122,47 @@ The μ = 0 hexagon (5.14) of `GRT` excludes a degree-2 part. Evidence that GRT i
 
 **Still open (bean `qou-3fdg`).**
 
-1. Derive `hfar` in Lean from the hexagon (5.14), and (5.13) if needed. This probably means
-   relabelling strands by permutation automorphisms of `U4 N`, obtained through `lift`, and
-   comparing two transports of `t₁₃`.
+1. Derive `hfar` in Lean from the hexagon (5.14), and (5.13) if needed. Reduced in §6 to the
+   t-compatibility identity `TCompat`; deriving `TCompat` from (5.14) is what remains.
 2. The five units `G` remain hypotheses. They exist whenever `g` has constant term 1, because
    `Fil N 1` is nilpotent, but that is not yet written in Lean.
+
+## 6. Stage 3d: the far relation reduced to t-compatibility
+
+Lean: `RationalAssociator/FarRelation.lean`, no `sorry`, axioms `propext`, `Classical.choice`,
+`Quot.sound`. Script: `computations/rational_associator/grt_far_relation/t3.py`.
+
+**The bridge.** For a three-strand family `(u, v, w) = (t_ab, t_ac, t_bc)`, t-compatibility of `g`
+(`TCompat`) is
+
+    g(v,w) · v · g(v,w)⁻¹ = g(u,w) · (v + w) · g(u,w)⁻¹ − w,
+
+equivalently `g(v,w) v g(v,w)⁻¹ + g(u,w) u g(u,w)⁻¹ + w = u + v + w`, because `u + v + w` is
+central in `U(𝔱₃)`.
+
+**Proved in Lean.** `far_of_tcompat` derives `hfar : [s₁₃, s₂₄] = 0` in any `ℚ`-algebra from:
+
+- `TCompat` at `(t₁₂, t₁₃, t₂₃)`, which gives `s₁₃ = Y⁻¹ t₁₃ Y` with `Y = g(t₁₃,t₂₃)⁻¹ g(t₁₂,t₂₃)`;
+- `TCompat` at `(t₃₄, t₂₄, t₂₃)`, together with (5.13) at `(t₃₄, t₂₃)` and `(t₂₄, t₂₃)`, which
+  gives `s₂₄ = (H·G_d·G_a)⁻¹ t₂₄ (H·G_d·G_a)` with `H = g(t₂₃,t₂₄)`;
+- the pentagon of `g` at the 2↔3-relabelled family, which gives `H·G_d·g(t₁₃,t₂₃) = M·W` with
+  `M = g(t₁₃, t₂₃+t₃₄)` commuting with `t₂₄` and `W = g(t₁₂+t₂₃, t₂₄)` commuting with `t₁₃`.
+
+So `s₂₄ = Y⁻¹ (W⁻¹ t₂₄ W) Y`, `s₁₃ = Y⁻¹ (W⁻¹ t₁₃ W) Y`, and `[t₁₃, t₂₄] = 0` conjugates to
+`hfar`. In `U4 N` the relabelled pentagon is not an extra hypothesis: `pentagon_swap23` gets it
+as the image of the pentagon under the relabelling automorphism `swap23Hom = lift N (t ∘ π)`.
+`pentagon_act_universal_of_tcompat` is `pentagon_act_universal` with `hfar` replaced by the two
+`TCompat` and two (5.13) instances.
+
+**Exact over ℚ (`t3.py`).**
+
+- `TCompat` holds for `g = exp(σ₃)` through degree 5 and fails for `g = exp([X,Y])`.
+- Among degree-3 directions `a·[X,[X,Y]] + b·[Y,[X,Y]]`, only `(1,1) = σ₃` satisfies `TCompat`;
+  (5.13) selects the same direction.
+- (5.14) excludes a degree-2 part. So through degree 3 of `g`, (5.13) and (5.14) imply `TCompat`.
+
+**The obstruction that remains.** `TCompat` is a hypothesis in Lean. A derivation of `TCompat` from
+(5.13) and (5.14) for all degrees is not given here; only the degree-3 check above is established.
+The statement is of the Kashiwara–Vergne type (`grt ⊂ krv` in Alekseev–Torossian); whether that
+inclusion supplies it in this form has not been checked against the library. Bean `qou-3fdg` stays
+open on this point and on the existence of the units `G`.

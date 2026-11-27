@@ -13,3 +13,8 @@ Run from this directory. No floats: `Fraction` (exact) or integer arithmetic mod
   1/((1-t)(1-2t)(1-3t)).
 - `coef.py`, `gen.py`: ±1 coefficients and the generator of the Lean lemmas `dk4_of_locals`,
   `locals_of_dk4` and `commute_total`.
+- `t3.py`: **exact over Q**, in U(t3). The t-compatibility identity `TCompat` of
+  `FarRelation.lean` holds for g = exp(σ3) through degree 5 and fails for g = exp([X,Y]).
+  Among degree-3 directions a·[X,[X,Y]] + b·[Y,[X,Y]], only (a,b) = (1,1) satisfies it, and
+  (5.13) singles out the same direction; linear (5.14) holds for all four tested. So through degree
+  3 of g, (5.13) and (5.14) imply `TCompat`. Runtime about a minute.
