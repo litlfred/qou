@@ -119,6 +119,7 @@ import QOU.Observations.LeptonUniversalityLadder
 import QOU.Observations.ColouredLadderTwist
 import QOU.Observations.VolumeOrderRule
 import QOU.Transcendental.MassTheory.KnotConvolutionVolume
+import QOU.Transcendental.MassTheory.UniversalityVolumeBlind
 import QOU.MassTheory.BranchIntegerPinning
 import QOU.MassTheory.NucleusBondValence
 -- Weierstrass primary-factor estimate ‖1 - E_p(z)‖ ≤ ‖z‖^{p+1}: the Mathlib-gap

@@ -263,3 +263,13 @@ Here `linkSum = Σ` of the signs of the crossings between different components `
 | bounded `log` means zero volume | `growth_of_bounded` |
 
 **Reading.** The ring (trace) chart is the N = 2 block of the operator at real `q`. The volume chart is the growth of the same operator's scalars at `q = ζ_N`, as N → ∞. These are two readings of one operator. The probe shows the 4₁ growth approaching `Vol(4₁)` (2.0277 at N = 800, after removing the one-loop `(3/2) log N`). For the ruled words `Δ^{2k+1}` (torus-type closures), the Kashaev scalars grow only polynomially, so `growth_of_bounded`-type behaviour gives volume 0 (cited, not proved here). The muon's `Vol(4₁)/ℏ²` is therefore a reading of the 4₁ operator, not of the muon's word. Which operator a lepton carries is still open.
+
+## 14. Which convolution operator does a lepton carry? The universality ladder is volume-blind
+
+**Lean.** `QOU/Transcendental/MassTheory/UniversalityVolumeBlind.lean`. No `sorry`, no new axiom.
+
+Under the universality ruling the generations differ only by full twists `Δ²`, which are central in `B₃`. In the convolution picture `Δ²` acts on each spin-`J` part of `V_N^{⊗3}` by a ribbon scalar `q^{integer}` (§12). So generation `k` has colour-`N` invariant `Σ_J a_J r_J^k`, where the `a_J` come from `Δ` alone. At `q = ζ_N` every `|r_J| = 1` (`norm_twist_eq_one`). Hence `‖Σ_J a_J r_J^k‖ ≤ Σ_J ‖a_J‖` for every `k` (`universality_envelope`), and no generation's Kashaev growth exceeds that of the `k`-free envelope (`universality_growth_le`).
+
+**Consequence.** Adding full twists cannot add volume, so the universality ladder is volume-degenerate. Combined with §12 (wrong-way ring masses) and `prop:vol-through-tau`, this means neither the trace chart nor the volume chart of the ladder words produces the lepton hierarchy. A hyperbolic carrier has to come from a factor that is neither central nor periodic.
+
+**Where a hyperbolic carrier can come from (Nielsen–Thurston).** `B₃/Z(B₃) ≅ PSL(2,ℤ)` via `σ₁ ↦ [[1,1],[0,1]]`, `σ₂ ↦ [[1,0],[−1,1]]`. A braid is periodic, reducible or pseudo-Anosov according as `|tr| < 2`, `= 2` or `> 2`. `Δ` is periodic. The pseudo-Anosov element of least trace (3, dilatation `φ²`) is `σ₁σ₂⁻¹`, and the closure of its square is `4₁`. That is the corpus muon carrier. This is offered as a selector to derive, not adopted here.
