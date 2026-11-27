@@ -1,5 +1,7 @@
 import Mathlib.LinearAlgebra.Matrix.Kronecker
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.FinCases
 
 /-!
 # The K-weight exponent of the nucleon split is forced, on every level of the tower
@@ -50,7 +52,9 @@ Spectators that enter as a tensor factor cancel on either side (item 5).
 ## What is NOT claimed
 
 * Nothing about `E` (the scale) or about distinct elements for the two nucleons (route 2).
-* No numerical value enters. Generic `[Field R]` except item 6, which uses `Real.log` (§7c).
+* No numerical value enters. Generic `[Field R]` throughout (§7c). Item 6 uses `Real.log` and
+  lives behind the transcendental boundary, in
+  `QOU.Transcendental.Nuclear.NucleonSplitFullTowerGibbs` (same namespace).
 
 -- Ref: [leitner2026] docs/audits/2026-11-27-nucleon-split-full-tower.md
 -- Ref: [leitner2026] docs/audits/2026-11-27-nucleon-split-single-element-theorem.md
@@ -225,10 +229,5 @@ theorem spectator_ratio {m k : Type*} [Fintype m] [Fintype k]
   rw [trace_kronecker, trace_kronecker, mul_div_mul_right _ _ hB]
 
 end Generic
-
-/-- The Gibbs split on any tower level where `τ_p = q²·τ_n`. -/
-theorem gibbs_split_full_tower {q E τn : ℝ} (hτ : 0 < τn) :
-    E * Real.log (q ^ 2 * τn / τn) = 2 * E * Real.log q := by
-  rw [mul_div_assoc, div_self hτ.ne', mul_one, Real.log_pow]; push_cast; ring
 
 end QOU.Nuclear.NucleonSplitFullTower

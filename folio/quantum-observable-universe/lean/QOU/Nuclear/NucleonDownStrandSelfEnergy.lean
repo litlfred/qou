@@ -1,6 +1,6 @@
 import QOU.Core.CategoricalHamiltonianLegendre
 import Mathlib.Algebra.BigOperators.Fin
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Tactic.Linarith
 
 /-!
 # The per-down-strand self term of the categorical Lagrangian
@@ -41,7 +41,8 @@ the sum has no crossing terms, because a derivation has none in degree 1.
    extension gives `h − h²` (`canonical_diff_charge_extension`).
 5. `self_cartan_lt_gibbs_cell`: `2(1 − q⁻¹) < 2 log q` for `1 < q`. The Weyl-odd self term is
    strictly smaller than the existing Gibbs cell `2 E₀ log q`; `1 − q⁻¹` is the first term of
-   `log q = Σ_k (1 − q⁻¹)^k / k`.
+   `log q = Σ_k (1 − q⁻¹)^k / k`. This comparison uses `Real.log` and is stated in
+   `QOU.Transcendental.Nuclear.NucleonDownStrandSelfEnergyGibbsCell`.
 
 No empirical value enters this file.
 -/
@@ -197,22 +198,19 @@ theorem canonical_diff_charge_extension (h : K) :
 
 end Canonical
 
-/-! ## 3. Comparison with the Gibbs cell (archimedean) -/
+/-! ## 3. Comparison with the Gibbs cell
 
-/-- **The Weyl-odd self term is strictly below the Gibbs cell**: `2(1 − q⁻¹) < 2 log q` for
-`1 < q`. -/
-theorem self_cartan_lt_gibbs_cell (q : ℝ) (hq : 1 < q) : 2 * (1 - q⁻¹) < 2 * Real.log q := by
-  have hq0 : 0 < q := by linarith
-  have hi0 : 0 < q⁻¹ := inv_pos.mpr hq0
-  have hi1 : q⁻¹ ≠ 1 := by
-    intro h
-    have : q = 1 := by rw [← inv_inv q, h, inv_one]
-    linarith
-  have hlt := Real.log_lt_sub_one_of_pos hi0 hi1
-  rw [Real.log_inv] at hlt
-  linarith
+The comparison `2(1 − q⁻¹) < 2 log q` (`self_cartan_lt_gibbs_cell`) uses `Real.log` and lives
+behind the transcendental boundary, in
+`QOU.Transcendental.Nuclear.NucleonDownStrandSelfEnergyGibbsCell` (same namespace). -/
+
+section Ordered
+
+variable {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
 
 /-- The charge reading is below the Cartan reading: `h − h² < 2h` for `0 < h`. -/
-theorem charge_lt_cartan (h : ℝ) (hh : 0 < h) : h - h ^ 2 < 2 * h := by nlinarith
+theorem charge_lt_cartan (h : K) (hh : 0 < h) : h - h ^ 2 < 2 * h := by nlinarith
+
+end Ordered
 
 end QOU.Nuclear.NucleonDownStrandSelfEnergy
