@@ -1,0 +1,1 @@
+The cycles of right multiplication by $g$ are the left cosets of $\langle g \rangle$, so their number is $120/\mathrm{ord}(g)$. Since $S$, $A$ and $\sigma\alpha = (\,\cdot\,A S)$ have orders $4$, $2$ and $5$, the counts are $30$, $60$ and $24$. The map is connected because $S$ and $A$ generate $S_5$. No analysis is used: every step is finite group theory. $\square$
