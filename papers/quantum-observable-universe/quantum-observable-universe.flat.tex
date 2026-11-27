@@ -63240,12 +63240,12 @@ satisfying:
    \leq 
   \lVert v_0 \rVert_A^2.
 \]
-  \item \textbf{Spectral decay}: The $\Delta_q$-eigencomponents $\hat{v}_k \in V_k \subset \Omega^1(A)$ (where $\Delta_q\vert _{V_k} =\allowbreak{} [k]_q^2\mathrm{id}$) satisfy
+  \item \textbf{Modal balance}: The $\Delta_q$-eigencomponents $\hat{v}_k \in V_k \subset \Omega^1(A)$ (where $\Delta_q\vert _{V_k} =\allowbreak{} [k]_q^2\mathrm{id}$) satisfy
 \[
-  |\hat{v}_k(t)|  \leq 
-  |\hat{v}_k(0)|e^{-\nu_q [k]_q^2 t}.
+  \frac{d}{dt}|\hat{v}_k(t)|  \leq 
+  -\nu_q [k]_q^2 |\hat{v}_k(t)| + T_k(t),
 \]
-Modes decay at a rate exponential in $k$.
+where $T_k$ is the rate at which the advection term transfers amplitude into $V_k$. For flows with $T_k \leq 0$ along the solution, such as the linear Stokes flow and Beltrami eigenfields, this gives $\vert \hat{v}_k(t)\vert \leq\allowbreak{} \vert \hat{v}_k(0)\vert e^{-\nu_q [k]_q^2 t}$. For the nonlinear flow no single mode need decay.
 \end{enumerate}
 
 \textbf{Archimedean realisation.}
@@ -64234,7 +64234,7 @@ with pressure profile $\Pi(y, s)$. The known constraints on nonzero solutions ar
 \phantomsection\label{rem:leray-profile-exclusions}\phantomsection\label{rem:leray-profile-construction}\begin{conjecture}[{Regularity breakdown at $q = 1$ and a discretely self-similar blow-up scenario}]
   \label{conj:regularity-breakdown}
   \blockannot[spec]{conj:regularity-breakdown}{QOU.FluidDynamics.RegularityBreakdown}{quantum-observable-universe/fluid-dynamics/regularity-breakdown.md}
-  \uses{thm:q-ns-wellposedness, prop:q-turbulence-spectrum, rem:hamilton-jacobi-phase, def:leray-profile, def:substrate-parameter}
+  \uses{thm:q-ns-wellposedness, prop:q-turbulence-spectrum, rem:hamilton-jacobi-phase, def:leray-profile, def:substrate-parameter, def:qns-unit-layers}
 \emph{Within a QOU $(\mathbf{C}, A, \tau)$.} Part A below concerns the QOU's internal $q$-Navier--Stokes flow. Part B is a statement about the classical Navier--Stokes equation on $\mathbb{R}^3$. Identifying the internal flow with the classical equation is the separate open categorical-to-classical bridge and is not asserted here.
 
 The global regularity theorem (\hyperref[thm:q-ns-wellposedness]{$q$-NS well-posedness}) holds for every $q > 1$. The conjecture concerns the endpoint $q = 1$.
@@ -64247,7 +64247,7 @@ The global regularity theorem (\hyperref[thm:q-ns-wellposedness]{$q$-NS well-pos
 \Omega(q) = \sup_{t \geq 0} \sum_k [k]_q^2\, |\hat{v}_k(t)|^2 .
 \]
 
-For each $q > 1$, $\Omega(q) < \infty$. Part A asserts that, for suitable data, $\Omega(q) \to +\infty$ as $q \to 1^+$, with $\Omega(q) \sim (q - 1)^{-\alpha}$ for some critical exponent $\alpha > 0$.
+The initial amplitudes $\vert \hat{v}_k(0)\vert $ are held fixed in the substrate layer of \hyperref[def:qns-unit-layers]{the unit layers}, independently of $q$. For each $q > 1$, $\Omega(q) < \infty$. Part A asserts that, for suitable such data, $\Omega(q) \to +\infty$ as $q \to 1^+$, with $\Omega(q) \sim (q - 1)^{-\alpha}$ for some critical exponent $\alpha > 0$.
 
 \emph{Part B (classical model).} There exists a nonzero backward discretely self-similar solution of the classical Navier--Stokes equation on $\mathbb{R}^3$ with fixed viscosity, in the sense of \hyperref[def:leray-profile]{the discretely self-similar Leray profile}: a smooth profile $V(y, s)$, periodic in $s = -\log(T^* - t)$ with some period $P > 0$, with $\vert V(y, s)\vert =\allowbreak{} O(\vert y\vert ^{-1})$ as $\vert y\vert  \to \infty$ and $V(\cdot, s) \notin L^3(\mathbb{R}^3)$. No value of $P$ is asserted.
 
