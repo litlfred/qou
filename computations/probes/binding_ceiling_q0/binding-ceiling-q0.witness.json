@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-27T17:27:26.403979+00:00",
-  "commitSha": "02da19d288d3f28da2d5976a4b07a444f3087f7f",
+  "computedAt": "2026-11-27T17:48:03.724246+00:00",
+  "commitSha": "0f2558848c63186e067797aafac640047798b598",
   "assertions": [
     {
       "name": "K0_free_word_passes_and_traces_agree",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "binding-ceiling-q0",
   "scriptFile": "binding_ceiling_q0_probe.py",
-  "scriptHash": "8bd760c4a84e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d237267d5905",
+  "scriptCommitSha": "520c7aadaf5bf95b645dfc0dce080dcbb7244cde",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -3374,5 +3374,8 @@
         "minus_ln_r": "1.347551505127020767311925"
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "q0 enters through cf.Q (committed y-lambda-at-q0 witness, proton pin)"
 }

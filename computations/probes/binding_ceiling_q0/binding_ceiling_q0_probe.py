@@ -215,7 +215,8 @@ def main() -> int:
                                  "minus_ln_r": mp.nstr(p["minus_ln_r"], 25)} for p in passing]))
     for name, ok, src in checks:
         wb.add_assertion(name, computed=ok, expected=True, tolerance=0, source=src)
-    wb.save()
+    wb.save({"q0Anchor": "proton", "q0Value": mp.nstr(Q, 50),
+             "q0AnchorReason": "q0 enters through cf.Q (committed y-lambda-at-q0 witness, proton pin)"})
     return 0 if all(ok for _, ok, _ in checks) else 1
 
 
