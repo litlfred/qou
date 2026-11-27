@@ -58,3 +58,19 @@ target = mpf("1.29333205") / me
 print("measured / log-chart cell", mp.nstr(target / cell_log, 8))
 print("measured / |mass-chart cell|", mp.nstr(target / -cell_mass, 8))
 print("largest candidate on the scale E (q-NS q0^2):", mp.nstr(q**2, 8))
+
+# --- Section 9: the split read in the nucleon's own chart (proton-calibrated, not electron) ---
+# tau_p = q * t(V^3), t from NucleonSplitSingleElement (trace_V3_exact); tau_n = q^-2 tau_p.
+# m_n - m_p = M * (L_n - L_p)/L_p (log chart) or M * (w_n - w_p)/w_p (mass chart), w = q d log tau/dq.
+num = q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1
+tau_p = q * (-num / q**6)
+w_p = (7*q**12 - 15*q**10 + 9*q**8 - 5*q**6 - 3*q**4 + 9*q**2 - 5) / num
+assert abs(w_p - q * mp.diff(lambda x: log(x * (-(x**12 - 3*x**10 + 3*x**8 - 5*x**6 + 3*x**4 - 3*x**2 + 1) / x**6)), q)) < mpf(10)**-40
+L_p = log(tau_p)
+print()
+print("nucleon chart: tau_p", mp.nstr(tau_p, 12), " L_p", mp.nstr(L_p, 12), " w_p", mp.nstr(w_p, 12))
+assert L_p > 0 and w_p > 0   # both give m_n - m_p < 0: wrong sign in either nucleon chart
+print("-- comparison boundary (data enter only here) --")
+Mp = mpf("938.27208816")
+print("nucleon log chart split MeV ", mp.nstr(-2 * b * Mp / L_p, 10))
+print("nucleon mass chart split MeV", mp.nstr(-2 * Mp / w_p, 10))
