@@ -6,7 +6,7 @@
  * `folio/schema/references.ts` that Lean `-- Ref:` comments and `cites[]` use.
  * Until 2026-09-29 each carried its own copy, and they had drifted — the
  * citation read "Quantum Observable Universe" by "Leitner, Fred" while the
- * paper is "On the Mechanics of Quantum Observable Universes" by Frederick Carl
+ * paper was "On the Mechanics of Quantum Observable Universes" by Frederick Carl
  * Leitner. Both now read this module (owner ruling 2026-09-26: "leitner2026
  * should be in folio/"; bean `qou-yqko`).
  *
@@ -19,7 +19,9 @@ export const paperIdentity: {
   authors: string[];
   date: string;
 } = {
-  title: "On the Mechanics of Quantum Observable Universes",
+  title: "On the Mechanics of Quantum Observables",
   authors: ["Frederick Carl Leitner"],
   date: "2026-03-21",
+  // Title changed 2026-11-27 (owner ruling): was "On the Mechanics of Quantum
+  // Observable Universes".
 };

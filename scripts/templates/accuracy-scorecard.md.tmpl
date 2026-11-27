@@ -1,6 +1,6 @@
 # Observational Accuracy & Precision Scorecard
 
-Every object in *On the Mechanics of Quantum Observable Universes* (QOU) is a mathematical construction evaluated in arbitrary-precision arithmetic (`80` decimal places, `mp.dps = 80`). Empirical physics enters strictly at the comparison boundary where a derived model quantity is set against experimental metrology (CODATA 2022, PDG 2024, NIST, and AME2020).
+Every object in *On the Mechanics of Quantum Observables* (QOU) is a mathematical construction evaluated in arbitrary-precision arithmetic (`80` decimal places, `mp.dps = 80`). Empirical physics enters strictly at the comparison boundary where a derived model quantity is set against experimental metrology (CODATA 2022, PDG 2024, NIST, and AME2020).
 
 This scorecard is deterministically generated from the repository's machine-verified computation witnesses by [`scripts/generate-accuracy-scorecard.py`](scripts/generate-accuracy-scorecard.py) and gated in continuous quality assurance (`compute-qa`, site rendering, and post-merge publishing).
 
