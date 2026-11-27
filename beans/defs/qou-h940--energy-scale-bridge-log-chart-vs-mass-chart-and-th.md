@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-27T22:03:24Z
-updated_at: 2026-11-27T22:07:15Z
+updated_at: 2026-11-27T22:18:18Z
 parent: qou-myts
 ---
 
@@ -15,3 +15,5 @@ Consequences at q0 (probe scale_bridge_probe.py): n-p +0.289 MeV (log) vs -0.319
 Open: the orientation (which convention carries the sign). Nothing wired. Related: qou-91w7, qou-mbfv.
 
 2026-11-27 22:07Z: isospin thread reports kappa on the log chart = 2 ln q m_e/(-ln tau_e) = 0.2887 MeV per T(T+1), with larger T binding more there: the same chart split, opposite to the ruled antitone law. Their kappa waits on this bean's orientation decision.
+
+2026-11-27 framing-corrected check (y3=(q^4+1)/(q^2+1)^2 in place of tau_e): L_e=-0.68240, w=q d_q log y3=0.20348, L*w=-0.1389<0, so the sign split SURVIVES framing correction. n-p cell: mass chart -2/w=-9.83 m_e vs log chart +0.306 m_e. w(1)=0, so the mass-chart unit diverges at q=1. Only the k=1 (q d_q) chart is ring-valued; log is not in Q(q). Sign theorem is algebraic, so it holds in the ring-valued setting too.
