@@ -1,7 +1,3 @@
-> **Superseded.** The scalar aether density $\rho_q = 1/\hbar_q^2$ used below is
-> the structurally-wrong leading-order ansatz; the operator-valued form supersedes
-> it ([`mass-endomorphism-tower`](../mass-theory/mass-endomorphism-tower.md)). The canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$ graded expansion [graded expansion of $\rho_K$](../mass-theory/rho-k-graded-expansion.md).
-
 The molecular-binding framework uses the Hartree energy $E_h = m_e c_q^{2}\,\alpha_{EM}^{2}$ as a conversion scale. The question is whether the $\alpha_{EM}^{2}$ factor arises from QOU/Hecke structure rather than as an empirical input. The result is a **clean conditional theorem**.
 
 **Conjecture (corrected headline form).** *For a covalent diatomic with definite-parity ground state, the bound-state contribution on the EM Wedderburn channel $(2,2)$ of the molecular Markov trace carries the fine-structure scale exactly:*
