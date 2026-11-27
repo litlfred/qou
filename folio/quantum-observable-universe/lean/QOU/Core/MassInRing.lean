@@ -196,8 +196,8 @@ def ringHomNearMap (ψ : R →+* S) (I : ℕ → Ideal R) (hI : Antitone I)
   g := id
   near_map {ε x y} h := by
     show ψ x - ψ y ∈ J ε.n
-    rw [← map_sub]
-    exact Ideal.mem_comap.mp (hIJ ε.n h)
+    have h' : ψ (x - y) ∈ J ε.n := hIJ ε.n h
+    simpa only [map_sub] using h'
   g_comb _ _ := le_refl _
 
 end AdicMass
