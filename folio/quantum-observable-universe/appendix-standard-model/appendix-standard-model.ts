@@ -40,6 +40,7 @@ export default chapter({
         "su5-hypercharge-n3-gate",
         "neutral-lepton-fixes-charges",
         "fermi-pair-wedge",
+        "strand-slot-separates-gen1",
         "cal2-higgs-knot-coupling",
         "a5-orbital-degeneracy-fracture",
       ],

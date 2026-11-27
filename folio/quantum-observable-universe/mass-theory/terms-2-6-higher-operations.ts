@@ -8,7 +8,7 @@ export default conjecture({
     ref: "qou:QOU.BraidsAndKnots.BraidKnot.Terms26HigherOperations",
     validation: "not_checked",
   },
-  uses: ["conj:spectral-sequence-h3-explicit"],
+  uses: ["prop:spectral-sequence-h3-explicit"],
   authorNotes: [
     {
       kind: "caveat",

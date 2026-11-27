@@ -1,12 +1,12 @@
-import { conjecture } from "../../schema/builders";
+import { proposition } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:block-multiplicativity-v-free",
+export default proposition({
+  label: "prop:block-multiplicativity-v-free",
   title:
     "Block-multiplicativity of per-generator $\\hat{V}$ on the disjoint Hecke product",
   lean: {
-    ref: "qou:QOU.BraidsAndKnots.BlockMultiplicativityVFree",
-    validation: "not_checked",
+    ref: "qou:QOU.BraidKnot.block_multiplicativity_v_free",
+    validation: "leanok",
   },
   uses: [
     // broken-ref removed (Phase 7): def:ew-interface-knot
@@ -30,6 +30,11 @@ export default conjecture({
     "scaling",
   ],
   authorNotes: [
+    {
+      kind: "status",
+      date: "2026-11-27",
+      body: "**Promoted to `proposition` (2026-11-27, PR #9670 and its follow-up).** Under convention D the producer's $\\hat V_g$ is the Markov trace of $\\alpha_g\\sigma_g + \\beta_g$. With that reading the block is proved over a generic ring: `vhat_eq`, `tr_block_word` and `block_multiplicativity_v_free`. The empirical 4-digit table and the Plancherel-weight formula are removed from the statement, because the Plancherel weights do not form a Markov trace. The producer re-buckets interleaved words by generator. That is the scope note in the statement, and it is tracked as bean `qou-m45w`.",
+    },
     {
       kind: "status",
       body: "**Conjecture** — empirically verified to 4 digits at $A \\in \\{2, 3\\}$,\nclassical-limit ($q = 1$) proven via Plancherel duality. Lean class\n[`qou:QOU.BraidKnot.BlockMultiplicativityVFree`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/folio/quantum-observable-universe/lean/QOU/BraidKnot/BlockMultiplicativityVFree.lean)\naxiomatises the q-deformed identity as a Lean *class hypothesis*\n(`q_schur_duality_holds_at` predicate field, per AGENTS.md §3b-cond)\n— **not a `sorry`**. The file contains 0 sorries; the open\nq-deformation step is encoded as a typeclass constraint that\ndownstream theorems consume via `[Instance]`. Downstream\nconsequences (the closed-form $B^{(1)}_{\\text{dim}}$) are then\nfully verified by Lean modulo this single class-axiomatised\nconjectural input.\n\nFalsifiability: a single H_12 (${}^{4}$He) computation showing $V^{(12)}_g$ on\na proton block differs from $V^{(6)}_g$ on the same proton block by\nmore than $10^{-3}$ at $q_0$ refutes the conjecture. The ${}^{4}$He H_12\ncharacter sum requires $> 12$ GB RAM on commodity hardware and\n~5 minutes; deferred to a Rust geck_pfeiffer kernel port\nor a larger-RAM host.",

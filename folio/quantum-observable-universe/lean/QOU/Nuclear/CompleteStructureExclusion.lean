@@ -86,7 +86,7 @@
   --      off `folio/schema/references.ts`, which had the correct one all along.
 -/
 
-import BraidKnotOctonion.FigureEightComplexVolume
+import QOU.Transcendental.BraidKnotOctonion.FigureEightComplexVolume
 import QOU.Nuclear.PhiBSArgumentIdentification
 
 namespace QOU.QBeta.CompleteStructureExclusion

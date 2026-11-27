@@ -1,6 +1,6 @@
 import MathlibExt.PhiQPiece -- expects sibling phi-q-piece.lean to be in scope
 import QOU.Transcendental.BraidKnotOctonion.FigureEightVolumeLiterature
-import BraidKnotOctonion.BorromeanVolume
+import QOU.Transcendental.BraidKnotOctonion.BorromeanVolume
 
 /-!
 # QOU.Kashaev — Kashaev volume conjecture as a typeclass

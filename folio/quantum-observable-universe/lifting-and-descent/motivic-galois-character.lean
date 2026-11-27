@@ -1,6 +1,6 @@
 import Mathlib.Algebra.Ring.Defs
 import Mathlib.Data.Nat.Prime.Basic
-import QOU.BringsSurface.MotivicBaseRing
+import QOU.BringsSurface.MotivicSubstrate
 
 /-!
 # Motivic Galois character of the Frobenius–Hopf substrate

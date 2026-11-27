@@ -1,0 +1,129 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-27T20:44:32.222740+00:00",
+  "commitSha": "e45d834b798cb1ed89808dd3a915cc6870f0aa38",
+  "assertions": [
+    {
+      "name": "n_composite_rows",
+      "computed": "1009",
+      "expected": "1009",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "all_composite_rows_equal_to_witness_rounding",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "none_exothermic",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "decomposition_reproduces_witness_to_1e-6",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "self_term_positive",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "bond_term_positive",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "R1_still_endothermic",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "R2_exothermic",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "ruled_rows_all_present",
+      "computed": "1009",
+      "expected": "1009",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "ruled_rows_all_exothermic",
+      "computed": "1009",
+      "expected": "1009",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "ruled_rows_equal_R2_to_witness_rounding",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "composite-beta-sign-decomposition",
+  "scriptFile": "composite_beta_sign_decomposition_probe.py",
+  "scriptHash": "cd1db3393023",
+  "scriptCommitSha": "b8ce17acdf18b4f3c6e6072bdeaa7024d04e4ed6",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/composite_beta_sign_decomposition_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/composite_beta_sign_decomposition_probe.py"
+  },
+  "description": "Table 3.4b composite beta-minus sign: every composite row has the same Q_pred; exact decomposition into nucleon split, m_e, a self term from the missing free baseline, and the T_z-odd bond term. Repairs priced, not selected.",
+  "data": {
+    "q_swap_MeV": "-1.79304202603906",
+    "q_witness_MeV": "-1.79304195069",
+    "dm_np_pred_MeV": "0.836433",
+    "self_term_MeV": "0.555677602846297",
+    "bond_term_MeV": "1.56279847250276",
+    "alpha_MeV": "3.74445965994161",
+    "f_pp": "0.612688037146465",
+    "f_nn": "0.403627738350826",
+    "V_p_self": "1.1457596924573",
+    "V_n_self": "0.98774368811581",
+    "repair_R1_free_baseline_q_swap_MeV": "-1.23736442319276",
+    "repair_R2_free_baseline_plus_Tz_even_bond_q_swap_MeV": "0.32543404931",
+    "n_composite_rows": 1009,
+    "q_spread_across_rows_MeV": "1.0e-6",
+    "ruled_q_spread_across_rows_MeV": "1.0e-6"
+  }
+}

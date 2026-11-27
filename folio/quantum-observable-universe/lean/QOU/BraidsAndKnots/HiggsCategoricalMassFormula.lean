@@ -1,5 +1,5 @@
 import QOU.BraidsAndKnots.SubstrateEWHypotheses
-import BraidKnotOctonion.CatalanValueBounds
+import QOU.Transcendental.BraidKnotOctonion.CatalanValueBounds
 
 /-!
 # QOU.BraidKnot.HiggsCategoricalMassFormula — Lean encoding of the constructed Higgs mass formula

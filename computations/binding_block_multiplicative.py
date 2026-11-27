@@ -28,7 +28,17 @@ KEY STRUCTURAL FINDING (verified empirically on D, T, ³He at H_6, H_9):
   with v_p, v_n, |V^pp|, |V^nn|, |V^pn|=0 measured ONCE at H_6 (D)
   and reused for ALL atoms.
 
-EMPIRICAL CALIBRATION (D, T, ³He at H_6 and H_9, q_0 = 1.10998...):
+BLOCK FACTOR CORRECTION (2026-11-27, bean qou-m45w). v_p and v_n are now the
+convention-D Markov traces of the nucleon block words read in the order the
+letters are laid down: tr(w_p) = 0.629328402202921918, tr(w_n) =
+0.475133517155682213 at the proton pin (closed forms trP / trN in
+QOU/MassTheory/GammaGammaDeuteronUnbinds.lean). tr_blockProd_pn
+(BraidedBlockShiftTrace.lean, sorry-free) makes T1_free = tr(w_p)^Z · tr(w_n)^N
+exact for a Markov trace. The figures below are the SUPERSEDED grouped values:
+V^p_0 · V^p_1 is the trace of the word regrouped by generator, a different
+element of H_3(q). T2 and T3 still read the per-generator V̂ values below.
+
+SUPERSEDED CALIBRATION (D, T, ³He at H_6 and H_9, q_0 = 1.10998...):
 
     v_p = V^p_0 · V^p_1 = 0.6714 · 1.0551 = 0.7084
     v_n = V^n_0 · V^n_1 = 0.5517 · 1.0884 = 0.6005
@@ -132,6 +142,65 @@ ZN = {
 }
 
 
+def _letter_kind(c, d, h) -> str:
+    """Hecke letter c·σ + d·1 as a sweep kind: σ ('S'), σ⁻¹ = σ − h ('I'), or the
+    averaged letter σ − h/2 ('A'). Anything else is refused rather than guessed."""
+    tol = mp.mpf(10) ** -30
+    if mp.fabs(mp.mpf(c) - 1) > tol:
+        raise ValueError(f"letter coefficient c = {c} is not 1")
+    d = mp.mpf(d)
+    for kind, target in (("S", 0), ("I", -h), ("A", -h / 2)):
+        if mp.fabs(d - target) <= tol:
+            return kind
+    raise ValueError(f"letter offset d = {d} is not 0, -h or -h/2")
+
+
+def block_word_traces(q: mp.mpf | None = None) -> tuple:
+    """Convention-D Markov trace of the proton and neutron block words, read in the
+    order the letters are laid down (bean qou-m45w).
+
+    `QOU.MathlibExt.BraidedBlockShiftTrace.tr_blockProd_pn` (sorry-free) gives, for
+    any Markov trace, tr(free atom) = tr(w_p)^Z · tr(w_n)^N, where w_p, w_n are the
+    nucleon words at offset 0. This evaluates tr(w_p), tr(w_n) at z_D = q³/(q²+1) by
+    the exact Temperley–Lieb sweep (`probes/light_nuclei_a2_a3/hecke_tl.py`; convention
+    D is the sl₂ point, where the Ocneanu trace is the TL Markov trace), in mpmath at
+    the working precision. The closed forms are the `trP` / `trN` of
+    `QOU/MassTheory/GammaGammaDeuteronUnbinds.lean`.
+    """
+    tl_dir = str(HERE / "probes" / "light_nuclei_a2_a3")
+    if tl_dir not in sys.path:
+        sys.path.insert(0, tl_dir)
+    import hecke_tl as tl
+    from mass_at_3A_proper import atom_braid_word_3A
+    if q is None:
+        q, _, _ = load_q_50dps()
+    q = mp.mpf(q)
+    h = q - 1 / q
+    R = tl.Ring(q, mp.mpf)
+    out = []
+    for Z, N in ((1, 0), (0, 1)):
+        letters = [(_letter_kind(c, d, h), g) for (c, d, g) in atom_braid_word_3A(Z, N, q=q)]
+        if any(g > 1 for _, g in letters):
+            raise ValueError("block word leaves its three strands")
+        out.append(tl.sweep_trace(tl.word_program(3, letters), R)[0])
+    return tuple(out)
+
+
+def free_deuteron_trace(q: mp.mpf) -> mp.mpf:
+    """Convention-D trace of the whole six-strand free deuteron word (no interface
+    letter), traced directly rather than as a product of block traces."""
+    tl_dir = str(HERE / "probes" / "light_nuclei_a2_a3")
+    if tl_dir not in sys.path:
+        sys.path.insert(0, tl_dir)
+    import hecke_tl as tl
+    from mass_at_3A_proper import atom_braid_word_3A
+    q = mp.mpf(q)
+    h = q - 1 / q
+    letters = [(_letter_kind(c, d, h), g)
+               for (c, d, g) in atom_braid_word_3A(1, 1, q=q, include_inter=False)]
+    return tl.sweep_trace(tl.word_program(6, letters), tl.Ring(q, mp.mpf))[0]
+
+
 def load_block_factors_from_witness() -> dict:
     """Load v_p, v_n, |V^pp|, |V^nn| from the interface-knot witness.
 
@@ -153,8 +222,14 @@ def load_block_factors_from_witness() -> dict:
     d_free = [mp.mpf(s) for s in per_atom["D"]["free_config"]["vols_full"]]
     v_p_0, v_p_1 = d_free[0], d_free[1]
     v_n_0, v_n_1 = d_free[3], d_free[4]
-    v_p = v_p_0 * v_p_1
-    v_n = v_n_0 * v_n_1
+    # The product V^p_0 · V^p_1 is NOT the block's trace: per_generator_V_hat_3A
+    # re-buckets the nucleon's eleven letters by generator, so this product is the
+    # trace of the GROUPED word (all σ₀-letters, then all σ₁-letters), which is a
+    # different element of H₃(q) because σ₀ and σ₁ do not commute (bean qou-m45w).
+    # Kept, labelled, for the before/after record; T1 uses block_word_traces().
+    v_p_grouped = v_p_0 * v_p_1
+    v_n_grouped = v_n_0 * v_n_1
+    v_p, v_n = block_word_traces()
 
     # From T's atom config: V_atom[5] is the n-n interface; ³He's
     # V_atom[2] is the p-p interface. Both equal |0.1045| empirically.
@@ -168,6 +243,7 @@ def load_block_factors_from_witness() -> dict:
         "v_p": v_p, "v_n": v_n,
         "V_pp_inter": V_pp_inter, "V_nn_inter": V_nn_inter,
         "V_pn_inter": V_pn_inter,
+        "v_p_grouped": v_p_grouped, "v_n_grouped": v_n_grouped,
         "v_p_factors": (v_p_0, v_p_1),
         "v_n_factors": (v_n_0, v_n_1),
     }
@@ -335,6 +411,11 @@ def main() -> int:
     builder.add_data("block_factors", {
         "v_p": fmt(factors["v_p"]),
         "v_n": fmt(factors["v_n"]),
+        "v_p_v_n_definition": (
+            "convention-D Markov trace of the interleaved nucleon block word "
+            "(tr_blockProd_pn); bean qou-m45w"),
+        "v_p_grouped_superseded": fmt(factors["v_p_grouped"]),
+        "v_n_grouped_superseded": fmt(factors["v_n_grouped"]),
         "V_pp_inter": fmt(factors["V_pp_inter"]),
         "V_nn_inter": fmt(factors["V_nn_inter"]),
         "V_pn_inter": fmt(factors["V_pn_inter"]),
@@ -372,8 +453,8 @@ def main() -> int:
             **r_t3,
             "B_MeV_first_order_T1T2": fmt(B_first_order),
             "B_AME_MeV": fmt(B_AME_val),
-            "ratio_pred_over_AME_T3": float(ratio_t3),
-            "ratio_pred_over_AME_first_order": float(ratio_no),
+            "ratio_pred_over_AME_T3": fmt(ratio_t3),
+            "ratio_pred_over_AME_first_order": fmt(ratio_no),
         }
         print(f"  {atom:<6} {Z:>3} {N:>3} "
               f"{float(r_t3['T1_free']):>10.4f} "
@@ -386,38 +467,38 @@ def main() -> int:
 
     # Cross-atom variance (only atoms with AME data)
     valid = {k: r for k, r in results.items()
-             if r["ratio_pred_over_AME_T3"] != 0}
-    ratios = [abs(r["ratio_pred_over_AME_T3"]) for r in valid.values()]
-    ratios_fo = [abs(r["ratio_pred_over_AME_first_order"])
+             if mp.mpf(r["ratio_pred_over_AME_T3"]) != 0}
+    ratios = [abs(mp.mpf(r["ratio_pred_over_AME_T3"])) for r in valid.values()]
+    ratios_fo = [abs(mp.mpf(r["ratio_pred_over_AME_first_order"]))
                   for r in valid.values()]
     rmin, rmax = (min(ratios), max(ratios)) if ratios else (0, 0)
-    mom = rmax / rmin if rmin > 0 else float("inf")
+    mom = rmax / rmin if rmin > 0 else mp.inf
     rmin_fo, rmax_fo = ((min(ratios_fo), max(ratios_fo))
                         if ratios_fo else (0, 0))
-    mom_fo = rmax_fo / rmin_fo if rmin_fo > 0 else float("inf")
+    mom_fo = rmax_fo / rmin_fo if rmin_fo > 0 else mp.inf
     # Light atoms only (A ≤ 4): T3 over-counts for heavy A
     light_keys = [k for k in valid if valid[k]["A"] <= 4]
-    light_ratios = [abs(valid[k]["ratio_pred_over_AME_T3"])
+    light_ratios = [abs(mp.mpf(valid[k]["ratio_pred_over_AME_T3"]))
                     for k in light_keys]
     rmin_light, rmax_light = ((min(light_ratios), max(light_ratios))
                               if light_ratios else (0, 0))
-    mom_light = rmax_light / rmin_light if rmin_light > 0 else float("inf")
+    mom_light = rmax_light / rmin_light if rmin_light > 0 else mp.inf
     medium_keys = [k for k in valid if 6 <= valid[k]["A"] <= 14]
-    medium_ratios = [abs(valid[k]["ratio_pred_over_AME_T3"])
+    medium_ratios = [abs(mp.mpf(valid[k]["ratio_pred_over_AME_T3"]))
                      for k in medium_keys]
     rmin_med, rmax_med = ((min(medium_ratios), max(medium_ratios))
                           if medium_ratios else (0, 0))
-    mom_med = rmax_med / rmin_med if rmin_med > 0 else float("inf")
-    builder.add_data("max_over_min_T1T2_only_all_atoms", float(mom_fo))
+    mom_med = rmax_med / rmin_med if rmin_med > 0 else mp.inf
+    builder.add_data("max_over_min_T1T2_only_all_atoms", fmt(mom_fo))
     builder.add_data("max_over_min_with_T3_light_atoms_only_A_le_4",
-                      float(mom_light))
+                      fmt(mom_light))
     builder.add_data("max_over_min_with_T3_medium_atoms_A_6_to_14",
-                      float(mom_med))
-    builder.add_data("max_over_min_with_T3_all_16_atoms", float(mom))
+                      fmt(mom_med))
+    builder.add_data("max_over_min_with_T3_all_16_atoms", fmt(mom))
     signs_correct = all(r["B_pred_sign"] == "+" for r in valid.values())
 
     builder.add_data("atoms_evaluated", list(valid.keys()))
-    builder.add_data("max_over_min_abs_first_order", float(mom))
+    builder.add_data("max_over_min_abs_first_order", fmt(mom))
     builder.add_data("all_signs_correct_first_order", signs_correct)
 
     if mom < 1.05 and signs_correct:
@@ -446,13 +527,31 @@ def main() -> int:
     print(f"\n  Total atoms predicted: {len(results)} (Z=1..26, A=2..56)")
     print(f"  Compute time: < 1 sec total (closed-form, no character sum)")
 
+    # Derived checks (bean qou-m45w), no target value: (1) the block traces equal
+    # the Lean closed forms trP, trN; (2) the six-strand free deuteron word, traced
+    # whole, equals tr(w_p)·tr(w_n), which is tr_blockProd_pn at Z = N = 1.
+    x = q * q
+    mP = (x**9 - 3*x**8 + 7*x**7 - 8*x**6 + 10*x**5 - 9*x**4 + 10*x**3
+          - 6*x**2 + 3*x - 1)
+    nN = x**7 - 3*x**6 + 4*x**5 - 4*x**4 + 5*x**3 - 4*x**2 + 3*x - 1
+    trP = (q**4 + 1) * mP / (4 * q**9 * (q**2 + 1)**2)
+    trN = (q**4 + 1) * nN / (4 * q**9)
+    tol = mp.mpf(10) ** -40
     builder.add_assertion(
-        "block_multiplicativity_calibration_loaded",
-        computed=factors["v_p"],
-        expected=0.7084,
-        tolerance=1e-3,
-        unit="block factor v_p",
-        source="H_6 deuteron free-config V product (this branch)",
+        "block_trace_p_equals_lean_trP",
+        computed=factors["v_p"], expected=trP, tolerance=tol,
+        unit="convention-D trace", source="QOU/MassTheory/GammaGammaDeuteronUnbinds.lean trP",
+    )
+    builder.add_assertion(
+        "block_trace_n_equals_lean_trN",
+        computed=factors["v_n"], expected=trN, tolerance=tol,
+        unit="convention-D trace", source="QOU/MassTheory/GammaGammaDeuteronUnbinds.lean trN",
+    )
+    builder.add_assertion(
+        "free_deuteron_trace_is_block_product",
+        computed=free_deuteron_trace(q), expected=factors["v_p"] * factors["v_n"],
+        tolerance=tol, unit="convention-D trace",
+        source="BraidedBlockShiftTrace.tr_blockProd_pn at Z = N = 1",
     )
 
     builder.save()

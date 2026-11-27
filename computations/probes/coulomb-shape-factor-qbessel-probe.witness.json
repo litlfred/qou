@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-27T20:23:12.130420+00:00",
-  "commitSha": "dd01a5fbd4af107cb95fb7cf73445c5bc85eaa3c",
+  "computedAt": "2026-11-27T20:43:03.564986+00:00",
+  "commitSha": "1e1a4da29e47527e80ba477824849bfed8799940",
   "assertions": [
     {
       "name": "qhankel_norm_at_q0",
@@ -21,6 +21,14 @@
       "source": "Koelink–Swarttouw q-Hankel orthogonality, m = 1"
     },
     {
+      "name": "cumulative_sum_equals_lean_double_sum",
+      "computed": "7.7788e-62",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "shell_f (sorted cumulative form) vs the literal double sum of QOU.Nuclear.CoulombShell.shapeFactorSq"
+    },
+    {
       "name": "primary_f_positive_finite",
       "computed": "1",
       "expected": "1",
@@ -30,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "coulomb-shape-factor-qbessel-probe",
   "scriptFile": "coulomb_shape_factor_qbessel_probe.py",
-  "scriptHash": "29e1ef0756ed",
-  "scriptCommitSha": "dd01a5fbd4af107cb95fb7cf73445c5bc85eaa3c",
+  "scriptHash": "c71e7c82b108",
+  "scriptCommitSha": "1e1a4da29e47527e80ba477824849bfed8799940",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -110,6 +118,7 @@
       "1.2": "0.516787485657773859581159869093705447329318887311556814248605",
       "1.5": "0.513227743234014651434822308476207869666172728084011698706615",
       "2": "0.51928678636768828277302857315308703951239442608314690570168"
-    }
+    },
+    "primary_f_lean_double_sum": "0.520010562994850862465840107226616923677672899831771179340096"
   }
 }

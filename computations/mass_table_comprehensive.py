@@ -426,6 +426,46 @@ def try_binding_symbolic_log_trace(Z: int, N: int) -> dict | None:
     except Exception as e:
         return None
 
+def binding_ruled_tz_even(Z: int, N: int, q) -> dict | None:
+    """Binding with the free baseline subtracted and the T_z-even bond letter.
+
+    Two corrections to the Q-CLT proxy (owner card 2026-11-27, thread
+    "Fix the Q_beta ladder sign", recommended option; PR #9675):
+
+    1. FREE BASELINE (owner ruling 2026-11-25, B = E0*log(tr_free/tr_atom)).
+       The proxy B = -alpha*sum ln|V| ran over the atom alone, so each lone
+       nucleon "bound" -0.5095 MeV (p) / +0.0462 MeV (n): nucleon self-energy
+       counted again on top of m_n - m_p. The intra-nucleon volumes are
+       identical in the atom and free walks (atom_per_generator_volumes), so
+       subtracting the free walk leaves exactly the inter-nucleon bonds.
+    2. T_z-EVEN BOND. The bond factor is f = z_D - h*t, t = (1 - T_z)/2, i.e.
+       affine in T_z, and its T_z-odd part (h/2)*T_z vanishes only at q = 1
+       (QOU.MassTheory.BondChannelTzParity). A strong-channel object must be
+       even in T_z (same file); the odd part belongs to the electromagnetic
+       channel. So pp and nn bonds both take the even part z_D - h/2. The pn
+       bond (T_z = 0) is unchanged: z_D + pn_interface_offset(q).
+
+    Chain p..p n..n (atom_per_generator_volumes ordering): Z-1 pp, N-1 nn and,
+    when Z, N >= 1, one pn bond. Scale alpha = m_e*8*Catalan as in the proxy;
+    the scale question (alpha vs E0) is NOT addressed here.
+    """
+    A = Z + N
+    if A < 2:
+        return None
+    from codata_constants import M_E_MEV
+    from pyhecke.constants import pn_interface_offset
+    h = q - 1 / q
+    z = q ** 3 / (q ** 2 + 1)
+    f_like = z - h / 2
+    alpha = M_E_MEV * 8 * mp.catalan
+    if Z >= 1 and N >= 1:
+        f_pn = z + pn_interface_offset(q)
+        s = (A - 2) * mp.log(abs(f_like)) + mp.log(abs(f_pn))
+    else:
+        s = (A - 1) * mp.log(abs(f_like))
+    return {"B_pred_MeV": -alpha * s,
+            "method": "ruled free-baseline log law, T_z-even bond (PR #9675)"}
+
 def try_binding_q_clt_proxy(Z: int, N: int) -> dict | None:
     """Compute binding energy via the rigorous Q-CLT per-crossing ln|V_i| proxy."""
     if Z + N < 2:
@@ -559,6 +599,9 @@ def main() -> int:
                 B_pred = binding.get("B_pred_MeV") or mp.mpf(0)
                 B_method = binding.get("method", "?")
 
+        rb = binding_ruled_tz_even(Z, N, q)
+        B_ruled = rb["B_pred_MeV"] if rb else mp.mpf(0)
+        m_ruled = (m_unbound_approx - B_ruled) if (m_unbound_approx is not None and (B_ruled > 0 or A == 1)) else None
         m_symbolic = (m_unbound_approx - B_pred) if (m_unbound_approx is not None and (B_pred > 0 or A == 1)) else None
         m_approx = (m_unbound_approx - B_qCLT) if (m_unbound_approx is not None and (B_qCLT > 0 or A == 1)) else None
         B_AME = AME_BINDING.get(name, mp.mpf(0))
@@ -615,6 +658,11 @@ def main() -> int:
             "m_err_pct_sym": _dp(m_err_pct_sym, 4) if m_err_pct_sym is not None else None,
             "B_pred_MeV": _dp(B_pred) if B_pred else None,
             "B_qCLT_MeV": _dp(B_qCLT) if B_qCLT else None,
+            # Ruled-law binding (free baseline + T_z-even bond, PR #9675).
+            # Consumed by scorecard Table 3.4b only; every other consumer
+            # still reads B_pred / m_symbolic until the owner rules on them.
+            "B_ruled_MeV": _dp(B_ruled) if B_ruled else None,
+            "m_ruled_MeV": _dp(m_ruled) if m_ruled else None,
             "B_AME_MeV": _dp(B_AME),
             "B_err_pct": _dp(B_err_pct, 4) if B_err_pct is not None else None,
             "binding_method": B_method,

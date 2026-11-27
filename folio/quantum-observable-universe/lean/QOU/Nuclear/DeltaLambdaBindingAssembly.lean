@@ -43,7 +43,7 @@
   -- Ref: [garoufalidis-gu-marino2023peacock] (GGM) 2012.00062, Theorem 9
 -/
 
-import BraidKnotOctonion.FigureEightComplexVolume
+import QOU.Transcendental.BraidKnotOctonion.FigureEightComplexVolume
 import QOU.Nuclear.ArgUPhaseBranchSelection
 
 namespace QOU.QBeta.DeltaLambdaBindingAssembly

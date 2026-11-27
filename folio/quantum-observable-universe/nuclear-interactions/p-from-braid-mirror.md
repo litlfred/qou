@@ -116,3 +116,9 @@ The conjecture asserts an involution $P$ on braid-group elements ($P^2 = \mathrm
   [Charge conjugation $C$ as the color-sheet flavor-swap $u \leftrightarrow \bar u$, $d \leftrightarrow \bar d$](../brings-surface/c-from-color-flavor-swap.md),
   [Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)](../nuclear-interactions/t-from-trace-cyclicity.md)
 - Bar-involution: [Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections](../braids-and-knots/bar-involution.md) Tables 1-4
+
+## Status (2026-11-27): trace preservation refuted at fixed $q$
+
+The mirror with $q$ held fixed does not preserve the Markov trace. The smallest counterexample is the one-letter braid $\sigma_0 \in B_2$: $\mathrm{tr}_M(\sigma_0) = z$ while $\mathrm{tr}_M(\sigma_0^{-1}) = z - (q - q^{-1})$. Lean: `QOU.IwahoriHecke.MarkovTraceSymmetries.mirror_not_trace_preserving`, with a concrete trace on which it fails in `QOU.BraidsAndKnots.MarkovMirrorRefutation.mirror_fails_H2`.
+
+What the mirror does instead is change parameters. The inverses $\sigma_i^{-1}$ satisfy the Hecke relation with $q - q^{-1}$ replaced by $q^{-1} - q$, and the Markov trace with parameter $z$ is a Markov trace for them with parameter $z - (q - q^{-1})$. So the mirror carries the Markov trace at $(q, z)$ to the Markov trace at $(q^{-1}, z - (q - q^{-1}))$. Lean: `mirror_law`.

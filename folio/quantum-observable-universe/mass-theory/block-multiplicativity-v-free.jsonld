@@ -6,13 +6,13 @@
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/conj-block-multiplicativity-v-free",
+  "@id": "papers/quantum-observable-universe/blocks/prop-block-multiplicativity-v-free",
   "@type": [
-    "folio-assistant-sci:Conjecture",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
-  "label": "conj:block-multiplicativity-v-free",
-  "kind": "conjecture",
+  "label": "prop:block-multiplicativity-v-free",
+  "kind": "proposition",
   "title": "Block-multiplicativity of per-generator $\\hat{V}$ on the disjoint Hecke product",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-atomic-mass-gb-nf",
@@ -26,7 +26,7 @@
     "interface-knot",
     "scaling"
   ],
-  "leanRef": "qou:QOU.BraidsAndKnots.BlockMultiplicativityVFree",
+  "leanRef": "qou:QOU.BraidKnot.block_multiplicativity_v_free",
   "text": "block-multiplicativity-v-free.md",
   "provenance": "authored"
 }

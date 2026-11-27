@@ -10,7 +10,7 @@ export default conjecture({
   },
   uses: [
     "prop:mass-tower-coefficient-stratification",
-    "conj:spectral-sequence-h3-explicit",
+    "prop:spectral-sequence-h3-explicit",
   ],
   tags: [
     "alpha-k",

@@ -58,3 +58,40 @@ commutes with $J$. Over $\mathbb{Q}$ no element $a + bJ$ is a nontrivial cube ro
 since $\mathbb{Q}(J) \cong \mathbb{Q}(i)$ does not contain $\omega$. This is a phase on the colour
 triple; identifying it with flavour is still open. Lean: `QOU/StandardModel/OctonionCubeRootPhase.lean`
 (`cubeRootPhase_cube`, `cubeRootPhase_commute`, `colourTriple_no_rational_cubeRoot_phase`).
+
+**On the octonionic triple the phase is colour's, not flavour's.** Any rational
+$6 \times 6$ operator that commutes with three explicit generators of the colour
+$\mathfrak{su}(3) \subset \mathrm{Der}(\mathbb{O})$ has the form $a + bJ$. So the commutant of
+colour on the octonionic triple is the commutative field $\mathbb{Q}(J)$. Two consequences follow.
+First, the phase $\Omega$ above is a function of colour's own complex structure, i.e. it is the
+centre of colour $\mathrm{SU}(3)$. Second, no non-abelian flavour algebra can act on the same
+six-dimensional carrier while commuting with colour, and over $\mathbb{Q}$ the commutant contains
+no nontrivial cube root of unity at all. A flavour $\mathrm{SU}(3)$ that commutes with colour
+therefore needs a different carrier, such as a tensor factor or another fibre. What flavour and
+colour share is the abstract $\mathbb{Z}/3$ grading forced by any degree-3 volume form, not an
+operator. A flavour action that does not commute with colour is not excluded by this argument.
+Lean: `QOU/StandardModel/ColourTripletCommutant.lean` (`commutant_end`,
+`commutant_commutative`, `no_cubeRoot_phase_in_commutant`).
+
+**A fibre label carries the phase, and shows how little the axioms ask.** Give each object
+of $\mathbf{C}$ a label in $\mathbb{Z}/3$, with labels adding under $\otimes$ and no
+morphisms between different labels. For $\omega$ with $\omega^3 = 1$ the assignment
+$z_{(X,g)} = \omega^{g}\,\mathrm{id}_X$ is then a central phase, and $W = (V, 1)$ has no
+morphism $\mathbb{1} \to W \otimes W$ because $W \otimes W$ carries label $2$. A volume form
+on $V$ lifts to one on $W$ because $1 + 1 + 1 = 0$. This works for every $V$, including
+$V = \mathbb{1}$: a one-dimensional $W$ satisfies both flavour conditions. So
+$\Lambda^3 W \cong \mathbb{1}$ together with non-self-duality does not force $\dim W = 3$ or a
+flavour $\mathrm{SU}(3)$; those need further axioms. The label here is put in by hand, and
+deriving it from the aether is still open. Lean: `QOU/Core/FlavourLabelCarrier.lean`
+(`labelPhase`, `flavour_hom_unit_tensor_empty`, `flavourVolume_epi`,
+`unit_flavour_meets_axioms`).
+
+**Where the dimension comes from.** At a fibre where the exterior cube is $\Lambda^3$ of an
+$N$-dimensional space, $\Lambda^3 W \cong \mathbb{1}$ says $\binom{N}{3} = 1$, and that holds
+only for $N = 3$; the weaker epimorphism reading gives only $N \ge 3$. The one-dimensional
+$W$ above has $\binom{1}{3} = 0$ and is excluded there. It satisfies the categorical fields
+only because the exterior cube is required to be some quotient of $W^{\otimes 3}$, not the
+antisymmetric one. The fundamental $V$ has the same feature: $\binom{N}{2} = 1$ forces
+$N = 2$ only once $\Lambda^2 V$ is pinned. Lean:
+`QOU/Core/FlavourVolumeForcesDimThree.lean` (`exteriorCubeDim_eq_one_iff`,
+`exteriorCubeDim_ne_zero_iff`).

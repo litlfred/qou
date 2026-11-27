@@ -1,8 +1,8 @@
 import Mathlib.Tactic
-import BraidKnotOctonion.Clausen
-import BraidKnotOctonion.ClausenValueBounds
-import BraidKnotOctonion.FiveTwoVolumeChord
-import BraidKnotOctonion.BlochWignerPositive
+import QOU.Transcendental.BraidKnotOctonion.Clausen
+import QOU.Transcendental.BraidKnotOctonion.ClausenValueBounds
+import QOU.Transcendental.BraidKnotOctonion.FiveTwoVolumeChord
+import QOU.Transcendental.BraidKnotOctonion.BlochWignerPositive
 
 /-!
 # QOU.Encounter.MostowRigidity

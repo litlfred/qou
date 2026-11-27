@@ -5,15 +5,8 @@
   "BraidKnotOctonion/BWVacuumRowConcrete.lean": [
    "real-completion"
   ],
-  "BraidKnotOctonion/BlochWignerPositive.lean": [
-   "transcendental-function"
-  ],
   "BraidKnotOctonion/BorromeanMomentScalingExclusion.lean": [
    "analysis"
-  ],
-  "BraidKnotOctonion/BorromeanVolume.lean": [
-   "analysis",
-   "transcendental-function"
   ],
   "BraidKnotOctonion/BringResidueEnergy.lean": [
    "analysis",
@@ -24,9 +17,6 @@
   ],
   "BraidKnotOctonion/CSMarginCorrelationConstant.lean": [
    "real-completion"
-  ],
-  "BraidKnotOctonion/CatalanValueBounds.lean": [
-   "transcendental-function"
   ],
   "BraidKnotOctonion/CechEdgeSubdiv.lean": [
    "analysis"
@@ -43,15 +33,6 @@
   ],
   "BraidKnotOctonion/CechSubdivMesh.lean": [
    "real-completion"
-  ],
-  "BraidKnotOctonion/Clausen.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/ClausenValueBounds.lean": [
-   "analysis",
-   "real-completion",
-   "transcendental-function"
   ],
   "BraidKnotOctonion/ContentVarianceLeadingConstant.lean": [
    "analysis"
@@ -78,36 +59,7 @@
   "BraidKnotOctonion/F3_eps6_leading_eq_neg_2b_cubed.lean": [
    "real-completion"
   ],
-  "BraidKnotOctonion/FigureEightComplexVolume.lean": [
-   "real-completion",
-   "transcendental-function"
-  ],
   "BraidKnotOctonion/FigureEightDeformedMeridianWinding.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/FigureEightQuarticCoefficient.lean": [
-   "real-completion"
-  ],
-  "BraidKnotOctonion/FigureEightTriangulation.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/FiveTwoAngleSum.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/FiveTwoNinthPower.lean": [
-   "real-completion",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/FiveTwoShapeBounds.lean": [
-   "real-completion"
-  ],
-  "BraidKnotOctonion/FiveTwoVolumeChord.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/FiveTwoVolumeConstant.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/FlatTetrahedra.lean": [
    "transcendental-function"
   ],
   "BraidKnotOctonion/HeckeCarrierSemisimpleReal.lean": [
@@ -115,20 +67,6 @@
   ],
   "BraidKnotOctonion/IcosahedralCharacterGoldenRatio.lean": [
    "real-completion",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/IdealTetLawOfSines.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/IdealTetrahedronVolumeConcave.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/IdealTetrahedronVolumeConcavity.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/IdealTriangulation.lean": [
    "transcendental-function"
   ],
   "BraidKnotOctonion/JonquiereCyclotomicTateRationality.lean": [
@@ -147,70 +85,25 @@
   "BraidKnotOctonion/KeystoneVerlindeSMatrixBridge.lean": [
    "real-completion"
   ],
-  "BraidKnotOctonion/KummerRadial.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/KummerUnitCircle.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/L6a4VolumeMaximum.lean": [
-   "analysis",
-   "real-completion",
-   "transcendental-function"
-  ],
   "BraidKnotOctonion/LNaturalConcaveForm.lean": [
    "transcendental-function"
   ],
   "BraidKnotOctonion/Li2qUniqueness.lean": [
    "analysis"
   ],
-  "BraidKnotOctonion/LobMonotonicity.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/LobNearZero.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
   "BraidKnotOctonion/LogFactorialStirling.lean": [
    "analysis",
    "real-completion",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/LogSincNearZero.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/LogSineCellDefect.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/LogSineRiemannForm.lean": [
-   "analysis"
-  ],
-  "BraidKnotOctonion/LogSineSharpConstant.lean": [
-   "analysis",
    "transcendental-function"
   ],
   "BraidKnotOctonion/LogSineSingularPart.lean": [
    "analysis",
    "transcendental-function"
   ],
-  "BraidKnotOctonion/LogSineSmoothPart.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/M004VolumeMaximum.lean": [
-   "transcendental-function"
-  ],
   "BraidKnotOctonion/M1DescentDPPConvergence.lean": [
    "analysis"
   ],
   "BraidKnotOctonion/MilnorVassilievGrading.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/MultiTetVolumeConcave.lean": [
    "transcendental-function"
   ],
   "BraidKnotOctonion/PLAlexander.lean": [
@@ -282,13 +175,6 @@
   "BraidKnotOctonion/QRogersPentagonArchimedean.lean": [
    "transcendental-function"
   ],
-  "BraidKnotOctonion/RivinConcavity.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/RivinConcavitySimplex.lean": [
-   "transcendental-function"
-  ],
   "BraidKnotOctonion/SincDeriv.lean": [
    "analysis",
    "transcendental-function"
@@ -298,77 +184,6 @@
   ],
   "BraidKnotOctonion/TrMHopfSigma1SqClosedForm.lean": [
    "real-completion"
-  ],
-  "BraidKnotOctonion/WhiteheadBraidVolumeConjecture.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/WhiteheadChainVolume.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/WhiteheadInnerGaussianProof.lean": [
-   "analysis",
-   "real-completion",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/WhiteheadJonesLaurent.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/WhiteheadLemma1Derived.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/WhiteheadLemma1RootOfUnity.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/WhiteheadLemma4Reduction.lean": [
-   "analysis",
-   "real-completion",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/WhiteheadLinkScaffold.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/WhiteheadLowerRate.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/WhiteheadMajorantRate.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/WhiteheadMasterErrRate.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/WhiteheadOuterGaussianWindow.lean": [
-   "real-completion",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/WhiteheadPhaseAlgebra.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/WhiteheadTailDecay.lean": [
-   "analysis",
-   "real-completion",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/WhiteheadVolumeConjecture.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/WhiteheadVolumeConjectureUnconditional.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/WhiteheadWindowTaylor.lean": [
-   "analysis",
-   "real-completion",
-   "transcendental-function"
   ],
   "BraidKnotOctonion/YoungDiagramKernelPincer.lean": [
    "analysis",

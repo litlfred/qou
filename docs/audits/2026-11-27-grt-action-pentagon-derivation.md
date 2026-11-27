@@ -612,6 +612,109 @@ mathematically substantive one.
 
 **Still open (bean `qou-3fdg`).** (B0)–(B3). Nothing else in Stage 4 is open.
 
+## 14. (B0) and (B3) closed; (B1) not done
+
+Branch `claude/grt-basechange-2026-11-27`. Two new files in
+`folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/`:
+`BaseChange.lean` and `Homogeneity.lean`. Both pass `lean`-direct (`-DautoImplicit=false
+-s 65536`, exit 0). `#print axioms` on the main theorems lists only `propext`,
+`Classical.choice` and `Quot.sound`. Neither file contains `sorry` or `axiom`. (B2) is used only
+as a named hypothesis.
+
+**(B0), proved.** `BaseChange.lean` defines:
+
+- `evK a b : K ⊗[ℚ] ℚ⟨X, Y⟩ →ₐ[K] S`, evaluation into any `K`-algebra `S`;
+- the filtrations `FilK` (in `K ⊗ U4 N`) and `FFK` (in `K ⊗ ℚ⟨X, Y⟩`);
+- `AssocK K N E Φ`, an associator with coefficients in `K`. Its conditions are (5.12) at pairs of
+  rational `Fil N 1`, and the hexagon and pentagon at the universal family.
+
+Theorems:
+
+- `rational_lift_of_assocK`. Take `d ≥ 1` and `ε(Φ) = ε(E) = 1`. Suppose `1 ⊗ Φ + z`, with
+  `z ∈ K ⊗ FF d`, is a `K`-associator in `K ⊗ U4 (d + 1)`. Then there is a rational `x ∈ FF d`
+  with `Φ + x` an associator in `U4 (d + 1)`. Moreover `1 ⊗ x − z` solves the base-changed
+  homogeneous system, component by component (`KerK`).
+  - The proof linearises in `K ⊗ U4 (d+1)` (`isTop_FilK`).
+  - It then contracts each component with a `ℚ`-linear retraction `K → ℚ`.
+  - It does not need `K ⊗ (product) → product (K ⊗ …)` to be injective.
+- `solvableOver_of_assocK`. The same hypothesis gives `SolvableOver K d E Φ`.
+
+**(B3), proved modulo (B2).** `Homogeneity.lean`:
+
+- `exists_homog_part`: every `y ∈ FF d` is `h + (element of FF (d+1))` with `h` homogeneous of
+  degree `d`.
+- `eq_zero_of_homog_mem_FF`: a homogeneous `h` of degree `d` lying in `FF (d+1)` is zero.
+  The proof extracts Vandermonde coefficients through `coeff_mem_of_forall`.
+- `grtU4_of_lin`: take `h ∈ FF d` homogeneous of degree `d ≥ 1` with `assocLin (d+1) h = 0`.
+  Then `GrtU4 M h` holds for every `M`, given `Lin514 M h`, the linearised (5.14) in `U4 M`, as
+  a hypothesis.
+
+How the transfer works:
+
+- **(5.12).**
+  - `U4 (d+1)` acts on `ℚ⟨X, Y⟩ ⧸ FF (d+1)` by `t₁₂ ↦ X`, `t₁₃ ↦ −X−Y`, `t₂₃ ↦ Y` and the
+    other generators `↦ 0`.
+  - So the condition at `(t₁₂, t₂₃)` gives `h + h(B, A) ∈ FF (d+1)`.
+  - By homogeneity `h + h(B, A) = 0` in `ℚ⟨X, Y⟩`, which gives (5.12) in every ring.
+- **(5.13) and (5.15).**
+  - `U4 (d+1)` acts on `U4 M ⧸ Fil M (d+1)` by left multiplication by the generators.
+  - So the identity in `U4 (d+1)` puts the `U4 M` expression in `Fil M (d+1)`.
+  - The scaling `tᵢⱼ ↦ r tᵢⱼ` of `U4 M` multiplies the expression by `r^d`. An element of
+    `Fil M (d+1)` with that property is `0`.
+- No grading on `U4 M` was needed. The scaling endomorphisms and the Vandermonde argument
+  replace it.
+
+**(B1), not done.** What is needed, in order:
+
+1. **`AssocK` is closed under rational `GRT1U4 N g`** (`Φ_K ↦ evK(g A g(B,A), B) Φ_K · g`).
+   - The rational proofs are `pentagon_act`, `hexagon_act_of_transport` and `comp_inv512`.
+     They use `φ` only through `eval_conj`, i.e. equivariance under conjugation by a unit.
+   - Every `g`-side lemma is generic in the ring and applies unchanged in `S = K ⊗ U4 N`:
+     `transported_dk4`, `far_of_tcompat`, `transported3_sum`, `transported3_dk3`,
+     `tcompat_iff_poly`.
+   - So the work is:
+     - copy the three `φ`-side theorems with `eval · · φ` replaced by a function `f` satisfying
+       that equivariance;
+     - prove the equivariance and naturality of `evK` (both by `TensorProduct.induction_on`);
+     - move the universal pentagon and hexagon to the transported family. Use the `K`-algebra
+       map `K ⊗ U4 N → S` built from `lift N s` with `Algebra.TensorProduct.lift`. Its
+       word-vanishing condition comes from `s ∈ FilK 1`.
+2. **From `c ∈ ℚ` to `c ∈ K`.**
+   - Let `gX = Σ_k X^k ⊗ expTerm h k ∈ (K ⊗ ℚ⟨X, Y⟩)[X]`.
+   - Map each defect of `compK Φ_K gX` into `(K ⊗ U4 N)[X]` with `Polynomial.mapAlgHom (evK …)`.
+   - Each defect vanishes at every rational `c`, by step 1 and
+     `expPoly (c • h) = Σ c^k expTerm h k`. So by `coeff_mem_of_forall` with `⊥` it is the zero
+     polynomial.
+   - Evaluate it at `b ∈ K` with `Polynomial.eval₂AlgHom'`. The scalar `b` is central.
+3. **The congruence `compK Φ_K gX(b) ≡ Φ_K + b ⊗ h (mod FFK (d+1))`.**
+   - For rational `c` it follows from a version of `compPoly_congr` that is linear in `φ`:
+     `compPoly φ g − φ − ε(φ) y ∈ FF (n+1)`. Then extend linearly to `Φ_K`.
+   - Then apply the step-2 argument with `FFK (d+1)` in place of `⊥`. `FFK (d+1)` is closed
+     under multiplication by `K`.
+4. **Assemble.**
+   - Write `KerK`'s `1 ⊗ x − z = Σ bᵢ ⊗ yᵢ` in a `ℚ`-basis of `K`. Each `yᵢ` lies in
+     `ker linFF`.
+   - Take degree-`d` parts `hᵢ` (`exists_homog_part`). Then `grtU4_of_lin` gives `GrtU4 N hᵢ`
+     under (B2).
+   - Shift `Φ_K` by `gX(bᵢ)` for each `i`.
+   - The invariant should be stated at a fixed final level `N`: `AssocK K N E Φ_K` and
+     `Φ_K − 1 ⊗ Φ ∈ FFK d`. `rational_lift_of_assocK` gets level `d+1` through the projection
+     `U4 N → U4 (d+1)`.
+
+Estimate: 600 to 800 lines, mostly copies of existing proofs with `eval · · φ` replaced by `f`.
+None of it needs new mathematics beyond what is listed.
+
+**A caveat on the (B2) hypothesis.**
+- `Lin514 M h` is required for the specific `hᵢ`: degree-`d` parts of differences between
+  rational solutions and the `K`-associator's degree-`d` part.
+- Drinfeld's Prop. 5.7 proves (5.14) only for Lie `y`. The `hᵢ` here are Lie only if both
+  associators are group-like. Neither `AssocU4` nor `AssocK` records that.
+- So whatever the (B2) sibling proves has to cover these `hᵢ`. Either it proves (5.14) for
+  non-Lie elements of the kernel, or group-likeness is added to both associator predicates and
+  carried through the induction.
+
+**Still open (bean `qou-3fdg`).** (B1) as above, and (B2).
+
 ## 15. Gap B2 (Drinfeld Prop. 5.7): what is proved, and the one bridge left
 
 Bean `qou-3fdg`, PR #9696. New files `Prop57.lean` and `Prop57Cocycle.lean` under
