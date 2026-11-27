@@ -54,3 +54,13 @@ Hermitian-square terms is 2N + a further Hermitian square, giving
 primitive root in C (QOU/Core/KashaevReflection.lean, sorry-free). Still
 polynomial; exponential growth and the N -> infinity limit stay open, the latter
 on [Coev E]. Non-norm knots (8_18) also open. Bean stays open.
+
+## 2026-11-27 stage 3 (knot-volume thread)
+
+Probe galois_total_positivity_probe.py: <8_18>_N and <10_123>_N are positive
+at every Galois conjugate for N <= 14 (mpmath 60 digits, exact Habiro c_k).
+So their negative Habiro terms are not an embedding obstruction; per-N
+Hermitian-square certificates exist for those N (Siegel). Open: a uniform-in-N
+certificate for 8_18, total positivity for N > 14 (needs c_k, k > 13), and the
+N -> infinity limit on [Coev E]. Exponential growth at e^{2 pi i/N} for 4_1 is
+already proved analytically (KashaevAsymptoticBounds). Bean stays open.
