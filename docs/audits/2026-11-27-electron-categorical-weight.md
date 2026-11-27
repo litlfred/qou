@@ -273,3 +273,19 @@ Under the universality ruling the generations differ only by full twists `Δ²`,
 **Consequence.** Adding full twists cannot add volume, so the universality ladder is volume-degenerate. Combined with §12 (wrong-way ring masses) and `prop:vol-through-tau`, this means neither the trace chart nor the volume chart of the ladder words produces the lepton hierarchy. A hyperbolic carrier has to come from a factor that is neither central nor periodic.
 
 **Where a hyperbolic carrier can come from (Nielsen–Thurston).** `B₃/Z(B₃) ≅ PSL(2,ℤ)` via `σ₁ ↦ [[1,1],[0,1]]`, `σ₂ ↦ [[1,0],[−1,1]]`. A braid is periodic, reducible or pseudo-Anosov according as `|tr| < 2`, `= 2` or `> 2`. `Δ` is periodic. The pseudo-Anosov element of least trace (3, dilatation `φ²`) is `σ₁σ₂⁻¹`, and the closure of its square is `4₁`. That is the corpus muon carrier. This is offered as a selector to derive, not adopted here.
+
+## 15. Pseudo-Anosov selector (owner: "Derive what you can", "Work anosov")
+
+**Lean.** `QOU/Observations/BraidNielsenThurston.lean`, over ℤ. No `sorry`, no new axiom.
+
+| statement | Lean |
+|---|---|
+| `σ₁ ↦ [[1,1],[0,1]]`, `σ₂ ↦ [[1,0],[−1,1]]` satisfies the braid relation | `braid_rel` |
+| `Δ ↦ [[0,1],[−1,0]]` (trace 0), `Δ² ↦ −I` | `img_delta`, `img_delta_sq` |
+| full twists change only the sign of the trace | `trace_mul_delta_sq` |
+| every ruled lepton word `Δ^{2k+1}` has trace 0, so all are periodic | `trace_lepton_ladder` |
+| carrier `σ₁σ₂⁻¹ ↦ [[2,1],[1,1]]`, trace 3 | `img_carrier`, `trace_carrier` |
+| `|t| > 2 ⇒ |t| ≥ 3`: `σ₁σ₂⁻¹` is a least-trace pseudo-Anosov | `least_pA_trace` |
+| dilatation `φ² = (3+√5)/2` satisfies `λ + λ⁻¹ = 3` | `golden_dilatation` |
+
+**What it derives.** The Nielsen–Thurston classification (cited) via `B₃/Z ≅ PSL(2,ℤ)` selects `σ₁σ₂⁻¹` as the minimal hyperbolic (pseudo-Anosov) 3-braid, and its square closes to `4₁`. That is a reason, not a fit, for `4₁` being the volume carrier. With one carrier shared by all generations and the universality ruling unchanged, `trace_mul_delta_sq` shows that the type, trace and dilatation are the same for `e`, `μ` and `τ`. So the selector explains the carrier but not the hierarchy. A generation-dependent hyperbolic factor needs a non-central change of the words, which is the open revisit of the ruling (tau thread). Candidate families for that revisit, such as the powers `(σ₁σ₂⁻¹)^m` (`m = 2`: 4₁, `m = 3`: Borromean, `m = 4`: 8₁₈), are handed over unscored.
