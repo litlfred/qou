@@ -78,3 +78,12 @@ KEY for research leg (p.854, Remark 2 after 5.8): without 5.3, obstruction to li
 2026-11-27 stage 4 (conditional): PR #9609, GRTFlow.lean. Exp for law (5.16), exact x-scaling, GrtU4 predicate, induction on Fil via coeff_mem_of_doubling (grading (G) not needed). grt1U4_expPoly_of_doubling: GrtU4 y + K>=2 + hdouble => GRT1U4 (Exp(xy)) for all x. Verified lean-direct exit 0, axioms propext/choice/Quot.sound. OPEN: hdouble = (P) doubling law + (A) top-defect additivity (compPoly bakes in (5.12), needs unit form); Phi∘g ≡ Phi+y; (5.14)-lin vs Drinfeld (5.19) matched on paper only. Bean stays open.
 
 2026-11-27 (PR #9634): hdouble discharged. grt1U4_expPoly proved sorry-free for 2 ≤ K, N ≤ K via an exact dual-number flow (GRTValued.lean, GRTFlowExact.lean); hdouble_of_le closes grt1U4_expPoly_of_doubling. N ≤ K is necessary (K=2 counterexample, hand-worked, not machine-checked). Still open: congruence Φ∘g ≡ Φ+y (§9.2), (5.19) matching. Audit §12.
+
+## 2026-11-27 — induction step (branch claude/grt-associator-induction-2026-11-27, cut from #9634)
+
+`RationalAssociator/AssociatorInduction.lean`, sorry-free, axioms propext/Classical.choice/Quot.sound:
+- `compPoly_congr`, `expPoly_congr`, `compPoly_expPoly_congr`: Φ∘g ≡ Φ + y mod FF(n+1) (§9.2 closed).
+- `AssocU4`, `assocU4_shift`: GRT₁(ℚ) shift of an associator in U4 N; Φ∘Exp(y) is an associator and ≡ Φ + y.
+- `assocU4_add_iff`, `exists_rational_lift`, `solvableOver_of_lift`: assoc mod d+1 over ℚ extending Φ exists iff the degree-d ℚ-linear system is solvable over some nontrivial K (named hypothesis `SolvableOver K d E Φ`).
+- `drinfeld519_of_grtU4`, `lin514_of_drinfeld519`: lin514 = Drinfeld (5.19) on zero-sum triples; nonzero central sum needs Lie y.
+Still open (audit §13): B0 K-associator ⟹ SolvableOver; B1 GRT stack over K ⊗ U4 N; B2 linearised (5.14) for y = ψ − (Φ_K)_d (Drinfeld Prop 5.7, needs Lie y); B3 homogeneity/grading on U4. Bean stays open.
