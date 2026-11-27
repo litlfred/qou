@@ -16,3 +16,10 @@ Owner ruling 2026-11-25: third-party PDFs stay in the private repository `litlfr
 - `uploads/rolfsen.pdf`
 - `uploads/tverberg.pdf`
 - `uploads/zeemanpl.pdf`
+
+Library entries whose PDF is held there (their derived KG, sections and structure.json stay in qou). These pointers lived in each entry's `structure.json` as `source.private_location` until 2026-11-27; that key is not in the `pdf-structure/v1` schema, which is strict, so `check:l1-complete` refused the site build on it.
+
+- `library/arxiv-2202.03067v4/2202.03067v4.pdf`
+- `library/arxiv-math-0104104v3/0104104v3.pdf`
+- `library/arxiv-math-0409565v2/0409565v2.pdf`
+- `library/arxiv-math-0602138v1/0602138v1.pdf`
