@@ -2,13 +2,12 @@
 # qou-2c0w
 title: q ns wellposedness missing hypotheses
 status: in-progress
-pr: 8225
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T00:00:00Z
-updated_at: 2026-11-27T15:30:00Z
+updated_at: 2026-11-27T17:50:00Z
 parent: qou-uot9
 ---
 
@@ -36,3 +35,7 @@ Session https://claude.ai/code/session_01Qmmkt95ogQs6aFq9zdMmwF. The old id cont
 ## 2026-11-27: PR #8225 closed unmerged (stale reference)
 
 PR #8225 was closed unmerged on 2026-11-22 as superseded, on the owner's decision. The front-matter `pr: 8225` and the "pending PR merge" line in the Round 53 block are stale. The honest §3b-cond state recorded in the 2026-11-22 section above is what is on main. Status unchanged (open conjecture).
+
+## 2026-11-27: stale `pr: 8225` front-matter removed
+
+Removed `pr: 8225` (closed unmerged 2026-11-22). Status unchanged.
