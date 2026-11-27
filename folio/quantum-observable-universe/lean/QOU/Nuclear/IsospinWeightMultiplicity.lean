@@ -133,4 +133,48 @@ example : ((6 : ℕ).choose 1 : ℚ) * (3 + 2 + 2 ^ 2) ≤ ((6 : ℕ).choose 3 :
 /-- Non-vacuity of the telescoping: at `N = 6`, `d(6,0)+d(6,1)+d(6,2)+d(6,3) = 1+5+9+5 = 20 = C(6,3)`. -/
 example : twoRowDim 6 0 + twoRowDim 6 1 + twoRowDim 6 2 + twoRowDim 6 3 = 20 := by decide
 
+/-! ## Markov-trace (quantum-trace) weighting of a `T_z` sector
+
+Carl, 2026-11-27: "use qCLT". Under convention D the Markov trace on `H_N(q)` is the
+`U_q(sl₂)` quantum trace on `V^{⊗N}`, which weights a weight vector of `T_z = (N − 2k)/2`
+by `q^{N−k} q⁻ᵏ` (up to the overall `[2]_q^N`). So the `T_z` sector weighs
+`C(N,k)·q^{N−k}·qi^k`. Two exact facts, over any commutative ring with `q·qi = 1`:
+
+* `markov_sector_sum`: the sectors add up to `(q + qi)^N = [2]_q^N`, the Markov normaliser;
+* `markov_sector_mirror`: a sector times its mirror (`T_z ↔ −T_z`) is `C(N,k)²`, with no `q`.
+
+So the `q`-weighting adds only an **odd** factor `q^{2T_z}` to each sector; the even part, the
+part a symmetry energy reads, is the classical count `C(N,k)` exactly. -/
+
+section MarkovSector
+
+variable {R : Type*} [CommRing R]
+
+/-- The Markov (quantum-trace) weight of the sector with `k` down-strands. -/
+def markovSector (q qi : R) (N k : ℕ) : R := (N.choose k : R) * q ^ (N - k) * qi ^ k
+
+/-- **The sectors sum to `(q + qi)^N`**, the Markov normaliser `[2]_q^N`. -/
+theorem markov_sector_sum (q qi : R) (N : ℕ) :
+    ∑ k ∈ Finset.range (N + 1), markovSector q qi N k = (q + qi) ^ N := by
+  rw [show (q + qi) ^ N = (qi + q) ^ N by ring, add_pow]
+  refine Finset.sum_congr rfl fun k _ => ?_
+  unfold markovSector; ring
+
+/-- **A sector times its mirror is the squared classical count**, with no `q` left. -/
+theorem markov_sector_mirror (q qi : R) (hq : q * qi = 1) (N k : ℕ) (hk : k ≤ N) :
+    markovSector q qi N k * markovSector q qi N (N - k) = ((N.choose k : R)) ^ 2 := by
+  unfold markovSector
+  rw [Nat.choose_symm hk, Nat.sub_sub_self hk]
+  have : q ^ (N - k) * qi ^ k * (q ^ k * qi ^ (N - k)) = (q * qi) ^ N := by
+    rw [mul_pow]
+    calc q ^ (N - k) * qi ^ k * (q ^ k * qi ^ (N - k))
+        = (q ^ (N - k) * q ^ k) * (qi ^ k * qi ^ (N - k)) := by ring
+      _ = q ^ N * qi ^ N := by rw [← pow_add, ← pow_add, Nat.sub_add_cancel hk,
+            Nat.add_sub_cancel' hk]
+  calc (N.choose k : R) * q ^ (N - k) * qi ^ k * ((N.choose k : R) * q ^ k * qi ^ (N - k))
+      = (N.choose k : R) ^ 2 * (q ^ (N - k) * qi ^ k * (q ^ k * qi ^ (N - k))) := by ring
+    _ = (N.choose k : R) ^ 2 := by rw [this, hq, one_pow, mul_one]
+
+end MarkovSector
+
 end QOU.Nuclear.IsospinWeightMultiplicity
