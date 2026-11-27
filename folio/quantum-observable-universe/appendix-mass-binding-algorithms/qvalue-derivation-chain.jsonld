@@ -15,7 +15,8 @@
   "kind": "remark",
   "title": "Q-value derivation chain: from $q$ to $\\beta$-decay predictions",
   "uses": [
-    "papers/quantum-observable-universe/blocks/def-stable-nucleus"
+    "papers/quantum-observable-universe/blocks/def-stable-nucleus",
+    "papers/quantum-observable-universe/blocks/def-mass-identity"
   ],
   "interprets": "papers/quantum-observable-universe/blocks/prop-beta-decay-transfer-matrix",
   "tags": [

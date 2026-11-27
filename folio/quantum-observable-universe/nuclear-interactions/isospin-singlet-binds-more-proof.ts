@@ -8,6 +8,6 @@ export default proof({
     ref: "qou:QOU.Nuclear.InterfaceScalar.singlet_binds_more",
     validation: "not_checked",
   },
-  uses: ["prop:isospin-singlet-binds-more"],
+  uses: ["prop:isospin-singlet-binds-more", "def:mass-identity"],
   tags: ["isospin", "nn-channel", "convention-d"],
 });

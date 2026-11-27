@@ -20,6 +20,15 @@ structure to the second must send products to sums — Cauchy's equation on
 $(\mathbb{R}_{>0}, \times)$ — whose continuous solutions are the multiples of
 $\ln$.
 
+In the ring form of the [mass identity](#def:mass-identity) the two structures sit
+on two sides of the comparison. The model quantity is the trace ratio
+$t \in \mathbb{Q}(q)$, and its multiplicativity
+$t_{\mathrm{atom}} = t_{\mathrm{free}} \prod_k \mu_k$ is an identity in the ring.
+The logarithm is not part of the model; it is the map that compares a ring element
+with an energy, $b \mapsto -\alpha\ln\lvert\varphi(b)\rvert$ after evaluation
+$\varphi$. Extensivity is the statement that this comparison map sends the ring's
+products to sums, and Cauchy's equation constrains only the comparison map.
+
 The proposition records the part of that argument which is mechanically
 checkable: of the two functionals the framework has weighed, the logarithmic one
 is extensive and the linear one is not. The failure is stated as an identity

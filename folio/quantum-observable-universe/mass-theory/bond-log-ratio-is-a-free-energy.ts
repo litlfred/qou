@@ -21,6 +21,7 @@ export default remark({
     "The bond log-ratio is a free-energy difference; that it is the binding energy is a separate, open claim",
   uses: [
     "thm:markov-trace-factorization",
+    "def:mass-identity",
     "rem:canonical-trace-factorises-over-chain",
     "rem:pn-bond-cannot-be-extremal",
   ],

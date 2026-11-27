@@ -12,5 +12,5 @@ export default remark({
     "zero-parameters",
   ],
   interprets: "prop:beta-decay-transfer-matrix",
-  uses: ["def:stable-nucleus"],
+  uses: ["def:stable-nucleus", "def:mass-identity"],
 });
