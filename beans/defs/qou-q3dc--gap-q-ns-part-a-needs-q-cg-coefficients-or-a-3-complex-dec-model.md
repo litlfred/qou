@@ -43,3 +43,10 @@ Open: build the 3D-calculus vector fields on OqSU2 and get the sign and size of 
 - `qCen_energy_conserving`: the balanced difference (θ − θ⁻¹)/c conserves energy exactly for θ-invariant φ.
 - `theta3D`: the Woronowicz 3D-calculus twist (q⁻², q⁴, q⁻⁴, q²) is the corpus `torusScaleAlgEquiv q (q⁻²) (q⁴)`; `theta3D_energy` gives both budgets on OqSU2.
 - Still open: which difference the 3D-calculus vector fields are; Haar invariance (a hypothesis); positivity and the *-structure; Part A (qou-pa7n).
+
+## 2026-11-27 — coproduct and Cartan field (PR #9565); theta3D scoped (PR #9558 e724703559a)
+
+- `OqSU2Coproduct.lean`: coproduct on O_q(SU(2)); diagonal-character translations are torus scalings (right (u,u⁻¹), left (u,u)); HK σ = left_q ∘ right_{q⁻³}, two-sided.
+- Left-invariant fields of (ε,χ)-twisted derivations are one-sided twisted; `cartanField`: (ε − χ_u)/c gives c⁻¹(f − R_u f), the one-sided qDiff, so its budget is −c·φ(Du·Du).
+- Correction: `theta3D` (HK σ) is the cocycle twist, not the Leibniz twist; #9558 docstring and audit doc now say so.
+- Still open: Woronowicz's exact Cartan functional and u (Woronowicz 1987 not in library); off-diagonal fields; coassociativity; Haar state; Part A (qou-pa7n).
