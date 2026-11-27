@@ -1,14 +1,14 @@
 ---
 # qou-4paj
 title: 'FALSE AXIOMS: the two nucleon-mass axioms assert propositions whose negations are provable'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-09-04T02:40:09Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-27T20:05:00Z
 parent: qou-wp3h
 ---
 
@@ -86,3 +86,7 @@ invisible. Nothing was looking for false axioms.
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8147, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-27 — status check and neutron half (PR #9630)
+
+Measured on main 2026-11-27: the proton axiom is gone (deleted 2026-11-23 on owner card "Delete all eight"; `proton_mass_q₀_bounds` replaces it). The **neutron axiom was still present** in `knots-particles-confinement/categorical-neutron.lean`. It is not in that ruling's list. PR #9630 replaces it with the proved `neutron_mass_q₀_bounds` (746 < · < 747) and `not_neutron_mass_near_939`. No consumer. Complete this bean when #9630 merges.
