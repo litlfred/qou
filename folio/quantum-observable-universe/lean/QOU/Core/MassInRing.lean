@@ -189,7 +189,9 @@ section AdicMass
 
 variable {R S : Type*} [CommRing R] [CommRing S]
 
-/-- A ring hom respecting ideal towers is a map of adic near systems (resolution unchanged). -/
+/-- A ring hom respecting ideal towers is a map of adic near systems (resolution unchanged).
+For towers that form an error filtration, `QOU.Core.Error.ErrorFiltration.nearMap` is this
+map, and `depth_le_depth_map` says it does not decrease error depth. -/
 def ringHomNearMap (ψ : R →+* S) (I : ℕ → Ideal R) (hI : Antitone I)
     (J : ℕ → Ideal S) (hJ : Antitone J) (hIJ : ∀ n, I n ≤ Ideal.comap ψ (J n)) :
     NearMap (adicNear I hI) (adicNear J hJ) where

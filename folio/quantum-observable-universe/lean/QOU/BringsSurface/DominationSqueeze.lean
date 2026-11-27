@@ -1,6 +1,7 @@
 import Mathlib.Order.WithBot
 import Mathlib.Algebra.Order.Group.Defs
 import Mathlib.Data.Real.Basic
+import QOU.Core.FiltrationDepth
 
 /-!
 # QOU.AlgebraicSubstrate.DominationSqueeze — the squeeze as an algebraic object
@@ -44,7 +45,9 @@ wall, where the framework's GB / jet filtration already lives.
   i.e. order of vanishing at `q = 1`. This is the grading
   `QOU.Archimedean.TowerHeightAttack §3` requires and the bare
   `VolumeTowerDecomposition` (a plain `HasSum`) does not supply.
-* Any `ℕ`-filtered ring, via `val x = sup {n | x ∈ Fⁿ}`.
+* Any `ℕ`-filtered group or ring, via `val x = sup {n | x ∈ Fⁿ}`: proved as
+  `QOU.Core.Error.AddFiltration.toDomination` (`QOU.Core.ErrorDepth`); `jetDomination`
+  is that construction on the jet tower (`jetFiltration_depth`).
 * The Ohtsuki tower `𝔙_b = 𝔙₀ + Σ κₙ (2πb²)ⁿ` — `val` = leading `ℏ`-order.
 
 ## Scope
@@ -211,23 +214,38 @@ theorem jetVal_congr {f g : ℕ → ℝ} (h : ∀ n, f n ≠ 0 ↔ g n ≠ 0) :
   · exact absurd (h2.imp fun n hn => (h n).mpr hn) h1
   · rfl
 
+/-- **The jet valuation is the depth of the jet tower** `vanishBelow ℝ`
+(`QOU.Core.FiltrationDepth`). -/
+theorem jetFiltration_depth (f : ℕ → ℝ) :
+    (QOU.Core.Error.jetFiltration ℝ).depth f = jetVal f := by
+  refine QOU.Core.Error.withTop_eq_of_forall fun n => ?_
+  rw [QOU.Core.Error.AddFiltration.coe_le_depth_iff]
+  show (∀ m < n, f m = 0) ↔ _
+  constructor
+  · intro hf
+    induction hj : jetVal f using WithTop.recTopCoe with
+    | top => exact le_top
+    | coe m =>
+      have hm := ne_zero_of_jetVal_eq hj
+      rw [QOU.Core.Error.castTop]
+      exact WithTop.coe_le_coe.mpr (not_lt.mp fun hlt => hm (hf m hlt))
+  · intro hn m hm
+    exact eq_zero_of_lt_jetVal (lt_of_lt_of_le (WithTop.coe_lt_coe.mpr hm) hn)
+
 /-- **The jet filtration is a domination structure.** Concrete witness that
-`Domination` is non-vacuous, on exactly the grading the tower argument needs. -/
+`Domination` is non-vacuous, on exactly the grading the tower argument needs. The
+three axioms are the depth axioms of the jet tower, transported along
+`jetFiltration_depth`. -/
 noncomputable def jetDomination : Domination (ℕ → ℝ) ℕ where
   val := jetVal
-  val_zero := jetVal_eq_top_iff.mpr fun _ => rfl
-  val_neg a := jetVal_congr fun n => by simp
+  val_zero := by
+    rw [← jetFiltration_depth]; exact (QOU.Core.Error.jetFiltration ℝ).depth_zero
+  val_neg a := by
+    rw [← jetFiltration_depth, ← jetFiltration_depth]
+    exact (QOU.Core.Error.jetFiltration ℝ).depth_neg a
   le_val_add a b := by
-    by_contra hlt
-    push_neg at hlt
-    have hne : jetVal (a + b) ≠ ⊤ := fun htop => by
-      rw [htop] at hlt; exact absurd hlt (by simp)
-    obtain ⟨m, hm⟩ := WithTop.ne_top_iff_exists.mp hne
-    have hm' : jetVal (a + b) = (m : WithTop ℕ) := by exact_mod_cast hm.symm
-    rw [hm'] at hlt
-    have h2 := lt_min_iff.mp hlt
-    exact ne_zero_of_jetVal_eq hm'
-      (by simp [eq_zero_of_lt_jetVal h2.1, eq_zero_of_lt_jetVal h2.2])
+    simp only [← jetFiltration_depth]
+    exact (QOU.Core.Error.jetFiltration ℝ).min_depth_le_depth_add a b
 
 /-! ## §3  Bridge back to the ordered-field form
 
