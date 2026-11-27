@@ -156,3 +156,26 @@ Arm A is q₀'' with the producers unchanged, so mass-chart rows are still in th
 | B (Q-CLT, median) | 68.9 % | 57.1 % | 57.1 % (log chart, not ÷ w_e) | AME2020 |
 
 **Reading.** Moving q₀ to q₀'' costs α_EM⁻¹ its sub-ppb agreement (it becomes −21.8 %), and α_EM is a pure function of q with no electron unit. In the derived chart m_μ is short by 11.4 %, against 211 ppb now. The Q-CLT binding median improves (68.9 → 57.1 %). This report compares rows only and adopts nothing. The derivation of w_e (§7) does not depend on which q₀ is used. What the shadow shows is that the current q₀ and the derived electron weight cannot both hold without the α_EM and m_μ rows moving.
+
+## 9. The ring-valued mass (owner, 2026-11-27: "Look for second derived factor. Which mass are you using? Ring version?")
+
+**Which mass §7 used.** §7 read the raw convention-D trace `τ_e = q³ y₍₃₎`. That is not the corpus mass. `def:mass-identity` defines the mass as the framing-corrected value `[2]ⁿ q^{−2w} ∫_A ρ(β)`, valued in the ring (`QOU.Core.MassInRing`). This section redoes the reading on that mass.
+
+Lean: `QOU/Observations/ElectronRingMassReading.lean` (algebraic, any field) and `QOU/Transcendental/MassTheory/ElectronRingMassReading.lean` (the derivative). No `sorry`, no new axiom. Probe: `computations/probes/electron_weight/electron_ring_mass_reading_probe.py` (8/8).
+
+| statement | Lean |
+|---|---|
+| `[2] q⁻² z_D = 1` and `[2] q² z̄_D = 1`, so the correction is the one that makes the mass invariant under both stabilisations | `framing_pos_stab`, `framing_neg_stab` |
+| electron ring mass `m_e = [2]³ q⁻⁶ τ_e = [4]/q³`, `[4] = q³+q+q⁻¹+q⁻³` | `massE_eq` |
+| `m_e(1) = 4 = 2^c` (two components) | `massE_one` |
+| `q·m_e' = m_e (D[4]/[4] − 3)` | `q_mul_dMassE`, `hasDerivAt_massE` |
+| `U_e := −q ∂_q log m_e = 3 − D[4]/[4]`, `U_e(1) = 3` | `uE`, `uE_eq_neg_log_deriv`, `uE_one` |
+| `ε_n = q⁻² ε_p` gives `U_n − U_p = +2` | `np_cell_U` |
+
+Relation to §7 (probe check): `U_e = 6 − w_e − 3 D[2]/[2]`.
+
+**Numbers at q₀.** `m_e = 3.00514` (4 at q = 1). `U_e = 2.48463` (3 at q = 1). The n−p cell is `+2/U_e = 0.80495 m_e`. Comparison only: 0.4113 MeV against 1.293 MeV, with the neutron **above** the proton.
+
+**What changes from §7.** The `3` at `q = 1` survives the framing correction, so it is not a writhe artefact of the chosen braid word. The ring mass is a braid-class invariant, so `U_e(1) = 3` is a link invariant of the Hopf link. The signs change. On the raw trace the electron reading is `+w_e` with an n−p cell of `−2/w_e`, which puts the neutron below the proton. On the ring mass, with the energy sign `U = −q∂_q log m`, the electron reading is positive and the n−p cell is positive, which puts the neutron above the proton.
+
+**Second derived factor: status.** No new factor is derived here. The candidate for the `3` is the Jones-derivative identity `V′_L(1) = −3·lk(L)·V_L(1)` (Murakami), with `lk(Hopf) = 1`. That would make `U_e(1) = 3·lk`, a derived quantity, not a fitted one. This is a candidate identification. It is not formalised. The other candidate, `N² − 1 = 3` for the spin-½ colour, agrees at this one point and is not separated by the electron alone. Separating the two needs a link with `lk ≠ 1` read the same way. Nothing here is chosen to match a measured value.

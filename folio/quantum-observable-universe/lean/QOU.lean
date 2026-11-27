@@ -112,6 +112,7 @@ import QOU.Transcendental.MassTheory.BlochGroupComplex
 import QOU.Transcendental.MassTheory.MuonCarrierHeckeObstruction
 import QOU.Transcendental.MassTheory.ElectronCategoricalEnergy
 import QOU.Transcendental.MassTheory.ElectronMassChartWeight
+import QOU.Transcendental.MassTheory.ElectronRingMassReading
 import QOU.MassTheory.BranchIntegerPinning
 import QOU.MassTheory.NucleusBondValence
 -- Weierstrass primary-factor estimate ‖1 - E_p(z)‖ ≤ ‖z‖^{p+1}: the Mathlib-gap
