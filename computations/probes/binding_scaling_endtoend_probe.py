@@ -98,21 +98,71 @@ assert H._HAS_LP_KERNEL, (
 )
 
 ISOS = [(1, 1, "2H"), (1, 2, "3H"), (2, 1, "3He"), (2, 2, "4He")]
+
+# Per-isotope checkpointing (2026-11-27, bean `qou-sv7h`): a reclaim must leave
+# partial evidence, not a blank file. `--iso 3H` picks isotopes (default: all
+# four); `--out FILE.jsonl` appends one JSON line per event, flushed and
+# fsynced: a `start` line, a `heartbeat` line every `--heartbeat` seconds while
+# the call runs (elapsed seconds + kernel boot id, so a reboot is visible as a
+# boot-id change or a heartbeat gap), and a `done` line with the row. The last
+# heartbeat of an unfinished call is a LOWER BOUND on its wall time only if the
+# heartbeats are contiguous and the boot id never changed.
+import argparse, os, threading, socket
+ap = argparse.ArgumentParser()
+ap.add_argument("--iso", nargs="*", default=None)
+ap.add_argument("--out", default=None)
+ap.add_argument("--heartbeat", type=float, default=300.0)
+args = ap.parse_args()
+if args.iso:
+    ISOS = [t for t in ISOS if t[2] in args.iso]
+
+
+def _boot_id():
+    try:
+        return Path("/proc/sys/kernel/random/boot_id").read_text().strip()
+    except OSError:
+        return None
+
+
+def _log(rec):
+    if not args.out:
+        return
+    rec = {"utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+           "pid": os.getpid(), "host": socket.gethostname(), "boot_id": _boot_id(), **rec}
+    with open(args.out, "a") as f:
+        f.write(json.dumps(rec) + "\n")
+        f.flush()
+        os.fsync(f.fileno())
+
+
 out = []
 for Z, N, name in ISOS:
     A = Z + N
+    _log({"event": "start", "iso": name, "A": A, "kernel": bool(H._HAS_LP_KERNEL), "dps": DPS})
     t0 = time.perf_counter()
+    stop = threading.Event()
+
+    def _beat(name=name, A=A, t0=t0, stop=stop):
+        while not stop.wait(args.heartbeat):
+            _log({"event": "heartbeat", "iso": name, "A": A,
+                  "elapsed_s": round(time.perf_counter() - t0, 1)})
+
+    hb = threading.Thread(target=_beat, daemon=True)
+    hb.start()
     try:
         r = H.binding_energy(Z, N)
         dt = time.perf_counter() - t0
         val = (mp.nstr(r, 25) if isinstance(r, mp.mpf)
                else {k: (mp.nstr(v, 25) if isinstance(v, mp.mpf) else repr(v)) for k, v in r.items()}
                if isinstance(r, dict) else repr(r))
-        out.append({"iso": name, "A": A, "sec": round(dt, 3), "ok": True, "value": val})
+        row = {"iso": name, "A": A, "sec": round(dt, 3), "ok": True, "value": val}
         print(f"  {name:>4}  A={A}  {dt:10.3f}s  ok", flush=True)
     except Exception as e:
         dt = time.perf_counter() - t0
-        out.append({"iso": name, "A": A, "sec": round(dt, 3), "ok": False,
-                    "error": f"{type(e).__name__}: {e}"})
+        row = {"iso": name, "A": A, "sec": round(dt, 3), "ok": False,
+               "error": f"{type(e).__name__}: {e}"}
         print(f"  {name:>4}  A={A}  {dt:10.3f}s  {type(e).__name__}: {e}", flush=True)
+    stop.set()
+    out.append(row)
+    _log({"event": "done", **row})
 print(json.dumps(out, indent=1), flush=True)
