@@ -2089,3 +2089,4 @@ import QOU.EightfoldWay.WeylInvarianceQDeformation
 import QOU.EightfoldWay.MesonOctetTracelessSplit
 import QOU.EightfoldWay.SymmetricChannelDimension
 import QOU.Nuclear.CoulombIsospinChannel
+import QOU.Nuclear.CoulombRingLedger
