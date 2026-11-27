@@ -1,4 +1,4 @@
-import QOU.Nuclear.FiveTwoBranchPinnedB
+import QOU.Transcendental.Nuclear.FiveTwoBranchPinnedB
 
 /-!
 # `S(φ)` in Lean, and `S(π) − S(0) = π²`

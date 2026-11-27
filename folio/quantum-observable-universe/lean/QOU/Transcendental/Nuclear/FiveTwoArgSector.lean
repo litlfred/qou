@@ -1,4 +1,4 @@
-import QOU.Nuclear.FiveTwoBranchByArgument
+import QOU.Transcendental.Nuclear.FiveTwoBranchByArgument
 
 /-!
 # Pinning the branch integer by a SECTOR — Route 27's obligations, proved

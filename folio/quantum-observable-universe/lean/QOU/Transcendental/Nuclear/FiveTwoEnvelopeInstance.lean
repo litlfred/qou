@@ -1,5 +1,5 @@
-import QOU.Nuclear.FiveTwoRootLabelling
-import QOU.Nuclear.FiveTwoTransport
+import QOU.Transcendental.Nuclear.FiveTwoRootLabelling
+import QOU.Transcendental.Nuclear.FiveTwoTransport
 import QOU.Transcendental.Nuclear.FiveTwoPairSaddle
 import QOU.Transcendental.QCalculus.ComplexDilogarithmInversion
 

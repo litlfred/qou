@@ -1,4 +1,4 @@
-import QOU.Nuclear.FiveTwoEnvelopeWiring
+import QOU.Transcendental.Nuclear.FiveTwoEnvelopeWiring
 
 /-!
 # `∂V/∂y = 0` at the pair — pinning `k = 0` by an argument bound

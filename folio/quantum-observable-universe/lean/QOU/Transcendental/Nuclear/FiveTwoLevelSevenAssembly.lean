@@ -1,6 +1,6 @@
-import QOU.Nuclear.FiveTwoEnvelopeWiring
-import QOU.Nuclear.FiveTwoLevelSevenBridge
-import QOU.Nuclear.FiveTwoExtendIdentification
+import QOU.Transcendental.Nuclear.FiveTwoEnvelopeWiring
+import QOU.Transcendental.Nuclear.FiveTwoLevelSevenBridge
+import QOU.Transcendental.Nuclear.FiveTwoExtendIdentification
 import MathlibExt.FiveTwoAbelFiveTerm
 
 /-!
