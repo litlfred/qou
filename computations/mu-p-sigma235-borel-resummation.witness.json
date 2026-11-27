@@ -1,0 +1,179 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-27T14:44:56.666765+00:00",
+  "commitSha": "8036e307a0d2c56c6266b469f714bc24a4887f1e",
+  "assertions": [
+    {
+      "name": "ohtsuki_series_equals_false_theta_expansion",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "exact Fraction match of orders 0..11"
+    },
+    {
+      "name": "borel_pade_agrees_with_closed_form",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "independent Pade-Laplace of exact a_k"
+    },
+    {
+      "name": "median_reproduces_false_theta_on_bar_side",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "t = +|t0|; convergent q-series vs median Borel sum"
+    },
+    {
+      "name": "borel_sum_within_least_term_of_optimal_truncation",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "consistency of the resummation with the asymptotics"
+    },
+    {
+      "name": "residual_falls_in_sector_gap",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "COMPARISON ONLY: sectors j=1, j=7 bracket t_res; Lean action gap"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "mu-p-sigma235-borel-resummation",
+  "scriptFile": "mu_p_sigma235_borel_resummation_probe.py",
+  "scriptHash": "9cfe6efc8d32",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mu_p_sigma235_borel_resummation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/mu_p_sigma235_borel_resummation_probe.py"
+  },
+  "data": {
+    "pin": {
+      "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+      "x0": "0.109978582751380807591669095610768879874499121873578736072814",
+      "t0": "-0.104340720319519512315906279973072397053744280828984303250862"
+    },
+    "ohtsuki_from_false_theta": [
+      "1",
+      "-6",
+      "45",
+      "-464",
+      "6224",
+      "-102816",
+      "2015237",
+      "-45679349",
+      "1175123730",
+      "-33819053477",
+      "1076447743008",
+      "-37544249290614"
+    ],
+    "dual_support_mod_60": [
+      1,
+      7,
+      11,
+      13,
+      17,
+      19,
+      23,
+      29,
+      31,
+      37,
+      41,
+      43,
+      47,
+      49,
+      53,
+      59
+    ],
+    "borel": {
+      "S_t0": "1.85140303915846130112273826401527347406650929646971405737434",
+      "S_pade_minus_closed": "2.56759927014603838179677898003898075183712147370144669790114e-23",
+      "I_borel_q0": "0.615226114690480398678796272945492826189488746161932052925642",
+      "partial_sums": [
+        "1.00000000000000000000000000000000000000000000000000000000000",
+        "0.340128503491715154449985426335386720753005268758527583563115",
+        "0.884416493371819378340969930469815850283748331401432403757745",
+        "0.267193158142400321745521803941600045788261745279260709994656",
+        "1.17773951109753953278379992911291301301519504415262451512239",
+        "-0.476511077768167711972641536816670148340874308285848397055475"
+      ],
+      "c1": "3.15300500477856263439647484250955813724404956550407093029592",
+      "sectors": {
+        "1": "0.0427235493058811770890228439332624655803871266067943057496721",
+        "7": "7.99279962440927013393840768019597400294368178207830759207621e-68",
+        "11": "2.04524964697726994515807328082014440399714420875847446153598e-166",
+        "13": "3.82629038920528225258372351385615477260689396279793281619226e-232"
+      },
+      "bar_side_fconv_minus_median": "-4.37193245952805616444073832949032555339868152355836053086935e-40",
+      "stokes_jump_j1_at_inverse_q0": "0.174298649730998968161441800585292814743567980160629269589345",
+      "j_max": 20000,
+      "k_subtracted": 4
+    },
+    "comparison": {
+      "t_res": "0.000000211164914360000000000000000000000000000000000000000000000000",
+      "rows": [
+        {
+          "quantity": "Borel sum I_B(q0)",
+          "value": "0.615226114690480398678796272945492826189488746161932052925642",
+          "over_t_res": "2913486.44046816072915531038669416969042303901683988092294198"
+        },
+        {
+          "quantity": "|I_B - optimal truncation (n=2)|",
+          "value": "0.269190378681338979662173657524323024094259585239500350832103",
+          "over_t_res": "1274787.43093852942124799703171827159068519220287150145501143"
+        },
+        {
+          "quantity": "least term (sibling probe floor)",
+          "value": "0.544287989880104223890984504134429129530743062642904820194630",
+          "over_t_res": "2577549.36008065456490536520081407869319462196779925718051294"
+        },
+        {
+          "quantity": "sector j=1: exp(-c1)",
+          "value": "0.0427235493058811770890228439332624655803871266067943057496721",
+          "over_t_res": "202323.143668861794759296981599488408403733678888767389405022"
+        },
+        {
+          "quantity": "Stokes jump at 1/q0, j=1",
+          "value": "0.174298649730998968161441800585292814743567980160629269589345",
+          "over_t_res": "825414.819783222287768325835553796185782081929003981102409429"
+        },
+        {
+          "quantity": "sector j=7: exp(-49 c1)",
+          "value": "7.99279962440927013393840768019597400294368178207830759207621e-68",
+          "over_t_res": "3.78509831930834692757166976183267020407853789924379726965368e-61"
+        }
+      ],
+      "scope": "(a): this resummation of this series at q0; selection-free"
+    },
+    "source": {
+      "series": "I(Sigma(2,3,5);q) = (1-q)^-1 sum q^n (q^{n+1})_{n+1}",
+      "relation": "1 + q(1-q) I = H = A/2, A = sum chi+(n) q^{(n^2-1)/120} (lovejoy2026 LZ0)",
+      "lean": "QOU/BraidsAndKnots/PoincareSphereBorelSectors.lean"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
