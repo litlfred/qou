@@ -7,7 +7,7 @@ priority: low
 tags:
     - constructive
 created_at: 2026-11-27T14:50:13Z
-updated_at: 2026-11-27T23:08:06Z
+updated_at: 2026-11-27T23:15:09Z
 parent: qou-dk7p
 ---
 
@@ -18,3 +18,5 @@ Doc item 6. 26 files (QClt, Stieltjes, FrechetShohat, Plancherel asymptotics). O
 2026-11-27: QCltCut restated on PR #9747 (commit 0714e7fb8): moments from a tracial state + sum; q_eq_one_of_fourth_limit proved (classical 4th moment forces q=1); ClassicalClt = q=1 member. Bridge from QCltNonCommutative removed. OPEN: ClassicalClt instance for tr_M (needs general-n Markov trace; proposed cumulant/formal-group route). Stays open.
 
 2026-11-27: PR #9817 (Hecke thread) adds a general-n Markov trace = U_q(sl2) spin-chain quantum trace over any field; use it as the state for the tr_M ClassicalClt instance.
+
+2026-11-27: step 1 landed (bcdc06363, QCltMarkovSecondMoment.lean): tau(S_n^2)=n(δε−ε²) for every MarkovTower; secondMoment_converges. Next: step 2 cluster factorisation (needs a shift map TL_k→TL_{k+m} or the concrete spin chain of PR #9817), step 3 pair count, step 4 remainder bound with [Archimedean K], step 5 instance.
