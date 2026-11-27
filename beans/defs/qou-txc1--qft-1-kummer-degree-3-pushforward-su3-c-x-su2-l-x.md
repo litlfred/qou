@@ -35,3 +35,7 @@ Target: (a) the group isomorphism S(U(3)×U(2)) ≅ (SU(3)×SU(2)×U(1))/Z₆; (
 Not worked this pass (boundary with the charge threads). Part (a) is the next math-only step.
 
 Parts (a) & (b) proved sorry-free in Su3Su2U1Z6GroupAndCommutant.lean (83a784c4bdd); Part (c) isolated in BringKummerSU5EmbeddingHypothesis.
+
+## 2026-11-27 — status check (thread "Derive hypercharge and gauge structure")
+
+Parts (a) and (b) are on main in `QOU/StandardModel/Su3Su2U1Z6GroupAndCommutant.lean` (0 sorry; imported via `EightfoldWay/NeutralLeptonFixesCharges`), so the 2026-11-20 file-loss reopening is resolved for them. PR litlfred/qou#9729 adds that the SU(5) charge pattern feeding (b) is itself forced by anomaly freedom, and that 3/8 ⇔ one neutral lepton on any anomaly-free chiral solution. Part (c) (Bring Kummer pushforward produces the embedding) stays open in `BringKummerSU5EmbeddingHypothesis`.

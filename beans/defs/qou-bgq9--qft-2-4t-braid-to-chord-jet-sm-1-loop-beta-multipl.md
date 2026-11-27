@@ -33,3 +33,7 @@ Target: the 4T relations among chord diagrams and the associated graded of the b
 **Verdict: APPLIES.** Math-only target, no retired premise.
 
 Partial: `QOU/QFTMath/InfinitesimalPureBraid.lean` on `claude/qft-math-cores-2026-11-22` (df504460b) proves the Drinfeld–Kohno relations for transpositions in k[Sₙ] for every n (hence for every permutation representation). Still open: Kohno's theorem (𝔱ₙ = associated graded of ℤ[PBₙ]) and the link from the near relation to `QOU.KnotTheory.Vassiliev.FourTermRelation`.
+
+## 2026-11-27 — the 4T encoding collapses 𝒜ₙ (thread "Derive hypercharge and gauge structure", PR litlfred/qou#9729)
+
+`BraidKnotOctonion/Vassiliev/FourTermEncodingCollapse.lean` (0 sorry) proves that with `fourTermRelator D i j` imposed for all adjacent transpositions, `relationsSubmodule = ⊤` and every `WeightSystem R (k+1)` is 0 whenever 2 is a unit (the relator at i = j is 2·(one slide); slides generate Perm; 1T then kills every diagram). The true 𝒜₂/ℚ is 1-dimensional. Next: replace the encoding with Bar-Natan's 4T (shared definition, needs owner OK), then the near relation → 4T link. Kohno's theorem not attempted. Associator thread confirmed it is not touching this.

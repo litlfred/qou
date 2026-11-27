@@ -99,3 +99,8 @@ The work for sub-items B and C existed on PR #8149 (branch `qou-8lxd-uq5x-qvpl-k
 - A (is Y_t derived) untouched. Not ported.
 
 Open Checks B & C proved sorry-free in HopfFramingAndHirzebruchDefect.lean (83a784c4bdd); Open Check A isolated in CategoricalRibbonHyperchargeDerivationHypothesis.
+
+## 2026-11-27 — anomaly route (thread "Derive hypercharge and gauge structure", PR litlfred/qou#9729)
+
+`QOU/StandardModel/AnomalyFreeHyperchargeUniqueness.lean` (0 sorry). On SU(3)×SU(2) content (Q, u^c, d^c, L, e^c) with five independent U(1) charges: anomaly freedom ⇔ yQ·(1,−4,2,−3,6) up to the u↔d label, or vector-like (`anomalyFree_iff`). Chiral solutions = the 5̄⊕Λ²5 pattern. One neutral lepton ⇔ yQ = ±1/6 ⇔ Tr T₃²/Tr Q² = 3/8. So Check A reduces to two open inputs: (1) the representation content from the categorical braid words, (2) anomaly freedom from the QOU axioms. The twist candidate agrees with the forced charges.
+Finding: `CategoricalRibbonHyperchargeDerivationHypothesis` is inhabited by `rfl` (its field is a tautology), so it records no open content. Restatement is on an owner card.
