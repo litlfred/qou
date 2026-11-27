@@ -9,3 +9,7 @@
 The joint statement is that they compose to the CPT theorem at the Markov-trace level. The three components are not logically independent; they collectively constitute the conjecture. Only the components are conjectural: if each of $C$, $P$ and $T$ preserves $\mathrm{tr}_M$, so does their composite, so the joint statement reduces to the three component conjectures. Each component asserts that the named realisation of its symmetry is trace-preserving, and none is proved.
 
 The conjecture is stated over the closed-braid space $B$, the trace $\mathrm{tr}$ and the CPT action $\mathrm{cpt}$ it concerns. Downstream results that require CPT closure take it as an explicit hypothesis. Here $R$ is the coefficient ring of the trace—canonically $\mathbb{Z}[q, q^{-1}]$, with an archimedean evaluation $R := \mathbb{R}$ arising only on the observation side of the aether–archimedean wall.
+
+## Status (2026-11-27): refuted in the stated form
+
+$C$ acts on color-sheet flavor labels and not on Hecke generators, so on a braid word the composite $C\cdot P\cdot T$ is the mirror of the reversed word, that is braid inversion $\beta \mapsto \beta^{-1}$. This does not preserve the Markov trace: on $\sigma_0 \in B_2$ it changes $z$ to $z - (q - q^{-1})$. Lean: `QOU.IwahoriHecke.MarkovTraceSymmetries.cpt_not_trace_preserving`. The component $T$ does preserve the trace (see [conj:t-from-trace-cyclicity](t-from-trace-cyclicity.md)), so the failure comes entirely from $P$ (see [conj:p-from-braid-mirror](p-from-braid-mirror.md)).
