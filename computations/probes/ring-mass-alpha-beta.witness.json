@@ -1,0 +1,70 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-27T22:28:40.986071+00:00",
+  "commitSha": "462f5cc2a22ccda5e3bc65fbbf3b2df35b6b3e5e",
+  "assertions": [
+    {
+      "name": "table_reproduced_1e-6_per_nucleon",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "ring_np_cell_positive",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "ring-mass-alpha-beta",
+  "scriptFile": "ring_mass_alpha_beta_probe.py",
+  "scriptHash": "091e5b41a6e0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/ring_mass_alpha_beta_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/ring_mass_alpha_beta_probe.py"
+  },
+  "description": "Beta (two arms for Delta_np: table vs ring mass) and alpha decay direction from the ruled-law mass table; pre-registered, AME only for scoring.",
+  "data": {
+    "masses": "recomputed ruled law + EM + twist",
+    "table_rows_compared": 14970,
+    "table_max_abs_dM_per_nucleon_MeV": "4.29824e-7",
+    "B_4He_ruled_em_MeV": "6.74258591504",
+    "kappa_MeV": "0.781399236251",
+    "U_e": "2.48462813544296",
+    "delta_np_table_MeV": "0.836433",
+    "delta_np_ring_MeV": "0.411328313803",
+    "free_neutron_Q_ring_MeV": "-0.0996706368867",
+    "beta_table": "1508/2245",
+    "beta_table_minus_side": "845/1013",
+    "beta_table_plus_side": "663/1232",
+    "beta_ring": "1507/2245",
+    "beta_ring_minus_side": "824/1013",
+    "beta_ring_plus_side": "683/1232",
+    "alpha": "1129/2373",
+    "alpha_unstable_side": "1117/1118",
+    "alpha_stable_side": "12/1255",
+    "alpha_model_unstable_count": 2360
+  }
+}
