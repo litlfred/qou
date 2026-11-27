@@ -26,7 +26,7 @@ The conclusion is `s ∈ FF N`: every word of length `< N` has coefficient `0` i
 
 **The argument.** Substitute `Y₁ = B`, `Y₂ = C`, `Y₃ = x·C` with a central variable `x` and take
 the coefficient of `x`; do the same with `B` and `C` exchanged. With symmetry, and with the
-linearity of the `x`-coefficient in the direction of the derivative, the two identities add up to
+additivity of the `x`-coefficient in the direction, the two identities add up to
 
   `E(s) = f(B + C) − f(B) − f(C)` modulo `FF N`, where `f(Z) = [x¹] s(Z, x·Z)`,
 
@@ -111,15 +111,15 @@ theorem lift_mem_PF {N : ℕ} (v : Fin 3 → F2[X]) (hv : ∀ i, v i ∈ PF 1) {
 end Filtrations
 
 
-/-! ### The directional derivative and the homogeneous parts -/
+/-! ### The `x`-coefficient along a line, and the homogeneous parts -/
 
-section Derivative
+section LineCoeff
 
 /-- The value of `s` at `(a + x·da, b + x·db)` as a polynomial in a central variable `x`. -/
 noncomputable def lineEval (a b da db : F2) (s : F2) : F2[X] :=
   eval (C a + C da * X) (C b + C db * X) s
 
-/-- The derivative of `s` at `(a, b)` in the direction `(da, db)`: the `x`-coefficient. -/
+/-- The `x`-coefficient of `s` along the line `(a + x·da, b + x·db)`. -/
 noncomputable def dirD (a b da db : F2) (s : F2) : F2 := (lineEval a b da db s).coeff 1
 
 theorem lineEval_coeff_zero (a b da db s : F2) : (lineEval a b da db s).coeff 0 = eval a b s := by
@@ -146,7 +146,7 @@ theorem dirD_mul (a b da db p q : F2) :
   simp only [lineEval] at hp hq
   rw [hp, hq]
 
-/-- The derivative is additive in the direction. -/
+/-- The `x`-coefficient is additive in the direction. -/
 theorem dirD_add_dir (a b da db ea eb s : F2) :
     dirD a b (da + ea) (db + eb) s = dirD a b da db s + dirD a b ea eb s := by
   induction s using FreeAlgebra.induction with
@@ -242,7 +242,7 @@ theorem coeff_homPoly_coeff_homPoly (s : F2) (m n : ℕ) :
     · simp [homPoly]
     · simp [homPoly]
 
-/-- The Euler operator: the derivative at `(B, C)` in the direction `(B, C)`. -/
+/-- The Euler operator: the `x`-coefficient along `((1 + x)B, (1 + x)C)`. -/
 noncomputable def euler (s : F2) : F2 :=
   dirD (FreeAlgebra.ι ℚ 0) (FreeAlgebra.ι ℚ 1) (FreeAlgebra.ι ℚ 0) (FreeAlgebra.ι ℚ 1) s
 
@@ -286,7 +286,7 @@ theorem coeff_homPoly_euler (s : F2) (n : ℕ) :
     · rw [h]
     · simp
 
-end Derivative
+end LineCoeff
 
 /-! ### The vanishing lemma -/
 
