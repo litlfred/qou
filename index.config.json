@@ -153,7 +153,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "8d630b142fdcbd60660514b0fdec69891a5a3992",
+          "ref": "25cdacffd3bd113fc2c21824a7461ab62d32cff6",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -172,8 +172,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-27",
-              "ref": "8d630b142fdcbd60660514b0fdec69891a5a3992",
-              "evidence": "litlfred 2026-11-27: asked for the QOU site \"up and running on proper harness\" (thread \"Get QOU site running on harness\"), and approved, on the merge manager card, merging cat-harness-tools#2511 (beans-board, /beans/), #2512 (qa-page-standalone, /qa/), #2519 and #2520 so qou can re-pin; 8d630b1 is the merge commit of #2519, the last of the four on main."
+              "ref": "25cdacffd3bd113fc2c21824a7461ab62d32cff6",
+              "evidence": "litlfred 2026-11-27: asked for the QOU site \"up and running on proper harness\" (thread \"Get QOU site running on harness\") and chose \"Take every recommended option\" on the open cards, which included merging cat-harness-tools#2521 (publish a superseded run when the live root is older) and re-pinning qou to its merge commit."
             }
           }
         }
