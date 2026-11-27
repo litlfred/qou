@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - 8f-open
 created_at: 2026-08-10T18:34:14Z
-updated_at: 2026-11-27T23:16:02Z
+updated_at: 2026-11-27T23:42:00Z
 parent: qou-8lxd
 ---
 
@@ -426,3 +426,5 @@ Still open (rule 13a — do not close): deriving the matter content, and the bra
 
 ## 2026-11-27T23:25Z — matter convention agreed
 Matter = EVEN exterior part Λ⁰⊕Λ²⊕Λ⁴ = 1⊕10⊕5̄ (Spin(10) 16); odd part = conjugate. Agreed between the hypercharge thread and the per-fermion braid words thread (#9811). Recorded in OddExteriorAnomalyFreedom.lean (PR #9827, adds evenExterior_cubic). Notation only; chirality derivation stays open.
+
+2026-11-27 late: chirality sign attempts, all scope (a), in PR #9811 audit docs/audits/2026-11-27-matter-channel-twist-reduction.md: ribbon twist sees only c^2; photon chiral vertex acts as 1 on both 1-dim channels; mirror q->q^-1 is index reversal on pair states (Lean sign_mirror_iff_rev), keeps strand count, so it is not the Hodge star. P (mirror) and C (complement) are independent on strand states; the open sign is their relative orientation. Still OPEN.
