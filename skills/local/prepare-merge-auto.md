@@ -8,6 +8,16 @@ roles:
 
 # /prepare-merge-auto — Autonomous merge pipeline
 
+> **🟥 FAST MERGES override (owner ruling 2026-11-27, AGENTS.md §"FAST MERGES").**
+> Before a merge only two things block: `bun run cat merge:guard <pr>` run by
+> the merging agent (never `--full-tier`), and the JSON-LD KG publication check
+> (`gen-block-jsonld --check` on the head). The Phase 1 build, Phase 1b checks
+> (lean-direct, precision gates, sidecars, producer re-runs, review waits) and
+> the Phase 4 verification gate below are NOT pre-merge gates any more: run them
+> in Phase 5, on `main`, after the merge, and file a bean + follow-up PR for
+> anything red. Owner, verbatim: *"no red gates (excpet json(ld) KG
+> publication). all QA runs after."*
+
 Runs the full `/prepare-merge` workflow PLUS:
 
 1. **Sibling coordination** (before starting)
