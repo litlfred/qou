@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T22:46:43Z
+updated_at: 2026-11-27T22:52:53Z
 parent: qou-dk7p
 ---
 
@@ -159,3 +159,10 @@ STILL OPEN, which is why this bean stays open:
 
 
 **2026-11-27 (PR #9806, stacked on #9801):** `AssociatorTower.lean`, sorry-free. `rational_associator_compatible_of_tower`: one sequence Φ : ℕ → ℚ⟨X,Y⟩ with AssocU4 N E (Φ N) ∧ GL N (Φ N) for N ≥ 2 and Φ (N+1) − Φ N ∈ FF N for N ≥ 1. Hypothesis STRENGTHENED to `CompatibleGroupLikeKAssociatorTower` (Ψ_{N+1} − Ψ_N ∈ FFK K N; route b). Route (a) — removing the strengthening via GRT₁ transitivity (Drinfeld Prop 5.5) — not done. Remaining unproved input: existence of a compatible group-like K-tower (KZ truncations). Audit §17e. Bean stays open.
+
+
+
+## 2026-11-27 stage 5 (PR #9807, branch claude/grt-stage5-2026-11-27, stacked on #9806/#9801/#9768)
+QuasiYBE.lean proves, sorry-free, the quasi-Yang-Baxter equation R12 Phi312 R13 Phi132^-1 R23 Phi = Phi321 R23 Phi231^-1 R13 Phi213 R12 for every rational associator in U4 N (quasiYBE_of_assocU4). It follows from the hexagon alone, via hexagon_of_universal at the leg-swapped DK3 family. It also proves the compatible-tower corollary (conditional on CompatibleGroupLikeKAssociatorTower) and transport to (A⊗A)⊗A, which discharges hhex of quasiYBE_of_hexagon (#9519) from any realisation rho of U4 N.
+Reading (b) was chosen: no Casimir realisation t_ij -> h Omega_ij exists in the repo, so no concrete (A, Delta, R) instance was built.
+Still open: the K-tower; a concrete realisation; the braid relation in U(t3) ⋊ S3; tau12-intertwining. Audit §17f. Bean left open.
