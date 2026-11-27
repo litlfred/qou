@@ -1,4 +1,5 @@
 import Mathlib.Data.Finset.Prod
+import Mathlib.Tactic.DeriveFintype
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import HeckeTemperleyLieb.TemperleyLiebTower
 import QOU.Nuclear.BlockChargeSectorTrace
