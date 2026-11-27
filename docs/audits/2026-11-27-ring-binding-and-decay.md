@@ -2,7 +2,7 @@
 
 **Date** 2026-11-27 · **Owner question** "Is there ring binding. And. Alpha/beta decay?" · **Bean** `qou-brng` (C2, epic `qou-myts`)
 **Builds on** PR #9789 (ring mass `m = [2]ⁿ q^{−2w} tr_D`, electron `m_e = [4]/q³`, energy reading `U = −q∂_q log m`), PRs #9622 / #9786 (bond words)
-**Probe** [`computations/probes/ring_binding/ring_binding_probe.py`](../../computations/probes/ring_binding/ring_binding_probe.py): every trace is an exact Laurent polynomial in `Z[q, q⁻¹]`, evaluated at the proton `q₀` only at the end (mpmath 50 dps). 7/7 checks.
+**Probe** [`computations/probes/ring_binding/ring_binding_probe.py`](../../computations/probes/ring_binding/ring_binding_probe.py): every trace is an exact Laurent polynomial in `Z[q, q⁻¹]`, evaluated at the proton `q₀` only at the end (mpmath 50 dps). 7/7 checks; 8/8 with `--a4` (the 12-strand ⁴He row, about 80 s).
 **Scope** Measured values (m_e, AME, CODATA) appear only in comparison columns. Nothing is fitted or wired.
 
 ## 1. Result
@@ -29,9 +29,9 @@
 | ²H `V2V2V2` (junction only) | 0.001503970 | 0.006358 | −0.0593076 | 0 | −0.012197 | 2.224566 |
 | ²H `V2` (one vertex) | 1.412909121 | 5.973050 | −0.6903039 | 0 | −0.141971 | 2.224566 |
 | ³H `V2V3V4` | 1.397161650 | 5.906478 | −0.2079274 | 0 | −0.042763 | 8.481796 |
-| ⁴He `V2V3V4V8` | A4 | A4 | A4 | A4 | A4 | 28.295674 |
+| ⁴He `V2V3V4V8` (only q₀ passer, 12 strands) | 2.810070771 | 11.879527 | −0.8982314 | 0 | −0.184734 | 28.295674 |
 
-The log column equals the raw-trace numbers already on record, as point 1 predicts. In the energy reading three of four words come out unbound, and the bound one gives 0.083 MeV against 2.22 MeV. This is a scope-(a) negative: these words, read this way, do not bind. It does not exclude the energy reading from a closure.
+The log column equals the raw-trace numbers already on record, as point 1 predicts. In the energy reading four of five words come out unbound, ⁴He included (−0.185 MeV against 28.30 MeV), and the one bound word gives 0.083 MeV against 2.22 MeV. This is a scope-(a) negative: these words, read this way, do not bind. It does not exclude the energy reading from a closure.
 
 ## 3. What this leaves open
 
