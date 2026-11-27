@@ -129,7 +129,7 @@
   -- Ref: [futer-gueritaud-angled] Def 2.4, Prop 2.5 (gluing equations give the hyperbolic metric); Thm 1.2 (complete structure = critical point of volume on angle structures) — held copy
   -- Ref: [neumann-zagier1985] §2 (the volume of a triangulation, and its invariance)
 -/
-import BraidKnotOctonion.IdealTriangulation
+import QOU.Transcendental.BraidKnotOctonion.IdealTriangulation
 
 namespace QOU.MathlibExt
 

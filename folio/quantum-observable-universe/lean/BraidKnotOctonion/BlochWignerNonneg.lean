@@ -47,8 +47,8 @@
   -- Ref: [milnor1982] §2
   -- Ref: [neumann-zagier1985] §2
 -/
-import BraidKnotOctonion.IdealTriangulation
-import BraidKnotOctonion.LobMonotonicity
+import QOU.Transcendental.BraidKnotOctonion.IdealTriangulation
+import QOU.Transcendental.BraidKnotOctonion.LobMonotonicity
 
 namespace QOU.Archimedean.BlochWignerNonneg
 

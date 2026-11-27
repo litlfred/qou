@@ -1,6 +1,6 @@
 import QOU.MassTheory.BlochRigidity.Rigidity
 import QOU.Transcendental.MassTheory.BlochWignerFiveTermInstance
-import BraidKnotOctonion.BlochWignerPositive
+import QOU.Transcendental.BraidKnotOctonion.BlochWignerPositive
 
 /-!
 # The rigidity instance for the Bloch–Wigner function

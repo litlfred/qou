@@ -70,8 +70,8 @@
   -- Ref: [milnor1982] (the Lobachevsky/Clausen evaluation of the regular tetrahedron)
 -/
 import BraidKnotOctonion.ManifoldVolumeBridge
-import BraidKnotOctonion.FigureEightTriangulation
-import BraidKnotOctonion.Clausen
+import QOU.Transcendental.BraidKnotOctonion.FigureEightTriangulation
+import QOU.Transcendental.BraidKnotOctonion.Clausen
 
 namespace QOU.Encounter.FigureEightVolumeBridge
 

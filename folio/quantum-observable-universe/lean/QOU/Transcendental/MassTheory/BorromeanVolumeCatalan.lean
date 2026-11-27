@@ -1,6 +1,6 @@
 import QOU.Transcendental.MassTheory.HyperbolicVolumeTranscendence
 import QOU.Transcendental.MassTheory.CatalanClausenBridge
-import BraidKnotOctonion.Clausen
+import QOU.Transcendental.BraidKnotOctonion.Clausen
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.NormNum
 import Mathlib.Analysis.SpecificLimits.Basic

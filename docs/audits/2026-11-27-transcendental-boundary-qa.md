@@ -10,21 +10,21 @@ stripped before matching. This is a measurement, not a verdict on any one file.
 
 | quantity | count |
 |---|---:|
-| Lean modules (paper package tree) | 4067 |
-| inside the boundary `QOU/Transcendental/` | 195 |
-| outside, using a transcendental/analytic API directly | 539 |
-| outside, algebraic but importing one transitively (tainted) | 219 |
-| outside, algebraic and import-clean (pure) | 3114 |
+| Lean modules (paper package tree) | 4073 |
+| inside the boundary `QOU/Transcendental/` | 289 |
+| outside, using a transcendental/analytic API directly | 464 |
+| outside, algebraic but importing one transitively (tainted) | 201 |
+| outside, algebraic and import-clean (pure) | 3119 |
 
 ## Direct use by class
 
 | class | modules | matched API |
 |---|---:|---|
-| transcendental-function | 365 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
-| real-completion | 119 | `\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bReal\.sSup\b|\bReal\.sInf\b|\bReal\.iSup\b|\bReal\.iInf\…` |
-| analysis | 250 | `\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTe…` |
+| transcendental-function | 303 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
+| real-completion | 108 | `\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bReal\.sSup\b|\bReal\.sInf\b|\bReal\.iSup\b|\bReal\.iInf\…` |
+| analysis | 199 | `\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTe…` |
 
-Modules whose only use is `real-completion` (`Real.sqrt`, `sSup`, …): 52. These are the cheapest to move:
+Modules whose only use is `real-completion` (`Real.sqrt`, `sSup`, …): 50. These are the cheapest to move:
 `Real.sqrt` of an algebraic number is algebraic, so most of them can become a root in an
 algebraic extension.
 
@@ -32,21 +32,20 @@ algebraic extension.
 
 | directory | modules |
 |---|---:|
-| `BraidKnotOctonion` | 112 |
-| `QOU/Nuclear` | 97 |
-| `QOU/MassTheory` | 90 |
+| `QOU/Nuclear` | 96 |
+| `QOU/MassTheory` | 84 |
 | `MathlibExt` | 72 |
-| `QOU/BraidsAndKnots` | 46 |
+| `BraidKnotOctonion` | 66 |
+| `QOU/BraidsAndKnots` | 29 |
 | `QCalculus` | 16 |
 | `HeckeTemperleyLieb` | 15 |
 | `QOU/Observations` | 15 |
 | `QOU/BringsSurface` | 13 |
 | `QOU/StandardModel` | 12 |
 | `QOU/Core` | 11 |
-| `QOU/MassTheory/KZHolonomy` | 11 |
+| `QOU/MassTheory/KZHolonomy` | 10 |
 | `QOU/Confinement` | 5 |
 | `MathlibExt/KZHolonomy` | 4 |
-| `QOU/BraidsAndKnots/Drinfeld` | 4 |
 | `QOU/InformationTheory` | 4 |
 | `QOU/EightfoldWay` | 3 |
 | `QOU/LiftingDescent` | 3 |
@@ -65,17 +64,14 @@ algebraic modules.
 | `QOU.Transcendental.QCalculus.FaddeevQuantumDilogarithm` | 4 |
 | `QCalculus.PhiBProd` | 4 |
 | `QOU.MassTheory.MassDerivation` | 4 |
-| `BraidKnotOctonion.IdealTriangulation` | 3 |
+| `QOU.Transcendental.BraidKnotOctonion.IdealTriangulation` | 3 |
 | `MathlibExt.Polylogarithm` | 3 |
-| `BraidKnotOctonion.BlochWignerPositive` | 3 |
+| `QOU.Transcendental.BraidKnotOctonion.BlochWignerPositive` | 3 |
 | `BraidKnotOctonion.PLPrismPush` | 3 |
 | `BraidKnotOctonion.PLAmbientIsotopy` | 3 |
 | `QOU.Transcendental.QCalculus.ComplexDilogarithmDeriv` | 3 |
-| `QOU.BraidsAndKnots.KZShiftPhi` | 3 |
-| `QOU.BraidsAndKnots.KZHexagonCentral` | 3 |
 | `QOU.BraidsAndKnots.DeltaLambdaSignRule` | 3 |
 | `QOU.BraidsAndKnots.InterNucleonChannelColorTube` | 3 |
-| `QOU.BraidsAndKnots.Drinfeld.Hexagon` | 3 |
 | `QOU.Transcendental.BringsSurface.MetallicHierarchyReal` | 3 |
 | `QOU.Core.CategoricalHamiltonianLegendre` | 3 |
 | `QOU.Nuclear.InterfaceScalar` | 3 |
@@ -83,9 +79,12 @@ algebraic modules.
 | `QOU.Nuclear.ReebTowerJacobiAnger` | 3 |
 | `QOU.Transcendental.MassTheory.BlochRigidity.Regularity` | 3 |
 | `QOU.StandardModel.ElectroweakBringSchwingerBridge` | 3 |
-| `BraidKnotOctonion.LobMonotonicity` | 2 |
+| `QOU.Transcendental.BraidKnotOctonion.LobMonotonicity` | 2 |
 | `BraidKnotOctonion.CechNerveTetrahedron` | 2 |
 | `MathlibExt.GermStabiliserCyclic` | 2 |
+| `BraidKnotOctonion.YoungDiagramKernelPincer` | 2 |
+| `QOU.Transcendental.BraidKnotOctonion.KashaevWindowSum` | 2 |
+| `MathlibExt.GaussianWindowSum` | 2 |
 
 ## Gate
 
