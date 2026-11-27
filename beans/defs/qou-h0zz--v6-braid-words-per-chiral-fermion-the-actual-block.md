@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - 8f-open
 created_at: 2026-08-10T18:34:14Z
-updated_at: 2026-11-27T19:54:03Z
+updated_at: 2026-11-27T20:04:31Z
 parent: qou-8lxd
 ---
 
@@ -412,3 +412,7 @@ Still open (rule 13a — do not close): deriving the matter content, and the bra
 
 ### 2026-11-27 later: braid-environment route, first step (PR #9633, 2nd commit)
 `antiUp_ne_down_by_labels`: the anti-up / down collision of `QuarkBraidChargeObstruction` is resolved by STRAND LABELS in Λ²5 (colour–colour −2/3 vs colour–isospin −1/3; charge = sum of strand weights). The datum the crossing lacks is the partner strand's label. NOT derived: why a quark strand carries a colour⊕isospin label pair, and why matter is 5̄⊕Λ²5 (Fermi statistics on strands, C3 colourSinglet_eq_smul_det, is the natural lead for the Λ). Stays open per rule 13a.
+
+
+
+2026-11-27 (PR #9651): FermiPairWedge.lean, sorry-free. Fermi exchange on a strand pair forces Λ² over Sym² (10 wedges 3+6+1, no colour sextet; Sym² would add a charge-2 colour singlet). Cubic Y0 trace: 5̄ -30, Λ²5 30, 5 30, Sym²5 270; a·5̄+c·Λ²5 cancels iff a=c. Still open: why one strand (5̄) and one strand pair (Λ²5), and what excludes vector-like 5⊕5̄ (cubic trace does not). Lead from the flavour-W thread (#9649): a Z/3 central phase on braid words may tie N-ality to strand count.
