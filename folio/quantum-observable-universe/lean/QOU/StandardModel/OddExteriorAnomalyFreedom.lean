@@ -21,9 +21,14 @@ odd subset `S ⊆ {0,…,4}` and carries the charge `y_S = ∑_{i∈S} yᵢ`.  T
 * `oddExterior_cubic`  : `∑_{|S| odd} y_S³ = 0` (cubic anomaly).
 
 Neither uses the `2 + 3` split of `K⁵ = V ⊕ W*`: both hold for every traceless diagonal charge.
-So once the matter content is `Λ^odd(V ⊕ W*)` (`Λ¹ ⊕ Λ³ ⊕ Λ⁵ = 5 ⊕ 10̄ ⊕ 1`, the conjugate of one
-Standard Model generation plus a singlet) and the hypercharge is traceless, the two `U(1)`-only
-anomalies cancel with no further input.  The mixed anomalies are the `2 + 3` specialisation,
+**Convention (agreed 2026-11-27 with the per-fermion braid words thread, PR #9811):** matter is
+the EVEN part `Λ^even K⁵ = Λ⁰ ⊕ Λ² ⊕ Λ⁴ = 1 ⊕ 10 ⊕ 5̄`, one Standard Model generation plus a
+singlet (the Spin(10) `16`).  The odd part `Λ¹ ⊕ Λ³ ⊕ Λ⁵ = 5 ⊕ 10̄ ⊕ 1` is its conjugate.  Which
+half is matter is notation; deriving the chirality is open (bean `qou-qvpl`).
+
+Both halves are anomaly-free for a traceless charge: `evenExterior_linear` / `evenExterior_cubic`
+for matter, `oddExterior_linear` / `oddExterior_cubic` for the conjugate.  The sum over all 32
+states has cubic `p₁ (4 p₁² + 12 p₂)`, so the even cubic is `p₁ (2 p₁² + 6 p₂)` as well.  The mixed anomalies are the `2 + 3` specialisation,
 already proved in `exterior_su5_anomaly_identities`.
 
 What remains open for Open Check A is therefore the single structural input "matter is
@@ -104,5 +109,47 @@ theorem splitCharge_traceless (y2 y3 : K) :
 theorem split_cubic (y2 y3 : K) (htr : 2 * y2 + 3 * y3 = 0) :
     ∑ S ∈ oddSubsets, stateCharge (splitCharge y2 y3) S ^ 3 = 0 :=
   oddExterior_cubic _ ((splitCharge_traceless y2 y3).2 htr)
+
+/-- The even subsets of `Fin 5`: the basis of `Λ^even K⁵ = 1 ⊕ 10 ⊕ 5̄` (matter). -/
+def evenSubsets : Finset (Finset (Fin 5)) :=
+  (univ : Finset (Fin 5)).powerset.filter (fun S => Even S.card)
+
+theorem evenSubsets_eq : evenSubsets =
+    {∅, {0,1}, {0,2}, {0,3}, {0,4}, {1,2}, {1,3}, {1,4}, {2,3}, {2,4}, {3,4},
+     {0,1,2,3}, {0,1,2,4}, {0,1,3,4}, {0,2,3,4}, {1,2,3,4}} := by
+  decide +kernel
+
+/-- `∑_{|S| even} f(y_S)`, written out over the sixteen states. -/
+theorem sum_evenSubsets (y : Fin 5 → K) (f : K → K) :
+    ∑ S ∈ evenSubsets, f (stateCharge y S) =
+      f 0 + f (y 0 + y 1) + f (y 0 + y 2) + f (y 0 + y 3) + f (y 0 + y 4)
+      + f (y 1 + y 2) + f (y 1 + y 3) + f (y 1 + y 4) + f (y 2 + y 3) + f (y 2 + y 4)
+      + f (y 3 + y 4) + f (y 0 + y 1 + y 2 + y 3) + f (y 0 + y 1 + y 2 + y 4)
+      + f (y 0 + y 1 + y 3 + y 4) + f (y 0 + y 2 + y 3 + y 4) + f (y 1 + y 2 + y 3 + y 4) := by
+  rw [evenSubsets_eq]
+  simp (disch := decide) only [Finset.sum_insert, Finset.sum_singleton, stateCharge,
+    Finset.sum_empty]
+  simp only [add_assoc]
+
+theorem evenExterior_linear_eq (y : Fin 5 → K) :
+    ∑ S ∈ evenSubsets, stateCharge y S = 8 * ∑ i, y i := by
+  have := sum_evenSubsets y id
+  simp only [id] at this
+  rw [this, Fin.sum_univ_five]; ring
+
+/-- **Gravitational anomaly of matter `Λ^even`** vanishes for a traceless charge. -/
+theorem evenExterior_linear (y : Fin 5 → K) (htr : ∑ i, y i = 0) :
+    ∑ S ∈ evenSubsets, stateCharge y S = 0 := by
+  rw [evenExterior_linear_eq, htr, mul_zero]
+
+theorem evenExterior_cubic_eq (y : Fin 5 → K) :
+    ∑ S ∈ evenSubsets, stateCharge y S ^ 3 =
+      (∑ i, y i) * (2 * (∑ i, y i) ^ 2 + 6 * ∑ i, y i ^ 2) := by
+  rw [sum_evenSubsets y (· ^ 3), Fin.sum_univ_five, Fin.sum_univ_five]; ring
+
+/-- **Cubic anomaly of matter `Λ^even`** vanishes for a traceless charge. -/
+theorem evenExterior_cubic (y : Fin 5 → K) (htr : ∑ i, y i = 0) :
+    ∑ S ∈ evenSubsets, stateCharge y S ^ 3 = 0 := by
+  rw [evenExterior_cubic_eq, htr, zero_mul]
 
 end QOU.StandardModel.OddExterior
