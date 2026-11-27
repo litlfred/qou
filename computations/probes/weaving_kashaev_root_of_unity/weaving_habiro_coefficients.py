@@ -10,8 +10,8 @@ Pre-registration: PREREGISTRATION.md, Addendum 1 (question Q4).
   c_k(zeta_N) >= 0 for all k < N.
 
 Exact arithmetic: integer Laurent polynomials in w = q^{1/4} (numpy int64
-convolution with a rigorous pre-multiplication overflow bound; an overflow risk
-raises instead of wrapping). The colored Jones state model is the one pinned in
+convolution guarded by a rigorous pre-multiplication bound; past the bound the
+product is taken in Python ints, so nothing ever wraps). The colored Jones state model is the one pinned in
 weaving_kashaev_probe.py. Evaluation of the exact c_k at zeta_M uses mpmath
 (dps 50); the polynomials themselves are exact.
 
@@ -40,7 +40,9 @@ class L:
     __slots__ = ("lo", "c")
 
     def __init__(self, lo: int, c):
-        c = np.asarray(c, dtype=np.int64)
+        c = np.asarray(c)
+        if c.dtype != object:
+            c = c.astype(np.int64)
         nz = np.nonzero(c)[0]
         if len(nz) == 0:
             self.lo, self.c = 0, np.zeros(0, dtype=np.int64)
@@ -61,9 +63,9 @@ class L:
             return self
         lo = min(self.lo, o.lo)
         hi = max(self.lo + len(self.c), o.lo + len(o.c))
-        r = np.zeros(hi - lo, dtype=np.int64)
-        if np.abs(self.c).max() + np.abs(o.c).max() >= LIM:
-            raise OverflowError("add")
+        big = int(np.abs(self.c).max()) + int(np.abs(o.c).max()) >= LIM \
+            or self.c.dtype == object or o.c.dtype == object
+        r = np.zeros(hi - lo, dtype=object if big else np.int64)
         r[self.lo - lo:self.lo - lo + len(self.c)] += self.c
         r[o.lo - lo:o.lo - lo + len(o.c)] += o.c
         return L(lo, r)
@@ -78,8 +80,8 @@ class L:
         if self.iszero() or o.iszero():
             return L(0, [])
         bound = int(np.abs(self.c).sum(dtype=object)) * int(np.abs(o.c).max())
-        if bound >= LIM:
-            raise OverflowError("mul")
+        if bound >= LIM:  # exact Python-int fallback instead of a wrapping int64
+            return L(self.lo + o.lo, np.convolve(self.c.astype(object), o.c.astype(object)))
         return L(self.lo + o.lo, np.convolve(self.c, o.c))
 
     def divexact(self, d: "L") -> "L":
@@ -250,6 +252,23 @@ def main() -> int:
             print(f"{NAME[m]} k={k}: c_k(zeta_M), M={k+1}..60: min Re = {rec['signs'][-1]['min_real']},"
                   f" max|Im| = {rec['signs'][-1]['max_abs_imag']},"
                   f" negative/non-real at M = {neg[:12]}{'...' if len(neg) > 12 else ''}", flush=True)
+        # Kashaev-point Habiro terms t_k(N) = c_k(zeta_N) prod_{j<=k} 4 sin^2(pi j/N), k < N
+        rec["kashaev_terms"] = []
+        for N in range(2, len(cs) + 1):
+            wN = mp.expjpi(mp.mpf(1) / (2 * N))
+            terms = []
+            for k in range(N):
+                pk = mp.mpf(1)
+                for j in range(1, k + 1):
+                    pk *= 4 * mp.sin(mp.pi * j / N) ** 2
+                terms.append(cs[k].eval(wN) * pk)
+            tot = sum(terms)
+            negk = [k for k, t in enumerate(terms) if t.real < -mp.mpf(10) ** -30]
+            rec["kashaev_terms"].append({"N": N, "sum": mp.nstr(tot.real, 25),
+                                         "negative_k": negk,
+                                         "terms": [mp.nstr(t.real, 12) for t in terms]})
+            print(f"{NAME[m]} N={N}: <K>_N via Habiro = {mp.nstr(tot.real, 20)}; negative terms at k = {negk}",
+                  flush=True)
         out["knots"][NAME[m]] = rec
     out["elapsed_s"] = round(time.time() - t0)
     (HERE / "weaving-habiro.result.json").write_text(json.dumps(out, indent=1))

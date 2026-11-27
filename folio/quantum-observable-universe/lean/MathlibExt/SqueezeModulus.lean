@@ -30,7 +30,7 @@ and does it fail with infinitesimals?*
 
 Everything here is sorry-free and uses only Mathlib.
 
--- Ref: [mathlib] `archimedean_iff_nat_lt` (Mathlib.Algebra.Order.Archimedean.Basic)
+Uses Mathlib's `archimedean_iff_nat_lt` (Mathlib.Algebra.Order.Archimedean.Basic).
 -/
 
 namespace QOU.MathlibExt.SqueezeModulus
