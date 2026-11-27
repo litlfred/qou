@@ -16035,6 +16035,16 @@ flavour $\mathrm{SU}(3)$; those need further axioms. The label here is put in by
 deriving it from the aether is still open. Lean: \texttt{QOU/\allowbreak{}Core/\allowbreak{}Flavour\allowbreak{}Label\allowbreak{}Carrier.\allowbreak{}lean}
 (\texttt{label\allowbreak{}Phase}, \texttt{flavour\_\allowbreak{}hom\_\allowbreak{}unit\_\allowbreak{}tensor\_\allowbreak{}empty}, \texttt{flavour\allowbreak{}Volume\_\allowbreak{}epi},
 \texttt{unit\_\allowbreak{}flavour\_\allowbreak{}meets\_\allowbreak{}axioms}).
+
+\textbf{Where the dimension comes from.} At a fibre where the exterior cube is $\Lambda^3$ of an
+$N$-dimensional space, $\Lambda^3 W \cong \mathbb{1}$ says $\binom{N}{3} = 1$, and that holds
+only for $N = 3$; the weaker epimorphism reading gives only $N \ge 3$. The one-dimensional
+$W$ above has $\binom{1}{3} = 0$ and is excluded there. It satisfies the categorical fields
+only because the exterior cube is required to be some quotient of $W^{\otimes 3}$, not the
+antisymmetric one. The fundamental $V$ has the same feature: $\binom{N}{2} = 1$ forces
+$N = 2$ only once $\Lambda^2 V$ is pinned. Lean:
+\texttt{QOU/\allowbreak{}Core/\allowbreak{}Flavour\allowbreak{}Volume\allowbreak{}Forces\allowbreak{}Dim\allowbreak{}Three.\allowbreak{}lean} (\texttt{exterior\allowbreak{}Cube\allowbreak{}Dim\_\allowbreak{}eq\_\allowbreak{}one\_\allowbreak{}iff},
+\texttt{exterior\allowbreak{}Cube\allowbreak{}Dim\_\allowbreak{}ne\_\allowbreak{}zero\_\allowbreak{}iff}).
 \end{definition}
 
 \begin{proposition}[{Eightfold-way multiplets via quantum Schur--Weyl duality}]
