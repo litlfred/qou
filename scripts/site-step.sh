@@ -102,7 +102,7 @@ document)
   rm -rf "$STAGE"
   LEAN_INDEX=()
   if lean_subkgs "$STAGE"; then LEAN_INDEX=(--lean-docs-index "$STAGE"); fi
-  bun run "$PLAT/folio-assistant-core/scripts/build-document-site.ts" --landing-layout default --document-layout default --downloads "${LEAN_INDEX[@]}" --out "$DIR"
+  bun run "$PLAT/folio-assistant-core/scripts/build-document-site.ts" --landing-layout default --document-layout default --downloads --lazy-chapters "${LEAN_INDEX[@]}" --out "$DIR"
   ;;
 landing)
   python3 -I scripts/site-extras.py --landing-source "$DIR"
