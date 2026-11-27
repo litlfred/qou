@@ -428,3 +428,6 @@ Still open (rule 13a — do not close): deriving the matter content, and the bra
 Matter = EVEN exterior part Λ⁰⊕Λ²⊕Λ⁴ = 1⊕10⊕5̄ (Spin(10) 16); odd part = conjugate. Agreed between the hypercharge thread and the per-fermion braid words thread (#9811). Recorded in OddExteriorAnomalyFreedom.lean (PR #9827, adds evenExterior_cubic). Notation only; chirality derivation stays open.
 
 2026-11-27 late: chirality sign attempts, all scope (a), in PR #9811 audit docs/audits/2026-11-27-matter-channel-twist-reduction.md: ribbon twist sees only c^2; photon chiral vertex acts as 1 on both 1-dim channels; mirror q->q^-1 is index reversal on pair states (Lean sign_mirror_iff_rev), keeps strand count, so it is not the Hodge star. P (mirror) and C (complement) are independent on strand states; the open sign is their relative orientation. Still OPEN.
+
+## 2026-11-27 — slot map derived (PR #9811, commit 92f312ca2d9)
+`SlotFromEvenShape.lean`, sorry-free: the GG slot of `StrandSlotSeparatesGen1` is the shape of an even subset meeting colour once or twice ({c,3},{c,4},{c,c+1},{c}^c — 12 states; 4 colour-singlet leptons). Charges at α=1/6 match slotCharge and are distinct, so `slot_forced`: any slot assignment reproducing SM charges is GG. Slot map is no longer an input. Still open: odd strands; dual flag = chirality sign (P–C relative orientation).
