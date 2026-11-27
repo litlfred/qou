@@ -829,7 +829,7 @@ import QOU.BraidsAndKnots.PhiQJSJ
 import QOU.Core.Infra
 import CompactQuantumMetrics.AlgebraicGnsEmbedding
 import QOU.Observations.InhomogeneousLeptonLoopResolvent
-import QOU.Observations.QCltNonCommutative
+import QOU.Transcendental.QCltNonCommutative
 import QOU.Observations.TraceLocalityMeetsGsNonLocality
 import MathlibExt.RootsOfUnityProduct
 import MathlibExt.GaussianThetaSum

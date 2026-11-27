@@ -10,11 +10,11 @@ stripped before matching. This is a measurement, not a verdict on any one file.
 
 | quantity | count |
 |---|---:|
-| Lean modules (paper package tree) | 3978 |
-| inside the boundary `QOU/Transcendental/` | 1 |
-| outside, using a transcendental/analytic API directly | 708 |
+| Lean modules (paper package tree) | 3982 |
+| inside the boundary `QOU/Transcendental/` | 2 |
+| outside, using a transcendental/analytic API directly | 707 |
 | outside, algebraic but importing one transitively (tainted) | 309 |
-| outside, algebraic and import-clean (pure) | 2961 |
+| outside, algebraic and import-clean (pure) | 2966 |
 
 ## Direct use by class
 
@@ -22,7 +22,7 @@ stripped before matching. This is a measurement, not a verdict on any one file.
 |---|---:|---|
 | transcendental-function | 495 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
 | real-completion | 171 | `\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bReal\.sSup\b|\bReal\.sInf\b|\bReal\.iSup\b|\bReal\.iInf\…` |
-| analysis | 336 | `\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTe…` |
+| analysis | 335 | `\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTe…` |
 
 Modules whose only use is `real-completion` (`Real.sqrt`, `sSup`, …): 71. These are the cheapest to move:
 `Real.sqrt` of an algebraic number is algebraic, so most of them can become a root in an
@@ -39,7 +39,7 @@ algebraic extension.
 | `QCalculus` | 42 |
 | `QOU/BraidsAndKnots` | 42 |
 | `HeckeTemperleyLieb` | 17 |
-| `QOU/Observations` | 17 |
+| `QOU/Observations` | 16 |
 | `QOU/BringsSurface` | 15 |
 | `QOU/Core` | 13 |
 | `QOU/FluidDynamics` | 13 |
