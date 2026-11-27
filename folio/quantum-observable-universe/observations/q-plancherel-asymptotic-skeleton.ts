@@ -39,6 +39,18 @@ export default proposition({
     },
     {
       kind: "note",
+      date: "2026-11-27",
+      body:
+        "**Base-ring note superseded (bean qou-e1uf, epic qou-dk7p).** The Lean module " +
+        "`lean/QOU/Observations/QPlancherelAsymptoticSkeleton.lean` no longer uses " +
+        "`Real.sqrt`: the majorant is carried squared, $v_n^2 (n-3) \\le 1$, over any " +
+        "Archimedean ordered field, and the conclusion is located-cut convergence " +
+        "(`QOU.Core.CutLimit.ConvergesTo`). The $\\mathbb{R}$ / `Real.sqrt` / `Tendsto` " +
+        "form is `QOU.Transcendental.QPlancherelSqrtBridge`, behind the transcendental " +
+        "boundary. The 2026-08-07 note below records the earlier encoding.",
+    },
+    {
+      kind: "note",
       date: "2026-08-07",
       body:
         "**§7c base-ring note (archimedean specialisation).** " +
