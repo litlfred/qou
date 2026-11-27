@@ -1,0 +1,21 @@
+{
+ "computation": "six-strand-markov-factor",
+ "scriptFile": "computations/probes/gg_six_strand/six_strand_markov_factor_probe.py",
+ "kind": "probe",
+ "beans": [
+  "qou-cds1"
+ ],
+ "q0Anchor": "proton",
+ "q0AnchorReason": "q0 used only for the printed value; all checks are exact in Q(q)",
+ "markov_convention": "D",
+ "trM_V3": "-(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**4*(q**2 + 1)**2)",
+ "trM_V3_at_q0": "0.9985621638367872659512131",
+ "checks": {
+  "c_equals_trM_V3": true,
+  "E(V2^3)_is_trM_times_1": true,
+  "E(V3^3)_is_trM_times_1": true,
+  "E(V1^3)_not_scalar": true,
+  "E(V0^3 V3^3)_eq_trM_V0^3": true
+ },
+ "all_pass": true
+}
