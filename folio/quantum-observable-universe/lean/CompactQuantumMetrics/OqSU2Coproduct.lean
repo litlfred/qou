@@ -38,7 +38,7 @@ commutative ring `R` (§7c).
 * That Woronowicz's Cartan functional for the 3D calculus is `(ε − χ_u)/c`, or
   which `u` it uses. Woronowicz (1987) is not in `library/`, so the parameter
   is left free here.
-* The off-diagonal vector fields of the 3D calculus.
+* The off-diagonal vector fields of the 3D calculus: now in `OqSU2OffDiagonal.lean`.
 * Coassociativity of `Δ` and the left counit law; the Haar state.
 * Anything about Part A of `conj:regularity-breakdown` (bean `qou-pa7n`).
 
