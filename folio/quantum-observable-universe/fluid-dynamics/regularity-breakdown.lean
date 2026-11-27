@@ -1,4 +1,4 @@
-import QOU.FluidDynamics.DSSObstructions
+import QOU.Transcendental.FluidDynamics.DSSObstructions
 
 /-!
 # QOU.FluidDynamics.RegularityBreakdown

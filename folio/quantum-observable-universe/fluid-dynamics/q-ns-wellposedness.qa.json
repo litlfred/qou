@@ -5,7 +5,7 @@
   "paths": {
     "ts": "folio/quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.ts",
     "md": "folio/quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.md",
-    "lean": "folio/quantum-observable-universe/lean/QOU/FluidDynamics/q_ns_wellposedness.lean"
+    "lean": "folio/quantum-observable-universe/lean/QOU/Transcendental/FluidDynamics/q_ns_wellposedness.lean"
   },
   "source_hashes": {
     "md": "a9a55926fdf7",
@@ -1260,7 +1260,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/FluidDynamics/q_ns_wellposedness.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/Transcendental/FluidDynamics/q_ns_wellposedness.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",

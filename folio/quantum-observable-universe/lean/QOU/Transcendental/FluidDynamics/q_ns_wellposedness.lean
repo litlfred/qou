@@ -1,5 +1,5 @@
 import Mathlib.Analysis.SpecialFunctions.Exp
-import QOU.FluidDynamics.q_ns_energy_and_decay
+import QOU.Transcendental.FluidDynamics.q_ns_energy_and_decay
 
 /-!
 # QOU.FluidDynamics.q_ns_wellposedness

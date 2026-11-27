@@ -1,4 +1,4 @@
-import QOU.FluidDynamics.q_ns_enstrophy_order_parameter
+import QOU.Transcendental.FluidDynamics.q_ns_enstrophy_order_parameter
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
 /-!

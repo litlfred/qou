@@ -5,7 +5,7 @@
   "paths": {
     "ts": "folio/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts",
     "md": "folio/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.md",
-    "lean": "folio/quantum-observable-universe/lean/QOU/FluidDynamics/q_turbulence_spectrum.lean"
+    "lean": "folio/quantum-observable-universe/lean/QOU/Transcendental/FluidDynamics/q_turbulence_spectrum.lean"
   },
   "source_hashes": {
     "md": "9e003c95eafd",
@@ -372,7 +372,7 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/lean/QOU/FluidDynamics/q_turbulence_spectrum.lean:138 — positivity-dependent Real.* on q without explicit hypothesis — (ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q := by | folio/quantum-observable-universe/lean/QOU/FluidDynamics/q_turbulence_spectrum.lean:165 — positivity-dependent Real.* on q without explicit hypothesis — ((ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q) ∧"
+        "evidence": "folio/quantum-observable-universe/lean/QOU/Transcendental/FluidDynamics/q_turbulence_spectrum.lean:138 — positivity-dependent Real.* on q without explicit hypothesis — (ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q := by | folio/quantum-observable-universe/lean/QOU/Transcendental/FluidDynamics/q_turbulence_spectrum.lean:165 — positivity-dependent Real.* on q without explicit hypothesis — ((ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q) ∧"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -1256,7 +1256,7 @@
         },
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
-        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/FluidDynamics/q_turbulence_spectrum.lean); stale agent flag refreshed (sorry discharged after prior review)."
+        "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/Transcendental/FluidDynamics/q_turbulence_spectrum.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
         "result": "pass",

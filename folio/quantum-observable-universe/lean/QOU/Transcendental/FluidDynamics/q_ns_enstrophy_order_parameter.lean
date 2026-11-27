@@ -1,5 +1,5 @@
 import HeckeTemperleyLieb.QIntegerCanonical
-import QOU.FluidDynamics.q_ns_wellposedness
+import QOU.Transcendental.FluidDynamics.q_ns_wellposedness
 
 /-!
 # QOU.FluidDynamics.q_ns_enstrophy_order_parameter

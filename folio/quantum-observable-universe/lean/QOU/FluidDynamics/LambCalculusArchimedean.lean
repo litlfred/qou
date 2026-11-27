@@ -1,5 +1,5 @@
 import QOU.FluidDynamics.LambCalculus
-import QOU.FluidDynamics.BeltramiSteadyEuler
+import QOU.Transcendental.FluidDynamics.BeltramiSteadyEuler
 
 /-!
 # The two archimedean Lamb calculi
