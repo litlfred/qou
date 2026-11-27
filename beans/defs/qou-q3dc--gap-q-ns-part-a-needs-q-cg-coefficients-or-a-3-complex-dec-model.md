@@ -84,3 +84,6 @@ positivity, is still open (Haar thread).
 
 ## 2026-11-27T20:05Z — budget sign (PR #9648, on #9617 + #9646)
 `OqSU2BudgetSign.lean`: for q>0, q≠1, ordered field, self-adjoint a: h(X a·X a) ≤ 0 (Cartan), h(X₊a·X₋a) ≤ 0 (s²=q⁻¹). Sorry-free. Open: identification of these integrands as the q-NS transport budget; any q→1 control; Part A (qou-pa7n). Not closing.
+
+## 2026-11-27T20:40Z — point 1 (identification), Cartan direction
+PR #9662 `q_ns_cartan_transport_budget.lean`: for the Cartan field X, `h(Xu·u)+h(u·Xu) = c·h(Xu·Xu)`, so the Cartan budget integrand IS the Haar energy rate along u̇ = Xu (up to step c), and that rate is ≤ 0 for self-adjoint u, q>0, q≠1, c⁻¹>0. Sorry-free. Still open: (i) that u̇ = Xu is the q-NS transport (corpus has no ∇_q on O_q(SU(2))); (ii) the X₊X₋ pair is not a single-field energy rate (twisted_energy_budget gives a mixed X₊/Cartan term h(X₊u·(u−θu))); (iii) q → 1 (q-Bessel thread). Part A qou-pa7n open.
