@@ -60,3 +60,7 @@ Q_β magnitude remains OPEN; this bean stays open.
 ## 2026-11-27 — route C step 1: six-strand neutral selection (litlfred/qou#9536)
 
 On six strands, V-words of length ≤ 6 (V_i = σ_iσ_{i+1}⁻¹, i=0..3): 5460 enumerated, 1906 neutral, 58 pass reading 3 at q₀, 11/10, 23/20 (exact, convention D). Every survivor uses each vertex a multiple of 3 times; minimal survivors are exactly V_i³; the rest are products of two cubes (overlapping non-commuting triples must be in blocks). Scope (a), length ≤ 6. No magnitude information; the Q_β gap stays open. Next: H₆→H₃ residue of the survivors (route C step 2). Audit: docs/audits/2026-11-27-cds1-six-strand-neutral-selection.md.
+
+## 2026-11-27 — route C step 2: H₆→H₃ residue (litlfred/qou#9556)
+
+For the 58 six-strand survivors, χ_μ(E_{6→m}(W)) ≥ 0 at every level m=3..6 at q₀, but every survivor has some level character changing sign on (1,2) (first root q ≈ 1.372). The H₃ residue is the V³ core up to scalars 1 + O(h²): V₀³ exact, V₂³ = V₃³ residue, disjoint products factor as c(q)·V₀³ with c(q₀)=0.99856; V₁³ not proportional but within 0.6 %. So the six-strand level supplies no order-2 factor; the Q_β magnitude gap (F ≈ 2.4 on V³) stays open. Scope (a). Audit: docs/audits/2026-11-27-cds1-six-strand-h3-residue.md.
