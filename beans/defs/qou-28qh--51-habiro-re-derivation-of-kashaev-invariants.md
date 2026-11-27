@@ -7,7 +7,7 @@ priority: normal
 tags:
     - constructive
 created_at: 2026-11-27T19:01:13Z
-updated_at: 2026-11-27T19:18:39Z
+updated_at: 2026-11-27T19:22:16Z
 parent: qou-dk7p
 ---
 
@@ -26,4 +26,4 @@ Overlaps: Coev strangler thread (QCalculus/HabiroBracket, HabiroCyclotomicOddLoc
 A then C: cyclotomic-series constructor + 3_1, 4_1, then twist knots via Masbaum (P1-P2) now; the general cyclotomic expansion for every knot (Habiro's theorem, quantum-group setup) is the long-run goal, added as P6.
 
 ## Progress
-- 2026-11-27: P1 done, PR #9592 (sorry-free, boundary audit unchanged).
+- 2026-11-27: P1 and P2 done in PR #9592 (P2 covers all double twist knots, cited from Lovejoy-Osburn eqs 1.1-1.2). Next: P3 strangler of FigureEightVolume.kashaev.
