@@ -1,4 +1,4 @@
-import QOU.BraidsAndKnots.RationalAssociator.AssociatorTower
+import QOU.BraidsAndKnots.RationalAssociator.AssociatorRealign
 import QOU.BraidsAndKnots.RationalAssociator.HexagonUniversal
 import HeckeTemperleyLieb.QuasiYangBaxterFromHexagon
 
@@ -35,7 +35,9 @@ the transport to every realisation.
   suffices; the swapped hexagon is its image under `hexagon_of_universal`.
 * `quasiYBE_compatible_of_tower`: the compatible rational tower of `AssociatorTower.lean`
   satisfies the quasi-Yang–Baxter equation in `U4 N` for every `N ≥ 2`, conditional on the
-  named `K`-associator tower hypothesis.
+  named `K`-associator tower hypothesis. `quasiYBE_compatible_of_groupLikeTower` gives the same
+  conclusion from the weaker `GroupLikeKAssociatorTower` (no compatibility across levels), via
+  `rational_associator_compatible_of_groupLikeTower` (`AssociatorRealign`).
 * `quasiYBE_of_realization`: for any `ℚ`-algebra `A` and algebra map `ρ : U4 N → (A ⊗ A) ⊗ A`
   carrying `e(t₁₂), e(t₁₃), e(t₂₃)` to `R₁₂, R₁₃, R₂₃`, the quasi-Yang–Baxter equation holds in
   `(A ⊗ A) ⊗ A` with the `ρ`-images of the rational associators. No coproduct is needed.
@@ -144,6 +146,23 @@ theorem quasiYBE_compatible_of_tower {E : FreeAlgebra ℚ (Fin 2)}
             eval (t N 1) 0 E * eval (t N 0) (t N 1) (Φ N) * eval (t N 0) 0 E) ∧
       ∀ N, 1 ≤ N → Φ (N + 1) - Φ N ∈ FF N := by
   obtain ⟨Φ, hA, hC⟩ := rational_associator_compatible_of_tower hE hT
+  exact ⟨Φ, fun N hN => ⟨(hA N hN).1, (hA N hN).2, quasiYBE_of_assocU4 (hA N hN).1⟩, hC⟩
+
+/-- **Quasi-Yang–Baxter for the rational tower, from unrelated `K`-associators.** The conclusion
+of `quasiYBE_compatible_of_tower` under the weaker hypothesis `GroupLikeKAssociatorTower K E`:
+one group-like `K`-associator for `E` modulo each `N ≥ 2`, with nothing tying different levels
+together. The compatible rational sequence comes from
+`rational_associator_compatible_of_groupLikeTower`. -/
+theorem quasiYBE_compatible_of_groupLikeTower {E : FreeAlgebra ℚ (Fin 2)}
+    (hE : FreeAlgebra.algebraMapInv E = 1) (hT : GroupLikeKAssociatorTower K E) :
+    ∃ Φ : ℕ → FreeAlgebra ℚ (Fin 2),
+      (∀ N, 2 ≤ N → AssocU4 N E (Φ N) ∧ GL N (Φ N) ∧
+        eval (t N 0) 0 E * (eval (t N 1) (t N 0) (Φ N) * eval (t N 1) 0 E *
+            eval (t N 3) (t N 1) (Φ N) * eval (t N 3) 0 E * eval (t N 0) (t N 3) (Φ N)) =
+          eval (t N 3) (t N 0) (Φ N) * eval (t N 3) 0 E * eval (t N 1) (t N 3) (Φ N) *
+            eval (t N 1) 0 E * eval (t N 0) (t N 1) (Φ N) * eval (t N 0) 0 E) ∧
+      ∀ N, 1 ≤ N → Φ (N + 1) - Φ N ∈ FF N := by
+  obtain ⟨Φ, hA, hC⟩ := rational_associator_compatible_of_groupLikeTower hE hT
   exact ⟨Φ, fun N hN => ⟨(hA N hN).1, (hA N hN).2, quasiYBE_of_assocU4 (hA N hN).1⟩, hC⟩
 
 end Tower
