@@ -50,6 +50,7 @@ import QOU.Core.TarskiSignKashaev
 import QOU.Core.KashaevHermitianCertificate
 import QOU.Core.TarskiSignKashaevGen
 import QOU.Core.KashaevHabiroBridge
+import QCalculus.HabiroDoubleTwist
 import QOU.Core.KashaevReflection
 import MathlibExt.Core
 import MathlibExt.QuadraticIrrationalBadlyApproximable
@@ -149,6 +150,7 @@ import MathlibExt.PosSemidefDiagZero
 import CompactQuantumMetrics.FrobeniusInnerProduct
 import QOU.Transcendental.FrobeniusNorm
 import QOU.Transcendental.HoefsmitSqrt
+import QOU.Transcendental.BraidKnotOctonion.FigureEightKashaevHabiroReading
 import MathlibExt.CauchyBinet
 import MathlibExt.RankMinor
 import BraidKnotOctonion.BraidedSlide
