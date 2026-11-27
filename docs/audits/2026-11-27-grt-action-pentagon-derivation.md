@@ -1087,3 +1087,386 @@ for the group-likeness transport above.
 **Verification.** `lean -DautoImplicit=false -s 65536` on `BaseChangeK.lean` exits 0 with no
 warnings. It was compiled against the restored cache, with this branch's new modules compiled
 into a scratch tree. No `lake build` was run.
+
+## 17c. Group-likeness transport over K: `hprim` derived, and re-established one degree up
+
+Bean `qou-3fdg`. All four items of §17b are proved, sorry-free, in
+`folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/GroupLikeK.lean`.
+Axioms: `propext`, `Classical.choice`, `Quot.sound`. No analysis is used.
+
+| §17b item | Lean | statement |
+|---|---|---|
+| 3. primitive layer | `exists_primitive_layer` | `p ∈ FF d`, `Δp − p⊗1 − 1⊗p ∈ FF2 (d+1)` ⇒ the degree-`d` part of `p` is primitive |
+| 1. GLK over K | `GLK`, `primLayer_of_GLK` | `Δ_K Ψ − i₁Ψ · i₂Ψ ∈ FF2K m`; for `Ψ = 1⊗Φ + z`, `GLK (d+1)` gives exactly the `hprim` of `inductionStep_core` |
+| 2. invariance under the shift | `GL_expPoly`, `GLK.subst`, `GLK.compK`, `GLK.compKK_GK` | `GLK N Ψ ⇒ GLK N (compKK Ψ (GK H n c))` for every `c ∈ K`, `H ∈ FF 1` primitive, `N ≤ n`, `exp(xH) ∈ GRT1U4 N` for all rational `x` |
+| 4. the step | `inductionStep_of_groupLike` | `inductionStep_core` with `hprim := primLayer_of_GLK` and `Q := AssocK ∧ GLK N` |
+
+How item 2 goes:
+
+1. `cop (expTerm y k) = Σ_m expTerm y m ⊗ expTerm y (k−m)` for primitive `y`, so the truncated
+   exponential of a primitive `y ∈ FF 1` is group-like modulo `FF2 n` (`GL_expPoly`).
+2. A `K`-substitution `X ↦ a`, `Y ↦ b` with `a, b ∈ FF 1` primitive modulo `FF2 N` preserves
+   `GLK N`. Two `K`-algebra maps congruent modulo the two-sided ideal `FF2K N` on `X` and `Y` are
+   congruent everywhere (`sub_mem_FF2K_of_gen`).
+3. (5.12) for `g ∈ GRT1U4 (M+1)` gives `g · g(Y,X) ≡ 1` modulo `FF (M+1)` (`mul_swap_sub_one_mem`,
+   through `toFree` as in `add_swap_eq_zero`). With `GL N g` and `GL N g(Y,X)` (`GL.swap`), the
+   substituted variable `g X g(Y,X)` is primitive modulo `FF2 N` (`conj_almost_primitive`). So
+   Drinfeld's rational action `compK Ψ g` preserves `GLK N` (`GLK.compK`).
+4. At rational `c = x`, `compKK Ψ (GK H n x) = compK Ψ (expPoly (xH) n)`. The defect
+   `Δ_K(·) − i₁(·)i₂(·)` of `compKK Ψ (GK H n c)` is a polynomial in `c` with coefficients in
+   `K ⊗ (ℚ⟨X,Y⟩ ⊗ ℚ⟨X,Y⟩)`, so `mem_of_forall_rat` carries the rational case to all `c ∈ K`.
+
+Statement of the step:
+
+```lean
+theorem inductionStep_of_groupLike (hd : 1 ≤ d) (hdN : d + 1 ≤ N) {n : ℕ} (hn : 2 ≤ n)
+    (hNn : N ≤ n) {E Φ : F2} (hE : algebraMapInv E = 1) (hΦ : algebraMapInv Φ = 1)
+    (z : K ⊗[ℚ] FF d)
+    (hK : AssocK K N E ((1 : K) ⊗ₜ Φ + LinearMap.lTensor K (FF d).subtype z))
+    (hGL : GLK K N ((1 : K) ⊗ₜ Φ + LinearMap.lTensor K (FF d).subtype z)) :
+    ∃ x ∈ FF d, AssocU4 (d + 1) E (Φ + x) ∧ GL (d + 1) (Φ + x) ∧
+      ∃ Ψ, AssocK K N E Ψ ∧ GLK K N Ψ ∧ Ψ - (1 : K) ⊗ₜ (Φ + x) ∈ FFK K (d + 1)
+```
+
+§17b item 4 is resolved by the second route it named: the group-likeness hypothesis is carried by
+the `K`-associator `Ψ` (at the full level `N`), not by the rational lift. `Φ + x` is group-like
+modulo `FF2 (d+1)` only, which is what follows from `Ψ`.
+
+**What is not done.** Iterating the step needs the output in the input's shape:
+`Ψ = 1 ⊗ (Φ + x) + z'` with `z'` in the image of `K ⊗ FF (d+1)` under `lTensor`. The step gives
+`Ψ − 1 ⊗ (Φ + x) ∈ FFK K (d+1)`. No lemma in `RationalAssociator/` converts `FFK` membership into
+that `lTensor` form (searched: no hit for `FFK` together with `lTensor`). Also needed:
+`ε(Φ + x) = 1`, from `x ∈ FF d` with `d ≥ 1`. Neither step is analysis, but neither was written in
+this tranche, so the full induction is not yet assembled as one theorem.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on `GroupLikeK.lean` exits 0 with no
+warnings or errors. It was compiled against the restored cache plus this branch's modules
+compiled into a scratch tree. `#print axioms` on `inductionStep_of_groupLike`, `GLK.compKK_GK`,
+`GL_expPoly` and `primLayer_of_GLK` shows only `propext`, `Classical.choice` and `Quot.sound`. No
+`lake build` was run.
+
+## §17d. The chain: a rational associator modulo `N` from a group-like `K`-associator (2026-11-27)
+
+New file `RationalAssociator/AssociatorChain.lean` (sorry-free). It closes the two gaps §17c
+listed and iterates `inductionStep_of_groupLike` from degree 1 to degree `N`.
+
+- **Input form.** `FFK K m` is defined as `LinearMap.range (lTensor K (FF m).subtype)`, so
+  `Ψ − 1 ⊗ Φ ∈ FFK K m` unfolds to `Ψ = 1 ⊗ Φ + lTensor z` (`exists_lTensor_of_mem_FFK`, three
+  lines).
+- **Constant term.** `algebraMapInv_add_of_mem_FF`: `ε(Φ + x) = 1` from `x ∈ FF d`, `d ≥ 1`, via
+  the existing `algebraMapInv_eq_zero_of_mem_FF`.
+- **Base case.** `Φ = 1` at degree 1. `sub_evK_zero_mem_FFK`: every `x ∈ K ⊗ ℚ⟨X,Y⟩` agrees with
+  `evK 0 0 x ⊗ 1` modulo `FFK K 1`; with `AssocK.const` this gives `Ψ₀ − 1 ∈ FFK K 1`
+  (`AssocK.sub_one_mem_FFK`).
+- **Invariant** (`chain_invariant`, by `Nat.le_induction` on `d ≥ 1`): for `1 ≤ d ≤ N` there is a
+  rational `Φ` with `ε(Φ) = 1`, with `AssocU4 d E Φ ∧ GL d Φ` once `d ≥ 2`, and a group-like
+  `K`-associator `Ψ` in `U4 N` with `Ψ ≡ 1 ⊗ Φ (mod FFK K d)`. The step uses truncation order
+  `n = N`.
+
+```lean
+theorem rational_associator_of_groupLikeK {N : ℕ} (hN : 2 ≤ N) {E : F2}
+    (hE : FreeAlgebra.algebraMapInv E = 1) {Ψ₀ : K ⊗[ℚ] F2} (hK : AssocK K N E Ψ₀)
+    (hGL : GLK K N Ψ₀) :
+    ∃ Φ : F2, AssocU4 N E Φ ∧ GL N Φ
+
+structure GroupLikeKAssociatorTower (E : F2) : Prop where
+  exists_assoc : ∀ N : ℕ, 2 ≤ N → ∃ Ψ : K ⊗[ℚ] F2, AssocK K N E Ψ ∧ GLK K N Ψ
+
+theorem rational_associator_of_tower {E : F2} (hE : FreeAlgebra.algebraMapInv E = 1)
+    (hT : GroupLikeKAssociatorTower K E) {N : ℕ} (hN : 2 ≤ N) :
+    ∃ Φ : F2, AssocU4 N E Φ ∧ GL N Φ
+```
+
+**What remains.** The only unproved input is the hypothesis itself: for some field `K ⊇ ℚ`, a
+`K`-associator in `K ⊗ U4 N` for `E`, group-like modulo `FF2K N`, for each `N ≥ 2`. For `K = ℂ`
+this is Drinfeld's KZ associator truncated at `N`, an analytic construction that nothing in this
+repository formalises. It enters as a hypothesis or as the fields of `GroupLikeKAssociatorTower`,
+never as an axiom. Two further limits of scope:
+
+- `N ≥ 2` is assumed. The cases `N ∈ {0, 1}` are not stated.
+- The rational `Φ` is constructed separately for each `N`. The statement does not say that the
+  `Φ` for `N + 1` reduces to the `Φ` for `N`, so this is not a compatible tower and not a rational
+  associator in the completed algebra. Getting one needs either a compatible `K`-tower plus a
+  choice that respects it, or a direct induction over `N` that keeps the earlier lift; neither is
+  done here.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on `AssociatorChain.lean` exits 0 with no
+output, against the restored cache plus `/home/claude/gltbuild` (this branch's modules up to
+`GroupLikeK`). `#print axioms` on `rational_associator_of_groupLikeK`,
+`rational_associator_of_tower`, `chain_invariant` and `sub_evK_zero_mem_FFK` shows only `propext`,
+`Classical.choice` and `Quot.sound`. No `lake build` was run.
+
+## §17e. A compatible tower of rational associators, from a compatible `K`-tower (2026-11-27)
+
+New file `RationalAssociator/AssociatorTower.lean` (sorry-free). It answers the second limit of
+§17d: the `Φ_N` there were chosen independently for each `N`. Here one sequence is built whose
+truncations agree.
+
+```lean
+structure CompatibleGroupLikeKAssociatorTower (E : F2) : Prop where
+  exists_tower : ∃ Ψ : ℕ → K ⊗[ℚ] F2, ∀ N : ℕ, 2 ≤ N →
+    AssocK K N E (Ψ N) ∧ GLK K N (Ψ N) ∧ Ψ (N + 1) - Ψ N ∈ FFK K N
+
+theorem rational_associator_compatible_of_tower {E : F2} (hE : FreeAlgebra.algebraMapInv E = 1)
+    (hT : CompatibleGroupLikeKAssociatorTower K E) :
+    ∃ Φ : ℕ → F2, (∀ N, 2 ≤ N → AssocU4 N E (Φ N) ∧ GL N (Φ N)) ∧
+      ∀ N, 1 ≤ N → Φ (N + 1) - Φ N ∈ FF N
+```
+
+**The hypothesis is strengthened, and this is route (b).** `GroupLikeKAssociatorTower` (§17d)
+asks for a `K`-associator at each level separately; `CompatibleGroupLikeKAssociatorTower` also
+asks that consecutive ones agree modulo `FFK K N`. The truncations of one group-like associator
+in the completed algebra (for `K = ℂ`, Drinfeld's KZ associator) satisfy this, so the
+strengthening is the natural form of the analytic input, but it is a strengthening.
+`CompatibleGroupLikeKAssociatorTower.toTower` gives the old hypothesis from the new one. Route
+(a), which would remove the strengthening, needs the transitivity of the `GRT₁` action on
+group-like associators modulo `d` (Drinfeld Prop. 5.5) together with a lift of the connecting
+element; that is not done.
+
+How the induction is made uniform in the level:
+
+- **Congruence of the shift.** `compKK_sub_mem`: `Ψ ≡ Ψ'` and `G ≡ G'` modulo `FFK m` give
+  `compKK Ψ G ≡ compKK Ψ' G'` modulo `FFK m`. `GK_sub_GK_mem`: for `H ∈ FF 1`, the truncated
+  exponentials `GK H n c` at two orders `n, n' ≥ m` agree modulo `FFK m`.
+- **Lists of shifts.** `shiftL n L Ψ` applies the shifts `(c, H) ∈ L` at truncation order `n`.
+  `shiftL_pred` (predicates kept), `shiftL_sub_mem` (congruence kept, at any two orders `≥ m`),
+  `shiftL_sum` (`shiftL n L Ψ ≡ Ψ + Σ c ⊗ H` modulo `FFK (d + 1)` for `H ∈ FF d`).
+- **The step's data at one level** (`stepData`). The proof of `inductionStep_core` re-run so that
+  it returns the rational `x` and the list of shifts instead of applying them. It uses only the
+  `K`-associator at level `d + 1`. The shift directions are primitive, in `FF d`, and in `grt` in
+  **every** `U4 M` (`grtU4_of_lin_primitive` has no level hypothesis), so the same list preserves
+  `AssocK K M` and `GLK K M` at every level `M`.
+- **The tower step** (`towerStep`). Invariant `TowerInv K E d Φ Ψ`: `ε(Φ) = 1`, and from level
+  `d + 1` on every `Ψ N` is a group-like `K`-associator in `U4 N`, `Ψ N ≡ 1 ⊗ Φ` modulo
+  `FFK d`, and `Ψ (N + 1) ≡ Ψ N` modulo `FFK N`. The new tower is
+  `Ψ' N = shiftL (N + 2) L (Ψ N)`; compatibility of `Ψ'` is `shiftL_sub_mem`, and
+  `Ψ' N ≡ 1 ⊗ (Φ + x)` modulo `FFK (d + 1)` uses `Ψ N ≡ Ψ (d + 1)` modulo `FFK (d + 1)`
+  (`sub_mem_FFK_of_consecutive`).
+- **The sequence** (`exists_seq_of_step`): dependent choice along `ℕ`, by `Nat.rec` over a
+  subtype; `Φ N` is the rational part after `N − 1` steps.
+
+**Scope.** `AssocU4 N` and `GL N` are claimed for `N ≥ 2`; compatibility for `N ≥ 1`. The result
+is still a sequence of polynomials with compatible truncations, not an element of a completed
+algebra; no completion is defined in `RationalAssociator/`.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on `AssociatorTower.lean` exits 0 with no
+output, against the restored cache plus `/home/claude/chainbuild` (this branch's modules up to
+`AssociatorChain`). `#print axioms` on `rational_associator_compatible_of_tower`, `towerStep`,
+`stepData`, `shiftL_sub_mem`, `shiftL_sum`, `compKK_sub_mem` and
+`CompatibleGroupLikeKAssociatorTower.toTower` shows only `propext`, `Classical.choice` and
+`Quot.sound` (`exists_seq_of_step`: `Classical.choice` only). No `lake build` was run.
+
+## 17f. Stage 5: the quasi-Yang–Baxter equation for the rational tower (bean `qou-3fdg`)
+
+File: `folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/QuasiYBE.lean`.
+
+**Which reading.** Reading (a), a concrete quasi-triangular instance `(A, Δ, R)` over `ℚ` with a
+rational `Φ`, needs a realisation `t_ij ↦ h·Ω_ij` of the Drinfeld–Kohno algebra in
+`U(𝔤)^{⊗3}[h]/(h^N)` by a Casimir tensor, together with the invariance of `Ω` that makes the
+`Ω_ij` satisfy the Drinfeld–Kohno relations and `(Δ ⊗ id)(e^{hΩ/2}) = e^{h(Ω₁₃+Ω₂₃)/2}`. None
+of that is in the repository (the `HeckeTemperleyLieb/*Casimir*` files are about Hecke/TL
+blocks, not about `Ω ∈ U(𝔤)^{⊗2}`). So reading (b) was taken: the universal statement in the
+truncated algebra `U4 N`, and its transport to every realisation.
+
+**What `AssocU4` encodes.** Constant term `1`, (5.12) on `Fil N 1`, the hexagon in the repo's
+form `E(t₁₃+t₂₃) = φ(t₁₃,t₁₂) E(t₁₃) φ(t₂₃,t₁₃) E(t₂₃) φ(t₁₂,t₂₃)` at the universal three-strand
+family `(t₁₂, t₁₃, t₂₃)` of `U4 N`, and the pentagon in `U4 N`. With `R_ij = E(t_ij)` this is
+Drinfeld's hexagon `(Δ⊗id)R = Φ₃₁₂ R₁₃ Φ₁₃₂⁻¹ R₂₃ Φ₁₂₃`, with `Φ₁₃₂⁻¹ = φ(t₂₃,t₁₃)` by (5.12).
+That matches `P, Q, Φ` of `quasiYBE_of_hexagon` (PR #9519) exactly.
+
+**Proved (sorry-free).**
+
+- `quasiYBE_of_hexagons`: in any `ℚ`-algebra, for a `DK3` family `(a,b,c)`, the hexagons at
+  `(a,b,c)` and at the leg-swapped `(a,c,b)` give
+  `e(a)·φ(b,a)e(b)φ(c,b)e(c)φ(a,c) = φ(c,a)e(c)φ(b,c)e(b)φ(a,b)·e(a)`. Both sides equal
+  `e(a)e(b+c)`; the Drinfeld–Kohno relation `[t₁₂, t₁₃+t₂₃] = 0` plays the role that
+  quasi-cocommutativity plays in `quasiYBE_of_hexagon`.
+- `quasiYBE_U4`, `quasiYBE_of_assocU4`: in `U4 N` the swapped hexagon follows from the universal
+  one by `hexagon_of_universal` (the swapped family is `DK3` and lies in `Fil N 1`), so every
+  rational associator in `U4 N` satisfies the quasi-Yang–Baxter equation
+  `R₁₂Φ₃₁₂R₁₃Φ₁₃₂⁻¹R₂₃Φ₁₂₃ = Φ₃₂₁R₂₃Φ₂₃₁⁻¹R₁₃Φ₂₁₃R₁₂` there. The pentagon is not used.
+- `quasiYBE_compatible_of_tower`: the compatible rational sequence of §17e satisfies it at every
+  level `N ≥ 2`, conditional on `CompatibleGroupLikeKAssociatorTower K E`.
+- `quasiYBE_of_realization`: for a `ℚ`-algebra map `ρ : U4 N → (A⊗A)⊗A` sending
+  `e(t₁₂), e(t₁₃), e(t₂₃)` to `R₁₂, R₁₃, R₂₃`, the quasi-Yang–Baxter equation holds in
+  `(A⊗A)⊗A` with the `ρ`-images of the rational associators. No coproduct is used.
+- `hexagon_of_realization`, `quasiYBE_of_hexagon_realization`: if moreover
+  `ρ(e(t₁₃+t₂₃)) = (Δ⊗id)(R)`, the hypothesis `hhex` of `quasiYBE_of_hexagon` is discharged with
+  `P, Q, Φ` the `ρ`-images of `φ(t₁₃,t₁₂), φ(t₂₃,t₁₃), φ(t₁₂,t₂₃)`, and that theorem applies.
+
+**Hypotheses that remain.** (i) The named analytic input `CompatibleGroupLikeKAssociatorTower`
+(as in §17e). (ii) For a concrete `(A,Δ,R)`: the realisation map `ρ` and its three/four
+compatibilities, plus quasi-cocommutativity for `quasiYBE_of_hexagon_realization`; no instance
+is constructed. (iii) The braid relation `σ₁σ₂σ₁ = σ₂σ₁σ₂` with `σ₁ = s₁₂R₁₂`,
+`σ₂ = Φ⁻¹s₂₃R₂₃Φ` needs the semidirect product with `S₃`; only its equivalent quasi-YBE form is
+proved. (iv) `quasiYBE_of_hexagon`'s conclusion is stated with `τ₁₂(P)` etc.; identifying
+`τ₁₂(ρ φ(t₁₃,t₁₂))` with `ρ φ(t₂₃,t₁₂)` needs `ρ` to intertwine `τ₁₂` with the `S₃` action on
+`U4 N`, which is not proved (the universal theorem gives the permuted form directly).
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on `QuasiYBE.lean` exits 0 with no
+output, against a symlink overlay of the restored cache, `fr/out`, `b1sbuild`, `gltbuild`,
+`chainbuild`, `towerbuild` (later ones winning) plus a fresh `lean`-direct olean of
+`HeckeTemperleyLieb/QuasiYangBaxterFromHexagon.lean`. (The plain colon-separated `LEAN_PATH` does
+not work: Lean resolves a module under the first root containing a `QOU/` directory.)
+`#print axioms` on all seven theorems shows only `propext`, `Classical.choice`, `Quot.sound`.
+No `lake build` was run.
+
+## 17g. The compatibility hypothesis dropped: Prop. 5.5 at one degree (bean `qou-3fdg`)
+
+**Result.** `rational_associator_compatible_of_groupLikeTower`
+(`RationalAssociator/AssociatorRealign.lean`, sorry-free): from `ε(E) = 1` and
+`GroupLikeKAssociatorTower K E` alone (one group-like `K`-associator per level `N ≥ 2`, no
+relation between levels) there is one sequence `Φ : ℕ → ℚ⟨X,Y⟩` with `Φ N` an associator in
+`U4 N` for `E`, group-like modulo `FF2 N` (`N ≥ 2`), and `Φ (N+1) − Φ N ∈ FF N` (`N ≥ 1`). This
+is the conclusion of `rational_associator_compatible_of_tower` (§17e) without
+`CompatibleGroupLikeKAssociatorTower`; `rational_associator_compatible_of_tower_via_groupLike`
+re-derives §17e's theorem through the new one.
+
+**How.** Only the degree-by-degree form of Drinfeld's Prop. 5.5 is needed:
+
+- `primDef_mem_of_GL_add`: if `A ≡ 1 (FF 1)` and `A`, `A + y` (`y ∈ FF d`, `d ≥ 1`) are both
+  group-like modulo `FF2 (d+1)`, then `Δy − y⊗1 − 1⊗y ∈ FF2 (d+1)`.
+- `exists_grt_layer` (**Prop. 5.5 at one degree**): two rational group-like associators
+  `Φ + x`, `Φ + x'` in `U4 (d+1)` (`x, x' ∈ FF d`, `ε(Φ) = ε(E) = 1`) differ at degree `d` by a
+  homogeneous primitive `h`, with `x' − x − h ∈ FF (d+1)` and `GrtU4 M h` for every `M`. The
+  linear equations of `x' − x` cancel by `assocU4_add_iff`; primitivity comes from the previous
+  lemma and `exists_primitive_layer`; `grtU4_of_lin_primitive` concludes.
+- `realign`: a group-like `K`-associator at level `N ≥ d+1` agreeing with `1⊗Φ` modulo `FFK d`
+  can be replaced, inside the group-like `K`-associators at level `N`, by one agreeing with
+  `1⊗(Φ+x)` modulo `FFK (d+1)` for **any** prescribed rational group-like associator `Φ + x` in
+  `U4 (d+1)`: `inductionStep_of_groupLike` gives some `x'`, then one shift by `exp(h)`
+  (`assocK_shiftK`, `GLK.compKK_GK`, `compKK_congr`) with `h` from `exists_grt_layer` replaces
+  `x'` by `x`.
+- `LevelInv` / `levelStep`: the invariant only asks, at each level, for *some* `K`-associator
+  agreeing with `1⊗Φ` modulo `FFK d`. The correction `x` is chosen at level `d+1` and every
+  higher level is re-aligned onto it, so no cross-level relation between the `Ψ_N` is needed.
+
+**Not proved.** Prop. 5.5 in its full form (for two group-like associators modulo `N`, a single
+`g ∈ GRT₁` modulo `N` with `Φ' = Φ ∘ g`) is not stated; the composite of the per-degree shifts
+would give it but the composition law of the truncated `GRT₁` action is not used here. The
+analytic input `GroupLikeKAssociatorTower K E` itself is still a hypothesis; nothing constructs
+it. `quasiYBE_compatible_of_tower` (§17f) still states the compatible-tower hypothesis; it can
+now be restated on `GroupLikeKAssociatorTower` by composing with the new theorem (not done here).
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on `AssociatorRealign.lean` exits 0 with
+no output against the symlink overlay holding every module up to `QuasiYBE`. `#print axioms` on
+`rational_associator_compatible_of_groupLikeTower`, `exists_grt_layer`, `realign` and the
+corollary shows only `propext`, `Classical.choice`, `Quot.sound`. No `lake build` was run.
+
+## 17h. The one-degree lifting obstruction, and field independence (bean `qou-3fdg`)
+
+Scope, per Carl's choice of "Furusho first": this section formalises the obstruction theory and
+its field independence only. The general vanishing (an `H⁴`/`H³` argument in the Drinfeld–Kohno /
+`grt` deformation complex) and explicit low-degree existence were **not attempted**; a separate
+front is doing Furusho's pentagon ⇒ hexagons.
+
+**Follow-up from §17g, done.** `quasiYBE_compatible_of_groupLikeTower` (`QuasiYBE.lean`) states
+the quasi-Yang–Baxter conclusion of `quasiYBE_compatible_of_tower` on the weaker hypothesis
+`GroupLikeKAssociatorTower K E`, by composing with `rational_associator_compatible_of_groupLikeTower`.
+`QuasiYBE.lean` now imports `AssociatorRealign` instead of `AssociatorTower`.
+
+**Proved (`RationalAssociator/Obstruction.lean`, sorry-free, purely algebraic over `ℚ`).**
+Throughout `ε(E) = ε(Φ) = 1` and `d ≥ 1`; "a lift" means `x ∈ FF d` with `AssocU4 (d+1) E (Φ+x)`
+and `GL (d+1) (Φ+x)`.
+
+- `GL_add_iff`: `GL (d+1) (Φ + x) ↔ glDefect Φ + primDef x ∈ FF2 (d+1)`, with
+  `glDefect Φ = ΔΦ − Φ⊗Φ`. The coproduct condition one degree up is linear in the correction,
+  like the associator equations (`assocU4_add_iff`).
+- `obsLin d : ℚ⟨X,Y⟩ →ₗ[ℚ] AssocTarget (d+1) × (F2⊗F2 ⧸ FF2 (d+1))`,
+  `x ↦ (assocLin (d+1) x, [primDef x])`: the linearised inversion, hexagon and pentagon together
+  with the linearised coproduct condition. `obstruction d E Φ = (−assocDefect (d+1) E Φ,
+  [−glDefect Φ])`.
+- `lift_iff_obsLin`: a lift exists **iff** `∃ x ∈ FF d, obsLin d x = obstruction d E Φ`.
+- `lift_iff_homog`: equivalently with `x` homogeneous of degree `d` (`obsLin d` kills `FF (d+1)`).
+- `lift_iff_primitive`: if `GL (d+1) Φ`, a lift exists iff there is `h ∈ FF d`, homogeneous of
+  degree `d` and primitive, with `assocLin (d+1) h = −assocDefect (d+1) E Φ`. This is the form in
+  the task statement; the extra hypothesis `GL (d+1) Φ` is needed, because when `Φ` is only
+  group-like modulo `FF2 d` the correction must also cancel the degree-`d` group-likeness defect
+  and is then not primitive.
+- `liftSolvableOver_iff`, `lift_iff_liftSolvableOver`: for any nontrivial commutative
+  `ℚ`-algebra `K` (any field `K ⊇ ℚ`, e.g. `ℂ`), the lifting equation is solvable after base
+  change to `K` iff a rational lift exists (`exists_of_baseChange`, no finiteness used). The
+  existence question at each degree is field-independent.
+- `obstruction_mem_range_of_groupLikeK`: a group-like `K`-associator modulo `N ≥ d+1` agreeing
+  with `1⊗Φ` modulo `FFK d` puts the obstruction in the range of `obsLin d` over `ℚ`.
+- `AssociatorObstructionVanishes E` (a `def … : Prop`, **not an axiom, not proved**): for every
+  `d ≥ 1` and every `Φ` with `AssocU4 d E Φ` and `GL d Φ`,
+  `∃ x ∈ FF d, obsLin d x = obstruction d E Φ`.
+  `compatible_of_obstructionVanishes`: this `Prop` alone (no field `K`) gives a sequence
+  `Φ : ℕ → ℚ⟨X,Y⟩` with `AssocU4 N E (Φ N) ∧ GL N (Φ N)` for `N ≥ 1` and
+  `Φ (N+1) − Φ N ∈ FF N`. The induction starts from `AssocU4 1 E 1` and `GL 1 1`.
+
+**Not proved.** `AssociatorObstructionVanishes E` itself. Classically it follows from the KZ
+associator plus `GRT₁`-transitivity; an algebraic proof would show the obstruction is a cocycle
+and the relevant deformation cohomology vanishes, which Bar-Natan (1998) records as unknown.
+The converse implication `GroupLikeKAssociatorTower K E → AssociatorObstructionVanishes E` is
+also **not** formalised: it should follow from `realign` applied with target `Φ + 0` at each
+degree below `d`, but that needs `AssocU4 M E Φ → AssocU4 N E Φ` for `N ≤ M` (a level map
+`U4 M → U4 N`, surjective onto `Fil N 1`), which is not in the repository.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` exits 0 with no output (no warnings) on
+`Obstruction.lean` and `QuasiYBE.lean`, against the symlink overlay plus freshly built
+`AssociatorRealign`, `QuasiYBE` and `Obstruction` oleans. `#print axioms` on
+`quasiYBE_compatible_of_groupLikeTower`, `GL_add_iff`, `lift_iff_obsLin`, `lift_iff_homog`,
+`lift_iff_primitive`, `liftSolvableOver_iff`, `lift_iff_liftSolvableOver`,
+`obstruction_mem_range_of_groupLikeK` and `compatible_of_obstructionVanishes` shows only
+`propext`, `Classical.choice`, `Quot.sound`. The `RationalAssociator/` directory and this audit
+are byte-identical between the verified base and `origin/main` after rebase. No `lake build`.
+## 17i. Furusho: `μ² = 24c` in degree 2, and pentagon ⇒ hexagon modulo the Lie statement (bean `qou-3fdg`)
+
+**Target.** Furusho (Ann. Math. 171 (2010)): a group-like `φ` satisfying the pentagon satisfies the
+hexagons for a unique `μ`, with `μ² = 24 · (coefficient of [A, B])`. Then: restate the hypothesis
+`GroupLikeKAssociatorTower` in a pentagon-only form.
+
+**Proved** (`RationalAssociator/FurushoReduction.lean`, sorry-free, algebraic over `ℚ`):
+
+- `hexagon_mu_iff`. With the `𝔱₃` relations, the hexagon for `φ_c = 1 + c[A, B]` and the
+  truncated `exp(μx/2)` holds modulo degree 3 iff `(c − μ²/24)·[t₁₂, t₂₃] = 0`. This is Furusho's
+  `μ² = 24c` in the lowest degree where it says anything.
+- `truncU4`, `pentagon_trunc`, `AssocU4.trunc`: the truncation `U4 N → U4 M` for `M ≤ N`
+  (generators to generators), and the pentagon and associator conditions descend along it.
+- `assocU4_succ_of_pentagon`. One degree of the reduction. If `Φ` carries the level invariant at
+  degree `d ≥ 1`, is group-like modulo `FF2 (d+1)`, and satisfies the pentagon in `U4 (d+1)`, then
+  `PentagonHexagonLie d` makes it an associator in `U4 (d+1)`. Proof: `levelStep` gives a genuine
+  associator `Φ + x`; `−x` is primitive modulo `FF2 (d+1)`; `exists_primitive_layer` gives its
+  homogeneous primitive layer `k`; the defects of `Φ` are `−assocLin x = assocLin k`; the pentagon
+  makes the pentagon component of `assocLin k` vanish; `PentagonHexagonLie d` kills the rest.
+- `assocU4_of_pentagon`, `assocU4_iff_pentagon`. Induction from degree 3 (`levelInv_three` builds
+  the invariant there from the tower). Under `GroupLikeKAssociatorTower K E` and
+  `PentagonHexagonLie d` for all `d ≥ 3`: for `N ≥ 3` and `Φ` group-like modulo `FF2 N`,
+  `AssocU4 N E Φ ↔ AssocU4 3 E Φ ∧ Pentagon_N Φ`.
+
+**The remaining statement** is a `def … : Prop`, neither assumed as an axiom nor proved:
+
+```lean
+def PentagonHexagonLie (d : ℕ) : Prop :=
+  ∀ h : F2, Homog d h → IsPrimitive h → (assocLin (d + 1) h).2.2 = 0 → assocLin (d + 1) h = 0
+```
+
+A homogeneous Lie element of degree `d` (primitive = Lie, by §17a) whose linearised pentagon
+vanishes in `U4 (d+1)` satisfies all the linearised associator equations there. By hand
+computation (not formalised): true at `d = 1`, and false at `d = 2`, where `h = [A, B]` has zero
+linearised pentagon and linearised hexagon `−3[t₁₂, t₂₃]`. The `d = 2` failure is the `μ` freedom
+that `hexagon_mu_iff` records; the reduction therefore starts at degree 3 and takes
+`AssocU4 3 E Φ` as input. For `d ≥ 3` it is the Lie-algebra form of Furusho's theorem
+(`grt₁` cut out by the pentagon alone, in degrees ≥ 3), which is a hard theorem and is not proved
+here.
+
+**What this does not do.** It does not shrink `GroupLikeKAssociatorTower` to a pentagon-only
+hypothesis. Each step compares `Φ` with a genuine group-like `K`-associator taken from the tower,
+so the hexagon enters through the tower. The result is that, given the tower and the Lie
+statement, the hexagon is redundant for rational group-like solutions normalised in degree 2.
+Whether Furusho's own group-level deduction also uses an existing associator (the KZ one) is not
+settled here: the paper is not in `library/`, so I could not check.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on `FurushoReduction.lean` exits 0 with
+no output, against the symlink overlay used for §17g. `#print axioms` on `hexagon_mu_iff`,
+`AssocU4.trunc`, `assocU4_succ_of_pentagon`, `levelInv_three`, `assocU4_of_pentagon` and
+`assocU4_iff_pentagon` shows only `propext`, `Classical.choice`, `Quot.sound`. No `lake build`
+was run. Does not touch `claude/grt-h4-2026-11-27` (quasiYBE restatement, lift obstruction).
+
+**Relation to §17h.** §17h (`Obstruction.lean`, merged as #9815) states the remaining input of the
+degree-by-degree construction as `AssociatorObstructionVanishes E`. That obstruction includes the
+linearised hexagon. `PentagonHexagonLie` addresses a different question: whether the hexagon
+part of the obstruction is implied by its pentagon part, for Lie elements of degree `d ≥ 3`. The
+two statements are independent, and this file does not use `Obstruction.lean`.

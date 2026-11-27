@@ -126,40 +126,31 @@ theorem re_ne_log_of_color_ne_one {N k : ℕ} {t : ℝ} (ht : t ≠ 0) (hN : N �
 
 /-! ## 3. Under the identification, a boost-dominated anchor has `ϑ = 0` -/
 
-/-- **Boost dominance kills the winding.**  The meridian's imaginary part is
-`−2πk`, so `Im²u = 4π²k²`.  If the anchor is boost-dominated — `ϑ² < t²`, the
-`S > 0` branch of `s_channel_sign_pos` — and the substrate scale is subarchimedean
-in the sense `|t| < 2π` (amply true at `t = ln q₀ ≈ 0.104`), then `k = 0`.
+/-- **Boost dominance kills the winding — period form.**  Let `P > 0` be the
+period of the logarithmic meridian, i.e. the generator of the kernel of the
+formal exponential `u ↦ q = exp u` on the imaginary axis.  The winding-`k`
+meridian has `Im u = −P·k`.  If the anchor is boost-dominated, `(P·k)² < t²`,
+and the substrate scale is below one period, `|t| < P`, then `k = 0`.
 
-There is no room here: the smallest nonzero winding already contributes
-`2π ≈ 6.28`, some sixty times `ln q₀`. -/
-theorem winding_eq_zero_of_boost_dominated {N k : ℕ} {t : ℝ}
-    (ht : |t| < 2 * Real.pi)
-    (hboost : (meridian ((N : ℝ) * t) k).im ^ 2 < t ^ 2) :
+Stated for an abstract period: winding `k` multiplies the holonomy by
+`exp(−iPk) = 1`, the trivial root of unity, so only the period enters, and
+`P = 2π` is the non-analytic `exp` labelling of it.  That
+specialisation lives in
+`QOU.Transcendental.Nuclear.ChannelMeridianIdentificationReal`
+(owner ruling 2026-11-27, roots of unity). -/
+theorem winding_eq_zero_of_lt_period {P t : ℝ} {k : ℕ} (hP : 0 < P)
+    (ht : |t| < P) (hboost : (P * (k : ℝ)) ^ 2 < t ^ 2) :
     k = 0 := by
   by_contra hk
   have hk1 : 1 ≤ (k : ℝ) := by
     have : 1 ≤ k := Nat.one_le_iff_ne_zero.mpr hk
     exact_mod_cast this
-  rw [meridian_im] at hboost
-  -- `Im²u = (2πk)² ≥ (2π)² > t²`, contradicting `Im²u < t²`
-  have hpi : (0 : ℝ) < 2 * Real.pi := by positivity
-  have ht2 : t ^ 2 < (2 * Real.pi) ^ 2 := by
-    have := abs_nonneg t
+  have ht2 : t ^ 2 < P ^ 2 := by
     nlinarith [sq_abs t, abs_nonneg t]
-  nlinarith [hpi, hk1, sq_nonneg ((k : ℝ) - 1)]
-
-/-- **The identification collapses a boost-dominated anchor to `ϑ = 0`.**
-Combining §2 and §3: the colour is degenerate AND the angular deformation
-vanishes identically. -/
-theorem color_one_and_theta_zero {N k : ℕ} {t : ℝ}
-    (ht0 : t ≠ 0) (htpi : |t| < 2 * Real.pi)
-    (hRe : (meridian ((N : ℝ) * t) k).re = t)
-    (hboost : (meridian ((N : ℝ) * t) k).im ^ 2 < t ^ 2) :
-    N = 1 ∧ (meridian ((N : ℝ) * t) k).im = 0 := by
-  refine ⟨color_eq_one_of_re_eq_log ht0 hRe, ?_⟩
-  rw [meridian_im, winding_eq_zero_of_boost_dominated htpi hboost]
-  norm_num
+  have : P ^ 2 ≤ (P * (k : ℝ)) ^ 2 := by
+    have h1 : P ≤ P * (k : ℝ) := by nlinarith
+    nlinarith
+  linarith
 
 /-! ## 4. `ϑ = 0` at both anchors admits no sign flip -/
 

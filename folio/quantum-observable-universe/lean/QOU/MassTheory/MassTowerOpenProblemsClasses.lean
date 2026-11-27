@@ -18,9 +18,12 @@ them as Lean typeclasses in the §3b-cond pattern:
   (1+h) via the Kauffman framing on H_n(R, q).
 * `ZHabiroConvergenceClass` — closes the |V|≈1 brane-tower
   divergence via a uniform z-Habiro bound.
-* `AlphaOver4PiClass` — closes the α/(4π) next-order term in the
-  additive Bring zero-mode form via a higher Bloch group
-  B_n(ℂ) (multivariate polylogarithm regulator).
+* (retired 2026-11-27) `AlphaOver4PiClass` asked for a type, a map to `ℝ`
+  and an element hitting `α/(4π)`. `(ℝ, id)` satisfies that, so the class
+  asserted nothing about a higher Bloch group and was removed together with
+  its instance. The open question (a regulator on `B_n(ℂ)`, `n ≥ 3`, whose
+  output is the `1/(4π)` coefficient) stays open; a non-vacuous carrier needs
+  a higher Bloch group and its regulator as actual structure.
 
 Each class encapsulates a single missing structural fact; a
 sorry-free conditional theorem follows the same pattern as
@@ -214,45 +217,15 @@ theorem brane_tower_finite [hZ : ZHabiroConvergenceClass] :
   hZ.uniform_bound
 
 
-/-! ## α/(4π) next-order term in additive Bring zero-mode -/
-
-/-- The next-order self-energy correction to `1/α_EM` after the
-    `2/(3π)` Bring zero-mode: empirically `≈ α/(4π) ≈ 5.81×10⁻⁴`,
-    bringing the residual to `+5.7×10⁻⁸` (within CODATA error). -/
--- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
-noncomputable def alpha_over_4pi_target (alpha : ℝ) : ℝ :=
-  alpha / (4 * Real.pi)
-
-/-- **α/(4π) higher Bloch group class.** A concrete instance asserts
-    that the next-order coefficient `1/(4π)` arises from a multi-
-    variate polylogarithm regulator on a higher Bloch group
-    `B_n(ℂ)` for some `n ≥ 3` (Goncharov 1995 conjectures cover
-    the relevant uniqueness up to scalar). -/
--- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
--- Ref: [borel1974], [bloch2000]
-class AlphaOver4PiClass : Prop where
-  /-- The next-order coefficient is realised as a higher
-      Bloch-group regulator output, not a fit. -/
-  higher_bloch_realised : ∀ alpha : ℝ,
-    ∃ (HigherBlochGroup : Type) (regulator : HigherBlochGroup → ℝ) (elem : HigherBlochGroup),
-      regulator elem = alpha_over_4pi_target alpha
-
-/-- **α/(4π) conditional theorem (sorry-free).** -/
--- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
-theorem alpha_over_4pi_structural
-    [hA : AlphaOver4PiClass]
-    (alpha : ℝ) :
-    ∃ (HigherBlochGroup : Type) (regulator : HigherBlochGroup → ℝ) (elem : HigherBlochGroup),
-      regulator elem = alpha_over_4pi_target alpha :=
-  hA.higher_bloch_realised alpha
-
+/-! The α/(4π) next-order carrier `AlphaOver4PiClass` was retired on 2026-11-27:
+it was satisfied by `(ℝ, id)` and so carried no content (bean `qou-dk7p`). -/
 
 /-! ## Unconditional class instances (where formal content is
     purely existential)
 
 The four classes above are §3b-cond surrogates for substantive
-upstream conjectures. Three of them — Chirality, ZHabiro, and
-AlphaOver4Pi — have formal content that reduces to a purely
+upstream conjectures. Two of them — Chirality and ZHabiro (and formerly
+AlphaOver4Pi, retired 2026-11-27 for exactly this reason) — have formal content that reduces to a purely
 existential statement (`∃ z, z = <named real>`) and can therefore
 be inhabited unconditionally inside Lean: the witness is the
 named real itself, with `rfl`. We provide those instances here so
@@ -296,23 +269,11 @@ instance zHabiroConvergenceInstance : ZHabiroConvergenceClass where
     use 1
     refine ⟨by norm_num, by unfold brane_tower_pole; norm_num, fun z hz => by norm_num⟩
 
-/-- **α/(4π) class — unconditional instance.**
-...
-    The existential `∃ z, z = α/(4π)` is closed by `rfl`. The
-    substantive open content — that the coefficient `1/(4π)` arises
-    as a multivariate polylogarithm regulator on a higher Bloch
-    group `B_n(ℂ)` (Goncharov 1995 / Borel 1974) — remains
-    upstream and is not addressed by this formal closure. -/
--- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
--- Ref: [borel1974], [bloch2000]
-instance alphaOver4PiInstance : AlphaOver4PiClass where
-  higher_bloch_realised := fun alpha => ⟨ℝ, id, alpha_over_4pi_target alpha, rfl⟩
-
 /-! ### Unconditionalised conditional theorems
 
     With the instances
-    above in scope, `brane_tower_finite` and `alpha_over_4pi_structural`
-    close unconditionally — the `[Instance]` arguments are inferred.
+    above in scope, `brane_tower_finite` closes unconditionally
+    — the `[Instance]` arguments are inferred.
     The §3b-cond hooks are formally discharged; the substantive
     structural content sits entirely in the upstream conjecture blocks.
 
@@ -345,10 +306,5 @@ theorem brane_tower_finite_unconditional :
       M > 0 ∧ M < brane_tower_pole ∧
       ∀ z < brane_tower_pole, brane_tower_sum z ≤ M :=
   brane_tower_finite
-
-theorem alpha_over_4pi_unconditional (alpha : ℝ) :
-    ∃ (HigherBlochGroup : Type) (regulator : HigherBlochGroup → ℝ) (elem : HigherBlochGroup),
-      regulator elem = alpha_over_4pi_target alpha :=
-  alpha_over_4pi_structural alpha
 
 end QOU.Archimedean.OpenProblems

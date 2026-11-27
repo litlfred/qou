@@ -77,7 +77,7 @@ bearing on the arithmetic mechanism is unproven.
 **Status — three tiers of correlation, not to be conflated.**
 
 1. *Arithmetic* (the substance): $D(n)$ is non-cyclotomic from $n=6$. This is
-   **proved for $6 \le n \le 14$** (finite Lean certificates) but **not for all $n \geq 6$**; the
+   **proved for $6 \le n \le 20$** (finite Lean certificates) and for every triangular $n$ and the families $n = T_j \pm 1$, but **not for all $n \geq 6$**; the
    cofactor's non-$q$-holonomic degree growth is the structural reason, not
    yet a proof. Generic high-degree bar-even integer polynomials are
    non-cyclotomic, so non-cyclotomicity is the *expected* outcome — the
@@ -101,14 +101,83 @@ magnitudes are not interpreted.
 brackets nonzero, the hook-length definition above gives $q^{m_n}D(n) = P_n(q)$ for an explicit
 $P_n \in \mathbb{Z}[q]$. In particular $D(2) = D(3) = 0$, $D(4) = q^{-2}\Phi_1^2\Phi_3$ and
 $D(5) = 2q^{-4}\Phi_1^2\Phi_2^2\Phi_3\Phi_6$, so the forward direction holds for every $n \le 5$.
-*The converse through $n = 14$:* for $6 \le n \le 14$, $P_n$ is not $c\,q^j\prod_k\Phi_k$. The
+*The converse through $n = 20$:* for $6 \le n \le 20$, $P_n$ is not $c\,q^j\prod_k\Phi_k$. The
 certificate is finite integer arithmetic: if $P = c\,q^j\prod\Phi_k$ and $p \mid P(a)$,
 $p \nmid a$, $p \nmid P(b)$, then $a^k \equiv 1 \pmod p$ for some factor $\Phi_k$, so the
 order $m$ of $a$ mod $p$ divides $k$ and $\varphi(m) \le \varphi(k) \le \deg P$. One witness
 $(p, a)$ with $\varphi(m) > \deg P_n$ per $n$ refutes the factorisation (for example $n = 6$:
 $p = 47$, $a = 28$, $m = 23$, $\varphi(23) = 22 > 14$). This uses no analysis and no
-discriminant. The polynomials $P_{10}, \dots, P_{14}$ in the certificate are computed by
+discriminant. The polynomials $P_{10}, \dots, P_{20}$ in the certificate are computed by
 `computations/cyclotomic_boundary_certificates.py`; for $n \le 9$ they are derived in Lean.
 The earlier $n = 6$ route (the deg-8 core $C_6$, palindrome identity, $\mathrm{disc}(\tilde C)
 = -44208 < 0$) remains proved in `QOU.Mass.CyclotomicBoundaryKeystone`.
-*Open:* non-cyclotomicity for **every** $n \ge 6$. No uniform family of witnesses is known.
+
+**Two infinite families (pen-and-paper proof, 2026-11-27).** Write $n = T_j + r$ with
+$T_j = j(j+1)/2$ and $1 \le r \le j+1$.
+
+*Leading coefficient.* $\dim_q(\lambda) = q^{-e_\lambda}g_\lambda(q^2)$ is bar-even with
+leading coefficient $1$, where $e_\lambda = \binom n2 - \sum_{(i,j)\in\lambda}(i+j)$. The
+minimisers of $\sum(i+j)$ fill the antidiagonals $0,\dots,j-1$ (the staircase $\delta_j$) and put
+$r$ cells on antidiagonal $j$, whose $j+1$ positions are all addable corners of $\delta_j$. So the
+top coefficient of $S(n)$ is $\binom{j+1}{r}$. Let $d_k$ be the antidiagonal of the $k$-th cell in
+this filling. The top degrees of $S(n-1)$ and $[n-1]_qS(n-2)$ lie below that of $S(n)$ by
+$n-1-d_n \ge 2$ and by $n-1-d_n-d_{n-1}$, which is $\ge 1$ for $n \ge 7$. Hence, for $n \ge 7$,
+$$\operatorname{lead}(P_n) = \binom{j+1}{r}.$$
+
+*The divisibility test.* If $P_n = c\,q^k\prod\Phi_{k_i}$, then $c = \operatorname{lead}(P_n)$
+divides every coefficient of $P_n$, because each $\Phi_k$ is monic in $\mathbb Z[q]$.
+
+*Second coefficient.* The shapes with $\sum(i+j)$ one above the minimum are of two kinds: one
+cell moved from antidiagonal $j$ to $j+1$, or one cell moved from $j-1$ to $j$. Counting them
+gives, whenever the gap $n-1-d_n-d_{n-1}$ is $\ge 2$ (true for $n \ge 9$),
+$$a_1(P_n) = N_1 = 2\binom{j}{r-2} + j\binom{j-1}{r-3} + j\binom{j-1}{r+1}.$$
+This agrees with the exact $P_n$ for $9 \le n \le 24$.
+
+* $n = T_{j+1} - 1$ ($r = j$), every $j \ge 3$: $N_1 = j^2(j-1)/2$, and
+  $j^2(j-1) \equiv -2 \pmod{j+1}$, so $(j+1) \nmid N_1$. **$D(n)$ is not cyclotomic.**
+* $n = T_j + 1$ ($r = 1$), every $j \ge 4$ with $j \ne 5$: $N_1 = j(j-1)(j-2)/2$, and
+  $j(j-1)(j-2) \equiv -6 \pmod{j+1}$, so $(j+1) \nmid N_1$ unless $(j+1) \mid 6$.
+  **$D(n)$ is not cyclotomic.** (The exception $j = 5$ is $n = 16$, covered by the finite
+  certificate.)
+
+*The power-sum test.* If $P = c\,q^k\prod\Phi_{k_i}$ has degree $d$, then over $\mathbb C$
+every root of $P$ is $0$ or a root of unity. Writing $a_1, a_2$ for the coefficients of
+$q^{d-1}, q^{d-2}$, Vieta gives $a_1^2 - 2c\,a_2 = c^2\sum_z z^2$, so
+$$\bigl|a_1^2 - 2c\,a_2\bigr| \le c^2 d .$$
+This is sharper than divisibility when $c = 1$.
+
+*Third coefficient at triangular $n$.* Let $n = T_{j+1}$ with $j \ge 3$. The minimiser of
+$\sum(i+j)$ is the staircase $\delta_{j+1}$ alone, so $c = 1$, and $a_1 = j(j+1)$ (the formula
+for $N_1$ at $r = j+1$). The top degrees of $S(n-1)$ and $[n-1]_qS(n-2)$ lie $T_j$ and
+$j(j-1)/2$ below the top, both $\ge 3$, so only $S(n)$ reaches $a_2$. Two kinds of term reach
+it. The staircase itself contributes the second coefficient of $g_{\delta_{j+1}}$, which is
+(corners $- 1$) $= j$. The shapes with $\sum(i+j)$ two above the minimum each contribute $1$.
+A shape that removes a cell from antidiagonal $j-1$ must also remove its two neighbours on
+antidiagonal $j$, which costs at least $4$. So these shapes remove two corners from antidiagonal
+$j$ and add two cells on antidiagonal $j+1$ that do not rest on a removed corner. Two adjacent
+corners block $3$ of the $j+2$ positions, and two non-adjacent corners block $4$. Hence
+$$a_2 = j + j\binom{j-1}{2} + \Bigl(\binom{j+1}{2} - j\Bigr)\binom{j-2}{2}
+      = j + \frac{j(j-1)^2(j-2)}{4}.$$
+The degree is $d = 2\bigl(\binom n2 - \sum_{k \le j} k(k+1)\bigr) = j(j+1)(j+2)(3j+1)/12$.
+Therefore
+$$a_1^2 - 2a_2 - d = \frac{j(j-1)(3j^2 + 41j + 14)}{12} > 0 ,$$
+and the power-sum test fails. **For every triangular $n \ge 10$, $D(n)$ is not cyclotomic.**
+The formulas for $c, a_1, a_2, d$ agree with the exact $P_n$ for $n = 10, 15, 21, 28$, and with
+the near-staircase partition count for every triangular $n \le 91$.
+
+*Lean.* `QOU.Mass.CyclotomicPowerSum` proves both tests for every cyclotomic product
+(`leadingCoeff_dvd_coeff`, `abs_powerSum_two_le`), sorry-free. It also proves the arithmetic
+of the three families for every $j$, taking the top coefficients of $P_n$ as hypotheses
+(`not_isCycloProduct_triangular_of_topCoeffs`, `…_rEqJ_of_topCoeffs`, `…_rEqOne_of_topCoeffs`).
+The partition count that supplies those coefficients for every $n$ is proved above on paper and
+is not yet formalised.
+
+Together with the finite certificates this settles $6 \le n \le 20$, every triangular $n$, and
+every $n \in \{T_j + 1, T_{j+1} - 1\}$ with $j \ge 4$. For the other $n$ the two tests
+together settle every $n \le 90$
+(`computations/cyclotomic_boundary_power_sum.py`): at each such $n$ either $c \nmid a_1$ or
+$(a_1^2 - 2c\,a_2)/c^2$ is not an integer (for example $n = 16, 18, 76$). No uniform argument for
+general $r$ is known.
+
+*Open:* non-cyclotomicity for **every** $n \ge 6$. What remains is the non-triangular $n$
+outside the two families, for $n > 90$.

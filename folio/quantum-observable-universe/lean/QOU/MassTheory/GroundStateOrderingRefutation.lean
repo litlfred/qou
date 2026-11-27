@@ -402,32 +402,30 @@ file originally carried stays checkable, and so that the two conventions
 can be compared.  It is **not** canonical; convention D above is.
 -/
 
-/-- Convention C, `z = √q/(q+1)`: excised by the owner ruling of
-2026-08-15, retained here only as a cross-check. -/
-noncomputable def zC (q : ℝ) : ℝ := Real.sqrt q / (q + 1)
+/-- Convention C in the square-root variable: at `q = t²`, `z_C = t/(t²+1)`.
+Excised by the owner ruling of 2026-08-15 and retained only as a cross-check.
+Stated in `t` so that no square root is taken (bean `qou-dk7p`); the form
+`z = √q/(q+1)` with `Real.sqrt`, under the original names, is in
+`QOU/Transcendental/MassTheory/GroundStateOrderingRefutationReal.lean`. -/
+noncomputable def zCt (t : ℝ) : ℝ := t / (t ^ 2 + 1)
 
-theorem zC_nonneg {q : ℝ} (hq : 0 < q) : 0 ≤ zC q := by
-  unfold zC
-  exact div_nonneg (Real.sqrt_nonneg q) (by linarith)
+theorem zCt_nonneg {t : ℝ} (ht : 0 < t) : 0 ≤ zCt t := by
+  unfold zCt; positivity
 
-/-- `z_C < q` for `q > 1`: convention C also lies below `λ₊ = q`. -/
-theorem zC_lt_self {q : ℝ} (hq : 1 < q) : zC q < q := by
-  have hq0 : (0:ℝ) < q := lt_trans zero_lt_one hq
-  have hs : Real.sqrt q ≤ q := by
-    have h2 : q ≤ q ^ 2 := by nlinarith
-    have := Real.sqrt_le_sqrt h2
-    rwa [Real.sqrt_sq (le_of_lt hq0)] at this
-  unfold zC
-  rw [div_lt_iff₀ (by linarith)]
-  nlinarith [hs]
+/-- `z_C < q` for `q = t² > 1`: convention C also lies below `λ₊ = q`. -/
+theorem zCt_lt_sq {t : ℝ} (ht : 1 < t) : zCt t < t ^ 2 := by
+  unfold zCt
+  rw [div_lt_iff₀ (by positivity)]
+  nlinarith
 
-theorem cPlus_zC_pos {q : ℝ} (hq : 1 < q) : 0 < cPlus q (zC q) := by
-  have hq0 : (0:ℝ) < q := lt_trans zero_lt_one hq
-  refine cPlus_pos hq0 (lt_of_lt_of_le ?_ (zC_nonneg hq0))
+theorem cPlus_zCt_pos {t : ℝ} (ht : 1 < t) : 0 < cPlus (t ^ 2) (zCt t) := by
+  have h0 : (0:ℝ) < t := lt_trans zero_lt_one ht
+  have hq0 : (0:ℝ) < t ^ 2 := by positivity
+  refine cPlus_pos hq0 (lt_of_lt_of_le ?_ (zCt_nonneg h0))
   simpa using inv_pos.mpr hq0
 
-theorem cMinus_zC_pos {q : ℝ} (hq : 1 < q) : 0 < cMinus q (zC q) :=
-  cMinus_pos (lt_trans zero_lt_one hq) (zC_lt_self hq)
+theorem cMinus_zCt_pos {t : ℝ} (ht : 1 < t) : 0 < cMinus (t ^ 2) (zCt t) :=
+  cMinus_pos (by positivity) (zCt_lt_sq ht)
 
 /-- `Ã = t³ + t² + 1` — the cleared numerator of `c₊` under convention C at
 `q = t²`. -/
@@ -446,43 +444,39 @@ theorem K_pos {t : ℝ} (ht : 1 < t) : 0 < K t := by
 
 /-- Under convention C at `q = t²`, the sorted position-`1` readout takes
 the committed polynomial form `(Ã - B̃t¹²)/(K t⁶)`. -/
-theorem sortedV1_zC_eq {t : ℝ} (ht : 1 < t) :
-    sortedV1 (t ^ 2) (zC (t ^ 2)) = (Anum t - Bnum t * t ^ 12) / (K t * t ^ 6) := by
+theorem sortedV1_zCt_eq {t : ℝ} (ht : 1 < t) :
+    sortedV1 (t ^ 2) (zCt t) = (Anum t - Bnum t * t ^ 12) / (K t * t ^ 6) := by
   have h0 : (0:ℝ) < t := lt_trans zero_lt_one ht
   have hq0 : (0:ℝ) < t ^ 2 := by positivity
-  have hsq : Real.sqrt (t ^ 2) = t := Real.sqrt_sq (le_of_lt h0)
   have hne : (t:ℝ) ≠ 0 := ne_of_gt h0
   have h : (t:ℝ) ^ 2 + (t ^ 2)⁻¹ ≠ 0 := ne_of_gt (denom_pos hq0)
   have hK : K t ≠ 0 := ne_of_gt (K_pos ht)
-  unfold sortedV1 vhat cPlus cMinus zC Anum Bnum K
-  rw [hsq]
+  have ht1 : (t:ℝ) ^ 2 + 1 ≠ 0 := by positivity
+  unfold sortedV1 vhat cPlus cMinus zCt Anum Bnum K
   field_simp
   ring
 
 /-- The sign hypothesis `hU` under convention C, in the committed
 polynomial form. -/
-theorem sortedV1_zC_nonneg {t : ℝ} (ht : 1 < t)
+theorem sortedV1_zCt_nonneg {t : ℝ} (ht : 1 < t)
     (hU : 0 ≤ Anum t - Bnum t * t ^ 12) :
-    0 ≤ sortedV1 (t ^ 2) (zC (t ^ 2)) := by
-  have h0 : (0:ℝ) < t := lt_trans zero_lt_one ht
-  rw [sortedV1_zC_eq ht]
+    0 ≤ sortedV1 (t ^ 2) (zCt t) := by
+  rw [sortedV1_zCt_eq ht]
   exact div_nonneg hU (le_of_lt (mul_pos (K_pos ht) (by positivity)))
 
-/-- **The refutation under convention C**, in the shape this file
-originally carried: `q = t²` with `t > 1`, and `hU` the polynomial sign
-condition `0 ≤ Ã - B̃t¹²` (satisfied at the substrate anchor
-`t = √q₀`, where it evaluates to `≈ 0.604`; the exact window is
-`q < 1.13699…`). -/
-theorem prescribed_not_minimiser_A5_conventionC {t : ℝ} (ht : 1 < t)
+/-- **The refutation under convention C**, in the square-root variable:
+`q = t²` with `t > 1`, and `hU` the polynomial sign condition
+`0 ≤ Ã - B̃t¹²` (satisfied at the substrate anchor `t = √q₀`; the exact window
+is `q < 1.13699…`). -/
+theorem prescribed_not_minimiser_A5_conventionC_t {t : ℝ} (ht : 1 < t)
     (hU : 0 ≤ Anum t - Bnum t * t ^ 12)
-    (h23 : sharedV2 (t ^ 2) (zC (t ^ 2)) * sharedV3 (t ^ 2) (zC (t ^ 2)) ≠ 0) :
-    ¬ (|prescribedV0 (t ^ 2) (zC (t ^ 2)) * prescribedV1 (t ^ 2) (zC (t ^ 2))
-          * (sharedV2 (t ^ 2) (zC (t ^ 2)) * sharedV3 (t ^ 2) (zC (t ^ 2)))|
-        ≤ |sortedV0 (t ^ 2) (zC (t ^ 2)) * sortedV1 (t ^ 2) (zC (t ^ 2))
-          * (sharedV2 (t ^ 2) (zC (t ^ 2)) * sharedV3 (t ^ 2) (zC (t ^ 2)))|) := by
-  have h0 : (0:ℝ) < t := lt_trans zero_lt_one ht
+    (h23 : sharedV2 (t ^ 2) (zCt t) * sharedV3 (t ^ 2) (zCt t) ≠ 0) :
+    ¬ (|prescribedV0 (t ^ 2) (zCt t) * prescribedV1 (t ^ 2) (zCt t)
+          * (sharedV2 (t ^ 2) (zCt t) * sharedV3 (t ^ 2) (zCt t))|
+        ≤ |sortedV0 (t ^ 2) (zCt t) * sortedV1 (t ^ 2) (zCt t)
+          * (sharedV2 (t ^ 2) (zCt t) * sharedV3 (t ^ 2) (zCt t))|) := by
   have hq : (1:ℝ) < t ^ 2 := by nlinarith
-  exact prescribed_not_minimiser_A5 hq (cPlus_zC_pos hq) (cMinus_zC_pos hq)
-    (sortedV1_zC_nonneg ht hU) h23
+  exact prescribed_not_minimiser_A5 hq (cPlus_zCt_pos ht) (cMinus_zCt_pos ht)
+    (sortedV1_zCt_nonneg ht hU) h23
 
 end QOU.MassTheory.GroundStateOrderingRefutation

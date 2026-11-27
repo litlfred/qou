@@ -56,7 +56,7 @@ the two `RingQuot` carriers, which is what transports a ring-theoretic property.
 `isSemisimpleRing_iwahoriHecke` — the payoff this equivalence exists to carry — is **not**
 in this file.  It needs `Real.sqrt` (to name the `q` whose square is the Iwahori `Q`), and
 §7c forbids mixing a generic-ring development with its archimedean specialisation in one
-file.  It lives in `QOU/SchurWeyl/HeckeCarrierSemisimpleReal.lean`, which imports this one
+file.  It lives in `QOU/Transcendental/BraidKnotOctonion/HeckeCarrierSemisimpleReal.lean`, which imports this one
 and consumes `skeinIwahoriEquiv`.
 
 ## What this is not

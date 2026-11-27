@@ -209,3 +209,57 @@ This is the two-strand case of Murakami's `V′(1) = −3·lk·V(1)`. The genera
 **Reading.** On the ring mass of `def:mass-identity`, the muon's and the proton's own words carry no volume. Their ring masses are Jones-type Laurent polynomials. The muon's is symmetric under `q ↔ q⁻¹` (4₁ is amphichiral), so its `U` is odd in `log q`. The volume `v = Vol(4₁)` of the corpus muon `m_μ/m_e = v/ℏ_q²` (`QOU.Core.MassInRing`) is not this ring mass. It is a constant adjoined to the ring, `F = ℚ(q, v)`. On that volume chart, with `v` constant, `U(v/ℏ²) = 2/(q − 1) = 18.185` at q₀. That gives 20.670 for the muon in absolute terms (adding `U_e`) and `U_p = 20.997` for `2(v/ℏ²·F_Bor − 6)`. These are readings only. Nothing is compared with data and nothing is adopted.
 
 **Second factor: status.** The electron's `3` is derived: it is `3·lk(Hopf)`. At `q = 1` only a linked word has a nonzero ring reading, so among the corpus particles the electron alone is non-zero at `q = 1`. The muon and the proton enter the mass formula through the volume chart, not through their trace. The open question is how the two charts are related, which is the volume conjecture (Kashaev invariant at roots of unity, not generic `q`). No new numerical factor is claimed.
+
+## 11. `U(1) = 3·lk` for every three-strand word (owner card: "Prove 3·lk for all 3-strand links")
+
+**Lean.** `QOU/Observations/RingMassLinkingThreeStrand.lean` (algebraic, over ℤ) and `QOU/Transcendental/MassTheory/RingMassLinkingThreeStrand.lean` (the derivative). No `sorry`, no new axiom, no `native_decide`.
+
+**Method.** At `q = 1` the convention-D Hecke matrices are the reduced standard representation of `S₃` (`rho`, `rho_mul`, `trace_rho`: `tr ρ(g) = fix(g) − 1`). Each letter `σᵢ^{±1}` has derivative `±I` there (`hasDerivAt_genR`). So the first-order part of `ρ_q(w)` is `Q w = Σⱼ eⱼ·P(w with letter j deleted)` (`Q_eq_sum`). Deleting a letter multiplies the strand permutation by a transposition (`perm_eraseIdx`). That deletion is the oriented smoothing of the crossing, and it merges two components exactly when the two strands lie in different components (`merge_iff_not_sameOrbit`).
+
+| statement | Lean |
+|---|---|
+| the jet is the real derivative: `∂_q ρ_q(w)|₁ = Q w` | `hasDerivAt_rhoR` |
+| `m(1) = 2^c`, `c` = number of components | `m0_eq`, `massR_one` |
+| `m′(1) = m1 w` | `hasDerivAt_massR` |
+| per crossing over `S₃`: `2(−4 − 4 tr ρ(g) + 2 tr ρ(tg)) = −3·2^c` if the smoothing merges, else `0` | `crossing_term` |
+| **`2·m′(1) = −3·m(1)·linkSum`** | `two_mul_m1` |
+| **`U(1) = −m′(1)/m(1) = (3/2)·linkSum = 3·lk`** for every word | `uAtOne_eq` |
+| electron `σ₁σ₂σ₁`: linkSum 2 (lk 1), 2 components; muon `(σ₁σ₂⁻¹)²`: 0, knot; proton `(σ₁σ₂⁻¹)³`: 0, 3 components; `σ₁⁴σ₂`: 4 | `electron_linkSum`, `muon_linkSum`, `proton_linkSum`, `t24_linkSum` |
+
+Here `linkSum = Σ` of the signs of the crossings between different components `= 2·lk`. This is Murakami's `V′(1) = −3·lk·V(1)` for every closed 3-braid, with the ring mass playing the role of `V`. The value at `q = 1` is exactly what §10 found numerically: 3 for the electron, 0 for the muon and the proton.
+
+## 12. Mass map for the ruled lepton words (owner cards: "Coloured ring mass of Δⁿ (all levels)", "Volume-order rule (4₁, then 5₂)")
+
+**Kashaev route.** The ruled words `e = Δ`, `μ = Δ³`, `τ = Δ⁵` (tau thread, #9800) are periodic 3-braids. Their closures are torus-type links with `Vol = 0`, and so are their cables, satellites, closure-plus-axis and mutants. `prop:vol-through-tau` assigns a braid only the volume of its own closure, so the volume chart has no carrier in these words.
+
+**Coloured ring mass, every level.** `QOU/Observations/ColouredLadderTwist.lean`; probe `computations/probes/coloured_ladder/coloured_delta_ladder_probe.py` (26/26). At level `N = 2j+1`, the framing is `f = q^{2j(j+1)}` (fixed by stabilisation), and `Δ²` acts on the spin-`J` part by `q^{2J(J+1)−6j(j+1)}`. These are checked numerically for `N ≤ 6` and carried in Lean as a hypothesis, `TwistDecomposition`. Then `m_N(Δ^{2k+1}) = Σ_J a_J r_J^k` with `r_J = q^{e_J}`. Lean proves `e_J ≤ −6(N−1)` (`twistExp_le`, equality at the top component), the envelope `|m_k| ≤ C·q^{−6(N−1)k}` (`coloured_ladder_decays`), and `q^{−6(N−1)} < 1` for `q > 1`. So no level makes the ladder heavier.
+
+| N | μ/e | τ/e | mirror μ/e | mirror τ/e |
+|---|---|---|---|---|
+| 2 | 0.535 | 0.286 | 1.87 | 3.50 |
+| 3 | 0.263 | 0.0742 | 9.44 | 43.5 |
+| 4 | 0.139 | 0.0212 | 138 | 2.5·10⁴ |
+| 5 | 0.0768 | 0.00627 | 5.3·10³ | 3.4·10⁸ |
+| 6 | 0.0422 | 0.00184 | 4.2·10⁵ | 2.1·10¹¹ |
+
+(at q₀; `m(Δ)` at N = 2 is `[4]/q³`). The mirror ladder `Δ^{−(2k+1)}` is the heavier direction. No level is chosen.
+
+**Volume-order rule.** `QOU/Observations/VolumeOrderRule.lean`; probe `volume_order_rule_probe.py` (4/4). Generation `g` gets the `g`-th smallest hyperbolic knot volume: `4₁`, then `5₂`. Both are cited theorems: Cao–Meyerhoff, and Gabai–Haraway–Meyerhoff–Thurston–Yarmola. On the volume chart this gives `m_τ/m_μ = Vol(5₂)/Vol(4₁) = 1.39324`, which does not depend on q (`ratio_q_free`). Comparison only: the measured ratio is 16.817, so the rule is a factor 0.0828 low (`m_τ/m_e = 288.08` against 3477.23). The rule is **refuted** as the tau carrier on the volume chart. It is not adjusted.
+
+**Reading (convolution operators).** A knot `K` gives a central element of `U_q(𝔤)`. It acts on `A = O_q(SU(2))` by convolution, as `J_N(K)/[N]` on the colour-`N` Peter–Weyl block. At real `q` that spectrum is Laurent polynomials. The volume appears only as the growth `exp(N·Vol/2π)` at `q = e^{2πi/N}` (Kashaev). That is the only place `Vol(4₁)` enters the muon's `Vol/ℏ²`.
+
+## 13. Knot convolution operators (owner: "The knot convolution operators in 𝔤 give the volume of knots implicated"; card "Convolution operator in Lean")
+
+**Lean.** `QOU/Observations/KnotConvolutionOperator.lean` and `QOU/Transcendental/MassTheory/KnotConvolutionVolume.lean`. No `sorry`, no new axiom. Probe `computations/probes/coloured_ladder/knot_convolution_operator_probe.py` (5/5).
+
+| statement | Lean |
+|---|---|
+| a knot acts on `A = ⊕_N End(V_N)^*` by one scalar per Peter–Weyl block, centrally | `ConvOp.act`, `act_mul_left`, `act_mul_right` |
+| composition multiplies scalars; connected sum is composition | `act_comp`, `ofJones_connSum` |
+| Habiro's 4₁ sum `J'_N(4₁;Q) = Σ_m Π_j (Q^N + Q^{−N} − Q^{j+1} − Q^{−j−1})` | `habiroJ41` |
+| at `Q^N = 1` it equals the corpus Kashaev sum `Σ habiro41` | `habiroJ41_at_root` |
+| `J'_2(4₁) = Q² − Q + 1 − Q⁻¹ + Q⁻²`; with `Q = q²`, the 4₁ ring mass is `[2]·J'_2` (probe) | `habiroJ41_two` |
+| volume = growth `(2π/N) log c_N(ζ_N)`, additive under composition | `growth_comp` |
+| bounded `log` means zero volume | `growth_of_bounded` |
+
+**Reading.** The ring (trace) chart is the N = 2 block of the operator at real `q`. The volume chart is the growth of the same operator's scalars at `q = ζ_N`, as N → ∞. These are two readings of one operator. The probe shows the 4₁ growth approaching `Vol(4₁)` (2.0277 at N = 800, after removing the one-loop `(3/2) log N`). For the ruled words `Δ^{2k+1}` (torus-type closures), the Kashaev scalars grow only polynomially, so `growth_of_bounded`-type behaviour gives volume 0 (cited, not proved here). The muon's `Vol(4₁)/ℏ²` is therefore a reading of the 4₁ operator, not of the muon's word. Which operator a lepton carries is still open.

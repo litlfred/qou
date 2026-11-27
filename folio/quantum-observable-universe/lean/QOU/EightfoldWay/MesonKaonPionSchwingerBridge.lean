@@ -14,6 +14,7 @@ import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
 import QOU.EightfoldWay.MesonThreeByFourCharacterization
 import QOU.MassTheory.BringSchwingerNormalizationDerivation
+import QOU.Transcendental.MassTheory.BringSchwingerNormalizationDerivationReal
 import QOU.MassTheory.SchwingerMeasureShape
 
 /-!

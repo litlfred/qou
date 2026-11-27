@@ -501,22 +501,35 @@ theorem qRepulsionKernel_unbounded_near_pole (q : ℝ) (hq : q > 1) (B : ℝ) :
   have hMB : B < M := by
     have : B ≤ max B 1 := le_max_left _ _
     simp only [hM]; linarith
-  set d : ℝ := quantumTwo q / M with hd
-  have hdpos : 0 < d := div_pos hc hMpos
-  refine ⟨Real.sqrt (hbarQ q ^ 2 + d), ?_, ?_⟩
-  · have h1 : hbarQ q ^ 2 < hbarQ q ^ 2 + d := by linarith
-    have h2 : Real.sqrt (hbarQ q ^ 2) < Real.sqrt (hbarQ q ^ 2 + d) :=
-      Real.sqrt_lt_sqrt (sq_nonneg _) h1
-    rwa [Real.sqrt_sq hh.le] at h2
-  · have hsq : Real.sqrt (hbarQ q ^ 2 + d) ^ 2 = hbarQ q ^ 2 + d :=
-      Real.sq_sqrt (by positivity)
-    have hden : Real.sqrt (hbarQ q ^ 2 + d) ^ 2 - hbarQ q ^ 2 = d := by
-      rw [hsq]; ring
-    have hcancel : quantumTwo q / d = M := by
-      rw [hd]; field_simp
-    unfold qRepulsionKernel
-    rw [hden, hcancel]
-    exact hMB
+  -- Approach the pole from outside along `r = ℏ_q + e`, with `e` small
+  -- enough that `r² − ℏ_q² = e(2ℏ_q + e) ≤ [2]_q / M`.  No square root is
+  -- needed (transcendental-boundary strangler, bean `qou-dk7p`).
+  set e : ℝ := min 1 (quantumTwo q / (M * (2 * hbarQ q + 1))) with he
+  have hwpos : 0 < M * (2 * hbarQ q + 1) := by positivity
+  have hepos : 0 < e := lt_min one_pos (div_pos hc hwpos)
+  have he1 : e ≤ 1 := min_le_left _ _
+  have he2 : e ≤ quantumTwo q / (M * (2 * hbarQ q + 1)) := min_le_right _ _
+  refine ⟨hbarQ q + e, by linarith, ?_⟩
+  have hden_eq : (hbarQ q + e) ^ 2 - hbarQ q ^ 2 = e * (2 * hbarQ q + e) := by ring
+  have hden_pos : 0 < (hbarQ q + e) ^ 2 - hbarQ q ^ 2 := by
+    rw [hden_eq]; positivity
+  have hden_le : (hbarQ q + e) ^ 2 - hbarQ q ^ 2 ≤ quantumTwo q / M := by
+    rw [hden_eq]
+    have h1 : e * (2 * hbarQ q + e) ≤ e * (2 * hbarQ q + 1) := by nlinarith
+    have h2 : e * (2 * hbarQ q + 1)
+        ≤ quantumTwo q / (M * (2 * hbarQ q + 1)) * (2 * hbarQ q + 1) :=
+      mul_le_mul_of_nonneg_right he2 (by positivity)
+    have h3 : quantumTwo q / (M * (2 * hbarQ q + 1)) * (2 * hbarQ q + 1)
+        = quantumTwo q / M := by
+      field_simp
+    linarith
+  have hge : quantumTwo q / (quantumTwo q / M)
+      ≤ quantumTwo q / ((hbarQ q + e) ^ 2 - hbarQ q ^ 2) :=
+    div_le_div_of_nonneg_left hc.le hden_pos hden_le
+  have hcancel : quantumTwo q / (quantumTwo q / M) = M := by
+    field_simp
+  unfold qRepulsionKernel
+  linarith
 
 /-- **Corollary: Obstruction to self-intersection.**
 

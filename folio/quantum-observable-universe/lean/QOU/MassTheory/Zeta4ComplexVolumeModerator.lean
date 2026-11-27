@@ -32,7 +32,7 @@ Sorry-free.
 
 -- Ref: [leitner2026] docs/audits/2026-06-28-wlambda-identity-i-rescope-no-hlf.md §"Finding 3"
 -/
-import Mathlib.Analysis.SpecialFunctions.Complex.Circle
+import Mathlib.Data.Complex.Basic
 import Mathlib.Tactic
 
 namespace QOU.Mass.Zeta4ComplexVolumeModerator
@@ -53,35 +53,46 @@ theorem barEven_zeta4 : Complex.I + Complex.I⁻¹ = 0 := by
 theorem barOdd_zeta4 : Complex.I - Complex.I⁻¹ = 2 * Complex.I := by
   rw [Complex.inv_I]; ring
 
-/-! ## The smooth moderator — the `ζ₄` rotation `η ↦ η + iπ/2` exchanges cosh ↔ i·sinh -/
+/-! ## The moderator on `G_m` — `ζ₄` acts by multiplication
 
-/-- **`Re 𝔙 ↦ i·Im-channel`.** The `ζ₄ = i` rotation `η ↦ η + iπ/2` sends `cosh η` to `i·sinh η`:
-the bar-even (binding) channel rotates into `i ×` the bar-odd (Q_β) channel — the
-`Re 𝔙 ↔ i·Im 𝔙` coupling of the complex volume `𝔙 = Vol + i·CS`. -/
-theorem cosh_zeta4_rotation (z : ℂ) :
-    Complex.cosh (z + (↑(Real.pi / 2) : ℂ) * Complex.I) = Complex.I * Complex.sinh z := by
-  rw [Complex.cosh_add]
-  have h0 : Complex.cosh ((↑(Real.pi / 2) : ℂ) * Complex.I) = 0 := by
-    rw [Complex.cosh_mul_I, ← Complex.ofReal_cos, Real.cos_pi_div_two, Complex.ofReal_zero]
-  have h1 : Complex.sinh ((↑(Real.pi / 2) : ℂ) * Complex.I) = Complex.I := by
-    rw [Complex.sinh_mul_I, ← Complex.ofReal_sin, Real.sin_pi_div_two, Complex.ofReal_one,
-      one_mul]
-  rw [h0, h1]; ring
+Following the owner ruling of 2026-11-27 (roots of unity), the rotation
+`η ↦ η + iπ/2` is written on the multiplicative coordinate `x = e^η ∈ G_m`,
+where it is multiplication by the root of unity `ζ` with `ζ² = −1`, defined
+algebraically.  `cosh` and `sinh` are the bar-even and bar-odd parts
+`(x ± x⁻¹)/2`.  The identification `ζ = e^{iπ/2}` is the non-analytic `exp`
+label; the `Complex.cosh` forms are in
+`QOU.Transcendental.MassTheory.Zeta4ComplexVolumeModeratorReal`. -/
 
-/-- **`Im 𝔙 ↦ i·Re-channel`.** The companion: the same rotation sends `sinh η` to `i·cosh η`. -/
-theorem sinh_zeta4_rotation (z : ℂ) :
-    Complex.sinh (z + (↑(Real.pi / 2) : ℂ) * Complex.I) = Complex.I * Complex.cosh z := by
-  rw [Complex.sinh_add]
-  have h0 : Complex.cosh ((↑(Real.pi / 2) : ℂ) * Complex.I) = 0 := by
-    rw [Complex.cosh_mul_I, ← Complex.ofReal_cos, Real.cos_pi_div_two, Complex.ofReal_zero]
-  have h1 : Complex.sinh ((↑(Real.pi / 2) : ℂ) * Complex.I) = Complex.I := by
-    rw [Complex.sinh_mul_I, ← Complex.ofReal_sin, Real.sin_pi_div_two, Complex.ofReal_one,
-      one_mul]
-  rw [h0, h1]; ring
+section GmModerator
 
-/-- Subtracting the rotated hyperbolic sine term from the shifted hyperbolic cosine cancels to zero (`qou-f8rr`). -/
-theorem cosh_zeta4_rotation_sub_eq_zero (z : ℂ) :
-    Complex.cosh (z + (↑(Real.pi / 2) : ℂ) * Complex.I) - Complex.I * Complex.sinh z = 0 := by
-  rw [cosh_zeta4_rotation z, sub_self]
+variable {K : Type*} [Field K]
+
+/-- Bar-even part of `x ∈ G_m`: `(x + x⁻¹)/2`, the cosh channel. -/
+def barEvenPart (x : K) : K := (x + x⁻¹) / 2
+
+/-- Bar-odd part of `x ∈ G_m`: `(x − x⁻¹)/2`, the sinh channel. -/
+def barOddPart (x : K) : K := (x - x⁻¹) / 2
+
+/-- **`Re 𝔙 ↦ i·Im-channel`, on `G_m`.**  Multiplying by `ζ` with `ζ² = −1`
+sends the bar-even part to `ζ ×` the bar-odd part. -/
+theorem barEvenPart_zeta4_mul {ζ x : K} (hζ : ζ ^ 2 = -1) :
+    barEvenPart (ζ * x) = ζ * barOddPart x := by
+  have hinv : ζ⁻¹ = -ζ :=
+    inv_eq_of_mul_eq_one_right (by linear_combination -hζ)
+  unfold barEvenPart barOddPart
+  rw [mul_inv, hinv]
+  ring
+
+/-- **`Im 𝔙 ↦ i·Re-channel`, on `G_m`.**  The same multiplication sends the
+bar-odd part to `ζ ×` the bar-even part. -/
+theorem barOddPart_zeta4_mul {ζ x : K} (hζ : ζ ^ 2 = -1) :
+    barOddPart (ζ * x) = ζ * barEvenPart x := by
+  have hinv : ζ⁻¹ = -ζ :=
+    inv_eq_of_mul_eq_one_right (by linear_combination -hζ)
+  unfold barEvenPart barOddPart
+  rw [mul_inv, hinv]
+  ring
+
+end GmModerator
 
 end QOU.Mass.Zeta4ComplexVolumeModerator
