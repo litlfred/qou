@@ -530,4 +530,224 @@ theorem GL_expPoly {y : F2} (hy : IsPrimitive y) (hy1 : y ∈ FF 1) (n : ℕ) :
 
 end ExpGroupLike
 
+/-! ## Group-likeness is invariant under the K-shift (piece 2) -/
+
+section Subst
+
+variable {K : Type*} [Field K] [Algebra ℚ K]
+
+/-- Two `K`-algebra maps out of `K ⊗ ℚ⟨X, Y⟩` congruent modulo `FF2K m` on `X` and `Y` are
+congruent modulo `FF2K m` everywhere. -/
+theorem sub_mem_FF2K_of_gen {m : ℕ} (f g : K ⊗[ℚ] F2 →ₐ[K] K ⊗[ℚ] (F2 ⊗[ℚ] F2))
+    (hX : f (X1 K) - g (X1 K) ∈ FF2K K m) (hY : f (Y1 K) - g (Y1 K) ∈ FF2K K m)
+    (x : K ⊗[ℚ] F2) : f x - g x ∈ FF2K K m := by
+  have h1 : ∀ p : F2, f ((1 : K) ⊗ₜ p) - g ((1 : K) ⊗ₜ p) ∈ FF2K K m := by
+    intro p
+    induction p using FreeAlgebra.induction with
+    | grade0 r =>
+      have e : ((1 : K) ⊗ₜ algebraMap ℚ F2 r : K ⊗[ℚ] F2) = r • (1 : K ⊗[ℚ] F2) := by
+        rw [Algebra.algebraMap_eq_smul_one, tmul_smul, Algebra.TensorProduct.one_def]
+      have h1 : f 1 = g 1 := by
+        rw [← (algebraMap K (K ⊗[ℚ] F2)).map_one, f.commutes, g.commutes]
+      rw [e, map_rat_smul, map_rat_smul, h1, sub_self]
+      exact zero_mem _
+    | grade1 i => fin_cases i; exacts [hX, hY]
+    | mul p q hp hq =>
+      have e : ((1 : K) ⊗ₜ (p * q) : K ⊗[ℚ] F2) = ((1 : K) ⊗ₜ p) * ((1 : K) ⊗ₜ q) := by
+        rw [Algebra.TensorProduct.tmul_mul_tmul, mul_one]
+      have e2 : f ((1 : K) ⊗ₜ (p * q)) - g ((1 : K) ⊗ₜ (p * q)) =
+          f ((1 : K) ⊗ₜ p) * (f ((1 : K) ⊗ₜ q) - g ((1 : K) ⊗ₜ q)) +
+            (f ((1 : K) ⊗ₜ p) - g ((1 : K) ⊗ₜ p)) * g ((1 : K) ⊗ₜ q) := by
+        rw [e, map_mul, map_mul, mul_sub, sub_mul]; abel
+      rw [e2]; exact add_mem (FF2K_mul_left _ hq) (FF2K_mul_right _ hp)
+    | add p q hp hq =>
+      rw [tmul_add, map_add, map_add, add_sub_add_comm]; exact add_mem hp hq
+  induction x using TensorProduct.induction_on with
+  | zero => simp
+  | tmul k p =>
+    have e : (k ⊗ₜ p : K ⊗[ℚ] F2) = algebraMap K (K ⊗[ℚ] F2) k * ((1 : K) ⊗ₜ p) := by
+      rw [Algebra.TensorProduct.algebraMap_apply, Algebra.TensorProduct.tmul_mul_tmul,
+        mul_one, one_mul]; simp
+    rw [e, map_mul, map_mul, AlgHom.commutes, AlgHom.commutes, ← mul_sub]
+    exact FF2K_mul_left _ (h1 p)
+  | add x y hx hy => rw [map_add, map_add, add_sub_add_comm]; exact add_mem hx hy
+
+variable (K) in
+/-- Substitution `X ↦ a`, `Y ↦ b` with coefficients in `K`. -/
+noncomputable def substK (a b : F2) : K ⊗[ℚ] F2 →ₐ[K] K ⊗[ℚ] F2 :=
+  Algebra.TensorProduct.map (AlgHom.id K K) (eval a b)
+
+variable (K) in
+/-- The same substitution in both tensor factors of `K ⊗ (ℚ⟨X, Y⟩ ⊗ ℚ⟨X, Y⟩)`. -/
+noncomputable def substK2 (a b : F2) :
+    K ⊗[ℚ] (F2 ⊗[ℚ] F2) →ₐ[K] K ⊗[ℚ] (F2 ⊗[ℚ] F2) :=
+  Algebra.TensorProduct.map (AlgHom.id K K) (Algebra.TensorProduct.map (eval a b) (eval a b))
+
+@[simp] theorem substK_tmul (a b : F2) (k : K) (p : F2) :
+    substK K a b (k ⊗ₜ p) = k ⊗ₜ eval a b p := rfl
+
+@[simp] theorem substK2_tmul (a b : F2) (k : K) (p q : F2) :
+    substK2 K a b (k ⊗ₜ (p ⊗ₜ q)) = k ⊗ₜ (eval a b p ⊗ₜ eval a b q) := rfl
+
+theorem substK2_mem {a b : F2} (ha : a ∈ FF 1) (hb : b ∈ FF 1) {m : ℕ}
+    {x : K ⊗[ℚ] (F2 ⊗[ℚ] F2)} (hx : x ∈ FF2K K m) : substK2 K a b x ∈ FF2K K m := by
+  unfold FF2K at hx
+  induction hx using Submodule.span_induction with
+  | mem y hy =>
+    obtain ⟨k, u, v, huv, rfl⟩ := hy
+    rw [substK2_tmul]
+    exact tmul_mem_FF2K k (FF2_anti huv (tmul_mem_FF2
+      (evalF_mem_FF ha hb (word_mem_FF u le_rfl)) (evalF_mem_FF ha hb (word_mem_FF v le_rfl))))
+  | zero => rw [map_zero]; exact zero_mem _
+  | add x y _ _ hx hy => rw [map_add]; exact add_mem hx hy
+  | smul r x _ hx => rw [map_rat_smul]; exact Submodule.smul_mem _ r hx
+
+theorem i1K_substK (a b : F2) (x : K ⊗[ℚ] F2) :
+    i1K K (substK K a b x) = substK2 K a b (i1K K x) := by
+  induction x using TensorProduct.induction_on with
+  | zero => simp
+  | tmul k p => simp [map_one]
+  | add x y hx hy => rw [map_add, map_add, map_add, map_add, hx, hy]
+
+theorem i2K_substK (a b : F2) (x : K ⊗[ℚ] F2) :
+    i2K K (substK K a b x) = substK2 K a b (i2K K x) := by
+  induction x using TensorProduct.induction_on with
+  | zero => simp
+  | tmul k p => simp [map_one]
+  | add x y hx hy => rw [map_add, map_add, map_add, map_add, hx, hy]
+
+theorem copK_substK {N : ℕ} {a b : F2}
+    (hpa : cop a - (a ⊗ₜ 1 + 1 ⊗ₜ a) ∈ FF2 N) (hpb : cop b - (b ⊗ₜ 1 + 1 ⊗ₜ b) ∈ FF2 N)
+    (x : K ⊗[ℚ] F2) : copK K (substK K a b x) - substK2 K a b (copK K x) ∈ FF2K K N := by
+  have key : ∀ (i : Fin 2) (c : F2), eval a b (FreeAlgebra.ι ℚ i) = c →
+      cop c - (c ⊗ₜ 1 + 1 ⊗ₜ c) ∈ FF2 N →
+      ((copK K).comp (substK K a b)) ((1 : K) ⊗ₜ FreeAlgebra.ι ℚ i) -
+        ((substK2 K a b).comp (copK K)) ((1 : K) ⊗ₜ FreeAlgebra.ι ℚ i) ∈ FF2K K N := by
+    intro i c hc hcp
+    have hg := cop_g i
+    simp only [Friedrichs.g] at hg
+    simp only [AlgHom.comp_apply, substK_tmul, copK_tmul, hc, hg, tmul_add, map_add,
+      substK2_tmul, map_one]
+    rw [← tmul_add, ← tmul_sub]
+    exact tmul_mem_FF2K _ hcp
+  exact sub_mem_FF2K_of_gen ((copK K).comp (substK K a b)) ((substK2 K a b).comp (copK K))
+    (key 0 a (by simp [eval]) hpa) (key 1 b (by simp [eval]) hpb) x
+
+/-- **Substituting almost-primitive elements of `FF 1` preserves group-likeness.** -/
+theorem GLK.subst {N : ℕ} {a b : F2} (ha : a ∈ FF 1) (hb : b ∈ FF 1)
+    (hpa : cop a - (a ⊗ₜ 1 + 1 ⊗ₜ a) ∈ FF2 N) (hpb : cop b - (b ⊗ₜ 1 + 1 ⊗ₜ b) ∈ FF2 N)
+    {Ψ : K ⊗[ℚ] F2} (hΨ : GLK K N Ψ) : GLK K N (substK K a b Ψ) := by
+  unfold GLK at *
+  have e : copK K (substK K a b Ψ) - i1K K (substK K a b Ψ) * i2K K (substK K a b Ψ) =
+      (copK K (substK K a b Ψ) - substK2 K a b (copK K Ψ)) +
+        substK2 K a b (copK K Ψ - i1K K Ψ * i2K K Ψ) := by
+    rw [i1K_substK, i2K_substK, map_sub, map_mul]; abel
+  rw [e]
+  exact add_mem (copK_substK hpa hpb Ψ) (substK2_mem ha hb hΨ)
+
+/-- Rational group-likeness of `g` gives group-likeness of `1 ⊗ g` over `K`. -/
+theorem GLK_of_GL {m : ℕ} {y : F2} (h : GL m y) : GLK K m ((1 : K) ⊗ₜ y) := by
+  unfold GLK GL at *
+  simp only [copK_tmul, i1K_tmul, i2K_tmul, Algebra.TensorProduct.tmul_mul_tmul, mul_one,
+    one_mul]
+  rw [← tmul_sub]; exact tmul_mem_FF2K _ h
+
+theorem ι_almost_primitive (N : ℕ) (i : Fin 2) :
+    cop (FreeAlgebra.ι ℚ i) - (FreeAlgebra.ι ℚ i ⊗ₜ 1 + 1 ⊗ₜ FreeAlgebra.ι ℚ i) ∈ FF2 N := by
+  have hg := cop_g i
+  simp only [Friedrichs.g] at hg
+  rw [hg, sub_self]; exact zero_mem _
+
+/-- Group-likeness is preserved by swapping the two variables. -/
+theorem GL.swap {N : ℕ} {g : F2} (h : GL N g) : GL N (swapPoly g) := by
+  have h1 : GLK ℚ N ((1 : ℚ) ⊗ₜ g) := GLK_of_GL h
+  have h2 := GLK.subst (ι_mem_FF_one 1) (ι_mem_FF_one 0) (ι_almost_primitive N 1)
+    (ι_almost_primitive N 0) h1
+  rw [substK_tmul] at h2
+  exact GL_of_GLK h2
+
+/-- **(5.12) for `GRT₁`, in `ℚ⟨X, Y⟩`:** `g · g(Y, X) ≡ 1` modulo `FF (M + 1)`. -/
+theorem mul_swap_sub_one_mem {M : ℕ} {g : F2} (h : GRT1U4 (M + 1) g) :
+    g * swapPoly g - 1 ∈ FF (M + 1) := by
+  have e := congrArg (toFree M)
+    (h.inv512 (t (M + 1) 0) (t (M + 1) 3) (t_mem_Fil_one 0) (t_mem_Fil_one 3))
+  rw [map_mul, map_one, map_eval, map_eval] at e
+  simp only [toFree, lift_t, pairVals, Matrix.cons_val_zero, Matrix.cons_val] at e
+  rw [← map_eval, ← map_eval, eval_ι_ι, ← eval_swapPoly, eval_ι_ι, ← map_mul,
+    ← map_one (lmQ (FF (M + 1)) (ff_mul_left M)), ← sub_eq_zero, ← map_sub] at e
+  exact mem_of_lmQ_eq_zero _ e
+
+/-- The substituted variable `g · X · g(Y, X)` of Drinfeld's action is primitive modulo
+`FF2 N`, for `g` group-like with `g · g(Y, X) ≡ 1`. -/
+theorem conj_almost_primitive {N : ℕ} {g : F2} (hg : GL N g) (hinv : g * swapPoly g - 1 ∈ FF N) :
+    cop (g * FreeAlgebra.ι ℚ 0 * swapPoly g) -
+      ((g * FreeAlgebra.ι ℚ 0 * swapPoly g) ⊗ₜ 1 + 1 ⊗ₜ (g * FreeAlgebra.ι ℚ 0 * swapPoly g))
+      ∈ FF2 N := by
+  set g' := swapPoly g with hg'
+  have hg2 : GL N g' := hg.swap
+  unfold GL at hg hg2
+  set A := g * FreeAlgebra.ι ℚ 0 * g' with hA
+  set X2 : F2 ⊗[ℚ] F2 := FreeAlgebra.ι ℚ 0 ⊗ₜ 1 + 1 ⊗ₜ FreeAlgebra.ι ℚ 0
+  have hX := cop_g 0
+  simp only [Friedrichs.g] at hX
+  have e : cop A - (A ⊗ₜ 1 + 1 ⊗ₜ A) =
+      (cop g - g ⊗ₜ g) * X2 * cop g' + (g ⊗ₜ g) * X2 * (cop g' - g' ⊗ₜ g') +
+        (A ⊗ₜ (g * g' - 1) + (g * g' - 1) ⊗ₜ A) := by
+    rw [hA, map_mul, map_mul, hX]
+    simp only [X2, sub_mul, mul_sub, add_mul, mul_add, Algebra.TensorProduct.tmul_mul_tmul,
+      mul_one, tmul_sub, sub_tmul, mul_assoc]
+    abel
+  rw [e]
+  have hA1 : A ∈ FF 1 := mul_mem_FF' (show 1 + 0 = 1 from rfl)
+    (mul_mem_FF' (show 0 + 1 = 1 from rfl) (mem_FF_zero g) (ι_mem_FF_one 0)) (mem_FF_zero g')
+  refine add_mem (add_mem ?_ ?_) (add_mem ?_ ?_)
+  · exact mul_mem_FF2' (add_zero N) (mul_mem_FF2' (add_zero N) hg (mem_FF2_zero _))
+      (mem_FF2_zero _)
+  · exact mul_mem_FF2' (zero_add N) (mem_FF2_zero _) hg2
+  · exact FF2_anti (by omega) (tmul_mem_FF2 hA1 hinv)
+  · exact FF2_anti (by omega) (tmul_mem_FF2 hinv hA1)
+
+/-- **Drinfeld's rational action preserves group-likeness over `K`.** -/
+theorem GLK.compK {M : ℕ} {Ψ : K ⊗[ℚ] F2} {g : F2} (hΨ : GLK K (M + 1) Ψ)
+    (hg : GRT1U4 (M + 1) g) (hgl : GL (M + 1) g) : GLK K (M + 1) (compK Ψ g) := by
+  have hA1 : g * FreeAlgebra.ι ℚ 0 * swapPoly g ∈ FF 1 :=
+    mul_mem_FF' (show 1 + 0 = 1 from rfl)
+      (mul_mem_FF' (show 0 + 1 = 1 from rfl) (mem_FF_zero g) (ι_mem_FF_one 0)) (mem_FF_zero _)
+  have h1 := GLK.subst hA1 (ι_mem_FF_one 1)
+    (conj_almost_primitive hgl (mul_swap_sub_one_mem hg)) (ι_almost_primitive _ 1) hΨ
+  exact GLK.mul h1 (GLK_of_GL hgl)
+
+theorem algHom_eq_evK (f : K ⊗[ℚ] F2 →ₐ[K] K ⊗[ℚ] (F2 ⊗[ℚ] F2)) (y : K ⊗[ℚ] F2) :
+    f y = evK (f (X1 K)) (f (Y1 K)) y := by
+  rw [← map_evK, evK_X1_Y1]
+
+/-- **The `K`-exponential of a primitive element in `GRT₁` preserves group-likeness:**
+`GLK N Ψ → GLK N (Ψ ∘ exp(c H))` for every `c ∈ K`. Proved at rational `c` through Drinfeld's
+rational action and `GL_expPoly`, then extended to `K` by the polynomial in `c`. -/
+theorem GLK.compKK_GK {M n : ℕ} {Ψ : K ⊗[ℚ] F2} {H : F2} (hΨ : GLK K (M + 1) Ψ)
+    (hH : H ∈ FF 1) (hprim : IsPrimitive H) (hMn : M + 1 ≤ n)
+    (hgrt : ∀ x : ℚ, GRT1U4 (M + 1) (expPoly (x • H) n)) (c : K) :
+    GLK K (M + 1) (compKK Ψ (GK H n c)) := by
+  have hrat : ∀ x : ℚ, GLK K (M + 1) (compKK Ψ (GK H n (algebraMap ℚ K x))) := by
+    intro x
+    have e : compKK Ψ (GK H n (algebraMap ℚ K x)) = RationalAssociator.compK Ψ (expPoly (x • H) n) := by
+      rw [← evK_X1_Y1 (compKK Ψ (GK H n (algebraMap ℚ K x))), evK_compKK_rat, evK_X1_Y1]
+    rw [e]
+    have hgl : GL (M + 1) (expPoly (x • H) n) :=
+      FF2_anti hMn (GL_expPoly (hprim.smul x) (Submodule.smul_mem _ x hH) n)
+    exact GLK.compK hΨ (hgrt x) hgl
+  set P := fT Ψ H n (copK K (X1 K)) (copK K (Y1 K)) -
+    fT Ψ H n (i1K K (X1 K)) (i1K K (Y1 K)) * fT Ψ H n (i2K K (X1 K)) (i2K K (Y1 K)) with hP
+  have hev : ∀ c : K, evT c P = copK K (compKK Ψ (GK H n c)) -
+      i1K K (compKK Ψ (GK H n c)) * i2K K (compKK Ψ (GK H n c)) := by
+    intro c
+    rw [hP, map_sub, map_mul, evT_fT, evT_fT, evT_fT, ← algHom_eq_evK, ← algHom_eq_evK,
+      ← algHom_eq_evK]
+  have := mem_of_forall_rat (FF2K K (M + 1)) (fun k _ hs => FF2K_mul_left _ hs) P
+    (fun x => by rw [hev]; exact hrat x) c
+  rw [hev] at this
+  exact this
+
+end Subst
+
 end QOU.BraidsAndKnots.RationalAssociator
