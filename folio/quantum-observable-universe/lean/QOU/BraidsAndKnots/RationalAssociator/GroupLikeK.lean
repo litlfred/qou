@@ -14,6 +14,12 @@ re-established one degree up.
 * `FF2 m`: the span of `u ⊗ v` with `u, v` words of total length `≥ m`, in `ℚ⟨X, Y⟩ ⊗ ℚ⟨X, Y⟩`.
 * `exists_primitive_layer`: if `p ∈ FF d` and `Δ p − p ⊗ 1 − 1 ⊗ p ∈ FF2 (d + 1)`, the degree-`d`
   part of `p` is primitive. This uses `Δ ∘ scF r = (scF r ⊗ scF r) ∘ Δ`.
+* `GLK`, `primLayer_of_GLK`: group-likeness modulo `FF2K (d + 1)` gives `hprim`.
+* `GL_expPoly`: the truncated exponential of a primitive `y ∈ FF 1` is group-like modulo `FF2 n`.
+* `GLK.compKK_GK`: the shift `Ψ ↦ Ψ ∘ exp(c H)`, `c ∈ K`, `H` primitive with
+  `exp(x H) ∈ GRT₁(U4 N)`, preserves `GLK N`.
+* `inductionStep_of_groupLike`: the induction step with `hprim` replaced by `GLK N` of the input;
+  the output `K`-associator is again `GLK N`.
 -/
 
 namespace QOU.BraidsAndKnots.RationalAssociator
@@ -749,5 +755,34 @@ theorem GLK.compKK_GK {M n : ℕ} {Ψ : K ⊗[ℚ] F2} {H : F2} (hΨ : GLK K (M 
   exact this
 
 end Subst
+
+/-! ## Piece 4: the induction step with group-likeness carried along -/
+
+section GroupLikeInduction
+
+variable {K : Type*} [Field K] [Algebra ℚ K] {N d : ℕ}
+
+/-- **The induction step of gap B1, with `hprim` derived from group-likeness.** If the
+`K`-associator `1 ⊗ Φ + z` is group-like modulo `FF2K N` (`GLK`), then there is a rational
+`x ∈ FF d` with `Φ + x` an associator in `U4 (d + 1)` and group-like modulo `FF2 (d + 1)`, and a
+`K`-associator `Ψ` in `U4 N`, group-like modulo `FF2K N`, agreeing with `1 ⊗ (Φ + x)` modulo
+`FFK (d + 1)`. The output `Ψ` satisfies the input hypotheses `hK`, `hGL` again, so the step can be
+iterated. -/
+theorem inductionStep_of_groupLike (hd : 1 ≤ d) (hdN : d + 1 ≤ N) {n : ℕ} (hn : 2 ≤ n)
+    (hNn : N ≤ n) {E Φ : F2} (hE : FreeAlgebra.algebraMapInv E = 1)
+    (hΦ : FreeAlgebra.algebraMapInv Φ = 1) (z : K ⊗[ℚ] FF d)
+    (hK : AssocK K N E ((1 : K) ⊗ₜ Φ + LinearMap.lTensor K (FF d).subtype z))
+    (hGL : GLK K N ((1 : K) ⊗ₜ Φ + LinearMap.lTensor K (FF d).subtype z)) :
+    ∃ x ∈ FF d, AssocU4 (d + 1) E (Φ + x) ∧ GL (d + 1) (Φ + x) ∧
+      ∃ Ψ, AssocK K N E Ψ ∧ GLK K N Ψ ∧ Ψ - (1 : K) ⊗ₜ (Φ + x) ∈ FFK K (d + 1) := by
+  obtain ⟨M, rfl⟩ : ∃ M, N = M + 1 := ⟨N - 1, by omega⟩
+  obtain ⟨x, hx, ha, Ψ, hΨ, ⟨-, hΨgl⟩, hm⟩ := inductionStep_core hd hdN hn hNn hE hΦ z hK
+    (primLayer_of_GLK hd hΦ z (GLK.anti hdN hGL))
+    (fun Ψ => AssocK K (M + 1) E Ψ ∧ GLK K (M + 1) Ψ) ⟨hK, hGL⟩
+    (fun H c Ψ hH hP hg hΨ => ⟨assocK_shiftK hΨ.1 hg c,
+      GLK.compKK_GK hΨ.2 (FF_anti hd hH) hP hNn hg c⟩)
+  exact ⟨x, hx, ha, GL_of_GLK (GLK.congr (GLK.anti hdN hΨgl) hm), Ψ, hΨ, hΨgl, hm⟩
+
+end GroupLikeInduction
 
 end QOU.BraidsAndKnots.RationalAssociator
