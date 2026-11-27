@@ -10,6 +10,7 @@ import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
 import QOU.MassTheory.BringSchwingerNormalizationDerivation
+import QOU.Transcendental.MassTheory.BringSchwingerNormalizationDerivationReal
 import QOU.MassTheory.EmFermionLoopFourTopology
 
 /-!

@@ -1982,6 +1982,7 @@ import QOU.StandardModel.ElectroweakVevFixedPointDecomposition
 import QOU.StandardModel.ElectroweakVevGaps
 import QOU.StandardModel.NeutrinoUnknotSweedlerMassLift
 import QOU.MassTheory.BringSchwingerNormalizationDerivation
+import QOU.Transcendental.MassTheory.BringSchwingerNormalizationDerivationReal
 import QOU.Nuclear.CoshHolonomyAndGPMTBaseBridge
 import QOU.Nuclear.SelectorPrune
 import QOU.Nuclear.BringLatticeRanks
