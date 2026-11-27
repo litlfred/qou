@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-27T22:17:45Z
-updated_at: 2026-11-27T23:14:36Z
+updated_at: 2026-11-27T23:24:09Z
 parent: qou-h315
 ---
 
@@ -14,3 +14,6 @@ Claim: rho_n is <=0 then >=0 in s (one sign change). Checked exactly for n=3..40
 OPEN: no proof. Suggested attack: Kerov transition measures (rho_n is a three-step transition average). Audit: docs/audits/2026-11-27-covariance-kernel-M1-jucys-murphy-form.md. Do not close while the conjecture is open.
 
 2026-11-27: (SC) re-checked exactly for n = 41..49 with plancherel_growth_side + single_crossing. Single crossing holds for all of them. The threshold is s = 11 for n = 31..46 and moves to s = 12 at n = 47..49. Each n takes 1-6 min and grows about 1.25x per step, so n = 50 was not reached within the 1 h run budget. Still open: no proof.
+
+
+2026-11-27 (PR #9828): one-cell (newest-box) form proved by Kerov cotransition identity: rho_n(s)=E[1{s}(c^2-(n-1))]/((n-1)(n-2)), M1=(n/3)Cov(s,c^2). Lower half of SC PROVED: rho_n(s)<=0 for (s-2)^2<=n-1. Two sufficient conditions FAIL: monotone regression E[c^2|s] (from n=24), per-nu covariance (nu=(3,3,2)). SC checked n<=58 (t=13 at n=57,58). Upper half (window 2+sqrt(n-1)<s, and s>=t_n) still OPEN; bean stays open. Audit docs/audits/2026-11-27-covariance-kernel-M1-newest-box-form.md.
