@@ -165,6 +165,80 @@ def partition_side(n):
     return {"P": P, "CovD": CovD, "M1": M1}
 
 
+# ---------------------------------------------------------------- Plancherel-growth side
+#
+# Young's orthogonal form: on v_T the adjacent transposition s_k has diagonal entry 1/r_k(T),
+# r_k = c_T(k+1) − c_T(k). Conjugating (1 2 n) to (n−2 n−1 n) = s_{n−2}s_{n−1} by S_{n−1}
+# (which commutes with J_n) gives, for Z = Σ_k |J_k| + Σ_{k≠l} δ(J_k=J_l),
+#     [(1 2 n)] Z = E_PG[ (i_n + j_n − 2) / (r_{n−1} r_{n−2}) ],
+# over Plancherel growth (P(T) = f^λ/n!), where (i_n, j_n) is the 1-indexed position of box n.
+# The eigenvalue |c_n| + 2#{l<n : c_l = c_n} equals i_n + j_n − 2. The −2 drops out because
+# ρ_n(s) := E_PG[1{i_n + j_n = s}/(r_{n−1}r_{n−2})] has total mass [(1 2 n)]e = 0. Hence
+#     M₁(n) = (n(n−1)(n−2)/3) · Σ_s s ρ_n(s),
+# and M₁(n) > 0 follows from one sign change of ρ_n
+# (YoungDiagramKernelSingleCrossing.firstMoment_pos_of_single_crossing).
+
+
+def _dim(l):
+    n = sum(l)
+    if n == 0:
+        return 1
+    lc = _conj(l)
+    h = 1
+    for i, r in enumerate(l):
+        for j in range(r):
+            h *= (r - j - 1) + (lc[j] - i - 1) + 1
+    return factorial(n) // h
+
+
+def _addable(l):
+    l = list(l)
+    out = []
+    for i in range(len(l) + 1):
+        r = l[i] if i < len(l) else 0
+        if i == 0 or l[i - 1] > r:
+            nl = l[:]
+            if i < len(l):
+                nl[i] += 1
+            else:
+                nl.append(1)
+            out.append((tuple(nl), i, r))
+    return out
+
+
+def plancherel_growth_side(n):
+    """Returns M₁(n), P(n) from the last-three-box formula, and ρ_n as {s: mass}."""
+    rho, M, P = {}, F(0), F(0)
+    for mu in _parts(n - 3):
+        fm = _dim(mu)
+        for l1, i1, j1 in _addable(mu):
+            for l2, i2, j2 in _addable(l1):
+                for l3, i3, j3 in _addable(l2):
+                    c1, c2, c3 = j1 - i1, j2 - i2, j3 - i3
+                    w = F(fm * _dim(l3), (c3 - c2) * (c2 - c1))
+                    s = i3 + j3 + 2
+                    rho[s] = rho.get(s, 0) + w
+                    M += w * s
+                    P += w * abs(c3)
+    nf = factorial(n)
+    rho = {s: v / nf for s, v in rho.items()}
+    scale = F(n * (n - 1) * (n - 2), 3) / nf
+    return scale * M, scale * P, rho
+
+
+def single_crossing(rho, n):
+    """(ok, t): ρ ≤ 0 on s < t and ≥ 0 on s ≥ t, total mass 0, ρ ≠ 0."""
+    svals = range(2, n + 2)
+    if sum(rho.get(s, 0) for s in svals) != 0 or all(rho.get(s, 0) == 0 for s in svals):
+        return False, None
+    t = min((s for s in svals if rho.get(s, 0) > 0), default=None)
+    if t is None:
+        return False, None
+    ok = all(rho.get(s, 0) <= 0 for s in svals if s < t) and \
+        all(rho.get(s, 0) >= 0 for s in svals if s >= t)
+    return ok, t
+
+
 def main():
     nmax = int(sys.argv[1]) if len(sys.argv) > 1 else 7
     rows, ok = [], True
@@ -178,6 +252,21 @@ def main():
                      "absJn_coeff_12n": str(g["absJn_12n"]), "match": good})
         print(f"{n} | {p['P']} | {p['CovD']} | {p['M1']} | {g['absJn_12n']}   {good}")
     print(f"\nRESULT: Jucys–Murphy form of P, N, M₁ verified n=3..{nmax}: {ok}")
+    npg = int(sys.argv[2]) if len(sys.argv) > 2 else 40
+    pg_rows, pg_ok, cross_ok = [], True, True
+    print(f"\nPlancherel-growth form; single crossing of ρ_n in s = i+j, n=3..{npg}")
+    for n in range(3, npg + 1):
+        M, Pn, rho = plancherel_growth_side(n)
+        if n <= nmax:
+            p = partition_side(n)
+            pg_ok &= (M == p["M1"] and Pn == p["P"])
+        sc, t = single_crossing(rho, n)
+        cross_ok &= sc
+        pg_rows.append({"n": n, "M1": str(M), "single_crossing": sc, "threshold_s": t})
+        print(f"{n} | M₁ = {M} | single crossing: {sc} at s = {t}", flush=True)
+    print(f"RESULT: PG formula == partition side n=3..{nmax}: {pg_ok}; "
+          f"single crossing n=3..{npg}: {cross_ok}")
+    ok = ok and pg_ok and cross_ok
     try:
         sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parents[1]
                                / "substrate"))
@@ -187,12 +276,18 @@ def main():
             "M₁ = Cov(Σh, ω₃) and its Fulman split P = Cov(Σ|c|, ω₃), N = −Cov(Σd_u², ω₃) as "
             "(n(n−1)(n−2)/3)·[3-cycle] of central Jucys–Murphy functional calculi: "
             "P ∝ [(12n)]|J_n| (one element), −N ∝ [(123)]Σ_{k≠l}δ(J_k=J_l). Group-algebra side "
-            "(transpositions only) equals partition side (hook formula) exactly. Reformulation "
-            "only: does NOT prove M₁>0 or any bound. No fit; nothing wired.")
+            "(transpositions only) equals partition side (hook formula) exactly. Via Young's "
+            "orthogonal form, M₁ = (n(n−1)(n−2)/3)·Σ_s s ρ_n(s), ρ_n a mass-zero signed measure "
+            "on s = i+j of the n-th Plancherel-growth box; ρ_n has a single sign change for every "
+            "checked n, which gives M₁>0 there via the Lean lemma "
+            "firstMoment_pos_of_single_crossing. Single crossing for all n is NOT proved. "
+            "No fit; nothing wired.")
         w.add_data("rows", rows)
+        w.add_data("plancherel_growth_rows", pg_rows)
         w.add_assertion("m1_jucys_murphy_form", computed=str(int(ok)), expected="1",
                         tolerance=0,
-                        source=f"group-algebra vs hook-formula, exact Fraction, n=3..{nmax}")
+                        source=f"group-algebra vs hook-formula n=3..{nmax}; Plancherel-growth "
+                               f"formula == hook side n=3..{nmax}; single crossing n=3..{npg}")
         print(f"Witness: {w.save()}")
     except ImportError as e:
         print(f"(witness skipped — witness_base unavailable: {e})")
