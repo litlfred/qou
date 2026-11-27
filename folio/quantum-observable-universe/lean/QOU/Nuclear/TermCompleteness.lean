@@ -3,6 +3,7 @@ import Mathlib.Tactic.DeriveFintype
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import HeckeTemperleyLieb.TemperleyLiebTower
 import QOU.Nuclear.BlockChargeSectorTrace
+import BraidKnotOctonion.QuantumSl2Fundamental
 
 /-!
 # When is a list of mass, binding or decay terms complete?
@@ -33,9 +34,10 @@ The index set has three coordinates.
    The `T_z` dependence inside a multiplet is therefore a polynomial of degree `≤ min(b, 2T)`.
 3. **Channel**, with its maximal rank:
    * `braid` — the convention-D trace of a braid word. By quantum Schur–Weyl duality the Hecke
-     algebra acts as the commutant of `U_q(sl₂)`, so these operators are isospin scalars:
-     rank `0`. At `n = 3` the rank-1 part is proved to vanish for **every** word
-     (`braid_channel_has_no_np_split`, from `BlockChargeSectorTrace.sectorTrace_eq`).
+     algebra acts inside the commutant of `U_q(sl₂)`, so these operators are isospin scalars:
+     rank `0`, for every `n` and every word (`isEndo_list_prod`, `isEndo_rCheckAt_inv`, from
+     `QuantumSl2Fundamental.isEndo_rCheckAt`). At `n = 3` the consequence that one word
+     cannot split `n` from `p` is `braid_channel_has_no_np_split`.
    * `flavour` — a one-body isospin-breaking operator (the `u`/`d` strand label): rank `≤ 1`.
    * `em` — the two-body charge–charge operator `Σ_{i<j} Q_i Q_j`: rank `≤ 2` (isoscalar,
      isovector, isotensor).
@@ -49,11 +51,12 @@ and in particular its own energy scale. This is the structural content behind PR
 
 Proved, over any ring or field, with no measured value: the index set, its cardinalities at the
 levels used in the audit, the residual identity, the detection criterion, the positivity of every
-two-row braid weight, and the vanishing of the braid channel's rank-1 (`n`−`p`) part at `n = 3`.
+two-row braid weight, the braid channel's rank `0` at **every** `n` (`isEndo_list_prod`,
+`isEndo_rCheckAt_inv`, on top of `QuantumSl2Fundamental.isEndo_rCheckAt`), and its `n = 3`
+consequence that one word cannot split `n` from `p` (`braid_channel_has_no_np_split`).
 
-Not proved here: Wigner–Eckart for `U_q(sl₂)` tensor operators (the rank caps of `flavour` and
-`em` are encoded in `Channel.maxRank`, not derived), and the general-`n` statement that braid
-traces are rank `0` (proved at `n = 3` only). The per-formula audit is
+Not proved here: Wigner–Eckart for `U_q(sl₂)` tensor operators. The rank caps of `flavour` and
+`em` are encoded in `Channel.maxRank`, not derived. The per-formula audit is
 `docs/audits/2026-11-27-term-completeness-ledger.md`.
 -/
 
@@ -192,6 +195,59 @@ theorem braid_channel_has_no_np_split {K : Type*} [Field K] (q : K) (hq : q ≠ 
     (QOU.QBeta.BlockChargeSectorTrace.wordMat q true w).trace
       - (QOU.QBeta.BlockChargeSectorTrace.wordMat q false w).trace = 0 :=
   sub_eq_zero.mpr (QOU.QBeta.BlockChargeSectorTrace.sectorTrace_eq q hq w)
+
+/-! ## The braid channel is rank 0 at every `n`
+
+A rank-0 tensor operator is, by definition, one that commutes with the `U_q(sl₂)` action
+(`Rep.IsEndo`). `QuantumSl2Fundamental.isEndo_rCheckAt` proves that every adjacent Jimbo `Ř`
+on `V^{⊗n}` is one, for all `n`. The endomorphisms of a representation form a subalgebra, so
+every braid word, with inverses `Ř⁻¹ = Ř − (q − q⁻¹)`, and every linear combination of words
+is rank 0. This is the general-`n` form of `braid_channel_has_no_np_split`. -/
+
+section BraidRankZero
+
+open QOU.Mass.QuantumSl2
+
+variable {𝕜 : Type*} [Field 𝕜] {q : 𝕜} {ι : Type*} [Fintype ι] [DecidableEq ι]
+
+theorem isEndo_one (ρ : Rep q ι) : ρ.IsEndo 1 :=
+  ⟨Commute.one_left _, Commute.one_left _, Commute.one_left _, Commute.one_left _⟩
+
+theorem isEndo_mul {ρ : Rep q ι} {S T : Matrix ι ι 𝕜} (hS : ρ.IsEndo S) (hT : ρ.IsEndo T) :
+    ρ.IsEndo (S * T) :=
+  ⟨hS.1.mul_left hT.1, hS.2.1.mul_left hT.2.1, hS.2.2.1.mul_left hT.2.2.1,
+    hS.2.2.2.mul_left hT.2.2.2⟩
+
+theorem isEndo_add {ρ : Rep q ι} {S T : Matrix ι ι 𝕜} (hS : ρ.IsEndo S) (hT : ρ.IsEndo T) :
+    ρ.IsEndo (S + T) :=
+  ⟨hS.1.add_left hT.1, hS.2.1.add_left hT.2.1, hS.2.2.1.add_left hT.2.2.1,
+    hS.2.2.2.add_left hT.2.2.2⟩
+
+theorem isEndo_smul {ρ : Rep q ι} (c : 𝕜) {T : Matrix ι ι 𝕜} (hT : ρ.IsEndo T) :
+    ρ.IsEndo (c • T) :=
+  ⟨hT.1.smul_left c, hT.2.1.smul_left c, hT.2.2.1.smul_left c, hT.2.2.2.smul_left c⟩
+
+theorem isEndo_sub {ρ : Rep q ι} {S T : Matrix ι ι 𝕜} (hS : ρ.IsEndo S) (hT : ρ.IsEndo T) :
+    ρ.IsEndo (S - T) := by
+  rw [sub_eq_add_neg, ← neg_one_smul 𝕜 T]
+  exact isEndo_add hS (isEndo_smul _ hT)
+
+/-- **Every braid word is an isospin scalar.** A product of operators that each commute with
+`U_q(sl₂)` commutes with it. -/
+theorem isEndo_list_prod {ρ : Rep q ι} (l : List (Matrix ι ι 𝕜))
+    (hl : ∀ T ∈ l, ρ.IsEndo T) : ρ.IsEndo l.prod := by
+  induction l with
+  | nil => exact isEndo_one ρ
+  | cons T l ih =>
+    rw [List.prod_cons]
+    exact isEndo_mul (hl T (List.mem_cons_self ..)) (ih fun S hS => hl S (List.mem_cons_of_mem _ hS))
+
+/-- The inverse braid generator `Ř⁻¹ = Ř − (q − q⁻¹)·1` at any adjacent pair is rank 0 too. -/
+theorem isEndo_rCheckAt_inv (hq : q ≠ 0) (hq2 : q - q⁻¹ ≠ 0) (m k : ℕ) :
+    (powRep q hq hq2 (m + 2 + k)).IsEndo (rCheckAt q m k - (q - q⁻¹) • 1) :=
+  isEndo_sub (isEndo_rCheckAt q hq hq2 m k) (isEndo_smul _ (isEndo_one _))
+
+end BraidRankZero
 
 /-! ## The index set at the levels the audit uses -/
 

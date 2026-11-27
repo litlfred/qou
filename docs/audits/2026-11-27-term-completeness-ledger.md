@@ -38,9 +38,11 @@ covered. At `n = 3A` none of the production formulas evaluates a level-`3A` char
 
 **Ranks (Wigner–Eckart).** The Hecke algebra acts as the commutant of `U_q(sl₂)` on
 `V^{⊗n}` (Schur–Weyl). So every braid-word operator is an isospin scalar (rank `0`) and has the
-same trace on every `T_z` sector of a multiplet. This is proved at `n = 3` for every word
-(`braid_channel_has_no_np_split`, from `BlockChargeSectorTrace.sectorTrace_eq`; for two blocks,
-`BlockSectorRestriction.readout_pp_eq_nn`). Any dependence on `T_z`, which covers `n − p`,
+same trace on every `T_z` sector of a multiplet. Rank 0 is proved at every `n` and for every
+word and its inverses (`isEndo_list_prod` and `isEndo_rCheckAt_inv`, built on
+`QuantumSl2Fundamental.isEndo_rCheckAt`). The explicit `n = 3` consequence is
+`braid_channel_has_no_np_split` (from `BlockChargeSectorTrace.sectorTrace_eq`); for two blocks
+it is `BlockSectorRestriction.readout_pp_eq_nn`. Any dependence on `T_z`, which covers `n − p`,
 `Q_β` along an isobar and Coulomb, has to come from a non-scalar operator. A `b`-body operator
 carries ranks `r ≤ b`, and a multiplet of isospin `T` supports only ranks `r ≤ 2T`. This gives
 three channels:
