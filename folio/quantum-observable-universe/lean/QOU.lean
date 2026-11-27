@@ -667,7 +667,7 @@ import QOU.StandardModel.Gen1QuarkRays
 import QOU.StandardModel.QuaternionicElectroweak
 import QOU.MassTheory.ArchimedeanUniverse
 import QOU.LiftingDescent.PAdicQuantumGroups
-import QOU.FluidDynamics.GaugeFieldFluidDynamics
+import QOU.Transcendental.FluidDynamics.GaugeFieldFluidDynamics
 import QOU.InformationTheory.InformationTheoryRoot
 -- Sorry-free P-vs-NP information-theoretic bricks.  The counting/decision
 -- carrier `QouPNeqNp` is itself sorry-free and axiom-free: its open content
@@ -936,7 +936,7 @@ import QOU.FluidDynamics.q_bkm_criterion
 import QOU.FluidDynamics.TwoVortexChannelAlgebra
 import QOU.FluidDynamics.LambCalculus
 import QOU.FluidDynamics.LambCalculusArchimedean
-import QOU.FluidDynamics.DSSObstructions
+import QOU.Transcendental.FluidDynamics.DSSObstructions
 import QOU.FluidDynamics.IntegerSpin
 import QOU.Nuclear.BarOddLadderShape
 -- Anchor-followups cluster (beans qou-o3ta / qou-4g4a): the interface scalar,

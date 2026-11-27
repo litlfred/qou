@@ -33,7 +33,7 @@ export default proposition({
       body:
         "**§7c base-ring note (archimedean specialisation).** " +
         "The Lean module " +
-        "`lean/QOU/FluidDynamics/q_turbulence_spectrum.lean` uses " +
+        "`lean/QOU/Transcendental/FluidDynamics/q_turbulence_spectrum.lean` uses " +
         "`Real.log`, `Real.rpow`. These are real-analytic constructs with " +
         "no generic-`CommRing` counterpart, so the `ℝ` specialisation is " +
         "forced by the statement itself rather than chosen. The block " +

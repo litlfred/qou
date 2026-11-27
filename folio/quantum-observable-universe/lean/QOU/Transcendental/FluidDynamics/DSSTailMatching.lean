@@ -1,6 +1,6 @@
 import Mathlib.Analysis.InnerProductSpace.Basic
 import Mathlib.Analysis.SpecialFunctions.Gamma.Beta
-import QOU.FluidDynamics.BeltramiSteadyEuler
+import QOU.Transcendental.FluidDynamics.BeltramiSteadyEuler
 
 /-!
 # QOU.FluidDynamics.DSSTailMatching — algebraic core of the non-Galerkin

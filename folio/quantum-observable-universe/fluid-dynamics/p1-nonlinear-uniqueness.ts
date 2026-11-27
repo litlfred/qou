@@ -24,7 +24,7 @@ export default proposition({
       body:
         "**§7c base-ring note (archimedean specialisation).** " +
         "The Lean module " +
-        "`lean/QOU/FluidDynamics/p1_nonlinear_uniqueness.lean` uses " +
+        "`lean/QOU/Transcendental/FluidDynamics/p1_nonlinear_uniqueness.lean` uses " +
         "`Real.exp`. These are real-analytic constructs with no " +
         "generic-`CommRing` counterpart, so the `ℝ` specialisation is " +
         "forced by the statement itself rather than chosen. The block " +
