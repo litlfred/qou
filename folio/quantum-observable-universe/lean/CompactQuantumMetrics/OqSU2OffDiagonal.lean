@@ -35,14 +35,31 @@ Call `φ` a `χ_u`-twisted derivation when
   So `X₊ = X_{(0,1,0)}` sends `(α, β, γ, δ) ↦ (0, α, 0, γ)` and `X₋ = X_{(0,0,1)}` sends
   `(α, β, γ, δ) ↦ (β, 0, δ, 0)`: right-acting raising and lowering operators.
 
+## Match with Woronowicz's 3D calculus
+
+Woronowicz (1987), §2 (library `woronowicz1987-twisted-su2`, PR #9573) writes the
+calculus through a 4×4 upper-triangular representation with diagonal
+`(ε, f₀, f₁, f₂)` and first row `(ε, χ₀, χ₁, χ₂)`, and `χ_i(ab) = χ_i(a) f_i(b) + ε(a) χ_i(b)`
+(2.7). With `ν = q` and `(α, β, γ, δ) = (α, −ν γ*, γ, α*)`, his (2.2) and (2.4) give
+`f₀ = f₂ = χ_{q⁻¹}` and `f₁ = χ_{q⁻²}`. So:
+
+* his off-diagonal functionals have exactly the twist forced here, and by
+  `twistedDeriv_eq_triFun` they are corner functionals. Reading his Table 2
+  (`dα = α ω₁ + ν² γ* ω₂`, `dα* = γ ω₀ + …`) gives `χ₀ = triFun 0 1 0` and
+  `χ₂ = triFun 0 0 (−q)`: `woronowiczChi0`, `woronowiczChi2`. Their fields are `X₊` and
+  `−q · X₋`.
+* his Cartan functional is `χ₁ = (ε − χ_{q⁻²})/(1 − q⁻²)`, twist `χ_{q⁻²}`, which is
+  `OqSU2Coproduct.cartanField` at `u = q⁻²`. It is not in the `triFun` family: the three
+  directions of the 3D calculus do not share one twist. The bimodule character matrix is
+  `diag(χ_{q⁻¹}, χ_{q⁻²}, χ_{q⁻¹})`. The `X₀ = X_{(1,0,0)}` of this file is a Cartan field
+  at twist `χ_{q⁻¹}` that lives in the 2×2 representation, not Woronowicz's `χ₁`.
+
+The values `χ₀(β) = 1`, `χ₂(γ) = −q` are read from the OCR of Table 2 (two independent
+lines agree on `χ₂`); they are recorded as definitions, not derived from his text in Lean.
+
 ## Not established
 
-* Whether this basis is Woronowicz's normalization of the 3D calculus. Woronowicz (1987)
-  is not in `library/`. In particular his Cartan direction may use a twist other than
-  `χ_{q⁻¹}`; here `X₀ = X_{(1,0,0)}` is the Cartan field with the same twist as `X₊, X₋`.
-  `OqSU2Coproduct.cartanField` covers Cartan fields at any `u`.
-* Twists by non-diagonal characters, and twists by a matrix of characters (non-split
-  bimodule structure).
+* Twists by non-diagonal characters, and non-split bimodule structure.
 * Anything about Part A of `conj:regularity-breakdown` (bean `qou-pa7n`).
 
 No empirical value enters any proof.
@@ -280,5 +297,26 @@ theorem fieldMinus_generators :
     fieldMinus q (α q) = β q ∧ fieldMinus q (β q) = 0 ∧
       fieldMinus q (γ q) = δ q ∧ fieldMinus q (δ q) = 0 := by
   simp [fieldMinus, field_alpha, field_beta, field_gamma, field_delta]
+
+/-! ## 4. Woronowicz's off-diagonal functionals -/
+
+/-- Woronowicz's `χ₀` (1987, §2) in these coordinates. -/
+noncomputable abbrev woronowiczChi0 : OqSU2 R q →ₗ[R] R := triFun q 0 1 0
+/-- Woronowicz's `χ₂` (1987, §2) in these coordinates. -/
+noncomputable abbrev woronowiczChi2 : OqSU2 R q →ₗ[R] R := triFun q 0 0 (-(q : R))
+
+/-- `χ₀` and `χ₂` share the twist `χ_{q⁻¹}`, his `f₀ = f₂`. -/
+theorem woronowiczChi02_twisted (x y : OqSU2 R q) :
+    woronowiczChi0 q (x * y) =
+        woronowiczChi0 q x * diagCharAlgHom q q⁻¹ y + counit q x * woronowiczChi0 q y ∧
+      woronowiczChi2 q (x * y) =
+        woronowiczChi2 q x * diagCharAlgHom q q⁻¹ y + counit q x * woronowiczChi2 q y :=
+  ⟨triFun_twisted q _ _ _ x y, triFun_twisted q _ _ _ x y⟩
+
+/-- The field of `χ₂` is `−q · X₋`: `(α, β, γ, δ) ↦ (−qβ, 0, −qδ, 0)`. -/
+theorem woronowiczChi2_field :
+    field q 0 0 (-(q : R)) (α q) = (-(q : R)) • β q ∧ field q 0 0 (-(q : R)) (β q) = 0 ∧
+      field q 0 0 (-(q : R)) (γ q) = (-(q : R)) • δ q ∧ field q 0 0 (-(q : R)) (δ q) = 0 := by
+  simp [field_alpha, field_beta, field_gamma, field_delta]
 
 end QOU.AlgebraicSubstrate.OqSU2
