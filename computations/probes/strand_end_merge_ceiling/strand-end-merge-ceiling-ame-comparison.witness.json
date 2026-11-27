@@ -1,0 +1,140 @@
+{
+  "producer": "computations/probes/strand_end_merge_ceiling/compare_ame.py",
+  "scope": "a",
+  "comparisonOnly": true,
+  "per_nucleon_bulk_MeV": {
+    "Ra": "7.53033765148",
+    "Rb": "4.65159967247",
+    "s_nucleon_self_term": "2.878737979",
+    "T3": "4.29277521083"
+  },
+  "named": [
+    {
+      "nuclide": "2H",
+      "A": 2,
+      "B_AME_MeV": "2.2245662",
+      "Ra_MeV": "9.11923129",
+      "Ra_ratio": "4.099",
+      "Rb_MeV": "3.36175533",
+      "Rb_ratio": "1.511",
+      "T3_ratio": "1.286"
+    },
+    {
+      "nuclide": "3H",
+      "A": 3,
+      "B_AME_MeV": "8.4817962",
+      "Ra_MeV": "16.0934102",
+      "Ra_ratio": "1.897",
+      "Rb_MeV": "7.4571963",
+      "Rb_ratio": "0.8792",
+      "T3_ratio": "1.012"
+    },
+    {
+      "nuclide": "3He",
+      "A": 3,
+      "B_AME_MeV": "7.71804132",
+      "Ra_MeV": "16.0934102",
+      "Ra_ratio": "2.085",
+      "Rb_MeV": "7.4571963",
+      "Rb_ratio": "0.9662",
+      "T3_ratio": "1.112"
+    },
+    {
+      "nuclide": "4He",
+      "A": 4,
+      "B_AME_MeV": "28.2956624",
+      "Ra_MeV": "23.3538981",
+      "Ra_ratio": "0.8254",
+      "Rb_MeV": "11.8389461",
+      "Rb_ratio": "0.4184",
+      "T3_ratio": "0.6068"
+    },
+    {
+      "nuclide": "6Li",
+      "A": 6,
+      "B_AME_MeV": "31.9939872",
+      "Ra_MeV": "38.205317",
+      "Ra_ratio": "1.194",
+      "Rb_MeV": "20.9328892",
+      "Rb_ratio": "0.6543",
+      "T3_ratio": "0.805"
+    },
+    {
+      "nuclide": "12C",
+      "A": 12,
+      "B_AME_MeV": "92.1617352",
+      "Ra_MeV": "83.3082559",
+      "Ra_ratio": "0.9039",
+      "Rb_MeV": "48.7634001",
+      "Rb_ratio": "0.5291",
+      "T3_ratio": "0.5589"
+    },
+    {
+      "nuclide": "16O",
+      "A": 16,
+      "B_AME_MeV": "127.619315",
+      "Ra_MeV": "113.427885",
+      "Ra_ratio": "0.8888",
+      "Rb_MeV": "67.3680775",
+      "Rb_ratio": "0.5279",
+      "T3_ratio": "0.5382"
+    },
+    {
+      "nuclide": "40Ca",
+      "A": 40,
+      "B_AME_MeV": "342.052184",
+      "Ra_MeV": "294.155836",
+      "Ra_ratio": "0.86",
+      "Rb_MeV": "179.006316",
+      "Rb_ratio": "0.5233",
+      "T3_ratio": "0.502"
+    },
+    {
+      "nuclide": "56Fe",
+      "A": 56,
+      "B_AME_MeV": "492.259953",
+      "Ra_MeV": "414.641238",
+      "Ra_ratio": "0.8423",
+      "Rb_MeV": "253.431911",
+      "Rb_ratio": "0.5148",
+      "T3_ratio": "0.4884"
+    },
+    {
+      "nuclide": "120Sn",
+      "A": 120,
+      "B_AME_MeV": "1020.53856",
+      "Ra_MeV": "896.582848",
+      "Ra_ratio": "0.8785",
+      "Rb_MeV": "551.13429",
+      "Rb_ratio": "0.54",
+      "T3_ratio": "0.5048"
+    },
+    {
+      "nuclide": "208Pb",
+      "A": 208,
+      "B_AME_MeV": "1636.43022",
+      "Ra_MeV": "1559.25256",
+      "Ra_ratio": "0.9528",
+      "Rb_MeV": "960.475061",
+      "Rb_ratio": "0.5869",
+      "T3_ratio": "0.5456"
+    }
+  ],
+  "stats": {
+    "Ra": {
+      "n": 2484,
+      "mean_ratio_A_ge_16": "0.920464",
+      "sd": "0.05882"
+    },
+    "Rb": {
+      "n": 2484,
+      "mean_ratio_A_ge_16": "0.564965",
+      "sd": "0.03565"
+    },
+    "T3": {
+      "n": 2484,
+      "mean_ratio_A_ge_16": "0.527274",
+      "sd": "0.03461"
+    }
+  }
+}
