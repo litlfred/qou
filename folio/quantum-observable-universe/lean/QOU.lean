@@ -434,6 +434,7 @@ import QOU.BraidsAndKnots.KnotTheory
 import QOU.BraidsAndKnots.Brunnian
 import QOU.BraidsAndKnots.KnotRegistry
 import QOU.MassTheory.MassDerivation
+import QOU.Transcendental.MassTheory.MassDerivationReal
 import QOU.MassTheory.LinkingWeightWedderburn
 -- Also brings QOU.Mass.ChainTraceFactor under the umbrella; nothing had
 -- imported it, so it was invisible to blueprint/doc-gen import walks.
@@ -2037,6 +2038,7 @@ import TwistedFrobeniusHopf.FrobeniusSchurExpectationCancellation
 import QOU.StandardModel.SixStrandClusterChargeGellMannNishijima
 import QOU.Nuclear.BorromeanFlavourPivotalUnification
 import QOU.Nuclear.ThomaeJacksonCoulombAndAlphaTunneling
+import QOU.Transcendental.Nuclear.ThomaeJacksonCoulombAndAlphaTunnelingReal
 import QOU.Observations.DeBroglieBoostedReebPhase
 import QOU.Nuclear.ChargedCurrentChiralitySelection
 import QOU.StandardModel.TorusLinkElectroweakSchurRatio

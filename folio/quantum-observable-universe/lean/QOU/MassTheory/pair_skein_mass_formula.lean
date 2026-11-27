@@ -1,4 +1,7 @@
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Linarith
 
 /-!
 # QOU.HadronicMass.pair_skein_mass_formula
@@ -86,72 +89,53 @@ Bean `qou-z9ws`.
 
 namespace QOU.HadronicMass
 
-open Real
+/-! ### Over a generic ordered field, in the square-root variable
 
-/-- The Markov normaliser `q^{1/2} + q^{-1/2}` of the pair Skein mass.
+Following the convention-C rule of the transcendental-boundary strangler (bean
+`qou-dk7p`): the half-integer powers are carried by a variable `t` with
+`q = t²`, so `q^{1/2} + q^{-1/2} = t + t⁻¹` and no square root is taken.  The
+`ℝ`-valued statements in `q` (with `Real.sqrt`) are re-proved from these in
+`QOU.Transcendental.MassTheory.PairSkeinMassFormulaReal`. -/
 
-**Convention C.**  Its reciprocal is `√q/(q+1) = z_C`, not the canonical
-`z_D = q³/(q²+1)` — see the module docstring.  Named so the convention is
-visible at the use site rather than buried in a division. -/
--- Ref: [leitner2026] quantum-observable-universe/mass-theory/pair-skein-mass-formula.md
-noncomputable def skeinNormaliserC (q : ℝ) : ℝ := Real.sqrt q + 1 / Real.sqrt q
+/-- The Markov normaliser `t + t⁻¹ = q^{1/2} + q^{-1/2}` with `q = t²`.
+Convention C (reciprocal `t/(t²+1) = z_C`). -/
+def skeinNormaliserCt {K : Type*} [Field K] (t : K) : K := t + 1 / t
 
-/-- **The normaliser never vanishes**: for `q > 0` it is at least `2`, with
-equality exactly at `q = 1` (AM–GM on `√q`).
-
-Derived, and load-bearing: Lean's `x / 0 = 0` would otherwise let the pair
-Skein mass formula hold vacuously wherever the normaliser vanished. -/
-theorem two_le_normaliser {q : ℝ} (hq : 0 < q) : 2 ≤ skeinNormaliserC q := by
-  have hs : 0 < Real.sqrt q := Real.sqrt_pos.mpr hq
-  have key : skeinNormaliserC q - 2 = (Real.sqrt q - 1) ^ 2 / Real.sqrt q := by
-    unfold skeinNormaliserC
+/-- **The normaliser never vanishes**: for `t > 0` it is at least `2`, with
+equality exactly at `t = 1` (AM–GM). -/
+theorem two_le_normaliserCt {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+    {t : K} (ht : 0 < t) : 2 ≤ skeinNormaliserCt t := by
+  have key : skeinNormaliserCt t - 2 = (t - 1) ^ 2 / t := by
+    unfold skeinNormaliserCt
     field_simp
     ring
-  have : 0 ≤ skeinNormaliserC q - 2 := by
+  have : 0 ≤ skeinNormaliserCt t - 2 := by
     rw [key]
-    exact div_nonneg (sq_nonneg _) (Real.sqrt_nonneg _)
+    exact div_nonneg (sq_nonneg _) ht.le
   linarith
 
-/-- **The pair Skein mass formula** ([`lem:pair-skein-mass-formula`]), as a
-proposition over caller-supplied data:
+/-- The pair Skein mass formula in the square-root variable `t` (`q = t²`):
+`𝒮_ab = (t² μ_a + t⁻² μ_b) / (t + t⁻¹)`.  Named, not asserted. -/
+def pair_skein_mass_formula_t {K : Type*} [Field K] (t : K) (μ : ℕ → K)
+    (S_ab : ℕ → ℕ → K) : Prop :=
+  ∀ a b : ℕ, S_ab a b = (t ^ 2 * μ a + (t ^ 2)⁻¹ * μ b) / skeinNormaliserCt t
 
-    𝒮_{ab}(q) = (q μ_a + q⁻¹ μ_b) / (q^{1/2} + q^{-1/2}).
-
-**Named, not asserted.**  See the module docstring for the convention-C
-scoping and for what the identity would need in order to be about the
-categorical pair Skein mass rather than about reals. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
--- Ref: [leitner2026] quantum-observable-universe/mass-theory/pair-skein-mass-formula.md
-def pair_skein_mass_formula (q : ℝ) (μ : ℕ → ℝ) (S_ab : ℕ → ℕ → ℝ) : Prop :=
-  ∀ a b : ℕ, S_ab a b = (q * μ a + q⁻¹ * μ b) / skeinNormaliserC q
-
-/-- **Species exchange is antisymmetric with the Skein coefficient** —
-derived, not assumed.
-
-    𝒮_ab − 𝒮_ba = (q − q⁻¹)(μ_a − μ_b) / (q^{1/2} + q^{-1/2}).
-
-The factor `q − q⁻¹` is the Skein-relation coefficient
-(`σ − σ⁻¹ = q − q⁻¹`, AGENTS.md §7a), which is precisely what the
-manuscript's description of the crossing weights asserts. Obtaining it as a
-theorem is the reason the formula is worth naming. -/
--- Ref: [leitner2026] quantum-observable-universe/mass-theory/pair-skein-mass-formula.md
-theorem pair_skein_difference {q : ℝ} {μ : ℕ → ℝ} {S_ab : ℕ → ℕ → ℝ}
-    (h : pair_skein_mass_formula q μ S_ab) (a b : ℕ) :
+/-- **Species exchange is antisymmetric with the Skein coefficient**, in `t`:
+`𝒮_ab − 𝒮_ba = (q − q⁻¹)(μ_a − μ_b) / (t + t⁻¹)` with `q = t²`. -/
+theorem pair_skein_difference_t {K : Type*} [Field K] {t : K} {μ : ℕ → K}
+    {S_ab : ℕ → ℕ → K} (h : pair_skein_mass_formula_t t μ S_ab) (a b : ℕ) :
     S_ab a b - S_ab b a
-      = (q - q⁻¹) * (μ a - μ b) / skeinNormaliserC q := by
-  simp only [pair_skein_mass_formula] at h
+      = (t ^ 2 - (t ^ 2)⁻¹) * (μ a - μ b) / skeinNormaliserCt t := by
+  simp only [pair_skein_mass_formula_t] at h
   rw [h a b, h b a]
   ring
 
-/-- **The formula is refutable at freely-chosen data**, which is why it is
-named rather than carried as a `sorry`.
-
-At `q = 1` with all dressed masses zero the right-hand side is `0`, so a pair
-Skein mass of `1` fails. -/
-theorem not_pair_skein_mass_formula_of_free_data :
-    ¬ pair_skein_mass_formula 1 (fun _ => 0) (fun _ _ => 1) := by
+/-- **Refutable at free data**: at `t = 1` with zero dressed masses the
+right-hand side is `0`, so a pair Skein mass of `1` fails. -/
+theorem not_pair_skein_mass_formula_t_of_free_data {K : Type*} [Field K] :
+    ¬ pair_skein_mass_formula_t (1 : K) (fun _ => 0) (fun _ _ => 1) := by
   intro h
   have := h 0 0
-  simp [skeinNormaliserC] at this
+  simp [skeinNormaliserCt] at this
 
 end QOU.HadronicMass
