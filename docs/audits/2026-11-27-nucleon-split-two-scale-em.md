@@ -119,3 +119,32 @@ eigenvalue needs its own derivation (#9718 §"Not settled").
 
 **Scope (a).** Neither route, in the derived unit, reproduces `m_n − m_p` or the literature EM part.
 Nothing is adopted and nothing is wired.
+
+## 7. The overall scale: what the flavour cell lacks (follow-up, same day)
+
+Probe: [`flavour_flip_exponent_probe.py`](../../computations/probes/nucleon_split_two_scale/flavour_flip_exponent_probe.py).
+
+With the EM term now within about 2× of its required size relative to the flavour term (§6), the
+miss in `m_n − m_p` is the size of the flavour cell `|c|·ln(τ_p/τ_n)`. Two facts already on `main`
+fix that cell:
+
+- **The exponent.** `τ_p/τ_n = q^k` with `k = 2`. This is forced for one nucleon block in
+  convention D (`markov_forces_K`, full-tower audit §1). On the tower the effective exponent stays in
+  1.99–2.01. That is a structural result, scope (b), within convention D.
+- **The unit.** For an energy read from trace weights, the unit is `|c| = m_e/(−ln τ_e)` (#9718).
+
+So within convention D with trace-read energies, the cell is `2 ln q·|c|` = 0.2887 MeV, and nothing
+inside that class can move it.
+
+**Comparison boundary.** In the derived unit, the measured total would need 0.935 nats (`k` = 8.96),
+and the literature QCD part would need 1.35–1.82 nats (`k` = 13.0–17.5). These are not integers and
+not close to 2, and no `k` is proposed here.
+
+**Where the lever must be.** In the same log chart the model proton mass is `M/|c|` = 678.2 nats.
+#9718 states that nucleon-scale masses sit in the *mass-formula* chart (`m_e·Vol·ρ/ℏ_q²`), whose
+electron weight is still hand-placed, and not in the log chart. The split is a difference of two
+nucleon masses, so it belongs in the chart that gives the nucleon mass. Reading it in the log chart
+while `M` comes from the mass-formula chart mixes the two charts. The overall-scale gap therefore
+reduces to the open chart question of #9718 §"Not settled" (the mass-formula chart's electron
+weight), which the electron-weight thread is working on (#9725). This is a reduction, not a
+derivation. It is scope (a) for the log chart.
