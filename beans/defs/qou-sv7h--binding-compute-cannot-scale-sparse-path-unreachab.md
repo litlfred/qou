@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - compute-accuracy
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-11-27T18:20:00Z
+updated_at: 2026-11-27T18:40:00Z
 parent: qou-v2om
 ---
 
@@ -1070,3 +1070,11 @@ Same setup, opt-in `--iso 6Li 7Li`:
 | 7Li | 7 | 254.179 | fea0e408 |
 
 Added time per extra nucleon: 33 s (2H->3H), 30 s (3H->4He), 39 s (4He->6Li), 63 s (6Li->7Li). Six points at A ≤ 7, not a fitted law; the title claim is about large A, so the bean stays open. 7Li needed four tries: three detached runs were killed by container restarts (peak RSS 0.93 GB of 15 GB, so not memory). A detached background job does not keep an idle cloud container alive; run long jobs as session-tracked jobs.
+
+## 2026-11-27 — exact convention-D engine reaches A = 12 (PR #9474, head 4bd3fda82c)
+
+`computations/probes/light_nuclei_a2_a3/hecke_tl.py`: the convention-D trace computed through the Temperley–Lieb quotient (z_D = q²/[2] is the sl₂ point; σ ↦ q − e; exact by uniqueness of the Markov trace), as a sweep of width A + 2 over planar diagrams. Checked exactly against `hecke_flint` (50 cells, q = 3/2), against the nine ⁴He all-pairs cells (1e-28), and the re-layout braid identity in the free group.
+
+Measured (witness `binding-scale-tl.witness.json`): every A = 2..11 cell on both γγ routes (chain; sequential capture over/under) and the ¹²C chain computed; all unbind (B_log < 0, preregistered P1). Sequential cell cost: ⁶Li 0.5 s, ⁷Li 2.8 s, ⁸Be 15 s, ⁹Be 105 s, ¹⁰B 520 s, ¹¹B 3,366 s (~×5 per nucleon); ¹²C chain 241 s. ¹²C sequential still running.
+
+Precision trap found: at 768 bits the sequential sweep loses every digit at A = 9 (ball 0 ± 1e59). The probe now escalates precision until the certified relative radius < 1e-40 and records `prec_bits`.
