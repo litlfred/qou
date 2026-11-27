@@ -9,7 +9,10 @@ write `P k = (q;q)_k`. Stage 1 (`QOU.Core.KashaevHermitianCertificate`) shows
 
 **Reflection.** `P k · star (P (n - k)) = N` for `k ≤ n` (`qPoch_mul_star_reflect`).
 The tail `∏_{j=k+1}^{n} (1 - q^j)` of `P n = N` is, after `j ↦ N - j`,
-`∏ (1 - q^{-i}) = star (P (n - k))`.
+`∏ (1 - q^{-i}) = star (P (n - k))`. Its logarithm at `ζ = e^{2πi/N}` is the
+analytic reflection `s_k + s_{N-1-k} = -log N` of
+`QOU.Knot.FigureEightVolume.sum_log_two_sin_reflect` (`KashaevProdEndpoint.lean`); the
+version here is algebraic and holds at every Galois conjugate.
 
 **Pairing.** Then `star(P k)·P k + star(P (n-k))·P (n-k) = 2N + star(u)·u` with
 `u = P k - P (n - k)`, a further Hermitian square (`pair_eq`). Summing over `k` and
