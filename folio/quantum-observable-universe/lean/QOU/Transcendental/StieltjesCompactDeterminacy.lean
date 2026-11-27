@@ -1,9 +1,14 @@
-import QOU.Core.FrechetShohat
+import QOU.Transcendental.FrechetShohat
 import Mathlib.Topology.ContinuousMap.Weierstrass
 import Mathlib.Analysis.SpecificLimits.Basic
 
 /-!
 # QOU.MathlibExt.StieltjesCompactDeterminacy
+
+**Transcendental subgraph (moved from `QOU/Core/` 2026-11-27, bean `qou-e1uf`).**
+Measures on `ℝ`, weak convergence and integrals are analytic, so this module
+lives behind the boundary `QOU/Transcendental/`. The algebraic side of the
+q-CLT uses finite moments in `ℤ[q]` (`QOU.Core.QGaussianMoments`) instead.
 
 The **compact-support leg** of Stieltjes moment determinacy, proved
 sorry-free on top of the predicates `HasStieltjesMoments` /

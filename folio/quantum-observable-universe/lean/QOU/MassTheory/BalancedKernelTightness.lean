@@ -84,7 +84,7 @@ tails of both explicit kernels, uniform tightness certificate; 60 dps).
 
 import Mathlib.MeasureTheory.Measure.Tight
 import Mathlib.MeasureTheory.Measure.TightNormed
-import QOU.Core.FrechetShohat
+import QOU.Transcendental.FrechetShohat
 import QOU.MassTheory.BalancedKernelConfluence
 
 namespace QOU.Archimedean.BalancedKernelTightness
