@@ -427,4 +427,107 @@ theorem primLayer_of_GLK {d : ℕ} (hd : 1 ≤ d) {Φ : F2}
 
 end OverK
 
+/-! ## Group-likeness of the rational exponential (piece 2, rational half) -/
+
+section ExpGroupLike
+
+theorem dY_primitive {y : F2} (hy : IsPrimitive y) (i : Fin 2) : IsPrimitive (dY y i) := by
+  fin_cases i
+  · unfold IsPrimitive at *
+    simp only [dY, Fin.zero_eta, Matrix.cons_val_zero, map_sub, map_mul, hy, cop_g]
+    simp only [add_mul, mul_add, Algebra.TensorProduct.tmul_mul_tmul, one_mul, mul_one, sub_tmul,
+      tmul_sub]
+    abel
+  · simp [IsPrimitive, dY]
+
+theorem Ly_g_mul (y : F2) (i : Fin 2) (z : F2) :
+    Ly y (Friedrichs.g i * z) = Friedrichs.g i * Ly y z + dY y i * z := by
+  rw [Ly, Ly, leibD_mul, leibD_ι]; noncomm_ring
+
+/-- `L_y ⊗ id + id ⊗ L_y`. -/
+noncomputable def LyT (y : F2) : F2 ⊗[ℚ] F2 →ₗ[ℚ] F2 ⊗[ℚ] F2 :=
+  LinearMap.rTensor F2 (LyL y) + LinearMap.lTensor F2 (LyL y)
+
+theorem LyT_tmul (y a b : F2) : LyT y (a ⊗ₜ b) = Ly y a ⊗ₜ b + a ⊗ₜ Ly y b := rfl
+
+theorem LyT_cop_g_mul {y : F2} (hy : IsPrimitive y) (i : Fin 2) (t : F2 ⊗[ℚ] F2) :
+    LyT y ((Friedrichs.g i ⊗ₜ 1 + 1 ⊗ₜ Friedrichs.g i) * t) =
+      (Friedrichs.g i ⊗ₜ 1 + 1 ⊗ₜ Friedrichs.g i) * LyT y t + cop (dY y i) * t := by
+  rw [dY_primitive hy i]
+  induction t using TensorProduct.induction_on with
+  | zero => simp
+  | tmul a b =>
+    simp only [add_mul, mul_add, Algebra.TensorProduct.tmul_mul_tmul, one_mul, map_add, LyT_tmul,
+      Ly_g_mul, add_tmul, tmul_add]
+    abel
+  | add x z hx hz => rw [mul_add, map_add, hx, hz, map_add, mul_add, mul_add]; abel
+
+/-- `Δ ∘ L_y = (L_y ⊗ id + id ⊗ L_y) ∘ Δ` for primitive `y`. -/
+theorem cop_Ly {y : F2} (hy : IsPrimitive y) (p : F2) : cop (Ly y p) = LyT y (cop p) := by
+  induction p using induction_left with
+  | h1 =>
+    rw [cop_one, LyT_tmul]
+    simp only [Ly, leibD_one, one_mul, zero_add]
+    exact hy
+  | hg i z hz => rw [Ly_g_mul, map_add, map_mul, map_mul, hz, cop_g_mul, LyT_cop_g_mul hy, cop_g]
+  | hadd a b ha hb => rw [Ly_add, map_add, map_add, ha, hb, map_add]
+  | hsmul c z hz => rw [Ly_smul_right, map_smul, map_smul, hz, map_smul]
+
+theorem cop_iterate_Ly {y : F2} (hy : IsPrimitive y) (k : ℕ) :
+    cop ((Ly y)^[k] 1) = (LyT y ^ k) ((1 : F2) ⊗ₜ (1 : F2)) := by
+  induction k with
+  | zero => simp [cop_one]
+  | succ k ih => rw [Function.iterate_succ_apply', cop_Ly hy, ih, pow_succ', Module.End.mul_apply]
+
+theorem cop_iterate_Ly_sum {y : F2} (hy : IsPrimitive y) (k : ℕ) :
+    cop ((Ly y)^[k] 1) = ∑ m ∈ Finset.range (k + 1),
+      (k.choose m : ℚ) • ((Ly y)^[m] 1 ⊗ₜ (Ly y)^[k - m] 1) := by
+  have hc : Commute (LinearMap.rTensor F2 (LyL y)) (LinearMap.lTensor F2 (LyL y)) := by
+    show _ * _ = _ * _
+    rw [Module.End.mul_eq_comp, Module.End.mul_eq_comp, LinearMap.rTensor_comp_lTensor,
+      LinearMap.lTensor_comp_rTensor]
+  rw [cop_iterate_Ly hy, LyT, hc.add_pow, LinearMap.sum_apply]
+  refine Finset.sum_congr rfl fun m _ => ?_
+  rw [Module.End.mul_apply, Module.End.mul_apply, LinearMap.rTensor_pow, LinearMap.lTensor_pow,
+    Module.End.natCast_apply, map_nsmul, map_nsmul, LinearMap.lTensor_tmul, LinearMap.rTensor_tmul,
+    Module.End.pow_apply, Module.End.pow_apply, Nat.cast_smul_eq_nsmul]
+  rfl
+
+/-- **The coproduct of the exponential terms**: `Δ e_k = Σ_{m ≤ k} e_m ⊗ e_{k − m}`. -/
+theorem cop_expTerm {y : F2} (hy : IsPrimitive y) (k : ℕ) :
+    cop (expTerm y k) = ∑ m ∈ Finset.range (k + 1), expTerm y m ⊗ₜ expTerm y (k - m) := by
+  rw [expTerm, map_smul, cop_iterate_Ly_sum hy, Finset.smul_sum]
+  refine Finset.sum_congr rfl fun m hm => ?_
+  have hmk : m ≤ k := Nat.lt_succ_iff.1 (Finset.mem_range.1 hm)
+  rw [expTerm, expTerm]
+  simp only [← smul_tmul', tmul_smul, smul_smul]
+  congr 1
+  have h := Nat.choose_mul_factorial_mul_factorial hmk
+  have h1 : (m.factorial : ℚ) ≠ 0 := by positivity
+  have h2 : ((k - m).factorial : ℚ) ≠ 0 := by positivity
+  have h3 : (k.factorial : ℚ) ≠ 0 := by positivity
+  rw [← h]; push_cast
+  have hC : ((k.choose m : ℕ) : ℚ) ≠ 0 := by
+    exact_mod_cast (Nat.choose_pos hmk).ne'
+  rw [mul_inv, mul_inv, mul_comm _ ((k.choose m : ℕ) : ℚ), ← mul_assoc, ← mul_assoc,
+    mul_inv_cancel₀ hC, one_mul, mul_comm]
+
+/-- **The truncated exponential of a primitive element is group-like modulo `FF2 n`.** -/
+theorem GL_expPoly {y : F2} (hy : IsPrimitive y) (hy1 : y ∈ FF 1) (n : ℕ) :
+    GL n (expPoly y n) := by
+  unfold GL expPoly
+  rw [map_sum]
+  simp only [cop_expTerm hy]
+  rw [Finset.sum_range_diag_flip n (fun m j => expTerm y m ⊗ₜ[ℚ] expTerm y j), sum_tmul]
+  simp only [tmul_sum]
+  rw [← Finset.sum_sub_distrib]
+  refine Submodule.sum_mem _ fun m hm => ?_
+  have hmn : m ≤ n := (Finset.mem_range.1 hm).le
+  rw [← Finset.sum_range_add_sum_Ico _ (Nat.sub_le n m), sub_add_cancel_left, neg_mem_iff]
+  refine Submodule.sum_mem _ fun j hj => ?_
+  have hj' := (Finset.mem_Ico.1 hj).1
+  exact FF2_anti (by omega) (tmul_mem_FF2 (expTerm_mem_FF hy1 m) (expTerm_mem_FF hy1 j))
+
+end ExpGroupLike
+
 end QOU.BraidsAndKnots.RationalAssociator
