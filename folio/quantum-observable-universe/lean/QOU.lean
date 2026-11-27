@@ -820,6 +820,7 @@ import QOU.InformationTheory.q_gl_classical_limit
 import QOU.Nuclear.ProtonBorromeanAssembly
 import QOU.Observations.AppendixSurreals
 import QOU.Core.AlgebraicSubstrate
+import QOU.Transcendental.BringsSurface.OhtsukiKappaDependence
 import QOU.LiftingDescent.LiftingDescentRoot
 import QOU.LiftingDescent.HomologicalCondensation
 import QOU.LiftingDescent.BBStratification
@@ -1020,7 +1021,7 @@ import QOU.Nuclear.ReebTowerJacobiAnger
 import QOU.Nuclear.PhiBSArgumentIdentification
 import QOU.Nuclear.TauNormalizationChoice
 import QOU.Nuclear.ModularRayDiagonalPrune
-import QOU.Nuclear.OhtsukiNZBridgeScale
+import QOU.Transcendental.Nuclear.OhtsukiNZBridgeScale
 import QOU.Nuclear.WindingGFTransform
 import QOU.Nuclear.ThetaRealityBound
 import QOU.Nuclear.AfreeThetaConstraint

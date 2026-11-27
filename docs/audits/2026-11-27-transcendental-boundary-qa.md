@@ -10,21 +10,21 @@ stripped before matching. This is a measurement, not a verdict on any one file.
 
 | quantity | count |
 |---|---:|
-| Lean modules (paper package tree) | 3983 |
-| inside the boundary `QOU/Transcendental/` | 5 |
-| outside, using a transcendental/analytic API directly | 704 |
-| outside, algebraic but importing one transitively (tainted) | 309 |
-| outside, algebraic and import-clean (pure) | 2970 |
+| Lean modules (paper package tree) | 4000 |
+| inside the boundary `QOU/Transcendental/` | 28 |
+| outside, using a transcendental/analytic API directly | 680 |
+| outside, algebraic but importing one transitively (tainted) | 281 |
+| outside, algebraic and import-clean (pure) | 3011 |
 
 ## Direct use by class
 
 | class | modules | matched API |
 |---|---:|---|
-| transcendental-function | 494 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
-| real-completion | 170 | `\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bReal\.sSup\b|\bReal\.sInf\b|\bReal\.iSup\b|\bReal\.iInf\…` |
-| analysis | 332 | `\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTe…` |
+| transcendental-function | 479 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
+| real-completion | 161 | `\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bReal\.sSup\b|\bReal\.sInf\b|\bReal\.iSup\b|\bReal\.iInf\…` |
+| analysis | 322 | `\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTe…` |
 
-Modules whose only use is `real-completion` (`Real.sqrt`, `sSup`, …): 71. These are the cheapest to move:
+Modules whose only use is `real-completion` (`Real.sqrt`, `sSup`, …): 68. These are the cheapest to move:
 `Real.sqrt` of an algebraic number is algebraic, so most of them can become a root in an
 algebraic extension.
 
@@ -33,15 +33,14 @@ algebraic extension.
 | directory | modules |
 |---|---:|
 | `QOU/MassTheory` | 151 |
-| `BraidKnotOctonion` | 145 |
-| `QOU/Nuclear` | 107 |
-| `MathlibExt` | 94 |
-| `QCalculus` | 42 |
+| `BraidKnotOctonion` | 143 |
+| `QOU/Nuclear` | 104 |
+| `MathlibExt` | 95 |
 | `QOU/BraidsAndKnots` | 42 |
-| `HeckeTemperleyLieb` | 17 |
-| `QOU/BringsSurface` | 15 |
+| `QCalculus` | 38 |
+| `HeckeTemperleyLieb` | 16 |
 | `QOU/Observations` | 15 |
-| `QOU/FluidDynamics` | 13 |
+| `QOU/BringsSurface` | 14 |
 | `QOU/StandardModel` | 12 |
 | `QOU/Core` | 11 |
 | `QOU/MassTheory/BlochRigidity` | 7 |
@@ -53,7 +52,7 @@ algebraic extension.
 | `QOU/EightfoldWay` | 3 |
 | `QOU/LiftingDescent` | 3 |
 | `ToricConicOpt` | 3 |
-| `CompactQuantumMetrics` | 2 |
+| `CompactQuantumMetrics` | 1 |
 
 ## Strangler targets: transcendental modules most imported by algebraic ones
 
@@ -64,7 +63,6 @@ algebraic modules.
 |---|---:|
 | `MathlibExt.TauRhoHodgeLiftInterface` | 6 |
 | `QOU.BraidsAndKnots.QBetaCategoricalPrecisionLadder` | 6 |
-| `BraidKnotOctonion.KeystoneC8SuperExpBound` | 5 |
 | `BraidKnotOctonion.PLMaps` | 4 |
 | `QCalculus.FaddeevQuantumDilogarithm` | 4 |
 | `QCalculus.PhiBProd` | 4 |
@@ -87,6 +85,7 @@ algebraic modules.
 | `QOU.Nuclear.ReebTowerJacobiAnger` | 3 |
 | `QOU.MassTheory.BlochRigidity.Regularity` | 3 |
 | `QOU.MassTheory.BridgeAStokesNBody` | 3 |
+| `QOU.MassTheory.HyperbolicMetric` | 3 |
 
 ## Gate
 

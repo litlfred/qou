@@ -1,6 +1,11 @@
 /-
 # The bracket family over ℂ — archimedean vertical edges of the ζ-indexed picture
 
+**Transcendental subgraph (moved from `QCalculus/` 2026-11-27, bean `qou-gfsr`).**
+Only the archimedean evaluation lives here (`ℂ`, `ζ₈ = e^{πi/4}`, the real `√2`).
+The algebraic facts (bar invariance, Galois equivariance, `[2]_{ζ₄} = 0`,
+`[2]_{ζ₈}² = 2`) are proved over any field in `QCalculus.HabiroBracket`.
+
 Continuation of the Habiro ζ₄ bridge (bean qou-vegn), after
 `HabiroZeta4Bracket.lean`. The classical Habiro element `[2]_q` has a
 global archimedean realization `z ↦ z + z⁻¹`; this file names that
@@ -37,6 +42,7 @@ HONESTY (STRICT): sorry-free, no axioms, no `decide`. Nothing wired;
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -/
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
+import QCalculus.HabiroBracket
 
 namespace QOU.Machinery.CoxeterParabolic
 
@@ -46,13 +52,16 @@ open Complex
 `[2]_q`. -/
 noncomputable def bracketFamily (z : ℂ) : ℂ := z + z⁻¹
 
+/-- The archimedean realization is the algebraic bracket of
+`QCalculus.HabiroBracket` on `ℂ`. -/
+theorem bracketFamily_eq_bracket (z : ℂ) : bracketFamily z = bracket z := rfl
+
 /-- **Galois-conjugation equivariance** — the archimedean vertical-edge
 class: on the unit circle conjugation is the bar involution, so this is
 the bar edge at every fibre at once. -/
 theorem bracketFamily_conj (z : ℂ) :
-    bracketFamily ((starRingEnd ℂ) z) = (starRingEnd ℂ) (bracketFamily z) := by
-  unfold bracketFamily
-  rw [map_add, map_inv₀]
+    bracketFamily ((starRingEnd ℂ) z) = (starRingEnd ℂ) (bracketFamily z) :=
+  bracket_map (starRingEnd ℂ) z
 
 /-- **The ζ₈ fibre value**: `[2]_{ζ₈} = √2` — the corpus Q_β ζ₈
 witness point, companion of the ζ₄ modular zero. -/

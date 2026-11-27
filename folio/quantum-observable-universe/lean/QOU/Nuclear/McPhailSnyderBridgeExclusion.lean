@@ -52,6 +52,8 @@ the braid diagram alone to the real archimedean substrate pin $q_0 > 1$:
 -- Ref: [habiro2002] Habiro, Invent. Math. 171 (2008), 1-81
 -- Ref: [faddeev1995] Faddeev, Lett. Math. Phys. 34 (1995), 249-254
 -/
+import Mathlib.Data.ZMod.Basic
+import Mathlib.Data.Fintype.BigOperators
 import QCalculus.HabiroEvaluationTrichotomy
 import QOU.Nuclear.ModularDoubleReciprocity
 
@@ -144,7 +146,7 @@ log-parameter $0 < y < 1$:
 1. **(State-space translation invariance):** The McPhail–Snyder state-sum is invariant under
    $k \mapsto k + \delta$ across $(\mathbb{Z}/N\mathbb{Z})^E$;
 2. **(Habiro / root-of-unity lane excluded at $q_0 > 1$):** The cyclotomic Pochhammer factors
-   do not converge to $0$ (`¬ Filter.Tendsto (fun n => qPoch q₀ n) Filter.atTop (nhds 0)`),
+   do not converge to $0$ (`¬ QOU.Core.CutLimit.ConvergesTo (fun n => qPoch q₀ n) 0`),
    blocking continuous evaluation of the non-terminating Habiro series at $q_0 > 1$;
 3. **(Modular-double dual lane suppressed for $0 < y < 1$):** The Faddeev modular-double dual
    log-parameter satisfies exact reciprocity $\mathrm{logQ}(c, y) \cdot \mathrm{logQDual}(c, y) = c^2$
@@ -156,7 +158,7 @@ theorem mcphailSnyder_archimedean_bridge_exclusion (N E C N₀ : ℕ) [NeZero N]
     (hc : 0 < c) (hy₀ : 0 < y) (hy₁ : y < 1) :
     mcphailSnyderStateSum N E C (fun ρ' k c_idx => R_boltzmann ρ' (k + δ) c_idx) ρ =
       mcphailSnyderStateSum N E C R_boltzmann ρ ∧
-    ¬ Filter.Tendsto (fun n => qPoch q₀ n) Filter.atTop (nhds 0) ∧
+    ¬ QOU.Core.CutLimit.ConvergesTo (fun n => qPoch q₀ n) 0 ∧
     logQ c y * logQDual c y = c ^ 2 ∧
     logQDual c y < logQ c y := by
   refine ⟨mcphailSnyderStateSum_shift_invariant N E C R_boltzmann ρ δ,

@@ -226,12 +226,6 @@
   "BraidKnotOctonion/KashaevWindowSum.lean": [
    "transcendental-function"
   ],
-  "BraidKnotOctonion/KeystoneHabiroInfiniteRigidity.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/KeystoneHabiroRootFamily.lean": [
-   "transcendental-function"
-  ],
   "BraidKnotOctonion/KeystoneHeckeMTC.lean": [
    "real-completion"
   ],
@@ -524,9 +518,6 @@
   ],
   "HeckeTemperleyLieb/ForcedLinkNormalisation.lean": [
    "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/HabiroMagnitudeA3.lean": [
-   "analysis"
   ],
   "HeckeTemperleyLieb/HeckeH2WedderburnReal.lean": [
    "real-completion"
@@ -991,18 +982,7 @@
    "real-completion",
    "transcendental-function"
   ],
-  "QCalculus/HabiroBracketFamily.lean": [
-   "real-completion",
-   "transcendental-function"
-  ],
-  "QCalculus/HabiroEvaluationTrichotomy.lean": [
-   "analysis"
-  ],
   "QCalculus/HabiroTailAction.lean": [
-   "real-completion",
-   "transcendental-function"
-  ],
-  "QCalculus/HabiroZetaFamily.lean": [
    "real-completion",
    "transcendental-function"
   ],
@@ -1053,9 +1033,6 @@
   ],
   "QCalculus/PhiBProdZeroIsolation.lean": [
    "transcendental-function"
-  ],
-  "QCalculus/QHeatKernelHabiroExpansion.lean": [
-   "analysis"
   ],
   "QCalculus/RogersDilogInflection.lean": [
    "transcendental-function"
@@ -1243,10 +1220,6 @@
   ],
   "QOU/BringsSurface/MobiusKernel.lean": [
    "analysis"
-  ],
-  "QOU/BringsSurface/OhtsukiKappaDependence.lean": [
-   "real-completion",
-   "transcendental-function"
   ],
   "QOU/BringsSurface/ScratchZeta5.lean": [
    "real-completion",
@@ -2142,9 +2115,6 @@
    "real-completion",
    "transcendental-function"
   ],
-  "QOU/Nuclear/McPhailSnyderBridgeExclusion.lean": [
-   "analysis"
-  ],
   "QOU/Nuclear/MeridianLinearBarOdd.lean": [
    "transcendental-function"
   ],
@@ -2168,13 +2138,6 @@
   ],
   "QOU/Nuclear/ObservableComplexVolumeVsFullPotential.lean": [
    "real-completion"
-  ],
-  "QOU/Nuclear/OhtsukiKappaVsCkSign.lean": [
-   "real-completion",
-   "transcendental-function"
-  ],
-  "QOU/Nuclear/OhtsukiNZBridgeScale.lean": [
-   "transcendental-function"
   ],
   "QOU/Nuclear/OneInstantonNormalization.lean": [
    "analysis"

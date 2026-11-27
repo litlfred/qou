@@ -225,7 +225,7 @@ Packages the three regimes of the Habiro expansion $\sum_{n \ge 0} a_n(\alpha)\,
    $-\frac{\alpha^2}{4}(1-q)^3$;
 3. **(Archimedean non-convergence at $q_0 > 1$):** On the real archimedean substrate locus
    $q_0 > 1$ (`∀ n ≥ N₀, 2 ≤ q₀ ^ (n + 1)`), the cyclotomic basis does not tend to $0$
-   (`¬ Filter.Tendsto (fun n => qPoch q₀ n) Filter.atTop (nhds 0)`). -/
+   (`¬ QOU.Core.CutLimit.ConvergesTo (fun n => qPoch q₀ n) 0`). -/
 theorem habiro_heat_kernel_trichotomy {R : Type*} [CommRing R]
     {ζ : R} (a : ℕ → R) {N M : ℕ} (hN : 1 ≤ N) (hζ : ζ ^ N = 1) (hNM : N ≤ M)
     (q_rat α : ℚ) {q₀ : ℝ} (hq₀ : 1 < q₀) (N₀ : ℕ)
@@ -234,7 +234,7 @@ theorem habiro_heat_kernel_trichotomy {R : Type*} [CommRing R]
     habiroPartialSum q_rat (heatKernelHabiroCoeff α) 3 -
       (1 + α * (1 - q_rat) + (α ^ 2 / 2) * (1 - q_rat) ^ 2) =
       -(α ^ 2 / 4) * (1 - q_rat) ^ 3 ∧
-    ¬ Filter.Tendsto (fun n => qPoch q₀ n) Filter.atTop (nhds 0) := by
+    ¬ QOU.Core.CutLimit.ConvergesTo (fun n => qPoch q₀ n) 0 := by
   exact ⟨habiroPartialSum_eq_of_pow_eq_one a hN hζ hNM,
     habiro_quadratic_jet_remainder q_rat α,
     qPoch_not_tendsto_zero_of_one_lt hq₀ N₀ hN₀⟩

@@ -65,6 +65,7 @@ Nothing is fit; nothing is wired. "No seventh fit-based ansatz" + PROBE-4 KL-pru
 -/
 import Mathlib.Tactic
 import HeckeTemperleyLieb.QIntegerCanonical
+import QOU.Core.CutLimit
 
 namespace QOU.MassTheory.HabiroMagnitudeA3
 
@@ -102,15 +103,11 @@ theorem pochAbs_pos (q : ℝ) (hq : 1 < q) : ∀ n, 0 < pochAbs q n
 `N` beyond which every subsequent cyclotomic factor exceeds `2`. -/
 theorem exists_factor_ge_two (q : ℝ) (hq : 1 < q) :
     ∃ N, ∀ n, N ≤ n → 2 ≤ q ^ (n + 1) - 1 := by
-  have htend : Filter.Tendsto (fun n => q ^ n) Filter.atTop Filter.atTop :=
-    tendsto_pow_atTop_atTop_of_one_lt hq
-  have : ∀ᶠ n in Filter.atTop, (3 : ℝ) ≤ q ^ n :=
-    htend.eventually_ge_atTop 3
-  obtain ⟨N, hN⟩ := this.exists_forall_of_atTop
+  -- Archimedean: some power of `q` exceeds `3`; powers are monotone from there.
+  obtain ⟨N, hN⟩ := pow_unbounded_of_one_lt (3 : ℝ) hq
   refine ⟨N, fun n hn => ?_⟩
-  have hge : (3 : ℝ) ≤ q ^ (n + 1) := by
-    have := hN (n + 1) (le_trans hn (Nat.le_succ n))
-    exact this
+  have hge : (3 : ℝ) ≤ q ^ (n + 1) :=
+    le_trans hN.le (pow_le_pow_right₀ hq.le (by omega))
   linarith
 
 /-- Geometric doubling: once every factor is `≥ 2` (from index `N`), the basis magnitude at
@@ -156,21 +153,28 @@ theorem pochAbs_unbounded (q : ℝ) (hq : 1 < q) (B : ℝ) : ∃ n, B < pochAbs 
 diverges. Therefore no well-defined archimedean value exists at the substrate `q₀ > 1`. -/
 theorem habiro_terms_not_tendsto_zero (q : ℝ) (hq : 1 < q) (a : ℕ → ℝ)
     (ha : ∀ n, 1 ≤ |a n|) :
-    ¬ Filter.Tendsto (fun n => a n * pochAbs q n) Filter.atTop (nhds 0) := by
-  intro htend
-  -- if it tends to 0 the sequence is bounded; but |a n · pochAbs q n| ≥ pochAbs q n is unbounded
-  have habs : Filter.Tendsto (fun n => |a n * pochAbs q n|) Filter.atTop (nhds 0) := by
-    simpa using htend.abs
-  have hbdd : BddAbove (Set.range fun n => |a n * pochAbs q n|) := habs.bddAbove_range
-  obtain ⟨C, hC⟩ := hbdd
-  obtain ⟨n, hn⟩ := pochAbs_unbounded q hq C
+    ¬ QOU.Core.CutLimit.ConvergesTo (fun n => a n * pochAbs q n) 0 := by
+  intro hconv
+  -- the located cut at `0` bounds the terms by `1` from some index `M` on
+  obtain ⟨M, hM⟩ := QOU.Core.CutLimit.tendstoEps_of_convergesTo hconv 1 one_pos
+  -- but past `M` the basis magnitude grows geometrically beyond `1`
+  obtain ⟨N₀, hN₀⟩ := exists_factor_ge_two q hq
+  have hposN : 0 < pochAbs q N₀ := pochAbs_pos q hq N₀
+  obtain ⟨m, hm⟩ := pow_unbounded_of_one_lt (1 / pochAbs q N₀) (by norm_num : (1 : ℝ) < 2)
+  have hgeo := pochAbs_ge_geometric q hq hN₀ (m + M)
+  have h2 : (2 : ℝ) ^ m ≤ 2 ^ (m + M) := pow_le_pow_right₀ (by norm_num) (by omega)
+  have h1 : 1 < (2 : ℝ) ^ m * pochAbs q N₀ := by
+    rw [div_lt_iff₀ hposN] at hm; linarith
+  set n := N₀ + (m + M)
   have hposn : 0 < pochAbs q n := pochAbs_pos q hq n
+  have hpn : 1 < pochAbs q n := by nlinarith
   have hge : pochAbs q n ≤ |a n * pochAbs q n| := by
     rw [abs_mul, abs_of_pos hposn]
     have : (1 : ℝ) * pochAbs q n ≤ |a n| * pochAbs q n :=
       mul_le_mul_of_nonneg_right (ha n) (le_of_lt hposn)
     simpa using this
-  have hle : |a n * pochAbs q n| ≤ C := hC (Set.mem_range_self n)
+  have hlt := hM n (by omega)
+  rw [sub_zero] at hlt
   linarith
 
 /-! ### 4. The finite (Laurent) α_EM-shape sub-case: bracketed by the quantum integers -/

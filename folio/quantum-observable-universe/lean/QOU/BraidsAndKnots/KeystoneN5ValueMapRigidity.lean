@@ -29,7 +29,7 @@ wired; L2 unchanged.
 
 -- Ref: [leitner2026] docs/coordination/s5-so3-keystone.md
 -/
-import BraidKnotOctonion.KeystoneHabiroRootFamily
+import QOU.Transcendental.BraidKnotOctonion.KeystoneHabiroRootFamily
 import Mathlib.Tactic.ComputeDegree
 
 namespace QOU.BraidKnot.KeystoneN5ValueMapRigidity

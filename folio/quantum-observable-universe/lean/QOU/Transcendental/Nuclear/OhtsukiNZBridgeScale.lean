@@ -1,5 +1,5 @@
 import QOU.Nuclear.ObservableComplexVolumeVsFullPotential
-import QOU.Nuclear.OhtsukiKappaVsCkSign
+import QOU.Transcendental.Nuclear.OhtsukiKappaVsCkSign
 
 set_option autoImplicit false
 

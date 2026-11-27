@@ -1,5 +1,5 @@
 import QOU.BraidsAndKnots.KeystoneN5ValueMapRigidity
-import BraidKnotOctonion.KeystoneHabiroInfiniteRigidity
+import QOU.Transcendental.BraidKnotOctonion.KeystoneHabiroInfiniteRigidity
 
 /-!
 # Level 6 suffices for the `n = 5` blocks — the mark-6 block is `[5]+1`, not `[6]`
