@@ -1,0 +1,322 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-27T17:57:22.368163+00:00",
+  "commitSha": "0f2558848c63186e067797aafac640047798b598",
+  "assertions": [
+    {
+      "name": "K0_free_word_passes_and_traces_agree",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "corpus seminormal trace vs independent Schur-Weyl trace; V^3 is classically trivial"
+    },
+    {
+      "name": "K1_independent_trace_agrees_on_every_passing_word",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "max |seminormal - Schur-Weyl| = 1.8367e-40"
+    },
+    {
+      "name": "K3_all_passing_ratios_positive",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "log law defined"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "binding-ceiling-q0-A3",
+  "scriptFile": "binding_ceiling_q0_probe.py",
+  "scriptHash": "d237267d5905",
+  "scriptCommitSha": "520c7aadaf5bf95b645dfc0dce080dcbb7244cde",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/binding_ceiling_q0/binding_ceiling_q0_probe.py",
+      "4",
+      "3"
+    ],
+    "reproduce": "python3 -u computations/probes/binding_ceiling_q0/binding_ceiling_q0_probe.py 4 3"
+  },
+  "description": "PROBE (bean qou-brng, brief C2): the classical merge ceiling ln2*(n-1) of ClassicalLogBindingCycleCount tested at the proton-pin q0 on every gamma-gamma bond word of 1..4 vertices on the 9-strand A=3 word with V^3 nucleons (every junction bonded). Reading 3 selects (corpus seminormal helpers); the trace is recomputed with an independent Schur-Weyl trace. Ratio reported, never used to select. AME not read. Nothing fitted or wired.",
+  "auditOnly": "docs/audits/2026-11-27-binding-ceiling-at-q0.md",
+  "parameters": {
+    "L": 4,
+    "A": 3,
+    "n_strands": 9,
+    "E0_tower_MeV": "4.2274833556290305503"
+  },
+  "data": {
+    "summary": {
+      "n_words": 1360,
+      "n_pass": 28,
+      "n_pure_junction_pass": 0,
+      "ceiling_ln2_n_minus_1": "5.5451774444795624753",
+      "max_minus_ln_r": "1.7097471785137273534",
+      "max_word": "V2V3V4V2",
+      "n_pass_above_ceiling": 0,
+      "max_seminormal_vs_schur_weyl_dev": "1.8367e-40"
+    },
+    "by_merges": {
+      "2": {
+        "n_words": 28,
+        "n_pure_junction": 0,
+        "classical_ln2_m": "1.38629436111989",
+        "minus_ln_r_min": "1.05535373836191",
+        "minus_ln_r_max": "1.70974717851373",
+        "min_word": "V4V2V3V4",
+        "max_word": "V2V3V4V2",
+        "n_above_classical": 17,
+        "n_above_ceiling": 0
+      }
+    },
+    "passing": [
+      {
+        "word": "V2V3V4",
+        "length": 3,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2472978867480345984062206",
+        "minus_ln_r": "1.397161649788347752076725"
+      },
+      {
+        "word": "V3V4V2",
+        "length": 3,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2472978867480345984062206",
+        "minus_ln_r": "1.397161649788347752076725"
+      },
+      {
+        "word": "V4V2V3",
+        "length": 3,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2472978867480345984062206",
+        "minus_ln_r": "1.397161649788347752076725"
+      },
+      {
+        "word": "V1V2V3V4",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2504339657866614992057649",
+        "minus_ln_r": "1.384560002842430274501346"
+      },
+      {
+        "word": "V1V4V2V3",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2504339657866614992057649",
+        "minus_ln_r": "1.384560002842430274501346"
+      },
+      {
+        "word": "V2V2V3V4",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1834569354821573932650019",
+        "minus_ln_r": "1.695775323051056858784682"
+      },
+      {
+        "word": "V2V3V1V4",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2472978867480345984062206",
+        "minus_ln_r": "1.397161649788347752076725"
+      },
+      {
+        "word": "V2V3V4V1",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2472978867480345984062206",
+        "minus_ln_r": "1.397161649788347752076725"
+      },
+      {
+        "word": "V2V3V4V2",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1809115251564681120463488",
+        "minus_ln_r": "1.709747178513727353415262"
+      },
+      {
+        "word": "V2V3V4V4",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3433088587011978685841383",
+        "minus_ln_r": "1.069124774303802517478937"
+      },
+      {
+        "word": "V2V3V4V5",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2434340728720333796164733",
+        "minus_ln_r": "1.412909121077133343254078"
+      },
+      {
+        "word": "V2V5V3V4",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2472978867480345984062206",
+        "minus_ln_r": "1.397161649788347752076725"
+      },
+      {
+        "word": "V3V1V4V2",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2504339657866614992057649",
+        "minus_ln_r": "1.384560002842430274501346"
+      },
+      {
+        "word": "V3V4V1V2",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2504339657866614992057649",
+        "minus_ln_r": "1.384560002842430274501346"
+      },
+      {
+        "word": "V3V4V2V4",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3433088587011978685841383",
+        "minus_ln_r": "1.069124774303802517478937"
+      },
+      {
+        "word": "V3V4V2V5",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2434340728720333796164733",
+        "minus_ln_r": "1.412909121077133343254078"
+      },
+      {
+        "word": "V3V4V4V2",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3433088587011978685841383",
+        "minus_ln_r": "1.069124774303802517478937"
+      },
+      {
+        "word": "V3V4V5V2",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2434340728720333796164733",
+        "minus_ln_r": "1.412909121077133343254078"
+      },
+      {
+        "word": "V4V1V2V3",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2504339657866614992057649",
+        "minus_ln_r": "1.384560002842430274501346"
+      },
+      {
+        "word": "V4V2V2V3",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1834569354821573932650019",
+        "minus_ln_r": "1.695775323051056858784682"
+      },
+      {
+        "word": "V4V2V3V1",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2472978867480345984062206",
+        "minus_ln_r": "1.397161649788347752076725"
+      },
+      {
+        "word": "V4V2V3V4",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3480692800695687666926942",
+        "minus_ln_r": "1.055353738361907210767093"
+      },
+      {
+        "word": "V4V2V4V3",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3433088587011978685841383",
+        "minus_ln_r": "1.069124774303802517478937"
+      },
+      {
+        "word": "V4V2V5V3",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2434340728720333796164733",
+        "minus_ln_r": "1.412909121077133343254078"
+      },
+      {
+        "word": "V4V4V2V3",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3433088587011978685841383",
+        "minus_ln_r": "1.069124774303802517478937"
+      },
+      {
+        "word": "V4V5V2V3",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2434340728720333796164733",
+        "minus_ln_r": "1.412909121077133343254078"
+      },
+      {
+        "word": "V5V2V3V4",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2472978867480345984062206",
+        "minus_ln_r": "1.397161649788347752076725"
+      },
+      {
+        "word": "V5V3V4V2",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2472978867480345984062206",
+        "minus_ln_r": "1.397161649788347752076725"
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "q0 enters through cf.Q (committed y-lambda-at-q0 witness, proton pin)"
+}
