@@ -665,6 +665,15 @@ skill wins and the memory entry is wrong — fix it.
 
 ## Agent work-plan policy (STRICT)
 
+> **🟥 BEANS ARE THE TRACKER; GITHUB ISSUES ARE INTAKE ONLY (owner ruling 2026-11-27).**
+> Every work item an agent plans, claims, works or closes is a **bean** on the beans
+> branch, managed with the `beans` CLI and pushed with `branch-store.ts push --id beans`.
+> Do **not** open a GitHub issue to track your own work, and do not make a session epic
+> an issue. GitHub issues are the **submission channel** for the owner and for reviewers:
+> when one arrives, mirror it into a bean that cites the issue number (check before you
+> create), work the bean, and close the issue from the bean's result. Ledger row:
+> [`owner-rulings.md`](docs/coordination/owner-rulings.md), 2026-11-27.
+
 Every session must run from a **prioritized work-plan** maintained
 as **beans** — the [`beans`](https://github.com/hmans/beans) CLI
 flat-file issue tracker (data under `beans/defs/`; install via
