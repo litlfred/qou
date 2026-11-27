@@ -149,6 +149,7 @@ import CompactQuantumMetrics.FrobeniusInnerProduct
 import QOU.Transcendental.FrobeniusNorm
 import QOU.Transcendental.HoefsmitSqrt
 import QOU.Transcendental.RpowSqrtHelpers
+import QOU.Transcendental.BraidKnotOctonion.MarkovZNLegacy
 import QOU.Transcendental.MathlibExt.TauRhoHodgePiIdentities
 import MathlibExt.CauchyBinet
 import MathlibExt.RankMinor
