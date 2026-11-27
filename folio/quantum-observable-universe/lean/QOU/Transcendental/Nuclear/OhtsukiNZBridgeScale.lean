@@ -102,9 +102,10 @@ theorem bridge_normSq {κA : ℝ} {c : ℂ} (h : OrderTwoMatch κA c) :
 exactly half the complex-volume one — the A-binary IS a bridge-scale
 binary. -/
 theorem conventions_scale_ratio_two :
-    2 * Real.pi * kappa1 / kappaCV = 2 * (2 * Real.pi * kappa1 / kappaFull) := by
+    2 * Real.pi * kappa1 / kappaCV (Real.sqrt 3)
+      = 2 * (2 * Real.pi * kappa1 / kappaFull (Real.sqrt 3)) := by
   rw [kappaFull_eq_two_mul_kappaCV]
-  have h : kappaCV ≠ 0 := kappaCV_pos.ne'
+  have h : kappaCV (Real.sqrt 3) ≠ 0 := (kappaCV_pos (by positivity)).ne'
   field_simp
 
 /-- Sign-inversion invariance of the order-`b^2` matching condition: `OrderTwoMatch κA (-c)`

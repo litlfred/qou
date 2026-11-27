@@ -44,19 +44,19 @@ open QOU.QBeta.ObservableComplexVolumeVsFullPotential
 /-- The channel `S` carries the complex-volume normalization dressed by the
 real factor `A`: `S q = A · Im 𝔙(u q)` at every substrate value. The open
 question (qou-yh67) is WHICH `A` the τ-functor applies. -/
-def UsesComplexVolumeNorm (A : ℝ) (S : ℝ → ℝ) (u : ℝ → ℂ) : Prop :=
-  ∀ q, S q = A * imComplexVolume (u q)
+def UsesComplexVolumeNorm (s A : ℝ) (S : ℝ → ℝ) (u : ℝ → ℂ) : Prop :=
+  ∀ q, S q = A * imComplexVolume s (u q)
 
 /-- The channel `S` carries the full-potential normalization
 `S q = Im Φ(u q)` (no dressing factor). -/
-def UsesFullPotentialNorm (S : ℝ → ℝ) (u : ℝ → ℂ) : Prop :=
-  ∀ q, S q = imFullPotential (u q)
+def UsesFullPotentialNorm (s : ℝ) (S : ℝ → ℝ) (u : ℝ → ℂ) : Prop :=
+  ∀ q, S q = imFullPotential s (u q)
 
 /-- The full-potential convention IS the complex-volume convention with the
 integer forced to `2` — the `qou-pzzl` "two conventions" are one integer
 variable. Direct from `Φ = 2𝔙`. -/
-theorem usesFullPotential_iff_A_two (S : ℝ → ℝ) (u : ℝ → ℂ) :
-    UsesFullPotentialNorm S u ↔ UsesComplexVolumeNorm 2 S u := by
+theorem usesFullPotential_iff_A_two (s : ℝ) (S : ℝ → ℝ) (u : ℝ → ℂ) :
+    UsesFullPotentialNorm s S u ↔ UsesComplexVolumeNorm s 2 S u := by
   unfold UsesFullPotentialNorm UsesComplexVolumeNorm
   constructor <;> intro h q <;>
     simpa [imFullPotential_eq_two_mul_imComplexVolume] using h q
@@ -66,9 +66,9 @@ deformation agree everywhere, so at any point where the channel's geometric
 part does not vanish the dressing factors are equal. This is the precise
 form of "one of the two conventions is wrong": `A = 2` (full potential) and
 `A = 3` (the `A_ω` target) cannot both hold at a nonvanishing point. -/
-theorem dressing_factor_unique {A A' : ℝ} {S : ℝ → ℝ} {u : ℝ → ℂ}
-    (h : UsesComplexVolumeNorm A S u) (h' : UsesComplexVolumeNorm A' S u)
-    {q : ℝ} (hq : imComplexVolume (u q) ≠ 0) : A = A' := by
+theorem dressing_factor_unique {s A A' : ℝ} {S : ℝ → ℝ} {u : ℝ → ℂ}
+    (h : UsesComplexVolumeNorm s A S u) (h' : UsesComplexVolumeNorm s A' S u)
+    {q : ℝ} (hq : imComplexVolume s (u q) ≠ 0) : A = A' := by
   have := (h q).symm.trans (h' q)
   exact mul_right_cancel₀ hq this
 
@@ -76,11 +76,11 @@ theorem dressing_factor_unique {A A' : ℝ} {S : ℝ → ℝ} {u : ℝ → ℂ}
 `A_ω = 3` target) are incompatible on any channel with a nonvanishing point —
 the reconciliation (`qou-pzzl`) must retire one, and which one is exactly the
 open `qou-yh67` binary. -/
-theorem full_potential_and_Aomega_three_incompatible {S : ℝ → ℝ} {u : ℝ → ℂ}
-    (h2 : UsesFullPotentialNorm S u) (h3 : UsesComplexVolumeNorm 3 S u)
-    {q : ℝ} (hq : imComplexVolume (u q) ≠ 0) : False := by
-  have h2' : UsesComplexVolumeNorm 2 S u :=
-    (usesFullPotential_iff_A_two S u).mp h2
+theorem full_potential_and_Aomega_three_incompatible {s : ℝ} {S : ℝ → ℝ} {u : ℝ → ℂ}
+    (h2 : UsesFullPotentialNorm s S u) (h3 : UsesComplexVolumeNorm s 3 S u)
+    {q : ℝ} (hq : imComplexVolume s (u q) ≠ 0) : False := by
+  have h2' : UsesComplexVolumeNorm s 2 S u :=
+    (usesFullPotential_iff_A_two s S u).mp h2
   have : (2 : ℝ) = 3 := dressing_factor_unique h2' h3 hq
   norm_num at this
 

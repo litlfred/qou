@@ -56,8 +56,8 @@ open QOU.QBeta.ObservableComplexVolumeVsFullPotential
 /-- The corrected leading form reads off the real part of `u²`:
 `Re²u − Im²u = Re(u²)`. The diagonal locus `|Re u| = |Im u|` is exactly
 `Re(u²) = 0`. -/
-theorem imComplexVolume_eq_sq_re (u : ℂ) :
-    imComplexVolume u = kappaCV * (u ^ 2).re := by
+theorem imComplexVolume_eq_sq_re (s : ℝ) (u : ℂ) :
+    imComplexVolume s u = kappaCV s * (u ^ 2).re := by
   unfold imComplexVolume
   congr 1
   simp [sq, Complex.mul_re]
@@ -67,8 +67,8 @@ theorem imComplexVolume_eq_sq_re (u : ℂ) :
 diagonal vanishing locus of the leading form: `Im 𝔙(b·t) = 0` for all real
 `t`. A real-scaling family along the substrate ray carries NO leading-order
 `S`. -/
-theorem imCV_zero_on_substrate_ray {b : ℂ} (hb : (b ^ 2).re = 0) (t : ℝ) :
-    imComplexVolume (b * (t : ℂ)) = 0 := by
+theorem imCV_zero_on_substrate_ray (s : ℝ) {b : ℂ} (hb : (b ^ 2).re = 0) (t : ℝ) :
+    imComplexVolume s (b * (t : ℂ)) = 0 := by
   rw [imComplexVolume_eq_sq_re]
   have : (b * (t : ℂ)) ^ 2 = (t : ℂ) ^ 2 * b ^ 2 := by ring
   rw [this]

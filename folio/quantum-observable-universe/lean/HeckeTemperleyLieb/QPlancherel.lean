@@ -1,5 +1,3 @@
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Tactic
 
 /-!
@@ -124,20 +122,20 @@ class HasQPlancherelCLT (Λ : Type u) (R : Type v)
     [Field R] [LinearOrder R] [IsStrictOrderedRing R]
     [QDimension Λ R] [HasPartitionFunction Λ R] where
   /-- The Féray-Méliot constant. -/
-  Cq : ℝ
+  Cq : R
   /-- The constant is positive. -/
   Cq_pos : 0 < Cq
   /-- The branching-fraction sequence the CLT is about. -/
-  f : ℕ → ℝ
+  f : ℕ → R
   /-- Its limit. -/
-  f_inf : ℝ
+  f_inf : R
   /-- The Féray–Méliot `O(1/√k)` bound, for **this** sequence and **its**
       limit.
 
       `f` and `f_inf` are class *data*, not universally quantified.  They
       were `∀`-bound until 2026-08-29, which made the class
       **uninhabitable**: `Cq` is fixed by the instance while `f_inf`
-      ranged over all of `ℝ`, so `f := 0`, `f_inf := Cq + 1`, `k := 4`
+      ranged over all of the field, so `f := 0`, `f_inf := Cq + 1`, `k := 4`
       (where `√(4-3) = 1`) gave `Cq + 1 ≤ Cq`, and `False` followed —
       machine-checked, `#print axioms` clean, in
       `docs/audits/2026-08-29-qplancherel-clt-uninhabitable-probe.lean`.
@@ -147,8 +145,12 @@ class HasQPlancherelCLT (Λ : Type u) (R : Type v)
       structure that does not carry the theorem's hypotheses.*
       [feray2010] Theorem 1.1 is a statement about the q-Plancherel
       branching fractions, not about arbitrary real sequences, and the
-      type must say so. -/
-  bound : ∀ k : ℕ, k ≥ 4 → |f k - f_inf| ≤ Cq / Real.sqrt (k - 3 : ℝ)
+      type must say so.
+
+      Stated squared, `(f k − f_∞)²·(k − 3) ≤ Cq²`, which for `Cq > 0` and `k ≥ 4` is
+      equivalent to `|f k − f_∞| ≤ Cq/√(k − 3)` and needs no square root, so the class
+      lives over any ordered field `R` (owner ruling 2026-11-27, bean `qou-dk7p`). -/
+  bound : ∀ k : ℕ, k ≥ 4 → (f k - f_inf) ^ 2 * ((k : R) - 3) ≤ Cq ^ 2
 
 /-! ## §3  The partition function as a constructed sum, and total mass one
 
