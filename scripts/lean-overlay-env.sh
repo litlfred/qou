@@ -125,7 +125,7 @@ case "$cmd" in
     [ "${#args[@]}" -ge 1 ] || { echo "usage: $0 check <file.lean>" >&2; exit 2; }
     farm_check || exit 1
     export LEAN_PATH="$OVL:$BASE_LEAN_PATH"
-    ( cd "$PKG" && lean "${args[@]}" )
+    ( cd "$PKG" && lean -DautoImplicit=false -s 65536 "${args[@]}" )
     ;;
   build)
     [ "${#args[@]}" -eq 1 ] || { echo "usage: $0 build <Module/Path.lean>" >&2; exit 2; }
@@ -145,7 +145,7 @@ case "$cmd" in
       rm -f "$out"          # our own earlier real build; replacing it is fine
     fi
     export LEAN_PATH="$OVL:$BASE_LEAN_PATH"
-    ( cd "$PKG" && lean -o "$out" "$src" ) || exit $?
+    ( cd "$PKG" && lean -DautoImplicit=false -s 65536 -o "$out" "$src" ) || exit $?
     [ -L "$out" ] && { echo "lean-overlay: BUG — $out is still a symlink after build" >&2; exit 1; }
     echo "lean-overlay: built $src -> $out"
     ;;

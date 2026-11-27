@@ -48,7 +48,8 @@ for _p in ("computations", "computations/substrate", "tools/qou-substrate/python
 from mpmath import mpf  # noqa: E402
 
 __all__ = ["order_zero", "order_zero_scaled", "tower_summed", "tower_summed_scaled",
-           "canonical", "TOWER_FACTOR_DOC"]
+           "canonical", "TOWER_FACTOR_DOC", "tau_electron", "electron_log_unit",
+           "electron_log_unit_scaled"]
 
 TOWER_FACTOR_DOC = (
     "1/(1 - hbar_q^2), taken from qbeta_bar_branch_refuted_probe.py:88 "
@@ -115,9 +116,44 @@ def canonical(q=None, m_e=None):
     return tower_summed(q, m_e)
 
 
+def tau_electron(q):
+    """tau_e = q^3 (q^4+1)/(q^2+1)^2: convention-D trace of the electron word s0 s1 s0.
+
+    Lean: QOU.Observations.ElectronWeightAdditivity.tauE (= tauD3 of the word).
+    Type-preserving (mpf, sympy).
+    """
+    return q ** 3 * (q ** 4 + 1) / (q ** 2 + 1) ** 2
+
+
+def electron_log_unit_scaled(x, q):
+    """x / (-ln tau_e): the DERIVED per-nat energy unit, numerator x (x = 1: units of m_e).
+
+    For every energy read as a LOG of trace weights (the beta = ln q dictionary,
+    log binding laws, log cells): E(y) = m_e * ln y / ln tau_e, i.e. per nat
+    |c| = m_e / (-ln tau_e). Forced by additivity over non-interacting parts +
+    continuity + CAL-1, with no free constant
+    (QOU.Transcendental.MassTheory.ElectronCategoricalEnergy.cal1_unique, PR #9718;
+    audit docs/audits/2026-11-27-electron-categorical-weight.md).
+    As a multiple of E_0 = m_e/(q(q-1)) it is q(q-1)/(-ln tau_e) (0.3305 at q0).
+    Owner card 2026-11-27 ("Wire it, report the misses"): log-of-trace energies use
+    this unit. It is NOT a unit for energies LINEAR in a trace (those are not
+    additive; ElectronWeightAdditivity.linear_trace_chart_not_additive).
+    Needs mpmath's log; for sympy input pass sympy's log via the caller.
+    """
+    from mpmath import log as _log
+    return x / (-_log(tau_electron(q)))
+
+
+def electron_log_unit(q=None, m_e=None):
+    """The derived per-nat unit m_e / (-ln tau_e) in MeV (module mpf inputs)."""
+    q, m_e = _inputs(q, m_e)
+    return electron_log_unit_scaled(m_e, q)
+
+
 if __name__ == "__main__":  # pragma: no cover
     from mpmath import mp, nstr
     mp.dps = 50
     print(f"order_zero   = {nstr(order_zero(), 14)} MeV")
     print(f"tower_summed = {nstr(tower_summed(), 14)} MeV   <- canonical")
     print(f"ratio        = {nstr(tower_summed() / order_zero(), 12)}")
+    print(f"electron_log_unit = {nstr(electron_log_unit(), 14)} MeV per nat  <- log-of-trace energies")

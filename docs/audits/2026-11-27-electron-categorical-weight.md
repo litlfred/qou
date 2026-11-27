@@ -85,6 +85,19 @@ The Casimir row assumes, as #9708 did, that a Casimir eigenvalue is an energy pe
 - **Not settled:** whether a Casimir eigenvalue is an energy per nat or per q-step. That needs its own derivation before the Casimir route uses this unit.
 - **Not adopted.** Nothing is wired into the mass table or the radius pipeline. Wiring the derived unit is an owner decision.
 
+## 6. Wiring (owner card 2026-11-27: "Wire it, report the misses")
+
+The derived unit applies to energies that are **logarithms of trace weights**. A form that is linear in a trace, such as `E₀·Δtr` or `|ε|·E₀`, is not additive (`linear_trace_chart_not_additive`), so swapping its unit would be a category error. Those forms are listed below and left alone.
+
+| site | form | status |
+|---|---|---|
+| `qbeta/qbeta_e0.py` | chokepoint | adds `tau_electron`, `electron_log_unit`, `electron_log_unit_scaled` |
+| `probes/energy_length_map/isospin_gap_radius_probe.py` | β-dictionary log gap | **wired**: D = 22.95 (old rows kept as comparison) |
+| `probes/energy_length_map/casimir_gap_radius_probe.py` | Casimir eigenvalue read per nat | **wired**, but per-nat reading is still an assumption: D = 11.12 |
+| `mass_table_comprehensive.binding_ruled_tz_even` | log law `B = −α Σ ln|f|`, α = 8G·m_e | **next PR**, after #9706 (same file). α → `m_e/(−ln τ_e)` cuts B by 0.3695 |
+| `derived_masses.q_beta_scored_mev`, `borromean_v3_e21_*`, `mass_table` `B_pred` (E₀×Δtr) | linear in a trace | **not wired**: the derivation does not cover linear forms, and they fail additivity |
+
+The scale α = 8G·m_e = 7.327 m_e per nat was flagged as "the scale question (alpha vs E0) is NOT addressed here" in the ruled binding. The derived unit answers it: 2.707 m_e per nat. The scorecard rows will move by the factor 0.3695, and the misses will be reported as they come out.
 ## 7. The electron's weight on the mass-formula scale (added the same day)
 
 Lean: `QOU/Observations/ElectronMassChartWeight.lean` (generic field), `QOU/Transcendental/MassTheory/ElectronMassChartWeight.lean`. Probe: `computations/probes/electron_weight/electron_mass_chart_weight_probe.py` (5/5).

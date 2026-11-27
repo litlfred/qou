@@ -62,7 +62,7 @@ for f in "${edited[@]}"; do
   rel="${f#folio/quantum-observable-universe/lean/}"
   out="$BUILD/${rel%.lean}.olean"
   mkdir -p "$(dirname "$out")"
-  if lean -o "$out" "$rel"; then
+  if lean -DautoImplicit=false -s 65536 -o "$out" "$rel"; then
     echo "  OK      $rel  (olean refreshed)"
   else
     echo "  FAIL    $rel"
@@ -78,7 +78,7 @@ if [ ${#consumers[@]} -gt 0 ]; then
   echo "== checking ${#consumers[@]} consumer(s) against fresh oleans =="
   for f in "${consumers[@]}"; do
     rel="${f#folio/quantum-observable-universe/lean/}"
-    if lean "$rel"; then echo "  OK      $rel"; else echo "  FAIL    $rel"; rc=1; fi
+    if lean -DautoImplicit=false -s 65536 "$rel"; then echo "  OK      $rel"; else echo "  FAIL    $rel"; rc=1; fi
   done
 fi
 

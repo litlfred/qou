@@ -7,9 +7,11 @@ eps = E1 / M c^2.
 E1 is taken, blind to any radius, from the beta = ln q dictionary
 (QOU/Core/QBetaEnergyDictionary.lean) on the convention-D block weights of
 V^{x3}, V = C^2 (isospin): y_(3) = [4]/[2]^3, y_(2,1) = [2]/[2]^3
-(Clebsch-Gordan: [2]^3 = [4] + 2[2]). Energy unit is the quantum temperature
-k_B T_q = E0 = m_e / (q(q-1)) (def:quantum-temperature, SpectatorEnergyMap.e0).
-So E1 = E0 * ln([4]/[2]). M is the model proton mass (proton pin).
+(Clebsch-Gordan: [2]^3 = [4] + 2[2]). Energy unit (owner card 2026-11-27, PR #9718):
+the DERIVED per-nat unit m_e/(-ln tau_e) (qbeta_e0.electron_log_unit_scaled), forced by
+additivity + CAL-1. So E1 = m_e ln([4]/[2]) / (-ln tau_e). The earlier units, the
+quantum temperature E0 = m_e/(q(q-1)) and the linear-trace E0/R, are printed after it
+for comparison only. M is the model proton mass (proton pin).
 Measured values are printed last, as comparison only. mpmath 50 dps.
 """
 import sys
@@ -20,6 +22,8 @@ ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "computations" / "substrate"))
 sys.path.insert(0, str(ROOT / "computations"))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+sys.path.insert(0, str(ROOT / "computations" / "qbeta"))
+import qbeta_e0  # noqa: E402
 
 mp.dps = 50
 q = mpf(Q_50_DIGIT_STR)
@@ -29,11 +33,21 @@ def qint(n):
     return (q**n - q**(-n)) / (q - 1 / q)
 
 
-E0 = 1 / (q * (q - 1))                 # units of m_e
+U = qbeta_e0.electron_log_unit_scaled(1, q)   # derived per-nat unit, units of m_e
+E0 = qbeta_e0.order_zero_scaled(1, q)          # comparison only
 ratio = qint(4) / qint(2)              # y_(3) / y_(2,1) = q^2 + q^-2
 assert abs(qint(2)**3 - qint(4) - 2 * qint(2)) < mpf(10)**-40
-gap = E0 * log(ratio)                  # |E_(2,1) - E_(3)|, units of m_e
 M = mpf("1836.152673426")              # model m_p / m_e under the proton pin
+gap_d = U * log(ratio)                 # |E_(2,1) - E_(3)| in the derived unit
+eps_d = gap_d / M
+D_d = sqrt(q / 2) / sqrt(eps_d)
+print("DERIVED unit m_e/(-ln tau_e) =", mp.nstr(U, 15), "m_e per nat")
+print("  |gap| / m_e            ", mp.nstr(gap_d, 15))
+print("  eps                    ", mp.nstr(eps_d, 15))
+print("  D                      ", mp.nstr(D_d, 15))
+print()
+print("-- comparison units (not used) --")
+gap = E0 * log(ratio)
 eps = gap / M
 D = sqrt(q / 2) / sqrt(eps)
 
@@ -63,6 +77,8 @@ print()
 print("-- comparison boundary --")
 me_MeV = mpf("0.51099895069")
 lbar_p_fm = mpf("0.21030891")
+print("derived: |gap| MeV       ", mp.nstr(gap_d * me_MeV, 8), " (Delta - N measured ~293)")
+print("derived: r_rms fm        ", mp.nstr(D_d * lbar_p_fm, 8), " (r_p measured 0.8409)")
 print("|gap| MeV                ", mp.nstr(gap * me_MeV, 8), " (Delta - N measured ~293)")
 print("r_rms fm                 ", mp.nstr(D * lbar_p_fm, 8), " (r_p measured 0.8409)")
 print("trace unit: |gap| MeV    ", mp.nstr(gap_t * me_MeV, 8))
