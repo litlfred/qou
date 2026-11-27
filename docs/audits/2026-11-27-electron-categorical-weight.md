@@ -227,3 +227,23 @@ This is the two-strand case of Murakami's `V′(1) = −3·lk·V(1)`. The genera
 | electron `σ₁σ₂σ₁`: linkSum 2 (lk 1), 2 components; muon `(σ₁σ₂⁻¹)²`: 0, knot; proton `(σ₁σ₂⁻¹)³`: 0, 3 components; `σ₁⁴σ₂`: 4 | `electron_linkSum`, `muon_linkSum`, `proton_linkSum`, `t24_linkSum` |
 
 Here `linkSum = Σ` of the signs of the crossings between different components `= 2·lk`. This is Murakami's `V′(1) = −3·lk·V(1)` for every closed 3-braid, with the ring mass playing the role of `V`. The value at `q = 1` is exactly what §10 found numerically: 3 for the electron, 0 for the muon and the proton.
+
+## 12. Mass map for the ruled lepton words (owner cards: "Coloured ring mass of Δⁿ (all levels)", "Volume-order rule (4₁, then 5₂)")
+
+**Kashaev route.** The ruled words `e = Δ`, `μ = Δ³`, `τ = Δ⁵` (tau thread, #9800) are periodic 3-braids. Their closures are torus-type links with `Vol = 0`, and so are their cables, satellites, closure-plus-axis and mutants. `prop:vol-through-tau` assigns a braid only the volume of its own closure, so the volume chart has no carrier in these words.
+
+**Coloured ring mass, every level.** `QOU/Observations/ColouredLadderTwist.lean`; probe `computations/probes/coloured_ladder/coloured_delta_ladder_probe.py` (26/26). At level `N = 2j+1`, the framing is `f = q^{2j(j+1)}` (fixed by stabilisation), and `Δ²` acts on the spin-`J` part by `q^{2J(J+1)−6j(j+1)}`. These are checked numerically for `N ≤ 6` and carried in Lean as a hypothesis, `TwistDecomposition`. Then `m_N(Δ^{2k+1}) = Σ_J a_J r_J^k` with `r_J = q^{e_J}`. Lean proves `e_J ≤ −6(N−1)` (`twistExp_le`, equality at the top component), the envelope `|m_k| ≤ C·q^{−6(N−1)k}` (`coloured_ladder_decays`), and `q^{−6(N−1)} < 1` for `q > 1`. So no level makes the ladder heavier.
+
+| N | μ/e | τ/e | mirror μ/e | mirror τ/e |
+|---|---|---|---|---|
+| 2 | 0.535 | 0.286 | 1.87 | 3.50 |
+| 3 | 0.263 | 0.0742 | 9.44 | 43.5 |
+| 4 | 0.139 | 0.0212 | 138 | 2.5·10⁴ |
+| 5 | 0.0768 | 0.00627 | 5.3·10³ | 3.4·10⁸ |
+| 6 | 0.0422 | 0.00184 | 4.2·10⁵ | 2.1·10¹¹ |
+
+(at q₀; `m(Δ)` at N = 2 is `[4]/q³`). The mirror ladder `Δ^{−(2k+1)}` is the heavier direction. No level is chosen.
+
+**Volume-order rule.** `QOU/Observations/VolumeOrderRule.lean`; probe `volume_order_rule_probe.py` (4/4). Generation `g` gets the `g`-th smallest hyperbolic knot volume: `4₁`, then `5₂`. Both are cited theorems: Cao–Meyerhoff, and Gabai–Haraway–Meyerhoff–Thurston–Yarmola. On the volume chart this gives `m_τ/m_μ = Vol(5₂)/Vol(4₁) = 1.39324`, which does not depend on q (`ratio_q_free`). Comparison only: the measured ratio is 16.817, so the rule is a factor 0.0828 low (`m_τ/m_e = 288.08` against 3477.23). The rule is **refuted** as the tau carrier on the volume chart. It is not adjusted.
+
+**Reading (convolution operators).** A knot `K` gives a central element of `U_q(𝔤)`. It acts on `A = O_q(SU(2))` by convolution, as `J_N(K)/[N]` on the colour-`N` Peter–Weyl block. At real `q` that spectrum is Laurent polynomials. The volume appears only as the growth `exp(N·Vol/2π)` at `q = e^{2πi/N}` (Kashaev). That is the only place `Vol(4₁)` enters the muon's `Vol/ℏ²`.
