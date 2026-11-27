@@ -1,4 +1,5 @@
 import QCalculus.HabiroDoubleTwist
+import QCalculus.HabiroNewtonLadder
 
 /-!
 # QCalculus.HabiroColoredJones — colored Jones from cyclotomic coefficients, for any knot
@@ -25,6 +26,12 @@ knot-specific computation:
 * `CyclotomicExpansion J`: a structure packaging a family `J N` with its
   coefficients; `CyclotomicExpansion.evalRoot_eq` then reads every Kashaev value
   off one Habiro element.
+* `coloredJonesAt q qi C N`: the same polynomial in any commutative ring with
+  `q · qi = 1`; `coloredJones` is its instance in `R̂[q]`.
+* `coloredJones41_eq_coloredJonesAt`: the corpus's `HabiroNewtonLadder.coloredJones41`
+  (the figure-eight tower used by the AJ files) is `coloredJonesAt` with the
+  figure-eight coefficients `(-1)^n q^{-n(n+1)/2}`, the same coefficients as
+  `figureEight`. So the AJ tower and the Kashaev element are one object.
 * Instances of the coefficient data from phases 1–2: `doubleTwistPos`,
   `doubleTwistNeg` and `figureEight` are `kashaevElement`s.
 
@@ -45,6 +52,12 @@ open Polynomial Finset
 
 variable {R : Type*} [CommRing R]
 
+/-- The colour-`N` cyclotomic polynomial in any commutative ring, with `qi`
+    standing for `q⁻¹`: `∑_{n<N} C_n ∏_{k<n} (1 - q^{N+1+k}) (1 - qi^{N-1-k})`. -/
+def coloredJonesAt {A : Type*} [CommRing A] (q qi : A) (C : ℕ → A) (N : ℕ) : A :=
+  ∑ n ∈ range N, C n * (∏ k ∈ range n, (1 - q ^ (N + 1 + k))) *
+    ∏ k ∈ range n, (1 - qi ^ (N - 1 - k))
+
 /-- `(q^{1+N}; q)_n = ∏_{k<n} (1 - q^{N+1+k})`. -/
 noncomputable def jonesPos (N n : ℕ) : Habiro R :=
   ∏ k ∈ range n, (1 - q ^ (N + 1 + k))
@@ -62,6 +75,9 @@ theorem jonesNeg_eq_zero {N n : ℕ} (hN : N ≠ 0) (hn : N ≤ n) : (jonesNeg N
 /-- **The colour-`N` colored Jones element** `∑_{n<N} C_n (q^{1+N})_n (q^{1-N})_n`. -/
 noncomputable def coloredJones (C : ℕ → Habiro R) (N : ℕ) : Habiro R :=
   ∑ n ∈ range N, C n * jonesPos N n * jonesNeg N n
+
+theorem coloredJones_eq_coloredJonesAt (C : ℕ → Habiro R) (N : ℕ) :
+    coloredJones C N = coloredJonesAt q qInv C N := rfl
 
 /-- Any longer cut gives the same element (the tail vanishes). -/
 theorem coloredJones_eq_sum_of_le (C : ℕ → Habiro R) {N M : ℕ} (hN : N ≠ 0) (hM : N ≤ M) :
@@ -163,5 +179,61 @@ noncomputable def doubleTwistPosExpansion (m p : ℕ) :
   coeff := coeffPos m p
   coeff_zero := by simp [coeffPos, chainPos_zero_right]
   expand _ := rfl
+
+/-! ### The corpus figure-eight tower is the same object -/
+
+section FigureEightTower
+
+open QOU.BraidKnot.HabiroNewtonLadder
+
+private theorem tri_succ' (n : ℕ) : (n + 1) * (n + 1 + 1) / 2 = n * (n + 1) / 2 + (n + 1) := by
+  have h : (n + 1) * (n + 1 + 1) = n * (n + 1) + 2 * (n + 1) := by ring
+  rw [h, Nat.add_mul_div_left _ _ (by norm_num)]
+
+private theorem prod_neg_inv_pow {K : Type*} [Field K] (x : K) (k : ℕ) :
+    ∏ j ∈ range k, (-(x ^ (j + 1))⁻¹) = (-1) ^ k * x⁻¹ ^ (k * (k + 1) / 2) := by
+  induction k with
+  | zero => simp
+  | succ k ih =>
+    rw [prod_range_succ, ih, tri_succ', pow_succ (-1 : K), inv_pow, inv_pow]
+    simp only [pow_add, pow_one, mul_inv]
+    ring
+
+private theorem pos_factor {K : Type*} [Field K] {x : K} (hx : x ≠ 0) (N k : ℕ) :
+    x ^ (N * k) * ∏ j ∈ range k, (1 - (x ^ (N + 1 + j))⁻¹) =
+      (-1) ^ k * x⁻¹ ^ (k * (k + 1) / 2) * ∏ j ∈ range k, (1 - x ^ (N + 1 + j)) := by
+  have hc : x ^ (N * k) = ∏ _j ∈ range k, x ^ N := by
+    rw [prod_const, card_range, ← pow_mul]
+  rw [hc, ← prod_mul_distrib, ← prod_neg_inv_pow, ← prod_mul_distrib]
+  refine prod_congr rfl fun j _ => ?_
+  have hN : x ^ N ≠ 0 := pow_ne_zero _ hx
+  have hj : x ^ (j + 1) ≠ 0 := pow_ne_zero _ hx
+  rw [show N + 1 + j = N + (j + 1) by ring, pow_add]
+  field_simp
+  ring
+
+private theorem neg_factor {K : Type*} [Field K] {x : K} (hx : x ≠ 0) {N j : ℕ} (hj : j < N) :
+    1 - x ^ (j + 1) * (x ^ N)⁻¹ = 1 - x⁻¹ ^ (N - 1 - j) := by
+  have hsplit : x ^ N = x ^ (N - 1 - j) * x ^ (j + 1) := by
+    rw [← pow_add]; congr 1; omega
+  have h1 : x ^ (N - 1 - j) ≠ 0 := pow_ne_zero _ hx
+  have h2 : x ^ (j + 1) ≠ 0 := pow_ne_zero _ hx
+  rw [hsplit, inv_pow]
+  field_simp
+
+/-- **`coloredJones41` is the cyclotomic polynomial with the figure-eight
+    coefficients** `C_n = (-1)^n q^{-n(n+1)/2}`, over any field. -/
+theorem coloredJones41_eq_coloredJonesAt {K : Type*} [Field K] {x : K} (hx : x ≠ 0) (N : ℕ) :
+    coloredJones41 x N =
+      coloredJonesAt x x⁻¹ (fun n => (-1) ^ n * x⁻¹ ^ (n * (n + 1) / 2)) N := by
+  rw [coloredJones41, coloredJonesAt]
+  refine sum_congr rfl fun k hk => ?_
+  have hkN : k < N := mem_range.mp hk
+  rw [habiroTerm, pos_factor hx]
+  congr 1
+  refine prod_congr rfl fun j hj => ?_
+  exact neg_factor hx (lt_trans (mem_range.mp hj) hkN)
+
+end FigureEightTower
 
 end QCalculus.HabiroSeries
