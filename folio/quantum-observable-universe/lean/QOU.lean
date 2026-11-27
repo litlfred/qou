@@ -106,6 +106,7 @@ import QOU.Transcendental.MassTheory.ClausenDoubleAngleSeries
 import QOU.Transcendental.MassTheory.Cl2PentagonFromBlochWigner
 import QOU.Transcendental.MassTheory.BlochGroupComplex
 import QOU.Transcendental.MassTheory.MuonCarrierHeckeObstruction
+import QOU.Transcendental.MassTheory.ElectronCategoricalEnergy
 import QOU.MassTheory.BranchIntegerPinning
 -- Weierstrass primary-factor estimate ‖1 - E_p(z)‖ ≤ ‖z‖^{p+1}: the Mathlib-gap
 -- infrastructure that closes PI-2 of QOU.Mathlib.HadamardFactorization.
