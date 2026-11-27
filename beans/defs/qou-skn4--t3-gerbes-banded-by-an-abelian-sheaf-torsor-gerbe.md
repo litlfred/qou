@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-10-12T19:48:14Z
-updated_at: 2026-11-24T03:25:24Z
+updated_at: 2026-11-27T22:40:00Z
 parent: qou-533l
 ---
 
@@ -94,3 +94,8 @@ Not recorded above: step C2 is DONE. PR #7969 (merged 2026-11-15 22:09, commit a
 APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2026-11-22: photon with fixed constant 1, γγ linking neutrality, derived quark charges, potential-energy sign, m_p = m_n at q = 1, gluon open, electron σ₀σ₁σ₀ with T(2,n) as backup, S₅ two-test rule, T(A) tangent algebra) and git log on the Lean/content paths since the last update. No commits since 2026-11-20 on the gerbe files. Carried residual (a) and the Grothendieck-topology colimit remain.
 
 Corrected stale note: KummerSurfaceData is inhabited on origin/main (point, S^2 #7969, genus-4 #8863 c7bc0b57687); open residual is effective SheafTorsor descent & stack-level Yekutieli.
+
+## 2026-11-27 (thread "Build the brane-tower gerbes", PR #9740)
+
+Effective descent of objects, gluing half: MathlibExt/CocycleTorsor.lean. On a small site with U covering the final object and A a sheaf of groups, a 1-cocycle g gives cocycleTorsor g : MulSheafTorsor J A (isSheaf_twistedPresheaf, isPseudoTorsor_twistedAction, locallyNonempty_twistedPresheaf), whose canonical sections have transition cocycle g (cocycleSection_transition). Sorry-free, standard axioms.
+Still open: the converse (a torsor trivial on each U i is isomorphic to the torsor of its cocycle) and comparison with Mathlib's GrpCat-valued H¹.

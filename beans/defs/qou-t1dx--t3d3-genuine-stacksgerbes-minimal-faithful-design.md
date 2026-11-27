@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-10-12T20:38:55Z
-updated_at: 2026-11-22T21:45:00Z
+updated_at: 2026-11-27T22:40:00Z
 parent: qou-533l
 ---
 
@@ -46,3 +46,8 @@ State on main unchanged since 2026-11-15: StackGerbe.lean Milestones 1–3 (PR #
 ## 2026-11-22 applicability review (wave-2 sibling bring-riemann-gerbes, session_01Qmmkt7Jw9nSDCzSdsd8hLX)
 
 APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2026-11-22: photon with fixed constant 1, γγ linking neutrality, derived quark charges, potential-energy sign, m_p = m_n at q = 1, gluon open, electron σ₀σ₁σ₀ with T(2,n) as backup, S₅ two-test rule, T(A) tangent algebra) and git log on the Lean/content paths since the last update. StackGerbe M1–M3 unchanged; effective descent of objects still open.
+
+## 2026-11-27 (thread "Build the brane-tower gerbes", PR #9740)
+
+Effective descent of objects, gluing half: MathlibExt/CocycleTorsor.lean. On a small site with U covering the final object and A a sheaf of groups, a 1-cocycle g gives cocycleTorsor g : MulSheafTorsor J A (isSheaf_twistedPresheaf, isPseudoTorsor_twistedAction, locallyNonempty_twistedPresheaf), whose canonical sections have transition cocycle g (cocycleSection_transition). Sorry-free, standard axioms.
+Still open: the converse (a torsor trivial on each U i is isomorphic to the torsor of its cocycle) and comparison with Mathlib's GrpCat-valued H¹.
