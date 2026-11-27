@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-20T08:13:33Z
-updated_at: 2026-11-27T15:10:00Z
+updated_at: 2026-11-27T15:10:57Z
 tags:
     - compute-accuracy
 parent: qou-3l2l
@@ -37,3 +37,7 @@ clasp words agrees at q = 1 (`clasp_reading_pion_eq_kaon`), so no polynomial rat
 [3]_q[4]_q as an identity in q (`unit_ratio_reading_ne_p34`). Scope (b), invariant = q=1 odd-clasp collapse vs
 [3]_1[4]_1 = 12. Does NOT exclude a chosen channel (dim_q(V2 x Sym2 W3*) = [3][4], 2026-11-24); choosing it is the
 premise this bean asks to derive. Audit docs/audits/2026-11-27-mk-mpi-selection-status.md.
+
+## 2026-11-27 — option 2 (channel choice), PR #9477
+
+Channel choice does NOT select `[3][4]`. The `sl₂ × sl₃` isotypes of classical dim 12 are exactly five. The four coloured ones (`V₂⊗6̄`, `V₂⊗6`, `V₄⊗3̄`, `V₄⊗3`) all have `dim_q = [3][4]`. The colourless `V₁₂` has `[12]`. Lean: `MesonTwelveDimChannels` (sorry-free). Remaining premise: classical multiplicity 12 and a coloured channel. Still Selected. Open: derive 12 (or `[3][4]`) from a definition of K and π. The quark labels (3,3)/(3,5) supply no map to 12 in the corpus.
