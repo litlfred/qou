@@ -390,3 +390,14 @@ Done on the branch (no number moved):
 - ACCURACY.md mirror row names the radius and the selection and quotes the A=3 ratio 0.901 beside the mean.
 Still open (this bean's goal): a radius that is derived, not selected. Ratio split/ΔE_C rises 0.90 (A=3) → 1.07
 (A=39), so `A^{1/3}` is the wrong shape for light nuclei. Paths put to the owner on a card.
+
+## 2026-11-27 — path 1 probe result (owner card, recommended option; PR #9642)
+
+`computations/probes/coulomb_radius_from_model_separation_probe.py`, pre-registered in its own commit before the run.
+Length from the model's own proton separation S = B_QOU(³H) − B_QOU(²H) = 3.443 MeV (AME 6.257), κ = √(2μS)/ℏc.
+- Primary (zero-range tail, R_u = √(5/3)/(√2 κ)): ΔE_C = 0.6295 MeV, **−17.6 %** vs the 0.7638 MeV split.
+- The tail-to-rms step is a flagged CHOICE: alternates give 0.575 (−24.8 %) and 0.891 (+16.7 %). Not selected.
+- Control with AME binding: primary 0.8486 (+11.1 %), within 0.15 % of the λ̄_π·A^{1/3} value 0.8474.
+Reading (scope a): this removes the selected coefficient on ℏc/m_π, but adds a shape choice worth about ±20 %, and
+couples the Coulomb row to the ³H binding miss (−35 %). Not a derivation yet; not on the scorecard. A derived
+tail-to-rms step (the model's own ³He wave-function shape) is what would close it. Bean stays in-progress.
