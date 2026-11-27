@@ -8,7 +8,7 @@ tags:
     - term-completeness
     - lean
 created_at: 2026-11-27T21:05:00Z
-updated_at: 2026-11-27T21:05:00Z
+updated_at: 2026-11-27T21:50:00Z
 parent: qou-tcl0
 ---
 
@@ -37,3 +37,13 @@ of the normal forms for general n.
 3. With every `[k]` (k ≤ n+1) a unit: Wedderburn blocks of sizes `ballot(n,k)`, and Ext¹ = 0 /
    HH² = 0. Note: trace nondegeneracy alone does NOT give semisimplicity (`K[x]/(x²)` has a
    nondegenerate trace) — use the JW projectors + the dimension count from 1–2.
+
+## 2026-11-27 update
+
+- Step 1 merged: #9700, `HeckeTemperleyLieb/TemperleyLiebSpinChainTwo.lean` (spinRep, TL(2) over any R).
+- Owner choice (via coordinator): use the O_q(SU(2)) PBW basis (#9731,
+  `CompactQuantumMetrics/OqSU2PBW.lean`, basis over any commutative R with q a unit) for
+  the rank-side dimension counts. Plan: the degree-≤N part of O_q(SU(2)) has rank
+  Σ_{2T≤N} (2T+1)², i.e. the matrix-coefficient count behind `multiplet_rank_count`,
+  now as a basis statement over any R rather than a sum identity. The TL pivot lemma
+  covers the block side.
