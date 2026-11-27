@@ -1,0 +1,101 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-27T20:15:48.667423+00:00",
+  "commitSha": "bfcf5735848d01701367f921d2e69ea596206d1f",
+  "assertions": [
+    {
+      "name": "G(z;q) = (q d/dq log P)(zq;q) at q0, z = e^{i pi/3} -- 5.7956e-70",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "q d/dq log tau_e at q = 1 equals 3 (writhe) -- 3.0",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "unframed part y3 contributes 0 at q = 1 (bar-invariance) -- 0.0",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "energy-reading carrier is not Vol/hbar^2 (ratio to carrier < 1/2) -- 0.312879510458",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "Kashaev slope d log<4_1>_N / dN -> Vol/(2 pi) (within 2%) -- 1.0160698",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "muon-carrier-hecke",
+  "scriptFile": "muon_carrier_hecke_probe.py",
+  "scriptHash": "d556a753db42",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "mpmath": "1.4.1",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/muon_carrier_hecke_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/muon_carrier_hecke_probe.py"
+  },
+  "description": "Diagnostics for the canonical-chart question of the muon carrier Vol(4_1)/hbar_q^2 (bean qou-91w7). Checks G = q d/dq log P (quantum dilogarithm), the energy reading w = q d/dq log Z on electron and muon (electron weight -> 3, the writhe; carrier off by ~1/3), and that the Kashaev invariant of 4_1 carries the volume at order 1/hbar in the exponent. Proton pin; nothing fitted.",
+  "data": {
+    "proton_pin": {
+      "q0": "1.109978582751380807591669095610768879874",
+      "hbar_q0": "0.09908171604425850783917711751890606398526",
+      "Vol41": "2.029883212819307250042405108549040571883",
+      "carrier_Vol_over_hbar2": "206.7683263706738902896095864099026759385",
+      "two_Im_G_e_ipi3": "207.2446138898169964583476641002077080665",
+      "two_Im_G_over_carrier": "1.002303483940230114429583100887098329694",
+      "w_e_energy_q0": "3.203480734399805971142327149750584304629",
+      "energy_reading_ratio": "64.69357273304960034922563483946538572637",
+      "energy_reading_over_carrier": "0.3128795104578702978709527531423936503784"
+    },
+    "kashaev_4_1": {
+      "50": {
+        "log_kashaev": "21.7580792157577600032757131853",
+        "N_Vol_over_2pi": "16.1532973609725257046818255362",
+        "abs_hbar": "0.125581039058626752152356449131"
+      },
+      "100": {
+        "log_kashaev": "38.9453149963535188568958331252",
+        "N_Vol_over_2pi": "32.3065947219450514093636510724",
+        "abs_hbar": "0.0628215181562565876783673476357"
+      },
+      "200": {
+        "log_kashaev": "72.2888021212280756843067682532",
+        "N_Vol_over_2pi": "64.6131894438901028187273021448",
+        "abs_hbar": "0.0314146346236413515065907066198"
+      },
+      "400": {
+        "log_kashaev": "137.940312788714395307251958085",
+        "N_Vol_over_2pi": "129.22637888778020563745460429",
+        "abs_hbar": "0.0157078017774226678132648900887"
+      }
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "default proton pin; muon pin not used"
+}
