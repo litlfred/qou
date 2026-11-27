@@ -17,7 +17,7 @@ the list cannot silently break the pointers.
 | Quantum Schur–Weyl duality $\mathcal{U}_q(\mathfrak{gl}_N) \leftrightarrow H_n(q)$ | standard \cite{jimbo1986}; the duality itself is not proved here, only its row-cap consequence | [Schur–Weyl](#prop:schur-weyl-eightfold) |
 | $\mathbf{3} \otimes \bar{\mathbf{3}} = \mathbf{8} \oplus \mathbf{1}$; $\dim \mathrm{Sym}^3(W_3^*) = \binom{5}{3} = 10$; quantum $[3]_q^3 = (q^2 + q^{-2})[5]_q + 2[2]_q[4]_q + 1$; weight tables | traceless/scalar vector-space split, polynomial-module dimension $10 \neq 4$, and generic-$q$ quantum dimension balance **proved**; $\mathrm{SU}(3)_{\mathrm{f}}$ equivariance and applicability **conditional on $N = 3$** | [meson octet](#prop:meson-octet-decomposition), [decuplet](#prop:borromean-decuplet) |
 | $N = 2$ cannot host the eightfold-way decomposition | **standard**, with a proved *arithmetic* instance: $\dim V_{(1^3)}$ is taken to be $\binom{N}{3}$, and $\binom{N}{3} = 0 \iff N < 3$ is proved. The hook-content formula and the row cap $\ell(\lambda) \le N$ are cited, not proved — same caveat as the $q$-deformation row | [Schur–Weyl](#prop:schur-weyl-eightfold) |
-| $\dim V = N = 3$ for the flavour fundamental | **open**: framework supplies $\dim V = 2$; no $q$ raises the row cap. The *obstruction* is proved; the *construction* is missing | item *The $N = 3$ problem* |
+| $\dim V = N = 3$ for the flavour fundamental | **postulated** (owner ruling 2026-11-27): the framework supplies $\dim V = 2$ and no $q$ raises the row cap, so $N = 3$ enters as the axiom datum $W$ of [the flavoured definition](#def:flavoured-quantum-observable-universe) ($\Lambda^3 W \cong \mathbf{1}$, $W$ not self-dual). The *obstruction* is proved; a *construction* of $W$ from the substrate is still missing | item *The $N = 3$ problem* |
 | No object of the single-fibre category reaches $\dim W = 3$ through the $\mathrm{Sym}^2$ gate | **proved**, and at *object* level rather than only for irreducible summands: the Frobenius--Schur count forces a passing $W$ to be a sum of pairwise *distinct* even-dimensional irreps, so $\dim W$ is even, and $3$ is odd | item *The $N = 3$ problem* |
 | Inequivalent fibre functors of the single-fibre category | **standard** \cite{bichon2003}: they exist at every dimension $n \ge 2$ and are real at $q_0$; and **proved** that none of them supplies a one-dimensional summand of $V^{\otimes 3}$ --- the spin-$0$ object is absent by Clebsch--Gordan parity, so the fusion rules, which every fibre functor preserves, exclude $\mathbf{10} \oplus \mathbf{8} \oplus \mathbf{8} \oplus \mathbf{1}$ at every $n$ | item *The $N = 3$ problem* |
 | Writhe-to-isospin map $w \mapsto I_3$ on the nucleon doublet | derived, scale-free, no fitted parameters, for the writhe of the inter-nucleon arc; the ruled nucleon word has writhe $0$ for both nucleons | [flavour charges](#rem:flavor-charge-assignments) |
@@ -60,7 +60,11 @@ Gell-Mann--Nishijima relation.
    (the alternating channel
    $\binom{N}{3}$ vanishes iff $N < 3$, and the decuplet dimension forces
    $N = 3$) --- so the obstruction is settled and only the construction is
-   missing.  *Open:* construct a
+   missing.  **Owner ruling 2026-11-27:** the flavour fundamental is now
+   *postulated* as the axiom datum $W$ of
+   [the flavoured definition](#def:flavoured-quantum-observable-universe), with
+   condition (iii) kept for $V$; results that use $W$ are consequences of the
+   extended axioms, not derivations from the original ones.  *Open:* construct a
    three-dimensional object $W$ in the multi-fibre groupoid whose
    symmetric square $\mathrm{Sym}^2(W)$ is irreducible (no singlet).
    The octonion $G_2$ route supplies a colour $\mathrm{SU}(3)_{\mathrm{c}}$ candidate
