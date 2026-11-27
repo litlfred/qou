@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - 8f-open
 created_at: 2026-08-10T18:34:14Z
-updated_at: 2026-11-27T19:52:14Z
+updated_at: 2026-11-27T19:54:03Z
 parent: qou-8lxd
 ---
 
@@ -408,3 +408,7 @@ New: `QOU/EightfoldWay/NeutralLeptonFixesCharges.lean` (lean-direct rc=0, 0 warn
 Inputs, stated: (1) matter content 5̄ ⊕ Λ²5 (Georgi–Glashow / baez-huerta2010, NOT derived); (2) one lepton has charge 0 (a vanishing, not a measured number). The triple in 5 is COLOUR, so this needs neither the flavour W nor the rung-5 fibre of rem:su5-hypercharge-n3-gate.
 
 Still open (rule 13a — do not close): deriving the matter content, and the braid-environment datum that should carry the charge at strand level (owner card pending).
+
+
+### 2026-11-27 later: braid-environment route, first step (PR #9633, 2nd commit)
+`antiUp_ne_down_by_labels`: the anti-up / down collision of `QuarkBraidChargeObstruction` is resolved by STRAND LABELS in Λ²5 (colour–colour −2/3 vs colour–isospin −1/3; charge = sum of strand weights). The datum the crossing lacks is the partner strand's label. NOT derived: why a quark strand carries a colour⊕isospin label pair, and why matter is 5̄⊕Λ²5 (Fermi statistics on strands, C3 colourSinglet_eq_smul_det, is the natural lead for the Λ). Stays open per rule 13a.
