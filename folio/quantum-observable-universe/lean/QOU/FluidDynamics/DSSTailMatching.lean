@@ -1,5 +1,5 @@
 import Mathlib.Analysis.InnerProductSpace.Basic
-import Mathlib.Analysis.SpecialFunctions.Gamma.Basic
+import Mathlib.Analysis.SpecialFunctions.Gamma.Beta
 import QOU.FluidDynamics.BeltramiSteadyEuler
 
 /-!
@@ -83,10 +83,8 @@ theorem nonzero_solution_witness :
     (∀ c : ℝ, c ≠ 0 → ⟪-c, c⟫_ℝ < 0) ∧ (-(1 : ℝ)) + 1 ^ 2 = 0 ∧
       0 < ⟪(1 : ℝ) ^ 2, (1 : ℝ)⟫_ℝ := by
   refine ⟨fun c hc => ?_, by norm_num, ?_⟩
-  · simp only [real_inner_eq_re_inner, RCLike.inner_apply, conj_trivial]
-    simp only [RCLike.re_to_real]
-    nlinarith [sq_pos_of_ne_zero hc]
-  · simp [real_inner_eq_re_inner]
+  · rw [inner_neg_left]; exact neg_neg_of_pos (real_inner_self_pos.mpr hc)
+  · rw [one_pow]; exact real_inner_self_pos.mpr one_ne_zero
 
 end Energy
 
@@ -123,7 +121,7 @@ theorem lambGrad_of_beltrami (u : VField) {lam : ℝ} (hb : u.IsBeltrami lam) :
   intro x y z
   obtain ⟨c1, c2, c3⟩ := hb x y z
   simp only [px, py, pz, deriv_const']
-  refine ⟨?_, ?_, ?_⟩ <;> rw [c1, c2, c3] <;> ring
+  refine ⟨?_, ?_, ?_⟩ <;> simp only [c1, c2, c3] <;> ring
 
 end Lamb
 
@@ -146,11 +144,15 @@ theorem sectorA_re (l : ℕ) (μ : ℝ) : (sectorA l μ).re = ((l : ℝ) + 2) / 
 theorem sectorA_re_pos (l : ℕ) (μ : ℝ) : 0 < (sectorA l μ).re := by
   rw [sectorA_re]; positivity
 
+theorem sectorB_re (l : ℕ) : (sectorB l).re = (l : ℝ) + 3 / 2 := by
+  rw [show sectorB l = (((l : ℝ) + 3 / 2 : ℝ) : ℂ) by simp [sectorB], Complex.ofReal_re]
+
 theorem sectorB_re_pos (l : ℕ) : 0 < (sectorB l).re := by
-  simp [sectorB]; positivity
+  rw [sectorB_re]; positivity
 
 theorem sectorB_sub_one_re_pos (l : ℕ) : 0 < (sectorB l - 1).re := by
-  simp [sectorB]; norm_num; positivity
+  rw [Complex.sub_re, sectorB_re, Complex.one_re]
+  linarith [(Nat.cast_nonneg l : (0 : ℝ) ≤ l)]
 
 /-- `a` is never a pole of `Γ`: `Γ(a) ≠ 0`, so `1/Γ(a) ≠ 0`. -/
 theorem gamma_sectorA_ne_zero (l : ℕ) (μ : ℝ) : Gamma (sectorA l μ) ≠ 0 :=
