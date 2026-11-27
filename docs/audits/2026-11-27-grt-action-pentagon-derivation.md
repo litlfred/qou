@@ -611,3 +611,65 @@ that. It is not literally "a `K`-associator exists".
 mathematically substantive one.
 
 **Still open (bean `qou-3fdg`).** (B0)–(B3). Nothing else in Stage 4 is open.
+
+## 15. Gap B2 (Drinfeld Prop. 5.7): what is proved, and the one bridge left
+
+Bean `qou-3fdg`, PR #9696. New files `Prop57.lean` and `Prop57Cocycle.lean` under
+`QOU/BraidsAndKnots/RationalAssociator/`. Every declaration below is sorry-free; lean-direct
+(`-DautoImplicit=false -s 65536`) exits 0, and `#print axioms` shows only `propext`,
+`Classical.choice`, `Quot.sound`.
+
+Drinfeld's argument has two steps. Write `s(B, C) = [B, ψ(A, B)] + [C, ψ(A, C)]`, `A = −B − C`.
+
+**Step 2, the vanishing lemma: proved in general** (`vanishing_of_cocycle`). Take `s ∈ ℚ⟨B, C⟩`
+that is `LieLike`, symmetric, and whose cocycle
+`s(Y₁, Y₂) − s(Y₁, Y₂ + Y₃) + s(Y₁ + Y₂, Y₃) − s(Y₂, Y₃)` lies in the words of length `≥ N`.
+Then `s` itself lies in the words of length `≥ N`. The proof substitutes `Y₃ = x·C` with `x`
+central, takes the `x`-coefficient, and gets that the Euler operator kills `s` below degree `N`.
+It is purely algebraic.
+
+**`s` is `LieLike` and symmetric for every `ψ`, Lie or not** (`sPoly_lieLike`, `sPoly_symm`). At
+commuting `x, z`, the element `ψ(−x−z, x)` commutes with `x`, so both brackets vanish. The
+vanishing lemma therefore carries no Lie hypothesis on `ψ`.
+
+**Step 1, the cocycle identity: proved** (`cocycle_identity`, `uDefect_eq_zero`,
+`GrtU4.uDefect_eq_zero`). At a four-strand Drinfeld–Kohno family,
+
+`u = S(t₁₂, t₁₄, t₂₄) − S(t₁₂+t₁₃, t₁₄, t₂₄+t₃₄) + S(t₁₃+t₂₃, t₁₄+t₂₄, t₃₄) − S(t₂₃, t₂₄, t₃₄)`
+`  = −[t₁₂+t₁₃+t₂₃, μ¹²³⁴] − [t₁₄+t₂₄, μ¹²⁴³] + [t₁₄, μ¹⁴²³]`,
+
+where `S(A, B, C) = [B, ψ(A, B)] + [C, ψ(A, C)]` and `μ` is the linearised pentagon defect.
+The identity uses only:
+
+- antisymmetry (5.17);
+- the linearised hexagon (5.18) at the DK3 subfamilies `(t₁₂, t₁₄, t₂₄)`,
+  `(t₁₄, t₁₂+t₁₃, t₂₄+t₃₄)`, `(t₂₃, t₂₄, t₃₄)` and `(t₃₄, t₁₃+t₂₃, t₁₄+t₂₄)`;
+- ten commuting facts.
+
+The relation list came from an exact linear solve over ℚ, and Lean checks it with `noncomm_ring`.
+In `U4 N`, `GrtU4`'s `lin512`, `lin513` and `lin515` give `u = 0`: the hexagon through `liftU3`,
+and the pentagon at strand orders `1243` and `1423` through `lift` on permuted DK4 families.
+**No Lie hypothesis is used in step 1.**
+
+**The bridge still open (not formalised): from `u = 0` in `U4 N` to `cocycle(s) ∈ FF3 N`.** The
+`A`-argument of each `S` term is `t₁₂`, `t₁₂+t₁₃`, `t₁₃+t₂₃` or `t₂₃`. It must be replaced by
+`−B−C`, using that the sum of a DK3 triple commutes with each member. This **central shift** is
+the one place a Lie hypothesis is needed: `ψ(a + z, b) = ψ(a, b)` for central `z` holds for Lie
+`ψ` without linear part. The linear part `α(X − Y)` is harmless, because it is killed by the
+bracket with `B`.
+
+After the shift, every `S` term is a polynomial in `t₁₄, t₂₄, t₃₄`, and `u = 0` becomes
+`cocycle(s)(t₁₄, t₂₄, t₃₄) = 0` in `U4 N`. To pull this back to `ℚ⟨Y₁, Y₂, Y₃⟩` modulo length
+`N`, a retraction is needed: the DK4 family in `End(ℚ⟨Y⟩ ⧸ FF3 N)` with
+- `t_{i4} ↦` left multiplication by `Y_i`;
+- `t₁₃, t₂₃, t₁₂ ↦` the derivations with `Y₁ ↦ [Y₁, Y₃], Y₃ ↦ [Y₃, Y₁]` (and similarly for the
+  other two).
+
+Evaluate at `1`. The DK4 relations of this family were checked by machine (exact arithmetic,
+low degree). In Lean the derivations can be built with the upper-triangular trick of
+`GRTFlow.leibD`.
+
+Finally, `lin514` at DK3 triples whose sum is nonzero needs the same central shift again
+(`lin514_of_drinfeld519` covers only zero-sum triples). So, **as proved here, Lie-ness of `ψ`
+enters only through the central shift**. Whether (5.19) holds for non-Lie `y` satisfying the
+other three conditions is **not established**: it was neither tested nor proved.

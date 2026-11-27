@@ -16,8 +16,8 @@ This file proves step 2, in a truncated form and by a purely algebraic argument 
 a representation-theoretic one). The hypotheses on `s ∈ ℚ⟨B, C⟩` are:
 
 * `LieLike s`: at every commuting pair `x, y` of any `ℚ`-algebra, `s(x, y) = α x + β y` for fixed
-  `α, β ∈ ℚ`. Every Lie polynomial has this property (`LieLike` of a bracket is checked in
-  `Prop57Cocycle`); it is all the argument uses of "Lie".
+  `α, β ∈ ℚ`. Every Lie polynomial has this property, and Drinfeld's `s` has it for **every**
+  `ψ`, Lie or not (`sPoly_lieLike` in `Prop57Cocycle`, with `α = β = 0`).
 * symmetry `s(C, B) = s(B, C)` as a polynomial;
 * (5.24) modulo the words of length `≥ N` in `ℚ⟨Y₁, Y₂, Y₃⟩`.
 
