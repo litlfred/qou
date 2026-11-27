@@ -30,3 +30,4 @@ Run from this directory. No floats: `Fraction` (exact) or integer arithmetic mod
   - Exp(σ3) satisfies all four conditions through degree 8.
   - Ordinary exp(σ3) fails (5.13) and (5.15) at degree 6, and (5.14) at degree 7.
   - Exp([X,[X,Y]]), which is not in grt, fails (5.12) and (5.15) at degree 3.
+- `exp516_oneparam.py`: exact check that `Exp(sψ) ∘ Exp(tψ) = Exp((s+t)ψ)` under (5.16) through degree 9, for `ψ = σ₃` and `ψ = [X,[X,Y]]`.
