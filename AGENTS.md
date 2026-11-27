@@ -5392,7 +5392,10 @@ Lean renames keep a `@[deprecated]` alias for the old name.
   Calligraphic letters are reserved for sheaves, sites, algebras,
   bundles, and curves (`$\mathcal{S}$` = state bundle,
   `$\mathcal{E}_q$` = elliptic curve, `$\mathcal{O}$`, `$\mathcal{A}$`).
-- **Fibre functor**: Always `$\tau$` (not `$\omega$` or `$U$`).
+- **Fibre functor**: Always `$\tau$` (not `$\omega$` or `$U$`). Its name in prose is the
+  **transcription functor** (owner ruling 2026-11-27): it transcribes each object of
+  `$\mathbf{C}$` into an `$R$`-module. "Fibre functor" remains acceptable as the
+  standard Tannakian synonym.
   Minimise its appearance — write `$(\mathbf{C}, A)$` when the functor
   is not needed; write `$(\mathbf{C}, A, \tau)$` only when `$\tau$` is
   explicitly used.
