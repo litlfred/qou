@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T19:36:47Z
+updated_at: 2026-11-27T20:14:23Z
 parent: qou-dk7p
 ---
 
@@ -76,3 +76,5 @@ KEY for research leg (p.854, Remark 2 after 5.8): without 5.3, obstruction to li
 
 
 2026-11-27 stage 4 (conditional): PR #9609, GRTFlow.lean. Exp for law (5.16), exact x-scaling, GrtU4 predicate, induction on Fil via coeff_mem_of_doubling (grading (G) not needed). grt1U4_expPoly_of_doubling: GrtU4 y + K>=2 + hdouble => GRT1U4 (Exp(xy)) for all x. Verified lean-direct exit 0, axioms propext/choice/Quot.sound. OPEN: hdouble = (P) doubling law + (A) top-defect additivity (compPoly bakes in (5.12), needs unit form); Phi∘g ≡ Phi+y; (5.14)-lin vs Drinfeld (5.19) matched on paper only. Bean stays open.
+
+2026-11-27 (PR #9634): hdouble discharged. grt1U4_expPoly proved sorry-free for 2 ≤ K, N ≤ K via an exact dual-number flow (GRTValued.lean, GRTFlowExact.lean); hdouble_of_le closes grt1U4_expPoly_of_doubling. N ≤ K is necessary (K=2 counterexample, hand-worked, not machine-checked). Still open: congruence Φ∘g ≡ Φ+y (§9.2), (5.19) matching. Audit §12.
