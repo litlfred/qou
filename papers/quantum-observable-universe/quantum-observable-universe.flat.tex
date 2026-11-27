@@ -962,6 +962,7 @@ Neutron–proton mass difference (MeV) & $0.8364$ & $1.2933$ & $-35.3\%$ & Condi
 Neutron $\beta$-decay $Q$-value (MeV) & $0.3254$ & $0.7823$ & $-58.4\%$ & Conditional \\
 $\beta^-$ decays of nuclei, exothermic & $0$ of $1009$ & $1009$ of $1009$ & median $142\%$ in $Q$ & Open \\
 Deuteron binding (MeV) & $2.265$ & $2.225$ & $+1.8\%$ & Selected \\
+Deuteron binding, ruled trace pipeline (MeV) & $0.00636$ & $2.22457$ & $-99.7\%$ & Conditional \\
 Helium-4 binding (MeV) & $29.33$ & $28.30$ & $+3.7\%$ & Selected \\
 Iron-56 binding (MeV) & $135.1$ & $492.3$ & $-72.6\%$ & Open \\
 Binding, all $2542$ nuclides with $A \ge 2$ & chain proxy & AME2020 & median $69\%$ low & Open \\
@@ -969,7 +970,7 @@ Binding, all $2542$ nuclides with $A \ge 2$ & chain proxy & AME2020 & median $69
 \end{tabular}
 \end{adjustbox}
 
-\emph{Derived} means computed from the three inputs with no unproved hypothesis; \emph{selected} means an object (a pair, a grid cell, a chart) was chosen because it lands near the measured value, which counts as a fit; \emph{conditional} means the value rests on a stated conjecture or an unproved step; \emph{open} means the model does not yet reproduce the quantity. Two of the close agreements carry further qualifications: the fine-structure value is conditional on an open step in the Lean formalisation, and the kaon-to-pion ratio rests on a fusion pair chosen from a scan and includes a truncated correction series. The deuteron and helium-4 binding energies are the grid cell nearest the measured deuteron out of several few-body models and energy charts compared in the full scorecard. Beyond the lightest nuclei the binding energies come from a chain proxy whose saturation is open, and they fall short by a median of $69\%$. The $\beta$-decay values and the binding energies are the clearest places where the model, as it stands, does not yet work.
+\emph{Derived} means computed from the three inputs with no unproved hypothesis; \emph{selected} means an object (a pair, a grid cell, a chart) was chosen because it lands near the measured value, which counts as a fit; \emph{conditional} means the value rests on a stated conjecture or an unproved step; \emph{open} means the model does not yet reproduce the quantity. Two of the close agreements carry further qualifications: the fine-structure value is conditional on an open step in the Lean formalisation, and the kaon-to-pion ratio rests on a fusion pair chosen from a scan and includes a truncated correction series. The deuteron and helium-4 binding energies are the grid cell nearest the measured deuteron out of several few-body models and energy charts compared in the full scorecard. The ruled trace pipeline (a γγ-selected bond between the two nucleons, the tower energy scale and the logarithmic binding law) is shown beside them: it binds the deuteron by about $6\;\mathrm{keV}$, $99.7\%$ short. Beyond the lightest nuclei the binding energies come from a chain proxy whose saturation is open, and they fall short by a median of $69\%$. The $\beta$-decay values and the binding energies are the clearest places where the model, as it stands, does not yet work.
 
 \section{Verification and source}
 \label{sec:authors-note-verification}
@@ -26503,7 +26504,27 @@ three-term recursion evaluated at a different $m$, which is why the tower admits
 coherent Markov trace at all.
 \end{proposition}
 
-\phantomsection\label{rem:hecke-radical-is-temperley-lieb}\begin{proposition}[{The Markov--Gram star form is positive semidefinite; positivity reduces to $y_\lambda \ge 0$}]
+\phantomsection\label{rem:hecke-radical-is-temperley-lieb}\begin{theorem}[{The trace radical of the Hecke algebra is the Temperley--Lieb kernel, up to the involution $\sigma_i \mapsto -\sigma_i^{-1}$}]
+  \label{thm:hecke-radical-is-tl-kernel}
+  \blockannot[compiled]{thm:hecke-radical-is-tl-kernel}{BraidKnotOctonion.TLKernelEquality.mem_tlKernelPulled_iff}{quantum-observable-universe/mass-theory/hecke-radical-is-tl-kernel.md}
+  \uses{rem:hecke-radical-is-temperley-lieb}
+Let $K$ be a field of characteristic zero, let $q \in K$ be nonzero and not a root of
+unity, and let $\delta = q + q^{-1}$. Let $H_n(q)$ be the Hecke algebra on generators
+$\sigma_1, \dots, \sigma_n$ with $(\sigma_i -\allowbreak{} q)(\sigma_i +\allowbreak{} q^{-1}) =\allowbreak{} 0$, let
+$\mathrm{rad} \subseteq H_n(q)$ be the radical of the Markov trace at
+$z = q^3/(q^2+1)$, and let $\pi \colon H_n(q) \to\allowbreak{} TL_{n+1}(\delta)$ be the quotient map
+with $\pi(q\sigma_i + 1) = q\,e_i$. Let $\theta$ be the algebra involution of $H_n(q)$
+with $\theta(\sigma_i) =\allowbreak{} -\sigma_i^{-1} =\allowbreak{} (q -\allowbreak{} q^{-1}) -\allowbreak{} \sigma_i$. Then
+
+\[
+  \ker \pi \;=\; \theta(\mathrm{rad}),
+\]
+and $H_n(q)/\mathrm{rad} \cong\allowbreak{} TL_{n+1}(\delta)$ as $K$-algebras, with
+$\sigma_i +\allowbreak{} \mathrm{rad} \mapsto\allowbreak{} q -\allowbreak{} e_i$. The inclusion
+$\ker \pi \subseteq \mathrm{rad}$ fails for $n = 2$.
+\end{theorem}
+
+\begin{proposition}[{The Markov--Gram star form is positive semidefinite; positivity reduces to $y_\lambda \ge 0$}]
   \label{prop:markov-gram-star-positive}
   \blockannot[compiled]{prop:markov-gram-star-positive}{QOU.Nuclear.GramSignature.markov_star_nonneg}{quantum-observable-universe/mass-theory/markov-gram-star-positive.md}
   \uses{prop:frobenius-gram-matrix, prop:h3-markov-wenzl-weights}
