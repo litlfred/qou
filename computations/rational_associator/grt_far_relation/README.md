@@ -23,3 +23,10 @@ Run from this directory. No floats: `Fraction` (exact) or integer arithmetic mod
   free parameters; the script sets them to 0). With g = exp(σ3) it confirms (5.14) as
   G2 G3 G1 = 1, the identity G1 t13 G1⁻¹ + G3⁻¹ t23 G3 = t13 + t23, and the hexagon of
   φ̃ = φ(gAg⁻¹,B)·g, all through degree 5. With g = exp([X,Y]) all three fail. Imports `t3.py`.
+- `exp516.py [D]`: **exact over Q**, default D = 6, runs in about 2 s. It builds the exponential
+  for Drinfeld's group law (5.16), Exp(ψ) = Σ_k L^k(1)/k! with L(x) = D_ψ(x) + xψ and
+  D_ψ(A) = [ψ, A], D_ψ(B) = 0, then checks Drinfeld's (5.12)–(5.15). It uses an exact normal form
+  of U(t4) = U(F(t14,t24,t34)) ⋊ U(t3), so the pentagon check is cheap.
+  - Exp(σ3) satisfies all four conditions through degree 8.
+  - Ordinary exp(σ3) fails (5.13) and (5.15) at degree 6, and (5.14) at degree 7.
+  - Exp([X,[X,Y]]), which is not in grt, fails (5.12) and (5.15) at degree 3.

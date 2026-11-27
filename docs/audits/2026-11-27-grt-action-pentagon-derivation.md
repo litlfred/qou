@@ -163,8 +163,8 @@ as the image of the pentagon under the relabelling automorphism `swap23Hom = lif
 
 **The obstruction that remains.** `TCompat` is a hypothesis in Lean. A derivation of `TCompat` from
 (5.13) and (5.14) for all degrees is not given here; only the degree-3 check above is established.
-The statement is of the Kashiwara–Vergne type (`grt ⊂ krv` in Alekseev–Torossian); whether that
-inclusion supplies it in this form has not been checked against the library. Bean `qou-3fdg` stays
+*(Corrected in §9: `TCompat` is Drinfeld's own (5.14), one of the defining conditions of `GRT₁`.
+It is not a consequence to be derived, and the Kashiwara–Vergne framing given here was wrong.)* Bean `qou-3fdg` stays
 open on this point and on the existence of the units `G`.
 
 ## 7. Stage 3e: the GRT action preserves the hexagon
@@ -262,3 +262,80 @@ be an associator in every degree, or at least in every truncation `U4 M` for arb
 
 The degree-by-degree construction of `g ∈ GRT₁` with prescribed leading term (Drinfeld §5,
 (5.17)–(5.20); Ihara) is not attempted here. It is the next blocker for stage 4.
+
+## 9. The stage-4 blocker: Exp for the group law (5.16)
+
+Lean: `RationalAssociator/HexagonUniversal.lean`, no `sorry`, axioms `propext`,
+`Classical.choice`, `Quot.sound`. Script: `computations/rational_associator/grt_far_relation/exp516.py`.
+
+**Numbering correction (read first).** Drinfeld (1991, §5, `library/drinfeld1991-quasitriangular`,
+page 12) defines `GRT₁` by four conditions:
+
+| Drinfeld | condition | name in this repo until now |
+|---|---|---|
+| (5.12) | `g(B,A) = g(A,B)⁻¹` | "(5.13)" |
+| (5.13) | `g(C,A) g(B,C) g(A,B) = 1` for `A+B+C = 0` | "(5.14)", "the μ = 0 hexagon" |
+| (5.14) | `A + g(A,B)⁻¹Bg(A,B) + g(A,C)⁻¹Cg(A,C) = 0` for `A+B+C = 0` | `TCompat` |
+| (5.15) | the pentagon | pentagon |
+
+So `TCompat` is one of the defining conditions of `GRT₁`. The question in §6 of deriving it from
+"(5.14)" was the wrong question, and the Kashiwara–Vergne remark there is withdrawn. Every action
+theorem so far assumes exactly the `GRT₁` conditions on `g`, plus `ε(g) = 1`, and nothing more.
+
+**1. The (5.16)-exponential, exact over ℚ.**
+
+- Under (5.16), `θ_g : A ↦ gAg⁻¹, B ↦ B` satisfies `θ_{g₁∘g₂} = θ_{g₂} ∘ θ_{g₁}`.
+- A one-parameter subgroup `g_s` with leading term `sψ` therefore solves the linear equation
+  `g' = D_ψ(g) + gψ`, where `D_ψ(A) = [ψ, A]` and `D_ψ(B) = 0`.
+- Its solution is `Exp(ψ) = Σ_k L^k(1)/k!` with `L(x) = D_ψ(x) + xψ`. The sum is finite in each
+  truncation.
+- `exp516.py` checks (5.12)–(5.15) exactly, using a normal form of `U(𝔱₄)`:
+  - `Exp(σ₃)` satisfies all four through degree 8.
+  - Ordinary `exp(σ₃)` fails (5.13) and (5.15) at degree 6, and (5.14) at degree 7.
+  - `Exp([X,[X,Y]])`, which is not in `grt`, fails (5.12) and (5.15) at degree 3.
+
+  This agrees with Drinfeld's Prop. 5.9.
+
+**2. The smallest statement stage 4 needs.**
+
+> (S4) For `y ∈ grt₁(K)` homogeneous of degree `n`, there is `g ∈ GRT₁(K)`, satisfying
+> (5.12)–(5.15) in every degree, with `g ≡ 1 + y` modulo degree `n + 1`.
+
+Given (S4), `Φ ∘ g` is again a `K`-associator. That uses the action theorems:
+- `pentagon_act_U4` and `hexagon_act_U4_universal` in each truncation `U4 M`;
+- the lift from `U4 M` to every truncated `DK` family.
+
+Also `Φ ∘ g ≡ Φ + y` modulo degree `n + 1`. That congruence is elementary and not yet in Lean.
+
+(S4) is weaker than a full exponential map: it asks for no group-law properties of `Exp`, only
+that `GRT₁(K)` mod degree `n+1` surjects onto `grt_n(K)`. Two routes, neither formalised:
+
+- **Route A, flow.** Take `g = Exp(y)`. For each condition `C`, the defect `C(g_s)` satisfies a
+  linear equation in `s`:
+  - the closure theorems give how `C` transforms under `g ↦ g ∘ (1 + εy)`;
+  - `y ∈ grt` makes the inhomogeneous term vanish.
+
+  Then `C(g_s) = 0`, because the solution of a linear equation in a graded nilpotent setting is
+  unique. The closure ingredients are the action theorems at `μ = 0` (`φ := g₁`, `E := 1`); the
+  pentagon and hexagon cases are now in Lean. Still missing: (5.12) and (5.14) for the composite,
+  and the derivative computation.
+- **Route B, degree by degree.** Extend `g ∈ GRT₁` mod degree `m` to mod degree `m+1`. The
+  obstruction is a cohomology class, and nothing elementary shows that it vanishes. Route A
+  avoids this, so it is the one to formalise.
+
+**3. Proved in Lean now.**
+
+- `DK3.toDK4`: a `DK3` family `(a,b,c)` extends to the `DK4` family `(a,b,0,c,0,0)`.
+- `hexagon_of_universal`: the hexagon at the universal family of `U4 N` gives the hexagon at
+  every `DK3` family in `Fil N 1`, via `lift`.
+- `hexagon_act_U4_universal`: the hexagon action theorem with `φ`'s hexagon assumed only at the
+  universal family. This removes the caveat of §8, and no `U3 N` is needed.
+- With `φ := g₁` and `E := 1`, the pentagon and hexagon (5.13) of `g₁ ∘ g₂` follow from those of
+  `g₁` and the `GRT₁` conditions of `g₂`. These are two of the four closure statements Route A
+  needs.
+
+**Still open (bean `qou-3fdg`).**
+
+1. Closure of (5.12) and (5.14) under (5.16).
+2. The flow argument of Route A, and with it (S4).
+3. The congruence `Φ ∘ g ≡ Φ + y`.
