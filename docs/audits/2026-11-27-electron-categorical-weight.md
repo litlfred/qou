@@ -131,3 +131,28 @@ This replaces the hand-placed weight `1` of the unit `m_e/ℏ_q²`. With CAL-1 t
 - CAL-2 defines q₀ through the carrier with the hand-placed weight. If CAL-2 were re-solved with `w_e`, then `W_μ(q)/w_e(q) = m_μ/m_e` gives **q₀' = 1.059529** (ℏ = 0.05618, against q₀ = 1.109979, ℏ = 0.09908). This is computed for comparison only and **not adopted**: re-solving q₀ moves every number in the corpus and is an owner decision.
 
 **Scope.** Given the corpus's own premises (additivity; the carrier's `ℏ_q⁻²` order), the electron's mass-chart weight is derived, not placed. What this does not do: say why the carrier's coefficient should be `Vol` and not `Vol/w_e(1) = Vol/3`. That question returns to CAL-2's definition of q₀.
+
+## 8. Shadow run at the derived-weight q₀ (owner card 2026-11-27: "Shadow run first, decide after")
+
+**Anchor.** The corpus pins q₀ on the **proton** (`qou_substrate.constants.q_at`). §7 re-solved the muon carrier, so its value 1.0595 is not the relevant one. Re-solving the proton pin with the derived weight,
+`m_p/m_e = [2(Vol/ℏ_q²)F_Bor(q) − 12] / w_e(q)`, gives **q₀'' = 1.063363343** (ℏ = 0.059588, w_e(q₀'') = 3.121799).
+This is behind the env switch `QOU_Q0_SHADOW=derived_we` (one-term and two-term pins). The default q₀ is unchanged.
+
+**Run.** The 18 scorecard producers were re-run in a separate worktree, and `generate-accuracy-scorecard.py --print` was run with its `allPassed` gate turned off there only. `gap1b_4he…` and `alpha_decay_n126…` crashed at q₀'' (root bracket, assertion), so their rows stay at q₀. Full outputs: `/mnt/project-files/electron-weight-2026-11-27/`.
+
+Arm A is q₀'' with the producers unchanged, so mass-chart rows are still in the hand-placed unit. Arm B applies the derived unit `m_e/w_e` to the mass-chart rows (arm A ÷ w_e(q₀'')).
+
+| row | current q₀ | arm A (q₀'') | arm B (q₀'', m_e/w_e) | measured |
+|---|---|---|---|---|
+| m_p | 938.272 (pin) | 2929.10 | 938.272 (pin) | 938.272 |
+| m_μ | 105.65840 (+211 ppb) | 292.13 | **93.578 (−11.4 %)** | 105.65838 |
+| m_τ/m_e | 3477.44 (+61 ppm) | 8948.6 | 2866.5 (−17.6 %) | 3477.23 |
+| m_K/m_π | +51 ppb | −1.34 % | −1.34 % (ratio) | 3.53712 |
+| m_n | −486 ppm | +212 % | −461 ppm | 939.565 |
+| Δm_np | 0.836 (−35.3 %) | 0.860 (−33.5 %) | 0.860 (−33.5 %) | 1.293 |
+| **α_EM⁻¹** (Form B) | 137.035999127 (−0.37 ppb) | **107.185 (−21.8 %)** | 107.185 (not a mass row) | 137.035999177 |
+| R_∞hc | +0.72 ppb | 22.24 eV (+63 %) | +63 % | 13.6057 eV |
+| v_weak | 246.22 GeV (−29 ppb) | 643.9 GeV | 206.3 GeV (−16.2 %) | 246.22 GeV |
+| B (Q-CLT, median) | 68.9 % | 57.1 % | 57.1 % (log chart, not ÷ w_e) | AME2020 |
+
+**Reading.** Moving q₀ to q₀'' costs α_EM⁻¹ its sub-ppb agreement (it becomes −21.8 %), and α_EM is a pure function of q with no electron unit. In the derived chart m_μ is short by 11.4 %, against 211 ppb now. The Q-CLT binding median improves (68.9 → 57.1 %). This report compares rows only and adopts nothing. The derivation of w_e (§7) does not depend on which q₀ is used. What the shadow shows is that the current q₀ and the derived electron weight cannot both hold without the α_EM and m_μ rows moving.
