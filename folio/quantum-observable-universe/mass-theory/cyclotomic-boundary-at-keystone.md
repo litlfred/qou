@@ -169,15 +169,41 @@ the near-staircase partition count for every triangular $n \le 91$.
 (`leadingCoeff_dvd_coeff`, `abs_powerSum_two_le`), sorry-free. It also proves the arithmetic
 of the three families for every $j$, taking the top coefficients of $P_n$ as hypotheses
 (`not_isCycloProduct_triangular_of_topCoeffs`, `…_rEqJ_of_topCoeffs`, `…_rEqOne_of_topCoeffs`).
-The partition count that supplies those coefficients for every $n$ is proved above on paper and
-is not yet formalised.
+The partition count that supplies those coefficients is proved above on paper. Its first step is
+formalised in `QOU.Mass.StaircaseMinimisers`, sorry-free: for any set $s$ of $T_m + r$ cells of
+$\mathbb N^2$ with $r \le m+1$, $N(s) \ge N(\delta_m) + rm$, with equality exactly when $s$ is
+$\delta_m$ plus $r$ cells on antidiagonal $m$ (`le_N_of_card`, `N_eq_iff`). Each of these is a
+Young diagram (`isLowerSet_stair_union`), and there are $\binom{m+1}{r}$ of them
+(`card_choices`). Not yet formalised: the Laurent expansion of $\dim_q\lambda$ that turns these
+counts into the coefficients of $P_n$, and the $\delta = 1, 2$ counts behind $a_1, a_2$.
 
 Together with the finite certificates this settles $6 \le n \le 20$, every triangular $n$, and
-every $n \in \{T_j + 1, T_{j+1} - 1\}$ with $j \ge 4$. For the other $n$ the two tests
-together settle every $n \le 90$
-(`computations/cyclotomic_boundary_power_sum.py`): at each such $n$ either $c \nmid a_1$ or
-$(a_1^2 - 2c\,a_2)/c^2$ is not an integer (for example $n = 16, 18, 76$). No uniform argument for
-general $r$ is known.
+every $n \in \{T_j + 1, T_{j+1} - 1\}$ with $j \ge 4$.
+
+*Third coefficient for general $r$.* For $n = T_j + r$ with $1 \le r \le j+1$ and $n \ge 10$, the
+same count gives $a_2$ as a sum of four kinds of term:
+```tex
+\[\begin{aligned}
+a_2 ={}& \binom{j+1}{r}(r-1) + j\binom{j-1}{r}
+  && \text{(corners of the minimisers)}\\
+&+ 3\binom{j-1}{r-4} + 3(j-1)\binom{j-2}{r-5} + \Bigl(\binom j2 - j + 1\Bigr)\binom{j-3}{r-6}
+  && \text{(two cells on antidiagonal } j+1)\\
+&+ 2(j-1)\binom{j-2}{r-1} + 2\binom{j-1}{2}\binom{j-3}{r-2}
+  && \text{(one corner of } \delta_j \text{ moved up two)}\\
+&+ \Bigl(\binom j2 - j + 1\Bigr)\binom{j-3}{r+2} + (j-1)\binom{j-2}{r+2}
+  && \text{(two corners of } \delta_j \text{ moved up one)}.
+\end{aligned}\]
+```
+This agrees with the exact partition count for every $10 \le n \le 91$. With $c = \binom{j+1}{r}$,
+$$\frac{a_1}{c} = -4j - 2 + \frac{2r(j-r)}{j+1} + \frac{j(j+2)}{r+1} + \frac{(j+2)^2}{j-r+2}.$$
+The power-sum test needs $c \mid a_1$ and then $c \mid 2a_2$. For non-triangular $n$ ($r \le j$)
+and $j \le 20000$, $c \mid a_1$ happens only at
+$(j,r) = (5,1), (5,3), (11,10), (14,6), (98,55), (143,109), (152,119), (440,153)$, and at each of
+these $c \nmid 2a_2$. So the two tests settle every $n$ with $j \le 20000$, that is every
+$n \le 200{,}030{,}000$ (`computations/cyclotomic_boundary_power_sum.py`). This is a finite check,
+not a proof. The condition $c \mid a_1$ is a divisibility condition linking $r+1$, $j+1$ and
+$j-r+2$. Its solutions are sparse but not obviously finite, and no uniform argument that excludes
+$c \mid 2a_2$ on them is known.
 
 *Open:* non-cyclotomicity for **every** $n \ge 6$. What remains is the non-triangular $n$
-outside the two families, for $n > 90$.
+outside the two families with $j > 20000$.
