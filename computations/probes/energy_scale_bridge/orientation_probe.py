@@ -49,5 +49,16 @@ check("q=1: l_e = -ln 2, omega_e = 0", abs(mp.log(y3(mp.mpf(1))) + mp.log(2)) < 
 qs = mp.findroot(lambda t: mp.log(tau_e(t)), mp.mpf(1.3))
 print("log-chart unit sign change at q* =", mp.nstr(qs, 15), "(tau_e = 1)")
 check("q0 lies below the log-chart sign change", Q0 < qs)
+
+# ---- electron-independent no-go: n-p (pure power) vs Delta-N (bar-even) ----------------
+def delta_cell(q): return q**2 + q**-2
+ld, od = mp.log(delta_cell(Q0)), delta(lambda t: mp.log(delta_cell(t)), Q0)
+def me_ring(q): return (q**3 + q + 1 / q + q**-3) / q**3   # #9789 reading m_e = [4]/q^3
+for name, F in (("tau_e = q^3 y3", tau_e), ("[4]/q^3 (#9789)", me_ring)):
+    Lu, wu = mp.log(F(Q0)), delta(lambda t: mp.log(F(t)), Q0)
+    n0, d0, n1, d1 = -2 * b / Lu, ld / Lu, -2 / wu, od / wu
+    print(f"{name}: log chart n-p {mp.nstr(n0,6)} D-N {mp.nstr(d0,6)} | mass chart n-p {mp.nstr(n1,6)} D-N {mp.nstr(d1,6)}")
+    check(f"{name}: log chart n-p and Delta-N opposite", n0 * d0 < 0)
+    check(f"{name}: mass chart n-p and Delta-N opposite", n1 * d1 < 0)
 print("ALL PASS" if ok else "SOME FAIL")
 raise SystemExit(0 if ok else 1)
