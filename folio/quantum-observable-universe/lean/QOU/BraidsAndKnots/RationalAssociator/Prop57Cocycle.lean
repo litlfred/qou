@@ -97,4 +97,73 @@ theorem cocycle_identity {R : Type*} [Ring R] [Algebra ℚ R] (e : R → R → R
   rw [key, H0, H1, H2, H3, C0, C1, C2, C3, C4, C5, C6, C7, C8, C9]
   noncomm_ring
 
+/-- The alternating sum `u` of `S(A, B, C) = [B, e A B] + [C, e A C]` over the four
+`(A, B, C)` of (5.24). -/
+def uDefect {R : Type*} [Ring R] (e : R → R → R) (t12 t13 t14 t23 t24 t34 : R) : R :=
+  ((t14 * (e t12 t14) - (e t12 t14) * t14) + (t24 * (e t12 t24) - (e t12 t24) * t24)) - ((t14 * (e (t12 + t13) t14) - (e (t12 + t13) t14) * t14) + ((t24 + t34) * (e (t12 + t13) (t24 + t34)) - (e (t12 + t13) (t24 + t34)) * (t24 + t34))) + (((t14 + t24) * (e (t13 + t23) (t14 + t24)) - (e (t13 + t23) (t14 + t24)) * (t14 + t24)) + (t34 * (e (t13 + t23) t34) - (e (t13 + t23) t34) * t34)) - ((t24 * (e t23 t24) - (e t23 t24) * t24) + (t34 * (e t23 t34) - (e t23 t34) * t34))
+
+/-- The linearised pentagon defect (5.20) on strands `a, b, c, d`, from the five generators
+`t_ab, t_ac, t_bc, t_bd, t_cd` it uses. -/
+def linPentDefect {R : Type*} [Ring R] (e : R → R → R) (tab tac tbc tbd tcd : R) : R :=
+  e tab (tbc + tbd) + e (tac + tbc) tcd - e tbc tcd - e (tab + tac) (tbd + tcd) - e tab tbc
+
+/-- **(5.24) from the linearised (5.17), (5.18), (5.20).** Under the hypotheses of
+`cocycle_identity`, the pentagon at the strand orders `1234`, `1243`, `1423` forces `u = 0`. -/
+theorem uDefect_eq_zero {R : Type*} [Ring R] [Algebra ℚ R] (e : R → R → R) (I : Submodule ℚ R)
+    {t12 t13 t14 t23 t24 t34 : R} (h : DK4 t12 t13 t14 t23 t24 t34)
+    (h12 : t12 ∈ I) (h13 : t13 ∈ I) (h14 : t14 ∈ I) (h23 : t23 ∈ I) (h24 : t24 ∈ I) (h34 : t34 ∈ I)
+    (hanti : ∀ a b, a ∈ I → b ∈ I → e a b + e b a = 0)
+    (hhex : ∀ a b c, a ∈ I → b ∈ I → c ∈ I → DK3 a b c → e b a + e c b + e a c = 0)
+    (hcomm : ∀ m a b, Commute m a → Commute m b → Commute m (e a b))
+    (p1 : linPentDefect e t12 t13 t23 t24 t34 = 0) (p2 : linPentDefect e t12 t14 t24 t23 t34 = 0)
+    (p3 : linPentDefect e t14 t12 t24 t34 t23 = 0) :
+    uDefect e t12 t13 t14 t23 t24 t34 = 0 := by
+  have q1 : (e t12 (t23 + t24) + e (t13 + t23) t34 - e t23 t34 - e (t12 + t13) (t24 + t34) - e t12 t23) = 0 := by
+    rw [← p1]; simp only [linPentDefect, add_comm]
+  have q2 : (e t12 (t23 + t24) + e (t14 + t24) t34 - e t24 t34 - e (t12 + t14) (t23 + t34) - e t12 t24) = 0 := by
+    rw [← p2]; simp only [linPentDefect, add_comm]
+  have q3 : (e t14 (t24 + t34) + e (t12 + t24) t23 - e t24 t23 - e (t12 + t14) (t23 + t34) - e t14 t24) = 0 := by
+    rw [← p3]; simp only [linPentDefect, add_comm]
+  unfold uDefect
+  rw [cocycle_identity e I h h12 h13 h14 h23 h24 h34 hanti hhex hcomm, q1, q2, q3]
+  noncomm_ring
+
+section U4
+
+variable {N : ℕ} {y : FreeAlgebra ℚ (Fin 2)}
+
+/-- The linearised hexagon (5.18) of `GrtU4` at every Drinfeld–Kohno triple in `Fil N 1`. -/
+theorem GrtU4.hex (hy : GrtU4 N y) (a b c : U4 N) (ha : a ∈ Fil N 1) (hb : b ∈ Fil N 1)
+    (hc : c ∈ Fil N 1) (h : DK3 a b c) : eval b a y + eval c b y + eval a c y = 0 := by
+  have := congrArg (liftU3 a b c h ha hb hc) hy.lin513
+  simpa only [map_add, map_zero, map_eval, liftU3_t0, liftU3_t1, liftU3_t3] using this
+
+/-- **Drinfeld (5.24) for `GrtU4`.** If `y` satisfies the linearised (5.17), (5.18), (5.20) in
+`U4 N` then `u = 0` at the universal family. No Lie hypothesis on `y` is used. -/
+theorem GrtU4.uDefect_eq_zero (hy : GrtU4 N y) :
+    uDefect (fun a b => eval a b y) (t N 0) (t N 1) (t N 2) (t N 3) (t N 4) (t N 5) = 0 := by
+  have T := t_mem_Fil_one (N := N)
+  have h := dk4 N
+  have hd2 : DK4 (t N 0) (t N 2) (t N 1) (t N 4) (t N 3) (t N 5) :=
+    ⟨h.f12_34, h.f14_23, h.f13_24, h.n12_4, h.n14_2, h.n24_1, h.n12_3, h.n13_2, h.n23_1,
+      h.n14_3, h.n13_4, by rw [add_comm]; exact h.n34_1, h.n24_3, h.n23_4,
+      by rw [add_comm]; exact h.n34_2⟩
+  have hd3 : DK4 (t N 2) (t N 0) (t N 1) (t N 4) (t N 5) (t N 3) :=
+    ⟨h.f14_23, h.f12_34, h.f13_24, h.n14_2, h.n12_4, by rw [add_comm]; exact h.n24_1,
+      h.n14_3, h.n13_4, by rw [add_comm]; exact h.n34_1, h.n12_3, h.n13_2, h.n23_1,
+      by rw [add_comm]; exact h.n24_3, by rw [add_comm]; exact h.n34_2, h.n23_4⟩
+  have hw (s : Fin 6 → U4 N) (hs : ∀ i, s i ∈ Fil N 1) := word_eq_zero_of_Fil_one s hs
+  have p2 := congrArg (lift N ![t N 0, t N 2, t N 1, t N 4, t N 3, t N 5] (by simpa using hd2)
+    (hw _ (by intro i; fin_cases i <;> simp [T]))) hy.lin515
+  have p3 := congrArg (lift N ![t N 2, t N 0, t N 1, t N 4, t N 5, t N 3] (by simpa using hd3)
+    (hw _ (by intro i; fin_cases i <;> simp [T]))) hy.lin515
+  simp only [map_add, map_eval, lift_t, Matrix.cons_val, Fin.isValue] at p2 p3
+  refine RationalAssociator.uDefect_eq_zero (fun a b => eval a b y) (Fil N 1) h (T 0) (T 1) (T 2) (T 3) (T 4) (T 5)
+    hy.lin512 hy.hex (fun m a b ha hb => (commute_eval ha.symm hb.symm y).symm) ?_ ?_ ?_
+  · simp only [linPentDefect]; rw [hy.lin515]; abel
+  · simp only [linPentDefect]; rw [p2]; abel
+  · simp only [linPentDefect]; rw [p3]; abel
+
+end U4
+
 end QOU.BraidsAndKnots.RationalAssociator
