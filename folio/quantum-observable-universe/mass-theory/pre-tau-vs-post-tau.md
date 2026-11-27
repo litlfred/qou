@@ -1,5 +1,3 @@
-> **Superseded.** The scalar aether density $\rho_q = 1/\hbar_q^2$ used below is the structurally-wrong leading-order ansatz; the operator-valued form supersedes it ([`mass-endomorphism-tower`](mass-endomorphism-tower.md)).
-
 **The Archimedean wall.**
 Every derivation step belongs to exactly one of two registers:
 
