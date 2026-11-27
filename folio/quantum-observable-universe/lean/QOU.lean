@@ -740,7 +740,7 @@ import QOU.MassTheory.HopfLinkComplexVolume
 import QOU.Transcendental.MassTheory.HyperbolicVolumeFubini
 import QOU.Transcendental.MassTheory.IdealTetrahedronRegion
 import QOU.Transcendental.MassTheory.OrthoschemePolarReduction
-import QOU.MassTheory.OrthoschemeBaseIntegral
+import QOU.Transcendental.MassTheory.OrthoschemeBaseIntegral
 import QOU.Transcendental.MassTheory.OrthoschemeWedgePair
 import QOU.Transcendental.MassTheory.OrthoschemeRotation
 import QOU.Transcendental.MassTheory.OrthoschemeLambdaSum
@@ -1231,9 +1231,9 @@ import QOU.BringsSurface.zeta5_residue_monodromy
 import QOU.MassTheory.BorromeanQuark
 import QOU.MassTheory.EmCouplingBringZeroMode
 import QOU.Transcendental.MassTheory.BringZeroModeClausenWitness
-import QOU.MassTheory.ArchimedeanLimitDomain
-import QOU.MassTheory.ArchimedeanLimitNegative
-import QOU.MassTheory.ArchimedeanLimitEndpoints
+import QOU.Transcendental.MassTheory.ArchimedeanLimitDomain
+import QOU.Transcendental.MassTheory.ArchimedeanLimitNegative
+import QOU.Transcendental.MassTheory.ArchimedeanLimitEndpoints
 import QOU.Transcendental.MassTheory.BlochSuslinComplex
 import QOU.Transcendental.MassTheory.BlochWignerFiveTermInstance
 import QOU.MassTheory.BlochRigidity.Algebra

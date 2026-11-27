@@ -43,7 +43,7 @@
   -- Ref: [leitner2026] beans qou-w3eg (H4-3), qou-5gai (H4)
 -/
 
-import QOU.MassTheory.OrthoschemeBaseIntegral
+import QOU.Transcendental.MassTheory.OrthoschemeBaseIntegral
 import QOU.Transcendental.MassTheory.HyperbolicVolumeFubini
 import Mathlib.Analysis.SpecialFunctions.PolarCoord
 

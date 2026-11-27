@@ -79,7 +79,7 @@
   -- Ref: [leitner2026] bean qou-w3eg (H4-5 obtuse)
 -/
 import QOU.Transcendental.MassTheory.ObtuseWedgeDegenerate
-import QOU.MassTheory.IdealTetObtuseReduction
+import QOU.Transcendental.MassTheory.IdealTetObtuseReduction
 import QOU.Transcendental.MassTheory.IdealTetEqChimney
 import QOU.Transcendental.MassTheory.MostowIdealTetVolume
 
