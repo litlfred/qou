@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-22T10:47:45Z
-updated_at: 2026-11-27T20:15:00Z
+updated_at: 2026-11-27T20:50:39Z
 parent: qou-wxhi
 ---
 
@@ -73,3 +73,5 @@ NARROWED: this bean now waits on qou-2k68 (a definition of inertial mass indepen
 
 
 2026-11-27 (PRs #9636, #9645): the electron weight's y₍₃₎ is now tied to the Hecke algebra. `jimboTrace_p3` (#9636) proves that the convention-D trace of the trivial central idempotent p₃ = x/[3]_q! of H₃(q) is (q⁴+1)/(q²+1)². `jimboTrace_p3_eq_y3` (#9645) proves that this equals `WeightSpaceMarkov.y3`, so τ_e = q³·τ(p₃). This is a bridge only. The canonical chart, meaning one rule that gives both the electron and the muon weights, is still OPEN. Side finding from the 1ppq survey: in the balanced normalisation the trivial-block character of the symmetriser is exactly [3]_q!, which is k = 0 for the proton normaliser, so it agrees with the KL-coordinate negative (#8964). The proton normaliser workstream stays parked.
+
+2026-11-27 (PR #9692, branch claude/muon-carrier-hecke-chart-2026-11-27): canonical-chart search. (1) Lean rational_chart_leading_coeff: any finite Hecke/Ocneanu/HOMFLY chart is in Q(q), so carrying Vol(4_1)/hbar^2 would prove Vol(4_1) in Q (open, believed false) - no finite chart can be shown to work. (2) qvolume_term_log_deriv: q-volume G = q d/dq log of the quantum dilogarithm (canonical order-2 object). (3) Same energy reading on the electron gives its writhe 3, carrier Vol/3 not Vol (energy_reading_ne_carrier); 0.313 of carrier at q0. Scope (a). Open item narrows to deriving the electron weight. Audit 2026-11-22-energy-scale-cal-map.md section 10.
