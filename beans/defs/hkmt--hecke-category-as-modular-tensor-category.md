@@ -2,7 +2,7 @@
 # hkmt
 title: 'BWH-1: the root-of-unity Hecke/TL quotient is a modular tensor category (S,T from Markov trace)'
 status: in-progress
-pr: 9765
+pr: 9776
 type: task
 priority: high
 tags:
@@ -55,3 +55,5 @@ Owner chose "Root-of-unity quotient" on the card. Goal: the semisimplified Hecke
 `tildeS_one_mul_cgChar` (pointwise sl₂ Clebsch–Gordan, division-free) and `verlinde_fusion`: the Verlinde sum gives −2ℓ·N_{ab}^c with N the truncated Clebsch–Gordan rule (|a−b| < c < a+b, a+b+c < 2ℓ, odd), every level. Sorry-free, standard axioms only. With S² = D², (ST)³ = p₊S², det S ≠ 0, this is the full modular data of the level-k quotient, as cyclotomic algebra.
 
 **still open (why the bean stays open)**: S, T and the fusion are identified with the corpus Hecke braiding / Jones–Wenzl tensor product by citation (Kirby–Melvin, Kauffman–Lins). Deriving that needs qou-pbjv / qou-ltwg.
+
+#9765 merged at its first commit only (twist). Verlinde commit re-landed as PR #9776.
