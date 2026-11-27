@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T18:07:20Z
+updated_at: 2026-11-27T18:10:25Z
 parent: qou-dk7p
 ---
 
@@ -40,3 +40,6 @@ Stage 3 design (for next session if this one ends): induction P(N): exists full 
 
 2026-11-27 Furusho 2010 (arXiv math/0702128) check: pentagon (1), hexagons (2),(3) as in our LowDegree; inversion (12); hexagon<=> (12)+(13) e^{μX/2}φ(Z,X)e^{μZ/2}φ(Y,Z)e^{μY/2}φ(X,Y)=1, X+Y+Z=0 (Lemma 7); pentagon <=> commutator group-like + five-cycle (10) in P5^ (Lemma 5). GRT_1^(n) = commutator group-like with (10),(12),(14) φ(Z,X)φ(Y,Z)φ(X,Y)=1 mod deg n. Composition (Lemma 8): (φ2∘φ1)(X,Y) = φ2(φ1 X φ1^-1, Y)·φ1; if φ1 in GRT_1 then φ2 satisfies (10) iff φ2∘φ1 does. grt_1: Lie elts deg>=3 with (7) five-cycle linear, (8) cyclic, (9) antisym; bracket <ψ1,ψ2>=[ψ1,ψ2]+D_ψ2 ψ1 - D_ψ1 ψ2, D_ψ(X)=[ψ,X], D_ψ(Y)=0. Exp: grt_1 -> GRT_1 (Lemma 9, cites Drinfeld §5).
 Stage 3 decomposition: 3a pentagon<=>five-cycle (or stay in t_4); 3b right action φ∘g preserves pentagon (Furusho Lemma 8); 3c preserves hexagon_μ (Drinfeld §5); 3d Exp(ψ) in GRT_1 with Exp(ψ)=1+ψ+... for homogeneous ψ. Top-degree: φ∘Exp(ψ) ≡ φ + ψ mod deg N+2. First need infra PR: evaluation of k<<X,Y>> truncations into DK families t_3,t_4 (+P5) with cabling maps.
+
+2026-11-27 Drinfeld 1991 IS in library: library/drinfeld1991-quasitriangular (OCR, sections/page-012..014). §5: GRT_1 eqs (5.12)-(5.15); group law (5.16) (g1∘g2)(A,B) = g1(g2 A g2^-1, B)·g2; grt_1 (5.17)-(5.20), bracket (5.21), D_ψ(A)=[ψ,A], D_ψ(B)=0. Right action on M_μ: φ~(A,B) = φ(g A g^-1, B)·g(A,B) (p.852); Prop 5.5 free+transitive. Prop 5.3 (M_μ(Q) nonempty) nonconstructive via M_μ(C). Prop 5.8: M_μ^(r+1)(k) -> M_μ^(r)(k) surjective, proof uses 5.3 + GRT^(r+1)->GRT^(r) surjective (Prop 5.7: (5.17),(5.18),(5.20) imply (5.19)). Prop 5.9: (5.12),(5.13),(5.15) imply (5.14), via Exp: grt_1 -> GRT_1 of (5.16).
+KEY for research leg (p.854, Remark 2 after 5.8): without 5.3, obstruction to lifting lies in r-th component of H^4 of Drinfeld's complex L'^ (Harrison-type subcomplex of the t_n complex); 'The author does not know whether H^4 = 0'. H^n=L^n=0 for n<=2... H^3 = graded grt_1. So dropping the hypothesis = proving the needed degree components of H^4 vanish: open in 1991. (From memory, unverified here: later work relates this complex to Kontsevich's graph complex GC2, where the corresponding vanishing is still conjectural.)
