@@ -85,9 +85,44 @@ On antidiagonal `s`, every cell has `|c| = |j − i| ≤ i + j − 2 = s − 2`.
 ρ_n(s) ≤ 0   whenever (s − 2)² ≤ n − 1.
 ```
 
-This proves the negative half of SC on `s ≤ 2 + √(n−1)`. What remains open is the window
-`2 + √(n−1) < s < t_n`, plus `ρ_n(s) ≥ 0` for `s ≥ t_n`, where `t_n` is the measured threshold
-(`t_55 = 12`, against `2 + √54 = 9.35`).
+This proves the negative half of SC on `s ≤ 2 + √(n−1)`.
+
+## Result 3b (added later the same day): the upper tail of single crossing
+
+If the cell `(i, j)` is addable to `ν ⊢ n−1`, then `ν` contains the `i × j` rectangle minus its
+corner `(i, j)`, which has `ij − 1` cells. So `ij ≤ n`. With `s = i + j` and `c = j − i`,
+`4ij = s² − c²`, hence `c² ≥ s² − 4n` for every cell the newest box can occupy. If `s² ≥ 5n − 1`,
+every such cell has `c² ≥ n − 1`, and
+
+```
+ρ_n(s) ≥ 0   whenever s² ≥ 5n − 1.
+```
+
+**What is still open** is the window
+
+```
+2 + √(n−1) < s < √(5n − 1),
+```
+
+of width about `1.24 √n`. Inside it, the measured `ρ_n` changes sign once, at `t_n` (`t_45 = 11`,
+window `9…14`; `t_67 = 13`, window `11…18`). Both proved halves are pointwise: each cell has the
+right sign on its own. Inside the window, cells of both signs share an antidiagonal, so a proof has
+to weigh them against each other.
+
+**Heuristic location of the crossing (not a proof).** By the Vershik–Kerov–Logan–Shepp limit shape,
+the newest box concentrates on the curve `y = √n Ω(c/√n)`, where `y = s − 1` is the rotated
+coordinate of the cell centre and `Ω(u) = (2/π)(u arcsin(u/2) + √(4 − u²))`. On each branch
+`|c|` increases with `s` once `s − 1 > (4/π)√n`, the height of the curve at `c = 0`. So
+`c² − (n−1)` changes sign once along the curve, where `|c| = √n`. That predicts
+
+```
+(t_n − 1)/√n  →  Ω(1) = 1/3 + 2√3/π ≈ 1.43599.
+```
+
+Measured: `1.643, 1.491, 1.483, 1.466` at `n = 30, 45, 55, 67`. This is consistent with the limit,
+but it is not evidence for SC at finite `n`. No parameter is fitted: `Ω(1)` is computed, not chosen.
+Making the heuristic rigorous would need a local limit law for the newest box at the
+`O(1)`-in-`s` scale, uniformly in `n`. No such law is held in this repo.
 
 ## Result 4: two candidate sufficient conditions fail
 
@@ -112,13 +147,14 @@ The exhaustive table already gives `M₁(n) > 0` for `n ≤ 78`, so this extensi
 
 ## What it is, and what it is not
 
-- **Is:** a one-cell form of `M₁`, `P`, `N` and `ρ_n`, with a derivation; a proof of the lower half
-  of SC; and two refuted sufficient conditions.
+- **Is:** a one-cell form of `M₁`, `P`, `N` and `ρ_n`, with a derivation; proofs of the lower half
+  and of the upper tail of SC; and two refuted sufficient conditions.
 - **Is not:** a proof of SC or of `M₁ > 0` for all `n`. The open input of `qou-k5r5` is unchanged.
 - **Not formalized.** The Kerov identity and the Plancherel-growth law are not in this repo's Lean.
-  The elementary step behind Result 3 is the inequality `|j − i| ≤ i + j − 2`.
-- **Next, on this route:** an upper-half statement in Kerov's continual-diagram language, i.e.
-  `E[(c² − (n−1)) · 1{s}] ≥ 0` for `s ≥ t_n`, using the limit-shape concentration of the newest box.
+  The elementary steps behind Results 3 and 3b are `|j − i| ≤ i + j − 2` and `ij ≤ n` for an
+  addable cell of a diagram of size `n − 1`.
+- **Next, on this route:** the window `2 + √(n−1) < s < √(5n−1)`, where cells of both signs share
+  an antidiagonal. That needs a quantitative local law for the newest box (Result 3b, heuristic).
 
 ## Cross-references
 
