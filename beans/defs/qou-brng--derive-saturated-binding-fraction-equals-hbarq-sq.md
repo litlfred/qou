@@ -8,7 +8,7 @@ tags:
     - compute-accuracy
     - reorg-2026-10-04
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-11-27T15:30:00Z
+updated_at: 2026-11-27T18:05:00Z
 parent: qou-v2om
 ---
 
@@ -3586,3 +3586,7 @@ Residual (ii), why the binding count channel is a bare integer while the mass ch
 ## 2026-11-27 — C2: the classical part of the RULED LOG law is a merge count (PR #9467)
 
 `QOU/MassTheory/ClassicalLogBindingCycleCount.lean` (sorry-free): at q = 1, B = E0 ln2 (c_free − c_atom). Consequences: (i) the γγ-cheapest bond V³ (and the nucleon V³) is classically trivial, so it merges 0 components and the selected deuteron's binding is a pure q-deformation (keV), the structural cause of the −99.7 %; pure-junction bonds merge 0 or 2 (parity). (ii) Ceiling: at most 3A−1 merges, per-nucleon < E0 ln 8. (iii) Cayley subadditivity gives a product-assembled classical b3 ≤ 0 under the log law; classical b3 ∈ E0 ln2·ℤ (S2 of the 2026-09-07 plan). Scorecard only: peak B/A ≈ E0 ln 8 (56Fe −0.005 %), post-hoc and E0-chart dependent (1 %), heavy nuclei exceed the finite-A ceiling by ~1 merge; not used. Probe 4/4, audit docs/audits/2026-11-27-classical-log-binding-cycle-count.md. Open: ceiling at q0; bond selection (owner); genuinely three-body permutations. Bean stays open.
+
+## 2026-11-27 — C2 part 2: the merge ceiling at q0, and reading 3 caps the merges (PR #9526)
+
+At q0, on every γγ bond word measured, the ceiling holds by a wide margin: max −ln r = 2.56 merge units at A = 2 (ceiling 5, all 5334 six-strand words, corpus 408/14 pass count reproduced, independent Schur–Weyl trace agrees) and 2.47 at A = 3 (ceiling 8, 1360 nine-strand words of length ≤ 4). Every passing word merges exactly 2 at both A. At A = 2 that cap is a theorem at q = 1: `QOU/MassTheory/ClassicalReading3MergeBound.lean` (sorry-free) proves top-level classical reading 3 ⇒ n+1 ≤ 2^c, so merges ≤ n − ⌈log2(n+1)⌉ (sharp for n ≤ 30, computed). At A = 3, 120 four-merge words pass classically and all fail at q0. If the q0 cap stays 2 for all A, this bond class cannot give an extensive term (scope a, measured not proved). Open: the cap at A = 4 (12 strands, PR #9474 TL engine); bond selection (owner card); three-body permutations. Audit docs/audits/2026-11-27-binding-ceiling-at-q0.md. Bean stays open.
