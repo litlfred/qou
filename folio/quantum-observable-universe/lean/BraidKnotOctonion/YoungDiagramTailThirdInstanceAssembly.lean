@@ -23,6 +23,7 @@ open QOU.BraidsAndKnots.YoungDiagramTransposeBridge
 open QOU.BraidsAndKnots.YoungDiagramKernelPincer
 open QOU.BraidsAndKnots.DepthTwoHookClassification
 open QOU.BraidsAndKnots.DepthTwoBinomialMoments
+open QOU.BraidsAndKnots.SecondMomentKernelVanishes
 
 /-! ## Family A: `(a, 3, 1^c)` -/
 
@@ -268,5 +269,228 @@ theorem shapeTerm_col_eq_row (m i : ℕ) (hi : i ≤ m) :
     simp [List.mem_replicate]
   unfold shapeTerm
   rw [hrow, sytDim_conj _ hs hpos, omega3_conj _ _ hs]
+
+/-! ## The six boundary shapes -/
+
+/-- `[m + 6]`. -/
+theorem shapeTerm_singleRow (m : ℕ) :
+    shapeTerm (m + 6) [m + 6]
+      = 2 * ((m : ℤ) + 6) * ((m : ℤ) + 6 - 1) * ((m : ℤ) + 6 - 2) := by
+  unfold shapeTerm
+  rw [QOU.BraidsAndKnots.DepthOneHookClassification.sytDim_singleRow (m + 6) (by omega),
+    QOU.BraidsAndKnots.YoungDiagramTailSecondInstance.six_mul_omega3_singleRow (m + 6) (by omega)]
+  push_cast
+  ring
+
+/-- `1^{m + 6}`. -/
+theorem shapeTerm_singleCol (m : ℕ) :
+    shapeTerm (m + 6) (List.replicate (m + 6) 1)
+      = 2 * ((m : ℤ) + 6) * ((m : ℤ) + 6 - 1) * ((m : ℤ) + 6 - 2) := by
+  unfold shapeTerm
+  rw [QOU.BraidsAndKnots.DepthOneHookClassification.sytDim_singleCol (m + 6) (by omega),
+    QOU.BraidsAndKnots.YoungDiagramTailSecondInstance.six_mul_omega3_singleCol (m + 6) (by omega)]
+  push_cast
+  ring
+
+/-- `(2, 1^{m + 4})`. -/
+theorem shapeTerm_hookTwo (m : ℕ) :
+    shapeTerm (m + 6) (2 :: List.replicate (m + 4) 1)
+      = ((m : ℤ) + 5) ^ 2 * (2 * ((m : ℤ) + 6) * ((m : ℤ) + 4) * ((m : ℤ) + 2)) := by
+  unfold shapeTerm
+  have hd := sytDim_hookShape 2 (m + 4) (by omega)
+  rw [show 2 + (m + 4) - 1 = m + 5 by omega, show 2 - 1 = 1 by rfl, Nat.choose_one_right] at hd
+  have ho := six_mul_omega3_hookShape (m + 6) 1 (by omega)
+  rw [show m + 6 - 1 - 1 = m + 4 by omega] at ho
+  rw [hd, ho]
+  push_cast
+  ring
+
+/-- `(2, 2, 1^{m + 2})`, as `4·f²·6ω₃ = n²(n − 3)²·W(n, n − 1)`. -/
+theorem four_mul_shapeTerm_twoTwo (m : ℕ) :
+    4 * shapeTerm (m + 6) (2 :: 2 :: List.replicate (m + 2) 1)
+      = ((m : ℤ) + 6) ^ 2 * ((m : ℤ) + 3) ^ 2
+        * (((m : ℤ) + 3) * ((m : ℤ) + 4) * (2 * ((m : ℤ) + 6) - 5) + 6
+          - 3 * ((m : ℤ) + 6) * ((m : ℤ) + 5)) := by
+  unfold shapeTerm
+  have hd := QOU.BraidsAndKnots.YoungDiagramTailSecondInstance.mul_sytDim_twoCorner (m + 6) 0
+    (by omega)
+  have ho := QOU.BraidsAndKnots.DepthOneHookClassification.six_mul_omega3_twoCorner (m + 6) 0
+    (by omega)
+  rw [show m + 6 - 4 - 0 = m + 2 by omega, show (0 : ℕ) + 2 = 2 by rfl] at hd ho
+  have hc : 2 * (m + 6).choose 2 = (m + 6) * (m + 5) := by
+    have h := Nat.succ_mul_choose_eq (m + 5) 1
+    simp only [Nat.succ_eq_add_one, Nat.choose_one_right] at h
+    ring_nf at h ⊢
+    linarith
+  have hdZ := congrArg (fun x : ℕ => (x : ℤ)) hd
+  have hcZ := congrArg (fun x : ℕ => (x : ℤ)) hc
+  push_cast [show m + 6 - 1 = m + 5 by omega, show m + 6 - 3 - 0 = m + 3 by omega] at hdZ hcZ
+  have h2f : 2 * (sytDim (2 :: 2 :: List.replicate (m + 2) 1) : ℤ)
+      = ((m : ℤ) + 6) * ((m : ℤ) + 3) := by
+    have hne : ((m : ℤ) + 5) ≠ 0 := by positivity
+    apply mul_left_cancel₀ hne
+    linear_combination 2 * hdZ + ((m : ℤ) + 3) * hcZ
+  rw [ho]
+  push_cast
+  linear_combination
+    (2 * (sytDim (2 :: 2 :: List.replicate (m + 2) 1) : ℤ) + ((m : ℤ) + 6) * ((m : ℤ) + 3))
+    * ((0 + 1) * (0 + 2) * (2 * 0 + 3) + (((m : ℤ) + 6) - 3 - 0) * (((m : ℤ) + 6) - 2 - 0)
+        * (2 * (((m : ℤ) + 6) - 3 - 0) + 1) - 3 * ((m : ℤ) + 6) * (((m : ℤ) + 6) - 1)) * h2f
+
+/-- The transpose of `(2, 1^c)` is `[c + 1, 1]`. -/
+theorem conj_hookTwo (c : ℕ) : conj (2 :: List.replicate c 1) = [c + 1, 1] := by
+  have hc := QOU.BraidsAndKnots.DepthOneHookClassification.countP_pos_replicate_one
+  simp [conj, List.range_succ, hc]
+
+/-- The transpose of `(2, 2, 1^c)` is `[c + 2, 2]`. -/
+theorem conj_twoTwo (c : ℕ) : conj (2 :: 2 :: List.replicate c 1) = [c + 2, 2] := by
+  have hc := QOU.BraidsAndKnots.DepthOneHookClassification.countP_pos_replicate_one
+  simp [conj, List.range_succ, hc]
+
+/-- A shape and its transpose carry the same term. -/
+theorem shapeTerm_conj (n : ℕ) (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (hpos : ∀ x ∈ l, 0 < x) :
+    shapeTerm n (conj l) = shapeTerm n l := by
+  unfold shapeTerm
+  rw [sytDim_conj l hs hpos, omega3_conj n l hs]
+
+/-! ## The unified sum -/
+
+/-- The boundary terms of the binomial sum, `k ∈ {0, 1, 2, n − 2, n − 1, n}`. -/
+theorem depthTwoTerm_boundary (m : ℕ) :
+    depthTwoTerm (m + 6) 0 = 4 * ((m : ℤ) + 4) ^ 2 * (2 * ((m : ℤ) + 6) * ((m : ℤ) + 5) * ((m : ℤ) + 4))
+    ∧ depthTwoTerm (m + 6) 1 = 0 ∧ depthTwoTerm (m + 6) 2 = 0 ∧ depthTwoTerm (m + 6) (m + 4) = 0
+    ∧ depthTwoTerm (m + 6) (m + 5) = ((m : ℤ) + 4) ^ 2 * ((m : ℤ) + 3) ^ 2 * ((m : ℤ) + 6) ^ 2
+        * (((m : ℤ) + 3) * ((m : ℤ) + 4) * (2 * ((m : ℤ) + 6) - 5) + 6
+          - 3 * ((m : ℤ) + 6) * ((m : ℤ) + 5))
+    ∧ depthTwoTerm (m + 6) (m + 6) = 4 * ((m : ℤ) + 5) ^ 2 * ((m : ℤ) + 4) ^ 2
+        * (2 * ((m : ℤ) + 6) * ((m : ℤ) + 4) * ((m : ℤ) + 2)) := by
+  have hc : (m + 6).choose (m + 5) = m + 6 := by
+    rw [show m + 6 = (m + 5) + 1 by omega, Nat.choose_succ_self_right]
+  refine ⟨?_, ?_, ?_, ?_, ?_, ?_⟩ <;>
+    simp only [depthTwoTerm, depthTwoG, depthTwoW, Nat.choose_zero_right, Nat.choose_self, hc] <;>
+    push_cast <;> ring
+
+/-- **Unified sum.** `4(n − 2)²·Σ_shapes f²·6ω₃ = 2·Σ_{k=0}^{n} g(k)²·W(k)·C(n,k)²`, `n = m + 6`. -/
+theorem shapes_sum_identity (m : ℕ) :
+    4 * (((m + 6 : ℕ) : ℤ) - 2) ^ 2 * ((depthTwoShapes (m + 6)).map (shapeTerm (m + 6))).sum
+      = 2 * ∑ k ∈ Finset.range (m + 6 + 1), depthTwoTerm (m + 6) k := by
+  have hs2 : (2 :: List.replicate (m + 4) 1).Sorted (· ≥ ·) := by
+    simp [List.Sorted, List.pairwise_cons, List.pairwise_replicate, List.mem_replicate]
+  have hp2 : ∀ x ∈ 2 :: List.replicate (m + 4) 1, 0 < x := by simp [List.mem_replicate]
+  have hs22 : (2 :: 2 :: List.replicate (m + 2) 1).Sorted (· ≥ ·) := by
+    simp [List.Sorted, List.pairwise_cons, List.pairwise_replicate, List.mem_replicate]
+  have hp22 : ∀ x ∈ 2 :: 2 :: List.replicate (m + 2) 1, 0 < x := by simp [List.mem_replicate]
+  have e1 : shapeTerm (m + 6) [m + 6 - 1, 1] = shapeTerm (m + 6) (2 :: List.replicate (m + 4) 1) := by
+    rw [show m + 6 - 1 = m + 4 + 1 by omega, ← conj_hookTwo, shapeTerm_conj _ _ hs2 hp2]
+  have e2 : shapeTerm (m + 6) [m + 6 - 2, 2]
+      = shapeTerm (m + 6) (2 :: 2 :: List.replicate (m + 2) 1) := by
+    rw [show m + 6 - 2 = m + 2 + 2 by omega, ← conj_twoTwo, shapeTerm_conj _ _ hs22 hp22]
+  have hcol : ∀ i ∈ Finset.range (m + 1),
+      shapeTerm (m + 6) (colShape (m + 6) i) = shapeTerm (m + 6) (rowShape (m + 6) i) :=
+    fun i hi => shapeTerm_col_eq_row m i (by have := Finset.mem_range.mp hi; omega)
+  have hrow : 4 * (((m + 6 : ℕ) : ℤ) - 2) ^ 2
+        * ∑ i ∈ Finset.range (m + 1), shapeTerm (m + 6) (rowShape (m + 6) i)
+      = ∑ i ∈ Finset.range (m + 1), depthTwoTerm (m + 6) (i + 1 + 1 + 1) := by
+    rw [Finset.mul_sum]
+    exact Finset.sum_congr rfl fun i hi =>
+      four_mul_shapeTerm_row m i (by have := Finset.mem_range.mp hi; omega)
+  have hR : ∑ k ∈ Finset.range (m + 6 + 1), depthTwoTerm (m + 6) k
+      = ∑ i ∈ Finset.range (m + 1), depthTwoTerm (m + 6) (i + 1 + 1 + 1)
+        + depthTwoTerm (m + 6) 0 + depthTwoTerm (m + 6) 1 + depthTwoTerm (m + 6) 2
+        + depthTwoTerm (m + 6) (m + 4) + depthTwoTerm (m + 6) (m + 5)
+        + depthTwoTerm (m + 6) (m + 6) := by
+    rw [Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ,
+      Finset.sum_range_succ', Finset.sum_range_succ', Finset.sum_range_succ']
+    simp only [zero_add]
+    ring
+  have hL : ((depthTwoShapes (m + 6)).map (shapeTerm (m + 6))).sum
+      = shapeTerm (m + 6) [m + 6] + shapeTerm (m + 6) (2 :: List.replicate (m + 4) 1)
+        + shapeTerm (m + 6) (2 :: 2 :: List.replicate (m + 2) 1)
+        + shapeTerm (m + 6) (List.replicate (m + 6) 1)
+        + shapeTerm (m + 6) (2 :: List.replicate (m + 4) 1)
+        + shapeTerm (m + 6) (2 :: 2 :: List.replicate (m + 2) 1)
+        + 2 * ∑ i ∈ Finset.range (m + 1), shapeTerm (m + 6) (rowShape (m + 6) i) := by
+    unfold depthTwoShapes
+    rw [List.map_cons, List.map_cons, List.map_cons, List.map_cons, List.map_cons,
+      List.map_cons, List.sum_cons, List.sum_cons, List.sum_cons, List.sum_cons, List.sum_cons,
+      List.sum_cons, List.map_append, List.sum_append, List.map_map, List.map_map,
+      QOU.BraidsAndKnots.YoungDiagramTailSecondInstance.list_sum_map_range_int,
+      QOU.BraidsAndKnots.YoungDiagramTailSecondInstance.list_sum_map_range_int,
+      show m + 6 - 5 = m + 1 by omega, e1, e2, show m + 6 - 2 = m + 4 by omega,
+      show m + 6 - 4 = m + 2 by omega]
+    simp only [Function.comp_apply]
+    rw [Finset.sum_congr rfl hcol]
+    ring
+  obtain ⟨h0, h1, h2, h4, h5, h6⟩ := depthTwoTerm_boundary m
+  rw [hR, hL, ← hrow, h0, h1, h2, h4, h5, h6]
+  have hA := shapeTerm_singleRow m
+  have hB := shapeTerm_singleCol m
+  have hC := shapeTerm_hookTwo m
+  have hD := four_mul_shapeTerm_twoTwo m
+  push_cast
+  linear_combination (4 * ((m : ℤ) + 4) ^ 2) * hA + (4 * ((m : ℤ) + 4) ^ 2) * hB
+    + (8 * ((m : ℤ) + 4) ^ 2) * hC + (2 * ((m : ℤ) + 4) ^ 2) * hD
+
+/-- The shape sum in closed form: `(n − 3)·Σ_shapes f²·6ω₃ = (n − 2)(n − 5)·Q(n)·C(2n−8, n−4)`. -/
+theorem shapes_sum_closed (m : ℕ) :
+    ((m : ℤ) + 3) * ((depthTwoShapes (m + 6)).map (shapeTerm (m + 6))).sum
+      = ((m : ℤ) + 4) * ((m : ℤ) + 1) * sexticZ ((m : ℤ) + 6)
+        * (((2 * (m + 6) - 8).choose (m + 2) : ℕ) : ℤ) := by
+  have h1 := shapes_sum_identity m
+  have h2 := depthTwo_sum_collapse (m + 6) (by omega)
+  push_cast at h1 h2
+  have hne : (4 * ((m : ℤ) + 4) ^ 2) ≠ 0 := by positivity
+  apply mul_left_cancel₀ hne
+  linear_combination ((m : ℤ) + 3) * h1 + 2 * h2
+
+/-- **The depth-2 tail in closed form.** For `n ≥ 6` the hook-`(n − 2)` covariance equals
+`(n−2)(n−5)·Q(n)·C(2n−8, n−4) / (6(n−3)·n!)`. Derivation in
+`docs/audits/2026-11-27-covariance-kernel-depth-two-tail.md`; bean `qou-swk4`. -/
+theorem nuV_depthTwo_closed_form (n : ℕ) (hn : 6 ≤ n) :
+    nuV n (n - 2) = QOU.BraidsAndKnots.YoungDiagramTailThirdInstance.nuDepthTwoClosedForm
+      (R := ℝ) n := by
+  obtain ⟨m, rfl⟩ : ∃ m, n = m + 6 := ⟨n - 6, by omega⟩
+  unfold nuV QOU.BraidsAndKnots.YoungDiagramTailThirdInstance.nuDepthTwoClosedForm
+    QOU.BraidsAndKnots.YoungDiagramTailThirdInstance.depthTwoSexticFactor
+  rw [tiltedMean_zero (m + 6), mul_zero, sub_zero]
+  unfold nuMixedMoment
+  rw [depthTwo_mixedMoment_eq_shapes_sum (m + 6) (by omega),
+    PlancherelNormalisation.tiltNorm_zero_eq_factorial (m + 6)]
+  have hcast : 6 * (((depthTwoShapes (m + 6)).map
+        (fun l => tilt 0 (sytDim l) * (omega3 (m + 6) l : ℝ))).sum)
+      = ((((depthTwoShapes (m + 6)).map (shapeTerm (m + 6))).sum : ℤ) : ℝ) := by
+    rw [Int.cast_list_sum, List.map_map, ← list_sum_map_mul_left]
+    refine congrArg List.sum (List.map_congr_left fun l _ => ?_)
+    simp only [Function.comp_apply, shapeTerm]
+    rw [tilt_zero]
+    push_cast
+    ring
+  have hS := congrArg (fun z : ℤ => (z : ℝ)) (shapes_sum_closed m)
+  simp only at hS
+  push_cast at hS hcast
+  have hfac : (0 : ℝ) < (Nat.factorial (m + 6) : ℝ) := by
+    exact_mod_cast Nat.factorial_pos (m + 6)
+  have h3 : ((m : ℝ) + 6 - 3) ≠ 0 := by
+    have : (0 : ℝ) ≤ m := Nat.cast_nonneg m
+    exact ne_of_gt (by linarith)
+  rw [show m + 6 - 4 = m + 2 by omega]
+  push_cast
+  rw [div_eq_div_iff (ne_of_gt hfac) (mul_ne_zero (mul_ne_zero (by norm_num) h3) (ne_of_gt hfac))]
+  unfold sexticZ at hS
+  push_cast at hS
+  linear_combination (Nat.factorial (m + 6) : ℝ) * hS + ((m : ℝ) + 3) * (Nat.factorial (m + 6) : ℝ) * hcast
+
+/-- **Sign of the depth-2 tail.** For `n ≥ 6`, `ν_{n−2}(n) > 0` iff `n = 6` or `n ≥ 10`. -/
+theorem nuV_depthTwo_pos_iff (n : ℕ) (hn : 6 ≤ n) : 0 < nuV n (n - 2) ↔ n = 6 ∨ 10 ≤ n := by
+  rw [nuV_depthTwo_closed_form n hn]
+  exact QOU.BraidsAndKnots.YoungDiagramTailThirdInstance.nuDepthTwo_pos_iff n (by omega)
+
+/-- The depth-2 tail does not vanish for `n ≥ 6` (its only zero with `n ≥ 4` is `n = 5`). -/
+theorem nuV_depthTwo_ne_zero (n : ℕ) (hn : 6 ≤ n) : nuV n (n - 2) ≠ 0 := by
+  rw [nuV_depthTwo_closed_form n hn]
+  intro h
+  have := (QOU.BraidsAndKnots.YoungDiagramTailThirdInstance.nuDepthTwo_eq_zero_iff
+    (R := ℝ) n (by omega)).mp h
+  omega
 
 end QOU.BraidsAndKnots.YoungDiagramTailThirdInstanceAssembly
