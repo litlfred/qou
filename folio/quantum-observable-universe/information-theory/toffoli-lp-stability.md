@@ -11,7 +11,7 @@ $$
   \qquad
   P_{6,7} = \frac{(q-1)(q+1)(2q^6+q^4+q^2+1)}{2q(q^2+1)^2}.
 $$
-The two diagonal amplitudes are strictly positive on $q > 0$; each off-diagonal amplitude has exactly one zero there, at $q = 1$, since its sextic factor is positive for every real $q$. Thus the Toffoli amplitude family has **one** operator zero on $(0,\infty)$, at $q = 1$, and $P_{7,6} < 0$ for every $q > 1$ — including the substrate value.
+The two diagonal amplitudes are strictly positive on $q > 0$; each off-diagonal amplitude has exactly one zero there, at $q = 1$, since its sextic factor is positive for every real $q$. Thus the Toffoli amplitude family has **one** operator zero on $(0,\infty)$, at $q = 1$, and $P_{7,6} < 0$ for every $q > 1$ — including the aether value.
 
 2. **(The operator threshold.)** The derived family has a single threshold on $(0,\infty)$:
 See [Table 1](#tbl:toffoli-lp-stability-table1-data).
@@ -23,7 +23,7 @@ $$
 $$
 where $\kappa(\mathrm{G}(q)) = \lambda_{\max}(G)/|\lambda_{\min}(G)|$. **Open boundary (Gram radical).** Because $y_{(1^3)} = 0$ at $z = q^3/(q^2+1)$, the Markov–Gram form on $H_3(q)$ is **singular**, so $\lambda_{\max}/|\lambda_{\min}|$ in the ordinary sense is infinite on the full six-dimensional normal-form span; formulating a finite shadow-price bound requires passing to the quotient by the radical, as in Term 4 of the six-term mass identity.
 
-4. **(Physical-substrate stability — the positivity reduction does not hold as stated.)** At $q_0 \approx 1.110$ (with $z = q^3/(q^2+1)$):
+4. **(Physical-aether stability — the positivity reduction does not hold as stated.)** At $q_0 \approx 1.110$ (with $z = q^3/(q^2+1)$):
 $$
   P_{7,7}(q_0) \,\approx\, 0.6912,
   \qquad
@@ -38,7 +38,7 @@ $$
   T_q \;=\; \sigma_1 \;+\; \hbar_\times\,\sigma_0\sigma_1,
   \qquad \hbar_\times = q - q^{-1}.
 $$
-Against the $H_3(q)$ Markov–Gram matrix, every component of $G\vec t(q_0)$ is strictly positive, for all eight strand-type orderings. So the substrate satisfies the LP condition this proposition states.
+Against the $H_3(q)$ Markov–Gram matrix, every component of $G\vec t(q_0)$ is strictly positive, for all eight strand-type orderings. So the aether satisfies the LP condition this proposition states.
 
 **Two qualifications, both of which bound what that is worth.** First, the Gram is entrywise non-negative, and $\vec t$ is too for the all-proton ordering, so *for that ordering* positivity is forced by shape with no cancellation possible — 2 of the 8 orderings are trivial in this sense and 6 are not. Second, and more consequential: $\vec t$ acquires a negative component exactly when $\hbar_\times < 0$, i.e. on $0 < q < 1$ — the *opposite* side of $q = 1$ from where $P_{7,6}$ is negative. The amplitude sign and the cone condition disagree about which regime is the admissible one, so the reduction above does not merely mix index spaces.
 
@@ -60,7 +60,7 @@ No claim of LP-instability is made, and none is available: the condition as stat
 | $P_{7,7} > 0$ on $q > 0$, no positive root |
 | $P_{6,6} > 0$ on $q > 0$ |
 | $P_{7,6}$'s only positive zero is $q = 1$ |
-| $P_{7,6} < 0$ on $q > 1$, the substrate side |
+| $P_{7,6} < 0$ on $q > 1$, the aether side |
 | $P_{7,6} > 0$ on $0 < q < 1$ |
 | $P_{6,7} + P_{7,6} = q(q-1)^2(q+1)^2/2(q^2+1)$ |
 | the flip channel is **not** antisymmetric |
@@ -119,5 +119,5 @@ This is **forced, not fitted**. Every Markov trace of a Hecke word lies in $\mat
 
 Both parameters are needed: the constraint's minimal polynomial over $\mathbb{Q}(z)$ has degree $3$ and over $\mathbb{Q}(\hbar_\times)$ degree $2$, so it is a function of neither alone. Since those degrees are coprime, $\mathbb{Q}(z,\hbar_\times) = \mathbb{Q}(q)$ and the content is the subring statement, not a field one. Separately, the numerator is neither reciprocal nor anti-reciprocal, so it is the Alexander polynomial of no knot — a scope-(b) exclusion resting on the reciprocity invariant.
 
-**Substrate stability table:**
+**Aether stability table:**
 See [Table 2](#tbl:toffoli-lp-stability-table2-data).

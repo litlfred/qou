@@ -21,7 +21,7 @@ $$ A = \frac{\text{Vol}(4_1)}{\pi} \approx 0.6461318 $$
 
 The candidate identification
 $$ c_3 \xrightarrow{N \to \infty} -\text{Vol}(4_1) \approx -2.02988 $$
-is **scope-limited, not exact**: $-\text{Vol}(4_1)$ is anchor-blind, missing both substrate anchors (muon $+0.479\%$, proton $-1.907\%$) while the measured $c_3$ itself swings $2.43\%$ across anchors (muon $-2.0202$, proton $-2.0693$); at the muon (CAL-2) pin it is $6.9\times$ worse than the precision-ladder near-match $-\text{Vol}(4_1) + u - (10/3)\,u^2$. The residual between the observed $-2.0216$ and $-2.02988$ was previously attributed to finite-size truncation scaling; the cross-anchor swing shows the identification itself does not close.
+is **scope-limited, not exact**: $-\text{Vol}(4_1)$ is anchor-blind, missing both aether anchors (muon $+0.479\%$, proton $-1.907\%$) while the measured $c_3$ itself swings $2.43\%$ across anchors (muon $-2.0202$, proton $-2.0693$); at the muon (CAL-2) pin it is $6.9\times$ worse than the precision-ladder near-match $-\text{Vol}(4_1) + u - (10/3)\,u^2$. The residual between the observed $-2.0216$ and $-2.02988$ was previously attributed to finite-size truncation scaling; the cross-anchor swing shows the identification itself does not close.
 
 What stands is the hyperbolic geometry: $\text{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$, with the Lobachevsky saddle at $\theta = \pi/3$, supplies the geometric envelope that anchor-sensitive corrections (the precision ladder) refine — not a rigorous continuum evaluation of $c_3$.
 

@@ -1,4 +1,4 @@
-At $q_0 \approx 1.10998$, combining [Substrate-pure derivation of the dressed-quark mass splitting](../mass-theory/flavor-dressed-mass-from-substrate-split.md) with $\bar\mu \approx M_N / 3$ yields:
+At $q_0 \approx 1.10998$, combining [Aether-pure derivation of the dressed-quark mass splitting](../mass-theory/flavor-dressed-mass-from-substrate-split.md) with $\bar\mu \approx M_N / 3$ yields:
 
 $$
   \mu_{\mathfrak{u}} \;\approx\; 311.10\,\text{MeV},
@@ -30,10 +30,10 @@ $$
   311.75\,\text{MeV}.
 $$
 
-## Distance from the substrate bound
+## Distance from the aether bound
 
-[Two-sided substrate bound on the dressed-quark splitting](../mass-theory/flavor-mass-splitting-bound.md) gives an upper bound of $\approx 3.88\,\text{MeV}$. The realised value $1.286\,\text{MeV}$ is about $33\%$ of the bound. 
+[Two-sided aether bound on the dressed-quark splitting](../mass-theory/flavor-mass-splitting-bound.md) gives an upper bound of $\approx 3.88\,\text{MeV}$. The realised value $1.286\,\text{MeV}$ is about $33\%$ of the bound. 
 
 ## Heavier flavors
 
-The substrate flavor-split derivation is specific to the nucleon doublet topology. Extensions to heavier flavors remain unconstrained.
+The aether flavor-split derivation is specific to the nucleon doublet topology. Extensions to heavier flavors remain unconstrained.

@@ -6,4 +6,4 @@ The $(q, z)$-bicompletion is a proposed construction whose utility is conjectura
 
 The bicompletion unifies the $q$-only Habiro ring and the $z$-only Habiro ring at the apex of the cyclotomic completions diagram.
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.
+**Archimedean specialisation.** What follows sits on the archimedean side of the algebraic→archimedean wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.

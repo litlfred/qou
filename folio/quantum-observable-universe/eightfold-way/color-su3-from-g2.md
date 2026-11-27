@@ -1,7 +1,7 @@
 *The discrete color symmetry $\mathrm{PSL}(2,7)$ arises from the octonionic
 automorphism group $G_2$ via the Fano plane, whose incidence structure
 encodes the octonion multiplication table.  The octonion algebra is taken
-as an external input: it is not constructed from the categorical substrate,
+as an external input: it is not constructed from the categorical aether,
 and the attempt to connect the two --- the bridge group
 $S_4 \subset S_5 \cap \mathrm{PSL}(2,7)$ carrying local Fano data from the
 Bring surface to the Klein quartic --- is refuted below.*
@@ -194,6 +194,6 @@ or inside the automorphism and structure groups of the exceptional Jordan
 algebra $J_3(\mathbb{O})$ (Ivan Todorov and Michel Dubois-Violette
 \cite{todorov2018,dubois-violette-todorov2018}; Latham Boyle \cite{boyle2020}).
 In the present paper, $\mathbb{O}$ is likewise an external algebraic input:
-the single-fibre $\mathrm{SU}_q(2)$ substrate does not construct $\mathbb{O}$,
+the single-fibre $\mathrm{SU}_q(2)$ aether does not construct $\mathbb{O}$,
 and the $S_4$ genus-degeneration route from Bring's curve to the Klein quartic
 is excluded above.

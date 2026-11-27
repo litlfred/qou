@@ -46,7 +46,7 @@ These are the Hecke generator's eigenvalues: $\lambda^2 = h\lambda + 1$,
 i.e. $(\lambda-q)(\lambda+q^{-1}) = 0$, which identifies this operator as
 $\sigma_i$.
 
-**At the substrate parameter $q_0$:**
+**At the aether parameter $q_0$:**
 
 $$
   q - q^{-1} \approx 0.2091, \quad

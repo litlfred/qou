@@ -1,4 +1,4 @@
-## Substrate Cohomology and the Three Calibration Units
+## Aether Cohomology and the Three Calibration Units
 
 The categorical pipeline derives physical spectra from the geometry of Bring's curve and a single deformation parameter $q_0$. The first cohomology $H^1$ of Bring's genus-$4$ surface is eight-dimensional and decomposes under the $S_5$ automorphism group into two copies of one irreducible four-dimensional representation, $W = \mathrm{std} \otimes \mathrm{sgn}$ (the standard representation twisted by the sign character), so $H^1 = 2W$. While the algebraic curve rigidly fixes the rational polarized Hodge structure on $2W$, passing across the archimedean realization $\tau_{\mathrm{arch}}$ to real-valued observables introduces exactly three real cohomological degrees of freedom:
 

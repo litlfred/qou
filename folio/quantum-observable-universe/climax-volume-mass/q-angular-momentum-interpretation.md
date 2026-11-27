@@ -29,7 +29,7 @@ $$
 
 **Building block values.**
 
-| Knot | $n$ (strands) | $j$ | $J_q^2$ at the substrate parameter $q$ | Classical $j(j+1)$ |
+| Knot | $n$ (strands) | $j$ | $J_q^2$ at the aether parameter $q$ | Classical $j(j+1)$ |
 |------|:---:|:---:|:---:|:---:|
 | $0_1$ (unknot) | $1$ | $0$ | $0$ | $0$ |
 | $3_1$ (trefoil) | $2$ | $\frac{1}{2}$ | $[1/2]_q [3/2]_q = 0.7507$ | $0.75$ |

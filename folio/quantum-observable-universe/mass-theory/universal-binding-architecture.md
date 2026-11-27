@@ -22,9 +22,9 @@ whose boundary kernel $R(q,x)$ is built from the ratios of §1. Unrolling $G$ in
 
 **Weak channel.** Seeding with $10/3$ yields a coefficient $c_3 = 10/3$ in this construction. **Note (glyph collision):** this $c_3$ is *not* the bar-odd $Q_\beta$ precision-ladder coefficient, whose canonical value is the near-match $c_3 \approx -2 = J_{\mathrm{Hopf}}(q{=}1)$ (see the $c_k$ truncation-order framing); the two share a symbol but are different objects, and no identification between them is claimed.
 
-**Strong channel.** With $r_{\text{res}}$ the residual trace *evaluated at the substrate $q_0$* — numerically $r_{\text{res}} \approx 2.596$, which differs by $3.8\%$ from the $q=1$ limit $5/2$ of §1 — the recurrence reads
+**Strong channel.** With $r_{\text{res}}$ the residual trace *evaluated at the aether $q_0$* — numerically $r_{\text{res}} \approx 2.596$, which differs by $3.8\%$ from the $q=1$ limit $5/2$ of §1 — the recurrence reads
 $$ w_{n+1} = \tfrac{1}{2} w_n + r_{\text{res}}\, w_{n-1}. $$
-For the $^4$He cluster it gives $w_4 \approx 15.6016$; with a fixed constituent-mass scale this matches the $^4$He binding to $\approx 3.4$ keV ($1.2\times10^{-4}$ relative). This is a **match at the substrate value $r_{\text{res}}=2.596$**, not a prediction from the advertised invariant $5/2$; the $q_0$ value of $r_{\text{res}}$ and the overall scale are inputs, so the $^4$He agreement is a consistency check of the ansatz, not a parameter-free derivation.
+For the $^4$He cluster it gives $w_4 \approx 15.6016$; with a fixed constituent-mass scale this matches the $^4$He binding to $\approx 3.4$ keV ($1.2\times10^{-4}$ relative). This is a **match at the aether value $r_{\text{res}}=2.596$**, not a prediction from the advertised invariant $5/2$; the $q_0$ value of $r_{\text{res}}$ and the overall scale are inputs, so the $^4$He agreement is a consistency check of the ansatz, not a parameter-free derivation.
 
 ## 3. The A=3 Isospin Splitting — an Empirical Input, Not a Derivation
 

@@ -110,7 +110,7 @@ fail content validation:
 | archimedean-universe | 9 | MEDIUM |
 | information-theory | 6 | LOW |
 | appendix-nf-witnesses | 3 | LOW -- 3 defs |
-| algebraic-substrate | 3 | LOW |
+| algebraic-aether | 3 | LOW |
 | quantum-observable-universes | 2 | LOW |
 | q-geometric-langlands | 2 | LOW |
 | observations | 2 | LOW |
@@ -206,7 +206,7 @@ These are the most serious findings. Fixed in this audit with `AUDIT NOTE` annot
 | `MassGapGm.lean` | Mass gap positive over Gm | `massGapReal_pos` | **Exact** |
 | `MassGapGm.lean` | Gap zero iff q = +/-1 | `massGapReal_eq_zero_iff` | **Exact** |
 | `HadronicMass.lean` | Mass sum rule | `mass_sum_rule` | **Exact (by ring)** |
-| `CODATAChain.lean` | Derived substrate parameter | `end_to_end` | **Exact (interval arithmetic)**; the former CODATA nucleon rows held by construction and were removed |
+| `CODATAChain.lean` | Derived aether parameter | `end_to_end` | **Exact (interval arithmetic)**; the former CODATA nucleon rows held by construction and were removed |
 | `HeckeEngine.lean` | B3 NF via engine | `nf_b3_eq_witness` | **Exact (by ring)** |
 | `HeckeEngine.lean` | Nucleon trefoil formulas | `nf_proton4_trefoil`, `nf_neutron4_trefoil` | **Exact (by ring)** |
 | `ProtonTrefoilSign.lean` | Sign analysis | `proton_trefoil_neg_on_interval`, `neutron_trefoil_neg` | **Exact** |

@@ -16,7 +16,7 @@ $q \to \infty$, where the operator becomes purely contact. At the opposite end,
 $q = 1$, the Reeb share vanishes and the operator is pure gradient --- the classical
 point, where there is no Reeb period at all.
 
-At the substrate parameter the mixture is lopsided in the *wrong* direction for the
+At the aether parameter the mixture is lopsided in the *wrong* direction for the
 step-count reading. The gradient carries $90.09\,\%$ of the weight and the Reeb
 direction $9.908\,\%$, so nine parts in ten of what the metric measures is not Reeb
 transport. Any identification of $d_{\mathrm{Connes}}$ with a minimal step count at
@@ -31,9 +31,9 @@ distance built from the Markov--Gram form is not well-defined at all until the
 radical is quotiented away. Repairing either leaves the other standing.
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the
-substrate wall: it invokes real- or complex-analytic constructs --- real-valued
+algebraic→archimedean wall: it invokes real- or complex-analytic constructs --- real-valued
 physical observables, real-analytic bounds, transcendental constants, or numerical
-evaluation at the substrate parameter $q_0$. Any generic categorical or
+evaluation at the aether parameter $q_0$. Any generic categorical or
 $q$-deformation identities it draws on remain valid over an abstract coefficient ring;
 only their archimedean realisation is specialised here. The percentages above are
 $q_0^{-1} = 0.90091828395574149216$ and

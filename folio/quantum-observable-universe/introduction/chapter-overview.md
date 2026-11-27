@@ -1,5 +1,5 @@
 **Part I: Foundations.**
-This paper's destination is a concise table of dimensionless quantities set against measured constants—the muon-to-electron mass ratio, the kaon-to-pion mass ratio, the fine-structure constant—each computed from one algebraic skeleton and a single substrate parameter. That skeleton is the subject of Part I.
+This paper's destination is a concise table of dimensionless quantities set against measured constants—the muon-to-electron mass ratio, the kaon-to-pion mass ratio, the fine-structure constant—each computed from one algebraic skeleton and a single aether parameter. That skeleton is the subject of Part I.
 
 [*Quantum Universes*](#chap:qu) introduces the **quantum universe** (QU): the algebraic skeleton encoded in the rigid triple
 $$
@@ -34,7 +34,7 @@ Here $R_{\int}$ denotes the **Frobenius–Ricci endomorphism**, $F_\nabla$ denot
 [*Lifting and Descent*](#chap:torsion) resolves global extensions of local categorical data. The quantum lifting condition states that an object admits a lift if and only if its obstruction class $\kappa(x) \in H^2(S, B)$ vanishes. The descent involution $\hat{\tau}$ decomposes the algebra into observable (descended) and pre-observable (transient) modes. The lifting obstructions reduce to the genus of the base curve: $\chi_{\mathrm{eu}}(M_0) = 2 - 2g$ with $g \geq 1$, and the Descartes condition fixes $g = 4$. The Kummer exact sequence filtrates the obstruction space, revealing an obstruction that vanishes at the levels $n \mid \chi(A)$ and persists at every other level.
 
 **Part II: Structural Mechanics.**
-[*Braids and Knots*](#chap:path-integrals-braiding) replaces continuum path integrals with discrete braid-group representations inside the Iwahori–Hecke algebra $H_n(q)$. The substrate parameter $q$ fixes the crossing energy:
+[*Braids and Knots*](#chap:path-integrals-braiding) replaces continuum path integrals with discrete braid-group representations inside the Iwahori–Hecke algebra $H_n(q)$. The aether parameter $q$ fixes the crossing energy:
 $$
   E_\times = q + q^{-1} = [2]_q.
 $$
@@ -44,7 +44,7 @@ $$
   \frac{\mathfrak{m}_\mu}{m_e} = \frac{\mathrm{Vol}(4_1)}{\hbar_q^{2}}, \qquad \hbar_q = 1 - q^{-1}.
 $$
 
-The calibration has two layers. In the ideal calibration this relation is the CAL-2 proxy: it coordinatises the weak-sector substrate modulus $q_0$, and inverting it gives $q_0 \approx 1.10998$. The computed values instead pin $q_0$ numerically on the proton-to-electron ratio $m_{\mathfrak{p}}/m_e$, which is measured far more precisely, so at that pin evaluating $\mathrm{Vol}(4_1)/\hbar_{q_0}^{2}$ against the measured $m_\mu/m_e$ is a model comparison. The two pins differ by about $11.6$ ppb ([which pin the numbers use](#rem:epistemic-status-of-calibrations)).
+The calibration has two layers. In the ideal calibration this relation is the CAL-2 proxy: it coordinatises the weak-sector aether modulus $q_0$, and inverting it gives $q_0 \approx 1.10998$. The computed values instead pin $q_0$ numerically on the proton-to-electron ratio $m_{\mathfrak{p}}/m_e$, which is measured far more precisely, so at that pin evaluating $\mathrm{Vol}(4_1)/\hbar_{q_0}^{2}$ against the measured $m_\mu/m_e$ is a model comparison. The two pins differ by about $11.6$ ppb ([which pin the numbers use](#rem:epistemic-status-of-calibrations)).
 
 [*Bring's Surface*](#chap:brings-surface) develops the geometry of the genus-four curve $\Sigma_4$ with $\chi_{\mathrm{eu}} = -6$, first Betti number $b_1 = 8$, hyperbolic Gauss–Bonnet area $12\pi$ under its $(2,4,5)$ tiling, and maximal automorphism group $S_5$. Its colour tubes provide coordinates for spacetime and electromagnetic fields, while embeddable torus knots span the homology basis and saturate at genus four.
 
@@ -76,7 +76,7 @@ The electron mass fixes the unit, so the formula is evaluated through dimensionl
 **Part IV: Dynamics, Information, Emergence.**
 [*Fluid Dynamics of the Brane*](#chap:fluid-dynamics) recovers a $q$-deformed Navier–Stokes equation. Stable vortices braid as knot operators, unifying fluid and algebraic dynamics. The obstruction to blow-up collapses to a single cohomology class.
 
-[*Stochastic Mechanics*](#chap:stochastic-mechanics) translates the Markov trace into a stochastic process, linking the categorical substrate to quantum diffusion.
+[*Stochastic Mechanics*](#chap:stochastic-mechanics) translates the Markov trace into a stochastic process, linking the categorical aether to quantum diffusion.
 
 [*Information-Theoretic Perspectives*](#chap:info-theory) frames QOU mechanics as Turing-complete. Confluent reductions govern the logic. The Reeb flow builds a fractal event horizon. Setting the information speed $c_q = 1/(q - 1)$ defines the energy $\mathfrak{E} = \mathfrak{m} \cdot c_q^{2}$.
 

@@ -3,7 +3,7 @@ quantum mechanics \cite{thooft2016} introduces the notion of a
 **beable algebra** $\mathcal{A}_{\mathrm{beable}}$ — a maximal
 commuting subalgebra of observables whose simultaneous eigenstates
 constitute the ontological basis of the underlying deterministic
-substrate. The framework's observable subcategory
+aether. The framework's observable subcategory
 $\mathrm{Bun}^{\circ}(\mathbb{P}(V))$
  realises
 this notion structurally, with the following dictionary:

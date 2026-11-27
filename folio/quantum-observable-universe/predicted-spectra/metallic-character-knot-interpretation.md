@@ -31,7 +31,7 @@ Alkali metals ($|R| = 1$) contain one loose electron. The minimal crossing energ
 
 Transition metals have partially filled $d$-sub-links. These have $\ell = 2$, Seifert genus $2$, and $10$ linking sites. For $|R_d|$ between $1$ and $9$, multiple open sites exist at similar crossing energies. This yields:
 - Variable oxidation states: Electrons detach or share at similar energy costs.
-- Catalytic activity: Open $d$-sites temporarily Hopf-link to substrate electrons.
+- Catalytic activity: Open $d$-sites temporarily Hopf-link to aether electrons.
 - Magnetic behaviour: Unpaired electrons carry uncompensated writhe ($+3$ each), producing a net magnetic moment.
 
 **Conductivity.**

@@ -66,7 +66,7 @@ $$
   \mathrm{tr}_{V^{\otimes 3}}(F(\beta_{\mathrm{Bor}}))
   \;=\;
   8 - 6h^4 - 2h^6
-  \quad\text{(exact, verified to 50 digits at the substrate $q_0 \approx 1.10998$).}
+  \quad\text{(exact, verified to 50 digits at the aether $q_0 \approx 1.10998$).}
 $$
 
 Subtracting $4 \cdot 1$ and dividing by $\dim(V_{1/2}) = 2$ yields:

@@ -7,7 +7,7 @@ export default conjecture({
     validation: "not_checked",
   },
   title:
-    "Physical role of $\\mathrm{Im}(q)$: a substrate moduli parameter not constrained by current QOU observables, with three candidate roles (chirality / phase coordinate / non-Hermitian deformation).",
+    "Physical role of $\\mathrm{Im}(q)$: an aether moduli parameter not constrained by current QOU observables, with three candidate roles (chirality / phase coordinate / non-Hermitian deformation).",
   uses: ["rem:im-q-vs-p-skew"],
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): to the precision documented in `per-observable-100x-status.witness.json`." },

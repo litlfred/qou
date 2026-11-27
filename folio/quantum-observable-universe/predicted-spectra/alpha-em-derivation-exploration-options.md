@@ -6,7 +6,7 @@ The existing infrastructure maps to the open $2/(3\pi)$ derivation. The numerica
 
 The missing step connects the current machinery to the coupling side.
 
-### 1. Hopf fibration $S^3 \to S^2$ as the substrate geometry
+### 1. Hopf fibration $S^3 \to S^2$ as the aether geometry
 
 The [Reeb bundle](#def:reeb-bundle) at a brane point $p$ is
 

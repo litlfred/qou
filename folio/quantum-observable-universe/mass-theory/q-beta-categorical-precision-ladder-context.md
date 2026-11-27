@@ -26,7 +26,7 @@ Two supersessions, in order. The earlier $c_4 = b^2 + 1/2$ form is superseded: i
 The KL decategorification governs the appearance of
 classical-limit Jones values: the mass observable lives in the KL
 classical limit of the Hecke / quantum-group representation theory, so
-Jones invariants enter at $q = 1$ rather than at substrate $q_0$.
+Jones invariants enter at $q = 1$ rather than at aether $q_0$.
 
 ## Truncation order and error estimate
 

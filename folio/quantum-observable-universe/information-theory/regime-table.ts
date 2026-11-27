@@ -2,7 +2,7 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:regime-table",
-  title: "Master regime table for the substrate parameter $q$",
+  title: "Master regime table for the aether parameter $q$",
   tags: [
     "regime",
     "limits",

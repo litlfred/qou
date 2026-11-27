@@ -24,7 +24,7 @@ $\langle f_m \rangle_{\mathrm{Hab}} =
 
 ## canonical structural verification (proton, $n = 9$)
 
-At the substrate $q_0 \approx 1.1100$, $u_0 = \sqrt{q_0} \approx 1.0536$:
+At the aether $q_0 \approx 1.1100$, $u_0 = \sqrt{q_0} \approx 1.0536$:
 
 | Quantity | Value |
 |----------|-------|

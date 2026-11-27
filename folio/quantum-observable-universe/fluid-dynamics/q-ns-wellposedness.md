@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ describe a [QOU](#def:quantum-observable-universe) governed by [substrate parameter](#def:substrate-parameter) $q \in \mathrm{End}(\mathbf{1})$, with $q > 1$. Let $\Delta_q = d_q\delta_q + \delta_q d_q$ act as the [$q$-Laplacian](#rem:q-laplacian-interpretation) on $\Omega^k(A)$, and set the kinematic viscosity $\nu_q = \frac{1}{2}(1 - q^{-1}) > 0$.
+Let $(\mathbf{C}, A, \tau)$ describe a [QOU](#def:quantum-observable-universe) governed by [aether parameter](#def:substrate-parameter) $q \in \mathrm{End}(\mathbf{1})$, with $q > 1$. Let $\Delta_q = d_q\delta_q + \delta_q d_q$ act as the [$q$-Laplacian](#rem:q-laplacian-interpretation) on $\Omega^k(A)$, and set the kinematic viscosity $\nu_q = \frac{1}{2}(1 - q^{-1}) > 0$.
 
 **Categorical statement.**
 Let $v_0 \in \ker(\delta_q|_{\Omega^1(A)})$ be a divergence-free initial velocity 1-form carrying finite [Frobenius norm](#def:frobenius-pairing) $\lVert v_0 \rVert_A^2 = \int_A v_0^\dagger \wedge v_0 < \infty$. The [q-deformed Navier--Stokes system](#def:q-navier-stokes) then admits a **unique global solution**

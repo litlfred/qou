@@ -2,9 +2,9 @@
 
 Three ingredients close the conditional statement.
 
-1. **Pentagon-coherence on the substrate.** The 5-term pentagon
+1. **Pentagon-coherence on the aether.** The 5-term pentagon
    identity is built into the cosimplicial / Yekutieli triple
-   structure of the QOU substrate
+   structure of the QOU aether
    ([cosimplicial crossed groupoid](#prop:cosimplicial-crossed-groupoid)).
    The motivic class assembled by the mass-formula state sum lives
    in the Bloch group
@@ -20,7 +20,7 @@ Three ingredients close the conditional statement.
    This is the K-theoretic incarnation of the rigidity of the
    Bloch group; see [`bloch2000`] for the definitive treatment.
 3. **Archimedean matching.** $\tau_{\text{arch}}$ acting on the
-   substrate's Bloch-group class is, by ingredient 1, a real-valued
+   aether's Bloch-group class is, by ingredient 1, a real-valued
    continuous pentagon-coherent functional on $B(\mathbb{C})$. By
    ingredient 2, it is therefore proportional to $D$. The
    proportionality constant is fixed by demanding the

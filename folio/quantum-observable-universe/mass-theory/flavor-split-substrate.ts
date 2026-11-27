@@ -5,7 +5,7 @@ export default proposition({
   lean: { ref: "qou:QOU.MassTheory.HadronicMass.flavor_split_substrate",
     validation: "not_checked",
   },
-  title: "Closed and factored forms of the substrate flavor split",
+  title: "Closed and factored forms of the aether flavor split",
   tags: ["flavor-split", "u-d-splitting", "substrate-only", "no-fit",
          "hecke-substrate-atoms", "categorical-derivation"],
   uses: [

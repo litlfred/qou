@@ -94,7 +94,7 @@ Borel's regulator and Bloch-Suslin uniqueness determine the image. The K-theoret
 
 ## Field equivalence
 
-The substrate route and the geometric route produce coinciding Bloch classes.
+The aether route and the geometric route produce coinciding Bloch classes.
 
 **Theorem (cyclotomic compositum).** The trace fields generate the compositum $\mathbb{Q}(\zeta_3) \cdot \mathbb{Q}(\zeta_4) \cdot \mathbb{Q}(\zeta_5) = \mathbb{Q}(\zeta_{60})$.
 

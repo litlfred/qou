@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:mass-spectrum-generating-function",
   title:
-    "Confined Laurent polynomial $P_K(q)$ as mass-spectrum generating function: functorial equivalence to scalar mass via substrate evaluation",
+    "Confined Laurent polynomial $P_K(q)$ as mass-spectrum generating function: functorial equivalence to scalar mass via aether evaluation",
   interprets: "rem:two-tier-scaling-pq",
   uses: [
     "rem:two-tier-scaling-pq",

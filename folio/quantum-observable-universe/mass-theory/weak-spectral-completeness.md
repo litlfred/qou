@@ -180,7 +180,7 @@ $q = 1$.
 
 **Step 3 — Cell-content trace, not Plancherel weight.**
 
-The substrate-level structural quantity is the pure cell-content
+The aether-level structural quantity is the pure cell-content
 trace, computed directly from the eight pure-pattern
 multiplicities $(4, 2, 1, 3, 3, 1, 2, 4)$. It is a partial trace over
 the $20$ pure seminormal vectors; the full trace of

@@ -1,4 +1,4 @@
-**Explicit values at the local substrate parameter $q = q_0 \approx 1.110$, with Markov parameter $z = q^3/(q^2+1)$:**
+**Explicit values at the local aether parameter $q = q_0 \approx 1.110$, with Markov parameter $z = q^3/(q^2+1)$:**
 
 | Entry | Symbolic | Numerical |
 |:-----:|----------|:---------:|

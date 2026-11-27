@@ -1,6 +1,6 @@
-Each substrate identity is stated in the cited literature
+Each aether identity is stated in the cited literature
 (Wenzl 1988; Jones 1987) over a commutative ring with $q$ a unit;
-the substrate identities used here (the bi-filtration of $H_q$, the
+the aether identities used here (the bi-filtration of $H_q$, the
 explicit central idempotent, the categorical $q$-Lie bracket and the bar
 involution) are likewise stated over a commutative ring $R$ (or a stronger
 structure) with $q \in R$ and without any ordering predicate on $q$.

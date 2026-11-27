@@ -7,7 +7,7 @@ the functor.
 
 ### Categorical (pre-Archimedean) leg
 
-By [prop:confinement-sdp](#prop:confinement-sdp), at substrate $q_0$
+By [prop:confinement-sdp](#prop:confinement-sdp), at aether $q_0$
 the joint mass-tower SDP admits a solution whose certificate
 includes, per atom $\mathfrak{H}$ of strand count $n_0$, the canonical
 Hecke element $T_w \in H_{n_0}(q_0)$ in Gröbner–Shirshov normal form.

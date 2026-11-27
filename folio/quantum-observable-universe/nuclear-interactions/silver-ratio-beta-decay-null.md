@@ -1,4 +1,4 @@
-*Let $q$ be the substrate parameter, $h = q - q^{-1}$ the Hecke skein
+*Let $q$ be the aether parameter, $h = q - q^{-1}$ the Hecke skein
 parameter, and $\mathfrak{E}_\times(q) = \tfrac{1}{2}(q - q^{-1}) = h/2$ the
 per-crossing energy. Then:*
 
@@ -21,9 +21,9 @@ $$
 $$
 
 *that is, if and only if each crossing carries either **zero** or **unit**
-energy. The two roots are $q = 1$ (undeformed substrate, $\mathfrak{E}_\times =
+energy. The two roots are $q = 1$ (undeformed aether, $\mathfrak{E}_\times =
 0$) and $q = 1 + \sqrt{2}$, the **silver mean** (unit crossing energy); the
-conjugate root $q = 1 - \sqrt{2}$ is negative and outside the substrate range.*
+conjugate root $q = 1 - \sqrt{2}$ is negative and outside the aether range.*
 
 *The crossing-energy form is equivalent to the $h$-form by
 $\mathfrak{E}_\times = h/2$. Its roots $\{0, 1\}$ are the fixed points of

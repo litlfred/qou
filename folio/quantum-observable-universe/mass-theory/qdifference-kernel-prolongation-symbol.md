@@ -152,7 +152,7 @@ local monodromy, not fitted numerically.
 > $2,\dots,n_0+1$ alive. The
 > distinction matters, because the Door-v alternation of the carrier
 > $\mathcal{G}$ cannot hold at every level — while $2-q^{m+1}>0$ no solution flips at two
-> consecutive pairs, so at the substrate value
+> consecutive pairs, so at the aether value
 > the alternation is absent for $m \le 5$ and persistent only from
 > $m \approx 11$ on. The conclusion above therefore stands for sums only
 > *above* that window; at the low body orders a mixed-shift $D_q$ built from
@@ -244,7 +244,7 @@ local monodromy, not fitted numerically.
 > for every $\lambda$ and at every $q$ — scope (b), the invariant being the
 > sextic's own coefficients rather than a cited analytic theorem, so this
 > covers the root-of-unity case that the rationality theorem does not. The
-> substrate asks for $\lambda = q_{0}^{2} \approx 1.2321$, which is excluded
+> aether asks for $\lambda = q_{0}^{2} \approx 1.2321$, which is excluded
 > both by that identity and by the weaker bound $\lambda^{6} = 1$ that the
 > product of the roots alone would give. This does **not** touch a
 > $q$-difference operator whose base map is not a dilation, nor the fibre

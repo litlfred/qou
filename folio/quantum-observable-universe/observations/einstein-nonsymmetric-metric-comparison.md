@@ -9,7 +9,7 @@ $$
 with the symmetric part $g_{(\mu\nu)}$ carrying gravitation and the antisymmetric part $g_{[\mu\nu]}$ intended to carry the Maxwell field. The programme did not succeed: $g_{[\mu\nu]}$ never reproduced Maxwell's equations, and its modern descendant, Moffat's nonsymmetric gravitational theory \cite{moffat1995}, carries linearisation instabilities and ghost modes in the antisymmetric sector \cite{damour1993}.
 
 **Position of the QOU construction.**
-The QOU substrate carries a symmetric–antisymmetric decomposition with the same force assignment Einstein sought, but the decomposition is not carried by a metric. It is the eigenvalue decomposition of the braiding.
+The QOU aether carries a symmetric–antisymmetric decomposition with the same force assignment Einstein sought, but the decomposition is not carried by a metric. It is the eigenvalue decomposition of the braiding.
 
 By the [Hecke relation](#ex:braid-group-su2), the braiding $c_{V,V}$ splits $V \otimes V$ into $\mathrm{Sym}^2_q(V) \oplus \Lambda^2_q(V)$ and acts on the two summands by the scalars $q$ and $-q^{-1}$. Writing $\lambda = \ln q$, the two [crossing energy](#def:crossing-energy) weights resolve as
 

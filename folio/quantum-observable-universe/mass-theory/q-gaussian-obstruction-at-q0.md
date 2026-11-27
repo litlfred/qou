@@ -1,4 +1,4 @@
-*At the substrate parameter $q_0 \approx 1.10998 > 1$, the Bożejko-Speicher non-commutative $q$-Gaussian (the $q$-Fock-space construction) does not exist. The sequence of even moments*
+*At the aether parameter $q_0 \approx 1.10998 > 1$, the Bożejko-Speicher non-commutative $q$-Gaussian (the $q$-Fock-space construction) does not exist. The sequence of even moments*
 
 $$
   T_n(q_0) = \sum_{\pi} q_0^{\,\mathrm{cr}(\pi)}
@@ -8,4 +8,4 @@ $$
 
 Braid-word fluctuations at $q_0$ cannot be modeled by the Bożejko-Speicher $q$-Gaussian. The valid substitutes are the inner Perron-Frobenius dominant eigenvalue and the outer Féray-Méliot $q$-Plancherel CLT.
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.
+**Archimedean specialisation.** What follows sits on the archimedean side of the algebraic→archimedean wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.

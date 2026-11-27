@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe ([Definition](#def:quantum-observable-universe)) with substrate parameter $q$ ([Definition](#def:substrate-parameter)), categorical action $\mathfrak{S}_q$ ([Definition](#def:categorical-action)), and $q$-Hodge star $\star_q$ ([Definition](#def:q-hodge-star)).
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe ([Definition](#def:quantum-observable-universe)) with aether parameter $q$ ([Definition](#def:substrate-parameter)), categorical action $\mathfrak{S}_q$ ([Definition](#def:categorical-action)), and $q$-Hodge star $\star_q$ ([Definition](#def:q-hodge-star)).
 
 Let $\varrho \colon S^1 \to \tau(A)$ be a smooth closed curve (a knot embedding) and let $\mathfrak{m}(\varrho)$ denote the categorical mass ([Definition](#def:mass-identity)).
 
@@ -57,4 +57,4 @@ $$
 
 where $D(\varrho(s), \varrho(t))$ denotes the intrinsic arc-length distance along $\varrho$.
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs—real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical/$q$-deformation identities it relies upon remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the algebraic→archimedean wall. It invokes real- or complex-analytic constructs—real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the aether parameter $q_0$. Any generic categorical/$q$-deformation identities it relies upon remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

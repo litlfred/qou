@@ -42,9 +42,9 @@ verified in exact rational arithmetic for every partition of $n = 1,\dots,9$. So
 
 This also explains a coincidence the corpus carried without comment: the proved identity $\sum_\lambda f^\lambda q^{-\kappa_\lambda}\dim_q(\lambda) = [n]_q!$ holds for every $n$, and $\mathbb{M}_{n,q}$ is a probability measure by construction. Those are the same theorem.
 
-## The substrate sits at $q > 1$, and that costs an orientation, not the theorem
+## The aether sits at $q > 1$, and that costs an orientation, not the theorem
 
-[`feray-meliot2012`] states its asymptotics for $q < 1$, while the substrate gives $Q = q_0^2 \approx 1.2321$. The paper's own duality $\mathbb{M}_{n,q^{-1}}(\lambda') = \mathbb{M}_{n,q}(\lambda)$ closes the gap: it is an *exact* identity, verified here over all partitions of $n \leq 9$ in exact arithmetic, so the $Q > 1$ results are the $Q^{-1} < 1$ results read on conjugate diagrams. Clause 2 at the substrate therefore describes the **columns** of $\lambda$ where the cited statement describes rows. Nothing is lost and nothing is approximated; only a transposition is needed.
+[`feray-meliot2012`] states its asymptotics for $q < 1$, while the aether gives $Q = q_0^2 \approx 1.2321$. The paper's own duality $\mathbb{M}_{n,q^{-1}}(\lambda') = \mathbb{M}_{n,q}(\lambda)$ closes the gap: it is an *exact* identity, verified here over all partitions of $n \leq 9$ in exact arithmetic, so the $Q > 1$ results are the $Q^{-1} < 1$ results read on conjugate diagrams. Clause 2 at the aether therefore describes the **columns** of $\lambda$ where the cited statement describes rows. Nothing is lost and nothing is approximated; only a transposition is needed.
 
 ## Deformed precedents for clause 3, and what each would need (literature)
 

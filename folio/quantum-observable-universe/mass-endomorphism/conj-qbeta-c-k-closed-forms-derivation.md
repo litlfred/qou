@@ -2,7 +2,7 @@
 
 Three formal derivation paths stand open:
 
-1. **Khovanov–Rozansky polynomial at finite $q$**: Compute $\mathrm{Kh}(L)(q, t)$ for the typed-$\mathbf{B}_3$ Markov-closure link $L$ at the substrate $q_0$ (not merely $q = 1$). The Taylor coefficients should return $c_4, c_5, c_6, c_7$.
+1. **Khovanov–Rozansky polynomial at finite $q$**: Compute $\mathrm{Kh}(L)(q, t)$ for the typed-$\mathbf{B}_3$ Markov-closure link $L$ at the aether $q_0$ (not merely $q = 1$). The Taylor coefficients should return $c_4, c_5, c_6, c_7$.
 2. **KLR canonical-basis trace formula**: Calculate the per-Wedderburn-block canonical-basis Markov trace at orders $\varepsilon^8, \varepsilon^{10}, \varepsilon^{12}$. The explicit per-block trace formula is required.
 3. **Spectral-sequence stratification**: Currently declined; the framework lacks a suitable candidate spectral sequence.
 
@@ -61,7 +61,7 @@ c_6 extracted = +3.4976   (empirical sweep)
 c_7 extracted = +57.149   (empirical sweep)
 ```
 
-**Anchor dependence of $c_3$.** At $z_{\mathrm{aux}} = \sqrt{q}/(q+1)$, re-evaluating $c_3$ across the substrate anchors gives:
+**Anchor dependence of $c_3$.** At $z_{\mathrm{aux}} = \sqrt{q}/(q+1)$, re-evaluating $c_3$ across the aether anchors gives:
 
 | anchor | $c_3$ at $z_{\mathrm{aux}} = \sqrt{q}/(q+1)$ |
 |---|---|

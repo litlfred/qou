@@ -1,4 +1,4 @@
-The substrate parameter $q \in \mathbb{G}_m^{\mathrm{nt}}(k) = k^\times \setminus \mu_\infty$ ([substrate parameter](#def:substrate-parameter)) endows the differential calculus of a quantum observable universe with a one-parameter deformation. Two consequences govern this chapter:
+The aether parameter $q \in \mathbb{G}_m^{\mathrm{nt}}(k) = k^\times \setminus \mu_\infty$ ([aether parameter](#def:substrate-parameter)) endows the differential calculus of a quantum observable universe with a one-parameter deformation. Two consequences govern this chapter:
 
 1. The $q$-deformed exterior derivative satisfies $d_q^2 \neq 0$ ([non-vanishing of $d_q^2$](#prop:categorical-dq-squared)). This non-vanishing canonically obstructs the flatness of $q$-connections.
 2. The obstruction classes $\kappa_n \in H^2(\mathcal{S}, \mathbb{G}_m)$ ([quantum characteristic classes](#def:quantum-characteristic-classes)) control the lifting of Frobenius--Hopf objects through the brane tower. Their Kummer filtration ([Kummer filtration](#rem:kummer-filtration-obstruction)) isolates the arithmetic locus where $q$-flatness holds.

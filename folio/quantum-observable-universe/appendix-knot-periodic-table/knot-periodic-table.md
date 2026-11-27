@@ -76,7 +76,7 @@ all evaluated in milliseconds.
 The orbital shells in the table arise from the eigenvalues of the
 photon-electron transfer matrix $T_{\gamma e}(q)$
 ([shell structure eigenvalues](#prop:shell-structure-eigenvalues)).
-At the substrate parameter $q$, the dominant eigenvalue
+At the aether parameter $q$, the dominant eigenvalue
 $\lambda_+ = 1.1073$ governs shell energy scaling via the
 Chebyshev recurrence
 $\hat{V}(n+1, q) = (q - q^{-1}) \hat{V}(n, q) + \hat{V}(n-1, q)$,
@@ -112,7 +112,7 @@ with anomalously high $B/A$.
 $2, 8, 20, 28, 50, 82, 126$ (neutrons).
 
 **Input parameters** (legacy atlas evaluation):
-The monograph's primary substrate anchor is the proton-pinned $q_0 = 1.109978582751381\ldots$ (from $m_{\mathfrak{p}}/m_e$); the legacy element rows below were evaluated at the muon-pinned $q_0^{(\mu)} = 1.109978595642739\ldots$ (16 dps) and inject empirical CODATA nucleon masses and AME2020 $B/A$ values into the constituent-sum mass formula above:
+The monograph's primary aether anchor is the proton-pinned $q_0 = 1.109978582751381\ldots$ (from $m_{\mathfrak{p}}/m_e$); the legacy element rows below were evaluated at the muon-pinned $q_0^{(\mu)} = 1.109978595642739\ldots$ (16 dps) and inject empirical CODATA nucleon masses and AME2020 $B/A$ values into the constituent-sum mass formula above:
 $\hbar_q = 1 - q_0^{-1} \approx 0.09908$,
 $\mathfrak{E}_{\times} = \tfrac{1}{2}(q_0 - q_0^{-1}) \approx 0.10453$,
 $m_{\mathfrak{p}} \approx {{ folio-assistant-sci.library.codata-2022.proton-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV}$,

@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:three-calibration-discipline",
   title:
-    "Three-calibration discipline ($m_e$, $m_\\mu/m_e$, $m_\\pi$) and the calibrated substrate parameter $q_0$",
+    "Three-calibration discipline ($m_e$, $m_\\mu/m_e$, $m_\\pi$) and the calibrated aether parameter $q_0$",
   tags: [
     "calibration",
     "dimensional-analysis",

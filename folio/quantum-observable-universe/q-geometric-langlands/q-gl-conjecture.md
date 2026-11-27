@@ -2,7 +2,7 @@ Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 brane curve $X$, quantum gauge group $G_q$, and $q$-Langlands dual
 $\check{G}_q$ ([q-Langlands dual](#def:q-langlands-dual)).
 
-The correspondence below is the substrate-level analogue of geometric
+The correspondence below is the aether-level analogue of geometric
 Langlands: it relates $\mathcal{D}_q$-modules on the quantum bundle
 stack to quasi-coherent sheaves on the moduli of local systems for the
 $q$-dual, so that spectral data on one side controls automorphic data
@@ -10,7 +10,7 @@ on the other.  At the classical value $q = 1$ it specialises to the
 ordinary geometric Langlands equivalence (property 5 below), which
 fixes the target that the deformed statement must recover; the parameter
 $q$ then deforms that equivalence across the non-torsion locus of the
-substrate.  With this anchor in hand, the
+aether.  With this anchor in hand, the
 **$q$-Geometric Langlands correspondence** asserts the existence of
 an equivalence of $\infty$-categories:
 
@@ -72,4 +72,4 @@ This equivalence is parametrised by the non-torsion locus $q \in \mathbb{G}_m^{\
    classical Geometric Langlands equivalence \cite{frenkel2007}.
 
 **Relation to the quantum $q$-Langlands correspondence of Aganagic, Frenkel, and Okounkov.**
-Mina Aganagic, Edward Frenkel, and Andrei Okounkov \cite{aganagic2018} establish a *quantum $q$-Langlands correspondence* on genus-zero curves ($\mathbb{P}^1$ and $\mathbb{C}^\times$ with tame ramification), relating conformal blocks of the quantum affine algebra $U_\hbar(\widehat{{}^L\mathfrak{g}})$ to deformed $\mathcal{W}_{q,t}(\mathfrak{g})$-algebra blocks across a **two-parameter** deformation $(q, t)$ whose $q \to 1$ limit (at fixed level parameter $\beta$ with $t = q^\beta$) recovers the quantum geometric Langlands correspondence. The conjecture stated above is a different single-parameter formulation rather than a special case of that theorem: it is posed on a compact higher-genus brane curve $X$ (principally Bring's curve of genus $g = 4$, which admits no global multiplicative shift $z \mapsto qz$), deforms the differential along the contact-Reeb splitting $d_q$ via the single substrate parameter $q \in \mathbb{G}_m^{\mathrm{nt}}$, and specializes directly at $q \to 1$ to the classical (non-quantum) geometric Langlands equivalence.
+Mina Aganagic, Edward Frenkel, and Andrei Okounkov \cite{aganagic2018} establish a *quantum $q$-Langlands correspondence* on genus-zero curves ($\mathbb{P}^1$ and $\mathbb{C}^\times$ with tame ramification), relating conformal blocks of the quantum affine algebra $U_\hbar(\widehat{{}^L\mathfrak{g}})$ to deformed $\mathcal{W}_{q,t}(\mathfrak{g})$-algebra blocks across a **two-parameter** deformation $(q, t)$ whose $q \to 1$ limit (at fixed level parameter $\beta$ with $t = q^\beta$) recovers the quantum geometric Langlands correspondence. The conjecture stated above is a different single-parameter formulation rather than a special case of that theorem: it is posed on a compact higher-genus brane curve $X$ (principally Bring's curve of genus $g = 4$, which admits no global multiplicative shift $z \mapsto qz$), deforms the differential along the contact-Reeb splitting $d_q$ via the single aether parameter $q \in \mathbb{G}_m^{\mathrm{nt}}$, and specializes directly at $q \to 1$ to the classical (non-quantum) geometric Langlands equivalence.

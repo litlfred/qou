@@ -55,10 +55,10 @@ $$
 $$
 
 The trace is *forced*, not assumed: every step is dictated by the
-QOU substrate axioms plus the Chlouveraki HDR uniqueness theorem.
+QOU aether axioms plus the Chlouveraki HDR uniqueness theorem.
 $\square$
 
-## Satisfaction of the hypotheses by the QOU substrate
+## Satisfaction of the hypotheses by the QOU aether
 
 | Hypothesis                                                            | QOU realisation                                                                                                                   |
 | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |

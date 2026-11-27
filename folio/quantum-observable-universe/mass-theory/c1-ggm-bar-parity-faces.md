@@ -54,7 +54,7 @@ sign inside the window — but never
 at two consecutive pairs, and that is what the argument needs. So the untwisted
 sequence has same-sign consecutive pairs in that window, the twisted sequence
 acquires flips exactly there, and the obstruction fires on it too. At the
-substrate value the window is $m \le 5$, and the strict alternation of the
+aether value the window is $m \le 5$, and the strict alternation of the
 growing solution becomes persistent only later, at an index that depends on the
 initial data ($m \approx 11$–$14$ across six generic choices, measured numerically).
 

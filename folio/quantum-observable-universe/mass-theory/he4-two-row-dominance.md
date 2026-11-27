@@ -8,7 +8,7 @@ $$
 $$
 
 **Proposition (conditional on the recorded canonical ${}^{4}\mathrm{He}$ block fingerprint of $\mathrm{tr}_M$).**
-The two-row stratum $\Lambda^2(12)$ ([Two-row Wedderburn stratum $\Lambda^2(n) := \{\lambda \vdash n : \ell(\lambda) \le 2\}$](#def:two-row-stratum)) carries at least $80\,\%$ of the canonical Markov trace at the substrate parameter:
+The two-row stratum $\Lambda^2(12)$ ([Two-row Wedderburn stratum $\Lambda^2(n) := \{\lambda \vdash n : \ell(\lambda) \le 2\}$](#def:two-row-stratum)) carries at least $80\,\%$ of the canonical Markov trace at the aether parameter:
 $$
   \frac{\bigl|\sum_{\lambda \in \Lambda^2(12)} c_\lambda(q_0)\bigr|}
        {\bigl|\mathrm{tr}_M(\beta_{{}^4\mathrm{He}})(q_0)\bigr|}

@@ -23,7 +23,7 @@ $$
 
 $C$ is irreducible over $\mathbb{Q}$ (its only possible rational roots $\pm 1, \pm 2$
 are all nonzero), so its root generates a genuine **degree-3 field**
-(discriminant $-152 = -2^3 \cdot 19$, Galois group $S_3$). Every substrate
+(discriminant $-152 = -2^3 \cdot 19$, Galois group $S_3$). Every aether
 *quadratic* anchor sits at a rational trace value — golden $\varphi \mapsto y = 3$,
 silver $1 + \sqrt{2} \mapsto y = 6$, classical $q = 1 \mapsto y = 2$ — and $C$ is
 nonzero at each. A degree-$\le 2$ number can never be a root of an irreducible

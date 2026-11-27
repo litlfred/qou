@@ -1,1 +1,1 @@
-The jet bundle $J^1 \mathcal{S}$ accommodates the local states. The substrate parameter $q$ weights the classical gauge dynamics on the instanton connection to constitute the quantum field algebra $\mathrm{SU}_q(2)$.
+The jet bundle $J^1 \mathcal{S}$ accommodates the local states. The aether parameter $q$ weights the classical gauge dynamics on the instanton connection to constitute the quantum field algebra $\mathrm{SU}_q(2)$.

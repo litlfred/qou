@@ -23,7 +23,7 @@ export default theorem({
     },
   ],
   label: "thm:substrate-self-duality",
-  title: "Self-duality of the algebraic substrate",
+  title: "Self-duality of the algebraic layer",
   lean: { ref: "qou:QOU.Core.AlgebraicSubstrate.SelfDualPairingData",
     validation: "not_checked",
   },

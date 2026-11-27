@@ -16,6 +16,6 @@ $$
 
 for every $q$ with $q^2 \neq 1$ (an identity in $\mathbb{Q}(q)$), and the constant piece contributes $-2\,\zeta(0) = +1$, so $\dim_q^{\zeta}(A) = 0$ for every $q$. Classically the same scheme gives $\sum m^2 = \zeta(-2) = 0$; the value is the Euler characteristic of the group manifold $\mathrm{SU}(2) \cong S^3$, which is what a regularised dimension of a regular representation ought to be.
 
-*The Hadamard finite part* at $t = 1$ discards the pole and evaluates the remainder, giving $\dim_q^{H}(A) = -1/u^2 = -1/(q - q^{-1})^2$, approximately $-22.9$ at the substrate parameter. It equals $-6$ exactly when $u^2 = 1/6$, that is at $q \approx 1.2247$, and at no other point.
+*The Hadamard finite part* at $t = 1$ discards the pole and evaluates the remainder, giving $\dim_q^{H}(A) = -1/u^2 = -1/(q - q^{-1})^2$, approximately $-22.9$ at the aether parameter. It equals $-6$ exactly when $u^2 = 1/6$, that is at $q \approx 1.2247$, and at no other point.
 
 So the regularised trace is scheme-dependent, and neither scheme returns $-6$ at $q_0$. The fundamental object, by contrast, has the finite quantum dimension $[2]_q = q + q^{-1} \approx 2.011$. The number $-6$ that the Descartes condition fixes is therefore not a trace of the identity of anything; it is $\chi_{\mathrm{eu}}(M_0)$, the Euler characteristic of the base curve ([three Euler characteristics](#rem:three-euler-characteristics)). This is a scope-limited negative: it says that the two standard regularisations do not produce $-6$, not that no functional on $A$ could.

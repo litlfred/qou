@@ -50,4 +50,4 @@ The earlier "baryon--meson duality" in this section rested on
 $\theta_{\mathrm{Bor}} = \pi$. Since $\chi_{(2,1)}(\beta_{\mathrm{Bor}}) \approx +1.994$
 at $q_0$, the Borromean $(2,1)$ channel contributes with positive sign there,
 and the claimed origin of the factor $\dim V_{(2,1)} = 2$ in the proton
-substrate identity as a subtracted channel does not hold.
+aether identity as a subtracted channel does not hold.

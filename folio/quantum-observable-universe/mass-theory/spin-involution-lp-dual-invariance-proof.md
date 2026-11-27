@@ -170,5 +170,5 @@ EXACTLY at magic-shell atoms ($Z=2$ activates $\sigma_{pp}$, $N=2$
 activates $\sigma_{nn}$, doubly magic ${}^{4}$He activates both) — see
 [brane-tower-z-habiro §"Pair-knot magic-shell canonical evaluation"](#conj:brane-tower-z-habiro).
 This is the operator-level signature of $Z=2$/$N=2$ closed-shell
-structure in the substrate algebra; the spin-involution corollary
+structure in the aether algebra; the spin-involution corollary
 gives the structural symmetry that pins it down.

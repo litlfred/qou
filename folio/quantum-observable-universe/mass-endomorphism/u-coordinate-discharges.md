@@ -10,7 +10,7 @@ Because the substitution removes square roots, each identity reduces to an equal
 
 ## Significance
 
-An explicit-residual discharge that only records that a residual evaluates to $0$ is abstractly trivial: no concrete computation connects it to the underlying substrate arithmetic. The $u$-coordinate identities express the underlying scalars as rational functions in a single variable $u$, so each equality becomes a mechanically checkable identity of rational functions.
+An explicit-residual discharge that only records that a residual evaluates to $0$ is abstractly trivial: no concrete computation connects it to the underlying aether arithmetic. The $u$-coordinate identities express the underlying scalars as rational functions in a single variable $u$, so each equality becomes a mechanically checkable identity of rational functions.
 
 For example, the Hecke quadratic relation for every generator of $H_3(q)$ requires a residual to vanish. The substantive reason for this vanishing is the relation $q \cdot (q - q^{-1}) = u - 1$, a non-trivial rational identity.
 

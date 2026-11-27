@@ -12,7 +12,7 @@ $$
   E_0 \cdot \hat{V}(n, q)
 $$
 
-where $E_0$ sets the ground-state energy scale. This originates from the electron-proton crossing energy at the substrate parameter $q$.
+where $E_0$ sets the ground-state energy scale. This originates from the electron-proton crossing energy at the aether parameter $q$.
 
 The transition energy (photon energy for $n \to n+1$) is:
 
@@ -34,7 +34,7 @@ $$
   \cdot \lambda_+^n \cdot (\lambda_+ - 1)
 $$
 
-The **Rydberg scaling** $E_n \propto 1/n^2$ emerges in the regime $\lambda_+ \approx 1 + \epsilon$ with $\epsilon = \lambda_+ - 1 \ll 1$. At the substrate parameter $q$, $\epsilon = 0.1073$. For low shells ($n = 1, 2, 3, \ldots$):
+The **Rydberg scaling** $E_n \propto 1/n^2$ emerges in the regime $\lambda_+ \approx 1 + \epsilon$ with $\epsilon = \lambda_+ - 1 \ll 1$. At the aether parameter $q$, $\epsilon = 0.1073$. For low shells ($n = 1, 2, 3, \ldots$):
 
 $$
   \lambda_+^n \approx e^{n\epsilon}

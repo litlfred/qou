@@ -27,7 +27,7 @@ The QOU mass identity at $A \geq 2$ contracts a per-interface averaging function
 >   \quad (q \neq 1),
 > $$
 >
-> about $1.67 \times 10^{-5}$ at the substrate anchor, whereas the uniform form
+> about $1.67 \times 10^{-5}$ at the aether anchor, whereas the uniform form
 > is bar-invariant exactly — it is the bar-symmetriser $\tfrac12(z + \overline{z})$
 > of the p-p factor, since $\overline{z} = z - h$
 > ([Proof of interface knot markov z](#prf:interface-knot-markov-z)).
@@ -43,7 +43,7 @@ The QOU mass identity at $A \geq 2$ contracts a per-interface averaging function
 
 ### Derivation chain for the closed-form weight
 
-The substrate evaluation $w(t, t', q) = 1/(1 - h_q \cdot q^{10})$ derives from Bring's surface geometry:
+The aether evaluation $w(t, t', q) = 1/(1 - h_q \cdot q^{10})$ derives from Bring's surface geometry:
 - Bring's surface has genus $g = 4$.
 - The genus-4 force-carrier pair is $\{T(2,9), T(3,5)\}$.
 - $\alpha_{\text{shift}}(T_{p,k}) = k \cdot (p-1)$. For $T(3,5)$, $\alpha_{\text{shift}}(T(3,5)) = 10$. This specifies the pole order of $\sigma$.

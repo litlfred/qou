@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:spacetime-length-distance-layers",
   title:
-    "Three stratified layers of substrate grain, metric moduli, and empirical unit bridges",
+    "Three stratified layers of aether grain, metric moduli, and empirical unit bridges",
   interprets: "prop:reeb-coefficient-is-hbar-q",
   lean: {
     ref: "qou:QOU.InformationTheory.UnifiedClockScaleLayers.hbarQ_mul_planckTick",

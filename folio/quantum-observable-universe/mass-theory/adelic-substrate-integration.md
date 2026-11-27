@@ -1,12 +1,12 @@
 Each non-archimedean place $p$ corresponds to a localized quantum
-geometric state of the substrate: a specific $q$-deformation
+geometric state of the aether: a specific $q$-deformation
 evaluated at a primitive root of unity, equivalently a Kummer level
 in the Habiro / cyclotomic completion
 ([algebraic quantum volume](#def:algebraic-quantum-volume)).
 The archimedean place $\infty$ — the $\mathbb{R}$ component — is
 the laboratory continuum.
 
-**Motivation for the adelic substrate.** Replacing $\mathbb{R}$ by $\mathbb{A}$ resolves a
+**Motivation for the adelic base ring.** Replacing $\mathbb{R}$ by $\mathbb{A}$ resolves a
 structural tension: the
 local $q$-geometries at each prime do not assemble into a continuous
 manifold, but they *do* assemble into a global adelic object. The
@@ -15,7 +15,7 @@ $\mathbb{R}$ alone but the simultaneous integration of all local
 non-archimedean data weighted by their archimedean shadow.
 
 **Adelic integration (Tate's thesis).** Global observables of the
-substrate — the macroscopic mass functional, the global
+aether — the macroscopic mass functional, the global
 $L$-function of Bring's coordinate ring, the partition functions of
 the brane tower — are not Riemann integrals over $\mathbb{R}$. They
 are Tate integrals over $\mathbb{A}$:

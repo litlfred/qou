@@ -1,4 +1,4 @@
-*Let $P$ be a confined particle, and let the substrate parameter $q$ range over $\mathbb{R}_{>1}$. Write strict feasibility of the confinement SDP as a finite system of strict inequalities $0 < g_i(q, X)$, $i \in I$, in $q$ and the decision variable $X$, with each $g_i$ continuous. (Positive definiteness of a Gram matrix is such a system, by Sylvester's criterion on its leading principal minors.) The **confinement locus** of $P$ is*
+*Let $P$ be a confined particle, and let the aether parameter $q$ range over $\mathbb{R}_{>1}$. Write strict feasibility of the confinement SDP as a finite system of strict inequalities $0 < g_i(q, X)$, $i \in I$, in $q$ and the decision variable $X$, with each $g_i$ continuous. (Positive definiteness of a Gram matrix is such a system, by Sylvester's criterion on its leading principal minors.) The **confinement locus** of $P$ is*
 
 $$
   \Omega(P) \;:=\; \{\, q : \exists X,\ \forall i \in I,\ 0 < g_i(q, X) \,\}.
@@ -11,4 +11,4 @@ $$
 
 *The remaining structure of the phases (the boundary stratification, analyticity of the Frobenius stability index, scope and phase transitions) is stated separately in the phase-boundary conjecture below.*
 
-**Archimedean specialisation.** Both parts sit on the archimedean side of the substrate wall: the locus is a subset of $\mathbb{R}$, and openness and connectedness are statements about the real topology.
+**Archimedean specialisation.** Both parts sit on the archimedean side of the algebraic→archimedean wall: the locus is a subset of $\mathbb{R}$, and openness and connectedness are statements about the real topology.

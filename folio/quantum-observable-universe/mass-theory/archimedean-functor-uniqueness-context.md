@@ -6,8 +6,8 @@ enter as cited inputs.
 
 ## Pre-archimedean / archimedean separation
 
-The QOU substrate is pre-archimedean: every block in the
-[motivic substrate](#def:motivic-substrate) and the
+The QOU aether is pre-archimedean: every block in the
+[motivic base ring](#def:motivic-substrate) and the
 [algebraic quantum volume](#def:algebraic-quantum-volume) lives
 in $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$, a ring of
 Laurent polynomials with no real-analytic transcendentals. QOU
@@ -20,16 +20,16 @@ Two structural questions are settled simultaneously by Bloch-Suslin
 pentagon-uniqueness. (i) *Uniqueness of the exit*: any real-valued
 continuous functional on $B(\mathbb{C})$ respecting the 5-term
 pentagon identity is forced to coincide with $D$ up to a single
-overall scalar; therefore the archimedean image of a substrate
+overall scalar; therefore the archimedean image of an aether
 motivic class is canonical. (ii) *Provenance of $\pi$*: any
 transcendental constant in a QOU observable is the
-$\tau_{\text{arch}}$-image of substrate pentagon data via $D$ (or
+$\tau_{\text{arch}}$-image of aether pentagon data via $D$ (or
 its multivariate generalisations), and is therefore not an external
 import.
 
-The algebraic / archimedean dichotomy establishes a clean separation between categorical structure and continuum measurement. The mass formula evaluates a closed cycle on the Frobenius-Hopf substrate. The non-degenerate Frobenius pairing $\int_A \circ \mu$ identifies $A \cong A^\vee$, making the substrate algebra self-dual. This self-duality drives the descent involution $\hat{\tau}_n$ on the endomorphism algebra, which splits the categorical mass endomorphism into a descended baseline component and a transient component localized at the exceptional divisors of the brane tower.
+The algebraic / archimedean dichotomy establishes a clean separation between categorical structure and continuum measurement. The mass formula evaluates a closed cycle on the Frobenius-Hopf aether. The non-degenerate Frobenius pairing $\int_A \circ \mu$ identifies $A \cong A^\vee$, making the aether algebra self-dual. This self-duality drives the descent involution $\hat{\tau}_n$ on the endomorphism algebra, which splits the categorical mass endomorphism into a descended baseline component and a transient component localized at the exceptional divisors of the brane tower.
 
-Within this purely algebraic substrate, the mass evaluation yields the algebraic quantum volume:
+Within this purely algebraic layer, the mass evaluation yields the algebraic quantum volume:
 
 $$
   \mathrm{Vol}_q(\beta) \;=\; \prod_{i=0}^{A-2}\hat{V}_i(q),

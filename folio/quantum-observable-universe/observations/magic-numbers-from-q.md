@@ -1,4 +1,4 @@
-*The Wedderburn-weighted nuclear character signal $\delta^2\Phi(Z)$, computed purely from the substrate parameter $q_0$ (per-partition Hoefsmit characters at Hecke levels $k = 3\ldots 10$, with no empirical input), is **conjectured** to carry nuclear shell structure.*
+*The Wedderburn-weighted nuclear character signal $\delta^2\Phi(Z)$, computed purely from the aether parameter $q_0$ (per-partition Hoefsmit characters at Hecke levels $k = 3\ldots 10$, with no empirical input), is **conjectured** to carry nuclear shell structure.*
 
 *For each partition $\lambda \vdash k$ with Wedderburn weight $w_\lambda = \dim_q(\lambda)^2/[k]_q!$, the nuclear braid $\mathcal{N}(Z, Z)$ has character $\chi_\lambda(Z)$ computed from the Hoefsmit seminormal matrices. The cumulative Wedderburn-weighted signal*
 

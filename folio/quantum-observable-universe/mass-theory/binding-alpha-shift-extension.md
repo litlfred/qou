@@ -1,7 +1,7 @@
 *The light-atom binding energy* $B(A) = m_e \cdot \rho_0 \cdot \alpha_{\text{shift}}(T(p_A, k_A))$
-*is uniquely determined by* (i) *the substrate-universal per-rep
+*is uniquely determined by* (i) *the aether-universal per-rep
 Reeb coupling* $\rho_0$ *pinned by the deuteron, and* (ii) *the
-substrate-fixed force-carrier torus knot* $T(p_A, k_A)$
+aether-fixed force-carrier torus knot* $T(p_A, k_A)$
 *per nucleus.  Both legs route through the proved* $\alpha_{\mathrm{shift}} = k\cdot(p-1)$
 *formula ([the $\alpha_{\mathrm{shift}}$ torus-knot formula](#prop:alpha-shift-torus-knot)).*  The binding closure is
 
@@ -11,7 +11,7 @@ $$
 $$
 
 The candidate `(p, k)` values per nucleus are hypothesised; the rigorous
-identification from the substrate's
+identification from the aether's
 Hecke-Wedderburn block structure on $H_{3A}(q)$ is open.
 
 The $A \ge 3$ binding gap, the per-nucleus candidate table and its

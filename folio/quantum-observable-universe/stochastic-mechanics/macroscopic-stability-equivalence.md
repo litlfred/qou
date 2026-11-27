@@ -1,4 +1,4 @@
-Fix a substrate datum: a candidate zeta function $\zeta$, its Chebyshev-type prime-counting function $\psi$, and the Reeb spectrum $\rho$ of the same substrate. The following are equivalent:
+Fix an aether datum: a candidate zeta function $\zeta$, its Chebyshev-type prime-counting function $\psi$, and the Reeb spectrum $\rho$ of the same aether. The following are equivalent:
 
 1. **Macroscopic stability.** $\psi(X) = X + O(X^{1/2 + \varepsilon})$ for every $\varepsilon > 0$.
 2. **Riemann hypothesis.** Every zero of $\zeta$ in the critical strip satisfies $\mathrm{Re}(s) = 1/2$.
@@ -8,7 +8,7 @@ The three conditions are properties of **one** system. This is not a stylistic p
 
 The equivalence $(1) \Leftrightarrow (2)$ is classical in one direction — von Koch (1901) proved that the Riemann hypothesis implies the optimal Chebyshev error term, and the converse follows from the explicit formula, since a zero with $\mathrm{Re}(\rho) > 1/2$ makes the oscillatory contribution $X^{\rho}/\rho$ violate the bound. It is nonetheless carried here as a hypothesis rather than as an established input. The equivalence $(2) \Leftrightarrow (3)$ is the framework's own claim and is **open**.
 
-The algebraic substrate supplies a conditional framework: $q$-scale stability is proved, and macroscopic stability is what would require the Riemann hypothesis. The obstruction to extending the $q$-scale result is that the classical limit functor $\mathcal{L}$ is not full — the relative phases of the local spectra are lost in the adelic assembly.
+The algebraic layer supplies a conditional framework: $q$-scale stability is proved, and macroscopic stability is what would require the Riemann hypothesis. The obstruction to extending the $q$-scale result is that the classical limit functor $\mathcal{L}$ is not full — the relative phases of the local spectra are lost in the adelic assembly.
 
 ## Status
 

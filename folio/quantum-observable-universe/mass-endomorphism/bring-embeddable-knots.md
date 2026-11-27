@@ -1,4 +1,4 @@
-The QOU substrate selects the knots whose Seifert genus is bounded by Bring's surface genus ([Complete decomposition of the tensor tower](#prop:knot-eigenbasis-complete), [Exhaustiveness of the QOU knots in the Descartes space (open)](#rem:knot-exhaustiveness)):
+The QOU aether selects the knots whose Seifert genus is bounded by Bring's surface genus ([Complete decomposition of the tensor tower](#prop:knot-eigenbasis-complete), [Exhaustiveness of the QOU knots in the Descartes space (open)](#rem:knot-exhaustiveness)):
 
 $$
   \mathrm{Knots}_{\mathrm{Bring}}

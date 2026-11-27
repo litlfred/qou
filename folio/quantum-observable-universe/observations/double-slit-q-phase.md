@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with substrate parameter $q \in k^{\times}$ ([substrate parameter](#def:substrate-parameter)), and let $\gamma_i$ ($i = 1,2$) be two paths through slits of width $a$ separated by distance $d$.
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with aether parameter $q \in k^{\times}$ ([aether parameter](#def:substrate-parameter)), and let $\gamma_i$ ($i = 1,2$) be two paths through slits of width $a$ separated by distance $d$.
 
 For a massive excitation of rest mass $m$, the spatial wavelength is not an external optical parameter; it is forced by Lorentz covariance of the internal meridian clock. In its rest frame, the excitation ticks at the Compton angular frequency $\omega_0 = m c^2 / \hbar$ of the exceptional-divisor meridian cycle ([meridian Compton tick](#rem:meridian-exceptional-divisor-note)). Following Louis de Broglie (1924), boosting along the beam axis at velocity $v$ with Lorentz factor $\gamma^2(1 - v^2 / c^2) = 1$ transforms proper time as $\tau_{\mathrm{prop}} = \gamma(t - v x / c^2)$ and decomposes the invariant clock phase into temporal and spatial components:
 

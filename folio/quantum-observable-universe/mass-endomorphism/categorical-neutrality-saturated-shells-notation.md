@@ -10,7 +10,7 @@ statement about a global section.
 ## Notation
 
 Let $\mathbf{C}$ be the rigid :refterm[braided monoidal category]{#braided-monoidal-category} of the QOU
-substrate (Frobenius–Hopf object $A$, fibre functor $\tau$). For
+aether (Frobenius–Hopf object $A$, fibre functor $\tau$). For
 $n \in \mathbb{N}$ write
 
 * $H_n(q)$ for the Iwahori–Hecke algebra at parameter $q$, generated

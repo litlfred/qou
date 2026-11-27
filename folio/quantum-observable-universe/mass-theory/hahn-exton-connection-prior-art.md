@@ -10,4 +10,4 @@ $$
 $$
 so $J^{(3)}_\nu(x; q) = \frac{(q^{\nu+1}; q)_\infty}{(q; q)_\infty}\, x^\nu\, g(q x^2)$, with $g$ the corpus's generating function of the $c_k$. This is the precondition for citing the connection formula alongside the [$c_k$ recursion](#prop:q-beta-c-k-recursion-from-habiro-q-difference): both work with the same series.
 
-What it does not supply: the connection formula is proved for $0 < |q| < 1$, while the corpus evaluates at a substrate parameter greater than one, so using it there needs $q$ replaced by $q^{-1}$ and the formula rederived. And the $p \to 1^-$ limit recovers the classical Bessel connection; it says nothing about the $c_k$ beyond the $q$-Bessel series itself.
+What it does not supply: the connection formula is proved for $0 < |q| < 1$, while the corpus evaluates at an aether parameter greater than one, so using it there needs $q$ replaced by $q^{-1}$ and the formula rederived. And the $p \to 1^-$ limit recovers the classical Bessel connection; it says nothing about the $c_k$ beyond the $q$-Bessel series itself.

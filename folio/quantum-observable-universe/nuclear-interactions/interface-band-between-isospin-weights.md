@@ -25,7 +25,7 @@ The lower separation says the singlet weight lies below the band's floor,
 $\mu_- < z-h$. Its reduced form is $q - z < (z-h)(q+q^{-1})$, which at $z = q^3/(q^2+1)$
 holds for $q < 1.465571$.
 
-The substrate parameter clears both, with $7.56\,\%$ of margin on the tighter of the
+The aether parameter clears both, with $7.56\,\%$ of margin on the tighter of the
 two. Neither is a knife-edge, and neither can be repaired by a better choice of $q$:
 moving $q$ upward past $1.193859$ closes the upper separation only by moving $\mu_+$
 into the band, which is not the same as reaching it from inside.
@@ -44,9 +44,9 @@ $\mu_- \approx 0.303675$ sits inside $[0.290260,\, 0.499320]$ while the entire b
 $30.69\,\%$ above $B_{\mathrm{AME}}({}^2\mathrm{H})$).
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the
-substrate wall: it invokes real- or complex-analytic constructs --- real-valued
+algebraic→archimedean wall: it invokes real- or complex-analytic constructs --- real-valued
 physical observables, real-analytic bounds, transcendental constants, or numerical
-evaluation at the substrate parameter $q_0$. Any generic categorical or
+evaluation at the aether parameter $q_0$. Any generic categorical or
 $q$-deformation identities it draws on remain valid over an abstract coefficient ring;
 only their archimedean realisation is specialised here. At
 $q_0 = 1.10997858275138080759$ with $z = q^3/(q^2+1)$:

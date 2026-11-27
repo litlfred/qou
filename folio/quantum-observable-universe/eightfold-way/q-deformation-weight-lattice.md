@@ -3,7 +3,7 @@ Serre relation and root system: one is a binomial coefficient that deforms
 into the Gaussian integer $[2]_q = q + q^{-1}$ under Drinfeld–Jimbo
 quantization, whereas the other is the diagonal Cartan entry $a_{ii} = 2$
 that remains constant for all $q$.  Separating these two roles clarifies
-what the substrate parameter $q_0$ deforms in the eightfold-way
+what the aether parameter $q_0$ deforms in the eightfold-way
 classification and what remains rigid.
 
 **The two $2$s.**

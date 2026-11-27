@@ -31,4 +31,4 @@ Given a hyperfinite partition of $[0, 1] \subset \mathbf{No}$ into $N = \omega$ 
 
 See [Table](#tbl:calculus-up-to-epsilon-table-data).
 
-For the substrate-parameter $q \to 1$ limit, the surreal framework sharpens the theory by naming the infinitesimal regime explicitly. The absence of a canonical Lebesgue measure and a Hilbert completion is manageable because QOU uses neither in a load-bearing way: integration is categorical (Frobenius counit), decomposition is algebraic (Hoefsmit), and analytic-looking quantities ($d_H(q)$, $c_q$, $\hbar_q$) are rational in $q$.
+For the aether-parameter $q \to 1$ limit, the surreal framework sharpens the theory by naming the infinitesimal regime explicitly. The absence of a canonical Lebesgue measure and a Hilbert completion is manageable because QOU uses neither in a load-bearing way: integration is categorical (Frobenius counit), decomposition is algebraic (Hoefsmit), and analytic-looking quantities ($d_H(q)$, $c_q$, $\hbar_q$) are rational in $q$.

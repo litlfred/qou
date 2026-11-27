@@ -54,7 +54,7 @@ $J(q) = -q^{1/2} - q^{5/2}$, whose value at $q = 1$ is $-2$.)
 $c_2(1) = -1$ (Step 1, exactly, at every $q$) and $c_3(1) = -2$
 (Step 2, via the registry anchoring). Both anchors are integers
 evaluated at $q = 1$: the test lives entirely at the fibre level,
-involves no substrate anchor $q_0$, and admits no experimental
+involves no aether anchor $q_0$, and admits no experimental
 tolerance — agreement is exact or it is not. Suppose a candidate $F$
 generates $(c_2(q), c_3(q))$ with $c_2(1) \ne -1$ or
 $c_3(1) \ne -2$. Then its coefficient functions disagree with the

@@ -29,7 +29,7 @@ The spectral-sequence framing enforces architectural rigidity:
 
 Hochschild cohomology $HH^*(H_n(R, q))$ is established by Kosmann-Schwarzbach, Lambe–Stasheff, and Burciu–Scheimbauer. These supply deformation-theoretic data: $HH^2$ controls deformations, $HH^3$ controls obstructions.
 
-The filtration $J^\bullet(q)$ incorporates the specific substrate parameter $q$, forming a finer grading than standard length. This yields $q$-dependent differentials. 
+The filtration $J^\bullet(q)$ incorporates the specific aether parameter $q$, forming a finer grading than standard length. This yields $q$-dependent differentials. 
 
 Reshetikhin–Turaev invariants at roots of unity emerge as residues of the $E_\infty$ pages when $q = \zeta_\ell$ collapses the filtration. The RT evaluation operates strictly as a spectral-sequence specialization.
 

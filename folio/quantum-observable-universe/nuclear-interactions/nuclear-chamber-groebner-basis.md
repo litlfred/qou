@@ -39,7 +39,7 @@ $$
   \end{aligned}
 $$
 
-Both the bare and tower-resummed substrate binding energies at $q_0$ lie strictly inside $\mathcal{C}_{\mathrm{phys}}$.
+Both the bare and tower-resummed aether binding energies at $q_0$ lie strictly inside $\mathcal{C}_{\mathrm{phys}}$.
 
 3. **Drip-line dissociation and integer parity monomers.** Reduction modulo $\mathcal{G}_{\mathrm{phys}}$ carries ${}^5\mathrm{He}$ ($x_p^2 x_n^3$) deterministically to the irreducible degree-$2$ disconnected normal form $x_\alpha x_n$, while mapping ${}^{12}\mathrm{C}$ ($x_p^6 x_n^6 \mapsto x_\alpha^3$), ${}^{14}\mathrm{N}$ ($x_p^7 x_n^7 \mapsto x_d x_\alpha^3$), ${}^9\mathrm{Be}$ ($x_p^4 x_n^5 \mapsto x_n x_\alpha^2$), and ${}^9\mathrm{B}$ ($x_p^5 x_n^4 \mapsto x_p x_\alpha^2$) to integer cluster normal forms without fractional continuous-relaxation artifacts.
 

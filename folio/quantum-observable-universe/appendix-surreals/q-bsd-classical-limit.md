@@ -1,4 +1,4 @@
-The substrate parameter $q$ is a section of $\mathbb{G}_m$ ([substrate $\mathbb{G}_m$ torsion](#rem:substrate-gm-torsion)). The $q$-BSD conjecture ([$q$-BSD](#conj:q-birch-swinnerton-dyer)) describes a family of $L$-functions parametrised by $\mathbb{G}_m$. Its behavior at the boundary and torsion points of $\mathbb{P}^1$ reveals the arithmetic content.
+The aether parameter $q$ is a section of $\mathbb{G}_m$ ([aether $\mathbb{G}_m$ torsion](#rem:substrate-gm-torsion)). The $q$-BSD conjecture ([$q$-BSD](#conj:q-birch-swinnerton-dyer)) describes a family of $L$-functions parametrised by $\mathbb{G}_m$. Its behavior at the boundary and torsion points of $\mathbb{P}^1$ reveals the arithmetic content.
 
 Embed $\mathbb{G}_m \hookrightarrow \mathbb{P}^1$ via $k^\times \hookrightarrow k \cup \{\infty\}$. The $q$-BSD data extends to a family over $\mathbb{P}^1$ with three regimes:
 

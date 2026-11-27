@@ -14,4 +14,4 @@ obtained from $e^-$ by $n - 1$ strand-adding curls. Let $w$ be the writhe (expon
 
 **Single-component trefoil model.** In the alternative model where the shell-$n$ electron is the two-strand word $\sigma_0^{2n+1} \in B_2$ (closing to $T_{2,2n+1}$, with ground state $T_{2,3}$), the shell number is $n = (w - 1)/2$ with $w = 2n + 1$. The two models agree at the ground state $w = 3$, $n = 1$ and diverge for $n \geq 2$.
 
-**Archimedean specialisation.** What follows evaluates generic $q$-deformation identities at the real-valued substrate parameter $q_0$. The categorical identities remain valid over any abstract coefficient ring.
+**Archimedean specialisation.** What follows evaluates generic $q$-deformation identities at the real-valued aether parameter $q_0$. The categorical identities remain valid over any abstract coefficient ring.

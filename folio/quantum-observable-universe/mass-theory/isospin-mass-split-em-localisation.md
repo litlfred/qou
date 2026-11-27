@@ -7,7 +7,7 @@ Sector by sector, one entry of that enumeration fails. The unified mass formula 
 | sector | status under generator sign-flip |
 |---|---|
 | Frobenius co-Casimir | **invariant**, by arity: $\tau(C_{\dim_q}) = \sum_\lambda 1/\dim_q(\lambda)$ takes no braid word at all, so it factors through $(n, q)$ |
-| descended trace | **not invariant** at the substrate — see below |
+| descended trace | **not invariant** at the aether — see below |
 | brane tower | **invariant** — its trace-invariant form takes no braid word either; the general form is invariant once the per-subset weight is Markov-invariant. Absent from the list above, but benignly so |
 | shell correction | invariant in the **crystal limit** $q \to 0$ only ([Crystal-limit isospin degeneracy](crystal-isospin-degeneracy.md)) |
 | chirality | **breaks both involutions**: it is one of the two S-odd channels of the mass, alongside the odd part $\Phi_1^{-}$ of the Markov-weighted functional ([`frobenius-s-classification`](frobenius-s-classification.md)), and its factor reads the crossing signs directly, $\prod_c (1 + \mathrm{sign}(c)\,h)$ with $h = q - q^{-1}$ ([Chirality $a_K = \prod_{pn} (1 + \mathrm{sign}\cdot h)$ from symmetric-channel trace duality](chirality-dual-space-derivation.md)). It does not *itself* source this split, though: ${}^3\mathrm{H}$ and ${}^3\mathrm{He}$ carry the same crossing multiset (one positive, one negative), so both get the same factor $1 - h^2$ |

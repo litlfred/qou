@@ -1,4 +1,4 @@
-*The substrate convolution Hopf algebra $\mathcal{H}_q$ carries
+*The aether convolution Hopf algebra $\mathcal{H}_q$ carries
 two distinct filtrations:*
 
 - *the **iterated-integral depth** on grouplikes,

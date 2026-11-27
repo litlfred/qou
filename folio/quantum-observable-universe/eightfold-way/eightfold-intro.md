@@ -14,7 +14,7 @@ $A_2$: the Coxeter quotient of $B_3$ is $W(A_2) \cong S_3$, permuting the
 three *strands*.  This is true, but it is true *by construction* --- the
 braid group on $n$ strands has Coxeter type $A_{n-1}$ by definition, so
 choosing $n = 3$ is what puts $A_2$ there.  It is not a structural theorem
-about the substrate, and nothing is derived from it.
+about the aether, and nothing is derived from it.
 
 The $A_2$ that the eightfold way needs is a *different* one: the Lie
 algebra $\mathfrak{sl}_3$ of flavour $\mathrm{SU}(3)_{\mathrm{f}}$, which in quantum

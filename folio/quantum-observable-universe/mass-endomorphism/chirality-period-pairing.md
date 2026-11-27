@@ -32,7 +32,7 @@ Each Goncharov period class $\mathcal{P}_n / \mathcal{P}_{n-1}$ inherits a bar-g
 
 ## Provenance
 
-The bar involution's role remains structural. It organises period classes by the orientation-reversal symmetry of the motivic substrate.
+The bar involution's role remains structural. It organises period classes by the orientation-reversal symmetry of the motivic base ring.
 
 ## Falsifiability
 

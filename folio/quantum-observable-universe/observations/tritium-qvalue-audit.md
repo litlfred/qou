@@ -2,7 +2,7 @@ The tritium $Q$-value is re-derived and cross-checked.
 
 ## Derivation chain
 
-**Step 0: Substrate parameter**. Fixes $q_0$ from $m_\mu/m_e$.
+**Step 0: Aether parameter**. Fixes $q_0$ from $m_\mu/m_e$.
 
 **Step 1: Typed crossing operator**. Uses the unique isospin-invariant choice $\lambda = 1/2$.
 

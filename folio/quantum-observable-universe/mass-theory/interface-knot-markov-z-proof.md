@@ -118,8 +118,8 @@ $$
   w_{p} + w_{n} = 1,
 $$
 
-with $\delta$ the substrate flavour split of
-[the substrate flavor split conjecture](#conj:flavor-split-substrate-mass). A like-flavour
+with $\delta$ the aether flavour split of
+[the aether flavor split conjecture](#conj:flavor-split-substrate-mass). A like-flavour
 bond has no mean to tilt — averaging $f_{pp}$ with itself returns $f_{pp}$ for
 any weights summing to one — which is why the weighting is defined at the p-n
 interface and nowhere else.
@@ -132,7 +132,7 @@ $$
   \;=\; \frac{(q-1)^{5}(q+1)^{3}(q^{2}+1)}{12\,q^{5}},
 $$
 
-nonzero for $q \neq 1$ (about $1.67 \times 10^{-5}$ at the substrate anchor).
+nonzero for $q \neq 1$ (about $1.67 \times 10^{-5}$ at the aether anchor).
 The unweighted factor above is the only one of the two that is bar-even, and
 the derivation in this proof — trace-linearity from the single Markov axiom —
 yields that one. The weighted form requires $\delta$ as an additional input
@@ -156,10 +156,10 @@ The colour weighting uses $\varepsilon = \delta/4$, and
 $\overline{\delta} = -q^{2}\delta$, so it misses bar-oddness by exactly a factor
 of $q^{2}$ and nothing else. That factor localises: in the factored form
 $\delta \sim \hbar_q^{2}\, h_q\, [2]_q$ of
-[the closed and factored forms of the substrate flavor split](#prop:flavor-split-substrate), the Hecke
+[the closed and factored forms of the aether flavor split](#prop:flavor-split-substrate), the Hecke
 crossing $h_q$ is already bar-odd and the doublet integer $[2]_q$ is bar-even,
 so the **entire** obstruction is the $\hbar_q^{2}$ prefactor — the two quanta of
-substrate Planck action.
+aether Planck action.
 
 Consequently a bar-invariant colour weighting **exists**: $\varepsilon = q\,\delta\,E/4$
 is bar-odd for *any* bar-even $E$, since $\overline{q\delta} = -q\delta$. Two
@@ -173,7 +173,7 @@ the weighting; selecting $E$ requires re-deriving the colour weighting from the
 colour-tube geometry, and no particular $E$ is asserted here. All of the above
 is checked in exact arithmetic
 (17 assertions), and the four identities that are field-theoretic rather than
-substrate-specific — $\overline{z} = z - h$, the bar-symmetriser form, the bar
+aether-specific — $\overline{z} = z - h$, the bar-symmetriser form, the bar
 defect $-(\overline{\varepsilon} + \varepsilon)h$, and the bar-even-iff-offset-bar-odd
 equivalence — are proved over an arbitrary characteristic-zero field.
 
@@ -233,7 +233,7 @@ at the $\mathrm{tr}_M$ level.
 The factorisation $(\star)$ isolates the **interface** contribution
 to the $\mathrm{tr}_M$ ratio.  The complementary **constit** factor —
 $\mathrm{tr}_M(\mathcal{B}_K^{\mathrm{vac}})$ at varying $Z$ — admits its own
-clean categorical form at the substrate point:
+clean categorical form at the aether point:
 $$
   \frac{\mathrm{tr}_M\!\bigl(\beta_{(Z+1, N)}^{\mathrm{constit}}\bigr)}
        {\mathrm{tr}_M\!\bigl(\beta_{(Z, N)}^{\mathrm{constit}}\bigr)}

@@ -1,4 +1,4 @@
-The $Q$-value for any $\beta^-$ decay $\mathcal{N}(Z, N) \to \mathcal{N}(Z\!+\!1, N\!-\!1)$ is computed by the following algorithm. The inputs are the substrate parameter $q$ and the nucleon counts $(Z, N)$. No external nuclear physics data is used.
+The $Q$-value for any $\beta^-$ decay $\mathcal{N}(Z, N) \to \mathcal{N}(Z\!+\!1, N\!-\!1)$ is computed by the following algorithm. The inputs are the aether parameter $q$ and the nucleon counts $(Z, N)$. No external nuclear physics data is used.
 
 ## Proven facts used by the algorithm
 

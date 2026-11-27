@@ -1,4 +1,4 @@
-Suppose $q, q' \in \mathrm{End}(\mathbf{1})$ are both substrate
+Suppose $q, q' \in \mathrm{End}(\mathbf{1})$ are both aether
 parameters for the same QOU $(\mathbf{C}, A, \tau)$.  Each extracts
 from the same braiding $c_{V,V}$ via the spectral decomposition
 of [existence](#thm:substrate-parameter-exists).
@@ -37,6 +37,6 @@ is positive.  The same constraint applies to $q'$.
 Since $\lambda_+ > 0$ and $-\lambda_-^{-1} = q$ (from
 $\lambda_+ \lambda_- = -1$), the two candidates coincide:
 $q = q' = \lambda_+$.  In the archimedean realisation, the same
-argument applies pointwise on $M$, so the substrate field
+argument applies pointwise on $M$, so the aether field
 $q \colon M \to \mathbb{R}_{>0}$ is uniquely determined by the
 QOU data.  $\square$

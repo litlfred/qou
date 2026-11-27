@@ -37,7 +37,7 @@ which is the standard Weierstrass equation $\wp'^2 = 4\wp^3 - g_2\wp - g_3$ with
 | Regime | $q$ | Lattice shape | Physics |
 |--------|-----|---------------|---------|
 | Classical | $q = 1$ | $\Lambda_1$ rectangular | Degenerate curve $\mathcal{E}_1$; no crossing asymmetry |
-| Physical | substrate $q$ | $\Lambda_q$ rhombic | The observed universe; $\mathcal{E}_q$ smooth, $\Delta < 0$ |
+| Physical | aether $q$ | $\Lambda_q$ rhombic | The observed universe; $\mathcal{E}_q$ smooth, $\Delta < 0$ |
 | Deep quantum | $q \to \infty$ | $\Lambda_q \to$ hexagonal | CM lattice; maximal symmetry |
 
 **Notation convention.**

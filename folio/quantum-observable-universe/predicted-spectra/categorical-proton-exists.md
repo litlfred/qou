@@ -6,4 +6,4 @@ $$
 
 It satisfies Frobenius stability $G x[\gamma] \ge 0$ at every step of the LP reduction.
 
-**Archimedean specialisation.** The underlying categorical identities hold over an abstract coefficient ring. Their archimedean realisation requires real- or complex-analytic constructs. What follows invokes these constructs—real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. What follows therefore sits on the archimedean side of the substrate wall.
+**Archimedean specialisation.** The underlying categorical identities hold over an abstract coefficient ring. Their archimedean realisation requires real- or complex-analytic constructs. What follows invokes these constructs—real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the aether parameter $q_0$. What follows therefore sits on the archimedean side of the algebraic→archimedean wall.

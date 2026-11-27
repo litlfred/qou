@@ -1,4 +1,4 @@
-**Small-$\lambda$ table** (at physical substrate $q_0 \approx 1.11$, symmetric quantum integers, values computed at the corpus anchor $q_0 = 1.1099786\ldots$):
+**Small-$\lambda$ table** (at physical aether $q_0 \approx 1.11$, symmetric quantum integers, values computed at the corpus anchor $q_0 = 1.1099786\ldots$):
 
 See [Table](#tbl:q-heat-kernel-peter-weyl-table-data).
 

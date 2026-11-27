@@ -1,6 +1,6 @@
 Let $(\mathbf{C}, A, \tau)$ be a [QOU](#def:quantum-observable-universe) equipped with [weight decomposition](#def:weight-decomposition) $(\pi_H, \pi_V)$ and [Reeb derivation](#def:categorical-reeb) $\xi$.
 
-The **substrate line bundle** is the trivial $\mathbb{G}_m$-torsor
+The **aether line bundle** is the trivial $\mathbb{G}_m$-torsor
 
 $$
   \mathcal{Q}
@@ -10,9 +10,9 @@ $$
   \mathrm{Spec}R,
 $$
 
-with fibre $\mathbb{G}_m(R) = R^\times$ over each $R$-point. A **substrate section** is a global section $q \colon \mathrm{Spec}R \to \mathcal{Q}$, that is, an element $q \in R^\times$.
+with fibre $\mathbb{G}_m(R) = R^\times$ over each $R$-point. A **aether section** is a global section $q \colon \mathrm{Spec}R \to \mathcal{Q}$, that is, an element $q \in R^\times$.
 
-Over $\mathbb{G}_m = \mathrm{Spec}\mathbb{Z}[q, q^{-1}]$, the **universal substrate differential** is
+Over $\mathbb{G}_m = \mathrm{Spec}\mathbb{Z}[q, q^{-1}]$, the **universal aether differential** is
 
 $$
   \mathbf{d}

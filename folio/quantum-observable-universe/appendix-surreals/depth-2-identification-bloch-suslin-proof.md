@@ -51,7 +51,7 @@ is the **Bloch–Suslin regulator**, and it is *injective after
 tensoring with $\mathbb{R}$* (Borel + Suslin).
 
 **Step 3 (archimedean image of $G^{(2)}$, this paper).** The
-substrate convolution algebra $\mathcal{H}_q$'s depth-2 grouplike
+aether convolution algebra $\mathcal{H}_q$'s depth-2 grouplike
 $\mathrm{Li}_2^q(z)$ for $z \in F^\times$ has archimedean image
 
 $$

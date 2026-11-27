@@ -35,7 +35,7 @@ Establishing the pole non-vanishing hypothesis at order $n$ requires either:
    circle integrals) applied to the
    $\sigma$-action on Hecke representations at the torus-knot
    surface.
-2. **Algebraic route:** via the substrate's Bloch-Suslin framework,
+2. **Algebraic route:** via the aether's Bloch-Suslin framework,
    identifying the contour integral with a specific Bloch-group
    class on Bring's surface.
 

@@ -69,7 +69,7 @@ $$
 
 so $\cosh\lambda \pm \sinh\lambda = e^{\pm\lambda}$. The bar-even and
 bar-odd parts constitute **one element $e^{\lambda}$ read on its two
-parities**. Continue $\lambda \mapsto i\theta$ (the substrate $q$ rotated
+parities**. Continue $\lambda \mapsto i\theta$ (the aether $q$ rotated
 onto the unit circle / a root of unity) and $\cosh\to\cos$,
 $\sinh\to i\sin$: the **bar-even/bar-odd split becomes a Re/Im split**.
 That exactly constructs the complex volume:
@@ -133,7 +133,7 @@ The holomorphic tie hypothesis demands that a **single** Askey-Wilson three-term
 For the bar-odd S observable ($S = c_3 + \mathrm{Vol}(4_1)$), the
 conjecture's decay side takes the concrete form
 $S(q_0) = \mathrm{Im}\,\mathfrak{V}\bigl(u(q_0)\bigr)$: the Chern–Simons
-part of the **deformed** complex volume at the substrate deformation
+part of the **deformed** complex volume at the aether deformation
 $u(q_0)$ (log meridian holonomy). The deformed volume itself is a
 theorem for $4_1$ and explicitly computable via Neumann–Zagier; the two
 open inputs — the map $u(q_0)$ and the channel identity — are taken as a
@@ -143,7 +143,7 @@ Composed with the argument identification of
 three statements are derived from these two hypotheses: the fibre-branch $\Phi_b$ phase at the
 identified argument **is** the deformed Chern–Simons part; the $\Phi_b$
 readout is the pure phase $e^{i\,\mathrm{CS}(u(q_0))}$; and *if* $S$ flips
-sign between the anchors, that forces a substrate point $q^{*}$
+sign between the anchors, that forces an aether point $q^{*}$
 where $\mathrm{Im}\,\mathfrak{V}(u(q^{*})) = 0$ — the deformed complex
 volume purely real. This last is **conditional on a sign flip the data
 does not establish**: each anchor value carries a CAL-3 propagated

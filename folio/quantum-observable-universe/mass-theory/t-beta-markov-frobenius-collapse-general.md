@@ -6,9 +6,9 @@ $$
 
 When $A$ is commutative, taking $X^\dagger = X$ recovers the untwisted statement $S^2 \le \tau(X \cdot X)$ under positivity of $\tau$ on squares.
 
-## Relation to the substrate-model version
+## Relation to the aether-model version
 
-This proposition lifts [Min-Frobenius-norm collapse: T_β = S · 1 under the canonical Markov-trace inner product on H_n(R, q)](t-beta-markov-frobenius-collapse.md) from the substrate model ($A = R$, $\tau = \mathrm{id}$) to the general unital $R$-algebra setting, where $A$ may be non-commutative and infinite-dimensional.
+This proposition lifts [Min-Frobenius-norm collapse: T_β = S · 1 under the canonical Markov-trace inner product on H_n(R, q)](t-beta-markov-frobenius-collapse.md) from the aether model ($A = R$, $\tau = \mathrm{id}$) to the general unital $R$-algebra setting, where $A$ may be non-commutative and infinite-dimensional.
 
 ## Application to the Iwahori–Hecke algebra
 

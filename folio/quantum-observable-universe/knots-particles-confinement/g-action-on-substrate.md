@@ -1,9 +1,9 @@
-The proposal is that the Frobenius–Hopf substrate $A$ in $\mathbf{Rep}(\mathrm{SU}_q(2))$ admits a unique $G$-equivariant structure under $G = \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$. This structure is governed by four constraints linking the categorical data to the electroweak sector. The constraints are intended to give the symmetric-channel Frobenius trace $\mathcal{N}_{\rm sym}(q) = \mathrm{tr}_F(e_{\rm sym}^{\rm EW} \cdot e_H)$ in closed form. The closed form depends on how the trace composes across the hosts, which is not yet fixed (see below).
+The proposal is that the Frobenius–Hopf aether $A$ in $\mathbf{Rep}(\mathrm{SU}_q(2))$ admits a unique $G$-equivariant structure under $G = \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$. This structure is governed by four constraints linking the categorical data to the electroweak sector. The constraints are intended to give the symmetric-channel Frobenius trace $\mathcal{N}_{\rm sym}(q) = \mathrm{tr}_F(e_{\rm sym}^{\rm EW} \cdot e_H)$ in closed form. The closed form depends on how the trace composes across the hosts, which is not yet fixed (see below).
 
 ### The four constraints
 
 **Constraint (G-1) — $G$-isotypic decomposition.**
-The substrate $A$ decomposes as a direct sum of $G$-isotypic components:
+The aether $A$ decomposes as a direct sum of $G$-isotypic components:
 
 $$
   A \;=\; A^{(\gamma)} \;\oplus\; A^{(W^+)} \;\oplus\; A^{(W^-)}
