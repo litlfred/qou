@@ -10,6 +10,7 @@ export default conjecture({
     "rem:hamilton-jacobi-phase",
     "def:leray-profile",
     "def:substrate-parameter",
+    "def:qns-unit-layers",
   ],
   cites: [
     "leray1934",
@@ -30,6 +31,12 @@ export default conjecture({
     "discretely-self-similar",
   ],
   authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-11-27",
+      body: "Owner ruling (Carl): Part A's data are held fixed in the substrate layer. Data fixed in the physical layer satisfy Part A with exponent 2 by the unit conversion alone (`physical_layer_conversion_diverges`). Over the weakened `QNsWellposednessContext` (modal balance with a free transfer term) Part A is trivially satisfiable (`partA_trivial_over_weakened_class`), so a Lean carrier for Part A needs a modal model of the actual nonlinearity; it is not encoded yet.",
+      see: "docs/audits/2026-11-27-qns-part-a-enstrophy-order-parameter.md",
+    },
     {
       kind: "caveat",
       date: "2026-11-24",

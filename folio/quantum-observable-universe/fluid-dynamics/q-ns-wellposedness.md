@@ -22,14 +22,14 @@ satisfying:
      \lVert v_0 \rVert_A^2.
    $$
 
-3. **Spectral decay**: The $\Delta_q$-eigencomponents $\hat{v}_k \in V_k \subset \Omega^1(A)$ (where $\Delta_q|_{V_k} = [k]_q^2\mathrm{id}$) satisfy
+3. **Modal balance**: The $\Delta_q$-eigencomponents $\hat{v}_k \in V_k \subset \Omega^1(A)$ (where $\Delta_q|_{V_k} = [k]_q^2\mathrm{id}$) satisfy
 
    $$
-     |\hat{v}_k(t)|  \leq 
-     |\hat{v}_k(0)|e^{-\nu_q [k]_q^2 t}.
+     \frac{d}{dt}|\hat{v}_k(t)|  \leq 
+     -\nu_q [k]_q^2 |\hat{v}_k(t)| + T_k(t),
    $$
 
-   Modes decay at a rate exponential in $k$.
+   where $T_k$ is the rate at which the advection term transfers amplitude into $V_k$. For flows with $T_k \leq 0$ along the solution, such as the linear Stokes flow and Beltrami eigenfields, this gives $|\hat{v}_k(t)| \leq |\hat{v}_k(0)|e^{-\nu_q [k]_q^2 t}$. For the nonlinear flow no single mode need decay.
 
 **Archimedean realisation.**
 Operating under the fibre functor $\tau$, the categorical solution maps directly to a smooth vector field on the [state bundle](#ex:c-quantum-observable-universe) $\mathcal{S}$:

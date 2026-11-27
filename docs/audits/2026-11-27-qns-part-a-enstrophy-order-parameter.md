@@ -78,3 +78,72 @@ Part A as currently written cannot be both nontrivial and consistent with proper
 
 Recommendation (judgement): option 1. Property 3 is the anomalous clause, and option 1
 keeps the question Carl wants open.
+
+## Follow-up, same day: the owner's choice and three parallel paths
+
+Owner ruling (Carl, card "Weaken decay clause, keep Part A"): option 1 above.
+Further relayed ruling: run vectors V2, V3 and V4 of the attack-vector survey in
+parallel, with Part A's data fixed in the substrate layer.
+
+### The weakening (Lean, sorry-free)
+
+- `QNsWellposednessContext.modal_inequality` is replaced by `modal_balance`:
+  `d/dt|v̂_k| ≤ −ν_q[k]_q²|v̂_k| + T_k`, where `T_k` (field `transfer`) is the
+  nonlinear transfer into mode `k`. The class says nothing about its sign.
+- `q_ns_spectral_decay` becomes `q_ns_spectral_decay_of_no_transfer`
+  (hypothesis `T_k ≤ 0`). `q_ns_wellposedness` drops the spectral conjunct.
+- The negative results of this note now carry the hypothesis `T_k ≤ 0`. They
+  cover the linear Stokes flow and Beltrami eigenfields, not the nonlinear flow.
+
+### New finding: the weakened class cannot carry Part A by itself
+
+`junkContext` satisfies every field of the weakened class, has the
+`q`-independent datum `δ_{k,1}`, and its mode-1 amplitude grows from `1` to
+`1 + c_q(1 − e^{−t})`. Its enstrophy exceeds any bound for `q` near `1`
+(`partA_trivial_over_weakened_class`). The class links neither the amplitudes to
+the energy nor `T_k` to a triad nonlinearity. So a Part A stated only over this
+class is trivially true. A non-vacuous Lean carrier for Part A needs a modal model
+of the actual q-NS nonlinearity: triads with Biot–Savart structure on infinitely
+many modes, together with Parseval for the energy. No such object is in the
+corpus yet. On a finite complex (the DEC model of PR #9434) the enstrophy is at
+most `λ_max·E` with `λ_max` bounded as `q → 1⁺`, so Part A fails on every finite
+truncation. Gap bean filed.
+
+### V2: algebraic upper envelope (`q_ns_part_a_paths.lean`)
+
+`qns-unit-layers.lean` (`kPhys_sq_mul`) keeps each mode's energy fixed and
+converts only the wavenumber. So in the modal convention the energy is the same
+number in both layers. The smallness hypotheses of `energy_small_global` involve
+only `E₀` and the model constants. A substrate-fixed datum that is energy-small
+for one `q` is therefore energy-small for all `q` near `1`, provided the
+physical-layer step constants are `q`-uniform; that proviso is a hypothesis. On
+that class `substrate_envelope` gives `Ω_sub(n) ≤ 2L/(q−1)²` for every step, so
+`α ≤ 2` there. This is an upper bound, not a proof of Part A.
+
+### V3: Hecke-step threshold
+
+A Hecke step raises the Gröbner–Shirshov word-length energy only on words of
+length `ℓ > 1 + 2/(q − q⁻¹)`. That threshold is at least `1 + c_q`
+(`hecke_threshold_ge`) and tends to `+∞` as `q → 1⁺`
+(`hecke_threshold_tendsto`). **Not established:** any link between word length
+and Fourier wavenumber, or between that energy and the enstrophy.
+
+### V4: exclusions
+
+- `quadratic_decay_le_initial`: an exact exponential rescaling (Beltrami
+  eigenfields, `beltrami_eigen_ns`) maximises every quadratic functional at
+  `t = 0`, so Beltrami eigen-data are not Part A data.
+- `helicity_enstrophy_floor`: `H² ≤ E·Ω`. Helicity bounds the enstrophy from
+  below, not above. That is a scope (a) negative: the idea that helicity
+  conservation bounds Part A growth fails, because the inequality points the
+  other way.
+
+### A classical observation (idea, not formalised)
+
+For classical Navier–Stokes on `T³` the field `u = (U(y), 0, w(x, y, t))` is an
+exact solution: `U` obeys the heat equation and `w` is advected by `U` and
+diffused. Shearing makes `∂_y w` grow linearly in time until diffusion takes
+over, so `sup_t Ω` grows like a negative power of `ν` as `ν → 0`, for fixed
+smooth data. If that carries over to q-NS, Part A would be true, but true for a
+flow that stays smooth forever. Part A would then carry no evidence about
+breakdown. Put to the owner as a card.
