@@ -157,4 +157,274 @@ theorem exists_primitive_layer {d : ℕ} {p : F2} (hp : p ∈ FF d)
 
 end Layer
 
+/-! ### Group-likeness over `K` -/
+
+section OverK
+
+variable {K : Type*} [Field K] [Algebra ℚ K]
+
+variable (K) in
+/-- `Δ` with coefficients in `K`: `K ⊗ ℚ⟨X, Y⟩ → K ⊗ (ℚ⟨X, Y⟩ ⊗ ℚ⟨X, Y⟩)`. -/
+noncomputable def copK : K ⊗[ℚ] F2 →ₐ[K] K ⊗[ℚ] (F2 ⊗[ℚ] F2) :=
+  Algebra.TensorProduct.map (AlgHom.id K K) cop
+
+variable (K) in
+/-- `p ↦ p ⊗ 1` with coefficients in `K`. -/
+noncomputable def i1K : K ⊗[ℚ] F2 →ₐ[K] K ⊗[ℚ] (F2 ⊗[ℚ] F2) :=
+  Algebra.TensorProduct.map (AlgHom.id K K)
+    (Algebra.TensorProduct.includeLeft : F2 →ₐ[ℚ] F2 ⊗[ℚ] F2)
+
+variable (K) in
+/-- `p ↦ 1 ⊗ p` with coefficients in `K`. -/
+noncomputable def i2K : K ⊗[ℚ] F2 →ₐ[K] K ⊗[ℚ] (F2 ⊗[ℚ] F2) :=
+  Algebra.TensorProduct.map (AlgHom.id K K)
+    (Algebra.TensorProduct.includeRight : F2 →ₐ[ℚ] F2 ⊗[ℚ] F2)
+
+@[simp] theorem copK_tmul (k : K) (p : F2) : copK K (k ⊗ₜ p) = k ⊗ₜ cop p := rfl
+
+@[simp] theorem i1K_tmul (k : K) (p : F2) : i1K K (k ⊗ₜ p) = k ⊗ₜ (p ⊗ₜ (1 : F2)) := rfl
+
+@[simp] theorem i2K_tmul (k : K) (p : F2) : i2K K (k ⊗ₜ p) = k ⊗ₜ ((1 : F2) ⊗ₜ p) := rfl
+
+theorem i1K_one : i1K K 1 = 1 := by
+  rw [Algebra.TensorProduct.one_def, i1K_tmul]; rfl
+
+theorem i2K_one : i2K K 1 = 1 := by
+  rw [Algebra.TensorProduct.one_def, i2K_tmul]; rfl
+
+theorem copK_one : copK K 1 = 1 := by
+  rw [Algebra.TensorProduct.one_def, copK_tmul, map_one]; rfl
+
+variable (K) in
+/-- `K ⊗ FF2 m`: the span of `k ⊗ (u ⊗ v)`, `u, v` words with `|u| + |v| ≥ m`. -/
+def FF2K (m : ℕ) : Submodule ℚ (K ⊗[ℚ] (F2 ⊗[ℚ] F2)) :=
+  Submodule.span ℚ {x | ∃ (k : K) (u v : List (Fin 2)), m ≤ u.length + v.length ∧
+    x = k ⊗ₜ ((u.map (FreeAlgebra.ι ℚ)).prod ⊗ₜ[ℚ] (v.map (FreeAlgebra.ι ℚ)).prod)}
+
+theorem tmul_mem_FF2K {m : ℕ} (k : K) {p : F2 ⊗[ℚ] F2} (hp : p ∈ FF2 m) :
+    k ⊗ₜ p ∈ FF2K K m := by
+  unfold FF2 at hp
+  induction hp using Submodule.span_induction with
+  | mem x hx =>
+    obtain ⟨u, v, hw, rfl⟩ := hx
+    exact Submodule.subset_span ⟨k, u, v, hw, rfl⟩
+  | zero => simp
+  | add a b _ _ ha hb => rw [tmul_add]; exact add_mem ha hb
+  | smul r a _ ha => rw [tmul_smul]; exact Submodule.smul_mem _ r ha
+
+theorem FF2K_anti {m n : ℕ} (h : m ≤ n) : FF2K K n ≤ FF2K K m :=
+  Submodule.span_mono fun _ ⟨k, u, v, hw, e⟩ => ⟨k, u, v, le_trans h hw, e⟩
+
+theorem mul_mem_FF2K {a b : ℕ} {x y : K ⊗[ℚ] (F2 ⊗[ℚ] F2)} (hx : x ∈ FF2K K a)
+    (hy : y ∈ FF2K K b) : x * y ∈ FF2K K (a + b) := by
+  unfold FF2K at hx hy
+  induction hx using Submodule.span_induction with
+  | zero => simp
+  | add a b _ _ ha hb => rw [add_mul]; exact add_mem ha hb
+  | smul r a _ ha => rw [smul_mul_assoc]; exact Submodule.smul_mem _ r ha
+  | mem x hx =>
+    obtain ⟨k1, u1, v1, h1, rfl⟩ := hx
+    induction hy using Submodule.span_induction with
+    | zero => simp
+    | add a b _ _ ha hb => rw [mul_add]; exact add_mem ha hb
+    | smul r a _ ha => rw [mul_smul_comm]; exact Submodule.smul_mem _ r ha
+    | mem y hy =>
+      obtain ⟨k2, u2, v2, h2, rfl⟩ := hy
+      refine Submodule.subset_span ⟨k1 * k2, u1 ++ u2, v1 ++ v2, by simp; omega, ?_⟩
+      simp only [List.map_append, List.prod_append, Algebra.TensorProduct.tmul_mul_tmul]
+
+theorem mul_mem_FF2K' {a b c : ℕ} (h : a + b = c) {x y : K ⊗[ℚ] (F2 ⊗[ℚ] F2)}
+    (hx : x ∈ FF2K K a) (hy : y ∈ FF2K K b) : x * y ∈ FF2K K c := h ▸ mul_mem_FF2K hx hy
+
+theorem mem_FF2K_zero (x : K ⊗[ℚ] (F2 ⊗[ℚ] F2)) : x ∈ FF2K K 0 := by
+  induction x using TensorProduct.induction_on with
+  | zero => exact zero_mem _
+  | tmul k p => exact tmul_mem_FF2K k (mem_FF2_zero p)
+  | add x y hx hy => exact add_mem hx hy
+
+theorem FF2K_mul_left {m : ℕ} (a : K ⊗[ℚ] (F2 ⊗[ℚ] F2)) {x : K ⊗[ℚ] (F2 ⊗[ℚ] F2)}
+    (hx : x ∈ FF2K K m) : a * x ∈ FF2K K m :=
+  mul_mem_FF2K' (zero_add m) (mem_FF2K_zero a) hx
+
+theorem FF2K_mul_right {m : ℕ} (a : K ⊗[ℚ] (F2 ⊗[ℚ] F2)) {x : K ⊗[ℚ] (F2 ⊗[ℚ] F2)}
+    (hx : x ∈ FF2K K m) : x * a ∈ FF2K K m :=
+  mul_mem_FF2K' (add_zero m) hx (mem_FF2K_zero a)
+
+/-- Products respect congruence modulo `FF2K m`. -/
+theorem mul_sub_mul_mem_FF2K {m : ℕ} {x x' y y' : K ⊗[ℚ] (F2 ⊗[ℚ] F2)}
+    (hx : x - x' ∈ FF2K K m) (hy : y - y' ∈ FF2K K m) : x * y - x' * y' ∈ FF2K K m := by
+  have e : x * y - x' * y' = (x - x') * y + x' * (y - y') := by
+    rw [sub_mul, mul_sub]; abel
+  rw [e]; exact add_mem (FF2K_mul_right _ hx) (FF2K_mul_left _ hy)
+
+/-- A rational contraction of `FF2K m` lies in `FF2 m`. -/
+theorem contract_mem_FF2 (μ : K →ₗ[ℚ] ℚ) {m : ℕ} {x : K ⊗[ℚ] (F2 ⊗[ℚ] F2)}
+    (hx : x ∈ FF2K K m) : contract μ (F2 ⊗[ℚ] F2) x ∈ FF2 m := by
+  unfold FF2K at hx
+  induction hx using Submodule.span_induction with
+  | mem x hx =>
+    obtain ⟨k, u, v, hw, rfl⟩ := hx
+    rw [contract_tmul]
+    exact Submodule.smul_mem _ _ (Submodule.subset_span ⟨u, v, hw, rfl⟩)
+  | zero => simp
+  | add a b _ _ ha hb => rw [map_add]; exact add_mem ha hb
+  | smul r a _ ha => rw [map_smul]; exact Submodule.smul_mem _ r ha
+
+/-- A filtered algebra map `F2 → F2 ⊗ F2`, with coefficients in `K`, maps `FFK m` into
+`FF2K m`. -/
+theorem mapK_mem_FF2K {f : F2 →ₐ[ℚ] F2 ⊗[ℚ] F2} (hf : ∀ {m : ℕ} {p : F2}, p ∈ FF m → f p ∈ FF2 m)
+    {m : ℕ} {x : K ⊗[ℚ] F2} (hx : x ∈ FFK K m) :
+    Algebra.TensorProduct.map (AlgHom.id K K) f x ∈ FF2K K m := by
+  obtain ⟨z, rfl⟩ := hx
+  induction z using TensorProduct.induction_on with
+  | zero => simp
+  | add a b ha hb => rw [map_add, map_add]; exact add_mem ha hb
+  | tmul k p =>
+    simp only [LinearMap.lTensor_tmul, Submodule.subtype_apply, Algebra.TensorProduct.map_tmul,
+      AlgHom.id_apply]
+    exact tmul_mem_FF2K k (hf p.2)
+
+theorem copK_mem {m : ℕ} {x : K ⊗[ℚ] F2} (hx : x ∈ FFK K m) : copK K x ∈ FF2K K m :=
+  mapK_mem_FF2K (fun hp => cop_mem_FF2 hp) hx
+
+theorem i1K_mem {m : ℕ} {x : K ⊗[ℚ] F2} (hx : x ∈ FFK K m) : i1K K x ∈ FF2K K m :=
+  mapK_mem_FF2K (fun {m p} hp => by simpa using tmul_mem_FF2 hp (mem_FF_zero (1 : F2))) hx
+
+theorem i2K_mem {m : ℕ} {x : K ⊗[ℚ] F2} (hx : x ∈ FFK K m) : i2K K x ∈ FF2K K m :=
+  mapK_mem_FF2K (fun {m p} hp => by simpa using tmul_mem_FF2 (mem_FF_zero (1 : F2)) hp) hx
+
+/-- The two inclusions commute. -/
+theorem i1K_mul_i2K (x y : K ⊗[ℚ] F2) : i1K K x * i2K K y = i2K K y * i1K K x := by
+  induction x using TensorProduct.induction_on with
+  | zero => simp
+  | add a b ha hb => rw [map_add, add_mul, mul_add, ha, hb]
+  | tmul k p =>
+    induction y using TensorProduct.induction_on with
+    | zero => simp
+    | add a b ha hb => rw [map_add, add_mul, mul_add, ha, hb]
+    | tmul k' q =>
+      simp only [i1K_tmul, i2K_tmul, Algebra.TensorProduct.tmul_mul_tmul, mul_one, one_mul,
+        mul_comm k k']
+
+variable (K) in
+/-- **Group-likeness modulo `FF2K m`:** `Δ Ψ ≡ Ψ ⊗ Ψ`. -/
+def GLK (m : ℕ) (Ψ : K ⊗[ℚ] F2) : Prop :=
+  copK K Ψ - i1K K Ψ * i2K K Ψ ∈ FF2K K m
+
+variable (K) in
+/-- **Primitivity modulo `FF2K m`:** `Δ a ≡ a ⊗ 1 + 1 ⊗ a`. -/
+def PrimK (m : ℕ) (a : K ⊗[ℚ] F2) : Prop :=
+  copK K a - (i1K K a + i2K K a) ∈ FF2K K m
+
+theorem GLK.mul {m : ℕ} {Ψ Φ : K ⊗[ℚ] F2} (hΨ : GLK K m Ψ) (hΦ : GLK K m Φ) :
+    GLK K m (Ψ * Φ) := by
+  unfold GLK at *
+  have hc := i1K_mul_i2K Φ Ψ
+  have e : i1K K (Ψ * Φ) * i2K K (Ψ * Φ) = (i1K K Ψ * i2K K Ψ) * (i1K K Φ * i2K K Φ) := by
+    calc i1K K (Ψ * Φ) * i2K K (Ψ * Φ) = i1K K Ψ * ((i1K K Φ * i2K K Ψ) * i2K K Φ) := by
+          simp only [map_mul, mul_assoc]
+      _ = i1K K Ψ * ((i2K K Ψ * i1K K Φ) * i2K K Φ) := by rw [hc]
+      _ = _ := by simp only [mul_assoc]
+  rw [map_mul, e]
+  exact mul_sub_mul_mem_FF2K hΨ hΦ
+
+theorem GLK.congr {m : ℕ} {Ψ Ψ' : K ⊗[ℚ] F2} (hΨ : GLK K m Ψ) (h : Ψ - Ψ' ∈ FFK K m) :
+    GLK K m Ψ' := by
+  unfold GLK at *
+  have h1 := i1K_mem h
+  have h2 := i2K_mem h
+  have hc := copK_mem h
+  rw [map_sub] at h1 h2 hc
+  have hm := mul_sub_mul_mem_FF2K h1 h2
+  have e : copK K Ψ' - i1K K Ψ' * i2K K Ψ' =
+      (copK K Ψ - i1K K Ψ * i2K K Ψ) - (copK K Ψ - copK K Ψ') +
+        (i1K K Ψ * i2K K Ψ - i1K K Ψ' * i2K K Ψ') := by abel
+  rw [e]
+  exact add_mem (sub_mem hΨ hc) hm
+
+theorem GLK.anti {m n : ℕ} (h : m ≤ n) {Ψ : K ⊗[ℚ] F2} (hΨ : GLK K n Ψ) : GLK K m Ψ :=
+  FF2K_anti h hΨ
+
+/-- **Rational group-likeness modulo `FF2 m`:** `Δ y ≡ y ⊗ y`. -/
+def GL (m : ℕ) (y : F2) : Prop := cop y - y ⊗ₜ y ∈ FF2 m
+
+/-- Group-likeness of `1 ⊗ y` over `K` gives group-likeness of `y` over `ℚ`. -/
+theorem GL_of_GLK {m : ℕ} {y : F2} (h : GLK K m ((1 : K) ⊗ₜ y)) : GL m y := by
+  obtain ⟨π, hπ⟩ := exists_retraction (k := ℚ) (K := K)
+  have := contract_mem_FF2 π h
+  simp only [copK_tmul, i1K_tmul, i2K_tmul, Algebra.TensorProduct.tmul_mul_tmul, mul_one,
+    one_mul, ← tmul_sub, contract_tmul, hπ, one_smul] at this
+  exact this
+
+/-- The defect `Δ − i₁ − i₂` on `K ⊗ FF d`. -/
+theorem copK_sub_lTensor {d : ℕ} (z : K ⊗[ℚ] FF d) :
+    copK K (LinearMap.lTensor K (FF d).subtype z) - i1K K (LinearMap.lTensor K (FF d).subtype z) -
+      i2K K (LinearMap.lTensor K (FF d).subtype z) =
+        LinearMap.lTensor K (primDef ∘ₗ (FF d).subtype) z := by
+  induction z using TensorProduct.induction_on with
+  | zero => simp
+  | add a b ha hb => simp only [map_add] at ha hb ⊢; rw [← ha, ← hb]; abel
+  | tmul k p =>
+    simp only [LinearMap.lTensor_tmul, Submodule.subtype_apply, copK_tmul, i1K_tmul, i2K_tmul,
+      LinearMap.coe_comp, Function.comp_apply, primDef_apply, tmul_sub]
+
+/-- **The primitive top layer from group-likeness.** If `1 ⊗ Φ + z` (`z ∈ K ⊗ FF d`, `d ≥ 1`,
+`ε(Φ) = 1`) is group-like modulo `FF2K (d + 1)`, then for all functionals `μ, ν : K → ℚ` the
+combination `μ(1)·c_ν(z) − ν(1)·c_μ(z)` agrees modulo `FF (d + 1)` with a primitive homogeneous
+element of degree `d`. -/
+theorem primLayer_of_GLK {d : ℕ} (hd : 1 ≤ d) {Φ : F2}
+    (hΦ : FreeAlgebra.algebraMapInv Φ = 1) (z : K ⊗[ℚ] FF d)
+    (hGL : GLK K (d + 1) ((1 : K) ⊗ₜ Φ + LinearMap.lTensor K (FF d).subtype z))
+    (μ ν : K →ₗ[ℚ] ℚ) :
+    ∃ h : F2, Homog d h ∧
+      μ 1 • (contract ν (FF d) z : F2) - ν 1 • (contract μ (FF d) z : F2) - h ∈ FF (d + 1) ∧
+        IsPrimitive h := by
+  set Z := LinearMap.lTensor K (FF d).subtype z with hZ
+  set ρ : F2 ⊗[ℚ] F2 := cop Φ - Φ ⊗ₜ Φ with hρ
+  have hZd : Z ∈ FFK K d := ⟨z, rfl⟩
+  have hP1 : (1 : K) ⊗ₜ[ℚ] Φ - (1 : K ⊗[ℚ] F2) ∈ FFK K 1 := by
+    have e : (1 : K) ⊗ₜ[ℚ] Φ - (1 : K ⊗[ℚ] F2) = (1 : K) ⊗ₜ (Φ - algebraMap ℚ _ (FreeAlgebra.algebraMapInv Φ)) := by
+      rw [hΦ, map_one, tmul_sub, ← Algebra.TensorProduct.one_def]
+    rw [e]; exact tmul_mem_FFK _ (sub_algebraMapInv_mem_FF Φ)
+  -- the top-layer defect
+  have hT : copK K Z - i1K K Z - i2K K Z + (1 : K) ⊗ₜ ρ ∈ FF2K K (d + 1) := by
+    have a1 : (i1K K ((1 : K) ⊗ₜ Φ) - 1) * i2K K Z ∈ FF2K K (d + 1) := by
+      have := i1K_mem hP1; rw [map_sub, i1K_one] at this
+      exact mul_mem_FF2K' (by omega) this (i2K_mem hZd)
+    have a2 : i1K K Z * (i2K K ((1 : K) ⊗ₜ Φ) - 1) ∈ FF2K K (d + 1) := by
+      have := i2K_mem hP1; rw [map_sub, i2K_one] at this
+      exact mul_mem_FF2K' (by omega) (i1K_mem hZd) this
+    have a3 : i1K K Z * i2K K Z ∈ FF2K K (d + 1) :=
+      FF2K_anti (by omega) (mul_mem_FF2K (i1K_mem hZd) (i2K_mem hZd))
+    have e : copK K Z - i1K K Z - i2K K Z + (1 : K) ⊗ₜ ρ =
+        (copK K ((1 : K) ⊗ₜ Φ + Z) - i1K K ((1 : K) ⊗ₜ Φ + Z) * i2K K ((1 : K) ⊗ₜ Φ + Z)) +
+          (i1K K ((1 : K) ⊗ₜ Φ) - 1) * i2K K Z + i1K K Z * (i2K K ((1 : K) ⊗ₜ Φ) - 1) +
+            i1K K Z * i2K K Z := by
+      simp only [map_add, copK_tmul, i1K_tmul, i2K_tmul, hρ, tmul_sub, add_mul, mul_add,
+        sub_mul, mul_sub, one_mul, Algebra.TensorProduct.tmul_mul_tmul, mul_one]
+      abel
+    rw [e]
+    exact add_mem (add_mem (add_mem hGL a1) a2) a3
+  -- contract
+  have hR : ∀ κ : K →ₗ[ℚ] ℚ,
+      primDef (contract κ (FF d) z : F2) + κ 1 • ρ ∈ FF2 (d + 1) := by
+    intro κ
+    have := contract_mem_FF2 κ hT
+    rwa [map_add, copK_sub_lTensor, contract_lTensor, contract_tmul] at this
+  set p : F2 := μ 1 • (contract ν (FF d) z : F2) - ν 1 • (contract μ (FF d) z : F2) with hp
+  have hpd : p ∈ FF d :=
+    sub_mem (Submodule.smul_mem _ _ (contract ν (FF d) z).2)
+      (Submodule.smul_mem _ _ (contract μ (FF d) z).2)
+  have hδ : primDef p ∈ FF2 (d + 1) := by
+    have e : primDef p = μ 1 • (primDef (contract ν (FF d) z : F2) + ν 1 • ρ) -
+        ν 1 • (primDef (contract μ (FF d) z : F2) + μ 1 • ρ) := by
+      rw [hp, map_sub, map_smul, map_smul, smul_add, smul_add, smul_smul, smul_smul, mul_comm]
+      abel
+    rw [e]
+    exact sub_mem (Submodule.smul_mem _ _ (hR ν)) (Submodule.smul_mem _ _ (hR μ))
+  obtain ⟨h, hh, hph, hprim⟩ := exists_primitive_layer hpd hδ
+  exact ⟨h, hh, hph, hprim⟩
+
+end OverK
+
 end QOU.BraidsAndKnots.RationalAssociator
