@@ -109,3 +109,15 @@ On the torus-invariant block K[ζ], ζ=βγ: Cartan field kills K[ζ] (cartanFie
 2026-11-27: PR #9758 (stacked on rename #9756) proves (id⊗h)Δ = h·1 and (h⊗id)Δ = h·1 for q not a root of unity. It also proves uniqueness: a functional killed by X±, X₀, or a left-invariant one, equals g(1)·h. Root-of-unity no-go: if g(1) ≠ 0 and g∘X₊ = 0 then every [n+1]_{q²} ≠ 0, so at a nontrivial root of unity no normalised invariant functional exists. Coassociativity is in OqSU2Coassoc.lean. Not covered: q = ±1; positivity remains in #9646.
 
 **2026-11-27 (thread 'Audit the q-Bessel special-function dictionary'), PR #9746.** Cartan Haar pairing nondegenerate (`OqSU2CartanPairingNondegenerate.lean`, q-Hilbert via a Lagrange numerator, no determinant); little q-Jacobi eigenpolynomials p_n of L span K[ζ], h(p_m p_n)=0 for m≠n, h(p_n²)≠0 (`OqSU2LittleQJacobiBasis.lean`); every weight-block pairing K[ζ](βδ)^s × (αγ)^s K[ζ] nondegenerate on both sides (`q_ns_block_pairing_nondegenerate.lean`). Sorry-free. Still open: L self-adjoint per block, giving the α=s little q-Jacobi basis (bean qou-t3nx); Part A.
+
+
+## 2026-11-27 triad transfer by PBW block (PR #9766)
+
+qou PR #9766, file QOU/FluidDynamics/q_ns_haar_triad_weight.lean, is sorry-free. For the twisted fields X+, X-, X0, the block coupling D_X(x,y) = h(x * X y) obeys two rules.
+
+- Selection rule: D_X(x,y) vanishes unless w_x + w_y + w_X = 0.
+- Twisted skew symmetry: on the selection support, D_X(x,y) = -q^(-(a+m)) D_X(y,x) for all three fields, where (a,m) is the weight of the receiving block.
+
+So transfer is exactly skew iff a + m = 0, which on a PBW monomial (a,b,c) is a + b - c = 0. This computes the twist that q_ns_triad_noncomm left as a gap.
+
+Not established: the link to nabla_q, any nonzero coupling, Part A. The bean stays open.
