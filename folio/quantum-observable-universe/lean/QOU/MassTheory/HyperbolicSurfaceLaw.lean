@@ -306,4 +306,41 @@ theorem affine_over_affine_not_surfaceTerm (αc βc αs βs : ℝ) (hαc : 0 < �
   simp at this
   exact hαs (div_eq_zero_iff.mp this.symm |>.resolve_right hαc.ne')
 
+/-! ## Finite-volume neutrality offset and sign-change obstruction (`bean qou-17mq`)
+
+On a finite-volume quotient, a kernel shifted by its volume-weighted average
+`μ = (w₁ * K₁ + w₂ * K₂) / (w₁ + w₂)` has weighted sum identically zero, and whenever
+`K₁ < K₂` with positive volume weights `0 < w₁`, `0 < w₂`, the subtracted kernel
+takes both signs (`K₁ - μ < 0 < K₂ - μ`), whereas an unsubtracted strictly positive
+kernel has strictly positive weighted sum (`0 < w₁ * K₁ + w₂ * K₂`). -/
+
+/-- For a non-constant kernel `K₁ < K₂` on a two-region finite-volume partition with
+weights `0 < w₁`, `0 < w₂`, any constant shift `μ` that makes the weighted integral
+vanish (`w₁ * (K₁ - μ) + w₂ * (K₂ - μ) = 0`) forces `K₁ - μ < 0` and `0 < K₂ - μ`. -/
+theorem neutralised_kernel_takes_both_signs {w₁ w₂ K₁ K₂ μ : ℝ}
+    (hw₁ : 0 < w₁) (hw₂ : 0 < w₂) (hK : K₁ < K₂)
+    (hzero : w₁ * (K₁ - μ) + w₂ * (K₂ - μ) = 0) :
+    K₁ - μ < 0 ∧ 0 < K₂ - μ := by
+  have h1 : (w₁ + w₂) * (K₁ - μ) = -w₂ * (K₂ - K₁) := by
+    linear_combination hzero
+  have h2 : (w₁ + w₂) * (K₂ - μ) = w₁ * (K₂ - K₁) := by
+    linear_combination hzero
+  have hw_sum : 0 < w₁ + w₂ := by linarith [hw₁, hw₂]
+  have hK_diff : 0 < K₂ - K₁ := by linarith [hK]
+  refine ⟨?_, ?_⟩
+  · have h_rhs_neg : (w₁ + w₂) * (K₁ - μ) < 0 := by nlinarith [h1, hw₂, hK_diff]
+    nlinarith [hw_sum, h_rhs_neg]
+  · have h_rhs_pos : 0 < (w₁ + w₂) * (K₂ - μ) := by nlinarith [h2, hw₁, hK_diff]
+    nlinarith [hw_sum, h_rhs_pos]
+
+/-- An unsubtracted strictly positive kernel (`0 < K₁`, `0 < K₂`) on positive weights
+`0 < w₁`, `0 < w₂` has strictly positive weighted integral and therefore cannot satisfy
+the zero-mean neutrality constraint without subtracting a positive background offset. -/
+theorem unsubtracted_positive_kernel_nonzero_mean {w₁ w₂ K₁ K₂ : ℝ}
+    (hw₁ : 0 < w₁) (hw₂ : 0 < w₂) (hK₁ : 0 < K₁) (hK₂ : 0 < K₂) :
+    0 < w₁ * K₁ + w₂ * K₂ ∧ w₁ * K₁ + w₂ * K₂ ≠ 0 := by
+  have h_pos : 0 < w₁ * K₁ + w₂ * K₂ := by
+    nlinarith [hw₁, hw₂, hK₁, hK₂]
+  exact ⟨h_pos, ne_of_gt h_pos⟩
+
 end QOU.Mass.HyperbolicSurfaceLaw

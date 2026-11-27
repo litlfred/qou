@@ -169,4 +169,31 @@ theorem chiral_sign_cancels (R : Type*) [CommRing R]
 
 end SignSource
 
+/-! ## Self-conjugate block count vs linear-chain bond count and the two-row cap (`qou-58r5`) -/
+
+/-- **Two-row self-conjugate bounding-box obstruction (`qou-58r5`).**
+A self-conjugate Young diagram `λ = λ'` has equal first-row length `rowZero = λ₁` and
+first-column length `colZero = λ'₁`. Under the `SU(2)_q` two-row cap (`colZero ≤ 2`),
+every cell fits inside the `2 × 2` bounding box (`n ≤ rowZero * colZero ≤ 4`), so no
+self-conjugate diagram with `≤ 2` rows exists for any `n ≥ 5`. -/
+theorem no_two_row_self_conjugate_ge_five {n rowZero colZero : ℕ}
+    (hself : rowZero = colZero) (hcap : colZero ≤ 2)
+    (hbbox : n ≤ rowZero * colZero) (h5 : 5 ≤ n) : False := by
+  have hprod : rowZero * colZero ≤ 4 := by
+    rw [hself]
+    nlinarith [hcap]
+  omega
+
+/-- Specialisation to the deuteron (`A = 2`, `n = 6`) and `⁴He` (`A = 4`, `n = 12`):
+neither `H₆(q)` nor `H₁₂(q)` contains any self-conjugate block in the physical two-row
+(`ℓ(λ) ≤ 2`) stratum (`qou-58r5`). -/
+theorem deuteron_and_helium4_no_two_row_self_conjugate {rowZero colZero : ℕ}
+    (hself : rowZero = colZero) (hcap : colZero ≤ 2) :
+    ¬ (6 ≤ rowZero * colZero) ∧ ¬ (12 ≤ rowZero * colZero) := by
+  constructor
+  · intro h6
+    exact no_two_row_self_conjugate_ge_five hself hcap h6 (by omega)
+  · intro h12
+    exact no_two_row_self_conjugate_ge_five hself hcap h12 (by omega)
+
 end QOU.Resurgence

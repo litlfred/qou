@@ -246,4 +246,64 @@ theorem braidClosureComponents_eq_of_indices_eq
       = closureComponents (wordPerm adjacentPerm w) :=
   closureComponents_eq_of_indices_eq adjacentPerm h
 
+/-! ## §5  Resolution-wide candidate exclusion (`bean qou-e5jf`)
+
+To exclude a candidate link across all `2^k` crossing-sign resolutions of an
+unsigned or partially averaged braid word, it suffices to check the component
+count on a **single** reference resolution `f₀`: if `closureComponents` at `f₀`
+differs from the candidate's component count, then no resolution `f` can induce
+the candidate's strand permutation. For the 23-letter deuteron word on 6 strands,
+where any reference resolution has `3` closure components, this rules out every
+1-component knot (`6₂` and `3₁`) and every 2-component link across all `2⁵ = 32`
+resolutions simultaneously. -/
+
+/-- Resolving an unsigned word from offset `k` preserves the word length. -/
+theorem resolveFrom_length (f : ℕ → Bool) (idx : List ι) (k : ℕ) :
+    (resolveFrom f idx k).length = idx.length := by
+  induction idx generalizing k with
+  | nil =>
+    simp [resolveFrom]
+  | cons i rest ih =>
+    simp [resolveFrom, ih]
+
+/-- Every resolution of an unsigned word has the same letter count as the
+underlying index list. -/
+theorem resolve_length (f : ℕ → Bool) (idx : List ι) :
+    (resolve f idx).length = idx.length :=
+  resolveFrom_length f idx 0
+
+/-- **Single-resolution exclusion transfers to all resolutions.**
+If the component count of `resolve f₀ idx` differs from that of a candidate
+permutation `π_cand`, then `wordPerm g (resolve f idx) ≠ π_cand` for *every*
+sign resolution `f`. -/
+theorem wordPerm_resolve_ne_of_components_ne (g : ι → Perm (Fin n))
+    (f₀ f : ℕ → Bool) (idx : List ι) (π_cand : Perm (Fin n))
+    (h_ne : closureComponents (wordPerm g (resolve f₀ idx)) ≠
+      closureComponents π_cand) :
+    wordPerm g (resolve f idx) ≠ π_cand := by
+  have h_inv : closureComponents (wordPerm g (resolve f idx)) =
+      closureComponents (wordPerm g (resolve f₀ idx)) :=
+    closureComponents_resolve g f f₀ idx
+  have h_ne_f : closureComponents (wordPerm g (resolve f idx)) ≠
+      closureComponents π_cand := by
+    rw [h_inv]
+    exact h_ne
+  exact closureComponents_ne_of_perm_ne h_ne_f
+
+/-- **Three-component exclusion of knots and two-component links (`bean qou-e5jf`).**
+If a reference resolution `f₀` of `idx` gives `3` closure components, then no
+resolution `f` can match a candidate permutation `π_cand` whose closure has `1`
+or `2` components. -/
+theorem three_component_word_excludes_one_and_two
+    (f₀ f : ℕ → Bool) (idx : List (Fin (n - 1))) (π_cand : Perm (Fin n))
+    (h3 : closureComponents (wordPerm adjacentPerm (resolve f₀ idx)) = 3)
+    (hcand : closureComponents π_cand = 1 ∨ closureComponents π_cand = 2) :
+    wordPerm adjacentPerm (resolve f idx) ≠ π_cand := by
+  have h_ne : closureComponents (wordPerm adjacentPerm (resolve f₀ idx)) ≠
+      closureComponents π_cand := by
+    rcases hcand with h1 | h2
+    · rw [h3, h1]; decide
+    · rw [h3, h2]; decide
+  exact wordPerm_resolve_ne_of_components_ne adjacentPerm f₀ f idx π_cand h_ne
+
 end QOU.BraidsAndKnots

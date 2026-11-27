@@ -489,4 +489,17 @@ theorem crossTerm_parity_ratio_cap {q : ℝ} (hq1 : 1 ≤ q) (hd : markovDefect 
   rw [crossTerm_parity_ratio_eq_bond hd]
   exact bondOfTz_parity_ratio_cap hq1 htz
 
+
+/-- **Classical vanishing `parityRatioSlope 1 = 0` and Cayley `q⁴` recovery identities (`qou-vwu3`).**
+At `q = 1`, `parityRatioSlope 1 = 0`, and for every `q : ℝ`,
+`(1 + parityRatioSlope q) * (q ^ 4 + 1) = 2 * q ^ 4` and `(1 - parityRatioSlope q) * (q ^ 4 + 1) = 2`. -/
+theorem parityRatioSlope_at_one_and_cayley (q : ℝ) :
+    parityRatioSlope 1 = 0 ∧
+      (1 + parityRatioSlope q) * (q ^ 4 + 1) = 2 * q ^ 4 ∧
+      (1 - parityRatioSlope q) * (q ^ 4 + 1) = 2 := by
+  have h4 : (q ^ 4 + 1 : ℝ) ≠ 0 := by positivity
+  refine ⟨by unfold parityRatioSlope; norm_num, ?_, ?_⟩
+  · unfold parityRatioSlope; field_simp; ring
+  · unfold parityRatioSlope; field_simp; ring
+
 end QOU.MassTheory.BondChannelTzParity

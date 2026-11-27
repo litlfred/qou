@@ -121,4 +121,89 @@ theorem annihilator_not_monotone :
   rw [not_annihilates_pow_two 0] at h0
   norm_num at h0
 
+/-! ## Route D closure: pointwise product of first-order towers (`bean qou-blla`)
+
+While `annihilator_not_monotone` shows that `A_f` is not carried into `A_{f·g}`
+by the identity map on operators, the pointwise product of two first-order
+shift-recurrence towers *is* annihilated by a constructed first-order operator
+whose coefficients multiply the factor coefficients: if `a₀·f(n) + a₁·f(n+1) = 0`
+and `b₀·g(n) + b₁·g(n+1) = 0`, then
+
+    `-(a₀·b₀)·(f(n)·g(n)) + (a₁·b₁)·(f(n+1)·g(n+1)) = 0`
+
+over any commutative ring `K`. For higher-order recurrences of orders `d₁` and
+`d₂`, eliminating the coupled shift states `(f(n+i), g(n+j))` takes place inside
+the tensor-product state space of dimension `d₁ · d₂`, which strictly exceeds
+`max(d₁, d₂)` whenever `d₁, d₂ ≥ 2`. -/
+
+/-- **Pointwise-product closure for first-order shift annihilators.**
+If `a₀ + a₁·L` annihilates `f` and `b₀ + b₁·L` annihilates `g`, then the
+constructed operator `-(a₀·b₀) + (a₁·b₁)·L` annihilates the pointwise product
+`fun n => f n * g n`. -/
+theorem annihilates_pointwise_mul {a₀ a₁ b₀ b₁ : K} {f g : ℕ → K}
+    (hf : annihilates a₀ a₁ f) (hg : annihilates b₀ b₁ g) :
+    annihilates (-(a₀ * b₀)) (a₁ * b₁) (fun n => f n * g n) := by
+  intro n
+  have hfn : a₀ * f n + a₁ * shift f n = 0 := hf n
+  have hgn : b₀ * g n + b₁ * shift g n = 0 := hg n
+  have h_prod : shift (fun m => f m * g m) n = shift f n * shift g n := by
+    change f (n + 1) * g (n + 1) = f (n + 1) * g (n + 1)
+    ring
+  rw [h_prod]
+  linear_combination (b₁ * shift g n) * hfn - (a₀ * f n) * hgn
+
+/-- The geometric colour tower `g(n) = 2^n` is annihilated by `L - 2`
+(`a₀ = -2`, `a₁ = 1`). -/
+theorem annihilates_pow_two :
+    annihilates (-2 : ℚ) 1 (fun n : ℕ => (2 : ℚ) ^ n) := by
+  intro n
+  have h_step : shift (fun m : ℕ => (2 : ℚ) ^ m) n = 2 * (2 : ℚ) ^ n := by
+    change (2 : ℚ) ^ (n + 1) = 2 * (2 : ℚ) ^ n
+    ring
+  rw [h_step]
+  ring
+
+/-- Concrete repair of the `not_annihilates_pow_two` obstruction via
+`annihilates_pointwise_mul`: combining `f ≡ 1` (`L - 1`) with `g(n) = 2^n`
+(`L - 2`) produces the product annihilator `-( (-1)·(-2) ) + (1·1)·L = L - 2`. -/
+theorem annihilates_one_mul_pow_two :
+    annihilates (-((-1 : ℚ) * (-2 : ℚ))) (1 * 1)
+      (fun n : ℕ => (fun _ : ℕ => (1 : ℚ)) n * (2 : ℚ) ^ n) :=
+  annihilates_pointwise_mul annihilates_one annihilates_pow_two
+
+/-- **Multiplicative order growth for coupled recurrences (`bean qou-blla`).**
+When two recurrence systems have state-space orders `d₁ ≥ 2` and `d₂ ≥ 2`, the
+product state-space dimension `d₁ * d₂` is strictly larger than either factor
+order `d₁` or `d₂`. -/
+theorem product_order_strictly_larger {d₁ d₂ : ℕ}
+    (hd₁ : 2 ≤ d₁) (hd₂ : 2 ≤ d₂) :
+    d₁ < d₁ * d₂ ∧ d₂ < d₁ * d₂ := by
+  constructor
+  · nlinarith [hd₁, hd₂]
+  · nlinarith [hd₁, hd₂]
+
+/-- **`q`-Weyl commutation in the function model (`qou-zhep`):**
+Shifting after diagonal multiplication by `q^n` multiplies by an extra factor of `q`:
+`L(M_q f)(n) = q · M_q(L f)(n)`. -/
+theorem shift_mulPow_comm (q : K) (f : ℕ → K) (n : ℕ) :
+    shift (mulPow q f) n = q * mulPow q (shift f) n := by
+  simp [shift, mulPow, pow_succ', mul_assoc]
+
+/-- **Hadamard multiplicative closure of first-order annihilators (`qou-zhep`):**
+While `A_f ⊆ A_{f·g}` fails (`annihilator_not_monotone`), if `(L - a₁)` annihilates `f`
+and `(L - b₁)` annihilates `g`, then `(L - a₁·b₁)` annihilates the pointwise product `f · g`. -/
+theorem annihilates_pointwise_mul_firstOrder {f g : ℕ → K} {a₁ b₁ : K}
+    (hf : annihilates (-a₁) 1 f) (hg : annihilates (-b₁) 1 g) :
+    annihilates (-(a₁ * b₁)) 1 (fun n => f n * g n) := by
+  intro n
+  have hfn : shift f n = a₁ * f n := by
+    have h := hf n
+    linear_combination h
+  have hgn : shift g n = b₁ * g n := by
+    have h := hg n
+    linear_combination h
+  change -(a₁ * b₁) * (f n * g n) + 1 * (shift f n * shift g n) = 0
+  rw [hfn, hgn]
+  ring
+
 end QOU.Eightfold.ConnectedSumProbe

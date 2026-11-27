@@ -206,4 +206,13 @@ theorem regulator_shift (A : Γ → ℝ → ℝ) (L : Γ → ℝ) (R : ℝ → �
     unfold regEnergy
     rw [hE.limUnder_eq, hE'.limUnder_eq]
 
+/-- **Pointwise BFHW-minus-MS regulator identity at every positive cutoff (`qou-uh5f`).**
+For any curve length `l > 0` and cutoff `ε > 0`, `bfhwRegulator ε l - msRegulator ε l = -4`
+identically before taking `ε → 0⁺`. -/
+theorem bfhwRegulator_sub_msRegulator_eq_neg_four (l ε : ℝ) (hl : 0 < l) (hε : 0 < ε) :
+    bfhwRegulator ε l - msRegulator ε l = -4 := by
+  unfold bfhwRegulator msRegulator
+  rw [bfhw_regularization_integral l ε hl hε]
+  ring
+
 end QOU.MobiusRegulator

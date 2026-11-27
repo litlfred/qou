@@ -188,4 +188,28 @@ theorem grid_defect_bracket {f f' : ℝ → ℝ} {h : ℝ} (hh : 0 < h) {n : ℕ
   · rw [Finset.mul_sum]
     exact Finset.sum_le_sum fun i hi => (hcell i hi).2
 
+/-- **Non-negativity of the per-cell Euler–Maclaurin bracket width (`qou-shrp`):**
+For `f'` antitone on `[a, a + h]` with `0 < h`, the upper envelope minus the lower
+envelope `(h²/2)·(f'(a) - f'(a + h))` is non-negative. -/
+theorem cell_defect_width_nonneg {f' : ℝ → ℝ} {a h : ℝ} (hh : 0 < h)
+    (hanti : AntitoneOn f' (Set.Icc a (a + h))) :
+    0 ≤ h ^ 2 / 2 * (f' a - f' (a + h)) := by
+  have hab : a ≤ a + h := by linarith
+  have hfa : f' (a + h) ≤ f' a :=
+    hanti ⟨le_rfl, hab⟩ ⟨hab, le_rfl⟩ hab
+  have hh2 : 0 ≤ h ^ 2 / 2 := by positivity
+  exact mul_nonneg hh2 (sub_nonneg.mpr hfa)
+
+/-- **Midpoint refinement of the per-cell Euler–Maclaurin bracket (`qou-shrp`):**
+The trapezoidal average `(h²/4)·(f'(a) + f'(a + h))` of the two endpoint envelopes
+approximates the cell defect within half the bracket width `(h²/4)·(f'(a) - f'(a + h))`. -/
+theorem cell_defect_sub_midpoint_le {f f' : ℝ → ℝ} {a h : ℝ} (hh : 0 < h)
+    (hderiv : ∀ x ∈ Set.Icc a (a + h), HasDerivAt f (f' x) x)
+    (hanti : AntitoneOn f' (Set.Icc a (a + h))) :
+    |(∫ u in a..(a + h), (f (a + h) - f u)) - h ^ 2 / 4 * (f' a + f' (a + h))|
+      ≤ h ^ 2 / 4 * (f' a - f' (a + h)) := by
+  have hbr := cell_defect_bracket hh hderiv hanti
+  rw [abs_sub_le_iff]
+  constructor <;> linarith [hbr.1, hbr.2]
+
 end QOU.Knot

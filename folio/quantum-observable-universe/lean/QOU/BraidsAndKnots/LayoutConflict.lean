@@ -114,4 +114,33 @@ theorem contiguous_layout_cannot_carry_a_colour_tube
   have := hinj heq
   simp [Fin.ext_iff] at this
 
+/-! ## Colour mismatch at the unique boundary and `A - 1` collinearity (`bean qou-0c19`)
+
+In the canonical `3k` block layout, reading strand positions modulo `3` as intra-block
+colour indices `{0, 1, 2}`, the unique boundary coupling `x = 3k + 2` pairs colour `2`
+of block `k` with colour `0` of block `k + 1` (`canonical_coupling_colour_mismatch`).
+Moreover, across `A` blocks `{0, …, A - 1}` there are `A - 1` adjacent interfaces, so
+any linear combination of `A` and the interface count `A - 1` collapses to a single
+affine function of `A` (`interface_count_collinear_with_mass_number`). -/
+
+/-- **Colour mismatch of the unique canonical coupling (`bean qou-0c19`).**
+Every single-generator coupling `x` between `nucleonBlock k` and `nucleonBlock (k + 1)`
+has lower colour index `x % 3 = 2` and upper colour index `(x + 1) % 3 = 0`, so the
+two coupled strands never share the same colour index modulo `3`. -/
+theorem canonical_coupling_colour_mismatch {k x : ℕ} (h : IsCoupling k x) :
+    x % 3 = 2 ∧ (x + 1) % 3 = 0 ∧ x % 3 ≠ (x + 1) % 3 := by
+  have hx : x = 3 * k + 2 := canonical_boundary_is_the_top_of_the_lower_block h
+  refine ⟨?_, ?_, ?_⟩
+  · omega
+  · omega
+  · omega
+
+/-- **Collinearity of the linear-chain interface count `A - 1` with `A` (`bean qou-0c19`).**
+Adding a term proportional to the interface count `A - 1` to an affine function
+`α * A + β` produces another affine function of `A` with slope `α + γ` and intercept
+`β - γ`, introducing zero independent linear degrees of freedom. -/
+theorem interface_count_collinear_with_mass_number (α β γ A : ℚ) :
+    α * A + β + γ * (A - 1) = (α + γ) * A + (β - γ) := by
+  ring
+
 end QOU.Hecke.LayoutConflict

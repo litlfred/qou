@@ -104,4 +104,13 @@ theorem not_geometric_order_of_lt {b₂ b₃ b₄ : R} (h : b₃ ^ 2 < b₂ * b�
     ¬ ∃ g : R, b₂ = g ^ 2 ∧ b₃ = g ^ 4 ∧ b₄ = g ^ 6 :=
   not_geometric_order (ne_of_lt h)
 
+/-- **Step-difference proportionality under the single-coupling order law (`qou-ix0x`).**
+If `b₂ = g ^ 2`, `b₃ = g ^ 4`, `b₄ = g ^ 6`, then `(b₄ - b₃) * b₂ = (b₃ - b₂) * b₃` and the
+Hankel defect `b₂ * b₄ - b₃ ^ 2` vanishes identically. -/
+theorem geometric_order_step_diff_and_hankel_zero {g : R} {b₂ b₃ b₄ : R}
+    (h₂ : b₂ = g ^ 2) (h₃ : b₃ = g ^ 4) (h₄ : b₄ = g ^ 6) :
+    (b₄ - b₃) * b₂ = (b₃ - b₂) * b₃ ∧ b₂ * b₄ - b₃ ^ 2 = 0 := by
+  subst h₂; subst h₃; subst h₄
+  constructor <;> ring
+
 end QOU.Mass.MilnorCarriesOrderNotMagnitude

@@ -86,4 +86,47 @@ example : ¬ ((4 : ℤ) % 2 = 1) := by decide
 example {c n g : ℤ} (hs : SeifertRelation c n g 3) : LabelConsistent c n := by
   rw [seifert_label_parity hs]; decide
 
+/-! ## Odd-`A` exclusion, writhe parity, and canonical surface genus (`bean qou-768r`)
+
+For odd mass number `A % 2 = 1` (such as the `A = 3` mirror pair or `A = 7`), the
+component law `mu = A + 1` gives an even number of closure components, so the
+second representation-index parity condition fails across every crossing-sign
+resolution (`label_inconsistent_of_odd_A`). By contrast, the first index difference
+`c - w = 2 * c_neg` is always even (`crossing_minus_writhe_even`), and for the
+canonical atom-word counts `c = 12 * A - 1`, `n = 3 * A`, `mu = A + 1`, the
+spanning-surface genus is `g = 4 * A` (`canonical_atom_word_genus_eq_four_A`). -/
+
+/-- **Universal odd-`A` label exclusion (`bean qou-768r`).**
+When `mu = A + 1` and `A % 2 = 1`, `LabelConsistent c n` is false for every
+`(c, n, g)` satisfying `SeifertRelation c n g mu`. -/
+theorem label_inconsistent_of_odd_A {c n g A mu : ℤ}
+    (hs : SeifertRelation c n g mu) (hmu : mu = A + 1) (hodd : A % 2 = 1) :
+    ¬ LabelConsistent c n := by
+  rw [label_admits_even_A hs hmu]
+  omega
+
+/-- **Automatic integrality of the first index (`bean qou-768r`).**
+If a braid word has `c = c_pos + c_neg` crossings and writhe `w = c_pos - c_neg`,
+then `c - w = 2 * c_neg` and `(c - w) % 2 = 0`. -/
+theorem crossing_minus_writhe_even {c w c_pos c_neg : ℤ}
+    (hc : c = c_pos + c_neg) (hw : w = c_pos - c_neg) :
+    c - w = 2 * c_neg ∧ (c - w) % 2 = 0 := by
+  refine ⟨?_, ?_⟩
+  · omega
+  · omega
+
+/-- **Canonical atom-word spanning-surface genus (`bean qou-768r`).**
+For `c = 12 * A - 1` crossings on `n = 3 * A` strands with `mu = A + 1` closure
+components, `SeifertRelation c n g mu` holds if and only if `g = 4 * A`. -/
+theorem canonical_atom_word_genus_eq_four_A {c n g A mu : ℤ}
+    (hc : c = 12 * A - 1) (hn : n = 3 * A) (hmu : mu = A + 1) :
+    SeifertRelation c n g mu ↔ g = 4 * A := by
+  have h_def : SeifertRelation c n g mu ↔ c - n = 2 * g + mu - 2 := Iff.rfl
+  rw [h_def, hc, hn, hmu]
+  constructor
+  · intro h_eq
+    omega
+  · intro hg
+    omega
+
 end QOU.Mass.SLq2Label
