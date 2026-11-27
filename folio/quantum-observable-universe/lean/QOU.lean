@@ -1067,6 +1067,7 @@ import QOU.Transcendental.Nuclear.AfreeThetaConstraintReal
 import QOU.Nuclear.AlphaQInheritance
 import QOU.Nuclear.AlphaPreformationBound
 import QOU.Nuclear.ChannelMeridianIdentification
+import QOU.Transcendental.Nuclear.ChannelMeridianIdentificationReal
 import QOU.Nuclear.CompleteStructureExclusion
 import QOU.Nuclear.ThetaLipschitzObstruction
 import QOU.Nuclear.StokesSymmetryConstant
