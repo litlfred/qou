@@ -43,7 +43,7 @@
   -- Ref: [rivin1994] (concavity of the volume of an ideal hyperbolic polyhedron)
   -- Ref: [milnor1982] §2
 -/
-import BraidKnotOctonion.BlochWignerNonneg
+import QOU.Transcendental.BraidKnotOctonion.BlochWignerNonneg
 import QOU.Transcendental.BraidKnotOctonion.RivinConcavity
 
 namespace QOU.Archimedean.BlochWignerPositive
