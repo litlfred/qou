@@ -65,3 +65,11 @@ Owner chose "Root-of-unity quotient" on the card. Goal: the semisimplified Hecke
 trace `δ^{n+1}τ_n(p_n)` equals `S_{0,n+1}` (n+1 ≤ k). Still open (stays cited): existence of a
 `MarkovTower` instance at a root of unity; off-vacuum rows (Hopf-link double braiding of JW
 projectors); twist eigenvalue on `p_n`. Bean stays open.
+
+## 2026-11-27 — braid part of the twist from the corpus TL tower (PR #9786 or next)
+
+`HeckeTemperleyLieb/TLKauffmanCrossingJonesWenzl.lean`, sorry-free: at δ = −(A²+A⁻²), Kauffman
+crossings σᵢ = A + A⁻¹eᵢ are invertible and braid; the JW projector absorbs each as A; full twist
+on n+1 strands acts by A^{n(n+1)}. Open: curl factor (−A³)^{strands}; matching θ_j = (−1)^j
+A^{j(j+2)} with T = diag(ω^{(j+1)²}) — sign (−1)^j convention; MarkovTower instance at a root of
+unity; off-vacuum S rows (Hopf link of two JW projectors). Bean stays open.
