@@ -79,12 +79,16 @@ structure FiberAdjointInvolution (C : Type u) [CategoryTheory.Category.{v} C]
     **Witness.**  `P := 𝟙`, `σ := η : 𝟙 ⟶ A`, `τ_Ad := S`.
     * `S ≫ S = 𝟙` is `antipode_involutive`;
     * `η ≫ S = η` is `antipode_unit`, so the orbit is fixed by `τ_Ad`;
-    * `σ` is injective on global points as soon as `η` has a left inverse
-      `ψ : A ⟶ 𝟙`, which is the one hypothesis `hsplit`.  It is not derivable
-      from the Frobenius–Hopf axioms alone (they do not force `ε ∘ η` or
-      `∫_A ∘ η` to be invertible: in characteristic `p` the group algebra
-      `k[ℤ/p]` has `∫_A(1) = p = 0`), so it is stated rather than assumed
-      silently.  For a Haar-normalised form (`∫_A ∘ η = 1`) take `ψ = ∫_A`.
+    * `σ` is injective on global points exactly when `A` is **faithful** over
+      the scalars `End(𝟙)`: `s ≫ η = 0 → s = 0`, i.e. `r · 1_A = 0 → r = 0`.
+      This is the one hypothesis `hfaithful` (owner decision 2026-11-27).
+
+    The hypothesis is not derivable from the Frobenius–Hopf axioms and the
+    self-duality: over `R = k × k` an algebra supported on one factor has
+    `(0,1) · 1_A = 0`.  It is weaker than asking `η` for a left inverse in `C`
+    (`fiber_adjoint_involution_exists_of_leftInverse` below), which fails for
+    `A = Fun(ℤ/2, 𝔽₂)` in `Rep_{𝔽₂}(ℤ/2)`: every equivariant `A ⟶ 𝟙` is a
+    multiple of the Haar sum, which sends `1` to `2 = 0`, yet `A` is faithful.
 
     What this does not give: the coadjoint-orbit geometry `P(V) ≅ S² ⊂ su(2)`
     of the archimedean picture.  `P := 𝟙` is the orbit of the unit, the
@@ -93,18 +97,31 @@ structure FiberAdjointInvolution (C : Type u) [CategoryTheory.Category.{v} C]
 -- Ref: [lusztig1993] Introduction to Quantum Groups
 -- Ref: [leitner2026] prop:fiber-adjoint-involution
 theorem fiber_adjoint_involution_exists (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] (fh : FrobeniusHopfData C)
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]
+    [CategoryTheory.Preadditive C] (fh : FrobeniusHopfData C)
+    (hfaithful : ∀ s : 𝟙_ C ⟶ 𝟙_ C, s ≫ fh.unit = 0 → s = 0) :
+    ∃ inv : FiberAdjointInvolution C fh, ∃ h : inv.adjointObj = fh.obj,
+      inv.involution = CategoryTheory.eqToHom h ≫ fh.antipode ≫ CategoryTheory.eqToHom h.symm := by
+  refine ⟨FiberAdjointInvolution.mk (adjointObj := fh.obj) (projLine := 𝟙_ C)
+      fh.unit fh.antipode fh.antipode_involutive fh.antipode_unit
+      (fun f g hfg => ?_), rfl, ?_⟩
+  · have h0 : (f - g) ≫ fh.unit = 0 := by
+      rw [CategoryTheory.Preadditive.sub_comp, hfg, sub_self]
+    exact sub_eq_zero.mp (hfaithful _ h0)
+  · simp
+
+/-- A left inverse `ψ ∘ η = 𝟙` (for instance a Haar-normalised `∫_A`) makes
+    `A` faithful, so the involution exists.  Strictly weaker in scope than
+    `fiber_adjoint_involution_exists`; see the counterexample there. -/
+theorem fiber_adjoint_involution_exists_of_leftInverse (C : Type u)
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.BraidedCategory C] [CategoryTheory.Preadditive C] (fh : FrobeniusHopfData C)
     (hsplit : ∃ ψ : fh.obj ⟶ 𝟙_ C, fh.unit ≫ ψ = 𝟙 (𝟙_ C)) :
     ∃ inv : FiberAdjointInvolution C fh, ∃ h : inv.adjointObj = fh.obj,
       inv.involution = CategoryTheory.eqToHom h ≫ fh.antipode ≫ CategoryTheory.eqToHom h.symm := by
   obtain ⟨ψ, hψ⟩ := hsplit
-  refine ⟨FiberAdjointInvolution.mk (adjointObj := fh.obj) (projLine := 𝟙_ C)
-      fh.unit fh.antipode fh.antipode_involutive fh.antipode_unit
-      (fun f g hfg => ?_), rfl, ?_⟩
-  · calc f = f ≫ fh.unit ≫ ψ := by rw [hψ, CategoryTheory.Category.comp_id]
-      _ = g ≫ fh.unit ≫ ψ := by rw [← CategoryTheory.Category.assoc, hfg,
-            CategoryTheory.Category.assoc]
-      _ = g := by rw [hψ, CategoryTheory.Category.comp_id]
-  · simp
+  refine fiber_adjoint_involution_exists C fh fun s hs => ?_
+  calc s = s ≫ fh.unit ≫ ψ := by rw [hψ, CategoryTheory.Category.comp_id]
+    _ = 0 := by rw [← CategoryTheory.Category.assoc, hs, CategoryTheory.Limits.zero_comp]
 
 end QOU
