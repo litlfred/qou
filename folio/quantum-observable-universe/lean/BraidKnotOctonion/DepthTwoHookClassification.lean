@@ -381,4 +381,213 @@ theorem shape_of_carrier_zero_zero (l : List ℕ) (hs : l.Sorted (· ≥ ·))
         (fun x hx => hpos x (by simp [hx])) (fun i => by simpa using hrows (i + 3) (by omega))
       exact ⟨a, t.length, by omega, by rw [show b = 2 by omega, show c = 2 by omega, ← ht]⟩
 
+/-! ## The depth-2 shapes of size `n` -/
+
+/-- Family A: `(n − 3 − i, 3, 1^i)`. -/
+def rowShape (n i : ℕ) : List ℕ := (n - 3 - i) :: 3 :: List.replicate i 1
+
+/-- Family B: `(i + 2, 2, 2, 1^{n − 6 − i})`, the transpose of `rowShape n i`. -/
+def colShape (n i : ℕ) : List ℕ := (i + 2) :: 2 :: 2 :: List.replicate (n - 6 - i) 1
+
+/-- Every partition of `n ≥ 6` with a cell of hook length `n − 2`. -/
+def depthTwoShapes (n : ℕ) : List (List ℕ) :=
+  [n] :: [n - 1, 1] :: [n - 2, 2] :: List.replicate n 1 :: (2 :: List.replicate (n - 2) 1) ::
+    (2 :: 2 :: List.replicate (n - 4) 1) ::
+      ((List.range (n - 5)).map (rowShape n) ++ (List.range (n - 5)).map (colShape n))
+
+/-- The carrier cell of a depth-2 shape (meaningful on `depthTwoShapes n`, `n ≥ 6`). -/
+def carrierOf (l : List ℕ) : ℕ × ℕ :=
+  if l.getD 1 0 = 0 then (0, 2)
+  else if l.getD 1 0 = 3 then (0, 0)
+  else if l.getD 0 0 = 1 then (2, 0)
+  else if l.getD 0 0 = 2 ∧ l.getD 2 0 ≤ 1 then (1, 0)
+  else if l.getD 2 0 = 0 then (0, 1)
+  else (0, 0)
+
+/-- A sorted positive list of size `n` is a partition in `partsOf n`. -/
+theorem mem_partsOf_of (n : ℕ) (l : List ℕ) (hsum : l.sum = n) (hpos : ∀ x ∈ l, 0 < x)
+    (hs : l.Sorted (· ≥ ·)) : l ∈ partsOf n :=
+  mem_partsFuel l n n n hsum hpos (fun _ hx => hsum ▸ List.le_sum_of_mem hx) hs
+    (hsum ▸ length_le_sum l hpos)
+
+/-- **Classification.** On a partition of `n ≥ 6`, a cell of hook length `n − 2` makes the
+partition a depth-2 shape and is its carrier. -/
+theorem carrier_spec (n : ℕ) (hn : 6 ≤ n) (l : List ℕ) (hl : l ∈ partsOf n) (p : ℕ × ℕ)
+    (hp : p ∈ cells l) (hh : hookLen l p = n - 2) :
+    l ∈ depthTwoShapes n ∧ p = carrierOf l := by
+  obtain ⟨hsum, hpos, hs⟩ := partsOf_facts n l hl
+  have heq : hookLen l p + 2 = l.sum := by omega
+  obtain ⟨m, rfl⟩ : ∃ m, n = m + 6 := ⟨n - 6, by omega⟩
+  unfold depthTwoShapes
+  simp only [List.mem_cons, List.mem_append, List.mem_map, List.mem_range]
+  rcases carrier_position l hs p hp heq with ⟨h1, h2⟩ | ⟨h1, h2⟩
+  · obtain ⟨i, j⟩ := p
+    dsimp only at h1 h2
+    subst h1
+    interval_cases j
+    · rcases shape_of_carrier_zero_zero l hs hpos hp heq with ⟨a, c, ha, rfl⟩ | ⟨a, c, ha, rfl⟩
+      · simp only [List.sum_cons, sum_replicate_one] at hsum
+        refine ⟨Or.inr (Or.inr (Or.inr (Or.inr (Or.inr (Or.inr (Or.inl
+          ⟨c, by omega, by simp only [rowShape]; congr 1; omega⟩)))))), ?_⟩
+        simp [carrierOf]
+      · simp only [List.sum_cons, sum_replicate_one] at hsum
+        refine ⟨Or.inr (Or.inr (Or.inr (Or.inr (Or.inr (Or.inr (Or.inr
+          ⟨a - 2, by omega, by
+            simp only [colShape]
+            rw [show a - 2 + 2 = a by omega, show m + 6 - 6 - (a - 2) = c by omega]⟩)))))), ?_⟩
+        simp [carrierOf]
+        omega
+    · obtain ⟨a, b, ha, hb1, hb2, rfl⟩ := shape_of_carrier_zero_one l hs hpos hp heq
+      simp only [List.sum_cons, List.sum_nil] at hsum
+      have ha1 : a ≠ 1 := by omega
+      have ha2 : a ≠ 2 := by omega
+      rcases (show b = 1 ∨ b = 2 by omega) with rfl | rfl
+      · exact ⟨Or.inr (Or.inl (by congr 1; omega)), by simp [carrierOf, ha1, ha2]⟩
+      · exact ⟨Or.inr (Or.inr (Or.inl (by congr 1; omega))), by simp [carrierOf, ha1, ha2]⟩
+    · obtain ⟨a, ha, rfl⟩ := shape_of_carrier_zero_two l hs hpos hp heq
+      simp only [List.sum_cons, List.sum_nil] at hsum
+      exact ⟨Or.inl (by rw [show a = m + 6 by omega]), by simp [carrierOf]⟩
+  · obtain ⟨i, j⟩ := p
+    dsimp only at h1 h2
+    subst h1
+    interval_cases i
+    · rcases shape_of_carrier_zero_zero l hs hpos hp heq with ⟨a, c, ha, rfl⟩ | ⟨a, c, ha, rfl⟩
+      · simp only [List.sum_cons, sum_replicate_one] at hsum
+        refine ⟨Or.inr (Or.inr (Or.inr (Or.inr (Or.inr (Or.inr (Or.inl
+          ⟨c, by omega, by simp only [rowShape]; congr 1; omega⟩)))))), ?_⟩
+        simp [carrierOf]
+      · simp only [List.sum_cons, sum_replicate_one] at hsum
+        refine ⟨Or.inr (Or.inr (Or.inr (Or.inr (Or.inr (Or.inr (Or.inr
+          ⟨a - 2, by omega, by
+            simp only [colShape]
+            rw [show a - 2 + 2 = a by omega, show m + 6 - 6 - (a - 2) = c by omega]⟩)))))), ?_⟩
+        simp [carrierOf]
+        omega
+    · obtain ⟨b, c, hb1, hb2, rfl⟩ := shape_of_carrier_one_zero l hs hpos hp heq
+      simp only [List.sum_cons, sum_replicate_one] at hsum
+      have hcar : ((1 : ℕ), (0 : ℕ)) = carrierOf (2 :: b :: List.replicate c 1) := by
+        have hb0 : b ≠ 0 := by omega
+        have hb3 : b ≠ 3 := by omega
+        rcases c with _ | c
+        · simp [carrierOf, hb0, hb3]
+        · simp [carrierOf, List.replicate_succ, hb0, hb3]
+      refine ⟨?_, hcar⟩
+      rcases (show b = 1 ∨ b = 2 by omega) with rfl | rfl
+      · refine Or.inr (Or.inr (Or.inr (Or.inr (Or.inl ?_))))
+        have hc : m + 6 - 2 = c + 1 := by omega
+        rw [hc, List.replicate_succ]
+      · refine Or.inr (Or.inr (Or.inr (Or.inr (Or.inr (Or.inl ?_)))))
+        rw [show m + 6 - 4 = c by omega]
+    · obtain ⟨k, hk, rfl⟩ := shape_of_carrier_two_zero l hs hpos hp heq
+      rw [sum_replicate_one] at hsum
+      subst hsum
+      exact ⟨Or.inr (Or.inr (Or.inr (Or.inl rfl))), by simp [carrierOf, List.replicate_succ]⟩
+
+/-- Membership in `depthTwoShapes n`, unfolded into its eight cases. -/
+theorem mem_depthTwoShapes_iff (n : ℕ) (l : List ℕ) :
+    l ∈ depthTwoShapes n ↔
+      (l = [n] ∨ l = [n - 1, 1] ∨ l = [n - 2, 2] ∨ l = List.replicate n 1 ∨
+        l = 2 :: List.replicate (n - 2) 1 ∨ l = 2 :: 2 :: List.replicate (n - 4) 1 ∨
+        (∃ i < n - 5, rowShape n i = l) ∨ (∃ i < n - 5, colShape n i = l)) := by
+  unfold depthTwoShapes
+  simp only [List.mem_cons, List.mem_append, List.mem_map, List.mem_range]
+
+/-- Each depth-2 shape is a partition of `n`. -/
+theorem depthTwoShapes_mem_partsOf (n : ℕ) (hn : 6 ≤ n) (l : List ℕ)
+    (hl : l ∈ depthTwoShapes n) : l ∈ partsOf n := by
+  obtain ⟨m, rfl⟩ : ∃ m, n = m + 6 := ⟨n - 6, by omega⟩
+  rw [mem_depthTwoShapes_iff] at hl
+  rcases hl with rfl | rfl | rfl | rfl | rfl | rfl | ⟨i, hi, rfl⟩ | ⟨i, hi, rfl⟩ <;>
+    apply mem_partsOf_of <;>
+    simp [rowShape, colShape, List.Sorted, List.pairwise_cons, List.pairwise_replicate,
+      List.mem_replicate] <;> omega
+
+/-- The carrier of each depth-2 shape is a cell with hook length `n − 2`. -/
+theorem carrierOf_mem_filter (n : ℕ) (hn : 6 ≤ n) (l : List ℕ) (hl : l ∈ depthTwoShapes n) :
+    carrierOf l ∈ (cells l).filter (fun p => hookLen l p = n - 2) := by
+  have hs := (partsOf_facts n l (depthTwoShapes_mem_partsOf n hn l hl)).2.2
+  rw [Finset.mem_filter, mem_cells]
+  unfold hookLen
+  rw [conj_getD l hs]
+  obtain ⟨m, rfl⟩ : ∃ m, n = m + 6 := ⟨n - 6, by omega⟩
+  rw [mem_depthTwoShapes_iff] at hl
+  have hc := QOU.BraidsAndKnots.DepthOneHookClassification.countP_pos_replicate_one
+  rcases hl with rfl | rfl | rfl | rfl | rfl | rfl | ⟨i, hi, rfl⟩ | ⟨i, hi, rfl⟩
+  · simp [carrierOf]
+  · simp [carrierOf]
+  · simp [carrierOf]
+  · simp [carrierOf, List.replicate_succ, hc]
+    omega
+  · simp [carrierOf, List.replicate_succ, hc]
+  · simp [carrierOf, List.replicate_succ, hc]
+    omega
+  · have hi3 : i < m + 3 := by omega
+    simp [carrierOf, rowShape, hc, hi3]
+    omega
+  · have hi2 : i + 2 ≠ 1 := by omega
+    simp [carrierOf, colShape, hi2, hc]
+    omega
+
+/-- The depth-2 shapes are distinct. -/
+theorem depthTwoShapes_nodup (n : ℕ) (hn : 6 ≤ n) : (depthTwoShapes n).Nodup := by
+  obtain ⟨m, rfl⟩ : ∃ m, n = m + 6 := ⟨n - 6, by omega⟩
+  have hrow : ((List.range (m + 6 - 5)).map (rowShape (m + 6))).Nodup := by
+    refine List.Nodup.map (fun a b hab => ?_) List.nodup_range
+    have := congrArg List.length hab
+    simpa [rowShape] using this
+  have hcol : ((List.range (m + 6 - 5)).map (colShape (m + 6))).Nodup := by
+    refine List.Nodup.map (fun a b hab => ?_) List.nodup_range
+    simp only [colShape, List.cons.injEq] at hab
+    omega
+  unfold depthTwoShapes
+  simp only [List.nodup_cons, List.mem_cons, List.mem_append, List.mem_map, List.mem_range,
+    List.nodup_append]
+  refine ⟨?_, ?_, ?_, ?_, ?_, ?_, hrow, hcol, ?_⟩
+  all_goals simp [rowShape, colShape, List.replicate_succ]
+
+/-! ## Restricting the Plancherel sum -/
+
+/-- On a depth-2 shape exactly one cell has hook length `n − 2`. -/
+theorem hookCount_eq_one_of_mem (n : ℕ) (hn : 6 ≤ n) (l : List ℕ)
+    (hl : l ∈ depthTwoShapes n) : hookCount l (n - 2) = 1 := by
+  unfold hookCount
+  rw [Finset.card_eq_one]
+  refine ⟨carrierOf l, Finset.eq_singleton_iff_unique_mem.mpr
+    ⟨carrierOf_mem_filter n hn l hl, fun p hp => ?_⟩⟩
+  obtain ⟨hpc, hph⟩ := Finset.mem_filter.mp hp
+  exact (carrier_spec n hn l (depthTwoShapes_mem_partsOf n hn l hl) p hpc hph).2
+
+/-- Off the depth-2 shapes no cell has hook length `n − 2`. -/
+theorem hookCount_eq_zero_of_not_mem (n : ℕ) (hn : 6 ≤ n) (l : List ℕ)
+    (hl : l ∈ partsOf n) (hnm : l ∉ depthTwoShapes n) : hookCount l (n - 2) = 0 := by
+  unfold hookCount
+  rw [Finset.card_eq_zero, Finset.eq_empty_iff_forall_notMem]
+  intro p hp
+  obtain ⟨hpc, hph⟩ := Finset.mem_filter.mp hp
+  exact hnm (carrier_spec n hn l hl p hpc hph).1
+
+/-- **Restriction.** For `n ≥ 6` the depth-2 numerator of the `ν`-system is a sum over the
+depth-2 shapes, each counted once. -/
+theorem depthTwo_mixedMoment_eq_shapes_sum (n : ℕ) (hn : 6 ≤ n) :
+    ((partsOf n).map
+        (fun l => tilt 0 (sytDim l) * (hookCount l (n - 2) : ℝ) * (omega3 n l : ℝ))).sum
+      = ((depthTwoShapes n).map (fun l => tilt 0 (sytDim l) * (omega3 n l : ℝ))).sum := by
+  have hnd : (partsOf n).Nodup := partsFuel_nodup n n n
+  rw [← List.sum_toFinset _ hnd, ← List.sum_toFinset _ (depthTwoShapes_nodup n hn)]
+  symm
+  rw [← Finset.sum_subset (s₁ := (depthTwoShapes n).toFinset) (s₂ := (partsOf n).toFinset)
+    (fun x hx => by
+      rw [List.mem_toFinset] at hx ⊢
+      exact depthTwoShapes_mem_partsOf n hn x hx)
+    (fun x hx hnx => by
+      rw [List.mem_toFinset] at hx hnx
+      rw [hookCount_eq_zero_of_not_mem n hn x hx hnx]
+      push_cast
+      ring)]
+  refine Finset.sum_congr rfl fun l hl => ?_
+  rw [List.mem_toFinset] at hl
+  rw [hookCount_eq_one_of_mem n hn l hl]
+  push_cast
+  ring
+
 end QOU.BraidsAndKnots.DepthTwoHookClassification
