@@ -14,7 +14,7 @@ from 92.7 % to 315.8 %, and ²⁰⁸Pb gets −395 MeV. Classically the symmetry
 `(N−Z)²/A`. The task was to find whether a `1/A` comes out of the categorical structure, and
 not to insert one by hand.
 
-## 2. Result (Lean, sorry-free once verified; see §6)
+## 2. Result (Lean, sorry-free)
 
 Every multiplicative invariant of a Hecke block sees a braid word only through its
 **writhe** (exponent sum), and the Murphy product is a word of `N(N−1)` letters.
@@ -93,6 +93,6 @@ energy map for the block multiplicity exists, so this is recorded and not wired.
 
 - Probe: `PYTHONPATH=computations python3 computations/probes/isospin_twist_writhe_scaling_probe.py`,
   3/3 checks pass, including that the full-twist variant reproduces #9706's 315.8 %.
-- Lean: see the PR body for the `lean`-direct result and `#print axioms`.
+- Lean: `lean -DautoImplicit=false -s 65536 QOU/Nuclear/IsospinTwistWrithe.lean` exits 0 against the import cone built by `scripts/lean-direct-cone.sh`; `#print axioms` on `seminormal_det_word_pow`, `chi_word`, `chain_coeff_bounds`, `perLetter_twoRow` gives `[propext, Classical.choice, Quot.sound]`, no `sorryAx`.
 - No content block is touched, so no KG JSON-LD node changes.
 - No measured value appears in any proof.

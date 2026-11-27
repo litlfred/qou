@@ -26,9 +26,8 @@ exponent sum, and `Φ` is a word of `N(N−1)` letters.
 4. `seminormal_det_word_pow` — on the seminormal block `ρ_μ` of dimension `d = #SYT(μ)`,
    with `χ = det ∘ ρ_μ`:
 
-       det ρ_μ(w) ^ (N(N−1)) = (q^{2c(μ)})^{d · e(w)}          (for e(w) ≥ 0)
-
-   (`seminormal_det_word_pow_neg` gives the negative-writhe case with an inverse).
+       det ρ_μ(w) ^ (N(N−1)) = (q^{2c(μ)})^{d · e(w)}          (stated for e(w) ≥ 0;
+                                                              `chi_word` covers every e ∈ ℤ)
 5. `perLetter_twoRow` — the per-letter, per-dimension exponent of `q` on a two-row block is
 
        2c / (N(N−1))  =  2T(T+1)/(N(N−1))  +  (N−4)/(2(N−1)).
@@ -59,7 +58,8 @@ abelianisation `B_n → ℤ`).
 
 namespace QOU.Nuclear.IsospinTwistWrithe
 
-open QOU.SchurWeyl QOU.SchurWeyl.Hecke
+open QOU.SchurWeyl QOU.SchurWeyl.Hecke QOU.SchurWeyl.SeminormalRep
+open TableauCells
 open QOU.Nuclear.IsospinCasimirTwist
 open QOU.Mathlib (StandardYoungTableau)
 
@@ -83,7 +83,7 @@ theorem chi_σ_succ (χ : Hecke K q qi n →* M) (hqi : q * qi = 1) (i : Fin n)
   have h2 : (a * b) * a = (a * b) * b := by
     calc (a * b) * a = a * b * a := rfl
       _ = b * a * b := hb
-      _ = (a * b) * b := by ring
+      _ = (a * b) * b := by ac_rfl
   exact ((ha.mul hb').mul_left_cancel h2).symm
 
 /-- Every generator has the image of `σ_0`. -/
@@ -108,8 +108,9 @@ theorem chi_qJM (χ : Hecke K q qi n →* M) (hqi : q * qi = 1) (h0 : 0 < n) :
   | 0, _ => by simp
   | k + 1, hk => by
       rw [qJM_succ K q qi n (by omega : k < n), map_mul, map_mul,
-        chi_qJM χ hqi h0 k (by omega), chi_σ_eq_zero χ hqi h0 k (by omega)]
-      ring
+        chi_qJM χ hqi h0 k (by omega), chi_σ_eq_zero χ hqi h0 k (by omega), ← pow_succ',
+        ← pow_succ]
+      congr 1
 
 /-- `χ(L_0 ⋯ L_k) = a^{k(k+1)}` for `k ≤ n`. -/
 theorem chi_murphyProd (χ : Hecke K q qi n →* M) (hqi : q * qi = 1) (h0 : 0 < n) :
@@ -146,9 +147,8 @@ theorem chi_word (χ : Hecke K q qi n →* M) (hqi : q * qi = 1) (i : Fin n)
   have : (Units.map χ).comp (heckeWord (K := K) (q := q) (qi := qi) hqi)
       = (zpowersHom Mˣ u).comp writhe := by
     ext j
-    apply Units.ext
-    simp only [MonoidHom.comp_apply, heckeWord, writhe, FreeGroup.lift.of,
-      zpowersHom_apply, toAdd_ofAdd, zpow_one, Units.coe_map]
+    simp only [MonoidHom.comp_apply, heckeWord, writhe, FreeGroup.lift_apply_of,
+      zpowersHom_apply, toAdd_ofAdd, zpow_one, Units.coe_map, σUnit]
     simp only [u, IsUnit.unit_spec]
     exact chi_σ_eq χ hqi j i
   exact DFunLike.congr_fun this w
@@ -194,9 +194,10 @@ theorem seminormal_det_word_pow (q : K) (hq0 : q ≠ 0)
   have hqi : q * q⁻¹ = 1 := mul_inv_cancel₀ hq0
   have h := congrArg Units.val (chi_word (blockDet q hq0 hq2 n hN) hqi ⟨0, h0⟩ w)
   rw [he, zpow_natCast, Units.val_pow_eq_pow_val, IsUnit.unit_spec, Units.coe_map] at h
-  rw [← blockDet_apply, show (blockDet q hq0 hq2 n hN) (heckeWord hqi w : Hecke K q q⁻¹ n)
-      = (blockDet q hq0 hq2 n hN (σ K q q⁻¹ n ⟨0, h0⟩)) ^ e from h, ← pow_mul, mul_comm _ e,
-    pow_mul, blockDet_apply, seminormal_det_σ_pow q hq0 hq2 n hN ⟨0, h0⟩, ← pow_mul, mul_comm]
+  have h' : (blockDet q hq0 hq2 n hN) (heckeWord hqi w : Hecke K q q⁻¹ n)
+      = (blockDet q hq0 hq2 n hN (σ K q q⁻¹ n ⟨0, h0⟩)) ^ e := h
+  rw [← blockDet_apply, h', ← pow_mul, mul_comm e, pow_mul, blockDet_apply,
+    seminormal_det_σ_pow q hq0 hq2 n hN ⟨0, h0⟩, ← pow_mul]
 
 end Block
 
@@ -213,15 +214,17 @@ theorem perLetter_twoRow (N t c : ℚ) (hN : N * (N - 1) ≠ 0) (hN1 : N - 1 ≠
     2 * c / (N * (N - 1)) = t * (t + 2) / 2 / (N * (N - 1)) + (N - 4) / (2 * (N - 1)) := by
   have hN0 : N ≠ 0 := by
     intro h; apply hN; simp [h]
+  have hc' : c = (t * (t + 2) + N * (N - 4)) / 4 := by linarith
+  subst hc'
   field_simp
-  linear_combination (2 * N * (N - 1)) * hc / 4 - 0 * hN0
+  ring
 
 /-- **`T(T+1)` coefficient of a word of writhe `e`**, in powers of `q` per block dimension. -/
 def ttCoeff (N e : ℚ) : ℚ := 2 * e / (N * (N - 1))
 
 /-- The full twist (`e = N(N−1)`) has coefficient `2`, independent of `N`: this is #9706. -/
 theorem fullTwist_coeff (N : ℚ) (hN : N * (N - 1) ≠ 0) : ttCoeff N (N * (N - 1)) = 2 := by
-  unfold ttCoeff; field_simp
+  unfold ttCoeff; rw [mul_div_assoc, div_self hN, mul_one]
 
 /-- **The chain word is `Θ(1/A)`.**  With `e = A − 1` bond letters on `N = 3A` strands, the
 `T(T+1)` coefficient lies in `[1/(9A), 2/(9A)]` for every `A ≥ 2`. -/
@@ -242,9 +245,9 @@ theorem chain_coeff_mul_A (A : ℚ) (hA : 2 ≤ A) :
   have hA0 : A ≠ 0 := by intro h; linarith
   have h3 : 3 * A - 1 ≠ 0 := by intro h; linarith
   field_simp
-  ring
 
 /-- Non-vacuity at `A = 2` (`²H`, `N = 6`, one bond): coefficient `2/30 = 1/15`. -/
 example : ttCoeff (3 * 2) (2 - 1) = 1 / 15 := by norm_num [ttCoeff]
 
 end QOU.Nuclear.IsospinTwistWrithe
+
