@@ -108,3 +108,24 @@ framing-free chart would give n−p = 0 (`framing_cell_zero`). Under the ruled �
 one: both nucleons have writhe 0 (`QOU.Mass.GammaGammaWordSelection.borromean_writhe`;
 `2026-11-22-coulomb-all-q-and-nucleon-writhe.md` §2). So the `q⁻²` is not framing, and the
 framing route does not remove the n−p sign conflict.
+
+## 8. No electron reading gets both n−p and Δ−N right
+
+The n−p cell is a pure power (`ℓ = 0`, `k = −2`). The Δ−N cell is bar-even
+(`τ_Δ/τ_N = q² + q⁻²`, so `k = 0`, `ℓ > 0`, `ω > 0`). Within either chart the two cells share
+the same unit `u`, so their product is `(−2β)·ℓ/u²` in the log chart and `(−2)·ω/u²` in the
+mass chart. Both products are negative whatever `u` is. Lean:
+`log_chart_np_delta_opposite` and `mass_chart_np_delta_opposite` (sorry-free).
+
+So rereading the electron can move which of the two cells is wrong, but it cannot put both
+right. The probe checks this for both readings on record:
+
+| electron reading | log chart n−p / Δ−N | mass chart n−p / Δ−N |
+|---|---|---|
+| `τ_e = q³ y₃` (#9733) | +0.306 / −1.935 m_e | −0.624 / +0.128 m_e |
+| `m_e = [4]/q³` (#9789) | −0.190 / +0.650 m_e | +0.805 / −0.166 m_e |
+
+#9789's reading turns n−p positive, and that turns Δ−N negative. Any single CAL-1 chart
+built from the Euler tower `δ^k log` has the same limit: for `k ≥ 2` the pure-power cell is
+zero. Getting both signs right needs the two cell types (pure powers and bar-even cells) to be
+read with different sign. That is a second structural input, not a choice of electron.
