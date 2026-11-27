@@ -1,4 +1,5 @@
-import Mathlib.Algebra.Field.Basic
+import Mathlib.Algebra.Ring.Defs
+import Mathlib.Algebra.Group.Invertible.Defs
 import Mathlib.Tactic.Ring
 
 /-!
@@ -19,15 +20,15 @@ decomposes under the bar-involution `h ↦ −h` into a bar-even `h²/2` and a
 bar-odd `−h` part. These lemmas record that algebra. They do **not** assign
 the bar-even part to any other observable.
 
-Generic field; `h` free (AGENTS.md §7c).
+Generic commutative ring with `2` invertible (`⅟2`); `h` free (AGENTS.md §7c).
 -/
 
 namespace QOU.Interactions.QBetaChannelSplit
 
-variable {R : Type*} [Field R]
+variable {R : Type*} [CommRing R] [Invertible (2 : R)]
 
 /-- Bar-even part of the counit on the nucleon difference, `h²/2`. -/
-def barEven (h : R) : R := h ^ 2 / 2
+def barEven (h : R) : R := h ^ 2 * ⅟2
 
 /-- Bar-odd part of the counit on the nucleon difference, `−h`. -/
 def barOdd (h : R) : R := -h
@@ -35,13 +36,14 @@ def barOdd (h : R) : R := -h
 /-- The counit `ε(Δ) = h²/2 − h` is the sum of its bar-even and bar-odd
     parts. (Internal decomposition; both parts belong to the counit / `Q_β`,
     per the branch-A resolution — see file header.) -/
-theorem counit_split (h : R) : h ^ 2 / 2 - h = barEven h + barOdd h := by
+theorem counit_split (h : R) : h ^ 2 * ⅟2 - h = barEven h + barOdd h := by
   unfold barEven barOdd; ring
 
 /-- `barEven` is invariant under the bar-involution `h ↦ −h`. -/
 theorem barEven_invariant (h : R) : barEven (-h) = barEven h := by
   unfold barEven; ring
 
+omit [Invertible (2 : R)] in
 /-- `barOdd` is negated under the bar-involution `h ↦ −h`. -/
 theorem barOdd_anti (h : R) : barOdd (-h) = - barOdd h := by
   unfold barOdd; ring
@@ -51,7 +53,7 @@ theorem barOdd_anti (h : R) : barOdd (-h) = - barOdd h := by
     contribution (the earlier "double-count" reading is refuted by the #2346
     `Im 𝔙 = ` full-counit witness — see file header). -/
 theorem barEven_remainder (h : R) :
-    (h ^ 2 / 2 - h) - barOdd h = barEven h := by
+    (h ^ 2 * ⅟2 - h) - barOdd h = barEven h := by
   unfold barEven barOdd; ring
 
 end QOU.Interactions.QBetaChannelSplit
