@@ -71,6 +71,8 @@ export default chapter({
         "brings-euler-characteristic",
         "chern-character-and-riemann-roch",
         "brings-euler-characteristic-proof",
+        "bring-map-euler-characteristic",
+        "bring-map-euler-characteristic-proof",
         "three-euler-characteristics",
         "euler-characteristic-of-the-regular-representation",
         "fourier-mukai-and-orlov",
