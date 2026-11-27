@@ -1,7 +1,7 @@
 ---
 # qou-rstq
 title: 'ROAST QUEUE: every open 5₂ claim needing adversarial review, with what specifically to attack'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -11,7 +11,7 @@ tags:
     - roast
     - reorg-2026-10-04
 created_at: 2026-08-07T22:05:00Z
-updated_at: 2026-11-27T15:30:00Z
+updated_at: 2026-11-27T21:45:00Z
 parent: b9cj
 ---
 
@@ -592,3 +592,7 @@ The direct proof (complex pentagon at the saddle pair, then branch equations fro
 Build check: rebuilt the cone from source (stale cached oleans replaced, `.srcsha`-checked) and ran `scripts/lean-verify.sh`: all six theorems above compile, and `#print axioms` on each gives `[propext, Classical.choice, Quot.sound]`.
 
 Recommendation: mark `completed` (owner card in the thread). Status left unchanged here per the no-unilateral-closure rule.
+
+## 2026-11-27 — completed (Carl, closure card in thread "Define θ_K and prove the 5₂ sum rules")
+
+Closed with the theorem pointers above. `qou-trns` stays open for the envelope theorem as its own statement.
