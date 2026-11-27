@@ -1,5 +1,7 @@
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Tactic.Linarith
+import Mathlib.RingTheory.Ideal.Span
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!
 # QOU.Core.LawvereCut — observables as cuts, and the one non-constructive axiom
@@ -28,6 +30,15 @@ migration moves each residual analytic result in QOU (KZ evaluation at the
 physical coupling, hyperbolic volume as a limit, dilogarithm asymptotics, the
 surreal transfer, …) onto `[Coev E]`, deleting that result's private analytic
 hypothesis as it moves. Results proved with `ev` alone need no axiom at all.
+
+## The adic case: locatedness is free
+
+`AdicCut` is the ultrametric (max-quantale) analogue: a tower of stages
+`stage n ∈ R` whose consecutive differences lie in a decreasing chain of ideals.
+In the Habiro tower `I_n = ((q;q)_n)` the squeeze holds by construction: every
+later stage lies within `I_n` of `stage n` (`AdicCut.stage_sub_mem`). So an
+observable presented adically needs no `Coev` instance; the axiom is only for
+the Archimedean comparison with an ordered field.
 
 No empirical value enters this file.
 -/
@@ -134,5 +145,42 @@ theorem Coev.unique_value {R : Type*} (E : CutEvaluation R K) [Coev E] (r : R)
 theorem Coev.withinResolution {R : Type*} (E : CutEvaluation R K) [Coev E] (r : R)
     {ε : K} (hε : 0 < ε) : (E.cut r).WithinResolution ε :=
   Coev.located (E := E) r ε hε
+
+/-! ### Adic cuts (max-quantale case) -/
+
+/-- An adic cut over a commutative ring: stages that agree modulo a decreasing
+chain of ideals. -/
+structure AdicCut (R : Type*) [CommRing R] where
+  ideal : ℕ → Ideal R
+  ideal_anti : Antitone ideal
+  stage : ℕ → R
+  compat : ∀ n, stage (n + 1) - stage n ∈ ideal n
+
+/-- Locatedness is free for an adic cut: every later stage lies within the
+`n`-th ideal of stage `n`. No axiom is used. -/
+theorem AdicCut.stage_sub_mem {R : Type*} [CommRing R] (c : AdicCut R) {n m : ℕ}
+    (h : n ≤ m) : c.stage m - c.stage n ∈ c.ideal n := by
+  induction m, h using Nat.le_induction with
+  | base => simp
+  | succ m hnm ih =>
+    have h1 : c.stage (m + 1) - c.stage m ∈ c.ideal n := c.ideal_anti hnm (c.compat m)
+    have h2 := Ideal.add_mem _ h1 ih
+    rwa [sub_add_sub_cancel] at h2
+
+/-- The `q`-Pochhammer symbol `(q;q)_n = ∏_{k<n} (1 - q^{k+1})`. -/
+def qPoch {R : Type*} [CommRing R] (q : R) (n : ℕ) : R :=
+  ∏ k ∈ Finset.range n, (1 - q ^ (k + 1))
+
+/-- The Habiro ideal `I_n = ((q;q)_n)`. -/
+def habiroIdeal {R : Type*} [CommRing R] (q : R) (n : ℕ) : Ideal R :=
+  Ideal.span {qPoch q n}
+
+/-- The Habiro ideals decrease, so they define an adic cut tower. -/
+theorem habiroIdeal_antitone {R : Type*} [CommRing R] (q : R) :
+    Antitone (habiroIdeal q) := by
+  intro n m h
+  show Ideal.span {qPoch q m} ≤ Ideal.span {qPoch q n}
+  exact Ideal.span_singleton_le_span_singleton.mpr
+    (Finset.prod_dvd_prod_of_subset _ _ _ (Finset.range_mono h))
 
 end QOU.Core.LawvereCut
