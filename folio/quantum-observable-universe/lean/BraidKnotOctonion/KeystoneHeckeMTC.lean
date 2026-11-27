@@ -44,8 +44,9 @@ it is the concrete description of what the localization must be shown to produce
 
 **Base ring (§7c).** The bundle and every relation proved here are pure field algebra —
 `{R : Type*} [Field R]`, no ordering, no `Real.sqrt`, no `q₀`. The single archimedean specialisation is
-the concrete Hecke instance `heckeMTC : HeckeMTC ℝ`, where `D = √(Σ d_q²)` genuinely needs `ℝ` (exactly
-as `heckeVerlindeData` does).
+the concrete Hecke instance `heckeMTC : HeckeMTC ℝ`, which needs `q > 1` for positivity. The total
+quantum dimension `D = √(Σ d_q²)` is passed in as a symbol with `D² = Σ d_q²`, not as `Real.sqrt`
+(bean `qou-dk7p`).
 
 Refs:
 - [bakalovkirillov2001] Lectures on Tensor Categories and Modular Functors (`S`, `T` modular data).
@@ -175,12 +176,12 @@ end HeckeMTC
 
 /-- **The Hecke q-dimensions + ribbon twist realize `HeckeMTC`** for `q > 1` on any conjugate-closed
 set `P` of weakly-decreasing blocks containing the empty (vacuum) partition. `qDim := d_q`,
-`theta := θ_λ = q^{c(λ)}`, `D := √(Σ d_q²)`, `S0 := d_q/D`, `vac := []`.
+`theta := θ_λ = q^{c(λ)}`, `D` the given square-root symbol (`D > 0`, `D² = Σ d_q²`),
+`S0 := d_q/D`, `vac := []`.
 
 The two modular-data inputs are discharged from the **corpus proofs**, not carried abstractly:
 `qDim_conj` from `QOU.BraidKnot.IdentityI.qDim_conj` and `theta_conj` from
-`QOU.BraidKnot.Keystone.theta_conjugate`. `D ≠ 0` reuses `KeystoneVerlindeSMatrixBridge.sum_qDimSq_pos`
-(positivity, `q > 1`). `S0_eq` is `rfl`.
+`QOU.BraidKnot.Keystone.theta_conjugate`. `D ≠ 0` comes from `D > 0`. `S0_eq` is `rfl`.
 
 The **only** thing this does *not* establish is the physics — that the BW localization of `S³/2I`
 actually *is* this category (`bwse` / bean `bwhk`); that owner-gated identification is the open
@@ -189,7 +190,7 @@ noncomputable def heckeMTC
     (q : ℝ) (hq : 1 < q) (P : Finset (List ℕ))
     (hsorted : ∀ l ∈ P, l.Sorted (· ≥ ·))
     (hconj : ∀ l ∈ P, Partition.conjugate l ∈ P)
-    (hnil : [] ∈ P) :
+    (hnil : [] ∈ P) (D : ℝ) (hD : 0 < D) (hDsq : D ^ 2 = ∑ m ∈ P, qDim q m ^ 2) :
     HeckeMTC ℝ where
   Part := List ℕ
   parts := P
@@ -203,10 +204,10 @@ noncomputable def heckeMTC
   theta := Keystone.theta q
   theta_vac := theta_nil q
   theta_conj := fun p hp => theta_conjugate q p (hsorted p hp)
-  D := Real.sqrt (∑ m ∈ P, qDim q m ^ 2)
-  D_ne := ne_of_gt (Real.sqrt_pos.mpr (sum_qDimSq_pos hq ⟨[], hnil⟩))
-  D_sq := Real.sq_sqrt (le_of_lt (sum_qDimSq_pos hq ⟨[], hnil⟩))
-  S0 := fun p => qDim q p / Real.sqrt (∑ m ∈ P, qDim q m ^ 2)
+  D := D
+  D_ne := ne_of_gt hD
+  D_sq := hDsq
+  S0 := fun p => qDim q p / D
   S0_eq := fun _ _ => rfl
 
 /-- `Partition.conjugate [] = []` — the empty diagram is self-conjugate (no columns). -/
@@ -222,6 +223,6 @@ noncomputable example : HeckeMTC ℝ :=
     (fun l hl => by
       rw [Finset.mem_singleton] at hl; subst hl
       rw [Finset.mem_singleton, conjugate_nil])
-    (Finset.mem_singleton.mpr rfl)
+    (Finset.mem_singleton.mpr rfl) 1 one_pos (by simp)
 
 end QOU.BraidKnot.Keystone
