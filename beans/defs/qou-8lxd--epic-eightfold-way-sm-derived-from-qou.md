@@ -7,7 +7,7 @@ priority: high
 tags:
     - 8f-index
 created_at: 2026-08-03T23:27:15Z
-updated_at: 2026-11-22T21:54:03Z
+updated_at: 2026-11-27T14:25:44Z
 parent: qou-0uga
 ---
 
@@ -513,3 +513,9 @@ Where we are (main 46c74c318):
 - Canonical chain: steps 3 axioms removed (proved false); step 2 Bridge A is circular (hL assumes the conclusion), HeckeMonodromy has only a toy instance, colour cubic needs Bridge A restated; step 5 T_β needs a TwistedPSDTrace instance; step 6 /q³ asserted, k = 2 not found, muon carrier asserted, 𝔈 → MeV open; a false axiom proton_mass_from_substrate_axiom sits in knots-particles-confinement/categorical-proton.lean (outside the build).
 Ranked obligations: (1) Bridge A without hL; (2) 𝔈 → MeV and the muon carrier (qou-91w7, qou-6gf9); (3) proton normaliser; (4) two-term trace from the Lagrangian (c_em); (5) Hecke positivity/unification and axiom deletion.
 Applicability review: ~36 stale in-progress children reset to todo (claims were untouched batch PRs); superseded/done/needs-owner lists are in the plan doc, Part 4; no bean closed or scrapped without the owner.
+
+
+
+## 2026-11-27 — session epic `qou-x08k`
+
+Owner session 'close the gaps in the eightfold-way and SM derivation'. Measured on main 52f9f88: EightfoldWay + StandardModel Lean has 0 live sorry and 0 axioms; the gaps are conjectures, cited standard results and missing constructions. Gap list (A pure-math Lean, B owner decision, C research, D comparison-only) is in `qou-x08k`.
