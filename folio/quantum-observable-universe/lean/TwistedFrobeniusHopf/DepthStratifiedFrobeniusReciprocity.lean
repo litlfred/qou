@@ -74,7 +74,7 @@ structure DistinguishedKnotIdeal (k : ℕ) (R : Type*) where
     The ranking is weight-family-dependent — see the module docstring —
     so this label records one family's answer, not a settled
     identification. -/
-noncomputable def chirality_ideal_4_1 {R : Type*} [Field R] : DistinguishedKnotIdeal 3 R :=
+noncomputable def chirality_ideal_4_1 {R : Type*} [CommRing R] : DistinguishedKnotIdeal 3 R :=
   { central_projector_value := 1, -- placeholder for the
                                   -- abstract projector value
     knot_label := "4_1" }
@@ -140,7 +140,7 @@ theorem fr_weight_normalised {R : Type*} [Field R]
 
     Per AGENTS.md §3b-cond, downstream theorems consume the
     class via [Instance]. -/
-class DepthStratifiedFrobeniusReciprocity (R : Type*) [Field R] where
+class DepthStratifiedFrobeniusReciprocity (R : Type*) [CommRing R] where
   knot_ideal_at_k : (k : ℕ) → k ≤ 3 → DistinguishedKnotIdeal k R
   fr_pullback_at_low_k : R → ℕ → Prop
   fr_pullback_classical : ∀ k : ℕ, fr_pullback_at_low_k 1 k

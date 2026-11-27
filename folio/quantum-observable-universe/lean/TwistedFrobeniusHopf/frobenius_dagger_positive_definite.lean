@@ -100,7 +100,7 @@ def IsFrobeniusAdjoint [F : FrobeniusAntipodeData R A] (T U : A → A) : Prop :=
 
 /-- `f† ∘ f > 0` for `f ≠ 0` when `h` is positive definite. This is immediate
 from `f† ∘ f = h(f, f)` (`frobeniusDagger_comp_self`); nothing else is used. -/
-theorem frobeniusDagger_pos {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+theorem frobeniusDagger_pos {K : Type*} [CommRing K] [LinearOrder K] [IsStrictOrderedRing K]
     {B : Type*} [Ring B] [Algebra K B] [FrobeniusAntipodeData K B]
     (hpos : ∀ a : B, a ≠ 0 → 0 < frobeniusHerm (R := K) a a) (f : B) (hf : f ≠ 0) :
     0 < frobeniusDagger (R := K) f f := by
@@ -117,7 +117,7 @@ multiplication by `x`. Then
    (uses `S(xy) = S(y) S(x)`);
 4. on scalars `End(𝟙) ≅ R` it is `S`, and `S` is the identity there.
 Positivity `f† ∘ f > 0` is `frobeniusDagger_pos`, which holds by definition. -/
-theorem frobenius_dagger_positive_definite {R : Type*} [Field R] [LinearOrder R]
+theorem frobenius_dagger_positive_definite {R : Type*} [CommRing R] [LinearOrder R]
     [IsStrictOrderedRing R] {A : Type*} [Ring A] [Algebra R A]
     [F : FrobeniusAntipodeData R A]
     (hpos : ∀ a : A, a ≠ 0 → 0 < frobeniusHerm (R := R) a a) :

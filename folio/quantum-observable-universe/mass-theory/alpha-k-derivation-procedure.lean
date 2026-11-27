@@ -65,7 +65,7 @@ open Matrix
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-theorem alpha_k_derivation_procedure {R : Type*} [Field R] {p : ℕ}
+theorem alpha_k_derivation_procedure {R : Type*} [CommRing R] {p : ℕ}
     (A : Matrix (Fin p) (Fin p) R) [Invertible A] (b : Fin p → R) :
     ∃! y : Fin p → R, A *ᵥ y = b := by
   refine ⟨A⁻¹ *ᵥ b, ?_, ?_⟩

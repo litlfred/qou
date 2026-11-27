@@ -73,7 +73,7 @@ class of the tangent bundle of the base.
 non-zero element of the image of `realise`.  No instance is provided. -/
 -- Ref: [wigner1960] https://doi.org/10.1002/cpa.3160130102
 -- Ref: [leitner2026] stochastic-mechanics/wigner-axiom
-class WignerAxiom (k : Type*) [Field k]
+class WignerAxiom (k : Type*) [CommRing k]
     (Obs : Type*) [AddCommGroup Obs] [Module k Obs]
     (H : Type*) [AddCommGroup H] [Module k H]
     (realise : Obs →ₗ[k] H) (euler : H) : Prop where

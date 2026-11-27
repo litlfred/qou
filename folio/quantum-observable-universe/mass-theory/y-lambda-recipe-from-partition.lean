@@ -150,7 +150,7 @@ noncomputable def markovZW {R : Type u} [Field R] (q : R) : R :=
   q * markovZ q
 
 /-- **Universal X**, convention D: `X = Q^r` at `Q = q²`, `r = 2`. -/
-noncomputable def universalX {R : Type u} [Field R] (q : R) : R :=
+noncomputable def universalX {R : Type u} [CommRing R] (q : R) : R :=
   q ^ 4
 
 /-- **`X` is on the Wenzl lattice at level 2.**  `X = z_W/(1 − Q + z_W)`
@@ -271,7 +271,7 @@ structure MarkovTraceCoefficient (R : Type u) where
 -- `axiom f : T` and `opaque f : T := <witness>` are equally opaque, but only the
 -- first is a global axiom contaminating `#print axioms` downstream.  No
 -- proposition becomes provable either way.
-opaque JonesMarkovCoefficient {R : Type u} [Field R]
+opaque JonesMarkovCoefficient {R : Type u} [CommRing R]
     (q : R) (lam : List ℕ) : R := 0
 
 /-- The Markov-trace convention this recipe implements. -/

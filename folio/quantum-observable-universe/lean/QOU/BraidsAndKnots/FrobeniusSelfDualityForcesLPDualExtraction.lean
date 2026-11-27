@@ -69,7 +69,7 @@ theorem Obs_add (a b c : A) : F.Obs a (b + c) = F.Obs a b + F.Obs a c := by
     the elementary matrix `E_{j,i}`, which gives `tr(A · E_{j,i}) = A i j`.
     So the abstract carrier — hence the Frobenius self-duality — is realisable,
     not vacuous. -/
-noncomputable def matrixModel (n : ℕ) (R : Type*) [Field R] :
+noncomputable def matrixModel (n : ℕ) (R : Type*) [CommRing R] :
     FrobeniusSelfDualityForcesLPDualExtraction (Matrix (Fin n) (Fin n) R) R where
   τ := Matrix.trace
   tau_cyclic a b := Matrix.trace_mul_comm a b

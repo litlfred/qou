@@ -79,7 +79,7 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
     Consequently `su2_emergence` should be read as "volume non-degeneracy
     (plus the QOU axioms) yields a spin decomposition", not as a
     three-legged derivation. -/
-structure RankOneGaugeData (k : Type*) [Field k] where
+structure RankOneGaugeData (k : Type*) [CommRing k] where
   /-- The underlying QOU. -/
   qou : QuantumObservableUniverse.{u, v} k
   /-- The fundamental representation V has categorical dimension 2,

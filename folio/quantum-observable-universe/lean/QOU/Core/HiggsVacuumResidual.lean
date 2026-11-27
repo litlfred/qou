@@ -233,7 +233,7 @@ end TraceSection
 
 section Involution
 
-variable {K : Type*} [Field K] {C : Type u} [Category.{v} C] [Preadditive C] [Linear K C]
+variable {K : Type*} [CommRing K] {C : Type u} [Category.{v} C] [Preadditive C] [Linear K C]
 variable {Y : C} {σ : Y ⟶ Y} {c : K}
 
 /-- The symmetriser `P₊ = c • (𝟙 + σ)` (with `c = 1/2` in use). -/
