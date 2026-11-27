@@ -1,0 +1,8266 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-27T19:15:18.134375+00:00",
+  "commitSha": "8b2a81242ca2c3351219ccf70a0b87b15e2a5f1f",
+  "assertions": [
+    {
+      "name": "markov_right_forces_K_zD_left_forces_inverse",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "leftmost_block_ratio_q2_every_exact_word",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "nucleon-split-full-tower",
+  "scriptFile": "nucleon_split_full_tower_probe.py",
+  "scriptHash": "e2f4b8e2bc8b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/nucleon_split_full_tower_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/nucleon_split_full_tower_probe.py"
+  },
+  "description": "Nucleon split on the full tower, all strands: Markov-forced K-weight; tau_p/tau_n = q^2 at n = 3, 6 (exact over Z[q,q^-1]) and 9 (exact at rational q, 80 dps at q0); Gibbs MeV for both E0 forms.",
+  "data": {
+    "primary_sum_over_blocks_ratio_q2_on_every_word": false,
+    "every_block_ratio_q2_on_every_word": false,
+    "primary_not_q2_per_word_q0": [
+      {
+        "label": "V3 s2 V3 (pp-type interface)",
+        "n": 6,
+        "tau_ratio_q0": "1.30383621846645065968083560742520768531168417255833182819063",
+        "effective_exponent": "2.54273552519291188182767888524465780978375668707005189415051",
+        "ratio_positive": true,
+        "split_ord0_MeV": "1.11058629987054266153286130119818846074657835704925999474594",
+        "split_tower_MeV": "1.12159722899417675160732558427390644894167519761806882597670"
+      },
+      {
+        "label": "V3 s2^-1 V3 (nn-type interface)",
+        "n": 6,
+        "tau_ratio_q0": "1.34322489294585475547742045724702160960138178362766552521839",
+        "effective_exponent": "2.82797893549381924386126772314849647794419787864678111971810",
+        "ratio_positive": true,
+        "split_ord0_MeV": "1.23517158232319009518399782828624833782971775109793679477277",
+        "split_tower_MeV": "1.24741771461392064674114612308801606070513775353629699050769"
+      },
+      {
+        "label": "V3 (s2 - h(1/2-delta/4)) V3 (colour-weighted pn interface)",
+        "n": 6,
+        "tau_ratio_q0": "1.31927764118521773482488605600317048358651978067747813410937",
+        "effective_exponent": "2.65557247862701615475099045462826703475103556098188144781144",
+        "ratio_positive": true,
+        "split_ord0_MeV": "1.15986990540538852149338198838917152030215609044017999578282",
+        "split_tower_MeV": "1.17136945777925051765794156894404067426268834988271070405521"
+      },
+      {
+        "label": "six_strand_survivor_1",
+        "n": 6,
+        "tau_ratio_q0": "1.23253619806498719082523872032575193012756741541448695270497",
+        "effective_exponent": "2.00376224632101825658730961719639337075622531969838626756082",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.875179851350491498098059183873558661731139285722961121740685",
+        "split_tower_MeV": "0.883856838735241499306094044264839008509181838280906340010770"
+      },
+      {
+        "label": "six_strand_survivor_2",
+        "n": 6,
+        "tau_ratio_q0": "1.23173339288808437854552148883635209425744418033757293029417",
+        "effective_exponent": "1.99751773974976020619170111415359152449477177712510867704214",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.872452448764269079638747764337832854326917804845882531828868",
+        "split_tower_MeV": "0.881102395263882993713439065382693386689745954330302373332627"
+      },
+      {
+        "label": "six_strand_survivor_5",
+        "n": 6,
+        "tau_ratio_q0": "1.23245346426942846972874377943560290624534059313191276635475",
+        "effective_exponent": "2.00311890119987860195570729842548515222293432148600651421546",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.874898858588740529825005623677339165382860805151140563732335",
+        "split_tower_MeV": "0.883573060065376722346581750751622544412058415538324823572926"
+      },
+      {
+        "label": "six_strand_survivor_6",
+        "n": 6,
+        "tau_ratio_q0": "1.23173152398691866029613614630959604311207075334813953507646",
+        "effective_exponent": "1.99750319801836774284921728035371018407215962736555686897562",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.872446097396814282339951186811570351878261780452298868908838",
+        "split_tower_MeV": "0.881095980925674018120412961955378060577421911132370613591213"
+      },
+      {
+        "label": "six_strand_survivor_8",
+        "n": 6,
+        "tau_ratio_q0": "1.23245346426942846972874377943560290624534059313191276635475",
+        "effective_exponent": "2.00311890119987860195570729842548515222293432148600651421546",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.874898858588740529825005623677339165382860805151140563732335",
+        "split_tower_MeV": "0.883573060065376722346581750751622544412058415538324823572926"
+      },
+      {
+        "label": "six_strand_survivor_9",
+        "n": 6,
+        "tau_ratio_q0": "1.23173152398691866029613614630959604311207075334813953507646",
+        "effective_exponent": "1.99750319801836774284921728035371018407215962736555686897562",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.872446097396814282339951186811570351878261780452298868908838",
+        "split_tower_MeV": "0.881095980925674018120412961955378060577421911132370613591213"
+      },
+      {
+        "label": "six_strand_survivor_13",
+        "n": 6,
+        "tau_ratio_q0": "1.23245346426942846972874377943560290624534059313191276635475",
+        "effective_exponent": "2.00311890119987860195570729842548515222293432148600651421546",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.874898858588740529825005623677339165382860805151140563732335",
+        "split_tower_MeV": "0.883573060065376722346581750751622544412058415538324823572926"
+      },
+      {
+        "label": "six_strand_survivor_14",
+        "n": 6,
+        "tau_ratio_q0": "1.23173152398691866029613614630959604311207075334813953507646",
+        "effective_exponent": "1.99750319801836774284921728035371018407215962736555686897562",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.872446097396814282339951186811570351878261780452298868908838",
+        "split_tower_MeV": "0.881095980925674018120412961955378060577421911132370613591213"
+      },
+      {
+        "label": "six_strand_survivor_21",
+        "n": 6,
+        "tau_ratio_q0": "1.23304960576254767997486237385799626768245256708644626623168",
+        "effective_exponent": "2.00775358358095028928863934505088115238920009611141760670524",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.876923140982906983097071541096629517948425168714927177625928",
+        "split_tower_MeV": "0.885617412246079337035518773160954317838275632321545853203991"
+      },
+      {
+        "label": "six_strand_survivor_22",
+        "n": 6,
+        "tau_ratio_q0": "1.23304960576254767997486237385799626768245256708644626623168",
+        "effective_exponent": "2.00775358358095028928863934505088115238920009611141760670524",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.876923140982906983097071541096629517948425168714927177625928",
+        "split_tower_MeV": "0.885617412246079337035518773160954317838275632321545853203991"
+      },
+      {
+        "label": "six_strand_survivor_23",
+        "n": 6,
+        "tau_ratio_q0": "1.23245346426942846972874377943560290624534059313191276635475",
+        "effective_exponent": "2.00311890119987860195570729842548515222293432148600651421546",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.874898858588740529825005623677339165382860805151140563732335",
+        "split_tower_MeV": "0.883573060065376722346581750751622544412058415538324823572926"
+      },
+      {
+        "label": "six_strand_survivor_24",
+        "n": 6,
+        "tau_ratio_q0": "1.23318684391420766558832575968987299713329775087746757326925",
+        "effective_exponent": "2.00882021976829474807762380665082010455909306616778993497792",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.877389013868574489950725844826409199138541687273209709001999",
+        "split_tower_MeV": "0.886087904037387320236768320046850207604677022811559239971598"
+      },
+      {
+        "label": "six_strand_survivor_25",
+        "n": 6,
+        "tau_ratio_q0": "1.23213427254658959822731066147129455655916229385740240350148",
+        "effective_exponent": "2.00063643407896454059881886340793447777064799473792745620100",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.873814595617994856531306950783082573935975584932993692674415",
+        "split_tower_MeV": "0.882478047148657779608736275366025231100433877724874997238855"
+      },
+      {
+        "label": "six_strand_survivor_26",
+        "n": 6,
+        "tau_ratio_q0": "1.23252697019160415934336185999628675846999771301166587952044",
+        "effective_exponent": "2.00369049172242877194544839875367179333497563956491629421161",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.875148511215681313337073340790485317595484386603003175236188",
+        "split_tower_MeV": "0.883825187878064974975440617621213474897723360463261653769400"
+      },
+      {
+        "label": "six_strand_survivor_27",
+        "n": 6,
+        "tau_ratio_q0": "1.23302079226752709187901872385060243103503066960852891499047",
+        "effective_exponent": "2.00752962555253714487305148213588508076484485517782245761714",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.876825323213171459498898346475853257741077044175043217496109",
+        "split_tower_MeV": "0.885518624660193807481131949104148105590795513110927403352585"
+      },
+      {
+        "label": "six_strand_survivor_28",
+        "n": 6,
+        "tau_ratio_q0": "1.23220927540684895076510618259045977080518223675958587398346",
+        "effective_exponent": "2.00121981569514527238096359648661586922184955186669814898081",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.874069398220981850847299093833592041363848968120600620520509",
+        "split_tower_MeV": "0.882735375996928309577289967894211880101819425063489354954643"
+      },
+      {
+        "label": "six_strand_survivor_29",
+        "n": 6,
+        "tau_ratio_q0": "1.23213427254658959822731066147129455655916229385740240350148",
+        "effective_exponent": "2.00063643407896454059881886340793447777064799473792745620100",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.873814595617994856531306950783082573935975584932993692674415",
+        "split_tower_MeV": "0.882478047148657779608736275366025231100433877724874997238855"
+      },
+      {
+        "label": "six_strand_survivor_30",
+        "n": 6,
+        "tau_ratio_q0": "1.23220927540684895076510618259045977080518223675958587398346",
+        "effective_exponent": "2.00121981569514527238096359648661586922184955186669814898081",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.874069398220981850847299093833592041363848968120600620520509",
+        "split_tower_MeV": "0.882735375996928309577289967894211880101819425063489354954643"
+      },
+      {
+        "label": "six_strand_survivor_31",
+        "n": 6,
+        "tau_ratio_q0": "1.23221874685244121549201133688930128669904921995850587380363",
+        "effective_exponent": "2.00129348325685528101939034290316196715524854183057935819807",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.874101573877462599584943491403341646205335237186752207967331",
+        "split_tower_MeV": "0.882767870659570990278184106909359063530273253895644270536769"
+      },
+      {
+        "label": "six_strand_survivor_32",
+        "n": 6,
+        "tau_ratio_q0": "1.23141300776822204132880910617362779939728225178812232553247",
+        "effective_exponent": "1.99502453308420823818166787541883237064560186700478648604244",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.871363495100754325539279038093588129318872785845545140808729",
+        "split_tower_MeV": "0.880002645148431744158285177932907865523582262637824243537437"
+      },
+      {
+        "label": "six_strand_survivor_33",
+        "n": 6,
+        "tau_ratio_q0": "1.23221874685244121549201133688930128669904921995850587380363",
+        "effective_exponent": "2.00129348325685528101939034290316196715524854183057935819807",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.874101573877462599584943491403341646205335237186752207967331",
+        "split_tower_MeV": "0.882767870659570990278184106909359063530273253895644270536769"
+      },
+      {
+        "label": "six_strand_survivor_34",
+        "n": 6,
+        "tau_ratio_q0": "1.23213427254658959822731066147129455655916229385740240350148",
+        "effective_exponent": "2.00063643407896454059881886340793447777064799473792745620100",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.873814595617994856531306950783082573935975584932993692674415",
+        "split_tower_MeV": "0.882478047148657779608736275366025231100433877724874997238855"
+      },
+      {
+        "label": "six_strand_survivor_35",
+        "n": 6,
+        "tau_ratio_q0": "1.23173152398691866029613614630959604311207075334813953507646",
+        "effective_exponent": "1.99750319801836774284921728035371018407215962736555686897562",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.872446097396814282339951186811570351878261780452298868908838",
+        "split_tower_MeV": "0.881095980925674018120412961955378060577421911132370613591213"
+      },
+      {
+        "label": "six_strand_survivor_36",
+        "n": 6,
+        "tau_ratio_q0": "1.23214157981534119128048650963965424278311560048551968148196",
+        "effective_exponent": "2.00069327248944723246890618785238322593629711637091493799399",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.873839420834523699714657374767571714872974826970880707637035",
+        "split_tower_MeV": "0.882503118495270984381227578111523158251273228319651176877461"
+      },
+      {
+        "label": "six_strand_survivor_37",
+        "n": 6,
+        "tau_ratio_q0": "1.23157894050717675027754863942719139419713436651772472051883",
+        "effective_exponent": "1.99631588691603421025883704253626515521765763856756687098911",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.871927517532384310617778432809445192210389279726008200601064",
+        "split_tower_MeV": "0.880572259591253962966817260103543495493790663309064742983761"
+      },
+      {
+        "label": "six_strand_survivor_38",
+        "n": 6,
+        "tau_ratio_q0": "1.23139459046041723774713284396371839242177073287971260338533",
+        "effective_exponent": "1.99488119162318639417202198150802073926416245027991165769431",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.871300888092971945294236833206968407285257884870264199910165",
+        "split_tower_MeV": "0.879939417422272579548698211462250357771855401188198345343289"
+      },
+      {
+        "label": "six_strand_survivor_39",
+        "n": 6,
+        "tau_ratio_q0": "1.23113485157665965168896154387288563282050460047599608187770",
+        "effective_exponent": "1.99285942182387005468973084452580649355805422053278592617051",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.870417843113120022554781979482226545952586110111943265955260",
+        "split_tower_MeV": "0.879047617476068862438091190939248887303618383226747297399102"
+      },
+      {
+        "label": "six_strand_survivor_40",
+        "n": 6,
+        "tau_ratio_q0": "1.23113485157665965168896154387288563282050460047599608187770",
+        "effective_exponent": "1.99285942182387005468973084452580649355805422053278592617051",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.870417843113120022554781979482226545952586110111943265955260",
+        "split_tower_MeV": "0.879047617476068862438091190939248887303618383226747297399102"
+      },
+      {
+        "label": "six_strand_survivor_47",
+        "n": 6,
+        "tau_ratio_q0": "1.23252697019160415934336185999628675846999771301166587952044",
+        "effective_exponent": "2.00369049172242877194544839875367179333497563956491629421161",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.875148511215681313337073340790485317595484386603003175236188",
+        "split_tower_MeV": "0.883825187878064974975440617621213474897723360463261653769400"
+      },
+      {
+        "label": "six_strand_survivor_48",
+        "n": 6,
+        "tau_ratio_q0": "1.23139459046041723774713284396371839242177073287971260338533",
+        "effective_exponent": "1.99488119162318639417202198150802073926416245027991165769431",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.871300888092971945294236833206968407285257884870264199910165",
+        "split_tower_MeV": "0.879939417422272579548698211462250357771855401188198345343289"
+      },
+      {
+        "label": "six_strand_survivor_52",
+        "n": 6,
+        "tau_ratio_q0": "1.23252697019160415934336185999628675846999771301166587952044",
+        "effective_exponent": "2.00369049172242877194544839875367179333497563956491629421161",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.875148511215681313337073340790485317595484386603003175236188",
+        "split_tower_MeV": "0.883825187878064974975440617621213474897723360463261653769400"
+      },
+      {
+        "label": "six_strand_survivor_53",
+        "n": 6,
+        "tau_ratio_q0": "1.23139459046041723774713284396371839242177073287971260338533",
+        "effective_exponent": "1.99488119162318639417202198150802073926416245027991165769431",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.871300888092971945294236833206968407285257884870264199910165",
+        "split_tower_MeV": "0.879939417422272579548698211462250357771855401188198345343289"
+      },
+      {
+        "label": "six_strand_survivor_55",
+        "n": 6,
+        "tau_ratio_q0": "1.23252697019160415934336185999628675846999771301166587952044",
+        "effective_exponent": "2.00369049172242877194544839875367179333497563956491629421161",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.875148511215681313337073340790485317595484386603003175236188",
+        "split_tower_MeV": "0.883825187878064974975440617621213474897723360463261653769400"
+      },
+      {
+        "label": "six_strand_survivor_56",
+        "n": 6,
+        "tau_ratio_q0": "1.23139459046041723774713284396371839242177073287971260338533",
+        "effective_exponent": "1.99488119162318639417202198150802073926416245027991165769431",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.871300888092971945294236833206968407285257884870264199910165",
+        "split_tower_MeV": "0.879939417422272579548698211462250357771855401188198345343289"
+      },
+      {
+        "label": "random6_0",
+        "n": 6,
+        "tau_ratio_q0": "0.323784466297990784757422485856002312628142604545994433727998",
+        "effective_exponent": "-10.8076425826260849188056443606434789209100659592035413692622",
+        "ratio_positive": true,
+        "split_ord0_MeV": "-4.72043579335738864845881630129508629164305981435639772913227",
+        "split_tower_MeV": "-4.76723664436679005716513012057358189552001166651501115270281"
+      },
+      {
+        "label": "random6_1",
+        "n": 6,
+        "tau_ratio_q0": "-0.327817186038391259571040062118910105311319014678062649378288",
+        "effective_exponent": "-10.6890117511583094449964048397130406956935965162781530886710",
+        "ratio_positive": false
+      },
+      {
+        "label": "random6_2",
+        "n": 6,
+        "tau_ratio_q0": "-0.214909887575418903788341680890099906377443176766904961174213",
+        "effective_exponent": "-14.7357279263629493418167703073011244280890711657912383457716",
+        "ratio_positive": false
+      },
+      {
+        "label": "random6_4",
+        "n": 6,
+        "tau_ratio_q0": "1.26089186689208417374409707511141551068249385905058131094328",
+        "effective_exponent": "2.22175293333330994248531771458415181439137765245870649925710",
+        "ratio_positive": true,
+        "split_ord0_MeV": "0.970391275463052779442468454100837173324253683052475879815456",
+        "split_tower_MeV": "0.980012238334251589370669070523367633798022985123693267598478"
+      },
+      {
+        "label": "V3 s2 V3 s5^-1 V3 @ q=q0",
+        "n": 9,
+        "tau_ratio_q0": "1.35580127082181282456807208866920973241204119870291625975217",
+        "effective_exponent": "2.91729463247553055763876622606591996400074050038609874034680",
+        "ratio_positive": true,
+        "split_ord0_MeV": "1.27418184841201261217774142550757465896150497329240359277320",
+        "split_tower_MeV": "1.28681474873243000674691061840093867505779794804522336589661"
+      },
+      {
+        "label": "random9_0 @ q=q0",
+        "n": 9,
+        "tau_ratio_q0": "1.44396458416623095442637344115876223536758107479793172190193",
+        "effective_exponent": "3.52108470062441546008804911130273385494009630886469663098122",
+        "ratio_positive": true,
+        "split_ord0_MeV": "1.53789821648893986432956803939854372945037981810677021982756",
+        "split_tower_MeV": "1.55314573778746200194254035513542975555672192814260371934388"
+      },
+      {
+        "label": "random9_1 @ q=q0",
+        "n": 9,
+        "tau_ratio_q0": "1.66833190998971640292889136711050022840051679612666118230154",
+        "effective_exponent": "4.90531663360525748244579311025458971176852405161699268267743",
+        "ratio_positive": true,
+        "split_ord0_MeV": "2.14248685946045378054096962976934235258183464046787802881823",
+        "split_tower_MeV": "2.16372858642988096120141512887878226936868729489506977388653"
+      }
+    ],
+    "lean_module": "QOU.Nuclear.NucleonSplitFullTower",
+    "beans_referenced": [
+      "qou-myts",
+      "qou-99qc"
+    ],
+    "K_derivation_sympy": {
+      "right_ptr": {
+        "b": "0",
+        "c": "0",
+        "d": "a/q**2",
+        "z": "q**3/(q**2 + 1)"
+      },
+      "left_ptr": {
+        "b": "0",
+        "c": "0",
+        "d": "a*q**2",
+        "z": "q**3/(q**2 + 1)"
+      }
+    },
+    "V3_tau_p_tau_n_n3": [
+      "(-1)q^-5 + (3)q^-3 + (-3)q^-1 + (5)q^1 + (-3)q^3 + (3)q^5 + (-1)q^7",
+      "(-1)q^-7 + (3)q^-5 + (-3)q^-3 + (5)q^-1 + (-3)q^1 + (3)q^3 + (-1)q^5"
+    ],
+    "rows_exact_laurent": [
+      {
+        "label": "V3",
+        "n": 3,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": true,
+        "triples_ratio_q2": 1,
+        "triples_total": 1,
+        "triples_not_q2": []
+      },
+      {
+        "label": "random3_0",
+        "n": 3,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": true,
+        "triples_ratio_q2": 1,
+        "triples_total": 1,
+        "triples_not_q2": []
+      },
+      {
+        "label": "random3_1",
+        "n": 3,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": true,
+        "triples_ratio_q2": 1,
+        "triples_total": 1,
+        "triples_not_q2": []
+      },
+      {
+        "label": "random3_2",
+        "n": 3,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": true,
+        "triples_ratio_q2": 1,
+        "triples_total": 1,
+        "triples_not_q2": []
+      },
+      {
+        "label": "random3_3",
+        "n": 3,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": true,
+        "triples_ratio_q2": 1,
+        "triples_total": 1,
+        "triples_not_q2": []
+      },
+      {
+        "label": "random3_4",
+        "n": 3,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": true,
+        "triples_ratio_q2": 1,
+        "triples_total": 1,
+        "triples_not_q2": []
+      },
+      {
+        "label": "V3 (x) 1_3 spectators",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 8,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "V3 (x) V3",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "V3 s2 V3 (pp-type interface)",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 1,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "V3 s2^-1 V3 (nn-type interface)",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 1,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "V3 (s2 - h(1/2-delta/4)) V3 (colour-weighted pn interface)",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 1,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_0",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 8,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_1",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 8,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_2",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 8,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_3",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 8,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_4",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 8,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_5",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 6,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_6",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 2,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_7",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_8",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_9",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 2,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_10",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_11",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_12",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_13",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_14",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 2,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_15",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_16",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_17",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_18",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_19",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_20",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_21",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_22",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_23",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_24",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 8,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_25",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 6,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_26",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 2,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_27",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_28",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 2,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_29",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_30",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 2,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_31",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 2,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_32",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_33",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 2,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_34",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_35",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 2,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_36",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_37",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 8,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_38",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 6,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_39",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_40",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_41",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_42",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_43",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_44",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_45",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_46",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_47",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 2,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_48",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_49",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_50",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_51",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_52",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 2,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_53",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_54",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_55",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 2,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_56",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "six_strand_survivor_57",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 8,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "random6_0",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 1,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "random6_1",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 1,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "random6_2",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 3,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "random6_3",
+        "n": 6,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 4,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ]
+      },
+      {
+        "label": "random6_4",
+        "n": 6,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 2,
+        "triples_total": 20,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            5
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      }
+    ],
+    "rows_n9": [
+      {
+        "label": "V3 V3 V3 @ q=11/10",
+        "n": 9,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 10,
+        "triples_total": 84,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            0,
+            1,
+            8
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            2,
+            7
+          ],
+          [
+            0,
+            2,
+            8
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            3,
+            7
+          ],
+          [
+            0,
+            3,
+            8
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            4,
+            8
+          ],
+          [
+            0,
+            5,
+            6
+          ],
+          [
+            0,
+            5,
+            7
+          ],
+          [
+            0,
+            5,
+            8
+          ]
+        ]
+      },
+      {
+        "label": "V3 s2 V3 s5^-1 V3 @ q=11/10",
+        "n": 9,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 1,
+        "triples_total": 84,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            0,
+            1,
+            8
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            2,
+            7
+          ],
+          [
+            0,
+            2,
+            8
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            3,
+            6
+          ],
+          [
+            0,
+            3,
+            7
+          ],
+          [
+            0,
+            3,
+            8
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            0,
+            4,
+            7
+          ]
+        ]
+      },
+      {
+        "label": "random9_0 @ q=11/10",
+        "n": 9,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 15,
+        "triples_total": 84,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            0,
+            1,
+            8
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            7
+          ],
+          [
+            0,
+            2,
+            8
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            3,
+            6
+          ],
+          [
+            0,
+            3,
+            7
+          ],
+          [
+            0,
+            3,
+            8
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            4,
+            8
+          ],
+          [
+            0,
+            5,
+            6
+          ],
+          [
+            0,
+            5,
+            7
+          ],
+          [
+            0,
+            5,
+            8
+          ],
+          [
+            0,
+            6,
+            8
+          ],
+          [
+            0,
+            7,
+            8
+          ]
+        ]
+      },
+      {
+        "label": "random9_1 @ q=11/10",
+        "n": 9,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 2,
+        "triples_total": 84,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            2,
+            7
+          ],
+          [
+            0,
+            2,
+            8
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            3,
+            6
+          ],
+          [
+            0,
+            3,
+            7
+          ],
+          [
+            0,
+            3,
+            8
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            4,
+            8
+          ]
+        ]
+      },
+      {
+        "label": "V3 V3 V3 @ q=3/2",
+        "n": 9,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": true,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          true,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 10,
+        "triples_total": 84,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            0,
+            1,
+            8
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            2,
+            7
+          ],
+          [
+            0,
+            2,
+            8
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            3,
+            7
+          ],
+          [
+            0,
+            3,
+            8
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            4,
+            8
+          ],
+          [
+            0,
+            5,
+            6
+          ],
+          [
+            0,
+            5,
+            7
+          ],
+          [
+            0,
+            5,
+            8
+          ]
+        ]
+      },
+      {
+        "label": "V3 s2 V3 s5^-1 V3 @ q=3/2",
+        "n": 9,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 1,
+        "triples_total": 84,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            0,
+            1,
+            8
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            2,
+            7
+          ],
+          [
+            0,
+            2,
+            8
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            3,
+            6
+          ],
+          [
+            0,
+            3,
+            7
+          ],
+          [
+            0,
+            3,
+            8
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            0,
+            4,
+            7
+          ]
+        ]
+      },
+      {
+        "label": "random9_0 @ q=3/2",
+        "n": 9,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false,
+          true
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 15,
+        "triples_total": 84,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            0,
+            1,
+            8
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            7
+          ],
+          [
+            0,
+            2,
+            8
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            3,
+            6
+          ],
+          [
+            0,
+            3,
+            7
+          ],
+          [
+            0,
+            3,
+            8
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            4,
+            8
+          ],
+          [
+            0,
+            5,
+            6
+          ],
+          [
+            0,
+            5,
+            7
+          ],
+          [
+            0,
+            5,
+            8
+          ],
+          [
+            0,
+            6,
+            8
+          ],
+          [
+            0,
+            7,
+            8
+          ]
+        ]
+      },
+      {
+        "label": "random9_1 @ q=3/2",
+        "n": 9,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": false,
+        "leftmost_block_ratio_is_q2": true,
+        "per_block_ratio_is_q2": [
+          true,
+          false,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": 2,
+        "triples_total": 84,
+        "triples_not_q2": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            5
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            2,
+            7
+          ],
+          [
+            0,
+            2,
+            8
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            3,
+            5
+          ],
+          [
+            0,
+            3,
+            6
+          ],
+          [
+            0,
+            3,
+            7
+          ],
+          [
+            0,
+            3,
+            8
+          ],
+          [
+            0,
+            4,
+            5
+          ],
+          [
+            0,
+            4,
+            6
+          ],
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            4,
+            8
+          ]
+        ]
+      },
+      {
+        "label": "V3 V3 V3 @ q=q0",
+        "n": 9,
+        "primary_sum_ratio_is_q2": true,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": null,
+        "leftmost_block_ratio_is_q2": false,
+        "per_block_ratio_is_q2": [
+          false,
+          false,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": null,
+        "triples_total": 84,
+        "triples_not_q2": null,
+        "ratio_minus_q2_primary": "-8.43375835458441857947885924101601520616796910589480604006221e-81"
+      },
+      {
+        "label": "V3 s2 V3 s5^-1 V3 @ q=q0",
+        "n": 9,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": null,
+        "leftmost_block_ratio_is_q2": false,
+        "per_block_ratio_is_q2": [
+          false,
+          false,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": null,
+        "triples_total": 84,
+        "triples_not_q2": null,
+        "ratio_minus_q2_primary": "0.123748816655048893298267575133573547562359775785916458268882"
+      },
+      {
+        "label": "random9_0 @ q=q0",
+        "n": 9,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": null,
+        "leftmost_block_ratio_is_q2": false,
+        "per_block_ratio_is_q2": [
+          false,
+          false,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": null,
+        "triples_total": 84,
+        "triples_not_q2": null,
+        "ratio_minus_q2_primary": "0.211912129999467023156568927623126050517899651880931920418647"
+      },
+      {
+        "label": "random9_1 @ q=q0",
+        "n": 9,
+        "primary_sum_ratio_is_q2": false,
+        "primary_tau_n_zero": false,
+        "every_block_ratio_is_q2": null,
+        "leftmost_block_ratio_is_q2": false,
+        "per_block_ratio_is_q2": [
+          false,
+          false,
+          false
+        ],
+        "all_triples_sum_ratio_is_q2": false,
+        "triples_ratio_q2": null,
+        "triples_total": 84,
+        "triples_not_q2": null,
+        "ratio_minus_q2_primary": "0.436279455822952471659086853574864043550835373209661380818255"
+      }
+    ],
+    "all_triples_sum_ratio_q2": false,
+    "words_with_a_non_block_triple_not_q2": [
+      "V3 (x) 1_3 spectators",
+      "V3 (x) V3",
+      "V3 s2 V3 (pp-type interface)",
+      "V3 s2^-1 V3 (nn-type interface)",
+      "V3 (s2 - h(1/2-delta/4)) V3 (colour-weighted pn interface)",
+      "six_strand_survivor_0",
+      "six_strand_survivor_1",
+      "six_strand_survivor_2",
+      "six_strand_survivor_3",
+      "six_strand_survivor_4",
+      "six_strand_survivor_5",
+      "six_strand_survivor_6",
+      "six_strand_survivor_7",
+      "six_strand_survivor_8",
+      "six_strand_survivor_9",
+      "six_strand_survivor_10",
+      "six_strand_survivor_11",
+      "six_strand_survivor_12",
+      "six_strand_survivor_13",
+      "six_strand_survivor_14",
+      "six_strand_survivor_15",
+      "six_strand_survivor_16",
+      "six_strand_survivor_17",
+      "six_strand_survivor_18",
+      "six_strand_survivor_19",
+      "six_strand_survivor_20",
+      "six_strand_survivor_21",
+      "six_strand_survivor_22",
+      "six_strand_survivor_23",
+      "six_strand_survivor_24",
+      "six_strand_survivor_25",
+      "six_strand_survivor_26",
+      "six_strand_survivor_27",
+      "six_strand_survivor_28",
+      "six_strand_survivor_29",
+      "six_strand_survivor_30",
+      "six_strand_survivor_31",
+      "six_strand_survivor_32",
+      "six_strand_survivor_33",
+      "six_strand_survivor_34",
+      "six_strand_survivor_35",
+      "six_strand_survivor_36",
+      "six_strand_survivor_37",
+      "six_strand_survivor_38",
+      "six_strand_survivor_39",
+      "six_strand_survivor_40",
+      "six_strand_survivor_41",
+      "six_strand_survivor_42",
+      "six_strand_survivor_43",
+      "six_strand_survivor_44",
+      "six_strand_survivor_45",
+      "six_strand_survivor_46",
+      "six_strand_survivor_47",
+      "six_strand_survivor_48",
+      "six_strand_survivor_49",
+      "six_strand_survivor_50",
+      "six_strand_survivor_51",
+      "six_strand_survivor_52",
+      "six_strand_survivor_53",
+      "six_strand_survivor_54",
+      "six_strand_survivor_55",
+      "six_strand_survivor_56",
+      "six_strand_survivor_57",
+      "random6_0",
+      "random6_1",
+      "random6_2",
+      "random6_3",
+      "random6_4",
+      "V3 V3 V3 @ q=11/10",
+      "V3 s2 V3 s5^-1 V3 @ q=11/10",
+      "random9_0 @ q=11/10",
+      "random9_1 @ q=11/10",
+      "V3 V3 V3 @ q=3/2",
+      "V3 s2 V3 s5^-1 V3 @ q=3/2",
+      "random9_0 @ q=3/2",
+      "random9_1 @ q=3/2"
+    ],
+    "mev_proton_q0": {
+      "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+      "E0_ord0": "4.18598136329447589694506215875900841014348689087960498278367",
+      "E0_tower": "4.22748335562903055026805602658721115361518419806561475207637",
+      "split_ord0": "0.873536621380459821746434074984571553678259416295994588435349",
+      "split_tower": "0.882197316930225041262327987588075186486589880651820588341200",
+      "codata_dm_np_comparison_only": "1.29333251000000000000000000000000000000000000000000000000000",
+      "gap_ord0": "-0.324584656593485134193035884496113413496225022367995227742826",
+      "gap_tower": "-0.317888238245689005944551732030554782476944091777434259082222",
+      "diagnostic_only_exponent_needed_ord0": "2.96114090318533406947804767435509361678434761444351221213996",
+      "diagnostic_only_exponent_needed_tower": "2.93207083082138315008783200040677546662934985467445848349753"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
