@@ -4,8 +4,10 @@ title: 'Stability: Swarm & Merge-Manager Continuity Handover'
 status: in-progress
 type: epic
 priority: high
+tags:
+    - stability
 created_at: 2026-11-24T08:06:16Z
-updated_at: 2026-11-27T14:25:41Z
+updated_at: 2026-11-27T14:28:28Z
 parent: qou-5vkl
 ---
 
