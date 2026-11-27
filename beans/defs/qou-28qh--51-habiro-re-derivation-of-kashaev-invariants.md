@@ -3,10 +3,11 @@
 title: 5.1 Habiro re-derivation of Kashaev invariants
 status: in-progress
 type: task
+priority: normal
 tags:
     - constructive
 created_at: 2026-11-27T19:01:13Z
-updated_at: 2026-11-27T19:01:13Z
+updated_at: 2026-11-27T19:15:33Z
 parent: qou-dk7p
 ---
 
@@ -20,3 +21,6 @@ Child of qou-gfsr (item 5, option 5.1). Option 5.1 of qou-gfsr (owner pick 2026-
 - P5: bar involution q -> q^-1 on R^[q]; 4_1 bar-invariant, 3_1 maps to its mirror. Algebraic, so KashaevReflection-type facts move off the analytic side.
 
 Overlaps: Coev strangler thread (QCalculus/HabiroBracket, HabiroCyclotomicOddLocus, #9552/#9569); dilog-Bloch / knot-volume thread (qou-pc7n Hermitian certificates). Existing ZZ-only ring: BraidKnotOctonion/QHabiroCompletion (could later become the R = ZZ instance).
+
+## Owner scope (2026-11-27 19:05Z, "A C")
+A then C: cyclotomic-series constructor + 3_1, 4_1, then twist knots via Masbaum (P1-P2) now; the general cyclotomic expansion for every knot (Habiro's theorem, quantum-group setup) is the long-run goal, added as P6.
