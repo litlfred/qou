@@ -3,7 +3,7 @@ import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import QOU.Transcendental.MathlibExt.BlochWignerLobachevsky
 import QOU.Transcendental.MassTheory.BlochWignerSymmetry
 import MathlibExt.ExponentialGrowthRate
-import BraidKnotOctonion.KummerRadial
+import QOU.Transcendental.BraidKnotOctonion.KummerRadial
 
 /-!
 # QOU.Archimedean.FiveTwoOhtsukiBridge — shrinking the `5₂` volume-conjecture axiom

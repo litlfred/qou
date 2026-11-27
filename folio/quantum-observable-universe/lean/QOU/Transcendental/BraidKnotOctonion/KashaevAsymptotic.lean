@@ -52,7 +52,7 @@
   -- Ref: [leitner2026] QOU/MathlibExt/CompositeEulerMaclaurin.lean
   -- Ref: [leitner2026] computations/probes/kashaev_assembly_bound_probe.py
 -/
-import BraidKnotOctonion.LobNearZero
+import QOU.Transcendental.BraidKnotOctonion.LobNearZero
 import MathlibExt.StirlingRobbins
 
 namespace QOU.Knot.FigureEightVolume

@@ -38,8 +38,8 @@ states. Discharging it is what would join the two halves into the VC for
 Audit: `docs/audits/2026-08-19-volume-conjecture-work-overlap-sweep.md`.
 -/
 
-import BraidKnotOctonion.Clausen
-import BraidKnotOctonion.WhiteheadVolumeConjecture
+import QOU.Transcendental.BraidKnotOctonion.Clausen
+import QOU.Transcendental.BraidKnotOctonion.WhiteheadVolumeConjecture
 
 namespace QOU.Knot.WhiteheadSaddle
 

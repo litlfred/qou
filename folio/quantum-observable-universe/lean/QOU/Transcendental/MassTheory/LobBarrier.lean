@@ -14,7 +14,7 @@
 
   -- Ref: [rivin1994] Euclidean structures on simplicial surfaces and hyperbolic volume
 -/
-import BraidKnotOctonion.RivinConcavity
+import QOU.Transcendental.BraidKnotOctonion.RivinConcavity
 
 open Filter Topology Real
 
