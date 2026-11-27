@@ -23,7 +23,5 @@ $$
   P(\alpha)
   \;=\;
   -h^2 H\,\alpha^3 + H\,\alpha^2 + T\,\alpha - 1
-  \;=\; 0,
+  \;=\; 0.
 $$
-
-*and its inverse yields CODATA-consistency: $\lvert \alpha^{-1} - 137.035999177\rvert < 10^{-3}$.*
