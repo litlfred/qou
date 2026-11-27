@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-25T16:25:07Z
-updated_at: 2026-11-27T14:30:27Z
+updated_at: 2026-11-27T14:45:00Z
 ---
 
 Owner, 2026-11-25, verbatim: "all handovefr notes should go into common .md (bean) all agents work on for their session (that should also be part of process)" and "your token use for the week is getting low, there are skills for handover, please make sure you and siblings start preparing".
@@ -115,3 +115,8 @@ Bean qou-rf43 (in-progress). Draft PR #9436, branch claude/binding-error-budget-
 - Salvage threads S1-S5 own the 178 remaining open PRs (S1 recent drafts, S2/S3/S4 bulk Lean 11-16..18, S5 Aug-Nov 15). Fenced: #9217 #9178 #9176 #9174 #8734 #8692 #8735 #8150.
 - qou-s028 now tag stability, parent qou-5vkl.
 - Next: merge salvage/research PRs as they report; guard fix bean; post-merge QA on main.
+
+## S4 batch C (bulk Lean PRs 11-16..18, 54 PRs), 2026-11-27 14:45Z
+- Closed 52 with comments, branches kept. Superseded (already on main): #8158 #8169 #8260 #8268. Obsolete (qou-2002 CODATA/AME/float64 bookkeeping, empirical values in proofs): #8176 #8182 #8184 #8188 #8190. Rejected by the PR-Drain-4 audit (docs/audits/2026-11-23-backlog-drain-batch4-ledger.md), owner chose "Close 43" on 2026-11-27: the other 43.
+- Kept open by owner choice: #8142 (core on main in QOU/Nuclear/DecayLadderConventionDPositivity.lean; q-beta-cos-resummation.lean fails Lean) and #8154 (salvaged parts on main: Confinement/ConfinementLPHomogeneity, BraidKnotOctonion/LevelLocalPathSumSupport).
+- No salvage PR: nothing in batch C imports Mathlib or the corpus. Open beans named by those PRs need fresh Mathlib statements, not ports.
