@@ -62,8 +62,8 @@ denominators. -/
 theorem coulomb_sq_of_casimir (f a Q D M E₁ q : R) (hD0 : D ≠ 0) (hq : q ≠ 0)
     (hD : D ^ 2 * (2 * E₁) = q * M) :
     (f * a * Q * M / D) ^ 2 = 2 * f ^ 2 * a ^ 2 * Q ^ 2 * M * E₁ / q := by
-  rw [div_pow, eq_div_iff hq, div_mul_eq_mul_div, div_eq_iff (pow_ne_zero 2 hD0)]
-  linear_combination (f ^ 2 * a ^ 2 * Q ^ 2 * M) * hD
+  rw [div_pow, div_eq_div_iff (pow_ne_zero 2 hD0) hq]
+  linear_combination (-(f ^ 2 * a ^ 2 * Q ^ 2 * M)) * hD
 
 /-- **The two-scale ratio depends on `E₀ / M`.** Flavour term `2L·E₀`, electromagnetic term
 `C` with `C² = 2 f² a² Q² M E₁ / q` and gap `E₁ = c · E₀`. -/
@@ -73,6 +73,5 @@ theorem ratio_sq_two_scale (f a Q M E₀ c q L C : R) (hf : f ≠ 0) (ha : a ≠
     (2 * L * E₀ / C) ^ 2 = 2 * q * L ^ 2 * E₀ / (f ^ 2 * a ^ 2 * Q ^ 2 * M * c) := by
   rw [div_pow, hC]
   field_simp
-  ring
 
 end QOU.Nuclear.NucleonSplitTwoScale
