@@ -7,7 +7,7 @@ priority: normal
 tags:
     - compute-accuracy
 created_at: 2026-11-21T04:30:36Z
-updated_at: 2026-11-27T14:18:26Z
+updated_at: 2026-11-27T15:40:00Z
 parent: qou-9nnz
 ---
 
@@ -167,3 +167,13 @@ Moves of ~`7–9e-49` are the expected size for closing a `2.13e-50` straddle; n
 **cvxpy mattered beyond bookkeeping.** AGENTS.md records that its absence *changes numbers* (deuteron binding `−15.8142` without it, `+0.5381` with it — a sign flip from the import alone), and a default container here has it **absent** while main's agents have 1.9.3. Until it was installed, **no witness main produced could be refreshed here without a downgrade.** That generalises well beyond this bean.
 
 **Still open:** the 7 confirmed straddles (severity table above), top-ranked being `delta_lambda_binding_reading_probe` at a **1.19× margin**.
+
+## 2026-11-27 — re-scoped: the straddles live only on stale PR #8560
+
+Checked against `main` at `577759a4c11`. The sweep `e925b93b8fb` never reached main: PR #8560 is 2,474 commits behind and conflicting. On main, all 7 confirmed-straddle probes read q from `Q_50_DIGIT_STR` on **both** the sympy and mpmath sides (for example, `delta_lambda_binding_reading_probe.py` lines 66 and 120, `diproton_response_closed_form_probe.py` lines 102 and 106), so **main has no straddle**. Main's ceiling is still 50 digits.
+
+The owner chose (2026-11-27) to split #8560 into small PRs from main: #9471 (Lean `LinkingWeightWedderburn`), #9472 (provenance checker) and #9473 (Markov probe `UnboundLocalError` fix). The 70-digit sweep was **not** carried over.
+
+**What this bean now means:** if the q-precision ceiling is lifted again, redo the sweep from main so that it moves the sympy spelling (`sp.Rational`/`sp.sympify(Q_50_DIGIT_STR)`) **together with** the mpmath one, using the verified pattern
+`with mp.workdps(DPS + 15): QV = sp.Rational(mp.nstr(Q_MP, DPS + 10, strip_zeros=False))`,
+and gate every touched witness on both the value gate and the provenance gate (#9472). Not started.
