@@ -4,12 +4,12 @@
   "scriptFile": "witness_value_copy_audit.py",
   "description": "Source literals of >= 11 significant digits that also appear in a *.witness.json the script does not itself produce \u2014 a value copied instead of loaded. Such a copy goes stale silently when the producer is re-run.",
   "min_sig_digits": 11,
-  "indexed_literals": 273541,
-  "total": 357,
-  "narrow_total": 163,
-  "narrow_files": 105,
+  "indexed_literals": 275693,
+  "total": 358,
+  "narrow_total": 164,
+  "narrow_files": 106,
   "shared_total": 194,
-  "files": 236,
+  "files": 237,
   "from_deprecated_witness": 0,
   "findings": [
     {
@@ -1665,26 +1665,25 @@
         "computations/deltalambda/mu3-frechet-perblock.witness.json",
         "computations/extensive-carrier-scale-inversion-probe.witness.json"
       ],
-      "witness_count": 15,
+      "witness_count": 18,
       "deprecated_source": false
     },
     {
       "file": "computations/probes/deuteron_interface_colour_weighting_probe.py",
-      "line": 214,
+      "line": 217,
       "literal": "0.5081578877486456",
       "sig_digits": 16,
       "spread": "NARROW",
       "witnesses": [
         "computations/binding-bring-enhancement-compare.witness.json",
-        "computations/bond-extensivity-equal-weight.witness.json",
-        "computations/deltalambda/wlambda-nuclear-braid-connected.witness.json"
+        "computations/bond-extensivity-equal-weight.witness.json"
       ],
-      "witness_count": 3,
+      "witness_count": 2,
       "deprecated_source": false
     },
     {
       "file": "computations/probes/deuteron_interface_colour_weighting_probe.py",
-      "line": 223,
+      "line": 226,
       "literal": "0.4036277383508259",
       "sig_digits": 16,
       "spread": "NARROW",
@@ -1697,7 +1696,7 @@
     },
     {
       "file": "computations/probes/deuteron_interface_colour_weighting_probe.py",
-      "line": 224,
+      "line": 227,
       "literal": "1.128088744114354",
       "sig_digits": 16,
       "spread": "SHARED",
@@ -1712,16 +1711,15 @@
     },
     {
       "file": "computations/probes/deuteron_interface_colour_weighting_probe.py",
-      "line": 226,
+      "line": 229,
       "literal": "0.5081578877486456",
       "sig_digits": 16,
       "spread": "NARROW",
       "witnesses": [
         "computations/binding-bring-enhancement-compare.witness.json",
-        "computations/bond-extensivity-equal-weight.witness.json",
-        "computations/deltalambda/wlambda-nuclear-braid-connected.witness.json"
+        "computations/bond-extensivity-equal-weight.witness.json"
       ],
-      "witness_count": 3,
+      "witness_count": 2,
       "deprecated_source": false
     },
     {
@@ -2020,6 +2018,18 @@
       "deprecated_source": false
     },
     {
+      "file": "computations/probes/gg_ntower/gg_scalar_per_step_probe.py",
+      "line": 96,
+      "literal": "1.75923699418",
+      "sig_digits": 12,
+      "spread": "NARROW",
+      "witnesses": [
+        "computations/qbeta/qbeta-decay-functional-unification-protium.witness.json"
+      ],
+      "witness_count": 1,
+      "deprecated_source": false
+    },
+    {
       "file": "computations/probes/h4_h2_cross_algebra_bridge_probe.py",
       "line": 215,
       "literal": "0.91596559417721901505",
@@ -2131,7 +2141,7 @@
         "computations/probes/he4_all_pairs_formation/he4-all-pairs-formation.witness.json",
         "computations/probes/he4_gg_all_pairs/he4-gg-all-pairs.witness.json"
       ],
-      "witness_count": 6,
+      "witness_count": 7,
       "deprecated_source": false
     },
     {
@@ -2146,7 +2156,7 @@
         "computations/probes/he4_all_pairs_formation/he4-all-pairs-formation.witness.json",
         "computations/probes/he4_gg_all_pairs/he4-gg-all-pairs.witness.json"
       ],
-      "witness_count": 6,
+      "witness_count": 7,
       "deprecated_source": false
     },
     {
@@ -2161,7 +2171,7 @@
         "computations/probes/he4_all_pairs_formation/he4-all-pairs-formation.witness.json",
         "computations/probes/he4_gg_all_pairs/he4-gg-all-pairs.witness.json"
       ],
-      "witness_count": 6,
+      "witness_count": 7,
       "deprecated_source": false
     },
     {
@@ -3322,7 +3332,7 @@
         "computations/deltalambda/mu3-frechet-perblock.witness.json",
         "computations/extensive-carrier-scale-inversion-probe.witness.json"
       ],
-      "witness_count": 15,
+      "witness_count": 18,
       "deprecated_source": false
     },
     {
