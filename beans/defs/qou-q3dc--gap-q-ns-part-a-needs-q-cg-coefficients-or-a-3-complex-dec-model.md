@@ -36,3 +36,10 @@ result does not apply. `q_ns_twisted_transport.lean` (sorry-free) proves the exa
 φ(Xu·u)+φ(u·Xu) = φ(Xu·(u−θu)) for a θ-twisted, φ-divergence-free X. For the q-difference
 D = (θ−id)/c with φ∘θ = φ, it is −c·φ(Du·Du): q-difference transport dissipates at first order in c.
 Open: build the 3D-calculus vector fields on OqSU2 and get the sign and size of c; Part A.
+
+## 2026-11-27 — orientation and balanced difference (PR #9558)
+
+- `qDiff_neg`: the sign of the one-sided budget −c·φ(Du·Du) flips with the orientation of the difference.
+- `qCen_energy_conserving`: the balanced difference (θ − θ⁻¹)/c conserves energy exactly for θ-invariant φ.
+- `theta3D`: the Woronowicz 3D-calculus twist (q⁻², q⁴, q⁻⁴, q²) is the corpus `torusScaleAlgEquiv q (q⁻²) (q⁴)`; `theta3D_energy` gives both budgets on OqSU2.
+- Still open: which difference the 3D-calculus vector fields are; Haar invariance (a hypothesis); positivity and the *-structure; Part A (qou-pa7n).
