@@ -213,3 +213,52 @@ Then the factors map as follows, and the product telescopes:
 
 **What remains as hypotheses.** These are the same as for the pentagon: `TCompat` (one instance
 here), and the existence of the units `G`.
+
+## 8. Stage 3d: units discharged; what Exp has to be
+
+Lean: `RationalAssociator/NilpotentUnits.lean`, no `sorry`, axioms `propext`, `Classical.choice`,
+`Quot.sound`.
+
+**(a) Units, closed.**
+
+- `NilIdeal S`: a ℚ-submodule `S` that is a two-sided ideal of nilpotent elements.
+- `eval_sub_mem`: for `a, b ∈ S`, `eval a b p − ε(p) ∈ S`, where `ε` is the constant term
+  `FreeAlgebra.algebraMapInv`.
+- `evalUnit`: when `ε(g) = 1`, `eval a b g = 1 + (nilpotent)` is a unit (`IsNilpotent.isUnit_one_add`).
+- `nilIdeal_Fil`: in `U4 N`, `x ∈ Fil N 1` gives `xᴺ ∈ Fil N N = 0`, so `Fil N 1` is such an ideal.
+- `pentagon_act_U4` and `hexagon_act_U4` restate the action theorems in `U4 N`. Every `G` is
+  `gU N hg1 l m = g(Σ_l t, Σ_m t)`. The hypotheses left on `g` are:
+  - `ε(g) = 1`;
+  - its pentagon;
+  - (5.13), and (5.14) for the hexagon;
+  - `TCompat`.
+
+**A caveat on `hexagon_act_all` (§7).** Its hypothesis quantifies over *every* `DK3` family of
+`R`. That includes non-nilpotent families, where a truncated exponential `E` does not satisfy the
+hexagon. So for `R = U4 N` that hypothesis is not expected to hold for a genuine associator.
+`hexagon_act_U4` avoids this: it takes the hexagon of `φ` at the transported family. To discharge
+that hypothesis from the universal hexagon, one needs a 3-strand universal algebra `U3 N` with
+`lift`, or the quantifier restricted to families in a `NilIdeal`. Neither is written yet.
+
+**(b) Exp: the top-degree statement alone does not serve stage 4.** Stage 4 (bean `qou-3fdg`)
+takes a `K`-associator `Φ` with `Φ_{≤N}` rational and `y ∈ grt_{N+1}(K)`. It needs an associator
+`Φ'` with `Φ' ≡ Φ + y` modulo degree `N + 2`. The induction then continues from `Φ'`, so `Φ'` must
+be an associator in every degree, or at least in every truncation `U4 M` for arbitrarily large
+`M`.
+
+- Modulo degree `N + 2`, `g = 1 + y` satisfies the `GRT₁` equations exactly when `y ∈ grt`, since
+  those conditions are linear in the top degree. So `Φ ∘ (1 + y)` is an associator only mod
+  degree `N + 2`, and nothing says it lifts.
+- What stage 4 needs is the existence of `g ∈ GRT₁(K)`, in all degrees, with `g ≡ 1 + y` mod
+  degree `N + 2`. This is the surjectivity of `GRT₁ → grt` on top-degree pieces. It is smaller
+  than a full exponential map with group-law properties, but it is not a truncation statement.
+- The congruence `Φ ∘ g ≡ Φ + y` mod degree `N + 2` for such `g` is easy, and it is not the
+  bottleneck.
+- The naive series `exp(ψ)` is not the required `g`. Exact check over ℚ in `U(𝔱₃)` (`t3.py`
+  functions): `exp(σ₃)` satisfies (5.13) and `TCompat` through degree 6, but **fails (5.14) at
+  degree 6**. `Exp` must use the `GRT₁` group law `g₁ ∘ g₂ = g₁(g₂ A g₂⁻¹, B)·g₂`, not the
+  product of series. Equivalently, `g` is built degree by degree, and each step needs an
+  obstruction to vanish.
+
+The degree-by-degree construction of `g ∈ GRT₁` with prescribed leading term (Drinfeld §5,
+(5.17)–(5.20); Ihara) is not attempted here. It is the next blocker for stage 4.
