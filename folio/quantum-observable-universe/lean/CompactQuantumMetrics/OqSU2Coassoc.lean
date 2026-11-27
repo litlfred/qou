@@ -18,7 +18,7 @@ proof (`OqSU2HaarInvariance`) needs. Everything is over a commutative ring `R`, 
 * `transpose : (α, β, γ, δ) ↦ (α, γ, β, δ)` is an algebra endomorphism (`transposeQuad`), an
   involution (`transpose_transpose`), and a coalgebra anti-map:
   `Δ ∘ T = flip ∘ (T ⊗ T) ∘ Δ` (`coprod_transpose`). It sends the PBW monomial
-  `(a, b, c)` to `(a, c, b)` (`transpose_mono`).
+  `(a, b, c)` to `(a, c, b)` (`transpose_pbwMono`).
 
 No empirical value enters any proof.
 
@@ -204,10 +204,10 @@ theorem transpose_monoY (b c : ℕ) : transpose q (monoY q b c) = monoY (R := R)
   rw [monoY, map_mul, map_pow, map_pow, transpose_beta, transpose_gamma, hc.eq, monoY]
 
 /-- `T` sends the PBW monomial `(a, b, c)` to `(a, c, b)`. -/
-theorem transpose_mono (i : MonoIdx) :
-    transpose q (mono q i) = mono (R := R) q (i.1, i.2.2, i.2.1) := by
+theorem transpose_pbwMono (i : MonoIdx) :
+    transpose q (pbwMono q i) = pbwMono (R := R) q (i.1, i.2.2, i.2.1) := by
   obtain ⟨a, b, c⟩ := i
-  simp only [mono]
+  simp only [pbwMono]
   split_ifs <;> simp [monoA, monoD, transpose_monoY]
 
 end QOU.AlgebraicSubstrate.OqSU2
