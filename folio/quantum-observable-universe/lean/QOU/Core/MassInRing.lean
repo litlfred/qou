@@ -1,6 +1,7 @@
 import QOU.Core.QuantaleCut
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
+import Mathlib.RingTheory.Ideal.Maps
 
 /-!
 # QOU.Core.MassInRing — the canonical nucleon mass as a ring element
