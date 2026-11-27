@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-11-24T16:16:37.496832+00:00",
-  "commitSha": "001fdd153ad88f8cb4adf519dd029ccceef4c035",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-27T18:56:57.443162+00:00",
+  "commitSha": "7692cdf8deeffe09236033935725458b43868f5d",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
   "scriptHash": "d863ff9da980",
-  "scriptCommitSha": "001fdd153ad88f8cb4adf519dd029ccceef4c035",
+  "scriptCommitSha": "7692cdf8deeffe09236033935725458b43868f5d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,11 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "cvxpy": "absent",
-    "pyhecke_native_build": "a9f23cb94545f585"
+    "cvxpy": "absent"
   },
   "invocation": {
     "argv": [
@@ -722,11 +719,11 @@
       },
       {
         "path": "meson-kaon-pion-derivation.witness.json",
-        "sha256": "15191ec6e07d6c265dc8d2de82e684b87b4e2d86fb6139cd7f1df1165cf7afef",
-        "size_bytes": 5482,
-        "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
-        "scriptCommitSha": "de0a31477159c7d0667f1ba8b5fe62ddd9223e78",
-        "computedAt": "2026-08-29T10:52:02.091600+00:00"
+        "sha256": "39905ccf47579d681636d9c899ad01d359573dac1710d6c730e589ebc05a883d",
+        "size_bytes": 5459,
+        "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
+        "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+        "computedAt": "2026-11-20T15:37:55.673703+00:00"
       },
       {
         "path": "alpha-em-schwinger-ladder.witness.json",
