@@ -1,13 +1,13 @@
 ---
 # qou-2skq
 title: 'Distinct uud/udd nucleon words: crossing-local charge dressing replaces C2'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - compute-accuracy
 created_at: 2026-11-27T17:28:59Z
-updated_at: 2026-11-27T17:39:42Z
+updated_at: 2026-11-27T17:41:02Z
 parent: qou-myts
 ---
 
@@ -16,3 +16,5 @@ Route 2 of the nucleon split (C1 item of qou-myts). Owner 2026-11-27: build diff
 2026-11-27: PR #9511 (head 1d31ea024f) opened, ready for review. Lean exit 0, probe 7/7. Owner card: option 1 (crossing-local charge words). Open: sign and value of c (route 1), alternatives listed in the audit §4.
 
 2026-11-27 follow-up: charges in the ruled photon weights. Factorisation L^3 = 1 + h^2 L - h^2 L^2 forces c = 0 (Lean ac_eq_zero_of_photon_factorisation; probe: only common root for quark charges). Dressed photon pair alone splits at O((q^2-1)^4). PR #9517.
+
+2026-11-27: #9511 and #9517 merged. Owner standing pick: leave the next parameter-free reading (position-labelled V3, four-strand lepton) to route 1. c remains underived; photon factorisation forces c = 0.
