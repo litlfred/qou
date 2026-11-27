@@ -104,8 +104,7 @@ theorem ladder_swap_right (hbr : a * b * a = b * a * b) (k : ℕ) :
 
 theorem ladder_eq_pow (k : ℕ) : ladder a b k = delta a b ^ (2 * k + 1) := by
   unfold ladder
-  rw [← pow_mul, pow_succ, mul_comm (delta a b ^ (2 * k)) (delta a b), ← pow_succ']
-  rw [pow_succ']
+  rw [← pow_mul, ← pow_succ']
 
 end Monoid
 
@@ -147,7 +146,7 @@ def swapNeg : Matrix (Fin 2) (Fin 2) R := !![0, -1; -1, 0]
 theorem rho21_delta (q : R) (hq : q ≠ 0) : rhoA q * rhoB q * rhoA q = swapNeg := by
   ext i j
   fin_cases i <;> fin_cases j <;>
-    simp [rhoA, rhoB, swapNeg, Matrix.mul_apply, Fin.sum_univ_two] <;> field_simp <;> ring
+    simp [rhoA, rhoB, swapNeg, Matrix.mul_apply, Fin.sum_univ_two, hq]
 
 /-- The braid relation holds in this representation. -/
 theorem rho21_braid (q : R) (hq : q ≠ 0) :
@@ -155,7 +154,7 @@ theorem rho21_braid (q : R) (hq : q ≠ 0) :
   rw [rho21_delta q hq]
   ext i j
   fin_cases i <;> fin_cases j <;>
-    simp [rhoA, rhoB, swapNeg, Matrix.mul_apply, Fin.sum_univ_two] <;> field_simp <;> ring
+    simp [rhoA, rhoB, swapNeg, Matrix.mul_apply, Fin.sum_univ_two, hq]
 
 theorem swapNeg_sq : (swapNeg : Matrix (Fin 2) (Fin 2) R) ^ 2 = 1 := by
   rw [sq]

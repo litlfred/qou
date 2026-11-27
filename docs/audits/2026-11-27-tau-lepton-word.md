@@ -67,3 +67,17 @@ Ring mass m(β) = [2]³ q^{-2w} tr_D(β), U = −q ∂_q log m.
 * Genus 0, 3, 6: if the Bring genus ≤ 4 filter applies to the whole link, the rule allows only
   two generations. If it applies per component (T(2,5) has genus 2), all three pass. Open.
 * Measured values appear only in the comparison table above, never in a check or a proof.
+
+## Cross-thread note (electron-weight thread, 2026-11-27 23:00Z; not adopted)
+* Δ^{2k+1} are periodic 3-braids: torus-type closures, Vol = 0, Kashaev invariants grow only
+  polynomially, so no Vol/ℏ term exists on this ladder.
+* Coloured ring masses (U_q(sl₂) spin (N−1)/2, framing by stabilisation, N = 2 equal to [4]/q³) are
+  wrong-way at every N: N=3 1/0.263/0.0742, N=4 1/0.139/0.0212, N=5 1/0.0768/0.00627.
+* The mirror ladder Δ^{−(2k+1)} is the heavier direction for q > 1 (ratio q^{+6k} on the ring chart).
+  Which chirality the electron carries is fixed by the 2026-11-21 ruling (σ₀σ₁σ₀); the mirror is
+  recorded here only as an observation.
+
+## Verification
+* `scripts/lean-verify.sh` on `LeptonUniversalityLadder.lean`: exit 0, sorry-free.
+  `#print axioms`: `propext`, `Classical.choice`, `Quot.sound` only (ladder_swap_left: `propext`).
+* Imported in `QOU.lean`.
