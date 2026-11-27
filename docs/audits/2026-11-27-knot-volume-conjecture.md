@@ -3,7 +3,7 @@
 **Date:** 2026-11-27 · **Thread:** "Formalize knot volume conjecture" (QOU project, research front 1 of the 2026-11-27 swarm) · **PR:** #9456
 **Inputs:** the owner's external AI discussion, 2026-11-25 to 2026-11-27 (unverified text, read critically here); brief `qou-swarm-2026-11-27/briefs/1-knot-volume.md`.
 **Probe:** `computations/probes/weaving_kashaev_root_of_unity/` (pre-registered; `PREREGISTRATION.md` and Addendum 1 were written before the code they describe ran).
-**Lean:** `MathlibExt/SqueezeModulus.lean` (sorry-free).
+**Lean:** `QOU/Transcendental/SqueezeModulus.lean` (sorry-free).
 
 Notation: V0 = σ₀σ₁⁻¹ ∈ B₃, the photon's chiral vertex. W(3,m) = closure of V0^m (the weaving, or Turk's-head, knots and links). ⟨K⟩_N = J_N(K; e^{2πi/N}) is the Kashaev invariant, normalised so that the unknot gives 1.
 
@@ -117,7 +117,7 @@ Through k = 13, each c_k(8_18) is negative on long runs of roots of unity. The 1
 
 ## 6. The owner's question: is the squeeze just an error estimate, and what happens with infinitesimals?
 
-**Yes, and Lean now says exactly where the Archimedean property enters.** `MathlibExt/SqueezeModulus.lean`:
+**Yes, and Lean now says exactly where the Archimedean property enters.** `QOU/Transcendental/SqueezeModulus.lean`:
 
 * `abs_sub_le_of_squeeze`: if a ≤ x ≤ b and both a and b are within e of L, then so is x. This holds in any linearly ordered additive group, with no Archimedean property, topology or completeness. `abs_sub_le_of_squeeze_relaxed` adds a target known only to within η (the error becomes e + η). This covers the "interval domain" idea: a constant known to finite precision widens the bound and costs nothing more.
 * `abs_log_sub_log_le_log_of_le_mul` and `abs_scaled_log_sub_le`: if 0 < T ≤ S ≤ N·T, then |(c/N)·log S − (c/N)·log T| ≤ c·log N / N. This is the max-term step of the 4_1 and Borromean proofs, isolated.
