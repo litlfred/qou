@@ -49,3 +49,9 @@ Owner chose "Root-of-unity quotient" on the card. Goal: the semisimplified Hecke
 #9743 merged (fd2009fb86). Same file, new section: `sMatrix_twist` (δ·STS = −G·T⁻¹ST⁻¹, G = Σ_{c<2ℓ} ω^{c²}, ω a primitive 4ℓ-th root, ζ = ω²), `sMatrix_tMatrix_cube` (δ·(ST)³ = −G·S²), `gaussSum_ne_zero`. Sorry-free, axioms [propext, Classical.choice, Quot.sound], generic CommRing domain. With S² = D²·1 these are the projective SL₂(ℤ) relations. T = diag(ω^{(j+1)²}) = ω·θ_j is cited as the ribbon twist (Kirby–Melvin), not derived from the corpus braiding.
 
 **next**: Verlinde fusion N_{ij}^m = truncated Clebsch–Gordan; derive S, T from the corpus braiding (needs qou-pbjv / qou-ltwg); higher rank SU(N)_k. Bean stays open: the corpus-braiding identification is still cited.
+
+## 2026-11-27 — Verlinde fusion (PR #9765, 2nd commit)
+
+`tildeS_one_mul_cgChar` (pointwise sl₂ Clebsch–Gordan, division-free) and `verlinde_fusion`: the Verlinde sum gives −2ℓ·N_{ab}^c with N the truncated Clebsch–Gordan rule (|a−b| < c < a+b, a+b+c < 2ℓ, odd), every level. Sorry-free, standard axioms only. With S² = D², (ST)³ = p₊S², det S ≠ 0, this is the full modular data of the level-k quotient, as cyclotomic algebra.
+
+**still open (why the bean stays open)**: S, T and the fusion are identified with the corpus Hecke braiding / Jones–Wenzl tensor product by citation (Kirby–Melvin, Kauffman–Lins). Deriving that needs qou-pbjv / qou-ltwg.
