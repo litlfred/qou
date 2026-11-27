@@ -132,6 +132,8 @@ assert H._HAS_LP_KERNEL, (
 )
 
 ISOS = [(1, 1, "2H"), (1, 2, "3H"), (2, 1, "3He"), (2, 2, "4He")]
+# Opt-in only (not in the default run): `--iso 6Li 7Li` extends the series past A = 4.
+EXTRA_ISOS = [(3, 3, "6Li"), (3, 4, "7Li")]
 
 # Per-isotope checkpointing (2026-11-27, bean `qou-sv7h`): a reclaim must leave
 # partial evidence, not a blank file. `--iso 3H` picks isotopes (default: all
@@ -148,7 +150,7 @@ ap.add_argument("--out", default=None)
 ap.add_argument("--heartbeat", type=float, default=300.0)
 args = ap.parse_args()
 if args.iso:
-    ISOS = [t for t in ISOS if t[2] in args.iso]
+    ISOS = [t for t in ISOS + EXTRA_ISOS if t[2] in args.iso]
 
 
 def _boot_id():
