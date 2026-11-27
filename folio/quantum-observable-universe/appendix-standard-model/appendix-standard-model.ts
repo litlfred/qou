@@ -39,6 +39,7 @@ export default chapter({
         "sm-colour-stabilizer-action",
         "su5-hypercharge-n3-gate",
         "neutral-lepton-fixes-charges",
+        "fermi-pair-wedge",
         "cal2-higgs-knot-coupling",
         "a5-orbital-degeneracy-fracture",
       ],

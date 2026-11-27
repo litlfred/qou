@@ -1928,6 +1928,7 @@ import QOU.EightfoldWay.USpinColemanGlashowLambdaSigma
 import QOU.EightfoldWay.AlternatingChannelRowCap
 import QOU.EightfoldWay.HyperchargeUniqueness
 import QOU.EightfoldWay.NeutralLeptonFixesCharges
+import QOU.EightfoldWay.FermiPairWedge
 import QOU.EightfoldWay.ColourSingletSelectionRule
 import QOU.StandardModel.OctonionColourTripletSplitting
 import QOU.StandardModel.ColourOnSingleFibreThreeStrands
