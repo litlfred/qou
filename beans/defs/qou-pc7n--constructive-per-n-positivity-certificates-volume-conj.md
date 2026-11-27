@@ -44,3 +44,13 @@ No unitarity is used, so the embedding caveat does not bite for 4_1.
 Open: sharper per-N bounds from the middle terms k ~ 5N/6; knots whose
 state sum is not a sum of norms (8_18: c_1 < 0 at the Kashaev point, PR #9456);
 the N -> infinity limit on [Coev E]. Bean stays open.
+
+## 2026-11-27 stage 2 (knot-volume thread, PR #9568)
+
+Reflection identity (q;q)_k * star((q;q)_{N-1-k}) = N at every primitive N-th
+root with star q = q^-1 (algebraic form of sum_log_two_sin_reflect). Each pair of
+Hermitian-square terms is 2N + a further Hermitian square, giving
+<4_1>_N >= N^2 + (N-1)^2 in any star-ordered field of char 0 and at every
+primitive root in C (QOU/Core/KashaevReflection.lean, sorry-free). Still
+polynomial; exponential growth and the N -> infinity limit stay open, the latter
+on [Coev E]. Non-norm knots (8_18) also open. Bean stays open.
