@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-27T22:02:56Z
-updated_at: 2026-11-27T22:18:48Z
+updated_at: 2026-11-27T22:27:56Z
 blocking:
     - qou-pa7n
 ---
@@ -15,3 +15,7 @@ From PR #9746. Block pairings proved nondegenerate (q_ns_block_pairing_nondegene
 
 
 2026-11-27: Self-adjointness proved, sorry-free, in PR #9785 (QOU/FluidDynamics/q_ns_block_self_adjoint.lean). lap_block_self_adjoint gives <Lb P,Q>_s = <P,Lb Q>_s for every s = r+1, and lap_block_eigen_orthogonal gives orthogonality of eigenvectors with distinct eigenvalues. Still open, so the bean stays open: distinctness of the diagonal of Lb r, which gives the polynomial eigenbasis (little q-Jacobi with alpha = s).
+
+
+
+2026-11-27 (later): PR #9785 merged. Follow-up PR #9791 proves the rest: distinct diagonal (closed form bdiag_mul_eq, bdiag_injective), an eigenpolynomial of every degree spanning K[X] (blockPoly_span), orthogonal with nonzero norms (blockPoly_orthogonal, blockPoly_norm_ne_zero). Complete this bean when #9791 merges. Only the match to a classical little q-Jacobi normalisation is left, which is cosmetic, not a gap.
