@@ -30045,6 +30045,11 @@
           "size": "37.2 KB"
         },
         {
+          "path": "quantum-observable-universe/lean/BraidKnotOctonion/YoungDiagramTailThirdInstance.lean",
+          "bytes": 6000,
+          "size": "5.9 KB"
+        },
+        {
           "path": "quantum-observable-universe/lean/BraidKnotOctonion/YoungLatticeCornerCount.lean",
           "bytes": 19207,
           "size": "18.8 KB"
@@ -32495,6 +32500,11 @@
           "size": "5.8 KB"
         },
         {
+          "path": "quantum-observable-universe/lean/HeckeTemperleyLieb/TLPositiveLoopCrossingTwist.lean",
+          "bytes": 6909,
+          "size": "6.7 KB"
+        },
+        {
           "path": "quantum-observable-universe/lean/HeckeTemperleyLieb/TLRootOfUnitySMatrixNondegenerate.lean",
           "bytes": 41610,
           "size": "40.6 KB"
@@ -34771,8 +34781,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU.lean",
-          "bytes": 116532,
-          "size": "113.8 KB"
+          "bytes": 117239,
+          "size": "114.5 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/AJMinimality.lean",
@@ -35328,6 +35338,11 @@
           "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/H4WordAction.lean",
           "bytes": 22375,
           "size": "21.9 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/HAdicDrinfeld/CasimirData.lean",
+          "bytes": 6786,
+          "size": "6.6 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/HabiroResidueSumEquivalence/protonExample/archimedean_agreement.lean",
@@ -36015,9 +36030,24 @@
           "size": "7.2 KB"
         },
         {
+          "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/AssociatorChain.lean",
+          "bytes": 6831,
+          "size": "6.7 KB"
+        },
+        {
           "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/AssociatorInduction.lean",
           "bytes": 24930,
           "size": "24.3 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/AssociatorRealign.lean",
+          "bytes": 10672,
+          "size": "10.4 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/AssociatorTower.lean",
+          "bytes": 19306,
+          "size": "18.9 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/BaseChange.lean",
@@ -36031,8 +36061,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/BaseChangeK.lean",
-          "bytes": 31596,
-          "size": "30.9 KB"
+          "bytes": 35302,
+          "size": "34.5 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/Descent.lean",
@@ -36085,6 +36115,11 @@
           "size": "26.3 KB"
         },
         {
+          "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/GroupLikeK.lean",
+          "bytes": 39000,
+          "size": "38.1 KB"
+        },
+        {
           "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/HexagonAction.lean",
           "bytes": 10437,
           "size": "10.2 KB"
@@ -36128,6 +36163,11 @@
           "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/Prop57Link.lean",
           "bytes": 30489,
           "size": "29.8 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/QuasiYBE.lean",
+          "bytes": 12105,
+          "size": "11.8 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/TransportedDK4.lean",
@@ -37620,6 +37660,11 @@
           "size": "4.8 KB"
         },
         {
+          "path": "quantum-observable-universe/lean/QOU/Core/ErrorFiltration.lean",
+          "bytes": 8386,
+          "size": "8.2 KB"
+        },
+        {
           "path": "quantum-observable-universe/lean/QOU/Core/ExteriorAntisymmetryDerivation.lean",
           "bytes": 9058,
           "size": "8.8 KB"
@@ -37688,6 +37733,11 @@
           "path": "quantum-observable-universe/lean/QOU/Core/GradedFrobeniusHopf.lean",
           "bytes": 9292,
           "size": "9.1 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Core/GroebnerErrorNear.lean",
+          "bytes": 4810,
+          "size": "4.7 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Core/GrothendieckChern.lean",
@@ -38411,8 +38461,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/EightfoldWay/MesonKaonPionSchwingerBridge.lean",
-          "bytes": 18104,
-          "size": "17.7 KB"
+          "bytes": 18183,
+          "size": "17.8 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/EightfoldWay/MesonLabelEmbeddings.lean",
@@ -38778,6 +38828,16 @@
           "path": "quantum-observable-universe/lean/QOU/FluidDynamics/q_ns_classical_bridge.lean",
           "bytes": 7656,
           "size": "7.5 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/FluidDynamics/q_ns_component_lap.lean",
+          "bytes": 26394,
+          "size": "25.8 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/FluidDynamics/q_ns_component_lap_quadrants.lean",
+          "bytes": 37409,
+          "size": "36.5 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/FluidDynamics/q_ns_haar_budget_full.lean",
@@ -39685,11 +39745,6 @@
           "size": "7.0 KB"
         },
         {
-          "path": "quantum-observable-universe/lean/QOU/MassTheory/BarReflectionGridSelectionReal.lean",
-          "bytes": 3426,
-          "size": "3.3 KB"
-        },
-        {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/BetaDecay.lean",
           "bytes": 13959,
           "size": "13.6 KB"
@@ -39971,8 +40026,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/BranchingConvergence.lean",
-          "bytes": 16853,
-          "size": "16.5 KB"
+          "bytes": 17191,
+          "size": "16.8 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/BraneGeometricResummation.lean",
@@ -40001,8 +40056,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/BringSchwingerNormalizationDerivation.lean",
-          "bytes": 22009,
-          "size": "21.5 KB"
+          "bytes": 15621,
+          "size": "15.3 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/BrunnianDeficitRecursion.lean",
@@ -40206,8 +40261,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/ConeAngleIdentity.lean",
-          "bytes": 8632,
-          "size": "8.4 KB"
+          "bytes": 4344,
+          "size": "4.2 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/ConfinedKnotBinding.lean",
@@ -40331,8 +40386,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/CyclotomicBoundaryCertified.lean",
-          "bytes": 119175,
-          "size": "116.4 KB"
+          "bytes": 147468,
+          "size": "144.0 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/CyclotomicBoundaryKeystone.lean",
@@ -40731,8 +40786,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/GroundStateOrderingRefutation.lean",
-          "bytes": 22122,
-          "size": "21.6 KB"
+          "bytes": 21955,
+          "size": "21.4 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/GroupoidTerminalDichotomy.lean",
@@ -40741,7 +40796,7 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/GrowingWidthCutShapeExclusion.lean",
-          "bytes": 6734,
+          "bytes": 6717,
           "size": "6.6 KB"
         },
         {
@@ -41101,8 +41156,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/MagnusSumAbsEigBound.lean",
-          "bytes": 5449,
-          "size": "5.3 KB"
+          "bytes": 5984,
+          "size": "5.8 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/MarginalRatioExtensivity.lean",
@@ -41121,8 +41176,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/MassDerivation.lean",
-          "bytes": 14692,
-          "size": "14.3 KB"
+          "bytes": 13064,
+          "size": "12.8 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/MassEndomorphism.lean",
@@ -41151,8 +41206,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/MassTowerOpenProblemsClasses.lean",
-          "bytes": 17170,
-          "size": "16.8 KB"
+          "bytes": 15112,
+          "size": "14.8 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/MassVolDensity.lean",
@@ -41236,8 +41291,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/MobiusEnergy.lean",
-          "bytes": 35019,
-          "size": "34.2 KB"
+          "bytes": 35837,
+          "size": "35.0 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/MobiusMutualChannel.lean",
@@ -41661,8 +41716,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/PhotonIRZeroMode.lean",
-          "bytes": 7759,
-          "size": "7.6 KB"
+          "bytes": 5720,
+          "size": "5.6 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/PhotonPairIdleFactor.lean",
@@ -41881,8 +41936,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/ReebLinkingCWF.lean",
-          "bytes": 5573,
-          "size": "5.4 KB"
+          "bytes": 5809,
+          "size": "5.7 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/ReebPnMagnitude.lean",
@@ -42135,11 +42190,6 @@
           "size": "6.3 KB"
         },
         {
-          "path": "quantum-observable-universe/lean/QOU/MassTheory/TetVolAnalytic.lean",
-          "bytes": 6436,
-          "size": "6.3 KB"
-        },
-        {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/TetraplecticDilogBridgeVacuity.lean",
           "bytes": 3867,
           "size": "3.8 KB"
@@ -42366,8 +42416,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/WStdSuperExponential.lean",
-          "bytes": 11903,
-          "size": "11.6 KB"
+          "bytes": 12299,
+          "size": "12.0 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/WedderburnMassFormulaCoefficients.lean",
@@ -42436,8 +42486,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/Zeta4ComplexVolumeModerator.lean",
-          "bytes": 4739,
-          "size": "4.6 KB"
+          "bytes": 4519,
+          "size": "4.4 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/archimedean_braid_structure.lean",
@@ -42513,11 +42563,6 @@
           "path": "quantum-observable-universe/lean/QOU/MassTheory/em_coupling_projection.lean",
           "bytes": 4829,
           "size": "4.7 KB"
-        },
-        {
-          "path": "quantum-observable-universe/lean/QOU/MassTheory/eos_borromean_cfl.lean",
-          "bytes": 4946,
-          "size": "4.8 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/exterior_square_borromean.lean",
@@ -42621,8 +42666,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/pair_skein_mass_formula.lean",
-          "bytes": 7256,
-          "size": "7.1 KB"
+          "bytes": 6604,
+          "size": "6.4 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/parity_violation_skein.lean",
@@ -42701,8 +42746,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Nuclear/AfreeThetaConstraint.lean",
-          "bytes": 8400,
-          "size": "8.2 KB"
+          "bytes": 8913,
+          "size": "8.7 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Nuclear/AlphaPreformationBound.lean",
@@ -42891,8 +42936,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Nuclear/C1RamifiedLeadingBlocks.lean",
-          "bytes": 11483,
-          "size": "11.2 KB"
+          "bytes": 10705,
+          "size": "10.5 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Nuclear/C1SeriesConvergence.lean",
@@ -42916,8 +42961,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Nuclear/ChannelMeridianIdentification.lean",
-          "bytes": 9690,
-          "size": "9.5 KB"
+          "bytes": 9245,
+          "size": "9.0 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Nuclear/CharacterDoubling.lean",
@@ -43106,7 +43151,7 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Nuclear/DecayLadderConventionDPositivity.lean",
-          "bytes": 11051,
+          "bytes": 11032,
           "size": "10.8 KB"
         },
         {
@@ -43141,8 +43186,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Nuclear/DiscriminantCurveInQ.lean",
-          "bytes": 10517,
-          "size": "10.3 KB"
+          "bytes": 10693,
+          "size": "10.4 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Nuclear/DoublyPeriodicBoundedLocalization.lean",
@@ -44106,8 +44151,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Nuclear/SilverRatioCounitExclusion.lean",
-          "bytes": 5570,
-          "size": "5.4 KB"
+          "bytes": 5733,
+          "size": "5.6 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Nuclear/SingleCrossingAlwaysBinds.lean",
@@ -44206,8 +44251,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Nuclear/TensorCouplingCannotUnbindSinglet.lean",
-          "bytes": 9692,
-          "size": "9.5 KB"
+          "bytes": 9881,
+          "size": "9.6 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Nuclear/TermCompleteness.lean",
@@ -44236,8 +44281,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Nuclear/ThomaeJacksonCoulombAndAlphaTunneling.lean",
-          "bytes": 8314,
-          "size": "8.1 KB"
+          "bytes": 6893,
+          "size": "6.7 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Nuclear/ToddDilogExpansion.lean",
@@ -44625,6 +44670,11 @@
           "size": "4.3 KB"
         },
         {
+          "path": "quantum-observable-universe/lean/QOU/Observations/LeptonUniversalityLadder.lean",
+          "bytes": 10574,
+          "size": "10.3 KB"
+        },
+        {
           "path": "quantum-observable-universe/lean/QOU/Observations/LocalInfinitesimalField.lean",
           "bytes": 9995,
           "size": "9.8 KB"
@@ -44678,6 +44728,11 @@
           "path": "quantum-observable-universe/lean/QOU/Observations/RingMassLinkingNumber.lean",
           "bytes": 4927,
           "size": "4.8 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Observations/RingMassLinkingThreeStrand.lean",
+          "bytes": 12304,
+          "size": "12.0 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Observations/SDPRegimeSwitch.lean",
@@ -44986,8 +45041,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/StandardModel/ElectroweakVevFixedPointDecomposition.lean",
-          "bytes": 15274,
-          "size": "14.9 KB"
+          "bytes": 15353,
+          "size": "15.0 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/StandardModel/ElectroweakVevGaps.lean",
@@ -46156,8 +46211,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/AlphaEmTwoLoopBlochSchwinger.lean",
-          "bytes": 13857,
-          "size": "13.5 KB"
+          "bytes": 13936,
+          "size": "13.6 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/ArchimedeanLimitDomain.lean",
@@ -46173,6 +46228,11 @@
           "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/ArchimedeanLimitNegative.lean",
           "bytes": 9766,
           "size": "9.5 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/BarReflectionGridSelectionReal.lean",
+          "bytes": 3426,
+          "size": "3.3 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/BindingRecurrenceSpectralReal.lean",
@@ -46280,6 +46340,11 @@
           "size": "24.6 KB"
         },
         {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/BringSchwingerNormalizationDerivationReal.lean",
+          "bytes": 10153,
+          "size": "9.9 KB"
+        },
+        {
           "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/BringZeroModeClausenWitness.lean",
           "bytes": 3458,
           "size": "3.4 KB"
@@ -46303,6 +46368,11 @@
           "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/ComplexDilogReflectionExt.lean",
           "bytes": 7469,
           "size": "7.3 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/ConeAngleIdentityReal.lean",
+          "bytes": 5130,
+          "size": "5.0 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/DilogNaStokesOrdering.lean",
@@ -46388,6 +46458,16 @@
           "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/GeodesicFaceH3.lean",
           "bytes": 6517,
           "size": "6.4 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/GroundStateOrderingRefutationReal.lean",
+          "bytes": 2909,
+          "size": "2.8 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/GrowingWidthCutShapeExclusionReal.lean",
+          "bytes": 1158,
+          "size": "1.1 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/HyperbolicConformalAngle.lean",
@@ -46575,6 +46655,21 @@
           "size": "4.6 KB"
         },
         {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/MagnusSumAbsEigBoundReal.lean",
+          "bytes": 1577,
+          "size": "1.5 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/MassDerivationReal.lean",
+          "bytes": 1493,
+          "size": "1.5 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/MassTowerOpenProblemsClassesReal.lean",
+          "bytes": 2950,
+          "size": "2.9 KB"
+        },
+        {
           "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/MostowIdealTetVolume.lean",
           "bytes": 14101,
           "size": "13.8 KB"
@@ -46630,9 +46725,29 @@
           "size": "14.8 KB"
         },
         {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/PairSkeinMassFormulaReal.lean",
+          "bytes": 3450,
+          "size": "3.4 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/PhotonIRZeroModeReal.lean",
+          "bytes": 5423,
+          "size": "5.3 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/ReebLinkingCWFReal.lean",
+          "bytes": 1336,
+          "size": "1.3 KB"
+        },
+        {
           "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/RingMassLinkingNumber.lean",
           "bytes": 3141,
           "size": "3.1 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/RingMassLinkingThreeStrand.lean",
+          "bytes": 5591,
+          "size": "5.5 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/SnapPyAxioms.lean",
@@ -46643,6 +46758,11 @@
           "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/StokesSingularCountAffineAnalytic.lean",
           "bytes": 11196,
           "size": "10.9 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/TetVolAnalytic.lean",
+          "bytes": 6436,
+          "size": "6.3 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/ThreeSubstantiveMathlibFillersReal.lean",
@@ -46670,9 +46790,24 @@
           "size": "5.4 KB"
         },
         {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/WStdSuperExponentialReal.lean",
+          "bytes": 1090,
+          "size": "1.1 KB"
+        },
+        {
           "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/WhiteheadVolumeCatalan.lean",
           "bytes": 4571,
           "size": "4.5 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/Zeta4ComplexVolumeModeratorReal.lean",
+          "bytes": 2337,
+          "size": "2.3 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/eos_borromean_cfl.lean",
+          "bytes": 4946,
+          "size": "4.8 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Transcendental/MathlibExt/BlochWignerLobachevsky.lean",
@@ -46780,9 +46915,29 @@
           "size": "1.4 KB"
         },
         {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/Nuclear/AfreeThetaConstraintReal.lean",
+          "bytes": 906,
+          "size": "906 B"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/Nuclear/C1RamifiedLeadingBlocksReal.lean",
+          "bytes": 3014,
+          "size": "2.9 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/Nuclear/ChannelMeridianIdentificationReal.lean",
+          "bytes": 1898,
+          "size": "1.9 KB"
+        },
+        {
           "path": "quantum-observable-universe/lean/QOU/Transcendental/Nuclear/ColourReconnectionGroundEnergy.lean",
           "bytes": 5375,
           "size": "5.2 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/Nuclear/DecayLadderConventionDPositivityReal.lean",
+          "bytes": 1566,
+          "size": "1.5 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Transcendental/Nuclear/DilogTheoryArchimedean.lean",
@@ -46940,9 +47095,24 @@
           "size": "12.4 KB"
         },
         {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/Nuclear/SilverRatioCounitExclusionReal.lean",
+          "bytes": 1494,
+          "size": "1.5 KB"
+        },
+        {
           "path": "quantum-observable-universe/lean/QOU/Transcendental/Nuclear/Stokes3LargeOrderAmplitude.lean",
           "bytes": 7936,
           "size": "7.8 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/Nuclear/TensorCouplingCannotUnbindSingletReal.lean",
+          "bytes": 1433,
+          "size": "1.4 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/Nuclear/ThomaeJacksonCoulombAndAlphaTunnelingReal.lean",
+          "bytes": 2525,
+          "size": "2.5 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Transcendental/QCalculus/ComplexDilogBridge.lean",
@@ -56901,8 +57071,8 @@
         },
         {
           "path": "quantum-observable-universe/mass-theory/cyclotomic-boundary-at-keystone.md",
-          "bytes": 6462,
-          "size": "6.3 KB"
+          "bytes": 8779,
+          "size": "8.6 KB"
         },
         {
           "path": "quantum-observable-universe/mass-theory/cyclotomic-boundary-at-keystone.qa.json",
@@ -56911,8 +57081,8 @@
         },
         {
           "path": "quantum-observable-universe/mass-theory/cyclotomic-boundary-at-keystone.ts",
-          "bytes": 4136,
-          "size": "4.0 KB"
+          "bytes": 4264,
+          "size": "4.2 KB"
         },
         {
           "path": "quantum-observable-universe/mass-theory/cyclotomic-cl3-orbit-sum-general-proof.jsonld",
@@ -69546,8 +69716,8 @@
         },
         {
           "path": "quantum-observable-universe/mass-theory/tower-geometric-lower-bound.jsonld",
-          "bytes": 803,
-          "size": "803 B"
+          "bytes": 812,
+          "size": "812 B"
         },
         {
           "path": "quantum-observable-universe/mass-theory/tower-geometric-lower-bound.md",
@@ -69561,7 +69731,7 @@
         },
         {
           "path": "quantum-observable-universe/mass-theory/tower-geometric-lower-bound.ts",
-          "bytes": 4427,
+          "bytes": 4436,
           "size": "4.3 KB"
         },
         {
@@ -81466,8 +81636,8 @@
         },
         {
           "path": "quantum-observable-universe/observations/eos-borromean-cfl.jsonld",
-          "bytes": 975,
-          "size": "975 B"
+          "bytes": 990,
+          "size": "990 B"
         },
         {
           "path": "quantum-observable-universe/observations/eos-borromean-cfl.lean",
@@ -81486,8 +81656,8 @@
         },
         {
           "path": "quantum-observable-universe/observations/eos-borromean-cfl.ts",
-          "bytes": 758,
-          "size": "758 B"
+          "bytes": 773,
+          "size": "773 B"
         },
         {
           "path": "quantum-observable-universe/observations/epistemic-status-of-calibrations.jsonld",
@@ -89806,7 +89976,7 @@
         },
         {
           "path": "quantum-observable-universe/predicted-spectra/photon-ir-zero-mode-bring.jsonld",
-          "bytes": 1245,
+          "bytes": 1246,
           "size": "1.2 KB"
         },
         {
@@ -89821,7 +89991,7 @@
         },
         {
           "path": "quantum-observable-universe/predicted-spectra/photon-ir-zero-mode-bring.ts",
-          "bytes": 2091,
+          "bytes": 2092,
           "size": "2.0 KB"
         },
         {

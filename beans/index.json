@@ -14164,7 +14164,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T17:52:55Z",
-      "updatedAt": "2026-11-27T22:38:53Z",
+      "updatedAt": "2026-11-27T23:10:26Z",
       "preview": "Owner pick 2026-11-27 (card option 2): stages 1-5, then research attempt to drop the hypothesis.\n\nGoal: Lean, sorry-free, algebraic: a group-like Phi in completed U(t_3) over Q satisfying pentagon + hexagons; discharge the Phi hypothesis of PR #9519 (QuasiYangBaxterFromHexagon).\n\nCaveat: Bar-Natan 1998 (Selecta) and Drinfeld still need ONE associator over some field K containing Q (KZ over C). As ",
       "file": "beans/defs/qou-3fdg--constructive-rational-drinfeld-associator-existenc.md"
     },
@@ -36445,8 +36445,8 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T14:50:13Z",
-      "updatedAt": "2026-11-27T14:50:13Z",
-      "preview": "Doc item 6. 26 files (QClt, Stieltjes, FrechetShohat, Plancherel asymptotics). Options 6.1 Touchard-Riordan pair-partition moments, RSK counts (recommended); 6.2 finite-n only; 6.3 leave.",
+      "updatedAt": "2026-11-27T23:08:06Z",
+      "preview": "Doc item 6. 26 files (QClt, Stieltjes, FrechetShohat, Plancherel asymptotics). Options 6.1 Touchard-Riordan pair-partition moments, RSK counts (recommended); 6.2 finite-n only; 6.3 leave.\n\n2026-11-27 (qou#9747, 84dd6045d): exact probe — for tr_M(S_n^k) under convention D (U_q(sl2) quantum trace, product state), m4/m2^2 -> 3 exactly at q=11/10,3/2,2; pinned q-Gaussian 2+q fails for q != 1 (classica",
       "file": "beans/defs/qou-e1uf--constructive-6-moments-and-q-clt-as-combinatorial.md"
     },
     {
@@ -56882,7 +56882,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T21:52:11Z",
-      "updatedAt": "2026-11-27T22:23:22Z",
+      "updatedAt": "2026-11-27T22:52:47Z",
       "preview": "Follow-up to qou-tcl2 (G2). PR #9747, branch claude/isospin-writhe-scaling-2026-11-27.\n\nLean QOU/Nuclear/IsospinTwistWrithe.lean (sorry-free, lean-direct exit 0): any multiplicative block invariant sees a braid word only through its writhe; the Murphy product is a word of N(N-1) letters; on a block det rho(w)^{N(N-1)} = (q^{2c})^{d e}. So the T(T+1) coefficient is writhe/(N(N-1)). Full twist (#970",
       "file": "beans/defs/qou-o8lo--g2-a-scaling-tt1-coefficient-is-writhenn-1-pr-9747.md"
     },
