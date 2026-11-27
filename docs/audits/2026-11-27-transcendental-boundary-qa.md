@@ -10,19 +10,19 @@ stripped before matching. This is a measurement, not a verdict on any one file.
 
 | quantity | count |
 |---|---:|
-| Lean modules (paper package tree) | 4073 |
-| inside the boundary `QOU/Transcendental/` | 289 |
-| outside, using a transcendental/analytic API directly | 464 |
+| Lean modules (paper package tree) | 4112 |
+| inside the boundary `QOU/Transcendental/` | 294 |
+| outside, using a transcendental/analytic API directly | 461 |
 | outside, algebraic but importing one transitively (tainted) | 201 |
-| outside, algebraic and import-clean (pure) | 3119 |
+| outside, algebraic and import-clean (pure) | 3156 |
 
 ## Direct use by class
 
 | class | modules | matched API |
 |---|---:|---|
-| transcendental-function | 303 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
+| transcendental-function | 300 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
 | real-completion | 108 | `\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bReal\.sSup\b|\bReal\.sInf\b|\bReal\.iSup\b|\bReal\.iInf\…` |
-| analysis | 199 | `\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTe…` |
+| analysis | 197 | `\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTe…` |
 
 Modules whose only use is `real-completion` (`Real.sqrt`, `sSup`, …): 50. These are the cheapest to move:
 `Real.sqrt` of an algebraic number is algebraic, so most of them can become a root in an
@@ -35,7 +35,7 @@ algebraic extension.
 | `QOU/Nuclear` | 96 |
 | `QOU/MassTheory` | 84 |
 | `MathlibExt` | 72 |
-| `BraidKnotOctonion` | 66 |
+| `BraidKnotOctonion` | 63 |
 | `QOU/BraidsAndKnots` | 29 |
 | `QCalculus` | 16 |
 | `HeckeTemperleyLieb` | 15 |

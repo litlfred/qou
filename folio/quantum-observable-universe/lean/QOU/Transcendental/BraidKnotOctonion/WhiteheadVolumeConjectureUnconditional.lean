@@ -1,7 +1,7 @@
 import QOU.Transcendental.BraidKnotOctonion.WhiteheadInnerGaussianProof
 import QOU.Transcendental.BraidKnotOctonion.WhiteheadLemma4Reduction
 import QOU.Transcendental.BraidKnotOctonion.WhiteheadMajorantRate
-import BraidKnotOctonion.WhiteheadLemma1RootOfUnity
+import QOU.Transcendental.BraidKnotOctonion.WhiteheadLemma1RootOfUnityKashaev
 
 /-!
 # The Whitehead-link volume conjecture, unconditional
