@@ -7,8 +7,8 @@ import QOU.BringsSurface.TwoFiltrationBridgeGeneral
 import QOU.BringsSurface.TwoFiltrationBridgeSmallCases
 import QOU.BringsSurface.JointGaloisBraidFigure8
 import QOU.BringsSurface.JointGaloisBraidDischarged
-import QOU.BringsSurface.AdelicBaseRing
-import QOU.BringsSurface.MotivicBaseRing
+import QOU.BringsSurface.AdelicSubstrate
+import QOU.BringsSurface.MotivicSubstrate
 -- `MotivicSubstrateTrivial` deliberately NOT aggregated here:
 -- the trivial `MotivicBaseRing ℤ ℤ trivialTarget` instance
 -- would otherwise pollute typeclass search anywhere

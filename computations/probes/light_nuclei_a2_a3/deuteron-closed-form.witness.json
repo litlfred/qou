@@ -1,0 +1,59 @@
+{
+ "bean": "qou-sv7h",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "symbolic in q; the single q0 row is a 16-digit display of the proton pin",
+ "rulings": [
+  "γγ bond V³ = (σσ⁻¹)³ (owner rulings 2026-11-20, 2026-11-22)",
+  "convention D: z = q³/(q²+1)",
+  "log law B = E₀·ln(tr_free/tr_atom) (owner-rulings 2026-11-25)"
+ ],
+ "tr_p": "(q**4 + 1)*(q**18 - 3*q**16 + 7*q**14 - 8*q**12 + 10*q**10 - 9*q**8 + 10*q**6 - 6*q**4 + 3*q**2 - 1)/(4*q**9*(q**2 + 1)**2)",
+ "tr_n": "(q**4 + 1)*(q**14 - 3*q**12 + 4*q**10 - 4*q**8 + 5*q**6 - 4*q**4 + 3*q**2 - 1)/(4*q**9)",
+ "tr_atom": "(q**4 + 1)**2*(q**18 - 3*q**16 + 7*q**14 - 8*q**12 + 10*q**10 - 9*q**8 + 10*q**6 - 6*q**4 + 3*q**2 - 1)*(2*q**18 - 7*q**16 + 12*q**14 - 15*q**12 + 17*q**10 - 15*q**8 + 14*q**6 - 9*q**4 + 4*q**2 - 1)/(16*q**20*(q**2 + 1)**3)",
+ "ratio_minus_one": "(q - 1)**5*(q + 1)**5*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**2 + 1)/(q**2*(q**2 + 1)*(q**14 - 3*q**12 + 4*q**10 - 4*q**8 + 5*q**6 - 4*q**4 + 3*q**2 - 1))",
+ "shifted_coefficients_x_eq_1_plus_t": {
+  "N": [
+   1,
+   4,
+   7,
+   6,
+   4,
+   3,
+   3,
+   1
+  ],
+  "mP": [
+   1,
+   6,
+   19,
+   41,
+   67,
+   82,
+   75,
+   49,
+   21,
+   4
+  ],
+  "mA": [
+   2,
+   11,
+   28,
+   41,
+   39,
+   27,
+   20,
+   16,
+   9,
+   2
+  ]
+ },
+ "ratio_minus_one_at_q0_16digit_display": "0.000611191406880779",
+ "checks": {
+  "K1_equals_hecke_flint_exact": true,
+  "K2_factorisation": true,
+  "K2_lean_closed_forms": true,
+  "K2_shifted_coeffs_positive": true
+ },
+ "lean": "qou:QOU.MassTheory.GammaGammaDeuteron.one_lt_ratio",
+ "note": "PROBE. The bond alone raises the deuteron trace for every q > 1, so it unbinds under the log law; scope (b) for this word and trace only, says nothing about a closure with further terms. No fit, no selection; AME not used."
+}

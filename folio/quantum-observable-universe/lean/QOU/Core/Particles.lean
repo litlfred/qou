@@ -1,4 +1,4 @@
-import QOU.Core.AetherParameter
+import QOU.Core.SubstrateParameter
 
 /-!
 # §4–§5  Reeb Decomposition, Particles, q-Deformed Operators

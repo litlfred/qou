@@ -1,4 +1,4 @@
-import QOU.Core.AetherParameter
+import QOU.Core.SubstrateParameter
 
 /-!
 # Uniqueness of the substrate parameter

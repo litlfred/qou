@@ -1,5 +1,5 @@
 import QOU.Core.Basic
-import QOU.Core.AetherParameter
+import QOU.Core.SubstrateParameter
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Preadditive.Basic
 import Mathlib.Algebra.Order.Field.Basic

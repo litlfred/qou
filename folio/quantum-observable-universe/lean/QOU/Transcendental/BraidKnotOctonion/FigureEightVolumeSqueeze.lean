@@ -219,6 +219,7 @@ theorem tendsto_two_pi_log_kashaev :
     have hpos := kashaevProd_pos (N := N) (k := k) hkN
     have hle : kashaevProd N k ≤ kashaev N := by
       have hmem : k ∈ Finset.range N := Finset.mem_range.mpr hkN
+      rw [kashaev_eq_sum]
       exact Finset.single_le_sum (f := kashaevProd N)
         (fun i _ => kashaevProd_nonneg N i) hmem
     have hloglog : Real.log (kashaevProd N k) ≤ Real.log (kashaev N) :=
