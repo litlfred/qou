@@ -10,21 +10,21 @@ stripped before matching. This is a measurement, not a verdict on any one file.
 
 | quantity | count |
 |---|---:|
-| Lean modules (paper package tree) | 4217 |
-| inside the boundary `QOU/Transcendental/` | 357 |
-| outside, using a transcendental/analytic API directly | 402 |
+| Lean modules (paper package tree) | 4219 |
+| inside the boundary `QOU/Transcendental/` | 361 |
+| outside, using a transcendental/analytic API directly | 398 |
 | outside, algebraic but importing one transitively (tainted) | 200 |
-| outside, algebraic and import-clean (pure) | 3258 |
+| outside, algebraic and import-clean (pure) | 3260 |
 
 ## Direct use by class
 
 | class | modules | matched API |
 |---|---:|---|
 | transcendental-function | 264 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
-| real-completion | 81 | `\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bReal\.sSup\b|\bReal\.sInf\b|\bReal\.iSup\b|\bReal\.iInf\…` |
+| real-completion | 77 | `\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bReal\.sSup\b|\bReal\.sInf\b|\bReal\.iSup\b|\bReal\.iInf\…` |
 | analysis | 184 | `\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTe…` |
 
-Modules whose only use is `real-completion` (`Real.sqrt`, `sSup`, …): 28. These are the cheapest to move:
+Modules whose only use is `real-completion` (`Real.sqrt`, `sSup`, …): 24. These are the cheapest to move:
 `Real.sqrt` of an algebraic number is algebraic, so most of them can become a root in an
 algebraic extension.
 
@@ -34,16 +34,16 @@ algebraic extension.
 |---|---:|
 | `MathlibExt` | 72 |
 | `QOU/Nuclear` | 69 |
-| `BraidKnotOctonion` | 62 |
+| `BraidKnotOctonion` | 60 |
 | `QOU/MassTheory` | 58 |
 | `QOU/BraidsAndKnots` | 28 |
 | `QCalculus` | 16 |
 | `QOU/Observations` | 15 |
-| `HeckeTemperleyLieb` | 14 |
+| `HeckeTemperleyLieb` | 13 |
 | `QOU/BringsSurface` | 13 |
 | `QOU/StandardModel` | 12 |
-| `QOU/Core` | 10 |
 | `QOU/MassTheory/KZHolonomy` | 10 |
+| `QOU/Core` | 9 |
 | `QOU/Confinement` | 5 |
 | `MathlibExt/KZHolonomy` | 4 |
 | `QOU/EightfoldWay` | 3 |
