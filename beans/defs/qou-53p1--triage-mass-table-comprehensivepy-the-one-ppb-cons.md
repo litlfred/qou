@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - compute-accuracy
 created_at: 2026-08-16T01:49:31Z
-updated_at: 2026-11-27T14:18:19Z
+updated_at: 2026-11-27T15:16:56Z
 parent: qou-v2om
 ---
 
@@ -387,3 +387,8 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8352, closed o
 ## 2026-11-21 — binding-hygiene drain (session https://claude.ai/code/session_01Qmmkt97hXiyVzatJQADqZY)
 
 Premise check against `docs/coordination/owner-rulings.md` on main `2ae54ab40` (owner instruction 2026-11-21: no bean is worked on a superseded basis). **Superseded premise found:** the stale rows and the 11.5x slowdown are measured on the convention-C-era witness. The owner options in this bean stand; not touched.
+
+
+
+## 2026-11-27 — compute-accuracy B2 status check
+The 'timed out unchecked' question and the stale-witness finding (§3) are both settled on main: mass-table-comprehensive.witness.json was regenerated 2026-11-24 (ee59e6b514, durationMs 1,070,157 = 17.8 min) and its scriptHash d8fcd83961af matches the producer; 0 raw float64 fields. What remains is the owner's call on runtime (options A-E above). Separately, the scorecard's new import-cone check (PR #9469, B3) lists this witness: 3 modules in its producer's cone were committed after 2026-11-24 10:14 (markov_trace_canonical.py, y_lambda_su_n.py, experimental_constants.py).

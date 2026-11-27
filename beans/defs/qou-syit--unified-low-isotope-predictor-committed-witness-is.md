@@ -5,10 +5,10 @@ status: todo
 type: task
 priority: normal
 tags:
-    - reorg-2026-10-04
     - compute-accuracy
+    - reorg-2026-10-04
 created_at: 2026-08-26T16:32:15Z
-updated_at: 2026-11-27T14:18:46Z
+updated_at: 2026-11-27T15:16:56Z
 parent: qou-v2om
 ---
 
@@ -221,3 +221,8 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8336, closed o
 ## 2026-11-21 — binding-hygiene drain (session https://claude.ai/code/session_01Qmmkt97hXiyVzatJQADqZY)
 
 Premise check against `docs/coordination/owner-rulings.md` on main `2ae54ab40` (owner instruction 2026-11-21: no bean is worked on a superseded basis). No superseded premise found in the bean text. Still blocked as recorded: refreshing the witness needs the 21 LOCAL `float(` sites in `light_isotope_sweep` converted to mpf first (a precision fix). Left for the precision thread to avoid overlap.
+
+
+
+## 2026-11-27 — compute-accuracy B2 (PR #9469, thread 'Fix producer provenance and precision PRs')
+The self-staleness is gone on main: 235ed5b1a7 (2026-11-24) refreshed the witness and its scriptHash 4dc8e765eb22 matches the producer. The remaining defect was 10 non-integral raw float64 fields, all B_AME_MeV (five float() casts of registry mpfs, five bare literals). PR #9469 carries them as mpf; re-run gives 0 non-integral raw floats and moves one field, 6Li err_pct, by rel 2.7e-13. Not a scorecard input. Close when #9469 merges.
