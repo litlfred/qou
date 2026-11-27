@@ -30,7 +30,7 @@ open Classical
 
 universe u
 
-variable {K : Type u} [SurrealField K]
+variable {K : Type u} [SurrealBase K]
 
 /-- Robinson's **standard-part map**: sends each finite surreal to the
     unique real of which it is an infinitesimal perturbation. -/

@@ -70,7 +70,7 @@ substrate pin inside a conjecture and require re-editing whenever the pin moves.
 
 ## Base ring (§7c)
 
-`K` is a generic `[SurrealField K]`. `ℝ` enters only through `standardPart` and
+`K` is a generic `[SurrealBase K]`. `ℝ` enters only through `standardPart` and
 `leadingCoeff`'s codomain — the archimedean shadow the conjecture is *about* —
 and through `SurrealField`'s own `ofReal`. No numerical substrate value appears.
 -/
@@ -99,7 +99,7 @@ Parameters are the caller's data:
 * `q₀` — the archimedean substrate value, a parameter rather than a literal.
 
 An instance **is** the conjecture, for that data. None is provided. -/
-class LocalInfinitesimalField (X : Type v) (K : Type u) [SurrealField K]
+class LocalInfinitesimalField (X : Type v) (K : Type u) [SurrealBase K]
     (ε : X → K) (leadingCoeff : K → ℝ) (q₀ : ℝ) : Prop where
   /-- **Part 2.** Every local value is infinitesimal, so the classical
       substrate is `q = 1` at every point. -/
@@ -129,7 +129,7 @@ class LocalInfinitesimalField (X : Type v) (K : Type u) [SurrealField K]
 
 namespace LocalInfinitesimalField
 
-variable {X : Type v} {K : Type u} [SurrealField K]
+variable {X : Type v} {K : Type u} [SurrealBase K]
   {ε : X → K} {leadingCoeff : K → ℝ} {q₀ : ℝ}
 
 /-- **The classical substrate is `q = 1` everywhere** — the block's part 2 in

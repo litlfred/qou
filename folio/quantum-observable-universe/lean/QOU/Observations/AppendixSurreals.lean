@@ -8,6 +8,7 @@ import QOU.Observations.B1Figure8RowTheorem
 import QOU.Observations.B1TorusKnotRowsTheorem
 import QOU.Observations.B1HyperbolicRowsTheorem
 import QOU.Observations.Basic
+import QOU.Observations.ConwayBirthday
 import QOU.Observations.StandardPart
 import QOU.Observations.SignSequence
 import QOU.Observations.Blowup

@@ -11,12 +11,16 @@ import Mathlib.Order.ConditionallyCompleteLattice.Basic
 /-!
 # QOU.AppendixSurreals.Basic — Axiomatic surreal-coefficient field
 
-We introduce a **surreal-coefficient field** `K` as a typeclass extending
-`LinearOrderedField` and equipped with:
+Three typeclasses, each extending the last (owner ruling 2026-11-27, "Split into
+base + Conway class"):
 
-- a `birthday : K → Ordinal` function (Conway's recursive birthday);
-- a real-coefficient inclusion `(↑) : ℝ → K` making `K` an ℝ-algebra;
-- bounds linking ring operations to ordinal natural-sum.
+- `SurrealBase K` — a linearly ordered field with an order-preserving
+  `ofReal : ℝ →+* K` and an element `ω` above every natural.  No birthday;
+  `ℝ*` is an instance.
+- `BirthdayField K` — adds `birthday : K → Ordinal` with six upper-bound axioms
+  linking ring operations to ordinal natural-sum.
+- `SurrealField K` — adds `birthday_natCast` and Conway simplicity: the full
+  Conway structure, whose intended model is `𝐍𝐨`.
 
 We **do not construct** `K` here.  Mathlib's surreal-numbers
 development (`SetTheory.Surreal.Basic`) does not yet expose a
@@ -45,35 +49,37 @@ namespace QOU.AppendixSurreals
 universe u
 
 
-/-- A **surreal-coefficient field** `K` is a linearly ordered field
-    extending ℝ, equipped with a Conway-style birthday function.
+/-- **`SurrealBase K`: the birthday-free base.**  A linearly ordered field extending `ℝ`
+    (via an order-preserving `ofReal`) with an element `ω` above every natural number.
 
-    We axiomatise rather than construct: the canonical model is
-    `K = 𝐍𝐨` (Conway's surreal numbers), but mathlib does not
-    yet expose `𝐍𝐨` as a `LinearOrderedField`.
-
-    **🛑 What this class does and does not pin (audited 2026-11-20, bean
-    `qou-dx7g`, triage rank 3).**  The ordered-field, `ofReal` and `omegaSurreal`
-    fields give a non-archimedean ordered field extending `ℝ` — the only
-    structure most of the ~26 consumers use.  The six `birthday` fields give
-    **upper bounds only**, so they do **not** pin Conway's birthday:
-    `flatBirthday x := if x = 0 then 0 else 1` on `ℝ*` satisfies all six
-    (`HyperrealTransfer.surrealFieldHyperreal`).  Hence "surreal field" is not
-    enforced by this class, and nothing about `birthday` proved from it alone is
-    specific to Conway.  The missing content lives in two **opt-in mixins** in
-    `AppendixSurreals/BirthdayFaithful.lean`, each proved independent of the six
-    axioms by the flat model: `BirthdayFaithful` (`birthday n = n`) and
-    `ConwaySimplicity` (Conway's simplicity/tree axiom).  They are mixins rather
-    than fields because the flat `ℝ*` model is the carrier the birthday-free
-    limit-transfer results use (`HyperrealLimitTransfer` §3); a result that needs
-    real birthday content must take them as hypotheses. -/
-class SurrealField (K : Type u) extends Field K, LinearOrder K, IsStrictOrderedRing K where
+    This is exactly the structure the infinitesimal / standard-part / limit-transfer
+    layer uses, and nothing more.  It carries **no** birthday, so `ℝ*` is a genuine
+    instance (`HyperrealTransfer.surrealBaseHyperreal`) and theorems stated over it
+    apply to `ℝ*` honestly.  Owner ruling 2026-11-27 ("Split into base + Conway class",
+    beans `qou-6qbv` / `qou-3kkl`). -/
+class SurrealBase (K : Type u) extends Field K, LinearOrder K, IsStrictOrderedRing K where
   /-- ℝ-algebra structure: every real number embeds in K. -/
   ofReal : ℝ →+* K
   /-- The embedding is order-preserving. -/
   ofReal_strictMono : StrictMono ofReal
-  /-- A birthday function, constrained here only from above (see the class
-      docstring; Conway's birthday needs the mixins in `BirthdayFaithful`). -/
+  /-- The first infinite element `ω` of `K`.
+
+      In `𝐍𝐨` this is Conway's `ω = {0, 1, 2, … | }` (Ehrlich 2012, Thm 12.5); in `ℝ*`
+      it is the class of the sequence `n ↦ n`. -/
+  omegaSurreal : K
+  /-- `omegaSurreal` is strictly greater than every natural number. -/
+  omegaSurreal_gt_natCast : ∀ n : ℕ, (n : K) < omegaSurreal
+
+/-- **`BirthdayField K`: the base plus a birthday bounded from above.**
+
+    The six birthday axioms below give **upper bounds only**, so they do not pin
+    Conway's birthday: `flatBirthday x := if x = 0 then 0 else 1` on `ℝ*` satisfies all
+    six (`HyperrealTransfer.surrealFieldHyperreal`), and so does a dyadic birthday that
+    gets the naturals right (`DyadicBirthday.surrealFieldHyperrealDyadic`).  This class
+    exists to state those independence results; a theorem about Conway's birthday takes
+    `[SurrealField K]`. -/
+class BirthdayField (K : Type u) extends SurrealBase K where
+  /-- A birthday function, constrained here only from above. -/
   birthday : K → Ordinal
   /-- The birthday of zero is zero. -/
   birthday_zero : birthday 0 = 0
@@ -99,41 +105,64 @@ class SurrealField (K : Type u) extends Field K, LinearOrder K, IsStrictOrderedR
       `(parent₁ + parent₂) / 2` (Gonshor sign-sequence step,
       dyadic refinement).  A standalone `birthday (x / 2)` axiom
       would assert more than callers need; this combined form is
-      exactly the Conway midpoint recipe and nothing more.
-
-      Reserved for future induction proofs of the sharper
-      `birthday (gonshorIn K s) ≤ s.length` bound; the current
-      file proves the universally-supported `≤ ω` form (see
-      `SignSequence.birthday_gonshorIn_le_omega`) and the
-      `s.length ≤ 1` cases unconditionally. -/
+      exactly the Conway midpoint recipe and nothing more. -/
   birthday_avg_le : ∀ x y : K,
     birthday ((x + y) / 2) ≤ Ordinal.nadd (birthday x) (birthday y) + 1
   /-- Real numbers have birthday at most ω. -/
   birthday_ofReal_le_omega : ∀ r : ℝ, birthday (ofReal r) ≤ Ordinal.omega0
-  /-- The first infinite surreal `ω` as an element of `K`.
 
-      Conway's construction: `ω = {0, 1, 2, … | }`.  Its existence
-      in any `SurrealField K` follows from `K` extending the ordinals
-      via the canonical inclusion (Ehrlich 2012, Thm 12.5). -/
-  omegaSurreal : K
-  /-- `omegaSurreal` is strictly greater than every natural number. -/
-  omegaSurreal_gt_natCast : ∀ n : ℕ, (n : K) < omegaSurreal
+/-- A **surreal-coefficient field** `K`: the full Conway structure.
 
-/-- Coerce a real into the surreal field. -/
-instance (K : Type u) [SurrealField K] : Coe ℝ K :=
-  ⟨SurrealField.ofReal⟩
+    `BirthdayField` plus the two axioms the six upper bounds cannot supply, each proved
+    independent of them in `AppendixSurreals/BirthdayFaithful.lean`:
 
-/-- Every `SurrealField K` is canonically an `Algebra ℝ K` via the
+    * `birthday_natCast` — the natural number `n` is born on day `n`
+      (the flat `ℝ*` birthday fails it);
+    * `simplicity` — Conway's simplicity (tree) axiom: if every number older than `x`
+      lies on the same side of `z` as of `x`, then `z ≠ x` is born after `x`
+      (the dyadic `ℝ*` birthday satisfies the first axiom and fails this one).
+
+    We axiomatise rather than construct: the intended model is `K = 𝐍𝐨`, which mathlib
+    does not yet expose as a `LinearOrderedField`.  Neither `ℝ*` birthday above is a
+    model; whether some other birthday on `ℝ*` is one is not addressed here.  Results
+    that need only the ordered field, `ofReal` and `ω` are stated over `SurrealBase` and
+    apply to `ℝ*`; lower bounds on the birthday are in `ConwayBirthday.lean`.
+
+    -- Ref: [conway1976] Ch. 2, Theorem 11 (simplicity)
+    -- Ref: [ehrlich2012] §3 (s-hierarchical ordered structures) -/
+class SurrealField (K : Type u) extends BirthdayField K where
+  /-- Conway: the natural number `n` is born on day `n`. -/
+  birthday_natCast : ∀ n : ℕ, birthday ((n : ℕ) : K) = (n : Ordinal)
+  /-- **Conway simplicity.**  For `x ≠ z`: if every `y` born before `x` lies on the same
+      side of `z` as of `x`, then `z` is born after `x`. -/
+  simplicity : ∀ x z : K, x ≠ z →
+    (∀ y : K, birthday y < birthday x → (y < x ↔ y < z)) →
+    birthday x < birthday z
+
+/-- Coerce a real into a `SurrealBase` field. -/
+instance (K : Type u) [SurrealBase K] : Coe ℝ K :=
+  ⟨SurrealBase.ofReal⟩
+
+/-- Every `SurrealBase K` is canonically an `Algebra ℝ K` via the
     `ofReal` ring homomorphism.  This unlocks Mathlib's
     `Polynomial.aeval`, `MvPolynomial.aeval`, and the full
     `Algebra`-flavored API for free. -/
-noncomputable instance SurrealField.toAlgebra (K : Type u) [SurrealField K] :
+noncomputable instance SurrealField.toAlgebra (K : Type u) [SurrealBase K] :
     Algebra ℝ K :=
-  RingHom.toAlgebra SurrealField.ofReal
+  RingHom.toAlgebra SurrealBase.ofReal
+
+/-! The field names of the three classes are re-exported under `SurrealField.*`, so
+`SurrealField.ofReal`, `SurrealField.birthday_add_le`, … and `open SurrealField` keep
+working for every consumer. -/
+namespace SurrealField
+export SurrealBase (ofReal ofReal_strictMono omegaSurreal omegaSurreal_gt_natCast)
+export BirthdayField (birthday birthday_zero birthday_one birthday_neg birthday_add_le
+  birthday_avg_le birthday_ofReal_le_omega)
+end SurrealField
 
 namespace SurrealField
 
-variable {K : Type u} [SurrealField K]
+variable {K : Type u} [SurrealBase K]
 
 /-- A surreal `x` is **finite** if it is bounded by some natural number. -/
 def IsFinite (x : K) : Prop :=

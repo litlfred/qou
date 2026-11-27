@@ -28,13 +28,13 @@ A first attempt to supply a model from Mathlib's Hahn-series API found **three
 obstructions**. Recorded because two of them are still live for the *surreal*
 model, and because obstruction 2 is the one this class was changed to remove.
 
-1. **No degenerate model is available — still true.** `SurrealField` requires
+1. **No archimedean model is available — still true.** `SurrealBase` requires
    `omegaSurreal : K` with `omegaSurreal_gt_natCast : ∀ n : ℕ, (n : K) < _`.
-   No real exceeds every natural, so `SurrealField ℝ` is **impossible**; the
-   cheap witness that would settle non-emptiness cannot exist, and any
-   `SurrealField` model must be genuinely non-archimedean. This is why
-   `SpectralNormalForm`, which needs `IsInfinitesimal`/`IsFinite` and hence
-   `SurrealField`, is *still* unwitnessed even though `OmegaOrder` now is.
+   No real exceeds every natural, so `SurrealBase ℝ` is **impossible**, and any
+   model must be genuinely non-archimedean. Since 2026-11-27 `ℝ*` is a global
+   `SurrealBase` instance (`HyperrealTransfer.surrealBaseHyperreal`), so the
+   `IsInfinitesimal`/`IsFinite` half of `SpectralNormalForm` has a carrier; what
+   `ℝ*` lacks is an `OmegaOrder`, so that class is still unwitnessed.
 
 2. **The exponent type was self-referential — FIXED.** `Ow` was typed
    `K → WithTop K`, exponents in the field itself. That is right for `𝐍𝐨`,
@@ -51,8 +51,8 @@ model, and because obstruction 2 is the one this class was changed to remove.
    with the two zero cases.
 
 Still open for the *surreal* carrier: the `Lex` order transfer, and a `birthday`
-function satisfying the `nadd` sub-additivity and midpoint bounds `SurrealField`
-demands.
+function satisfying the `nadd` sub-additivity and midpoint bounds `BirthdayField`
+demands (and, for `SurrealField`, `birthday_natCast` and Conway simplicity).
 
 Notation: in LaTeX we write `$O_\omega$` (Big-O register, via the
 `\ordw` macro).  In Lean the identifier is `Ow` for ASCII usability.
@@ -89,7 +89,7 @@ universe u s w
     ## Why the exponent group is a separate parameter
 
     Until 2026-08-16 this class fixed `Ow : K → WithTop K` and required
-    `[SurrealField K]`.  Exponents-in-`K` is right for `𝐍𝐨`, which is
+    `[SurrealBase K]`.  Exponents-in-`K` is right for `𝐍𝐨`, which is
     closed under `ω`-exponentiation — but it is a *self-referential*
     structure, and it made the class **uninstantiable**: it left `Ow`
     with no model anywhere in this tree, so every `[OmegaOrder]`-
@@ -103,7 +103,7 @@ universe u s w
       leading-exponent valuation (and Mathlib's
       `HahnSeries.orderTop : HahnSeries Γ R → WithTop Γ`); take
       `Γ := K` to recover the old reading for `𝐍𝐨`;
-    * the base weakens from `[SurrealField K]` to a commutative ring
+    * the base weakens from `[SurrealBase K]` to a commutative ring
       with an algebra over an arbitrary scalar ring `S`, which is all
       `Ow_algebraMap_mul` ever used.  It was previously phrased with
       `SurrealField.ofReal`; nothing about a leading-exponent valuation

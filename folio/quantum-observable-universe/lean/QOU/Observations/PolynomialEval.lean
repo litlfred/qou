@@ -42,7 +42,7 @@ universe v
 
 universe u
 
-variable {K : Type u} [SurrealField K]
+variable {K : Type u} [SurrealBase K]
 
 /-- The **polynomial surreal evaluation map**: lifts a real polynomial
     `p : ℝ[X]` to a function `K → K` via the canonical real-to-surreal

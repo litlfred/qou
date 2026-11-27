@@ -56,10 +56,17 @@
   here for the degenerate reason that its right-hand side is `≥ 1` and its left-hand
   side is `≤ 1`.  It constrains nothing under a bounded birthday.
 
-  ⚠ `surrealFieldHyperreal` is therefore a **`def`, never a global `instance`**, and
-  is used only under `attribute [local instance]` inside §3.  Registering it globally
-  would silently apply every `SurrealField`-generic theorem to `ℝ*` under a birthday
-  that is not Conway's.  Do not promote it.
+  ⚠ `surrealFieldHyperreal` is therefore a **`def`, never a global `instance`**:
+  registering it globally would apply every `BirthdayField`-generic theorem to `ℝ*`
+  under a birthday that is not Conway's.
+
+  **Resolved 2026-11-27 (owner ruling "Split into base + Conway class").**  The class is
+  now three: `SurrealBase` (ordered field ⊇ ℝ with ω, no birthday), `BirthdayField` (the
+  six upper-bound axioms) and `SurrealField` (adds `birthday_natCast` and Conway
+  simplicity).  `ℝ*` is a global `SurrealBase` instance (`surrealBaseHyperreal`), the
+  flat structure is a `BirthdayField` but not a `SurrealField`.  Whether *some other*
+  birthday on `ℝ*` makes it a `SurrealField` is not addressed (under CH, `ℝ*` is an
+  `η₁` real-closed field of size `ℵ₁`, which suggests it may be; nothing here uses that).
 
   ═══ WHAT §3 THEN GETS ═══
 
@@ -256,19 +263,27 @@ theorem omega_gt_natCast (n : ℕ) : (n : ℝ*) < Hyperreal.omega := by
   have h : ((n : ℝ) : ℝ*) < Hyperreal.omega := Hyperreal.infinitePos_omega (n : ℝ)
   exact_mod_cast h
 
-/-- **The independence witness.**  `ℝ*` satisfies every `SurrealField` axiom, with a
-birthday that is not Conway's.
-
-⚠ **`def`, deliberately not `instance`.**  Promoting this to a global instance would
-make every `SurrealField`-generic theorem in the corpus silently apply to `ℝ*` under a
-two-valued birthday.  It is used only via `attribute [local instance]` in §3, where
-nothing being proved mentions `birthday`. -/
-noncomputable def surrealFieldHyperreal : SurrealField.{0, 0} ℝ* where
+/-- **`ℝ*` is a `SurrealBase`.**  An ordered field extending `ℝ` with `ω` above every
+natural number — and nothing about birthdays, so this *is* a global instance: every
+`SurrealBase`-generic theorem (infinitesimals, standard part, limit transfer) is true of
+`ℝ*`.  Owner ruling 2026-11-27, "Split into base + Conway class". -/
+noncomputable instance surrealBaseHyperreal : SurrealBase.{0} ℝ* where
   __ := (inferInstance : Field ℝ*)
   __ := (inferInstance : LinearOrder ℝ*)
   __ := (inferInstance : IsStrictOrderedRing ℝ*)
   ofReal := hyperrealOfReal
   ofReal_strictMono := hyperrealOfReal_strictMono
+  omegaSurreal := Hyperreal.omega
+  omegaSurreal_gt_natCast := omega_gt_natCast
+
+/-- **The independence witness.**  `ℝ*` with `flatBirthday` satisfies every axiom of
+`BirthdayField`, with a birthday that is not Conway's.  This structure is not a
+`SurrealField`: its birthday fails both `birthday_natCast` and `simplicity` (`BirthdayFaithful.lean`).
+
+⚠ **`def`, deliberately not `instance`.**  A global instance would make every
+`BirthdayField`-generic theorem apply to `ℝ*` under a two-valued birthday. -/
+noncomputable def surrealFieldHyperreal : BirthdayField.{0, 0} ℝ* where
+  toSurrealBase := surrealBaseHyperreal
   birthday := flatBirthday
   birthday_zero := flatBirthday_zero
   birthday_one := flatBirthday_one
@@ -276,8 +291,6 @@ noncomputable def surrealFieldHyperreal : SurrealField.{0, 0} ℝ* where
   birthday_add_le := flatBirthday_add_le
   birthday_avg_le := flatBirthday_avg_le
   birthday_ofReal_le_omega := flatBirthday_ofReal_le_omega
-  omegaSurreal := Hyperreal.omega
-  omegaSurreal_gt_natCast := omega_gt_natCast
 
 /-! ## §3 — `SurrealLimitTransfer ℝ*` under the local instance
 
@@ -287,8 +300,6 @@ carrier that is not. -/
 
 section LocalWitness
 
-attribute [local instance] surrealFieldHyperreal
-
 /-- `IsClose` at `ℝ*` is exactly Mathlib's `IsSt`.  This is the bridge lemma, and it
 is the reason §3 is cheap: `IsInfinitesimal (x - ofReal r)` unfolds to
 `∀ ε > 0, |x - r| < ε`, which is `Hyperreal.isSt_iff_abs_sub_lt_delta`. -/
@@ -297,8 +308,9 @@ theorem isClose_iff_isSt (x : ℝ*) (r : ℝ) :
   rw [Hyperreal.isSt_iff_abs_sub_lt_delta]
   rfl
 
-/-- **`SurrealLimitTransfer ℝ*`.**  A `def` for the same reason
-`surrealFieldHyperreal` is: it is only as meaningful as the carrier it sits on. -/
+/-- **`SurrealLimitTransfer ℝ*`.**  Since 2026-11-27 the class sits on the birthday-free
+`SurrealBase`, so this is an honest model of it at `ℝ*`; it says nothing about `𝐍𝐨`,
+which is why it stays a `def` (the class remains the conjecture for Conway's numbers). -/
 noncomputable def surrealLimitTransferHyperreal : SurrealLimitTransfer ℝ* where
   evalOmega := Hyperreal.ofSeq
   evalOmega_const _ := rfl

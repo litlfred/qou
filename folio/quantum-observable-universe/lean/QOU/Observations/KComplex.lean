@@ -36,23 +36,23 @@ open SurrealField
 
 universe u
 
-variable {K : Type u} [SurrealField K]
+variable {K : Type u} [SurrealBase K]
 
 /-- The **complexification of `K`** as the ordered pair
     `(real-part, imaginary-part)`.  Faithful as a set-level
     representation of `K[i]/(i²+1)`. -/
-abbrev KComplex (K : Type u) [SurrealField K] : Type u := K × K
+abbrev KComplex (K : Type u) [SurrealBase K] : Type u := K × K
 
 /-- The **Manhattan modulus** `|a + bi| := |a| + |b|`.  Placeholder
     for the Euclidean modulus `√(a²+b²)`. -/
-def KComplex.abs {K : Type u} [SurrealField K] : KComplex K → K :=
+def KComplex.abs {K : Type u} [SurrealBase K] : KComplex K → K :=
   fun ab => |ab.1| + |ab.2|
 
 /-- The **multiplicative unit** in `KComplex K`, i.e. `1 + 0·i`. -/
-def KComplex.one (K : Type u) [SurrealField K] : KComplex K := (1, 0)
+def KComplex.one (K : Type u) [SurrealBase K] : KComplex K := (1, 0)
 
 /-- The **imaginary unit** `i ∈ KComplex K`. -/
-def KComplex.I (K : Type u) [SurrealField K] : KComplex K := (0, 1)
+def KComplex.I (K : Type u) [SurrealBase K] : KComplex K := (0, 1)
 
 /-- **Complex multiplication** `(a, b) · (c, d) := (ac − bd, ad + bc)`,
     realising `KComplex K` as `K[X]/(X² + 1)`. -/

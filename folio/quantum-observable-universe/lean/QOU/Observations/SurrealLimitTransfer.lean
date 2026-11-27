@@ -50,7 +50,7 @@ open SurrealField
 
 universe u
 
-variable {K : Type u} [SurrealField K]
+variable {K : Type u} [SurrealBase K]
 
 /-- ε–N convergence of a real sequence (self-contained form; avoids
     pulling topology into the surreal kernel). -/
@@ -71,7 +71,7 @@ def EventuallyLE (a b : ℕ → ℝ) : Prop :=
     structured evaluation); the theorems below derive consequences
     from them.  `@conjecture: primary` — no other conjecture class is
     assumed. -/
-class SurrealLimitTransfer (K : Type u) [SurrealField K] where
+class SurrealLimitTransfer (K : Type u) [SurrealBase K] where
   /-- Evaluation of a real sequence at the surreal `ω`. -/
   evalOmega : (ℕ → ℝ) → K
   /-- Constant sequences evaluate to the embedded real. -/

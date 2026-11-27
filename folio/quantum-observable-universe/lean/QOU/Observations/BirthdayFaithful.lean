@@ -42,6 +42,12 @@
   `BirthdayFaithful` is not derivable from the six existing axioms.  That is the point of
   this module — the claim "this kills the flat model" is a theorem here, not a remark.
 
+  **Update 2026-11-27 (owner ruling "Split into base + Conway class").**  The six axioms
+  now form `BirthdayField`, and `SurrealField` is `BirthdayField` plus both mixins as
+  fields (§5 recovers the mixin instances).  The mixins stay declared over
+  `BirthdayField` so the independence witnesses below still typecheck.  Where this file
+  says `SurrealField` for the six-axiom class, read `BirthdayField`.
+
   ⚠ **Not claimed:** that `BirthdayFaithful` is *sufficient* to pin down Conway's
   birthday.  It rules out the flat model; it does not rule out every degenerate model.
   Whether the axiom set is now categorical is open and is not addressed.
@@ -62,7 +68,7 @@ universe u
 `birthday (n : K) ≤ n` follows from `birthday_one` and `birthday_add_le` alone.  Stating
 it makes the asymmetry visible: the axioms give the `≤` and nothing gives the `≥`. -/
 
-variable {K : Type u} [SurrealField K]
+variable {K : Type u} [BirthdayField K]
 
 /-- **`birthday (n : K) ≤ n`, from the existing axioms.**
 
@@ -93,7 +99,7 @@ content takes `[BirthdayFaithful K]`, and one that does not, does not.
 
 Combined with `birthday_natCast_le` (§1, which needs no mixin) this pins `birthday n`
 exactly; the mixin supplies only the half that was missing. -/
-class BirthdayFaithful (K : Type u) [SurrealField K] where
+class BirthdayFaithful (K : Type u) [BirthdayField K] where
   /-- Conway: the natural number `n` is born on day `n`. -/
   birthday_natCast : ∀ n : ℕ, birthday ((n : ℕ) : K) = (n : Ordinal)
 
@@ -128,7 +134,7 @@ theorem flatBirthday_not_faithful :
 with the *negation* of the mixin — witnessed by `flatBirthday` on `ℝ*` — so the mixin adds
 strictly new content. -/
 theorem birthdayFaithful_independent_of_surrealField_axioms :
-    (∃ _ : SurrealField.{0, 0} ℝ*, True)
+    (∃ _ : BirthdayField.{0, 0} ℝ*, True)
       ∧ ¬ (∀ n : ℕ, HyperrealTransfer.flatBirthday ((n : ℕ) : ℝ*) = (n : Ordinal)) :=
   ⟨⟨HyperrealTransfer.surrealFieldHyperreal, trivial⟩, flatBirthday_not_faithful⟩
 
@@ -149,7 +155,7 @@ definition — so the content was always there, and only the statement was loose
 precisely why it was worth tightening rather than leaving as a comment: a reader checking
 the theorem, not the field assignment, could not have known. -/
 theorem birthdayFaithful_independent_witnessed :
-    ∃ S : SurrealField.{0, 0} ℝ*,
+    ∃ S : BirthdayField.{0, 0} ℝ*,
       ¬ (∀ n : ℕ, S.birthday ((n : ℕ) : ℝ*) = (n : Ordinal)) :=
   ⟨HyperrealTransfer.surrealFieldHyperreal, flatBirthday_not_faithful⟩
 
@@ -169,7 +175,7 @@ side of `z` as of `x` (`y < x ↔ y < z`), then `z` is born after `x`.  True in 
 same birthday are separated by their (older) common ancestor in the sign-sequence tree.
 -- Ref: [conway1976] Ch. 2, Theorem 11 (simplicity)
 -- Ref: [ehrlich2012] §3 (s-hierarchical ordered structures) -/
-class ConwaySimplicity (K : Type u) [SurrealField K] : Prop where
+class ConwaySimplicity (K : Type u) [BirthdayField K] : Prop where
   simplicity : ∀ x z : K, x ≠ z →
     (∀ y : K, birthday y < birthday x → (y < x ↔ y < z)) →
     birthday x < birthday z
@@ -199,7 +205,21 @@ theorem flatBirthday_not_simple :
 /-- **Simplicity is independent of the six axioms**: one `SurrealField` structure on `ℝ*`
 (`surrealFieldHyperreal`) whose own birthday fails it. -/
 theorem conwaySimplicity_independent_witnessed :
-    ∃ S : SurrealField.{0, 0} ℝ*, ¬ @ConwaySimplicity ℝ* S :=
+    ∃ S : BirthdayField.{0, 0} ℝ*, ¬ @ConwaySimplicity ℝ* S :=
   ⟨HyperrealTransfer.surrealFieldHyperreal, fun h => flatBirthday_not_simple h.simplicity⟩
+
+/-! ## §5 — the full Conway class carries both mixins
+
+Since 2026-11-27 (owner ruling "Split into base + Conway class") `SurrealField` *is*
+`BirthdayField` plus these two axioms as fields, so every `SurrealField` supplies both
+mixins.  A theorem stated with `[SurrealField K]` therefore has them for free. -/
+
+instance (priority := 100) SurrealField.toBirthdayFaithful (K : Type u) [SurrealField K] :
+    BirthdayFaithful K :=
+  ⟨SurrealField.birthday_natCast⟩
+
+instance (priority := 100) SurrealField.toConwaySimplicity (K : Type u) [SurrealField K] :
+    ConwaySimplicity K :=
+  ⟨SurrealField.simplicity⟩
 
 end QOU.AppendixSurreals
