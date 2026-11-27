@@ -1,9 +1,33 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-27T17:29:38.623436+00:00",
-  "commitSha": "3c21ab2d166aa966da1188d9a8e9fbb250f8ef9d",
+  "computedAt": "2026-11-27T17:39:08.975938+00:00",
+  "commitSha": "062f9197a42b4b3d93f4c54e2a9b9c2d6b8734b4",
   "assertions": [
+    {
+      "name": "exact_undressed_photon_pair_is_V3",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "exact_photon_factorisation_only_c0_on_Wp",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "exact_photon_factorisation_only_c0_on_Wn",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "exact_photon_pair_split_closed_form",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
     {
       "name": "exact_dressing_commutes_s1",
       "computed": true,
@@ -48,11 +72,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 210,
+  "durationMs": 211,
   "computation": "nucleon-charge-dressed-words",
   "scriptFile": "nucleon_charge_dressed_words_probe.py",
-  "scriptHash": "167256e2dced",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "73c2dc989e60",
+  "scriptCommitSha": "1d31ea024fd45823820a3b30ca7ae854a06e7c78",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -86,12 +110,18 @@
       "b_d": "-1/3"
     },
     "split_exact": "c*(a - b)*(a*b*c + 1)**3*(a**5*c**2*q**12 - 3*a**5*c**2*q**10 + 3*a**5*c**2*q**8 - 2*a**5*c**2*q**6 + 3*a**5*c**2*q**4 - 3*a**5*c**2*q**2 + a**5*c**2 + a**4*b*c**2*q**12 - 3*a**4*b*c**2*q**10 + 3*a**4*b*c**2*q**8 - 5*a**4*b*c**2*q**6 + 3*a**4*b*c**2*q**4 - 3*a**4*b*c**2*q**2 + a**4*b*c**2 + a**3*b**2*c**2*q**12 - 3*a**3*b**2*c**2*q**10 + 3*a**3*b**2*c**2*q**8 - 5*a**3*b**2*c**2*q**6 + 3*a**3*b**2*c**2*q**4 - 3*a**3*b**2*c**2*q**2 + a**3*b**2*c**2 + 3*a**3*c*q**12 - 9*a**3*c*q**10 + 9*a**3*c*q**8 - 9*a**3*c*q**6 + 9*a**3*c*q**4 - 9*a**3*c*q**2 + 3*a**3*c + 3*a**2*b**3*c**2*q**10 - 12*a**2*b**3*c**2*q**8 + 15*a**2*b**3*c**2*q**6 - 12*a**2*b**3*c**2*q**4 + 3*a**2*b**3*c**2*q**2 + 3*a**2*b*c*q**12 - 9*a**2*b*c*q**10 + 9*a**2*b*c*q**8 - 15*a**2*b*c*q**6 + 9*a**2*b*c*q**4 - 9*a**2*b*c*q**2 + 3*a**2*b*c - 3*a*b**4*c**2*q**6 + 6*a*b**2*c*q**10 - 24*a*b**2*c*q**8 + 27*a*b**2*c*q**6 - 24*a*b**2*c*q**4 + 6*a*b**2*c*q**2 + 3*a*q**12 - 9*a*q**10 + 9*a*q**8 - 12*a*q**6 + 9*a*q**4 - 9*a*q**2 + 3*a - 3*b**3*c*q**6 + 3*b*q**10 - 12*b*q**8 + 12*b*q**6 - 12*b*q**4 + 3*b*q**2)/q**6",
+    "photon_factorisation_common_c_factor": {
+      "W_p": "2*c",
+      "W_n": "c"
+    },
+    "photon_pair_split_exact": "c*(a - b)*(q - 1)**4*(q + 1)**4*(a*b*c + 1)*(a**4*b*c**2*q**4 + a**4*b*c**2 + a**3*b**2*c**2*q**4 + a**3*b**2*c**2 + a**3*c*q**4 + a**3*c + 2*a**2*b**3*c**2*q**2 + 3*a**2*b*c*q**4 + 3*a**2*b*c + 4*a*b**2*c*q**2 + 2*a*q**4 + a*q**2 + 2*a + 2*b*q**2)/q**6",
     "anchors": {
       "proton": {
         "q0": "1.10997858275138080759166909561076887987449912187357873607281",
         "t_V3": "2.99418581297996408672819936801871670008913958251181483468283",
         "first_order_coeff": "-1.99028185862421647140673531064439330256965766367924979797914",
         "first_order_rel": "-0.664715546375322650840550504677767195582450310304617474824114",
+        "photon_pair_first_order_coeff": "0.00520527247433015376195207649909786335930922511008671560492428",
         "E0_ord0": "4.18598136329447589694506215875900841014348689087960498278367",
         "gibbs_cell_c0_ord0": "0.873536621380459821746434074984571553678259416295994588435349",
         "gibbs_slope_dc_ord0": "2.78248688901920552626250089635488025656079466438620898866039",
@@ -106,6 +136,7 @@
         "t_V3": "2.99418581036323740913656373060256326968864974621146012164371",
         "first_order_coeff": "-1.99028185424435177797769047106357214072787998642399042156643",
         "first_order_rel": "-0.664715545493451598923932997705787643527273899144016168660785",
+        "photon_pair_first_order_coeff": "0.00520527482518084154516434605198817194769301304995960010304861",
         "E0_ord0": "4.18598082401017136779972443048525839338975170253696642520986",
         "gibbs_cell_c0_ord0": "0.873536606074301440157125707447638906612873189545819536614871",
         "gibbs_slope_dc_ord0": "2.78248652685704907696313091642110364357376764738336448110525",

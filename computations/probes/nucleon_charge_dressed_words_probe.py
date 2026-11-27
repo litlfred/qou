@@ -94,7 +94,47 @@ Gc2 = a * (a**4 * (q**12 - 3*q**10 + 3*q**8 - 2*q**6 + 3*q**4 - 3*q**2 + 1)
 G = Gc0 + c * Gc1 + c**2 * Gc2
 lean_split = c * (a - b) * (1 + a * b * c) ** 3 * G / q**6
 
+# Section 5: charges in the ruled photon's weights (photon pair 1 + h^2 L - h^2 L^2).
+L8 = S1 * D12 * S2.inv() * D23
+W8 = S1 * S2.inv()
+PHI, PSI = q * h, -h / q
+
+
+def photon_pair(L):
+    return sp.eye(8) + (PHI + PSI) * L + PHI * PSI * L * L
+
+
+QUARK = {a: sp.Rational(2, 3), b: sp.Rational(-1, 3)}
+
+
+def common_c_factor(rows):
+    """gcd over the 8-dim defect entries restricted to one weight space, as polynomials in c."""
+    D = sp.simplify((L8 ** 3 - photon_pair(L8)).subs(QUARK))
+    g = None
+    for i in rows:
+        for j in rows:
+            num = sp.numer(sp.together(D[i, j]))
+            if num == 0:
+                continue
+            P = sp.Poly(num, c)
+            g = P if g is None else sp.gcd(g, P)
+    return sp.factor(g.as_expr())
+
+
+cf_p = common_c_factor(WP)
+cf_n = common_c_factor(WN)
+PP = photon_pair(L8)
+pp_split = sp.factor(sp.simplify(sum(PP[i, i] for i in WN) - sum(PP[i, i] for i in WP)))
+H = (a**4 * b * c**2 * (q**4 + 1) + a**3 * b**2 * c**2 * (q**4 + 1) + a**3 * c * (q**4 + 1)
+     + 2 * a**2 * b**3 * c**2 * q**2 + 3 * a**2 * b * c * (q**4 + 1) + 4 * a * b**2 * c * q**2
+     + a * (2 * q**4 + q**2 + 2) + 2 * b * q**2)
+
 exact = {
+    "undressed_photon_pair_is_V3": sp.simplify((photon_pair(W8) - W8 ** 3)) == sp.zeros(8, 8),
+    "photon_factorisation_only_c0_on_Wp": sp.simplify(cf_p / c).is_number,
+    "photon_factorisation_only_c0_on_Wn": sp.simplify(cf_n / c).is_number,
+    "photon_pair_split_closed_form": sp.simplify(
+        pp_split - c * (a - b) * (q**2 - 1) ** 4 * (1 + a * b * c) * H / q**6) == 0,
     "dressing_commutes_s1": sp.simplify(S1 * Q12 - Q12 * S1) == sp.zeros(8, 8),
     "dressing_commutes_s2": sp.simplify(S2 * Q23 - Q23 * S2) == sp.zeros(8, 8),
     "lean_closed_form": sp.simplify(trN - trP - lean_split) == 0,
@@ -105,13 +145,16 @@ exact = {
 AQ, BQ = sp.Rational(2, 3), sp.Rational(-1, 3)
 trP_q = sp.lambdify((q, c), trP.subs({a: AQ, b: BQ}), "mpmath")
 trN_q = sp.lambdify((q, c), trN.subs({a: AQ, b: BQ}), "mpmath")
+pp_first_q = sp.lambdify(
+    q, sp.diff(pp_split, c).subs(c, 0).subs({a: AQ, b: BQ}), "mpmath")
 first_q = sp.lambdify(q, ((a - b) * Gc0 / q**6).subs({a: AQ, b: BQ}), "mpmath")
 
 
 def at_anchor(q0):
     t = trP_q(q0, 0)
     f1 = first_q(q0)
-    out = {"q0": q0, "t_V3": t, "first_order_coeff": f1, "first_order_rel": f1 / t}
+    out = {"q0": q0, "t_V3": t, "first_order_coeff": f1, "first_order_rel": f1 / t,
+           "photon_pair_first_order_coeff": pp_first_q(q0)}
     for tag, E in (("ord0", qbeta_e0.order_zero(q=q0, m_e=M_E)),
                    ("twr", qbeta_e0.canonical(q=q0, m_e=M_E))):
         cell0 = 2 * E * mp.log(q0)
@@ -157,6 +200,8 @@ def main():
                   f" d cell/dc = {mp.nstr(r[f'gibbs_slope_dc_{tag}'], 12)} MeV")
             print(f"    DIAGNOSTIC c reaching CODATA dm_np: "
                   f"{mp.nstr(r[f'diag_c_for_dm_np_{tag}'], 10)}  (not adopted)")
+        print(f"  photon-pair dressing: d(tr_n - tr_p)/dc at c=0 = "
+              f"{mp.nstr(r['photon_pair_first_order_coeff'], 15)}")
         wb.add_assertion(f"{name}_first_order_nonzero",
                          computed=bool(r["first_order_coeff"] != 0), expected=True)
         ok &= bool(r["first_order_coeff"] != 0)
@@ -164,6 +209,8 @@ def main():
     wb.add_data("beans_referenced", ["qou-2skq", "qou-myts", "qou-99qc"])
     wb.add_data("charges", {"a_u": "2/3", "b_d": "-1/3"})
     wb.add_data("split_exact", str(sp.factor(trN - trP)))
+    wb.add_data("photon_factorisation_common_c_factor", {"W_p": str(cf_p), "W_n": str(cf_n)})
+    wb.add_data("photon_pair_split_exact", str(pp_split))
     wb.add_data("anchors", res)
     wb.add_data("codata_comparison_only", {"dm_np": fmt(DM_NP_EXP)})
     path = wb.save({"q0Anchor": "comparison"})

@@ -49,6 +49,9 @@ The proton and neutron elements are the dressed `V³ = (σ₁σ₂⁻¹)³` on `
   and `G ≠ 0`. So with distinct quark charges, the dressed `uud` and `udd` words are distinct
   elements whose traces differ, and the difference depends on the word through `G`.
 * `firstOrder_eq`: the coefficient of `c` in the split is `3(a − b)·(a·G₁(q) + b·G₂(q))/q⁶`.
+* §5, charges in the ruled photon's weights: `ac_eq_zero_of_photon_factorisation` (the dressed
+  `V³` equals the ruled photon pair with the dressed vertex only if `a·c = 0`, away from listed
+  degenerate loci) and `trace_photonPair_split` (the dressed photon pair splits at order `(q²−1)⁴`).
 
 `NucleonElementsAreChargeDressed` states the replacement for conjecture C2 as a `Prop` class with
 no instance. Nothing here assigns a value to the coupling `c`; it is the same undetermined coupling
@@ -231,6 +234,76 @@ theorem firstOrder_eq (q a b : R) : G q a b 0 = 3 * (a * G₁ q + b * G₂ q) :=
 /-- At `q = 1`: `G₁(1) = −2`, `G₂(1) = −2`. -/
 theorem G₁_one : G₁ (1 : R) = -2 := by simp [G₁]; norm_num
 theorem G₂_one : G₂ (1 : R) = -2 := by simp [G₂]; norm_num
+
+/-! ## 5. Charges in the ruled photon's weights: the factorisation forces `c = 0`
+
+The Borromean core factors through the ruled photon `γ(φ₀,φ₁,φ₀₁) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹`:
+`V³ = γ(0,0,qh)·γ(0,0,−q⁻¹h)` (`borromeanV3A_eq_switched_photon_product`), and the 2026-11-25
+linking-neutrality ruling derives the weights `qh, −q⁻¹h` from that identity. Expanded,
+`γ(0,0,qh)·γ(0,0,−q⁻¹h) = 1 + h²·W − h²·W²` with `W = σ₀σ₁⁻¹`. Putting the charge dressing into the
+photon's vertex replaces `W` by the dressed period `L`. The question is whether the ruled photon
+then still produces the dressed `V³`, i.e. whether `L³ = 1 + h²L − h²L²`.
+
+`photonFactorisationDefect_one_zero` computes one entry of `L³ − (1 + h²L − h²L²)` on `W_p`, and
+`ac_eq_zero_of_photon_factorisation` reads off that, away from the listed degenerate loci, the
+identity forces `a·c = 0`: with a non-zero up-quark charge, `c = 0`. (The exact probe checks that
+with the quark charges `2/3, −1/3` the only common root of all nine entries, for generic `q`, is
+`c = 0` on both weight spaces.) So the ruled photon does **not** fix a non-zero coupling; it
+forbids one. The dressed photon pair itself, `Γ(L)`, still splits `p` from `n`
+(`trace_photonPair_split`), but only at order `(q² − 1)⁴`.
+-/
+
+/-- The ruled photon pair `γ(0,0,qh)·γ(0,0,−q⁻¹h)` with its vertex `σ₀σ₁⁻¹` replaced by `L`. -/
+def photonPair (q : R) (L : Matrix (Fin 3) (Fin 3) R) : Matrix (Fin 3) (Fin 3) R :=
+  1 + (q - q⁻¹) ^ 2 • L - (q - q⁻¹) ^ 2 • (L * L)
+
+theorem photonFactorisationDefect_one_zero (q c a b : R) (hq : q ≠ 0) :
+    (Lp q c a b ^ 3 - photonPair q (Lp q c a b)) 1 0 =
+      -(a * c) * (q ^ 2 - 1) ^ 2 * (1 + a * a * c) * (1 + a * b * c) ^ 3
+        * (a * a * b * c + a + b) / q ^ 3 := by
+  rw [Lp_eq q c a b hq]
+  simp [photonPair, pow_succ, Matrix.mul_apply, Matrix.sub_apply, Matrix.add_apply,
+    Matrix.one_apply, Fin.sum_univ_three]
+  field_simp
+  ring
+
+/-- **The ruled photon factorisation forces `a·c = 0`** (away from the degenerate loci). -/
+theorem ac_eq_zero_of_photon_factorisation (q c a b : R) (hq : q ≠ 0) (hq1 : q ^ 2 - 1 ≠ 0)
+    (h1 : 1 + a * a * c ≠ 0) (h2 : 1 + a * b * c ≠ 0) (h3 : a * a * b * c + a + b ≠ 0)
+    (hfac : Lp q c a b ^ 3 = photonPair q (Lp q c a b)) : a * c = 0 := by
+  have hd := photonFactorisationDefect_one_zero q c a b hq
+  rw [hfac, sub_self] at hd
+  simp only [Matrix.zero_apply] at hd
+  have hq5 : q ^ 3 ≠ 0 := pow_ne_zero _ hq
+  have hprod : -(a * c) * (q ^ 2 - 1) ^ 2 * (1 + a * a * c) * (1 + a * b * c) ^ 3
+      * (a * a * b * c + a + b) = 0 := by
+    have := hd.symm
+    rwa [div_eq_zero_iff, or_iff_left hq5] at this
+  rcases mul_eq_zero.mp hprod with h | h
+  · rcases mul_eq_zero.mp h with h | h
+    · rcases mul_eq_zero.mp h with h | h
+      · rcases mul_eq_zero.mp h with h | h
+        · exact neg_eq_zero.mp h
+        · exact absurd (pow_eq_zero_iff (n := 2) (by norm_num) |>.mp h) hq1
+      · exact absurd h h1
+    · exact absurd (pow_eq_zero_iff (n := 3) (by norm_num) |>.mp h) h2
+  · exact absurd h h3
+
+/-- The `q`-cofactor of the photon-pair split. -/
+def H (q a b c : R) : R :=
+  a ^ 4 * b * c ^ 2 * (q ^ 4 + 1) + a ^ 3 * b ^ 2 * c ^ 2 * (q ^ 4 + 1) + a ^ 3 * c * (q ^ 4 + 1)
+  + 2 * a ^ 2 * b ^ 3 * c ^ 2 * q ^ 2 + 3 * a ^ 2 * b * c * (q ^ 4 + 1) + 4 * a * b ^ 2 * c * q ^ 2
+  + a * (2 * q ^ 4 + q ^ 2 + 2) + 2 * b * q ^ 2
+
+/-- **The dressed photon pair splits `p` from `n` at order `(q² − 1)⁴`.** -/
+theorem trace_photonPair_split (q c a b : R) (hq : q ≠ 0) :
+    trace (photonPair q (Ln q c a b)) - trace (photonPair q (Lp q c a b)) =
+      c * (a - b) * (q ^ 2 - 1) ^ 4 * (1 + a * b * c) * H q a b c / q ^ 6 := by
+  rw [Ln_eq q c a b hq, Lp_eq q c a b hq]
+  simp [photonPair, H, trace, Matrix.mul_apply, Matrix.sub_apply, Matrix.add_apply,
+    Matrix.one_apply, Fin.sum_univ_three]
+  field_simp
+  ring
 
 /-! ## 4. Conjecture C2′ (replacement for C2), stated, not asserted -/
 
