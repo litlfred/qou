@@ -10638,6 +10638,26 @@ Bring's curve is a compact Riemann surface of genus $g = 4$ (\hyperref[def:bring
 For the Hochschild form, the Hochschild--Kostant--Rosenberg theorem (\hyperref[rem:hkr-theorem]{HKR}) identifies $HH_n(\Sigma_4) \cong\allowbreak{} \bigoplus_i H^i(\Sigma_4, \Omega^{i+n})$. The Hodge numbers of a genus-$g$ curve are $h^{0,0} = h^{1,1} = 1$ and $h^{1,0} = h^{0,1} = g$, so $\dim HH_0 = 2$ and $\dim HH_1 = \dim HH_{-1} = g$, and the alternating sum is $2 - 2g$. Equivalently $-6 =\allowbreak{} \deg T_{\Sigma_4} =\allowbreak{} \int_{\Sigma_4} c_1(T_{\Sigma_4})$, the degree-two component of the Chern character of the tangent bundle (\hyperref[rem:chern-character-and-riemann-roch]{Chern character}). $\square$
 \end{proof}
 
+\begin{lemma}[{Euler characteristic of the Bring map}]
+  \label{lem:bring-map-euler-characteristic}
+  \blockannot[compiled]{lem:bring-map-euler-characteristic}{QOU.BringsSurface.BringMapChain.bring_chi}{quantum-observable-universe/brings-surface/bring-map-euler-characteristic.md}
+  \uses{lem:brings-euler-characteristic}
+\emph{Let the darts be the $120$ elements of $S_5$, let $\sigma$ be right multiplication by $S = (1\,2\,3\,4)$ and $\alpha$ right multiplication by $A = (0\,1)$. Then $(\sigma, \alpha)$ is a connected combinatorial map, $S_5$ acts on it freely on darts by left multiplication, and}
+
+\[
+  \chi = \#\mathrm{cycles}(\sigma) - \#\mathrm{cycles}(\alpha) + \#\mathrm{cycles}(\sigma\alpha) = 30 - 60 + 24 = -6 .
+\]
+
+\emph{Its genus is $4$, and it agrees with the topological value of \hyperref[lem:brings-euler-characteristic]{the Euler characteristic of Bring's surface}.}
+\end{lemma}
+
+\begin{proof}[{Proof of the Euler characteristic of the Bring map}]
+  \label{prf:bring-map-euler-characteristic}
+  \blockannot[drafted]{prf:bring-map-euler-characteristic}{}{quantum-observable-universe/brings-surface/bring-map-euler-characteristic-proof.md}
+  \uses{lem:bring-map-euler-characteristic}
+The cycles of right multiplication by $g$ are the left cosets of $\langle g \rangle$, so their number is $120/\mathrm{ord}(g)$. Since $S$, $A$ and $\sigma\alpha = (\,\cdot\,A S)$ have orders $4$, $2$ and $5$, the counts are $30$, $60$ and $24$. The map is connected because $S$ and $A$ generate $S_5$. No analysis is used: every step is finite group theory. $\square$
+\end{proof}
+
 \phantomsection\label{rem:three-euler-characteristics}\phantomsection\label{rem:euler-characteristic-of-the-regular-representation}\phantomsection\label{rem:fourier-mukai-and-orlov}\begin{lemma}[{Riemann--Hurwitz count for a degree-4 covering $\Sigma_4 \to \mathbb{P}^1$}]
   \label{lem:brings-riemann-hurwitz}
   \blockannot[compiled]{lem:brings-riemann-hurwitz}{QOU.MassTheory.brings_riemann_hurwitz}{quantum-observable-universe/brings-surface/brings-riemann-hurwitz.md}
