@@ -8,7 +8,7 @@ tags:
     - compute-accuracy
     - reorg-2026-10-04
 created_at: 2026-08-07T01:00:00Z
-updated_at: 2026-11-27T14:18:33Z
+updated_at: 2026-11-27T20:10:00Z
 parent: qou-3l2l
 ---
 
@@ -89,3 +89,6 @@ another. The gram_kappa_numerical_value sorry was a false statement and is
 replaced by a sorry-free refutation; kappa = 1.7216 is det G_cl/det G_q and
 never used gramKappa (bean qou-wkgp). Status unchanged: the CS-tower conjecture
 class still has no instance.
+
+## 2026-11-27 — Seifert κ at the convention-D Alexander variable (PR #9626)
+Not previously recorded here: the 16-reading [m]_q family all miss (alpha_em_kappa_qdeformation_family_probe.py) and the 8×8 Seifert pairing κ(u) = 1/(u⁸Δ₂₉(u)Δ₃₅(u)) at u = q⁻¹ gives −24.53 ppb proton / +55.16 muon (alpha_em_seifert_kappa_pairing_probe.py, 2026-11-24). Convention D fixes the Burau variable at t = q^{∓2} (eigenvalue ratio −q⁻², same variable as AlphaEmT35Linchpin.lean Δ_{T(3,5)}(q²)). Pre-registered u = q⁻²: closed form κ_D = q¹⁶[2][9][3][5]/([18][15]) (exact sympy); result +1726.8 ppb proton / +1806.5 muon. Scope-limited negative (a). The −24.5 ppb figure is one of four members u ∈ {q^{±1}, q^{±2}} and uses a variable convention D does not supply: selection until t = q is derived. Pin floor: every member moves ≈80 ppb between pins, so sub-80-ppb closure waits on qou-2002. Audit docs/audits/2026-11-27-alpha-em-kappa-alexander-variable.md. Status unchanged.

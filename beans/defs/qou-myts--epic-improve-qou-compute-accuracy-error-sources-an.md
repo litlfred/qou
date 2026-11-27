@@ -7,7 +7,7 @@ priority: high
 tags:
     - compute-accuracy
 created_at: 2026-11-27T14:17:38Z
-updated_at: 2026-11-27T16:00:00Z
+updated_at: 2026-11-27T20:10:00Z
 parent: qou-10v9
 ---
 
@@ -34,3 +34,5 @@ Plan: A1 land K_A scope note (#9436); A2 Derived/Selected/Conditional column (ow
 
 ## 2026-11-27 charge-coulomb-tn3he-derived: cone drift root-caused
 Bisect over main: B_pp_strong = 2.12836 MeV up to 7db032fb482^ and 0.434439 MeV from 7db032fb482 onward (2026-09-05 owner ruling: atom_braid_word_3A lays the confinement core as the interleaved (σ0σ1⁻¹)³ = β_Bor, no longer grouped). The committed witness (2026-08-21) is on the SUPERSEDED grouped word. On the ruled word: derived ³He Coulomb dHe = 0.04517 MeV, i.e. 5.91% of the AME T−³He split (was 29.0%), 16.9× short (was 3.45×); the producer's own 0.1<x<1 'right order' assertion fails. ACCURACY.md §3.3a row still shows 29.0%. Pinning intra_order='grouped' to keep 29% would be selecting a word for its number (fit). Owner decision pending.
+
+**2026-11-27 — C4 α_EM residual thread, PR #9626.** Seifert-pairing κ at the convention-D Burau variable u = q⁻² overshoots (+1727 ppb proton); the existing −24.5 ppb Seifert figure uses u = q⁻¹ and is a selection. Every κ member moves ≈80 ppb between proton/muon pins: α_EM closure below ~80 ppb is blocked on the pin (qou-2002). qou-l4t2 stays NEEDS-OWNER (form open, qou-aemx). Audit docs/audits/2026-11-27-alpha-em-kappa-alexander-variable.md.
