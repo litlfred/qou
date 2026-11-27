@@ -32,9 +32,19 @@ here as `QOU.markovTrace_append_comm` — gives invariance under *rotation* of
 a word, `tr(vw) = tr(wv)`; reversal is a different operation, and for
 non-commuting matrices `tr(ABC) ≠ tr(CBA)` in general. The claim is
 plausible for Hecke characters by a *different* route (the anti-automorphism
-fixing each generator, under which characters are invariant), but that route
-is not formalised here and the corpus does not carry it. Hence the class
+fixing each generator, under which characters are invariant). Hence the class
 field rather than a proof.
+
+**Status (2026-11-27).** That route is now formalised in two places:
+* `QOU.IwahoriHecke.MarkovTraceSymmetries.markov_reverse` proves reversal
+  invariance for every normalised cyclic Markov trace (property (M3)), every
+  number of strands, through the opposite algebra and Markov uniqueness.
+* `QOU.BraidsAndKnots.TFromTraceCyclicityH3` provides the instance
+  `TFromTraceCyclicity 3 d` for every `d`: every 3-strand character is
+  reversal invariant, unconditionally.
+For `n ≥ 4` the class field (all representation characters, not only Markov
+traces) stays open here; it needs `T_w ≡ T_{w⁻¹} mod [H, H]` (Geck–Pfeiffer
+§8.2) or semisimplicity over `ℚ(t)`.
 
 -- Ref: [leitner2026] conj:t-from-trace-cyclicity
 -- Ref: [jones1987] Hecke Algebra Representations of Braid Groups
