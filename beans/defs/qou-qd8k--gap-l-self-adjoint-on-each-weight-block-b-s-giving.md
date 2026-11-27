@@ -1,11 +1,11 @@
 ---
 # qou-qd8k
 title: 'GAP: L self-adjoint on each weight block B_s, giving the alpha=s little q-Jacobi basis'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-11-27T22:02:56Z
-updated_at: 2026-11-27T22:27:56Z
+updated_at: 2026-11-27T22:35:01Z
 blocking:
     - qou-pa7n
 ---
@@ -19,3 +19,7 @@ From PR #9746. Block pairings proved nondegenerate (q_ns_block_pairing_nondegene
 
 
 2026-11-27 (later): PR #9785 merged. Follow-up PR #9791 proves the rest: distinct diagonal (closed form bdiag_mul_eq, bdiag_injective), an eigenpolynomial of every degree spanning K[X] (blockPoly_span), orthogonal with nonzero norms (blockPoly_orthogonal, blockPoly_norm_ne_zero). Complete this bean when #9791 merges. Only the match to a classical little q-Jacobi normalisation is left, which is cosmetic, not a gap.
+
+
+
+2026-11-27: closed. PR #9785 (per-block self-adjointness) and PR #9791 (full eigenbasis blockPoly r n, orthogonal under the block pairing, nonzero norms) are both merged, sorry-free, in QOU/FluidDynamics/q_ns_block_self_adjoint.lean. Matching blockPoly to the classical little q-Jacobi normalisation p_n(x; q^{2s}, 1 | q²) is cosmetic and not done.
