@@ -7,8 +7,11 @@ surface whose Seifert surface spans all three exceptional
 divisors `D_r ∪ D_g ∪ D_b` simultaneously.
 
 -- Ref: [leitner2026]
-Per `AGENTS.md §3b-cond`, opaque Props + class fields + sorry
-instance per claim. This is the **algebraic/topological** tier;
+Per `AGENTS.md §3b-cond`, opaque Props bundled as class fields.
+The class is an **instance-free hypothesis**: no instance is
+declared, so a downstream result must carry `[HiggsAsT28]`
+explicitly and cannot pick up a `sorry` by instance resolution.
+This is the **algebraic/topological** tier;
 the numerical Higgs mass evaluation (crossing energy of T(2,8)
 at q_0 vs. observed mass) belongs to a future Archimedean tier
 per gemini review on #721 (algebraic vs. numerical separation).
@@ -45,13 +48,9 @@ class HiggsAsT28 : Prop where
   uniqueness : T28UniquenessHolds
 
 -- Ref: [leitner2026] conj:higgs-t28
-instance higgs_t28_conjecture : HiggsAsT28 where
-  -- Witness: computations/none
-  t28_genus := sorry
-  -- Ref: [leitner2026]
-  spans_three := sorry
-  -- Ref: [leitner2026]
-  uniqueness := sorry
+-- No instance: `conj:higgs-t28` is unproved, so `HiggsAsT28` stays a
+-- hypothesis. (A `sorry`-filled instance stood here until 2026-11-27; it
+-- let instance resolution discharge `[HiggsAsT28]` silently.)
 
 end QOU.HiggsT28
 

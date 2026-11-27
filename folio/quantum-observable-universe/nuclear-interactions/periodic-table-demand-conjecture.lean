@@ -11,9 +11,11 @@ isotope `(Z*, N*)` is the unique minimizer of the demand magnitude
 numbers, shell closure, and drip lines.
 
 Per `AGENTS.md §3b-cond`, the main claim and each sub-claim are
-encoded as opaque Props and bundled into a class; the canonical
+encoded as opaque Props and bundled into a class. The class is an
+**instance-free hypothesis**: no instance is declared, so a
+downstream result must carry `[PeriodicTableDemand]` explicitly
+and cannot pick up a `sorry` by instance resolution.
 -- Ref: [leitner2026]
-instance carries `sorry` per claim.
 
 ## References
 
@@ -60,19 +62,11 @@ class PeriodicTableDemand : Prop where
   /-- (iii) Drip lines ↔ demand divergence. -/
   drip_lines_from_demand_divergence : DripLinesFromDemandDivergenceHolds
 
-/-- **Canonical instance** — the conjecture proper. Each `sorry`
-    is the unproved content of the corresponding claim. -/
 -- Ref: [leitner2026] conj:periodic-table-demand
-instance periodic_table_demand_conjecture : PeriodicTableDemand where
-  -- Witness: computations/none
-  valley_of_stability_matches := fun _ _ => sorry
-  -- Ref: [leitner2026]
-  magic_numbers_from_demand_closure := sorry
-  -- Ref: [leitner2026]
-  noble_gas_shell_closure := sorry
-  -- Ref: [leitner2026]
-  drip_lines_from_demand_divergence := sorry
-
+-- No instance: `conj:periodic-table-demand` is unproved, so
+-- `PeriodicTableDemand` stays a hypothesis. (A `sorry`-filled instance
+-- stood here until 2026-11-27; it let instance resolution discharge
+-- `[PeriodicTableDemand]` silently.)
 
 /-! ## Special cases (provable from the conjecture)
 
