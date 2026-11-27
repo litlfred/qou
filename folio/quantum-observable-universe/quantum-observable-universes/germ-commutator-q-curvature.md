@@ -1,7 +1,7 @@
 *At a point $p$, let two independent observations
-([observation](#def:observation)) perturb the substrate parameter by
-germ-level increments $\delta q_1, \delta q_2$ in the germ algebra
-$A/\mathfrak{m}_p^2$. Their commutator equals the $q$-curvature $F_q$
+([observation](#def:observation)) have probe directions $\delta q_1 := w_1$ and $\delta q_2 := w_2$ in
+$h\,W_1[[h]]$, viewed as increments in the non-commutative Hecke algebra
+$H_n(R[[h]], q)$. Their commutator equals the $q$-curvature $F_q$
 of the $q$-connection (a $q$-flat connection, defined in the $q$-Geometric Langlands chapter)
 evaluated on the loop spanned by the two observation directions:*
 
