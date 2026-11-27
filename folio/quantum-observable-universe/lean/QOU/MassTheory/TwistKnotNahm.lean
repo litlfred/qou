@@ -44,14 +44,21 @@ up to the sign `ε`: Suslin's symbol of the class is `(−1) ∧ Y` for every `p
 (`MathlibExt/FiveTwoSaddleSumRule.lean`). Its field has discriminant `−23`, the
 trace field of `5₂`. Nothing here uses a measured value or a volume.
 
+**For `5₂` the sign costs nothing: the class itself is in `B(F)`, over every field
+with `5 ≠ 0`** (`fiveTwo_mem_blochGroup`). The leftover `(−1) ∧ t` vanishes
+because `t` is a square in `ℚ(t)`: `t = (1 − t + t²)²` modulo the cubic
+(`fiveTwo_eq_sq`), with `1 − t + t²` a root of `w³ + w² − 1` (so `−(1 − t + t²)` is a root of
+`w³ − w² + 1`).
+
 ## Scope
 
 Pre-Archimedean only: no `ℝ`, `ℂ`, limit or regulator. That the Bloch–Wigner
 regulator of `twistClass` at the geometric root is `Vol(5₂)` is a separate,
 Archimedean statement and is not claimed here. Masbaum's formula itself (that this
 double sum is the coloured Jones / Kashaev invariant of `K_p`) is cited, not
-proved; what is proved is everything from the summand down. Whether the sign `ε`
-can be removed, so that `twistClass ∈ B(F)` over every field, is open here.
+proved; what is proved is everything from the summand down. For a general twist
+knot `K_p` the class is in `B(F)` when `Y` is a square; whether that holds at the
+geometric solution for every `p` is not settled here.
 
 -- Ref: [masbaum2003] Masbaum, Skein-theoretical derivation of some formulas of Habiro, Algebr. Geom. Topol. 3 (2003) 537-556, Thm 3.2.
 -- Ref: [nahm2007] Nahm, Conformal field theory and torsion elements of the Bloch group, in Frontiers in Number Theory, Physics and Geometry II (2007) 67-132.
@@ -295,6 +302,24 @@ theorem fiveTwo_saddle_of_cubic {t : F} (ht : t ^ 3 - t ^ 2 + 2 * t - 1 = 0)
 theorem fiveTwo_two_smul_mem_blochGroup {t : F} (ht : t ^ 3 - t ^ 2 + 2 * t - 1 = 0)
     (h5 : (5 : F) ≠ 0) : 2 • twistClass (1 + t) t ∈ BlochGroup F :=
   two_smul_twistClass_mem_blochGroup (fiveTwo_saddle_of_cubic ht h5)
+
+/-- **`t` is a square in `ℚ(t)`:** `t = (1 − t + t²)²` modulo the `5₂` cubic. -/
+theorem fiveTwo_eq_sq {t : F} (ht : t ^ 3 - t ^ 2 + 2 * t - 1 = 0) :
+    t = (1 - t + t ^ 2) ^ 2 := by
+  linear_combination (1 - t) * ht
+
+/-- The square root `w = 1 − t + t²` solves `w³ + w² − 1 = 0`, so `−w` is a root of
+`x³ − x² + 1`, the cubic of `GZThirdKnotRankGrading`'s `5₂` row. -/
+theorem fiveTwo_sqrt_cubic {t : F} (ht : t ^ 3 - t ^ 2 + 2 * t - 1 = 0) :
+    (1 - t + t ^ 2) ^ 3 + (1 - t + t ^ 2) ^ 2 - 1 = 0 := by
+  linear_combination (t ^ 3 - 2 * t ^ 2 + 3 * t - 1) * ht
+
+/-- **The `5₂` Nahm class is a Bloch class**, over every field with `5 ≠ 0`:
+`3[1 + t] − [t(1 + t)] − [(1 + t)/t] ∈ B(F)`. No factor `2`, no square root
+adjoined. -/
+theorem fiveTwo_mem_blochGroup {t : F} (ht : t ^ 3 - t ^ 2 + 2 * t - 1 = 0)
+    (h5 : (5 : F) ≠ 0) : twistClass (1 + t) t ∈ BlochGroup F :=
+  twistClass_mem_blochGroup_of_sq (fiveTwo_saddle_of_cubic ht h5) (fiveTwo_eq_sq ht)
 
 /-- The cubic is the corpus's `5₂` saddle cubic `y³ − 2y² + 3y − 1` at `y = 1 − t`. -/
 theorem fiveTwo_cubic_iff (t : F) :
