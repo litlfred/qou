@@ -180,9 +180,14 @@ minimum (`card_minimisers`), and $3N(\delta_{m+1}) = m(m+1)(m+2)$ (`three_mul_N_
 For any family of integer polynomials $f_\lambda$ of degree at most $M - N(\lambda)$ with
 coefficient $1$ there, the coefficient of $\sum_\lambda f_\lambda$ at degree $M - N_{\min}$ is
 $\binom{m+1}{r}$ (`coeff_sum_shapes_of_top`). This takes the top term of the $q$-hook formula as
-a hypothesis. Not yet formalised: the $q$-hook formula itself, the check that $S(n-1)$ and
-$[n-1]S(n-2)$ do not reach the top degree of $S(n)$, and the $\delta = 1, 2$ counts behind
-$a_1, a_2$.
+a hypothesis. `QOU.Mass.QHookTop` (sorry-free) discharges that hypothesis from the
+divisibility half of the $q$-hook formula. With $[k] = 1 + t + \dots + t^{k-1}$, if
+$[n]! = g_\lambda \prod_{c}[h(c)]$, then $g_\lambda$ is monic of degree $\binom n2 - N(\lambda)$
+(`qHook_top_of_eq`, via $\sum_c h(c) = n + N(\lambda)$, `sum_hook`), and its next coefficient is
+(corners of $\lambda$) $- 1$ (`qHook_nextCoeff_of_eq`). The same file proves the degree check
+(`top_exponent_gap`): when $2m < n-1$, $S(n-1)$ and $[n-1]S(n-2)$ stay strictly below the top
+exponent of $S(n)$. Not yet formalised: the divisibility $\prod_c [h(c)] \mid [n]!$ itself
+(Stanley, EC2, §7.21 \cite{stanley1999}), and the $\delta = 1, 2$ counts behind $a_1, a_2$.
 
 Together with the finite certificates this settles $6 \le n \le 20$, every triangular $n$, and
 every $n \in \{T_j + 1, T_{j+1} - 1\}$ with $j \ge 4$.
