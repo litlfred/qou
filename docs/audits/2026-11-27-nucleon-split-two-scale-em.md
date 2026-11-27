@@ -183,3 +183,24 @@ the owner. It is not a missing factor.
 cell's ~4× or its sign. This is not a structural exclusion: a factor on `E` derived from elsewhere is
 not ruled out. What it shows is that the shortfall sits in the scale `E`, or in a second element for the
 two nucleons (route 2 of the full-tower audit), and not in multiplicities or normalisations.
+
+## 9. The split read in the nucleon's own chart (tried, same day)
+
+§7 argued that a difference of nucleon masses belongs in the nucleon's chart. Taken literally, with
+the proton as its own calibration, `m_n − m_p = M·(L_n − L_p)/L_p` (log chart) or
+`M·(w_n − w_p)/w_p` (mass chart). Here `τ_p = q·t(V³)` (`NucleonSplitSingleElement`), `L_n − L_p = −2 ln q`,
+and `w_n − w_p = −2`. Nothing is chosen.
+
+| at q₀ | value |
+|---|---|
+| `τ_p` | 3.32348 |
+| `L_p = ln τ_p` | +1.20101 |
+| `w_p = q∂_q ln τ_p` (closed form in the probe) | +0.924752 |
+
+Both `L_p` and `w_p` are positive, so **both nucleon charts give `m_n < m_p`**. At the comparison
+boundary the size is −163.0 MeV (log) and −2029 MeV (mass), against +1.293 MeV.
+
+**Scope (a).** Calibrating the split on the nucleon's own trace is wrong in sign and 10²–10³ in size. The
+electron-calibrated scale `E` stays the only candidate scale on record. Within γγ words, a separate
+element for each nucleon is closed (scope b) by `NucleonFlavourTypedLetters` and `NucleonDownQuarkStrand`.
+What remains is the nuclear interface word (#7876) and a derivation of `E`.
