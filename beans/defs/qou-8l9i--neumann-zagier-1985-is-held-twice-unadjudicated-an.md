@@ -1,11 +1,11 @@
 ---
 # qou-8l9i
 title: Neumann-Zagier 1985 is held TWICE, unadjudicated and doubly indexed (found while re-measuring the library counts)
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-27T10:37:33Z
-updated_at: 2026-11-27T15:30:00Z
+updated_at: 2026-11-27T15:03:32Z
 ---
 
 ## The finding, measured 2026-09-27
@@ -128,3 +128,5 @@ This bean was written on branch `claude/bk-crossing-coordination-woiqj3` (PR #74
 **Owner ruling 2026-11-27: adjudicate it.** Re-checked on `main` the same day: both directories are still there, neither carried `duplicate_of`, and both had an `INDEX.md` row. #7477's closing note said `references.bib` holds a single NZ entry. That is true, but it is a different file and did not fix this.
 
 The fix is litlfred/qou#9463. It marks the `-co` copy (source `…-copy-b.pdf`, a re-save of the same scan) as `duplicate_of` the bare stem, adds a ledger entry, and regenerates `INDEX.md` with `--index-only` (782 → 781 rows; `--check` reports up to date). Close this bean when #9463 merges.
+
+**Closed 2026-11-27: #9463 merged** (`-co` copy now `duplicate_of` the bare stem, ledger entry added, `INDEX.md` 781 rows).
