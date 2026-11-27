@@ -180,7 +180,7 @@ def _job(job):
             "bonds": len(bonds), "ratio_atom_over_free": ratio.str(40, radius=False),
             "ratio_radius": ratio.rad().str(3), "B_diff_over_trfree_keV": Bd.str(20, radius=False),
             "B_log_keV": Bl.str(20, radius=False), "peak_width": st["peak_width"],
-            "peak_terms": st["peak_terms"], "prec_bits": prec, "letters": st["steps"], "seconds": st["seconds"]}
+            "peak_terms": st["peak_terms"], "prec_bits": prec, "letters": st["steps"], "seconds": f"{st['seconds']:.2f}"}
 
 
 def _write(checks, rows):
