@@ -94,7 +94,7 @@ theorem QuantumObservableUniverse.exists_instance
     (hcasimir : IsUnit (q - qinv))
     (hsix : IsUnit (6 : R))
     (hgeneric : ∀ k : ℕ, 2 ≤ k → q ^ k ≠ 1) :
-    Nonempty (QuantumObservableUniverse.{w + 1, w, w, w} R) := by
+    Nonempty (QuantumObservableUniverse.{w + 1, w, w} R) := by
   sorry
 
 end QOU

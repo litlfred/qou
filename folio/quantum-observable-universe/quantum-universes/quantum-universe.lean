@@ -11,6 +11,9 @@ import Mathlib.CategoryTheory.Linear.Basic
 import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.Data.Fintype.Basic
 import Mathlib.CategoryTheory.NatTrans
+import Mathlib.CategoryTheory.Monoidal.NaturalTransformation
+import Mathlib.Algebra.Category.ModuleCat.Monoidal.Basic
+import Mathlib.CategoryTheory.Linear.LinearFunctor
 import Mathlib.CategoryTheory.Types.Basic
 import Mathlib.Algebra.Group.Basic
 import Mathlib.Algebra.Ring.Basic
@@ -124,7 +127,7 @@ end FrobeniusHopfData
     instance to this structure.
 
     LaTeX: `\label{def:quantum-universe}` -/
-structure QuantumUniverse (R : Type*) [CommRing R] where
+structure QuantumUniverse (R : Type w) [CommRing R] where
   /-- The monoidal category `C`. Represented as an opaque type with
       `Category` and `MonoidalCategory` instances. -/
   C : Type u
@@ -185,23 +188,25 @@ structure QuantumUniverse (R : Type*) [CommRing R] where
   [balancedInst : @QOU.BraidKnot.Balanced.BalancedCategory C catInst monInst braidedInst]
   /-- The Frobenius–Hopf object `A` in `C`. -/
   frobHopf : @FrobeniusHopfData C catInst monInst
-  /-- The fibre functor `τ : C → Type*` (abstracting `Vect_R` / `R-Mod`).
-      The paper asks for it to be exact, faithful, `R`-linear and monoidal;
-      NONE of those four is carried by this type, which is a bare functor to
-      `Type`.  Recorded rather than silently implied — the gap is real and
-      separate from the `R`-linearity of `C` now carried above. -/
-  fibreFunctor : @CategoryTheory.Functor C catInst (Type w) inferInstance
-  /-- **Faithfulness**: `ω` reflects equality of morphisms.
-      If `ω.map f = ω.map g` then `f = g`. -/
-  fibreFunctor_faithful : @CategoryTheory.Functor.Faithful C catInst (Type w) inferInstance
-    fibreFunctor
-  -- **Monoidality**: `ω` preserves the tensor product up to natural
-  -- isomorphism.  Full `MonoidalFunctor` requires
-  -- `Mathlib.CategoryTheory.Monoidal.Functor`; here we record the
-  -- constraint as a Prop witness.
-  /-- **Monoidality**: `ω(X ⊗ Y) ≅ ω(X) × ω(Y)` and `ω(𝟙) ≅ PUnit`.
-      Encoded as: the image of the unit is inhabited. -/
-  fibreFunctor_unit_inhabited : Nonempty (fibreFunctor.obj (𝟙_ C))
+  /-- The **transcription functor** (fibre functor) `τ : C ⥤ R-Mod` of
+      `def:quantum-universe` item 3: it transcribes each system of `C` into an
+      `R`-module and each process into a linear map.  Monoidal, faithful,
+      additive and `R`-linear, carried as the instance fields below; exactness
+      is not carried (`C` is not assumed abelian).  Kept field-for-field in sync
+      with `QOU.QuantumUniverse` in `QOU/Core/CategoricalFoundations.lean`. -/
+  fibreFunctor : @CategoryTheory.Functor C catInst (ModuleCat.{w} R) inferInstance
+  /-- `τ` is (strong) monoidal: `τ(X ⊗ Y) ≅ τX ⊗_R τY`, `τ𝟙 ≅ R`, coherently. -/
+  [fibreMonoidal : @CategoryTheory.Functor.Monoidal C catInst monInst (ModuleCat.{w} R)
+    inferInstance inferInstance fibreFunctor]
+  /-- `τ` is faithful: it loses no process. -/
+  [fibreFaithful : @CategoryTheory.Functor.Faithful C catInst (ModuleCat.{w} R) inferInstance
+    fibreFunctor]
+  /-- `τ` is additive. -/
+  [fibreAdditive : @CategoryTheory.Functor.Additive C (ModuleCat.{w} R) catInst inferInstance
+    preInst inferInstance fibreFunctor]
+  /-- `τ` is `R`-linear. -/
+  [fibreLinear : @CategoryTheory.Functor.Linear R _ C (ModuleCat.{w} R) catInst inferInstance
+    preInst inferInstance linInst inferInstance fibreFunctor]
   /-- **Symmetric Frobenius** (axiom 3 — untwisted `ν = id` / centralizer specialization).
       Closing a worldline on the left and closing it on the right compute the
       same endomorphism of the unit (`ν = id`). Holds on `O(G)` at `q = 1` and

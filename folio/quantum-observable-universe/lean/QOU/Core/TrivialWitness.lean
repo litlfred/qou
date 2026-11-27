@@ -98,10 +98,10 @@ noncomputable def unitFrobHopf (C : Type*) [Category C] [MonoidalCategory C]
 /-- **The trivial quantum universe.**  `C = ModuleCat R`, `A = 𝟙`, one block.
 
     Discharges every field, including the five added under `qou-w1g8`. -/
-noncomputable def trivialQU : QOU.QuantumUniverse.{w + 1, w, w, w} R where
+noncomputable def trivialQU : QOU.QuantumUniverse.{w + 1, w, w} R where
   C := ModuleCat R
   frobHopf := unitFrobHopf (ModuleCat R)
-  fibreFunctor := (forget (ModuleCat R))
+  fibreFunctor := 𝟭 (ModuleCat R)
   frobenius_symmetric := by
     intro f
     simp only [FrobeniusHopfData.leftTrace, FrobeniusHopfData.rightTrace,
@@ -128,7 +128,7 @@ noncomputable def trivialQU : QOU.QuantumUniverse.{w + 1, w, w, w} R where
     carries as an `axiom`, now a theorem. -/
 -- Ref: [leitner2026] §1-quantum-universes/quantum-universe-exists
 theorem nonempty_quantumUniverse :
-    Nonempty (QOU.QuantumUniverse.{w + 1, w, w, w} R) :=
+    Nonempty (QOU.QuantumUniverse.{w + 1, w, w} R) :=
   ⟨trivialQU R⟩
 
 end QOU.TrivialWitness

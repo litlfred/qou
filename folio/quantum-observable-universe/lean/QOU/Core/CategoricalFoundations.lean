@@ -12,6 +12,10 @@ import Mathlib.CategoryTheory.Linear.Basic
 import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.Data.Fintype.Basic
 import Mathlib.CategoryTheory.NatTrans
+import Mathlib.CategoryTheory.Monoidal.NaturalTransformation
+import Mathlib.Algebra.Category.ModuleCat.Monoidal.Basic
+import Mathlib.CategoryTheory.Linear.LinearFunctor
+import Mathlib.Algebra.Category.ModuleCat.Basic
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Data.Real.Basic
 
@@ -220,7 +224,7 @@ end FrobeniusHopfData
     instance to this structure.
 
     LaTeX: `\label{def:quantum-universe}` -/
-structure QuantumUniverse (R : Type*) [CommRing R] where
+structure QuantumUniverse (R : Type w) [CommRing R] where
   /-- The monoidal category `C`. Represented as an opaque type with
       `Category` and `MonoidalCategory` instances. -/
   C : Type u
@@ -281,12 +285,26 @@ structure QuantumUniverse (R : Type*) [CommRing R] where
   [balancedInst : @QOU.BraidKnot.Balanced.BalancedCategory C catInst monInst braidedInst]
   /-- The Frobenius–Hopf object `A` in `C`. -/
   frobHopf : @FrobeniusHopfData C catInst monInst braidedInst
-  /-- The fibre functor `τ : C → Type*` (abstracting `Vect_R` / `R-Mod`).
-      The paper asks for it to be exact, faithful, `R`-linear and monoidal;
-      NONE of those four is carried by this type, which is a bare functor to
-      `Type`.  Recorded rather than silently implied — the gap is real and
-      separate from the `R`-linearity of `C` now carried above. -/
-  fibreFunctor : @CategoryTheory.Functor C catInst (Type*) inferInstance
+  /-- The **transcription functor** (fibre functor) `τ : C ⥤ R-Mod` of
+      `def:quantum-universe` item 3.  It lands in `ModuleCat R` (not `Type`), and
+      the paper's requirements are carried as the instance fields below:
+      monoidal (`fibreMonoidal`), faithful (`fibreFaithful`), additive and
+      `R`-linear (`fibreAdditive`, `fibreLinear`).  Exactness is not carried:
+      `C` is not assumed abelian.  Its monoidal automorphisms form the gauge
+      group `QuantumUniverse.gaugeGroup = Aut⊗(τ)`. -/
+  fibreFunctor : @CategoryTheory.Functor C catInst (ModuleCat.{w} R) inferInstance
+  /-- `τ` is (strong) monoidal: `τ(X ⊗ Y) ≅ τX ⊗_R τY`, `τ𝟙 ≅ R`, coherently. -/
+  [fibreMonoidal : @CategoryTheory.Functor.Monoidal C catInst monInst (ModuleCat.{w} R) inferInstance
+    inferInstance fibreFunctor]
+  /-- `τ` is faithful. -/
+  [fibreFaithful : @CategoryTheory.Functor.Faithful C catInst (ModuleCat.{w} R) inferInstance
+    fibreFunctor]
+  /-- `τ` is additive. -/
+  [fibreAdditive : @CategoryTheory.Functor.Additive C (ModuleCat.{w} R) catInst inferInstance
+    preInst inferInstance fibreFunctor]
+  /-- `τ` is `R`-linear. -/
+  [fibreLinear : @CategoryTheory.Functor.Linear R _ C (ModuleCat.{w} R) catInst inferInstance
+    preInst inferInstance linInst inferInstance fibreFunctor]
   /-- **Symmetric Frobenius** (axiom 3 — untwisted `ν = id` / centralizer specialization).
       Closing a loop on the left and closing it on the right compute the same
       endomorphism of the unit: equivalently, the Frobenius form `∫_A` is
@@ -417,7 +435,7 @@ structure QuantumUniverse (R : Type*) [CommRing R] where
           below under the **strong (iso) reading** — see the fields.
 
     LaTeX: `\label{def:quantum-observable-universe}` -/
-structure QuantumObservableUniverse (R : Type*) [CommRing R]
+structure QuantumObservableUniverse (R : Type w) [CommRing R]
     extends QuantumUniverse.{u, v} R where
   /-- **Rigidity** (condition 0): every object of `C` has left and right
       duals, with `ev`/`coev` satisfying the snake identities. -/
@@ -573,20 +591,41 @@ theorem epi_proj_comp_volume {C : Type u} [CategoryTheory.Category.{v} C]
     CategoryTheory.Epi (π ≫ e.hom) :=
   CategoryTheory.epi_comp π e.hom
 
-/-- The **quantum gauge group** `G_q = Aut⊗(ω)` reconstructed via
-    Tannaka–Krein duality from the fibre functor.
+/-- The **quantum gauge group** `Aut⊗(τ)`: the monoidal natural automorphisms of
+    the fibre functor `τ : C ⥤ R-Mod`, as a subgroup of all natural automorphisms
+    `Aut(τ)`.  A natural automorphism `e` belongs to it iff `e.hom` is a monoidal
+    natural transformation (`NatTrans.IsMonoidal`): compatible with the tensorator
+    and the unitor of `τ`.  (Until 2026-11-27 this was the bare type `τ ≅ τ`, i.e.
+    `Aut(τ)` without the monoidal constraint.)
+
+    For `C = Rep(SU_q(2))` with `q² − 1` invertible, the points of `Aut⊗(τ)` are the
+    characters of the coend `O_q(SU(2))`, which form only the maximal torus `Rˣ`
+    (`QOU.AlgebraicSubstrate.OqSU2.charEquivUnits`); `Aut⊗(τ) ≅ SU(2)` is classical
+    Tannaka duality at `q = 1`.
 
     LaTeX: `\label{def:quantum-gauge-group}` (categorical version)
     Ref: [lusztig1993] -/
-noncomputable def QuantumUniverse.gaugeGroup {R : Type*} [CommRing R]
-    (QU : QuantumUniverse.{u, v} R) :=
-  -- Aut⊗(ω) via Tannaka–Krein: the group of natural automorphisms of the
-  -- fibre functor.  Full monoidal constraint (monoidal natural transformations)
-  -- requires `Mathlib.CategoryTheory.Monoidal.NaturalTransformation`; here we
-  -- capture the underlying natural-isomorphism type.
-  -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+def QuantumUniverse.gaugeGroup {R : Type w} [CommRing R]
+    (QU : QuantumUniverse.{u, v, w} R) :
+    letI := QU.catInst
+    Subgroup (CategoryTheory.Aut QU.fibreFunctor) :=
   letI := QU.catInst
-  QU.fibreFunctor ≅ QU.fibreFunctor
+  letI := QU.monInst
+  letI := QU.fibreMonoidal
+  { carrier := {e | CategoryTheory.NatTrans.IsMonoidal e.hom}
+    mul_mem' := by
+      intro a b ha hb
+      simp only [Set.mem_setOf_eq] at ha hb ⊢
+      change CategoryTheory.NatTrans.IsMonoidal (b.hom ≫ a.hom)
+      infer_instance
+    one_mem' := by
+      change CategoryTheory.NatTrans.IsMonoidal (𝟙 QU.fibreFunctor)
+      infer_instance
+    inv_mem' := by
+      intro a ha
+      simp only [Set.mem_setOf_eq] at ha ⊢
+      change CategoryTheory.NatTrans.IsMonoidal a.inv
+      infer_instance }
 
 /-! ### Nakayama-twisted & pivotal Frobenius–Hopf generalizations (`TN-1`, `TN-2`)
 
@@ -700,7 +739,7 @@ def FrobeniusHopfData.toTwistedPivotal {C : Type u} [CategoryTheory.Category.{v}
 /-- **Nakayama-twisted Quantum Universe** (`TN-2`), replacing untwisted
     `leftTrace f = rightTrace f` with the KMS / Nakayama law
     `leftTrace f = rightTrace (ν ≫ f)` that holds on `O_q(SU(2))` at general `q`. -/
-structure TwistedQuantumUniverse (R : Type*) [CommRing R] where
+structure TwistedQuantumUniverse (R : Type w) [CommRing R] where
   C : Type u
   [catInst : CategoryTheory.Category.{v} C]
   [monInst : CategoryTheory.MonoidalCategory C]
@@ -709,7 +748,15 @@ structure TwistedQuantumUniverse (R : Type*) [CommRing R] where
   [braidedInst : @CategoryTheory.BraidedCategory C catInst monInst]
   [balancedInst : @QOU.BraidKnot.Balanced.BalancedCategory C catInst monInst braidedInst]
   frobHopf : @TwistedPivotalFrobeniusHopfData C catInst monInst braidedInst
-  fibreFunctor : @CategoryTheory.Functor C catInst (Type*) inferInstance
+  fibreFunctor : @CategoryTheory.Functor C catInst (ModuleCat.{w} R) inferInstance
+  [fibreMonoidal : @CategoryTheory.Functor.Monoidal C catInst monInst (ModuleCat.{w} R) inferInstance
+    inferInstance fibreFunctor]
+  [fibreFaithful : @CategoryTheory.Functor.Faithful C catInst (ModuleCat.{w} R) inferInstance
+    fibreFunctor]
+  [fibreAdditive : @CategoryTheory.Functor.Additive C (ModuleCat.{w} R) catInst inferInstance
+    preInst inferInstance fibreFunctor]
+  [fibreLinear : @CategoryTheory.Functor.Linear R _ C (ModuleCat.{w} R) catInst inferInstance
+    preInst inferInstance linInst inferInstance fibreFunctor]
   /-- **Nakayama-twisted Frobenius trace law:** `leftTrace f = rightTrace (ν ≫ f)`. -/
   frobenius_nakayama_twisted : ∀ f : frobHopf.obj ⟶ frobHopf.obj,
     frobHopf.leftTrace f = frobHopf.rightTrace (frobHopf.nakayama.hom ≫ f)
@@ -740,6 +787,10 @@ def QuantumUniverse.toTwisted {R : Type*} [CommRing R]
   { C := QU.C
     frobHopf := QU.frobHopf.toTwistedPivotal
     fibreFunctor := QU.fibreFunctor
+    fibreMonoidal := QU.fibreMonoidal
+    fibreFaithful := QU.fibreFaithful
+    fibreAdditive := QU.fibreAdditive
+    fibreLinear := QU.fibreLinear
     frobenius_nakayama_twisted := fun f => by
       change QU.frobHopf.leftTrace f = QU.frobHopf.rightTrace (𝟙 QU.frobHopf.obj ≫ f)
       rw [CategoryTheory.Category.id_comp]

@@ -1,7 +1,7 @@
 A **quantum universe** is a tuple $(\mathbf{C}, A, \tau)$ consisting of:
 1. an $R$-linear braided [monoidal category](#def:rigid-monoidal-category) $\mathbf{C}$ over a commutative ring $R$, whose unit endomorphisms recover the ground ring: $R \xrightarrow{\ \sim\ } \mathrm{End}_{\mathbf{C}}(\mathbf{1})$, $r \mapsto r \cdot \mathrm{id}_{\mathbf{1}}$,
 2. a distinguished object $A \in \mathrm{Ob}(\mathbf{C})$ equipped with a Frobenius–Hopf algebra structure, spelled out in axiom 2,
-3. an $R$-linear faithful fibre functor $\tau \colon \mathbf{C} \to R\text{-}\mathbf{Mod}$,
+3. an $R$-linear faithful monoidal fibre functor $\tau \colon \mathbf{C} \to R\text{-}\mathbf{Mod}$, the **transcription functor**, which transcribes each object of $\mathbf{C}$ into an $R$-module,
 
 satisfying the following four axioms:
 1. **(Temporal braiding)** The ordering $\prec_c$ induced by the braiding $c_{V,W} \colon V \otimes W \xrightarrow{\sim} W \otimes V$ on the basis of $A$ indexed by braid words is well-founded.
@@ -21,6 +21,8 @@ satisfying the following four axioms:
    Each block further carries a Frobenius weight $\int_A p_\lambda$ invertible in $R$, and a quantum dimension $\dim_q(\lambda)$ invertible in $R$.
 
 Rigidity of $\mathbf{C}$ is not required here. It is imposed one level up, on a quantum observable universe (Chapter 2), where duals carry the antiparticles.
+
+**On the transcription functor.** Item 3 is the bridge from the aether to mathematics: $\tau$ transcribes each system of $\mathbf{C}$ into an $R$-module and each process into a linear map, faithfully and compatibly with composition of systems. The other items describe the aether; this one describes how it is written down. It does not transcribe the braiding, which reappears as structure on the coend $A$ of $\tau$; why the item is there and what the choice of $\tau$ costs is explained in the remark that follows.
 
 **On the ground ring.** $R$ is a commutative ring, not a field, and "invertible in $R$" in axiom 4 is strictly stronger than "nonzero" once $R$ has non-units. The two clauses coincide only over a field.
 

@@ -41,6 +41,13 @@ export default chapter({
           ],
         }),
         section({
+          title: "Why not the real numbers",
+          label: "sec:introduction-why-not-the-reals",
+          blocks: [
+            "intro-why-not-the-reals",
+          ],
+        }),
+        section({
           title: "State space and knots",
           label: "sec:introduction-state-space-knots",
           blocks: [

@@ -1,1 +1,11 @@
 The reconstructed Hopf algebra $H = \mathrm{End}^{\otimes}(\tau)$ gives the **quantum gauge group** $G_q = \mathrm{SU}_q(2)$, with $q$ categorically fixed by the symmetric braiding eigenvalue.
+
+Here $H$ is the coend $\int^{X \in \mathbf{C}} \tau(X)^{\vee} \otimes_R \tau(X) = \mathcal{O}_q(\mathrm{SU}(2))$, whose dual is $\mathrm{End}^{\otimes}(\tau)$. The *group of points* $\mathrm{Aut}^{\otimes}(\tau)(R)$ is the set of characters $H \to R$ under convolution. When $q^2 - 1$ is invertible in $R$, every character is diagonal, $(\alpha, \beta, \gamma, \delta) \mapsto (u, 0, 0, u^{-1})$ with $u \in R^{\times}$, so $\mathrm{Aut}^{\otimes}(\tau)(R) \cong R^{\times}$ is the maximal torus (Lean: `QOU.AlgebraicSubstrate.OqSU2.charEquivUnits`). Away from the symmetric point, $G_q$ is therefore the Hopf algebra $H$ and not a group of points, and the map $\mathrm{Aut}^{\otimes}(\tau) \to G$ is the inclusion of the maximal torus. The identification $\mathrm{Aut}^{\otimes}(\tau) \cong \mathrm{SU}(2)$ is classical Tannaka duality at $q = 1$, where the algebra is commutative and has non-diagonal characters (`exists_nondiag_char_at_one`). The Haar state is invariant under translation by every character (`haarState_rightTrans_char`, `haarState_leftTrans_char`).
+
+**The modular automorphism is a point of $\mathrm{Aut}^{\otimes}(\tau)$.** Write $\chi_u$ for the diagonal character and $\star$ for convolution. Left translation by $\chi_u$ followed by right translation by $\chi_v$ sends $(\alpha, \beta, \gamma, \delta)$ to $(uv\,\alpha,\ uv^{-1}\beta,\ u^{-1}v\,\gamma,\ u^{-1}v^{-1}\delta)$. At $u = v = q^{-1}$ this is the modular automorphism $\sigma = (q^{-2}\alpha, \beta, \gamma, q^{2}\delta)$ of the Haar state, so
+
+$$
+  \sigma(x) = \chi_{q^{-1}} \star x \star \chi_{q^{-1}}, \qquad h(xy) = h(y\,\sigma(x))
+$$
+
+(Lean: `modularAut_eq_twoSided`, `haarState_modular`). The twist of the Haar trace is therefore the pivotal point $\chi_{q^{-1}}$ of $\mathrm{Aut}^{\otimes}(\tau)$ acting on both sides. It is not a conjugation, since conjugation $\chi \star x \star \chi^{-1}$ preserves $h$ and would give an untwisted trace. Haar itself is fixed by every one-sided translation: $h(\chi \star x) = h(x \star \chi) = h(x)$.
