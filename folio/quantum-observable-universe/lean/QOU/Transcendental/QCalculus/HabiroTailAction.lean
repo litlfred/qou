@@ -110,8 +110,8 @@ lemma log_inv_phi : Real.log (phi⁻¹) = - Real.log phi := by
 /-! ## Bar-evenness (sorry-free, pure algebra)
 
 `habiroFactor` and `habiroFactor_bar_even` now live in
-`QCalculus.HabiroTailFactor` over any field; at `q : ℝ` they instantiate
-with `K := ℝ`. -/
+`QCalculus.HabiroTailFactor` over any commutative ring with `q : Rˣ`; at a
+real `q ≠ 0` they instantiate with `R := ℝ`, `q := Units.mk0 q hq`. -/
 
 /-! ## Classical dilogarithm functional equations (cited scaffold) -/
 
