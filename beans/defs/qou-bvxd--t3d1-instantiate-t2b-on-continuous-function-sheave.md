@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-10-12T20:38:54Z
-updated_at: 2026-11-22T21:45:00Z
+updated_at: 2026-11-27T22:10:00Z
 parent: qou-533l
 ---
 
@@ -46,3 +46,8 @@ Item 4 progress on main: (b) Ȟ² and the refinement colimit now exist (CechColi
 ## 2026-11-22 applicability review (wave-2 sibling bring-riemann-gerbes, session_01Qmmkt7Jw9nSDCzSdsd8hLX)
 
 APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2026-11-22: photon with fixed constant 1, γγ linking neutrality, derived quark charges, potential-energy sign, m_p = m_n at q = 1, gluon open, electron σ₀σ₁σ₀ with T(2,n) as backup, S₅ two-test rule, T(A) tangent algebra) and git log on the Lean/content paths since the last update. Unchanged; IsRealLift hypothesis (local real lifts) is still the open item.
+
+## 2026-11-27 (thread "Build the brane-tower gerbes", PR #9735)
+
+Item 4(a) partly done: MathlibExt/CechLocalLog.lean proves a local real lift exists when each transition function misses a point (Circle.localLog, AvoidsPoints, avoidsPoints_of_overlap, exists_isRealLift_of_avoids, chernClassOfAvoids). Sorry-free, standard axioms.
+Still open: avoidance after refinement for an arbitrary cocycle (needs a fine-cover argument), then (b)–(d) as above.
