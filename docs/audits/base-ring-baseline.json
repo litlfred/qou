@@ -491,7 +491,6 @@
   "QOU/Nuclear/FiveTwoRootLabelling.lean",
   "QOU/Nuclear/FiveTwoRootStructure.lean",
   "QOU/Nuclear/FiveTwoStepALogAlgebra.lean",
-  "QOU/Nuclear/FiveTwoSumRuleIntegrand.lean",
   "QOU/Nuclear/FiveTwoTransport.lean",
   "QOU/Nuclear/FloorRemainderFromDerivedShapeFields.lean",
   "QOU/Nuclear/HadronChargeLineCoulomb.lean",
@@ -4222,6 +4221,10 @@
   },
   "QOU/Nuclear/FiveTwoDeformedSaddle.lean": {
    "field-class": 1
+  },
+  "QOU/Nuclear/FiveTwoSumRuleIntegrand.lean": {
+   "field-class": 4,
+   "field-tactic": 4
   },
   "QOU/Nuclear/FlavourSplitWordShare.lean": {
    "field-class": 1,

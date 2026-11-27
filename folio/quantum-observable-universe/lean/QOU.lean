@@ -1030,7 +1030,7 @@ import QOU.Nuclear.FiveTwoExtendIdentification
 import QOU.Nuclear.FiveTwoLevelSevenAssembly
 import MathlibExt.FiveTwoSaddleSumRule
 import QCalculus.FiveTwoComplexPentagon
-import QOU.Nuclear.FiveTwoFlattenedPentagon
+import QOU.Transcendental.Nuclear.FiveTwoFlattenedPentagon
 import QOU.Nuclear.FiveTwoOhtsukiCriticalPoint
 import QOU.Nuclear.FiveTwoDTSpectrumSplit
 import QOU.Nuclear.ChiralityGradedCount
@@ -1039,6 +1039,7 @@ import QOU.Nuclear.QuiverMirrorAutomorphismExcluded
 import QOU.Nuclear.FiveTwoSaddleCurve
 import QOU.Nuclear.FiveTwoStokesMatrixIdentities
 import QOU.Nuclear.FiveTwoSumRuleIntegrand
+import QOU.Transcendental.Nuclear.FiveTwoSumRuleIntegrandReal
 import QCalculus.HabiroTailStar
 import QCalculus.HabiroTailCorollaries
 import QOU.Nuclear.LevelMixingBridge
