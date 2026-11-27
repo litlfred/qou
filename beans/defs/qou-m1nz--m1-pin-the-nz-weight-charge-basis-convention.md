@@ -40,3 +40,15 @@ NOTE the tension to resolve: the substrate-point agreement vs the coefficient-wi
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8301, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-27 — CONVENTION PINNED: sum the MERIDIAN, not the longitude (PR #9739)
+
+The blocker resolves without any Neumann–Zagier weight. GGM eq (S3Dx), a theorem for 4₁, reads S⁺_{σ₁σ₁}(x;q) = Ind^rot(0,x;q) = Σ_e I(0,e)xᵉ. In the GHHR homology labelling I_T(xμ + yλ) used by `figure_eight_3d_index.py`, the summed charge e is the **meridian** label x, with y = 0. The 2026-08-11 probe summed y (the longitude) at x = 0, and that is why every attempt came out as [1,−2,−3,4,…].
+
+Probe `computations/probes/qbeta_m1_meridian_sum_pins_eq61_probe.py` (PR [#9739](https://github.com/litlfred/qou/pull/9739)) computes two independent exact sides:
+* Σ_x I_T(xμ), with the truncation raised to q¹⁶ (the module default HI=26 truncates at q¹⁰);
+* GGM (S41p) from W₋₁(q) (G⁰_m, G¹_m, E₁; det W = 2 gate).
+
+They agree through q¹³: 1, −8, −9, 18, 46, 90, 62, 10, −170, −424, −702, −962, −1045, −774. The first 7 coefficients are the printed eq (61). The Stokes side comes out as −S⁺₁₁, a global sign of the transcribed q⁰ normalisation. That sign is recorded, not tuned.
+
+This also explains the "substrate-point agreement vs coefficient disagreement" tension noted above: the g3 probe's Σ_e had the right cycle. Route C M2 (qou-m3ad / gz37) is unblocked on the 4₁ side. Recommend `completed` once #9739 merges (owner card).
