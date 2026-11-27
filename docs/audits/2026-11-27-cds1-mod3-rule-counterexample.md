@@ -75,7 +75,8 @@ two letters. On three or more strand-triples the 3-cycles generate A₅ or A₆,
 have no ℤ/3 quotient; `(V₀V₂)⁵` uses exactly that (`(0 1 2)(2 3 4)` has order 5).
 
 Reading-3 check of non-pure neutral words with a bad count at lengths 7–9: k = 7, none of 4848
-pass at q₀. k = 8, 9: PENDING.
+pass at q₀; k = 8, none of 16 422 pass at q₀. k = 9 was still running when this PR was queued; its
+result goes in a follow-up.
 
 ## Consequences
 
