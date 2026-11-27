@@ -12884,8 +12884,12 @@ vortex atoms needed a table of knots, and Tait set out to make one
 \cite{tait1877knots}. With Thomas Kirkman and Charles Little he
 classified knot diagrams up to ten crossings, and in doing so stated
 the conjectures on crossing number, writhe and flypes that bear his
-name. The first of these was proved a century later, in 1987, with the
-Jones polynomial \cite{jones1985} \cite{kauffman1987}.
+name. The first of these was proved a century later, in 1987,
+independently by Kauffman, Murasugi and Thistlethwaite, with the Jones
+polynomial \cite{jones1985} \cite{kauffman1987} \cite{murasugi1987}
+\cite{thistlethwaite1987}; Menasco and Thistlethwaite proved the
+flyping conjecture in 1991 \cite{menasco-thistlethwaite1991}
+\cite{menasco-thistlethwaite1993}.
 
 The vortex atom itself did not survive. The ether was given up, the
 electron was found inside the atom, and by about 1900 the theory had
@@ -12921,6 +12925,31 @@ charge from external ribbon twists, it works in the finite-dimensional
 quotient $H_3(q)$ generated from the $\mathcal{O}_q(\mathrm{SU}(2))$
 braiding on $B_3$ and evaluates observables through the convention-D
 Markov trace.
+
+The braid lineage continued through division algebras. Gresnigt used
+the Clifford braiding theorem of Kauffman and Lomonaco
+\cite{kauffman-lomonaco-2016} to show that the complex numbers and the
+quaternions carry representations of exactly the two braid groups of
+the Bilson-Thompson model, the braid group $B_2$ of the twists and the
+circular braid group $B_3^c$ of the ribbons \cite{gresnigt2017}. He then
+identified the framed braids with the basis states of the minimal left
+ideals of the complex octonions, which, following Furey
+\cite{furey2016}, carry one generation of leptons and quarks under the
+unbroken symmetry $SU(3)_c \times U(1)_{\mathrm{em}}$ \cite{gresnigt2018}.
+Chester, Arsiwalla and Kauffman mapped the twists of the same states
+onto the weight lattice of $SU(3)_c \times U(1)_{\mathrm{em}}$ and the
+crossings onto chirality through the homomorphism
+$B_3 \to PSL(2,\mathbb{Z})$, and observed that the model captures only
+that unbroken sector \cite{chester-arsiwalla-kauffman-2025}. In these
+programmes the braid acts through a group, and a deformation parameter,
+where one appears, sits beside the braiding rather than in it: in
+Gresnigt's review the quantum group $SU_q(3)$ is a flavour symmetry with
+$q$ a root of unity \cite{gresnigt2017}, and in Finkelstein's model $q$
+deforms the symmetry of the knot. Here every generator of $H_n(q)$
+satisfies $\sigma_i -\allowbreak{} \sigma_i^{-1} =\allowbreak{} (q -\allowbreak{} q^{-1})\mathbf{1}$ with $q$
+a formal parameter, so a particle can be a linear combination of braid
+words rather than a single braid, as the four-term
+\hyperref[def:photon]{photon} is.
 
 This chapter keeps the combinatorial half of that lineage and drops the
 mechanical half. The vortex atom tried to derive the stability of matter
@@ -64521,7 +64550,7 @@ The baseline \hyperref[conj:vorticity-lower-bound]{vorticity lower bound} strict
 \textbf{Archimedean specialisation.} What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
 \end{proposition}
 
-\phantomsection\label{rem:root-of-unity-truncation-interpretation}\phantomsection\label{rem:townsend-biot-savart-strain}\phantomsection\label{rem:hyperbolic-overlap-saturation}\phantomsection\label{rem:crow-approach-amplification}\phantomsection\label{rem:q-ns-research-programme}\phantomsection\label{rem:q-metric-contact-deformation}\phantomsection\label{prose:outro-fluid-dynamics}
+\phantomsection\label{rem:root-of-unity-truncation-interpretation}\phantomsection\label{rem:tv-rt-string-net-root-of-unity-only}\phantomsection\label{rem:townsend-biot-savart-strain}\phantomsection\label{rem:hyperbolic-overlap-saturation}\phantomsection\label{rem:crow-approach-amplification}\phantomsection\label{rem:q-ns-research-programme}\phantomsection\label{rem:q-metric-contact-deformation}\phantomsection\label{prose:outro-fluid-dynamics}
 This chapter recasts the $q$-deformed Navier–Stokes system as a structural framework for the Clay Millennium Problem. The classical $q \to 1$ limit is a degeneration of a regular categorical system.
 
 The next chapter (\hyperref[chap:stochastic-mechanics]{\emph{Stochastic Mechanics}}) develops the Markov-trace transition dynamics on the same categorical state space, connecting the $q$-shell hierarchy and classical-limit degeneration to Nelson-type stochastic processes and adelic $q \to 1$ limits.
@@ -79733,6 +79762,12 @@ A.~Ch{\'{e}}nier, B.~d'Aligny, F.~Pellerin, P.-{\'{E}}. Blanchard, T.~Ozawa,
   Insulator}.
 \newblock {\em Physical Review X}, 16(1):011020, 2026.
 
+\bibitem{chester-arsiwalla-kauffman-2025}
+David Chester, Xerxes~D. Arsiwalla, and Louis~H. Kauffman.
+\newblock {Preons, braid topology, and representations of fundamental
+  particles}.
+\newblock 2025.
+
 \bibitem{christenson1964}
 J.~H. Christenson, J.~W. Cronin, V.~L. Fitch, and R.~Turlay.
 \newblock {Evidence for the $2\pi$ Decay of the $K_2^0$ Meson}.
@@ -80198,6 +80233,17 @@ O.~W. Greenberg.
   and mesons}.
 \newblock {\em Physical Review Letters}, 13(20):598--602, 1964.
 
+\bibitem{gresnigt2018}
+Niels Gresnigt.
+\newblock {Braids, normed division algebras, and Standard Model symmetries}.
+\newblock 2018.
+
+\bibitem{gresnigt2017}
+Niels~G. Gresnigt.
+\newblock {Quantum groups and braid groups as fundamental symmetries}.
+\newblock In {\em European Physical Society Conference on High Energy Physics
+  (EPS-HEP 2017), Venice, Italy, 5-12 July 2017}. Proceedings of Science, 2017.
+
 \bibitem{grochow2017}
 J.~A. Grochow, M.~Kumar, M.~Saks, and S.~Saraf.
 \newblock {Towards an algebraic natural proofs barrier via polynomial identity
@@ -80417,7 +80463,13 @@ Christian Kassel.
 \bibitem{kauffman1987}
 Louis~H. Kauffman.
 \newblock {State models and the Jones polynomial}.
-\newblock {\em Topology}, 1987.
+\newblock {\em Topology}, 26(3):395--407, 1987.
+
+\bibitem{kauffman-lomonaco-2016}
+Louis~H. Kauffman and Jr. Lomonaco, Samuel~J.
+\newblock {Braiding with Majorana fermions}.
+\newblock In {\em Quantum Information and Computation IX}, volume 9873 of {\em
+  Proceedings of SPIE}, page 98730E. SPIE, 2016.
 
 \bibitem{kawauchi1996}
 Akio Kawauchi.
@@ -80687,6 +80739,17 @@ Krzysztof~A. Meissner.
 \newblock {Black hole entropy in loop quantum gravity}.
 \newblock {\em Classical and Quantum Gravity}, 21(22):5245--5251, 2004.
 
+\bibitem{menasco-thistlethwaite1991}
+William~W. Menasco and Morwen~B. Thistlethwaite.
+\newblock {The Tait flyping conjecture}.
+\newblock {\em Bulletin of the American Mathematical Society}, 25(2):403--412,
+  1991.
+
+\bibitem{menasco-thistlethwaite1993}
+William~W. Menasco and Morwen~B. Thistlethwaite.
+\newblock {The classification of alternating links}.
+\newblock {\em Annals of Mathematics}, 138(1):113--171, 1993.
+
 \bibitem{milne2013}
 James~S. Milne.
 \newblock {\em {Lectures on {\'{E}}tale Cohomology}}.
@@ -80728,6 +80791,11 @@ Robert~S. Mulliken.
 Hitoshi Murakami and Jun Murakami.
 \newblock {The colored Jones polynomials and the simplicial volume of a knot}.
 \newblock {\em Acta Mathematica}, 186:85--104, 2001.
+
+\bibitem{murasugi1987}
+Kunio Murasugi.
+\newblock {Jones polynomials and classical conjectures in knot theory}.
+\newblock {\em Topology}, 26(2):187--194, 1987.
 
 \bibitem{murasugi1996}
 Kunio Murasugi.
@@ -81053,6 +81121,11 @@ Paul Terwilliger.
 \newblock {Two linear transformations each tridiagonal with respect to an
   eigenbasis of the other}.
 \newblock {\em Linear Algebra and its Applications}, 330:149--203, 2001.
+
+\bibitem{thistlethwaite1987}
+Morwen~B. Thistlethwaite.
+\newblock {A spanning tree expansion of the Jones polynomial}.
+\newblock {\em Topology}, 26(3):297--309, 1987.
 
 \bibitem{thomson1867vortexatoms}
 William Thomson.
