@@ -1,4 +1,4 @@
-import QOU.MassTheory.BorromeanVolumeCatalan
+import QOU.Transcendental.MassTheory.BorromeanVolumeCatalan
 
 /-!
 # `conj:poincare-lefschetz-borromean` — a cited-hypothesis class, not a `Prop` stub

@@ -1,4 +1,4 @@
-import QOU.MassTheory.HyperbolicVolumeTranscendence
+import QOU.Transcendental.MassTheory.HyperbolicVolumeTranscendence
 import Mathlib.RingTheory.Algebraic.Defs
 import Mathlib.RingTheory.Algebraic.Basic
 

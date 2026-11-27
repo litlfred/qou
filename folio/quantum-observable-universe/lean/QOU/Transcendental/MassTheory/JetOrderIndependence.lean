@@ -1,7 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.LinearAlgebra.Matrix.Rank
 import Mathlib.LinearAlgebra.Matrix.Notation
-import QOU.MassTheory.HyperbolicVolumeIndependence
+import QOU.Transcendental.MassTheory.HyperbolicVolumeIndependence
 
 /-!
 # QOU.Archimedean.JetOrderIndependence — the gap-closing reduction

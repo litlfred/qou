@@ -46,7 +46,7 @@
 -/
 
 import Mathlib.Data.Real.Basic
-import QOU.MassTheory.HyperbolicVolumeTranscendence
+import QOU.Transcendental.MassTheory.HyperbolicVolumeTranscendence
 
 namespace QOU.Archimedean.SnapPyAxioms
 
