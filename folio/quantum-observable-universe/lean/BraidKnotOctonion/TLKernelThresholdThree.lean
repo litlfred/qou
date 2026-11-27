@@ -26,8 +26,9 @@ equals `θ(ker π)` **exactly when `(q⁴ + q² + 1)(q⁴ + 1) ≠ 0`**, i.e. wh
   and `θ w ∉ tlKernelPulled` (`exists_rad_not_tlKernel`).
 
 Both failures are literature (Jones 1983; Goodman–de la Harpe–Jones): the Markov trace on
-`TL` with `m` strands is nondegenerate iff `[k]_q ≠ 0` for `3 ≤ k ≤ m + 1`.  Only `m = 3` is
-proved here.
+`TL` with `m` strands is nondegenerate iff `[k]_q ≠ 0` for `3 ≤ k ≤ m + 1`.  This file proves
+`m = 3` by an explicit Gram determinant; every `m` is `TLKernelThreshold.rad_eq_tlKernel_iff`,
+which re-derives this statement as `TLKernelThreshold.rad_eq_tlKernel_iff_two`.
 
 -- Ref: [jones1983]; [wenzl1988]
 -/
