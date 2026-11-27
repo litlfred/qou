@@ -2,69 +2,30 @@
  "$schema": "site-parity-report/v1",
  "outcome": "published-with-shortfall",
  "shortfall": [
-  "directories the current root serves and the candidate does not: content/, drafts/, python-api/, rust-api/, schema-docs/"
+  "directories the current root serves and the candidate does not: ar/, cat-harness-tools/, code/, content/, drafts/, es/, fr/, python-api/, ru/, rust-api/, schema-docs/, zh/ (against the last clean publish)"
  ],
- "droppedByRuling": [
-  {
-   "what": "ar/",
-   "ruling": "owner, 2026-11-10: the base IG's pages should not be in an IG's site, only cross referenced — another layer's pages are linked on its own site, not copied into a scoped (IG) site"
-  },
-  {
-   "what": "cat-harness-tools/",
-   "ruling": "owner, 2026-11-10: the base IG's pages should not be in an IG's site, only cross referenced — another layer's pages are linked on its own site, not copied into a scoped (IG) site"
-  },
-  {
-   "what": "code/",
-   "ruling": "owner, 2026-11-10: the base IG's pages should not be in an IG's site, only cross referenced — another layer's pages are linked on its own site, not copied into a scoped (IG) site"
-  },
-  {
-   "what": "es/",
-   "ruling": "owner, 2026-11-10: the base IG's pages should not be in an IG's site, only cross referenced — another layer's pages are linked on its own site, not copied into a scoped (IG) site"
-  },
-  {
-   "what": "fr/",
-   "ruling": "owner, 2026-11-10: the base IG's pages should not be in an IG's site, only cross referenced — another layer's pages are linked on its own site, not copied into a scoped (IG) site"
-  },
-  {
-   "what": "ru/",
-   "ruling": "owner, 2026-11-10: the base IG's pages should not be in an IG's site, only cross referenced — another layer's pages are linked on its own site, not copied into a scoped (IG) site"
-  },
-  {
-   "what": "zh/",
-   "ruling": "owner, 2026-11-10: the base IG's pages should not be in an IG's site, only cross referenced — another layer's pages are linked on its own site, not copied into a scoped (IG) site"
-  },
-  {
-   "what": "the theme's side bar (#site-nav)",
-   "ruling": "owner, 2026-10-15, \"Replace sidebar after build\": the rail pass replaces the theme's side bar on every page (one rail everywhere)"
-  }
- ],
+ "droppedByRuling": [],
  "current": {
-  "pages": 71947,
+  "pages": 63450,
   "counts": {
-   "siteNav": 1,
-   "search": 56067,
-   "navbarRow": 56067,
-   "rail": 61695,
-   "translationMeta": 4602
+   "siteNav": 0,
+   "search": 55764,
+   "navbarRow": 55764,
+   "rail": 58359,
+   "translationMeta": 3128
   },
   "dirs": [
    "accuracy",
-   "ar",
    "assets",
    "attestation",
    "bach2013-double-slit",
+   "beans",
    "cat-harness",
-   "cat-harness-tools",
-   "code",
-   "content",
    "contributing",
    "directory",
-   "drafts",
    "en",
-   "es",
    "folio-assistant-core",
    "folio-assistant-sci",
-   "fr",
    "fred2005-formal-groups",
    "id-lookup",
    "lean",
@@ -72,20 +33,16 @@
    "papers",
    "payload",
    "process",
-   "python-api",
+   "qa",
    "qou",
    "quantum-observable-universe",
-   "ru",
-   "rust-api",
-   "schema-docs",
    "simulators",
    "skill",
    "slices",
    "tools",
    "unital-groebner-bases",
    "v0",
-   "visualizer",
-   "zh"
+   "visualizer"
   ],
   "index": [
    "search",

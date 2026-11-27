@@ -2,7 +2,7 @@
   "$schema": "folio-bean-index/v1",
   "tile": {
     "beans": {
-      "count": 1781,
+      "count": 1790,
       "unit": "open beans"
     }
   },
@@ -8968,6 +8968,22 @@
       "file": "beans/defs/qou-0nqs--gap-derive-nu-q-hbar-q2-or-record-it-as-a-modellin.md"
     },
     {
+      "id": "qou-0nr6",
+      "title": "GAP: Radó triangulation of X/G with branch values as vertices (yslf step 1)",
+      "status": "todo",
+      "type": "task",
+      "priority": "low",
+      "parent": "qou-6qbv",
+      "blocking": [
+        "qou-yslf"
+      ],
+      "blockedBy": [],
+      "createdAt": "2026-11-27T22:05:08Z",
+      "updatedAt": "2026-11-27T22:16:41Z",
+      "preview": "Split out of qou-yslf on 2026-11-27. Every compact Riemann surface (here X/G) has a finite triangulation, refinable so a given finite set (the branch values) are vertices. Radó 1925; Mathlib has no triangulations of surfaces. Also needed: the combinatorial Euler characteristic equals 2 - 2g for the analytic genus g (surface homology, also absent from Mathlib). Open. No axiom or class may stand in ",
+      "file": "beans/defs/qou-0nr6--gap-radó-triangulation-of-xg-with-branch-values-a.md"
+    },
+    {
       "id": "qou-0nrt",
       "title": "Session: q-stochastic phase space from the LP-dual shadow prices — corpus analysis, gaps, downstream impact (owner 2026-09-16)",
       "status": "completed",
@@ -9579,7 +9595,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-10-12T20:38:55Z",
-      "updatedAt": "2026-11-22T21:45:00Z",
+      "updatedAt": "2026-11-27T22:07:40Z",
       "preview": "Owner: try all T3 designs. Front D2: Čech-cocycle gerbes.\n\nA gerbe banded by an abelian presheaf A on a cover is given by cocycle data. Define a central extension of such gerbes, and prove the cocycle-level analogue of Yekutieli Thm 4.17 using the T2 machinery.\n\nState explicitly that the equivalence between a gerbe and its cocycle is assumed and not proved. Source: Nikolaus–Waldorf, library/arxiv-",
       "file": "beans/defs/qou-0xk8--t3d2-čech-cocycle-gerbes-and-cocycle-level-yekuti.md"
     },
@@ -21500,6 +21516,20 @@
       "file": "beans/defs/qou-79wa--bar-symmetry-does-not-pin-the-averaging-weight-it.md"
     },
     {
+      "id": "qou-79yj",
+      "title": "Riemann model of the Bring map: glue 24 right-angled hyperbolic pentagons / (2,4,5) Belyi quotient (Transcendental, backup)",
+      "status": "todo",
+      "type": "task",
+      "priority": "low",
+      "parent": "qou-6qbv",
+      "blocking": [],
+      "blockedBy": [],
+      "createdAt": "2026-11-27T22:16:41Z",
+      "updatedAt": "2026-11-27T22:16:41Z",
+      "preview": "Backup, owner ruling 2026-11-27 (map-first). The chi = -6 chain starts from the finite map QOU/BringsSurface/BringMapChain.lean; the smooth surface is a model of the map. This bean is the map -> model direction: build the compact Riemann surface from the map (regular pentagons with angle pi/2, or the (2,4,5) triangle-group quotient) and show its cell structure is the map. Analytic, so it belongs i",
+      "file": "beans/defs/qou-79yj--riemann-model-of-the-bring-map-glue-24-right-angle.md"
+    },
+    {
       "id": "qou-7aj0",
       "title": "Sorry: q_ns_wellposedness sorry",
       "status": "scrapped",
@@ -27662,14 +27692,14 @@
     {
       "id": "qou-aawz",
       "title": "GAP: is there a NON-TRIVIAL FrobeniusHopfData? the corpus only exhibits A = 1",
-      "status": "todo",
+      "status": "completed",
       "type": "task",
       "priority": "high",
       "parent": "qou-ddmn",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-09-14T19:59:47Z",
-      "updatedAt": "2026-11-21T12:40:00Z",
+      "updatedAt": "2026-11-27T22:05:00Z",
       "preview": "## Surfaced 2026-09-14 while proving the bialgebra collapse\n\n`QOU.FrobeniusHopfData` — the structure the categorical Lagrangian consumes as\n`fh`, and the Lean encoding of `def:frobenius-hopf-substrate` — has **exactly\none record-literal witness in the corpus**, and it is the trivial one:\n\n    QOU.TrivialWitness.unitFrobHopf : FrobeniusHopfData C     -- obj := 1_C\n\nEverything else that mentions the",
       "file": "beans/defs/qou-aawz--gap-is-there-a-non-trivial-frobeniushopfdata-the-c.md"
     },
@@ -30127,7 +30157,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-08-21T18:19:09Z",
-      "updatedAt": "2026-11-20T16:06:50Z",
+      "updatedAt": "2026-11-27T22:05:00Z",
       "preview": "## Round 78 Formalization Update (2026-11-17)\n\n- **PR**: https://github.com/litlfred/qou/pull/8272 (`be42fef123e1a988fe70707cab448f5763ca2cfc`)\n- **Lean Module**: `folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoAdjointTorsionAndSniadyGenusCovarianceBrick.lean` (wired into `folio/quantum-observable-universe/lean/QOU.lean`, verified with `lean -DautoImplicit=false -s 65536` exit 0, 0 `sorry",
       "file": "beans/defs/qou-b5w7--construct-drinfeld-jimbo-representation-category-f.md"
     },
@@ -41783,6 +41813,22 @@
       "file": "beans/defs/qou-gtv6--nf-p1-9-strand-left-coupled-gamma-gamma-pair-plu.md"
     },
     {
+      "id": "qou-gu23",
+      "title": "GAP: monodromy of a branched G-cover as a voltage map (yslf step 2)",
+      "status": "todo",
+      "type": "task",
+      "priority": "low",
+      "parent": "qou-6qbv",
+      "blocking": [
+        "qou-yslf"
+      ],
+      "blockedBy": [],
+      "createdAt": "2026-11-27T22:05:07Z",
+      "updatedAt": "2026-11-27T22:16:41Z",
+      "preview": "Split out of qou-yslf on 2026-11-27 (branch claude/equivariant-triangulation-2026-11-27). Given a compact Riemann surface X with a holomorphic action of a finite group G, and a triangulation of X/G with every branch value a vertex: show X is homeomorphic to the voltage lift (MathlibExt/VoltageLift.lean, liftPerm) of that triangulation along the monodromy voltages, with face voltages trivial and vo",
+      "file": "beans/defs/qou-gu23--gap-monodromy-of-a-branched-g-cover-as-a-voltage-m.md"
+    },
+    {
       "id": "qou-gue2",
       "title": "prop:chi-sym-alt-closed-form: create the missing block, un-orphan the Lean",
       "status": "completed",
@@ -42160,7 +42206,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-08-29T01:33:54Z",
-      "updatedAt": "2026-11-22T21:40:00Z",
+      "updatedAt": "2026-11-27T22:08:41Z",
       "preview": "Machinery to discharge the M1>0 (CS)-margin input hCS (sigma_D < rho_P*sigma_A for n>=N0<=79).\nReduction skeleton PROVED: YoungDiagramKernelCSMargin.m1_pos_all_of_cs_inputs (sorry-free).\n\nACCURATE INVENTORY (corrects earlier 'Mathlib lacks it' over-claim): Euler-Maclaurin with explicit\nremainder EXISTS sorry-free (QOU/MathlibExt/CompositeEulerMaclaurin, |R|<=k h^5 M/720; CorrectedTrapezoid);\nGauss",
       "file": "beans/defs/qou-h315--epic-analytic-machinery-to-discharge-the-m10-cs-ma.md"
     },
@@ -42562,6 +42608,20 @@
       "updatedAt": "2026-07-24T21:10:39Z",
       "preview": "",
       "file": "beans/defs/qou-h8yc--w9-b2-angle-structure-lp-confinement-sdp-dual-dict.md"
+    },
+    {
+      "id": "qou-h940",
+      "title": "Energy-scale bridge: log chart vs mass chart, and the sign conflict",
+      "status": "in-progress",
+      "type": "task",
+      "priority": "normal",
+      "parent": "qou-myts",
+      "blocking": [],
+      "blockedBy": [],
+      "createdAt": "2026-11-27T22:03:24Z",
+      "updatedAt": "2026-11-27T22:23:49Z",
+      "preview": "Thread 'Unify the log and mass-formula energy scales', branch claude/energy-scale-bridge-2026-11-27.\nProved (Lean, sorry-free): the mass chart (w = q d/dq log tau, #9733) is the Euler derivative of the log chart (L = log tau, #9718); E1 - E0 = m_e (L_e/w_e) delta(L_X/L_e). With L_e < 0 < w_e the charts agree in sign on X iff L_X w_X < 0 (sign_agree_iff).\nConsequences at q0 (probe scale_bridge_prob",
+      "file": "beans/defs/qou-h940--energy-scale-bridge-log-chart-vs-mass-chart-and-th.md"
     },
     {
       "id": "qou-h99k",
@@ -47416,6 +47476,20 @@
       "file": "beans/defs/qou-jmet--gap-precision-gatessh-changed-clobbers-3-corpus-wi.md"
     },
     {
+      "id": "qou-jmgu",
+      "title": "GAP: single crossing of rho_n (last-box signed measure) for all n>=79, which implies M1>0",
+      "status": "todo",
+      "type": "task",
+      "priority": "",
+      "parent": "qou-h315",
+      "blocking": [],
+      "blockedBy": [],
+      "createdAt": "2026-11-27T22:17:45Z",
+      "updatedAt": "2026-11-27T22:17:45Z",
+      "preview": "Conjecture (SC). Let rho_n(s) = E_PG[1{i_n+j_n=s}/(r_{n-1} r_{n-2})] over Plancherel growth, with r_k = c(k+1)-c(k) and (i_n,j_n) the 1-indexed position of box n. It is a mass-zero signed measure, and M1(n) = (n(n-1)(n-2)/3) sum_s s rho_n(s) (Jucys-Murphy + Young orthogonal form; verified exactly against the hook formula n=3..7).\nClaim: rho_n is <=0 then >=0 in s (one sign change). Checked exactly",
+      "file": "beans/defs/qou-jmgu--gap-single-crossing-of-rho-n-last-box-signed-measu.md"
+    },
+    {
       "id": "qou-jncu",
       "title": "Cross-check 1101.0956v3.pdf at docs/audits/2026-08-01-em-linking-reads-round1.md",
       "status": "todo",
@@ -49795,6 +49869,20 @@
       "updatedAt": "2026-11-22T21:52:48Z",
       "preview": "Found working the `dc_3/dq ≈ 4.6×10⁶` staleness. **The interesting part is not\nthe prose — it is that a correction landed in the authoritative `.md` and its\nmachine-readable twin never absorbed it, because nothing compares them.**\n\n## The settled value, re-derived rather than trusted\n\nThree routes, computed here from the live pins:\n\n    ROUTE 1  secant, live anchors      dc_3/dq = 3.812e6\n    ROUT",
       "file": "beans/defs/qou-kt8o--the-ck-dk-registry-json-twin-never-absorbed-the-dc.md"
+    },
+    {
+      "id": "qou-ku91",
+      "title": "Tension: current q0 (hand-placed electron weight) vs derived mass-chart weight w_e",
+      "status": "todo",
+      "type": "task",
+      "priority": "high",
+      "parent": "qou-91w7",
+      "blocking": [],
+      "blockedBy": [],
+      "createdAt": "2026-11-27T22:16:00Z",
+      "updatedAt": "2026-11-27T22:16:00Z",
+      "preview": "OWNER CARD 2026-11-27 22:15Z (thread \"Derive the electron's categorical weight\"): \"Keep q0, open a tension bean\". q0 is unchanged.\n\nDERIVED (PR #9733, Lean QOU/Transcendental/MassTheory/ElectronMassChartWeight.lean): the mass formula's own rule is the energy reading q d/dq log Z (the carrier's hbar_q^-2 pole forces one derivative). On the electron it gives\n  w_e = 3 + 4q^2(q^2-1)/((q^4+1)(q^2+1)),",
+      "file": "beans/defs/qou-ku91--tension-current-q0-vs-derived-mass-chart-electron-weight.md"
     },
     {
       "id": "qou-kumy",
@@ -52243,7 +52331,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-18T19:26:09Z",
-      "updatedAt": "2026-11-22T21:59:12Z",
+      "updatedAt": "2026-11-27T22:16:42Z",
       "preview": "**For agy.** Written 2026-11-18 by the Bring-foundations thread at ofri's request (\"bean up for agy to do: C + A\"). Parent bean `qou-qhcr` must never be closed.\n\n## Context\n\nBranch `claude/bring-foundations-handover-2026-11-17` (draft PR litlfred/qou#8365, issue #8364) proves genus 4 for the QOU surface from:\nan A5 action and an S5 action on one closed surface, plus H¹ = 2W with W irreducible.\n\n- ",
       "file": "beans/defs/qou-m3tr--bring-m3-equivariant-triangulation-chi-2-2g.md"
     },
@@ -52794,7 +52882,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T20:11:35Z",
-      "updatedAt": "2026-11-27T21:36:50Z",
+      "updatedAt": "2026-11-27T22:24:11Z",
       "preview": "The n−p EM term needs a derived energy-to-length map. All representations are covered and give n−p = −1/3 (Coulomb and magnetic), and the one-scale ratio is off by 27–44 (#9654). Audit addendum on litlfred/qou#9654. Filed for the n−p thread, which cannot reach the beans store.\n\n\n\n2026-11-27 (thread \"Close the n−p EM length gap\", PR #9717): two-scale class proved in Lean (NucleonSplitTwoScale: ħc c",
       "file": "beans/defs/qou-mbfv--gap-n-p-em-term-needs-a-derived-energy-to-length-m.md"
     },
@@ -53565,6 +53653,20 @@
       "updatedAt": "2026-07-20T04:07:58Z",
       "preview": "",
       "file": "beans/defs/qou-mlog--track-theta-order-slope-on-jet-order-n-and-gsgb-fi.md"
+    },
+    {
+      "id": "qou-mm2j",
+      "title": "BUG: Coulomb shape factor f applied at every A in mass_table EM field; coulomb_energy.py scopes it to A <= 4",
+      "status": "todo",
+      "type": "bug",
+      "priority": "",
+      "parent": "",
+      "blocking": [],
+      "blockedBy": [],
+      "createdAt": "2026-11-27T21:59:36Z",
+      "updatedAt": "2026-11-27T21:59:36Z",
+      "preview": "coulomb_isospin_channel.py:59 pastes F_QHANKEL; mass_table_comprehensive.py:611 uses it for all A (Table 3.4b m_ruled_em). coulomb_energy.shape_factor(A) uses q-Hankel only for A <= 4. Also ACCURACY.md:144 says uniform sphere at A=3 (stale since 98608fc2f); mirror-nuclei witness likely stale. Owner card open in thread 'Audit the q-Bessel special-function dictionary' (recommended: single source wit",
+      "file": "beans/defs/qou-mm2j--bug-coulomb-shape-factor-f-applied-at-every-a-in-m.md"
     },
     {
       "id": "qou-mmq7",
@@ -56780,7 +56882,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T21:52:11Z",
-      "updatedAt": "2026-11-27T21:52:18Z",
+      "updatedAt": "2026-11-27T22:23:22Z",
       "preview": "Follow-up to qou-tcl2 (G2). PR #9747, branch claude/isospin-writhe-scaling-2026-11-27.\n\nLean QOU/Nuclear/IsospinTwistWrithe.lean (sorry-free, lean-direct exit 0): any multiplicative block invariant sees a braid word only through its writhe; the Murphy product is a word of N(N-1) letters; on a block det rho(w)^{N(N-1)} = (q^{2c})^{d e}. So the T(T+1) coefficient is writhe/(N(N-1)). Full twist (#970",
       "file": "beans/defs/qou-o8lo--g2-a-scaling-tt1-coefficient-is-writhenn-1-pr-9747.md"
     },
@@ -58826,7 +58928,9 @@
       "priority": "normal",
       "parent": "qou-innq",
       "blocking": [],
-      "blockedBy": [],
+      "blockedBy": [
+        "qou-qd8k"
+      ],
       "createdAt": "2026-11-27T18:05:00Z",
       "updatedAt": "2026-11-27T18:40:00Z",
       "preview": "After the owner weakened property 3 of `thm:q-ns-wellposedness` (2026-11-27, card \"Weaken decay clause, keep Part A\"), the modal law in `QNsWellposednessContext` reads `d/dt|v̂_k| ≤ −ν_q[k]_q²|v̂_k| + T_k` with `T_k` free data.\n\n**What was attempted.** Stating Part A of `conj:regularity-breakdown` as a primary-conjecture class over that context, with substrate-fixed data.\n\n**Why it fails.** The cl",
@@ -60818,7 +60922,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T18:40:00Z",
-      "updatedAt": "2026-11-27T21:56:39Z",
+      "updatedAt": "2026-11-27T22:30:00Z",
       "preview": "Follow-up to qou-pa7n (PR #9537). Two results show Part A of `conj:regularity-breakdown` is false on every finite or two-dimensional model:\n- `partA_fails_on_truncation` (q_ns_modal_triad.lean) covers every finite truncation of the triad model;\n- `partA_fails_dec2d` (q_ns_dec_refinement.lean) covers every 2-complex at every resolution, given an enstrophy-skew advection.\n\n**Two routes forward.**\n\n1",
       "file": "beans/defs/qou-q3dc--gap-q-ns-part-a-needs-q-cg-coefficients-or-a-3-complex-dec-model.md"
     },
@@ -61877,6 +61981,22 @@
       "file": "beans/defs/qou-qd27--probe-c4-bring-sigma-4-adjoint-reidemeister-torsio.md"
     },
     {
+      "id": "qou-qd8k",
+      "title": "GAP: L self-adjoint on each weight block B_s, giving the alpha=s little q-Jacobi basis",
+      "status": "todo",
+      "type": "task",
+      "priority": "normal",
+      "parent": "",
+      "blocking": [
+        "qou-pa7n"
+      ],
+      "blockedBy": [],
+      "createdAt": "2026-11-27T22:02:56Z",
+      "updatedAt": "2026-11-27T22:18:48Z",
+      "preview": "From PR #9746. Block pairings proved nondegenerate (q_ns_block_pairing_nondegenerate.lean); #9714 gives h(X+a.X-b) = -q^{2(s-1)} h(a.Lb). Open: L self-adjoint for the block pairing, so eigenpolynomials on B_s are orthogonal (expected little q-Jacobi, alpha = s). Model: OqSU2LittleQJacobiBasis.lean (s = 0). Feeds qou-pa7n (q-NS Part A).\n\n\n\n2026-11-27: Self-adjointness proved, sorry-free, in PR #978",
+      "file": "beans/defs/qou-qd8k--gap-l-self-adjoint-on-each-weight-block-b-s-giving.md"
+    },
+    {
       "id": "qou-qdf6",
       "title": "W14 wave 5: small chapters (molecular-construction, q-geometric-langlands, models-of-qous, introduction, organic-chemistry, gravity-spacetime, measurement-observation)",
       "status": "todo",
@@ -62110,7 +62230,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-09-15T06:16:39Z",
-      "updatedAt": "2026-11-23T17:32:53Z",
+      "updatedAt": "2026-11-27T22:16:42Z",
       "preview": "Child of `qou-51l1` (which established that the χ = −6 chain is\nderived-modulo-one-named-input, and named this as the one missing step).\nSession `claude/chi-branch-point-count-2026-09-15`.\n\n**Outcome: the 6 is still not derived. The ADE / finite-subgroup-of-SU(2)\nroute was tested and is a negative, and the negative is informative — an\norbit reading of \"six branch points on `ℙ(V)`\" points AWAY from",
       "file": "beans/defs/qou-qhcr--gap-derive-the-branch-point-count-6-from-the-five.md"
     },
@@ -67769,6 +67889,20 @@
       "file": "beans/defs/qou-t3jv--session-a-omega-stokes-3-derive-or-refute-trace-fi.md"
     },
     {
+      "id": "qou-t3nx",
+      "title": "GAP: q-Hankel orthogonality and inversion in Lean (Hahn-Exton, base p^2, p = 1/q0)",
+      "status": "todo",
+      "type": "task",
+      "priority": "",
+      "parent": "",
+      "blocking": [],
+      "blockedBy": [],
+      "createdAt": "2026-11-27T21:59:36Z",
+      "updatedAt": "2026-11-27T21:59:36Z",
+      "preview": "Thread 'Audit the q-Bessel special-function dictionary' 2026-11-27. The Coulomb shape factor f = 0.520011 (PR #9665) rests on q-Hankel orthogonality on p^Z checked numerically only. State the base p^2 explicitly against the sphere side's q^2 Haar convention.",
+      "file": "beans/defs/qou-t3nx--gap-q-hankel-orthogonality-and-inversion-in-lean-h.md"
+    },
+    {
       "id": "qou-t3ox",
       "title": "Remark interpreting [baez2004] at prf:emergence-to-quantum-flat",
       "status": "completed",
@@ -70342,6 +70476,20 @@
       "updatedAt": "2026-11-21T13:32:29Z",
       "preview": "rem:q-dilogarithm-pentagon-associator asserts the dilogarithm-associator-6j identification without a semiclassical anchor. A remark can record that in the modular double the b -> 0 limit of the 6j symbol is a hyperbolic tetrahedron volume, and must state the applicability check: the tetrahedra are non-ideal (six free dihedral angles), so this does not by itself supply Vol(4_1) or any ideal-triangu",
       "file": "beans/defs/qou-u800--remark-interpreting-12024698pdf-at-remq-dilogarith.md"
+    },
+    {
+      "id": "qou-u81q",
+      "title": "OPEN: Maass (Laplace) harmonics on Bring's surface by S5 type (Transcendental)",
+      "status": "todo",
+      "type": "task",
+      "priority": "",
+      "parent": "",
+      "blocking": [],
+      "blockedBy": [],
+      "createdAt": "2026-11-27T21:59:36Z",
+      "updatedAt": "2026-11-27T21:59:36Z",
+      "preview": "Owner picked 'Also Maass harmonics' (card, 2026-11-27). Done: exact discrete model (computations/probes/bring_discrete_harmonics_probe.py): vertex Laplacian 0,2,4,5,6,7 with S5 types; harmonic 1-cochains = 2 x std(x)sgn. Open: the true Maass spectrum by S5 type; reduces by Frobenius reciprocity to Maass forms on the triangle orbifolds B/H. Belongs in QOU/Transcendental/. No numerical eigenvalue ma",
+      "file": "beans/defs/qou-u81q--open-maass-laplace-harmonics-on-brings-surface-by.md"
     },
     {
       "id": "qou-u86i",
@@ -79949,9 +80097,12 @@
       "priority": "high",
       "parent": "qou-6qbv",
       "blocking": [],
-      "blockedBy": [],
+      "blockedBy": [
+        "qou-0nr6",
+        "qou-gu23"
+      ],
       "createdAt": "2026-11-21T07:30:00Z",
-      "updatedAt": "2026-11-22T21:59:12Z",
+      "updatedAt": "2026-11-27T22:16:42Z",
       "preview": "Created 2026-11-21 by W9 (session_01VQDpPcjxVSqN8ELUBjiBHk). The owner ruling of 2026-11-21 says resource-limited work goes to a bean for Antigravity.\n\n**Target.** `QOU.BringsSurface.GenusFourFromEquivariantMap.chi_eq_neg_six_of_equivariant_map` (merged, #8719) starts from a connected combinatorial map (darts D, rotation σ, fixed-point-free involution α) with G-actions. Its hypotheses: the actions",
       "file": "beans/defs/qou-yslf--gap-antigravity-g-equivariant-triangulation-of-a-c.md"
     },
@@ -80923,7 +81074,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T21:30:49Z",
-      "updatedAt": "2026-11-27T21:34:35Z",
+      "updatedAt": "2026-11-27T22:08:42Z",
       "preview": "Survey 2026-11-27 flagged 19 conjectures as superseded by keyword. Read each: only conj:cpt-d6-d7-d8-closure is refuted in its own text (Lean cpt_not_trace_preserving; replacement qcpt_law, no content block yet). The '> **Superseded.** The scalar aether density rho_q ...' banner is stamped on 10 blocks, including conj:kashaev-volume-conjecture whose statement has no rho_q; the banner is about pros",
       "file": "beans/defs/qou-za1a--triage-the-19-superseded-conjectures-1-refuted-cpt.md"
     },
@@ -85825,6 +85976,13 @@
       ]
     },
     {
+      "blocker": "qou-0nr6",
+      "blocked": "qou-yslf",
+      "declaredOn": [
+        "blocking"
+      ]
+    },
+    {
       "blocker": "qou-143e",
       "blocked": "qou-xip2",
       "declaredOn": [
@@ -86252,6 +86410,13 @@
       ]
     },
     {
+      "blocker": "qou-gu23",
+      "blocked": "qou-yslf",
+      "declaredOn": [
+        "blocking"
+      ]
+    },
+    {
       "blocker": "qou-h0zz",
       "blocked": "qou-jk6g",
       "declaredOn": [
@@ -86459,6 +86624,13 @@
       "blocked": "qou-ovxx",
       "declaredOn": [
         "blocked_by"
+      ]
+    },
+    {
+      "blocker": "qou-qd8k",
+      "blocked": "qou-pa7n",
+      "declaredOn": [
+        "blocking"
       ]
     },
     {
@@ -86964,6 +87136,12 @@
     },
     {
       "kind": "blocked-without-expiry",
+      "bean": "qou-qd8k",
+      "blocks": "qou-pa7n",
+      "detail": "blocks `qou-pa7n` and states no expiry, so the block cannot be told from abandoned work"
+    },
+    {
+      "kind": "blocked-without-expiry",
       "bean": "qou-qydm",
       "blocks": "qou-y0mq",
       "detail": "blocks `qou-y0mq` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
@@ -87311,14 +87489,14 @@
         "file": "beans/defs/qou-rtxm--lean-mathlib-foundations.md",
         "status": "in-progress",
         "epics": 11,
-        "total": 368,
+        "total": 371,
         "closed": 122,
-        "open": 246,
+        "open": 249,
         "inProgress": 177,
-        "todo": 69,
+        "todo": 72,
         "draft": 0,
         "unclassified": 0,
-        "share": 0.33152173913043476
+        "share": 0.3288409703504043
       },
       {
         "id": "qou-vkmt",
@@ -87416,14 +87594,14 @@
         "file": "beans/defs/qou-10v9--program-l2-at-1-ppq-mass-and-binding-accuracy.md",
         "status": "in-progress",
         "epics": 12,
-        "total": 788,
+        "total": 790,
         "closed": 247,
-        "open": 541,
-        "inProgress": 273,
-        "todo": 268,
+        "open": 543,
+        "inProgress": 274,
+        "todo": 269,
         "draft": 0,
         "unclassified": 0,
-        "share": 0.3134517766497462
+        "share": 0.31265822784810127
       },
       {
         "id": "szkf",
@@ -87507,13 +87685,13 @@
         "status": "in-progress",
         "epics": 4,
         "total": 200,
-        "closed": 61,
-        "open": 139,
+        "closed": 62,
+        "open": 138,
         "inProgress": 38,
-        "todo": 101,
+        "todo": 100,
         "draft": 0,
         "unclassified": 0,
-        "share": 0.305
+        "share": 0.31
       },
       {
         "id": "qou-b5qg",
@@ -87596,14 +87774,14 @@
         "file": "beans/defs/b9cj--open-conjecture-class-lean-carriers-ledger-epic.md",
         "status": "in-progress",
         "epics": 17,
-        "total": 391,
+        "total": 392,
         "closed": 89,
-        "open": 302,
+        "open": 303,
         "inProgress": 181,
-        "todo": 120,
+        "todo": 121,
         "draft": 1,
         "unclassified": 0,
-        "share": 0.22762148337595908
+        "share": 0.22704081632653061
       },
       {
         "id": "qou-u8fj",
@@ -87651,9 +87829,9 @@
         "share": null
       }
     ],
-    "orphanOpen": 133,
-    "openTotal": 1781,
-    "coveredOpen": 1640,
+    "orphanOpen": 137,
+    "openTotal": 1790,
+    "coveredOpen": 1645,
     "duplicateIds": 0
   }
 }
