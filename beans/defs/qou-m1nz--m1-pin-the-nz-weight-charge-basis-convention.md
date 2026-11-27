@@ -51,4 +51,4 @@ Probe `computations/probes/qbeta_m1_meridian_sum_pins_eq61_probe.py` (PR [#9739]
 
 They agree through q¹³: 1, −8, −9, 18, 46, 90, 62, 10, −170, −424, −702, −962, −1045, −774. The first 7 coefficients are the printed eq (61). The Stokes side comes out as −S⁺₁₁, a global sign of the transcribed q⁰ normalisation. That sign is recorded, not tuned.
 
-This also explains the "substrate-point agreement vs coefficient disagreement" tension noted above: the g3 probe's Σ_e had the right cycle. Route C M2 (qou-m3ad / gz37) is unblocked on the 4₁ side. Recommend `completed` once #9739 merges (owner card).
+The earlier "substrate-point agreement vs coefficient disagreement" tension is probably the same cycle mix-up. That is not checked here. Route C M2 (qou-m3ad / gz37) is unblocked on the 4₁ side. Recommend `completed` once #9739 merges (owner card).
