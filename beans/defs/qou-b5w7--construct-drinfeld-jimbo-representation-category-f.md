@@ -34,3 +34,10 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8272, closed o
 - Open checks: `antipode_involutive` (S² = id) and `frobenius_symmetric` fail on full
   `O_q(SU(2))` at q ≠ ±1 (TN-1/TN-2 notes in CategoricalFoundations); verify they hold for
   `End(V)` with the braided anti-multiplicativity before building.
+
+## 2026-11-27 22:20Z — End(V) negative landed as PR #9780; Carl ruling
+- PR #9780: QOU/Core/EndVAntipodeObstruction.lean, `endV_antipode_obstruction` (S=a+be braided anti-mult + S²=id ⇒ A⁸=1). Sorry-free.
+- Carl (cmsg_01CLiYvjTLE97k3bqmy2GDQMKDrKSy3HCYJSR3QTHFnXfz): "go with recommendations but keep others as back up ... a reformulation of the current axioms not different formulations side by side".
+- Plan (pending Carl's tap on exact axiom text): ONE axiom set. Replace `antipode_involutive` (S²=id) with S² = θ_A (balanced twist of A), and `frobenius_symmetric` with the Nakayama-twisted trace, ν pinned to S². q=1 / trivial-twist witnesses (Z2, Trivial) satisfy it unchanged. End(V) check: S²=A⁸ on Ad = θ_{spin 1}, 1 on trivial = θ_0.
+- Backups kept: (a) relax S² in QOU, (b) negative only and park.
+- Lean consumers: fiber_adjoint_involution_exists (uses S²=id), toTwistedPivotal embeddings (CategoricalFoundations.lean:697, frobenius-hopf-substrate.lean:184, :746); witnesses Z2Witness, TrivialWitness, FrobeniusHopfNilpotentAndNonFieldModel, ChenMultiplicativeIntegralBridge.
