@@ -26,8 +26,8 @@
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { defineTool, type ToolDefinition } from "../folio-assistant/cat-harness-tools/schemas/tools/tool.js";
-import { toolTypeIri } from "../folio-assistant/cat-harness-tools/schemas/tools/tool-types.js";
+import { defineTool, type ToolDefinition } from "../cat-harness-tools/schemas/tools/tool.js";
+import { toolTypeIri } from "../cat-harness-tools/schemas/tools/tool-types.js";
 
 interface Producer {
   script: string;

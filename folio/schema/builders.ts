@@ -12,7 +12,7 @@ export {
   corollary,
   conjecture,
   proof,
-} from "../../folio-assistant/folio-assistant-sci/schemas/mathpaper-vocabulary";
+} from "../../folio-assistant-sci/schemas/mathpaper-vocabulary";
 export {
   algorithm,
   example,
@@ -31,4 +31,4 @@ export {
   paperRef,
   folio,
   document,
-} from "../../folio-assistant/cat-harness-tools/schemas/builders";
+} from "../../cat-harness-tools/schemas/builders";
