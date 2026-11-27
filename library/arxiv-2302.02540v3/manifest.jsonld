@@ -1,0 +1,87 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2302.02540v3",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Linear programming bounds for hyperbolic surfaces",
+  "contains": [
+    "library/arxiv-2302.02540v3/sections/sec-front-matter",
+    "library/arxiv-2302.02540v3/sections/sec-000",
+    "library/arxiv-2302.02540v3/sections/sec-001",
+    "library/arxiv-2302.02540v3/sections/sec-002",
+    "library/arxiv-2302.02540v3/sections/sec-003",
+    "library/arxiv-2302.02540v3/sections/sec-004",
+    "library/arxiv-2302.02540v3/sections/sec-005",
+    "library/arxiv-2302.02540v3/sections/sec-006",
+    "library/arxiv-2302.02540v3/sections/sec-007",
+    "library/arxiv-2302.02540v3/sections/sec-008",
+    "library/arxiv-2302.02540v3/sections/sec-009",
+    "library/arxiv-2302.02540v3/sections/sec-010",
+    "library/arxiv-2302.02540v3/sections/sec-011",
+    "library/arxiv-2302.02540v3/sections/sec-012",
+    "library/arxiv-2302.02540v3/sections/sec-013",
+    "library/arxiv-2302.02540v3/sections/sec-014",
+    "library/arxiv-2302.02540v3/sections/sec-015",
+    "library/arxiv-2302.02540v3/sections/sec-016",
+    "library/arxiv-2302.02540v3/sections/sec-017",
+    "library/arxiv-2302.02540v3/sections/sec-018",
+    "library/arxiv-2302.02540v3/sections/sec-019",
+    "library/arxiv-2302.02540v3/sections/sec-020",
+    "library/arxiv-2302.02540v3/sections/sec-021",
+    "library/arxiv-2302.02540v3/sections/sec-022",
+    "library/arxiv-2302.02540v3/sections/sec-023",
+    "library/arxiv-2302.02540v3/sections/sec-024",
+    "library/arxiv-2302.02540v3/sections/sec-025",
+    "library/arxiv-2302.02540v3/sections/sec-026",
+    "library/arxiv-2302.02540v3/sections/sec-027",
+    "library/arxiv-2302.02540v3/sections/sec-028",
+    "library/arxiv-2302.02540v3/sections/sec-029",
+    "library/arxiv-2302.02540v3/sections/sec-030",
+    "library/arxiv-2302.02540v3/sections/sec-031"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Linear programming bounds for hyperbolic surfaces — We adapt linear programming methods from sphere packings to closed hy- perbolic surfaces and obtain new upper bounds on their systole, their\n\n**Linear programming bounds for hyperbolic surfaces**\n\n*MAXIME FORTIER BOURQUE AND BRAM PETRI*\n\n49 pp, 33 sections.\n\n**Abstract.** We adapt linear programming methods from sphere packings to closed hy- perbolic surfaces and obtain new upper bounds on their systole, their kissing number, the first positive eigenvalue of their Laplacian, the multiplicity of their first eigenvalue, and their number of small eigenvalues. Apart from a few exceptions, the resulting bounds are the current best known both in low genus and as the genus tends to infinity. Our methods also provide lower bounds on the systole (achieved in genus 2 to 7, 14, and 17) that are sufficient for surfaces to have a spectral gap larger than 1/4.\n\n**Outline.** Front matter; 1 Introduction; Context; Organization; 2 The Fourier transform; 3 The Selberg trace formula; 4 Linear programming; 4.1 Certifying inequalities on intervals; 4.2 Certifying error bounds on integrals; 4.3 Ancillary files; 5 Bessel functions; 6 Systole; 6.1 The criterion; 6.2 Low genus; 6.3 Asymptotics; 7 Kissing numbers; 7.1 The criterion; 7.2 Low genus\n\n**Extracted claims (proposals, not verified).**\n- Theorem 6.4: There exists someg 0≥2such that every closed hyperbolic surfaceMof\n- Theorem 7.8: There exists someg 0≥2such that every closed hyperbolic surfaceMof\n- Theorem 8.3: There exists someg 0≥2such that every closed hyperbolic surfaceMof\n- Theorem 9.5: There exists someg 0≥2such that every closed hyperbolic surfaceMof\n- Theorem 10.2: IfMis a closed hyperbolic surface of genusg≥2, then\n- Theorem 6.1: Letg≥2. Suppose thatfis a non-constant admissible function for which",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-27"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2302.02540&metadataPrefix=arXiv), <license> element, read 2026-11-25",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2302.02540v3",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2302.02540v3.pdf",
+    "source_sha256": "0dfe07df944902ec2185f2ba754e2bb239e781d7965a060e61c0e6a33f4051bc",
+    "pages": 49,
+    "arxiv": {
+      "id": "2302.02540",
+      "version": "3",
+      "primary_class": "math.GT",
+      "stamp_date": "9 Feb 2026"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

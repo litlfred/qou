@@ -1,0 +1,27 @@
+{
+ "url": "https://export.arxiv.org/src/1101.2451v2",
+ "content_type": "application/gzip",
+ "sha256": "07f3d1013436176c8cc2ec4ab21fc98235daccf1221597d1647d42fd7a17a848",
+ "bytes": 266095,
+ "fetched": "2026-11-25T15:44:34+00:00",
+ "files": [
+  {
+   "path": "files/cite.sty",
+   "role": "sty",
+   "sha256": "891afbbbf8e29fc0e49fd3a1e4ce985ebb8f80f1b64fe0ff6be61165261daad8",
+   "bytes": 32577
+  },
+  {
+   "path": "files/nsesydney.bbl",
+   "role": "bbl",
+   "sha256": "01fa3eb273c89df295c1b9f263e53e35466dcd49f9e1b953432dbeda20f76f6f",
+   "bytes": 15875
+  },
+  {
+   "path": "files/nsesydney.tex",
+   "role": "tex",
+   "sha256": "9ed53375305686b95d29e395ff4548e007eb168de35370e623c98880bf958fef",
+   "bytes": 43460
+  }
+ ]
+}

@@ -1,0 +1,58 @@
+%theorem, definition etc.
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{prp}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{conj}[thm]{Conjecture}
+
+\newtheorem{innerthmrep}{Theorem}
+\newenvironment{thmrep}[1]
+  {\renewcommand\theinnerthmrep{#1}\innerthmrep}
+  {\endinnerthmrep}
+
+\newtheorem{innercorrep}{Corollary}
+\newenvironment{correp}[1]
+  {\renewcommand\theinnercorrep{#1}\innercorrep}
+  {\endinnercorrep}
+  
+\newtheorem{innerlemrep}{Lemma}
+\newenvironment{lemrep}[1]
+  {\renewcommand\theinnerlemrep{#1}\innerlemrep}
+  {\endinnerlemrep}
+
+\newtheorem{innerprprep}{Proposition}
+\newenvironment{prprep}[1]
+  {\renewcommand\theinnerprprep{#1}\innerprprep}
+  {\endinnerprprep} 
+
+\theoremstyle{definition}
+\newtheorem{dff}[thm]{Definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{exa}[thm]{Example}
+\newtheorem{exe}{Exercise}[section]
+\newtheorem{dffthm}[thm]{Definition/Theorem}
+\newtheorem{que}{Question}
+
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem*{acknowledgements}{Acknowledgements}
+
+\newtheorem{innerclaim}{Claim}
+\newenvironment{claim}[1]
+  {\renewcommand\theinnerclaim{#1}\innerclaim}
+  {\endinnerclaim}
+
+\newcommand{\thmref}[1]{Theorem~\ref{#1}}
+\newcommand{\conjref}[1]{Conjecture~\ref{#1}}
+\newcommand{\propref}[1]{Proposition~\ref{#1}}
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\subsecref}[1]{subsection~\ref{#1}}
+\newcommand{\lemref}[1]{Lemma~\ref{#1}}
+\newcommand{\corref}[1]{Corollary~\ref{#1}}
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\exref}[1]{Example~\ref{#1}}
+\newcommand{\remref}[1]{Remark~\ref{#1}}
+\newcommand{\eqnref}[1]{Equation~\eqref{#1}}
+\newcommand{\defref}[1]{Definition~\ref{#1}}
+\newcommand{\tableref}[1]{Table~\ref{#1}}

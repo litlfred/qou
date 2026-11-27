@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1711.09011v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1711.09011v1",
+  "contains": [
+    "library/arxiv-1711.09011v1/sections/sec-front-matter",
+    "library/arxiv-1711.09011v1/sections/sec-000",
+    "library/arxiv-1711.09011v1/sections/sec-001",
+    "library/arxiv-1711.09011v1/sections/sec-002",
+    "library/arxiv-1711.09011v1/sections/sec-003",
+    "library/arxiv-1711.09011v1/sections/sec-004",
+    "library/arxiv-1711.09011v1/sections/sec-005",
+    "library/arxiv-1711.09011v1/sections/sec-006",
+    "library/arxiv-1711.09011v1/sections/sec-007",
+    "library/arxiv-1711.09011v1/sections/sec-008",
+    "library/arxiv-1711.09011v1/sections/sec-009",
+    "library/arxiv-1711.09011v1/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Quantum groups and braid groups as fundamental symmetries — 12 sections: Front matter; Introduction; The Helon model\n\n**Quantum groups and braid groups as fundamental symmetries**\n\n*Niels G. Gresnigt∗†*\n\n10 pp, 12 sections.\n\n**Outline.** Front matter; 1 Introduction; 3 The Helon model; 4 Normed division algebras; 5 Clifford algebra representations of circular; 5.1 The complex numbers and a representation o; 5.2 The quaternions and a representation of th; 5.3 The octonions and a representation of the ; 6 Common elements of the Helon model and norme; 7 Discussion; Acknowledgments; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-27"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-1711.09011v1",
+    "title_source": "slug",
+    "source_file": "1711.09011v1.pdf",
+    "source_sha256": "d046698777f3863420d3ca0c0d3942c8bedef34ca3abecab8c437329006e3ed2",
+    "pages": 10,
+    "arxiv": {
+      "id": "1711.09011",
+      "version": "1",
+      "primary_class": "physics.gen-ph",
+      "stamp_date": "21 Nov 2017"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

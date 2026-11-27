@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-1101.2451v2/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Petrov type",
+  "pageStart": 11,
+  "pageEnd": 12,
+  "contains": [
+    "library/arxiv-1101.2451v2/blocks/prose-sec-010"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1101.2451v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1101.2451v2",
+  "provenance": "ingested"
+}

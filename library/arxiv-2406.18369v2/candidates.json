@@ -1,0 +1,217 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2406.18369v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "20b3f8dbc40eacc3a331043d508ba50b4343352919973e717dc0bdb61d285de0",
+  "file": "2406.18369v2.pdf"
+ },
+ "provenance": {
+  "title": "112 years of listening to Riemannian manifolds",
+  "authors": "GUSTAV M\u00c5RDBY AND JULIE ROWLETT",
+  "arxiv": {
+   "id": "2406.18369",
+   "version": "2",
+   "primary_class": "math.SP",
+   "stamp_date": "19 Sep 2024"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 14,
+  "by_kind": {
+   "definition": 1,
+   "proposition": 5,
+   "theorem": 7,
+   "lemma": 1
+  },
+  "formalization_candidates": 14
+ },
+ "candidates": [
+  {
+   "kind": "definition",
+   "source_kind": "definition",
+   "number": "2.1",
+   "name": null,
+   "statement": "For a domain \u2126\u2282 Rn, L2(\u2126) is defined as the set of equiva-",
+   "section_file": "sections/sec-003-21-preliminaries.md",
+   "section_title": "Preliminaries",
+   "pages": "4-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.2",
+   "name": null,
+   "statement": "Let I = (a1,b 1)\u00d7 (a2,b 2)\u2282 R2 be a rectangle. Then both the",
+   "section_file": "sections/sec-003-21-preliminaries.md",
+   "section_title": "Preliminaries",
+   "pages": "4-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.3",
+   "name": null,
+   "statement": "Let \u2126 be a domain with piecewise smooth boundary. If\u03bbk denotes",
+   "section_file": "sections/sec-003-21-preliminaries.md",
+   "section_title": "Preliminaries",
+   "pages": "4-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.5",
+   "name": "Weyl\u2019s law",
+   "statement": "Let \u2126\u2282 R2 be a bounded domain and let0 < \u03bb1\u2264",
+   "section_file": "sections/sec-003-21-preliminaries.md",
+   "section_title": "Preliminaries",
+   "pages": "4-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.6",
+   "name": null,
+   "statement": "With the notations above, we have for everyk",
+   "section_file": "sections/sec-003-21-preliminaries.md",
+   "section_title": "Preliminaries",
+   "pages": "4-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.1",
+   "name": "[90], Thm. 2.8",
+   "statement": "The spectrum of a flat torusRn/\u0393 is the multi-set",
+   "section_file": "sections/sec-004-3-listening-to-flat-tori.md",
+   "section_title": "Listening to flat tori",
+   "pages": "12-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.2",
+   "name": "[108], Thm. 11.2",
+   "statement": "If q(x) = xTQx is a positive definite qua-",
+   "section_file": "sections/sec-004-3-listening-to-flat-tori.md",
+   "section_title": "Listening to flat tori",
+   "pages": "12-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.3",
+   "name": "[90], Cor. 2.15",
+   "statement": "Two flat tori are isospectral if and only if their",
+   "section_file": "sections/sec-004-3-listening-to-flat-tori.md",
+   "section_title": "Listening to flat tori",
+   "pages": "12-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.4",
+   "name": "[90], Prop. 2.28",
+   "statement": "Suppose a lattice\u0393\u2208 Rn can be decomposed",
+   "section_file": "sections/sec-004-3-listening-to-flat-tori.md",
+   "section_title": "Listening to flat tori",
+   "pages": "12-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.5",
+   "name": "[90], Cor. 3.7",
+   "statement": "LetP andQ be the associated matrices of two even",
+   "section_file": "sections/sec-004-3-listening-to-flat-tori.md",
+   "section_title": "Listening to flat tori",
+   "pages": "12-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4.1",
+   "name": null,
+   "statement": "Given two non-empty sets\u0398, \u2126\u2282 R2, we havedH(\u0398, \u2126) = 0 if",
+   "section_file": "sections/sec-006-41-geometric-preliminaries.md",
+   "section_title": "Geometric preliminaries",
+   "pages": "16-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.2",
+   "name": "[59], Thm. 2.44",
+   "statement": "If \u2126 has r holes, then\u03c7(\u2126) = 1\u2212r.",
+   "section_file": "sections/sec-006-41-geometric-preliminaries.md",
+   "section_title": "Geometric preliminaries",
+   "pages": "16-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.3",
+   "name": null,
+   "statement": "There exists a unique mape\u2212t\u2206 : C 0(\u2126)\u2192 C\u221e(\u2126\u00d7 R+), called",
+   "section_file": "sections/sec-007-42-what-could-kac-hear.md",
+   "section_title": "What could Kac hear?",
+   "pages": "17-33",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4.5",
+   "name": null,
+   "statement": "If \u2126 = Rn, then the unique element ofL2(\u2126\u00d7 \u2126\u00d7 R+) that",
+   "section_file": "sections/sec-007-42-what-could-kac-hear.md",
+   "section_title": "What could Kac hear?",
+   "pages": "17-33",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

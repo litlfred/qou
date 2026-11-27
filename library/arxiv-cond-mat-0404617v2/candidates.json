@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-cond-mat-0404617v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "8e31b9ec8ac2e03484c343d7ec54f92a63206ad9e3c0c92306d8522c857e9216",
+  "file": "cond-mat-0404617v2.pdf"
+ },
+ "provenance": {
+  "title": "String-net condensation: A physical mechanism for topological phases",
+  "authors": "Michael A. Levin and Xiao-Gang Wen \u2217",
+  "arxiv": {
+   "id": "cond-mat/0404617",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "27 Apr 2004"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

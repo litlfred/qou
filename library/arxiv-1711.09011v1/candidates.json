@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1711.09011v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "d046698777f3863420d3ca0c0d3942c8bedef34ca3abecab8c437329006e3ed2",
+  "file": "1711.09011v1.pdf"
+ },
+ "provenance": {
+  "title": "Quantum groups and braid groups as fundamental symmetries",
+  "authors": "Niels G. Gresnigt\u2217\u2020",
+  "arxiv": {
+   "id": "1711.09011",
+   "version": "1",
+   "primary_class": "physics.gen-ph",
+   "stamp_date": "21 Nov 2017"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

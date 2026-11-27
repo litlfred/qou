@@ -1,0 +1,45 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2501.03260v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "510ae5435ae95664671d9221125ff4acdf660e7b5649dfd2ee7c6939ed83ce0f",
+  "file": "2501.03260v1.pdf"
+ },
+ "provenance": {
+  "title": "Preons, Braid Topology, and Representations of Fundamental Particles",
+  "authors": "David Chester 1, \u2217 Xerxes D. Arsiwalla 2, \u2020 Louis H. Kauffman 3, \u2021",
+  "arxiv": {
+   "id": "2501.03260",
+   "version": "1",
+   "primary_class": "physics.gen-ph",
+   "stamp_date": "3 Jan 2025"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "remark": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "ably, it turns out that the above issue (for consisten tly constructing hadron",
+   "section_file": "sections/sec-003-composition-laws-with-helons.md",
+   "section_title": "Composition Laws with Helons",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+---
+doc_id: arxiv-1803.02202v2
+doc_title: "Braids, normed division algebras, and Standard Model symmetries"
+section_id: sec-front-matter
+section_title: "Front matter"
+section_number: null
+pages: 1-2
+source_pdf: 1803.02202v2.pdf
+source_sha256: ffb9cdfe4f415177
+toc_source: outline
+doc_brief: "Braids, normed division algebras, and Standard Model symmetries — This paper represents a ﬁrst attempt at unifying two promising attempts to understand the origin of the internal symmetries of"
+---
+Prepared for submission to JHEP
+Braids, normed division algebras, and Standard
+Model symmetries
+N. Gresnigt
+Xi’an Jiaotong-Liverpool University,
+111 Ren’ai Road, Suzhou SIP, Higher Education Town, 215123, Jiangsu province, China
+E-mail: niels.gresnigt@xjtlu.edu.cn
+Abstract: This paper represents a ﬁrst attempt at unifying two promising attempts
+to understand the origin of the internal symmetries of leptons and quarks. It is shown
+that each of the four normed division algebras over the reals admits a representation of
+a circular braid group. For the complex numbers and the quaternions, the represented
+circular braid groups areB2 and Bc
+3, precisely those used to construct leptons and quarks
+as framed braids in the Helon model of Bilson-Thompson. It is then shown that these
+framed braids coincide with the states that span the minimal left ideals of the complex
+(chained) octonions, shown by Furey to describe one generation of leptons and quarks with
+unbrokenSU (3)c and U(1)em symmetry.
+The identiﬁcation of basis states of minimal ideals with certain framed braids is possible
+because the braiding inB2 and Bc
+3 in the Helon model are interchangeable. It is shown
+that the framed braids in the Helon model can be written as pure braid words inBc
+3 with
+trivial braiding inB2, something which is not possible for framed braids in general.
+arXiv:1803.02202v2  [physics.gen-ph]  16 Mar 2018
+Contents

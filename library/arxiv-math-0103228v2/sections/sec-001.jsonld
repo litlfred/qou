@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-math-0103228v2/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Harish-Chandra modules",
+  "pageStart": 9,
+  "pageEnd": 14,
+  "contains": [
+    "library/arxiv-math-0103228v2/blocks/prose-sec-001",
+    "library/arxiv-math-0103228v2/blocks/thm-sec-001-01",
+    "library/arxiv-math-0103228v2/blocks/thm-sec-001-02",
+    "library/arxiv-math-0103228v2/blocks/cor-sec-001-03",
+    "library/arxiv-math-0103228v2/blocks/thm-sec-001-04",
+    "library/arxiv-math-0103228v2/blocks/lem-sec-001-05",
+    "library/arxiv-math-0103228v2/blocks/thm-sec-001-06"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0103228v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0103228v2",
+  "provenance": "ingested"
+}

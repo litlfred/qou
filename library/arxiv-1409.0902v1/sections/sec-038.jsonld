@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-1409.0902v1/sections/sec-038",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "7.3.",
+  "pageStart": 19,
+  "pageEnd": 20,
+  "contains": [
+    "library/arxiv-1409.0902v1/blocks/prose-sec-038",
+    "library/arxiv-1409.0902v1/blocks/prop-sec-038-01",
+    "library/arxiv-1409.0902v1/blocks/thm-sec-038-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.0902v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.0902v1",
+  "provenance": "ingested"
+}
