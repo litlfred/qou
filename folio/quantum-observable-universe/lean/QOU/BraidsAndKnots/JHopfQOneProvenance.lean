@@ -52,7 +52,8 @@ distinct Jones normalizations — the loop factor `δ^{c−1}`, the tabulated
 of the `−2` at the classical point: it is the loop/component-count invariant
 `V_L(1) = (−2)^{c−1}`, not an artifact of one normalization.
 
-Base ring (§7c): archimedean (`Real.sqrt`, Jones-variable evaluation), so `ℝ`.
+Base ring (§7c): `ℝ`, for the Jones-variable evaluation. The square root `√q` is passed
+as a symbol `s` rather than computed with `Real.sqrt` (bean `qou-dk7p`).
 
 Ref: [jones1987] https://www.jstor.org/stable/1971403
 Ref: [leitner2026] quantum-observable-universe/mass-theory/jet-filtered-knot-factor.md
@@ -65,13 +66,15 @@ open QOU.BraidKnot.JonesNuclearQuotient
 
 /-- **The Jones loop factor** `δ(q) = −(√q + 1/√q)` — the value of a single
     unknotted loop, and the base of the `(δ)^{n−1}` prefactor in Jones's
-    normalization of the Markov trace. -/
-noncomputable def loopValue (q : ℝ) : ℝ := -(Real.sqrt q + 1 / Real.sqrt q)
+    normalization of the Markov trace. The argument is the square root
+    `s = √q` itself (`s > 0`, `s² = q`), so no `Real.sqrt` is needed (bean
+    `qou-dk7p`); `s = 1` is the classical point. -/
+noncomputable def loopValue (s : ℝ) : ℝ := -(s + 1 / s)
 
 /-- **`δ(1) = −2`.** The entire `J_Hopf(q=1) = −2` originates here: the loop
     factor at the classical point `t = 1`. -/
 theorem loopValue_one : loopValue 1 = -2 := by
-  unfold loopValue; rw [Real.sqrt_one]; norm_num
+  unfold loopValue; norm_num
 
 /-- **The framework's reduced Markov trace of the Hopf closure is `1` at `q=1`,
     NOT `−2`.** Makes the convention gap explicit: `h(1) = 0` kills the
@@ -105,13 +108,14 @@ theorem unknot_atOne : classicalJonesAtOne 1 = 1 := by
 
 /-- **Tabulated standard normalized Jones polynomial of the (negative) Hopf
     link** `V(t) = −t^{1/2} − t^{5/2}` (Jones 1987; standard link tables), in
-    `√q` form (`(√q)^5 = q^{5/2}`). Independent of the loop-factor route. -/
-noncomputable def jonesHopfStd (q : ℝ) : ℝ := -(Real.sqrt q) - (Real.sqrt q) ^ 5
+    `√q` form, as a function of the square root `s = √q` (`s^5 = q^{5/2}`).
+    Independent of the loop-factor route. -/
+def jonesHopfStd (s : ℝ) : ℝ := -s - s ^ 5
 
 /-- **`V_Hopf(1) = −2`** from the tabulated closed form — cross-checks the
     `(−2)^{c−1}` route (`jonesHopf_atOne`). -/
 theorem jonesHopfStd_one : jonesHopfStd 1 = -2 := by
-  unfold jonesHopfStd; rw [Real.sqrt_one]; norm_num
+  unfold jonesHopfStd; norm_num
 
 /-- **The two routes agree at `t = 1`.** The tabulated closed form and the
     `(−2)^{c−1}` loop-factor value both give `−2` for the Hopf link. -/
