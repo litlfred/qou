@@ -9,6 +9,7 @@ source_pdf: neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-copy-b.pdf
 source_sha256: cf021725c96e29ec
 toc_source: undetermined
 doc_brief: "ToporoPy Vol. 24, No. 3, pp. 307-332. 1985. 0040-9383185 s3.00+ — 26 sections: Page 1; Page 2; Page 3"
+duplicate_of: "neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds"
 ---
 VOLUMES OF HYPERBOLIC THREE-MANIFOLDS 
 321 

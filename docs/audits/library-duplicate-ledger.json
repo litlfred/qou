@@ -50,5 +50,13 @@
     "note": "Etingof-Nikshych-Ostrik, On fusion categories, held as arXiv v10 and v11. Same work; v11 (28 Apr 2017) is the later revision. Two grep hits across these directories are ONE source.",
     "recorded": "2026-11-22",
     "adjudicated_by": "agent (bean qou-jl8h)"
+  },
+  {
+    "doc_id": "neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co",
+    "prefer": "neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds",
+    "duplicate_of": "neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds",
+    "note": "Neumann & Zagier, 'Volumes of hyperbolic three-manifolds', Topology 24(3) (1985) 307-332, ingested TWICE: the -co directory's source file is ...-copy-b.pdf (sha256 cf021725...), the bare stem's is the original upload (sha256 e52b539e...). Same scan of the same Pergamon reprint (26 pp each, same PII 0040-9383(85)90004-7 in the PDF docinfo, source bytes 1,764,193 vs 1,764,423); the byte difference is a re-save, not a different edition. Two grep hits across these directories are ONE source. Prefer the bare stem: it is the earlier, un-suffixed copy and the one corpus citations already resolve to. scripts/library-find-duplicates.py did not record them, and neither structure.json carried duplicate_of until this entry, so both held an INDEX.md row. Found 2026-09-27 (bean qou-8l9i) while re-measuring AGENTS.md corpus-grep path 5; adjudicated 2026-11-27 on the owner's instruction.",
+    "recorded": "2026-11-27",
+    "adjudicated_by": "owner (bean qou-8l9i)"
   }
 ]
