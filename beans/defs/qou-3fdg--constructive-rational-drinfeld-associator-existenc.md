@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T19:07:50Z
+updated_at: 2026-11-27T19:12:48Z
 parent: qou-dk7p
 ---
 
@@ -61,3 +61,6 @@ KEY for research leg (p.854, Remark 2 after 5.8): without 5.3, obstruction to li
 
 
 2026-11-27: #9580 (stacked on #9575): HexagonAction.lean, hexagon_act_all: GRT right action preserves the hexagon given g's (5.13), (5.14) and one TCompat instance; transported3_dk3. Exact-Q check through degree 5 in U(t3). Open: TCompat (grt subset krv), unit existence for G's. Carl card pending: TCompat as hypothesis vs prove grt in krv.
+
+
+2026-11-27: #9585 (stacked on #9580, #9575): NilpotentUnits.lean discharges unit hypotheses in U4 N (pentagon_act_U4, hexagon_act_U4). Caveat: #9580's hexagon_act_all hypothesis (hexagon at every DK3 family of R) is unsatisfiable for truncated exps in U4 N; use hexagon_act_U4; universal U3 N with lift still to write. Stage-4 blocker: need every top-degree grt element to be the leading term of a GRT1(K) element. Ordinary exp(sigma3) fails (5.14) at degree 6 (exact Q); the exponential must be for the twisted group law (5.16) (Drinfeld Prop 5.9).
