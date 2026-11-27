@@ -637,3 +637,44 @@ Singular `lift`, checked exactly in sympy, and re-checked by `linear_combination
 Lean: 19 factorise and 1389 do not. One link in this chain is still prose: that an equation
 in the abstract H₆(q) would hold on the sector, which follows from the Hecke relations proved
 in `PhotonPairReachability.lean`.
+
+## Round 13 — 2026-11-27: the bar-invariant Schur normaliser is `[3]_q!` (k = 0), in Lean
+
+Coordinator dispatch (owner: *"all. dispatch siblings"*), option B of the L2 1 PPQ thread:
+prove in Lean that the bar-invariant Schur normaliser is `[3]_q!` with no power of `q`, and
+compare it with production.
+
+**Result: scope-(a) negative, now formalised inside `H₃(q)`.**
+[`QOU/MassTheory/ProtonNormaliserBarSchur.lean`](../../folio/quantum-observable-universe/lean/QOU/MassTheory/ProtonNormaliserBarSchur.lean).
+Setting: any field `K`, `q ≠ 0`, `q` not a root of unity (`NotRootOfUnity`). The bar
+involution is the hypothesis `IsBar q 2 τ φ` already used by `CentralIdempotentInvolution`
+(`φ` a `τ`-semilinear ring endomorphism, `τ q = q⁻¹`, `φ σᵢ = σᵢ⁻¹`); nothing else about `φ`
+is assumed. No measured value enters.
+
+| claim | declaration |
+|---|---|
+| `aᵢ = σᵢ + q⁻¹` is bar-fixed (KL `C′_s`) | `a_bar_fixed` |
+| the `q`-symmetriser `x = a₀a₁a₀ − a₀` is bar-fixed | `symm3_bar_fixed` |
+| `x·x = [3]_q!·x`, balanced `[3]_q!`, no power of `q` | `symm3_mul_self` (from `chi_symm3`) |
+| `ε qᵐ·x` (`ε = ±1`) is bar-fixed iff `m = 0` | `trivial_line_bar_fixed_iff` |
+| `x′ = #x` (sign twist `σᵢ ↦ −σᵢ⁻¹`) spans the sign line: `σᵢx′ = −q⁻¹x′`, `χ_sign(x′) = [3]_q! ≠ 0` | `sign_line`, `chiSign_hashSymm3` |
+| `x′` is bar-fixed, `x′·x′ = [3]_q!·x′` | `hashSymm3_bar_fixed`, `hashSymm3_mul_self` |
+| `ε qᵐ·x′` is bar-fixed iff `m = 0` | `sign_line_bar_fixed_iff` |
+| the only `λ·x′` with square constant `c_sign = [3]_q!·q⁻³` is `λ = q⁻³` | `production_generator_unique` |
+| `q⁻³·x′` is not bar-fixed; `τ([3]_q!) = [3]_q!`; `τ(c_sign) = q⁶c_sign ≠ c_sign` | `production_generator_not_bar_fixed`, `tau_qFact`, `tau_schurSign`, `schurSign_not_bar_fixed` |
+| all of the above in one statement | `bar_normaliser_vs_production` |
+
+**What this closes.** Round 3 left one step argued, not formalised: that `bar(x₋)` lies in
+the sign line, so the sign line has a bar-fixed generator. `sign_line` and
+`hashSymm3_bar_fixed` now prove it directly, by exhibiting the bar-fixed generator `x′`.
+
+**What it does not do.** It does not formalise `x′ = q³·x₋` (the identity coefficient of
+`x′`); the comparison is stated through square constants instead, which does not need it.
+It does not construct a bar involution; `IsBar` is a hypothesis, as in
+`CentralIdempotentInvolution`. And it does not refute `F_Bor`: the normaliser `c_sign`
+stays asserted. The statement is: **the bar involution, applied to the element, selects
+`k = 0`; production's `k = −3` is that normaliser times `q⁻³`, and nothing bar-theoretic
+selects it.** Scope (a), relative to the uniform criterion.
+
+**No number moves.** The `k = 0` arm was already measured by the pre-registered probe
+(Round 4, arm A1). Nothing was computed or fitted here.
