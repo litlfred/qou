@@ -67,3 +67,10 @@ Haar invariance, Part A (`qou-pa7n`).
 **2026-11-27 — note from the off-diagonal thread (PR #9593).** The 3D calculus has twist characters
 diag(q⁻¹, q⁻², q⁻¹): χ₀ ↔ X₊ and χ₂ ↔ −q·X₋, both twisted by q⁻¹. χ₁ is the Cartan field, twisted by q⁻².
 Use these when the budget is extended to all three directions.
+
+**2026-11-27 — budget integrand is minus a square (PR #9596).** For `u = s²`, `a* = a`, and a
+`T_{s⁻¹,s}`-invariant `φ`: `φ(Xa·Xa) = −φ(w*w)`, `w = T_{s⁻¹,s}(Xa)`. Sorry-free. CONDITIONAL
+consequence, not proved: if the Haar state is torus-invariant and positive, then `h(Xa·Xa) ≤ 0`
+and the budget `−c·h(Du·Du)` has the sign of `c` (Woronowicz: `u = q⁻²`, `s = q⁻¹`). No modular
+property is needed. Open: Haar torus invariance + positivity (Haar thread), off-diagonal
+directions, Part A.
