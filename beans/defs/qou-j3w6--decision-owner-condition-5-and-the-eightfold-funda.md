@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - 8f-decide
 created_at: 2026-09-03T15:35:48Z
-updated_at: 2026-11-27T14:27:38Z
+updated_at: 2026-11-27T14:42:13Z
 parent: qou-8lxd
 ---
 
@@ -36,3 +36,9 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8155, closed o
 ## 2026-11-27 — owner reopens the decision: option A
 
 Owner (Carl), project thread 'Close gaps in 8-fold and Standard Model derivation', answering a four-way card (A pure-math Lean / B build W3 / C research / A-then-C-leave-B) with: *"A B C"*. So option A of this bean is taken: keep condition 5 ($\Lambda^2 V \cong \mathbf 1$, $N=2$) on $V$ and add a second fundamental $W$ with $\Lambda^3 W \cong \mathbf 1$, formalize-first, labelled as an axiom datum (not a derivation). Supersedes owner decision 4d (2026-10-10, 'nothing changes for now'). Session epic `qou-x08k`.
+
+
+
+## 2026-11-27 — option A formalised in PR #9450
+
+`QOU/Core/FlavouredQuantumObservableUniverse.lean` + `def:flavoured-quantum-observable-universe`. Clause `Hom(1, W⊗W) = 0` added beyond the frame's option A, because without it the classical `Sym²V` satisfies the datum inside the fibre category. Leave in-progress until merged.

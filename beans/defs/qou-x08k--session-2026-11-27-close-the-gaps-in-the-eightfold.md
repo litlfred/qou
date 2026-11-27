@@ -7,7 +7,7 @@ priority: high
 tags:
     - 8f-index
 created_at: 2026-11-27T14:25:39Z
-updated_at: 2026-11-27T14:34:43Z
+updated_at: 2026-11-27T14:42:13Z
 parent: qou-0uga
 ---
 
@@ -55,3 +55,11 @@ Verbatim: *"A B C"*. B reopens `qou-j3w6` as option A (second fundamental $W$, $
 ## 2026-11-27 — A1 closed in PR #9444
 
 `OctonionColourTripletComplexType.lean` (0 sorry): octonionic colour triple is complex type; `Sym²(3)` has no singlet; `3 ≇ 3̄`. Paper ledger rows updated from 'not excluded (cited)' to 'passes (proved)'. A2 finding: `dim Der(O) = 14` (`octonion_derivation_dim`) and stabilizer dim 8 (`finrank_su3_e1`) were already proved; the ledger row was stale and is corrected in the same PR. Remaining A2: continuous G2 / S^6 coset.
+
+
+
+## 2026-11-27 — progress
+
+- A3 → PR #9446: canonical reading `FaithfulVia` (the class `GaugeHeckeRealization` is the weaker existence reading); n = 2 proved (iff q not a root of unity); n = 3, 4 faithful at generic q via Burau (Magnus–Peluso; Bharathram–Birman–Brendle arXiv:2607.05283); n ≥ 5 open problem. Lawrence–Krammer withdrawn as support (BMW, not Hecke).
+- B → PR #9450 (stacked on #9444): `FlavouredQuantumObservableUniverse` axiom datum + block `def:flavoured-quantum-observable-universe`.
+- Next: A4 (row cap, actual isotypic dimensions of V^{⊗3}), then C.
