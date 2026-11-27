@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - compute-accuracy
 created_at: 2026-08-08T09:31:00Z
-updated_at: 2026-11-27T15:00:00Z
+updated_at: 2026-11-27T17:36:29Z
 parent: qou-2002
 ---
 
@@ -374,3 +374,9 @@ The Ohtsuki series equals the q->1 expansion of (A/2-1)/(q(1-q)), where A is the
 ## 2026-11-27 — open-worldline path, scope (a) (PR #9492)
 
 Owner chose "both" new paths. Open worldline (unknot-normalised projector insertions on 4_1): closed class = open / tr_M(4_1); only pole w = -2 (radius 2 vs 0.098 closed), so #9445's large coefficients are a normalisation artifact. Leading terms nonzero; rank 3 on (1, tr_M, S1, D, C); (5c/8, -9c/8, 11c/8) on (1, tr_M, pair) gives any w^2 = c (Lean open_w2_not_forced). Smallest natural |w^2| 31/16 vs 3 alpha/4pi = 1.74e-3 (comparison only). Candidate stays unwired. Full Hecke weights (y_111 != 0) in a sibling thread. Bean stays open.
+
+
+
+## 2026-11-27 — full Hecke weights, scope (a) (PR #9512)
+
+2026-11-27 (thread "Test mu-p with full Hecke weights", PR #9512, branch claude/mu-p-full-hecke-weights-2026-11-27): owner chose "both" routes; this is the full-Hecke one. Scope (a) NEGATIVE for photon-projector insertions on 4_1 under the full Ocneanu trace on H_3 with symbolic z (y111 != 0; comparison family, convention D canonical, no z chosen). Exact weights in Q(q,z); z = q^3/(q^2+1) reproduces #9445 (Lean pairCorrZ_su2). Single insertion = -(z-q)R/((q^2+1)W), so every observable has the factor (z-q) (trivial-only trace); at q=1 it is (z-1)/z. SU(N) slice z = q^N/[N], N symbolic: O(1)=O(w)=0 only at N=+-1 (degenerate traces, correlators trivial; Lean suN_vanishing_forces_degenerate); rank 3, w^2 unforced off roots of 7N^4+126N^2-621 (suN_w2_not_forced). General bar-covariant z = sinh h(1+2c/h+2k1 h+2k3 h^3): O(1)=O(w)=0 pins c=1/2, k1=1/6 (the z=q values), leaving O(w^2) = 2(k3+1/90), a free Taylor coefficient of z (general_z_w2_free, F_one_one). Hitting -3alpha/4pi would need choosing k3: selection. Lean MuPFullHeckeWeights.lean sorry-free, axioms clean. Audit docs/audits/2026-11-27-mu-p-full-hecke-weights.md. GAP still open: open-worldline non-Markov reduction (sibling thread).
