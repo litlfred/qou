@@ -153,6 +153,7 @@ import QOU.Transcendental.HoefsmitSqrt
 import QOU.Transcendental.RpowSqrtHelpers
 import QOU.Transcendental.MassTheory.BindingRecurrenceSpectralReal
 import QOU.Transcendental.BringsSurface.MetallicHierarchyReal
+import QOU.Transcendental.BraidKnotOctonion.MarkovZNLegacy
 import QOU.Transcendental.MathlibExt.TauRhoHodgePiIdentities
 import QOU.Transcendental.BraidKnotOctonion.FigureEightKashaevHabiroReading
 import MathlibExt.CauchyBinet
