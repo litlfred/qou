@@ -12,7 +12,7 @@ Wedderburn decomposition is
 
 with `σᵢ ↦ q` on `(3)`, `σᵢ ↦ −q⁻¹` on `(1³)`, and the Hoefsmit orthogonal form
 on `(2,1)`: `σ₀ ↦ diag(q, −q⁻¹)`, `σ₁ ↦ [[a, b], [b, a']]` with
-`a = h/(1 − q⁴)`, `a' = h/(1 − q⁻⁴)`, `b = √(a·a' + 1)`, `h = q − q⁻¹`
+`a = h/(1 − q⁴)`, `a' = h/(1 − q⁻⁴)`, `b² = a·a' + 1`, `h = q − q⁻¹`
 (`computations/hoefsmit_mpmath.py`, `pyhecke.syt_prefix_cache.BlockCache`).
 
 ## What is proved (all sorry-free; every claim was measured at the proton `q₀`
@@ -31,10 +31,15 @@ before being stated)
   whenever `b ≠ 0`. This is the `H₃` analogue of step 1's `σ₀` being
   infeasible on `H₂`, and it is what the probe measures for all `k ≤ 5`: no
   nonempty vertex power has a symmetric `(2,1)` image at the proton pin.
-* `hoefsmitB_pos`, `hoefsmit_std_sigma1_hecke` — the concrete Hoefsmit data
-  has `b² = [3]_q/[2]_q² > 0` (so `b ≠ 0` is *derived*, not assumed, for every
-  `0 < q ≠ 1`) and satisfies the Hecke relation `σ₁² = h·σ₁ + 1`. A wrong
-  `a`, `a'` or `b` would fail the second theorem.
+* `HoefsmitRoot.ne_zero`, `hoefsmit_std_sigma1_hecke` — any `b` with
+  `b² = a·a' + 1 = [3]_q/[2]_q² > 0` has `b ≠ 0` (*derived*, not assumed, for
+  every `0 < q ≠ 1`), and the Hoefsmit data satisfies the Hecke relation
+  `σ₁² = h·σ₁ + 1`. A wrong `a`, `a'` or `b` would fail the second theorem.
+  The orthogonal entry `b` lies in the quadratic extension `ℚ(q)(√[3]_q)`, not in
+  `ℚ(q)`, so it is carried as a root of its defining equation (`HoefsmitRoot`)
+  rather than computed with `Real.sqrt` (owner ruling 2026-11-27: real
+  completions stay behind the transcendental boundary). The positive square root
+  is `QOU.Transcendental.HoefsmitSqrt.hoefsmitB`.
 * `nil_psdFeasible`, `sdpSelected_nil` — the empty word is PSD-feasible, and
   under the corpus cost (crossing count) it is what the *literal*
   `SDPSelected` selects over any candidate set containing it. This is the
@@ -46,8 +51,9 @@ before being stated)
 ## Base ring (§7c)
 
 `trivChar`, `vertexPow`, `InH3`, and the block-image fold are over a generic
-`[Field R]`. Everything involving `Matrix.PosSemidef`, `Real.sqrt`, or an
-order is on `ℝ` and sits at the end.
+`[Field R]`. Everything involving `Matrix.PosSemidef` or an order is on `ℝ`
+and sits at the end. No square root is taken: `b` enters as a root of
+`b² = a·a' + 1`.
 
 Nothing here reads AME, CODATA, or a census.
 -/
@@ -301,8 +307,9 @@ noncomputable def qTwo (q : ℝ) : ℝ := q + q⁻¹
 /-- `[3]_q = q² + 1 + q⁻²`. -/
 noncomputable def qThree (q : ℝ) : ℝ := q ^ 2 + 1 + (q ^ 2)⁻¹
 
-/-- `b = √(a·a' + 1)`, the Hoefsmit off-diagonal entry. -/
-noncomputable def hoefsmitB (q : ℝ) : ℝ := Real.sqrt (hoefsmitA q * hoefsmitA' q + 1)
+/-- `b` is a Hoefsmit off-diagonal entry at `q`: a root of `b² = a·a' + 1`. Both signs
+are allowed; nothing below uses more than `b ≠ 0`. -/
+def HoefsmitRoot (q b : ℝ) : Prop := b ^ 2 = hoefsmitA q * hoefsmitA' q + 1
 
 theorem one_sub_pow_four_ne_zero {q : ℝ} (hq : 0 < q) (hq1 : q ≠ 1) : 1 - q ^ 4 ≠ 0 := by
   intro h
@@ -341,37 +348,36 @@ theorem hoefsmitA_mul_A'_add_one {q : ℝ} (hq : 0 < q) (hq1 : q ≠ 1) :
 theorem qThree_div_qTwo_sq_pos {q : ℝ} (hq : 0 < q) : 0 < qThree q / qTwo q ^ 2 := by
   unfold qThree qTwo; positivity
 
-/-- **`b > 0` for every `0 < q ≠ 1`** — the `(2,1)` block is irreducible and the
-hypothesis of `vertex_not_psdFeasible` is met by the actual Hoefsmit data. -/
-theorem hoefsmitB_pos {q : ℝ} (hq : 0 < q) (hq1 : q ≠ 1) : 0 < hoefsmitB q := by
-  unfold hoefsmitB
-  rw [hoefsmitA_mul_A'_add_one hq hq1]
-  exact Real.sqrt_pos.mpr (qThree_div_qTwo_sq_pos hq)
-
-theorem hoefsmitB_sq {q : ℝ} (hq : 0 < q) (hq1 : q ≠ 1) :
-    hoefsmitB q ^ 2 = hoefsmitA q * hoefsmitA' q + 1 := by
-  unfold hoefsmitB
-  rw [Real.sq_sqrt]
-  rw [hoefsmitA_mul_A'_add_one hq hq1]
-  exact (qThree_div_qTwo_sq_pos hq).le
+/-- **`b ≠ 0` for every `0 < q ≠ 1`** — `b² = [3]_q/[2]_q² > 0`, so the `(2,1)`
+block is irreducible and the hypothesis of `vertex_not_psdFeasible` is met by the
+actual Hoefsmit data. -/
+theorem HoefsmitRoot.ne_zero {q b : ℝ} (hb : HoefsmitRoot q b) (hq : 0 < q) (hq1 : q ≠ 1) :
+    b ≠ 0 := by
+  intro h0
+  have h : b ^ 2 = hoefsmitA q * hoefsmitA' q + 1 := hb
+  rw [hoefsmitA_mul_A'_add_one hq hq1, h0] at h
+  have := qThree_div_qTwo_sq_pos hq
+  simp at h
+  linarith
 
 /-- **The Hoefsmit `σ₁` satisfies the Hecke relation `σ₁² = h·σ₁ + 1`** — a wrong
 `a`, `a'` or `b` fails this. -/
-theorem hoefsmit_std_sigma1_hecke {q : ℝ} (hq : 0 < q) (hq1 : q ≠ 1) :
-    hoefsmitSigma1 (hoefsmitA q) (hoefsmitB q) (hoefsmitA' q) *
-        hoefsmitSigma1 (hoefsmitA q) (hoefsmitB q) (hoefsmitA' q) =
-      hOf q • hoefsmitSigma1 (hoefsmitA q) (hoefsmitB q) (hoefsmitA' q) + 1 := by
+theorem hoefsmit_std_sigma1_hecke {q b : ℝ} (hq : 0 < q) (hq1 : q ≠ 1)
+    (hb : HoefsmitRoot q b) :
+    hoefsmitSigma1 (hoefsmitA q) b (hoefsmitA' q) *
+        hoefsmitSigma1 (hoefsmitA q) b (hoefsmitA' q) =
+      hOf q • hoefsmitSigma1 (hoefsmitA q) b (hoefsmitA' q) + 1 := by
   have hsum := hoefsmitA_add_A' hq hq1
-  have hsq := hoefsmitB_sq hq hq1
+  have hsq : b ^ 2 = hoefsmitA q * hoefsmitA' q + 1 := hb
   unfold hoefsmitSigma1
   ext i j
   fin_cases i <;> fin_cases j
   · simp [Matrix.mul_apply, Fin.sum_univ_two]
     linear_combination hsq + hoefsmitA q * hsum
   · simp [Matrix.mul_apply, Fin.sum_univ_two]
-    linear_combination hoefsmitB q * hsum
+    linear_combination b * hsum
   · simp [Matrix.mul_apply, Fin.sum_univ_two]
-    linear_combination hoefsmitB q * hsum
+    linear_combination b * hsum
   · simp [Matrix.mul_apply, Fin.sum_univ_two]
     linear_combination hsq + hoefsmitA' q * hsum
 
@@ -386,12 +392,13 @@ theorem hoefsmit_std_sigma0_hecke {q : ℝ} (hq : 0 < q) :
     simp [Matrix.mul_apply, Fin.sum_univ_two] <;>
     field_simp <;> ring
 
-/-- **The concrete `H₃` vertex is not PSD-feasible for any `0 < q ≠ 1`.** No
-hypothesis on `b` remains: it is the Hoefsmit value. -/
-theorem hoefsmit_vertex_not_psdFeasible {q : ℝ} (hq : 0 < q) (hq1 : q ≠ 1) :
+/-- **The concrete `H₃` vertex is not PSD-feasible for any `0 < q ≠ 1`.** The
+only hypothesis on `b` is that it is a Hoefsmit root. -/
+theorem hoefsmit_vertex_not_psdFeasible {q b : ℝ} (hq : 0 < q) (hq1 : q ≠ 1)
+    (hb : HoefsmitRoot q b) :
     ¬ (h3Blocks q (hOf q)
-        (hoefsmitGen q (hoefsmitA q) (hoefsmitB q) (hoefsmitA' q))).PSDFeasible (vertex 0) :=
-  vertex_not_psdFeasible hq (hoefsmitB_pos hq hq1).ne'
+        (hoefsmitGen q (hoefsmitA q) b (hoefsmitA' q))).PSDFeasible (vertex 0) :=
+  vertex_not_psdFeasible hq (hb.ne_zero hq hq1)
 
 end Hoefsmit
 

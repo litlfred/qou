@@ -157,11 +157,12 @@ section Selection
 /-- **The reading-3 selection over ten vertices is unique**: on `1 < q ≤ 23/20` with
 `y_(2,1) > 0`, any cost-minimal Frobenius-feasible non-zero vertex power with `k ≤ 10` is
 `β_Bor = V³`. -/
-theorem frobeniusSelected_ten_unique {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+theorem frobeniusSelected_ten_unique {q b : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+    (hbr : HoefsmitRoot q b)
     (y : H3Block → ℝ) (hy : 0 < y .std) {w : Word}
-    (hw : FrobeniusSelected (hoefsmitH3 q) y (vertexPowCands 10) (fun w => (w.length : ℝ)) w) :
+    (hw : FrobeniusSelected (hoefsmitH3 q b) y (vertexPowCands 10) (fun w => (w.length : ℝ)) w) :
     w = borromean := by
-  have hc := hw.cost_eq (frobeniusSelected_borromean_ten hq1 hq2 y hy)
+  have hc := hw.cost_eq (frobeniusSelected_borromean_ten hq1 hq2 hbr y hy)
   obtain ⟨k, _, _, rfl⟩ := hw.mem
   have hlen : ((vertexPow k).length : ℝ) = ((vertexPow 3).length : ℝ) := by
     simpa [vertexPow_three] using hc
@@ -176,26 +177,28 @@ reading-3-selected from the same data (the γγ grammar on three strands has no 
 so they coincide, and every functional `ε` takes the same value on both. Hence
 `|ε W_n − ε W_p| · E₀ = 0` for every `E₀`, in particular for the ruled `ε` (Markov trace at
 `z_D`) and the tower-summed `E₀`. -/
-theorem qbeta_delta_vanishes_of_frobeniusSelected {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+theorem qbeta_delta_vanishes_of_frobeniusSelected {q b : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+    (hbr : HoefsmitRoot q b)
     (y : H3Block → ℝ) (hy : 0 < y .std) {wp wn : Word}
-    (hp : FrobeniusSelected (hoefsmitH3 q) y (vertexPowCands 10) (fun w => (w.length : ℝ)) wp)
-    (hn : FrobeniusSelected (hoefsmitH3 q) y (vertexPowCands 10) (fun w => (w.length : ℝ)) wn)
+    (hp : FrobeniusSelected (hoefsmitH3 q b) y (vertexPowCands 10) (fun w => (w.length : ℝ)) wp)
+    (hn : FrobeniusSelected (hoefsmitH3 q b) y (vertexPowCands 10) (fun w => (w.length : ℝ)) wn)
     (ε : Word → ℝ) (E₀ : ℝ) :
     |ε wn - ε wp| * E₀ = 0 := by
-  rw [frobeniusSelected_ten_unique hq1 hq2 y hy hp, frobeniusSelected_ten_unique hq1 hq2 y hy hn]
+  rw [frobeniusSelected_ten_unique hq1 hq2 hbr y hy hp, frobeniusSelected_ten_unique hq1 hq2 hbr y hy hn]
   simp
 
 /-- **Negative control: feasibility alone does not force the vanishing.** `V³` and `V⁶` are
 both reading-3-feasible on the interval, and the crossing-count functional separates them
 (`12 − 6 = 6`). The zero above therefore comes from the cost-minimal selection. -/
-theorem feasible_pair_delta_ne_zero {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+theorem feasible_pair_delta_ne_zero {q b : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+    (hbr : HoefsmitRoot q b)
     (y : H3Block → ℝ) (hy : 0 < y .std) :
-    FrobeniusFeasible (hoefsmitH3 q) y (vertexPow 3) ∧
-      FrobeniusFeasible (hoefsmitH3 q) y (vertexPow 6) ∧
+    FrobeniusFeasible (hoefsmitH3 q b) y (vertexPow 3) ∧
+      FrobeniusFeasible (hoefsmitH3 q b) y (vertexPow 6) ∧
       ((vertexPow 6).length : ℝ) - ((vertexPow 3).length : ℝ) ≠ 0 := by
-  refine ⟨(vertexPow_frobeniusFeasible_iff_three_dvd hq1 hq2 y hy 3 (by norm_num)
+  refine ⟨(vertexPow_frobeniusFeasible_iff_three_dvd hq1 hq2 hbr y hy 3 (by norm_num)
       (by norm_num)).2 ⟨1, rfl⟩,
-    (vertexPow_frobeniusFeasible_iff_three_dvd hq1 hq2 y hy 6 (by norm_num)
+    (vertexPow_frobeniusFeasible_iff_three_dvd hq1 hq2 hbr y hy 6 (by norm_num)
       (by norm_num)).2 ⟨2, rfl⟩, ?_⟩
   rw [vertexPow_length, vertexPow_length]
   norm_num

@@ -228,26 +228,26 @@ end Signs
 section H3Ten
 
 /-- The closed forms at the concrete Hoefsmit data, `k = 6..10`, `x = h²`. -/
-theorem hoefsmitVtx_traces_ten {q : ℝ} (hq1 : 1 < q) :
-    (hoefsmitVtx q ^ 6).trace =
+theorem hoefsmitVtx_traces_ten {q b : ℝ} (hq1 : 1 < q) (hbr : HoefsmitRoot q b) :
+    (hoefsmitVtx q b ^ 6).trace =
         (hOf q ^ 2) ^ 6 + 6 * (hOf q ^ 2) ^ 5 + 9 * (hOf q ^ 2) ^ 4 - 4 * (hOf q ^ 2) ^ 3
           - 12 * (hOf q ^ 2) ^ 2 + 2 ∧
-      (hoefsmitVtx q ^ 7).trace =
+      (hoefsmitVtx q b ^ 7).trace =
         -(hOf q ^ 2) ^ 7 - 7 * (hOf q ^ 2) ^ 6 - 14 * (hOf q ^ 2) ^ 5 + 21 * (hOf q ^ 2) ^ 3
           + 7 * (hOf q ^ 2) ^ 2 - 7 * hOf q ^ 2 - 1 ∧
-      (hoefsmitVtx q ^ 8).trace =
+      (hoefsmitVtx q b ^ 8).trace =
         (hOf q ^ 2) ^ 8 + 8 * (hOf q ^ 2) ^ 7 + 20 * (hOf q ^ 2) ^ 6 + 8 * (hOf q ^ 2) ^ 5
           - 30 * (hOf q ^ 2) ^ 4 - 24 * (hOf q ^ 2) ^ 3 + 12 * (hOf q ^ 2) ^ 2 + 8 * hOf q ^ 2
           - 1 ∧
-      (hoefsmitVtx q ^ 9).trace =
+      (hoefsmitVtx q b ^ 9).trace =
         -(hOf q ^ 2) ^ 9 - 9 * (hOf q ^ 2) ^ 8 - 27 * (hOf q ^ 2) ^ 7 - 21 * (hOf q ^ 2) ^ 6
           + 36 * (hOf q ^ 2) ^ 5 + 54 * (hOf q ^ 2) ^ 4 - 9 * (hOf q ^ 2) ^ 3
           - 27 * (hOf q ^ 2) ^ 2 + 2 ∧
-      (hoefsmitVtx q ^ 10).trace =
+      (hoefsmitVtx q b ^ 10).trace =
         (hOf q ^ 2) ^ 10 + 10 * (hOf q ^ 2) ^ 9 + 35 * (hOf q ^ 2) ^ 8 + 40 * (hOf q ^ 2) ^ 7
           - 35 * (hOf q ^ 2) ^ 6 - 98 * (hOf q ^ 2) ^ 5 - 15 * (hOf q ^ 2) ^ 4
           + 60 * (hOf q ^ 2) ^ 3 + 15 * (hOf q ^ 2) ^ 2 - 10 * hOf q ^ 2 - 1 := by
-  obtain ⟨hqinv, hh, ha, ha', hb, hq21⟩ := hoefsmit_relations hq1
+  obtain ⟨hqinv, hh, ha, ha', hb, hq21⟩ := hoefsmit_relations hq1 hbr
   unfold hoefsmitVtx
   exact ⟨trace_vtx_pow_six hqinv hh ha ha' hb hq21, trace_vtx_pow_seven hqinv hh ha ha' hb hq21,
     trace_vtx_pow_eight hqinv hh ha ha' hb hq21, trace_vtx_pow_nine hqinv hh ha ha' hb hq21,
@@ -255,17 +255,18 @@ theorem hoefsmitVtx_traces_ten {q : ℝ} (hq1 : 1 < q) :
 
 /-- **The `H₃` table for `k = 6..10`**: `k = 6, 9` feasible, `k = 7, 8, 10` infeasible, for
 every `1 < q ≤ 23/20` and every weight with `y_(2,1) > 0`. -/
-theorem hoefsmit_vertexPow_frobenius_table_ten {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+theorem hoefsmit_vertexPow_frobenius_table_ten {q b : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+    (hbr : HoefsmitRoot q b)
     (y : H3Block → ℝ) (hy : 0 < y .std) :
-    FrobeniusFeasible (hoefsmitH3 q) y (vertexPow 6) ∧
-      ¬ FrobeniusFeasible (hoefsmitH3 q) y (vertexPow 7) ∧
-      ¬ FrobeniusFeasible (hoefsmitH3 q) y (vertexPow 8) ∧
-      FrobeniusFeasible (hoefsmitH3 q) y (vertexPow 9) ∧
-      ¬ FrobeniusFeasible (hoefsmitH3 q) y (vertexPow 10) := by
+    FrobeniusFeasible (hoefsmitH3 q b) y (vertexPow 6) ∧
+      ¬ FrobeniusFeasible (hoefsmitH3 q b) y (vertexPow 7) ∧
+      ¬ FrobeniusFeasible (hoefsmitH3 q b) y (vertexPow 8) ∧
+      FrobeniusFeasible (hoefsmitH3 q b) y (vertexPow 9) ∧
+      ¬ FrobeniusFeasible (hoefsmitH3 q b) y (vertexPow 10) := by
   have hq : 0 < q := by linarith
   obtain ⟨hx, hx1⟩ := hOf_sq_bounds hq1 hq2
   obtain ⟨s6, s7, s8, s9, s10⟩ := chi_signs_six_to_ten hx hx1
-  obtain ⟨t6, t7, t8, t9, t10⟩ := hoefsmitVtx_traces_ten hq1
+  obtain ⟨t6, t7, t8, t9, t10⟩ := hoefsmitVtx_traces_ten hq1 hbr
   simp only [hoefsmitH3_vertexPow_iff hq y]
   refine ⟨?_, ?_, ?_, ?_, ?_⟩
   · intro _; rw [t6]; exact s6.le
@@ -276,11 +277,12 @@ theorem hoefsmit_vertexPow_frobenius_table_ten {q : ℝ} (hq1 : 1 < q) (hq2 : q 
 
 /-- **Reading 3 on `H₃`, `1 ≤ k ≤ 10`: feasible iff `3 ∣ k`** — the survivors are the powers
 of the `q`-deformed 3-cycle `V³`. -/
-theorem vertexPow_frobeniusFeasible_iff_three_dvd {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+theorem vertexPow_frobeniusFeasible_iff_three_dvd {q b : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+    (hbr : HoefsmitRoot q b)
     (y : H3Block → ℝ) (hy : 0 < y .std) (k : ℕ) (hk1 : 1 ≤ k) (hk10 : k ≤ 10) :
-    FrobeniusFeasible (hoefsmitH3 q) y (vertexPow k) ↔ 3 ∣ k := by
-  obtain ⟨n1, n2, f3, n4, n5⟩ := hoefsmit_vertexPow_frobenius_table hq1 hq2 y hy
-  obtain ⟨f6, n7, n8, f9, n10⟩ := hoefsmit_vertexPow_frobenius_table_ten hq1 hq2 y hy
+    FrobeniusFeasible (hoefsmitH3 q b) y (vertexPow k) ↔ 3 ∣ k := by
+  obtain ⟨n1, n2, f3, n4, n5⟩ := hoefsmit_vertexPow_frobenius_table hq1 hq2 hbr y hy
+  obtain ⟨f6, n7, n8, f9, n10⟩ := hoefsmit_vertexPow_frobenius_table_ten hq1 hq2 hbr y hy
   interval_cases k
   · exact ⟨fun h => absurd h n1, fun h => absurd h (by decide)⟩
   · exact ⟨fun h => absurd h n2, fun h => absurd h (by decide)⟩
@@ -295,11 +297,12 @@ theorem vertexPow_frobeniusFeasible_iff_three_dvd {q : ℝ} (hq1 : 1 < q) (hq2 :
 
 /-- **Reading 3 still selects `β_Bor` with candidates up to ten vertices**, for every
 `1 < q ≤ 23/20`: `k = 6, 9` are feasible but cost 12 and 18. -/
-theorem frobeniusSelected_borromean_ten {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+theorem frobeniusSelected_borromean_ten {q b : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+    (hbr : HoefsmitRoot q b)
     (y : H3Block → ℝ) (hy : 0 < y .std) :
-    FrobeniusSelected (hoefsmitH3 q) y (vertexPowCands 10) (fun w => (w.length : ℝ))
+    FrobeniusSelected (hoefsmitH3 q b) y (vertexPowCands 10) (fun w => (w.length : ℝ))
       borromean := by
-  obtain ⟨n1, n2, f3, _, _⟩ := hoefsmit_vertexPow_frobenius_table hq1 hq2 y hy
+  obtain ⟨n1, n2, f3, _, _⟩ := hoefsmit_vertexPow_frobenius_table hq1 hq2 hbr y hy
   refine ⟨⟨3, by norm_num, by norm_num, vertexPow_three.symm⟩, ?_, ?_⟩
   · rw [← vertexPow_three]; exact f3
   · rintro w' ⟨k, hk1, hk10, rfl⟩ hf
@@ -317,8 +320,9 @@ section H6Ten
 
 /-- **The `H₆` bond table for `m = 6..10`** on `1 < q ≤ 10/9`: `G⁶, G⁹` feasible,
 `G⁷, G⁸, G¹⁰` infeasible. -/
-theorem interface_frobenius_table_ten {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 10 / 9)
-    (B : WedderburnBlocks ℝ Word H6Block H6Block.dim) (hB : InterfaceBranching q B)
+theorem interface_frobenius_table_ten {q b : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 10 / 9)
+    (hbr : HoefsmitRoot q b)
+    (B : WedderburnBlocks ℝ Word H6Block H6Block.dim) (hB : InterfaceBranching q b B)
     (y : H6Block → ℝ) (hy : ∀ l, 0 < y l → l.twoRow) (h33 : 0 < y .threeThree) :
     FrobeniusFeasible B y (interfaceBond 6) ∧
       ¬ FrobeniusFeasible B y (interfaceBond 7) ∧
@@ -328,7 +332,7 @@ theorem interface_frobenius_table_ten {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 10 / 
   have hq2' : q ≤ 23 / 20 := by linarith
   obtain ⟨hx, _⟩ := hOf_sq_bounds hq1 hq2'
   have hx18 : hOf q ^ 2 ≤ 1 / 18 := h_sq_le_eighteenth_of_q_le hq1.le hq2
-  obtain ⟨t6, t7, t8, t9, t10⟩ := hoefsmitVtx_traces_ten hq1
+  obtain ⟨t6, t7, t8, t9, t10⟩ := hoefsmitVtx_traces_ten hq1 hbr
   obtain ⟨s6, s7, s8, s9, s10⟩ := h6_signs_six_to_ten hx hx18
   obtain ⟨c6, _, _, c9, _⟩ := chi_signs_six_to_ten hx (by linarith)
   simp only [interface_frobeniusFeasible_iff B hB y]
@@ -350,13 +354,14 @@ theorem interface_frobenius_table_ten {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 10 / 
   · intro h; have := h .threeThree h33; rw [branchedChar_threeThree, t10] at this; linarith
 
 /-- **Reading 3 on the `H₆` interface, `1 ≤ m ≤ 10`, `1 < q ≤ 10/9`: feasible iff `3 ∣ m`.** -/
-theorem interface_frobeniusFeasible_iff_three_dvd {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 10 / 9)
-    (B : WedderburnBlocks ℝ Word H6Block H6Block.dim) (hB : InterfaceBranching q B)
+theorem interface_frobeniusFeasible_iff_three_dvd {q b : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 10 / 9)
+    (hbr : HoefsmitRoot q b)
+    (B : WedderburnBlocks ℝ Word H6Block H6Block.dim) (hB : InterfaceBranching q b B)
     (y : H6Block → ℝ) (hy : ∀ l, 0 < y l → l.twoRow) (h33 : 0 < y .threeThree)
     (m : ℕ) (hm1 : 1 ≤ m) (hm10 : m ≤ 10) :
     FrobeniusFeasible B y (interfaceBond m) ↔ 3 ∣ m := by
-  obtain ⟨n1, n2, f3, n4, n5⟩ := interface_frobenius_table hq1 (by linarith) B hB y hy h33
-  obtain ⟨f6, n7, n8, f9, n10⟩ := interface_frobenius_table_ten hq1 hq2 B hB y hy h33
+  obtain ⟨n1, n2, f3, n4, n5⟩ := interface_frobenius_table hq1 (by linarith) hbr B hB y hy h33
+  obtain ⟨f6, n7, n8, f9, n10⟩ := interface_frobenius_table_ten hq1 hq2 hbr B hB y hy h33
   interval_cases m
   · exact ⟨fun h => absurd h n1, fun h => absurd h (by decide)⟩
   · exact ⟨fun h => absurd h n2, fun h => absurd h (by decide)⟩
@@ -372,11 +377,12 @@ theorem interface_frobeniusFeasible_iff_three_dvd {q : ℝ} (hq1 : 1 < q) (hq2 :
 /-- **The pp bond `G³` is still selected among `m ≤ 10`**, and on the **wide** interval
 `1 < q ≤ 23/20`: only `G¹, G²` infeasible and `G³` feasible are needed, since every bond
 with `m ≥ 3` costs at least six crossings. -/
-theorem interfaceSelected_three_ten {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
-    (B : WedderburnBlocks ℝ Word H6Block H6Block.dim) (hB : InterfaceBranching q B)
+theorem interfaceSelected_three_ten {q b : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+    (hbr : HoefsmitRoot q b)
+    (B : WedderburnBlocks ℝ Word H6Block H6Block.dim) (hB : InterfaceBranching q b B)
     (y : H6Block → ℝ) (hy : ∀ l, 0 < y l → l.twoRow) (h33 : 0 < y .threeThree) :
     FrobeniusSelected B y (interfaceCands 10) (fun w => (w.length : ℝ)) (interfaceBond 3) := by
-  obtain ⟨n1, n2, f3, _, _⟩ := interface_frobenius_table hq1 hq2 B hB y hy h33
+  obtain ⟨n1, n2, f3, _, _⟩ := interface_frobenius_table hq1 hq2 hbr B hB y hy h33
   refine ⟨⟨3, by norm_num, by norm_num, rfl⟩, f3, ?_⟩
   rintro w' ⟨m, hm1, hm10, rfl⟩ hf
   interval_cases m

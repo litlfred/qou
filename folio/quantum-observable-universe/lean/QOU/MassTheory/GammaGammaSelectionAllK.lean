@@ -61,10 +61,11 @@ theorem mem_cands_iff_vertexPow {w : Word} :
     simp at this
     omega
 
-theorem frobeniusSelected_borromean_all {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+theorem frobeniusSelected_borromean_all {q b : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+    (hbr : HoefsmitRoot q b)
     (y : H3Block → ℝ) (hy : 0 < y .std) :
-    FrobeniusSelected (hoefsmitH3 q) y gammaGammaH3Cands (fun w => (w.length : ℝ)) borromean := by
-  obtain ⟨n1, n2, f3, _, _⟩ := hoefsmit_vertexPow_frobenius_table hq1 hq2 y hy
+    FrobeniusSelected (hoefsmitH3 q b) y gammaGammaH3Cands (fun w => (w.length : ℝ)) borromean := by
+  obtain ⟨n1, n2, f3, _, _⟩ := hoefsmit_vertexPow_frobenius_table hq1 hq2 hbr y hy
   refine ⟨mem_cands_iff_vertexPow.2 ⟨3, by norm_num, vertexPow_three.symm⟩, ?_, ?_⟩
   · rw [← vertexPow_three]; exact f3
   · intro w' hw' hf
@@ -77,11 +78,12 @@ theorem frobeniusSelected_borromean_all {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 
     have : 3 ≤ k := by omega
     exact_mod_cast (by omega : 2 * 3 ≤ 2 * k)
 
-theorem frobeniusSelected_all_eq_borromean {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+theorem frobeniusSelected_all_eq_borromean {q b : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+    (hbr : HoefsmitRoot q b)
     (y : H3Block → ℝ) (hy : 0 < y .std) {w : Word}
-    (hw : FrobeniusSelected (hoefsmitH3 q) y gammaGammaH3Cands (fun w => (w.length : ℝ)) w) :
+    (hw : FrobeniusSelected (hoefsmitH3 q b) y gammaGammaH3Cands (fun w => (w.length : ℝ)) w) :
     w = borromean := by
-  have hc := hw.cost_eq (frobeniusSelected_borromean_all hq1 hq2 y hy)
+  have hc := hw.cost_eq (frobeniusSelected_borromean_all hq1 hq2 hbr y hy)
   obtain ⟨k, _, rfl⟩ := mem_cands_iff_vertexPow.1 hw.mem
   rw [← vertexPow_three, vertexPow_length, vertexPow_length] at hc
   have : k = 3 := by
