@@ -1,4 +1,5 @@
 import QOU.FluidDynamics.q_ns_haar_field_invariance_full
+import CompactQuantumMetrics.OqSU2BudgetSign
 
 /-!
 # QOU.FluidDynamics.q_ns_haar_budget_full — the Haar budget identity on all of `O_q(SU(2))`
@@ -27,11 +28,8 @@ Write `T = θ_{q⁻¹, q}` for the twist of the twisted Leibniz rule
 * `energy_rate_full`: for `u̇ = −νLu`, the rate of `h(u · u)` is
   `ν q² · (h(X₊u · X₋(T u)) + h(X₊u · X₋(T σ u)))` on the whole algebra.
 * `energy_rate_full_of_fixed`: if `T u = u` and `σ u = u`, the rate is `2νq² h(X₊u · X₋u)`.
-  With `haarState_plusMinus_nonpos` (`OqSU2BudgetSign`) that is `≤ 0` for `u* = u`, `ν ≥ 0`,
-  `0 < q ≠ 1`. That last step is not stated here: `OqSU2BudgetSign` imports
-  `OqSU2HaarPositivity`, which declares `mono`, `mono_nat`, `beta_alpha`, `gamma_alpha`,
-  `gamma_beta` in the same namespace as `OqSU2PBW`, so the two cannot be imported together
-  until one side is renamed.
+* `energy_rate_full_dissipates`: with `haarState_plusMinus_nonpos` (`OqSU2BudgetSign`) the
+  rate is `≤ 0` for `u* = u` in that block, `ν ≥ 0`, `0 < q ≠ 1`.
 
 ## Reading in the PBW basis
 
@@ -140,5 +138,21 @@ theorem energy_rate_full_of_fixed (ν : K) (u : OqSU2 K q) (hT : T u = u)
   ring
 
 end Budget
+
+section Ordered
+
+variable {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K] (q : Kˣ)
+
+/-- **Dissipation**, for self-adjoint `u` fixed by `T` and `σ`. -/
+theorem energy_rate_full_dissipates (hq : ∀ n : ℕ, 0 < n → (q : K) ^ n ≠ 1)
+    (hq0 : 0 < (q : K)) (hq1 : (q : K) ≠ 1) (s : Kˣ) (hs : s ^ 2 = q⁻¹) (ν : K) (hν : 0 ≤ ν)
+    (u : OqSU2 K q) (hu : compactStar q u = u)
+    (hT : torusScaleAlgHom q q⁻¹ q⁻¹⁻¹ u = u) (hσ : modularAut q u = u) :
+    haarState q ((-ν) • lap q u * u) + haarState q (u * ((-ν) • lap q u)) ≤ 0 := by
+  rw [energy_rate_full_of_fixed q hq ν u hT hσ]
+  exact mul_nonpos_of_nonneg_of_nonpos (by positivity)
+    (haarState_plusMinus_nonpos q hq0 hq1 s hs u hu)
+
+end Ordered
 
 end QOU.FluidDynamics.HaarBudgetFull
