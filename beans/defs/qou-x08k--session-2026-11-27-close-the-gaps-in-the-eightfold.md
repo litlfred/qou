@@ -7,7 +7,7 @@ priority: high
 tags:
     - 8f-index
 created_at: 2026-11-27T14:25:39Z
-updated_at: 2026-11-27T14:52:01Z
+updated_at: 2026-11-27T14:55:50Z
 parent: qou-0uga
 ---
 
@@ -69,3 +69,11 @@ Verbatim: *"A B C"*. B reopens `qou-j3w6` as option A (second fundamental $W$, $
 ## 2026-11-27 ~15:00Z — merged and open
 
 Merged by merge manager: #9444 (A1), #9446 (A3), #9450 (B), #9451 (A4). Open: #9442 (docs, beans tracker rule), #9458 (C2: commutant of S3 × sl2 on (Q^2)^{⊗3} is 2-dim, so no injective colour action; the ColourStabilizerAction class alone is a dimension count). C1 (hypercharge crossing invariant) and C3 (selection rule) not started; options put to owner.
+
+
+
+## 2026-11-27 ~15:05Z — C1, C3
+
+- C3 → PR #9460 (merged 9da17f024): selection rule proved between its labelled inputs (Fermi statistics, colour singlet); colour singlet at N_c=3 is 1-dim.
+- C1 uniqueness → PR #9461: traceless operator on V ⊕ W* commuting with sl(V), sl(W*) is a multiple of diag(3,3,-2,-2,-2).
+- C1 crossing-invariant route, bounded read: blocked exactly where `qou-h0zz` says. Q = w/2 is hadron-level, with no per-chiral-fermion charge; the total twist T = 3Q is pinned by the SM target, not computed; chirality has no braid word (`qou-wqto`); the 1/3 normalisation is the helon precedent. No closure available without a new construction of per-fermion braid words.
