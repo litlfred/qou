@@ -965,3 +965,125 @@ Any group-likeness hypothesis has to use the same coproduct, or be shown equal t
 **Verification.** `lean -DautoImplicit=false -s 65536` exits 0 with no warnings.
 `Prop57Link.olean` was not in the restored cache, so it was compiled into a scratch shadow tree
 first. No `lake build` was run.
+
+## 17b. Gap B1, steps (2)–(4) closed; the induction step proved modulo primitivity of the top layer
+
+Bean `qou-3fdg`, branch `claude/grt-b1-steps-2026-11-27`, file
+`RationalAssociator/BaseChangeK.lean`. The file is sorry-free. `#print axioms`, run in a scratch
+copy that was then deleted, gives `propext`, `Classical.choice` and `Quot.sound` only, for
+`inductionStep_of_primitiveLayer`, `assocK_shift_finset`, `compKK_congr`, `assocK_shiftK` and
+`grtU4_of_lin_primitive`.
+
+### What is proved
+
+**Step (2): shifts with coefficients in `K`.**
+
+    theorem assocK_shiftK (hΦ : AssocK K N E Φ) (hg : ∀ x : ℚ, GRT1U4 N (expPoly (x • h) n))
+        (c : K) : AssocK K N E (compKK Φ (GK h n c))
+
+* `GK h n c = Σ_{k<n} cᵏ ⊗ hᵏ/k!` is the truncated exponential with `K`-coefficients.
+* `compKK` is the action of §16b with a `K`-valued group element.
+
+How it is proved:
+
+* Each of the four defects (constant term, (5.12), hexagon, pentagon) is the evaluation at
+  `T = c` of one polynomial over `K ⊗ U4 N` (`evT`, `ΓT`, `fT`).
+* At every rational `T = x` that polynomial vanishes, by `assocK_compK` (§16b) and
+  `grt1U4_expPoly` (§12).
+* A polynomial over a `ℚ`-algebra that vanishes at every rational point is zero
+  (`eq_of_forall_rat`, via `coeff_mem_of_forall`).
+
+**Step (3): the `K`-congruence.** For `1 ≤ d`, `2 ≤ n`, `h ∈ FF d` and `Φ ≡ 1 (FFK 1)`:
+
+    theorem compKK_congr : compKK Φ (GK h n c) - Φ - c ⊗ₜ h ∈ FFK K (d + 1)
+
+The supporting facts:
+
+* `GK h n c ≡ 1 + c ⊗ h` modulo `FFK (2d)` (`GK_sub_mem`).
+* `FFK` is multiplicative (`mul_mem_FFK`).
+* `evK` respects `FFK` in both arguments (`evK_sub_mem_FFK`, `evK_mem_FFK`).
+
+**Step (4): finitely many shifts.** `assocK_shift_finset` shifts a `K`-associator `Ψ₀ ≡ 1` in
+turn by `exp(c_i h_i)` for `i ∈ s`. The result `Ψ` satisfies
+`Ψ ≡ Ψ₀ + Σ c_i ⊗ h_i (FFK (d+1))`.
+
+**Projection.** `AssocK.proj : AssocK K N E Φ → M ≤ N → AssocK K M E Φ`. It uses the algebra
+map `U4 N → U4 M` sending `t` to `t` (`projU`).
+
+**The bridge (B2 + Friedrichs, no Lie-ness hypothesis).**
+
+    theorem grtU4_of_lin_primitive (hy : Homog d y) (hlin : assocLin (d + 1) y = 0)
+        (hp : Friedrichs.IsPrimitive y) : GrtU4 M y
+
+It is the proof of `grtU4_of_lin` with `grtU4_of_lie (isLieElt_of_primitive hp)` in place of
+the (5.14) hypothesis. As instructed, Lie-ness is discharged by §17a, not carried.
+
+**The induction step.**
+
+    theorem inductionStep_of_primitiveLayer (hd : 1 ≤ d) (hdN : d + 1 ≤ N) (hn : 2 ≤ n)
+        (hNn : N ≤ n) (hE : ε E = 1) (hΦ : ε Φ = 1) (z : K ⊗ FF d)
+        (hK : AssocK K N E (1 ⊗ Φ + z))
+        (hprim : ∀ μ : K →ₗ[ℚ] ℚ, ∃ h, Homog d h ∧ contract μ z - h ∈ FF (d+1) ∧ IsPrimitive h) :
+        ∃ x ∈ FF d, AssocU4 (d + 1) E (Φ + x) ∧
+          ∃ Ψ, AssocK K N E Ψ ∧ Ψ - 1 ⊗ (Φ + x) ∈ FFK K (d + 1)
+
+The proof:
+
+1. Choose a retraction `π`, with `π(1) = 1`. Let `x = contract π z`.
+2. (B0) `rational_lift_of_assocK` gives a solution `x₀`. Its kernel statement, contracted along
+   any `μ`, shows two things: `x` solves the same degree-`d` system as `x₀`, so `Φ + x` is an
+   associator in `U4 (d+1)`; and `u = 1 ⊗ x − z` has every contraction in the homogeneous
+   kernel.
+3. Take the `hprim` representatives `h_μ`. Then `H_μ = μ(1)·h_π − h_μ` is homogeneous and
+   primitive, lies in `FF d`, and represents `contract μ u` modulo `FF (d+1)`.
+4. `H_μ` is in the kernel, because `assocLin N` kills `FF N` (`assocLin_eq_zero_of_mem_FF`). So
+   `H_μ ∈ grt` by the bridge, and `exp(r H_μ) ∈ GRT₁` by `grt1U4_expPoly`.
+5. Expand `u` in a `ℚ`-basis `B` of `K` (`equivFinsuppOfBasisLeft`). Its coordinates are the
+   contractions along `B.coord i` (`equivFinsuppOfBasisLeft_eq_contract`).
+6. Shift `1 ⊗ Φ + z` by `exp(B_i · H_{B.coord i})` over the finite support (step 4).
+7. The result agrees with `1 ⊗ (Φ + x)` modulo `FFK (d+1)`.
+
+The output has the shape of the input one degree up. `Ψ − 1 ⊗ (Φ + x) ∈ FFK (d+1)` is
+`Ψ = 1 ⊗ (Φ + x) + z'` with `z' ∈ K ⊗ FF (d+1)`. So the theorem can be iterated as long as
+`d + 2 ≤ N`, provided `hprim` holds again at degree `d + 1`.
+
+### What is not done: `hprim` is assumed, not derived
+
+The theorem takes as a hypothesis that every rational contraction of the top layer `z` is,
+modulo `FF (d+1)`, a homogeneous primitive element. It does **not** re-establish this at degree
+`d + 1`. So the "still agreeing with a group-like `K`-associator" half of the target statement
+is not proved. Group-likeness is never defined over `K` here.
+
+What would discharge it, in order:
+
+1. **Group-likeness over `K`.** Base-change `Friedrichs.cop` to `K ⊗ F → K ⊗ (F ⊗ F)`. Define
+   `GLK N Ψ`: `Δ_K Ψ ≡ Ψ ⊗ Ψ` modulo the degree-`N` filtration of `F ⊗ F`. That filtration is
+   not defined anywhere in the corpus. It is needed because a group-like element can only be
+   asked for modulo a degree.
+2. **Transport under the action.**
+   * `compK` / `compKK` must preserve `GLK` when the acting element is group-like.
+   * `Δ` must commute with the substitution `A ↦ g A g(B, A)`, `B ↦ B` for group-like `g`.
+   * The truncated exponential `GK h n c` of a primitive `h` is group-like modulo degree `n`.
+     This needs the binomial identity for `Δ(hᵏ)` with `h` primitive.
+3. **Extraction.** Suppose `Ψ = 1 ⊗ Φ + z` is group-like modulo degree `d + 1`, and so is the
+   rational `Φ`. Then `Δ z − z ⊗ 1 − 1 ⊗ z` lies in filtration degree `d + 1`.
+   * Contraction along `μ` commutes with `Δ`. So each `contract μ z` is primitive modulo degree
+     `d + 1`.
+   * `Homogeneity.exists_homog_part` then gives the homogeneous degree-`d` part. It is primitive
+     if `cop` commutes with the grading: `cop ∘ scF r = (scF r ⊗ scF r) ∘ cop`. This is not
+     proved.
+4. **Group-likeness of the rational lift.** `Φ + x` must be group-like modulo `d + 2` for the
+   next step. It agrees with the group-like `Ψ` modulo `FFK (d+1)`, so it is group-like modulo
+   `d + 1` for free. Degree `d + 1` itself needs its own argument, or the hypothesis can be moved
+   to `Ψ` alone.
+
+Each item is ordinary algebra with no analysis, but together they are a separate file of roughly
+the size of `Friedrichs.lean`. They were not started in this tranche.
+
+Default if nothing is chosen: B1 stands as `inductionStep_of_primitiveLayer`, a sorry-free
+theorem conditional on `hprim`. The Drinfeld rational-associator induction is complete except
+for the group-likeness transport above.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on `BaseChangeK.lean` exits 0 with no
+warnings. It was compiled against the restored cache, with this branch's new modules compiled
+into a scratch tree. No `lake build` was run.
