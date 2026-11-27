@@ -58,6 +58,74 @@ theorem lapS_mul (f g : OqSU2 R q) :
     mul_smul_comm, smul_mul_assoc, smul_add, smul_smul, sub_mul, mul_sub]
   linear_combination (norm := module) -hq • (fieldPlus q f * tw (fieldMinus q g))
 
+
+/-! ### `S` on generators, products and powers -/
+
+theorem lapS_alpha : lapS q (α q) = α (R := R) q := by
+  rw [lapS_apply, lap_apply, (fieldMinus_generators q).1, (fieldPlus_generators q).2.1,
+    (fieldPlus_generators q).1, map_zero, smul_zero, sub_zero]
+
+theorem lapS_gamma : lapS q (γ q) = γ (R := R) q := by
+  rw [lapS_apply, lap_apply, (fieldMinus_generators q).2.2.1, (fieldPlus_generators q).2.2.2,
+    (fieldPlus_generators q).2.2.1, map_zero, smul_zero, sub_zero]
+
+theorem lapS_beta : lapS q (β q) = (-((q : R) * q)) • β (R := R) q := by
+  rw [lapS_apply, lap_apply, (fieldMinus_generators q).2.1, map_zero,
+    (fieldPlus_generators q).2.1, (fieldMinus_generators q).1, zero_sub]
+  module
+
+theorem lapS_delta : lapS q (δ q) = (-((q : R) * q)) • δ (R := R) q := by
+  rw [lapS_apply, lap_apply, (fieldMinus_generators q).2.2.2, map_zero,
+    (fieldPlus_generators q).2.2.2, (fieldMinus_generators q).2.2.1, zero_sub]
+  module
+
+/-- `S(uv) = (s e + t) uv` when `S u = s u`, `S v = t v` and `R² v = e v`. -/
+theorem lapS_mul_eigen {u v : OqSU2 R q} {s t e : R} (hu : lapS q u = s • u)
+    (hv : lapS q v = t • v) (he : tw (tw v) = e • v) :
+    lapS q (u * v) = (s * e + t) • (u * v) := by
+  rw [lapS_mul, hu, hv, he, smul_mul_smul_comm, mul_smul_comm]
+  module
+
+/-- `S(u^n) = s [n]_e u^n` when `S u = s u` and `R² u = e u`. -/
+theorem lapS_pow_eigen {u : OqSU2 R q} {s e : R} (hu : lapS q u = s • u)
+    (he : tw (tw u) = e • u) (n : ℕ) :
+    lapS q (u ^ n) = (s * jk e n) • u ^ n := by
+  induction n with
+  | zero =>
+    have h := lapS_mul q (1 : OqSU2 R q) 1
+    simp only [mul_one, map_one] at h
+    rw [pow_zero, jk_zero, mul_zero, zero_smul]
+    simpa using h
+  | succ n ih =>
+    rw [pow_succ, lapS_mul_eigen q ih hu he, jk_succ', ← pow_succ]
+    congr 1; ring
+
+theorem tw_tw_pow {u : OqSU2 R q} {e : R} (he : tw (tw u) = e • u) (n : ℕ) :
+    tw (tw (u ^ n)) = e ^ n • u ^ n := by
+  rw [map_pow, map_pow, he, smul_pow]
+
+theorem tw_tw_alpha : tw (tw (α q)) = (qi * qi) • α (R := R) q := by
+  rw [(field_twist_generators q).1, map_smul, (field_twist_generators q).1, smul_smul]
+
+theorem tw_tw_beta : tw (tw (β q)) = ((q : R) * q) • β (R := R) q := by
+  rw [(field_twist_generators q).2.1, map_smul, (field_twist_generators q).2.1, smul_smul]
+
+theorem tw_tw_gamma : tw (tw (γ q)) = (qi * qi) • γ (R := R) q := by
+  rw [(field_twist_generators q).2.2.1, map_smul, (field_twist_generators q).2.2.1, smul_smul]
+
+theorem tw_tw_delta : tw (tw (δ q)) = ((q : R) * q) • δ (R := R) q := by
+  rw [(field_twist_generators q).2.2.2, map_smul, (field_twist_generators q).2.2.2, smul_smul]
+
+/-- `S ζ = 0`. -/
+theorem lapS_zeta : lapS q (zetaB (R := R) q) = 0 := by
+  rw [zetaB, lapS_mul_eigen q (lapS_beta q) (t := 1) (by rw [lapS_gamma, one_smul]) (tw_tw_gamma q),
+    show -((q : R) * q) * (qi * qi) + 1 = 0 by
+      linear_combination (-((q : R) * qi) - 1) * q_mul_qi q, zero_smul]
+
+theorem lapS_zeta_pow (k : ℕ) : lapS q (zetaB (R := R) q ^ k) = 0 := by
+  rw [lapS_pow_eigen q (s := 0) (e := 1) (by rw [lapS_zeta, zero_smul])
+    (by rw [tw_zeta, tw_zeta, one_smul]) k, zero_mul, zero_smul]
+
 end Commutator
 
 end QOU.FluidDynamics.ComponentLap
