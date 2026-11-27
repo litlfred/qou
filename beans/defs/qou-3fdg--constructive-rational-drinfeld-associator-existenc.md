@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T22:52:53Z
+updated_at: 2026-11-27T22:58:03Z
 parent: qou-dk7p
 ---
 
@@ -166,3 +166,7 @@ STILL OPEN, which is why this bean stays open:
 QuasiYBE.lean proves, sorry-free, the quasi-Yang-Baxter equation R12 Phi312 R13 Phi132^-1 R23 Phi = Phi321 R23 Phi231^-1 R13 Phi213 R12 for every rational associator in U4 N (quasiYBE_of_assocU4). It follows from the hexagon alone, via hexagon_of_universal at the leg-swapped DK3 family. It also proves the compatible-tower corollary (conditional on CompatibleGroupLikeKAssociatorTower) and transport to (A⊗A)⊗A, which discharges hhex of quasiYBE_of_hexagon (#9519) from any realisation rho of U4 N.
 Reading (b) was chosen: no Casimir realisation t_ij -> h Omega_ij exists in the repo, so no concrete (A, Delta, R) instance was built.
 Still open: the K-tower; a concrete realisation; the braid relation in U(t3) ⋊ S3; tau12-intertwining. Audit §17f. Bean left open.
+
+
+
+**2026-11-27 — compatibility hypothesis dropped (PR #9810, stacked on #9807).** `rational_associator_compatible_of_groupLikeTower` (AssociatorRealign.lean, sorry-free, axioms propext/Classical.choice/Quot.sound): GroupLikeKAssociatorTower K E + ε(E)=1 already gives the compatible rational sequence; CompatibleGroupLikeKAssociatorTower is no longer needed. Route: `exists_grt_layer` = Drinfeld Prop 5.5 at one degree (two rational group-like associators mod d+1 agreeing mod FF d differ by a homogeneous primitive h ∈ grt), then `realign` moves every level's K-associator onto the prescribed rational one with one exp(h) shift. Still open: full Prop 5.5 (single g ∈ GRT₁ mod N) not stated (not needed); the analytic input GroupLikeKAssociatorTower itself; restating quasiYBE_compatible_of_tower on the weaker hypothesis (follow-up). Audit §17g. Bean stays open.
