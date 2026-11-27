@@ -776,3 +776,69 @@ Finally, `lin514` at DK3 triples whose sum is nonzero needs the same central shi
 (`lin514_of_drinfeld519` covers only zero-sum triples). So, **as proved here, Lie-ness of `ψ`
 enters only through the central shift**. Whether (5.19) holds for non-Lie `y` satisfying the
 other three conditions is **not established**: it was neither tested nor proved.
+
+## 16a. Gap B2 closed: (5.14) from (5.17), (5.18), (5.20) for Lie `y`
+
+Bean `qou-3fdg`. New file `QOU/BraidsAndKnots/RationalAssociator/Prop57Link.lean`. It is
+sorry-free and lean-direct (`-DautoImplicit=false -s 65536`) exits 0. `#print axioms` on
+`lin514_of_lie`, `grtU4_of_lie` and `sPoly_mem_FF_of_lin` shows only `propext`,
+`Classical.choice` and `Quot.sound`. The axiom check ran on a scratch copy, which was then
+deleted. No `sorry`, `axiom`, `: True` or `native_decide` appears in the file.
+
+**The headline result** is `lin514_of_lie`. Let `y ∈ ℚ⟨X, Y⟩` be a Lie element, and assume
+`GrtU4`'s conditions `lin512` (5.17), `lin513` (5.18) and `lin515` (5.20) in `U4 N`, each stated
+exactly as in `GrtU4`. Then `lin514` holds in `GrtU4`'s form at every `DK3` triple of
+`Fil N 1`. `grtU4_of_lie` packages this as `GrtU4 N y`. Its `const` field follows from Lie-ness
+(`IsLieElt.const`). Being a Lie element is an explicit hypothesis:
+
+`IsLieElt y := y ∈ LieSubalgebra.lieSpan ℚ ℚ⟨X, Y⟩ {X, Y}`
+
+with bracket `pq − qp`. No statement in the file was weakened.
+
+The pieces, in the order of §15's plan:
+
+1. **Central shift** (`central_shift`, `shift_left`, `shift_right`). Suppose `z` and `w` commute
+   with `a`, `b` and with each other. Then
+
+   `y(a + z, b + w) = y(a, b) + α z + β w` for some `α, β ∈ ℚ`.
+
+   The proof is induction over `lieSpan`. The linear part is kept as `α z + β w` instead of
+   being assumed zero.
+2. **`S` is `s`** (`S_eq_eval_sPoly`). At any `DK3` triple `(A, B, C)`,
+
+   `[B, y(A, B)] + [C, y(A, C)] = s(B, C)`.
+
+   The proof shifts `−B−C` by the central `A + B + C`. The linear terms die because `z`
+   commutes with `B` and `C`. Hence (`uDefect_eq_lift_cocycle`)
+
+   `u = cocycle(s)(t₁₄, t₂₄, t₃₄)`,
+
+   using the `DK3` subfamilies `(t₁₂, t₁₄, t₂₄)`, `d2`, `d1` and `d0` of `dk4`.
+3. **The retraction** (`retract`). This is an algebra map `U4 N → End(ℚ⟨Y₁, Y₂, Y₃⟩ ⧸ FF3 N)`.
+   - `t_{i4}` acts as left multiplication by `Yᵢ`.
+   - `t₁₂`, `t₁₃` and `t₂₃` act as the Leibniz maps with `Yᵢ ↦ [Yᵢ, Yⱼ]`, `Yⱼ ↦ [Yⱼ, Yᵢ]` and
+     the third generator sent to `0`. They are built with the upper-triangular matrix trick
+     (`triHom3`, `der3`).
+
+   All fifteen `DK4` relations are proved in Lean (`gen_dk4`):
+   - the three far relations, from the `0` entries;
+   - the six mixed relations, from `[Y_i + Y_j, ·]`-type cancellations;
+   - the three Leibniz–Leibniz relations, from generator checks by `noncomm_ring`.
+
+   Words of length `N` vanish because every generator raises the word filtration
+   (`gen_word_eq_zero`). Evaluating at `1` (`mem_FF3_of_lift_eq_zero`) turns
+   `cocycle(s)(t₁₄, t₂₄, t₃₄) = 0` into `cocycle(s) ∈ FF3 N`.
+4. **Assembly.**
+   - `uDefect_eq_zero_of_lin` is `GrtU4.uDefect_eq_zero` restated with `lin512`, `lin513` and
+     `lin515` as hypotheses, without `lin514`.
+   - With `vanishing_of_cocycle` it gives `sPoly y ∈ FF N` (`sPoly_mem_FF_of_lin`).
+   - Evaluating at `A, B ∈ Fil N 1` gives (5.19), since `Fil N N = 0`.
+   - `lin514_of_drinfeld519` then gives the zero-sum triples.
+   - A triple `(u, v, w)` with central sum `z ≠ 0` reduces to `(−(v + w), v, w)`. The two shifts
+     `α z` and `β z` satisfy `(α + β) z = 0` by (5.17) at `(u, w)` and `(−(v + w), w)`. Since `z`
+     commutes with `v + w`, the right side of (5.14) does not change.
+
+**Scope.** These are statements in each truncation `U4 N`, which is how `GrtU4` is stated. Lie-ness
+enters only through the central shift. Whether non-Lie `y` can satisfy the three conditions
+without (5.14) is still **not established**, as §15 said: neither tested nor proved. B1, in
+`BaseChange.lean` and `Homogeneity.lean`, was not touched.
