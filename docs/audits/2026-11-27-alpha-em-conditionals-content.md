@@ -55,7 +55,7 @@ statement. Same pattern, outside C4: `mass-theory/borromean-baryon-mass-formula.
 (`proton_matches_codata`, `neutron_matches_codata`). No other Lean file references
 `AlphaEmFixedPointNormalization` (grep of `folio/`).
 
-Not changed here (owner decision; see the PR's options).
+**Resolved 2026-11-27 (owner chose "also fix baryon mass class"):** `codata_consistent`, `proton_matches_codata` and `neutron_matches_codata` are removed; the comparisons stay in prose.
 
 ## 3. Witten / Chern–Simons `κ`
 
@@ -81,6 +81,6 @@ refutation sharper, not discharge it.
 | conditional | status after this note |
 |---|---|
 | Form C class | proved equivalent to `δ := deltaReq(q, α)`; content isolated as `deltaB3 q = deltaReq q α` (open) |
-| `codata_consistent` field | empirical value inside a formal class; owner decision |
+| `codata_consistent` field | removed 2026-11-27, with the two baryon fields |
 | Witten/CS `κ` | unchanged; needs CS Gram matrices |
 | Bring zero mode | unchanged; expected false by its own record |

@@ -61,7 +61,7 @@ All over an arbitrary field, sorry-free, axioms `propext, Classical.choice, Quot
 Not proved and not assumed: that `2[ζ₆]` is the class of the geometric ideal
 triangulation of `S³ ∖ 4₁` (Thurston; cited), and anything Archimedean.
 
-## Proposed §2.24 restructuring (NOT applied; owner decision)
+## §2.24 restructuring (owner chose Stage A, 2026-11-27; applied)
 
 `sec:q-special-functions-dilog` currently ends with
 `conj:archimedean-realisation-volume-compatibility` (`τ∞ ↔ R_top`), which already
