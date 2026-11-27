@@ -1,5 +1,5 @@
 import QOU.MassTheory.ThreeSubstantiveMathlibFillers
-import QOU.MassTheory.BlochWignerFiveTermInstance
+import QOU.Transcendental.MassTheory.BlochWignerFiveTermInstance
 import Mathlib.LinearAlgebra.Basis.VectorSpace
 import Mathlib.NumberTheory.Padics.PadicVal.Basic
 

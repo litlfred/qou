@@ -1,6 +1,6 @@
 import QOU.MassTheory.TwistKnotNahm
-import QOU.MassTheory.BlochGroupComplex
-import QOU.MassTheory.Cl2PentagonFromBlochWigner
+import QOU.Transcendental.MassTheory.BlochGroupComplex
+import QOU.Transcendental.MassTheory.Cl2PentagonFromBlochWigner
 
 /-!
 # The regulator of the 4₁ and 5₂ Nahm classes

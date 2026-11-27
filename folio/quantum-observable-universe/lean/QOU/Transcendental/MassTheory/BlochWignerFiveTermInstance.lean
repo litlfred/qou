@@ -4,7 +4,7 @@ import Mathlib.Analysis.NormedSpace.Connected
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.LinearAlgebra.Complex.FiniteDimensional
 
-import QOU.MassTheory.BlochSuslinComplex
+import QOU.Transcendental.MassTheory.BlochSuslinComplex
 
 /-!
 # Bloch–Wigner satisfies the five-term relation

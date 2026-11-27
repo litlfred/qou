@@ -1,6 +1,6 @@
 import QOU.Nuclear.DilogTheory
 import MathlibExt.FiveTwoAbelFiveTerm
-import QOU.MassTheory.BlochRigidity.Reflection
+import QOU.Transcendental.MassTheory.BlochRigidity.Reflection
 
 /-!
 # The Rogers instance of `RogersDilogTheory` (archimedean half of `DilogTheory`, split per §7c)

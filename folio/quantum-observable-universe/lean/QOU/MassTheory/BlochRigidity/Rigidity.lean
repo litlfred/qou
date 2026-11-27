@@ -1,6 +1,6 @@
-import QOU.MassTheory.BlochRigidity.Holomorphic
-import QOU.MassTheory.BlochRigidity.Regularity
-import QOU.MassTheory.BlochSuslinComplex
+import QOU.Transcendental.MassTheory.BlochRigidity.Holomorphic
+import QOU.Transcendental.MassTheory.BlochRigidity.Regularity
+import QOU.Transcendental.MassTheory.BlochSuslinComplex
 
 /-!
 # Rigidity of the five-term relation

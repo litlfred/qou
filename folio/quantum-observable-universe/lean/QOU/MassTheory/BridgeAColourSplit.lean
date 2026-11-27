@@ -1,4 +1,4 @@
-import QOU.MassTheory.BridgeAStokesNBody
+import QOU.Transcendental.MassTheory.BridgeAStokesNBody
 import QOU.MassTheory.KohnoAssemblyGL
 
 /-!

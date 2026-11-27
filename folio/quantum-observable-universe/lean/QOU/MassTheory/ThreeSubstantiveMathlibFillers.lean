@@ -6,7 +6,7 @@ import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.Tactic
 import Mathlib.Analysis.SpecialFunctions.Complex.Log
 import MathlibExt.ClausenFunctionMathlibFiller
-import QOU.MassTheory.BlochWignerMathlibFiller
+import QOU.Transcendental.MassTheory.BlochWignerMathlibFiller
 import QOU.Transcendental.MathlibExt.DilogarithmArchimedeanLimit
 
 

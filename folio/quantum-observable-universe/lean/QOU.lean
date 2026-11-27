@@ -95,9 +95,9 @@ import QOU.Transcendental.QCalculus.ComplexRogersDilog
 -- window). All Mathlib gaps; all sorry-free.
 import MathlibExt.ImplicitScalar
 import MathlibExt.ConstantOffOnePoint
-import QOU.MassTheory.ClausenDoubleAngleSeries
-import QOU.MassTheory.Cl2PentagonFromBlochWigner
-import QOU.MassTheory.BlochGroupComplex
+import QOU.Transcendental.MassTheory.ClausenDoubleAngleSeries
+import QOU.Transcendental.MassTheory.Cl2PentagonFromBlochWigner
+import QOU.Transcendental.MassTheory.BlochGroupComplex
 import QOU.MassTheory.BranchIntegerPinning
 -- Weierstrass primary-factor estimate ‖1 - E_p(z)‖ ≤ ‖z‖^{p+1}: the Mathlib-gap
 -- infrastructure that closes PI-2 of QOU.Mathlib.HadamardFactorization.
@@ -701,7 +701,7 @@ import QOU.Core.GradedFrobeniusHopf
 import QOU.Confinement.ChannelSeparation
 import QOU.MassTheory.Archimedean
 import QOU.Transcendental.MathlibExt.DilogReflection
-import QOU.MassTheory.CatalanClausenBridge
+import QOU.Transcendental.MassTheory.CatalanClausenBridge
 import MathlibExt.IdealTetrahedronConcavity
 import QOU.Transcendental.BraidKnotOctonion.LobachevskyDerivative
 import QOU.MassTheory.IdealTetrahedronShapeBridge
@@ -722,21 +722,21 @@ import QOU.MassTheory.OrthoschemeWedgePair
 import QOU.MassTheory.OrthoschemeRotation
 import QOU.MassTheory.OrthoschemeLambdaSum
 import QOU.MassTheory.OrthoschemeTiling
-import QOU.MassTheory.DilogPartBBranchPointLimit
-import QOU.MassTheory.DilogPartBBranchPhase
+import QOU.Transcendental.MassTheory.DilogPartBBranchPointLimit
+import QOU.Transcendental.MassTheory.DilogPartBBranchPhase
 import QOU.Transcendental.MathlibExt.DilogPartBBranchPointSum
-import QOU.MassTheory.DilogPartBEulerTail
+import QOU.Transcendental.MassTheory.DilogPartBEulerTail
 import QOU.Transcendental.MathlibExt.DilogPartBIteratedLimit
 import QOU.Transcendental.MathlibExt.DilogPartBBoundarySeed
 import QOU.Transcendental.MathlibExt.DilogPartBWP1Capstone
-import QOU.MassTheory.DilogPartBWP1Refutation
+import QOU.Transcendental.MassTheory.DilogPartBWP1Refutation
 import QOU.Transcendental.QCalculus.DilogPartBFaddeevScaling
-import QOU.MassTheory.DilogPartBJointAssembly
-import QOU.MassTheory.DilogPartBBorelCantelli
-import QOU.MassTheory.DilogPartBWindowMeasure
-import QOU.MassTheory.DilogPartBAEAssembly
-import QOU.MassTheory.DilogPartBAEFinal
-import QOU.MassTheory.DilogNaStokesOrdering
+import QOU.Transcendental.MassTheory.DilogPartBJointAssembly
+import QOU.Transcendental.MassTheory.DilogPartBBorelCantelli
+import QOU.Transcendental.MassTheory.DilogPartBWindowMeasure
+import QOU.Transcendental.MassTheory.DilogPartBAEAssembly
+import QOU.Transcendental.MassTheory.DilogPartBAEFinal
+import QOU.Transcendental.MassTheory.DilogNaStokesOrdering
 import QOU.Confinement.Interactions
 import QOU.Confinement.Encounter
 import QOU.BraidsAndKnots.BraidKnot
@@ -971,8 +971,8 @@ import MathlibExt.FiveTwoFiveTermArguments
 import MathlibExt.FiveTwoRogersReflection
 import MathlibExt.FiveTwoAbelFiveTerm
 import QOU.Nuclear.DilogTheory
-import QOU.MassTheory.BlochRigidity.Reflection
-import QOU.Nuclear.DilogTheoryArchimedean
+import QOU.Transcendental.MassTheory.BlochRigidity.Reflection
+import QOU.Transcendental.Nuclear.DilogTheoryArchimedean
 import QOU.Nuclear.ToddDilogExpansion
 import QOU.Nuclear.BarEvenJet
 import QOU.Nuclear.BarEvenJetArchimedean
@@ -994,7 +994,7 @@ import QOU.Nuclear.FiveTwoRootStructure
 import QOU.Nuclear.FiveTwoRootLabelling
 import QOU.Nuclear.FiveTwoBranchPinned
 import QOU.Nuclear.FiveTwoEnvelopeWiring
-import QOU.Nuclear.FiveTwoPairSaddle
+import QOU.Transcendental.Nuclear.FiveTwoPairSaddle
 import QOU.Nuclear.FiveTwoBranchPinnedB
 import QOU.Nuclear.FiveTwoTransport
 import QOU.Nuclear.FiveTwoEnvelopeInstance
@@ -1085,7 +1085,7 @@ import QOU.Nuclear.DLadderAccelerationComposition
 import QOU.Nuclear.OhtsukiTowerBarParity
 -- Even-channel arithmetic home: the 4₁ Kashaev saddle Taylor data ∈ ℚ(√3)·π^k
 -- (Hessian −√3π; b₁=√3π/54). Counterpart to the odd HopfCubicOddCarrier (KC20).
-import QOU.Nuclear.Qsqrt3SaddleArithmetic
+import QOU.Transcendental.Nuclear.Qsqrt3SaddleArithmetic
 import HeckeTemperleyLieb.H4RouteBBranchingPrune
 import QOU.Nuclear.QLommelOrderRecurrence
 import HeckeTemperleyLieb.HoefsmitBBarParity
@@ -1200,27 +1200,27 @@ import QOU.BringsSurface.zeta5_residue_monodromy
 
 import QOU.MassTheory.BorromeanQuark
 import QOU.MassTheory.EmCouplingBringZeroMode
-import QOU.MassTheory.BringZeroModeClausenWitness
+import QOU.Transcendental.MassTheory.BringZeroModeClausenWitness
 import QOU.MassTheory.ArchimedeanLimitDomain
 import QOU.MassTheory.ArchimedeanLimitNegative
 import QOU.MassTheory.ArchimedeanLimitEndpoints
-import QOU.MassTheory.BlochSuslinComplex
-import QOU.MassTheory.BlochWignerFiveTermInstance
+import QOU.Transcendental.MassTheory.BlochSuslinComplex
+import QOU.Transcendental.MassTheory.BlochWignerFiveTermInstance
 import QOU.MassTheory.BlochRigidity.Algebra
-import QOU.MassTheory.BlochRigidity.Abstract
+import QOU.Transcendental.MassTheory.BlochRigidity.Abstract
 import QOU.MassTheory.BlochRigidity.ComplexAlgebra
-import QOU.MassTheory.BlochRigidity.Derivative
-import QOU.MassTheory.BlochRigidity.Growth
-import QOU.MassTheory.BlochRigidity.Holomorphic
+import QOU.Transcendental.MassTheory.BlochRigidity.Derivative
+import QOU.Transcendental.MassTheory.BlochRigidity.Growth
+import QOU.Transcendental.MassTheory.BlochRigidity.Holomorphic
 import QOU.MassTheory.BlochRigidity.Instance
 import QOU.MassTheory.BlochWignerLobachevskyLowerHalf
 import QOU.MassTheory.BlochRigidity.IntegrationBridge
 import QOU.MassTheory.BlochRigidity.LinearSections
 import QOU.MassTheory.BlochRigidity.ReebPlane
-import QOU.MassTheory.BlochRigidity.Regularity
+import QOU.Transcendental.MassTheory.BlochRigidity.Regularity
 import QOU.MassTheory.BlochRigidity.Rigidity
 import QOU.MassTheory.BlochRigidity.Smooth
-import QOU.MassTheory.BlochRigidity.Vanishing
+import QOU.Transcendental.MassTheory.BlochRigidity.Vanishing
 import BraidKnotOctonion.BringEllipticFactor
 import QOU.MassTheory.SigmaJGeometricCarrier
 import QOU.MassTheory.HodgeWeilRealStructure
@@ -1242,6 +1242,7 @@ import QOU.MassTheory.LiftFromReality
 import QOU.MassTheory.TauFunctorTargetSpec
 import QOU.MassTheory.DeckRealityEquivariance
 import QOU.MassTheory.BorelProperTimeMoment
+import QOU.Transcendental.MassTheory.BorelProperTimeMomentAnalytic
 import QOU.Transcendental.FrechetShohat
 import QOU.Transcendental.StieltjesCompactDeterminacy
 import QOU.MassTheory.BalancedKernelConfluence
@@ -1443,7 +1444,7 @@ import BraidKnotOctonion.KnotOperatorRecurrence
 -- Resurgent-bridge tranche (Δ_λ sign/magnitude → DT/3d-index unification):
 -- descent scaffold, both horns, fgte κ-tower, dri7 bar-odd ladder, DT capstone.
 import QOU.StandardModel.Resurgence
-import QOU.Nuclear.Stokes3LargeOrderAmplitude
+import QOU.Transcendental.Nuclear.Stokes3LargeOrderAmplitude
 import QOU.Nuclear.BarOddLadderEdgeSuppression
 import QOU.BraidsAndKnots.DeltaLambdaDTIndex
 import BraidKnotOctonion.RossmannCCBridge
@@ -1885,7 +1886,7 @@ import QOU.BraidsAndKnots.Drinfeld.HeckeStrands
 import QOU.MassTheory.LagrangianKZInputs
 import QOU.MassTheory.BridgeADeligneGauge
 import QOU.MassTheory.BridgeADeligneKZ
-import QOU.MassTheory.BridgeAStokesNBody
+import QOU.Transcendental.MassTheory.BridgeAStokesNBody
 import QOU.MassTheory.BridgeAColourSplit
 import QOU.MassTheory.KohnoAssemblyGL
 import QOU.MassTheory.BridgeAStokesAlgebraic

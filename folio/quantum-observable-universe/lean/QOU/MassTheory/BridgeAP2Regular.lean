@@ -1,4 +1,4 @@
-import QOU.MassTheory.BridgeAStokesNBody
+import QOU.Transcendental.MassTheory.BridgeAStokesNBody
 
 /-!
 # Bridge A, gap 4: two-body locality (P2) from regular singularity, and where Deligne enters

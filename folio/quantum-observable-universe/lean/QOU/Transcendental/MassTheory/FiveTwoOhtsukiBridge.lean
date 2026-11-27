@@ -1,7 +1,7 @@
 import Mathlib.Tactic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import QOU.Transcendental.MathlibExt.BlochWignerLobachevsky
-import QOU.MassTheory.BlochWignerSymmetry
+import QOU.Transcendental.MassTheory.BlochWignerSymmetry
 import MathlibExt.ExponentialGrowthRate
 import BraidKnotOctonion.KummerRadial
 

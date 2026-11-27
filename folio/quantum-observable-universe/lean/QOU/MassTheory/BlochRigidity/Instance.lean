@@ -1,5 +1,5 @@
 import QOU.MassTheory.BlochRigidity.Rigidity
-import QOU.MassTheory.BlochWignerFiveTermInstance
+import QOU.Transcendental.MassTheory.BlochWignerFiveTermInstance
 import BraidKnotOctonion.BlochWignerPositive
 
 /-!

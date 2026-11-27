@@ -1,4 +1,4 @@
-import QOU.MassTheory.BridgeAStokesNBody
+import QOU.Transcendental.MassTheory.BridgeAStokesNBody
 
 /-!
 # Bridge A: `StokesToBraiding` replaced by the KZ realisation alone

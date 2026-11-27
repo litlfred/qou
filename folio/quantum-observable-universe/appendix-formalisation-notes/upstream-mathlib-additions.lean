@@ -4,7 +4,7 @@ import Mathlib.Analysis.PSeries
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.Tactic
 import MathlibExt.ClausenFunctionMathlibFiller
-import QOU.MassTheory.ClausenDoubleAngleSeries
+import QOU.Transcendental.MassTheory.ClausenDoubleAngleSeries
 
 
 /-!

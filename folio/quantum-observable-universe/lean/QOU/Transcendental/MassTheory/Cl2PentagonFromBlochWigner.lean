@@ -1,6 +1,6 @@
-import QOU.MassTheory.BlochWignerFiveTermInstance
+import QOU.Transcendental.MassTheory.BlochWignerFiveTermInstance
 import QOU.MassTheory.ThreeSubstantiveMathlibFillers
-import QOU.MassTheory.ClausenDoubleAngleSeries
+import QOU.Transcendental.MassTheory.ClausenDoubleAngleSeries
 import QCalculus.ComplexDilogarithmBoundary
 
 /-!

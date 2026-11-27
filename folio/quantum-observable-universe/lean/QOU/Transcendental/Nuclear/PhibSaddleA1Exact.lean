@@ -1,3 +1,4 @@
+import QOU.Nuclear.PhibSaddleA1Formal
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Data.Complex.Basic
 import Mathlib.Tactic.LinearCombination
@@ -30,7 +31,10 @@ reach); this theorem discharges the field computation on top of them, division-f
 `κ₁` real/π-bearing). So `V = Li₂(z) − Li₂(1/z)` is a Vol+torsion reconstruction, not the 4₁
 state integral. This lemma records the exact value; it makes no physical b-dictionary claim.
 
-Base ring: `ℂ` (the saddle values are genuinely complex — archimedean, post-wall).
+Base ring: `ℂ` (the saddle values are genuinely complex — archimedean, post-wall). The field
+arithmetic is proved once over any characteristic-zero field with ring symbols `s² = 3`,
+`i² = −1` in `QOU.QBeta.PhibSaddleA1Formal`; every theorem here is its instance at
+`s = √3`, `i = I`.
 -/
 
 namespace QOU.QBeta.PhibSaddleA1Exact
@@ -44,12 +48,17 @@ theorem s_sq : s ^ 2 = 3 := Real.sq_sqrt (by norm_num)
 
 /-- The three exact saddle derivatives of `V = Li₂(z) − Li₂(1/z)` at `z* = e^{iπ/3}`,
 as elements of `ℚ(√3, i) ⊂ ℂ` (numerically pinned, symbolically confirmed). -/
-noncomputable def V2 : ℂ := 3 / 2 - ((s : ℂ) / 2) * I
-noncomputable def V3 : ℂ := 2 + (3 * (s : ℂ)) * I
-noncomputable def V4 : ℂ := -39 / 2 + (3 * (s : ℂ) / 2) * I
+noncomputable def V2 : ℂ := PhibSaddleA1Formal.V2 (s : ℂ) I
+noncomputable def V3 : ℂ := PhibSaddleA1Formal.V3 (s : ℂ) I
+noncomputable def V4 : ℂ := PhibSaddleA1Formal.V4 (s : ℂ) I
 
 /-- The exact 2-loop coefficient. -/
-noncomputable def A1 : ℂ := 1 / 3 + (17 * (s : ℂ) / 108) * I
+noncomputable def A1 : ℂ := PhibSaddleA1Formal.A1 (s : ℂ) I
+
+theorem V2_eq : V2 = 3 / 2 - ((s : ℂ) / 2) * I := rfl
+theorem V3_eq : V3 = 2 + (3 * (s : ℂ)) * I := rfl
+theorem V4_eq : V4 = -39 / 2 + (3 * (s : ℂ) / 2) * I := rfl
+theorem A1_def : A1 = 1 / 3 + (17 * (s : ℂ) / 108) * I := rfl
 
 theorem s_pos : 0 < s := Real.sqrt_pos.mpr (by norm_num)
 
@@ -59,42 +68,18 @@ theorem s_cpow : (s : ℂ) ^ 2 = 3 := by
   push_cast at this ⊢
   linear_combination this
 
-/-- **Division-free core identity:** `3·V₄·V₂ − 5·V₃² = 24·V₂³·A₁`.
-This is the content of `A₁ = V⁗/(8V''²) − 5V'''²/(24V''³)` cleared of denominators
-(`A₁ = (3·V₄·V₂ − 5·V₃²)/(24·V₂³)`). Proved by `linear_combination` against `(√3)² = 3`
-and `I² = −1`; the multiplier coefficients were computed by exact polynomial division. -/
-theorem a1_core_identity : 3 * V4 * V2 - 5 * V3 ^ 2 = 24 * V2 ^ 3 * A1 := by
-  simp only [V2, V3, V4, A1]
-  have h : (s : ℂ) ^ 2 = 3 := s_cpow
-  have hI : (I : ℂ) ^ 2 = -1 := Complex.I_sq
-  linear_combination
-    (13 * (s : ℂ) * I / 4 + 17 * (s : ℂ) ^ 2 / 36 + 539 / 12) * h
-    + (17 * I ^ 2 * (s : ℂ) ^ 4 / 36 - 13 * I * (s : ℂ) ^ 3 / 4
-        - 17 * (s : ℂ) ^ 4 / 36 - 87 * (s : ℂ) ^ 2 / 2) * hI
+/-- **Division-free core identity:** `3·V₄·V₂ − 5·V₃² = 24·V₂³·A₁`. -/
+theorem a1_core_identity : 3 * V4 * V2 - 5 * V3 ^ 2 = 24 * V2 ^ 3 * A1 :=
+  PhibSaddleA1Formal.a1_core_identity s_cpow Complex.I_sq
 
-/-- `V₃ ≠ 0` — its real part is `2`. -/
-theorem V3_ne_zero : V3 ≠ 0 := by
-  intro h
-  have hre : V3.re = 2 := by
-    simp [V3, Complex.add_re, Complex.mul_re, Complex.I_re, Complex.I_im,
-      Complex.ofReal_re, Complex.ofReal_im]
-  rw [h] at hre
-  simp at hre
+/-- `V₃ ≠ 0`. -/
+theorem V3_ne_zero : V3 ≠ 0 := PhibSaddleA1Formal.V3_ne_zero s_cpow Complex.I_sq
 
-/-- `V₂ ≠ 0`. If `V₂ = 0` the core identity forces `V₃² = 0`, contradicting `V₃ ≠ 0`. -/
-theorem V2_ne_zero : V2 ≠ 0 := by
-  intro h
-  have core := a1_core_identity
-  rw [h] at core
-  have hV3sq : V3 ^ 2 = 0 := by linear_combination (-(1 : ℂ) / 5) * core
-  exact V3_ne_zero (pow_eq_zero_iff (by norm_num) |>.mp hV3sq)
+/-- `V₂ ≠ 0`. -/
+theorem V2_ne_zero : V2 ≠ 0 := PhibSaddleA1Formal.V2_ne_zero s_cpow Complex.I_sq
 
-/-- **The 2-loop coefficient is exactly `1/3 + (17√3/108)·i`.** From the division-free core
-by dividing through the nonzero `24·V₂³`. -/
-theorem A1_eq : V4 / (8 * V2 ^ 2) - 5 * V3 ^ 2 / (24 * V2 ^ 3) = A1 := by
-  have hV2 : V2 ≠ 0 := V2_ne_zero
-  have core := a1_core_identity
-  field_simp
-  linear_combination (8 : ℂ) * core
+/-- **The 2-loop coefficient is exactly `1/3 + (17√3/108)·i`.** -/
+theorem A1_eq : V4 / (8 * V2 ^ 2) - 5 * V3 ^ 2 / (24 * V2 ^ 3) = A1 :=
+  PhibSaddleA1Formal.A1_eq s_cpow Complex.I_sq
 
 end QOU.QBeta.PhibSaddleA1Exact

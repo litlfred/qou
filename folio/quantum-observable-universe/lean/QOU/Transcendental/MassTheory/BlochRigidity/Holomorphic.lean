@@ -1,6 +1,6 @@
-import QOU.MassTheory.BlochRigidity.Derivative
-import QOU.MassTheory.BlochRigidity.Growth
-import QOU.MassTheory.BlochRigidity.Vanishing
+import QOU.Transcendental.MassTheory.BlochRigidity.Derivative
+import QOU.Transcendental.MassTheory.BlochRigidity.Growth
+import QOU.Transcendental.MassTheory.BlochRigidity.Vanishing
 import Mathlib.Analysis.NormedSpace.Connected
 import Mathlib.LinearAlgebra.Complex.FiniteDimensional
 

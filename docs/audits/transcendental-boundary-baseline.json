@@ -1067,10 +1067,6 @@
   "QOU/MassTheory/AlphaEmFormCConditionalContent.lean": [
    "transcendental-function"
   ],
-  "QOU/MassTheory/AlphaEmTwoLoopBlochSchwinger.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
   "QOU/MassTheory/ArchimedeanLimitDomain.lean": [
    "analysis",
    "transcendental-function"
@@ -1115,51 +1111,7 @@
   "QOU/MassTheory/BindingRecurrenceSpectral.lean": [
    "real-completion"
   ],
-  "QOU/MassTheory/BlochGroupComplex.lean": [
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/BlochRigidity/Abstract.lean": [
-   "analysis",
-   "real-completion"
-  ],
-  "QOU/MassTheory/BlochRigidity/Derivative.lean": [
-   "analysis"
-  ],
-  "QOU/MassTheory/BlochRigidity/Growth.lean": [
-   "real-completion"
-  ],
-  "QOU/MassTheory/BlochRigidity/Holomorphic.lean": [
-   "analysis",
-   "real-completion"
-  ],
-  "QOU/MassTheory/BlochRigidity/Reflection.lean": [
-   "analysis"
-  ],
-  "QOU/MassTheory/BlochRigidity/Regularity.lean": [
-   "analysis"
-  ],
-  "QOU/MassTheory/BlochRigidity/Vanishing.lean": [
-   "analysis",
-   "real-completion"
-  ],
-  "QOU/MassTheory/BlochSuslinComplex.lean": [
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/BlochWignerFiveTermInstance.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/BlochWignerMathlibFiller.lean": [
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/BlochWignerSymmetry.lean": [
-   "transcendental-function"
-  ],
   "QOU/MassTheory/BlockMeasureBindingFormArchimedean.lean": [
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/BorelProperTimeMoment.lean": [
-   "analysis",
    "transcendental-function"
   ],
   "QOU/MassTheory/BorromeanVolumeCatalan.lean": [
@@ -1178,34 +1130,16 @@
   "QOU/MassTheory/BridgeADeligneKZ.lean": [
    "transcendental-function"
   ],
-  "QOU/MassTheory/BridgeAStokesNBody.lean": [
-   "transcendental-function"
-  ],
   "QOU/MassTheory/BringSchwingerNormalizationDerivation.lean": [
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/BringZeroModeClausenWitness.lean": [
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/CatalanClausenBridge.lean": [
    "transcendental-function"
   ],
   "QOU/MassTheory/ChainTraceFactor.lean": [
    "transcendental-function"
   ],
-  "QOU/MassTheory/Cl2PentagonFromBlochWigner.lean": [
-   "transcendental-function"
-  ],
   "QOU/MassTheory/ClassicalLogBindingCycleCount.lean": [
    "transcendental-function"
   ],
-  "QOU/MassTheory/ClausenDoubleAngleSeries.lean": [
-   "transcendental-function"
-  ],
   "QOU/MassTheory/ClosureNormalisationDefect.lean": [
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/ComplexDilogReflectionExt.lean": [
    "transcendental-function"
   ],
   "QOU/MassTheory/ComplexVolumeFibreDescent.lean": [
@@ -1227,49 +1161,6 @@
    "analysis"
   ],
   "QOU/MassTheory/DeuteronTwoBodyKernel.lean": [
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/DilogNaStokesOrdering.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/DilogPartBAEAssembly.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/DilogPartBAEFinal.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/DilogPartBBorelCantelli.lean": [
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/DilogPartBBranchPhase.lean": [
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/DilogPartBBranchPointLimit.lean": [
-   "analysis",
-   "real-completion",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/DilogPartBEulerTail.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/DilogPartBJointAssembly.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/DilogPartBRiemannTail.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/DilogPartBWP1Refutation.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/DilogPartBWindowMeasure.lean": [
-   "analysis",
    "transcendental-function"
   ],
   "QOU/MassTheory/DiprotonResponseClosedForm.lean": [
@@ -1432,16 +1323,6 @@
   "QOU/MassTheory/LinearChainBondFactorization.lean": [
    "transcendental-function"
   ],
-  "QOU/MassTheory/LobAnalytic.lean": [
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/LobBarrier.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/LobachevskyDerivativeAnalytic.lean": [
-   "transcendental-function"
-  ],
   "QOU/MassTheory/MagnusSumAbsEigBound.lean": [
    "real-completion"
   ],
@@ -1547,9 +1428,6 @@
   ],
   "QOU/MassTheory/SpuriousClosureBinding.lean": [
    "transcendental-function"
-  ],
-  "QOU/MassTheory/StokesSingularCountAffine.lean": [
-   "analysis"
   ],
   "QOU/MassTheory/TetVolAnalytic.lean": [
    "transcendental-function"
@@ -1668,9 +1546,6 @@
    "real-completion",
    "transcendental-function"
   ],
-  "QOU/Nuclear/ColourReconnectionStokesAssembly.lean": [
-   "real-completion"
-  ],
   "QOU/Nuclear/CoshHolonomyAndGPMTBaseBridge.lean": [
    "transcendental-function"
   ],
@@ -1697,9 +1572,6 @@
    "transcendental-function"
   ],
   "QOU/Nuclear/DeltaLambdaT5Assembly.lean": [
-   "transcendental-function"
-  ],
-  "QOU/Nuclear/DilogTheoryArchimedean.lean": [
    "transcendental-function"
   ],
   "QOU/Nuclear/DiscriminantCurveInQ.lean": [
@@ -1746,9 +1618,6 @@
   "QOU/Nuclear/FiveTwoCurveDeriv.lean": [
    "analysis"
   ],
-  "QOU/Nuclear/FiveTwoDeformedSaddle.lean": [
-   "transcendental-function"
-  ],
   "QOU/Nuclear/FiveTwoDiscriminant.lean": [
    "analysis",
    "real-completion"
@@ -1780,9 +1649,6 @@
    "transcendental-function"
   ],
   "QOU/Nuclear/FiveTwoLevelSevenBridge.lean": [
-   "transcendental-function"
-  ],
-  "QOU/Nuclear/FiveTwoPairSaddle.lean": [
    "transcendental-function"
   ],
   "QOU/Nuclear/FiveTwoReflectionDischarged.lean": [
@@ -1892,18 +1758,11 @@
    "real-completion",
    "transcendental-function"
   ],
-  "QOU/Nuclear/PhibSaddleA1Exact.lean": [
-   "real-completion"
-  ],
   "QOU/Nuclear/PhotonVertexEigenphase.lean": [
    "transcendental-function"
   ],
   "QOU/Nuclear/PretzelRemainderFromPtolemy.lean": [
    "analysis"
-  ],
-  "QOU/Nuclear/Qsqrt3SaddleArithmetic.lean": [
-   "real-completion",
-   "transcendental-function"
   ],
   "QOU/Nuclear/ReebTowerJacobiAnger.lean": [
    "transcendental-function"
@@ -1915,10 +1774,6 @@
    "transcendental-function"
   ],
   "QOU/Nuclear/SpectatorEnergyMap.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/Nuclear/Stokes3LargeOrderAmplitude.lean": [
    "analysis",
    "transcendental-function"
   ],
