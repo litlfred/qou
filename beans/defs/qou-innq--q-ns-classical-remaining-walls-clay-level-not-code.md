@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-07-24T15:49:33Z
-updated_at: 2026-11-27T16:05:00Z
+updated_at: 2026-11-27T17:26:22Z
 parent: qou-a3n3
 ---
 
@@ -43,3 +43,7 @@ physical-layer data -> alpha = 2 by unit conversion only (artifact); free q-depe
 Part A stays OPEN for a modal law with triad transfer. Owner decision pending: weaken thm:q-ns-wellposedness
 property 3 / withdraw Part A / record physical-layer reading as artifact. Audit:
 docs/audits/2026-11-27-qns-part-a-enstrophy-order-parameter.md
+
+## 2026-11-27 Part B route (thread 'Find q-NS Part B route'), PR #9491
+
+Owner chose R4, tail matching + degree. Part B is a nonzero zero of g(c) = Ac + Q(c) on log-phase tail coefficients. Q is even, so if Q has no real projective zero, every truncation has nonzero zeros, which explains the Galerkin artifacts. Open step: an a priori bound uniform in the truncation (Leray–Schauder). R1 (Lamb-gradient / Beltrami) is closed: the Kummer coefficients are nonzero (DSSTailMatching.lean, sorry-free). R2 gives only Landau. Owner asked for a separate thread on the Bernoulli-flux bound. Item 3: no subject (see above). Items 5 and 6 are now child beans. Audit: docs/audits/2026-11-27-qns-part-b-route-assessment.md. Status stays in-progress: Part B is open.
