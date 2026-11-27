@@ -353,12 +353,77 @@ axioms `propext`, `Classical.choice`, `Quot.sound`). The setting is a nil ideal 
 Together with the pentagon and hexagon cases above, all four conditions are closed under
 (5.16) at the level of evaluations. Every hypothesis is a named argument.
 
-**Still open (bean `qou-3fdg`).**
+**5. The composite as a polynomial; `GRT₁` closed in `U4 N`** (`GRTComposite.lean`, sorry-free,
+axioms `propext`, `Classical.choice`, `Quot.sound`).
 
-1. Lifting the evaluation-level closure to an element `g₁ ∘ g₂` of the truncated free algebra
-   (substitute `G a G'` for `A` in `g₁`). This is needed for the pentagon and hexagon to apply
-   to the composite as a polynomial.
-2. The flow argument of Route A, and with it (S4). Two pieces are missing:
-   - the derivative of each condition along `g ↦ g ∘ (1 + εy)`;
-   - uniqueness for the resulting linear equation in the graded nilpotent setting.
-3. The congruence `Φ ∘ g ≡ Φ + y`.
+- `compPoly g₁ g₂ = g₁(g₂·A·g₂(B,A), B)·g₂` is (5.16) with the inverse written through (5.12).
+  `eval_compPoly` (no hypotheses): `eval a b (compPoly g₁ g₂) = compEval g₁ g₂ a b`.
+- `algebraMapInv_compPoly`: the constant term of `compPoly g₁ g₂` is `ε(g₁)·ε(g₂)`.
+- `pentagon_compPoly_U4` and `hexagon_compPoly_U4` (any `E`): the pentagon and hexagon of the
+  composite at the universal family, from those of `g₁` and the conditions on `g₂`.
+- `structure GRT1U4 N g` packages:
+  - the constant term `1`;
+  - (5.12) and (5.14) on all of `Fil N 1`;
+  - (5.13), the `E = 1` hexagon, at the universal family;
+  - (5.15) at the universal family.
+
+  `grt1U4_comp`: `GRT1U4 N` is closed under `compPoly`.
+
+## 10. Stage 4, the flow argument settled on paper (handoff)
+
+**Goal (S4).** For `y` homogeneous of degree `n` in `grt` (the linearised (5.12)–(5.15) hold
+for `y`), `Exp(y) := Σ_k L_y^k(1)/k!` satisfies `GRT1U4 N` for every `N`, with
+`L_y(z) = D_y(z) + z·y`, `D_y(A) = [y,A]`, `D_y(B) = 0`.
+
+**Discrete argument (no derivatives).** Write `C` for any one of the four conditions and
+`δ_C(g) = LHS − RHS ∈ U4 N`. Each step is first a statement on paper; none is in Lean yet.
+
+- **(G) Grading.**
+  - `L_{xy} = x·L_y` for `x ∈ ℚ`, so `Exp(xy) = Σ_k x^k e_k`, with `e_k = L_y^k(1)/k!`
+    homogeneous of degree `kn`.
+  - Each condition is homogeneous in the `t`'s, with `e_C` explicit `t` factors per term:
+    `e_C = 0` for (5.12), (5.13), (5.15), and `e_C = 1` for (5.14).
+  - Hence the degree-`d` component of `δ_C(Exp(xy))` is a monomial `c_{C,d}·x^{(d−e_C)/n}`, and
+    it is zero when `n ∤ d − e_C`.
+- **(A) Top-defect additivity.** Suppose all defects of `g₁` and `g₂` lie in `Fil N d`. Then
+  `δ_C(g₁∘g₂) ≡ δ_C(g₁) + δ_C(g₂) (mod Fil N (d+1))`.
+  - Proof idea: rerun the closure proofs of §9.4–§9.5 with each hypothesis replaced by
+    "equation + error in `Fil N d`".
+  - Errors in `Fil N d` multiply with `Fil N 1` into `Fil N (d+1)`. The unit factors are
+    `≡ 1 (mod Fil N 1)`.
+  - So each error enters additively. Conjugation by a unit fixes it modulo `Fil N (d+1)`.
+- **(P) One-parameter law.** `Exp(sy) ∘ Exp(ty) = Exp((s+t)y)`, in particular `s = t`.
+  - Exact over ℚ through degree 9 for `y = σ₃` and for `y = [X,[X,Y]]`
+    (`exp516_oneparam.py`). Not proved.
+  - A proof is ODE uniqueness in disguise. Both sides `F` satisfy
+    `F(x + x') = F(x) ∘ Exp(x'y)`, whose `x'`-linear part is `L_y`.
+  - Discrete form to try: compare `x`-coefficients. Both sides have `F_0 = 1` and
+    `(k+1)F_{k+1} = L_y(F_k)`. The left side needs the coefficient of `x'^1` in
+    `g ∘ Exp(x'y)`, which is `L_y(g)`. This is a polynomial identity in `x'`, read off from the
+    definition of `compPoly`.
+
+**The induction.** Let `d₀` be the lowest degree of any defect of `Exp(xy)`, and suppose
+`d₀ < ∞`. Set `P(x) = c x^m` with `m = (d₀ − e_C)/n`.
+
+1. By (P), `Exp(2xy) = Exp(xy) ∘ Exp(xy)`. By (A), `P(2x) = 2P(x)`, so `c(2^m − 2) = 0`.
+2. If `m ≠ 1`, then `c = 0`.
+3. If `m = 1`, then `c` is the `x`-linear part of `δ_C(Exp(xy)) = δ_C(1 + xy + O(x²))`. That is
+   the linearised condition at `y`, which vanishes because `y ∈ grt`.
+4. So every degree-`d₀` defect vanishes, contradicting the choice of `d₀`.
+5. Hence `Exp(y) ∈ GRT1U4 N`, and `Exp(y) ≡ 1 + y (mod degree n+1)`.
+
+**Order for a fresh agent.**
+1. Define `ExpPoly y N` in Lean as `Σ_{k≤N} L^k(1)/k!`. `L` is a ℚ-linear map; `D_y` is a
+   derivation, built via `FreeAlgebra.lift` to `ℚ⟨A,B⟩ ⋊ ε`, or by words.
+2. Prove (G).
+3. Prove (P) by the coefficient recursion.
+4. Prove (A) by error-carrying copies of `comp_inv512`, `comp_tcompat` and the action
+   theorems. This is the bulk.
+5. Run the induction.
+6. Separately, prove the congruence `Φ ∘ g ≡ Φ + y`.
+
+The linearised conditions defining `grt` need a Lean definition matching step 3 of the
+induction. No `grt` predicate exists in the repo yet.
+
+**Still open (bean `qou-3fdg`):** (G), (A), (P), the induction, the `grt` predicate and
+`Φ ∘ g ≡ Φ + y`.
