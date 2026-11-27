@@ -48,3 +48,12 @@ Owner ruling, 2026-11-27, via a decision card in the project thread "C to D migr
 - **A**: rule a second structural criterion beside reading 3 that bounds magnitude. It must come from the decay channel's particle content, not from the residual, because a ceiling chosen so that the target survives would be a fit.
 - **C**: build the H₆→H₃ (one nucleon) and H₁₂→H₆ (two nucleon) ladder with quark letters, and record the γγ residue with no magnitude expectation.
 B (reopening the z_D base) is held.
+
+
+## 2026-11-27 — routes A and C done (PR litlfred/qou#9530)
+
+**A (scope b, invariant = writhe).** `QOU.MassTheory.ClimbingFamilyNeutralExclusion.not_neutral_support`, core Lean, sorry-free: every braid word of e₀e₂Σ₁ᶜ has writhe in [4c, 4c+2], and a linking-neutral word has writhe 0. So for c ≥ 1 the term-by-term neutrality rule (owner 2026-11-25) removes the whole family, and at c = 0 only the identity term survives. This holds in the braid group algebra of B₄, before the Hecke quotient (in H₄, e₀e₂Σ₁ = q²e₀e₂). The Nov 14 finding "the magnitude is free, it can only be picked" therefore does not survive the ruled filter: the climbing family is excluded, not free. Probe `climbing_family_neutral_exclusion_probe.py`, all checks pass.
+
+**C.** `docs/audits/2026-11-27-cds1-route-c-gamma-gamma-ladder-gaps.md`. The H₃ endpoint V³ is selected, but only inside H₃. Still open: the H₆→H₃ and H₁₂→H₆ descents, derived quark letters, and a per-step residue for the ruled photon grammar on ≥ 4 strands. The audit lists three steps to close C.
+
+Q_β magnitude remains OPEN; this bean stays open.
