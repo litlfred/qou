@@ -426,14 +426,15 @@ section Step4
 
 variable {K : Type*} [Field K] [Algebra ℚ K] {N d : ℕ}
 
-/-- **Step (4) of gap B1.** Shifting a `K`-associator `Ψ₀ ≡ 1 (FFK 1)` successively by
-`exp(c_i h_i)`, `i ∈ s`, with `h_i ∈ FF d` whose rational exponentials are in `GRT₁(U4 N)`,
-gives a `K`-associator `Ψ ≡ Ψ₀ + Σ c_i ⊗ h_i` modulo `FFK (d + 1)`. -/
-theorem assocK_shift_finset (hd : 1 ≤ d) {n : ℕ} (hn : 2 ≤ n) {ι : Type*} (s : Finset ι)
+/-- **Step (4), with an invariant.** Shifting `Ψ₀ ≡ 1 (FFK 1)` successively by `exp(c_i h_i)`,
+`i ∈ s`, `h_i ∈ FF d`, keeps any predicate `Q` that each single shift keeps, and gives
+`Ψ ≡ Ψ₀ + Σ c_i ⊗ h_i` modulo `FFK (d + 1)`. -/
+theorem shift_finset_pred (hd : 1 ≤ d) {n : ℕ} (hn : 2 ≤ n) {ι : Type*} (s : Finset ι)
     (c : ι → K) (h : ι → FreeAlgebra ℚ (Fin 2)) (hh : ∀ i, h i ∈ FF d)
-    (hg : ∀ i (x : ℚ), GRT1U4 N (expPoly (x • h i) n)) {E : FreeAlgebra ℚ (Fin 2)}
-    {Ψ₀ : K ⊗[ℚ] FreeAlgebra ℚ (Fin 2)} (hΨ₀ : AssocK K N E Ψ₀) (h1 : Ψ₀ - 1 ∈ FFK K 1) :
-    ∃ Ψ, AssocK K N E Ψ ∧ Ψ - Ψ₀ - ∑ i ∈ s, c i ⊗ₜ h i ∈ FFK K (d + 1) := by
+    (Q : K ⊗[ℚ] FreeAlgebra ℚ (Fin 2) → Prop)
+    (hQ : ∀ i Ψ, Q Ψ → Q (compKK Ψ (GK (h i) n (c i))))
+    {Ψ₀ : K ⊗[ℚ] FreeAlgebra ℚ (Fin 2)} (hΨ₀ : Q Ψ₀) (h1 : Ψ₀ - 1 ∈ FFK K 1) :
+    ∃ Ψ, Q Ψ ∧ Ψ - Ψ₀ - ∑ i ∈ s, c i ⊗ₜ h i ∈ FFK K (d + 1) := by
   classical
   induction s using Finset.induction_on with
   | empty => exact ⟨Ψ₀, hΨ₀, by simp⟩
@@ -445,13 +446,24 @@ theorem assocK_shift_finset (hd : 1 ≤ d) {n : ℕ} (hn : 2 ≤ n) {ι : Type*}
       have e : Ψ - 1 = (Ψ - Ψ₀ - ∑ i ∈ s, c i ⊗ₜ h i) + ∑ i ∈ s, c i ⊗ₜ h i + (Ψ₀ - 1) := by
         abel
       rw [e]; exact add_mem (add_mem (FFK_anti (by omega) hmem) hsum) h1
-    refine ⟨compKK Ψ (GK (h a) n (c a)), assocK_shiftK hΨ (hg a) (c a), ?_⟩
+    refine ⟨compKK Ψ (GK (h a) n (c a)), hQ a Ψ hΨ, ?_⟩
     have hc := compKK_congr hd hn (hh a) hΨ1 (c a)
     rw [Finset.sum_insert ha]
     have e : compKK Ψ (GK (h a) n (c a)) - Ψ₀ - (c a ⊗ₜ h a + ∑ i ∈ s, c i ⊗ₜ h i) =
         (compKK Ψ (GK (h a) n (c a)) - Ψ - c a ⊗ₜ h a) + (Ψ - Ψ₀ - ∑ i ∈ s, c i ⊗ₜ h i) := by
       abel
     rw [e]; exact add_mem hc hmem
+
+/-- **Step (4) of gap B1.** Shifting a `K`-associator `Ψ₀ ≡ 1 (FFK 1)` successively by
+`exp(c_i h_i)`, `i ∈ s`, with `h_i ∈ FF d` whose rational exponentials are in `GRT₁(U4 N)`,
+gives a `K`-associator `Ψ ≡ Ψ₀ + Σ c_i ⊗ h_i` modulo `FFK (d + 1)`. -/
+theorem assocK_shift_finset (hd : 1 ≤ d) {n : ℕ} (hn : 2 ≤ n) {ι : Type*} (s : Finset ι)
+    (c : ι → K) (h : ι → FreeAlgebra ℚ (Fin 2)) (hh : ∀ i, h i ∈ FF d)
+    (hg : ∀ i (x : ℚ), GRT1U4 N (expPoly (x • h i) n)) {E : FreeAlgebra ℚ (Fin 2)}
+    {Ψ₀ : K ⊗[ℚ] FreeAlgebra ℚ (Fin 2)} (hΨ₀ : AssocK K N E Ψ₀) (h1 : Ψ₀ - 1 ∈ FFK K 1) :
+    ∃ Ψ, AssocK K N E Ψ ∧ Ψ - Ψ₀ - ∑ i ∈ s, c i ⊗ₜ h i ∈ FFK K (d + 1) :=
+  shift_finset_pred hd hn s c h hh (AssocK K N E)
+    (fun i _ hΨ => assocK_shiftK hΨ (hg i) (c i)) hΨ₀ h1
 
 end Step4
 
@@ -542,22 +554,29 @@ section Induction
 
 variable {K : Type*} [Field K] [Algebra ℚ K] {N d : ℕ}
 
-/-- **The induction step of gap B1, modulo primitivity of the top layer.** Let `d ≥ 1`,
-`d + 1 ≤ N ≤ n`, `2 ≤ n`, `ε(E) = ε(Φ) = 1`, and let `1 ⊗ Φ + z` (`z ∈ K ⊗ FF d`) be a
-`K`-associator in `U4 N`. Suppose every rational contraction of `z` agrees modulo `FF (d + 1)`
-with a primitive homogeneous element of degree `d` (`hprim`; this is what group-likeness of the
-`K`-associator supplies, and is not derived here). Then there is a rational `x ∈ FF d` with
-`Φ + x` a (rational) associator in `U4 (d + 1)`, together with a `K`-associator `Ψ` in `U4 N`
-agreeing with `1 ⊗ (Φ + x)` modulo `FFK (d + 1)`. -/
-theorem inductionStep_of_primitiveLayer (hd : 1 ≤ d) (hdN : d + 1 ≤ N) {n : ℕ} (hn : 2 ≤ n)
+/-- **The induction step of gap B1, core form.** Let `d ≥ 1`, `d + 1 ≤ N ≤ n`, `2 ≤ n`,
+`ε(E) = ε(Φ) = 1`, and let `1 ⊗ Φ + z` (`z ∈ K ⊗ FF d`) be a `K`-associator in `U4 N`. Suppose
+that for all functionals `μ, ν : K → ℚ` the combination `μ(1)·c_ν(z) − ν(1)·c_μ(z)` of rational
+contractions agrees modulo `FF (d + 1)` with a primitive homogeneous element of degree `d`
+(`hprim`). Then there is a rational `x ∈ FF d` with `Φ + x` an associator in `U4 (d + 1)`,
+together with a `K`-associator `Ψ` in `U4 N` agreeing with `1 ⊗ (Φ + x)` modulo `FFK (d + 1)`.
+Moreover `Ψ` satisfies any predicate `Q` that `1 ⊗ Φ + z` satisfies and that every shift by
+`exp(c H)`, `H ∈ FF d` primitive with `exp(x H) ∈ GRT₁(U4 N)`, preserves. -/
+theorem inductionStep_core (hd : 1 ≤ d) (hdN : d + 1 ≤ N) {n : ℕ} (hn : 2 ≤ n)
     (hNn : N ≤ n) {E Φ : FreeAlgebra ℚ (Fin 2)} (hE : FreeAlgebra.algebraMapInv E = 1)
     (hΦ : FreeAlgebra.algebraMapInv Φ = 1) (z : K ⊗[ℚ] FF d)
     (hK : AssocK K N E ((1 : K) ⊗ₜ Φ + LinearMap.lTensor K (FF d).subtype z))
-    (hprim : ∀ μ : K →ₗ[ℚ] ℚ, ∃ h : FreeAlgebra ℚ (Fin 2), Homog d h ∧
-      ((contract μ (FF d) z : FreeAlgebra ℚ (Fin 2)) - h ∈ FF (d + 1)) ∧
-        Friedrichs.IsPrimitive h) :
+    (hprim : ∀ μ ν : K →ₗ[ℚ] ℚ, ∃ h : FreeAlgebra ℚ (Fin 2), Homog d h ∧
+      (μ 1 • (contract ν (FF d) z : FreeAlgebra ℚ (Fin 2)) -
+        ν 1 • (contract μ (FF d) z : FreeAlgebra ℚ (Fin 2)) - h ∈ FF (d + 1)) ∧
+        Friedrichs.IsPrimitive h)
+    (Q : K ⊗[ℚ] FreeAlgebra ℚ (Fin 2) → Prop)
+    (hQ0 : Q ((1 : K) ⊗ₜ Φ + LinearMap.lTensor K (FF d).subtype z))
+    (hQ : ∀ (H : FreeAlgebra ℚ (Fin 2)) (c : K) (Ψ : K ⊗[ℚ] FreeAlgebra ℚ (Fin 2)), H ∈ FF d →
+      Friedrichs.IsPrimitive H → (∀ x : ℚ, GRT1U4 N (expPoly (x • H) n)) → Q Ψ →
+        Q (compKK Ψ (GK H n c))) :
     ∃ x ∈ FF d, AssocU4 (d + 1) E (Φ + x) ∧
-      ∃ Ψ, AssocK K N E Ψ ∧ Ψ - (1 : K) ⊗ₜ (Φ + x) ∈ FFK K (d + 1) := by
+      ∃ Ψ, AssocK K N E Ψ ∧ Q Ψ ∧ Ψ - (1 : K) ⊗ₜ (Φ + x) ∈ FFK K (d + 1) := by
   classical
   obtain ⟨π, hπ⟩ := exists_retraction (k := ℚ) (K := K)
   obtain ⟨x0, hx0, hw⟩ := rational_lift_of_assocK hd hE hΦ z (hK.proj hdN)
@@ -584,16 +603,16 @@ theorem inductionStep_of_primitiveLayer (hd : 1 ≤ d) (hdN : d + 1 ≤ N) {n : 
     exact hxx0
   -- the primitive representatives
   choose hμ hHom hdiff hP using hprim
-  let H : (K →ₗ[ℚ] ℚ) → FreeAlgebra ℚ (Fin 2) := fun μ => μ 1 • hμ π - hμ μ
+  let H : (K →ₗ[ℚ] ℚ) → FreeAlgebra ℚ (Fin 2) := fun μ => hμ μ π
   have hHdiff : ∀ μ, (contract μ (FF d) u : FreeAlgebra ℚ (Fin 2)) - H μ ∈ FF (d + 1) := by
     intro μ
-    have e : (contract μ (FF d) u : FreeAlgebra ℚ (Fin 2)) - H μ =
-        μ 1 • ((x : FreeAlgebra ℚ (Fin 2)) - hμ π) -
-          ((contract μ (FF d) z : FreeAlgebra ℚ (Fin 2)) - hμ μ) := by
-      simp only [H, hu, map_sub, contract_tmul, Submodule.coe_sub, Submodule.coe_smul, smul_sub]
-      abel
+    have e : (contract μ (FF d) u : FreeAlgebra ℚ (Fin 2)) =
+        μ 1 • (contract π (FF d) z : FreeAlgebra ℚ (Fin 2)) -
+          π 1 • (contract μ (FF d) z : FreeAlgebra ℚ (Fin 2)) := by
+      simp only [hu, hx, map_sub, contract_tmul, Submodule.coe_sub, Submodule.coe_smul, hπ,
+        one_smul]
     rw [e]
-    exact sub_mem (Submodule.smul_mem _ _ (hdiff π)) (hdiff μ)
+    exact hdiff μ π
   have hHF : ∀ μ, H μ ∈ FF d := by
     intro μ
     have e : H μ = (contract μ (FF d) u : FreeAlgebra ℚ (Fin 2)) -
@@ -607,8 +626,7 @@ theorem inductionStep_of_primitiveLayer (hd : 1 ≤ d) (hdN : d + 1 ≤ N) {n : 
     rw [e, map_sub, assocLin_eq_zero_of_mem_FF (hHdiff μ), sub_zero]
     exact hcu μ
   have hHgrt : ∀ μ, GrtU4 N (H μ) := fun μ =>
-    grtU4_of_lin_primitive ((hHom π).smul' _ |>.sub' (hHom μ)) (hHlin μ)
-      (((hP π).smul _).sub (hP μ))
+    grtU4_of_lin_primitive (hHom μ π) (hHlin μ) (hP μ π)
   -- shift `1 ⊗ Φ + z` by the basis coordinates of `u`
   set B := Module.Basis.ofVectorSpace ℚ K
   set f := TensorProduct.equivFinsuppOfBasisLeft B u
@@ -624,10 +642,12 @@ theorem inductionStep_of_primitiveLayer (hd : 1 ≤ d) (hdN : d + 1 ≤ N) {n : 
     rw [e]
     refine add_mem (tmul_mem_FFK _ (sub_algebraMapInv_mem_FF Φ)) ?_
     exact FFK_anti hd ⟨z, rfl⟩
-  obtain ⟨Ψ, hΨ, hmem⟩ := assocK_shift_finset hd hn f.support (fun i => B i)
-    (fun i => H (B.coord i)) (fun i => hHF _)
-    (fun i r => grt1U4_expPoly (hHgrt _) hn hNn r) hK hΨ01
-  refine ⟨x, x.2, hassoc, Ψ, hΨ, ?_⟩
+  obtain ⟨Ψ, ⟨hΨ, hQΨ⟩, hmem⟩ := shift_finset_pred hd hn f.support (fun i => B i)
+    (fun i => H (B.coord i)) (fun i => hHF _) (fun Ψ => AssocK K N E Ψ ∧ Q Ψ)
+    (fun i Ψ hΨ => ⟨assocK_shiftK hΨ.1 (fun r => grt1U4_expPoly (hHgrt _) hn hNn r) _,
+      hQ _ _ _ (hHF _) (hP _ _) (fun r => grt1U4_expPoly (hHgrt _) hn hNn r) hΨ.2⟩)
+    ⟨hK, hQ0⟩ hΨ01
+  refine ⟨x, x.2, hassoc, Ψ, hΨ, hQΨ, ?_⟩
   -- `lTensor u = Σ B i ⊗ f i` and `lTensor u = 1 ⊗ x − lTensor z`
   have hLu : LinearMap.lTensor K (FF d).subtype u = ∑ i ∈ f.support, B i ⊗ₜ (f i : FreeAlgebra ℚ (Fin 2)) := by
     conv_lhs => rw [basis_sum_eq B u]
@@ -651,6 +671,37 @@ theorem inductionStep_of_primitiveLayer (hd : 1 ≤ d) (hdN : d + 1 ≤ N) {n : 
   refine sub_mem hmem (Submodule.sum_mem _ fun i _ => tmul_mem_FFK _ ?_)
   rw [hf]
   exact hHdiff _
+
+
+/-- **The induction step of gap B1, modulo primitivity of the top layer.** Let `d ≥ 1`,
+`d + 1 ≤ N ≤ n`, `2 ≤ n`, `ε(E) = ε(Φ) = 1`, and let `1 ⊗ Φ + z` (`z ∈ K ⊗ FF d`) be a
+`K`-associator in `U4 N`. Suppose every rational contraction of `z` agrees modulo `FF (d + 1)`
+with a primitive homogeneous element of degree `d` (`hprim`; `GroupLikeK` derives the form
+`inductionStep_core` needs from group-likeness of the `K`-associator). Then there is a rational
+`x ∈ FF d` with `Φ + x` a (rational) associator in `U4 (d + 1)`, together with a `K`-associator
+`Ψ` in `U4 N` agreeing with `1 ⊗ (Φ + x)` modulo `FFK (d + 1)`. -/
+theorem inductionStep_of_primitiveLayer (hd : 1 ≤ d) (hdN : d + 1 ≤ N) {n : ℕ} (hn : 2 ≤ n)
+    (hNn : N ≤ n) {E Φ : FreeAlgebra ℚ (Fin 2)} (hE : FreeAlgebra.algebraMapInv E = 1)
+    (hΦ : FreeAlgebra.algebraMapInv Φ = 1) (z : K ⊗[ℚ] FF d)
+    (hK : AssocK K N E ((1 : K) ⊗ₜ Φ + LinearMap.lTensor K (FF d).subtype z))
+    (hprim : ∀ μ : K →ₗ[ℚ] ℚ, ∃ h : FreeAlgebra ℚ (Fin 2), Homog d h ∧
+      ((contract μ (FF d) z : FreeAlgebra ℚ (Fin 2)) - h ∈ FF (d + 1)) ∧
+        Friedrichs.IsPrimitive h) :
+    ∃ x ∈ FF d, AssocU4 (d + 1) E (Φ + x) ∧
+      ∃ Ψ, AssocK K N E Ψ ∧ Ψ - (1 : K) ⊗ₜ (Φ + x) ∈ FFK K (d + 1) := by
+  choose hμ hHom hdiff hP using hprim
+  obtain ⟨x, hx, ha, Ψ, hΨ, -, hm⟩ := inductionStep_core hd hdN hn hNn hE hΦ z hK
+    (fun μ ν => ⟨μ 1 • hμ ν - ν 1 • hμ μ, ((hHom ν).smul' _).sub' ((hHom μ).smul' _), by
+      have e : μ 1 • (contract ν (FF d) z : FreeAlgebra ℚ (Fin 2)) -
+          ν 1 • (contract μ (FF d) z : FreeAlgebra ℚ (Fin 2)) - (μ 1 • hμ ν - ν 1 • hμ μ) =
+          μ 1 • ((contract ν (FF d) z : FreeAlgebra ℚ (Fin 2)) - hμ ν) -
+            ν 1 • ((contract μ (FF d) z : FreeAlgebra ℚ (Fin 2)) - hμ μ) := by
+        simp only [smul_sub]; abel
+      rw [e]
+      exact sub_mem (Submodule.smul_mem _ _ (hdiff ν)) (Submodule.smul_mem _ _ (hdiff μ)),
+      ((hP ν).smul _).sub ((hP μ).smul _)⟩)
+    (AssocK K N E) hK (fun H c Ψ _ _ hg hΨ => assocK_shiftK hΨ hg c)
+  exact ⟨x, hx, ha, Ψ, hΨ, hm⟩
 
 end Induction
 
