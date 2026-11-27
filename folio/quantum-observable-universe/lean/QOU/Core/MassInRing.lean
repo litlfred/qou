@@ -190,7 +190,7 @@ variable {R S : Type*} [CommRing R] [CommRing S]
 
 /-- A ring hom respecting ideal towers is a map of adic near systems (resolution unchanged). -/
 def ringHomNearMap (ψ : R →+* S) (I : ℕ → Ideal R) (hI : Antitone I)
-    (J : ℕ → Ideal S) (hJ : Antitone J) (hIJ : ∀ n, I n ≤ (J n).comap ψ) :
+    (J : ℕ → Ideal S) (hJ : Antitone J) (hIJ : ∀ n, I n ≤ Ideal.comap ψ (J n)) :
     NearMap (adicNear I hI) (adicNear J hJ) where
   f := ψ
   g := id
