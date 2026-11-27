@@ -151,7 +151,7 @@ These are genuine functors (they act on morphisms). What is **not** a functor is
 | Symbol | Definition | Role | Status |
 |---|---|---|---|
 | $B_{\mathrm{AME}}$ | AME 2020 measurement | experimental ground truth | anchor |
-| $B_{\mathrm{sym}}$ | $-\alpha \ln\lvert\mathrm{tr}_M(K)\rvert$ (log-trace) | **exact** symbolic, light $A$ | kept |
+| $B_{\mathrm{sym}}$ | $-\alpha \ln\lvert\varphi(\mathrm{tr}_M(K))\rvert$ (log-trace; comparison reading of $\mathrm{tr}_M \in \mathbb{Q}(q)$) | **exact** symbolic, light $A$ | kept |
 | $B_{\mathrm{qCLT}}$ | $-\alpha \sum_i \ln\lvert V_i\rvert$ | qCLT asymptotic, $A\to\infty$ | kept |
 | $B_{\mathrm{lin}}$ | $Q_\beta(n)\,(\mathrm{tr}_M(W_{\text{free}}) - \mathrm{tr}_M(W_{\text{atom}}))$ | **linear-truncation** production | canonical compute |
 | $B_{\mathrm{depth}}$ | $\sum_k \alpha_k \Phi_k$ | depth-stratified tower | default; empirical $\alpha_k$ |

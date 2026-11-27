@@ -12,4 +12,14 @@ export default proposition({
   ],
   proofs: ["prf:mass-identity-unique"],
   tags: ["uniqueness", "mass-identity"],
+  authorNotes: [
+    {
+      kind: "status",
+      date: "2026-11-27",
+      body:
+        "**Scaling law restated in the ring (owner ruling 2026-11-27, bean qou-5o1v).** Rescaling the Frobenius form by a " +
+        "unit $c$ multiplies the mass by $c$ in $R$. The absolute-value form $|\\varphi(c)|$ is the comparison corollary " +
+        "`QOU.Transcendental.MassTheory.MassComparison.comparedMass_scale`.",
+    },
+  ],
 });
