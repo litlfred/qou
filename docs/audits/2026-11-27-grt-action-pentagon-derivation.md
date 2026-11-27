@@ -1255,3 +1255,58 @@ output, against the restored cache plus `/home/claude/chainbuild` (this branch's
 `stepData`, `shiftL_sub_mem`, `shiftL_sum`, `compKK_sub_mem` and
 `CompatibleGroupLikeKAssociatorTower.toTower` shows only `propext`, `Classical.choice` and
 `Quot.sound` (`exists_seq_of_step`: `Classical.choice` only). No `lake build` was run.
+
+## 17f. Stage 5: the quasi-Yang–Baxter equation for the rational tower (bean `qou-3fdg`)
+
+File: `folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/QuasiYBE.lean`.
+
+**Which reading.** Reading (a), a concrete quasi-triangular instance `(A, Δ, R)` over `ℚ` with a
+rational `Φ`, needs a realisation `t_ij ↦ h·Ω_ij` of the Drinfeld–Kohno algebra in
+`U(𝔤)^{⊗3}[h]/(h^N)` by a Casimir tensor, together with the invariance of `Ω` that makes the
+`Ω_ij` satisfy the Drinfeld–Kohno relations and `(Δ ⊗ id)(e^{hΩ/2}) = e^{h(Ω₁₃+Ω₂₃)/2}`. None
+of that is in the repository (the `HeckeTemperleyLieb/*Casimir*` files are about Hecke/TL
+blocks, not about `Ω ∈ U(𝔤)^{⊗2}`). So reading (b) was taken: the universal statement in the
+truncated algebra `U4 N`, and its transport to every realisation.
+
+**What `AssocU4` encodes.** Constant term `1`, (5.12) on `Fil N 1`, the hexagon in the repo's
+form `E(t₁₃+t₂₃) = φ(t₁₃,t₁₂) E(t₁₃) φ(t₂₃,t₁₃) E(t₂₃) φ(t₁₂,t₂₃)` at the universal three-strand
+family `(t₁₂, t₁₃, t₂₃)` of `U4 N`, and the pentagon in `U4 N`. With `R_ij = E(t_ij)` this is
+Drinfeld's hexagon `(Δ⊗id)R = Φ₃₁₂ R₁₃ Φ₁₃₂⁻¹ R₂₃ Φ₁₂₃`, with `Φ₁₃₂⁻¹ = φ(t₂₃,t₁₃)` by (5.12).
+That matches `P, Q, Φ` of `quasiYBE_of_hexagon` (PR #9519) exactly.
+
+**Proved (sorry-free).**
+
+- `quasiYBE_of_hexagons`: in any `ℚ`-algebra, for a `DK3` family `(a,b,c)`, the hexagons at
+  `(a,b,c)` and at the leg-swapped `(a,c,b)` give
+  `e(a)·φ(b,a)e(b)φ(c,b)e(c)φ(a,c) = φ(c,a)e(c)φ(b,c)e(b)φ(a,b)·e(a)`. Both sides equal
+  `e(a)e(b+c)`; the Drinfeld–Kohno relation `[t₁₂, t₁₃+t₂₃] = 0` plays the role that
+  quasi-cocommutativity plays in `quasiYBE_of_hexagon`.
+- `quasiYBE_U4`, `quasiYBE_of_assocU4`: in `U4 N` the swapped hexagon follows from the universal
+  one by `hexagon_of_universal` (the swapped family is `DK3` and lies in `Fil N 1`), so every
+  rational associator in `U4 N` satisfies the quasi-Yang–Baxter equation
+  `R₁₂Φ₃₁₂R₁₃Φ₁₃₂⁻¹R₂₃Φ₁₂₃ = Φ₃₂₁R₂₃Φ₂₃₁⁻¹R₁₃Φ₂₁₃R₁₂` there. The pentagon is not used.
+- `quasiYBE_compatible_of_tower`: the compatible rational sequence of §17e satisfies it at every
+  level `N ≥ 2`, conditional on `CompatibleGroupLikeKAssociatorTower K E`.
+- `quasiYBE_of_realization`: for a `ℚ`-algebra map `ρ : U4 N → (A⊗A)⊗A` sending
+  `e(t₁₂), e(t₁₃), e(t₂₃)` to `R₁₂, R₁₃, R₂₃`, the quasi-Yang–Baxter equation holds in
+  `(A⊗A)⊗A` with the `ρ`-images of the rational associators. No coproduct is used.
+- `hexagon_of_realization`, `quasiYBE_of_hexagon_realization`: if moreover
+  `ρ(e(t₁₃+t₂₃)) = (Δ⊗id)(R)`, the hypothesis `hhex` of `quasiYBE_of_hexagon` is discharged with
+  `P, Q, Φ` the `ρ`-images of `φ(t₁₃,t₁₂), φ(t₂₃,t₁₃), φ(t₁₂,t₂₃)`, and that theorem applies.
+
+**Hypotheses that remain.** (i) The named analytic input `CompatibleGroupLikeKAssociatorTower`
+(as in §17e). (ii) For a concrete `(A,Δ,R)`: the realisation map `ρ` and its three/four
+compatibilities, plus quasi-cocommutativity for `quasiYBE_of_hexagon_realization`; no instance
+is constructed. (iii) The braid relation `σ₁σ₂σ₁ = σ₂σ₁σ₂` with `σ₁ = s₁₂R₁₂`,
+`σ₂ = Φ⁻¹s₂₃R₂₃Φ` needs the semidirect product with `S₃`; only its equivalent quasi-YBE form is
+proved. (iv) `quasiYBE_of_hexagon`'s conclusion is stated with `τ₁₂(P)` etc.; identifying
+`τ₁₂(ρ φ(t₁₃,t₁₂))` with `ρ φ(t₂₃,t₁₂)` needs `ρ` to intertwine `τ₁₂` with the `S₃` action on
+`U4 N`, which is not proved (the universal theorem gives the permuted form directly).
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on `QuasiYBE.lean` exits 0 with no
+output, against a symlink overlay of the restored cache, `fr/out`, `b1sbuild`, `gltbuild`,
+`chainbuild`, `towerbuild` (later ones winning) plus a fresh `lean`-direct olean of
+`HeckeTemperleyLieb/QuasiYangBaxterFromHexagon.lean`. (The plain colon-separated `LEAN_PATH` does
+not work: Lean resolves a module under the first root containing a `QOU/` directory.)
+`#print axioms` on all seven theorems shows only `propext`, `Classical.choice`, `Quot.sound`.
+No `lake build` was run.
