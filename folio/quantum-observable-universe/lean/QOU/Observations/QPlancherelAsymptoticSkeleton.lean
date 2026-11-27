@@ -1,5 +1,6 @@
 import Mathlib.Tactic
-import Mathlib.Analysis.SpecialFunctions.Sqrt
+import Mathlib.Algebra.Order.Archimedean.Basic
+import QOU.Core.CutLimit
 
 /-!
 # QOU.Observations.QPlancherelAsymptoticSkeleton
@@ -59,6 +60,16 @@ realisation 3a/3b) is not formalised here — those are the open
 literature/conjectural parts of the manuscript, honestly left unencoded
 rather than smuggled into a `True`/projection field.
 
+## Algebraic form (2026-11-27, bean `qou-e1uf`, epic `qou-dk7p`)
+
+Owner ruling 2026-11-27: transcendental and analytic statements live behind
+`QOU/Transcendental/`. The majorant is now carried in its **squared** form,
+`v_n² · (n − 3) ≤ 1`, which for `v_n ≥ 0` and `n ≥ 4` is equivalent to
+`v_n ≤ 1/√(n − 3)` and uses no square root. The conclusion is
+`QOU.Core.CutLimit.ConvergesTo`, a located cut, over any Archimedean ordered
+field. No `Real.sqrt`, no filter, no topology. The `ℝ`/`Real.sqrt`/`Tendsto`
+form of the same statement is `QOU.Transcendental.QPlancherelSqrtBridge`.
+
 ## Cross-references
 
   - [folio/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.md]
@@ -67,60 +78,62 @@ rather than smuggled into a `True`/projection field.
 
 namespace QOU.Observations
 
-open Filter Topology
+open QOU.Core.CutLimit
 
-/-- **Inputs** for the q-Plancherel asymptotic skeleton. The variance
-    majorant is an *assumption* (its `1/√(n − 3)` form is unsourced — see
-    the module docstring); the theorem `QPlancherelAsymptoticSkeleton`
-    **derives** the asymptotic vanishing of the fluctuations from it,
-    rather than re-emitting it. -/
-class QPlancherelAsymptoticSkeletonContext where
+/-- **Inputs** for the q-Plancherel asymptotic skeleton, over an Archimedean
+    ordered field `K`. The variance majorant is an *assumption* (its
+    `1/√(n − 3)` form is unsourced, see the module docstring), carried
+    squared: `char_variance n ^ 2 * (n − 3) ≤ 1`. The theorem
+    `QPlancherelAsymptoticSkeleton` **derives** the vanishing of the
+    fluctuations from it, rather than re-emitting it. -/
+class QPlancherelAsymptoticSkeletonContext (K : Type*) [Field K] [LinearOrder K]
+    [IsStrictOrderedRing K] where
   /-- Variance of the character fluctuations `χ_λ − 𝔼_q[χ]` at strand
       count `n`, measured under the pushforward measure `μ_n^{(q)}`. -/
-  char_variance : ℕ → ℝ
+  char_variance : ℕ → K
   /-- The variance is non-negative (it is a variance). -/
   variance_nonneg : ∀ n : ℕ, 0 ≤ char_variance n
-  /-- **Assumed majorant**: the character fluctuations have variance
-      `O(1/√(n − 3))`. This is an ASSUMPTION of the context, not a cited
-      theorem — see the module docstring: the `1/√(n − 3)` form does not
-      occur in Féray–Méliot, and no source for it has been identified.
-      Renamed from `feray_meliot_bound` on 2026-09-05 so the name stops
-      asserting a provenance the corpus cannot produce. -/
-  variance_majorant : ∀ n : ℕ, 4 ≤ n →
-    char_variance n ≤ 1 / Real.sqrt ((n : ℝ) - 3)
+  /-- **Assumed majorant**, squared: `char_variance n ≤ 1/√(n − 3)` written
+      without the root. An ASSUMPTION of the context, not a cited theorem;
+      see the module docstring. -/
+  variance_majorant_sq : ∀ n : ℕ, 4 ≤ n →
+    char_variance n ^ 2 * ((n : K) - 3) ≤ 1
 
 /-- **q-Plancherel asymptotic skeleton — fluctuation vanishing**
     ([`prop:q-plancherel-asymptotic-skeleton`]).
 
-    The character fluctuations vanish in the large-`n` limit:
-    `char_variance n → 0`.
+    The character fluctuations vanish in the large-`n` limit: the sequence
+    `char_variance` converges to `0` as a located cut.
 
-    **Derived** by squeezing the assumed majorant `1/√(n − 3)` (which
-    itself tends to `0`, proved here via `Real.sqrt` continuity at `0`)
-    against the non-negative variance. This is the measure-concentration
-    content the manuscript's clauses 1–2 rest on — a consequence of the
-    hypothesis, not a projection of it. The squeeze needs only that the
-    majorant tends to `0`; it does not depend on where the majorant came
-    from, which is why the unsourced provenance does not touch the
-    theorem. -/
+    **Derived** from the squared majorant and non-negativity, using only the
+    Archimedean property of `K`: for `ε > 0` pick `N ≥ 4` with
+    `ε² (N − 3) > 1`; then `v_n ≥ ε` for some `n ≥ N` would give
+    `v_n² (n − 3) ≥ ε² (n − 3) > 1`. -/
 -- Ref: [feray-meliot2012] https://doi.org/10.1007/s00440-010-0331-6
 -- Ref: [leitner2026] quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.md
-theorem QPlancherelAsymptoticSkeleton [ctx : QPlancherelAsymptoticSkeletonContext] :
-    Tendsto (fun n : ℕ => ctx.char_variance n) atTop (𝓝 0) := by
-  -- The assumed majorant `1/√(n − 3)` tends to `0`.
-  have hden : Tendsto (fun n : ℕ => (n : ℝ) - 3) atTop atTop := by
-    simpa using tendsto_atTop_add_const_right atTop (-3 : ℝ) tendsto_natCast_atTop_atTop
-  have hinv : Tendsto (fun n : ℕ => ((n : ℝ) - 3)⁻¹) atTop (𝓝 0) :=
-    tendsto_inv_atTop_zero.comp hden
-  have hmaj : Tendsto (fun n : ℕ => 1 / Real.sqrt ((n : ℝ) - 3)) atTop (𝓝 0) := by
-    have h := (Real.continuous_sqrt.tendsto (0 : ℝ)).comp hinv
-    rw [Real.sqrt_zero] at h
-    refine h.congr (fun n => ?_)
-    simp only [Function.comp_apply, Real.sqrt_inv, one_div]
-  -- Squeeze `0 ≤ char_variance n ≤ 1/√(n − 3)`.
-  refine tendsto_of_tendsto_of_tendsto_of_le_of_le' tendsto_const_nhds hmaj
-    (Eventually.of_forall (fun n => ctx.variance_nonneg n)) ?_
-  filter_upwards [eventually_ge_atTop 4] with n hn
-  exact ctx.variance_majorant n hn
+theorem QPlancherelAsymptoticSkeleton {K : Type*} [Field K] [LinearOrder K]
+    [IsStrictOrderedRing K] [Archimedean K]
+    [ctx : QPlancherelAsymptoticSkeletonContext K] :
+    ConvergesTo ctx.char_variance 0 := by
+  apply convergesTo_of_tendstoEps
+  intro ε hε
+  obtain ⟨M, hM⟩ := exists_nat_gt (1 / ε ^ 2)
+  refine ⟨M + 4, fun n hn => ?_⟩
+  have hv := ctx.variance_nonneg n
+  have hsq := ctx.variance_majorant_sq n (by omega)
+  rw [sub_zero, abs_of_nonneg hv]
+  by_contra hge
+  push_neg at hge
+  have hε2 : 0 < ε ^ 2 := by positivity
+  have hn : (M : K) + 4 ≤ n := by exact_mod_cast hn
+  have h1 : 1 < ε ^ 2 * ((n : K) - 3) := by
+    have : 1 / ε ^ 2 < (n : K) - 3 := by linarith
+    rw [div_lt_iff₀ hε2] at this
+    linarith
+  have h2 : ε ^ 2 ≤ ctx.char_variance n ^ 2 := by
+    exact pow_le_pow_left₀ hε.le hge 2
+  have h3 : ε ^ 2 * ((n : K) - 3) ≤ ctx.char_variance n ^ 2 * ((n : K) - 3) :=
+    mul_le_mul_of_nonneg_right h2 (by linarith)
+  linarith
 
 end QOU.Observations
