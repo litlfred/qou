@@ -1,0 +1,77 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-27T19:59:36.711189+00:00",
+  "commitSha": "9726daf1f3bf1e462ae131588290630cb1c77837",
+  "assertions": [
+    {
+      "name": "primary_is_positive_and_finite",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sanity only; no accuracy assertion (scope (a) probe)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2,
+  "computation": "coulomb-radius-from-model-separation-probe",
+  "scriptFile": "coulomb_radius_from_model_separation_probe.py",
+  "scriptHash": "0c32261c25cf",
+  "scriptCommitSha": "9726daf1f3bf1e462ae131588290630cb1c77837",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/coulomb_radius_from_model_separation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/coulomb_radius_from_model_separation_probe.py"
+  },
+  "description": "Bean qou-usft path 1: ³He Coulomb length from the model's own separation energy S = B_QOU(³H) − B_QOU(²H), κ = √(2μS)/ℏc. Primary: zero-range tail r_rms = 1/(√2κ), R_u = √(5/3) r_rms — the tail-to-rms step is a FLAGGED CHOICE, not derived. Alternates (b) 1/κ and (c) three-body 1/κ₃ shown for the size of that choice, never selected. Control uses AME binding. Not wired to the scorecard. Scope (a).",
+  "data": {
+    "results": {
+      "model": {
+        "S_MeV": "3.443384",
+        "kappa_fm_inv": "0.3325771283761539303196917337757927184584857829548325829532186345999684",
+        "primary_R_u_fm": "2.744839771852244113075595254448943241073332219204662919972021410017062",
+        "alt_b_R_u_fm": "3.00682131956161562282135194071939004604070330489799583512901901511478",
+        "alt_c_R_u_fm": "1.939373815531168525051859755710239113554418011752877252485040839036454",
+        "primary_dEC_MeV": "0.6295297385405275469379506856226888575246823384932019312630200207031078",
+        "primary_rel_err": "-0.1757437431489438772057984289112642297949280029566528841517581914460464",
+        "alt_b_dEC_MeV": "0.5746793973649604791031542193545708459995406557054415299744593978506093",
+        "alt_b_rel_err": "-0.2475604249298407375110268109127226185454413650287360128233034689734365",
+        "alt_c_dEC_MeV": "0.8909877250438796318814225485397854206793248323755976485870900524123271",
+        "alt_c_rel_err": "0.1665885853899612816633296648000277532489544713293323226780430554006112"
+      },
+      "control_AME": {
+        "S_MeV": "6.257276",
+        "kappa_fm_inv": "0.4483182084065328722383687475012657556562065975777451293560680056481914",
+        "primary_R_u_fm": "2.036212029888131893061267090574126007703526626756680410388911845288288",
+        "alt_b_R_u_fm": "2.230558521266226683467365101585325832507695982695535997211958706056371",
+        "alt_c_R_u_fm": "1.563746658279925036314455626859698745655974537255400183871726178704657",
+        "primary_dEC_MeV": "0.8486141121584068895232851221730868627483254006044916495936319488847529",
+        "primary_rel_err": "0.1111079410168965329861920125120337859554172676507044375201006229704914",
+        "alt_b_dEC_MeV": "0.7746751530772975057331828222072027314969149837130737092411975427734743",
+        "alt_b_rel_err": "0.01429813853012304907718929692102619559945068202127063232800233338407515",
+        "alt_c_dEC_MeV": "1.105011642877297900241597637702591279602609085927924081864453242976499",
+        "alt_c_rel_err": "0.4468145105368071759379103904417491638189062516077462992635192628510584"
+      }
+    },
+    "reference_lambda_pi_A13": {
+      "R_u_fm": "2.039076860886328320081718170010735771264321303739177023732759343076104",
+      "dEC_MeV": "0.8474218392918698241778962921671663655993492336363122968843858945242658"
+    },
+    "comparison_target_MeV": "0.76375488"
+  }
+}

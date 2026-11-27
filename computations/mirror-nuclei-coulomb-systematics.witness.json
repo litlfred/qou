@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-27T18:57:39.752126+00:00",
-  "commitSha": "7692cdf8deeffe09236033935725458b43868f5d",
+  "computedAt": "2026-11-27T19:39:32.656893+00:00",
+  "commitSha": "cbcbe5e2e09d230a24d264039ed199bca7134b50",
   "assertions": [
     {
       "name": "mirror_split_proportional_to_canonical_coulomb_all_A",
@@ -10,7 +10,7 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "split_AME/ΔE_C(canonical Z(Z−1), r₀=1.2) = 0.987 ± 0.069 (7% spread) across 8 mirror pairs A=3–39 ⇒ the split is proportional to Coulomb ⇒ the strong kernel must be charge-symmetric. The spread is a monotone TREND, not constant scatter (Pearson r = 0.830); the proportionality conclusion is unaffected."
+      "source": "split_AME/ΔE_C(canonical Z(Z−1), R=λ̄_π·A^{1/3}) = 0.987 ± 0.069 (7% spread) across 8 mirror pairs A=3–39 ⇒ the split is proportional to Coulomb ⇒ the strong kernel must be charge-symmetric. The spread is a monotone TREND, not constant scatter (Pearson r = 0.830); the proportionality conclusion is unaffected."
     },
     {
       "name": "mirror_ratio_trends_monotonically_with_A",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 2,
   "computation": "mirror-nuclei-coulomb-systematics",
   "scriptFile": "mirror_nuclei_coulomb_systematics.py",
-  "scriptHash": "3b8723fada1a",
-  "scriptCommitSha": "7692cdf8deeffe09236033935725458b43868f5d",
+  "scriptHash": "e8cac40e5522",
+  "scriptCommitSha": "48f5cf6bb1750e1b6dc655052a0580f32bdb1394",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,79 +46,79 @@
     ],
     "reproduce": "python3 -u computations/mirror_nuclei_coulomb_systematics.py"
   },
-  "description": "The mirror binding split is Coulomb across the isobaric chain ³H/³He…³⁹K/³⁹Ca: using the repo's canonical uniform-sphere Coulomb (Z(Z−1) self-energy, r₀=1.2 fm, coulomb_energy.mirror_displacement_mev — NO free parameter), the ratio split_AME/ΔE_C = 0.99 ± 0.07 across A=3–39 (the ~0.8 factor is the known uniform-sphere over-estimate). ⇒ the split is proportional to Coulomb, so any QOU strong kernel must be charge-symmetric (Coulomb separate); the #2089 kernel's 2.27 MeV A=3 strong split (#3564) is 3× the whole observed split, systematically. Scope-(a), no wiring. ⚠ THE RATIO IS NOT CONSTANT (corrected 2026-08-25): this field said '≈constant across A=3–39'. It rises monotonically — Pearson r = 0.830, t = 3.65 on 6 dof (p < 0.05), and a line beats the mean by 44% in rms. The proportionality finding and the charge-symmetry consequence are unaffected; only the 'constant' characterisation was wrong. Consumers must say WHICH A: the A=3 (³H/³He) ratio is 0.901, not the chain mean 0.99.",
+  "description": "The mirror binding split is Coulomb across the isobaric chain ³H/³He…³⁹K/³⁹Ca: using the repo's canonical uniform-sphere Coulomb (Z(Z−1) self-energy, R = λ̄_π·A^{1/3} with λ̄_π = ℏc/m_π the CAL-3 length, coulomb_energy.mirror_displacement_mev; no continuous fitted parameter, but the coefficient 1 on λ̄_π is a SELECTION and A^{1/3} an ASSUMPTION, see docs/audits/2026-07-13-pion-radius-and-vol-to-radius-gaps.md; label corrected 2026-11-27, it said r₀=1.2 fm, which this module stopped using on 2026-08-09), the ratio split_AME/ΔE_C = 0.99 ± 0.07 across A=3–39. ⇒ the split is proportional to Coulomb, so any QOU strong kernel must be charge-symmetric (Coulomb separate); the #2089 kernel's 2.27 MeV A=3 strong split (#3564) is 3× the whole observed split, systematically. Scope-(a), no wiring. ⚠ THE RATIO IS NOT CONSTANT (corrected 2026-08-25): this field said '≈constant across A=3–39'. It rises monotonically — Pearson r = 0.830, t = 3.65 on 6 dof (p < 0.05), and a line beats the mean by 44% in rms. The proportionality finding and the charge-symmetry consequence are unaffected; only the 'constant' characterisation was wrong. Consumers must say WHICH A: the A=3 (³H/³He) ratio is 0.901, not the chain mean 0.99.",
   "data": {
     "mirror_pairs": [
       {
         "pair": "3H/3He",
         "A": 3,
-        "split_AME": 0.76375488,
+        "split_AME": "0.7637548799999999999999999999999999999999999999999999999999999999999999",
         "coulomb_canonical": "0.8474218392918698241778962921671663655993492336363122968843858945242658",
-        "ratio": "0.9012688186537836597186730554793814942111152910652214763884445882103118"
+        "ratio": "0.9012688186537836303773850154259255637505354485244210298402022547981698"
       },
       {
         "pair": "7Li/7Be",
         "A": 7,
-        "split_AME": 1.6442398,
+        "split_AME": "1.6442398",
         "coulomb_canonical": "1.916734581873198773860312208269958425672185484368827054219051033459198",
-        "ratio": "0.8578338469758847460089577388209534602120503693083400301567707646116855"
+        "ratio": "0.8578338469758847308263713958800017239980289604304762922791076679795334"
       },
       {
         "pair": "11B/11C",
         "A": 11,
-        "split_AME": 2.764036,
+        "split_AME": "2.764036",
         "coulomb_canonical": "2.747762421009228046250615785706941122495134698148873278520918155510831",
-        "ratio": "1.005922484006020707642705605367127697253759838915848235310301824910219"
+        "ratio": "1.005922484006020730419275983952795503300457152594425340376871841933331"
       },
       {
         "pair": "13C/13N",
         "A": 13,
-        "split_AME": 3.0028193,
+        "split_AME": "3.002819299999999999999999999999999999999999999999999999999999999999999",
         "coulomb_canonical": "3.118723480677778265041031714520515919005940493500437091090594874677625",
-        "ratio": "0.9628360188404426139462145678438247771981697461436055456497097890657692"
+        "ratio": "0.962836018840442588270541605706816890595131865335167794376289117166845"
       },
       {
         "pair": "15N/15O",
         "A": 15,
-        "split_AME": 3.536532,
+        "split_AME": "3.536531999999999999999999999999999999999999999999999999999999999999999",
         "coulomb_canonical": "3.469027085773760108972773586101831434311564102052116970961790469570485",
-        "ratio": "1.01945932175135577846719582035265071092598821408134768950020023531155"
+        "ratio": "1.019459321751355839906439086180428527002275272325834714092461885903237"
       },
       {
         "pair": "23Na/23Mg",
         "A": 23,
-        "split_AME": 4.8385261,
+        "split_AME": "4.8385261",
         "coulomb_canonical": "4.727412257576004299308043604794366261449382340887564409615756571399529",
-        "ratio": "1.023504157532681492959613815700702051137619658243571297060967568689181"
+        "ratio": "1.023504157532681458481381251939489201179082874898343714495635403205231"
       },
       {
         "pair": "27Al/27Si",
         "A": 27,
-        "split_AME": 5.5947051,
+        "split_AME": "5.594705099999999999999999999999999999999999999999999999999999999999999",
         "coulomb_canonical": "5.296173062213856052434912882182025972395433014034279622729591900617498",
-        "ratio": "1.056367500510142708374505461607592858709104685225949372027281770360779"
+        "ratio": "1.056367500510142773808845192556629181194360430470996856919632025934986"
       },
       {
         "pair": "39K/39Ca",
         "A": 39,
-        "split_AME": 7.3068333,
+        "split_AME": "7.306833299999999999999999999999999999999999999999999999999999999999999",
         "coulomb_canonical": "6.847606608548306126833840774333365659712985345918813401176049653252",
-        "ratio": "1.067063825027333178474818710642445728268964390033513821935816223089105"
+        "ratio": "1.067063825027333165838717203014262722298717848309942322303888741370691"
       }
     ],
-    "ratio_mean": "0.9867819966622056106990855969768348472395965241271746835036865955310749",
-    "ratio_rms_scatter": "0.06944740457319406322628655335727787620164774714908935599744008728338837",
+    "ratio_mean": "0.986781996662205614741119591832043664164823731611201008085511117286503",
+    "ratio_rms_scatter": "0.0694474045731940808619421000290738317134415237226172079914523719989655",
     "ratio_trend_in_A": {
-      "pearson_r": 0.8304965665203498,
-      "t_statistic": 3.65207558513641,
+      "pearson_r": "0.83049656652034962294808050842856607172316202083622",
+      "t_statistic": "3.6520755851364082601692677524002537681075536796875",
       "dof": 6,
-      "t_critical_p05": 2.447,
-      "slope_per_A": 0.005233803966816273,
-      "line_at_A3": 0.9122002901350738,
-      "line_at_A39": 1.1006172329404595,
-      "rms_about_line": 0.03868385340731431,
-      "rms_about_mean": "0.06944740457319406322628655335727787620164774714908935599744008728338837",
-      "ratio_at_A3": 0.9012688186537836,
+      "t_critical_p05": "2.447",
+      "slope_per_A": "0.005233803966816274172916597062465308093242038032414626806154856629047752",
+      "line_at_A3": "0.9122002901350737077770580836919130238361246896492925760978044103225726",
+      "line_at_A39": "1.100617232940459578002055577940664115192838058816219141119379248968292",
+      "rms_about_line": "0.038683853407314333718922806574703974167233448808214",
+      "rms_about_mean": "0.0694474045731940808619421000290738317134415237226172079914523719989655",
+      "ratio_at_A3": "0.9012688186537836303773850154259255637505354485244210298402022547981698",
       "note": "The ratio is NOT constant in A; it rises monotonically. A line describes the eight points better than their mean. Quote the A you need, not ratio_mean."
     }
   }

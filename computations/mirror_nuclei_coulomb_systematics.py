@@ -7,13 +7,24 @@ Generalises the A=3 result of #3564 (`mirror_split_coulomb_diagnosis.py`): there
 observed ³H/³He mirror split was shown to be the pp Coulomb displacement energy. This
 extends it to the mirror-nuclei chain ³H/³He … ³⁹K/³⁹Ca using the repo's canonical
 uniform-sphere Coulomb (`computations/coulomb_energy.mirror_displacement_mev`, discrete-
-proton self-energy Z(Z−1), r₀=1.2 fm — NO free parameter):
+proton self-energy Z(Z−1), R = λ̄_π·A^{1/3} with λ̄_π = ℏc/m_π, the CAL-3 length):
 
-    ΔE_C = (3/5)·(α ħc)·[Z_hi(Z_hi−1) − Z_lo(Z_lo−1)] / (r₀·A^{1/3}).
+    ΔE_C = (3/5)·(α ħc)·[Z_hi(Z_hi−1) − Z_lo(Z_lo−1)] / (λ̄_π·A^{1/3}).
 
-The observed split tracks ΔE_C: the ratio split_AME/ΔE_C is ~0.8 across A=3–39 — i.e.
-the split is PROPORTIONAL to Coulomb (the ~0.8 factor is the known uniform-sphere
-over-estimate of the Coulomb displacement energy). The scatter of that ratio bounds the
+⚠ LABEL CORRECTED 2026-11-27 (bean for the Coulomb/mirror scorecard rows). This
+docstring, the printed header, the witness description and the assertion source
+all said "r₀ = 1.2 fm — NO free parameter". Both halves were stale. Since
+2026-08-09 (bean qou-usft) `coulomb_energy.R0_FM` is λ̄_π = ℏc/m_π = 1.41382 fm,
+not the empirical 1.2 fm (kept there as R0_FM_EMPIRICAL, unused), so every
+number in this witness was computed with λ̄_π. And λ̄_π·A^{1/3} is not free of
+choice: the coefficient 1 is a SELECTION among the framework's mass scales
+(GAP 1 of docs/audits/2026-07-13-pion-radius-and-vol-to-radius-gaps.md) and the
+A^{1/3} law is a saturation ASSUMPTION (GAP 2). No continuous parameter is
+fitted; one discrete choice is. The numbers did not move; only the label did.
+
+The observed split tracks ΔE_C: the ratio split_AME/ΔE_C runs 0.86–1.07 across A=3–39
+(it read "~0.8" when r₀ = 1.2 fm was the radius; with λ̄_π the chain mean is 0.99), i.e.
+the split is PROPORTIONAL to Coulomb. The scatter of that ratio bounds the
 strong charge-symmetry-breaking.
 
 ⚠ THE RATIO IS NOT CONSTANT — corrected 2026-08-25. This docstring, the witness
@@ -56,7 +67,7 @@ from fractions import Fraction as F  # noqa: E402
 from codata_constants import _ame_binding_mev  # noqa: E402
 
 getcontext().prec = 50
-from coulomb_energy import mirror_displacement_mev  # noqa: E402 — canonical Z(Z−1), r₀=1.2
+from coulomb_energy import mirror_displacement_mev  # noqa: E402 — canonical Z(Z−1), R = λ̄_π·A^{1/3}
 try:
     from witness_base import WitnessBuilder  # noqa: E402
     _HAVE_WB = True
@@ -74,12 +85,13 @@ PAIRS = [("3H/3He", 1, 2, 3), ("7Li/7Be", 3, 4, 7), ("11B/11C", 5, 6, 11),
 
 def split_ame(Z1, Z2, A):
     # lighter-Z mirror binds MORE (less Coulomb) ⇒ positive split = B(lo) − B(hi)
-    return float(mp.mpf(str(_ame_binding_mev(Z1, A))) - mp.mpf(str(_ame_binding_mev(Z2, A))))
+    # mpf end to end (was float(): 8 raw float64 fields reached the witness).
+    return mp.mpf(str(_ame_binding_mev(Z1, A))) - mp.mpf(str(_ame_binding_mev(Z2, A)))
 
 
 def main() -> int:
-    print("  Canonical uniform-sphere Coulomb ΔE_C (Z(Z−1), r₀=1.2 fm; "
-          "computations/coulomb_energy.py) — NO free parameter.\n")
+    print("  Canonical uniform-sphere Coulomb ΔE_C (Z(Z−1), R = λ̄_π·A^{1/3}; "
+          "computations/coulomb_energy.py) — coefficient of λ̄_π SELECTED, A^{1/3} ASSUMED.\n")
     print(f"  {'pair':<11}{'A':>3}{'split_AME':>10}{'ΔE_C':>9}{'split/ΔE_C':>12}")
     ratios = []
     rows = []
@@ -122,10 +134,10 @@ def main() -> int:
     def _sq(fr):
         return Decimal(fr.numerator) / Decimal(fr.denominator)
 
-    pearson_r = float(_sq(_r2).sqrt())
-    t_stat = float(_sq(_r2).sqrt() * Decimal(_n - 2).sqrt() / (Decimal(1) - _sq(_r2)).sqrt())
-    rms_about_line = float((_sq(_resid) / _n).sqrt())
-    ratio_at_A3 = float(_R[0])
+    pearson_r = mp.mpf(str(_sq(_r2).sqrt()))
+    t_stat = mp.mpf(str(_sq(_r2).sqrt() * Decimal(_n - 2).sqrt() / (Decimal(1) - _sq(_r2)).sqrt()))
+    rms_about_line = mp.mpf(str((_sq(_resid) / _n).sqrt()))
+    ratio_at_A3 = mp.mpf(_R[0].numerator) / _R[0].denominator
 
     print(f"\n  TREND IN A (the ratio is NOT constant):")
     print(f"    Pearson r = {float(pearson_r):.3f}, t = {float(t_stat):.2f} on {_n-2} dof "
@@ -138,8 +150,8 @@ def main() -> int:
     print(f"    ⇒ quote the A you need: A=3 (³H/³He) is {float(ratio_at_A3):.3f}, NOT the mean "
           f"{float(mean_r):.3f}")
     print(f"\n  split/ΔE_C = {float(mean_r):.3f} ± {float(rms_dev):.3f}  (mean ± RMS scatter, {float(100*rms_dev/mean_r):.0f}%)")
-    print(f"  ⇒ the split is PROPORTIONAL to Coulomb across A=3–39 (the {float(mean_r):.2f} factor is")
-    print(f"    the known uniform-sphere over-estimate of ΔE_C). The ~{float(100*rms_dev/mean_r):.0f}% ratio")
+    print(f"  ⇒ the split is PROPORTIONAL to Coulomb across A=3–39 (mean {float(mean_r):.2f}, but")
+    print(f"    rising with A, see the trend above). The ~{float(100*rms_dev/mean_r):.0f}% ratio")
     print(f"    scatter (plus the ~0.07 MeV Nolen–Schiffer anomaly) bounds the strong CSB.")
 
     # QOU consequence
@@ -159,10 +171,13 @@ def main() -> int:
             wb = WitnessBuilder("mirror-nuclei-coulomb-systematics", engine="mpmath")
             wb.set_description(
                 "The mirror binding split is Coulomb across the isobaric chain ³H/³He…³⁹K/³⁹Ca: "
-                "using the repo's canonical uniform-sphere Coulomb (Z(Z−1) self-energy, r₀=1.2 fm, "
-                "coulomb_energy.mirror_displacement_mev — NO free parameter), the ratio "
-                "split_AME/ΔE_C = %.2f ± %.2f across A=3–39 (the ~0.8 factor is the "
-                "known uniform-sphere over-estimate). ⇒ the split is proportional to Coulomb, so "
+                "using the repo's canonical uniform-sphere Coulomb (Z(Z−1) self-energy, "
+                "R = λ̄_π·A^{1/3} with λ̄_π = ℏc/m_π the CAL-3 length, "
+                "coulomb_energy.mirror_displacement_mev; no continuous fitted parameter, but the "
+                "coefficient 1 on λ̄_π is a SELECTION and A^{1/3} an ASSUMPTION, see "
+                "docs/audits/2026-07-13-pion-radius-and-vol-to-radius-gaps.md; label corrected "
+                "2026-11-27, it said r₀=1.2 fm, which this module stopped using on 2026-08-09), the ratio "
+                "split_AME/ΔE_C = %.2f ± %.2f across A=3–39. ⇒ the split is proportional to Coulomb, so "
                 "any QOU strong kernel must be charge-symmetric (Coulomb separate); the #2089 "
                 "kernel's 2.27 MeV A=3 strong split (#3564) is 3× the whole observed split, "
                 "systematically. Scope-(a), no wiring. "
@@ -184,10 +199,10 @@ def main() -> int:
                 "pearson_r": pearson_r,
                 "t_statistic": t_stat,
                 "dof": _n - 2,
-                "t_critical_p05": 2.447,
-                "slope_per_A": float(_slope),
-                "line_at_A3": float(_intercept + _slope * 3),
-                "line_at_A39": float(_intercept + _slope * 39),
+                "t_critical_p05": mp.mpf("2.447"),
+                "slope_per_A": mp.mpf(_slope.numerator) / _slope.denominator,
+                "line_at_A3": mp.mpf((_intercept + _slope * 3).numerator) / (_intercept + _slope * 3).denominator,
+                "line_at_A39": mp.mpf((_intercept + _slope * 39).numerator) / (_intercept + _slope * 39).denominator,
                 "rms_about_line": rms_about_line,
                 "rms_about_mean": rms_dev,
                 "ratio_at_A3": ratio_at_A3,
@@ -198,7 +213,7 @@ def main() -> int:
             wb.add_assertion(
                 name="mirror_split_proportional_to_canonical_coulomb_all_A",
                 computed=str(int(rms_dev / mean_r < 0.15)), expected="1", tolerance=0,
-                source=(f"split_AME/ΔE_C(canonical Z(Z−1), r₀=1.2) = {float(mean_r):.3f} ± {float(rms_dev):.3f} "
+                source=(f"split_AME/ΔE_C(canonical Z(Z−1), R=λ̄_π·A^{{1/3}}) = {float(mean_r):.3f} ± {float(rms_dev):.3f} "
                         f"({float(100*rms_dev/mean_r):.0f}% spread) across 8 mirror pairs A=3–39 ⇒ the "
                         "split is proportional to Coulomb ⇒ the strong kernel must be charge-symmetric. "
                         f"The spread is a monotone TREND, not constant scatter (Pearson r = {float(pearson_r):.3f}); "
