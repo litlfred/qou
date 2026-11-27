@@ -292,6 +292,7 @@ import QOU.BraidsAndKnots.SeminormalDimSmall
 import QOU.Core.Glossary
 import QOU.Transcendental.BraidsAndKnots.AssociatorKZ
 import QOU.Transcendental.BraidsAndKnots.BlockResidues
+import QOU.Transcendental.BraidsAndKnots.HiggsCategoricalMassFormulaReal
 import QOU.Transcendental.BraidsAndKnots.Drinfeld.Assoc
 import QOU.Transcendental.BraidsAndKnots.Drinfeld.Braiding
 import QOU.Transcendental.BraidsAndKnots.Drinfeld.BraidingVV

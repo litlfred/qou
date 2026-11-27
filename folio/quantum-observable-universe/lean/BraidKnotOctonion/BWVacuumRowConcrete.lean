@@ -148,7 +148,8 @@ theorem bwS0Concrete_eq_S0_forces_trivial_twist
 /-- **Hecke capstone — the de-opaqued gate forces `θ^f = 1` on every block.**
 
 Take the concrete RT row `bwS0Concrete (heckeVerlindeData …) (theta q) f` on the Hecke Verlinde data.
-If it equals the Hecke modular datum `d_q(λ)/√(Σ d_q²)` for **all** `λ ∈ P` (the de-opaqued form of
+If it equals the Hecke modular datum `S0 λ = d_q(λ)/D`, `D² = Σ d_q²` (the `S0` field of
+`heckeVerlindeData`, stated by name so this file needs no `Real.sqrt`), for **all** `λ ∈ P` (the de-opaqued form of
 `bwS0_eq_hecke`), then `∀ l ∈ P, (theta q l)^f = 1` — the forced Seifert framing must be twist-trivial.
 
 At real `q₀ > 1` this is **false** off the self-conjugate blocks (`theta q₀ l = q₀^{c(λ)}` is not a
@@ -161,7 +162,7 @@ theorem bwS0Concrete_eq_hecke_forces_trivial_twist
     (hP : P.Nonempty) (f : ℤ)
     (hgate : ∀ l ∈ P,
       bwS0Concrete (heckeVerlindeData q hq P hsorted hconj hP) (theta q) f l
-        = qDim q l / Real.sqrt (∑ m ∈ P, qDim q m ^ 2)) :
+        = (heckeVerlindeData q hq P hsorted hconj hP).S0 l) :
     ∀ l ∈ P, (theta q l) ^ f = 1 := by
   intro l hl
   set h := heckeVerlindeData q hq P hsorted hconj hP with hh
