@@ -43,7 +43,9 @@ LP="$(lean_leanpath)"
 rc=0
 for f in "$@"; do
   echo "── lean-verify: $f ──"
-  if env LEAN_PATH="$LP" ELAN_NO_OVERRIDE_NOTICE=1 lean "$f"; then
+  # -DautoImplicit=false -s 65536 mirror the lakefile leanOptions; a bare lean
+  # auto-binds unbound identifiers and exits 0 on broken files (bean qou-zf7n).
+  if env LEAN_PATH="$LP" ELAN_NO_OVERRIDE_NOTICE=1 lean -DautoImplicit=false -s 65536 "$f"; then
     echo "  ✓ exit 0 — checks"
   else
     echo "  ✗ FAILED (see diagnostics above)" >&2
