@@ -1,0 +1,83 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-27T19:22:45.618637+00:00",
+  "commitSha": "4385186b3f5a905f5c8cddb12c01299c49bd904d",
+  "assertions": [
+    {
+      "name": "H_every_q0_passer_has_components_merging_at_most_2",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "component_merges over every census row"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "binding-merge-cap-per-component",
+  "scriptFile": "merge_cap_summary.py",
+  "scriptHash": "ba1783dd4461",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/binding_merge_cap/merge_cap_summary.py",
+      "1",
+      "2"
+    ],
+    "reproduce": "python3 -u computations/probes/binding_merge_cap/merge_cap_summary.py 1 2"
+  },
+  "description": "PROBE (bean qou-brng, brief C2 front B): per-support-component merge counts of every gamma-gamma bond word in the reading-3 censuses at the proton-pin q0 (A = 2, 3, 4). Tests (H): every q0-passing word has each support component merging <= 2. Counts only; no ratio; AME not read; nothing fitted or wired.",
+  "auditOnly": "docs/audits/2026-11-27-binding-merge-cap-invariant.md",
+  "data": {
+    "tallies": {
+      "A2-L6-census": {
+        "pass_q0=False,classical=False,max_component_merges=2,components=1": 1267,
+        "pass_q0=False,classical=False,max_component_merges=4,components=1": 3334,
+        "pass_q0=False,classical=True,max_component_merges=2,components=1": 325,
+        "pass_q0=True,classical=False,max_component_merges=2,components=1": 4,
+        "pass_q0=True,classical=True,max_component_merges=0,components=1": 46,
+        "pass_q0=True,classical=True,max_component_merges=2,components=1": 358
+      },
+      "A3-L4-census": {
+        "pass_q0=False,classical=False,max_component_merges=2,components=1": 18,
+        "pass_q0=False,classical=False,max_component_merges=2,components=2": 390,
+        "pass_q0=False,classical=False,max_component_merges=4,components=1": 281,
+        "pass_q0=False,classical=False,max_component_merges=4,components=2": 156,
+        "pass_q0=False,classical=False,max_component_merges=6,components=1": 342,
+        "pass_q0=False,classical=False,max_component_merges=8,components=1": 24,
+        "pass_q0=False,classical=True,max_component_merges=2,components=1": 1,
+        "pass_q0=False,classical=True,max_component_merges=2,components=2": 24,
+        "pass_q0=False,classical=True,max_component_merges=4,components=1": 96,
+        "pass_q0=True,classical=False,max_component_merges=2,components=1": 2,
+        "pass_q0=True,classical=True,max_component_merges=2,components=1": 26
+      },
+      "merge-cap-A4-L5-m4-c1": {
+        "pass_q0=False,classical=True,max_component_merges=4,components=1": 3
+      }
+    },
+    "marginal_failures": {
+      "A3-L4-census: classical value on every q0-failing cell is 0 = True": 120,
+      "merge-cap-A4-L5-m4-c1: classical value on every q0-failing cell is 0 = False": 1,
+      "merge-cap-A4-L5-m4-c1: classical value on every q0-failing cell is 0 = True": 2
+    },
+    "violations_of_H": []
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "q0 enters through the censuses via cf.Q (committed y-lambda-at-q0 witness, proton pin)"
+}
