@@ -98,3 +98,36 @@ The derived unit applies to energies that are **logarithms of trace weights**. A
 | `derived_masses.q_beta_scored_mev`, `borromean_v3_e21_*`, `mass_table` `B_pred` (E₀×Δtr) | linear in a trace | **not wired**: the derivation does not cover linear forms, and they fail additivity |
 
 The scale α = 8G·m_e = 7.327 m_e per nat was flagged as "the scale question (alpha vs E0) is NOT addressed here" in the ruled binding. The derived unit answers it: 2.707 m_e per nat. The scorecard rows will move by the factor 0.3695, and the misses will be reported as they come out.
+## 7. The electron's weight on the mass-formula scale (added the same day)
+
+Lean: `QOU/Observations/ElectronMassChartWeight.lean` (generic field), `QOU/Transcendental/MassTheory/ElectronMassChartWeight.lean`. Probe: `computations/probes/electron_weight/electron_mass_chart_weight_probe.py` (5/5).
+
+**The mass formula's own rule.** §2's uniqueness covers maps that depend on the trace *value*. The mass formula does not: its muon weight is `G = q∂_q log P` (#9692), a derivative. Derivatives of `log` are also additive (`energyReading_mul`, Leibniz), so the additive local readings are `(q∂_q)^k log Z`. The order `k` is fixed by the pole:
+
+- `hbar_pole_raise`: `q∂_q ℏ_q⁻ⁿ = −n q⁻¹ ℏ_q^{−(n+1)}`. Each `q∂_q` raises the pole at `q = 1` by exactly one.
+- `log P ~ −Li₂/ℏ_q` has order 1, and the carrier `Vol/ℏ_q²` has order 2. So `k = 1`.
+- `k = 0` is §2's value chart. It gives finite ratios at `q = 1`, so it cannot carry the muon.
+
+**The electron, by the same rule** (`electron_energy_reading`, `q_mul_dTauE`):
+
+  **w_e(q) = q∂_q log τ_e = 3 + 4q²(q²−1)/((q⁴+1)(q²+1))**, with `w_e(1) = 3` (writhe) and `w_e(q⁻¹) = 6 − w_e(q)`.
+
+This replaces the hand-placed weight `1` of the unit `m_e/ℏ_q²`. With CAL-1 the mass-chart unit is `m_e/w_e(q)`, so the formula reads `m(K) = m_e·Vol(K)·ρ(K)/(ℏ_q²·w_e(q))`.
+
+**Two charts, two rules, no conflict.** The β-dictionary energies (radius gaps, log binding law) are `k = 0` readings and use §2's unit. Masses on the mass-formula scale are `k = 1` readings and use `m_e/w_e`. Each unit is fixed by CAL-1 within its own chart. Neither is placed by hand any more.
+
+**n–p cell in the mass chart** (`np_cell_energy_reading`, `hasDerivAt_inv_sq_mul`). With `ε_n = q⁻²ε_p`, the two readings differ by exactly `−2` for any `ε_p`. So the cell is `2/w_e(q)` electron masses: 0.6243 m_e at q₀, and `2/3` at `q = 1`.
+
+| at q₀ (proton pin) | value |
+|---|---|
+| `w_e(q₀)` | 3.203481 (hand-placed: 1) |
+| `W_μ = 2 Im G` | 207.2446 |
+| `m_μ/m_e = W_μ/w_e` | 64.694 |
+| n–p cell | 0.6243 m_e |
+
+**Comparison boundary.**
+- `m_μ/m_e` is 64.69 against 206.77 (0.313×). This is #9692's "Vol/3", now with the exact `w_e(q₀)`.
+- The n–p cell is 0.319 MeV against 1.293 MeV (4.05× short).
+- CAL-2 defines q₀ through the carrier with the hand-placed weight. If CAL-2 were re-solved with `w_e`, then `W_μ(q)/w_e(q) = m_μ/m_e` gives **q₀' = 1.059529** (ℏ = 0.05618, against q₀ = 1.109979, ℏ = 0.09908). This is computed for comparison only and **not adopted**: re-solving q₀ moves every number in the corpus and is an owner decision.
+
+**Scope.** Given the corpus's own premises (additivity; the carrier's `ℏ_q⁻²` order), the electron's mass-chart weight is derived, not placed. What this does not do: say why the carrier's coefficient should be `Vol` and not `Vol/w_e(1) = Vol/3`. That question returns to CAL-2's definition of q₀.
