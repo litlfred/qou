@@ -97,4 +97,12 @@ theorem strict_max_witness_not_oneBody :
     ¬ OneBody (fun a b : Bool => if a = b then (0 : ℕ) else 1) := fun h =>
   not_pn_strict_max _ true false h ⟨by decide, by decide⟩
 
+omit [LinearOrder α] in
+/-- **Symmetry of `chargeIndependent_const` (`qou-8jjo`).**
+Under the hypotheses of `chargeIndependent_const`, `f a b = f b a` for all `a, b : N`. -/
+theorem chargeIndependent_symm (f : N → N → α) (p n : N) (hpn : ∀ x : N, x = p ∨ x = n)
+    (h : OneBody f) (hci : f p p = f n n) (a b : N) :
+    f a b = f b a := by
+  rw [chargeIndependent_const f p n hpn h hci a b, chargeIndependent_const f p n hpn h hci b a]
+
 end QOU.Mass.OneBodyBondOrdering
