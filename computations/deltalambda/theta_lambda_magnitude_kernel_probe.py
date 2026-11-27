@@ -252,11 +252,10 @@ def main() -> int:
             out *= qint(i)
         return out
 
-    try:
-        from m_p_substrate_identity_50dps import F_Bor
-        f_bor = F_Bor(q0)
-    except ImportError:
-        f_bor = mp.mpf("4.4691387357675225")
+    # No literal fallback: a typed F_Bor goes stale when the producer moves
+    # (witness-value-copy ratchet). The import is first-party and must succeed.
+    from m_p_substrate_identity_50dps import F_Bor
+    f_bor = F_Bor(q0)
 
     candidates = {
         "1/hbar_q":            (1 / HBAR_Q, "substrate q-Planck"),
