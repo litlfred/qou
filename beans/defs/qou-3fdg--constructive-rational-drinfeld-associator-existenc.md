@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T18:52:28Z
+updated_at: 2026-11-27T19:02:01Z
 parent: qou-dk7p
 ---
 
@@ -55,3 +55,6 @@ KEY for research leg (p.854, Remark 2 after 5.8): without 5.3, obstruction to li
 
 
 2026-11-27: #9564 merged. #9570: TransportedDK4.lean proves transported family is DK4 given g's pentagon + far relation hfar=[s13,s24]=0; pentagon_act_universal in U4 N. Exact-Q finding: hfar does NOT follow from g's pentagon + (5.13) (degree-2 counterexample, nonzero in U(t4)_4, dim 301); the mu=0 hexagon (5.14) kills degree 2; degree-3 evidence (mod two primes, leading order) suggests (5.14) suffices. Open: derive hfar from (5.14); build G units from nilpotence.
+
+
+2026-11-27: #9570 merged. #9575 (FarRelation.lean): far_of_tcompat derives hfar from t-compatibility TCompat (g(v,w) v g(v,w)^-1 = g(u,w)(v+w)g(u,w)^-1 - w) at two triples + (5.13) + g's pentagon; swapped pentagon obtained via swap23Hom = lift. Exact-Q: (5.13)+(5.14) imply TCompat through degree 3 of g. Open: TCompat from (5.14) in all degrees ~ grt subset krv (Alekseev-Torossian); G units still hypotheses.
