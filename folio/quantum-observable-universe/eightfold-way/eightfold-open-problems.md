@@ -28,9 +28,9 @@ the list cannot silently break the pointers.
 | $S_4$ bridge: transitive on local Fano lines | verified numerically | [colour from $G_2$](#prop:color-su3-from-g2) |
 | The $S_4$ bridge selects the Klein quartic | **refuted** (verified by exact computation), and not narrowly: the $S_4$-invariant quartics form a pencil, so *infinitely many* pairwise non-isomorphic genus-3 curves admit $S_4$ (Fermat is the member $t = 0$ of the pencil, $t$ being the pencil parameter, not a partition). The datum has essentially no separating power | [colour from $G_2$](#prop:color-su3-from-g2) |
 | Bring $\to$ Klein-quartic genus degeneration | **excluded** under its own three premises (scope-(b)): the pinch supplies an $S_4$-stable pair of marked points, and $S_4$ has *no orbit of size $\le 2$* on $\mathbb{P}^2$, since the $3$-dimensional representation and its restriction to $A_4$ are both absolutely irreducible. No smooth plane quartic carries such a pair, and Klein is not hyperelliptic. Rescue requires explicitly dropping one premise: hyperelliptic target, multi-node/separating pinch, or non-faithful $S_4$ | [colour from $G_2$](#prop:color-su3-from-g2) |
-| Octonionic $\mathbf{3}$ not excluded by the $\mathrm{Sym}^2$ gate | literature decomposition: at dimension three, passing the gate forces a complex-type summand (**proved**), and that the Günaydin--Gürsey triple is complex type is the cited $\mathrm{SU}(3)_{\mathrm{c}}$-irreducibility input, not a proved one | [Schur–Weyl](#prop:schur-weyl-eightfold) |
+| Octonionic $\mathbf{3}$ passes the $\mathrm{Sym}^2$ gate | **proved**: at dimension three, passing the gate forces a complex-type summand, and the Günaydin--Gürsey triple is complex type --- every $J_6$-compatible $\mathfrak{su}(3)$-invariant bilinear form on the colour triplet vanishes, so $\mathrm{Sym}^2(\mathbf{3})$ has no singlet and $\mathbf{3} \not\cong \bar{\mathbf{3}}$ (`OctonionColourTripletComplexType.lean`) | [Schur–Weyl](#prop:schur-weyl-eightfold) |
 | The octonion algebra $\mathbb{O}$ and $G_2 = \mathrm{Aut}(\mathbb{O})$ | **established**: [definition](#def:octonion-algebra) in [the colour-algebra section](#sec:color-algebra), with $\mathrm{Der}(\mathbb{O}) = \mathfrak{g}_2$ (\cite{baez2002}) and the Baez-convention multiplication | [definition](#def:octonion-algebra) |
-| Continuous $G_2$ completion ($S^6 = G_2/\mathrm{SU}(3)_{\mathrm{c}}$) | **open**: the continuous Lie group $G_2$ is not constructed here — an infrastructure gap, not a structural one | item *Continuous $G_2$ completion* |
+| Continuous $G_2$ completion ($S^6 = G_2/\mathrm{SU}(3)_{\mathrm{c}}$) | Lie-algebra level **proved**: $\dim \mathrm{Der}(\mathbb{O}) = 14$ (`octonion_derivation_dim`) and the stabilizer of a unit imaginary has $\dim = 8$ (`finrank_su3_e1`), so $\dim \mathfrak{g}_2 - \dim \mathfrak{su}(3) = 6 = \dim S^6$. **Open**: the continuous Lie group $G_2$ and the coset $S^6$ themselves — an infrastructure gap, not a structural one | item *Continuous $G_2$ completion* |
 | Flavour vs. colour ($\mathrm{SU}(3)_{\mathrm{f}}$ vs. $\mathrm{SU}(3)_{\mathrm{c}}$) | **open**: whether same, different, or groupoid-dual | item *Flavour versus colour separation* |
 | Gell-Mann–Okubo has no discriminating power | **proved**: $4m_K^2 - 3m_\eta^2 - m_\pi^2 = 0$ identically for *any* first-order octet breaking | [meson mass splitting](#rem:meson-mass-splitting) |
 | Meson mass splitting; the GMO **deviation** | **partially resolved** (sign), **open** (magnitude): rational quantum Casimir gives $(4M_K - 3M_\eta - M_\pi)/(M_\pi - M_\eta) = -((q-1)/(q+1))^2$ (**proved**, matching both meson $+$ and baryon $-$ signs at $q_0$), but accounts for only $1.21\%$ of the $6.43\%$ meson deviation; $\eta$--$\eta'$ mixing remains open | [meson mass splitting](#rem:meson-mass-splitting), item *The Gell-Mann--Okubo deviation* |
@@ -64,10 +64,9 @@ Gell-Mann--Nishijima relation.
    three-dimensional object $W$ in the multi-fibre groupoid whose
    symmetric square $\mathrm{Sym}^2(W)$ is irreducible (no singlet).
    The octonion $G_2$ route supplies a colour $\mathrm{SU}(3)_{\mathrm{c}}$ candidate
-   that the gate does not exclude --- *not excluded* rather than
-   *passes*, since the singlet count $0$ that would make it pass is the
-   cited $\mathrm{SU}(3)_{\mathrm{c}}$-irreducibility input and not a proved one
-   (see the ledger).  Whether it yields *flavour*
+   that **passes** the gate: the singlet count $0$ of
+   $\mathrm{Sym}^2(\mathbf{3})$ is proved over $\mathbb{Q}$, together with
+   $\mathbf{3} \not\cong \bar{\mathbf{3}}$ (see the ledger).  Whether it yields *flavour*
    $\mathrm{SU}(3)_{\mathrm{f}}$ is untested.
 
    **What such a construction must supply is now a theorem, and it is one
@@ -214,7 +213,9 @@ Gell-Mann--Nishijima relation.
    The discrete skeleton of $\mathrm{SU}(3)_{\mathrm{c}} \subset G_2 =
    \mathrm{Aut}(\mathbb{O})$ is verified
    ($\mathrm{GL}(3, \mathbb{F}_2) \cong \mathrm{PSL}(2,7)$ Fano
-   symmetry of the associator).  The continuous Lie-group completion
+   symmetry of the associator), and so is the Lie-algebra level:
+   $\mathrm{Der}(\mathbb{O})$ has dimension $14$ and the stabilizer of
+   $e_1$ has dimension $8$, matching $\dim S^6 = 14 - 8$.  The continuous Lie-group completion
    --- specifically the coset $S^6 = G_2/\mathrm{SU}(3)_{\mathrm{c}}$ --- not
    constructed here: the continuous Lie group $G_2$ is not available.
    This is an infrastructure obstruction, not a structural one.
@@ -231,7 +232,7 @@ Gell-Mann--Nishijima relation.
    objects** and establishes only that those two differ, not that one
    construction cannot supply both roles. (The $T_1$ comparison is in
    [the Schur--Weyl proposition](#prop:schur-weyl-eightfold), where it
-   is stated as *not excluded* on a literature decomposition.)
+   is now stated as a proved pass: the octonionic triple is complex type.)
 
    The failure is structural, not a repairable gap in the inference.
    It is proved that
