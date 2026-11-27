@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-20T08:13:33Z
-updated_at: 2026-11-27T18:00:00Z
+updated_at: 2026-11-27T17:35:00Z
 tags:
     - compute-accuracy
 parent: qou-3l2l
@@ -52,3 +52,5 @@ Carl took the recommended route. The result is a negative of scope (a), and the 
 - **Where 12 does appear.** Only as the product of the half-sums, 3·4. That is the post-hoc V₃⊗V₄ reading.
 
 Still open: a definition of K and π in which the labels enter additively, are halved, and are then multiplied. A card for the alternatives is posted in the thread.
+
+- 2026-11-27 (PR #9502, second commit): `no_meson_total_ratio_twelve`: for labels in {3,5,7}, no ratio of label sums (max 14/6) and no ratio of label products (max 49/9) between two mesons is 12. Still open: the additive/halved/multiplied reading.
