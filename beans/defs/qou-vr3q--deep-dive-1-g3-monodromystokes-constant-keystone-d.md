@@ -1,7 +1,7 @@
 ---
 # qou-vr3q
 title: 'Deep-dive 1: G3 monodromy/Stokes-constant keystone — derive A_ω (odd-face Q_β/Φ_b) as GGM 3d-index integer count'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - compute-accuracy
 created_at: 2026-07-18T17:08:37Z
-updated_at: 2026-11-27T14:18:49Z
+updated_at: 2026-11-28T00:20:00Z
 parent: qou-avtq
 ---
 
@@ -66,3 +66,12 @@ Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8277, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-07-18: "vr3q T1: hspan CLOSED — period lattice basis from b²∉ℝ (lean exit 0)"). The work may be partly or fully done. Read the bean before you close it.
+
+## 2026-11-27 — A_ω = 3 read from the 3d index (PR #9849)
+
+Corrects the 2026-08-15 note that "A_ω is not a coefficient read-off of I_41". Through the gauge fixed by GGM eqs Sp-41, W41rec (m=−1), W41xm (m=0) and WW41, S⁺(x;q) = L·N·R with N the DGG two-tetrahedron index matrix. At q→0, S⁺(x;0) = [[1, x⁻¹+1+x],[0,1]] and S⁺₁₂(1;0) = 3 = 2·[I₄₁(0,0)]_q⁰ − [I₄₁(1,−2)]_q^½ (the vacuum with gauge weight 2, plus one flux-1 BPS state).
+- Probe `computations/probes/qbeta_g3_stokes_from_3d_index_41.py`, 8/8 exact through q¹⁰ (det = 1, GGM symmetry, printed x-series, equal to the W-route).
+- Lean `QOU/Nuclear/StokesIndexCount41.lean`, exit 0, no sorry: gauge closed forms, S⁺₁₁ = N₁₁ for every N, the q⁰ reading, tie to StokesQZeroDTCount.
+- Fixed `I41` flux-scan early stop (I₄₁(0,10), I₄₁(1,10) were 0 at D=30).
+- GGM eq (S11v) misprint found.
+Open: conj.41M (shared with W-route); Lean proof of the two index coefficients (I_Δ min-degree bound); 5₂ test via WW52; internal Hecke derivation unchanged.
