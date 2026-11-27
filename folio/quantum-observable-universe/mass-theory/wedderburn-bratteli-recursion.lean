@@ -47,6 +47,12 @@
     edge factor depends on which row the cell is added to, through `d`; that
     is the content of the `.md`'s "`F_q(c(λ, μ), …)`".
 
+  * `jonesWeightD_eq_ocneanuWeight` — **the closed form is derived, not postulated**
+    (2026-11-27): `y_(a,b)` is the convention-D Ocneanu weight of the two-row diagram
+    `twoRow a b`, i.e. the weight of the Markov trace at `z = q³/(q²+1)`
+    (`QOU.Mass.TwoRowBratteliWeights.twoRow_weight_eq_y`). Three-row weights vanish there, so the
+    trace factors through Temperley–Lieb; the TL kernel threshold at general `n` is #9668.
+
   **Not encoded:** the normalisation `Σ_λ f^λ y_λ = 1` over all `λ ⊢ n`
   (`f^λ` the number of standard tableaux). It follows from the sum rule above
   and the branching rule `f^λ = Σ_{μ ↗ λ} f^μ`, which needs a partition type
@@ -65,6 +71,7 @@ import Mathlib.Algebra.GroupWithZero.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import HeckeTemperleyLieb.QIntegerCanonical
+import QOU.MassTheory.TwoRowBratteliWeights
 
 namespace QOU.BraidsAndKnots
 
@@ -139,5 +146,14 @@ theorem jonesWeightD_edge_col {q : R} (h2 : q + q⁻¹ ≠ 0) (a b : ℕ) :
     show a + (b + 1) = a + b + 1 by ring, pow_succ]
   generalize q + q⁻¹ = t at h2 ⊢
   field_simp
+
+/-- **The two-row closed form is the Markov-trace weight.** `y_(a,b)` equals the convention-D
+Ocneanu weight of the two-row diagram `(a, b)`. -/
+theorem jonesWeightD_eq_ocneanuWeight {q : R} (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
+    (h1 : q ^ 2 ≠ 1) (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : R) ^ i ≠ 1) {a b : ℕ} (h : b ≤ a) :
+    jonesWeightD q a b =
+      QOU.SchurWeyl.ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) (QOU.SchurWeyl.twoRow a b h) := by
+  rw [QOU.Mass.TwoRowBratteliWeights.twoRow_weight_eq_y q hq hq21 h1 hgen h]
+  rfl
 
 end QOU.BraidsAndKnots

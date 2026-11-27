@@ -33,8 +33,9 @@ group-cohomology library.
 This is the classical group-level case of the statement
 "a lift exists iff the obstruction class vanishes". The gerbe-level version
 (Yekutieli 2010, Thm 4.17) is the target of later tiers. Here the criterion
-is a **derived theorem**, whereas `QOU.YekutieliLifting` carries it as a
-structure field.
+is a **derived theorem**. (`QOU.YekutieliLifting` used to carry it as a
+structure field; since bean `qou-533l`'s 2026-11-27 pass it derives the
+group-level case from `MathlibExt.CentralExtensionH2`.)
 
 All types are generic groups; nothing archimedean is used (AGENTS.md §7c).
 

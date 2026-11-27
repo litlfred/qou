@@ -37,10 +37,9 @@ Pure-mathematics formalization (`0 sorry`, `0 axiom`) of the re-scoped `qou-txc1
      `tr5bar10_T3_sq K / tr5bar10_Q_sq α = 1 / (1 + 60 * α ^ 2)`,
      which equals `3 / 8` if and only if `α ^ 2 = 1 / 36` (`α = ±1/6`).
 
-3. **Section 3 — Rule-13a Conjecture Carrier (`BringKummerSU5EmbeddingHypothesis`):**
-   - Records the open QOU bridge ("the degree-3 Kummer pushforward on Bring's genus-4 curve
-     canonically produces `S(U(3) × U(2)) ↪ SU(5)` and fixes `α² = 1/36`") as a zero-instance
-     `class` so `qou-txc1` remains open on its conjectural physics bridge under `AGENTS.md` Rule 13a.
+3. **Section 3 — part (c):** the former carrier `BringKummerSU5EmbeddingHypothesis` was satisfied
+   by `α = 1/6` and is retired (2026-11-27).  Part (c) is now the flavour `W` construction,
+   bean `qou-j3w6`.
 
 -- Ref: [baez-huerta2010] Baez & Huerta, Bull. Amer. Math. Soc. 47 (2010) 483–552, Theorem 1.
 -/
@@ -758,18 +757,14 @@ theorem traceRatio_5bar_oplus_10_eq_three_eighths_iff [CharZero K] (α : K)
 
 end ParameterizedCommutantTraceRatio
 
-/-! ## Section 3: Rule-13a Conjecture Carrier (`BringKummerSU5EmbeddingHypothesis`) -/
+/-! ## Section 3: part (c) is the flavour `W` construction (carrier retired 2026-11-27)
 
-/-- **Rule-13a Open Conjecture Carrier (`qou-txc1` Part (c)):**
-Records the open QOU bridge asserting that the degree-3 cyclic Kummer pushforward `W₃ = π_* 𝓛` on
-Bring's genus-4 curve canonically produces the unimodular block embedding
-`S(U(3) × U(2)) ↪ SU(5)` together with the commutant normalization `α² = 1 / 36`.
-Intentionally carries **zero instances** until derived from QOU axioms (`AGENTS.md` Rule 13a). -/
-class BringKummerSU5EmbeddingHypothesis (K : Type*) [Field K] [CharZero K] where
-  commutantScale : K
-  commutantScale_sq : commutantScale ^ 2 = (1 : K) / 36
-  traceRatio_eq_three_eighths :
-    tr5bar10DiagSq (t3Weight5 K) / tr5bar10DiagSq (qWeight5 commutantScale) = (3 : K) / 8
+The former carrier `BringKummerSU5EmbeddingHypothesis` was satisfiable by `α = 1/6` (any field of
+characteristic zero), so it recorded no open content.  Retired on Carl's card of 2026-11-27
+("Retire carrier, link to flavour W").  What part (c) actually asks is that the substrate supply
+the 3-dimensional, non-self-dual `W` with `Λ³W ≅ 1` beside `V` (bean `qou-j3w6`); once `W` exists,
+`α² = 1/36` follows from the neutral-lepton condition
+(`AnomalyFreeHypercharge.neutral_lepton_iff_three_eighths`). -/
 
 end QOU.StandardModel.Su3Su2U1Z6GroupAndCommutant
 

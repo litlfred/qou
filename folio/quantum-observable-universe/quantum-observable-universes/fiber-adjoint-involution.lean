@@ -66,36 +66,45 @@ structure FiberAdjointInvolution (C : Type u) [CategoryTheory.Category.{v} C]
   orbit_mono : ∀ (f g : (𝟙_ C) ⟶ projLine),
     f ≫ orbit_embed = g ≫ orbit_embed → f = g
 
-/-- **Existence of the fibre–adjoint involution.**  The structure
-    `FiberAdjointInvolution` already bundles the genuine content (the orbit
-    embedding `σ`, its antipode-induced involution with `τ_Ad ≫ τ_Ad = id`,
-    the embedding/involution compatibility, and the monomorphism property).
-    The claim asserts that this bundle is *inhabited* for every
-    Frobenius–Hopf datum — not the degenerate `∃ inv, True`.
+/-- **Existence of the fibre–adjoint involution, with `τ_Ad` pinned to the antipode.**
 
-    Constructing the witness (the coadjoint-orbit embedding `P(V) ↪ Ad(A)`
-    and the antipode-induced `τ_Ad` in a general monoidal category) needs
-    massive infrastructure (categorical machinery beyond the current `QOU.Basic` API)
-    that cannot be added as a simple class field, so the body is left as an honest `sorry`.
+    The structure `FiberAdjointInvolution` alone is too weak to carry content:
+    with `projLine := A`, `orbit_embed := 𝟙` and `involution := 𝟙` every field
+    holds for every datum, even after pinning `adjointObj = fh.obj`.  So the
+    conclusion now also pins the involution to the antipode,
+    `τ_Ad = S : A ⟶ A` (owner decision 2026-11-27, thread "Prove a non-trivial
+    QOU instance exists").  With that pin the identity witness is no longer
+    available unless `S = 𝟙`.
 
-    The conclusion pins `adjointObj = fh.obj`: the adjoint bundle `Ad(A)` is
-    carried by the algebra object `A` itself. Without that constraint every
-    field can be taken to be the identity on `𝟙_ C`, which satisfies
-    `involution_sq`, `orbit_involution_compat` and `orbit_mono` trivially and
-    never mentions `fh` — so bare `Nonempty (FiberAdjointInvolution C fh)` is
-    provable for *every* category and datum, and asserts nothing. (That
-    degenerate witness was what this declaration shipped until 2026-08-09;
-    it is the same emptiness as `∃ inv, True`, reached by a different route.
-    See `docs/audits/2026-08-09-inhabitation-is-a-weak-discriminator.md`.) -/
+    **Witness.**  `P := 𝟙`, `σ := η : 𝟙 ⟶ A`, `τ_Ad := S`.
+    * `S ≫ S = 𝟙` is `antipode_involutive`;
+    * `η ≫ S = η` is `antipode_unit`, so the orbit is fixed by `τ_Ad`;
+    * `σ` is injective on global points as soon as `η` has a left inverse
+      `ψ : A ⟶ 𝟙`, which is the one hypothesis `hsplit`.  It is not derivable
+      from the Frobenius–Hopf axioms alone (they do not force `ε ∘ η` or
+      `∫_A ∘ η` to be invertible: in characteristic `p` the group algebra
+      `k[ℤ/p]` has `∫_A(1) = p = 0`), so it is stated rather than assumed
+      silently.  For a Haar-normalised form (`∫_A ∘ η = 1`) take `ψ = ∫_A`.
+
+    What this does not give: the coadjoint-orbit geometry `P(V) ≅ S² ⊂ su(2)`
+    of the archimedean picture.  `P := 𝟙` is the orbit of the unit, the
+    algebraic shadow of the highest-weight orbit. -/
 
 -- Ref: [lusztig1993] Introduction to Quantum Groups
 -- Ref: [leitner2026] prop:fiber-adjoint-involution
--- Stated, not proved (bean qou-6qbv): until 2026-11-20 this was discharged by
--- projecting a context-class field whose type was this very conclusion, which
--- assumed the claim rather than proving it. The honest state is a cited sorry.
 theorem fiber_adjoint_involution_exists (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] (fh : FrobeniusHopfData C) :
-    ∃ inv : FiberAdjointInvolution C fh, inv.adjointObj = fh.obj := by
-  sorry
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] (fh : FrobeniusHopfData C)
+    (hsplit : ∃ ψ : fh.obj ⟶ 𝟙_ C, fh.unit ≫ ψ = 𝟙 (𝟙_ C)) :
+    ∃ inv : FiberAdjointInvolution C fh, ∃ h : inv.adjointObj = fh.obj,
+      inv.involution = CategoryTheory.eqToHom h ≫ fh.antipode ≫ CategoryTheory.eqToHom h.symm := by
+  obtain ⟨ψ, hψ⟩ := hsplit
+  refine ⟨FiberAdjointInvolution.mk (adjointObj := fh.obj) (projLine := 𝟙_ C)
+      fh.unit fh.antipode fh.antipode_involutive fh.antipode_unit
+      (fun f g hfg => ?_), rfl, ?_⟩
+  · calc f = f ≫ fh.unit ≫ ψ := by rw [hψ, CategoryTheory.Category.comp_id]
+      _ = g ≫ fh.unit ≫ ψ := by rw [← CategoryTheory.Category.assoc, hfg,
+            CategoryTheory.Category.assoc]
+      _ = g := by rw [hψ, CategoryTheory.Category.comp_id]
+  · simp
 
 end QOU

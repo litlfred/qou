@@ -39,7 +39,9 @@ commutative ring `R` (§7c).
   which `u` it uses. Woronowicz (1987) is not in `library/`, so the parameter
   is left free here.
 * The off-diagonal vector fields of the 3D calculus: now in `OqSU2OffDiagonal.lean`.
-* Coassociativity of `Δ` and the left counit law; the Haar state.
+* The left counit law. Coassociativity is in `OqSU2Coassoc.lean`; the Haar state is in
+  `OqSU2HaarState.lean`, and its coproduct invariance is in
+  `QOU/FluidDynamics/q_ns_haar_coproduct_invariance.lean`.
 * Anything about Part A of `conj:regularity-breakdown` (bean `qou-pa7n`).
 
 No empirical value enters any proof.

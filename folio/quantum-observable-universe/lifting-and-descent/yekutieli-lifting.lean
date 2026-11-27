@@ -1,11 +1,33 @@
-import Mathlib.Data.Real.Basic
+import MathlibExt.CentralExtensionH2
 
+set_option autoImplicit false
 
 /-!
-# QOU.YekutieliLifting — The brane tower satisfies the Yekutieli lifting condition
+# QOU.YekutieliLifting — lifting in the brane tower: derived and conditional parts
 
-The central extensions of gerbes arising from jet prolongation in
-the recursive brane tower satisfy the Yekutieli lifting condition.
+`prop:yekutieli-lifting` says that the transitions `Aₙ ↪ Aₙ₊₁` of the brane
+tower are central extensions of gerbes banded by an abelian sheaf `𝓑`, and
+that a lift exists iff the obstruction `κₙ ∈ H²(M, 𝓑)` vanishes
+(Yekutieli 2010, Thm 4.17).
+
+This file used to carry that criterion as **structure fields**
+(`lift_of_vanishing`, `no_lift_of_nonzero`), together with a `persistence`
+field that was retracted on 2026-11-15 (bean `qou-lx8f`). Those fields assumed
+what the proposition claims. They are replaced here by:
+
+* `QOU.YekutieliLifting.lift_iff`: the **group-level** criterion, derived for
+  any tower of central group extensions `1 → Aₙ → Eₙ → Gₙ → 1` and
+  homomorphisms `φₙ : Hₙ →* Gₙ` (`φₙ` lifts iff `κ(φₙ) = 1` in
+  `H²(Hₙ, Aₙ)`), from `QOU.CentralExtension.obstructionClass_eq_one_iff`;
+* `QOU.YekutieliLifting.perpetual_obstruction`: the perpetual-obstruction
+  argument as a **conditional**, with persistence an explicit hypothesis
+  rather than a field;
+* `QOU.YekutieliLifting.no_lift_of_persistent`: the two combined.
+
+**Not formalised** (bean `qou-533l`): Thm 4.17 for gerbes over a site, and
+Steps 1–3 of `prf:yekutieli-lifting` (that jet prolongation gives a gerbe
+banded by `𝓑` whose Giraud class is `κₙ`). The torsor layer it needs is in
+`MathlibExt/StackGerbe.lean`, `CocycleTorsor.lean` and `TorsorDescent.lean`.
 
 ## References
 
@@ -13,60 +35,58 @@ the recursive brane tower satisfy the Yekutieli lifting condition.
 - [leitner2026] §3 Proposition: Yekutieli Lifting
 -/
 
-namespace QOU
+namespace QOU.YekutieliLifting
 
-/-- **Yekutieli lifting in the brane tower**: each transition Aₙ ↪ A_{n+1}
-    defines a central extension of gerbes, and the Yekutieli lifting condition
-    holds — the lift exists iff the obstruction class κₙ vanishes.
+open QOU.CentralExtension
 
-    By [Theorem 4.17, yekutieli2010], any central extension of gerbes banded
-    by an abelian sheaf satisfies this criterion.  The jet prolongation
-    realises each transition as precisely such an extension.
+section Tower
 
-    LaTeX: `\label{prop:yekutieli-lifting}`
-    Ref: [yekutieli2010] Theorem 4.17 -/
+variable {A E G H : ℕ → Type*} [∀ n, CommGroup (A n)] [∀ n, Group (E n)]
+  [∀ n, Group (G n)] [∀ n, Group (H n)]
+  (S : ∀ n, GroupExtension (A n) (E n) (G n))
+  (hcen : ∀ n (a : A n) (e : E n), (S n).inl a * e = e * (S n).inl a)
+  (σ : ∀ n, (S n).Section) (φ : ∀ n, H n →* G n)
+
+/-- **Yekutieli lifting, group level (derived).** In a tower of central group
+extensions, `φₙ` lifts through `Eₙ → Gₙ` iff its obstruction class
+`κ(φₙ) ∈ H²(Hₙ, Aₙ)` is trivial.
+
+LaTeX: `\label{prop:yekutieli-lifting}` (group-level case)
+Ref: [yekutieli2010] Theorem 4.17 -/
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
-structure YekutieliLifting where
-  /-- The obstruction space H²(S, B). -/
-  ObstructionSpace : Type*
-  /-- Zero element (trivial obstruction). -/
-  zero : ObstructionSpace
-  /-- Decidable equality on the obstruction space. -/
-  deceq : DecidableEq ObstructionSpace
-  /-- The obstruction class κₙ at level n. -/
-  kappa : ℕ → ObstructionSpace
-  /-- The base-level obstruction κ₀ (the Euler class). -/
-  kappa_zero : ObstructionSpace := kappa 0
-  /-- The type of lifts at level n. -/
-  LiftType : ℕ → Type*
-  /-- Lifting criterion: if κₙ = 0, the lift at level n exists. -/
-  lift_of_vanishing : ∀ n, kappa n = zero → Nonempty (LiftType n)
-  /-- Obstruction: if κₙ ≠ 0, no lift exists. -/
-  no_lift_of_nonzero : ∀ n, kappa n ≠ zero → IsEmpty (LiftType n)
-  /-- Persistence: if κ₀ ≠ 0, then κₙ ≠ 0 for all n (jet corrections
-      live in a complementary subgroup, so cannot cancel κ₀). -/
-  persistence : ∀ n, kappa n ≠ zero → kappa (n + 1) ≠ zero
+theorem lift_iff (n : ℕ) :
+    obstructionClass (hcen n) (σ n) (φ n) = 1 ↔ ∃ ψ : H n →* E n, (S n).rightHom.comp ψ = φ n :=
+  obstructionClass_eq_one_iff (hcen n) (σ n) (φ n)
 
-/-- **Perpetual obstruction**: if κ₀ is non-torsion, then κₙ ≠ 0 for all n.
+end Tower
 
-    **Re-scoped 2026-11-15 (owner decision, PR #7747, bean `qou-lx8f`).**
-    This is a valid conditional: the conclusion holds whenever the
-    persistence hypothesis does. It does not apply to the Kummer tower of
-    Bring's surface, where the obstruction vanishes for `n ∣ χ = -6` and
-    persists only for `n ∤ 6`; the "complementary subgroups" argument for
-    persistence there is withdrawn (item 3 of `thm:qu-to-qou` is now the
-    degree condition).
-
-    The key insight: κ₀ and the jet corrections at level n live in
-    complementary subgroups of H²(S, B), so corrections cannot cancel κ₀. -/
+/-- **Perpetual obstruction (conditional).** If `κ₀ ≠ 0` and non-vanishing
+persists from each level to the next, then `κₙ ≠ 0` for every `n`.
+Persistence is a hypothesis: the argument for it on the Kummer tower of
+Bring's surface was withdrawn (owner decision 2026-11-15, PR #7747, bean
+`qou-lx8f`). -/
 -- Ref: [leitner2026] §3, Item (3)
-theorem perpetual_obstruction
-    (yl : YekutieliLifting)
-    (h_nontorsion : yl.kappa 0 ≠ yl.zero) :
-    ∀ n, yl.kappa n ≠ yl.zero := by
+theorem perpetual_obstruction {X : Type*} (κ : ℕ → X) (zero : X) (h₀ : κ 0 ≠ zero)
+    (hpers : ∀ n, κ n ≠ zero → κ (n + 1) ≠ zero) : ∀ n, κ n ≠ zero := by
   intro n
   induction n with
-  | zero => exact h_nontorsion
-  | succ n ih => exact yl.persistence n ih
+  | zero => exact h₀
+  | succ n ih => exact hpers n ih
 
-end QOU
+/-- In a tower of central group extensions with a persistent non-trivial base
+obstruction, no level lifts. -/
+theorem no_lift_of_persistent {A E G H : ℕ → Type*} [∀ n, CommGroup (A n)] [∀ n, Group (E n)]
+    [∀ n, Group (G n)] [∀ n, Group (H n)]
+    (S : ∀ n, GroupExtension (A n) (E n) (G n))
+    (hcen : ∀ n (a : A n) (e : E n), (S n).inl a * e = e * (S n).inl a)
+    (σ : ∀ n, (S n).Section) (φ : ∀ n, H n →* G n)
+    (h₀ : obstructionClass (hcen 0) (σ 0) (φ 0) ≠ 1)
+    (hpers : ∀ n, obstructionClass (hcen n) (σ n) (φ n) ≠ 1 →
+      obstructionClass (hcen (n + 1)) (σ (n + 1)) (φ (n + 1)) ≠ 1) (n : ℕ) :
+    ¬ ∃ ψ : H n →* E n, (S n).rightHom.comp ψ = φ n := by
+  rw [← lift_iff S hcen σ φ n]
+  induction n with
+  | zero => exact h₀
+  | succ n ih => exact hpers n ih
+
+end QOU.YekutieliLifting

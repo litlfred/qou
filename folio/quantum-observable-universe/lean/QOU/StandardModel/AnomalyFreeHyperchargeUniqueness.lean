@@ -3,7 +3,6 @@ Copyright (c) 2026 QOU contributors. All rights reserved.
 Released under CC BY 4.0 as described in the repository LICENSE.
 -/
 import Mathlib.Tactic
-import QOU.StandardModel.HopfFramingAndHirzebruchDefect
 
 /-!
 # Anomaly freedom forces the hypercharge ratios on one generation
@@ -369,18 +368,5 @@ theorem anomalyFree_neutral_forces_hypercharge [CharZero K] (c : Charges K)
   have hden : 1 + 60 * c.yQ ^ 2 ≠ 0 := by
     rcases hscale with h | h <;> rw [h] <;> norm_num
   exact ⟨hch, hscale, (neutral_lepton_iff_three_eighths c hch hden).mp hn⟩
-
-/-! ## The existing Open-Check-A carrier is vacuous
-
-`CategoricalRibbonHyperchargeDerivationHypothesis` (in `HopfFramingAndHirzebruchDefect`) is
-documented as a zero-instance Rule-13a carrier for Open Check A.  Its only field,
-`∀ T twoI3, ∃ Y3, Y3 = 2T - 3·twoI3`, is provable by `rfl`, so the class is inhabited and
-records no open content.  This is a proof term, not an `instance`; it does not add a global
-instance, it only shows that one could be written.  The open content of Check A is the two
-inputs listed in the module docstring above (representation content and anomaly freedom from
-the QOU axioms), which the carrier does not mention. -/
-theorem categoricalRibbonHyperchargeDerivationHypothesis_trivial :
-    QOU.StandardModel.HopfFramingAndHirzebruchDefect.CategoricalRibbonHyperchargeDerivationHypothesis :=
-  ⟨fun _ _ => ⟨_, rfl⟩⟩
 
 end QOU.StandardModel.AnomalyFreeHypercharge

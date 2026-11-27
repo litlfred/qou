@@ -50,6 +50,7 @@ import QOU.Core.LawvereCut
 import QOU.Core.TarskiSign
 import QOU.Core.TarskiSignKashaev
 import QOU.Core.KashaevHermitianCertificate
+import QOU.Core.ExteriorAntisymmetryDerivation
 import QOU.Core.TarskiSignKashaevGen
 import QOU.Core.KashaevHabiroBridge
 import QCalculus.HabiroDoubleTwist
@@ -636,6 +637,8 @@ import HeckeTemperleyLieb.QJucysMurphy
 import HeckeTemperleyLieb.ContentCasimir
 import HeckeTemperleyLieb.QJucysMurphyEigen
 import HeckeTemperleyLieb.QHeatKernelRate
+import HeckeTemperleyLieb.QHeatKernelModeSet
+import HeckeTemperleyLieb.QHeatKernelRecursion
 import BraidKnotOctonion.SeminormalContentCasimir
 import BraidKnotOctonion.QSchurMoves
 import BraidKnotOctonion.QSchurUpperBound
@@ -1989,6 +1992,9 @@ import QOU.StandardModel.Su3StructureConstants
 import QOU.StandardModel.SpinFlavourAxialCharge
 import QOU.StandardModel.InfinitesimalPureBraid
 import QOU.StandardModel.AnomalyFreeHyperchargeUniqueness
+import QOU.StandardModel.HopfFramingAndHirzebruchDefect
+import QOU.StandardModel.DrinfeldKohnoAlgebra
+import QOU.StandardModel.OddExteriorAnomalyFreedom
 import QOU.Confinement.HopfElectronTwoTermMass
 import QOU.Nuclear.LeptonTwoTermStokesCovariance
 import QOU.BraidsAndKnots.HeckeWeightSpaceSymmetry

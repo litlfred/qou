@@ -31,6 +31,11 @@ colimit of `MathlibExt.CechColimit`. The covering-map statement
 `Mathlib/Analysis/SpecialFunctions/Complex/Circle.lean`) is also not used:
 the local logarithm only needs continuity of `Complex.arg` off the slit.
 
+This module lives under `QOU/Transcendental/` because it uses `Complex.arg`
+and the circle exponential (strangler boundary,
+`scripts/transcendental-boundary-audit.py`; bean `qou-68a4`). The algebraic
+Čech layer it builds on stays in `MathlibExt/`.
+
 Nothing here is a numerical input: `π` enters only as the point `-1 = exp(iπ)`
 of the circle and as the period of `exp(i·)`.
 -/
