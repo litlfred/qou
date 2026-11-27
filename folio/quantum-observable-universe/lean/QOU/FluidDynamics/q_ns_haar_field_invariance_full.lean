@@ -27,12 +27,12 @@ For `q` not a root of unity (`hq : ∀ n > 0, q^n ≠ 1`):
    (`torus_fieldPlus`, …). Both sides are twisted derivations with the same twist and agree
    on generators; `twistedLeibniz_ext` says such maps are equal.
 2. **Weights.** `θ_{u,v}` scales the PBW monomial `(a, b, c)` by `u^a v^(b−c)`
-   (`torus_mono`). So `X₊ mono(a,b,c)` is scaled by `u^(a+1) v^(b−c−1)`; since `h` is torus
-   invariant, `h(X₊ mono(a,b,c)) = 0` unless `a = −1` and `b = c + 1`
+   (`torus_pbwMono`). So `X₊ pbwMono(a,b,c)` is scaled by `u^(a+1) v^(b−c−1)`; since `h` is torus
+   invariant, `h(X₊ pbwMono(a,b,c)) = 0` unless `a = −1` and `b = c + 1`
    (`haarState_eq_zero_of_torus` with `(u, v) = (q, 1)` or `(1, q)`).
-3. **The one surviving weight.** `mono(−1, c+1, c) = δ β^(c+1) γ^c` is a scalar multiple of
-   `ζ^c βδ` (`monoD_one_eq`), which is #9713's block; likewise `mono(1, b, b+1)` is a multiple
-   of `ζ^b αγ` for `X₋`, and `mono(0, b, b) = ζ^b` for `X₀`, where `X₀ ζ^b = 0`.
+3. **The one surviving weight.** `pbwMono(−1, c+1, c) = δ β^(c+1) γ^c` is a scalar multiple of
+   `ζ^c βδ` (`monoD_one_eq`), which is #9713's block; likewise `pbwMono(1, b, b+1)` is a multiple
+   of `ζ^b αγ` for `X₋`, and `pbwMono(0, b, b) = ζ^b` for `X₀`, where `X₀ ζ^b = 0`.
 4. **Basis.** `h ∘ X` is linear and vanishes on the PBW basis (`pbwBasis`), so it is zero.
 
 ## Hypotheses
@@ -216,21 +216,21 @@ theorem torus_monoY (u v : Rˣ) (b c : ℕ) :
     smul_pow, smul_mul_smul_comm]
 
 /-- `θ_{u,v}` scales the PBW monomial `(a, b, c)` by `u^a v^(b−c)`. -/
-theorem torus_mono (u v : Rˣ) (i : MonoIdx) :
-    torusScaleAlgHom q u v (mono q i) =
-      ((u ^ i.1 * v ^ ((i.2.1 : ℤ) - i.2.2) : Rˣ) : R) • mono (R := R) q i := by
+theorem torus_pbwMono (u v : Rˣ) (i : MonoIdx) :
+    torusScaleAlgHom q u v (pbwMono q i) =
+      ((u ^ i.1 * v ^ ((i.2.1 : ℤ) - i.2.2) : Rˣ) : R) • pbwMono (R := R) q i := by
   obtain ⟨a, b, c⟩ := i
   have hv : ((v ^ ((b : ℤ) - c) : Rˣ) : R) = (v : R) ^ b * ((v⁻¹ : Rˣ) : R) ^ c := by
     rw [zpow_sub, zpow_natCast, zpow_natCast, ← inv_pow, Units.val_mul,
       Units.val_pow_eq_pow_val, Units.val_pow_eq_pow_val]
   rcases le_or_gt 0 a with ha | ha
   · obtain ⟨n, rfl⟩ := Int.eq_ofNat_of_zero_le ha
-    simp only [mono_nat, monoA, map_mul, map_pow, torus_monoY]
+    simp only [pbwMono_nat, monoA, map_mul, map_pow, torus_monoY]
     simp only [torusScaleAlgHom, liftQuadruple_alpha, smul_pow, smul_mul_smul_comm, Units.val_mul,
       hv, zpow_natCast, Units.val_pow_eq_pow_val]
   · obtain ⟨n, hn⟩ := Int.exists_eq_neg_ofNat ha.le
     subst hn
-    simp only [mono_neg_nat, monoD, map_mul, map_pow, torus_monoY]
+    simp only [pbwMono_neg_nat, monoD, map_mul, map_pow, torus_monoY]
     simp only [torusScaleAlgHom, liftQuadruple_delta, smul_pow, smul_mul_smul_comm, Units.val_mul,
       hv, zpow_neg, zpow_natCast, ← inv_pow, Units.val_pow_eq_pow_val]
 
@@ -269,12 +269,12 @@ theorem qSqNum_ne_zero_of_not_root (hq : ∀ n : ℕ, 0 < n → (q : K) ^ n ≠ 
   exact hq (2 * (n + 1)) (by omega) (sub_eq_zero.1 hgeom.symm)
 
 /-- The PBW-indexed weight bookkeeping: `X` with shift `c(u,v)` applied to a weight vector. -/
-theorem torus_field_mono {X : OqSU2 K q →ₗ[K] OqSU2 K q} (c : Kˣ → Kˣ → K)
+theorem torus_field_pbwMono {X : OqSU2 K q →ₗ[K] OqSU2 K q} (c : Kˣ → Kˣ → K)
     (hX : ∀ u v x, torusScaleAlgHom q u v (X x) = c u v • X (torusScaleAlgHom q u v x))
     (u v : Kˣ) (i : MonoIdx) :
-    torusScaleAlgHom q u v (X (mono q i)) =
-      (c u v * ((u ^ i.1 * v ^ ((i.2.1 : ℤ) - i.2.2) : Kˣ) : K)) • X (mono q i) := by
-  rw [hX, torus_mono, map_smul, smul_smul]
+    torusScaleAlgHom q u v (X (pbwMono q i)) =
+      (c u v * ((u ^ i.1 * v ^ ((i.2.1 : ℤ) - i.2.2) : Kˣ) : K)) • X (pbwMono q i) := by
+  rw [hX, torus_pbwMono, map_smul, smul_smul]
 
 /-! ## The surviving weights are #9713's blocks -/
 
@@ -302,7 +302,7 @@ include hq
 
 /-- **`h ∘ X₊ = 0` on all of `O_q(SU(2))`**, for `q` not a root of unity. -/
 theorem haarState_fieldPlus_eq_zero (x : OqSU2 K q) : haarState q (fieldPlus q x) = 0 := by
-  have hX := torus_field_mono q (X := fieldPlus q) (fun u v => (u : K) * ((v⁻¹ : Kˣ) : K))
+  have hX := torus_field_pbwMono q (X := fieldPlus q) (fun u v => (u : K) * ((v⁻¹ : Kˣ) : K))
     (fun u v x => torus_fieldPlus q u v x)
   suffices h : (haarState q).comp (fieldPlus q) = 0 from LinearMap.congr_fun h x
   refine (pbwBasis q).ext fun i => ?_
@@ -313,7 +313,7 @@ theorem haarState_fieldPlus_eq_zero (x : OqSU2 K q) : haarState q (fieldPlus q x
     · -- the surviving weight `(−1, 1)`: `#9713`'s block `βδ · K[ζ]`
       obtain rfl : a = -((1 : ℕ) : ℤ) := by omega
       obtain rfl : b = c + 1 := by omega
-      rw [mono_neg_nat, monoD_one_eq, map_smul, map_smul,
+      rw [pbwMono_neg_nat, monoD_one_eq, map_smul, map_smul,
         haarState_fieldPlus_zeta_pow_betaDelta q (qSqNum_ne_zero_of_not_root q hq), smul_zero]
     · refine haarState_eq_zero_of_torus q 1 q _ ?_ _ (hX 1 q (a, b, c))
       have hw : ((1 : Kˣ) : K) * ((q⁻¹ : Kˣ) : K) *
@@ -329,7 +329,7 @@ theorem haarState_fieldPlus_eq_zero (x : OqSU2 K q) : haarState q (fieldPlus q x
 
 /-- **`h ∘ X₋ = 0` on all of `O_q(SU(2))`**, for `q` not a root of unity. -/
 theorem haarState_fieldMinus_eq_zero (x : OqSU2 K q) : haarState q (fieldMinus q x) = 0 := by
-  have hX := torus_field_mono q (X := fieldMinus q) (fun u v => (v : K) * ((u⁻¹ : Kˣ) : K))
+  have hX := torus_field_pbwMono q (X := fieldMinus q) (fun u v => (v : K) * ((u⁻¹ : Kˣ) : K))
     (fun u v x => torus_fieldMinus q u v x)
   suffices h : (haarState q).comp (fieldMinus q) = 0 from LinearMap.congr_fun h x
   refine (pbwBasis q).ext fun i => ?_
@@ -340,7 +340,7 @@ theorem haarState_fieldMinus_eq_zero (x : OqSU2 K q) : haarState q (fieldMinus q
     · -- the surviving weight `(1, −1)`: `#9713`'s block `αγ · K[ζ]`
       obtain rfl : a = ((1 : ℕ) : ℤ) := by omega
       obtain rfl : c = b + 1 := by omega
-      rw [mono_nat, monoA_one_eq, map_smul, map_smul,
+      rw [pbwMono_nat, monoA_one_eq, map_smul, map_smul,
         haarState_fieldMinus_zeta_pow_alphaGamma q (qSqNum_ne_zero_of_not_root q hq), smul_zero]
     · refine haarState_eq_zero_of_torus q 1 q _ ?_ _ (hX 1 q (a, b, c))
       have hw : (q : K) * ((1⁻¹ : Kˣ) : K) *
@@ -356,7 +356,7 @@ theorem haarState_fieldMinus_eq_zero (x : OqSU2 K q) : haarState q (fieldMinus q
 
 /-- **`h ∘ X₀ = 0` on all of `O_q(SU(2))`**, for `q` not a root of unity. -/
 theorem haarState_fieldZero_eq_zero (x : OqSU2 K q) : haarState q (fieldZero q x) = 0 := by
-  have hX := torus_field_mono q (X := fieldZero q) (fun _ _ => 1)
+  have hX := torus_field_pbwMono q (X := fieldZero q) (fun _ _ => 1)
     (fun u v x => by rw [one_smul]; exact torus_fieldZero q u v x)
   suffices h : (haarState q).comp (fieldZero q) = 0 from LinearMap.congr_fun h x
   refine (pbwBasis q).ext fun i => ?_
@@ -364,11 +364,11 @@ theorem haarState_fieldZero_eq_zero (x : OqSU2 K q) : haarState q (fieldZero q x
   simp only [pbwBasis_apply, LinearMap.comp_apply, LinearMap.zero_apply]
   by_cases ha : a = 0
   · by_cases hs : (b : ℤ) - c = 0
-    · -- weight zero: `mono(0, b, b) = ζ^b`, and `X₀ ζ^b = 0`
+    · -- weight zero: `pbwMono(0, b, b) = ζ^b`, and `X₀ ζ^b = 0`
       subst ha
       have hbc : b = c := by omega
       subst hbc
-      rw [show ((0 : ℤ), b, b) = (((0 : ℕ) : ℤ), b, b) from rfl, mono_nat, monoA_zero,
+      rw [show ((0 : ℤ), b, b) = (((0 : ℕ) : ℤ), b, b) from rfl, pbwMono_nat, monoA_zero,
         ← zetaB_pow_eq, fieldZero_zetaB_pow, map_zero]
     · refine haarState_eq_zero_of_torus q 1 q _ ?_ _ (hX 1 q (a, b, c))
       rw [one_mul, one_zpow, one_mul]; exact zpow_ne_one q hq hs

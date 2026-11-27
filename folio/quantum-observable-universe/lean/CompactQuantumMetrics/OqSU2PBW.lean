@@ -14,19 +14,19 @@ PBW theorem is "not needed and not proved". This file proves it, over any commut
 
 For `(a, b, c) ∈ ℤ × ℕ × ℕ` put
 
-* `mono (a, b, c) = α^a β^b γ^c` when `0 ≤ a`,
-* `mono (a, b, c) = δ^(-a) β^b γ^c` when `a < 0`.
+* `pbwMono (a, b, c) = α^a β^b γ^c` when `0 ≤ a`,
+* `pbwMono (a, b, c) = δ^(-a) β^b γ^c` when `a < 0`.
 
 ## Results (sorry-free)
 
-* `mono_span` — **spanning.** The `R`-span of the ordered monomials is all of
+* `pbwMono_span` — **spanning.** The `R`-span of the ordered monomials is all of
   `O_q(SU(2))`. Proof: the span contains `1` and is stable under left multiplication by
   each generator. The only non-monomial products are `α δ^(n+1)` and `δ α^(n+1)`, which the
   determinant relations rewrite as `δ^n + r δ^n βγ` and `α^n + r' α^n βγ`
   (`alpha_mul_delta_pow_succ`, `delta_mul_alpha_pow_succ`).
-* `monoRep_mono` — `π(mono i) e(0,0,0) = e(i)`: the model representation sends the ordered
+* `monoRep_pbwMono` — `π(pbwMono i) e(0,0,0) = e(i)`: the model representation sends the ordered
   monomial `i` to the basis vector `i`.
-* `mono_linearIndependent` — **independence**, read off from `monoRep_mono`.
+* `pbwMono_linearIndependent` — **independence**, read off from `monoRep_pbwMono`.
 * `pbwBasis` — the ordered monomials are an `R`-basis of `O_q(SU(2))`
   (`pbwBasis_apply`), and `pbwEquiv : O_q(SU(2)) ≃ₗ[R] R^(ℤ × ℕ × ℕ)` is
   `x ↦ π(x) e(0,0,0)` (`pbwEquiv_apply`). So the model of `OqSU2HaarState` is faithful:
@@ -82,13 +82,13 @@ variable (q : Rˣ)
 
 local notation "qi" => (((q⁻¹ : Rˣ) : R))
 
-theorem beta_alpha : β q * α (R := R) q = qi • (α q * β q) := by
+theorem beta_alpha_skew : β q * α (R := R) q = qi • (α q * β q) := by
   rw [rel_ab, smul_smul]; simp
 
-theorem gamma_alpha : γ q * α (R := R) q = qi • (α q * γ q) := by
+theorem gamma_alpha_skew : γ q * α (R := R) q = qi • (α q * γ q) := by
   rw [rel_ag, smul_smul]; simp
 
-theorem gamma_beta : γ q * β (R := R) q = (1 : R) • (β q * γ q) := by
+theorem gamma_beta_skew : γ q * β (R := R) q = (1 : R) • (β q * γ q) := by
   rw [one_smul, rel_bg]
 
 /-- `βγ δ = q² δ βγ`. -/
@@ -98,7 +98,7 @@ theorem betaGamma_delta : β (R := R) q * γ q * δ q = ((q : R) * q) • (δ q 
 
 /-- `βγ α = q⁻² α βγ`. -/
 theorem betaGamma_alpha : β (R := R) q * γ q * α q = (qi * qi) • (α q * (β q * γ q)) := by
-  rw [mul_assoc, gamma_alpha, mul_smul_comm, ← mul_assoc, beta_alpha, smul_mul_assoc, smul_smul,
+  rw [mul_assoc, gamma_alpha_skew, mul_smul_comm, ← mul_assoc, beta_alpha_skew, smul_mul_assoc, smul_smul,
     mul_assoc]
 
 /-- `α δ^(n+1) = δ^n + r δ^n βγ` for some scalar `r`. -/
@@ -148,7 +148,7 @@ noncomputable def monoD (n b c : ℕ) : OqSU2 R q := δ q ^ n * monoY q b c
 
 /-- The ordered monomial indexed by `(a, b, c) ∈ ℤ × ℕ × ℕ`: `α^a β^b γ^c` for `0 ≤ a`,
 `δ^(-a) β^b γ^c` for `a < 0`. -/
-noncomputable def mono (i : MonoIdx) : OqSU2 R q :=
+noncomputable def pbwMono (i : MonoIdx) : OqSU2 R q :=
   if 0 ≤ i.1 then monoA q i.1.toNat i.2.1 i.2.2 else monoD q (-i.1).toNat i.2.1 i.2.2
 
 theorem monoA_zero (b c : ℕ) : monoA q 0 b c = monoY (R := R) q b c := by
@@ -157,22 +157,22 @@ theorem monoA_zero (b c : ℕ) : monoA q 0 b c = monoY (R := R) q b c := by
 theorem monoD_zero (b c : ℕ) : monoD q 0 b c = monoY (R := R) q b c := by
   simp [monoD]
 
-theorem mono_nat (n b c : ℕ) : mono q ((n : ℤ), b, c) = monoA (R := R) q n b c := by
-  simp [mono]
+theorem pbwMono_nat (n b c : ℕ) : pbwMono q ((n : ℤ), b, c) = monoA (R := R) q n b c := by
+  simp [pbwMono]
 
-theorem mono_neg_nat (n b c : ℕ) : mono q (-(n : ℤ), b, c) = monoD (R := R) q n b c := by
+theorem pbwMono_neg_nat (n b c : ℕ) : pbwMono q (-(n : ℤ), b, c) = monoD (R := R) q n b c := by
   rcases n with _ | n
-  · simp [mono, monoA_zero, monoD_zero]
+  · simp [pbwMono, monoA_zero, monoD_zero]
   · have h : ¬ (0 ≤ -((n + 1 : ℕ) : ℤ)) := by omega
-    simp only [mono, if_neg h, neg_neg, Int.toNat_natCast]
+    simp only [pbwMono, if_neg h, neg_neg, Int.toNat_natCast]
 
-theorem mono_zero : mono q (0, 0, 0) = (1 : OqSU2 R q) := by
-  simp [mono, monoA, monoY]
+theorem pbwMono_zero : pbwMono q (0, 0, 0) = (1 : OqSU2 R q) := by
+  simp [pbwMono, monoA, monoY]
 
 /-- `βγ · β^b γ^c = β^(b+1) γ^(c+1)`. -/
 theorem betaGamma_mul_monoY (b c : ℕ) :
     β q * γ q * monoY (R := R) q b c = monoY q (b + 1) (c + 1) := by
-  have h := skew_pow_right (gamma_beta (R := R) q) b
+  have h := skew_pow_right (gamma_beta_skew (R := R) q) b
   rw [one_pow, one_smul] at h
   unfold monoY
   rw [mul_assoc, ← mul_assoc (γ q), h, pow_succ', pow_succ']
@@ -182,20 +182,20 @@ theorem beta_mul_monoY (b c : ℕ) : β q * monoY (R := R) q b c = monoY q (b + 
   rw [monoY, monoY, ← mul_assoc, ← pow_succ']
 
 theorem gamma_mul_monoY (b c : ℕ) : γ q * monoY (R := R) q b c = monoY q b (c + 1) := by
-  have h := skew_pow_right (gamma_beta (R := R) q) b
+  have h := skew_pow_right (gamma_beta_skew (R := R) q) b
   rw [one_pow, one_smul] at h
   rw [monoY, monoY, ← mul_assoc, h, mul_assoc, ← pow_succ']
 
 /-! ## Spanning -/
 
 /-- The `R`-span of the ordered monomials. -/
-noncomputable abbrev monoSpan : Submodule R (OqSU2 R q) := Submodule.span R (Set.range (mono q))
+noncomputable abbrev monoSpan : Submodule R (OqSU2 R q) := Submodule.span R (Set.range (pbwMono q))
 
 theorem monoA_mem (n b c : ℕ) : monoA q n b c ∈ monoSpan (R := R) q :=
-  Submodule.subset_span ⟨_, mono_nat q n b c⟩
+  Submodule.subset_span ⟨_, pbwMono_nat q n b c⟩
 
 theorem monoD_mem (n b c : ℕ) : monoD q n b c ∈ monoSpan (R := R) q :=
-  Submodule.subset_span ⟨_, mono_neg_nat q n b c⟩
+  Submodule.subset_span ⟨_, pbwMono_neg_nat q n b c⟩
 
 theorem alpha_mul_monoA (n b c : ℕ) : α q * monoA (R := R) q n b c = monoA q (n + 1) b c := by
   rw [monoA, monoA, ← mul_assoc, ← pow_succ']
@@ -219,12 +219,12 @@ theorem delta_mul_monoA_mem (n b c : ℕ) : δ q * monoA (R := R) q n b c ∈ mo
 
 theorem beta_mul_monoA (n b c : ℕ) :
     β q * monoA (R := R) q n b c = qi ^ n • monoA q n (b + 1) c := by
-  rw [monoA, ← mul_assoc, skew_pow_right (beta_alpha q), smul_mul_assoc, mul_assoc,
+  rw [monoA, ← mul_assoc, skew_pow_right (beta_alpha_skew q), smul_mul_assoc, mul_assoc,
     beta_mul_monoY, monoA]
 
 theorem gamma_mul_monoA (n b c : ℕ) :
     γ q * monoA (R := R) q n b c = qi ^ n • monoA q n b (c + 1) := by
-  rw [monoA, ← mul_assoc, skew_pow_right (gamma_alpha q), smul_mul_assoc, mul_assoc,
+  rw [monoA, ← mul_assoc, skew_pow_right (gamma_alpha_skew q), smul_mul_assoc, mul_assoc,
     gamma_mul_monoY, monoA]
 
 theorem beta_mul_monoD (n b c : ℕ) :
@@ -245,17 +245,17 @@ theorem mul_mem_monoSpan_of {g : OqSU2 R q}
   have hle : monoSpan q ≤ (monoSpan q).comap (LinearMap.mulLeft R g) := by
     rw [Submodule.span_le]
     rintro _ ⟨⟨a, b, c⟩, rfl⟩
-    show g * mono q (a, b, c) ∈ monoSpan q
+    show g * pbwMono q (a, b, c) ∈ monoSpan q
     rcases le_or_gt 0 a with ha | ha
     · obtain ⟨n, rfl⟩ := Int.eq_ofNat_of_zero_le ha
-      rw [mono_nat]; exact hA n b c
+      rw [pbwMono_nat]; exact hA n b c
     · obtain ⟨n, hn⟩ := Int.exists_eq_neg_ofNat ha.le
       subst hn
-      rw [mono_neg_nat]; exact hD n b c
+      rw [pbwMono_neg_nat]; exact hD n b c
   exact hle hy
 
 /-- **PBW spanning.** The ordered monomials span `O_q(SU(2))` over `R`. -/
-theorem mono_span : monoSpan (R := R) q = ⊤ := by
+theorem pbwMono_span : monoSpan (R := R) q = ⊤ := by
   let T : Subalgebra R (OqSU2 R q) :=
     { carrier := {x | ∀ y ∈ monoSpan q, x * y ∈ monoSpan q}
       mul_mem' := by
@@ -281,7 +281,7 @@ theorem mono_span : monoSpan (R := R) q = ⊤ := by
     (fun n b c => by rw [gamma_mul_monoD]; exact Submodule.smul_mem _ _ (monoD_mem q _ _ _)) hy
   rw [eq_top_iff]
   intro x _
-  have h1 : (1 : OqSU2 R q) ∈ monoSpan q := Submodule.subset_span ⟨_, mono_zero q⟩
+  have h1 : (1 : OqSU2 R q) ∈ monoSpan q := Submodule.subset_span ⟨_, pbwMono_zero q⟩
   simpa using mem_of_gens T hα hβ hγ hδ x 1 h1
 
 /-! ## Independence, through the model representation -/
@@ -319,16 +319,16 @@ theorem monoRep_monoY (b c : ℕ) : monoRep q (monoY q b c) (eb R 0 0 0) = eb R 
   rw [monoY, map_mul, map_pow, map_pow, Module.End.mul_apply, monoRep_beta, monoRep_gamma,
     mG_pow_e, mB_pow_e]
 
-/-- `π(mono i) e(0,0,0) = e(i)`. -/
-theorem monoRep_mono (i : MonoIdx) : monoRep q (mono q i) (eb R 0 0 0) = Finsupp.single i 1 := by
+/-- `π(pbwMono i) e(0,0,0) = e(i)`. -/
+theorem monoRep_pbwMono (i : MonoIdx) : monoRep q (pbwMono q i) (eb R 0 0 0) = Finsupp.single i 1 := by
   obtain ⟨a, b, c⟩ := i
   rcases le_or_gt 0 a with ha | ha
   · obtain ⟨n, rfl⟩ := Int.eq_ofNat_of_zero_le ha
-    rw [mono_nat, monoA, map_mul, map_pow, Module.End.mul_apply, monoRep_monoY, monoRep_alpha,
+    rw [pbwMono_nat, monoA, map_mul, map_pow, Module.End.mul_apply, monoRep_monoY, monoRep_alpha,
       mA_pow_e]
   · obtain ⟨n, hn⟩ := Int.exists_eq_neg_ofNat ha.le
     subst hn
-    rw [mono_neg_nat, monoD, map_mul, map_pow, Module.End.mul_apply, monoRep_monoY,
+    rw [pbwMono_neg_nat, monoD, map_mul, map_pow, Module.End.mul_apply, monoRep_monoY,
       monoRep_delta, mD_pow_e]
 
 /-- The evaluation map `x ↦ π(x) e(0,0,0)`. -/
@@ -338,19 +338,19 @@ noncomputable def monoEval : OqSU2 R q →ₗ[R] MonoMod R :=
 theorem monoEval_apply (x : OqSU2 R q) : monoEval q x = monoRep q x (eb R 0 0 0) := rfl
 
 /-- **PBW independence.** The ordered monomials are linearly independent over `R`. -/
-theorem mono_linearIndependent : LinearIndependent R (mono (R := R) q) := by
+theorem pbwMono_linearIndependent : LinearIndependent R (pbwMono (R := R) q) := by
   apply LinearIndependent.of_comp (monoEval q)
-  have : (monoEval q) ∘ (mono q) = fun i => Finsupp.single i (1 : R) := by
-    funext i; exact monoRep_mono q i
+  have : (monoEval q) ∘ (pbwMono q) = fun i => Finsupp.single i (1 : R) := by
+    funext i; exact monoRep_pbwMono q i
   rw [this]
   exact Finsupp.linearIndependent_single_one (ι := MonoIdx) (R := R)
 
 /-- **PBW basis.** The ordered monomials `α^a β^b γ^c` (`a ≥ 0`), `δ^(-a) β^b γ^c` (`a < 0`)
 form an `R`-basis of `O_q(SU(2))`. -/
 noncomputable def pbwBasis : Module.Basis MonoIdx R (OqSU2 R q) :=
-  Module.Basis.mk (mono_linearIndependent q) (mono_span q).ge
+  Module.Basis.mk (pbwMono_linearIndependent q) (pbwMono_span q).ge
 
-@[simp] theorem pbwBasis_apply (i : MonoIdx) : pbwBasis (R := R) q i = mono q i := by
+@[simp] theorem pbwBasis_apply (i : MonoIdx) : pbwBasis (R := R) q i = pbwMono q i := by
   simp [pbwBasis]
 
 /-- The evaluation `x ↦ π(x) e(0,0,0)` is the coordinate map of the PBW basis. -/
@@ -358,7 +358,7 @@ theorem monoEval_eq_repr : monoEval (R := R) q = (pbwBasis q).repr.toLinearMap :
   apply (pbwBasis q).ext
   intro i
   show monoEval q (pbwBasis q i) = (pbwBasis q).repr (pbwBasis q i)
-  rw [Module.Basis.repr_self, monoEval_apply, pbwBasis_apply, monoRep_mono]
+  rw [Module.Basis.repr_self, monoEval_apply, pbwBasis_apply, monoRep_pbwMono]
 
 /-- `O_q(SU(2)) ≃ R^(ℤ × ℕ × ℕ)`, `x ↦ π(x) e(0,0,0)`. -/
 noncomputable def pbwEquiv : OqSU2 R q ≃ₗ[R] MonoMod R := (pbwBasis q).repr
