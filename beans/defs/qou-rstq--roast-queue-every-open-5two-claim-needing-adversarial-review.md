@@ -573,3 +573,22 @@ rule, does not touch Gap A (`qou-glbl`), and does not perform the assembly
 ## 2026-11-27: PR #8491 closed unmerged (stale reference)
 
 PR #8491 was closed unmerged on 2026-11-22 as superseded, on the owner's decision. The "Round 72 Progress" block above describes work that never reached main. Checked against main `22b1f41263`. Already on main in some form: `LiTwo_neg_one` (`QCalculus/LiTwoNegOne.lean`, `MathlibExt/DilogarithmArchimedeanLimit.lean`), `chord_le_arc` (`QOU/BringsSurface/MobiusKernel.lean`), `not_subsingleton_unit_hom_of_nontrivial` (`QOU/Core/WitnessObstruction.lean`). Not on main, and only corollaries or wrappers of the above: `twelve_mul_LiTwo_neg_one`, `twelve_mul_cLiTwoExt_neg_one`, `chord_sq_le_arc_sq`, `mobiusKernel_symm`, `moduleCat_not_subsingleton_unit_hom_of_ne_zero`, `qou_eulerChar_nonzero` (a projection of a class field), and two `decide` checks on integer literals. None of it bears on this bean's open content. Nothing salvaged; status unchanged.
+
+## 2026-11-27 — the 5₂ sum rule is PROVED on main; this bean's gap is closed (thread "Define θ_K and prove the 5₂ sum rules")
+
+Checked against qou `main` at `4c79801ea`. The chain this bean tracks is closed by theorems already on main:
+
+| link | theorem | file |
+|---|---|---|
+| the sum rule itself, Σ Re Vⱼ = −3π²/2 at the actual roots of X³ − 2X² + 3X − 1 | `fiveTwoSaddleSumRule_holds`, `fiveTwo_sum_V`, `fiveTwo_saddle_sum_rule` | `QCalculus/FiveTwoComplexPentagon.lean` |
+| complex five-term identity on `rogersDomain` | `pentagonSum_eq_pi_sq_div_two` | same |
+| Abel five-term on (0,1) for the corpus `rogersL` | `rogersL_fiveTerm` | `MathlibExt/FiveTwoAbelFiveTerm.lean` |
+| level-7 numerators (17, 5, −1), unconditional | `numerators_of_root`, `extended_targets`, `extended_sum` | same |
+| `extend` = Re of the analytic Rogers L (rstq item 4) | `extend_eq_re_cRogersL` | `QOU/Nuclear/FiveTwoExtendIdentification.lean` |
+| S(π) = −π²/2 assembled | `sum_re_deformedV_at_neg_one` | `QOU/Nuclear/FiveTwoLevelSevenAssembly.lean` |
+
+The direct proof (complex pentagon at the saddle pair, then branch equations from y² = (1−y)³) does **not** go through the Route 8 transport, so `qou-trns`'s envelope theorem and Gap A (`qou-glbl`) are no longer on the critical path of the sum rule. They remain open only as statements about the transport itself.
+
+Build check: rebuilt the cone from source (stale cached oleans replaced, `.srcsha`-checked) and ran `scripts/lean-verify.sh`: all six theorems above compile, and `#print axioms` on each gives `[propext, Classical.choice, Quot.sound]`.
+
+Recommendation: mark `completed` (owner card in the thread). Status left unchanged here per the no-unilateral-closure rule.

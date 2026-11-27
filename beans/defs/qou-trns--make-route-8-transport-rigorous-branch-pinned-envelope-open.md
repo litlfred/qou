@@ -1395,3 +1395,22 @@ No change; envelope theorem open. The latest note above points at batch PR #8213
 ## 2026-11-22 — applicability review (owner instruction, thread "Work the volume conjecture beans")
 
 **Verdict: APPLIES.** Formal mathematics (volume conjecture, Lean hyperbolic/AJ infrastructure, Mathlib gaps). Checked its premises against owner-rulings.md on main: it uses none of the retired ones (σ₀σ₁ photon, trefoil electron, convention C, z = 1 Q_β base, census selection, absolute mass, muon pin A, substrate-q₀ derivation, virtual photons, SM quark charges). Today's rulings (strand colour states, b = −qX on colour singlets with flavour trace values unchanged, convention D on the baryon sector, photon kept with fixed constant 1) do not reach knot-complement geometry. Its batch-PR notes (Nov 16–18 Round PRs) are all still open and unmerged as of 2026-11-22.
+
+## 2026-11-27 — the 5₂ sum rule is PROVED on main; this bean's gap is closed (thread "Define θ_K and prove the 5₂ sum rules")
+
+Checked against qou `main` at `4c79801ea`. The chain this bean tracks is closed by theorems already on main:
+
+| link | theorem | file |
+|---|---|---|
+| the sum rule itself, Σ Re Vⱼ = −3π²/2 at the actual roots of X³ − 2X² + 3X − 1 | `fiveTwoSaddleSumRule_holds`, `fiveTwo_sum_V`, `fiveTwo_saddle_sum_rule` | `QCalculus/FiveTwoComplexPentagon.lean` |
+| complex five-term identity on `rogersDomain` | `pentagonSum_eq_pi_sq_div_two` | same |
+| Abel five-term on (0,1) for the corpus `rogersL` | `rogersL_fiveTerm` | `MathlibExt/FiveTwoAbelFiveTerm.lean` |
+| level-7 numerators (17, 5, −1), unconditional | `numerators_of_root`, `extended_targets`, `extended_sum` | same |
+| `extend` = Re of the analytic Rogers L (rstq item 4) | `extend_eq_re_cRogersL` | `QOU/Nuclear/FiveTwoExtendIdentification.lean` |
+| S(π) = −π²/2 assembled | `sum_re_deformedV_at_neg_one` | `QOU/Nuclear/FiveTwoLevelSevenAssembly.lean` |
+
+The direct proof (complex pentagon at the saddle pair, then branch equations from y² = (1−y)³) does **not** go through the Route 8 transport, so `qou-trns`'s envelope theorem and Gap A (`qou-glbl`) are no longer on the critical path of the sum rule. They remain open only as statements about the transport itself.
+
+Build check: rebuilt the cone from source (stale cached oleans replaced, `.srcsha`-checked) and ran `scripts/lean-verify.sh`: all six theorems above compile, and `#print axioms` on each gives `[propext, Classical.choice, Quot.sound]`.
+
+Recommendation: mark `completed` (owner card in the thread). Status left unchanged here per the no-unilateral-closure rule.

@@ -943,3 +943,15 @@ Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8245, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-08-08: "beans(qou-8vt2): AV1 resolved NEGATIVE — no glyph collision, and theta_K IS c_3"). The work may be partly or fully done. Read the bean before you close it.
+
+## 2026-11-27 — fibre route: the infrastructure blocker is gone; μ_λ derived (PR #9736)
+
+The "net position" above said the one thing missing was the q-JM family and its block eigenvalue. Both are on main: `qJM`, `barSymJMSum` (central), and `barSymJMSum_block_eigenvalue_of_pos` (`HeckeTemperleyLieb/QJucysMurphyEigen.lean`, all λ ⊢ N ≥ 1, generic q).
+
+PR [#9736](https://github.com/litlfred/qou/pull/9736) adds `HeckeTemperleyLieb/QHeatKernelRate.lean` (sorry-free, standard axioms, lean-verify green):
+* `g_λ(q) = Σ_c (q^c − q^{−c})²` is the block eigenvalue of the central element `Θ − 2N` (`heatRate_block`), so g_λ is derived, not chosen;
+* `g_λ` is bar-even for **every** λ (`cellBracketSqSum_inv`);
+* `μ_λ := q^{−1/2} g_λ` satisfies `μ_λ(1/q) = q·μ_λ(q)` for **every** λ (`heatRate_bar`). The 2026-08-22 "2×2-box only" scope belonged to the `ℏ_q² Σ[c][c+1]` form, not to the Hecke-derived form;
+* over ℝ, `g_λ = 0` iff all contents are 0 (`cellBracketSqSum_eq_zero_iff`), so the shift 2N is pinned by "vacuum has zero rate".
+
+Still open (unchanged guard: no anchor matching): the mode set Λ (hence d = |Λ| and a_j = e_j({(q−1)μ_λ})), then c₃, then ϑ_K via the AV5 reparametrisation. ϑ_K is **still undefined**. Status unchanged.
