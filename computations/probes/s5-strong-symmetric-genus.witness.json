@@ -1,0 +1,20 @@
+{
+  "probe": "s5_strong_symmetric_genus_probe",
+  "bean": "qou-qhcr",
+  "arithmetic": "exact enumeration in S5",
+  "generating_vector_counts": {
+    "(0;2,3,6)": 0,
+    "(0;2,4,4)": 0,
+    "(0;3,3,3)": 0,
+    "(0;2,2,2,2)": 0,
+    "(1;-)": 0,
+    "(0;2,4,5) Bring": 120
+  },
+  "checks": {
+    "no_euclidean_generating_vector": true,
+    "bring_signature_realised": true,
+    "bring_vectors_form_aut_orbits": true
+  },
+  "passed": 3,
+  "total": 3
+}

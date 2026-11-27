@@ -13,6 +13,7 @@ import MathlibExt.CycleCountSwap
 import MathlibExt.MapGenusNonneg
 import BraidKnotOctonion.GenusFourFromEquivariantMap
 import BraidKnotOctonion.A5LeastHyperbolicChi
+import BraidKnotOctonion.S5StrongSymmetricGenus
 import BraidKnotOctonion.GenusFourFromGermStabilisers
 import QOU.EightfoldWay.AmbientInvolutionDoesNotDecideType
 import QOU.EightfoldWay.CommutativeImageDegeneration
