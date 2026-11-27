@@ -53,6 +53,16 @@ A signed letter `(i, e)` is evaluated as `α e • 1 + β e • s i` for arbitra
   the Markov trace, with the same witness `σ₀` (a one-letter word is its own reverse).
   Since `T` *is* trace-preserving (above), the failure is entirely `P`'s.
 
+* **qCPT (proved).** `qcpt_law`: `C·P·T` together with the parameter change
+  `(a, z) ↦ (−a, z − a)` (i.e. `q ↦ q⁻¹`, `z ↦ z − (q − q⁻¹)`) preserves the Markov trace.
+
+* **The `z` shift is absorbed by writhe normalisation (proved).** Take a unit `μ` with
+  `μ² z = z − a` (`IsNormaliser`), so `μ^{writhe} · tr` is the HOMFLY-type invariant with loop
+  value `D = μ z`. Then `μ⁻¹` normalises `(−a, z − a)` with the same `D`
+  (`isNormaliser_inv`), and `normalised_mirror_law` / `normalised_qcpt_law` say the
+  normalised invariant of `P β` or `CPT β` at `(a, μ)` equals that of `β` at `(−a, μ⁻¹)`.
+  So qCPT on the normalised invariant is `q ↦ q⁻¹`, `μ ↦ μ⁻¹`, with no separate `z` move.
+
 ## Characters that are not Markov traces
 
 The class `QOU.BraidsAndKnots.TFromTraceCyclicity` quantifies over every matrix
@@ -358,6 +368,105 @@ theorem mirror_law (hs : HeckeFamily N a 1 s) (z : R) (t : A →ₗ[R] R) (ht1 :
     map_evalWord (lift hs') _ _ _ _ (fun i hi => lift_pgen hs' hi)] at h
   rw [evalWord_mirror]
   exact h
+
+/-- **qCPT law.** `C·P·T` preserves the Markov trace once the parameters move with it:
+the trace with data `(a, z)` of `cpt w` equals the trace with data `(−a, z − a)` of `w`, for
+any normalised cyclic Markov trace `t'` with those data, in any algebra. With `a = q − q⁻¹`
+this is `q ↦ q⁻¹`, `z ↦ z − (q − q⁻¹)`. It combines `mirror_law` with `markov_reverse`. -/
+theorem qcpt_law (hs : HeckeFamily N a 1 s) (z : R) (t : A →ₗ[R] R) (ht1 : t 1 = 1)
+    (hcyc : ∀ x y : A, t (x * y) = t (y * x))
+    (hmark : ∀ k, k < N → ∀ x ∈ Algebra.adjoin R (s '' Set.Iio k), t (x * s k) = z * t x)
+    {B : Type*} [Ring B] [Algebra R B] {s' : ℕ → B} (hs' : HeckeFamily N (-a) 1 s')
+    (t' : B →ₗ[R] R) (ht1' : t' 1 = 1) (hcyc' : ∀ x y : B, t' (x * y) = t' (y * x))
+    (hmark' : ∀ k, k < N → ∀ x ∈ Algebra.adjoin R (s' '' Set.Iio k),
+      t' (x * s' k) = (z - a) * t' x)
+    (w : List (Fin N × Bool)) :
+    t (evalWord (stdα a) stdβ s (cpt w)) = t' (evalWord (stdα (-a)) stdβ s' w) := by
+  rw [cpt, mirror_law hs z t ht1 hcyc hmark hs' t' ht1' hcyc' hmark' w.reverse]
+  exact markov_reverse hs' (z - a) t' ht1' hcyc' hmark' _ _ w
+
+/-! ### Writhe normalisation absorbs the `z` shift -/
+
+/-- The writhe of a signed word: `+1` per positive letter, `−1` per negative one. -/
+def writhe : List (Fin N × Bool) → ℤ
+  | [] => 0
+  | p :: w => (if p.2 then 1 else -1) + writhe w
+
+theorem writhe_mirror (w : List (Fin N × Bool)) : writhe (mirror w) = -writhe w := by
+  induction w with
+  | nil => rfl
+  | cons p w ih =>
+    simp only [mirror, List.map_cons] at ih ⊢
+    rw [writhe, writhe, ih]
+    cases p.2 <;> simp <;> ring
+
+theorem writhe_append (u v : List (Fin N × Bool)) : writhe (u ++ v) = writhe u + writhe v := by
+  induction u with
+  | nil => simp [writhe]
+  | cons p u ih => simp only [List.cons_append, writhe, ih]; ring
+
+theorem writhe_reverse (w : List (Fin N × Bool)) : writhe w.reverse = writhe w := by
+  induction w with
+  | nil => rfl
+  | cons p w ih => rw [List.reverse_cons, writhe_append, ih, writhe, writhe, writhe]; ring
+
+theorem writhe_cpt (w : List (Fin N × Bool)) : writhe (cpt w) = -writhe w := by
+  rw [cpt, writhe_mirror, writhe_reverse]
+
+/-- **Normalisation data.** A unit `μ` with `μ² z = z − a`. Then `D = μ z` is the loop value,
+and `μ^{writhe} · tr` (times `D^{-(n-1)}`) is the writhe-normalised (HOMFLY-type) invariant:
+`μ z = D` makes a positive Markov move free, and `μ⁻¹ (z − a) = μ z = D` a negative one. -/
+def IsNormaliser (a z : R) (μ : Rˣ) : Prop := (μ : R) * μ * z = z - a
+
+/-- **The mirror data.** If `μ` normalises `(a, z)` then `μ⁻¹` normalises the mirror data
+`(−a, z − a)`, and the loop value is unchanged: `μ⁻¹ (z − a) = μ z`. So in the normalised
+invariant the mirror is `(a, μ) ↦ (−a, μ⁻¹)` with `D` fixed; `z` no longer moves on its own. -/
+theorem isNormaliser_inv {a z : R} {μ : Rˣ} (h : IsNormaliser a z μ) :
+    IsNormaliser (-a) (z - a) μ⁻¹ ∧ ((μ⁻¹ : Rˣ) : R) * (z - a) = μ * z := by
+  have hu : ((μ⁻¹ : Rˣ) : R) * μ = 1 := by simp
+  have key : ((μ⁻¹ : Rˣ) : R) * (z - a) = μ * z := by
+    rw [← h]
+    calc ((μ⁻¹ : Rˣ) : R) * (μ * μ * z) = (((μ⁻¹ : Rˣ) : R) * μ) * (μ * z) := by ring
+      _ = μ * z := by rw [hu, one_mul]
+  refine ⟨?_, key⟩
+  unfold IsNormaliser
+  calc ((μ⁻¹ : Rˣ) : R) * ((μ⁻¹ : Rˣ) : R) * (z - a)
+      = ((μ⁻¹ : Rˣ) : R) * (((μ⁻¹ : Rˣ) : R) * (z - a)) := by ring
+    _ = ((μ⁻¹ : Rˣ) : R) * (μ * z) := by rw [key]
+    _ = (((μ⁻¹ : Rˣ) : R) * μ) * z := by ring
+    _ = z - a - -a := by rw [hu, one_mul]; ring
+
+/-- **Normalised mirror law.** With `μ` a normaliser for `(a, z)`:
+`μ^{e(mirror w)} · tr_{a,z}(mirror w) = (μ⁻¹)^{e(w)} · tr_{−a,z−a}(w)`, and `μ⁻¹` is the
+normaliser for `(−a, z − a)` with the same loop value (`isNormaliser_inv`). The `z` shift is
+absorbed: the writhe-normalised invariant sees only `(a, μ) ↦ (−a, μ⁻¹)`. -/
+theorem normalised_mirror_law (hs : HeckeFamily N a 1 s) (z : R) (t : A →ₗ[R] R)
+    (ht1 : t 1 = 1) (hcyc : ∀ x y : A, t (x * y) = t (y * x))
+    (hmark : ∀ k, k < N → ∀ x ∈ Algebra.adjoin R (s '' Set.Iio k), t (x * s k) = z * t x)
+    {B : Type*} [Ring B] [Algebra R B] {s' : ℕ → B} (hs' : HeckeFamily N (-a) 1 s')
+    (t' : B →ₗ[R] R) (ht1' : t' 1 = 1) (hcyc' : ∀ x y : B, t' (x * y) = t' (y * x))
+    (hmark' : ∀ k, k < N → ∀ x ∈ Algebra.adjoin R (s' '' Set.Iio k),
+      t' (x * s' k) = (z - a) * t' x)
+    (μ : Rˣ) (w : List (Fin N × Bool)) :
+    ((μ ^ writhe (mirror w) : Rˣ) : R) * t (evalWord (stdα a) stdβ s (mirror w))
+      = ((μ⁻¹ ^ writhe w : Rˣ) : R) * t' (evalWord (stdα (-a)) stdβ s' w) := by
+  rw [mirror_law hs z t ht1 hcyc hmark hs' t' ht1' hcyc' hmark' w, writhe_mirror, zpow_neg,
+    inv_zpow]
+
+/-- **Normalised qCPT law.** Same statement for `C·P·T`: the writhe-normalised invariant at
+`(a, μ)` of `cpt w` equals the one at `(−a, μ⁻¹)` of `w`. -/
+theorem normalised_qcpt_law (hs : HeckeFamily N a 1 s) (z : R) (t : A →ₗ[R] R)
+    (ht1 : t 1 = 1) (hcyc : ∀ x y : A, t (x * y) = t (y * x))
+    (hmark : ∀ k, k < N → ∀ x ∈ Algebra.adjoin R (s '' Set.Iio k), t (x * s k) = z * t x)
+    {B : Type*} [Ring B] [Algebra R B] {s' : ℕ → B} (hs' : HeckeFamily N (-a) 1 s')
+    (t' : B →ₗ[R] R) (ht1' : t' 1 = 1) (hcyc' : ∀ x y : B, t' (x * y) = t' (y * x))
+    (hmark' : ∀ k, k < N → ∀ x ∈ Algebra.adjoin R (s' '' Set.Iio k),
+      t' (x * s' k) = (z - a) * t' x)
+    (μ : Rˣ) (w : List (Fin N × Bool)) :
+    ((μ ^ writhe (cpt w) : Rˣ) : R) * t (evalWord (stdα a) stdβ s (cpt w))
+      = ((μ⁻¹ ^ writhe w : Rˣ) : R) * t' (evalWord (stdα (-a)) stdβ s' w) := by
+  rw [qcpt_law hs z t ht1 hcyc hmark hs' t' ht1' hcyc' hmark' w, writhe_cpt, zpow_neg,
+    inv_zpow]
 
 end Mirror
 
