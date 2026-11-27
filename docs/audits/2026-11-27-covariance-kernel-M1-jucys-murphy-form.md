@@ -68,6 +68,56 @@ Witness: `wlambda-covariance-M1-jucys-murphy-form.witness.json`.
 - **Not checked:** whether the moments `[(1 2 n)] J_n^m` have a closed form strong enough to give an
   explicit finite-n bound on `[(1 2 n)]|J_n|`. That is the next question on this route.
 
+## Addendum: M₁ as the first moment of a signed measure, and a single-crossing criterion
+
+**The formula.** By centrality, `[(1 2 3)]Z_h = [(1 2 n)]Z_h`, and on `(1 2 n)` only the terms
+involving `J_n` contribute:
+
+```
+Z_h|_{(1 2 n)} = |J_n| + 2 Σ_{l<n} δ(J_l = J_n)
+```
+
+On a Young vector `v_T` this acts by `|c_n| + 2·#{l<n : c_l = c_n} = i_n + j_n − 2`. Here
+`(i_n, j_n)` is the 1-indexed position of box `n`.
+
+Next, conjugate `(1 2 n)` to `(n−2 n−1 n) = s_{n−2}s_{n−1}` by an element of `S_{n−1}`, which
+commutes with `J_n`. In Young's orthogonal form the diagonal entry of `s_k` on `v_T` is `1/r_k`, where
+`r_k = c_T(k+1) − c_T(k)`. The off-diagonal terms cannot return to `v_T`, so the diagonal entry of
+`s_{n−2}s_{n−1}` is `1/(r_{n−2} r_{n−1})`. Summing with weight `f^λ/n!` (the Plancherel-growth law
+of `T`) gives
+
+```
+M₁(n) = (n(n−1)(n−2)/3) · Σ_s s · ρ_n(s),     ρ_n(s) = E_PG[ 1{i_n + j_n = s} / (r_{n−1} r_{n−2}) ],
+```
+
+with `Σ_s ρ_n(s) = [(1 2 n)]e = 0`. The same formula with `|c_n|` in place of `s` gives `P(n)`. Both
+agree exactly with the hook-formula side for `n = 3…7`.
+
+**The criterion (Lean, sorry-free).**
+`HeckeTemperleyLieb/YoungDiagramKernelSingleCrossing.lean` proves
+`firstMoment_pos_of_single_crossing`. Let a mass-zero signed measure be `≤ 0` below a threshold `t`
+and `≥ 0` from `t` on, and nonzero. Then its first moment is `> 0`. The proof writes
+`Σ sρ = Σ (s−t)ρ` and notes every term is `≥ 0`. It holds over a generic ordered commutative ring.
+`lean -DautoImplicit=false -s 65536` exits 0, and the axioms are `propext, Classical.choice,
+Quot.sound` only.
+
+**The measurement.** `ρ_n` has exactly one sign change (negative, then positive, in `s`) for every
+`n = 3…40`. The probe checks this exactly with `Fraction` arithmetic, using a dynamic program over
+`μ ⊢ n−3` and the last three added boxes. The threshold moves slowly: `s = 10` at `n = 31…35`.
+
+**What this changes.** It gives a second, purely combinatorial route to `M₁ > 0`:
+
+> **(SC)** For every `n ≥ 79`, `ρ_n` changes sign exactly once.
+
+(SC) together with the exhaustive `n ≤ 78` table implies `M₁(n) > 0` for all `n`. It would replace the
+finite-n analytic bound on `δ_A` and `ρ_P` that `qou-h315` was built for. **(SC) is not proved.** It
+is an exact sign-pattern statement about one explicit signed measure. Whether it is easier than the
+analytic route is unknown.
+
+A plausible line of attack is Kerov's transition measures, because `ρ_n` is a three-step
+transition-measure average. Large `s` is the "outer run" regime, where the last three boxes are
+monotone along a row or column and `r_{n−1} r_{n−2} > 0`. Bean: see `qou-h315`.
+
 ## Cross-references
 
 - CS-margin reduction: `YoungDiagramKernelCSMargin.lean`, [`2026-08-28-…-cauchy-schwarz-margin-reduction.md`](2026-08-28-covariance-kernel-M1-cauchy-schwarz-margin-reduction.md)
