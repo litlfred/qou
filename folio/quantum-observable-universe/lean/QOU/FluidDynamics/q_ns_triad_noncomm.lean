@@ -1,4 +1,6 @@
 import QOU.FluidDynamics.q_ns_triad_derivation
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.NoncommRing
 
 /-!
 # QOU.FluidDynamics.q_ns_triad_noncomm
