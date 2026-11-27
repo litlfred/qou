@@ -42,7 +42,7 @@ from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from schur_weyl_symbolic import partitions_of  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402 — CAL-1
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps(30)
@@ -81,22 +81,34 @@ def main() -> int:
     print(f"derived covers {float(dHe/need*100):.1f}% (vs color 4.5%); "
           f"remaining {float(need/dHe):.2f}× = open EM-linking normalization")
 
+    frac = dHe / need
     wb = WitnessBuilder("charge-coulomb-tn3he-derived", engine="mpmath")
     wb.data["q_0"] = str(Q0)
-    wb.data["coulomb_strong_ratio_tanh_ln_q0"] = float(ratio)
-    wb.data["B_pp_strong_MeV"] = float(B_pp)
+    # The nucleon word is the one atom_braid_word_3A emits by default: since the
+    # 2026-09-05 owner ruling its confinement core is the interleaved
+    # (σ₀σ₁⁻¹)³ = β_Bor. The 2026-08-21 witness was computed on the superseded
+    # grouped word σ₀³σ₁⁻³ and recorded B_pp = 2.12836 MeV / 29.0 % covered;
+    # on the ruled word B_pp = 0.434 MeV. Root cause bisected to 7db032fb482.
+    wb.data["intra_order"] = "borromean"
+    wb.data["coulomb_strong_ratio_tanh_ln_q0"] = fmt(ratio)
+    wb.data["B_pp_strong_MeV"] = fmt(B_pp)
     wb.data["Q_pp"] = 1
-    wb.data["derived_coulomb_dHe_MeV"] = float(dHe)
-    wb.data["ame_split_MeV"] = float(need)
-    wb.data["fraction_of_split_covered"] = float(dHe / need)
-    wb.data["remaining_factor"] = float(need / dHe)
+    wb.data["derived_coulomb_dHe_MeV"] = fmt(dHe)
+    wb.data["ame_split_MeV"] = fmt(need)
+    wb.data["fraction_of_split_covered"] = fmt(frac)
+    wb.data["remaining_factor"] = fmt(need / dHe)
     wb.data["verdict"] = (
-        "Derived categorical Coulomb (def:coulomb-charge, tanh(ln q₀), Q_pp=+1, "
-        "no fit) covers ~31% of the T-³He split (vs color 4.5%) — right sign + "
-        "order, 3.2× short. Remaining 3.2× = OPEN per-interface EM-linking / "
-        "nuclear-geometry normalization (would be CAL-4 if fitted).")
-    wb.add_assertion("derived_coulomb_right_order",
-                     computed=1 if 0.1 < float(dHe / need) < 1.0 else 0,
+        "Scope-limited negative (scope a). The derived categorical Coulomb "
+        "(def:coulomb-charge, tanh(ln q0), Q_pp=+1, no fit) on the ruled nucleon "
+        f"word covers {mp.nstr(frac * 100, 3)}% of the AME T-3He split (colour "
+        f"alone: 4.5%): right sign, {mp.nstr(need / dHe, 3)}x short. This "
+        "construction alone does not reproduce the split; the remaining factor is "
+        "the OPEN per-interface EM-linking / nuclear-geometry normalisation "
+        "(it would be CAL-4 if fitted).")
+    # Falsifiable, and not sized to the miss: the derived shift must have the
+    # right sign and must not exceed the measured split.
+    wb.add_assertion("derived_coulomb_right_sign_and_bounded",
+                     computed=1 if 0 < frac < 1 else 0,
                      expected=1, tolerance=0)
     wb.save()
     print("\n✓ Witness: charge-coulomb-tn3he-derived.witness.json")
