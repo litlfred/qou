@@ -2,12 +2,13 @@
 # hkmt
 title: 'BWH-1: the Hecke category as a modular tensor category (S,T from Markov trace)'
 status: in-progress
+pr: 9743
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T09:20:00Z
-updated_at: 2026-11-24T03:25:24Z
+updated_at: 2026-11-27T22:10:00Z
 parent: qou-rtxm
 ---
 
@@ -32,3 +33,9 @@ the identification bwhk becomes "BW output = THIS explicit MTC". Does NOT close 
 Not worked.
 
 HeckeRealVsRootOfUnityModularity.lean (08dfe533aaa) + 80-dps witness (ef51559461b) staged.
+
+## 2026-11-27 — S-matrix nondegeneracy at every level (PR #9743)
+
+Working on the restated goal (pending owner card): the semisimplified type-A₁ (Temperley–Lieb) quotient at `q = ζ`, `ζ` a primitive `2(k+2)`-th root of unity, is modular. New `HeckeTemperleyLieb/TLRootOfUnitySMatrixNondegenerate.lean`, sorry-free, over any commutative domain (no Field, no reals): `tildeS_mul_tildeS` (Σ S̃S̃ = −2ℓ·δ), `sMatrix_mul_self` ((ζ−ζ⁻¹)²S² = −2ℓ·1), `globalDimSq_eq`, `sMatrix_det_ne_zero`, `isUnit_det_sMatrix`. The identification of `[(i+1)(j+1)]` with the Jones–Wenzl double-braiding trace is cited (Kauffman–Lins / Kirby–Melvin), not derived; that needs `qou-pbjv` / `qou-ltwg`.
+
+**next**: twist `T` and `(ST)³ = p₊S²` (quadratic Gauss sum); Verlinde fusion `N_{ij}^m` = truncated Clebsch–Gordan; higher rank SU(N)_k.
