@@ -20,8 +20,11 @@ m = 3..6, μ two-row.
    - `V₂³` and `V₃³` have the **same** residue, and for disjoint products the residue factorises:
      `E_{6→3}(V₀³V_j³) = c(q)·V₀³` for j = 2, 3, with the single scalar
      `c(q) = −(q¹²−3q¹⁰+2q⁸−4q⁶+2q⁴−3q²+1)/(q⁴(q²+1)²)`, `c(1) = 1`, `c(q₀) = 0.99856…`.
-     The same factorisation holds for every interleaving of V₀ with V₃ and for the block
-     arrangements of V₀ with V₂.
+     The same factorisation holds for every interleaving of V₀ with V₃, and for the V₀/V₂
+     arrangements in which the V₀ block is contiguous (000222, 002220, 022200, 222000).
+     The two rotations that split the V₀ block (200022, 220002) do not factorise: their (3)
+     and (2,1) ratios differ. Words are not equal under cyclic rotation in H₆, only their
+     traces are, so this is expected.
    - `V₁³` is not proportional to the core: its (3) and (2,1) ratios differ
      (the (3) ratio is `−(q⁶−3q⁴+2q²−2)/(q²+1)`, 0.99440… at q₀).
    - All residue/core ratios equal 1 at q = 1.
