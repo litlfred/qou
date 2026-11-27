@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-27T17:48:59Z
-updated_at: 2026-11-27T19:32:15Z
+updated_at: 2026-11-27T19:34:46Z
 parent: qou-rtxm
 ---
 
@@ -23,3 +23,6 @@ Owner 2026-11-27: 'Dispatch sibling to do lie derivatives on manifolds'. Route p
 
 
 2026-11-27 (PR #9589, head c6d95ea4c5b): non-constant fields done. Core: FunLinear.eq_of_span. Transcendental/Calculus/SmoothVectorFields.lean: SFun/SVF Lie-Rinehart instance, toCEv, span_const, ceDAlt_toCEv (d toCEv phi = toCEv (extDeriv phi), finite-dim E, arbitrary smooth fields), cartan_smoothField. lean-direct exit 0, 0 sorry, axioms propext/Classical.choice/Quot.sound. Coev routing: nothing to route; the choice is Mathlib's (already in the merged algebraic cartan_formula), and the bridge has no Archimedean hypothesis. Awaiting merge.
+
+
+2026-11-27 choice trace (Lean BFS over used constants, listing direct Classical.* users): cartan_formula reaches 6500 consts, 89 direct users: 86 theorems (by_cases/byContradiction/decEq on Fin equalities, Equiv.swap proofs), 3 defs used only in proofs: Trunc.out/Quot.out via Equiv.Perm.swap_induction_on <- AlternatingMap.map_perm <- map_update_eq; Fintype.equivFin via Finite instance in map_perm; Exists.choose inside Lean core List.nodup_range <- Fin.fintype (every Finset sum over Fin). ceDAlt_toCEv reaches 31451, 819 direct users, 77 defs (Real, fderiv, lim, tsum, Finsupp). Routing around: impossible for the analytic bridge; for Core only by a list-based rewrite avoiding Fin.fintype. Put to Carl as a card (record / audit script / rewrite).
