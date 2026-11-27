@@ -1,0 +1,859 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-27T21:31:02.717727+00:00",
+  "commitSha": "4c79801ea6bde19126c6dacb3ee845d6faf282ba",
+  "assertions": [
+    {
+      "name": "kernel_square_law_inverse",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "[σ]Q^{-1} = T3/n! and [e]Q^{-1} = Σf³/n! exactly for n=3..7; max-dim ω₃ > 0 exactly at n∈{18,26} for n≤40."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "wlambda-covariance-kernel-square-law-inverse",
+  "scriptFile": "wlambda_covariance_kernel_square_law_inverse.py",
+  "scriptHash": "f1139cd9694f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/wlambda_covariance_kernel_square_law_inverse.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/wlambda_covariance_kernel_square_law_inverse.py"
+  },
+  "description": "Covariance kernel as the 3-cycle coefficient of Q^{-1}, Q = (1/n!)Σ_x x² (law of X², X uniform on S_n): Q acts on V^λ by 1/f^λ (Frobenius–Schur indicator 1), so Q^{-1}=(1/n!)Σ_g T(g)g and cov(n)≤0 ⇔ [σ]Q^{-1}≤0. Verified in the class algebra with zero shared code, n=3..7. Large-tilt sign of Cov(ω₃,f^s) = sign of ω₃ at the max-dim shape: positive at n=18, 26 (n≤40), so no tilt-uniform / increasing-ψ / absolutely-monotone argument can prove the kernel. Does NOT prove the kernel. No fit; nothing wired.",
+  "data": {
+    "checkA": [
+      {
+        "n": "3",
+        "coeff3": "-1/3",
+        "T3_over_nfact": "-1/3",
+        "coeffe": "5/3",
+        "sumf3_over_nfact": "5/3",
+        "ok": "True"
+      },
+      {
+        "n": "4",
+        "coeff3": "-1/12",
+        "T3_over_nfact": "-1/12",
+        "coeffe": "8/3",
+        "sumf3_over_nfact": "8/3",
+        "ok": "True"
+      },
+      {
+        "n": "5",
+        "coeff3": "-2/15",
+        "T3_over_nfact": "-2/15",
+        "coeffe": "149/30",
+        "sumf3_over_nfact": "149/30",
+        "ok": "True"
+      },
+      {
+        "n": "6",
+        "coeff3": "-13/36",
+        "T3_over_nfact": "-13/36",
+        "coeffe": "1007/90",
+        "sumf3_over_nfact": "1007/90",
+        "ok": "True"
+      },
+      {
+        "n": "7",
+        "coeff3": "-146/315",
+        "T3_over_nfact": "-146/315",
+        "coeffe": "8152/315",
+        "sumf3_over_nfact": "8152/315",
+        "ok": "True"
+      }
+    ],
+    "maxdim_omega3_positive_n": [
+      18,
+      26
+    ],
+    "maxdim_omega3_zero_n": [
+      4,
+      5,
+      8,
+      14,
+      21
+    ],
+    "maxdim_table": {
+      "3": {
+        "fmax": 2,
+        "shapes": [
+          [
+            2,
+            1
+          ]
+        ],
+        "omega3_sum": -1
+      },
+      "4": {
+        "fmax": 3,
+        "shapes": [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": 0
+      },
+      "5": {
+        "fmax": 6,
+        "shapes": [
+          [
+            3,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": 0
+      },
+      "6": {
+        "fmax": 16,
+        "shapes": [
+          [
+            3,
+            2,
+            1
+          ]
+        ],
+        "omega3_sum": -5
+      },
+      "7": {
+        "fmax": 35,
+        "shapes": [
+          [
+            4,
+            2,
+            1
+          ],
+          [
+            3,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -4
+      },
+      "8": {
+        "fmax": 90,
+        "shapes": [
+          [
+            4,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": 0
+      },
+      "9": {
+        "fmax": 216,
+        "shapes": [
+          [
+            4,
+            3,
+            1,
+            1
+          ],
+          [
+            4,
+            2,
+            2,
+            1
+          ]
+        ],
+        "omega3_sum": -14
+      },
+      "10": {
+        "fmax": 768,
+        "shapes": [
+          [
+            4,
+            3,
+            2,
+            1
+          ]
+        ],
+        "omega3_sum": -15
+      },
+      "11": {
+        "fmax": 2310,
+        "shapes": [
+          [
+            5,
+            3,
+            2,
+            1
+          ],
+          [
+            4,
+            3,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -18
+      },
+      "12": {
+        "fmax": 7700,
+        "shapes": [
+          [
+            5,
+            3,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -4
+      },
+      "13": {
+        "fmax": 21450,
+        "shapes": [
+          [
+            5,
+            4,
+            2,
+            1,
+            1
+          ],
+          [
+            5,
+            3,
+            2,
+            2,
+            1
+          ]
+        ],
+        "omega3_sum": -24
+      },
+      "14": {
+        "fmax": 69498,
+        "shapes": [
+          [
+            6,
+            4,
+            2,
+            1,
+            1
+          ],
+          [
+            5,
+            3,
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": 0
+      },
+      "15": {
+        "fmax": 292864,
+        "shapes": [
+          [
+            5,
+            4,
+            3,
+            2,
+            1
+          ]
+        ],
+        "omega3_sum": -35
+      },
+      "16": {
+        "fmax": 1153152,
+        "shapes": [
+          [
+            6,
+            4,
+            3,
+            2,
+            1
+          ],
+          [
+            5,
+            4,
+            3,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -50
+      },
+      "17": {
+        "fmax": 4873050,
+        "shapes": [
+          [
+            6,
+            4,
+            3,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -16
+      },
+      "18": {
+        "fmax": 16336320,
+        "shapes": [
+          [
+            7,
+            4,
+            3,
+            2,
+            1,
+            1
+          ],
+          [
+            6,
+            4,
+            3,
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": 6
+      },
+      "19": {
+        "fmax": 64664600,
+        "shapes": [
+          [
+            7,
+            5,
+            3,
+            2,
+            1,
+            1
+          ],
+          [
+            6,
+            4,
+            3,
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -12
+      },
+      "20": {
+        "fmax": 249420600,
+        "shapes": [
+          [
+            7,
+            5,
+            3,
+            2,
+            2,
+            1
+          ],
+          [
+            6,
+            5,
+            3,
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -32
+      },
+      "21": {
+        "fmax": 1118939184,
+        "shapes": [
+          [
+            7,
+            5,
+            3,
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": 0
+      },
+      "22": {
+        "fmax": 5462865408,
+        "shapes": [
+          [
+            7,
+            5,
+            4,
+            3,
+            2,
+            1
+          ],
+          [
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -110
+      },
+      "23": {
+        "fmax": 28542158568,
+        "shapes": [
+          [
+            7,
+            5,
+            4,
+            3,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -41
+      },
+      "24": {
+        "fmax": 117487079424,
+        "shapes": [
+          [
+            8,
+            5,
+            4,
+            3,
+            2,
+            1,
+            1
+          ],
+          [
+            7,
+            5,
+            4,
+            3,
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -30
+      },
+      "25": {
+        "fmax": 547591590000,
+        "shapes": [
+          [
+            8,
+            6,
+            4,
+            3,
+            2,
+            1,
+            1
+          ],
+          [
+            7,
+            5,
+            4,
+            3,
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -46
+      },
+      "26": {
+        "fmax": 2474843571200,
+        "shapes": [
+          [
+            8,
+            6,
+            4,
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            8,
+            5,
+            4,
+            3,
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": 2
+      },
+      "27": {
+        "fmax": 12760912164000,
+        "shapes": [
+          [
+            8,
+            6,
+            4,
+            3,
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -9
+      },
+      "28": {
+        "fmax": 57424104738000,
+        "shapes": [
+          [
+            8,
+            6,
+            5,
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            8,
+            6,
+            4,
+            3,
+            3,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -64
+      },
+      "29": {
+        "fmax": 295284192952320,
+        "shapes": [
+          [
+            8,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1
+          ],
+          [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -210
+      },
+      "30": {
+        "fmax": 1865134921890240,
+        "shapes": [
+          [
+            8,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -85
+      },
+      "31": {
+        "fmax": 9241827385190400,
+        "shapes": [
+          [
+            9,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            1
+          ],
+          [
+            8,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -102
+      },
+      "32": {
+        "fmax": 50385731994259200,
+        "shapes": [
+          [
+            9,
+            7,
+            5,
+            4,
+            3,
+            2,
+            1,
+            1
+          ],
+          [
+            8,
+            6,
+            5,
+            4,
+            3,
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -114
+      },
+      "33": {
+        "fmax": 268401306245529600,
+        "shapes": [
+          [
+            9,
+            7,
+            5,
+            4,
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            9,
+            6,
+            5,
+            4,
+            3,
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -50
+      },
+      "34": {
+        "fmax": 1579812376072320000,
+        "shapes": [
+          [
+            9,
+            7,
+            5,
+            4,
+            3,
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -33
+      },
+      "35": {
+        "fmax": 7821859115070000000,
+        "shapes": [
+          [
+            9,
+            7,
+            6,
+            4,
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            9,
+            7,
+            5,
+            4,
+            3,
+            3,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -116
+      },
+      "36": {
+        "fmax": 40971642983700000000,
+        "shapes": [
+          [
+            9,
+            7,
+            6,
+            4,
+            3,
+            3,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -84
+      },
+      "37": {
+        "fmax": 222250513478508715200,
+        "shapes": [
+          [
+            10,
+            8,
+            6,
+            4,
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            9,
+            7,
+            5,
+            4,
+            3,
+            3,
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -24
+      },
+      "38": {
+        "fmax": 1592694283209952665600,
+        "shapes": [
+          [
+            9,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -155
+      },
+      "39": {
+        "fmax": 9335226290275709091840,
+        "shapes": [
+          [
+            10,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            1
+          ],
+          [
+            9,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -224
+      },
+      "40": {
+        "fmax": 58965081685061803130880,
+        "shapes": [
+          [
+            10,
+            8,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            1
+          ],
+          [
+            9,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        "omega3_sum": -230
+      }
+    },
+    "tilt_flip_s_upper_bracket": {
+      "18": "362.941003174",
+      "26": "144.131732621"
+    }
+  }
+}
