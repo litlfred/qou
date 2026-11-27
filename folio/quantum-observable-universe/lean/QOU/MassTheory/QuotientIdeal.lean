@@ -58,7 +58,7 @@ This is the first step of building the proton's uu pair.
 
 -- The σ₀-extension ratio, derived from deuterium NF analysis
 -- Weighted average over 108 families
-def sigma0_extension_ratio : Float := 0.314609
+def sigma0_extension_ratio : ℚ := 0.314609
 
 /-! ## I₂: YB reordering (Yang-Baxter averaging)
 
@@ -72,7 +72,7 @@ The YB term is the 'cost' of the arbitrary normal form ordering.
 It represents a virtual mediator, not an observable particle.
 -/
 
-def yb_reorder_ratio : Float := 0.168295
+def yb_reorder_ratio : ℚ := 0.168295
 
 /-! ## I₃: B₃ Borromean prefix (proton core)
 
@@ -90,9 +90,9 @@ The B₃ prefix σ₀·σ₁·σ₀ is the proton core without the
 electron Hopf link.
 -/
 
-def borromean_prefix_ratio_channel1 : Float := 0.166
-def borromean_prefix_ratio_channel2 : Float := 0.534
-def borromean_prefix_energy : Float := 0.276361
+def borromean_prefix_ratio_channel1 : ℚ := 0.166
+def borromean_prefix_ratio_channel2 : ℚ := 0.534
+def borromean_prefix_energy : ℚ := 0.276361
 
 /-! ## I₄: 𝔫₁ neutron tail (electron-Borromean-linked neutron)
 
@@ -122,7 +122,7 @@ individual bonds.
 -/
 
 def neutron_tail_word : List Nat := [3, 4, 3, 5]
-def neutron_tail_weight : Float := 0.78  -- fraction of total NF weight
+def neutron_tail_weight : ℚ := 0.78  -- fraction of total NF weight
 
 /-! ## Higher-degree ideals (for magic shell closures)
 
@@ -205,7 +205,7 @@ In the deuterium NF:
 structure StructuralDefect where
   name : String
   missing_generators : List Nat
-  energy_cost : Float
+  energy_cost : ℚ
 
 def defect_uu_link : StructuralDefect :=
   { name := "missing u_r–u_g link"
@@ -250,6 +250,6 @@ nucleon interactions.
 
 -- Electron bridge pattern
 def electron_bridge_word : List Nat := [2, 3, 2]
-def electron_bridge_coverage : Float := 0.83  -- fraction of terms
+def electron_bridge_coverage : ℚ := 0.83  -- fraction of terms
 
 end QOU.QuotientIdeal
