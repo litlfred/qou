@@ -85,3 +85,13 @@ flavour $\mathrm{SU}(3)$; those need further axioms. The label here is put in by
 deriving it from the aether is still open. Lean: `QOU/Core/FlavourLabelCarrier.lean`
 (`labelPhase`, `flavour_hom_unit_tensor_empty`, `flavourVolume_epi`,
 `unit_flavour_meets_axioms`).
+
+**Where the dimension comes from.** At a fibre where the exterior cube is $\Lambda^3$ of an
+$N$-dimensional space, $\Lambda^3 W \cong \mathbb{1}$ says $\binom{N}{3} = 1$, and that holds
+only for $N = 3$; the weaker epimorphism reading gives only $N \ge 3$. The one-dimensional
+$W$ above has $\binom{1}{3} = 0$ and is excluded there. It satisfies the categorical fields
+only because the exterior cube is required to be some quotient of $W^{\otimes 3}$, not the
+antisymmetric one. The fundamental $V$ has the same feature: $\binom{N}{2} = 1$ forces
+$N = 2$ only once $\Lambda^2 V$ is pinned. Lean:
+`QOU/Core/FlavourVolumeForcesDimThree.lean` (`exteriorCubeDim_eq_one_iff`,
+`exteriorCubeDim_ne_zero_iff`).
