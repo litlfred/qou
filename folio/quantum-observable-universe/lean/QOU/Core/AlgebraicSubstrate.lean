@@ -22,7 +22,7 @@ import QOU.BringsSurface.QFromEpsilon
 import QOU.BringsSurface.SurrealRateCalculus
 import QOU.BringsSurface.SurrealSqueeze
 import QOU.BringsSurface.PvsNPQou
-import QOU.BringsSurface.MetallicHierarchy
+import QOU.Transcendental.BringsSurface.MetallicHierarchyReal
 import QOU.BringsSurface.WignerAxiom
 
 /-!

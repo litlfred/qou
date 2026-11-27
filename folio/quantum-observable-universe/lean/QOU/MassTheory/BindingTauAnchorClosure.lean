@@ -1,4 +1,3 @@
-import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.FieldSimp
 import QOU.MassTheory.BindingRecurrenceSpectral
@@ -15,7 +14,7 @@ two facts that file does not:
 
 * `tauAnchor_gt_two` — `0 < q ⇒ 2 < τ` throughout the substrate regime, via the sum-of-squares
   positivity `504·(τ·den − 2·den) = 56(9q²−4q)² + (56q−36)² + 3240 > 0`;
-* `binding_extensive_at_substrate` — composing with `QOU.Mass.lambdaPlus_gt_one` (the abstract
+* `binding_extensive_at_substrate` — composing with `QOU.Mass.dominantRoot_gt_one` (the abstract
   `τ>2 ⇒ λ₊>1` spectral bridge), the depth-2 binding kernel `R = x²−τx+1` is **extensive**
   (`λ₊ > 1`) given the anchors — the property the saturating `|χ|` joint trace (`τ=2`, `λ=1`) lacks.
 
@@ -68,10 +67,13 @@ theorem tauAnchor_gt_two {q : ℝ} (hq : 0 < q) : 2 < tauAnchor q := by
 /-- **The binding kernel is extensive at the substrate.** Given the wired anchors, the dominant root
 of `R(q,x) = x² − τx + 1` exceeds `1` for every `q > 0` — the extensive (A-scaling) growth a
 saturating multiplicative trace (`τ = 2`, `λ = 1`) cannot source. Composes `tauAnchor_gt_two` with
-the abstract spectral bridge `lambdaPlus_gt_one`. -/
-theorem binding_extensive_at_substrate {q : ℝ} (hq : 0 < q) :
-    1 < lambdaPlus (tauAnchor q) :=
-  lambdaPlus_gt_one (tauAnchor_gt_two hq)
+the abstract spectral bridge `dominantRoot_gt_one`, for the dominant root `l` (`τ ≤ 2l`) carried
+as a parameter; the instance at `lambdaPlus` is
+`QOU.Mass.binding_extensive_at_substrate_lambdaPlus` (module
+`QOU.Transcendental.MassTheory.BindingRecurrenceSpectralReal`). -/
+theorem binding_extensive_at_substrate {q l : ℝ} (hq : 0 < q) (hdom : tauAnchor q ≤ 2 * l) :
+    1 < l :=
+  dominantRoot_gt_one (tauAnchor_gt_two hq) hdom
 
 /-- The depth-2 recurrence's `n=5` term — the bar-antisymmetric **odd partner**
 `a_D^(5) = τ·a_D^(4) − a_D^(3)`. -/

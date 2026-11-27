@@ -1,6 +1,6 @@
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Tactic
-import QOU.BringsSurface.MetallicHierarchy
+import QOU.Transcendental.BringsSurface.MetallicHierarchyReal
 
 /-!
 # QOU.AlgebraicSubstrate.MetallicLPIdentities
