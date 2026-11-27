@@ -3,8 +3,9 @@
 title: 'Constructive: rational Drinfeld associator existence (Bar-Natan descent, then algebraic obstruction)'
 status: in-progress
 type: feature
+priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T17:52:55Z
+updated_at: 2026-11-27T17:58:06Z
 parent: qou-dk7p
 ---
 
@@ -23,3 +24,5 @@ Stages:
 R. research: algebraic obstruction vanishing (drop hypothesis).
 
 Thread: Formalize rational associator existence.
+
+2026-11-27: stage 1 done -- PR #9539 (LowDegree.lean): pentagon/inversion all c, hexagon iff (c-1/24)[t12,t23]=0. Sorry-free, std axioms. Next: stage 2 linear descent.
