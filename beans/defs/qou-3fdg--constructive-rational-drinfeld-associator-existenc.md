@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T19:12:48Z
+updated_at: 2026-11-27T19:18:03Z
 parent: qou-dk7p
 ---
 
@@ -64,3 +64,6 @@ KEY for research leg (p.854, Remark 2 after 5.8): without 5.3, obstruction to li
 
 
 2026-11-27: #9585 (stacked on #9580, #9575): NilpotentUnits.lean discharges unit hypotheses in U4 N (pentagon_act_U4, hexagon_act_U4). Caveat: #9580's hexagon_act_all hypothesis (hexagon at every DK3 family of R) is unsatisfiable for truncated exps in U4 N; use hexagon_act_U4; universal U3 N with lift still to write. Stage-4 blocker: need every top-degree grt element to be the leading term of a GRT1(K) element. Ordinary exp(sigma3) fails (5.14) at degree 6 (exact Q); the exponential must be for the twisted group law (5.16) (Drinfeld Prop 5.9).
+
+
+2026-11-27 CORRECTION: TCompat is Drinfeld's (5.14) itself (page-012 line 95: A + g(A,B)^-1 B g(A,B) + g(A,C)^-1 C g(A,C) = 0 for A+B+C=0), a defining GRT1 condition. The repo's '(5.13)/(5.14)' labels are Drinfeld's (5.12)/(5.13). The grt-in-krv framing is withdrawn; the decision card on it was withdrawn. #9591 (stacked on #9585): HexagonUniversal.lean, hexagon_act_U4_universal (needs phi's hexagon only at the universal family). exp516.py: Exp for group law (5.16), Exp(psi)=sum L^k(1)/k!, L(x)=D_psi(x)+x psi, satisfies (5.12)-(5.15) through degree 8 for sigma3 (exact Q). Open: (5.12),(5.14) preserved by (5.16); linear-equation uniqueness argument; Phi∘g ≡ Phi+y.
