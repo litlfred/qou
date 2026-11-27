@@ -43,10 +43,8 @@ differ from `1`, and it implies the moment condition `∀ n, [n+1]_{q²} ≠ 0`
 
 ## Not established
 
-* Full coproduct invariance `(id ⊗ h)Δ = h(·)1`. The statement here is its consequence for
-  the three left-invariant fields, proved without it.
-* Roots of unity `q`. At a root of unity the torus argument fails, and so does the moment
-  formula (`[n+1]_{q²}` vanishes).
+* Full coproduct invariance `(id ⊗ h)Δ = h(·)1` and the root-of-unity no-go are now proved in
+  `q_ns_haar_coproduct_invariance.lean`, from the three statements here.
 * Any link to the q-NS advection term (no `∇_q` on `O_q(SU(2))` in the corpus).
 
 Everything is algebraic, so the file stays out of `QOU/Transcendental/`. No empirical value
