@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T21:22:39Z
+updated_at: 2026-11-27T21:30:55Z
 parent: qou-dk7p
 ---
 
@@ -105,3 +105,8 @@ STILL OPEN (this bean stays open): the bridge u = 0 in U4 N ⇒ cocycle(s) ∈ F
 
 
 2026-11-27 (B1 research child, PR #9719): step (1) of gap B1 closed sorry-free — assocK_compK: AssocK K N E Φ → GRT1U4 N g → AssocK K N E (compK Φ g) for RATIONAL g (BaseChangeAction.lean). Steps (2) β∈K coefficients, (3) K-congruence, (4) basis-by-basis shift NOT written; induction step NOT closed. Lie-ness input for grtU4_of_lie (#9711) is a real gap: group-likeness gives primitive h_i, primitive ⟹ lieSpan is Friedrichs, not in corpus. Options in audit §16b (recommend: prove Friedrichs for ℚ⟨X,Y⟩ via Dynkin–Specht–Wever). Bean stays open.
+
+
+## 2026-11-27: Friedrichs criterion proved (PR #9728, branch claude/friedrichs-2026-11-27)
+RationalAssociator/Friedrichs.lean (sorry-free; axioms propext, Classical.choice, Quot.sound) proves `isLieElt_of_primitive`: if h in Q<X,Y> is primitive for the shuffle coproduct `cop` (Delta(iota i) = iota i (x) 1 + 1 (x) iota i), then IsLieElt h. It needs no homogeneity or constant-term hypothesis, and the zero constant term follows (`algebraMapInv_eq_zero_of_primitive`). The route is Dynkin-Specht-Wever: the antipode identity, D*S is Lie-valued, the Euler derivation D is a coderivation, then induction on word length. Audit §17a.
+Remaining for B1: prove that the degree-d parts h_i of differences of group-like associators are primitive for this `cop`. That gives the IsLieElt hypothesis of grtU4_of_lie. Not done here.
