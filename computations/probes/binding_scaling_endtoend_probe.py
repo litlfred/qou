@@ -16,6 +16,8 @@ k_exact = k_max = 11; ONE FRESH PROCESS PER ISOTOPE via `--iso`, rows from
     3H   A=3    82.396 s   ok   boot 2810f9a9   <- the row 2026-09-12 never got
     3He  A=3    75.020 s   ok   boot 93c6c22a
     4He  A=4   112.754 s   ok   boot 93c6c22a
+    6Li  A=6   191.28 s    ok   boot 93c6c22a   (opt-in: --iso 6Li)
+    7Li  A=7   254.179 s   ok   boot fea0e408   (opt-in: --iso 7Li)
 
 The container rebooted between the 3H and 3He runs (boot id changed). Each
 row is one uninterrupted process on one boot, so every row is a complete
@@ -34,6 +36,17 @@ Scaling on the 2026-11-27 rows: A=2 -> A=3 is x1.66 (3H) / x1.51 (3He), and
 A=3 -> A=4 is x1.37 (3H) / x1.50 (3He). That is four points at A <= 4. It does
 not settle the bean title ("binding compute cannot scale"), which is a claim
 about large A.
+
+6Li and 7Li were added the same day on branch claude/sv7h-li-timing-2026-11-27
+(probe file unchanged except EXTRA_ISOS). 4He -> 6Li is x1.70, 6Li -> 7Li is
+x1.33. The added time per extra nucleon is 33 s (2H->3H), 30 s (3H->4He),
+39 s (4He->6Li) and 63 s (6Li->7Li). That is six points, not a fitted law, and
+it still says nothing about large A. 7Li needed four tries: three runs were
+killed when the container restarted (boot ids 93c6c22a, 66e51947, 52454806;
+no done line, so they give no result). Peak RSS on the third try was 0.93 GB
+of 15 GB, so memory was not the cause. The fourth try ran as a session-tracked
+job and finished. Lesson: a detached background job does not keep an idle
+cloud container alive.
 
 The `value` column printed by these runs is NOT a binding prediction: per the
 2026-11-15 gamma-gamma ruling the old `atom_braid_word_3A` letters are
@@ -132,6 +145,8 @@ assert H._HAS_LP_KERNEL, (
 )
 
 ISOS = [(1, 1, "2H"), (1, 2, "3H"), (2, 1, "3He"), (2, 2, "4He")]
+# Opt-in only (not in the default run): `--iso 6Li 7Li` extends the series past A = 4.
+EXTRA_ISOS = [(3, 3, "6Li"), (3, 4, "7Li")]
 
 # Per-isotope checkpointing (2026-11-27, bean `qou-sv7h`): a reclaim must leave
 # partial evidence, not a blank file. `--iso 3H` picks isotopes (default: all
@@ -148,7 +163,7 @@ ap.add_argument("--out", default=None)
 ap.add_argument("--heartbeat", type=float, default=300.0)
 args = ap.parse_args()
 if args.iso:
-    ISOS = [t for t in ISOS if t[2] in args.iso]
+    ISOS = [t for t in ISOS + EXTRA_ISOS if t[2] in args.iso]
 
 
 def _boot_id():
