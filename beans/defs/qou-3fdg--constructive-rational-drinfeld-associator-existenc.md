@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T21:53:26Z
+updated_at: 2026-11-27T22:34:23Z
 parent: qou-dk7p
 ---
 
@@ -129,3 +129,18 @@ Still open: the hypothesis hprim. It says that every rational contraction of the
 - group-likeness of the rational lift.
 
 Details in audit §17b. Bean stays open.
+
+
+## 2026-11-27 group-likeness transport over K (PR #9768)
+
+All four §17b items are proved sorry-free in RationalAssociator/GroupLikeK.lean. Axioms: propext, Classical.choice, Quot.sound.
+- 3: exists_primitive_layer
+- 1: GLK, primLayer_of_GLK (gives hprim)
+- 2: GL_expPoly, GLK.subst, mul_swap_sub_one_mem, GLK.compK, GLK.compKK_GK
+- 4: inductionStep_of_groupLike (output Psi is again GLK N)
+
+Still open, so this bean stays open: assembling the full induction. Two pieces are missing:
+- converting Psi - 1(x)(Phi+x) in FFK K (d+1) into the lTensor input shape (no lemma exists)
+- eps(Phi+x) = 1
+
+Audit §17c.
