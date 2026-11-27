@@ -1,4 +1,5 @@
 import QOU.Nuclear.IsospinCasimirTwist
+import QOU.MassTheory.GammaGammaWordSelection
 
 /-!
 # `QOU.Nuclear.IsospinTwistWrithe` — the `A`-scaling of the braid-channel `T(T+1)` term
@@ -249,7 +250,7 @@ theorem chain_coeff_mul_A (A : ℚ) (hA : 2 ≤ A) :
 /-- Non-vacuity at `A = 2` (`²H`, `N = 6`, one bond): coefficient `2/30 = 1/15`. -/
 example : ttCoeff (3 * 2) (2 - 1) = 1 / 15 := by norm_num [ttCoeff]
 
-/-! ## 5. A sign-independent bound: the writhe is at most the letter count
+/-! ## 6. A sign-independent bound: the writhe is at most the letter count
 
 Sections 1–4 give the coefficient as `e/(N(N−1))` but leave the writhe `e` of the
 nucleus word open. The bound below needs no sign for any bond letter. A word of `ℓ`
@@ -316,6 +317,57 @@ theorem abs_ttCoeff_le_of_chain (A e : ℚ) (hA : 1 ≤ A) (he : |e| ≤ A - 1) 
 /-- Non-vacuity: a chain of three letters with mixed signs has writhe `1`, inside the bound. -/
 example : Multiplicative.toAdd (writhe (wordOf [((0 : Fin 3), true), (1, false), (2, true)])) = 1 := by
   simp [wordOf, letter, writhe, FreeGroup.lift_apply_of]
+
+/-! ## 7. On a γγ-selected word the braid-channel `T(T+1)` term vanishes
+
+The owner ruling of 2026-09-08 (bean `qou-ales`, extended to the nuclear bond letters
+2026-11-15) selects braid words as products of pair-production vertices `σ_iσ_{i+1}⁻¹`.
+`QOU.Mass.GammaGammaWordSelection.writhe_eq_zero` proves every such word has writhe `0`. Through
+sections 3–4, a writhe-`0` word has block determinant with `det^{N(N−1)} = 1` on every
+block, so its block log-determinant carries **no** `T(T+1)` term at all, for any `A`. -/
+
+/-- The crossing list underlying a list of signed letters. -/
+def toCrossings {n : ℕ} (l : List (Fin n × Bool)) : QOU.Mass.GammaGammaWordSelection.Word :=
+  l.map (fun x => ⟨x.1.val, x.2⟩)
+
+/-- The two writhes agree: the free-group exponent sum is the crossing-sign sum. -/
+theorem writhe_wordOf_eq {n : ℕ} (l : List (Fin n × Bool)) :
+    Multiplicative.toAdd (writhe (wordOf l)) = QOU.Mass.GammaGammaWordSelection.writhe (toCrossings l) := by
+  induction l with
+  | nil => simp [wordOf, toCrossings, QOU.Mass.GammaGammaWordSelection.writhe]
+  | cons x l ih =>
+    have h : Multiplicative.toAdd (writhe (wordOf (x :: l)))
+        = Multiplicative.toAdd (writhe (letter x)) + Multiplicative.toAdd (writhe (wordOf l)) := by
+      simp [wordOf, map_mul, toAdd_mul]
+    rw [h, writhe_letter, ih]
+    simp [toCrossings, List.map_cons, QOU.Mass.GammaGammaWordSelection.writhe, QOU.Mass.GammaGammaWordSelection.sign]
+
+/-- **A γγ-selected word has writhe `0`** as a free-group word. -/
+theorem writhe_wordOf_eq_zero_of_gammaGamma {n : ℕ} (l : List (Fin n × Bool))
+    (h : QOU.Mass.GammaGammaWordSelection.GammaGammaWord (toCrossings l)) :
+    Multiplicative.toAdd (writhe (wordOf l)) = 0 := by
+  rw [writhe_wordOf_eq]; exact QOU.Mass.GammaGammaWordSelection.writhe_eq_zero h
+
+/-- **On every block, a γγ-selected word has `det ρ_μ(w)^{N(N−1)} = 1`**: its block
+log-determinant has no Casimir part, so no `T(T+1)` term. -/
+theorem seminormal_det_gammaGamma_pow {K : Type*} [Field K] {μ : YoungDiagram}
+    (q : K) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (n : ℕ)
+    (hN : μ.cells.card = n + 1) (h0 : 0 < n) (l : List (Fin n × Bool))
+    (h : QOU.Mass.GammaGammaWordSelection.GammaGammaWord (toCrossings l)) :
+    (seminormalRep q hq0 hq2 n hN (heckeWord (mul_inv_cancel₀ hq0) (wordOf l) : Hecke K q q⁻¹ n)).det
+        ^ (n * (n + 1)) = 1 := by
+  have he : Multiplicative.toAdd (writhe (wordOf l)) = ((0 : ℕ) : ℤ) := by
+    rw [writhe_wordOf_eq_zero_of_gammaGamma l h]; rfl
+  rw [seminormal_det_word_pow q hq0 hq2 n hN h0 (wordOf l) 0 he, mul_zero, pow_zero]
+
+/-- The coefficient of a writhe-`0` word is `0`. -/
+theorem ttCoeff_zero (N : ℚ) : ttCoeff N 0 = 0 := by simp [ttCoeff]
+
+/-- Non-vacuity: the vertex `σ₀σ₁⁻¹` on three strands is γγ-selected and has writhe `0`. -/
+example : Multiplicative.toAdd (writhe (wordOf [((0 : Fin 2), true), (1, false)])) = 0 :=
+  writhe_wordOf_eq_zero_of_gammaGamma _ (by
+    simpa [toCrossings, QOU.Mass.GammaGammaWordSelection.vertex] using
+      QOU.Mass.GammaGammaWordSelection.GammaGammaWord.cons 0 QOU.Mass.GammaGammaWordSelection.GammaGammaWord.nil)
 
 end QOU.Nuclear.IsospinTwistWrithe
 

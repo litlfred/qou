@@ -60,6 +60,30 @@ and possibly zero), the energy map (block log-determinant), one bridge letter pe
 (the corpus word; a word may repeat bridges), and the scale `α`. The full twist is outside
 this class: its `N(N−1)` letters are mostly intra-nucleon and transport letters.
 
+## 2b. On a γγ-selected word the term is exactly zero (added the same day)
+
+| statement | Lean |
+|---|---|
+| free-group writhe of a letter list = crossing-sign sum of the corpus `Word` | `writhe_wordOf_eq` |
+| a γγ-selected word has writhe `0` (from `GammaGammaWordSelection.writhe_eq_zero`) | `writhe_wordOf_eq_zero_of_gammaGamma` |
+| on every seminormal block, `det ρ_μ(w)^{N(N−1)} = 1` for such a word | `seminormal_det_gammaGamma_pow` |
+
+The owner ruling (bean `qou-ales`, extended to nuclear bond letters 2026-11-15) builds braid
+words from pair-production vertices `σ_iσ_{i+1}⁻¹`. The nucleon core `(σ₀σ₁⁻¹)³` and the
+selected interface bond `(σ₂σ₃⁻¹)³` (`GammaGammaH6Interface.interfaceBond`) are both such
+words. So on a nucleus word built only from them, the block log-determinant has **no
+`T(T+1)` term at all, at any `A`**. This is a structural result (scope b) for that functional
+on that class of words; the invariant is the writhe. Consequences:
+
+1. The braid-channel `T(T+1)` term of #9706 is not present on the ruled word. Its `T²`
+   growth came from the full twist, which is not γγ-produced (writhe `N(N−1) ≠ 0`).
+2. The symmetry energy therefore has to come from somewhere else: the block multiplicity
+   (§4, `−2T²/N`), a functional other than the log-determinant (§5 item 3), or words outside
+   the γγ class.
+3. Scope limit: the scored element `nuc11_interleaved` is γγ-produced in only 6 of its 11
+   letters. Its 3-letter quark block has odd length, so it is not γγ, and its writhe need not
+   be `0`. This result does not cover it.
+
 ## 3. What it gives (comparison only; AME is not used to choose anything)
 
 Same energy map, sign and lowest block as #9706. Only the writhe changes. The writhe of each
