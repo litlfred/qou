@@ -115,6 +115,8 @@ import QOU.Transcendental.MassTheory.ElectronMassChartWeight
 import QOU.Transcendental.MassTheory.ElectronRingMassReading
 import QOU.Transcendental.MassTheory.RingMassLinkingNumber
 import QOU.Transcendental.MassTheory.RingMassLinkingThreeStrand
+import QOU.Observations.ColouredLadderTwist
+import QOU.Observations.VolumeOrderRule
 import QOU.MassTheory.BranchIntegerPinning
 import QOU.MassTheory.NucleusBondValence
 -- Weierstrass primary-factor estimate ‖1 - E_p(z)‖ ≤ ‖z‖^{p+1}: the Mathlib-gap
