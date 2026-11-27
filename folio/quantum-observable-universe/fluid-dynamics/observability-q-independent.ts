@@ -4,7 +4,7 @@ export default theorem({
   label: "thm:observability-q-independent",
   lean: { ref: "qou:QOU.FluidDynamics.observability_q_independent", validation: "not_checked" },
   title:
-    "Observability is a base property: $\\mathrm{Hom}(\\mathbf{1}, \\mathrm{Ad}(A)) = 0$ is independent of the substrate section",
+    "Observability is a base property: $\\mathrm{Hom}(\\mathbf{1}, \\mathrm{Ad}(A)) = 0$ is independent of the aether section",
   uses: ["def:substrate-line-bundle"],
   tags: [
     "observability",

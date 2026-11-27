@@ -33,9 +33,9 @@ supplied by [the isospin ordering](#prop:isospin-singlet-binds-more), which assi
 $\mu_+$ to the triplet and $\mu_-$ to the singlet and orders them without a fit.
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the
-substrate wall: it invokes real- or complex-analytic constructs --- real-valued
+algebraic→archimedean wall: it invokes real- or complex-analytic constructs --- real-valued
 physical observables, real-analytic bounds, transcendental constants, or numerical
-evaluation at the substrate parameter $q_0$. Any generic categorical or
+evaluation at the aether parameter $q_0$. Any generic categorical or
 $q$-deformation identities it draws on remain valid over an abstract coefficient ring;
 only their archimedean realisation is specialised here. The two experimental inputs
 are the AME deuteron binding $+2.224566\ \mathrm{MeV}$ and the $pn({}^1S_0)$ virtual

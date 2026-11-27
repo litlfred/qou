@@ -73,7 +73,7 @@
        by this citation and do not alter the Im-sign structure proved below.
 -/
 
-import BraidKnotOctonion.FigureEightVolume
+import QOU.Transcendental.BraidKnotOctonion.FigureEightVolume
 import BraidKnotOctonion.NeumannZagierParity
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 

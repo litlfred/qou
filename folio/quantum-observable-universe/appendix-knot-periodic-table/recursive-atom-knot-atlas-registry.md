@@ -1,6 +1,6 @@
 This registry records the full derivation of [Recursive atom-knot atlas at $q_0$ — particles to atoms via Markov-NF braids and hyperbolic-knot closures](#prop:recursive-atom-knot-atlas): the methodology classification, notation legend, braid-closure gallery, the per-level atlas, and the per-element AME 2020 cross-reference. It carries no logical content beyond the proposition it supports.
 
-This atlas identifies the specific knot or link for each confined braid at the substrate value $q_0$, verifying whether its invariant reproduces the measured mass or binding energy. A single $q_0$-indexed registry enables recursive construction of composite entries from nucleon and $\alpha$-cluster constituents, ensuring uniform comparison against the AME 2020 reference. Where a free-nucleon entry lists an absolute mass in MeV, that figure is the dimensionless ratio $\mathfrak{m}/m_e$ rendered against the $m_e$ scale (the leptonic mass calibration unit $m_e$), not an independent absolute-mass prediction; the framework's predictive content is the ratio, the binding energy, and the mass splitting. The precise identification mechanics are detailed below; a layered extension then applies this machinery to every isotope.
+This atlas identifies the specific knot or link for each confined braid at the aether value $q_0$, verifying whether its invariant reproduces the measured mass or binding energy. A single $q_0$-indexed registry enables recursive construction of composite entries from nucleon and $\alpha$-cluster constituents, ensuring uniform comparison against the AME 2020 reference. Where a free-nucleon entry lists an absolute mass in MeV, that figure is the dimensionless ratio $\mathfrak{m}/m_e$ rendered against the $m_e$ scale (the leptonic mass calibration unit $m_e$), not an independent absolute-mass prediction; the framework's predictive content is the ratio, the binding energy, and the mass splitting. The precise identification mechanics are detailed below; a layered extension then applies this machinery to every isotope.
 
 ## Methodology classification (STRICT)
 
@@ -224,14 +224,14 @@ Each per-isotope record lists the knot operators used to build its canonical bra
 | n–n | $\sigma + (-h)\cdot\mathbf{1}$ |
 | p–n | $\sigma + \bigl(-h(1/2 - \delta/4)\bigr)\cdot\mathbf{1}$ (colour-tube-weighted average) |
 
-where $h = q_0 - q_0^{-1}$ and $\delta$ is the substrate flavour split of
-[the substrate flavor split conjecture](#conj:flavor-split-substrate-mass).
+where $h = q_0 - q_0^{-1}$ and $\delta$ is the aether flavour split of
+[the aether flavor split conjecture](#conj:flavor-split-substrate-mass).
 
 The $\delta = 0$ form $\sigma + (-h/2)\cdot\mathbf{1}$ is **not** the p–n
 interface: it is the intra-nucleon quark crossing, and it never appears at a
 generator $3k+2$. For $\mathrm{D}$, ${}^{3}\mathrm{He}$ and ${}^{4}\mathrm{He}$
 every generator $3k+2$ carries the p–p, n–n or p–n interface above. The two
-forms differ by $h\delta/4 \approx 7.190 \times 10^{-5}$ at the substrate anchor.
+forms differ by $h\delta/4 \approx 7.190 \times 10^{-5}$ at the aether anchor.
 
 **Closure topology operators** (Markov closure $\widehat{\beta}$):
 

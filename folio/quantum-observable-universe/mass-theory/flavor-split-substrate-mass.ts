@@ -2,7 +2,7 @@ import { conjecture } from "../../schema/builders";
 
 export default conjecture({
   label: "conj:flavor-split-substrate-mass",
-  title: "The nucleon mass split equals the substrate flavor-split formula",
+  title: "The nucleon mass split equals the aether flavor-split formula",
   lean: {
     ref: "qou:QOU.EightfoldWay.FlavorSplitSubstrateMass",
     validation: "not_checked",

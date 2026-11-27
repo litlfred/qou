@@ -24,4 +24,4 @@ This is the contrapositive of the Beirão da Veiga--Berselli theorem. The Lipsch
 
 For a straight anti-parallel vortex pair the line field is constant, so this necessary condition fails and no blow-up occurs.
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Generic categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the algebraic→archimedean wall. It invokes real- or complex-analytic constructs. Generic categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

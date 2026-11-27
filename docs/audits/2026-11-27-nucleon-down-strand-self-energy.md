@@ -2,7 +2,7 @@
 
 **Date:** 2026-11-27 · **Branch:** `claude/nucleon-down-strand-self-energy-2026-11-27`
 **Beans:** `qou-myts`, `qou-99qc`
-**Lean:** `QOU/Nuclear/NucleonDownStrandSelfEnergy.lean` (lean-direct `-DautoImplicit=false -s 65536`, exit 0; axioms propext, Classical.choice, Quot.sound)
+**Lean:** `QOU/Nuclear/NucleonDownStrandSelfEnergy.lean`, with `self_cartan_lt_gibbs_cell` (uses `Real.log`) split off behind the transcendental boundary into `QOU/Transcendental/Nuclear/NucleonDownStrandSelfEnergyGibbsCell.lean`, same namespace (lean-direct `-DautoImplicit=false -s 65536`, exit 0; axioms propext, Classical.choice, Quot.sound)
 **Probe:** `computations/probes/nucleon_down_strand_self_energy/` (pre-registration, probe, witness; exact sympy over ℚ(q) for n = 2..5, then 80 dps)
 
 ## 1. Question
@@ -88,3 +88,4 @@ A d-heavier self energy can therefore only come from the Weyl-odd degree-1 term.
 
     python3 -u computations/probes/nucleon_down_strand_self_energy/nucleon_down_strand_self_energy_probe.py
     lean -DautoImplicit=false -s 65536 folio/quantum-observable-universe/lean/QOU/Nuclear/NucleonDownStrandSelfEnergy.lean
+    lean -DautoImplicit=false -s 65536 folio/quantum-observable-universe/lean/QOU/Transcendental/Nuclear/NucleonDownStrandSelfEnergyGibbsCell.lean

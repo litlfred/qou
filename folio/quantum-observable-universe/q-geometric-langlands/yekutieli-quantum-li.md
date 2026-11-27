@@ -2,11 +2,11 @@ The spectral trace over Reeb eigenvalues acts as a matrix-valued promotion of th
 
 In classical analytic number theory, $\mathrm{Li}(x)$ integrates the scalar probability $1/\ln t$ of finding a prime near $t$. The logarithm converts multiplication to addition, and the integral sums independent contributions into a single real number. This structure is purely abelian. 
 
-The quantum substrate counts defects via the nonabelian multiplicative integral. Instead of summing scalar weights $1/\ln t$, one computes a path-ordered product of matrices along the Reeb flow. Each factor encodes the parallel transport of the adjoint representation $\mathrm{Ad}(A)$ along one orbit of $\xi_q$. The ordering reflects the non-commutativity of the gauge connection.
+The quantum aether counts defects via the nonabelian multiplicative integral. Instead of summing scalar weights $1/\ln t$, one computes a path-ordered product of matrices along the Reeb flow. Each factor encodes the parallel transport of the adjoint representation $\mathrm{Ad}(A)$ along one orbit of $\xi_q$. The ordering reflects the non-commutativity of the gauge connection.
 
 The multiplicative integral formally replaces $\mathrm{Li}(x)$:
 
-| Classical | Quantum substrate |
+| Classical | Quantum aether |
 |-----------|-------------------|
 | Scalar weight $1/\ln t$ | Matrix weight $X^\rho / [\rho]_q$ (trace of holonomy) |
 | Ordinary integral $\int dt$ | Path-ordered product $\prod^{\to}$ |

@@ -2,10 +2,10 @@
 
 Steps 1 and 2 are proved statements about generating functions. Steps 3 and 4 explain what the finite window of coefficients does and does not show.
 
-Write $c_k$ for the pinned ladder coefficients at the substrate
+Write $c_k$ for the pinned ladder coefficients at the aether
 anchor (canonical SDP extraction),
 $g(u) := \sum_{k \ge 2} c_k u^k$ for the log-correction generating
-function, and $u_0 := u_{\text{substrate}} \approx 0.00852$.
+function, and $u_0 := u_{\text{aether}} \approx 0.00852$.
 
 **Step 1 — rationality of $g$.** By the
 [$c_k$ recursion](q-beta-c-k-recursion-from-habiro-q-difference.md),
@@ -88,10 +88,10 @@ From the SDP ladder extraction at $q_0 = 1.10997858\ldots$:
 
 | quantity | value |
 |---|---|
-| $u_{\text{substrate}}$ at $q_{\text{proton}}$ | $0.008517234550156142$ |
-| $u_{\text{substrate}}$ at $q_{\text{muon}}$ | $0.008517236340043958$ |
+| $u_{\text{aether}}$ at $q_{\text{proton}}$ | $0.008517234550156142$ |
+| $u_{\text{aether}}$ at $q_{\text{muon}}$ | $0.008517236340043958$ |
 | relative shift | $2.10 \times 10^{-7}$ (210 ppb) |
 | asymptotic $c_k \cdot u^k$ ($k \in \{8,9,10\}$) | $2.118 \times 10^{-13}$ |
 | spread | $0.02$ % |
 | branch-fit $\beta$ | $0.999$ (simple-pole case is $\beta = 1$) |
-| ratio test $c_{k+1}/c_k$ at $k = 10$ | $\to 1 / u_{\text{substrate}} = 117.4$ |
+| ratio test $c_{k+1}/c_k$ at $k = 10$ | $\to 1 / u_{\text{aether}} = 117.4$ |

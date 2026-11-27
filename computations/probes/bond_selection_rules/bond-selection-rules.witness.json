@@ -1,0 +1,2051 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-27T19:39:06.679849+00:00",
+  "commitSha": "3c0d3e1838abb16964fe83a6ebad4ac230d89772",
+  "assertions": [
+    {
+      "name": "K0_free_word_pure_neutral",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "V^3 x V^3 is a pure zero-linking braid"
+    },
+    {
+      "name": "K1_merge_counts_reproduce_ceiling_witnesses",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "exact recomputation agrees with every merges field of both ceiling witnesses (assert)"
+    },
+    {
+      "name": "K2_A3_free_passes",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "nine-strand V^3 x V^3 x V^3 passes reading 3"
+    },
+    {
+      "name": "K3_A4_V2V3V4V8_passes",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "PR #9526 section 7 reproduced"
+    },
+    {
+      "name": "K4_R2_written_cost_reproduces_PR9426_selection",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "gg_deuteron_bond/results.md: cheapest passing pure-junction bond is V(1)^3 / V(2)^3"
+    },
+    {
+      "name": "K5_R1_written_cost_is_V2V3_tie",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "unrestricted cheapest passing bond at A = 2, written cost (2026-11-27 ceiling audit section 6)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "bond-selection-rules",
+  "scriptFile": "bond_selection_rules_probe.py",
+  "scriptHash": "2aab5fd88157",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/bond_selection_rules/bond_selection_rules_probe.py",
+      "1",
+      "4"
+    ],
+    "reproduce": "python3 -u computations/probes/bond_selection_rules/bond_selection_rules_probe.py 1 4"
+  },
+  "description": "PROBE (bean qou-brng, brief C2 front C): six corpus selection rules applied to the passing gamma-gamma bond words at A = 2, 3, 4. Exact classical structure (merges split inter/intra nucleon, whole-word linking neutrality, purity); reading 3 at q0 from the corpus seminormal helpers. Ratios reported, never used to select. AME not read. Nothing fitted or wired.",
+  "auditOnly": "docs/audits/2026-11-27-bond-selection-rule-search.md",
+  "parameters": {
+    "len_max_A3_junction_only": 5
+  },
+  "data": {
+    "selections": {
+      "2": {
+        "R1_frobenius_selected_all_bond_words__cost_written": {
+          "cost": 4,
+          "selected": [
+            "V2V3",
+            "V3V2"
+          ],
+          "merges": [
+            2
+          ],
+          "merges_intra_nucleon": [
+            1
+          ],
+          "linking_neutral": [
+            false
+          ],
+          "ratio": [
+            "0.25205830811640"
+          ]
+        },
+        "R2_frobenius_selected_junction_vertices_only__cost_written": {
+          "cost": 6,
+          "selected": [
+            "V1V1V1",
+            "V2V2V2"
+          ],
+          "merges": [
+            0
+          ],
+          "merges_intra_nucleon": [
+            0
+          ],
+          "linking_neutral": [
+            true
+          ],
+          "ratio": [
+            "0.99849716063281"
+          ]
+        },
+        "R3_whole_word_linking_neutral__cost_written": {
+          "cost": 6,
+          "selected": [
+            "V1V1V1",
+            "V2V2V2"
+          ],
+          "merges": [
+            0
+          ],
+          "merges_intra_nucleon": [
+            0
+          ],
+          "linking_neutral": [
+            true
+          ],
+          "ratio": [
+            "0.99849716063281"
+          ]
+        },
+        "R4_pure_zero_linking__cost_written": {
+          "cost": 6,
+          "selected": [
+            "V1V1V1",
+            "V2V2V2"
+          ],
+          "merges": [
+            0
+          ],
+          "merges_intra_nucleon": [
+            0
+          ],
+          "linking_neutral": [
+            true
+          ],
+          "ratio": [
+            "0.99849716063281"
+          ]
+        },
+        "R5_no_intra_nucleon_merge__cost_written": {
+          "cost": 6,
+          "selected": [
+            "V1V1V1",
+            "V2V2V2"
+          ],
+          "merges": [
+            0
+          ],
+          "merges_intra_nucleon": [
+            0
+          ],
+          "linking_neutral": [
+            true
+          ],
+          "ratio": [
+            "0.99849716063281"
+          ]
+        },
+        "R6_cheapest_that_merges__cost_written": {
+          "cost": 4,
+          "selected": [
+            "V2V3",
+            "V3V2"
+          ],
+          "merges": [
+            2
+          ],
+          "merges_intra_nucleon": [
+            1
+          ],
+          "linking_neutral": [
+            false
+          ],
+          "ratio": [
+            "0.25205830811640"
+          ]
+        },
+        "R1_frobenius_selected_all_bond_words__cost_reduced": {
+          "cost": 2,
+          "selected": [
+            "V1V2V3",
+            "V2V3"
+          ],
+          "merges": [
+            2
+          ],
+          "merges_intra_nucleon": [
+            1,
+            2
+          ],
+          "linking_neutral": [
+            false
+          ],
+          "ratio": [
+            "0.25205830811640",
+            "0.25525475587821"
+          ]
+        },
+        "R2_frobenius_selected_junction_vertices_only__cost_reduced": {
+          "cost": 4,
+          "selected": [
+            "V1V2V1V2"
+          ],
+          "merges": [
+            0
+          ],
+          "merges_intra_nucleon": [
+            0
+          ],
+          "linking_neutral": [
+            false
+          ],
+          "ratio": [
+            "1.03587444947396"
+          ]
+        },
+        "R3_whole_word_linking_neutral__cost_reduced": {
+          "cost": 6,
+          "selected": [
+            "V1V1V1",
+            "V2V2V2"
+          ],
+          "merges": [
+            0
+          ],
+          "merges_intra_nucleon": [
+            0
+          ],
+          "linking_neutral": [
+            true
+          ],
+          "ratio": [
+            "0.99849716063281"
+          ]
+        },
+        "R4_pure_zero_linking__cost_reduced": {
+          "cost": 6,
+          "selected": [
+            "V1V1V1",
+            "V2V2V2"
+          ],
+          "merges": [
+            0
+          ],
+          "merges_intra_nucleon": [
+            0
+          ],
+          "linking_neutral": [
+            true
+          ],
+          "ratio": [
+            "0.99849716063281"
+          ]
+        },
+        "R5_no_intra_nucleon_merge__cost_reduced": {
+          "cost": 4,
+          "selected": [
+            "V0V1V0V1",
+            "V0V1V2V0V1V2",
+            "V1V2V1V2",
+            "V1V2V3V1V2V3",
+            "V2V3V2V3"
+          ],
+          "merges": [
+            0
+          ],
+          "merges_intra_nucleon": [
+            0
+          ],
+          "linking_neutral": [
+            false
+          ],
+          "ratio": [
+            "1.03106535322588",
+            "1.03169060220884",
+            "1.03254999094319",
+            "1.03317614022622",
+            "1.03587444947396"
+          ]
+        },
+        "R6_cheapest_that_merges__cost_reduced": {
+          "cost": 2,
+          "selected": [
+            "V1V2V3",
+            "V2V3"
+          ],
+          "merges": [
+            2
+          ],
+          "merges_intra_nucleon": [
+            1,
+            2
+          ],
+          "linking_neutral": [
+            false
+          ],
+          "ratio": [
+            "0.25205830811640",
+            "0.25525475587821"
+          ]
+        }
+      },
+      "3": {
+        "R1_frobenius_selected_all_bond_words__cost_written": {
+          "cost": 6,
+          "selected": [
+            "V2V3V4",
+            "V3V4V2",
+            "V4V2V3"
+          ],
+          "merges": [
+            2
+          ],
+          "merges_intra_nucleon": [
+            0
+          ],
+          "linking_neutral": [
+            false
+          ],
+          "ratio": [
+            "0.24729788674803"
+          ]
+        },
+        "R2_frobenius_selected_junction_vertices_only__cost_written": {
+          "cost": 10,
+          "selected": [
+            "V1V1V1V4V5",
+            "V1V1V1V5V4",
+            "V1V1V4V1V5",
+            "V1V1V4V5V1",
+            "V1V1V5V1V4",
+            "V1V1V5V4V1",
+            "V1V4V1V1V5",
+            "V1V4V1V5V1",
+            "V1V4V2V4V4",
+            "V1V4V2V5V5",
+            "V1V4V4V2V4",
+            "V1V4V5V1V1",
+            "V1V4V5V2V5",
+            "V1V4V5V5V2",
+            "V1V5V1V1V4",
+            "V1V5V1V4V1",
+            "V1V5V4V1V1",
+            "V2V2V2V4V5",
+            "V2V2V2V5V4",
+            "V2V2V4V2V4",
+            "V2V2V4V2V5",
+            "V2V2V4V5V2",
+            "V2V2V5V2V4",
+            "V2V2V5V4V2",
+            "V2V4V2V2V4",
+            "V2V4V2V2V5",
+            "V2V4V2V4V2",
+            "V2V4V2V4V4",
+            "V2V4V2V5V2",
+            "V2V4V4V2V4",
+            "V2V4V5V2V2",
+            "V2V5V2V2V4",
+            "V2V5V2V4V2",
+            "V2V5V4V2V2",
+            "V4V1V1V1V5",
+            "V4V1V1V5V1",
+            "V4V1V2V4V4",
+            "V4V1V2V5V5",
+            "V4V1V4V2V4",
+            "V4V1V5V1V1",
+            "V4V1V5V2V5",
+            "V4V1V5V5V2",
+            "V4V2V1V4V4",
+            "V4V2V2V2V5",
+            "V4V2V2V4V2",
+            "V4V2V2V5V2",
+            "V4V2V4V1V4",
+            "V4V2V4V2V2",
+            "V4V2V4V2V4",
+            "V4V2V4V4V1",
+            "V4V2V4V4V2",
+            "V4V2V5V2V2",
+            "V4V4V1V2V4",
+            "V4V4V2V1V4",
+            "V4V4V2V4V1",
+            "V4V4V2V4V2",
+            "V4V5V1V1V1",
+            "V4V5V1V2V5",
+            "V4V5V1V5V2",
+            "V4V5V2V2V2",
+            "V4V5V5V1V2",
+            "V5V1V1V1V4",
+            "V5V1V1V4V1",
+            "V5V1V4V1V1",
+            "V5V2V2V2V4",
+            "V5V2V2V4V2",
+            "V5V2V4V2V2",
+            "V5V4V1V1V1",
+            "V5V4V2V2V2"
+          ],
+          "merges": [
+            2,
+            4
+          ],
+          "merges_intra_nucleon": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "linking_neutral": [
+            false
+          ],
+          "ratio": [
+            "0.09780855864310",
+            "0.17615110378809",
+            "0.18001491766409",
+            "0.18208090951134",
+            "0.18214591271532",
+            "0.18518546832990",
+            "0.24248679053473",
+            "0.24597377719348",
+            "0.24601448947399",
+            "0.24615067171565",
+            "0.24629023568755",
+            "0.24690943585098",
+            "0.24691016363987",
+            "0.24691087379394",
+            "0.24692250209799",
+            "0.24692926980309",
+            "0.24914962604926",
+            "0.34161352252686",
+            "0.34167852573083",
+            "0.34471808134542",
+            "0.34747861135663",
+            "0.35061469039525"
+          ]
+        },
+        "R3_whole_word_linking_neutral__cost_written": {
+          "cost": 12,
+          "selected": [
+            "V1V1V1V4V4V4",
+            "V1V1V1V5V5V5",
+            "V2V2V2V4V4V4",
+            "V2V2V2V5V5V5"
+          ],
+          "merges": [
+            0
+          ],
+          "merges_intra_nucleon": [
+            0
+          ],
+          "linking_neutral": [
+            true
+          ],
+          "ratio": [
+            "0.99699657979178",
+            "0.99699944731724"
+          ]
+        },
+        "R4_pure_zero_linking__cost_written": {
+          "cost": 12,
+          "selected": [
+            "V1V1V1V4V4V4",
+            "V1V1V1V5V5V5",
+            "V2V2V2V4V4V4",
+            "V2V2V2V5V5V5"
+          ],
+          "merges": [
+            0
+          ],
+          "merges_intra_nucleon": [
+            0
+          ],
+          "linking_neutral": [
+            true
+          ],
+          "ratio": [
+            "0.99699657979178",
+            "0.99699944731724"
+          ]
+        },
+        "R5_no_intra_nucleon_merge__cost_written": {
+          "cost": 6,
+          "selected": [
+            "V2V3V4",
+            "V3V4V2",
+            "V4V2V3"
+          ],
+          "merges": [
+            2
+          ],
+          "merges_intra_nucleon": [
+            0
+          ],
+          "linking_neutral": [
+            false
+          ],
+          "ratio": [
+            "0.24729788674803"
+          ]
+        },
+        "R6_cheapest_that_merges__cost_written": {
+          "cost": 6,
+          "selected": [
+            "V2V3V4",
+            "V3V4V2",
+            "V4V2V3"
+          ],
+          "merges": [
+            2
+          ],
+          "merges_intra_nucleon": [
+            0
+          ],
+          "linking_neutral": [
+            false
+          ],
+          "ratio": [
+            "0.24729788674803"
+          ]
+        },
+        "R1_frobenius_selected_all_bond_words__cost_reduced": {
+          "cost": 2,
+          "selected": [
+            "V1V2V3V4",
+            "V2V3V4",
+            "V2V3V4V5"
+          ],
+          "merges": [
+            2
+          ],
+          "merges_intra_nucleon": [
+            0,
+            1
+          ],
+          "linking_neutral": [
+            false
+          ],
+          "ratio": [
+            "0.24343407287203",
+            "0.24729788674803",
+            "0.25043396578666"
+          ]
+        },
+        "R2_frobenius_selected_junction_vertices_only__cost_reduced": {
+          "cost": 6,
+          "selected": [
+            "V4V5V1V2V5",
+            "V4V5V5V1V2"
+          ],
+          "merges": [
+            4
+          ],
+          "merges_intra_nucleon": [
+            3
+          ],
+          "linking_neutral": [
+            false
+          ],
+          "ratio": [
+            "0.09780855864310"
+          ]
+        },
+        "R3_whole_word_linking_neutral__cost_reduced": {
+          "cost": 12,
+          "selected": [
+            "V1V1V1V4V4V4",
+            "V1V1V1V5V5V5",
+            "V2V2V2V4V4V4",
+            "V2V2V2V5V5V5"
+          ],
+          "merges": [
+            0
+          ],
+          "merges_intra_nucleon": [
+            0
+          ],
+          "linking_neutral": [
+            true
+          ],
+          "ratio": [
+            "0.99699657979178",
+            "0.99699944731724"
+          ]
+        },
+        "R4_pure_zero_linking__cost_reduced": {
+          "cost": 12,
+          "selected": [
+            "V1V1V1V4V4V4",
+            "V1V1V1V5V5V5",
+            "V2V2V2V4V4V4",
+            "V2V2V2V5V5V5"
+          ],
+          "merges": [
+            0
+          ],
+          "merges_intra_nucleon": [
+            0
+          ],
+          "linking_neutral": [
+            true
+          ],
+          "ratio": [
+            "0.99699657979178",
+            "0.99699944731724"
+          ]
+        },
+        "R5_no_intra_nucleon_merge__cost_reduced": {
+          "cost": 2,
+          "selected": [
+            "V2V3V4"
+          ],
+          "merges": [
+            2
+          ],
+          "merges_intra_nucleon": [
+            0
+          ],
+          "linking_neutral": [
+            false
+          ],
+          "ratio": [
+            "0.24729788674803"
+          ]
+        },
+        "R6_cheapest_that_merges__cost_reduced": {
+          "cost": 2,
+          "selected": [
+            "V1V2V3V4",
+            "V2V3V4",
+            "V2V3V4V5"
+          ],
+          "merges": [
+            2
+          ],
+          "merges_intra_nucleon": [
+            0,
+            1
+          ],
+          "linking_neutral": [
+            false
+          ],
+          "ratio": [
+            "0.24343407287203",
+            "0.24729788674803",
+            "0.25043396578666"
+          ]
+        }
+      }
+    },
+    "population_stats": {
+      "2": {
+        "n_rows": 408,
+        "n_linking_neutral": 34,
+        "n_pure": 46,
+        "n_merging_neutral": 0,
+        "n_intra_merge": 362
+      },
+      "3": {
+        "n_rows": 101,
+        "n_linking_neutral": 4,
+        "n_pure": 4,
+        "n_merging_neutral": 0,
+        "n_intra_merge": 73
+      }
+    },
+    "A4_spot_words": [
+      {
+        "word": "V2V3V4V8",
+        "passes_reading3": true,
+        "ratio": "0.06020073178372091223981149",
+        "bond_vertices": 4,
+        "bond_crossings_reduced": 4,
+        "bond_reduced": "s2s5-s8s9-",
+        "junction_vertex_only": false,
+        "merges": 4,
+        "merges_inter_nucleon": 3,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V2V2V2V5V5V5V8V8V8",
+        "passes_reading3": true,
+        "ratio": "0.9954982540827266152905211",
+        "bond_vertices": 9,
+        "bond_crossings_reduced": 18,
+        "bond_reduced": "s2s3-s2s3-s2s3-s5s6-s5s6-s5s6-s8s9-s8s9-s8s9-",
+        "junction_vertex_only": true,
+        "merges": 0,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 0,
+        "linking_neutral": true,
+        "pure": true,
+        "self_writhes": []
+      }
+    ],
+    "V2V3_structure": {
+      "bond_vertices": 2,
+      "bond_crossings_reduced": 2,
+      "bond_reduced": "s2s4-",
+      "junction_vertex_only": false,
+      "merges": 2,
+      "merges_inter_nucleon": 1,
+      "merges_intra_nucleon": 1,
+      "linking_neutral": false,
+      "pure": false,
+      "self_writhes": [
+        -1,
+        1
+      ]
+    },
+    "A3_junction_only_passing": [
+      {
+        "word": "V1V1V1V4V5",
+        "ratio": "0.2461506717156552731483972",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 8,
+        "bond_reduced": "s1s2-s1s2-s1s2-s4s6-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 2,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V1V1V1V5V4",
+        "ratio": "0.2469101636398738265018507",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s1s2-s1s2-s1s2-s5s6-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V1V1V4V1V5",
+        "ratio": "0.2461506717156552731483972",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s1s2-s1s2-s4s5-s1s2-s5s6-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 2,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V1V1V4V5V1",
+        "ratio": "0.2461506717156552731483972",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 8,
+        "bond_reduced": "s1s2-s1s2-s4s6-s1s2-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 2,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V1V1V5V1V4",
+        "ratio": "0.2469101636398738265018507",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s1s2-s1s2-s5s6-s1s2-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V1V1V5V4V1",
+        "ratio": "0.2469101636398738265018507",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s1s2-s1s2-s5s6-s4s5-s1s2-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V1V4V1V1V5",
+        "ratio": "0.2461506717156552731483972",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s1s2-s4s5-s1s2-s1s2-s5s6-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 2,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V1V4V1V5V1",
+        "ratio": "0.2461506717156552731483972",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s1s2-s4s5-s1s2-s5s6-s1s2-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 2,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V1V4V2V4V4",
+        "ratio": "0.2459737771934891561464998",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s1s2-s4s5-s2s3-s4s5-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 2,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V1V4V2V5V5",
+        "ratio": "0.09780855864310801983638194",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s1s2-s4s5-s2s3-s5s6-s5s6-",
+        "junction_vertex_only": true,
+        "merges": 4,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 3,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          1,
+          1
+        ]
+      },
+      {
+        "word": "V1V4V4V2V4",
+        "ratio": "0.2491496260492618688077748",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s1s2-s4s5-s4s5-s2s3-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V1V4V5V1V1",
+        "ratio": "0.2461506717156552731483972",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 8,
+        "bond_reduced": "s1s2-s4s6-s1s2-s1s2-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 2,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V1V4V5V2V5",
+        "ratio": "0.09780855864310801983638194",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 8,
+        "bond_reduced": "s1s2-s4s6-s2s3-s5s6-",
+        "junction_vertex_only": true,
+        "merges": 4,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 3,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          1,
+          1
+        ]
+      },
+      {
+        "word": "V1V4V5V5V2",
+        "ratio": "0.09780855864310801983638194",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 8,
+        "bond_reduced": "s1s2-s4s6-s5s6-s2s3-",
+        "junction_vertex_only": true,
+        "merges": 4,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 3,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          1,
+          1
+        ]
+      },
+      {
+        "word": "V1V5V1V1V4",
+        "ratio": "0.2469101636398738265018507",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s1s2-s5s6-s1s2-s1s2-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V1V5V1V4V1",
+        "ratio": "0.2469101636398738265018507",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s1s2-s5s6-s1s2-s4s5-s1s2-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V1V5V4V1V1",
+        "ratio": "0.2469101636398738265018507",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s1s2-s5s6-s4s5-s1s2-s1s2-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V2V2V2V4V5",
+        "ratio": "0.246014489473994316353721",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 8,
+        "bond_reduced": "s2s3-s2s3-s2s3-s4s6-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 2,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V2V2V2V5V4",
+        "ratio": "0.2469108737939449380909771",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s2s3-s2s3-s2s3-s5s6-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V2V2V4V2V4",
+        "ratio": "0.34471808134542571291902",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s2s3-s2s3-s4s5-s2s3-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          1,
+          1
+        ]
+      },
+      {
+        "word": "V2V2V4V2V5",
+        "ratio": "0.2462902356875594148425327",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s2s3-s2s3-s4s5-s2s3-s5s6-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 2,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V2V2V4V5V2",
+        "ratio": "0.2462902356875594148425327",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 8,
+        "bond_reduced": "s2s3-s2s3-s4s6-s2s3-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 2,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V2V2V5V2V4",
+        "ratio": "0.2469108737939449380909771",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s2s3-s2s3-s5s6-s2s3-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V2V2V5V4V2",
+        "ratio": "0.2469094358509813879301136",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s2s3-s2s3-s5s6-s4s5-s2s3-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V2V4V2V2V4",
+        "ratio": "0.3416785257308364963263514",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s2s3-s4s5-s2s3-s2s3-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 2,
+        "merges_intra_nucleon": 0,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          1,
+          1
+        ]
+      },
+      {
+        "word": "V2V4V2V2V5",
+        "ratio": "0.2424867905347393625433407",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s2s3-s4s5-s2s3-s2s3-s5s6-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V2V4V2V4V2",
+        "ratio": "0.3416135225268618775330824",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s2s3-s4s5-s2s3-s4s5-s2s3-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 2,
+        "merges_intra_nucleon": 0,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          1,
+          1
+        ]
+      },
+      {
+        "word": "V2V4V2V4V4",
+        "ratio": "0.185185468329909340190033",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s2s3-s4s5-s2s3-s4s5-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "word": "V2V4V2V5V2",
+        "ratio": "0.2424867905347393625433407",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s2s3-s4s5-s2s3-s5s6-s2s3-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V2V4V4V2V4",
+        "ratio": "0.1821459127153201235973645",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s2s3-s4s5-s4s5-s2s3-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 2,
+        "merges_intra_nucleon": 0,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "word": "V2V4V5V2V2",
+        "ratio": "0.2424867905347393625433407",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 8,
+        "bond_reduced": "s2s3-s4s6-s2s3-s2s3-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V2V5V2V2V4",
+        "ratio": "0.2469108737939449380909771",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s2s3-s5s6-s2s3-s2s3-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V2V5V2V4V2",
+        "ratio": "0.2469094358509813879301136",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s2s3-s5s6-s2s3-s4s5-s2s3-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V2V5V4V2V2",
+        "ratio": "0.2469292698030927753097589",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s2s3-s5s6-s4s5-s2s3-s2s3-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 2,
+        "merges_intra_nucleon": 0,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V4V1V1V1V5",
+        "ratio": "0.2461506717156552731483972",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s4s5-s1s2-s1s2-s1s2-s5s6-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 2,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V4V1V1V5V1",
+        "ratio": "0.2461506717156552731483972",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s4s5-s1s2-s1s2-s5s6-s1s2-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 2,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V4V1V2V4V4",
+        "ratio": "0.2459737771934891561464998",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 8,
+        "bond_reduced": "s4s5-s1s3-s4s5-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 2,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V4V1V2V5V5",
+        "ratio": "0.09780855864310801983638194",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 8,
+        "bond_reduced": "s4s5-s1s3-s5s6-s5s6-",
+        "junction_vertex_only": true,
+        "merges": 4,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 3,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          1,
+          1
+        ]
+      },
+      {
+        "word": "V4V1V4V2V4",
+        "ratio": "0.2491496260492618688077748",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s4s5-s1s2-s4s5-s2s3-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V4V1V5V1V1",
+        "ratio": "0.2461506717156552731483972",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s4s5-s1s2-s5s6-s1s2-s1s2-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 2,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V4V1V5V2V5",
+        "ratio": "0.09780855864310801983638194",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s4s5-s1s2-s5s6-s2s3-s5s6-",
+        "junction_vertex_only": true,
+        "merges": 4,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 3,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          1,
+          1
+        ]
+      },
+      {
+        "word": "V4V1V5V5V2",
+        "ratio": "0.09780855864310801983638194",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s4s5-s1s2-s5s6-s5s6-s2s3-",
+        "junction_vertex_only": true,
+        "merges": 4,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 3,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          1,
+          1
+        ]
+      },
+      {
+        "word": "V4V2V1V4V4",
+        "ratio": "0.2469094358509813879301136",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s4s5-s2s3-s1s2-s4s5-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V4V2V2V2V5",
+        "ratio": "0.2462902356875594148425327",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s4s5-s2s3-s2s3-s2s3-s5s6-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 2,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V4V2V2V4V2",
+        "ratio": "0.3506146903952580479113472",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s4s5-s2s3-s2s3-s4s5-s2s3-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          1,
+          1
+        ]
+      },
+      {
+        "word": "V4V2V2V5V2",
+        "ratio": "0.2462902356875594148425327",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s4s5-s2s3-s2s3-s5s6-s2s3-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 2,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V4V2V4V1V4",
+        "ratio": "0.2469094358509813879301136",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s4s5-s2s3-s4s5-s1s2-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V4V2V4V2V2",
+        "ratio": "0.3474786113566311471118029",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s4s5-s2s3-s4s5-s2s3-s2s3-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          1,
+          1
+        ]
+      },
+      {
+        "word": "V4V2V4V2V4",
+        "ratio": "0.1820809095113455048040955",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s4s5-s2s3-s4s5-s2s3-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 2,
+        "merges_intra_nucleon": 0,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "word": "V4V2V4V4V1",
+        "ratio": "0.2469094358509813879301136",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s4s5-s2s3-s4s5-s4s5-s1s2-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V4V2V4V4V2",
+        "ratio": "0.176151103788097213937793",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s4s5-s2s3-s4s5-s4s5-s2s3-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "word": "V4V2V5V2V2",
+        "ratio": "0.2462902356875594148425327",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s4s5-s2s3-s5s6-s2s3-s2s3-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 2,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V4V4V1V2V4",
+        "ratio": "0.2491496260492618688077748",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 8,
+        "bond_reduced": "s4s5-s4s5-s1s3-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V4V4V2V1V4",
+        "ratio": "0.2469225020979911432809425",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s4s5-s4s5-s2s3-s1s2-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 2,
+        "merges_intra_nucleon": 0,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V4V4V2V4V1",
+        "ratio": "0.2469225020979911432809425",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s4s5-s4s5-s2s3-s4s5-s1s2-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 2,
+        "merges_intra_nucleon": 0,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V4V4V2V4V2",
+        "ratio": "0.1800149176640984327275403",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s4s5-s4s5-s2s3-s4s5-s2s3-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "word": "V4V5V1V1V1",
+        "ratio": "0.2461506717156552731483972",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 8,
+        "bond_reduced": "s4s6-s1s2-s1s2-s1s2-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 2,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V4V5V1V2V5",
+        "ratio": "0.09780855864310801983638194",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 6,
+        "bond_reduced": "s4s6-s1s3-s5s6-",
+        "junction_vertex_only": true,
+        "merges": 4,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 3,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          1,
+          1
+        ]
+      },
+      {
+        "word": "V4V5V1V5V2",
+        "ratio": "0.09780855864310801983638194",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 8,
+        "bond_reduced": "s4s6-s1s2-s5s6-s2s3-",
+        "junction_vertex_only": true,
+        "merges": 4,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 3,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          1,
+          1
+        ]
+      },
+      {
+        "word": "V4V5V2V2V2",
+        "ratio": "0.2462902356875594148425327",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 8,
+        "bond_reduced": "s4s6-s2s3-s2s3-s2s3-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 2,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V4V5V5V1V2",
+        "ratio": "0.09780855864310801983638194",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 6,
+        "bond_reduced": "s4s6-s5s6-s1s3-",
+        "junction_vertex_only": true,
+        "merges": 4,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 3,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          1,
+          1
+        ]
+      },
+      {
+        "word": "V5V1V1V1V4",
+        "ratio": "0.2469101636398738265018507",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s5s6-s1s2-s1s2-s1s2-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V5V1V1V4V1",
+        "ratio": "0.2469101636398738265018507",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s5s6-s1s2-s1s2-s4s5-s1s2-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V5V1V4V1V1",
+        "ratio": "0.2469101636398738265018507",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s5s6-s1s2-s4s5-s1s2-s1s2-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V5V2V2V2V4",
+        "ratio": "0.2469108737939449380909771",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s5s6-s2s3-s2s3-s2s3-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V5V2V2V4V2",
+        "ratio": "0.2469094358509813879301136",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s5s6-s2s3-s2s3-s4s5-s2s3-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V5V2V4V2V2",
+        "ratio": "0.2469292698030927753097589",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s5s6-s2s3-s4s5-s2s3-s2s3-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 2,
+        "merges_intra_nucleon": 0,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V5V4V1V1V1",
+        "ratio": "0.2469101636398738265018507",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s5s6-s4s5-s1s2-s1s2-s1s2-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V5V4V2V2V2",
+        "ratio": "0.2469094358509813879301136",
+        "source": "computed here",
+        "bond_vertices": 5,
+        "bond_crossings_reduced": 10,
+        "bond_reduced": "s5s6-s4s5-s2s3-s2s3-s2s3-",
+        "junction_vertex_only": true,
+        "merges": 2,
+        "merges_inter_nucleon": 1,
+        "merges_intra_nucleon": 1,
+        "linking_neutral": false,
+        "pure": false,
+        "self_writhes": [
+          -1,
+          1
+        ]
+      },
+      {
+        "word": "V1V1V1V4V4V4",
+        "ratio": "0.9969965797917888623990305",
+        "source": "computed here",
+        "bond_vertices": 6,
+        "bond_crossings_reduced": 12,
+        "bond_reduced": "s1s2-s1s2-s1s2-s4s5-s4s5-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 0,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 0,
+        "linking_neutral": true,
+        "pure": true,
+        "self_writhes": []
+      },
+      {
+        "word": "V1V1V1V5V5V5",
+        "ratio": "0.9969965797917888623990305",
+        "source": "computed here",
+        "bond_vertices": 6,
+        "bond_crossings_reduced": 12,
+        "bond_reduced": "s1s2-s1s2-s1s2-s5s6-s5s6-s5s6-",
+        "junction_vertex_only": true,
+        "merges": 0,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 0,
+        "linking_neutral": true,
+        "pure": true,
+        "self_writhes": []
+      },
+      {
+        "word": "V2V2V2V4V4V4",
+        "ratio": "0.9969994473172466484954378",
+        "source": "computed here",
+        "bond_vertices": 6,
+        "bond_crossings_reduced": 12,
+        "bond_reduced": "s2s3-s2s3-s2s3-s4s5-s4s5-s4s5-",
+        "junction_vertex_only": true,
+        "merges": 0,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 0,
+        "linking_neutral": true,
+        "pure": true,
+        "self_writhes": []
+      },
+      {
+        "word": "V2V2V2V5V5V5",
+        "ratio": "0.9969965797917888623990305",
+        "source": "computed here",
+        "bond_vertices": 6,
+        "bond_crossings_reduced": 12,
+        "bond_reduced": "s2s3-s2s3-s2s3-s5s6-s5s6-s5s6-",
+        "junction_vertex_only": true,
+        "merges": 0,
+        "merges_inter_nucleon": 0,
+        "merges_intra_nucleon": 0,
+        "linking_neutral": true,
+        "pure": true,
+        "self_writhes": []
+      }
+    ],
+    "A3_junction_only_n_evaluated": 1244
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "q0 enters through cf.Q (committed y-lambda-at-q0 witness, proton pin)"
+}

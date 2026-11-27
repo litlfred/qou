@@ -10,4 +10,4 @@ $$
 
 See [Table](#tbl:knot-particle-generation-table-data).
 
-One reserves $q$ for the substrate parameter and $p$ for base points. The winding indices are always $(m,n)$.
+One reserves $q$ for the aether parameter and $p$ for base points. The winding indices are always $(m,n)$.

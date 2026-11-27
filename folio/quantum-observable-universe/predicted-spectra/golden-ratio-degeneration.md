@@ -29,7 +29,7 @@ At $q = q_{\mathrm{gold}}$, the constant term $r(q)$ vanishes and the Weierstras
 
 **Origin of the golden ratio.**
 
-The polynomial $s^2 + s - 1$ is the minimal polynomial of $1/\varphi$ over $\mathbb{Q}$. Its appearance in the Weierstrass coefficient is mathematically rigid. The Bring's surface is defined by $\sum x_i = \sum x_i^2 = \sum x_i^3 = 0$ in $\mathbb{CP}^4$. The $S_5$ symmetry of this quintic acts on the Lagrange resolvents through fifth roots of unity $\zeta = e^{2\pi i/5}$. The golden ratio satisfies $\varphi = -2\cos(4\pi/5) = 2\cos(\pi/5)$, directly linking it to the $\zeta$-action on the color tube coordinates. The degeneration at $q = 1/\varphi^2$ occurs exactly when the substrate deformation resonates with the $S_5$ symmetry of Bring's surface.
+The polynomial $s^2 + s - 1$ is the minimal polynomial of $1/\varphi$ over $\mathbb{Q}$. Its appearance in the Weierstrass coefficient is mathematically rigid. The Bring's surface is defined by $\sum x_i = \sum x_i^2 = \sum x_i^3 = 0$ in $\mathbb{CP}^4$. The $S_5$ symmetry of this quintic acts on the Lagrange resolvents through fifth roots of unity $\zeta = e^{2\pi i/5}$. The golden ratio satisfies $\varphi = -2\cos(4\pi/5) = 2\cos(\pi/5)$, directly linking it to the $\zeta$-action on the color tube coordinates. The degeneration at $q = 1/\varphi^2$ occurs exactly when the aether deformation resonates with the $S_5$ symmetry of Bring's surface.
 
 **Physical significance.**
 

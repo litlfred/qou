@@ -22,7 +22,7 @@ $$
 
 For a two-component link, $\tilde\Delta(1)$ is the linking number of the two components. Here $\tilde\Delta_{T(2,2m)}(1) = m = N/2$.
 
-Evaluated at the substrate parameter $t = q$:
+Evaluated at the aether parameter $t = q$:
 
 | Threading | $m$ | $\tilde\Delta(q)$ | $\tilde\Delta(1) = \mathrm{lk}$ |
 |-----------|:---:|-------------|:---:|

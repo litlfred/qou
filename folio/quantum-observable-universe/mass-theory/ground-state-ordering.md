@@ -25,7 +25,7 @@ $$
   \Phi_q(p\,n\,n\,n\,n) < \Phi_q(n\,p\,n\,n\,n)
 $$
 
-*for every $q$ in an interval containing the substrate anchor
+*for every $q$ in an interval containing the aether anchor
 $q_0 \approx 1.10998$ and for every Markov parameter lying strictly
 between the two transfer-matrix eigenvalues, with equality only in the
 undeformed limit $q \to 1$.*

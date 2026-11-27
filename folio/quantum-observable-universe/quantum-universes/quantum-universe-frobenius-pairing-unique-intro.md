@@ -4,6 +4,6 @@ This sub-section proves the pairing unique and exhibits the $\mathrm{SU}(2)$ rea
 
 1. The uniqueness proof for the pairing on $A$.
 2. The explicit $\mathrm{SU}(2)$ pairing realisation.
-3. The geometric role of the pairing in the substrate-flow.
+3. The geometric role of the pairing in the aether-flow.
 4. The canonical $\mathrm{SU}(2)$ explication and table data.
 5. The higher-forms identification.

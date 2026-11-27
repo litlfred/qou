@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be an archimedean quantum observable universe with instanton connection $A$ and substrate parameter $q$. The **$q$-weighted Yang–Mills–Levi functional** is
+Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be an archimedean quantum observable universe with instanton connection $A$ and aether parameter $q$. The **$q$-weighted Yang–Mills–Levi functional** is
 
 $$
   \mathfrak{S}_q[A, \varTheta]

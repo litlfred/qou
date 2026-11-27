@@ -1,16 +1,16 @@
-The bar-odd decay observable, taken here in its $c_3$-level normalization $S(q) = c_3(q) + \mathrm{Vol}(4_1)$ (the same object as the preceding remark's $\mathfrak{Q}_\beta/E_0$ up to the ladder rescaling), is a deterministic function of the substrate modulus: $c_3(q)$ is the ladder extractor $c_3 = (\mathfrak{Q}_\beta / Q_{N2} - 1)/u^3$, where $Q_{N2}$ is the $c_2$-level ladder truncation of $\mathfrak{Q}_\beta$, $u = b\,\hbar_q^2$, and $\mathfrak{Q}_\beta$, $m_e$ are fixed physical constants. Its zero is therefore root-found, not interpolated from anchors:
+The bar-odd decay observable, taken here in its $c_3$-level normalization $S(q) = c_3(q) + \mathrm{Vol}(4_1)$ (the same object as the preceding remark's $\mathfrak{Q}_\beta/E_0$ up to the ladder rescaling), is a deterministic function of the aether modulus: $c_3(q)$ is the ladder extractor $c_3 = (\mathfrak{Q}_\beta / Q_{N2} - 1)/u^3$, where $Q_{N2}$ is the $c_2$-level ladder truncation of $\mathfrak{Q}_\beta$, $u = b\,\hbar_q^2$, and $\mathfrak{Q}_\beta$, $m_e$ are fixed physical constants. Its zero is therefore root-found, not interpolated from anchors:
 
 $$
   q^{*} \approx 1.10997859303152\ldots,
 $$
 
-the point where $c_3 = -\mathrm{Vol}(4_1)$ exactly — the pure bar-even substrate point with vanishing decay projection ($\varepsilon = \mathrm{Im}(q) = 0$ in the reading of the interpreted conjecture's candidate (iii)). It lies $\approx 80.3\%$ of the way from the proton anchor toward the muon anchor under the half-argument phase evaluation; see the parameter-sensitivity note below.
+the point where $c_3 = -\mathrm{Vol}(4_1)$ exactly — the pure bar-even aether point with vanishing decay projection ($\varepsilon = \mathrm{Im}(q) = 0$ in the reading of the interpreted conjecture's candidate (iii)). It lies $\approx 80.3\%$ of the way from the proton anchor toward the muon anchor under the half-argument phase evaluation; see the parameter-sensitivity note below.
 
 $q^{*}$ is independent of both mass-sector pins — it uses neither $m_\mathfrak{p}$ nor $m_\mu$ — but it is **not** an independent *third determination of $q_0$*. Such a claim would be circular: $q^{*}$ is defined above as the root of $S(q) = c_3(q) + \mathrm{Vol}(4_1)$, so locating it presupposes $c_3^{\mathrm{even}} = -\mathrm{Vol}(4_1)$. It is a determination of $q_0$ *conditional on* that hypothesis, which is precisely the hypothesis an independent determination would have to avoid.
 
 The supporting statistics do not rescue it. At $q^{*}$ the muon ratio $m_\mu/m_e$ deviates $\approx 42.7$ ppb from CODATA, versus $\approx 1.4$ ppb at the muon anchor and $\approx 211$ ppb at the proton anchor; and $q^{*}$ is indeed not the statistical reconciliation of the $\mu$–$\mathfrak{p}$ tension (the precision-weighted mean sits $\approx 0.0007\%$ muon-ward, essentially at the proton anchor, which is $\approx 367\times$ more precise, while $q^{*}$ sits $80.3\%$ muon-ward). Both remain true and neither is evidence, because **the $80.3\%$ is a reading of $\mathrm{Vol}(4_1)$'s own value**: every constant $V$ in the window $(-c_3(\mu), -c_3(\mathfrak{p})) = (2.0202,\, 2.0693)$ of width $0.0491$ places a zero between the anchors, and as $V$ sweeps that window the corresponding $q^{*}_V$ sweeps the entire anchor interval. $\mathrm{Vol}(4_1) = 2.0299$ sits $80.30\%$ of the way from the proton end of that window, the same figure. Choosing a different in-window constant relocates $q^{*}$ and would produce a different percentage, equally far from both pins and from their weighted mean.
 
-The $\mu$–$\mathfrak{p}$ substrate tension is therefore **two-way**, holding between the two mass pins alone.
+The $\mu$–$\mathfrak{p}$ aether tension is therefore **two-way**, holding between the two mass pins alone.
 
 **Parameter sensitivity.** The placement of $q^{*}$ *between the anchors* depends
 on the weight $z$ entering the phase $\alpha = (z-1)h/2$ of the $c_3$ extractor. Setting

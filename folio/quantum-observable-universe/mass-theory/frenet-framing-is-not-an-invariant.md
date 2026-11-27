@@ -50,7 +50,7 @@ Even the integer half of Călugăreanu is a property of the *curve*: the Frenet
 framing is a framing of the embedding, discontinuous across an inflection, not
 a framing of the knot type. So no framing datum -- fractional or integral --
 comes from the geometry of the isotopy class alone. Whatever fractional
-framing datum the substrate carries is therefore a property of the algebra
+framing datum the aether carries is therefore a property of the algebra
 (the fractional twist $q^{2c(\lambda)/n}$), or of a canonical *embedding*
 (a Möbius-energy or ropelength minimiser), never of the knot type. That is
 the honest closure of the "missing half" question inside this thread: the
@@ -60,7 +60,7 @@ the curvature floor, and it is not the one the binding gap needs.
 ## Scope
 
 Per component, on one convenient embedding; no canonical embedding is chosen
-and no torsion number is compared with the substrate's hull-exit window,
+and no torsion number is compared with the aether's hull-exit window,
 because the principle says such a comparison has no invariant meaning. That
 the $t = \pi/q$ inflections are the only ones in the family is observed
 (sampled $\kappa_{\min} > 0$ at every listed $r$), not proved; the

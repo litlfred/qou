@@ -1,4 +1,4 @@
-In the brane fluid defined by [substrate parameter](#def:substrate-parameter) $q > 1$ and [Planck--Reynolds number](#rem:planck-reynolds) $\mathrm{Re}_q = 2/(q-1)$, the energy spectrum of a turbulent vortex tangle obeys a $q$-deformed Kolmogorov law.
+In the brane fluid defined by [aether parameter](#def:substrate-parameter) $q > 1$ and [Planck--Reynolds number](#rem:planck-reynolds) $\mathrm{Re}_q = 2/(q-1)$, the energy spectrum of a turbulent vortex tangle obeys a $q$-deformed Kolmogorov law.
 
 1. **$q$-deformed energy spectrum.** Let $E(k)$ denote the energy per unit wavenumber. In the inertial range $1 \ll k \ll k_{\max}$, where $k_{\max}$ denotes the viscous cutoff imposed by $\mathrm{Re}_q$, the spectrum evaluates to
 

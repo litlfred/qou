@@ -1,4 +1,4 @@
-Over $\mathbb{R}$ and $\mathbb{C}$, the substrate parameter $q$ varies smoothly, and the categorical axioms take the form of differential geometry on a contact three-manifold. Every Archimedean quantum observable universe is realized as a $\mathbb{P}^1(\mathbb{C})$-bundle over a strictly pseudoconvex CR base equipped with an $\mathrm{SU}(2)$ frame.
+Over $\mathbb{R}$ and $\mathbb{C}$, the aether parameter $q$ varies smoothly, and the categorical axioms take the form of differential geometry on a contact three-manifold. Every Archimedean quantum observable universe is realized as a $\mathbb{P}^1(\mathbb{C})$-bundle over a strictly pseudoconvex CR base equipped with an $\mathrm{SU}(2)$ frame.
 
 Four explicit geometric constructions illustrate the scope of the Archimedean axioms:
 - *Calabi–Yau hypersurfaces*: a real hypersurface in a K3 surface inherits a strictly pseudoconvex CR structure whose contact data recovers classical instanton moduli.

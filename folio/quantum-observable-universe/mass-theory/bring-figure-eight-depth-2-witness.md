@@ -58,7 +58,7 @@ the paper are consistent with the depth-2 reading:
 - The $\pi$ in $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$ and the
   $\pi$ in the Bring zero-mode $\alpha_{EM}$ correction
   $2g/(4\pi(g-1))|_{g=4} = 2/(3\pi)$ share a single provenance — the
-  unique archimedean shadow of pentagon-coherent substrate data on
+  unique archimedean shadow of pentagon-coherent aether data on
   Bring's surface (cf.
   [Figure-8 knot $4_1$ as illustration of the algebraic / archimedean dichotomy](#rem:figure-8-archimedean-illustration)).
 - Both factor through the Bloch–Wigner dilogarithm at a Bring shape

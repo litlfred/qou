@@ -1,10 +1,10 @@
-Let $\mathfrak{O}$ be an observation with positive substrate perturbation $\delta q > 0$. The quantum Planck constant $\hbar_q = 1 - q^{-1}$ satisfies
+Let $\mathfrak{O}$ be an observation with positive aether perturbation $\delta q > 0$. The quantum Planck constant $\hbar_q = 1 - q^{-1}$ satisfies
 
 $$
   \hbar_{q + \delta q} - \hbar_q =  \frac{\delta q}{q(q + \delta q)} >  0.
 $$
 
-Every observation with positive substrate perturbation strictly increases the quantum energy of the system.
+Every observation with positive aether perturbation strictly increases the quantum energy of the system.
 
 The categorical action evaluated at the perturbed parameter $q' = q + \delta q$ satisfies
 

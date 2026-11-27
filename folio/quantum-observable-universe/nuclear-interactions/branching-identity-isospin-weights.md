@@ -72,9 +72,9 @@ about the tower, and it is developed with the algebra rather than with the physi
 that consumes it.
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the
-substrate wall: it invokes real- or complex-analytic constructs --- real-valued
+algebraic→archimedean wall: it invokes real- or complex-analytic constructs --- real-valued
 physical observables, real-analytic bounds, transcendental constants, or numerical
-evaluation at the substrate parameter $q_0$. Any generic categorical or
+evaluation at the aether parameter $q_0$. Any generic categorical or
 $q$-deformation identities it draws on remain valid over an abstract coefficient ring;
 only their archimedean realisation is specialised here. At $q_0$ the three
 descriptions of the singlet weight agree to every digit carried:

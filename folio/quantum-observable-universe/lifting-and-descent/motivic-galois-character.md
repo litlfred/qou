@@ -1,4 +1,4 @@
-Let $A$ be the Frobenius–Hopf substrate of a quantum observable universe, and let $[A] \in \widehat{\mathcal{M}}$ be its motivic class ([motivic substrate](#def:motivic-substrate)). The **motivic Galois character of $A$** is the homomorphism
+Let $A$ be the Frobenius–Hopf aether of a quantum observable universe, and let $[A] \in \widehat{\mathcal{M}}$ be its motivic class ([motivic base ring](#def:motivic-substrate)). The **motivic Galois character of $A$** is the homomorphism
 $$
   \chi^{\mathrm{mot}}_A
   \;\colon\;

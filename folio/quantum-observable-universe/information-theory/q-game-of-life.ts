@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:q-game-of-life",
   title:
-    "The quantum Game of Life (q-GoL) as a Toffoli-defined substrate automaton",
+    "The quantum Game of Life (q-GoL) as a Toffoli-defined aether automaton",
   tags: [
     "q-GoL",
     "toffoli",

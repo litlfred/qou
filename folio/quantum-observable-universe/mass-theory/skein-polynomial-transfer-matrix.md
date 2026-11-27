@@ -1,4 +1,4 @@
-The substrate parameter $q$ acts as the variable of the nuclear Skein polynomial. The transfer matrix product computes this polynomial in factored form without expansion.
+The aether parameter $q$ acts as the variable of the nuclear Skein polynomial. The transfer matrix product computes this polynomial in factored form without expansion.
 
 *Let $\mathcal{N}(Z, N)$ be a nucleus with $A = Z + N$ nucleons.
 The Markov trace
@@ -31,4 +31,4 @@ multiplications — one per nucleon pair.*
 
 The denominator $q^2 + 1$ of $z(q) = q^3/(q^2+1)$ does not cancel in general: for a single $\mathfrak{p}$-$\mathfrak{p}$ crossing, $\hat{V}_0 = zh + 1 = (q^4+1)/(q^2+1)$.
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the algebraic→archimedean wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the aether parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

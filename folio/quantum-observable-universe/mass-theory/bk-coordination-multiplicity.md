@@ -27,7 +27,7 @@ close to the super-exponential Schur–Weyl period
 $a_D^{(4)} = \sum_{\lambda \vdash 4} \dim_q \lambda / 4 = 2.5328$.
 
 That period is **derived**, not read off the data: it is a $q$-dimension sum at the
-substrate $q_0$ with no calibration and no free parameter, and its $q = 1$ limit is the
+aether $q_0$ with no calibration and no free parameter, and its $q = 1$ limit is the
 exact rational $I(4)/4 = 5/2$ with $I$ the involution numbers. The law
 $M(A) = z(A)\,a_D^{(A)}$ is therefore fixed a priori and can be tested on every point.
 Tested, it **fails**: it over-shoots ${}^3\mathrm{H}$ by $33.5\%$ and ${}^3\mathrm{He}$

@@ -1,4 +1,4 @@
-The categorical interpretation: $q = 1 + \sqrt{2}$ is the **trace degeneracy point** — the substrate value at which proton and neutron are categorically indistinguishable. The null at $h = 2$ is the unique value where the bar-anti-symmetric kernel vanishes inside the empirical kinematic window.
+The categorical interpretation: $q = 1 + \sqrt{2}$ is the **trace degeneracy point** — the aether value at which proton and neutron are categorically indistinguishable. The null at $h = 2$ is the unique value where the bar-anti-symmetric kernel vanishes inside the empirical kinematic window.
 
 ## Silver-mean self-similarity
 

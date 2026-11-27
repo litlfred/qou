@@ -1,6 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Linarith
 
 
 /-!
@@ -57,23 +58,20 @@ noncomputable def neutron_mass (q : ℝ) : ℝ :=
   let skein_asymmetry := (1 / 2) * (q - q⁻¹)  -- crossing energy asymmetry
   vol_borromean / hbar_q ^ 2 + skein_asymmetry
 
-/- The neutron mass derived from the substrate parameter q₀.
-    At the CODATA value q₀, the Borromean volume formula plus
-    the Skein asymmetry correction yields m_𝔫(q₀) ≈ 939.565 MeV.
-    Ref: [leitner2026] Ch. 5, §Categorical neutron -/
-/-- **External axiom (§3b-cond pattern): neutron_mass_from_substrate.**
+/-- **What `neutron_mass` evaluates to at `q₀`.** A pure arithmetic fact
+    about the formula above: `Vol(𝓑₃)/ℏ_q² + (q − q⁻¹)/2 ≈ 746.50` at the `q₀`
+    of this file. No experimental value enters. A former axiom asserting
+    `|neutron_mass q₀ - 939.565| < 1` was false (this lemma contradicts it) and
+    was deleted, matching the deletion of the proton twin on 2026-11-23. -/
+theorem neutron_mass_q₀_bounds : 746 < neutron_mass q₀ ∧ neutron_mass q₀ < 747 := by
+  unfold neutron_mass q₀
+  norm_num
 
-    Auto-extracted from the single-sorry theorem body in this file.
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
-
-    See the theorem docstring below for the cited reference. -/
-axiom neutron_mass_from_substrate_axiom  :
-    |neutron_mass q₀ - 939.565| < 1
-
-theorem neutron_mass_from_substrate :
-    |neutron_mass q₀ - 939.565| < 1 :=
-  neutron_mass_from_substrate_axiom
+/-- The former axiom is refuted: the bare Borromean carrier is not the neutron. -/
+theorem not_neutron_mass_near_939 : ¬ (|neutron_mass q₀ - 939.565| < 1) := by
+  intro h
+  have := (abs_lt.mp h).1
+  linarith [neutron_mass_q₀_bounds.2]
 
 /-- The proton-neutron mass splitting is a pure function of q.
     Δm = S_dd(q) - S_uu(q) ≈ 1.293 MeV at q₀. -/

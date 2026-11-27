@@ -24,7 +24,7 @@ $$
   \cdot \sqrt{\rho}\Bigr).
 $$
 
-Here $c_q = 1/(q-1)$ identifies the substrate [speed of light](#def:substrate-parameter). The trailing term supplies the quantum correction. At low density ($\rho \to 0$), the quantum pressure diverges, sending $c_s \to \infty$. At high density, the quantum correction collapses, leaving $c_s \to c_q$.
+Here $c_q = 1/(q-1)$ identifies the aether [speed of light](#def:substrate-parameter). The trailing term supplies the quantum correction. At low density ($\rho \to 0$), the quantum pressure diverges, sending $c_s \to \infty$. At high density, the quantum correction collapses, leaving $c_s \to c_q$.
 
 *Horizon formation conditions.* An acoustic horizon forms exactly on a surface $\Sigma$ satisfying $|v| = c_s$. Three structural conditions must hold simultaneously:
 
@@ -32,4 +32,4 @@ Here $c_q = 1/(q-1)$ identifies the substrate [speed of light](#def:substrate-pa
 2. **Non-degeneracy.** The gradient of the Mach number must remain non-zero across $\Sigma$: $\nabla(\mathcal{M}^2)|_\Sigma \neq 0$. This ensures the horizon forms a smooth hypersurface rather than collapsing into a degenerate critical point.
 3. **Energy condition.** The effective energy density $T_{00} = \frac{1}{2}\rho(|v|^2 + c_s^2) + Q_q\rho$ must obey the null energy condition $T_{\mu\nu}k^\mu k^\nu \geq 0$ evaluated over all null vectors $k^\mu$ mapped by $g_{\mathrm{ac}}$. The inequalities $\rho > 0$ and $Q_q \geq 0$ automatically guarantee this.
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the algebraic→archimedean wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the aether parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

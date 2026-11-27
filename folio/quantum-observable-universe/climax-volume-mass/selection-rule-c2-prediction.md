@@ -34,7 +34,7 @@ This constitutes a pure polynomial-ring identity over $\mathbb{R}_{>0}$ once the
 
 ## q-usage discipline
 
-This holds over real $q > 0$ (substrate-anchor regime). The closed form $(q+1)^2/(3q)$ is a Laurent rational in $\mathbb{Z}[q, q^{-1}]$ — a fibre-level construction. At $q = q_0$, it evaluates to $\approx 1.337$. There is no $|q|=1$ step; both $q$ and $q^{-1}$ are real positive at any real $q > 0$.
+This holds over real $q > 0$ (aether-anchor regime). The closed form $(q+1)^2/(3q)$ is a Laurent rational in $\mathbb{Z}[q, q^{-1}]$ — a fibre-level construction. At $q = q_0$, it evaluates to $\approx 1.337$. There is no $|q|=1$ step; both $q$ and $q^{-1}$ are real positive at any real $q > 0$.
 
 ## Cross-references
 

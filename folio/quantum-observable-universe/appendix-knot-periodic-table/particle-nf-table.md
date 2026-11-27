@@ -8,7 +8,7 @@ view:
 Every fundamental particle in the knot--particle dictionary
 ([Knot--particle dictionary](#rem:knot-particle-dictionary))
 has a unique Gröbner normal form in the Iwahori--Hecke algebra
-$H_3(q)$ evaluated at the substrate parameter $q = q_0^{(p)} \approx 1.109978582751381$ (proton-ratio pin; muon-ratio comparison pin $q_0^{(\mu)} \approx 1.109978595642739$).
+$H_3(q)$ evaluated at the aether parameter $q = q_0^{(p)} \approx 1.109978582751381$ (proton-ratio pin; muon-ratio comparison pin $q_0^{(\mu)} \approx 1.109978595642739$).
 
 The **basis** of $H_3(q)$ in normal form is
 $\{\ \mathbf{1},\ \sigma_0,\ \sigma_1,\ \sigma_0\sigma_1,\

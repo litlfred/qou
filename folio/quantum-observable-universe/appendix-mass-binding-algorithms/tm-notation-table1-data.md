@@ -1,6 +1,6 @@
 | Symbol | Name | Definition |
 |--------|------|------------|
-| $q$ | Substrate parameter | A real number $q > 1$ (the single free parameter of the theory) |
+| $q$ | Aether parameter | A real number $q > 1$ (the single free parameter of the theory) |
 | $s$ | Skein amplitude | $s = q^{1/2} - q^{-1/2}$ |
 | $z$ | Markov parameter | $z(q) = \dfrac{q^3}{q^2+1} = \dfrac{q^2}{[2]_q}$, satisfying $\mathrm{tr}_M(e_i) = q - z(q) = 1/[2]_q$ on the Temperley--Lieb generator $e_i = q - \sigma_i$ |
 | $\sigma_i$ | Braid / Hecke generator | Generator of the braid group $B_n$ and its image in $H_n(q)$ (same symbol); in the latter satisfies the Hecke relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ |

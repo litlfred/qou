@@ -16,4 +16,4 @@ $$
   \int_M \bar\psi D\!\!\!\!/\psi\mathrm{dvol},
 $$
 
-the Einstein–Hilbert + Yang–Mills + Dirac action, with $q \to 1$. The coupling constants $G$, $g$ emerge from the normalization of the Frobenius form $\int_A$ and the substrate parameter $q$ respectively. They are not free parameters of the categorical theory. They are determined by the choice of archimedean realization.
+the Einstein–Hilbert + Yang–Mills + Dirac action, with $q \to 1$. The coupling constants $G$, $g$ emerge from the normalization of the Frobenius form $\int_A$ and the aether parameter $q$ respectively. They are not free parameters of the categorical theory. They are determined by the choice of archimedean realization.

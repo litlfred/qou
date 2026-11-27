@@ -100,7 +100,7 @@ $$
    Flipping all $3$ positive crossings of the electron braid $\sigma_0\sigma_1\sigma_0 \in B_3$ (closing to the positive Hopf link $T(2,2)$ with linking number $+1$, or $T_{2,3}$ in the single-component alternative) into its negative-crossing mirror $(\sigma_0\sigma_1\sigma_0)^{-1}$ (closing to the negative Hopf link, or $T_{2,3}^{\sigma}$) would require passing through a singular unlinking transition. In the observable sector ($q$ real, $\theta = 0$), no smooth ambient isotopy accomplishes this: the positive and negative closures lie in distinct oriented isotopy classes.
 
 3. **Complex-$q$ rotation (pre-observable).**  In the
-   [complex substrate](#rem:complex-substrate-interpretation)
+   [complex aether](#rem:complex-substrate-interpretation)
    framework, the chirality operator
    $\mathcal{X}_\varphi \colon \theta \to \theta + \varphi$ rotates
    continuously from electron to positron.  This has **zero energy

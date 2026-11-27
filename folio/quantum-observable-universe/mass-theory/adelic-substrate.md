@@ -1,4 +1,4 @@
-*The **adelic substrate** of the QOU framework is the ring of adeles of $\mathbb{Q}$,*
+*The **adelic base ring** of the QOU framework is the ring of adeles of $\mathbb{Q}$,*
 
 $$
   \mathbb{A}

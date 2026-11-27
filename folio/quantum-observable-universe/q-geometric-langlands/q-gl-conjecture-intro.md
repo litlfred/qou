@@ -8,14 +8,14 @@ but the next section makes it concrete by instantiating the
 correspondence as $q$-opers.
 
 The section opens with the Definition: $q$-Langlands dual group, the deformation
-of the classical dual that carries the substrate parameter on the
+of the classical dual that carries the aether parameter on the
 spectral side. The Conjecture: $q$-Geometric Langlands correspondence
 then states the equivalence itself — between $q$-$\mathcal{D}$-modules
 on $\mathrm{Bun}_{G_q}$ and quasi-coherent sheaves on
 $\mathrm{LocSys}_{\check{G}_q}$, well-defined on the non-torsion locus.
 The Proposition: Obstruction to $q$-flatness and its proof calibrate
 the conjecture: they compute the Yekutieli obstruction classes and
-exhibit them as the precise substrate-theoretic measure of the failure
+exhibit them as the precise aether-theoretic measure of the failure
 of $d_q^2 = 0$.
 
 The section closes with two structural conjectures organised by this

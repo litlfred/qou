@@ -1,4 +1,4 @@
-**Archimedean specialisation.** Evaluated at the proton-ratio substrate pin $q_0^{(p)}$ ($95$ working decimal digits, serialized at $80$ decimal digits) with exact Fréchet--Jacobian propagation from $(m_e, \mathfrak{D}_\beta, m_{\pi^\pm})$ and bracketed muon-anchor shift $[\Delta_{\mu\text{-pin}} = O(q_0^{(\mu)}) - O(q_0^{(p)})]$.
+**Archimedean specialisation.** Evaluated at the proton-ratio aether pin $q_0^{(p)}$ ($95$ working decimal digits, serialized at $80$ decimal digits) with exact Fréchet--Jacobian propagation from $(m_e, \mathfrak{D}_\beta, m_{\pi^\pm})$ and bracketed muon-anchor shift $[\Delta_{\mu\text{-pin}} = O(q_0^{(\mu)}) - O(q_0^{(p)})]$.
 
 | 1. Species / Observable & Layer | 2. Canonical Braid / Motif Normal Form | 3. Symbolic Formula & Epistemic Tier | 4. Predicted $O_{\mathrm{pred}} \pm \sigma_{\mathrm{pred}}$ ($[\Delta_{\mu\text{-pin}}]$) | 5. Experimental $O_{\mathrm{exp}} \pm \sigma_{\mathrm{exp}}$ (Source) | 6. Residual $\Delta$, Rel. Miss, Pulls $(\Delta/\sigma_{\mathrm{exp}},\; z_{\mathrm{comb}})$ |
 |---|---|---|---|---|---|

@@ -10,7 +10,7 @@ The contrast with the q-Plancherel-measure trace closed form is strict. The q-Pl
 
 ## Evaluation at $q_0$ and the comparison with measurement
 
-Substituting $h = q - q^{-1}$ and $z = q^{3}/(q^{2}+1)$ into the closed form and evaluating at the substrate parameter $q_0$ gives
+Substituting $h = q - q^{-1}$ and $z = q^{3}/(q^{2}+1)$ into the closed form and evaluating at the aether parameter $q_0$ gives
 
 $$
   \mathrm{tr}_M(\sigma_1^7 \sigma_2^4)(q_0) \;\approx\; 1.884319\,467.

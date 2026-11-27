@@ -120,7 +120,7 @@ $\beta_{\mathrm{clasp}}(n_1, n_2) = \sigma_1^{n_1}\sigma_2^{-n_2}\sigma_1\sigma_
 gives $\mathrm{SL}_2(\mathbb{Z})$ monodromy determinant $1$ and trace
 $2 n_1 n_2 + n_1 + n_2 + 3 \in \{27, 41, 55, 63, 85, 115\} > 2$
 (strictly pseudo-Anosov across all nine generation pairs, while the
-real-substrate $S^{(2,1)}$ trace at $q_0$ stays inside $(-0.760, -0.291)$
+real-aether $S^{(2,1)}$ trace at $q_0$ stays inside $(-0.760, -0.291)$
 near its $q = 1$ value $-1$).  Although the $2 \times 2$ $S^{(2,1)}$
 trace is symmetric under $n_1 \leftrightarrow n_2$, both the rank-$2$
 ($z_2$) and rank-$3$ ($z_3$) full $H_3(q)$ Markov traces separate

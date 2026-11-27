@@ -6,7 +6,7 @@ export default proposition({
   ],
   label: "prop:bar-t-duality-substrate",
   title:
-    "Substrate-level bar T-duality: $\\mathcal{E}_q \\leftrightarrow \\mathcal{E}_{1/q}$",
+    "Aether-level bar T-duality: $\\mathcal{E}_q \\leftrightarrow \\mathcal{E}_{1/q}$",
   tags: [
     "t-duality",
     "bar-involution",

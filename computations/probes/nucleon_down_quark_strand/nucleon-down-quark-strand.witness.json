@@ -1,0 +1,266 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-27T19:31:35.263159+00:00",
+  "commitSha": "a1c18778afd5b8537bfc49e21999ff9914a5f7af",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 288,
+  "computation": "nucleon-down-quark-strand",
+  "scriptFile": "nucleon_down_quark_strand_probe.py",
+  "scriptHash": "7cb407f9534a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/nucleon_down_quark_strand/nucleon_down_quark_strand_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/nucleon_down_quark_strand/nucleon_down_quark_strand_probe.py"
+  },
+  "description": "What γγ production says about the up and down strands, full tower (n = 3..6), and the enumerated down-strand candidates (same object / through-parity / Markov curl) with the Gibbs split at the proton q0 for both E0. No candidate selected by CODATA (QOU.Nuclear.NucleonDownQuarkStrand).",
+  "data": {
+    "lean_module": "QOU.Nuclear.NucleonDownQuarkStrand",
+    "beans_referenced": [
+      "qou-myts",
+      "qou-99qc",
+      "qou-ales"
+    ],
+    "gg_full_tower": {
+      "n3": {
+        "max_vertices": 6,
+        "gg_words": 6,
+        "pure": 2,
+        "pure_strand_count_patterns": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "pure_with_opposite_orientation_strands": []
+      },
+      "n4": {
+        "max_vertices": 4,
+        "gg_words": 30,
+        "pure": 4,
+        "pure_strand_count_patterns": [
+          [
+            -2,
+            -2,
+            2,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pure_with_opposite_orientation_strands": [
+          {
+            "vertices": [
+              0,
+              1,
+              0,
+              1
+            ],
+            "strand_signed_count": [
+              2,
+              2,
+              -2,
+              -2
+            ],
+            "linking": {
+              "01": 1,
+              "02": 0,
+              "23": -1,
+              "13": 0
+            }
+          },
+          {
+            "vertices": [
+              1,
+              0,
+              1,
+              0
+            ],
+            "strand_signed_count": [
+              2,
+              -2,
+              2,
+              -2
+            ],
+            "linking": {
+              "12": 0,
+              "13": -1,
+              "02": 1,
+              "03": 0
+            }
+          }
+        ]
+      },
+      "n5": {
+        "max_vertices": 4,
+        "gg_words": 120,
+        "pure": 7,
+        "pure_strand_count_patterns": [
+          [
+            -2,
+            -2,
+            0,
+            2,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pure_with_opposite_orientation_strands": [
+          {
+            "vertices": [
+              0,
+              1,
+              0,
+              1
+            ],
+            "strand_signed_count": [
+              2,
+              2,
+              -2,
+              -2,
+              0
+            ],
+            "linking": {
+              "01": 1,
+              "02": 0,
+              "23": -1,
+              "13": 0
+            }
+          },
+          {
+            "vertices": [
+              1,
+              0,
+              1,
+              0
+            ],
+            "strand_signed_count": [
+              2,
+              -2,
+              2,
+              -2,
+              0
+            ],
+            "linking": {
+              "12": 0,
+              "13": -1,
+              "02": 1,
+              "03": 0
+            }
+          },
+          {
+            "vertices": [
+              1,
+              2,
+              1,
+              2
+            ],
+            "strand_signed_count": [
+              0,
+              2,
+              2,
+              -2,
+              -2
+            ],
+            "linking": {
+              "12": 1,
+              "13": 0,
+              "34": -1,
+              "24": 0
+            }
+          }
+        ]
+      },
+      "n6": {
+        "max_vertices": 3,
+        "gg_words": 84,
+        "pure": 4,
+        "pure_strand_count_patterns": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pure_with_opposite_orientation_strands": []
+      }
+    },
+    "one_dim_chars_trivial_on_gg": true,
+    "exact_checks": {
+      "zbarD_eq_1_over_q_q2p1": true,
+      "zD_eq_q4_zbarD": true,
+      "bar_swaps_zD_zbarD": true,
+      "vertex_curls_bar_even": true,
+      "ptrK_R_eq_zD": true,
+      "ptrK_Rinv_eq_zbarD": true
+    },
+    "anchor": {
+      "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+      "E0_order_zero": "4.18598136329447589694506215875900841014348689087960498278367",
+      "E0_tower": "4.22748335562903055026805602658721115361518419806561475207637",
+      "zD": "0.612688037146465251595829863945899248026308391545064759724287",
+      "zbarD": "0.403627738350825936164983650816224304166550896282040204342591"
+    },
+    "candidates": {
+      "C0_same_object|E0_order_zero": {
+        "MeV": "0.0",
+        "ratio_to_codata_comparison_only": "0.0"
+      },
+      "C0_same_object|E0_tower": {
+        "MeV": "0.0",
+        "ratio_to_codata_comparison_only": "0.0"
+      },
+      "CT_through_parity_q_over_qinv|E0_order_zero": {
+        "MeV": "0.873536621380459821746434074984571553678259416295994588435349",
+        "ratio_to_codata_comparison_only": "0.675415343406514865806964115503886586503774977632004772257174"
+      },
+      "CT_through_parity_q_over_qinv|E0_tower": {
+        "MeV": "0.882197316930225041262327987588075186486589880651820588341200",
+        "ratio_to_codata_comparison_only": "0.682111761754310994055448267969445217523055908222565740917778"
+      },
+      "CM_markov_curl_zD_over_zbarD|E0_order_zero": {
+        "MeV": "1.74707324276091964349286814996914310735651883259198917687070",
+        "ratio_to_codata_comparison_only": "1.35083068681302973161392823100777317300754995526400954451435"
+      },
+      "CM_markov_curl_zD_over_zbarD|E0_tower": {
+        "MeV": "1.76439463386045008252465597517615037297317976130364117668240",
+        "ratio_to_codata_comparison_only": "1.36422352350862198811089653593889043504611181644513148183556"
+      }
+    },
+    "codata_comparison_only": {
+      "dm_np_MeV": "1.29333251000000000000000000000000000000000000000000000000000"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

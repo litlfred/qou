@@ -14,7 +14,7 @@ $$
   \mathrm{tr}_M(\Delta) = \frac{h^2}{2} - h\,z.
 $$
 
-On $\Delta$ the coordinate sum agrees with the Markov trace at the trivial loop value $z = 1$, and the trivial-loop value is never attained on the substrate, so the two are genuinely distinct functionals there.
+On $\Delta$ the coordinate sum agrees with the Markov trace at the trivial loop value $z = 1$, and the trivial-loop value is never attained on the aether, so the two are genuinely distinct functionals there.
 
 **That agreement is a property of $\Delta$, not an identity.** The Markov trace at $z = 1$ weights the standard basis as $[1,1,1,1,1,h+1]$, while the coordinate sum weights it as $[1,1,1,1,1,1]$, so
 $$

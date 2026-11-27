@@ -76,7 +76,7 @@ above, which requires $\Delta L = 0$ under Markov moves
 
 *The minimal-level ruling.* The escape from the first refutation was that
 states are Gröbner--Shirshov normal forms, with the observable evaluated at the
-lowest level of the substrate tower. That closes the escape rather than opening
+lowest level of the aether tower. That closes the escape rather than opening
 it. The table above assigns $\nu_e = K_{0_1} = T_{2,1}$, the **unknot**, whose
 braid index is $1$: its minimal-level normal form is the *empty* word, and so is
 its mirror's. At the level where the framework says observables live, $\nu_e$

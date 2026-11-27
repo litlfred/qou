@@ -1,4 +1,4 @@
-Let $P \colon \mathbb{R}_{>0} \to \mathrm{Prop}$ be a bar-invariant property of the substrate parameter:
+Let $P \colon \mathbb{R}_{>0} \to \mathrm{Prop}$ be a bar-invariant property of the aether parameter:
 
 $$
   \forall\,q > 0,\quad P(q) \iff P(q^{-1}).
@@ -22,4 +22,4 @@ For every $a > 0$:
     \bigl(\exists q > a^{-1},\, \neg P(q)\bigr)$.
 
 **Archimedean specialisation.**
-What follows sits on the archimedean side of the substrate wall. It invokes analytic constructs: real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at $q_0$. Categorical or $q$-deformation identities remain valid over an abstract coefficient ring. Only their archimedean realisation requires specialisation here.
+What follows sits on the archimedean side of the algebraic→archimedean wall. It invokes analytic constructs: real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at $q_0$. Categorical or $q$-deformation identities remain valid over an abstract coefficient ring. Only their archimedean realisation requires specialisation here.

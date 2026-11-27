@@ -1,5 +1,5 @@
 import MathlibExt.PhiQPiece -- expects sibling phi-q-piece.lean to be in scope
-import BraidKnotOctonion.FigureEightVolumeLiterature
+import QOU.Transcendental.BraidKnotOctonion.FigureEightVolumeLiterature
 import BraidKnotOctonion.BorromeanVolume
 
 /-!

@@ -1,4 +1,4 @@
-Step 5 proves the identity: dividing (4) by 3 gives it, and it holds for every nonzero $q$. Steps 1 to 4 and 6 show how its two sides arise as the substrate formula for $(m_n - m_p)/M_N$, under the pair-Skein formula and the ansatz of Step 2. Those steps are not needed for the identity.
+Step 5 proves the identity: dividing (4) by 3 gives it, and it holds for every nonzero $q$. Steps 1 to 4 and 6 show how its two sides arise as the aether formula for $(m_n - m_p)/M_N$, under the pair-Skein formula and the ansatz of Step 2. Those steps are not needed for the identity.
 
 *Step 1 (Pair-Skein difference, exact).*
 
@@ -21,9 +21,9 @@ $$
   \frac{\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}}{\mu_{\text{avg}}}. \tag{1}
 $$
 
-*Step 2 (Substrate ansatz for the per-quark split).*
+*Step 2 (Aether ansatz for the per-quark split).*
 
-The substrate prescription for $(\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}})/\mu_{\text{avg}}$ is:
+The aether prescription for $(\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}})/\mu_{\text{avg}}$ is:
 
 $$
   \frac{\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}}{\mu_{\text{avg}}}
@@ -35,7 +35,7 @@ $$
   \hbar_q = \frac{q - 1}{q}. \tag{2}
 $$
 
-This is the minimal substrate-atom combination satisfying three conditions:
+This is the minimal aether-atom combination satisfying three conditions:
 (a) Bar-involution antisymmetry under $q \mapsto q^{-1}$ (consistent with the antisymmetry of the splitting under flavor exchange $\mathfrak{u} \leftrightarrow \mathfrak{d}$).
 (b) Leading order $(q-1)^3$ at the classical limit.
 (c) Numerical agreement to $-0.13\%$ at the proton-anchored $q = q_0$.

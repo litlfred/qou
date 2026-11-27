@@ -31,5 +31,5 @@ inner product $\langle [a], [b] \rangle = \tau(a^* b)$ is unchanged by
 the weak equivalence because $\tau$ is invariant.  The cyclic vector
 $\Omega = [1]$ generates the same representation regardless of the brane
 level at which it is evaluated, so the physical states (vectors in
-$\mathcal{H}_\tau$) are insensitive to the substrate parameter
+$\mathcal{H}_\tau$) are insensitive to the aether parameter
 fluctuations across the tower.

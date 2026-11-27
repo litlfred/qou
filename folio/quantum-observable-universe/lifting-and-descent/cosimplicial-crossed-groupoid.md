@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with recursive brane tower $\{A_n\}_{n \geq 0}$ ([recursive brane tower](#def:recursive-brane-tower)) and substrate parameter $q$. Equipped with the Yekutieli triples $(x^{(n)}, g^{(n)}, a^{(n)})$ ([Yekutieli triple](#def:yekutieli-triple)), the assignment
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with recursive brane tower $\{A_n\}_{n \geq 0}$ ([recursive brane tower](#def:recursive-brane-tower)) and aether parameter $q$. Equipped with the Yekutieli triples $(x^{(n)}, g^{(n)}, a^{(n)})$ ([Yekutieli triple](#def:yekutieli-triple)), the assignment
 
 $$
   [n]  \longmapsto  \mathfrak{G}_n

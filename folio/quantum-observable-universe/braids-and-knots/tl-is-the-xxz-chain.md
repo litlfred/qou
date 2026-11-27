@@ -20,12 +20,12 @@ Three follow without further input.
 
 **The chain is gapped.** Since $\Delta > 1$ for every real $q \neq 1$, the chain sits in the massive regime. Bound states of several down spins --- Bethe strings --- are stable there, whereas in the massless regime they are not.
 
-**The gap is small.** The relevant elliptic scale is $\exp\bigl(-\pi^2 / 2\log q\bigr)$, which at the substrate is of order $10^{-21}$. The chain is therefore only marginally inside the massive phase, and any statement about its spectrum that is not uniform in $\Delta - 1$ should be treated as delicate.
+**The gap is small.** The relevant elliptic scale is $\exp\bigl(-\pi^2 / 2\log q\bigr)$, which at the aether is of order $10^{-21}$. The chain is therefore only marginally inside the massive phase, and any statement about its spectrum that is not uniform in $\Delta - 1$ should be treated as delicate.
 
 **Bound states in one dimension need not be pairwise.** In the exactly soluble attractive case, an $n$-particle string binds as $n(n^2-1)$ rather than as the $\binom{n}{2}$ of a pairwise sum, an enhancement of $(n+1)/3$ over pairwise additivity. This is the shape of object the many-body binding term elsewhere in the framework is missing, and it is available here in closed form.
 
 ## Scope
 
-The matrix identity above is verified numerically at both documented substrate anchors, to the precision of the computation, and is not proved; what is proved are the scalar identities on which it rests, not the assembly.
+The matrix identity above is verified numerically at both documented aether anchors, to the precision of the computation, and is not proved; what is proved are the scalar identities on which it rests, not the assembly.
 
 Nothing here identifies the sites of the chain with any physical object. The claim is about the algebra the trace computes in, not about what it is a chain *of*.

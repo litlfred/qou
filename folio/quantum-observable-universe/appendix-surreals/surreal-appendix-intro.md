@@ -85,5 +85,5 @@ Section 2 lists the analytic obstructions; Section 3 shows what
 survives of calculus up to infinitesimals. Sections 4--5 construct
 the birthday and sign-sequence gradings and the standard-part
 functor. Section 6 relaxes the strict QOU axioms. Section 7 gives
-two speculative reformulations: the substrate as a Hahn series,
+two speculative reformulations: the aether as a Hahn series,
 and Kashaev's conjecture as a standard-part identity.

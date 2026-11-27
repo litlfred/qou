@@ -13,7 +13,7 @@ $$
 
 whose $r = 2$ member is $z_2 = q^3/(q^2+1)$ — the canonical trace parameter the
 framework actually runs on — and whose $r = 5$ member is
-$z_5 \approx 0.32275$ at the substrate anchor.  The Schur–Weyl row cap at level
+$z_5 \approx 0.32275$ at the aether anchor.  The Schur–Weyl row cap at level
 $r$ is $\ell(\lambda) \le r$, so each level fixes an admissible row count: the
 framework sits at $r = 2$, the flavour fundamental would need $r = 3$, and
 $\mathrm{SU}(5)$ is $r = 5$.

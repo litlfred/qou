@@ -1,4 +1,4 @@
-The **gravitational constant** at substrate parameter $q$ is
+The **gravitational constant** at aether parameter $q$ is
 
 $$
   G_q := \frac{c_q^3 \cdot \hbar_q}{S_{\mathrm{cell}}(q)}

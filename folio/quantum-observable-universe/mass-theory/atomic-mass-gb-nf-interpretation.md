@@ -117,7 +117,7 @@ The three forms encode the same physical mass $\mathfrak{m}(K)$
 parameterised by different calibration data:
 
 * **(constituent)** anchors at the nucleon level but evaluates the exact constituent masses through the **muon-anchored Hecke energy** $m_{\mathfrak{p}} = 2(m_\mu F_{\mathrm{Bor}} - 6m_e)$, rendering CODATA fits unnecessary. Sub-percent for $Z = 1$..$20$.
-* **(muon-anchored)** is the definitive structural mass form. It computes the mass ratio without any phenomenological proton calibration or empirical spectral parameter tuning, resolving the atomic mass ratio strictly from the topological substrate; the MeV figure follows from the $m_e$ scale and is a rendering, not an absolute-mass claim.
+* **(muon-anchored)** is the definitive structural mass form. It computes the mass ratio without any phenomenological proton calibration or empirical spectral parameter tuning, resolving the atomic mass ratio strictly from the topological aether; the MeV figure follows from the $m_e$ scale and is a rendering, not an absolute-mass claim.
 * **(GB-NF)** states the algebraic statement. The atomic mass is
   proportional to the Markov trace of the normal form, with the
   proportionality constant $\rho_K$ as the categorical density.

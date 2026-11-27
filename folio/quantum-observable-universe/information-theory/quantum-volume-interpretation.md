@@ -4,7 +4,7 @@ $$
 $$
 where $n_K$ is the crossing number of $K$. For a gas of $N$ hydrogen atoms, each uniquely modeled by the knot structure $\mathcal{A}(1,0)$, the total configuration count scales exponentially as $|\mathrm{Conf}(U)| \sim |\mathrm{Conf}_p|^{|U|}$.
 
-The $q$-deformation stretches or compresses the Hopf fibres of the $S^1 \hookrightarrow S^3 \to S^2$ fibration according to the substrate parameter.
+The $q$-deformation stretches or compresses the Hopf fibres of the $S^1 \hookrightarrow S^3 \to S^2$ fibration according to the aether parameter.
 
 **Classical limit.**
 As $q \to 1$, the integer analogue $[2]_q \to 2$. The fibre volume smoothly approaches $2\pi^2$. The quantum volume $V_q(U)$ reduces to the standard Riemannian volume of $U$ scaled by the classic $S^3$ volume. The categorical volume form $\epsilon_q$ degenerates identically to the standard Riemannian volume element.

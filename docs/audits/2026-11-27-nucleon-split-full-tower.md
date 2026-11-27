@@ -5,7 +5,7 @@
 *"dont look at leadgin term only"* (ledger row in `docs/coordination/owner-rulings.md`, 2026-11-27)
 **Beans:** `qou-myts`, `qou-99qc`
 **Pre-registration:** [`computations/probes/nucleon_split_full_tower/PREREGISTRATION.md`](../../computations/probes/nucleon_split_full_tower/PREREGISTRATION.md) (committed before the probe ran)
-**Lean:** [`QOU/Nuclear/NucleonSplitFullTower.lean`](../../folio/quantum-observable-universe/lean/QOU/Nuclear/NucleonSplitFullTower.lean) (lean-verify exit 0; axioms propext, Classical.choice, Quot.sound)
+**Lean:** [`QOU/Nuclear/NucleonSplitFullTower.lean`](../../folio/quantum-observable-universe/lean/QOU/Nuclear/NucleonSplitFullTower.lean) (lean-verify exit 0; axioms propext, Classical.choice, Quot.sound). `gibbs_split_full_tower` (uses `Real.log`) is split off behind the transcendental boundary into [`QOU/Transcendental/Nuclear/NucleonSplitFullTowerGibbs.lean`](../../folio/quantum-observable-universe/lean/QOU/Transcendental/Nuclear/NucleonSplitFullTowerGibbs.lean), same namespace; the rest stays over a generic field
 **Probe:** [`computations/probes/nucleon_split_full_tower_probe.py`](../../computations/probes/nucleon_split_full_tower_probe.py) → `nucleon-split-full-tower.witness.json`
 
 ## 1. Short answer
@@ -122,6 +122,7 @@ CODATA 2022 `m_n − m_p = 1.29333251 MeV`.
 ## 8. Reproduce
 
 ```bash
-scripts/lean-verify.sh folio/quantum-observable-universe/lean/QOU/Nuclear/NucleonSplitFullTower.lean
+scripts/lean-verify.sh folio/quantum-observable-universe/lean/QOU/Nuclear/NucleonSplitFullTower.lean \
+  folio/quantum-observable-universe/lean/QOU/Transcendental/Nuclear/NucleonSplitFullTowerGibbs.lean
 python3 -u computations/probes/nucleon_split_full_tower_probe.py
 ```

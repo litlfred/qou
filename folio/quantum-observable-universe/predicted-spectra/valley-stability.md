@@ -1,7 +1,7 @@
 This visualization frames the valley of stability as a Diophantine approximation problem.
 
 **Controls:**
-- **$q$ slider:** Varies the substrate parameter from $1.0$ (classical, no Coulomb) to $2.0$ (deep quantum). Default: the substrate $q$.
+- **$q$ slider:** Varies the aether parameter from $1.0$ (classical, no Coulomb) to $2.0$ (deep quantum). Default: the aether $q$.
 - **View:** Toggles between the $(p, n)$-plane and the $(A, n/p)$-plane.
 
 **Display:**

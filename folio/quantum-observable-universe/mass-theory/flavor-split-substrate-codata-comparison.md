@@ -14,7 +14,7 @@ against the CODATA value $(m_n - m_p)/M_N \approx 1.2933 / 938.919 \approx 1.377
 
 **Evaluation at $q_0$.**
 
-| Quantity                       | Substrate formula                 | Substrate value          | CODATA target            | Residual   |
+| Quantity                       | Aether formula                 | Aether value          | CODATA target            | Residual   |
 | ------------------------------ | --------------------------------- | ------------------------ | ------------------------ | ---------- |
 | $(m_n - m_p)/M_N$              | $(q-1)^2 (1 - q^{-4}) / 3$        | $1.3757 \times 10^{-3}$  | $1.3775 \times 10^{-3}$  | $-0.128\%$ |
 | $(m_n - m_p)/\mu_{\text{avg}}$ | $\hbar_q^2 \cdot h_q \cdot [2]_q$ | $4.1271 \times 10^{-3}$  | $4.1324 \times 10^{-3}$  | $-0.128\%$ |

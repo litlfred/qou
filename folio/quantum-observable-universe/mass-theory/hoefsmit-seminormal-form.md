@@ -1,4 +1,4 @@
-*For each partition $\lambda \vdash n$ and substrate parameter $q > 1$,
+*For each partition $\lambda \vdash n$ and aether parameter $q > 1$,
 the Hoefsmit seminormal form \cite{hoefsmit1974} gives an explicit
 matrix representation $\rho_\lambda\colon H_n(R, q) \to M_{d_\lambda}(\mathbb{C})$
 where $d_\lambda = |\mathrm{SYT}(\lambda)|$ is the number of standard

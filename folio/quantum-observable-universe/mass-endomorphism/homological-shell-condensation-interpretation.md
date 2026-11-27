@@ -31,7 +31,7 @@ This conditional structure justifies authoring both conjectures
 together. The categorical conjecture forms the Hecke-side
 content; the homological conjecture forms its brane-tower-side image
 under Yekutieli rigidity. A proof of either implies the other under
-the substrate axioms.
+the aether axioms.
 
 ## Relation to the Hoefsmit / matrix-evaluation programme
 

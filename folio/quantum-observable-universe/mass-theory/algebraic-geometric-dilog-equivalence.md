@@ -1,4 +1,4 @@
-> **Superseded.** The scalar substrate density $\rho_q = 1/\hbar_q^2$ used
+> **Superseded.** The scalar aether density $\rho_q = 1/\hbar_q^2$ used
 > below is the structurally-wrong leading-order ansatz; the operator-valued
 > form supersedes it ([`mass-endomorphism-tower`](mass-endomorphism-tower.md));
 > the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
@@ -137,7 +137,7 @@ anchor-dependent leak $S = c_3 + \mathrm{Vol}(4_1)$, carried not by the
 compact $\Phi_q$ but by the Faddeev non-compact $\Phi_b$
 (modular double). The open item is the
 **argument-identification map**: the structural map $q_0 \mapsto z(q_0)$
-— the substrate-to-meridian-holonomy map supplied by the same
+— the aether-to-meridian-holonomy map supplied by the same
 pole-to-cusp matching as items 1–2 — such that the fibre-branch Faddeev
 phase at the identified argument reproduces $S$:
 
@@ -161,7 +161,7 @@ hypothesis:
 
 2. (**Zero crossing — conditional on a sign flip the data does not
    establish.**) *If* $S$ changes sign between the anchors, continuity of
-   $S$ on $q_0 > 1$ forces by the intermediate value theorem a substrate
+   $S$ on $q_0 > 1$ forces by the intermediate value theorem an aether
    $q^{*}$ where $S(q^{*}) = 0$: there $c_3 = -\mathrm{Vol}(4_1)$ and the
    $\Phi_b$ readout is $1$ (the flip enters as an explicit hypothesis).
    The premise is **not established by the data**: each anchor value
@@ -179,7 +179,7 @@ hypothesis:
 The physical regime of the bar-odd face is the **fibre branch**: real
 $b$, where the modular parameter $q_b = e^{i\pi b^2}$ satisfies
 $\lvert q_b \rvert = 1$ and equals the pure phase $e^{i \ln q_0 / 2}$ at
-the substrate map. On
+the aether map. On
 this branch the modular-double product diverges and the construction is
 the real single integral defining $\Phi_b$, whose structural laws —
 self-duality $\Phi_{b^{-1}} = \Phi_b$, unitarity
@@ -218,7 +218,7 @@ explicit hypothesis ($u(q_0)$ map + deformed volume + the identity
 $S = \mathrm{Im}\,\mathfrak{V}(u(q_0))$), and its composition with the
 argument-identification map is derived, not assumed: the $\Phi_b$ phase then
 equals the imaginary part of the deformed volume, equivalently a deformed
-Chern–Simons phase, and the sign flip of $S$ forces a substrate point with
+Chern–Simons phase, and the sign flip of $S$ forces an aether point with
 vanishing deformed Chern–Simons part.
 
 ## Witness

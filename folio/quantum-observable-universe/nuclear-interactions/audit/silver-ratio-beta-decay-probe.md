@@ -8,7 +8,7 @@ $$
 \mathfrak{Q}_\beta^A = m_e \cdot \frac{|q^2-2q-1|(q+1)}{2q^3} \;\xrightarrow{q \to 1+\sqrt{2}}\; 0
 $$
 
-This equates the categorical degeneracy condition ($h=2$) to a vanishing physical energy scale. It motivates choosing $q_0 \approx 1+\sqrt{2}$ as the physical substrate parameter where free-neutron decay is marginally open.
+This equates the categorical degeneracy condition ($h=2$) to a vanishing physical energy scale. It motivates choosing $q_0 \approx 1+\sqrt{2}$ as the physical aether parameter where free-neutron decay is marginally open.
 
 ## SU(2)_L gauge connection
 

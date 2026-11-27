@@ -96,7 +96,7 @@ convention apply before this is used here. First, the kernel module
 $\mathcal{K}$ above is stated over $K(x)$ with $q$ an indeterminate and its
 slope is read at $x=\infty$, so the functor applies only after $q$ is
 specialised to a complex number with $|q|\neq 1$ and the module is passed to
-germs at a point; for $|q|>1$, as at the substrate value $q_0$, one replaces
+germs at a point; for $|q|>1$, as at the aether value $q_0$, one replaces
 $(q,\Phi)$ by $(q^{-1},\Phi^{-1})$, which leaves the lattice $q^{\mathbb{Z}}$,
 and so the curve, unchanged. Second, the Tate curve $\mathbb{C}^{*}/q^{\mathbb{Z}}$
 is not the Descartes elliptic curve $\mathcal{E}_q$ of

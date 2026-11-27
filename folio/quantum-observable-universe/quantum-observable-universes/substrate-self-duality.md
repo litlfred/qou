@@ -1,4 +1,4 @@
-Let the substrate algebra $A$ be finite and projective over $R$ and *symmetric*: its Frobenius form $\lambda \colon A \to \mathbf{1}$ satisfies $\lambda(ab) = \lambda(ba)$. Then $\lambda$ induces a quasi-isomorphism between $A$ and its rigid dualizing complex $\omega_A^\bullet$:
+Let the aether algebra $A$ be finite and projective over $R$ and *symmetric*: its Frobenius form $\lambda \colon A \to \mathbf{1}$ satisfies $\lambda(ab) = \lambda(ba)$. Then $\lambda$ induces a quasi-isomorphism between $A$ and its rigid dualizing complex $\omega_A^\bullet$:
 
 $$
 A \xrightarrow{ \sim } \omega_A^\bullet \quad\text{in } D(A).

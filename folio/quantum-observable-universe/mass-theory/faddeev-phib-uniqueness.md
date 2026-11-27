@@ -1,5 +1,5 @@
 **Conditional on the Faddeev shift-class and its strip-growth characterization.**
-*Fix the substrate parameter $b = b(t)$ on the product-supported branch $\mathrm{Im} b^2 > 0$
+*Fix the aether parameter $b = b(t)$ on the product-supported branch $\mathrm{Im} b^2 > 0$
 (in particular the physical map $b(t) = \sqrt{t/2\pi}\,e^{i\pi/4}$ with $t = \ln q_0 > 0$).
 Let $\Phi_1$ be any solution of the two modular-double $q$-difference equations of the
 non-compact quantum dilogarithm at $b$ that is (i) comparable in modulus to the canonical
@@ -22,7 +22,7 @@ admissible class is nonempty and the constant is genuinely pinned.
 ## Why the shift equations alone do not suffice
 
 The two first-order $q$-difference equations are invariant under multiplication by any function
-elliptic for the substrate lattice $\langle ib, i/b\rangle$: the shift multipliers cancel in the
+elliptic for the aether lattice $\langle ib, i/b\rangle$: the shift multipliers cancel in the
 ratio $\Phi_1/\Phi_b$, which is therefore doubly periodic. A nonconstant elliptic factor — a
 full-lattice Weierstrass $\wp$ — is thus compatible with the difference equations and would give
 a second, non-proportional solution. Rigidity requires two further inputs the shift class does

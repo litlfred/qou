@@ -1,0 +1,3 @@
+**:defterm[Brane]{#brane}.** In the [recursive brane tower](#def:recursive-brane-tower) $A_0 \hookrightarrow A_1 \hookrightarrow \cdots$, the object $A_n$ is the **brane** of $A_{n+1}$: the base object of which $A_{n+1} = T(A_n)$ is the tangent algebra. The derived usages keep this base sense: the [brane boundary](#def:brane-boundary) $\partial A_n$ is a full subcategory of subobjects of $A_n$; a **brane point** is a point $p$ of the base manifold $M$, blown up to the exceptional divisor carrying the [Reeb bundle](#def:reeb-bundle); the **brane fluid** is the fluid on the base.
+
+A brane is a base, while the [aether parameter](#rem:glossary-aether) $q$ rides on the fibre. The brane is therefore not the aether.

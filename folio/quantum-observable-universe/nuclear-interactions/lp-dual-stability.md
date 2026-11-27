@@ -11,4 +11,4 @@ $$
 1. *$x^*$ is LP-stable: $Gx^* \geq 0$ in all six channels.*
 2. *Strong duality holds: there is a dual optimum whose net-constraint shadow price $y_0^*$ satisfies $\mathrm{tr}_M(x^*) = y_0^* \cdot n_{\mathrm{target}}$.*
 
-Both parts hold for every Gram matrix $G$ and cost vector $t$. Part 1 is the feasibility of $x^*$, and part 2 is finite-dimensional linear-programming strong duality. The confinement-specific properties of the six-channel matrix at the substrate are recorded in the [confinement reading](#rem:lp-dual-stability-confinement-reading).
+Both parts hold for every Gram matrix $G$ and cost vector $t$. Part 1 is the feasibility of $x^*$, and part 2 is finite-dimensional linear-programming strong duality. The confinement-specific properties of the six-channel matrix at the aether are recorded in the [confinement reading](#rem:lp-dual-stability-confinement-reading).

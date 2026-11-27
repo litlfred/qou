@@ -1,4 +1,4 @@
-**No physical quantity is claimed for the [expression $\kappa_{\mathrm{closed}}$](#def:magic-shell-coupling-kappa).** At the substrate parameter it evaluates to $\kappa_{\mathrm{closed}} \approx -1.0704$. It was formerly proposed as the per-excess slope of a magic-shell coupling; that identification is withdrawn, for the reason recorded below. The name is retained because the corpus refers to it, not because the identification stands.
+**No physical quantity is claimed for the [expression $\kappa_{\mathrm{closed}}$](#def:magic-shell-coupling-kappa).** At the aether parameter it evaluates to $\kappa_{\mathrm{closed}} \approx -1.0704$. It was formerly proposed as the per-excess slope of a magic-shell coupling; that identification is withdrawn, for the reason recorded below. The name is retained because the corpus refers to it, not because the identification stands.
 
 **Reason for the withdrawal.**
 

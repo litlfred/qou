@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:delta-skein-substrate-identity",
   title:
-    "Substrate identity for the proton–neutron Skein difference $\\Delta S(n-p)$",
+    "Aether identity for the proton–neutron Skein difference $\\Delta S(n-p)$",
   interprets: "conj:borromean-baryon-mass-formula",
   computation: {
     engine: "mpmath",

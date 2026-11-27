@@ -4,6 +4,7 @@
 **Beans:** `qou-myts`, `qou-99qc` · **Owner:** *"Gibbs - explore"*, *"dont look at leadgin term only"*,
 *"make sure you work on all strands on the full tower"*
 **Lean:** [`QOU/Nuclear/NucleonSplitGibbsEnergy.lean`](../../folio/quantum-observable-universe/lean/QOU/Nuclear/NucleonSplitGibbsEnergy.lean)
+  The rational `uSplit` closed forms (`uNat_eq`, `uNat_neg`, `uT_eq`, `uTower_eq`, over any ordered field) stay there; `log Z`, `fSplit`, `tsSplit`, the derivatives and the `log q` comparisons (`logZ_split`, `logZ_split_hasDerivAt`, `dictionary_U_eq_F`, `uT_lt_fT`, `uTower_lt_fTower`) are behind the transcendental boundary in [`QOU/Transcendental/Nuclear/NucleonSplitGibbsEnergyAnalytic.lean`](../../folio/quantum-observable-universe/lean/QOU/Transcendental/Nuclear/NucleonSplitGibbsEnergyAnalytic.lean), same namespace.
 **Pre-registration:** [`computations/probes/nucleon_split_gibbs_energy/PREREGISTRATION.md`](../../computations/probes/nucleon_split_gibbs_energy/PREREGISTRATION.md)
 **Probe:** `nucleon_split_gibbs_energy_probe.py` → `nucleon-split-gibbs-energy.witness.json` (80 dps);
 `tower_weight_symmetry_check.py` (exact, `n = 3, 5, 7`)
@@ -92,7 +93,8 @@ selection against the target (AGENTS.md §NO FITTING). None of the six reaches `
 ## 7. Reproduce
 
 ```bash
-scripts/lean-verify.sh folio/quantum-observable-universe/lean/QOU/Nuclear/NucleonSplitGibbsEnergy.lean
+scripts/lean-verify.sh folio/quantum-observable-universe/lean/QOU/Nuclear/NucleonSplitGibbsEnergy.lean \
+  folio/quantum-observable-universe/lean/QOU/Transcendental/Nuclear/NucleonSplitGibbsEnergyAnalytic.lean
 python3 computations/probes/nucleon_split_gibbs_energy/tower_weight_symmetry_check.py
 python3 -u computations/probes/nucleon_split_gibbs_energy/nucleon_split_gibbs_energy_probe.py
 ```

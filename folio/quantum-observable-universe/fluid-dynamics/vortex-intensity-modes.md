@@ -1,4 +1,4 @@
-The [substrate parameter](#def:substrate-parameter) $q$ imposes an algebraic discreteness on vortex circulation absent in classical Navier--Stokes. Four classical mechanisms exhibit discrete modes but continuous intensity; the $q$-deformation closes this gap.
+The [aether parameter](#def:substrate-parameter) $q$ imposes an algebraic discreteness on vortex circulation absent in classical Navier--Stokes. Four classical mechanisms exhibit discrete modes but continuous intensity; the $q$-deformation closes this gap.
 
 **1. Kelvin waves on vortex filaments.**
 A classical vortex filament supports standing-wave perturbations (Kelvin modes) at discrete wavelengths $\lambda_k = L/k$, for integers $k \geq 1$ and filament length $L$. The dispersion relation reads

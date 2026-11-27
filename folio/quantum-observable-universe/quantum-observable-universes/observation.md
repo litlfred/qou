@@ -9,7 +9,7 @@ for the span of the three non-identity terms of the photon $\gamma = 1 + \varphi
 An **observation** at $p$ (also called an *intent* at $p$) is a pair $(w_p, \delta q_p)$ consisting of:
 
 1. **A probe direction** $w_p \in h\,W_1[[h]]$. It acts on a closed state $\psi$ by conjugation, $\psi \mapsto e^{w_p}\,\psi\,e^{-w_p}$. The exponential converges in the $h$-adic topology because $w_p$ is divisible by $h$. The first-order change is the commutator $[w_p, \psi]$. Conjugation preserves every trace, so the Frobenius form is preserved.
-2. **A substrate deformation** $\delta q_p \in R$, which shifts the substrate parameter $q \mapsto q' = q + \delta q_p$.
+2. **An aether deformation** $\delta q_p \in R$, which shifts the aether parameter $q \mapsto q' = q + \delta q_p$.
 
 Two observations at the same point with directions $w_1, w_2$ fail to commute by
 

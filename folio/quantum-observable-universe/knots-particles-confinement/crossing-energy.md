@@ -10,13 +10,13 @@ $$
   \end{cases}
 $$
 
-where $q$ is the substrate parameter ([substrate parameter](#def:substrate-parameter)). The sign convention follows the Skein relation
+where $q$ is the aether parameter ([aether parameter](#def:substrate-parameter)). The sign convention follows the Skein relation
 
 $$
   q\,L_+ - q^{-1} L_-
   = (q^{1/2} - q^{-1/2})\,L_0.
 $$
 
-The crossing energy is an un-traced, crossing-additive Skein writhe functional in dimensionless substrate units, distinct from the traced [categorical Hamiltonian](#def:categorical-hamiltonian) (on the trivial $n$-strand braid $\mathfrak{E}_{\mathrm{cross}} = 0$, whereas the traced rest Hamiltonian is nonzero). A positive $\mathfrak{E}_{\mathrm{cross}}$ indicates that positive-crossing repulsion dominates; a negative value indicates that negative-crossing pairing dominates.
+The crossing energy is an un-traced, crossing-additive Skein writhe functional in dimensionless aether units, distinct from the traced [categorical Hamiltonian](#def:categorical-hamiltonian) (on the trivial $n$-strand braid $\mathfrak{E}_{\mathrm{cross}} = 0$, whereas the traced rest Hamiltonian is nonzero). A positive $\mathfrak{E}_{\mathrm{cross}}$ indicates that positive-crossing repulsion dominates; a negative value indicates that negative-crossing pairing dominates.
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs—real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. The generic categorical/$q$-deformation identities it relies upon remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the algebraic→archimedean wall. It invokes real- or complex-analytic constructs—real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the aether parameter $q_0$. The generic categorical/$q$-deformation identities it relies upon remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

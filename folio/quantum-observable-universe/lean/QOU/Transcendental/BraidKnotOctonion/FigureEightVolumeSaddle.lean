@@ -30,7 +30,7 @@
   -- Ref: [murakami-murakami2001] https://doi.org/10.1007/BF02392716
 -/
 
-import BraidKnotOctonion.FigureEightVolume
+import QOU.Transcendental.BraidKnotOctonion.FigureEightVolume
 import BraidKnotOctonion.Clausen
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 import Mathlib.Topology.Order.LocalExtr

@@ -19,7 +19,9 @@ Modes
   (default)  print totals by class and the largest files
   --write    write the baseline from the current tree (first run only:
              refuses to overwrite an existing baseline)
-  --shrink   lower baseline counts to the current ones; never raises a count
+  --shrink   lower baseline counts to the current ones; never raises a count,
+             except to admit a module that has left the transcendental baseline
+             (newly in scope, not newly written)
   --check    exit 1 if any (file, class) count is above the baseline (NEW or
              GREW), or if a count dropped and the baseline was not shrunk (STALE)
 
@@ -92,13 +94,19 @@ def scan():
     return hits
 
 
+def load_full():
+    return json.loads(BASELINE.read_text())
+
+
 def load():
-    return json.loads(BASELINE.read_text())["files"]
+    return load_full()["files"]
 
 
-def save(files):
+def save(files, excluded):
     BASELINE.write_text(json.dumps({"schema": SCHEMA, "boundary": BOUNDARY,
-                                    "classes": CLASSES, "files": files},
+                                    "classes": CLASSES,
+                                    "excluded_analytic": sorted(excluded),
+                                    "files": files},
                                    indent=1, ensure_ascii=False, sort_keys=True) + "\n")
 
 
@@ -124,11 +132,20 @@ def main():
         if BASELINE.exists():
             print(f"refusing: {BASELINE.relative_to(ROOT)} exists; use --shrink")
             return 2
-        save(hits)
+        save(hits, analytic_modules())
         print(f"wrote {len(hits)} files to {BASELINE.relative_to(ROOT)}")
         return 0
     if "--shrink" in sys.argv:
-        base = load()
+        full = load_full()
+        base = full["files"]
+        # A module that has left the transcendental baseline since this baseline was
+        # written is newly in scope, not newly written: admit it at its current
+        # counts. Anything else above the baseline stays a GREW finding.
+        was_excluded = set(full.get("excluded_analytic", []))
+        admitted = sorted(f for f in hits if f in was_excluded and f not in base)
+        for f in admitted:
+            base[f] = hits[f]
+            print(f"ADMIT {f}  {hits[f]}  (left the transcendental baseline)")
         new = {}
         for f, b in base.items():
             h = hits.get(f, {})
@@ -136,7 +153,7 @@ def main():
             m = {k: v for k, v in m.items() if v}
             if m:
                 new[f] = m
-        save(new)
+        save(new, analytic_modules())
         print(f"shrunk baseline: {len(base)} -> {len(new)} files; totals {totals(new)}")
         grew, _ = compare(hits, new)
         for f, k, b, h in grew:

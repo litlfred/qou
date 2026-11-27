@@ -1,13 +1,13 @@
 *The Kashiwara crystal limit $q \to 0$ ([Crystal-limit isospin degeneracy](#prop:crystal-isospin-degeneracy)) has a structural counterpart at $q \to \infty$, related to the $q \to 0$ limit by the bar involution $q \mapsto q^{-1}$ ([Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections](#def:bar-involution), D1).*
 
-*The $q \to \infty$ limit produces a "reverse crystal" whose combinatorial structure is the bar-image of the Kashiwara crystal, with the same combinatorial invariants but inverted $q$-character orderings. Together, the pair $(q \to 0, q \to \infty)$ + the classical limit $q = 1$ + the substrate $q = q_0$ form the complete picture of limit dualities on $H_n(q)$.*
+*The $q \to \infty$ limit produces a "reverse crystal" whose combinatorial structure is the bar-image of the Kashiwara crystal, with the same combinatorial invariants but inverted $q$-character orderings. Together, the pair $(q \to 0, q \to \infty)$ + the classical limit $q = 1$ + the aether $q = q_0$ form the complete picture of limit dualities on $H_n(q)$.*
 
 ## The four canonical limits of $H_n(q)$
 
 | Limit | Categorical content | Pairing via bar |
 |-------|---------------------|-----------------|
 | **$q = 1$** (classical) | Lusztig canonical basis / KL polynomials | self-paired (bar fixes $q = 1$) |
-| **$q = q_0$** (substrate) | full Hecke at the framework's calibration point | bar-paired with $q = q_0^{-1}$ |
+| **$q = q_0$** (aether) | full Hecke at the framework's calibration point | bar-paired with $q = q_0^{-1}$ |
 | **$q \to 0$** (Kashiwara) | crystal basis, 0-Hecke quotient | bar-paired with $q \to \infty$ (this conjecture) |
 | **$q \to \infty$** (reverse limit) | reverse crystal | bar-paired with $q \to 0$ |
 

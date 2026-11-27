@@ -24,7 +24,7 @@ The Hecke generators at every brane level satisfy the identical quadratic, braid
 
 **(J-1c)** $\sigma_i^{(n)} \sigma_j^{(n)} =  \sigma_j^{(n)} \sigma_i^{(n)} \qquad (|i - j| \geq 2)$
 
-The substrate parameter $q$ is the **same at every level**. This manifests the Euler characteristic stability $\chi(A_n) = \chi(A_0)$.
+The aether parameter $q$ is the **same at every level**. This manifests the Euler characteristic stability $\chi(A_n) = \chi(A_0)$.
 
 ### J-2: Jet-prolonged Frobenius--Hopf relations
 

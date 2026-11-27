@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:wenzl-positivity-implies-substrate-positivity",
   title:
-    "Wenzl positivity at $q_0$ implies substrate $C^*$-Frobenius positivity",
+    "Wenzl positivity at $q_0$ implies aether $C^*$-Frobenius positivity",
   lean: {
     ref: "qou:QOU.Observations.AppendixSurreals.WenzlPositivityImpliesSubstratePositivity",
     validation: "not_checked",

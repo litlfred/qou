@@ -1,4 +1,4 @@
-**Archimedean specialisation.** This survey justifies the central move: the substrate parameter $q \in \mathbf{No}$ may be taken in the infinitesimal neighbourhood of $1$, without disturbing any algebraic machinery of this paper. The bulk of the formal structure is **purely algebraic**. It depends only on the ground ring being a field (typically of characteristic zero), independent of any analytic or topological property of $\mathbb{R}$ or $\mathbb{C}$.
+**Archimedean specialisation.** This survey justifies the central move: the aether parameter $q \in \mathbf{No}$ may be taken in the infinitesimal neighbourhood of $1$, without disturbing any algebraic machinery of this paper. The bulk of the formal structure is **purely algebraic**. It depends only on the ground ring being a field (typically of characteristic zero), independent of any analytic or topological property of $\mathbb{R}$ or $\mathbb{C}$.
 
 ## Blocks that lift verbatim
 
@@ -121,7 +121,7 @@ algebraic enough to admit one.
 ## Consequence for the appendix
 
 The core mass formula — Hoefsmit seminormal form $\to$ Markov
-trace $\to$ Jones polynomial at the substrate value — runs
+trace $\to$ Jones polynomial at the aether value — runs
 identically over $\mathbf{No}$. The categorical mass
 $\mathfrak{m}(K)$, transfer matrix $T(c,d)$, and $q$-value
 predictions are all *field-polymorphic* and have well-defined

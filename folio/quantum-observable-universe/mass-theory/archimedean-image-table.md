@@ -2,7 +2,7 @@ The fibre functor $\tau \colon \mathbf{C} \to \mathbf{Arch}$, followed by
 the archimedean evaluation $\pi_\infty \colon \mathrm{Obj}(\mathbf{Arch}) \to \mathbb{R}$
 ([def:archimedean-realization-functor](#def:archimedean-realization-functor)),
 maps each algebraic structure on the categorical side to a concrete
-real-valued object at the substrate parameter $q_0$. (Per the notation
+real-valued object at the aether parameter $q_0$. (Per the notation
 register, $\tau$ is the functor; the archimedean realization
 $\pi_\infty \circ \tau$ is an evaluation into $\mathbb{R}$, not itself a
 functor between QOU categories.) The table below
@@ -62,7 +62,7 @@ where the current pipeline accesses only the $N = 2$ slice. The
 polynomial coefficients are integers ($q$-independent), so they
 sit on the *correct axis* for structural derivations that the
 reframing in 
-identified: constants from substrate, not $q$-dependent
+identified: constants from aether, not $q$-dependent
 coincidences.
 
 **The HOMFLYPT specialisation family.** For a braid closure

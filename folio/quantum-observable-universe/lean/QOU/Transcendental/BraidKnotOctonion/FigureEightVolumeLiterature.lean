@@ -24,7 +24,7 @@
   -- Ref: [murakami-murakami2001] https://doi.org/10.1007/BF02392716
 -/
 
-import BraidKnotOctonion.FigureEightVolumeSqueeze
+import QOU.Transcendental.BraidKnotOctonion.FigureEightVolumeSqueeze
 
 namespace QOU.Knot.FigureEightVolume
 

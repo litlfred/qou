@@ -75,14 +75,14 @@ Quantitative consequences differ between the two mechanisms:
 
 3. **Physical interpretation**: $P_{\mathrm{skew}} = $ EM/charge-distinguishing
    channel (explicit for torus knots, as above).
-   $\mathrm{Im}(q) = $ a substrate moduli parameter (not directly
+   $\mathrm{Im}(q) = $ an aether moduli parameter (not directly
    physical until tied to an Im-sensitive observable, which the
    framework does not currently provide).
 
 ## Cross-references
 
 - [Lusztig bar vs Hermitian-$\ast$](lusztig-vs-hermitian-bar.md) — bar vs Hermitian * involutions; this remark interprets/refines its complex-q discussion
-- [The pre-Archimedean substrate is polymorphic in its base ring](q-zero-complex-extension.md) — substrate polymorphism (admits complex q)
+- [The pre-Archimedean aether is polymorphic in its base ring](q-zero-complex-extension.md) — aether polymorphism (admits complex q)
 - [Categorical mass as Markov trace](../mass-endomorphism/categorical-mass-markov.md) — modulus projection definition
 - [Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections](../braids-and-knots/bar-involution.md) — bar projection definition
 - [Physical interpretation: strong binding and Coulomb repulsion](../observations/crossing-energy-interpretation.md) — $\sinh(\log q)$ = Coulomb channel identification

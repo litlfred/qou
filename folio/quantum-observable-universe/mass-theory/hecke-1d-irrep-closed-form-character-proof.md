@@ -49,7 +49,7 @@ $$
 $$
 
 The formulas hold for every $n$ because the 1-d Hecke irreps' generator
-eigenvalues $\pm q^{\pm 1}$ are *substrate-derived* — they come from the
+eigenvalues $\pm q^{\pm 1}$ are *aether-derived* — they come from the
 Hecke quadratic relation, not from any $n$-specific representation
 combinatorics. $\blacksquare$
 
@@ -75,7 +75,7 @@ $$
 
 where the **1-d backbone**
 ($y_{(n)} \chi^{(n)} + y_{(1^n)} \chi^{(1^n)}$) is fully closed-form
-substrate-derivable for any $n$ via the formulas above, and the
+aether-derivable for any $n$ via the formulas above, and the
 $\dim \geq 2$ middle terms require the Hoefsmit seminormal matrix
 characters (per the [Hecke branching trace decomposition](#prop:hecke-branching-trace-decomposition)).
 

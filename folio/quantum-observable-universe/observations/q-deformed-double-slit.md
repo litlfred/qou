@@ -1,4 +1,4 @@
-The [substrate parameter](#def:substrate-parameter) $q$ physicalizes wave propagation deformation. The slit material defines the brane boundary.
+The [aether parameter](#def:substrate-parameter) $q$ physicalizes wave propagation deformation. The slit material defines the brane boundary.
 
 Wave propagation obeys the categorical Dirac equation ([categorical Dirac operator](#def:categorical-dirac-operator)):
 

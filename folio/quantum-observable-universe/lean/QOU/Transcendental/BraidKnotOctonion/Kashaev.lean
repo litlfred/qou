@@ -1,5 +1,5 @@
 import MathlibExt.PhiQPiece
-import BraidKnotOctonion.FigureEightVolumeLiterature
+import QOU.Transcendental.BraidKnotOctonion.FigureEightVolumeLiterature
 import BraidKnotOctonion.BorromeanVolume
 
 /-!

@@ -1,5 +1,5 @@
 **Key property: the QOU structure is the base, not the fibre.**
-The rigid triple $(\mathbf{C}, A, \tau)$ paired with the core QOU axioms anchors exclusively to the **base** of the family. The substrate parameter $q$ acts merely as a coordinate riding on the **fibre** $\mathbb{G}_m$.
+The rigid triple $(\mathbf{C}, A, \tau)$ paired with the core QOU axioms anchors exclusively to the **base** of the family. The aether parameter $q$ acts merely as a coordinate riding on the **fibre** $\mathbb{G}_m$.
 
 Consequently:
 

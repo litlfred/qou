@@ -20,11 +20,11 @@ Mass evaluates the magnitude that survives both sectors. The argument evaluates 
 
 The color factor $S_3$ fixes the spacetime coordinates. The spacetime factor $S_2$ fixes the color coordinates ([Color and spacetime are orthogonal $S_2\times S_3$ factors of the Bring Galois group $S_5$](#prop:color-spacetime-s5-factorization), parts 1–2). Therefore, color and electromagnetism form independent coordinates. The discrete color charge is not a function of the continuous phase, and conversely. The rigidity in part $3$ of that proposition makes this non-coincidence sharp. A continuous winding argument cannot factor through a finite group such as $\mu_5$. Thus, $\arg\mathrm{tr}_M$ remains structurally barred from being a color character.
 
-The two remain nonetheless faces of one substrate. The Galois group $S_5$ properly contains $S_2\times S_3$. Its remaining generators carry spacetime indices into color indices. An electromagnetic-to-color relation therefore forms an $S_5$ statement, realized by those off-block generators, not a relation internal to the $U(1)$ phase.
+The two remain nonetheless faces of one aether. The Galois group $S_5$ properly contains $S_2\times S_3$. Its remaining generators carry spacetime indices into color indices. An electromagnetic-to-color relation therefore forms an $S_5$ statement, realized by those off-block generators, not a relation internal to the $U(1)$ phase.
 
 ## Archimedean realization
 
-The polar split provides the archimedean reading. The modulus and argument require the realization of the trace over $\mathbb{C}$, on the far side of the substrate-to-archimedean wall. The structural content of [Color and spacetime are orthogonal $S_2\times S_3$ factors of the Bring Galois group $S_5$](#prop:color-spacetime-s5-factorization)—the faithful $S_2\times S_3\hookrightarrow S_5$ embedding, the orthogonality of the two sectors, and the divisibility rigidity—is generic and requires no such realization.
+The polar split provides the archimedean reading. The modulus and argument require the realization of the trace over $\mathbb{C}$, on the far side of the algebraic-to-archimedean wall. The structural content of [Color and spacetime are orthogonal $S_2\times S_3$ factors of the Bring Galois group $S_5$](#prop:color-spacetime-s5-factorization)—the faithful $S_2\times S_3\hookrightarrow S_5$ embedding, the orthogonality of the two sectors, and the divisibility rigidity—is generic and requires no such realization.
 
 ## Relation to the literature
 

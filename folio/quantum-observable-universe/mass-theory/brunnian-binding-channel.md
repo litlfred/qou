@@ -25,7 +25,7 @@ unsigned multiplicity is the crossing count $n_+ + n_-$, a coordination count.
 
 A Brunnian pair has vanishing pairwise linking number, $\mathrm{lk} = 0$, i.e. $n_+ = n_-$. The
 signed channel then vanishes and the entire mutual/binding energy is the unsigned count channel; for
-a crossing pair at a substrate modulus $q > 1$ this channel is strictly positive. So the binding
+a crossing pair at an aether modulus $q > 1$ this channel is strictly positive. So the binding
 energy is nonzero even where the pairwise linking number is zero — the coordination count, not the
 Gauss linking number, is the correct binding carrier for a Brunnian nuclear link. A minimal Brunnian
 bond ($n_+ = n_- = 1$, the pairwise pattern inside $\mathrm{L6a4}$) contributes exactly one
@@ -81,7 +81,7 @@ component costs $\log \delta \approx 0.699$ of free energy at the proton-anchore
 an $n$-strand braid is normalised by $\delta^{\,n-1}$. The additivity therefore holds only up to that
 loop factor; precisely,
 additivity holds iff $\delta = 1$, which is excluded for $q > 1$. Two modelling inputs remain named rather than
-derived: that the substrate assembly amplitude is the Markov trace (a citable Jones theorem, carried
+derived: that the aether assembly amplitude is the Markov trace (a citable Jones theorem, carried
 as a hypothesis), and the dimensional dressing
 $\mathfrak{m} = \mathfrak{m}_e\,\mathrm{Vol}\,\mathrm{lw}/\hbar_q^2$ (electron-mass scale $\mathfrak{m}_e$, geometric volume,
 and cusp deformation parameter $\hbar_q$) — calibration and geometry, not a fit. The exact saturated fraction

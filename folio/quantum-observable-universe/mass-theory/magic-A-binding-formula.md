@@ -13,7 +13,7 @@ $$
 *where $G$ is Catalan's constant, $8G = \mathrm{Vol}(L6a4) =
 \mathrm{Vol}(\mathrm{Borromean})$ is the universal residue prefactor
 ([Catalan's $G$ as the universal-residue prefactor of the unified mass formula](../observations/gravity-spectral-prefactor.md)),
-and $\rho_F \in \mathbb{R}$ is the substrate-determined structural
+and $\rho_F \in \mathbb{R}$ is the aether-determined structural
 prefactor for the doubly-magic regime.*
 
 *Specialised to* $^4_2\mathrm{He}$ *with* $\rho_F = 2$:

@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   interprets: "prop:toffoli-transfer-matrix",
   label: "rem:substrate-computation",
-  title: "Substrate-independence of computation",
+  title: "Aether-independence of computation",
   tags: [
     "computation",
     "universality",

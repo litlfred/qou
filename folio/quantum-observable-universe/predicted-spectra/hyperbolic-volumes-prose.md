@@ -18,4 +18,4 @@ $$
   \hbar_q  :=  1 - q^{-1}.
 $$
 
-Here $q > 1$ represents the [substrate parameter](#def:substrate-parameter) and $\hbar_q$ represents the [quantum planck constant](#def:quantum-planck-constant). The mass functional $\mathcal{M}$ is not additive for composite states. It satisfies a $q$-deformed Skein recursion at every crossing in the color-exchange diagram.
+Here $q > 1$ represents the [aether parameter](#def:substrate-parameter) and $\hbar_q$ represents the [quantum planck constant](#def:quantum-planck-constant). The mass functional $\mathcal{M}$ is not additive for composite states. It satisfies a $q$-deformed Skein recursion at every crossing in the color-exchange diagram.

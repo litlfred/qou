@@ -33,7 +33,7 @@
 | [def:q-resolvent](#def:q-resolvent) | $q$-Resolvent (categorical) | Ch 2 |
 | [def:q-yang-mills-levi](#def:q-yang-mills-levi) | $q$-Weighted Yang--Mills--Levi functional | Ch 3 |
 | [def:z-habiro-ring](#def:z-habiro-ring) | $z$-Habiro ring $\widehat{\mathbb{Z}[q^{\pm 1}][z]}_z$ | Ch 11 |
-| [def:adelic-substrate](#def:adelic-substrate) | Adelic substrate $\mathbb{A}$ | Ch 11 |
+| [def:adelic-substrate](#def:adelic-substrate) | Adelic base ring $\mathbb{A}$ | Ch 11 |
 | [def:aeon](#def:aeon) | Aeon | Ch 20 |
 | [def:aeon-adjacency](#def:aeon-adjacency) | Aeon adjacency | Ch 20 |
 | [def:algebraic-primality](#def:algebraic-primality) | Algebraic primality of a strand count | Ch 12 |
@@ -146,7 +146,7 @@
 | [def:bundle-isotopy-equivalence](#def:bundle-isotopy-equivalence) | Isotopy equivalence of bundle initial conditions | Ch 21 |
 | [def:jet-horizon](#def:jet-horizon) | Jet horizon (degree-$0$ vanishing locus) | Ch 20 |
 | [def:knot-operator-energy](#def:knot-operator-energy) | Knot operator energy (LP-dual shadow price) | Ch 10 |
-| [def:hq-bi-filtration](#def:hq-bi-filtration) | Knot-indexed bi-filtration $\mathcal{H}_q^{(n, K)}$ on the substrate convolution algebra | Ch 11 |
+| [def:hq-bi-filtration](#def:hq-bi-filtration) | Knot-indexed bi-filtration $\mathcal{H}_q^{(n, K)}$ on the aether convolution algebra | Ch 11 |
 | [def:knot-particle-generation](#def:knot-particle-generation) | Knot-particle generation from $T_{m,n}$ torus knot generators | Ch 7 |
 | [def:yekutieli-triple](#def:yekutieli-triple) | Lifting triple mapping | Ch 4 |
 | [def:local-q-zeta-function](#def:local-q-zeta-function) | Local $q$-zeta function of Bring's curve | Ch 22 |
@@ -168,7 +168,7 @@
 | [def:molecular-hopf-chain](#def:molecular-hopf-chain) | Molecular Hopf chain (open) | Ch 17 |
 | [def:molecular-hopf-ring](#def:molecular-hopf-ring) | Molecular Hopf ring (closed) | Ch 17 |
 | [def:molecular-strand-partition](#def:molecular-strand-partition) | Molecular strand-partition $\lambda$ of $N$ strands | Ch 16 |
-| [def:motivic-galois-character](#def:motivic-galois-character) | Motivic Galois character $\chi^{\mathrm{mot}}_A$ of the Frobenius--Hopf substrate | Ch 4 |
+| [def:motivic-galois-character](#def:motivic-galois-character) | Motivic Galois character $\chi^{\mathrm{mot}}_A$ of the Frobenius--Hopf aether | Ch 4 |
 | [def:motivic-mass-measure](#def:motivic-mass-measure) | Motivic mass measure $\mu$ on the brane arc space | Ch 11 |
 | [def:neutrino-knot](#def:neutrino-knot) | Neutrino | Ch 14 |
 | [def:categorical-neutron](#def:categorical-neutron) | Neutron (categorical) | Ch 7 |
@@ -230,8 +230,8 @@
 | [def:staircase-partition](#def:staircase-partition) | Staircase partition $\rho_k = (k, k-1, \ldots, 1)$ | Ch 11 |
 | [def:standard-part-functor](#def:standard-part-functor) | standard-part map $\mathrm{st} : \mathbf{No}_{\mathrm{fin}} \to \mathbb{R}$ | Ch 26 |
 | [def:commutative-qou](#def:commutative-qou) | Strictly commutative QOU (commutative specialisation) | Ch 2 |
-| [def:substrate-parameter](#def:substrate-parameter) | Substrate parameter | Ch 2 |
-| [def:substrate-parameter-planck](#def:substrate-parameter-planck) | Substrate parameter and quantum Planck constant | Ch 2 |
+| [def:substrate-parameter](#def:substrate-parameter) | Aether parameter | Ch 2 |
+| [def:substrate-parameter-planck](#def:substrate-parameter-planck) | Aether parameter and quantum Planck constant | Ch 2 |
 | [def:surreal-blowup-calculus](#def:surreal-blowup-calculus) | Surreal blow-up calculus: named infinite surreals for renormalisation | Ch 25 |
 | [def:tannaka-dual](#def:tannaka-dual) | Tannaka dual (emergent gauge group) | Ch 1 |
 | [def:bring-cone-tetraplectic-structure](#def:bring-cone-tetraplectic-structure) | Tetraplectic structure on the affine cone $C(\mathcal{B})$ over Bring's curve | Ch 6 |
@@ -249,16 +249,16 @@
 | [def:grothendieck-group-of-a-qou](#def:grothendieck-group-of-a-qou) | The Grothendieck group of a quantum universe | Ch 1 |
 | [def:van-der-waals-hopf-channel](#def:van-der-waals-hopf-channel) | The Hopf symmetric block $e_+$ — retained cosh carrier (not van der Waals) | Ch 20 |
 | [def:hyperelliptic-quintic](#def:hyperelliptic-quintic) | The hyperelliptic quintic $\mathcal{X}_5 \colon y^2 = x^5 - 1$ | Ch 6 |
-| [def:motivic-substrate](#def:motivic-substrate) | The motivic substrate $(K_0(\mathrm{Var}_k), \mathbb{L}, \{\rho_v\})$ | Ch 4 |
+| [def:motivic-substrate](#def:motivic-substrate) | The motivic base ring $(K_0(\mathrm{Var}_k), \mathbb{L}, \{\rho_v\})$ | Ch 4 |
 | [def:octonion-algebra](#def:octonion-algebra) | The octonion algebra $\mathbb{O}$ | Ch 8 |
 | [def:frobenius-hopf-substrate](#def:frobenius-hopf-substrate) | The quantum vacuum as a Frobenius--Hopf algebra | Ch 2 |
 | [def:reeb-epsilon](#def:reeb-epsilon) | The Reeb infinitesimal $\varepsilon$ | Ch 19 |
-| [def:substrate-line-bundle](#def:substrate-line-bundle) | The substrate line bundle and the $\mathbb{G}_m$-family of differentials | Ch 18 |
-| [def:q-from-epsilon](#def:q-from-epsilon) | The substrate parameter $q$ as $1 + \varepsilon$ | Ch 19 |
+| [def:substrate-line-bundle](#def:substrate-line-bundle) | The aether line bundle and the $\mathbb{G}_m$-family of differentials | Ch 18 |
+| [def:q-from-epsilon](#def:q-from-epsilon) | The aether parameter $q$ as $1 + \varepsilon$ | Ch 19 |
 | [def:linking-operations](#def:linking-operations) | The two geometric linking operations | Ch 7 |
 | [def:unit-particle-state](#def:unit-particle-state) | The unit particle state $\mathrm{Li}_q(z)$ | Ch 6 |
 | [def:threading-link](#def:threading-link) | Threading link $T(2,N)$ | Ch 17 |
-| [def:three-calibration-discipline](#def:three-calibration-discipline) | Three-calibration discipline ($m_e$, $m_\mu/m_e$, $m_\pi$) and the calibrated substrate parameter $q_0$ | Ch 15 |
+| [def:three-calibration-discipline](#def:three-calibration-discipline) | Three-calibration discipline ($m_e$, $m_\mu/m_e$, $m_\pi$) and the calibrated aether parameter $q_0$ | Ch 15 |
 | [def:torus-knot-top-channel-decoration](#def:torus-knot-top-channel-decoration) | Top-channel decoration $\delta^{\mathrm{top}}_q(T_{m,p}) = q^{w} - q^{-w}$ of a torus knot | Ch 11 |
 | [def:torsion-knot-flow](#def:torsion-knot-flow) | Torsion-driven knot flow | Ch 21 |
 | [def:transfer-matrix-operator](#def:transfer-matrix-operator) | Transfer Matrix Operator for Nuclear Braid Interactions | Ch 11 |
@@ -266,7 +266,7 @@
 | [def:two-row-stratum](#def:two-row-stratum) | Two-row Wedderburn stratum $\Lambda^2(n) := \{\lambda \vdash n : \ell(\lambda) \le 2\}$ | Ch 11 |
 | [def:typed-crossing-operator](#def:typed-crossing-operator) | Typed crossing operator | Ch 7 |
 | [def:typed-garside-element](#def:typed-garside-element) | Typed Garside element of the nuclear braid | Ch 12 |
-| [def:qns-unit-layers](#def:qns-unit-layers) | Unit layers of the $q$-NS classical limit: substrate (vanishing $\nu_q$) and physical ($c_q$-rescaled, $\nu_{\mathrm{phys}} = 1/(2q)$) | Ch 18 |
+| [def:qns-unit-layers](#def:qns-unit-layers) | Unit layers of the $q$-NS classical limit: aether (vanishing $\nu_q$) and physical ($c_q$-rescaled, $\nu_{\mathrm{phys}} = 1/(2q)$) | Ch 18 |
 | [def:unstable-atom](#def:unstable-atom) | Unstable atom (failure of normal-form positivity) | Ch 7 |
 | [def:up-quark](#def:up-quark) | Up quark | Ch 7 |
 | [def:atomic-valence-open-sites](#def:atomic-valence-open-sites) | Valence and lone pairs as open bonding sites | Ch 16 |
@@ -297,7 +297,7 @@
 | [thm:markov-trace-factorization](#thm:markov-trace-factorization) | Exact factorization of the nuclear Markov trace | Ch 11 |
 | [thm:jones-markov-trace](#thm:jones-markov-trace) | Existence and non-degeneracy of the Markov trace (Jones, 1987) | Ch 5 |
 | [thm:categorical-reeb-exists](#thm:categorical-reeb-exists) | Existence of the categorical Reeb derivation | Ch 2 |
-| [thm:substrate-parameter-exists](#thm:substrate-parameter-exists) | Existence of the substrate parameter | Ch 2 |
+| [thm:substrate-parameter-exists](#thm:substrate-parameter-exists) | Existence of the aether parameter | Ch 2 |
 | [thm:weight-decomposition-exists](#thm:weight-decomposition-exists) | Existence of the weight decomposition | Ch 2 |
 | [thm:ew-triplet-far-commuting-minimal](#thm:ew-triplet-far-commuting-minimal) | Far-commuting minimality: three even-twist torus-link generators fit minimally in $B_6$ at $(1,3,5)$, enumerating $\{T(2,4),T(2,6),T(2,8)\}$ | Ch 7 |
 | [thm:gauge-conformal-invariance](#thm:gauge-conformal-invariance) | Gauge conformal invariance | Ch 14 |
@@ -309,7 +309,7 @@
 | [thm:hyperreal-limit-transfer](#thm:hyperreal-limit-transfer) | Limit transfer at $\mathbb{R}^*$: $\mathrm{st}$ computes limits, and the surreal carrier is not needed | Ch 25 |
 | [thm:hyperelliptic-z5-classification](#thm:hyperelliptic-z5-classification) | Minimal-genus hyperelliptic curves with faithful $\mathbb{Z}_5$-symmetry | Ch 12 |
 | [thm:motivic-perpetual-obstruction](#thm:motivic-perpetual-obstruction) | Motivic perpetual obstruction: $\chi^{\mathrm{mot}}_A$ is non-trivial at almost every finite place when $\chi(A) \neq 0$ | Ch 4 |
-| [thm:observability-q-independent](#thm:observability-q-independent) | Observability is a base property: $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ is independent of the substrate section | Ch 18 |
+| [thm:observability-q-independent](#thm:observability-q-independent) | Observability is a base property: $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ is independent of the aether section | Ch 18 |
 | [thm:optimal-normal-form-valley](#thm:optimal-normal-form-valley) | Optimal Gröbner–Shirshov normal form has exactly $A$ terms in the valley of stability | Ch 14 |
 | [thm:parity-regime-selection](#thm:parity-regime-selection) | Parity regime selection for Q-values | Ch 12 |
 | [thm:pontryagin-dual-coxeter-character](#thm:pontryagin-dual-coxeter-character) | Pontryagin self-duality on abelianised Coxeter group $S_n^{\mathrm{ab}} \cong \mathbb{Z}/2$ | Ch 5 |
@@ -318,7 +318,7 @@
 | [thm:qu-to-qou](#thm:qu-to-qou) | Quantum universe with observability and categorical lifting is a QOU | Ch 4 |
 | [thm:rivin-concavity-one-tetrahedron](#thm:rivin-concavity-one-tetrahedron) | Rivin concavity for one ideal tetrahedron: $\Lambda(\alpha)+\Lambda(\beta)+\Lambda(\gamma)$ is strictly concave along every line in the angle simplex | Ch 11 |
 | [thm:ew-triplet-charge-spin-from-involution](#thm:ew-triplet-charge-spin-from-involution) | Sector label and charge of the electroweak triplet computed through the spin involution | Ch 7 |
-| [thm:substrate-self-duality](#thm:substrate-self-duality) | Self-duality of the algebraic substrate | Ch 2 |
+| [thm:substrate-self-duality](#thm:substrate-self-duality) | Self-duality of the algebraic layer | Ch 2 |
 | [thm:birthday-axioms-underdetermine](#thm:birthday-axioms-underdetermine) | The birthday axioms do not characterise Conway's birthday: a two-valued function satisfies all six | Ch 11 |
 | [thm:diophantine-birthday-trajectory](#thm:diophantine-birthday-trajectory) | The birthday-trajectory separation: impossible at the birthday, unobstructed at the trajectory, and blocked only by a quantifier | Ch 26 |
 | [thm:gluing-certification-mechanical-reach](#thm:gluing-certification-mechanical-reach) | The exact gluing verification is mechanical to degree 14 and 14 tetrahedra: neither predicted ceiling exists | Ch 11 |
@@ -330,10 +330,10 @@
 | [thm:birthday-axioms-do-not-pin-the-birthday](#thm:birthday-axioms-do-not-pin-the-birthday) | The six birthday axioms admit a two-valued model, so they bound birthday only from above | Ch 25 |
 | [thm:wedderburn-mass-formula](#thm:wedderburn-mass-formula) | Three-invariant atomic mass formula | Ch 11 |
 | [thm:ns-singularity-descartes](#thm:ns-singularity-descartes) | Topology of the Reeb bundle of the Descartes universe | Ch 18 |
-| [thm:flavor-mass-splitting-bound](#thm:flavor-mass-splitting-bound) | Two-sided substrate bound on the dressed-quark splitting | Ch 11 |
+| [thm:flavor-mass-splitting-bound](#thm:flavor-mass-splitting-bound) | Two-sided aether bound on the dressed-quark splitting | Ch 11 |
 | [thm:em-spectral-completeness](#thm:em-spectral-completeness) | Two-strand spectral completeness over a commutative ring $R$ | Ch 11 |
 | [thm:knot-mass-formula-unified](#thm:knot-mass-formula-unified) | Unified mass formula: tower + Frobenius co-Casimir correction | Ch 11 |
-| [thm:substrate-parameter-unique](#thm:substrate-parameter-unique) | Uniqueness of the substrate parameter | Ch 2 |
+| [thm:substrate-parameter-unique](#thm:substrate-parameter-unique) | Uniqueness of the aether parameter | Ch 2 |
 | [thm:frobenius-codim-universal](#thm:frobenius-codim-universal) | Universal Frobenius co-dimension trace: $\tau(C_{\dim_q}) = \sum_\lambda 1/\dim_q(\lambda)$ | Ch 11 |
 
 ## Propositions
@@ -415,7 +415,7 @@
 | [prop:lambda-scale-substrate-form](#prop:lambda-scale-substrate-form) | Borromean baryon $\lambda_{\text{scale}}$ empirical form $5/2 - h^2 \cdot G$ | Ch 11 |
 | [prop:borromean-markov-trace-closed-form](#prop:borromean-markov-trace-closed-form) | Borromean Markov trace $\mathrm{tr}_M(\beta_{\mathrm{Bor}}) = (4 + h^2 - 3h^4 - h^6)/(h^2 + 4)$ | Ch 11 |
 | [prop:content-scaling-correspondence](#prop:content-scaling-correspondence) | Box content is the $q$-Jucys--Murphy eigenvalue exponent | Ch 11 |
-| [prop:q-gaussian-obstruction-at-q0](#prop:q-gaussian-obstruction-at-q0) | Bożejko–Speicher $q$-Gaussian obstruction at the substrate $q_0 > 1$ | Ch 11 |
+| [prop:q-gaussian-obstruction-at-q0](#prop:q-gaussian-obstruction-at-q0) | Bożejko–Speicher $q$-Gaussian obstruction at the aether $q_0 > 1$ | Ch 11 |
 | [prop:bn-mtc-action](#prop:bn-mtc-action) | Braid group action on $\mathbf{V}^{\otimes n}$ does not factor through $S_n$ | Ch 18 |
 | [prop:braid-action-tensor](#prop:braid-action-tensor) | Braid-group action on tensor powers | Ch 5 |
 | [prop:markov-branching-three-term](#prop:markov-branching-three-term) | Branching coherence of the Markov trace reduces to $[m+2]_q + [m]_q = [2]_q\,[m+1]_q$ | Ch 11 |
@@ -523,7 +523,7 @@
 | [prop:sdp-regime-switch](#prop:sdp-regime-switch) | Discrete regime switches in SDP cross-channel couplings across isotopes | Ch 15 |
 | [prop:discrete-vortex-spectrum](#prop:discrete-vortex-spectrum) | Discrete vortex mode spectrum | Ch 18 |
 | [prop:magic-A-binding-formula](#prop:magic-A-binding-formula) | Doubly-magic light-nucleus binding formula: $\mathfrak{B}(^A_Z\mathfrak{X}) = \rho_F \cdot \mathfrak{m}_e \cdot A \cdot 8G$ | Ch 11 |
-| [prop:hadron-q-self-correction](#prop:hadron-q-self-correction) | Effective substrate parameter: hadron self-deformation of $q$ | Ch 14 |
+| [prop:hadron-q-self-correction](#prop:hadron-q-self-correction) | Effective aether parameter: hadron self-deformation of $q$ | Ch 14 |
 | [prop:descent-eigenspaces](#prop:descent-eigenspaces) | Eigenspaces of the descent involution | Ch 4 |
 | [prop:eigenvalue-product-expansion](#prop:eigenvalue-product-expansion) | Eigenvalue product expansion of the nuclear braid Markov trace | Ch 11 |
 | [prop:unit-modulus-eigenvalue](#prop:unit-modulus-eigenvalue) | Eigenvalues of even braids on $V_{(2,1)}$ and the Borromean trace | Ch 11 |
@@ -651,7 +651,7 @@
 | [prop:level-selection-not-linear](#prop:level-selection-not-linear) | Linear level-selection is excluded (exponential beats linear) | Ch 11 |
 | [prop:lr-coefficient-hecke](#prop:lr-coefficient-hecke) | Littlewood-Richardson coefficient $c^\lambda_{\mu\nu}$ for Iwahori-Hecke branching | Ch 11 |
 | [prop:confinement-local-constancy](#prop:confinement-local-constancy) | Local constancy of confinement level off $\mathcal{B}$ | Ch 10 |
-| [prop:local-substrate-q](#prop:local-substrate-q) | Local Value of the Substrate Parameter | Ch 15 |
+| [prop:local-substrate-q](#prop:local-substrate-q) | Local Value of the Aether Parameter | Ch 15 |
 | [prop:chi-lambda-w0-sign-weighting](#prop:chi-lambda-w0-sign-weighting) | Long-element $\chi_\lambda(w_0)$ sign-character weighting of the $c_k$ chain at $H_3$ | Ch 11 |
 | [prop:co-lp-dual-binding](#prop:co-lp-dual-binding) | LP dual for $CO$: covalent active-set $2$ ($+$ dative $=$ triple) | Ch 16 |
 | [prop:h2-lp-dual-binding](#prop:h2-lp-dual-binding) | LP dual gives optimal $H_2$ binding | Ch 16 |
@@ -705,7 +705,7 @@
 | [prop:binding-functional-is-the-log](#prop:binding-functional-is-the-log) | Only the logarithmic binding functional is extensive; the linear rival fails by $-\alpha(1-x)(1-y)$ and carries a ceiling | Ch 12 |
 | [prop:operator-valued-combiner-convergence](#prop:operator-valued-combiner-convergence) | Operator-valued combiner convergence: $\chi^\lambda(\beta_{\mathrm{atom}})$ assembles from the deuteron base case | Ch 11 |
 | [prop:shell-structure-eigenvalues](#prop:shell-structure-eigenvalues) | Orbital shells from eigenvalues of the photon-electron transfer matrix | Ch 14 |
-| [prop:substrate-consistency-window](#prop:substrate-consistency-window) | Overdetermination of the substrate parameter | Ch 15 |
+| [prop:substrate-consistency-window](#prop:substrate-consistency-window) | Overdetermination of the aether parameter | Ch 15 |
 | [prop:pair-graph-regime-trichotomy](#prop:pair-graph-regime-trichotomy) | Pair-graph regimes of $A$: $2\bigl(\binom A2-(3A-6)\bigr)=(A-3)(A-4)$ splits $A\ge2$ into $\{2\}$, $\{3,4\}$, $\{\ge5\}$ | Ch 11 |
 | [prop:coxeter-parabolic-transversal](#prop:coxeter-parabolic-transversal) | Parabolic transversals and the Hecke presentation laws at every rank | Ch 5 |
 | [prop:parallel-fibre-noninteraction](#prop:parallel-fibre-noninteraction) | Parallel fibres are non-interacting (split-link trace multiplicativity) | Ch 20 |
@@ -781,10 +781,10 @@
 | [prop:coxeter-strong-exchange](#prop:coxeter-strong-exchange) | Strong exchange for Coxeter systems, via the reflection cocycle | Ch 5 |
 | [prop:brane-boundary](#prop:brane-boundary) | Structure of the defining boundary | Ch 4 |
 | [prop:subset-cumulant-recursion](#prop:subset-cumulant-recursion) | Subset cumulants of the bond model: reconstruction, the $c_k$-only recursion, and vanishing across a split | Ch 11 |
-| [prop:substrate-radial-coordinate](#prop:substrate-radial-coordinate) | Substrate parameter as the radial coordinate | Ch 2 |
-| [prop:bar-t-duality-substrate](#prop:bar-t-duality-substrate) | Substrate-level bar T-duality: $\mathcal{E}_q \leftrightarrow \mathcal{E}_{1/q}$ | Ch 14 |
-| [prop:flavor-split-substrate](#prop:flavor-split-substrate) | Closed and factored forms of the substrate flavor split | Ch 15 |
-| [prop:flavor-dressed-mass-from-substrate-split](#prop:flavor-dressed-mass-from-substrate-split) | Substrate-pure derivation of the dressed-quark mass splitting | Ch 11 |
+| [prop:substrate-radial-coordinate](#prop:substrate-radial-coordinate) | Aether parameter as the radial coordinate | Ch 2 |
+| [prop:bar-t-duality-substrate](#prop:bar-t-duality-substrate) | Aether-level bar T-duality: $\mathcal{E}_q \leftrightarrow \mathcal{E}_{1/q}$ | Ch 14 |
+| [prop:flavor-split-substrate](#prop:flavor-split-substrate) | Closed and factored forms of the aether flavor split | Ch 15 |
+| [prop:flavor-dressed-mass-from-substrate-split](#prop:flavor-dressed-mass-from-substrate-split) | Aether-pure derivation of the dressed-quark mass splitting | Ch 11 |
 | [prop:surreal-rate-calculus](#prop:surreal-rate-calculus) | Surreal rate calculus for the classical-limit scaling laws | Ch 25 |
 | [prop:neutron-qvalue-symbolic](#prop:neutron-qvalue-symbolic) | Symbolic $Q$-value of free neutron decay | Ch 12 |
 | [prop:symbolic-character-table](#prop:symbolic-character-table) | Symbolic character table $\chi_\lambda(\sigma)$ for all partitions $H_2$--$H_7$ | Ch 11 |
@@ -856,8 +856,8 @@
 | [prop:trace-ratio-observable](#prop:trace-ratio-observable) | The physical observable: ratio of Markov-traced generator volumes | Ch 15 |
 | [prop:physical-units-gap-linear](#prop:physical-units-gap-linear) | The physically normalised gap vanishes linearly at $q = 1$ | Ch 3 |
 | [prop:pion-half-figure-eight](#prop:pion-half-figure-eight) | The pion braid and $\sigma_1\sigma_2^{-1}$ have identical eigenvalue phases on $V_{(2,1)}$ | Ch 5 |
-| [prop:q-zero-complex-extension](#prop:q-zero-complex-extension) | The pre-Archimedean substrate is polymorphic in its base ring: specializing to $R = \mathbb{C}$ with $|q| > 1$ is admissible without modifying the Hecke quadratic, the bar involution, the Frobenius pairing, or the Markov trace. The current real-axis convention $q_0 \in \mathbb{R}$, $q_0 > 1$ is one such specialization; complex $q_0$ with $|q_0| > 1$ and $\mathrm{Im}(q_0) \neq 0$ is uninstantiated infrastructure. | Ch 11 |
-| [prop:q-game-of-life](#prop:q-game-of-life) | The quantum Game of Life (q-GoL) as a Toffoli-defined substrate automaton | Ch 20 |
+| [prop:q-zero-complex-extension](#prop:q-zero-complex-extension) | The pre-Archimedean aether is polymorphic in its base ring: specializing to $R = \mathbb{C}$ with $|q| > 1$ is admissible without modifying the Hecke quadratic, the bar involution, the Frobenius pairing, or the Markov trace. The current real-axis convention $q_0 \in \mathbb{R}$, $q_0 > 1$ is one such specialization; complex $q_0$ with $|q_0| > 1$ and $\mathrm{Im}(q_0) \neq 0$ is uninstantiated infrastructure. | Ch 11 |
+| [prop:q-game-of-life](#prop:q-game-of-life) | The quantum Game of Life (q-GoL) as a Toffoli-defined aether automaton | Ch 20 |
 | [prop:reeb-coefficient-is-hbar-q](#prop:reeb-coefficient-is-hbar-q) | The Reeb coefficient of $D_\nabla$ is the quantum Planck constant: $1 - q^{-1} = (q-1)/q$ | Ch 20 |
 | [prop:jet-sw-tau-decomposition](#prop:jet-sw-tau-decomposition) | The Seiberg–Witten differential is the jet decomposition of the Archimedean realisation | Ch 6 |
 | [prop:sw-period-residue-sum](#prop:sw-period-residue-sum) | The Seiberg–Witten period is an algebraic residue sum | Ch 6 |
@@ -1028,8 +1028,8 @@
 | [conj:dilogarithm-archimedean-limit](#conj:dilogarithm-archimedean-limit) | $(1{-}q)\,\log\Phi_n(x; q) \to \mathrm{Li}_2(x)$ under $\tau_{\mathrm{arch}}$ | Ch 11 |
 | [conj:electroweak-higgs-torus-link-triplet](#conj:electroweak-higgs-torus-link-triplet) | $(W^\pm, Z, H) \leftrightarrow (T(2,4), T(2,6), T(2,8))$ — non-Bring even-twist 2-component torus-link triplet | Ch 7 |
 | [conj:cp-violation-spectral-form](#conj:cp-violation-spectral-form) | $\delta_{\mathrm{CP}}$ as imaginary part of the alternating-block character | Ch 15 |
-| [conj:flavor-split-substrate-mass](#conj:flavor-split-substrate-mass) | The nucleon mass split equals the substrate flavor-split formula | Ch 15 |
-| [conj:q-beta-radius-of-convergence-gate](#conj:q-beta-radius-of-convergence-gate) | $\mathfrak{Q}_\beta$ precision-ladder $\S 4(a)$ gate — the log-correction generating function $g(u) = \sum_{k \ge 2} c_k u^k$ has a unique dominant simple pole at $u_{\text{substrate}}$ | Ch 11 |
+| [conj:flavor-split-substrate-mass](#conj:flavor-split-substrate-mass) | The nucleon mass split equals the aether flavor-split formula | Ch 15 |
+| [conj:q-beta-radius-of-convergence-gate](#conj:q-beta-radius-of-convergence-gate) | $\mathfrak{Q}_\beta$ precision-ladder $\S 4(a)$ gate — the log-correction generating function $g(u) = \sum_{k \ge 2} c_k u^k$ has a unique dominant simple pole at $u_{\text{aether}}$ | Ch 11 |
 | [conj:p-vs-np-boundary](#conj:p-vs-np-boundary) | $\mathrm{P} \neq \mathrm{NP}$ as jet horizon opacity | Ch 20 |
 | [conj:qou-p-neq-np](#conj:qou-p-neq-np) | $\mathrm{P} \neq \mathrm{NP}$ at non-torsion $q \in \mathbb{G}_m$ | Ch 20 |
 | [conj:q-geometric-langlands](#conj:q-geometric-langlands) | $q$-Geometric Langlands correspondence | Ch 22 |
@@ -1042,7 +1042,7 @@
 | [conj:gs-archimedean-agreement-residue](#conj:gs-archimedean-agreement-residue) | Archimedean agreement (proton instance): degree-48 Habiro trace at $u_0$ | Ch 11 |
 | [conj:gs-archimedean-agreement-trace](#conj:gs-archimedean-agreement-trace) | Archimedean agreement: Habiro polynomial trace evaluates to GB mass | Ch 11 |
 | [conj:archimedean-stpart](#conj:archimedean-stpart) | Archimedean QOU is the standard-part of surreal QOU | Ch 25 |
-| [conj:dispersion-suppression-scale](#conj:dispersion-suppression-scale) | Archimedean suppression of the substrate $q$-dispersion below the gamma-ray-burst bounds | Ch 20 |
+| [conj:dispersion-suppression-scale](#conj:dispersion-suppression-scale) | Archimedean suppression of the aether $q$-dispersion below the gamma-ray-burst bounds | Ch 20 |
 | [conj:kazhdan-lusztig-classical-limit](#conj:kazhdan-lusztig-classical-limit) | As $q \to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics | Ch 12 |
 | [conj:root-of-unity-mtc-truncation](#conj:root-of-unity-mtc-truncation) | At $q = e^{2\pi i / k}$, the KLR algebra truncates to a Modular Tensor Category of non-abelian anyons | Ch 12 |
 | [conj:bigbang-heatdeath](#conj:bigbang-heatdeath) | Big Bang and heat-death functors as evaluations at named surreal endpoints | Ch 25 |
@@ -1063,9 +1063,9 @@
 | [conj:atom-braid-exterior-algebra](#conj:atom-braid-exterior-algebra) | Canonical atom-braid `atom_braid_word_3A(Z, N)` in `H_{3A}(q)` generates a sub-algebra graded-isomorphic to the exterior algebra Λ*(ℂ^{3A−Z}) with grade shift δ = Z−1; total dim = 2^{3A−Z}, k-th component dim = C(3A−Z, k−δ). Empirically verified across D, T, ³He, ⁴He. | Ch 11 |
 | [conj:canonical-knot-id-sdp](#conj:canonical-knot-id-sdp) | Canonical knot identification for ${}^2$H, ${}^3$H, ${}^3$He from the confinement SDP | Ch 11 |
 | [conj:lepton-tower-h-n-plus-1-branching](#conj:lepton-tower-h-n-plus-1-branching) | Canonical lepton-mass-tower factor ξ_m = [2m-1]_q · [m]_q / [2m]_q: matches muon (m=2 → [3]_q·[2]_q/[4]_q, 0.001%) and tau (m=3 → [5]_q·[3]_q/[6]_q, +0.79%) of CODATA. Supersedes the earlier muon-only d_q(std_rep S_{n+1})·[2]_q/[n+1]_q reading (whose tau prediction was falsified); categorical derivation of the q-bracket form remains open. | Ch 11 |
-| [conj:lepton-mass-tower-canonical](#conj:lepton-mass-tower-canonical) | Canonical operator-level lepton-mass-tower formula: there exists a categorical formula $\mathfrak{m}(K_\ell) = m_e \cdot \mathcal{F}_\ell(q)$ for each lepton $\ell \in \{\mathfrak{e}, \mu, \tau\}$ expressed as a per-braid Markov-trace-weighted sum over $K_\ell$'s braid representative, **without** invoking the superseded scalar substrate density $\rho_q = 1/\hbar_q^2$ as a dimensional factor. | Ch 11 |
+| [conj:lepton-mass-tower-canonical](#conj:lepton-mass-tower-canonical) | Canonical operator-level lepton-mass-tower formula: there exists a categorical formula $\mathfrak{m}(K_\ell) = m_e \cdot \mathcal{F}_\ell(q)$ for each lepton $\ell \in \{\mathfrak{e}, \mu, \tau\}$ expressed as a per-braid Markov-trace-weighted sum over $K_\ell$'s braid representative, **without** invoking the superseded scalar aether density $\rho_q = 1/\hbar_q^2$ as a dimensional factor. | Ch 11 |
 | [conj:casimir-epsilon-vacuum](#conj:casimir-epsilon-vacuum) | Casimir force as $\mathrm{st}$-image of $\varepsilon$-vacuum density gradient | Ch 25 |
-| [conj:g-action-on-substrate](#conj:g-action-on-substrate) | Categorical $G = \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate | Ch 2 |
+| [conj:g-action-on-substrate](#conj:g-action-on-substrate) | Categorical $G = \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ action on the Frobenius–Hopf aether | Ch 2 |
 | [conj:bohr-radius-categorical](#conj:bohr-radius-categorical) | Categorical Bohr radius $a_0^{\mathrm{cat}} = \hbar/(m_e c\,\alpha_{EM})$ (transported from QED virial-balance; categorical derivation open) | Ch 14 |
 | [conj:categorical-higgs-mechanism](#conj:categorical-higgs-mechanism) | Categorical Higgs mechanism: Goldstone-eating as topological linking | Ch 11 |
 | [conj:categorical-linking-operation](#conj:categorical-linking-operation) | Categorical linking operation $\mathrm{Lk}_R$: ribbon-category dual of topological linking number | Ch 11 |
@@ -1111,7 +1111,7 @@
 | [conj:archimedean-remainder-exponential-decay](#conj:archimedean-remainder-exponential-decay) | Exponential decay of the archimedean brane-tower truncation remainder | Ch 12 |
 | [conj:q-gl-fiber-functor](#conj:q-gl-fiber-functor) | Fibre-functor mediation of the $q$-Langlands correspondence | Ch 22 |
 | [conj:gs-spectral-sum-finite](#conj:gs-spectral-sum-finite) | Finiteness of the GS residue spectral sum | Ch 11 |
-| [conj:casimir-first-q-correction](#conj:casimir-first-q-correction) | First substrate correction to the Casimir force is carried by the figure-eight knot $4_1$ | Ch 25 |
+| [conj:casimir-first-q-correction](#conj:casimir-first-q-correction) | First aether correction to the Casimir force is carried by the figure-eight knot $4_1$ | Ch 25 |
 | [conj:frobenius-antipode-unifies-chirality-and-tower](#conj:frobenius-antipode-unifies-chirality-and-tower) | Frobenius antipode $S\colon \sigma \leftrightarrow \sigma^{-1}$ unifies chirality (Term 5) and neutron-tower closure | Ch 11 |
 | [conj:depth-stratified-frobenius-reciprocity](#conj:depth-stratified-frobenius-reciprocity) | Frobenius-reciprocity ideal restriction at low curvature-rank | Ch 11 |
 | [conj:hoefsmit-scattering-pipeline](#conj:hoefsmit-scattering-pipeline) | From Hoefsmit scattering weights to physical mass via the observation frame | Ch 11 |
@@ -1167,7 +1167,7 @@
 | [conj:palindromicity-orbital-type](#conj:palindromicity-orbital-type) | Palindromicity and orbital type | Ch 16 |
 | [conj:p-from-braid-mirror](#conj:p-from-braid-mirror) | Parity $P$ as mirror reflection of the braid diagram (writhe sign flip) | Ch 11 |
 | [conj:six-term-per-derivation-weights](#conj:six-term-per-derivation-weights) | Per-derivation weights for the six-term mass formula | Ch 11 |
-| [conj:im-q-physical-role](#conj:im-q-physical-role) | Physical role of $\mathrm{Im}(q)$: a substrate moduli parameter not constrained by current QOU observables, with three candidate roles (chirality / phase coordinate / non-Hermitian deformation). | Ch 11 |
+| [conj:im-q-physical-role](#conj:im-q-physical-role) | Physical role of $\mathrm{Im}(q)$: an aether moduli parameter not constrained by current QOU observables, with three candidate roles (chirality / phase coordinate / non-Hermitian deformation). | Ch 11 |
 | [conj:poincare-lefschetz-borromean](#conj:poincare-lefschetz-borromean) | Poincaré–Lefschetz duality on Borromean complement — cohomology ↔ homology of manifold-with-cusps | Ch 11 |
 | [conj:chain-ring-comparison](#conj:chain-ring-comparison) | Predicted vs. observed $\mathrm{C}_6$ ring-closure barrier | Ch 17 |
 | [conj:partition-sum-proton-residual](#conj:partition-sum-proton-residual) | Proton tower residual compared with $m_e\sum_{\lambda\vdash3}1/\dim_q\lambda = m_e(2 + 1/[2]_q)$ | Ch 11 |
@@ -1203,10 +1203,10 @@
 | [conj:sm-gauge-truncation](#conj:sm-gauge-truncation) | Standard-Model truncation: $\mathrm{SU}(3) \times \mathrm{SU}(2) \times \mathrm{U}(1)$ in the archimedean gauge image | Toward the Standard Model |
 | [conj:rho-prefactor-structural](#conj:rho-prefactor-structural) | Structural prefactor rule: $\rho(\mathfrak{H}) = \dim_q(\lambda^*(T_w))$ | Ch 11 |
 | [conj:composite-crossing-parity](#conj:composite-crossing-parity) | Sublimation from shell-filling representation theory | Ch 20 |
-| [conj:q-zero-stokes-region-identification](#conj:q-zero-stokes-region-identification) | Substrate $q_0$ identification via Stokes region of the generating function (over $\mathbb{Z}[q, q^{-1}]$) | Ch 12 |
-| [conj:local-infinitesimal-field](#conj:local-infinitesimal-field) | Substrate parameter as a local infinitesimal field $\varepsilon(x)$ | Ch 25 |
+| [conj:q-zero-stokes-region-identification](#conj:q-zero-stokes-region-identification) | Aether $q_0$ identification via Stokes region of the generating function (over $\mathbb{Z}[q, q^{-1}]$) | Ch 12 |
+| [conj:local-infinitesimal-field](#conj:local-infinitesimal-field) | Aether parameter as a local infinitesimal field $\varepsilon(x)$ | Ch 25 |
 | [conj:surreal-limit-transfer](#conj:surreal-limit-transfer) | Surreal limit transfer: limits as standard-part equalities via an $\omega$-evaluation | Ch 26 |
-| [conj:tannaka-krein-isomorphism](#conj:tannaka-krein-isomorphism) | Tannaka--Krein duality for the substrate | Ch 22 |
+| [conj:tannaka-krein-isomorphism](#conj:tannaka-krein-isomorphism) | Tannaka--Krein duality for the aether | Ch 22 |
 | [conj:terms-2-6-higher-operations](#conj:terms-2-6-higher-operations) | Terms 2 and 6: infinite Wedderburn / Habiro-cyclotomic sum and GB root-of-unity residue sum | Ch 11 |
 | [conj:q-collatz](#conj:q-collatz) | The $q$-Collatz conjecture: Skein-module crossing resolution | Ch 25 |
 | [conj:q-birch-swinnerton-dyer](#conj:q-birch-swinnerton-dyer) | The $q$-deformed Birch and Swinnerton-Dyer conjecture | Ch 25 |
@@ -1222,7 +1222,7 @@
 | [conj:qdifference-kernel-prolongation-symbol](#conj:qdifference-kernel-prolongation-symbol) | The q-difference kernel R is the jet-prolongation symbol, carried by the binding q-lift module | Ch 11 |
 | [conj:classical-riemann-hypothesis](#conj:classical-riemann-hypothesis) | The Riemann hypothesis | Ch 19 |
 | [conj:shell-space-is-self-square](#conj:shell-space-is-self-square) | The shell state space is the self-square of the angular object | Ch 16 |
-| [conj:q-harmonic-flow](#conj:q-harmonic-flow) | The substrate field $q(p)$ evolves by the $q$-harmonic-map heat flow $\partial_t q = -\Delta_q q$ | Ch 2 |
+| [conj:q-harmonic-flow](#conj:q-harmonic-flow) | The aether field $q(p)$ evolves by the $q$-harmonic-map heat flow $\partial_t q = -\Delta_q q$ | Ch 2 |
 | [conj:calibration-cohomology-alignment](#conj:calibration-cohomology-alignment) | The three calibrations are the three cohomological data of H¹(Bring) | Ch 11 |
 | [conj:defect-legendrian-knot](#conj:defect-legendrian-knot) | The unit defect as a Legendrian knot | Ch 6 |
 | [conj:wigner-axiom](#conj:wigner-axiom) | The Wigner axiom: a one-dimensional classical-limit obstruction | Ch 19 |
@@ -1240,11 +1240,11 @@
 | [conj:vorticity-lower-bound](#conj:vorticity-lower-bound) | Vorticity lower bound for anti-parallel filament collision as $q \to 1$ | Ch 18 |
 | [conj:wedderburn-bratteli-recursion](#conj:wedderburn-bratteli-recursion) | Wedderburn--Bratteli recursion for Jones--Markov weights $y_\lambda$ at $H_n(R, q)$ | Ch 11 |
 | [conj:weinberg-angle-categorical](#conj:weinberg-angle-categorical) | Weinberg angle $\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors | Ch 12 |
-| [conj:wenzl-positivity-implies-substrate-positivity](#conj:wenzl-positivity-implies-substrate-positivity) | Wenzl positivity at $q_0$ implies substrate $C^*$-Frobenius positivity | Ch 26 |
+| [conj:wenzl-positivity-implies-substrate-positivity](#conj:wenzl-positivity-implies-substrate-positivity) | Wenzl positivity at $q_0$ implies aether $C^*$-Frobenius positivity | Ch 26 |
 | [conj:whipple-rotation-intertwining](#conj:whipple-rotation-intertwining) | Whipple–rotation intertwining: the channel rotation acts on the toroidal family as the degree–order (winding) exchange | Ch 9 |
 | [conj:wigner-su4-from-spin-isospin](#conj:wigner-su4-from-spin-isospin) | Wigner $\mathrm{SU}(4) = \mathrm{SU}(2)_S \times \mathrm{SU}(2)_I$ as the categorical source for nuclear-shell binding | Ch 12 |
 | [conj:yang-mills-mass-gap](#conj:yang-mills-mass-gap) | Yang--Mills Existence and Mass Gap | Ch 3 |
-| [conj:z-eq-n-rho-correction](#conj:z-eq-n-rho-correction) | Z=N substrate-q correction to the Kashaev law | Ch 11 |
+| [conj:z-eq-n-rho-correction](#conj:z-eq-n-rho-correction) | Z=N aether-q correction to the Kashaev law | Ch 11 |
 
 ## Examples
 
@@ -1272,7 +1272,7 @@
 | [ex:c-quantum-universe](#ex:c-quantum-universe) | Archimedean realisation: quantum universe | Ch 2 |
 | [ex:benzene-ring](#ex:benzene-ring) | Benzene as a molecular Hopf ring $\mathrm{C}_6$ | Ch 17 |
 | [ex:benzene-symmetric-projector](#ex:benzene-symmetric-projector) | Benzene as the assembly projector $e_{(2,2,2),(6)}$ | Ch 16 |
-| [ex:birthday-grading-substrate](#ex:birthday-grading-substrate) | Birthday of the substrate parameters $c_q$, $\hbar_q$, $d_H(q)$ at $q = 1 + \varepsilon$ | Ch 25 |
+| [ex:birthday-grading-substrate](#ex:birthday-grading-substrate) | Birthday of the aether parameters $c_q$, $\hbar_q$, $d_H(q)$ at $q = 1 + \varepsilon$ | Ch 25 |
 | [ex:braid-group-su2](#ex:braid-group-su2) | Braid group action on $\mathbb{C}^2 \otimes \mathbb{C}^2$ | Ch 5 |
 | [ex:brane-boundary-su2](#ex:brane-boundary-su2) | Brane boundary for $\mathrm{SU}(2)$ | Ch 4 |
 | [ex:recursive-brane-tower-su2](#ex:recursive-brane-tower-su2) | Brane tower for $\mathrm{SU}(2)$ | Ch 4 |
@@ -1338,7 +1338,7 @@
 | [ex:single-magic-O18-diagram](#ex:single-magic-O18-diagram) | Single-magic illustration: $^{18}\mathrm{O}$ at $Z = 8$, $N = 10$ | Ch 15 |
 | [ex:nucleon-hecke-element-normal-form](#ex:nucleon-hecke-element-normal-form) | Six-term normal form and net of the nucleon | Ch 7 |
 | [ex:spin-labels-su2](#ex:spin-labels-su2) | Spin decomposition of $\mathrm{Rep}(\mathrm{SU}(2))$ | Ch 2 |
-| [ex:substrate-parameter-su2](#ex:substrate-parameter-su2) | Substrate parameter for $\mathrm{SU}(2)$ | Ch 2 |
+| [ex:substrate-parameter-su2](#ex:substrate-parameter-su2) | Aether parameter for $\mathrm{SU}(2)$ | Ch 2 |
 | [ex:terminal-resolution-cz](#ex:terminal-resolution-cz) | Lepton mass ratios in $\mathbb{C}[z]$ | Ch 15 |
 | [ex:nitrogen-14-threading](#ex:nitrogen-14-threading) | The ${}^{14}\mathrm{N}$ maximal braid shortcut vs ${}^{14}\mathrm{C}$ broken alternation | Ch 15 |
 | [ex:confinement-category-atomic-chain](#ex:confinement-category-atomic-chain) | The atomic chain in $\mathbf{Conf}$ | Ch 7 |

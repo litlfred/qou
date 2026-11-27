@@ -1,4 +1,4 @@
-*The substrate parameter $q$ admits a complex extension
+*The aether parameter $q$ admits a complex extension
 ([prop:q-zero-complex-extension](q-zero-complex-extension.md)).
 The current QOU framework's observables (categorical masses
 $\mathfrak{m}_{q,\mathcal{K}} = |\mathrm{tr}_M|$ and per-braid
@@ -11,12 +11,12 @@ in the framework.*
 
 *This conjecture catalogues three candidate roles, each
 testable against a specific observable class. All three are now
-settled on the **archimedean** side of the substrate wall — the
+settled on the **archimedean** side of the algebraic→archimedean wall — the
 evaluation at $q_0$ — and all three remain open on the **fibre**,
 where $q$ is a formal variable and $\mathrm{Im}(q)$ is
 unconstrained. The conjecture is therefore restated as a
 fibre-level question; the archimedean findings are recorded in
-the section *Reality of $\mathfrak{Q}_\beta$ at the substrate*
+the section *Reality of $\mathfrak{Q}_\beta$ at the aether*
 below.*
 
 ## Exclusions for Im(q)
@@ -27,7 +27,7 @@ Per [Im(q) is not the EM / P_skew channel — distinct mechanisms](rem-im-q-vs-p
 - An observable in the current framework (mass formula uses $|\cdot|$)
 - Equal to $\mathrm{Im}(\mathrm{tr}_M(\rho(\beta)))$ — Im(q) is a parameter; Im(tr_M) is the value induced
 
-## Reality of $\mathfrak{Q}_\beta$ at the substrate
+## Reality of $\mathfrak{Q}_\beta$ at the aether
 
 The framework does possess an $\mathrm{Im}(q)$-sensitive observable, which
 the opening paragraph's "not currently in the framework" did not anticipate:
@@ -39,7 +39,7 @@ $(\mathrm{Re}\,q, \mathrm{Im}\,q)$.
 
 | candidate | conclusion at $q_0$ | scope | carrier |
 |---|---|---|---|
-| (i) chirality | the identification $\text{chirality} = (q \mapsto \bar q)$ holds exactly on $\lvert q\rvert = 1$; the substrate sits $18.83\,\%$ of $q_0$ away from it | (b) | `qou:QOU.QBeta.conj_eq_inv_iff_modulus_one` |
+| (i) chirality | the identification $\text{chirality} = (q \mapsto \bar q)$ holds exactly on $\lvert q\rvert = 1$; the aether sits $18.83\,\%$ of $q_0$ away from it | (b) | `qou:QOU.QBeta.conj_eq_inv_iff_modulus_one` |
 | (ii) phase dual to CAL-2 | $\mathrm{Im}\,q = 0$ on the whole admissible set | (b) | `qou:QOU.QBeta.im_qbeta_zero_iff_e2` |
 | (iii) non-Hermitian | premise correct; **open**, but re-scoped — the framework *does* carry a categorical decay rate, and that rate is built entirely at real $q$ | (a) | `qou:QOU.QBeta.two_width_mechanisms_are_independent` |
 
@@ -240,9 +240,9 @@ canonical choice is **$\mathrm{Im}(q_0) = 0$** (real q). This is:
 
 ## Cross-references
 
-- [The pre-Archimedean substrate is polymorphic in its base ring](q-zero-complex-extension.md) — substrate polymorphism
+- [The pre-Archimedean aether is polymorphic in its base ring](q-zero-complex-extension.md) — aether polymorphism
 - [Lusztig bar vs Hermitian-$\ast$](lusztig-vs-hermitian-bar.md) — involution split for complex q
 - [Im(q) is not the EM / P_skew channel — distinct mechanisms](rem-im-q-vs-p-skew.md) — the distinction from P_skew
 - [Categorical mass as Markov trace](../mass-endomorphism/categorical-mass-markov.md) — modulus projection
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the algebraic→archimedean wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the aether parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

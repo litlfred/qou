@@ -1,4 +1,4 @@
-The **$q$-energy** of a particle knot $K$ evaluates the [categorical Hamiltonian](#def:categorical-hamiltonian) in the dimensionless substrate action/mass chart ($\ell_P = \hbar_q\,t_P = 1$), summing the rotational, translational, and rest-action projections derived from $(\mathbf{C}, A, \tau)$ and the substrate parameter $q$.
+The **$q$-energy** of a particle knot $K$ evaluates the [categorical Hamiltonian](#def:categorical-hamiltonian) in the dimensionless aether action/mass chart ($\ell_P = \hbar_q\,t_P = 1$), summing the rotational, translational, and rest-action projections derived from $(\mathbf{C}, A, \tau)$ and the aether parameter $q$.
 
 Let $K = \hat{\beta}$ be a particle knot with braid representative $\beta \in B_n$. The **$q$-energy** is
 
@@ -24,4 +24,4 @@ $$
   \mathfrak{E}_q(K)\big|_{\text{rest}} \;=\; \mathfrak{S}_q(K) \;=\; \mathfrak{m}(K)
 $$
 
-in the substrate mass chart, whereas converting to the causal-cone chart ($c_q = 1/(q - 1)$) rescales the rest value by $c_q^2$ to $\mathfrak{E}(K) = \mathfrak{m}(K)\,c_q^2 = \mathfrak{m}(K)/(q - 1)^2$ ([categorical Hamiltonian](#def:categorical-hamiltonian)).
+in the aether mass chart, whereas converting to the causal-cone chart ($c_q = 1/(q - 1)$) rescales the rest value by $c_q^2$ to $\mathfrak{E}(K) = \mathfrak{m}(K)\,c_q^2 = \mathfrak{m}(K)/(q - 1)^2$ ([categorical Hamiltonian](#def:categorical-hamiltonian)).

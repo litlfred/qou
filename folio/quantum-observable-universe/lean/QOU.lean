@@ -317,8 +317,8 @@ import BraidKnotOctonion.RademacherReversible
 import ToricConicOpt.M004AngleStructure
 import ToricConicOpt.L6a4AngleStructure
 import QOU.BraidsAndKnots.FigureEightSelfDuality
-import BraidKnotOctonion.FigureEightVolume
-import BraidKnotOctonion.FigureEightVolumeLiterature
+import QOU.Transcendental.BraidKnotOctonion.FigureEightVolume
+import QOU.Transcendental.BraidKnotOctonion.FigureEightVolumeLiterature
 import BraidKnotOctonion.NeumannZagierParity
 import BraidKnotOctonion.MortonFranksWilliams
 import BraidKnotOctonion.HomflySkeinReference
@@ -1927,6 +1927,7 @@ import QOU.MassTheory.H4GPMTModifiedDimensionCumulants
 import QOU.EightfoldWay.USpinColemanGlashowLambdaSigma
 import QOU.EightfoldWay.AlternatingChannelRowCap
 import QOU.EightfoldWay.HyperchargeUniqueness
+import QOU.EightfoldWay.NeutralLeptonFixesCharges
 import QOU.EightfoldWay.ColourSingletSelectionRule
 import QOU.StandardModel.OctonionColourTripletSplitting
 import QOU.StandardModel.ColourOnSingleFibreThreeStrands

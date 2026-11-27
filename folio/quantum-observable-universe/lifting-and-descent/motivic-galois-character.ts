@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:motivic-galois-character",
   title:
-    "Motivic Galois character $\\chi^{\\mathrm{mot}}_A$ of the Frobenius--Hopf substrate",
+    "Motivic Galois character $\\chi^{\\mathrm{mot}}_A$ of the Frobenius--Hopf aether",
   tags: [
     "motivic-galois",
     "frobenius",

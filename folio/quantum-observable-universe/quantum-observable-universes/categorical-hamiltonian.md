@@ -35,6 +35,6 @@ Energy in a quantum observable universe is defined as the Legendre transform of 
 
 | Unit chart | Clock / length normalisation | Energy observable | Exact conversion identity |
 |---|---|---|---|
-| Substrate action / mass chart | Full Reeb circuit $\ell_P = \hbar_q\,t_P = 1$ | Static action $\mathfrak{S}_q$, holonomy mass $\mathfrak{m}$ | Base trace in $K$ |
+| Aether action / mass chart | Full Reeb circuit $\ell_P = \hbar_q\,t_P = 1$ | Static action $\mathfrak{S}_q$, holonomy mass $\mathfrak{m}$ | Base trace in $K$ |
 | Causal-cone / worldline chart | Per-step cone speed $c_q = 1/(q - 1)$ | Rest energy $\mathfrak{E} = \mathfrak{m}\,c_q^2$ | $\mathfrak{E} = \mathfrak{m}/(q - 1)^2$ |
 | Electronic / hadronic per-tick chart | Planck circuit tick $t_P = q/(q - 1)$ | Hadronic scale $\mathfrak{E}_0$ | $\mathfrak{E}_0 = (\mathfrak{m}_e c_q^2)/t_P = \mathfrak{m}_e c_q^2 \hbar_q = \mathfrak{m}_e/\bigl(q(q - 1)\bigr)$ |

@@ -1,4 +1,4 @@
-*Let $q$ be a substrate parameter and $m_e$ a mass scale. The **expression $\kappa_{\mathrm{closed}}$** is*
+*Let $q$ be an aether parameter and $m_e$ a mass scale. The **expression $\kappa_{\mathrm{closed}}$** is*
 
 $$
   \kappa_{\mathrm{closed}}(q, m_e)

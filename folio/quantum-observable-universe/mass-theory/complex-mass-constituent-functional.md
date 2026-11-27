@@ -28,7 +28,7 @@ ratio $b_n / b_{n-2}$ of the Morgan–Voyce tower — the same tower whose
 divisibility $b_a \mid b_n \Leftrightarrow a \mid n$ fixes which windings are
 generations. So the second-generation (charm) block is *determined* by the
 first-generation block, with no free per-flavour parameter; the light-doublet
-splitting $\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}$, which the substrate already
+splitting $\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}$, which the aether already
 fixes, is the single calibrated anchor.
 
 **Falsifiability.** Both the Chern–Simons invariant and the composite braid are

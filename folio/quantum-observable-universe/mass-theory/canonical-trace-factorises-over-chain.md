@@ -37,7 +37,7 @@ $$
 
 ## Measured
 
-At 200 bits, with $q$ from the fifty-digit substrate value, the full
+At 200 bits, with $q$ from the fifty-digit aether value, the full
 $H_{3A}$ Markov trace of the canonical word against the product of two-strand
 factors: $^2$H ($n=6$) $2.3\times10^{-59}$, $^3$H and $^3$He ($n=9$)
 $3.1\times10^{-59}$, $^4$He ($n=12$) $4.0\times10^{-59}$; the Jones

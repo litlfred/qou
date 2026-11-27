@@ -5,7 +5,7 @@ $B = m_e \cdot \mathrm{Vol}(\mathcal{B}_3) \cdot \Delta\mathrm{tr}$
 to **+0.19 %**, but undershoots $A \ge 3$ by 44–72 %.  Diagnosis:
 $\Delta\mathrm{tr}$ is the **linear truncation** of $\log(\mathrm{tr}) \sim \mathrm{Vol}$;
 the extensive observable lives in the **per-rep q-Reeb rotation
-phase** on the column-rich irrep of a substrate-fixed force-carrier
+phase** on the column-rich irrep of an aether-fixed force-carrier
 torus knot.
 
 The α_shift universal chain proves
@@ -17,7 +17,7 @@ that the per-rep q-Reeb rotation phase records.
 
 ## The unification
 
-Per nucleus A, identify the substrate-specific force-carrier torus
+Per nucleus A, identify the aether-specific force-carrier torus
 knot $T(p_A, k_A)$ whose α_shift sets the per-rep Reeb eigenvalue.
 The binding closure is then
 
@@ -34,7 +34,7 @@ $$
 | $^4$He | 4 | T(3, 4) candidate | 8 | open |
 
 The candidate `(p, k)` values are hypothesised; the rigorous
-identification from the substrate's
+identification from the aether's
 Hecke-Wedderburn block structure on $H_{3A}(q)$ is open.
 
 The deuteron candidate $T(2, 3)$ is motivated by the following rationale:
@@ -53,14 +53,14 @@ The deuteron candidate $T(2, 3)$ is motivated by the following rationale:
    Markov-weighted q-Reeb phase aggregation gives
    $\rho_{\mathrm{full}}(D) = 14.6673$ MeV/rad.  With
    $\alpha_{\mathrm{shift}} = 3$ and $m_e \approx 0.511$ MeV, the
-   abstract substrate coupling $\rho_0$ of the binding factorisation
+   abstract aether coupling $\rho_0$ of the binding factorisation
    reads $\rho_0 = B(D) / (m_e \cdot 3) \approx 1.451$ — a
    dimensionless ratio (its $\mathrm{rad}^{-1}$ unit arises only
    when the result is re-multiplied by the $14.6673$ MeV/rad
    phase-scale measurement to recover $B(D)$).  Note that
-   $\rho_0$ (the *substrate coupling*) and $\rho_{\mathrm{full}}(D)$
+   $\rho_0$ (the *aether coupling*) and $\rho_{\mathrm{full}}(D)$
    (the *measured aggregation*) are **distinct quantities** — one is
-   the substrate-universal coupling, the other the per-deuteron
+   the aether-universal coupling, the other the per-deuteron
    phase-weighted aggregation — bridged by the $\alpha_{\mathrm{shift}} = 3$
    normalisation.
 
@@ -77,7 +77,7 @@ This is the $A\ge3$ analogue of:
   $\alpha_{\text{shift}}(A) \in \mathbb{N}$ is the per-A pole order.
 - **Hypothesis 2 (force-carrier knot).** The per-A pole order
   $\alpha_{\text{shift}}(A)$ is realised by the proved formula
-  $k(A) \cdot (p(A) - 1)$ at a substrate-identified torus knot.
+  $k(A) \cdot (p(A) - 1)$ at an aether-identified torus knot.
 - **Uniqueness (conditional on both hypotheses).** Two binding
   evaluators sharing $(m_e, \rho_0, \alpha_{\text{shift}})$ agree
   pointwise.
