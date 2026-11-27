@@ -1,13 +1,13 @@
 ---
 # qou-l4t2
 title: Closed-Form Two-Loop O(alpha_EM^2) Bloch-B_3(C) / zeta(3) Schwinger Coefficient c_2 in 1/alpha_EM
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - compute-accuracy
 created_at: 2026-11-19T06:43:03Z
-updated_at: 2026-11-27T14:18:37Z
+updated_at: 2026-11-27T23:59:00Z
 parent: qou-3l2l
 ---
 
@@ -60,3 +60,7 @@ This bean was set to completed by local commits on `cat/cat-harness/beans` (e223
 ## 2026-11-22 — applicability verdict (STRICT review, wave-2 brief)
 
 **NEEDS-OWNER.** canonical α_em form open (qou-aemx, 2026-11-21); “the” two-loop coefficient is undefined until a form is chosen; α_em chain owned elsewhere.
+
+## 2026-11-27 — skein part derived (PR #9841)
+
+Answers the surviving pure-math core for the Form B arm. Lean `QOU/MassTheory/EmVertexPairScalarChain.lean` (no sorry): in convention D the skein `σ − σ⁻¹ = h` is scalar in any algebra, so every chirality-summed vertex pair, at any positions, is `−h²`, and `k` pairs give `(−h²)^k` under every moment. Two-loop coefficient of the skein chain = `−N₁h²H`; `N₁ = 1` is Form B's own term. Nothing from the vertex algebra lies outside `ℤ[q,q⁻¹]·[2]_q/(8π)`: no ζ(3)/Li₃. A Bloch-B₃ term would need a two-loop measure (undefined in the corpus). C1 stays a labelled arm. Open: N₁ (placement count), §3b-cond normalization, two-loop measure. Audit `docs/audits/2026-11-27-alpha-em-two-loop-skein-scalar.md`.
