@@ -2,6 +2,7 @@ import Mathlib.Tactic
 import Mathlib.Topology.Order.Basic
 import Mathlib.Order.Filter.Basic
 import CompactQuantumMetrics.AlgebraicGnsEmbedding
+import QOU.Observations.QCltCut
 
 /-!
 # QOU.Observations.QCltNonCommutative
@@ -19,6 +20,15 @@ under `tr_M`, to a non-commutative q-Gaussian process at parameter
 `q ∈ (0, ∞)` in the Wenzl positivity regime.
 
 Resolves issue #649 §1 (q-CLT proof / derivation).
+
+**Transcendental subgraph (moved 2026-11-27, bean `qou-e1uf`).** This class
+states convergence with `Filter.Tendsto` and carries an analytic
+characteristic-function clause, so it lives behind the boundary
+`QOU/Transcendental/`. The algebraic statement is
+`QOU.Observations.QCltCut.QCltCut`: moments converge as located cuts to the
+ℤ[q] q-Gaussian moments. `toQCltCut` below shows that an instance of this class
+whose limit moments are the q-Gaussian ones gives an instance of that one, so
+this class can be deleted once nothing cites it.
 
 ## References
 
@@ -98,5 +108,33 @@ class QCltNonCommutative
     ∀ (ξ : R),
       Filter.Tendsto (fun n => characteristicSequence n ξ)
         Filter.atTop (nhds (characteristicLimitValue ξ))
+
+/-! ### Strangler bridge to the cut form -/
+
+open QOU.Core.CutLimit QOU.Core.QGaussianMoments QOU.Observations.QCltCut
+
+/-- In an ordered field with the order topology, `Filter.Tendsto` to `a` gives
+the located-cut convergence of `QOU.Core.CutLimit`. -/
+theorem convergesTo_of_tendsto {R : Type u} [Field R] [LinearOrder R]
+    [IsStrictOrderedRing R] [TopologicalSpace R] [OrderTopology R]
+    {f : ℕ → R} {a : R} (h : Tendsto f atTop (𝓝 a)) : ConvergesTo f a := by
+  apply convergesTo_of_tendstoEps
+  intro ε hε
+  have h1 := (tendsto_order.1 h).1 (a - ε) (by linarith)
+  have h2 := (tendsto_order.1 h).2 (a + ε) (by linarith)
+  obtain ⟨N, hN⟩ := eventually_atTop.1 (h1.and h2)
+  exact ⟨N, fun n hn => abs_lt.mpr
+    ⟨by linarith [(hN n hn).1], by linarith [(hN n hn).2]⟩⟩
+
+/-- An instance of the topological class whose limit moments are the ℤ[q]
+q-Gaussian moments at `q` gives an instance of the cut form. -/
+def QCltNonCommutative.toQCltCut {R : Type u} [Field R] [LinearOrder R]
+    [IsStrictOrderedRing R] [TopologicalSpace R] [OrderTopology R]
+    [inst : QCltNonCommutative R] (q : R)
+    (hpin : ∀ k, inst.limitMoment k = evalAt q (qGaussMoment k)) : QCltCut R q where
+  momentSequence := inst.momentSequence
+  momentConverges k := by
+    rw [← hpin k]
+    exact convergesTo_of_tendsto (inst.momentConvergence k)
 
 end QOU.Observations.QCltNonCommutative
