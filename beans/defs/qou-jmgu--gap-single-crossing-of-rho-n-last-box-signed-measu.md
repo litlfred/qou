@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-27T22:17:45Z
-updated_at: 2026-11-27T23:47:53Z
+updated_at: 2026-11-27T23:56:46Z
 parent: qou-h315
 ---
 
@@ -20,3 +20,6 @@ OPEN: no proof. Suggested attack: Kerov transition measures (rho_n is a three-st
 
 
 2026-11-27: SC extended exactly to n<=67 (scfast run stopped at the 1h limit at n=68); t_n=13 for n=57..67.
+
+
+2026-11-27 (PR upper tail): PROVED rho_n(s)>=0 for s^2>=5n-1 (addable cell has ij<=n). Open window now 2+sqrt(n-1) < s < sqrt(5n-1). Heuristic: (t_n-1)/sqrt(n) -> Omega(1)=1/3+2sqrt3/pi (VKLS), measured 1.64,1.49,1.48,1.47 at n=30,45,55,67. Still OPEN.
