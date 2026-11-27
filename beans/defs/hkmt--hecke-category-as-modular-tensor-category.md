@@ -89,3 +89,11 @@ as A, the Markov curl on the last strand is +A³, and (A³)^{n+1}A^{n(n+1)} = ω
 ## 2026-11-27 — off-vacuum row S_{1,j} from braiding (PR #9822)
 
 `HeckeTemperleyLieb/TLHopfLinkRow.lean`, sorry-free: `hopf_trace` evaluates the Hopf link of one strand with `p_n` for any Markov tower, `δ^{n+2}τ_{n+1}((p_n⊗1)·hopfW) = [n+2](A^{2(n+2)}+A^{−2(n+2)}) = [2(n+2)]`, by recursion through the Wenzl identity. `hopf_row_eq_sMatrix` identifies this with `sMatrix ζ k 1 (n+1)` at ζ = ω². With #9817 it is unconditional. Still open: rows S_{b,j} with b ≥ 2 (these need the cabled projector p_{b−1} on the encircling bundle), the ribbon twist on p_n via interior curls, and full modularity. The bean stays open.
+
+## 2026-11-27 — meridian closure (PR #9843), rows S_{b,j} stage 1
+
+`HeckeTemperleyLieb/TLMeridianClosure.lean` (sorry-free): cap sandwich closure without a conditional
+expectation; `jw_cap_hopf` (one closed loop around p_n = q^{n+2}+q^{-(n+2)} · p_n);
+`trace_loop` (Markov meridian removal for a loop passing c strands). Still open for all rows:
+cup slide `e·ι(loop_c)·loop_{c+1} = e`, naturality of the cabled loop with the cable projector,
+Chebyshev recursion, root-of-unity identification. Bean stays open.
