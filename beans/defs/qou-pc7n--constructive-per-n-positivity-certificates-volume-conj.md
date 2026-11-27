@@ -1,14 +1,14 @@
 ---
 # qou-pc7n
 title: 'Constructive: per-N positivity certificates for the volume conjecture in Q(zeta_N)+'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - constructive
     - volume-conjecture
 created_at: 2026-11-27T17:40:00Z
-updated_at: 2026-11-27T17:40:00Z
+updated_at: 2026-11-27T18:45:00Z
 parent: qou-dk7p
 ---
 Owner choice 2026-11-27 ("Both, quantale cut + certificates").
@@ -34,3 +34,13 @@ thread.
 
 This bean tracks an open conjecture and must not be closed until the
 mathematics closes.
+
+## 2026-11-27 stage 1 (knot-volume thread, PR #9547)
+4_1 done for every N: QOU/Core/KashaevHermitianCertificate.lean writes
+<4_1>_N = sum_k star((q;q)_k)(q;q)_k (sum of norms Q(zeta_N) -> Q(zeta_N)^+),
+gives each term as a nonnegative certificate in any star-ordered field, and
+<4_1>_N >= 1 + N^2 at every primitive N-th root in C (total positivity).
+No unitarity is used, so the embedding caveat does not bite for 4_1.
+Open: sharper per-N bounds from the middle terms k ~ 5N/6; knots whose
+state sum is not a sum of norms (8_18: c_1 < 0 at the Kashaev point, PR #9456);
+the N -> infinity limit on [Coev E]. Bean stays open.
