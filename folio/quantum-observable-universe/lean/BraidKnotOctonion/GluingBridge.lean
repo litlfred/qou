@@ -35,7 +35,7 @@
   -- Ref: [thurston1978] Ch. 4
   -- Ref: [neumann-zagier1985]
 -/
-import BraidKnotOctonion.FlatTetrahedra
+import QOU.Transcendental.BraidKnotOctonion.FlatTetrahedra
 
 namespace QOU.Knot.FlatTet
 

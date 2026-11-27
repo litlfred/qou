@@ -1149,6 +1149,7 @@ const ORDER: Array<FileSlot | Reference> = [
 
   // ── AME2020 (Atomic Mass Evaluation 2020) ─────────────────────
   { id: "ame2020" },
+  { id: "angeli-marinova2013" },
 
   { id: "ame2020tables" },
 

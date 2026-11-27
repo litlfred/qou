@@ -1,6 +1,7 @@
 import QOU.Core.Basic
 import QOU.Core.QuantumObservableUniverse
 import QOU.InformationTheory.UnifiedClockScaleLayers
+import QOU.InformationTheory.EnergyLengthMap
 import CompactQuantumMetrics.FiniteRieffelQuantumMetric
 import Mathlib.Data.Real.Basic
 

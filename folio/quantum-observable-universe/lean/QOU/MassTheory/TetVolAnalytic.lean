@@ -50,7 +50,7 @@
   -- Ref: [leitner2026] beans qou-w3eg (H4-5 obtuse), qou-idvt
 -/
 import QOU.Transcendental.MassTheory.LobAnalytic
-import BraidKnotOctonion.IdealTetrahedronVolumeConcave
+import QOU.Transcendental.BraidKnotOctonion.IdealTetrahedronVolumeConcave
 
 namespace QOU.Archimedean
 

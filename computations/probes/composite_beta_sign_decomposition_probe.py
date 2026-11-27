@@ -104,7 +104,7 @@ def witness_rows():
     return {(r["Z"], r["N"]): r for r in d["data"]["rows"]}
 
 
-def scorecard_beta_rows(by):
+def scorecard_beta_rows(by, key="m_symbolic_MeV"):
     """Exactly the row filter of generate-accuracy-scorecard.py (Table 3.4b)."""
     ame = json.loads((COMP / "data" / "ame2020.json").read_text())
     ame = ame if isinstance(ame, list) else next(v for v in ame.values() if isinstance(v, list))
@@ -116,9 +116,9 @@ def scorecard_beta_rows(by):
         if mp.mpf(str(e["beta_decay_energy_keV"])) / 1000 <= mp.mpf("0.01"):
             continue
         a, b = by.get((z, n)), by.get((z + 1, n - 1))
-        if not a or not b or not a["m_symbolic_MeV"] or not b["m_symbolic_MeV"]:
+        if not a or not b or not a.get(key) or not b.get(key):
             continue
-        q = mp.mpf(a["m_symbolic_MeV"]) - mp.mpf(b["m_symbolic_MeV"]) - M_E
+        q = mp.mpf(a[key]) - mp.mpf(b[key]) - M_E
         out.append(((z, n), q))
     return out
 
@@ -150,6 +150,9 @@ def main() -> int:
     R1 = dm_np - M_E - bond_term
     R2 = dm_np - M_E
 
+    ruled = [(zn, v) for zn, v in scorecard_beta_rows(by, "m_ruled_MeV") if zn != (0, 1)]
+    ruled_spread = (max(v for _, v in ruled) - min(v for _, v in ruled)) if ruled else None
+
     checks = {
         "n_composite_rows": (len(composite), 1009),
         "all_composite_rows_equal_to_witness_rounding": (spread <= mp.mpf("2e-6"), True),
@@ -159,6 +162,10 @@ def main() -> int:
         "bond_term_positive": (bond_term > 0, True),
         "R1_still_endothermic": (R1 < 0, True),
         "R2_exothermic": (R2 > 0, True),
+        # Post-repair (PR #9675 fields): the producer's m_ruled reproduces R2.
+        "ruled_rows_all_present": (len(ruled), 1009),
+        "ruled_rows_all_exothermic": (sum(1 for _, v in ruled if v > 0), 1009),
+        "ruled_rows_equal_R2_to_witness_rounding": (bool(ruled) and all(abs(v - R2) <= mp.mpf("2e-6") for _, v in ruled), True),
     }
     ok = all(a == b for a, b in checks.values())
 
@@ -195,6 +202,7 @@ def main() -> int:
             "repair_R2_free_baseline_plus_Tz_even_bond_q_swap_MeV": mp.nstr(R2, 15),
             "n_composite_rows": len(composite),
             "q_spread_across_rows_MeV": mp.nstr(spread, 6),
+            "ruled_q_spread_across_rows_MeV": mp.nstr(ruled_spread, 6) if ruled else None,
         }.items():
             wb.add_data(dk, dv)
         wb.save()

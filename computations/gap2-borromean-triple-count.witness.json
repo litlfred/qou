@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:07:48.807954+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-11-27T21:16:55.968231+00:00",
+  "commitSha": "5e2fe0517e3ddc64b5ddd99026355dc7c253c765",
   "assertions": [
     {
       "name": "three_clique_overshoots_irreducible_needed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "gap2-borromean-triple-count",
   "scriptFile": "gap2_borromean_triple_count.py",
   "scriptHash": "0c59b2d2a66a",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptCommitSha": "4d9bd0b59a7e9b4eae7adf2284ed559fad952b30",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a22b08f9db48ed97"
   },
   "invocation": {
     "argv": [
@@ -78,7 +79,7 @@
     "per_order_energies_MeV": {
       "e2": 2.2245662,
       "e3": 1.8080976,
-      "e4": 8.485808637496472
+      "e4": 8.577341901103058
     },
     "predictions": {
       "5Li": {
@@ -89,19 +90,19 @@
         "B_strong": 28.474892281646557,
         "B_2plus3": 32.677779,
         "ratio_2plus3": 1.1475997407394025,
-        "B_plus4": 49.649396274992945,
-        "ratio_plus4": 1.7436201613656104
+        "B_plus4": 49.832462802206116,
+        "ratio_plus4": 1.7500492121027458
       },
       "6Li": {
         "A": 6,
         "m2": 12,
         "m3": 8,
         "m4": 0,
-        "B_strong": 34.01178467872911,
+        "B_strong": 34.011784678729114,
         "B_2plus3": 41.1595752,
-        "ratio_2plus3": 1.2101562910852222,
+        "ratio_2plus3": 1.210156291085222,
         "B_plus4": 41.1595752,
-        "ratio_plus4": 1.2101562910852222
+        "ratio_plus4": 1.210156291085222
       },
       "7Li": {
         "A": 7,

@@ -57,7 +57,7 @@ strands.
 - **At q₀ itself it is still a measurement.** The corollary gives an interval around 1 that depends
   on the word. Whether q₀ lies inside it is not decided by this argument. Measured: no non-pure
   neutral word passes reading 3 at q₀ for 7 vertices (0 of 4848 with a count ≢ 0 mod 3) or
-  8 vertices (0 of 16 422); 9 vertices: see §5.
+  8 vertices (0 of 16 422) or 9 vertices (0 of 65 538); see §5.
 - **Mod 3 is a separate, false-in-general statement** (counterexample `(V₀V₂)⁵`, PR #9624). Pure
   neutral words have counts ≡ 0 mod 3 up to nine vertices and not at ten.
 
@@ -77,4 +77,16 @@ combinatorics, so no base ring enters; no `q₀` and no measured value appears i
 
 ## 5. Nine-vertex sweep
 
-Running at the time this PR was opened: every neutral non-pure V-word with 7–9 vertices, reading 3 at q₀. Result to follow in this PR.
+Every freely reduced V-word of 7, 8 and 9 vertices (all `4^k` index sequences), keeping the
+linking-neutral non-pure ones, with the two-row characters evaluated exactly (`Fraction`) at q₀:
+
+| vertices | neutral non-pure words | pass reading 3 at q₀ |
+|---|---|---|
+| 7 | 4 848 | 0 |
+| 8 | 16 422 | 0 |
+| 9 | 65 538 | 0 |
+
+Run on 2026-11-27 with `six_strand_neutral_selection_probe` (its `neutral`, `char`, `mats_at`),
+1807 s for k = 9. Scope (a): purity at q₀ is measured through nine vertices, proved only near q = 1.
+Every non-pure neutral word at these lengths has some vertex count not divisible by 3, so the same
+numbers also close the k = 9 line of the mod-3 audit.

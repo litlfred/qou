@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-27T20:30:27.494113+00:00",
-  "commitSha": "f4c4a06b5ef19d00fe8a82bacf606fca664e28f4",
+  "computedAt": "2026-11-27T20:44:32.222740+00:00",
+  "commitSha": "e45d834b798cb1ed89808dd3a915cc6870f0aa38",
   "assertions": [
     {
       "name": "n_composite_rows",
@@ -59,14 +59,35 @@
       "expected": "True",
       "passed": true,
       "tolerance": "0"
+    },
+    {
+      "name": "ruled_rows_all_present",
+      "computed": "1009",
+      "expected": "1009",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "ruled_rows_all_exothermic",
+      "computed": "1009",
+      "expected": "1009",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "ruled_rows_equal_R2_to_witness_rounding",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0"
     }
   ],
   "allPassed": true,
   "durationMs": 5,
   "computation": "composite-beta-sign-decomposition",
   "scriptFile": "composite_beta_sign_decomposition_probe.py",
-  "scriptHash": "03f5313ee63b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "cd1db3393023",
+  "scriptCommitSha": "b8ce17acdf18b4f3c6e6072bdeaa7024d04e4ed6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -102,6 +123,7 @@
     "repair_R1_free_baseline_q_swap_MeV": "-1.23736442319276",
     "repair_R2_free_baseline_plus_Tz_even_bond_q_swap_MeV": "0.32543404931",
     "n_composite_rows": 1009,
-    "q_spread_across_rows_MeV": "1.0e-6"
+    "q_spread_across_rows_MeV": "1.0e-6",
+    "ruled_q_spread_across_rows_MeV": "1.0e-6"
   }
 }

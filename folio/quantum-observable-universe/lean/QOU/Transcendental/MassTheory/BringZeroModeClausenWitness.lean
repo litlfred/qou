@@ -1,6 +1,6 @@
 import QOU.MassTheory.EmCouplingBringZeroMode
 import QOU.Transcendental.MassTheory.CatalanClausenBridge
-import BraidKnotOctonion.Clausen
+import QOU.Transcendental.BraidKnotOctonion.Clausen
 import Mathlib.Analysis.Real.Pi.Bounds
 
 /-!

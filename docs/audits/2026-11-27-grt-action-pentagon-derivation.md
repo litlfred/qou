@@ -611,3 +611,234 @@ that. It is not literally "a `K`-associator exists".
 mathematically substantive one.
 
 **Still open (bean `qou-3fdg`).** (B0)–(B3). Nothing else in Stage 4 is open.
+
+## 14. (B0) and (B3) closed; (B1) not done
+
+Branch `claude/grt-basechange-2026-11-27`. Two new files in
+`folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/`:
+`BaseChange.lean` and `Homogeneity.lean`. Both pass `lean`-direct (`-DautoImplicit=false
+-s 65536`, exit 0). `#print axioms` on the main theorems lists only `propext`,
+`Classical.choice` and `Quot.sound`. Neither file contains `sorry` or `axiom`. (B2) is used only
+as a named hypothesis.
+
+**(B0), proved.** `BaseChange.lean` defines:
+
+- `evK a b : K ⊗[ℚ] ℚ⟨X, Y⟩ →ₐ[K] S`, evaluation into any `K`-algebra `S`;
+- the filtrations `FilK` (in `K ⊗ U4 N`) and `FFK` (in `K ⊗ ℚ⟨X, Y⟩`);
+- `AssocK K N E Φ`, an associator with coefficients in `K`. Its conditions are (5.12) at pairs of
+  rational `Fil N 1`, and the hexagon and pentagon at the universal family.
+
+Theorems:
+
+- `rational_lift_of_assocK`. Take `d ≥ 1` and `ε(Φ) = ε(E) = 1`. Suppose `1 ⊗ Φ + z`, with
+  `z ∈ K ⊗ FF d`, is a `K`-associator in `K ⊗ U4 (d + 1)`. Then there is a rational `x ∈ FF d`
+  with `Φ + x` an associator in `U4 (d + 1)`. Moreover `1 ⊗ x − z` solves the base-changed
+  homogeneous system, component by component (`KerK`).
+  - The proof linearises in `K ⊗ U4 (d+1)` (`isTop_FilK`).
+  - It then contracts each component with a `ℚ`-linear retraction `K → ℚ`.
+  - It does not need `K ⊗ (product) → product (K ⊗ …)` to be injective.
+- `solvableOver_of_assocK`. The same hypothesis gives `SolvableOver K d E Φ`.
+
+**(B3), proved modulo (B2).** `Homogeneity.lean`:
+
+- `exists_homog_part`: every `y ∈ FF d` is `h + (element of FF (d+1))` with `h` homogeneous of
+  degree `d`.
+- `eq_zero_of_homog_mem_FF`: a homogeneous `h` of degree `d` lying in `FF (d+1)` is zero.
+  The proof extracts Vandermonde coefficients through `coeff_mem_of_forall`.
+- `grtU4_of_lin`: take `h ∈ FF d` homogeneous of degree `d ≥ 1` with `assocLin (d+1) h = 0`.
+  Then `GrtU4 M h` holds for every `M`, given `Lin514 M h`, the linearised (5.14) in `U4 M`, as
+  a hypothesis.
+
+How the transfer works:
+
+- **(5.12).**
+  - `U4 (d+1)` acts on `ℚ⟨X, Y⟩ ⧸ FF (d+1)` by `t₁₂ ↦ X`, `t₁₃ ↦ −X−Y`, `t₂₃ ↦ Y` and the
+    other generators `↦ 0`.
+  - So the condition at `(t₁₂, t₂₃)` gives `h + h(B, A) ∈ FF (d+1)`.
+  - By homogeneity `h + h(B, A) = 0` in `ℚ⟨X, Y⟩`, which gives (5.12) in every ring.
+- **(5.13) and (5.15).**
+  - `U4 (d+1)` acts on `U4 M ⧸ Fil M (d+1)` by left multiplication by the generators.
+  - So the identity in `U4 (d+1)` puts the `U4 M` expression in `Fil M (d+1)`.
+  - The scaling `tᵢⱼ ↦ r tᵢⱼ` of `U4 M` multiplies the expression by `r^d`. An element of
+    `Fil M (d+1)` with that property is `0`.
+- No grading on `U4 M` was needed. The scaling endomorphisms and the Vandermonde argument
+  replace it.
+
+**(B1), not done.** What is needed, in order:
+
+1. **`AssocK` is closed under rational `GRT1U4 N g`** (`Φ_K ↦ evK(g A g(B,A), B) Φ_K · g`).
+   - The rational proofs are `pentagon_act`, `hexagon_act_of_transport` and `comp_inv512`.
+     They use `φ` only through `eval_conj`, i.e. equivariance under conjugation by a unit.
+   - Every `g`-side lemma is generic in the ring and applies unchanged in `S = K ⊗ U4 N`:
+     `transported_dk4`, `far_of_tcompat`, `transported3_sum`, `transported3_dk3`,
+     `tcompat_iff_poly`.
+   - So the work is:
+     - copy the three `φ`-side theorems with `eval · · φ` replaced by a function `f` satisfying
+       that equivariance;
+     - prove the equivariance and naturality of `evK` (both by `TensorProduct.induction_on`);
+     - move the universal pentagon and hexagon to the transported family. Use the `K`-algebra
+       map `K ⊗ U4 N → S` built from `lift N s` with `Algebra.TensorProduct.lift`. Its
+       word-vanishing condition comes from `s ∈ FilK 1`.
+2. **From `c ∈ ℚ` to `c ∈ K`.**
+   - Let `gX = Σ_k X^k ⊗ expTerm h k ∈ (K ⊗ ℚ⟨X, Y⟩)[X]`.
+   - Map each defect of `compK Φ_K gX` into `(K ⊗ U4 N)[X]` with `Polynomial.mapAlgHom (evK …)`.
+   - Each defect vanishes at every rational `c`, by step 1 and
+     `expPoly (c • h) = Σ c^k expTerm h k`. So by `coeff_mem_of_forall` with `⊥` it is the zero
+     polynomial.
+   - Evaluate it at `b ∈ K` with `Polynomial.eval₂AlgHom'`. The scalar `b` is central.
+3. **The congruence `compK Φ_K gX(b) ≡ Φ_K + b ⊗ h (mod FFK (d+1))`.**
+   - For rational `c` it follows from a version of `compPoly_congr` that is linear in `φ`:
+     `compPoly φ g − φ − ε(φ) y ∈ FF (n+1)`. Then extend linearly to `Φ_K`.
+   - Then apply the step-2 argument with `FFK (d+1)` in place of `⊥`. `FFK (d+1)` is closed
+     under multiplication by `K`.
+4. **Assemble.**
+   - Write `KerK`'s `1 ⊗ x − z = Σ bᵢ ⊗ yᵢ` in a `ℚ`-basis of `K`. Each `yᵢ` lies in
+     `ker linFF`.
+   - Take degree-`d` parts `hᵢ` (`exists_homog_part`). Then `grtU4_of_lin` gives `GrtU4 N hᵢ`
+     under (B2).
+   - Shift `Φ_K` by `gX(bᵢ)` for each `i`.
+   - The invariant should be stated at a fixed final level `N`: `AssocK K N E Φ_K` and
+     `Φ_K − 1 ⊗ Φ ∈ FFK d`. `rational_lift_of_assocK` gets level `d+1` through the projection
+     `U4 N → U4 (d+1)`.
+
+Estimate: 600 to 800 lines, mostly copies of existing proofs with `eval · · φ` replaced by `f`.
+None of it needs new mathematics beyond what is listed.
+
+**A caveat on the (B2) hypothesis.**
+- `Lin514 M h` is required for the specific `hᵢ`: degree-`d` parts of differences between
+  rational solutions and the `K`-associator's degree-`d` part.
+- Drinfeld's Prop. 5.7 proves (5.14) only for Lie `y`. The `hᵢ` here are Lie only if both
+  associators are group-like. Neither `AssocU4` nor `AssocK` records that.
+- So whatever the (B2) sibling proves has to cover these `hᵢ`. Either it proves (5.14) for
+  non-Lie elements of the kernel, or group-likeness is added to both associator predicates and
+  carried through the induction.
+
+**Still open (bean `qou-3fdg`).** (B1) as above, and (B2).
+
+## 15. Gap B2 (Drinfeld Prop. 5.7): what is proved, and the one bridge left
+
+Bean `qou-3fdg`, PR #9696. New files `Prop57.lean` and `Prop57Cocycle.lean` under
+`QOU/BraidsAndKnots/RationalAssociator/`. Every declaration below is sorry-free; lean-direct
+(`-DautoImplicit=false -s 65536`) exits 0, and `#print axioms` shows only `propext`,
+`Classical.choice`, `Quot.sound`.
+
+Drinfeld's argument has two steps. Write `s(B, C) = [B, ψ(A, B)] + [C, ψ(A, C)]`, `A = −B − C`.
+
+**Step 2, the vanishing lemma: proved in general** (`vanishing_of_cocycle`). Take `s ∈ ℚ⟨B, C⟩`
+that is `LieLike`, symmetric, and whose cocycle
+`s(Y₁, Y₂) − s(Y₁, Y₂ + Y₃) + s(Y₁ + Y₂, Y₃) − s(Y₂, Y₃)` lies in the words of length `≥ N`.
+Then `s` itself lies in the words of length `≥ N`. The proof substitutes `Y₃ = x·C` with `x`
+central, takes the `x`-coefficient, and gets that the Euler operator kills `s` below degree `N`.
+It is purely algebraic.
+
+**`s` is `LieLike` and symmetric for every `ψ`, Lie or not** (`sPoly_lieLike`, `sPoly_symm`). At
+commuting `x, z`, the element `ψ(−x−z, x)` commutes with `x`, so both brackets vanish. The
+vanishing lemma therefore carries no Lie hypothesis on `ψ`.
+
+**Step 1, the cocycle identity: proved** (`cocycle_identity`, `uDefect_eq_zero`,
+`GrtU4.uDefect_eq_zero`). At a four-strand Drinfeld–Kohno family,
+
+`u = S(t₁₂, t₁₄, t₂₄) − S(t₁₂+t₁₃, t₁₄, t₂₄+t₃₄) + S(t₁₃+t₂₃, t₁₄+t₂₄, t₃₄) − S(t₂₃, t₂₄, t₃₄)`
+`  = −[t₁₂+t₁₃+t₂₃, μ¹²³⁴] − [t₁₄+t₂₄, μ¹²⁴³] + [t₁₄, μ¹⁴²³]`,
+
+where `S(A, B, C) = [B, ψ(A, B)] + [C, ψ(A, C)]` and `μ` is the linearised pentagon defect.
+The identity uses only:
+
+- antisymmetry (5.17);
+- the linearised hexagon (5.18) at the DK3 subfamilies `(t₁₂, t₁₄, t₂₄)`,
+  `(t₁₄, t₁₂+t₁₃, t₂₄+t₃₄)`, `(t₂₃, t₂₄, t₃₄)` and `(t₃₄, t₁₃+t₂₃, t₁₄+t₂₄)`;
+- ten commuting facts.
+
+The relation list came from an exact linear solve over ℚ, and Lean checks it with `noncomm_ring`.
+In `U4 N`, `GrtU4`'s `lin512`, `lin513` and `lin515` give `u = 0`: the hexagon through `liftU3`,
+and the pentagon at strand orders `1243` and `1423` through `lift` on permuted DK4 families.
+**No Lie hypothesis is used in step 1.**
+
+**The bridge still open (not formalised): from `u = 0` in `U4 N` to `cocycle(s) ∈ FF3 N`.** The
+`A`-argument of each `S` term is `t₁₂`, `t₁₂+t₁₃`, `t₁₃+t₂₃` or `t₂₃`. It must be replaced by
+`−B−C`, using that the sum of a DK3 triple commutes with each member. This **central shift** is
+the one place a Lie hypothesis is needed: `ψ(a + z, b) = ψ(a, b)` for central `z` holds for Lie
+`ψ` without linear part. The linear part `α(X − Y)` is harmless, because it is killed by the
+bracket with `B`.
+
+After the shift, every `S` term is a polynomial in `t₁₄, t₂₄, t₃₄`, and `u = 0` becomes
+`cocycle(s)(t₁₄, t₂₄, t₃₄) = 0` in `U4 N`. To pull this back to `ℚ⟨Y₁, Y₂, Y₃⟩` modulo length
+`N`, a retraction is needed: the DK4 family in `End(ℚ⟨Y⟩ ⧸ FF3 N)` with
+- `t_{i4} ↦` left multiplication by `Y_i`;
+- `t₁₃, t₂₃, t₁₂ ↦` the derivations with `Y₁ ↦ [Y₁, Y₃], Y₃ ↦ [Y₃, Y₁]` (and similarly for the
+  other two).
+
+Evaluate at `1`. The DK4 relations of this family were checked by machine (exact arithmetic,
+low degree). In Lean the derivations can be built with the upper-triangular trick of
+`GRTFlow.leibD`.
+
+Finally, `lin514` at DK3 triples whose sum is nonzero needs the same central shift again
+(`lin514_of_drinfeld519` covers only zero-sum triples). So, **as proved here, Lie-ness of `ψ`
+enters only through the central shift**. Whether (5.19) holds for non-Lie `y` satisfying the
+other three conditions is **not established**: it was neither tested nor proved.
+
+## 16a. Gap B2 closed: (5.14) from (5.17), (5.18), (5.20) for Lie `y`
+
+Bean `qou-3fdg`. New file `QOU/BraidsAndKnots/RationalAssociator/Prop57Link.lean`. It is
+sorry-free and lean-direct (`-DautoImplicit=false -s 65536`) exits 0. `#print axioms` on
+`lin514_of_lie`, `grtU4_of_lie` and `sPoly_mem_FF_of_lin` shows only `propext`,
+`Classical.choice` and `Quot.sound`. The axiom check ran on a scratch copy, which was then
+deleted. No `sorry`, `axiom`, `: True` or `native_decide` appears in the file.
+
+**The headline result** is `lin514_of_lie`. Let `y ∈ ℚ⟨X, Y⟩` be a Lie element, and assume
+`GrtU4`'s conditions `lin512` (5.17), `lin513` (5.18) and `lin515` (5.20) in `U4 N`, each stated
+exactly as in `GrtU4`. Then `lin514` holds in `GrtU4`'s form at every `DK3` triple of
+`Fil N 1`. `grtU4_of_lie` packages this as `GrtU4 N y`. Its `const` field follows from Lie-ness
+(`IsLieElt.const`). Being a Lie element is an explicit hypothesis:
+
+`IsLieElt y := y ∈ LieSubalgebra.lieSpan ℚ ℚ⟨X, Y⟩ {X, Y}`
+
+with bracket `pq − qp`. No statement in the file was weakened.
+
+The pieces, in the order of §15's plan:
+
+1. **Central shift** (`central_shift`, `shift_left`, `shift_right`). Suppose `z` and `w` commute
+   with `a`, `b` and with each other. Then
+
+   `y(a + z, b + w) = y(a, b) + α z + β w` for some `α, β ∈ ℚ`.
+
+   The proof is induction over `lieSpan`. The linear part is kept as `α z + β w` instead of
+   being assumed zero.
+2. **`S` is `s`** (`S_eq_eval_sPoly`). At any `DK3` triple `(A, B, C)`,
+
+   `[B, y(A, B)] + [C, y(A, C)] = s(B, C)`.
+
+   The proof shifts `−B−C` by the central `A + B + C`. The linear terms die because `z`
+   commutes with `B` and `C`. Hence (`uDefect_eq_lift_cocycle`)
+
+   `u = cocycle(s)(t₁₄, t₂₄, t₃₄)`,
+
+   using the `DK3` subfamilies `(t₁₂, t₁₄, t₂₄)`, `d2`, `d1` and `d0` of `dk4`.
+3. **The retraction** (`retract`). This is an algebra map `U4 N → End(ℚ⟨Y₁, Y₂, Y₃⟩ ⧸ FF3 N)`.
+   - `t_{i4}` acts as left multiplication by `Yᵢ`.
+   - `t₁₂`, `t₁₃` and `t₂₃` act as the Leibniz maps with `Yᵢ ↦ [Yᵢ, Yⱼ]`, `Yⱼ ↦ [Yⱼ, Yᵢ]` and
+     the third generator sent to `0`. They are built with the upper-triangular matrix trick
+     (`triHom3`, `der3`).
+
+   All fifteen `DK4` relations are proved in Lean (`gen_dk4`):
+   - the three far relations, from the `0` entries;
+   - the six mixed relations, from `[Y_i + Y_j, ·]`-type cancellations;
+   - the three Leibniz–Leibniz relations, from generator checks by `noncomm_ring`.
+
+   Words of length `N` vanish because every generator raises the word filtration
+   (`gen_word_eq_zero`). Evaluating at `1` (`mem_FF3_of_lift_eq_zero`) turns
+   `cocycle(s)(t₁₄, t₂₄, t₃₄) = 0` into `cocycle(s) ∈ FF3 N`.
+4. **Assembly.**
+   - `uDefect_eq_zero_of_lin` is `GrtU4.uDefect_eq_zero` restated with `lin512`, `lin513` and
+     `lin515` as hypotheses, without `lin514`.
+   - With `vanishing_of_cocycle` it gives `sPoly y ∈ FF N` (`sPoly_mem_FF_of_lin`).
+   - Evaluating at `A, B ∈ Fil N 1` gives (5.19), since `Fil N N = 0`.
+   - `lin514_of_drinfeld519` then gives the zero-sum triples.
+   - A triple `(u, v, w)` with central sum `z ≠ 0` reduces to `(−(v + w), v, w)`. The two shifts
+     `α z` and `β z` satisfy `(α + β) z = 0` by (5.17) at `(u, w)` and `(−(v + w), w)`. Since `z`
+     commutes with `v + w`, the right side of (5.14) does not change.
+
+**Scope.** These are statements in each truncation `U4 N`, which is how `GrtU4` is stated. Lie-ness
+enters only through the central shift. Whether non-Lie `y` can satisfy the three conditions
+without (5.14) is still **not established**, as §15 said: neither tested nor proved. B1, in
+`BaseChange.lean` and `Homogeneity.lean`, was not touched.

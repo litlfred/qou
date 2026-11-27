@@ -42,8 +42,12 @@ Classical references (closed forms, comparison only): uniform 0.464758, Gaussian
 CSB, 0.5214134, from the measured r_rms(³He) (bean qou-usft STEP 3).  These are used ONLY
 in the printed comparison, never as inputs.  Empirical values do not enter f.
 
-Not wired to the scorecard or to coulomb_energy.py.  Scope (a): a statement about this
-construction alone.
+Lean: QOU/Nuclear/CoulombShellShapeFactor.lean (sorry-free) defines E, M₂, Q and f² exactly as
+computed here and proves f² is dilation- and charge-scale-invariant, and equal on every lattice
+dilate p^{k+n}. The probe cross-checks its sorted cumulative sum against that literal double sum.
+
+Wired (owner, 2026-11-27, "wire in what is derived"): coulomb_energy.py reads the primary f
+from this witness for s-shell nuclei (A ≤ 4); see that module for the scope.
 """
 from __future__ import annotations
 
@@ -126,6 +130,17 @@ def shell_f(radii, weights):
     return E * rms, E, rms
 
 
+def shell_f_double_sum(radii, weights):
+    """Same f, computed literally as the Lean definition
+    QOU.Nuclear.CoulombShell.shapeFactorSq: f² = E²·M₂/Q⁵ with
+    E = ½ Σ_i Σ_j P_i P_j / max(r_i, r_j). O(N²); used as a cross-check of shell_f."""
+    Q = mp.fsum(weights)
+    E = mp.fsum(wi * wj / max(ri, rj) for ri, wi in zip(radii, weights)
+                for rj, wj in zip(radii, weights)) / 2
+    M2 = mp.fsum(w * r * r for r, w in zip(radii, weights))
+    return mp.sqrt(E * E * M2 / Q ** 5)
+
+
 def qbessel_shells(nu, step, kmin, kmax):
     p = 1 / mp.mpf(step)
     rs, ws = [], []
@@ -187,6 +202,10 @@ def main() -> int:
                           ("alt_b_nu_half_p_1_over_q0sq", half, step2)):
         f, E, rms, rng = f_qbessel(nu, step)
         rows[tag] = {"nu": nu, "p": 1 / mp.mpf(step), "f": f, "E": E, "r_rms": rms, "k_range": list(rng)}
+    # Cross-check against the Lean definition (double sum, no sorting shortcut).
+    pr = rows["primary_nu_half_p_1_over_q0"]
+    rs_chk, ws_chk = qbessel_shells(half, step1, *pr["k_range"])
+    f_double = shell_f_double_sum(rs_chk, ws_chk)
     f_u, _, _ = f_quniform_ball(p1)
     rows["alt_c_q_uniform_ball_p_1_over_q0"] = {"f": f_u}
 
@@ -204,6 +223,7 @@ def main() -> int:
     print(f"primary / uniform  = {mp.nstr(fp / CLASSICAL['uniform_ball'], 8)}")
     print(f"primary / gaussian = {mp.nstr(fp / CLASSICAL['gaussian'], 8)}")
     print(f"primary / required = {mp.nstr(fp / REQUIRED_3HE, 8)}")
+    print(f"Lean double-sum cross-check |Δf| = {mp.nstr(abs(f_double - fp), 5)}")
 
     if WitnessBuilder is not None:
         wb = WitnessBuilder("coulomb-shape-factor-qbessel-probe", engine="mpmath")
@@ -223,6 +243,11 @@ def main() -> int:
                          tolerance=1e-25, source="Koelink–Swarttouw q-Hankel orthogonality, m = 0")
         wb.add_assertion(name="qhankel_overlap_m1_at_q0", computed=mp.nstr(ortho[1], 5), expected="0",
                          tolerance=1e-25, source="Koelink–Swarttouw q-Hankel orthogonality, m = 1")
+        wb.add_data("primary_f_lean_double_sum", f_double)
+        wb.add_assertion(name="cumulative_sum_equals_lean_double_sum",
+                         computed=mp.nstr(abs(f_double - fp), 5), expected="0", tolerance=1e-40,
+                         source="shell_f (sorted cumulative form) vs the literal double sum of "
+                                "QOU.Nuclear.CoulombShell.shapeFactorSq")
         wb.add_assertion(name="primary_f_positive_finite", computed=str(int(0 < fp < 10)),
                          expected="1", tolerance=0, source="sanity only")
         print(f"witness: {wb.save()}")

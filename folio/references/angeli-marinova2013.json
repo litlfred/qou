@@ -1,0 +1,18 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "angeli-marinova2013",
+  "type": "article-journal",
+  "title": "Table of experimental nuclear ground state charge radii: An update",
+  "author": [
+    { "family": "Angeli", "given": "I." },
+    { "family": "Marinova", "given": "K. P." }
+  ],
+  "container-title": "Atomic Data and Nuclear Data Tables",
+  "issued": { "date-parts": [[2013]] },
+  "volume": "99",
+  "issue": "1",
+  "page": "69-95",
+  "DOI": "10.1016/j.adt.2011.12.006",
+  "URL": "https://doi.org/10.1016/j.adt.2011.12.006",
+  "note": "Measured rms charge radii, used ONLY as a labelled comparison input by computations/probes/coulomb_measured_radius_comparison_probe.py (bean qou-usft): 3He 1.9661(30) fm, 4He 1.6755(28) fm. Never a model input."
+}

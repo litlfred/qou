@@ -1,0 +1,58 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-27T20:50:20.126121+00:00",
+  "commitSha": "159aeed1c57299b64a4f19326efd5c7c0e98a7ac",
+  "assertions": [
+    {
+      "name": "scored_rows_nonempty",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "beta-stability-line",
+  "scriptFile": "beta_stability_line_probe.py",
+  "scriptHash": "6a8367ab50b4",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/beta_stability_line_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/beta_stability_line_probe.py"
+  },
+  "description": "Two-sided beta decay direction and stability line Z*(A) from the mass table's ruled-law masses (pre-registered; AME used only for scoring).",
+  "data": {
+    "wired_terms": [],
+    "n_scored": 2240,
+    "n_agree": 1009,
+    "beta_minus_side": "1009/1009",
+    "beta_plus_side": "0/1231",
+    "n_isobars_with_line": 0,
+    "mean_abs_dZ": null,
+    "preview_kappa_MeV": "0.7813992363",
+    "preview_direction": "1504/2240",
+    "preview_beta_minus_side": "842/1009",
+    "preview_beta_plus_side": "662/1231",
+    "preview_n_isobars_with_line": 132,
+    "preview_mean_abs_dZ": "2.46212",
+    "preview_mean_signed_dZ": "0.55303"
+  }
+}

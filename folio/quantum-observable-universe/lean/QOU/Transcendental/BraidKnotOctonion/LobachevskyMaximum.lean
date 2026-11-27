@@ -56,8 +56,8 @@
   -- Ref: [leitner2026] beans qou-idvt (T4), qou-7y3g
 -/
 
-import BraidKnotOctonion.IdealTetrahedronVolumeConcavity
-import BraidKnotOctonion.Clausen
+import QOU.Transcendental.BraidKnotOctonion.IdealTetrahedronVolumeConcavity
+import QOU.Transcendental.BraidKnotOctonion.Clausen
 
 namespace QOU.Archimedean.IdealTetrahedronConcavity
 

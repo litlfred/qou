@@ -70,10 +70,10 @@
   -- Ref: [thurston1978] Ch. 4
   -- Ref: [neumann-zagier1985] §2
 -/
-import BraidKnotOctonion.ManifoldVolumeBridge
-import BraidKnotOctonion.FiveTwoVolumeConstant
+import QOU.Transcendental.BraidKnotOctonion.ManifoldVolumeBridge
+import QOU.Transcendental.BraidKnotOctonion.FiveTwoVolumeConstant
 import QOU.Confinement.FigureEightVolumeBridge
-import BraidKnotOctonion.FiveTwoVolumeChord
+import QOU.Transcendental.BraidKnotOctonion.FiveTwoVolumeChord
 
 namespace QOU.Encounter.FiveTwoVolumeBridge
 

@@ -1,0 +1,147 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-27T20:47:25.110800+00:00",
+  "commitSha": "e15b5b21359cf310acba7e1eccf925fcd7786669",
+  "assertions": [
+    {
+      "name": "n_composite_rows",
+      "computed": "1009",
+      "expected": "1009",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "lean_parabola_and_beta_step_identities",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "kappa_positive",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "bar_even_shift_positive_on_every_row",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "R0_no_twist_none_exothermic",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2,
+  "computation": "isospin-twist-term",
+  "scriptFile": "isospin_twist_term_probe.py",
+  "scriptHash": "7ff424e91b3b",
+  "scriptCommitSha": "e15b5b21359cf310acba7e1eccf925fcd7786669",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "mpmath": "1.4.1",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/isospin_twist_term_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/isospin_twist_term_probe.py"
+  },
+  "description": "Gap G2 diagnostic: the derived q^{2T(T+1)} block factor of the full twist (Lean QOU.Nuclear.IsospinCasimirTwist) pushed through the Q-CLT proxy energy map, kappa = 2 alpha ln q, both signs, on the lowest block T = |T_z|; effect on the Table 3.4b composite beta-minus signs. Reported, never selected.",
+  "data": {
+    "alpha_MeV": "3.74445965994161",
+    "kappa_MeV_per_unit_TT1": "0.781399236251381",
+    "exothermic_counts": {
+      "R0_as_is|bar_even_twist": 997,
+      "R1_free_baseline|bar_even_twist": 1009,
+      "R2_free_baseline_plus_Tz_even_bond|bar_even_twist": 1009,
+      "R0_as_is|sign+": 997,
+      "R0_as_is|sign-": 0,
+      "R0_as_is|no_twist": 0,
+      "R1_free_baseline|sign+": 1009,
+      "R1_free_baseline|sign-": 0,
+      "R1_free_baseline|no_twist": 0,
+      "R2_free_baseline_plus_Tz_even_bond|sign+": 1009,
+      "R2_free_baseline_plus_Tz_even_bond|sign-": 0,
+      "R2_free_baseline_plus_Tz_even_bond|no_twist": 1009
+    },
+    "max_bar_even_minus_linear_MeV": "8.071079443e-12",
+    "parent_d_histogram": {
+      "2": 12,
+      "3": 16,
+      "4": 20,
+      "5": 20,
+      "6": 23,
+      "7": 26,
+      "8": 28,
+      "9": 25,
+      "10": 30,
+      "11": 26,
+      "12": 28,
+      "13": 25,
+      "14": 24,
+      "15": 27,
+      "16": 25,
+      "17": 24,
+      "18": 21,
+      "19": 21,
+      "20": 23,
+      "21": 22,
+      "22": 24,
+      "23": 21,
+      "24": 22,
+      "25": 23,
+      "26": 20,
+      "27": 23,
+      "28": 22,
+      "29": 20,
+      "30": 19,
+      "31": 21,
+      "32": 20,
+      "33": 22,
+      "34": 24,
+      "35": 23,
+      "36": 22,
+      "37": 19,
+      "38": 18,
+      "39": 12,
+      "40": 8,
+      "41": 8,
+      "42": 8,
+      "43": 7,
+      "44": 7,
+      "45": 7,
+      "46": 8,
+      "47": 8,
+      "48": 8,
+      "49": 9,
+      "50": 8,
+      "51": 11,
+      "52": 10,
+      "53": 11,
+      "54": 12,
+      "55": 12,
+      "56": 10,
+      "57": 10,
+      "58": 4,
+      "59": 2
+    }
+  }
+}
