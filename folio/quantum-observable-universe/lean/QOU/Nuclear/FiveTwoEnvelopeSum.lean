@@ -1,4 +1,5 @@
 import QOU.Nuclear.FiveTwoDeformedSaddle
+import Mathlib.Analysis.SpecialFunctions.Complex.Log
 
 /-!
 # `Σⱼ ∂V/∂x = −2·log x / x` — the envelope's second ingredient
