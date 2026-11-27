@@ -1032,15 +1032,120 @@ def _assertion_from_mapping(rec: Mapping[str, Any]) -> "Assertion":
 # is laundering, and `witness_float64_padding_audit.py` catches it. Carry
 # `mpmath.mpf` from the source and serialize with `_precision.fmt`.
 
-def _raw_float_paths(obj, path=""):
-    """Yield JSON paths of every raw (non-integer-valued) float in `obj`."""
+_F64_SIG_DIGITS = 17
+
+LP_DUAL_F64_FIELDS = frozenset({
+    "x_star", "y_star", "y0_star", "u_lambda_star",
+    "primal_obj", "dual_obj", "duality_gap",
+})
+
+F64_INTEGRATOR_TIER = "float64-integrator"
+F64_DEPRECATED_TIER = "float64"
+
+
+def _sig_digits(s: str) -> int:
+    """Significant decimal digits in a numeric string ('1.20e-3' -> 3)."""
+    mantissa = s.strip().lstrip("+-").split("e")[0].split("E")[0]
+    return len(mantissa.replace(".", "").lstrip("0"))
+
+
+def _is_full_precision_shadow(value, companion) -> bool:
+    """Is ``companion`` a ``*_str`` carrying MORE precision than ``value``,
+    AND agreeing with the float it shadows (bean ``qou-ftuv``, ``qou-7q56``)?"""
+    _AGREE_REL_TOL = 1e-9
+
+    def _agrees(v: float, c: str) -> bool:
+        try:
+            cv = float(c)  # float64-ok: compare companion at f64 width
+        except ValueError:
+            return False
+        if cv == v:
+            return True
+        scale = max(abs(v), abs(cv))
+        return scale > 0 and abs(cv - v) <= _AGREE_REL_TOL * scale
+
+    if isinstance(value, float) and isinstance(companion, str):
+        return _sig_digits(companion) > _F64_SIG_DIGITS and _agrees(value, companion)
+    if isinstance(value, (list, tuple)) and isinstance(companion, (list, tuple)):
+        if not value or len(value) != len(companion):
+            return False
+        pairs = list(zip(value, companion))
+        if not all(isinstance(v, float) and isinstance(c, str) for v, c in pairs):
+            return False
+        return all(
+            _sig_digits(c) > _F64_SIG_DIGITS and _agrees(v, c) for v, c in pairs
+        )
+    return False
+
+
+def _declares_f64_integrator(doc) -> bool:
+    """Has this witness explicitly claimed the float64-integrator tier?"""
+    if not isinstance(doc, dict):
+        return False
+    for holder in (doc, doc.get("data"), doc.get("result")):
+        if isinstance(holder, dict) and \
+                holder.get("precision_tier") == F64_INTEGRATOR_TIER:
+            return True
+    return False
+
+
+def _declares_deprecated_f64(doc) -> bool:
+    """Has this witness declared BOTH the float64 tier and its deprecation?"""
+    if not isinstance(doc, dict):
+        return False
+    for holder in (doc, doc.get("data"), doc.get("result")):
+        if not isinstance(holder, dict):
+            continue
+        if holder.get("precision_tier") == F64_DEPRECATED_TIER \
+                and holder.get("deprecated"):
+            return True
+    return False
+
+
+def _raw_float_paths(obj, path="", integral_is_exact: bool = True):
+    """Yield JSON paths of every raw (non-integer-valued, unshadowed,
+    non-carved-out) float in ``obj`` (bean ``qou-7q56``).
+
+    Applies the same exemptions as ``witness_raw_float64_audit.count_raw_floats``
+    so the producer-side locator and the audit gate agree on every witness:
+      * ``*_str`` full-precision shadow rule (``_is_full_precision_shadow``);
+      * ``LP_DUAL_F64_FIELDS`` solver-output carve-out;
+      * runtime-duration metadata fields in ``_EPHEMERAL_META_FIELDS``;
+      * witness-level ``float64-integrator`` and deprecated ``float64`` tiers;
+      * integral-valued floats (``0.0``, ``1.0``) when ``integral_is_exact``
+        holds (not contradicted by a disagreeing ``*_str`` companion).
+    """
+    if path == "" and isinstance(obj, dict):
+        if _declares_f64_integrator(obj) or _declares_deprecated_f64(obj):
+            return
     if isinstance(obj, dict):
+        ephemeral_timing = frozenset(
+            n for n in _EPHEMERAL_META_FIELDS
+            if "dur" in n.lower() or "elapsed" in n.lower()
+        )
         for k, v in obj.items():
-            yield from _raw_float_paths(v, f"{path}.{k}")
+            # A producer may hand in int (or other non-str) keys; JSON
+            # serialisation turns them into strings, so scan by that name.
+            k = str(k)
+            if k.endswith("_str"):
+                yield from _raw_float_paths(v, f"{path}.{k}", integral_is_exact)
+                continue
+            companion = obj.get(f"{k}_str")
+            if companion is not None and _is_full_precision_shadow(v, companion):
+                continue
+            if k in ephemeral_timing:
+                continue
+            if k in LP_DUAL_F64_FIELDS:
+                continue
+            yield from _raw_float_paths(
+                v, f"{path}.{k}", integral_is_exact and companion is None
+            )
     elif isinstance(obj, (list, tuple)):
         for i, v in enumerate(obj):
-            yield from _raw_float_paths(v, f"{path}[{i}]")
+            yield from _raw_float_paths(v, f"{path}[{i}]", integral_is_exact)
     elif isinstance(obj, float) and not isinstance(obj, bool):
+        if obj.is_integer() and integral_is_exact:
+            return
         yield path
 
 
@@ -1318,6 +1423,31 @@ Q0_ANCHOR_VOCABULARY = ("muon", "proton", "ambiguous", "independent",
 Anything else means the audit COULD NOT CHECK that witness — not that the
 witness is wrong, which is the point: an unmappable label is unfalsifiable.
 """
+
+Q0_MANIFEST_ANCHOR_ALIASES: dict[str, str] = {
+    "ideal_muon": "muon",
+    "physical_proton": "proton",
+}
+"""Manifest-vocabulary aliases accepted and normalised at the witness boundary
+(bean `qou-9du2`).
+
+`q0_anchor_manifest.json` partitions producers into ``"ideal_muon"`` and
+``"physical_proton"``, whereas witness ``q0Anchor`` uses ``"muon"`` and
+``"proton"`` (`Q0_ANCHOR_VOCABULARY`). A producer copying its own manifest
+category into ``q0_anchor=`` / ``payload["q0Anchor"]`` / ``save(extra)`` is
+speaking the manifest's vocabulary at the witness boundary; normalising those
+two exact tokens to ``"muon"`` / ``"proton"`` (and populating ``q0Value`` when
+absent) avoids emitting an unmappable ``Q0_ANCHOR_UNRECOGNISED`` witness while
+still warning on arbitrary free-text strings.
+"""
+
+
+def _normalise_q0_anchor_token(anchor: Any) -> Any:
+    """Normalise manifest-vocabulary tokens (`ideal_muon`, `physical_proton`)
+    to their witness-vocabulary equivalents (`muon`, `proton`)."""
+    if isinstance(anchor, str) and anchor in Q0_MANIFEST_ANCHOR_ALIASES:
+        return Q0_MANIFEST_ANCHOR_ALIASES[anchor]
+    return anchor
 
 
 def _warn_unmappable_anchor(anchor: object, script_path: str) -> None:
@@ -1691,6 +1821,12 @@ class WitnessBuilder:
         # twice; that is two declarations of the same field and worth saying
         # twice.
         if "q0Anchor" in payload:
+            payload = dict(payload)
+            payload["q0Anchor"] = _normalise_q0_anchor_token(payload["q0Anchor"])
+            if payload["q0Anchor"] in ("muon", "proton") and "q0Value" not in payload:
+                _qv = _q0_value_for_anchor(payload["q0Anchor"])
+                if _qv is not None:
+                    payload["q0Value"] = _qv
             _warn_unmappable_anchor(payload["q0Anchor"], str(script_path))
         for key, value in payload.items():
             if key == "description" and isinstance(value, str):
@@ -1984,6 +2120,10 @@ class WitnessBuilder:
             q0_anchor, _rv = resolve_q0_anchor_payload_first(payload, spath)
             if q0_value is None:
                 q0_value = _rv
+        else:
+            q0_anchor = _normalise_q0_anchor_token(q0_anchor)
+            if q0_value is None and q0_anchor in ("muon", "proton"):
+                q0_value = _q0_value_for_anchor(q0_anchor)
         # A q0Anchor the producer already wrote into the payload WINS over the
         # one resolved from the manifest/env. `build()` has always had this
         # guard (`if "q0Anchor" not in witness`); this path did not, so the two
@@ -1998,7 +2138,13 @@ class WitnessBuilder:
         #
         # An explicit `q0_anchor=` argument still wins over both, since a caller
         # passing it is making the same declaration one call frame out.
-        if "q0Anchor" not in payload:
+        if "q0Anchor" in payload:
+            payload["q0Anchor"] = _normalise_q0_anchor_token(payload["q0Anchor"])
+            if payload["q0Anchor"] in ("muon", "proton") and "q0Value" not in payload:
+                _qv = q0_value or _q0_value_for_anchor(payload["q0Anchor"])
+                if _qv is not None:
+                    payload["q0Value"] = _qv
+        else:
             _warn_unmappable_anchor(q0_anchor, spath)
             payload["q0Anchor"] = q0_anchor
             if q0_value is not None:
@@ -2234,6 +2380,14 @@ class WitnessBuilder:
             # payload`, so a producer that stamps AND passes `extra` warns
             # exactly once here rather than twice.
             if "q0Anchor" in extra:
+                extra = dict(extra)
+                extra["q0Anchor"] = _normalise_q0_anchor_token(extra["q0Anchor"])
+                if (extra["q0Anchor"] in ("muon", "proton")
+                        and "q0Value" not in extra
+                        and "q0Value" not in witness):
+                    _qv = _q0_value_for_anchor(extra["q0Anchor"])
+                    if _qv is not None:
+                        extra["q0Value"] = _qv
                 _warn_unmappable_anchor(extra["q0Anchor"], str(self._script_path))
             witness.update(extra)
 

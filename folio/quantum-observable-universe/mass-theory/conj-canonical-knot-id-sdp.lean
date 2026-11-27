@@ -1,8 +1,8 @@
 import Mathlib.Data.Nat.Basic
 import Mathlib.Tactic
-import QOU.MathlibExt.SDP
-import QOU.HeckeAlgebra.Common
-import QOU.BraidKnot.CanonicalKnotIdSDPUniqueness
+import CompactQuantumMetrics.SDP
+import HeckeTemperleyLieb.Common
+import HeckeTemperleyLieb.CanonicalKnotIdSDPUniqueness
 
 
 /-!

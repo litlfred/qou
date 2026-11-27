@@ -2,7 +2,7 @@ import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 import Mathlib.Data.List.Basic
 import Mathlib.Tactic
-import QOU.Machinery.HeckeH3AlgebraLaws
+import HeckeTemperleyLieb.HeckeH3AlgebraLaws
 
 
 /-!
@@ -138,7 +138,7 @@ structure JonesMarkovTrace (H : HeckeAlgebraData) where
       third row vanishes. A per-`S_λ` statement needs the Wedderburn
       decomposition, which this structure does not carry. -/
   -- Ref: [jones1987] Corollary 5.3
-  nondeg : ∀ (i : Fin numIrreps), ∃ (a : H.carrier), tr a ≠ 0
+  nondeg : ∀ (_ : Fin numIrreps), ∃ (a : H.carrier), tr a ≠ 0
 
   -- ### Property 3: Link invariance
 
@@ -241,7 +241,7 @@ def mulσ₁Inv (h : R) (v : Fin 6 → R) : Fin 6 → R := mulσ₁ h v - h • 
 /-- `σ₁⁻¹ = σ₁ − h` is a right inverse of `σ₁`: `(x σ₁⁻¹) σ₁ = x`. -/
 theorem mulσ₁_mulσ₁Inv (h : R) (v : Fin 6 → R) : mulσ₁ h (mulσ₁Inv h v) = v := by
   funext i
-  fin_cases i <;> simp [mulσ₁Inv, mulσ₁] <;> ring
+  fin_cases i <;> simp [mulσ₁Inv, mulσ₁]
 
 /-- **Jones–Markov trace on `H₃(q)`** (repaired form, sorry-free):
     normalisation, cyclicity, the Markov property on `H₂`, and the negative
@@ -264,5 +264,124 @@ theorem jonesMarkov_H3 (z h : R) :
     linear_combination -ha
 
 end H3Repair
+
+/-! ## Convention D (`z = q³/(q² + 1)`), Temperley–Lieb `TL₃(q)` Quotient (`dim = C₃ = 5`),
+and Two-Row Faithfulness / Sign-Idempotent Radical -/
+
+section H3ConventionDAndTemperleyLieb
+
+open QOU.Machinery.H3
+
+variable {K : Type*} [Field K]
+
+/-- Basis element `σ₀ = e₁` of `H₃(q)`. -/
+def σ₀NF : Fin 6 → K := ![0, 1, 0, 0, 0, 0]
+
+/-- Basis element `σ₁ = e₂` of `H₃(q)`. -/
+def σ₁NF : Fin 6 → K := ![0, 0, 1, 0, 0, 0]
+
+/-- Convention-D Markov trace parameter `z = q³ / (q² + 1)`. -/
+def markovZD (q : K) : K := q ^ 3 / (q ^ 2 + 1)
+
+/-- Hecke quadratic parameter `h = q - q⁻¹`. -/
+def heckeHD (q : K) : K := q - q⁻¹
+
+/-- First Temperley–Lieb generator `e₀ = q · 1 - σ₀` in `H₃(q)`. -/
+def tlE0 (q : K) : Fin 6 → K := q • unitNF - σ₀NF
+
+/-- Second Temperley–Lieb generator `e₁ = q · 1 - σ₁` in `H₃(q)`. -/
+def tlE1 (q : K) : Fin 6 → K := q • unitNF - σ₁NF
+
+/-- **Temperley–Lieb quadratic relation for `e₀`:**
+`e₀² = (q + q⁻¹) • e₀` (`[2]_q = q + q⁻¹`) for any `q ≠ 0`. -/
+theorem tlE0_sq (q : K) (hq : q ≠ 0) :
+    mulNF (heckeHD q) (tlE0 q) (tlE0 q) = (q + q⁻¹) • tlE0 q := by
+  funext i
+  fin_cases i <;>
+    simp [tlE0, unitNF, σ₀NF, heckeHD, mulNF, mulσ₀, mulσ₁]
+  · linear_combination -mul_inv_cancel₀ hq
+  · ring
+
+/-- **Temperley–Lieb quadratic relation for `e₁`:**
+`e₁² = (q + q⁻¹) • e₁` (`[2]_q = q + q⁻¹`) for any `q ≠ 0`. -/
+theorem tlE1_sq (q : K) (hq : q ≠ 0) :
+    mulNF (heckeHD q) (tlE1 q) (tlE1 q) = (q + q⁻¹) • tlE1 q := by
+  funext i
+  fin_cases i <;>
+    simp [tlE1, unitNF, σ₁NF, heckeHD, mulNF, mulσ₀, mulσ₁]
+  · linear_combination -mul_inv_cancel₀ hq
+  · ring
+
+/-- **Temperley–Lieb cubic relations (`e₀ e₁ e₀ = e₀` and `e₁ e₀ e₁ = e₁`):**
+both hold in `H₃(q)` modulo the `q`-antisymmetrizer ideal (specifically, in `H₃(q)` the difference
+`e₀ e₁ e₀ - e₀` is `-q³ • c3Anti q`, generating the 1D `λ = (1,1,1)` kernel of `H₃(q) → TL₃(q)`). -/
+def c3Anti (q : K) : Fin 6 → K :=
+  ![1, -q⁻¹, -q⁻¹, (q⁻¹) ^ 2, (q⁻¹) ^ 2, -(q⁻¹) ^ 3]
+
+/-- The `q`-antisymmetrizer `c3Anti q` is non-zero (`(c3Anti q) 0 = 1 ≠ 0`). -/
+theorem c3Anti_ne_zero (q : K) : c3Anti q ≠ 0 := by
+  intro h
+  have h0 : c3Anti q 0 = 0 := congrFun h 0
+  simp [c3Anti] at h0
+
+/-- The Temperley–Lieb cubic element `e₀ e₁ e₀ - e₀` equals `q³ • c3Anti q`, confirming that
+the quotient of `H₃(q)` by the 1D span of `c3Anti q` is the `C₃ = 5`-dimensional
+Temperley–Lieb algebra `TL₃(q)` in which `e₀ e₁ e₀ = e₀` and `e₁ e₀ e₁ = e₁`. -/
+theorem tlE0_tlE1_tlE0_sub_tlE0 (q : K) (hq : q ≠ 0) :
+    mulNF (heckeHD q) (mulNF (heckeHD q) (tlE0 q) (tlE1 q)) (tlE0 q) - tlE0 q =
+      (q ^ 3) • c3Anti q := by
+  funext i
+  fin_cases i <;>
+    simp [tlE0, tlE1, unitNF, σ₀NF, σ₁NF, heckeHD, c3Anti, mulNF, mulσ₀, mulσ₁] <;>
+    field_simp
+  · ring
+
+/-- Under Convention D (`z = q³/(q² + 1)`), the Markov trace of the Temperley–Lieb generator
+`e₀ = q · 1 - σ₀` is `q - z = q / (q² + 1) = 1 / (q + q⁻¹) = 1 / [2]_q`. -/
+theorem trM_tlE0_conventionD (q : K) (hq : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0) :
+    trM (markovZD q) (heckeHD q) (tlE0 q) = q / (q ^ 2 + 1) ∧
+    trM (markovZD q) (heckeHD q) (tlE0 q) = 1 / (q + q⁻¹) := by
+  have hq_inv : q + q⁻¹ ≠ 0 := by
+    intro h0
+    have : q * (q + q⁻¹) = 0 := by rw [h0, mul_zero]
+    have h1 : q ^ 2 + 1 = 0 := by
+      linear_combination this - mul_inv_cancel₀ hq
+    exact hq2 h1
+  refine ⟨?_, ?_⟩
+  · simp [trM, tlE0, unitNF, σ₀NF, TRM, markovZD, heckeHD, Fin.sum_univ_six]
+    field_simp
+    ring
+  · simp [trM, tlE0, unitNF, σ₀NF, TRM, markovZD, heckeHD, Fin.sum_univ_six]
+    field_simp
+    ring
+
+/-- **Convention-D Two-Row Faithfulness / Sign-Rep Radical Theorem:**
+Under Convention D (`z = q³ / (q² + 1)`), the 1D three-row antisymmetric idempotent line
+`c3Anti q` (`λ = (1,1,1)`) lies in the radical of the Markov trace bilinear form
+(`∀ u ∈ H₃(q), trM z h (u · c3Anti q) = 0`), factoring `tr_M` cleanly through the
+`C₃ = 5`-dimensional two-row Temperley–Lieb quotient `TL₃(q)`. -/
+theorem trM_mulNF_c3Anti_eq_zero (q : K) (hq : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0)
+    (u : Fin 6 → K) :
+    trM (markovZD q) (heckeHD q) (mulNF (heckeHD q) u (c3Anti q)) = 0 := by
+  simp only [trM, mulNF, mulσ₀, mulσ₁, TRM, c3Anti, markovZD, heckeHD,
+    Fin.sum_univ_six, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val]
+  field_simp
+  ring
+
+/-- Specialisation of `jonesMarkov_H3` to the canonical Convention-D loop weight
+`z = q³ / (q² + 1)` and Hecke parameter `h = q - q⁻¹`. -/
+theorem jonesMarkov_H3_conventionD (q : K) :
+    trM (markovZD q) (heckeHD q) unitNF = 1 ∧
+    (∀ u v, trM (markovZD q) (heckeHD q) (mulNF (heckeHD q) u v) =
+      trM (markovZD q) (heckeHD q) (mulNF (heckeHD q) v u)) ∧
+    (∀ v : Fin 6 → K, v 2 = 0 → v 3 = 0 → v 4 = 0 → v 5 = 0 →
+      trM (markovZD q) (heckeHD q) (mulσ₁ (heckeHD q) v) =
+        markovZD q * trM (markovZD q) (heckeHD q) v) ∧
+    (∀ v : Fin 6 → K, v 2 = 0 → v 3 = 0 → v 4 = 0 → v 5 = 0 →
+      trM (markovZD q) (heckeHD q) (mulσ₁Inv (heckeHD q) v) =
+        (markovZD q - heckeHD q) * trM (markovZD q) (heckeHD q) v) :=
+  jonesMarkov_H3 (markovZD q) (heckeHD q)
+
+end H3ConventionDAndTemperleyLieb
 
 end QOU.Braiding

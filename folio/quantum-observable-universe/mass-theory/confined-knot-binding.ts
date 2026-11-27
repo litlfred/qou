@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:confined-knot-binding",
   title:
     "Confined knot binding mechanism: character ratio decomposition per jet level",
-  lean: { ref: "qou:QOU.BraidKnot.confined_knot_binding",
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.confined_knot_weighted_cancellation",
     validation: "not_checked",
   },
   // conj:nuclear-knot-classification dropped from uses[] 2026-11-20 (bean
@@ -32,6 +32,7 @@ export default proposition({
     status: "experimental",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-24", body: "Relocated from the block prose by the reading-order drain (qou-d4kh): [\\tilde w_\\lambda = \\dim_q(\\lambda)^2/[n]_q!](#conj:jet-convergence-classical-limit)" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): Together with the $A \\ge 3$ ill-posedness of the jet word\n([measured](#conj:jet-filtered-knot-factor)), the three-level product is not\nevaluable as written. Either obstruction alone suffices." },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Either obstruction alone suffices.\n`the_nuclear_jet_level_is_the_retired_all_pairs_object_probe.py`." },
   ],

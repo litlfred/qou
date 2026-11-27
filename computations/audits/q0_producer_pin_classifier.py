@@ -180,6 +180,142 @@ MUON_ENV = ("ideal", "muon", "canonical")
 # `q_at, q_muon_at` co-imports were being scored proton-only, which would have
 # put ~8 deliberately dual-layer probes into a tnjb regeneration batch.
 MUON_NAMES = {"q_muon_at", "Q_MUON", "Q_MUON_MP", "q_muon"}
+# Muon mass-ratio identifiers used in Mode A inline closed-form q₀ re-derivations
+# (`q0 = 1 / (1 - sqrt(Vol_4_1 / M_MU_OVER_M_E))`, bean qou-5le1). Never classify
+# on the name alone: 11+ producers import M_MU_OVER_M_E solely as an observable
+# comparison target. Only the full closed-form shape counts as muon pin evidence.
+MUON_RATIO_NAMES = {"M_MU_OVER_M_E", "MASS_RATIO_MU_E_STR", "MU_OVER_E"}
+CROSS_MODULE_Q0_NAMES = {"Q0", "q0", "Q_0"}
+
+_CLASSIFY_CACHE: dict[Path, tuple[str, list[str]]] = {}
+
+
+def _is_unit_literal(node: ast.AST) -> bool:
+    """True when `node` denotes numeric 1 (`1`, `1.0`, `mpf(1)`, `mp.mpf("1")`, ...)."""
+    if isinstance(node, ast.Constant) and node.value in (1, 1.0, "1"):
+        return True
+    if isinstance(node, ast.Call):
+        fn = (node.func.attr if isinstance(node.func, ast.Attribute)
+              else node.func.id if isinstance(node.func, ast.Name) else "")
+        if fn in {"mpf", "mpmathify", "Decimal", "Fraction", "Float"} and len(node.args) == 1:
+            return _is_unit_literal(node.args[0])
+    return False
+
+
+def _expr_names(node: ast.AST) -> set[str]:
+    return {sub.id for sub in ast.walk(node) if isinstance(sub, ast.Name)}
+
+
+def _detect_inline_muon_closed_form(module: ast.Module) -> list[str]:
+    """Detect Mode A (`qou-5le1`): inline `1 / (1 - sqrt(<vol> / M_MU_OVER_M_E))`.
+
+    Tracks local variable aliases across multi-step derivations such as:
+        cal2 = M_MU_OVER_M_E
+        hbar_q_sq = Vol_4_1 / cal2
+        hbar_q = mp.sqrt(hbar_q_sq)
+        q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)
+    while ignoring files that merely report `M_MU_OVER_M_E` or compute `hbar_muon`
+    without forming `1 / (1 - sqrt(...))`.
+    """
+    present_ratios = {
+        n.id for n in ast.walk(module)
+        if isinstance(n, ast.Name) and n.id in MUON_RATIO_NAMES
+    } | {
+        n.attr for n in ast.walk(module)
+        if isinstance(n, ast.Attribute) and n.attr in MUON_RATIO_NAMES
+    }
+    if not present_ratios:
+        return []
+
+    ratio_vars: set[str] = set(MUON_RATIO_NAMES)
+    hbar_sq_vars: set[str] = set()
+    hbar_vars: set[str] = set()
+
+    def is_ratio_expr(e: ast.AST) -> bool:
+        if isinstance(e, ast.Name) and e.id in ratio_vars:
+            return True
+        if isinstance(e, ast.Attribute) and e.attr in MUON_RATIO_NAMES:
+            return True
+        if isinstance(e, ast.Call):
+            fn = (e.func.attr if isinstance(e.func, ast.Attribute)
+                  else e.func.id if isinstance(e.func, ast.Name) else "")
+            if fn in {"mpf", "mpmathify", "str", "Decimal", "Float"} and len(e.args) == 1:
+                return is_ratio_expr(e.args[0])
+        return False
+
+    def is_div_by_ratio(e: ast.AST) -> bool:
+        return (
+            isinstance(e, ast.BinOp)
+            and isinstance(e.op, ast.Div)
+            and bool(_expr_names(e.right) & ratio_vars
+                     or any(isinstance(s, ast.Attribute) and s.attr in MUON_RATIO_NAMES
+                            for s in ast.walk(e.right)))
+        )
+
+    def is_sqrt_hbar(e: ast.AST) -> bool:
+        if not isinstance(e, ast.Call):
+            return False
+        fn = (e.func.attr if isinstance(e.func, ast.Attribute)
+              else e.func.id if isinstance(e.func, ast.Name) else "")
+        if fn != "sqrt" or not e.args:
+            return False
+        arg = e.args[0]
+        return bool((_expr_names(arg) & hbar_sq_vars)
+                    or any(is_div_by_ratio(sub) for sub in ast.walk(arg)))
+
+    assigns: list[tuple[str, ast.AST]] = []
+    for n in ast.walk(module):
+        if isinstance(n, ast.Assign) and n.value is not None:
+            for t in n.targets:
+                if isinstance(t, ast.Name):
+                    assigns.append((t.id, n.value))
+        elif isinstance(n, ast.AnnAssign) and n.value is not None and isinstance(n.target, ast.Name):
+            assigns.append((n.target.id, n.value))
+
+    # Fixed-point propagation over local variable assignments.
+    changed = True
+    while changed:
+        changed = False
+        for lhs, rhs in assigns:
+            if lhs not in ratio_vars and is_ratio_expr(rhs):
+                ratio_vars.add(lhs)
+                changed = True
+            if lhs not in hbar_sq_vars and is_div_by_ratio(rhs):
+                hbar_sq_vars.add(lhs)
+                changed = True
+            if lhs not in hbar_vars and is_sqrt_hbar(rhs):
+                hbar_vars.add(lhs)
+                changed = True
+
+    for n in ast.walk(module):
+        if (isinstance(n, ast.BinOp) and isinstance(n.op, ast.Div)
+                and _is_unit_literal(n.left)
+                and isinstance(n.right, ast.BinOp) and isinstance(n.right.op, ast.Sub)
+                and _is_unit_literal(n.right.left)):
+            denom_rhs = n.right.right
+            if (_expr_names(denom_rhs) & hbar_vars) or any(
+                is_sqrt_hbar(sub) for sub in ast.walk(denom_rhs)
+            ):
+                return ["inline muon closed-form 1/(1 - sqrt(Vol / M_MU_OVER_M_E))"]
+    return []
+
+
+def _resolve_sibling_module(from_path: Path, mod: str, level: int = 0) -> Path | None:
+    """Resolve a sibling Python module imported by `from_path` (Mode B, qou-5le1)."""
+    base_dir = from_path.resolve().parent
+    for _ in range(max(0, level - 1)):
+        base_dir = base_dir.parent
+    rel_parts = [p for p in mod.split(".") if p] if mod else []
+    if rel_parts:
+        cand = base_dir.joinpath(*rel_parts).with_suffix(".py")
+        if cand.is_file():
+            return cand
+        leaf = f"{rel_parts[-1]}.py"
+        sib = from_path.resolve().parent / leaf
+        if sib.is_file():
+            return sib
+        return find_producer(leaf)
+    return None
 
 
 def strip_main_block(tree: ast.Module) -> list[ast.stmt]:
@@ -300,9 +436,14 @@ def _code_only_text(src: str) -> str:
         return src
 
 
-def classify(path: Path) -> tuple[str, list[str]]:
+def classify(path: Path, _seen: frozenset[Path] = frozenset()) -> tuple[str, list[str]]:
+    resolved_path = path.resolve()
+    if not _seen and resolved_path in _CLASSIFY_CACHE:
+        return _CLASSIFY_CACHE[resolved_path]
+    if resolved_path in _seen:
+        return "none", []
     try:
-        src = path.read_text(encoding="utf-8")
+        src = resolved_path.read_text(encoding="utf-8")
         tree = ast.parse(src)
     except Exception as exc:  # noqa: BLE001
         return "unreadable", [repr(exc)[:60]]
@@ -320,16 +461,32 @@ def classify(path: Path) -> tuple[str, list[str]]:
     # talks about the muon layer" is real information -- it is just not
     # evidence about which pin the file COMPUTES at.
     muon_prose: list[str] = []
+    next_seen = _seen | {resolved_path}
 
     class V(ast.NodeVisitor):
         def visit_ImportFrom(self, n):  # noqa: N802
             mod = n.module or ""
+            names = [a.name for a in n.names]
             if mod in PROTON_MODULES or mod.endswith(".constants"):
-                names = [a.name for a in n.names]
                 if any(x in MUON_NAMES for x in names):
                     muon.append(f"imports {[x for x in names if x in MUON_NAMES]}")
                 if any(x == "Q" or x in PROTON_NAMES for x in names):
                     proton.append(f"from {mod} import {', '.join(names)}")
+            else:
+                # Mode B (bean qou-5le1): cross-module Q0 / q0 / Q_0 import.
+                q0_syms = [x for x in names if x in CROSS_MODULE_Q0_NAMES]
+                if q0_syms:
+                    up = _resolve_sibling_module(resolved_path, mod, n.level or 0)
+                    if up is not None and up.resolve() != resolved_path:
+                        up_verdict, _ = classify(up, _seen=next_seen)
+                        label = mod or f"{'.' * (n.level or 1)}{up.stem}"
+                        if up_verdict == "proton":
+                            proton.append(f"from {label} import {', '.join(q0_syms)} (upstream: proton)")
+                        elif up_verdict == "muon":
+                            muon.append(f"from {label} import {', '.join(q0_syms)} (upstream: muon)")
+                        elif up_verdict == "BOTH":
+                            proton.append(f"from {label} import {', '.join(q0_syms)} (upstream: BOTH)")
+                            muon.append(f"from {label} import {', '.join(q0_syms)} (upstream: BOTH)")
             self.generic_visit(n)
 
         def visit_Import(self, n):  # noqa: N802
@@ -410,6 +567,7 @@ def classify(path: Path) -> tuple[str, list[str]]:
             self.generic_visit(n)
 
     V().visit(ast.Module(body=body, type_ignores=[]))
+    muon.extend(_detect_inline_muon_closed_form(module))
 
     # de-dup, keep order. Operative evidence first: the list is capped at 3
     # and was ordered by SOURCE POSITION, so docstring mentions near the top of
@@ -425,12 +583,16 @@ def classify(path: Path) -> tuple[str, list[str]]:
         # No operative muon evidence anywhere -- prose alone does not decide.
         muon = []
     if proton and muon:
-        return "BOTH", [f"proton: {proton[:2]}", f"muon: {muon[:2]}"]
-    if proton:
-        return "proton", proton[:3]
-    if muon:
-        return "muon", muon[:3]
-    return "none", []
+        res = ("BOTH", [f"proton: {proton[:2]}", f"muon: {muon[:2]}"])
+    elif proton:
+        res = ("proton", proton[:3])
+    elif muon:
+        res = ("muon", muon[:3])
+    else:
+        res = ("none", [])
+    if not _seen and REPO in resolved_path.parents:
+        _CLASSIFY_CACHE[resolved_path] = res
+    return res
 
 
 def find_producer(script_name: str) -> Path | None:
@@ -452,14 +614,9 @@ def find_producer(script_name: str) -> Path | None:
 
 
 def _selftest() -> int:
-    """Assert the prose/code split on the two cases that motivated it.
+    """Assert prose/code split plus Mode A (inline closed form) and Mode B (cross-module Q0)."""
+    import tempfile
 
-    Both are `BOTH` for independent reasons and stay `BOTH`; what is asserted
-    is that the FALSE evidence is gone.  A future narrowing of
-    `_message_string_ids` or a revert of the `code_only` gate silently restores
-    the over-flag, and the counts do not move when it does — this is the only
-    thing that notices.
-    """
     checks = [
         ("computations/probes/qbeta_habiro_residual_probe.py",
          "ANCHOR STRADDLE",
@@ -476,13 +633,84 @@ def _selftest() -> int:
             continue
         _, ev = classify(f)
         joined = " ".join(ev)
-        # the forbidden item may legitimately survive as explicitly-marked prose
         hit = forbidden in joined and "(prose only)" not in joined.split(forbidden)[0][-24:]
         print(f"  {'FAIL' if hit else 'ok  '}  {rel}")
         print(f"          {why}")
         if hit:
             print(f"          still cites: {forbidden!r} as operative evidence")
             bad += 1
+
+    # Mode A live checks (bean qou-5le1): inline 1 / (1 - sqrt(Vol / M_MU_OVER_M_E))
+    for rel in (
+        "computations/t6_three_halves_factor_probes.py",
+        "computations/xi_ell_phi_q_probe.py",
+        "computations/probes/t6_tau_h5_embedding_probe.py",
+    ):
+        f = REPO / rel
+        if f.exists():
+            verdict, ev = classify(f)
+            ok = verdict == "muon" and any("inline muon closed-form" in e for e in ev)
+            print(f"  {'ok  ' if ok else 'FAIL'}  Mode A live: {rel} -> {verdict}")
+            if not ok:
+                bad += 1
+
+    # Mode B live checks (bean qou-5le1): cross-module Q0 import inherits upstream verdict
+    for rel in (
+        "computations/probes/deuteron_fpn_wlambda_wiring.py",
+        "computations/probes/he3_tower_charge_asymmetry_probe.py",
+    ):
+        f = REPO / rel
+        if f.exists():
+            verdict, ev = classify(f)
+            ok = verdict in ("proton", "muon") and any("upstream:" in e for e in ev)
+            print(f"  {'ok  ' if ok else 'FAIL'}  Mode B live: {rel} -> {verdict}")
+            if not ok:
+                bad += 1
+
+    # Synthetic Mode A + Mode B + observable-only negative + cycle safety fixtures
+    with tempfile.TemporaryDirectory() as td:
+        tdir = Path(td)
+        obs_only = tdir / "obs_only.py"
+        obs_only.write_text(
+            "from codata_2022_source import M_MU_OVER_M_E\n"
+            "import mpmath as mp\n"
+            "target = M_MU_OVER_M_E\n"
+            "sigma = mp.sqrt(mp.mpf('1.0') ** 2 + mp.mpf('2.0') ** 2)\n",
+            encoding="utf-8",
+        )
+        v_obs, _ = classify(obs_only)
+        ok_obs = v_obs == "none"
+        print(f"  {'ok  ' if ok_obs else 'FAIL'}  Mode A negative (observable-only M_MU_OVER_M_E -> {v_obs})")
+        if not ok_obs:
+            bad += 1
+
+        up_mu = tdir / "up_muon.py"
+        up_mu.write_text(
+            "from codata_2022_source import M_MU_OVER_M_E\n"
+            "import mpmath as mp\n"
+            "Q0 = mp.mpf(1) / (mp.mpf(1) - mp.sqrt(2 * mp.clsin(2, mp.pi / 3) / M_MU_OVER_M_E))\n",
+            encoding="utf-8",
+        )
+        mid_mu = tdir / "mid_muon.py"
+        mid_mu.write_text("from up_muon import Q0\nx = Q0 + 1\n", encoding="utf-8")
+        leaf_mu = tdir / "leaf_muon.py"
+        leaf_mu.write_text("from mid_muon import Q0\ny = Q0 ** 2\n", encoding="utf-8")
+        v_leaf, ev_leaf = classify(leaf_mu)
+        ok_chain = v_leaf == "muon" and any("upstream: muon" in e for e in ev_leaf)
+        print(f"  {'ok  ' if ok_chain else 'FAIL'}  Mode A+B 2-hop chain (leaf -> mid -> up -> {v_leaf})")
+        if not ok_chain:
+            bad += 1
+
+        cyc_a = tdir / "cyc_a.py"
+        cyc_b = tdir / "cyc_b.py"
+        cyc_a.write_text("from cyc_b import Q0\n", encoding="utf-8")
+        cyc_b.write_text("from cyc_a import Q0\n", encoding="utf-8")
+        v_cyc, _ = classify(cyc_a)
+        ok_cyc = v_cyc == "none"
+        print(f"  {'ok  ' if ok_cyc else 'FAIL'}  Mode B cycle termination ({v_cyc})")
+        if not ok_cyc:
+            bad += 1
+
     print(f"\n  selftest: {'FAILED' if bad else 'passed'} ({bad} regression(s))")
     return 1 if bad else 0
 

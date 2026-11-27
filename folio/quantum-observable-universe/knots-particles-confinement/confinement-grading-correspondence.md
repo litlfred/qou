@@ -1,4 +1,3 @@
-**Conjecture (confinement = KLR grading shift).**
 *Under the Brundan–Kleshchev isomorphism \cite{brundankleshchev2009}, the confinement filtration $J^\bullet(q)$ on $H_n(R, q)$ coincides with the filtration induced by the natural $\mathbb{Z}$-grading on the KLR algebra \cite{khovanovlauda2009}. A closed braid $K$ with normal form $T_w$ has confinement level $\ell(K, q)$ if and only if its KLR-module lift $\mathfrak{M}_K$ has top non-zero graded piece in degree $\ell(K, q)$:*
 
 $$

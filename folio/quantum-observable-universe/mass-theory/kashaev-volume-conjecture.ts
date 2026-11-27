@@ -2,9 +2,9 @@ import { conjecture } from "../../schema/builders";
 
 export default conjecture({
   label: "conj:kashaev-volume-conjecture",
-  title: "Kashaev volume conjecture",
+  title: "Kashaev–Murakami–Murakami volume conjecture",
   lean: {
-    ref: "qou:QOU.Kashaev.VolumeConjecture",
+    ref: "qou:BraidKnotOctonion.Kashaev.VolumeConjecture",
     validation: "not_checked",
   },
   uses: [
@@ -12,7 +12,7 @@ export default conjecture({
     "rem:kashaev-as-archimedean-realization",
     "def:quantum-bloch-group",
   ],
-  cites: ["kashaev1997", "murakami-murakami2001", "zagier1986", "neumann-zagier1985"],
+  cites: ["kashaev1997", "murakami-murakami2001", "zagier1986", "neumann-zagier1985", "arxiv-hep-th-0306165v1", "baseilhac2026"],
   tags: [
     "tier:famous",
     "kashaev",

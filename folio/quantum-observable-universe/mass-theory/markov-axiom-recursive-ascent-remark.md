@@ -1,0 +1,1 @@
+The recursive ascent path boundedly evaluates the trace without materialising unwieldy symbolic matrix representations. The production implementation completes the $^4\mathrm{He}$ mass derivation end-to-end in ~60 seconds.

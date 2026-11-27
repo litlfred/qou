@@ -21,8 +21,8 @@ so they live over `ℝ`; the underlying combinatorial content stays generic
 to any commutative ring with the same `q`-data.  `R_q := ℝ` is the
 substrate specialisation `ι : ℤ[q, q⁻¹] → ℝ, q ↦ q₀`.
 -/
-import QOU.QuantumObservableUniverse
-import QOU.MathConstants
+import QOU.Core.QuantumObservableUniverse
+import QOU.Core.MathConstants
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith

@@ -1,4 +1,4 @@
-**Remark (the three millennium problems as specializations).** Each millennium problem is a property $\mathcal{P}$ that holds unconditionally at the $q$-scale, with obstruction class $[\mathcal{P}] \in \mathrm{Obs}(\mathbf{C}, q \to 1) \cong k$. All three are specializations of one class — though, as recorded below, sharing a class does not make the three verdicts agree.
+Each millennium problem is a property $\mathcal{P}$ that holds unconditionally at the $q$-scale, with obstruction class $[\mathcal{P}] \in \mathrm{Obs}(\mathbf{C}, q \to 1) \cong k$. All three are specializations of one class — though, as recorded below, sharing a class does not make the three verdicts agree.
 
 All three obstructions are images of the same class $\chi(A) \in HH^2 \cong k$ under different evaluation maps:
 - **RH**: evaluate $\chi(A)$ on the spectral localization map.

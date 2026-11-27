@@ -12,25 +12,19 @@ export default theorem({
     "q-value",
     "mass-number",
   ],
-  lean: { ref: "qou:QOU.ParticleInteractions.parity_regime_selection",
+  lean: { ref: "qou:QOU.Confinement.parity_regime_selection",
     validation: "not_checked",
   },
   uses: [
     "prop:branching-qvalue-factorization",
-    "prop:confinement-lp",
+    "def:spectator-normalization",
   ],
   authorNotes: [
     {
-      kind: "note",
-      date: "2026-08-08",
-      body:
-        "**§7c base-ring note (archimedean specialisation).** " +
-        "The Q-value regimes in `parity_regime_selection.lean` are stated in " +
-        "**MeV against measured masses**: the context carries `m_e : ℝ` " +
-        "(electron rest mass, MeV) and `Q_value : ℝ` (the decay Q-value, " +
-        "MeV), and each regime is an equation `Q = … · m_e`. A measured mass " +
-        "is the §7c \"experimental value → `ℝ`\" row, so the `ℝ` is forced by " +
-        "the statement rather than chosen.",
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-hand-adjudicated.lean` inhabits unparameterised `ParityRegimeSelectionContext` at `A = 1`, `m_e = 0`.",
+      see: "docs/audits/2026-08-30-context-classes-hand-adjudicated.lean",
     },
   ],
 });

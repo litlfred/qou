@@ -377,7 +377,7 @@ if __name__ == "__main__":
         # Benchmark mode: time the slowest known partition
         from rho_k_h3a_refinement import chi_numeric
         from canonical_braid_crossings import atom_canonical_crossings
-        from q_parameter import Q_50_DIGIT_STR
+        from q_parameter import Q_MP
         q_f64 = float(Q_MP)
         q_mp = Q_MP
         crossings = atom_canonical_crossings(2, 2)  # ⁴He

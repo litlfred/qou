@@ -5,7 +5,7 @@ export default corollary({
   title:
     "Finite Connes distance forces a trivial kernel --- hence the quotient by the radical",
   lean: {
-    ref: "qou:QOU.QBeta.GramSignature.finite_distance_forces_trivial_kernel",
+    ref: "qou:QOU.Nuclear.GramSignature.finite_distance_forces_trivial_kernel",
     validation: "not_checked",
   },
   uses: ["prop:gram-degeneracy-blocks-connes"],

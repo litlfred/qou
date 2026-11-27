@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Resurgent Stokes constants are Donaldson--Thomas / BPS degeneracies (the closed-sector state-integral bridge, GGM Conjecture 3(d) + GPPV)",
   lean: {
-    ref: "qou:QOU.QBeta.StokesDTBPSBridge",
+    ref: "qou:QOU.Nuclear.StokesDTBPSBridge",
     validation: "not_checked",
   },
   computation: {
@@ -26,6 +26,9 @@ export default conjecture({
     "gukov-stosic2012",
     "kucharski-reineke-stosic-sulkowski2017",
     "singh-physrevd108106023",
+    "garoufalidis-kashaev2015",
+    "garoufalidis-zagier2023",
+    "mario2023",
   ],
   tags: [
     "tier:famous",
@@ -61,16 +64,16 @@ export default conjecture({
       kind: "caveat",
       date: "2026-08-02",
       body:
-        "**This is the CLOSED / state-integral BPS sector, NOT the open-HOMFLY " +
+        "**This is the CLOSED / state-integral BPS sector, NOT the open-HOMFLY-PT " +
         "Gukov–Stošić bridge.** Non-degeneracy check (this PR, witness " +
         "`aomega-bps-sector-nondegeneracy`): the *open* BPS-states bridge of " +
         "Gukov–Stošić (`gukov-stosic2012`, 1112.0030 — knot homology = open " +
         "BPS states on the conormal Lagrangian) gives, via the knots–quivers " +
         "correspondence (`kucharski-reineke-stosic-sulkowski2017`), a 4₁ count " +
-        "of det(4₁)=5 (five HOMFLY generators / five quiver nodes; trefoil " +
-        "calibration = 3 = det 3₁). 5 ∉ {3,4}, so the open-HOMFLY bridge does " +
+        "of det(4₁)=5 (five HOMFLY-PT generators / five quiver nodes; trefoil " +
+        "calibration = 3 = det 3₁). 5 ∉ {3,4}, so the open-HOMFLY-PT bridge does " +
         "NOT reproduce the GGM resurgent-Stokes spectrum {3,4} and does NOT " +
-        "license A_ω=3. The two BPS sectors (open HOMFLY vs closed Ẑ / " +
+        "license A_ω=3. The two BPS sectors (open HOMFLY-PT vs closed Ẑ / " +
         "state-integral) are distinct. Only the closed-sector bridge above " +
         "reproduces {3,4}/reduced-3.",
     },

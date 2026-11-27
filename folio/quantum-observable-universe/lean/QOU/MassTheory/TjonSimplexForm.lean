@@ -51,12 +51,12 @@ content from the index it is written under. This is the corpus rule *defined
 residual ≠ derived decomposition* applied to this file's own vocabulary.
 Narrative twin: `rem:tjon-universality-external`.
 
-`mu4_target_exceeds_n3lo_bound` certifies the numeric claim behind the
-GAP-9 probe: the corpus target `μ₄ = −4.591` (in units of `B(D) = 2.224566 MeV`)
-exceeds `34 ×` the N³LO four-nucleon estimate of `0.300 MeV`
-(Jurgenson–Navrátil–Furnstahl, `[jurgenson2009srg]`, `arXiv:0905.1873`, which
-measures the SRG-induced four-body force at `λ = 2 fm⁻¹` as "about 50 keV net"
-and quotes the N³LO long-range estimate as "of order a few hundred keV").
+The numeric claim behind the GAP-9 probe (the corpus target `μ₄ = −4.591`, in
+units of `B(D) = 2.224566 MeV`, against the N³LO four-nucleon estimate "of order a
+few hundred keV" of `[jurgenson2009srg]`) is **not** stated in Lean. It compares
+measured MeV values, and the owner ruled on 2026-11-21 that such comparisons stay
+out of Lean; it lives in `computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py`
+and its witness.
 
 `§UniversalLimitCrossCheck` at the foot of the file adds the external check that
 the framing above needs: the field's own parameter-free four-body answer
@@ -64,7 +64,7 @@ the framing above needs: the field's own parameter-free four-body answer
 basis assigns it a `μ₄` larger than the nuclear one.
 
 Base ring: **generic** `[CommRing R]` (§7c) for the identities; the sign lemma
-adds only an ordering. The one numeric certification is over `ℝ`, as it must be.
+adds only an ordering. No measured value is stated in this file.
 
 Companion probes: `computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py`
 and `computations/deltalambda/gap10_tjon_correlation_probe.py`.
@@ -148,23 +148,6 @@ theorem below_tjon_of_mu4_neg {μ₂ μ₃ μ₄ : R} (h : μ₄ < 0) :
 
 end Sign
 
-section NumericCertification
-
-/-- **The GAP-9 magnitude claim, certified.** The corpus target `μ₄ = −4.591`
-in units of `B(D) = 2.224566 MeV` is `10.213 MeV`, which exceeds `34 ×` the
-N³LO four-nucleon estimate of `0.300 MeV`. Over `ℝ`, as a numeric statement must
-be; this is a certification of the probe's arithmetic, not a structural theorem. -/
--- Ref: [jurgenson2009srg] https://doi.org/10.1103/PhysRevLett.103.082501
-theorem mu4_target_exceeds_n3lo_bound :
-    (34 : ℝ) * 0.300 < 4.591 * 2.224566 := by norm_num
-
-/-- The same target as a fraction of `B(⁴He) = 28.295662 MeV`: it exceeds `35 %`
-of the total binding energy — three orders above the `~1 %` the N³LO four-nucleon
-force is estimated to supply. -/
-theorem mu4_target_exceeds_35_percent_of_B4He :
-    (0.35 : ℝ) * 28.295662 < 4.591 * 2.224566 := by norm_num
-
-end NumericCertification
 
 
 section SignBlindness
@@ -302,24 +285,10 @@ theorem two_mu3_add_mu4_neg_of_flat {μ₂ μ₃ μ₄ : R}
 
 end BaselineOrder
 
-section ExternalNumerics
-
-/-- The nuclear ladder sits *below* the universal ratio: with the corpus's
-AME-derived `ρ_strong = (1, 3.8128, 13.0316)` one has `M(4) < 5·M(3)`, i.e.
-`B(⁴He)/B(³H) ≈ 3.42` against the zero-range universal `5`. Nuclear binding is
-not in the universal regime — finite-range effects shift it, exactly as the
-source states. -/
--- Ref: [hammer2007fourbody] https://doi.org/10.1140/epja/i2006-10301-8
-theorem ame_ratio_below_universal : (13.0316 : ℝ) < 5 * 3.8128 := by norm_num
-
-/-- And the corpus block-trace operator is flatter still — flatter even than the
-pairwise ratio `2`, using the complete-graph ladder `M(3) = 1.78578`,
-`M(4) = 2.11435` of the GAP-10 witness. With `ame_ratio_below_universal` this
-orders the three: operator `1.18` < nature `3.42` < universal `5`, so the
-external number widens the ladder gap rather than closing it. -/
-theorem operator_ladder_below_pairwise : (2.11435 : ℝ) < 2 * 1.78578 := by norm_num
-
-end ExternalNumerics
+-- The orderings `B(⁴He)/B(³H) ≈ 3.42 < 5` (AME vs the universal ratio) and
+-- `M(4) < 2·M(3)` (GAP-10 operator ladder) compare measured or witness numbers, so
+-- they are not stated in Lean (owner ruling 2026-11-21). They are computed in
+-- `computations/deltalambda/tjon_external_cross_check_probe.py`.
 
 end UniversalLimitCrossCheck
 

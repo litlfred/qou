@@ -16,12 +16,18 @@ Verifies the 5 theorems added across:
 
 from __future__ import annotations
 
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parents[1]))
+import _path_bridge as _bridge  # noqa: E402, F401
+del _sys, _Path, _bridge
 import datetime
 import hashlib
 import json
 import pathlib
 import subprocess
 from mpmath import mp
+from codata_constants import M_E_MEV  # noqa: E402
 
 mp.dps = 80
 
@@ -65,7 +71,7 @@ def main() -> None:
 
     # 2. qou-9f4h: ProtonBorromeanAssembly.lean — 2 * mMu * fBor - protonMass = 12 * mE.
     m_mu = mp.mpf("105.6583755")
-    m_e = mp.mpf("0.51099895000")
+    m_e = mp.mpf(M_E_MEV)  # CAL-1 from the registry (replaced a typed, truncated copy)
     f_bor = mp.mpf("4.4692623718")
     multiplicity = mp.mpf("2")
     binding_count = mp.mpf("6")
@@ -161,6 +167,10 @@ def main() -> None:
     assert all_passed, "One or more probe checks failed!"
 
     witness = {
+        "q0Anchor": "independent",
+        "q0AnchorReason": "mpmath checks of Lean lemmas (Euler characteristic, CAL-1 m_e/m_mu mass "
+                          "deficit identity, cluster ordering, truth table, polynomial growth); no "
+                          "q appears and q0 is never read",
         "probe": "round74_devacuify_6qbv_b9cj_probe",
         "scriptPath": script_rel,
         "scriptCommitSha": commit_sha,

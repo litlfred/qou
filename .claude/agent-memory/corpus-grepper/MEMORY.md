@@ -36,26 +36,43 @@ shape of "no results" rather than "nothing was indexed". The distinction is the
 entire value of the field, so check it before treating an empty answer as an
 absence — this is the same failure the tool exists to prevent, one level up.
 
-## STABLE — the six paths, in order
+## STABLE — the seven paths, in order
 
-All six must return empty (modulo the originating file) before anything is
+All seven must return empty (modulo the originating file) before anything is
 declared open. A source file's own `## Status` / `Open math` note is **not
 authoritative** — the corpus is.
 
 1. `grep -rln <topic> docs/audits/` — owner-authorised resolutions land here
    first; the originating file's status note can lag by months.
-2. `grep -rln <topic> content/` — **whole tree**, not just the chapter you
-   started in. Conjectures cross-cut chapters.
+2. `grep -rln <topic> folio/` — **whole tree** (excluding `/.lake/`), not just
+   the chapter you started in. Conjectures cross-cut chapters.
 3. `grep -rln <topic> computations/` — implemented Python may already
    realise what a source file calls open.
 4. `docs/coordination/<theme>.md` — the ledgers. A prior agent may have
    closed it.
 5. **`library/`, three tiers, cheapest first** — see below.
-6. **`.beans/`** — `grep -rl <topic> .beans/`. See the TRAP below; this is
+6. **`beans/defs/`** — `grep -rl <topic> beans/defs/` (or `beans` CLI; `.beans/`
+   was renamed to `beans/defs/` in `58a1f3231c`). See the TRAP below; this is
    the path most often skipped and the one that most often holds the answer.
+7. **The block's own QA verdicts (owner-approved 2026-11-22, bean `qou-tv74`)** —
+   when working a specific content block, read its `reviewer.kind == "agent"`
+   (and `"human"`) verdicts BEFORE any grep:
+   ```sh
+   python3 scripts/qa-block-verdicts.py <block-path-or-label>
+   ```
+   **TRAP (why `jq` on `<block>.qa.json` alone can miss verdicts):** agent
+   verdicts are single-line escaped JSON strings keyed by criterion name
+   (`trap-superlative`, `da-non-sequitur`) rather than by topic, so topic greps
+   in path 2 miss them (1,224 blocks / 1,149 distinct block-specific analyses >
+   400 chars measured on main), AND `qa-sweep` splits storage across three
+   surfaces: legacy beside-the-block `folio/.../<block>.qa.json`, derived
+   `test/results/block-qa/folio/.../<block>.qa.json`, and canonical
+   `test/attestations/block-qa/folio/.../<block>.attestations.json`.
+   `scripts/qa-block-verdicts.py` unions all three and tags each verdict
+   `FRESH` / `STALE` / `UNHASHED` against the live `.md` SHA-256 prefix.
 
 ## STABLE — the library: read [`library-and-staleness-traps.md`](library-and-staleness-traps.md)
-Three tiers (`INDEX.md` -> `summary.json` -> `sections/`) plus the fourth (`ocr/`),
+Three tiers (`INDEX.md` -> the `narrative` of `library/<doc-id>/manifest.jsonld` (`scripts/summarize-library.py --show <id>`; was `library/<doc-id>/summary.json` until 2026-11-24) -> `sections/`) plus the fourth (`ocr/`),
 with counts and commands. The traps below stay here — they are what gets skipped.
 
 ## TRAP — for some docs `sections/` is BOILERPLATE; the text is in `ocr/`

@@ -63,7 +63,7 @@ $$
   \bigr).
 $$
 
-Non-degeneracy requires $\det G^{(n)}_{ij} \neq 0$ at every brane level.
+At the Markov parameter $z = q^3/(q^2 + 1)$, $\det G^{(n)} = 0$ identically on the full $m$-strand Hecke algebra $H_m^{(n)}(q)$ for $m \geq 3$ (the Young diagrams with at least three rows forming $\mathrm{rad}\,\mathrm{tr}_M^{(n)}$); non-degeneracy holds on the level-$n$ Temperley--Lieb quotient $\mathrm{TL}_m^{(n)}(q) := H_m^{(n)}(q)/\mathrm{rad}\,\mathrm{tr}_M^{(n)}$ of dimension $C_m$, where $\det G^{(n)}\big|_{\mathrm{TL}_m^{(n)}(q)} \neq 0$ at every brane level.
 
 ### J-3: Markov trace at level $n$
 
@@ -79,12 +79,16 @@ $$
 **(J-3b) Stabilisation**:
 
 $$
-  \mathrm{tr}_M^{(n)}(w \cdot \sigma_m^{(n)\pm 1})
+  \mathrm{tr}_M^{(n)}(w \cdot \sigma_m^{(n)})
   = 
-  \frac{1}{\delta} \mathrm{tr}_M^{(n)}(w),
+  z\,\mathrm{tr}_M^{(n)}(w),
   \qquad
-  \delta = -(q + q^{-1}).
+  \mathrm{tr}_M^{(n)}(w \cdot \sigma_m^{(n)-1})
+  = 
+  z_-\,\mathrm{tr}_M^{(n)}(w),
 $$
+
+with $z = \dfrac{q^3}{q^2 + 1}$ and $z_- = \dfrac{1}{q(q^2 + 1)}$.
 
 **(J-3c) Inter-level compatibility** (jet prolongation preserves the Markov trace):
 
@@ -271,7 +275,7 @@ $$
   \bigr).
 $$
 
-The obstruction persists: $\kappa_n \neq 0$ at every level, so the $R$-matrix possesses a nonzero transient component. Braiding at level $n{+}1$ is **not** exclusively determined by level $n$.
+This expression is a difference of two scalars: by J-3, $\kappa_n = \mathrm{tr}_M^{(n+1)}(\check{R}^{(n+1)}) - \mathrm{tr}_M^{(n)}(\check{R}^{(n)})$. It vanishes whenever $\check{R}^{(n+1)} = \ell_n(\check{R}^{(n)})$, in particular for $\check{R}^{(n)} = \sigma_i^{(n)}$, since $\ell_n(\sigma_i^{(n)}) = \sigma_i^{(n+1)}$. A nonzero value therefore requires a level-$(n{+}1)$ $R$-matrix with a genuine transient component outside $\mathrm{im}\,\ell_n$; by contrast, in the Kummer filtration ([QU-to-QOU](#thm:qu-to-qou) item 3), the $n$-th-root obstruction $\chi(\mathcal{S}) \bmod n$ vanishes for $n \mid 6$ and persists for every $n \nmid 6$.
 
 ### JC-5: Betti numbers across levels
 

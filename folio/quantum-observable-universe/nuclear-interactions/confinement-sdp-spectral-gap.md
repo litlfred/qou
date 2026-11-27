@@ -1,4 +1,4 @@
-**Remark.** Feasibility of the confinement SDP is equivalent to a **Hecke spectral-gap condition**: the feasible cone is non-empty if and only if
+Feasibility of the confinement SDP is equivalent to a **Hecke spectral-gap condition**: the feasible cone is non-empty if and only if
 
 $$
   \Delta_{\sigma}(q) \;:=\; \lvert q + q^{-1} \rvert \;>\; 0.

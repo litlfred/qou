@@ -1,4 +1,4 @@
-import QOU.QuantumObservableUniverses.QAnalysisUniquenessCounterexamples
+import QOU.Core.QAnalysisUniquenessCounterexamples
 
 
 /-!

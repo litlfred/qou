@@ -24,26 +24,36 @@
  *   leak-reading-order (L4)  (L4a) a `q`-dependent token (`$q$`, `[n]_q`,
  *       `\Phi_d`, `SU_q`, Hecke, "archimedean wall") in a block read before
  *       the first block of `sec:substrate-parameter`, where `q` is
- *       introduced (fails in Chapter 1, advisory in Chapter 2 §1-6, where
- *       `q` appears as the parameter of the q-operators; an `outro-*`
- *       block and the introduction may preview);
- *       (L4b) a `](#label)` link to a block later in reading
- *       order. L4b is failing only in the Part I chapters listed in
- *       PART_I_STRICT and ADVISORY elsewhere: a forward reference is
- *       ordinary in a monograph; the owner's audit asked for none in the
- *       foundations.
+ *       introduced. An `outro-*` block may name what the next chapter
+ *       introduces;
+ *       (L4b) a `](#label)` link to a block later in reading order.
+ *       Links to back matter, to the block's own table sibling, and links
+ *       inside a "conditional on" banner (owner ruling 2026-11-21) are not
+ *       counted.
+ *       Both fail in EVERY chapter (owner ruling 2026-11-20: "All the
+ *       chapters should be strict"), except the introduction, which
+ *       previews the paper (PREVIEW_CHAPTERS, same ruling). This
+ *       replaces the earlier scoping, in which L4a failed only in Chapter 1
+ *       and L4b only in Chapters 1-2, and were advisory elsewhere.
+ *
+ *   leak-convention-c (L5)   excised internal Markov-trace label "Convention C"
+ *       / "convention C" / "C-convention" or parameter symbol `z_C` / `$z_C$`
+ *       in external-reader monograph prose (owner ruling 2026-11-24, bean
+ *       `qou-xu3c`). Lowercase `$z_c$` (complex branch point / crossing
+ *       modulus) is NOT matched. `authors-note` (`FENCED_CHAPTERS`) and
+ *       `CODE_BY_DESIGN` chapters are exempt.
  *
  * High-recall / agent-confirmed: a hit is a candidate. Fenced code is
- * skipped everywhere; inline math is removed for L1-L3 (L4a reads math).
+ * skipped everywhere; inline math is removed for L1-L3 (L4a and L5 read math).
  *
- *   bun run folio/pipeline/voice-leak-audit.ts [--json] [--quiet] [--class L1,L2,L3,L4]
+ *   bun run folio/pipeline/voice-leak-audit.ts [--json] [--quiet] [--class L1,L2,L3,L4,L5]
  *
  * Exit 1 if any non-advisory hit, else 0.
  */
 import { existsSync, readFileSync } from "node:fs";
 import { join, relative } from "node:path";
 
-export type LeakClass = "L1" | "L2" | "L3" | "L4";
+export type LeakClass = "L1" | "L2" | "L3" | "L4" | "L5";
 export interface LeakHit {
   cls: LeakClass;
   criterion: string;
@@ -53,12 +63,11 @@ export interface LeakHit {
   advisory?: boolean;
 }
 
-export const PART_I_STRICT = new Set(["quantum-universes", "quantum-observable-universes"]);
-/** Chapter where a premature `q` token fails; elsewhere before the intro it is advisory. */
-export const Q_STRICT_CHAPTER = "quantum-universes";
 export const Q_INTRO_SECTION = "sec:substrate-parameter";
 /** Back matter a forward link may always point to. */
 export const BACK_MATTER = new Set(["glossary", "notation", "index-of-definitions"]);
+/** Chapters that preview what follows, exempt from L4 (owner ruling 2026-11-20: exempt the introduction). */
+export const PREVIEW_CHAPTERS = new Set(["introduction"]);
 /**
  * Owner rulings 2026-11-20 (second [W14 ask] on #8526, answers 1b / 2a / 3a):
  * - CODE_BY_DESIGN: chapters whose subject IS the formalisation or the code.
@@ -72,6 +81,8 @@ export const BACK_MATTER = new Set(["glossary", "notation", "index-of-definition
  */
 export const CODE_BY_DESIGN = new Set(["appendix-mass-binding-algorithms", "appendix-formalisation-notes"]);
 export const REFERENCE_TABLES = new Set(["glossary", "notation", "index-of-definitions"]);
+/** Public-release / author-meta front-matter chapters (Lean/compute provenance by design), exempt from L1–L5. */
+export const FENCED_CHAPTERS = new Set(["authors-note"]);
 
 // ── line preparation ────────────────────────────────────────────────
 /** Fenced code blanked; returns raw (math kept) lines. */
@@ -157,10 +168,27 @@ const Q_TOKEN_RES: { sub: string; re: RegExp }[] = [
   { sub: "q-symbol", re: /\$[^$]*(?<![\\A-Za-z])q(?![A-Za-z])[^$]*\$|\bq-(?:deform|integer|analog|number)/ },
 ];
 
+// ── L5 ──────────────────────────────────────────────────────────────
+// Owner ruling 2026-11-24 (`qou-xu3c`): "Convention C" / "convention C" and
+// `z_C` were internal project-history labels and must never appear in
+// external-reader monograph prose. Case-sensitive `C` preserves lowercase
+// `$z_c$` (complex branch point / crossing modulus).
+const L5_RES: { sub: string; re: RegExp }[] = [
+  {
+    sub: "convention-c",
+    re: /\b[Cc]onvention[-\s]+\$?C\$?(?![A-Za-z0-9])|(?<![A-Za-z0-9\\])\$?C\$?-convention\b/,
+  },
+  {
+    sub: "z-c",
+    re: /(?<![A-Za-z\\])z_(?:\{C\}|C(?![A-Za-z0-9])|\{?\\(?:mathrm|text)\{C\}\}?)/,
+  },
+];
+
 export function scanText(src: string, opts: { premature?: boolean; prematureAdvisory?: boolean } = {}): LeakHit[] {
   const hits: LeakHit[] = [];
   unfence(src).forEach((raw, i) => {
     const line = i + 1;
+    const rawNoTarget = raw.replace(/\]\([^)]*\)/g, "]");
     const noMath = stripDirectives(stripMath(raw));
     const prose = stripCode(noMath);
     for (const { sub, re } of L1_RES) {
@@ -178,9 +206,16 @@ export function scanText(src: string, opts: { premature?: boolean; prematureAdvi
       hits.push({ cls: "L3", criterion: "leak-person", sub: m[0].toLowerCase().replace(/\s+/g, " "), line, text: m[0] });
     if (opts.premature)
       for (const { sub, re } of Q_TOKEN_RES) {
-        const m = raw.match(re);
+        // `\dim_q` is the categorical (quantum) dimension tr(id_X), which
+        // Chapter 1 defines in its own definitions; it is not premature use of
+        // the substrate parameter q (owner ruling 2026-11-21).
+        const m = raw.replace(/\\dim_q\b/g, "\\dim").match(re);
         if (m) { hits.push({ cls: "L4", criterion: "leak-reading-order", sub: `premature-${sub}`, line, text: m[0].slice(0, 60), advisory: opts.prematureAdvisory }); break; }
       }
+    for (const { sub, re } of L5_RES) {
+      const m = rawNoTarget.match(re);
+      if (m) hits.push({ cls: "L5", criterion: "leak-convention-c", sub, line, text: m[0] });
+    }
   });
   return hits;
 }
@@ -224,6 +259,25 @@ export async function readingOrder(paperDir: string): Promise<BlockRec[]> {
 }
 
 const LINK_RE = /\]\(#([^)\s]+)\)/g;
+/**
+ * A "conditional on" banner: the bold heading that opens a statement block
+ * and names the conjecture it depends on, e.g.
+ * `**Proposition (conditional on [..](#conj:x)).**`. Owner ruling 2026-11-21
+ * ("Allow banner links"): a banner may point to a later conjecture, because
+ * dropping it would make a conditional result read as unconditional.
+ */
+const BANNER_RE = /\*\*\s*(?:(?:Theorem|Proposition|Lemma|Corollary|Conjecture|Definition)\b[^*]*?\(conditional on|\(?Conditional on\b|Within\b[^*]*?;\s*conditional on\b)[\s\S]*?\*\*/gi;
+
+/** 0-based line indices covered by conditional banners in `src`. */
+export function bannerLines(src: string): Set<number> {
+  const out = new Set<number>();
+  for (const m of src.matchAll(BANNER_RE)) {
+    const start = src.slice(0, m.index).split("\n").length - 1;
+    const end = start + m[0].split("\n").length - 1;
+    for (let i = start; i <= end; i++) out.add(i);
+  }
+  return out;
+}
 export interface FileReport { file: string; chapter: string; hits: LeakHit[] }
 
 export async function audit(paperDir: string, classes: Set<LeakClass>): Promise<{ scanned: number; reports: FileReport[] }> {
@@ -245,17 +299,21 @@ export async function audit(paperDir: string, classes: Set<LeakClass>): Promise<
   for (const b of order) {
     if (!existsSync(b.md)) continue;
     scanned++;
+    if (FENCED_CHAPTERS.has(b.chapter)) continue;
     const src = readFileSync(b.md, "utf8");
     // An outro may name what the next chapter introduces.
-    const premature = b.idx < qIntro && PART_I_STRICT.has(b.chapter) && !b.name.startsWith("outro-");
+    const preview = PREVIEW_CHAPTERS.has(b.chapter);
+    const premature = b.idx < qIntro && !b.name.startsWith("outro-") && !preview;
     const srcLines = src.split("\n");
-    let hits = scanText(src, { premature, prematureAdvisory: b.chapter !== Q_STRICT_CHAPTER })
+    let hits = scanText(src, { premature, prematureAdvisory: false })
       .filter((h) => classes.has(h.cls))
-      .filter((h) => !(CODE_BY_DESIGN.has(b.chapter) && (h.cls === "L1" || h.cls === "L2")))
+      .filter((h) => !(CODE_BY_DESIGN.has(b.chapter) && (h.cls === "L1" || h.cls === "L2" || h.cls === "L5")))
       .filter((h) => !(REFERENCE_TABLES.has(b.chapter) && h.cls === "L2" && /^\s*\|/.test(srcLines[h.line - 1] ?? "")))
       .filter((h) => !(REFERENCE_TABLES.has(b.chapter) && (h.cls === "L1" || h.cls === "L2") && rowFromCodeChapter(srcLines[h.line - 1] ?? "")));
-    if (classes.has("L4"))
+    const banners = bannerLines(src);
+    if (classes.has("L4") && !preview)
       unfence(src).forEach((raw, i) => {
+        if (banners.has(i)) return;
         for (const m of raw.matchAll(LINK_RE)) {
           const t = labelIdx.get(m[1]!);
           if (t === undefined || t <= b.idx) continue;
@@ -267,7 +325,7 @@ export async function audit(paperDir: string, classes: Set<LeakClass>): Promise<
             sub: tb.chapter !== b.chapter ? "forward-link-cross-chapter"
               : tb.section !== b.section ? "forward-link-later-section" : "forward-link-same-section",
             line: i + 1, text: m[1]!,
-            advisory: !PART_I_STRICT.has(b.chapter),
+            advisory: false,
           });
         }
       });
@@ -282,7 +340,7 @@ if (import.meta.main) {
   const quiet = args.includes("--quiet");
   const ci = args.indexOf("--class");
   const classes = new Set<LeakClass>(
-    (ci >= 0 ? args[ci + 1]! : "L1,L2,L3,L4").split(",") as LeakClass[],
+    (ci >= 0 ? args[ci + 1]! : "L1,L2,L3,L4,L5").split(",") as LeakClass[],
   );
   const paperDir = args.find((a, i) => !a.startsWith("--") && args[i - 1] !== "--class") ?? "folio/quantum-observable-universe";
   const { scanned, reports } = await audit(paperDir, classes);

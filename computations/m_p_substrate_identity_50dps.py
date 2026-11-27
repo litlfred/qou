@@ -7,9 +7,12 @@ prediction of m_p and m_n from (m_e, m_μ, q_0) at MPFR 50 dps.
 
    m_p = 2 · m_μ · |tr_M(β_Bor, q_0)| · [3]_q! / q_0^3  −  12 · m_e
 
-   m_n = m_p + Q_β + m_e   with Q_β the parameter-free Kashiwara b² truncation
-                           (derived_masses.q_beta_kashiwara_n2_mev; +501 ppb on m_n under
-                           convention D, see below).
+   m_n = m_p + Q_β + m_e   with Q_β the SCORED owner-ruled D1 = A cell
+                           |ε_flavour(V³)|·E₀ (derived_masses.q_beta_scored_mev;
+                           −486 ppm on m_n, conditional on conjectures C1–C3).
+                           Switched 2026-11-21 (owner decision, issue #8769) from
+                           the retired z = 1 mixed base q_beta_kashiwara_n2_mev
+                           (+501 ppb), which is kept below as a labelled diagnostic.
                            The flavor-split X = (q-1)²(1 - q^{-4})/3 is retained
                            as a SECONDARY diagnostic ratio (−1.76 ppm), not the route.
 
@@ -57,11 +60,11 @@ At q_0 = 1.1099785955573347... (50 dps, m_p-pinned re-pin #1422):
                                           round-trip, not a prediction)
   m_μ_pred  = 105.65840 MeV   vs CODATA 105.65838  →  +0.21 ppm   (9.5σ
                                           PREDICTION — the μ-p tension)
-  m_n_pred  = 939.56589 MeV   vs CODATA 939.56542  →  +501 ppb   (n→p+e+ν̄  # noqa: P31 — docstring; prediction-vs-CODATA table
-                                          chain; Kashiwara b² Q_β, near-match)
-  Q_β_pred  = 0.78280 MeV     vs CODATA 0.78233    →  +602 ppm on Q_β  # noqa: P31 — docstring; prediction-vs-CODATA table
-                                          (convention-D α; the +1.25 ppm / ~1 ppb
-                                          figures were convention C, excised)
+  m_n_pred  = 939.10852 MeV   vs CODATA 939.56542  →  −486 ppm   (n→p+e+ν̄  # noqa: P31 — docstring; prediction-vs-CODATA table
+                                          chain; scored D1 = A Q_β, C1–C3 conditional)
+  Q_β_pred  = 0.32543 MeV     vs CODATA 0.78233    →  −58.4 % on Q_β  # noqa: P31 — docstring; prediction-vs-CODATA table
+                                          (retired mixed base gave 0.78280 MeV,
+                                          +602 ppm; kept as a diagnostic only)
 
 Class-A acknowledged-anchor banner (per Workplan-0b): m_e, m_μ are
 CAL-1/CAL-2 anchors (CODATA inputs). q_0 is the substrate parameter
@@ -110,7 +113,7 @@ from codata_constants import (  # noqa: E402
     M_N_MEV_VALIDATION,
     M_MU_MEV_VALIDATION,
 )
-from derived_masses import q_beta_kashiwara_n2_mev  # noqa: E402
+from derived_masses import q_beta_kashiwara_n2_mev, q_beta_scored_mev  # noqa: E402
 
 
 def q_int(q, n):
@@ -341,12 +344,18 @@ def main():
     # same tower from the q₀ solver + the 2026-05-28 floor audit rec #1.
     # Full analysis: docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md.
     m_p_pred = 2 * m_mu * F - 12 * m_e
-    # Canonical neutron: n → p + e⁻ + ν̄, with Q_β the parameter-free
-    # Kashiwara b² truncation (q_0-only; derived_masses.q_beta_kashiwara_n2_mev).
-    # Q_β is ~0.083 % of m_n; under convention D its +602 ppm lands m_n at
-    # +501 ppb (the earlier +1.25 ppm / ~1 ppb were convention C).
-    # TIER: near-match; exact Q_β gated on the s5bb Habiro keystone.
-    Q_beta_pred = q_beta_kashiwara_n2_mev()            # absolute MeV (no E_0 scaling)
+    # Canonical neutron: n → p + e⁻ + ν̄, with Q_β the SCORED owner-ruled
+    # D1 = A cell |ε_flavour(V³)|·E₀ (tower E₀, same q₀), derived_masses.
+    # q_beta_scored_mev. Owner decision 2026-11-21 (issue #8769): the facade
+    # follows the scorecard. NOT chosen by residual: it misses CODATA Q_β by
+    # −58.4 % (m_n −486 ppm), further than the retired value below.
+    # CONDITIONAL on conjectures C1–C3 (QOU.QBeta.DecayConjectures).
+    Q_beta_pred = q_beta_scored_mev(q, m_e)
+    # RETIRED MIXED BASE (owner label 2026-11-16): z = 1 Form A with a
+    # convention-D phase. Its +501 ppb on m_n is not a convention-D result.
+    # Kept only as a labelled diagnostic so the old figure stays reproducible.
+    Q_beta_retired_mixed_base = q_beta_kashiwara_n2_mev()
+    m_n_retired_mixed_base = m_p_pred + Q_beta_retired_mixed_base + m_e
     Delta_m_pred = Q_beta_pred + m_e                   # = m_n − m_p, computed directly
     m_n_pred = m_p_pred + Delta_m_pred                 # avoids large-number subtraction
     M_N_pred = (m_p_pred + m_n_pred) / 2
@@ -494,8 +503,10 @@ def main():
         "Production substrate-categorical prediction of m_p and m_n from "
         "(m_e, m_μ, q_0) using Lean-proved closed forms for |tr_M(β_Bor)| "
         "and [3]_q!. The neutron uses the 3-input chain m_n = m_p + Q_β + m_e "
-        "with Q_β the parameter-free Kashiwara b² truncation (near-match, "
-        "+501 ppb on m_n under convention D); the Hecke-skein flavor-split is a secondary ratio. "
+        "with Q_β the scored owner-ruled D1 = A cell |ε_flavour(V³)|·E₀ "
+        "(−486 ppm on m_n, conditional on conjectures C1–C3; switched from the "
+        "retired z = 1 mixed base on 2026-11-21, issue #8769); the Hecke-skein "
+        "flavor-split is a secondary ratio. "
         "CAL-3 (Q_β) is NOT used as input — Q_β becomes a DERIVED quantity. "
         "Substrate identity: m_p = 2·m_μ·|tr_M|·[3]_q!/q^3 - 12·m_e where "
         "the '12' is the Ocneanu cancellation reciprocal."
@@ -525,7 +536,7 @@ def main():
     })
 
     # predictions_pathC retained for backward-compat: it now carries the
-    # SAME canonical neutron (Kashiwara b² Q_β) — no longer the circular
+    # SAME canonical neutron (scored D1 = A Q_β) — no longer the circular
     # Q_AME path. (predictions == predictions_pathC by construction now.)
     m_n_C_ppm = (m_n_pred - m_n_codata) / m_n_codata * mpf("1e6")
     Delta_codata = m_n_codata - m_p_codata
@@ -536,7 +547,7 @@ def main():
         "Delta_m_pn_MeV": mp.nstr(Delta_m_pred, 25),
         "Delta_m_pn_ppb": str(Delta_ppb),
         "Q_beta_N3_MeV": mp.nstr(Q_beta_pred, 25),
-        "derivation": "m_n = m_p + Q_β(Kashiwara b², parameter-free) + m_e",
+        "derivation": "m_n = m_p + Q_β(scored D1 = A, |eps_flavour(V^3)|*E0, C1-C3 conditional) + m_e",
     })
 
     # Secondary diagnostics — the flavor-split RATIO route + the explicit
@@ -544,6 +555,15 @@ def main():
     # canonical neutron; both kept for transparency.
     m_n_fs_ppm = (m_n_flavor_split - m_n_codata) / m_n_codata * mpf("1e6")
     diagnostics = {
+        "m_n_retired_mixed_base_MeV": mp.nstr(m_n_retired_mixed_base, 25),
+        "Q_beta_retired_mixed_base_MeV": mp.nstr(Q_beta_retired_mixed_base, 25),
+        "m_n_retired_mixed_base_residual_ppb": mp.nstr(
+            (m_n_retired_mixed_base - m_n_codata) / m_n_codata * mpf("1e9"), 12),
+        "retired_mixed_base_note": (
+            "q_beta_kashiwara_n2_mev: z = 1 Form A with a convention-D phase, "
+            "retired 2026-11-16. Was the production m_n until 2026-11-21 "
+            "(issue #8769). Not a convention-D prediction."
+        ),
         "m_n_flavor_split_MeV": mp.nstr(m_n_flavor_split, 25),
         "m_n_flavor_split_residual_ppm": mp.nstr(m_n_fs_ppm, 12),
         "Delta_m_pn_flavor_split_MeV": mp.nstr(Delta_m_flavor_split, 25),
@@ -674,8 +694,8 @@ def main():
     w.add_assertion(
         name="m_p_matches_codata_within_1ppm",
         computed=abs(res_m_p_ppm),
-        expected=0.0,
-        tolerance=1.0,
+        expected=mpf("0"),
+        tolerance=mpf("1"),
         unit="ppm",
         source=(
             "m_p substrate identity should match CODATA m_p within 1 ppm — "
@@ -685,14 +705,15 @@ def main():
     w.add_assertion(
         name="m_n_matches_codata_within_10ppb",
         computed=abs(res_m_n_ppm) * 1000,      # ppm → ppb
-        expected=0.0,
-        tolerance=10.0,
+        expected=mpf("0"),
+        tolerance=mpf("10"),
         unit="ppb",
         source=(
-            "m_n via the parameter-free Kashiwara b² Q_β (n→p+e+ν̄) should "
-            "match CODATA m_n within 10 ppb. Under convention D it does not: "
-            "+501 ppb (the ~1 ppb once recorded was convention C, excised). "
-            "TIER: near-match; exact Q_β gated on the s5bb Habiro keystone."
+            "m_n via the scored D1 = A Q_β (n→p+e+ν̄) against CODATA m_n at "
+            "10 ppb. It FAILS: −486 ppm, because the scored Q_β is −58.4 % "
+            "(conditional on C1–C3). Kept failing on purpose: the tolerance is "
+            "the target, not a bound sized to the miss. Before 2026-11-21 it "
+            "also failed (+501 ppb) on the retired mixed base."
         ),
     )
     w.add_assertion(

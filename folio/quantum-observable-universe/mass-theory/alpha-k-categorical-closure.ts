@@ -4,6 +4,12 @@ export default conjecture({
   authorNotes: [
     {
       kind: "note",
+      date: "2026-11-24",
+      body: "Formalisation regression guard (`qou-x60n`): `2026-08-29-qplancherel-clt-uninhabitable-probe.lean` refutes the former over-quantified `HasQPlancherelCLT` bound in `QOU.MathlibExt.QPlancherel` and verifies satisfiability of the repaired carrier.",
+      see: "docs/audits/2026-08-29-qplancherel-clt-uninhabitable-probe.lean",
+    },
+    {
+      kind: "note",
       date: "2026-08-08",
       body:
         "**§7c base-ring note.** The Lean class `AlphaKCategoricalClosure` " +
@@ -22,7 +28,7 @@ export default conjecture({
   title:
     "Closed-form resummation of the categorical stratum prefactors $\\alpha_k$ — geometric vs symmetric q-dilogarithm candidates",
   lean: {
-    ref: "qou:QOU.BraidKnot.AlphaKCategoricalClosure",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.AlphaKCategoricalClosure",
     validation: "not_checked",
   },
   uses: [

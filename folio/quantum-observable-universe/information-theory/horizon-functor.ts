@@ -7,7 +7,7 @@ export default definition({
     "horizon-functor", "aeon", "jet-horizon",
     "boundary", "connected-components",
   ],
-  lean: { ref: "qou:QOU.HorizonFunctor",
+  lean: { ref: "qou:QOU.InformationTheory.HorizonFunctor",
     validation: "not_checked",
   },
   uses: [

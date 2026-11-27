@@ -4,9 +4,9 @@
   "entries": [
     {
       "slug": "braided-monoidal-category",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Monoidal structure",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of monoidal, rigid, and enriched categorical notions",
       "block": "rem:glossary-braided-monoidal-category",
       "kind": "remark",
       "lean": null
@@ -40,18 +40,18 @@
     },
     {
       "slug": "categorical-q-torsion-leaf",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Geometry and transport",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of geometric, information-theoretic, and homological notions",
       "block": "rem:glossary-categorical-q-torsion-leaf",
       "kind": "remark",
       "lean": "qou:QOU.CategoricalQTorsionLeaf"
     },
     {
       "slug": "categorical-transport",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Geometry and transport",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of geometric, information-theoretic, and homological notions",
       "block": "rem:glossary-categorical-transport",
       "kind": "remark",
       "lean": "qou:QOU.CategoricalTransport"
@@ -76,9 +76,9 @@
     },
     {
       "slug": "compact-closed-category",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Duality and rigidity",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of monoidal, rigid, and enriched categorical notions",
       "block": "rem:glossary-compact-closed-category",
       "kind": "remark",
       "lean": null
@@ -94,9 +94,9 @@
     },
     {
       "slug": "derived-category",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Homological algebra",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of geometric, information-theoretic, and homological notions",
       "block": "rem:glossary-derived-category",
       "kind": "remark",
       "lean": null
@@ -112,18 +112,18 @@
     },
     {
       "slug": "dg-category",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Homological algebra",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of geometric, information-theoretic, and homological notions",
       "block": "rem:glossary-dg-category",
       "kind": "remark",
       "lean": null
     },
     {
       "slug": "distinguished-triangle",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Homological algebra",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of geometric, information-theoretic, and homological notions",
       "block": "rem:glossary-distinguished-triangle",
       "kind": "remark",
       "lean": null
@@ -139,9 +139,9 @@
     },
     {
       "slug": "fourier-mukai-transform",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Homological algebra",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of geometric, information-theoretic, and homological notions",
       "block": "rem:glossary-fourier-mukai-transform",
       "kind": "remark",
       "lean": null
@@ -166,18 +166,18 @@
     },
     {
       "slug": "hom-set",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Basic categorical notions",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of monoidal, rigid, and enriched categorical notions",
       "block": "rem:glossary-hom-set",
       "kind": "remark",
       "lean": null
     },
     {
       "slug": "left-dual",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Duality and rigidity",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of monoidal, rigid, and enriched categorical notions",
       "block": "rem:glossary-left-dual",
       "kind": "remark",
       "lean": null
@@ -202,36 +202,36 @@
     },
     {
       "slug": "monoidal-category",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Monoidal structure",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of monoidal, rigid, and enriched categorical notions",
       "block": "rem:glossary-monoidal-category",
       "kind": "remark",
       "lean": null
     },
     {
       "slug": "monoidal-functor",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Monoidal structure",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of monoidal, rigid, and enriched categorical notions",
       "block": "rem:glossary-monoidal-functor",
       "kind": "remark",
       "lean": null
     },
     {
       "slug": "no-quasi-zeros",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Enrichment",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of monoidal, rigid, and enriched categorical notions",
       "block": "rem:glossary-no-quasi-zeros",
       "kind": "remark",
       "lean": null
     },
     {
       "slug": "observed-value",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Elliptic and surface geometry",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of geometric, information-theoretic, and homological notions",
       "block": "rem:glossary-observed-value",
       "kind": "remark",
       "lean": "qou:QOU.BringsSurface.observedValue"
@@ -256,27 +256,27 @@
     },
     {
       "slug": "pivotal-category",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Duality and rigidity",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of monoidal, rigid, and enriched categorical notions",
       "block": "rem:glossary-pivotal-category",
       "kind": "remark",
       "lean": null
     },
     {
       "slug": "q-bit",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Information theory",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of geometric, information-theoretic, and homological notions",
       "block": "rem:glossary-q-bit",
       "kind": "remark",
       "lean": null
     },
     {
       "slug": "q-bit-skein",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Information theory",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of geometric, information-theoretic, and homological notions",
       "block": "rem:glossary-q-bit-skein",
       "kind": "remark",
       "lean": null
@@ -328,45 +328,45 @@
     },
     {
       "slug": "r-linear-category",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Enrichment",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of monoidal, rigid, and enriched categorical notions",
       "block": "rem:glossary-r-linear-category",
       "kind": "remark",
       "lean": null
     },
     {
       "slug": "reeb-gauge-group",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Geometry and transport",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of geometric, information-theoretic, and homological notions",
       "block": "rem:glossary-reeb-gauge-group",
       "kind": "remark",
       "lean": "qou:QOU.ReebGaugeGroup"
     },
     {
       "slug": "right-dual",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Duality and rigidity",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of monoidal, rigid, and enriched categorical notions",
       "block": "rem:glossary-right-dual",
       "kind": "remark",
       "lean": null
     },
     {
       "slug": "rigid-category",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Duality and rigidity",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of monoidal, rigid, and enriched categorical notions",
       "block": "rem:glossary-rigid-category",
       "kind": "remark",
       "lean": null
     },
     {
       "slug": "s3-group",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Groups and symmetry",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of geometric, information-theoretic, and homological notions",
       "block": "rem:glossary-s3-group",
       "kind": "remark",
       "lean": "qou:QOU.S3Group"
@@ -374,17 +374,17 @@
     {
       "slug": "strand-twist-datum",
       "chapter": "appendix-standard-model",
-      "chapterTitle": "Toward the Standard Model",
-      "section": "Archimedean truncation to the Standard Model group",
+      "chapterTitle": "Standard Model Correspondence and Open Structural Problems",
+      "section": "Archimedean truncation and colour--orbital gates",
       "block": "def:strand-twist-datum",
       "kind": "definition",
       "lean": "qou:QOU.StandardModel.TwistDatum"
     },
     {
       "slug": "symmetric-monoidal-category",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Monoidal structure",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of monoidal, rigid, and enriched categorical notions",
       "block": "rem:glossary-symmetric-monoidal-category",
       "kind": "remark",
       "lean": null
@@ -400,9 +400,9 @@
     },
     {
       "slug": "weierstrass-projection",
-      "chapter": "glossary",
-      "chapterTitle": "Glossary",
-      "section": "Elliptic and surface geometry",
+      "chapter": "notation",
+      "chapterTitle": "Notation Register, Categorical Glossary, and Index of Definitions",
+      "section": "Glossary of geometric, information-theoretic, and homological notions",
       "block": "rem:glossary-weierstrass-projection",
       "kind": "remark",
       "lean": "qou:QOU.Archimedean.WeierstrassProjection.weierstrassProjection"

@@ -1,4 +1,3 @@
-**Conjecture (cyclotomic residue exists at each level).**
 *For each filtration level $\ell \in \{0, 1, \ldots, \ell(K, q)\}$ and each primitive $\ell$-th root of unity $\zeta_\ell$, the cyclotomic projection*
 
 $$
@@ -9,7 +8,7 @@ $$
 
 **Categorical statement.** The cyclotomic projection of $\Phi_q \cdot \mathrm{tr}_{M,\ell}$ in the Habiro completion forms the residue contribution attached to stratum $\ell$ by the filtered Hochschild spectral sequence.
 
-**What is proved and what is open.** The Habiro-completion projection onto each cyclotomic target ring exists: it is constructed, and [Cyclotomic residues of $\Phi_q \cdot \mathrm{tr}_{M, \ell}$ — algebraic definition](#prop:residue-at-root) proves the residue is its image for any element of the Habiro ring. The conjectural content is the rest: that $\Phi_q \cdot \mathrm{tr}_{M, \ell}(T_w)$ is such an element, that its residue is real, and that it depends only on the class of $T_w$ modulo $J^{\ell+1}(q)$. The archimedean per-level residue values enter downstream as given data.
+**What is proved and what is open.** The cyclotomic projection $\widehat{\mathbb{Z}[q]} \to \mathbb{Z}[q]/(\Phi_\ell(q))$ of the [Habiro ring](#def:habiro-ring) onto each cyclotomic target ring is constructed algebraically and sends every element of $\widehat{\mathbb{Z}[q]}$ to its cyclotomic residue class. The conjectural content is the remainder: that $\Phi_q \cdot \mathrm{tr}_{M, \ell}(T_w)$ belongs to $\widehat{\mathbb{Z}[q]}$, that its residue at $\zeta_\ell$ is real, and that this residue depends only on the class of $T_w$ modulo $J^{\ell+1}(q)$. Downstream results take the archimedean per-level residue values as given data.
 
 **Conjectural status.** The analytic literature guarantees the existence and reality of the residue. A proof within the present framework awaits that meromorphic-function infrastructure; downstream results take the residue values as given.
 

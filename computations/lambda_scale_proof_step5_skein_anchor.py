@@ -71,7 +71,7 @@ M_N = M_P + Q_BETA_CAL3 + M_E
 
 
 def substrate_q_beta(q: mp.mpf, m_e: mp.mpf) -> mp.mpf:
-    """Substrate Q_β Form A from prop:q-beta-spectral-bridge.
+    """Substrate Q_β Form A from conj:q-beta-spectral-bridge.
 
     Q_β^A(q_0) = m_e · |q² - 2q - 1| · (q+1) / (2 · q³)
     """

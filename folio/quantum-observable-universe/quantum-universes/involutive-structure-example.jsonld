@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-involutive-structure-example",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:involutive-structure-example",
+  "kind": "example",
+  "title": "The antipode as an involutive structure",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-involutive-structure"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-involutive-structure",
+  "tags": [
+    "category-theory",
+    "involutive"
+  ],
+  "text": "involutive-structure-example.md",
+  "provenance": "authored"
+}

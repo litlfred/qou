@@ -42,6 +42,8 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402  (canonical substrate q0, 50 digits)
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -213,8 +215,8 @@ def main(argv=None):
     w.add_data("max_abs_generator_diff_by_rep", res["max_abs_generator_diff_by_rep"])
     w.add_assertion(
         "c_swap_leaves_generator_invariant",
-        computed=float(res["max_abs_generator_diff"]),
-        expected=0.0, tolerance=1e-45,
+        computed=str(res["max_abs_generator_diff"]),
+        expected="0.0", tolerance=mp.mpf("1e-45"),
         source="For every nucleon pair (F1,F2) in {p,n,pbar,nbar}^2 and both 2-dim Hecke "
                "representations at q0, the color-tube weighted generator with uniform W and the "
                "stated eps rule satisfies sigma^(CF1,CF2) = sigma^(F1,F2) to < 1e-45 elementwise "
@@ -225,8 +227,8 @@ def main(argv=None):
     )
     w.add_assertion(
         "eps_and_w_tables_c_invariant",
-        computed=float(res["eps_mismatches"] + res["w_mismatches"]),
-        expected=0.0, tolerance=0.0,
+        computed=int(res["eps_mismatches"] + res["w_mismatches"]),
+        expected=0, tolerance=0,
         source="Exact check over all 16 nucleon pairs x 9 color pairs (144 cells per table): "
                "eps(c1,c2,CF1,CF2) == eps(c1,c2,F1,F2) and W(c1,c2,CF1,CF2) == W(c1,c2,F1,F2).",
     )

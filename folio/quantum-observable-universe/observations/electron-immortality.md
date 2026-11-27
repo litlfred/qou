@@ -2,13 +2,13 @@ Beta decay rearranges the crossing orientation partition of the [Borromean baryo
 
 ## Stability of the electron against beta decay
 
-The electron avoids beta decay through topological necessity. The electron trefoil $T_{2,3}$ possesses no internal constituents or crossing orientation partition. Its single degree of freedom is its topological knot invariant.
+The electron avoids beta decay through topological necessity. The electron braid $\sigma_0\sigma_1\sigma_0 \in B_3$ (closing to the positive Hopf link $T(2,2)$; single-component alternative $T_{2,3}$) possesses no internal quark-flavour partition to rearrange via mixed crossings. Its single degree of freedom is its global topological invariant.
 
 | Particle | Structure | Internal d.o.f. | Beta decay? |
 |----------|-----------|----------------|-------------|
 | Neutron | $[u,d,d]_p \oplus \mathcal{L}_H$ | Quark flavour partition | Yes: $\mathfrak{n} \to \mathfrak{p} + e^- + \nu^{\sigma}$ |
 | Proton | $[u,u,d]_p \oplus \mathcal{L}_H$ | Quark flavour partition | Yes (in nuclei): $\mathfrak{p} \to \mathfrak{n} + e^+ + \nu$ |
-| Electron | $T_{2,3}$ | None | **No** |
+| Electron | $\sigma_0\sigma_1\sigma_0 \to T(2,2)$ (alt. $T_{2,3}$) | None | **No** |
 | Neutrino | $T_{1,0}$ (unknot) | None | **No** |
 
 No lighter charged lepton exists. The neutrino $T_{1,0}$ cannot absorb the electron's topological charge.
@@ -25,4 +25,4 @@ As the universe approaches heat death ($q \to 1$):
 
 ## Into the next aeon
 
-If the [cosmological chirality flip](#rem:cosmological-chirality-flip) holds, CMB radiation carries topological data across the heat-death boundary. Frobenius degeneration governs this aeon transition. Exceptional divisors reset the topology. The electron trefoil persists to the $q = 1$ boundary.
+If the [cosmological chirality flip](#rem:cosmological-chirality-flip) holds, CMB radiation carries topological data across the heat-death boundary. Frobenius degeneration governs this aeon transition. Exceptional divisors reset the topology. The electron braid closure persists to the $q = 1$ boundary.

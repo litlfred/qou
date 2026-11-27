@@ -1,4 +1,3 @@
-**Conjecture.**
 *The Higgs boson is the torus link $T(2,8)$ — the unique genus-$3$ link on the Bring's surface whose Seifert surface spans all three exceptional divisors simultaneously.*
 
 **The three exceptional divisors.**

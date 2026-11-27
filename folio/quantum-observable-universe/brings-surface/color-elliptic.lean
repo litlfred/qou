@@ -6,11 +6,13 @@ import Mathlib.Tactic.Ring
 /-!
 # QOU.Brings.ColorElliptic
 
-The color elliptic fibre E_z at spacetime ratio z is defined by the cubic
+The color cubic at spacetime ratio z is
   X³ + (z+1)X² + (z²+z+1)X + (z³+z²+z+1) = 0.
 
-For generic z this is an elliptic curve whose j-invariant varies as a
-rational function of z.
+For fixed z its zero set is three points. The elliptic curves are the
+plane cubic h₃(X,z,w) = 0 (one curve, genus 1) and, for each z off the
+branch locus, the double cover E_z : y² = F(X,z), whose j-invariant
+varies as a rational function of z. See `QOU.Mass.HomogeneousCoordinates`.
 
 LaTeX label: `prop:color-elliptic`
 
@@ -32,9 +34,9 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **Color elliptic fibre data** at spacetime ratio z.
 
-    The cubic X³ + (z+1)X² + (z²+z+1)X + (z³+z²+z+1) = 0 defines
-    an elliptic curve E_z in the color fibre for generic z. The
-    coefficients are the partial sums of the geometric series in z.
+    A point (z, X) of the color cubic
+    X³ + (z+1)X² + (z²+z+1)X + (z³+z²+z+1) = 0. The coefficients are
+    the partial sums of the geometric series in z.
 
     Ref: [leitner2026] §5, Color fibration -/
 structure ColorEllipticFibre (R : Type*) [CommRing R] where

@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-delta-lambda-value-vs-magnitude",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:delta-lambda-value-vs-magnitude",
+  "kind": "remark",
+  "title": "Per-partition $\\Delta_\\lambda$ value versus open super-pairwise many-body binding magnitude",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-delta-lambda-dt-index-unification",
+    "papers/quantum-observable-universe/blocks/rem-term6-binding-density"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-delta-lambda-dt-index-unification",
+  "cites": [
+    "references/springer1976",
+    "references/shoji2019",
+    "references/garoufalidis-gu-marino2021"
+  ],
+  "tags": [
+    "delta-lambda",
+    "value-proved",
+    "magnitude-open",
+    "binding"
+  ],
+  "leanRef": "qou:QOU.MassTheory.BindingSaturationCapA4.exchangeDet_pow_two_le_four",
+  "text": "delta-lambda-value-vs-magnitude.md",
+  "provenance": "authored"
+}

@@ -15,7 +15,9 @@
 #   scripts/check-sidecars.sh [file ...]     # explicit files
 #   scripts/check-sidecars.sh                # default: staged + unstaged vs HEAD
 #
-# Exit code: 0 always (advisory). Look for ⚠ lines — they need agent action.
+# Exit code: 0 (advisory) EXCEPT the knowledge-graph node gate, which exits 1
+# when a touched paper has a stale/missing <block>.jsonld or cannot be checked
+# (owner, 2026-11-25). Look for ⚠ lines — they need agent action.
 
 set -uo pipefail
 ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || { echo "not a git repo"; exit 0; }
@@ -579,7 +581,37 @@ if printf '%s\n' "${files[@]}" | grep -qE '\.(ts|lean)$'; then
   fi
 fi
 
+# ── Knowledge-graph nodes (<block>.jsonld) for the papers this change touches ──
+# BLOCKING (owner, 2026-11-25). The site build refuses a missing or stale
+# block node, and nothing before merge checked them: the 2026-11-25 photon PRs
+# left 11 stale, fixed after the fact by #9433. The wrapper refuses to run on
+# the light platform (it would rewrite every node), so a refusal here is a
+# setup problem, reported as such, not a pass.
+kg_fail=0
+mapfile -t kgpapers < <(printf '%s\n' "${files[@]}" \
+  | sed -nE 's#^folio/([^/]+)/.*\.(ts|md|jsonld)$#\1#p' | sort -u \
+  | while read -r p; do [ -f "folio/$p/$p.ts" ] && echo "$p"; done)
+if [ "${#kgpapers[@]}" -gt 0 ]; then
+  echo
+  echo "KG nodes: gen-block-jsonld --check for: ${kgpapers[*]}"
+  kgargs=(); for p in "${kgpapers[@]}"; do kgargs+=(--paper "$p"); done
+  "$ROOT/scripts/gen-block-jsonld.sh" --check "${kgargs[@]}"
+  kgrc=$?
+  if [ "$kgrc" -ne 0 ]; then
+    kg_fail=1
+    if [ "$kgrc" -eq 3 ]; then
+      echo "⚠ KG nodes NOT CHECKED: the root layer mounts are absent (see above)."
+    else
+      echo "⚠ KG nodes stale or missing — run: scripts/gen-block-jsonld.sh ${kgargs[*]}"
+    fi
+  fi
+fi
+
 echo
+if [ "$kg_fail" -eq 1 ]; then
+  echo "✖ check-sidecars: BLOCKING — knowledge-graph nodes are stale, missing or unchecked."
+  exit 1
+fi
 if [ "$action" -eq 1 ]; then
   echo "⚠ check-sidecars: action needed above. Resolve §7c markers / refresh sidecars BEFORE commit."
 else

@@ -1,4 +1,4 @@
-**Proposition.** *Let $(\mathfrak{d}^+, \mathfrak{d}^-) = (4, 3)$ be the ordered
+*Let $(\mathfrak{d}^+, \mathfrak{d}^-) = (4, 3)$ be the ordered
 pair of certified $q\to0$ Stokes constants of the figure-eight's chiral partner
 $5_2$ (the $(96)$/$(97)$ factorization constants of $S^+(0)$, $S^-(0)$; both
 integer, GGM eq 98). Under the chirality involution $\tau$ — the $q\mapsto q^{-1}$

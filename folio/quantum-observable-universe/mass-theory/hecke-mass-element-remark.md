@@ -1,0 +1,3 @@
+Since all constituent maps ($\Delta$, $\int_A$, $\varrho$) of the mass integrand are morphisms in $\mathbf{C}$, the fibre-functor image $\tau(L_{\alpha_\varrho})$ is an $\mathrm{SU}_q(2)$-equivariant endomorphism of $V^{\otimes n}$. By quantum Schur--Weyl duality, every such endomorphism is an element of the Hecke algebra, so the Hecke mass element lies in $H_n(R, q)$.
+
+The descent involution $\hat{\tau}_n$ induces an idempotent decomposition $\Phi_{\mathrm{mass}}(\beta) = \Phi^{\mathrm{desc}}(\beta) + \Phi^{\mathrm{trans}}(\beta)$ within $H_n(R, q)$: $\Phi^{\mathrm{desc}}$ encodes the base-level (descended) cycle and $\Phi^{\mathrm{trans}}$ encodes the transient contributions at the blow-up centres.

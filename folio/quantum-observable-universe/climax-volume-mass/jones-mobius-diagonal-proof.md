@@ -1,4 +1,4 @@
-**Proof.** The kernel collapse
+The kernel collapse
 ([Frobenius–Hopf kernel](#lem:mobius-energy-frobenius-kernel)) gives
 $K_q(s,t) \to 1/r^2$ on the diagonal; its coincidence residue is the fundamental
 two-point contact $C(\varrho)$, which by the Jones–Markov identity

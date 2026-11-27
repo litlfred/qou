@@ -55,8 +55,26 @@
         "reviewed_at": "2026-11-15T21:55:10.911Z",
         "reviewed_sha": "dd3595d7dc1ecd1099ddcb695fb47671676c4ba6",
         "severity": "major",
-        "evidence": "Lean: a `def` returning two fields of `RootOfUnityTruncationContext` (self-assuming context). Inline proof: Verlinde written as ∫₀¹ S_ik S_jk/S_0k dk (it is a finite sum Σ_k S_ik S_jk S̄_lk/S_0k, and the output index is missing); κ is used both for the truncation level and the aspect ratio κ(t); mode count (κ−1)/2 vs (κ−2)/2 inconsistent; Bernstein's inequality applied in t to spatial Fourier modes; the boxed NS equivalence is never derived. Checked: [κ]_q = 0 at q = e^{iπ/κ} ✓, so the simple objects are j ≤ (κ−2)/2 ✓",
+        "evidence": "Lean: a `def` returning two fields of `RootOfUnityTruncationContext` (self-assuming context). Inline proof: Verlinde written as \u222b\u2080\u00b9 S_ik S_jk/S_0k dk (it is a finite sum \u03a3_k S_ik S_jk S\u0304_lk/S_0k, and the output index is missing); \u03ba is used both for the truncation level and the aspect ratio \u03ba(t); mode count (\u03ba\u22121)/2 vs (\u03ba\u22122)/2 inconsistent; Bernstein's inequality applied in t to spatial Fourier modes; the boxed NS equivalence is never derived. Checked: [\u03ba]_q = 0 at q = e^{i\u03c0/\u03ba} \u2713, so the simple objects are j \u2264 (\u03ba\u22122)/2 \u2713",
         "notes": "Hand review 2026-11-15 (statement vs Lean); issue #8020. "
+      },
+      {
+        "field_hash": {
+          "md": "1ee4fd3e9295",
+          "ts": "f3f028764044",
+          "lean": "f9c61048dac4",
+          "lean_statement": "dc343c9b35b9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:55:06.306Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: label references replaced by titles, and the sentence 'This establishes exactly the regularity breakdown regime' removed; the earlier defects (Verlinde written as an integral, kappa used for two things, the unproved NS equivalence) remain. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Lean: a `def` returning two fields of `RootOfUnityTruncationContext` (self-assuming context). Inline proof: Verlinde written as \u222b\u2080\u00b9 S_ik S_jk/S_0k dk (it is a finite sum \u03a3_k S_ik S_jk S\u0304_lk/S_0k, and the output index is missing); \u03ba is used both for the truncation level and the aspect ratio \u03ba(t); mode count (\u03ba\u22121)/2 vs (\u03ba\u22122)/2 inconsistent; Bernstein's inequality applied in t to spatial Fourier modes; the boxed NS equivalence is never derived. Checked: [\u03ba]_q = 0 at q = e^{i\u03c0/\u03ba} \u2713, so the simple objects are j \u2264 (\u03ba\u22122)/2 \u2713"
       }
     ],
     "proof-statement-integrity": [
@@ -495,7 +513,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "[EXPIRED-NO-FIELD-HASH] Both flagged items are gone: the AGENTS.md tag \"§7c\" was dropped and \"This block sits on the archimedean side\" was rewritten to \"What follows sits on the archimedean side of the substrate wall.\"",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Both flagged items are gone: the AGENTS.md tag \"\u00a77c\" was dropped and \"This block sits on the archimedean side\" was rewritten to \"What follows sits on the archimedean side of the substrate wall.\"",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

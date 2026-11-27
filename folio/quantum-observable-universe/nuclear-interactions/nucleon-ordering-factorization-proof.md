@@ -1,5 +1,3 @@
-## Proof
-
 > **Scope of Steps (ii) and (iii).** In (ii) the $2\times2$ matrix is multiplication on the span of $\{\sigma_i, 1\}$, not the action on the two-dimensional standard representation of $H_3(q)$; the eigenvalue argument has to be redone on the standard representation. In (iii), the corpus does not prove that $\mathcal{B}_3$ is the unique braid-realizable minimum: confinement-operator-selection-proof and the confinement-topological caveat both leave uniqueness open. Step (iii) is therefore conditional on that uniqueness.
 
 

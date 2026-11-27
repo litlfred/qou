@@ -6,7 +6,7 @@ export default lemma({
     "Frobenius co-Casimir $\\Delta_\\lambda$ ansatz refuted at the deuteron",
   uses: ["conj:rho-prefactor-structural"],
   lean: {
-    ref: "qou:QOU.BraidKnot.coCasimir_refuted_deuteron",
+    ref: "qou:QOU.BraidsAndKnots.DeltaLambdaRefutation.coCasimir_refuted_deuteron",
   },
   computation: {
     engine: "mpmath",

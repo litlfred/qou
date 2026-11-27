@@ -1,0 +1,283 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-23T19:01:41.793248+00:00",
+  "commitSha": "460f4a859c7455c0b3d37da63a35d4df2ddd818f",
+  "assertions": [
+    {
+      "name": "lorentz_boost_phase_invariance",
+      "computed": "2.29917451027437e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "QOU.MathlibInfra.LorentzBoostPhase.lorentz_boost_phase_invariance"
+    },
+    {
+      "name": "lambda_dB_rel_600eV_pm",
+      "computed": "50.0539395609176",
+      "expected": "50.05393956",
+      "passed": true,
+      "tolerance": "1e-6",
+      "source": "CODATA 2022 + relativistic 600 eV kinematics (Bach et al. 2013)"
+    },
+    {
+      "name": "thomae_jackson_bwd_fwd_ratio",
+      "computed": "1.05421979432305e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "QOU.Nuclear.ThomaeJacksonCoulombAndAlphaTunneling.jackson_bwd_sum_eq_q_inv_sq_mul_fwd_sum"
+    },
+    {
+      "name": "r0_FCC_pion_compton_fm",
+      "computed": "1.17206015369219",
+      "expected": "1.1720601534",
+      "passed": true,
+      "tolerance": "1e-9",
+      "source": "(3 / (4 pi sqrt(2)))^{1/3} * (3/2) * (hbar c / m_{pi+-})"
+    },
+    {
+      "name": "Po210_magic_N126_S_alpha",
+      "computed": "0.05529696180",
+      "expected": "0.0553",
+      "passed": true,
+      "tolerance": "1e-3",
+      "source": "NUBASE2020 + AME2020 zero-parameter WKB ratio at magic N=126"
+    },
+    {
+      "name": "U238_exterior_q0_discriminator_dex",
+      "computed": "3.421024049",
+      "expected": "3.421",
+      "passed": true,
+      "tolerance": "2e-2",
+      "source": "238U WKB half-life miss under uniform exterior k_q = k / q_0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "double_slit_de_broglie_and_alpha_tunneling_probe",
+  "scriptFile": "double_slit_de_broglie_and_alpha_tunneling_probe.py",
+  "scriptHash": "180386d191f3",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/observations/double_slit_de_broglie_and_alpha_tunneling_probe.py"
+    ],
+    "reproduce": "python3 -u computations/observations/double_slit_de_broglie_and_alpha_tunneling_probe.py"
+  },
+  "description": "80-dps (50-dps serialized) verification of (1) Lorentz-boosted Reeb/Compton de Broglie wavelength lambda_dB = 2 pi hbar / p and d_q fringe/envelope scaling in 600 eV electron double-slit diffraction (Bach et al. 2013), and (2) Thomae-Jackson q^{-2} proper-time scaling plus zero-parameter Gamow-Gurney-Condon alpha-decay tunneling across 8Be, 212Po, 214Po, 222Rn, 210Po, 226Ra, 238U using Form-B alpha_EM(q_0) and r_0^{FCC} = 1.17206 fm, demonstrating the 3.42-3.43 dex exterior q_local(r) -> 1 discriminator on 238U.",
+  "contentBlock": "prop:double-slit-q-phase",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0_pin": "proton (qou_substrate.constants.q_at)",
+    "work_dps": 80,
+    "output_dps": 50,
+    "alpha_EM_inv_FormB": "137.03599912695091242017270049642000673995567550572",
+    "r0_FCC_fm": "1.1720601536921894095766601617671131844318515584697"
+  },
+  "data": {
+    "double_slit_de_broglie": {
+      "compton_clock_omega0_rad_s": "776344071683452237326.26604170198722686762097340723",
+      "lorentz_phase_rel_residual": "2.2991745102743715745e-81",
+      "mass_shell_rel_residual": "2.0186505947424553994e-81",
+      "de_broglie_phase_group_rel_residual": "2.1084395886461046449e-81",
+      "beam_600eV_exact": {
+        "accelerating_potential_V": "600",
+        "gamma": "1.0011741707085500316598233894872547519268564974174",
+        "beta": "0.048417061582247475243712918729544500672972775773845",
+        "lambda_dB_rel_pm": "50.053939560917645322817021961149401196114261677981",
+        "lambda_dB_nr_pm": "50.068630372463934836740085355475934612758985851724",
+        "delta_rel_minus_nr_pm": "-0.014690811546289513923063394326533416644724173743126",
+        "rel_contraction_ppm": "-293.41348938454220003",
+        "lambda_q_uniform_q0_pm": "55.558800894950640104626265436861730080926850677426"
+      },
+      "beam_600p2eV_contact_ref": {
+        "accelerating_potential_V": "600.2",
+        "lambda_dB_rel_pm": "50.045594428693307591169405007863064556045663347342",
+        "lambda_dB_nr_pm": "50.060287686348793966449700990221444210976762301951",
+        "delta_rel_minus_nr_pm": "-0.014693257655486375280295982358379654931098954609049"
+      },
+      "bach2013_geometry": {
+        "slit_width_nm": "62",
+        "slit_separation_nm": "272",
+        "screen_distance_m": "0.24",
+        "fringe_spacing_std_um": "44.165240789044981167191489965720059878924348539395",
+        "fringe_spacing_uniform_q0_um": "49.022471377897623621729057738407408894935456480082",
+        "fringe_stretch_ratio_q0": "1.1099785827513808075916690956107688798744991218736",
+        "envelope_halfwidth_std_mm": "0.19375718539710056253993685920444929495270036778573",
+        "envelope_halfwidth_hodge_q0_sq_mm": "0.23871901578094242251070252934946424515920085749376",
+        "hodge_envelope_factor_q0_sq": "1.2320524541667639312698045135356361848496814229170",
+        "hbar_q": "0.099081716044258507839177117518906063985258373389446"
+      }
+    },
+    "alpha_tunneling_and_thomae_jackson": {
+      "thomae_jackson_scaling": {
+        "q0_inv_sq": "0.81165375436575805813221482214175212491853253779651",
+        "bwd_over_fwd_ratio": "0.81165375436575805813221482214175212491853253779651",
+        "bwd_over_fwd_residual": "1.0542197943230523224e-81"
+      },
+      "mirror_3He_3H": {
+        "Z_low": "1",
+        "Z_high": "2",
+        "proton_pair_diff": "1",
+        "AME2020_binding_split_MeV": "0.76375488000000000000"
+      },
+      "fcc_pion_compton_geometry": {
+        "m_pi_charged_CAL3_MeV": "139.57039000000000000",
+        "lambda_bar_pi_fm": "1.4138169310790238094570807398605500665195994008728",
+        "l_bond_fm": "2.1207253966185357141856211097908250997793991013091",
+        "r0_FCC_fm": "1.1720601536921894095766601617671131844318515584697",
+        "alpha_EM_inv_FormB": "137.03599912695091242017270049642000673995567550572"
+      },
+      "gamow_alpha_emitters": [
+        {
+          "nuclide": "8Be",
+          "Z": "4",
+          "A": "8",
+          "N": "4",
+          "regime": "81.9 as (resonance)",
+          "Q_alpha_AME_MeV": "0.091840260000000000000",
+          "R_touch_FCC_fm": "3.7210590418819820489",
+          "R_turn_fm": "62.716048381935337030",
+          "two_G_WKB": "12.801679997312548832",
+          "T_half_exp_s": "8.19000000000000e-17",
+          "T_half_WKB_unscreened_s": "6.28862278926321e-16",
+          "log10_T_WKB_over_T_exp_dex": "0.885271643444",
+          "log10_T_WKB_screened_over_T_exp_dex": "0.885271643444",
+          "S_alpha_unscreened": "7.67841610411"
+        },
+        {
+          "nuclide": "212Po",
+          "Z": "84",
+          "A": "212",
+          "N": "128",
+          "regime": "294.4 ns (open shell, N=128)",
+          "Q_alpha_AME_MeV": "8.9541951300000000000",
+          "R_touch_FCC_fm": "8.8049767154410901228",
+          "R_turn_fm": "26.373580466338390695",
+          "two_G_WKB": "33.052673459164313196",
+          "T_half_exp_s": "2.94400000000000e-7",
+          "T_half_WKB_unscreened_s": "1.31640956729885e-7",
+          "log10_T_WKB_over_T_exp_dex": "-0.349546775700",
+          "log10_T_WKB_screened_over_T_exp_dex": "-0.425357709504",
+          "S_alpha_unscreened": "0.447149988892"
+        },
+        {
+          "nuclide": "214Po",
+          "Z": "84",
+          "A": "214",
+          "N": "130",
+          "regime": "163.6 us (open shell, N=130)",
+          "Q_alpha_AME_MeV": "7.8335411300000000000",
+          "R_touch_FCC_fm": "8.8271635984309235402",
+          "R_turn_fm": "30.146543160149380220",
+          "two_G_WKB": "39.788659574574765530",
+          "T_half_exp_s": "0.000163600000000000",
+          "T_half_WKB_unscreened_s": "0.000118839007545328",
+          "log10_T_WKB_over_T_exp_dex": "-0.138824283092",
+          "log10_T_WKB_screened_over_T_exp_dex": "-0.233169653341",
+          "S_alpha_unscreened": "0.726399801622"
+        },
+        {
+          "nuclide": "222Rn",
+          "Z": "86",
+          "A": "222",
+          "N": "136",
+          "regime": "3.8215 d (open shell, N=136)",
+          "Q_alpha_AME_MeV": "5.5903891300000000000",
+          "R_touch_FCC_fm": "8.9145286130639908018",
+          "R_turn_fm": "43.273203051952819526",
+          "two_G_WKB": "61.686482625794677785",
+          "T_half_exp_s": "330177.600000000",
+          "T_half_WKB_unscreened_s": "459989.108458983",
+          "log10_T_WKB_over_T_exp_dex": "0.143999942255",
+          "log10_T_WKB_screened_over_T_exp_dex": "-0.0269510030083",
+          "S_alpha_unscreened": "1.39315661771"
+        },
+        {
+          "nuclide": "210Po",
+          "Z": "84",
+          "A": "210",
+          "N": "126",
+          "regime": "138.3763 d (magic N=126)",
+          "Q_alpha_AME_MeV": "5.4075301300000000000",
+          "R_touch_FCC_fm": "8.7826471490808483610",
+          "R_turn_fm": "43.671358290212679202",
+          "two_G_WKB": "62.048009697907007388",
+          "T_half_exp_s": "11955712.3200000",
+          "T_half_WKB_unscreened_s": "661114.567411730",
+          "log10_T_WKB_over_T_exp_dex": "-1.25729872966",
+          "log10_T_WKB_screened_over_T_exp_dex": "-1.42717173978",
+          "S_alpha_unscreened": "0.0552969617967"
+        },
+        {
+          "nuclide": "226Ra",
+          "Z": "88",
+          "A": "226",
+          "N": "138",
+          "regime": "1600 y (open shell, N=138)",
+          "Q_alpha_AME_MeV": "4.8707031300000000000",
+          "R_touch_FCC_fm": "8.9574111198025259909",
+          "R_turn_fm": "50.849722420156900059",
+          "two_G_WKB": "73.654802822431072144",
+          "T_half_exp_s": "50492160000.0000",
+          "T_half_WKB_unscreened_s": "78091356912.7081",
+          "log10_T_WKB_over_T_exp_dex": "0.189379019439",
+          "log10_T_WKB_screened_over_T_exp_dex": "-0.0347853523558",
+          "S_alpha_unscreened": "1.54660360960"
+        },
+        {
+          "nuclide": "238U",
+          "Z": "92",
+          "A": "238",
+          "N": "146",
+          "regime": "4.468 Gy (open shell, N=146)",
+          "Q_alpha_AME_MeV": "4.2698581300000000000",
+          "R_touch_FCC_fm": "9.0830456555999090689",
+          "R_turn_fm": "60.703098472882617653",
+          "two_G_WKB": "88.913477990560575551",
+          "T_half_exp_s": "1.40999356800000e+17",
+          "T_half_WKB_unscreened_s": "3.58259050815747e+17",
+          "log10_T_WKB_over_T_exp_dex": "0.404980039403",
+          "log10_T_WKB_screened_over_T_exp_dex": "0.0987165278781",
+          "S_alpha_unscreened": "2.54085592265"
+        }
+      ],
+      "summary_diagnostics": {
+        "open_shell_heavy_abs_dex_range_unscreened": [
+          "0.1388242831",
+          "0.4049800394"
+        ],
+        "open_shell_heavy_abs_dex_range_screened": [
+          "0.02695100301",
+          "0.4253577095"
+        ],
+        "Po210_magic_N126_S_alpha": "0.0552969617967",
+        "U238_exterior_q0_vs_q1_shift_dex": "-3.82600408800",
+        "U238_exterior_q0_abs_miss_dex": "3.42102404860"
+      }
+    }
+  },
+  "caveats": [
+    "Uniform exterior q = q_0 stretches lambda_q = q_0 lambda_dB (+11.0 %); both laboratory matter-wave interferometry and the 3.42-3.43 dex 238U alpha-tunneling discriminator require q_local(r) -> 1 in exterior vacuum.",
+    "r_0^{FCC} = 1.17206015 fm uses CAL-3 m_{pi+-} = 139.57039 MeV with canonical tetrahedral bond l_bond = (3/2) lambda_bar_pi and 3D FCC close-packing fraction pi / (3 sqrt(2))."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

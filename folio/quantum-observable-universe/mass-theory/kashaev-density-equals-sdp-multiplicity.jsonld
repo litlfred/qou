@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -23,7 +23,8 @@
     "references/kashaev1997",
     "references/murakami-murakami2001",
     "references/iwahori1964",
-    "references/wenzl1988"
+    "references/wenzl1988",
+    "references/garoufalidis-loebl2005"
   ],
   "tags": [
     "tier:E",
@@ -37,7 +38,7 @@
     "open-problem",
     "conditional-on-class"
   ],
-  "leanRef": "qou:QOU.Kashaev.KashaevDensityEqualsSdpMultiplicity",
+  "leanRef": "qou:BraidKnotOctonion.Kashaev.KashaevDensityEqualsSdpMultiplicity",
   "text": "kashaev-density-equals-sdp-multiplicity.md",
   "leanSource": "kashaev-density-equals-sdp-multiplicity.lean",
   "provenance": "authored"

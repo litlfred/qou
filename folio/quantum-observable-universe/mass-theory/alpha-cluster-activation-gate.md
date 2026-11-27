@@ -1,4 +1,3 @@
-**Proposition ($\alpha$-cluster activation gate).**
 *Let a three-cluster arrangement carry pairwise linking numbers
 $(\ell_{12},\ell_{13},\ell_{23})\in\mathbb{Z}^3$, and let
 $\Delta = \gcd(\ell_{12},\ell_{13},\ell_{23})$. The Milnor triple-linking

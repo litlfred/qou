@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-wenzl-A-operator-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:wenzl-A-operator-remark",
+  "kind": "remark",
+  "title": "Role and extraction of the Wenzl A-operator",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-wenzl-A-operator",
+    "papers/quantum-observable-universe/blocks/prop-lr-coefficient-hecke"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-wenzl-A-operator",
+  "text": "wenzl-A-operator-remark.md",
+  "provenance": "authored"
+}

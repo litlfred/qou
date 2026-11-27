@@ -33,15 +33,19 @@ parent's §1 references `${NAME}`. Files land at
 `.beans/detangler-integration-watcher-ledger.md`.
 
 **Additional baseline cache.** Beyond the parent's §1 setup, this
-watcher caches a graph baseline so per-event deltas are comparable:
+watcher caches both prose-graph and Lean-KG baselines so per-event deltas are comparable:
 
 ```bash
-( cd content && python3 pipeline/content-graph-analysis.py --json ) \
-  > /tmp/_detangler_watcher_graph_baseline.json 2>/dev/null
+export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 \
+       OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1
+nice -n 15 python3 computations/forward_ref_classifier.py \
+  > /tmp/_detangler_watcher_fwdref_baseline.txt 2>/dev/null || true
+nice -n 15 python3 scripts/lean-kg-detangler.py \
+  --json-out /tmp/_detangler_watcher_lean_kg_baseline.json --summary-only 2>/dev/null
 ```
 
-Refresh the baseline after a clean event by overwriting with the
-post-event snapshot (see Slot D).
+Refresh the baselines after a clean event by overwriting with the
+post-event snapshot (see Slot C & Slot D).
 
 ## Slot A — Goal statement
 
@@ -203,29 +207,37 @@ changed=$(git diff-tree -M --no-commit-id --name-only -r "$SHA")
 is_struct_event=false
 
 # B.1 — Paper manifest OR nested chapter manifest. Both define
-# ordering. Paper manifests live at content/<paper>/<paper>.ts;
-# chapter manifests live at content/<paper>/<chapter>/<chapter>.ts.
-echo "$changed" | grep -qE 'content/[^/]+/([^/]+\.ts|[^/]+/[^/]+\.ts)$' \
+# ordering. Paper manifests live at folio/<paper>/<paper>.ts;
+# chapter manifests live at folio/<paper>/<chapter>/<chapter>.ts.
+echo "$changed" | grep -qE 'folio/[^/]+/([^/]+\.ts|[^/]+/[^/]+\.ts)$' \
   && is_struct_event=true
 
-# B.2 — Block manifest edits that touch graph-topology fields.
-# The fields below are the ones content-graph-analysis.py reads.
-for ts in $(echo "$changed" | grep -E 'content/.*\.ts$'); do
+# B.2 — Block manifest edits that touch graph-topology or Lean-ref fields.
+for ts in $(echo "$changed" | grep -E 'folio/.*\.ts$'); do
   [ -f "$ts" ] || continue
   if git show "$SHA" -- "$ts" 2>/dev/null \
-       | grep -qE '^[+-][[:space:]]*(uses:|interprets:|proofs:|examples:|kind:|label:|defines:|tags:)'; then
+       | grep -qE '^[+-][[:space:]]*(uses:|interprets:|proofs:|examples:|kind:|label:|defines:|tags:|ref:)'; then
     is_struct_event=true
     break
   fi
 done
 
-# B.3 — New blocks (A-status .ts files under content/)
+# B.3 — New blocks or new/moved .lean modules (triggers L1..L6 Lean KG check)
 git diff-tree -M --no-commit-id --diff-filter=A --name-only -r "$SHA" \
-  | grep -qE 'content/.*\.ts$' && is_struct_event=true
+  | grep -qE 'folio/.*\.(ts|lean)$' && is_struct_event=true
 
-# B.4 — Block renames (R-status — requires -M above)
+# B.4 — Block or .lean renames (R-status — requires -M above)
 git diff-tree -M --no-commit-id --diff-filter=R --name-only -r "$SHA" \
-  | grep -qE 'content/' && is_struct_event=true
+  | grep -qE 'folio/' && is_struct_event=true
+
+# B.4b — Lean `import` header edits inside library or sibling .lean files
+for lf in $(echo "$changed" | grep -E 'folio/.*\.lean$'); do
+  [ -f "$lf" ] || continue
+  if git show "$SHA" -- "$lf" 2>/dev/null | grep -qE '^[+-]import[[:space:]]+'; then
+    is_struct_event=true
+    break
+  fi
+done
 
 # B.5 — Reorganisation-map staleness: a structural change above with
 # `docs/reorganization-map.md` NOT in the same commit. The map
@@ -239,17 +251,19 @@ fi
 
 For PR review-comment events, pass through if the comment body
 mentions: `forward ref`, `section`, `reorder`, `split`, `merge`,
-`move`, `topic`, `dense`, `sparse`, OR cites a content block label.
+`move`, `topic`, `dense`, `sparse`, `cut-edge`, `lean_lib`, `MathlibExt`, OR cites a content block label.
 
 ## Slot C — §4b dispatch table
 
 | Specialist | When to run | What it checks |
 |------------|-------------|----------------|
-| `content-graph` (`python3 pipeline/content-graph-analysis.py --json` + `--proposals`) | **Always** | H1–H7 heuristics, split / merge / move / reverse proposals for the affected scope |
+| `content-graph` (`computations/forward_ref_classifier.py` + `folio/pipeline/block-manifest-audit.ts`) | **Always on `.ts` / `.md` events** | H1–H7 prose heuristics, logical vs storytelling forward-ref delta, section size bands |
+| `lean-kg-detangler` (`nice -n 15 python3 scripts/lean-kg-detangler.py`) | **Whenever any `.lean` file or `lean.ref` changed** | L1–L6 Lean subgraph heuristics, Tarjan SCCs, `Tier-A/B -> QOU.*` cut-edge count, root orphan delta |
+| `lean-best-practices-lint` (`nice -n 15 python3 scripts/lean-best-practices-lint.py --diff`) | **Whenever any `.lean` file changed** | `BP001`–`BP009` (`autoImplicit`, import order, minimal imports, Mathlib4 naming, §7c generality, zero upward `QOU.*` leaks, zero new synonym dirs) |
 | `chapter-complexity-review` | Whenever a chapter manifest changed, OR ≥ 1 block's `uses[]` changed inside a single chapter | Graph energy delta + optimal section ordering |
-| `block-density` (`python3 pipeline/block-density-audit.py <paper-dir>`) | Whenever a block `.md` was edited, added, or renamed | R1 (single topic), R2 (≤ 40 lines), R3 (embedded tables > 5 rows) |
+| `block-density` | Whenever a block `.md` was edited, added, or renamed | R1 (single topic), R2 (≤ 40 lines), R3 (embedded tables > 5 rows) |
 | `critical-path-analysis` | Whenever a `definition` / `theorem` / `lemma` / `proposition` / `corollary` block's `uses[]` changed | Whether the change breaks a logical chain |
-| `content-validation` (`cd content && bun run validate`) | Always | Schema constraint rules (`uses-resolve`, `remark-interprets`, `defterm-declared`, …) |
+| `content-validation` (`nice -n 15 bun run scripts/run-validate.ts`) | Always | Schema constraint rules (`uses-resolve`, `remark-interprets`, `defterm-declared`, …) |
 
 Launch the parallel calls in a single response with multiple `Agent`
 tool uses (NOT sequentially). Cap each agent's report at ~400 words.
@@ -334,6 +348,10 @@ mv /tmp/_detangler_watcher_graph_current.json \
 | `section-narrative-drift` | minor | Block ordering within a section is not narrative-coherent (e.g. `proof` block appears before its `proposition`; `example` appears before its target; the section's blocks reorder against the story implied by the section's intro prose) |
 | `remark-ratio` | info | H7 remark/example ratio drifted outside the 2:1 band |
 | `preview-source-fwd-ref` | info | H1 forward ref sourced from a preview chapter (`intro` / `notation`) — info-only, never escalated (see §Preview-chapter exclusion) |
+| `lean-upward-import-leak` | critical | New `BP008` / `L2` violation: a Tier-A (`MathlibExt`) or Tier-B Reservoir community candidate imports a QOU physics/model module |
+| `lean-synonym-dir-sprawl` | critical | New `BP009` / `L4` violation: commit creates an unapproved top-level subdirectory under `folio/quantum-observable-universe/lean/QOU/` |
+| `lean-dir-scc-growth` | major | `L3` regression: directory-level or module-level Tarjan SCC count or size increased in `lean-kg-detangler.py` |
+| `lean-7c-wall-leak` | major | `BP005` / `BP006` / `L5` violation: gratuitous `: ℝ`, mixed generic/real declarations, or empirical decimal literals introduced into community or pre-wall `.lean` modules |
 
 ### Excluded forward-reference patterns (STRICT)
 
@@ -374,7 +392,7 @@ are correct by design, so flagging them produces only false positives.
    `cross-chapter-forward`) **only when the reader must RELY ON the
    target's content to follow the argument made here** — i.e. it is a
    **logical** forward reference. The authoritative discriminator is
-   [`computations/forward_ref_classifier.py`](../../../computations/forward_ref_classifier.py),
+   [`computations/forward_ref_classifier.py`](../../computations/forward_ref_classifier.py),
    which tags every edge with a `severity`:
 
    - **`logical`** — BOTH source and target carry logical content
@@ -400,7 +418,7 @@ are correct by design, so flagging them produces only false positives.
    carries 91 logical defects, 124 storytelling, 32 structural — so
    ~62% of raw forward refs are benign. Full model + the 91-defect
    breakdown:
-   [`docs/forward-ref-logical-analysis.md`](../../../docs/forward-ref-logical-analysis.md).
+   [`docs/forward-ref-logical-analysis.md`](../../docs/forward-ref-logical-analysis.md).
 
    **Disposition of a logical-forward-ref finding** — exactly three
    correct fixes:
@@ -542,25 +560,26 @@ For `reorg-map-stale`:
 ## Slot G — §5a backlog discovery
 
 ```bash
-# 1. Run the full graph analysis with proposals (the workhorse).
-( cd content && python3 pipeline/content-graph-analysis.py --proposals ) \
-  > /tmp/_detangler_backlog_proposals.md 2>/dev/null
-( cd content && python3 pipeline/content-graph-analysis.py --json ) \
-  > /tmp/_detangler_backlog_graph.json 2>/dev/null
+export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 \
+       OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1
 
-# 2. Run block-density audit across every paper.
-for paper in $(ls content/ 2>/dev/null | grep -v schema | grep -v pipeline); do
-  paper_dir="content/$paper"
-  [ -d "$paper_dir" ] || continue
-  ( cd content && python3 pipeline/block-density-audit.py "$paper" ) \
-    >> /tmp/_detangler_backlog_density.txt 2>/dev/null
-done
+# 1. Prose logical forward-reference & manifest audit across folio/
+nice -n 15 python3 computations/forward_ref_classifier.py \
+  > /tmp/_detangler_backlog_fwdrefs.txt 2>/dev/null
+nice -n 15 bun run folio/pipeline/block-manifest-audit.ts \
+  > /tmp/_detangler_backlog_manifests.txt 2>/dev/null || true
 
-# 3. Reorganisation-map freshness — list block moves on origin/main
+# 2. Lean KG DAG + Reservoir cut-edge + best-practices audit (L1..L6, BP001..BP009)
+nice -n 15 python3 scripts/lean-kg-detangler.py \
+  --json-out /tmp/_detangler_backlog_lean_kg.json --summary-only
+nice -n 15 python3 scripts/lean-best-practices-lint.py --package all-community \
+  --json-out /tmp/_detangler_backlog_lean_lint.json --max-print 0
+
+# 3. Reorganisation-map freshness — list block/.lean moves on origin/main
 # in the last 30 days that aren't reflected in the map.
-git log --since='30 days ago' origin/main --pretty=format:'%H' \
+nice -n 15 git log --since='30 days ago' origin/main --pretty=format:'%H' \
   --diff-filter=R --name-only \
-  -- 'content/' \
+  -- 'folio/' \
   > /tmp/_detangler_recent_renames.txt 2>/dev/null
 ```
 
@@ -600,7 +619,9 @@ the `findings[]` array.
 | No new `archimedean-wall-violation` (silent post-wall → pre-wall leak) | Walk every new / changed block whose `chapter_dir` precedes `models-of-qous` in the paper's chapter order; for each `uses[]` target whose `chapter_dir` is `descartes-universe` or later, the target must carry `tags: ['archimedean-bridge']` OR the source's `.md` must contain an explicit `Theorem (conditional on archimedean specialisation)` banner |
 | No new R1 topic-mix | `python3 pipeline/block-density-audit.py <paper>` exit code 0 AND `grep -c 'R1' stdout` does not increase vs baseline (the script prints `R1`/`R2`/`R3` per-violation lines on stdout — there is no `--json` mode) |
 | `docs/reorganization-map.md` updated alongside every block move | `git diff --name-only HEAD~1 HEAD` includes both the chapter manifest AND `docs/reorganization-map.md` whenever a block changed sections |
-| Schema clean | `cd content && bun run validate` exits 0 |
+| Schema clean | `nice -n 15 bun run scripts/run-validate.ts` exits 0 |
+| **Lean best-practices diff gate clean (`BP001`–`BP009`)** | `nice -n 15 python3 scripts/lean-best-practices-lint.py --diff` exits 0 (`critical == 0`; zero `BP008` upward `QOU.*` leaks in `MathlibExt/` + the 6 Tier-B Reservoir `lean_lib`s, zero `BP009` unapproved `QOU/*` or `lean/*` directories) |
+| **Lean Reservoir `community_to_qou_cut_edges == 0` & strict inter-`lean_lib` DAG** | `current.tier_a_and_tier_b_reservoir_packages.community_to_qou_cut_edges_count == 0`, `community_inter_package_scc_cycles == []`, and `module_level_scc_cycles == []` in `lean-kg-detangler.py` (for open PRs authored against legacy `QOU/<OldDir>/` paths, run `nice -n 15 python3 scripts/apply-lean-reservoir-migration.py --fixup-branch`) |
 | **No new `missing-section-story`** | For every section newly created in this commit (e.g. a split product), the section's `blocks[]` first entry must be `kind: "prose"`. Sections that *already exist* without a story are not regressed, but new ones must come with one. |
 | **No new `generic-section-name`** | For every new section, the section label must not match the regex `^sec:(.*-)?(part-\d+|extras|misc-\d+)$` (proper alternation `\|` chars in this skill's markdown table are escapes for the table syntax — the regex itself uses `\|` as literal pipe outside a character class; consumers must implement this as proper-regex `^sec:(.*-)?(part-\d+\|extras\|misc-\d+)$` with the rendered pipes). |
 | **No new `missing-chapter-intro`** | For every chapter touched in this commit that did not previously have an opening narrative, the commit must either (a) add a `prose` block at index 0 of the first section, (b) add a dedicated `sec:introduction` section at index 0, (c) move an existing `<chapter>-intro` block to index 0, or (d) tag the chapter as reference-only (appendix / glossary / notation) in the paper manifest. |

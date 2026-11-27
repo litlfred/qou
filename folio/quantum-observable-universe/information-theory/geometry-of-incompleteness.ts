@@ -5,7 +5,7 @@ export default theorem({
   title:
     "The geometry of incompleteness: a Turing-complete QOU has a nonempty horizon",
   lean: {
-    ref: "qou:QOU.Information.geometry_of_incompleteness",
+    ref: "qou:QOU.InformationTheory.GeometryOfIncompleteness.geometry_of_incompleteness",
     validation: "not_checked",
   },
   tags: [

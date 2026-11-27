@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Explicit $d_1, d_2$ on $H_3(q)$ over $\\mathbb{R}[q, q^{-1}]$",
   lean: {
-    ref: "qou:QOU.BraidKnot.SpectralSequenceH3Explicit",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.SpectralSequenceH3Explicit",
     validation: "not_checked",
   },
   uses: ["prop:e-infinity-page-identifications"],
@@ -16,6 +16,12 @@ export default conjecture({
     "computation",
   ],
   authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-hand-adjudicated.lean` inhabits `SpectralSequenceH3ExplicitContext` via `True`/`trivial` on its three `Prop`-valued differential fields.",
+      see: "docs/audits/2026-08-30-context-classes-hand-adjudicated.lean",
+    },
     {
       kind: "caveat",
       date: "2026-11-20",

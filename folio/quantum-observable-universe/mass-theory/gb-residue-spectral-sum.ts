@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Gröbner–Shirshov residue spectral sum for the mass trace",
   lean: {
-    ref: "qou:QOU.BraidKnot.gb_residue_spectral_sum",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.gb_residue_spectral_sum",
     validation: "not_checked",
   },
   uses: [

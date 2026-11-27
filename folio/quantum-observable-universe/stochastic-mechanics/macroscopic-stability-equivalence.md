@@ -1,4 +1,4 @@
-**Conjecture.** Fix a substrate datum: a candidate zeta function $\zeta$, its Chebyshev-type prime-counting function $\psi$, and the Reeb spectrum $\rho$ of the same substrate. The following are equivalent:
+Fix a substrate datum: a candidate zeta function $\zeta$, its Chebyshev-type prime-counting function $\psi$, and the Reeb spectrum $\rho$ of the same substrate. The following are equivalent:
 
 1. **Macroscopic stability.** $\psi(X) = X + O(X^{1/2 + \varepsilon})$ for every $\varepsilon > 0$.
 2. **Riemann hypothesis.** Every zero of $\zeta$ in the critical strip satisfies $\mathrm{Re}(s) = 1/2$.
@@ -14,22 +14,18 @@ The algebraic substrate supplies a conditional framework: $q$-scale stability is
 
 The statement is carried as a single conjecture over one datum and is not established. The one result proved is conditional on it and derives the remaining equivalence $(1) \Leftrightarrow (3)$ by transitivity; it is a derivation from the hypotheses, not a restatement of one.
 
-## Two inconsistent formulations withdrawn
+## Why independent quantification is inconsistent
 
-An earlier version of this statement asserted the two equivalences as axioms, each quantified over its two arguments **independently**:
+Quantifying the two equivalences over their arguments **independently** —
 
 $$
   \forall\, \psi\ \forall\, \zeta,\quad
   \mathrm{Stability}(\psi) \iff \mathrm{RH}(\zeta),
   \qquad
   \forall\, \zeta\ \forall\, \rho,\quad
-  \mathrm{RH}(\zeta) \iff \mathrm{Persistence}(\rho).
+  \mathrm{RH}(\zeta) \iff \mathrm{Persistence}(\rho)
 $$
 
-Both are inconsistent, and for the same reason. A statement of the form $\forall a\, \forall b,\ P(a) \iff Q(b)$ forces $P$ to be constant in $a$: fix any $b$ and the right-hand side no longer varies, so all values of $P$ agree. But $\mathrm{RH}$ is not constant in $\zeta$. It holds vacuously at $\zeta \equiv 1$, which is never zero, and fails at $\zeta \equiv 0$, for which every point of the strip is a zero and $s = 1/4$ would have to satisfy $1/4 = 1/2$. Substituting both into either axiom, with the other argument held fixed, yields a contradiction.
+— produces an inconsistent theory for a purely logical reason. Any axiom of the form $\forall a\, \forall b,\ P(a) \iff Q(b)$ forces $P$ to be constant in $a$: fixing $b$ freezes the right-hand side, so all values of $P$ must agree. Yet $\mathrm{RH}(\zeta)$ is not constant in $\zeta$: it holds vacuously at $\zeta \equiv 1$ (which has no zeros) and fails at $\zeta \equiv 0$ (for which every point of the strip is a zero, forcing $1/4 = 1/2$ at $s = 1/4$). Substituting both into either independently quantified biconditional with the second argument held fixed yields a contradiction.
 
-A second and independent route was available for the second axiom. The proposition it called *spectral persistence* read "if every level is $1/2$ then level $0$ is $1/2$", which is instantiation and is provable outright, so the axiom equated $\mathrm{RH}(\zeta)$ with a tautology for every $\zeta$. The replacement condition (3) constrains the whole family instead, and has content.
-
-Nothing downstream inherited the inconsistency.
-
-The withdrawn axioms were attributed to von Koch and to Weil. The von Koch attribution is accurate for the direction it names and is retained as such above. The Weil attribution was not: the explicit formula is a duality between zeros and prime powers, and no formulation of it makes the Riemann hypothesis equivalent to a proposition in which $\zeta$ does not occur. It is withdrawn.
+Similarly, weakening condition (3) to the implication "if every level has real part $1/2$, then level $0$ has real part $1/2$" reduces the right-hand side to universal instantiation, a tautology, which again cannot be equivalent to $\mathrm{RH}(\zeta)$ across varying $\zeta$. Constraining the entire family $\rho(n, i)$ in condition (3) over a single bound datum $(\zeta, \psi, \rho)$ avoids both pathologies. Likewise, Weil's explicit formula establishes a duality between the zeros and prime-power coefficients of the *same* $\zeta$; no formulation of it equates $\mathrm{RH}(\zeta)$ to a predicate in which $\zeta$ does not occur.

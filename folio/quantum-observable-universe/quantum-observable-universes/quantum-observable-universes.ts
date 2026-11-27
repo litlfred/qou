@@ -23,17 +23,8 @@ export default chapter({
       blocks: [
         "qou-definition-intro",
         "quantum-observable-universe",
+        "quantum-observable-universe-remark",
         "qou-axioms-physical-reading",
-        "quantum-observable-universe-exists",
-        "qou-exists-axiom-1",
-        "qou-exists-axiom-1-proof",
-        "qou-exists-axiom-2",
-        "qou-exists-axiom-2-proof",
-        "qou-exists-axiom-3",
-        "qou-exists-axiom-3-proof",
-        "qou-exists-axiom-4",
-        "qou-exists-axiom-4-proof",
-        "quantum-observable-universe-exists-proof",
         "braiding-induced-ordering",
         "braiding-induced-ordering-proof",
         "braiding-induced-ordering-interpretation",
@@ -96,6 +87,7 @@ export default chapter({
       blocks: [
         "weight-decomposition-intro",
         "maximal-torus",
+        "maximal-torus-remark",
         "maximal-torus-su2",
         "weight-decomposition",
         "weight-decomposition-exists",
@@ -134,8 +126,10 @@ export default chapter({
         "categorical-reeb-unique-proof",
         "reeb-su2",
         "projective-line-object",
+        "projective-line-object-remark",
         "projective-line-su2",
         "contact-affine-chart",
+        "contact-affine-chart-remark",
       ],
     }),
     section({
@@ -176,9 +170,12 @@ export default chapter({
         "substrate-parameter-brings",
         "quantum-universe-explication",
         "quantum-gauge-group",
+        "quantum-gauge-group-remark",
+        "su2-characters-and-quantum-dimension",
         "quantum-planck-constant",
         "planck-limits",
         "q-hodge-star",
+        "q-hodge-star-remark",
         // Brane geometry primitives relocated from braids-and-knots/
         // per the PR #823 fit-section-chapter audit. These supply
         // the state-bundle fibre + U(1)-equivariant machinery that
@@ -188,25 +185,30 @@ export default chapter({
         // fix): a QOU-axioms definition (commutative specialisation) that
         // u1-equivariant-reduction below depends on.
         "commutative-qou",
+        "commutative-qou-remark",
         "u1-equivariant-reduction",
         "u1-equivariant-reduction-proof",
       ],
     }),
 
-    // ── G-action on the substrate ─────────────────────────────────────
-    // Moved here from sec:emergence (reading-order drain, qou-d4kh,
-    // 2026-11-20): the conjecture is stated in q-dimensions [n]_q, so it
-    // must follow sec:substrate-parameter, where q is introduced. The
-    // idempotent proposition precedes the conjecture that cites it.
+    // ── Existence of a quantum observable universe ───────────────────
+    // Moved here from sec:qou-definition (reading-order drain L4,
+    // 2026-11-21): the existence proof exhibits Rep(U_q(g)) with O_q(G),
+    // so it follows sec:substrate-parameter, where q is introduced.
     section({
-      title: "The $G$-action on the substrate",
-      label: "sec:emergence-g-action",
+      title: "Existence of a quantum observable universe",
+      label: "sec:qou-existence",
       blocks: [
-        "higgs-vacuum-residual-idempotent",
-        "g-action-on-substrate",
-        "g-action-on-substrate-table1-data",
-        "g-action-on-substrate-table2-data",
-        "higgs-vacuum-residual-graviton",
+        "quantum-observable-universe-exists",
+        "qou-exists-axiom-1",
+        "qou-exists-axiom-1-proof",
+        "qou-exists-axiom-2",
+        "qou-exists-axiom-2-proof",
+        "qou-exists-axiom-3",
+        "qou-exists-axiom-3-proof",
+        "qou-exists-axiom-4",
+        "qou-exists-axiom-4-proof",
+        "quantum-observable-universe-exists-proof",
       ],
     }),
 
@@ -240,13 +242,17 @@ export default chapter({
         "algebraic-substrate-intro",
         "substrate-preamble",
         "frobenius-hopf-substrate",
+        "frobenius-hopf-substrate-remark",
         "brings-coordinate-ring",
+        "brings-coordinate-ring-remark",
         // Moved from sec:differential-structures-reeb (reading-order drain,
         // qou-d4kh): the example lives on O_q(B) and uses
         // def:brings-coordinate-ring, which now precedes it.
         "categorical-reeb-brings",
         "substrate-parameter-planck",
+        "substrate-parameter-planck-remark",
         "categorical-reeb-derivation",
+        "categorical-reeb-derivation-remark",
         "reeb-flow-bridge",
         "reeb-contact-universal-computer",
         // conj:magic-numbers-bring relocated to observations/
@@ -283,10 +289,13 @@ export default chapter({
       blocks: [
         "categorical-dirac-operator-intro",
         "categorical-dirac-operator",
+        "categorical-dirac-operator-remark",
         "categorical-dirac-operator-exists",
         "categorical-dirac-operator-exists-proof",
         "categorical-dirac-operator-unique",
         "categorical-dirac-operator-unique-proof",
+        "rieffel-metric-quotient-faithfulness",
+        "rieffel-quotient-temperley-lieb",
       ],
     }),
 
@@ -296,6 +305,7 @@ export default chapter({
       blocks: [
         "categorical-lagrangian-intro",
         "categorical-lagrangian",
+        "categorical-lagrangian-remark",
         "categorical-lagrangian-exists",
         "categorical-lagrangian-exists-proof",
         "categorical-lagrangian-unique",
@@ -309,6 +319,7 @@ export default chapter({
       blocks: [
         "categorical-action-intro",
         "categorical-action",
+        "categorical-action-remark",
         "categorical-action-exists",
         "categorical-action-exists-proof",
         "categorical-action-unique",
@@ -317,6 +328,7 @@ export default chapter({
         "categorical-action-notation-su2",
         "qou-canonical-action",
         "canonical-action-obstruction",
+        "categorical-hamiltonian",
       ],
     }),
 
@@ -328,7 +340,6 @@ export default chapter({
         "variational-equations",
         "variational-equations-proof",
         "wavefront-propagation",
-        "photon-wavefront-example",
       ],
     }),
 
@@ -339,6 +350,7 @@ export default chapter({
       blocks: [
         "particles-intro",
         "categorical-q-ext-deriv",
+        "categorical-q-ext-deriv-remark",
         "categorical-q-ext-deriv-exists",
         "categorical-q-ext-deriv-exists-proof",
         "categorical-q-ext-deriv-unique",
@@ -346,6 +358,7 @@ export default chapter({
         "q-harmonic-form",
         "fermion-boson-decomposition",
         "categorical-point",
+        "categorical-point-remark",
         "categorical-point-explication",
         "observation",
         "observation-physical-roles",
@@ -389,6 +402,7 @@ export default chapter({
       blocks: [
         "instanton-intro",
         "categorical-instanton",
+        "categorical-instanton-remark",
         "categorical-instanton-exists",
         "categorical-instanton-exists-proof",
         "categorical-instanton-unique",
@@ -413,6 +427,7 @@ export default chapter({
         "categorical-dq-squared-proof",
         "categorical-q-lie-bracket",
         "categorical-q-connection",
+        "categorical-q-connection-remark",
         "categorical-q-connection-exists",
         "categorical-q-connection-exists-proof",
         "categorical-q-connection-unique",
@@ -460,6 +475,7 @@ export default chapter({
         "q-heat-equation-unique",
         "q-heat-equation-unique-proof",
         "categorical-laplace-transform",
+        "categorical-laplace-transform-remark",
         "categorical-laplace-transform-properties",
         "categorical-laplace-three-contexts",
         "categorical-laplace-q-heat-resolvent",
@@ -515,6 +531,7 @@ export default chapter({
         "q-exp-p-adic",
         "q-exp-p-adic-table-data",
         "q-logarithm",
+        "q-logarithm-remark",
         "q-logarithm-properties",
         "q-logarithm-exists",
         "q-logarithm-exists-proof",

@@ -13,6 +13,7 @@ export default example({
     "ex:weight-decomposition-su2",
   ],
   cites: [
+    "woronowicz1987-twisted-su2",
     "woronowicz1989",
   ],
 });

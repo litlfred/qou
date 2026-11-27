@@ -46,7 +46,7 @@ export default proposition({
   title: "The baryon octet and the degeneracy of its weight diagram",
   // The ref names the OPERATIVE declaration -- the exclusion, not the table.
   lean: {
-    ref: "qou:QOU.Eightfold.OctetWeightDegeneracy.weight_function_cannot_separate_lambda_sigma0",
+    ref: "qou:QOU.EightfoldWay.OctetWeightDegeneracy.weight_function_cannot_separate_lambda_sigma0",
   },
   // IMMEDIATE NEIGHBOURS ONLY (AGENTS.md: uses[] is not the transitive cone).
   // The first draft listed all five of schur-weyl / borromean-decuplet /
@@ -63,7 +63,20 @@ export default proposition({
   // downstream of a conjecture.
   uses: [],
   cites: ["gellmann1962", "jimbo1986"],
+  computation: {
+    engine: "mpmath",
+    script:
+      "computations/probes/sm8w_eightfold_clasp_diquark_gmo/sm8w_eightfold_clasp_diquark_gmo_probe.py",
+    witness:
+      "computations/probes/sm8w_eightfold_clasp_diquark_gmo/sm8w-eightfold-clasp-diquark-gmo.witness.json",
+    status: "verified",
+  },
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): and the difference is machine-checked\nin `QOU/Eightfold/OctetWeightDegeneracy.lean`:" },
+    {
+      kind: "note",
+      date: "2026-11-23",
+      body: "Zero-parameter `H₃(q)` `S^{(2,1)}` diquark sub-projector split (`qou-8fw2`, `qou-pwz4`, `qou-8fl1`): `QOU/Eightfold/HyperbolicMesonClaspAndDiquarkSplit.lean` (`projDiquark_complete_orthogonal_idempotents`, `jm2_jm3_comm_and_diquark_split`, `trace_projDiquark_V_and_V3_split`) and `QOU/Eightfold/USpinColemanGlashowLambdaSigma.lean` (`eLambda_add_eSigma0`, `lambda_sigma0_trace_split_positive_of_gt_one`) prove that inside a single `S^{(2,1)}` module, the orthogonal rank-1 `ud`-diquark idempotents `P_Λ = [2]_q⁻¹ (q - σ₁)` (`I = 0`) and `P_{Σ⁰} = [2]_q⁻¹ (σ₁ + q⁻¹)` (`I = 1`) commute with `J₂ = σ₁²`, split `J₂` eigenvalues as `q⁻²` vs `q²`, satisfy `tr(P_{Σ⁰} V) = q⁶ tr(P_Λ V)`, and split the Borromean braid `V³` by `tr(P_Λ V³) - tr(P_{Σ⁰} V³) = (q - q⁻¹)³ (q² + q⁻²)[3]_q / [2]_q` (`+0.02826481` at `q₀`, implying `31.535 MeV` on `m_Λ`, `-59.0%` vs PDG-2024 `76.959 MeV`, while `q₀` gives `122.701 MeV`, `+59.4%`).",
+    },
   ],
 });

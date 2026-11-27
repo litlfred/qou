@@ -19,7 +19,7 @@ export default remark({
   title:
     "The $pn$ bond constant is a convex combination of the $pp$ and $nn$ constants, so it can never be extremal",
   lean: {
-    ref: "qou:QOU.Mass.ChainTraceFactor.L_strict_mono",
+    ref: "qou:QOU.MassTheory.ChainTraceFactor.L_strict_mono",
     sorryFree: true,
     validation: "not_checked",
   },

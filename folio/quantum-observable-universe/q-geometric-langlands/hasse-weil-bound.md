@@ -1,4 +1,4 @@
-**Theorem (Hasse--Weil bound; conditional on the Weil datum).** Let $Z$ be the
+**Conditional on the Weil datum.** Let $Z$ be the
 local $q$-zeta function of a smooth projective geometrically irreducible curve
 over $\mathbb{F}_q$ --- concretely, assume the functional equation pairs each
 Frobenius eigenvalue $\alpha_i$ with $q/\alpha_i$, and that the

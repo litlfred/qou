@@ -1,4 +1,4 @@
-import QOU.BraidKnot.TwoRowStratum
+import BraidKnotOctonion.TwoRowStratum
 
 /-!
 Sibling Lean file for `def:two-row-stratum`.

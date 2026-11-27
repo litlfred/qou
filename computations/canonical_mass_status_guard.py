@@ -178,7 +178,7 @@ LIVE_REFERENCE_DOCS = (
 # doc archive is — they legitimately study the λ_A fit (guardrail §3), so
 # scanning them would be pure noise and the guard would be ignored.
 PY_SCAN_ROOT = "computations"
-PY_EXCLUDED_DIR_PARTS = ("probes", "audits", "sweeps")
+PY_EXCLUDED_DIR_PARTS = ("probes", "audits", "sweeps", ".claude", ".git", "node_modules", ".lake")
 #: Same exclusion by FILENAME prefix. `computations/audit_delta_S_chain.py` is
 #: the same kind of artifact as anything under `audits/` — it exists to walk the
 #: λ_scale-era derivation chain — but it sits at the top level, so the directory

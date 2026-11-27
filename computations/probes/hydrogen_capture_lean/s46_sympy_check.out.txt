@@ -1,0 +1,56 @@
+PASS K_L commutes with sigma_0
+PASS K_L commutes with sigma_1
+PASS K_R commutes with sigma_1
+PASS K_R commutes with sigma_2
+S(K_L) = -(q - 1)**2*(q + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/q**6
+PASS S(K_L) = -h^2[3]_q/q^2
+PASS (i) basis 1
+PASS (ii a) basis 1: O+R = -O-L
+PASS (ii b) basis 1: O-R = -O+L
+PASS (i) basis s0
+PASS (ii a) basis s0: O+R = -O-L
+PASS (ii b) basis s0: O-R = -O+L
+PASS (i) basis s1
+PASS (ii a) basis s1: O+R = -O-L
+PASS (ii b) basis s1: O-R = -O+L
+PASS (i) basis s0s1
+PASS (ii a) basis s0s1: O+R = -O-L
+PASS (ii b) basis s0s1: O-R = -O+L
+PASS (i) basis s1s0
+PASS (ii a) basis s1s0: O+R = -O-L
+PASS (ii b) basis s1s0: O-R = -O+L
+PASS (i) basis s0s1s0
+PASS (ii a) basis s0s1s0: O+R = -O-L
+PASS (ii b) basis s0s1s0: O-R = -O+L
+PASS (i) basis s0^-1s1^-1
+PASS (ii a) basis s0^-1s1^-1: O+R = -O-L
+PASS (ii b) basis s0^-1s1^-1: O-R = -O+L
+PASS (i) arm 1 (phi,psi symbolic)
+PASS (ii a) arm 1 (phi,psi symbolic): O+R = -O-L
+PASS (ii b) arm 1 (phi,psi symbolic): O-R = -O+L
+   chi_(3) = (phi0*q + phi01 + phi1*q + 1)*(psi0*q + psi01 + psi1*q + 1)
+PASS (i) arm V (phi,psi symbolic)
+PASS (ii a) arm V (phi,psi symbolic): O+R = -O-L
+PASS (ii b) arm V (phi,psi symbolic): O-R = -O+L
+   chi_(3) = (phi0*q + phi01 + phi1*q + 1)*(psi0*q + psi01 + psi1*q + 1)
+PASS (i) arm s1 (phi,psi symbolic)
+PASS (ii a) arm s1 (phi,psi symbolic): O+R = -O-L
+PASS (ii b) arm s1 (phi,psi symbolic): O-R = -O+L
+   chi_(3) = q*(phi0*q + phi01 + phi1*q + 1)*(psi0*q + psi01 + psi1*q + 1)
+PASS (i) arm s1s0 (phi,psi symbolic)
+PASS (ii a) arm s1s0 (phi,psi symbolic): O+R = -O-L
+PASS (ii b) arm s1s0 (phi,psi symbolic): O-R = -O+L
+   chi_(3) = q**2*(phi0*q + phi01 + phi1*q + 1)*(psi0*q + psi01 + psi1*q + 1)
+PASS (i) arm 1 (derived weights qh,-h/q)
+PASS (ii a) arm 1 (derived weights qh,-h/q): O+R = -O-L
+PASS (ii b) arm 1 (derived weights qh,-h/q): O-R = -O+L
+PASS (i) arm V (derived weights qh,-h/q)
+PASS (ii a) arm V (derived weights qh,-h/q): O+R = -O-L
+PASS (ii b) arm V (derived weights qh,-h/q): O-R = -O+L
+PASS (i) arm s1 (derived weights qh,-h/q)
+PASS (ii a) arm s1 (derived weights qh,-h/q): O+R = -O-L
+PASS (ii b) arm s1 (derived weights qh,-h/q): O-R = -O+L
+PASS (i) arm s1s0 (derived weights qh,-h/q)
+PASS (ii a) arm s1s0 (derived weights qh,-h/q): O+R = -O-L
+PASS (ii b) arm s1s0 (derived weights qh,-h/q): O-R = -O+L
+50/50 checks pass

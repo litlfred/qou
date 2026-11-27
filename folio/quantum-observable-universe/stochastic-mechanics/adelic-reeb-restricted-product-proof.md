@@ -1,4 +1,4 @@
-**Proof.** Both parts are proved over the abstract value group
+Both parts are proved over the abstract value group
 $\Gamma$.
 The restricted-product condition is encoded by an explicit finite set $S$ of
 *active* places (those with $\ordw_v \neq 0$); off $S$ the local order is the

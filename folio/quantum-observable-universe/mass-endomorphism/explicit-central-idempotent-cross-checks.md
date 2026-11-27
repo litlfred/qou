@@ -1,4 +1,4 @@
-**Theorem.** *Let $H_n(q)$ be the Iwahori–Hecke algebra over a field $K$ of any characteristic at generic $q$ ($q \neq 0$, not a root of unity), and let*
+*Let $H_n(q)$ be the Iwahori–Hecke algebra over a field $K$ of any characteristic at generic $q$ ($q \neq 0$, not a root of unity), and let*
 
 $$
   e_\lambda \;=\; \sum_{T \in \mathrm{SYT}(\lambda)} \; \prod_{k=1}^{n} \; \prod_{\substack{|d| \le n-1 \\ d \neq c_T(k)}} \frac{J_k - q^{2d}}{q^{2 c_T(k)} - q^{2d}}
@@ -25,8 +25,8 @@ All four cross-checks are proved on the Iwahori–Hecke algebra $H_n(q)$, for ev
 - Cross-check 3. Every map with the bar properties fixes every $e_\lambda$. No bar map is constructed; that needs a field automorphism with $q \mapsto q^{-1}$.
 - Cross-check 4. The sign twist is constructed from the universal property and sends $e_\lambda$ to $e_{\lambda'}$.
 
-**Ground field.** No hypothesis on the characteristic is needed. The Wedderburn isomorphism is built by sending each block's matrix units to Lagrange polynomials in the Murphy elements, which needs only that distinct tableaux have distinct content vectors and that $q^{2m} \neq 1$ for $0 < m \le 2n$. In particular the theorem holds over $K = \operatorname{Frac} R[q, q^{-1}]$ for any integral domain $R$, which covers $\mathbb{Q}(q)$ and $\mathbb{F}_p(q)$. Over $R[q, q^{-1}]$ itself $e_\lambda$ is not defined, because the denominators $q^{2m} - 1$ are not units.
+**Ground field.** No hypothesis on the characteristic is needed. The Wedderburn isomorphism is built by sending each block's matrix units to Lagrange polynomials in the Jucys–Murphy elements, which needs only that distinct tableaux have distinct content vectors and that $q^{2m} \neq 1$ for $0 < m \le 2n$. In particular the theorem holds over $K = \operatorname{Frac} R[q, q^{-1}]$ for any integral domain $R$, which covers $\mathbb{Q}(q)$ and $\mathbb{F}_p(q)$. Over $R[q, q^{-1}]$ itself $e_\lambda$ is not defined, because the denominators $q^{2m} - 1$ are not units.
 
-**Which involution pairs $\lambda$ with $\lambda'$.** The bar involution does not: it fixes every $e_\lambda$, so an earlier form of cross-check 4, $\overline{e_\lambda} = e_{\lambda'}$, is false already at $n = 2$. The bar involution is the symmetry of the convention-D Markov trace and of non-abelian Stokes path reversal. The sign twist is not a symmetry of that trace: it relates the trace at $q$ to the trace at $-q^{-1}$.
+**Which involution pairs $\lambda$ with $\lambda'$.** The bar involution fixes every $e_\lambda$, so $\overline{e_\lambda} = e_{\lambda'}$ fails already at $n = 2$ whenever $\lambda \neq \lambda'$. The bar involution is the symmetry of non-abelian Stokes path reversal, whereas the sign twist pairs $\lambda$ with $\lambda'$ and relates the Markov trace at $q$ to the trace at $-q^{-1}$.
 
-**Formula.** An earlier form took the inner product over the boxes of $\lambda$. Two boxes on one diagonal share a content, so that product can divide by zero (for example $\lambda = (2,2)$).
+**Content range in the inner product.** Taking the inner product over all admissible contents $|d| \le n-1$ rather than over the boxes of $\lambda$ avoids repeated factors when two boxes on the same diagonal share a content (for example $\lambda = (2,2)$).

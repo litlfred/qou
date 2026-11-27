@@ -1,0 +1,76 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-24T12:08:16.480348+00:00",
+  "commitSha": "7c94ebd0bebe6071124416b4a43f81f665429ff2",
+  "assertions": [
+    {
+      "name": "h6_hopf_composite_closed_form_matches_hoefsmit_wenzl_sum",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "(1 + h*z)*tr_M((s0 s1^-1)^3)^2 agrees with 80-dps H_6(q_0) Hoefsmit-Wenzl sum to < 1e-70"
+    },
+    {
+      "name": "additive_multiterm_formula_fails_on_hopf_deuteron",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Additive T1+T2+T3+T4 prediction (3.89027 MeV) overshoots B_AME(2H) = 2.224566 MeV by +74.88% (>70%)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "multiterm-cost-deuteron-hopf-probe",
+  "scriptFile": "multiterm_cost_deuteron_hopf_probe.py",
+  "scriptHash": "829e2290e4a5",
+  "scriptCommitSha": "7c94ebd0bebe6071124416b4a43f81f665429ff2",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "56872bc54313b172"
+  },
+  "invocation": {
+    "argv": [
+      "computations/multiterm_cost_deuteron_hopf_probe.py"
+    ],
+    "reproduce": "python3 -u computations/multiterm_cost_deuteron_hopf_probe.py"
+  },
+  "description": "Evaluates the additive R-side T1+T2+T3+T4 multi-term formula for the Hopf-factorised deuteron T_comp = ((sigma_1 sigma_2^-1)^3 (x) (sigma_4 sigma_5^-1)^3) * sigma_3^2 at H_6(q_0) under two-row SU(2) parameter z = q_0^3 / (q_0^2 + 1) at 80-dps precision, replacing pre-migration literal 1.1007832370743025 with the exact derived trace 1.124847062711174018... and exact hook-length T4. The additive sum overshoots B_AME(2H) = 2.224566 MeV to 3.89027 MeV (+74.88%), confirming the structural refutation.",
+  "auditOnly": "docs/audits/2026-11-24-hecke-core-z-importer-audit-5pgl.md",
+  "data": {
+    "derived_inputs_60dps": {
+      "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+      "h": "0.209060298795639315430846213129674943859757495263024555381696",
+      "z_two_row": "0.612688037146465251595829863945899248026308391545064759724287",
+      "trm_composite_closed_form": "1.12484706271117401762954924825347026349231909204660833735158",
+      "trm_composite_wenzl_h6": "1.12484706271117401762954924825347026349231909204660833735158",
+      "trm_composite_single_row_historical": "1.10078323965820197849769187296643676600298394572848036941496",
+      "m_e_sigma_6_MeV": "1.63628711459308350909595688199639871806531962817636193416065",
+      "b_ame_deuteron_MeV": "2.22456620000000000000000000000000000000000000000000000000000"
+    },
+    "predictions_60dps": {
+      "t2_hecke": "1.87693315431194191999686151689504955726653609940152042155085",
+      "t3_hecke": "1.40915122630215039185054307018617106244875387370522119159947",
+      "t23_MeV": "1.67918567037259974918081999939839646647890470280662328368477",
+      "b_desc_MeV": "0.574795668732138549546691226995201619795692870910470384960064",
+      "b_pred_MeV": "3.89026845369782180782346810838999680433991720189345560280549",
+      "rel_resid": "0.748776212502833949299179367370589737603635801844627326804431"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

@@ -18,9 +18,15 @@ export default proposition({
   ],
   lean: {
     ref:
-      "qou:QOU.BraidKnot.delta_tau_M_canonical_has_q2_minus_1_factor",
+      "qou:QOU.BraidsAndKnots.BraidKnot.delta_tau_M_canonical_has_q2_minus_1_factor",
   },
   authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`): imports `QOU.BraidKnot.QBetaPerBlockChiClosedForms` (`CanonicalMarkovWeightsH3`), audited in `2026-09-04-conjecture-carriers-round-two.lean` (`C3`).",
+      see: "docs/audits/2026-09-04-conjecture-carriers-round-two.lean",
+    },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Assume a concrete instance of the canonical Wenzl–Markov weights class `CanonicalMarkovWeightsH3` exists. This instance supplies weights\n\nHere $P_\\lambda(q)$ form the per-block witnesses from `chi_blocks_have_q2_minus_1_factor`.\n\n(establishes the per-block $\\chi_\\lambda$ closed forms and the `CanonicalMarkovWeightsH3` class)" },
     {
       kind: "status",

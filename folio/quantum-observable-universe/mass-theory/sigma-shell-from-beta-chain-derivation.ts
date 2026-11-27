@@ -3,9 +3,9 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:sigma-shell-from-beta-chain-derivation",
   title:
-    "Staircase-partition closed form for the $\\sigma_{\\mathrm{shell}}$ magnitude (convention C; identically zero under convention D)",
+    "Staircase-partition closed form for the $\\sigma_{\\mathrm{shell}}$ magnitude (identically zero at $z = q^3/(q^2+1)$)",
   lean: {
-    ref: "qou:QOU.BraidKnot.SigmaShellFromBetaChainDerivation",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.SigmaShellFromBetaChainDerivation",
     validation: "not_checked",
   },
   uses: [
@@ -22,7 +22,6 @@ export default conjecture({
     "magic-numbers",
     "1ppb",
     "derivation",
-    "convention-c",
     "scope-b-excluded",
   ],
   authorNotes: [

@@ -32,7 +32,7 @@ export default proposition({
   label: "prop:mass-coefficient-shadow-price",
   title:
     "Mass-formula coefficients as shadow prices of the Frobenius positivity constraints",
-  lean: { ref: "qou:QOU.BraidKnot.MassCoefficientShadowPrice",
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.MassCoefficientShadowPrice",
     validation: "validated",
   },
   uses: [

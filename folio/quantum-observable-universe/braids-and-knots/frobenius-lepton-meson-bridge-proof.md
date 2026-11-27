@@ -1,4 +1,4 @@
-**Proof.** The branching rule $H_3 \downarrow H_2$ follows from
+The branching rule $H_3 \downarrow H_2$ follows from
 the Pieri / Littlewood–Richardson rule for removing a box from the
 Young diagram.  For each partition $\lambda \vdash 3$:
 

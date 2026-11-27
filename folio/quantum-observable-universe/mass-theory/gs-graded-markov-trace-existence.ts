@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Existence of the graded Markov trace on the GS filtration (categorical existence)",
   lean: {
-    ref: "qou:QOU.IwahoriHecke.MarkovTrace.GradedMarkovTraceExistence",
+    ref: "qou:HeckeTemperleyLieb.IwahoriHecke.MarkovTrace.GradedMarkovTraceExistence",
     validation: "not_checked",
   },
   uses: [

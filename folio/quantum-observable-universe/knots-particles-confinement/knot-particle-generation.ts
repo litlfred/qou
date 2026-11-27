@@ -17,7 +17,7 @@ export default definition({
     "skein",
     "exceptional-divisor",
   ],
-  lean: { ref: "qou:QOU.Torsion.KnotParticleGeneration",
+  lean: { ref: "qou:QOU.LiftingDescent.KnotParticleGeneration",
     validation: "not_checked",
   },
   uses: [

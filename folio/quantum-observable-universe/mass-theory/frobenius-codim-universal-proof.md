@@ -1,4 +1,3 @@
-**Proof.**
 *Since $p_\lambda$ is central and primitive in $Z(A)$, and each
 $p_\lambda$ is $\tau$-dual to itself up to the scalar
 $\tau(p_\lambda)$, linearity of $\tau$ gives*
@@ -15,7 +14,7 @@ $$
 *$\square$*
 
 **$C_{\dim_q}$ is not forced by its trace.**
-*An earlier version claimed that $C_{\dim_q}$ is the unique central element with trace $\sum_\lambda 1/\dim_q(\lambda)$. That is false whenever $A$ has at least two blocks: $\tau$ is one linear functional on $Z(A)$, which has dimension $|\widehat{A}| = p(n) \geq 2$ for $n \geq 2$, so every $z = \sum_\lambda c_\lambda p_\lambda$ with $\sum_\lambda c_\lambda\,\tau(p_\lambda) = \sum_\lambda 1/\dim_q(\lambda)$ has the same trace. The coefficients $c_\lambda = 1/(\dim_q(\lambda)\,\tau(p_\lambda))$ are a choice, not a consequence.*
+*The element $C_{\dim_q}$ is not the unique central element with trace $\sum_\lambda 1/\dim_q(\lambda)$ whenever $A$ has at least two blocks: $\tau$ is a single linear functional on $Z(A)$, which has dimension $|\widehat{A}| = p(n) \geq 2$ for $n \geq 2$, so every $z = \sum_\lambda c_\lambda p_\lambda$ with $\sum_\lambda c_\lambda\,\tau(p_\lambda) = \sum_\lambda 1/\dim_q(\lambda)$ has the same trace. The coefficients $c_\lambda = 1/(\dim_q(\lambda)\,\tau(p_\lambda))$ are a block-by-block definition, not forced by the trace.*
 
 *$C_{\dim_q}$ is categorical in three distinct senses:*
 
@@ -108,7 +107,7 @@ $$
 *Middle levels carry all the $q$-dependence.  For $n = 3$ only
 one middle level exists (level $1$, $\lambda = (2,1)$), giving
 $\tau(C_{\dim_q}) = 2 + 1/[2]_q$ when every block is included.
-Under convention D the block $(1^n)$ has $\tau(p_{(1^n)}) = 0$ for $n \geq 3$
+At the Markov parameter $z = q^3/(q^2+1)$, the block $(1^n)$ has $\tau(p_{(1^n)}) = 0$ for $n \geq 3$
 and must be dropped, so the bound $\geq 2$ does not hold there; at $n = 3$
 the sum over $\widehat{A}^{\circ} = \{(3), (2,1)\}$ is $1 + 1/[2]_q$.*
 
@@ -122,7 +121,7 @@ $\sigma_w$ representing $\varrho$.  This is both a **feature** and a
 * *Feature (universality):* *Every vortex on $H_3(R, q)$ —
   proton $(uud)$, neutron $(udd)$, any nucleon-like trefoil —
   inherits the same additive offset, $(2 + 1/[2]_q) \cdot m_e$ with
-  every block included (not available under convention D, see above).  Mass differences between nucleons come entirely
+  every block included (not available at $z = q^3/(q^2+1)$, see above).  Mass differences between nucleons come entirely
   from the descended $|\mathrm{tr}_M|$ and brane-tower pieces,
   not from the Frobenius correction.*
 * *Limitation (vortex-blind):* *The Frobenius correction cannot
@@ -157,7 +156,7 @@ three tiers:*
 2. *In the "single-vortex" case $A = H_3(R, q)$, three blocks
    $\{(3), (2,1), (1,1,1)\}$ with $q$-dims $\{1, [2]_q, 1\}$
    give $\tau(C_{\dim_q}) = 2 + 1/[2]_q$ when all three blocks are
-   included. Under convention D, $\tau(p_{(1,1,1)}) = 0$, so the
+   included. At $z = q^3/(q^2+1)$, $\tau(p_{(1,1,1)}) = 0$, so the
    $(1,1,1)$ term is undefined and the sum over the surviving blocks
    is $1 + 1/[2]_q$.*
 3. *The self-duality $\lambda \leftrightarrow \lambda'$ is the

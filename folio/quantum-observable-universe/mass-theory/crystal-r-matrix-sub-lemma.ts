@@ -31,7 +31,7 @@ export default proposition({
     "kashiwara1991",
   ],
   lean: {
-    ref: "qou:QOU.BraidKnot.CrystalRMatrix.seminormalDiag_of_le_neg_one",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.CrystalRMatrix.seminormalDiag_of_le_neg_one",
   },
   computation: {
     engine: "python",
@@ -49,5 +49,13 @@ export default proposition({
     "pole-order",
     "axial-distance",
     "hecke-branching",
+  ],
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`): `2026-09-04-conjecture-carriers-round-two.lean` (`C1`) inhabits the sibling `CrystalGraphRealization` copy on `PUnit`.",
+      see: "docs/audits/2026-09-04-conjecture-carriers-round-two.lean",
+    },
   ],
 });

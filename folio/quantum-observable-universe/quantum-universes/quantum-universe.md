@@ -1,4 +1,3 @@
-**Definition.**
 A **quantum universe** is a tuple $(\mathbf{C}, A, \tau)$ consisting of:
 1. an $R$-linear braided [monoidal category](#def:rigid-monoidal-category) $\mathbf{C}$ over a commutative ring $R$, whose unit endomorphisms recover the ground ring: $R \xrightarrow{\ \sim\ } \mathrm{End}_{\mathbf{C}}(\mathbf{1})$, $r \mapsto r \cdot \mathrm{id}_{\mathbf{1}}$,
 2. a distinguished object $A \in \mathrm{Ob}(\mathbf{C})$ equipped with a Frobenius–Hopf algebra structure, spelled out in axiom 2,
@@ -7,7 +6,7 @@ A **quantum universe** is a tuple $(\mathbf{C}, A, \tau)$ consisting of:
 satisfying the following four axioms:
 1. **(Temporal braiding)** The ordering $\prec_c$ induced by the braiding $c_{V,W} \colon V \otimes W \xrightarrow{\sim} W \otimes V$ on the basis of $A$ indexed by braid words is well-founded.
 2. **(Frobenius--Hopf)** $A$ carries compatible associative multiplication $\mu$, co-multiplication $\Delta$, unit $\eta$, co-unit $\varepsilon$, and antipode $S$. The space $A$ acts on every $V \in \mathbf{C}$ via a categorical representation $\rho_V \colon A \otimes V \to V$.
-3. **(Symmetric Frobenius)** The left and right categorical traces on $\mathrm{End}(A)$ coincide. These traces are defined by the self-duality of $A$, which the snake identities for the pairing $\int_A \circ\, \mu$ supply in axiom 2.
+3. **(Symmetric Frobenius)** The left and right categorical traces on $\mathrm{End}(A)$ coincide. These traces are defined by the self-duality of $A$, which the snake identities for the pairing $\int_A \circ\, \mu$ supply in axiom 2. (This equality specifies the untwisted $\nu = \mathrm{id}_A$ specialization, realized on $\mathcal{O}(G)$ at the symmetric point and on weight-centralizer endomorphism algebras; when the Haar state on a quantised coordinate ring carries a non-trivial modular Nakayama automorphism $\nu$, one has $\mathrm{tr}_L(f) = \mathrm{tr}_R(f \circ \nu)$ on $\mathrm{End}(A)$, while categorical traces on representations remain untwisted via the balancing twist.)
 4. **(Wedderburn semisimplicity)** $A$ is semisimple, with a finite index set $\widehat{A}$ of blocks. Each block $\lambda \in \widehat{A}$ carries a central idempotent $p_\lambda$, and these
 
 ```tex

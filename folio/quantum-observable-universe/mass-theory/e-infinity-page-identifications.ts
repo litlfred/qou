@@ -5,7 +5,7 @@ export default proposition({
   title:
     "$E_\\infty$-page identifications with the six mass-formula terms",
   lean: {
-    ref: "qou:QOU.BraidKnot.e_infinity_identifications",
+    ref: "qou:QOU.BraidsAndKnots.e_infinity_identifications",
     validation: "not_checked",
   },
   uses: [
@@ -28,6 +28,12 @@ export default proposition({
     requires: ["mpmath", "numpy", "scipy"],
   },
   authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-hand-adjudicated.lean` inhabits `EInfinityIdentificationsContext` at `n_pages = 0`, `n_branes = 0`, and `m_total = 0`.",
+      see: "docs/audits/2026-08-30-context-classes-hand-adjudicated.lean",
+    },
     {
       kind: "note",
       date: "2026-08-08",

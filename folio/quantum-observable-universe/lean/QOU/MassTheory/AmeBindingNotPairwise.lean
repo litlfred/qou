@@ -1,5 +1,5 @@
 import Mathlib.Tactic
-import QOU.Mass.PairwiseCumulantVanishing
+import MathlibExt.PairwiseCumulantVanishing
 
 /-!
 # The AME binding is not pairwise-additive — the instantiation, discharged

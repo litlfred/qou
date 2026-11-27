@@ -18,6 +18,13 @@ export default proposition({
   proofs: ["prf:transfer-matrix-level-independence"],
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`): `2026-08-24-undecided-carrier-witnesses.lean` inhabits the local `CrystalGraphRealization` `Prop` carrier via `fun _ => 0`.",
+      see: "docs/audits/2026-08-24-undecided-carrier-witnesses.lean",
+    },
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): ([isotopy equivalence](#def:bundle-isotopy-equivalence))" },
+    {
       kind: "status",
       date: "2026-09-06",
       body:

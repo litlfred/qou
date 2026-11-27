@@ -59,3 +59,27 @@ describe("open-conjecture brief-status exception", () => {
     expect(crit(long, { kind: "conjecture" })).toContain("commentary-open-status");
   });
 });
+
+describe("fenced front-matter meta chapters", () => {
+  const { mkdtempSync, mkdirSync, rmSync, writeFileSync } = require("node:fs");
+  const { join } = require("node:path");
+  const { FENCED_CHAPTERS, walk } = require("./paper-commentary-audit");
+  it("exempts authors-note from directory and file walks", () => {
+    expect(FENCED_CHAPTERS.has("authors-note")).toBe(true);
+    const tmp = mkdtempSync(join(process.cwd(), "folio/.tmp-commentary-test-"));
+    try {
+      mkdirSync(join(tmp, "authors-note"), { recursive: true });
+      mkdirSync(join(tmp, "ch1"), { recursive: true });
+      writeFileSync(join(tmp, "authors-note/note.md"), "See `computations/foo.py`.\n");
+      writeFileSync(join(tmp, "ch1/block.md"), "Clean mathematical statement.\n");
+      const out: string[] = [];
+      walk(tmp, out);
+      expect(out).toEqual([join(tmp, "ch1/block.md")]);
+      const directOut: string[] = [];
+      walk(join(tmp, "authors-note/note.md"), directOut);
+      expect(directOut).toEqual([]);
+    } finally {
+      rmSync(tmp, { recursive: true, force: true });
+    }
+  });
+});

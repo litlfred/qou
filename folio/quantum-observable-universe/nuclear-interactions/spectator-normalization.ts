@@ -13,7 +13,7 @@ export default definition({
     "fermionic",
     "factorization",
   ],
-  lean: { ref: "qou:QOU.ParticleInteractions.SpectatorNormalization",
+  lean: { ref: "qou:QOU.Confinement.SpectatorNormalization",
     validation: "not_checked",
   },
   uses: [

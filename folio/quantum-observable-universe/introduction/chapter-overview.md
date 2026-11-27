@@ -11,7 +11,7 @@ comprising a rigid monoidal category $\mathbf{C}$, a Frobenius–Hopf object $A$
 $$
   (\mathbf{C}, \varTheta, G, \mathcal{S}).
 $$
-In this language, a Lagrangian forms a categorical trace. Every action equals the trace of a single *Lagrangian endomorphism* $\Phi$ dictating the dynamics:
+In this language, a Lagrangian forms a categorical trace. Every [categorical action](#def:categorical-action) equals the trace of a single *Lagrangian endomorphism* $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$ dictating the dynamics:
 $$
   \mathfrak{S} = \mathrm{tr}(\Phi).
 $$
@@ -19,7 +19,11 @@ The dynamics enters through the categorical **Dirac operator**, blending the con
 $$
   \mathcal{D}_\nabla = q^{-1}\nabla + (1 - q^{-1})\,\iota_\xi\nabla.
 $$
-This reduces to the standard covariant derivative at $q = 1$. Its square decomposes—forced by the Frobenius–Hopf structure—into two curvature terms: spatial curvature (Ricci) and internal gauge curvature (Yang–Mills). Coupling a matter state $\psi$ introduces the third. The categorical action $\mathfrak{S}_q = \mathrm{tr}(\Phi)$ sums these three components:
+This reduces to the standard covariant derivative at $q = 1$. Coupling the Dirac operator to a state $\psi \colon \mathbf{1} \to A$ gives the Lagrangian endomorphism of a QOU, the **[categorical Lagrangian](#def:categorical-lagrangian)**
+$$
+  \mathcal{L}_q(\nabla, \psi) = \mathcal{D}_\nabla^{2} + \psi^{\ast} \otimes \mathcal{D}_\nabla\psi \in \mathrm{End}_{\mathbf{C}}(A),
+$$
+where $\psi^{\ast} = \int_A \circ S(\psi)$ is the adjoint section. It exists and is unique once $\nabla$, $\psi$, $q$ and $\xi$ are chosen. Its first summand is bosonic: the square $\mathcal{D}_\nabla^{2}$ decomposes—forced by the Frobenius–Hopf structure—into two curvature terms, spatial curvature (Ricci) and internal gauge curvature (Yang–Mills). Its second summand, the coupling of the matter state $\psi$, supplies the third. The categorical action $\mathfrak{S}_q = \mathrm{tr}(\mathcal{L}_q)$ sums these three components:
 $$
   \mathfrak{S}_q = \underbrace{\textstyle\int_A \mathrm{tr}_A\bigl(q \cdot R_{\int}\bigr)}_{\text{gravity}} + \underbrace{\textstyle\int_A \mathrm{tr}_A\bigl( F_\nabla \wedge_q \star_q F_\nabla \bigr)}_{\text{gauge}} + \underbrace{\textstyle\int_A \mathrm{tr}_A\bigl(\psi^{\ast} \otimes \mathcal{D}_\nabla\psi\bigr)}_{\text{matter}}.
 $$
@@ -34,11 +38,13 @@ Here $R_{\int}$ denotes the **Frobenius–Ricci endomorphism**, $F_\nabla$ denot
 $$
   E_\times = q + q^{-1} = [2]_q.
 $$
-Specific knots map to particle identities: the unknot $0_1$ acts as the neutrino, the trefoil $3_1$ acts as the electron, and higher torus knots act as the muon and tau. The photon is a four-term Hecke element $\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1^{-1}$. Two-photon products generate the massive spectrum. The figure-eight knot volume enters the muon-to-electron mass ratio through
+Specific braids and link closures map to particle identities: the unknot $0_1$ models the neutrino, the three-strand braid $\sigma_0\sigma_1\sigma_0 \in B_3$ closing to the positive Hopf link $T(2,2)$ models the electron (with the two-strand left trefoil $T_{2,3} = 3_1$ retained as the single-component alternative model), and higher $(2,n)$ torus knots model the heavier leptons. The photon is a four-term Hecke element $\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1^{-1}$. Two-photon products generate the massive spectrum. In the topological volume model, the figure-eight knot volume enters the muon-to-electron mass ratio through
+
 $$
-  \frac{m_\mu}{m_e} = \frac{\mathrm{Vol}(4_1)}{\hbar_q^{2}}, \qquad \hbar_q = 1 - q^{-1}.
+  \frac{\mathfrak{m}_\mu}{m_e} = \frac{\mathrm{Vol}(4_1)}{\hbar_q^{2}}, \qquad \hbar_q = 1 - q^{-1}.
 $$
-The relation is used in reverse: it is inverted for $q_0$, so it is the CAL-2 calibration rather than a prediction of the ratio.
+
+Because the three admissible calibrations fix the mass scale ($m_e$), the weak-sector substrate modulus ($q_0 \approx 1.10998$, pinned numerically on the most precisely measured ratio $m_{\mathfrak{p}}/m_e$), and the orthogonal meson class ($m_\pi$), evaluating $\mathrm{Vol}(4_1)/\hbar_{q_0}^{2}$ against the measured $m_\mu/m_e$ is a model comparison rather than the anchor defining $q_0$.
 
 [*Bring's Surface*](#chap:brings-surface) develops the geometry of the genus-four curve $\Sigma_4$ with $\chi_{\mathrm{eu}} = -6$, first Betti number $b_1 = 8$, hyperbolic Gauss–Bonnet area $12\pi$ under its $(2,4,5)$ tiling, and maximal automorphism group $S_5$. Its colour tubes provide coordinates for spacetime and electromagnetic fields, while embeddable torus knots span the homology basis and saturate at genus four.
 
@@ -46,7 +52,7 @@ The relation is used in reverse: it is inverted for $q_0$, so it is the CAL-2 ca
 
 [*The Eightfold Way and Flavor Structure*](#chap:eightfold-way) examines how these braid configurations assemble into meson and baryon multiplets. It separates two distinct objects that share the root type $A_2$: the Coxeter quotient $W(A_2) \cong S_3$ of three-strand braiding $H_3(q)$, which holds unconditionally by construction, and the flavour Lie algebra $\mathfrak{sl}_3$, which enters through quantum Schur–Weyl duality only when the fibre dimension equals $N = 3$. The chapter derives the meson octet, the Borromean decuplet, the $U$-spin Coleman–Glashow and $\Lambda$–$\Sigma^0$ relations, and the octonionic stabilizer chain $G_2 = \mathrm{Aut}(\mathbb{O}) \supset \mathrm{SU}(3)_{\mathrm{c}}$ that splits $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$ into $1 \oplus 3 \oplus \bar{3}$.
 
-[*The Mass Endomorphism*](#chap:mass-endomorphism) extracts mass from the spectral data of a single categorical endomorphism $\mathcal{M}(K) \in \mathrm{End}_{\mathbf{C}}(X_K)$. Mass is a categorical invariant given by the Jones–Markov trace $\mathrm{tr}_M$ of the Hecke mass element $\Phi_{\mathrm{mass}}(\beta)$ under Convention D ($z_D = q^3/(q^2+1)$, where the three-row weight $y_{(1^3)}$ vanishes and is resolved by the Geer–Patureau-Mirand–Turaev modified trace), paired with the complex volume $\mathfrak{V}$ that separates binding energy ($\operatorname{Re}\mathfrak{V}$) from the $\beta$-decay $Q$-value ($\operatorname{Im}\mathfrak{V}$).
+[*The Mass Endomorphism*](#chap:mass-endomorphism) extracts mass from the spectral data of a single categorical endomorphism $\mathcal{M}(K) \in \mathrm{End}_{\mathbf{C}}(X_K)$. Mass is a categorical invariant given by the Jones–Markov trace $\mathrm{tr}_M$ of the Hecke mass element $\Phi_{\mathrm{mass}}(\beta)$ at the Markov parameter $z = q^3/(q^2+1)$ (where the three-row weight $y_{(1^3)}$ vanishes and is resolved by the Geer–Patureau-Mirand–Turaev modified trace), paired with the complex volume $\mathfrak{V}$ that separates binding energy ($\mathrm{Re}\,\mathfrak{V}$) from the $\beta$-decay $Q$-value ($\mathrm{Im}\,\mathfrak{V}$).
 
 [*$q$-Hyperbolic Geometry*](#chap:climax-volume-mass) connects the algebraic trace to hyperbolic complement geometry and $q$-deformed kinematics. It constructs the categorical Möbius self-avoidance energy, the crossing-energy decomposition and skein bar-antisymmetry, Lagrange resolvents and $q$-momentum, knot-operator energy, and the spectral filter governing admissible braidings. For a knot $K$ with complement volume $\mathrm{Vol}(K)$ and per-block density $\rho(K)$, the dimensionless mass ratio is the volume–density product:
 $$
@@ -78,7 +84,7 @@ The electron mass fixes the unit, so the formula is evaluated through dimensionl
 
 [*$q$-Geometric Langlands*](#chap:q-geometric-langlands) connects the framework to the geometric Langlands programme. The Hasse–Weil bound gives the Riemann hypothesis for the $q$-zeta function of Bring's curve.
 
-The [Glossary](#chap:glossary), [Knot-Periodic Table](#app:knot-periodic-table), and [Index of Definitions](#app:index-definitions) supply the formal reference data. This paper's hardest results meet at the obstruction class $\kappa_n \in H^2(S, B)$. The programme is to translate each $q$-deformed millennium problem—Navier–Stokes, Yang–Mills, P vs NP, Riemann, BSD—into the vanishing of a drift read off that class; the translations, not the vanishing calculation, carry the open content, and each is open separately. Sharing a class does not by itself make the verdicts agree: the evaluation maps land in different groups, and at $\chi_{\mathrm{eu}}(M_0) = -6$ two of them already disagree.
+The [Master Reference Atlas](#app:knot-periodic-table) and the [Notation, Glossary, and Index of Definitions](#chap:notation) supply the formal reference data. This paper's hardest results meet at the obstruction class $\kappa_n \in H^2(S, B)$. The programme is to translate each $q$-deformed millennium problem—Navier–Stokes, Yang–Mills, P vs NP, Riemann, BSD—into the vanishing of a drift read off that class; the translations, not the vanishing calculation, carry the open content, and each is open separately. Sharing a class does not by itself make the verdicts agree: the evaluation maps land in different groups, and at $\chi_{\mathrm{eu}}(M_0) = -6$ two of them already disagree.
 
 **Calibration.**
 The three calibration inputs and the standard against which every comparison is judged are stated in [Mathematics and measurement](#sec:introduction-mathematics-measurement) above; every other mass ratio, binding energy, and coupling is computed rather than fitted.

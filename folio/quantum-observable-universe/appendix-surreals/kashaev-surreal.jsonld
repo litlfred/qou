@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -13,7 +13,7 @@
   ],
   "label": "conj:kashaev-surreal",
   "kind": "conjecture",
-  "title": "Kashaev volume conjecture as a surreal standard-part identity",
+  "title": "Kashaev–Murakami–Murakami volume conjecture as a surreal standard-part identity",
   "uses": [
     "papers/quantum-observable-universe/blocks/rem-kashaev-volume-density",
     "papers/quantum-observable-universe/blocks/conj-kashaev-volume-conjecture",
@@ -28,7 +28,8 @@
     "references/ecalle1981",
     "references/garoufalidis-zagier-2024",
     "references/garoufalidis-gu-marino2021",
-    "references/fantini-rella2024"
+    "references/fantini-rella2024",
+    "references/crew2023"
   ],
   "tags": [
     "tier:famous",
@@ -42,7 +43,7 @@
     "omega-grade",
     "asymptotics"
   ],
-  "leanRef": "qou:QOU.AppendixSurreals.KashaevSurreal",
+  "leanRef": "qou:QOU.Observations.AppendixSurreals.KashaevSurreal",
   "text": "kashaev-surreal.md",
   "provenance": "authored"
 }

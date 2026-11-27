@@ -2,4 +2,4 @@ The **unit particle state** $\mathrm{Li}_q(z)$ is the fundamental generator of $
 $$
   d_q \mathrm{Li}_q(z) = \frac{1}{\log_q z} dz
 $$
-where $\log_q z = (z^{\hbar_q} - 1)/\hbar_q$. In the classical limit $q \to 1$, this recovers the classical dilogarithm $\mathrm{Li}_2(z)$.
+where $\log_q z = (z^{\hbar_q} - 1)/\hbar_q$.

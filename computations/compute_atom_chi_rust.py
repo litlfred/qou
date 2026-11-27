@@ -25,7 +25,14 @@ Ref: prop:plancherel-term-7-formulation
 """
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 🛑 THIS PRODUCER IS NOT REPRODUCIBLE FOR 3He. Measured 2026-09-05, bean
+# ✅ FIXED 2026-11-21 (bean qou-07ts): the kernel now runs at COMPUTE_DPS (70)
+# and prints at 50, so the last-place wobble below sits ~20 digits under the
+# output. Measured after the fix: D, T and 3He each give ONE output in 10
+# consecutive runs (T gave 2 in 10 before it; 3He was stable on that day).
+# The old 50-in/50-out strings were wrong in their last 1-2 digits (max rel
+# 4.4e-49 vs the guarded value). History of the defect follows.
+#
+# 🛑 (HISTORICAL) THIS PRODUCER WAS NOT REPRODUCIBLE FOR 3He. Measured 2026-09-05, bean
 # `qou-07ts`: eight consecutive runs, same container, same commit, nothing else
 # running, produced FOUR DISTINCT outputs. The differences are one unit in the
 # last place of the 50-dps `chi_lambda` strings, e.g. ...992028901 -> ...8900.
@@ -105,9 +112,19 @@ def compute_atom_chi(Z: int, N: int, *, include_inter: bool = True,
     if precision == "mpfr":
         import mpmath as mp
         from chi_cd_mpfr import chi_all_partitions_cd_mpfr
-        if mp.mp.dps < dps:
-            mp.mp.dps = dps
-        chi_map = chi_all_partitions_cd_mpfr(n_strands, word_triples, dps=dps)
+        # Guard digits (bean qou-07ts). The kernel used to run at exactly
+        # the `dps` digits it then printed, so a last-place rounding
+        # difference in the Rust MPFR accumulation surfaced as a ±1 ulp
+        # wobble in the 50th printed digit (3He 2026-09-05; T 2026-11-21,
+        # 2 outputs in 10 runs). Computing at COMPUTE_DPS (70, the value
+        # the witness's own precisionMetadata already declares) and
+        # printing at `dps` keeps that wobble ~20 digits below the output.
+        from _precision import COMPUTE_DPS
+        work_dps = max(dps + 20, COMPUTE_DPS)
+        if mp.mp.dps < work_dps:
+            mp.mp.dps = work_dps
+        chi_map = chi_all_partitions_cd_mpfr(n_strands, word_triples,
+                                             dps=work_dps)
         by_partition = [
             {
                 "partition": list(shape),
@@ -120,7 +137,7 @@ def compute_atom_chi(Z: int, N: int, *, include_inter: bool = True,
         ]
         engine = (
             f"chi_cd_mpfr → pyhecke_native.chi_lambda_all_partitions_mpfr "
-            f"(Rust + MPFR, {dps} dps) [canonical tier]"
+            f"(Rust + MPFR, {work_dps} dps, printed at {dps}) [canonical tier]"
         )
     elif precision == "f64":
         # PREVIEW TIER ONLY — not for canonical consumers.

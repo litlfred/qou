@@ -1,4 +1,4 @@
-**Conjecture (charge conjugation as the color-sheet flavor swap; conditional on [Inter-nucleon Hecke channel assignment from Bring color-tube weighting](#conj:inter-nucleon-channel-color-tube)).**
+**Conditional on [Inter-nucleon Hecke channel assignment from Bring color-tube weighting](#conj:inter-nucleon-channel-color-tube).**
 *Within the QOU framework, charge conjugation $C$ acts as the **flavor swap on color sheets** that exchanges each quark flavor with its antimatter-conjugate:*
 
 $$

@@ -1,5 +1,5 @@
-import QOU.Basic
-import QOU.QuantumObservableUniverse.Instanton
+import QOU.Core.Basic
+import QOU.Core.Instanton
 
 
 /-!

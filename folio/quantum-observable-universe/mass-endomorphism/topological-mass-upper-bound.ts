@@ -5,7 +5,7 @@ export default proposition({
   title: "Upper bound for the topological decomposition of mass",
   tags: ["mass", "topological-decomposition", "descent-involution", "upper-bound"],
   lean: {
-    ref: "qou:QOU.Torsion.mass_upper_bound_localised",
+    ref: "qou:QOU.LiftingDescent.Torsion.mass_upper_bound_localised",
     validation: "not_checked",
   },
   uses: [

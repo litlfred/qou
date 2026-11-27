@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Proton tower residual compared with $m_e\\sum_{\\lambda\\vdash3}1/\\dim_q\\lambda = m_e(2 + 1/[2]_q)$",
   lean: {
-    ref: "qou:QOU.BraidKnot.proton_tower_residual_frobenius",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.proton_tower_residual_frobenius",
     validation: "not_checked",
   },
   uses: ["prop:schur-weyl-mass-decomposition", "prop:h3-frobenius-casimir-markov-trace"],

@@ -81,7 +81,7 @@ export default proposition({
     status: "verified",
     requires: ["numpy", "scipy"],
   },
-  lean: { ref: "qou:QOU.BraidKnot.He4ChannelActiveSet.HasHe4ChannelActiveSet" },
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.He4ChannelActiveSet.HasHe4ChannelActiveSet" },
   tags: [
     "he4",
     "doubly-magic",

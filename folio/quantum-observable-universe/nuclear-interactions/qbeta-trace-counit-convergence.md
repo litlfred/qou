@@ -1,4 +1,3 @@
-**Conjecture (trace–counit convergence).**
 *The per-braid Markov-trace nucleon mass difference $\mathfrak{m}(n) - \mathfrak{m}(p) - m_e$, summed over the brane tower, equals the Frobenius-counit $Q$-value $\varepsilon(\Delta)\cdot\mathfrak{E}_0$:*
 $$
   \mathfrak{m}(n) - \mathfrak{m}(p) - m_e

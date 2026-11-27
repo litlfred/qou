@@ -1,7 +1,7 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Finset.Basic
 import Mathlib.Data.Set.Finite.Basic
-import QOU.Common.MagicNumbers
+import MathlibExt.MagicNumbers
 
 
 /-!

@@ -359,4 +359,133 @@ theorem chiPairProductC_delta_zero (H_A : ℝ) (w : ColourWord)
       (-(1 + H_A ^ 2 / 4)) ^ nPn w := by
   rw [chiPairProductC_eq, hpn]
 
+/-! ## Explicit 1D Hecke Characters `χ_sym`, `χ_alt` and Canonical `A`-Nucleon Colour Word -/
+
+/-- The 1D symmetric Hecke character `χ_sym(σ + d·1) = q + d` (`σ ↦ q`). -/
+def chiSym {R : Type*} [CommRing R] (q d : R) : R := q + d
+
+/-- The 1D alternating Hecke character `χ_alt(σ + d·1) = -q⁻¹ + d` (`σ ↦ -q⁻¹`). -/
+def chiAlt {R : Type*} [CommRing R] (qi d : R) : R := -qi + d
+
+/-- Over any commutative ring `R`, when `q * qi = 1`, the per-letter product of the
+1D Hecke characters `χ_sym(σ + d·1) · χ_alt(σ + d·1)` equals `d² - 1 + d · (q - qi)`. -/
+theorem chiSym_mul_chiAlt_eq {R : Type*} [CommRing R] (q qi d : R)
+    (hq : q * qi = 1) :
+    chiSym q d * chiAlt qi d = d ^ 2 - 1 + d * (q - qi) := by
+  unfold chiSym chiAlt
+  linear_combination -hq
+
+/-- Over `ℝ`, for any `q ≠ 0` with `H_A = q - q⁻¹`, `chiSym q d * chiAlt q⁻¹ d = perFactorOfD H_A d`. -/
+theorem chiSym_mul_chiAlt_eq_perFactorOfD (q d : ℝ) (hq : q ≠ 0) :
+    chiSym q d * chiAlt q⁻¹ d = perFactorOfD (q - q⁻¹) d := by
+  unfold perFactorOfD
+  exact chiSym_mul_chiAlt_eq q q⁻¹ d (mul_inv_cancel₀ hq)
+
+/-- **Canonical `A`-nucleon colour-weighted word (`A = Z + N`):**
+- `2 * (Z + N)` intra-nucleon `udHalf` letters (`d = -H_A / 2`), two per nucleon,
+- `Z - 1` proton-proton interface `sigma` letters (`d = 0`),
+- `N - 1` neutron-neutron interface `sigmaInv` letters (`d = -H_A`),
+- `1` proton-neutron colour-weighted interface letter `.pnColour dPn`. -/
+def canonicalAtomicColourWord (Z N : ℕ) (dPn : ℝ) : ColourWord :=
+  List.replicate (2 * (Z + N)) (.plain .udHalf, 0) ++
+  List.replicate (Z - 1) (.plain .sigma, 0) ++
+  List.replicate (N - 1) (.plain .sigmaInv, 0) ++
+  [(.pnColour dPn, 0)]
+
+@[simp] theorem nUdC_append (w₁ w₂ : ColourWord) :
+    nUdC (w₁ ++ w₂) = nUdC w₁ + nUdC w₂ := by
+  induction w₁ with
+  | nil => simp [nUdC]
+  | cons hd tl ih =>
+    rcases hd with ⟨cf, g⟩
+    rcases cf with (_ | _ | _) | d <;> simp [nUdC, ih, Nat.add_assoc]
+
+@[simp] theorem nPn_append (w₁ w₂ : ColourWord) :
+    nPn (w₁ ++ w₂) = nPn w₁ + nPn w₂ := by
+  induction w₁ with
+  | nil => simp [nPn]
+  | cons hd tl ih =>
+    rcases hd with ⟨cf, g⟩
+    rcases cf with (_ | _ | _) | d <;> simp [nPn, ih, Nat.add_assoc]
+
+@[simp] theorem nBlind_append (w₁ w₂ : ColourWord) :
+    nBlind (w₁ ++ w₂) = nBlind w₁ + nBlind w₂ := by
+  induction w₁ with
+  | nil => simp [nBlind]
+  | cons hd tl ih =>
+    rcases hd with ⟨cf, g⟩
+    rcases cf with (_ | _ | _) | d <;> simp [nBlind, ih, Nat.add_assoc]
+
+@[simp] theorem pnProduct_append (H_A : ℝ) (w₁ w₂ : ColourWord) :
+    pnProduct H_A (w₁ ++ w₂) = pnProduct H_A w₁ * pnProduct H_A w₂ := by
+  induction w₁ with
+  | nil => simp [pnProduct]
+  | cons hd tl ih =>
+    rcases hd with ⟨cf, g⟩
+    rcases cf with (_ | _ | _) | d <;> simp [pnProduct, ih, mul_assoc]
+
+@[simp] theorem nUdC_replicate_udHalf (k : ℕ) :
+    nUdC (List.replicate k (.plain .udHalf, 0)) = k := by
+  induction k with
+  | zero => rfl
+  | succ k ih => simp [List.replicate_succ, nUdC, ih, Nat.add_comm]
+
+@[simp] theorem nUdC_replicate_sigma (k : ℕ) :
+    nUdC (List.replicate k (.plain .sigma, 0)) = 0 := by
+  induction k with
+  | zero => rfl
+  | succ k ih => simp [List.replicate_succ, nUdC, ih]
+
+@[simp] theorem nUdC_replicate_sigmaInv (k : ℕ) :
+    nUdC (List.replicate k (.plain .sigmaInv, 0)) = 0 := by
+  induction k with
+  | zero => rfl
+  | succ k ih => simp [List.replicate_succ, nUdC, ih]
+
+@[simp] theorem nPn_replicate_plain (ft : FactorType) (k : ℕ) :
+    nPn (List.replicate k (.plain ft, 0)) = 0 := by
+  induction k with
+  | zero => rfl
+  | succ k ih => cases ft <;> simp [List.replicate_succ, nPn, ih]
+
+@[simp] theorem pnProduct_replicate_plain (H_A : ℝ) (ft : FactorType) (k : ℕ) :
+    pnProduct H_A (List.replicate k (.plain ft, 0)) = 1 := by
+  induction k with
+  | zero => rfl
+  | succ k ih => cases ft <;> simp [List.replicate_succ, pnProduct, ih]
+
+/-- On `canonicalAtomicColourWord Z N dPn`, the count of `udHalf` letters is
+`2 * (Z + N)` (`= 2A`), the count of colour-weighted `p-n` interface letters is `1`,
+and the total count of averaged letters is `nUdC + nPn = 2 * (Z + N) + 1` (`= 2A + 1`). -/
+theorem canonicalAtomicColourWord_counts (Z N : ℕ) (dPn : ℝ) :
+    nUdC (canonicalAtomicColourWord Z N dPn) = 2 * (Z + N) ∧
+    nPn (canonicalAtomicColourWord Z N dPn) = 1 ∧
+    nUdC (canonicalAtomicColourWord Z N dPn) +
+      nPn (canonicalAtomicColourWord Z N dPn) = 2 * (Z + N) + 1 ∧
+    ∀ H_A : ℝ, pnProduct H_A (canonicalAtomicColourWord Z N dPn) = perFactorOfD H_A dPn := by
+  unfold canonicalAtomicColourWord
+  refine ⟨by simp [nUdC], by simp [nPn], by simp [nUdC, nPn], ?_⟩
+  intro H_A
+  simp [pnProduct]
+
+/-- **Specialisation of the closed form to the canonical `A`-nucleon word** (`A = Z + N`):
+`χ_sym(β) · χ_alt(β) = (-1)^{#blind} · (1 + H_A²/4)^{2(Z+N)} · f(dPn)`,
+and at the colour-blind point `dPn = -H_A / 2` (`δ = 0`), it collapses to
+`(-1)^{#blind + 1} · (1 + H_A²/4)^{2(Z+N)+1}` with exponent `2A + 1`. -/
+theorem canonicalAtomicColourWord_closed_form (Z N : ℕ) (H_A dPn : ℝ) :
+    chiPairProductC H_A (canonicalAtomicColourWord Z N dPn) =
+      (-1 : ℝ) ^ nBlind (canonicalAtomicColourWord Z N dPn) *
+        (1 + H_A ^ 2 / 4) ^ (2 * (Z + N)) * perFactorOfD H_A dPn ∧
+    chiPairProductC H_A (canonicalAtomicColourWord Z N (-H_A / 2)) =
+      (-1 : ℝ) ^ (nBlind (canonicalAtomicColourWord Z N (-H_A / 2)) + 1) *
+        (1 + H_A ^ 2 / 4) ^ (2 * (Z + N) + 1) := by
+  obtain ⟨hud, _, _, hpn⟩ := canonicalAtomicColourWord_counts Z N dPn
+  obtain ⟨hud0, _, _, hpn0⟩ := canonicalAtomicColourWord_counts Z N (-H_A / 2)
+  refine ⟨?_, ?_⟩
+  · rw [chiPairProductC_eq, hud, hpn H_A]
+  · rw [chiPairProductC_eq, hud0, hpn0 H_A]
+    unfold perFactorOfD
+    rw [pow_succ, pow_succ]
+    ring
+
 end QOU.ChiSymAlt

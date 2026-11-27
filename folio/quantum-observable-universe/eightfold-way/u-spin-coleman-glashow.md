@@ -65,12 +65,18 @@ therefore be no evidence for this framework, or for any other.**
 
 ## What remains testable
 
-The residual, as with the other two.  At $\approx 0.8\%$ it is the *tightest*
-of the three --- against $\approx 6\%$ for Gell-Mann--Okubo on the pseudoscalar
-octet and $\approx 9.2\%$ for the decuplet spacings --- which makes it the most
-demanding second-order target and the least likely to be reached first.  The
-framework derives no second-order term and so predicts $0$.
+On the microscopic connected Borromean $V^3$ pairwise charge trace at
+strand charges $u = +\tfrac{2}{3}$ and $d = s = -\tfrac{1}{3}$, all three
+doublet splittings $\mathfrak{p} - \mathfrak{n}$, $\Sigma^+ - \Sigma^-$,
+and $\Xi^0 - \Xi^-$ evaluate to distinct non-zero rational functions of
+$q$ while their alternating Coleman--Glashow sum vanishes identically,
+illustrating the identity directly on the baryon braid word without free
+parameters.
 
-Nothing here is fitted, and nothing is wired to any computation.  V-spin
-($u \leftrightarrow s$) yields no independent relation for the octet and is not
-treated separately.
+What remains testable is the residual, as with the other two.  At
+$\approx 0.8\%$ it is the *tightest* of the three --- against $\approx
+6.4\%$ for Gell-Mann--Okubo on the pseudoscalar octet and $\approx 9.2\%$
+for the decuplet spacings --- which makes it the most demanding
+second-order target and the least likely to be reached first.  V-spin
+($u \leftrightarrow s$) yields no independent relation for the octet and
+is not treated separately.

@@ -1,6 +1,6 @@
-import QOU.MathlibExt.OctonionComplexStructure
-import QOU.MathlibExt.OctonionDerivationProperties
-import QOU.MathlibExt.OctonionColourActionBaseModule
+import QOU.Core.OctonionComplexStructure
+import BraidKnotOctonion.OctonionDerivationProperties
+import QOU.Core.OctonionColourActionBaseModule
 
 /-!
 # QOU.StandardModel.OctonionColourTripletSplitting — `Le`-Stable `1 ⊕ 3` Splitting `ℂ ⊕ ℂ³`

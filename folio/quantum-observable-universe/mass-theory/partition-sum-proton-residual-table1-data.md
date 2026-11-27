@@ -1,4 +1,4 @@
-*The last column compares each value with the archived residual $+1.278$ MeV (Table 4). The live convention-D residual is $-12\,m_e \approx -6.132$ MeV, which neither form approaches.*
+*The last column compares each value with the archived residual $+1.278$ MeV (Table 4). The residual of the $z = q^3/(q^2+1)$ Borromean tower is $-12\,m_e \approx -6.132$ MeV, which neither form approaches.*
 
 | form | expression | value (MeV) | vs archived $\Delta m_{\mathfrak{p}}$ |
 |---|---|---|---|

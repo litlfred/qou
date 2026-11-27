@@ -1,5 +1,3 @@
-**Proposition (palindromy and bar-even rigidity of the content generating function).**
-
 *For $n \geq 1$ let $f^\lambda$ be the number of standard Young tableaux of shape
 $\lambda \vdash n$ and $\mathrm{content}(\lambda) = \sum_{(i,j)\in\lambda}(j-i)$ the
 content sum, and set*

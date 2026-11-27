@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-lean-lib-q-calculus",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:lean-lib-q-calculus",
+  "kind": "remark",
+  "title": "Community Library 5 (QCalculus): Thomae--Jackson $q$-integrals, $q$-Pochhammer products, and Habiro expansions",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/tbl-lean-community-libraries-dag"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/tbl-lean-community-libraries-dag",
+  "cites": [
+    "references/gasper-rahman-2004",
+    "references/andrews1976",
+    "references/habiro2004cyclotomic"
+  ],
+  "tags": [
+    "lean-infrastructure",
+    "reservoir",
+    "q-calculus",
+    "habiro-ring",
+    "appendix"
+  ],
+  "text": "lean-lib-q-calculus.md",
+  "provenance": "authored"
+}

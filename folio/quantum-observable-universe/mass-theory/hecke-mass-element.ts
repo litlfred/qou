@@ -10,7 +10,7 @@ export default definition({
     "fibre-functor",
     "schur-weyl",
   ],
-  lean: { ref: "qou:QOU.Torsion.HeckeMassElement",
+  lean: { ref: "qou:HeckeTemperleyLieb.HeckeMassElement.HeckeMassElement",
     validation: "not_checked",
   },
   uses: [

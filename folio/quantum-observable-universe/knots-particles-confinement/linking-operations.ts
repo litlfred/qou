@@ -14,7 +14,7 @@ export default definition({
     "color-tube",
     "exceptional-divisor",
   ],
-  lean: { ref: "qou:QOU.Torsion.LinkingOperation",
+  lean: { ref: "qou:QOU.LiftingDescent.Torsion.LinkingOperation",
     validation: "not_checked",
   },
   uses: ["def:knot-particle-generation"],

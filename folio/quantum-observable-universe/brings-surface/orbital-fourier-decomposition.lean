@@ -1,7 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Tactic
-import QOU.MathlibExt.QIntegerCanonical
+import HeckeTemperleyLieb.QIntegerCanonical
 
 -- Ref: [leitner2026] Ch. 2
 -- Quantum numbers from Fourier decomposition of normal-bundle sections.

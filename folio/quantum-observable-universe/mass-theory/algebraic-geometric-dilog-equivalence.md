@@ -2,9 +2,9 @@
 > below is the structurally-wrong leading-order ansatz; the operator-valued
 > form supersedes it ([`mass-endomorphism-tower`](mass-endomorphism-tower.md));
 > the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
-> graded expansion [graded expansion of $\rho_K$](../mass-endomorphism/rho-k-graded-expansion.md).
+> graded expansion [graded expansion of $\rho_K$](rho-k-graded-expansion.md).
 
-**Conjecture (Algebraic-geometric dilogarithm equivalence).**
+**Conjecture (Algebraic-geometric dilogarithm equivalence) (conditional on [shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)).**
 *The categorical Markov trace of the nonabelian multiplicative integral
 over a lifted transient crossing
 ([mass identity](#def:mass-identity))
@@ -60,7 +60,7 @@ $$
 
 **Note — what $n$ is, and it is not pinned.** Clause (1) counts $n$ ideal
 tetrahedra because that is what the carrier of the bijection
-([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy),
+(the conjecture named in the opening banner,
 table row 4) and the cusp-seeding computation both count: it takes
 $n$ to be the number of tetrahedra and emits one algebraic seed per tetrahedron, eight
 for the eight-tetrahedron $\mathtt{L6a4}$. But the same symbol is the Hecke
@@ -80,7 +80,7 @@ is not established here.
 
 The conjecture is the **QOU-native, partial-product** form of the
 Kashaev–Murakami–Murakami theorem
-([Kashaev volume conjecture](#conj:kashaev-volume-conjecture)).
+([Kashaev–Murakami–Murakami volume conjecture](#conj:kashaev-volume-conjecture)).
 Kashaev–MM pass through the colored Jones polynomial at roots of
 unity; the present conjecture passes through the **explicit shared
 denominator**:
@@ -92,7 +92,7 @@ denominator**:
 | Geometric ($\mathbf{Hyp}_3$) | ideal tetrahedron $\Delta_{z_k}$ | complete cusp of $\Delta_{z_k}$ |
 
 The bijection between the rows is the content of
-([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)).
+the conjecture named in the opening banner.
 Under that bijection, the algebraic state sum and the hyperbolic
 volume are the same regulator
 $\Phi_n(x; q_0) \mapsto D(z(x))$ evaluated through two convergence
@@ -101,7 +101,7 @@ schemes.
 ## Conjectural standing
 
 This result is downstream of
-([Kashaev volume conjecture](#conj:kashaev-volume-conjecture)) and
+([Kashaev–Murakami–Murakami volume conjecture](#conj:kashaev-volume-conjecture)) and
 ([Archimedean limit](#conj:dilogarithm-archimedean-limit)), so it is
 necessarily a **conjecture** — propagation of conjectural backing
 forbids promotion to `proposition`/`theorem`.
@@ -110,7 +110,7 @@ The conjecture is stated conditionally on its open inputs — the matched shape
 parameter $z(x)$, the volume-conjecture saddle asymptotic (a theorem for $4_1$
 by Ohtsuki / Andersen–Hansen), and the matched-cusp volume identification
 supplied by
-([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)).
+the conjecture named in the opening banner.
 From these inputs both halves are *derived*: item 1 (pole side)
 unconditionally (each $x = q^{-k}$ is a genuine root of $(x;q)_n$), and item 2
 (Bloch–Wigner asymptotic) from the open inputs. None of the open inputs is

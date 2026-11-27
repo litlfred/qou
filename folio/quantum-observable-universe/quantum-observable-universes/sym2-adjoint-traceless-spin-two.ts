@@ -14,7 +14,7 @@ export default proposition({
   title:
     "The traceless part of $\\mathrm{Sym}^2(V_1)$ is the spin-$2$ object $V_2$",
   lean: {
-    ref: "qou:QOU.Eightfold.Sym2AdjointSpinTwo.adjoint_sym2_traceless_is_spin_two",
+    ref: "qou:QOU.EightfoldWay.Sym2AdjointSpinTwo.adjoint_sym2_traceless_is_spin_two",
   },
   uses: [
     "thm:su2-emergence",

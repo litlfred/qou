@@ -4,7 +4,6 @@ The surreal-field axiom system used in this corpus asks for more than an ordered
 
 Those six do not pin down the intended object.
 
-**Theorem.**
 *Let $\beta(x) = 0$ if $x = 0$ and $\beta(x) = 1$ otherwise, on the hyperreals $\mathbb{R}^*$. Then $\beta$ satisfies*
 
 $$

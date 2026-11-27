@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-closure-unseen-subword",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:closure-unseen-subword",
+  "kind": "proposition",
+  "title": "No closure distinguishes two elements exactly when they differ by a commutator; closure is a Bell pairing",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hochschild-homology",
+    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace"
+  ],
+  "cites": [
+    "references/loday-1998",
+    "references/kassel1995"
+  ],
+  "tags": [
+    "braid-closure",
+    "trace",
+    "hochschild-homology",
+    "commutator",
+    "coevaluation",
+    "entanglement",
+    "categorical-derivation"
+  ],
+  "leanRef": "qou:BraidKnotOctonion.ClosureUnseen.unseen_iff",
+  "text": "closure-unseen-subword.md",
+  "provenance": "authored"
+}

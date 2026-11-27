@@ -2,10 +2,10 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:color-elliptic",
-  lean: { ref: "qou:QOU.Brings.color_elliptic",
+  lean: { ref: "qou:BraidKnotOctonion.color_elliptic",
     validation: "not_checked",
   },
-  title: "Color fibre as an elliptic curve",
+  title: "Color cubic and its elliptic curves",
   uses: ["rem:braid-group-action", "rem:holonomy-trefoil"],
   proofs: ["prf:color-elliptic"],
   rendered: [

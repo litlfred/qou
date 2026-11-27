@@ -57,4 +57,4 @@ cell-to-knot assignment there is chosen, not derived), so it does not
 - Chirality structure: [Chirality structure on Goncharov period classes via the bar involution](#rem:chirality-period-pairing)
 - Hecke-Baer-* and bar action on $e_\lambda$:
  [Iwahori--Hecke algebra $H_n(q)$ is a Baer-*-ring at generic $q$](#prop:hecke-baer-star-generic),
- [Explicit central primitive idempotents $e_\lambda$ via Murphy elements](#prop:explicit-central-idempotent)
+ [Explicit central primitive idempotents $e_\lambda$ via Jucys–Murphy elements](#prop:explicit-central-idempotent)

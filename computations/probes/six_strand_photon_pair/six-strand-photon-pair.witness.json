@@ -1,0 +1,909 @@
+{
+  "engine": "fractions+sympy+mpmath",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T08:43:09.060253+00:00",
+  "commitSha": "c5351ea8e98e2b280e2074777c3689e9220d028c",
+  "assertions": [
+    {
+      "name": "P1_parity",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "n + #components even for every word (Lean gammaGamma_components_parity)."
+    },
+    {
+      "name": "P1_smallest_match",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "264 words (<= 6 vertices, i = 0..3) match e- + nu-bar + loop or its mirror at q = 2, 3; smallest vertex count 3, with 18 words (9 + 9 mirror)."
+    },
+    {
+      "name": "P1_minimal_words_leave_two_idle_strands",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "every 3-vertex match moves only 4 strands; two components are untouched strands."
+    },
+    {
+      "name": "P1_smallest_with_no_idle_strand",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "with every strand inside some vertex footprint, the smallest vertex count is 5: 50 words (25 + 25 mirror)."
+    },
+    {
+      "name": "P1_no_match_is_linking_neutral",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "no candidate is whole-word linking-neutral: the Hopf pair has lk = 1 by definition."
+    },
+    {
+      "name": "P1_zero_charge_sector_trace_reported",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "trace on the zero-charge K-sector (3 up, 3 down) for the 9 minimal e- words takes 1 distinct value pair(s) at q = 2, 3: ['{\"2\": \"-61/4\", \"3\": \"-3614/81\"}']."
+    },
+    {
+      "name": "P2_two_photon_factorisations_reported",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "two-photon TL factorisations exist for 7 words: 3-vertex [('V0V1V0', 1, 0), ('V0V1V0', 2, 0), ('V1V2V1', 2, 1), ('V1V2V1', 3, 1), ('V2V3V2', 3, 2)], 5-vertex [('V0V1V2V0V3', 0, 3), ('V0V1V2V0V3', 3, 0), ('V0V1V2V3V0', 0, 3), ('V0V1V2V3V0', 3, 0), ('V2V0V3V1V0', 0, 3), ('V2V0V3V1V0', 3, 0), ('V2V3V0V1V0', 0, 3), ('V2V3V0V1V0', 3, 0)]. Every other (word, i, j) gives Groebner basis 1 (no solution over C)."
+    },
+    {
+      "name": "P2_exact_pair_word_identity_fullH",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "generic q, full Hecke algebra: V0V1V2V0V3 = s0^2 s1^-1 s4^-1 = h^2 gamma_0(0,-1/h,-1) gamma_3(0,-1/h,0), and gamma(0,-1/h,-1) = -h^-1 s0^2 s1^-1 (whose closure on 3 strands is the Hopf link). After the braid reduction strand 3 is untouched, so 'no idle strand' in P1 is a property of the vertex footprint, not of the braid. Lean: QOU/MassTheory/PhotonCrossingMonomials.lean."
+    },
+    {
+      "name": "P2_three_photons_TL",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "V0V0V1 = mu^-1 gamma_i gamma_j gamma_k over C, q = 2, TL quotient: solvable exactly at ['(0, 0, 1)', '(1, 0, 1)'] of the 8 placements in {0,1}^3."
+    },
+    {
+      "name": "P2_three_photons_full_H",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "in the full Hecke algebra H4(q) at q = 2: {'(0, 0, 1)': True, '(1, 0, 1)': False}. Only (0,0,1) survives."
+    },
+    {
+      "name": "P2_real_three_photon_family",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "gamma_0 gamma_0 gamma_1(0, -1/h, z) = mu^-1 V0V0V1 has real solutions at q = 2 and q = 11/10 for several (z, A); residual < 1e-30 at 40 digits. The weights are not fixed: a two-parameter real family."
+    },
+    {
+      "name": "P2_generic_q_two_photon",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "over Q(q) the two-photon factorisations are exactly the ones found at q = 2, 3: [('V0V1V0', 1, 0), ('V0V1V0', 2, 0), ('V0V1V2V0V3', 0, 3), ('V0V1V2V0V3', 3, 0), ('V0V1V2V3V0', 0, 3), ('V0V1V2V3V0', 3, 0), ('V1V2V1', 2, 1), ('V1V2V1', 3, 1), ('V2V0V3V1V0', 0, 3), ('V2V0V3V1V0', 3, 0), ('V2V3V0V1V0', 0, 3), ('V2V3V0V1V0', 3, 0), ('V2V3V2', 3, 2)]; every other (word, i, j) has Groebner basis [1], so no solution for generic q (finitely many special q not excluded)."
+    },
+    {
+      "name": "P3_zD_trace_comparison",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "Jimbo quantum trace / [2]^n is the convention-D Markov trace (tr(s) = z_D, checked); exact traces {'pair_word_s0^2 s1^-1 s4^-1 (6 strands)': '(q**4 + 1)/(q**2*(q**2 + 1)**3)', 'hopf_photon_s0^2 s1^-1 (3 strands)': '(q**4 + 1)/(q*(q**2 + 1)**2)', 'crossing_photon_s^-1 (2 strands)': '1/(q*(q**2 + 1))', 'electron_s0 s1 s0 (3 strands)': 'q**3*(q**4 + 1)/(q**2 + 1)**2'}; tr(pair) = tr(Hopf photon) * tr(crossing photon) (Markov factorisation, checked). |tr| x E0 (canonical, proton q0), COMPARISON ONLY, not proposed as Q_beta: {'pair_word_s0^2 s1^-1 s4^-1 (6 strands)': '0.776939463185019', 'hopf_photon_s0^2 s1^-1 (3 strands)': '1.92489115430842', 'crossing_photon_s^-1 (2 strands)': '1.70632954574831', 'electron_s0 s1 s0 (3 strands)': '2.92189478322906'} MeV. CODATA Q_beta = 0.78233 MeV."
+    },
+    {
+      "name": "P3_trace_same_for_every_match",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "every one of the 264 matching gamma-gamma words gives the same |tr_D| x E0 per orientation (gamma-gamma words have writhe 0, so the Markov trace is a link invariant on them): {'e- + nu-bar + loop': ['0.776939463185019176156914251418'], 'mirror': ['1.45303065095213411739280111889']} MeV. COMPARISON ONLY."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "six-strand-photon-pair",
+  "scriptFile": "six_strand_pair_probe.py",
+  "scriptHash": "01f950fe4507",
+  "scriptCommitSha": "c5351ea8e98e2b280e2074777c3689e9220d028c",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/six_strand_photon_pair/six_strand_pair_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/six_strand_photon_pair/six_strand_pair_probe.py"
+  },
+  "parameters": {
+    "workdps": 80,
+    "q0": "1.1099785827513808075916690956107688798744991218735787360728142401817989635744830"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "description": "Gamma-gamma lepton pair e- + nu-bar + loop on six strands with the sliding photon (owner card 2026-11-22): which vertex words close to it, and how many photons each needs.",
+  "photon": "gamma_i(a,b,c) = 1 + a s_i + b s_{i+1} + c s_i s_{i+1}^-1, i = 0..3",
+  "matches_smallest": [
+    {
+      "word": "V0V0V1",
+      "match": "e- + nu-bar + loop",
+      "idle_strands": 2
+    },
+    {
+      "word": "V0V1V0",
+      "match": "e- + nu-bar + loop",
+      "idle_strands": 2
+    },
+    {
+      "word": "V0V1V1",
+      "match": "mirror",
+      "idle_strands": 2
+    },
+    {
+      "word": "V1V0V0",
+      "match": "e- + nu-bar + loop",
+      "idle_strands": 2
+    },
+    {
+      "word": "V1V0V1",
+      "match": "mirror",
+      "idle_strands": 2
+    },
+    {
+      "word": "V1V1V0",
+      "match": "mirror",
+      "idle_strands": 2
+    },
+    {
+      "word": "V1V1V2",
+      "match": "e- + nu-bar + loop",
+      "idle_strands": 2
+    },
+    {
+      "word": "V1V2V1",
+      "match": "e- + nu-bar + loop",
+      "idle_strands": 2
+    },
+    {
+      "word": "V1V2V2",
+      "match": "mirror",
+      "idle_strands": 2
+    },
+    {
+      "word": "V2V1V1",
+      "match": "e- + nu-bar + loop",
+      "idle_strands": 2
+    },
+    {
+      "word": "V2V1V2",
+      "match": "mirror",
+      "idle_strands": 2
+    },
+    {
+      "word": "V2V2V1",
+      "match": "mirror",
+      "idle_strands": 2
+    },
+    {
+      "word": "V2V2V3",
+      "match": "e- + nu-bar + loop",
+      "idle_strands": 2
+    },
+    {
+      "word": "V2V3V2",
+      "match": "e- + nu-bar + loop",
+      "idle_strands": 2
+    },
+    {
+      "word": "V2V3V3",
+      "match": "mirror",
+      "idle_strands": 2
+    },
+    {
+      "word": "V3V2V2",
+      "match": "e- + nu-bar + loop",
+      "idle_strands": 2
+    },
+    {
+      "word": "V3V2V3",
+      "match": "mirror",
+      "idle_strands": 2
+    },
+    {
+      "word": "V3V3V2",
+      "match": "mirror",
+      "idle_strands": 2
+    }
+  ],
+  "matches_no_idle_smallest": [
+    {
+      "word": "V0V0V1V2V3",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V0V0V3V1V2",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V0V1V0V2V3",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V0V1V2V0V3",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V0V1V2V3V0",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V0V1V2V3V3",
+      "match": "mirror"
+    },
+    {
+      "word": "V0V1V3V2V3",
+      "match": "mirror"
+    },
+    {
+      "word": "V0V2V0V3V1",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V0V2V3V0V1",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V0V3V0V1V2",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V0V3V1V0V2",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V0V3V1V2V0",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V0V3V1V2V3",
+      "match": "mirror"
+    },
+    {
+      "word": "V0V3V1V3V2",
+      "match": "mirror"
+    },
+    {
+      "word": "V0V3V3V1V2",
+      "match": "mirror"
+    },
+    {
+      "word": "V1V0V2V0V3",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V1V0V2V3V0",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V1V2V0V0V3",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V1V2V0V3V0",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V1V2V0V3V3",
+      "match": "mirror"
+    },
+    {
+      "word": "V1V2V3V0V0",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V1V2V3V0V3",
+      "match": "mirror"
+    },
+    {
+      "word": "V1V2V3V3V0",
+      "match": "mirror"
+    },
+    {
+      "word": "V1V3V2V0V3",
+      "match": "mirror"
+    },
+    {
+      "word": "V1V3V2V3V0",
+      "match": "mirror"
+    },
+    {
+      "word": "V2V0V0V3V1",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V2V0V3V0V1",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V2V0V3V1V0",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V2V0V3V1V3",
+      "match": "mirror"
+    },
+    {
+      "word": "V2V0V3V3V1",
+      "match": "mirror"
+    },
+    {
+      "word": "V2V3V0V0V1",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V2V3V0V1V0",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V2V3V0V1V3",
+      "match": "mirror"
+    },
+    {
+      "word": "V2V3V0V3V1",
+      "match": "mirror"
+    },
+    {
+      "word": "V2V3V3V0V1",
+      "match": "mirror"
+    },
+    {
+      "word": "V3V0V0V1V2",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V3V0V1V0V2",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V3V0V1V2V0",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V3V0V1V2V3",
+      "match": "mirror"
+    },
+    {
+      "word": "V3V0V1V3V2",
+      "match": "mirror"
+    },
+    {
+      "word": "V3V0V3V1V2",
+      "match": "mirror"
+    },
+    {
+      "word": "V3V1V0V2V0",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V3V1V2V0V0",
+      "match": "e- + nu-bar + loop"
+    },
+    {
+      "word": "V3V1V2V0V3",
+      "match": "mirror"
+    },
+    {
+      "word": "V3V1V2V3V0",
+      "match": "mirror"
+    },
+    {
+      "word": "V3V1V3V2V0",
+      "match": "mirror"
+    },
+    {
+      "word": "V3V2V0V3V1",
+      "match": "mirror"
+    },
+    {
+      "word": "V3V2V3V0V1",
+      "match": "mirror"
+    },
+    {
+      "word": "V3V3V0V1V2",
+      "match": "mirror"
+    },
+    {
+      "word": "V3V3V1V2V0",
+      "match": "mirror"
+    }
+  ],
+  "zero_charge_sector_trace": {
+    "V0V0V1": {
+      "2": "-61/4",
+      "3": "-3614/81"
+    },
+    "V0V1V0": {
+      "2": "-61/4",
+      "3": "-3614/81"
+    },
+    "V1V0V0": {
+      "2": "-61/4",
+      "3": "-3614/81"
+    },
+    "V1V1V2": {
+      "2": "-61/4",
+      "3": "-3614/81"
+    },
+    "V1V2V1": {
+      "2": "-61/4",
+      "3": "-3614/81"
+    },
+    "V2V1V1": {
+      "2": "-61/4",
+      "3": "-3614/81"
+    },
+    "V2V2V3": {
+      "2": "-61/4",
+      "3": "-3614/81"
+    },
+    "V2V3V2": {
+      "2": "-61/4",
+      "3": "-3614/81"
+    },
+    "V3V2V2": {
+      "2": "-61/4",
+      "3": "-3614/81"
+    }
+  },
+  "two_photon_solutions": {
+    "m3": [
+      [
+        "V0V1V0",
+        1,
+        0,
+        "2"
+      ],
+      [
+        "V0V1V0",
+        2,
+        0,
+        "2"
+      ],
+      [
+        "V1V2V1",
+        2,
+        1,
+        "2"
+      ],
+      [
+        "V1V2V1",
+        3,
+        1,
+        "2"
+      ],
+      [
+        "V2V3V2",
+        3,
+        2,
+        "2"
+      ],
+      [
+        "V0V1V0",
+        1,
+        0,
+        "3"
+      ],
+      [
+        "V0V1V0",
+        2,
+        0,
+        "3"
+      ],
+      [
+        "V1V2V1",
+        2,
+        1,
+        "3"
+      ],
+      [
+        "V1V2V1",
+        3,
+        1,
+        "3"
+      ],
+      [
+        "V2V3V2",
+        3,
+        2,
+        "3"
+      ]
+    ],
+    "m5": [
+      [
+        "V0V1V2V0V3",
+        0,
+        3
+      ],
+      [
+        "V0V1V2V0V3",
+        3,
+        0
+      ],
+      [
+        "V0V1V2V3V0",
+        0,
+        3
+      ],
+      [
+        "V0V1V2V3V0",
+        3,
+        0
+      ],
+      [
+        "V2V0V3V1V0",
+        0,
+        3
+      ],
+      [
+        "V2V0V3V1V0",
+        3,
+        0
+      ],
+      [
+        "V2V3V0V1V0",
+        0,
+        3
+      ],
+      [
+        "V2V3V0V1V0",
+        3,
+        0
+      ]
+    ]
+  },
+  "three_photon_V0V0V1": {
+    "TL_q2": {
+      "(0, 0, 0)": false,
+      "(0, 0, 1)": true,
+      "(0, 1, 0)": false,
+      "(0, 1, 1)": false,
+      "(1, 0, 0)": false,
+      "(1, 0, 1)": true,
+      "(1, 1, 0)": false,
+      "(1, 1, 1)": false
+    },
+    "fullH_q2": {
+      "(0, 0, 1)": true,
+      "(1, 0, 1)": false
+    }
+  },
+  "real_three_photon_samples": {
+    "2": [
+      {
+        "z": "-12/5",
+        "A": "-19/10",
+        "residual": "9.24e-51",
+        "a": "14.2441664355921",
+        "b": "4.81325946638973",
+        "c": "4.58159615142456",
+        "B": "-0.0614591476305039",
+        "C": "2.75594630026308",
+        "lam": "19.9426271111202"
+      },
+      {
+        "z": "29/10",
+        "A": "-3/10",
+        "residual": "8.02e-56",
+        "a": "-1.31487246950482",
+        "b": "1.10490957164437",
+        "c": "-0.944759965275419",
+        "B": "-0.530716587206835",
+        "C": "-0.211161321025449",
+        "lam": "0.816771821533383"
+      },
+      {
+        "z": "1",
+        "A": "-19/10",
+        "residual": "8.62e-40",
+        "a": "-0.523345564133604",
+        "b": "0.0633982662939301",
+        "c": "-0.309379796791874",
+        "B": "-1.11291390693229",
+        "C": "-2.00608504814758",
+        "lam": "1.07482503289894"
+      }
+    ],
+    "11/10": [
+      {
+        "z": "-11/5",
+        "A": "3/5",
+        "residual": "1.15e-39",
+        "a": "-0.902967154864691",
+        "b": "-0.515754679215632",
+        "c": "0.604580715341038",
+        "B": "0.954355763581982",
+        "C": "0.322964777785162",
+        "lam": "-0.928724549002204"
+      },
+      {
+        "z": "4/5",
+        "A": "9/5",
+        "residual": "1.75e-43",
+        "a": "0.881541214563364",
+        "b": "2.0065371634107",
+        "c": "2.57253987290652",
+        "B": "-1.04773463692114",
+        "C": "-1.54249618013003",
+        "lam": "-7.62095178827173"
+      },
+      {
+        "z": "-8/5",
+        "A": "9/5",
+        "residual": "1.67e-42",
+        "a": "0.847026747120332",
+        "b": "2.01584302553396",
+        "c": "2.70091750122638",
+        "B": "-0.981601092881338",
+        "C": "-1.74414714739165",
+        "lam": "-6.8023992017858"
+      }
+    ]
+  },
+  "generic_q_two_photon": {
+    "positions": [
+      [
+        "V0V1V0",
+        1,
+        0
+      ],
+      [
+        "V0V1V0",
+        2,
+        0
+      ],
+      [
+        "V0V1V2V0V3",
+        0,
+        3
+      ],
+      [
+        "V0V1V2V0V3",
+        3,
+        0
+      ],
+      [
+        "V0V1V2V3V0",
+        0,
+        3
+      ],
+      [
+        "V0V1V2V3V0",
+        3,
+        0
+      ],
+      [
+        "V1V2V1",
+        2,
+        1
+      ],
+      [
+        "V1V2V1",
+        3,
+        1
+      ],
+      [
+        "V2V0V3V1V0",
+        0,
+        3
+      ],
+      [
+        "V2V0V3V1V0",
+        3,
+        0
+      ],
+      [
+        "V2V3V0V1V0",
+        0,
+        3
+      ],
+      [
+        "V2V3V0V1V0",
+        3,
+        0
+      ],
+      [
+        "V2V3V2",
+        3,
+        2
+      ]
+    ],
+    "solutions": {
+      "V0V1V0@1,0": [
+        "x0",
+        "q/(q**2 - 1) + x1",
+        "x2",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5 + 1",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V0V1V0@2,0": [
+        "q/(q**2 - 1) + x0",
+        "x1",
+        "x2",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5 + 1",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V1V2V1@2,1": [
+        "x0",
+        "q/(q**2 - 1) + x1",
+        "x2",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5 + 1",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V1V2V1@3,1": [
+        "q/(q**2 - 1) + x0",
+        "x1",
+        "x2",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5 + 1",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V2V3V2@3,2": [
+        "x0",
+        "q/(q**2 - 1) + x1",
+        "x2",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5 + 1",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V0V1V2V0V3@0,3": [
+        "x0",
+        "q/(q**2 - 1) + x1",
+        "x2 + 1",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V0V1V2V0V3@3,0": [
+        "x0",
+        "q/(q**2 - 1) + x1",
+        "x2",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5 + 1",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V0V1V2V3V0@0,3": [
+        "x0",
+        "q/(q**2 - 1) + x1",
+        "x2 + 1",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V0V1V2V3V0@3,0": [
+        "x0",
+        "q/(q**2 - 1) + x1",
+        "x2",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5 + 1",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V2V0V3V1V0@0,3": [
+        "x0",
+        "q/(q**2 - 1) + x1",
+        "x2 + 1",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V2V0V3V1V0@3,0": [
+        "x0",
+        "q/(q**2 - 1) + x1",
+        "x2",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5 + 1",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V2V3V0V1V0@0,3": [
+        "x0",
+        "q/(q**2 - 1) + x1",
+        "x2 + 1",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ],
+      "V2V3V0V1V0@3,0": [
+        "x0",
+        "q/(q**2 - 1) + x1",
+        "x2",
+        "x3",
+        "q/(q**2 - 1) + x4",
+        "x5 + 1",
+        "mu - q**2/(q**4 - 2*q**2 + 1)",
+        "t + (-q**4 + 2*q**2 - 1)/q**2"
+      ]
+    }
+  },
+  "zD_comparison": {
+    "traces": {
+      "pair_word_s0^2 s1^-1 s4^-1 (6 strands)": "(q**4 + 1)/(q**2*(q**2 + 1)**3)",
+      "hopf_photon_s0^2 s1^-1 (3 strands)": "(q**4 + 1)/(q*(q**2 + 1)**2)",
+      "crossing_photon_s^-1 (2 strands)": "1/(q*(q**2 + 1))",
+      "electron_s0 s1 s0 (3 strands)": "q**3*(q**4 + 1)/(q**2 + 1)**2"
+    },
+    "abs_tr_times_E0_MeV": {
+      "pair_word_s0^2 s1^-1 s4^-1 (6 strands)": "0.776939463185019",
+      "hopf_photon_s0^2 s1^-1 (3 strands)": "1.92489115430842",
+      "crossing_photon_s^-1 (2 strands)": "1.70632954574831",
+      "electron_s0 s1 s0 (3 strands)": "2.92189478322906"
+    },
+    "E0": "qbeta_e0.canonical (tower-summed, by ruling)",
+    "status": "comparison only; the pair word is not the beta-decay element",
+    "per_orientation_all_matches_MeV": {
+      "e- + nu-bar + loop": [
+        "0.776939463185019176156914251418"
+      ],
+      "mirror": [
+        "1.45303065095213411739280111889"
+      ]
+    }
+  },
+  "scope": "(a): six strands, <= 6 vertices; invariant at two rational q; Groebner at q = 2 (and 3 for the two-photon m3 test); real search at q = 2, 11/10.",
+  "lean": "QOU/QBeta/GammaGammaLeptonPair.lean (parity)"
+}

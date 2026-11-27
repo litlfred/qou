@@ -1,4 +1,4 @@
-*Proof.* One decomposes $\Delta_q$ into its three components:
+One decomposes $\Delta_q$ into its three components:
 
 $$
   \Delta_q \;=\; q^{-2} \Delta

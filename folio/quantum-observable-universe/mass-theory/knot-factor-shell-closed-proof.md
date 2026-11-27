@@ -1,4 +1,4 @@
-*Proof.* Under $Z = N$ even-even, every neutron crossing is matched
+Under $Z = N$ even-even, every neutron crossing is matched
 by a proton crossing of opposite sign, and the Wigner pairing
 ([Wigner $np$ pairing](#prop:wigner-np-pairing)) annihilates all
 non-trivial $\lambda$-block contributions.  The only surviving

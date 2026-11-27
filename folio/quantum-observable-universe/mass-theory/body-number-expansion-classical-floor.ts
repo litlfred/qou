@@ -4,7 +4,7 @@ export default remark({
   label: "rem:body-number-expansion-classical-floor",
   title: "The body-number expansion has a classical floor: no power counting in $q - 1$",
   interprets: "prop:subset-cumulant-recursion",
-  lean: { ref: "qou:QOU.MassTheory.b3corpus_classical", validation: "not_checked" },
+  lean: { ref: "qou:QOU.MassTheory.BondFactorClassicalFloor.b3corpus_classical", validation: "not_checked" },
   uses: [
     "prop:subset-cumulant-recursion",
     "prop:markov-trace-frobenius-selection",

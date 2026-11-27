@@ -1,4 +1,3 @@
-**Conjecture (Shared-denominator cusp holonomy).**
 *Let $T_w \in H_n(R, q)$ be a Hecke normal-form word at GB-depth
 $k_\star(T_w) = n$, let $\Phi_n(x; q) = \prod_{k=0}^{n-1}(1 - x q^k)^{-1}$
 be its $q$-Pochhammer partial product

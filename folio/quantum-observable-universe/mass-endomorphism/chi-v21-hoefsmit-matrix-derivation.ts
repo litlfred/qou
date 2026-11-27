@@ -4,7 +4,7 @@ export default remark({
   label: "rem:chi-v21-hoefsmit-matrix-derivation",
   interprets: "rem:chi-per-irrep-cyclotomic-closed-forms",
   title:
-    "V_(2,1) Hoefsmit 2×2 matrix derivation: scalar trace + Hecke-quadratic identities + Laurent decomposition of the closed form $-(q^4+1)(q^2-1)/(4q^3)$",
+    "$V_{(2,1)}$ Hoefsmit $2\\times 2$ matrix derivation: scalar trace + Hecke-quadratic identities + Laurent decomposition of the closed form $-(q^4+1)(q^2-1)/(4q^3)$",
   uses: ["rem:chi-per-irrep-cyclotomic-closed-forms"],
   cites: ["hoefsmit1974", "jones1985", "wenzl1988"],
   tags: [
@@ -15,8 +15,9 @@ export default remark({
     "scaffolding",
   ],
   computation: {
-    engine: "sympy",
-    script: "computations/probe_per_wedderburn_block_ck.py",
+    engine: "python+mpmath",
+    script: "computations/qbeta/qbeta_per_block_paper_closed_forms.py",
+    witness: "computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json",
     status: "experimental",
   },
   authorNotes: [

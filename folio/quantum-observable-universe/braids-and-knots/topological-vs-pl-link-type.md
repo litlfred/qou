@@ -1,0 +1,9 @@
+A topological link enters this paper only through a polygonal representative, and such links are tame. The :refterm[link type]{#link-type} of a polygonal link is a PL notion. Its relation to topological ambient isotopy has two parts.
+
+1. **Smooth isotopies.** If two polygonal links are joined by a $C^1$ ambient isotopy, they have the same link type. Sampling each component finely enough keeps the inscribed polygons simple and disjoint along the isotopy, yielding a sequence of elementary $\Delta$-moves.
+
+2. **Topological isotopies.** A topological ambient isotopy cannot in general be replaced by a $C^1$ one, because a $C^1$ diffeomorphism cannot carry the carrier of a triangle onto the carrier of a square. In dimension three, topologically ambient isotopic tame links are PL ambient isotopic. This follows from Moise's triangulation theorem and Bing's tameness theorem \cite{moise1952,bing1954}. Here this comparison is cited from the three-manifold literature rather than proved from scratch, so equality of link types for topologically isotopic links is conditional on the Moise–Bing theorem.
+
+3. **The ambient space.** The definition is stated in a real inner-product space $V$, while the Alexander--Markov remarks place links in $S^3$. For $\dim V = 3$ the two settings give the same link types. A compact link in $S^3 = \mathbb{R}^3 \cup \{\infty\}$ misses a point, and an ambient isotopy of $S^3$ can be adjusted to fix a point off the link, so the classification of tame links up to ambient isotopy is the same in $\mathbb{R}^3$ and in $S^3$ \cite{rolfsen,lickorish1997}. The cited Moise--Bing comparison likewise concerns $\dim V = 3$; only the three-dimensional case is supported by the classical triangulation theorems.
+
+The link type defined here is distinct from the two-element type of [braid link types](#rem:braid-link-types), which enumerates only the unknot and the Hopf link.

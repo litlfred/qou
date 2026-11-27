@@ -281,3 +281,37 @@ bar-conjugate, dominant blocks $[4,2]/[5,1]/[3,2,1]$ — but they do not pin the
 10 free directions; that requires cross-A (per PR #3266's cross-A
 discriminator). **Not a closure ansatz** (Δ_λ gate); a structural map of the
 terms and their exact constraints.
+
+## 2026-11-25 — the binding match is withdrawn (owner ruling, bean `qou-xj4p`)
+
+The +0.29 % agreement of `B_D = E₀·net(p)·Δtr` with AME2020 reported above does not survive the current inputs. The exact attribution (`computations/probes/probe_d_dressing_is_proton_net/attribution/RESULTS.md`) reproduces the 2026-07-04 value to 20 digits. It shows that the hit holds in exactly one configuration: the superseded grouped confinement word (replaced by the 2026-09-05 word ruling) under the excised Markov convention C (replaced by convention D on 2026-08-09). Either ruling alone removes it.
+
+| configuration | Δtr | `B_D` vs AME |
+|---|---|---|
+| C, grouped word (2026-07-04 run) | 0.595168891 | +0.287 % |
+| D, grouped word | 0.556544660 | −6.22 % |
+| C, alternating word | 0.098742543 | −83.36 % |
+| D, alternating word (ruled inputs) | 0.147046678 | −75.22 % |
+
+The 2026-07-04 run also took `y_λ` at the retired muon pin while evaluating `χ^λ` at the proton pin, a layer straddle; it contributes 1.4e-9 to Δtr.
+
+Owner decision (2026-11-25): keep the exact ℚ(q) identities as the probe's content (`Δ(net) = −h·net(p)`, `|Δ(net)| = h·net(p)`, `Q_β = E₀·h·net(p)`), record the binding match as a negative, and remove the `binding_candidate_subpercent` assertion. The probe's witness now carries `binding_candidate_status.verdict = "negative"`. Under the anti-fit rule, the earlier hit was never evidence for those inputs.
+
+## 2026-11-25 — why the raw form misses, and the form the corpus fixes (bean `qou-xj4p`)
+
+**Source of the −75 %.** `B_D = E₀·net(p)·Δtr` uses the raw trace difference `Δtr = tr_free·(1 − r)`, where `r = tr_atom/tr_free`. The ratio `r` is a product of bond factors, `r = ∏_e (z + d_e)`, by the Markov property (`QOU.Nuclear.InterfaceScalar.interface_scalar`; the disjoint-block law is derived sorry-free from the Hecke relations in `InteriorMarkovOfBraidedTower.lean`). `tr_free` is a product of per-nucleon self-traces and is not bond data: the 2026-09-05 reordering of letters inside each nucleon left `r` unchanged to 1e-60 and moved `tr_free` by 3.785× for ²H. Under convention C with the grouped word, `tr_free = 0.9835`, so the raw difference nearly equalled `1 − r`. On the ruled inputs `tr_free = 0.2990`, so the raw difference is 3.344× smaller than `1 − r`.
+
+**The form the corpus fixes.** The live binding law is `B = E₀·log(|tr_free|/|tr_atom|)`, at `computations/binding_log_free_energy.py:95`, and `computations/binding_canonical.py` names it as the replacement for the trace-difference law. Its derivation is in `docs/audits/2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md` §10a: the trace is multiplicative over independent subsystems and binding energy is extensive, so the map from `r` to `B` satisfies the Cauchy equation `f(xy) = f(x) + f(y)`, whose continuous solutions are `c·ln`. Lean: `logForm_extensive`, `linearForm_not_extensive`. The uniqueness half (that a continuous additive map on `(ℝ₊, ×)` must be `c·ln`) is not formalised.
+
+Owner relay 2026-11-25: no preference on the normalisation; apply AGENTS.md exemption 2 if the corpus fixes one form. It does, so the probe now reports the binding magnitude on that law, with the same order-zero `E₀ = 4.18598` MeV the law uses:
+
+| form | `B_D` (MeV) | vs AME 2.224566 |
+|---|---|---|
+| raw `E₀·net(p)·Δtr` (withdrawn) | 0.551193 | −75.22 % |
+| corpus law `E₀·log(tr_free/tr_atom)` | 2.833163 | +27.36 % |
+
+The corpus-law value agrees with `binding-single-pipeline-comparison.witness.json` (`B_sym`, 2.83316257200452) to every digit printed. For the deuteron, one bond, it is `−E₀·ln(z_D − h(½ − δ/4)) = −E₀·ln(0.508230)` with no free parameter. Under convention C the same expression gave +74.85 % (§10b of the 2026-08-08 audit). The +27.36 % is recorded as an open negative. The other normalised forms (`E₀·(1 − r)`, −7.5 %; `E₀·net(p)·(1 − r)`, −17.1 %) were not chosen: the first is not extensive (Lean `linearForm_not_extensive`) and is capped below `E₀`, and the second also carries `net(p)`, which is already inside `tr_free` and cancels in `r`.
+
+### Scope correction, same day
+
+The `+27.36 %` above is the log law evaluated on the production atom word, whose p-n bond is the single-crossing interface letter `σ_g + d_pn·1`, so `μ_pn = z_D + d_pn`. The 2026-11-15 owner ruling (`docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md`) puts every bond letter under the γγ selection rule, and that letter is not γγ-selected. The functional `E₀·log(tr_free/tr_atom)` is canonical; this deuteron number is a **record on a superseded word**, in the same class as the chain law and `μ_e` values that audit lists. The section above first called it a zero-parameter prediction; that overstated it. No γγ-selected p-n bond has been computed yet (the only γγ bond on record is the molecular H₂ bond of `computations/probes/h2_gg_atom/`).

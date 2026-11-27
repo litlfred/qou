@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:dt-spectrum-bar-eigenspace",
   lean: {
-    ref: "qou:QOU.QBeta.FiveTwoDTSpectrumSplit",
+    ref: "qou:QOU.Nuclear.FiveTwoDTSpectrumSplit.dtPair52_grading",
     validation: "validated",
   },
   title:

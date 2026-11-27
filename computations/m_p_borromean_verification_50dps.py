@@ -164,6 +164,7 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
+from decimal import Decimal as _Dec  # noqa: E402
 import json
 import sys
 from pathlib import Path
@@ -183,9 +184,12 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 _UPSTREAM_RECORDS: list = []
 
 set_compute_dps()
+mp.mp.dps = max(mp.mp.dps, 80)
 
-# Substrate q_0 at 50 dps (witness-derived)
+# Substrate q_0 at >=80 dps and upstream validation/canonical-mass witnesses
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
+CODATA_VAL_W = _pb.witness_path("codata-2022-validation-masses.witness.json", HERE)
+MP_SUBSTRATE_W = _pb.witness_path("m-p-substrate-identity-50dps.witness.json", HERE)
 # 🛑 PROTON PIN (migrated 2026-08-29, bean `qou-cds3`). AGENTS.md
 # §"q₀ anchor convention": the experimental (proton) anchor is the default
 # for all production compute, and the owner authorisation recorded there
@@ -198,12 +202,15 @@ Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 # configuration says. The two pins differ by 11.54 ppb, the μ–p substrate
 # tension itself.
 #
-# The upstream record is KEPT — that witness remains the canonical 3-CAL
-# (muon) pin document, it is simply no longer the source of this
-# computation's q₀. Idiom copied from `alpha/alpha_k_jones_markov_h12.py`.
+# The upstream records are KEPT — `q-pinning-50-digit` remains the canonical
+# 3-CAL (muon) pin document, `codata-2022-validation-masses` supplies the
+# CODATA validation masses via `codata_constants`, and
+# `m-p-substrate-identity-50dps` supplies `canonical_mass.proton_neutron_mass_mev()`.
 record_upstream(Q_PIN, _UPSTREAM_RECORDS)
-from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON  # noqa: E402
-Q = mp.mpf(_Q50_PROTON)
+record_upstream(CODATA_VAL_W, _UPSTREAM_RECORDS)
+record_upstream(MP_SUBSTRATE_W, _UPSTREAM_RECORDS)
+from q_parameter import q_at as _q_at  # noqa: E402
+Q = _q_at(80)
 HBAR_Q = (Q - mp.mpf(1)) / Q
 
 # Borromean rings hyperbolic volume.  Exact closed-form via the
@@ -300,9 +307,9 @@ def main() -> int:
         "categorically by the substrate flavor-split closed form "
         "Δm/M_N = ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3 "
         "(`prop:flavor-split-substrate`, PR #690), giving "
-        f"m_p^pred ≈ 965.38 MeV (vs CODATA {float(_M_P_MEV_VALIDATION):.6f}, "
+        f"m_p^pred ≈ 965.38 MeV (vs CODATA {_Dec(mp.nstr(_M_P_MEV_VALIDATION, 20)):.6f}, "
         f"~2.89 % off) and m_n^pred ≈ 966.71 MeV "
-        f"(vs CODATA {float(_M_N_MEV_VALIDATION):.6f}, ~2.89 % off).  The "
+        f"(vs CODATA {_Dec(mp.nstr(_M_N_MEV_VALIDATION, 20)):.6f}, ~2.89 % off).  The "
         "substrate Δm/M_N ratio itself matches CODATA to ~305 ppm "
         "(0.030 %) — framework-proved, no fit.  The prior CAL-4 fit "
         "(2.4599527869, 2.4633436333, 5.4 ppm tautological match) was "
@@ -595,23 +602,24 @@ def main() -> int:
     })
 
 
+    _d = lambda x: _Dec(mp.nstr(x, 25))  # noqa: E731
     out = w.save()
     print(f"Witness emitted: {out.name}")
     print()
-    print(f"Vol(B_3)/ℏ_q²       = {float(VOL_B3 / HBAR_Q**2):.6f}")
-    print(f"Vol(4_1)/ℏ_q²       = {float(VOL_41 / HBAR_Q**2):.6f}  (m_μ/m_e)")
+    print(f"Vol(B_3)/ℏ_q²       = {_d(VOL_B3 / HBAR_Q**2):.6f}")
+    print(f"Vol(4_1)/ℏ_q²       = {_d(VOL_41 / HBAR_Q**2):.6f}  (m_μ/m_e)")
     print()
-    print(f"Muon  pred  m_μ = {float(mu_pred):.8f} MeV  vs CODATA {float(M_MU_CODATA_MEV):.8f}  Δ = {float(mu_ppm):+.3f} ppm")
-    print(f"m_avg  pred       = {float(m_avg_pred):.8f} MeV  vs CODATA {float(M_AVG_CODATA):.8f}  Δ = {float(m_avg_rel_diff * mp.mpf('1e6')):+.4f} ppm  (Family A class-uniform)")
-    print(f"Δm/M_N pred       = {float(dm_over_Mn):.10f}  vs CODATA {float((M_N_CODATA_MEV - M_P_CODATA_MEV) / M_AVG_CODATA):.10f}")
-    print(f"Proton  pred  m_p = {float(proton_pred):.8f} MeV  vs CODATA {float(M_P_CODATA_MEV):.8f}  Δ = {float(proton_ppm):+.4f} ppm")
-    print(f"Neutron pred  m_n = {float(neutron_pred):.8f} MeV  vs CODATA {float(M_N_CODATA_MEV):.8f}  Δ = {float(neutron_ppm):+.4f} ppm")
-    print(f"Δ m_pn  pred      = {float(delta_pn):.6f} MeV  vs CODATA {float(delta_pn_codata):.6f}  Δ rel = {float(delta_diff)*100:+.3f} %")
+    print(f"Muon  pred  m_μ = {_d(mu_pred):.8f} MeV  vs CODATA {_d(M_MU_CODATA_MEV):.8f}  Δ = {_d(mu_ppm):+.3f} ppm")
+    print(f"m_avg  pred       = {_d(m_avg_pred):.8f} MeV  vs CODATA {_d(M_AVG_CODATA):.8f}  Δ = {_d(m_avg_rel_diff * mp.mpf('1e6')):+.4f} ppm  (Family A class-uniform)")
+    print(f"Δm/M_N pred       = {_d(dm_over_Mn):.10f}  vs CODATA {_d((M_N_CODATA_MEV - M_P_CODATA_MEV) / M_AVG_CODATA):.10f}")
+    print(f"Proton  pred  m_p = {_d(proton_pred):.8f} MeV  vs CODATA {_d(M_P_CODATA_MEV):.8f}  Δ = {_d(proton_ppm):+.4f} ppm")
+    print(f"Neutron pred  m_n = {_d(neutron_pred):.8f} MeV  vs CODATA {_d(M_N_CODATA_MEV):.8f}  Δ = {_d(neutron_ppm):+.4f} ppm")
+    print(f"Δ m_pn  pred      = {_d(delta_pn):.6f} MeV  vs CODATA {_d(delta_pn_codata):.6f}  Δ rel = {_d(delta_diff * 100):+.3f} %")
     print()
-    print(f"Scale-gap explanation:")
-    print(f"  single-level pred (T1):  {float(single_level_estimate):.4f} MeV")
-    print(f"  Borromean tower factor:  {float(tower_multiplier):.4f}")
-    print(f"  CODATA / single-level:   {float(gap_factor):.4f}")
+    print("Scale-gap explanation:")
+    print(f"  single-level pred (T1):  {_d(single_level_estimate):.4f} MeV")
+    print(f"  Borromean tower factor:  {_d(tower_multiplier):.4f}")
+    print(f"  CODATA / single-level:   {_d(gap_factor):.4f}")
     print(f"  → VolDensity(𝓑₃, q₀) closes to ~2.89 % vs CODATA on m_avg;")
     print(f"    substrate flavor split (PR #690) supplies Δm/M_N to")
     print(f"    ~305 ppm (~0.030 %) giving a categorical (non-fit) p/n split.")

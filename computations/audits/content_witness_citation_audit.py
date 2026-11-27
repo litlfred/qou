@@ -73,7 +73,7 @@ def main() -> int:
             cites.setdefault(m, set()).add(str(md.relative_to(REPO)))
 
     on_disk = {p.name for p in REPO.rglob("*.witness.json")
-               if ".git" not in p.parts}
+               if not ({".git", ".claude", ".lake", "node_modules"} & set(p.parts))}
 
     resolves, removed, never, spaced = [], [], [], []
     for name in sorted(cites):

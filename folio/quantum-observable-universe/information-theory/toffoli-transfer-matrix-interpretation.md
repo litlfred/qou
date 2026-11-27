@@ -1,4 +1,4 @@
-**Explicit values at the local substrate parameter $q = q_0 \approx 1.110$, under the canonical convention $z_D = q^3/(q^2+1)$:**
+**Explicit values at the local substrate parameter $q = q_0 \approx 1.110$, with Markov parameter $z = q^3/(q^2+1)$:**
 
 | Entry | Symbolic | Numerical |
 |:-----:|----------|:---------:|
@@ -7,4 +7,4 @@
 | $P_{7,6}$ (flip) | $-\dfrac{(q-1)(q+1)(q^6+q^4+2q^2+1)}{2q(q^2+1)^2}$ | $-0.1438$ |
 | $P_{6,7}$ (reverse flip) | $\dfrac{(q-1)(q+1)(2q^6+q^4+q^2+1)}{2q(q^2+1)^2}$ | $+0.1572$ |
 
-Three readings this table previously carried are withdrawn. The off-diagonal entries were given as $P_{7,6} = \Phi(q) = +0.0495$ and $P_{6,7} = -\Phi(q) = -0.0495$: $\Phi$ is not in the image of the Toffoli construction under any indexing or convention, and the derived $P_{7,6}$ carries the opposite sign to the value quoted for it. The flip channel is also **not** antisymmetric — $|P_{6,7}| \neq |P_{7,6}|$, and the discrepancy is not a convention artefact, since the antisymmetry fails in $C$ and $D$ alike. Finally, the per-control table showing $P_{\mathrm{flip}} = +0.0495$ for all three control pairs is dropped: it recorded the crossing coefficient $c_{k_1k_2} = 1$ multiplying the retired $\Phi$, so it carried no information beyond $\Phi$ itself.
+At $q_0 \approx 1.110$, both diagonal channels are strictly positive whereas the forward target-flip amplitude $P_{7,6}(q_0) \approx -0.1438$ is negative. Moreover, the flip channel is **not** antisymmetric: $|P_{6,7}(q_0)| \approx 0.1572 \neq |P_{7,6}(q_0)| \approx 0.1438$, because each entry is evaluated against its own parent input column.

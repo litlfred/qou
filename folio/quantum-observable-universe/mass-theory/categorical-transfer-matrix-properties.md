@@ -5,6 +5,12 @@ structure, and the two levels at which a braiding operation may act.
 The well-definedness of the equivalence class, and its categorification
 to a Lusztig canonical-basis vector, are spelled out below.
 
+**Well-definedness.** The equivalence class is well-defined because the vertex volume $\hat{V}_i(q)$
+depends only on the Markov trace of the Hecke-reduced element.
+It does not depend on the specific braid representative, the
+decomposition of $\mathfrak{H}$ into constituents, or the path of
+braiding operations within $\mathcal{S}_p$.
+
 **Insertion points and the configuration space.**
 The constituent knots $K_i$ are simple objects in $\mathbf{C}$,
 each factoring through a tensor power of $V$
@@ -12,7 +18,7 @@ each factoring through a tensor power of $V$
 $K_i \hookrightarrow V^{\otimes 2j_i}$ via the PawLei embedding
 $\iota_{j_i}$.  The index $i$ labels the **constituent slot**,
 not the knot type: several slots may carry the same simple object
-(e.g.\ a proton's two up quarks occupy two slots carrying the same simple object, the unknot strand of $\mathcal{B}_3$).
+(e.g. a proton's two up quarks occupy two slots carrying the same simple object, the unknot strand of $\mathcal{B}_3$).
 Each constituent has a
 [vertex operator](#def:vertex-operator) $Y(K_i, z_i)$ inserted at
 a point $z_i \in \mathcal{S}_p$.  The $n$-tuple of insertion points

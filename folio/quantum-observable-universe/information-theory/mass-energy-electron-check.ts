@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "def:mass-energy",
+  interprets: "prop:mass-energy",
   label: "rem:mass-energy-electron-check",
   title: "Electron: crossing energy does not determine energy",
   tags: [
@@ -12,7 +12,7 @@ export default remark({
     "information-theory",
   ],
   uses: [
-    "def:mass-energy",
+    "prop:mass-energy",
     "def:crossing-energy",
     "def:mass-identity",
     "rem:mass-energy-not-crossing-energy",

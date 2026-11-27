@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T11:15:05.909718+00:00",
-  "commitSha": "3329bc8a1dc222403105e37b2d308b240ab77a5b",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-24T18:06:41.739532+00:00",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "assertions": [
     {
       "name": "linear_unit_invisibility",
@@ -86,11 +86,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 534,
+  "durationMs": 924,
   "computation": "r2core-schwinger-measure-explore",
   "scriptFile": "r2core_schwinger_measure_explore_probe.py",
-  "scriptHash": "311d94392faf",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "ca91cd7a029c",
+  "scriptCommitSha": "4db77890a72ec5ffaddefafa437fc483b33bc5b8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -98,14 +98,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -156,12 +156,14 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
-        "size_bytes": 6238,
-        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
-        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
-        "computedAt": "2026-08-28T20:47:21.480123+00:00"
+        "sha256": "2614db24633cfa8e1ffddb85b06245a7618947f3a79c5237a6cc02dba823d247",
+        "size_bytes": 6301,
+        "commitSha": "e8c751c5542f24bba3130e96c7d0a895719c6ae1",
+        "scriptCommitSha": "e8c751c5542f24bba3130e96c7d0a895719c6ae1",
+        "computedAt": "2026-11-24T09:08:52.109433+00:00"
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,1 +1,1 @@
-At the boundary between the single-baryon mass tower and the electroweak and nuclear sectors, the categorical Higgs mechanism, the interface-knot Markov parameter $z_D$, and the weak-sector Plancherel normalization close the spectral completeness conditions of the six-term formula.
+At the boundary between the single-baryon mass tower and the electroweak and nuclear sectors, the categorical Higgs mechanism, the interface-knot Markov parameter $z = q^3/(q^2+1)$, and the weak-sector Plancherel normalization close the spectral completeness conditions of the six-term formula.

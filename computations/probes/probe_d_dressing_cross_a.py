@@ -91,35 +91,52 @@ def main() -> int:
         c0 = E0 * dtr
         c1 = E0 * dress * dtr
         c2 = E0 * dress ** (A - 1) * dtr
+        # The corpus's live binding law, exactly computations/
+        # binding_log_free_energy.py:95 (owner ruling 2026-11-25, bean
+        # qou-xj4p): B = E_0 * log(|tr_free| / |tr_atom|). C0-C2 use the raw
+        # difference tr_free*(1 - r), which carries the per-nucleon self-trace
+        # tr_free; the log law depends on the bond ratio r alone.
+        c_log = E0 * mp.log(abs(mp.mpf(tf)) / abs(mp.mpf(ta)))
         row = {
             "atom": name, "Z": Z, "N": N, "A": A,
             "Delta_tr": mp.nstr(dtr, 25),
             "B_AME_MeV": mp.nstr(B_ame, 15),
             "C0_undressed_MeV": mp.nstr(c0, 15),
-            "C0_err_rel": float(c0 / B_ame - 1),
+            "C0_err_rel": mp.nstr(c0 / B_ame - 1, 20),
             "C1_flat_MeV": mp.nstr(c1, 15),
-            "C1_err_rel": float(c1 / B_ame - 1),
+            "C1_err_rel": mp.nstr(c1 / B_ame - 1, 20),
             "C2_per_interface_MeV": mp.nstr(c2, 15),
-            "C2_err_rel": float(c2 / B_ame - 1),
+            "C2_err_rel": mp.nstr(c2 / B_ame - 1, 20),
+            "C_log_law_MeV": mp.nstr(c_log, 15),
+            "C_log_law_err_rel": mp.nstr(c_log / B_ame - 1, 20),
         }
         rows.append(row)
         print(f"  {name:5s}{A:>3d}{mp.nstr(dtr, 6):>12s}"
-              f"{float(B_ame):>9.3f}"
-              f"{float(c0):>12.4f}{row['C0_err_rel']*100:>+7.1f}%"
-              f"{float(c1):>10.4f}{row['C1_err_rel']*100:>+7.1f}%"
-              f"{float(c2):>11.4f}{row['C2_err_rel']*100:>+7.1f}%")
+              f"{mp.nstr(B_ame, 6):>9s}"
+              f"{mp.nstr(c0, 6):>12s}{mp.nstr((c0 / B_ame - 1) * 100, 3):>7s}%"
+              f"{mp.nstr(c1, 6):>10s}{mp.nstr((c1 / B_ame - 1) * 100, 3):>7s}%"
+              f"{mp.nstr(c2, 6):>11s}{mp.nstr((c2 / B_ame - 1) * 100, 3):>7s}%"
+              f"   log-law {mp.nstr(c_log, 6)} "
+              f"({mp.nstr((c_log / B_ame - 1) * 100, 3)}%)")
+        row["_c1"], row["_c0"] = c1, c0
 
     d_row = rows[0]
-    a3_best = min(abs(r["C1_err_rel"]) for r in rows[1:])
+    c1_over_c0 = d_row.pop("_c1") / d_row.pop("_c0")
+    for r in rows[1:]:
+        r.pop("_c1"), r.pop("_c0")
     verdict = (
-        "D-SPECIFIC SCALE FIX: the (1−h/2) dressing closes D to "
-        f"{d_row['C1_err_rel']*100:+.2f}% but the best A≥3 candidate "
-        f"error remains {a3_best*100:.0f}% — the A≥3 gap is the known "
-        "saturating-Δtr (extensive) deficit, NOT the scale. Scope (a): "
-        "constrains scalar dressings on this route only."
-        if a3_best > 0.15 else
-        "dressing helps cross-A — per-interface structural reading "
-        "survives; escalate to derivation."
+        "NEGATIVE (owner ruling 2026-11-25, bean qou-xj4p). On the ruled "
+        "inputs (convention D, alternating confinement word) the dressed "
+        f"raw-difference candidate C1 misses D by "
+        f"{mp.nstr(mp.mpf(d_row['C1_err_rel']) * 100, 4)}%; the 2026-07-04 "
+        "+0.29% held only for the superseded grouped word under convention "
+        "C. C0-C2 all use the raw difference tr_free*(1-r), which carries "
+        "the per-nucleon self-trace tr_free. The corpus's live law "
+        "E_0*log(tr_free/tr_atom) gives D "
+        f"{mp.nstr(mp.mpf(d_row['C_log_law_err_rel']) * 100, 4)}%, "
+        "on the single-crossing interface letters that the 2026-11-15 "
+        "gamma-gamma bond ruling supersedes (a record, not a prediction). "
+        "Scope (a): constrains these candidates on this route only."
     )
     print(f"\n  VERDICT: {verdict}")
 
@@ -138,10 +155,11 @@ def main() -> int:
           .add_data("rows", rows)
           .add_data("verdict", verdict))
     wb.add_assertion(
-        "deuteron_dressed_subpercent",
-        computed=abs(d_row["C1_err_rel"]) < 0.005, expected=True,
-        source="exact reduction check: C1 at D must reproduce the "
-               "+0.29% of probe_d_qbeta_h_invariant")
+        "c1_over_c0_eq_dressing",
+        computed=mp.nstr(abs(c1_over_c0 - dress), 20), expected="0",
+        tolerance="1e-45",
+        source="C1/C0 = (1 - h/2) exactly; the sub-percent deuteron "
+               "assertion was removed by owner ruling 2026-11-25 (qou-xj4p)")
     wb.save()
     print("\nwitness → probe-d-dressing-cross-a.witness.json (audit-only)")
     return 0

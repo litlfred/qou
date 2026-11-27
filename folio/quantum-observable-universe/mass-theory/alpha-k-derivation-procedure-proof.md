@@ -9,7 +9,7 @@ unique solution.  $\square$
 *By [prop:y-lambda-closed-form-wenzl-bridge](#prop:y-lambda-closed-form-wenzl-bridge),
 $y_\lambda(q)$ has the explicit q-rational expression
 $y_\lambda = s_{\lambda, r}(Q) / \sum_\mu d_\mu s_{\mu, r}(Q)$ with
-$Q = q^2$ and $X = Q^r = q^{3/2} / (1 + q - q^2 - q^3 + q^{3/2})$, in
+$Q = q^2$ and $r = 2$ ($X = Q^2 = q^4$), in
 $O(p(n) \cdot \max\text{hooks})$ time.  The recipe is detailed in
 [prop:y-lambda-recipe-from-partition](#prop:y-lambda-recipe-from-partition).
 The 4-step linear-system algorithm below remains valid as an
@@ -62,12 +62,12 @@ are tabulated by the formal derivation.  Each table records:*
 
 - *partition $\lambda \vdash n$ and curvature-rank
   $\mathrm{depth}(\lambda)$;*
-- *Jones–Markov weight $y_\lambda$: under convention D it vanishes on
+- *Jones–Markov weight $y_\lambda$: at $z = q^{3}/(q^{2}+1)$ it vanishes on
   every shape with three or more rows and equals
   $[a-b+1]_q/[2]_q^{a+b}$ on the two-row shape $(a, b)$, exactly and for
   generic $q$ ([Wedderburn–Bratteli recursion](#conj:wedderburn-bratteli-recursion));
   it is evaluated at
-  $60$ digits at the proton pin $q_0 \approx 1.1099785827513808$;*
+  $60$ digits at the proton-anchored $q_0 \approx 1.1099785827513808$;*
 - *linear-system condition number and residual.*
 
 *Output sums consistent with Plancherel-completeness

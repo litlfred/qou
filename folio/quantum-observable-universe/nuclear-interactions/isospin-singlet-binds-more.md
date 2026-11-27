@@ -1,4 +1,4 @@
-*Let $z = q^{3}/(q^{2}+1)$ be the Markov parameter of convention D and let*
+*Let $z = q^{3}/(q^{2}+1)$ be the Markov parameter and let*
 
 $$
   \mu_+ \;=\; \frac{z + q^{-1}}{q + q^{-1}},
@@ -21,7 +21,7 @@ $$
   \qquad h = q - q^{-1},
 $$
 
-and under convention D the numerator is an identity with a manifestly positive value:
+and at $z = q^{3}/(q^{2}+1)$ the numerator is an identity with a manifestly positive value:
 
 $$
   2z - h \;=\; \frac{q^{4}+1}{q\,(q^{2}+1)} .

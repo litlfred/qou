@@ -40,6 +40,18 @@
     "library/candetgl/sections/sec-025"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 27 sections: Front matter; INTRODUCTION; PRELIMINARIES\n\n**The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics**\n\n*Jason Cantarella, Dennis DeTurck, and Herman Gluck*\n\n31 pp, 27 sections.\n\n**Outline.** Front matter; I INTRODUCTION; II PRELIMINARIES; A Writhing, helicity, and the Biot–Savart oper; B Applications: A quick guide to the literatur; C The Hodge decomposition theorem; 1 FKÄﬂuxless knots; 2 HKÄharmonic knots; 3 CGÄcurly gradients; 4 HGÄharmonic gradients; 5 GGÄgrounded gradients; III STANDARD INFORMATION ABOUT THE BIOT–SAVART; A The basic facts; C Examples; IV PROOF OF THEOREM A; B Proof of Addendum to Theorem A; C Proof of Corollary to Theorem A; V PROOF OF THEOREM B",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "candetgl",

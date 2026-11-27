@@ -1,4 +1,3 @@
-**Proof.**
 One assembles the bound from three lemmas. Put $\alpha = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$. By ([eigenspace decomposition](#lem:topological-mass-cat-eigenspace)), the :refterm[descent]{#descent} involution splits $\alpha$ as $\hat{\tau}_n(\alpha) + (\alpha - \hat{\tau}_n(\alpha))$. Since the trace is linear, the trace value splits the same way:
 
 $$

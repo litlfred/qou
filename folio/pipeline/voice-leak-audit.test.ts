@@ -62,12 +62,12 @@ describe("L3 person", () => {
   });
 });
 
-describe("L4 premature q (Chapter 1 only)", () => {
+describe("L4 premature q", () => {
   it("q tokens fail when premature", () => {
     expect(failing("its rigid trace is $\\mathrm{SU}_q(2)$", { premature: true })).toContain("L4:premature-su_q");
     expect(failing("$\\dim_q [V_n] = [n+1]_q$", { premature: true })).toContain("L4:premature-q-integer");
   });
-  it("are advisory in Chapter 2 and silent where q is introduced", () => {
+  it("the scanner option still marks them advisory, and is silent where q is introduced", () => {
     expect(failing("$[2]_q$", { premature: true, prematureAdvisory: true })).toEqual([]);
     expect(failing("$[2]_q$")).toEqual([]);
   });
@@ -82,5 +82,85 @@ describe("owner rulings 2a/3a/1b (exemption sets)", () => {
     expect(CODE_BY_DESIGN.has("appendix-mass-binding-algorithms")).toBe(true);
     expect(CODE_BY_DESIGN.has("appendix-formalisation-notes")).toBe(true);
     for (const c of ["glossary", "notation", "index-of-definitions"]) expect(REFERENCE_TABLES.has(c)).toBe(true);
+  });
+});
+
+describe("owner ruling 2026-11-20 (every chapter is strict)", () => {
+  const { mkdtempSync, mkdirSync, rmSync, writeFileSync } = require("node:fs");
+  const { join, relative } = require("node:path");
+  const { audit } = require("./voice-leak-audit");
+  it("no L4 hit in any chapter is advisory (live corpus + multi-chapter fixture)", async () => {
+    const { reports } = await audit("folio/quantum-observable-universe", new Set(["L4"]));
+    const advisory = reports.flatMap((r: any) => r.hits).filter((h: any) => h.advisory);
+    expect(advisory).toEqual([]);
+    const chapters = new Set(reports.map((r: any) => r.chapter));
+    expect(chapters.has("introduction")).toBe(false);
+
+    // Synthetic 3-chapter fixture so draining the live corpus to <=1 (or 0) chapters never makes this check vacuous.
+    const tmp = mkdtempSync(join(process.cwd(), "folio/.tmp-l4-test-"));
+    try {
+      for (const ch of ["introduction", "ch-early", "ch-late"]) mkdirSync(join(tmp, ch), { recursive: true });
+      const base = tmp.split("/").pop()!;
+      writeFileSync(join(tmp, `${base}.ts`), `export default { chapters: [{ dir: "introduction" }, { dir: "ch-early" }, { dir: "ch-late" }] };\n`);
+      writeFileSync(join(tmp, "introduction/introduction.ts"), `export default { sections: [{ label: "sec:intro", blocks: ["b0"] }] };\n`);
+      writeFileSync(join(tmp, "introduction/b0.ts"), `export default { label: "prose:b0" };\n`);
+      writeFileSync(join(tmp, "introduction/b0.md"), `Preview of $q$ and [later](#thm:b3).\n`);
+      writeFileSync(join(tmp, "ch-early/ch-early.ts"), `export default { sections: [{ label: "sec:pre", blocks: ["b1"] }, { label: "sec:substrate-parameter", blocks: ["b2"] }] };\n`);
+      writeFileSync(join(tmp, "ch-early/b1.ts"), `export default { label: "def:b1" };\n`);
+      writeFileSync(join(tmp, "ch-early/b1.md"), `Premature $q$ before introduction section.\n`);
+      writeFileSync(join(tmp, "ch-early/b2.ts"), `export default { label: "def:b2" };\n`);
+      writeFileSync(join(tmp, "ch-early/b2.md"), `Forward [later](#thm:b3).\n`);
+      writeFileSync(join(tmp, "ch-late/ch-late.ts"), `export default { sections: [{ label: "sec:late", blocks: ["b3", "b4"] }] };\n`);
+      writeFileSync(join(tmp, "ch-late/b3.ts"), `export default { label: "thm:b3" };\n`);
+      writeFileSync(join(tmp, "ch-late/b3.md"), `Forward [same-sec](#thm:b4).\n`);
+      writeFileSync(join(tmp, "ch-late/b4.ts"), `export default { label: "thm:b4" };\n`);
+      writeFileSync(join(tmp, "ch-late/b4.md"), `Clean block.\n`);
+      const syn = await audit(relative(process.cwd(), tmp), new Set(["L4"]));
+      expect(syn.reports.flatMap((r: any) => r.hits).filter((h: any) => h.advisory)).toEqual([]);
+      const synChapters = new Set(syn.reports.map((r: any) => r.chapter));
+      expect(synChapters.has("introduction")).toBe(false);
+      expect(synChapters.size).toBe(2);
+    } finally {
+      rmSync(tmp, { recursive: true, force: true });
+    }
+  });
+});
+
+describe("owner ruling 2026-11-21 (conditional banners may point ahead)", () => {
+  const { bannerLines } = require("./voice-leak-audit");
+  it("finds single- and multi-line banners, not ordinary prose", () => {
+    expect([...bannerLines("**Proposition (conditional on [X](#conj:x)).**\nbody [Y](#prop:y)")]).toEqual([0]);
+    expect([...bannerLines("**Proposition (conditional on\n[X](#conj:x)).**\nbody")]).toEqual([0, 1]);
+    expect([...bannerLines("**Conditional on [X](#conj:x).**\nbody [Y](#prop:y)")]).toEqual([0]);
+    expect([...bannerLines("**Within a QOU with $2 \\mid \\chi(A)$; conditional on [X](#conj:x).**\nbody")]).toEqual([0]);
+    expect([...bannerLines("this is conditional on [X](#conj:x).")]).toEqual([]);
+  });
+});
+
+describe("owner ruling 2026-11-21 (dim_q is defined in Chapter 1)", () => {
+  it("\\dim_q is not a premature q token, other q tokens still are", () => {
+    expect(failing("a quantum dimension $\\dim_q(\\lambda)$", { premature: true })).toEqual([]);
+    expect(failing("$\\dim_q(\\lambda) = [2]_q$", { premature: true })).toContain("L4:premature-q-integer");
+  });
+});
+
+describe("owner ruling 2026-11-24 (L5 excised Convention C and z_C)", () => {
+  const { FENCED_CHAPTERS, CODE_BY_DESIGN } = require("./voice-leak-audit");
+  it("flags Convention C / convention C / C-convention and z_C variants", () => {
+    expect(failing("Contrast with Convention C.")).toContain("L5:convention-c");
+    expect(failing("Under the excised convention C, the weight vanishes.")).toContain("L5:convention-c");
+    expect(failing("In the convention-$C$ normalisation:")).toContain("L5:convention-c");
+    expect(failing("The $C$-convention value differs.")).toContain("L5:convention-c");
+    expect(failing("where $z_C = q^{1/2}/(q+1)$ and $z_C^2$")).toContain("L5:z-c");
+    expect(failing("evaluated at $z_{C}$ or $z_{\\mathrm{C}}$")).toContain("L5:z-c");
+  });
+  it("leaves lowercase $z_c$ (branch point / crossing modulus), Compton symbols, and ordinary English alone", () => {
+    expect(failing("around the branch point $z_c$ and crossing modulus $z_{c}$")).toEqual([]);
+    expect(failing("Compton time $t_C$, wavelength $\\lambda_{C,e}$, and center $z_{\\mathrm{CM}}$")).toEqual([]);
+    expect(failing("Conventionally, $C > 0$; by convention, $C$ denotes a constant.")).toEqual([]);
+  });
+  it("exempts authors-note and code-by-design chapters", () => {
+    expect(FENCED_CHAPTERS.has("authors-note")).toBe(true);
+    expect(CODE_BY_DESIGN.has("appendix-mass-binding-algorithms")).toBe(true);
   });
 });

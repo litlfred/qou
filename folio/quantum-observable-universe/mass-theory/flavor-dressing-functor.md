@@ -1,4 +1,3 @@
-**Definition.**
 *The **flavor dressing functor** assigns a dressed-mass scale to each quark flavor:*
 
 $$

@@ -50,13 +50,13 @@ import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules mo
 # now. All unconditional — function-call-time NameError if a function
 # is called without the import being available (caught by PR #1085
 # review).
-import math
+import math  # float64-ok: integer math.factorial and legacy boundary helpers
 import json as _json
 import os as _os
 import sys as _sys
 from pathlib import Path as _Path
 from fractions import Fraction
-import numpy as np
+import numpy as np  # float64-ok: object-dtype arrays and Clarabel/scipy SDP interface
 
 from q_parameter import Q as q0, Q_INV as qi, HA as h, q_int, E_CROSS
 # EXACT twins of q0/qi/h.  The float64 names above stay for the many
@@ -422,15 +422,23 @@ def lp_shadow_price(partition):
     """
     k = sum(partition)
     if k == 0:
-        return 0.0
-    w = wedderburn_weight(partition)
+        return _mp.mpf(0)
     d = partition_dimension(partition)
+    if d == 1:
+        # For the two one-dimensional blocks (k,) and (1^k) of H_k(q),
+        # H_q(λ) == [k]_q! identically, so d_q(λ) == 1 and w_λ / d_λ == 1/[k]_q! == y_0
+        # is an exact algebraic identity (bean qou-f2pf). Evaluating
+        # (q_factorial(k)/q_hook_product(λ))**2 / q_factorial(k) - 1/q_factorial(k)
+        # left a ~4.3e-19 1-ulp residue on 6 of the 20 one-dimensional blocks
+        # (k = 6, 7, 9) where q_hook_product multiplied [k]_q..[1]_q in reverse order.
+        return _mp.mpf(0)
+    w = wedderburn_weight(partition)
     # y_0 is the smallest of w_λ/d_λ across all partitions of k.
     # For the trivial (n) partition (sym): w = 1/[n]_q!, d = 1.
     # So y_0 = 1/[n]_q!.  NOT the LP normalisation dual — that one is
     # identically 0 (see this function's docstring).  It is a weight
     # normalisation whose measured effect is to zero (k) and (1^k).
-    y_0 = 1.0 / q_factorial(k)
+    y_0 = _mp.mpf(1) / q_factorial(k)
     return w / d - y_0
 
 
@@ -1881,7 +1889,7 @@ def _q_gaussian_character_approx(entry, n_crossings_at_step, step_idx):
 
 def unified_iterative_correction(Z, N, return_per_step=False,
                                  k_max=K_PARTITION_MAX,
-                                 k_exact=K_PARTITION_MAX):
+                                 k_exact=K_PARTITION_MAX, as_mpf=False):
     """Run the accumulator at the canonical working precision.
 
     MEASURED 2026-09-05 (qou-sv7h): PR #6794 made `_build_ysn_matrices`
@@ -1902,12 +1910,12 @@ def unified_iterative_correction(Z, N, return_per_step=False,
     with _mp.workdps(_CDPS):
         return _unified_iterative_correction_exact(
             Z, N, return_per_step=return_per_step,
-            k_max=k_max, k_exact=k_exact)
+            k_max=k_max, k_exact=k_exact, as_mpf=as_mpf)
 
 
 def _unified_iterative_correction_exact(Z, N, return_per_step=False,
                                         k_max=K_PARTITION_MAX,
-                                        k_exact=K_PARTITION_MAX):
+                                        k_exact=K_PARTITION_MAX, as_mpf=False):
     """Unified iterative correction over per-partition weights.
 
     NAMING CORRECTED 2026-09-05 (owner ruling; PR #6752).  This read
@@ -2520,7 +2528,9 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
             per_step[-1]['n_tight_final'] = n_tight
             per_step[-1]['k_exact'] = k_exact
             per_step[-1]['k_max'] = k_max
-        return float(cumul_total), per_step
+        if as_mpf:
+            return cumul_total, per_step
+        return float(cumul_total), per_step  # float64-ok: public return boundary after mpf accumulation
     # float, as this function has always returned -- the cast is at the public
     # boundary, and NOW that is true.  The note that stood here said the
     # accumulation "keeps its precision ... because math.log already narrows
@@ -2528,7 +2538,11 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
     # conclusion from it: a log that narrows inside the loop is exactly what
     # stops the accumulation keeping anything.  Every log on this path goes
     # through `_exact_log` as of 2026-09-07.
-    return float(cumul_total)
+    # `as_mpf=True` skips the cast for callers that serialize with
+    # `_precision.fmt` (binding_energy(as_mpf=True), hadron_knot_table).
+    if as_mpf:
+        return cumul_total
+    return float(cumul_total)  # float64-ok: public return boundary after mpf accumulation
 
 
 def _jet_witness_path(Z, N, jet, witness_dir):
@@ -2570,7 +2584,7 @@ def _atom_character_raw_exact(Z, N, entry, include_inter=True):
     """
     A = Z + N
     if A < 1 or not entry.get('has_ysn') or not entry.get('ysn'):
-        return (float(entry.get('dim', 1)), 0.0, int(entry.get('dim', 1)))
+        return (float(entry.get('dim', 1)), 0.0, int(entry.get('dim', 1)))  # float64-ok: legacy public tuple contract
 
     ordering = []
     pc, nc = 0, 0
@@ -2595,7 +2609,7 @@ def _atom_character_raw_exact(Z, N, entry, include_inter=True):
         for _k in range(A)])
     if _ks:
         _tr, _ln = _ks[-1]
-        return (float(_tr), float(_ln), int(dim))
+        return (float(_tr), float(_ln), int(dim))  # float64-ok: legacy public tuple contract after MPFR kernel
     for kkk in range(A):
         nuc = ordering[kkk]
         prev_types = ordering[:kkk]
@@ -2655,7 +2669,7 @@ def _atom_character_raw_exact(Z, N, entry, include_inter=True):
                           for i in range(dim))
             log_norm += _exact_log(m_max)
     chi = _trace_dim(M, dim)
-    return (float(chi), float(log_norm), int(dim))
+    return (float(chi), float(log_norm), int(dim))  # float64-ok: legacy public tuple contract after mpf accumulation
 
 
 def _contrib_single_partition(Z, N, entry):
@@ -3286,7 +3300,7 @@ def binding_from_frobenius_pairing(Z, N, k_cap=None, *, canonical: bool = False)
     return E_0_CALIBRATION_MEV * (abs(free_tr) - abs(atom_tr))
 
 
-def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None):
+def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None, *, as_mpf=False):
     """Compute SDP-derived cross-channel energy contribution (MeV).
 
     Runs the SDP with atom observables over all active conjugate pairs
@@ -3300,13 +3314,24 @@ def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None):
     as the diagonal coupling.
 
     Returns total contribution (MeV) and per-pair breakdown.
+
+    `as_mpf=True` accumulates in mpf. The self-conjugate h/2 terms are then
+    exact algebra at the working precision (`_H_MP`, mpf `M_E_MEV`, mpf
+    Wedderburn weight). The cross-block couplings `c_ij` are the output of a
+    float64 conic solver (cvxpy / SCS), but each is pinned by a hard equality
+    constraint (`c_ij == target_c`) in a problem that is always feasible and
+    bounded, so its exact value is the closed form. Under as_mpf that closed
+    form (`c_ij_exact`, computed in mpf by `sdp_with_atom_observables`) is
+    used, and no solver digit reaches the total. The solver still runs; its
+    status gates the term exactly as before.
     """
+    zero = _mp.mpf(0) if as_mpf else 0.0
     if k_cap is None:
         k_cap = K_PARTITION_MAX
     try:
         from sdp_cross_channel import sdp_with_atom_observables
     except ImportError:
-        return 0.0, []
+        return zero, []
 
     active = [e for e in _PARTITION_TABLE
               if e.get('k', 0) <= k_cap
@@ -3318,7 +3343,7 @@ def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None):
     pair_couplings = []
     self_conj_indices = []
     seen = set()
-    h_val = float(h)
+    h_val = float(h)  # float64-ok: Clarabel SDP solver float64 input
     name_to_idx = {tuple(e['partition']): i for i, e in enumerate(active)}
     for i, e in enumerate(active):
         lam = tuple(e['partition'])
@@ -3336,17 +3361,21 @@ def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None):
         pair_couplings.append((i, j, h_val))
 
     if not active:
-        return 0.0, []
+        return zero, []
 
     sol = sdp_with_atom_observables(Z, N, active, pair_couplings)
     if sol.get('status') not in ('optimal', 'optimal_inaccurate'):
-        return 0.0, []
+        return zero, []
 
     # Sum |c_ij| across pairs, scale by m_e
-    total_mev = 0.0
+    total_mev = zero
     per_pair = []
     for cb in sol['cross_blocks']:
         c = cb['c_ij']
+        if as_mpf:
+            # c_ij is fixed by a hard equality in the SDP, so its exact value
+            # is the closed form `c_ij_exact` (mpf), not the SCS iterate.
+            c = cb['c_ij_exact']
         contribution = M_E_MEV * abs(c)
         total_mev += contribution
         per_pair.append({
@@ -3354,21 +3383,24 @@ def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None):
             'lambda_j': cb['lambda_j'],
             'c_ij': c,
             'contribution_MeV': contribution,
+            'solver_limited': not as_mpf,
         })
 
-    # Self-conjugate h/2 contribution (Wigner-2)
+    # Self-conjugate h/2 contribution (Wigner-2): exact algebra, so under
+    # as_mpf it uses the mpf h rather than the float64 solver input h_val.
+    h_term = _H_MP if as_mpf else h_val
     for i in self_conj_indices:
         e = active[i]
         mu = e['q_laplacian_eigenvalue']
         # Self-conj partition: effective coupling at Wigner-2 scale
         #   h/2 · w_λ · m_e (matches DELTA_W2 formula)
         w_lam = e['wedderburn_weight']
-        contribution = M_E_MEV * w_lam * h_val / 2.0
+        contribution = M_E_MEV * w_lam * h_term / 2
         total_mev += contribution
         per_pair.append({
             'lambda_i': list(e['partition']),
             'lambda_j': list(e['partition']),
-            'c_ij': h_val / 2.0,
+            'c_ij': h_term / 2,
             'self_conjugate': True,
             'contribution_MeV': contribution,
         })
@@ -3376,8 +3408,12 @@ def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None):
     return total_mev, per_pair
 
 
-def binding_energy(Z, N, *, sdp=True, frobenius=True):
+def binding_energy(Z, N, *, sdp=True, frobenius=True, as_mpf=False, parts=None):
     """Binding energy (MeV) via the categorical path.
+
+    `as_mpf=True` returns the accumulated value as `mpf` instead of casting it
+    to the public float contract below, for callers that serialize with
+    `_precision.fmt`. The default is unchanged.
 
     B = unified_iterative_correction(Z,N)                      [LP-dual shadow]
       + sdp_cross_channel_contribution(Z,N)    (if sdp)        [SDP couplings]
@@ -3388,13 +3424,23 @@ def binding_energy(Z, N, *, sdp=True, frobenius=True):
     _warn_if_kernel_absent()
     A = Z + N
     if A <= 1:
-        return 0.0
-    B = unified_iterative_correction(Z, N)
+        return _mp.mpf(0) if as_mpf else 0.0
+    B = unified_iterative_correction(Z, N, as_mpf=as_mpf)
+    if parts is not None:
+        parts['lp_shadow_MeV'] = B
     if sdp:
-        sdp_contrib, _ = sdp_cross_channel_contribution(Z, N)
+        sdp_contrib, per_pair = sdp_cross_channel_contribution(Z, N, as_mpf=as_mpf)
         B += sdp_contrib
+        if parts is not None:
+            parts['sdp_MeV'] = sdp_contrib
+            parts['sdp_solver_limited_MeV'] = sum(
+                (p['contribution_MeV'] for p in per_pair if p.get('solver_limited')),
+                _mp.mpf(0) if as_mpf else 0.0)
     if frobenius:
-        B += binding_from_frobenius_pairing(Z, N)
+        fp = binding_from_frobenius_pairing(Z, N)
+        B += fp
+        if parts is not None:
+            parts['frobenius_MeV'] = fp
     # Public contract is a float, and has always been. The Rust kernel makes the
     # accumulator carry mpf internally, and an mpf reaching a witness raises
     # `TypeError: Object of type mpf is not JSON serializable` at
@@ -3415,7 +3461,9 @@ def binding_energy(Z, N, *, sdp=True, frobenius=True):
     # narrowing on the path, and it costs whatever the accumulation carried,
     # which is measured in the hundreds of significand bits rather than 53.
     # It stays because the public contract is a float (bean `qou-sv7h`).
-    return float(B)
+    if as_mpf:
+        return B
+    return float(B)  # float64-ok: public return boundary after mpf accumulation
 
 
 def q_value_beta(Z_parent, N_parent):

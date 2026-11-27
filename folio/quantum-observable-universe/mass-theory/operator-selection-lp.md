@@ -1,4 +1,3 @@
-**Proposition (general operator-selection LP).**
 *Let $n \geq 2$, let $\{b_1, \ldots, b_d\}$ be a basis of $H_n(q)$ (the NF basis, with $d = n!$), let $t_i = \mathrm{tr}_M(b_i)$ be the Markov traces, let $G_{ij} = \mathrm{tr}_M(b_i \cdot b_j)$ be the $d \times d$ Frobenius Gram matrix, and let $n_{\mathrm{target}} \in \mathbb{R}_{>0}$ be a target net value. Consider the linear program*
 
 $$

@@ -1,6 +1,5 @@
 ## Crossing-graded mass expansion
 
-**Conjecture.**
 *Let $\mathcal{K}$ be an atomic braid of $c$ crossings. Fix the universal shape parameter $z_q$ from the Descartes elliptic curve and define the depth scalar $\xi(q) = D(z_q)/\hbar_q^2$. The categorical mass endomorphism admits the crossing-graded expansion:*
 
 $$

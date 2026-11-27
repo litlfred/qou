@@ -1,0 +1,2127 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T04:20:33.744829+00:00",
+  "commitSha": "5d07f72f904e7127fa301d8d6fd025d6dfc85e26",
+  "assertions": [
+    {
+      "name": "V4 (part 1): tr_D = sum y chi on all 24 T_w of H_4",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "V7: quantum trace Tr(K^4 rho)/[2]^4 of beta equals tr_D(beta) (sum y chi)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "V8: quantum trace = Hecke Markov trace on 6 test words",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "P-T1: covariant all-pairs conn(beta) = 0 on four strands",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "V9: one-term cross term via quantum trace = part-1 Markov route (all candidates)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "Lean twoTerm_allPairs_scalar: T2cov C2 = 0 for every candidate",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "Lean crossTerm_lastLetter_eq_zero: C1 = 0 for s2, the one-sided weak vertex and P_L(s2)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "Lean trackA: A's lepton closes on itself",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "D: part-1 tie set reproduced: 7 mirror-containing length-6 words (+ V1^3 = the 8 of part 1)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "n=7"
+    },
+    {
+      "name": "B: chi_4(W_B) = q^3, chi_(3,1)(W_B) = -(q^6 - q^4 + 1)/q, chi_(2,2)(W_B) = 0 (exact)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "H5: tr_D = y5 chi5 + y41 chi41 + y32 chi32 on all 120 T_w",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "H5: y_lambda > 0 at q0 for (5),(4,1),(3,2)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 371194,
+  "computation": "beta-pair-exclusions",
+  "scriptFile": "beta_pair_exclusions_probe.py",
+  "scriptHash": "47180ca19e31",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "ae1028699afd20c5"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/beta_pair_creation_word/beta_pair_exclusions_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/beta_pair_creation_word/beta_pair_exclusions_probe.py"
+  },
+  "description": "qou-99qc task W parts 2-3: exclusion tests for the beta-minus pair-creation candidates A (V1^3), B (passage), C (s2), D (mirror vertices): chirality, closure component, one-term and two-term (covariant / lepton-labelled) cross terms, reading 3, five strands. Pre-registered f816f993c8 + 3e36b55843. Selects nothing; not wired to any scorecard.",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+    "dps": 70,
+    "trace_one_term": "Ocneanu convention D = Tr(K^n rho)/[2]^n",
+    "trace_two_term": "PREREGISTRATION-part3 §1; c not chosen (#8524)"
+  },
+  "data": {
+    "results": {
+      "conn_beta_T2cov": "0",
+      "conn_beta_T2lep": "-(q - 1)**5*(q + 1)**5*(q**2 - q + 1)*(q**2 + q + 1)/(6*q**4*(q**2 + 1)**3)",
+      "mirror_ties_len6": [
+        {
+          "name": "V1V1Vb1",
+          "kind": "word",
+          "word": "s1·s2'·s1·s2'·s1'·s2",
+          "length": 6,
+          "writhe": 0,
+          "lepton_final_position": 3,
+          "nucleon_strands_crossed_by_lepton": [
+            1,
+            2
+          ],
+          "signed_crossings_with_lepton": {
+            "1": -2,
+            "2": 2
+          },
+          "wrap_ge_2": true,
+          "gg": false,
+          "gg_with_mirrors": true,
+          "cc_nonzero": true,
+          "reverse_block_nonzero": true,
+          "cc_min_order_q_to_1": 1,
+          "cross_term_zero": false,
+          "cross_term_order_q_to_1": 5,
+          "r3_feasible_at_q0": true,
+          "chi_W_at_q0": {
+            "4": "1.00000000000000000000000000000000000000000000000000000000000",
+            "31": "3.12431502736115277359761038422326850747043264574489141957825",
+            "22": "2.13302885826185426615639458163912483169602038079613845572133"
+          },
+          "cross_term_at_q0": "-0.000136869045806231907702980590931766617853766160858064050350039",
+          "cross_term_exact": "-(q - 1)**5*(q + 1)**5*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q**6*(q**2 + 1)**4)",
+          "cc_block_exact": [
+            [
+              "(q - 1)**3*(q + 1)**3*(q**8 - q**6 + 3*q**4 - 2*q**2 + 1)/q**6",
+              "-(q - 1)*(q + 1)*(q**4 - q**2 + 1)*(q**12 - 3*q**10 + 5*q**8 - 8*q**6 + 7*q**4 - 4*q**2 + 1)/q**7",
+              "(q - 1)*(q + 1)*(q**14 - 4*q**12 + 8*q**10 - 13*q**8 + 13*q**6 - 9*q**4 + 4*q**2 - 1)/q**6"
+            ],
+            [
+              "-(q - 1)*(q + 1)*(q**3 - q - 1)*(q**3 - q + 1)*(q**6 - 2*q**4 + 3*q**2 - 1)/q**9",
+              "(q - 1)**3*(q + 1)**3*(q**3 - q - 1)*(q**3 - q + 1)*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)/q**10",
+              "-(q - 1)**3*(q + 1)**3*(q**3 - q - 1)*(q**3 - q + 1)*(q**4 - q**2 + 1)/q**9"
+            ],
+            [
+              "-(q - 1)*(q + 1)*(q**4 - q**2 + 1)*(q**6 - 2*q**4 + 3*q**2 - 1)/q**8",
+              "(q - 1)**3*(q + 1)**3*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)*(q**4 - q**2 + 1)/q**9",
+              "-(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)**2/q**8"
+            ]
+          ],
+          "chi_W_exact": {
+            "4": "1",
+            "31": "-(q**14 - 3*q**12 + 2*q**10 - 4*q**6 + 4*q**4 - 4*q**2 + 1)/q**6",
+            "22": "(q**4 + 1)*(q**4 - q**2 + 1)/q**4"
+          },
+          "closure": {
+            "lepton_component_strands": [
+              3
+            ],
+            "size": 1,
+            "self_crossings_signed": 0,
+            "knot": "unknot (one-strand closure)"
+          },
+          "chiral": false,
+          "one_term_cross_term_exact": "-(q - 1)**5*(q + 1)**5*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q**6*(q**2 + 1)**4)",
+          "one_term_cross_term_order_q_to_1": 5,
+          "T2cov": {
+            "conn_W_exact": "0",
+            "C2_exact": "0",
+            "C2_order_q_to_1": null,
+            "C2_at_q0": "0",
+            "C22_exact": "0"
+          },
+          "T2lep": {
+            "conn_W_exact": "-(q - 1)**3*(q + 1)**3*(q**12 + 2*q**10 - 2*q**8 + 10*q**6 - 3*q**4 + q**2 + 1)/(6*q**4*(q**2 + 1)**4)",
+            "C2_exact": "-(q - 1)**5*(q + 1)**5*(3*q**12 + 4*q**10 - q**8 + 2*q**6 + 2*q**4 + 4*q**2 - 2)/(6*q**6*(q**2 + 1)**5)",
+            "C2_order_q_to_1": 5,
+            "C2_at_q0": "-0.0000316575453492620561892529395849203415941143312083280412427567",
+            "C22_exact": "-(q - 1)**8*(q + 1)**8*(q**2 - q + 1)*(q**2 + q + 1)*(3*q**4 + 3*q**2 - 1)/(36*q**6*(q**2 + 1)**6)"
+          }
+        },
+        {
+          "name": "V1Vb1V1",
+          "kind": "word",
+          "word": "s1·s2'·s1'·s2·s1·s2'",
+          "length": 6,
+          "writhe": 0,
+          "lepton_final_position": 3,
+          "nucleon_strands_crossed_by_lepton": [
+            1,
+            2
+          ],
+          "signed_crossings_with_lepton": {
+            "1": 0,
+            "2": -2
+          },
+          "wrap_ge_2": true,
+          "gg": false,
+          "gg_with_mirrors": true,
+          "cc_nonzero": true,
+          "reverse_block_nonzero": true,
+          "cc_min_order_q_to_1": 1,
+          "cross_term_zero": false,
+          "cross_term_order_q_to_1": 4,
+          "r3_feasible_at_q0": true,
+          "chi_W_at_q0": {
+            "4": "1.00000000000000000000000000000000000000000000000000000000000",
+            "31": "3.13302885826185426615639458163912483169602038079613845572133",
+            "22": "2.13302885826185426615639458163912483169602038079613845572133"
+          },
+          "cross_term_at_q0": "0.00148513774579462225852513730368590300932171929339212922763656",
+          "cross_term_exact": "(q - 1)**4*(q + 1)**4*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/(q**6*(q**2 + 1)**4)",
+          "cc_block_exact": [
+            [
+              "-(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)/q**4",
+              "(q - 1)*(q + 1)*(q**4 - q**2 + 1)*(q**8 - 3*q**6 + 3*q**4 - 3*q**2 + 1)/q**5",
+              "-(q - 1)**3*(q + 1)**3*(q**3 - q - 1)*(q**3 - q + 1)/q**4"
+            ],
+            [
+              "-(q - 1)*(q + 1)*(q**4 - q**2 + 1)*(q**6 - 2*q**4 + 3*q**2 - 1)/q**7",
+              "(q - 1)**3*(q + 1)**3*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)*(q**4 - q**2 + 1)/q**8",
+              "-(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)**2/q**7"
+            ],
+            [
+              "-(q - 1)**2*(q + 1)**2*(q**6 - 2*q**4 + 3*q**2 - 1)/q**6",
+              "(q - 1)**4*(q + 1)**4*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)/q**7",
+              "-(q - 1)**4*(q + 1)**4*(q**4 - q**2 + 1)/q**6"
+            ]
+          ],
+          "chi_W_exact": {
+            "4": "1",
+            "31": "(q**8 - q**6 + 3*q**4 - q**2 + 1)/q**4",
+            "22": "(q**4 + 1)*(q**4 - q**2 + 1)/q**4"
+          },
+          "closure": {
+            "lepton_component_strands": [
+              3
+            ],
+            "size": 1,
+            "self_crossings_signed": 0,
+            "knot": "unknot (one-strand closure)"
+          },
+          "chiral": false,
+          "one_term_cross_term_exact": "(q - 1)**4*(q + 1)**4*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/(q**6*(q**2 + 1)**4)",
+          "one_term_cross_term_order_q_to_1": 4,
+          "T2cov": {
+            "conn_W_exact": "0",
+            "C2_exact": "0",
+            "C2_order_q_to_1": null,
+            "C2_at_q0": "0",
+            "C22_exact": "0"
+          },
+          "T2lep": {
+            "conn_W_exact": "-(q - 1)**2*(q + 1)**2*(3*q**6 + 4*q**4 + 1)/(6*q**2*(q**2 + 1)**3)",
+            "C2_exact": "-(q - 1)**5*(q + 1)**5*(q**2 - q + 1)*(q**2 + q + 1)*(2*q**8 + q**6 - 6*q**4 + q**2 - 2)/(6*q**6*(q**2 + 1)**5)",
+            "C2_order_q_to_1": 5,
+            "C2_at_q0": "0.0000137883051280991477305507545930824607549822347452207447934412",
+            "C22_exact": "-(q - 1)**7*(q + 1)**7*(q**2 - q + 1)*(q**2 + q + 1)*(3*q**6 + 4*q**4 + 1)/(36*q**6*(q**2 + 1)**6)"
+          }
+        },
+        {
+          "name": "V1Vb1Vb1",
+          "kind": "word",
+          "word": "s1·s2'·s1'·s2·s1'·s2",
+          "length": 6,
+          "writhe": 0,
+          "lepton_final_position": 3,
+          "nucleon_strands_crossed_by_lepton": [
+            1,
+            2
+          ],
+          "signed_crossings_with_lepton": {
+            "1": -2,
+            "2": 0
+          },
+          "wrap_ge_2": true,
+          "gg": false,
+          "gg_with_mirrors": true,
+          "cc_nonzero": true,
+          "reverse_block_nonzero": true,
+          "cc_min_order_q_to_1": 1,
+          "cross_term_zero": false,
+          "cross_term_order_q_to_1": 4,
+          "r3_feasible_at_q0": true,
+          "chi_W_at_q0": {
+            "4": "1.00000000000000000000000000000000000000000000000000000000000",
+            "31": "3.12912490390610665083493052426480143417653846196357341901764",
+            "22": "2.14491134837227086493158804754782655353252703665037093535004"
+          },
+          "cross_term_at_q0": "0.00148513774579462225852513730368590300932171929339212922763656",
+          "cross_term_exact": "(q - 1)**4*(q + 1)**4*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/(q**6*(q**2 + 1)**4)",
+          "cc_block_exact": [
+            [
+              "(q - 1)**3*(q + 1)**3*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)/q**4",
+              "-(q - 1)**2*(q + 1)**2*(q**4 - q**2 + 1)*(q**8 - 2*q**6 + 2*q**4 - 3*q**2 + 1)/q**5",
+              "(q - 1)*(q + 1)*(q**4 - q**2 + 1)*(q**8 - 3*q**6 + 3*q**4 - 3*q**2 + 1)/q**4"
+            ],
+            [
+              "-(q - 1)**2*(q + 1)**2*(q**4 + 1)*(q**6 - 2*q**4 + 3*q**2 - 1)/q**9",
+              "(q - 1)**4*(q + 1)**4*(q**4 + 1)*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)/q**10",
+              "-(q - 1)**4*(q + 1)**4*(q**4 + 1)*(q**4 - q**2 + 1)/q**9"
+            ],
+            [
+              "-(q - 1)*(q + 1)*(q**4 - q**2 + 1)*(q**6 - 2*q**4 + 3*q**2 - 1)/q**8",
+              "(q - 1)**3*(q + 1)**3*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)*(q**4 - q**2 + 1)/q**9",
+              "-(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)**2/q**8"
+            ]
+          ],
+          "chi_W_exact": {
+            "4": "1",
+            "31": "-(q**4 - q**2 + 1)*(q**8 - 4*q**6 + 3*q**4 - 4*q**2 + 1)/q**6",
+            "22": "(q**4 + 1)*(q**12 - 3*q**10 + 4*q**8 - 3*q**6 + 4*q**4 - 3*q**2 + 1)/q**8"
+          },
+          "closure": {
+            "lepton_component_strands": [
+              3
+            ],
+            "size": 1,
+            "self_crossings_signed": 0,
+            "knot": "unknot (one-strand closure)"
+          },
+          "chiral": false,
+          "one_term_cross_term_exact": "(q - 1)**4*(q + 1)**4*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/(q**6*(q**2 + 1)**4)",
+          "one_term_cross_term_order_q_to_1": 4,
+          "T2cov": {
+            "conn_W_exact": "0",
+            "C2_exact": "0",
+            "C2_order_q_to_1": null,
+            "C2_at_q0": "0",
+            "C22_exact": "0"
+          },
+          "T2lep": {
+            "conn_W_exact": "-(q - 1)**2*(q + 1)**2*(3*q**10 - 6*q**8 + 16*q**6 - 12*q**4 + 10*q**2 - 3)/(6*q**4*(q**2 + 1)**3)",
+            "C2_exact": "-(q - 1)**5*(q + 1)**5*(2*q**12 + 6*q**10 + 3*q**8 + 2*q**6 - q**4 + 2*q**2 - 2)/(6*q**6*(q**2 + 1)**5)",
+            "C2_order_q_to_1": 5,
+            "C2_at_q0": "-0.0000363970394256636376407734946320435841674732057066171387488396",
+            "C22_exact": "-(q - 1)**7*(q + 1)**7*(q**2 - q + 1)*(q**2 + q + 1)*(3*q**6 + 4*q**4 + 1)/(36*q**6*(q**2 + 1)**6)"
+          }
+        },
+        {
+          "name": "Vb1V1V1",
+          "kind": "word",
+          "word": "s1'·s2·s1·s2'·s1·s2'",
+          "length": 6,
+          "writhe": 0,
+          "lepton_final_position": 3,
+          "nucleon_strands_crossed_by_lepton": [
+            1,
+            2
+          ],
+          "signed_crossings_with_lepton": {
+            "1": 2,
+            "2": 0
+          },
+          "wrap_ge_2": true,
+          "gg": false,
+          "gg_with_mirrors": true,
+          "cc_nonzero": true,
+          "reverse_block_nonzero": true,
+          "cc_min_order_q_to_1": 1,
+          "cross_term_zero": false,
+          "cross_term_order_q_to_1": 4,
+          "r3_feasible_at_q0": true,
+          "chi_W_at_q0": {
+            "4": "1.00000000000000000000000000000000000000000000000000000000000",
+            "31": "3.11522034794998808769258716362546413175304337534738900398921",
+            "22": "2.13302885826185426615639458163912483169602038079613845572133"
+          },
+          "cross_term_at_q0": "-0.00182976760448195994258480462922243957953223334187363271070251",
+          "cross_term_exact": "-(q - 1)**4*(q + 1)**4*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/(q**4*(q**2 + 1)**4)",
+          "cc_block_exact": [
+            [
+              "-(q - 1)**3*(q + 1)**3/q**6",
+              "(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)/q**7",
+              "-(q - 1)*(q + 1)*(q**6 - 3*q**4 + 2*q**2 - 1)/q**6"
+            ],
+            [
+              "-(q - 1)**2*(q + 1)**2*(q**6 - 2*q**4 + 3*q**2 - 1)/q**5",
+              "(q - 1)**4*(q + 1)**4*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)/q**6",
+              "-(q - 1)**4*(q + 1)**4*(q**4 - q**2 + 1)/q**5"
+            ],
+            [
+              "(q - 1)*(q + 1)*(q**4 - q**2 + 1)*(q**6 - 2*q**4 + 3*q**2 - 1)/q**6",
+              "-(q - 1)**3*(q + 1)**3*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)*(q**4 - q**2 + 1)/q**7",
+              "(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)**2/q**6"
+            ]
+          ],
+          "chi_W_exact": {
+            "4": "1",
+            "31": "-(q**18 - 3*q**16 + 4*q**14 - 5*q**12 + 3*q**10 - q**8 - 3*q**6 + 3*q**4 - 3*q**2 + 1)/q**8",
+            "22": "(q**4 + 1)*(q**4 - q**2 + 1)/q**4"
+          },
+          "closure": {
+            "lepton_component_strands": [
+              3
+            ],
+            "size": 1,
+            "self_crossings_signed": 0,
+            "knot": "unknot (one-strand closure)"
+          },
+          "chiral": false,
+          "one_term_cross_term_exact": "-(q - 1)**4*(q + 1)**4*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/(q**4*(q**2 + 1)**4)",
+          "one_term_cross_term_order_q_to_1": 4,
+          "T2cov": {
+            "conn_W_exact": "0",
+            "C2_exact": "0",
+            "C2_order_q_to_1": null,
+            "C2_at_q0": "0",
+            "C22_exact": "0"
+          },
+          "T2lep": {
+            "conn_W_exact": "-(q - 1)**2*(q + 1)**2*(q**18 + q**16 - 6*q**14 + 9*q**12 - 17*q**10 + 12*q**8 - 17*q**6 + 3*q**4 - q**2 - 1)/(6*q**6*(q**2 + 1)**4)",
+            "C2_exact": "-(q - 1)**5*(q + 1)**5*(q**14 + 3*q**12 + 6*q**10 + 4*q**8 + 7*q**6 + 4*q**4 + 8*q**2 + 3)/(6*q**6*(q**2 + 1)**5)",
+            "C2_order_q_to_1": 5,
+            "C2_at_q0": "-0.0000790896616445246228849770877408464547559587326026746115134959",
+            "C22_exact": "(q - 1)**7*(q + 1)**7*(q**2 - q + 1)*(q**2 + q + 1)*(q**6 + 4*q**2 + 3)/(36*q**6*(q**2 + 1)**6)"
+          }
+        },
+        {
+          "name": "Vb1V1Vb1",
+          "kind": "word",
+          "word": "s1'·s2·s1·s2'·s1'·s2",
+          "length": 6,
+          "writhe": 0,
+          "lepton_final_position": 3,
+          "nucleon_strands_crossed_by_lepton": [
+            1,
+            2
+          ],
+          "signed_crossings_with_lepton": {
+            "1": 0,
+            "2": 2
+          },
+          "wrap_ge_2": true,
+          "gg": false,
+          "gg_with_mirrors": true,
+          "cc_nonzero": true,
+          "reverse_block_nonzero": true,
+          "cc_min_order_q_to_1": 1,
+          "cross_term_zero": false,
+          "cross_term_order_q_to_1": 4,
+          "r3_feasible_at_q0": true,
+          "chi_W_at_q0": {
+            "4": "1.00000000000000000000000000000000000000000000000000000000000",
+            "31": "3.12319888370465707114631657215984245607006811236905644691422",
+            "22": "2.10874453945036957050063763138171095572865932429173932501669"
+          },
+          "cross_term_at_q0": "-0.00182976760448195994258480462922243957953223334187363271070251",
+          "cross_term_exact": "-(q - 1)**4*(q + 1)**4*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/(q**4*(q**2 + 1)**4)",
+          "cc_block_exact": [
+            [
+              "(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)/q**8",
+              "-(q - 1)*(q + 1)*(q**4 - q**2 + 1)*(q**8 - 3*q**6 + 3*q**4 - 3*q**2 + 1)/q**9",
+              "(q - 1)**3*(q + 1)**3*(q**3 - q - 1)*(q**3 - q + 1)/q**8"
+            ],
+            [
+              "(q - 1)*(q + 1)*(q**6 - 2*q**4 + 3*q**2 - 1)/q**5",
+              "-(q - 1)**3*(q + 1)**3*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)/q**6",
+              "(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)/q**5"
+            ],
+            [
+              "-(q - 1)**2*(q + 1)**2*(q**6 - 2*q**4 + 3*q**2 - 1)/q**6",
+              "(q - 1)**4*(q + 1)**4*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)/q**7",
+              "-(q - 1)**4*(q + 1)**4*(q**4 - q**2 + 1)/q**6"
+            ]
+          ],
+          "chi_W_exact": {
+            "4": "1",
+            "31": "-(q**16 - 4*q**14 + 8*q**12 - 13*q**10 + 15*q**8 - 15*q**6 + 9*q**4 - 5*q**2 + 1)/q**6",
+            "22": "-(q**4 + 1)*(q**8 - 2*q**6 + q**4 - 2*q**2 + 1)*(q**8 - q**6 + q**4 - q**2 + 1)/q**10"
+          },
+          "closure": {
+            "lepton_component_strands": [
+              3
+            ],
+            "size": 1,
+            "self_crossings_signed": 0,
+            "knot": "unknot (one-strand closure)"
+          },
+          "chiral": false,
+          "one_term_cross_term_exact": "-(q - 1)**4*(q + 1)**4*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/(q**4*(q**2 + 1)**4)",
+          "one_term_cross_term_order_q_to_1": 4,
+          "T2cov": {
+            "conn_W_exact": "0",
+            "C2_exact": "0",
+            "C2_order_q_to_1": null,
+            "C2_at_q0": "0",
+            "C22_exact": "0"
+          },
+          "T2lep": {
+            "conn_W_exact": "-(q - 1)**2*(q + 1)**2*(q**18 - 2*q**16 + 3*q**12 - 11*q**10 + 12*q**8 - 23*q**6 + 9*q**4 - 7*q**2 + 2)/(6*q**6*(q**2 + 1)**4)",
+            "C2_exact": "-(q - 1)**5*(q + 1)**5*(q**12 - 5*q**6 - 5*q**4 - 5*q**2 + 2)/(6*q**4*(q**2 + 1)**5)",
+            "C2_order_q_to_1": 5,
+            "C2_at_q0": "0.0000234744385973441708583654203598450780409824776920189183228554",
+            "C22_exact": "(q - 1)**7*(q + 1)**7*(q**2 - q + 1)*(q**2 + q + 1)*(q**6 + 4*q**2 + 3)/(36*q**6*(q**2 + 1)**6)"
+          }
+        },
+        {
+          "name": "Vb1Vb1V1",
+          "kind": "word",
+          "word": "s1'·s2·s1'·s2·s1·s2'",
+          "length": 6,
+          "writhe": 0,
+          "lepton_final_position": 3,
+          "nucleon_strands_crossed_by_lepton": [
+            1,
+            2
+          ],
+          "signed_crossings_with_lepton": {
+            "1": 2,
+            "2": -2
+          },
+          "wrap_ge_2": true,
+          "gg": false,
+          "gg_with_mirrors": true,
+          "cc_nonzero": true,
+          "reverse_block_nonzero": true,
+          "cc_min_order_q_to_1": 1,
+          "cross_term_zero": false,
+          "cross_term_order_q_to_1": 5,
+          "r3_feasible_at_q0": true,
+          "chi_W_at_q0": {
+            "4": "1.00000000000000000000000000000000000000000000000000000000000",
+            "31": "3.12003022449494196492990730366699705845914919156607100342859",
+            "22": "2.14491134837227086493158804754782655353252703665037093535004"
+          },
+          "cross_term_at_q0": "-0.000207760812881105776356686734604769952356747887623439432715907",
+          "cross_term_exact": "-(q - 1)**5*(q + 1)**5*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q**2*(q**2 + 1)**4)",
+          "cc_block_exact": [
+            [
+              "-(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 2)/q**6",
+              "(q - 1)*(q + 1)*(q**2 - 2)*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)*(q**4 - q**2 + 1)/q**7",
+              "-(q - 1)*(q + 1)*(q**2 - 2)*(q**4 - q**2 + 1)**2/q**6"
+            ],
+            [
+              "-(q - 1)*(q + 1)*(q**6 - 2*q**4 + 3*q**2 - 1)/q**3",
+              "(q - 1)**3*(q + 1)**3*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)/q**4",
+              "-(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)/q**3"
+            ],
+            [
+              "(q - 1)*(q + 1)*(q**4 - q**2 + 1)*(q**6 - 2*q**4 + 3*q**2 - 1)/q**6",
+              "-(q - 1)**3*(q + 1)**3*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)*(q**4 - q**2 + 1)/q**7",
+              "(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)**2/q**6"
+            ]
+          ],
+          "chi_W_exact": {
+            "4": "1",
+            "31": "-(q**4 - q**2 + 1)*(q**14 - 3*q**12 + 4*q**10 - 5*q**8 + 2*q**6 - q**4 - 2*q**2 + 1)/q**8",
+            "22": "(q**4 + 1)*(q**12 - 3*q**10 + 4*q**8 - 3*q**6 + 4*q**4 - 3*q**2 + 1)/q**8"
+          },
+          "closure": {
+            "lepton_component_strands": [
+              3
+            ],
+            "size": 1,
+            "self_crossings_signed": 0,
+            "knot": "unknot (one-strand closure)"
+          },
+          "chiral": false,
+          "one_term_cross_term_exact": "-(q - 1)**5*(q + 1)**5*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q**2*(q**2 + 1)**4)",
+          "one_term_cross_term_order_q_to_1": 5,
+          "T2cov": {
+            "conn_W_exact": "0",
+            "C2_exact": "0",
+            "C2_order_q_to_1": null,
+            "C2_at_q0": "0",
+            "C22_exact": "0"
+          },
+          "T2lep": {
+            "conn_W_exact": "-(q - 1)**3*(q + 1)**3*(q**16 + q**14 - 3*q**12 + 7*q**10 - 12*q**8 + 17*q**6 - 6*q**4 + 4*q**2 + 1)/(6*q**6*(q**2 + 1)**4)",
+            "C2_exact": "-(q - 1)**5*(q + 1)**5*(q**14 + 2*q**12 + 8*q**10 + 8*q**8 + 7*q**6 + q**4 + 6*q**2 + 3)/(6*q**6*(q**2 + 1)**5)",
+            "C2_order_q_to_1": 5,
+            "C2_at_q0": "-0.0000838291557209262043364976427879696973293176071009637090195788",
+            "C22_exact": "(q - 1)**8*(q + 1)**8*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - 3*q**2 - 3)/(36*q**6*(q**2 + 1)**6)"
+          }
+        },
+        {
+          "name": "Vb1Vb1Vb1",
+          "kind": "word",
+          "word": "s1'·s2·s1'·s2·s1'·s2",
+          "length": 6,
+          "writhe": 0,
+          "lepton_final_position": 3,
+          "nucleon_strands_crossed_by_lepton": [
+            1,
+            2
+          ],
+          "signed_crossings_with_lepton": {
+            "1": 0,
+            "2": 0
+          },
+          "wrap_ge_2": true,
+          "gg": false,
+          "gg_with_mirrors": true,
+          "cc_nonzero": true,
+          "reverse_block_nonzero": true,
+          "cc_min_order_q_to_1": 2,
+          "cross_term_zero": false,
+          "cross_term_order_q_to_1": 6,
+          "r3_feasible_at_q0": true,
+          "chi_W_at_q0": {
+            "4": "1.00000000000000000000000000000000000000000000000000000000000",
+            "31": "2.98464318645170203201243939268870003014910296538082781308286",
+            "22": "2.00106137550204499666191192155503051624055664134416604345337"
+          },
+          "cross_term_at_q0": "0.0000799722044875417583803801088055885253436594047518278734902212",
+          "cross_term_exact": "(q - 1)**6*(q + 1)**6*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/(q**6*(q**2 + 1)**4)",
+          "cc_block_exact": [
+            [
+              "(q - 1)**4*(q + 1)**4*(q**8 - q**6 + 3*q**4 - 2*q**2 + 1)/q**10",
+              "-(q - 1)**2*(q + 1)**2*(q**4 - q**2 + 1)*(q**12 - 3*q**10 + 5*q**8 - 8*q**6 + 7*q**4 - 4*q**2 + 1)/q**11",
+              "(q - 1)**2*(q + 1)**2*(q**14 - 4*q**12 + 8*q**10 - 13*q**8 + 13*q**6 - 9*q**4 + 4*q**2 - 1)/q**10"
+            ],
+            [
+              "-(q - 1)**2*(q + 1)**2*(q**6 - 2*q**4 + 3*q**2 - 1)/q**5",
+              "(q - 1)**4*(q + 1)**4*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)/q**6",
+              "-(q - 1)**4*(q + 1)**4*(q**4 - q**2 + 1)/q**5"
+            ],
+            [
+              "(q - 1)**2*(q + 1)**2*(q**4 - q**2 + 1)*(q**6 - 2*q**4 + 3*q**2 - 1)/q**8",
+              "-(q - 1)**4*(q + 1)**4*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)*(q**4 - q**2 + 1)/q**9",
+              "(q - 1)**4*(q + 1)**4*(q**4 - q**2 + 1)**2/q**8"
+            ]
+          ],
+          "chi_W_exact": {
+            "4": "1",
+            "31": "(q**18 - 6*q**16 + 16*q**14 - 30*q**12 + 46*q**10 - 54*q**8 + 51*q**6 - 34*q**4 + 17*q**2 - 4)/q**6",
+            "22": "(q**4 - q**2 + 1)*(q**20 - 4*q**18 + 7*q**16 - 10*q**14 + 14*q**12 - 14*q**10 + 14*q**8 - 10*q**6 + 7*q**4 - 4*q**2 + 1)/q**12"
+          },
+          "closure": {
+            "lepton_component_strands": [
+              3
+            ],
+            "size": 1,
+            "self_crossings_signed": 0,
+            "knot": "unknot (one-strand closure)"
+          },
+          "chiral": false,
+          "one_term_cross_term_exact": "(q - 1)**6*(q + 1)**6*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/(q**6*(q**2 + 1)**4)",
+          "one_term_cross_term_order_q_to_1": 6,
+          "T2cov": {
+            "conn_W_exact": "0",
+            "C2_exact": "0",
+            "C2_order_q_to_1": null,
+            "C2_at_q0": "0",
+            "C22_exact": "0"
+          },
+          "T2lep": {
+            "conn_W_exact": "(q - 1)**4*(q + 1)**4*(q**18 - 2*q**16 - q**14 - 11*q**10 + 12*q**8 - 23*q**6 + 12*q**4 - 6*q**2 + 2)/(6*q**8*(q**2 + 1)**4)",
+            "C2_exact": "(q - 1)**5*(q + 1)**5*(q**16 - 2*q**14 + q**12 - 8*q**10 - q**8 - 6*q**6 + q**4 - 12*q**2 + 2)/(6*q**6*(q**2 + 1)**5)",
+            "C2_order_q_to_1": 5,
+            "C2_at_q0": "-0.0000512113232622821926924007730207374063087557865556522107632409",
+            "C22_exact": "-(q - 1)**9*(q + 1)**9*(q**2 - q + 1)*(q**2 + q + 1)*(q**6 + 4*q**2 + 3)/(36*q**8*(q**2 + 1)**6)"
+          }
+        }
+      ],
+      "B_characters_sign_map": {
+        "4": {
+          "exact": "q**3",
+          "real_roots_gt_1": [],
+          "sign_on_intervals_from_1": [
+            1
+          ]
+        },
+        "31": {
+          "exact": "-(q**6 - q**4 + 1)/q",
+          "real_roots_gt_1": [],
+          "sign_on_intervals_from_1": [
+            -1
+          ]
+        },
+        "22": {
+          "exact": "0",
+          "real_roots_gt_1": [],
+          "sign_on_intervals_from_1": [
+            0
+          ]
+        }
+      },
+      "five_strands": {
+        "markov_weights_q0": {
+          "5": "0.194277187377992845098088701282401530038841797185350555699053",
+          "41": "0.124985397167947105924239785178792543024398133334607431744012",
+          "32": "0.0611562447900437462409904316004856595727131338952439434649801"
+        },
+        "pair_state": "U_q singlet cup ud - q^-1 du on strands 3,4 [L5]; e- = d, nu-bar = d",
+        "G5_len_le_8": {
+          "n_words": 120,
+          "cc5": 96,
+          "cc5_and_r3": 10,
+          "cheapest_cc5_r3": [
+            {
+              "word": "V1V1V1",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "V2V2V2",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            }
+          ],
+          "chiral_among_cc5_r3": [
+            "V2V0V1V2"
+          ],
+          "cc5_r3_words": [
+            "V1V1V1",
+            "V2V2V2",
+            "V0V1V0V1",
+            "V0V1V2V2",
+            "V1V0V0V1",
+            "V1V0V1V0",
+            "V1V2V2V0",
+            "V2V0V1V2",
+            "V2V1V2V1",
+            "V2V2V0V1"
+          ],
+          "cc5_r3_records": [
+            {
+              "word": "V1V1V1",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "V2V2V2",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "V0V1V0V1",
+              "length": 8,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "V0V1V2V2",
+              "length": 8,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": false,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "V1V0V0V1",
+              "length": 8,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": false,
+              "lepton_component": "T(2,-1) = unknot"
+            },
+            {
+              "word": "V1V0V1V0",
+              "length": 8,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "V1V2V2V0",
+              "length": 8,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": false,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "V2V0V1V2",
+              "length": 8,
+              "cc5": true,
+              "reverse_nonzero": false,
+              "r3": true,
+              "pure": false,
+              "lepton_component": "T(2,1) = unknot"
+            },
+            {
+              "word": "V2V1V2V1",
+              "length": 8,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "V2V2V0V1",
+              "length": 8,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": false,
+              "lepton_component": "T(2,1) = unknot"
+            }
+          ]
+        },
+        "Gbar5_len_le_6": {
+          "n_words": 258,
+          "cc5": 199,
+          "cc5_and_r3": 29,
+          "cheapest_cc5_r3": [
+            {
+              "word": "V0Vb1",
+              "length": 4,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": false,
+              "lepton_component": "T(2,1) = unknot"
+            },
+            {
+              "word": "V1Vb2",
+              "length": 4,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": false,
+              "lepton_component": "T(2,1) = unknot"
+            },
+            {
+              "word": "Vb1V0",
+              "length": 4,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": false,
+              "lepton_component": "T(2,1) = unknot"
+            },
+            {
+              "word": "Vb2V1",
+              "length": 4,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": false,
+              "lepton_component": "T(2,1) = unknot"
+            }
+          ],
+          "chiral_among_cc5_r3": [],
+          "cc5_r3_words": [
+            "V0Vb1",
+            "V1Vb2",
+            "Vb1V0",
+            "Vb2V1",
+            "V0V1Vb2",
+            "V0Vb1V2",
+            "V1V1V1",
+            "V1V1Vb1",
+            "V1Vb1V1",
+            "V1Vb1Vb1",
+            "V1Vb2V0",
+            "V1Vb2Vb0",
+            "V2V0Vb1",
+            "V2V2V2",
+            "V2V2Vb2",
+            "V2Vb2V2",
+            "V2Vb2Vb2",
+            "Vb1V1V1",
+            "Vb1V1Vb1",
+            "Vb1V2V0",
+            "Vb1Vb1V1",
+            "Vb1Vb1Vb1",
+            "Vb2V0V1",
+            "Vb2V0Vb1",
+            "Vb2V2V2",
+            "Vb2V2Vb2",
+            "Vb2Vb0V1",
+            "Vb2Vb2V2",
+            "Vb2Vb2Vb2"
+          ],
+          "cc5_r3_records": [
+            {
+              "word": "V0Vb1",
+              "length": 4,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": false,
+              "lepton_component": "T(2,1) = unknot"
+            },
+            {
+              "word": "V1Vb2",
+              "length": 4,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": false,
+              "lepton_component": "T(2,1) = unknot"
+            },
+            {
+              "word": "Vb1V0",
+              "length": 4,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": false,
+              "lepton_component": "T(2,1) = unknot"
+            },
+            {
+              "word": "Vb2V1",
+              "length": 4,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": false,
+              "lepton_component": "T(2,1) = unknot"
+            },
+            {
+              "word": "V0V1Vb2",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": false,
+              "lepton_component": "T(2,1) = unknot"
+            },
+            {
+              "word": "V0Vb1V2",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": false,
+              "lepton_component": "T(2,-1) = unknot"
+            },
+            {
+              "word": "V1V1V1",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "V1V1Vb1",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "V1Vb1V1",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "V1Vb1Vb1",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "V1Vb2V0",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": false,
+              "lepton_component": "T(2,1) = unknot"
+            },
+            {
+              "word": "V1Vb2Vb0",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": false,
+              "lepton_component": "T(2,1) = unknot"
+            },
+            {
+              "word": "V2V0Vb1",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": false,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "V2V2V2",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "V2V2Vb2",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "V2Vb2V2",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "V2Vb2Vb2",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "Vb1V1V1",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "Vb1V1Vb1",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "Vb1V2V0",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": false,
+              "lepton_component": "T(2,-1) = unknot"
+            },
+            {
+              "word": "Vb1Vb1V1",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "Vb1Vb1Vb1",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "Vb2V0V1",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": false,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "Vb2V0Vb1",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": false,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "Vb2V2V2",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "Vb2V2Vb2",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "Vb2Vb0V1",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": false,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "Vb2Vb2V2",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            },
+            {
+              "word": "Vb2Vb2Vb2",
+              "length": 6,
+              "cc5": true,
+              "reverse_nonzero": true,
+              "r3": true,
+              "pure": true,
+              "lepton_component": "unknot (one-strand closure)"
+            }
+          ]
+        }
+      },
+      "candidates": {
+        "A  V1^3": {
+          "name": "A  V1^3",
+          "kind": "word",
+          "word": "s1·s2'·s1·s2'·s1·s2'",
+          "length": 6,
+          "writhe": 0,
+          "lepton_final_position": 3,
+          "nucleon_strands_crossed_by_lepton": [
+            1,
+            2
+          ],
+          "signed_crossings_with_lepton": {
+            "1": 0,
+            "2": 0
+          },
+          "wrap_ge_2": true,
+          "gg": true,
+          "gg_with_mirrors": true,
+          "cc_nonzero": true,
+          "reverse_block_nonzero": true,
+          "cc_min_order_q_to_1": 2,
+          "cross_term_zero": false,
+          "cross_term_order_q_to_1": 6,
+          "r3_feasible_at_q0": true,
+          "chi_W_at_q0": {
+            "4": "1.00000000000000000000000000000000000000000000000000000000000",
+            "31": "2.98421355553383578590334247671697488064401142531320248366760",
+            "22": "2.00000000000000000000000000000000000000000000000000000000000"
+          },
+          "cross_term_at_q0": "-0.0000649097400172193926391121447907016013954234666493152597315274",
+          "cross_term_exact": "-(q - 1)**6*(q + 1)**6*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/(q**8*(q**2 + 1)**4)",
+          "cc_block_exact": [
+            [
+              "(q - 1)**4*(q + 1)**4*(q**4 - q**2 + 2)/q**4",
+              "-(q - 1)**2*(q + 1)**2*(q**2 - 2)*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)*(q**4 - q**2 + 1)/q**5",
+              "(q - 1)**2*(q + 1)**2*(q**2 - 2)*(q**4 - q**2 + 1)**2/q**4"
+            ],
+            [
+              "(q - 1)**2*(q + 1)**2*(q**3 - q - 1)*(q**3 - q + 1)*(q**6 - 2*q**4 + 3*q**2 - 1)/q**9",
+              "-(q - 1)**4*(q + 1)**4*(q**3 - q - 1)*(q**3 - q + 1)*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)/q**10",
+              "(q - 1)**4*(q + 1)**4*(q**3 - q - 1)*(q**3 - q + 1)*(q**4 - q**2 + 1)/q**9"
+            ],
+            [
+              "(q - 1)**2*(q + 1)**2*(q**4 - q**2 + 1)*(q**6 - 2*q**4 + 3*q**2 - 1)/q**8",
+              "-(q - 1)**4*(q + 1)**4*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)*(q**4 - q**2 + 1)/q**9",
+              "(q - 1)**4*(q + 1)**4*(q**4 - q**2 + 1)**2/q**8"
+            ]
+          ],
+          "chi_W_exact": {
+            "4": "1",
+            "31": "-(q**4 - q**2 + 1)*(q**12 - q**10 - 2*q**8 + q**6 - 2*q**4 - q**2 + 1)/q**8",
+            "22": "2"
+          },
+          "closure": {
+            "lepton_component_strands": [
+              3
+            ],
+            "size": 1,
+            "self_crossings_signed": 0,
+            "knot": "unknot (one-strand closure)"
+          },
+          "chiral": false,
+          "one_term_cross_term_exact": "-(q - 1)**6*(q + 1)**6*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/(q**8*(q**2 + 1)**4)",
+          "one_term_cross_term_order_q_to_1": 6,
+          "T2cov": {
+            "conn_W_exact": "0",
+            "C2_exact": "0",
+            "C2_order_q_to_1": null,
+            "C2_at_q0": "0",
+            "C22_exact": "0"
+          },
+          "T2lep": {
+            "conn_W_exact": "-(q - 1)**4*(q + 1)**4*(q**10 - q**8 - 6*q**6 + 2*q**4 - 3*q**2 - 1)/(6*q**6*(q**2 + 1)**3)",
+            "C2_exact": "(q - 1)**5*(q + 1)**5*(2*q**16 - q**14 - 10*q**12 - q**10 - 8*q**8 + 3*q**6 - 10*q**4 + 3*q**2 - 2)/(6*q**8*(q**2 + 1)**5)",
+            "C2_order_q_to_1": 5,
+            "C2_at_q0": "-0.0000507879790930015290439558516663215321047179407869564729845532",
+            "C22_exact": "(q - 1)**9*(q + 1)**9*(q**2 - q + 1)*(q**2 + q + 1)*(3*q**6 + 4*q**4 + 1)/(36*q**8*(q**2 + 1)**6)"
+          }
+        },
+        "B  passage s0s1s2": {
+          "name": "B  passage s0s1s2",
+          "kind": "word",
+          "word": "s0·s1·s2",
+          "length": 3,
+          "writhe": 3,
+          "lepton_final_position": 0,
+          "nucleon_strands_crossed_by_lepton": [
+            0,
+            1,
+            2
+          ],
+          "signed_crossings_with_lepton": {
+            "0": 1,
+            "1": 1,
+            "2": 1
+          },
+          "wrap_ge_2": true,
+          "gg": false,
+          "gg_with_mirrors": false,
+          "cc_nonzero": true,
+          "reverse_block_nonzero": false,
+          "cc_min_order_q_to_1": 1,
+          "cross_term_zero": false,
+          "cross_term_order_q_to_1": 2,
+          "r3_feasible_at_q0": false,
+          "chi_W_at_q0": {
+            "4": "1.36755183695138518796672402990936100071109752077276787660591",
+            "31": "-1.21826204392057662427300817190626948406508314894118859240194",
+            "22": "0.0"
+          },
+          "cross_term_at_q0": "-0.0198253662771805967854246047330522692737720111856050054760966",
+          "cross_term_exact": "q*(q - 1)**2*(q + 1)**2*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - 2*q**2 - 1)/(q**2 + 1)**5",
+          "cc_block_exact": [
+            [
+              "-(q - 1)**4*(q + 1)**4/q**5",
+              "(q - 1)*(q + 1)*(q**4 - q**2 + 1)*(q**6 - 2*q**4 + 3*q**2 - 1)/q**6",
+              "-(q - 1)*(q + 1)*(q**8 - 4*q**6 + 4*q**4 - 3*q**2 + 1)/q**5"
+            ],
+            [
+              "(q - 1)*(q + 1)*(2*q**2 - 1)/q**4",
+              "-(q - 1)**4*(q + 1)**4/q**5",
+              "(q - 1)*(q + 1)*(2*q**4 - 2*q**2 + 1)/q**4"
+            ],
+            [
+              "(q - 1)*(q + 1)*(q**4 - 2*q**2 + 2)/q",
+              "-(q - 1)*(q + 1)*(q**8 - 3*q**6 + 4*q**4 - 4*q**2 + 1)/q**2",
+              "(q - 1)**4*(q + 1)**4/q"
+            ]
+          ],
+          "chi_W_exact": {
+            "4": "q**3",
+            "31": "-(q**6 - q**4 + 1)/q",
+            "22": "0"
+          },
+          "closure": {
+            "lepton_component_strands": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "size": 4,
+            "self_crossings_signed": 3,
+            "knot": "4-strand component (not identified, pre-registered)"
+          },
+          "chiral": true,
+          "one_term_cross_term_exact": "q*(q - 1)**2*(q + 1)**2*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - 2*q**2 - 1)/(q**2 + 1)**5",
+          "one_term_cross_term_order_q_to_1": 2,
+          "T2cov": {
+            "conn_W_exact": "0",
+            "C2_exact": "0",
+            "C2_order_q_to_1": null,
+            "C2_at_q0": "0",
+            "C22_exact": "0"
+          },
+          "T2lep": {
+            "conn_W_exact": "-q*(q - 1)*(q + 1)*(q**4 - 2*q**2 - 1)*(q**4 + 3*q**2 - 1)/(6*(q**2 + 1)**4)",
+            "C2_exact": "(q - 1)**3*(q + 1)**3*(q**14 - 6*q**8 - 13*q**6 - 7*q**4 - 2*q**2 + 3)/(6*q*(q**2 + 1)**6)",
+            "C2_order_q_to_1": 3,
+            "C2_at_q0": "-0.000666362396548496835303918774358119243585544323936781756588745",
+            "C22_exact": "(q - 1)**6*(q + 1)**6*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 + 2*q**2 + 3)/(36*q*(q**2 + 1)**7)"
+          }
+        },
+        "C  s2": {
+          "name": "C  s2",
+          "kind": "word",
+          "word": "s2",
+          "length": 1,
+          "writhe": 1,
+          "lepton_final_position": 2,
+          "nucleon_strands_crossed_by_lepton": [
+            2
+          ],
+          "signed_crossings_with_lepton": {
+            "2": 1
+          },
+          "wrap_ge_2": false,
+          "gg": false,
+          "gg_with_mirrors": false,
+          "cc_nonzero": true,
+          "reverse_block_nonzero": false,
+          "cc_min_order_q_to_1": 1,
+          "cross_term_zero": true,
+          "cross_term_order_q_to_1": null,
+          "r3_feasible_at_q0": true,
+          "chi_W_at_q0": {
+            "4": "1.10997858275138080759166909561076887987449912187357873607281",
+            "31": "1.32384280883913487267432511216581729682798165386879187037557",
+            "22": "0.180033730263310875015897167623448064142404290862159033085631"
+          },
+          "cross_term_at_q0": "0",
+          "cross_term_exact": "0",
+          "cc_block_exact": [
+            [
+              "(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)/q**6",
+              "-(q - 1)*(q + 1)*(q**4 - q**2 + 1)*(q**8 - 3*q**6 + 3*q**4 - 3*q**2 + 1)/q**7",
+              "(q - 1)**3*(q + 1)**3*(q**3 - q - 1)*(q**3 - q + 1)/q**6"
+            ],
+            [
+              "(q - 1)*(q + 1)*(q**6 - 2*q**4 + 3*q**2 - 1)/q**5",
+              "-(q - 1)**3*(q + 1)**3*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)/q**6",
+              "(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)/q**5"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ]
+          ],
+          "chi_W_exact": {
+            "4": "q",
+            "31": "-(q**4 - q**2 + 1)*(q**8 - 3*q**6 + 2*q**4 - 2*q**2 + 1)/q**5",
+            "22": "-(q - 1)*(q + 1)*(q**12 - 2*q**10 + 2*q**8 - 3*q**6 + 2*q**4 - 2*q**2 + 1)/q**7"
+          },
+          "closure": {
+            "lepton_component_strands": [
+              2,
+              3
+            ],
+            "size": 2,
+            "self_crossings_signed": 1,
+            "knot": "T(2,1) = unknot"
+          },
+          "chiral": true,
+          "one_term_cross_term_exact": "0",
+          "one_term_cross_term_order_q_to_1": null,
+          "T2cov": {
+            "conn_W_exact": "0",
+            "C2_exact": "0",
+            "C2_order_q_to_1": null,
+            "C2_at_q0": "0",
+            "C22_exact": "0"
+          },
+          "T2lep": {
+            "conn_W_exact": "-(q - 1)*(q + 1)*(q**14 - 3*q**12 + 4*q**8 - 15*q**6 + 6*q**4 - 8*q**2 + 3)/(6*q**3*(q**2 + 1)**4)",
+            "C2_exact": "q*(q - 1)**4*(q + 1)**4/(2*(q**2 + 1)**3)",
+            "C2_order_q_to_1": 4,
+            "C2_at_q0": "0.000144715842499422653945787553315259097906350091828967310098912",
+            "C22_exact": "(q - 1)**6*(q + 1)**6*(q**2 - q + 1)*(q**2 + q + 1)/(12*q**3*(q**2 + 1)**5)"
+          }
+        },
+        "C' one-sided weak vertex s2 - h P_L(s2)": {
+          "name": "C' one-sided weak vertex s2 - h P_L(s2)",
+          "kind": "element",
+          "cc_nonzero": true,
+          "reverse_block_nonzero": false,
+          "cc_min_order_q_to_1": 1,
+          "cross_term_zero": true,
+          "cross_term_order_q_to_1": null,
+          "r3_feasible_at_q0": false,
+          "chi_W_at_q0": {
+            "4": "0.900918283955741492160822882481093936014741626610554180691118",
+            "31": "0.905767350221942817611301369446678822319843161778937296847384",
+            "22": "-0.0254642856994201806782325005147824715790354288833262113534346"
+          },
+          "cross_term_at_q0": "0",
+          "cross_term_exact": "0",
+          "cc_block_exact": [
+            [
+              "2*(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)/(q**6*(q**2 + 1))",
+              "-2*(q - 1)*(q + 1)*(q**4 - q**2 + 1)*(q**8 - 3*q**6 + 3*q**4 - 3*q**2 + 1)/(q**7*(q**2 + 1))",
+              "2*(q - 1)**3*(q + 1)**3*(q**3 - q - 1)*(q**3 - q + 1)/(q**6*(q**2 + 1))"
+            ],
+            [
+              "2*(q - 1)*(q + 1)*(q**6 - 2*q**4 + 3*q**2 - 1)/(q**5*(q**2 + 1))",
+              "-2*(q - 1)**3*(q + 1)**3*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)/(q**6*(q**2 + 1))",
+              "2*(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)/(q**5*(q**2 + 1))"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ]
+          ],
+          "chi_W_exact": {
+            "4": "1/q",
+            "31": "-(q**14 - 4*q**12 + 6*q**10 - 6*q**8 + 2*q**6 - 2*q**2 + 1)/(q**7*(q**2 + 1))",
+            "22": "-(q - 1)**3*(q + 1)**3*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q**7*(q**2 + 1))"
+          },
+          "closure": "element (sum of words): no single closure",
+          "chiral": true,
+          "one_term_cross_term_exact": "0",
+          "one_term_cross_term_order_q_to_1": null,
+          "T2cov": {
+            "conn_W_exact": "0",
+            "C2_exact": "0",
+            "C2_order_q_to_1": null,
+            "C2_at_q0": "0",
+            "C22_exact": "0"
+          },
+          "T2lep": {
+            "conn_W_exact": "-(q - 1)*(q + 1)*(q**16 - 3*q**14 - 2*q**12 + 7*q**10 - 30*q**8 + 13*q**6 - 14*q**4 + 3*q**2 + 1)/(6*q**5*(q**2 + 1)**5)",
+            "C2_exact": "q*(q - 1)**4*(q + 1)**4/(q**2 + 1)**4",
+            "C2_order_q_to_1": 4,
+            "C2_at_q0": "0.000129670646609822423596423048188462062149100655882838762794318",
+            "C22_exact": "(q - 1)**6*(q + 1)**6*(q**2 - q + 1)*(q**2 + q + 1)/(6*q**3*(q**2 + 1)**6)"
+          }
+        },
+        "C'' P_L(s2)": {
+          "name": "C'' P_L(s2)",
+          "kind": "element",
+          "cc_nonzero": true,
+          "reverse_block_nonzero": false,
+          "cc_min_order_q_to_1": 1,
+          "cross_term_zero": true,
+          "cross_term_order_q_to_1": null,
+          "r3_feasible_at_q0": true,
+          "chi_W_at_q0": {
+            "4": "1.00000000000000000000000000000000000000000000000000000000000",
+            "31": "1.99978408634089488190270293079800614257598881700413498525865",
+            "22": "0.982960500614272710401607866575378932548447983671178789237241"
+          },
+          "cross_term_at_q0": "0",
+          "cross_term_exact": "0",
+          "cc_block_exact": [
+            [
+              "(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)/(q**5*(q**2 + 1))",
+              "-(q - 1)*(q + 1)*(q**4 - q**2 + 1)*(q**8 - 3*q**6 + 3*q**4 - 3*q**2 + 1)/(q**6*(q**2 + 1))",
+              "(q - 1)**3*(q + 1)**3*(q**3 - q - 1)*(q**3 - q + 1)/(q**5*(q**2 + 1))"
+            ],
+            [
+              "(q - 1)*(q + 1)*(q**6 - 2*q**4 + 3*q**2 - 1)/(q**4*(q**2 + 1))",
+              "-(q - 1)**3*(q + 1)**3*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)/(q**5*(q**2 + 1))",
+              "(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)/(q**4*(q**2 + 1))"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ]
+          ],
+          "chi_W_exact": {
+            "4": "1",
+            "31": "-(q**4 + 1)*(q**10 - 3*q**8 + 2*q**6 - q**4 - 2*q**2 + 1)/(q**6*(q**2 + 1))",
+            "22": "-(q**10 - 2*q**8 + q**6 - 2*q**4 + q**2 - 1)/(q**2*(q**2 + 1))"
+          },
+          "closure": "element (sum of words): no single closure",
+          "chiral": true,
+          "one_term_cross_term_exact": "0",
+          "one_term_cross_term_order_q_to_1": null,
+          "T2cov": {
+            "conn_W_exact": "0",
+            "C2_exact": "0",
+            "C2_order_q_to_1": null,
+            "C2_at_q0": "0",
+            "C22_exact": "0"
+          },
+          "T2lep": {
+            "conn_W_exact": "-(q - 1)*(q + 1)*(q**16 - 2*q**14 - 2*q**12 + 4*q**10 - 14*q**8 + 7*q**6 - 8*q**4 + q**2 + 1)/(6*q**4*(q**2 + 1)**5)",
+            "C2_exact": "q**2*(q - 1)**4*(q + 1)**4/(2*(q**2 + 1)**4)",
+            "C2_order_q_to_1": 4,
+            "C2_at_q0": "0.0000719658202742129180929916481379101139143933298697533917401425",
+            "C22_exact": "(q - 1)**6*(q + 1)**6*(q**2 - q + 1)*(q**2 + q + 1)/(12*q**2*(q**2 + 1)**6)"
+          }
+        },
+        "Pbar s2^-1 s1^-1 s0^-1": {
+          "name": "Pbar s2^-1 s1^-1 s0^-1",
+          "kind": "word",
+          "word": "s2'·s1'·s0'",
+          "length": 3,
+          "writhe": -3,
+          "lepton_final_position": 2,
+          "nucleon_strands_crossed_by_lepton": [
+            0
+          ],
+          "signed_crossings_with_lepton": {
+            "0": -1
+          },
+          "wrap_ge_2": false,
+          "gg": false,
+          "gg_with_mirrors": false,
+          "cc_nonzero": false,
+          "reverse_block_nonzero": true,
+          "cc_min_order_q_to_1": null,
+          "cross_term_zero": false,
+          "cross_term_order_q_to_1": 2,
+          "r3_feasible_at_q0": false,
+          "chi_W_at_q0": {
+            "4": "0.731233707549433674041352781095106426763989809329482224065060",
+            "31": "-0.826465318610988865546242655117193684635235840675998425579123",
+            "22": "0.0"
+          },
+          "cross_term_at_q0": "0.0139533452329799421834439227608388552851837258528927492125185",
+          "cross_term_exact": "(q - 1)**2*(q + 1)**2*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**6 + q**4 - q**2 + 1)/(q**7*(q**2 + 1)**5)",
+          "cc_block_exact": [
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ]
+          ],
+          "chi_W_exact": {
+            "4": "q**(-3)",
+            "31": "(q**10 - 2*q**8 + q**4 - 2*q**2 + 1)/q**7",
+            "22": "0"
+          },
+          "closure": {
+            "lepton_component_strands": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "size": 4,
+            "self_crossings_signed": -3,
+            "knot": "4-strand component (not identified, pre-registered)"
+          },
+          "chiral": false,
+          "one_term_cross_term_exact": "(q - 1)**2*(q + 1)**2*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**6 + q**4 - q**2 + 1)/(q**7*(q**2 + 1)**5)",
+          "one_term_cross_term_order_q_to_1": 2,
+          "T2cov": {
+            "conn_W_exact": "0",
+            "C2_exact": "0",
+            "C2_order_q_to_1": null,
+            "C2_at_q0": "0",
+            "C22_exact": "0"
+          },
+          "T2lep": {
+            "conn_W_exact": "(q - 1)*(q + 1)*(q**12 + q**10 - 4*q**8 + 12*q**6 - 6*q**4 + q**2 + 1)/(6*q**5*(q**2 + 1)**4)",
+            "C2_exact": "(q - 1)**3*(q + 1)**3*(4*q**14 + 4*q**12 + 4*q**10 - q**8 + 5*q**6 + 6*q**4 + q**2 + 1)/(6*q**7*(q**2 + 1)**6)",
+            "C2_order_q_to_1": 3,
+            "C2_at_q0": "0.000494644329356741908273630291735684958903660308218390126453949",
+            "C22_exact": "(q - 1)**6*(q + 1)**6*(q**2 - q + 1)*(q**2 + q + 1)*(3*q**4 + 2*q**2 + 1)/(36*q**5*(q**2 + 1)**7)"
+          }
+        },
+        "A.P_L(s2)": {
+          "name": "A.P_L(s2)",
+          "kind": "element",
+          "cc_nonzero": true,
+          "reverse_block_nonzero": true,
+          "cc_min_order_q_to_1": 1,
+          "cross_term_zero": false,
+          "cross_term_order_q_to_1": 5,
+          "r3_feasible_at_q0": true,
+          "chi_W_at_q0": {
+            "4": "1.00000000000000000000000000000000000000000000000000000000000",
+            "31": "2.00975097216115944996322173835545841489713999369740571583209",
+            "22": "1.00000000000000000000000000000000000000000000000000000000000"
+          },
+          "cross_term_at_q0": "0.000125319688678436177768710784593500015972047793775388851675966",
+          "cross_term_exact": "(q - 1)**5*(q + 1)**5*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/(q**8*(q**2 + 1)**5)",
+          "cc_block_exact": [
+            [
+              "(q - 1)**3*(q + 1)**3*(q**9 - 2*q**7 + 3*q**5 - 2*q**3 + 1)/(q**7*(q**2 + 1))",
+              "-(q - 1)*(q + 1)*(q**4 - q**2 + 1)*(q**13 - 4*q**11 + 7*q**9 - 9*q**7 + 7*q**5 - 2*q**3 - 2*q**2 + 1)/(q**8*(q**2 + 1))",
+              "(q - 1)**3*(q + 1)**2*(q**4 - q**2 + 1)*(q**8 + q**7 - 2*q**6 - 2*q**5 + q**4 + q**3 - q**2 - q - 1)/(q**7*(q**2 + 1))"
+            ],
+            [
+              "(q - 1)*(q + 1)*(q**6 - 2*q**4 + 3*q**2 - 1)*(q**8 + q**7 - 3*q**6 + 3*q**4 - 2*q**2 + 1)/(q**9*(q**2 + 1))",
+              "-(q - 1)**3*(q + 1)**3*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)*(q**8 + q**7 - 3*q**6 + 3*q**4 - 2*q**2 + 1)/(q**10*(q**2 + 1))",
+              "(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)*(q**8 + q**7 - 3*q**6 + 3*q**4 - 2*q**2 + 1)/(q**9*(q**2 + 1))"
+            ],
+            [
+              "-(q - 1)**3*(q + 1)**3*(q**6 - 2*q**4 + 3*q**2 - 1)/(q**8*(q**2 + 1))",
+              "(q - 1)**5*(q + 1)**5*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)/(q**9*(q**2 + 1))",
+              "-(q - 1)**5*(q + 1)**5*(q**4 - q**2 + 1)/(q**8*(q**2 + 1))"
+            ]
+          ],
+          "chi_W_exact": {
+            "4": "1",
+            "31": "-(q**4 - q**2 + 1)*(q**10 - 3*q**8 + 2*q**6 - 2*q**4 - q**2 + 1)/q**8",
+            "22": "1"
+          },
+          "closure": "element (sum of words): no single closure",
+          "chiral": false,
+          "one_term_cross_term_exact": "(q - 1)**5*(q + 1)**5*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/(q**8*(q**2 + 1)**5)",
+          "one_term_cross_term_order_q_to_1": 5,
+          "T2cov": {
+            "conn_W_exact": "0",
+            "C2_exact": "0",
+            "C2_order_q_to_1": null,
+            "C2_at_q0": "0",
+            "C22_exact": "0"
+          },
+          "T2lep": {
+            "conn_W_exact": "-(q - 1)*(q + 1)*(q**18 - 5*q**14 + 12*q**12 - 25*q**10 + 4*q**8 + 5*q**6 - 7*q**4 + 2*q**2 + 1)/(6*q**6*(q**2 + 1)**5)",
+            "C2_exact": "-(q - 1)**4*(q + 1)**4*(2*q**16 - q**14 - 10*q**12 + 2*q**10 - 2*q**8 + 6*q**6 - 10*q**4 + 3*q**2 - 2)/(6*q**8*(q**2 + 1)**6)",
+            "C2_order_q_to_1": 4,
+            "C2_at_q0": "0.0000506453674504503529863023817169914868256212136147286047670513",
+            "C22_exact": "-(q - 1)**6*(q + 1)**6*(q**2 - q + 1)*(q**2 + q + 1)*(3*q**10 - 5*q**8 - 8*q**6 + 5*q**4 - 2*q**2 + 1)/(36*q**8*(q**2 + 1)**7)"
+          }
+        },
+        "P_L(s2).A": {
+          "name": "P_L(s2).A",
+          "kind": "element",
+          "cc_nonzero": true,
+          "reverse_block_nonzero": true,
+          "cc_min_order_q_to_1": 1,
+          "cross_term_zero": false,
+          "cross_term_order_q_to_1": 5,
+          "r3_feasible_at_q0": true,
+          "chi_W_at_q0": {
+            "4": "1.00000000000000000000000000000000000000000000000000000000000",
+            "31": "2.00789953335863123840687313741055436358821246229199114995000",
+            "22": "1.00000000000000000000000000000000000000000000000000000000000"
+          },
+          "cross_term_at_q0": "-0.000219310170008901506290956540943036554238466254706114631389980",
+          "cross_term_exact": "-(q - 1)**5*(q + 1)**5*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 + q**2 - 1)/(q**8*(q**2 + 1)**5)",
+          "cc_block_exact": [
+            [
+              "(q - 1)**3*(q + 1)**3*(q**10 + q**9 - 2*q**8 - 2*q**7 + 4*q**6 + 3*q**5 - 4*q**4 - 2*q**3 + 3*q**2 - 1)/(q**7*(q**2 + 1))",
+              "-(q - 1)*(q + 1)*(q**4 - q**2 + 1)*(q**14 + q**13 - 4*q**12 - 4*q**11 + 8*q**10 + 7*q**9 - 13*q**8 - 9*q**7 + 14*q**6 + 7*q**5 - 11*q**4 - 2*q**3 + 5*q**2 - 1)/(q**8*(q**2 + 1))",
+              "(q - 1)**2*(q + 1)**3*(q**3 - q + 1)*(q**4 - q**2 + 1)*(q**6 - 2*q**4 - q**3 + 2*q**2 - 1)/(q**7*(q**2 + 1))"
+            ],
+            [
+              "(q - 1)*(q + 1)*(q**6 - 2*q**4 + 3*q**2 - 1)*(q**8 - 3*q**6 + q**5 + 3*q**4 - q**3 - 2*q**2 + q + 1)/(q**9*(q**2 + 1))",
+              "-(q - 1)**3*(q + 1)**3*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)*(q**8 - 3*q**6 + q**5 + 3*q**4 - q**3 - 2*q**2 + q + 1)/(q**10*(q**2 + 1))",
+              "(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)*(q**8 - 3*q**6 + q**5 + 3*q**4 - q**3 - 2*q**2 + q + 1)/(q**9*(q**2 + 1))"
+            ],
+            [
+              "(q - 1)**2*(q + 1)**2*(q**4 - q**2 + 1)*(q**6 - 2*q**4 + 3*q**2 - 1)/q**8",
+              "-(q - 1)**4*(q + 1)**4*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)*(q**4 - q**2 + 1)/q**9",
+              "(q - 1)**4*(q + 1)**4*(q**4 - q**2 + 1)**2/q**8"
+            ]
+          ],
+          "chi_W_exact": {
+            "4": "1",
+            "31": "-(q**16 - 5*q**14 + 13*q**12 - 24*q**10 + 32*q**8 - 33*q**6 + 23*q**4 - 12*q**2 + 3)/q**6",
+            "22": "1"
+          },
+          "closure": "element (sum of words): no single closure",
+          "chiral": false,
+          "one_term_cross_term_exact": "-(q - 1)**5*(q + 1)**5*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 + q**2 - 1)/(q**8*(q**2 + 1)**5)",
+          "one_term_cross_term_order_q_to_1": 5,
+          "T2cov": {
+            "conn_W_exact": "0",
+            "C2_exact": "0",
+            "C2_order_q_to_1": null,
+            "C2_at_q0": "0",
+            "C22_exact": "0"
+          },
+          "T2lep": {
+            "conn_W_exact": "-(q - 1)*(q + 1)*(q**20 - q**18 - 6*q**16 + 19*q**14 - 47*q**12 + 74*q**10 - 83*q**8 + 50*q**6 - 18*q**4 - 4*q**2 + 3)/(6*q**4*(q**2 + 1)**5)",
+            "C2_exact": "-(q - 1)**4*(q + 1)**4*(q**20 - q**18 + 4*q**16 + q**14 - 10*q**12 - 2*q**10 - 4*q**8 + 4*q**6 - 11*q**4 + 8*q**2 - 2)/(6*q**8*(q**2 + 1)**6)",
+            "C2_order_q_to_1": 4,
+            "C2_at_q0": "0.0000409894294426439115902185880595108886905550047140881873621508",
+            "C22_exact": "(q - 1)**6*(q + 1)**6*(q**2 - q + 1)*(q**2 + q + 1)*(4*q**12 - 7*q**10 + 5*q**8 + 8*q**6 - 9*q**4 + 6*q**2 - 1)/(36*q**8*(q**2 + 1)**7)"
+          }
+        },
+        "A.passage": {
+          "name": "A.passage",
+          "kind": "word",
+          "word": "s1·s2'·s1·s2'·s1·s2'·s0·s1·s2",
+          "length": 9,
+          "writhe": 3,
+          "lepton_final_position": 0,
+          "nucleon_strands_crossed_by_lepton": [
+            0,
+            1,
+            2
+          ],
+          "signed_crossings_with_lepton": {
+            "0": 1,
+            "1": 1,
+            "2": 1
+          },
+          "wrap_ge_2": true,
+          "gg": false,
+          "gg_with_mirrors": false,
+          "cc_nonzero": true,
+          "reverse_block_nonzero": false,
+          "cc_min_order_q_to_1": 1,
+          "cross_term_zero": false,
+          "cross_term_order_q_to_1": 2,
+          "r3_feasible_at_q0": false,
+          "chi_W_at_q0": {
+            "4": "1.36755183695138518796672402990936100071109752077276787660591",
+            "31": "-1.32118326526087382008202688221906789078225735403862821851859",
+            "22": "0.0"
+          },
+          "cross_term_at_q0": "-0.0188562112646428900875848358624359923268753143820919382624760",
+          "cross_term_exact": "(q - 1)**2*(q + 1)**2*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**12 - q**10 - q**8 - q**6 + q**4 - 2*q**2 + 1)/(q**5*(q**2 + 1)**5)",
+          "cc_block_exact": [
+            [
+              "(q - 1)**4*(q + 1)**4*(q**4 + 1)*(q**8 - 2*q**6 + 2*q**4 - 3*q**2 + 1)/q**11",
+              "-(q - 1)*(q + 1)*(q**5 - q**3 - q**2 + q + 1)*(q**5 - q**3 + q**2 + q - 1)*(q**12 - 4*q**10 + 6*q**8 - 7*q**6 + 6*q**4 - 4*q**2 + 1)/q**12",
+              "(q - 1)*(q + 1)*(q**20 - 6*q**18 + 16*q**16 - 29*q**14 + 42*q**12 - 46*q**10 + 41*q**8 - 29*q**6 + 16*q**4 - 6*q**2 + 1)/q**11"
+            ],
+            [
+              "-(q - 1)*(q + 1)*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)*(q**8 - 3*q**6 + 3*q**4 - 3*q**2 + 1)/q**10",
+              "(q - 1)**4*(q + 1)**4*(q**4 + 1)*(q**8 - 2*q**6 + 2*q**4 - 3*q**2 + 1)/q**11",
+              "-(q - 1)*(q + 1)*(q**16 - 5*q**14 + 11*q**12 - 18*q**10 + 20*q**8 - 17*q**6 + 11*q**4 - 5*q**2 + 1)/q**10"
+            ],
+            [
+              "-(q - 1)*(q + 1)*(q**16 - 5*q**14 + 11*q**12 - 17*q**10 + 20*q**8 - 18*q**6 + 11*q**4 - 5*q**2 + 1)/q**7",
+              "(q - 1)*(q + 1)*(q**20 - 6*q**18 + 16*q**16 - 29*q**14 + 41*q**12 - 46*q**10 + 42*q**8 - 29*q**6 + 16*q**4 - 6*q**2 + 1)/q**8",
+              "-(q - 1)**4*(q + 1)**4*(q**4 + 1)*(q**8 - 3*q**6 + 2*q**4 - 2*q**2 + 1)/q**7"
+            ]
+          ],
+          "chi_W_exact": {
+            "4": "q**3",
+            "31": "(q**18 - 4*q**16 + 6*q**14 - 6*q**12 + 3*q**10 + 2*q**8 - 6*q**6 + 6*q**4 - 4*q**2 + 1)/q**7",
+            "22": "0"
+          },
+          "closure": {
+            "lepton_component_strands": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "size": 4,
+            "self_crossings_signed": 3,
+            "knot": "4-strand component (not identified, pre-registered)"
+          },
+          "chiral": true,
+          "one_term_cross_term_exact": "(q - 1)**2*(q + 1)**2*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**12 - q**10 - q**8 - q**6 + q**4 - 2*q**2 + 1)/(q**5*(q**2 + 1)**5)",
+          "one_term_cross_term_order_q_to_1": 2,
+          "T2cov": {
+            "conn_W_exact": "0",
+            "C2_exact": "0",
+            "C2_order_q_to_1": null,
+            "C2_at_q0": "0",
+            "C22_exact": "0"
+          },
+          "T2lep": {
+            "conn_W_exact": "(q - 1)*(q + 1)*(q**20 - q**18 - 8*q**16 + 22*q**14 - 36*q**12 + 48*q**10 - 34*q**8 + 22*q**6 - 8*q**4 - q**2 + 1)/(6*q**5*(q**2 + 1)**4)",
+            "C2_exact": "(q - 1)**3*(q + 1)**3*(q**20 + 2*q**18 - 3*q**16 + 3*q**14 - 8*q**12 - 13*q**10 - 9*q**8 + q**6 + q**2 + 1)/(6*q**5*(q**2 + 1)**6)",
+            "C2_order_q_to_1": 3,
+            "C2_at_q0": "-0.000633520047502129749999859794843240323215510442399907540248291",
+            "C22_exact": "-(q - 1)**6*(q + 1)**6*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - 2*q**2 - 1)*(q**4 + 3*q**2 - 1)/(36*q**3*(q**2 + 1)**7)"
+          }
+        },
+        "passage.A": {
+          "name": "passage.A",
+          "kind": "word",
+          "word": "s0·s1·s2·s1·s2'·s1·s2'·s1·s2'",
+          "length": 9,
+          "writhe": 3,
+          "lepton_final_position": 0,
+          "nucleon_strands_crossed_by_lepton": [
+            0,
+            1,
+            2
+          ],
+          "signed_crossings_with_lepton": {
+            "0": 1,
+            "1": 1,
+            "2": 1
+          },
+          "wrap_ge_2": true,
+          "gg": false,
+          "gg_with_mirrors": false,
+          "cc_nonzero": true,
+          "reverse_block_nonzero": true,
+          "cc_min_order_q_to_1": 1,
+          "cross_term_zero": false,
+          "cross_term_order_q_to_1": 2,
+          "r3_feasible_at_q0": false,
+          "chi_W_at_q0": {
+            "4": "1.36755183695138518796672402990936100071109752077276787660591",
+            "31": "-1.32937682822910792240896555411789526855082533880776910439835",
+            "22": "0.0"
+          },
+          "cross_term_at_q0": "-0.0203813745290361751370911795651194541333474772366261409553968",
+          "cross_term_exact": "(q - 1)**2*(q + 1)**2*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**14 - 2*q**12 - q**6 - q**4 + 2*q**2 - 1)/(q**7*(q**2 + 1)**5)",
+          "cc_block_exact": [
+            [
+              "(q - 1)**4*(q + 1)**4*(q**4 - q**2 + 1)/q**5",
+              "-(q - 1)*(q + 1)*(q**4 - q**2 + 1)*(q**10 - 4*q**8 + 6*q**6 - 7*q**4 + 4*q**2 - 1)/q**6",
+              "(q - 1)*(q + 1)*(q**12 - 5*q**10 + 10*q**8 - 11*q**6 + 9*q**4 - 4*q**2 + 1)/q**5"
+            ],
+            [
+              "-(q - 1)*(q + 1)*(q**2 - 2)*(q**4 - q**2 + 1)*(q**6 - 2*q**4 + 3*q**2 - 1)/q**6",
+              "(q - 1)**3*(q + 1)**3*(q**2 - 2)*(q**3 - q**2 + 1)*(q**3 + q**2 - 1)*(q**4 - q**2 + 1)/q**7",
+              "-(q - 1)*(q + 1)*(q**14 - 6*q**12 + 16*q**10 - 26*q**8 + 27*q**6 - 20*q**4 + 9*q**2 - 2)/q**6"
+            ],
+            [
+              "(q - 1)*(q + 1)*(2*q**4 - 2*q**2 + 1)*(q**6 - 2*q**4 + 3*q**2 - 1)/q**7",
+              "-(q - 1)*(q + 1)*(2*q**14 - 8*q**12 + 17*q**10 - 26*q**8 + 25*q**6 - 16*q**4 + 6*q**2 - 1)/q**8",
+              "(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)*(2*q**4 - 2*q**2 + 1)/q**7"
+            ]
+          ],
+          "chi_W_exact": {
+            "4": "q**3",
+            "31": "(q**20 - 5*q**18 + 10*q**16 - 13*q**14 + 10*q**12 - q**10 - 9*q**8 + 13*q**6 - 11*q**4 + 5*q**2 - 1)/q**9",
+            "22": "0"
+          },
+          "closure": {
+            "lepton_component_strands": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "size": 4,
+            "self_crossings_signed": 3,
+            "knot": "4-strand component (not identified, pre-registered)"
+          },
+          "chiral": false,
+          "one_term_cross_term_exact": "(q - 1)**2*(q + 1)**2*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**14 - 2*q**12 - q**6 - q**4 + 2*q**2 - 1)/(q**7*(q**2 + 1)**5)",
+          "one_term_cross_term_order_q_to_1": 2,
+          "T2cov": {
+            "conn_W_exact": "0",
+            "C2_exact": "0",
+            "C2_order_q_to_1": null,
+            "C2_at_q0": "0",
+            "C22_exact": "0"
+          },
+          "T2lep": {
+            "conn_W_exact": "(q - 1)*(q + 1)*(q**22 - 2*q**20 - 7*q**18 + 29*q**16 - 56*q**14 + 90*q**12 - 92*q**10 + 64*q**8 - 28*q**6 + 6*q**4 + 2*q**2 - 1)/(6*q**7*(q**2 + 1)**4)",
+            "C2_exact": "(q - 1)**3*(q + 1)**3*(q**22 + q**20 - 2*q**18 + 2*q**16 - 16*q**14 - 11*q**12 + 5*q**10 + 3*q**8 - 8*q**6 + 2*q**2 - 1)/(6*q**7*(q**2 + 1)**6)",
+            "C2_order_q_to_1": 3,
+            "C2_at_q0": "-0.000683828472014942748350306151565585372957695052327719258715323",
+            "C22_exact": "-(q - 1)**6*(q + 1)**6*(q**2 - q + 1)*(q**2 + q + 1)*(q**10 - 3*q**8 - 8*q**6 + 7*q**4 + q**2 - 4)/(36*q**5*(q**2 + 1)**7)"
+          }
+        },
+        "A.passage.P_L-vertex": {
+          "name": "A.passage.P_L-vertex",
+          "kind": "element",
+          "cc_nonzero": true,
+          "reverse_block_nonzero": true,
+          "cc_min_order_q_to_1": 1,
+          "cross_term_zero": false,
+          "cross_term_order_q_to_1": 2,
+          "r3_feasible_at_q0": false,
+          "chi_W_at_q0": {
+            "4": "0.731233707549433674041352781095106426763989809329482224065060",
+            "31": "-0.873000395816137803649270137267781054102146950923438539298067",
+            "22": "0.0"
+          },
+          "cross_term_at_q0": "-0.0113070679144329793916775776598976017260351159464071997408654",
+          "cross_term_exact": "(q - 1)**2*(q + 1)**2*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**20 - 4*q**18 + 19*q**16 - 36*q**14 + 28*q**12 - 32*q**10 + 28*q**8 - 36*q**6 + 19*q**4 - 4*q**2 + 1)/(q**11*(q**2 + 1)**8)",
+          "cc_block_exact": [
+            [
+              "-(q - 1)**4*(q + 1)**4*(q**16 - 2*q**15 - 6*q**14 + 6*q**13 + 16*q**12 - 10*q**11 - 20*q**10 + 18*q**9 + 25*q**8 - 20*q**7 + 2*q**6 + 12*q**5 - 2*q**4 - 6*q**3 + 8*q**2 + 2*q - 4)/(q**13*(q**2 + 1)**3)",
+              "(q - 1)*(q + 1)*(q**26 - 2*q**25 - 10*q**24 + 14*q**23 + 46*q**22 - 46*q**21 - 124*q**20 + 102*q**19 + 230*q**18 - 180*q**17 - 313*q**16 + 264*q**15 + 314*q**14 - 314*q**13 - 198*q**12 + 294*q**11 + 43*q**10 - 212*q**9 + 63*q**8 + 116*q**7 - 82*q**6 - 48*q**5 + 58*q**4 + 14*q**3 - 24*q**2 - 2*q + 4)/(q**14*(q**2 + 1)**3)",
+              "-(q - 1)*(q + 1)*(q**24 - 2*q**23 - 10*q**22 + 14*q**21 + 45*q**20 - 44*q**19 - 116*q**18 + 92*q**17 + 196*q**16 - 152*q**15 - 228*q**14 + 198*q**13 + 161*q**12 - 198*q**11 - 54*q**10 + 152*q**9 - 33*q**8 - 88*q**7 + 56*q**6 + 38*q**5 - 42*q**4 - 12*q**3 + 20*q**2 + 2*q - 4)/(q**13*(q**2 + 1)**3)"
+            ],
+            [
+              "(q - 1)*(q + 1)*(2*q**21 - q**20 - 10*q**19 + 8*q**18 + 30*q**17 - 38*q**16 - 64*q**15 + 102*q**14 + 94*q**13 - 176*q**12 - 98*q**11 + 224*q**10 + 70*q**9 - 191*q**8 - 34*q**7 + 122*q**6 + 12*q**5 - 53*q**4 - 2*q**3 + 12*q**2 - 1)/(q**12*(q**2 + 1)**3)",
+              "-(q - 1)**3*(q + 1)**3*(2*q**21 - q**20 - 8*q**19 + 7*q**18 + 22*q**17 - 31*q**16 - 46*q**15 + 73*q**14 + 64*q**13 - 116*q**12 - 66*q**11 + 148*q**10 + 50*q**9 - 128*q**8 - 26*q**7 + 85*q**6 + 10*q**5 - 43*q**4 - 2*q**3 + 11*q**2 - 1)/(q**13*(q**2 + 1)**3)",
+              "(q - 1)*(q + 1)*(2*q**23 - q**22 - 12*q**21 + 9*q**20 + 38*q**19 - 45*q**18 - 86*q**17 + 133*q**16 + 138*q**15 - 249*q**14 - 158*q**13 + 340*q**12 + 134*q**11 - 331*q**10 - 84*q**9 + 246*q**8 + 38*q**7 - 138*q**6 - 12*q**5 + 55*q**4 + 2*q**3 - 12*q**2 + 1)/(q**12*(q**2 + 1)**3)"
+            ],
+            [
+              "-(q - 1)*(q + 1)*(8*q**21 - 2*q**20 - 41*q**19 + 14*q**18 + 97*q**17 - 46*q**16 - 156*q**15 + 102*q**14 + 182*q**13 - 162*q**12 - 161*q**11 + 198*q**10 + 100*q**9 - 188*q**8 - 52*q**7 + 136*q**6 + 20*q**5 - 74*q**4 - 6*q**3 + 26*q**2 + q - 4)/(q**12*(q**2 + 1)**3)",
+              "(q - 1)*(q + 1)*(8*q**25 - 2*q**24 - 49*q**23 + 16*q**22 + 138*q**21 - 60*q**20 - 265*q**19 + 152*q**18 + 388*q**17 - 290*q**16 - 436*q**15 + 432*q**14 + 391*q**13 - 516*q**12 - 270*q**11 + 498*q**10 + 153*q**9 - 384*q**8 - 69*q**7 + 232*q**6 + 25*q**5 - 104*q**4 - 7*q**3 + 30*q**2 + q - 4)/(q**13*(q**2 + 1)**3)",
+              "-(q - 1)**4*(q + 1)**4*(8*q**17 - 2*q**16 - 25*q**15 + 10*q**14 + 31*q**13 - 22*q**12 - 44*q**11 + 38*q**10 + 28*q**9 - 44*q**8 - 20*q**7 + 42*q**6 + 8*q**5 - 28*q**4 - 3*q**3 + 14*q**2 + q - 4)/(q**12*(q**2 + 1)**3)"
+            ]
+          ],
+          "chi_W_exact": {
+            "4": "q**(-3)",
+            "31": "(q**4 - q**2 + 1)*(3*q**16 - 7*q**14 - 3*q**12 + 12*q**10 - 14*q**8 + 12*q**6 - 3*q**4 - 7*q**2 + 3)/(q**11*(q**2 + 1)**2)",
+            "22": "0"
+          },
+          "closure": "element (sum of words): no single closure",
+          "chiral": false,
+          "one_term_cross_term_exact": "(q - 1)**2*(q + 1)**2*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**20 - 4*q**18 + 19*q**16 - 36*q**14 + 28*q**12 - 32*q**10 + 28*q**8 - 36*q**6 + 19*q**4 - 4*q**2 + 1)/(q**11*(q**2 + 1)**8)",
+          "one_term_cross_term_order_q_to_1": 2,
+          "T2cov": {
+            "conn_W_exact": "0",
+            "C2_exact": "0",
+            "C2_order_q_to_1": null,
+            "C2_at_q0": "0",
+            "C22_exact": "0"
+          },
+          "T2lep": {
+            "conn_W_exact": "(q - 1)*(q + 1)*(3*q**24 - 2*q**22 - 22*q**20 + 42*q**18 - 25*q**16 - 60*q**14 + 176*q**12 - 68*q**10 - 9*q**8 + 38*q**6 - 30*q**4 + 2*q**2 + 3)/(6*q**9*(q**2 + 1)**7)",
+            "C2_exact": "-(q - 1)**3*(q + 1)**3*(2*q**28 - 9*q**26 - 10*q**24 + 10*q**22 + 60*q**20 - 135*q**18 + 158*q**16 + 38*q**14 + 134*q**12 - 73*q**10 + 6*q**8 + 48*q**6 - 44*q**4 + 9*q**2 - 2)/(6*q**11*(q**2 + 1)**9)",
+            "C2_order_q_to_1": 3,
+            "C2_at_q0": "-0.000379156523409087566421382843498615572044109631267526501822091",
+            "C22_exact": "-(q - 1)**6*(q + 1)**6*(q**2 - q + 1)*(q**2 + q + 1)*(3*q**20 - 9*q**18 + 7*q**16 - 4*q**14 + 50*q**12 - 136*q**10 + 34*q**8 + 16*q**6 - 13*q**4 + 5*q**2 - 1)/(36*q**11*(q**2 + 1)**10)"
+          }
+        },
+        "V0V1V0V1": {
+          "name": "V0V1V0V1",
+          "kind": "word",
+          "word": "s0·s1'·s1·s2'·s0·s1'·s1·s2'",
+          "length": 8,
+          "writhe": 0,
+          "lepton_final_position": 3,
+          "nucleon_strands_crossed_by_lepton": [
+            1,
+            2
+          ],
+          "signed_crossings_with_lepton": {
+            "1": 0,
+            "2": -2
+          },
+          "wrap_ge_2": true,
+          "gg": true,
+          "gg_with_mirrors": true,
+          "cc_nonzero": true,
+          "reverse_block_nonzero": true,
+          "cc_min_order_q_to_1": 1,
+          "cross_term_zero": false,
+          "cross_term_order_q_to_1": 4,
+          "r3_feasible_at_q0": true,
+          "chi_W_at_q0": {
+            "4": "1.00000000000000000000000000000000000000000000000000000000000",
+            "31": "3.16419095520437705286307155114534154351420405208794757147323",
+            "22": "1.99418581297996408672819936801871670008913958251181483468283"
+          },
+          "cross_term_at_q0": "-0.00120541762712450396710458212294006804050662871155994100430215",
+          "cross_term_exact": "-(q - 1)**4*(q + 1)**4*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/(q**8*(q**2 + 1)**4)",
+          "cc_block_exact": [
+            [
+              "-(q - 1)**2*(q + 1)**2*(q**10 - 2*q**8 + 3*q**6 - 2*q**4 + 2*q**2 - 1)/q**8",
+              "(q - 1)*(q + 1)*(q**16 - 4*q**14 + 8*q**12 - 12*q**10 + 12*q**8 - 10*q**6 + 7*q**4 - 4*q**2 + 1)/q**9",
+              "-(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)*(q**6 - q**4 - 1)/q**8"
+            ],
+            [
+              "-(q - 1)*(q + 1)*(q**10 - 3*q**8 + 5*q**6 - 4*q**4 + 3*q**2 - 1)/q**7",
+              "(q - 1)**2*(q + 1)**2*(q**12 - 3*q**10 + 5*q**8 - 6*q**6 + 4*q**4 - 3*q**2 + 1)/q**8",
+              "-(q - 1)**3*(q + 1)**3*(q**8 - 2*q**6 + 2*q**4 - q**2 + 1)/q**7"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ]
+          ],
+          "chi_W_exact": {
+            "4": "1",
+            "31": "-(q**18 - 3*q**16 + 2*q**14 - 5*q**10 + 6*q**8 - 6*q**6 + 4*q**4 - 3*q**2 + 1)/q**10",
+            "22": "-(q**4 - q**2 + 1)*(q**8 - 2*q**6 - 2*q**2 + 1)/q**6"
+          },
+          "closure": {
+            "lepton_component_strands": [
+              3
+            ],
+            "size": 1,
+            "self_crossings_signed": 0,
+            "knot": "unknot (one-strand closure)"
+          },
+          "chiral": false,
+          "one_term_cross_term_exact": "-(q - 1)**4*(q + 1)**4*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/(q**8*(q**2 + 1)**4)",
+          "one_term_cross_term_order_q_to_1": 4,
+          "T2cov": {
+            "conn_W_exact": "0",
+            "C2_exact": "0",
+            "C2_order_q_to_1": null,
+            "C2_at_q0": "0",
+            "C22_exact": "0"
+          },
+          "T2lep": {
+            "conn_W_exact": "-(q - 1)**2*(q + 1)**2*(q**18 + q**16 - 6*q**14 + 20*q**12 - 12*q**10 + 14*q**8 - 6*q**6 + 6*q**4 - q**2 - 1)/(6*q**8*(q**2 + 1)**4)",
+            "C2_exact": "-(q - 1)**5*(q + 1)**5*(3*q**14 + 5*q**12 + 4*q**10 + q**8 + 4*q**6 + 3*q**4 + 3*q**2 + 1)/(6*q**8*(q**2 + 1)**5)",
+            "C2_order_q_to_1": 5,
+            "C2_at_q0": "-0.0000534184073354945725109657970041500768390249771362757184241171",
+            "C22_exact": "-(q - 1)**7*(q + 1)**7*(3*q**2 + 1)*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(36*q**6*(q**2 + 1)**6)"
+          }
+        },
+        "V1V0V1V0": {
+          "name": "V1V0V1V0",
+          "kind": "word",
+          "word": "s1·s2'·s0·s1'·s1·s2'·s0·s1'",
+          "length": 8,
+          "writhe": 0,
+          "lepton_final_position": 3,
+          "nucleon_strands_crossed_by_lepton": [
+            0,
+            1
+          ],
+          "signed_crossings_with_lepton": {
+            "0": 0,
+            "1": -2
+          },
+          "wrap_ge_2": true,
+          "gg": true,
+          "gg_with_mirrors": true,
+          "cc_nonzero": true,
+          "reverse_block_nonzero": true,
+          "cc_min_order_q_to_1": 1,
+          "cross_term_zero": false,
+          "cross_term_order_q_to_1": 4,
+          "r3_feasible_at_q0": true,
+          "chi_W_at_q0": {
+            "4": "1.00000000000000000000000000000000000000000000000000000000000",
+            "31": "3.16419095520437705286307155114534154351420405208794757147323",
+            "22": "1.99418581297996408672819936801871670008913958251181483468283"
+          },
+          "cross_term_at_q0": "-0.00120541762712450396710458212294006804050662871155994100430215",
+          "cross_term_exact": "-(q - 1)**4*(q + 1)**4*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/(q**8*(q**2 + 1)**4)",
+          "cc_block_exact": [
+            [
+              "(q - 1)**2*(q + 1)**2*(q**12 - 3*q**10 + 5*q**8 - 6*q**6 + 4*q**4 - 3*q**2 + 1)/q**8",
+              "-(q - 1)**2*(q + 1)**2*(q**16 - 4*q**14 + 8*q**12 - 12*q**10 + 13*q**8 - 11*q**6 + 7*q**4 - 4*q**2 + 1)/q**9",
+              "(q - 1)*(q + 1)*(q**4 - q**2 + 1)*(q**12 - 4*q**10 + 6*q**8 - 6*q**6 + 4*q**4 - 3*q**2 + 1)/q**8"
+            ],
+            [
+              "(q - 1)**2*(q + 1)**2*(q**4 - q**2 + 1)*(q**8 - 3*q**6 + 3*q**4 - 3*q**2 + 1)/q**9",
+              "-(q - 1)**4*(q + 1)**4*(q**4 + 1)*(q**8 - 3*q**6 + 3*q**4 - 3*q**2 + 1)/q**10",
+              "(q - 1)**3*(q + 1)**3*(q**4 - q**2 + 1)*(q**8 - 3*q**6 + 2*q**4 - 2*q**2 + 1)/q**9"
+            ],
+            [
+              "(q - 1)*(q + 1)*(q**4 - q**2 + 1)*(q**8 - 3*q**6 + 3*q**4 - 3*q**2 + 1)/q**8",
+              "-(q - 1)**3*(q + 1)**3*(q**4 + 1)*(q**8 - 3*q**6 + 3*q**4 - 3*q**2 + 1)/q**9",
+              "(q - 1)**2*(q + 1)**2*(q**4 - q**2 + 1)*(q**8 - 3*q**6 + 2*q**4 - 2*q**2 + 1)/q**8"
+            ]
+          ],
+          "chi_W_exact": {
+            "4": "1",
+            "31": "-(q**18 - 3*q**16 + 2*q**14 - 5*q**10 + 6*q**8 - 6*q**6 + 4*q**4 - 3*q**2 + 1)/q**10",
+            "22": "-(q**4 - q**2 + 1)*(q**8 - 2*q**6 - 2*q**2 + 1)/q**6"
+          },
+          "closure": {
+            "lepton_component_strands": [
+              3
+            ],
+            "size": 1,
+            "self_crossings_signed": 0,
+            "knot": "unknot (one-strand closure)"
+          },
+          "chiral": false,
+          "one_term_cross_term_exact": "-(q - 1)**4*(q + 1)**4*(q**4 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/(q**8*(q**2 + 1)**4)",
+          "one_term_cross_term_order_q_to_1": 4,
+          "T2cov": {
+            "conn_W_exact": "0",
+            "C2_exact": "0",
+            "C2_order_q_to_1": null,
+            "C2_at_q0": "0",
+            "C22_exact": "0"
+          },
+          "T2lep": {
+            "conn_W_exact": "-(q - 1)**2*(q + 1)**2*(q**18 + q**16 - 6*q**14 + 20*q**12 - 12*q**10 + 14*q**8 - 6*q**6 + 6*q**4 - q**2 - 1)/(6*q**8*(q**2 + 1)**4)",
+            "C2_exact": "-(q - 1)**5*(q + 1)**5*(3*q**14 + 5*q**12 + 4*q**10 + q**8 + 4*q**6 + 3*q**4 + 3*q**2 + 1)/(6*q**8*(q**2 + 1)**5)",
+            "C2_order_q_to_1": 5,
+            "C2_at_q0": "-0.0000534184073354945725109657970041500768390249771362757184241171",
+            "C22_exact": "-(q - 1)**7*(q + 1)**7*(3*q**2 + 1)*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(36*q**6*(q**2 + 1)**6)"
+          }
+        }
+      }
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:bloch-group-quotient-construction",
   title:
-    "Concrete construction of $B(F)$ as `FreeAbelianGroup ⧸ pentagonSubgroup` (closes substantive Mathlib gap 1)",
+    "Concrete construction of $B(F)$ as the free abelian quotient by the pentagon subgroup (closes substantive Mathlib gap 1)",
   // rem:three-substantive-mathlib-fillers dropped from uses[] 2026-11-20 (owner choice, bean qou-tm3c):
   // not cited in the statement or proof. A remark carries no premise; the edge only put this block
   // downstream of a conjecture.
@@ -18,7 +18,7 @@ export default proposition({
     "lean-construction",
   ],
   lean: {
-    ref: "qou:QOU.Archimedean.BlochQuotient.BlochGroup",
+    ref: "qou:QOU.MassTheory.Archimedean.BlochQuotient.BlochGroup",
     validation: "not_checked",
   },
   authorNotes: [

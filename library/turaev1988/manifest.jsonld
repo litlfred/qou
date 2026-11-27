@@ -1,0 +1,71 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/turaev1988",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "turaev1988",
+  "contains": [
+    "library/turaev1988/sections/page-001",
+    "library/turaev1988/sections/page-002",
+    "library/turaev1988/sections/page-003",
+    "library/turaev1988/sections/page-004",
+    "library/turaev1988/sections/page-005",
+    "library/turaev1988/sections/page-006",
+    "library/turaev1988/sections/page-007",
+    "library/turaev1988/sections/page-008",
+    "library/turaev1988/sections/page-009",
+    "library/turaev1988/sections/page-010",
+    "library/turaev1988/sections/page-011",
+    "library/turaev1988/sections/page-012",
+    "library/turaev1988/sections/page-013",
+    "library/turaev1988/sections/page-014",
+    "library/turaev1988/sections/page-015",
+    "library/turaev1988/sections/page-016",
+    "library/turaev1988/sections/page-017",
+    "library/turaev1988/sections/page-018",
+    "library/turaev1988/sections/page-019",
+    "library/turaev1988/sections/page-020",
+    "library/turaev1988/sections/page-021",
+    "library/turaev1988/sections/page-022",
+    "library/turaev1988/sections/page-023",
+    "library/turaev1988/sections/page-024",
+    "library/turaev1988/sections/page-025",
+    "library/turaev1988/sections/page-026",
+    "library/turaev1988/sections/page-027"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Turaev, The Yang–Baxter equation and invariants of links (Invent. Math. 92, 527–553, 1988) — enhanced Yang–Baxter operators give link invariants via braid closure; the HOMFLY (P) and Kauffman (F) polynomials arise this way, with state models.\n\n**The Yang–Baxter equation and invariants of links** — V. G. Turaev. Inventiones mathematicae 92, 527–553 (1988).\n\n§2 recalls Yang–Baxter operators R on V⊗V (V free of rank m over a commutative ring K) and introduces enhanced YB-operators (EYB): a quadruple S = (R, μ, α, β) of a YB-operator R, an endomorphism μ of V and invertible scalars α, β satisfying the compatibility conditions needed for Markov invariance. §3 attaches to each EYB-operator S an isotopy invariant T_S of links, computed on a braid presentation as the trace of the braid's image composed with μ^{⊗n}, normalised by α and β so that it is invariant under both Markov moves; T_S is annihilated by the characteristic polynomial of R (Theorem 3.2.1). §4 studies special EYB-operators (from the R-matrices of the fundamental vector representations for the series A^(1), and B^(1), C^(1), D^(1), A^(2)) and shows the resulting invariants are equivalent to the two-variable polynomials P (HOMFLY) and F (Kauffman). §5 gives a state model for T_S under restrictions on S, and §6 a non-oriented version used to prove Theorem 4.3.4.\n\n**Why it may bear here.** The direct braid-closure route from an R-matrix to a link invariant, with no von Neumann or Hecke algebra in between (the paper says so). A companion to wenzl1988 in the same volume. No bib entry existed before this ingest.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01Qmmkt5hLUvnWio7T8h6yz9",
+        "date": "2026-11-15"
+      },
+      "drafted_at": "2026-11-15"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "turaev1988",
+    "title_source": "slug",
+    "source_file": "turaev1988.pdf",
+    "source_sha256": "3ccc9e1ee4f9548011a97a7b52d20a7502900366e516011666bcc922468885ed",
+    "pages": 27,
+    "arxiv": null,
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

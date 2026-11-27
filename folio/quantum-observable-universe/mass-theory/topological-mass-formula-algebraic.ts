@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Topological mass formula (algebraic, $\\mathbb{Q}(q)$-side)",
   lean: {
-    ref: "qou:QOU.Torsion.AlgebraicMassFormula",
+    ref: "qou:QOU.LiftingDescent.Torsion.AlgebraicMassFormula",
     validation: "not_checked",
   },
   uses: ["lem:tower-pair-equality-fixed-level"],

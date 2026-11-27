@@ -1,5 +1,3 @@
-**Remark (Hecke-algebraic structure).**
-
 The Hecke-algebraic formulation of the Bohr radius possesses three structural properties.
 
 #### Additive decomposition in $\{h_b, h_d\}$
@@ -14,9 +12,9 @@ $$
 \end{aligned}
 $$
 
-The bare skein parameter is $h_b = q - q^{-1}$. The K-shell-dressed skein parameter is $h_d = q^5 - q^{-5}$. The Markov parameter is $z = q^3/(q^2+1)$ (convention D, canonical since the ruling of 2026-08-15). The transfer-matrix chain generates multiplicative cross-terms $h_b \cdot h_d$. These cancel exactly.
+The bare skein parameter is $h_b = q - q^{-1}$. The K-shell-dressed skein parameter is $h_d = q^5 - q^{-5}$. The Markov parameter is $z = q^3/(q^2+1)$. The transfer-matrix chain generates multiplicative cross-terms $h_b \cdot h_d$, which cancel identically.
 
-**Convention comparison ($z_D$ versus $z_C$).** The ratio cancellation immediately above depends only on $h_b$ and $h_d$ and is independent of $z$. The auxiliary numerical tables below were evaluated at the Convention-C parameter $z_C = \sqrt{q}/(q+1) \approx 0.4993203$ rather than the canonical Convention-D parameter $z_D = q^3/(q^2+1) \approx 0.6126880$ at $q_0 \approx 1.1099786$.
+**Parameter independence of the ratio cancellation.** The ratio cancellation immediately above depends only on $h_b$ and $h_d$ and is independent of $z$ (whereas the auxiliary numerical tables below evaluate $V_i$ at $z_{\mathrm{aux}} = \sqrt{q}/(q+1) \approx 0.4993203$ rather than $z = q^3/(q^2+1) \approx 0.6126880$ at $q_0 \approx 1.1099786$).
 
 The kinetic ($h_d$) and Coulomb ($h_b$) contributions to $V_i$ decouple linearly. This additive decomposition relies on the permutation structure of the optimal ordering.
 

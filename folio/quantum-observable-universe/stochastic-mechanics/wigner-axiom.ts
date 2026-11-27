@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:wigner-axiom",
   title: "The Wigner axiom: a one-dimensional classical-limit obstruction",
   lean: {
-    ref: "qou:QOU.AlgebraicSubstrate.WignerAxiom",
+    ref: "qou:QOU.BringsSurface.WignerAxiom",
     validation: "stub",
   },
   uses: [

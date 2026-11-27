@@ -35,7 +35,7 @@ export default proposition({
   cites: ["wenzl1988"],
   defines: [],
   lean: {
-    ref: "qou:QOU.BraidKnot.OperatorValuedCombiner.WenzlAOperator.operator_valued_combiner_convergence",
+    ref: "qou:QOU.BraidsAndKnots.OperatorValuedCombiner.WenzlAOperator.operator_valued_combiner_convergence",
     validation: "stub",
   },
   computation: {

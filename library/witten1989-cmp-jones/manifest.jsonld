@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/witten1989-cmp-jones",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "witten1989-cmp-jones",
+  "contains": [
+    "library/witten1989-cmp-jones/sections/sec-front-matter",
+    "library/witten1989-cmp-jones/sections/sec-000",
+    "library/witten1989-cmp-jones/sections/sec-001",
+    "library/witten1989-cmp-jones/sections/sec-002",
+    "library/witten1989-cmp-jones/sections/sec-003",
+    "library/witten1989-cmp-jones/sections/sec-004",
+    "library/witten1989-cmp-jones/sections/sec-005",
+    "library/witten1989-cmp-jones/sections/sec-006",
+    "library/witten1989-cmp-jones/sections/sec-007",
+    "library/witten1989-cmp-jones/sections/sec-008",
+    "library/witten1989-cmp-jones/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Quantum field theory and the Jones polynomial (Witten, Commun. Math. Phys. 121 (1989) 351–399) — Chern–Simons gauge theory gives the Jones polynomial; framing dependence of Wilson loops\n\n**Quantum Field Theory and the Jones Polynomial** — Edward Witten. Commun. Math. Phys. 121 (1989) 351–399.\n\n2+1-dimensional Yang–Mills theory with a pure Chern–Simons action is exactly soluble. Expectation values of Wilson lines give the Jones polynomial (and its generalisations to other gauge groups and representations), now defined intrinsically in three dimensions and extended from S³ to arbitrary 3-manifolds through surgery. Canonical quantisation relates the theory to 1+1-dimensional conformal field theory; the skein relation follows from the braiding of conformal blocks. The invariants depend on a choice of framing of each link component, because the self-linking integrals have no canonical value, and they change by a definite phase when the framing is shifted.\n\n**Why it may bear here.** Registered as `witten1989`; cited for the framing dependence of the Jones polynomial in `mass-modulus-em-phase-color-grading` and in the knotted-particles history. The framing phase is the cited fact behind placing an argument as a U(1) framing phase. The text layer is the publisher's OCR; the inferred section titles are partly formula fragments, but all 15k words are in `sections/`.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01Qmmkt4f9V7M6GLoG8XeAZz",
+        "date": "2026-11-22"
+      },
+      "drafted_at": "2026-11-22"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "witten1989-cmp-jones",
+    "title_source": "slug",
+    "source_file": "witten1989-cmp-jones.pdf",
+    "source_sha256": "32f98ed8f7b235887c2d0bffbf3be412cfbd287836b2f389bc662466f9c47f5b",
+    "pages": 50,
+    "arxiv": null,
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

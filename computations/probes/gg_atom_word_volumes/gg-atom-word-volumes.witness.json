@@ -1,0 +1,2213 @@
+{
+  "engine": "snappy 3.3.2",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T06:45:00.940193+00:00",
+  "commitSha": "b2bbde3e9fffeb47a1e8744023a30784b108f3c5",
+  "assertions": [
+    {
+      "name": "n3_is_borromean_to_hp_precision",
+      "computed": "5.0951e-51",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "SnapPy ManifoldHP vs 8*Catalan at 50 dps"
+    },
+    {
+      "name": "all_twenty_words_computed",
+      "computed": 20,
+      "expected": 20,
+      "passed": true,
+      "tolerance": 0,
+      "source": "preregistration.md word list"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "gg-atom-word-volumes",
+  "scriptFile": "gg_atom_word_volumes_probe.py",
+  "scriptHash": "0743fd110770",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "8094096a28948d48"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gg_atom_word_volumes/gg_atom_word_volumes_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gg_atom_word_volumes/gg_atom_word_volumes_probe.py"
+  },
+  "description": "Hyperbolic volumes (SnapPy floating point) of the braid closures of the gamma-gamma candidate atom words: nucleon V^3/V^6 with V = s_a s_{a+1}^-1, free blocks and bonded atoms (bond V^3, site arms L/R), A = 1..4. Adopts nothing; compares with the production VOL_K of the A>=3 chain.",
+  "data": {
+    "verified_volume": "unavailable (SageNotAvailable: needs SnapPy inside Sage)",
+    "production_vol_k": {
+      "D": "7.3277247534177521204368281194590728861931949942534",
+      "T": "8.2863168178065925881268247977511671629487442454111",
+      "3He": "7.3277247534177521204368281194590728861931949942534",
+      "4He": "14.655449506835504240873656238918145772386389988507"
+    },
+    "results": {
+      "N3": {
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2
+        ],
+        "letters": 6,
+        "components": 3,
+        "crossings": 6,
+        "split": false,
+        "n_split_pieces": 1,
+        "whole": {
+          "solution_type": "all tetrahedra positively oriented",
+          "hyperbolic": true,
+          "volume_double": "7.32772475342",
+          "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+          "hp_solution_type": "all tetrahedra positively oriented",
+          "identify": [
+            "t12067(0,0)(0,0)(0,0)",
+            "6^3_2(0,0)(0,0)(0,0)",
+            "L6a4(0,0)(0,0)(0,0)",
+            "ooct02_00005(0,0)(0,0)(0,0)"
+          ]
+        },
+        "n_prime_pieces": 1,
+        "prime_pieces": [
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "volume_double": "7.3277247534",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          }
+        ],
+        "v3_simplicial_volume_hp": "7.3277247534177521204368281194590728861931949942534",
+        "A": 1
+      },
+      "N6": {
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2
+        ],
+        "letters": 12,
+        "components": 3,
+        "crossings": 12,
+        "split": false,
+        "n_split_pieces": 1,
+        "whole": {
+          "solution_type": "all tetrahedra positively oriented",
+          "hyperbolic": true,
+          "volume_double": "21.631598679",
+          "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+          "hp_solution_type": "all tetrahedra positively oriented",
+          "identify": [
+            "L12a1882(0,0)(0,0)(0,0)"
+          ]
+        },
+        "n_prime_pieces": 1,
+        "prime_pieces": [
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "volume_double": "21.6315986792",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "21.631598679192658969740248696338373013860600957784"
+          }
+        ],
+        "v3_simplicial_volume_hp": "21.631598679192658969740248696338373013860600957784",
+        "A": 1
+      },
+      "F3-A2": {
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5
+        ],
+        "letters": 12,
+        "components": 6,
+        "crossings": 12,
+        "split": true,
+        "n_split_pieces": 2,
+        "whole": {
+          "hyperbolic": false,
+          "reason": "split link: complement contains an essential sphere"
+        },
+        "pieces": [
+          {
+            "components": 3,
+            "solution_type": "all tetrahedra positively oriented",
+            "hyperbolic": true,
+            "volume_double": "7.32772475342",
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "hp_solution_type": "all tetrahedra positively oriented",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ]
+          },
+          {
+            "components": 3,
+            "solution_type": "all tetrahedra positively oriented",
+            "hyperbolic": true,
+            "volume_double": "7.3277247534",
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "hp_solution_type": "all tetrahedra positively oriented",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ]
+          }
+        ],
+        "n_prime_pieces": 2,
+        "prime_pieces": [
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "volume_double": "7.3277247534",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "volume_double": "7.32772475342",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          }
+        ],
+        "v3_simplicial_volume_hp": "14.655449506835504240873656238918145772386389988507",
+        "A": 2,
+        "production_vol_k": "D: Vol(Borromean)"
+      },
+      "F3-A3": {
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8
+        ],
+        "letters": 18,
+        "components": 9,
+        "crossings": 18,
+        "split": true,
+        "n_split_pieces": 3,
+        "whole": {
+          "hyperbolic": false,
+          "reason": "split link: complement contains an essential sphere"
+        },
+        "pieces": [
+          {
+            "components": 3,
+            "solution_type": "all tetrahedra positively oriented",
+            "hyperbolic": true,
+            "volume_double": "7.32772475342",
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "hp_solution_type": "all tetrahedra positively oriented",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ]
+          },
+          {
+            "components": 3,
+            "solution_type": "all tetrahedra positively oriented",
+            "hyperbolic": true,
+            "volume_double": "7.32772475342",
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "hp_solution_type": "all tetrahedra positively oriented",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ]
+          },
+          {
+            "components": 3,
+            "solution_type": "all tetrahedra positively oriented",
+            "hyperbolic": true,
+            "volume_double": "7.32772475342",
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "hp_solution_type": "all tetrahedra positively oriented",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ]
+          }
+        ],
+        "n_prime_pieces": 3,
+        "prime_pieces": [
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "volume_double": "7.32772475342",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "volume_double": "7.32772475342",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "volume_double": "7.3277247534",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          }
+        ],
+        "v3_simplicial_volume_hp": "21.98317426025325636131048435837721865857958498276",
+        "A": 3,
+        "production_vol_k": "T: Vol(8_11); 3He: Vol(Borromean)"
+      },
+      "F3-A4": {
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          10,
+          -11,
+          10,
+          -11,
+          10,
+          -11
+        ],
+        "letters": 24,
+        "components": 12,
+        "crossings": 24,
+        "split": true,
+        "n_split_pieces": 4,
+        "whole": {
+          "hyperbolic": false,
+          "reason": "split link: complement contains an essential sphere"
+        },
+        "pieces": [
+          {
+            "components": 3,
+            "solution_type": "all tetrahedra positively oriented",
+            "hyperbolic": true,
+            "volume_double": "7.32772475342",
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "hp_solution_type": "all tetrahedra positively oriented",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ]
+          },
+          {
+            "components": 3,
+            "solution_type": "all tetrahedra positively oriented",
+            "hyperbolic": true,
+            "volume_double": "7.32772475342",
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "hp_solution_type": "all tetrahedra positively oriented",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ]
+          },
+          {
+            "components": 3,
+            "solution_type": "all tetrahedra positively oriented",
+            "hyperbolic": true,
+            "volume_double": "7.3277247534",
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "hp_solution_type": "all tetrahedra positively oriented",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ]
+          },
+          {
+            "components": 3,
+            "solution_type": "all tetrahedra positively oriented",
+            "hyperbolic": true,
+            "volume_double": "7.32772475342",
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "hp_solution_type": "all tetrahedra positively oriented",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ]
+          }
+        ],
+        "n_prime_pieces": 4,
+        "prime_pieces": [
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "volume_double": "7.3277247534",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "volume_double": "7.3277247534",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "volume_double": "7.3277247534",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "volume_double": "7.3277247534",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          }
+        ],
+        "v3_simplicial_volume_hp": "29.310899013671008481747312477836291544772779977014",
+        "A": 4,
+        "production_vol_k": "4He: 2*Vol(Borromean)"
+      },
+      "F6-A2": {
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5
+        ],
+        "letters": 24,
+        "components": 6,
+        "crossings": 24,
+        "split": true,
+        "n_split_pieces": 2,
+        "whole": {
+          "hyperbolic": false,
+          "reason": "split link: complement contains an essential sphere"
+        },
+        "pieces": [
+          {
+            "components": 3,
+            "solution_type": "all tetrahedra positively oriented",
+            "hyperbolic": true,
+            "volume_double": "21.6315986792",
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "hp_solution_type": "all tetrahedra positively oriented",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ]
+          },
+          {
+            "components": 3,
+            "solution_type": "all tetrahedra positively oriented",
+            "hyperbolic": true,
+            "volume_double": "21.631598679",
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "hp_solution_type": "all tetrahedra positively oriented",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ]
+          }
+        ],
+        "n_prime_pieces": 2,
+        "prime_pieces": [
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "volume_double": "21.6315986792",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "21.631598679192658969740248696338373013860600957784"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "volume_double": "21.631598679",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "21.631598679192658969740248696338373013860600957784"
+          }
+        ],
+        "v3_simplicial_volume_hp": "43.263197358385317939480497392676746027721201915567",
+        "A": 2,
+        "production_vol_k": "D: Vol(Borromean)"
+      },
+      "F6-A3": {
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8
+        ],
+        "letters": 36,
+        "components": 9,
+        "crossings": 36,
+        "split": true,
+        "n_split_pieces": 3,
+        "whole": {
+          "hyperbolic": false,
+          "reason": "split link: complement contains an essential sphere"
+        },
+        "pieces": [
+          {
+            "components": 3,
+            "solution_type": "all tetrahedra positively oriented",
+            "hyperbolic": true,
+            "volume_double": "21.631598679",
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "hp_solution_type": "all tetrahedra positively oriented",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ]
+          },
+          {
+            "components": 3,
+            "solution_type": "all tetrahedra positively oriented",
+            "hyperbolic": true,
+            "volume_double": "21.631598679",
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "hp_solution_type": "all tetrahedra positively oriented",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ]
+          },
+          {
+            "components": 3,
+            "solution_type": "all tetrahedra positively oriented",
+            "hyperbolic": true,
+            "volume_double": "21.631598679",
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495638",
+            "hp_solution_type": "all tetrahedra positively oriented",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ]
+          }
+        ],
+        "n_prime_pieces": 3,
+        "prime_pieces": [
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "volume_double": "21.6315986792",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "21.631598679192658969740248696338373013860600957784"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "volume_double": "21.6315986792",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "21.631598679192658969740248696338373013860600957784"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "volume_double": "21.6315986792",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "21.631598679192658969740248696338373013860600957784"
+          }
+        ],
+        "v3_simplicial_volume_hp": "64.894796037577976909220746089015119041581802873351",
+        "A": 3,
+        "production_vol_k": "T: Vol(8_11); 3He: Vol(Borromean)"
+      },
+      "F6-A4": {
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          10,
+          -11,
+          10,
+          -11,
+          10,
+          -11,
+          10,
+          -11,
+          10,
+          -11,
+          10,
+          -11
+        ],
+        "letters": 48,
+        "components": 12,
+        "crossings": 48,
+        "split": true,
+        "n_split_pieces": 4,
+        "whole": {
+          "hyperbolic": false,
+          "reason": "split link: complement contains an essential sphere"
+        },
+        "pieces": [
+          {
+            "components": 3,
+            "solution_type": "all tetrahedra positively oriented",
+            "hyperbolic": true,
+            "volume_double": "21.6315986792",
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "hp_solution_type": "all tetrahedra positively oriented",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ]
+          },
+          {
+            "components": 3,
+            "solution_type": "all tetrahedra positively oriented",
+            "hyperbolic": true,
+            "volume_double": "21.6315986792",
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "hp_solution_type": "all tetrahedra positively oriented",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ]
+          },
+          {
+            "components": 3,
+            "solution_type": "all tetrahedra positively oriented",
+            "hyperbolic": true,
+            "volume_double": "21.6315986792",
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "hp_solution_type": "all tetrahedra positively oriented",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ]
+          },
+          {
+            "components": 3,
+            "solution_type": "all tetrahedra positively oriented",
+            "hyperbolic": true,
+            "volume_double": "21.6315986792",
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "hp_solution_type": "all tetrahedra positively oriented",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ]
+          }
+        ],
+        "n_prime_pieces": 4,
+        "prime_pieces": [
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "volume_double": "21.631598679",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "21.631598679192658969740248696338373013860600957784"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "volume_double": "21.6315986792",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "21.631598679192658969740248696338373013860600957784"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "volume_double": "21.631598679",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "21.631598679192658969740248696338373013860600957784"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "volume_double": "21.631598679",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "21.631598679192658969740248696338373013860600957784"
+          }
+        ],
+        "v3_simplicial_volume_hp": "86.526394716770635878960994785353492055442403831134",
+        "A": 4,
+        "production_vol_k": "4He: 2*Vol(Borromean)"
+      },
+      "L3-A2": {
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          2,
+          -3,
+          2,
+          -3,
+          2,
+          -3,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5
+        ],
+        "letters": 18,
+        "components": 6,
+        "crossings": 18,
+        "split": false,
+        "n_split_pieces": 1,
+        "whole": {
+          "solution_type": "contains degenerate tetrahedra",
+          "hyperbolic": false,
+          "volume_double": null,
+          "volume_hp": null,
+          "identify": []
+        },
+        "n_prime_pieces": 2,
+        "prime_pieces": [
+          {
+            "kind": "cut_along_essential_torus",
+            "pieces": [
+              {
+                "kind": "seifert_fibred",
+                "solution_type": "contains degenerate tetrahedra",
+                "regina_recognised": "Or, g=0 + 3 punctures x S1",
+                "cusps": 3
+              },
+              {
+                "kind": "hyperbolic",
+                "cusps": 3,
+                "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+                "volume_double": "7.32772475342",
+                "identify": [
+                  "t12067(0,0)(0,0)(0,0)",
+                  "6^3_2(0,0)(0,0)(0,0)",
+                  "L6a4(0,0)(0,0)(0,0)",
+                  "ooct02_00005(0,0)(0,0)(0,0)"
+                ]
+              }
+            ],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "volume_double": "7.32772475342",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          }
+        ],
+        "v3_simplicial_volume_hp": "14.655449506835504240873656238918145772386389988507",
+        "A": 2,
+        "production_vol_k": "D: Vol(Borromean)"
+      },
+      "L3-A3": {
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          2,
+          -3,
+          2,
+          -3,
+          2,
+          -3,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          5,
+          -6,
+          5,
+          -6,
+          5,
+          -6,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8
+        ],
+        "letters": 30,
+        "components": 9,
+        "crossings": 30,
+        "split": false,
+        "n_split_pieces": 1,
+        "whole": {
+          "solution_type": "contains degenerate tetrahedra",
+          "hyperbolic": false,
+          "volume_double": null,
+          "volume_hp": null,
+          "identify": []
+        },
+        "n_prime_pieces": 3,
+        "prime_pieces": [
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "volume_double": "7.32772475342",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          },
+          {
+            "kind": "cut_along_essential_torus",
+            "pieces": [
+              {
+                "kind": "hyperbolic",
+                "cusps": 3,
+                "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+                "volume_double": "7.32772475342",
+                "identify": [
+                  "t12067(0,0)(0,0)(0,0)",
+                  "6^3_2(0,0)(0,0)(0,0)",
+                  "L6a4(0,0)(0,0)(0,0)",
+                  "ooct02_00005(0,0)(0,0)(0,0)"
+                ]
+              },
+              {
+                "kind": "seifert_fibred",
+                "solution_type": "unrecognized solution type",
+                "regina_recognised": "Or, g=0 + 3 punctures x S1",
+                "cusps": 3
+              }
+            ],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          },
+          {
+            "kind": "cut_along_essential_torus",
+            "pieces": [
+              {
+                "kind": "hyperbolic",
+                "cusps": 3,
+                "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+                "volume_double": "7.3277247534",
+                "identify": [
+                  "t12067(0,0)(0,0)(0,0)",
+                  "6^3_2(0,0)(0,0)(0,0)",
+                  "L6a4(0,0)(0,0)(0,0)",
+                  "ooct02_00005(0,0)(0,0)(0,0)"
+                ]
+              },
+              {
+                "kind": "seifert_fibred",
+                "solution_type": "unrecognized solution type",
+                "regina_recognised": "SFS [Or, g=0 + 3 punctures: (1,1)]",
+                "cusps": 3
+              }
+            ],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          }
+        ],
+        "v3_simplicial_volume_hp": "21.98317426025325636131048435837721865857958498276",
+        "A": 3,
+        "production_vol_k": "T: Vol(8_11); 3He: Vol(Borromean)"
+      },
+      "L3-A4": {
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          2,
+          -3,
+          2,
+          -3,
+          2,
+          -3,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          5,
+          -6,
+          5,
+          -6,
+          5,
+          -6,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          8,
+          -9,
+          8,
+          -9,
+          8,
+          -9,
+          10,
+          -11,
+          10,
+          -11,
+          10,
+          -11
+        ],
+        "letters": 42,
+        "components": 12,
+        "crossings": 42,
+        "split": false,
+        "n_split_pieces": 1,
+        "whole": {
+          "solution_type": "contains degenerate tetrahedra",
+          "hyperbolic": false,
+          "volume_double": null,
+          "volume_hp": null,
+          "identify": []
+        },
+        "n_prime_pieces": 4,
+        "prime_pieces": [
+          {
+            "kind": "cut_along_essential_torus",
+            "pieces": [
+              {
+                "kind": "hyperbolic",
+                "cusps": 3,
+                "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+                "volume_double": "7.32772475342",
+                "identify": [
+                  "t12067(0,0)(0,0)(0,0)",
+                  "6^3_2(0,0)(0,0)(0,0)",
+                  "L6a4(0,0)(0,0)(0,0)",
+                  "ooct02_00005(0,0)(0,0)(0,0)"
+                ]
+              },
+              {
+                "kind": "seifert_fibred",
+                "solution_type": "contains flat tetrahedra",
+                "regina_recognised": "Or, g=0 + 3 punctures x S1",
+                "cusps": 3
+              }
+            ],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          },
+          {
+            "kind": "cut_along_essential_torus",
+            "pieces": [
+              {
+                "kind": "seifert_fibred",
+                "solution_type": "contains degenerate tetrahedra",
+                "regina_recognised": "Or, g=0 + 3 punctures x S1",
+                "cusps": 3
+              },
+              {
+                "kind": "hyperbolic",
+                "cusps": 3,
+                "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+                "volume_double": "7.32772475342",
+                "identify": [
+                  "t12067(0,0)(0,0)(0,0)",
+                  "6^3_2(0,0)(0,0)(0,0)",
+                  "L6a4(0,0)(0,0)(0,0)",
+                  "ooct02_00005(0,0)(0,0)(0,0)"
+                ]
+              }
+            ],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "volume_double": "7.32772475342",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          },
+          {
+            "kind": "cut_along_essential_torus",
+            "pieces": [
+              {
+                "kind": "hyperbolic",
+                "cusps": 3,
+                "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+                "volume_double": "7.32772475342",
+                "identify": [
+                  "t12067(0,0)(0,0)(0,0)",
+                  "6^3_2(0,0)(0,0)(0,0)",
+                  "L6a4(0,0)(0,0)(0,0)",
+                  "ooct02_00005(0,0)(0,0)(0,0)"
+                ]
+              },
+              {
+                "kind": "seifert_fibred",
+                "solution_type": "unrecognized solution type",
+                "regina_recognised": "SFS [Or, g=0 + 3 punctures: (1,1)]",
+                "cusps": 3
+              }
+            ],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          }
+        ],
+        "v3_simplicial_volume_hp": "29.310899013671008481747312477836291544772779977014",
+        "A": 4,
+        "production_vol_k": "4He: 2*Vol(Borromean)"
+      },
+      "R3-A2": {
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          3,
+          -4,
+          3,
+          -4,
+          3,
+          -4,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5
+        ],
+        "letters": 18,
+        "components": 6,
+        "crossings": 18,
+        "split": false,
+        "n_split_pieces": 1,
+        "whole": {
+          "solution_type": "contains degenerate tetrahedra",
+          "hyperbolic": false,
+          "volume_double": null,
+          "volume_hp": null,
+          "identify": []
+        },
+        "n_prime_pieces": 2,
+        "prime_pieces": [
+          {
+            "kind": "cut_along_essential_torus",
+            "pieces": [
+              {
+                "kind": "seifert_fibred",
+                "solution_type": "unrecognized solution type",
+                "regina_recognised": "SFS [Or, g=0 + 3 punctures: (1,1)]",
+                "cusps": 3
+              },
+              {
+                "kind": "hyperbolic",
+                "cusps": 3,
+                "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+                "volume_double": "7.3277247534",
+                "identify": [
+                  "t12067(0,0)(0,0)(0,0)",
+                  "6^3_2(0,0)(0,0)(0,0)",
+                  "L6a4(0,0)(0,0)(0,0)",
+                  "ooct02_00005(0,0)(0,0)(0,0)"
+                ]
+              }
+            ],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "volume_double": "7.3277247534",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          }
+        ],
+        "v3_simplicial_volume_hp": "14.655449506835504240873656238918145772386389988507",
+        "A": 2,
+        "production_vol_k": "D: Vol(Borromean)"
+      },
+      "R3-A3": {
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          3,
+          -4,
+          3,
+          -4,
+          3,
+          -4,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          6,
+          -7,
+          6,
+          -7,
+          6,
+          -7,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8
+        ],
+        "letters": 30,
+        "components": 9,
+        "crossings": 30,
+        "split": false,
+        "n_split_pieces": 1,
+        "whole": {
+          "solution_type": "contains degenerate tetrahedra",
+          "hyperbolic": false,
+          "volume_double": null,
+          "volume_hp": null,
+          "identify": []
+        },
+        "n_prime_pieces": 3,
+        "prime_pieces": [
+          {
+            "kind": "cut_along_essential_torus",
+            "pieces": [
+              {
+                "kind": "seifert_fibred",
+                "solution_type": "contains degenerate tetrahedra",
+                "regina_recognised": "SFS [Or, g=0 + 3 punctures: (1,1)]",
+                "cusps": 3
+              },
+              {
+                "kind": "hyperbolic",
+                "cusps": 3,
+                "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+                "volume_double": "7.3277247534",
+                "identify": [
+                  "t12067(0,0)(0,0)(0,0)",
+                  "6^3_2(0,0)(0,0)(0,0)",
+                  "L6a4(0,0)(0,0)(0,0)",
+                  "ooct02_00005(0,0)(0,0)(0,0)"
+                ]
+              }
+            ],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          },
+          {
+            "kind": "cut_along_essential_torus",
+            "pieces": [
+              {
+                "kind": "hyperbolic",
+                "cusps": 3,
+                "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+                "volume_double": "7.32772475342",
+                "identify": [
+                  "t12067(0,0)(0,0)(0,0)",
+                  "6^3_2(0,0)(0,0)(0,0)",
+                  "L6a4(0,0)(0,0)(0,0)",
+                  "ooct02_00005(0,0)(0,0)(0,0)"
+                ]
+              },
+              {
+                "kind": "seifert_fibred",
+                "solution_type": "contains degenerate tetrahedra",
+                "regina_recognised": "SFS [Or, g=0 + 3 punctures: (1,1)]",
+                "cusps": 3
+              }
+            ],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "volume_double": "7.3277247534",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          }
+        ],
+        "v3_simplicial_volume_hp": "21.98317426025325636131048435837721865857958498276",
+        "A": 3,
+        "production_vol_k": "T: Vol(8_11); 3He: Vol(Borromean)"
+      },
+      "R3-A4": {
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          3,
+          -4,
+          3,
+          -4,
+          3,
+          -4,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          6,
+          -7,
+          6,
+          -7,
+          6,
+          -7,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          9,
+          -10,
+          9,
+          -10,
+          9,
+          -10,
+          10,
+          -11,
+          10,
+          -11,
+          10,
+          -11
+        ],
+        "letters": 42,
+        "components": 12,
+        "crossings": 42,
+        "split": false,
+        "n_split_pieces": 1,
+        "whole": {
+          "solution_type": "contains degenerate tetrahedra",
+          "hyperbolic": false,
+          "volume_double": null,
+          "volume_hp": null,
+          "identify": []
+        },
+        "n_prime_pieces": 4,
+        "prime_pieces": [
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+            "volume_double": "7.3277247534",
+            "identify": [
+              "t12067(0,0)(0,0)(0,0)",
+              "6^3_2(0,0)(0,0)(0,0)",
+              "L6a4(0,0)(0,0)(0,0)",
+              "ooct02_00005(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          },
+          {
+            "kind": "cut_along_essential_torus",
+            "pieces": [
+              {
+                "kind": "hyperbolic",
+                "cusps": 3,
+                "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+                "volume_double": "7.3277247534",
+                "identify": [
+                  "t12067(0,0)(0,0)(0,0)",
+                  "6^3_2(0,0)(0,0)(0,0)",
+                  "L6a4(0,0)(0,0)(0,0)",
+                  "ooct02_00005(0,0)(0,0)(0,0)"
+                ]
+              },
+              {
+                "kind": "seifert_fibred",
+                "solution_type": "contains degenerate tetrahedra",
+                "regina_recognised": "Or, g=0 + 3 punctures x S1",
+                "cusps": 3
+              }
+            ],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          },
+          {
+            "kind": "cut_along_essential_torus",
+            "pieces": [
+              {
+                "kind": "hyperbolic",
+                "cusps": 3,
+                "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+                "volume_double": "7.32772475342",
+                "identify": [
+                  "t12067(0,0)(0,0)(0,0)",
+                  "6^3_2(0,0)(0,0)(0,0)",
+                  "L6a4(0,0)(0,0)(0,0)",
+                  "ooct02_00005(0,0)(0,0)(0,0)"
+                ]
+              },
+              {
+                "kind": "seifert_fibred",
+                "solution_type": "unrecognized solution type",
+                "regina_recognised": "SFS [Or, g=0 + 3 punctures: (1,1)]",
+                "cusps": 3
+              }
+            ],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          },
+          {
+            "kind": "cut_along_essential_torus",
+            "pieces": [
+              {
+                "kind": "hyperbolic",
+                "cusps": 3,
+                "volume_hp": "7.327724753417752120436828119459072886193194994253377074131984957",
+                "volume_double": "7.32772475342",
+                "identify": [
+                  "t12067(0,0)(0,0)(0,0)",
+                  "6^3_2(0,0)(0,0)(0,0)",
+                  "L6a4(0,0)(0,0)(0,0)",
+                  "ooct02_00005(0,0)(0,0)(0,0)"
+                ]
+              },
+              {
+                "kind": "seifert_fibred",
+                "solution_type": "contains flat tetrahedra",
+                "regina_recognised": "SFS [Or, g=0 + 3 punctures: (1,1)]",
+                "cusps": 3
+              }
+            ],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "7.3277247534177521204368281194590728861931949942534"
+          }
+        ],
+        "v3_simplicial_volume_hp": "29.310899013671008481747312477836291544772779977014",
+        "A": 4,
+        "production_vol_k": "4He: 2*Vol(Borromean)"
+      },
+      "L6-A2": {
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          2,
+          -3,
+          2,
+          -3,
+          2,
+          -3,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5
+        ],
+        "letters": 30,
+        "components": 6,
+        "crossings": 30,
+        "split": false,
+        "n_split_pieces": 1,
+        "whole": {
+          "solution_type": "contains degenerate tetrahedra",
+          "hyperbolic": false,
+          "volume_double": null,
+          "volume_hp": null,
+          "identify": []
+        },
+        "n_prime_pieces": 2,
+        "prime_pieces": [
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "volume_double": "21.6315986792",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "21.631598679192658969740248696338373013860600957784"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 4,
+            "volume_hp": "26.976022508712030092826888146834049391722383274833326349900971060",
+            "volume_double": "26.9760225087",
+            "identify": [],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "26.976022508712030092826888146834049391722383274833"
+          }
+        ],
+        "v3_simplicial_volume_hp": "48.607621187904689062567136843172422405582984232617",
+        "A": 2,
+        "production_vol_k": "D: Vol(Borromean)"
+      },
+      "L6-A3": {
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          2,
+          -3,
+          2,
+          -3,
+          2,
+          -3,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          5,
+          -6,
+          5,
+          -6,
+          5,
+          -6,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8
+        ],
+        "letters": 48,
+        "components": 9,
+        "crossings": 48,
+        "split": false,
+        "n_split_pieces": 1,
+        "whole": {
+          "solution_type": "contains degenerate tetrahedra",
+          "hyperbolic": false,
+          "volume_double": null,
+          "volume_hp": null,
+          "identify": []
+        },
+        "n_prime_pieces": 3,
+        "prime_pieces": [
+          {
+            "kind": "hyperbolic",
+            "cusps": 4,
+            "volume_hp": "26.976022508712030092826888146834049391722383274833326349900971059",
+            "volume_double": "26.9760225087",
+            "identify": [],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "26.976022508712030092826888146834049391722383274833"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 4,
+            "volume_hp": "26.976022508712030092826888146834049391722383274833326349900971061",
+            "volume_double": "26.976022509",
+            "identify": [],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "26.976022508712030092826888146834049391722383274833"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "volume_double": "21.631598679",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "21.631598679192658969740248696338373013860600957784"
+          }
+        ],
+        "v3_simplicial_volume_hp": "75.58364369661671915539402499000647179730536750745",
+        "A": 3,
+        "production_vol_k": "T: Vol(8_11); 3He: Vol(Borromean)"
+      },
+      "L6-A4": {
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          2,
+          -3,
+          2,
+          -3,
+          2,
+          -3,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          5,
+          -6,
+          5,
+          -6,
+          5,
+          -6,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          8,
+          -9,
+          8,
+          -9,
+          8,
+          -9,
+          10,
+          -11,
+          10,
+          -11,
+          10,
+          -11,
+          10,
+          -11,
+          10,
+          -11,
+          10,
+          -11
+        ],
+        "letters": 66,
+        "components": 12,
+        "crossings": 66,
+        "split": false,
+        "n_split_pieces": 1,
+        "whole": {
+          "solution_type": "contains degenerate tetrahedra",
+          "hyperbolic": false,
+          "volume_double": null,
+          "volume_hp": null,
+          "identify": []
+        },
+        "n_prime_pieces": 4,
+        "prime_pieces": [
+          {
+            "kind": "hyperbolic",
+            "cusps": 4,
+            "volume_hp": "26.976022508712030092826888146834049391722383274833326349900971060",
+            "volume_double": "26.9760225087",
+            "identify": [],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "26.976022508712030092826888146834049391722383274833"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 4,
+            "volume_hp": "26.976022508712030092826888146834049391722383274833326349900971061",
+            "volume_double": "26.9760225087",
+            "identify": [],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "26.976022508712030092826888146834049391722383274833"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "volume_double": "21.6315986792",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "21.631598679192658969740248696338373013860600957784"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 4,
+            "volume_hp": "26.976022508712030092826888146834049391722383274833326349900971060",
+            "volume_double": "26.9760225087",
+            "identify": [],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "26.976022508712030092826888146834049391722383274833"
+          }
+        ],
+        "v3_simplicial_volume_hp": "102.55966620532874924822091313684052118902775078228",
+        "A": 4,
+        "production_vol_k": "4He: 2*Vol(Borromean)"
+      },
+      "R6-A2": {
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          3,
+          -4,
+          3,
+          -4,
+          3,
+          -4,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5
+        ],
+        "letters": 30,
+        "components": 6,
+        "crossings": 30,
+        "split": false,
+        "n_split_pieces": 1,
+        "whole": {
+          "solution_type": "contains degenerate tetrahedra",
+          "hyperbolic": false,
+          "volume_double": null,
+          "volume_hp": null,
+          "identify": []
+        },
+        "n_prime_pieces": 2,
+        "prime_pieces": [
+          {
+            "kind": "hyperbolic",
+            "cusps": 4,
+            "volume_hp": "26.976022508712030092826888146834049391722383274833326349900971060",
+            "volume_double": "26.9760225087",
+            "identify": [],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "26.976022508712030092826888146834049391722383274833"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "volume_double": "21.6315986792",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "21.631598679192658969740248696338373013860600957784"
+          }
+        ],
+        "v3_simplicial_volume_hp": "48.607621187904689062567136843172422405582984232617",
+        "A": 2,
+        "production_vol_k": "D: Vol(Borromean)"
+      },
+      "R6-A3": {
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          3,
+          -4,
+          3,
+          -4,
+          3,
+          -4,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          6,
+          -7,
+          6,
+          -7,
+          6,
+          -7,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8
+        ],
+        "letters": 48,
+        "components": 9,
+        "crossings": 48,
+        "split": false,
+        "n_split_pieces": 1,
+        "whole": {
+          "solution_type": "contains degenerate tetrahedra",
+          "hyperbolic": false,
+          "volume_double": null,
+          "volume_hp": null,
+          "identify": []
+        },
+        "n_prime_pieces": 3,
+        "prime_pieces": [
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "volume_double": "21.6315986792",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "21.631598679192658969740248696338373013860600957784"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 4,
+            "volume_hp": "26.976022508712030092826888146834049391722383274833326349900971060",
+            "volume_double": "26.9760225087",
+            "identify": [],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "26.976022508712030092826888146834049391722383274833"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 4,
+            "volume_hp": "26.976022508712030092826888146834049391722383274833326349900971060",
+            "volume_double": "26.976022509",
+            "identify": [],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "26.976022508712030092826888146834049391722383274833"
+          }
+        ],
+        "v3_simplicial_volume_hp": "75.58364369661671915539402499000647179730536750745",
+        "A": 3,
+        "production_vol_k": "T: Vol(8_11); 3He: Vol(Borromean)"
+      },
+      "R6-A4": {
+        "word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          3,
+          -4,
+          3,
+          -4,
+          3,
+          -4,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          4,
+          -5,
+          6,
+          -7,
+          6,
+          -7,
+          6,
+          -7,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          7,
+          -8,
+          9,
+          -10,
+          9,
+          -10,
+          9,
+          -10,
+          10,
+          -11,
+          10,
+          -11,
+          10,
+          -11,
+          10,
+          -11,
+          10,
+          -11,
+          10,
+          -11
+        ],
+        "letters": 66,
+        "components": 12,
+        "crossings": 66,
+        "split": false,
+        "n_split_pieces": 1,
+        "whole": {
+          "solution_type": "contains degenerate tetrahedra",
+          "hyperbolic": false,
+          "volume_double": null,
+          "volume_hp": null,
+          "identify": []
+        },
+        "n_prime_pieces": 4,
+        "prime_pieces": [
+          {
+            "kind": "hyperbolic",
+            "cusps": 4,
+            "volume_hp": "26.976022508712030092826888146834049391722383274833326349900971060",
+            "volume_double": "26.976022509",
+            "identify": [],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "26.976022508712030092826888146834049391722383274833"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 4,
+            "volume_hp": "26.976022508712030092826888146834049391722383274833326349900971060",
+            "volume_double": "26.976022509",
+            "identify": [],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "26.976022508712030092826888146834049391722383274833"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 4,
+            "volume_hp": "26.976022508712030092826888146834049391722383274833326349900971059",
+            "volume_double": "26.9760225087",
+            "identify": [],
+            "components": 4,
+            "hyperbolic_jsj_volume_sum_hp": "26.976022508712030092826888146834049391722383274833"
+          },
+          {
+            "kind": "hyperbolic",
+            "cusps": 3,
+            "volume_hp": "21.631598679192658969740248696338373013860600957783532564857495637",
+            "volume_double": "21.6315986792",
+            "identify": [
+              "L12a1882(0,0)(0,0)(0,0)"
+            ],
+            "components": 3,
+            "hyperbolic_jsj_volume_sum_hp": "21.631598679192658969740248696338373013860600957784"
+          }
+        ],
+        "v3_simplicial_volume_hp": "102.55966620532874924822091313684052118902775078228",
+        "A": 4,
+        "production_vol_k": "4He: 2*Vol(Borromean)"
+      }
+    },
+    "borromean_8G_50dps": "7.3277247534177521204368281194590728861931949942534",
+    "n3_hp_minus_8G_abs": "5.0951e-51",
+    "max_rel_double_vs_hp": "1.0675e-11",
+    "v3_simplicial_volume_over_8G": {
+      "N3": "1.0",
+      "N6": "2.95202118080423016973613287914",
+      "F3-A2": "2.0",
+      "F3-A3": "3.0",
+      "F3-A4": "4.0",
+      "F6-A2": "5.90404236160846033947226575827",
+      "F6-A3": "8.85606354241269050920839863741",
+      "F6-A4": "11.8080847232169206789445315165",
+      "L3-A2": "2.0",
+      "L3-A3": "3.0",
+      "L3-A4": "4.0",
+      "R3-A2": "2.0",
+      "R3-A3": "3.0",
+      "R3-A4": "4.0",
+      "L6-A2": "6.63338523533289410315716210798",
+      "L6-A3": "10.3147492898615580365781913368",
+      "L6-A4": "13.9961133443902219699992205657",
+      "R6-A2": "6.63338523533289410315716210798",
+      "R6-A3": "10.3147492898615580365781913368",
+      "R6-A4": "13.9961133443902219699992205657"
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Topology only: braid-closure link complements, SnapPy hyperbolic volumes and Regina JSJ cuts. No q_parameter / q_at import and no q0 literal; the only corpus constant read is Vol(Borromean) = 8G from substrate.knot_volumes."
+}

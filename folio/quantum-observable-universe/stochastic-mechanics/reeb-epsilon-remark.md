@@ -1,0 +1,3 @@
+**Primitivity.** The Reeb infinitesimal $\varepsilon$ is intrinsic to the categorical structure of $A$. It is the tangent vector at the identity of the Reeb flow. It is well defined before any choice of deformation scale is made.
+
+**Positivity and archimedean independence.** The contact-form normalization $\xi \circ \varTheta = \varTheta$ of the Reeb derivation forces $\varepsilon$ to be a strictly positive element of $\mathrm{Der}(A)$. Moreover, $\varepsilon$ is archimedean-smaller than every standard-real derivation $\lambda \cdot \mathrm{id}_A$. These two properties pick out $\varepsilon$ as a positive infinitesimal direction.

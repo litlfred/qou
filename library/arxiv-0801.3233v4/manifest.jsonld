@@ -26,6 +26,18 @@
     "library/arxiv-0801.3233v4/sections/sec-011"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Twisted Deformation Quantization of Algebraic Varieties (Survey) — Let X be a smooth algebraic variety over a ﬁeld of characteristic 0. We introduce the notion of twisted associative (resp.\n\n**Twisted Deformation Quantization of Algebraic Varieties (Survey)**\n\n*Amnon Yekutieli*\n\n19 pp, 13 sections.\n\n**Abstract.** Let X be a smooth algebraic variety over a ﬁeld of characteristic 0. We introduce the notion of twisted associative (resp. Poisson) deformation of the structure sheaf OX. These are stack-like versions of usual deformations. We prove that there is a twisted quantization map from twisted Poisson defor- mations to twisted associative deformations, which is canonical and bijective on equivalence classes. 0. Introduction Let K be a ﬁeld of characteristic 0, and let X be a smooth algebraic variety over K, with structure sheaf OX. An associative deformation of OX is a sheaf A of ﬂat complete associative K[[ℏ]]-algebras on X, with an isomorphism K ⊗K[[ℏ]] A ∼= OX, called an augmentation. Similarly, a Poisson deformation of OX is a sheaf A of ﬂat complete commutative Poisson K[[ℏ]]-algebras on X, with an augmentation to OX. In this paper we introduce the notion of twisted associative (resp.\n\n**Outline.** Front matter; 0 Introduction; 1 Some background on Deformation Quantization; 2 Poisson Deformations of Algebraic Varieties; 3 Associative Deformations of Algebraic Variet; 4 Deformation Quantization; 5 Twisted Deformations of Algebraic Varieties; 6 Twisted Deformation Quantization; Appendix A. DG Lie Algebras and Deformations; Appendix B. The Universal Quantization Map; Appendix C. The L quasi-isomorphism of the Lev; Appendix D. Twisted Deformations and their Gau; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

@@ -8,8 +8,7 @@ export default theorem({
   },
   title: "Binding closure, conditional on the per-term mass identity",
   uses: [
-    // conj:binding-manybody-eq-jet-filtration removed (qou-tm3c): the theorem assumes the per-term identity (B) explicitly and derives the conjecture's statement from it; it does not use the conjecture.
-    "lem:bond-order-eq-jet-degree",
+    // conj:bond-order-eq-jet-degree removed (qou-tm3c): input (C) is assumed explicitly (class field body_is_series); the theorem does not use the conjecture's truth.
     "prop:sw-period-residue-sum",
     "prop:binding-genfun-qdifference",
   ],

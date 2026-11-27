@@ -15,4 +15,3 @@ Under the adjoint map to $\mathrm{SO}(3)$, the generators of $\mathrm{Dic}_3$ ha
   \end{pmatrix}.
 \end{equation}
 ```
-The operator $R_\alpha$ is a $2\pi/3$ rotation about the $e_3$-axis representing a 3-cycle, and $R_\beta$ is a $\pi$ rotation about $e_1$ representing a 2-cycle.

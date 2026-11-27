@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-21T04:22:16.301344+00:00",
-  "commitSha": "003fc26aeb6c8445bfc805b289931fca516cb6f1",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T16:16:37.496832+00:00",
+  "commitSha": "001fdd153ad88f8cb4adf519dd029ccceef4c035",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 164,
+  "durationMs": 5,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "9a06024826b6",
-  "scriptCommitSha": "056a00fc678a0c1d03d33d77c14f59479044eb86",
+  "scriptHash": "d863ff9da980",
+  "scriptCommitSha": "001fdd153ad88f8cb4adf519dd029ccceef4c035",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,15 +26,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.18",
-    "numpy": "2.5.3",
-    "scipy": "1.18.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "8094096a28948d48"
+    "pyhecke_native_build": "a9f23cb94545f585"
   },
   "invocation": {
     "argv": [
@@ -64,7 +63,17 @@
         "source_witness": "m-p-substrate-identity-50dps.witness.json",
         "sigma_source": "codata_constants.M_P_MEV_VALIDATION",
         "compute_truncation_ppb": "1.066e-54",
-        "compute_output_dps": 60
+        "compute_output_dps": 60,
+        "one_term": {
+          "pred_MeV": "938.272089427",
+          "err_ppb": "0.002852",
+          "miss_factor": "N/A (anchor round-trip)",
+          "beats_1x_experimental": null,
+          "beats_100x_experimental": null
+        },
+        "scored_form": "two_term_covariant_all_pairs_qtrace",
+        "two_term_entry": "mass_decomposition",
+        "two_term_note": "Anchor round-trip, NOT scored. Two-term proton identity m_p = m_p^QCD + M_p^QED with the covariant all-pairs M_p^QED = 0 (Lean deltaT_allPairs_connected_eq_zero); value equals one_term."
       },
       {
         "obs": "m_mu",
@@ -124,7 +133,12 @@
           "two_term_plain_me",
           "two_term_derived_qtrace_me (adjacent, PR #8591 first pass)"
         ],
-        "two_term_scope": "OWNER-RULED PRIMARY 2026-11-20 (two-term). WEIGHTING DERIVED: Tr(K^{⊗3}·)/[2]_q³ (NucleonWeightSpaceQTrace). INSERTION RULED 2026-11-20 16:44: covariant all-pairs Q12+Q23+Q13, whose connected part is 0 on V³ (deltaT_allPairs_connected_eq_zero), so the scored two-term value EQUALS the one-term value. Options 1 (adjacent), 3 and 4 are unscored labelled rows. Historical record follows: Selection-scoped: non-covariant adjacent insertion (whole proton signal = dropped pair 1-3), scale m_e chosen among m_e/E0/alpha_bind/alpha_em*E0; covariant all-pairs projection gives b = 0. One-term value under `one_term`."
+        "two_term_scope": "OWNER-RULED PRIMARY 2026-11-20 (two-term). WEIGHTING DERIVED: Tr(K^{⊗3}·)/[2]_q³ (NucleonWeightSpaceQTrace). INSERTION RULED 2026-11-20 16:44: covariant all-pairs Q12+Q23+Q13, whose connected part is 0 on V³ (deltaT_allPairs_connected_eq_zero), so the scored two-term value EQUALS the one-term value. Options 1 (adjacent), 3 and 4 are unscored labelled rows. Historical record follows: Selection-scoped: non-covariant adjacent insertion (whole proton signal = dropped pair 1-3), scale m_e chosen among m_e/E0/alpha_bind/alpha_em*E0; covariant all-pairs projection gives b = 0. One-term value under `one_term`.",
+        "two_term_entry": "q0_pin_only",
+        "two_term_own_term": {
+          "status": "not_defined",
+          "reason": "The muon carrier m_mu/m_e = Vol(4_1)/hbar_q^2 has no QED term in the corpus; the two-term object enters only through q0. A derived muon correction is open (bean qou-6gf9)."
+        }
       },
       {
         "obs": "Q_beta",
@@ -141,7 +155,7 @@
         "note": null,
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "Q_N2 from qbeta-ck-cache.witness.json (deepest DERIVED-tier rung). c_2 = -1 PROVED via qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + Kashiwara N2_factor. Higher c_k are tier='cal-anchored' (extracted from CODATA Q_β, circular, q₀-dependent) — cached for downstream reuse but NOT credited as a prediction. See deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md and qbeta-scaling-bridge-investigation.witness.json. 🟧 CONDITIONAL ON CONJECTURES, NOT A DERIVED PREDICTION (owner 2026-11-20, qou-99qc option B; and: rulings are temporary conjectures). Q_beta = |eps_n - eps_p|*E0 on the gamma-gamma base V^3 (same word for both nucleons, PR #8564), with eps the T^3 components of Tr(K^x3 .)/[2]^3 = the z_D Markov trace (PR #8586): eps_flavour(V^3) = -0.0769805346013, E0 = 4.2274833556 MeV (tower-summed, posited). The value holds IF conjectures C1 (decay functional = weight-trace difference), C2 (both elements V^3) and C3 (Q_beta = |eps|*E0) hold; QOU.QBeta.DecayConjectures.qbeta_eq_of_conjectures derives it from them (PR #8617). None of C1-C3 is proved. Calibrated: closed form vs explicit weight-space traces, gap 1.13195988485333904593863991136097397258531639976739227369783e-72. Zero c_k rungs (qou-cds1). Same value as the ruled-base cell (0.3254339287 MeV): the change is the label, not the number. The photon is the owner-ruled 1 + phi0 s0 + phi1 s1 + phi01 s0 s1^-1, and V^3 = gamma(0,0,qh) gamma(0,0,-q^-1 h) for both nucleons (photon_product_eq_borWord). The plain trace difference is 0 for EVERY photon pair, all six weights free (DecayConjectures.photonPair_trace_n_eq_p). The value here is the Cartan K-weighted term of the two-term Lagrangian trace (CategoricalLagrangianTwoTermBridge) only; its matter term, the quark-charge insertion Q_iQ_j, is NOT included (under the ruled all-pairs insertion its connected part is 0 on V^3 and a static -1/3 tr V^3 charge term remains). 🛑 SCOPE: a BASE with no ladder, OUTSIDE the ladder cap (F_required ~ 2.40 > 1, LadderFactorBound). The value was NOT blind (np-splitting audit 2026-11-15 §18/§21 already recorded 0.3254 MeV). UNSCORED HISTORY: nuc11_interleaved (0.6519 MeV), delta_S (0.4491 MeV); retired z = 1 laddered value 0.782334410278 MeV.",
+        "source_witness": "Q_N2 from qbeta-ck-cache.witness.json (deepest DERIVED-tier rung). c_2 = -1 PROVED via qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + Kashiwara N2_factor. Higher c_k are tier='cal-anchored' (extracted from CODATA Q_β, circular, q₀-dependent) — cached for downstream reuse but NOT credited as a prediction. See deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md and qbeta-scaling-bridge-investigation.witness.json. 🟧 CONDITIONAL ON CONJECTURES, NOT A DERIVED PREDICTION (owner 2026-11-20, qou-99qc option B; and: rulings are temporary conjectures). Q_beta = |eps_n - eps_p|*E0 on the gamma-gamma base V^3 (same word for both nucleons, PR #8564), with eps the T^3 components of Tr(K^x3 .)/[2]^3 = the z_D Markov trace (PR #8586): eps_flavour(V^3) = -0.0769805346013, E0 = 4.2274833556 MeV (tower-summed, posited). The value holds IF conjectures C1 (decay functional = weight-trace difference), C2 (both elements V^3) and C3 (Q_beta = |eps|*E0) hold; QOU.QBeta.DecayConjectures.qbeta_eq_of_conjectures derives it from them (PR #8617). None of C1-C3 is proved. Calibrated: closed form vs explicit weight-space traces, gap 1.13195988485333904593863991136097397258531639976739227369783e-72. Zero c_k rungs (qou-cds1). Same value as the ruled-base cell (0.3254339287 MeV): the change is the label, not the number. The photon is the owner-ruled 1 + phi0 s0 + phi1 s1 + phi01 s0 s1^-1, and V^3 = gamma(0,0,qh) gamma(0,0,-q^-1 h) for both nucleons (photon_product_eq_borWord). The plain trace difference is 0 for EVERY photon pair, all six weights free (DecayConjectures.photonPair_trace_n_eq_p). The value here is scored on the two-term Lagrangian trace (CategoricalLagrangianTwoTermBridge): the Cartan K-weighted term gives this base, and the matter term (quark-charge insertion, owner-ruled covariant all-pairs Q12+Q23+Q13, connected part) adds exactly 0 on V^3 (deltaT_allPairs_connected_eq_zero), so the two-term score equals this value. The raw (static) all-pairs charge term, -0.0565 MeV, is a labelled unscored row (two_term_qed_diagnostics.alternatives_not_scored). 🛑 SCOPE: a BASE with no ladder, OUTSIDE the ladder cap (F_required ~ 2.40 > 1, LadderFactorBound). The value was NOT blind (np-splitting audit 2026-11-15 §18/§21 already recorded 0.3254 MeV). UNSCORED HISTORY: nuc11_interleaved (0.6519 MeV), delta_S (0.4491 MeV); retired z = 1 laddered value 0.782334410278 MeV.",
         "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json; CODATA validation value — Q_β is derived, not CAL-3)",
         "compute_truncation_ppb": "3.073e-51",
         "compute_output_dps": 60,
@@ -199,7 +213,8 @@
           "two_term_plain_me",
           "two_term_derived_qtrace_me (adjacent, PR #8591 first pass)"
         ],
-        "two_term_scope": "OWNER-RULED PRIMARY 2026-11-20 (two-term). WEIGHTING DERIVED: Tr(K^{⊗3}·)/[2]_q³ (NucleonWeightSpaceQTrace). INSERTION RULED 2026-11-20 16:44: covariant all-pairs Q12+Q23+Q13, whose connected part is 0 on V³ (deltaT_allPairs_connected_eq_zero), so the scored two-term value EQUALS the one-term value. Options 1 (adjacent), 3 and 4 are unscored labelled rows. Historical record follows: Selection-scoped: non-covariant adjacent insertion (whole proton signal = dropped pair 1-3), scale m_e chosen among m_e/E0/alpha_bind/alpha_em*E0; covariant all-pairs projection gives b = 0. One-term value under `one_term`."
+        "two_term_scope": "OWNER-RULED PRIMARY 2026-11-20 (two-term). WEIGHTING DERIVED: Tr(K^{⊗3}·)/[2]_q³ (NucleonWeightSpaceQTrace). INSERTION RULED 2026-11-20 16:44: covariant all-pairs Q12+Q23+Q13, whose connected part is 0 on V³ (deltaT_allPairs_connected_eq_zero), so the scored two-term value EQUALS the one-term value. Options 1 (adjacent), 3 and 4 are unscored labelled rows. Historical record follows: Selection-scoped: non-covariant adjacent insertion (whole proton signal = dropped pair 1-3), scale m_e chosen among m_e/E0/alpha_bind/alpha_em*E0; covariant all-pairs projection gives b = 0. One-term value under `one_term`.",
+        "two_term_entry": "mass_decomposition"
       },
       {
         "obs": "m_n",
@@ -261,13 +276,13 @@
           "pred_two_term_plain_MeV": "939.108190611",
           "err_two_term_plain_ppb": "4.866e+5",
           "primary_ruled_zD_score_untouched": true,
-          "substrate_identity_m_n_1term_MeV": "939.565893092",
-          "substrate_identity_m_n_1term_err_ppb": "501.5",
-          "substrate_identity_m_n_2term_scored_MeV": "939.565893092",
-          "substrate_identity_m_n_2term_scored_err_ppb": "501.5",
-          "substrate_identity_m_n_2term_derived_adjacent_err_ppb": "366.0",
-          "substrate_identity_m_n_2term_plain_MeV": "939.565561396",
-          "substrate_identity_m_n_2term_plain_err_ppb": "148.4",
+          "substrate_identity_m_n_1term_MeV": "939.108522307",
+          "substrate_identity_m_n_1term_err_ppb": "-4.863e+5",
+          "substrate_identity_m_n_2term_scored_MeV": "939.108522307",
+          "substrate_identity_m_n_2term_scored_err_ppb": "-4.863e+5",
+          "substrate_identity_m_n_2term_derived_adjacent_err_ppb": "-4.864e+5",
+          "substrate_identity_m_n_2term_plain_MeV": "939.108190611",
+          "substrate_identity_m_n_2term_plain_err_ppb": "-4.866e+5",
           "substrate_identity_residual_reduction_pct": "0.0"
         },
         "one_term": {
@@ -282,7 +297,8 @@
           "two_term_plain_me",
           "two_term_derived_qtrace_me (adjacent, PR #8591 first pass)"
         ],
-        "two_term_scope": "OWNER-RULED PRIMARY 2026-11-20 (two-term). WEIGHTING DERIVED: Tr(K^{⊗3}·)/[2]_q³ (NucleonWeightSpaceQTrace). INSERTION RULED 2026-11-20 16:44: covariant all-pairs Q12+Q23+Q13, whose connected part is 0 on V³ (deltaT_allPairs_connected_eq_zero), so the scored two-term value EQUALS the one-term value. Options 1 (adjacent), 3 and 4 are unscored labelled rows. Historical record follows: Selection-scoped: non-covariant adjacent insertion (whole proton signal = dropped pair 1-3), scale m_e chosen among m_e/E0/alpha_bind/alpha_em*E0; covariant all-pairs projection gives b = 0. One-term value under `one_term`."
+        "two_term_scope": "OWNER-RULED PRIMARY 2026-11-20 (two-term). WEIGHTING DERIVED: Tr(K^{⊗3}·)/[2]_q³ (NucleonWeightSpaceQTrace). INSERTION RULED 2026-11-20 16:44: covariant all-pairs Q12+Q23+Q13, whose connected part is 0 on V³ (deltaT_allPairs_connected_eq_zero), so the scored two-term value EQUALS the one-term value. Options 1 (adjacent), 3 and 4 are unscored labelled rows. Historical record follows: Selection-scoped: non-covariant adjacent insertion (whole proton signal = dropped pair 1-3), scale m_e chosen among m_e/E0/alpha_bind/alpha_em*E0; covariant all-pairs projection gives b = 0. One-term value under `one_term`.",
+        "two_term_entry": "mass_decomposition"
       },
       {
         "obs": "Delta_pn",
@@ -357,7 +373,8 @@
           "two_term_plain_me",
           "two_term_derived_qtrace_me (adjacent, PR #8591 first pass)"
         ],
-        "two_term_scope": "OWNER-RULED PRIMARY 2026-11-20 (two-term). WEIGHTING DERIVED: Tr(K^{⊗3}·)/[2]_q³ (NucleonWeightSpaceQTrace). INSERTION RULED 2026-11-20 16:44: covariant all-pairs Q12+Q23+Q13, whose connected part is 0 on V³ (deltaT_allPairs_connected_eq_zero), so the scored two-term value EQUALS the one-term value. Options 1 (adjacent), 3 and 4 are unscored labelled rows. Historical record follows: Selection-scoped: non-covariant adjacent insertion (whole proton signal = dropped pair 1-3), scale m_e chosen among m_e/E0/alpha_bind/alpha_em*E0; covariant all-pairs projection gives b = 0. One-term value under `one_term`."
+        "two_term_scope": "OWNER-RULED PRIMARY 2026-11-20 (two-term). WEIGHTING DERIVED: Tr(K^{⊗3}·)/[2]_q³ (NucleonWeightSpaceQTrace). INSERTION RULED 2026-11-20 16:44: covariant all-pairs Q12+Q23+Q13, whose connected part is 0 on V³ (deltaT_allPairs_connected_eq_zero), so the scored two-term value EQUALS the one-term value. Options 1 (adjacent), 3 and 4 are unscored labelled rows. Historical record follows: Selection-scoped: non-covariant adjacent insertion (whole proton signal = dropped pair 1-3), scale m_e chosen among m_e/E0/alpha_bind/alpha_em*E0; covariant all-pairs projection gives b = 0. One-term value under `one_term`.",
+        "two_term_entry": "mass_decomposition"
       },
       {
         "obs": "alpha_em_inv",
@@ -371,13 +388,73 @@
         "miss_factor": "238.3",
         "roundtrip_residual_ppb": null,
         "is_anchor_roundtrip": false,
-        "note": "CONDITIONAL on three unproved classes (ArchimedeanLimit, BlochSuslinUniqueness, BringZeroModeBlochClass) — a conditional prediction, not a proved derivation. The Schwinger factor is NOT FITTED and this is measured, not asserted: parametrising it as (1 - c*h^2*alpha), the c that hits CODATA exactly is 0.7312340272 and the 1-sigma window is [0.61846303, 0.84400502], so the published c = 1 lies OUTSIDE it, at 2.383 sigma -- a fitter would have taken 0.731. But it is NOT DERIVED either: the exact vertex-moment check (docs/audits/2026-07-14-alpha-em-phase3-schwinger-coefficient-exact-check.md) gives +0.1281 against the claimed -h^2 = -0.0437, wrong order and wrong sign, ratio -2.93, and recommends the tier 'structurally-motivated / empirically-anchored'. That is the honest label. Second-best scoreable row: 238x, against 970x (m_mu) and 152-177x (the Q_beta trio). NOTE the residual's SIGN depends on the CODATA edition (the 2018->2022 shift is 2.2x the residual); the reference is read from the registry so the edition is not a choice.",
+        "note": "CANONICAL FORM OPEN (qou-aemx): see `arms` for the CS tower, 8x8 Seifert CS, Form A, Form B, and conditional two-loop Bloch-B_3 Form C arms. 1-LOOP SCHWINGER FACTOR NOW DERIVED (#9360, `0 sorry`): `QOU.Archimedean.EmFermionLoopFourTopology` proves symbolically over Q(q) that summing all 4 signed chiral 2-vertex crossing topologies (eps1, eps2) in {+,-}^2 on U_q(sl_2) `EmFermionLoop` cancels the +/-h*m(sigma_2) chiral tadpoles identically (which caused the 1-topology 2026-07-14 check to give +0.1281) and yields -1 * h^2, making `(1 - h^2 alpha)` in Form B derived (`137.03599912695`, `-0.3652 ppb`, `-2.383 sigma`, 238.3x L2 100x bar), with the Bring zero-mode classes (`ArchimedeanLimit`, `BlochSuslinUniqueness`, `BringZeroModeBlochClass`) and un-averaged U(1) skein vertex normalization carried as named `§3b-cond` inputs. Conditional two-loop Bloch-B_3(C) Form C (`QOU.Archimedean.AlphaEmTwoLoopBlochSchwinger`, #9360, `§3b-cond AlphaEmTwoLoopBlochSchwingerClass`) evaluates c2_bloch_b3 = H*(zeta(3) - Li_3(q^-2))/(8*pi) to `137.035999173696...` (`-0.0241 ppb`, `-0.157 sigma`, within 1 sigma_exp; 15.7x L2 bar). CODATA 2022 reference read from `qou_substrate.codata`.",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "alpha-em-schwinger-ladder.witness.json :: data.ladder_proton.form_B_alpha_inv (cubic form with the derived Schwinger factor (1-h^2 alpha), proton pin)",
         "sigma_source": "qou_substrate.codata registry — 'inverse fine-structure constant', CODATA 2022",
         "compute_truncation_ppb": "7.297e-54",
-        "compute_output_dps": 60
+        "compute_output_dps": 60,
+        "arms": {
+          "cs_tower": {
+            "pred_MeV": "137.035935094",
+            "err_ppb": "467.6",
+            "target_100x_ppb": "0.001532",
+            "miss_factor": "3.052e+5",
+            "source_witness": "meson_em_sinh_closed_form.alpha_em_inv_derived (legacy Witten 2x2 CS resummation)"
+          },
+          "additive_A_c0": {
+            "pred_MeV": "137.035999313",
+            "err_ppb": "0.9937",
+            "target_100x_ppb": "0.001532",
+            "miss_factor": "648.4",
+            "source_witness": "alpha-em-schwinger-ladder.witness.json :: form_A_alpha_inv"
+          },
+          "additive_B_c1": {
+            "pred_MeV": "137.035999127",
+            "err_ppb": "0.3652",
+            "target_100x_ppb": "0.001532",
+            "miss_factor": "238.3",
+            "source_witness": "alpha-em-schwinger-ladder.witness.json :: form_B_alpha_inv (4-topology EmFermionLoopFourTopology -1*h^2 proved, #9360)"
+          },
+          "additive_C_bloch_b3": {
+            "pred_MeV": "137.035999174",
+            "err_ppb": "0.02411",
+            "target_100x_ppb": "0.001532",
+            "miss_factor": "15.73",
+            "source_witness": "alpha-em-schwinger-ladder.witness.json :: form_C_alpha_inv (conditional §3b-cond AlphaEmTwoLoopBlochSchwingerClass, #9360)"
+          }
+        },
+        "headline_arm": "additive_B_c1",
+        "canonical_form": "OPEN (qou-aemx); arms reported side by side",
+        "consumer_arm": "cs_tower",
+        "one_term": {
+          "pred_MeV": "137.035999127",
+          "err_ppb": "0.3652",
+          "miss_factor": "238.3",
+          "beats_1x_experimental": false,
+          "beats_100x_experimental": false
+        },
+        "scored_form": "two_term_covariant_all_pairs_qtrace",
+        "two_term_entry": "q0_pin_only",
+        "two_term_scope": "Evaluated at the covariant two-term proton pin (q_two_term_borromean_at, derived weighting, all-pairs), which coincides with the one-term pin because M_p^QED,cov = 0; so the scored value equals one_term. Adjacent-pin values are unscored labelled alternatives (non-covariant insertion, issue #8524).",
+        "two_term_q0_scored": "1.1099785827513808075916690956107688798744991218736",
+        "two_term_own_term": {
+          "status": "not_defined",
+          "reason": "alpha_em^-1 is a coupling, not a mass: the form-B tower has no M_QCD + M_QED split. The two-term object enters only through q0."
+        },
+        "two_term_alternatives_not_scored": {
+          "q0_two_term_adjacent_derived_weighting": {
+            "q0_comparison_pin": "1.10997858782912318193491643900",
+            "pred": "137.03600341072908380",
+            "err_ppb": "30.8950"
+          },
+          "q0_two_term_adjacent_plain_weighting_8554": {
+            "q0_comparison_pin": "1.10997859515088599908756520360",
+            "pred": "137.03600958764939725",
+            "err_ppb": "75.9702"
+          }
+        }
       },
       {
         "obs": "m_e",
@@ -393,18 +470,20 @@
         "beats_100x_experimental": true,
         "source_witness": "(CAL-1 anchor)",
         "sigma_source": "codata_constants.M_E_MEV",
-        "note": "calibration anchor — err defined as 0"
+        "note": "calibration anchor — err defined as 0",
+        "two_term": "not_defined",
+        "two_term_not_defined_reason": "CAL-1 anchor: m_e fixes the MeV unit and its err is defined 0. The corpus two-term object lives on the three-strand nucleon weight spaces (NucleonWeightSpaceTwoTerm); there is no electron weight-space QED term, and an electron self-energy would be absorbed into the unit."
       },
       {
         "obs": "m_K/m_pi",
         "role": "validation (meson ratio)",
-        "pred_MeV": "3.53711862102",
+        "pred_MeV": "3.53711862085",
         "codata_MeV": "3.53711843895",
         "sigma_exp_MeV": "9.32546e-5",
-        "err_ppb": "51.48",
+        "err_ppb": "51.43",
         "sigma_exp_ppb": "2.636e+4",
         "target_100x_ppb": "263.6",
-        "miss_factor": "0.1952",
+        "miss_factor": "0.1951",
         "roundtrip_residual_ppb": null,
         "is_anchor_roundtrip": false,
         "note": null,
@@ -413,7 +492,34 @@
         "source_witness": "[3]_q·[4]_q + (α_em/π)·(1+log(1+ℏ_q)) — closed form. Strong core Lean-proved (qou:QOU.BraidKnot.meson_qCG_3x4). EM factor is the FULL series: the two-term truncation (3q²−1)/(2q²) was removed 2026-08-22 as a data-selected stopping point (owner directive 2026-08-09), costing 23.45 → 51.48 ppb — still inside the 263.6 ppb target at 5.1× margin. NOT parameter-free: α_em is a CLASS-A acknowledged anchor (CS ansatz conditional on the open Witten-κ sorry) and the (3,4) pair is scan-selected — see docs/audits/2026-08-22-mK-mpi-l2-red-team.md",
         "sigma_source": "PDG 2024: m_K±/m_π± = 493.677/139.57039; σ propagated in quadrature",
         "compute_truncation_ppb": "2.827e-52",
-        "compute_output_dps": 60
+        "compute_output_dps": 60,
+        "one_term": {
+          "pred_MeV": "3.53711862085",
+          "err_ppb": "51.43",
+          "miss_factor": "0.1951",
+          "beats_1x_experimental": true,
+          "beats_100x_experimental": true
+        },
+        "scored_form": "two_term_covariant_all_pairs_qtrace",
+        "two_term_entry": "q0_pin_only",
+        "two_term_scope": "Evaluated at the covariant two-term proton pin (q_two_term_borromean_at, derived weighting, all-pairs), which coincides with the one-term pin because M_p^QED,cov = 0; so the scored value equals one_term. Adjacent-pin values are unscored labelled alternatives (non-covariant insertion, issue #8524).",
+        "two_term_q0_scored": "1.1099785827513808075916690956107688798744991218736",
+        "two_term_own_term": {
+          "status": "not_defined",
+          "reason": "Meson words live on V (x) V*, not on the three-strand nucleon weight spaces where the two-term QED operators are defined; no meson two-term QED term exists in the corpus. NOT to be confused with the retired 'two-term truncation' (3q^2-1)/(2q^2) of the EM series (de-fitted 2026-08-22) -- a different object. Enters only through q0 (and through alpha_em(q0) inside the closed form)."
+        },
+        "two_term_alternatives_not_scored": {
+          "q0_two_term_adjacent_derived_weighting": {
+            "q0_comparison_pin": "1.10997858782912318193491643900",
+            "pred": "3.5371186272467449191",
+            "err_ppb": "53.2354"
+          },
+          "q0_two_term_adjacent_plain_weighting_8554": {
+            "q0_comparison_pin": "1.10997859515088599908756520360",
+            "pred": "3.5371186364653777360",
+            "err_ppb": "55.8417"
+          }
+        }
       }
     ],
     "summary": {
@@ -425,7 +531,23 @@
       "calibration_inputs": [
         "m_p",
         "m_e"
-      ]
+      ],
+      "two_term_coverage": {
+        "mass_decomposition": [
+          "m_p",
+          "Q_beta",
+          "m_n",
+          "Delta_pn"
+        ],
+        "q0_pin_only": [
+          "m_mu",
+          "alpha_em_inv",
+          "m_K/m_pi"
+        ],
+        "not_defined": [
+          "m_e"
+        ]
+      }
     },
     "anchor_layer_qbeta": {
       "status": "matched",
@@ -560,19 +682,19 @@
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "5f4ef497a9efed547416fdfb12567ff02e35b10b1eb0c0e02a63a2c697a39f81",
-        "size_bytes": 12083,
-        "commitSha": "764f905a1cafb87fc71a00bd896a2adf4ae306fb",
-        "scriptCommitSha": "764f905a1cafb87fc71a00bd896a2adf4ae306fb",
-        "computedAt": "2026-11-20T16:01:41.475202+00:00"
+        "sha256": "b73a8b9c3865afb9208f2f88ae99978ed399f1e0b998da1354242d80019a0ede",
+        "size_bytes": 12675,
+        "commitSha": "5ff5816dee7d6c44e6fe19f391401f072171f70f",
+        "scriptCommitSha": "55ca73e75d5a1a020cd996effddd5a5f5c2762b2",
+        "computedAt": "2026-11-22T15:05:16.039918+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "0b89a5f78fa8110ea9a14bc25361a234b3ad64b92ea20296559f1afd25b968d6",
-        "size_bytes": 11520,
-        "commitSha": "f8612ad245261ab15b3b6f43f990348ff4800cde",
-        "scriptCommitSha": "945b2edf2fb8d11552720c7e2aa3a1944797dfe4",
-        "computedAt": "2026-08-29T09:30:54.473879+00:00"
+        "sha256": "815cac817eff0309894e6332f0a53fd7c55fc9c98bae71dc3b22dc71b065b7b2",
+        "size_bytes": 12331,
+        "commitSha": "1075bfa6d689c02527bc201ec6977363ff234c6d",
+        "scriptCommitSha": "1075bfa6d689c02527bc201ec6977363ff234c6d",
+        "computedAt": "2026-11-24T09:34:49.561308+00:00"
       },
       {
         "path": "q-beta-operator-valued-N3.witness.json",
@@ -592,11 +714,11 @@
       },
       {
         "path": "cal-3-q-beta.witness.json",
-        "sha256": "0b754e3a300e7a1640eef296a2f7e565fc1f5773fa328af29f5247a5e154e27d",
-        "size_bytes": 4675,
-        "commitSha": "585d753f1d883ae7b3a9b70fc3c447985ded526c",
-        "scriptCommitSha": "585d753f1d883ae7b3a9b70fc3c447985ded526c",
-        "computedAt": "2026-11-20T17:25:27.522062+00:00"
+        "sha256": "7b198a3577e88b39f0d877d0080fa3c717f3732c7d57c2be99f08f63320e9248",
+        "size_bytes": 5235,
+        "commitSha": "1075bfa6d689c02527bc201ec6977363ff234c6d",
+        "scriptCommitSha": "1075bfa6d689c02527bc201ec6977363ff234c6d",
+        "computedAt": "2026-11-24T09:34:49.944728+00:00"
       },
       {
         "path": "meson-kaon-pion-derivation.witness.json",
@@ -605,6 +727,14 @@
         "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
         "scriptCommitSha": "de0a31477159c7d0667f1ba8b5fe62ddd9223e78",
         "computedAt": "2026-08-29T10:52:02.091600+00:00"
+      },
+      {
+        "path": "alpha-em-schwinger-ladder.witness.json",
+        "sha256": "ea2dde2dea79436a409297d04f4abb40fbc0e9c94d321e5d0ec685bc54fd03bc",
+        "size_bytes": 7198,
+        "commitSha": "001fdd153ad88f8cb4adf519dd029ccceef4c035",
+        "scriptCommitSha": "001fdd153ad88f8cb4adf519dd029ccceef4c035",
+        "computedAt": "2026-11-24T16:16:04.491940+00:00"
       }
     ]
   },

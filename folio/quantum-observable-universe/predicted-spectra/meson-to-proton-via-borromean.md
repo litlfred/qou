@@ -10,7 +10,7 @@ $$
   -0.209\sigma_1 - 0.044 L_+ + 1.000 L_- + 0.209 e^-
 $$
 
-This yields $\mathrm{net}(\mathfrak{M}_+) \approx +0.956$ and demand profile $\{\sigma_1 = -0.209, L_+ = -0.044\}$. Two negative normal form coefficients demand crossing content ($\sigma_1$) and Hopf link content ($L_+$) from the environment.
+This yields $\mathrm{net}(\mathfrak{M}_+) \approx +0.956$ and demand profile $\{\sigma_1 = -0.209, L_+ = -0.044\}$. Two negative normal form coefficients demand crossing content ($\sigma_1$) and $L_+$ content from the environment.
 
 This demand renders the meson a transient intermediate rather than a stable endpoint. Observations align with this property. The charged pion decays in $\sim 26$ ns. Borromean topology $\mathcal{B}_3$ confinement provides genuine 3-body binding. This produces the only stable hadronic states, the proton and neutron.
 

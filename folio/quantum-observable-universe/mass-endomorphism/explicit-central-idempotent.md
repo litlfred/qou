@@ -1,4 +1,4 @@
-**Proposition.** The idempotency below is proved unconditionally, for every $n$, at generic $q$ ([The Murphy–Lagrange elements $e_\lambda$ are the central primitive idempotents of $H_n(q)$](#thm:explicit-central-idempotent-cross-checks)).
+The idempotency below is proved unconditionally, for every $n$, at generic $q$ ([The Murphy–Lagrange elements $e_\lambda$ are the central primitive idempotents of $H_n(q)$](#thm:explicit-central-idempotent-cross-checks)).
 
 *Let $H_n(q)$ be the Iwahori–Hecke algebra over a field $K$ at generic $q$ ($q \neq 0$, not a root of unity). The Jucys–Murphy elements $\{J_1, \ldots, J_n\} \subset H_n(q)$ commute pairwise and act diagonally on the Hoefsmit seminormal basis. For any standard Young tableau $T$ of shape $\lambda \vdash n$, one has $J_k \cdot v_T = c_T(k; q) \cdot v_T$, where*
 
@@ -37,24 +37,6 @@ $$
 | $3$ | $(3)$ | chiral pair w/ $(1,1,1)$ | $q$-deformed symmetriser |
 | $3$ | $(2,1)$ | self-conjugate | standard 2D representation idempotent |
 | $4$ | $(2,2)$ | self-conjugate | bar-fixed; witnesses $\mathrm{Vol}(4_1)$ via depth-2 pairing with $\mathrm{Li}_2^q(\zeta_6)$ |
-
-## Significance
-
-The element $e_\lambda$ serves as the explicit, computable generator of the period class assigned to cell $\lambda$. Under [GS-depth $\leftrightarrow$ Goncharov period-depth correspondence](#conj:gb-depth-period-correspondence) and [Iwahori--Hecke algebra $H_n(q)$ is a Baer-*-ring at generic $q$](#prop:hecke-baer-star-generic), the class
-
-$$
-  \tau_{\mathrm{arch}}\bigl( e_\lambda \cdot \mathrm{Li}_2^q(z) \bigr)
-  \;\in\;
-  \mathcal{P}_2 / \mathcal{P}_1
-$$
-
-forms a Bloch-regulator period computable to arbitrary precision. For the figure-$8$ knot ($\lambda = (2,2)$, $z = \zeta_6$):
-
-$$
-  \tau_{\mathrm{arch}}\bigl( e_{(2,2)} \cdot \mathrm{Li}_2^q(\zeta_6) \bigr)
-  \;=\; 2\,\mathrm{Cl}_2(\pi/3)
-  \;=\; \mathrm{Vol}(S^3 \setminus 4_1).
-$$
 
 ## Provenance
 

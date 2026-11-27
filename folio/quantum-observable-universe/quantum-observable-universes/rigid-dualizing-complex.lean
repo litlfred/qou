@@ -57,7 +57,8 @@ structure RigidDualizingComplex (A : Type u) [Ring A] where
       field naming the property without stating it. -/
   vdb_duality : ∀ x, vdbDual (vdbDual x) = x
 
--- Ref: [yekutieli2015] Yekutieli, "Nonabelian Multiplicative Integration on Surfaces," World Scientific 2015 (DOI: 10.1142/9537)
+-- Ref: [yekutieli-zhang1999-auslander-dualizing] https://arxiv.org/abs/math/9804005
+--      (Def. 3.1: rigid dualizing complex, after Van den Bergh; Cor. 3.4: uniqueness)
 /-- **The structure is inhabited — and this is NOT Yekutieli's existence
     theorem.**  Renamed and re-stated 2026-09-07; read the scope before
     citing it.
@@ -81,9 +82,11 @@ structure RigidDualizingComplex (A : Type u) [Ring A] where
 
     What it establishes: the axioms are consistent.  What it does not: that
     any *interesting* rigid dualizing complex exists, which needs the
-    derived-category infrastructure Mathlib lacks.  See [yekutieli2015]
-    Theorem 4.2 for the real construction and its real hypotheses. -/
--- Ref: [yekutieli2015] https://doi.org/10.1515/9783110291230  Theorem 4.2
+    derived-category infrastructure Mathlib lacks.  See
+    [yekutieli-zhang1999-auslander-dualizing] Theorem 6.2 (stated as Thm 0.7)
+    for a real existence theorem and its real hypotheses: `A` filtered with
+    `gr A` noetherian and carrying a graded Auslander balanced dualizing complex. -/
+-- Ref: [yekutieli-zhang1999-auslander-dualizing] https://arxiv.org/abs/math/9804005  Theorem 6.2
 theorem rigidDualizingComplex_inhabited_trivially (A : Type u) [Ring A] :
     Nonempty (RigidDualizingComplex.{u, u} A) :=
   ⟨{ carrier := A

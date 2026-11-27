@@ -55,6 +55,18 @@
     "library/arxiv-1603.06017v2/sections/sec-040"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Automatic Theorem Proving in Walnut — 42 sections: Front matter; Introduction; Basics\n\n**Automatic Theorem Proving in Walnut**\n\n*Hamoon Mousavi*\n\n34 pp, 42 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Basics; 2.1 Words and Automata; 2.2 Number Systems; 2.3 Automatic Words; 2.4 Automata accepting Predicates; 3 Syntax and Semantic of Predicates in Walnut; 3.1 Alphabets; 3.2 Arithmetic and Alphabetic Constants; 3.3 Variables; 3.4 Operators; 3.5 Arithmetic Expressions; 3.6 Indexing Expressions and Their Semantic Ru; 3.7 Calling Expressions and Their Semantic Rul; 3.8 Relative Expressions; 3.9 Predicates; 4 Decision Procedure: Walnut's Implementation",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

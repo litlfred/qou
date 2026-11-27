@@ -1,4 +1,4 @@
-import QOU.AlgebraicSubstrate.WeilZeta
+import QOU.BringsSurface.WeilZeta
 import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Pow.NNReal

@@ -6,7 +6,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:palindromicity-orbital-type",
   title: "Palindromicity and orbital type",
-  lean: { ref: "qou:QOU.Molecular.PalindromicityOrbitalType",
+  lean: { ref: "qou:QOU.Observations.PalindromicityOrbitalType",
     validation: "not_checked",
   },
   uses: ["conj:shell-closure-nf-term-count"],

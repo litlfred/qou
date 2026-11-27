@@ -1,6 +1,3 @@
-> *Je pense, donc je suis.*
-> — René Descartes, *Discours de la méthode* (1637)
-
 The starting point is a collection of observations about how an
 observer interacts with the world. Colours are seen, and three of them
 mix to produce white. An observer moves around, rotates, and looks
@@ -89,6 +86,46 @@ a **quantum observable universe** (QOU)
 ([definition](#def:quantum-observable-universe)). The force of the
 thesis is that the observations *determine* the ingredients; nothing
 else is added by hand.
+
+This starting point is relational in the sense Gottfried Wilhelm
+Leibniz set out in his 1715--1716 correspondence with Samuel Clarke
+\cite{leibniz-clarke1717,earman1989}: sequential composition ($\circ$)
+records the chronological order of successions, the monoidal product
+and braiding ($\otimes, \sigma$) record the order of coexistences, and
+the Principle of the Identity of Indiscernibles equates processes that
+agree on every closed trace pairing. On the $n$-strand Iwahori--Hecke
+braid algebra $H_n(q)$ equipped with the Jones--Markov trace $\tau_q$
+at parameter $z = q^3/(q^2 + 1)$, the trace radical
+$\mathrm{rad}\,\tau_q = \{a \in H_n(q) : \tau_q(a b) = 0 \text{ for all } b\}$
+vanishes for $n \le 2$ and is nonzero for every $n \ge 3$, where
+three-strand antisymmetrisation annihilates all trace pairings and
+blocks any finite spectral distance on $H_n(q)$
+([Gram degeneracy](#prop:gram-degeneracy-blocks-connes)). Quotienting
+by that null ideal in the algebraic sense of Israel M. Gelfand, Mark A.
+Naimark, and Irving E. Segal \cite{gelfand-naimark1943,segal1947} yields,
+for nonzero $q \in \mathbb{C}$ with $q^k \neq 1$ ($k \ge 1$), the
+planar Temperley--Lieb algebra
+$H_n(q)/\mathrm{rad}\,\tau_q \cong TL_n(q + q^{-1})$
+([Temperley--Lieb trace-radical quotient](#ex:rieffel-quotient-temperley-lieb)),
+on whose faithful state space Marc A. Rieffel's compact quantum metric
+seminorms \cite{rieffel1999} induce a finite Kantorovich--Rubinstein
+transport metric
+([Rieffel quotient faithfulness](#rem:rieffel-metric-quotient-faithfulness)).
+Unlike the classical relational mechanics of Julian B. Barbour and
+Bruno Bertotti \cite{barbour-bertotti1982}, which quotients a
+pre-existing Euclidean configuration space $\mathbb{R}^{3N}$ by rigid
+motions, and unlike Carlo Rovelli's relational quantum mechanics
+\cite{rovelli1996}, which indexes Hilbert-space state vectors to pairs
+of observers while leaving the spacetime metric external, a quantum
+observable universe posits no spatial manifold at the outset and
+enforces inter-observer consistency through the shared fibre functor
+$\tau$. Downstream, this relational chain yields strictly pseudoconvex
+contact Cauchy--Riemann three-manifolds whose canonical circle bundle
+carries Charles L. Fefferman's kinematic $(3, 1)$ Lorentzian metric,
+while dynamical Einstein field equations on that four-manifold remain
+conjectural
+([Lorentzian circle-bundle lift](#prose:cr-structure-lorentzian-lift),
+[Gravity and Spacetime Emergence](#chap:gravity-spacetime-emergence)).
 
 The categorical language then recovers, as internal pieces of the
 structure, the concepts that describe a universe's mechanics. The

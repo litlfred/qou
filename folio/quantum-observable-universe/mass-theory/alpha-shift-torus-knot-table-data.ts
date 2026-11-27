@@ -7,8 +7,7 @@ export default table({
   caption:
     "Pole-order maximiser $\\lambda$, computed $\\alpha_{\\mathrm{shift}}" +
     "(T_{p,k})$, and the closed-form $k(p-1)$ for six test pairs. All " +
-    "values match the closed-form formula; all 14 assertions in " +
-    "`alpha-shift-torus.witness.json` pass.",
+    "values match the closed-form formula.",
   uses: ["prop:alpha-shift-torus-knot"],
   tags: [
     "torus-knot",

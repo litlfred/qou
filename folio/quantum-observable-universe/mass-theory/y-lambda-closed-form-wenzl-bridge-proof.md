@@ -1,5 +1,3 @@
-## Proof
-
 By [Wenzl 1988] (cited in [Orellana, math/9806163, Theorem on
 p.17]), the unique Markov trace on the type-A Iwahori-Hecke
 algebra in $g$-convention with parameter $z_{\mathrm{GL}} = Q^r
@@ -25,9 +23,9 @@ $$
 normalised so $\mathrm{tr}_M(1) = \sum_\lambda y_\lambda d_\lambda = 1$.
 $\square$
 
-## Specialisation at the production convention
+## Specialisation at $z = q^3/(q^2+1)$
 
-Under convention D, $z = q^3/(q^2+1)$, so $z_{\mathrm{GL}} = qz = Q^2/(1+Q)$
+At the Markov parameter $z = q^3/(q^2+1)$, so $z_{\mathrm{GL}} = qz = Q^2/(1+Q)$
 with $Q = q^2$, and the defining equation
 $z_{\mathrm{GL}} = Q^r(1-Q)/(1-Q^r)$ has the **exact** solution $r = 2$.
 The specialisation is then $s_\lambda(1, Q)$ — a Schur polynomial in *two*
@@ -53,4 +51,4 @@ The two legs are the principal-specialisation route above and the $q$-integer
 closed form; they agree **identically**, not to a numerical tolerance, and
 $\sum_\lambda y_\lambda d_\lambda = 1$ holds exactly at each $n$.
 
-No independent numerical cross-check of the bridge under convention D is recorded here.
+No independent numerical cross-check of the bridge at $z = q^3/(q^2+1)$ is recorded here.

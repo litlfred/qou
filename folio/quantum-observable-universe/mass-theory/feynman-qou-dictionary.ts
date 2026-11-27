@@ -19,7 +19,7 @@ export default remark({
   ],
   interprets: "prop:feynman-categorical-trace",
   label: "rem:feynman-qou-dictionary",
-  lean: { ref: "qou:QOU.FeynmanPathIntegrals.FeynmanQOUDictionary",
+  lean: { ref: "qou:QOU.StandardModel.FeynmanPathIntegrals.FeynmanQOUDictionary",
     validation: "not_checked",
   },
   title: "Dictionary: Feynman path integral $\\leftrightarrow$ QOU categorical trace",

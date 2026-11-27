@@ -1,4 +1,4 @@
-## Proof sketch
+**Sketch.**
 
 The $T_{3,5}$ weak vertex acts as a **mediator** between the parent tau $T_{2,7}$ and the daughter lepton $T_{2,n_\ell}$. In the Iwahori--Hecke algebra $H_3(q)$, one may form the product $T_{2,n_\ell} \cdot T_{3,5} \cdot T_{2,7}$ and reduce to normal form. However, the correct physical amplitude is **not** this product trace.
 

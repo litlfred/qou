@@ -4,7 +4,6 @@ The appendix carries a conjecture class packaging "limits become surreal equalit
 
 The content needs none of that structure.
 
-**Theorem.**
 *Let $a_n \to L$ in the $\varepsilon$–$N$ sense. Then, in the hyperreals $\mathbb{R}^*$,*
 
 $$

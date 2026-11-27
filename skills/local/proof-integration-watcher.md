@@ -52,10 +52,10 @@ changed=$(git diff-tree --no-commit-id --name-only -r "$SHA")
 is_proof_event=false
 echo "$changed" | grep -qE '(^|/)proof.*\.md$|(-proof|_proof)\.md$' && is_proof_event=true
 echo "$changed" | grep -qE '\.lean$'                              && is_proof_event=true
-echo "$changed" | grep -qE 'content/.*\.md$' && {
+echo "$changed" | grep -qE 'folio/.*\.md$' && {
   # An .md without "proof" in its name still counts if its sibling
   # .ts is a proof-kind block.
-  for md in $(echo "$changed" | grep -E 'content/.*\.md$'); do
+  for md in $(echo "$changed" | grep -E 'folio/.*\.md$'); do
     ts="${md%.md}.ts"
     [ -f "$ts" ] && grep -qE '^export default (theorem|lemma|proposition|corollary|conjecture|definition)\(' "$ts" && is_proof_event=true
   done
@@ -73,6 +73,7 @@ content block label.
 | `proof-gap-audit` | Always (intra + inter gaps) |
 | `proof-narrative-lean-equivalence` | **Whenever `.lean` is touched OR exists for the block** — covers the four drift classes A/B/C/D + the **missing-narrative** check (`.lean` exists, `.md` absent or stub-only) |
 | `lean-proof-review` | If `.lean` changed |
+| `lean-build-hygiene` | If `.lean` changed — enforces `scripts/lean-best-practices-lint.py --diff` (`BP001`–`BP009`, zero `QOU.*` leaks in community `lean_lib` cones) |
 | `lean-completeness-audit` | If `.ts` `kind` requires Lean and `.lean` is missing |
 | `remark-audit` | If kind is `remark` |
 | `proof-triage` | Always — produces fresh sorry inventory for the queue |
@@ -108,7 +109,7 @@ batch.
 | `proof-rater-novelty` | agent **(score)** | `proposition-consolidation-audit` | Score 0–1; if redundant (~0), consolidate with the sibling, re-rate |
 
 > **Rater rubric (scored, not gating).** The `proof-rater-*` criteria
-> (AlphaProof-Nexus adoption — [`docs/audits/2026-06-07-google-paper-qa-rubrics-and-tooling.md`](../../../docs/audits/2026-06-07-google-paper-qa-rubrics-and-tooling.md))
+> (AlphaProof-Nexus adoption — [`docs/audits/2026-06-07-google-paper-qa-rubrics-and-tooling.md`](../../docs/audits/2026-06-07-google-paper-qa-rubrics-and-tooling.md))
 > write a **0–1 `score`** to the block's `.qa.json` (`QaCriterionEntry.score`),
 > NOT a merge gate. The watcher is the **rate** half (dispatch a rater agent
 > per fresh proof block → write `score`); `/integration-backlog proof` is the
@@ -266,7 +267,7 @@ For `drift-class-A` (stub weakening):
 ```bash
 # 1. Proof-relevant content blocks
 grep -rlE '^export default (theorem|lemma|proposition|corollary|conjecture|definition)\(' \
-  content/ --include='*.ts' 2>/dev/null \
+  folio/ --include='*.ts' 2>/dev/null \
   | sort -u > /tmp/_pw_proof_blocks.txt
 
 # 2. Uncited sorries — smart detection. Inline pseudocode:
@@ -331,12 +332,9 @@ grep -rlE '^export default (theorem|lemma|proposition|corollary|conjecture|defin
 #    module like `QGeometricLanglands.lean`); sibling-`.lean` absence
 #    is NOT sufficient (the ref may resolve via the grep fallback).
 #
-#    Note: there is no automated `lean-ref-resolves` rule in
-#    `content/pipeline/validate.ts` today (it only enforces schema
-#    shape + constraint rules). The watcher implements this
-#    resolution test in-session as documented below; if the
-#    pipeline later adopts the same test as a constraint rule,
-#    update this comment to point at it.
+#    Note: `folio/pipeline/block-manifest-audit.ts` validates manifest
+#    shape + constraint rules; the watcher implements namespace-walk
+#    `lean.ref` resolution in-session as documented below.
 #
 #    Resolution test (in-session, namespace-walk verification):
 #
@@ -351,7 +349,7 @@ grep -rlE '^export default (theorem|lemma|proposition|corollary|conjecture|defin
 #        if ref is missing → naked
 #        decl_name = ref.split('.')[-1]
 #        candidates = grep -rEln --include='*.lean' "<DECL_RE><decl_name>\b"
-#                     content/<paper>/  (NOT just content/<paper>/lean/ —
+#                     folio/<paper>/  (NOT just folio/<paper>/lean/ —
 #                     sibling .lean files at chapter level also contain
 #                     declarations and were silently missed by the
 #                     lean/-only path; observed: ~16 wired blocks
@@ -384,7 +382,7 @@ grep -rlE '^export default (theorem|lemma|proposition|corollary|conjecture|defin
 #    `\begin{equation}` instead of `$...$` (count as has_math).
 > /tmp/_pw_missing_narrative.txt
 > /tmp/_pw_narrative_stub.txt
-find content -name '*.lean' -type f 2>/dev/null \
+find folio -name '*.lean' -type f 2>/dev/null \
   | grep -v '/lean/' \
   | while IFS= read -r lean; do
       md="${lean%.lean}.md"
@@ -426,7 +424,7 @@ Override the parent's default rule with this proof-specific ordering:
 | Every `sorry` has `-- Ref:` | `grep -B6 '^[^-]*sorry' <file>.lean \| grep -qE -- '-- Ref:'` OR enclosing decl header carries it |
 | No new `axiom` declarations | `git diff origin/main -- <file>.lean \| grep -E '^\+axiom '` is empty |
 | Naked conjectures attempted | Every `conjecture` block touched in this branch has a `formalizer` attempt log in the queue (status `resolved` or `needs-author`) |
-| No conjectural propagation regressions | `cd content && bun run pipeline/conjectural-propagation-audit.ts` reports no new violations vs main |
+| Best-practices & vacuity gates pass | `nice -n 15 python3 scripts/lean-best-practices-lint.py --diff` (`BP001`–`BP009` zero errors) and `nice -n 15 bun run folio/pipeline/lean-vacuity-axiom-audit.ts` report no regressions vs `main` |
 
 If any invariant fails on a proposed commit, **block the commit**,
 queue the violation as `critical`, and ask the author (per

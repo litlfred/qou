@@ -6,7 +6,7 @@ This derives the Breit--Wheeler categorical pair production with the [photon](#d
 
 The bare photon is $\gamma(0) = \mathbf{1}$, so two bare photons give $\gamma(0)\gamma(0) = \mathbf{1}$. A bare pair carries no crossing.
 
-An earlier version of this derivation took a bare photon to be the single crossing $\sigma_0$, and so took the bare pair to be $\sigma_0^2 = (q - q^{-1})\sigma_0 + \mathbf{1}$, with net valuation $1 + (q - q^{-1}) \approx 1.209$ and pair energy $\approx 1.006$ MeV. Under [the photon definition](#def:photon) $\sigma_0$ is one term of a photon, not a photon, so that computation is about the $\sigma_0$ term squared, not about a photon pair.
+By contrast, the single crossing $\sigma_0$ gives $\sigma_0^2 = (q - q^{-1})\sigma_0 + \mathbf{1}$, with net valuation $1 + (q - q^{-1}) \approx 1.209$ and energy $\approx 1.006$ MeV; under [the photon definition](#def:photon), $\sigma_0$ is a single colour-plane generator rather than the bare photon $\gamma(0) = \mathbf{1}$, so $\sigma_0^2$ evaluates the squared crossing term rather than a bare photon pair.
 
 #### Colored photon
 
@@ -48,7 +48,7 @@ $$
   \sigma_1\sigma_0.
 $$
 
-The Hecke self-energy terms $\varphi_0\psi_0$ and $\varphi_1\psi_1$ contribute to the $\mathbf{1}$ coefficient. The Hopf link terms $L_\pm$ arise strictly from cross-color products $\varphi_0\psi_1$ and $\varphi_1\psi_0$.
+The Hecke self-energy terms $\varphi_0\psi_0$ and $\varphi_1\psi_1$ contribute to the $\mathbf{1}$ coefficient. The terms $L_\pm$ arise strictly from cross-color products $\varphi_0\psi_1$ and $\varphi_1\psi_0$.
 
 The net evaluation is the sum of all coefficients:
 
@@ -70,7 +70,7 @@ Take equal color in both generators, $\varphi_0 = \varphi_1 = \psi_0 = \psi_1 = 
 - $L_+$: $\phi^2$
 - $L_-$: $\phi^2$
 
-The equal Hopf link content ($L_+ = L_- = \phi^2$) implies zero chirality. The net valuation is $(1 + 2\phi)^2 + 2\phi^2 h$. Fitting this to $E_{\mathrm{pair}} = 2m_e$ gives $\phi = 0.0487$. This value is a fit to the measured electron mass, not a derivation.
+The equal $L_\pm$ content ($L_+ = L_- = \phi^2$) implies zero chirality. The net valuation is $(1 + 2\phi)^2 + 2\phi^2 h$. Fitting this to $E_{\mathrm{pair}} = 2m_e$ gives $\phi = 0.0487$. This value is a fit to the measured electron mass, not a derivation.
 
 **Circular (orthogonal) polarization:**
 Take orthogonal polarization, $\varphi_0 = s$, $\varphi_1 = 0$, $\psi_0 = 0$, $\psi_1 = s$.
@@ -80,16 +80,16 @@ Take orthogonal polarization, $\varphi_0 = s$, $\varphi_1 = 0$, $\psi_0 = 0$, $\
 - $L_+$: $s^2$
 - $L_-$: $0$
 
-Only $L_+$ appears ($L_- = 0$). This produces maximally chiral Hopf content. The Hecke self-energy vanishes ($\varphi_0\psi_0 = \varphi_1\psi_1 = 0$). The net valuation is $(1 + s)^2$. Fitting this to $E_{\mathrm{pair}} = 2m_e$ gives $s = 0.0978$. This value is a fit, not a derivation.
+Only $L_+$ appears ($L_- = 0$). This produces maximally chiral $L_\pm$ content. The Hecke self-energy vanishes ($\varphi_0\psi_0 = \varphi_1\psi_1 = 0$). The net valuation is $(1 + s)^2$. Fitting this to $E_{\mathrm{pair}} = 2m_e$ gives $s = 0.0978$. This value is a fit, not a derivation.
 
-Both fits close the $1.6\%$ energy gap by construction, so closing it is not evidence for either model. The color weight generates Hopf link content $L_\pm$ that supplies the missing pair production energy. The asymmetry $L_+ \neq L_-$ in the circular model acts as the categorical expression of photon helicity.
+Both fits close the $1.6\%$ energy gap by construction, so closing it is not evidence for either model. The color weight generates $L_\pm$ content that supplies the missing pair production energy. The asymmetry $L_+ \neq L_-$ in the circular model acts as the categorical expression of photon helicity.
 
 #### Four-term extension
 
-Activating $\varphi_{01} \neq 0$ recovers the full photon. The product of two photons spans all six normal-form words. Its $e^-$ (trefoil) coefficient is
+Activating $\varphi_{01} \neq 0$ recovers the full photon. The product of two photons spans all six normal-form words. Its $e^-$ (electron-word) coefficient is
 
 $$
   \varphi_{01}\psi_0 + \varphi_1\psi_{01},
 $$
 
-so the trefoil channel needs the vertex term of one photon and a single-crossing term of the other. For the eigenvalue-pair weights $\gamma(0, 0, qh)\,\gamma(0, 0, -q^{-1}h) = (\sigma_0\sigma_1^{-1})^3$ ([Borromean two-photon factorisation](#prop:borromean-two-photon-factorisation)) that coefficient is zero. The 6-term normal form is in [the $\gamma\gamma$ generation proposition](#prop:gamma-gamma-generates-particles). The coefficients are recomputed exactly over $\mathbb{Q}(q)$.
+so the $e^-$ channel needs the vertex term of one photon and a single-crossing term of the other. For the eigenvalue-pair weights $\gamma(0, 0, qh)\,\gamma(0, 0, -q^{-1}h) = (\sigma_0\sigma_1^{-1})^3$ ([Borromean two-photon factorisation](#prop:borromean-two-photon-factorisation)) that coefficient is zero. The 6-term normal form is in [the $\gamma\gamma$ generation proposition](#prop:gamma-gamma-generates-particles). The coefficients are recomputed exactly over $\mathbb{Q}(q)$.

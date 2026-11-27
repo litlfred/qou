@@ -52,4 +52,4 @@ dim 1 = $\mathrm{Cl}_2(2\pi/3)$ (Gieseking).
 ### Cross-references
 
 - Theorem A: [General Jonquière Tate-rationality](#prop:jonquiere-cyclotomic-tate-rationality)
-- Theorem G: [Cyclotomic dimension synthesis at every depth: $(K - 3)/2$ for $n$ odd, $(K - 1)/2$ for $n$ even](#prop:cyclotomic-dimension-synthesis-all-depths)
+- Theorem G: [Cyclotomic dimension synthesis at every depth: $(K - 3)/2$ for $n$ odd, $(K - 1)/2$ for $n$ even](#conj:cyclotomic-dimension-synthesis-all-depths)

@@ -72,7 +72,7 @@ Q0_STALE_MUON_PIN = "1.10997859555418057528159407960950937799328227995870"
 #   τ(1)        = 1
 #   τ(σ_i)      = z
 #   τ(σ_i σ_j)  = z²            (i ≠ j; i.e. L₊ = σ₀σ₁, L₋ = σ₁σ₀)
-#   τ(σ₀σ₁σ₀)   = h·z² + z      (Ocneanu-Wenzl, trefoil row)
+#   τ(σ₀σ₁σ₀)   = h·z² + z      (Ocneanu-Wenzl, e⁻ row; closure Hopf link)
 # Gram diagonal G_{ii} = τ(b_i · b_i⁻¹), where b_i⁻¹ uses
 #   σ_i⁻¹ = σ_i − h·𝟏 (skein).
 

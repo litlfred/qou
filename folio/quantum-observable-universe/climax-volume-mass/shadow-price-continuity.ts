@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:shadow-price-continuity",
   title: "Continuity of shadow prices on the generic locus",
-  lean: { ref: "qou:QOU.BraidKnot.ShadowPriceContinuity",
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.ShadowPriceContinuity",
     validation: "not_checked",
   },
   uses: ["def:local-shadow-ordering"],

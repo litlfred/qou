@@ -1,12 +1,12 @@
-*Let $T_w \in H_n(q)$ be a standard basis element, with the Markov trace in convention D, $z = q^{3}/(q^{2}+1)$, and $h = q - q^{-1}$. Then:*
+*Let $T_w \in H_n(q)$ be a standard basis element, with the Markov trace at $z = q^{3}/(q^{2}+1)$ and $h = q - q^{-1}$. Then:*
 
-1. *$\mathrm{tr}_M(T_w)$ is a polynomial in $z$ of degree at most $n-1$ with coefficients in $\mathbb{Z}[h]$. Hence the cleared numerator*
+1. *By the Hecke-algebra Markov-trace structure of V. F. R. Jones \cite{jones1987}, $\mathrm{tr}_M(T_w)$ is a polynomial in $z$ of degree at most $n-1$ with coefficients in $\mathbb{Z}[h]$. Hence the cleared numerator*
 
 $$
   N(T_w) \;:=\; (q^{2}+1)^{\,n-1}\,\mathrm{tr}_M(T_w) \;\in\; \mathbb{Z}[q^{\pm 1}].
 $$
 
-2. *$N(T_w)$ lies in the Habiro ring $\widehat{\mathbb{Z}[q]} := \varprojlim_m \mathbb{Z}[q]/((q;q)_m)$, in which $q$ is a unit, and expands cyclotomically as*
+2. *$N(T_w)$ lies in the Habiro ring $\widehat{\mathbb{Z}[q]} := \varprojlim_m \mathbb{Z}[q]/((q;q)_m)$ of Kazuo Habiro \cite{habiro2004cyclotomic} (applied to unified Witten–Reshetikhin–Turaev invariants in \cite{habiro2008}), in which $q$ is a unit, and expands cyclotomically as*
 
 $$
   N(T_w)

@@ -6,7 +6,7 @@ export default proposition({
     "The $\\alpha_{EM}$ Habiro element $[2]_q(1-h^2\\alpha)$ is a " +
     "bar-involution fixed point, with $H(1)=2$, $H(-1)=-2$",
   lean: {
-    ref: "qou:QOU.BraidKnot.alphaEmHabiro_bar_invariant",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.alphaEmHabiro_bar_invariant",
   },
   uses: [],
   cites: [

@@ -1,4 +1,3 @@
-**Definition.**
 *The **atomic braid** of a neutral atom $(Z, N)$ is the element of $H_{A+Z}(q)$ obtained by assembling $Z$ protons, $N$ neutrons, and $Z$ electrons into a single Hecke algebra with $A + Z$ strands, where $A = Z + N$. The crossing coefficients are:*
 
 See [Table 1](#tbl:atomic-braid-table1-data).

@@ -1,11 +1,16 @@
 import { definition } from "../../schema/builders";
 
 /**
- * The Borromean categorical observable F_Bor(q) — the natural
- * Wedderburn-content-shifted combination
+ * The Borromean categorical observable
  *
  *   F_Bor(q) := |tr_M(β_Bor, q)| · [3]_q! / q^3
- *             = |tr_M(β_Bor, q)| / y_(3)(q)
+ *             = |tr_M(β_Bor, q)| · c_sign(q)
+ *
+ * where [3]_q!/q^3 is the Schur element of the sign character of H_3.
+ * The normaliser is ASSERTED, not derived: q^k [3]_q! is a linear-
+ * character Schur element only for k = ±3 and bar-symmetric only for
+ * k = 0 (owner card 2026-11-21, option "PR plus F_Bor text").
+ * Lean: QOU/MassTheory/ProtonQ3SchurElement.lean.
  *
  * built from two Lean-proved closed forms:
  *
@@ -38,6 +43,7 @@ export default definition({
   label: "def:f-bor-borromean-observable",
   title:
     "Borromean categorical observable",
+  lean: { ref: "qou:QOU.BraidsAndKnots.F_Bor" },
   uses: [
     "prop:borromean-markov-trace-closed-form",
     "prop:y-lambda-closed-form-wenzl-bridge",
@@ -51,7 +57,16 @@ export default definition({
     "categorical-observable",
     "wedderburn",
     "content-shift",
+    "schur-element",
+    "asserted-normaliser",
     "lean-proved-building-blocks",
     "h-expansion-rational",
+  ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "External-reader provenance note (consolidated after retirement of `appendix-qvalues/proton-borromean-assembly` in `52721aa56f3`): the integer $12 = 2 \\cdot 6 = \\dim V_{(2,1)} \\cdot |\\mathfrak{S}_3|$ is purely categorical (standard irrep dimension times group order, classical limit $P_{\\mathfrak{S}_3}(1) = 6$), and not the inverse of an Ocneanu leading-pole coefficient $-1/12$. Deriving the linear proton-assembly law and the Wenzl-vs-$q$-Schur Poincaré factor $[3]_q!/q^3 = (1 + q^{-2})(1 + q^{-2} + q^{-4}) = P_{\\mathfrak{S}_3}(q^{-2})$ from first principles remains open.",
+    },
   ],
 });

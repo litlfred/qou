@@ -16,7 +16,7 @@ export default conjecture({
     "conj:hyperbolic-volume-transcendence",
   ],
   lean: {
-    ref: "qou:QOU.Archimedean.JetOrderIndependence",
+    ref: "qou:QOU.MassTheory.JetOrderIndependence",
     validation: "stub",
   },
   authorNotes: [

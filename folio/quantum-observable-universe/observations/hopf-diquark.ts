@@ -13,7 +13,7 @@ export default definition({
     "color-superconductivity",
     "color-antitriplet",
   ],
-  lean: { ref: "qou:QOU.Archimedean.HopfDiquark",
+  lean: { ref: "qou:QOU.MassTheory.Archimedean.HopfDiquark",
     validation: "not_checked",
   },
 });

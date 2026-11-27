@@ -30,9 +30,22 @@ imports one that did.
    only over-sweep.
 2. Rebuilds the closure from source, in topological order, into a shadow tree
    placed first on `LEAN_PATH`.
-3. **Continues past a failure**, marking that module's dependents `skipped`
-   rather than aborting — one break must not mask the rest, which is the whole
-   point of a sweep.
+3. **Continues past a failure**, marking that module's dependents rather than
+   aborting — one break must not mask the rest, which is the whole point of a
+   sweep.  A dependent is `SKIPPED` (behind a RED) or `BLOCKED` (behind only
+   TIMEOUT / UNVERIFIED roots, so NOT judged); roots are traced transitively.
+
+## Exit status (bean `qou-tpdg`)
+
+    0  GREEN       every module in the closure compiled
+    1  RED         at least one module failed on a real error
+    8  INCOMPLETE  no RED, but some module was TIMEOUT / UNVERIFIED / BLOCKED
+
+Exit 8 closes a false-green: before 2026-11-21 a run whose only problems were
+unjudged modules exited 0 and printed `0 RED`, even when the module named by
+`--only-exact` was itself skipped.  8 is chosen so it ORs cleanly with the
+1 / 2 / 4 codes `lean-progressive-reseed.py` already uses.  The last line of
+every run is `VERDICT: ...` with the code, so quote that line as gate evidence.
 
 `lake` is never invoked, so the restored cache cannot be evicted.  Mathlib is
 never rebuilt.
@@ -58,6 +71,9 @@ import re
 import shutil
 import subprocess
 import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from lean_freshness import read_source_sha, source_sha  # noqa: E402
 import tempfile
 import time
 from concurrent.futures import ThreadPoolExecutor
@@ -78,22 +94,40 @@ ROOT = pathlib.Path(
                    capture_output=True, text=True, check=True).stdout.strip())
 PKG = ROOT / "folio/quantum-observable-universe/lean"   # default; see packages()
 LIB = "QOU"
+LIBS: list[str] = ["QOU"]
+
+
+def package_groups() -> list[tuple[pathlib.Path, str, list[str]]]:
+    """Every paper package: (lean dir, primary anchor library name, all library roots in dir).
+
+    Under Q3 Option 1, `folio/quantum-observable-universe/lean/` holds multiple
+    `[[lean_lib]]` roots (`MathlibExt`, the 6 Tier-B Reservoir libraries, and
+    `QOU`) sharing the single `.lake/build/lib/lean/` root.  Sweeping all roots
+    of a Lake package directory together in one unified shadow and one
+    topological DAG ensures cross-library imports (e.g. `QOU.*` importing
+    `HeckeTemperleyLieb.*` or `MathlibExt.*`) see freshly rebuilt `.olean`s in
+    the same run without adding extra `.lake/build` roots.
+    """
+    out: list[tuple[pathlib.Path, str, list[str]]] = []
+    for lakefile in sorted(ROOT.glob("folio/*/lean/lakefile.toml")):
+        d = lakefile.parent
+        libs = sorted(
+            root_mod.stem for root_mod in d.glob("*.lean")
+            if (d / root_mod.stem).is_dir()
+        )
+        if not libs:
+            continue
+        anchor = "QOU" if "QOU" in libs else libs[0]
+        out.append((d, anchor, libs))
+    return out
 
 
 def packages() -> list[tuple[pathlib.Path, str]]:
-    """Every paper package: (lean dir, library name).
-
-    Discovered, not hardcoded — a package is a `folio/*/lean/` holding a
-    lakefile and a top-level `<Lib>.lean` root module whose stem names the
-    library (`QOU`, `UGB`, `Fred2005`).  Sweeping only the first of the three
-    was the gap this closes: UGB and Fred2005 were covered by nothing.
-    """
+    """Backwards-compatible flat `(lean dir, library name)` view across all roots."""
     out = []
-    for lakefile in sorted(ROOT.glob("folio/*/lean/lakefile.toml")):
-        d = lakefile.parent
-        for root_mod in sorted(d.glob("*.lean")):
-            if (d / root_mod.stem).is_dir():
-                out.append((d, root_mod.stem))
+    for d, _anchor, libs in package_groups():
+        for lb in libs:
+            out.append((d, lb))
     return out
 
 
@@ -123,38 +157,39 @@ def find_oleans() -> pathlib.Path:
     """The restore seeds the ROOT workspace; a per-paper `lake build` seeds $PKG.
 
     Both are real, so pick by COMPLETENESS (largest count of non-empty `.olean`
-    files under `<cand>/<LIB>`), matching `scripts/lean-shadow-verify.sh`,
-    rather than taking the first candidate with a `<LIB>/` directory (which may
-    be an incomplete mid-build stub).  Bean `qou-fo7l`.
+    files across `<cand>/<lb>` for `lb` in `LIBS`), matching
+    `scripts/lean-shadow-verify.sh`.  Bean `qou-fo7l`.
     """
     env = os.environ.get("OLEANS")
     if env:
         c = pathlib.Path(env)
-        if (c / LIB).is_dir():
+        if any((c / lb).is_dir() for lb in LIBS):
             return c
-        sys.exit(f"no olean tree with a {LIB}/ dir; looked in: {c}")
+        sys.exit(f"no olean tree with any of {LIBS} dirs; looked in: {c}")
     cands = [PKG / ".lake/build/lib/lean", ROOT / ".lake/build/lib/lean"]
     best_c, best_n = None, -1
     for c in cands:
-        if not (c / LIB).is_dir():
+        present = [lb for lb in LIBS if (c / lb).is_dir()]
+        if not present:
             continue
-        n = _nonempty_olean_count(c / LIB)
+        n = sum(max(0, _nonempty_olean_count(c / lb)) for lb in present)
         if n > best_n:
             best_c, best_n = c, n
     if best_c is not None:
         return best_c
-    sys.exit(f"no olean tree with a {LIB}/ dir; looked in: "
+    sys.exit(f"no olean tree with any of {LIBS} dirs; looked in: "
              f"{', '.join(str(c) for c in cands)}")
 
 
 def load_graph() -> tuple[dict, dict]:
-    # `{LIB}/**/*.lean` does NOT match the library ROOT file `{LIB}.lean`, which
-    # sits one level up -- so the root module was outside the sweep's population
-    # entirely, under either freshness rule.  Live instance: main's `545efd2c521`
-    # added `import QOU.Mass.CrossTermOrderZeroComponentCount` to `QOU.lean`, the
-    # 883-import root, and NOTHING in this repo checked that file.  Glob both.
-    mod2path = {str(p.relative_to(PKG).with_suffix("")).replace("/", "."): p
-                for p in [*PKG.glob(f"{LIB}/**/*.lean"), *PKG.glob(f"{LIB}.lean")]}
+    # Glob both `<lb>/**/*.lean` and `<lb>.lean` across all `[[lean_lib]]` roots
+    # (`LIBS`) in `PKG` so cross-library imports resolve in one unified DAG.
+    mod2path = {
+        str(p.relative_to(PKG).with_suffix("")).replace("/", "."): p
+        for lb in LIBS
+        for p in [*PKG.glob(f"{lb}/**/*.lean"), *PKG.glob(f"{lb}.lean")]
+        if p.is_file()
+    }
     imports = {}
     for m, p in mod2path.items():
         imports[m] = [i for i in re.findall(r"^import\s+(\S+)", p.read_text(), re.M)
@@ -164,18 +199,14 @@ def load_graph() -> tuple[dict, dict]:
 
 def last_commit_times() -> dict[str, int]:
     """Repo-relative path -> unix time of its most recent commit, in one pass."""
+    git_targets = [
+        *(str(PKG / lb) for lb in LIBS if (PKG / lb).exists()),
+        *(str(PKG / f"{lb}.lean") for lb in LIBS if (PKG / f"{lb}.lean").exists()),
+    ]
+    if not git_targets:
+        return {}
     out = subprocess.run(
-        # BOTH paths.  `PKG/LIB` is the namespace DIRECTORY; the library root
-        # module `PKG/LIB.lean` sits BESIDE it and is not under it, so a log
-        # scoped to the directory alone never sees the root and returns no time
-        # for it.  `dirty_closure` then marks a module with no commit time as
-        # changed UNCONDITIONALLY, so the root was permanently dirty by
-        # construction -- a floor of exactly 1 that no amount of rebuilding can
-        # clear.  Measured 2026-09-14: after a full progressive reseed took the
-        # QOU closure 1261 -> 1, that surviving 1 was the root, and it was this,
-        # not work left undone.
-        ["git", "log", "--format=%ct", "--name-only", "--",
-         str(PKG / LIB), str(PKG / f"{LIB}.lean")],
+        ["git", "log", "--format=%ct", "--name-only", "--", *git_targets],
         cwd=ROOT, capture_output=True, text=True).stdout
     times, ts = {}, None
     for line in out.splitlines():
@@ -186,6 +217,23 @@ def last_commit_times() -> dict[str, int]:
         elif line.endswith(".lean"):
             times.setdefault(line, ts)      # newest-first, so first wins
     return times
+
+
+def _stamp_stale(olean: pathlib.Path, src: pathlib.Path):
+    """Decide freshness by the `.srcsha` stamp when the olean carries one.
+
+    Returns True (stale) / False (current) from the stamp, or None when there is
+    no stamp and the clock rule below must decide.  Same rule as
+    `lean_freshness.olean_is_current`: a stamp is exact in both directions, so
+    no clock is consulted.  Without this, a fresh checkout over a restored,
+    fully-stamped refresh addon read as 100 % dirty (measured 2026-11-25:
+    3913/3913 QOU, 46/46 UGB, 3/3 Fred2005 "changed"), while
+    `lean-direct-cone.sh`, which reads the stamps, found all 3913 up to date.
+    """
+    recorded = read_source_sha(olean)
+    if recorded is None:
+        return None
+    return recorded != source_sha(src)
 
 
 def _standard_dirty(mod2path, oleans, times, never_built):
@@ -207,6 +255,11 @@ def _standard_dirty(mod2path, oleans, times, never_built):
         if m in out:
             continue
         o = oleans / (m.replace(".", "/") + ".olean")
+        st = _stamp_stale(o, p_)
+        if st is not None:
+            if st:
+                out.add(m)
+            continue
         c = times.get(str(p_.relative_to(ROOT)))
         src = max(c, p_.stat().st_mtime) if c is not None else None
         if src is None or src > o.stat().st_mtime:
@@ -243,6 +296,11 @@ def dirty_closure(mod2path, imports, oleans, all_dirty=False):
         if not o.exists():
             changed.add(m)
             never_built.add(m)
+            continue
+        st = _stamp_stale(o, p)
+        if st is not None:          # a .srcsha stamp decides exactly; no clock
+            if st:
+                changed.add(m)
             continue
         c = times.get(str(p.relative_to(ROOT)))
         # Take the LATER of the source's last-commit date and its on-disk mtime.
@@ -391,25 +449,51 @@ def main() -> int:
                          "default all discovered")
     args = ap.parse_args()
 
-    global PKG, LIB
-    todo_pkgs = packages()
+    # Make the root and paper olean trees hold the same union before anything
+    # resolves against them (bean qou-4h26, wired 2026-11-21).  Lean answers a
+    # whole package from the FIRST LEAN_PATH root holding its directory, so an
+    # incomplete tree first on the path produced phantom MISSING-OLEAN reds
+    # (qou-tpdg).  Hardlinks only, idempotent, ~0.2 s when already in sync.
+    if os.environ.get("LEAN_NO_TREE_SYNC") != "1":
+        r = subprocess.run([str(ROOT / "scripts/lean-sync-olean-trees.sh")],
+                           capture_output=True, text=True)
+        if r.returncode != 0:
+            print("WARNING: lean-sync-olean-trees.sh failed; a MISSING-OLEAN "
+                  "red may be an environment artifact.\n" + r.stderr[-800:],
+                  file=sys.stderr)
+
+    global PKG, LIB, LIBS
+    groups = package_groups()
+    all_known_libs = {lb for _d, _anc, lbs in groups for lb in lbs}
+    todo_groups: list[tuple[pathlib.Path, str, list[str], set[str] | None]] = []
     if args.package:
         want = set(args.package)
-        todo_pkgs = [(d, l) for d, l in todo_pkgs if l in want]
-        missing = want - {l for _, l in todo_pkgs}
+        missing = want - all_known_libs
         if missing:
             sys.exit(f"unknown package(s): {', '.join(sorted(missing))}; "
-                     f"have {', '.join(l for _, l in packages())}")
-    if not todo_pkgs:
+                     f"have {', '.join(sorted(all_known_libs))}")
+        for d, anc, lbs in groups:
+            hit = want & set(lbs)
+            if not hit:
+                continue
+            # `--package QOU` sweeps the whole QOU Lake workspace (`lbs`), while
+            # `--package HeckeTemperleyLieb` restricts seeds to `HeckeTemperleyLieb`
+            # (plus its untrusted dependencies inside `d`).
+            sub_filter = None if (anc in hit or hit == set(lbs)) else hit
+            todo_groups.append((d, anc, lbs, sub_filter))
+    else:
+        todo_groups = [(d, anc, lbs, None) for d, anc, lbs in groups]
+    if not todo_groups:
         sys.exit("no paper packages discovered under folio/*/lean/")
 
     rc = 0
-    for i, (pkg_dir, lib) in enumerate(todo_pkgs):
+    for i, (pkg_dir, anc, lbs, sub_filter) in enumerate(todo_groups):
         if i:
             print()
-        print(f"########## {lib}  ({pkg_dir.relative_to(ROOT)})")
-        PKG, LIB = pkg_dir, lib
-        rc |= sweep_one(args)
+        label = anc if len(lbs) == 1 else f"{anc} [{'+'.join(lbs)}]"
+        print(f"########## {label}  ({pkg_dir.relative_to(ROOT)})")
+        PKG, LIB, LIBS = pkg_dir, anc, lbs
+        rc |= sweep_one(args, sub_lib_filter=sub_filter)
     return rc
 
 
@@ -451,16 +535,8 @@ def refresh_shadow(src: pathlib.Path, dst: pathlib.Path) -> int:
     return linked
 
 
-def sweep_one(args) -> int:
+def sweep_one(args, sub_lib_filter: set[str] | None = None) -> int:
     if args.report:
-        # Report mode must survive a package with no snapshot at all, because
-        # that IS one of the things worth reporting.  `find_oleans` exits for
-        # the sweep path on purpose -- a gate with no tree to check against
-        # must not silently pass -- so catch it here only, leaving that
-        # behaviour untouched for every non-report run.  Measured: without
-        # this, a plain `--report` aborts on Fred2005 (no olean tree in a
-        # container restored from the qou cache branch) and never reaches QOU,
-        # which is the package anyone running it cares about.
         try:
             oleans = find_oleans()
         except SystemExit as e:
@@ -494,29 +570,21 @@ def sweep_one(args) -> int:
                        else "CHANGED" if m in changed else "via-imports")
                 print(f"      {tag:12s} {m}")
         return 0
-    sel = args.only or args.only_exact
+    sel = args.only or args.only_exact or (sorted(sub_lib_filter)[0] if sub_lib_filter else None)
     if sel:
-        # Filter the population to compile, NOT the import graph -- dependencies
-        # outside the selection must stay resolvable.
         if args.only_exact:
             seeds = {m for m in dirty if m == args.only_exact}
-        else:
+        elif args.only:
             seeds = {m for m in dirty if m.startswith(args.only)}
+        else:
+            assert sub_lib_filter is not None
+            seeds = {
+                m for m in dirty
+                if any(m == lb or m.startswith(f"{lb}.") for lb in sub_lib_filter)
+            }
         if not seeds:
             print(f"  selection {sel}: no modules match; nothing to do")
             return 0
-        # ...but a dependency is only "resolvable from the snapshot" if the
-        # snapshot HAS it.  A never-built module has no olean at all, so a
-        # selection that drops it makes every importer a GUARANTEED spurious
-        # RED -- reported as a corpus failure when it is an artifact of how the
-        # run was sliced.  MEASURED, not hypothetical: the first chunked run
-        # reported `QOU.BraidKnot.DominanceIsBruhat` RED with
-        #   error: object file '.../QOU/Machinery/BruhatRankCriterion.olean' ...
-        #   of module QOU.Machinery.BruhatRankCriterion does not exist
-        # because that dep is one of the 60 never-built modules and sits in a
-        # different namespace.  So pull the never-built cone in regardless of
-        # prefix.  5 modules corpus-wide need this; 24 of them are dependencies
-        # of the library ROOT alone.
         need, stack = set(seeds), list(seeds)
         while stack:
             for d in imports[stack.pop()]:
@@ -532,11 +600,6 @@ def sweep_one(args) -> int:
 
     print(f"library modules        {len(mod2path)}")
     if args.all:
-        # Under --all the freshness rule never runs, so `changed` is "everything"
-        # by construction.  Printing it as `source-changed` would report a
-        # fabricated measurement in the same column a real one normally occupies
-        # -- exactly the cannot-verify-vs-fails conflation this sweep exists to
-        # avoid.  `never_built` IS measured (olean presence), so it stays.
         print(f"  never built (new)     {len(never_built)}   [measured]")
         print(f"  source-changed        n/a  (--all: freshness rule not consulted)")
         label = "[= every module]" if not sel else f"[{sel} + its untrusted deps]"
@@ -551,45 +614,33 @@ def sweep_one(args) -> int:
         return 0
 
     keep = bool(args.shadow)
-    # Per-library subdirectory: LEAN_PATH resolves a module from the first root
-    # holding that package dir, so two libraries must not share one shadow root.
     shadow = (pathlib.Path(args.shadow) / lib_slug() if keep
               else pathlib.Path(tempfile.mkdtemp()))
     shadow.mkdir(parents=True, exist_ok=True)
     try:
-        if not (shadow / LIB).is_dir():
-            # The shadow MUST contain the whole library tree, not just the
-            # modules we rebuild.  Lean commits to the FIRST LEAN_PATH root that
-            # holds the module's top-level namespace directory and never
-            # consults a later root for anything under it -- measured three
-            # ways: a shadow with no `<LIB>/` falls through and exits 0; a
-            # shadow with `<LIB>/` holding one unrelated module fails with
-            # "does not exist" on every other import from it.  So a partial
-            # shadow MASKS the real tree rather than layering over it, which is
-            # also why two libraries must not share one shadow root (above).
-            # Bean `qou-tpdg`.
-            #
-            # Hardlink rather than copy.  The tree is ~2.3 GB and a container
-            # here has a per-session quota (AGENTS.md §Disk space); a real copy
-            # simply fails with ENOSPC, which is what blocked this sweep from
-            # running at all.  Hardlinks cost ~0 (`du` reports 2.3 GB while
-            # `df` does not move) and are safe because `build()` unlinks its
-            # target before writing, so a rebuild never writes through a shared
-            # inode into the real tree.
-            print(f"linking {LIB} olean tree into shadow ({shadow}) ...")
-            try:
-                shutil.copytree(oleans / LIB, shadow / LIB, copy_function=os.link)
-            except OSError as e:
-                # different filesystem, or a hardlink-hostile mount
-                print(f"  hardlink failed ({e}); falling back to a real copy")
-                shutil.rmtree(shadow / LIB, ignore_errors=True)
-                shutil.copytree(oleans / LIB, shadow / LIB)
-        else:
-            # Reused shadow (`--shadow`): top it up.  See refresh_shadow().
-            added = refresh_shadow(oleans / LIB, shadow / LIB)
-            if added:
-                print(f"refreshing reused shadow: linked {added} file(s) "
-                      f"the real tree gained since it was built")
+        for lb in LIBS:
+            src_lb = oleans / lb
+            dst_lb = shadow / lb
+            if src_lb.is_dir():
+                if not dst_lb.is_dir():
+                    print(f"linking {lb} olean tree into shadow ({shadow}) ...")
+                    try:
+                        shutil.copytree(src_lb, dst_lb, copy_function=os.link)
+                    except OSError as e:
+                        print(f"  hardlink failed ({e}); falling back to a real copy")
+                        shutil.rmtree(dst_lb, ignore_errors=True)
+                        shutil.copytree(src_lb, dst_lb)
+                else:
+                    added = refresh_shadow(src_lb, dst_lb)
+                    if added:
+                        print(f"refreshing reused shadow ({lb}): linked {added} file(s)")
+            root_ol = oleans / f"{lb}.olean"
+            dst_root_ol = shadow / f"{lb}.olean"
+            if root_ol.is_file() and not dst_root_ol.exists():
+                try:
+                    os.link(root_ol, dst_root_ol)
+                except OSError:
+                    shutil.copy2(root_ol, dst_root_ol)
 
         siblings = [str(p) for p in sorted(ROOT.glob("folio/*/lean/.lake/build/lib/lean"))
                     if p != oleans]
@@ -682,6 +733,14 @@ def sweep_one(args) -> int:
 
         red, skipped, timed_out, unverified, ok = {}, {}, {}, {}, 0
         broken = set()
+        # roots[m]: the modules that were themselves judged not-ok (RED,
+        # TIMEOUT or UNVERIFIED) and that m sits behind, transitively.  A
+        # skipped module is only "behind a RED" if one of its roots is RED;
+        # behind a TIMEOUT/UNVERIFIED root it was never judged, and the old
+        # single "skipped (dependency red)" label called that red AND let the
+        # run exit 0 (bean qou-tpdg, 2026-09-13: `--only-exact X` printed
+        # `0 RED` and exited 0 with X itself skipped).
+        roots: dict[str, set[str]] = {}
         t0 = time.time()
         n = sum(len(l) for l in order)
         done_ct = 0
@@ -747,6 +806,7 @@ def sweep_one(args) -> int:
             for m in layer:
                 if m not in runnable:
                     skipped[m] = sorted(d for d in imports[m] if d in broken)
+                    roots[m] = set().union(*(roots.get(d, {d}) for d in skipped[m]))
                     broken.add(m)
             if not runnable:
                 continue
@@ -818,9 +878,18 @@ def sweep_one(args) -> int:
                             for e in errs[:3]:
                                 print(f"        {e}", flush=True)
 
+        # Split the cascade by what it sits behind.  Behind any RED root: the
+        # module is "skipped behind RED" (fixing the RED is the next step).
+        # Behind only TIMEOUT/UNVERIFIED roots: it is BLOCKED -- not judged,
+        # not failing, and NOT green either.
+        behind_red = {m: deps for m, deps in skipped.items()
+                      if roots.get(m, set()) & red.keys()}
+        blocked = {m: deps for m, deps in skipped.items() if m not in behind_red}
+        unjudged = len(timed_out) + len(unverified) + len(blocked)
         print(f"\n=== library sweep: {ok} ok, {len(red)} RED, "
-              f"{len(timed_out)} TIMEOUT + {len(unverified)} UNVERIFIED (NOT failing), "
-              f"{len(skipped)} skipped (dependency red), "
+              f"{len(timed_out)} TIMEOUT + {len(unverified)} UNVERIFIED + "
+              f"{len(blocked)} BLOCKED (NOT judged), "
+              f"{len(behind_red)} skipped behind RED, "
               f"{time.time() - t0:.0f}s ===")
         for m in sorted(timed_out):
             print(f"TIMEOUT {m} -- unverified; re-run with a larger --timeout to judge it")
@@ -830,11 +899,33 @@ def sweep_one(args) -> int:
             print(f"\nRED {m}")
             for e in errs:
                 print(f"    {e}")
-        for m, deps in sorted(skipped.items()):
-            print(f"SKIPPED {m}  (red dependency: {', '.join(deps)})")
+        for m, deps in sorted(behind_red.items()):
+            print(f"SKIPPED {m}  (behind RED: "
+                  f"{', '.join(sorted(roots[m] & red.keys()))}; via {', '.join(deps)})")
+        for m, deps in sorted(blocked.items()):
+            print(f"BLOCKED {m}  (NOT judged; behind unverified: "
+                  f"{', '.join(sorted(roots[m]))}; via {', '.join(deps)})")
+        # A request for named modules that were not all compiled is not a
+        # green, whatever the RED count says.  Name them.
+        asked = ([args.only_exact] if args.only_exact else [])
+        for m in asked:
+            if m in red or m in timed_out or m in unverified or m in skipped:
+                print(f"TARGET {m} was NOT verified ok "
+                      f"({'RED' if m in red else 'skipped behind RED' if m in behind_red else 'not judged'})")
+        if red:
+            verdict, code = "RED", 1
+        elif unjudged:
+            # Exit 8, not 0: "no RED" with modules left unjudged is the
+            # false-green this bean is about.  8 so it ORs cleanly with the
+            # 1 / 2 / 4 that lean-progressive-reseed.py already uses.
+            verdict, code = (f"INCOMPLETE -- {unjudged} of {n} module(s) not judged; "
+                             f"this is NOT a green"), 8
+        else:
+            verdict, code = f"GREEN -- all {ok} module(s) compiled", 0
+        print(f"VERDICT: {verdict}  (exit {code})")
         if keep:
             print(f"\nshadow kept at {shadow}")
-        return 1 if red else 0
+        return code
     finally:
         if not keep:
             shutil.rmtree(shadow, ignore_errors=True)

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.13.18 + mpmath 1.4.1",
-  "computedAt": "2026-11-20T15:28:48.791907+00:00",
-  "commitSha": "40ea11e76e34296773847bc25bc442a00441d161",
+  "engineVersion": "python 3.13.12 + mpmath 1.4.1",
+  "computedAt": "2026-11-24T13:49:44.895368+00:00",
+  "commitSha": "acb646cc6fe482bb452007b31eba2d1d358cefe0",
   "assertions": [
     {
       "name": "deuteron_calibrates_to_AME",
@@ -15,8 +15,8 @@
   "durationMs": 4,
   "computation": "light-series-open-loop-decomposition",
   "scriptFile": "light_series_open_loop_decomposition.py",
-  "scriptHash": "8c7a0f7ad507",
-  "scriptCommitSha": "40ea11e76e34296773847bc25bc442a00441d161",
+  "scriptHash": "20901b6346bb",
+  "scriptCommitSha": "884e4ab20d628ae6f6261536cbbfb7bd043e5083",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,15 +24,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.18",
-    "numpy": "2.5.3",
-    "scipy": "1.18.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "832ce4e14a00d523"
+    "pyhecke_native_build": "56872bc54313b172"
   },
   "invocation": {
     "argv": [

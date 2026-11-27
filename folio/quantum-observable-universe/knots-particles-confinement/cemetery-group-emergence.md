@@ -1,4 +1,3 @@
-**Conjecture (cemetery group as a homological filter).**
 *Let $T_w \in H_n(R, q)$ be a Hecke normal form and let $\beta$ be the corresponding crystal path. If the prefix $\beta_{\leq k}$ of $\beta$ lifts to a graded projective KLR module that lies in the cemetery group $\mathcal{Z}_n = \ker \tau$, then every extension of $\beta$ also lies in $\mathcal{Z}_n$, and its image under the observation functor vanishes:*
 
 $$

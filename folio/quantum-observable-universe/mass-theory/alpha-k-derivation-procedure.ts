@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Linear-system procedure for Jones--Markov weights $y_\\lambda$ and stratum prefactors $\\alpha_k$ at $H_n(R, q)$",
   lean: {
-    ref: "qou:QOU.BraidKnot.alpha_k_derivation_procedure",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.alpha_k_derivation_procedure",
     validation: "not_checked",
   },
   uses: [

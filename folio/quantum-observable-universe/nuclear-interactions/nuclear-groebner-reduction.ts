@@ -21,7 +21,7 @@ export default proposition({
     "temperley-lieb",
     "admissible-system",
   ],
-  lean: { ref: "qou:QOU.Archimedean.nuclear_groebner_reduction",
+  lean: { ref: "qou:QOU.MassTheory.Archimedean.nuclear_groebner_reduction",
     validation: "not_checked",
   },
   uses: [

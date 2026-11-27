@@ -5,11 +5,17 @@ export default conjecture({
   title:
     "Terms 2 and 6: infinite Wedderburn / Habiro-cyclotomic sum and GB root-of-unity residue sum",
   lean: {
-    ref: "qou:QOU.BraidKnot.Terms26HigherOperations",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.Terms26HigherOperations",
     validation: "not_checked",
   },
   uses: ["conj:spectral-sequence-h3-explicit"],
   authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-hand-adjudicated.lean` inhabits `Terms26HigherOperationsContext` on `Unit` with literal page/arity indices.",
+      see: "docs/audits/2026-08-30-context-classes-hand-adjudicated.lean",
+    },
     {
       kind: "status",
       date: "2026-11-20",

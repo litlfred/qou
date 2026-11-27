@@ -1,5 +1,5 @@
 **The Madelung split.**
-Decomposing $\psi = \sqrt{\rho}\exp(JS/\hbar_q)$ separates the [q-deformed Schrödinger equation](#rem:schrodinger-jet-coaction) into two real equations. Setting the velocity $v = \nabla_A S$ and fluid density $\rho = |\psi|^2$ yields:
+Decomposing $\psi = \sqrt{\rho}\exp(JS/\hbar_q)$ following Erwin Madelung \cite{madelung1927} separates the [q-deformed Schrödinger equation](#rem:schrodinger-jet-coaction) into two real equations. Setting the velocity $v = \nabla_A S$ and fluid density $\rho = |\psi|^2$ yields:
 
 - **Continuity:** $\partial_t \rho + \nabla_A\cdot(\rho v) = 0$.
 - **Quantum Euler equation:**
@@ -27,4 +27,4 @@ $$
   m  \propto  \oint_\varrho \|\nabla_A q\|\cdot\|L \wedge F^+\|,
 $$
 
-reproducing the [mass identity](#def:mass-identity) as a line integral of the substrate curvature around the vortex core.
+reproducing the [mass identity](#def:mass-identity) as a line integral of the substrate curvature around the vortex core. Because $\psi$ is a single complex amplitude rather than a two-component Pauli spinor, circulation is concentrated on nodal filaments $\psi = 0$ where $v = \nabla_A S$ is irrotational outside the core; this differs from the spinor hydrodynamics of Takehiko Takabayasi \cite{takabayasi1952,takabayasi1983}, in which local spin-triad gradients generate distributed bulk vorticity away from nodal lines.

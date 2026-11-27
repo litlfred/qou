@@ -17,6 +17,9 @@ allowed-tools: Read Edit Write Bash Grep Glob Skill
 
 # /lean-substantive-pass
 
+> **STRICT Anti-Laundering Guard ([`lean-proof-vacuity-audit.md`](lean-proof-vacuity-audit.md) §1, §10, §11 & `BP007b`):**
+> Context classes (`class FooContext`) are **ONLY** valid for genuine **§3b-cond conditional theorems** where the class encodes *hypotheses* (with an explicit conditional banner in `.md` and a `def trivialModel` consistency witness) and the theorem **derives** its conclusion by composing ≥2 steps. **NEVER** wrap a theorem's conclusion into `claim_i` and project it verbatim (`:= ctx.claim_i`) to claim an unconditional proof, and **NEVER** place `*Context` wrappers inside Tier-A (`MathlibExt`) or the 6 Tier-B Lean Reservoir community libraries! Verify all edits single-threaded via `LEAN_NUM_THREADS=1 nice -n 15 bash scripts/lean-overlay-env.sh` and `nice -n 15 python3 scripts/lean-best-practices-lint.py --diff`.
+
 The job of this skill is to take an abstract `class FooContext where
 ... holds : Prop` placeholder and turn it into a typed sub-claim
 context. Three levels of fidelity, escalating:

@@ -1,40 +1,168 @@
 {
-  "superseded": "2026-08-08: |det J| here is not a topological invariant (PR #4691) and the per-cusp factor 2^{(c-1)/2} does not exist. Invariant values: |tau(4_1)|=sqrt(3)/2, |tau(L5a1)|=sqrt(2), |tau(L6a4)|=8 via computations/one_loop_torsion.py; law is c_sigma = 2^{-1/2}|tau_DG|^{-1/2}. c_sigma=2^{-3/4} is DERIVED by that route (docs/audits/2026-08-08-c-sigma-derivation-status.md), not by this file. Values below are retained for history only.",
-  "description": "[SUPERSEDED] Independent 1-loop (Dimofte-Garoufalidis) adjoint Reidemeister torsion of the Whitehead link L5a1 from SnapPy Neumann-Zagier data: |tau(L5a1)|=4sqrt(2)=2^{5/2} (det J=4(1+i)), DERIVED (not inverted from c_sigma), calibrated on 4_1 where the same det(J) reproduces the known |tau|=sqrt(3). c_sigma=2^{-3/4} follows via c_sigma=2^{(c-1)/2}|tau|^{-1/2} (per-cusp sqrt(2) factor). CORRECTS the earlier qou-k00d inference tau=2sqrt(2) -> tau=4sqrt(2).",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Pure hyperbolic 3-manifold Reidemeister torsion and Wirtinger Fox-calculus twisted Alexander derivative on 4_1, L5a1, and L6a4; q_0 does not enter.",
+  "superseded": "2026-08-08: |det J| here is not a topological invariant (PR #4691) and the per-cusp factor 2^{(c-1)/2} does not exist. Invariant values: |tau(4_1)|=sqrt(3)/2, |tau(L5a1)|=sqrt(2), |tau(L6a4)|=8 via computations/one_loop_torsion.py and confirmed triangulation-independently at 80 dps via Dubois-Yamaguchi [dubois-yamaguchi2012] Theorem 5 eq. (15) Fox derivative on Wirtinger presentations (qou-1el8); law is c_sigma = 2^{-1/2}|tau_DG|^{-1/2}. c_sigma=2^{-3/4} is DERIVED by that b-independent route (docs/audits/2026-08-08-c-sigma-derivation-status.md). Legacy |det J| fields below are retained for history alongside dubois_yamaguchi_2012_wirtinger_cross_check.",
+  "description": "[SUPERSEDED |det J| + ADJUDICATED via dubois-yamaguchi2012] Triangulation-independent Wirtinger Fox-calculus derivative (Dubois-Yamaguchi 2012 Thm 5 eq. 15) gives |T_lambda(4_1)|=3 => |T_mu(4_1)|=sqrt(3)/2 and |T_lambda(L5a1)|=8sqrt(2) => |T_mu(L5a1)|=sqrt(2), confirming that unflattened |det J| carried a 2^b factor (sqrt(3) and 2^{5/2}) and deriving c_sigma(L5a1)=2^{-3/4} from 4_1 with NO per-cusp factor.",
   "computation": "whitehead_c_sigma_torsion",
   "audit_only": true,
-  "dps": 40,
-  "method": "1-loop invariant det(J), J_{kj}=A_{kj}-B_{kj} z_j/(1-z_j), (N-c indep edges)+(meridians)",
+  "dps": 80,
+  "assertions": [
+    {
+      "name": "dy2012_4_1_wirtinger_relator_vanishes_80dps",
+      "computed": "2.58335017634964786857065617210262527767010449320158039513938e-80",
+      "expected": "0",
+      "tolerance": "1e-70",
+      "passed": true
+    },
+    {
+      "name": "dy2012_4_1_fox_poly_matches_eq102_80dps",
+      "computed": "9.40208037973625981255688613880301915796778076328509838903650e-80",
+      "expected": "0",
+      "tolerance": "1e-65",
+      "passed": true
+    },
+    {
+      "name": "dy2012_4_1_thm5_longitude_torsion_equals_3",
+      "computed": "3.00000000000000000000000000000000000000000000000000000000000",
+      "expected": "3.00000000000000000000000000000000000000000000000000000000000",
+      "tolerance": "1e-65",
+      "passed": true
+    },
+    {
+      "name": "dy2012_4_1_meridian_torsion_equals_sqrt3_over_2_matches_dg",
+      "computed": "0.866025403784438646763723170752936183471402626905190314027904",
+      "expected": "0.866025403784438646763723170752936183471402626905190314027903",
+      "tolerance": "1e-55",
+      "passed": true
+    },
+    {
+      "name": "dy2012_4_1_thm14_bar_reciprocality_odd_b1",
+      "computed": "2.47569674231290781276617027476929198992814075231901769729438e-78",
+      "expected": "0",
+      "tolerance": "1e-65",
+      "passed": true
+    },
+    {
+      "name": "dy2012_L5a1_wirtinger_relator_vanishes_80dps",
+      "computed": "0.0",
+      "expected": "0",
+      "tolerance": "1e-70",
+      "passed": true
+    },
+    {
+      "name": "dy2012_L5a1_fox_poly_matches_eq27_80dps",
+      "computed": "2.18879387453116808647947310910807084528223492507466976846756e-78",
+      "expected": "0",
+      "tolerance": "1e-65",
+      "passed": true
+    },
+    {
+      "name": "dy2012_L5a1_thm5_multilongitude_torsion_equals_8sqrt2_eq29",
+      "computed": "11.3137084989847603904135097936775846285573750030155845854134",
+      "expected": "11.3137084989847603904135097936775846285573750030155845854134",
+      "tolerance": "1e-65",
+      "passed": true
+    },
+    {
+      "name": "dy2012_L5a1_multimeridian_torsion_equals_sqrt2_matches_dg",
+      "computed": "1.41421356237309504880168872420969807856967187537694807317668",
+      "expected": "1.41421356237309504880168872420969807856967187537694807317668",
+      "tolerance": "1e-55",
+      "passed": true
+    },
+    {
+      "name": "dy2012_L5a1_thm14_bar_reciprocality_even_b2",
+      "computed": "4.45799124933484787335763313638359144155671397003292290463920e-79",
+      "expected": "0",
+      "tolerance": "1e-65",
+      "passed": true
+    },
+    {
+      "name": "dy2012_universal_no_percusp_law_predicts_c_sigma_2_pow_minus_3_4",
+      "computed": "0.594603557501360533358749985280237957646486046231908706509501",
+      "expected": "0.594603557501360533358749985280237957646486046231908706509501",
+      "tolerance": "1e-55",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "method": "1-loop invariant det(J) [legacy] cross-checked against triangulation-independent Wirtinger Fox-calculus derivative lim_{t->1} Delta(t)/(t-1)^b = (-1)^b T_lambda (Dubois-Yamaguchi 2012 Thm 5 eq. 15)",
   "calib_4_1": {
-    "det_abs": "1.732050807568877293527446",
-    "sqrt3": "1.732050807568877293527446",
+    "det_abs": "1.73205080756887729352744634150587236694280525381038062805581",
+    "sqrt3": "1.73205080756887729352744634150587236694280525381038062805581",
     "match_digits": 999
   },
   "whitehead_L5a1": {
     "num_cusps": 2,
-    "det": "(4.0 + 4.0j)",
-    "tau_abs": "5.656854249492380195206755",
-    "target_2_pow_5_2": "5.656854249492380195206755",
+    "det": "(4.00000000000000000000000000000000000000000000000000000000000 + 4.00000000000000000000000000000000000000000000000000000000000j)",
+    "tau_abs": "5.65685424949238019520675489683879231427868750150779229270672",
+    "target_2_pow_5_2": "5.65685424949238019520675489683879231427868750150779229270672",
     "match_digits": 999
   },
-  "c_sigma_relation": "c_sigma = 2^{(c-1)/2} * |tau_meridian|^{-1/2}   <=>   exp(2 c0) = 2^{c-1}/|det J_NZ|",
-  "c_sigma_derived": "0.59460355750136053335875",
-  "c_sigma_target_2_pow_minus_3_4": "0.59460355750136053335875",
+  "c_sigma_relation": "c_sigma = 2^{-1/2} * |T_mu|^{-1/2} (b-independent; legacy 2^{(c-1)/2}|det J|^{-1/2} cancelled a triangulation-specific 2^c factor)",
+  "c_sigma_derived": "0.594603557501360533358749985280237957646486046231908706509501",
+  "c_sigma_target_2_pow_minus_3_4": "0.594603557501360533358749985280237957646486046231908706509501",
   "c_sigma_match_digits": 999,
   "borromean_L6a4_crosscheck": {
     "num_cusps": 3,
-    "tau_abs": "64.0",
+    "tau_abs": "64.0000000000000000000000000000000000000000000000000000000000",
     "target_2_pow_6": "64",
     "match_digits": 999,
     "corpus_source": "computations/probes/borromean_nz_adjoint_torsion.py (W1, PR #4238, 2026-07-25) already has |det|=64; reproduced here independently",
-    "c_sigma_derived": "0.25",
-    "c0_predicted_unified_law": "-1.38629436111989",
+    "c_sigma_derived": "0.250000000000000000000000000000000000000000000000000000000000",
+    "c0_predicted_unified_law": "-1.38629436111989061883446424291635313615100026872051050824136",
     "c0_measured_W1_jones": "-1.3828105122579213",
-    "note": "c=3 confirms the per-cusp factor: predicted c0=-1/2 ln16=-1.3863 vs W1 Jones-side -1.3828 (~0.25%, within the NMAX=56 fit error; W1 p=1.4993 vs 3/2)."
+    "note": "Legacy unflattened |det J|=64 = 2^3 * 8 vs invariant |tau_DG(L6a4)|=8; universal b-independent law gives c_sigma = 2^{-1/2} * 8^{-1/2} = 1/4 => c0 = -1/2 ln 16 = -1.3863 vs W1 Jones-side -1.3828."
   },
-  "corrects_prior_inference": "qou-k00d/PR#4571 recorded tau=2sqrt(2) (naive knot template); independent 1-loop gives tau=4sqrt(2)=2^{5/2}; resolved by the 2-cusp sqrt(2) normalization.",
-  "cusp_factor_status": "2^{(c-1)/2} now supported on THREE cases: c=1 (4_1, exact), c=2 (L5a1, 20-digit c_sigma), c=3 (L6a4, ~0.25% vs W1 Borromean c0). Unifies the repo W1 knot relation exp(2c0)=1/|det| to exp(2c0)=2^{c-1}/|det|. General-c proof (per-cusp Gaussian factor) is a smaller open sub-item.",
+  "dubois_yamaguchi_2012_wirtinger_cross_check": {
+    "source": "[dubois-yamaguchi2012] arXiv:0906.1500v4, §4.1–4.2, §6 Theorem 5 eq. (15), §6.3 eq. (29), §8 Theorem 14 eq. (32)",
+    "compute_dps": 80,
+    "figure_eight_4_1": {
+      "num_boundary_tori_b": 1,
+      "wirtinger_relator_norm_err": "2.58335017634964786857065617210262527767010449320158039513938e-80",
+      "thm5_longitude_torsion_abs": "3.00000000000000000000000000000000000000000000000000000000000",
+      "cusp_shape_modulus": "3.46410161513775458705489268301174473388561050762076125611161",
+      "meridian_torsion_dy_abs": "0.866025403784438646763723170752936183471402626905190314027904",
+      "meridian_torsion_dg_abs": "0.866025403784438646763723170752936183471402626905190314027903",
+      "superseded_detJ_sqrt3": "1.73205080756887729352744634150587236694280525381038062805581",
+      "ratio_superseded_detJ_to_dy_meridian": "2.00000000000000000000000000000000000000000000000000000000000",
+      "thm14_bar_parity_sign": -1,
+      "thm14_reciprocality_abs_err": "2.47569674231290781276617027476929198992814075231901769729438e-78"
+    },
+    "whitehead_link_L5a1": {
+      "num_boundary_tori_b": 2,
+      "wirtinger_relator_norm_err": "0.0",
+      "thm5_multilongitude_torsion_re": "8.00000000000000000000000000000000000000000000000000000000000",
+      "thm5_multilongitude_torsion_im": "-8.00000000000000000000000000000000000000000000000000000000000",
+      "thm5_multilongitude_torsion_abs": "11.3137084989847603904135097936775846285573750030155845854134",
+      "cusp_shape_modulus_product": "8.00000000000000000000000000000000000000000000000000000000000",
+      "multimeridian_torsion_dy_abs": "1.41421356237309504880168872420969807856967187537694807317668",
+      "multimeridian_torsion_dg_abs": "1.41421356237309504880168872420969807856967187537694807317668",
+      "superseded_detJ_2_pow_5_2": "5.65685424949238019520675489683879231427868750150779229270672",
+      "ratio_superseded_detJ_to_dy_multimeridian": "4.00000000000000000000000000000000000000000000000000000000000",
+      "thm14_bar_parity_sign": 1,
+      "thm14_reciprocality_abs_err": "4.45799124933484787335763313638359144155671397003292290463920e-79"
+    },
+    "adjudication_qou_1el8": {
+      "per_cusp_factor_2_pow_c_minus_1_over_2": "REFUTED — unflattened |det J| carried a triangulation-specific 2^b factor (2 at b=1 giving sqrt(3) vs sqrt(3)/2; 4 at b=2 giving 2^{5/2} vs sqrt(2)).",
+      "universal_b_independent_law": "c_sigma = 2^{-1/2} * |T_mu|^{-1/2}",
+      "calibrated_prefactor_k_from_4_1": "0.707106781186547524400844362104849039284835937688474036588340",
+      "predicted_c_sigma_L5a1": "0.594603557501360533358749985280237957646486046231908706509501",
+      "target_2_pow_minus_3_4": "0.594603557501360533358749985280237957646486046231908706509501",
+      "abs_diff": "3.39767504547638467078325728665728600916293919002020279214275e-61"
+    }
+  },
+  "corrects_prior_inference": "qou-k00d/PR#4571 recorded tau=2sqrt(2); unflattened 1-loop gave |det J|=4sqrt(2)=2^{5/2}; Dubois-Yamaguchi 2012 Thm 5 eq. (15) + Porti cusp-shape change-of-curve pins triangulation-invariant |T_mu(4_1)|=sqrt(3)/2 and |T_mu(L5a1)|=sqrt(2), deriving c_sigma(L5a1)=2^{-3/4} with zero per-cusp factor.",
+  "cusp_factor_status": "REFUTED & DISSOLVED (qou-fl4t, qou-1el8): Dubois-Yamaguchi 2012 Theorem 5 eq. (15) holds for all b >= 1 without any b-dependent prefactor and matches one_loop_torsion.py at both b=1 (4_1) and b=2 (L5a1) to 80 dps.",
   "derivation_complete": true,
-  "reference": "Dimofte-Garoufalidis, Geom. Topol. 17 (2013) 1253; Porti adjoint torsion",
-  "timestamp": "2026-08-08T00:50:11+00:00"
+  "reference": "Dubois-Yamaguchi, arXiv:0906.1500v4 [dubois-yamaguchi2012]; Dimofte-Garoufalidis, Geom. Topol. 17 (2013) 1253; Porti (1997) adjoint torsion",
+  "timestamp": "2026-11-24T11:34:09+00:00",
+  "scriptFile": "whitehead_c_sigma_torsion.py",
+  "engine": "mpmath",
+  "scriptHash": "678375c9bd16",
+  "scriptCommitSha": "1a1ad133b6302bdfad8fbd289ba89a5362a8462a",
+  "commitSha": "1a1ad133b6302bdfad8fbd289ba89a5362a8462a",
+  "computedAt": "2026-11-24T11:34:10.004901+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0"
 }

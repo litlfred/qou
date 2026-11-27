@@ -15,7 +15,7 @@ export default remark({
   title:
     "The torsion half is not an invariant: the Frenet self-linking of $T(2,q)$ jumps by $q$ at $r = 4/(q^2+4)$",
   lean: {
-    ref: "qou:QOU.Mass.TorusInflection.inflection_iff",
+    ref: "qou:QOU.MassTheory.TorusInflection.inflection_iff",
     sorryFree: true,
     validation: "not_checked",
   },

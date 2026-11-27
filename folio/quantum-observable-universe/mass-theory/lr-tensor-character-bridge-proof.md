@@ -1,5 +1,3 @@
-## Proof
-
 Setting $I = \mathbf{1}$ in
 [Hecke branching trace decomposition](../mass-endomorphism/hecke-branching-trace-decomposition.md)
 collapses the operator-valued coefficient $A^\lambda_{\mu,\nu}(\mathbf{1})$

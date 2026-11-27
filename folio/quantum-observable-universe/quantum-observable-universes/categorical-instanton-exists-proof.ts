@@ -4,4 +4,5 @@ export default proof({
   label: "prf:categorical-instanton-exists",
   title: "Proof of existence of categorical instantons",
   uses: ["prop:categorical-instanton-exists"],
+  cites: ["belavin-polyakov-schwartz-tyupkin1975"],
 });

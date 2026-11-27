@@ -6,7 +6,7 @@ export default remark({
   title:
     "Bound $\\leftrightarrow$ free as a character-variety path: the deformation reading of $\\mathfrak{V}$",
   lean: {
-    ref: "qou:QOU.MassEndomorphism.AWDeformationPath",
+    ref: "qou:QOU.MassTheory.AWDeformationPath",
     validation: "not_checked",
   },
   uses: [

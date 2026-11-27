@@ -1,4 +1,4 @@
-import QOU.BraidKnot.ConfinementLevel
+import QOU.BraidsAndKnots.ConfinementLevel
 
 
 /-!

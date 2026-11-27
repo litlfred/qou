@@ -23,7 +23,7 @@ export default proposition({
   title:
     "Habiro completion ≡ Gröbner–Shirshov residue spectral sum (equivalence)",
   lean: {
-    ref: "qou:QOU.BraidKnot.HabiroResidueSumEquivalence",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.HabiroResidueSumEquivalence",
     validation: "not_checked",
   },
   uses: ["prop:full-pole-structure-mass-trace"],

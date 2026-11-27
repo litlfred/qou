@@ -15,10 +15,11 @@ export default definition({
   uses: ["def:frobenius-hopf-substrate", "def:adelic-substrate"],
   cites: ["kontsevich1995", "denef-loeser2001", "tate1967"],
   lean: {
-    ref: "qou:QOU.AlgebraicSubstrate.MotivicSubstrate",
+    ref: "qou:QOU.BringsSurface.MotivicSubstrate",
     validation: "not_checked",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): The QOU framework's algebraic substrate appears through two faces: the [Frobenius–Hopf substrate](#def:frobenius-hopf-substrate) and the [adelic substrate](#def:adelic-substrate). Both realize a single underlying object: the **motivic substrate**, a Grothendieck-ring datum equipped with a tower of realization functors." },
     {
       kind: "note",
       body:

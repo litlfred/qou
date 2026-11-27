@@ -1,4 +1,4 @@
-import QOU.Interactions.AlgebraicPrimality
+import QOU.Confinement.AlgebraicPrimality
 
 
 /-!

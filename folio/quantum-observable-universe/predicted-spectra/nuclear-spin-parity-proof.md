@@ -1,4 +1,3 @@
-*Proof.*
 Each nucleon—proton $\mathfrak{p} = \mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$ or neutron $\mathfrak{n} = \mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})$—is a knot (a single-component link closure of the Borromean braid). Knots carry half-integral spin; links carry integral spin.
 
 The nuclear link $\mathcal{N}(Z, N)$ is a satellite of $A$ Borromean knots joined by Hopf links. In $\mathrm{SU}_q(2)$ representation theory, the tensor product of $A$ spin-$\tfrac{1}{2}$ representations decomposes as:

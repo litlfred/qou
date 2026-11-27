@@ -27,16 +27,21 @@ from sympy.polys.matrices import DomainMatrix
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
-for p in (ROOT / "computations", ROOT / "computations" / "markov",
+for p in (ROOT / "computations", ROOT / "computations" / "substrate",
+          ROOT / "computations" / "markov",
           ROOT / "tools" / "qou-substrate" / "python"):
     sys.path.insert(0, str(p))
 
-from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 60
+set_compute_dps()
+
+from qou_substrate.constants import Q_50_DIGIT_STR, q_at  # noqa: E402
+
+mp.mp.dps = 80
 q, t = sp.symbols("q t", positive=True)
 K = sp.QQ.frac_field(q)
-Q0 = Q_MP
+Q0 = q_at(80)
 Q0_RAT = sp.Rational(Q_50_DIGIT_STR)
 H = q - 1 / q
 ZD = q**3 / (q**2 + 1)

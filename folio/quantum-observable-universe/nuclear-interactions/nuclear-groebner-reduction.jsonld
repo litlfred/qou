@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -35,7 +35,7 @@
     "temperley-lieb",
     "admissible-system"
   ],
-  "leanRef": "qou:QOU.Archimedean.nuclear_groebner_reduction",
+  "leanRef": "qou:QOU.MassTheory.Archimedean.nuclear_groebner_reduction",
   "text": "nuclear-groebner-reduction.md",
   "leanSource": "nuclear-groebner-reduction.lean",
   "provenance": "authored"

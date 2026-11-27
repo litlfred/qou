@@ -1,11 +1,11 @@
-**Proposition.** *Let $\mathbf{A}$ be a ring carrying a Hecke generator
+*Let $\mathbf{A}$ be a ring carrying a Hecke generator
 $\sigma$ with $\sigma^2 = h\,\sigma + 1$, and let $\mathrm{tr}$ be linear with
 $\mathrm{tr}(1) = 1$. If $\mathrm{tr}(\sigma) = z$ and Markov stabilisation
 $\mathrm{tr}(W\sigma) = z\,\mathrm{tr}(W)$ is assumed at $W = \sigma$, then*
 $$
   z^2 = h\,z + 1 .
 $$
-*Under convention D, where $z = q^3/(q^2+1)$ and $h = q - q^{-1}$, that equation
+*At $z = q^3/(q^2+1)$ with $h = q - q^{-1}$, that equation
 has no solution: for every $q > 0$*
 $$
   z^2 - h\,z - 1
@@ -24,7 +24,7 @@ Jones' theorem rather than as something proved in place.
 The proposition settles when that hypothesis may be invoked. Taking the word to
 be $\sigma$ itself — the interface generator occurring a second time — the Hecke
 quadratic evaluates the left-hand side outright, and stabilisation collapses into
-a condition on $z$ alone. Convention D's Markov parameter misses it, and misses
+a condition on $z$ alone. The Markov parameter $z = q^3/(q^2+1)$ misses it, and misses
 it by a quantity whose closed form factors into two positive-definite quadratics,
 $q^2 \pm q + 1 = (q \pm \tfrac12)^2 + \tfrac34$. The defect is therefore strictly
 negative at every $q$, not merely at the substrate value; no choice of pin

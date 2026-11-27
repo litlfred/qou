@@ -1,5 +1,3 @@
-## Proof
-
 Recall the definition from the statement block: for a confined
 particle $\mathfrak{H}$,
 
@@ -27,7 +25,7 @@ The proof factors into three steps.
 generic $q$, the functional satisfying M1 (cyclicity), M2 (the
 Markov axiom
 $\mathrm{tr}^{(n)}(x \cdot \sigma_{n-1}) = z \cdot \mathrm{tr}^{(n-1)}(x)$
-with the framework parameter $z = q^{3}/(q^{2}+1)$, **convention D**), and M3
+with the framework parameter $z = q^{3}/(q^{2}+1)$), and M3
 ($\mathrm{tr}(1) = 1$) is unique
 ([Markov-trace uniqueness](#prop:markov-trace-frobenius-selection);
 Jones \cite{jones1987}, Wenzl \cite{wenzl1988}). Consequently any

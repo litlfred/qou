@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:qns-shell-tail-collapse",
   lean: {
-    ref: "qou:QOU.FluidDynamics.PhysicalLayerLeray.trajectory_tail_collapse",
+    ref: "qou:QOU.FluidDynamics.physical_layer_leray.trajectory_tail_collapse",
   },
   title:
     "Per-amplitude tail collapse in the discrete $q$-shell hierarchy",

@@ -1,6 +1,3 @@
-**Conjecture (Bring figure-8 volume as depth-2 grouplike value;
-50-digit canonical witness).**
-
 *The hyperbolic volume of the figure-8 knot $4_1$ embedded in
 Bring's genus-4 surface
 ([Figure-8 knot $4_1$ as illustration of the algebraic / archimedean dichotomy](#rem:figure-8-archimedean-illustration))

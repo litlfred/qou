@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Z=N substrate-q correction to the Kashaev law",
   lean: {
-    ref: "qou:QOU.BraidKnot.ZeqNRhoCorrection",
+    ref: "qou:BraidKnotOctonion.ZeqNRhoCorrection",
     validation: "not_checked",
   },
   uses: [

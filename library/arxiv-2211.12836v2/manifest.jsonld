@@ -42,6 +42,18 @@
     "library/arxiv-2211.12836v2/sections/sec-027"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY — We study a class of commuting Markov kernels whose simplest element describes the movement of k particles on a discrete circle of size n\n\n**QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY**\n\n*DYSON BROWNIAN MOTION*\n\n68 pp, 29 sections.\n\n**Abstract.** We study a class of commuting Markov kernels whose simplest element describes the movement of k particles on a discrete circle of size n conditioned to not intersect each other. Such Markov kernels are related to the quantum cohomology ring of the Grassmannian, which is an algebraic object counting analytic maps from P1(C) to the Grassmannian space of k-dimensional vector subspaces of Cn with prescribed constraints at some points of P1(C). We obtain a Berry- Esseen theorem and a local limit theorem for an arbitrary product of approximately n2 Markov kernels belonging to the above class, when k is ﬁxed. As a byproduct of those results, we derive asymptotic formulas for the quantum cohomology ring of the Grassmannian in terms of the heat kernel on SU(k). To Philippe Biane, for his 60th birthday.\n\n**Outline.** Front matter; 1 Introduction; 2 Presentation of the model and main results; 2.1 k-configuration on a circle and continuous; 2.2 A complete family of commuting Markov kern; 2.3 Relation between Bk,n and the unitary grou; 2.4 Main probabilistic theorems; 2.5 A geometric corollary on quantum cohomolog; 2.6 Related results and perspectives; 3 Positively multiplicative graphs, random wal; 3.1 Family of random walks and h-transform; 3.2 Convolution product on L2h(V); 3.3 Integrable PM-graph, Fourier transform and; 4 Noncolliding particles on a circle and eigen; 4.1 The graph Bk,n as an integrable PM-graph; 4.2 h-transform, convolution and Fourier trans; 4.3 Fourier transform on Tk; 4.4 Invariant Brownian motion on Uk and unitar",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

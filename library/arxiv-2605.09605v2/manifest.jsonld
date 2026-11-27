@@ -19,6 +19,18 @@
     "library/arxiv-2605.09605v2/sections/sec-004"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Cocycle Actions on Hidden Quantum Markov Models: Symmetry Protection and Topological Order — We develop a symmetry action framework for hidden quantum Markov models (HQMMs) tailored to\n\n**Cocycle Actions on Hidden Quantum Markov Models: Symmetry Protection and Topological Order**\n\n*Abdessatar Souissi*\n\n17 pp, 6 sections.\n\n**Abstract.** We develop a symmetry action framework for hidden quantum Markov models (HQMMs) tailored to one-dimensional quantum spin systems and symmetry-protected topological (SPT) phases. In our setting, a symmetry group G acts projectively on the hidden (virtual) degrees of freedom and linearly on the physical observation space, yielding a global HQMM state that is invariant under the combined action of G for both conventional and causal (input– output) structures. We show that such symmetry actions are naturally classified by a group- cohomology 2-cocycle [ω] ∈H2(G, U(1)), in direct analogy with the standard cohomological classification of one-dimensional bosonic SPT phases via projective edge representations.\n\n**Outline.** Front matter; Introduction; Cocycle Actions and Symmetry Protection in HQM; Application to AKLT's Symmetry-Protected Topol; Discussion and Outlook; Appedix: Hidden Quantum Markov Models",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {

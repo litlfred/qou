@@ -43,7 +43,7 @@ use rayon::prelude::*;
 use rug::ops::Pow;
 use rug::{Assign, Float};
 use serde_json::{json, Value};
-use std::collections::HashMap;
+use std::collections::{BTreeMap, HashMap};
 use std::sync::atomic::{AtomicUsize, Ordering};
 use std::sync::Mutex;
 use std::time::Instant;
@@ -257,9 +257,16 @@ impl Coefs {
     }
 }
 
-/// v <- v * rho(a + b sigma_i), in place.  tmp: scratch Floats.
+/// v <- v * rho(a + b sigma_i), in place.  tmp: scratch Floats (zero heap alloc).
 #[inline]
-fn apply(v: &mut [Float], ops: &[Op], c: &Coefs, t1: &mut Float, t2: &mut Float) {
+fn apply(
+    v: &mut [Float],
+    ops: &[Op],
+    c: &Coefs,
+    t1: &mut Float,
+    t2: &mut Float,
+    t3: &mut Float,
+) {
     for op in ops {
         match *op {
             Op::Diag { j, plus } => {
@@ -270,8 +277,12 @@ fn apply(v: &mut [Float], ops: &[Op], c: &Coefs, t1: &mut Float, t2: &mut Float)
                 {
                     let x = &v[jp];
                     let y = &v[jm];
-                    t1.assign(&k[0] * x + &k[1] * y);
-                    t2.assign(&k[2] * x + &k[3] * y);
+                    t1.assign(&k[0] * x);
+                    t3.assign(&k[1] * y);
+                    *t1 += &*t3;
+                    t2.assign(&k[2] * x);
+                    t3.assign(&k[3] * y);
+                    *t2 += &*t3;
                 }
                 std::mem::swap(&mut v[jp], t1);
                 std::mem::swap(&mut v[jm], t2);
@@ -291,8 +302,9 @@ fn identity_rows(d: usize, prec: u32) -> Vec<Vec<Float>> {
 fn mat_apply(m: &mut [Vec<Float>], ops: &[Op], c: &Coefs, prec: u32) {
     let mut t1 = Float::new(prec);
     let mut t2 = Float::new(prec);
+    let mut t3 = Float::new(prec);
     for row in m.iter_mut() {
-        apply(row, ops, c, &mut t1, &mut t2);
+        apply(row, ops, c, &mut t1, &mut t2, &mut t3);
     }
 }
 
@@ -381,6 +393,13 @@ fn self_check(s: &Scalars, tw: &Tower, nmax: usize) -> Float {
             bump(&mut worst, Float::with_val(p, t3 - target).abs());
         }
     }
+    if tw.tabs.len() > 9 {
+        let dir = chain_direct_prec(3, 6, p, tw, false);
+        let peeled = chain_prec(3, 6, p, tw, false);
+        for (a, b) in dir.iter().zip(&peeled) {
+            bump(&mut worst, Float::with_val(p, &a.val - &b.val).abs());
+        }
+    }
     worst
 }
 
@@ -417,7 +436,7 @@ impl<'a> Walk<'a> {
     /// child row: lift `row` (level m, shape k) into level m+1 shape k+x, then
     /// multiply by rho(B_m).  Writes into `out` (resized to the child dim).
     fn step(&self, m: usize, k: usize, x: usize, row: &[Float], out: &mut Vec<Float>,
-            t1: &mut Float, t2: &mut Float) {
+            t1: &mut Float, t2: &mut Float, t3: &mut Float) {
         let kc = k + x;
         let d = self.tw.tabs[m + 1][kc].len();
         if out.len() < d {
@@ -433,14 +452,14 @@ impl<'a> Walk<'a> {
         let tk = self.is_p[m];
         for i in 0..m {
             let c = &self.coefs[factor_type(self.is_p[i], tk)];
-            apply(&mut out[..d], &self.tw.ops[m + 1][kc][i], c, t1, t2);
+            apply(&mut out[..d], &self.tw.ops[m + 1][kc][i], c, t1, t2, t3);
         }
     }
 
     /// DFS from node (m, k, idx) whose row is bufs[m]; accumulate diag entries
     /// at levels >= min_acc; do not descend below level max_level.
     fn dfs(&self, m: usize, k: usize, idx: usize, bufs: &mut [Vec<Float>], acc: &mut Acc,
-           min_acc: usize, max_level: usize, t1: &mut Float, t2: &mut Float) {
+           min_acc: usize, max_level: usize, t1: &mut Float, t2: &mut Float, t3: &mut Float) {
         if m >= min_acc {
             acc[m][k] += &bufs[m][idx];
         }
@@ -453,14 +472,14 @@ impl<'a> Walk<'a> {
                 continue;
             }
             let (lo, hi) = bufs.split_at_mut(m + 1);
-            self.step(m, k, x, &lo[m], &mut hi[0], t1, t2);
-            self.dfs(m + 1, k + x, ci, bufs, acc, min_acc, max_level, t1, t2);
+            self.step(m, k, x, &lo[m], &mut hi[0], t1, t2, t3);
+            self.dfs(m + 1, k + x, ci, bufs, acc, min_acc, max_level, t1, t2, t3);
         }
     }
 
     /// Build the row of an arbitrary node by walking its root path.
     fn path_row(&self, m: usize, k: usize, idx: usize, bufs: &mut [Vec<Float>],
-                t1: &mut Float, t2: &mut Float) {
+                t1: &mut Float, t2: &mut Float, t3: &mut Float) {
         // reconstruct path upward
         let mut path = Vec::new(); // (level, shape, idx, last) from m down to 2
         let (mut mm, mut kk, mut ii) = (m, k, idx);
@@ -475,7 +494,7 @@ impl<'a> Walk<'a> {
         bufs[1].push(Float::with_val(self.prec, 1u32));
         for &(lvl, sk, _, last) in path.iter().rev() {
             let (lo, hi) = bufs.split_at_mut(lvl);
-            self.step(lvl - 1, sk - last, last, &lo[lvl - 1], &mut hi[0], t1, t2);
+            self.step(lvl - 1, sk - last, last, &lo[lvl - 1], &mut hi[0], t1, t2, t3);
         }
     }
 
@@ -496,9 +515,10 @@ impl<'a> Walk<'a> {
         bufs[1].push(Float::with_val(prec, 1u32));
         let mut t1 = Float::new(prec);
         let mut t2 = Float::new(prec);
+        let mut t3 = Float::new(prec);
         // levels < split, serially
         let mut acc = new_acc(tw, amax, prec);
-        self.dfs(1, 0, 0, &mut bufs, &mut acc, 1, split - 1, &mut t1, &mut t2);
+        self.dfs(1, 0, 0, &mut bufs, &mut acc, 1, split - 1, &mut t1, &mut t2, &mut t3);
         if split > amax || split - 1 >= amax {
             return acc;
         }
@@ -515,9 +535,10 @@ impl<'a> Walk<'a> {
                 let mut bufs: Vec<Vec<Float>> = vec![Vec::new(); amax + 1];
                 let mut t1 = Float::new(prec);
                 let mut t2 = Float::new(prec);
+                let mut t3 = Float::new(prec);
                 let mut acc = new_acc(tw, amax, prec);
-                self.path_row(split, k, j, &mut bufs, &mut t1, &mut t2);
-                self.dfs(split, k, j, &mut bufs, &mut acc, split, amax, &mut t1, &mut t2);
+                self.path_row(split, k, j, &mut bufs, &mut t1, &mut t2, &mut t3);
+                self.dfs(split, k, j, &mut bufs, &mut acc, split, amax, &mut t1, &mut t2, &mut t3);
                 let n = done.fetch_add(1, Ordering::SeqCst) + 1;
                 if verbose {
                     let mut l = last.lock().unwrap();
@@ -550,8 +571,7 @@ struct Row {
     val: Float,
 }
 
-fn chain(z: usize, nmax: usize, dps: u32, tw: &Tower, verbose: bool) -> Vec<Row> {
-    let prec = bits_for(dps);
+fn chain_direct_prec(z: usize, nmax: usize, prec: u32, tw: &Tower, verbose: bool) -> Vec<Row> {
     let s = Scalars::new(prec);
     let amax = z + nmax;
     let zero = s.f(0);
@@ -565,7 +585,7 @@ fn chain(z: usize, nmax: usize, dps: u32, tw: &Tower, verbose: bool) -> Vec<Row>
     ];
     let is_p: Vec<bool> = (0..amax).map(|i| i < z).collect();
     let w = Walk { tw, coefs, is_p, amax, prec };
-    let acc = w.run(verbose, &format!("Z={z} N<={nmax} dps={dps}"));
+    let acc = w.run(verbose, &format!("Z={z} N<={nmax} prec={prec}"));
     let mut rows = Vec::new();
     for m in (z + 1)..=amax {
         let mut tr = s.f(0);
@@ -579,6 +599,588 @@ fn chain(z: usize, nmax: usize, dps: u32, tw: &Tower, verbose: bool) -> Vec<Row>
         rows.push(Row { z, n: m - z, a: m, pn, val: tr / two_pn });
     }
     rows
+}
+
+// ---------------------------------------------------------------- exact Hecke-Markov peeling
+
+/// Formal generators for the neutron chain over H_{Z+1}(q):
+/// - `Q0` = E_{Z,0} * P_Z in H_{Z+1}(q),
+/// - `Q`  = P_Z = prod_{i=0}^{Z-1} (2 sigma_i - h) in H_{Z+1}(q),
+/// - `S(r)` = sigma_{Z+r} - h = sigma_{Z+r}^{-1} (r >= 0).
+/// Every `S(r)` with r >= 1 commutes elementwise with H_{Z+1}(q) (`Q0` and `Q`).
+/// By cyclicity of tr_D, the Markov property tr_D(A S(m) B) = (z_D - h) tr_D(A B)
+/// for A, B in H_{Z+m+1}(q), and the Hecke/braid relations on {S(r)}, a chain of N
+/// neutrons reduces exactly from level Z + N to level Z + floor(N/2) + 1.
+#[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Debug)]
+enum Sym {
+    Q0,
+    Q,
+    S(usize),
+}
+
+fn comm_sym(a: Sym, b: Sym) -> bool {
+    match (a, b) {
+        (Sym::Q0 | Sym::Q, Sym::Q0 | Sym::Q) => false,
+        (Sym::Q0 | Sym::Q, Sym::S(r)) | (Sym::S(r), Sym::Q0 | Sym::Q) => r >= 1,
+        (Sym::S(x), Sym::S(y)) => x.abs_diff(y) >= 2,
+    }
+}
+
+fn canon_rotate(wd: &[Sym]) -> Vec<Sym> {
+    let i0 = wd.iter().position(|&x| x == Sym::Q0).expect("Q0 present once");
+    let mut arr = Vec::with_capacity(wd.len());
+    arr.extend_from_slice(&wd[i0..]);
+    arr.extend_from_slice(&wd[..i0]);
+    loop {
+        let mut changed = false;
+        for i in 1..arr.len().saturating_sub(1) {
+            if comm_sym(arr[i], arr[i + 1]) && arr[i] > arr[i + 1] {
+                arr.swap(i, i + 1);
+                changed = true;
+            }
+        }
+        if !changed {
+            break;
+        }
+    }
+    arr
+}
+
+fn add_sym_term(map: &mut BTreeMap<Vec<Sym>, Float>, k: Vec<Sym>, delta: Float) {
+    if delta.is_zero() {
+        return;
+    }
+    if let Some(v) = map.get_mut(&k) {
+        *v += &delta;
+        if v.is_zero() {
+            map.remove(&k);
+        }
+    } else {
+        map.insert(k, delta);
+    }
+}
+
+/// Returns `(lvl_offset, terms)` where evaluation runs in H_{Z + lvl_offset}(q).
+fn peel_neutron_word(n_neu: usize, s: &Scalars) -> (usize, Vec<(Vec<Sym>, Float)>) {
+    assert!(n_neu >= 1);
+    let p = s.prec;
+    let mut w = Vec::new();
+    for j in 0..n_neu {
+        w.push(if j == 0 { Sym::Q0 } else { Sym::Q });
+        for r in 0..j {
+            w.push(Sym::S(r));
+        }
+    }
+    if n_neu == 1 {
+        return (1, vec![(w, s.f(1))]);
+    }
+    let w_val = Float::with_val(p, &s.z_d - &s.h);
+    let mh = Float::with_val(p, -&s.h);
+    let mut terms: BTreeMap<Vec<Sym>, Float> = BTreeMap::new();
+    terms.insert(canon_rotate(&w), s.f(1));
+    let mut cur_max_s: isize = (n_neu as isize) - 2;
+
+    for m in (1..=(n_neu - 2)).rev() {
+        let target = Sym::S(m);
+        let mut ok = true;
+        let mut nxt: BTreeMap<Vec<Sym>, Float> = BTreeMap::new();
+        let mut stack: Vec<(Vec<Sym>, Float)> = terms.iter().map(|(k, v)| (k.clone(), v.clone())).collect();
+        let mut steps = 0usize;
+        while let Some((wd, cf)) = stack.pop() {
+            steps += 1;
+            if steps > 50_000 {
+                ok = false;
+                break;
+            }
+            if cf.is_zero() {
+                continue;
+            }
+            let cnt = wd.iter().filter(|&&x| x == target).count();
+            if cnt == 0 {
+                add_sym_term(&mut nxt, canon_rotate(&wd), cf);
+                continue;
+            }
+            if cnt == 1 {
+                let pos = wd.iter().position(|&x| x == target).unwrap();
+                let mut nw = Vec::with_capacity(wd.len() - 1);
+                nw.extend_from_slice(&wd[..pos]);
+                nw.extend_from_slice(&wd[pos + 1..]);
+                add_sym_term(&mut nxt, canon_rotate(&nw), Float::with_val(p, &cf * &w_val));
+                continue;
+            }
+            let idxs: Vec<usize> = wd
+                .iter()
+                .enumerate()
+                .filter_map(|(i, &x)| if x == target { Some(i) } else { None })
+                .collect();
+            let mut reduced = false;
+            for idx_pos in 0..idxs.len() {
+                let a = idxs[idx_pos];
+                let mut wk = Vec::with_capacity(wd.len());
+                wk.extend_from_slice(&wd[a..]);
+                wk.extend_from_slice(&wd[..a]);
+                let b = (idxs[(idx_pos + 1) % idxs.len()] + wd.len() - a) % wd.len();
+                let seg = &wk[1..b];
+                let mut l = 0usize;
+                while l < seg.len() && comm_sym(seg[l], target) {
+                    l += 1;
+                }
+                let mut r = seg.len();
+                while r > l && comm_sym(seg[r - 1], target) {
+                    r -= 1;
+                }
+                let mid = &seg[l..r];
+                let pref = &seg[..l];
+                let suf = &seg[r..];
+                let rest = &wk[b + 1..];
+                if mid.is_empty() {
+                    let mut w1 = Vec::with_capacity(wk.len() - 2);
+                    w1.extend_from_slice(pref);
+                    w1.extend_from_slice(suf);
+                    w1.extend_from_slice(rest);
+                    let mut w2 = Vec::with_capacity(wk.len() - 1);
+                    w2.extend_from_slice(pref);
+                    w2.push(target);
+                    w2.extend_from_slice(suf);
+                    w2.extend_from_slice(rest);
+                    stack.push((w1, cf.clone()));
+                    stack.push((w2, Float::with_val(p, &mh * &cf)));
+                    reduced = true;
+                    break;
+                } else if mid.len() == 1 && mid[0] == Sym::S(m - 1) {
+                    let mut nw = Vec::with_capacity(wk.len());
+                    nw.extend_from_slice(pref);
+                    nw.push(Sym::S(m - 1));
+                    nw.push(target);
+                    nw.push(Sym::S(m - 1));
+                    nw.extend_from_slice(suf);
+                    nw.extend_from_slice(rest);
+                    stack.push((nw, cf));
+                    reduced = true;
+                    break;
+                } else {
+                    let mut simp = false;
+                    for pos in 0..mid.len() {
+                        if comm_sym(mid[pos], target) && (0..pos).all(|u| comm_sym(mid[u], mid[pos])) {
+                            let mut nw = Vec::with_capacity(wk.len());
+                            nw.push(target);
+                            nw.extend_from_slice(pref);
+                            nw.push(mid[pos]);
+                            nw.extend_from_slice(&mid[..pos]);
+                            nw.extend_from_slice(&mid[pos + 1..]);
+                            nw.extend_from_slice(suf);
+                            nw.push(target);
+                            nw.extend_from_slice(rest);
+                            stack.push((nw, cf.clone()));
+                            simp = true;
+                            break;
+                        }
+                        if comm_sym(mid[pos], target)
+                            && ((pos + 1)..mid.len()).all(|u| comm_sym(mid[pos], mid[u]))
+                        {
+                            let mut nw = Vec::with_capacity(wk.len());
+                            nw.push(target);
+                            nw.extend_from_slice(pref);
+                            nw.extend_from_slice(&mid[..pos]);
+                            nw.extend_from_slice(&mid[pos + 1..]);
+                            nw.push(mid[pos]);
+                            nw.extend_from_slice(suf);
+                            nw.push(target);
+                            nw.extend_from_slice(rest);
+                            stack.push((nw, cf.clone()));
+                            simp = true;
+                            break;
+                        }
+                    }
+                    if simp {
+                        reduced = true;
+                        break;
+                    }
+                    for p1 in 0..mid.len() {
+                        let Sym::S(k) = mid[p1] else { continue };
+                        for p2 in (p1 + 1)..mid.len() {
+                            if mid[p2] != Sym::S(k) {
+                                continue;
+                            }
+                            let sub = &mid[p1 + 1..p2];
+                            if sub.iter().all(|&u| comm_sym(u, Sym::S(k))) {
+                                let mut w1 = Vec::with_capacity(wk.len() - 2);
+                                w1.push(target);
+                                w1.extend_from_slice(pref);
+                                w1.extend_from_slice(&mid[..p1]);
+                                w1.extend_from_slice(sub);
+                                w1.extend_from_slice(&mid[p2 + 1..]);
+                                w1.extend_from_slice(suf);
+                                w1.push(target);
+                                w1.extend_from_slice(rest);
+
+                                let mut w2 = Vec::with_capacity(wk.len() - 1);
+                                w2.push(target);
+                                w2.extend_from_slice(pref);
+                                w2.extend_from_slice(&mid[..p1]);
+                                w2.extend_from_slice(sub);
+                                w2.push(Sym::S(k));
+                                w2.extend_from_slice(&mid[p2 + 1..]);
+                                w2.extend_from_slice(suf);
+                                w2.push(target);
+                                w2.extend_from_slice(rest);
+
+                                stack.push((w1, cf.clone()));
+                                stack.push((w2, Float::with_val(p, &mh * &cf)));
+                                simp = true;
+                                break;
+                            }
+                            let non_comm: Vec<usize> = sub
+                                .iter()
+                                .enumerate()
+                                .filter_map(|(ix, &u)| if !comm_sym(u, Sym::S(k)) { Some(ix) } else { None })
+                                .collect();
+                            if non_comm.len() == 1 && k >= 1 && sub[non_comm[0]] == Sym::S(k - 1) {
+                                let c_idx = non_comm[0];
+                                let mut nw = Vec::with_capacity(wk.len());
+                                nw.push(target);
+                                nw.extend_from_slice(pref);
+                                nw.extend_from_slice(&mid[..p1]);
+                                nw.extend_from_slice(&sub[..c_idx]);
+                                nw.push(Sym::S(k - 1));
+                                nw.push(Sym::S(k));
+                                nw.push(Sym::S(k - 1));
+                                nw.extend_from_slice(&sub[c_idx + 1..]);
+                                nw.extend_from_slice(&mid[p2 + 1..]);
+                                nw.extend_from_slice(suf);
+                                nw.push(target);
+                                nw.extend_from_slice(rest);
+                                stack.push((nw, cf.clone()));
+                                simp = true;
+                                break;
+                            }
+                        }
+                        if simp {
+                            break;
+                        }
+                    }
+                    if simp {
+                        reduced = true;
+                        break;
+                    }
+                }
+            }
+            if !reduced {
+                ok = false;
+                break;
+            }
+        }
+        if !ok {
+            break;
+        }
+        terms = nxt;
+        cur_max_s = (m as isize) - 1;
+    }
+    let lvl_off = if cur_max_s < 0 { 1 } else { (cur_max_s as usize) + 2 };
+    (lvl_off, terms.into_iter().collect())
+}
+
+struct TrieNode {
+    edges: Vec<(Sym, usize)>,
+}
+
+struct WalkPeel<'a> {
+    tw: &'a Tower,
+    coefs: [Coefs; 3],
+    z: usize,
+    lvl: usize,
+    prec: u32,
+    trie: Vec<TrieNode>,
+    max_depth: usize,
+}
+
+impl<'a> WalkPeel<'a> {
+    /// Lift `row` (level m, shape k) into level m+1 shape k+x; apply proton/first-neutron
+    /// factors only for m <= z (producing Q0 at level z+1, then pure GT lift to `lvl`).
+    fn step_lift(
+        &self,
+        m: usize,
+        k: usize,
+        x: usize,
+        row: &[Float],
+        out: &mut Vec<Float>,
+        t1: &mut Float,
+        t2: &mut Float,
+        t3: &mut Float,
+    ) {
+        let kc = k + x;
+        let d = self.tw.tabs[m + 1][kc].len();
+        if out.len() < d {
+            out.resize_with(d, || Float::new(self.prec));
+        }
+        for v in out[..d].iter_mut() {
+            v.assign(0u32);
+        }
+        for &(j, pj) in &self.tw.embed[m + 1][kc][x] {
+            out[j].assign(&row[pj]);
+        }
+        if m < self.z {
+            for i in 0..m {
+                apply(&mut out[..d], &self.tw.ops[m + 1][kc][i], &self.coefs[0], t1, t2, t3);
+            }
+        } else if m == self.z {
+            for i in 0..self.z {
+                apply(&mut out[..d], &self.tw.ops[m + 1][kc][i], &self.coefs[2], t1, t2, t3);
+            }
+        }
+    }
+
+    fn eval_trie(
+        &self,
+        u: usize,
+        dep: usize,
+        k: usize,
+        idx: usize,
+        d: usize,
+        tbufs: &mut [Vec<Float>],
+        node_acc: &mut [Vec<Float>],
+        t1: &mut Float,
+        t2: &mut Float,
+        t3: &mut Float,
+    ) {
+        node_acc[u][k] += &tbufs[dep][idx];
+        for &(sym, child_u) in &self.trie[u].edges {
+            let (lo, hi) = tbufs.split_at_mut(dep + 1);
+            let cur = &lo[dep][..d];
+            let nxt = &mut hi[0];
+            if nxt.len() < d {
+                nxt.resize_with(d, || Float::new(self.prec));
+            }
+            for j in 0..d {
+                nxt[j].assign(&cur[j]);
+            }
+            match sym {
+                Sym::Q => {
+                    for i in 0..self.z {
+                        apply(&mut nxt[..d], &self.tw.ops[self.lvl][k][i], &self.coefs[2], t1, t2, t3);
+                    }
+                }
+                Sym::S(r) => {
+                    apply(&mut nxt[..d], &self.tw.ops[self.lvl][k][self.z + r], &self.coefs[1], t1, t2, t3);
+                }
+                Sym::Q0 => unreachable!("Q0 only at root"),
+            }
+            self.eval_trie(child_u, dep + 1, k, idx, d, tbufs, node_acc, t1, t2, t3);
+        }
+    }
+
+    fn dfs_peel(
+        &self,
+        m: usize,
+        k: usize,
+        idx: usize,
+        bufs: &mut [Vec<Float>],
+        tbufs: &mut [Vec<Float>],
+        node_acc: &mut [Vec<Float>],
+        t1: &mut Float,
+        t2: &mut Float,
+        t3: &mut Float,
+    ) {
+        if m == self.lvl {
+            let d = self.tw.tabs[self.lvl][k].len();
+            if tbufs[0].len() < d {
+                tbufs[0].resize_with(d, || Float::new(self.prec));
+            }
+            for j in 0..d {
+                tbufs[0][j].assign(&bufs[self.lvl][j]);
+            }
+            self.eval_trie(0, 0, k, idx, d, tbufs, node_acc, t1, t2, t3);
+            return;
+        }
+        for x in 0..2 {
+            let ci = self.tw.child[m][k][idx][x];
+            if ci == usize::MAX {
+                continue;
+            }
+            let (lo, hi) = bufs.split_at_mut(m + 1);
+            self.step_lift(m, k, x, &lo[m], &mut hi[0], t1, t2, t3);
+            self.dfs_peel(m + 1, k + x, ci, bufs, tbufs, node_acc, t1, t2, t3);
+        }
+    }
+
+    fn path_row(
+        &self,
+        m: usize,
+        k: usize,
+        idx: usize,
+        bufs: &mut [Vec<Float>],
+        t1: &mut Float,
+        t2: &mut Float,
+        t3: &mut Float,
+    ) {
+        let mut path = Vec::new();
+        let (mut mm, mut kk, mut ii) = (m, k, idx);
+        while mm > 1 {
+            let (pidx, last) = self.tw.parent[mm][kk][ii];
+            path.push((mm, kk, ii, last as usize));
+            kk -= last as usize;
+            ii = pidx;
+            mm -= 1;
+        }
+        bufs[1].clear();
+        bufs[1].push(Float::with_val(self.prec, 1u32));
+        for &(lv, sk, _, last) in path.iter().rev() {
+            let (lo, hi) = bufs.split_at_mut(lv);
+            self.step_lift(lv - 1, sk - last, last, &lo[lv - 1], &mut hi[0], t1, t2, t3);
+        }
+    }
+
+    fn new_node_acc(&self) -> Vec<Vec<Float>> {
+        let n_shapes = self.tw.tabs[self.lvl].len();
+        (0..self.trie.len())
+            .map(|_| (0..n_shapes).map(|_| Float::with_val(self.prec, 0u32)).collect())
+            .collect()
+    }
+
+    fn run(&self, verbose: bool, tag: &str) -> Vec<Vec<Float>> {
+        let lvl = self.lvl;
+        let prec = self.prec;
+        let tw = self.tw;
+        let mut split = 1;
+        while split < lvl {
+            let cnt: usize = tw.tabs[split].iter().map(|v| v.len()).sum();
+            if cnt >= 400 {
+                break;
+            }
+            split += 1;
+        }
+        if split >= lvl {
+            let mut bufs: Vec<Vec<Float>> = vec![Vec::new(); lvl + 1];
+            bufs[1].push(Float::with_val(prec, 1u32));
+            let mut tbufs: Vec<Vec<Float>> = vec![Vec::new(); self.max_depth + 2];
+            let mut t1 = Float::new(prec);
+            let mut t2 = Float::new(prec);
+            let mut t3 = Float::new(prec);
+            let mut node_acc = self.new_node_acc();
+            self.dfs_peel(1, 0, 0, &mut bufs, &mut tbufs, &mut node_acc, &mut t1, &mut t2, &mut t3);
+            return node_acc;
+        }
+        let tasks: Vec<(usize, usize)> = (0..tw.tabs[split].len())
+            .flat_map(|k| (0..tw.tabs[split][k].len()).map(move |j| (k, j)))
+            .collect();
+        let ntask = tasks.len();
+        let done = AtomicUsize::new(0);
+        let t0 = Instant::now();
+        let last = Mutex::new(Instant::now());
+        let partials: Vec<Vec<Vec<Float>>> = tasks
+            .par_iter()
+            .map(|&(k, j)| {
+                let mut bufs: Vec<Vec<Float>> = vec![Vec::new(); lvl + 1];
+                let mut tbufs: Vec<Vec<Float>> = vec![Vec::new(); self.max_depth + 2];
+                let mut t1 = Float::new(prec);
+                let mut t2 = Float::new(prec);
+                let mut t3 = Float::new(prec);
+                let mut node_acc = self.new_node_acc();
+                self.path_row(split, k, j, &mut bufs, &mut t1, &mut t2, &mut t3);
+                self.dfs_peel(split, k, j, &mut bufs, &mut tbufs, &mut node_acc, &mut t1, &mut t2, &mut t3);
+                let n = done.fetch_add(1, Ordering::SeqCst) + 1;
+                if verbose {
+                    let mut l = last.lock().unwrap();
+                    if l.elapsed().as_secs() >= 10 || n == ntask {
+                        let el = t0.elapsed().as_secs();
+                        let eta = if n > 0 { el * (ntask - n) as u64 / n as u64 } else { 0 };
+                        eprintln!("  [{tag}] subtrees {n}/{ntask}  elapsed {el}s  ETA ~{eta}s");
+                        *l = Instant::now();
+                    }
+                }
+                node_acc
+            })
+            .collect();
+        let mut out = self.new_node_acc();
+        for p in partials {
+            for u in 0..out.len() {
+                for k in 0..out[u].len() {
+                    out[u][k] += &p[u][k];
+                }
+            }
+        }
+        out
+    }
+}
+
+fn chain_prec(z: usize, nmax: usize, prec: u32, tw: &Tower, verbose: bool) -> Vec<Row> {
+    let s = Scalars::new(prec);
+    let zero = s.f(0);
+    let one = s.f(1);
+    let two = s.f(2);
+    let mh = Float::with_val(prec, -&s.h);
+
+    // Group n = 1..=nmax by reduced evaluation level `lvl = z + lvl_off`.
+    let mut by_lvl: BTreeMap<usize, Vec<(usize, Vec<(Vec<Sym>, Float)>)>> = BTreeMap::new();
+    for n in 1..=nmax {
+        let (lvl_off, terms) = peel_neutron_word(n, &s);
+        by_lvl.entry(z + lvl_off).or_default().push((n, terms));
+    }
+
+    let mut val_by_n: BTreeMap<usize, Float> = BTreeMap::new();
+    for (lvl, group) in by_lvl {
+        let mut trie = vec![TrieNode { edges: Vec::new() }];
+        let mut max_depth = 0usize;
+        // (n_neu, trie_node_index, coeff)
+        let mut terminals: Vec<(usize, usize, Float)> = Vec::new();
+        for (n_neu, terms) in group {
+            for (wd, cf) in terms {
+                assert_eq!(wd[0], Sym::Q0);
+                let tail = &wd[1..];
+                if tail.len() > max_depth {
+                    max_depth = tail.len();
+                }
+                let mut u = 0usize;
+                for &sym in tail {
+                    if let Some(&(_, nxt_u)) = trie[u].edges.iter().find(|&&(es, _)| es == sym) {
+                        u = nxt_u;
+                    } else {
+                        let nxt_u = trie.len();
+                        trie.push(TrieNode { edges: Vec::new() });
+                        trie[u].edges.push((sym, nxt_u));
+                        u = nxt_u;
+                    }
+                }
+                terminals.push((n_neu, u, cf));
+            }
+        }
+        let coefs = [
+            Coefs::new(&s, &zero, &one, lvl),
+            Coefs::new(&s, &mh, &one, lvl),
+            Coefs::new(&s, &mh, &two, lvl),
+        ];
+        let wp = WalkPeel { tw, coefs, z, lvl, prec, trie, max_depth };
+        let node_acc = wp.run(verbose, &format!("Z={z} lvl={lvl} prec={prec}"));
+        let weights: Vec<Float> = (0..tw.tabs[lvl].len()).map(|k| s.weight(lvl, k)).collect();
+        let node_tr: Vec<Float> = node_acc
+            .iter()
+            .map(|per_k| {
+                let mut tr = s.f(0);
+                for (k, v) in per_k.iter().enumerate() {
+                    tr += Float::with_val(prec, &weights[k] * v);
+                }
+                tr
+            })
+            .collect();
+        for (n_neu, u, cf) in terminals {
+            let e = val_by_n.entry(n_neu).or_insert_with(|| s.f(0));
+            *e += Float::with_val(prec, &cf * &node_tr[u]);
+        }
+    }
+
+    let mut rows = Vec::new();
+    for n in 1..=nmax {
+        let a = z + n;
+        let pn = z * n;
+        let two_pn = Float::with_val(prec, s.f(2).pow(pn as u32));
+        let tr = val_by_n.remove(&n).expect("computed n");
+        rows.push(Row { z, n, a, pn, val: tr / two_pn });
+    }
+    rows
+}
+
+fn chain(z: usize, nmax: usize, dps: u32, tw: &Tower, verbose: bool) -> Vec<Row> {
+    chain_prec(z, nmax, bits_for(dps), tw, verbose)
 }
 
 // ---------------------------------------------------------------- output
@@ -681,10 +1283,21 @@ fn main() {
     assert!(check_dps >= 65 && check_dps != dps, "check precision must be >= 65 and differ");
     let amax = chains.iter().map(|&(z, n)| z + n).max().unwrap();
     assert!(amax <= 31, "bitmask tableaux support A <= 31");
+    let s_lvl = Scalars::new(bits_for(dps));
+    let lvl_max = chains
+        .iter()
+        .flat_map(|&(z, nmax)| {
+            let s_ref = &s_lvl;
+            (1..=nmax).map(move |n| z + peel_neutron_word(n, s_ref).0)
+        })
+        .max()
+        .unwrap()
+        .max(9);
     let t_start = Instant::now();
-    let tw = Tower::new(amax.max(8));
-    eprintln!("tower built to level {} in {:.1?}; largest dim at A={}: {}", amax.max(8),
-              t_start.elapsed(), amax, tw.tabs[amax].iter().map(|v| v.len()).max().unwrap());
+    let tw = Tower::new(lvl_max);
+    eprintln!("tower built to level {} (peeled from A_max={}) in {:.1?}; largest dim at level {}: {}",
+              lvl_max, amax, t_start.elapsed(), lvl_max,
+              tw.tabs[lvl_max].iter().map(|v| v.len()).max().unwrap());
 
     // self-checks at both precisions, failing hard
     let mut checks = Vec::new();
@@ -778,6 +1391,8 @@ fn main() {
             "python_reference_producer": "computations/probes/markov_trace_two_row_tower_probe.py",
             "q0": Q0_STR,
             "q0_anchor": "proton",
+            "q0Anchor": "proton",
+            "q0Value": Q0_STR,
             "z": "q^3/(q^2+1)",
             "dps": dps,
             "check_dps": check_dps,

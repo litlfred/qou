@@ -1,4 +1,3 @@
-**Definition.**
 *For two partitions $\lambda_1, \lambda_2$ with shadow prices $y_{\lambda_1}(q), y_{\lambda_2}(q) \in R$, the **local shadow-price ordering** at $q$ is:*
 
 $$

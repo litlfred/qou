@@ -1,4 +1,3 @@
-*Proof.*
 The partition $(2,2)$ is self-conjugate ($\lambda = \lambda'$),
 with $q$-dimension $d_q((2,2)) = [2]_q$ and Wedderburn weight
 $w_{(2,2)} = [2]_q^2/[4]_q!$.

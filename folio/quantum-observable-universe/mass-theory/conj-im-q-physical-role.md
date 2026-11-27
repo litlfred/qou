@@ -1,4 +1,3 @@
-**Conjecture (physical role of Im(q)).**
 *The substrate parameter $q$ admits a complex extension
 ([prop:q-zero-complex-extension](q-zero-complex-extension.md)).
 The current QOU framework's observables (categorical masses
@@ -214,7 +213,7 @@ directly. The candidate roles are all in **non-mass observables**.
   — the canonical lepton-mass formula is Im(q)-robust (modulus projection
   invariance); F_ℓ does NOT distinguish the three candidate Im(q) roles.
   Hence the F_ℓ conjecture is consistent with ALL three candidates.
-- [Conjectural canonical form of the pair-gen piece $\rho_K^{\text{pair-gen}}$](../mass-endomorphism/conj-rho-k-pair-gen-canonical-form.md) —
+- [Conjectural canonical form of the pair-gen piece $\rho_K^{\text{pair-gen}}$](conj-rho-k-pair-gen-canonical-form.md) —
   similarly Im(q)-robust at LO.
 - The complex-q machinery is **decoupled** from the mass-formula closure;
   closing the $\mathfrak{Q}_\beta$ residual or deriving F_ℓ does **not** require resolving

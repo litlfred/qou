@@ -1,0 +1,182 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/markov-gram-bilinear-vs-star",
+    "path": "folio/quantum-observable-universe/mass-theory/markov-gram-bilinear-vs-star"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "663d8a9b0356",
+          "ts": "1ff32b598408"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:20:31.398Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "'It is the interpretation that was wrong, not the arithmetic' matches the template but is the retraction's actual content — it states precisely what is withdrawn and what is kept, which a bare positive could not. False-positive class: substantive contrast.",
+        "notes": "note: the block uses '---' triple-hyphen dashes rather than the em-dash character; correct in LaTeX, worth knowing when counting dash density mechanically."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "663d8a9b0356",
+          "ts": "1ff32b598408"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:20:31.459Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Retraction-carrier remark read in full and re-derived. tr(A^2) for A with symmetric part (alpha,delta,beta) and antisymmetric part gamma expands to alpha^2 + 2beta^2 - 2gamma^2 + delta^2 exactly as stated, giving signature (d(d+1)/2, d(d-1)/2) for tr(AB) on M_d. Summing over H_3's blocks (dims 1,2,1 for (3),(2,1),(1^3); total 1+4+1 = 6) reproduces both quoted signatures: convention C with all y>0 gives (1,0)+(3,1)+(1,0) = (5,1,0), convention D with y_(1^3)=0 gives (4,1,1). The quoted eigenvalue lists are consistent with those signatures (C: five positive, one negative; D: four positive, one negative, one zero) and det G ~ 2.89e-51 is the expected numerical zero from D's kernel. Convention C appears here only as an explicit C-vs-D comparison, which is the sanctioned use. All ten trap categories clean."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "663d8a9b0356",
+          "ts": "1ff32b598408"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:20:31.508Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Retraction-carrier remark read in full and re-derived. tr(A^2) for A with symmetric part (alpha,delta,beta) and antisymmetric part gamma expands to alpha^2 + 2beta^2 - 2gamma^2 + delta^2 exactly as stated, giving signature (d(d+1)/2, d(d-1)/2) for tr(AB) on M_d. Summing over H_3's blocks (dims 1,2,1 for (3),(2,1),(1^3); total 1+4+1 = 6) reproduces both quoted signatures: convention C with all y>0 gives (1,0)+(3,1)+(1,0) = (5,1,0), convention D with y_(1^3)=0 gives (4,1,1). The quoted eigenvalue lists are consistent with those signatures (C: five positive, one negative; D: four positive, one negative, one zero) and det G ~ 2.89e-51 is the expected numerical zero from D's kernel. Convention C appears here only as an explicit C-vs-D comparison, which is the sanctioned use. All ten trap categories clean."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "663d8a9b0356",
+          "ts": "1ff32b598408"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:20:31.560Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Retraction-carrier remark read in full and re-derived. tr(A^2) for A with symmetric part (alpha,delta,beta) and antisymmetric part gamma expands to alpha^2 + 2beta^2 - 2gamma^2 + delta^2 exactly as stated, giving signature (d(d+1)/2, d(d-1)/2) for tr(AB) on M_d. Summing over H_3's blocks (dims 1,2,1 for (3),(2,1),(1^3); total 1+4+1 = 6) reproduces both quoted signatures: convention C with all y>0 gives (1,0)+(3,1)+(1,0) = (5,1,0), convention D with y_(1^3)=0 gives (4,1,1). The quoted eigenvalue lists are consistent with those signatures (C: five positive, one negative; D: four positive, one negative, one zero) and det G ~ 2.89e-51 is the expected numerical zero from D's kernel. Convention C appears here only as an explicit C-vs-D comparison, which is the sanctioned use. All ten trap categories clean."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "663d8a9b0356",
+          "ts": "1ff32b598408"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:20:31.612Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Retraction-carrier remark read in full and re-derived. tr(A^2) for A with symmetric part (alpha,delta,beta) and antisymmetric part gamma expands to alpha^2 + 2beta^2 - 2gamma^2 + delta^2 exactly as stated, giving signature (d(d+1)/2, d(d-1)/2) for tr(AB) on M_d. Summing over H_3's blocks (dims 1,2,1 for (3),(2,1),(1^3); total 1+4+1 = 6) reproduces both quoted signatures: convention C with all y>0 gives (1,0)+(3,1)+(1,0) = (5,1,0), convention D with y_(1^3)=0 gives (4,1,1). The quoted eigenvalue lists are consistent with those signatures (C: five positive, one negative; D: four positive, one negative, one zero) and det G ~ 2.89e-51 is the expected numerical zero from D's kernel. Convention C appears here only as an explicit C-vs-D comparison, which is the sanctioned use. All ten trap categories clean."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "663d8a9b0356",
+          "ts": "1ff32b598408"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:20:31.667Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Retraction-carrier remark read in full and re-derived. tr(A^2) for A with symmetric part (alpha,delta,beta) and antisymmetric part gamma expands to alpha^2 + 2beta^2 - 2gamma^2 + delta^2 exactly as stated, giving signature (d(d+1)/2, d(d-1)/2) for tr(AB) on M_d. Summing over H_3's blocks (dims 1,2,1 for (3),(2,1),(1^3); total 1+4+1 = 6) reproduces both quoted signatures: convention C with all y>0 gives (1,0)+(3,1)+(1,0) = (5,1,0), convention D with y_(1^3)=0 gives (4,1,1). The quoted eigenvalue lists are consistent with those signatures (C: five positive, one negative; D: four positive, one negative, one zero) and det G ~ 2.89e-51 is the expected numerical zero from D's kernel. Convention C appears here only as an explicit C-vs-D comparison, which is the sanctioned use. All ten trap categories clean."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "663d8a9b0356",
+          "ts": "1ff32b598408"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:20:31.715Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Retraction-carrier remark read in full and re-derived. tr(A^2) for A with symmetric part (alpha,delta,beta) and antisymmetric part gamma expands to alpha^2 + 2beta^2 - 2gamma^2 + delta^2 exactly as stated, giving signature (d(d+1)/2, d(d-1)/2) for tr(AB) on M_d. Summing over H_3's blocks (dims 1,2,1 for (3),(2,1),(1^3); total 1+4+1 = 6) reproduces both quoted signatures: convention C with all y>0 gives (1,0)+(3,1)+(1,0) = (5,1,0), convention D with y_(1^3)=0 gives (4,1,1). The quoted eigenvalue lists are consistent with those signatures (C: five positive, one negative; D: four positive, one negative, one zero) and det G ~ 2.89e-51 is the expected numerical zero from D's kernel. Convention C appears here only as an explicit C-vs-D comparison, which is the sanctioned use. All ten trap categories clean."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "663d8a9b0356",
+          "ts": "1ff32b598408"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:20:31.765Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Retraction-carrier remark read in full and re-derived. tr(A^2) for A with symmetric part (alpha,delta,beta) and antisymmetric part gamma expands to alpha^2 + 2beta^2 - 2gamma^2 + delta^2 exactly as stated, giving signature (d(d+1)/2, d(d-1)/2) for tr(AB) on M_d. Summing over H_3's blocks (dims 1,2,1 for (3),(2,1),(1^3); total 1+4+1 = 6) reproduces both quoted signatures: convention C with all y>0 gives (1,0)+(3,1)+(1,0) = (5,1,0), convention D with y_(1^3)=0 gives (4,1,1). The quoted eigenvalue lists are consistent with those signatures (C: five positive, one negative; D: four positive, one negative, one zero) and det G ~ 2.89e-51 is the expected numerical zero from D's kernel. Convention C appears here only as an explicit C-vs-D comparison, which is the sanctioned use. All ten trap categories clean."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "663d8a9b0356",
+          "ts": "1ff32b598408"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:20:31.824Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Retraction-carrier remark read in full and re-derived. tr(A^2) for A with symmetric part (alpha,delta,beta) and antisymmetric part gamma expands to alpha^2 + 2beta^2 - 2gamma^2 + delta^2 exactly as stated, giving signature (d(d+1)/2, d(d-1)/2) for tr(AB) on M_d. Summing over H_3's blocks (dims 1,2,1 for (3),(2,1),(1^3); total 1+4+1 = 6) reproduces both quoted signatures: convention C with all y>0 gives (1,0)+(3,1)+(1,0) = (5,1,0), convention D with y_(1^3)=0 gives (4,1,1). The quoted eigenvalue lists are consistent with those signatures (C: five positive, one negative; D: four positive, one negative, one zero) and det G ~ 2.89e-51 is the expected numerical zero from D's kernel. Convention C appears here only as an explicit C-vs-D comparison, which is the sanctioned use. All ten trap categories clean."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "663d8a9b0356",
+          "ts": "1ff32b598408"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:20:31.885Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Retraction-carrier remark read in full and re-derived. tr(A^2) for A with symmetric part (alpha,delta,beta) and antisymmetric part gamma expands to alpha^2 + 2beta^2 - 2gamma^2 + delta^2 exactly as stated, giving signature (d(d+1)/2, d(d-1)/2) for tr(AB) on M_d. Summing over H_3's blocks (dims 1,2,1 for (3),(2,1),(1^3); total 1+4+1 = 6) reproduces both quoted signatures: convention C with all y>0 gives (1,0)+(3,1)+(1,0) = (5,1,0), convention D with y_(1^3)=0 gives (4,1,1). The quoted eigenvalue lists are consistent with those signatures (C: five positive, one negative; D: four positive, one negative, one zero) and det G ~ 2.89e-51 is the expected numerical zero from D's kernel. Convention C appears here only as an explicit C-vs-D comparison, which is the sanctioned use. All ten trap categories clean."
+      }
+    ]
+  }
+}

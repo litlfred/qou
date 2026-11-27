@@ -1,0 +1,179 @@
+{
+ "description": "Leray DSS search in a log-phase trial basis (arbitrary precision; numerical exploration, NOT a proof).",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "Arb Newton/continuation search for Leray self-similar Navier-Stokes profiles in a log-phase trial basis; no substrate q is read or evaluated anywhere.",
+ "dps": 60,
+ "radial_rule": {
+  "QN": 24,
+  "phase_per_panel": "12.00"
+ },
+ "trial_tail": "(1+rho)^-(p + i theta m w); theta=1: mode m decays like |y|^(-1-2imw)",
+ "mode": "seed1",
+ "L": 2,
+ "N": 3,
+ "K": 4,
+ "theta": 1,
+ "seed_source": "arcC witness state.y1 (last accepted point)",
+ "seed_theta": "0.0593593005828",
+ "seed_S": "0.8551179100165760",
+ "seed_amp": "229.7456350622867",
+ "phase_condition_index": 0,
+ "method": "least-squares Gauss-Newton (normal equations, 1e-45 Tikhonov shift) with backtracking line search on |F|; d/domega by FD (h=1e-30)",
+ "stall_window": 8,
+ "line_search_halvings": 13,
+ "runs": [
+  {
+   "S0": "1.0",
+   "amp_scale": "1",
+   "status": "stalled",
+   "iters": 9,
+   "history": [
+    {
+     "it": 0,
+     "res": "4.9402e+5",
+     "amp": "229.74564",
+     "S": "1.000000000000000",
+     "lam": "0.06250"
+    },
+    {
+     "it": 1,
+     "res": "3.5615e+5",
+     "amp": "218.28275",
+     "S": "1.004378210608117",
+     "lam": "0.001953"
+    },
+    {
+     "it": 2,
+     "res": "3.5583e+5",
+     "amp": "217.87107",
+     "S": "1.004333142266204",
+     "lam": "0.001953"
+    },
+    {
+     "it": 3,
+     "res": "3.5550e+5",
+     "amp": "217.46103",
+     "S": "1.004291945560492",
+     "lam": "0.001953"
+    },
+    {
+     "it": 4,
+     "res": "3.5516e+5",
+     "amp": "217.05121",
+     "S": "1.004254473353220",
+     "lam": "0.001953"
+    },
+    {
+     "it": 5,
+     "res": "3.5481e+5",
+     "amp": "216.64121",
+     "S": "1.004220235079463",
+     "lam": "0.001953"
+    },
+    {
+     "it": 6,
+     "res": "3.5447e+5",
+     "amp": "216.23174",
+     "S": "1.004188337433441",
+     "lam": "0.001953"
+    },
+    {
+     "it": 7,
+     "res": "3.5413e+5",
+     "amp": "215.82467",
+     "S": "1.004157437670599",
+     "lam": "0.001953"
+    },
+    {
+     "it": 8,
+     "res": "3.5381e+5",
+     "amp": "215.42295",
+     "S": "1.004125722829658"
+    }
+   ],
+   "final_residual": "3.53812e+5",
+   "final_S": "1.004125722829658079691798414665252715419",
+   "final_amp": "215.4229466366577",
+   "cls": "periodic",
+   "mode_norms": [
+    "186.97276469559322007",
+    "99.186112082767183288",
+    "22.951349301637520632",
+    "29.215238159015015279",
+    "15.167458394787243697"
+   ],
+   "omega_to_zero": false,
+   "wall_s": 3178
+  },
+  {
+   "S0": "1.2",
+   "amp_scale": "1",
+   "status": "time_limit",
+   "iters": 7,
+   "history": [
+    {
+     "it": 0,
+     "res": "3.4123e+5",
+     "amp": "229.74564",
+     "S": "1.200000000000000",
+     "lam": "0.03125"
+    },
+    {
+     "it": 1,
+     "res": "3.4001e+5",
+     "amp": "229.98040",
+     "S": "1.191098227157427",
+     "lam": "0.007813"
+    },
+    {
+     "it": 2,
+     "res": "3.4001e+5",
+     "amp": "229.76229",
+     "S": "1.189637506314949",
+     "lam": "0.003906"
+    },
+    {
+     "it": 3,
+     "res": "3.3954e+5",
+     "amp": "229.66046",
+     "S": "1.188980340972461",
+     "lam": "0.003906"
+    },
+    {
+     "it": 4,
+     "res": "3.3914e+5",
+     "amp": "229.55887",
+     "S": "1.188376357670455",
+     "lam": "0.003906"
+    },
+    {
+     "it": 5,
+     "res": "3.3880e+5",
+     "amp": "229.44519",
+     "S": "1.187840533577208",
+     "lam": "0.003906"
+    },
+    {
+     "it": 6,
+     "res": "3.3843e+5",
+     "amp": "229.30286",
+     "S": "1.187383809725334"
+    }
+   ],
+   "final_residual": "3.38433e+5",
+   "final_S": "1.187383809725334373295587116629776235885",
+   "final_amp": "229.3028577733062",
+   "cls": "periodic",
+   "mode_norms": [
+    "209.12955342300691076",
+    "87.442627129453178997",
+    "18.249016582774741169",
+    "20.362230284355138868",
+    "21.231354182121702242"
+   ],
+   "omega_to_zero": false,
+   "wall_s": 1934
+  }
+ ],
+ "verdict": "time_budget"
+}

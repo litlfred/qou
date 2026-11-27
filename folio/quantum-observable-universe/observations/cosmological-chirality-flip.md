@@ -15,7 +15,7 @@ Condition 2 being satisfied *maximally* does not close baryogenesis; it sharpens
 
 **At heat death ($q \to 1$).**
 
-The Hopf algebra becomes cocommutative. The [quantum Planck constant](#def:substrate-parameter) vanishes. The Descartes color tubes collapse to a single $\mathrm{U}(1)$ phase tube ([prop:u1-equivariant-reduction](#prop:u1-equivariant-reduction)). The crossing-energy asymmetry $q - q^{-1} \to 0$ disappears. The electron and muon survive as indistinguishable topological excitations ([rem:symmetry-preserving-leptons](#rem:symmetry-preserving-leptons)) with vanishing masses.
+The Hopf algebra becomes cocommutative. The [quantum Planck constant](#def:substrate-parameter) vanishes. The Descartes color tubes collapse to a single $\mathrm{U}(1)$ phase tube ([prop:u1-equivariant-reduction](#prop:u1-equivariant-reduction)). The crossing-energy asymmetry $q - q^{-1} \to 0$ disappears. The electron and muon survive as indistinguishable topological excitations ([rem:symmetry-preserving-leptons](#rem:symmetry-preserving-leptons)).
 
 **Categorical picture (conjectural).**
 

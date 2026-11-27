@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-20T15:38:19.408525+00:00",
-  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
+  "computedAt": "2026-11-24T13:49:26.381969+00:00",
+  "commitSha": "acb646cc6fe482bb452007b31eba2d1d358cefe0",
   "assertions": [
     {
       "name": "a5_rows_are_the_only_ones_without_binding_energy",
@@ -18,7 +18,7 @@
       "expected": 3,
       "passed": true,
       "tolerance": 0,
-      "source": "S(6Li α+d) = 1.4738214 MeV; S(7Li α+t) = 2.4670266 MeV; S(7Be α+3He) = 1.5866963 MeV — all bound against α-emission, which is what makes the α+fragment decomposition available at A=6,7"
+      "source": "S(6Li α+d) = 1.4737586 MeV; S(7Li α+t) = 2.4670266 MeV; S(7Be α+3He) = 1.5866963 MeV — all bound against α-emission, which is what makes the α+fragment decomposition available at A=6,7"
     },
     {
       "name": "hardcoded_catalan_matches_mpmath",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 7,
   "computation": "phase3c-a5-a7-knot-volume-targets",
   "scriptFile": "phase3c_a5_a7_knot_volume_targets.py",
-  "scriptHash": "48e713080509",
-  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "scriptHash": "2d68eb072de8",
+  "scriptCommitSha": "e78fcf72cf2a10d34f0c07635a9affb64e504bc8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,14 +42,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.18",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "cvxpy": "absent",
-    "pyhecke_native_build": "930c010e26215e56"
+    "pyhecke_native_build": "56872bc54313b172"
   },
   "invocation": {
     "argv": [
@@ -61,7 +61,7 @@
   "contentBlock": "conj:proton-mass-substrate-identity",
   "data": {
     "alpha_cluster_separations_MeV": {
-      "6Li_alpha_d": "1.4738214",
+      "6Li_alpha_d": "1.4737586",
       "7Li_alpha_t": "2.4670266",
       "7Be_alpha_h": "1.58669628"
     },

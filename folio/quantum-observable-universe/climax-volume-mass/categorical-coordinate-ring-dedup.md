@@ -1,5 +1,3 @@
-**Remark ($R[i, q^{\pm 1}]$ as the ambient deformation ring).**
-
 **Downstream applications of $R[i, q^{\pm 1}]$.** Recognizing the categorical-coordinate ring as the ambient deformation ring ([prop:categorical-coordinate-ring](#prop:categorical-coordinate-ring)) deduplicates four ad-hoc complexification patterns:
 
 1. *Here.* The substitution $q = e^{i\varTheta}$ used in the [commutative-limit remark](#rem:commutative-crossing-energy) is not an external complexification. The element $e^{i\varTheta} = \cos\varTheta + i\sin\varTheta$ is a unit *in* $R[i]$ via the Euler identity. Compute $q - q^{-1} = 2i\sin\varTheta$ entirely inside $R[i, q^{\pm 1}]$ without enlarging the categorical ground ring.

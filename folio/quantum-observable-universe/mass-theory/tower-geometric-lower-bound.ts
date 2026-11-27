@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:tower-geometric-lower-bound",
   title: "Brane-tower growth above the containment threshold (GAP-A-3)",
   lean: {
-    ref: "qou:QOU.Mass.WStd.wStd_geometric_from_three",
+    ref: "qou:QOU.MassTheory.WStdSuperExponential.wStd_geometric_from_three",
     validation: "not_checked",
   },
   tags: ["binding", "brane-tower", "level-selection", "gap-a-3", "plancherel"],

@@ -7,7 +7,7 @@ export default proposition({
   label: "prop:eigenvalue-product-expansion",
   title:
     "Eigenvalue product expansion of the nuclear braid Markov trace",
-  lean: { ref: "qou:QOU.BraidKnot.eigenvalue_product_expansion",
+  lean: { ref: "qou:QOU.BraidsAndKnots.eigenvalue_product_expansion",
     validation: "not_checked",
   },
   uses: ["prop:universal-braid-branching"],

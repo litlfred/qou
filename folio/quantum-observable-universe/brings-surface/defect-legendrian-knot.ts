@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:defect-legendrian-knot",
   title: "The unit defect as a Legendrian knot",
-  lean: { ref: "qou:QOU.AlgebraicSubstrate.defect_legendrian_knot",
+  lean: { ref: "qou:QOU.Core.AlgebraicSubstrate.defect_legendrian_knot",
     validation: "stub",
   },
   uses: [

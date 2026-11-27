@@ -104,6 +104,7 @@ sys.path.insert(0, str(HERE))
 
 import mpmath as mp  # noqa: E402
 from _precision import COMPUTE_DPS  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 
 def q_int(m, q: "mp.mpf") -> "mp.mpf":
@@ -272,41 +273,27 @@ def z_from_weights(q: "mp.mpf", y: dict) -> "mp.mpf":
 # after its first `aK_v2` call, then serialized at OUTPUT_DPS = 60 — ten
 # digits manufactured. Importing a library must not change the caller's
 # precision in either direction; `workdps` restores it on exit.
-with mp.workdps(COMPUTE_DPS):
-    _Q = "1.1099785827513808075916690956107688798744991218736"
+with mp.workdps(max(80, COMPUTE_DPS)):
+    _Q = Q_50_DIGIT_STR
+    _q_reg = mp.mpf(_Q)
+    _q2_p1 = _q_reg ** 2 + 1
     # docs/coordination/trace-convention-registry.md, at the proton pin
     REG_C = (mp.mpf("0.4153958"), mp.mpf("0.2809296"), mp.mpf("0.0227449"))
-    # ── convention-D constants at 50 dps ──────────────────────────────────────
-    # RE-EMITTED 2026-09-04 (bean qou-90k2).  These were carried at 17 significant
-    # digits, and REG_ZD's 17th digit was WRONG: it read ...524 where the correct
-    # rounding is ...525.  It was not merely short — it was worse than plain
-    # float64 (rel err 1.89e-17 against float64's 6.69e-18), i.e. a float64 value
-    # truncated once more.  It is the residue of the historical mis-record the
-    # registry doc's own §Provenance records ("z_D was recorded ...524365, correct
-    # is ...525160"); the doc was corrected and the Python was not.
-    #
-    # It survived because the self-test cross-checked it at 1e-15 while every
-    # INTERNAL check in the same function runs at 1e-25 — the one check tying this
-    # module to the corpus's published number was pinned ten orders of magnitude
-    # looser than its neighbours, so an error of 1.16e-17 passed by a factor of 86.
-    # The tolerances below are now 1e-40, which is what makes these constants
-    # load-bearing rather than decorative.
-    #
-    # Derived, not transcribed: z = q^3/(q^2+1) and the exact n=3 weights
-    # y_(3) = (q^4+1)/(q^2+1)^2, y_(2,1) = q^2/(q^2+1)^2, y_(1^3) = 0, evaluated at
-    # the 50-digit proton pin _Q.  Cross-checked against y_lambda_su_n(3, q, 2) at
-    # 60 dps: agreement to 3e-62.  Regenerate the same way if _Q moves.
-    REG_D = (mp.mpf("0.50540422650393080318755870324047227566035119774981"),
-             mp.mpf("0.24729788674803459840622064837976386216982440112509"),
+    # ── convention-D constants derived at >= 80 dps from Q_50_DIGIT_STR ───────
+    # Derived directly from the closed-form rational expressions (never copied
+    # from witness JSON outputs, bean qou-4w7k):
+    #   z_D = q^3/(q^2+1),  z_C = 1/(sqrt(q) + 1/sqrt(q)),
+    #   y_(3) = (q^4+1)/(q^2+1)^2,  y_(2,1) = q^2/(q^2+1)^2,  y_(1^3) = 0.
+    REG_D = ((_q_reg ** 4 + 1) / (_q2_p1 ** 2),
+             (_q_reg ** 2) / (_q2_p1 ** 2),
              mp.mpf("0"))
-    REG_ZC = mp.mpf("0.49932033418369445241344268025766630375194816404153")
-    REG_ZD = mp.mpf("0.61268803714646525159582986394589924802630839154509")
+    REG_ZC = mp.mpf(1) / (mp.sqrt(_q_reg) + mp.mpf(1) / mp.sqrt(_q_reg))
+    REG_ZD = (_q_reg ** 3) / _q2_p1
 
 
 def self_test() -> int:
-    # 60 dps, not 30: the registry cross-checks below are now at 1e-40, and a
-    # 30-dps working precision cannot resolve a 1e-40 difference at all.
-    mp.mp.dps = 60
+    # 80 dps: the registry cross-checks below run at 1e-40 without float64.
+    mp.mp.dps = 80
     q = mp.mpf(_Q)
     fails = 0
 
@@ -409,7 +396,7 @@ def main() -> int:
     if a.self_test:
         return self_test()
 
-    mp.mp.dps = 30
+    mp.mp.dps = 80
     q = mp.mpf(_Q)
     n = a.n
     shapes = partitions_of(n)

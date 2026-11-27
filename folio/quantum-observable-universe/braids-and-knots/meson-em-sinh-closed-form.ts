@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Meson EM sinh-channel closed-form $1 + \\hbar_q - \\hbar_q^2/2 = (3q^2 - 1)/(2q^2)$",
   lean: {
-    ref: "qou:QOU.BraidKnot.meson_EM_closed_form",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.meson_EM_closed_form",
   },
   uses: [],
   authorNotes: [

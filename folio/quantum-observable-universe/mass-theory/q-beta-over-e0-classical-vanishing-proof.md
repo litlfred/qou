@@ -1,5 +1,3 @@
-## Proof
-
 Direct evaluation:
 
 $$

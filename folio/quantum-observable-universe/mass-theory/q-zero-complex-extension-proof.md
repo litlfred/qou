@@ -1,5 +1,3 @@
-## Proof
-
 Each substrate identity is stated in the cited literature
 (Wenzl 1988; Jones 1987) over a commutative ring with $q$ a unit;
 the substrate identities used here (the bi-filtration of $H_q$, the

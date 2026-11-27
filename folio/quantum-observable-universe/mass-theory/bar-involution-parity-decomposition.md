@@ -1,4 +1,4 @@
-**Lemma.** *Let $\sigma$ be an $R$-linear map of an $R$-module $V$ with $\sigma^2 = \mathrm{id}$. For $x \in V$ put*
+*Let $\sigma$ be an $R$-linear map of an $R$-module $V$ with $\sigma^2 = \mathrm{id}$. For $x \in V$ put*
 $$
 \mathrm{even}(x) = x + \sigma x, \qquad \mathrm{odd}(x) = x - \sigma x.
 $$

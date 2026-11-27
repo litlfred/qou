@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:c1-ggm-bar-parity-faces",
   lean: {
-    ref: "qou:QOU.Mass.DoorVParityNoIdentity.doorV_parity_no_identity",
+    ref: "qou:QOU.MassTheory.DoorVParityNoIdentity.doorV_parity_no_identity",
     validation: "validated",
   },
   title:
@@ -12,6 +12,7 @@ export default conjecture({
   uses: [
     "conj:qdifference-kernel-prolongation-symbol",
   ],
+  cites: ["mcspirit-rolen2025"],
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): measured in\n[`door_v_residual_scope_probe.py`](../../../computations/probes/door_v_residual_scope_probe.py))." },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): (`QOU.Mass.GGMAlternationOnset.ggm_solution_no_double_flip`, over an\nordered field)." },

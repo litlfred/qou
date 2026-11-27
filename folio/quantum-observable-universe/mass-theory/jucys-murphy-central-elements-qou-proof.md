@@ -1,5 +1,3 @@
-*Proof.*
-
 Write $h = q - q^{-1}$. The Hecke relation gives
 $\sigma_k^{-1} = \sigma_k - h$.
 

@@ -1,4 +1,3 @@
-**Conjecture (CPT-saturation as fold-orbit closure).**
 Let $\sigma \colon \mathrm{Part}(n) \to \mathrm{Part}(n)$ be the transpose involution. Define $\mathrm{CPTSat}(\mathcal{K})$ to mean $\Lambda(\mathcal{K})$ is closed under the fold.
 
 Then the Frobenius packing-density rule is a derived consequence of crystal structure:

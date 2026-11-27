@@ -537,6 +537,8 @@ def evalf_at_q0(expr: sp.Expr, dps: int = 50) -> mp.mpf:
 
     Returns ``mpmath.mpf``; complex outputs raise ``ValueError``.
     """
+    if isinstance(expr, mp.mpf):
+        return +expr
     if isinstance(expr, (int, float, sp.Integer, sp.Float, sp.Rational)):
         return mp.mpf(sp.Float(expr, dps))
     with mp.workdps(dps + 5):

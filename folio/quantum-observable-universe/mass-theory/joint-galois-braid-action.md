@@ -1,6 +1,3 @@
-**Conjecture (joint motivic-Galois $\times$ braid-group action on the
-bi-filtration).**
-
 *Let $\mathcal{H}_q^{(n, K)}$ be the knot-indexed bi-filtration
 ([Knot-indexed bi-filtration $\mathcal{H}_q^{(n, K)}$ on the substrate convolution algebra](#def:hq-bi-filtration)). Two groups act
 on it by symmetry:*
@@ -80,7 +77,7 @@ For the Bring depth-3 bi-filtration cell
  $\mathbb{Q}(\zeta_5)$.
 
 **The conjecture predicts**: these two permutation actions
-**commute**. canonical evidence: the orbit-sum
+**commute**. Numerical evidence: the orbit-sum
 $\sum_{k=1}^4 \mathrm{Li}_3(\zeta_5^k) = -\frac{24}{25}\zeta(3)$
 is *both* Galois-invariant (= cyclotomic Galois-trace) *and*
 $S_5$-invariant (= regular-representation trace), so the joint-
@@ -92,14 +89,14 @@ test the joint commutativity sharply.
 For the figure-8 ($\lambda_K = (2, 2)$ self-conjugate cell):
 
 - $G_{\mathrm{mot}}$-action: bar involution $q \mapsto q^{-1}$.
- Fixes $e_{(2, 2)}$ since $(2, 2)$ is self-conjugate. acts as the identity
+ Fixes $e_{(2, 2)}$ since $(2, 2)$ is self-conjugate; it acts as the identity
  on $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3) \in \mathcal{P}_2^+$.
 - $B_3$-action (figure-8 is a 3-strand braid): the dihedral
- $D_3 = S_3$ symmetry of the braid acts on $e_{(2, 2)}$ by definition
+ $D_3 = S_3$ symmetry of the braid acts trivially on $e_{(2, 2)}$
  (since $(2, 2)$ is the unique self-conjugate cell of
  $H_3 \subset H_4$ structure).
 
-Joint action stabilises the entire stratum by definition —
+Joint action stabilises the entire stratum trivially —
 **consistent with the prediction** that the figure-8 is the
 canonical fixed point for both groups in $\mathcal{H}_q^{(2, K)}$.
 ### Significance
@@ -115,7 +112,7 @@ If discharged, the joint action gives:
  gives a relation among period values.
 3. **Sharpness of the depth correspondence via representation theory.** The correspondence's
  sharpness condition (image generates $\mathcal{P}_n / \mathcal{P}_{n-1}$
- non-by definition) reduces to non-vanishing of certain
+ non-trivially) reduces to non-vanishing of certain
  $G_{\mathrm{mot}} \rtimes B_n$-invariants — a representation-
  theoretic question, much more tractable than
  transcendence-theoretic ones.

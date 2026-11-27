@@ -1,0 +1,1 @@
+The values of the deformation parameter q that give these exceptionally accurate octet and decuplet baryons, together with the assertion made in [16,22] that there should be a direct connection between q and the Cabibbo angle conspire to suggest a particularly simple formula for the Cabibbo angle in terms of q and spin parity JP .

@@ -19,6 +19,18 @@ export default remark({
     "scaffolding",
   ],
   authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`): `2026-09-05-markov-disjoint-stabilisation-probe.lean` shows `MarkovTraceAxioms_implies_disjoint_stabilisation` in `MarkovAxiomsPrimitive` proves an unconstrained existential (`∃ y, y = τ_x * markovZax u`) without using `[MarkovTraceAxioms u]`.",
+      see: "docs/audits/2026-09-05-markov-disjoint-stabilisation-probe.lean",
+    },
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`): `2026-09-05-markov-trace-axioms-triviality-probe.lean` inhabits `QOU.BraidKnot.MarkovTraceAxioms u` for arbitrary `u` via `⟨1, rfl, markovZax u, rfl⟩`.",
+      see: "docs/audits/2026-09-05-markov-trace-axioms-triviality-probe.lean",
+    },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): In Lean, the `MarkovTraceInductiveLimit` class provides a single global hypothesis. This bridge automatically derives every per-$n$ trace, eliminating repetitive per-$n$ axiomatization. This formalization resides on the archimedean side of the substrate wall, substituting the substrate parameter $q_0$ and verifying real-analytic bounds, while the generic categorical identities remain valid over an abstract coefficient ring." },
     {
       kind: "status",

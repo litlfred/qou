@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-0903.1376v1/blocks/ex-sec-005-01",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "kind": "example",
+  "pageStart": 16,
+  "pageEnd": 19,
+  "text": "ex-sec-005-01.md",
+  "derivedFrom": "library/arxiv-0903.1376v1/sections/sec-005",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.1376v1",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "example"
+  }
+}

@@ -1,5 +1,3 @@
-### Proof
-
 The identity composes two named identities:
 
 1. [Electromagnetic coupling from the antisymmetric braiding and force-carrier crossings](#prop:em-coupling-projection) establishes the bare combinatorial form:

@@ -2,383 +2,119 @@
 name: lean-generation
 roles: [collaborator, owner]
 description: >
-  Extract theorem-like objects from LaTeX source and generate corresponding
-  Lean 4 stub files with `sorry` placeholders.  Maintains the proof-objects.json
-  manifest linking LaTeX labels to Lean declarations by doc-gen4 URL.
+  Author new Lean 4 modules and content-block `.lean` siblings from `.ts` +
+  `.md` content-object triples under `folio/`. Enforces Lean 4.24+ imports-first
+  header order, `set_option autoImplicit false`, Mathlib4 naming, §7c base-ring
+  generality, Two-Tier Reservoir subgraph placement, and single-threaded
+  `lean-overlay-env.sh` / `lean-best-practices-lint.py --diff` verification.
 allowed-tools: Read Write Edit Bash Grep Glob
 ---
 
-# Lean File Generation
+# Lean 4 Module & Content-Sibling Generation (`lean-generation`)
 
-## Overview
+## 1. Overview (Content-Object Source of Truth)
 
-This skill covers the pipeline from LaTeX mathematical content to Lean 4
-formalization stubs.  It bridges the gap between human-readable proofs in
-the manuscript and machine-checkable formal proofs.
+Content-object triples (`.ts` + `.md` + `.lean`) under `folio/<paper>/<chapter>/` and library modules under `folio/<paper>/lean/` are the **sole authoritative source**.
 
-## When to Use This Skill
-
-- When new theorem/definition/lemma environments are added to chapter files
-- When running the proof object extraction pipeline
-- When generating or updating Lean stub files
-- When adding `\lean{}`, `\leanok`, or `\uses{}` macros to LaTeX
-
-## Lean MCP Tools (paper-assistant)
-
-When the MCP server is available, **prefer MCP tools over shell commands**:
-
-| Old workflow | MCP tool | Why better |
-|-------------|----------|-----------|
-| `lake build` + parse output | `lean_diagnostic_messages` | Structured errors/warnings per file |
-| Manual file reading for structure | `lean_file_outline` | Concise view of imports + declarations with type sigs |
-| `lake build` for sorry count | `lean_diagnostic_messages` | Filter for sorry warnings directly |
-| Manual cross-checking declarations | `lean_hover_info` | Verify a `\lean{QOU.X}` reference resolves |
-| Manual import guessing | `lean_completions` | Auto-complete import paths |
-| Checking axiom dependencies | `lean_verify` | Returns axioms used by a theorem + source scan |
-
-### MCP-first stub generation
-
-After generating a stub file:
-
-1. **`lean_diagnostic_messages`** on the new file → catch type errors immediately
-2. **`lean_file_outline`** → verify the declaration structure matches expectations
-3. **`lean_hover_info`** on each imported symbol → confirm types resolve
-4. **`lean_verify`** on completed proofs → check axiom soundness
-
-## CRITICAL: Lean 4.24+ file structure — imports FIRST
-
-Every generated `.lean` file **must** place `import` statements
-before any other content, including module docstrings `/-! ... -/`.
-Lean 4.24+ enforces this at parse time; violating it produces
-`invalid 'import' command, it must be used in the beginning of the file`.
-
-Correct order:
-```lean
-import Mathlib.CategoryTheory.Monoidal.Basic
-import QOU.Basic
-
-/-!
-# QOU.MyModule
-Description here.
--/
-
-namespace QOU.MyModule
-```
-
-Wrong order (causes 565+ compile failures historically):
-```lean
-/-!
-# QOU.MyModule         ← ERROR: doc block before imports
-Description here.
--/
-
-import Mathlib.CategoryTheory.Monoidal.Basic
-import QOU.Basic
-```
-
-If you find existing files with wrong order, run:
-```bash
-python3 scripts/fix-lean-import-order.py
-```
-
-## Important: Generation is agent-only
-
-The generation scripts below are **proof-writing tools**, not build steps.
-
-- **Do not** run them as part of setup, session start, or routine builds.
-- **Do not** run them before `lake build` — build compiles what exists.
-- **Only** invoke them when the author requests new formalization work
-  (new stubs, new extractions, new theorem statements).
-- CI workflows run them automatically — that is CI-only behavior.
-
-## Workflow
-
-### 1. Extract proof objects from LaTeX (agent-only)
-
-```bash
-python .github/scripts/extract_proof_objects.py
-```
-
-This parses all `chapters/*.tex` files for `\begin{theorem}`, `\begin{definition}`,
-etc. and outputs `proof-objects.json`.
-
-### 2. Generate Lean stubs (agent-only)
-
-```bash
-python .github/scripts/generate_lean_stubs.py
-```
-
-Reads `proof-objects.json` and inserts `sorry`-based stubs before the last
-`end` statement in each `lean/QOU/*.lean` file to maintain namespace structure.
-
-### 3. Add LeanBlueprint macros to LaTeX
-
-After generating stubs, annotate the LaTeX source with:
-
-```latex
-\begin{theorem}\label{thm:my-result}
-  \lean{QOU.Chapter.my_result}
-  \uses{def:prerequisite}
-  Statement here.
-\end{theorem}
-```
-
-Add `\leanok` once the Lean proof is complete (no `sorry`).
-
-### 4. Update proof status after Lean build
-
-```bash
-cd lean && lake build 2>&1 | python ../.github/scripts/update_proof_status.py
-```
-
-## Naming Conventions
-
-| LaTeX label | Lean declaration |
-|-------------|-----------------|
-| `thm:lifting-exists` | `QOU.Torsion.lifting_exists` |
-| `def:quantum-connection` | `QOU.QuantumObservableUniverse.quantum_connection` |
-| `lem:torsion-skew` | `QOU.Torsion.torsion_skew` |
-| `def:categorical-instanton` | `QOU.CategoricalInstanton` |
-| `prop:categorical-dq-squared` | `QOU.categorical_dq_squared` |
-| `def:categorical-jet` | `QOU.CategoricalJet` |
-
-Rules:
-- Hyphens become underscores
-- The Lean namespace matches the chapter module
-- Fully qualified name = `QOU.<Chapter>.<snake_case_name>`
-- Categorical structures (type-level) use `CamelCase` (e.g., `CategoricalJet`)
-- Categorical theorems/lemmas use `snake_case` (e.g., `categorical_self_duality`)
-- Top-level categorical stubs live directly in the `QOU` namespace (not a chapter submodule)
-
-## Base ring convention (STRICT — AGENTS.md §7c)
-
-When generating Lean stubs, **always start over a generic type variable
-`{R : Type*}`** with the weakest typeclass that admits the construction.
-Only specialise to `ℝ` when the statement crosses the archimedean wall:
-`Real.sqrt`, `Real.rpow`, `Real.cos`, `Real.exp`, `Real.log`, an ordering
-predicate (`0 < q`), `linarith` / `positivity`, or a CODATA / experimental
-numerical literal.
-
-```lean
--- ✓ GENERIC: stays over arbitrary CommRing
-def qBracket {R : Type*} [Field R] (q : R) (n : ℕ) : R :=
-  (q ^ n - q ^ (-(n : ℤ))) / (q - q⁻¹)
-
--- ✓ SPECIALISED: needs Real.sqrt → ℝ is mandatory
-noncomputable def hoefsmitB (q : ℝ) : ℝ :=
-  Real.sqrt (q^4 + q^2 + 1) / (q^2 + 1)
-
--- ✗ DON'T do this — silently ℝ-specialises a generic identity
--- def qBracket (q : ℝ) (n : ℕ) : ℝ := …  -- WRONG
-```
-
-Authoring rule: **generic at point of creation is cheap to specialise
-later (drop the parameter); ℝ-specialised code is hard to generalise
-back** because downstream consumers accrete archimedean assumptions
-silently. When in doubt, stay generic.
-
-Concrete cheat-sheet — see `formalizer.md §Base ring convention` and
-`AGENTS.md §7c` for the full table.
-
-## Lean Project Structure
-
-The repo is a **single root Lake workspace** (`/lakefile.toml`,
-`/lean-toolchain`) that aggregates one Lake package per paper. The QOU
-package lives at:
-
-```
-folio/quantum-observable-universe/lean/
-├── lakefile.toml         ← per-paper Lake config (registered by root lakefile.toml)
-├── QOU.lean              ← root module (library = QOU)
-└── QOU/
-    ├── Basic.lean        ← Shared foundations
-    ├── QuantumObservableUniverse.lean  ← Chapter 1
-    ├── Elaboration.lean               ← Chapter 2
-    └── ...               ← one per chapter
-```
-
-Other papers follow the same pattern under `content/<paper>/lean/`. The
-package-name → directory registry lives in
-`folio-assistant/schemas/lean-packages.ts`. Build from the repo root:
-
-```bash
-lake build           # build every paper
-lake build QOU       # just one library
-lake exe cache get   # Mathlib cache for the workspace
-```
-
-Do **not** create a top-level `lean/` directory — that layout is
-deprecated.
-
-## Linking to mathlib4
-
-When a Lean declaration corresponds to an existing mathlib result:
-1. Add it to the `mathlib_links` array in `proof-objects.json`
-2. In the Lean file, import the relevant mathlib module
-3. Use `mathlib_links` in the `lean` field of the proof object:
-
-```json
-{
-  "lean": {
-    "decl": "QOU.Torsion.lifting_exists",
-    "url": "https://litlfred.github.io/qou/lean/QOU/Torsion.html#QOU.Torsion.lifting_exists",
-    "mathlib_links": ["Mathlib.Topology.FiberBundle.Basic"]
-  }
-}
-```
-
-## Output Format
-
-The `proof-objects.json` manifest follows the schema at
-`folio-assistant/schemas/qou-types.ts` (§1 ProofObjectsManifest).  Lean declarations are
-referenced by their doc-gen4 URL — the Lean data model is **not** duplicated
-in JSON.
-
-## Blueprint Synchronization
-
-When generating or updating Lean stubs, the following artifacts must stay
-in sync — it is the **author's responsibility** to ensure consistency:
-
-| Artifact | Must match |
-|----------|-----------|
-| `\label{thm:foo}` in `chapters/*.tex` | `\label{thm:foo}` in `blueprint/src/content.tex` |
-| `\lean{QOU.Ch.foo}` in blueprint | Actual declaration name in `lean/QOU/Ch.lean` |
-| `\uses{def:bar}` in blueprint | Existing `\label{def:bar}` in same file |
-| `\leanok` in blueprint | Zero `sorry` in the linked Lean declaration |
-| `-- Ref: [key]` before sorry | Citation key `key` in `folio/schema/references.ts` |
-| `\cite{key}` in blueprint | Citation key `key` in `folio/schema/references.ts` |
-
-### Blueprint update workflow
-
-1. Add/modify a theorem in `chapters/*.tex` with `\label{}`
-2. Run `extract_proof_objects.py` → `generate_lean_stubs.py`
-3. Add the matching entry to `blueprint/src/content.tex` with `\lean{}`
-   and `\uses{}` edges
-4. If the Lean proof is complete, add `\leanok`; otherwise leave it out
-5. CI validates via `lake exe checkdecls blueprint/lean_decls`
-
-## Content Object Integration
-
-Content objects (`.ts` + `.md` + `.lean` triples) are the **authoritative
-source**, not raw LaTeX. The Lean generation pipeline should be
-content-object-aware:
-
-### Block kind determines Lean requirements
-
-| Block kind | Lean required? | Action |
-|-----------|---------------|--------|
-| `definition` | **Yes** (enforced by constraint rule) | Must generate `.lean` sibling |
-| `theorem`, `lemma`, `proposition`, `corollary` | **Expected** | Should generate `.lean` sibling |
-| `example`, `remark`, `conjecture` | Optional | Only if author requests |
-| `prose`, `equation`, `diagram` | N/A | Skip |
-
-### CRITICAL: `.lean` files are NEVER standalone
-
-A `.lean` file MUST always be part of a content triple (`.ts` + `.md` +
-`.lean`).  There is no valid scenario where a `.lean` file exists without
-a corresponding `.ts` manifest.  The `.ts` manifest is the authoritative
-record of the block's kind, label, lean declaration, status, and
-dependency graph.  An orphan `.lean` file is always a bug.
-
-### Content-object-aware stub generation
-
-Instead of extracting from LaTeX, read the `.ts` manifest:
-
-1. **Scan content objects**: find all blocks where `kind` requires Lean
-2. **Check for existing `.lean` sibling**: skip if already exists
-3. **Read the `.md` file**: extract the mathematical statement
-4. **Generate the `.lean` sibling** alongside the `.ts` and `.md` files
-5. **Update the `.ts` manifest**: set `lean.ref` to the package-qualified
-   URI `"<pkg>:<Decl.Path>"` (per AGENTS.md §0a). The legacy
-   `lean.decl` / `lean.file` shape is removed from the schema.
-
-### The `uses[]` dependency graph
-
-The `uses` field in content `.ts` manifests forms a dependency DAG.
-**List only immediate neighbors** — transitive deps are derived by
-walking the graph. Run `bun run pipeline/prune-transitive-deps.ts`
-after edits.
-
-- Generate stubs in topological order (walk the graph for full ordering)
-- The Lean import graph should reflect the `uses[]` ordering
-- When a definition changes, re-validate all blocks that `uses` it
-
-### Naming: `.ts` label → Lean declaration
-
-| `.ts` label | Lean declaration | `lean.ref` URI |
-|-------------|-----------------|----------------|
-| `def:quantum-universe` | `QOU.QuantumUniverse` | `"qou:QOU.QuantumUniverse"` |
-| `thm:su2-emergence` | `QOU.su2_emergence` | `"qou:QOU.su2_emergence"` |
-| `prop:frobenius-relation` | `QOU.frobenius_relation` | `"qou:QOU.frobenius_relation"` |
-
-The `lean.ref` field in the `.ts` manifest is the canonical mapping.
-Parse with `parseLeanRef()` from
-`folio-assistant/schemas/lean-packages.ts` to get
-`{ package, decl, module, name }`.
-
-## Checklist
-
-- [ ] All content blocks requiring Lean have sibling `.lean` files
-- [ ] Every block where `kind` requires Lean has a `lean.ref` URI
-- [ ] Lean files compile without errors (sorry warnings are expected)
-- [ ] `\lean{}` macros in LaTeX match the Lean declaration names exactly
-- [ ] `\uses{}` macros capture all mathematical dependencies
-- [ ] Every `sorry` has a preceding `-- Ref: [key] url` comment
-- [ ] Every `-- Ref: [key]` key exists in `folio/schema/references.ts`
-- [ ] `blueprint/src/content.tex` mirrors all `\lean{}` macros from chapters
-- [ ] `\leanok` only appears for sorry-free declarations
+> **Purged legacy workflow:** Never invoke removed LaTeX scrapers (`.github/scripts/extract_proof_objects.py`, `generate_lean_stubs.py`, `update_proof_status.py`), never write `\lean{...}` / `\leanok` into generated `.tex` files, and never read/write the frozen `proof-objects.json` manifest.
 
 ---
 
-## Trivial-model consistency witness (Pattern 3.3 companion)
+## 2. Placement Gate: Two-Tier Reservoir vs. Canonical `QOU.<Subgraph>`
 
-Whenever a conjecture is axiomatised as a `class` (per AGENTS.md
-§3b, the conditional-class exception), generate a paired
-`def trivialModel … : TheClass … where …` populated with
-`PUnit`/`0`/`fun _ => True` so that **every** class field reduces
-to `rfl`.  This proves the class axiomatisation is **consistent**
-(not vacuously inconsistent) without polluting typeclass
-resolution — use `def`, never `instance`.
+Before creating a new `.lean` file, classify its home (see [`lean-mathlibext-curator.md`](lean-mathlibext-curator.md) and [`content-graph.md`](content-graph.md)):
 
-Authority: `13782dfb` (seven conjecture classes each given a
-trivial model in one commit — `HeckeAnyonicSubstrate`,
-`CrystalGraphRealization`, `KazhdanLusztigClassicalLimit`,
-`CemeteryGroupEmergence`, `ConfinementGradingCorrespondence`,
-`RootOfUnityMTCTruncation`, `SymmetricCrystalPairProduction`).
+1. **General-purpose non-QOU mathematics (`0` QOU model/physics coupling):**
+   - **Tier A (`MathlibExt/`):** top-level `[[lean_lib]]` root `folio/quantum-observable-universe/lean/MathlibExt/` for small general `mathlib4` core PR candidates (`-- TODO upstream: Mathlib.<Path>`).
+   - **Tier B (6 top-level Lean Reservoir `[[lean_lib]]` roots under `folio/quantum-observable-universe/lean/<Lib>/`):** `QCalculus/`, `TwistedFrobeniusHopf/`, `ToricConicOpt/`, `CompactQuantumMetrics/`, `HeckeTemperleyLieb/`, `BraidKnotOctonion/` (in strict DAG order `L1 -> L7`, plus [`folio/unital-groebner-bases/lean/`](../../folio/unital-groebner-bases/lean/) `UGB`).
+   - **Hard rule (`BP008`):** Tier-A and Tier-B modules have **zero `QOU.*` model imports**, **zero `sorry`**, and **zero custom `axiom`s**.
+2. **QOU model / chapter formalization:**
+   - Library declarations shared by ≥2 blocks go in one of the **12 canonical chapter subgraphs** under `folio/quantum-observable-universe/lean/QOU/<Chapter>/`: `QOU.Core`, `QOU.LiftingDescent`, `QOU.BraidsAndKnots`, `QOU.BringsSurface`, `QOU.Confinement`, `QOU.EightfoldWay`, `QOU.MassTheory`, `QOU.Nuclear`, `QOU.StandardModel`, `QOU.FluidDynamics`, `QOU.InformationTheory`, `QOU.Observations`. **Never** create loose `QOU/*.lean` files or synonym folders (`BP009`); if rebasing an older branch, run `nice -n 10 python3 scripts/apply-lean-reservoir-migration.py --fixup-branch`.
+   - Block-specific formalizations live as `folio/<paper>/<chapter>/<block>.lean` siblings paired with `<block>.ts` and `<block>.md` (and **never** shadow a real library declaration with `: True := trivial`!).
+
+---
+
+## 3. Canonical Lean 4.24+ File Template (`BP001`–`BP005`)
+
+Every generated `.lean` file MUST place `import` statements **before** `/-! ... -/` module docstrings (`BP002a`), disable `autoImplicit` (`BP001`), use targeted `Mathlib.*` imports (`BP003`), and start over generic §7c base rings (`BP005`):
 
 ```lean
-/-- **Trivial model (consistency witness).**
+/-
+Copyright (c) 2026 litlfred. All rights reserved.
+Released under Apache 2.0 license.
+-/
+import Mathlib.Algebra.Ring.Defs
+import Mathlib.Tactic.Ring
 
-    Concrete `HeckeAnyonicSubstrate R q` with `NormalForm := PUnit`
-    and the identity braid action.  Proves the class axiomatisation
-    is consistent.  Provided as a `def` (not `instance`) so it does
-    not pollute typeclass resolution. -/
--- Ref: [leitner2026] braids-and-knots/hecke-anyonic-substrate
-def trivialModel (R : Type u) [CommRing R] (q : R) :
-    HeckeAnyonicSubstrate R q where
-  NormalForm := PUnit
-  braidAction _ T := T
-  heckeQuadratic := True
-  anyonic_holds T := ⟨0, T, rfl⟩
+/-!
+# Concise Module Title
+
+Summary of main definitions, theorems, §7c base-ring generality, and `[bibkey]` references.
+-/
+
+set_option autoImplicit false
+
+namespace TwistedFrobeniusHopf
+
+/-- Public structures/classes/types use `UpperCamelCase` (`BP004a`). -/
+structure PairingDatum (R : Type*) [CommRing R] where
+  val : R
+
+/-- Theorems and lemmas proving `Prop` use `snake_case` (`BP004b`). -/
+@[simp]
+theorem val_add_zero {R : Type*} [CommRing R] (d : PairingDatum R) :
+    d.val + 0 = d.val := by
+  ring
+
+end TwistedFrobeniusHopf
 ```
 
-### Generation rule
+---
 
-When generating a Pattern 3.3 conjecture class, emit two `def`s
-in the same file:
+## 4. Content-Object `.ts` Wiring (`schemas/lean-packages.ts`)
 
-1. The `class` itself (Pattern 3.3, with `nStar_eq` / `field_eq` style).
-2. A `trivialModel` populated entirely with degenerate values so
-   each class field discharges by `rfl`.
+| Block kind | Lean required? | `.ts` `lean.ref` URI shape |
+|---|---|---|
+| `definition` | **Yes** (enforced) | `lean: { ref: "qou:QOU.<Subgraph>.<UpperCamelTypeOrSnakeDef>" }` |
+| `theorem`, `lemma`, `proposition`, `corollary` | **Expected** | `lean: { ref: "qou:QOU.<Subgraph>.<snake_case_thm>" }` + matching `**Proof.**` in `.md` |
+| `conjecture` | Optional (§3b-cond) | `lean: { ref: "qou:QOU.<Subgraph>.<ConjectureClass>" }` |
+| `prose`, `equation`, `diagram`, `table` | N/A | Omit `lean` field |
 
-The trivial model unblocks downstream `[ClassName]`-conditional
-theorems (AGENTS.md §3b-cond) by guaranteeing the conditional
-hypothesis is satisfiable, hence the conditional results are not
-vacuously true.
+Parse and validate URIs via [`schemas/lean-packages.ts`](../../schemas/lean-packages.ts) (`qou`, `ugb`, `fred2005`).
 
-### Anti-pattern
+---
 
-Do **not** mark the trivial model as `instance` — typeclass search
-would then prefer the trivial model over any future genuine
-instance, silently collapsing all downstream theorems to the
-degenerate model.  Always `def trivialModel … : TheClass`.
+## 5. Trivial-Model Consistency Witness for §3b-cond Conjecture Classes
+
+Whenever a genuine open conjecture is axiomatised as a `class` (per AGENTS.md §3b-cond, carrying **hypotheses** from which downstream theorems derive — never carrying the conclusion itself per [`lean-proof-vacuity-audit.md`](lean-proof-vacuity-audit.md) §1 & §10!), emit a paired consistency witness `def trivialModel` (as a **`def`**, NEVER an `instance`!) showing the hypothesis bundle is non-contradictory without polluting typeclass synthesis.
+
+---
+
+## 6. CPU-Throttled Verification & Linter Gate (`lean-build-hygiene.md`)
+
+**NEVER** run bare `lake build`. Verify every generated `.lean` file single-threaded:
+
+```bash
+export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 \
+       OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1
+
+# 1. Static Mathlib4/Reservoir hygiene gate (BP001-BP009):
+nice -n 15 python3 scripts/lean-best-practices-lint.py --diff
+
+# 2. Type-check library module + sibling via private symlink-farm overlay:
+nice -n 15 bash scripts/lean-overlay-env.sh init
+nice -n 15 bash scripts/lean-overlay-env.sh build QOU/<Subgraph>/<Module>.lean
+nice -n 15 bash scripts/lean-overlay-env.sh check folio/quantum-observable-universe/<chapter>/<block>.lean
+
+# 3. Validate content manifest & cross-references:
+nice -n 15 bun run scripts/run-validate.ts
+```
+
+## 7. Checklist
+
+- [ ] Imports precede `/-! ... -/` docstring (`BP002a`) and `set_option autoImplicit false` is present (`BP001`)
+- [ ] Minimal targeted `Mathlib.*` imports (`BP003`); zero `QOU.*` upward imports in Tier-A/Tier-B (`BP008`); zero new synonym dirs (`BP009`)
+- [ ] `UpperCamelCase` types/classes and `snake_case` theorems/lemmas (`BP004`) with `/-- ... -/` docstrings
+- [ ] §7c generic base ring (`[CommRing R]` / `[Field R]`) unless genuinely Archimedean (`BP005`, `BP006`)
+- [ ] Zero `: True` / self-assuming vacuity (`BP007`); matching `**Proof.**` narrative written in `.md`
+- [ ] Verified with `LEAN_NUM_THREADS=1 nice -n 15` overlay check + `lean-best-practices-lint.py --diff`

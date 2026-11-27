@@ -1,5 +1,5 @@
-import QOU.Basic
-import QOU.QuantumObservableUniverses.QDifferentialGeometry
+import QOU.Core.Basic
+import QOU.Core.QDifferentialGeometry
 
 
 /-!

@@ -1,4 +1,4 @@
-## Proof (sketch)
+**Sketch.**
 
 The program is a semidefinite program over the symmetric cone
 $\mathbb{S}_+^N$, $N = \dim_R H_n(R, q)$, and existence/attainment of

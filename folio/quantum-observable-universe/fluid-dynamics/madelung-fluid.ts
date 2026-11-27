@@ -8,5 +8,10 @@ export default remark({
     "def:mass-identity",
     "rem:algebraic-filter",
   ],
+  cites: [
+    "madelung1927",
+    "takabayasi1952",
+    "takabayasi1983",
+  ],
   tags: ["madelung", "fluid-dynamics", "acoustic-metric", "divisor", "vortex"],
 });

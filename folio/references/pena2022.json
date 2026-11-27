@@ -1,14 +1,14 @@
 {
   "$schema": "folio-reference/v1",
+  "_comment": [
+    "SUSPECT / NEEDS HUMAN VERIFICATION (bean qou-nq4h, 2026-11-24): No DOI, ISBN, or arXiv record matches 'Peña' + 'QGoL: A Quantum Game of Life' in 'Advances in Quantum Computation and Quantum Cellular Automata' (Springer Nature, 2022). Closest verified Springer QGoL circuit paper is Daniel Escánez-Expósito, Jorge García-Díaz, Daniel del Castillo, Pino Caballero-Gil, and Eduardo Sáenz-de-Cabezón, 'QGoL: Quantum Game of Life', Quantum Information Processing 25, 17 (2026), DOI 10.1007/s11128-025-05022-y; classical life-like CA complexity paper by Eric Peña and Hiroki Sayama is 'Life Worth Mentioning: Complexity in Life-Like Cellular Automata', Artificial Life 27(2), 105-112 (2021), DOI 10.1162/artl_a_00348. Defer wrong-work replacement to author judgement per local/bib-qa."
+  ],
   "id": "pena2022",
   "type": "chapter",
   "title": "QGoL: A Quantum Game of Life",
   "author": [
     {
-      "family": "Pe\\~{n}a"
-    },
-    {
-      "literal": "others"
+      "family": "Peña"
     }
   ],
   "container-title": "Advances in Quantum Computation and Quantum Cellular Automata",
@@ -20,5 +20,5 @@
       ]
     ]
   },
-  "note": "Models Conway's Game of Life as a reversible quantum circuit with Toffoli-based neighbour-count logic."
+  "note": "Models Conway's Game of Life as a reversible quantum circuit with Toffoli-based neighbour-count logic. [Needs human verification of bibliographic source; see _comment.]"
 }

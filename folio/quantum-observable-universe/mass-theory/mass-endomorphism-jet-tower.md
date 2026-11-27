@@ -1,2 +1,1 @@
-**Remark.**
 The tower formula limits explicitly to quadratic $\hat{V}_i \hat{V}_j$ coordinates per jet level. The Hecke relation and the $\Phi_q$ pentagon identity are intrinsically quadratic. Triple or higher interactions at level $n$ ascend to level $n+1$ as new singletons or pairs, ensuring they are captured appropriately by the level-$(n+1)$ contribution. The descended contribution carries a single holonomy contribution from the level-0 unknot core and is not summed iteratively over jet levels.

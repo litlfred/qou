@@ -38,7 +38,7 @@ export default remark({
   // result: two different six-parameter breaking patterns give the same
   // (vanishing) combination, so the relation selects no mechanism.
   lean: {
-    ref: "qou:QOU.Eightfold.ColemanGlashowIdentity.cg_cannot_discriminate",
+    ref: "qou:QOU.EightfoldWay.ColemanGlashowIdentity.cg_cannot_discriminate",
   },
   uses: [
     "prop:borromean-decuplet",
@@ -48,5 +48,10 @@ export default remark({
   cites: ["colemanglashow1961"],
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): This is\na theorem, machine-checked in\n`QOU/Eightfold/ColemanGlashowIdentity.lean`: the combination" },
+    {
+      kind: "note",
+      date: "2026-11-23",
+      body: "Microscopic Borromean `V³` U-spin QED realization (`qou-8fw2`, `qou-8fl1`): `QOU/Eightfold/USpinColemanGlashowLambdaSigma.lean` proves over any `[Field K]` (`3 ≠ 0`, `q ≠ 0`) that on the connected Borromean `V³` adjacent-charge trace (`u = +2/3`, `d = s = -1/3`), each individual doublet splitting `p - n`, `Σ⁺ - Σ⁻`, and `Ξ⁰ - Ξ⁻` is a non-zero rational function of `q` (`borromeanV3_all_three_doublet_splittings_nonzero_at_two`) while their alternating Coleman–Glashow sum vanishes identically (`coleman_glashow_borromeanV3_connected`). Verified at 80 dps in `computations/probes/sm8w_eightfold_clasp_diquark_gmo/sm8w_eightfold_clasp_diquark_gmo_probe.py` (`sm8w-eightfold-clasp-diquark-gmo.witness.json`).",
+    },
   ],
 });

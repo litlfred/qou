@@ -1,7 +1,5 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with recursive brane tower $\{A_n\}_{n \geq 0}$ ([recursive brane tower](#def:recursive-brane-tower)) and substrate parameter $q$. Let $\{U_i\}$ be a covering of the underlying site $\mathcal{S}$ trivialising every level of the tower. The **Yekutieli lifting triple** at level $n$ over an intersection $U_i \cap U_j$ is the datum $(x_{ij}^{(n)}, g_{ij}^{(n)}, a_{ij}^{(n)})$, where:
 
 1. **Objects.** $x_i^{(n)} \in \mathrm{Ob}(\mathfrak{G}_n|_{U_i})$ are local trivialisations of the Frobenius--Hopf object $A_n$.
-2. **$1$-morphisms.** $g_{ij}^{(n)} \colon x_i^{(n)} \to x_j^{(n)}$ are the transition automorphisms in $\mathrm{Aut}_{\mathbf{C}}(A_n|_{U_i \cap U_j})$. They encode the patching data of the comultiplication $\Delta_n$.
-3. **$2$-morphisms.** $a_{ij}^{(n)} \colon g_{ij}^{(n)} \Rightarrow g_{ij}^{(n+1)}$ are the deformation parameters living in the band $\mathcal{B}$. They implement the lift of transition automorphisms from level $n$ to level $n{+}1$.
-
-The assignment $n \mapsto (x^{(n)}, g^{(n)}, a^{(n)})$ is functorial. The jet prolongation ([jet prolongation](#prop:jet-prolongation)) sends the triple at level $n$ to the triple at level $n{+}1$. The :refterm[descent]{#descent} homomorphism $\mathfrak{d}_{n+1}$ ([:refterm[descent]{#descent}](#lem:descent)) reverses this assignment. In the archimedean realisation, $g_{ij}^{(n)} \in \Gamma(U_i \cap U_j, \mathrm{SU}_{q_n}(2))$ are gauge transition functions and $a_{ij}^{(n)} \in \mathcal{O}_M^{\times}$.
+2. **$1$-morphisms.** $g_{ij}^{(n)} \colon x_i^{(n)} \to x_j^{(n)}$ are the transition automorphisms in $\mathrm{Aut}_{\mathbf{C}}(A_n|_{U_i \cap U_j})$.
+3. **$2$-morphisms.** $a_{ij}^{(n)} \colon g_{ij}^{(n)} \Rightarrow g_{ij}^{(n+1)}$ are the deformation parameters living in the band $\mathcal{B}$.

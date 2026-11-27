@@ -1,0 +1,663 @@
+{
+  "engine": "mpmath-80dps-exact-shape-field",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T03:48:34.087753+00:00",
+  "commitSha": "71de1331c3c2f42865e6beae984717df2a667e9f",
+  "assertions": [
+    {
+      "name": "cal2_vol41_spinor_matches_clausen_80dps",
+      "computed": "2.0298832128193072500424051085490405718833786150606",
+      "expected": "2.0298832128193072500424051085490405718833786150606",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "2*Cl_2(pi/3) vs x^2 + x + 1 parabolic spinor Bloch-Wigner sum"
+    },
+    {
+      "name": "zickert_im_matches_bloch_wigner_all_6_knots",
+      "computed": "3.2891657582879232459967551039962459304055079512990e-79",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-74",
+      "source": "Zickert (2009) extended Rogers dilogarithm on barycentric crossing octahedra"
+    },
+    {
+      "name": "zickert_cs_gauge_independence_all_6_knots",
+      "computed": "3.7108536760171441749706980660470466907139064065937e-79",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-74",
+      "source": "Gauge independence of CS mod 2*pi^2 across distinct auxiliary spinors (vpA,vmA) vs (vpB,vmB)"
+    },
+    {
+      "name": "dubois_porti_fig8_torsion_matches_sqrt3",
+      "computed": "1.7320508075688772935274463415058723669428052538104",
+      "expected": "1.7320508075688772935274463415058723669428052538104",
+      "passed": true,
+      "tolerance": "1e-74",
+      "source": "Porti (1997) / Murakami (2011) |T_Ad(4_1; mu)| = sqrt(3)"
+    },
+    {
+      "name": "murakami_deformed_41_matches_lean_9213_disc",
+      "computed": "1.7257136277151324072471817656369437392454031372875",
+      "expected": "1.7257136277151324072471817656369437392454031372875",
+      "passed": true,
+      "tolerance": "1e-73",
+      "source": "QOU.Observations.InhomogeneousLeptonLoopResolvent.reidemeisterDisc41(q_0)"
+    },
+    {
+      "name": "fox_jacobian_row_drop_invariance",
+      "computed": "1.8647658981273958912457746452863155632666840358477e-77",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-72",
+      "source": "Exact SL(2,C) product relation invariance across all 3 Fox relation-block drops"
+    },
+    {
+      "name": "qou_r0dn_vol62_exact_quintic_matches_registry_50dps",
+      "computed": "4.4008325161230461014412038656409280339834854185165",
+      "expected": "4.4008325161230461014412038656409280339834854185165",
+      "passed": true,
+      "tolerance": "1e-48",
+      "source": "qou-r0dn: exact Z[x] quintic x^5-x^4-2x^3+x^2+x+1 Bloch-Wigner vs substrate/knot_volumes.py (refuting legacy 2*Vol(4_1)=4.0597664...)"
+    },
+    {
+      "name": "exact_z_spinor_polynomial_verification_count",
+      "computed": 6,
+      "expected": 6,
+      "passed": true,
+      "tolerance": 0,
+      "source": "LowCrossingThreeBraidTauSelection.lean spinor_closure_{4_1,5_2,6_2,6_3,7_3,7_5}"
+    },
+    {
+      "name": "preregistered_1pct_gate_refuted_on_all_primary_b3_le7",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "PREREGISTRATION.md §1.3 & §3 (<1% relative error gate -> selected = 'none')"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 23,
+  "computation": "gap2-mtau-hyperbolic-census-torsion",
+  "scriptFile": "gap2_mtau_hyperbolic_census_torsion_probe.py",
+  "scriptHash": "bc6dc98a2427",
+  "scriptCommitSha": "71de1331c3c2f42865e6beae984717df2a667e9f",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gap2_mtau_hyperbolic_census_torsion/gap2_mtau_hyperbolic_census_torsion_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gap2_mtau_hyperbolic_census_torsion/gap2_mtau_hyperbolic_census_torsion_probe.py"
+  },
+  "description": "80-dps exact shape-field, Zickert complex-volume, and Dubois-Porti/Murakami 1-loop Reidemeister-torsion evaluation of the complete <=7-crossing 3-braid hyperbolic census for m_tau/m_e (Open Gap 2 Option 2A + bean qou-r0dn).",
+  "parameters": {
+    "work_dps": 80,
+    "out_digits": 50,
+    "q0_proton_80dps": "1.1099785827513808075916690956107688798744991218736",
+    "hbar_q0_80dps": "0.099081716044258507839177117518906063985258373389446",
+    "codata_tau_over_e": "3477.23",
+    "codata_tau_over_e_uncertainty": "0.23"
+  },
+  "data": {
+    "selected": "none",
+    "selection_rule_13a_note": "No prime <=7-crossing hyperbolic 3-braid achieves <1% relative error under any pre-registered parameter-free map (Map A, Map B, Map C1/C2a/C2b). Closest is 5_2^- under Map_C2a_inhomogeneous_murakami_cone (-16.2784403253%). Open carrier isolated in Lean 4 as zero-instance class TauHyperbolicThreeBraidCarrierHypothesis.",
+    "muon_cal2_sanity": {
+      "vol_4_1_clausen_80dps": "2.0298832128193072500424051085490405718833786150606",
+      "vol_4_1_spinor_80dps": "2.0298832128193072500424051085490405718833786150606",
+      "predicted_m_mu_over_m_e": "206.76832637067389028960958640990267593845820455103",
+      "codata_m_mu_over_m_e": "206.7682827",
+      "rel_err": "2.11205864459e-7"
+    },
+    "required_tau_volume_at_k3_80dps": "3.3823144193484566912964520313545022692383256146295",
+    "fwm_homfly_census_le7_three_braids": [
+      {
+        "knot": "4_1",
+        "realizing_strands": 3,
+        "homfly_v_min": -2,
+        "homfly_v_max": 2,
+        "fwm_lower_bound": 3,
+        "exact_braid_index": 3
+      },
+      {
+        "knot": "5_2",
+        "realizing_strands": 3,
+        "homfly_v_min": 2,
+        "homfly_v_max": 6,
+        "fwm_lower_bound": 3,
+        "exact_braid_index": 3
+      },
+      {
+        "knot": "6_2",
+        "realizing_strands": 3,
+        "homfly_v_min": 0,
+        "homfly_v_max": 4,
+        "fwm_lower_bound": 3,
+        "exact_braid_index": 3
+      },
+      {
+        "knot": "6_3",
+        "realizing_strands": 3,
+        "homfly_v_min": -2,
+        "homfly_v_max": 2,
+        "fwm_lower_bound": 3,
+        "exact_braid_index": 3
+      },
+      {
+        "knot": "7_3",
+        "realizing_strands": 3,
+        "homfly_v_min": 4,
+        "homfly_v_max": 8,
+        "fwm_lower_bound": 3,
+        "exact_braid_index": 3
+      },
+      {
+        "knot": "7_5",
+        "realizing_strands": 3,
+        "homfly_v_min": 4,
+        "homfly_v_max": 8,
+        "fwm_lower_bound": 3,
+        "exact_braid_index": 3
+      }
+    ],
+    "fwm_homfly_excluded_higher_braids": [
+      {
+        "knot": "6_1",
+        "realizing_strands": 4,
+        "homfly_v_min": -2,
+        "homfly_v_max": 4,
+        "fwm_lower_bound": 4,
+        "exact_braid_index": 4
+      },
+      {
+        "knot": "7_2",
+        "realizing_strands": 4,
+        "homfly_v_min": 2,
+        "homfly_v_max": 8,
+        "fwm_lower_bound": 4,
+        "exact_braid_index": 4
+      },
+      {
+        "knot": "7_4",
+        "realizing_strands": 4,
+        "homfly_v_min": 2,
+        "homfly_v_max": 8,
+        "fwm_lower_bound": 4,
+        "exact_braid_index": 4
+      },
+      {
+        "knot": "7_6",
+        "realizing_strands": 4,
+        "homfly_v_min": 0,
+        "homfly_v_max": 6,
+        "fwm_lower_bound": 4,
+        "exact_braid_index": 4
+      },
+      {
+        "knot": "7_7",
+        "realizing_strands": 4,
+        "homfly_v_min": -2,
+        "homfly_v_max": 4,
+        "fwm_lower_bound": 4,
+        "exact_braid_index": 4
+      },
+      {
+        "knot": "8_1",
+        "realizing_strands": 5,
+        "homfly_v_min": -6,
+        "homfly_v_max": 2,
+        "fwm_lower_bound": 5,
+        "exact_braid_index": 5
+      }
+    ],
+    "primary_le7_three_braid_evaluations": [
+      {
+        "knot": "5_2^-",
+        "base_knot": "5_2",
+        "crossings": 5,
+        "braid_index": 3,
+        "seifert_genus": 1,
+        "writhe": -4,
+        "gate_G1_component_framing": true,
+        "gate_G2_halved_writhe_neg2": false,
+        "gate_G3_muon_writhe_zero": false,
+        "vol_80dps": "2.8281220883307831627638988092766349427709813173006",
+        "cs_mod_2pi2_80dps": "3.0241283765093016597199512216946009939844502422707",
+        "cs_mod_pi2_80dps": "3.0241283765093016597199512216946009939844502422707",
+        "dubois_porti_T_Ad_80dps": "2.3223254762678201462574401611159751313219959276107",
+        "murakami_cone_ratio_q0_80dps": "1.0012481964526388476620033103145570504338625905013",
+        "w_alg_h3_ratio_80dps": "0.076328169873380805754323453253368453953765291566521",
+        "predictions": {
+          "Map_A_bare_vol": "2907.4857479100958394220681228692417134997291038564",
+          "Map_B_cvol_mod_2pi2": "4256.6779633774805612193943636229432040871393736630",
+          "Map_B_PSL2_cvol_mod_pi2": "4256.6779633774805612193943636229432040871393736630",
+          "Map_C1_1loop_log_torsion_rel_41": "2892.5495489725211440878727175326364465703016951144",
+          "Map_C1u_1loop_log_torsion_unsub": "2864.5727886811420690146302937526305624834623560251",
+          "Map_C2a_inhomogeneous_murakami_cone": "2911.1911894766086087419293442895692086302245732639",
+          "Map_C2b_direct_torsion_amp_rel_41": "2168.4785742245891964086170866017672813344506334412"
+        },
+        "rel_err_vs_codata": {
+          "Map_A_bare_vol": "0.163850033530",
+          "Map_B_cvol_mod_2pi2": "0.224157724217",
+          "Map_B_PSL2_cvol_mod_pi2": "0.224157724217",
+          "Map_C1_1loop_log_torsion_rel_41": "0.168145463782",
+          "Map_C1u_1loop_log_torsion_unsub": "0.176191166911",
+          "Map_C2a_inhomogeneous_murakami_cone": "0.162784403253",
+          "Map_C2b_direct_torsion_amp_rel_41": "0.376377583817"
+        },
+        "signed_pct_err_vs_codata": {
+          "Map_A_bare_vol": "-16.3850033530",
+          "Map_B_cvol_mod_2pi2": "22.4157724217",
+          "Map_B_PSL2_cvol_mod_pi2": "22.4157724217",
+          "Map_C1_1loop_log_torsion_rel_41": "-16.8145463782",
+          "Map_C1u_1loop_log_torsion_unsub": "-17.6191166911",
+          "Map_C2a_inhomogeneous_murakami_cone": "-16.2784403253",
+          "Map_C2b_direct_torsion_amp_rel_41": "-37.6377583817"
+        },
+        "rel_err_vs_belle2": {
+          "Map_A_bare_vol": "0.163849552600",
+          "Map_B_cvol_mod_2pi2": "0.224158428316",
+          "Map_B_PSL2_cvol_mod_pi2": "0.224158428316",
+          "Map_C1_1loop_log_torsion_rel_41": "0.168144985324",
+          "Map_C1u_1loop_log_torsion_unsub": "0.176190693080",
+          "Map_C2a_inhomogeneous_murakami_cone": "0.162783921711",
+          "Map_C2b_direct_torsion_amp_rel_41": "0.376377225127"
+        },
+        "best_map_for_knot": "Map_C2a_inhomogeneous_murakami_cone",
+        "best_rel_err_codata": "0.162784403253",
+        "passes_1pct_gate": false
+      },
+      {
+        "knot": "6_2^-",
+        "base_knot": "6_2",
+        "crossings": 6,
+        "braid_index": 3,
+        "seifert_genus": 2,
+        "writhe": -2,
+        "gate_G1_component_framing": true,
+        "gate_G2_halved_writhe_neg2": true,
+        "gate_G3_muon_writhe_zero": false,
+        "vol_80dps": "4.4008325161230461014412038656409280339834854185165",
+        "cs_mod_2pi2_80dps": "-5.8725626936300515188855110206470671988133885500420",
+        "cs_mod_pi2_80dps": "3.9970417074593070999489799792290839365003108571988",
+        "dubois_porti_T_Ad_80dps": "4.4331798617822378132025845759293267653886430045965",
+        "murakami_cone_ratio_q0_80dps": "1.0009143144995087886966582887838249075146579913381",
+        "w_alg_h3_ratio_80dps": "0.28538846866902012118516966638304339781352278682955",
+        "predictions": {
+          "Map_A_bare_vol": "4524.3300748445310362203327886970573695486392775354",
+          "Map_B_cvol_mod_2pi2": "7544.4869518382812272937467188155398271501229735048",
+          "Map_B_PSL2_cvol_mod_pi2": "6111.8861808473404131388854594923538026923283473601",
+          "Map_C1_1loop_log_torsion_rel_41": "4476.4644776919997764146829774122775817663884921776",
+          "Map_C1u_1loop_log_torsion_unsub": "4448.4877174006207013414405536322716976795491530883",
+          "Map_C2a_inhomogeneous_murakami_cone": "4528.7521239011940942408217498819931668338847594823",
+          "Map_C2b_direct_torsion_amp_rel_41": "1767.6633486944138034067648682701513741303649253328"
+        },
+        "rel_err_vs_codata": {
+          "Map_A_bare_vol": "0.301130519075",
+          "Map_B_cvol_mod_2pi2": "1.16968303846",
+          "Map_B_PSL2_cvol_mod_pi2": "0.757688211837",
+          "Map_C1_1loop_log_torsion_rel_41": "0.287365080162",
+          "Map_C1u_1loop_log_torsion_unsub": "0.279319377033",
+          "Map_C2a_inhomogeneous_murakami_cone": "0.302402235084",
+          "Map_C2b_direct_torsion_amp_rel_41": "0.491646123870"
+        },
+        "signed_pct_err_vs_codata": {
+          "Map_A_bare_vol": "30.1130519075",
+          "Map_B_cvol_mod_2pi2": "116.968303846",
+          "Map_B_PSL2_cvol_mod_pi2": "75.7688211837",
+          "Map_C1_1loop_log_torsion_rel_41": "28.7365080162",
+          "Map_C1u_1loop_log_torsion_unsub": "27.9319377033",
+          "Map_C2a_inhomogeneous_murakami_cone": "30.2402235084",
+          "Map_C2b_direct_torsion_amp_rel_41": "-49.1646123870"
+        },
+        "rel_err_vs_belle2": {
+          "Map_A_bare_vol": "0.301131267448",
+          "Map_B_cvol_mod_2pi2": "1.16968428640",
+          "Map_B_PSL2_cvol_mod_pi2": "0.757689222808",
+          "Map_C1_1loop_log_torsion_rel_41": "0.287365820617",
+          "Map_C1u_1loop_log_torsion_unsub": "0.279320112860",
+          "Map_C2a_inhomogeneous_murakami_cone": "0.302402984188",
+          "Map_C2b_direct_torsion_amp_rel_41": "0.491645831480"
+        },
+        "best_map_for_knot": "Map_C1u_1loop_log_torsion_unsub",
+        "best_rel_err_codata": "0.279319377033",
+        "passes_1pct_gate": false
+      },
+      {
+        "knot": "6_3",
+        "base_knot": "6_3",
+        "crossings": 6,
+        "braid_index": 3,
+        "seifert_genus": 2,
+        "writhe": 0,
+        "gate_G1_component_framing": true,
+        "gate_G2_halved_writhe_neg2": false,
+        "gate_G3_muon_writhe_zero": true,
+        "vol_80dps": "5.6930210912813007651124832774812229269443017330069",
+        "cs_mod_2pi2_80dps": "-5.0602550127506511476873155446096091237007814635369e-80",
+        "cs_mod_pi2_80dps": "-5.0602550127506511476873155446096091237007814635369e-80",
+        "dubois_porti_T_Ad_80dps": "5.7527965430374911906058404819666703055554844820665",
+        "murakami_cone_ratio_q0_80dps": "1.0046756456589098762421920293493485365406485916106",
+        "w_alg_h3_ratio_80dps": "0.30812011538227048183860740383601253067661334388890",
+        "predictions": {
+          "Map_A_bare_vol": "5852.7804558895554727339101380704149029349782345177",
+          "Map_B_cvol_mod_2pi2": "5852.7804558895554727339101380704149029349782345177",
+          "Map_B_PSL2_cvol_mod_pi2": "5852.7804558895554727339101380704149029349782345177",
+          "Map_C1_1loop_log_torsion_rel_41": "5791.6437975840114054250424930249715769149240606194",
+          "Map_C1u_1loop_log_torsion_unsub": "5763.6670372926323303518000692449656928280847215300",
+          "Map_C2a_inhomogeneous_murakami_cone": "5880.4541035360703096769669309240879974338143931464",
+          "Map_C2b_direct_torsion_amp_rel_41": "1762.1539436182318529459237998892980238937830334802"
+        },
+        "rel_err_vs_codata": {
+          "Map_A_bare_vol": "0.683173231535",
+          "Map_B_cvol_mod_2pi2": "0.683173231535",
+          "Map_B_PSL2_cvol_mod_pi2": "0.683173231535",
+          "Map_C1_1loop_log_torsion_rel_41": "0.665591231407",
+          "Map_C1u_1loop_log_torsion_unsub": "0.657545528278",
+          "Map_C2a_inhomogeneous_murakami_cone": "0.691131763943",
+          "Map_C2b_direct_torsion_amp_rel_41": "0.493230547413"
+        },
+        "signed_pct_err_vs_codata": {
+          "Map_A_bare_vol": "68.3173231535",
+          "Map_B_cvol_mod_2pi2": "68.3173231535",
+          "Map_B_PSL2_cvol_mod_pi2": "68.3173231535",
+          "Map_C1_1loop_log_torsion_rel_41": "66.5591231407",
+          "Map_C1u_1loop_log_torsion_unsub": "65.7545528278",
+          "Map_C2a_inhomogeneous_murakami_cone": "69.1131763943",
+          "Map_C2b_direct_torsion_amp_rel_41": "-49.3230547413"
+        },
+        "rel_err_vs_belle2": {
+          "Map_A_bare_vol": "0.683174199647",
+          "Map_B_cvol_mod_2pi2": "0.683174199647",
+          "Map_B_PSL2_cvol_mod_pi2": "0.683174199647",
+          "Map_C1_1loop_log_torsion_rel_41": "0.665592189406",
+          "Map_C1u_1loop_log_torsion_unsub": "0.657546481649",
+          "Map_C2a_inhomogeneous_murakami_cone": "0.691132736633",
+          "Map_C2b_direct_torsion_amp_rel_41": "0.493230255934"
+        },
+        "best_map_for_knot": "Map_C2b_direct_torsion_amp_rel_41",
+        "best_rel_err_codata": "0.493230547413",
+        "passes_1pct_gate": false
+      },
+      {
+        "knot": "7_3^-",
+        "base_knot": "7_3",
+        "crossings": 7,
+        "braid_index": 3,
+        "seifert_genus": 2,
+        "writhe": -6,
+        "gate_G1_component_framing": true,
+        "gate_G2_halved_writhe_neg2": false,
+        "gate_G3_muon_writhe_zero": false,
+        "vol_80dps": "4.5921256970270625501966139946554737323543603265433",
+        "cs_mod_2pi2_80dps": "-3.6955781870608868503487508634432846119342159754628",
+        "cs_mod_pi2_80dps": "-3.6955781870608868503487508634432846119342159754628",
+        "dubois_porti_T_Ad_80dps": "5.5434827804978095600097719092268653909041307533451",
+        "murakami_cone_ratio_q0_80dps": "1.0008712481053301286706844546222880252883409414771",
+        "w_alg_h3_ratio_80dps": "-0.079718369557693114266238321664043268772577842292215",
+        "predictions": {
+          "Map_A_bare_vol": "4720.9913857001334190628512898382864318017088928978",
+          "Map_B_cvol_mod_2pi2": "6059.8946942493221159020328267247866546399061413900",
+          "Map_B_PSL2_cvol_mod_pi2": "6059.8946942493221159020328267247866546399061413900",
+          "Map_C1_1loop_log_torsion_rel_41": "4661.7423928721606184316795643240058016317046629096",
+          "Map_C1u_1loop_log_torsion_unsub": "4633.7656325807815433584371405439999175448653238203",
+          "Map_C2a_inhomogeneous_murakami_cone": "4725.0248221306468258986646780189729790156284769390",
+          "Map_C2b_direct_torsion_amp_rel_41": "1475.0649124219571826144166293026591901807053501344"
+        },
+        "rel_err_vs_codata": {
+          "Map_A_bare_vol": "0.357687407994",
+          "Map_B_cvol_mod_2pi2": "0.742736228046",
+          "Map_B_PSL2_cvol_mod_pi2": "0.742736228046",
+          "Map_C1_1loop_log_torsion_rel_41": "0.340648272583",
+          "Map_C1u_1loop_log_torsion_unsub": "0.332602569453",
+          "Map_C2a_inhomogeneous_murakami_cone": "0.358847364750",
+          "Map_C2b_direct_torsion_amp_rel_41": "0.575793113363"
+        },
+        "signed_pct_err_vs_codata": {
+          "Map_A_bare_vol": "35.7687407994",
+          "Map_B_cvol_mod_2pi2": "74.2736228046",
+          "Map_B_PSL2_cvol_mod_pi2": "74.2736228046",
+          "Map_C1_1loop_log_torsion_rel_41": "34.0648272583",
+          "Map_C1u_1loop_log_torsion_unsub": "33.2602569453",
+          "Map_C2a_inhomogeneous_murakami_cone": "35.8847364750",
+          "Map_C2b_direct_torsion_amp_rel_41": "-57.5793113363"
+        },
+        "rel_err_vs_belle2": {
+          "Map_A_bare_vol": "0.357688188896",
+          "Map_B_cvol_mod_2pi2": "0.742737230417",
+          "Map_B_PSL2_cvol_mod_pi2": "0.742737230417",
+          "Map_C1_1loop_log_torsion_rel_41": "0.340649043684",
+          "Map_C1u_1loop_log_torsion_unsub": "0.332603335928",
+          "Map_C2a_inhomogeneous_murakami_cone": "0.358848146320",
+          "Map_C2b_direct_torsion_amp_rel_41": "0.575792869371"
+        },
+        "best_map_for_knot": "Map_C1u_1loop_log_torsion_unsub",
+        "best_rel_err_codata": "0.332602569453",
+        "passes_1pct_gate": false
+      },
+      {
+        "knot": "7_5^-",
+        "base_knot": "7_5",
+        "crossings": 7,
+        "braid_index": 3,
+        "seifert_genus": 2,
+        "writhe": -6,
+        "gate_G1_component_framing": true,
+        "gate_G2_halved_writhe_neg2": false,
+        "gate_G3_muon_writhe_zero": false,
+        "vol_80dps": "6.4435373808505730861433217166220580738732173682263",
+        "cs_mod_2pi2_80dps": "-2.3796774707473914040080052735273368559995144329753",
+        "cs_mod_pi2_80dps": "-2.3796774707473914040080052735273368559995144329753",
+        "dubois_porti_T_Ad_80dps": "8.4584732361860715100686664546609226401896340743014",
+        "murakami_cone_ratio_q0_80dps": "1.0035030411419256939799487192215651590654427950509",
+        "w_alg_h3_ratio_80dps": "-0.032120928774982959564986668699846605183101704613180",
+        "predictions": {
+          "Map_A_bare_vol": "6624.3579717615650774679891720811536660088414387441",
+          "Map_B_cvol_mod_2pi2": "7061.6760825598191362017800855805597539439795080602",
+          "Map_B_PSL2_cvol_mod_pi2": "7061.6760825598191362017800855805597539439795080602",
+          "Map_C1_1loop_log_torsion_rel_41": "6543.5882648884133976433135841724051447537602676060",
+          "Map_C1u_1loop_log_torsion_unsub": "6515.6115045970343225700711603923992606669209285167",
+          "Map_C2a_inhomogeneous_murakami_cone": "6647.5312493467143015128283921469640034067785315043",
+          "Map_C2b_direct_torsion_amp_rel_41": "1356.4770206435570863511731297567092178752061509632"
+        },
+        "rel_err_vs_codata": {
+          "Map_A_bare_vol": "0.905067531271",
+          "Map_B_cvol_mod_2pi2": "1.03083376209",
+          "Map_B_PSL2_cvol_mod_pi2": "1.03083376209",
+          "Map_C1_1loop_log_torsion_rel_41": "0.881839356295",
+          "Map_C1u_1loop_log_torsion_unsub": "0.873793653166",
+          "Map_C2a_inhomogeneous_murakami_cone": "0.911731823706",
+          "Map_C2b_direct_torsion_amp_rel_41": "0.609897239859"
+        },
+        "signed_pct_err_vs_codata": {
+          "Map_A_bare_vol": "90.5067531271",
+          "Map_B_cvol_mod_2pi2": "103.083376209",
+          "Map_B_PSL2_cvol_mod_pi2": "103.083376209",
+          "Map_C1_1loop_log_torsion_rel_41": "88.1839356295",
+          "Map_C1u_1loop_log_torsion_unsub": "87.3793653166",
+          "Map_C2a_inhomogeneous_murakami_cone": "91.1731823706",
+          "Map_C2b_direct_torsion_amp_rel_41": "-60.9897239859"
+        },
+        "rel_err_vs_belle2": {
+          "Map_A_bare_vol": "0.905068627010",
+          "Map_B_cvol_mod_2pi2": "1.03083493017",
+          "Map_B_PSL2_cvol_mod_pi2": "1.03083493017",
+          "Map_C1_1loop_log_torsion_rel_41": "0.881840438674",
+          "Map_C1u_1loop_log_torsion_unsub": "0.873794730917",
+          "Map_C2a_inhomogeneous_murakami_cone": "0.911732923279",
+          "Map_C2b_direct_torsion_amp_rel_41": "0.609897015484"
+        },
+        "best_map_for_knot": "Map_C2b_direct_torsion_amp_rel_41",
+        "best_rel_err_codata": "0.609897239859",
+        "passes_1pct_gate": false
+      }
+    ],
+    "control_excluded_beta_ge4_knots": [
+      {
+        "knot": "6_1",
+        "crossings": 6,
+        "exact_braid_index": 4,
+        "riley_degree": 4,
+        "vol_80dps": "3.1639632288831439839910147159731544848127876715181",
+        "bare_vol_over_hbar3": "3252.7513691316264869565531781095741081660440773174",
+        "signed_pct_err_vs_codata": "-6.45567393783",
+        "eligible_for_B3_tau": false,
+        "exclusion_reason": "Franks-Williams-Morton HOMFLY-PT braid index = 4 > 3"
+      },
+      {
+        "knot": "7_2",
+        "crossings": 7,
+        "exact_braid_index": 4,
+        "riley_degree": 5,
+        "vol_80dps": "3.3317442316411148239145691080297127955469579091860",
+        "bare_vol_over_hbar3": "3425.2406956361929105045487067660536785046754094870",
+        "signed_pct_err_vs_codata": "-1.49513562128",
+        "eligible_for_B3_tau": false,
+        "exclusion_reason": "Franks-Williams-Morton HOMFLY-PT braid index = 4 > 3"
+      },
+      {
+        "knot": "7_4",
+        "crossings": 7,
+        "exact_braid_index": 4,
+        "riley_degree": 3,
+        "vol_80dps": "5.1379412018734177698413483394748450356496750927357",
+        "bare_vol_over_hbar3": "5282.1237384642190803083183650393976300481881452791",
+        "signed_pct_err_vs_codata": "51.9060786449",
+        "eligible_for_B3_tau": false,
+        "exclusion_reason": "Franks-Williams-Morton HOMFLY-PT braid index = 4 > 3"
+      },
+      {
+        "knot": "7_6",
+        "crossings": 7,
+        "exact_braid_index": 4,
+        "riley_degree": 9,
+        "vol_80dps": "7.0849259535108303647286514658429465358032692646187",
+        "bare_vol_over_hbar3": "7283.7453940997419876095914788657025609713021075165",
+        "signed_pct_err_vs_codata": "109.469761681",
+        "eligible_for_B3_tau": false,
+        "exclusion_reason": "Franks-Williams-Morton HOMFLY-PT braid index = 4 > 3"
+      },
+      {
+        "knot": "7_7",
+        "crossings": 7,
+        "exact_braid_index": 4,
+        "riley_degree": 4,
+        "vol_80dps": "7.6433751723599554782218444485807710336426049910086",
+        "bare_vol_over_hbar3": "7857.8659921583954916341907938889132625091009005080",
+        "signed_pct_err_vs_codata": "125.980622281",
+        "eligible_for_B3_tau": false,
+        "exclusion_reason": "Franks-Williams-Morton HOMFLY-PT braid index = 4 > 3"
+      },
+      {
+        "knot": "8_1",
+        "crossings": 8,
+        "exact_braid_index": 5,
+        "riley_degree": 6,
+        "vol_80dps": "3.4272052462740162198635395900533060307058393707238",
+        "bare_vol_over_hbar3": "3523.3805675573569097707364564054159754437801754882",
+        "signed_pct_err_vs_codata": "1.32722217275",
+        "eligible_for_B3_tau": false,
+        "exclusion_reason": "Franks-Williams-Morton HOMFLY-PT braid index = 5 > 3"
+      }
+    ],
+    "control_eight_crossing_three_braids": [
+      {
+        "knot": "8_2",
+        "crossings": 8,
+        "braid_index": 3,
+        "vol_80dps": "4.9352426782806543574780677738418359866236234648238",
+        "bare_vol_over_hbar3": "5073.7370245737234446512279143231037109936804432269",
+        "signed_pct_err_vs_codata": "45.9131844765"
+      },
+      {
+        "knot": "8_5",
+        "crossings": 8,
+        "braid_index": 3,
+        "vol_80dps": "6.9971891477922154788005778791455176889638409556479",
+        "bare_vol_over_hbar3": "7193.5464902947823848231090382936042163426757402930",
+        "signed_pct_err_vs_codata": "106.875774404"
+      },
+      {
+        "knot": "8_7",
+        "crossings": 8,
+        "braid_index": 3,
+        "vol_80dps": "7.0221965890952532635624734753055101090461012984632",
+        "bare_vol_over_hbar3": "7219.2556983520607317573344118701654235816150555444",
+        "signed_pct_err_vs_codata": "107.615133263"
+      },
+      {
+        "knot": "8_9",
+        "crossings": 8,
+        "braid_index": 3,
+        "vol_80dps": "7.5881802236416267173849879305797739440998132473030",
+        "bare_vol_over_hbar3": "7801.1221452723909105481374363887113085043464104995",
+        "signed_pct_err_vs_codata": "124.348753038"
+      },
+      {
+        "knot": "8_10",
+        "crossings": 8,
+        "braid_index": 3,
+        "vol_80dps": "8.6511485580170819661711202663143702421843667756045",
+        "bare_vol_over_hbar3": "8893.9198343921296002614576693724026396601468248839",
+        "signed_pct_err_vs_codata": "155.776000851"
+      },
+      {
+        "knot": "8_16",
+        "crossings": 8,
+        "braid_index": 3,
+        "vol_80dps": "10.579021916899270325808684550088672898504885279597",
+        "bare_vol_over_hbar3": "10875.893787303714235502669658089520135056259471469",
+        "signed_pct_err_vs_codata": "212.774644970"
+      },
+      {
+        "knot": "8_17",
+        "crossings": 8,
+        "braid_index": 3,
+        "vol_80dps": "10.985907606284820303688439759183069403959794127785",
+        "bare_vol_over_hbar3": "11294.197632034583171283686356735034017614648706819",
+        "signed_pct_err_vs_codata": "224.804445839"
+      },
+      {
+        "knot": "8_18",
+        "crossings": 8,
+        "braid_index": 3,
+        "vol_80dps": "12.350906209158200174736304438426152014199256704120",
+        "bare_vol_over_hbar3": "12697.501258899561554093840239342659005881458919321",
+        "signed_pct_err_vs_codata": "265.161385899"
+      },
+      {
+        "knot": "8_20",
+        "crossings": 8,
+        "braid_index": 3,
+        "vol_80dps": "4.1249032518076761555058998488693781629294776466641",
+        "bare_vol_over_hbar3": "4240.6575959446661494440251763454978022752728771744",
+        "signed_pct_err_vs_codata": "21.9550503114"
+      },
+      {
+        "knot": "8_21",
+        "crossings": 8,
+        "braid_index": 3,
+        "vol_80dps": "6.7837135198351265157088139420860340488314694565926",
+        "bare_vol_over_hbar3": "6974.0802415170533702009344779256538651597893810825",
+        "signed_pct_err_vs_codata": "100.564249173"
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

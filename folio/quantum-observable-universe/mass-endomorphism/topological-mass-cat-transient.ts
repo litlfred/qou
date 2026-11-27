@@ -2,7 +2,7 @@ import { lemma } from "../../schema/builders";
 
 export default lemma({
   label: "lem:topological-mass-cat-transient",
-  lean: { ref: "qou:QOU.TopologicalMass.cat_transient_localises_blowup",
+  lean: { ref: "qou:QOU.MassTheory.cat_transient_localises_blowup",
     validation: "not_checked",
   },
   title: "Transient terms localise to blow-up centres (categorical)",

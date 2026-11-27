@@ -1,5 +1,3 @@
-## Proof
-
 The full character sum distributes over the product structure of the [per-nucleon decomposition](#def:per-nucleon-channel-decomposition):
 
 $$

@@ -1,6 +1,6 @@
 # Recomputed low-isotope mass table
 
-Following the $q$-Hecke character closure ([Partition-sum form of $\mathrm{tr}_M$](#prop:q-hecke-seminormal-character-closure)) and the $\rho_K$ refinement, three independent production paths to the Markov trace $\mathrm{tr}_M(\mathcal{B}_K)$ at $q = q_0$ agree to the 60-digit serialization floor (relative residual $\lesssim 10^{-49}$) across the proton, neutron, deuteron, tritium, and ${}^{3}\mathrm{He}$. Both tabulated paths are convention D on the borromean word at the proton pin, so the agreement certifies the character closure, not the choice of convention.
+Following the $q$-Hecke character closure ([Partition-sum form of $\mathrm{tr}_M$](#prop:q-hecke-seminormal-character-closure)) and the $\rho_K$ refinement, three independent production paths to the Markov trace $\mathrm{tr}_M(\mathcal{B}_K)$ at $q = q_0$ agree to the 60-digit serialization floor (relative residual $\lesssim 10^{-49}$) across the proton, neutron, deuteron, tritium, and ${}^{3}\mathrm{He}$. Both tabulated paths evaluate $z = q^3/(q^2+1)$ on the Borromean word at the proton-anchored $q_0$, certifying the character closure directly.
 
 ## Cross-check
 
@@ -29,21 +29,21 @@ See [Table 2](#tbl:recomputed-low-isotope-mass-table-table2-data).
 
 The framework predicts the $\beta$-decay $Q$-value using only the electron mass (CAL-1) and the substrate parameter $q_0$ (CAL-2) ([Symbolic $Q$-value of free neutron decay](../nuclear-interactions/neutron-qvalue-symbolic.md)). One injects no CODATA nucleon masses and does not use $\mathfrak{Q}_\beta$ as an input. Rather, $\mathfrak{Q}_\beta$ becomes an output.
 
-The Convention-D base evaluation at single wrap ($\varepsilon$ evaluated via the Markov trace at $z_D = q_0^3/(q_0^2+1)$) is:
+Evaluating the single-wrap difference $\Delta$ via the Markov trace at $z = q_0^3/(q_0^2+1)$, with the order-zero scale $E_0 = m_e/(q_0(q_0-1))$, gives:
 
 $$
 \boxed{
-\mathfrak{Q}_\beta^{\text{pred}} = \mathfrak{Q}_\beta^{z_D} =
-\Bigl|\tfrac{h^2}{2} - h\,z_D\Bigr|\,E_0
+\mathfrak{Q}_\beta^{\Delta} =
+\Bigl|\tfrac{h^2}{2} - h\,z\Bigr|\,E_0
 \approx 0.4447 \text{ MeV}
 }
 $$
 
-This yields a $-43.16\%$ error ($-337.6$ keV) against the CODATA value of $0.7823$ MeV. The convention-D $c_k$ ladder that would correct this base is not yet derived, so the miss is reported as it stands.
+This yields a $-43.16\%$ residual ($-337.6$ keV) against the CODATA value of $0.7823$ MeV. No $c_k$ precision ladder has yet been derived at $z = q^3/(q^2+1)$, so the residual is reported directly. With the tower-summed $E_0$ the value is $0.4491$ MeV ($-42.59\%$). The scored $\mathfrak{Q}_\beta$ applies the $T^3$ weight split of the $z = q_0^3/(q_0^2+1)$ trace to the $\gamma\gamma$ base $V^3 = (\sigma_0\sigma_1^{-1})^3$, giving $\mathfrak{Q}_\beta \approx 0.3254$ MeV ($-58.40\%$) ([Symbolic $Q$-value of free neutron decay](../nuclear-interactions/neutron-qvalue-symbolic.md)); the $\Delta$ trace above is retained as an unscored comparison.
 
-The base comes from the symbolic normal-form difference between the single-wrap proton ($L_+ - \tfrac{h}{2}\sigma_0$) and neutron ($L_+ - h\sigma_0 - \tfrac{h}{2}\sigma_1 + \tfrac{h^2}{2}\gamma$), namely $\Delta = \tfrac{h^2}{2}\gamma - \tfrac{h}{2}\sigma_0 - \tfrac{h}{2}\sigma_1$ with $h = q_0 - q_0^{-1}$. The Markov trace at $z_D$ sends $\gamma \mapsto 1$ and each $\sigma_i \mapsto z_D$, which gives $h^2/2 - h z_D$. This is multiplied by the energy scale $E_0 = m_e/(q_0(q_0-1))$. At single wrap, the $L_+$, $L_-$, and $e^-$ contributions cancel exactly.
+The $\Delta$ expression comes from the symbolic normal-form difference between the single-wrap proton ($L_+ - \tfrac{h}{2}\sigma_0$) and neutron ($L_+ - h\sigma_0 - \tfrac{h}{2}\sigma_1 + \tfrac{h^2}{2}\gamma$), namely $\Delta = \tfrac{h^2}{2}\gamma - \tfrac{h}{2}\sigma_0 - \tfrac{h}{2}\sigma_1$ with $h = q_0 - q_0^{-1}$. The Markov trace sends $\gamma \mapsto 1$ and each $\sigma_i \mapsto z$, giving $h^2/2 - h z$, multiplied by $E_0 = m_e/(q_0(q_0-1))$; at single wrap, the $L_+$, $L_-$, and $e^-$ contributions cancel.
 
-*Retired Form A (historical cross-check only).* Weighting every basis element by $1$ instead gives $\Delta(\mathrm{net}) = h(h-2)/2$ and the closed form $m_e |q_0^2 - 2q_0 - 1| (q_0 + 1)/(2 q_0^3) \approx 0.7836$ MeV ($+0.168\%$). That weighting is the Markov trace at $z = 1$, which is not admissible under convention D. It is kept for comparison and is not the prediction.
+*Coordinate-sum Form A ($z = 1$ comparison).* Weighting every basis element by $1$ instead gives $\Delta(\mathrm{net}) = h(h-2)/2$ and $m_e |q_0^2 - 2q_0 - 1| (q_0 + 1)/(2 q_0^3) \approx 0.7836$ MeV ($+0.168\%$). That weighting corresponds to $z = 1$, which does not satisfy the two-row Markov faithfulness condition $y_{(1^3)}(z) = 0$; it is retained for algebraic comparison only.
 
 See [Table 3](#tbl:recomputed-low-isotope-mass-table-table3-data).
 

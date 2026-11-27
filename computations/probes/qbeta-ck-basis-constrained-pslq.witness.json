@@ -1,143 +1,228 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-20T14:59:59.933282+00:00",
+  "computedAt": "2026-11-24T15:45:27.691999+00:00",
   "computation": "qbeta-ck-basis-constrained-pslq",
   "scriptFile": "qbeta_ck_basis_constrained_pslq.py",
-  "commitSha": "87426d8d7be4e0559bc38b6c963efd8f8e95f93c",
-  "description": "PROBE 4 (2026-07-11 avenues audit \u00a73.D): basis-constrained PSLQ for the empirical Q_\u03b2 ladder coefficients c_3/c_4 against the arithmetic-dictated basis {1, \u221a3, \u03c0\u00b2, Vol(4\u2081), \u03b6(3)} (4\u2081 trace field \u211a(\u221a\u22123)). Two-stage formalize-first: STAGE 1 is a mandatory entropy audit of the ACTUAL effective precision of the empirical coefficients, traced through the extraction chain c_3 = (Q_CODATA/Q_N2 \u2212 1)/u\u00b3, which amplifies the relative Q_\u03b2 error by 1/u\u00b3 \u2248 1.6e6 (c_4: 1/u\u2074 \u2248 1.9e8). STAGE 2 (PSLQ) runs only if the effective digits exceed the PSLQ entropy bound D > n\u00b7log10(2H) + margin (PR #1805 discipline). No c_k value proposed; nothing wired.",
+  "commitSha": "b458c7fccae16f821169d3a510cc76e2d737df39",
+  "description": "PROBE 4 (avenues audit \u00a73.D, 80 dps): two-stage basis-constrained PSLQ audit for Q_\u03b2 ladder coefficients c_3/c_4 against the arithmetic basis {1, \u221a3, \u03c0\u00b2, Vol(4\u2081), \u03b6(3)}. Stage 1 propagates experimental Q_\u03b2 and q\u2080-pin uncertainties through c_3 = (Q_CODATA/Q_N2 \u2212 1)/u\u00b3 (1/u\u00b3 \u2248 1.6e6 amplifier) under the canonical two-strand Markov trace z = q\u00b3/(q\u00b2 + 1) alongside the historical z = \u221aq/(1 + q) cache reference. Even under the 100\u00d7-optimistic \u03c3(Q_\u03b2) = 7.8 ppb, D_eff(c_3) \u2264 4.89 < 9.20 digits (ENTROPY-BLOCKED), so Stage 2 PSLQ is not run. The \u2212974.382 readout under z = q\u00b3/(q\u00b2 + 1) is a sensitivity diagnostic of substituting z = q\u00b3/(q\u00b2 + 1) into \u03b1 = (z \u2212 1)h/2, not a proposed c_3 value; nothing is wired.",
   "precisionMetadata": {
-    "compute_dps": 60
+    "compute_dps": 80,
+    "output_dps": 60,
+    "guard_digits": 20,
+    "truncation_bound": "1e-60"
   },
   "data": {
-    "q0_canonical": "1.109978595642739046681795129380001752700065561029",
-    "q0_proton": "1.1099785827513808075916690956107688798744991218736",
+    "q0_canonical": "1.10997859564273904668179512938000175270006556102901155697405",
+    "q0_proton": "1.10997858275138080759166909561076887987449912187357873607281",
+    "q0_proton_50dps_pin": "1.1099785827513808075916690956107688798744991218736",
     "Q_beta_codata_MeV": "0.78233341",
-    "u_substrate": "0.00851723635242482310735822116751",
-    "u_cubed": "6.178685604e-7",
-    "u_fourth": "5.262532563e-9",
-    "c3_reproduced_canonical": "-974.382147079536184945277477315",
-    "c3_cache_value": "-2.02018812814143945582016855395",
+    "u_substrate": "0.0085172363524248231073582211675081183207789860632576",
+    "u_cubed": "0.0000006178685603509054239642012",
+    "u_fourth": "5.262532563241122394849089e-9",
+    "c3_reproduced_canonical": "-974.38214707953618494527747731514523478302151116462",
+    "c3_reproduced_proton_two_strand": "-974.43188774674842298261521077917371097938850028624",
+    "c3_sensitivity_witness_max_diff": "2.29826152108e-14",
+    "c3_trace_shift_vs_historical_sqrt_cache": "972.36228676766217995",
+    "c3_cache_value": "-2.019860311874005",
     "c3_proton_on_record": "-2.06934257711516783787971951725",
     "c3_muon_hopf_on_record": "-2.0097",
     "c4_reproduced_canonical": "0.0",
-    "c4_artifact_note": "c_4 is exactly 0 by construction when c_3 is extracted exactly against the same Q_beta reference (Q_N3 = Q_CODATA identically); the quoted empirical c_4 = -0.972 is the truncation residual of a rounded c_3 \u2014 no independent empirical content exists for PSLQ. Confirms registry rung-4 tier 'empirical_fit / artifact'.",
-    "amplifier_dc3_dQrel": "1617492.8",
-    "amplifier_dc4_dQrel": "1.9002258e+8",
-    "anchor_slope_dc3_dq": "3.81298e+6",
+    "c4_reproduced_proton": "0.0",
+    "c4_artifact_note": "c_4 is identically 0 when c_3 is extracted without rounding against the same Q_\u03b2 reference (Q_N3 = Q_CODATA identically); quoted nonzero c_4 values are rounding residuals of a truncated c_3 and carry zero independent empirical content.",
+    "amplifier_dc3_dQrel": "1617492.8197317",
+    "amplifier_dc4_dQrel": "190022577.149454",
+    "anchor_slope_dc3_dq_two_strand": "3858450.46656222",
+    "anchor_slope_dc3_dq_historical_cache": "3838405.87806482",
     "sigma_Q_rel_actual": "7.8e-7",
     "sigma_Q_rel_optimistic_reading": "7.8e-9",
     "error_scenarios": [
       {
+        "trace_frame": "z=q^3/(q^2+1)",
         "scenario": "actual sigma(Q)=0.78ppm",
         "anchor": "proton",
-        "err_c3_from_Q": "1.262",
-        "err_c3_from_pin": "0.0002539",
-        "err_c3_total": "1.262",
-        "eff_digits_c3": 0.21,
-        "err_c4_from_Q": "148.2",
-        "eff_digits_c4": 0.0
+        "err_c3_from_Q": "1.26165",
+        "err_c3_from_pin": "0.000256968",
+        "err_c3_total": "1.26165",
+        "eff_digits_c3": "2.89",
+        "err_c4_from_Q": "148.218",
+        "eff_digits_c4": "0.00"
       },
       {
+        "trace_frame": "z=q^3/(q^2+1)",
         "scenario": "actual sigma(Q)=0.78ppm",
         "anchor": "muon",
-        "err_c3_from_Q": "1.262",
-        "err_c3_from_pin": "0.09311",
-        "err_c3_total": "1.265",
-        "eff_digits_c3": 0.2,
-        "err_c4_from_Q": "148.2",
-        "eff_digits_c4": 0.0
+        "err_c3_from_Q": "1.26164",
+        "err_c3_from_pin": "0.0942215",
+        "err_c3_total": "1.26516",
+        "eff_digits_c3": "2.89",
+        "err_c4_from_Q": "148.218",
+        "eff_digits_c4": "0.00"
       },
       {
+        "trace_frame": "historical_z=sqrt(q)/(1+q)_cache",
+        "scenario": "actual sigma(Q)=0.78ppm",
+        "anchor": "proton",
+        "err_c3_from_Q": "1.26165",
+        "err_c3_from_pin": "0.000255633",
+        "err_c3_total": "1.26165",
+        "eff_digits_c3": "0.21",
+        "err_c4_from_Q": "148.218",
+        "eff_digits_c4": "0.00"
+      },
+      {
+        "trace_frame": "historical_z=sqrt(q)/(1+q)_cache",
+        "scenario": "actual sigma(Q)=0.78ppm",
+        "anchor": "muon",
+        "err_c3_from_Q": "1.26164",
+        "err_c3_from_pin": "0.0937321",
+        "err_c3_total": "1.26512",
+        "eff_digits_c3": "0.20",
+        "err_c4_from_Q": "148.218",
+        "eff_digits_c4": "0.00"
+      },
+      {
+        "trace_frame": "z=q^3/(q^2+1)",
         "scenario": "optimistic sigma(Q)=7.8ppb",
         "anchor": "proton",
-        "err_c3_from_Q": "0.01262",
-        "err_c3_from_pin": "0.0002539",
-        "err_c3_total": "0.01262",
-        "eff_digits_c3": 2.21,
-        "err_c4_from_Q": "1.482",
-        "eff_digits_c4": 0.0
+        "err_c3_from_Q": "0.0126165",
+        "err_c3_from_pin": "0.000256968",
+        "err_c3_total": "0.0126191",
+        "eff_digits_c3": "4.89",
+        "err_c4_from_Q": "1.48218",
+        "eff_digits_c4": "0.00"
       },
       {
+        "trace_frame": "z=q^3/(q^2+1)",
         "scenario": "optimistic sigma(Q)=7.8ppb",
         "anchor": "muon",
-        "err_c3_from_Q": "0.01262",
-        "err_c3_from_pin": "0.09311",
-        "err_c3_total": "0.09396",
-        "eff_digits_c3": 1.33,
-        "err_c4_from_Q": "1.482",
-        "eff_digits_c4": 0.0
+        "err_c3_from_Q": "0.0126164",
+        "err_c3_from_pin": "0.0942215",
+        "err_c3_total": "0.0950625",
+        "eff_digits_c3": "4.01",
+        "err_c4_from_Q": "1.48218",
+        "eff_digits_c4": "0.00"
+      },
+      {
+        "trace_frame": "historical_z=sqrt(q)/(1+q)_cache",
+        "scenario": "optimistic sigma(Q)=7.8ppb",
+        "anchor": "proton",
+        "err_c3_from_Q": "0.0126165",
+        "err_c3_from_pin": "0.000255633",
+        "err_c3_total": "0.012619",
+        "eff_digits_c3": "2.21",
+        "err_c4_from_Q": "1.48218",
+        "eff_digits_c4": "0.00"
+      },
+      {
+        "trace_frame": "historical_z=sqrt(q)/(1+q)_cache",
+        "scenario": "optimistic sigma(Q)=7.8ppb",
+        "anchor": "muon",
+        "err_c3_from_Q": "0.0126164",
+        "err_c3_from_pin": "0.0937321",
+        "err_c3_total": "0.0945773",
+        "eff_digits_c3": "1.33",
+        "err_c4_from_Q": "1.48218",
+        "eff_digits_c4": "0.00"
       }
     ],
-    "inter_producer_spread_c3": "0.01049",
-    "inter_producer_stable_digits": 2.28,
+    "inter_producer_spread_c3": "0.0101603",
+    "inter_producer_stable_digits": "2.30",
     "entropy_budgets": [
       {
         "n_terms": 4,
         "height_bound": 100,
-        "digits_required": 9.2,
-        "digits_required_with_margin": 12.2,
+        "digits_required": "9.20",
+        "digits_required_with_margin": "12.20",
         "note": "MINIMAL basis (kill threshold per task spec)"
       },
       {
         "n_terms": 6,
         "height_bound": 10,
-        "digits_required": 7.81,
-        "digits_required_with_margin": 10.81,
+        "digits_required": "7.81",
+        "digits_required_with_margin": "10.81",
         "note": "full basis {1,\u221a3,\u03c0\u00b2,Vol(4\u2081),\u03b6(3)} + target, H=10"
       },
       {
         "n_terms": 6,
         "height_bound": 100,
-        "digits_required": 13.81,
-        "digits_required_with_margin": 16.81,
+        "digits_required": "13.81",
+        "digits_required_with_margin": "16.81",
         "note": "full basis + target, H=100"
       }
     ],
-    "margin_digits": 3.0,
-    "best_case_eff_digits_c3": 2.21,
-    "minimal_requirement_digits": 9.2,
-    "digit_deficit": 6.99,
-    "max_supportable_basis_terms_at_H10": 1,
-    "sigma_Q_rel_needed_for_minimal_budget": "3.8e-13",
+    "margin_digits": "3.00",
+    "best_case_eff_digits_c3": "4.89",
+    "best_case_eff_digits_c3_historical_cache": "2.21",
+    "minimal_requirement_digits": "9.20",
+    "digit_deficit": "4.32",
+    "max_supportable_basis_terms_at_H10": 3,
+    "sigma_Q_rel_needed_for_minimal_budget_two_strand": "3.765e-13",
+    "sigma_Q_rel_needed_for_minimal_budget": "7.805e-16",
     "arithmetic_basis_not_run": {
       "1": "1",
-      "sqrt3": "1.73205080756887729352744634151",
-      "pi^2": "9.86960440108935861883449099988",
-      "Vol(4_1)=2*Cl_2(pi/3)=6*Lambda(pi/3)": "2.02988321281930725004240510855",
-      "zeta(3)": "1.20205690315959428539973816151"
-    }
+      "sqrt3": "1.7320508075688772935274463415058723669428052538104",
+      "pi^2": "9.8696044010893586188344909998761511353136994072408",
+      "Vol(4_1)=2*Cl_2(pi/3)=6*Lambda(pi/3)": "2.0298832128193072500424051085490405718833786150606",
+      "zeta(3)": "1.2020569031595942853997381615114499907649862923405"
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "qbeta-ck-cache.witness.json",
+        "sha256": "a1263d9d78fde7099b64f5292dcadb6b60f420f33d09010f40de85f68fa70765",
+        "size_bytes": 5701,
+        "commitSha": "6cd4da390a0e600d63eb1b23e8a4b2110e587e91",
+        "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
+        "computedAt": "2026-08-26T04:10:20.104822+00:00"
+      },
+      {
+        "path": "qbeta-c3-ladder-trace-convention-sensitivity.witness.json",
+        "sha256": "807fc017926e3e9274aec35166793256a50146840a478550035fd24dfed5c55c",
+        "size_bytes": 5600,
+        "commitSha": "6a7e5f6ac5b3d8fd787ff2aa37e37983c91044c8",
+        "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+        "computedAt": "2026-08-31T18:23:49.203197+00:00"
+      }
+    ]
   },
   "assertions": [
     {
-      "name": "extraction_chain_reproduces_cache_c3",
-      "computed": 972.3619589513947,
-      "expected": 0.0,
-      "passed": false,
-      "tolerance": "1e-08",
-      "source": "same chain + same Q_codata + same q0 as qbeta-ck-cache.witness.json (cache prints Q_codata rounded to 0.78233341) -- but NOT the same Markov convention, which is why this assertion fails. This probe computes at z_D = q**3/(q**2+1) (convention D, canonical per owner ruling R1 2026-08-15; see the z binding above), while qbeta-ck-cache.witness.json declares markov_convention='C' and its c_3 is reachable only via --historical-convention-C. The two numbers are one formula under two different z, not two evaluations of one quantity. Re-deriving the ladder under D is bean `qou-cds1`; this assertion is left FAILING on purpose -- it is the frame disagreement reporting itself, and silencing it would ratify one frame."
+      "name": "two_strand_chain_matches_sensitivity_reference",
+      "computed": "2.298261521e-14",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-12",
+      "source": "80-dps extraction under z = q\u00b3/(q\u00b2 + 1) at both muon and proton anchors matches the 16-digit sensitivity values in qbeta-c3-ladder-trace-convention-sensitivity.witness.json (\u2212974.3821470795362 / \u2212974.4318877467484, sensitivity readout only \u2014 NOT a proposed c_3 and NOT wired; differs from the historical z = \u221aq/(1 + q) cache by ~972.362)."
+    },
+    {
+      "name": "c4_identically_zero_at_exact_extraction",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "Q_N3 = Q_N2\u00b7(1 + c_3\u00b7u\u00b3) = Q_CODATA identically at 80 dps when c_3 is unrounded, so rung 4 carries zero independent empirical content for PSLQ."
     },
     {
       "name": "stage1_entropy_verdict_is_blocked",
-      "computed": 2.21,
-      "expected": 9.2,
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "tolerance": 0.0,
-      "source": "PSLQ entropy bound (PR #1805): D_eff must exceed n\u00b7log10(2H); pre-registered kill criterion \u2014 pass means the kill fired and Stage 2 was NOT run"
+      "tolerance": 0,
+      "source": "PSLQ entropy bound (PR #1805): best-case D_eff(c_3) = 4.89 digits (z = q\u00b3/(q\u00b2 + 1)) and 2.21 digits (historical cache) both fall strictly below minimal 4\u00b7log10(200) = 9.20 digits; Stage 2 PSLQ not run."
     }
   ],
   "verdict": {
     "stage1": "ENTROPY-BLOCKED",
     "stage2_run": false,
     "stage2": null,
-    "conclusion": "ENTROPY-BLOCKED: the empirical c_3 carries at most ~2 reliable digits per anchor (c_4: zero) because the extraction divides the Q_\u03b2 experimental error by u\u00b3 (\u00d71.6e6) / u\u2074 (\u00d71.9e8); even the minimal 4-term H\u2264100 basis needs ~9.2 digits. PSLQ was NOT run \u2014 any relation it returned would be lattice noise. The coefficients remain empirical under the arithmetic basis; no value proposed, nothing wired. Closing this avenue requires either sigma(Q_\u03b2) improved by ~9 orders of magnitude or a canonical (non-extracted) high-precision c_3 producer \u2014 i.e. the open keystone F(q) itself."
+    "conclusion": "ENTROPY-BLOCKED at 80 dps: the extracted c_3 carries at most 4.89 effective digits under z = q\u00b3/(q\u00b2 + 1) (and 2.21 digits on the historical z = \u221aq/(1 + q) cache; c_4: zero) even under the 100\u00d7-optimistic \u03c3(Q_\u03b2) = 7.8 ppb, whereas the minimal 4-term H \u2264 100 PSLQ basis requires 9.20 digits (before margin). Stage 2 PSLQ was NOT run \u2014 any integer relation returned below the entropy floor is lattice noise. Moreover, the \u2212974.382 readout under z = q\u00b3/(q\u00b2 + 1) is an amplified sensitivity artifact of \u03b1 = (z \u2212 1)h/2, not a derived ladder coefficient; no c_k value is proposed or wired."
   },
-  "allPassed": false,
+  "allPassed": true,
   "markov_convention": "D",
-  "markov_convention_reason": "z = q**3/(q**2 + 1) at the binding above; convention D, canonical per owner ruling R1 (2026-08-15). NOT a proposed c_3: qou-cds1 records -974.38 as a sensitivity measurement and says explicitly 'do not wire it anywhere'. The failing assertion extraction_chain_reproduces_cache_c3 is the frame disagreement with the C-framed qbeta-ck-cache.witness.json, not a chain defect.",
-  "scriptHash": "9f6c085af57b",
-  "scriptCommitSha": "806d5146227ea7160a8a1a42fe023c7e1c49cd43",
+  "markov_convention_reason": "Evaluates ladder_chain under the canonical two-strand Markov trace z = q**3 / (q**2 + 1) at 80 dps, recording \u2212974.382147... (muon) and \u2212974.431887... (proton) purely as sensitivity diagnostics alongside the historical z = sqrt(q)/(1 + q) cache readouts; Stage 1 is ENTROPY-BLOCKED in both frames and nothing is wired.",
+  "scriptHash": "e7e196606fce",
+  "scriptCommitSha": "b458c7fccae16f821169d3a510cc76e2d737df39",
   "durationMs": 0,
   "q0Anchor": "ambiguous",
-  "q0AnchorReason": "reads BOTH pins on purpose: c3_reproduced_canonical is at the muon canonical pin (data.q0_canonical) while the proton readout and cross-anchor slope (data.q0_proton, data.anchor_slope_dc3_dq) are at the proton pin. The witness carries both signatures, so the pin is undetermined and the manifest files this stem ambiguous; the values actually used are in data.q0_canonical / data.q0_proton. NOT q0-independent (bean qou-v6wz)."
+  "q0AnchorReason": "Evaluates BOTH canonical pins on purpose at 80 dps: data.q0_canonical (muon) and data.q0_proton (proton) to propagate cross-anchor slope dc_3/dq into the Stage-1 PSLQ entropy bound; listed under `ambiguous` in q0_anchor_manifest.json."
 }

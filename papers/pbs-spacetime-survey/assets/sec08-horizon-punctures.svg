@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" width="960" height="440">
+<title>Black-Hole Horizon Strand Punctures and 4D Quarter-Area Lift</title>
+<defs><marker id="arrow-cyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/></marker><marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b"/></marker><marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#34d399"/></marker><marker id="arrow-coral" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#fb7185"/></marker><marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8"/></marker></defs>
+<rect x="0" y="0" width="960" height="440" rx="14" fill="#0d1326"/>
+<text x="480.0" y="34.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="middle">Equation (11): Horizon Strand Punctures, 4D Spacetime Lift &amp; the 1/4 Area Law</text>
+<text x="480.0" y="56.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">Phase-circle lift builds (3+1)D spacetime with (2π)/(8π) = 1/4 ratio; dynamical field equations stay open</text>
+<rect x="40.0" y="80.0" width="520.0" height="326.0" rx="10" fill="#131c36" stroke="#2a3b68" stroke-width="1.0"/>
+<text x="300.0" y="108.0" fill="#38bdf8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Black-Hole Horizon Pierced by Braided Strands</text>
+<rect x="62.0" y="130.0" width="196.0" height="246.0" rx="8" fill="#090d1a" stroke="#2a3b68" stroke-width="1.0"/>
+<text x="160.0" y="158.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Inside Horizon (Hidden)</text>
+<text x="160.0" y="352.0" fill="#475569" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle">Exact particle identities blocked</text>
+<path d="M 268 128 Q 312 253 268 378" fill="none" stroke="#fbbf24" stroke-width="4.0" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="306.0" y="148.0" fill="#fbbf24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Horizon</text>
+<line x1="120.0" y1="182.0" x2="286.0" y2="182.0" stroke="#38bdf8" stroke-width="3.0" stroke-linecap="round" stroke-dasharray="5 4"/>
+<circle cx="286.0" cy="182.0" r="7.0" fill="#38bdf8" stroke="#0d1326" stroke-width="2.0"/>
+<line x1="296.0" y1="182.0" x2="430.0" y2="182.0" stroke="#34d399" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+<text x="485.0" y="186.0" fill="#38bdf8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">spin 1/2 puncture</text>
+<line x1="120.0" y1="232.0" x2="286.0" y2="232.0" stroke="#f59e0b" stroke-width="3.0" stroke-linecap="round" stroke-dasharray="5 4"/>
+<circle cx="286.0" cy="232.0" r="7.0" fill="#f59e0b" stroke="#0d1326" stroke-width="2.0"/>
+<line x1="296.0" y1="232.0" x2="430.0" y2="232.0" stroke="#34d399" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+<text x="485.0" y="236.0" fill="#f59e0b" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">spin 1 puncture</text>
+<line x1="120.0" y1="282.0" x2="286.0" y2="282.0" stroke="#38bdf8" stroke-width="3.0" stroke-linecap="round" stroke-dasharray="5 4"/>
+<circle cx="286.0" cy="282.0" r="7.0" fill="#38bdf8" stroke="#0d1326" stroke-width="2.0"/>
+<line x1="296.0" y1="282.0" x2="430.0" y2="282.0" stroke="#34d399" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+<text x="485.0" y="286.0" fill="#38bdf8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">spin 1/2 puncture</text>
+<line x1="120.0" y1="332.0" x2="286.0" y2="332.0" stroke="#a78bfa" stroke-width="3.0" stroke-linecap="round" stroke-dasharray="5 4"/>
+<circle cx="286.0" cy="332.0" r="7.0" fill="#a78bfa" stroke="#0d1326" stroke-width="2.0"/>
+<line x1="296.0" y1="332.0" x2="430.0" y2="332.0" stroke="#34d399" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+<text x="485.0" y="336.0" fill="#a78bfa" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">spin 3/2 puncture</text>
+<rect x="580.0" y="80.0" width="340.0" height="326.0" rx="10" fill="#131c36" stroke="#2a3b68" stroke-width="1.0"/>
+<text x="750.0" y="108.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Proved vs. Open at the Horizon</text>
+<rect x="604.0" y="128.0" width="292.0" height="124.0" rx="10" fill="#182444" stroke="#34d399" stroke-width="1.0"/>
+<text x="750.0" y="150.0" fill="#34d399" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle">4D Lift &amp; 1/4 Cancellation (Proved)</text>
+<text x="750.0" y="174.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">Singlet pairs give ln 2 ≈ 0.693 / puncture;</text>
+<text x="750.0" y="196.0" fill="#34d399" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">(3+1)D circle lift cancels (2π)/(8π) = 1/4</text>
+<text x="750.0" y="218.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle">in unit cells (0.2252 = 1/(4q₀) in q₀ cells).</text>
+<text x="750.0" y="238.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle">(Discrete strand counts alone miss ≥ 11%)</text>
+<rect x="604.0" y="266.0" width="292.0" height="120.0" rx="10" fill="#182444" stroke="#fbbf24" stroke-width="2.0"/>
+<text x="750.0" y="290.0" fill="#fbbf24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Open Gravitational Bridge</text>
+<text x="750.0" y="314.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">Derive dynamical matter-to-curvature</text>
+<text x="750.0" y="336.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">field equations from the braid action</text>
+<text x="750.0" y="358.0" fill="#fb7185" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle">and fix unit (1) vs. q₀ area cell</text>
+<text x="750.0" y="376.0" fill="#fb7185" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle">(9.9% normalization split).</text>
+</svg>

@@ -1,4 +1,3 @@
-**Remark.**
 *The Strutinsky shell-correction method decomposes nuclear binding energies as*
 
 $$

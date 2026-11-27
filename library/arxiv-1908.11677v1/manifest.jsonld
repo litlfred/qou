@@ -20,6 +20,18 @@
     "library/arxiv-1908.11677v1/sections/sec-005"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Variational formulae and estimates of O’Hara’s knot energies — O’Hara’s energies, introduced by Jun O’Hara, were proposed to answer the question of what is the canonical shape in a given knot type\n\n**Variational formulae and estimates of O’Hara’s knot energies**\n\n*Shoya Kawakami*\n\n19 pp, 7 sections.\n\n**Abstract.** O’Hara’s energies, introduced by Jun O’Hara, were proposed to answer the question of what is the canonical shape in a given knot type, and were conﬁgured so that the less the energy value of a knot is, the “better” its shape is. The existence and regularity of minimizers has been well studied. In this article, we calculate the ﬁrst and second variational formulae of the (α, p)-O’Hara energies and show absolute integrability, uniform bounded- ness, and continuity properties. Although several authors have already considered the variational formulae of the (α, 1)-O’Hara energies, their techniques do not seem to be applicable to the case p > 1. We obtain the variational formulae in a novel manner by extracting a certain function from the energy density.\n\n**Outline.** Front matter; 1 Introduction; 2 Variational formulae; 3 Estimates of the first and second variationa; 3.1 Strategy; 3.2 Estimates and continuity of the quantities; 3.3 Proof of Theorem ??",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

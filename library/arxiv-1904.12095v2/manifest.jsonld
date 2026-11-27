@@ -24,6 +24,18 @@
     "library/arxiv-1904.12095v2/sections/sec-009"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Verified computations for closed hyperbolic 3-manifolds — Extending methods ﬁrst used by Casson, we show how to verify a hyper- bolic structure on a ﬁnite triangulation of a closed 3-manifold using\n\n**Verified computations for closed hyperbolic 3-manifolds**\n\n*Matthias Goerner*\n\n28 pp, 11 sections.\n\n**Abstract.** Extending methods ﬁrst used by Casson, we show how to verify a hyper- bolic structure on a ﬁnite triangulation of a closed 3-manifold using interval arith- metic methods. A key ingredient is a new theoretical result (akin to a theorem by Neumann-Zagier and Moser for ideal triangulations upon which HIKMOT is based) showing that there is a redundancy among the edge equations if the edges avoid “gim- bal lock”. We successfully test the algorithm on known examples such as the ori- entable closed manifolds in the Hodgson-Weeks census and the bundle census by Bell. We also tackle a previously unsolved problem and determine all knots and links with up to 14 crossings that have a hyperbolic branched double cover.\n\n**Outline.** Front matter; 1 Introduction; 2 Hyperbolic structures on finite triangulatio; 3 Cocycles; 4 Extending cocycles on genus 0 surfaces; 5 Extending cocycles on triangulations; 6 Examples of (non-)gimbal lock; 7 Algorithm; 8 Results; 9 Discussion; 10 Appendix: The uncited theorem HIKMOT relies",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

@@ -15,7 +15,7 @@ export default definition({
     "nuclear-structure",
   ],
   lean: {
-    ref: "qou:QOU.Archimedean.InterShellOperator",
+    ref: "qou:QOU.MassTheory.Archimedean.InterShellOperator",
     validation: "not_checked",
   },
   uses: ["def:chebyshev-torus-coefficients"],

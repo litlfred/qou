@@ -2,7 +2,11 @@ import { prose } from "../../schema/builders";
 
 export default prose({
   label: "sec:strangelet-intro",
-  uses: ["rem:golden-ratio-degeneration"],
+  uses: [
+    "rem:golden-ratio-degeneration",
+    "sec:confinement-selection-intro",
+    "prop:nuclear-chamber-groebner-basis",
+  ],
   meta: { position: "opening" },
   cites: [
     "alford1999",

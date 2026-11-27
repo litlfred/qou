@@ -5,12 +5,20 @@
 $w = q - 1$, to order 7, are read off the closed form*
 
 $$
-  \Delta\mathrm{tr}_M^{\text{surr}}(q) = \frac{
-    2q^{17} - 2q^{16} - 5q^{15} + 4q^{14} + 8q^{13} - 9q^{12} - 8q^{11}
-    + 9q^{10} + 11q^{9} - 11q^{8} - 9q^{7} + 8q^{6} + 9q^{5} - 8q^{4}
-    - 4q^{3} + 5q^{2} + 2q - 2
-  }{4 q^{8} (q^2 + q + 1)}
+  \Delta\mathrm{tr}_M^{\text{surr}}(q) = \frac{N(q)}{4 q^{8} (q^2 + q + 1)},
 $$
+
+*where*
+
+```tex
+\[
+\begin{aligned}
+  N(q) ={}& 2q^{17} - 2q^{16} - 5q^{15} + 4q^{14} + 8q^{13} - 9q^{12} - 8q^{11} \\
+  &+ 9q^{10} + 11q^{9} - 11q^{8} - 9q^{7} + 8q^{6} + 9q^{5} - 8q^{4} \\
+  &- 4q^{3} + 5q^{2} + 2q - 2,
+\end{aligned}
+\]
+```
 
 *by substituting $q = 1 + w$ and extracting the coefficient of $w^n$:*
 

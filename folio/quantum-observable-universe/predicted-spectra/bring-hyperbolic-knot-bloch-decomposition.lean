@@ -1,7 +1,7 @@
 import Mathlib.Data.Nat.Totient
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic
-import QOU.Archimedean.EmCouplingBringZeroMode
+import QOU.MassTheory.EmCouplingBringZeroMode
 
 
 /-!
@@ -284,40 +284,41 @@ theorem cyclotomic_compositum_3_4_5 :
     sorry-free identification of the substrate-derived class with
     the geometry-derived class. -/
 class BlochWignerInjective (D : ℝ → ℝ) : Prop where
-  /-- Injectivity of D on Q-coefficient sums of "shape-parameter"
-      points. Formalised abstractly here as: if two real numbers
-      coincide and both arise as BW values, they witness the same
-      class. The full statement uses the Bloch group; this real-
-      level surrogate suffices for the field-equivalence claim. -/
-  inj : ∀ {x y : ℝ}, x = y → D x = D y → x = y
+  /-- Injectivity of the regulator. The argument `x` stands for a
+      class in `B(F)⊗Q` (a real-level surrogate, not the Bloch group
+      itself), and `D x` for its BW image. Two classes with the same
+      image are equal. Until 2026-11-22 this field read
+      `x = y → D x = D y → x = y`, which every `D` satisfies, so the
+      class asserted nothing (bean `qou-kwse`). -/
+  inj : Function.Injective D
 
-/-- Field equivalence of substrate and geometry routes (sorry-free):
-    if both yield BW image `2/(3π)`, they identify the same
-    `B(Q(ζ_60))⊗Q` class up to the BW-injectivity hypothesis. -/
+/-- Field equivalence of substrate and geometry routes (sorry-free,
+    conditional on `BlochWignerInjective D`): if the substrate class
+    and the geometry class both have BW image `2/(3π)`, they are the
+    same class. -/
 -- Ref: [leitner2026] prop:archimedean-functor-uniqueness
 -- Ref: [leitner2026] conj:em-coupling-bring-zero-mode
 theorem field_equivalence_via_uniqueness
     (D : ℝ → ℝ)
     [BlochWignerInjective D]
     (z_substrate z_geometry : ℝ)
-    (h_substrate : z_substrate = bringZeroModeValue)
-    (h_geometry : z_geometry = bringZeroModeValue) :
-    z_substrate = z_geometry := by
-  rw [h_substrate, h_geometry]
+    (h_substrate : D z_substrate = bringZeroModeValue)
+    (h_geometry : D z_geometry = bringZeroModeValue) :
+    z_substrate = z_geometry :=
+  BlochWignerInjective.inj (h_substrate.trans h_geometry.symm)
 
-/-- General real-value equivalence: if two reals share an arbitrary
-    target value `r`, they are equal. This abstracts
-    `field_equivalence_via_uniqueness` to any real `r`, suitable
-    for the `B_3 ~ L_6a4` and similar atlas-knot identifications. -/
+/-- General form: two classes with the same BW image `r` are equal,
+    conditional on `BlochWignerInjective D`. Used for the `B_3 ~ L_6a4`
+    and similar atlas-knot identifications. -/
 -- Ref: [leitner2026] conj:bring-hyperbolic-knot-bloch-decomposition
 theorem class_equality_from_value_equality
     (D : ℝ → ℝ)
     [BlochWignerInjective D]
     (z₁ z₂ r : ℝ)
-    (h₁ : z₁ = r)
-    (h₂ : z₂ = r) :
-    z₁ = z₂ := by
-  rw [h₁, h₂]
+    (h₁ : D z₁ = r)
+    (h₂ : D z₂ = r) :
+    z₁ = z₂ :=
+  BlochWignerInjective.inj (h₁.trans h₂.symm)
 
 /-- Carrier for the shared atlas value `8G = 8·Cl_2(π/2)`, the
     common BW image of the Borromean rings `B_3` and `L_6a4`. -/
@@ -347,8 +348,8 @@ theorem borromean_eq_L6a4_class
     [BlochWignerInjective D]
     (cl2_pi_4 : ℝ)
     (z_borromean z_L6a4 : ℝ)
-    (h_b : z_borromean = borromeanValue cl2_pi_4)
-    (h_L : z_L6a4 = borromeanValue cl2_pi_4) :
+    (h_b : D z_borromean = borromeanValue cl2_pi_4)
+    (h_L : D z_L6a4 = borromeanValue cl2_pi_4) :
     z_borromean = z_L6a4 :=
   class_equality_from_value_equality D z_borromean z_L6a4
     (borromeanValue cl2_pi_4) h_b h_L

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="960" height="480">
+<title>Five Layers of Matter Without Refitted Constants</title>
+<defs><marker id="arrow-cyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/></marker><marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b"/></marker><marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#34d399"/></marker><marker id="arrow-coral" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#fb7185"/></marker><marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8"/></marker></defs>
+<rect x="0" y="0" width="960" height="480" rx="14" fill="#0d1326"/>
+<text x="480.0" y="34.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="middle">Equation (10): Five Layers of Matter &amp; Why Chemistry Never Transmutes Nuclei</text>
+<text x="480.0" y="56.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">Whenever the tug from the layer above is much smaller than the binding gap below (η &lt; 1), lower units stay intact</text>
+<rect x="44.0" y="82.0" width="600.0" height="62.0" rx="10" fill="#131c36" stroke="#34d399" stroke-width="2.0"/>
+<text x="64.0" y="108.0" fill="#34d399" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="start">Layer 4: Molecules &amp; Chemical Reactions</text>
+<text x="64.0" y="129.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="start">Chemical bonds (~4.5 eV) vs. inner carbon shell (442 eV)</text>
+<rect x="476.0" y="96.0" width="152.0" height="34.0" rx="6" fill="#182444" stroke="#34d399" stroke-width="1.0"/>
+<text x="552.0" y="118.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle">η₃ = 1.0 × 10⁻²</text>
+<line x1="344.0" y1="156.0" x2="344.0" y2="144.0" stroke="#34d399" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arrow-muted)"/>
+<rect x="44.0" y="156.0" width="600.0" height="62.0" rx="10" fill="#131c36" stroke="#fbbf24" stroke-width="2.0"/>
+<text x="64.0" y="182.0" fill="#fbbf24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="start">Layer 3: Neutral Atoms &amp; Electron Shells</text>
+<text x="64.0" y="203.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="start">Atomic electron energy (13.6 eV) vs. nuclear bind (7.68 MeV)</text>
+<rect x="476.0" y="170.0" width="152.0" height="34.0" rx="6" fill="#182444" stroke="#fbbf24" stroke-width="1.0"/>
+<text x="552.0" y="192.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle">η₂ = 1.77 × 10⁻⁶</text>
+<line x1="344.0" y1="230.0" x2="344.0" y2="218.0" stroke="#fbbf24" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arrow-muted)"/>
+<rect x="44.0" y="230.0" width="600.0" height="62.0" rx="10" fill="#131c36" stroke="#38bdf8" stroke-width="2.0"/>
+<text x="64.0" y="256.0" fill="#38bdf8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="start">Layer 2: Atomic Nuclei (Protons &amp; Neutrons)</text>
+<text x="64.0" y="277.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="start">Nuclear bind (7.68 MeV) vs. proton rest energy (938 MeV)</text>
+<rect x="476.0" y="244.0" width="152.0" height="34.0" rx="6" fill="#182444" stroke="#38bdf8" stroke-width="1.0"/>
+<text x="552.0" y="266.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle">η₁ = 8.2 × 10⁻³</text>
+<line x1="344.0" y1="304.0" x2="344.0" y2="292.0" stroke="#38bdf8" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arrow-muted)"/>
+<rect x="44.0" y="304.0" width="600.0" height="62.0" rx="10" fill="#131c36" stroke="#a78bfa" stroke-width="2.0"/>
+<text x="64.0" y="330.0" fill="#a78bfa" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="start">Layer 1: Protons, Neutrons &amp; Pions</text>
+<text x="64.0" y="351.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="start">Electric tug (α mₚ) vs. proton rest energy (938 MeV)</text>
+<rect x="476.0" y="318.0" width="152.0" height="34.0" rx="6" fill="#182444" stroke="#a78bfa" stroke-width="1.0"/>
+<text x="552.0" y="340.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle">η₀ = 7.3 × 10⁻³</text>
+<line x1="344.0" y1="378.0" x2="344.0" y2="366.0" stroke="#a78bfa" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arrow-muted)"/>
+<rect x="44.0" y="378.0" width="600.0" height="62.0" rx="10" fill="#131c36" stroke="#fb7185" stroke-width="2.0"/>
+<text x="64.0" y="404.0" fill="#fb7185" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="start">Layer 0: Braided Strands at q₀ &gt; 1</text>
+<text x="64.0" y="425.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="start">Elementary over/under strand crossings</text>
+<rect x="476.0" y="392.0" width="152.0" height="34.0" rx="6" fill="#182444" stroke="#fb7185" stroke-width="1.0"/>
+<text x="552.0" y="414.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Base Layer</text>
+<rect x="666.0" y="82.0" width="254.0" height="358.0" rx="10" fill="#131c36" stroke="#2a3b68" stroke-width="1.0"/>
+<text x="793.0" y="112.0" fill="#fbbf24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Why Chemistry Is Safe</text>
+<text x="793.0" y="138.0" fill="#34d399" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="600" text-anchor="middle">η₂ = 1.77 × 10⁻⁶</text>
+<text x="793.0" y="162.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">A nearly million-to-one gap</text>
+<text x="793.0" y="182.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">locks nuclei solid during</text>
+<text x="793.0" y="202.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">every chemical reaction.</text>
+<line x1="690.0" y1="228.0" x2="896.0" y2="228.0" stroke="#2a3b68" stroke-width="1.0" stroke-linecap="round"/>
+<text x="793.0" y="258.0" fill="#fb7185" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" text-anchor="middle">Crushing the Lock (η₂ → 1)</text>
+<text x="793.0" y="284.0" fill="#fb7185" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Electron energy &gt; 1.293 MeV</text>
+<text x="793.0" y="310.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">Critical density:</text>
+<text x="793.0" y="330.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle">7.37 × 10³⁰ electrons/cm³</text>
+<text x="793.0" y="358.0" fill="#38bdf8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">Forces p + e⁻ → n + νₑ</text>
+<text x="793.0" y="380.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">inside white dwarfs &amp;</text>
+<text x="793.0" y="400.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">neutron-star crusts.</text>
+</svg>

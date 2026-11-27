@@ -81,6 +81,18 @@
     "library/poincare-proof-outline/sections/sec-066"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Formalization of the Poincare disc model of hyperbolic geometry — We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant.\n\n**Formalization of the Poincare disc model of hyperbolic geometry**\n\n*Danijela Simić*\n\n175 pp, 68 sections.\n\n**Abstract.** We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant. The model is deﬁned within the extended complex plane (one dimensional complex projective space CP 1), formalized in the AFP entry “Complex Geometry” [6]. Points, lines, congruence of pairs of points, betweenness of triples of points, circles, and isometries are deﬁned within the model. It is shown that the model satisﬁes all Tarski’s axioms except the Euclid’s axiom. It is shown that it satisﬁes its negation and the limiting parallels axiom (which proves it to be a model of hyperbolic geometry).\n\n**Outline.** Front matter; Introduction; Background theories; Hyperbolic Functions; Tarski axioms; H-lines in the Poincaré model; Definition and basic properties of h-lines; Collinear points; H-lines and inversion; Classification of h-lines into Euclidean segme; Points on h-line; H-line uniqueness; H-isometries preserve h-lines; Mapping h-lines to x-axis; Construction of the h-line between the two giv; Correctness of the construction; Existence of h-lines; Uniqueness of h-lines",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "poincare-proof-outline",

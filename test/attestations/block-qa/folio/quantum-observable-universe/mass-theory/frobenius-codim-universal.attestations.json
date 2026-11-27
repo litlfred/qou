@@ -1,0 +1,1096 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal",
+    "path": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6",
+          "lean": "176128252a32"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6",
+          "lean": "176128252a32"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "d36081b901a3",
+          "ts": "3da9d0372fd6",
+          "lean": "176128252a32"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.772312Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.772312Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Statement contains only the bare claim without physical interpretation.",
+        "severity": "minor"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d36081b901a3",
+          "ts": "3da9d0372fd6",
+          "lean": "176128252a32"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.772312Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.772312Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:24:58.000Z",
+        "reviewed_sha": "40fdb1f48ac6cfc6b33feac895232c9307576fd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "d36081b901a3",
+          "ts": "3da9d0372fd6",
+          "lean": "176128252a32"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "d36081b901a3",
+          "ts": "3da9d0372fd6",
+          "lean": "176128252a32"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.772312Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.772312Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1 — Lean file exists",
+        "severity": "minor"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "d36081b901a3",
+          "ts": "3da9d0372fd6",
+          "lean": "176128252a32"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.772312Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.772312Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Lean proof contains compilation errors.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1 — folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RepresentationTheory/FDRep.olean' of module Mathlib.RepresentationTheory.FDRep does not exist",
+        "severity": "minor"
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6",
+          "lean": "16ef53163945",
+          "lean_statement": "4575f232d649"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:24.559Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "frobenius-codim-universal.lean:40-45 `class SemisimpleFrobeniusAlgebra (Λ) where dim_q : Λ → ℝ … tau_idem_ne_zero : ∀ μ, tau_idem μ ≠ 0` (extra hypothesis not in md:1-8); :84-90 sum identity only; centrality 'C ∈ Z(A)' not encoded; ℝ",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
+      },
+      {
+        "field_hash": {
+          "md": "c7dfc7ed9059",
+          "ts": "cbf7d59f11b9",
+          "lean": "932112c284a4",
+          "lean_statement": "4575f232d649"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:10:00.541Z",
+        "reviewed_sha": "06a3439cc5ff0cdc91182a4199f03868f80ab9b8",
+        "severity": "minor",
+        "evidence": "Lean proves the scalar identity sum (1/(d_q tau_p)) tau_p = sum 1/d_q given tau(p) != 0. Centrality of C and linearity of tau are not stated; the md scope note correctly says the hypothesis fails for n >= 3 under convention D."
+      },
+      {
+        "field_hash": {
+          "md": "8278bfb5c0e7",
+          "ts": "6fdfd69491fc",
+          "lean": "932112c284a4",
+          "lean_statement": "4575f232d649"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:18:03.649Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "minor",
+        "evidence": "Full review 2026-11-21. The md added the convention-D scope and the block-model claims, and these are now formalised: QOU/MassTheory/CoCasimirSurvivingBlocks.lean over a generic field K proves mem_traceRadical_iff (:120, rad tau = sum of dead blocks), coCasimirSurv_central (:183), tr_coCasimirSurv (:190) and tr_of_lift (:207, trace independent of the lift mod radical), no_full_coCasimir (:244, once a block dies no central c has tau(c p_lambda) = 1/dim_q on every block), tr_coCasimirSurv_of_forall_ne_zero (:254, the full boxed identity when every weight is nonzero) and tr_coCasimirSurv_conventionD (:286, survivors = at most two rows). These match md:19 and the boxed identity under its hypothesis, sorry-free by inspection. Remaining: the lean.ref is still QOU.BraidKnot.frobenius_codim_universal, the earlier scalar identity sum (1/(d_q tau_p)) tau_p = sum 1/d_q over R (frobenius-codim-universal.lean:84), which states neither centrality nor linearity and uses a gratuitous R; the block model A = prod Mat_{d_lambda} with tau = sum y d Tr is a model, its identification with H_n(R,q) via Wedderburn is assumed, not proved. Suggest retargeting lean.ref to tr_coCasimirSurv_of_forall_ne_zero. No ruling conflicts."
+      },
+      {
+        "field_hash": {
+          "md": "8278bfb5c0e7",
+          "ts": "6e1711519405",
+          "lean": "932112c284a4",
+          "lean_statement": "4575f232d649"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:38:36.000Z",
+        "reviewed_sha": "6d822a56d31d05ea5b1857bebf41486502680a3f",
+        "severity": "minor",
+        "evidence": "Re-review 2026-11-21 on PR #8890 head 6d822a56 (the .ts uses[] edit invalidated the prior entry; md and lean unchanged). The prior warn named two gaps. (1) The identification of H_n(q) with the block model prod Mat_{d_lambda} and of the Markov trace with sum y_lambda d_lambda Tr was assumed: QOU/MassTheory/CoCasimirHeckeBridge.lean (new in this PR, generic [Field K]) now composes AnyChar.heckeWedderburnF with SeminormalRep.eq_wtrace_of_markov and proves on H_{n+1}(q) itself, for every Markov trace family at z_D = q^3/(q^2+1), cHecke_central, markov_radical_iff (radical = elements acting by zero on all <=2-row seminormal reps) and tr_cHecke (tau(C deg) = sum over <=2-row lambda of 1/dim_q), matching md:19 'Under convention D the surviving sum runs over the partitions with at most two rows'. dim_q remains block data dq, as in the md. That gap is closed. (2) Still open: lean.ref is QOU.BraidKnot.frobenius_codim_universal, the scalar identity sum (1/(d_q tau_p)) tau_p = sum 1/d_q over R (frobenius-codim-universal.lean:84), which states neither centrality nor the convention-D scope and uses a gratuitous R (para 7c). The md statement is better matched by CoCasimirSurviving.tr_coCasimirSurv_of_forall_ne_zero (boxed identity) and, on the Hecke algebra, CoCasimirHecke.tr_cHecke. Suggest retargeting lean.ref. Dropping uses conj:hook-weight-derivation is consistent with the Lean: neither the sibling (Mathlib-only imports) nor the md uses beta_4 or Phi_4. No ruling conflicts in the md."
+      },
+      {
+        "field_hash": {
+          "md": "8278bfb5c0e7",
+          "ts": "c65ffed80ae9",
+          "lean": "932112c284a4",
+          "lean_statement": "4575f232d649"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "d788dd98ba93ce6ab8553a903510dece6ef922e1",
+        "severity": "minor",
+        "evidence": "Re-review 2026-11-21 on PR #8945 head d788dd98 (a new authorNotes entry in the .ts invalidated the prior entry; md, lean and lean.ref unchanged). The statement-vs-Lean finding carries over unchanged: lean.ref QOU.BraidKnot.frobenius_codim_universal is the scalar identity sum (1/(d_q tau_p)) tau_p = sum 1/d_q over a generic R, which states neither centrality nor the convention-D scope; CoCasimirSurviving.tr_coCasimirSurv_of_forall_ne_zero and CoCasimirHecke.tr_cHecke match the md better (retarget suggested, not done). The new authorNote was checked against the tree: every Lean name it cites exists with the stated content (CoCasimirDimQTraces.qFact_mul_symTrace_primIdem_eq_dimQ and quantumDim_primIdem_twoRow, CoCasimirTau0NotDescend.symTrace_not_descend with hn : 2 <= n i.e. n+1 >= 3, CoCasimirMarkovDescentForcesZD.markov_descends_iff_zD stated on H_3 only, cHecke built from wD = ocneanuWeight at z_D). It keeps the Markov-only scope of #8935 ('A non-Markov trace of the surviving-block algebra can still carry hook weights'), so it does not repeat the 'any trace on the surviving blocks' overclaim. Two normalisations are elided in the note, not in the Lean: the hook dim_q equals the tau_0 weight up to q^{-kappa} AND the factor [n+1]_q! (the Lean states [n+1]_q! * tau_0(e) = q^{-kappa} * dimQ), and the two-row Markov weight is [m-k+1]_q only after multiplying by [2]_q^{n+1}. The sl2-minus-production values quoted (-1.757 ... +0.007, A = 1..8) reproduce on a re-run of computations/term4_two_arm_dimq_probe.py. No ruling conflicts; convention D throughout."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d36081b901a3",
+          "ts": "3da9d0372fd6",
+          "lean": "176128252a32"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.772312Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.772312Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-false-claim.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:24:58.000Z",
+        "reviewed_sha": "40fdb1f48ac6cfc6b33feac895232c9307576fd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d36081b901a3",
+          "ts": "3da9d0372fd6",
+          "lean": "176128252a32"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.772312Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.772312Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-vacuous.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:24:58.000Z",
+        "reviewed_sha": "40fdb1f48ac6cfc6b33feac895232c9307576fd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d36081b901a3",
+          "ts": "3da9d0372fd6",
+          "lean": "176128252a32"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.772312Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.772312Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-circular.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:24:58.000Z",
+        "reviewed_sha": "40fdb1f48ac6cfc6b33feac895232c9307576fd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d36081b901a3",
+          "ts": "3da9d0372fd6",
+          "lean": "176128252a32"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.772312Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.772312Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-overclaim.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:24:58.000Z",
+        "reviewed_sha": "40fdb1f48ac6cfc6b33feac895232c9307576fd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d36081b901a3",
+          "ts": "3da9d0372fd6",
+          "lean": "176128252a32"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.772312Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.772312Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-hidden-dof.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:24:58.000Z",
+        "reviewed_sha": "40fdb1f48ac6cfc6b33feac895232c9307576fd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d36081b901a3",
+          "ts": "3da9d0372fd6",
+          "lean": "176128252a32"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.772312Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.772312Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-non-sequitur.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:24:58.000Z",
+        "reviewed_sha": "40fdb1f48ac6cfc6b33feac895232c9307576fd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d36081b901a3",
+          "ts": "3da9d0372fd6",
+          "lean": "176128252a32"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.772312Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.772312Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
+        "severity": "minor",
+        "evidence": "The Lean sibling fails compilation, causing divergence from the narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:24:58.000Z",
+        "reviewed_sha": "40fdb1f48ac6cfc6b33feac895232c9307576fd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d36081b901a3",
+          "ts": "3da9d0372fd6",
+          "lean": "176128252a32"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.772312Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.772312Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-citation-misuse.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:24:58.000Z",
+        "reviewed_sha": "40fdb1f48ac6cfc6b33feac895232c9307576fd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d36081b901a3",
+          "ts": "3da9d0372fd6",
+          "lean": "176128252a32"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.772312Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.772312Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:24:58.000Z",
+        "reviewed_sha": "40fdb1f48ac6cfc6b33feac895232c9307576fd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d36081b901a3",
+          "ts": "3da9d0372fd6",
+          "lean": "176128252a32"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.772312Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.772312Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-empirical-fragility.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:24:58.000Z",
+        "reviewed_sha": "40fdb1f48ac6cfc6b33feac895232c9307576fd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d36081b901a3",
+          "ts": "3da9d0372fd6",
+          "lean": "176128252a32"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.772312Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.772312Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-physical-implausibility.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:24:58.000Z",
+        "reviewed_sha": "40fdb1f48ac6cfc6b33feac895232c9307576fd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d36081b901a3",
+          "ts": "3da9d0372fd6",
+          "lean": "176128252a32"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.772312Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.772312Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1 — folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RepresentationTheory/FDRep.olean' of module Mathlib.RepresentationTheory.FDRep does not exist",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:24:58.000Z",
+        "reviewed_sha": "40fdb1f48ac6cfc6b33feac895232c9307576fd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2324d81b4f7b",
+          "ts": "4fffc1908ec8",
+          "lean": "176128252a32"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RepresentationTheory/FDRep.olean' of module Mathlib.RepresentationTheory.FDRep does not exist",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RepresentationTheory/FDRep.olean' of module Mathlib.RepresentationTheory.FDRep does not exist",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RepresentationTheory/FDRep.olean' of module Mathlib.RepresentationTheory.FDRep does not exist"
+      },
+      {
+        "field_hash": {
+          "md": "d36081b901a3",
+          "ts": "3da9d0372fd6",
+          "lean": "176128252a32"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-27",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.772312Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.772312Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "verdict: clean"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:24:58.000Z",
+        "reviewed_sha": "40fdb1f48ac6cfc6b33feac895232c9307576fd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote prose sections of mass-theory_seq42.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
+        "reviewed_at": "2026-07-07T14:26:56.772312Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.772312Z"
+        },
+        "field_hash": {
+          "md": "d36081b901a3",
+          "ts": "3da9d0372fd6",
+          "lean": "176128252a32"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:24:58.000Z",
+        "reviewed_sha": "40fdb1f48ac6cfc6b33feac895232c9307576fd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:45:47.792Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read (theorem, 49 words): one hypothesis sentence plus two display equations. Identity verified by hand: tau(C)=sum 1/(dim_q(l) tau(p_l)) * tau(p_l) = sum 1/dim_q(l), valid whenever tau(p_l) != 0."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:45:47.839Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read (theorem, 49 words): one hypothesis sentence plus two display equations. Identity verified by hand: tau(C)=sum 1/(dim_q(l) tau(p_l)) * tau(p_l) = sum 1/dim_q(l), valid whenever tau(p_l) != 0."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:45:47.879Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read (theorem, 49 words): one hypothesis sentence plus two display equations. Identity verified by hand: tau(C)=sum 1/(dim_q(l) tau(p_l)) * tau(p_l) = sum 1/dim_q(l), valid whenever tau(p_l) != 0."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:45:47.922Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read (theorem, 49 words): one hypothesis sentence plus two display equations. Identity verified by hand: tau(C)=sum 1/(dim_q(l) tau(p_l)) * tau(p_l) = sum 1/dim_q(l), valid whenever tau(p_l) != 0."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:45:47.964Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read (theorem, 49 words): one hypothesis sentence plus two display equations. Identity verified by hand: tau(C)=sum 1/(dim_q(l) tau(p_l)) * tau(p_l) = sum 1/dim_q(l), valid whenever tau(p_l) != 0."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:45:48.005Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read (theorem, 49 words): one hypothesis sentence plus two display equations. Identity verified by hand: tau(C)=sum 1/(dim_q(l) tau(p_l)) * tau(p_l) = sum 1/dim_q(l), valid whenever tau(p_l) != 0."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:45:48.045Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read (theorem, 49 words): one hypothesis sentence plus two display equations. Identity verified by hand: tau(C)=sum 1/(dim_q(l) tau(p_l)) * tau(p_l) = sum 1/dim_q(l), valid whenever tau(p_l) != 0."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:45:48.084Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read (theorem, 49 words): one hypothesis sentence plus two display equations. Identity verified by hand: tau(C)=sum 1/(dim_q(l) tau(p_l)) * tau(p_l) = sum 1/dim_q(l), valid whenever tau(p_l) != 0."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:45:48.127Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read (theorem, 49 words): one hypothesis sentence plus two display equations. Identity verified by hand: tau(C)=sum 1/(dim_q(l) tau(p_l)) * tau(p_l) = sum 1/dim_q(l), valid whenever tau(p_l) != 0."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9873e73eb6d5",
+          "ts": "3da9d0372fd6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:45:48.165Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read (theorem, 49 words): one hypothesis sentence plus two display equations. Identity verified by hand: tau(C)=sum 1/(dim_q(l) tau(p_l)) * tau(p_l) = sum 1/dim_q(l), valid whenever tau(p_l) != 0."
+      }
+    ]
+  }
+}

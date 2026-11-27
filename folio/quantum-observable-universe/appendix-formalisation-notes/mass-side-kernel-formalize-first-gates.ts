@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:mass-side-kernel-formalize-first-gates",
   title:
-    "Mass-side $\\S 4$ formalize-first gates as parametric Lean classes — `MassSideKernel` bundles anchor-stability, q=1 shadow (open gap), and direction sanity for any `linking_weight` candidate $w(q)$; mirrors the $\\mathfrak{Q}_\\beta$ `BarEvenKernel` typeclass",
+    "Mass-side $\\S 4$ formalize-first gates as parametric Lean classes — anchor-stability, $q=1$ shadow, and direction sanity for linking-weight candidates $w(q)$",
   lean: {
     ref: "qou:QOU.Mass.MassSideKernelFormalize.MassSideKernel",
     validation: "not_checked",
@@ -25,6 +25,12 @@ export default proposition({
     "no-fit",
   ],
   authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-gate-classes-admit-zero.lean` proves `MassDirectionSanityGateClass` is non-vacuous but its additive `10 * target` band `[-22.14, 27.06]` admits zero.",
+      see: "docs/audits/2026-08-30-gate-classes-admit-zero.lean",
+    },
     {
       kind: "note",
       date: "2026-06-06",

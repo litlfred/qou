@@ -1,0 +1,70 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-24T02:19:56.514964+00:00",
+  "commitSha": "0d7c8d3e77ea4ebb63f1f2e7f88f87715302de23",
+  "assertions": [
+    {
+      "name": "qou_gw96_nlw5_bar_oddness_and_interface_offset",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "QOU.MassTheory.barOdd_iff_sum_eq_h_sq_and_counit + colourWeighted_vs_midpoint_and_impliedH"
+    },
+    {
+      "name": "qou_pjx4_stacked_crossing_framing_flips_pos2_and_neg2",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "QOU.MassTheory.framing_flips_pos2_and_neg2_unbinding"
+    },
+    {
+      "name": "qou_u5qs_xwur_contiguous_span_and_tworow_isospin_cutoff",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "QOU.MassTheory.contiguous_vs_interleaved_span_and_cycle_rank + twoRow_isospin_bijection_and_selfConjugate_cutoff"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "delta-bar-anchor-writhe-layout-isospin-probe",
+  "scriptFile": "delta_bar_anchor_writhe_layout_isospin_probe.py",
+  "scriptHash": "064a153b1f80",
+  "scriptCommitSha": "0d7c8d3e77ea4ebb63f1f2e7f88f87715302de23",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/delta_bar_anchor_writhe_layout_isospin_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/delta_bar_anchor_writhe_layout_isospin_probe.py"
+  },
+  "description": "80-dps verification of Delta_S bar-oddness forcing h^2/2 (qou-gw96), colour-weighted interface d offset vs midpoint (qou-nlw5), stacked-crossing writhe framing flip (qou-pjx4), contiguous vs interleaved 3-block span & path cycle rank 0 (qou-u5qs), and two-row isospin bijection & A<=4 cutoff (qou-xwur).",
+  "parameters": {
+    "workdps": 80,
+    "q0": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "counit_net_eps_np_q": "-0.18720719452937832072983654529098078897565051490627",
+    "implied_q0_from_d_cw": "1.1095146749169356379076548115368834926986725973314",
+    "mu_eff_pos2": "0.89225017420180948098723177213303821694336224702610",
+    "mu_eff_neg2": "1.1576324503928190649354244704106107508218348191320"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

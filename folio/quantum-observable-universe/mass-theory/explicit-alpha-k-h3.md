@@ -1,4 +1,4 @@
-*Let $z = q^{3}/(q^{2}+1)$ (**convention D**) and $h = q - q^{-1}$. The structural prefactors of the unified mass formula at $H_3$ are:*
+*Let $z = q^{3}/(q^{2}+1)$ and $h = q - q^{-1}$. The structural prefactors of the unified mass formula at $H_3$ are:*
 
 $$
   \boxed{\;

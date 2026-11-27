@@ -1,4 +1,4 @@
-**Corollary.** *Let $R$ be a field of characteristic $0$ and $q \in R$ with $[k]_q \neq 0$ for $1 \le k \le n$. Let $E_r^{p,q'}$ be the spectral sequence of the Hochschild complex of $H_n(R, q)$ filtered by Coxeter length, in the bigrading $q' = k - p$ with $k$ the cochain degree ([length-filtration spectral sequence](#prop:gb-spectral-sequence)). Then*
+*Let $R$ be a field of characteristic $0$ and $q \in R$ with $[k]_q \neq 0$ for $1 \le k \le n$. Let $E_r^{p,q'}$ be the spectral sequence of the Hochschild complex of $H_n(R, q)$ filtered by Coxeter length, in the bigrading $q' = k - p$ with $k$ the cochain degree ([length-filtration spectral sequence](#prop:gb-spectral-sequence)). Then*
 
 $$
   E_\infty^{p, q'} = 0 \qquad \text{for all } p \ge 0,\ q' > 0 .

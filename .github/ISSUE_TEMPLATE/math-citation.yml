@@ -1,0 +1,27 @@
+name: Pinpoint mathematical citation
+description: A published result bears on a block (contradicts it, already proves it, or is missing).
+labels: ["evidence:citation"]
+body:
+  - type: input
+    id: block
+    attributes:
+      label: Block
+      description: The .md path or label (e.g. prop:foo).
+    validations: { required: true }
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: Authors, title, venue, year, and DOI or arXiv id.
+    validations: { required: true }
+  - type: input
+    id: location
+    attributes:
+      label: Exact location
+      description: Theorem / lemma / equation number AND page.
+    validations: { required: true }
+  - type: textarea
+    id: bearing
+    attributes:
+      label: How it bears on the block
+    validations: { required: true }

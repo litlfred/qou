@@ -1,5 +1,3 @@
-## Proof
-
 By Wenzl 1988 (Theorem 1.4), $H_{n+m}(q)$ is semisimple with Wedderburn decomposition:
 $$
 H_{n+m}(q) \;\cong\; \bigoplus_{\lambda \vdash n+m} \mathrm{End}(V_\lambda)

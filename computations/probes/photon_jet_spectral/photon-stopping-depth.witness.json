@@ -1,0 +1,136 @@
+{
+ "q0Anchor": "independent",
+ "q0AnchorReason": "modular exact arithmetic at random q; never reads q0",
+ "runs": [
+  {
+   "n": 3,
+   "p": 2147483629,
+   "q": 1813743793,
+   "ranks": [
+    1,
+    4,
+    6
+   ],
+   "L": 2,
+   "lower_ceil_N_over_2": 2,
+   "upper_floor_n2_over_4": 2
+  },
+  {
+   "n": 3,
+   "p": 2147483587,
+   "q": 1967651582,
+   "ranks": [
+    1,
+    4,
+    6
+   ],
+   "L": 2,
+   "lower_ceil_N_over_2": 2,
+   "upper_floor_n2_over_4": 2
+  },
+  {
+   "n": 4,
+   "p": 2147483629,
+   "q": 20424260,
+   "ranks": [
+    1,
+    6,
+    15,
+    22,
+    24
+   ],
+   "L": 4,
+   "lower_ceil_N_over_2": 3,
+   "upper_floor_n2_over_4": 4
+  },
+  {
+   "n": 4,
+   "p": 2147483587,
+   "q": 676570753,
+   "ranks": [
+    1,
+    6,
+    15,
+    22,
+    24
+   ],
+   "L": 4,
+   "lower_ceil_N_over_2": 3,
+   "upper_floor_n2_over_4": 4
+  },
+  {
+   "n": 5,
+   "p": 2147483629,
+   "q": 972089373,
+   "ranks": [
+    1,
+    8,
+    29,
+    64,
+    98,
+    116,
+    120
+   ],
+   "L": 6,
+   "lower_ceil_N_over_2": 5,
+   "upper_floor_n2_over_4": 6
+  },
+  {
+   "n": 5,
+   "p": 2147483587,
+   "q": 1204220022,
+   "ranks": [
+    1,
+    8,
+    29,
+    64,
+    98,
+    116,
+    120
+   ],
+   "L": 6,
+   "lower_ceil_N_over_2": 5,
+   "upper_floor_n2_over_4": 6
+  },
+  {
+   "n": 6,
+   "p": 2147483629,
+   "q": 526003430,
+   "ranks": [
+    1,
+    10,
+    47,
+    139,
+    292,
+    469,
+    612,
+    690,
+    716,
+    720
+   ],
+   "L": 9,
+   "lower_ceil_N_over_2": 8,
+   "upper_floor_n2_over_4": 9
+  },
+  {
+   "n": 6,
+   "p": 2147483587,
+   "q": 2022696049,
+   "ranks": [
+    1,
+    10,
+    47,
+    139,
+    292,
+    469,
+    612,
+    690,
+    716,
+    720
+   ],
+   "L": 9,
+   "lower_ceil_N_over_2": 8,
+   "upper_floor_n2_over_4": 9
+  }
+ ]
+}

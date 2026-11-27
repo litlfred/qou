@@ -45,6 +45,18 @@
     "library/arxiv-0906.1500v4/sections/sec-030"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds — We study a computational method of the hyperbolic Reidemeister torsion (also called in the literature\n\n**Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds**\n\n*JÉR ÔME DUBOIS AND YOSHIKAZU YAMAGUCHI*\n\n29 pp, 32 sections.\n\n**Abstract.** We study a computational method of the hyperbolic Reidemeister torsion (also called in the literature the non–abelian Reidemeister torsion) considered by J. Porti for complete hyperbolic three–dimensional manifolds with cusps. The derivative of the twisted Alexander invariant for a hyperbolic knot exterior gives the hyperbolic torsion. We prove such a derivative formula of the twisted Alexander invariant for hyperbolic link exteriors like the Whitehead link exterior. We provide the framework for the derivative formula to work, which consists of assumptions on the topology of the manifold and on the representations involved in the deﬁnition of the twisted Alexander invariant, and prove derivative formula in that context.\n\n**Outline.** Front matter; 1 Introduction; Organization; Acknowledgments; 2 Preliminaries; 2.1 The Reidemeister torsion; Torsion of a chain complex; Torsion of a CW-complex; 2.2 The Multiplicativity Lemma for torsions; 3 Definition of the polynomial torsion; 3.1 Technical assumptions; 3.2 Acyclicity; 3.2.1 The acyclicity of local system for manif; 4 Examples of computations; 4.1 The figure eight knot exterior; 4.2 The Whitehead link exterior; 5 Change of coefficients; 6 A derivative formula",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

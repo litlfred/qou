@@ -5,7 +5,7 @@ export default lemma({
   title:
     "Pair commutation at the traced-volume level: $\\hat V_i \\hat V_j = \\hat V_j \\hat V_i$ in $\\mathbb{Z}[q^{\\pm 1/2}, z]$",
   lean: {
-    ref: "qou:QOU.BraidKnot.VhatPairCommutationTrace",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.VhatPairCommutationTrace",
     validation: "not_checked",
   },
   cites: [

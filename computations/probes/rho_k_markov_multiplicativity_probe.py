@@ -48,7 +48,7 @@ Reuses the verified LR table + character machinery from
 `sublemma_2_1_deuteron_branching.py`.
 
 Cited residual (`prop:rho-k-graded-expansion`): the content block
-`content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.md`
+`content/quantum-observable-universe/mass-theory/rho-k-graded-expansion.md`
 line 43 cites "machine precision (3.2 × 10⁻¹⁴)". As of 2026-09-14 that
 UNDERSTATES this probe by 56 orders. The block was deliberately NOT
 edited alongside this producer — it belongs to the mass-endomorphism
@@ -57,6 +57,7 @@ a side effect of a float64 drain (bean `qou-840k`). Anyone quoting the
 verification figure should take it from the witness.
 """
 from __future__ import annotations
+import mpmath  # display-only: mpmath.nstr in f-strings (mpf has no float __format__ on mpmath 1.3.0)
 
 # Path bridge (subdirectory refactor — Phase 1, 2026-06-02).
 # Keeps flat-namespace imports (`from witness_base import …`)
@@ -191,11 +192,11 @@ def main() -> int:
             "chi_lr_pred_im": s.imag,
             "rel_diff": rel,
         })
-        print(f"  λ={str(lam):<14} direct={direct.real:+.8e}  "
-              f"LR={s.real:+.8e}  rel_diff={rel:.2e}")
+        print(f"  λ={str(lam):<14} direct={mpmath.nstr(direct.real, 9)}  "
+              f"LR={mpmath.nstr(s.real, 9)}  rel_diff={mpmath.nstr(rel, 3)}")
 
     max_rel = max(rel_diffs)
-    print(f"\n  max relative deviation (branching identity) = {max_rel:.3e}")
+    print(f"\n  max relative deviation (branching identity) = {mpmath.nstr(max_rel, 4)}")
 
     w.add_parameter("q_0", fmt(q_val))
     w.add_parameter("n_strands", 6)

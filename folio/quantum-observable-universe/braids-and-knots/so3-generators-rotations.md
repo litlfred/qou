@@ -1,0 +1,1 @@
+The operator $R_\alpha$ of the [$\mathrm{SO}(3)$ generators](#def:so3-generators) is a $2\pi/3$ rotation about the $e_3$-axis representing a 3-cycle, and $R_\beta$ is a $\pi$ rotation about $e_1$ representing a 2-cycle.

@@ -1,4 +1,3 @@
-*Proof.*
 The feasible set is non-empty: any element $\Phi_0$ with
 $\mathrm{tr}_M(\Phi_0) > 0$ can be rescaled to satisfy the net constraint,
 and the Frobenius positivity constraints admit interior points (the identity
@@ -39,9 +38,9 @@ non-degenerate — for $q \neq 0, 1$ — **on the quotient
 $H_n/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$, not on $H_n$ itself**, so
 that is where the LP is well-posed.
 
-> **The LP dimension is the Catalan number $C_n$, not $n!$ (Convention D).**
-> Posed on all of $H_n$ with $d = n!$ the statement above is false: under the
-> production convention D the weights $y_\lambda$ vanish for every $\lambda$ with
+> **The LP dimension is the Catalan number $C_n$, not $n!$.**
+> Posed on all of $H_n$ with $d = n!$ the statement above is false: at
+> $z = q^3/(q^2+1)$ the weights $y_\lambda$ vanish for every $\lambda$ with
 > $\ell(\lambda) \geq 3$, so $G \in \mathbb{R}^{n! \times n!}$ is **singular** and
 > the LP is degenerate rather than well-posed. Its rank is the surviving
 > $\sum \dim^2 = C_n$:

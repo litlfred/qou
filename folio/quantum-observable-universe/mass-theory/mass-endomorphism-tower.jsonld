@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -13,11 +13,11 @@
   ],
   "label": "prop:mass-endomorphism-tower",
   "kind": "proposition",
-  "title": "Proton--electron mass endomorphism tower (convention D, $\\mathrm{Li}_2^q$): the mass formula is positive under a genuine norm and bounded dilogarithm",
+  "title": "Proton--electron mass endomorphism tower ($z = q^3/(q^2+1)$, $\\mathrm{Li}_2^q$): the mass formula is positive under a genuine norm and bounded dilogarithm",
   "uses": [
     "papers/quantum-observable-universe/blocks/rem-photon-channel-wedderburn-chain"
   ],
-  "leanRef": "qou:QOU.MassEndomorphism.mass_endomorphism_positive",
+  "leanRef": "qou:QOU.MassTheory.MassEndomorphism.mass_endomorphism_positive",
   "text": "mass-endomorphism-tower.md",
   "leanSource": "mass-endomorphism-tower.lean",
   "provenance": "authored"

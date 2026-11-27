@@ -12,9 +12,9 @@ export default corollary({
     "integrality",
     "termination",
   ],
-  cites: ["habiro2002", "kassel1995", "jones1987"],
+  cites: ["habiro2002", "kassel1995", "jones1987", "garoufalidis-kashaev-descendants2023"],
   lean: {
-    ref: "qou:QOU.BraidKnot.habiro_expansion_atomic",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.habiro_expansion_atomic",
     validation: "not_checked",
   },
   computation: {

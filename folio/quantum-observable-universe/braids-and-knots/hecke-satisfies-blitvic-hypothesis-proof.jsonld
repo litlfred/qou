@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -13,10 +13,9 @@
   ],
   "label": "prf:hecke-satisfies-blitvic-hypothesis",
   "kind": "proof",
-  "title": "Proof: Hecke generators satisfy Blitvić's pair-partition hypothesis",
+  "title": "Proof: the third centred moment of a Hecke generator",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-hecke-satisfies-blitvic-hypothesis",
-    "papers/quantum-observable-universe/blocks/prop-trace-locality-meets-gs-non-locality"
+    "papers/quantum-observable-universe/blocks/prop-hecke-satisfies-blitvic-hypothesis"
   ],
   "text": "hecke-satisfies-blitvic-hypothesis-proof.md",
   "provenance": "authored"

@@ -1,4 +1,3 @@
-*Proof.*
 By [prop:mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price),
 the BW coefficient of partition $\lambda$ is the LP-dual variable
 $u_\lambda^* = C_\lambda \cdot S_\lambda(Z, N, A)$.  The
@@ -93,7 +92,7 @@ The three legacy mechanisms specialise:
   shadow price $\lambda = (2,2)$, which
   vanishes on isolated $pn$ crossings (extremal cancellation,
   [prop:confined-knot-binding](#prop:confined-knot-binding))
-  but is nonzero on collective $pn$ patterns.  Under convention D
+  but is nonzero on collective $pn$ patterns.  At $z = q^3/(q^2+1)$
   no self-conjugate partition beyond $k = 4$ can contribute:
   self-conjugacy forces $\ell(\lambda) = \lambda_1$, so the row cap
   $\ell(\lambda) \leq 2$ admits only $(1)$, $(2,1)$ and $(2,2)$, and a

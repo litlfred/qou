@@ -1,6 +1,5 @@
 ## Lifted-crossing locality hypothesis
 
-**Conjecture.**
 *The joint mass contribution of lifted crossings factorizes into independent local evaluations:*
 
 $$

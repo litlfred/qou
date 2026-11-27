@@ -1,4 +1,3 @@
-**Definition.**
 *Let $\mathcal{A}(Z, N) = \sum_w c_w \cdot w$ be a derived atom in normal form. Its **demand profile** is*
 
 $$
@@ -10,5 +9,3 @@ $$
 $$
 
 *The **demand magnitude** is $|\mathrm{dem}| = \sum_{c_w < 0} |c_w|$.*
-
-**Archimedean specialisation.** What follows invokes real- or complex-analytic constructs. Categorical identities remain valid over an abstract coefficient ring; their archimedean realisation is specialised here.

@@ -180,24 +180,28 @@ $$
 **(QU-3b) Markov property II** (stabilisation):
 
 $$
-  \mathrm{tr}_M\!\bigl(w \cdot \sigma_n^{\pm 1}\bigr)
+  \mathrm{tr}_M\!\bigl(w \cdot \sigma_n\bigr)
   = 
-  \frac{1}{\delta} \mathrm{tr}_M(w)
-  \qquad \text{for } w \in H_n(R, q) \subset H_{n+1}(q),
+  z\,\mathrm{tr}_M(w),
+  \qquad
+  \mathrm{tr}_M\!\bigl(w \cdot \sigma_n^{-1}\bigr)
+  = 
+  z_-\,\mathrm{tr}_M(w)
+  \qquad \text{for } w \in H_n(R, q) \subset H_{n+1}(R, q),
 $$
 
-where $\delta = -(q + q^{-1})$ is the writhe normalisation.
+where $z = \dfrac{q^3}{q^2 + 1}$ is the Markov parameter on positive crossings and $z_- = z - (q - q^{-1}) = \dfrac{1}{q(q^2 + 1)}$ is the induced weight on negative crossings.
 
-**(QU-3c) Faithfulness**:
+**(QU-3c) Quotient faithfulness**:
 
 $$
-  \mathrm{tr}_M\!\bigl(\rho(\beta)\bigr) = 0
-   \forall \beta \in B_n
-  \quad\Longrightarrow\quad
-  \rho(\beta) = 0  \text{in } H_n(R, q).
+  \mathrm{tr}_M\!\bigl(\rho(\beta) \cdot w'\bigr) = 0
+   \;\;\forall w' \in H_n(R, q)
+  \quad\Longleftrightarrow\quad
+  \rho(\beta) \in \mathrm{rad}\,\mathrm{tr}_M.
 $$
 
-The fibre functor detects every nonzero morphism. Equivalently, the Jones polynomial separates knots (modulo the open Jones conjecture for the full category; for torus knots this is a theorem \cite{jones1987}).
+At $z = q^3/(q^2 + 1)$, the trace radical $\mathrm{rad}\,\mathrm{tr}_M \subset H_n(R, q)$ vanishes for $n \leq 2$ and is spanned for $n \geq 3$ by the Wedderburn blocks of Young diagrams with at least three rows, so $\mathrm{tr}_M$ descends faithfully to the Temperley--Lieb quotient $\mathrm{TL}_n(q) \cong H_n(R, q)/\mathrm{rad}\,\mathrm{tr}_M$ of rank $C_n = \frac{1}{n+1}\binom{2n}{n}$.
 
 ### QU-4: Differential calculus (translation operator)
 
@@ -234,19 +238,19 @@ The unknot ($|0\rangle = 1 \in A_0$) produces the identity operator; translation
 
 ## QUO Axioms (Observable Universe)
 
-### QUO-1: Non-degenerate integration
+### QUO-1: Non-degenerate integration on the Temperley--Lieb quotient
 
-The Frobenius form $\int_A$ induces $A \cong A^{\vee}$. In knot coordinates, this sharpens QU-2c:
+The Frobenius form $\int_A$ induces $A \cong A^{\vee}$. At $z = q^3/(q^2 + 1)$, the three-row antisymmetric weight $y_{(1^3)}$ vanishes identically, so on the full Hecke algebra $H_n(R, q)$ the Gram matrix $G_{ij} = \mathrm{tr}_M(T_{\beta_i} \cdot T_{\beta_j})$ satisfies $\det G = 0$ identically for every $n \geq 3$. Non-degenerate integration holds on the Temperley--Lieb quotient $\mathrm{TL}_n(q) := H_n(R, q)/\mathrm{rad}\,\mathrm{tr}_M$ of dimension $C_n$:
 
 $$
-  \mathrm{tr}_M\!\bigl(\rho(\beta) \cdot \rho(\beta')\bigr)
+  \mathrm{tr}_M\!\bigl(\bar{x} \cdot \bar{y}\bigr)
   =  0
-   \forall \beta'
+   \;\;\forall \bar{y} \in \mathrm{TL}_n(q)
   \quad\Longrightarrow\quad
-  \beta = \varnothing  \text{(empty braid)}.
+  \bar{x} = 0  \text{ in } \mathrm{TL}_n(q),
 $$
 
-Equivalently, the Gram matrix $G_{ij} = \mathrm{tr}_M(T_{\beta_i} \cdot T_{\beta_j})$ over any normal-form basis $\{T_{\beta_i}\}$ of $H_n(R, q)$ is invertible (**convention D**: read on the quotient $H_n/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$, where the induced pairing is non-degenerate; on $H_n$ itself $\det G = 0$ exactly, the $(1^3)$ block being the radical).
+equivalently $\det G\big|_{\mathrm{TL}_n(q)} \neq 0$ at generic $q$ (while on $H_n(R, q)$ itself $\det G \neq 0$ holds only for $n \leq 2$, where $\mathrm{rad}\,\mathrm{tr}_M = 0$).
 
 ### QUO-2: Observability ($\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$)
 
@@ -266,7 +270,7 @@ Equivalently: the only braid word commuting with all generators is the identity.
 
 The second Chern class $c_2(\mathrm{Ad}(A)) = 0$ translates via the fibre functor to the relation QUO-3b below.
 
-**(QUO-3a, withdrawn.)** An earlier version stated $c_1(\mathrm{Ad}(A)) = 0$ as $\sum_{i=1}^{n-1} \mathrm{tr}_M(\sigma_i - \sigma_i^{-1}) = 0$. That relation fails for every linear trace with $\mathrm{tr}_M(1) \neq 0$ when $q^2 \neq 1$. The Hecke relation QU-1a gives $\sigma_i^{-1} = \sigma_i - (q - q^{-1})$, so
+**(QUO-3a) First Chern class obstruction.** Representing $c_1(\mathrm{Ad}(A)) = 0$ by the naive antisymmetrised trace $\sum_{i=1}^{n-1} \mathrm{tr}_M(\sigma_i - \sigma_i^{-1}) = 0$ fails for every linear trace with $\mathrm{tr}_M(1) \neq 0$ when $q^2 \neq 1$. The Hecke relation QU-1a gives $\sigma_i^{-1} = \sigma_i - (q - q^{-1})$, so
 
 $$
   \sum_{i=1}^{n-1}
@@ -469,9 +473,9 @@ $$
   \qquad n \geq 1,
 $$
 
-for the Kummer obstruction $\chi(A) \bmod n$. This relation formerly asserted $\kappa_n \neq 0$ for all $n$, on the ground that jet corrections and the base obstruction occupy complementary subgroups; that argument is withdrawn. Whether the $R$-matrix class defined above coincides with the Kummer obstruction is open.
+for the Kummer obstruction $\chi(A) \bmod n$. Asserting $\kappa_n \neq 0$ for all $n$ via complementary subgroups for the jet corrections and the base obstruction does not go through globally. Whether the $R$-matrix expression defined above coincides with the Kummer obstruction is open, and only in a restricted sense can it hold. The Markov trace takes values in a torsion-free ring, and every additive map from $\mathbb{Z}/n$ into a torsion-free group is zero. So the trace expression cannot be the image of the Kummer class under any homomorphism; at most it can vanish at the same levels $n \mid 6$. It is also identically zero whenever $\check{R}_{(n+1)}$ is the jet image of $\check{R}_{(n)}$, as it is for $\check{R} = \sigma_i$ at every level. What does hold at the level of traces is the identity route: by C-4b, $\mathrm{tr}_M(\mathrm{id}) = \chi(A) = -6$, so the Kummer obstruction at level $n$ is $\mathrm{tr}_M(\mathrm{id}) \bmod n$.
 
-*Scope.* This restates item 3 of [QU-to-QOU](#thm:qu-to-qou) in its earlier, jet-tower form, which is retracted. Item 3 now states persistence in the Kummer tower (the obstruction $\chi(\mathcal{S}) \bmod n$ to an $n$-th root of the Reeb bundle), not at every level of the jet tower. For the bands used in this corpus the complementary-subgroup step is not established on a closed surface such as Bring's. There $H^2(\mathcal{S}, \mathcal{O}_{\mathcal{S}}) = 0$, so the jet corrections $\delta_n$ vanish. For the band $\mathbb{Z}$, the group $H^2(\mathcal{S}, \mathbb{Z}) \cong \mathbb{Z}$ has no non-trivial complement. For $\mathcal{O}^{\times}$ and $\mathbb{G}_m$, the obstruction group itself is zero. See the scope note in the [proof of QU-to-QOU](#prf:qu-to-qou).
+*Scope.* Item 3 of [QU-to-QOU](#thm:qu-to-qou) establishes persistence in the Kummer tower (the obstruction $\chi(\mathcal{S}) \bmod n$ to an $n$-th root of the Reeb bundle), rather than at every level of the jet tower. On a closed surface such as Bring's surface, the complementary-subgroup step does not hold for the bands considered here: $H^2(\mathcal{S}, \mathcal{O}_{\mathcal{S}}) = 0$, so the jet corrections $\delta_n$ vanish; for the band $\mathbb{Z}$, the group $H^2(\mathcal{S}, \mathbb{Z}) \cong \mathbb{Z}$ has no non-trivial complement; and for $\mathcal{O}^{\times}$ and $\mathbb{G}_m$, the obstruction group itself is zero. See the scope discussion in the [proof of QU-to-QOU](#prf:qu-to-qou).
 
 ### C-6: Betti numbers and spectral sequence
 

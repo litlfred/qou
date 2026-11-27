@@ -2,355 +2,69 @@
 name: lean-completeness-audit
 roles: [collaborator, owner]
 description: >
-  Audit Lean formalization completeness across all papers: verify Lake
-  project setup, check import coverage, identify missing .lean files for
-  content blocks that require them, report formalization gaps, and
-  detect stale witnesses.
+  Audit Lean 4 formalization completeness, root reachability, `lean.ref`
+  integrity, Two-Tier Reservoir subgraph purity, vacuity freedom, and witness
+  freshness across `folio/` using `lean-static-census.py`,
+  `lean-kg-detangler.py`, `lean-best-practices-lint.py`,
+  `lean-root-coverage-audit.py`, `dead-lean-pointer-audit.py`, and
+  `folio/pipeline/lean-vacuity-axiom-audit.ts`.
 allowed-tools: Read Bash Grep Glob Agent
 ---
 
-# Lean Completeness Audit Skill
+# Lean Completeness & Subgraph Hygiene Audit (`lean-completeness-audit`)
 
-## Role
+## 1. Role & Mandatory CPU Discipline
 
-Verify that every paper's Lean formalization is structurally complete:
-correct Lake project setup, all required imports present, content
-blocks that require `.lean` files have them, and all witnesses are
-current (not stale).
+Verify that every paper's Lean 4 formalization under `folio/<paper>/` (`quantum-observable-universe`, `unital-groebner-bases`, `fred2005-formal-groups`) is structurally complete, acyclic, non-vacuous, and aligned with Mathlib4 / Lean Reservoir standards.
 
-## When to Use This Skill
-
-- "audit lean completeness"
-- "check lean coverage"
-- "which blocks are missing lean files?"
-- "verify lean project setup"
-- "formalization gaps"
-- "stale witnesses" / "witness staleness"
-- After adding a new paper or chapter
-- Before tagging a release
-- After modifying any `.lean` or `.py` computation file
-
-## Automated Audit Scripts
-
-### Deep Lean audit (chapter-by-chapter)
-
+Always export single-thread caps and run under `nice -n 15` (see [`lean-build-hygiene.md`](lean-build-hygiene.md)):
 ```bash
-bun run scripts/lean-audit.ts            # console report
-bun run scripts/lean-audit.ts --json     # JSON for programmatic use
-bun run scripts/lean-audit.ts --chapter ch5  # filter to one chapter
-bun run scripts/lean-audit.ts --strict   # exit 1 on uncited sorry
-bun run scripts/lean-audit.ts --strict --check-axioms  # also fail on axioms
-bun run scripts/lean-audit.ts --help     # full CLI reference
+export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 \
+       OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1
 ```
 
-This script produces:
-- Sorry inventory with citation checking
-- Trivial truth detection (`True := by trivial` placeholders)
-- Axiom inventory
-- Witness staleness (commit SHA comparison)
-- Chapter-by-chapter breakdown
-
-### Unified witness staleness audit (Lean + Python)
-
-```bash
-bun run scripts/witness-audit.ts             # full audit
-bun run scripts/witness-audit.ts --lean-only # only Lean witnesses
-bun run scripts/witness-audit.ts --py-only   # only Python witnesses
-bun run scripts/witness-audit.ts --json      # JSON output
-```
-
-### Lean witness management
-
-```bash
-bun run scripts/lean-witness.ts status   # show all witness statuses
-bun run scripts/lean-witness.ts check <file>  # check single file
-bun run scripts/lean-witness.ts stamp <file>  # create witness after build
-```
-
-### Python witness staleness
-
-```bash
-cd computations
-python3 witness_base.py check-all        # check all Python witnesses
-python3 witness_base.py check-stale <file>  # check single witness
-```
-
-## Audit Steps
-
-### 1. Lake Project Discovery
-
-Verify every paper with `.lean` files has a proper Lake project:
-
-```bash
-./scripts/lean-build-all.sh  # discovers via lean-toolchain files
-```
-
-**Required files** in each `content/<paper>/lean/`:
-- `lakefile.toml` — Lake project config
-- `lean-toolchain` — pinned Lean version
-- Root module file (e.g., `QOU.lean`, `Fred2005.lean`)
-
-**Cross-checks**:
-- All `lean-toolchain` files pin the same Lean version
-- All `lakefile.toml` files pin the same Mathlib commit hash
-- `srcDir` in lakefile matches the directory structure
-
-### 2. Import Graph Completeness
-
-For each paper, verify the root module transitively imports all `.lean`
-files in the project:
-
-```bash
-# List all .lean files
-find content/<paper>/lean/ -name '*.lean' -not -path '*/.lake/*' | sort
-
-# Check root module imports
-cat content/<paper>/lean/<Root>.lean
-```
-
-Any `.lean` file not reachable from the root module won't be built.
-
-### 3. Content Block → Lean Coverage
-
-Cross-reference content `.ts` manifests against `.lean` files.
-Per AGENTS.md rules:
-
-| Block kind | `.lean` required? |
-|-----------|------------------|
-| `definition` | **Yes** (enforced) |
-| `theorem`, `lemma`, `proposition`, `corollary` | Expected (warning) |
-| `conjecture`, `example`, `remark` | Optional |
-
-For each paper:
-
-```bash
-# Find all content blocks with lean declarations
-cd content/<paper>
-grep -r '"lean"' --include='*.ts' -l | sort
-```
-
-Check that each `lean.ref` URI in a `.ts` manifest (form `"<pkg>:<Decl>"`,
-parse with `parseLeanRef()`) has a corresponding
-declaration in the `.lean` files.
-
-### 4. Cross-Paper Import Audit
-
-Check for stale cross-paper imports (like the `FormalGroups` import
-that was moved):
-
-```bash
-# In each paper's .lean files, find imports referencing other papers
-grep -rn '^import' content/*/lean/ --include='*.lean' | grep -v '.lake'
-```
-
-Flag any import that references a module from a different paper's
-namespace (these need cross-paper Lake dependencies or should be removed).
-
-### 5. Import Explicitness Audit
-
-Check that `.lean` files explicitly import the Mathlib modules they use,
-rather than relying on transitive imports (which break when upstream
-imports change):
-
-```bash
-# Find files using tactics without explicit imports
-for f in $(find content/*/lean/ -name '*.lean' -not -path '*/.lake/*'); do
-  uses_omega=$(grep -l '\bomega\b' "$f" 2>/dev/null)
-  imports_omega=$(grep -l 'Mathlib.Tactic.Omega' "$f" 2>/dev/null)
-  if [ -n "$uses_omega" ] && [ -z "$imports_omega" ]; then
-    echo "MISSING: $f uses omega but doesn't import Mathlib.Tactic.Omega"
-  fi
-done
-```
-
-Key Mathlib features that should be explicitly imported when used:
-
-| Feature | Required import |
-|---------|----------------|
-| `Nat.Prime` | `Mathlib.Data.Nat.Prime.Basic` |
-| `Nat.Coprime`, `Nat.gcd` | `Mathlib.Data.Nat.GCD.Basic` |
-| `omega` tactic | `Mathlib.Tactic.Omega` |
-| `norm_num` tactic | `Mathlib.Tactic.NormNum` |
-| `positivity` tactic | `Mathlib.Tactic.Positivity` |
-| `field_simp` tactic | `Mathlib.Tactic.FieldSimp` |
-| `linarith`/`nlinarith` | `Mathlib.Tactic.Linarith` |
-| `ring` tactic | `Mathlib.Tactic.Ring` |
-| `Real.sqrt` | `Mathlib.Analysis.SpecialFunctions.Pow.Real` |
-
-### 6. Sorry Audit
-
-List all `sorry` occurrences and verify each has a bibliographic citation:
-
-```bash
-grep -rn 'sorry' content/*/lean/ --include='*.lean' | grep -v '.lake'
-```
-
-Per AGENTS.md: every `sorry` must have a `-- Ref: [key]` comment.
-
-#### §3b-cond conditional-class carve-out (do NOT discharge these)
-
-Per AGENTS.md §3b-cond, a `sorry` inside a Lean `class` body **is the
-conjectural input** — it is permanent by design, NOT a missing-proof
-gap. The full catalogue lives at
-[`docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md`](../../../docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md):
-**194 classes / 219 class-body sorries** as of 2026-06-04 (corrected
-from the original 202 / 227 — see catalog "Known imprecisions").
-
-Before flagging a sorry as missing proof:
-
-1. Scroll up from the `sorry` line until you hit either `class <Name>`
-   (catalogued — leave alone) or `theorem | lemma | def | instance`
-   (regular sorry — verify `-- Ref:` annotation).
-2. For class-body sorries, check the catalog. If the class name is
-   listed, it's expected; move on.
-3. If a class-body sorry is NOT in the catalog, it was added after
-   2026-06-03 — regenerate the catalog before triaging.
-
-Approximate non-class sorries (potentially dischargeable): **~272**
-(out of 491 real `sorry` matches across 241 files; the legacy
-653 / 255 figures over-counted by ~25 % because the `\bsorry\b` regex
-caught the docstring phrase `sorry-free`. Use `\bsorry\b(?!-)` for
-accurate counts; biggest single false-positive cluster was
-`BraidKnot/PeriodicTableUniqueness.lean` with 119 `sorry-free` abbrevs).
-
-#### `lean-compile-diagnostics.json` staleness warning
-
-The `proof-lean-compiles` sidecar criterion sources its evidence from
-[`docs/audits/lean-compile-diagnostics.json`](../../../docs/audits/lean-compile-diagnostics.json),
-which goes stale within days of any Lean source change. Cited line
-numbers may not correspond to current file content.
-
-When the proof-axis sidecar fail count is 629 (or a similar large
-number), all on `proof-lean-compiles`, default-assume the diagnostics
-file is stale. See
-[`docs/audits/2026-06-03-proof-axis-629-fails-stale-diagnostics.md`](../../../docs/audits/2026-06-03-proof-axis-629-fails-stale-diagnostics.md)
-for the regen path (requires working LSP — see `lean-environment-setup`
-§"Mathlib cache 403 fallback").
-
-#### `proof-objects.json` is broken since the content-object migration
-
-The `.github/scripts/extract_proof_objects.py` extractor reads
-`chapters/*.tex` files which are generated artefacts — they don't exist
-in the source tree. Running the extractor in the current repo state
-produces 0 objects. The on-disk `proof-objects.json` (committed to
-`main`) is therefore frozen at the April-2026 state with placeholder
-`kind: '?'` / `status: '?'` for all 106 entries.
-
-**Do NOT rely on `proof-objects.json` as a current status source.**
-Use direct grep for axiom / sorry counts and the catalogue references
-above for §3b-cond class sorries. Full root cause:
-[`docs/audits/2026-06-03-proof-objects-json-extractor-broken.md`](../../../docs/audits/2026-06-03-proof-objects-json-extractor-broken.md).
-
-### 7. Trivial Truth Audit
-
-Detect placeholder proofs that prove `True` instead of the actual statement:
-
-```bash
-grep -rn 'True\s*:=\s*by\s*trivial' content/ --include='*.lean' | grep -v '.lake'
-```
-
-These are **not genuine proofs** — the theorem statement is `True` (always
-provable), not the actual mathematical claim. They must be either:
-- Replaced with the correct statement and proof
-- Converted to comments / documentation
-- Removed entirely
-
-### 8. Build Verification
-
-Run builds for all papers:
-
-```bash
-./scripts/lean-build-all.sh
-```
-
-Report:
-- Papers that build cleanly (0 errors, 0 sorry)
-- Papers that build with sorry (warnings only)
-- Papers that fail to build (errors)
-
-### 9. Witness Staleness Audit
-
-After a successful build, stamp witnesses and check for staleness:
-
-```bash
-# Stamp a witness after successful Lean build
-bun run scripts/lean-witness.ts stamp <lean-file>
-
-# Check if witnesses are current
-bun run scripts/witness-audit.ts
-```
-
-**Staleness criteria for Lean witnesses:**
-- Content hash of `.lean` file has changed since witness was stamped
-- Git commit SHA of the file has changed since witness was stamped
-
-**Staleness criteria for Python computation witnesses:**
-- Script content hash has changed since witness was generated
-- Script's git commit SHA has changed since witness was generated
-
-**Witness infrastructure for Python scripts:**
-New computations should use `witness_base.py`:
-
-```python
-from witness_base import WitnessBuilder
-
-w = WitnessBuilder("my-computation", engine="sympy")
-w.set_description("Computes X from Y")
-w.set_content_block("prop:my-proposition")
-w.add_assertion("result", computed=1.234, expected=1.234, tolerance=1e-6)
-w.save()  # writes my-computation.witness.json with commitSha tracking
-```
-
-Legacy witnesses (without `engine`/`commitSha`/`assertions`) should be
-migrated to use `witness_base.py` when the computation is next modified.
-
-## Output Format
-
-```markdown
-## Lean Completeness Audit
-
-### Project Setup
-| Paper | lakefile | toolchain | root module | status |
-|-------|---------|-----------|-------------|--------|
-| quantum-observable-universe | ✓ | v4.24.0 | QOU.lean | ✓ |
-| unital-groebner-bases | ✓ | v4.24.0 | QOU.lean | ✓ |
-| fred2005-formal-groups | ✓ | v4.24.0 | Fred2005.lean | ✓ |
-
-### Build Status
-| Paper | errors | warnings | sorry count |
-|-------|--------|----------|-------------|
-
-### Missing Lean Files
-| Paper | Block | Kind | Label | Status |
-|-------|-------|------|-------|--------|
-
-### Stale Imports
-(list any cross-paper imports that need attention)
-
-### Sorry Without Citation
-(list any sorry missing -- Ref: comment)
-
-### Trivial Truths (Placeholders)
-(list any `True := by trivial` declarations)
-
-### Witness Staleness
-| Type | Total | Current | Stale | Pending |
-|------|-------|---------|-------|---------|
-| Lean | N | N | N | N |
-| Python | N | N (structured) | N | N (legacy) |
-```
-
-## Checklist
-
-- [ ] All papers with .lean files have Lake projects
-- [ ] All lean-toolchain files agree on version
-- [ ] All lakefile.toml files pin same Mathlib commit
-- [ ] Root modules import all project .lean files
-- [ ] Definition blocks all have corresponding .lean files
-- [ ] No stale cross-paper imports
-- [ ] All sorry have bibliographic citations
-- [ ] No trivial truth placeholders (True := by trivial)
-- [ ] All papers build (at least with warnings)
-- [ ] All Lean witnesses are current (not stale)
-- [ ] All Python computation witnesses are current (not stale)
-- [ ] Legacy Python witnesses identified for migration to witness_base.py
+---
+
+## 2. Canonical Automated Audit Suite (`< 15s` Static Gates)
+
+| Audit Dimension | Canonical Tool | Invocation |
+|---|---|---|
+| **1. Static parity, decl FQNs, comment-stripped `sorry`/`axiom` counts** | [`scripts/lean-static-census.py`](../../scripts/lean-static-census.py) | `nice -n 15 python3 scripts/lean-static-census.py --digest` |
+| **2. Subgraph DAG, SCCs, orphans, §7c, & 6 Reservoir `lean_lib` cut-edges** | [`scripts/lean-kg-detangler.py`](../../scripts/lean-kg-detangler.py) | `nice -n 15 python3 scripts/lean-kg-detangler.py --summary-only` |
+| **3. Mathlib4 & Reservoir style / §7c / vacuity / `BP008` import boundary** | [`scripts/lean-best-practices-lint.py`](../../scripts/lean-best-practices-lint.py) | `nice -n 15 python3 scripts/lean-best-practices-lint.py --diff` (or `--package all-community`) |
+| **4. Library root (`QOU.lean`) transitive import coverage** | [`scripts/lean-root-coverage-audit.py`](../../scripts/lean-root-coverage-audit.py) | `nice -n 15 python3 scripts/lean-root-coverage-audit.py` |
+| **5. Content `.ts` `lean.ref` resolution & dead pointers** | [`scripts/dead-lean-pointer-audit.py`](../../scripts/dead-lean-pointer-audit.py) | `nice -n 15 python3 scripts/dead-lean-pointer-audit.py` |
+| **6. Semantic vacuity & review-ledger freshness** | [`folio/pipeline/lean-vacuity-axiom-audit.ts`](../../folio/pipeline/lean-vacuity-axiom-audit.ts) | `nice -n 15 bun run folio/pipeline/lean-vacuity-axiom-audit.ts folio/quantum-observable-universe --check-ledger docs/audits/lean-vacuity-review-ledger.json` |
+| **7. Keystone `#print axioms` regression guard** | [`scripts/lean-axiom-guard.py`](../../scripts/lean-axiom-guard.py) | `nice -n 15 python3 scripts/lean-axiom-guard.py` |
+| **8. Python computation `.witness.json` staleness** | [`computations/witness_staleness_triage.py`](../../computations/witness_staleness_triage.py) | `nice -n 15 python3 computations/witness_staleness_triage.py` |
+
+> **Historical traps (do NOT use):**
+> - `proof-objects.json` is frozen since the April 2026 content-object migration ([`docs/audits/2026-06-03-proof-objects-json-extractor-broken.md`](../../docs/audits/2026-06-03-proof-objects-json-extractor-broken.md)).
+> - `docs/audits/lean-compile-diagnostics.json` can go stale within days of Lean edits ([`docs/audits/2026-06-03-proof-axis-629-fails-stale-diagnostics.md`](../../docs/audits/2026-06-03-proof-axis-629-fails-stale-diagnostics.md)).
+> - Class-body `sorry`s inside §3b-cond conjectural classes are catalogued in [`docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md`](../../docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md); always strip comments/strings (or use `\bsorry\b(?!-)`) so `sorry-free` in docstrings is never counted.
+
+---
+
+## 3. Step-by-Step Audit Protocol
+
+1. **Workspace & Toolchain Parity:**
+   - Verify [`/lean-toolchain`](../../lean-toolchain) and all `folio/*/lean/lean-toolchain` files pin the identical Lean version, and all `lakefile.toml` files pin the identical Mathlib commit `rev` with `autoImplicit = false`.
+2. **Import Closure vs. Build Glob Coverage:**
+   - Note that `folio/quantum-observable-universe/lean/lakefile.toml` sets `globs = ["QOU", "QOU.+"]`, so `QOU` builds the whole tree, while `lean-root-coverage-audit.py` + `lean-kg-detangler.py` measure which modules are orphaned from `QOU.lean` vs referenced by `.ts` `lean.ref`s.
+3. **Content Block → Lean Coverage:**
+   - `definition` blocks MUST carry a resolving `lean.ref` URI (`"<pkg>:<Decl>"` in [`schemas/lean-packages.ts`](../../schemas/lean-packages.ts)); `theorem`/`lemma`/`proposition`/`corollary` blocks are expected to resolve and carry matching `.md` `**Proof.**` narratives.
+4. **Two-Tier Community Library Purity:**
+   - Run `lean-kg-detangler.py` and `lean-best-practices-lint.py --package all-community` to verify zero `sorry`, zero custom `axiom`, §7c base-ring generality, and track `community_to_qou_cut_edges` toward `0`.
+5. **Single-Threaded Cone Compile Verification:**
+   - Verify changed cones with `nice -n 15 bash scripts/lean-direct-cone.sh -j 1 <TargetModule>` (never bare `lake build`).
+
+---
+
+## 4. Checklist
+
+- [ ] All `lean-toolchain` and `lakefile.toml` Mathlib pins match across `/`, `qou`, `ugb`, and `fred2005`
+- [ ] `lean-static-census.py` reports 0 unexpected `sorry` or `axiom` growth
+- [ ] `dead-lean-pointer-audit.py` and `scripts/run-validate.ts` pass cleanly
+- [ ] `lean-best-practices-lint.py --diff` reports `critical=0` (`BP001`–`BP009`)
+- [ ] `lean-kg-detangler.py` reports `0` module-level SCC cycles and non-increasing `community_to_qou_cut_edges`
+- [ ] `lean-vacuity-axiom-audit.ts --check-ledger` and `computations/witness_staleness_triage.py` are clean

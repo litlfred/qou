@@ -60,6 +60,20 @@ levels, **zero** within 1e-3 of an admissible one."*
 **Scope-(a), not (b):** this excludes `Δ_S` **paired with an admissible functional**. It
 excludes neither convention D nor the framework.
 
+### 2b. Teraplectic `z = 0.99850030` is explicitly excluded (`qou-7y1z`, 80-dps witness)
+
+A sibling thread (`claude/gracious-dijkstra-0ijp2l`, bean `qou-7y1z`) checked whether the
+teraplectic candidate `z_tera = 0.99850030` (matching `z*` above to 8 figures) could serve
+as a Convention-D Markov trace parameter. Certified at 80 dps at the proton pin `q_at(95)` in
+[`teraplectic_z_inadmissibility_80dps_probe.py`](../../computations/probes/teraplectic_z_inadmissibility_80dps_probe.py)
+([`2026-11-24-teraplectic-z-inadmissibility-qou-7y1z.md`](2026-11-24-teraplectic-z-inadmissibility-qou-7y1z.md)):
+
+- `|z_tera - q_0| = 0.11147828275138080759…` and `|z_tera - z_D| = 0.38581226285353474840…`,
+  so `z_tera ∉ {q_0, q_0³/(q_0²+1)}` (`ConventionDAdmissibleRoots.lean`).
+- Because `z_tera ∈ (z_D, q_0)`, the 3-row Ocneanu weight on `H_3(q_0)` is strictly negative,
+  `y_{(1^3)}(z_tera) = -0.01413069645380553577… < 0` (violating weight positivity as well as
+  the two-row Temperley–Lieb cap). **Do not use `z = 0.99850030` in any D-ladder derivation.**
+
 ## 3. The missing-normalisation hypothesis is REFUTED
 
 The leading alternative was that the normalised trace carries a `z`-dependent factor that

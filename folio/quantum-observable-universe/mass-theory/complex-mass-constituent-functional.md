@@ -1,4 +1,3 @@
-**Conjecture (complex-mass constituent functional).**
 *There is a single complex-mass functional $\mathfrak{M}$ on the composite
 braid / Hecke-module state space whose real part, projected onto per-generation
 flavour blocks, reproduces the light quark doublet and determines the
@@ -46,7 +45,5 @@ deriving $\mathrm{contRatio}$ and the block projections from the Frobenius
 pairing $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi_\lambda$ — is the open
 closure, and until it is done no second-generation quark mass follows. This is a
 conditional scaffold, not a derivation: it states a falsifiable claim and its
-consequence structure. It sits in Subgoal-2 research (open for all agents); the
-anti-fit discipline gates *how* it may be closed — a $\mathfrak{M}$ obtained by
-inverting the quark-mass anchors is a fit, not a derivation, and may not be
-wired to production as canonical.
+consequence structure. Closing it requires deriving $\mathfrak{M}$ without free parameters: a functional obtained by
+inverting the measured quark-mass anchors would be a fit rather than a derivation.

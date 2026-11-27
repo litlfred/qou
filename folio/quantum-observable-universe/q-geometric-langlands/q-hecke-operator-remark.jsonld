@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-hecke-operator-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-hecke-operator-remark",
+  "kind": "remark",
+  "title": "Hecke relation for the $q$-Hecke operators",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-hecke-operator",
+    "papers/quantum-observable-universe/blocks/prop-braid-action-tensor"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-hecke-operator",
+  "text": "q-hecke-operator-remark.md",
+  "provenance": "authored"
+}

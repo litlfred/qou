@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Crystal-limit isospin degeneracy: $S_{\\mathrm{crystal}}$ is invariant under $\\sigma_i \\leftrightarrow \\sigma_i^{-1}$",
   lean: {
-    ref: "qou:QOU.BraidKnot.crystal_isospin_degeneracy",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.crystal_isospin_degeneracy",
     validation: "not_checked",
   },
   uses: [
@@ -25,6 +25,12 @@ export default proposition({
   ],
   cites: ["kashiwara1991", "lecouvey2007"],
   authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`): conditioned on `QOU.BraidKnot.CrystalGraphRealization`, which `2026-09-04-conjecture-carriers-round-two.lean` (`C1`) inhabits on `PUnit`.",
+      see: "docs/audits/2026-09-04-conjecture-carriers-round-two.lean",
+    },
     {
       kind: "caveat",
       date: "2026-11-16",

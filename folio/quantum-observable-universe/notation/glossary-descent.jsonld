@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-descent",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-descent",
+  "kind": "remark",
+  "title": "Descent",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-qu-to-qou"
+  ],
+  "tags": [
+    "glossary",
+    "descent",
+    "brane-tower",
+    "restriction"
+  ],
+  "leanRef": "qou:QOU.DescentData",
+  "text": "glossary-descent.md",
+  "leanSource": "glossary-descent.lean",
+  "provenance": "authored"
+}

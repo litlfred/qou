@@ -2,7 +2,7 @@ While the existence of the Habiro expansion for quantum invariants with integer 
 ## Proton Habiro coefficients (verified integral)
 
 The denominator-cleared numerator of the proton's Markov trace has
-$M = 8$ (series terminates). Under convention D the proton trace is
+$M = 8$ (series terminates). At the Markov parameter $z = q^3/(q^2+1)$ the proton trace is
 $p_p(u)/d_p(u)$ with $d_p = 4u^{18}(u^4+1)^2$, and the expansion of
 $p_p$ is:
 
@@ -18,10 +18,9 @@ $p_p$ is:
 | 7 | $-16u^7 - 23u^6 - 31u^5 - 33u^4 - 47u^3 - 62u^2 - 77u - 114$ |
 | 8 | $u^8 + u^7 + 2u^6 + 3u^5 + 2u^4 + 4u^3 + 5u^2 + 6u + 15$ |
 
-In contrast, the Convention-C expansion yields non-monic coefficients ($a_0 = 4$, $a_1 = -74u - 74$, ...).
 
 The neutron has the same structure with $M = 8$ and different integer
-coefficients. The deuteron has $M = 13$ under convention D (it was $12$ under C).
+coefficients. The deuteron has $M = 13$ at $z = q^3/(q^2+1)$.
 
 ## Uniqueness of the archimedean evaluation
 

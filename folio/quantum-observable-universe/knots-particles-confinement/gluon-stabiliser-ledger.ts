@@ -15,7 +15,7 @@ export default remark({
   ],
   uses: [
     "def:derived-atom",
-    "def:universal-ilp-algorithm",
+    "rem:confinement-layer-operator-selection",
     "rem:ilp-solution-count-unwrap",
     "fundamental-knots-operator-basis",
     "def:lepton-number-categorical",
@@ -24,6 +24,8 @@ export default remark({
     "rem:categorical-proton-properties",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-24", body: "Relocated from the block prose by the reading-order drain (qou-d4kh): The [neutron block](#rem:categorical-neutron-properties) records eleven crossings in total — six from $\\mathcal{B}_3$, three from quarks, two from gluons — since its stated $\\mathrm{net}(\\mathfrak{n}) = +0.7976$ is the eleven-crossing value on the $k$-ladder, the thirteen-crossing value being $1.2359$." },
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): **Lepton number is not the reason.** It would be a tidy story — $e^-$ is the lepton channel, so admitting it changes lepton number — but the framework's own definition refuses it. [Categorical lepton number](#def:lepton-number-categorical) counts Skein smoothings, and [its properties](#rem:lepton-number-categorical-properties) state that the Iwahori–Hecke algebra contains no mechanism to change it: violation \"requires a process that changes crossing type without passing through the Skein relation\". Gluon stabilisation is Hecke multiplication followed by Gröbner–Shirshov reduction. It smooths nothing, so $\\Delta L = 0$ for every candidate, $e^-$ among them. The [conservation table](#rem:nucleon-from-photons-summary) agrees by construction: it carries no row for step 4 at all, and it assigns $L = 0$ to a nucleon whose normal form is dominated by $e^-\\approx +1.02$ — a coefficient the same block calls the beta-decay channel, not a lepton. An $e^-$ weight in a Hecke normal form is an amplitude. Reading it as a lepton would forbid the output the proton block already asserts." },
     {
       kind: "note",
       date: "2026-08-24",

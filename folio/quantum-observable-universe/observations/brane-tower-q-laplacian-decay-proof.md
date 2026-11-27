@@ -1,4 +1,4 @@
-*Proof.* The absolute-convergence bound follows by direct geometric-series estimation on the iterated Laplacian.
+The absolute-convergence bound follows by direct geometric-series estimation on the iterated Laplacian.
 
 **Step 1: q-integer asymptotic.** For $q > 1$, the q-integer $[k]_q = (q^k - q^{-k})/(q - q^{-1})$ satisfies
 $$

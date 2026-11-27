@@ -36,4 +36,4 @@ The core bar-involution proofs use only the four ring-involution axioms plus the
 
 ### Core bar-involution axioms
 
-**Proposition.** $\overline X = -X$.
+$\overline X = -X$.

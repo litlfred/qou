@@ -5,7 +5,7 @@ export default proposition({
   title:
     "$H_{3A}$ Wedderburn refinement of the categorical density $\\rho_K$ beyond leading-order",
   lean: {
-    ref: "qou:QOU.BraidKnot.rho_k_h3a_refinement",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.rho_k_h3a_refinement",
     validation: "not_checked",
   },
   uses: [

@@ -119,7 +119,7 @@ export default chapter({
 
     // ── Categorical-differential bridge (R1: split from the former Archimedean specialisations section) ──
     // The "bridge" sub-section: how the categorical machinery (Levi
-    // substrate, Webster inner product, Heisenberg commutator, spatial-
+    // substrate, Tanaka–Webster inner product, Heisenberg commutator, spatial-
     // realisation functor, categorical-archimedean bridge) connects to
     // differential-geometric witnesses on the archimedean side.
     section({
@@ -137,6 +137,7 @@ export default chapter({
         // chapter and shouldn't host this depth of content.
         "observation-archimedean",
         "spatial-realization-functor",
+        "spatial-realization-functor-remark",
         "spatial-realization-base-generality",
         "categorical-archimedean-bridge",
         "categorical-archimedean-bridge-proof",

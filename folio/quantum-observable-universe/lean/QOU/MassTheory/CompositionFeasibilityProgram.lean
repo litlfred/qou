@@ -32,7 +32,7 @@ objective; the Möbius objective's gap is bean `qou-ypc5`. Bean `qou-8r6b`.
 -/
 import Mathlib.Algebra.Order.BigOperators.Group.Finset
 import Mathlib.Tactic.Linarith
-import QOU.MassTheory.BranchingPushforwardMultiplicativity
+import HeckeTemperleyLieb.BranchingPushforwardMultiplicativity
 
 namespace QOU.MassTheory.BlockMeasure
 

@@ -1,2 +1,1 @@
-**Proof.**
 Two braids representing hadrons with identical crossing partitions are equivalent in $H_n(R, q)$ if and only if they share a Hecke normal form. The Markov trace provides an isotopy invariant $\mathrm{tr}_M(\beta) = J_L(q)$. Braid isotopy preserves the Hecke class. For hadrons with identical partitions and localisations, Gröbner–Shirshov reduction guarantees a canonical normal form representative. This representative is unique in $H_n(R, q)$. Therefore, the Hecke normal form completely determines the hadron up to isotopy.

@@ -1,0 +1,1034 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/stochastic-mechanics/c5-involution-leibniz-decomposition",
+    "path": "folio/quantum-observable-universe/stochastic-mechanics/c5-involution-leibniz-decomposition"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "09173d1ac635",
+          "ts": "4fdfebe5c038",
+          "lean": "8b31357f40a3"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "09173d1ac635",
+          "ts": "4fdfebe5c038",
+          "lean": "8b31357f40a3"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Unified the Markov trace intro and properties. Eliminated wordy formulations and passive voice. Kept polynomial proofs focused and brief.",
+        "reviewed_at": "2026-07-07T14:26:56.043722Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.043722Z"
+        },
+        "field_hash": {
+          "md": "899e07d400d9",
+          "ts": "4fdfebe5c038",
+          "lean": "8b31357f40a3"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "09173d1ac635",
+          "ts": "f8668c506175",
+          "lean": "ecda018a26f3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:08.295Z",
+        "reviewed_sha": "696fcb0c271b0c732b90ecb27ea781f532908e27",
+        "severity": "major",
+        "evidence": "Lean *defines* `c5Decomposition q := −hoefsmitBSq q − 1/2` and proves it equals −3/2 + 1/[2]²; nothing links it to the precision-ladder c₅ (claimed value taken as a definition; the Lean docstring itself says \"conjectured\"). Algebra checked by hand: b² = ([2]²−1)/[2]² ✓, b²(1+√2) = 7/8 ✓, c₅(silver) = −11/8 ✓, c₅(1) = −5/4 ✓. Proof: Step 1 calls the bar involution an *anti*-automorphism (it is a ring automorphism: bar(T_xT_y) = bar(T_x)bar(T_y)); Step 2 \"each averaged crossing contributes h/2 = 1/2\" sets h = 1 with no reason (h = 1 only at q = φ; at q₀ ≈ 1.11, h ≈ 0.21); Steps 3–4 assert the trace expansion and the c₄, c₆, c₇ closed forms without derivation. c₅ is an extracted ladder coefficient, so equating it to a closed form is an empirical identification inside a proposition; it should be a conjecture",
+        "notes": "Hand review 2026-11-15 (statement vs Lean); issue #8020. "
+      },
+      {
+        "field_hash": {
+          "md": "4e88de21a200",
+          "ts": "f8668c506175",
+          "lean": "ecda018a26f3",
+          "lean_statement": "40cd0f07821c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:54:18.388Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: label references replaced by titles. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Lean *defines* `c5Decomposition q := −hoefsmitBSq q − 1/2` and proves it equals −3/2 + 1/[2]²; nothing links it to the precision-ladder c₅ (claimed value taken as a definition; the Lean docstring itself says \"conjectured\"). Algebra checked by hand: b² = ([2]²−1)/[2]² ✓, b²(1+√2) = 7/8 ✓, c₅(silver) = −11/8 ✓, c₅(1) = −5/4 ✓. Proof: Step 1 calls the bar involution an *anti*-automorphism (it is a ring automorphism: bar(T_xT_y) = bar(T_x)bar(T_y)); Step 2 \"each averaged crossing contributes h/2 = 1/2\" sets h = 1 with no reason (h = 1 only at q = φ; at q₀ ≈ 1.11, h ≈ 0.21); Steps 3–4 assert the trace expansion and the c₄, c₆, c₇ closed forms without derivation. c₅ is an extracted ladder coefficient, so equating it to a closed form is an empirical identification inside a proposition; it should be a conjecture"
+      },
+      {
+        "field_hash": {
+          "md": "8a807b60e5f6",
+          "ts": "4732d37c33d6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:45:51.000Z",
+        "reviewed_sha": "a5b6a61db09f7c8c21533bc71258f15761f886db",
+        "evidence": "Full read of the proposition as restated in #8888 (head a5b6a61d) against c5_decomposition_via_quantum_two. Checked by hand: b^2 = 1 - q^2/(q^2+1)^2 = 1 - 1/[2]_q^2, c5dec = -3/2 + 1/[2]_q^2, and at q = 1+sqrt2, [2]_q = 2 sqrt2 so -b^2 = -7/8. The statement now matches the Lean and explicitly disclaims the ladder identification. The proof block (c5-involution-leibniz-decomposition-proof.md, untouched) still argues the identification: Step 1 calls the bar involution an anti-ring-automorphism, Step 2 says each averaged crossing contributes h/2 = 1/2 (h = q - q^{-1} is not 1), Steps 3-4 propagate to ladder rungs. Narrative and Lean still prove different things; pre-existing fail on main, not resolved by the restatement.",
+        "severity": "major"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Clean. No branch/audit working labels, bean ids, PR or branch names, AGENTS.md / skill-file or audit-memo pointers, dated status notes, or first-person work narration found in the .md body or the published .ts title.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "09173d1ac635",
+          "ts": "f8668c506175"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:14.213Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of the proposition statement (boxed decomposition + two italic paragraphs, 100 words, zero em-dashes). Numerics recomputed at 30 dps: b^2 = (q^4+q^2+1)/(q^2+1)^2 = 1 - 1/[2]_q^2; at silver q = 1+sqrt2, [2]_q = 2 sqrt2 so [2]_q^2 = 8, b^2 = 7/8, -b^2 = -7/8, and -7/8 - 1/2 = -11/8 - every value in the block confirms. sigma_avg = (sigma+sigma^{-1})/2 is AGENTS.md 7a-consistent."
+      },
+      {
+        "field_hash": {
+          "md": "4e88de21a200",
+          "ts": "184ac93b7cb6",
+          "lean": "ecda018a26f3",
+          "lean_statement": "40cd0f07821c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:59:24.000Z",
+        "reviewed_sha": "be175f8606c264ebd5a8f26736dd51db949a2a16",
+        "evidence": "Re-read after this PR's only change to the block: a new .ts authorNotes caveat ('Lean scope (disclosure, not a change of claim)'); the .md is unchanged from the previous all-pass review. Scanned the caveat for every trap: no em-dashes, no pivot, no aphorism or thesis-restatement closer, no announced emphasis, no warmth, no superlatives; sentences read aloud. Caveat checked: c5Decomposition is a def in the sibling .lean (l.47), as stated.",
+        "notes": "Label 'disclosure, not a change of claim' is a scope contrast that is the claim; passes with a note."
+      },
+      {
+        "field_hash": {
+          "md": "8a807b60e5f6",
+          "ts": "4732d37c33d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:45:51.000Z",
+        "reviewed_sha": "a5b6a61db09f7c8c21533bc71258f15761f886db",
+        "evidence": "Full read of the proposition as restated in #8888 (head a5b6a61d) against c5_decomposition_via_quantum_two. Checked by hand: b^2 = 1 - q^2/(q^2+1)^2 = 1 - 1/[2]_q^2, c5dec = -3/2 + 1/[2]_q^2, and at q = 1+sqrt2, [2]_q = 2 sqrt2 so -b^2 = -7/8. No instance of this pattern in the restated text."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "09173d1ac635",
+          "ts": "f8668c506175"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:14.254Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of the proposition statement (boxed decomposition + two italic paragraphs, 100 words, zero em-dashes). Numerics recomputed at 30 dps: b^2 = (q^4+q^2+1)/(q^2+1)^2 = 1 - 1/[2]_q^2; at silver q = 1+sqrt2, [2]_q = 2 sqrt2 so [2]_q^2 = 8, b^2 = 7/8, -b^2 = -7/8, and -7/8 - 1/2 = -11/8 - every value in the block confirms. sigma_avg = (sigma+sigma^{-1})/2 is AGENTS.md 7a-consistent."
+      },
+      {
+        "field_hash": {
+          "md": "4e88de21a200",
+          "ts": "184ac93b7cb6",
+          "lean": "ecda018a26f3",
+          "lean_statement": "40cd0f07821c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:59:24.000Z",
+        "reviewed_sha": "be175f8606c264ebd5a8f26736dd51db949a2a16",
+        "evidence": "Re-read after this PR's only change to the block: a new .ts authorNotes caveat ('Lean scope (disclosure, not a change of claim)'); the .md is unchanged from the previous all-pass review. Scanned the caveat for every trap: no em-dashes, no pivot, no aphorism or thesis-restatement closer, no announced emphasis, no warmth, no superlatives; sentences read aloud. Caveat checked: c5Decomposition is a def in the sibling .lean (l.47), as stated."
+      },
+      {
+        "field_hash": {
+          "md": "8a807b60e5f6",
+          "ts": "4732d37c33d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:45:51.000Z",
+        "reviewed_sha": "a5b6a61db09f7c8c21533bc71258f15761f886db",
+        "evidence": "Full read of the proposition as restated in #8888 (head a5b6a61d) against c5_decomposition_via_quantum_two. Checked by hand: b^2 = 1 - q^2/(q^2+1)^2 = 1 - 1/[2]_q^2, c5dec = -3/2 + 1/[2]_q^2, and at q = 1+sqrt2, [2]_q = 2 sqrt2 so -b^2 = -7/8. No instance of this pattern in the restated text."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "09173d1ac635",
+          "ts": "f8668c506175"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:14.294Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of the proposition statement (boxed decomposition + two italic paragraphs, 100 words, zero em-dashes). Numerics recomputed at 30 dps: b^2 = (q^4+q^2+1)/(q^2+1)^2 = 1 - 1/[2]_q^2; at silver q = 1+sqrt2, [2]_q = 2 sqrt2 so [2]_q^2 = 8, b^2 = 7/8, -b^2 = -7/8, and -7/8 - 1/2 = -11/8 - every value in the block confirms. sigma_avg = (sigma+sigma^{-1})/2 is AGENTS.md 7a-consistent."
+      },
+      {
+        "field_hash": {
+          "md": "4e88de21a200",
+          "ts": "184ac93b7cb6",
+          "lean": "ecda018a26f3",
+          "lean_statement": "40cd0f07821c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:59:24.000Z",
+        "reviewed_sha": "be175f8606c264ebd5a8f26736dd51db949a2a16",
+        "evidence": "Re-read after this PR's only change to the block: a new .ts authorNotes caveat ('Lean scope (disclosure, not a change of claim)'); the .md is unchanged from the previous all-pass review. Scanned the caveat for every trap: no em-dashes, no pivot, no aphorism or thesis-restatement closer, no announced emphasis, no warmth, no superlatives; sentences read aloud. Caveat checked: c5Decomposition is a def in the sibling .lean (l.47), as stated."
+      },
+      {
+        "field_hash": {
+          "md": "8a807b60e5f6",
+          "ts": "4732d37c33d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:45:51.000Z",
+        "reviewed_sha": "a5b6a61db09f7c8c21533bc71258f15761f886db",
+        "evidence": "Full read of the proposition as restated in #8888 (head a5b6a61d) against c5_decomposition_via_quantum_two. Checked by hand: b^2 = 1 - q^2/(q^2+1)^2 = 1 - 1/[2]_q^2, c5dec = -3/2 + 1/[2]_q^2, and at q = 1+sqrt2, [2]_q = 2 sqrt2 so -b^2 = -7/8. No instance of this pattern in the restated text."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "09173d1ac635",
+          "ts": "f8668c506175"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:14.335Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of the proposition statement (boxed decomposition + two italic paragraphs, 100 words, zero em-dashes). Numerics recomputed at 30 dps: b^2 = (q^4+q^2+1)/(q^2+1)^2 = 1 - 1/[2]_q^2; at silver q = 1+sqrt2, [2]_q = 2 sqrt2 so [2]_q^2 = 8, b^2 = 7/8, -b^2 = -7/8, and -7/8 - 1/2 = -11/8 - every value in the block confirms. sigma_avg = (sigma+sigma^{-1})/2 is AGENTS.md 7a-consistent."
+      },
+      {
+        "field_hash": {
+          "md": "4e88de21a200",
+          "ts": "184ac93b7cb6",
+          "lean": "ecda018a26f3",
+          "lean_statement": "40cd0f07821c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:59:24.000Z",
+        "reviewed_sha": "be175f8606c264ebd5a8f26736dd51db949a2a16",
+        "evidence": "Re-read after this PR's only change to the block: a new .ts authorNotes caveat ('Lean scope (disclosure, not a change of claim)'); the .md is unchanged from the previous all-pass review. Scanned the caveat for every trap: no em-dashes, no pivot, no aphorism or thesis-restatement closer, no announced emphasis, no warmth, no superlatives; sentences read aloud. Caveat checked: c5Decomposition is a def in the sibling .lean (l.47), as stated."
+      },
+      {
+        "field_hash": {
+          "md": "8a807b60e5f6",
+          "ts": "4732d37c33d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:45:51.000Z",
+        "reviewed_sha": "a5b6a61db09f7c8c21533bc71258f15761f886db",
+        "evidence": "Full read of the proposition as restated in #8888 (head a5b6a61d) against c5_decomposition_via_quantum_two. Checked by hand: b^2 = 1 - q^2/(q^2+1)^2 = 1 - 1/[2]_q^2, c5dec = -3/2 + 1/[2]_q^2, and at q = 1+sqrt2, [2]_q = 2 sqrt2 so -b^2 = -7/8. No instance of this pattern in the restated text."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "09173d1ac635",
+          "ts": "f8668c506175"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:14.377Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of the proposition statement (boxed decomposition + two italic paragraphs, 100 words, zero em-dashes). Numerics recomputed at 30 dps: b^2 = (q^4+q^2+1)/(q^2+1)^2 = 1 - 1/[2]_q^2; at silver q = 1+sqrt2, [2]_q = 2 sqrt2 so [2]_q^2 = 8, b^2 = 7/8, -b^2 = -7/8, and -7/8 - 1/2 = -11/8 - every value in the block confirms. sigma_avg = (sigma+sigma^{-1})/2 is AGENTS.md 7a-consistent."
+      },
+      {
+        "field_hash": {
+          "md": "4e88de21a200",
+          "ts": "184ac93b7cb6",
+          "lean": "ecda018a26f3",
+          "lean_statement": "40cd0f07821c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:59:24.000Z",
+        "reviewed_sha": "be175f8606c264ebd5a8f26736dd51db949a2a16",
+        "evidence": "Re-read after this PR's only change to the block: a new .ts authorNotes caveat ('Lean scope (disclosure, not a change of claim)'); the .md is unchanged from the previous all-pass review. Scanned the caveat for every trap: no em-dashes, no pivot, no aphorism or thesis-restatement closer, no announced emphasis, no warmth, no superlatives; sentences read aloud. Caveat checked: c5Decomposition is a def in the sibling .lean (l.47), as stated."
+      },
+      {
+        "field_hash": {
+          "md": "8a807b60e5f6",
+          "ts": "4732d37c33d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:45:51.000Z",
+        "reviewed_sha": "a5b6a61db09f7c8c21533bc71258f15761f886db",
+        "evidence": "Full read of the proposition as restated in #8888 (head a5b6a61d) against c5_decomposition_via_quantum_two. Checked by hand: b^2 = 1 - q^2/(q^2+1)^2 = 1 - 1/[2]_q^2, c5dec = -3/2 + 1/[2]_q^2, and at q = 1+sqrt2, [2]_q = 2 sqrt2 so -b^2 = -7/8. No instance of this pattern in the restated text."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "09173d1ac635",
+          "ts": "f8668c506175"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:14.418Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of the proposition statement (boxed decomposition + two italic paragraphs, 100 words, zero em-dashes). Numerics recomputed at 30 dps: b^2 = (q^4+q^2+1)/(q^2+1)^2 = 1 - 1/[2]_q^2; at silver q = 1+sqrt2, [2]_q = 2 sqrt2 so [2]_q^2 = 8, b^2 = 7/8, -b^2 = -7/8, and -7/8 - 1/2 = -11/8 - every value in the block confirms. sigma_avg = (sigma+sigma^{-1})/2 is AGENTS.md 7a-consistent."
+      },
+      {
+        "field_hash": {
+          "md": "4e88de21a200",
+          "ts": "184ac93b7cb6",
+          "lean": "ecda018a26f3",
+          "lean_statement": "40cd0f07821c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:59:24.000Z",
+        "reviewed_sha": "be175f8606c264ebd5a8f26736dd51db949a2a16",
+        "evidence": "Re-read after this PR's only change to the block: a new .ts authorNotes caveat ('Lean scope (disclosure, not a change of claim)'); the .md is unchanged from the previous all-pass review. Scanned the caveat for every trap: no em-dashes, no pivot, no aphorism or thesis-restatement closer, no announced emphasis, no warmth, no superlatives; sentences read aloud. Caveat checked: c5Decomposition is a def in the sibling .lean (l.47), as stated."
+      },
+      {
+        "field_hash": {
+          "md": "8a807b60e5f6",
+          "ts": "4732d37c33d6"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:45:51.000Z",
+        "reviewed_sha": "a5b6a61db09f7c8c21533bc71258f15761f886db",
+        "evidence": "Full read of the proposition as restated in #8888 (head a5b6a61d) against c5_decomposition_via_quantum_two. Checked by hand: b^2 = 1 - q^2/(q^2+1)^2 = 1 - 1/[2]_q^2, c5dec = -3/2 + 1/[2]_q^2, and at q = 1+sqrt2, [2]_q = 2 sqrt2 so -b^2 = -7/8. \"This statement does not identify c5^dec with the rung-5 coefficient ...\" refers to the statement itself. This is an honest scope disclaimer and does not mislead; flagged only because a statement block should carry the claim alone (clarity-stmt-pure); the disclaimer could move to a follow-on remark or the existing authorNotes caveat.",
+        "severity": "minor"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "09173d1ac635",
+          "ts": "f8668c506175"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:14.459Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of the proposition statement (boxed decomposition + two italic paragraphs, 100 words, zero em-dashes). Numerics recomputed at 30 dps: b^2 = (q^4+q^2+1)/(q^2+1)^2 = 1 - 1/[2]_q^2; at silver q = 1+sqrt2, [2]_q = 2 sqrt2 so [2]_q^2 = 8, b^2 = 7/8, -b^2 = -7/8, and -7/8 - 1/2 = -11/8 - every value in the block confirms. sigma_avg = (sigma+sigma^{-1})/2 is AGENTS.md 7a-consistent."
+      },
+      {
+        "field_hash": {
+          "md": "4e88de21a200",
+          "ts": "184ac93b7cb6",
+          "lean": "ecda018a26f3",
+          "lean_statement": "40cd0f07821c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:59:24.000Z",
+        "reviewed_sha": "be175f8606c264ebd5a8f26736dd51db949a2a16",
+        "evidence": "Re-read after this PR's only change to the block: a new .ts authorNotes caveat ('Lean scope (disclosure, not a change of claim)'); the .md is unchanged from the previous all-pass review. Scanned the caveat for every trap: no em-dashes, no pivot, no aphorism or thesis-restatement closer, no announced emphasis, no warmth, no superlatives; sentences read aloud. Caveat checked: c5Decomposition is a def in the sibling .lean (l.47), as stated."
+      },
+      {
+        "field_hash": {
+          "md": "8a807b60e5f6",
+          "ts": "4732d37c33d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:45:51.000Z",
+        "reviewed_sha": "a5b6a61db09f7c8c21533bc71258f15761f886db",
+        "evidence": "Full read of the proposition as restated in #8888 (head a5b6a61d) against c5_decomposition_via_quantum_two. Checked by hand: b^2 = 1 - q^2/(q^2+1)^2 = 1 - 1/[2]_q^2, c5dec = -3/2 + 1/[2]_q^2, and at q = 1+sqrt2, [2]_q = 2 sqrt2 so -b^2 = -7/8. No instance of this pattern in the restated text."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "09173d1ac635",
+          "ts": "f8668c506175"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:14.500Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of the proposition statement (boxed decomposition + two italic paragraphs, 100 words, zero em-dashes). Numerics recomputed at 30 dps: b^2 = (q^4+q^2+1)/(q^2+1)^2 = 1 - 1/[2]_q^2; at silver q = 1+sqrt2, [2]_q = 2 sqrt2 so [2]_q^2 = 8, b^2 = 7/8, -b^2 = -7/8, and -7/8 - 1/2 = -11/8 - every value in the block confirms. sigma_avg = (sigma+sigma^{-1})/2 is AGENTS.md 7a-consistent."
+      },
+      {
+        "field_hash": {
+          "md": "4e88de21a200",
+          "ts": "184ac93b7cb6",
+          "lean": "ecda018a26f3",
+          "lean_statement": "40cd0f07821c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:59:24.000Z",
+        "reviewed_sha": "be175f8606c264ebd5a8f26736dd51db949a2a16",
+        "evidence": "Re-read after this PR's only change to the block: a new .ts authorNotes caveat ('Lean scope (disclosure, not a change of claim)'); the .md is unchanged from the previous all-pass review. Scanned the caveat for every trap: no em-dashes, no pivot, no aphorism or thesis-restatement closer, no announced emphasis, no warmth, no superlatives; sentences read aloud. Caveat checked: c5Decomposition is a def in the sibling .lean (l.47), as stated."
+      },
+      {
+        "field_hash": {
+          "md": "8a807b60e5f6",
+          "ts": "4732d37c33d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:45:51.000Z",
+        "reviewed_sha": "a5b6a61db09f7c8c21533bc71258f15761f886db",
+        "evidence": "Full read of the proposition as restated in #8888 (head a5b6a61d) against c5_decomposition_via_quantum_two. Checked by hand: b^2 = 1 - q^2/(q^2+1)^2 = 1 - 1/[2]_q^2, c5dec = -3/2 + 1/[2]_q^2, and at q = 1+sqrt2, [2]_q = 2 sqrt2 so -b^2 = -7/8. No instance of this pattern in the restated text."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "09173d1ac635",
+          "ts": "f8668c506175"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:14.541Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "'The decomposition resolves the Pell-Lucas outlier status of c_5 at the silver ratio.'",
+        "notes": "Recorded as a pass on the trap criterion but flagged structurally: the block's own interpretation sibling says 'This decomposition is a structural identification, not a first-principles derivation ... Both are concrete computations not yet executed', so 'resolves' is stronger than the cone supports. Proposed: 'accounts for' / 'identifies the source of'. Second, minor: 'The pure-sigma part -b^2 evaluates to -7/8' does not restate the silver-ratio evaluation point inside its own sentence (it is only in the preceding one); -b^2 is q-dependent and is -0.75270... at q_0."
+      },
+      {
+        "field_hash": {
+          "md": "4e88de21a200",
+          "ts": "184ac93b7cb6",
+          "lean": "ecda018a26f3",
+          "lean_statement": "40cd0f07821c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:59:24.000Z",
+        "reviewed_sha": "be175f8606c264ebd5a8f26736dd51db949a2a16",
+        "evidence": "Re-read after this PR's only change to the block: a new .ts authorNotes caveat ('Lean scope (disclosure, not a change of claim)'); the .md is unchanged from the previous all-pass review. Scanned the caveat for every trap: no em-dashes, no pivot, no aphorism or thesis-restatement closer, no announced emphasis, no warmth, no superlatives; sentences read aloud. Caveat checked: c5Decomposition is a def in the sibling .lean (l.47), as stated."
+      },
+      {
+        "field_hash": {
+          "md": "8a807b60e5f6",
+          "ts": "4732d37c33d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:45:51.000Z",
+        "reviewed_sha": "a5b6a61db09f7c8c21533bc71258f15761f886db",
+        "evidence": "Full read of the proposition as restated in #8888 (head a5b6a61d) against c5_decomposition_via_quantum_two. Checked by hand: b^2 = 1 - q^2/(q^2+1)^2 = 1 - 1/[2]_q^2, c5dec = -3/2 + 1/[2]_q^2, and at q = 1+sqrt2, [2]_q = 2 sqrt2 so -b^2 = -7/8. No instance of this pattern in the restated text."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "09173d1ac635",
+          "ts": "f8668c506175"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:14.582Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read of the proposition statement (boxed decomposition + two italic paragraphs, 100 words, zero em-dashes). Numerics recomputed at 30 dps: b^2 = (q^4+q^2+1)/(q^2+1)^2 = 1 - 1/[2]_q^2; at silver q = 1+sqrt2, [2]_q = 2 sqrt2 so [2]_q^2 = 8, b^2 = 7/8, -b^2 = -7/8, and -7/8 - 1/2 = -11/8 - every value in the block confirms. sigma_avg = (sigma+sigma^{-1})/2 is AGENTS.md 7a-consistent."
+      },
+      {
+        "field_hash": {
+          "md": "4e88de21a200",
+          "ts": "184ac93b7cb6",
+          "lean": "ecda018a26f3",
+          "lean_statement": "40cd0f07821c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:59:24.000Z",
+        "reviewed_sha": "be175f8606c264ebd5a8f26736dd51db949a2a16",
+        "evidence": "Re-read after this PR's only change to the block: a new .ts authorNotes caveat ('Lean scope (disclosure, not a change of claim)'); the .md is unchanged from the previous all-pass review. Scanned the caveat for every trap: no em-dashes, no pivot, no aphorism or thesis-restatement closer, no announced emphasis, no warmth, no superlatives; sentences read aloud. Caveat checked: c5Decomposition is a def in the sibling .lean (l.47), as stated."
+      },
+      {
+        "field_hash": {
+          "md": "8a807b60e5f6",
+          "ts": "4732d37c33d6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T15:45:51.000Z",
+        "reviewed_sha": "a5b6a61db09f7c8c21533bc71258f15761f886db",
+        "evidence": "Full read of the proposition as restated in #8888 (head a5b6a61d) against c5_decomposition_via_quantum_two. Checked by hand: b^2 = 1 - q^2/(q^2+1)^2 = 1 - 1/[2]_q^2, c5dec = -3/2 + 1/[2]_q^2, and at q = 1+sqrt2, [2]_q = 2 sqrt2 so -b^2 = -7/8. No instance of this pattern in the restated text."
+      }
+    ]
+  }
+}

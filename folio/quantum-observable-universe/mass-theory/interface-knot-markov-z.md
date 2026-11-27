@@ -9,7 +9,7 @@ $$
   \;}
 $$
 
-*where $z(q) = q^3/(q^2+1)$ is the Markov parameter (convention D), $h(q)$ is the Hecke skein parameter, and $p_+$ / $p_-$ count the positive / negative interface generators.*
+*where $z(q) = q^3/(q^2+1)$ is the Markov parameter, $h(q)$ is the Hecke skein parameter, and $p_+$ / $p_-$ count the positive / negative interface generators.*
 
 This exact factorisation governs atomic assembly. Adding a proton inserts a positive interface, scaling the trace by $z$. Adding a neutron after a proton also inserts a positive interface. Adding a neutron to an existing neutron inserts a negative interface, scaling the trace by $z-h$. 
 

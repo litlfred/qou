@@ -81,17 +81,16 @@ derived third point is `M(2) = 0` (deuteron self-reference).  Any positively-
 scaled (`s > 0`) instance of the model predicts `M(2) = s > 0 ≠ 0`, so it cannot
 reproduce the deuteron.  Formally: no `s > 0` gives `modelA2 s t = 0`. -/
 theorem model_refuted_at_deuteron {s t : ℝ} (hs : 0 < s) : modelA2 s t ≠ 0 := by
-  unfold modelA2
-  -- `s * 1 - t * 0 = s`, and `s > 0`.
-  simpa using ne_of_gt hs
+  dsimp [modelA2]
+  linarith
 
 /-- **(R′) The edge weight is forced to 0 by the deuteron.**  If a model instance
 *does* satisfy the derived deuteron constraint `modelA2 s t = 0`, then its edge
 weight `s` is `0`.  Consequently the frustration ratio κ = t/s has denominator
 `0` — it is structurally ill-posed on the derived data. -/
 theorem deuteron_forces_edge_weight_zero {s t : ℝ} (h : modelA2 s t = 0) : s = 0 := by
-  unfold modelA2 at h
-  simpa using h
+  dsimp [modelA2] at h
+  linarith
 
 /-! ### The exact simplex (Mayer) decomposition over the derived `C(A,k)` basis -/
 
@@ -107,8 +106,8 @@ derived deuteron constraint `M(2) = 0`, the simplex decomposition forces the
 edge component**: it is a pure ≥3-body (triangle + tetrahedron) object. -/
 theorem residual_edge_coeff_zero {μ₂ μ₃ μ₄ : ℝ}
     (hDeut : simplexA2 μ₂ μ₃ μ₄ = 0) : μ₂ = 0 := by
-  unfold simplexA2 at hDeut
-  simpa using hDeut
+  dsimp [simplexA2] at hDeut
+  linarith
 
 /-- **(S′) The simplex decomposition is an exact 0-parameter solve.**  For any
 three residual values `m₂, m₃, m₄` at A = 2, 3, 4 there is a *unique* triple
@@ -118,8 +117,13 @@ back-substitution. -/
 theorem simplex_solve_exists (m₂ m₃ m₄ : ℝ) :
     ∃ μ₂ μ₃ μ₄ : ℝ,
       simplexA2 μ₂ μ₃ μ₄ = m₂ ∧ simplexA3 μ₂ μ₃ μ₄ = m₃ ∧ simplexA4 μ₂ μ₃ μ₄ = m₄ := by
-  refine ⟨m₂, m₃ - 3 * m₂, m₄ - 6 * m₂ - 4 * (m₃ - 3 * m₂), ?_, ?_, ?_⟩ <;>
-    · simp only [simplexA2, simplexA3, simplexA4]; ring
+  refine ⟨m₂, m₃ - 3 * m₂, m₄ - 6 * m₂ - 4 * (m₃ - 3 * m₂), ?_, ?_, ?_⟩
+  · dsimp [simplexA2]
+    ring
+  · dsimp [simplexA3]
+    ring
+  · dsimp [simplexA4]
+    ring
 
 /-- **(S″) Uniqueness of the simplex coefficients** (unit-triangular system): two
 coefficient triples with the same three residual values are equal.  With (S′)
@@ -130,7 +134,19 @@ theorem simplex_solve_unique {μ₂ μ₃ μ₄ ν₂ ν₃ ν₄ : ℝ}
     (h3 : simplexA3 μ₂ μ₃ μ₄ = simplexA3 ν₂ ν₃ ν₄)
     (h4 : simplexA4 μ₂ μ₃ μ₄ = simplexA4 ν₂ ν₃ ν₄) :
     μ₂ = ν₂ ∧ μ₃ = ν₃ ∧ μ₄ = ν₄ := by
-  simp only [simplexA2, simplexA3, simplexA4] at h2 h3 h4
+  dsimp [simplexA2] at h2
+  dsimp [simplexA3] at h3
+  dsimp [simplexA4] at h4
   refine ⟨by linarith, by linarith, by linarith⟩
+
+/-- **(S‴) Unit-lower-triangular inverse row for the 4-body tetrahedron coefficient (`qou-upbq`).**
+The third row `[6, -4, 1]` of the inverse simplex matrix `[[1,0,0],[3,1,0],[6,4,1]]⁻¹`
+extracts `μ₄` directly from `(simplexA2, simplexA3, simplexA4)` for all `(μ₂, μ₃, μ₄)`. -/
+theorem simplex_tetrahedron_coeff_inversion (μ₂ μ₃ μ₄ : ℝ) :
+    simplexA4 μ₂ μ₃ μ₄ - 4 * simplexA3 μ₂ μ₃ μ₄ + 6 * simplexA2 μ₂ μ₃ μ₄ = μ₄ := by
+  dsimp [simplexA2]
+  dsimp [simplexA3]
+  dsimp [simplexA4]
+  ring
 
 end QOU.MassTheory

@@ -1,5 +1,3 @@
-**Remark (open problems for $\alpha_{EM}$ derivation).**
-
 The bare singlet derivation ([prop:em-coupling-projection](#prop:em-coupling-projection)) gives
 
 $$
@@ -15,18 +13,7 @@ This agrees with the CODATA-2022 value $137.035999177(21)$ to within $-0.155\%$.
 | Form A (CS) | $\cdot\bigl(1+\delta_{CS}/(1-\delta_{CS}\kappa)\bigr)$ with $\kappa=1.722$ | $-4.68\times 10^{-7}$ | Conj.; $\kappa$ unproved; $\kappa \approx 1.9153$ needed for exact match |
 | Form B (gluon-octet) | $45[3]_q\,(1+\hbar_q^4[5]_q+8q(\hbar_q^4[5]_q)^2)$ | $+2.6\times 10^{-9}$ | Conj.; only $45$ rigorously derived; disagrees with Form A at $q\ne q_0$ |
 
-*Superseded figures, recorded so the change is legible.* This table previously
-gave Form A as the order-$\delta_{CS}^2$ truncation with residual
-$-4.0\times 10^{-7}$ and $\kappa \approx 1.888$, and Form B as
-$+6.7\times 10^{-9}$. All three are **muon-pin** numbers, each correctly
-computed for the pin and truncation it belongs to: $-4.0\times 10^{-7}$ is the
-order-$2$ truncation at the muon pin ($-399.53$ ppb); $+6.7\times 10^{-9}$ is
-Form B at the muon pin against CODATA-2018 ($6.672$ ppb); and
-$\kappa \approx 1.888$ is exact closure at the muon pin under the order-$2$
-truncation ($1.8880423$). They were stale, not wrong. The rows above are the **proton pin** (the standing default) with
-the tower resummed in closed form, matching
-[the Chern-Simons block](#rem:em-coupling-chern-simons), which already carried
-the resummation and the re-pin.
+*Anchor and truncation sensitivity.* The rows above evaluate at the proton-anchored $q_0$ with the geometric tower resummed in closed form, matching [the Chern-Simons block](#rem:em-coupling-chern-simons). Evaluated instead at the lepton-anchored $q$ under the second-order truncation $1 + \delta_{CS} + \delta_{CS}^2\kappa$, Form A gives a residual of $-4.0\times 10^{-7}$ ($-399.53$ ppb) with exact-match parameter $\kappa \approx 1.888$ ($1.8880423$), while Form B evaluated at the lepton-anchored $q$ against CODATA-2018 gives $+6.7\times 10^{-9}$ ($6.672$ ppb).
 
 ## Why both prior attempts fail
 

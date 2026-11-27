@@ -2,7 +2,6 @@
 
 An ideal tetrahedron with shape parameter $z$ has volume $D(z)$, the Bloch-Wigner dilogarithm. The tetrahedron is *degenerate*, or **flat**, exactly when $z$ is real: its four ideal vertices $0, 1, \infty, z$ then lie on a common circle on the sphere at infinity, and it collapses.
 
-**Theorem.**
 *For every real $x$,*
 
 $$

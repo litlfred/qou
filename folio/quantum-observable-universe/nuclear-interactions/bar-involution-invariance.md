@@ -1,4 +1,4 @@
-**Proposition (conditional).**
+**(Conditional.)**
 Let $\bar\cdot$ be the bar-involution sending $q \mapsto q^{-1}$. Then:
 
 1. (**Plancherel-weight invariance**) The Plancherel weight satisfies $\overline{w_\lambda(q)} = w_\lambda(q)$.

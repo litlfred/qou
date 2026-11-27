@@ -24,7 +24,7 @@ export default definition({
   cites: ["wenzl1988", "hoefsmit1974"],
   defines: [],
   lean: {
-    ref: "qou:QOU.BraidKnot.WenzlAOperator",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.WenzlAOperator",
     validation: "stub",
   },
   computation: {

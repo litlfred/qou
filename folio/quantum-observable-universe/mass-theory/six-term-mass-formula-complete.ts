@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Six-term mass formula: derivation + computation index",
   lean: {
-    ref: "qou:QOU.BraidKnot.six_term_mass_formula_complete",
+    ref: "qou:BraidKnotOctonion.six_term_mass_formula_complete",
     validation: "not_checked",
   },
   uses: [
@@ -29,6 +29,12 @@ export default conjecture({
     "derivation-status",
   ],
   authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-are-inhabited-by-zero.lean` inhabits `QOU.BraidKnot.SixTermMassFormulaContext` with six zeros, showing its `[Context]` binder is unconditional.",
+      see: "docs/audits/2026-08-30-context-classes-are-inhabited-by-zero.lean",
+    },
     {
       kind: "status",
       date: "2026-11-20",

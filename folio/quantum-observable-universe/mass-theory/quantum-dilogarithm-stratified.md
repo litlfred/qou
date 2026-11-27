@@ -1,4 +1,4 @@
-**Conjecture.** *Let $A = H_n(R, q)$ be a semisimple Hecke algebra. Decompose its centre $Z(A)$ by GB-depth of partitions. The analytic quantum dilogarithm admits a centre-stratified expansion:*
+*Let $A = H_n(R, q)$ be a semisimple Hecke algebra. Decompose its centre $Z(A)$ by GB-depth of partitions. The analytic quantum dilogarithm admits a centre-stratified expansion:*
 
 $$
   \mathrm{tr}_M\!\bigl(\Phi_q(z_i) \cdot T_w\bigr) = \sum_{k = 0}^{\infty} \bigl\langle \phi_q^{(k)}(z_i),\, T_w \bigr\rangle,

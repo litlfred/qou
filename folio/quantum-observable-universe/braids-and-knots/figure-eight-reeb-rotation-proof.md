@@ -1,4 +1,4 @@
-**Proof.** Throughout, $h = q - q^{-1}$ denotes the Hecke amplitude and $[2]_q = q + q^{-1}$, $[3]_q = q^2 + 1 + q^{-2}$ the balanced quantum integers, with $q > 0$ real.
+Throughout, $h = q - q^{-1}$ denotes the Hecke amplitude and $[2]_q = q + q^{-1}$, $[3]_q = q^2 + 1 + q^{-2}$ the balanced quantum integers, with $q > 0$ real.
 
 **Step 1: The seminormal matrices on $V_{(2,1)}$.** In the Hoefsmit seminormal basis of the two-dimensional representation $V_{(2,1)}$ of $H_3(q)$, the first generator is diagonal,
 

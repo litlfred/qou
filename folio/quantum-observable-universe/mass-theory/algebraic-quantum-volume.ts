@@ -4,7 +4,7 @@ export default definition({
   label: "def:algebraic-quantum-volume",
   title: "Algebraic quantum volume $\\mathrm{Vol}_q(K)$",
   lean: {
-    ref: "qou:QOU.BraidKnot.AlgebraicQuantumVolume",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.AlgebraicQuantumVolume",
     validation: "not_checked",
   },
   authorNotes: [

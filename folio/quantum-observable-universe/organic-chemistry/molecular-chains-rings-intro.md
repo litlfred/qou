@@ -1,3 +1,3 @@
 Atoms are assembled into extended molecular structures.
 
-This section reads off the dynamical consequences. Open chains behave as topological springs. Ring closure is a topological phase transition. The transition state is the barrier where pairwise bonds dissolve before the threading link forms. The same mechanism explains ring super-stability.
+This section reads off the dynamical consequences. Open chains behave as topological springs. Ring closure is a topological phase transition. The transition state is the barrier where pairwise bonds dissolve before the threading link forms. The same mechanism explains ring super-stability. As in the preceding chapter, these Hopf chains and threading links are algebraic operators in $H_n(q)$ representing covalent delocalisation, distinct from the spatial molecular knots and catenanes of topological stereochemistry \cite{dietrich-buchecker-sauvage1989,flapan2000}.

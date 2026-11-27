@@ -1,5 +1,4 @@
-**Definition.**
-The **information bandwidth** per Planck time quantifies the total information transferred across the causal boundary in one Planck step. It is the product of the speed of light $c_q$ ([speed of light](#def:information-speed-of-light)) (fibres correlated per tick) and the operational entropy per fibre ([operational entropy](#def:operational-entropy)):
+The **information bandwidth** per Planck time is the product of the [speed of light](#def:information-speed-of-light) $c_q$ and the [operational entropy](#def:operational-entropy) per fibre:
 
 $$
   \mathfrak{B}(q)
@@ -8,5 +7,3 @@ $$
   = \frac{\eta_q}{q^{-1}(q-1)^2}
   = \frac{q \cdot \eta_q}{(q-1)^2}.
 $$
-
-At $q = q_0$, the bandwidth $\mathfrak{B} = q\eta_q/(q-1)^2 \approx 82$ $q$-bits per Planck time. This functions as the Bremermann-analog bit budget of the substrate. It dictates the maximum number of distinguishable $q$-bits that a single Planck step can carry across the light-cone boundary.

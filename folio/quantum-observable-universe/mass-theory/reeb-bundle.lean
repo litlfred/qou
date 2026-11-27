@@ -1,7 +1,7 @@
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Analysis.SpecialFunctions.Exp
 import Mathlib.Data.Real.Basic
-import QOU.ArchimedeanUniverse
+import QOU.MassTheory.ArchimedeanUniverse
 /-
   Reeb bundle over the exceptional divisor.
 

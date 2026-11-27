@@ -5,12 +5,13 @@ export default proposition({
   title:
     "Uniqueness of the modular-double $\\Phi_b$: strip growth pins the quantum dilogarithm up to scale",
   lean: {
-    ref: "qou:QOU.QBeta.PhiBProdUniquenessMeromorphic.phiBProd_uniqueUpToScalar_of_meromorphic",
+    ref: "qou:QOU.Nuclear.PhiBProdUniquenessMeromorphic.phiBProd_uniqueUpToScalar_of_meromorphic",
   },
   uses: [],
   cites: [
     "faddeev1995",
     "faddeev1994",
+    "faddeev-kashaev-volkov2000",
   ],
   tags: [
     "faddeev",

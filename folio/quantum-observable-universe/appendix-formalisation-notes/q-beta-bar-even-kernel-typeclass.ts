@@ -3,9 +3,9 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:q-beta-bar-even-kernel-typeclass",
   title:
-    "$\\mathfrak{Q}_\\beta$ formalize-first unified typeclass — `BarEvenKernel` bundles all four $\\S 4$ invariants (bar-even, radius-of-convergence, q=1 shadow, direction sanity) into one parametric Lean typeclass so any future kernel candidate $F(q)$ becomes a single class-instance attempt",
+    "$\\mathfrak{Q}_\\beta$ formalize-first unified typeclass — bundling the four §4 invariants (bar-even, radius-of-convergence, $q=1$ shadow, direction sanity) into one parametric Lean typeclass so any future kernel candidate $F(q)$ becomes a single class-instance attempt",
   lean: {
-    ref: "qou:QOU.QBeta.BarEvenKernelTypeclass.BarEvenKernel",
+    ref: "qou:QOU.Nuclear.QBeta.BarEvenKernelTypeclass.BarEvenKernel",
     validation: "not_checked",
   },
   uses: [
@@ -26,6 +26,12 @@ export default proposition({
     "no-fit",
   ],
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Formalisation verification (`qou-x60n`, `qou-z9ws`): `2026-08-30-gate-classes-admit-zero.lean` (`GateProbe3`) instantiates `BarEvenKernel` at its intended substrate pole and shadow values while noting `direction_match` uses the additive `10 * target` band.",
+      see: "docs/audits/2026-08-30-gate-classes-admit-zero.lean",
+    },
     {
       kind: "status",
       body:

@@ -4,9 +4,8 @@
 epic-level consolidation (durable handoff) · **Discipline:** scope-(a); no fit; nothing wired; no
 `c_k`; L2 unchanged (2/7). **Epic:** `qou-x631`; attack plan `qou-v8t7`.
 
-This is the single durable map of the covariance-kernel epic: the conjecture, why it matters, every
-route attacked (with verdicts), the current sharpest form, and the honest open frontier. It supersedes
-scattered per-route status notes as the entry point; the individual audits remain the detailed record.
+This is the single durable map of the covariance-kernel epic as of 2026-07-25: the conjecture, why it matters, every
+route attacked (with verdicts), the current sharpest form, and the honest open frontier. **Updated cold-reader synthesis covering all July–November 2026 eliminations, the unconditional Lean `(TAIL)` depth-0/depth-1 closed forms (`PR #9320`), the `M₁ > 0` Cauchy–Schwarz/DPP ratio reduction, and the 5-bean coordination cluster:** [`2026-11-24-covariance-kernel-x631-complete-synthesis-9rbo.md`](2026-11-24-covariance-kernel-x631-complete-synthesis-9rbo.md).
 
 ## 1. The conjecture and why it is load-bearing
 

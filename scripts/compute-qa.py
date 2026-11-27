@@ -81,6 +81,9 @@ GATES = [
       selftest=[PY, "computations/witness_raw_float64_audit.py", "--self-test"]),
     g("q0-value-drift", "Task_Staleness", "q0-value drift ratchet",
       [[PY, "computations/q0_value_drift_audit.py", "--strict"]]),
+    g("accuracy-scorecard", "Task_Staleness", "Observational accuracy scorecard drift & witness gate",
+      [[PY, "scripts/generate-accuracy-scorecard.py", "--check"]],
+      selftest=[PY, "scripts/generate-accuracy-scorecard.py", "--self-test"]),
     # ── qou-mass vendor drift (TOOLS T14, bean qou-ll3i): report-only. The fix,
     # `sync-qou-mass-vendor.py --apply`, regenerates `_internal/` and waits on the
     # owner, so this gate warns and never regenerates anything.
@@ -180,7 +183,11 @@ def run_gate(gate: dict, files: list[str] | None) -> dict:
 
 def emit(res: dict) -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / f"{res['gate']}.json").write_text(json.dumps({"$schema": "qou-compute-qa/v1", **res}, indent=2) + "\n")
+    # `counts`: the verdict in the shared QA vocabulary (pass / warn / fail /
+    # unknown), one check per record, so the integrated QA page counts it
+    # rather than listing it as "not counted" (cat-harness-tools qa-axis.ts).
+    counts = {res["verdict"]: 1}
+    (OUT / f"{res['gate']}.json").write_text(json.dumps({"$schema": "qou-compute-qa/v1", **res, "counts": counts}, indent=2) + "\n")
     summary = os.environ.get("GITHUB_STEP_SUMMARY")
     if summary:
         with open(summary, "a") as f:

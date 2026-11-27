@@ -5,7 +5,7 @@ export default corollary({
   title:
     "Shell-closed $Z = N$ even-even nuclei give $a = 1$ exactly",
   lean: {
-    ref: "qou:QOU.BraidKnot.knot_factor_shell_closed",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.knot_factor_shell_closed",
     validation: "not_checked",
   },
   uses: ["prop:knot-factor-spectral-form"],

@@ -10,7 +10,7 @@ $$
 
 *The predicted bridge map is verified for all partitions $\lambda \vdash n$ with $n \leq 4$ by combining the explicit Markov-trace calculation on each Wedderburn cell with known Vol/CS values from classical knot theory.*
 
-*Status (2026-11-16): this is a comparison, not a proof.* No map from cells to
+*Scope: this table records a comparison rather than a proof.* No map from cells to
 knots is defined, so the knot attached to each cell below is chosen, not
 derived. At $n=1,2$ both periods vanish and nothing is witnessed; the trefoil
 $\sigma_1^3$ is a 2-strand closure, not an $H_3$ object; and the $(2,1)$ row has

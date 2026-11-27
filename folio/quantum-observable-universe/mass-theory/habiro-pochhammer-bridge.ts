@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Habiro–Markov bridge via Pochhammer factorisation",
   lean: {
-    ref: "qou:QOU.BraidKnot.HabiroPochhammerBridge",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.HabiroPochhammerBridge",
   },
   uses: [
     "prop:habiro-precision-ladder-equivalence",

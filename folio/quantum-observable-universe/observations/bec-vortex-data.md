@@ -1,4 +1,4 @@
-Bose--Einstein condensates (BECs) provide the cleanest experimental realisation of quantised vortex dynamics \cite{fetter2009,navon2021}. The results below demonstrate that the $q \to 1$ limit of the $\mathrm{SU}_q(2)$ vortex spectrum ([Proposition](#prop:discrete-vortex-spectrum)) correctly reproduces observed BEC phenomenology.
+Bose--Einstein condensates (BECs) provide the cleanest experimental realisation of quantised vortex dynamics \cite{fetter2009,navon2021}.
 
 **1. Quantised circulation.**
 In ${}^{87}\mathrm{Rb}$ and ${}^{23}\mathrm{Na}$ BECs, vortex circulation is measured to be $\Gamma_n = n \cdot h/m$, with $n$ an integer \cite{madison2000}. No intermediate values have ever been observed. In the QOU framework, this is the $q \to 1$ limit of the $\mathrm{SU}_q(2)$ Casimir quantisation. The spin label $j$ reduces to the winding number $n$, and $[j]_q[j+1]_q \to j(j+1) = n(n+1)$ gives the discrete circulation levels. The BEC data confirms the selection rule $|\Delta n| = 1$ predicted by the ladder-mode transition mechanism.

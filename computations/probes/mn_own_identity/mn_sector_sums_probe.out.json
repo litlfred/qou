@@ -1,0 +1,62 @@
+{
+ "probe": "mn_sector_sums_probe",
+ "preregistration": "PREREGISTRATION-sums-and-premise.md",
+ "checks": {
+  "S1 = s1^-1, S2 = s2^-1": true,
+  "every word trace is an integer combination of the HNF basis": true,
+  "constants reachable by integer sums are exactly kmin*Z, kmin = 3": true,
+  "T_p(s1 + 2 s1^-1) = 3": true,
+  "T_p(s2 + 2 s2^-1) = 3 (second element, same value)": true,
+  "T_p(4 s1 + 8 s1^-1) = 12, and so is every other multiple of 3": true,
+  "no canonical element has a q-independent nonzero T_p": true
+ },
+ "all_pass": true,
+ "words_tested": 1457,
+ "distinct_traces": 61,
+ "lattice_rank": 13,
+ "min_positive_constant": 3,
+ "invariant_functional": {
+  "-4": "1/3",
+  "0": "-1/3",
+  "2": "-2/3",
+  "6": "-1/3"
+ },
+ "elements": {
+  "s1 + 2 s1^-1": "3",
+  "s2 + 2 s2^-1": "3",
+  "4 s1 + 8 s1^-1": "12"
+ },
+ "canonical_elements": {
+  "sum_w T_w": {
+   "T_p": "(q + 1)*(q**3 + q**2 + 3*q - 2)",
+   "q_independent": false,
+   "at_q_1": "6"
+  },
+  "sum_w q^l(w) T_w (symmetriser)": {
+   "T_p": "q*(q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1)",
+   "q_independent": false,
+   "at_q_1": "6"
+  },
+  "sum_w q^-l(w) T_w": {
+   "T_p": "2*(5*q**2 - 2)/q",
+   "q_independent": false,
+   "at_q_1": "6"
+  },
+  "sum_w (-q)^-l(w) T_w (antisymmetriser)": {
+   "T_p": "0",
+   "q_independent": true,
+   "at_q_1": "0"
+  },
+  "full twist (s1 s2 s1)^2": {
+   "T_p": "q*(q**6 + 2)",
+   "q_independent": false,
+   "at_q_1": "3"
+  },
+  "Jucys-Murphy L2 + L3": {
+   "T_p": "(q**6 + 3*q**4 + 2)/q",
+   "q_independent": false,
+   "at_q_1": "6"
+  }
+ },
+ "verdict": "integer sums reach exactly 3Z; 12 is allowed, not forced (scope: words of length <= 6)"
+}

@@ -3,11 +3,11 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:lepton-mass-tower-canonical",
   lean: {
-    ref: "qou:QOU.BraidKnot.LeptonMassTowerCanonical.lepton_mass_ratio",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.LeptonMassTowerCanonical.lepton_mass_ratio",
     validation: "not_checked",
   },
   title:
-    "Canonical operator-level lepton-mass-tower formula: there exists a categorical formula $\\mathfrak{m}(K_\\ell) = m_e \\cdot \\mathcal{F}_\\ell(q)$ for each lepton $\\ell \\in \\{\\mathfrak{e}, \\mu, \\tau\\}$ expressed as a per-braid Markov-trace-weighted sum over $K_\\ell$'s braid representative, **without** invoking the superseded scalar substrate density $\\rho_q = 1/\\hbar_q^2$ as a dimensional factor.",
+    "Canonical operator-level lepton-mass-tower formula: there exists a categorical formula $\\mathfrak{m}(K_\\ell) = m_e \\cdot \\mathcal{F}_\\ell(q)$ for each lepton $\\ell \\in \\{\\mathfrak{e}, \\mu, \\tau\\}$ expressed as a per-braid Markov-trace-weighted sum over $K_\\ell$'s braid representative, without invoking the superseded scalar substrate density $\\rho_q = 1/\\hbar_q^2$ as a dimensional factor.",
   uses: [
     "prop:rho-k-graded-expansion",
     "prop:per-braid-mass-tower",

@@ -1,0 +1,51 @@
+318 R.A. Proctor
+
+Proposition 3.2. Fix a shape A with r rows. If [5(N+1)]2r, let P,(N) be the
+dimension of the Ath indecomposable trace free representation of Spy for N even
+or odd. Then ae
+—A A +I+)
+P,(N)= —
+HED Ul A+ -i-jt Ul
+
+N+A,;+4;-i-j+2
+Ay+Aj—i-j+1
+
+>
+
+which is a product over the squares (i,j) in the shape 4. This is a polynomial
+in N; extend the definition of P,(N) to all integers N. Analogously let Q,(N)
+be the polynomial defined by the dimensions of the Ath irreducible representation
+of Oy(+SOy) for [5N]2r. Then
+
+Q,(N)=(— 1)" P.(—N)
+for both even and odd N.
+
+Gelfand patterns can be used instead of semistandard Young tableaux to
+describe the weights of irreducible GLy representations. Highest weights of ratio-
+nal GLy representations are weakly decreasing N-tuples of integers in the axis
+basis. Now reverse the order and label the coordinates cy, Scy2S...Scyy.
+Consider a pattern of rational numbers:
+
+Cat C42 C43 Cag
+
+Such a pattern is a Gelfand pattern if ¢,4.1,; Sci, ;S¢i+1,j+1 for 1\SiN—1 and
+1<j<i. A general linear Gelfand pattern has every c;;¢Z. The set of all such
+patterns with a fixed top row cy, S...Scyy indexes the weights of the rational
+GLy representation with highest weight cy,S...<cyy. There is a simple rule
+for reading off the weight for a given pattern, but here we just note that the
+total number of such patterns with a fixed top row is equal to the dimension
+of the representation indexed by the top row. Several authors [GeZt, Zhll,
+Kng3, Prc3, Zh12, KoT2] have developed various aspects of extending this con-
+struction to other classical groups.
+
+The tableaux of Theorem 2.1 can be translated into Gelfand patterns for
+Sp2,+1- These patterns and the known patterns for Sp,,,and 80y can be slightly
+reformulated to provide an elegant unified description of dimensions of represen-
+tations of the classical groups. Consider a Gelfand pattern:
+
+bs, -2 bs -4 bso bs bso
+bs, -2 ba, -1 bas bao
+b3,-4 b3,0 b34
+bz, -1 ba,1
+
+bio

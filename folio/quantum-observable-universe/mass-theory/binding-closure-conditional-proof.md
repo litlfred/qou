@@ -1,4 +1,4 @@
-By obligation (C) ([Body order equals jet degree: the n-nucleon cluster sits at jet vertical degree n](#lem:bond-order-eq-jet-degree)),
+By input (C), stated as [a conjecture](#conj:bond-order-eq-jet-degree) and assumed here,
 the binding is the body-order series,
 $B(K)=\sum_{n}\,(\text{$n$-body term})$. By the conditional input (B), each
 body term factors as $B_n = m_e\,a_D^{(n)}$. Substituting and pulling the
@@ -16,4 +16,4 @@ solution of the $q$-difference recurrence
 (C) and (B), the closed form of
 [Binding closure, conditional on the per-term mass identity](#thm:binding-closure-conditional)
 follows by distributing the factor over the finite sum and comparing the
-sums termwise; the result is conditional exactly on input (B). $\qquad\blacksquare$
+sums termwise; the result is conditional exactly on inputs (C) and (B). $\qquad\blacksquare$

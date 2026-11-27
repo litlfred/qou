@@ -1,4 +1,3 @@
-**Conjecture (uniform per-level binding bound).**
 *For every confined vortex $\varrho$, there exists a finite real constant $\Delta_{\max}(\varrho) < \infty$ bounding the per-level binding contribution:*
 
 $$

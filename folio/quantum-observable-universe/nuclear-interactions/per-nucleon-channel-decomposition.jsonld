@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -17,6 +17,9 @@
   "uses": [
     "papers/quantum-observable-universe/blocks/def-typed-crossing-operator"
   ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-per-nucleon-channel-decomposition"
+  ],
   "tags": [
     "branching",
     "channel-decomposition",
@@ -28,7 +31,7 @@
   "defines": [
     "per-nucleon-channel-decomposition"
   ],
-  "leanRef": "qou:QOU.ParticleInteractions.PerNucleonChannelDecomposition",
+  "leanRef": "qou:QOU.Confinement.PerNucleonChannelDecomposition",
   "text": "per-nucleon-channel-decomposition.md",
   "leanSource": "per-nucleon-channel-decomposition.lean",
   "provenance": "authored"

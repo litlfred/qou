@@ -1,0 +1,1 @@
+John Tyndall, a champion of materialism, provoked many listeners with his address before the British As- sociation meeting at Belfast in 1874 by arguing that science must be divorced from religious doctrine.

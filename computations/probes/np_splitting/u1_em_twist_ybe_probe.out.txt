@@ -1,0 +1,5 @@
+independent YBE obstructions: [-b*(a - b)*(q - 1)*(q + 1)*(a*q**2 + b)/q, -b*(b - c)*(b + c*q**2)*(q - 1)*(q + 1)/q]
+solutions (a, b, c): [{a: b, c: b}, {a: b, c: -b/q**2}, {a: -b/q**2, c: b}, {a: -b/q**2, c: -b/q**2}]
+U(1)_em charge phase, obstructions: [-(q - 1)*(q + 1)*(t - 1)*(t + 1)*(q**2*t**6 + 1)*(t**2 - t + 1)*(t**2 + t + 1)/(q*t**6), (q - 1)*(q + 1)*(t - 1)*(q**2*t**3 + 1)*(t**2 + t + 1)/(q*t**6)]
+at t = exp(2 pi i/3): (a, b, c) = [exp(2*I*pi/3), exp(2*I*pi/3), exp(2*I*pi/3)] (a scalar)
+h-term removed, charge phase satisfies YBE for all t: True

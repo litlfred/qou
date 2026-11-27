@@ -1,5 +1,3 @@
-## Proof
-
 Use the properties of the Markov trace
 ([Jones–Markov trace](#thm:jones-markov-trace)): it is linear, satisfies
 $\mathrm{tr}_M(ab) = \mathrm{tr}_M(ba)$ and $\mathrm{tr}_M(1) = 1$, and

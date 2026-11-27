@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520">
+<title>Unified Comparison of Model Numbers Against Laboratory Measurements</title>
+<defs><marker id="arrow-cyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/></marker><marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b"/></marker><marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#34d399"/></marker><marker id="arrow-coral" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#fb7185"/></marker><marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8"/></marker></defs>
+<rect x="0" y="0" width="960" height="520" rx="14" fill="#0d1326"/>
+<text x="480.0" y="34.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="middle">The Scoreboard: How Close Model Numbers Come to Measurement (Log Scale)</text>
+<text x="480.0" y="56.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" text-anchor="middle">Computed from three measured inputs (mₑ, q₀ from mₚ/mₑ, and m_π) with zero curve-fitting</text>
+<rect x="36.0" y="76.0" width="888.0" height="412.0" rx="10" fill="#131c36" stroke="#2a3b68" stroke-width="1.0"/>
+<line x1="300.0" y1="108.0" x2="300.0" y2="452.0" stroke="#2a3b68" stroke-width="1.0" stroke-linecap="round" stroke-dasharray="3 3"/>
+<text x="300.0" y="98.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle">0.1 ppb</text>
+<line x1="416.0" y1="108.0" x2="416.0" y2="452.0" stroke="#2a3b68" stroke-width="1.0" stroke-linecap="round" stroke-dasharray="3 3"/>
+<text x="416.0" y="98.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle">10 ppb</text>
+<line x1="532.0" y1="108.0" x2="532.0" y2="452.0" stroke="#2a3b68" stroke-width="1.0" stroke-linecap="round" stroke-dasharray="3 3"/>
+<text x="532.0" y="98.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle">1 ppm</text>
+<line x1="648.0" y1="108.0" x2="648.0" y2="452.0" stroke="#2a3b68" stroke-width="1.0" stroke-linecap="round" stroke-dasharray="3 3"/>
+<text x="648.0" y="98.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle">0.01%</text>
+<line x1="764.0" y1="108.0" x2="764.0" y2="452.0" stroke="#2a3b68" stroke-width="1.0" stroke-linecap="round" stroke-dasharray="3 3"/>
+<text x="764.0" y="98.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle">1%</text>
+<line x1="880.0" y1="108.0" x2="880.0" y2="452.0" stroke="#2a3b68" stroke-width="1.0" stroke-linecap="round" stroke-dasharray="3 3"/>
+<text x="880.0" y="98.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle">100%</text>
+<text x="290.0" y="127.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">Strength of light 1/α (conditional)</text>
+<line x1="300.0" y1="122.0" x2="332.956" y2="122.0" stroke="#34d399" stroke-width="6.0" stroke-linecap="round"/>
+<circle cx="332.956" cy="122.0" r="5.0" fill="#34d399" stroke="#0d1326" stroke-width="1.0"/>
+<text x="342.956" y="126.0" fill="#34d399" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start">0.37 ppb</text>
+<text x="290.0" y="153.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">Kaon / pion mass ratio (series)</text>
+<line x1="300.0" y1="148.0" x2="457.039" y2="148.0" stroke="#34d399" stroke-width="6.0" stroke-linecap="round"/>
+<circle cx="457.039" cy="148.0" r="5.0" fill="#34d399" stroke="#0d1326" stroke-width="1.0"/>
+<text x="467.039" y="152.0" fill="#34d399" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start">51 ppb</text>
+<text x="290.0" y="179.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">Muon / electron mass ratio</text>
+<line x1="300.0" y1="174.0" x2="492.808" y2="174.0" stroke="#fbbf24" stroke-width="6.0" stroke-linecap="round"/>
+<circle cx="492.808" cy="174.0" r="5.0" fill="#fbbf24" stroke="#0d1326" stroke-width="1.0"/>
+<text x="502.808" y="178.0" fill="#fbbf24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start">211 ppb (9.5σ)</text>
+<text x="290.0" y="205.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">Tau / electron (q = 1 norm balance)</text>
+<line x1="300.0" y1="200.0" x2="635.796" y2="200.0" stroke="#fbbf24" stroke-width="6.0" stroke-linecap="round"/>
+<circle cx="635.796" cy="200.0" r="5.0" fill="#fbbf24" stroke="#0d1326" stroke-width="1.0"/>
+<text x="645.796" y="204.0" fill="#fbbf24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start">+61.6 ppm (cond.)</text>
+<text x="290.0" y="231.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">Higgs boson mass m_H</text>
+<line x1="300.0" y1="226.0" x2="670.052" y2="226.0" stroke="#34d399" stroke-width="6.0" stroke-linecap="round"/>
+<circle cx="670.052" cy="226.0" r="5.0" fill="#34d399" stroke="#0d1326" stroke-width="1.0"/>
+<text x="680.052" y="230.0" fill="#34d399" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start">+0.024%</text>
+<text x="290.0" y="257.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">Strong force α_s at Z pole</text>
+<line x1="300.0" y1="252.0" x2="741.541" y2="252.0" stroke="#34d399" stroke-width="6.0" stroke-linecap="round"/>
+<circle cx="741.541" cy="252.0" r="5.0" fill="#34d399" stroke="#0d1326" stroke-width="1.0"/>
+<text x="751.541" y="256.0" fill="#34d399" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start">+0.41%</text>
+<text x="290.0" y="283.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">Reactor neutrino angle sin²θ₁₃</text>
+<line x1="300.0" y1="278.0" x2="753.912" y2="278.0" stroke="#34d399" stroke-width="6.0" stroke-linecap="round"/>
+<circle cx="753.912" cy="278.0" r="5.0" fill="#34d399" stroke="#0d1326" stroke-width="1.0"/>
+<text x="763.912" y="282.0" fill="#34d399" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start">−0.67%</text>
+<text x="290.0" y="309.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">Deuteron ²H (6-quark shared colour)</text>
+<line x1="300.0" y1="304.0" x2="778.945" y2="304.0" stroke="#38bdf8" stroke-width="6.0" stroke-linecap="round"/>
+<circle cx="778.945" cy="304.0" r="5.0" fill="#38bdf8" stroke="#0d1326" stroke-width="1.0"/>
+<text x="788.945" y="308.0" fill="#38bdf8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start">+1.81%</text>
+<text x="290.0" y="335.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">Neutron decay Q_β (9-strand coupled)</text>
+<line x1="300.0" y1="330.0" x2="785.735" y2="330.0" stroke="#38bdf8" stroke-width="6.0" stroke-linecap="round"/>
+<circle cx="785.735" cy="330.0" r="5.0" fill="#38bdf8" stroke="#0d1326" stroke-width="1.0"/>
+<text x="790.0" y="334.0" fill="#38bdf8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start">−2.37%</text>
+<text x="290.0" y="361.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">Helium-4 ⁴He (pyramid rings / 3D)</text>
+<line x1="300.0" y1="356.0" x2="796.613" y2="356.0" stroke="#fbbf24" stroke-width="6.0" stroke-linecap="round"/>
+<circle cx="796.613" cy="356.0" r="5.0" fill="#fbbf24" stroke="#0d1326" stroke-width="1.0"/>
+<text x="790.0" y="360.0" fill="#fbbf24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start">+3.65% / ±8.0% (cond.)</text>
+<text x="290.0" y="387.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">²¹⁰Po α-cluster chance (N = 126)</text>
+<line x1="300.0" y1="382.0" x2="820.972" y2="382.0" stroke="#38bdf8" stroke-width="6.0" stroke-linecap="round"/>
+<circle cx="820.972" cy="382.0" r="5.0" fill="#38bdf8" stroke="#0d1326" stroke-width="1.0"/>
+<text x="790.0" y="386.0" fill="#38bdf8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start">0.050 vs 0.055</text>
+<text x="290.0" y="413.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">Weak angle sin²θ_W (short 4-step run)</text>
+<line x1="300.0" y1="408.0" x2="861.459" y2="408.0" stroke="#fb7185" stroke-width="6.0" stroke-linecap="round"/>
+<circle cx="861.459" cy="408.0" r="5.0" fill="#fb7185" stroke="#0d1326" stroke-width="1.0"/>
+<text x="790.0" y="412.0" fill="#fb7185" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start">+48%</text>
+<text x="290.0" y="439.0" fill="#f1f5f9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="end">Helium-4 ⁴He (fixed-spacing pairs)</text>
+<line x1="300.0" y1="434.0" x2="862.236" y2="434.0" stroke="#fb7185" stroke-width="6.0" stroke-linecap="round"/>
+<circle cx="862.236" cy="434.0" r="5.0" fill="#fb7185" stroke="#0d1326" stroke-width="1.0"/>
+<text x="790.0" y="438.0" fill="#fb7185" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start">−49.4% (pairs only)</text>
+<text x="480.0" y="474.0" fill="#94a3b8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle">Green/Cyan: unconditional &lt; 10%   |   Gold: conditional bridge or 9.5σ tension   |   Coral: open baseline gap</text>
+</svg>

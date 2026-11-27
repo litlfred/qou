@@ -1,4 +1,4 @@
-*Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a QOU. Let $U \subset M_0$ be an affine chart admitting a chain of adjacent aeons $\ldots, \mathcal{A}_{-1}, \mathcal{A}_0, \mathcal{A}_1, \ldots$ . This aeon chain satisfies the three defining properties of a conformal cyclic cosmology \cite{penrose2010}:*
+*Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a QOU. Let $U \subset M_0$ be an affine chart admitting a chain of adjacent aeons $\ldots, \mathcal{A}_{-1}, \mathcal{A}_0, \mathcal{A}_1, \ldots$ . This aeon chain satisfies the horizon-local conditions CCC-1 and CCC-3 of a conformal cyclic cosmology \cite{penrose2010}; the inheritance condition CCC-2 is stated as a conjecture and is not part of the formalised statement:*
 
 1. *(CCC-1) **Conformal invariance at boundaries.** At each aeon boundary $\mathcal{S}_b$, the boundary datum*
 $$
@@ -6,7 +6,7 @@ $$
 $$
 *is invariant under rescaling of $A_0$, depending only on the conformal class of the horizon ideal $\mathfrak{h}$ — on the vanishing locus, not the specific generator.*
 
-2. *(CCC-2) **Boundary data inheritance.** The CMB of aeon $\mathcal{A}_{k+1}$ precisely matches the terminal boundary datum of aeon $\mathcal{A}_k$:*
+2. *(CCC-2) **Boundary data inheritance.** (Conjectural.) The initial boundary datum of aeon $\mathcal{A}_{k+1}$ precisely matches the terminal boundary datum of aeon $\mathcal{A}_k$:*
 $$
   \mathrm{CMB}(\mathcal{S}_0^{(k+1)})
   = 

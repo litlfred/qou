@@ -11,7 +11,7 @@ export default conjecture({
   ],
   cites: ["abdo2009"],
   lean: {
-    ref: "qou:QOU.Information.DispersionSuppressionScale.dispersion_suppression_scale"
+    ref: "qou:QOU.InformationTheory.DispersionSuppressionScale.dispersion_suppression_scale"
   },
   tags: [
     "dispersion",

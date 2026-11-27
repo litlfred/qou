@@ -2,9 +2,10 @@
 name: lean-build-fix
 roles: [collaborator, owner]
 description: >
-  Iteratively fix Lean build errors and linter warnings until the build
-  passes cleanly. Uses MCP diagnostics when available, falls back to
-  parsing lake build output.
+  Iteratively fix Lean 4 compilation errors and Mathlib4/Reservoir linter
+  warnings using single-threaded `LEAN_NUM_THREADS=1 nice -n 15` overlay
+  verification (`scripts/lean-overlay-env.sh` / `scripts/lean-direct-cone.sh -j 1`)
+  and `scripts/lean-best-practices-lint.py --diff`. Never runs bare `lake build`.
 allowed-tools: Read Write Edit Bash Grep Glob
 ---
 
@@ -12,9 +13,9 @@ allowed-tools: Read Write Edit Bash Grep Glob
 
 ## Role
 
-Automate the iterative cycle of: build Lean project, diagnose errors,
-apply fixes, rebuild — until `lake build` passes with zero errors and
-zero fixable warnings.
+Automate the iterative cycle of: compile target module/cone in the isolated symlink-farm overlay, diagnose errors, apply fixes, re-verify, and pass `lean-best-practices-lint.py --diff` — with zero errors and zero fixable warnings.
+
+> **CPU & Cache Guard (`lean-build-hygiene.md`):** ALWAYS export `LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1`, prefix commands with `nice -n 15`, pass `-j 1` to cone scripts, and **NEVER run bare `lake build`** (which builds 0 targets at root or evicts restored Mathlib `.olean`s inside package dirs).
 
 ## When to Use This Skill
 
@@ -62,21 +63,25 @@ When the MCP server is available, **prefer MCP tools over shell commands**:
 5. Once all files are clean, run `lean_build` to confirm full success
 6. Address warnings (dupNamespace, unused variables) as a final pass
 
-### Fallback workflow (no MCP)
+### Fallback CLI workflow (no MCP — `lean-overlay-env.sh` & `lean-direct-cone.sh -j 1`)
 
-When the MCP server is unavailable, parse `lake build` output directly
-**from the repo root** (the root workspace builds all paper packages
-in one pass):
+When the MCP server is unavailable, run single-threaded `lean`-direct verification from the repo root (see [`lean-build-hygiene.md`](lean-build-hygiene.md)):
 
 ```bash
-lake build 2>&1                       # build every paper (QOU + UGB + Fred2005)
-lake build QOU 2>&1                   # or just one library
-lake build UGB 2>&1
-```
+export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 \
+       OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1
 
-Per-paper `cd content/<paper>/lean && lake build` still works, but the
-root workspace resolves cross-paper imports (QOU → UGB) in a single
-pass and is the standardized entry point.
+# Single library file + downstream importers (isolated write overlay; supports all 7 Reservoir libs + 12 QOU/<Chapter> dirs):
+nice -n 15 bash scripts/lean-overlay-env.sh init
+nice -n 15 bash scripts/lean-overlay-env.sh build HeckeTemperleyLieb/<Module>.lean   # or QOU/<Chapter>/<Module>.lean
+nice -n 15 bash scripts/lean-overlay-env.sh check folio/quantum-observable-universe/<chapter>/<block>.lean
+
+# Topological import cone of a target module (single worker):
+nice -n 15 bash scripts/lean-direct-cone.sh -j 1 HeckeTemperleyLieb.<Module>
+
+# Fix up an open PR branch authored against pre-Option-1 legacy QOU/<OldSynonym>/ paths:
+nice -n 10 python3 scripts/apply-lean-reservoir-migration.py --fixup-branch
+```
 
 Parse the output for lines matching:
 - `error:` — build-breaking errors (must fix)
@@ -343,9 +348,9 @@ Fix Lean build errors: <summary>
 
 ## Checklist
 
-- [ ] All `error:` lines from build output are resolved
-- [ ] All fixable `warning:` lines are resolved
-- [ ] No new `sorry` introduced without `-- Ref:` citation
-- [ ] `lake build` passes with zero errors
-- [ ] Changes committed with descriptive messages
-- [ ] Changes pushed to the working branch
+- [ ] Exported `LEAN_NUM_THREADS=1 ...` and ran under `nice -n 15` (`-j 1`)
+- [ ] All `error:` lines from overlay / cone output are resolved
+- [ ] All fixable `warning:` lines (`dupNamespace`, `unusedArguments`, `simpNF`, `docBlame`) are resolved
+- [ ] `nice -n 15 python3 scripts/lean-best-practices-lint.py --diff` exits 0 (`critical=0`, `BP001`–`BP009`)
+- [ ] Zero `sorry` in Tier-A/Tier-B community modules; no new `sorry` without `-- Ref:` + blocker handoff note in QOU
+- [ ] Changes committed cleanly (zero `.olean`/`.trace` artifacts staged)

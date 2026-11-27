@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:centered-hecke-variance-positive",
   title:
     "Centred Hecke transfer matrix has strictly positive variance for every $q > 0$",
-  lean: { ref: "qou:QOU.Observations.centered_hecke_variance_positive", validation: "not_checked" },
+  lean: { ref: "qou:QOU.Observations.centered_hecke_variance_positive.centeredVariance_pos", validation: "not_checked" },
   uses: [
     "thm:jones-markov-trace",
     "rem:non-commutative-probability-dictionary",
@@ -17,6 +17,11 @@ export default proposition({
   ],
   proofs: ["prf:centered-hecke-variance-positive"],
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "The Lean target `QOU.Observations.centeredVariance_pos` proves strict positivity of $(q^4 + q^2 + 1)/(q^2 + 1)^2$ unconditionally for every $q > 0$ under the canonical loop weight $z = q^3/(q^2 + 1)$, superseding the 2026-08-09 open note regarding the older Lean statement.",
+    },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): , formalized in `QOU.SchurWeyl.ocneanuWeight_conventionD_pos_of_two_rows`)" },
     {
       kind: "status",

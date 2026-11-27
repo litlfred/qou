@@ -9,4 +9,5 @@ export default example({
     validation: "leanok",
   },
   uses: ["def:substrate-parameter"],
+  cites: ["tanaka1974", "tanaka1975", "webster1978"],
 });

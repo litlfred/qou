@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:confinement-level",
   title: "Confinement level via shadow-price filtration",
-  lean: { ref: "qou:QOU.BraidKnot.ConfinementLevel",
+  lean: { ref: "qou:QOU.BraidsAndKnots.ConfinementLevel",
     validation: "not_checked",
   },
   uses: [],

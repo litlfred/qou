@@ -24,6 +24,18 @@
     "library/arxiv-1304.3481v1/sections/sec-009"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Quadruply-Graded Colored Homology of Knots — We conjecture the existence of four independent gradings in the colored HOMFLY homology.\n\n**Quadruply-Graded Colored Homology of Knots**\n\n*Eugene Gorsky, Sergei Gukov, and Marko Stoˇsić*\n\n78 pp, 11 sections.\n\n**Abstract.** We conjecture the existence of four independent gradings in the colored HOMFLY homology. We describe these gradings explicitly for the rectangular colored homology of torus knots and make qualitative predictions of various interesting structures and symmetries in the colored homology of general knots. We also give a simple representation-theoretic model for the HOMFLY homology of the unknot colored by any representation. While some of these structures have a natural interpretation in the physical realization of knot homologies based on counting supersymmetric conﬁgurations (BPS states, instantons, and vortices), others are completely new. They suggest new geometric and physical realizations of colored HOMFLY homology as the Hochschild homology of the category of branes in a Landau-Ginzburg B-model or, equivalently, in the mirror A-model.\n\n**Outline.** Front matter; 1 Introduction; 2 Bosonic and Fermionic generators; 3 Gradings, Differentials, Mirror Symmetry; 4 Examples; 5 Colored HOMFLY homology for torus knots; 6 HOMFLY homology from A-model and B-model; 7 ``Bottom row'' of the colored HOMFLY homolog; Appendix A. Rectangle-colored invariants of (2; Appendix B. Unreduced colored HOMFLY homology; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

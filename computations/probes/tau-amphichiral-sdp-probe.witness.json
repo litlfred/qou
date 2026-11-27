@@ -1,13 +1,13 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-30T12:48:41.873687+00:00",
-  "commitSha": "f23968bae65dc062af16c96f351abcf2fd532061",
+  "computedAt": "2026-11-24T18:06:50.190996+00:00",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "assertions": [
     {
       "name": "muon_canonical_pin_consistency",
-      "computed": "206.7682827000000000000000000000000000000000000000000223638476790838774",
-      "expected": "206.7682827000000000000000000000000000000000000000000223638476790838774",
+      "computed": "206.7682827",
+      "expected": "206.7682827",
       "passed": true,
       "tolerance": "1e-40",
       "source": "Q_50_DIGIT_STR + MU_OVER_E (canonical pin)"
@@ -41,8 +41,8 @@
   "durationMs": 5,
   "computation": "tau-amphichiral-sdp-probe",
   "scriptFile": "tau_amphichiral_sdp_probe.py",
-  "scriptHash": "d58077eb78b5",
-  "scriptCommitSha": "8aec79dd98c57c580c47b5d422384da6d3e5aece",
+  "scriptHash": "ee67a71fbcc1",
+  "scriptCommitSha": "4db77890a72ec5ffaddefafa437fc483b33bc5b8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,11 +50,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -72,7 +75,7 @@
     "hbar_q_sq": "0.009817186454275073810569057179564252889049284575401366262467054677136016",
     "inv_hbar_q_sq": "101.8621786045972130803300272147005417655680524276390437844375352527198",
     "cal_tau_e_codata": "3477.23",
-    "cal_mu_e_codata": "206.7682827000000000000000000000000000000000000000000223638476790838774"
+    "cal_mu_e_codata": "206.7682827"
   },
   "data": {
     "amphichiral_candidates": [

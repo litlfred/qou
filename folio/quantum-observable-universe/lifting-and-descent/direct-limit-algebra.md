@@ -6,5 +6,3 @@ $$
   \mathrm{End}_{\mathbf{C}}(A_n),
 $$
 taken over the tower of endomorphism algebras with transition maps induced by the canonical embeddings $A_n \hookrightarrow A_{n+1}$.
-
-In the archimedean realisation ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)), applying the fibre functor $\tau$ yields $\mathcal{A}_\infty \cong \varinjlim\Gamma(J^1 \mathcal{S}_n, \mathrm{SU}_{q_n}(2))$.

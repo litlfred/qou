@@ -1,4 +1,4 @@
-**Proposition (conditional on pentagon rigidity).**
+**Conditional on pentagon rigidity.**
 Let $H$ be an additive abelian group carrying the pentagon data
 $(\mathrm{mul}, \mathrm{compl}, \mathrm{div})$, and suppose the
 five-term relation is *rigid* on $H$: the only $f : H \to H$ satisfying

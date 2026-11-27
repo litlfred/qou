@@ -1,0 +1,643 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/topology-geometry-boundary-table-data",
+    "path": "folio/quantum-observable-universe/predicted-spectra/topology-geometry-boundary-table-data"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "42d79f0eb94d",
+          "ts": "a1c1b5e2954a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:35.127Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: 14 observables split by whether they follow from q alone. Two rows are factually wrong and are reported as anomalies (deuteron binding quoted as 1.29 MeV, and an absolute m_p in MeV presented as a framework observable)."
+      },
+      {
+        "field_hash": {
+          "md": "89a7e0279504",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:54:52.000Z",
+        "reviewed_sha": "5129eb80c629ee10c53ae6c160e9dee2f501657a",
+        "evidence": "Full read of the table after the edit to the emission-topology row (now 'Backup model only (trefoil electron; not re-derived for e⁻ = σ₀σ₁σ₀)'). Table cells only. No negation contrast instance found."
+      },
+      {
+        "field_hash": {
+          "md": "e447f65e6496",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the table with focus on the three changed rows (nucleon masses: 'Not predicted'; mass splitting: exact identity, convention C, per-quark split a fitted ansatz; deuteron binding: 'Retired'). Status cells are factual and match prop:terminal-resolution and the 2026-08-29 deuteron ruling. No trap pattern."
+      },
+      {
+        "field_hash": {
+          "md": "68ab9a2f9f1b",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-fixes-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:57:04.000Z",
+        "reviewed_sha": "4eeb377d54fa519b6fb38d549a47b08bd48561ae",
+        "evidence": "Re-read of the deuteron row after removing the retired 1.29 MeV figure. No instance."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "42d79f0eb94d",
+          "ts": "a1c1b5e2954a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:35.165Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: 14 observables split by whether they follow from q alone. Two rows are factually wrong and are reported as anomalies (deuteron binding quoted as 1.29 MeV, and an absolute m_p in MeV presented as a framework observable)."
+      },
+      {
+        "field_hash": {
+          "md": "89a7e0279504",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:54:52.000Z",
+        "reviewed_sha": "5129eb80c629ee10c53ae6c160e9dee2f501657a",
+        "evidence": "Full read of the table after the edit to the emission-topology row (now 'Backup model only (trefoil electron; not re-derived for e⁻ = σ₀σ₁σ₀)'). Table cells only. No rhetorical pivot instance found."
+      },
+      {
+        "field_hash": {
+          "md": "e447f65e6496",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the table with focus on the three changed rows (nucleon masses: 'Not predicted'; mass splitting: exact identity, convention C, per-quark split a fitted ansatz; deuteron binding: 'Retired'). Status cells are factual and match prop:terminal-resolution and the 2026-08-29 deuteron ruling. No trap pattern."
+      },
+      {
+        "field_hash": {
+          "md": "68ab9a2f9f1b",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-fixes-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:57:04.000Z",
+        "reviewed_sha": "4eeb377d54fa519b6fb38d549a47b08bd48561ae",
+        "evidence": "Re-read of the deuteron row after removing the retired 1.29 MeV figure. No instance."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "42d79f0eb94d",
+          "ts": "a1c1b5e2954a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:35.202Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: 14 observables split by whether they follow from q alone. Two rows are factually wrong and are reported as anomalies (deuteron binding quoted as 1.29 MeV, and an absolute m_p in MeV presented as a framework observable)."
+      },
+      {
+        "field_hash": {
+          "md": "89a7e0279504",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:54:52.000Z",
+        "reviewed_sha": "5129eb80c629ee10c53ae6c160e9dee2f501657a",
+        "evidence": "Full read of the table after the edit to the emission-topology row (now 'Backup model only (trefoil electron; not re-derived for e⁻ = σ₀σ₁σ₀)'). Table cells only. No em dash instance found."
+      },
+      {
+        "field_hash": {
+          "md": "e447f65e6496",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the table with focus on the three changed rows (nucleon masses: 'Not predicted'; mass splitting: exact identity, convention C, per-quark split a fitted ansatz; deuteron binding: 'Retired'). Status cells are factual and match prop:terminal-resolution and the 2026-08-29 deuteron ruling. No trap pattern."
+      },
+      {
+        "field_hash": {
+          "md": "68ab9a2f9f1b",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-fixes-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:57:04.000Z",
+        "reviewed_sha": "4eeb377d54fa519b6fb38d549a47b08bd48561ae",
+        "evidence": "Re-read of the deuteron row after removing the retired 1.29 MeV figure. No instance."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "42d79f0eb94d",
+          "ts": "a1c1b5e2954a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:35.241Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: 14 observables split by whether they follow from q alone. Two rows are factually wrong and are reported as anomalies (deuteron binding quoted as 1.29 MeV, and an absolute m_p in MeV presented as a framework observable)."
+      },
+      {
+        "field_hash": {
+          "md": "89a7e0279504",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:54:52.000Z",
+        "reviewed_sha": "5129eb80c629ee10c53ae6c160e9dee2f501657a",
+        "evidence": "Full read of the table after the edit to the emission-topology row (now 'Backup model only (trefoil electron; not re-derived for e⁻ = σ₀σ₁σ₀)'). Table cells only. No triples instance found."
+      },
+      {
+        "field_hash": {
+          "md": "e447f65e6496",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the table with focus on the three changed rows (nucleon masses: 'Not predicted'; mass splitting: exact identity, convention C, per-quark split a fitted ansatz; deuteron binding: 'Retired'). Status cells are factual and match prop:terminal-resolution and the 2026-08-29 deuteron ruling. No trap pattern."
+      },
+      {
+        "field_hash": {
+          "md": "68ab9a2f9f1b",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-fixes-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:57:04.000Z",
+        "reviewed_sha": "4eeb377d54fa519b6fb38d549a47b08bd48561ae",
+        "evidence": "Re-read of the deuteron row after removing the retired 1.29 MeV figure. No instance."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "42d79f0eb94d",
+          "ts": "a1c1b5e2954a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:35.280Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: 14 observables split by whether they follow from q alone. Two rows are factually wrong and are reported as anomalies (deuteron binding quoted as 1.29 MeV, and an absolute m_p in MeV presented as a framework observable)."
+      },
+      {
+        "field_hash": {
+          "md": "89a7e0279504",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:54:52.000Z",
+        "reviewed_sha": "5129eb80c629ee10c53ae6c160e9dee2f501657a",
+        "evidence": "Full read of the table after the edit to the emission-topology row (now 'Backup model only (trefoil electron; not re-derived for e⁻ = σ₀σ₁σ₀)'). Table cells only. No closing aphorism instance found."
+      },
+      {
+        "field_hash": {
+          "md": "e447f65e6496",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the table with focus on the three changed rows (nucleon masses: 'Not predicted'; mass splitting: exact identity, convention C, per-quark split a fitted ansatz; deuteron binding: 'Retired'). Status cells are factual and match prop:terminal-resolution and the 2026-08-29 deuteron ruling. No trap pattern."
+      },
+      {
+        "field_hash": {
+          "md": "68ab9a2f9f1b",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-fixes-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:57:04.000Z",
+        "reviewed_sha": "4eeb377d54fa519b6fb38d549a47b08bd48561ae",
+        "evidence": "Re-read of the deuteron row after removing the retired 1.29 MeV figure. No instance."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "42d79f0eb94d",
+          "ts": "a1c1b5e2954a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:35.317Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: 14 observables split by whether they follow from q alone. Two rows are factually wrong and are reported as anomalies (deuteron binding quoted as 1.29 MeV, and an absolute m_p in MeV presented as a framework observable)."
+      },
+      {
+        "field_hash": {
+          "md": "89a7e0279504",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:54:52.000Z",
+        "reviewed_sha": "5129eb80c629ee10c53ae6c160e9dee2f501657a",
+        "evidence": "Full read of the table after the edit to the emission-topology row (now 'Backup model only (trefoil electron; not re-derived for e⁻ = σ₀σ₁σ₀)'). Table cells only. No meta commentary instance found."
+      },
+      {
+        "field_hash": {
+          "md": "e447f65e6496",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the table with focus on the three changed rows (nucleon masses: 'Not predicted'; mass splitting: exact identity, convention C, per-quark split a fitted ansatz; deuteron binding: 'Retired'). Status cells are factual and match prop:terminal-resolution and the 2026-08-29 deuteron ruling. No trap pattern."
+      },
+      {
+        "field_hash": {
+          "md": "68ab9a2f9f1b",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-fixes-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:57:04.000Z",
+        "reviewed_sha": "4eeb377d54fa519b6fb38d549a47b08bd48561ae",
+        "evidence": "Re-read of the deuteron row after removing the retired 1.29 MeV figure. No instance."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "42d79f0eb94d",
+          "ts": "a1c1b5e2954a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:35.359Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: 14 observables split by whether they follow from q alone. Two rows are factually wrong and are reported as anomalies (deuteron binding quoted as 1.29 MeV, and an absolute m_p in MeV presented as a framework observable)."
+      },
+      {
+        "field_hash": {
+          "md": "89a7e0279504",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:54:52.000Z",
+        "reviewed_sha": "5129eb80c629ee10c53ae6c160e9dee2f501657a",
+        "evidence": "Full read of the table after the edit to the emission-topology row (now 'Backup model only (trefoil electron; not re-derived for e⁻ = σ₀σ₁σ₀)'). Table cells only. No thesis restatement instance found."
+      },
+      {
+        "field_hash": {
+          "md": "e447f65e6496",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the table with focus on the three changed rows (nucleon masses: 'Not predicted'; mass splitting: exact identity, convention C, per-quark split a fitted ansatz; deuteron binding: 'Retired'). Status cells are factual and match prop:terminal-resolution and the 2026-08-29 deuteron ruling. No trap pattern."
+      },
+      {
+        "field_hash": {
+          "md": "68ab9a2f9f1b",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-fixes-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:57:04.000Z",
+        "reviewed_sha": "4eeb377d54fa519b6fb38d549a47b08bd48561ae",
+        "evidence": "Re-read of the deuteron row after removing the retired 1.29 MeV figure. No instance."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "42d79f0eb94d",
+          "ts": "a1c1b5e2954a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:35.398Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: 14 observables split by whether they follow from q alone. Two rows are factually wrong and are reported as anomalies (deuteron binding quoted as 1.29 MeV, and an absolute m_p in MeV presented as a framework observable)."
+      },
+      {
+        "field_hash": {
+          "md": "89a7e0279504",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:54:52.000Z",
+        "reviewed_sha": "5129eb80c629ee10c53ae6c160e9dee2f501657a",
+        "evidence": "Full read of the table after the edit to the emission-topology row (now 'Backup model only (trefoil electron; not re-derived for e⁻ = σ₀σ₁σ₀)'). Table cells only. No performed warmth instance found."
+      },
+      {
+        "field_hash": {
+          "md": "e447f65e6496",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the table with focus on the three changed rows (nucleon masses: 'Not predicted'; mass splitting: exact identity, convention C, per-quark split a fitted ansatz; deuteron binding: 'Retired'). Status cells are factual and match prop:terminal-resolution and the 2026-08-29 deuteron ruling. No trap pattern."
+      },
+      {
+        "field_hash": {
+          "md": "68ab9a2f9f1b",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-fixes-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:57:04.000Z",
+        "reviewed_sha": "4eeb377d54fa519b6fb38d549a47b08bd48561ae",
+        "evidence": "Re-read of the deuteron row after removing the retired 1.29 MeV figure. No instance."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "42d79f0eb94d",
+          "ts": "a1c1b5e2954a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:35.440Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: 14 observables split by whether they follow from q alone. Two rows are factually wrong and are reported as anomalies (deuteron binding quoted as 1.29 MeV, and an absolute m_p in MeV presented as a framework observable)."
+      },
+      {
+        "field_hash": {
+          "md": "89a7e0279504",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:54:52.000Z",
+        "reviewed_sha": "5129eb80c629ee10c53ae6c160e9dee2f501657a",
+        "evidence": "Full read of the table after the edit to the emission-topology row (now 'Backup model only (trefoil electron; not re-derived for e⁻ = σ₀σ₁σ₀)'). Table cells only. No superlative instance found."
+      },
+      {
+        "field_hash": {
+          "md": "e447f65e6496",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the table with focus on the three changed rows (nucleon masses: 'Not predicted'; mass splitting: exact identity, convention C, per-quark split a fitted ansatz; deuteron binding: 'Retired'). Status cells are factual and match prop:terminal-resolution and the 2026-08-29 deuteron ruling. No trap pattern."
+      },
+      {
+        "field_hash": {
+          "md": "68ab9a2f9f1b",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-fixes-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:57:04.000Z",
+        "reviewed_sha": "4eeb377d54fa519b6fb38d549a47b08bd48561ae",
+        "evidence": "Re-read of the deuteron row after removing the retired 1.29 MeV figure. No instance."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "42d79f0eb94d",
+          "ts": "a1c1b5e2954a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:35.478Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: 14 observables split by whether they follow from q alone. Two rows are factually wrong and are reported as anomalies (deuteron binding quoted as 1.29 MeV, and an absolute m_p in MeV presented as a framework observable)."
+      },
+      {
+        "field_hash": {
+          "md": "89a7e0279504",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T12:54:52.000Z",
+        "reviewed_sha": "5129eb80c629ee10c53ae6c160e9dee2f501657a",
+        "evidence": "Full read of the table after the edit to the emission-topology row (now 'Backup model only (trefoil electron; not re-derived for e⁻ = σ₀σ₁σ₀)'). Table cells only. No nonspeakable instance found."
+      },
+      {
+        "field_hash": {
+          "md": "e447f65e6496",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:05:00.000Z",
+        "reviewed_sha": "f1ead9299155ba6893f15d236efac210917e9880",
+        "evidence": "Re-read the table with focus on the three changed rows (nucleon masses: 'Not predicted'; mass splitting: exact identity, convention C, per-quark split a fitted ansatz; deuteron binding: 'Retired'). Status cells are factual and match prop:terminal-resolution and the 2026-08-29 deuteron ruling. No trap pattern."
+      },
+      {
+        "field_hash": {
+          "md": "68ab9a2f9f1b",
+          "ts": "065163601c2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:terminal-resolution-qa-fixes-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:57:04.000Z",
+        "reviewed_sha": "4eeb377d54fa519b6fb38d549a47b08bd48561ae",
+        "evidence": "Re-read of the deuteron row after removing the retired 1.29 MeV figure. No instance."
+      }
+    ]
+  }
+}

@@ -1,5 +1,5 @@
-import QOU.QuantumObservableUniverse.Instanton
-import QOU.QuantumObservableUniverse.TrivialWitness
+import QOU.Core.Instanton
+import QOU.Core.TrivialWitness
 
 
 /-!

@@ -2,152 +2,113 @@
 name: lean-mathlibext-curator
 roles: [collaborator, owner]
 description: >
-  Curate `QOU/MathlibExt.lean` — the staging area for upstream-
-  candidate lemmas (List/sort plumbing, Foldl/foldr at Monoid
-  level, Real-function bridges).  Decide what lives in `MathlibExt`
-  vs inline, and tag candidates with `-- TODO upstream: …`.
-allowed-tools: Read Edit Bash Grep Glob
+  Curate QOU's non-QOU-specific Lean 4 mathematics under the Two-Tier Community
+  Contribution Architecture: Tier A (`MathlibExt` selective `mathlib4` core PR
+  candidates) and Tier B (6 standalone Lean Reservoir `lean_lib` community
+  packages: `HeckeTemperleyLieb`, `TwistedFrobeniusHopf`, `ToricConicOpt`,
+  `CompactQuantumMetrics`, `QCalculus`, `BraidKnotOctonion`). Enforces strict
+  zero-`QOU.*` upward imports, §7c base-ring generality, and Mathlib4 style via
+  `scripts/lean-best-practices-lint.py` and `scripts/lean-kg-detangler.py`.
+allowed-tools: Read Edit Write Bash Grep Glob
 ---
 
-# QOU `MathlibExt` Curator Skill
+# Two-Tier `Mathlib4` & Lean Reservoir Community Curator (`lean-mathlibext-curator`)
 
-## Role
+## 1. Architectural Role (Supersedes Single-File `QOU/MathlibExt.lean`)
 
-Maintain the `QOU/MathlibExt.lean` namespace as a stable, documented
-library of Mathlib-style lemmas that QOU repeatedly needs but that
-have not yet landed upstream.  Decide whether a one-off helper
-inside a proof body should be promoted to `MathlibExt`, and write
-`-- TODO upstream: …` annotations against the relevant Mathlib
-module so future sweeps can submit them.
+QOU no longer stages reusable mathematics in a single 5-section `QOU/MathlibExt.lean` file. Instead, all non-QOU-specific mathematics (`~1,680` pure-math modules) is curated into a **Two-Tier Community Contribution Architecture** (Epic `qou-lnkg`, [`docs/audits/2026-11-23-lean-kg-detangler-and-reservoir-options.md`](../../docs/audits/2026-11-23-lean-kg-detangler-and-reservoir-options.md)):
 
-## When to Use This Skill
+### Tier A — Selective `leanprover-community/mathlib4` Core PR Staging (`MathlibExt`)
+Small, foundational, domain-general lemmas that belong directly inside monolithic `mathlib4`:
+- `List` / `Finset` / permutation / sort / `foldl`–`foldr` `Monoid` plumbing (`QOU/MathlibExt.lean` §1–§3)
+- General linear algebra & matrix lemmas (`CauchyBinet`, `FrobeniusInnerProduct`, `EndBaseChange`, `EndSemisimple*`)
+- Elementary ordered-field & `Real.sqrt` / `Real.rpow` / convexity / trapezoid bounds (`ConcaveOnSum`, `CorrectedTrapezoid`, `QOU/MathlibExt.lean` §4)
+- General complex/analytic & Čech nerve infrastructure (`ArgumentPrinciple*`, `DoublyPeriodicLiouville`, `Borel*` resummation, `Clausen`, `DirichletL`, `Polylogarithm`, general `Cech*` colimits)
 
-- A `.lean` file inside `QOU/` defines a `private` lemma whose
-  signature is general (no QOU-specific types) and whose proof is
-  short.
-- A proof body inlines `have : <general identity> := …` more than
-  once — the second occurrence triggers promotion.
-- After a `lake update` reveals Mathlib added one of the
-  candidates — remove from `MathlibExt`, replace with import.
-
-## Authority commits
-
-| Commit | Section added | Mathlib home for upstreaming |
-|--------|---------------|-------------------------------|
-| `9b423397`, `2af27258` | §1 List/sort plumbing — `sum_insertionSort_eq`, `sum_eq_finsetSum_getD` | `Mathlib.Algebra.BigOperators.Group.List`, `Mathlib.Data.List.Sort` |
-| `51f93e53` | §2-3 Foldl/foldr at `Monoid` level + `Pairwise Commute` form | `Mathlib.Algebra.BigOperators.Group.List` |
-| `78d28acf` | §4a `Real.lt_sqrt_of_sq_lt`, `Real.sqrt_lt_of_lt_sq` | `Mathlib.Analysis.SpecialFunctions.Pow.Real` |
-| `1f34de8c` | §4b `Real.rpow_half_eq_sqrt`, `Real.rpow_neg_half_eq`, `Real.q_half_denom` | `Mathlib.Analysis.SpecialFunctions.Pow.Real` |
-
-## Stratification (what goes in which section)
-
-```
-QOU/MathlibExt.lean
-├─ §1  List / Sort plumbing            (List.sum, insertionSort.sum)
-├─ §2  Foldl/foldr at Monoid level     (no commutativity required)
-├─ §3  Pairwise Commute / foldl=foldr  (transfer-matrix chain)
-├─ §4a Real.sqrt brackets              (lt_sqrt_of_sq_lt etc.)
-└─ §4b Real.rpow ↔ Real.sqrt bridges   (q_half_denom et al.)
-```
-
-Each lemma must carry:
-
+Every Tier-A declaration MUST carry a machine-readable upstream destination tag in its docstring:
 ```lean
-/-- ⟨short statement⟩.
+/-- Sorting a list preserves its sum over any `AddCommMonoid`.
 
-    TODO upstream: `Mathlib.<Module>` — ⟨one-line rationale⟩. -/
+    TODO upstream: `Mathlib.Algebra.BigOperators.Group.List` — permutation invariance of `List.sum`. -/
 ```
 
-The `TODO upstream:` tag is **required** — it is what makes the
-nightly upstream-candidate sweep machine-readable.
+### Tier B — 6 Standalone Lean Reservoir Community `lean_lib` Packages
+Cohesive, specialized mathematical theories designed as standalone **Lean Reservoir** community libraries depending **only** on `Mathlib` (and `UGB` where applicable) with **strictly zero `QOU.*` model imports**:
 
-## Promotion criteria (inline → `MathlibExt`)
+| # | Reservoir `lean_lib` Target | Mathematical Scope |
+|---:|---|---|
+| 1 | **`HeckeTemperleyLieb`** | Iwahori–Hecke $H_n(q)$, Coxeter/Bruhat subwords, Temperley–Lieb $TL_n(q)$ & Catalan bases, Jones/Markov/Ocneanu traces, Hoefsmit seminormal irreps, Young/SYT/Schur–Weyl (layers on [`folio/unital-groebner-bases/lean/`](../../folio/unital-groebner-bases/lean/) `UGB` for Gröbner–Shirshov / Kang–Lee–Lee–Oh normal forms) |
+| 2 | **`TwistedFrobeniusHopf`** | Nakayama-twisted Frobenius pairings (`NakayamaTwist`, `TwistedAmbidextrousAdjunction`), Sweedler $H_4$ & Taft $T_N(\omega)$ Hopf algebras (`SweedlerJet`, `SweedlerJetIso`, `SweedlerFrobenius`), Higman norm map (`HigmanNormMap`), antipode & tower adjunctions |
+| 3 | **`ToricConicOpt`** | Sturmfels–Thomas toric Gröbner chambers, Graver/universal Gröbner test sets, Birch toric equilibria, symmetry-reduced LP/SDP dual certificates (`SymmetryReducedDualCertificate`, `SDP*`, `LPStrongDuality`, `MatrixFarkasInstance`), Perdew–Parr piecewise-linear kinks |
+| 4 | **`CompactQuantumMetrics`** | Finite-dimensional Rieffel–Connes compact quantum metric spaces (`FiniteRieffelQuantumMetric`), `LipSeminorm`, Kantorovich–Rubinstein graph/state duality, Woronowicz $\mathcal{O}_q(\mathrm{SU}(2))$ coordinate algebra (`OqSU2ModularNakayama`), universal noncommutative differentials (`UniversalDifferentials`), finite bicommutant/GNS |
+| 5 | **`QCalculus`** | $q$-numbers $[n]_q$, $q$-factorials, Gaussian binomials (`QInteger*`, `GaussianBinomial*`), Thomae–Jackson geometric-grid $q$-integrals & $q$-Leibniz rules (`ThomaeJacksonCalculus`), Faddeev & quantum dilogarithms, Rogers–Szegő, Habiro cyclotomic rings (`Habiro/*`) |
+| 6 | **`BraidKnotOctonion`** | Artin braid groups $B_n$ (`BraidGroup*`), Burau/Lawrence–Krammer/Alexander invariants (`PLAlexander`), PL knot topology & $\Delta$-equivalence / Moise assembly (`PL*.lean`), octonion/Hurwitz composition algebras & $\mathfrak{g}_2$/$\mathfrak{su}(3)$ derivations (`Octonion*.lean`), pure Bring curve / Riemann–Hurwitz algebraic geometry |
 
-A helper is promoted when **all** hold:
+---
 
-1. **Signature is QOU-free** — no `substrate_q`, `qIntReal`,
-   `HeckeRep`, `ConfMorphism`, etc.  Pure Mathlib types only.
-2. **Used at least twice** in `QOU/`, **OR** plausibly used by
-   future work in another paper (`UGB/`, `Fred2005/`).
-3. **Proof is short** (≤ 10 lines) and uses only Mathlib tactics
-   — no QOU-internal lemmas or `MassDerivation`-specific
-   constants.
-4. **A reasonable Mathlib home exists** — you can name a module
-   that would accept it as a PR.
+## 2. Placement Decision Tree (Mandatory Before Authoring Any `.lean` File)
 
-## Demotion criteria (`MathlibExt` → inline)
+1. **Does the statement mention ANY QOU physics/model concept** (`substrate_q`, `q0`, `CODATA`, `MeV`, `Proton`/`Neutron`/`Quark`/`Hadron`/`Nucleus`, `QuantumObservableUniverse`, `BraneTower`, `*Context` manuscript class)?
+   - **Yes** → Place in the single canonical **QOU chapter subgraph** (`QOU.Core`, `QOU.LiftingDescent`, `QOU.BraidsAndKnots`, `QOU.BringsSurface`, `QOU.Confinement`, `QOU.EightfoldWay`, `QOU.MassTheory`, `QOU.Nuclear`, `QOU.StandardModel`, `QOU.FluidDynamics`, `QOU.InformationTheory`, `QOU.Observations`). **Never** place QOU model types in `MathlibExt` or Tier-B libraries, and **never** create a new synonym directory (`BP009`).
+   - **Hybrid file?** → Factor the pure mathematical theorem into Tier A / Tier B first, then import and instantiate it (`R := ℝ`, `q := substrate_q`) inside the QOU chapter module (`Process_GraphDetanglement` `Task_Move`: *move the shared target first, then the importers*).
+2. **Is the pure-math result part of one of the 6 specialized Tier-B domains above?**
+   - **Yes** → Curate under the corresponding Tier-B Reservoir subgraph with **zero `QOU.*` model imports**.
+3. **Is it a small, general-purpose lemma fitting an existing `Mathlib.*` file?**
+   - **Yes** → Curate under Tier-A `MathlibExt` with a `TODO upstream: Mathlib.<Module>` docstring tag (first verify via `lean_leansearch` / `lean_loogle` or `grep` in `.lake/packages/mathlib/Mathlib/` that Mathlib4 does not already have it!).
 
-Move a lemma out of `MathlibExt` when:
+---
 
-- Mathlib added it under any name — replace with import + alias.
-- It became unused after a refactor — remove (do not leave
-  dead code in `MathlibExt`).
-- Its proof acquired a QOU-specific dependency — move it back into
-  the `QOU/<Chapter>/` file that needs it.
+## 3. Strict Mathlib4 & Lean Reservoir Standards (`BP001`–`BP008`)
 
-## Recipes
+Every Tier-A and Tier-B module MUST satisfy all 8 standards enforced by [`scripts/lean-best-practices-lint.py`](../../scripts/lean-best-practices-lint.py):
 
-### Promoting an inline helper
+1. **Explicit `autoImplicit` off (`BP001`):** Include `set_option autoImplicit false` after the module docstring so the file remains sound if extracted outside QOU's `lakefile.toml`.
+2. **Header & Docstring Order (`BP002`):**
+   - `/- Copyright (c) 2026 ... Apache 2.0 ... -/` header,
+   - Targeted `import Mathlib.<Submodule>` lines **before** any `/-! ... -/` block (Lean 4.24+ requirement),
+   - `/-! # Title ... -/` module docstring summarizing main definitions, theorems, and `[bibkey]` references,
+   - `/-- ... -/` docstring on every public `def`, `structure`, `class`, `theorem`, and `lemma` (`docBlame`).
+3. **Minimal Targeted Imports (`BP003`):** Never `import Mathlib` or `import Mathlib.Tactic`; import the exact `Mathlib.Algebra.*` / `Mathlib.Tactic.Ring` modules used.
+4. **Mathlib4 Naming (`BP004`):** `UpperCamelCase` for types/`structure`s/`class`es/`inductive`s; `snake_case` for `theorem`/`lemma` proofs and `Prop`-valued predicates; `_of_` hypothesis suffixes on conditional implications.
+5. **§7c Maximal Typeclass & Universe Generality (`BP005`):** State algebraic identities over `{R : Type*} [CommRing R]` / `[Field R]` and ordered inequalities over `[Field K] [LinearOrder K] [IsStrictOrderedRing K]` (never gratuitous `ℝ`); keep categories universe-polymorphic `Category.{v, u} C`.
+6. **Zero Empirical / Float Literals (`BP006`):** Zero decimal literals (`1.1097`), `Float`, `CODATA`, or `substrate_q`.
+7. **Zero Vacuity, Zero `sorry`, Zero Custom Axioms (`BP007`):** Kernel trust boundary strictly `[propext, Classical.choice, Quot.sound]`; zero `: True`, zero `native_decide`, zero `sorry`, zero `axiom`.
+8. **Strict Zero-`QOU.*` Upward Import Boundary (`BP008`):** Zero imports from QOU physics/model modules.
 
-When you spot
+---
 
-```lean
--- inside QOU/Descartes/SkewSYT.lean
-have sum_insertionSort_eq (xs : List ℕ) (r : ℕ → ℕ → Bool) :
-    (xs.insertionSort r).sum = xs.sum :=
-  (xs.perm_insertionSort r).symm.sum_eq
+## 4. Verification & Audit Commands (CPU-Throttled)
+
+Always export single-thread caps and run under `nice -n 15` (see [`lean-build-hygiene.md`](lean-build-hygiene.md)):
+
+```bash
+export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 \
+       OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1
+
+# 1. Lint a specific Tier-B Reservoir package (or `MathlibExt` / `all-community`):
+nice -n 15 python3 scripts/lean-best-practices-lint.py --package TwistedFrobeniusHopf
+
+# 2. Lint your branch's changed/added .lean files (blocks critical BP001-BP009):
+nice -n 15 python3 scripts/lean-best-practices-lint.py --diff
+
+# 3. Verify zero new community -> QOU.* cut-edges in the KG DAG:
+nice -n 15 python3 scripts/lean-kg-detangler.py --summary-only
+
+# 4. Type-check in the isolated symlink-farm overlay (NEVER bare `lake build`):
+nice -n 15 bash scripts/lean-overlay-env.sh init
+nice -n 15 bash scripts/lean-overlay-env.sh build <LibOrQOU>/<Module>.lean
+
+# 5. Fix up an open PR branch authored against legacy `QOU/<OldSynonym>/` paths:
+nice -n 15 python3 scripts/apply-lean-reservoir-migration.py --fixup-branch
 ```
 
-move it to `MathlibExt.lean` §1, add the TODO tag, and replace
-the inline definition with the `MathlibExt` reference (preserve
-the local name as a one-line alias if the file uses it heavily):
+All `7` community libraries (`MathlibExt`, `QCalculus`, `TwistedFrobeniusHopf`, `ToricConicOpt`, `CompactQuantumMetrics`, `HeckeTemperleyLieb`, `BraidKnotOctonion`) live as top-level `[[lean_lib]]` roots inside `folio/quantum-observable-universe/lean/` (`srcDir = "."`, `0` extra `.lake/build` roots, strict topological DAG order, `community_to_qou_cut_edges == 0`), alongside the `12` canonical monograph subgraphs under `folio/quantum-observable-universe/lean/QOU/<Chapter>/`.
 
-```lean
--- in QOU/MathlibExt.lean
-/-- Sorting a list (by any relation) preserves its sum.
+---
 
-    TODO upstream: `Mathlib.Algebra.BigOperators.Group.List` —
-    standard permutation-invariance of list sums. -/
-theorem List.sum_insertionSort_eq {α} [AddCommMonoid α]
-    (xs : List α) (r : α → α → Bool) :
-    (xs.insertionSort r).sum = xs.sum :=
-  (xs.perm_insertionSort r).symm.sum_eq
-```
+## 5. Cross-References
 
-```lean
--- in QOU/Descartes/SkewSYT.lean
-import QOU.MathlibExt
--- alias preserves the original local name
-theorem sum_insertionSort_eq (xs : List ℕ) (r : ℕ → ℕ → Bool) :
-    (xs.insertionSort r).sum = xs.sum :=
-  QOU.MathlibExt.List.sum_insertionSort_eq xs r
-```
-
-### Generalising before promotion
-
-When you see a `CommMonoid`-level statement that only uses
-`mul_assoc`, generalise to `Monoid`.  See `51f93e53`:
-`foldl_mul_eq_mul_prod`/`foldr_mul_eq_prod_mul` were originally
-stated over `CommMonoid` but proved at `Monoid` strength;
-keep the original `CommMonoid` name as a one-line alias for
-back-compat.
-
-## Anti-patterns
-
-- **Never** add a lemma to `MathlibExt` without the
-  `TODO upstream: <module>` tag.
-- **Never** promote a one-off helper that depends on
-  `substrate_q` or any QOU-specific constant.
-- **Do not** duplicate a Mathlib lemma — `lean_leansearch` /
-  `lean_loogle` first; only promote if no Mathlib equivalent
-  exists.
-- **Do not** put `noncomputable def`s into `MathlibExt` —
-  reserve it for `theorem`/`lemma`/`def` that compile.
-
-## Cross-references
-
-- `lean-q-substitution.md`, `lean-substrate-numerics.md` —
-  primary consumers of §4a/§4b bridges.
-- `formalizer.md` §"MathlibExt promotion".
-- `lean-build-fix.md` — when a Mathlib bump breaks `MathlibExt`,
-  start there before touching consumer files.
+- [`lean-build-hygiene.md`](lean-build-hygiene.md) — CPU throttling, `lean-overlay-env.sh`, and `scripts/*lean*` router.
+- [`content-graph.md`](content-graph.md) — Lean subgraph heuristics `L1..L6` and monograph placement rules.
+- [`formalizer.md`](formalizer.md) — §7c base-ring cheat-sheet and tactic ladder.
+- [`lean-proof-vacuity-audit.md`](lean-proof-vacuity-audit.md) — Semantic non-vacuity and `#print axioms` verification.

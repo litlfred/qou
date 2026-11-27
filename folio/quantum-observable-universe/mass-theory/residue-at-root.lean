@@ -1,5 +1,5 @@
-import QOU.BraidKnot.ResidueAtRoot
-import QOU.BraidKnot.QHabiroCompletion
+import BraidKnotOctonion.ResidueAtRoot
+import BraidKnotOctonion.QHabiroCompletion
 
 /-!
 # prop:residue-at-root — cyclotomic residue as projection image
@@ -42,7 +42,7 @@ theorem residue_of_product {R : Type u} [CommRing R] [ResidueAtRoot R]
     (n : ℕ) (x y : R) :
     residue n (x * y) =
       residue n x * residue n y := by
-  -- Ref: [habiro2002]
+  -- Ref: [habiro2004] §1.2 (evaluation at a root of unity extends to the Habiro ring)
   exact RingHom.map_mul _ x y
 
 open Polynomial in

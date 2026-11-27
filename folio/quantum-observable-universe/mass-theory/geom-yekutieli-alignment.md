@@ -7,11 +7,9 @@ $\mathrm{Geom}(K)$
 ([topological mass formula](#conj:topological-mass-formula))
 is the evaluation of the Yekutieli rigid dualizing complex
 $\omega_A^\bullet$ on the algebraic stratification of the braid
-$\beta$ with closure $K = \widehat\beta$ (per
-[algebraic stratification](#prop:phi-q-tower-algebraic-stratification);
-the τ-image of this evaluation is the geometric reading on
+$\beta$ with closure $K = \widehat\beta$ (the $\tau$-image of this evaluation is the geometric reading on
 $S^3 \setminus K$, classified by Thurston's geometrization at the
-τ-side):*
+$\tau$-side):*
 
 $$
   \mathrm{Geom}(K) =
@@ -36,7 +34,7 @@ The argument has three parts.
 **Part 1: the rigid dualizing complex mediates duality.**
 The Frobenius--Hopf algebra $A$ at the substrate parameter $q$
 carries a rigid dualizing complex $\omega_A^\bullet$
-(Yekutieli \cite{yekutieli2015}), which satisfies the rigidifying
+(Van den Bergh's definition, as in \cite[Def. 3.1]{yekutieli-zhang1999-auslander-dualizing}), which satisfies the rigidifying
 isomorphism
 
 $$
@@ -64,13 +62,13 @@ non-commutative setting.
 
 **Part 2: Geometric type selects the evaluation mode (algebraic
 side).** The proof works in $\mathbb{Z}[q^{\pm 1/2}]$ throughout;
-the geometric / 3-manifold reading appears only as the τ-image
+the geometric / 3-manifold reading appears only as the $\tau$-image
 discussed in Part 3. Algebraically, the rigid dualizing evaluation
 $\langle \omega_A^\bullet, S^3 \setminus K \rangle_{\mathrm{Frob}}$
 admits a single closed-form expression in terms of the
 [algebraic quantum volume](#def:algebraic-quantum-volume)
 $\mathrm{Vol}_q(\beta) \in \mathbb{Z}[q^{\pm 1/2}]$ and the
-[Chern-Simons phase](#rem:chern-simons-as-knot-invariant) $\mathrm{CS}_q(\beta)$:
+algebraic Chern--Simons invariant $\mathrm{CS}_q(\beta)$:
 
 $$
   \mathrm{Geom}(K)
@@ -128,7 +126,7 @@ formula) and $\mathrm{CS}_q(\beta^*) = -\mathrm{CS}_q(\beta)$
 consequence of the $q \mapsto q^{-1}$ involution on the relevant
 braid representation).
 
-For **amphicheiral** knots ($K = K^*$, e.g.\ the figure-eight
+For **amphicheiral** knots ($K = K^*$, e.g. the figure-eight
 $4_1$), the self-pairing is manifestly real.  This explains why
 the figure-eight BW modification factors
 are both real algebraic expressions in $q$:

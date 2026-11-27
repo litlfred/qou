@@ -6,10 +6,21 @@ export default remark({
     "The radical is the Temperley--Lieb ideal: $\\sum \\dim^{2}$ over the surviving blocks is $C_n$",
   interprets: "prop:convention-d-kills-antisymmetriser",
   lean: {
-    ref: "qou:QOU.QBeta.TemperleyLiebTower.catalan_five",
+    ref: "qou:HeckeTemperleyLieb.TemperleyLiebTower.catalan_five",
     validation: "not_checked",
   },
   uses: ["prop:convention-d-kills-antisymmetriser"],
+  cites: [
+    "temperley-lieb1971",
+    "jones1987",
+    "wenzl1988",
+    "orellana1998",
+    "geck-lambropoulou-2004",
+    "bhmv1995",
+    "turaev2010",
+    "barrett1993",
+    "jimbo1986",
+  ],
   tags: [
     "temperley-lieb",
     "catalan",

@@ -2,7 +2,7 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:im-q-vs-p-skew",
-  title: "Im(q) is not the EM / P_skew channel — distinct mechanisms",
+  title: "$\\mathrm{Im}(q)$ is not the EM / $P_{\\mathrm{skew}}$ channel — distinct mechanisms",
   interprets: "prop:lusztig-vs-hermitian-bar",
   uses: [
     "prop:lusztig-vs-hermitian-bar",

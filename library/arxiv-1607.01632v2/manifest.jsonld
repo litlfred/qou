@@ -1,0 +1,65 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1607.01632v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Charge speciﬁc baryon mass relations with deformed SU q (3) ﬂavor symmetry",
+  "contains": [
+    "library/arxiv-1607.01632v2/sections/sec-front-matter",
+    "library/arxiv-1607.01632v2/sections/sec-000",
+    "library/arxiv-1607.01632v2/sections/sec-001",
+    "library/arxiv-1607.01632v2/sections/sec-002",
+    "library/arxiv-1607.01632v2/sections/sec-003",
+    "library/arxiv-1607.01632v2/sections/sec-004",
+    "library/arxiv-1607.01632v2/sections/sec-005",
+    "library/arxiv-1607.01632v2/sections/sec-006",
+    "library/arxiv-1607.01632v2/sections/sec-007",
+    "library/arxiv-1607.01632v2/sections/sec-008",
+    "library/arxiv-1607.01632v2/sections/sec-009",
+    "library/arxiv-1607.01632v2/sections/sec-010",
+    "library/arxiv-1607.01632v2/sections/sec-011",
+    "library/arxiv-1607.01632v2/sections/sec-012"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Charge specific baryon mass relations with deformed SU_q(3) flavor symmetry (Gresnigt, arXiv:1607.01632) — q-deformed octet/decuplet mass formulas with q fitted at a root of unity\n\n**Charge specific baryon mass relations with deformed SU_q(3) flavor symmetry** — Niels G. Gresnigt. arXiv:1607.01632v2 [hep-ph].\n\nTakes the quantum group U_q(su(3)) as a baryon flavour symmetry and adds zeroth-order electromagnetic contributions, giving charge-specific q-deformed octet and decuplet mass formulas (errors quoted 0.02 % and 0.08 %, against the Gell-Mann–Okubo formulas), an octet–decuplet relation (1.2 %), and a formula for the Cabibbo angle, taken as π/14, in terms of q and the spin-parity of the baryons. The deformation parameter is a root of unity selected to match the measured masses.\n\n**Why it may bear here.** Not cited yet. Background for `gresnigt2017`, whose §(i) reviews this programme. A contrast, not a precedent: q here is a flavour parameter chosen by fit, which this repository's anti-fit rule excludes, and it does not enter any braiding.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01Qmmkt4f9V7M6GLoG8XeAZz",
+        "date": "2026-11-22"
+      },
+      "drafted_at": "2026-11-22"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-1607.01632v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "arxiv-1607.01632v2.pdf",
+    "source_sha256": "bbfdc5c00d97adff74e26adec34d9479dfcad093d9b851baf27d7afdddd8f495",
+    "pages": 14,
+    "arxiv": {
+      "id": "1607.01632",
+      "version": "2",
+      "primary_class": "hep-ph",
+      "stamp_date": "19 Sep 2016"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

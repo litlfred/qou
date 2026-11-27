@@ -1,32 +1,32 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-01T20:43:01.591941+00:00",
-  "commitSha": "1677933c0c02b4bc73e90ee77cef35ee774e4183",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-24T18:09:15.099325+00:00",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "assertions": [
     {
       "name": "c_swap_leaves_generator_invariant",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": "0.0",
+      "expected": "0.0",
       "passed": true,
-      "tolerance": "1e-45",
+      "tolerance": "1.0e-45",
       "source": "For every nucleon pair (F1,F2) in {p,n,pbar,nbar}^2 and both 2-dim Hecke representations at q0, the color-tube weighted generator with uniform W and the stated eps rule satisfies sigma^(CF1,CF2) = sigma^(F1,F2) to < 1e-45 elementwise (repo-default precision; see precisionMetadata). Matches the Lean derivation: eps is C-invariant (chiralitySign_conj_invariant, sorry-free) and the uniform W is constant; the conjectural class field weight_conj_invariant asserts the same for the open Bring-derived W."
     },
     {
       "name": "eps_and_w_tables_c_invariant",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": 0,
+      "expected": 0,
       "passed": true,
-      "tolerance": 0.0,
+      "tolerance": 0,
       "source": "Exact check over all 16 nucleon pairs x 9 color pairs (144 cells per table): eps(c1,c2,CF1,CF2) == eps(c1,c2,F1,F2) and W(c1,c2,CF1,CF2) == W(c1,c2,F1,F2)."
     }
   ],
   "allPassed": true,
-  "durationMs": 47,
+  "durationMs": 44,
   "computation": "verify-c-color-swap",
   "scriptFile": "verify_c_color_swap.py",
-  "scriptHash": "59f9f7bd4680",
-  "scriptCommitSha": "40330007fdcde565a8c9c063c45e47f80615bff2",
+  "scriptHash": "af875b79f01d",
+  "scriptCommitSha": "f29d99e3d4afa87f13d1a662f1ecbb96b2d58034",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +34,24 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
-  "description": "Open-R&D prototype of conj:c-from-color-flavor-swap (D6): verifies at the 50-digit substrate q0 that the flavor-conjugation involution C (u<->ubar, d<->dbar per color sheet) leaves the color-tube weighted inter-nucleon Hecke generator sigma^(F1,F2) = sum W_{c1c2} sigma^{eps(c1,c2,F1,F2)} invariant, for all 16 nucleon pairs from {p,n,pbar,nbar} in two 2-dim Hecke representations (diagonal eigenvalue model and a non-diagonal conjugate). Runs the UNIFORM projection W=1/9 (the only W realisation today; the Bring-derived closed form is open \u2014 open question 1 of conj:inter-nucleon-channel-color-tube) with the block's stated eps rule, so this is the numeric cross-check of the Lean derivation (CFromColorFlavorSwap.lean: chiralitySign_conj_invariant + signedWeightSum_conj_invariant), not an independent test of the conjectural W. Exact eps/W table invariance also checked (144 cells each). No fit, parameter-free.",
+  "invocation": {
+    "argv": [
+      "computations/verify_c_color_swap.py"
+    ],
+    "reproduce": "python3 -u computations/verify_c_color_swap.py"
+  },
+  "description": "Open-R&D prototype of conj:c-from-color-flavor-swap (D6): verifies at the 50-digit substrate q0 that the flavor-conjugation involution C (u<->ubar, d<->dbar per color sheet) leaves the color-tube weighted inter-nucleon Hecke generator sigma^(F1,F2) = sum W_{c1c2} sigma^{eps(c1,c2,F1,F2)} invariant, for all 16 nucleon pairs from {p,n,pbar,nbar} in two 2-dim Hecke representations (diagonal eigenvalue model and a non-diagonal conjugate). Runs the UNIFORM projection W=1/9 (the only W realisation today; the Bring-derived closed form is open — open question 1 of conj:inter-nucleon-channel-color-tube) with the block's stated eps rule, so this is the numeric cross-check of the Lean derivation (CFromColorFlavorSwap.lean: chiralitySign_conj_invariant + signedWeightSum_conj_invariant), not an independent test of the conjectural W. Exact eps/W table invariance also checked (144 cells each). No fit, parameter-free.",
   "data": {
-    "q0": "1.1099785827513808",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
     "pairs_checked": 16,
     "eps_mismatches": 0,
     "w_mismatches": 0,
@@ -52,6 +62,6 @@
     }
   },
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -1,4 +1,3 @@
-**Conjecture (lepton-tower closure factor).**
 *Let $K_\ell$ be the canonical knot for the lepton at tower-index $m$ (electron $m=1$, muon $m=2$, tau $m=3$). The canonical mass-tower correction factor is*
 
 $$

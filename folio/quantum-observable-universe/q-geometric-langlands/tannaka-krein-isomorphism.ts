@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:tannaka-krein-isomorphism",
   title: "Tannaka--Krein duality for the substrate",
-  lean: { ref: "qou:QOU.AlgebraicSubstrate.IsTannakaKreinDual",
+  lean: { ref: "qou:QOU.Core.AlgebraicSubstrate.IsTannakaKreinDual",
     validation: "not_checked",
   },
   uses: [

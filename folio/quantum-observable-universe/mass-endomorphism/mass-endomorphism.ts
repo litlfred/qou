@@ -39,16 +39,20 @@ export default chapter({
           label: "sec:mass-endomorphism-mass-identity",
           blocks: [
             "mass-endomorphism-conjecture",
+            "higgs-vacuum-residual-graviton",
             "pairing-gauge-fluctuation-massless",
             "pairing-gauge-fluctuation-massless-interpretation",
             "mass-identity",
             "mass-identity-exists",
-            "mass-identity-exists-proof",
             "mass-identity-unique",
             "mass-identity-unique-proof",
             "mass-identity-su2",
             "mass-geometric-drag",
             "mass-noncommutative-drag",
+            "descent-physical-zero",
+            "descent-physical",
+            "descent-physical-two",
+            "descent-physical-three",
             "mass-identity-C",
             "mass-identity-C-proof",
           ],
@@ -58,6 +62,8 @@ export default chapter({
           label: "sec:mass-endomorphism-topological-mass",
           blocks: [
             "topological-mass-upper-bound",
+            "quantum-dilogarithm",
+            "quantum-dilogarithm-proof",
             "topological-mass",
             "topological-mass-conjecture",
             "topological-mass-conjecture-proof",
@@ -82,6 +88,7 @@ export default chapter({
             "gb-spectral-sequence-table-data",
             "gb-spectral-sequence-mass-identification",
             "gb-spectral-sequence-interpretation",
+            "spectral-sequence-collapse",
             "homological-shell-condensation",
             "homological-shell-condensation-motivation",
             "homological-shell-condensation-interpretation",
@@ -91,26 +98,6 @@ export default chapter({
             "qou-motivic-galois-instance-per-cell",
           ],
         }),
-      ],
-    }),
-
-    // ═══ THE COMPLEX VOLUME $\mathfrak{V}$ ═══════════════════════════════════
-    // Binding (Re $\mathfrak{V}$) and β-decay Q-value (Im $\mathfrak{V}$) are two real
-    // shadows of one complex fibre observable. Frames the rest of
-    // the mass + β-decay narrative as one derivation.
-    section({
-      title:
-        "The complex volume $\\mathfrak{V}$: binding and decay as $\\operatorname{Re}$/$\\operatorname{Im}$",
-      label: "sec:complex-volume",
-      blocks: [
-        "complex-volume-intro",
-        "binding-qbeta-complex-volume",
-        "channel-rotation-askey-lit",
-        "whipple-rotation-intertwining",
-        "complex-volume-character-variety-path",
-        "color-spacetime-s5-factorization",
-        "mass-modulus-em-phase-color-grading",
-        "color-spacetime-s5-factorization-derivation",
       ],
     }),
 
@@ -129,15 +116,10 @@ export default chapter({
         "topological-mass-categorical-proof",
         "categorical-mass-markov",
         "kz-connection-sl2",
+        "kz-connection-sl2-remark",
         "categorical-mass-markov-proof",
         "markov-trace-gibbs-free-energy",
         "atomic-mass-gb-nf",
-        "rho-k-graded-expansion",
-        "atomic-mass-gb-nf-interpretation",
-        "rho-k-graded-expansion-accuracy",
-        "rho-k-graded-expansion-table2-data",
-        "rho-k-graded-expansion-table1-data",
-        "conj-rho-k-pair-gen-canonical-form",
         "hecke-branching-trace-decomposition",
         "hecke-branching-trace-decomposition-proof",
         "operator-valued-magnitude-budget",
@@ -157,6 +139,8 @@ export default chapter({
         "markov-trace-axiomatic-closed-form-interpretation",
         "markov-trace-recursive-reducer",
         "markov-trace-recursive-reducer-interpretation",
+        "markov-trace-hecke-functional",
+        "light-nuclei-a2-bond-tail",
         "q-hecke-seminormal-character-closure",
         "recomputed-low-isotope-mass-table",
         "recomputed-low-isotope-mass-table-table4-data",
@@ -170,6 +154,28 @@ export default chapter({
         "categorical-neutrality-saturated-shells-interpretation",
       ],
     }),
+    // ═══ THE COMPLEX VOLUME $\mathfrak{V}$ ═══════════════════════════════════
+    // Binding (Re $\mathfrak{V}$) and β-decay Q-value (Im $\mathfrak{V}$) are two real
+    // shadows of one complex fibre observable. Frames the rest of
+    // the mass + β-decay narrative as one derivation. Placed after the
+    // Markov-trace sections (reading-order drain L4, 2026-11-21): the
+    // complex-volume conjecture cites prop:categorical-mass-markov.
+    section({
+      title:
+        "The complex volume $\\mathfrak{V}$: binding and decay as $\\operatorname{Re}$/$\\operatorname{Im}$",
+      label: "sec:complex-volume",
+      blocks: [
+        "complex-volume-intro",
+        "binding-qbeta-complex-volume",
+        "volume-function-polarization-scope",
+        "channel-rotation-askey-lit",
+        "whipple-rotation-intertwining",
+        "complex-volume-character-variety-path",
+        "color-spacetime-s5-factorization",
+        "mass-modulus-em-phase-color-grading",
+        "color-spacetime-s5-factorization-derivation",
+      ],
+    }),
     section({
       title: "Hecke $u$-coordinate and $\\chi$-character closed-forms",
       label: "sec:hecke-chi-closed-forms",
@@ -177,7 +183,6 @@ export default chapter({
         "intro-hecke-chi-closed-forms",
         "u-coordinate-discharges",
         "u-coordinate-discharges-table-data",
-        "multi-link-jones-q1-extension",
         "hecke-algebra-type-scaffold",
         "markov-trace-operator-construction",
         "chi-v3-closed-form-proof",
@@ -201,7 +206,6 @@ export default chapter({
         "categorical-chain-convergence-mechanisms",
         "categorical-chain-convergence-mechanisms-neutron-truncation",
         "categorical-chain-convergence-mechanisms-table-data",
-        "tau-M-asymptotic-rep-theory",
         "tau-M-asymptotic-rep-theory-proof",
         "tau-M-asymptotic-rep-theory-scope",
         "tau-M-asymptotic-rep-theory-interpretation",
@@ -230,7 +234,6 @@ export default chapter({
         "intro-hecke-baer-star-chirality",
         "hecke-baer-star-generic",
         "hecke-baer-star-generic-proof",
-        "hecke-baer-star-generic-interpretation",
         "explicit-central-idempotent-cross-checks",
         "explicit-central-idempotent",
         "hecke-baer-star-generic-corollary",

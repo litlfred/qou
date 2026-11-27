@@ -1,4 +1,4 @@
-import QOU.Archimedean.ParticleKnots
+import QOU.MassTheory.ParticleKnots
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 

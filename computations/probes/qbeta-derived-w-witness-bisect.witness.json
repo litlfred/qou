@@ -1,0 +1,158 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-24T11:49:31.379769+00:00",
+  "commitSha": "bd22481cd279b02fc66f01d2f3dc617e4e8b15f2",
+  "assertions": [
+    {
+      "name": "h3_factorisation_matches_full_h6_seminormal_2h",
+      "computed": "2.2472046502522551970348077186521647535592112026212079918418346178529839728035198e-95",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "closed-form H_3 connected-sum formula vs full 6-strand H_6 two-row Hoefsmit product on 2H"
+    },
+    {
+      "name": "grouped_reproduces_2026_09_03_witness_dtr_pred",
+      "computed": "0.0000000000000041526307709581031029432895790560968880123006710273232573957805246248872515208615",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-13",
+      "source": "intra_order='grouped' reproduces all 14 printed digits of 2H/3H/3He dtr_pred in blob 3bd2b6d93a1"
+    },
+    {
+      "name": "grouped_reproduces_2026_09_03_witness_ratios",
+      "computed": "0.00000000000000028569971967897656839601140064620520981351715822573633452413444777254874049590701",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-15",
+      "source": "intra_order='grouped' reproduces all 16 printed digits of r_sig1, r_L2, r_int(2H) in blob 3bd2b6d93a1"
+    },
+    {
+      "name": "borromean_reproduces_2026_11_22_witness_dtr_pred",
+      "computed": "0.0000000000000027321132443854631860121410499709035917899284485257812406663064800422347824293102",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-13",
+      "source": "intra_order='borromean' reproduces all printed digits of 2H/3H/3He/4He dtr_pred in live witness 82c9cbc1344"
+    },
+    {
+      "name": "borromean_reproduces_2026_11_22_witness_ratios",
+      "computed": "0.00000000000000045924344776598127613086130353522393598965273525278383885950333566930714970899237",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-15",
+      "source": "intra_order='borromean' reproduces all 16 printed digits of r_sig1, r_L2, and 4-atom r_int in live witness"
+    },
+    {
+      "name": "interface_product_ratio_invariant_under_intra_ordering",
+      "computed": "1.8726705418768793308623397655434706279660093355176733265348621815441533106695999e-96",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "tau_p^Z * tau_n^N cancels identically in tr_M(Delta * prod sigma_{3k-1}) / tr_M(Delta)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "qbeta-derived-w-witness-bisect",
+  "scriptFile": "qbeta_derived_w_witness_bisect_probe.py",
+  "scriptHash": "ece089d41ad6",
+  "scriptCommitSha": "bd22481cd279b02fc66f01d2f3dc617e4e8b15f2",
+  "precisionMetadata": {
+    "compute_dps": 95,
+    "output_dps": 80,
+    "guard_digits": 10,
+    "truncation_bound": "1e-80"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_derived_w_witness_bisect_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_derived_w_witness_bisect_probe.py"
+  },
+  "description": "Exact 80-dps bisection of the qbeta-derived-w-overdetermined-test witness shift (bean qou-02g1): proves 100% of the move between blob 3bd2b6d93a1 (computedAt 2026-09-03T04:00:37Z) and blob 82c9cbc1344 (PR #9055, 2026-11-22) is explained by the 2026-09-05 intra_order='grouped' -> 'borromean' switch (qou-hu1f), with zero contribution from #8940, 4603bfab4aa, or 89c454294aa.",
+  "auditOnly": "docs/audits/2026-11-24-derived-w-witness-bisect-qou-02g1.md",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "grouped_80dps": {
+      "tau_p": "1.1457596924573008696890815957741193059437280619435222967257633926910776207311312",
+      "tau_n": "0.98774368811580957163402016550129498205504875906278971729292823966338284301018859",
+      "r_sig1": "1.3184526158529077143002803210234316039885993537947901864828417742636654758655522",
+      "r_L2": "1.2756360978181011476233314166919243377267757338700350798249375785951623320200427",
+      "atoms": {
+        "2H": {
+          "dtr_pred": "0.55654466040443821190477222412978310936765592974898415082974583304553787932292376",
+          "r_int": "-0.91790917470580167498255787666644527795169396817924081427938199475561466535468329"
+        },
+        "3H": {
+          "dtr_pred": "0.88853612687367006999625057455623270476484612677385777986660702886815492474461894",
+          "r_int": "-0.86643939457909586507857342691254141230966586660554659753009701401696118222695534"
+        },
+        "3He": {
+          "dtr_pred": "0.89290857539351584736922904189689705671042094390311198769932897267674260421947538",
+          "r_int": "-1.1980585906906774592434477659812761308613035352239359896527352527838388595033357"
+        },
+        "4He": {
+          "dtr_pred": "1.1198090060862390288104644261529349923523042149669852518871909330834712300668784",
+          "r_int": "-1.1098864106493318696923086035914194555465072628754576937894354725360998535189703"
+        }
+      }
+    },
+    "borromean_80dps": {
+      "tau_p": "0.62932840220292191816534574677848592760021940063436873072702815789131156649526161",
+      "tau_n": "0.47513351715568221250609023267500579955840763470872371949524352178907816743920808",
+      "r_sig1": "0.85479932938439774725946501412240417614877206171703175098998500024293511800564690",
+      "r_L2": "1.1787046032114143028547410885411213423866735275106901226247988727475474503736821",
+      "atoms": {
+        "2H": {
+          "dtr_pred": "0.14704667798040846910949472901991769100370850974175845255460247927895116810552655",
+          "r_int": "-0.91790917470580167498255787666644527795169396817924081427938199475561466535468329"
+        },
+        "3H": {
+          "dtr_pred": "0.11292801443633273211324438546318601214104997090359178992844852578124066630648004",
+          "r_int": "-0.86643939457909586507857342691254141230966586660554659753009701401696118222695534"
+        },
+        "3He": {
+          "dtr_pred": "0.12958238934505239904452232169373664308981546630525357947646594231888471668562649",
+          "r_int": "-1.1980585906906774592434477659812761308613035352239359896527352527838388595033357"
+        },
+        "4He": {
+          "dtr_pred": "0.078172562842163178817848016445475049778578679135914711570581510426995940256178582",
+          "r_int": "-1.1098864106493318696923086035914194555465072628754576937894354725360998535189703"
+        }
+      }
+    },
+    "dtr_scaling_factors_grouped_over_borromean": {
+      "2H": "3.7848162777168523108325447017653826975144209326343139945691470942651617394877706",
+      "3H": "7.8681639034272985381555355614061746969876373554757971765588698956830592157865922",
+      "3He": "6.8906629975457239722502535311359269351273604163420696884477433930081159088077377",
+      "4He": "14.324834256070449318002034452689421423344177586059842018182164504059319854597248"
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "qbeta-derived-w-overdetermined-test.witness.json",
+        "sha256": "7c876091448a25197fcde5bb0e6e895436ef843f0495257fd6ee6882df186167",
+        "size_bytes": 7659,
+        "commitSha": "3583ca6b8097380ad2092231188092f48b702686",
+        "scriptCommitSha": "77dc728c01ff35361dac103bf463d253973adb07",
+        "computedAt": "2026-11-22T16:28:43.728118+00:00"
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "evaluates H_{3A} atomic chain traces at the proton-pinned q0 of qbeta-derived-w-overdetermined-test.witness.json"
+}

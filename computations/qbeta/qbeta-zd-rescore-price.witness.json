@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-12T17:58:08.331195+00:00",
-  "commitSha": "f608c9341eaadb546d7cd87e7dbb5e899eb7bf21",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-22T19:37:06.457086+00:00",
+  "commitSha": "cf3e0e16144acca6cc0295709ffa9890343ab610",
   "assertions": [
     {
       "name": "dashboard carries an admissibility annotation",
@@ -47,18 +47,18 @@
       "passed": true
     },
     {
-      "name": "dashboard Q_beta row is the priced z_D figure -- dashboard 4.316e+8 ppb vs priced 4.3157176e+8 ppb",
-      "computed": "true",
+      "name": "dashboard Q_beta row is the priced z_D figure -- dashboard 5.84e+8 ppb vs priced 4.3157176e+8 ppb",
+      "computed": "false",
       "expected": "true",
-      "passed": true
+      "passed": false
     }
   ],
-  "allPassed": true,
-  "durationMs": 3,
+  "allPassed": false,
+  "durationMs": 261,
   "computation": "qbeta-zd-rescore-price",
   "scriptFile": "qbeta_zd_rescore_price_probe.py",
-  "scriptHash": "de694083d560",
-  "scriptCommitSha": "f608c9341eaadb546d7cd87e7dbb5e899eb7bf21",
+  "scriptHash": "8b6e4c2126f1",
+  "scriptCommitSha": "9c3306a5322d34eab6c3cbff9c709c6955b1eea7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -66,14 +66,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
   },
   "invocation": {
     "argv": [
@@ -89,7 +87,7 @@
         "Q_beta_err_ppb": "1678440.4",
         "m_n_err_ppb": "1397.3915",
         "Delta_pn_err_ppb": "1015161.0",
-        "Q_beta_miss": "215267.5",
+        "Q_beta_miss": "345571.4",
         "m_n_miss": "273515.6",
         "Delta_pn_miss": "234123.8"
       },
@@ -98,7 +96,7 @@
         "Q_beta_err_ppb": "4.3157176e+8",
         "m_n_err_ppb": "359350.35",
         "Delta_pn_err_ppb": "2.6105673e+8",
-        "Q_beta_miss": "5.5351e+7",
+        "Q_beta_miss": "8.885562e+7",
         "m_n_miss": "7.033673e+7",
         "Delta_pn_miss": "6.020681e+7"
       },
@@ -107,34 +105,36 @@
         "Q_beta_err_ppb": "1.2470029e+8",
         "m_n_err_ppb": "103832.09",
         "Delta_pn_err_ppb": "75430750.0",
-        "Q_beta_miss": "1.599337e+7",
+        "Q_beta_miss": "2.567434e+7",
         "m_n_miss": "2.032337e+7",
         "Delta_pn_miss": "1.739639e+7"
       }
     },
     "dashboard_current": {
       "Q_beta": {
-        "err_ppb": "4.316e+8",
-        "miss_factor": "5.535e+7"
+        "err_ppb": "5.840e+8",
+        "miss_factor": "1.202e+8"
       },
       "m_n": {
-        "err_ppb": "3.594e+5",
-        "miss_factor": "7.034e+7"
+        "err_ppb": "4.863e+5",
+        "miss_factor": "9.519e+7"
       },
       "Delta_pn": {
-        "err_ppb": "2.611e+8",
-        "miss_factor": "6.021e+7"
+        "err_ppb": "3.533e+8",
+        "miss_factor": "8.147e+7"
       }
     },
     "calibration_ratios": {
-      "m_n": "0.999926",
-      "Delta_pn": "0.999899"
+      "m_n": "0.999938",
+      "Delta_pn": "0.999887"
     },
     "ruled_cell_is_worse_admissible": true,
     "producer_current_with_ruling": true,
-    "rescore_landed_in_dashboard": true,
-    "dashboard_Q_beta_err_ppb_after_rescore": "4.316e+8",
+    "rescore_landed_in_dashboard": false,
+    "dashboard_Q_beta_err_ppb_after_rescore": "5.840e+8",
     "followup_second_rescore_bean": "qou-iagg",
     "ladder_on_zD_base_exists": false
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "re-prices typed cell Q_beta values and the dashboard witness rows against CODATA with m_e; no substrate q is imported or evaluated"
 }

@@ -1,5 +1,3 @@
-## Proof
-
 The claim reduces to a vacuous-truth statement about positive-integer decompositions.
 
 1. Suppose, for contradiction, that a decomposition $1 = n_1 + n_2 + \cdots + n_k$ exists with $k \geq 2$ and $n_i \geq 1$ for all $i = 1, \ldots, k$.

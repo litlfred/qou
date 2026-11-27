@@ -103,7 +103,8 @@ def load_atoms() -> list[dict]:
     binding computation and is not a function of that field's staleness for the
     purposes of the count below, which is over labels and set cardinalities.
     """
-    path = _COMP / "hadron-knot-table.witness.json"
+    # Retired to _deprecated/ by owner ruling 2026-11-22 (#9104); read as the record it is.
+    path = _COMP / "_deprecated" / "hadron-knot-table.witness.json"
     if not path.exists():
         raise FileNotFoundError(f"missing knot dictionary witness: {path}")
     return json.loads(path.read_text())["data"]["atoms"]

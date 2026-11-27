@@ -1,5 +1,3 @@
-**Proposition (weak-sector spectral completeness — Hoefsmit
-$n=6$ form).**
 *Let $R$ be a commutative ring and $A$ an $R$-algebra, and let
 $\sigma_1, \sigma_3, \sigma_5 \in A$ each satisfy the Hecke relation
 $\sigma^2 = (q - q^{-1})\sigma + 1$, with $q$ and $[2]_q = q + q^{-1}$
@@ -210,8 +208,6 @@ the duality.
 
 The Plancherel-weighted form
 $\mathcal{N}_{\rm sym}^{\rm Plancherel} = q^4 (1 + q^2 + q^4)/3$
-from
-the [weak-sector symmetric-channel Plancherel normalization](#conj:weak-symmetric-normalization) (a downstream block that uses this proposition)
 is **not** bar-self-dual and differs from $\mathrm{tr}_{\rm pure}$
 by a factor of $\sim 22$ at $q_0$. It is retained only as a
 legacy/degenerate reference; the cell-content trace is operative.

@@ -12,7 +12,7 @@ export default theorem({
     "limit-transfer",
   ],
   lean: {
-    ref: "qou:QOU.AppendixSurreals.HyperrealTransfer.st_ofSeq_of_tendstoReal",
+    ref: "qou:QOU.Observations.AppendixSurreals.HyperrealTransfer.st_ofSeq_of_tendstoReal",
     validation: "leanok",
   },
   uses: [

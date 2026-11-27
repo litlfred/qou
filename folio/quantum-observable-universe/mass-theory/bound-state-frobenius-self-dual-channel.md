@@ -1,4 +1,3 @@
-**Remark (Frobenius self-dual channel of molecular bound states).**
 *The molecular H$_2$ force-carrier Wedderburn channels $\lambda^{(T_{3,5})} = (3, 1)$ and $\lambda^{(T_{2,9})} = (2, 1, 1)$ act as strict transpose partitions of each other:*
 
 $$

@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -13,7 +13,7 @@
   ],
   "label": "prop:three-halves-structural-factor",
   "kind": "proposition",
-  "title": "Lepton-tower closure structural identities — muon (3+h²)/(2+h²) = [3]_q·[2]_q/[4]_q and tau [6]_q = [2]_q·[3]_q·(1+h²) — proved over generic [CommRing R] with q : Units R, division-free.",
+  "title": "Lepton-tower structural identities: $(3+h^2)/(2+h^2) = [3]_q[2]_q/[4]_q$ and $[6]_q = [2]_q[3]_q(1+h^2)$",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-lepton-bring-surface-h3-3channel"
   ],
@@ -25,7 +25,7 @@
     "phase-3",
     "lean-proved"
   ],
-  "leanRef": "qou:QOU.BraidKnot.ThreeHalvesStructuralFactor.three_halves_factor_eq_q_brackets",
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.ThreeHalvesStructuralFactor.three_halves_factor_eq_q_brackets",
   "text": "three-halves-structural-factor.md",
   "leanSource": "three-halves-structural-factor.lean",
   "provenance": "authored"

@@ -1,6 +1,6 @@
-import QOU.QuantumObservableUniverse.GaugeTheory
-import QOU.QuantumObservableUniverses.QDifferentialGeometry
-import QOU.Archimedean.GroundRing
+import QOU.Core.GaugeTheory
+import QOU.Core.QDifferentialGeometry
+import HeckeTemperleyLieb.GroundRing
 import Mathlib.CategoryTheory.Linear.Basic
 
 

@@ -31,7 +31,7 @@ the per-derivation reading above:
   [Frobenius co-Casimir](#thm:frobenius-codim-universal)
   $T_4 = m_e \cdot \sum_{\lambda \vdash 3A} 1/\dim_q(\lambda)$, a
   formal sum over all partitions, has $m_e$ baked into the formula.
-  Under convention D this is not $m_e \cdot \tau(C_{\dim_q})$, since
+  At $z = q^3/(q^2+1)$ this is not $m_e \cdot \tau(C_{\dim_q})$, since
   $\tau(p_\lambda) = 0$ on every block with three or more rows.  Empirically the bound–free differential vanishes for
   the atomic-braid $\tau$, so $T_4$ contributes no binding at
   this stage (open question — see remarks).
@@ -57,7 +57,7 @@ The assembly is implemented in
 the formal derivation
 as `assemble_per_derivation_weights(Z, N)` with hardcoded
 constants $E_{0,\beta} = 0.78233341$ MeV (CODATA β-decay $Q$),
-$\alpha = m_e \cdot 8G = 3.74446989$ MeV, $m_e = {{ qou.library.codata-2022.electron-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV}$ MeV.
+$\alpha = m_e \cdot 8G = 3.74446989$ MeV, $m_e = {{ folio-assistant-sci.library.codata-2022.electron-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV}$ MeV.
 Across the proton..${}^{9}$Be spectrum (12 atoms):
 
 See [Table 3](#tbl:six-term-per-derivation-weights-table3-data).

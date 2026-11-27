@@ -52,7 +52,12 @@ divisor partitions among the slope pieces. With one slope there is no
 strictly-upper-triangular part and nothing to partition: the Stokes group is
 trivial.
 
-Both say the same thing by different routes.
+**3. The algebraic Stokes sheaf.** Sauloy's algebraic construction gives the
+same fact without discrete summation: by [sauloy2004] Prop 4.1 the Stokes sheaf
+`Λ_I(M₀)` comes from the vector bundle of `End^{>0}(M₀) = ⊕_{μᵢ > μⱼ} Hom(Pⱼ, Pᵢ)`,
+and `F(M₀) ≅ H¹(E_q, Λ_I(M₀))` (Thm 3.18). With one slope that sum is empty.
+
+All three say the same thing by different routes.
 
 ## That C1 is pure isoclinic at `∞` was settled three weeks before I started
 

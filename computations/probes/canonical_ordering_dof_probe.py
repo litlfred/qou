@@ -543,11 +543,15 @@ def part5_production_size(exposed, results: dict, assertions: dict) -> None:
             "spread_pct_of_B_AME": mp.nstr(pct, 17) if B_ame else None,
         })
         bp = _cell(r.get("B_pred_MeV"))
+        # `mpf.__format__` is unavailable in mpmath 1.3.0; render via `mp.nstr`
+        # (and avoid introducing a `float()` cast on the diff).
+        bp_s = mp.nstr(bp, 6).rjust(10) if bp is not None else "       n/a"
+        bame_s = mp.nstr(B_ame, 6).rjust(10) if B_ame else "       n/a"
         print(f"  {name:6s} {Z:3d} {N:3d} "
-              f"{(f'{bp:10.3f}' if bp is not None else '       n/a')} "
-              f"{(f'{B_ame:10.3f}' if B_ame else '       n/a')} "
-              f"{float(dB_lo):9.3f} {float(dB_hi):9.3f} {float(spread):9.3f} "
-              f"{(f'{float(pct):8.2f}' if B_ame else '     n/a')}")
+              f"{bp_s} "
+              f"{bame_s} "
+              f"{mp.nstr(dB_lo, 4):>9s} {mp.nstr(dB_hi, 4):>9s} {mp.nstr(spread, 4):>9s} "
+              f"{(mp.nstr(pct, 4).rjust(8) if B_ame else '     n/a')}")
 
     # whole-table aggregate
     worst = None
@@ -564,7 +568,7 @@ def part5_production_size(exposed, results: dict, assertions: dict) -> None:
     print(f"\n  exposed rows                                  : {len(exposed)}")
     print(f"  rows whose spread exceeds 1 % of B_AME        : {n_moved_1pct}")
     print(f"  largest absolute spread                       : {worst[0]} "
-          f"{float(worst[1]):.3f} MeV")
+          f"{mp.nstr(worst[1], 4)} MeV")
 
     # the single-swap unit, which is what the light isotopes actually see
     print(f"\n  UNIT of the DOF (one block swap, {conv}):")
@@ -651,7 +655,8 @@ def part6_crosscheck(results: dict, assertions: dict) -> None:
     tr_closed = {
         o: sum((y_closed.get(tuple(r["partition"]), mp.mpf(0))
                 * mp.mpf(r["chi_lambda"])
-                for r in breakdown[o]["by_partition"]), mp.mpf(0))
+                for r in breakdown[o]["by_partition"]
+                if r.get("chi_lambda") is not None), mp.mpf(0))
         for o in ORDERINGS
     }
 
@@ -748,7 +753,7 @@ def part7_two_conventions(results: dict, assertions: dict) -> None:
             "dB_MeV_interleaved_minus_sorted": mp.nstr(dB, 8),
         })
         print(f"  {name:6s} {Z:3d} {N:3d} {can[:22]:>22s} {ilv[:26]:>26s} "
-              f"{float(ratio):12.6f} {float(dB):9.3f}")
+              f"{mp.nstr(ratio, 7):>12s} {mp.nstr(dB, 4):>9s}")
 
     print("\n  Under the PRODUCTION trace the corpus's own ground-state ordering is")
     print("  strictly LESS bound than the sorted one at every A >= 4 tested "

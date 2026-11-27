@@ -65,7 +65,8 @@ set_compute_dps()
 Q_PROTON = mp.mpf("1.10997858275138080759166909561")
 Q_MUON_FALSIF = mp.mpf("1.10997859555")     # the falsification-doc muon anchor
 C3_PROTON = mp.mpf("-2.0693")
-C3_MUON = mp.mpf("-2.0097")
+from qbeta.qbeta_utils import c3_extracted_at_q  # noqa: E402
+C3_MUON = c3_extracted_at_q(Q_MUON_FALSIF)
 
 
 def main() -> int:

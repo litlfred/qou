@@ -1,23 +1,24 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-21T02:39:48.761364+00:00",
-  "commitSha": "d34f5008caaabe3ca716f526770e044774652c30",
+  "computedAt": "2026-11-25T11:27:03.736150+00:00",
+  "commitSha": "ec3d0642447888cfcad5acb47a3ae91f5ddaaaeb",
   "assertions": [
     {
-      "name": "deuteron_dressed_subpercent",
-      "computed": false,
-      "expected": true,
-      "passed": false,
-      "source": "exact reduction check: C1 at D must reproduce the +0.29% of probe_d_qbeta_h_invariant"
+      "name": "c1_over_c0_eq_dressing",
+      "computed": "9.0556790788267123675e-72",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-45",
+      "source": "C1/C0 = (1 - h/2) exactly; the sub-percent deuteron assertion was removed by owner ruling 2026-11-25 (qou-xj4p)"
     }
   ],
-  "allPassed": false,
-  "durationMs": 20,
+  "allPassed": true,
+  "durationMs": 14,
   "computation": "probe-d-dressing-cross-a",
   "scriptFile": "probe_d_dressing_cross_a.py",
-  "scriptHash": "3f173960818d",
-  "scriptCommitSha": "8a51be2e1185d397db5b6dafc674326efda41dce",
+  "scriptHash": "9805137e2160",
+  "scriptCommitSha": "d470f854014b095a36eca381dbc28b9761a16dbe",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,15 +26,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.18",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "cvxpy": "absent",
-    "pyhecke_native_build": "930c010e26215e56"
+    "cvxpy": "1.9.3",
+    "pyhecke_native_build": "248f1a54d4f699f2"
   },
   "invocation": {
     "argv": [
@@ -58,11 +59,13 @@
         "Delta_tr": "0.1470466779804084691094947",
         "B_AME_MeV": "2.2245662",
         "C0_undressed_MeV": "0.615534653560354",
-        "C0_err_rel": -0.7233012649565771,
+        "C0_err_rel": "-0.72330126495657713706",
         "C1_flat_MeV": "0.551192724264155",
-        "C1_err_rel": -0.7522246250688538,
+        "C1_err_rel": "-0.75222462506885384646",
         "C2_per_interface_MeV": "0.551192724264155",
-        "C2_err_rel": -0.7522246250688538
+        "C2_err_rel": "-0.75222462506885384646",
+        "C_log_law_MeV": "2.83316257200452",
+        "C_log_law_err_rel": "0.27357979816672741424"
       },
       {
         "atom": "T",
@@ -72,11 +75,13 @@
         "Delta_tr": "0.1129280144363327321132444",
         "B_AME_MeV": "8.4817962",
         "C0_undressed_MeV": "0.472714563824338",
-        "C0_err_rel": -0.9442671631482564,
+        "C0_err_rel": "-0.94426716314825645716",
         "C1_flat_MeV": "0.423301639845255",
-        "C1_err_rel": -0.9500929249107335,
+        "C1_err_rel": "-0.95009292491073351868",
         "C2_per_interface_MeV": "0.379053856191889",
-        "C2_err_rel": -0.9553097189258227
+        "C2_err_rel": "-0.95530971892582274781",
+        "C_log_law_MeV": "6.63094550714688",
+        "C_log_law_err_rel": "-0.21821447358675311021"
       },
       {
         "atom": "3He",
@@ -86,11 +91,13 @@
         "Delta_tr": "0.1295823893450523990445223",
         "B_AME_MeV": "7.71804132",
         "C0_undressed_MeV": "0.542429466809558",
-        "C0_err_rel": -0.9297192844246709,
+        "C0_err_rel": "-0.92971928442467084266",
         "C1_flat_MeV": "0.485729233606175",
-        "C1_err_rel": -0.9370657381235457,
+        "C1_err_rel": "-0.93706573812354567041",
         "C2_per_interface_MeV": "0.434955884250433",
-        "C2_err_rel": -0.9436442659197329
+        "C2_err_rel": "-0.94364426591973294759",
+        "C_log_law_MeV": "4.88387226438596",
+        "C_log_law_err_rel": "-0.36721351157705936511"
       },
       {
         "atom": "4He",
@@ -100,14 +107,16 @@
         "Delta_tr": "0.07817256284216317881784802",
         "B_AME_MeV": "28.2956624",
         "C0_undressed_MeV": "0.327228891178261",
-        "C0_err_rel": -0.9884353691193933,
+        "C0_err_rel": "-0.98843536911939332042",
         "C1_flat_MeV": "0.293023606296115",
-        "C1_err_rel": -0.9896442217130738,
+        "C1_err_rel": "-0.98964422171307377534",
         "C2_per_interface_MeV": "0.234965741320106",
-        "C2_err_rel": -0.9916960508646687
+        "C2_err_rel": "-0.99169605086466872549",
+        "C_log_law_MeV": "8.68165519952831",
+        "C_log_law_err_rel": "-0.69318070463237111618"
       }
     ],
-    "verdict": "D-SPECIFIC SCALE FIX: the (1−h/2) dressing closes D to -75.22% but the best A≥3 candidate error remains 94% — the A≥3 gap is the known saturating-Δtr (extensive) deficit, NOT the scale. Scope (a): constrains scalar dressings on this route only."
+    "verdict": "NEGATIVE (owner ruling 2026-11-25, bean qou-xj4p). On the ruled inputs (convention D, alternating confinement word) the dressed raw-difference candidate C1 misses D by -75.22%; the 2026-07-04 +0.29% held only for the superseded grouped word under convention C. C0-C2 all use the raw difference tr_free*(1-r), which carries the per-nucleon self-trace tr_free. The corpus's live law E_0*log(tr_free/tr_atom) gives D 27.36%, on the single-crossing interface letters that the 2026-11-15 gamma-gamma bond ruling supersedes (a record, not a prediction). Scope (a): constrains these candidates on this route only."
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

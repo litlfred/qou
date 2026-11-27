@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T07:42:55.359139+00:00",
-  "commitSha": "c1412d907c1485375d057862695434af1c6f7843",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T09:34:53.760775+00:00",
+  "commitSha": "1075bfa6d689c02527bc201ec6977363ff234c6d",
   "assertions": [
     {
       "name": "binding_gap_analysis_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 7,
   "computation": "rho-f-volume-binding-gap",
   "scriptFile": "rho_f_volume_binding_gap.py",
-  "scriptHash": "43d76cf866b8",
-  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
+  "scriptHash": "1fa530f62406",
+  "scriptCommitSha": "1075bfa6d689c02527bc201ec6977363ff234c6d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
   },
   "invocation": {
     "argv": [
@@ -135,14 +135,14 @@
         "isotope": "2H",
         "link": "figure-eight (4_1)",
         "rho_over_me": "2.14463936872064",
-        "target_rho_over_me": 2.0,
-        "deviation_pct": "7.23196843603191"
+        "target_rho_over_me": 2,
+        "deviation_pct": "7.23196843603189"
       },
       {
         "isotope": "3He",
         "link": "Borromean (6^3_2)",
         "rho_over_me": "2.06118960302015",
-        "target_rho_over_me": 2.0,
+        "target_rho_over_me": 2,
         "deviation_pct": "3.05948015100732"
       }
     ],
@@ -152,6 +152,18 @@
       "figure-eight (4_1)": "1.03726819177391",
       "three-twist (5_2)": "1.44516741956024",
       "Borromean (6^3_2)": "3.74445965994161"
-    }
-  }
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "ame-2020-binding-energies.witness.json",
+        "sha256": "60e903eeb7c0a231a3f87ab3d8722e8e3cc00086fdc628a92c97594fc4dad225",
+        "size_bytes": 3860,
+        "commitSha": "1075bfa6d689c02527bc201ec6977363ff234c6d",
+        "scriptCommitSha": "1075bfa6d689c02527bc201ec6977363ff234c6d",
+        "computedAt": "2026-11-24T09:34:50.420433+00:00"
+      }
+    ]
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Inverts empirical AME2020 binding energies against SnapPy hyperbolic knot volumes and m_e; no q0 evaluation."
 }

@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-braid-third-order-winding-scope",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:braid-third-order-winding-scope",
+  "kind": "remark",
+  "title": "Scope: the Hopf-spectator gate concerns the link residue, not a braid-level third-order winding number",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-milnor-triple-linking-seifert-prior-art"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-alpha-cluster-activation-gate",
+  "cites": [
+    "references/evans-berger1992"
+  ],
+  "tags": [
+    "milnor-invariant",
+    "braid",
+    "winding-number",
+    "hopf-spectator",
+    "scope"
+  ],
+  "text": "braid-third-order-winding-scope.md",
+  "provenance": "authored"
+}

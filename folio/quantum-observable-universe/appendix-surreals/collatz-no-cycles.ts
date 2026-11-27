@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:collatz-no-cycles",
-  lean: { ref: "qou:QOU.AlgebraicSubstrate.balanced_holonomy_excluded", validation: "leanok" },
+  lean: { ref: "qou:QOU.Core.AlgebraicSubstrate.balanced_holonomy_excluded", validation: "leanok" },
   title:
     "Balanced-holonomy cycle exclusion: coprimality of $[2]_q$ and $[3]_q$",
   uses: [],
@@ -15,6 +15,12 @@ export default proposition({
   ],
   cites: ["collatz1937"],
   authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-11-21",
+      body:
+        "Last paragraph updated: the affine (A!=1) case is settled in Z[q^±1] by laurent_cycle_classification (QOU/AppendixSurreals/collatz_cycle_classification.lean, sorry-free). The only cycles are {0}, {-q^-2} and {q^-1, 1+q^-1}. Convergence (no divergent orbits) stays open in conj:q-collatz. Owner-approved content update (project thread, 2026-11-21).",
+    },
     {
       kind: "refined-framing",
       date: "2026-07-18",

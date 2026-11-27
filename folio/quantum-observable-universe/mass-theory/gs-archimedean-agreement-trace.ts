@@ -6,7 +6,7 @@ export default conjecture({
     "Archimedean agreement: Habiro polynomial trace evaluates to GB mass",
   lean: {
     ref:
-      "qou:QOU.BraidKnot.HabiroResidueSumEquivalence.archimedean_agreement",
+      "qou:QCalculus.HabiroResidueSumEquivalence.archimedean_agreement",
     validation: "not_checked",
   },
   uses: [

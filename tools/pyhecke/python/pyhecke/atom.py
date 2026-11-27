@@ -466,9 +466,21 @@ def reject_float64_q(q, *, allow_float64: bool = False, where: str = "") -> None
 def nucleon_gen_chains(quarks, *, q=None, allow_float64: bool = False):
     """Per-generator crossing chains for one nucleon.
 
-    Derives chains from the quark content, matching build_nucleon_nf:
-      B₃ = (σ₀σ₁⁻¹)³ contributes to both gen 0 and gen 1
-      Quark pairs: (0,1)→gen=0, (0,2)→gen=0, (1,2)→gen=1
+    Derives the 11-crossing multiset from the quark content and partitions it
+    by generator into ``(g0_chain, g1_chain)`` of lengths ``(7, 4)``:
+      * ``B₃ = (σ₀σ₁⁻¹)³`` contributes 3 crossings to ``gen 0`` and 3 to ``gen 1``
+      * Quark pairs: ``(0,1)→gen=0``, ``(0,2)→gen=0``, ``(1,2)→gen=1``
+      * Gluon self-coupling: ``2 × σ₀`` on ``gen 0`` (ILP-derived)
+
+    **Note on ordering vs ``build_nucleon_nf`` (bean ``qou-i3wb``).**
+    ``nucleon_gen_chains`` and ``build_nucleon_nf`` share the same 11-crossing
+    multiset (since ``qou-1qsw`` added the ``2 × σ₀`` gluon self-coupling to
+    ``build_nucleon_nf``), but they do **not** represent the same element of
+    ``H₃(q)`` when ``g0_chain`` and ``g1_chain`` are concatenated: splitting by
+    generator flattens ``B₃ = (σ₀σ₁⁻¹)³`` into ``σ₀³`` on ``g0`` and ``σ₁⁻³``
+    on ``g1`` (the grouped/monotone word; see ``grouped_word_from_chains``),
+    whereas ``build_nucleon_nf`` and ``nucleon_braid_word`` preserve the
+    alternating Borromean order.
 
     Returns (g0_chain, g1_chain) as lists of (c, d) tuples.
 
@@ -1006,6 +1018,13 @@ def build_nucleon_nf(quarks):
     The parity rule constrains k to be even; it does **not** force k > 0
     (k = 0 is PSD too). That the vertex is present at all rests on the SDP
     decomposition, not on parity.
+
+    **Ordering vs ``nucleon_gen_chains`` (bean ``qou-i3wb``).** This builder
+    multiplies ``B₃ = (σ₀σ₁⁻¹)³`` in alternating braid order before the 3 quark
+    and 2 gluon crossings (matching ``nucleon_braid_word``). By contrast,
+    ``nucleon_gen_chains`` partitions the same 11-crossing multiset by
+    generator into ``(g0_chain, g1_chain)`` of lengths ``(7, 4)``, which
+    corresponds to the grouped/monotone ordering ``grouped_word_from_chains``.
     """
     nf = [1.0, 0, 0, 0, 0, 0]
     # B₃ confinement: (σ₀·σ₁⁻¹)³
@@ -1159,6 +1178,97 @@ def build_nucleon_nf_mp(quarks, dps: int = 50):
     return nf
 
 
+
+def build_atom_nf_mp(Z, N, dps: int = 50):
+    """float64-free twin of `build_atom_nf`, at the TRUE substrate q_0.
+
+    Same ground-state ordering, same crossing sequence, same generator per
+    crossing, same colour-weighted p-n offset (`pn_interface_offset`, so the
+    R3 convention is read from the one place that defines it). Only the
+    arithmetic differs: every coefficient is `mpmath.mpf` at `dps` + 10 guard
+    digits, with `h` and the p-n offset evaluated at the 50-digit substrate
+    string rather than the float64 module `q0`.
+
+    The whole body runs inside one `workdps`, so derived coefficients such as
+    `-h/2` are formed at full precision rather than at the ambient `mp.dps`
+    (15 in a bare import), which would truncate them before `hm_mp` sees them.
+
+    Keep in lockstep with `build_atom_nf`: `build_nucleon_nf_mp` drifted from
+    its float twin for four days once (bean qou-1qsw) and nothing noticed.
+    `hadron_knot_table.py` asserts the two agree to float64 resolution on every
+    atom it writes, which is the check that would have caught that.
+    """
+    from pyhecke.gram import _q0_50dps_str  # type: ignore[import-not-found]
+    work = dps + 10
+    with _mp.workdps(work):
+        q = _mp.mpf(_q0_50dps_str())
+        hv = q - 1 / q
+        d_pn = pn_interface_offset(q)
+        one, zero = _mp.mpf(1), _mp.mpf(0)
+        half_h = hv / 2
+        A = Z + N
+        nf = [one] + [zero] * 5
+        if A == 0:
+            return nf
+
+        def mul(nf, c, d, gen):
+            return hm_mp(nf, c, d, gen, work)
+
+        ordering = []
+        pc, nc = 0, 0
+        for k in range(A):
+            if (k % 2 == 0 and pc < Z) or nc >= N:
+                ordering.append('p'); pc += 1
+            else:
+                ordering.append('n'); nc += 1
+
+        for k in range(A):
+            for _ in range(3):
+                nf = mul(nf, one, zero, 0)          # sigma_0
+                nf = mul(nf, one, -hv, 1)           # sigma_1^-1
+            if ordering[k] == 'p':
+                nf = mul(nf, one, zero, 0)          # uu -> sigma_0
+                nf = mul(nf, one, -half_h, 0)       # ud -> sigma_0 mixed
+                nf = mul(nf, one, -half_h, 1)       # ud -> sigma_1 mixed
+            else:
+                nf = mul(nf, one, -half_h, 0)       # ud -> sigma_0 mixed
+                nf = mul(nf, one, -half_h, 0)       # ud -> sigma_0 mixed
+                nf = mul(nf, one, -hv, 1)           # dd -> sigma_1^-1
+            nf = mul(nf, one, zero, 0)              # gluon 1
+            nf = mul(nf, one, zero, 0)              # gluon 2
+            for prev in range(k):
+                ti, tj = ordering[prev], ordering[k]
+                if ti == 'p' and tj == 'p':
+                    nf = mul(nf, one, zero, 0)      # pp: sigma_0
+                elif ti == 'n' and tj == 'n':
+                    nf = mul(nf, one, -hv, 0)       # nn: sigma_0^-1
+                else:
+                    nf = mul(nf, one, d_pn, 0)      # pn: colour-weighted
+        for _ in range(Z):
+            nf = mul(nf, one, -hv, 1)               # pe: sigma_1^-1
+    with _mp.workdps(dps):
+        return [+c for c in nf]
+
+
+def check_frobenius_mp(nf, dps: int = 50):
+    """float64-free twin of `check_frobenius`: Frobenius positivity G.x >= 0.
+
+    `G` is `gram.gram_matrix_mp`, the trace form at the 50-digit substrate q_0.
+    The `-1e-10` slack of the float twin is kept: under convention D the
+    trace form is singular, so a component that is zero in exact arithmetic
+    lands at rounding level and must not be read as a violation.
+    Returns (stable, Gx, violations) with Gx a list of mpf.
+    """
+    from pyhecke.gram import gram_matrix_mp  # type: ignore[import-not-found]
+    with _mp.workdps(dps + 10):
+        G_mp = gram_matrix_mp(dps + 10)
+        x = [_mp.mpf(v) for v in nf]
+        Gx = [_mp.fsum(G_mp[i][j] * x[j] for j in range(6)) for i in range(6)]
+        tol = _mp.mpf("1e-10")
+        violations = [(NF_NAMES[i], Gx[i]) for i in range(6) if Gx[i] < -tol]
+    with _mp.workdps(dps):
+        return len(violations) == 0, [+g for g in Gx], violations
+
 # Precomputed nucleon NFs
 PROTON_NF = build_nucleon_nf(['u', 'u', 'd'])
 
@@ -1173,6 +1283,7 @@ __all__ = [
     "PROTON_NF", "NEUTRON_NF",
     "build_atom_nf_exact", "nf_channel_exact", "check_frobenius",
     "build_atom_nf", "vertex_volume", "nucleon_gen_chains",
+    "build_atom_nf_mp", "check_frobenius_mp",
     "grouped_word_from_chains",
     "atom_gen_chains", "atom_V_full", "_chain_V_full",
     "atom_per_generator_volumes", "build_nucleon_nf",

@@ -1,6 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
-import QOU.Shared.ArchimedeanEval
+import QOU.Core.ArchimedeanEval
 
 /-!
 # QOU.Observations.strangelet_crossing_energy

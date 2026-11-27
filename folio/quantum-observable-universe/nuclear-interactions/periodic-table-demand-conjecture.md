@@ -37,8 +37,8 @@ $$
 **(ii) Shell closure from electron demand.**
 *The atomic noble gases ($Z = 2, 10, 18, 36, 54, 86$) are the values of $Z$ at which the atom $\mathcal{A}(Z, N_*)$ achieves $\mathrm{dem}(\mathcal{A}) = \varnothing$ for the most abundant stable isotope $N_*$.*
 
-**(iii) Drip lines from demand divergence.**
-*The proton (neutron) drip line is the locus in $(Z, N)$-space where $|\mathrm{dem}(\mathcal{N}(Z, N))| \to \infty$ under the addition of one proton (neutron): beyond this line, the Gröbner--Shirshov reduction fails to produce a finite-demand normal form.*
+**(iii) Drip lines from Layer-2 binomial dissociation.**
+*Microscopic braid reduction ([Unique nuclear normal form via Gröbner reduction in $H_n(q)$](#prop:nuclear-groebner-reduction)) terminates with a finite normal form for every braid word. The proton and neutron drip lines arise instead in the macroscopic toric layer ([Physical cluster chamber, drip-line monomer reduction, and the Hoyle triple-alpha bottleneck](#prop:nuclear-chamber-groebner-basis)): crossing the drip wall flips the binomial orientation $x_{(Z, N \pm 1)} \to x_{(Z, N)} x_{p/n}$, so the normal form ceases to be a connected degree-$1$ nuclide monomial ([LP-confined element of $H_3(q)$](#def:lp-confined)) and reduces to a disconnected product $x_{\mathrm{core}} x_{p/n}^k$ (or exceeds the finite hole capacity $u_s + w_s = C_s$ of the active Mayer--Jensen shells).*
 
 ## Inductive verification
 

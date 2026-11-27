@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:fusion-process",
   title: "Fusion process",
-  lean: { ref: "qou:QOU.Interactions.FusionProcessBlock.Process.isRearrangement" },
+  lean: { ref: "qou:QOU.Confinement.Interactions.FusionProcessBlock.Process.isRearrangement" },
   uses: ["def:atom-knot"],
   tags: [
     "fusion",

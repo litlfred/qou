@@ -1,4 +1,3 @@
-**Conjecture (symmetric-crystal pair production).**
 *Let $H_n(R, q)$ be the Iwahori–Hecke algebra of type $A_{n-1}$ with Hecke normal forms $\{T_w\}$. Let $\mathrm{Cryst}(\mathfrak{sl}_n)$ be its associated Kashiwara crystal. Fold the $\mathfrak{sl}_n$ Cartan datum into a Type B Cartan datum along the Dynkin involution $i \mapsto \bar i = n - i$. Equivalently, apply the $\mathbb{Z}/2\mathbb{Z}$ bar-involution $T_w \mapsto \overline{T_w}$ that sends $q \mapsto q^{-1}$ and reverses crossings. The resulting symmetric crystal $\mathrm{Cryst}^{\mathrm{sym}}(\mathfrak{so}_{2n+1})$ admits no Kashiwara lowering operator $\tilde f_i$ as a unimodal step from a bar-invariant source. Every step is a paired operator $(\tilde f_i, \tilde f_{\bar i})$. Consequently, a transition*
 
 $$

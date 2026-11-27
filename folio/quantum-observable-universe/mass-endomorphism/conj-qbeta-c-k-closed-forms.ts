@@ -3,11 +3,11 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:qbeta-c-k-closed-forms",
   lean: {
-    ref: "qou:QOU.BraidKnot.QBetaCKClosedForms",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.QBetaCKClosedForms",
     validation: "not_checked",
   },
   title:
-    "Closed-form conjectures for $c_4, c_5, c_6, c_7$ in the $\\mathfrak{Q}_\\beta$ precision ladder (convention-C frame)",
+    "Closed-form conjectures for $c_4, c_5, c_6, c_7$ in the $\\mathfrak{Q}_\\beta$ precision ladder ($z = \\sqrt{q}/(q+1)$ frame)",
   uses: ["rem:per-block-hopf-jones-absorption-pattern"],
   cites: [
     "khovanov2000",

@@ -1,4 +1,4 @@
-import QOU.Information.CocenterTraceFactor
+import QOU.InformationTheory.CocenterTraceFactor
 
 /-!
 # Hochschild homology: the degree-zero group as the cocenter

@@ -1,7 +1,7 @@
 import { table } from "../../schema/builders";
 export default table({
   label: "tbl:qvalue-observation-table-data",
-  title: "Predicted vs observed $\\beta^-$ $Q$-values, $q$-weighted method (convention C)",
+  title: "Predicted vs observed $\\beta^-$ $Q$-values, $q$-weighted method ($z = q^{1/2}/(q+1)$)",
   uses: ["rem:qvalue-observation"],
   tags: ["extracted-table"],
   authorNotes: [

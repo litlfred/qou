@@ -180,3 +180,20 @@ under $\mathrm{SU}(3)_{\mathrm{c}} \subset G_2$ \cite{gunaydin-gursey1973}.
 Non-self-duality is what the $\mathrm{Sym}^2$ gate consumes, so this is a
 load-bearing citation rather than an attribution: a self-dual $3$ would
 carry a singlet in $\mathrm{Sym}^2$ and fail the gate.
+
+**Prior-art positioning.**
+Deriving three-colour $\mathrm{SU}(3)_{\mathrm{c}}$ — introduced to resolve
+baryon antisymmetry by O. W. Greenberg \cite{greenberg1964} and by M. Y. Han
+and Y. Nambu \cite{han-nambu1965} — as the subgroup of $G_2 = \mathrm{Aut}(\mathbb{O})$
+stabilizing a chosen imaginary octonion unit originates with Murat Günaydin
+and Feza Gürsey \cite{gunaydin-gursey1973}. Subsequent algebraic Standard
+Model constructions embed colour alongside electroweak symmetries inside
+division-algebra tensor products $\mathbb{R}\otimes\mathbb{C}\otimes\mathbb{H}\otimes\mathbb{O}$
+(Geoffrey M. Dixon \cite{dixon1994}; Cohl Furey \cite{furey2016,furey2018})
+or inside the automorphism and structure groups of the exceptional Jordan
+algebra $J_3(\mathbb{O})$ (Ivan Todorov and Michel Dubois-Violette
+\cite{todorov2018,dubois-violette-todorov2018}; Latham Boyle \cite{boyle2020}).
+In the present paper, $\mathbb{O}$ is likewise an external algebraic input:
+the single-fibre $\mathrm{SU}_q(2)$ substrate does not construct $\mathbb{O}$,
+and the $S_4$ genus-degeneration route from Bring's curve to the Klein quartic
+is excluded above.

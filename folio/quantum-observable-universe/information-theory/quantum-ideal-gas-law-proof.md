@@ -1,4 +1,3 @@
-*Proof.*
 The single-particle partition function in a single $S^3$ fibre is
 
 $$

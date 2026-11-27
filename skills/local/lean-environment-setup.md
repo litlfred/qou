@@ -11,6 +11,8 @@ allowed-tools: Read Edit Bash Grep Glob
 
 # Lean Environment Setup
 
+> **CPU & Verification Guard ([`lean-build-hygiene.md`](lean-build-hygiene.md)):** On shared/8-core hosts, ALWAYS export `LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1`, prefix commands with `nice -n 15`, pass `-j 1` to cone scripts, and verify edits via `scripts/lean-overlay-env.sh` rather than bare `lake build`.
+
 ## ⮕ FAST ROUTE — read this BEFORE declaring Lean "unavailable"
 
 > On **any** Lean env/tool failure — `lean_run_code`/LSP "no valid project
@@ -229,7 +231,7 @@ elan / cache hosts are network-restricted.
 > An unconditional `touch` therefore now asserts something **false in the
 > blocking direction**: it tells every agent never to `lake build` on a tree
 > whose traces are in fact present.
-> [`scripts/lake-restore-trace-check.sh`](../../../scripts/lake-restore-trace-check.sh)
+> [`scripts/lake-restore-trace-check.sh`](../../scripts/lake-restore-trace-check.sh)
 > replaces it — it counts **paired** traces (a Lake tree carries many traces
 > belonging to no olean, and the naive total ratio read *192 %* on a 13-olean
 > tree) and sets or clears the marker from that number, so it cannot go stale
@@ -301,8 +303,8 @@ elan / cache hosts are network-restricted.
 > does **not** carry `Mathlib.RepresentationTheory.*` or
 > `RingTheory.SimpleModule.{WedderburnArtin,Isotypic,IsAlgClosed}` (they are
 > outside the QOU dependency closure). The 11 oleans those modules need — for
-> [`QOU/BraidKnot/MaschkeSnSemisimple.lean`](../../../folio/quantum-observable-universe/lean/QOU/BraidKnot/MaschkeSnSemisimple.lean)
-> + [`WedderburnSn.lean`](../../../folio/quantum-observable-universe/lean/QOU/BraidKnot/WedderburnSn.lean)
+> [`QOU/BraidKnot/MaschkeSnSemisimple.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidKnot/MaschkeSnSemisimple.lean)
+> + [`WedderburnSn.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidKnot/WedderburnSn.lean)
 > (and any rep-theory / OV-tower follow-up) — are preserved on the **addon**
 > orphan branch `lake-cache/qou-v4-24-0-repthy-wedderburn` (2.9 MB). Restore it
 > **after** the base restore above:
@@ -327,7 +329,7 @@ elan / cache hosts are network-restricted.
 > > stale, rebuilds, and **evicts** them (bean `02kc`).
 > >
 > > I never met the guard that would have stopped me:
-> > [`lean-olean-cache-seed.sh`](../../../scripts/lean-olean-cache-seed.sh)'s
+> > [`lean-olean-cache-seed.sh`](../../scripts/lean-olean-cache-seed.sh)'s
 > > 90 % trace check refuses exactly this set, but I wrote my own `tar` +
 > > orphan-commit script and so never ran it. **Use the script.** Its refusal is
 > > the answer, not an obstacle to route around — which is the more general
@@ -426,13 +428,13 @@ the same trick as the olean cache: **vendor the toolchain binary onto a
 `lake-cache/toolchain-<slug>` orphan branch, split into git-blob parts.**
 
 - **Restore (firewalled sandbox):**
-  [`scripts/lean-toolchain-cache-restore.sh`](../../../scripts/lean-toolchain-cache-restore.sh)
+  [`scripts/lean-toolchain-cache-restore.sh`](../../scripts/lean-toolchain-cache-restore.sh)
   — fetches `lake-cache/toolchain-<slug>`, reassembles the
   `lean-toolchain.tgz.part*` blobs, extracts into `~/.elan/toolchains/`, and
   verifies `lean --version`. Then run the olean restore above +
-  [`scripts/lean-verify.sh`](../../../scripts/lean-verify.sh) (lean-direct).
+  [`scripts/lean-verify.sh`](../../scripts/lean-verify.sh) (lean-direct).
 - **Seed (once, on a NON-firewalled machine that has the toolchain):**
-  [`scripts/lean-toolchain-cache-seed.sh`](../../../scripts/lean-toolchain-cache-seed.sh)
+  [`scripts/lean-toolchain-cache-seed.sh`](../../scripts/lean-toolchain-cache-seed.sh)
   — tars `~/.elan/toolchains/<name>`, splits into 90 MB parts, pushes the
   orphan branch. Needs no lean-lang.org access, only `push` to origin.
 
@@ -657,7 +659,7 @@ both occur with **no** `insteadOf` redirect set (so they are additive to
    lake never runs ⇒ nothing re-resolves. (Whole-lib builds still need
    lake; then expect the re-clone and budget for it.) Worked example +
    sibling scope map:
-   [`docs/coordination/2026-06-08-lean-cache-architecture.md`](../../../docs/coordination/2026-06-08-lean-cache-architecture.md).
+   [`docs/coordination/2026-06-08-lean-cache-architecture.md`](../../docs/coordination/2026-06-08-lean-cache-architecture.md).
 
 <a id="verify-a-single-file-with-lean-direct"></a>
 > **🟥 VERIFY a single file with `lean`-direct — NEVER `lake build`
@@ -691,14 +693,16 @@ importing it keeps loading the stale shared olean and **appears to compile**.
 Rebuilding into the shared tree is not the answer either — it corrupts the
 restore for every other agent and every later run.
 
-Use [`scripts/lean-overlay-env.sh`](../../../scripts/lean-overlay-env.sh):
+Use [`scripts/lean-overlay-env.sh`](../../scripts/lean-overlay-env.sh):
 
 ```bash
-scripts/lean-overlay-env.sh init                                  # once
-scripts/lean-overlay-env.sh build QOU/SchurWeyl/Edited.lean       # your version
-scripts/lean-overlay-env.sh check /tmp/importer.lean              # now sees it
-scripts/lean-overlay-env.sh selftest                              # invariant holds
+scripts/lean-overlay-env.sh init                                      # once (links all 7 Reservoir libs + QOU)
+scripts/lean-overlay-env.sh build HeckeTemperleyLieb/Edited.lean      # or QOU/<Chapter>/Edited.lean
+scripts/lean-overlay-env.sh check /tmp/importer.lean                  # now sees it
+scripts/lean-overlay-env.sh selftest                                  # invariant holds
 ```
+
+> **Q3 Option 1 Multi-`lean_lib` Layout (`2026-11-24`, `qou-lref`):** All `7 + 1` `[[lean_lib]]` targets (`MathlibExt`, `QCalculus`, `TwistedFrobeniusHopf`, `ToricConicOpt`, `CompactQuantumMetrics`, `HeckeTemperleyLieb`, `BraidKnotOctonion`, and `QOU` with its `12` canonical `QOU/<Chapter>/` subgraphs) share `srcDir = "."` inside `folio/quantum-observable-universe/lean/` and emit `.olean`s under the single root `folio/quantum-observable-universe/lean/.lake/build/lib/lean/`. If rebasing an open branch authored before `qou-lref` (with files under legacy `QOU/<OldSynonym>/`), run `nice -n 10 python3 scripts/apply-lean-reservoir-migration.py --fixup-branch`.
 
 > **🟥 An overlay is NOT a shadowing layer, and a PARTIAL overlay is worse than
 > none.** Lean resolves a module by taking the **first `LEAN_PATH` root that
@@ -885,7 +889,7 @@ Lean file as failing to compile, check whether the missing module is a
 **Do not reach for `lake build`** — it re-resolves the dep graph, rebuilds from
 source through the ~3000-module `import Mathlib.Tactic` closure, and wipes the
 restored oleans. Use
-[`scripts/build-missing-oleans.py`](../../../scripts/build-missing-oleans.py),
+[`scripts/build-missing-oleans.py`](../../scripts/build-missing-oleans.py),
 which walks the import graph from one target and builds bottom-up **only what is
 absent**:
 
@@ -927,7 +931,7 @@ script searches candidate locations for exactly this reason.
 ### 🗄️ PRESERVE THE BUILD — seed/restore the `lake-cache/*` orphan branch
 
 **Every agent rebuilding Mathlib from scratch is the waste to avoid.** Per
-the cache strategy ([`docs/workplans/2026-05-24-lean-cache-strategy.md`](../../../docs/workplans/2026-05-24-lean-cache-strategy.md)),
+the cache strategy ([`docs/workplans/2026-05-24-lean-cache-strategy.md`](../../docs/workplans/2026-05-24-lean-cache-strategy.md)),
 durable cross-container preservation lives on **orphan branches**
 `lake-cache/<package>-<toolchain-slug>` (slug for `v4.24.0` =
 `v4-24-0`). These survive container reclaim (git-versioned), unlike
@@ -1002,7 +1006,7 @@ guaranteed).
 > still an owner decision; agents should use `--branch-suffix test`
 > for experimentation.
 >
-> See [`docs/audits/2026-06-07-lake-cache-only-new-content-design.md`](../../../docs/audits/2026-06-07-lake-cache-only-new-content-design.md)
+> See [`docs/audits/2026-06-07-lake-cache-only-new-content-design.md`](../../docs/audits/2026-06-07-lake-cache-only-new-content-design.md)
 > for the full architecture (strip + xz benchmarks + zstd-shared-dict
 > head-to-head). Bash one-liner below remains documented as the
 > manual / audit path.
@@ -1222,7 +1226,7 @@ git worktree remove --force "$WT"                      # main branch never left
 > load-bearing production branch.
 
 Keep ≤ 8 such branches (owner cap); the
-[`lake-cache-refresh.yml`](../../../.github/workflows/lake-cache-refresh.yml)
+[`lake-cache-refresh.yml`](../../.github/workflows/lake-cache-refresh.yml)
 workflow prunes/refreshes on `lean-toolchain`/`lakefile.toml` changes — if
 CI billing is up, prefer triggering it over an ad-hoc multi-GB agent push.
 
@@ -1236,7 +1240,7 @@ Never silently rebuild Mathlib and throw the oleans away.
 >
 > | you built with | seed route |
 > |---|---|
-> | `lake build` | [`lean-olean-cache-seed.sh`](../../../scripts/lean-olean-cache-seed.sh) → the monolithic `lake-cache/qou-<slug>` branch |
+> | `lake build` | [`lean-olean-cache-seed.sh`](../../scripts/lean-olean-cache-seed.sh) → the monolithic `lake-cache/qou-<slug>` branch |
 > | `lean`-direct (`lean f.lean -o …`) | an **addon** orphan branch via plain `tar` — e.g. the H₄ Wedderburn cone addon above |
 >
 > Why they differ: `lean -o` writes `.olean` + `.ilean` and **no `.trace`**,

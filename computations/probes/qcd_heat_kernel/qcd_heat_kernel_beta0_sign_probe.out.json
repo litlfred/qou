@@ -1,0 +1,285 @@
+{
+  "preregistration": "PREREGISTRATION-heat-kernel-beta0-sign.md @ 58c6511cf52",
+  "convention": "t -> infinity is IR; b = d log g^2_eff / dt; b > 0 antiscreening, b < 0 screening",
+  "C1_channel_ratio_Delta_xi": [
+    {
+      "k": 1,
+      "adjoint": [
+        2,
+        1
+      ],
+      "singlet": [
+        1,
+        1,
+        1
+      ],
+      "mu_adj": "(q**2 + 1)/q",
+      "mu_sing": "(q**2 + 1)/q",
+      "b_C1 = -(mu_adj - mu_sing)": "0",
+      "b_C1 classical": "0",
+      "b_C2 = -(C(adj) - C(sing))": "-3",
+      "prefactor ratio dim_q*f": "2*(q**2 + 1)**2*(q**4 + 1)/q**4"
+    },
+    {
+      "k": 2,
+      "adjoint": [
+        3,
+        2,
+        1
+      ],
+      "singlet": [
+        2,
+        2,
+        2
+      ],
+      "mu_adj": "(q**2 + 1)*(q**4 + 3*q**2 + 1)/q**3",
+      "mu_sing": "2*(q**2 + 1)/q",
+      "b_C1 = -(mu_adj - mu_sing)": "-(q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/q**3",
+      "b_C1 classical": "-6",
+      "b_C2 = -(C(adj) - C(sing))": "-3",
+      "prefactor ratio dim_q*f": "16*(q**2 + 1)**2*(q**4 + 1)/(5*q**4)"
+    },
+    {
+      "k": 3,
+      "adjoint": [
+        4,
+        3,
+        2
+      ],
+      "singlet": [
+        3,
+        3,
+        3
+      ],
+      "mu_adj": "(q**2 + 1)*(q**8 + 2*q**6 + 6*q**4 + 2*q**2 + 1)/q**5",
+      "mu_sing": "(q**2 + 1)*(q**4 + 4*q**2 + 1)/q**3",
+      "b_C1 = -(mu_adj - mu_sing)": "-(q**2 + 1)*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)/q**5",
+      "b_C1 classical": "-12",
+      "b_C2 = -(C(adj) - C(sing))": "-3",
+      "prefactor ratio dim_q*f": "4*(q**2 + 1)**2*(q**4 + 1)/q**4"
+    },
+    {
+      "k": 4,
+      "adjoint": [
+        5,
+        4,
+        3
+      ],
+      "singlet": [
+        4,
+        4,
+        4
+      ],
+      "mu_adj": "(q**2 + 1)*(q**12 + 2*q**10 + 5*q**8 + 9*q**6 + 5*q**4 + 2*q**2 + 1)/q**7",
+      "mu_sing": "(q**2 + 1)*(q**4 - q**3 + 2*q**2 + q + 1)*(q**4 + q**3 + 2*q**2 - q + 1)/q**5",
+      "b_C1 = -(mu_adj - mu_sing)": "-(q**2 + 1)*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**4 - q**2 + 1)/q**7",
+      "b_C1 classical": "-18",
+      "b_C2 = -(C(adj) - C(sing))": "-3",
+      "prefactor ratio dim_q*f": "32*(q**2 + 1)**2*(q**4 + 1)/(7*q**4)"
+    }
+  ],
+  "C1_general_k": "b_C1(k) = -(q^(2k-2) - q^(2-2k))(q^3 - q^(-3)) / (q - q^-1)^2 = -[3]_q [2k-2]_q  (= -6(k-1) at q=1); the [3] is the row-length shift k -> k-3, i.e. N",
+  "C2_channel_ratio_casimir": "b_C2 = -C_A = -3 for every k",
+  "C1prime_F_projection": {
+    "<F, P_lam> up to the constant": {
+      "(3,)": "0",
+      "(2, 1)": "0",
+      "(1, 1, 1)": "0"
+    },
+    "verdict": "F-projection of e^{-t Delta_xi} is 0 for all t, q"
+  },
+  "C3_log_coefficient_half_Tr_R_H2": {
+    "Casimir": {
+      "gluon field (adjoint, dim 8)": "36",
+      "quark field (fundamental, dim 3)": "8/3"
+    },
+    "Delta_xi": {
+      "gluon field (adjoint realised as (2,1), dim 8)": "4*(q**2 + 1)**2/q**2",
+      "quark field (fundamental realised as (1), dim 3)": "0"
+    }
+  },
+  "proton_pin": {
+    "q0": "1.10997858275138080759166909561",
+    "b_C1 k=1": "0",
+    "b_C1 k=2": "-6.12057927791506346151306076719",
+    "b_C1 k=3": "-12.5086658700905155463763159458",
+    "b_C1 k=4": "-19.4434588212477843164424705276",
+    "C3 Delta_xi gluon": "16.1748248341300879576080773427"
+  },
+  "n_f": "cannot enter C1, C2 (fixed channel of fixed n); enters C3 only as an input multiplicity",
+  "checks": [
+    {
+      "check": "Casimir: fundamental = C_F = 4/3",
+      "pass": true
+    },
+    {
+      "check": "Casimir: adjoint (2,1) = C_A = 3",
+      "pass": true
+    },
+    {
+      "check": "Casimir: singlet (1,1,1) = 0",
+      "pass": true
+    },
+    {
+      "check": "dim_q adjoint at q=1 is 8",
+      "pass": true
+    },
+    {
+      "check": "k=1: classical limit of C1 matches",
+      "pass": true
+    },
+    {
+      "check": "k=1: classical C1 = -6(k-1)",
+      "pass": true
+    },
+    {
+      "check": "k=1: C2 = -C_A = -3",
+      "pass": true
+    },
+    {
+      "check": "k=2: classical limit of C1 matches",
+      "pass": true
+    },
+    {
+      "check": "k=2: classical C1 = -6(k-1)",
+      "pass": true
+    },
+    {
+      "check": "k=2: C2 = -C_A = -3",
+      "pass": true
+    },
+    {
+      "check": "k=3: classical limit of C1 matches",
+      "pass": true
+    },
+    {
+      "check": "k=3: classical C1 = -6(k-1)",
+      "pass": true
+    },
+    {
+      "check": "k=3: C2 = -C_A = -3",
+      "pass": true
+    },
+    {
+      "check": "k=4: classical limit of C1 matches",
+      "pass": true
+    },
+    {
+      "check": "k=4: classical C1 = -6(k-1)",
+      "pass": true
+    },
+    {
+      "check": "k=4: C2 = -C_A = -3",
+      "pass": true
+    },
+    {
+      "check": "C1 k=1 is exactly zero (pre-registered)",
+      "pass": true
+    },
+    {
+      "check": "closed form at k=1",
+      "pass": true
+    },
+    {
+      "check": "closed form at k=2",
+      "pass": true
+    },
+    {
+      "check": "closed form at k=3",
+      "pass": true
+    },
+    {
+      "check": "closed form at k=4",
+      "pass": true
+    },
+    {
+      "check": "factorisation of the C1 numerator",
+      "pass": true
+    },
+    {
+      "check": "post-hoc: b_C1(k=1) = -[3]_q[2k-2]_q",
+      "pass": true
+    },
+    {
+      "check": "post-hoc: b_C1(k=2) = -[3]_q[2k-2]_q",
+      "pass": true
+    },
+    {
+      "check": "post-hoc: b_C1(k=3) = -[3]_q[2k-2]_q",
+      "pass": true
+    },
+    {
+      "check": "post-hoc: b_C1(k=4) = -[3]_q[2k-2]_q",
+      "pass": true
+    },
+    {
+      "check": "Delta_xi not an sl3 Casimir: mu(k+1,k,k-1)-mu(k,k,k) depends on k",
+      "pass": true
+    },
+    {
+      "check": "Hecke relation sigma1",
+      "pass": true
+    },
+    {
+      "check": "braid relation",
+      "pass": true
+    },
+    {
+      "check": "L2 inverse",
+      "pass": true
+    },
+    {
+      "check": "rank of isotypic (3,)",
+      "pass": true
+    },
+    {
+      "check": "Delta = mu on isotypic (3,)",
+      "pass": true
+    },
+    {
+      "check": "rank of isotypic (2, 1)",
+      "pass": true
+    },
+    {
+      "check": "Delta = mu on isotypic (2, 1)",
+      "pass": true
+    },
+    {
+      "check": "rank of isotypic (1, 1, 1)",
+      "pass": true
+    },
+    {
+      "check": "Delta = mu on isotypic (1, 1, 1)",
+      "pass": true
+    },
+    {
+      "check": "projectors sum to 1",
+      "pass": true
+    },
+    {
+      "check": "C1': F-component of P(3,) is zero",
+      "pass": true
+    },
+    {
+      "check": "C1': F-component of P(2, 1) is zero",
+      "pass": true
+    },
+    {
+      "check": "C1': F-component of P(1, 1, 1) is zero",
+      "pass": true
+    },
+    {
+      "check": "C3: quark Delta_xi eigenvalue is 0 (one box, content 0)",
+      "pass": true
+    },
+    {
+      "check": "C3: Casimir entries both > 0",
+      "pass": true
+    },
+    {
+      "check": "C1 k=2 negative at q0",
+      "pass": true
+    }
+  ],
+  "checks_passed": "43/43"
+}

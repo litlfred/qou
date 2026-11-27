@@ -16,7 +16,7 @@ export default example({
     "cobalt-60",
     "carbon-14",
   ],
-  lean: { ref: "qou:QOU.Archimedean.HalfLifeVerification.all_six_agree",
+  lean: { ref: "qou:QOU.MassTheory.Archimedean.HalfLifeVerification.all_six_agree",
     validation: "not_checked",
   },
   uses: ["rem:hadron-half-life-regimes"],

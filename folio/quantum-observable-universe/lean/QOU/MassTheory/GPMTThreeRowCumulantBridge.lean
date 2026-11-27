@@ -64,12 +64,12 @@ operator on a general 3-nucleon state `(q₁, q₂, q₃)`. Under the global iso
 
 ## Derivation Seams & Scope (Inherited from `ThreeRowExtensiveCumulant.lean`)
 
-* **`sRow3` table seam:** Per `QOU.MassTheory.ThreeRowExtensiveCumulant`, `sRow3` is a
-  concrete integer table (`3 ↦ -1, 4 ↦ -2, 5 ↦ 4, _ ↦ 0`); the hook-length sum identity
-  `sRow3 k = ∑_{λ ⊢ k, ℓ(λ) ≥ 3} (-1)^{n(λ)} f^λ` is verified in the companion Python
-  probe (`computations/deltalambda/threerow_extensive_cumulant_forward_probe.py`), not
-  formalized via SYT combinatorics in Lean. Every theorem in Section 2 is therefore
-  Lean-proved for the table `sRow3`.
+* **`sRow3` table seam (closed in `ThreeRowSpringerSYTDerivation.lean`, `qou-jkmh`):**
+  `QOU.MassTheory.ThreeRowExtensiveCumulant` enters `sRow3` as a concrete integer table
+  (`3 ↦ -1, 4 ↦ -2, 5 ↦ 4, _ ↦ 0`), and `QOU.MassTheory.ThreeRowSpringerSYTDerivation`
+  (`sRow3Derived_eq_sRow3`) proves sorry-free from `dtEulerG`, `nStatList`, and the
+  Frame–Robinson–Thrall hook-length bridge `dimSYT_eq_dimHLF` that
+  `sRow3 k = ∑_{λ ⊢ k, ℓ(λ) ≥ 3} (-1)^{n(λ)} f^λ` for all `k ≤ 5`.
 * **Sign-window inversion vs. magnitude ratio:** Uniform renormalization by the `H_3(q)`
   GPMT modified quantum dimension `dMod111 q < 0` inverts the table's `(-, +)` sign
   pattern into the physical `(+, -)` nuclear binding sign window (`mu3GPMT q > 0`,

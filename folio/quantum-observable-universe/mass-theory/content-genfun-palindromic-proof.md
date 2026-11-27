@@ -1,5 +1,3 @@
-**Proof.**
-
 Partition conjugation $\lambda \mapsto \lambda'$ is an involution of the set of
 partitions of $n$. It is weight-preserving, $f^{\lambda'} = f^\lambda$ (the standard
 tableaux of $\lambda'$ are the transposes of those of $\lambda$), and content-reversing,

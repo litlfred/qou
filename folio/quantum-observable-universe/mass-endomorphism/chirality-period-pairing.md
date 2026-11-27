@@ -1,8 +1,6 @@
-**Remark (chirality structure on Goncharov period classes via the bar involution).**
+The bar involution $* \colon q \mapsto q^{-1}$ on $H_n(q)$ (equivalently, the Hecke algebra antipode $*(\sigma_i) = \sigma_i^{-1}$) acts on the central primitive idempotents $e_\lambda$ by partition conjugation: $*(e_\lambda) = e_{\lambda'}$, where $\lambda'$ denotes the transposed Young diagram ([Explicit central primitive idempotents $e_\lambda$ via Jucys–Murphy elements](#prop:explicit-central-idempotent) Cross-check 3-4).
 
-The bar involution $* \colon q \mapsto q^{-1}$ on $H_n(q)$ (equivalently, the Hecke algebra antipode $*(\sigma_i) = \sigma_i^{-1}$) acts on the central primitive idempotents $e_\lambda$ by partition conjugation: $*(e_\lambda) = e_{\lambda'}$, where $\lambda'$ denotes the transposed Young diagram ([Explicit central primitive idempotents $e_\lambda$ via Murphy elements](#prop:explicit-central-idempotent) Cross-check 3-4).
-
-Under [GS-depth $\leftrightarrow$ Goncharov period-depth correspondence](#conj:gb-depth-period-correspondence) and [Iwahori--Hecke algebra $H_n(q)$ is a Baer-*-ring at generic $q$](#prop:hecke-baer-star-generic), this categorifies the chirality structure of hyperbolic $3$-manifold volumes:
+Conditional on the conjectural correspondence between Gröbner--Shirshov filtration depth and Goncharov period depth, together with [Iwahori--Hecke algebra $H_n(q)$ is a Baer-*-ring at generic $q$](#prop:hecke-baer-star-generic), this bar action categorifies the chirality structure of hyperbolic $3$-manifold volumes:
 
 | Cell-class | Bar action on $e_\lambda$ | Knot type | Period type |
 |---|---|---|---|

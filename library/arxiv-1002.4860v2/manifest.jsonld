@@ -23,6 +23,18 @@
     "library/arxiv-1002.4860v2/sections/sec-008"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL — We develop a diagrammatic formalism for calculating the Alexander polynomial of the closure of a braid as a state-sum.\n\n**A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL**\n\n*SAMSON BLACK*\n\n8 pp, 10 sections.\n\n**Abstract.** We develop a diagrammatic formalism for calculating the Alexander polynomial of the closure of a braid as a state-sum. Our main tools are the Markov trace formulas for the HOMFLY-PT polynomial and Young’s semi-normal repre- sentations of the Iwahori-Hecke algebras of type A.\n\n**Outline.** Front matter; 1 Introduction; 2 Semi-normal representations of Hecke algebra; 2.1 Braid group; 2.2 Iwahori-Hecke algebra; 2.3 Seminormal representations; 2.5 Sign sequences and hook partitions; 3 Construction; 4 Example; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

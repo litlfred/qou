@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:s4-s3-half-symmetric-projection",
   title:
     "$S_3$-trivial share of the half-symmetric part of $H_4$ under $S_4 \\downarrow S_3$ branching",
-  lean: { ref: "qou:QOU.BraidsAndKnots.s4_s3_half_symmetric_projection" },
+  lean: { ref: "qou:BraidKnotOctonion.S4S3HalfSymmetricProjection.s4_s3_half_symmetric_projection" },
   uses: [],
   cites: [
     "adams1985hyperbolic",

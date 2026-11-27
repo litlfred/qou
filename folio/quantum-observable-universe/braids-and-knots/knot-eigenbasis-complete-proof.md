@@ -1,4 +1,3 @@
-
 *Part (1).*  When $q$ is not a root of unity, the Iwahori--Hecke algebra
 $H_n(R, q)$ is isomorphic to $\mathbb{C}[S_n]$ as an abstract algebra
 (Jimbo's theorem), hence semisimple.  By $q$-Schur--Weyl duality

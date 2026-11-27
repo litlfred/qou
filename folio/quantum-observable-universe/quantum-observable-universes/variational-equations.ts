@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:variational-equations",
-  lean: { ref: "qou:QOU.variational_equations",
+  lean: { ref: "qou:QOU.Core.variational_equations",
     validation: "not_checked",
   },
   title: "Variational equations of the categorical action",

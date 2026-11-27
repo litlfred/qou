@@ -1,10 +1,10 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T04:24:32.598106+00:00",
+  "computedAt": "2026-11-24T13:49:48.024549+00:00",
   "computation": "qbeta-sdeformed-leading-bound",
   "scriptFile": "qbeta_sdeformed_leading_bound_probe.py",
-  "commitSha": "81f9832e2f9a05922ec175646733e69a0dd72b71",
+  "commitSha": "acb646cc6fe482bb452007b31eba2d1d358cefe0",
   "contentBlock": "conj:binding-qbeta-complex-volume",
   "discipline": "scope-(a) magnitude insufficiency of the LEADING NZ form (invariant Im\u00b2u\u22650, \u03ba>0); NOT a scope-(b) exclusion of the channel identity S=Im \ud835\udd19_q (the full quantum complex volume carries the O(u\u2074) tail dropped here). Not a derivation of S = Q_\u03b2/E\u2080 (CAL-2 input; Subgoal-2 open). Anti-fit: \u03ba=\u221a3/4 and Re u=ln q\u2080 derived (A-poly cusp modulus; meridian-holonomy boost); S_\u03bc, S_p cited measurements; no coefficient tuned; no keystone instance fabricated; S not axiomatized; no c_k wired.",
   "description": "Leading-form magnitude bound Im \ud835\udd19\u2084\u2081 \u2264 \u03ba\u00b7Re\u00b2u decouples the open u(q\u2080) into two orthogonal sub-obstructions: muon magnitude (unreachable by leading form + real spin, needs O(u\u2074) tail/enlarged Re u) and proton sign flip (a spin datum). Companion Lean FigureEightComplexVolume.imV\u2084\u2081_le_cuspModulus_reSq / _leading_unreachable_of_lt.",
@@ -70,11 +70,10 @@
     }
   ],
   "allPassed": true,
-  "durationSeconds": 0.000778,
-  "scriptHash": "2e9655db9b24",
-  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "durationSeconds": 0.000561,
+  "scriptHash": "8f1154049e62",
+  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
   "durationMs": 0,
   "q0Anchor": "proton",
-  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

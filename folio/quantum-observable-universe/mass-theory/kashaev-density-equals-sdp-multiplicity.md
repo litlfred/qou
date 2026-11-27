@@ -1,5 +1,5 @@
-**Conjecture (conditional).**
-Under the [Kashaev volume conjecture](#conj:kashaev-volume-conjecture)
+**(Conditional.)**
+Under the [Kashaev–Murakami–Murakami volume conjecture](#conj:kashaev-volume-conjecture)
 applied to an atomic Hecke element $T_w$ with `Markov closure` knot/link
 $K_w$, the multiplicative density prefactor
 $\rho_F \in \mathbb{Z}_{>0}$ in the binding-energy formula
@@ -79,6 +79,20 @@ $H_n(q) \cong \bigoplus_{\lambda \vdash n} \mathrm{End}(V_\lambda)$.
 The agreement with the Kashaev density factor identifies
 $\rho_F$ as such a count.
 
+The published MacMahon-type statement about the colored Jones function
+is the Garoufalidis--Loebl formula. With $\mathrm{Ferm}(A) =
+\sum_{J} (-1)^{|J|} \det_q(A_J)$ the alternating sum of quantum minors,
+which reduces to $\det(I - A)$ at $q = 1$ where the MacMahon Master
+Theorem inverts it as $\sum_n \mathrm{tr}\,S^n(A)$, every knot diagram
+$K$ has an arc-graph matrix $B'_K$ with
+$J_n(K,q) = q^{\delta(K,n)} / \mathrm{Ferm}(B'_K)$, $n$-evaluated
+\cite[§1, Def. 1.4 and Thm. 2]{garoufalidis-loebl2005}. That theorem
+expresses $J_n$ as the inverse of a non-commutative fermionic partition
+function; it is not a statement about Wedderburn multiplicities of
+$H_n(q)$, so the identification of $\nu_{\mathrm{SDP}}$ as a
+partition-algebra count above is made here and is not supplied by
+it.
+
 ## Conditional structure
 
 The conjecture is **conditional on the joint-tower SDP completeness**:
@@ -146,7 +160,7 @@ removing the third unnamed $\rho$.
 
 ## Cross-references
 
-- Underlying Kashaev volume conjecture:
+- Underlying Kashaev–Murakami–Murakami volume conjecture:
   [`kashaev-volume-conjecture`](kashaev-volume-conjecture.md)
 - $\nu_{\mathrm{SDP}}$ algorithmic definition:
   [`atom-knot-mass-derivation`](atom-knot-mass-derivation.md)

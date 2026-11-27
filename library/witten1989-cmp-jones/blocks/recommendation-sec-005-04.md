@@ -1,0 +1,1 @@
+It must be understood that a Wilson line in the trivial representation is equal to 1, so the vector v0 obtained by this definition is the same as the vector χ which in the last subsection was obtained by a path integral on U with no Wilson lines: X = »o (4-24) A diffeomorphism K of Σ is represented in the Verlinde basis by an explicit matrix K^ defined by the formula

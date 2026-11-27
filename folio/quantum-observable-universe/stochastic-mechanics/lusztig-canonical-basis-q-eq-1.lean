@@ -1,4 +1,4 @@
-import QOU.BraidKnot.KazhdanLusztigClassicalLimit
+import QOU.BraidsAndKnots.KazhdanLusztigClassicalLimit
 
 /-!
 # `conj:lusztig-canonical-basis-q-eq-1` — the conditionality is now in the type

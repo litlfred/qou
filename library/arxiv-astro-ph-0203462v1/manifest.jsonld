@@ -27,6 +27,18 @@
     "library/arxiv-astro-ph-0203462v1/sections/sec-012"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "arXiv:astro-ph/0203462v1 26 Mar 2002 — We present a high-resolution (R=75,000, S/N ∼500) spectroscopic analysis of the bright (V=11.7), extreme halo giant CS 31082-001 ([Fe/H] = −2.9), obtained in an\n\n**arXiv:astro-ph/0203462v1 26 Mar 2002**\n\n*The extreme r-element rich, iron-poor halo giant CS 31082-001*\n\n20 pp, 14 sections.\n\n**Abstract.** We present a high-resolution (R=75,000, S/N ∼500) spectroscopic analysis of the bright (V=11.7), extreme halo giant CS 31082-001 ([Fe/H] = −2.9), obtained in an ESO-VLT Large Programme dedicated to very metal-poor stars. We ﬁnd CS 31082-001 to be extremely rich in r-process elements, comparable in this respect only to the similarly metal-poor, but carbon-enriched, giant CS 22892-052 . As a result of the extreme overabundance of the heaviest r-process elements, and negligible blending from CH and CN molecular lines, a reliable measurement is obtained of the U II line at 386 nm, for the ﬁrst time in a halo star, along with numerous lines of Th II, as well as lines of 25 other r-process elements. Abundance estimates for a total of 43 elements (44 counting Hydrogen) are reported in CS 31082-001 , almost half of the entire periodic table.\n\n**Outline.** Front matter; 1 Introduction; 2 Observations and reductions; 3 Abundance analysis, and derived abundances o; 3.1 Model atmosphere and stellar parameters; 3.2 Abundances of light and iron-peak elements; 4 Neutron-capture elements; 4.1 Linelists and physical data; 4.2 Error budget; 4.3 The lighter elements, 38$\\leq$Z$\\leq$48; 4.4 The second-peak elements, 56$\\leq$Z$\\leq$7; 4.5 The third-peak elements and the actinides,; 5 Is the r-process universal ?; 7 Conclusions and future work",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {

@@ -6,7 +6,7 @@ export default remark({
   title:
     "Φ$_q$ tower equals $\\rho_q \\cdot \\sum_S \\mathrm{Vol}(K_S)$ (archimedean bridge)",
   lean: {
-    ref: "qou:QOU.PhiQJSJ.bridge",
+    ref: "qou:QOU.BraidsAndKnots.PhiQJSJ.bridge",
     validation: "not_checked",
   },
   uses: [

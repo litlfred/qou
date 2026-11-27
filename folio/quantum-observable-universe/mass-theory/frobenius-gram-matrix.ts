@@ -2,9 +2,9 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:frobenius-gram-matrix",
-  lean: { ref: "qou:QOU.Archimedean.frobenius_gram_matrix", validation: "not_checked" },
+  lean: { ref: "qou:TwistedFrobeniusHopf.frobenius_gram_matrix", validation: "not_checked" },
   title: "Frobenius Gram matrix and dual construction in $H_3(q)$",
-  uses: [],
+  uses: ["prop:corrected-markov-trace"],
   tags: [
     "gram-matrix",
     "frobenius-dual",

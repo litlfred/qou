@@ -83,3 +83,28 @@ bun run scripts/interprets-graph-questions.ts
 
 Prints both this list and the editorial cycles, with the field carrying each
 leg.
+
+---
+
+## 2026-11-24 update (`qou-0sq1` live sweep and uncontended manifest fix)
+
+Re-running `bun run scripts/interprets-graph-questions.ts` on `origin/main` (`acb646cc6fe`) measured **9** forward-pointing `interprets` edges before this update and **8** after:
+
+1. **Two of the original 2026-08-16 cross-section edges were already resolved on `main`:**
+   - `rem:w-boson-mass-discrepancy -> prop:local-substrate-q` (`observations`)
+   - `rem:mass-tower-syt-cells -> rem:mass-endomorphism-jet-tower` (`mass-theory`)
+
+2. **One new intra-section listing-order slip was found and fixed in this update (`9 -> 8`):**
+   - `rem:quaternion-so3-motivation` ("From $\mathrm{SU}(2)$ to quaternions via $\mathrm{SO}(3)$", `interprets: "def:su2-generators"`) and `def:so3-generators` ("$\mathrm{SO}(3)$ generators", `uses: ["def:su2-generators"]`) both sat immediately before `def:su2-generators` ("$\mathrm{SU}(2)$ generators of $\mathrm{Dic}_3$") inside the same 6-block section `sec:su2-so3` of `folio/quantum-observable-universe/braids-and-knots/braids-and-knots.ts` (lines 165–172), left over from when `su2-generators` returned to `sec:su2-so3` at the tail of `blocks`.
+   - Moving `"su2-generators"` up to precede `"so3-generators"` and `"quaternion-so3-motivation"` within `sec:su2-so3` removes **both** the forward `interprets` edge (`rem:quaternion-so3-motivation -> def:su2-generators`) **and** the intra-section forward `uses` edge (`def:so3-generators -> def:su2-generators`), with `0` new forward references and `0` new editorial cycles (`editorial cycles: 1 -> 1`).
+
+3. **One new cross-section edge entered on `2026-11-20` (`rem:transcendental-accounting -> rem:algebraic-core-survives` in `appendix-surreals`, gap 97) and joins the author-owned cross-section set:**
+   - `rem:transcendental-accounting` ("Transcendental-accounting ledger: every period in the paper, indexed by Goncharov depth", `appendix-surreals` `sec:surreal-transcendental-discharge`, line 28) acquired `interprets: "rem:algebraic-core-survives"` during the reading-order drain (`qou-d4kh`), while `rem:algebraic-core-survives` ("The algebraic core of QOU lifts to any real-closed field") sits nine sections later in `sec:surreals-archimedean-algebraic` (line 213).
+   - **Why neither mechanical relocation is zero-regression without an editorial edit:**
+     - Moving `rem:algebraic-core-survives` up to `sec:surreal-survives-breaks` (line 22) would create a new forward markdown link from `algebraic-core-survives.md` line 133 (`#conj:classical-limit-stpart`) to `sec:standard-part-classical-limits` (line 92).
+     - Moving `rem:transcendental-accounting` down to `sec:surreals-archimedean-algebraic` (after line 213) would push it past `rem:k-theory-period-rosetta` (line 30, `interprets: "rem:transcendental-accounting"`) and `rem:b1-soft-sharpness-significance` (line 47, which links `#rem:transcendental-accounting`).
+   - **Live 8 remaining cross-section edges (all author-owned structural ordering choices):**
+     - **Group 1 (`predicted-spectra` §13 $\to$ §14, 3 edges, gaps 21/17/16):** `rem:groebner-nf-computation`, `rem:kummer-shell-closure`, `rem:nf-computation-strategy` $\to$ `prop:shell-closure-normal-form`.
+     - **Group 2 (`observations` §3 $\to$ §17, 1 edge, gap 164):** `rem:q-deformed-double-slit` $\to$ `prop:local-substrate-q`.
+     - **Group 3 (`brings-surface` & `information-theory`, 3 edges, gaps 60/12/7):** `rem:archimedean-calabi-yau -> thm:descartes`, `ex:brings-surface -> def:brings-surface`, `rem:information-paradox-incompleteness -> rem:hawking-radiation`.
+     - **Group 4 (`appendix-surreals` §1.1 $\to$ §11, 1 edge, gap 97):** `rem:transcendental-accounting -> rem:algebraic-core-survives`.

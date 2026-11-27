@@ -3,7 +3,7 @@ be a vortex with braid representative $\beta \in B_n$, and let
 $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ be its Hecke mass element
 ([Hecke mass element](#def:hecke-mass-element)).
 
-**Conjecture.**  The categorical mass
+The categorical mass
 ([mass identity](#def:mass-identity)) equals the norm of the Markov
 trace of the Hecke mass element:
 

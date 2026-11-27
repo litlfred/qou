@@ -1,5 +1,3 @@
-## Proof
-
 1. **The pre-$\tau$ object.** By definition
    $\mathrm{Vol}_q(\beta) = \mathrm{tr}_M(\beta)$. The
    [cleared mass trace](#prop:full-pole-structure-mass-trace) writes it as a

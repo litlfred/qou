@@ -6,7 +6,7 @@ dimension $3$. What that decomposition leaves open is which summand a given pair
 nucleons draws on. Flavour supplies the answer, because flavour is a representation
 too.
 
-**Definition.** A *nucleon pair* is one of the four channels
+A *nucleon pair* is one of the four channels
 
 $$
   p \;\in\; \{\, pp,\; nn,\; pn_{\mathrm{sym}},\; pn_{\mathrm{alt}} \,\},

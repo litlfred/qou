@@ -4,12 +4,12 @@ export default conjecture({
   label: "conj:cl3-zeta5-geometric-realization",
   title:
     "Geometric realisation of $\\mathrm{Cl}_3(2\\pi/5)$ as a Bring-natural depth-3 invariant",
-  lean: { ref: "qou:QOU.BraidKnot.Cl3Zeta5GeometricRealization", validation: "stub" },
+  lean: { ref: "qou:BraidKnotOctonion.Cl3Zeta5GeometricRealization", validation: "stub" },
   uses: [
     "conj:joint-galois-braid-action",
     "rem:transcendental-accounting",
   ],
-  cites: ["bloch2000", "kontsevich1995", "zagier1986"],
+  cites: ["bloch2000", "kontsevich1995", "zagier1986", "zhao2010-standard-relations"],
   tags: [
     "tier:S",
     "depth-3",

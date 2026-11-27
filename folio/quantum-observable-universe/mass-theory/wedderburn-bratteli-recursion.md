@@ -1,4 +1,4 @@
-*Under convention D ($z = q^3/(q^2+1)$) the Jones–Markov weight of every shape with three or more rows is $0$, and on the two-row shape $(a, b)$, $a \geq b$, it is*
+*At the Markov parameter $z = q^3/(q^2+1)$, the Jones–Markov weight of every shape with three or more rows is $0$, and on the two-row shape $(a, b)$, $a \geq b$, it is*
 
 $$
   y_{(a,b)}

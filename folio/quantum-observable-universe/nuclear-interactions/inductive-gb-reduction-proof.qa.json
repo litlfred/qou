@@ -1134,6 +1134,38 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "major",
         "evidence": "The bound C(A−1,⌊(A−1)/2⌋) is never proved, and the proof's own table contradicts it (A=4: ≤8 vs 3; A=8: ≤32 vs 35; A=16: ≤128 vs 6435). With C_nn=σ⁻¹=σ−h and C_pn=σ−h/2 (`generator-volume-decomposition.lean:53-59`), exactly: C_nn²=−h·C_nn+1, not +h (`:7`); C_pn²=1+h²/4, not h·C_pn+1−h²/4 (`:15`)"
+      },
+      {
+        "field_hash": {
+          "md": "98e8ad2a3f8f",
+          "ts": "d1f9c31ce13c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:13:37.710Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "Full review 2026-11-21. The typed-crossing squares are now correct (checked): C_nn^2 = -h C_nn + 1 for C_nn = s^-1, and C_pn^2 = 1 + h^2/4 for C_pn = s - h/2. The proof now states that the binomial bound and the reduction to the tabulated NF sizes (<=2, 8, 32, 128) are an open combinatorial step. That is honest, but it means the proof does not prove the proposition's bound. The table still lists the sizes, and A=8, 16 still exceed or contradict C(A-1, floor((A-1)/2)) as noted earlier. Needs demotion to a conjecture, or a proof of the bound."
+      },
+      {
+        "field_hash": {
+          "md": "98e8ad2a3f8f",
+          "ts": "d1f9c31ce13c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:13:45.835Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "Full review 2026-11-21 (supersedes the entry just above, which misquoted which table rows conflict). The typed-crossing squares are now correct (checked): C_nn^2 = -h C_nn + 1 for C_nn = s^-1, and C_pn^2 = 1 + h^2/4 for C_pn = s - h/2. The proof now states that the binomial bound and the collapse to the tabulated NF sizes are an open combinatorial step. That is honest, but it means the proof does not prove the proposition's bound. The table and the binomial C(A-1, floor((A-1)/2)) still disagree at A=4 (table <=8 vs bound 3). Needs demotion to a conjecture, or a proof of the bound."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1984,6 +2016,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:56:10.114Z",
+  "updated_at": "2026-11-21T08:13:45.835Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -19,6 +19,7 @@ export default conjecture({
     "ariki1996",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): ([prop:graded-trace-residue-split](#prop:graded-trace-residue-split))" },
     {
       kind: "status",
       date: "2026-11-21",

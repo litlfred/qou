@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:crystal-graph-realization",
   title:
     "Hecke normal forms realise crystal highest-weight vectors",
-  lean: { ref: "qou:QOU.BraidKnot.CrystalGraphRealization", validation: "stub" },
+  lean: { ref: "qou:BraidKnotOctonion.CrystalGraphRealization", validation: "stub" },
   uses: [
     "def:hecke-normal-form",
   ],
@@ -12,8 +12,6 @@ export default conjecture({
     "brundankleshchev2009",
     "kashiwara1991",
     "lecouvey2007",
-    "khovanovlauda2009",
-    "marsh2000",
   ],
   tags: [
     "tier:S",
@@ -23,5 +21,13 @@ export default conjecture({
     "klr",
     "computational-shortcut",
     "audit-flag-13a",
+  ],
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`): `2026-09-04-conjecture-carriers-round-two.lean` (`C1`) inhabits `QOU.BraidKnot.CrystalGraphRealization` on `PUnit` with `raising := fun _ _ => none`.",
+      see: "docs/audits/2026-09-04-conjecture-carriers-round-two.lean",
+    },
   ],
 });

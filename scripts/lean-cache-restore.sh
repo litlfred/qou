@@ -62,6 +62,30 @@ relocate_legacy_paper_trees() {
   return 0
 }
 
+# apply_addons: lay the two plain-tar addon branches over the base seed (owner,
+# 2026-11-24: "migrate local lean to cache repos.. use existing infra").  The
+# base branch is a Lake build of some past main; the addons are what keeps a
+# fresh session current without a 2 h lean-direct rebuild:
+#   1. lean-restore-gap-oleans.sh      Mathlib modules the base seed lacks
+#                                      (fills only; never replaces a base olean)
+#   2. lean-restore-refresh-oleans.sh  every QOU/UGB/Fred2005 olean rebuilt
+#                                      lean-direct from a later main, each with a
+#                                      .srcsha stamp, so lean-direct-cone.sh
+#                                      rebuilds only what changed since
+# Both are idempotent (a marker under .lake/ records the commit applied), so
+# calling this on every run costs two ls-remote calls.  Best-effort: a failed
+# addon leaves the base seed, which still works, only older.  Opt out with
+# LEAN_CACHE_NO_ADDONS=1.  Like the addons themselves this is NOT a Lake
+# restore: verify lean-direct, never `lake build` afterwards.
+apply_addons() {
+  [ "${LEAN_CACHE_NO_ADDONS:-0}" = 1 ] && return 0
+  "$(dirname "$0")/lean-restore-gap-oleans.sh" \
+    || echo "lean-cache-restore: gap addon not applied (best-effort)." >&2
+  "$(dirname "$0")/lean-restore-refresh-oleans.sh" \
+    || echo "lean-cache-restore: refresh addon not applied (best-effort); the base seed is older than main." >&2
+  return 0
+}
+
 # Already restored?  BOTH halves: mathlib (~3480 when complete) AND the paper
 # library.  A mathlib-only restore is repaired from a legacy tree if one exists,
 # otherwise re-extracted.
@@ -72,6 +96,8 @@ if [ "${existing:-0}" -ge 2000 ]; then
   if [ "$q" -gt 0 ]; then
     echo "lean-cache-restore: $existing mathlib + $q QOU oleans already present — skipping."
     lean_mathlib_url_fix
+    "$(dirname "$0")/lake-restore-package-git.sh" || echo "lean-cache-restore: package git checkout incomplete; do not run lake on this tree (qou-r13s)." >&2
+    apply_addons
     exit 0
   fi
   echo "lean-cache-restore: $existing mathlib oleans present but 0 QOU oleans under folio/ — re-extracting."
@@ -113,7 +139,16 @@ else
     exit 1
   }
 fi
+# The base seed just overwrote whatever an addon had laid down, so forget that
+# the addons were applied; apply_addons below re-lays them.
+rm -f "$REPO_ROOT/.lake/lean-gap-addon.sha" "$REPO_ROOT/.lake/lean-refresh-addon.sha"
 lean_mathlib_url_fix
+# The tarball has no .git in .lake/packages/*, and Lake deletes a git package
+# directory whose remote it cannot read, restored oleans and all (bean
+# qou-r13s, measured 3915 -> 2).  Give each package a checkout at its manifest
+# rev.  Non-fatal: lean-direct needs only the oleans, and works without it.
+"$(dirname "$0")/lake-restore-package-git.sh" \
+  || echo "lean-cache-restore: package git checkout incomplete; do not run lake on this tree (qou-r13s)." >&2
 
 count=$(find "$REPO_ROOT/.lake/packages/mathlib" -name '*.olean' 2>/dev/null | wc -l | tr -d ' ')
 q=$(qou_oleans)
@@ -124,4 +159,5 @@ if [ "$q" -eq 0 ]; then
   echo "lean-cache-restore: 0 QOU oleans under folio/quantum-observable-universe/lean/.lake/build — the paper half of $branch did not land where Lean reads it." >&2
   exit 1
 fi
+apply_addons
 echo "lean-cache-restore: verify a file with  scripts/lean-verify.sh <file.lean>"

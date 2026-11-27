@@ -144,7 +144,8 @@ def main() -> int:
     result_m = li2q_spectral_candidate_at(q_muon, chi_q_syms, q_sym)
 
     EMPIRICAL_C3_P = mpf("-2.0693")
-    EMPIRICAL_C3_M = mpf("-2.0097")
+    from qbeta.qbeta_utils import c3_muon_extracted
+    EMPIRICAL_C3_M = c3_muon_extracted()
 
     print(f"q_proton: {fmt(q_proton)[:30]}")
     print(f"  Σ μ_λ                  = {fmt(sum(result_p['mu_lambda_measure'].values()))[:25]}")

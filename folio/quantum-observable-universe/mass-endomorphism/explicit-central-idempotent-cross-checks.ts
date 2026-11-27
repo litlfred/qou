@@ -5,7 +5,7 @@ export default theorem({
   title:
     "The Murphy–Lagrange elements $e_\\lambda$ are the central primitive idempotents of $H_n(q)$: sum to one, orthogonality, bar-invariance, conjugate pairing",
   lean: {
-    ref: "qou:QOU.BraidKnot.ExplicitCentralIdempotentGeneral.explicit_central_idempotent_cross_checks",
+    ref: "qou:BraidKnotOctonion.ExplicitCentralIdempotentGeneral.explicit_central_idempotent_cross_checks",
     validation: "not_checked",
   },
   uses: [
@@ -82,7 +82,7 @@ export default theorem({
         "The current carrier `ExplicitCentralIdempotentConjecture` states the conjecture about an opaque scalar in a " +
         "commutative ring, so no proof can be written against it. New module " +
         "`QOU.BraidKnot.ExplicitCentralIdempotentHecke` builds the Murphy-Lagrange projectors in " +
-        "`QOU.SchurWeyl.Hecke` from the Murphy elements `qJM`. It proves the n = 2 case sorry-free " +
+        "`QOU.SchurWeyl.Hecke` from the Jucys–Murphy elements `qJM`. It proves the n = 2 case sorry-free " +
         "(`murphyLagrangeComplete_two`): the projectors for shapes (2) and (1,1) are idempotent, orthogonal and sum to 1, " +
         "for q*qi = 1 and q^2 != qi^2. The general statement over all standard Young tableaux is not yet written, so " +
         "`lean.ref` still names the old carrier, and the conjecture stays open.",
@@ -124,6 +124,6 @@ export default theorem({
         "pairwise orthogonal, summing to e_lambda) and the theorem DERIVES " +
         "idempotency from them.",
     },
-    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The form above, over all contents $|d| \\le n - 1$, is the one in [Explicit central primitive idempotents $e_\\lambda$ via Murphy elements](#prop:explicit-central-idempotent)." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The form above, over all contents $|d| \\le n - 1$, is the one in [Explicit central primitive idempotents $e_\\lambda$ via Jucys–Murphy elements](#prop:explicit-central-idempotent)." },
   ],
 });

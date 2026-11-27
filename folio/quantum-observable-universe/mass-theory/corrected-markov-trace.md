@@ -2,8 +2,6 @@ The Markov trace of the braid word $\sigma_0 \sigma_1 \sigma_0$ (whose closure i
 
 ## Statement
 
-**Proposition.**
-
 $$
   \mathrm{tr}_M(\sigma_0 \sigma_1 \sigma_0) = h z^2 + z
 $$

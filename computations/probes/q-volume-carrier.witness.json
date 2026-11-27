@@ -1,0 +1,108 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-23T05:46:29.856359+00:00",
+  "commitSha": "5ea65c2c1b3efec751334306fec224a76f80b92c",
+  "assertions": [
+    {
+      "name": "rearrangement = direct series at x=0.5 -- 0.0",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "rearrangement = direct series at x=(0.15 + 0.259808j) -- 0.0",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "hbar^2 W_mu -> Vol(4_1) (rel < 1e-4 at q=1.001)",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "rate is linear in hbar (ratio of successive decades ~ 10)",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "hbar_q is the closest of hbar, log q, h/2 at q0",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "q-volume of a link with no tetrahedra is 0 (electron)",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "q-volume-carrier",
+  "scriptFile": "q_volume_carrier_probe.py",
+  "scriptHash": "c4d1dce44a40",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "mpmath": "1.4.1",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/q_volume_carrier_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/q_volume_carrier_probe.py"
+  },
+  "description": "Owner-chosen search (2026-11-23) for one weight giving the electron finite and the muon Vol(4_1)/hbar_q^2. q-volume G(z;q)=sum z^n/(1-q^-n)^2 via its convergent rearrangement; 2 Im G(e^{i pi/3};q) ~ Vol(4_1)/hbar_q^2, gives the electron 0. Sum family T + c G with c forced to 1/2 by QVolumeCarrier.sum_family_forces_c, measured at q0. Proton pin default, muon pin comparison arm. CODATA m_mu/m_e used only as the comparison target. No fit.",
+  "data": {
+    "proton_pin": {
+      "q": "1.109978582751380807591669095610768879874",
+      "W_mu_2ImG": "207.2446138898169964583476641002077080665",
+      "Vq_hbar2_W": "2.034559016200579231832441580105677257443",
+      "Vq_over_Vol_minus_1": "0.002303483940230114429583100887098329693753",
+      "logq2_W_over_Vol_minus_1": "0.1115266033539767624252933522603712918307",
+      "(h/2)^2_W_over_Vol_minus_1": "0.115566188082546069577736493434633208006",
+      "Vol_over_hbar2": "206.7683263706738902896095864099026759385",
+      "W_mu_over_mu_e_codata_minus_1": "0.002303695632603889969569612816674556955541",
+      "W_electron_qvolume": "0.0",
+      "tau_e": "0.6911664783584445261477195309790462066142",
+      "tau_fig8": "0.2801956422726949814331225775762076206173",
+      "sum_family_c_half_ratio": "150.3291983053849943195113528425240308868",
+      "sum_family_over_mu_e_codata_minus_1": "-0.2729581329284552097336186231113674046738"
+    },
+    "muon_pin_comparison": {
+      "q": "1.1099785956427390466817951293800017527",
+      "W_mu_2ImG": "207.244570148303543754527613347114691894",
+      "Vq_hbar2_W": "2.034559016492690987571131713112835176429",
+      "Vq_over_Vol_minus_1": "0.002303484084135810035083361202161263072897",
+      "logq2_W_over_Vol_minus_1": "0.1115266161984469992761504315855881196832",
+      "(h/2)^2_W_over_Vol_minus_1": "0.1155662018742863376908994643435374753789",
+      "Vol_over_hbar2": "206.7682827",
+      "W_mu_over_mu_e_codata_minus_1": "0.002303484084135810035083361202161263072897",
+      "W_electron_qvolume": "0.0",
+      "tau_e": "0.6911665040735830605594370462394157454842",
+      "tau_fig8": "0.2801956490517914798630318264165235776456",
+      "sum_family_c_half_ratio": "150.3291610788793138528748716363739788126",
+      "sum_family_over_mu_e_codata_minus_1": "-0.2729583129681846806145821337018147086801"
+    },
+    "limit_rate_rel": {
+      "1.01": "0.000307029443213245",
+      "1.001": "3.16723775334676e-5"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "default proton pin; muon pin evaluated as labelled comparison arm (E1)",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

@@ -420,3 +420,98 @@ lean-direct of two Mathlib-only files: 3.7 s / 1.6 s; autoImplicit control re-co
 - BASELINE: toolchain already at ~/.elan/toolchains/leanprover--lean4---v4.24.0 (no ~/.elan/bin); release.lean-lang.org 403, GitHub zip 200 (730 MB, 24 s) — not needed.
 - BASELINE: streamed restore of cat/folio-assistant-sci/lake-cache/qou-v4-24-0 @ a792c46d01b: fetch 1m36s, root .lake 3758 / per-paper 2703 oleans; disk 16G -> 8.8G free.
 - STABLE: cone rebuild into a `cp -al` shadow of the per-paper lib dir (7 modules, HeckeAlgebra 64 s, rest ≤6 s), LEAN_PATH = shadow + root .lake/packages/*; works with no union mirror.
+
+## 2026-11-15 — 4-PR merge verification (#7991/#7990/#7987/#7982), fresh container, no elan
+- STABLE: toolchain with no elan and no `zstd`: `curl -sSfL …/releases/download/v4.24.0/lean-4.24.0-linux.zip` (730 MB, ~30 s) + `python3 zipfile.extractall` + `chmod +x bin/*` → working `lean`. The `.tar.zst` downloads too but nothing here can decompress it.
+- STABLE: restore to a SEPARATE base dir (not the repo): stream `cat/folio-assistant-sci/lake-cache/qou-v4-24-0` (head a792c46d01b, 1m49s fetch, 50 s extract, 6492 oleans) into `tar xzf - -C $BASE --transform 's,^content/,folio/,'`. Per PR: `cp -al` each package lib dir into `$SHADOW/<QOU|UGB|Fred2005>`, put the shadow roots first on LEAN_PATH, rebuild the Lake-hash dirty closure there (unlink before `lean -o`, and `mkdir -p` the parent — new module dirs like `QOU/KZ/` are absent from the cache). Each PR worktree costs ~2.5 G.
+- TRAP: `QOU.Mass.KohnoWeightedClass` cone (KZHolonomy) needs `Mathlib.Analysis.Calculus.Deriv.Pi` and `Mathlib.Analysis.ODE.PicardLindelof`, absent from BOTH the main cache and the `-mathlib-gap-modules` addon (95 entries). Unverifiable without a Mathlib-source gap build.
+- TRAP (authoring, v4.24): `refine ⟨…⟩ <;> · unfold A B C` fails with "failed to unfold `B`" on any goal where B does not occur; `norm_num [A, B, C]` closes the same goals (#7991).
+- CORRECTION 2026-11-21: the KohnoWeightedClass TRAP above is stale. `Mathlib.Analysis.Calculus.Deriv.Pi` and `Mathlib.Analysis.ODE.PicardLindelof` are in the main restore of `cat/folio-assistant-sci/lake-cache/qou-v4-24-0` (traced) and also in the `-mathlib-gap-modules` addon as of fe9ce69 (288 entries). Verify with `ls .lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/ODE/PicardLindelof.olean`.
+
+## 2026-11-22 — fresh container, toolchain + restore from zero (BASELINE, re-measure)
+- Repo at `/home/claude/qou` (not `/home/user/qou`); HOME=/root; no `~/.elan`, no zstd.
+- Toolchain: GitHub asset `lean-4.24.0-linux.tar.zst` (460 MB, 17 s) + `apt-get install zstd`,
+  extracted to `/root/.elan/toolchains/leanprover--lean4---v4.24.0` (2.3 G, real dir, NOT a /tmp symlink).
+- Cache: branch `cat/folio-assistant-sci/lake-cache/qou-v4-24-0` head `7c61a1ba876`, 24 parts;
+  throwaway-repo fetch 2m10s + streamed extract 59 s with `--transform 's,^content/,folio/,'`.
+  Result: root mathlib 3697 oleans, paper QOU build 3466; trace check cleared the marker. Disk 55G→45G free.
+- `scripts/lean-direct-env.sh` works as-is; NucleonWeightSpaceTraces.lean exit 0 in 4.2 s.
+
+## 2026-11-22 — fresh container, hooks never ran, UGB HeckeCompletion cone (main 3c4c98fccf3)
+
+- **STABLE** repo at `/home/claude/qou` (not `/home/user/qou`). `./scripts/setup-lean-toolchain.sh`
+  alone did the whole job: elan bootstrap from GitHub, toolchain zip, then `lean-cache-restore.sh`.
+  **4m52s wall**, exit 0. Cache branch is now `cat/folio-assistant-sci/lake-cache/qou-v4-24-0`
+  (the script resolves it via `lib/lake-cache-family.sh`; the old `lake-cache/qou-v4-24-0` name in
+  MEMORY.md is stale). Paper trees landed under `folio/` directly; ONE mathlib root (3697 oleans),
+  no per-paper packages tree, so no union mirror needed. UGB tree: 35 oleans.
+- **TRAP (measured)** restored UGB oleans are STALE: Lake-hash check (MEMORY §STABLE source hash)
+  on the 8-module cone of `UGB.GrobnerShirshov.HeckeCompletion`: Elem, CompositionLemma, AlgOps
+  fresh; Basic, DiamondLemma, NormalForms, HeckeGS, HeckeCompletion CHANGED. Rebuilt the 7 from
+  Basic down in place (`rm -f` then `lean -DautoImplicit=false -o … -i …`, cwd = UGB package root):
+  1.5–4.2 s each; HeckeCompletion **1m29s wall / 4m20s user**, exit 0, zero output.
+- **BASELINE** autoImplicit control reproduced (bare exit 0, `-DautoImplicit=false` exit 1).
+
+## 2026-11-24 — consolidate the local lean-direct build into the cache branches (branch claude/lean-cache-consolidate-2026-11-24)
+- **STABLE** the standard restore is now base + addons: `lean-cache-restore.sh` calls
+  `lean-restore-gap-oleans.sh` then `lean-restore-refresh-oleans.sh` (`apply_addons`), both
+  idempotent via `.lake/lean-{gap,refresh}-addon.sha`; markers cleared when the base is re-extracted.
+  Opt out `LEAN_CACHE_NO_ADDONS=1`.
+- **TRAP (measured)** the Nov-21 base reseed `7c61a1ba876` (Lake build of main 9428c3511c) carries
+  `.trace` but **no `.srcsha`**, so `lean_freshness` (conservative, used by `lean-direct-cone.sh`)
+  calls every base QOU olean stale on a fresh checkout. The refresh addon's `.srcsha` stamps are what
+  make an incremental lean-direct rebuild possible; without it the cone tool rebuilds everything.
+- **TRAP (corrected same session)** the gap branch's 288 entries are 224 oleans + 64 `.ilean`; all
+  224 oleans were already in the Nov-21 base. Count `\.olean$`, not tar lines.
+- **TRAP** Mathlib SOURCE is absent in this container (root `.lake/packages/mathlib` is oleans only,
+  no per-paper packages tree). `lean-build-mathlib-gap-cone.py` hardcodes the per-paper path: clone
+  mathlib4 at the manifest rev (`git fetch --depth=1 origin <sha>`, 8 s, 99 MB) and scaffold
+  `folio/quantum-observable-universe/lean/.lake/packages/` with symlinks (mathlib -> clone whose
+  `.lake/build/lib/lean` -> root mathlib lib; the other packages -> root). Remove it afterwards.
+- **TRAP** disk filled TWICE from orphaned `tmp_pack_*` of dead fetches: 10.4 G in qou `.git`, 15.7 G
+  in `/home/user/folio-assistant/.git` (SessionStart platform fetch). Check `/proc/*/fd` that nothing
+  holds it, then `rm`. The cone builder's disk guard (`--min-free-gb 1.5`) stopped cleanly; re-run resumes.
+- **STABLE** `gh api` writes (git/blobs, refs) are 403 through the proxy; a plain `git push` of a
+  1-commit branch whose parent is the origin/main tip went through in seconds from the main clone.
+- **TRAP (measured 2026-11-24)** a disk-full during a lean-direct build leaves a TRUNCATED olean that
+  the cone builder then calls `up-to-date`: `CaseGpLeft.olean` was 70901760 B (exactly 17310 x 4096,
+  page-aligned) with a 0-byte `.srcsha`, and its importer failed in 0.6 s with no diagnostic. After any
+  ENOSPC, list oleans written in the window and check `size % 4096 == 0` plus `.srcsha` size 0; delete
+  the hits before re-running. (5 of 3696 QOU oleans are page-aligned by chance; the srcsha is the tell.)
+- **TRAP** base + gap (fe45a7c5b63) still lacks Mathlib oleans imported by QOU on main fed339bd1f6:
+  `Analysis.Convex.SimplicialComplex.Basic`, `CategoryTheory.Groupoid.Subgroupoid`, `Topology.Covering`,
+  `AlgebraicGeometry.EllipticCurve.Projective.Point` (cone builder errors at the import line). The
+  QOU.MathlibExt.PL* family, the KZHolonomy family and the library root `QOU` are blocked behind them.
+- **STABLE (2026-11-24, gap head fd6c1e47a21)** the 4 Mathlib modules above plus
+  `LinearAlgebra.Matrix.FixedDetMatrices` and `GroupTheory.FreeGroup.Reduce` (19 oleans with cones)
+  are now on the gap branch; built in ~95 s total with `lean-build-mathlib-gap-cone.py`. Scaffold it
+  needs: `folio/quantum-observable-universe/lean/.lake/packages/<pkg>` symlinked to the root
+  `.lake/packages/<pkg>` (root mathlib has the source after `lake-restore-package-git.sh`). Seed by
+  appending a commit (parent = old head) with git hash-object/mktree/commit-tree; no force-push.
+- **TRAP** `mathlib-gap-oleans.tgz` is 75 MB at fd6c1e47a21 (GitHub warns at 50 MB, rejects at
+  100 MB). Put the next additions in a second tarball.
+- **STABLE (2026-11-25, gap head 91643168ca5, 335 entries)** +11 Mathlib oleans: the
+  `FundamentalGroupoid.SimplyConnected` cone (9), `Topology.Homotopy.Lifting`, `Analysis.Convex.Join`,
+  which the full cone reported missing (MathlibExt.PathLebesgue, MathlibExt.LocalCocycleTransport,
+  BraidKnotOctonion.PLCone). Tarball 80.6 MB.
+- **TRAP (measured 2026-11-25)** `lean-direct-cone.sh --all` builds QOU only; it treats UGB as a
+  prebuilt path package. The restored UGB oleans were STALE (`Basic.olean` still had
+  `rules : List`; source has `Set`), so `QOU.LiftingDescent.PBWIntegration` errored at the
+  `import UGB...SplayIntegration` line (olean absent) and a naive UGB build failed in
+  `QuadraticPBW` with a List/Set type mismatch that reads like a source error. Fix: rebuild the UGB
+  cone with `lean_freshness.olean_is_current(conservative=True)` + stale-dependency propagation;
+  16 UGB modules (incl. HeckeGS) rebuilt, all exit 0.
+- **TRAP** a background Bash running the whole cone is killed at the 2 h tool limit (it was, at
+  2577/3908). Run it detached (`setsid nohup ... &`) and wait with a separate until-loop.
+
+- **TRAP (2026-11-25): -j2 OOM on HeckeTemperleyLieb.HeckeH4Semisimple.** The full
+  cone's only "error" was a cgroup OOM kill (lean RSS 8.3 GB, 15 GB container,
+  dmesg `Memory cgroup out of memory`) after 1115 s, logged with NO diagnostic,
+  only the elan toolchain note. An empty error log means check `dmesg`, not the
+  source. Re-run that module `-j1`.
+- **STABLE (2026-11-25): gap 91643168ca5 round-trip.** 327/335 byte-identical;
+  the 8 differing are base-supplied trace-paired oleans kept by --skip-old-files.
+## 2026-11-24 — main 46a05d04e22, cache already in place, Q3 restructure makes it layout-stale
+- Restore already present on arrival (root mathlib 3697, QOU pkg 3466, UGB 35, traced, gap modules incl. PicardLindelof/GroupCohomology.LowDegree present) — no fetch.
+- **TRAP (measured)**: `559a7210bf5` (2026-11-24, "Q3 Option 1 7+1 Reservoir lean_libs & 83->12 QOU chapter consolidation") moved modules to new paths/libs (`QOU/Core/*`, `CompactQuantumMetrics/*`, `HeckeTemperleyLieb/*`, `QOU/BringsSurface/PlanckStepAtomicity` ...). The cache (seed 2026-11-21) predates it: `lean-library-sweep.py --report --package QOU` says 3591 of 3908 never built. Namespaces were KEPT; only module paths moved. Pre-restructure branches fail on `import` (object file does not exist), not on content.
+- **STABLE recipe that worked**: own cone walker (scratchpad cone.py) over source roots `folio/quantum-observable-universe/lean:folio/unital-groebner-bases/lean`; shadow = `cp -al` of QOU pkg lib -> `$SH/QOUPKG`, UGB lib -> `$SH/UGB`; rebuild cone topologically with `rm -f` then `lean -DautoImplicit=false -s 65536 <rel>.lean -o -i` from cwd = pkg dir; LEAN_PATH = `$SH/QOUPKG:$SH/UGB:<root .lake/packages/*/.lake/build/lib/lean>`. 30 modules in 1m58s (NucleonWeightSpaceTwoTerm 43 s). Real tree untouched (3466 before/after).

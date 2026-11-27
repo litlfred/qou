@@ -39,8 +39,8 @@
   full `H_n(q)` tower.
 -/
 
-import QOU.Archimedean.EmCouplingProjection
-import QOU.Mass.QHookDimensionBalanced
+import QOU.MassTheory.EmCouplingProjection
+import HeckeTemperleyLieb.QHookDimensionBalanced
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 import Mathlib.LinearAlgebra.Matrix.Notation
 

@@ -206,7 +206,9 @@ if WitnessBuilder is not None:
     for label, ok, detail in ASSERTS:
         w.add_assertion(f"{label}{' -- ' + detail if detail else ''}",
                         computed="true" if ok else "false", expected="true")
-    w.save()
+    w.save({"q0Anchor": "independent", "q0AnchorReason": (
+        "re-prices typed cell Q_beta values and the dashboard witness rows against CODATA "
+        "with m_e; no substrate q is imported or evaluated")})
     print("witness written")
 
 sys.exit(1 if failures else 0)

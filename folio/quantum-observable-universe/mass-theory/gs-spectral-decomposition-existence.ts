@@ -14,7 +14,7 @@ export default conjecture({
   // the ref also resolves by module path to
   // `lean/QOU/BraidKnot/GBResidueSpectralSum.lean`. Nothing to fix.
   lean: {
-    ref: "qou:QOU.BraidKnot.GBResidueSpectralSum.spectral_decomposition",
+    ref: "qou:QOU.BraidsAndKnots.GBResidueSpectralSum.spectral_decomposition",
     validation: "not_checked",
   },
   uses: [
@@ -31,6 +31,12 @@ export default conjecture({
     "audit-flag-13a",
   ],
   authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-7yj0`): `2026-09-04-item5-carriers-inhabitability.lean` inhabits unparameterised `GBResidueSpectralSum` at `levelBound = 0`, `mass = 0`.",
+      see: "docs/audits/2026-09-04-item5-carriers-inhabitability.lean",
+    },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Conjectural status.** A Lean proof requires formalized definitions for the graded trace and residues, ..." },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Lean encoding.** Encoded as the class-field axiom `spectral_decomposition` on `GBResidueSpectralSum`. Instances supply this identity." },
     {

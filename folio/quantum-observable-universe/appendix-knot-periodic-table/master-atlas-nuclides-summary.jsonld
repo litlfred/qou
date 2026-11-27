@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-master-atlas-nuclides-summary",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:master-atlas-nuclides-summary",
+  "kind": "table",
+  "title": "Table A.4: Benchmark nuclide binding energies and $(m_e, \\mathfrak{D}_\\beta)$ calibration floors ($\\mathcal{L}_2\\text{--}\\mathcal{L}_3$, 80-digit atlas)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prose-master-atlas-calibration-jacobian"
+  ],
+  "cites": [
+    "references/ame2020",
+    "references/ame2020tables"
+  ],
+  "tags": [
+    "archimedean-bridge",
+    "atlas",
+    "nuclides",
+    "binding-energy",
+    "extracted-table"
+  ],
+  "text": "master-atlas-nuclides-summary.md",
+  "provenance": "authored"
+}

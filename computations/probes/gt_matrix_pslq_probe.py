@@ -160,19 +160,20 @@ def main() -> None:
                     ("hbar_q^3", hbar ** 3),
                     ("hbar_q",   hbar)]:
         a = delta / X
-        af = float(a)
-        best = (0, 1, 0.0, float("inf"))
+        best = (0, 1, mp.mpf(0), mp.inf)
         for num in range(-50, 51):
             for den in range(1, 51):
-                err = abs(af - num / den)
+                rat_val = mp.mpf(num) / mp.mpf(den)
+                err = abs(a - rat_val)
                 if err < best[3]:
-                    best = (num, den, num / den, err)
+                    best = (num, den, rat_val, err)
         ansatz_tests.append({"ansatz": f"a · {name}", "a_value": str(a),
-                             "a_float": af, "nearest_rational": {
+                             "a_mpf": a, "nearest_rational": {
                                  "num": best[0], "den": best[1],
-                                 "value": best[2], "abs_err": best[3]}})
+                                 "value": str(best[2]), "abs_err": str(best[3]),
+                                 "_abs_err_mpf": best[3]}})
         print(f"a·{name}: a={mp.nstr(a,12)} ~ {best[0]}/{best[1]} "
-              f"(|Δ|={best[3]:.2e})")
+              f"(|Δ|={mp.nstr(best[3], 3)})")
 
     # CODATA-consistent: a's nearest rational fits within g_A's relative
     # precision (1e-4) AFTER amplification by X.  Equivalently:
@@ -181,11 +182,9 @@ def main() -> None:
     candidates = []
     for a in ansatz_tests:
         nr = a["nearest_rational"]
-        # Recover X from a_value / a_float ratio; simpler to recompute:
-        # δ_pred = (a_rational) · X; residual after clipping to rational:
-        delta_pred_err = nr["abs_err"] * abs(float(delta) / a["a_float"])
-        a["delta_pred_err_after_clip"] = delta_pred_err
-        if (delta_pred_err < 1e-4 and abs(nr["num"]) <= 30
+        delta_pred_err = nr.pop("_abs_err_mpf") * abs(delta / a.pop("a_mpf"))
+        a["delta_pred_err_after_clip"] = str(delta_pred_err)
+        if (delta_pred_err < mp.mpf("1e-4") and abs(nr["num"]) <= 30
                 and nr["den"] <= 30):
             candidates.append(a)
 
@@ -236,7 +235,7 @@ def main() -> None:
         out.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
             out, script_path=__file__, engine=None, q0_anchor=None)
-        json.dump(out, f, indent=2)
+        json.dump(out, f, indent=2, default=str, ensure_ascii=False)
     print(f"\nWitness: {out_path}\nCandidate clean closures: {len(candidates)}")
     for c in candidates:
         nr = c["nearest_rational"]

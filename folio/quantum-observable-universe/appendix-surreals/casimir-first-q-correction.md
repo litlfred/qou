@@ -1,4 +1,4 @@
-**Conjecture (first substrate correction to the Casimir force is carried by $4_1$).** Assume the plate-constrained mode-count of [Casimir force](#conj:casimir-epsilon-vacuum). Its leading $1/d^{4}$ term is built from disjoint free-photon modes and is independent of substrate deformation. The first contribution carrying substrate-$q$ dependence arises from the interacting sector. Its minimal carrier is the figure-eight knot $4_1$, entering with weight equal to its Markov trace
+Assume the plate-constrained mode-count of [Casimir force](#conj:casimir-epsilon-vacuum). Its leading $1/d^{4}$ term is built from disjoint free-photon modes and is independent of substrate deformation. The first contribution carrying substrate-$q$ dependence arises from the interacting sector. Its minimal carrier is the figure-eight knot $4_1$, entering with weight equal to its Markov trace
 $$
   J_{4_1}(q) = q^{-2} - q^{-1} + 1 - q + q^{2} = 1 + \tfrac{3}{4}h^{2} + O(h^{4}), \qquad h = q - q^{-1}.
 $$

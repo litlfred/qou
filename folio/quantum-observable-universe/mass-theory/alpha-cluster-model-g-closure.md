@@ -1,6 +1,3 @@
-**Remark (Model G — a phenomenological closure interpreting the activation
-gate).**
-
 > **This is a structural/phenomenological model, not a parameter-free
 > derivation.** The cluster bindings $B(\text{cluster})$ enter at their
 > *measured* AME values (an input); the light-spectator coefficient

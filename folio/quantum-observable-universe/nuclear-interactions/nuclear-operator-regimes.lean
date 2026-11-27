@@ -5,13 +5,14 @@ import Mathlib.Data.Nat.Basic
 
 **Proposition** ([`prop:nuclear-operator-regimes`](nuclear-operator-regimes.md)).
 
-The optimal inter-nucleon binding operator `Φ_k` is **not fixed** — as the
+The inter-nucleon binding operator `Φ_k` selected at each recorded step is **not fixed** — as the
 nucleus grows it transitions between three discrete regimes:
 
-* **I — shell filling**: within the first shell the demand-minimiser is the
-  torus knot `T_{2,n_s}` (e.g. `T_{2,5}` cinquefoil at `p → pp`);
-* **II — magic closure**: at/after a magic number the optimum is a Hopf link
-  `L_±` (demand closure `|dem| = 0`);
+* **I — shell filling**: at the recorded first-shell step the selected operator is the
+  braid `(σ₀σ₁)²σ₀ ∈ B₃` at `p → pp`, whose closure is the `T(2,4)` torus
+  link (it was mislabelled the `T_{2,5}` cinquefoil until 2026-11-21);
+* **II — magic closure**: at/after a magic number the selected operator is
+  `L_±`, whose closure in `B₃` is the unknot (demand closure `|dem| = 0`);
 * **III — open shell**: beyond a closed shell it reverts to the bare typed
   crossing `C_{pp}/C_{pn}/C_{nn}`.
 
@@ -25,7 +26,7 @@ at a non-existent "canonical" library twin). It is replaced here by an honest,
 
 | step (k) | nucleons | regime |
 |---|---|---|
-| 0 | `p → pp`        | I (T₂,₅) |
+| 0 | `p → pp`        | I ((σ₀σ₁)²σ₀) |
 | 1 | `pp → ppn`      | II (L₊)  |
 | 2 | `ppn → ppnn`    | II (L₊)  |
 | 3 | `ppnn → pppnn`  | II (L₋)  |
@@ -33,12 +34,12 @@ at a non-existent "canonical" library twin). It is replaced here by an honest,
 
 `nuclearOperatorRegimes` proves this exact sequence, so all three regimes are
 realised and the `I → II → III` transition is exhibited. The *selection itself*
-(why each `Φ_k` is the LP/SDP demand-minimiser) is the categorical
-operator-selection optimality recorded in the witness JSON — the
-infra-blocked input — not asserted here; this file states the resulting
+(whether each `Φ_k` minimises demand) is not asserted here: it was
+recorded in `nuclear-binding-lp.witness.json`, which is not in the tree
+(checked 2026-11-21); this file states the resulting
 classification honestly rather than via a vacuous `True`.
 
--- Ref: [leitner2026] quantum-observable-universe/particle-interactions/nuclear-operator-regimes.md
+-- Ref: [leitner2026] quantum-observable-universe/nuclear-interactions/nuclear-operator-regimes.md
 -/
 
 namespace QOU.Interactions
@@ -46,15 +47,15 @@ namespace QOU.Interactions
 /-- The three discrete inter-nucleon binding regimes of
     `prop:nuclear-operator-regimes`. -/
 inductive NuclearBindingRegime
-  /-- Regime I: shell filling — torus knot `T_{2,n_s}`. -/
+  /-- Regime I: shell filling — the braid `(σ₀σ₁)²σ₀` (closure `T(2,4)`). -/
   | shellFilling
-  /-- Regime II: magic shell closure — Hopf link `L_±`. -/
+  /-- Regime II: magic shell closure — `L_±` (closure in `B₃`: unknot). -/
   | magicClosure
   /-- Regime III: open shell — bare typed crossing `C`. -/
   | openShell
   deriving DecidableEq
 
-/-- The observed optimal regime at inductive construction step `k` (adding
+/-- The observed regime at inductive construction step `k` (adding
     nucleon `k+1`), for `A ≤ 6`, from `nuclear-binding-lp.witness.json`. -/
 def observedRegime : ℕ → NuclearBindingRegime
   | 0 => .shellFilling
@@ -66,10 +67,10 @@ def observedRegime : ℕ → NuclearBindingRegime
 /-- **Three operator regimes for nuclear binding** ([`prop:nuclear-operator-regimes`]).
 
     The observed `A ≤ 6` transition sequence is `I, II, II, II, III`: shell
-    filling (`T₂,₅`) → magic closure (Hopf `L₊`/`L₋`) → open shell (bare
+    filling (`(σ₀σ₁)²σ₀`) → magic closure (`L₊`/`L₋`) → open shell (bare
     crossing `C_pn`). All three regimes are realised; the `I → II → III`
     transition is exhibited. -/
--- Ref: [leitner2026] quantum-observable-universe/particle-interactions/nuclear-operator-regimes.md
+-- Ref: [leitner2026] quantum-observable-universe/nuclear-interactions/nuclear-operator-regimes.md
 theorem nuclearOperatorRegimes :
     observedRegime 0 = NuclearBindingRegime.shellFilling ∧
     observedRegime 1 = NuclearBindingRegime.magicClosure ∧

@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -21,7 +21,8 @@
     "references/jones1987",
     "references/kassel1995",
     "references/suslin1991",
-    "references/bloch2000"
+    "references/bloch2000",
+    "references/riera-rodriguez-1992"
   ],
   "tags": [
     "alpha-em",
@@ -33,7 +34,7 @@
     "conditional-class",
     "derivation-lead"
   ],
-  "leanRef": "qou:QOU.Archimedean.bring_zero_mode_additive_form",
+  "leanRef": "qou:QOU.MassTheory.Archimedean.bring_zero_mode_additive_form",
   "text": "em-coupling-bring-zero-mode.md",
   "provenance": "authored"
 }

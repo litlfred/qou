@@ -1,0 +1,23 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "higman1955",
+  "type": "article-journal",
+  "title": "On orders in separable algebras",
+  "author": [
+    {
+      "family": "Higman",
+      "given": "D. G."
+    }
+  ],
+  "container-title": "Canadian Journal of Mathematics",
+  "issued": {
+    "date-parts": [
+      [
+        1955
+      ]
+    ]
+  },
+  "volume": "7",
+  "page": "509-515",
+  "note": "The map x -> sum_i e_i x e^i of a Frobenius algebra (Higman's trace map); its image in the centre is the Higman ideal, and it is an isomorphism from A/[A,A] onto the centre exactly in the separable case."
+}

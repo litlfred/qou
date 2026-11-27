@@ -1,4 +1,4 @@
-## Proof (one-line ring identity)
+*(One-line ring identity.)*
 
 Substitute the bias hypothesis for both $\hat c_k$ and $\hat c_{k+1}$:
 

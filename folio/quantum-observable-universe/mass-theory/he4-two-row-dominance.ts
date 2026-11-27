@@ -93,7 +93,7 @@ export default proposition({
     status: "verified",
     requires: ["numpy", "scipy", "sympy", "mpmath"],
   },
-  lean: { ref: "qou:QOU.BraidKnot.He4TwoRowDominance.HasHe4TwoRowDominance" },
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.He4TwoRowDominance.HasHe4TwoRowDominance" },
   tags: [
     "he4",
     "doubly-magic",

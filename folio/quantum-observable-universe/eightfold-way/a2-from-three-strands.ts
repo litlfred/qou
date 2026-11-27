@@ -34,5 +34,5 @@ export default proposition({
   // which the .md itself records as holding by construction. The theorems
   // built on the datum (`cartan_A2_offdiag`, `serre_exponent_A2`,
   // `root_angle_ratio_A2`) live in the same module.
-  lean: { ref: "qou:QOU.Eightfold.WeylInvarianceQDeformation.cartanMatrix_A2" },
+  lean: { ref: "qou:QOU.EightfoldWay.WeylInvarianceQDeformation.cartanMatrix_A2" },
 });

@@ -1,5 +1,5 @@
 import Mathlib.Combinatorics.Young.YoungDiagram
-import QOU.Mathlib.TwoRowDimCatalan
+import BraidKnotOctonion.TwoRowDimCatalan
 import Mathlib.Algebra.BigOperators.Intervals
 
 /-!

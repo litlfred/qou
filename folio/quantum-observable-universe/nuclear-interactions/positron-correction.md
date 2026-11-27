@@ -2,7 +2,6 @@ The $+1$ additive term in the Q-value formula is a parity-dependent offset $\del
 
 ## Statement
 
-**Proposition.**
 *The evaluated Q-value functional includes a formal parity-dependent trace offset:*
 
 $$

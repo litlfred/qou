@@ -24,12 +24,12 @@ export default proposition({
     "groebner-shirshov",
     "optimization",
   ],
-  lean: { ref: "qou:QOU.Interactions.nucleon_ordering_factorization",
+  lean: { ref: "qou:QOU.Confinement.nucleon_ordering_factorization",
     validation: "not_checked",
   },
   uses: [
     "prop:confinement-topological",
     "prop:ordering-jet-compatibility",
-    "unital-groebner-bases:prop:jet-stratified-reduction",
+    "unital-groebner-bases:def:jet-stratified-reduction",
   ],
 });

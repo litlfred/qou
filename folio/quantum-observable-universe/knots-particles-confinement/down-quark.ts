@@ -4,7 +4,7 @@ export default definition({
   label: "def:down-quark",
   title: "Down quark",
   tags: ["quark", "down", "unknot", "borromean", "fermion", "color-tube"],
-  lean: { ref: "qou:QOU.Archimedean.DownQuark",
+  lean: { ref: "qou:QOU.MassTheory.Archimedean.DownQuark",
     validation: "not_checked",
   },
   uses: ["def:up-quark", "def:coulomb-charge"],

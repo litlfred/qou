@@ -93,3 +93,93 @@ Scope (a) throughout.
   three strands.
 - Nothing here rules on σ₀²'s H₂-parity derivation. It records that the γγ rule
   and that rule give different gluon segments.
+
+## Reconciliation with the owner ruling D1 = A (2026-11-21)
+
+Branch `claude/gg-gluon-7876-reconcile-2026-11-21` (PR #7876 merged with `origin/main`). The
+#7876 files were already on `main` through the γγ-probe port `cc055a9d88` (plus the q₀ stamp
+`997ce5c291`), so the merge took `main`'s side everywhere. Nothing in this section is a ruling.
+
+### What changed on `main` since #7876 was written
+
+- **D1 = A** (owner, 2026-11-20 18:25; bean `qou-99qc`, PR #8586 `b47929e610`): the scored Q_β is
+  `|ε_flavour(V³)|·E₀^tower = 0.325433929 MeV` (−58.402 %). The element is the bare γγ word
+  `V³ = (σ₀σ₁⁻¹)³` for both nucleons (γγ + whole-word reading 3, PR #8564,
+  `frobeniusSelected_ten_unique`). The functional is the T³ weight split of the z_D trace,
+  `ε_flavour = (q⁻¹·tr_{W_n} − q·tr_{W_p})/[2]³` (`docs/audits/2026-11-20-qbeta-flavour-weight-split.md`).
+  `nuc11_interleaved` (0.6519 MeV) and Δ_S (0.4491 MeV) are kept as unscored history cells in
+  `per-observable-100x-status.witness.json`.
+- 2026-11-21: the scorecard uses the covariant all-pairs two-term trace. Its connected part is 0
+  on V³, so two-term = one-term for this cell. The electron is σ₀σ₁σ₀ (Hopf link) for now. Neither
+  touches the elements below.
+
+### Re-run on current `main`
+
+| producer | result | payload vs committed witness (timestamps/provenance masked) |
+|---|---|---|
+| `gg_gluon_segment_probe.py` | **35/36 before the fix below, 36/36 after** | 8 leaves moved, none of them a diagnostic |
+| `gg_quark_tail_probe.py` | exit 0; 112/216 (V), 108/216 (σ₀²) | byte-identical |
+| `step3_rules_with_gluon.py` | calibration vs step-3 table PASS | prints only; identities unchanged |
+
+- **The one failure was a calibration pointer, not a result.** Check C3 compared the probe's
+  `nuc11_interleaved` Q_β against the *first* `Q_beta_MeV` in the scorecard witness. Under D1 = A
+  that field is now the V³ cell (0.3254), so the check failed while the probe's own value,
+  0.65185631006 MeV, was unchanged. C3 now reads the `nuc11_interleaved` unscored history cell
+  (`data.qbeta_ruled_base.unscored_history_cells`) and passes to 1e-18. It is renamed
+  `C3_Q_beta_nuc11_history_cell`.
+- **The other moved leaves are the CODATA denominator.** `codata_constants.Q_BETA_MEV` on `main`
+  is 0.78233355931 MeV (was 0.78233341). Every "vs CODATA" percentage moves by ≤ 1.5e-5
+  percentage points: k = 0 −30.251698 → −30.251712 %, k = 1 −70.662507 → −70.662512 %,
+  k = 2 −24.687833 → −24.687847 %, k = 3 −32.261077 → −32.261090 %, nuc11 −16.67794 → −16.677956 %.
+  No χ, no g_odd, no Δtr, no Q_β in MeV and no reading-3 verdict moved.
+
+### Which #7876 results stand
+
+These are statements about words and characters, and D1 = A changes neither:
+
+1. **The γγ unit is V = σ₀σ₁⁻¹, the corpus `gluonUnit`** (`toCorpus_vertex_zero`). Stands. It is
+   the same vertex whose cube is the D1 = A element, and the photon's chiral fourth term
+   (`γ(0,0,qh)·γ(0,0,−q⁻¹h) = V³`, `borromeanV3A_eq_switched_photon_product`).
+2. **g_odd = 0 for every γγ gluon segment, k = 0..3; the trace-level bar obstruction belongs to
+   σ₀² alone** (refines `qou-z08b`). Stands as an exact identity in q. Consistent with
+   `ε_flavour(V^k)` being exactly bar-odd (`FlavourWeightSplit.lean`).
+3. **Reading-3 behaviour.** On CORE·TAIL·Vᵏ, only k = 1 passes at q₀, for both nucleons
+   (χ_(2,1) = +0.2170281485 p, +0.4294149854 n; passes on q ∈ (1, 1.429157)). Stands. It does not
+   conflict with #8564: #8564's survivor set {V³, V⁶, V⁹} is over bare γγ words, and the census
+   tail is not a γγ word, so the two enumerations range over disjoint element sets.
+4. **The quark-tail placement pattern** (gluon V admits placement 001 for all 27 parities; σ₀²
+   admits 110) stands, byte-identical.
+
+### What D1 = A supersedes
+
+- **#7876 open question 2 ("does CORE·TAIL·V¹ replace `nuc11_interleaved`?").** Superseded for the
+  scored cell: `nuc11_interleaved` was replaced on 2026-11-20 by the bare V³, which has no census
+  tail and no separate gluon segment. CORE·TAIL·V¹ was one of the four options put to the owner
+  before that ruling (bean `qou-99qc`, W5 entry: "CORE·TAIL·V¹, 0.2295 MeV") and was not chosen.
+- **#7876's Q_β column.** It is the Markov-trace difference `|τ_zD(X_n) − τ_zD(X_p)|·E₀`, not the
+  ruled ε_flavour, so it is not comparable to the scored cell. For the record, the same four
+  elements read with ε_flavour (`d1a_functional_arm.py`, not pre-registered; calibration
+  `X_p = X_n = V³` reproduces the scorecard cell to 1e-25):
+
+  | element | ε_flavour at q₀ | Q_β (MeV) | vs CODATA |
+  |---|---|---|---|
+  | V³ (D1 = A, scored) | −0.0769805346014 | 0.325433928735 | −58.402152 % |
+  | CORE·TAIL·V⁰ | −0.0598734883872 | 0.2531141756 | −67.646259 % |
+  | CORE·TAIL·V¹ | −0.0343136950966 | 0.145060574891 | −81.457963 % |
+  | CORE·TAIL·V² | −0.0633926273534 | 0.267991277006 | −65.744627 % |
+  | CORE·TAIL·V³ | −0.05860255851 | 0.247741340698 | −68.333029 % |
+
+  Diagnostic only. Nothing here is selected or scored; using these numbers to choose an element
+  would be selection against the target.
+
+### What is still open (not decided here)
+
+- **#7876 open question 1 (γγ rule vs H₂ PSD-parity σ₀² for the gluon segment).** D1 = A makes it
+  moot for the scored Q_β (V³ has no separate gluon slot), but no ruling closes it as a statement
+  about the gluon. It still matters wherever a census-tail nucleon word or σ₀² is used: the H₂ bond
+  letters and the old-letter binding redo that `docs/audits/2026-11-15-gg-rule-rescopes-old-letter-binding.md`
+  says waits on #7876. Searched: `docs/audits`, `docs/coordination`, `folio/`, `beans/defs`
+  (grep for `qou-ggls`, `7876`, `CORE·TAIL`, `GluonVertexPsdParity`, "gluon segment"); no later
+  ruling found. `corpus_search` was not run.
+- The census quark tail (`qou-ales` option 4) is still census-derived, but it is no longer in the
+  scored element.

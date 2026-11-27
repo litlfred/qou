@@ -45,8 +45,8 @@ wf_sha() {   # $1 = root
   # Match ONLY at a real `uses:` key, not in a comment. A comment quoting the line
   # is not a declaration, and this file now carries several such comments — the
   # naive grep for `publish.yml@` matches them and would report the wrong sha.
-  grep -E '^[[:space:]]*uses:[[:space:]]*litlfred/folio-assistant/\.github/workflows/publish\.yml@' \
-    "$1/$WF_FILE" 2>/dev/null | head -1 | sed -E 's/.*publish\.yml@//' | tr -d '[:space:]'
+  grep -E '^[[:space:]]*uses:[[:space:]]*litlfred/folio-assistant/\.github/workflows/(publish|folio-staging)\.yml@' \
+    "$1/$WF_FILE" 2>/dev/null | head -1 | sed -E 's/.*(publish|folio-staging)\.yml@//' | tr -d '[:space:]'
 }
 
 check() {  # $1 = root ; prints diagnosis, returns 0/1

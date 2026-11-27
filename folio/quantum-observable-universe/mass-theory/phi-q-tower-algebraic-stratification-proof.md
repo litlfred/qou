@@ -1,5 +1,3 @@
-## Proof
-
 1. **Algebraic stratification exists.** For each $S$, $\beta_S$ is
    a well-defined element of the braid group $B_n$ (skein-smoothing
    commutes with the braid-group structure). The image
@@ -23,6 +21,12 @@
    identity as a product of order-$\leq 2$ factors at level $n$
    plus a residual that ascends to level $(n+1)$ as a new singleton
    or pair. Iteration covers all higher orders.
+   *This step is an argument, not a proof: it is the hypothesis of the
+   proposition, expressed algebraically as a regrouping in which the level-$\geq 3$ sum, minus
+   the lower-stratum corrections, lies in the next-jet-level submodule $J$. The truncated product
+   $\Phi_q(x) = \prod_m (1 - q^m x)$ vanishes only where $q^m x = 1$ for some
+   $m$, so ascension cannot mean that the
+   level-$\geq 3$ summands are identically zero.*
 
 4. **Each summand is in $\mathbb{Z}[q^{\pm 1/2}]$.** $\hat V_S$ is a
    Laurent polynomial in $q^{1/2}$ with integer coefficients
@@ -43,7 +47,8 @@ states that under $\tau_{\mathrm{arch}}$ each algebraic stratum $S$
 maps to a JSJ piece of $\widehat\beta$, with the algebraic value
 $\Phi_q(|\hat V_S|)$ τ-realising to $\rho_q \cdot \mathrm{Vol}_{\mathrm{hyp}}(S^3 \setminus K_S)$.
 That conjecture **interprets** the algebraic stratification on the
-3-manifold side; the algebraic stratification itself is unconditional.
+3-manifold side. The algebraic stratification does not depend on it; it is
+conditional only on pentagon ascension (Step 3), which is not proved.
 
 In terms of the strict Archimedean wall:
 

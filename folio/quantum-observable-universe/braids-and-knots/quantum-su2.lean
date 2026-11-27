@@ -1,4 +1,4 @@
-import QOU.Basic
+import QOU.Core.Basic
 import Mathlib.FieldTheory.RatFunc.Basic
 import Mathlib.Data.Int.Basic
 import Mathlib.Tactic

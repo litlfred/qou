@@ -6,7 +6,7 @@ export default remark({
     "$d_{\\mathrm{Connes}}$ is a minimal Reeb step count only in the $q \\to \\infty$ limit",
   interprets: "prop:reeb-coefficient-is-hbar-q",
   lean: {
-    ref: "qou:QOU.QBeta.GramSignature.dirac_coefficients_convex",
+    ref: "qou:QOU.Nuclear.GramSignature.dirac_coefficients_convex",
     validation: "not_checked",
   },
   uses: [

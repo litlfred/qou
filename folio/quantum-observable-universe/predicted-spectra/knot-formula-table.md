@@ -1,4 +1,4 @@
-Introduce a compact notation to express the knot content of composite particles. 
+Introduce a compact notation to express the knot content of composite particles. A dictionary assigning elementary particles to knots has precedent in Avrin's model \cite{avrin-2012}, which reduces fermions and bosons, leptons and hadrons, to two knots on a torus, the unknot and the trefoil. The notation below takes only the idea of such a dictionary from that work; the knot assignments and the Hecke-algebra content are this paper's.
 
 **Compact notation.**
 
@@ -43,7 +43,7 @@ $$
   = 
   {}^A_Z\!\mathcal{K}
    \oplus 
-  Z \cdot T_{2,3}.
+  Z \cdot e^-.
 $$
 
 **Table 1: Topological knot formulas.**
@@ -69,4 +69,4 @@ See [Table 4](#tbl:knot-formula-table-table4-data).
 
 See [Table 5](#tbl:knot-formula-table-table5-data).
 
-For heavier nuclei, the formula $Z\mathfrak{p} \oplus N\mathfrak{n} \oplus ZT_{2,3}$ remains valid. The Skein polynomial $Q(q)$ of the multi-body link grows combinatorially in $A$. The binding energy at each Hopf junction is computable from the pair Skein mass formula, but requires tracking $\binom{A}{2}$ crossing pairs.
+For heavier nuclei, the formula $Z\mathfrak{p} \oplus N\mathfrak{n} \oplus Z e^-$ remains valid. The Skein polynomial $Q(q)$ of the multi-body link grows combinatorially in $A$. The binding energy at each Hopf junction is computable from the pair Skein mass formula, but requires tracking $\binom{A}{2}$ crossing pairs.

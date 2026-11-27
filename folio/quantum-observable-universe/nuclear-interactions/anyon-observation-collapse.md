@@ -1,4 +1,3 @@
-**Remark (anyon ladder under the observation functor).**
 *The three preceding conjectures organize into a single ladder indexed by the deformation parameter $q$:*
 
 | $q$ regime | Substrate state | Observation image |

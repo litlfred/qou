@@ -1325,6 +1325,23 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "knot-factor-borromean-composite.lean:84-89 `knot_factor_borromean (huniform : ∀ i, component i = 1 - h ^ 2) (decouple : BrunnianDecoupling k component composite) : composite = (1 - h ^ 2) ^ k` matches md:1-10 hypotheses and conclusion; ℝ gratuitous",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
+      },
+      {
+        "field_hash": {
+          "md": "789076f79171",
+          "ts": "9ee0848c732e",
+          "lean": "8e102a5f914c",
+          "lean_statement": "54a95e65857a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:18:08.078Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: one label replaced by its title and the sentence 'Both forms of the composite are stated in the Lean sibling' removed; the md hypotheses and conclusion still match knot_factor_borromean. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: knot-factor-borromean-composite.lean:84-89 `knot_factor_borromean (huniform : ∀ i, component i = 1 - h ^ 2) (decouple : BrunnianDecoupling k component composite) : composite = (1 - h ^ 2) ^ k` matches md:1-10 hypotheses and conclusion; ℝ gratuitous"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2758,6 +2775,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:24.905Z",
+  "updated_at": "2026-11-21T08:18:08.078Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

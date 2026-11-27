@@ -13,11 +13,28 @@ export default conjecture({
     "shell-transition",
     "writhe",
   ],
-  lean: { ref: "qou:QOU.Braiding.reidemeister_mass_invariance",
+  lean: { ref: "qou:identity_preserved_by_shell_transition",
     validation: "not_checked",
   },
-  uses: ["rem:hydrogen-orbitals", "conj:borromean-quark"],
+  uses: ["conj:borromean-quark"],
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Dependency cycle cut (`dcy4`): removed forward post-wall remark `rem:hydrogen-orbitals` from `uses[]` (`predicted-spectra` applies this conjecture rather than supplying a premise).",
+    },
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-are-inhabited-by-zero.lean` records the zero-witness against the retired library `ReidemeisterMassInvarianceContext` wrapper.",
+      see: "docs/audits/2026-08-30-context-classes-are-inhabited-by-zero.lean",
+    },
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`): `2026-09-04-borromean-quark-carriers-trivial.lean` (`T4`) inhabits the local `BorromeanQuark` `Prop` carrier with `V = 1`.",
+      see: "docs/audits/2026-09-04-borromean-quark-carriers-trivial.lean",
+    },
     {
       kind: "status",
       date: "2026-06-07",

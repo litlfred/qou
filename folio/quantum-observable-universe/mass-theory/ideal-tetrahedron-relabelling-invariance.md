@@ -8,7 +8,6 @@ $$
 
 changes that choice without changing the tetrahedron. Any volume formula written in terms of $z$ must therefore be invariant under it, and if it is not, the formula is measuring the labelling rather than the geometry.
 
-**Proposition.**
 *Relabelling cyclically permutes the three dihedral angles, and the volume is unchanged:*
 
 $$

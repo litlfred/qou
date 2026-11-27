@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Cl$_3$(2$\\pi$/5) + Cl$_3$(4$\\pi$/5) = $-$(12/25)$\\zeta$(3) — depth-3 reduces to a 1-dim antisymmetric generator",
   lean: {
-    ref: "qou:QOU.BraidKnot.Cl3Zeta5OrbitSum.orbit_sum_identity",
+    ref: "qou:BraidKnotOctonion.Cl3Zeta5OrbitSum.orbit_sum_identity",
     validation: "not_checked",
   },
   computation: {

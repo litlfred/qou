@@ -2,6 +2,8 @@
  "description": "Convention-D Markov trace of the v9 nuclear element, computed as sum over two-row shapes of [n-2k+1]_q/[2]_q^n times the seminormal character, built up the Hecke tower; divided by 2^pn like the v9 certificate field tr_markov_d.",
  "producer": "computations/probes/markov_trace_two_row_tower_probe.py",
  "q0": "1.1099785827513808075916690956107688798744991218736",
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736",
  "z": "q^3/(q^2+1)",
  "dps": 70,
  "self_check_worst_residual": "6.339e-71",

@@ -2,7 +2,6 @@ Compute the branching $\mathcal{Q}_q$-value by summing over all $4^A$ channel co
 
 ## Statement
 
-**Proposition.**
 *For $\beta^-$ decay of a nucleus $(Z, N)$ with $A = Z + N$:*
 
 $$

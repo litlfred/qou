@@ -19,6 +19,7 @@ export default remark({
     "graded-mikusinski",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-24", body: "Relocated from the block prose by the reading-order drain (qou-d4kh): If [GS-depth $\\leftrightarrow$ Goncharov period-depth correspondence](#conj:gb-depth-period-correspondence) holds," },
     {
       kind: "status",
       body: "**Tabulation block.** Aggregates the existing knot atlas data\n(`../appendix-knot-periodic-table/recursive-atom-knot-atlas.md`)\nunder the graded-Mikusiński prediction. No new mathematical\ncontent; provides the *list of falsifiability targets* for B1.",

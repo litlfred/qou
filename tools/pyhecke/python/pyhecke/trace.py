@@ -1,6 +1,6 @@
 """Markov trace — numeric and arbitrary-precision (mpmath) variants.
 
-Re-exports from hecke_core (canonical) + _deprecated/hecke_core_legacy
+Re-exports from hecke_core (canonical) + computations/hecke_core_legacy
 (exploratory `atom_character_raw`) + crt_markov (optional CRT backend).
 """
 

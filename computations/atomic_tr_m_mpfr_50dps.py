@@ -46,7 +46,7 @@ from witness_polynomial import expose_polynomial  # noqa: F401
 from mpmath import mp, mpf
 
 from _precision import set_compute_dps, fmt
-set_compute_dps()  # mp.mp.dps via QOU_COMPUTE_DPS (default 50)
+set_compute_dps(80)
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
@@ -60,7 +60,7 @@ from canonical_tr_m_via_rust import compute_tr_m as _canonical_rust_compute_tr_m
 # import — historically that module set `mp.mp.dps = 30` at import
 # time (since fixed, but this guard makes the script robust if the
 # upstream regression returns).  Copilot PR #895 review.
-set_compute_dps()
+set_compute_dps(80)
 
 Q0 = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 OUT = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
@@ -574,6 +574,8 @@ def main(also_symbolic: bool = False, method: str = "canonical-rust",
         # that can silently differ.
         "intra_ordering_frame": _inspect.signature(
             atom_braid_word_3A).parameters["intra_order"].default,
+        "pn_convention": _inspect.signature(
+            atom_braid_word_3A).parameters["pn_convention"].default,
         "results": results,
     }
     sys.path.insert(0, str(HERE))

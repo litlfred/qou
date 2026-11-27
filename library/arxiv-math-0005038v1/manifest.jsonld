@@ -26,6 +26,18 @@
     "library/arxiv-math-0005038v1/sections/sec-011"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Braid groups are linear — The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc.\n\n**Braid groups are linear**\n\n*STEPHEN J. BIGELOW*\n\n13 pp, 13 sections.\n\n**Abstract.** The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc. The Lawrence-Krammer representation of the braid group is the induced action on a certain twisted second homology of the space C of unordered pairs of points in the n-punctured disc. Recently, Daan Krammer showed that this is a faithful representation in the case n = 4. In this paper, we show that it is faithful for all n.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Definitions; 1.2 Outline; 1.3 Notation; 2 Forks and Noodles; 2.1 Proof of the Basic Lemma; 2.2 Alternative proofs; 3 The representation is faithful; 3.1 Computing the pairing; 3.2 Proof of the Key Lemma; 3.3 Proof of the Theorem; 4 Matrices for the Lawrence-Krammer representa",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {

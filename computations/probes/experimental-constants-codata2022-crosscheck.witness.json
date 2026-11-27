@@ -1,0 +1,160 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-24T13:53:08.556193+00:00",
+  "commitSha": "f9b2cff97d107bb9647616e8d9e3d5f66df455f4",
+  "assertions": [
+    {
+      "name": "codata2022_central_values_match_nist_table_80dps",
+      "computed": "1.53409170790553954784242873593321113842975484765607798909736e-92",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "M_E_MEV, M_P_MEV, M_N_MEV_CODATA_DIRECT, M_N_MINUS_P_MEV, MU_OVER_E, TAU_OVER_E, G_F_MEV vs library/codata-2022/values.json"
+    },
+    {
+      "name": "codata2022_uncertainties_match_nist_table_80dps",
+      "computed": "7.31511930420655988618101470915418214049222396686591143177681e-99",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "1-sigma uncertainties in experimental_constants.py vs library/codata-2022/values.json"
+    },
+    {
+      "name": "si2019_hbar_mev_s_exact_to_80dps",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "HBAR_MEV_S = h / (2*pi*e*1e6) evaluated at _CONST_DPS = 80"
+    },
+    {
+      "name": "three_input_neutron_closure_and_qbeta_mutual_consistency",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "m_n_derived_3input == M_N_MEV and |Q_beta(CODATA) - Q_beta(AME)| < 0.25 sigma"
+    },
+    {
+      "name": "l2_delta_pn_validation_target_equals_codata2022_mn_minus_mp",
+      "computed": "4.49097632381620289357249254584102809728444354888898421633313e-79",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "M_N_MEV_VALIDATION - M_P_MEV_VALIDATION == M_N_MINUS_P_MEV = 1.29333251 MeV"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "experimental-constants-codata2022-crosscheck",
+  "scriptFile": "experimental_constants_codata2022_crosscheck_probe.py",
+  "scriptHash": "011be16ecf9e",
+  "scriptCommitSha": "f9b2cff97d107bb9647616e8d9e3d5f66df455f4",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/experimental_constants_codata2022_crosscheck_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/experimental_constants_codata2022_crosscheck_probe.py"
+  },
+  "description": "80-dps cross-check of computations/substrate/experimental_constants.py against primary NIST CODATA-2022 values (library/codata-2022/values.json, [codata2022]; bean qou-f0qa). Verifies exact agreement of values and uncertainties at _CONST_DPS = 80, exact SI-2019 HBAR_MEV_S, 3-input neutron closure, and L2 Delta_pn = 1.29333251 MeV target identity.",
+  "contentBlock": "def:three-calibration-discipline",
+  "data": {
+    "const_dps": 80,
+    "table_comparisons": {
+      "M_E_MEV": {
+        "nist_quantity": "electron mass energy equivalent in MeV",
+        "table_value": "0.510998950690000000000000000000000000000000000000000000000000",
+        "module_value": "0.510998950690000000000000000000000000000000000000000000000000",
+        "abs_val_diff": "0.0",
+        "table_uncertainty": "0.000000000160000000000000000000000000000000000000000000000000000000000",
+        "module_uncertainty": "0.000000000160000000000000000000000000000000000000000000000000000000000",
+        "abs_err_diff": "0.0"
+      },
+      "M_P_MEV": {
+        "nist_quantity": "proton mass energy equivalent in MeV",
+        "table_value": "938.272089430000000000000000000000000000000000000000000000000",
+        "module_value": "938.272089430000000000000000000000000000000000000000000000000",
+        "abs_val_diff": "0.0",
+        "table_uncertainty": "0.000000290000000000000000000000000000000000000000000000000000000000",
+        "module_uncertainty": "0.000000290000000000000000000000000000000000000000000000000000000000",
+        "abs_err_diff": "0.0"
+      },
+      "M_N_MEV_CODATA_DIRECT": {
+        "nist_quantity": "neutron mass energy equivalent in MeV",
+        "table_value": "939.565421940000000000000000000000000000000000000000000000000",
+        "module_value": "939.565421940000000000000000000000000000000000000000000000000",
+        "abs_val_diff": "0.0",
+        "table_uncertainty": "0.000000480000000000000000000000000000000000000000000000000000000000",
+        "module_uncertainty": "0.000000480000000000000000000000000000000000000000000000000000000000",
+        "abs_err_diff": "0.0"
+      },
+      "M_N_MINUS_P_MEV": {
+        "nist_quantity": "neutron-proton mass difference energy equivalent in MeV",
+        "table_value": "1.29333251000000000000000000000000000000000000000000000000000",
+        "module_value": "1.29333251000000000000000000000000000000000000000000000000000",
+        "abs_val_diff": "0.0",
+        "table_uncertainty": "0.000000380000000000000000000000000000000000000000000000000000000000",
+        "module_uncertainty": "0.000000380000000000000000000000000000000000000000000000000000000000",
+        "abs_err_diff": "0.0"
+      },
+      "MU_OVER_E": {
+        "nist_quantity": "muon-electron mass ratio",
+        "table_value": "206.768282700000000000000000000000000000000000000000000000000",
+        "module_value": "206.768282700000000000000000000000000000000000000000000000000",
+        "abs_val_diff": "0.0",
+        "table_uncertainty": "0.00000460000000000000000000000000000000000000000000000000000000000",
+        "module_uncertainty": "0.00000460000000000000000000000000000000000000000000000000000000000",
+        "abs_err_diff": "0.0"
+      },
+      "TAU_OVER_E": {
+        "nist_quantity": "tau-electron mass ratio",
+        "table_value": "3477.23000000000000000000000000000000000000000000000000000000",
+        "module_value": "3477.23000000000000000000000000000000000000000000000000000000",
+        "abs_val_diff": "0.0",
+        "table_uncertainty": "0.230000000000000000000000000000000000000000000000000000000000",
+        "module_uncertainty": "0.230000000000000000000000000000000000000000000000000000000000",
+        "abs_err_diff": "0.0"
+      },
+      "G_F_MEV": {
+        "nist_quantity": "Fermi coupling constant",
+        "table_value": "0.0000000000116637870000000000000000000000000000000000000000000000000000",
+        "module_value": "0.0000000000116637870000000000000000000000000000000000000000000000000000",
+        "abs_val_diff": "1.53409170790553954784242873593321113842975484765607798909736e-92",
+        "table_uncertainty": "0.00000000000000000600000000000000000000000000000000000000000000000000000000000",
+        "module_uncertainty": "0.00000000000000000600000000000000000000000000000000000000000000000000000000000",
+        "abs_err_diff": "7.31511930420655988618101470915418214049222396686591143177681e-99"
+      }
+    },
+    "neutron_and_delta_pn_summary": {
+      "M_N_MINUS_P_MEV_codata2022": "1.29333251000000000000000000000000000000000000000000000000000",
+      "M_N_MINUS_P_MEV_ERR_codata2022": "0.000000380000000000000000000000000000000000000000000000000000000000",
+      "L2_DELTA_PN_VALUE": "1.29333251000000000000000000000000000000000000000000000000000",
+      "Q_NEUTRON_MEV_ame_3input": "0.782333409310000000000000000000000000000000000000000000000000",
+      "Q_NEUTRON_MEV_ERR_ame_3input": "0.000000666408302469289468560497761249533160304081412493672051410504",
+      "Q_BETA_MEV_codata2022_direct": "0.782333559310000000000000000000000000000000000000000000000000",
+      "Q_BETA_MEV_codata2022_err": "0.000000380000033684209033386923414598403364027374930708595076342612",
+      "ame_vs_codata_qbeta_z_score": "0.195532073880107088170302011188668776641739195294093671466389",
+      "retained_deliberate_determinations": {
+        "ALPHA_EM_INV_cs_recoil_2018": "137.035999084000000000000000000000000000000000000000000000000",
+        "ALPHA_EM_INV_codata2022_table": "137.035999177"
+      }
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Direct cross-check of experimental_constants.py against NIST CODATA-2022 values.json; q_0 does not enter."
+}

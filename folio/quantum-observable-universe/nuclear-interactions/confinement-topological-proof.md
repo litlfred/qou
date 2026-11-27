@@ -1,28 +1,41 @@
-## Proof of (i): the Gram matrix has a negative eigenvalue
-
-The eigenvalues of $G$ are:
+Direct multiplication of the $2\times 2$ generating matrices over $\mathbb{Z}[t^{\pm 1}]$ (with $q = t^2$ and $q^{-1} = t^{-2}$) gives
 
 $$
-  \mathrm{spec}(G)
-  =
-  \{
-    \lambda_+(q),\;
-    \lambda_+(q),\;
-    \lambda_+(q),\;
-    \lambda_{\max}(q),\;
-    \lambda_0(q),\;
-    \lambda_-(q)
-  \}
+  L_+
+  = \rho(\sigma_0)\rho(\sigma_1)
+  = \begin{pmatrix} q & 1 \\ 0 & -q^{-1} \end{pmatrix}
+    \begin{pmatrix} -q^{-1} & 0 \\ 1 & q \end{pmatrix}
+  = \begin{pmatrix} 0 & q \\ -q^{-1} & -1 \end{pmatrix}
 $$
 
-where $\lambda_-(q) < 0$ for all $q > 1$. At the proton-pinned $q_0$ with the canonical weight $z = q^3/(q^2+1)$, $\lambda_- \approx -0.7527$ and $\lambda_0 = 0$. (Until 2026-10-10 this read $\lambda_- \approx -0.855$, the excised convention-C value.)
+and
 
-The LP exploits this. The eigenvector $v_-$ corresponding to $\lambda_-$ satisfies $t \cdot v_- < 0$ while $Gv_- \geq 0$ in certain components. Moving along $v_-$ decreases the objective without violating Frobenius positivity.
+$$
+  L_-
+  = \rho(\sigma_1)\rho(\sigma_0)
+  = \begin{pmatrix} -q^{-1} & 0 \\ 1 & q \end{pmatrix}
+    \begin{pmatrix} q & 1 \\ 0 & -q^{-1} \end{pmatrix}
+  = \begin{pmatrix} -1 & -q^{-1} \\ q & 0 \end{pmatrix}.
+$$
 
-## Proof of (iii): exhaustive enumeration
+Squaring $L_+$ and $L_-$ and forming the mixed product $L_+ L_-$ yields
 
-Among the $4^6 = 4096$ braid words of length exactly $6$ over the generators $\{\sigma_0, \sigma_1, \sigma_0^{-1}, \sigma_1^{-1}\}$, and all shorter words:
+$$
+  L_+^2 = \begin{pmatrix} -1 & -q \\ q^{-1} & 0 \end{pmatrix},
+  \qquad
+  L_-^2 = \begin{pmatrix} 0 & q^{-1} \\ -q & -1 \end{pmatrix},
+  \qquad
+  L_+ L_- = \begin{pmatrix} q^2 & 0 \\ q^{-1} - q & q^{-2} \end{pmatrix}.
+$$
 
-- $\mathcal{B}_3 = \sigma_0\sigma_1^{-1}\sigma_0\sigma_1^{-1}\sigma_0\sigma_1^{-1}$ achieves $|\Delta\mathrm{net}| = 0.000$ for both proton and neutron.
-- The mirror $\mathcal{B}_3^{\sigma} = \sigma_0^{-1}\sigma_1\sigma_0^{-1}\sigma_1\sigma_0^{-1}\sigma_1$ achieves $|\Delta\mathrm{net}| = 0.004$, an order of magnitude worse.
-- All other words have $|\Delta\mathrm{net}| > 0.01$.
+Adding the squares and scaling the mixed product by $2$,
+
+$$
+  L_+^2 + L_-^2
+  = \begin{pmatrix} -1 & q^{-1} - q \\ q^{-1} - q & -1 \end{pmatrix},
+  \qquad
+  2\,L_+ L_-
+  = \begin{pmatrix} 2q^2 & 0 \\ 2(q^{-1} - q) & 2q^{-2} \end{pmatrix}.
+$$
+
+At entry $(0,0)$, the left-hand matrix has Laurent polynomial $-1 = -t^0 \in \mathbb{Z}[t^{\pm 1}]$, whose degree-$4$ coefficient is $0$, whereas the right-hand matrix has $2q^2 = 2t^4 \in \mathbb{Z}[t^{\pm 1}]$, whose degree-$4$ coefficient is $2 \neq 0$. Hence $-1 \neq 2q^2$ in $\mathbb{Z}[t^{\pm 1}]$, and therefore $L_+^2 + L_-^2 \neq 2\,L_+ L_-$.

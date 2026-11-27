@@ -18,7 +18,7 @@ export default proposition({
   title:
     "The canonical closure is a chain of $(2,\\mathrm{odd})$-torus knots: bridge number $2A+1$ and total curvature $2\\pi(2A+1)$",
   lean: {
-    ref: "qou:QOU.Mass.TorusKnotPages.curvature_floor",
+    ref: "qou:BraidKnotOctonion.TorusKnotPages.curvature_floor",
     sorryFree: true,
     validation: "not_checked",
   },
@@ -38,6 +38,12 @@ export default proposition({
     "draft",
   ],
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Formalisation regression guard (`qou-x60n`): `2026-08-23-free-prop-real-module-probe.lean` guards `QOU.Mathlib.HeckeAlgebra.IwahoriHeckeAlgebra` in the upstream import closure of `QOU.Mass.TorusKnotPages`.",
+      see: "docs/audits/2026-08-23-free-prop-real-module-probe.lean",
+    },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): ## What is formalised, what is checked, what is cited\n\n`QOU.Mass.TorusKnotPages` carries the algebra: the Seifert form\nof $T(2,n)$ is unimodular for every odd $n$; the continuant of $V - X V^{\\mathsf T}$\nsatisfies $(X+1) D_{2g} = X^{2g+1} + 1$, so the Alexander polynomial is\n$(X^n+1)/(X+1)$ and divides $X^{2n}-1$; the floor $2A+1 \\le b \\le 3A$ is\nbookkeeping from $\\mu = A+1$ and $A$ knotted components.\nThe chain form and its exponents are verified exactly for $A \\le 12$, and the\nsymbolic predictions -- components, knot types, linking, and that $W'_A$ closes\nto the same link (Jones polynomial and per-component Jones) -- for $A \\le 4$,\nby `the_canonical_closure_is_a_chain_of_torus_links_probe.py`; the\ncomputational instance at $A \\le 6$ via Reidemeister simplification and\nVogel's algorithm is `the_curvature_floor_is_sharp_probe.py`. Not formalised:\nthe two topological facts above, Milnor's theorem, and the identification of\nthe components from their Jones polynomials." },
   ],
 });

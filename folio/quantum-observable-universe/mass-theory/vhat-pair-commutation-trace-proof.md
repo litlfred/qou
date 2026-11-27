@@ -1,5 +1,3 @@
-## Proof
-
 The traced volume $\hat V_i(q) = z(q)\,a_i(q) + b_i(q)$ is, by
 construction
 ([def:algebraic-quantum-volume §partial-product expansion](#def:algebraic-quantum-volume)),
@@ -7,7 +5,7 @@ an element of the **commutative** Laurent polynomial ring
 $\mathbb{Z}[q^{\pm 1/2}, z]$ — the coefficients $a_i, b_i$ are
 polynomials in $q^{\pm 1/2}$ and $z$ is a single transcendental
 parameter (the Markov parameter, eliminated by
-$z = q^{3}/(q^{2}+1)$ (**convention D**) at the end of every Markov peel,
+$z = q^{3}/(q^{2}+1)$ at the end of every Markov peel,
 [Existence and non-degeneracy of the Markov trace (Jones, 1987)](#thm:jones-markov-trace)).
 
 Two elements of a commutative ring commute. Hence

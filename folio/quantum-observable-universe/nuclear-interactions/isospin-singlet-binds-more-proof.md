@@ -4,7 +4,7 @@ Both scalars carry the same denominator $q + q^{-1}$, which is positive for $q >
 and the ordering therefore reduces to the numerators: $\mu_- < \mu_+$ is equivalent
 to $q - z < z + q^{-1}$, that is to $h < 2z$ with $h = q - q^{-1}$.
 
-Substituting convention D and clearing denominators turns $2z - h$ into a closed form
+Substituting $z = q^{3}/(q^{2}+1)$ and clearing denominators turns $2z - h$ into a closed form
 rather than an estimate:
 
 $$

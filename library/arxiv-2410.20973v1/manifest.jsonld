@@ -34,6 +34,18 @@
     "library/arxiv-2410.20973v1/sections/sec-019"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS — We prove conjectures of Garoufalidis-Gu-Mari˜no [9] that perturbative series associated with the hyperbolic knots 41 and 52 are resurgent and\n\n**SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS**\n\n*VERONICA FANTINI AND CAMPBELL WHEELER*\n\n44 pp, 21 sections.\n\n**Abstract.** We prove conjectures of Garoufalidis-Gu-Mari˜no [9] that perturbative series associated with the hyperbolic knots 41 and 52 are resurgent and Borel summable. In the process, we give an algorithm that can be used to explicitly compute the Borel–Laplace resummation as a combination of state integrals of Andersen–Kashaev [1]. This gives a complete description of the resurgent structure in these examples and allows for explicit computations of Stokes constants.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Deforming the volume of a three-manifold; 1.2 State integrals; 1.3 Proving Borel–Laplace summability; Acknowledgements; 2 From thimbles to state integrals; 2.1 Existence of thimbles; 2.2 A relative homology for state integrals co; 2.3 A state integral basis; 3 Asymptotics of state integrals; 3.1 A steepest descent algorithm; 3.2 Proof of Theorem 1.4; 4 Examples; 4.2 The case of (A,B)=(4,1); Appendix A. Critical points and independence o; Appendix B. Faddeev's dilogarithm; B.1. Asymptotics of the Pochhammer symbol",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

@@ -1,6 +1,6 @@
 # Bar-parity (sinh/cosh) decomposition under the bar involution
 
-**Proposition.** *Let $R$ be a commutative ring and $\sigma\colon R\to R$ a
+*Let $R$ be a commutative ring and $\sigma\colon R\to R$ a
 ring involution — the bar $q\mapsto q^{-1}$. For every $f\in R$,*
 
 $$

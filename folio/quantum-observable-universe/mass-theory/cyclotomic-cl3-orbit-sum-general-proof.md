@@ -1,5 +1,3 @@
-### Proof
-
 **Step 1 (multiplication formula).** The classical $N$-th roots-of-unity
 multiplication identity for $\mathrm{Li}_n$:
 

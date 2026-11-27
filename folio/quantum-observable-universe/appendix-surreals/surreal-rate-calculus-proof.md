@@ -1,4 +1,4 @@
-**Proof.** All four claims reduce to order comparisons in
+All four claims reduce to order comparisons in
 $\mathbb{R}(\varepsilon)$.  Items (1)--(3) are immediate from
 the definitions and the positivity / archimedean-smallness of
 $\varepsilon$

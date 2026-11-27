@@ -8,7 +8,7 @@ export default table({
     "Tower-binding-energy formula predictions $B_{\\mathrm{pred}}$ vs " +
     "observed $B_{\\mathrm{obs}}$ for representative isotopes from " +
     "hydrogen through calcium, at $q_0 \\approx 1.110$. Zero fitted " +
-    "parameters; mean mass error 0.071\\% across $Z = 1$ to $Z = 20$.",
+    "parameters; mean mass error 0.071% across $Z = 1$ to $Z = 20$.",
   uses: ["prop:tower-binding-energy"],
   tags: [
     "binding-energy",

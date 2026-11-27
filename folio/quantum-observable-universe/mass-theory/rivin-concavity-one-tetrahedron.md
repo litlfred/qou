@@ -2,7 +2,6 @@
 
 Casson and Rivin's approach to hyperbolic structures replaces the search for shape parameters with a *maximisation*: an angle structure assigns three positive dihedral angles summing to $\pi$ to each tetrahedron, subject to the linear condition that angles around each edge sum to $2\pi$; the hyperbolic structure is the critical point of the total volume on that polytope. The argument needs the volume functional to be concave, or the critical point carries no information.
 
-**Theorem.**
 *Let $\alpha + \beta + \gamma = \pi$ and let $(u,v,w)$ be a nonzero tangent direction with $u + v + w = 0$. Then*
 
 $$

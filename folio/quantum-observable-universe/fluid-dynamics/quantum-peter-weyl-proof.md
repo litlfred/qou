@@ -1,5 +1,3 @@
-**Proof.**
-
 *Step 1: Orthogonality (a).*
 The Frobenius form $\int_A$ induces, via the
 [snake identities](#def:frobenius-pairing)

@@ -1,4 +1,3 @@
-**Conjecture (Confinement $\to$ NF-structure forcing).**
 *Let $\beta = \beta_1 \star I \star \beta_2 \in B_n$ be a compound braid across a basis interface $I$. Assuming the confinement hypothesis $|A| < n!$, the active LP set $A$ governs the normal form behavior:*
 
 1. *(NF-support localisation) The Wedderburn maximizer $\lambda^\star \in \arg\max_\lambda \mathrm{ord}_{q=0}^{(-)} \chi_\lambda(T_\beta)$ resides strictly inside the active set $A$.*

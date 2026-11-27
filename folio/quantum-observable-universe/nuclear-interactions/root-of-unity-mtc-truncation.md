@@ -1,4 +1,3 @@
-**Conjecture (root-of-unity MTC truncation).**
 *Let $H_n(R, q)$ be the Iwahori–Hecke algebra of the anyonic substrate. Fix $k \geq 2$. Specialise the deformation parameter at a primitive $k$-th root of unity on the unit circle:*
 $$
   q \;=\; e^{2\pi i / k} \;\in\; S^1.

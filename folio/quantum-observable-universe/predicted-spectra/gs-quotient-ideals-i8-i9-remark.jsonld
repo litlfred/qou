@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-gs-quotient-ideals-i8-i9-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:gs-quotient-ideals-i8-i9-remark",
+  "kind": "remark",
+  "title": "Why the quotient ideals $I_8$ and $I_9$ reduce the normal form",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-gs-quotient-ideals-I8-I9",
+    "papers/quantum-observable-universe/blocks/prop-shell-closure-normal-form"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-gs-quotient-ideals-I8-I9",
+  "tags": [
+    "groebner-shirshov",
+    "quotient-ideal"
+  ],
+  "text": "gs-quotient-ideals-i8-i9-remark.md",
+  "provenance": "authored"
+}

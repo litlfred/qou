@@ -1,5 +1,3 @@
-**Conjecture (binding many-body series = jet-order filtration).**
-
 The per-isotope binding energy of the canonical braid $\mathcal{B}_K$ is the
 **body-order series**
 

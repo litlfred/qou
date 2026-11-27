@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Cyclotomic residues of $\\Phi_q \\cdot \\mathrm{tr}_{M, \\ell}$ — algebraic definition",
   lean: {
-    ref: "qou:QOU.BraidKnot.residue_at_root",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.residue_at_root",
   },
   uses: [
     // conj:gs-residue-at-root-existence removed (qou-tm3c): the cyclotomic projection is now constructed (QOU/BraidKnot/QHabiroCompletion.lean); membership of Phi_q*tr in the Habiro ring is a stated hypothesis, not a conjectural input.
@@ -13,7 +13,7 @@ export default proposition({
   cites: [
     "kassel1995",
     "geckpfeiffer2000",
-    "habiro2002",
+    "habiro2004",
   ],
   tags: [
     "residue",

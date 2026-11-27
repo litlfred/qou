@@ -19,7 +19,7 @@ Per prop:mass-endomorphism-tower:
          +  z² · Σ_{|i-j|=1} Φ_q(|V̂_i^full · V̂_j^full|)
 
 in Hecke units.  Convert to MeV via the electron calibration:
-  m_e_Hecke = tower value for the electron (trefoil)
+  m_e_Hecke = tower value for the electron (σ_0σ_1σ_0)
   M_MeV = (𝔪(ρ)_Hecke / m_e_Hecke) · M_e_MeV
 
 Apply the tower correction:
@@ -139,7 +139,7 @@ def tower_level0(V_arr, use_pairs=True):
 
 
 def compute_electron_tower():
-    """Electron trefoil = σ_0·σ_1·σ_0 on 3 strands, 2 generators.
+    """Electron word σ_0·σ_1·σ_0 on 3 strands, 2 generators.
     V̂_e^std from transfer matrix; V̂_e^sym, alt = character eigenvalues."""
     # Use vertex_volume on the (c, d) chain [(1,0), (1,0), (1,0)] at 2 gens?
     # Actually the trefoil is 3 σ factors alternating: σ_0 σ_1 σ_0.

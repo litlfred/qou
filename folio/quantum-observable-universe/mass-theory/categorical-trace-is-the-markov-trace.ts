@@ -4,7 +4,7 @@ export default remark({
   label: "rem:categorical-trace-is-the-markov-trace",
   title: "The rigid trace of the tensor representation is the Markov trace",
   interprets: "prop:markov-trace-frobenius-selection",
-  lean: { ref: "qou:QOU.MassTheory.qtrace_rHecke_div", validation: "not_checked" },
+  lean: { ref: "qou:QOU.MassTheory.TensorPictureGenerator.qtrace_rHecke_div", validation: "not_checked" },
   uses: [
     "prop:markov-trace-frobenius-selection",
     "rem:trace-ledger",

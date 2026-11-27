@@ -12,6 +12,6 @@ export default proposition({
   label: "prop:beta-eq-ln-q-dictionary",
   title: "The $\\beta = \\ln q$ partition-function dictionary",
   tags: ["partition-function", "markov-trace", "temperature", "wedderburn", "categorical"],
-  lean: { ref: "qou:QOU.Thermo.boltzmann_energyOf", validation: "not_checked" },
+  lean: { ref: "qou:QOU.Core.QBetaEnergyDictionary.boltzmann_energyOf", validation: "not_checked" },
   uses: ["prop:q-exp-entire"],
 });

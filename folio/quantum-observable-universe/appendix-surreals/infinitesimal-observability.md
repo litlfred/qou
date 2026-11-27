@@ -1,6 +1,6 @@
 The QOU observability axiom requires $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ ([quantum observable universe](#def:quantum-observable-universe)): the trivial representation does not appear in the adjoint of $A$. This rigidity condition guarantees $A$ has no infinitesimal symmetries beyond the identity. Under a surreal lift, this can be relaxed.
 
-**Conjecture.** The $\varepsilon$-relaxed observability axiom is:
+The $\varepsilon$-relaxed observability axiom is:
 $$
   \dim_{\mathbf{No}} \mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) \leq \varepsilon.
 $$

@@ -6,4 +6,3 @@ The **braid group on three strands** has the presentation:
      \big| \sigma_1\sigma_2\sigma_1=\sigma_2\sigma_1\sigma_2\bigr\rangle.
 \end{equation}
 ```
-This is the fundamental group of the configuration space of three unordered points in the plane. It is isomorphic to the fundamental group of the trefoil knot complement.

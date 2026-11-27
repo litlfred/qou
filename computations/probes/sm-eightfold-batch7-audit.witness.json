@@ -1,0 +1,175 @@
+{
+  "engine": "mpmath (80 dps) + sympy Q(q) + exact Fraction/int",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T03:28:50.304151+00:00",
+  "commitSha": "bd977690b11d1138704c8c0165f609c11fb4bd38",
+  "assertions": [
+    {
+      "name": "q0_at_80_matches_Q_MP",
+      "computed": "7.7371835869339141800537452711683021760592669107032849756987107952944826886127401e-72",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-65",
+      "source": "qou_substrate.constants"
+    },
+    {
+      "name": "sRow3Derived_matches_sRow3_table_k0_to_5",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "ThreeRowSpringerSYTDerivation.sRow3Derived_eq_sRow3"
+    },
+    {
+      "name": "H4_conventionD_partition_of_unity_and_3row_vanishing",
+      "computed": "2.1084395886461046448697148102540038015419922764737015100155526050216288581939519e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "H4GPMTModifiedDimensionCumulants.weights_h4_conventionD_twoRow_sum_eq_one"
+    },
+    {
+      "name": "H4_GPMT_mu4_closed_form_matches_cumulant_definition",
+      "computed": "1.185997268613433862739214580767877138367370655516457099383748340324666232734098e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "H4GPMTModifiedDimensionCumulants.mu4GPMT_H4"
+    },
+    {
+      "name": "H4_GPMT_sign_window_mu3_pos_and_mu4_neg",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "H4GPMTModifiedDimensionCumulants.mu4GPMT_H4_neg_of_pos"
+    },
+    {
+      "name": "Coleman_Glashow_BorromeanV3_SM_and_generic_charges_vanish",
+      "computed": "7.0161209944449234154233918124419120642132213692227909134550737320421878264608312e-82",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "HopfFramingAndHirzebruchDefect.coleman_glashow_borromeanV3_any_charges"
+    },
+    {
+      "name": "Lambda_subprojector_on_A2_equals_zD_exact",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "USpinColemanGlashowLambdaSigma.trace_eLambda_mul_A2_eq_zD"
+    },
+    {
+      "name": "Octonion_su3_dim8_faithful_6D_C_linear_triplet_action",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "OctonionColourTripletSplitting.{su3ToEndTriplet_injective,su3ToEndTriplet_comm_J6,su3ToEndTriplet_bracket}"
+    },
+    {
+      "name": "Baez_Huerta_Z6_kernel_and_parameterized_5bar10_trace_ratio",
+      "computed": "7.8127023497855565433434944562548870665453604767356200110972704443868040368162231e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "Su3Su2U1Z6GroupAndCommutant.{smQuotientZ6EquivSU3xU2,traceRatio_5bar_oplus_10_param}"
+    },
+    {
+      "name": "Single_twist_cube_coherence_window_Hopf_e_and_even_zero_linking_Hirzebruch_defect",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "HopfFramingAndHirzebruchDefect.{exists_incoherent_in_range_iff,zeroLinking_unitFraming_hirzebruchDefect_eq_two_mul_sum}"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 93,
+  "computation": "sm-eightfold-batch7-audit",
+  "scriptFile": "sm_eightfold_batch7_audit_probe.py",
+  "scriptHash": "e633df82ce40",
+  "scriptCommitSha": "bd977690b11d1138704c8c0165f609c11fb4bd38",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/sm_eightfold_batch7_audit_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/sm_eightfold_batch7_audit_probe.py"
+  },
+  "description": "80-dps verification & diagnostic audit for Backlog Drain Batch 7 (qou-i9q6): sRow3 hook-length derivation (qou-jkmh), H_4 GPMT modified dimensions & cumulants (qou-krgl), charge-free & SM-charge Borromean V^3 Coleman-Glashow + Lambda-Sigma0 projector (qou-pwz4, qou-krgl), octonionic su(3) 1+3 colour-triplet splitting (qou-hkgd), S(U(3)xU(2)) Z_6 kernel & parameterized commutant trace ratio (qou-txc1), and Hopf-link component framing + Asselmeyer-Maluga Hirzebruch defect (qou-kebu, qou-qvpl).",
+  "parameters": {
+    "workdps": 80,
+    "q0_proton_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "zD_proton_50dps": "0.61268803714646525159582986394589924802630839154506"
+  },
+  "data": {
+    "sRow3_derived_k0_to_7": {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": -1,
+      "4": -2,
+      "5": 4,
+      "6": 16,
+      "7": -15
+    },
+    "H4_GPMT_evaluations_at_proton_q0": {
+      "dMod111_q0": "-0.16338322805625739104067866233689162388375244697536",
+      "dMod211_q0": "-0.18315335296936653740784296154466410747255226563766",
+      "dMod1111_q0": "0.019770124913109146367164299207772483588799818662304",
+      "mu3GPMT_H4_q0": "0.16338322805625739104067866233689162388375244697536",
+      "mu4GPMT_H4_q0": "-0.084302728403820805572021465505801689528553172326140",
+      "abs_mu4_over_mu3_H4_q0": "0.51598153254012725667375640725544436779115843141314",
+      "uniform_H3_ratio": "2"
+    },
+    "Coleman_Glashow_BorromeanV3_q0": {
+      "split_p_minus_n_q0": "-0.0011730641615944475640904072795410870164715639288256",
+      "split_SigmaPlus_minus_SigmaMinus_q0": "-0.00092560294773051845684547230935537405816278132262903",
+      "split_XiZero_minus_XiMinus_q0": "0.00024746121386392910724493497018571295830878260619654",
+      "coleman_glashow_alternating_sum_SM": "7.0161209944449234154233918124419120642132213692228e-82",
+      "coleman_glashow_alternating_sum_generic": "0.0",
+      "trace_eLambda_A2_q0": "0.61268803714646525159582986394589924802630839154506"
+    },
+    "Octonion_su3_triplet_audit": {
+      "dim_su3_stab_e1": 8,
+      "rank_6D_triplet_restriction": 8,
+      "singlet_leak": 0,
+      "J6_commutator_leak": 0,
+      "lie_bracket_leak": 0
+    },
+    "Twist_cube_and_Hirzebruch_summary": {
+      "incoherent_totals_in_unit_cube": [
+        -1,
+        0,
+        1
+      ],
+      "hopf_component_framings_at_T_neg3_in_unit_cube": [
+        [
+          -1,
+          -1,
+          -1
+        ]
+      ],
+      "zero_linking_defect_odd_count": 0
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

@@ -30,7 +30,9 @@ such a choice would be a fourth calibration in disguise
 Because $m_e$ sets the unit by fiat, an absolute mass in MeV carries no
 information beyond the dimensionless ratio behind it, so the
 comparisons are made on ratios, binding energies, decay $Q$-values and
-mass splittings.
+mass splittings; the same boundary separates dimensionless $\mathbb{Q}(q)$
+clock grains and state-space moduli from empirical Compton and SI
+Planck length bridges ([stratified spacetime, length, and distance scales](#rem:spacetime-length-distance-layers)).
 
 The standard applied to each comparison is strict: a prediction is
 counted as meeting its target only when its residual is below one

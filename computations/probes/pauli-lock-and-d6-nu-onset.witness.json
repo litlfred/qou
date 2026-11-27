@@ -1,0 +1,142 @@
+{
+  "engine": "mpmath (80 dps) + exact Fraction/int",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T10:19:50.572080+00:00",
+  "commitSha": "bb159d13c2949d1434947dbf788711436b074a79",
+  "assertions": [
+    {
+      "name": "q0_at_80_matches_Q_MP",
+      "computed": "7.7371835869339141800537452711683021760592669107032849756987107952944826886127401e-72",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-65",
+      "source": "qou_substrate.constants"
+    },
+    {
+      "name": "isoMu_H2_H3_branching_and_twoRow_rational_closed_forms_at_q0",
+      "computed": "1.054219794323052322434857405127001900770996138236850755007776302510814429096976e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "PauliLockSpinIsospinDiagnostic.{isoMu_eq_h2_weights,isoMu_eq_h3_branching_of_radical,isoMuPlus_twoRow_closed_form,isoMuMinus_twoRow_closed_form}"
+    },
+    {
+      "name": "pauliLockedProduct_deficit_and_reciprocal_rescaling_invariance_at_q0",
+      "computed": "1.8448846400653415642610004589722533263492432419144888212636085293939252509197079e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "PauliLockSpinIsospinDiagnostic.{pauliLockedProduct_twoRow_closed_form,isoMu_twoRow_product_deficit,reciprocal_rescale_preserves_product}"
+    },
+    {
+      "name": "A5_2I_spinor_obstruction_classical_spin_discrepancy_and_band_disjointness",
+      "computed": "6.5888737145190770152178587820437618798187258639803172187986018906925901818560997e-83",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "PauliLockSpinIsospinDiagnostic.{a5Irrep_no_two_dim_spinor,binaryIcosahedral_two_dim_spinors,unit_sum_channel_diff_eq,classicalSpin_eq_twoRowIso_iff_q_sq_eq_one,isoMu_disjoint_from_admissible_bond}"
+    },
+    {
+      "name": "nu_depthOne_full_enum_n4_18_and_uMoment_closed_form_collapse_n4_40",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "YoungDiagramTailSecondInstance.{uMoment1,uMoment2,uMoment3,sq_depthOne_int_sum_eq_u_sum,depthOne_int_sum_collapse,nuV_depthOne_closed_form}"
+    },
+    {
+      "name": "nu_depthOne_onset_n1_eq_8_matches_A2_second_instance_witness_and_cubic_root",
+      "computed": "9.4458093571345488090163223499379370309081253986021827648696756704968972847089046e-79",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "YoungDiagramTailSecondInstance.{nuV_depthOne_witness_values,nuV_depthOne_pos_iff,nuV_depthOne_neg_iff,nuV_depthOne_eq_zero_iff,depthOneCubicFactor_decomp}"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 42,
+  "computation": "pauli-lock-and-d6-nu-onset",
+  "scriptFile": "pauli_lock_and_d6_nu_onset_probe.py",
+  "scriptHash": "ebb8bb7a47df",
+  "scriptCommitSha": "bb159d13c2949d1434947dbf788711436b074a79",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "56872bc54313b172"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/pauli_lock_and_d6_nu_onset_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/pauli_lock_and_d6_nu_onset_probe.py"
+  },
+  "description": "80-dps and exact-Fraction verification for Pauli-lock spin/isospin diagnostic (qou-o43i, QOU.Nuclear.PauliLockSpinIsospinDiagnostic) and depth-1 nu_{n-1} closed form + n_1 = 8 sign onset against the A2 second-instance witness (qou-1a69, QOU.BraidsAndKnots.YoungDiagramTailSecondInstance).",
+  "parameters": {
+    "workdps": 80,
+    "q0_proton_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "z_twoRow_proton_50dps": "0.61268803714646525159582986394589924802630839154506"
+  },
+  "data": {
+    "pauli_lock_spin_isospin_q0": {
+      "isoMuPlus_q0": "0.75270211325196540159377935162023613783017559887490",
+      "isoMuMinus_q0": "0.24729788674803459840622064837976386216982440112510",
+      "pauli_locked_product_q0": "0.18614164195799085216523021677927820259711126722985",
+      "product_deficit_1_minus_4prod_q0": "0.25543343216803659133907913288288718961155493108059",
+      "classical_spin_vs_twoRow_iso_gap_q0": "0.0027021132519654015937793516202361378301755988749047",
+      "single_bond_band_floor_z_minus_h_q0": "0.40362773835082593616498365081622430416655089628204",
+      "single_bond_band_ceiling_z_q0": "0.61268803714646525159582986394589924802630839154506",
+      "a5_irrep_dims": [
+        1,
+        3,
+        3,
+        4,
+        5
+      ],
+      "binary_icosahedral_irrep_dims": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        4,
+        2,
+        3
+      ]
+    },
+    "nu_depthOne_onset_summary": {
+      "closed_form": "(n - 1)*(n - 4)*(n^3 - 11*n^2 + 32*n - 30)*C(2*n - 6, n - 3)/(3*n!)",
+      "values_n4_to_10": {
+        "4": "0",
+        "5": "-4/3",
+        "6": "-5/3",
+        "7": "-1/6",
+        "8": "119/60",
+        "9": "88/27",
+        "10": "2717/840"
+      },
+      "zero_at": 4,
+      "negative_at": [
+        5,
+        6,
+        7
+      ],
+      "positive_onset_n1": 8,
+      "cubic_real_root_50dps": "7.0775742230450710727902100347471883566794433086415",
+      "reference_witness_rows_verified": 22
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

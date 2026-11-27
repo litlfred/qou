@@ -32,7 +32,7 @@ export default conjecture({
   title:
     "Conjectured categorical derivation of $E_h = m_e c_q^2 \\alpha_{EM}^2$ via $J^1$-vanishing in the molecular LP dual",
   lean: {
-    ref: "qou:QOU.Archimedean.EHartreeCategoricalDerivation",
+    ref: "qou:QOU.MassTheory.Archimedean.EHartreeCategoricalDerivation",
     validation: "not_checked",
   },
   uses: [
@@ -67,6 +67,8 @@ export default conjecture({
     "conjecture",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): ($T_1 = T_{e_2 \\mathfrak{p}_2}^{\\mathrm{dressed}}$ in [LP dual gives optimal $H_2$ binding](#prop:h2-lp-dual-binding), with eigenvalues $q^{5}, -q^{-5}$)" },
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): The $H_2$ molecular braid and its primal/dual program are set up rigorously in [LP dual binding](#prop:h2-lp-dual-binding) and [ILP covalent bond](#prop:ilp-covalent-bond)." },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The $H_2$ witness ([`h2-molecular-binding.witness.json`](../../../computations/h2-molecular-binding.witness.json)) gives" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): — [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean))" },
     {

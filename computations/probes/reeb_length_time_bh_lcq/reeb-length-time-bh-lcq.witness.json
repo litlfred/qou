@@ -1,0 +1,251 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-24T01:26:08.864206+00:00",
+  "commitSha": "58431d1ded778e60d45d23184a6e2cdc6b12e237",
+  "assertions": [
+    {
+      "name": "battery_a_reeb_cone_kms_grav_and_lcal_identities_exact",
+      "computed": "3.454467422037777850154540745120159828446400145774512554009481388067437e-77",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-74",
+      "source": "ReebLengthTimeAndLightConeEntropy §§1-3: exact Layer-I/II/III Reeb, c_q, KMS swap, G_Planck=1, hbar_q*G_q/c_q^3=q, and L_cal cancellation at 80 dps."
+    },
+    {
+      "name": "battery_b_catalan_bounds_and_clebsch_gordan_exact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "ReebLengthTimeAndLightConeEntropy §4: 4^m/(m+1)^2 <= C_m <= 4^m for m<=5000, [2]_q^4 = C_2 + 3[3]_q + [5]_q, and s_Haar(q_0) < ln 2 < ln[2]_{q_0}."
+    },
+    {
+      "name": "kaul_majumdar_minus_three_halves_log_correction_verified",
+      "computed": "1.999737539993551066485359e-8",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-6",
+      "source": "Catalan singlet asymptotic expansion ln C_{N/2} = N ln 2 - (3/2) ln N + (1/2) ln(8/pi) - 9/(4N) + O(N^-2) at N_Sigma = 10000."
+    },
+    {
+      "name": "untuned_algebraic_and_sasakian_area_quanta_miss_quarter_law",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Honest refutation check: every pre-registered un-tuned rational/Sasakian area candidate Q1-Q5 misses S = A/(4 ell_P^2) by > 11% (closest: pi at -11.1% / -11.7%, gamma = q_0 - 1 at +15.3%, gamma = hbar_{q_0} at +28.0%)."
+    },
+    {
+      "name": "lcq_clausius_raychaudhuri_null_focusing_cancels_to_quarter",
+      "computed": "5.271098971615261612174287025635009503854980691184253775038881512554072e-82",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-74",
+      "source": "bekenstein_hawking_and_puncture_lock_of_lcq: (2*pi/hbar_q) / (8*pi*G_q/c_q^3) = 1 / (4 * (hbar_q*G_q/c_q^3)) conditional on LCQHorizonPunctureAreaConjecture."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "reeb-length-time-bh-lcq",
+  "scriptFile": "reeb_length_time_bh_lcq_probe.py",
+  "scriptHash": "ea4558e5a624",
+  "scriptCommitSha": "58431d1ded778e60d45d23184a6e2cdc6b12e237",
+  "precisionMetadata": {
+    "compute_dps": 80,
+    "output_dps": 70,
+    "guard_digits": 10,
+    "truncation_bound": "1e-70"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/reeb_length_time_bh_lcq/reeb_length_time_bh_lcq_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/reeb_length_time_bh_lcq/reeb_length_time_bh_lcq_probe.py"
+  },
+  "description": "Pre-registered 80-dps (70-dps serialized) evaluation of Reeb length/time reconciliation, Lieb-Robinson causal cone speed c_q(q_0), categorical energy E = m c_q^2, KMS modular clock vs traciality obstruction, Layer-III L_cal boundary invariance, Temperley-Lieb / Catalan / SU_{q_0}(2) horizon crossing channel entropy rates (ln 2 vs ln[2]_{q_0} vs Haar vs ln[3]_{q_0} and -3/2 ln A Kaul-Majumdar subleading law), and zero-parameter candidate area quanta vs 4 ln 2 and 4 ln[2]_{q_0} (Bean qou-slfm).",
+  "contentBlock": "rem:spacetime-length-distance-layers",
+  "parameters": {
+    "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "q0_pin": "proton (qou_substrate.constants.q_at)",
+    "work_dps": 80,
+    "output_dps": 70,
+    "preregistration_commit": "3008f273ec92545960757eb158f6afd6951aff6a"
+  },
+  "data": {
+    "battery_a_reeb_length_time_causal_cone": {
+      "q0_inv_horiz_weight": "0.9009182839557414921608228824810939360147416266105541806911181857228231",
+      "hbar_q0_reeb_share": "0.09908171604425850783917711751890606398525837338944581930888181427717694",
+      "t_P_q0_full_circuit_tick": "10.09267945615024539110397035565738256371514636866790226479990530084936",
+      "ell_P_normalised_circuit": "1.000000000000000000000000000000000000000000000000000000000000000000000",
+      "c_q0_lieb_robinson_speed": "9.092679456150245391103970355657382563715146368667902264799905300849357",
+      "c_q0_squared_energy_factor": "82.67681969229672229812208650338577663813775969033872579956211961813762",
+      "hbar_q0_mul_c_q0": "0.9009182839557414921608228824810939360147416266105541806911181857228231",
+      "oqsu2_modular_step_q0_sq": "1.232052454166763931269804513535636184849681422916999801483286926167284",
+      "oqsu2_modular_beta_2ln_q0": "0.2086814406390390246318125599461447941074885616579686065017245179040026",
+      "eta_q0_operational_entropy": "0.8920738011820824422230768631883978230730752662635303910402677756258599",
+      "S_cell_q0_jet_entropy": "0.008844482773659049937746019292696112941666360347023789650850410096963162",
+      "G_q0_substrate": "8421.640973956808727855428087525933589884126586149608598384121542860428",
+      "G_Planck_mc_norm": "1.000000000000000000000000000000000000000000000000000000000000000000000",
+      "newton_planck_area_hbar_G_over_c3": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+      "compton_to_si_planck_ratio": "23892224150273317019900.9438486",
+      "max_calibration_invariance_residual": "1.686751670916883715895771848203203041233593821178961208012442084017303e-80"
+    },
+    "battery_b_horizon_channel_entropy_rates": {
+      "q_two_q0_loop_fugacity": "2.010896866707122299752491978091862815889240748484132916763932425904622",
+      "jones_subfactor_index_q2_sq": "4.043706208532521989402019335677388309768213960713506109035950796855290",
+      "q_three_q0_spin1": "3.043706208532521989402019335677388309768213960713506109035950796855290",
+      "s_catalan_singlet_ln2": "0.6931471805599453094172321214581765680755001343602552541206800094933936",
+      "s_tl_loop_fugacity_ln_q2": "0.6985808248941738760383627274407667423379225295185856737829477835963536",
+      "s_tl_half_power_ln_q2_sqrt_q0": "0.6945074369219043459228442671353655920589451946882324026642663453525243",
+      "s_woronowicz_haar_qubit": "0.6877331765002157297686575079257126175892368165148997718190709817408996",
+      "haar_tl_midpoint_minus_ln2": "0.000009820137249493486277996225063111888079538656487468680329373175233003402",
+      "s_spin1_ln_q3": "1.113075920404819572858101800320864642861623271589237477746969525904234",
+      "s_spin1_per_strand_one_third_ln_q3": "0.3710253068016065242860339334402882142872077571964124925823231753014114",
+      "s_tl3_dim5_per_strand_one_third_ln5": "0.5364793041447001248669197777420625465085337847561725739708826304913930",
+      "lqg_casimir_pole_s_star_q0": "1.310794461937209637480629559036010397845908692270562811373538803727407",
+      "lqg_casimir_immirzi_gamma_star_q0": "0.2086194179947881666359934685761341576879041131989538259455175681964374",
+      "lqg_casimir_immirzi_gamma_star_1": "0.2082896175428669668701865384121846614132453720756133292083321524944368",
+      "lqg_sqrt_casimir_DL_gamma_q0": "0.2362722035615116450967882733325424470202889550217889685770451591866322",
+      "lqg_sqrt_casimir_DL_gamma_1": "0.2375329579659206643583771469602444938725469604717132699426851705982821",
+      "lqg_sqrt_casimir_full_qdim_gamma_q0": "0.2742929957222685493322856426576177244996954789783806731128901248944739",
+      "kaul_majumdar_catalan_scaling": {
+        "N_20": {
+          "m_pairs": "10",
+          "ln_dim_singlet": "9.728896041804083895146513734242651813781850487365591230495603503941837",
+          "rate_per_puncture_ln_dim_over_N": "0.4864448020902041947573256867121325906890925243682795615247801751970919",
+          "effective_subleading_log_coeff_singlet": "1.535986188729461825194032",
+          "kaul_majumdar_order1_abs_err": "0.004695013020946319900572163",
+          "effective_subleading_log_coeff_u1_binom": "0.5041708691010313778259006",
+          "meissner_u1_order0_abs_err": "0.01249480717472882005547571"
+        },
+        "N_100": {
+          "m_pairs": "50",
+          "ln_dim_singlet": "62.85201601929310023736082581310093894336447611195368229945559003972133",
+          "rate_per_puncture_ln_dim_over_N": "0.6285201601929310023736082581310093894336447611195368229945559003972133",
+          "effective_subleading_log_coeff_singlet": "1.504842944936621545784371",
+          "kaul_majumdar_order1_abs_err": "0.0001974143654884706374535248",
+          "effective_subleading_log_coeff_u1_binom": "0.5005428590556627652599025",
+          "meissner_u1_order0_abs_err": "0.002499958338331816336517408"
+        },
+        "N_500": {
+          "m_pairs": "250",
+          "ln_dim_singlet": "337.7145419393183792520687682177242281646281635646143871612850591537196",
+          "rate_per_puncture_ln_dim_over_N": "0.6754290838786367585041375364354484563292563271292287743225701183074391",
+          "effective_subleading_log_coeff_singlet": "1.500722816445552887784294",
+          "kaul_majumdar_order1_abs_err": "0.000007979063794280353686346018",
+          "effective_subleading_log_coeff_u1_binom": "0.5000804555426101945296791",
+          "meissner_u1_order0_abs_err": "0.0004999996666682666472385361"
+        },
+        "N_2000": {
+          "m_pairs": "1000",
+          "ln_dim_singlet": "1375.359238758164837967915592814833977186182315863074212713155066273669",
+          "rate_per_puncture_ln_dim_over_N": "0.6876796193790824189839577964074169885930911579315371063565775331368345",
+          "effective_subleading_log_coeff_singlet": "1.500147943002013335546223",
+          "kaul_majumdar_order1_abs_err": "0.0000004996721247986040251202370",
+          "effective_subleading_log_coeff_u1_binom": "0.5000164454149302685400774",
+          "meissner_u1_order0_abs_err": "0.0001249999947916682291654808"
+        },
+        "N_10000": {
+          "m_pairs": "5000",
+          "ln_dim_singlet": "6918.123425889401413345202911025023824757468385206717959537821850722199",
+          "rate_per_puncture_ln_dim_over_N": "0.6918123425889401413345202911025023824757468385206717959537821850722199",
+          "effective_subleading_log_coeff_singlet": "1.500024426893419610730349",
+          "kaul_majumdar_order1_abs_err": "1.999737539993551066485359e-8",
+          "effective_subleading_log_coeff_u1_binom": "0.5000027143405073714231239",
+          "meissner_u1_order0_abs_err": "0.00002499999995833333383333332"
+        }
+      }
+    },
+    "battery_c_area_quantum_lock_diagnosis": {
+      "required_a0_star_catalan_4ln2": "2.772588722239781237668928485832706272302000537441021016482720037973574",
+      "required_a0_star_tl_4ln_q2": "2.794323299576695504153450909763066969351690118074342695131791134385415",
+      "required_a0_star_haar_4s_haar": "2.750932706000862919074630031702850470356947266059599087276283926963598",
+      "required_a0_star_spin1_4ln_q3": "4.452303681619278291432407201283458571446493086356949910987878103616937",
+      "gamma_star_q0_over_hbar_q0": "2.10552891415001935052750552959",
+      "gamma_star_q0_over_q0_minus_1": "1.89690949615523118389151206102",
+      "untuned_candidates": {
+        "Q1_unit_circuit_cell": {
+          "formula": "a_0 = 1 (unit normalised Reeb circuit cell)",
+          "a0_value": "1.000000000000000000000000000000000000000000000000000000000000000000000",
+          "S_over_A_catalan_ln2": "0.6931471805599453094172321214581765680755001343602552541206800094933936",
+          "rel_diff_vs_quarter_catalan": "1.7725887222397812377",
+          "S_over_A_tl_ln_q2": "0.6985808248941738760383627274407667423379225295185856737829477835963536",
+          "rel_diff_vs_quarter_tl_q2": "1.7943232995766955042"
+        },
+        "Q2a_horiz_step_sq": {
+          "formula": "a_0 = q_0^-2 (elementary horizontal step squared)",
+          "a0_value": "0.8116537543657580581322148221417521249185325377965063075526638706880063",
+          "S_over_A_catalan_ln2": "0.8539936849076536613520476439331752696249459721922482830204592955358086",
+          "rel_diff_vs_quarter_catalan": "2.4159747396306146454",
+          "S_over_A_tl_ln_q2": "0.8606882197447092989448119506770899067882384544683956018423072567953200",
+          "rel_diff_vs_quarter_tl_q2": "2.4427528789788371958"
+        },
+        "Q2b_newton_cell_ratio": {
+          "formula": "a_0 = hbar_{q_0}^2 / S_cell(q_0) = q_0",
+          "a0_value": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+          "S_over_A_catalan_ln2": "0.6244689684388264273695059464986686520501409841961536929815369657302544",
+          "rel_diff_vs_quarter_catalan": "1.4978758737553057095",
+          "S_over_A_tl_ln_q2": "0.6293642379680454650832328548349617864983756665848861157374640784104908",
+          "rel_diff_vs_quarter_tl_q2": "1.5174569518721818603"
+        },
+        "Q3_dirac_share_ashtekar_spin12": {
+          "formula": "a_0 = 8*pi * hbar_{q_0} * sqrt([1/2]_{q_0}[3/2]_{q_0}) (gamma = hbar_{q_0})",
+          "a0_value": "2.157548523315080050789738529797557778454863373835405858114840278253205",
+          "S_over_A_catalan_ln2": "0.3212660911537333582830818432268082350680671120647681140422504405051294",
+          "rel_diff_vs_quarter_catalan": "0.28506436461493343313",
+          "S_over_A_tl_ln_q2": "0.3237845255136149868619207534500679557515791844060604266622762272143726",
+          "rel_diff_vs_quarter_tl_q2": "0.29513810205445994745"
+        },
+        "Q4_contact_anisotropy_spin12": {
+          "formula": "a_0 = 8*pi * (q_0 - 1) * sqrt([1/2]_{q_0}[3/2]_{q_0}) (gamma = c_{q_0}^-1)",
+          "a0_value": "2.394832652126607045858779900813635962194031635564839383701771633101345",
+          "S_over_A_catalan_ln2": "0.2894344955353902795241619821867917259513273487709347842698442251402688",
+          "rel_diff_vs_quarter_catalan": "0.15773798214156111810",
+          "S_over_A_tl_ln_q2": "0.2917033990971500126396756178331469520427015867058908867201538586677287",
+          "rel_diff_vs_quarter_tl_q2": "0.16681359638860005056"
+        },
+        "Q5a_meridian_disk_pi": {
+          "formula": "a_0 = pi (unit meridian disk)",
+          "a0_value": "3.141592653589793238462643383279502884197169399375105820974944592307816406286209",
+          "S_over_A_catalan_ln2": "0.2206356001526515933964564321179976909826897487296554704892632337071218",
+          "rel_diff_vs_quarter_catalan": "-0.11745759938939362641",
+          "S_over_A_tl_ln_q2": "0.2223651828622430874766571745009229186848046245959506737956437921479925",
+          "rel_diff_vs_quarter_tl_q2": "-0.11053926855102765009"
+        },
+        "Q5b_hemisphere_2pi": {
+          "formula": "a_0 = 2*pi (hemisphere / modular period)",
+          "a0_value": "6.283185307179586476925286766559005768394338798750211641949889184615633",
+          "S_over_A_catalan_ln2": "0.1103178000763257966982282160589988454913448743648277352446316168535609",
+          "rel_diff_vs_quarter_catalan": "-0.55872879969469681321",
+          "S_over_A_tl_ln_q2": "0.1111825914311215437383285872504614593424023122979753368978218960739962",
+          "rel_diff_vs_quarter_tl_q2": "-0.55526963427551382505"
+        },
+        "Q5c_two_sphere_4pi": {
+          "formula": "a_0 = 4*pi (unit 2-sphere solid angle)",
+          "a0_value": "12.56637061435917295385057353311801153678867759750042328389977836923127",
+          "S_over_A_catalan_ln2": "0.05515890003816289834911410802949942274567243718241386762231580842678044",
+          "rel_diff_vs_quarter_catalan": "-0.77936439984734840660",
+          "S_over_A_tl_ln_q2": "0.05559129571556077186916429362523072967120115614898766844891094803699811",
+          "rel_diff_vs_quarter_tl_q2": "-0.77763481713775691252"
+        }
+      },
+      "min_abs_relative_miss_among_untuned_candidates": "0.11053926855102765009",
+      "lcq_clausius_raychaudhuri_cancellation_residual": "5.271098971615261612174287025635009503854980691184253775038881512554072e-82"
+    }
+  },
+  "caveats": [
+    "Minimal Temperley-Lieb / SU_{q_0}(2) puncture channel counting fixes the dimensionless entropy per puncture (ln 2 = 0.6931472... for Catalan singlets with -3/2 ln N_Sigma Kaul-Majumdar correction; ln[2]_{q_0} = 0.6985808... for loop fugacity; 0.6877332... for Woronowicz Haar qubits) but CANNOT yield S = A/(4 ell_P^2) without an independent geometric theorem locking the elementary puncture area to a_0 = 4 s_punct (2.7725887... or 2.7943233...). All un-tuned algebraic/Sasakian candidates miss by >= 11.1%, and hbar_{q_0} = 0.0990817... differs from the LQG critical Immirzi poles (0.2086194... Casimir, 0.2371449... DL sqrt-Casimir, 0.2740182... full-qdim sqrt-Casimir) by 2.11x-2.77x. The required Lorentzian CR Bisognano-Wichmann + Raychaudhuri null-focusing bridge remains an open Rule-13a conjecture (LCQHorizonPunctureAreaConjecture, zero instances)."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "workdps": 80
+}

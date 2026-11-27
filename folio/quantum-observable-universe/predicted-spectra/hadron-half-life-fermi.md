@@ -2,7 +2,7 @@
 
 Standard Fermi theory sets the decay rate as $\Gamma = G_F^2m_e^5/(2\pi^3) \cdot |M|^2 \cdot f(Z, Q)$. This effective theory formula packages two distinct mass scales. The crossing energy is $\mathfrak{E}_{\times} = \frac{1}{2}(q - q^{-1})$. The weak scale is $v \approx 246$ GeV, entering via $G_F = 1/(\sqrt{2}v^2)$.
 
-Both scales originate from distinct knot structures: $m_e$ from the $3$ crossings of the trefoil, and $v$ from the electroweak topology. The parameters $q$ and $\mu_0$ fix both scales. The pure number ratio $v / m_e \approx 4.8 \times 10^5$ derives strictly from topology.
+In the backup model $m_e$ was read off the $3$ crossings of the trefoil and $v$ off the electroweak topology. In the corpus $m_e$ is the CAL-1 leptonic mass-scale input, not derived from a knot ([electron](#def:electron-knot)), so the ratio $v / m_e \approx 4.8 \times 10^5$ is not derived here.
 
 The half-life depends on the combination
 
@@ -33,9 +33,9 @@ In the classical limit $q = 1$, $s = 0$ and $[2]_1 = 2$; crossing asymmetry vani
 
 ## Parameter count
 
-The half-life formula depends on $q$ (the substrate parameter, fixed by the muon-electron mass ratio), $\mu_0$ (a unit choice), and the nuclear quantum numbers $(p, n)$. Every standard-physics constant decomposes into $q$-dependent factors times $\mu_0$: the electron mass is $m_e = 3\mathfrak{E}_{\times}\mu_0$, the weak scale is $v = N_v\mathfrak{E}_{\times}\mu_0$, and the fine structure constant is $\alpha = q^{-1}/([9]_q \cdot [10]_q)$ ([EM coupling projection](#prop:em-coupling-projection)), which is the **bare** form and sits $-0.155\%$ from CODATA. The Chern-Simons correction is a separate and conjectural addition, stated in [the Chern-Simons block](#rem:em-coupling-chern-simons) rather than in the projection proposition, and its Gram constant $\kappa$ is unproved; with the derived $\kappa$ at the proton pin it leaves $-468\;\mathrm{ppb}$.
+The half-life formula depends on $q$ (the substrate parameter, fixed by the muon-electron mass ratio), $\mu_0$ (a unit choice), and the nuclear quantum numbers $(p, n)$. Every standard-physics constant decomposes into $q$-dependent factors times $\mu_0$: the electron mass is $m_e = 3\mathfrak{E}_{\times}\mu_0$, the weak scale is $v = N_v\mathfrak{E}_{\times}\mu_0$, and the fine structure constant is $\alpha = q^{-1}/([9]_q \cdot [10]_q)$ ([EM coupling projection](#prop:em-coupling-projection)), which is the **bare** form and sits $-0.155\%$ from CODATA. The Chern-Simons correction is a separate and conjectural addition, stated in [the Chern-Simons block](#rem:em-coupling-chern-simons) rather than in the projection proposition, and its Gram constant $\kappa$ is unproved; with the candidate $\kappa$ at the proton-pinned $q_0$ it leaves $-468\;\mathrm{ppb}$.
 
 ## Open computations
 
 1. **Weak scale crossing count** $N_v$. This must be derived (equivalently, $v$) from the Skein algebra. The $T_{3,5}$ knot mediates the weak interaction, with the mass scale $v$ emerging from the $10$-crossing structure of the $T_{3,5}$ braid: the vertex form factor $\mathcal{W}(q)$ supplies the coupling and $v$ provides the range.
-2. **Weak vertex form factor** $\mathcal{W}(q)$, the Markov trace of $(\sigma_1\sigma_2)^5$ in $H_3(q)$. What remains open is its use: the half-life tables still carry the single-crossing approximation $s^2$, and whether replacing $s^2$ by $|\mathcal{W}(q)|^2$ resolves the systematic $10$–$17\%$ overshoot in heavy-nucleus half-life predictions has not been computed.
+2. **Weak vertex form factor** $\mathcal{W}_2(q) = t_1 + c_{\mathrm{em}}\,t_2$, the two-term trace of $(\sigma_1\sigma_2)^5$ ([proof](#prf:hadron-half-life)); its one-term part $t_1 = \mathcal{W}(q)$ is the Markov trace in $H_3(q)$. The charges on the three vertex strands and $c_{\mathrm{em}}$ are not derived. What remains open is also its use: the half-life tables still carry the single-crossing approximation $s^2$, and whether replacing $s^2$ by $|\mathcal{W}(q)|^2$ resolves the systematic $10$–$17\%$ overshoot in heavy-nucleus half-life predictions has not been computed.

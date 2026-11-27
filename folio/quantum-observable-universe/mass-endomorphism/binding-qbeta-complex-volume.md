@@ -1,4 +1,3 @@
-**Conjecture (complex-volume unification of mass-binding and decay).**
 *Binding and the $\beta$-decay $Q$-value form
 the real and imaginary parts of a single complex fibre observable — the
 complexified mass-endomorphism convolution-defect*
@@ -15,7 +14,7 @@ $$
 *the QOU analogue of the Neumann–Zagier complex volume
 $\mathbb{V}(K) = \mathrm{Vol}(K) + i\,\mathrm{CS}(K)$ \cite{neumann-zagier1985},
 computed simplicially as a sum of Rogers dilogarithms of the tetrahedron
-parameters \cite[Thm.~1]{neumann-cspaper}.*
+parameters \cite[Thm. 1]{neumann-cspaper}.*
 
 ## The one object
 
@@ -102,7 +101,7 @@ same $\mathfrak{V}$.
 - **Literature.** Geometric complex volumes carry a quantum tower: the quantum
   hyperbolic field theory partition functions $H_N$, whose $N = 1$ member
   coincides with the Cheeger–Chern–Simons invariant and which obey surgery
-  formulas for cusped manifolds \cite[\S6, Thm.~6.4]{baseilhac-benedetti2007}.
+  formulas for cusped manifolds \cite[§6, Thm. 6.4]{baseilhac-benedetti2007}.
   $\mathfrak{V}$ is only conjecturally such a volume.
 - **Fibre-level caveat (STRICT).** At the **archimedean / observable**
   level $\mathrm{Im}(q_0)=0$
@@ -188,7 +187,7 @@ Conditional on the unification, the framework's mass/binding chapter and
 its $\beta$-decay chapter form **one derivation**: compute the complex
 defect $\mathfrak{V}(K)$ once. Its real part yields every binding energy. Its
 imaginary part yields every $Q$-value. The $\mathfrak{Q}_\beta$ residual
-($-43.16\%$ at the ruled convention-D base; $+0.17\%$ under the retired Form A) and the binding $\Delta_\lambda$ gap become the *same* unclosed
+($-43.16\%$ at the $z = q^3/(q^2+1)$ Markov-trace base; $+0.17\%$ under the $z = 1$ coordinate-sum Form A) and the binding $\Delta_\lambda$ gap become the *same* unclosed
 object — the imaginary and real parts of one defect — rather than two
 independent open problems.
 

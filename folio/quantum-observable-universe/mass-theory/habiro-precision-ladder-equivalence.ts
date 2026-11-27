@@ -5,13 +5,13 @@ export default proposition({
   title:
     "Precision-ladder coefficients are Habiro integer evaluations",
   lean: {
-    ref: "qou:QOU.BraidKnot.habiro_integral",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.habiro_integral",
   },
   uses: [
     "thm:jones-markov-trace",
   ],
   cites: [
-    "habiro2000",
+    "habiro2004",
     "jones1987",
     "wenzl1988",
   ],

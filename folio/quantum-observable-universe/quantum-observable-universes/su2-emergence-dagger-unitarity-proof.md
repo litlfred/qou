@@ -1,4 +1,3 @@
-**Proof.**
 The QOU non-degeneracy axiom ensures the Frobenius form
 $\int_A \colon A \to \mathbf{1}$ is non-degenerate, inducing the
 Frobenius self-duality $A \cong A^{\vee}$

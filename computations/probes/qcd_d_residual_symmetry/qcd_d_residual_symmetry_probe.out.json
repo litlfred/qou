@@ -1,0 +1,276 @@
+{
+ "R1_M_support12": "Matrix([[q, 0, 0], [0, q, 0], [0, 0, 0]])",
+ "R1_gl2_invariant_twist": "Matrix([[m3/q**2, 0], [0, m3]])",
+ "R1_cartan_commutant_of_gl2": "Matrix([[a1, 0, 0], [0, a1, 0], [0, 0, a2]])",
+ "R1_traceless_u1_rep": "Matrix([[-a2/2, 0, 0], [0, -a2/2, 0], [0, 0, a2]])",
+ "R1_doublet_twist_ratio_d1_over_d2": {
+  "h_on_e1e2 (T1 R)": [
+   "q**(-2)"
+  ],
+  "h_on_e2e1 (OverStrandWeight R)": [
+   "q**2"
+  ]
+ },
+ "R2_word_adjoint_N3_charge": {
+  "photon 1+phi0 s0+phi1 s1+phi01 s0 s1^-1": 0,
+  "electron s0 s1 s0 (Hopf closure)": 0,
+  "electron backup trefoil s0^3 (in H_3)": 0,
+  "quark letter s0": 0,
+  "quark letter s0^-1": 0,
+  "quark letter s1": 0,
+  "quark letter s1^-1": 0,
+  "V^3 = (s0 s1^-1)^3 (Borromean core)": 0
+ },
+ "R2_word_D_trace_normalised": {
+  "photon 1+phi0 s0+phi1 s1+phi01 s0 s1^-1": "(phi0*q**5 + phi0*q**3 + phi01*q**2 + phi1*q**5 + phi1*q**3 + q**4 + 2*q**2 + 1)/(q**2 + 1)**2",
+  "electron s0 s1 s0 (Hopf closure)": "q**3*(q**4 + 1)/(q**2 + 1)**2",
+  "electron backup trefoil s0^3 (in H_3)": "(q**6 + q**2 - 1)/(q*(q**2 + 1))",
+  "quark letter s0": "q**3/(q**2 + 1)",
+  "quark letter s0^-1": "1/(q*(q**2 + 1))",
+  "quark letter s1": "q**3/(q**2 + 1)",
+  "quark letter s1^-1": "1/(q*(q**2 + 1))",
+  "V^3 = (s0 s1^-1)^3 (Borromean core)": "-(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**4*(q**2 + 1)**2)"
+ },
+ "R3_per_support": {
+  "[1, 2]": {
+   "K": "[q**(-3), 1/q, 0]",
+   "M=g^-1 K": "[q, q, 0]",
+   "stabiliser_n1": [
+    "E1",
+    "F1",
+    "K1",
+    "K2"
+   ],
+   "stabiliser_n2": [
+    "E1",
+    "F1",
+    "K1",
+    "K2"
+   ],
+   "nonsimple": {
+    "E13": {
+     "c": "0",
+     "invariant_n1": true,
+     "invariant_n2": true
+    },
+    "F13": {
+     "c": null,
+     "invariant_n1": false,
+     "invariant_n2": false
+    }
+   }
+  },
+  "[1, 3]": {
+   "K": "[q**(-3), 0, 1/q]",
+   "M=g^-1 K": "[q, 0, 1/q]",
+   "stabiliser_n1": [
+    "K1",
+    "K2"
+   ],
+   "stabiliser_n2": [
+    "K1",
+    "K2"
+   ],
+   "nonsimple": {
+    "E13": {
+     "c": "q",
+     "invariant_n1": true,
+     "invariant_n2": true
+    },
+    "F13": {
+     "c": "1/q",
+     "invariant_n1": true,
+     "invariant_n2": true
+    }
+   }
+  },
+  "[2, 3]": {
+   "K": "[0, q**(-3), 1/q]",
+   "M=g^-1 K": "[0, 1/q, 1/q]",
+   "stabiliser_n1": [
+    "E2",
+    "F2",
+    "K1",
+    "K2"
+   ],
+   "stabiliser_n2": [
+    "E2",
+    "F2",
+    "K1",
+    "K2"
+   ],
+   "nonsimple": {
+    "E13": {
+     "c": null,
+     "invariant_n1": false,
+     "invariant_n2": false
+    },
+    "F13": {
+     "c": "0",
+     "invariant_n1": true,
+     "invariant_n2": true
+    }
+   }
+  }
+ },
+ "R3_posthoc_E13_F13": {
+  "E13": "Matrix([[0, 0, 1], [0, 0, 0], [0, 0, 0]])",
+  "F13": "Matrix([[0, 0, 0], [0, 0, 0], [1, 0, 0]])",
+  "[E13,F13]/((K13-K13^-1)/(q-q^-1))": "[{lam: 1}]"
+ },
+ "R4_traceless_u1": {
+  "[1, 2]": {
+   "Y": "[-1/2, -1/2, 1]",
+   "singlet/doublet": "-2"
+  },
+  "[2, 3]": {
+   "Y": "[-2, 1, 1]",
+   "singlet/doublet": "-2"
+  }
+ },
+ "R4_ratio_with_centre_shift": "t/(t + 1)",
+ "R4_mixing_family": "1/(12*s**2 + 1)",
+ "checks": [
+  {
+   "name": "CAL ad* convention: gl3 pivotal diag(q^-4,q^-2,1) is invariant under all generators (reproduces T1)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "CAL support-{1,2} twist stabiliser = {E1,F1,K1,K2} (reproduces T1)",
+   "pass": true,
+   "detail": "['E1', 'F1', 'K1', 'K2']"
+  },
+  {
+   "name": "R1(b) K_D = g * M with M = q * P_12 (projector off colour 3)",
+   "pass": true,
+   "detail": "Matrix([[q, 0, 0], [0, q, 0], [0, 0, 0]])"
+  },
+  {
+   "name": "R1(b) K_D restricted to the doublet is proportional to the U_q(gl2) pivotal (1-dim invariant space)",
+   "pass": true,
+   "detail": "gl2 invariant twists Matrix([[m3/q**2, 0], [0, m3]]), K_D|C2 = Matrix([[q**(-3), 0], [0, 1/q]])"
+  },
+  {
+   "name": "R1(b) C^2(x)C^2 is R-stable and R|_{C^2(x)C^2} = the gl2 Jimbo R",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "R1(b) tr_{(C^3)^n}(K_D^n X) = tr_{(C^2)^n}(g2^n X|) for every T_w, n <= 3",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "R1(c) Cartan elements commuting with gl2_{12}: 2-dim, span{diag(1,1,0), diag(0,0,1)}",
+   "pass": true,
+   "detail": "Matrix([[a1, 0, 0], [0, a1, 0], [0, 0, a2]])"
+  },
+  {
+   "name": "R1(c) forced datum: K_D^(x)n * N3 = 0, n <= 3 (D sees only the N3 = 0 sector)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "R1(c) traceless (sl3) representative of the U(1) is proportional to diag(1,1,-2) [convention]",
+   "pass": true,
+   "detail": "Matrix([[-a2/2, 0, 0], [0, -a2/2, 0], [0, 0, a2]])"
+  },
+  {
+   "name": "R1(d) doublet twist d1/d2 = q^-2 under the T1 R, = q^2 under the OverStrandWeight R (orientation is \u0158-convention-tied)",
+   "pass": true,
+   "detail": "{True: ['q**(-2)'], False: ['q**2']}"
+  },
+  {
+   "name": "R2(a) N3 commutes with every sigma_i on (C^3)^n, n = 2,3",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "R2(a) Delta(K1), Delta(K2) commute with every sigma_i, n = 2,3",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "R2(b) tr(K_D^n [N3, T_w]) = 0 and tr(K_D^n N3 T_w) = 0 for every T_w, n = 2,3",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "R2(a) N3 commutes with Delta(E1), Delta(F1) on (C^3)^2 (the U(1) is central in the residual)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "R2 sanity: sigma_i^-1 = sigma_i - h",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "R2(c) adjoint U(1) charge [N3, rho(w)] = 0 for photon, electron, trefoil, quark letters, V^3",
+   "pass": true,
+   "detail": "{'photon 1+phi0 s0+phi1 s1+phi01 s0 s1^-1': 0, 'electron s0 s1 s0 (Hopf closure)': 0, 'electron backup trefoil s0^3 (in H_3)': 0, 'quark letter s0': 0, 'quark letter s0^-1': 0, 'quark letter s1': 0, 'quark letter s1^-1': 0, 'V^3 = (s0 s1^-1)^3 (Borromean core)': 0}"
+  },
+  {
+   "name": "R2 D-trace sanity: tr(s0 s1 s0) = z_D tr(s0^2) (Markov on the electron word)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "R3(a) support {1,2}: stabiliser {E1,F1,K1,K2} at n=1 and n=2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "R3(a) support {2,3}: stabiliser {E2,F2,K1,K2} at n=1 and n=2",
+   "pass": true,
+   "detail": "['E2', 'F2', 'K1', 'K2']"
+  },
+  {
+   "name": "R3(a) support {1,3}: no simple root vector survives (Cartan K1,K2 only among Chevalley generators)",
+   "pass": true,
+   "detail": "['K1', 'K2']"
+  },
+  {
+   "name": "R3(a) support {1,3}: no E13/F13 of the form E1E2 - c E2E1 (resp. F2F1 - c F1F2) is invariant",
+   "pass": false,
+   "detail": "{'E13': {'c': 'q', 'invariant_n1': True, 'invariant_n2': True}, 'F13': {'c': '1/q', 'invariant_n1': True, 'invariant_n2': True}}"
+  },
+  {
+   "name": "R3(a) support {1,3}: M = g^-1 K is not proportional to a projector (distinct eigenvalues q, 0, q^-1)",
+   "pass": true,
+   "detail": "[q, 0, 1/q]"
+  },
+  {
+   "name": "R3 POST-HOC: E13 = E1E2 - qE2E1 = e_13, F13 = F2F1 - q^-1 F1F2 = e_31 up to sign/scale, and [E13,F13] is a nonzero multiple of (K1K2 - (K1K2)^-1)/(q - q^-1) on C^3: a root-(a1+a2) q-sl2 survives on {1,3}",
+   "pass": true,
+   "detail": "[{lam: 1}]"
+  },
+  {
+   "name": "R3(b) all three supports give identical y_lambda = s_lambda(K)/(trK)^n, n <= 6 (same eigenvalue multiset)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "R4 traceless U(1): singlet/doublet charge ratio = -2 for both simple-root supports [forced by tracelessness only]",
+   "pass": true,
+   "detail": "{'[1, 2]': {'Y': '[-1/2, -1/2, 1]', 'singlet/doublet': '-2'}, '[2, 3]': {'Y': '[-2, 1, 1]', 'singlet/doublet': '-2'}}"
+  },
+  {
+   "name": "R4 with the gl3 centre added (Y + t*Id) the ratio is t/(t+1): not normalisation-free",
+   "pass": true,
+   "detail": "t/(t + 1)"
+  },
+  {
+   "name": "R4 the would-be mixing Tr T3^2/(Tr T3^2 + Tr Y^2) depends on the free U(1) scale s: no Weinberg angle is forced",
+   "pass": true,
+   "detail": "1/(12*s**2 + 1)"
+  },
+  {
+   "name": "R4 Tr(T3 * Y) = 0: residual sl2 and traceless U(1) are trace-orthogonal (no forced mixing)",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "summary": "27/28"
+}

@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-particle-nf-table-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:particle-nf-table-table-data",
+  "kind": "table",
+  "title": "Data table from rem:particle-nf-table",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-particle-nf-table"
+  ],
+  "tags": [
+    "archimedean-bridge",
+    "extracted-table"
+  ],
+  "text": "particle-nf-table-table-data.md",
+  "provenance": "authored"
+}

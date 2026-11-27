@@ -3,7 +3,6 @@ import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 import Mathlib.Algebra.Algebra.Basic
-import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
 import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.RepresentationTheory.FDRep

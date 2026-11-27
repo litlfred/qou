@@ -1,6 +1,4 @@
-A **stable nucleus** is a multi-nucleon Hopf link that extremizes the Skein binding Lagrangian ([Skein binding Lagrangian](#def:skein-binding-lagrangian)).
-
-Let $\mathfrak{p}$ and $\mathfrak{n}$ be the categorical proton and neutron ([categorical proton](#def:categorical-proton), [categorical neutron](#def:categorical-neutron)). A **nucleus** with $Z$ protons and $N$ neutrons is the iterated Hopf link. (Here $Z$ is the **atomic number**, the standard nuclear physics notation for the proton count, freeing $p$ for use as a brane point.)
+Let $\mathfrak{p}$ and $\mathfrak{n}$ be the categorical proton and neutron ([categorical proton](#def:categorical-proton), [categorical neutron](#def:categorical-neutron)). The **nucleus** with $Z$ protons and $N$ neutrons ($Z$ the **atomic number**) is the iterated Hopf link
 
 $$
   \mathcal{N}(Z, N)
@@ -15,19 +13,15 @@ The nucleus $\mathcal{N}(Z, N)$ is **stable** if $(Z, N)$ is a critical point of
 $$
   \frac{\partial \mathcal{L}_{\mathrm{bind}}}{\partial Z}
   \bigg|_{A}
-  = 0
-  \qquad \Longleftrightarrow \qquad
-  Z = \frac{A}{2 + a_C  A^{2/3} / (2a_A)},
+  = 0 .
 $$
 
-where $a_C = (q - q^{-1}) \cdot \lambda_C$ and $a_A$ is the Pauli coefficient ([beta-stability](#prop:beta-stability)).
-
-A **stable atom** appends $Z$ electrons:
+A **stable atom** appends $Z$ electrons $e^-$ ([electron](#def:electron-knot)):
 
 $$
   \mathcal{A}(Z, N)
   = 
-  \mathcal{N}(Z, N)  \oplus  Z \cdot T_{2,3}.
+  \mathcal{N}(Z, N)  \oplus  Z \cdot e^-,
 $$
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. This block invokes real- and complex-analytic constructs, including real-valued physical observables, real-analytic bounds, transcendental constants, and numerical evaluation at the substrate parameter $q_0$. Any generic categorical or $q$-deformation identities drawn upon remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

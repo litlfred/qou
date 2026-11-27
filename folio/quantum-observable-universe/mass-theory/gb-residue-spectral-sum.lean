@@ -1,7 +1,7 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Finset.Basic
 import Mathlib.Algebra.Order.Ring.Abs
-import QOU.Torsion.BraneTower
+import QOU.LiftingDescent.BraneTower
 
 /-!
 # Gröbner–Shirshov residue spectral sum for the mass trace

@@ -40,12 +40,19 @@ References
 from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
-import math
 import sys
 from pathlib import Path
 from typing import Any
 
+import mpmath as mp
+
 sys.path.insert(0, str(Path(__file__).parent))
+from _precision import fmt as _fmt, set_compute_dps  # noqa: E402
+
+set_compute_dps()
+mp.mp.dps = max(mp.mp.dps, 80)
+
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from experimental_constants import (  # noqa: E402
     M_E_MEV, M_E_MEV_ERR,
@@ -59,24 +66,37 @@ from experimental_constants import (  # noqa: E402
 )
 
 
-def ppb(predicted: float, codata: float) -> float:
+def ppb(predicted: mp.mpf, codata: mp.mpf) -> mp.mpf:
     """Parts-per-billion deviation from CODATA central value."""
-    if codata == 0:
-        return float("inf")
-    return 1e9 * abs(predicted - codata) / abs(codata)
+    predicted_m = mp.mpf(str(predicted))
+    codata_m = mp.mpf(str(codata))
+    if codata_m == 0:
+        return mp.inf
+    return mp.mpf("1e9") * abs(predicted_m - codata_m) / abs(codata_m)
 
 
-def codata_uncertainty_ppb(codata: float, codata_err: float) -> float:
+def codata_uncertainty_ppb(codata: mp.mpf, codata_err: mp.mpf) -> mp.mpf:
     """CODATA's quoted ±1σ uncertainty expressed in ppb."""
-    if codata == 0:
-        return float("inf")
-    return 1e9 * codata_err / abs(codata)
+    codata_m = mp.mpf(str(codata))
+    codata_err_m = mp.mpf(str(codata_err))
+    if codata_m == 0:
+        return mp.inf
+    return mp.mpf("1e9") * codata_err_m / abs(codata_m)
 
 
-def load_witness(path: Path) -> dict | None:
+def load_witness(rel_path: str, base: Path, builder: WitnessBuilder) -> dict | None:
+    path = base / rel_path
     if not path.exists():
-        return None
-    return json.loads(path.read_text())
+        matches = [
+            m for m in sorted(base.glob(f"**/{Path(rel_path).name}"))
+            if "_deprecated" not in m.parts and "fsh-guts" not in m.parts
+        ]
+        if not matches:
+            return None
+        path = matches[0]
+    body = builder.add_upstream(path)
+    builder._upstream_hashes[-1]["path"] = path.relative_to(base).as_posix()
+    return body
 
 
 def main():
@@ -105,7 +125,7 @@ def main():
         "codata": M_E_MEV_ERR,  # not used; anchor
         "codata_value": M_E_MEV,
         "codata_err": M_E_MEV_ERR,
-        "delta_ppb": 0.0,
+        "delta_ppb": mp.mpf(0),
         "codata_unc_ppb": codata_uncertainty_ppb(M_E_MEV, M_E_MEV_ERR),
         "predicted_source": "anchor scale (by definition)",
         "anchor": True,
@@ -121,7 +141,7 @@ def main():
         "predicted": M_P_MEV,
         "codata_value": M_P_MEV,
         "codata_err": M_P_MEV_ERR,
-        "delta_ppb": 0.0,
+        "delta_ppb": mp.mpf(0),
         "codata_unc_ppb": codata_uncertainty_ppb(M_P_MEV, M_P_MEV_ERR),
         "predicted_source": "anchor scale (atom_mass_derived.py)",
         "anchor": True,
@@ -143,7 +163,7 @@ def main():
     # `max_non_anchor_delta_ppb` metric would be dominated by the
     # upstream derivation gap rather than reporting the structural
     # cross-checks that the QOU pipeline currently meets.
-    atom_w = load_witness(base / "atom-mass-derived.witness.json")
+    atom_w = load_witness("atom-mass-derived.witness.json", base, builder)
     atom_species_rows: list[dict[str, Any]] = []
     if atom_w is not None:
         for item in atom_w.get("data", {}).get("results", []):
@@ -154,17 +174,18 @@ def main():
             if derived is None or observed is None:
                 continue
             try:
-                derived = float(derived); observed = float(observed)
+                derived_m = mp.mpf(str(derived))
+                observed_m = mp.mpf(str(observed))
             except (ValueError, TypeError):
                 continue
             atom_species_rows.append({
                 "element": item.get("element"),
                 "Z": item.get("Z"),
                 "A": item.get("A"),
-                "M_derived_MeV": derived,
-                "M_observed_MeV": observed,
-                "delta_MeV": derived - observed,
-                "delta_ppb": ppb(derived, observed),
+                "M_derived_MeV": _fmt(derived_m),
+                "M_observed_MeV": _fmt(observed_m),
+                "delta_MeV": _fmt(derived_m - observed_m),
+                "delta_ppb": _fmt(ppb(derived_m, observed_m)),
                 "predicted_source": "atom-mass-derived.witness.json",
                 "status": "upstream_derivation_incomplete",
             })
@@ -181,7 +202,7 @@ def main():
     # 0.6126880371464652.  The alpha_2 = z^2 check below is convention-INVARIANT
     # (it compares a witness against its own z), so it passed either way and did
     # not surface the frame.  Read the producer's actual output.  [qou-q0zk]
-    h3_w = load_witness(base / "alpha" / "alpha-k-jones-markov-h3.witness.json")
+    h3_w = load_witness("alpha/alpha-k-jones-markov-h3.witness.json", base, builder)
     if h3_w is not None:
         z_val = h3_w.get("z")
         check = (h3_w.get("alpha_k_at_H3_jones_markov", {}) or {}).get(
@@ -189,22 +210,24 @@ def main():
         )
         if z_val is not None and check is not None:
             try:
-                z_val = float(z_val); check = float(check)
+                z_val_m = mp.mpf(str(z_val))
+                check_m = mp.mpf(str(check))
             except (ValueError, TypeError):
-                z_val = check = None
-            if z_val is not None and check is not None:
+                z_val_m = check_m = None
+            if z_val_m is not None and check_m is not None:
                 # `alpha_2_eq_z_squared_check` is stored as the
                 # *residual* α_2 − z², not a ratio.  Compare to 0.
                 rows.append({
                     "quantity": "α_2 − z² (Markov axiom)",
                     "unit": "dimensionless",
-                    "predicted": check,
-                    "codata_value": 0.0,
-                    "codata_err": 1e-13,  # IEEE 754 cumulative
-                    "delta_ppb": abs(check) * 1e9,
-                    "codata_unc_ppb": 1.0,
+                    "predicted": check_m,
+                    "codata_value": mp.mpf(0),
+                    "codata_err": mp.mpf("1e-13"),
+                    "delta_ppb": abs(check_m) * mp.mpf("1e9"),
+                    "codata_unc_ppb": mp.mpf(1),
                     "predicted_source": "alpha/alpha-k-jones-markov-h3.witness.json",
                     "anchor": False,
+                    "_sig_digits": 16,
                 })
 
     # ── Structural cross-check: Markov-axiom (M3) Σ d_λ y_λ = 1 ─
@@ -214,19 +237,19 @@ def main():
     # sum Σ d_λ²/n! = 1 — and must hit machine precision (~10⁻⁵⁰ at
     # 50 dps).  See docs/audits/2026-05-11-plancherel-usage-audit.md
     # (Finding D) for the disambiguation.
-    macd_w = load_witness(base / "alpha-k-macdonald-closed-form.witness.json")
+    macd_w = load_witness("alpha/alpha-k-macdonald-closed-form.witness.json", base, builder)
     if macd_w is not None:
         # Find the largest M3-completeness assertion's computed.
         # Accept both old (`plancherel_completeness_n*`) and new
         # (`markov_m3_completeness_n*`) names while pre-rename
         # witnesses are still in the tree.
-        max_diff = 0.0
+        max_diff = mp.mpf(0)
         for a in macd_w.get("assertions", []):
             name = a.get("name", "")
             if name.startswith("markov_m3_completeness_n") or \
                name.startswith("plancherel_completeness_n"):
                 try:
-                    max_diff = max(max_diff, float(a.get("computed", 0)))
+                    max_diff = max(max_diff, mp.mpf(str(a.get("computed", 0))))
                 except (ValueError, TypeError):
                     pass
         if max_diff > 0:
@@ -234,10 +257,10 @@ def main():
                 "quantity": "Σ d_λ y_λ - 1 (Markov M3, max over n=2..6)",
                 "unit": "dimensionless",
                 "predicted": max_diff,
-                "codata_value": 0.0,
-                "codata_err": 1e-40,
-                "delta_ppb": max_diff * 1e9,  # already a deviation, not a ratio
-                "codata_unc_ppb": 1e-31,
+                "codata_value": mp.mpf(0),
+                "codata_err": mp.mpf("1e-40"),
+                "delta_ppb": max_diff * mp.mpf("1e9"),  # already a deviation, not a ratio
+                "codata_unc_ppb": mp.mpf("1e-31"),
                 "predicted_source": "alpha-k-macdonald-closed-form.witness.json",
                 "anchor": False,
             })
@@ -269,14 +292,17 @@ def main():
         ("Vol(twist3)", VOL_THREE_TWIST, VOL_THREE_TWIST, VOL_THREE_TWIST_ERR),
         ("Vol(borromean)", VOL_BORROMEAN, VOL_BORROMEAN, VOL_BORROMEAN_ERR),
     ]:
+        pred_m = mp.mpf(str(pred))
+        ref_m = mp.mpf(str(ref))
+        err_m = mp.mpf(str(err))
         rows.append({
             "quantity": sym,
             "unit": "dimensionless",
-            "predicted": pred,
-            "codata_value": ref,
-            "codata_err": err,
-            "delta_ppb": ppb(pred, ref),
-            "codata_unc_ppb": codata_uncertainty_ppb(ref, err),
+            "predicted": pred_m,
+            "codata_value": ref_m,
+            "codata_err": err_m,
+            "delta_ppb": ppb(pred_m, ref_m),
+            "codata_unc_ppb": codata_uncertainty_ppb(ref_m, err_m),
             "predicted_source": "SnapPy 3.3.2 (anchor)",
             "anchor": True,
         })
@@ -288,30 +314,43 @@ def main():
     for row in rows:
         # Tolerance: 2× CODATA uncertainty (in ppb), with a floor of
         # 1 ppb for anchor rows so the float rounding doesn't fail.
-        tol_ppb = max(2 * row["codata_unc_ppb"], 1.0)
-        if math.isinf(tol_ppb):
-            tol_ppb = 1.0  # anchor at perfect agreement
+        tol_ppb = max(2 * row["codata_unc_ppb"], mp.mpf(1))
+        if mp.isinf(tol_ppb):
+            tol_ppb = mp.mpf(1)  # anchor at perfect agreement
         passed = row["delta_ppb"] <= tol_ppb
         # float() for DISPLAY only — mpf has no __format__ for ">16.10g".
         # The row values stay mpf; only the rendering is coerced. (qou-9q4h)
-        print(f"{row['quantity']:>20}  {float(row['predicted']):>16.10g}  "
-              f"{float(row['codata_value']):>16.10g}  "
-              f"{float(row['delta_ppb']):>10.3f}  "
-              f"{float(row['codata_unc_ppb']):>14.3f}  "
+        print(f"{row['quantity']:>20}  {float(row['predicted']):>16.10g}  "  # float64-ok: stdout display only (qou-9q4h)
+              f"{float(row['codata_value']):>16.10g}  "  # float64-ok: stdout display only (qou-9q4h)
+              f"{float(row['delta_ppb']):>10.3f}  "  # float64-ok: stdout display only (qou-9q4h)
+              f"{float(row['codata_unc_ppb']):>14.3f}  "  # float64-ok: stdout display only (qou-9q4h)
               f"{'OK' if passed else 'FAIL'}")
         builder.add_assertion(
             name=f"codata_{row['quantity']}".replace(" ", "_")
                                             .replace("/", "_over_")
                                             .replace("(", "_")
                                             .replace(")", ""),
-            computed=row["predicted"],
-            expected=row["codata_value"],
-            tolerance=row["codata_err"] * 2,
+            computed=_fmt(row["predicted"]),
+            expected=_fmt(row["codata_value"]),
+            tolerance=_fmt(row["codata_err"] * 2),
             unit=row["unit"],
             source=row["predicted_source"],
         )
 
-    builder.add_data("rows", rows)
+    def _ser_val(v: Any, sig: int | None) -> Any:
+        if not isinstance(v, mp.mpf):
+            return v
+        return mp.nstr(v, sig) if sig is not None else _fmt(v)
+
+    def _ser_row(r: dict[str, Any]) -> dict[str, Any]:
+        sig = r.get("_sig_digits")
+        return {
+            k: _ser_val(v, sig)
+            for k, v in r.items()
+            if not k.startswith("_")
+        }
+
+    builder.add_data("rows", [_ser_row(r) for r in rows])
     builder.add_data("anchor_count", sum(1 for r in rows if r.get("anchor")))
     builder.add_data("derived_count", sum(1 for r in rows if not r.get("anchor")))
     builder.add_data("atom_species_informational", atom_species_rows)
@@ -326,14 +365,22 @@ def main():
 
     # Track the maximum non-anchor deviation: this is the "1ppb readiness"
     # number — any non-anchor row exceeding this needs upstream improvement.
-    max_dev = max(
-        (r["delta_ppb"] for r in rows if not r.get("anchor")),
-        default=0.0,
-    )
-    builder.add_data("max_non_anchor_delta_ppb", max_dev)
-    print(f"\nMax non-anchor deviation: {max_dev:.3f} ppb")
+    non_anchor_rows = [r for r in rows if not r.get("anchor")]
+    if non_anchor_rows:
+        winner = max(non_anchor_rows, key=lambda r: r["delta_ppb"])
+        max_dev = winner["delta_ppb"]
+        max_dev_str = _ser_val(max_dev, winner.get("_sig_digits"))
+    else:
+        max_dev = mp.mpf(0)
+        max_dev_str = _fmt(max_dev)
+    builder.add_data("max_non_anchor_delta_ppb", max_dev_str)
+    # float() for DISPLAY only — max_dev is an mpf when the Q_n row wins (qou-9q4h).
+    print(f"\nMax non-anchor deviation: {float(max_dev):.3f} ppb")  # float64-ok: stdout display only (qou-9q4h)
 
-    out_path = builder.save()
+    out_path = builder.save(extra={
+        "q0Anchor": "proton",
+        "q0Value": Q_50_DIGIT_STR,
+    })
     print(f"\nWitness: {out_path}")
 
 

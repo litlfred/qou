@@ -1,4 +1,4 @@
-*Proof.* By definition $\overline p := p.\mathrm{comp}(-X)$; applying to $p = X$ gives $X.\mathrm{comp}(-X) = -X$. $\square$
+By definition $\overline p := p.\mathrm{comp}(-X)$; applying to $p = X$ gives $X.\mathrm{comp}(-X) = -X$. $\square$
 
 **Proposition.** $\overline{-X} = X$.
 *Proof.* $(-X).\mathrm{comp}(-X) = -(X.\mathrm{comp}(-X)) = -(-X) = X$, since composition commutes with negation and $-(-X) = X$. $\square$

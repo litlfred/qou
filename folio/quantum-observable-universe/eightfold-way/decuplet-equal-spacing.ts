@@ -33,7 +33,7 @@ export default remark({
   // and (a',b',c') give the same (vanishing) second difference, so the
   // rule cannot select between mechanisms.
   lean: {
-    ref: "qou:QOU.Eightfold.DecupletEqualSpacing.equal_spacing_cannot_discriminate",
+    ref: "qou:QOU.EightfoldWay.DecupletEqualSpacing.equal_spacing_cannot_discriminate",
   },
   uses: [
     "prop:borromean-decuplet",

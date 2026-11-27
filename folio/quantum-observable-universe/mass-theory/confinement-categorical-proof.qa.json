@@ -7,8 +7,8 @@
     "md": "folio/quantum-observable-universe/mass-theory/confinement-categorical-proof.md"
   },
   "source_hashes": {
-    "md": "14abbd8a950f",
-    "ts": "788b37457743"
+    "md": "390ef85a3f26",
+    "ts": "96963a31b885"
   },
   "criteria": {
     "da-referee-verdict": [
@@ -41,6 +41,52 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "fit-section-chapter": [
@@ -73,6 +119,66 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "ce00d333bc53",
+          "ts": "00c0e6cb1001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f8f7d9976add6c809325fd76ead0087eba3572c0",
+        "evidence": "Re-read at f8f7d9976ad (5b1eb73b63..f8f7d9976ad). The numbered proof was rewritten (pi_Z defined; clauses 1-3 proved through the Wedderburn blocks, following the Lean; E_infty collapse named as a separate reading) and the .ts uses gains prop:spectral-sequence-collapse, which the new final paragraph cites. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "d6facf8d0fa8",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:45:00.000Z",
+        "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
+        "evidence": "Re-read at 4a43629ab36 (f8f7d9976ad..4a43629ab36). Edits: the 'Confinement reading' table rows (1)-(2) restated to the proved clauses (pi_Z lands in Z(A); every trace tau factors through pi_Z); 'completely free' -> 'carry no commutator load'; 'is — read through this proposition — literally' -> 'is, read through this proposition,'; .ts uses drops the transitively redundant prop:spectral-sequence-collapse (still reachable; the prose link stays). No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "da-false-claim": [
@@ -90,6 +196,52 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-vacuous": [
@@ -107,6 +259,52 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-circular": [
@@ -124,6 +322,52 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-overclaim": [
@@ -141,6 +385,52 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-hidden-dof": [
@@ -158,6 +448,52 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-non-sequitur": [
@@ -175,6 +511,118 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "788b37457743"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:17:36.660Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "minor",
+        "evidence": "Full review 2026-11-21 (earlier evidence was empty). Steps (1)-(3) are standard and sound for A = H_n(q) semisimple at generic q: Hochschild cohomology of a separable algebra vanishes in degree >= 1, so only HH^0 = Z(A) survives; a trace vanishes on [A,A] and HH_0 = A/[A,A] is identified with Z(A) for a symmetric semisimple algebra; Wedderburn splits the integral blockwise. Gaps: (a) the statement's 'colored non-central elements vanish cohomologically' conflates HH^0 = Z(A) (a cohomology group) with elements of A; the proof shows the former, not a statement about elements. (b) mu(e_lambda) = w_lambda names the weight without saying which trace it is (Markov y_lambda times dim, or a Plancherel/Molien weight), so the identification is notational. (c) After the box, the 'confinement reading' and the Vol(B3) = 8G matching dim su(3) = 8 sentence are interpretation and numerology, not premises of the proof; they are not used as steps. No empirical premise; no ruling conflict."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "severity": "minor",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. The finding is unchanged at this head.",
+        "notes": "Carried forward from the earlier agent review: Full review 2026-11-21 (earlier evidence was empty). Steps (1)-(3) are standard and sound for A = H_n(q) semisimple at generic q: Hochschild cohomology of a separable algebra vanishes in degree >= 1, so only HH^0 = Z(A) survives; a trace vanishes on [A,A] and HH_0 = A/[A,A] is identified with Z(A) for a symmetric semisimple algebra; Wedderburn splits the integral blockwise. Gaps: (a) the statement"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T17:06:56.000Z",
+        "reviewed_sha": "d973e91a6788f6968303febe4e8dd3af6cbc6548",
+        "severity": "major",
+        "evidence": "Re-read at d973e91a678. The proof .md is unchanged, but the proposition it proves (prop:confinement-categorical) was restated in 63e97e855c6 with precise clauses: (1) pi_Z(x) lies in Z(A); (2) tau = tau o pi_Z and tau(x) = sum_lambda tau(e_lambda) tr(rho_lambda x)/f^lambda; (3) every central x satisfies pi_Z(x) = x. The proof's numbered steps still target the old clauses: its (1) argues E_infty collapse from HH^k(A) = 0, which the proposition now says is not part of the formal statement, and does not show pi_Z(x) is central; its (3) ('apply with a = rho(beta_K) . T') does not show that central elements are fixed by pi_Z, and pi_Z is never defined in the proof. So the narrative proof no longer proves the stated clauses 1 and 3. The Lean (confinement_categorical, sorry-free) does prove them. Also carried from the earlier review: the proof calls the trace weights w_lambda, which the notation register reserves for the q-deformed Wedderburn weight, while the proposition names them mu_lambda; and the 'Curvature-rank as confinement layer' paragraph asserts Vol(B_3) = 8G 'matching' dim su(3) = 8, a numerical coincidence presented as structure (pre-existing)."
+      },
+      {
+        "field_hash": {
+          "md": "ce00d333bc53",
+          "ts": "00c0e6cb1001"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f8f7d9976add6c809325fd76ead0087eba3572c0",
+        "severity": "minor",
+        "evidence": "Re-read at f8f7d9976ad. Resolved from warn/major. The proof now defines pi_Z (via the Wedderburn isomorphism Phi, x_lambda the lambda-block of Phi(x)) and proves the three restated clauses: (1) the blocks of Phi(pi_Z x) are scalar, hence central; (2) a trace on Mat_f(K) is c*tr, so tau(x) = sum mu_lambda tr(x_lambda)/f^lambda with mu_lambda = tau(e_lambda), and pi_Z preserves each block trace; (3) a central x has scalar blocks, so pi_Z x = x. This matches QOU.WedderburnMass.confinement_categorical step for step (trace_unique, eq_scalar_of_commute, centreProj_central, centreProj_of_central, trace_eq_residue_sum, trace_centreProj); the E_infty collapse is named only as a separate reading. Residual minor, pre-existing and outside the argument: the 'Confinement reading' table still states row (1) as 'non-central elements die at E_infty', which the proof now says is not proved, and writes the trace as int_A rather than tau; the 'Curvature-rank as confinement layer' paragraph asserts Vol(B_3) = 8G 'matching' dim su(3) = 8, a numerical coincidence presented as structure."
+      },
+      {
+        "field_hash": {
+          "md": "d6facf8d0fa8",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:45:00.000Z",
+        "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
+        "severity": "minor",
+        "evidence": "Re-read at 4a43629ab36. Partly resolved: table rows (1) and (2) now state what the proof proves (pi_Z sends every element into Z(A); every trace tau factors through pi_Z), so the 'die at E_infty' and int_A items are gone. Remaining minor, in the interpretive italic paragraphs only: (a) 'Curvature-rank as confinement layer' still asserts Vol(B_3) = 8G 'matching' dim su(3) = 8, a numerical coincidence presented as structure; (b) the same paragraph says 'at k >= 1 extraction requires energy proportional to F' with no supporting result; (c) table row (3) 'Observables = sum of Wedderburn residues' is the second half of statement clause 2 (tau(x) = sum_lambda mu_lambda tr(rho_lambda x)/f^lambda), while clause 3 is 'central x is fixed by pi_Z', so the row label does not match the clause numbering. The numbered proof itself is sound and matches the Lean."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60. Resolved from warn/minor. (a) Vol(B_3) = 8G vs dim su(3) = 8 removed; (b) 'energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; (c) table row (3) now reads 'pi_Z fixes every central x', which is statement clause 3. The remaining italic text ('deeper k = more commutator load = harder to extract', gluon-condensate analogy) is labelled as an analogy to QCD and makes no derived claim."
+      },
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -192,6 +640,52 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-citation-misuse": [
@@ -209,6 +703,52 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-definitional-ambiguity": [
@@ -226,6 +766,52 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-empirical-fragility": [
@@ -243,6 +829,52 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-physical-implausibility": [
@@ -260,6 +892,52 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-reproducibility": [
@@ -277,188 +955,254 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cite-resolves": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "9b284af269a5",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
-          "deps_hash": "c6456bf489a8"
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
         "notes": "block has no .lean sibling"
       }
     ],
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "bbc03dd9670f",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "f93c058febd4",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "voice-probe-narrative": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "cite-named-theorem": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
         },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "voice-agent-speak": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
           "script_hash": "d3230d986a2b",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
           "script_hash": "6d35011108e2",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
           "script_hash": "4dc9ee1f7d79",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
           "script_hash": "c35d809edf9a",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "5a542b9ddb77",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "voice-scholarly-default": [
@@ -479,37 +1223,71 @@
       },
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "7e311e463351",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "7d0b29018b00",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "voice-title-scholarly": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "dbe50250022f",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "d8b8f090555d",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "voice-ai-slop": [
@@ -530,91 +1308,131 @@
       },
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
           "script_hash": "20fe4199458f",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "voice-status-section": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "c5ea8e77a0b3",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "cf3d4ea0ab0a",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "5c1ec1e16bd8",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
         },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -749,234 +1567,302 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d83daee37fd8",
+          "script_commit_sha": "unknown",
+          "deps_hash": "21d9ff417741",
+          "def_hash": "83422bec2bb4"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6facf8d0fa8",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d83daee37fd8",
+          "script_commit_sha": "unknown",
+          "deps_hash": "21d9ff417741",
+          "def_hash": "83422bec2bb4"
+        },
+        "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
+        "notes": "block has no .lean sibling"
       }
     ],
     "canonical-calibration-count": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "c58bf6bca27b",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "canonical-witness-pinned": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "3050ae1775d6",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "canonical-script-not-deprecated": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "89bcd82bd3ff",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "e81239fd83a2",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "canonical-dilogarithm-context": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "a065b3633f0f",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "canonical-no-hardcoded-observable": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "96a346415fd2",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "compute-witness-exists": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "47384e4fd1b4",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "13ec1960e3ad",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "compute-lp-dual-present": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "772b3e8dc930",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "6c278b93ad12",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "detangler-no-forward-ref": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885",
+          "graph": "e549f59e2cb1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "f6f0b2cd1afb",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "9555791a2758",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "detangler-section-band": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885",
+          "graph": "e549f59e2cb1"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "696ee4c80040",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "detangler-no-xchapter-fwd": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885",
+          "graph": "e549f59e2cb1"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "b01f61430d2a",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-archimedean-wall": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885",
+          "graph": "e549f59e2cb1"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "3edb7220507a",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
         "notes": "block has no .lean sibling"
       }
     ],
     "detangler-block-tanglement": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885",
+          "graph": "e549f59e2cb1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "ac7512959351",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "c94bd6f761f1",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
         "metrics": {
           "fwd_emitted": 0,
           "fwd_received": 0,
           "tanglement_score": 0,
-          "out_degree": 1,
+          "out_degree": 2,
           "in_degree": 0,
-          "cone_size": 12,
-          "depth": 10,
-          "pagerank": 7.4e-05,
-          "edge_span_max": 1,
-          "edge_span_mean": 1,
+          "cone_size": 7,
+          "depth": 6,
+          "pagerank": 0.000074,
+          "edge_span_max": 9,
+          "edge_span_mean": 5.5,
           "worst_target": ""
         }
       }
@@ -984,19 +1870,22 @@
     "detangler-graph-energy": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885",
+          "graph": "e549f59e2cb1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "aacb0bf5d4b9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "858efa00043a",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
         "metrics": {
           "graph_energy": 0,
           "fwd_edge_count": 0,
@@ -1007,96 +1896,108 @@
     "detangler-topic-coherence": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885",
+          "graph": "e549f59e2cb1"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "280aea9a61d8",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "detangler-no-dependency-cycle": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885",
+          "graph": "e549f59e2cb1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "39dfc0abf653",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "aa75d0ebd53e",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "a730f195e37d",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
-          "deps_hash": "c6456bf489a8"
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
         "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-metadata-ok": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "b7cc0ee7d062",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
-          "deps_hash": "c6456bf489a8"
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
         "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-screenshot": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "d3202b194d13",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
-          "deps_hash": "c6456bf489a8"
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1110,27 +2011,89 @@
           "id": "local/branch-jargon-sweep",
           "agent_skill": "local/one-voice-audit"
         }
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "ce00d333bc53",
+          "ts": "00c0e6cb1001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f8f7d9976add6c809325fd76ead0087eba3572c0",
+        "evidence": "Re-read at f8f7d9976ad (5b1eb73b63..f8f7d9976ad). The numbered proof was rewritten (pi_Z defined; clauses 1-3 proved through the Wedderburn blocks, following the Lean; E_infty collapse named as a separate reading) and the .ts uses gains prop:spectral-sequence-collapse, which the new final paragraph cites. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "d6facf8d0fa8",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:45:00.000Z",
+        "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
+        "evidence": "Re-read at 4a43629ab36 (f8f7d9976ad..4a43629ab36). Edits: the 'Confinement reading' table rows (1)-(2) restated to the proved clauses (pi_Z lands in Z(A); every trace tau factors through pi_Z); 'completely free' -> 'carry no commutator load'; 'is — read through this proposition — literally' -> 'is, read through this proposition,'; .ts uses drops the transitively redundant prop:spectral-sequence-collapse (still reachable; the prose link stays). No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
       }
     ],
     "uses-editorial-hygiene": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-uses.ts",
+          "id": "pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "1d50b09b0497",
-          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
-          "deps_hash": "c7f602946422"
+          "script_hash": "63814f2a6677",
+          "script_commit_sha": "unknown",
+          "deps_hash": "03b88f610b1f",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
         "metrics": {
-          "uses_count": 1,
+          "uses_count": 2,
           "broken_edges": 0,
           "redundant_edges": 0
         }
@@ -1139,43 +2102,123 @@
     "uses-formal-coverage": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-uses.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "b7b208d4a0c4",
-          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
-          "deps_hash": "f9b547e15cfd"
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
         "notes": "block has no .lean sibling"
       }
     ],
     "lean-ref-owns-decl": [
       {
         "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-uses.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "b1c323c3439c",
-          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
-          "deps_hash": "c7f602946422"
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ],
     "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "14abbd8a950f",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.248Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'are confinement residues, not independent ingredients' is the section's substantive claim about the rank-3 and rank->=4 terms.",
+        "notes": "Reported separately: two parenthetical placeholders where references stood -- '(q-Dirac cell scanner witness)' and '(Q-beta path A extended witness)'."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "ce00d333bc53",
+          "ts": "00c0e6cb1001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f8f7d9976add6c809325fd76ead0087eba3572c0",
+        "evidence": "Re-read at f8f7d9976ad (5b1eb73b63..f8f7d9976ad). The numbered proof was rewritten (pi_Z defined; clauses 1-3 proved through the Wedderburn blocks, following the Lean; E_infty collapse named as a separate reading) and the .ts uses gains prop:spectral-sequence-collapse, which the new final paragraph cites. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "d6facf8d0fa8",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:45:00.000Z",
+        "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
+        "evidence": "Re-read at 4a43629ab36 (f8f7d9976ad..4a43629ab36). Edits: the 'Confinement reading' table rows (1)-(2) restated to the proved clauses (pi_Z lands in Z(A); every trace tau factors through pi_Z); 'completely free' -> 'carry no commutator load'; 'is — read through this proposition — literally' -> 'is, read through this proposition,'; .ts uses drops the transitively redundant prop:spectral-sequence-collapse (still reachable; the prose link stays). No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
       {
         "field_hash": {
           "md": "14abbd8a950f",
@@ -1192,8 +2235,10 @@
         "reviewed_at": "2026-08-15T10:31:00.335Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "1 negation-contrast construction(s): \", not independent ingredients.\" \u2014 state the positive claim directly"
-      },
+        "evidence": "1 negation-contrast construction(s): \", not independent ingredients.\" — state the positive claim directly"
+      }
+    ],
+    "trap-rhetorical-pivot": [
       {
         "field_hash": {
           "md": "14abbd8a950f",
@@ -1205,13 +2250,70 @@
           "id": "agent:r04",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-21T14:57:52.248Z",
+        "reviewed_at": "2026-08-21T14:57:52.282Z",
         "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
-        "evidence": "'are confinement residues, not independent ingredients' is the section's substantive claim about the rank-3 and rank->=4 terms.",
-        "notes": "Reported separately: two parenthetical placeholders where references stood -- '(q-Dirac cell scanner witness)' and '(Q-beta path A extended witness)'."
-      }
-    ],
-    "trap-rhetorical-pivot": [
+        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. no setup-then-reframe pivot."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "ce00d333bc53",
+          "ts": "00c0e6cb1001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f8f7d9976add6c809325fd76ead0087eba3572c0",
+        "evidence": "Re-read at f8f7d9976ad (5b1eb73b63..f8f7d9976ad). The numbered proof was rewritten (pi_Z defined; clauses 1-3 proved through the Wedderburn blocks, following the Lean; E_infty collapse named as a separate reading) and the .ts uses gains prop:spectral-sequence-collapse, which the new final paragraph cites. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "d6facf8d0fa8",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:45:00.000Z",
+        "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
+        "evidence": "Re-read at 4a43629ab36 (f8f7d9976ad..4a43629ab36). Edits: the 'Confinement reading' table rows (1)-(2) restated to the proved clauses (pi_Z lands in Z(A); every trace tau factors through pi_Z); 'completely free' -> 'carry no commutator load'; 'is — read through this proposition — literally' -> 'is, read through this proposition,'; .ts uses drops the transitively redundant prop:spectral-sequence-collapse (still reachable; the prose link stays). No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
       {
         "field_hash": {
           "md": "14abbd8a950f",
@@ -1228,7 +2330,9 @@
         "reviewed_at": "2026-08-15T10:31:00.335Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
-      },
+      }
+    ],
+    "trap-em-dash": [
       {
         "field_hash": {
           "md": "14abbd8a950f",
@@ -1240,12 +2344,70 @@
           "id": "agent:r04",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-21T14:57:52.282Z",
+        "reviewed_at": "2026-08-21T14:57:52.316Z",
         "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
-        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. no setup-then-reframe pivot."
-      }
-    ],
-    "trap-em-dash": [
+        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. em-dash use is ranges/true parentheticals only, not load-bearing."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "ce00d333bc53",
+          "ts": "00c0e6cb1001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f8f7d9976add6c809325fd76ead0087eba3572c0",
+        "evidence": "Re-read at f8f7d9976ad (5b1eb73b63..f8f7d9976ad). The numbered proof was rewritten (pi_Z defined; clauses 1-3 proved through the Wedderburn blocks, following the Lean; E_infty collapse named as a separate reading) and the .ts uses gains prop:spectral-sequence-collapse, which the new final paragraph cites. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "d6facf8d0fa8",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:45:00.000Z",
+        "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
+        "evidence": "Re-read at 4a43629ab36. The one em-dash pair ('is — read through this proposition — literally') is gone; only the en-dash in 'Yang–Baxter' remains, which is a name. Pass."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
       {
         "field_hash": {
           "md": "14abbd8a950f",
@@ -1262,7 +2424,9 @@
         "reviewed_at": "2026-08-15T10:31:00.335Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 244 words)"
-      },
+      }
+    ],
+    "trap-triples": [
       {
         "field_hash": {
           "md": "14abbd8a950f",
@@ -1274,12 +2438,70 @@
           "id": "agent:r04",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-21T14:57:52.316Z",
+        "reviewed_at": "2026-08-21T14:57:52.351Z",
         "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
-        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. em-dash use is ranges/true parentheticals only, not load-bearing."
-      }
-    ],
-    "trap-triples": [
+        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. no reflex three-item list; enumerations are substantive."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "ce00d333bc53",
+          "ts": "00c0e6cb1001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f8f7d9976add6c809325fd76ead0087eba3572c0",
+        "evidence": "Re-read at f8f7d9976ad (5b1eb73b63..f8f7d9976ad). The numbered proof was rewritten (pi_Z defined; clauses 1-3 proved through the Wedderburn blocks, following the Lean; E_infty collapse named as a separate reading) and the .ts uses gains prop:spectral-sequence-collapse, which the new final paragraph cites. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "d6facf8d0fa8",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:45:00.000Z",
+        "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
+        "evidence": "Re-read at 4a43629ab36 (f8f7d9976ad..4a43629ab36). Edits: the 'Confinement reading' table rows (1)-(2) restated to the proved clauses (pi_Z lands in Z(A); every trace tau factors through pi_Z); 'completely free' -> 'carry no commutator load'; 'is — read through this proposition — literally' -> 'is, read through this proposition,'; .ts uses drops the transitively redundant prop:spectral-sequence-collapse (still reachable; the prose link stays). No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
       {
         "field_hash": {
           "md": "14abbd8a950f",
@@ -1296,7 +2518,9 @@
         "reviewed_at": "2026-08-15T10:31:00.335Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 244 words)"
-      },
+      }
+    ],
+    "trap-closing-aphorism": [
       {
         "field_hash": {
           "md": "14abbd8a950f",
@@ -1308,12 +2532,70 @@
           "id": "agent:r04",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-21T14:57:52.351Z",
+        "reviewed_at": "2026-08-21T14:57:52.387Z",
         "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
-        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. no reflex three-item list; enumerations are substantive."
-      }
-    ],
-    "trap-closing-aphorism": [
+        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. final line is technical/cross-reference, not a quotable closer."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "ce00d333bc53",
+          "ts": "00c0e6cb1001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f8f7d9976add6c809325fd76ead0087eba3572c0",
+        "evidence": "Re-read at f8f7d9976ad (5b1eb73b63..f8f7d9976ad). The numbered proof was rewritten (pi_Z defined; clauses 1-3 proved through the Wedderburn blocks, following the Lean; E_infty collapse named as a separate reading) and the .ts uses gains prop:spectral-sequence-collapse, which the new final paragraph cites. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "d6facf8d0fa8",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:45:00.000Z",
+        "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
+        "evidence": "Re-read at 4a43629ab36 (f8f7d9976ad..4a43629ab36). Edits: the 'Confinement reading' table rows (1)-(2) restated to the proved clauses (pi_Z lands in Z(A); every trace tau factors through pi_Z); 'completely free' -> 'carry no commutator load'; 'is — read through this proposition — literally' -> 'is, read through this proposition,'; .ts uses drops the transitively redundant prop:spectral-sequence-collapse (still reachable; the prose link stays). No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
       {
         "field_hash": {
           "md": "14abbd8a950f",
@@ -1330,7 +2612,9 @@
         "reviewed_at": "2026-08-15T10:31:00.335Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
-      },
+      }
+    ],
+    "trap-meta-commentary": [
       {
         "field_hash": {
           "md": "14abbd8a950f",
@@ -1342,12 +2626,70 @@
           "id": "agent:r04",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-21T14:57:52.387Z",
+        "reviewed_at": "2026-08-21T14:57:52.422Z",
         "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
-        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. final line is technical/cross-reference, not a quotable closer."
-      }
-    ],
-    "trap-meta-commentary": [
+        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. no narrating of own emphasis."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "ce00d333bc53",
+          "ts": "00c0e6cb1001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f8f7d9976add6c809325fd76ead0087eba3572c0",
+        "evidence": "Re-read at f8f7d9976ad (5b1eb73b63..f8f7d9976ad). The numbered proof was rewritten (pi_Z defined; clauses 1-3 proved through the Wedderburn blocks, following the Lean; E_infty collapse named as a separate reading) and the .ts uses gains prop:spectral-sequence-collapse, which the new final paragraph cites. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "d6facf8d0fa8",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:45:00.000Z",
+        "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
+        "evidence": "Re-read at 4a43629ab36 (f8f7d9976ad..4a43629ab36). Edits: the 'Confinement reading' table rows (1)-(2) restated to the proved clauses (pi_Z lands in Z(A); every trace tau factors through pi_Z); 'completely free' -> 'carry no commutator load'; 'is — read through this proposition — literally' -> 'is, read through this proposition,'; .ts uses drops the transitively redundant prop:spectral-sequence-collapse (still reachable; the prose link stays). No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
       {
         "field_hash": {
           "md": "14abbd8a950f",
@@ -1364,7 +2706,9 @@
         "reviewed_at": "2026-08-15T10:31:00.335Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
-      },
+      }
+    ],
+    "trap-thesis-restatement": [
       {
         "field_hash": {
           "md": "14abbd8a950f",
@@ -1376,12 +2720,70 @@
           "id": "agent:r04",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-21T14:57:52.422Z",
+        "reviewed_at": "2026-08-21T14:57:52.456Z",
         "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
-        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. no narrating of own emphasis."
-      }
-    ],
-    "trap-thesis-restatement": [
+        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. no block-final restatement of what the text established."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "ce00d333bc53",
+          "ts": "00c0e6cb1001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f8f7d9976add6c809325fd76ead0087eba3572c0",
+        "evidence": "Re-read at f8f7d9976ad (5b1eb73b63..f8f7d9976ad). The numbered proof was rewritten (pi_Z defined; clauses 1-3 proved through the Wedderburn blocks, following the Lean; E_infty collapse named as a separate reading) and the .ts uses gains prop:spectral-sequence-collapse, which the new final paragraph cites. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "d6facf8d0fa8",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:45:00.000Z",
+        "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
+        "evidence": "Re-read at 4a43629ab36 (f8f7d9976ad..4a43629ab36). Edits: the 'Confinement reading' table rows (1)-(2) restated to the proved clauses (pi_Z lands in Z(A); every trace tau factors through pi_Z); 'completely free' -> 'carry no commutator load'; 'is — read through this proposition — literally' -> 'is, read through this proposition,'; .ts uses drops the transitively redundant prop:spectral-sequence-collapse (still reachable; the prose link stays). No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
       {
         "field_hash": {
           "md": "14abbd8a950f",
@@ -1398,7 +2800,9 @@
         "reviewed_at": "2026-08-15T10:31:00.335Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
-      },
+      }
+    ],
+    "trap-performed-warmth": [
       {
         "field_hash": {
           "md": "14abbd8a950f",
@@ -1410,12 +2814,70 @@
           "id": "agent:r04",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-21T14:57:52.456Z",
+        "reviewed_at": "2026-08-21T14:57:52.490Z",
         "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
-        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. no block-final restatement of what the text established."
-      }
-    ],
-    "trap-performed-warmth": [
+        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. institutional register; no personal warmth vocabulary."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "ce00d333bc53",
+          "ts": "00c0e6cb1001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f8f7d9976add6c809325fd76ead0087eba3572c0",
+        "evidence": "Re-read at f8f7d9976ad (5b1eb73b63..f8f7d9976ad). The numbered proof was rewritten (pi_Z defined; clauses 1-3 proved through the Wedderburn blocks, following the Lean; E_infty collapse named as a separate reading) and the .ts uses gains prop:spectral-sequence-collapse, which the new final paragraph cites. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "d6facf8d0fa8",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:45:00.000Z",
+        "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
+        "evidence": "Re-read at 4a43629ab36 (f8f7d9976ad..4a43629ab36). Edits: the 'Confinement reading' table rows (1)-(2) restated to the proved clauses (pi_Z lands in Z(A); every trace tau factors through pi_Z); 'completely free' -> 'carry no commutator load'; 'is — read through this proposition — literally' -> 'is, read through this proposition,'; .ts uses drops the transitively redundant prop:spectral-sequence-collapse (still reachable; the prose link stays). No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
       {
         "field_hash": {
           "md": "14abbd8a950f",
@@ -1432,41 +2894,9 @@
         "reviewed_at": "2026-08-15T10:31:00.335Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
-      },
-      {
-        "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:r04",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-21T14:57:52.490Z",
-        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
-        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. institutional register; no personal warmth vocabulary."
       }
     ],
     "trap-superlative": [
-      {
-        "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/language-trap-audit.ts",
-          "version": "v1",
-          "script_hash": "86b27c0abb9a",
-          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
-        },
-        "reviewed_at": "2026-08-15T10:31:00.335Z",
-        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
-        "evidence": "superlative density acceptable (0)"
-      },
       {
         "field_hash": {
           "md": "14abbd8a950f",
@@ -1483,9 +2913,164 @@
         "severity": "minor",
         "evidence": "'At $k = 0$ (the centre) elements are completely free' and 'is --- read through this proposition --- literally a sum over confinement layers'. 'literally' is doing register work, not mathematics, in a sentence whose whole point is that the reading is an analogy.",
         "notes": "proposed: drop 'completely' and 'literally'."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "severity": "minor",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. The finding is unchanged at this head.",
+        "notes": "Carried forward from the earlier agent review: proposed: drop 'completely' and 'literally'."
+      },
+      {
+        "field_hash": {
+          "md": "ce00d333bc53",
+          "ts": "00c0e6cb1001"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f8f7d9976add6c809325fd76ead0087eba3572c0",
+        "severity": "minor",
+        "evidence": "Re-read at f8f7d9976ad. The new proof text adds no superlative. Carried from the unchanged interpretive paragraphs: 'literally a sum over confinement layers', 'completely free'."
+      },
+      {
+        "field_hash": {
+          "md": "d6facf8d0fa8",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:45:00.000Z",
+        "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
+        "evidence": "Re-read at 4a43629ab36. Resolved from fail/minor: 'literally' removed ('is, read through this proposition, a sum over confinement layers') and 'completely free' replaced by 'carry no commutator load'. No superlative left; 'follows exactly this route' is a precision claim about the Lean, which is accurate."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
+      {
+        "field_hash": {
+          "md": "14abbd8a950f",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.335Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
       }
     ],
     "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "14abbd8a950f",
+          "ts": "788b37457743"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.556Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. prose parses aloud; noun chains stay within technical necessity."
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T16:40:12.000Z",
+        "reviewed_sha": "ba9d24042870fdc3e389bc0f2074ddec1cd78bb1",
+        "evidence": "Re-read at ba9d2404287 (ba9d2404). Only the .ts changed: uses gains prop:unified-curvature-rank-mass-formula, which the proof's 'Predictive consequence' paragraph cites (#prop:unified-curvature-rank-mass-formula); the edge is accurate. .md unchanged. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "ce00d333bc53",
+          "ts": "00c0e6cb1001"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T18:30:00.000Z",
+        "reviewed_sha": "f8f7d9976add6c809325fd76ead0087eba3572c0",
+        "evidence": "Re-read at f8f7d9976ad (5b1eb73b63..f8f7d9976ad). The numbered proof was rewritten (pi_Z defined; clauses 1-3 proved through the Wedderburn blocks, following the Lean; E_infty collapse named as a separate reading) and the .ts uses gains prop:spectral-sequence-collapse, which the new final paragraph cites. No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "d6facf8d0fa8",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:45:00.000Z",
+        "reviewed_sha": "4a43629ab36216587b1d5a524816726226d28563",
+        "evidence": "Re-read at 4a43629ab36 (f8f7d9976ad..4a43629ab36). Edits: the 'Confinement reading' table rows (1)-(2) restated to the proved clauses (pi_Z lands in Z(A); every trace tau factors through pi_Z); 'completely free' -> 'carry no commutator load'; 'is — read through this proposition — literally' -> 'is, read through this proposition,'; .ts uses drops the transitively redundant prop:spectral-sequence-collapse (still reachable; the prose link stays). No instance at this head; the earlier verdict stands."
+      },
+      {
+        "field_hash": {
+          "md": "0204592ace8c",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T20:30:00.000Z",
+        "reviewed_sha": "c8da524af60efd7fb0100edf8b23bd586f1ca0c1",
+        "evidence": "Re-read at c8da524af60 (8c79befddc4..c8da524af60, f9cfd00cdf2). Edits: table row (3) restated as clause 3 (pi_Z fixes every central x); 'at k >= 1 extraction requires energy proportional to F' replaced by 'they lie in the k-th commutator stratum'; 'Vol(B_3) = 8G matching dim su(3) = 8' removed. No instance of this criterion."
+      },
       {
         "field_hash": {
           "md": "14abbd8a950f",
@@ -1502,21 +3087,6 @@
         "reviewed_at": "2026-08-15T10:31:00.335Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
-      },
-      {
-        "field_hash": {
-          "md": "14abbd8a950f",
-          "ts": "788b37457743"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:r04",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-21T14:57:52.556Z",
-        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
-        "evidence": "Full read of the proof plus the confinement-reading table, curvature-rank layer and predictive-consequence sections. prose parses aloud; noun chains stay within technical necessity."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1536,9 +3106,283 @@
         "reviewed_at": "2026-08-15T21:15:41.696Z",
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c3dab60e46d6",
+          "script_commit_sha": "unknown",
+          "def_hash": "10db4d17cd96"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "d6facf8d0fa8",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c3dab60e46d6",
+          "script_commit_sha": "unknown",
+          "def_hash": "10db4d17cd96"
+        },
+        "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
+      }
+    ],
+    "acronym-in-glossary": [
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
+        "notes": "3 acronym(s) are candidates for the glossary: HH, QCD, GB. Run glossary:acronyms for the folio-wide list with expansions."
+      }
+    ],
+    "foreshadows-point-forward": [
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885",
+          "graph": "e549f59e2cb1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
+      }
+    ],
+    "da-arity-conflation": [
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "dak-companion-present": [
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "dak-bpmn-has-process": [
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "d6facf8d0fa8",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "dak-dmn-has-decision-table": [
+      {
+        "field_hash": {
+          "md": "78243a03c719",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "eb501490a1666b5fd87aca3f2fde0db536b5a3ee",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      },
+      {
+        "field_hash": {
+          "md": "d6facf8d0fa8",
+          "ts": "1db8a17ea4ed"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "3e64bf903f4a39dbf856645bd266bc76c1b7db2b",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "dak-fsh-declares-kind": [
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "dak-label-prefix-matches-kind": [
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f",
+        "notes": "criterion applies to dak; block kind \"proof\" is mathpaper"
+      }
+    ],
+    "id-unique": [
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
+      }
+    ],
+    "id-stable": [
+      {
+        "field_hash": {
+          "md": "390ef85a3f26",
+          "ts": "96963a31b885"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_at": "2026-11-24T07:46:52.641Z",
+        "reviewed_tree": "9e79dabe586786c4ca930079177425044e3c5f8f"
       }
     ]
   },
-  "updated_at": "2026-08-21T14:57:52.556Z",
+  "updated_at": "2026-11-24T07:46:52.641Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

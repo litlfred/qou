@@ -1,5 +1,3 @@
-### Proof
-
 **Step 1 (Kummer reflection).** For $z \notin (0, 1)$ (Lewin 1991,
 Eq. 6.10):
 

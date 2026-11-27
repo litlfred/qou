@@ -1,4 +1,3 @@
-**Conjecture (finiteness of the residue spectral sum).**
 *For every closed braid $K$ with normal form $T_w$, there exists a finite cutoff $N = \ell(K, q_0)$ such that the cyclotomic residue vanishes for all $\ell \geq N$:*
 
 $$

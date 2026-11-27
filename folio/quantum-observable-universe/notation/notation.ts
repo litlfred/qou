@@ -1,23 +1,23 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Notation register — front-matter chapter rendered immediately after
- * the TOC. Authoritative source for every mathematical symbol used in
- * the paper, organised by the chapter where each symbol is first
- * introduced. AGENTS.md §7aa is a pointer to this block.
+ * Annex F: Notation Register, Categorical Glossary, and Index of Definitions.
+ *
+ * Consolidates `notation`, `glossary`, and `index-of-definitions` into a single
+ * reference lookup annex (keeping `dir: "notation"` and `label: "chap:notation"`
+ * so preview-chapter and reference-table audit exemptions remain intact).
  */
 export default chapter({
-  tabLabel: "N",
-  title: "Notation",
+  tabLabel: "F",
+  title: "Notation Register, Categorical Glossary, and Index of Definitions",
   label: "chap:notation",
   sections: [
     section({
-      title: "Symbols by introducing chapter",
+      title: "Symbol register and key collision avoidances",
       label: "sec:notation-register-section",
       blocks: [
         "notation-register-section-intro",
         "notation-register",
-
         "notation-register-table1-data",
         "notation-register-table2-data",
         "notation-register-table3-data",
@@ -28,13 +28,57 @@ export default chapter({
         "notation-register-table8-data",
         "notation-register-table9-data",
         "notation-register-table10-data",
+        "notation-collisions",
       ],
     }),
     section({
-      title: "Key collision avoidances",
-      label: "sec:notation-collisions-section",
+      title: "Glossary of monoidal, rigid, and enriched categorical notions",
+      label: "sec:glossary-monoidal",
       blocks: [
-        "notation-collisions",
+        "glossary-hom-set",
+        "glossary-monoidal-intro",
+        "glossary-monoidal-category",
+        "glossary-braided-monoidal-category",
+        "glossary-symmetric-monoidal-category",
+        "glossary-monoidal-functor",
+        "glossary-rigidity-intro",
+        "glossary-exact-pairing",
+        "glossary-left-dual",
+        "glossary-right-dual",
+        "glossary-rigid-category",
+        "glossary-pivotal-category",
+        "glossary-compact-closed-category",
+        "glossary-r-linear-category",
+        "glossary-no-quasi-zeros",
+        "glossary-cemetery-group",
+      ],
+    }),
+    section({
+      title: "Glossary of geometric, information-theoretic, and homological notions",
+      label: "sec:glossary-geometry",
+      blocks: [
+        "glossary-geometry-intro",
+        "glossary-quantum-flatness",
+        "glossary-reeb-gauge-group",
+        "glossary-categorical-transport",
+        "glossary-categorical-q-torsion-leaf",
+        "glossary-descent",
+        "glossary-s3-group",
+        "glossary-q-bit",
+        "glossary-q-bit-skein",
+        "glossary-distinguished-triangle",
+        "glossary-derived-category",
+        "glossary-dg-category",
+        "glossary-fourier-mukai-transform",
+        "glossary-observed-value",
+        "glossary-weierstrass-projection",
+      ],
+    }),
+    section({
+      title: "Index of definitions, theorems, propositions, and conjectures",
+      label: "sec:definition-index",
+      blocks: [
+        "definition-index",
       ],
     }),
   ],

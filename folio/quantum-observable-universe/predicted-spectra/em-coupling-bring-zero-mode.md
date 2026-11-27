@@ -1,5 +1,5 @@
-**Proposition (additive Bring-surface zero-mode form for $1/\alpha_{EM}$, conditional on [$(1{-}q)\,\log\Phi_n(x; q) \to \mathrm{Li}_2(x)$ under $\tau_{\mathrm{arch}}$](#conj:dilogarithm-archimedean-limit) and Bloch-Suslin pentagon-uniqueness [`suslin1991`]).**
-*Let $g = 4$ denote the genus of Bring's surface. This is the unique Riemann surface supporting the genus-$4$ torus knots $T_{2,9}$ and $T_{3,5}$ ([force-carrier uniqueness](#prop:force-carrier-bring-uniqueness)). Assume the archimedean dilogarithm limit, Bloch-Suslin pentagon uniqueness, and the existence of a Bloch-group class on Bring's surface realising the zero-mode constant ([Uniqueness of the archimedean realization functor (Bloch-Suslin pentagon, conditional)](#prop:archimedean-functor-uniqueness)). Then*
+**Conditional on the additive self-consistency postulate and the $[10]_q$ tree coefficient.**
+*Let $g = 4$ denote the genus of Bring's surface. This is the unique Riemann surface supporting the genus-$4$ torus knots $T_{2,9}$ and $T_{3,5}$ ([force-carrier uniqueness](#prop:force-carrier-bring-uniqueness)). Assume that the zero-mode density of Bring's surface enters $1/\alpha_{EM}$ additively alongside the tree term, and that the tree coefficient of $T_{3,5}$ is $[10]_q$. Then*
 
 $$
   \frac{1}{\alpha_{EM}}
@@ -23,17 +23,17 @@ $$
 
 ## Numerical match
 
-Evaluation at $q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps) using 60 dps precision yields:
+Evaluation at $q_0 = {{ qou.computations.q-pinning-50-digit.derived_50_digit.q | precision: 16 }}\ldots$ (muon pin, 16 dps) using 60 dps precision yields:
 
 | Quantity | Value |
 |----------|------:|
-| $q\cdot[9]_q\cdot[10]_q$ | $136.823219729\ldots$ |
-| $2/(3\pi) = 2g/(4\pi(g-1))$ | $0.212206591\ldots$ |
-| Sum | $137.035426320\ldots$ |
-| CODATA-2022 $1/\alpha$ | $137.035999177(21)$ |
-| **Residual** (relative) | $\mathbf{-4.2 \times 10^{-6}}$ |
+| $q\cdot[9]_q\cdot[10]_q$ | ${{ qou.computations.alpha-em-form-ladder.data.ladder.muon.tree | precision: 12 }}\ldots$ |
+| $2/(3\pi) = 2g/(4\pi(g-1))$ | ${{ qou.computations.alpha-em-form-ladder.data.ladder.muon.zero_mode | precision: 9 }}\ldots$ |
+| Sum | ${{ qou.computations.alpha-em-form-ladder.data.ladder.muon.additive | precision: 12 }}\ldots$ |
+| CODATA-2022 $1/\alpha$ | ${{ folio-assistant-sci.library.codata-2022.inverse-fine-structure-constant }}(21)$ |
+| **Residual** (relative) | ${{ qou.computations.probes.retired_q0_refresh_to_live_muon_pin_probe.data.prop_em-coupling-bring-zero-mode.3.refreshed_at_muon_pin | precision: 2 | scientific }}$ |
 
-The second additive term $\alpha/(4\pi) \approx 5.81 \times 10^{-4}$ brings the relative residual to $+5.7 \times 10^{-8}$. This approaches the CODATA standard deviation $\sigma_\alpha = 1.5 \times 10^{-10}$.
+The second additive term $\alpha/(4\pi) \approx {{ qou.computations.alpha-em-no-pi-correction-probe.data.correction_alpha_over_4pi | precision: 3 | scientific }}$ brings the relative residual to $+{{ qou.computations.probes.retired_q0_refresh_to_live_muon_pin_probe.data.prop_em-coupling-bring-zero-mode.5.refreshed_at_muon_pin | precision: 2 | scientific }}$. This approaches the CODATA standard deviation $\sigma_\alpha \approx 1.5 \times 10^{-10}$.
 
 ## Conjectural physical interpretation
 
@@ -51,7 +51,7 @@ $$
 
 The $g = 4$ structure of Bring's surface appears in both main terms. The tree-level coefficient $[9]_q[10]_q$ derives from the unique pair of genus-$4$ torus knots $\{T_{2,9}, T_{3,5}\}$ ([force-carrier uniqueness](#prop:force-carrier-bring-uniqueness)). The infrared shift $2g/(4\pi(g-1))$ emerges from the Hodge data of the same Bring's surface. This double appearance of $g = 4$ is structurally consistent. It matches the expectations for a categorical-Lagrangian quantum field theory with a UV completion on Bring's curve.
 
-> **Conditional theorem.** The upstream conjectures (the archimedean dilogarithm limit, Bloch-Suslin pentagon uniqueness, and the Bring zero-mode Bloch class) are taken as hypotheses. Given the Bring zero-mode Bloch class as a hypothesis, the additive form follows with no further assumption. The algebraic identity $2g/(4\pi(g-1)) = 2/(3\pi)$ at $g=4$ is elementary. The remaining structural input is the explicit Bloch-group class realising $2/(3\pi)$ on Bring's surface.
+> **Conditional theorem.** The constant $2/(3\pi) = b_1/\mathrm{Area}$ is proved at $g = 4$ without further hypotheses. What is assumed is the following. (i) The additive postulate itself: that the zero-mode density is added to $1/\alpha_{EM}$. (ii) The $[10]_q$ tree coefficient of $T_{3,5}$, which holds only for one choice of character weights. (iii) The normalisation $[2]_q/(8\pi)$ of the one-loop term. (iv) The coefficient $c$ of the next-order term $\alpha\,[2]_q/(8\pi)\,(1 - c\,h^2\alpha)$, $h = q - q^{-1}$. The archimedean dilogarithm limit holds on $[0,1)$, which covers every argument used here. Bloch-Suslin pentagon uniqueness holds only for the zero functor on the reals and carries no content. A Bloch-group class realising $2/(3\pi)$ is not needed. At $q = 1$ the additive form keeps $2/(3\pi) + \alpha/(4\pi)$, while the [Chern-Simons correction form](#rem:em-coupling-chern-simons) reduces to the tree term. Neither is a truncation of the other.
 
 | Form | Type | Residual at $q_0$ | Structural status |
 |------|------|-------------------|-------------------|

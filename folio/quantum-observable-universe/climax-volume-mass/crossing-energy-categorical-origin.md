@@ -1,5 +1,3 @@
-**Remark (crossing weights are Hecke eigenvalues, not postulates).**
-
 The per-crossing weights $(q, -q^{-1})$ of the [crossing energy](#def:crossing-energy) are not an energetic penalty laid on top of a topological framework. They are the **two eigenvalues of the Hecke generator** $T = P \circ R \colon V \otimes V \to V \otimes V$ acting on the symmetric/antisymmetric decomposition. The rigid monoidal structure forces them:
 
 1. *Rigidity fixes the $R$-matrix determinant.* Dualisability of $V$ and the categorical volume constraint ([volume constraint](#def:quantum-observable-universe)) require the braiding $R = c_{V,V}$ to satisfy $\det(R|_{V \otimes V}) = 1$, with eigenvalues $(q, q^{-1})$ on $S^{2} V \oplus \Lambda^{2} V$.

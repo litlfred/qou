@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
-  "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-09-04T10:33:13.041094+00:00",
-  "commitSha": "52d7f5999d2412af0b3ac6c3ce6bfe0dc2fae270",
+  "engineVersion": "numpy 2.5.3",
+  "computedAt": "2026-11-21T19:26:20.961299+00:00",
+  "commitSha": "2e45b66cd8e4794589a0e70066336ac3dfb14344",
   "assertions": [
     {
       "name": "g_A",
@@ -14,10 +14,10 @@
     },
     {
       "name": "lp_duality_gap_certified",
-      "computed": "2.01568336418754275886925182273e-45",
+      "computed": "2.01568336418754121270360258642e-45",
       "expected": "0",
       "passed": true,
-      "tolerance": "1.4166989763856204662e-43",
+      "tolerance": "1.4166989763856291165e-43",
       "source": "|gap_recomputed - solver duality_gap|; gap_recomputed from QOU.Mathlib.LPDuality.duality_gap_decomposition applied to the published x*/y*. Tolerance = 100 x the cancellation floor max|x*|*10^(-prec_bits*log10 2), derived not fitted."
     },
     {
@@ -26,15 +26,15 @@
       "expected": true,
       "passed": true,
       "tolerance": 0,
-      "source": "prop:confinement-frobenius-reciprocity § master formula; boolean so an EMPTY active set fails (the numeric form with tolerance 10 passed on len=0)"
+      "source": "conj:confinement-frobenius-reciprocity § master formula; boolean so an EMPTY active set fails (the numeric form with tolerance 10 passed on len=0)"
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "borromean-axial-coupling",
   "scriptFile": "borromean-axial-coupling.py",
-  "scriptHash": "e3e3ce3a6487",
-  "scriptCommitSha": "e5177adffbb4210ff87a053d400eb13b1d47f6f7",
+  "scriptHash": "bbb9ac2ed5ad",
+  "scriptCommitSha": "9c45b23cf5fa6ccac95cf59274faf91bd5c8ebd7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,14 +42,11 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
   },
   "invocation": {
     "argv": [
@@ -57,8 +54,8 @@
     ],
     "reproduce": "python3 -u computations/borromean-axial-coupling.py"
   },
-  "description": "Axial coupling g_A as an instance of the master formula ⟨O⟩_T = Σ_{i,j ∈ A*(T)} u_i (G⁻¹)_{ij} ⟨O,b_j⟩ (prop:confinement-frobenius-reciprocity). Replaces the prior cyclic-trivial conjugation-pattern computation tr(β·σ₁·β⁻¹)/tr(σ₁) — see docs/audits/2026-05-06-frobenius-pairing-compute-audit.md § 3.1. Bound-state observable: g_A (axial coupling, Gamow-Teller form factor).",
-  "contentBlock": "prop:confinement-frobenius-reciprocity",
+  "description": "Axial coupling g_A as an instance of the master formula ⟨O⟩_T = Σ_{i,j ∈ A*(T)} u_i (G⁻¹)_{ij} ⟨O,b_j⟩ (conj:confinement-frobenius-reciprocity). Replaces the prior cyclic-trivial conjugation-pattern computation tr(β·σ₁·β⁻¹)/tr(σ₁) — see docs/audits/2026-05-06-frobenius-pairing-compute-audit.md § 3.1. Bound-state observable: g_A (axial coupling, Gamow-Teller form factor).",
+  "contentBlock": "conj:confinement-frobenius-reciprocity",
   "parameters": {
     "q": 1.1099785827513808,
     "q_inv": 0.9009182839557415,
@@ -265,7 +262,7 @@
         1.0
       ]
     },
-    "duality_gap_cancellation_floor": "1.4166989763856205285e-45",
+    "duality_gap_cancellation_floor": "1.4166989763856291165e-45",
     "g_A_note": "g_A from confinement Frobenius reciprocity (master formula); no external Clebsch-Gordan factor inserted.",
     "interpretation": "g_A is the ratio of two instances of the master formula on the same proton bound state T (operator-selection LP optimum at n_target = 1). The vector channel O_V uses the trivial-rep character (σ_i ↦ q); the axial channel O_A uses the sign-rep character (σ_i ↦ -q⁻¹). The Gram-inverse dual pairing on the LP-active subspace replaces the cyclic-trivial conjugation pattern of the prior implementation. Exact numerical agreement with PDG g_A = 1.2754 requires the categorical Clebsch-Gordan structure to be installed on the same active subspace; this v1 establishes the correct STRUCTURE — the conjugation bug is gone — with refinement (proper isospin projector on T) deferred.",
     "upstream_witness_hashes": [

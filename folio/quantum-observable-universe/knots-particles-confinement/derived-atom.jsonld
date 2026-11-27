@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -15,7 +15,8 @@
   "kind": "definition",
   "title": "Derived atom $\\mathcal{A}(Z, N)$ from pair production",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-four-term-pair-nucleon"
+    "papers/quantum-observable-universe/blocks/def-quark-antiquark-production",
+    "papers/quantum-observable-universe/blocks/def-photon"
   ],
   "tags": [
     "atom",
@@ -26,7 +27,7 @@
     "normal-form",
     "general"
   ],
-  "leanRef": "qou:QOU.Interactions.DerivedAtom",
+  "leanRef": "qou:QOU.Confinement.DerivedAtom",
   "text": "derived-atom.md",
   "leanSource": "derived-atom.lean",
   "provenance": "authored"

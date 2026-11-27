@@ -1,6 +1,3 @@
-A **molecular Hopf ring** binds all atoms simultaneously via a single threading link.
-
-**Definition.**
 Let $\mathcal{A}_1, \ldots, \mathcal{A}_N$ be atoms arranged in a cycle. A **molecular Hopf ring** of length $N$ is the composite
 
 $$

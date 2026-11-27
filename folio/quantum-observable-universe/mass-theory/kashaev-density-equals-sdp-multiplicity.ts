@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Kashaev density prefactor equals joint-tower SDP Wedderburn multiplicity ($\\rho_F = \\nu_{\\mathrm{SDP}}$)",
   lean: {
-    ref: "qou:QOU.Kashaev.KashaevDensityEqualsSdpMultiplicity",
+    ref: "qou:BraidKnotOctonion.Kashaev.KashaevDensityEqualsSdpMultiplicity",
     validation: "not_checked",
   },
   computation: {
@@ -24,6 +24,7 @@ export default conjecture({
     "murakami-murakami2001",
     "iwahori1964",
     "wenzl1988",
+    "garoufalidis-loebl2005",
   ],
   tags: [
     "tier:E",

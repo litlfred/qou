@@ -34,6 +34,16 @@ lines, in the algebra:
 so the rule is the same two-term shape as `yangBaxterRelation`, which it
 subsumes at `j = i − 1`.
 
+## Attribution
+
+Bokut & Shiao [bokut2001] give this family for the Coxeter group (`q = 1`).
+For the Iwahori–Hecke algebra itself, the completed system — quadratic rule,
+far commutation, and `T_{i+1,j} T_{i+1} − T_i T_{i+1,j}` (`i ≥ j`) — is proved
+to be a Gröbner–Shirshov basis by Kang, Lee, Lee & Oh [kangleeleeoh2002],
+Prop. 4.3 (pp. 275–276), in the convention `T² = (q − 1)T + q`, which matches
+`σ² = (Q − Q⁻¹)σ + 1` under `q = Q²`, `T = Qσ`.
+-- Ref: [kangleeleeoh2002] https://doi.org/10.1016/S0021-8693(02)00071-6
+
 ## Indices
 
 `bokutShiaoRelation` takes `i'`, `i`, `j` with `i'` standing for `i − 1`,
@@ -117,18 +127,21 @@ noncomputable def bokutShiaoRelation {n : ℕ} (i' i j : Fin n) :
 Every rule of `heckeRewritingSystem` is kept, so every membership and
 leading-monomial fact proved there still applies verbatim; the new block adds
 `bokutShiaoRelation i' i j` for each `i' + 1 = i` and `j ≤ i'`. -/
-noncomputable def heckeCompletedRewritingSystem
-    (n : ℕ) (hn : 0 < n) (hp : HeckeParams) : RewritingSystem (HeckeGen n) ℝ where
-  rules :=
-    (heckeRewritingSystem n hn hp).rules ++
+noncomputable def heckeCompletedRules (n : ℕ) (hp : HeckeParams) :
+    List (ReductionRule (HeckeGen n) ℝ) :=
+    heckeRules n hp ++
     ((List.finRange n).flatMap (fun i =>
       (List.finRange n).flatMap (fun i' =>
         (List.finRange n).filterMap (fun j =>
           if i'.val + 1 = i.val ∧ j.val ≤ i'.val then
             some (bokutShiaoRelation i' i j) else none))))
-  nonempty := by
-    intro h
-    exact (heckeRewritingSystem n hn hp).nonempty (List.append_eq_nil_iff.mp h).1
+
+/-- The completed Hecke rewriting system: `heckeCompletedRules` as a
+`RewritingSystem`. -/
+noncomputable def heckeCompletedRewritingSystem
+    (n : ℕ) (hn : 0 < n) (hp : HeckeParams) : RewritingSystem (HeckeGen n) ℝ :=
+  .ofList (heckeCompletedRules n hp) fun h =>
+    heckeRules_ne_nil n hn hp (List.append_eq_nil_iff.mp h).1
 
 /-! ## §4g  The refuting overlap, against the completed system
 
@@ -478,7 +491,7 @@ theorem mem_heckeCompletedRewritingSystem_rules {n : ℕ} (hn : 0 < n) (hp : Hec
     ∨ (∃ i j : Fin n, j.val + 1 < i.val ∧ r = farCommRelation i j)
     ∨ (∃ i' i j : Fin n, i'.val + 1 = i.val ∧ j.val ≤ i'.val
         ∧ r = bokutShiaoRelation i' i j) := by
-  simp only [heckeCompletedRewritingSystem, List.mem_append] at hr
+  simp only [heckeCompletedRewritingSystem, RewritingSystem.mem_ofList_rules, heckeCompletedRules, List.mem_append] at hr
   rcases hr with hbase | hbs
   · rcases mem_heckeRewritingSystem_rules hn hp hbase with h | h | h
     · exact Or.inl h

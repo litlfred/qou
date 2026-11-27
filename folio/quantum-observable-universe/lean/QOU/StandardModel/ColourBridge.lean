@@ -1,4 +1,4 @@
-import QOU.IwahoriHecke.JimboClassicalLimit
+import BraidKnotOctonion.JimboClassicalLimit
 import Mathlib.Algebra.Lie.Matrix
 
 /-!

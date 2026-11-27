@@ -1,8 +1,8 @@
-The [substrate parameter](#def:substrate-parameter) $q$ determines the three Reynolds-number variables in the brane fluid: characteristic velocity $c_q = 1/(q-1)$, characteristic length $\ell_q = (q-1)/q$, and dynamic viscosity $\nu_q = \hbar_q/2 = (q-1)/(2q)$. The corresponding **Planck--Reynolds number** is:
+The [substrate parameter](#def:substrate-parameter) $q$ determines the three Reynolds-number variables in the brane fluid: characteristic velocity $c_q = 1/(q-1)$, characteristic grain scale $\hbar_q = 1 - q^{-1} = (q-1)/q$, and dynamic viscosity $\nu_q = \hbar_q/2 = (q-1)/(2q)$. The corresponding **Planck--Reynolds number** is:
 
 $$
   \mathrm{Re}_q
-  = \frac{c_q \cdot \ell_q}{\nu_q}
+  = \frac{c_q \cdot \hbar_q}{\nu_q}
   = \frac{2}{q-1}.
 $$
 

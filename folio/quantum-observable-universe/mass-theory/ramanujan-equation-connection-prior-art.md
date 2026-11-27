@@ -1,0 +1,9 @@
+Morita works with $0 < |q| < 1$ \cite[\S 2, p. 7]{morita2012}. The Ramanujan function $A_q(x) = \sum_{n \ge 0} q^{n^2} (-x)^n / (q;q)_n$ solves the second-order equation
+$$
+q x\, u(q^2 x) - u(q x) + u(x) = 0,
+$$
+whose second solution at the origin is $\theta_q(x)$ times the divergent series ${}_2\varphi_0(0, 0; -; q, -x/q)$ \cite[eq. (4), p. 3]{morita2012}. Morita proves two connection formulae between the origin and infinity. With the $q$-Borel--Laplace transformations of the second kind he writes $A_{q^2}(-q^3/x^2)$ as a $\theta$-weighted combination of the $q$-Airy functions $\mathrm{Ai}_q(x)$ and $\mathrm{Ai}_q(-x)$ \cite[Theorem, p. 4]{morita2012}. With the transformations of the first kind he expresses the summed divergent series $\theta_q(x)\, {}_2f_0(0, 0; -; q, -x/q)$ through two convergent ${}_1\varphi_1$ series in $1/x$, valid for $x \notin [-\lambda; q]$ \cite[Theorem, p. 6]{morita2012}.
+
+This is a worked instance of the data the [kernel conjecture](#conj:qdifference-kernel-prolongation-symbol) refers to: a second-order linear $q$-difference equation with one divergent formal solution, a $q$-Borel sum of that solution, and an explicit connection matrix between $0$ and $\infty$. The shape is close to the corpus's carrier. In the Ramanujan operator $q x\,\sigma^2 - \sigma + 1$, as in $L_{\mathcal{K}} = (q^2 x - 1)\,\sigma^2 - (q - 1)\,\sigma - (q - 1)$, the coefficient of $\sigma^2$ is linear in $x$ and the other two are constant.
+
+The formulae do not transfer as they stand. Morita's $q$ lies inside the unit disc and the corpus's substrate parameter is greater than one, so any comparison first needs $q$ replaced by $q^{-1}$ and the operator rewritten. And $L_{\mathcal{K}}$ is not the Ramanujan operator: its coefficients differ, so its connection matrix has to be computed, not read off. Neither step has been done here.

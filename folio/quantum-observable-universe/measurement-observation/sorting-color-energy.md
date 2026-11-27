@@ -1,6 +1,5 @@
 Observation sorts colour. Swapping two adjacent items into their correct order is a projection between the two eigenspaces of the R-matrix. Each swap deposits a fixed quantum of energy in the colour fibre.
 
-**Proposition.**
 *Let $\sigma_i$ be the Hecke generator acting on $V \otimes V$, where $V$ is the fundamental representation. Then:*
 
 1. **(Eigenspace decomposition.)** *The R-matrix decomposes $V \otimes V$ into two eigenspaces:*

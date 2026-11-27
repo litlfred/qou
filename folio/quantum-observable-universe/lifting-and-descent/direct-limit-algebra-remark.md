@@ -1,0 +1,1 @@
+In the archimedean realisation ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)), applying the fibre functor $\tau$ to the [direct limit algebra](#def:direct-limit-algebra) yields $\mathcal{A}_\infty \cong \varinjlim\Gamma(J^1 \mathcal{S}_n, \mathrm{SU}_{q_n}(2))$.

@@ -1,0 +1,133 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-23T00:56:33.960811+00:00",
+  "commitSha": "72bd5945109c6442c3f54130e6b8140896c2274f",
+  "assertions": [
+    {
+      "name": "tau_e(1) = 1/2 (traceD_one: 2^(c-n), c=2, n=3)",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "hbar(1) = 0",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "R = tau_e q^2 c_q^2 at q=1.10997858275",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "R = tau_e q^2 c_q^2 at q=1.10997859564",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "tau_e = q^3 y3 at q=1.10997858275",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "R = classical + quantum part at q=1.10997858275",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "tau_e = q^3 y3 at q=1.10997859564",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "R = classical + quantum part at q=1.10997859564",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "y3 bar-invariant at q0",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "fig-8 3-braid trace at q=1 is 2^(1-3) = 1/4",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "R pin-insensitive below 1e-6 relative -- 1.74e-7",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "energy-scale-unit-ratio",
+  "scriptFile": "energy_scale_unit_ratio_probe.py",
+  "scriptHash": "4a61a1a6fcc4",
+  "scriptCommitSha": "72bd5945109c6442c3f54130e6b8140896c2274f",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "mpmath": "1.4.1",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/energy_scale_unit_ratio_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/energy_scale_unit_ratio_probe.py"
+  },
+  "description": "Ratio of the two electron units in the corpus at q0: the mass-formula unit m_e/hbar_q^2 over the trace-pipeline unit m_e/tau_e, i.e. R = tau_e/hbar_q^2 with tau_e = q^3(q^4+1)/(q^2+1)^2 the convention-D trace of sigma0 sigma1 sigma0 with Hopf closure. Model quantities only; nothing fitted. Proton pin default, muon pin (CODATA 2022) as a labelled comparison arm. Measures how far apart the two normalisations are; does not decide which is canonical.",
+  "data": {
+    "proton_pin": {
+      "R_classical_part_q3_over_2hbar2": "69.65090473329350236346163931274281473337",
+      "R_quantum_part_q5(q+1)^2/(2(q^2+1)^2)": "0.7528185307648483521848193863607407877957",
+      "y3": "0.5054042265039308031875587032404722756604",
+      "tau_fig8_3braid": "0.2801956422726949814331225775762076206173",
+      "trace_ratio_fig8_over_electron": "0.4053953006201542879222494122846200506652",
+      "q": "1.109978582751380807591669095610768879874",
+      "tau_e": "0.6911664783584445261477195309790462066142",
+      "hbar_sq": "0.009817186454275073810569057179564252889049",
+      "R_unit_mass_over_unit_trace": "70.40372326405835071564645869910355552117",
+      "E0_over_me": "8.1917611721945038989431474731762886277",
+      "c_q_sq": "82.67681969229672229812208650338577663814",
+      "Vol41_over_hbar_sq": "206.7683263706738902896095864099026759385"
+    },
+    "muon_pin_comparison": {
+      "R_classical_part_q3_over_2hbar2": "69.65089244940601192480319583974640971185",
+      "R_quantum_part_q5(q+1)^2/(2(q^2+1)^2)": "0.7528185643757272603983582533296912934569",
+      "y3": "0.5054042276983210956259273333902783096338",
+      "tau_fig8_3braid": "0.2801956490517914798630318264165235776456",
+      "trace_ratio_fig8_over_electron": "0.4053952953454487043473924006742574322261",
+      "q": "1.1099785956427390466817951293800017527",
+      "tau_e": "0.6911665040735830605594370462394157454842",
+      "hbar_sq": "0.009817188527722425437750202432517666656054",
+      "R_unit_mass_over_unit_trace": "70.40371101378173918520155409307610100531",
+      "E0_over_me": "8.191760116841447300780414114249692009264",
+      "c_q_sq": "82.67680031004452990922682588044953585123",
+      "Vol41_over_hbar_sq": "206.7682827"
+    },
+    "pin_sensitivity_rel": "1.740004388e-7"
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "default proton pin; muon pin evaluated as labelled comparison arm (E1)",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

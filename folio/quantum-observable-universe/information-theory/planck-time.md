@@ -1,4 +1,3 @@
-**Definition.**
 Let $q \in k^\times \setminus \{1\}$ denote the substrate parameter ([substrate parameter](#def:substrate-parameter)). Let $\hbar_q = 1 - q^{-1}$ denote the quantum Planck constant ([quantum Planck constant](#def:quantum-planck-constant)). One defines the **Planck time** as
 
 $$

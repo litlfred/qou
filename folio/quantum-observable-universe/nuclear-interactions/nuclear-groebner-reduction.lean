@@ -1,4 +1,4 @@
-import QOU.Archimedean.NuclearGroebnerReduction
+import QOU.MassTheory.NuclearGroebnerReduction
 
 
 /-!

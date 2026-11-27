@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Depth-2 identification of $G^{(2)}(\\mathcal{H}_q)$ with $K_3^{\\mathrm{ind}}(F) \\otimes \\mathbb{Q}$ — provable via Bloch--Suslin",
   lean: {
-    ref: "qou:QOU.AppendixSurreals.Depth2IdentificationBlochSuslin.depth_2_identification",
+    ref: "qou:QOU.Observations.Depth2IdentificationBlochSuslin.depth_2_identification",
     validation: "not_checked",
   },
   uses: ["prop:borel-partial-resolution"],

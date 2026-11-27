@@ -4,12 +4,14 @@ import { remark } from "../../schema/builders";
  * Interpretive remark: the recomputed low-isotope mass table after
  * the q-Hecke character gap closure (PR #572).
  *
- * Three production paths to tr_M(K) now agree to machine epsilon
- * across {proton, neutron, deuteron, tritium, helium-3}:
+ * Three production paths to tr_M(K) agree to the 60-digit serialization
+ * floor (~1e-49 relative) at the proton-anchored q_0 across
+ * {proton, neutron, deuteron, tritium, helium-3} under the Borromean
+ * intra-nucleon word and `pn_convention = "bring_color_weighted"`:
  *
- *   1. Canonical Markov-axiom reducer (markov_trace_recursive @ 50-dps)
- *   2. Hybrid partition-sum (30-dps Wenzl y_λ + float64 χ^λ_q)
- *   3. Symbolic partition-sum (#564 rho_k_h3a_refinement @ 50-dps mpmath)
+ *   1. Hoefsmit + Wenzl bridge / Markov-peel arbiter (`atomic-tr-m-mpfr-50dps-proton.witness.json`)
+ *   2. q-Hecke seminormal partition-sum (`tr-m-q-hecke-seminormal.witness.json`, 80 dps mpmath)
+ *   3. Canonical branching / Laurent-q pipeline (`low-isotope-mass-table.witness.json`)
  *
  * Mass predictions via #564's ρ_K^LO ansatz are anchor-driven:
  * M(p) = m_p, M(n) = m_n by construction, and M(D) = m_p + m_n
@@ -34,11 +36,13 @@ export default remark({
     "hoefsmit1974",
   ],
   computation: {
-    engine: "numpy",
+    engine: "mpmath",
     script: "computations/tr_m_q_hecke_seminormal.py",
     witness: [
       "computations/tr-m-q-hecke-seminormal.witness.json",
+      "computations/atomic-tr-m-mpfr-50dps-proton.witness.json",
       "computations/atomic-tr-m-mpfr-50dps.witness.json",
+      "computations/low-isotope-mass-table.witness.json",
       // LP / SDP duals supplying shadow-price structure for the
       // operator-selection step that picks per-Wedderburn-block
       // contributions to the binding-energy ansatz. Per AGENTS.md

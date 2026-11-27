@@ -24,12 +24,12 @@ is a free $R$-module of rank $2$ with the following structure.*
    $$
    *The summand $V_-$ is canonically isomorphic to the unit object
    $\mathbf{1}$ — a singlet of $R$-rank one.*
-3. *The braiding decomposes as*
+3. *In the unimodular half-power normalisation $(c_{A,A} - q^{1/2})(c_{A,A} + q^{-1/2}) = 0$, the braiding decomposes as*
    $$
      c_{A,A} \;=\; q^{1/2}\, e_+ \;-\; q^{-1/2}\, e_-,
    $$
    *and $\{q^{1/2},\, -q^{-1/2}\}$ are the only eigenvalues of
-   $c_{A,A}$ on $A \otimes A$.*
+   $c_{A,A}$ on $A \otimes A$. Equivalently, the rescaled generator $\sigma := q^{1/2}\,c_{A,A} = q\,e_+ - q^{-1}\,e_-$ satisfies the monograph's integer-power Iwahori--Hecke relation $\sigma^2 = (q - q^{-1})\sigma + 1$ with eigenvalues $\{q,\, -q^{-1}\}$ and identical central idempotents $e_\pm$.*
 4. *(Trace completeness.) With $\dim_q V_+ = [3]_q$ and $\dim_q V_- = 1$,
    the normalised categorical traces of the idempotents*
    $$

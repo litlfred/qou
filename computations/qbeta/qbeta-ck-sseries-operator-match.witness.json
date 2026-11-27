@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T20:09:21.240455+00:00",
-  "commitSha": "440038755f17461f5597233a7397068e42081cba",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-24T18:07:10.063041+00:00",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "assertions": [
     {
       "name": "validate_object_at_q0",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 18,
+  "durationMs": 21,
   "computation": "qbeta-ck-sseries-operator-match",
   "scriptFile": "qbeta_ck_sseries_operator_match_probe.py",
-  "scriptHash": "0c3b2215b8fb",
-  "scriptCommitSha": "2b48a3bf718539b8f05027e54e402f42f6e3245a",
+  "scriptHash": "2b817cfe92dc",
+  "scriptCommitSha": "884e4ab20d628ae6f6261536cbbfb7bd043e5083",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +34,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -52,8 +52,8 @@
   "description": "Hoefsmit Stage B path-1: exact s=q-1 numeric series-match of the canonical operator ladder R=Q_beta/[Q_A cos(alpha_eff)] vs prod(1+c_k u^k), Q_beta=|Delta(net)|*E_0 from GB-reduced symbolic net. c_2=-1 gate; residual test for constant-c_k consistency.",
   "data": {
     "delta_net_q_symbolic": "(q**14 + 2*q**13 - 5*q**12 - 10*q**11 + 10*q**10 + 24*q**9 - 16*q**8 - 32*q**7 + 16*q**6 + 24*q**5 - 10*q**4 - 10*q**3 + 5*q**2 + 2*q - 1)/(4*q**7)",
-    "validate_delta_net_at_q0": "-0.188290620015689313544800645166813912718478469709970678764420",
-    "validate_Qbeta_at_q0_MeV": "0.788180925399370797340479711272984605182631749675403256074970",
+    "validate_delta_net_at_q0": "-0.188290620139363347805319355511735737835965161406972916103876",
+    "validate_Qbeta_at_q0_MeV": "0.788180925244358354632184972081709530959643016702956525913311",
     "R_at_q1": "1.00000000000000000000000000000000000000000000000000000000000",
     "c2_gate_pass": false,
     "extracted_quadratic_is_a_named_c2_variant": false,

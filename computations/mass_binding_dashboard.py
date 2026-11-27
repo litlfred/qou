@@ -936,7 +936,7 @@ def _print_legend() -> None:
 | `B_lin` | LINEAR/saturating binding α·s, s = 1−e^(−B_sym/α) (leading term of B_sym; bounded by α, under-binds with A) |
 | `B_sym` | EXACT log-ratio binding α·ln(tr_free/tr_atom) = α[(Z−1)L_pp + L_pn + (N−1)L_nn] — the archimedean realization, already bond-type (p↔n) resolved (no separate `_fac` needed) |
 | `B_qCLT_fac` | p↔n colour-weighted q-CLT α·(A−1)·⟨bond-type L⟩ (the q-CLT approximation to the colour weighting B_sym does exactly; replaces the uniform `B_qCLT` in the headline — the uniform/isospin-symmetric baseline α·(A−1)·ℓ̄(D) is shown in the Colour-weighting table) |
-| `B_gate` | SU(4) occupancy (entanglement-surprisal) binding E₀·ln(1/W_λ) — the "energy lost to vacuum/entanglement" when the operator-selection SDP collapses the full Hecke q-Plancherel distribution onto the bound cluster's partition λ. Parameter-free (E₀ × Plancherel weight, no fit). DOMINANT at the magic/closed-shell config — fixes ⁴He (err 2.36→0.94, the worst B_sym failure) — but OVER-binds the loosely-bound light nuclei (²H err 0.24); on aggregate worse than B_sym. Cluster surprisal ≈ A·free surprisal ⇒ B_gate ≈ A·E₀·ln(1/W_free) = 7.58 MeV/nucleon, the parameter-free nuclear SATURATION scale (cf. empirical ~8 MeV/A). c_λ = B_AME/E_gate is the shell-filling fraction (the open Δ_λ residual). Probe: `probes/su4_occupancy_binding_probe.py`. |
+| `B_gate` | SU(4) occupancy (entanglement-surprisal) binding E₀·ln(1/W_λ) — the "energy lost to vacuum/entanglement" when the operator-selection SDP collapses the full Hecke q-Plancherel distribution onto the bound cluster's partition λ. **DEPRECATED 2026-08-08 with `B_vol` (see the banner above): not derived.** No continuous fit (E₀ × Plancherel weight), but the surprisal form is a choice. DOMINANT at the magic/closed-shell config — fixes ⁴He (err 2.36→0.94, the worst B_sym failure) — but OVER-binds the loosely-bound light nuclei (²H err 0.24); on aggregate worse than B_sym. Cluster surprisal ≈ A·free surprisal ⇒ B_gate ≈ A·E₀·ln(1/W_free) = 7.58 MeV/nucleon, a postdiction near the empirical ~8 MeV/A plateau, not a derived saturation scale. c_λ = B_AME/E_gate is the shell-filling fraction (the open Δ_λ residual). Probe: `probes/su4_occupancy_binding_probe.py`. |
 | `B_vol` | ALL-KNOTS entanglement binding = the liquid-drop **volume term** `a_V·A`, with `a_V = E₀·ln(1/W_free)` ≈ **7.584 MeV/nucleon — DEPRECATED 2026-08-08 postdiction near-match, NOT derived** (no basis in the derivation chain; the surprisal form was chosen because it lands near 8 and `W_free` is unnormalised so `ln(1/W)` is not a probability — red-team `docs/audits/2026-08-22-avol-binding-redteam.md`) (W_free = the free nucleon's (1,1,1) Plancherel weight; ≈ empirical net B/A). Entanglement is a property of EVERY knot, not one selected partition — so the per-knot occupancy energy is summed over all A nucleons. Valid for ALL A (no W_λ≥1 breakdown, unlike `B_gate`); tracks ¹²C/¹⁶O to ~1–5% where B_sym misses by 2.1×. Over-binds the lightest (²H, ⁶Li) — the residual is the **surface/Coulomb/shell** structure (the SEMF corrections, open). Probe + audit: `probes/su4_occupancy_binding_probe.py`. |
 | `E_C` | EM-sector **Coulomb energy** `E_C = (3/5)Z(Z−1)·α_EM·ℏc/(r₀·A^1/3)` MeV (uniform sphere). **Both inputs corrected here 2026-08-25 — the legend had described a superseded configuration.** The length is the **CAL-3** radius `R = λ̄_π·A^(1/3)` with `λ̄_π = ℏc/m_π = 1.41382 fm`; `coulomb_energy.R0_FM = LAMBDA_BAR_PI_FM`, and `R0_FM_EMPIRICAL = 1.2` is retained *for comparison only, not as the default*. And `α_EM·ℏc = 1.4399652199 MeV·fm` is no longer the CODATA literal `1.43996` — it is **derived** via `meson_em_sinh_closed_form._alpha_em_inv_derived(q₀)`. So "not fit" understates it in one direction and overstates it in another: it is derived rather than fitted, but that derivation is **conditional on an open Witten-κ Gram-determinant `sorry`**, so `E_C` is tagged `DERIVED*` rather than `DERIVED`. Two weak steps remain named in the module itself: `A^(1/3)` is a saturation assumption (solving `R = λ̄_π·A^x` gives x = 0.97/0.43/0.53/0.31 at A = 2,3,3,4, not ⅓), and coefficient-exactly-1 is a selection among four mass scales, measured at 0.985 ± 0.069 (bean `qou-usft`). The strong B-forms carry NO EM term; E_C is the repulsion that REDUCES net binding for proton-rich nuclei. Reported additively, **not** subtracted from the B-columns (they are calibrated against Coulomb-inclusive AME, so a global subtraction would double-count). E_C is cleanly separable only in the mirror-pair DIFFERENCE, where the strong core cancels: CS-core + E_C reproduces the ³H/³He, ⁷Li/⁷Be, ¹³C/¹³N splits to ~20–40% vs the production σ/σ⁻¹ bond's ~200–350% (bean 754x). Module: `coulomb_energy.py`; probe: `probes/coulomb_mirror_killswitch_probe.py`. |
 | `err sym` / `err qCLT_fac` / `err gate` / `err vol` | B_AME / B_model for the production + occupancy + volume forms (1.00 = perfect, >1 under-binds, <1 over-binds) |
@@ -1314,8 +1314,16 @@ def main(argv=None) -> int:
     print(f"  GPMT ≥3-row modified dimensions at q₀: d_mod(1,1,1) = {gpmt_c['dMod111']:.6f}, "
           f"d_mod(2,1,1) = {gpmt_c['dMod211']:.6f}, d_mod(1,1,1,1) = +{gpmt_c['dMod1111']:.6f} | "
           f"μ₃^GPMT = +{gpmt_c['mu3GPMT']:.6f} (>0), μ₄^GPMT,H4 = {gpmt_c['mu4GPMT_H4']:.6f} (<0).")
-    print("| iso | A | Z | N | Q_pair | B_ext^GPMT(H4) | E₀·B_ext(H4) (MeV) | E_C(CAL-3) (MeV) | Δm_QED^V3 (keV) | two-term note |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|---|")
+    # MANY-BODY DIAGNOSTIC (2026-11-21, issue #8960, owner choice "all 4").
+    # B_sym is a chain over A−1 pairwise interfaces and carries no ≥3-body
+    # term. The GPMT ≥3-row cumulant E₀·B_ext is the only Lean-backed
+    # many-body quantity on main, so it is shown BESIDE B_sym as
+    # `B_sym+GPMT (diag)`. It is NOT a production column: no block licenses
+    # adding it to B, and B_sym itself is POSITED. AME/B is comparison only.
+    print("  Diagnostic column `B_sym+GPMT`: B_sym + E₀·B_ext(H4), the pairwise chain plus the "
+          "≥3-row GPMT cumulant. Not production; not licensed as an energy (issue #8960).")
+    print("| iso | A | Z | N | Q_pair | B_ext^GPMT(H4) | E₀·B_ext(H4) (MeV) | B_sym+GPMT (diag, MeV) | AME/(B_sym+GPMT) | E_C(CAL-3) (MeV) | Δm_QED^V3 (keV) | two-term note |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|---|")
     for r in rows:
         if r["A"] > 4:
             continue
@@ -1340,8 +1348,11 @@ def main(argv=None) -> int:
             qed_v3_kev = (2 * (2 * mp_qed_bor + dm_qed_bor)) * 1e3
             note = f"H₄ cumulant μ₄^H4 = {gpmt_c['mu4GPMT_H4']:.4f} < 0 (4-body saturation)"
         e0_bext = E0 * bext_h4
+        b_diag = (r["B_sym"] + e0_bext) if r.get("B_sym") is not None else None
+        err_diag = (r["B_AME"] / b_diag) if (b_diag and r.get("B_AME")) else None
         print(f"| {r['name']} | {A_r} | {Z_r} | {N_r} | {q_pair} "
               f"| {_fmt(bext_h4,8,4)} | {_fmt(e0_bext,8,4)} "
+              f"| {_fmt(b_diag,8,4)} | {_fmt(err_diag,8,2) if err_diag is not None else '—'} "
               f"| {_fmt(r.get('E_C'),8,4)} | {_fmt(qed_v3_kev,8,4)} | {note} |")
 
     _print_provenance()

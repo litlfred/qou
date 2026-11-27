@@ -15,14 +15,15 @@ the list cannot silently break the pointers.
 | Serre exponent; root-angle ratio; the "two $2$s" separation (the Serre coefficient $[2]_q$ *moves* with $q$ while the Cartan datum does not) | proved | [$q$-deformation](#rem:q-deformation-weight-lattice) |
 | Root/weight lattices, Weyl group, Kazhdan–Lusztig multiplicities are $q$-independent | standard (Drinfeld–Jimbo), not proved here | [$q$-deformation](#rem:q-deformation-weight-lattice) |
 | Quantum Schur–Weyl duality $\mathcal{U}_q(\mathfrak{gl}_N) \leftrightarrow H_n(q)$ | standard \cite{jimbo1986}; the duality itself is not proved here, only its row-cap consequence | [Schur–Weyl](#prop:schur-weyl-eightfold) |
-| $\mathbf{3} \otimes \bar{\mathbf{3}} = \mathbf{8} \oplus \mathbf{1}$; decuplet dimension $\binom{5}{3} = 10$; weight tables | standard $\mathrm{SU}(3)$ representation theory, **conditional on $N = 3$** | [meson octet](#prop:meson-octet-decomposition), [decuplet](#prop:borromean-decuplet) |
+| $\mathbf{3} \otimes \bar{\mathbf{3}} = \mathbf{8} \oplus \mathbf{1}$; $\dim \mathrm{Sym}^3(W_3^*) = \binom{5}{3} = 10$; quantum $[3]_q^3 = (q^2 + q^{-2})[5]_q + 2[2]_q[4]_q + 1$; weight tables | traceless/scalar vector-space split, polynomial-module dimension $10 \neq 4$, and generic-$q$ quantum dimension balance **proved**; $\mathrm{SU}(3)_{\mathrm{f}}$ equivariance and applicability **conditional on $N = 3$** | [meson octet](#prop:meson-octet-decomposition), [decuplet](#prop:borromean-decuplet) |
 | $N = 2$ cannot host the eightfold-way decomposition | **standard**, with a proved *arithmetic* instance: $\dim V_{(1^3)}$ is taken to be $\binom{N}{3}$, and $\binom{N}{3} = 0 \iff N < 3$ is proved. The hook-content formula and the row cap $\ell(\lambda) \le N$ are cited, not proved — same caveat as the $q$-deformation row | [Schur–Weyl](#prop:schur-weyl-eightfold) |
 | $\dim V = N = 3$ for the flavour fundamental | **open**: framework supplies $\dim V = 2$; no $q$ raises the row cap. The *obstruction* is proved; the *construction* is missing | item *The $N = 3$ problem* |
 | No object of the single-fibre category reaches $\dim W = 3$ through the $\mathrm{Sym}^2$ gate | **proved**, and at *object* level rather than only for irreducible summands: the Frobenius--Schur count forces a passing $W$ to be a sum of pairwise *distinct* even-dimensional irreps, so $\dim W$ is even, and $3$ is odd | item *The $N = 3$ problem* |
 | Inequivalent fibre functors of the single-fibre category | **standard** \cite{bichon2003}: they exist at every dimension $n \ge 2$ and are real at $q_0$; and **proved** that none of them supplies a one-dimensional summand of $V^{\otimes 3}$ --- the spin-$0$ object is absent by Clebsch--Gordan parity, so the fusion rules, which every fibre functor preserves, exclude $\mathbf{10} \oplus \mathbf{8} \oplus \mathbf{8} \oplus \mathbf{1}$ at every $n$ | item *The $N = 3$ problem* |
-| Writhe-to-isospin map $w \mapsto I_3$ on the nucleon doublet | derived, scale-free, no fitted parameters | [flavour charges](#rem:flavor-charge-assignments) |
-| Hypercharge $Y$ | **open**: writhe map falsified ($p$, $n$ share $Y = +1$, writhes differ); missing a second crossing invariant | item *Hypercharge $Y$* |
-| The baryon octet's weight map is non-injective | **proved**: $\Lambda$ and $\Sigma^0$ share $(2I_3, Y) = (0,0)$, so a weight-only mass formula predicts $m_\Lambda = m_{\Sigma^0}$ and is excluded at $\approx 7\%$ | [baryon octet](#prop:baryon-octet-decomposition) |
+| Writhe-to-isospin map $w \mapsto I_3$ on the nucleon doublet | derived, scale-free, no fitted parameters, for the writhe of the inter-nucleon arc; the ruled nucleon word has writhe $0$ for both nucleons | [flavour charges](#rem:flavor-charge-assignments) |
+| Hypercharge $Y$ and split-bundle $F = V_2 \oplus W_3^*$ coupling | **conditionally coupled** to $N = 3$: single-fibre writhe map falsified ($p$, $n$ share $Y = +1$); on $F = V_2 \oplus W_3^*$ ($z_3 = q^3/[3]_q$), tracelessness $2y_2 + 3y_3 = 0 \iff y_3 = -\tfrac{2}{3}y_2$ is **proved** (fixing doublet $y_2 + y_3 = +\tfrac{1}{3}$, Killing Weinberg ratio $3/8$, and separating $\bar u = -\tfrac{2}{3}$ from $d = -\tfrac{1}{3}$); **open**: categorical construction of $W_3$ | [flavour charges](#rem:flavor-charge-assignments), item *Hypercharge $Y$* |
+| Baryon octet weight degeneracy and $H_3(q)$ $S^{(2,1)}$ diquark split | **proved** (exclusion + operator split), **open** (scale): weight-only formulas give $m_\Lambda = m_{\Sigma^0}$ (excluded at $77\;\mathrm{MeV}$), while internal $S^{(2,1)}$ diquark projectors $P_\Lambda, P_{\Sigma^0}$ give $\mathrm{tr}(P_\Lambda V^3) - \mathrm{tr}(P_{\Sigma^0} V^3) = (q - q^{-1})^3(q^2 + q^{-2})[3]_q/[2]_q \neq 0$ ($31.5\;\mathrm{MeV}$ at $q_0$ vs empirical $77.0\;\mathrm{MeV}$) | [baryon octet](#prop:baryon-octet-decomposition) |
+| Ordered 3-strand gluon clasp $\beta_{\mathrm{clasp}}(n_1, n_2)$ on neutral mesons | **proved** (invariants), **open** (absolute mass scale): $\mathrm{SL}_2(\mathbb{Z})$ trace $2n_1n_2 + n_1 + n_2 + 3 \ge 27 > 2$ across $\{3,5,7\}^2$, separating $\bar D^0 = (-5,+3)$ from $K^0 = (+3,-5)$ in both $z_2$ and $z_3$ Markov traces | [meson mass splitting](#rem:meson-mass-splitting), [dictionary supplement](#rem:dictionary-flavor-layer) |
 | $\mathrm{PSL}(2,7) \cong \mathrm{GL}(3,\mathbb{F}_2)$, order $168$, irreps $\{1,3,\bar 3,6,7,8\}$ | standard; machine-verified numerically | [colour from $G_2$](#prop:color-su3-from-g2) |
 | $S_4$ bridge: transitive on local Fano lines | verified numerically | [colour from $G_2$](#prop:color-su3-from-g2) |
 | The $S_4$ bridge selects the Klein quartic | **refuted** (verified by exact computation), and not narrowly: the $S_4$-invariant quartics form a pencil, so *infinitely many* pairwise non-isomorphic genus-3 curves admit $S_4$ (Fermat is the member $t = 0$ of the pencil, $t$ being the pencil parameter, not a partition). The datum has essentially no separating power | [colour from $G_2$](#prop:color-su3-from-g2) |
@@ -32,17 +33,21 @@ the list cannot silently break the pointers.
 | Continuous $G_2$ completion ($S^6 = G_2/\mathrm{SU}(3)_{\mathrm{c}}$) | **open**: the continuous Lie group $G_2$ is not constructed here — an infrastructure gap, not a structural one | item *Continuous $G_2$ completion* |
 | Flavour vs. colour ($\mathrm{SU}(3)_{\mathrm{f}}$ vs. $\mathrm{SU}(3)_{\mathrm{c}}$) | **open**: whether same, different, or groupoid-dual | item *Flavour versus colour separation* |
 | Gell-Mann–Okubo has no discriminating power | **proved**: $4m_K^2 - 3m_\eta^2 - m_\pi^2 = 0$ identically for *any* first-order octet breaking | [meson mass splitting](#rem:meson-mass-splitting) |
-| Meson mass splitting; the GMO **deviation** | **open**: the $\approx 6\%$ deviation is the only testable content; no second-order term derived, so the framework predicts $0$ | item *The Gell-Mann--Okubo deviation* |
+| Meson mass splitting; the GMO **deviation** | **partially resolved** (sign), **open** (magnitude): rational quantum Casimir gives $(4M_K - 3M_\eta - M_\pi)/(M_\pi - M_\eta) = -((q-1)/(q+1))^2$ (**proved**, matching both meson $+$ and baryon $-$ signs at $q_0$), but accounts for only $1.21\%$ of the $6.43\%$ meson deviation; $\eta$--$\eta'$ mixing remains open | [meson mass splitting](#rem:meson-mass-splitting), item *The Gell-Mann--Okubo deviation* |
 | Spin–flavour–colour selection of the Young symmetriser | **open**: decuplet identification currently matches dimensions and weights only | item *Spin--flavour--colour selection rule* |
 | Truncation ("freeze-out") mechanism | **open**: heuristic, no derivation | item *Truncation mechanism* |
 | Three generations | **open**: not addressed here | item *Three generations* |
 
-The chapter cannot do without two of these.  **$N = 3$** gates every flavour statement below --- the meson
-octet, the baryon multiplets, and every quark row of the dictionary are
-conditional on it, and it is not available from a single fibre.
-**Hypercharge** gates the $\mathrm{U}(1)$ factor: without a second
-crossing invariant the chapter reproduces $I_3$ but not $Y$, and the
-Gell-Mann--Nishijima relation cannot be closed.
+The chapter cannot do without **$N = 3$**: the meson octet, the baryon
+multiplets, and every quark row of the dictionary are conditional on a
+three-dimensional partner, which is unavailable from a single fibre.  As
+shown in the Standard Model appendix and in
+[the flavour-charges remark](#rem:flavor-charge-assignments),
+**hypercharge** is coupled to that same missing partner: on the split
+bundle $F = V_2 \oplus W_3^*$ ($z_3 = q^3/[3]_q$), tracelessness forces
+$y_3 = -\tfrac{2}{3}y_2$ with no free parameter, whereas without $W_3^*$
+the chapter reproduces $I_3$ alone and cannot close the
+Gell-Mann--Nishijima relation.
 
 1. **The $N = 3$ problem.**
    Schur--Weyl duality \cite{jimbo1986}
@@ -194,6 +199,16 @@ Gell-Mann--Nishijima relation cannot be closed.
    twist multisets are forced by the categorical braid words (not
    just consistent with them) is the open content of the hypercharge
    conjecture, and nothing else in the battery constrains anything.
+   In the split-bundle framing $F = V_2 \oplus W_3^*$ ($z_3 = q^3/[3]_q$)
+   of the Standard Model appendix and
+   [the flavour-charges remark](#rem:flavor-charge-assignments),
+   tracelessness of $\mathrm{diag}(y_2, y_2, y_3, y_3, y_3)$ forces
+   $y_3 = -\tfrac{2}{3}y_2$, pinning the exterior-pair doublet hypercharge
+   $y_2 + y_3 = +\tfrac{1}{3}$ at $y_2 = 1$ with Killing Weinberg ratio
+   $3/8$, and separating $\bar u$ ($-\tfrac{2}{3}$) from $d$ ($-\tfrac{1}{3}$)
+   despite their shared crossing sign $-1$.  Hypercharge is thus reduced
+   conditionally to the same missing object as item 1: constructing $W_3$
+   in the multi-fibre groupoid.
 
 3. **Continuous $G_2$ completion.**
    The discrete skeleton of $\mathrm{SU}(3)_{\mathrm{c}} \subset G_2 =
@@ -303,19 +318,33 @@ Gell-Mann--Nishijima relation cannot be closed.
    for derivation: it holds identically for any first-order octet
    breaking, whatever the mechanism, as proved in
    [the meson mass-splitting remark](#rem:meson-mass-splitting).  Reproducing it would therefore
-   be no evidence for the framework.  *Open:* the $\approx 6\%$
-   *deviation*, which measures the failure of first-order breaking
-   (second-order terms plus $\eta$--$\eta'$ singlet mixing).  The
-   framework has derived no second-order term and so predicts deviation
-   $0$; a derivation that produced $\approx 6\%$ would be a genuine
-   prediction, and one that produced a different value would falsify the
-   mechanism.  The former $\approx 3.3\%$ comparison against
-   $\dim_q(\text{adjoint})$ is withdrawn as a category error
-   (a dimension is not a mass splitting).
+   be no evidence for the framework.  An unconstrained second-order
+   polynomial in $(I(I+1), Y)$ surjects onto every scalar residual and
+   likewise carries no separating power.  Replacing the classical Casimir
+   by the parameter-free rational quantum Casimir
+   $d_q(I, Y) = [I]_q[I+1]_q - [Y/2]_q^2$ \cite{kleinkreisler1996} yields
+   the $(a,b,c)$-free bar-even ratio
+   $(4M_K - 3M_\eta - M_\pi)/(M_\pi - M_\eta) = -((q - 1)/(q + 1))^2$,
+   equal to $-2.7168 \times 10^{-3}$ at $q_0$.  This predicts the observed
+   signs on *both* the pseudoscalar meson octet ($+$) and the baryon octet
+   ($-$) without free parameters, while accounting for only $1.21\%$ of
+   the $6.43\%$ isospin-averaged meson deviation and $0.82\%$ of the
+   $-0.57\%$ baryon deviation.  *Open:* the remaining $\approx 6.3\%$
+   meson residual, dominated by $\eta$--$\eta'$ singlet mixing and
+   higher-order $\mathrm{SU}(3)_{\mathrm{f}}$ breaking.  The former $\approx 3.3\%$
+   comparison against $\dim_q(\text{adjoint})$ remains withdrawn as a
+   category error (a dimension is not a mass splitting).
 
 9. **Ocneanu/Markov trace parameter.**
    The Markov trace $\tau$ on $H_n(q)$ involves a second parameter
    $z$ (the trace parameter).  In QOU, $q$ is the substrate parameter
    (observed at the point of observation as $q_0$, not derived from Bring topology).
-   Whether $z$ is similarly extracted from categorical data or must be
-   chosen is open (T3f).
+   Along the Wenzl family $z_r = q^r/[r]_q$, a fibre of quantum dimension
+   $[r]_q$ pins $z = z_r$ with nothing left to choose: $V_2$ fixes
+   $z_2 = q^3/(q^2+1)$ and a rank-$3$ partner $W_3^*$ fixes
+   $z_3 = q^3/[3]_q = q^5/(q^4+q^2+1)$.  The two parameters satisfy
+   $z_2(q) - z_3(q) = q^3 / ((q^2+1)(q^4+q^2+1)) \neq 0$ ($0.1634$ at
+   $q_0$) and induce non-proportional Ocneanu weight vectors on $H_3(q)$
+   ($w_{(1^3)}(q, z_2) = 0$ whereas $w_{(1^3)}(q, z_3) = [3]_q^{-3} \neq
+   0$).  *Open:* constructing the categorical rank-$3$ object $W_3$ that
+   instantiates the $r = 3$ level (T3f).

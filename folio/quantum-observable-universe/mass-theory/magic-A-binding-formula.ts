@@ -28,7 +28,7 @@ export default proposition({
     "no-fitting",
     "regime-dispatch",
   ],
-  lean: { ref: "qou:QOU.BraidKnot.magic_A_binding_formula" },
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.magic_A_binding_formula" },
   authorNotes: [
     {
       kind: "deprecated",

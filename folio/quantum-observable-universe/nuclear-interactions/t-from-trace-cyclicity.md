@@ -1,4 +1,3 @@
-**Conjecture (Time-reversal closure).**
 *Within the QOU framework, time-reversal $T$ acts as **word reversal on braid words at the Markov-trace level**:*
 
 $$

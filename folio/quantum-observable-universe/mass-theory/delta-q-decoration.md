@@ -1,4 +1,3 @@
-**Definition (q-dimension decoration of the NF basis).**
 *The :defterm[$\delta_q$-decoration]{#delta-q-decoration} maps an algebra element $b \in H_n(q)$ to the tuple of its $q$-characters across each irreducible representation $V_\lambda$:*
 
 $$
@@ -8,3 +7,5 @@ $$
   \;\in\;
   R^{|\,\mathrm{Par}(n)\,|}.
 $$
+
+*Its codomain is the [$q$-dimension layer](#def:q-dimension-layer).*

@@ -13,7 +13,7 @@ export default definition({
     "$q$-dimension layer $R^{|\\mathrm{Par}(n)|}$: per-irrep target of the $\\delta_q$-decoration",
   defines: ["q-dimension-layer"],
   uses: ["def:delta-q-decoration"],
-  lean: { ref: "qou:QOU.BraidKnot.qDimensionLayer" },
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.qDimensionLayer" },
   tags: [
     "delta-q",
     "q-dimension",

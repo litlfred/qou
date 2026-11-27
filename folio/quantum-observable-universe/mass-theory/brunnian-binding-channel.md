@@ -1,4 +1,4 @@
-**Proposition.** *Let a nuclear composite be assembled from component knots whose pairwise
+*Let a nuclear composite be assembled from component knots whose pairwise
 inter-component linking pattern is Brunnian — every pairwise Gauss linking number vanishes, as for
 the Borromean carrier $\mathrm{L6a4}$ of ${}^3\mathrm{He}$/${}^4\mathrm{He}$. Then the mutual
 binding contribution to the [crossing energy](#def:crossing-energy) is carried entirely by the
@@ -77,14 +77,14 @@ $J(K_1 \sqcup K_2) = \delta\,J(K_1)\,J(K_2)$ with $\delta = [2]_q = q + q^{-1}$.
 that is actually proved — the Kronecker-product multiplicativity of the trace
  — models the **disjoint union**, not the connected sum.
 Consequently a genuinely independent assembly has $I = \delta$, not $I = 1$: adding an unlinked
-component costs $\log \delta \approx 0.699$ of free energy at the proton pin, and a Markov closure of
+component costs $\log \delta \approx 0.699$ of free energy at the proton-anchored $q_0$, and a Markov closure of
 an $n$-strand braid is normalised by $\delta^{\,n-1}$. The additivity therefore holds only up to that
 loop factor; precisely,
 additivity holds iff $\delta = 1$, which is excluded for $q > 1$. Two modelling inputs remain named rather than
 derived: that the substrate assembly amplitude is the Markov trace (a citable Jones theorem, carried
 as a hypothesis), and the dimensional dressing
-$\mathfrak{m} = \mathfrak{m}_e\,\mathrm{Vol}\,\mathrm{lw}/\hbar_q^2$ (CAL-1 scale, geometric volume,
-CAL-2 cusp) — calibration and geometry, not a fit. The exact saturated fraction
+$\mathfrak{m} = \mathfrak{m}_e\,\mathrm{Vol}\,\mathrm{lw}/\hbar_q^2$ (electron-mass scale $\mathfrak{m}_e$, geometric volume,
+and cusp deformation parameter $\hbar_q$) — calibration and geometry, not a fit. The exact saturated fraction
 $B/A/\mathfrak{m}_N \approx \hbar_q^2$ is a numerical coincidence, not a prediction: the empirical
 $B/A$ peaks at $0.954\,\hbar_q^2$ near $A \approx 60$ and falls, and the fundamental volume
 coefficient is $a_V/\mathfrak{m}_N \approx 1.71\,\hbar_q^2$.

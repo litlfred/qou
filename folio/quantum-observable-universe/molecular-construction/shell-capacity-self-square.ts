@@ -9,7 +9,7 @@ export default proposition({
   label: "prop:shell-capacity-self-square",
   title: "Shell capacity $2n^2$ as the self-square of the angular $q$-dimension",
   lean: {
-    ref: "qou:QOU.Molecular.shell_capacity_self_square",
+    ref: "qou:QOU.Observations.ShellCapacitySelfSquare.shell_capacity_self_square",
     validation: "not_checked",
   },
   uses: ["def:electron-shell-braid-capacity"],

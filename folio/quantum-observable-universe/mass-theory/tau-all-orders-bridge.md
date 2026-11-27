@@ -1,4 +1,3 @@
-**Conjecture ($\tau$ at all orders — dichotomy).**
 *Let $\alpha_k$ be the algebraic $h^k$-coefficient of the $Q_8$ multiplicative-integral trace, and let $\kappa_k$ be the $h^k$-coefficient of the Markov-trace expansion. Exactly one of the following holds:*
 
 1. *(**Order-mixing**.) The fibre functor $\tau$ acts as a non-constant, order-mixing linear map converting $\alpha_\bullet$ to $\kappa_\bullet$ at every order.*

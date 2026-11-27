@@ -1,4 +1,3 @@
-*Proof.*
 Well-definedness of $\rho_n$ is the coherence theorem for braided
 monoidal categories: the assignment $\sigma_i \mapsto c_i$ satisfies
 the braid relations $\sigma_i \sigma_{i+1} \sigma_i =

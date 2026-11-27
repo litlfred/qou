@@ -7,11 +7,11 @@ $$
   \gamma_1 \cdot \gamma_2
    \longrightarrow 
   e^- + e^+
-  +  \text{Hopf link content}(L_+ = \varphi_0\psi_1, L_- = \varphi_1\psi_0)
+  +  \text{$L_\pm$ content}(L_+ = \varphi_0\psi_1, L_- = \varphi_1\psi_0)
 $$
 
 **Step 2: Quark creation.**
-To create a quark on the trefoil channel, the Hopf link $L_+ = \sigma_0\sigma_1$ from the colored photon normal form acts as a creation operator:
+To create a quark on the $e^-$ channel, $L_+ = \sigma_0\sigma_1$ from the colored photon normal form acts as a creation operator:
 
 $$
   L_+ \cdot e^-
@@ -46,7 +46,7 @@ $$
   \mathfrak{M}
 $$
 
-Each arrow is a morphism in the Iwahori--Hecke algebra $H_3(q)$. Breit--Wheeler multiplies by $\sigma_0^2$. Quark creation left-multiplies by $L_+ = \sigma_0\sigma_1$. Meson binding inserts the Hopf link $\mathcal{L}_H = \sigma_0\sigma_1$ between the quark and antiquark crossing pairs. Evaluating at $q = q_0$ yields the meson normal form:
+Each arrow is a morphism in the Iwahori--Hecke algebra $H_3(q)$. Breit--Wheeler multiplies by $\sigma_0^2$. Quark creation left-multiplies by $L_+ = \sigma_0\sigma_1$. Meson binding inserts $\mathcal{L}_H = \sigma_0\sigma_1$ between the quark and antiquark crossing pairs. Evaluating at $q = q_0$ yields the meson normal form:
 
 $$
   \mathrm{NF}(\mathfrak{M}_+)

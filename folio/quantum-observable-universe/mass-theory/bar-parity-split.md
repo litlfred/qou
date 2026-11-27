@@ -1,4 +1,4 @@
-**Conjecture.** *There is a fibre element $F$, specified independently of the binding and $\mathfrak{Q}_\beta$ data, such that the binding trace is read off the bar-even part of $F$ and the $\mathfrak{Q}_\beta$ residue is read off its bar-odd part.*
+*There is a fibre element $F$, specified independently of the binding and $\mathfrak{Q}_\beta$ data, such that the binding trace is read off the bar-even part of $F$ and the $\mathfrak{Q}_\beta$ residue is read off its bar-odd part.*
 
 Here the parity is taken with respect to the bar-involution $\sigma$, $q \mapsto q^{-1}$, $\sigma^2 = \mathrm{id}$ ([Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections](#def:bar-involution)), and the even and odd parts are $x + \sigma x$ and $x - \sigma x$ ([Even/odd decomposition under a linear involution](#lem:bar-involution-parity-decomposition)). The binding trace is $\tau = \mathrm{tr}\, B$ of [Symplectic prolongation (det B = 1) gives a one-parameter recurrence](#prop:sl2-prolongation-recurrence); it is bar-even, being a function of $(q+q^{-1})/2 = \cosh\lambda$.
 

@@ -18,6 +18,18 @@
     "library/arxiv-math-9301212v1/sections/page-005"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "arXiv:math/9301212v1 [math.GT] 1 Jan 1993 — A physically natural potential energy for simple closed curves in R3 is shown to be invariant under M¨obius transformations.\n\n**arXiv:math/9301212v1 [math.GT] 1 Jan 1993**\n\n*AMERICAN MATHEMATICAL SOCIETY*\n\n5 pp, 5 sections.\n\n**Abstract.** A physically natural potential energy for simple closed curves in R3 is shown to be invariant under M¨obius transformations. This leads to the rapid resolution of several open problems: round circles are precisely the absolute minima for energy; there is a minimum energy threshold below which knotting cannot occur; minimizers within prime knot types exist and are regular. Finally, the number of knot types with energy less than any constant M is estimated. Consider a rectiﬁable curve γ(u) in the Euclidean 3-space R3, where u belongs to R1 or S1. Deﬁne its energy by E(γ) = ZZ \u001a 1 |γ(u) −γ(v)|2 − 1 D(γ(u), γ(v))2 \u001b |˙γ(u)||˙γ(v)| du dv, where D(γ(u), γ(v)) is the shortest arc distance betweenγ(u) and γ(v) on the curve. The second term of the integrand is called a regularization (see [O1–O3, FH]).\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {

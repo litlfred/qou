@@ -45,7 +45,7 @@ levels, where the :refterm[descent]{#descent} involution $\hat\tau_n$ separates 
 descended part (where the residual $R_q$ lives) from the
 transient part (where the pentagon $q$-factor is exact).
 
-**Proposition.** The pentagon identity
+The pentagon identity
 $\Phi_q(v)\,\Phi_q(u) = \Phi_q(u)\,\Phi_q(uv)\,\Phi_q(v)$
 applies to the operator lift $u = \widehat U_i$, $v = \widehat
 V_j$ at adjacent jet levels $n, n+1$, and supplies the

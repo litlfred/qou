@@ -10,7 +10,7 @@ export default proposition({
   label: "prop:linear-chain-bond-count",
   title: "The jet-filtration multiplicity is the linear-chain bond count $M_n = n-1$",
   lean: {
-    ref: "qou:QOU.Mass.linear_chain_cluster_measure",
+    ref: "qou:QOU.MassTheory.LinearChainBondCount.linear_chain_cluster_measure",
     validation: "not_checked",
   },
   uses: [

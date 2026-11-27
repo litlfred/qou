@@ -5,7 +5,7 @@ export default definition({
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
   ],
   label: "def:brings-surface",
-  lean: { ref: "qou:QOU.BringsSurface", validation: "not_checked" },
+  lean: { ref: "qou:QOU.BringsSurface.BringsSurfaceRoot", validation: "not_checked" },
   title: "Bring's surface",
   tags: ["algebraic-geometry", "brings-surface"],
   uses: [],

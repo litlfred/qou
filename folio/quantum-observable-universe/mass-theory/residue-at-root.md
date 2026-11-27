@@ -1,4 +1,3 @@
-**Proposition.**
 *Let $T_w \in J^\ell / J^{\ell+1}$ have $\mathrm{tr}_{M, \ell}(T_w) \in \mathbb{Q}(q)$, and suppose $\Phi_q \cdot \mathrm{tr}_{M, \ell}(T_w)$ lies in the Habiro completion $\widehat{\mathbb{Z}[q]}$. The cyclotomic residue*
 
 $$

@@ -52,6 +52,8 @@ machinery.
 | `1101.0956v3.pdf` | DGKMSV, generalized Gauss maps | Arcuş (Lie algebroids, unrelated) ×2 + orphaned tail pages (§48–56) of DeTurck–Gluck |
 | `0510388v1.pdf` | DeTurck–Gluck electrodynamics | mixed/corrupted; only tail pages recovered |
 
+> **Corrected 2026-11-22 (bean `qou-ut4e`).** The `0510388v1.pdf` row above is wrong. The file reads cleanly with `pdftotext` (poppler) from page 1 to the end: it is the full paper *Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space*, DeTurck–Gluck, September 2005 (`[deturck-gluck-electrodynamics2008]`). Its p. 1 names math.GT/0406276 as the short announcement, so 0510388 is the right source, not a wrong one. Thm 1(3) (p. 8), Thm 2(3) (p. 11) and §5 (pp. 14–15) can all be checked in the repo, and DeTurck–Gluck does not need re-uploading. The ledger row records the same finding.
+
 **Re-upload list** (verified IDs): DeTurck–Gluck is
 **arXiv:math/0406276** (not 0510388); the generalized-Gauss-maps pair
 is **arXiv:0901.1612** (announcement) + **arXiv:1207.1793** (Part 2,
@@ -175,7 +177,7 @@ derived** — but the correct kernel for it is exactly the scalar
 Green's function `φ₀ = −coth(α)/4π`, which is what the geometry-first
 probe uses.
 
-### What Komendarczyk settles (arXiv:0808.1533, read in full)
+### What Komendarczyk settles (arXiv:0808.1533, `[komendarczyk2008]`, read in full)
 
 - **An energy bound does exist** — Theorem 6.1: `|H₁₂₃(X;𝒯)| ≤ C_𝒯 ·
   E₂(X)^{3/2}`, i.e. `E₂ ≥ (|H₁₂₃|/C_𝒯)^{2/3}`, for volume-preserving
@@ -246,7 +248,8 @@ product of the codimensions**. In 3D the potentials are **1-forms**, so
 `α₁∧α₂∧α₃` anticommutes and the triple invariant is forced
 antisymmetric; the analogous invariant built from **2-forms** on
 `M^{2k−1}` *is* symmetric (p. 1003). So O1 is a form-degree-parity
-fact, not an accident of one construction — and Hornig–Mayer confirm it
+fact, not an accident of one construction — and Hornig–Mayer
+(`[hornig-mayer2002]`) confirm it
 independently from the physics side, naming it outright (p. 11):
 *"the antisymmetry of `H⁽³⁾` seems to be one of the key problems."*
 

@@ -5,8 +5,8 @@ import Mathlib.Tactic.LinearCombination
 -- `evenStep` / `oddStep` / `rotation_step` and `AWDeformationPath` were relocated
 -- to the Lake tree so the content-block resolver finds them; `evenStep_map` and
 -- `AWDeformationPath.channel_ladders` below still use them.
-import QOU.MassEndomorphism.rotation_step
-import QOU.MassEndomorphism.AWDeformationPath
+import QOU.MassTheory.rotation_step
+import QOU.MassTheory.AWDeformationPath
 
 /-!
 # QOU.MassEndomorphism.ComplexVolumeUnification
