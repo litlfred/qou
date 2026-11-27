@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-27T21:52:11Z
-updated_at: 2026-11-27T22:13:42Z
+updated_at: 2026-11-27T22:23:22Z
 parent: qou-myts
 ---
 
@@ -22,3 +22,5 @@ Open: bond-letter signs (G5); quark-level T3 writhe (#4618) would add an odd-in-
 2026-11-27 (13b375fb0, PR #9747): sign-independent bound. |writhe| <= letters (abs_writhe_wordOf_le); core (σaσb⁻¹)³ writhe 0 (writhe_core); with one bridge letter per nucleon boundary (StrandLayoutForcesChain) |coeff| <= 2κ/(9A) for any bond signs (abs_ttCoeff_le_of_chain). Still assumed: sign of the term, block log-det energy map, one bridge per boundary, scale α. Nothing wired (Carl hold).
 
 2026-11-27 (c1f3f7c5a): on γγ-selected words (cores (σ0σ1⁻¹)³, bond (σ2σ3⁻¹)³) the writhe is 0 (GammaGammaWordSelection.writhe_eq_zero), so det^{N(N-1)} = 1 on every block: the braid-channel T(T+1) term is exactly 0 at any A (seminormal_det_gammaGamma_pow). Symmetry energy must come from block multiplicity, another functional, or non-γγ words. Not covered: nuc11_interleaved quark block.
+
+2026-11-27 (335b6c7e2, PR #9747): multiplicity term. Lean IsospinWeightMultiplicity: d(N,k)=C(N,k)-C(N,k-1), Σ_{j≤k} d = C(N,k) (weight count = sum of blocks T≥|Tz|), log-free Gaussian bound C(2M,M-s)(M+s+s²) ≤ C(2M,M)(M+s). Weight count has no ln(2T+1); shape (N-Z)²/A from counting. Open: the energy map (count→energy); probe with ASSUMED B += α ln(count): share tracks -α·2Tz²/N to 1%, ~37x below classical; Table 3.4b median 92.7→84.3% (comparison only). Nothing wired; #9706 closed by Carl.
