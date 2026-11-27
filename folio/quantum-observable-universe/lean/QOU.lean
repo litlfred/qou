@@ -1989,6 +1989,7 @@ import QOU.StandardModel.Su3StructureConstants
 import QOU.StandardModel.SpinFlavourAxialCharge
 import QOU.StandardModel.InfinitesimalPureBraid
 import QOU.StandardModel.AnomalyFreeHyperchargeUniqueness
+import QOU.StandardModel.HopfFramingAndHirzebruchDefect
 import QOU.Confinement.HopfElectronTwoTermMass
 import QOU.Nuclear.LeptonTwoTermStokesCovariance
 import QOU.BraidsAndKnots.HeckeWeightSpaceSymmetry
