@@ -961,3 +961,5 @@ Still open (unchanged guard: no anchor matching): the mode set Λ (hence d = |Λ
 * Lean `HeckeTemperleyLieb/QHeatKernelModeSet.lean` (sorry-free): g_{λᵀ} = g_λ, so conjugate partitions share μ_λ, and the q-difference depth |Λ| (= number of distinct rates in Z_q(t) = Σ_λ d_λ exp_q(−μ_λ t)) is at most the number of partitions up to conjugation.
 * Probe `qbeta_thetak_mode_set_depth_probe.py` (exact): for n ≤ 7 the bound is attained, |Λ| = 1,1,2,3,4,6,8. The first collision is at n = 8 (|Λ| = 10 < 12). At n = 3 the depth is 2.
 * Still open: whether Λ = all of Irr H_n(q) (the proposition's wording; not derived), which n, then the a_j, c₃ and ϑ_K. No anchor input. Status unchanged.
+
+* (same PR, 2nd commit) `QHeatKernelRecursion.lean`: r_λ = (q−1)μ_λ is exactly bar-odd, so a_j(1/q) = (−1)^j a_j(q) for any mode set. The prop's "up to q^j twist" and "μ_λ bar-even" hypotheses are both discharged. Probe: n = 3 gives a₁ = (t²−1)³(t²+1)²(t⁸+5t⁴+1)/t⁹ and a₂ = 2(t²−1)⁶(t²+1)⁴(t⁸+3t⁴+1)/t¹⁴, with t = q^{1/2}. Carl chose to keep n general (card, 2026-11-27).
