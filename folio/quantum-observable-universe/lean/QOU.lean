@@ -1072,6 +1072,7 @@ import QOU.Nuclear.TraceRealSpectrumComplex
 import QOU.Nuclear.TracelessDifferenceEllipticity
 import QOU.Nuclear.DiscriminantCurveInQ
 import QOU.Nuclear.TraceBlindSector
+import QOU.Nuclear.TermCompleteness
 import QOU.Nuclear.BondDecayRates
 import QOU.Nuclear.EigenphaseCarrierClassicalLimit
 import QOU.Nuclear.MonodromyTraceInvariance
