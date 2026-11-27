@@ -960,7 +960,7 @@ Electroweak scale (GeV) & $246.21964$ & $246.21965$ & $-29$ ppb ($0.1\sigma$) & 
 Neutron mass (MeV) & $939.1085$ & $939.5654$ & $-486$ ppm & Conditional \\
 Neutron–proton mass difference (MeV) & $0.8364$ & $1.2933$ & $-35.3\%$ & Conditional \\
 Neutron $\beta$-decay $Q$-value (MeV) & $0.3254$ & $0.7823$ & $-58.4\%$ & Conditional \\
-$\beta^-$ decays of nuclei, exothermic & $0$ of $1009$ & $1009$ of $1009$ & median $142\%$ in $Q$ & Open \\
+$\beta^-$ decays of nuclei, exothermic & $1009$ of $1009$ & $1009$ of $1009$ & median $93\%$ in $Q$ & Open \\
 Deuteron binding (MeV) & $2.265$ & $2.225$ & $+1.8\%$ & Selected \\
 Deuteron binding, ruled trace pipeline (MeV) & $0.00636$ & $2.22457$ & $-99.7\%$ & Conditional \\
 Helium-4 binding (MeV) & $29.33$ & $28.30$ & $+3.7\%$ & Selected \\
@@ -16022,6 +16022,19 @@ colour share is the abstract $\mathbb{Z}/3$ grading forced by any degree-3 volum
 operator. A flavour action that does not commute with colour is not excluded by this argument.
 Lean: \texttt{QOU/\allowbreak{}Standard\allowbreak{}Model/\allowbreak{}Colour\allowbreak{}Triplet\allowbreak{}Commutant.\allowbreak{}lean} (\texttt{commutant\_\allowbreak{}end},
 \texttt{commutant\_\allowbreak{}commutative}, \texttt{no\_\allowbreak{}cube\allowbreak{}Root\_\allowbreak{}phase\_\allowbreak{}in\_\allowbreak{}commutant}).
+
+\textbf{A fibre label carries the phase, and shows how little the axioms ask.} Give each object
+of $\mathbf{C}$ a label in $\mathbb{Z}/3$, with labels adding under $\otimes$ and no
+morphisms between different labels. For $\omega$ with $\omega^3 = 1$ the assignment
+$z_{(X,g)} =\allowbreak{} \omega^{g}\,\mathrm{id}_X$ is then a central phase, and $W = (V, 1)$ has no
+morphism $\mathbb{1} \to W \otimes W$ because $W \otimes W$ carries label $2$. A volume form
+on $V$ lifts to one on $W$ because $1 + 1 + 1 = 0$. This works for every $V$, including
+$V = \mathbb{1}$: a one-dimensional $W$ satisfies both flavour conditions. So
+$\Lambda^3 W \cong \mathbb{1}$ together with non-self-duality does not force $\dim W = 3$ or a
+flavour $\mathrm{SU}(3)$; those need further axioms. The label here is put in by hand, and
+deriving it from the aether is still open. Lean: \texttt{QOU/\allowbreak{}Core/\allowbreak{}Flavour\allowbreak{}Label\allowbreak{}Carrier.\allowbreak{}lean}
+(\texttt{label\allowbreak{}Phase}, \texttt{flavour\_\allowbreak{}hom\_\allowbreak{}unit\_\allowbreak{}tensor\_\allowbreak{}empty}, \texttt{flavour\allowbreak{}Volume\_\allowbreak{}epi},
+\texttt{unit\_\allowbreak{}flavour\_\allowbreak{}meets\_\allowbreak{}axioms}).
 \end{definition}
 
 \begin{proposition}[{Eightfold-way multiplets via quantum Schur--Weyl duality}]
