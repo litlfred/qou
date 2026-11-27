@@ -80,3 +80,42 @@ Nothing is adopted and nothing is wired.
 2. The magnetic channel coefficient (needs a derived strand mass).
 3. A three-nucleon gap `E₁(A = 3)` for the ³He−³H row (bean `qou-usft`).
 4. The flavour term's own shortfall, which is now the larger miss in `m_n − m_p`.
+
+## 6. Redone in the derived electron unit (#9718, added the same day)
+
+#9718 (`ElectronCategoricalEnergy`) fixes the per-nat unit by additivity and CAL-1:
+`c = m_e / ln τ_e`, `|c| = 2.70728 m_e = 0.330488 E₀`. It is negative on `1 < q ≤ 6/5`. The flavour cell
+moves with it: `2 ln q · |c|` = 0.5650 m_e = 0.2887 MeV. The probe now carries three units. The
+derived unit is the settled one, and the other two are kept for comparison only.
+
+| route, derived unit | D | EM n−p / m_e | flavour / \|EM\| |
+|---|---|---|---|
+| β-dictionary isospin gap `ln(q²+q⁻²)` (trace-derived) | 22.948 | −0.10121 | 5.58 |
+| Casimir `C` read per nat (reading **not** derived) | 11.121 | −0.20885 | **2.71** |
+| Casimir `h²C` read per nat | 53.193 | −0.04366 | 12.94 |
+
+**Sign.** Because `c < 0`, the β-dictionary gap now puts isospin 3/2 *above* 1/2. That is the
+correct order, and it is an output of #9718, not imposed. Read with the same negative unit, the
+Casimir gap would put isospin 3/2 below 1/2. That is a second reason the per-nat reading of a Casimir
+eigenvalue needs its own derivation (#9718 §"Not settled").
+
+**Comparison boundary (data enter only here).**
+
+| route, derived unit | r | EM n−p | model total | measured |
+|---|---|---|---|---|
+| β gap | 4.83 fm | −0.0517 MeV | 0.237 MeV | 1.2933 MeV |
+| Casimir `C` | 2.34 fm | −0.1067 MeV | 0.182 MeV | 1.2933 MeV |
+
+**What changes.**
+- On the Casimir `C` row the flavour/EM ratio is 2.71. That is inside the literature band
+  1.95–3.22. The ratio scales as `√unit`, so the derived unit moved it there; nothing was tuned.
+  But that row rests on the undetermined per-nat reading, and the absolute sizes are about 4.5× short
+  of the literature (flavour 0.289 against 1.87–2.53 MeV; EM −0.107 against −0.58 to −1.30 MeV). So the
+  ratio being in range is not evidence that the route is right.
+- On the trace-derived β row the ratio is 5.58, a 1.7–2.9× miss, against 27–44× in the one-scale
+  class.
+- In both rows, the total split is now dominated by the **overall energy scale**, not by the EM/flavour
+  balance. Both pieces scale with `|c|`, and both are short.
+
+**Scope (a).** Neither route, in the derived unit, reproduces `m_n − m_p` or the literature EM part.
+Nothing is adopted and nothing is wired.
