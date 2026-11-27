@@ -35,7 +35,10 @@
   -- Ref: [thurston1978] Ch. 4
   -- Ref: [neumann-zagier1985]
 -/
-import QOU.Transcendental.BraidKnotOctonion.FlatTetrahedra
+import BraidKnotOctonion.ShapeParameter
+import Mathlib.Tactic.FinCases
+import Mathlib.Data.Fin.VecNotation
+import Mathlib.Algebra.BigOperators.Fin
 
 namespace QOU.Knot.FlatTet
 
