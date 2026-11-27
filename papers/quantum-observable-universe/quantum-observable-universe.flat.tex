@@ -3080,7 +3080,7 @@ By Tannaka--Krein duality, the coend $H =\allowbreak{} \mathrm{End}^{\otimes}(\t
 
 \begin{definition}[{Aether parameter}]
   \label{def:aether-parameter}
-  \blockannot[compiled]{def:aether-parameter}{QOU.SubstrateParameter}{quantum-observable-universe/quantum-observable-universes/substrate-parameter.md}
+  \blockannot[compiled]{def:aether-parameter}{QOU.AetherParameter}{quantum-observable-universe/quantum-observable-universes/substrate-parameter.md}
   \uses{def:categorical-reeb}
 The non-commutative de Rham complex carries two canonical endomorphisms: the full differential $d$ and the vertical differential $\pi_V \circ d$. These span a one-parameter family of first-order operators:
 
@@ -3093,7 +3093,7 @@ The \textbf{aether parameter} $q \in \mathrm{End}(\mathbf{1})$ is the unique val
 
 \phantomsection\label{rem:aether-parameter-limits-and-lusztig}\phantomsection\label{rem:q-generic-ground-ring}\begin{theorem}[{Existence of the aether parameter}]
   \label{thm:aether-parameter-exists}
-  \blockannot[compiled]{thm:aether-parameter-exists}{QOU.ArchimedeanSubstrateField.ofReebDecomposition}{quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists.md}
+  \blockannot[compiled]{thm:aether-parameter-exists}{QOU.ArchimedeanAetherField.ofReebDecomposition}{quantum-observable-universe/quantum-observable-universes/substrate-parameter-exists.md}
   \uses{def:aether-parameter}
 For any quantum observable universe, the parameter $q \in \mathrm{End}(\mathbf{1})$ exists and is distinct from roots of unity. In the archimedean realization, it specializes to a real-valued field $q(p) \ge 1$ interpolating the differential.
 \end{theorem}
@@ -3144,7 +3144,7 @@ $\mathrm{End}(\mathbf{1})$-valued coordinate.
 
 \begin{theorem}[{Uniqueness of the aether parameter}]
   \label{thm:aether-parameter-unique}
-  \blockannot[compiled]{thm:aether-parameter-unique}{QOU.SubstrateParameter.unique}{quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.md}
+  \blockannot[compiled]{thm:aether-parameter-unique}{QOU.AetherParameter.unique}{quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.md}
   \uses{thm:aether-parameter-exists, prop:braiding-eigenvalue-extraction, prop:positive-definite-dagger}
 Given a QOU $(\mathbf{C}, A, \tau)$, the aether parameter $q \in \mathrm{End}(\mathbf{1})$ is uniquely determined \emph{as a parameter}: the braiding spectrum and the positive-definite dagger select exactly one scalar from the Hecke eigenvalue pair $\{q, -q^{-1}\}$ (the positive one).  This is parameter uniqueness — the \emph{extraction procedure} is canonical, with no ambiguity or choice.  It does \emph{not} mean $q$ takes a single value.  The aether parameter is a field $q \colon M \to \mathbb{R}_{>0}$ that varies across the manifold and with energy scale; high-energy processes see a different $q$ than low-energy ones.  The observed value $q_0$ at the location and energy of observation is empirical.
 \end{theorem}
@@ -3503,7 +3503,7 @@ The differential, bundle, and Hodge ingredients assembled on the $\mathrm{SU}_q(
 
 \begin{definition}[{The quantum vacuum as a Frobenius--Hopf algebra}]
   \label{def:frobenius-hopf-aether}
-  \blockannot[compiled]{def:frobenius-hopf-aether}{QOU.Core.AlgebraicSubstrate.FrobeniusHopfSubstrate}{quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.md}
+  \blockannot[compiled]{def:frobenius-hopf-aether}{QOU.Core.AlgebraicSubstrate.FrobeniusHopfAether}{quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.md}
   \uses{def:frobenius-pairing}
 Let $\mathbf{C}$ be a braided monoidal category, with braiding $\beta$. A \textbf{Frobenius--Hopf aether} is a sextuple $(A, \mu, \eta, \Delta, \varepsilon, S)$ in $\mathbf{C}$ equipped with a Frobenius form $\lambda \colon A \to \mathbf{1}$ satisfying the following axioms:
 
@@ -3575,7 +3575,7 @@ where $\mathcal{O}_q(\mathbb{P}^4)$ is the quantum polynomial ring with relation
 
 \phantomsection\label{rem:brings-coordinate-ring-remark}\phantomsection\label{ex:categorical-reeb-brings}\begin{definition}[{Aether parameter and quantum Planck constant}]
   \label{def:aether-parameter-planck}
-  \blockannot[compiled]{def:aether-parameter-planck}{QOU.Core.AlgebraicSubstrate.SubstrateParameterPlanck}{quantum-observable-universe/quantum-observable-universes/substrate-parameter-planck.md}
+  \blockannot[compiled]{def:aether-parameter-planck}{QOU.Core.AlgebraicSubstrate.AetherParameterPlanck}{quantum-observable-universe/quantum-observable-universes/substrate-parameter-planck.md}
   \uses{def:frobenius-hopf-aether}
 The \textbf{aether parameter} $q \in \mathbb{C}^*$ is the deformation parameter of the Frobenius--Hopf algebra $A$. The \textbf{quantum Planck constant} associated to $q$ is
 
@@ -4804,7 +4804,7 @@ In the archimedean realisation, the $q$-deformed Reeb vector field $\xi_q$ gener
 
 \begin{proposition}[{Aether parameter as the radial coordinate}]
   \label{prop:aether-radial-coordinate}
-  \blockannot[compiled]{prop:aether-radial-coordinate}{QOU.Core.substrate_radial_coordinate}{quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.md}
+  \blockannot[compiled]{prop:aether-radial-coordinate}{QOU.Core.aether_radial_coordinate}{quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.md}
   \uses{def:contact-affine-chart, def:fermion-boson-decomposition, def:quantum-planck-constant, ex:q-reeb-flow}
 Within the contact affine chart $U_\xi$, the aether parameter $q$ governs the radial coordinate. As $q \to \infty$ in the deep-quantum limit, the affine coordinate $Z \to 0$. Conversely, as $q \to 1$ at the classical boundary, $Z \to \infty$. The $q$-deformed Reeb flow rotates the phase of $Z$ according to:
 
@@ -7211,7 +7211,7 @@ This motivic-enriched Yekutieli machinery serves as the native Galois aether for
 
 \phantomsection\label{rem:kummer-filtration-obstruction}\phantomsection\label{rem:kummer-tower}\begin{definition}[{The motivic base ring $(K_0(\mathrm{Var}_k), \mathbb{L}, \{\rho_v\})$}]
   \label{def:motivic-base-ring}
-  \blockannot[compiled]{def:motivic-base-ring}{QOU.BringsSurface.MotivicSubstrate}{quantum-observable-universe/lifting-and-descent/motivic-substrate.md}
+  \blockannot[compiled]{def:motivic-base-ring}{QOU.BringsSurface.MotivicBaseRing}{quantum-observable-universe/lifting-and-descent/motivic-substrate.md}
   \uses{def:frobenius-hopf-aether, def:adelic-base-ring}
 The \textbf{motivic base ring} of the QOU framework is the triple
 
@@ -15984,6 +15984,30 @@ Whether the flavour triple and the colour triple coincide is a separate open pro
 The Lean structure is \texttt{QOU.\allowbreak{}Flavoured\allowbreak{}Quantum\allowbreak{}Observable\allowbreak{}Universe} in
 \texttt{QOU/\allowbreak{}Core/\allowbreak{}Flavoured\allowbreak{}Quantum\allowbreak{}Observable\allowbreak{}Universe.\allowbreak{}lean}, with \texttt{flavour\_\allowbreak{}fibre\_\allowbreak{}rank\_\allowbreak{}three},
 \texttt{fibre\_\allowbreak{}and\_\allowbreak{}flavour\_\allowbreak{}ranks} and \texttt{octonion\allowbreak{}Triple\_\allowbreak{}realises\_\allowbreak{}not\_\allowbreak{}self\allowbreak{}Dual}.
+
+\textbf{Clause 3 from a central phase.} Clause 3 can be traded for a reason. Let $z$ be a
+monoidal natural automorphism of the identity functor that acts on $W$ by a scalar $\omega$.
+Naturality on $\pi_3$ followed by $\varepsilon_3$ forces $(\omega^3 -\allowbreak{} 1)\cdot \mathrm{id}_{\mathbf{1}} =\allowbreak{} 0$,
+so the volume form fixes the phase to be a cube root of unity; it is not chosen. On a morphism
+$\mathbf{1} \to W \otimes W$ the same naturality gives $f = \omega^2 f$, so if $1 - \omega^2$ acts
+without torsion on $\mathrm{Hom}(\mathbf{1}, W \otimes W)$, clause 3 holds. For the fundamental $V$
+the degree-2 volume form forces $\omega^2 = 1$, so a central phase never separates $V$ from its
+dual; degree 3 is the first degree whose volume form admits a separating phase. This is a
+reduction of the datum (the phase is the $N$-ality of $\mathrm{SU}(3)$), not a derivation of $W$:
+the object and the phase are still supplied. The balancing twist does not provide the phase,
+because it is natural but not monoidal. Lean: \texttt{QOU/\allowbreak{}Core/\allowbreak{}Flavour\allowbreak{}Central\allowbreak{}Phase.\allowbreak{}lean}
+(\texttt{phase\_\allowbreak{}pow\_\allowbreak{}of\_\allowbreak{}volume}, \texttt{not\_\allowbreak{}self\allowbreak{}Dual\_\allowbreak{}of\_\allowbreak{}phase}, \texttt{fundamental\_\allowbreak{}phase\_\allowbreak{}cannot\_\allowbreak{}separate},
+\texttt{Flavoured\allowbreak{}Quantum\allowbreak{}Observable\allowbreak{}Universe.\allowbreak{}of\allowbreak{}Central\allowbreak{}Phase}), over a generic commutative ring.
+
+\textbf{The octonions supply the phase, but only after adjoining $\sqrt 3$.} The complex structure
+$J$ on the colour triple (left multiplication by a unit imaginary octonion, $J^2 = -1$,
+commuting with the $\mathfrak{su}(3)$ stabiliser) gives
+$\Omega = \tfrac12(\sqrt 3\, J - 1)$, which satisfies $\Omega^2 + \Omega + 1 = 0$ and so $\Omega^3 = 1$,
+over any commutative ring containing $\tfrac12$ and $\sqrt 3$; it commutes with everything that
+commutes with $J$. Over $\mathbb{Q}$ no element $a + bJ$ is a nontrivial cube root of unity,
+since $\mathbb{Q}(J) \cong \mathbb{Q}(i)$ does not contain $\omega$. This is a phase on the colour
+triple; identifying it with flavour is still open. Lean: \texttt{QOU/\allowbreak{}Standard\allowbreak{}Model/\allowbreak{}Octonion\allowbreak{}Cube\allowbreak{}Root\allowbreak{}Phase.\allowbreak{}lean}
+(\texttt{cube\allowbreak{}Root\allowbreak{}Phase\_\allowbreak{}cube}, \texttt{cube\allowbreak{}Root\allowbreak{}Phase\_\allowbreak{}commute}, \texttt{colour\allowbreak{}Triple\_\allowbreak{}no\_\allowbreak{}rational\_\allowbreak{}cube\allowbreak{}Root\_\allowbreak{}phase}).
 \end{definition}
 
 \begin{proposition}[{Eightfold-way multiplets via quantum Schur--Weyl duality}]
@@ -25319,7 +25343,7 @@ $\square$
 
 \begin{proposition}[{Closed and factored forms of the aether flavor split}]
   \label{prop:flavor-split-aether}
-  \blockannot[compiled]{prop:flavor-split-aether}{QOU.MassTheory.HadronicMass.flavor_split_substrate}{quantum-observable-universe/mass-theory/flavor-split-substrate.md}
+  \blockannot[compiled]{prop:flavor-split-aether}{QOU.MassTheory.HadronicMass.flavor_split_aether}{quantum-observable-universe/mass-theory/flavor-split-substrate.md}
   \uses{lem:pair-skein-mass-formula}
 \emph{For every nonzero $q$,}
 
@@ -27803,7 +27827,7 @@ transcendence-theoretic ones.
 
 \begin{definition}[{Adelic base ring $\mathbb{A}$}]
   \label{def:adelic-base-ring}
-  \blockannot[compiled]{def:adelic-base-ring}{QOU.BringsSurface.AdelicSubstrate}{quantum-observable-universe/mass-theory/adelic-substrate.md}
+  \blockannot[compiled]{def:adelic-base-ring}{QOU.BringsSurface.AdelicBaseRing}{quantum-observable-universe/mass-theory/adelic-substrate.md}
 \emph{The \textbf{adelic base ring} of the QOU framework is the ring of adeles of $\mathbb{Q}$,}
 
 \[
@@ -57175,7 +57199,7 @@ Along the five-step categorical pipeline (\texttt{Category -\allowbreak{}> Hecke
 
 \phantomsection\label{rem:einstein-aether}\begin{proposition}[{Overdetermination of the aether parameter}]
   \label{prop:aether-consistency-window}
-  \blockannot[compiled]{prop:aether-consistency-window}{QOU.Observations.substrate_consistency_window}{quantum-observable-universe/observations/substrate-consistency-window.md}
+  \blockannot[compiled]{prop:aether-consistency-window}{QOU.Observations.aether_consistency_window}{quantum-observable-universe/observations/substrate-consistency-window.md}
   \uses{rem:fine-structure-observation, prop:crossing-energy-decomposition}
 The QOU framework relies on a single free parameter: the aether parameter $q$. Every observable quantity—masses, couplings, decay rates, and causal structure—is a function of $q$ alone. Independent classes of measurements each restrict $q$ to a narrow range. These ranges overlap, rendering $q$ overdetermined.
 
@@ -60276,7 +60300,7 @@ See \href{../appendix-surreals/casimir-first-q-correction.md}{First aether corre
 
 \begin{proposition}[{Local Value of the Aether Parameter}]
   \label{prop:local-aether-q}
-  \blockannot[compiled]{prop:local-aether-q}{QOU.Experimental.LocalSubstrateQ}{quantum-observable-universe/observations/local-substrate-q.md}
+  \blockannot[compiled]{prop:local-aether-q}{QOU.Experimental.LocalAetherQ}{quantum-observable-universe/observations/local-substrate-q.md}
   \uses{rem:photonic-hall}
 In any sufficiently small neighbourhood $U \subset M$ of the observable universe, the aether parameter $q$ (\hyperref[def:aether-parameter]{aether parameter}) satisfies
 
@@ -81458,11 +81482,11 @@ R{\'{e}}amonn Ó~Buachalla.
 Every definition in the text, alphabetically (276 entries). Each term links to its definition; $\forall$ links its Lean declaration.
 \begin{multicols}{2}\small\raggedright
 \par\medskip{\bfseries A}\par\nopagebreak
-\hangindent=1em\hyperref[def:adelic-base-ring]{Adelic base ring $\mathbb{A}$}\dotfill\ref{def:adelic-base-ring}, p.\,\pageref{def:adelic-base-ring}\,\folioleanhref{QOU.BringsSurface.AdelicSubstrate}{$\forall$}\par
+\hangindent=1em\hyperref[def:adelic-base-ring]{Adelic base ring $\mathbb{A}$}\dotfill\ref{def:adelic-base-ring}, p.\,\pageref{def:adelic-base-ring}\,\folioleanhref{QOU.BringsSurface.AdelicBaseRing}{$\forall$}\par
 \hangindent=1em\hyperref[def:aeon]{Aeon}\dotfill\ref{def:aeon}, p.\,\pageref{def:aeon}\,\folioleanhref{QOU.Aeon}{$\forall$}\par
 \hangindent=1em\hyperref[def:aeon-adjacency]{Aeon adjacency}\dotfill\ref{def:aeon-adjacency}, p.\,\pageref{def:aeon-adjacency}\,\folioleanhref{QOU.aeonAdjacent}{$\forall$}\par
-\hangindent=1em\hyperref[def:aether-parameter]{Aether parameter}\dotfill\ref{def:aether-parameter}, p.\,\pageref{def:aether-parameter}\,\folioleanhref{QOU.SubstrateParameter}{$\forall$}\par
-\hangindent=1em\hyperref[def:aether-parameter-planck]{Aether parameter and quantum Planck constant}\dotfill\ref{def:aether-parameter-planck}, p.\,\pageref{def:aether-parameter-planck}\,\folioleanhref{QOU.Core.AlgebraicSubstrate.SubstrateParameterPlanck}{$\forall$}\par
+\hangindent=1em\hyperref[def:aether-parameter]{Aether parameter}\dotfill\ref{def:aether-parameter}, p.\,\pageref{def:aether-parameter}\,\folioleanhref{QOU.AetherParameter}{$\forall$}\par
+\hangindent=1em\hyperref[def:aether-parameter-planck]{Aether parameter and quantum Planck constant}\dotfill\ref{def:aether-parameter-planck}, p.\,\pageref{def:aether-parameter-planck}\,\folioleanhref{QOU.Core.AlgebraicSubstrate.AetherParameterPlanck}{$\forall$}\par
 \hangindent=1em\hyperref[def:algebraic-primality]{Algebraic primality of a strand count}\dotfill\ref{def:algebraic-primality}, p.\,\pageref{def:algebraic-primality}\,\folioleanhref{QOU.Confinement.AlgebraicPrimality.IsAlgebraicallyPrime}{$\forall$}\par
 \hangindent=1em\hyperref[def:algebraic-quantum-volume]{Algebraic quantum volume $\mathrm{Vol}_q(K)$}\dotfill\ref{def:algebraic-quantum-volume}, p.\,\pageref{def:algebraic-quantum-volume}\,\folioleanhref{QOU.BraidsAndKnots.BraidKnot.AlgebraicQuantumVolume}{$\forall$}\par
 \hangindent=1em\hyperref[def:antineutrino-knot]{Antineutrino as mirror unknot $T_{1,0}^{\sigma}$}\dotfill\ref{def:antineutrino-knot}, p.\,\pageref{def:antineutrino-knot}\,\folioleanhref{QOU.MassTheory.Archimedean.Antineutrino}{$\forall$}\par
@@ -81722,12 +81746,12 @@ Every definition in the text, alphabetically (276 entries). Each term links to i
 \hangindent=1em\hyperref[def:grothendieck-group-of-a-qou]{The Grothendieck group of a quantum universe}\dotfill\ref{def:grothendieck-group-of-a-qou}, p.\,\pageref{def:grothendieck-group-of-a-qou}\,\folioleanhref{QOU.Core.GrothendieckChern.K0}{$\forall$}\par
 \hangindent=1em\hyperref[def:van-der-waals-hopf-channel]{The Hopf symmetric block $e_+$ — retained cosh carrier (not van der Waals)}\dotfill\ref{def:van-der-waals-hopf-channel}, p.\,\pageref{def:van-der-waals-hopf-channel}\,\folioleanhref{QOU.VanDerWaals.vdwSymmetricBlock}{$\forall$}\par
 \hangindent=1em\hyperref[def:hyperelliptic-quintic]{The hyperelliptic quintic $\mathcal{X}_5 \colon y^2 = x^5 - 1$}\dotfill\ref{def:hyperelliptic-quintic}, p.\,\pageref{def:hyperelliptic-quintic}\,\folioleanhref{QOU.BringsSurface.zeta5_residue_monodromy.HyperellipticQuintic}{$\forall$}\par
-\hangindent=1em\hyperref[def:motivic-base-ring]{The motivic base ring $(K_0(\mathrm{Var}_k), \mathbb{L}, \{\rho_v\})$}\dotfill\ref{def:motivic-base-ring}, p.\,\pageref{def:motivic-base-ring}\,\folioleanhref{QOU.BringsSurface.MotivicSubstrate}{$\forall$}\par
+\hangindent=1em\hyperref[def:motivic-base-ring]{The motivic base ring $(K_0(\mathrm{Var}_k), \mathbb{L}, \{\rho_v\})$}\dotfill\ref{def:motivic-base-ring}, p.\,\pageref{def:motivic-base-ring}\,\folioleanhref{QOU.BringsSurface.MotivicBaseRing}{$\forall$}\par
 \hangindent=1em\hyperref[def:octonion-algebra]{The octonion algebra $\mathbb{O}$}\dotfill\ref{def:octonion-algebra}, p.\,\pageref{def:octonion-algebra}\,\folioleanhref{BraidKnotOctonion.OctonionDerivations.octMul}{$\forall$}\par
 \hangindent=1em\hyperref[def:q-casimir]{The $q$-Casimir element of $\mathcal{U}_q(\mathfrak{su}(2))$}\dotfill\ref{def:q-casimir}, p.\,\pageref{def:q-casimir}\,\folioleanhref{QOU.QCasimir}{$\forall$}\par
 \hangindent=1em\hyperref[def:q-chebyshev-function]{The $q$-Chebyshev function}\dotfill\ref{def:q-chebyshev-function}, p.\,\pageref{def:q-chebyshev-function}\,\folioleanhref{QOU.BringsSurface.QChebyshevFunction}{$\forall$}\par
 \hangindent=1em\hyperref[def:q-reeb-flow-on-color-coords]{The $q$-Reeb flow in color-sector coordinates}\dotfill\ref{def:q-reeb-flow-on-color-coords}, p.\,\pageref{def:q-reeb-flow-on-color-coords}\,\folioleanhref{QOU.Core.QReebFlowOnColorCoords}{$\forall$}\par
-\hangindent=1em\hyperref[def:frobenius-hopf-aether]{The quantum vacuum as a Frobenius--Hopf algebra}\dotfill\ref{def:frobenius-hopf-aether}, p.\,\pageref{def:frobenius-hopf-aether}\,\folioleanhref{QOU.Core.AlgebraicSubstrate.FrobeniusHopfSubstrate}{$\forall$}\par
+\hangindent=1em\hyperref[def:frobenius-hopf-aether]{The quantum vacuum as a Frobenius--Hopf algebra}\dotfill\ref{def:frobenius-hopf-aether}, p.\,\pageref{def:frobenius-hopf-aether}\,\folioleanhref{QOU.Core.AlgebraicSubstrate.FrobeniusHopfAether}{$\forall$}\par
 \hangindent=1em\hyperref[def:q-von-mangoldt-function]{The $q$-von Mangoldt function}\dotfill\ref{def:q-von-mangoldt-function}, p.\,\pageref{def:q-von-mangoldt-function}\,\folioleanhref{QOU.BringsSurface.QVonMangoldtFunction}{$\forall$}\par
 \hangindent=1em\hyperref[def:reeb-epsilon]{The Reeb infinitesimal $\varepsilon$}\dotfill\ref{def:reeb-epsilon}, p.\,\pageref{def:reeb-epsilon}\,\folioleanhref{QOU.BringsSurface.ReebEpsilon}{$\forall$}\par
 \hangindent=1em\hyperref[def:kz-connection-sl2]{The $\mathfrak{sl}_2$ Knizhnik--Zamolodchikov connection and its flatness}\dotfill\ref{def:kz-connection-sl2}, p.\,\pageref{def:kz-connection-sl2}\,\folioleanhref{QOU.Mass.KZConnectionSl2.kzResidue}{$\forall$}\par
