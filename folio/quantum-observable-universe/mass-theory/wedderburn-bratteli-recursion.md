@@ -32,4 +32,6 @@ $$
 
 *So the per-edge factor is $F_q = [d \pm 1]_q / ([2]_q [d]_q)$, depending on which row receives the cell. Each single edge determines $y_\lambda^{(n+1)}$ from one parent; summing these factors over all parents of $\lambda$ would double-count.*
 
+*Derivation.* The closed form is the Markov-trace weight, not a postulate: $y_{(a,b)}$ equals the Ocneanu weight $w_{(a,b)}(z)$ at $z = q^3/(q^2+1)$, the weight of the unique Markov trace on the Hecke tower at that parameter. On two rows the hook-content product telescopes to $q^{2b}(1 + q^2 + \cdots + q^{2(a-b)})/(q^2+1)^{a+b}$, which is $[a-b+1]_q/[2]_q^{a+b}$. Every shape with three or more rows has weight $0$ there, so the trace factors through the Temperley–Lieb quotient.
+
 This recursion confirms that $\alpha_k(H_n)$ at a fixed $k$ involves only finitely many strata. The tower of Jones-Markov weights propagates without requiring expensive $p(n) \times p(n)$ linear-system solves.

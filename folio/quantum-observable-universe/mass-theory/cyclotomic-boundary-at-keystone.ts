@@ -65,5 +65,6 @@ export default conjecture({
   ],
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Partial formalization.** The Lean module [`QOU.Mass.CyclotomicBoundaryKeystone`](../lean/QOU/Mass/CyclotomicBoundaryKeystone.lean) formalizes what is honestly provable. ... (with the factors verified equal to Mathlib's cyclotomic polynomials) ... (immediate from $\\mathrm{disc}(\\tilde C)=-44208<0$; Mathlib lacks the discriminant–root-product bridge). The full Tier-2 claim (non-cyclotomic for *all* $n\\geq 6$) is not formalized — it remains verified-through-$n=11$." },
+    { kind: "note", date: "2026-11-27", body: "Derived and certified in [`QOU.Mass.CyclotomicBoundaryCertified`](../lean/QOU/MassTheory/CyclotomicBoundaryCertified.lean): D(n) is derived from the hook-length definition for 2 ≤ n ≤ 9 (D(2) = D(3) = 0; the old audit table's D(3) = (q−1)²Φ₃ is D(4)), cyclotomic for n ≤ 5, and not cyclotomic for 6 ≤ n ≤ 14 by finite mod-p order witnesses (`not_isCycloProduct_of_witness`; witnesses from `computations/cyclotomic_boundary_certificates.py`). All n ≥ 6 stays open." },
   ],
 });
