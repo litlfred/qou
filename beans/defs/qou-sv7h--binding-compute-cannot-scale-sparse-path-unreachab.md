@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - compute-accuracy
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-11-27T17:40:00Z
+updated_at: 2026-11-27T18:20:00Z
 parent: qou-v2om
 ---
 
@@ -1060,3 +1060,13 @@ The A = 3 row that died on a reboot on 2026-09-12 now exists. Main @ 22b1f41, `p
 The container rebooted between 3H and 3He. Each row is one uninterrupted process, so every row is complete. 2H is 16.5x faster than the 816.811 s row of 2026-09-12. The likely cause is the 2026-11-21 LP-kernel speedup (`ffbcef8388`, 10-12x, byte-identical) plus the 2026-10-13 memoisation (`157032dffa`). The split between those and the container was NOT measured, so the September and November rows are not one scaling series.
 
 Timing only. The `value` field is not a binding number (2026-11-15 γγ ruling). Four points at A ≤ 4 do not settle the title claim, which is about large A, so the bean stays open. Raw checkpoint lines: `/mnt/project-files/qns-gaps-2026-11-27/sv7h-run/checkpoint.jsonl` (project folder).
+
+## 2026-11-27 — A = 6, 7 added (PR #9516)
+Same setup, opt-in `--iso 6Li 7Li`:
+
+| isotope | A | wall (s) | boot |
+|---|---|---|---|
+| 6Li | 6 | 191.28 | 93c6c22a |
+| 7Li | 7 | 254.179 | fea0e408 |
+
+Added time per extra nucleon: 33 s (2H->3H), 30 s (3H->4He), 39 s (4He->6Li), 63 s (6Li->7Li). Six points at A ≤ 7, not a fitted law; the title claim is about large A, so the bean stays open. 7Li needed four tries: three detached runs were killed by container restarts (peak RSS 0.93 GB of 15 GB, so not memory). A detached background job does not keep an idle cloud container alive; run long jobs as session-tracked jobs.
