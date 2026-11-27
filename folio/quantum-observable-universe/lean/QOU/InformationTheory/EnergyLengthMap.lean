@@ -210,4 +210,33 @@ theorem radius_ratio_of_saturation {κB q E S R : K} (hκ : κB ≠ 0)
 
 end OrderedField
 
+/-! ### 7. The isospin Casimir gap is `[3]_q`
+
+On spin `j`, `h²C = q^(2j+1) + q^-(2j+1)` with `h = q - q⁻¹`. The gap of the quantum Casimir
+`C` between isospin `3/2` and `1/2` on three strands is exactly `[3]_q = q² + 1 + q⁻²`,
+with classical value `3 = 15/4 - 3/4`. It is positive for `q > 0`, so the isospin-`3/2`
+state lies above the isospin-`1/2` state. -/
+
+section CasimirGap
+
+variable {K : Type*} [Field K]
+
+/-- The gap of `h²C` between `2j + 1 = 4` and `2j + 1 = 2`. -/
+def casimirGapH2 (q : K) : K := (q ^ 4 + q⁻¹ ^ 4) - (q ^ 2 + q⁻¹ ^ 2)
+
+/-- **`Δ(h²C) = [3]_q · h²`.** -/
+theorem casimirGapH2_eq {q : K} (hq : q ≠ 0) :
+    casimirGapH2 q = (q ^ 2 + 1 + q⁻¹ ^ 2) * (q - q⁻¹) ^ 2 := by
+  unfold casimirGapH2
+  field_simp
+  ring
+
+/-- **The Casimir gap is `[3]_q`.** -/
+theorem casimirGap_eq_qint3 {q : K} (hq : q ≠ 0) (hh : q - q⁻¹ ≠ 0) :
+    casimirGapH2 q / (q - q⁻¹) ^ 2 = q ^ 2 + 1 + q⁻¹ ^ 2 := by
+  rw [casimirGapH2_eq hq]
+  exact mul_div_cancel_right₀ _ (pow_ne_zero 2 hh)
+
+end CasimirGap
+
 end QOU.InformationTheory.EnergyLengthMap

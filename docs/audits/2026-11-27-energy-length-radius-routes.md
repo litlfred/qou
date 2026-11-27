@@ -96,3 +96,31 @@ The corpus holds two electron weights. I computed both and chose neither.
 The units differ by `R = τ_e/ℏ_q² = 70.404`. Two consequences:
 - **The derived unit makes the miss larger.** At the comparison boundary, `r_rms` is 23.3 fm against 2.77 fm in the mass-formula unit, and both are far above 0.84 fm. So the unit is not the lever that closes the gap.
 - **The isospin block gap is not the right gap.** Read through the `β = ln q` dictionary, it is below Δ − N by two to four orders of magnitude, and its sign is reversed. The next candidate is a different operator, for example the Casimir insertion. Both units are carried along, and neither is selected.
+
+## 9. Second derived ε: the isospin Casimir gap
+
+Probe: [`casimir_gap_radius_probe.py`](../../computations/probes/energy_length_map/casimir_gap_radius_probe.py). Lean: `EnergyLengthMap.casimirGap_eq_qint3`.
+
+**The operator was fixed before running.** It is the quantum Casimir `C = fe + (qK + q⁻¹K⁻¹)/h²`. Its restriction to the nucleon charge sectors is proved in `BlockChargeSectorTrace`.
+
+**The gap is exactly `[3]_q = q² + 1 + q⁻²`.**
+- The gap between isospin 3/2 and 1/2 is `ΔC = (q⁴ + q⁻⁴ − q² − q⁻²)/h²`, and this equals `[3]_q` (Lean, generic field).
+- Its classical value is 3.
+- It is positive, so the **ordering is correct**: isospin 3/2 lies above isospin 1/2. The β-dictionary gap of §7 has the opposite order.
+
+**Normalisation.** `C` has the correct classical limit. The `h²C` normalisation written in `BlockChargeSectorTrace` has a gap that vanishes at `q = 1`. Both are reported below, in both electron units. Only the classical-limit criterion separates them, and that criterion is structural, not a match to data.
+
+| operator | unit | `|E₁|` / m_e | `ε` | `D` |
+|---|---|---|---|---|
+| `C` | mass formula `E₀` | 24.933 | 1.358e-2 | **6.393** |
+| `C` | trace `E₀/R` | 0.3541 | 1.929e-4 | 53.64 |
+| `h²C` | mass formula `E₀` | 1.0897 | 5.935e-4 | 30.58 |
+| `h²C` | trace `E₀/R` | 0.01548 | 8.43e-6 | 256.6 |
+
+**Comparison boundary**, for `C` in the mass-formula unit:
+- the gap is 12.74 MeV, against Δ − N ≈ 293 MeV (23× short);
+- `r_rms` is 1.345 fm, against 0.8409 fm (1.6× long).
+
+Because `r ∝ ε^{-1/2}`, a 23× miss in the gap becomes only a 1.6× miss in the radius. So the radius is the *weaker* test of this route, and the closer radius is not evidence for it.
+
+**Scope (a).** The Casimir gap in the `E₀` unit does not reproduce Δ − N or `r_p`. The sign is now right, and the unit question of §8 is still open.
