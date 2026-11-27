@@ -7,7 +7,7 @@ priority: high
 tags:
     - 8f-index
 created_at: 2026-11-27T14:25:39Z
-updated_at: 2026-11-27T14:25:39Z
+updated_at: 2026-11-27T14:27:38Z
 parent: qou-0uga
 ---
 
@@ -43,3 +43,9 @@ Rules for this session (owner): no empirical inputs inside formal proofs; prefer
 
 **D. Comparison-only, kept out of formal proofs**
 - Electroweak `W, Z, H = T(2,4), T(2,6), T(2,8)`, the 26-parameter map, GMO deviation magnitude, mass hierarchies.
+
+
+
+## 2026-11-27 14:27Z — owner: tracks A, B and C all approved
+
+Verbatim: *"A B C"*. B reopens `qou-j3w6` as option A (second fundamental $W$, $\Lambda^3 W\cong\mathbf 1$, axiom datum). Order: A1 → B scaffold → C.

@@ -1,14 +1,14 @@
 ---
 # qou-j3w6
 title: 'DECISION (owner): condition 5 and the eightfold fundamental — keep N=2 + second object W, weaken to epimorphism, top-power Λ^N, or nothing'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
     - 8f-decide
 created_at: 2026-09-03T15:35:48Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-27T14:27:38Z
 parent: qou-8lxd
 ---
 
@@ -30,3 +30,9 @@ Owner decision 4d (ofri, 2026-10-10): nothing changes for now. Condition 5 ($\La
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8155, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-09-03: "beans(qou-icj2): eightfold session closed — PR #6458 merged, four fronts completed, qou-j3w6 decision left open for the "). The work may be partly or fully done. Read the bean before you close it.
+
+
+
+## 2026-11-27 — owner reopens the decision: option A
+
+Owner (Carl), project thread 'Close gaps in 8-fold and Standard Model derivation', answering a four-way card (A pure-math Lean / B build W3 / C research / A-then-C-leave-B) with: *"A B C"*. So option A of this bean is taken: keep condition 5 ($\Lambda^2 V \cong \mathbf 1$, $N=2$) on $V$ and add a second fundamental $W$ with $\Lambda^3 W \cong \mathbf 1$, formalize-first, labelled as an axiom datum (not a derivation). Supersedes owner decision 4d (2026-10-10, 'nothing changes for now'). Session epic `qou-x08k`.
