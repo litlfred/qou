@@ -1,11 +1,11 @@
 ---
 # qou-swk4
 title: 'Formalize depth-2 tail: nuV (n-2) n = closed form (carrier classification + collapse)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-11-27T22:37:13Z
-updated_at: 2026-11-27T23:58:39Z
+updated_at: 2026-11-27T23:59:50Z
 parent: qou-x631
 ---
 
@@ -16,3 +16,6 @@ Closed form ν_{n−2}(n) = (n−2)(n−5)Q(n)C(2n−8,n−4)/(6(n−3)n!) deriv
 
 
 2026-11-27: n=4,5 cases proved (nuV_depthTwo_closed_form_of_four_le, sign corollaries for n>=4). Formalisation complete for all n>=4.
+
+
+2026-11-27: PR #9848 merged; nuV n (n-2) = closed form proved for all n>=4. Formalisation done (no open conjecture in this bean).
