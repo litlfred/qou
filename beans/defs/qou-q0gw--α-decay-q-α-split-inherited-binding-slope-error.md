@@ -8,7 +8,7 @@ tags:
     - compute-accuracy
     - alpha-decay
 created_at: 2026-11-27T19:46:04Z
-updated_at: 2026-11-27T19:46:04Z
+updated_at: 2026-11-27T20:36:29Z
 parent: qou-myts
 ---
 
@@ -29,3 +29,10 @@ Q_α = B_α − ΔB, ΔB = B(Z,N) − B(Z−2,N−2) (Lean QOU.Nuclear.AlphaQInh
 1. Report the split to C2 / B1 threads; Q_α accuracy waits on the binding slope (inherited, not α work).
 2. Scorecard: show Q_α with a self-consistent B_α (same model for parent, daughter, α), label the current row as mixed.
 3. Derive open-shell preformation (seniority overlap for 2g9/2, 1i11/2...) with the same Mayer–Jensen rule as ²¹⁰Po; record if it worsens the fit.
+
+
+## 2026-11-27 update
+- Scorecard relabel: PR #9672. The mixed rows are labelled, and a chain-only row gives Q_alpha = -2.70 MeV for every nucleus (0/1051 exothermic).
+- Preformation bound (Lean AlphaPreformationBound, sorry-free): since 0<S<=1, T = T_WKB/S >= T_WKB. Of the 7 bare-WKB emitters, 4 cannot be closed by any preformation (8Be, 222Rn, 226Ra, 238U, S_req 7.7/1.39/1.55/2.54). Their miss is on the barrier side: Q, radius or deformation. 3 can be closed (212Po S_req 0.447, 214Po 0.726, 210Po 0.0553, the last already matched by MJ 1/20).
+- Scope (a) negative: reading the 210Po Mayer-Jensen rule literally for 212Po/214Po gives S=0.01 and dex +1.65/+1.86. That is worse than bare WKB. Open-shell pair coherence is missing from the counting rule.
+- Still open: a derived open-shell (coherent-pair) preformation for 212Po/214Po, and the barrier-side miss for the deformed actinides.
