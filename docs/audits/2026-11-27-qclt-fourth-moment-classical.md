@@ -51,3 +51,26 @@ first tied to `tr_M(S_n^k)`.
 `qGaussMoment_two = 1` (used in the weight-multiplicity audit §6) still holds, and so does the
 classical `−2T_z²/N` coefficient. The q-CLT never changed it. The q-Gaussian higher moments do
 not describe this sum either.
+
+## Restatement landed (owner pick "Do both", 2026-11-27)
+
+`QOU/Observations/QCltCut.lean` is restated, lean-direct exit 0, axioms
+`[propext, Classical.choice, Quot.sound]`:
+
+- **Moments are no longer a free field.** The class carries a tracial normalised
+  state `state : A →ₗ[K] K` (intended instance: `tr_M` on the Hecke tower), a sum
+  sequence `sum : ℕ → A` and a variance `v ≠ 0`. The normalised even moment is
+  `evenMoment = state (sum n ^ (2k)) / n ^ k`, pinned to `v^k · qGaussMoment (2k)` at `q`.
+  Odd moments are dropped (normalising them needs `√n`).
+- **`QCltCut.q_eq_one_of_fourth_limit`**: a fourth-moment limit of `3 v²` forces `q = 1`.
+  `not_qCltCut_of_classical_fourth` is the contrapositive at `q ≠ 1`.
+- **`ClassicalClt K A := QCltCut K A 1`**, with `ClassicalClt.fourth_moment_converges`
+  (`→ 3 v²`).
+- The bridge `toQCltCut` from `QOU.Transcendental.QCltNonCommutative` is removed: that
+  class keeps its moments as a free field and cannot supply a state.
+
+Still open (bean `qou-e1uf`): an instance of `ClassicalClt` for `tr_M`, i.e. the
+Lean proof that the Markov trace's normalised moments converge. Lean has no
+general-`n` Markov trace yet (`markovTraceH2/H3A/H4A` only). Proposed route: the
+cumulant / additive-formal-group argument over `QOU/LiftingDescent/FormalGroupLaw.lean`,
+with the Markov factorisation as the key lemma (owner card pending).
