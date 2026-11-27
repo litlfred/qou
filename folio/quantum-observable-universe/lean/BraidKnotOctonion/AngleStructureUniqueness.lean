@@ -1,7 +1,6 @@
 import Mathlib.Analysis.Convex.Jensen
 import Mathlib.Tactic
 import BraidKnotOctonion.SymmetricOptimum
-import QOU.Transcendental.BraidKnotOctonion.IdealTetrahedronVolumeConcave
 
 /-!
 # QOU.Knot.AngleStructureUniqueness — uniqueness of the angle-structure optimum
@@ -27,7 +26,8 @@ The mathematical content, stated generically and reused twice:
   orbit average of a maximiser is feasible, symmetry-fixed, and (Jensen) at
   least as good, hence *also* a maximiser; uniqueness then forces it to equal
   the original.  So the maximiser is fixed by the group.
-* **`tetVol_maximizer_unique`** — the instantiation to the single ideal
+* **`tetVol_maximizer_unique`** (in the transcendental companion
+  `QOU/Transcendental/BraidKnotOctonion/AngleStructureUniquenessTetVol.lean`) — the instantiation to the single ideal
   tetrahedron: `tetVol` has at most one maximiser on the open angle simplex.
   This is Rivin Thm 1.4 for the one-tetrahedron case, sorry-free, wired to the
   strict-concavity result already on `main`.
@@ -153,19 +153,5 @@ theorem strictConcave_symmetric_maximizer_unique (hf : StrictConcaveOn ℝ K f)
     fun q hqK hq => strictConcaveOn_maximizer_unique hf hqK hq hpK hp⟩
 
 end Symmetric
-
-/-! ## Instantiation: the single ideal tetrahedron -/
-
-open QOU.Archimedean in
-/-- **Rivin Thm 1.4 for the single ideal tetrahedron.** The Lobachevsky volume
-`tetVol` of an ideal tetrahedron has **at most one** maximiser on the open angle
-simplex `tetSimplex`.  Discharged sorry-free from the strict concavity
-`tetVol_strictConcaveOn` (bean `qou-idvt` T3-plumbing) via the generic
-uniqueness mechanism above — the analytic half of `qou-krvm` (ii) for the
-one-tetrahedron anchor. -/
-theorem tetVol_maximizer_unique {p q : ℝ × ℝ}
-    (hpK : p ∈ tetSimplex) (hp : ∀ z ∈ tetSimplex, tetVol z ≤ tetVol p)
-    (hqK : q ∈ tetSimplex) (hq : ∀ z ∈ tetSimplex, tetVol z ≤ tetVol q) : p = q :=
-  strictConcaveOn_maximizer_unique tetVol_strictConcaveOn hpK hp hqK hq
 
 end QOU.Knot.AngleStructureUniqueness

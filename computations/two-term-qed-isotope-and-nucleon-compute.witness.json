@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-22T15:06:18.804564+00:00",
-  "commitSha": "5ff5816dee7d6c44e6fe19f391401f072171f70f",
+  "computedAt": "2026-11-27T21:16:58.599686+00:00",
+  "commitSha": "5e2fe0517e3ddc64b5ddd99026355dc7c253c765",
   "assertions": [
     {
       "name": "borromean_v3_connected_diff_matches_closed_form",
@@ -14,7 +14,7 @@
     },
     {
       "name": "canonical_mass_helper_mp_qed_matches_80dps",
-      "computed": "0.000220077293803982939852293900000000000000000000000000097146988429921167",
+      "computed": "0.0002200772938039829398522939",
       "expected": "0.000220077293803982939852293904393675701782981027520011150439728835763493",
       "passed": true,
       "tolerance": "1.0e-45",
@@ -22,7 +22,7 @@
     },
     {
       "name": "canonical_mass_helper_np_qed_matches_80dps",
-      "computed": "-0.0003316960446051788476748025000000000000000000000000001136155081168757764",
+      "computed": "-0.0003316960446051788476748025",
       "expected": "-0.0003316960446051788476748025469556392599104915533011133160055824561171628",
       "passed": true,
       "tolerance": "1.0e-45",
@@ -30,7 +30,7 @@
     },
     {
       "name": "canonical_mass_helper_np_qed_derived_matches_library",
-      "computed": "-0.0001272243009639021347035417000000000000000000000000000527565139949364678",
+      "computed": "-0.0001272243009639021347035417",
       "expected": "-0.0001272243009639021347035416845376732613848582895942070521514170031023482",
       "passed": true,
       "tolerance": "1.0e-28",
@@ -84,11 +84,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 6,
   "computation": "two-term-qed-isotope-and-nucleon-compute",
   "scriptFile": "two_term_qed_isotope_and_nucleon_compute.py",
   "scriptHash": "940e75034bcc",
-  "scriptCommitSha": "5a054e59ea4d38fc439684e216e45c6d39b33d81",
+  "scriptCommitSha": "4d9bd0b59a7e9b4eae7adf2284ed559fad952b30",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -104,7 +104,7 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "8094096a28948d48"
+    "pyhecke_native_build": "a22b08f9db48ed97"
   },
   "invocation": {
     "argv": [
@@ -295,8 +295,8 @@
         "B_AME_3He_MeV": "7.71804132000",
         "mirror_split_AME_MeV": "0.763754880000",
         "one_term_B_sym_mirror_split_MeV": "0.765320193425",
-        "two_term_CAL3_coulomb_displacement_MeV": "0.847421839292",
-        "two_term_CAL3_err_vs_AME_pct": "10.9547",
+        "two_term_CAL3_coulomb_displacement_MeV": "0.948167231719",
+        "two_term_CAL3_err_vs_AME_pct": "24.1455",
         "two_term_hecke_E0_alpha_qfact3_MeV": "0.188816510111",
         "two_term_hecke_E0_alpha_qfact3_err_vs_AME_pct": "-75.2779",
         "two_term_markov_E0_alpha_over_zD_MeV": "0.0498566876916",
@@ -365,12 +365,12 @@
           "E0_times_BextGPMT_H4_MeV": "0.683919147718",
           "E0_qfact3_times_BextGPMT_uniform_MeV": "4.18598136329",
           "E0_qfact3_times_BextGPMT_H4_MeV": "4.18598136329",
-          "E_C_CAL3_pion_compton_MeV": "0.847421839292",
+          "E_C_CAL3_pion_compton_MeV": "0.948167231719",
           "E_EM_hecke_E0_alpha_qfact3_MeV": "0.188816510111",
           "E_EM_markov_E0_alpha_over_zD_MeV": "0.0498566876916",
           "E_QED_intra_nucleon_V3_sum_MeV": "0.000551773338409",
-          "B_can_minus_EC_CAL3_MeV": "3.13439194974",
-          "B_can_minus_EC_CAL3_err_MeV": "-4.58364937026"
+          "B_can_minus_EC_CAL3_MeV": "3.03364655731",
+          "B_can_minus_EC_CAL3_err_MeV": "-4.68439476269"
         },
         {
           "isotope": "4He",
@@ -388,20 +388,20 @@
           "E0_times_BextGPMT_H4_MeV": "5.11846353177",
           "E0_qfact3_times_BextGPMT_uniform_MeV": "25.1158881798",
           "E0_qfact3_times_BextGPMT_H4_MeV": "31.3279618273",
-          "E_C_CAL3_pion_compton_MeV": "0.769933837496",
+          "E_C_CAL3_pion_compton_MeV": "0.861467101103",
           "E_EM_hecke_E0_alpha_qfact3_MeV": "0.188816510111",
           "E_EM_markov_E0_alpha_over_zD_MeV": "0.0498566876916",
           "E_QED_intra_nucleon_V3_sum_MeV": "0.000663392089210",
-          "B_can_minus_EC_CAL3_MeV": "5.76972678292",
-          "B_can_minus_EC_CAL3_err_MeV": "-22.5259356171"
+          "B_can_minus_EC_CAL3_MeV": "5.67819351931",
+          "B_can_minus_EC_CAL3_err_MeV": "-22.6174688807"
         }
       ]
     },
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "b73a8b9c3865afb9208f2f88ae99978ed399f1e0b998da1354242d80019a0ede",
-        "size_bytes": 12675,
+        "sha256": "393ca8d255c5ce0970d64871aaad4be84164cc9f06494cdf522b26222cc92732",
+        "size_bytes": 12672,
         "commitSha": "5ff5816dee7d6c44e6fe19f391401f072171f70f",
         "scriptCommitSha": "55ca73e75d5a1a020cd996effddd5a5f5c2762b2",
         "computedAt": "2026-11-22T15:05:16.039918+00:00"
@@ -416,11 +416,11 @@
       },
       {
         "path": "qbeta-option-e-required-level.witness.json",
-        "sha256": "94c9a9eed3217b1e82844a6d6df2a9917c3acc2d15d84fb103366022b47fb2d7",
-        "size_bytes": 11671,
-        "commitSha": "b4dbaacd9e13d76f0c6d3adead7db0b1d3625fcd",
-        "scriptCommitSha": "unknown",
-        "computedAt": "2026-09-08T08:56:34.850151+00:00"
+        "sha256": "83c8ecef7cf625622c96426101a471fca8bd353ee95816e4bcb28836b702070e",
+        "size_bytes": 11726,
+        "commitSha": "58be958ddf1173362eba805e98f50ee0e8c629e0",
+        "scriptCommitSha": "58be958ddf1173362eba805e98f50ee0e8c629e0",
+        "computedAt": "2026-11-27T15:33:00.774448+00:00"
       }
     ]
   },

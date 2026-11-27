@@ -82,7 +82,7 @@
 -/
 
 import Mathlib.Data.Fin.VecNotation
-import BraidKnotOctonion.AngleStructureUniqueness
+import QOU.Transcendental.BraidKnotOctonion.AngleStructureUniquenessTetVol
 
 namespace QOU.Knot.MultiTetVolumeConcave
 

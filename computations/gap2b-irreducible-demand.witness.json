@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:07:49.111188+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-11-27T21:16:56.260117+00:00",
+  "commitSha": "5e2fe0517e3ddc64b5ddd99026355dc7c253c765",
   "assertions": [
     {
       "name": "manybody_residual_decouples_from_nucleon_count",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 3,
   "computation": "gap2b-irreducible-demand",
   "scriptFile": "gap2b_irreducible_demand.py",
   "scriptHash": "dd92dc6da948",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptCommitSha": "4d9bd0b59a7e9b4eae7adf2284ed559fad952b30",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a22b08f9db48ed97"
   },
   "invocation": {
     "argv": [
@@ -71,10 +72,10 @@
       "4He": {
         "A": 4,
         "cluster": "α (core)",
-        "B_strong": 29.06559623749647,
+        "B_strong": 29.157129501103057,
         "two_body": 13.3473972,
-        "residual": 15.718199037496472,
-        "demanded_M3": 8.693224877626337,
+        "residual": 15.809732301103057,
+        "demanded_M3": 8.743848949914572,
         "three_clique": 4,
         "faces": 4
       },
@@ -91,10 +92,10 @@
       "6Li": {
         "A": 6,
         "cluster": "α + d",
-        "B_strong": 34.01178467872911,
+        "B_strong": 34.011784678729114,
         "two_body": 26.6947944,
-        "residual": 7.316990278729107,
-        "demanded_M3": 4.046789442521857,
+        "residual": 7.316990278729111,
+        "demanded_M3": 4.046789442521859,
         "three_clique": 8,
         "faces": 8
       },
@@ -111,10 +112,10 @@
     },
     "li_residual_MeV": [
       8.453796481646558,
-      7.316990278729107,
+      7.316990278729111,
       7.793322281873198
     ],
-    "li_residual_cv": 0.059343337333954874,
+    "li_residual_cv": 0.059343337333954686,
     "li_three_clique_growth": 0.4285714285714286
   }
 }
