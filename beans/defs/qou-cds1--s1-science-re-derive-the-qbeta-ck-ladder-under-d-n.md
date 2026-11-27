@@ -8834,3 +8834,12 @@ The peel **pins** `c_2 = −1` and `c_3 = −2`, so the entire discrepancy lands
 - On the scored V³ base (0.325433928735 MeV, conditional on C1-C3), the D rungs recover −0.0083 %. Closing the gap would need a uniform |c| ≥ 7982.
 - The cosh and GPMT levers of the bridge probe (48f446490c) do NOT close the gap on V³. cosh(6 ln q) gives F = 2.00. The full twist inserted into the trace gives F = 1.86. GPMT adds exactly 0, because the weight spaces carry no (1³) block. On nuc11 the full-twist insertion is ×1.7427, not cosh 6u. Scope (a). Audit: docs/audits/2026-11-21-cosh-gpmt-levers-audit.md.
 - Still open: on the ruled base no derived object supplies a factor above 1. This bean stays open.
+
+## 2026-11-27: closed old C/D-era PRs, pointers only (owner card "1. Close, log pointers in beans")
+These PRs were closed unmerged; branches kept. Their findings never reached main or this branch. Read them as history, re-derive under convention D before reuse.
+- #5402 (claude/jet-algebraic-dependence-2026-08-21): TR-M jets algebraically dependent; "min degree 7" is a C-frame artefact, under D it is 3. Beans qou-j4mn, qou-yabd.
+- #6342 (claude/convention-migration-validation-77exfa): qou-cds1 entries 9/15/16, the |c_4| threshold, D-frame n=1 ladder residual and derived c3 residual bound probes.
+- #6361 (claude/qbeta-inversion-chain-audit-2026-08-31): the negative (1^3) weight sign is an interval fact; three-row weight-sign probe.
+- #6350 (claude/mkmpi-conditionality-measure-2026-08-31): mK/mpi L2 conditionality ablation (derived alpha_em 51.48 ppb vs alpha_em:=0 101553 ppb).
+- #7817 (claude/pr-4928-convention-migration-fknylp): C to D accounting re-measure as of 2026-11-14; gamma-gamma per-step scalar probe (beans qou-4f8t, qou-t1a0, qou-2t9w, qou-cxh0 never created).
+- #7590 (claude/rem-qstar-codata2022-figures-2026-10-10): rem-qstar figures at the CODATA-2022 muon pin (79.7 %, 42.8 ppb); main still quotes 80.3 % / 42.7 ppb.
