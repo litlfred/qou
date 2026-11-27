@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-27T19:54:13.508008+00:00",
-  "commitSha": "3c0d3e1838abb16964fe83a6ebad4ac230d89772",
+  "computedAt": "2026-11-27T20:15:46.991931+00:00",
+  "commitSha": "57454055e02508af1ef00fe7fe1a4d53c99b451e",
   "assertions": [
     {
       "name": "K0_sw_trace_matches_corpus_on_free_word",
@@ -42,7 +42,7 @@
       "expected": true,
       "passed": true,
       "tolerance": 0,
-      "source": "L=128 0.115656576214 vs projector 0.115656576212"
+      "source": "L=1024 0.115656576212 vs projector 0.115656576212"
     },
     {
       "name": "K5_truncation_error_within_norm_bound",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "bond-rules-length-bound-A2",
   "scriptFile": "bond_rules_length_bound_probe.py",
-  "scriptHash": "a8186a8a1e14",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "83b2492518f9",
+  "scriptCommitSha": "57454055e02508af1ef00fe7fe1a4d53c99b451e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -99,6 +99,8 @@
       "rho_S": "4.0",
       "n_minus_2": 4,
       "n_eigs_at_rho": 7,
+      "second_abs_eig": "3.291342479139718515330064",
+      "uniform_limit_rate": "0.82283561978492962883",
       "top": [
         [
           4,
@@ -246,6 +248,21 @@
           "count": "1.15792089237e+77",
           "ratio": "0.1156565762135248612446174",
           "minus_ln_r": "2.157130028855833537"
+        },
+        "256": {
+          "count": "1.34078079299e+154",
+          "ratio": "0.1156565762123857101297802",
+          "minus_ln_r": "2.157130028865682965"
+        },
+        "512": {
+          "count": "1.79769313486e+308",
+          "ratio": "0.1156565762123857101297637",
+          "minus_ln_r": "2.157130028865682965"
+        },
+        "1024": {
+          "count": "3.23170060713e+616",
+          "ratio": "0.1156565762123857101297637",
+          "minus_ln_r": "2.157130028865682965"
         }
       },
       "spectral_limit_ratio": "0.1156565762123857101297637",

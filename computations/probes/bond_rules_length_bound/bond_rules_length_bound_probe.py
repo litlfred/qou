@@ -71,6 +71,7 @@ NV = N - 2
 JUNCTIONS = [sorted(J) for J in bc.JUNCTIONS]
 D2 = Q + 1 / Q
 T0 = time.time()
+LPOW = 1024     # largest power for the uniform limit; the spectral gap at A = 3 is small (|λ2/λ1| ≈ 0.95)
 
 
 def log(msg):
@@ -220,6 +221,8 @@ def main() -> int:
     log(f"rho(S) = {mp.nstr(rho, 20)}; n-2 = {NV}; top |eig|: " +
         ", ".join(f"k={k}:{mp.nstr(e, 10)}" for k, e in top))
     n_at_rho = sum(1 for _, e in spec if abs(abs(e) - rho) < mp.mpf("1e-20"))
+    lam2 = max(abs(e) for _, e in spec if abs(abs(e) - rho) >= mp.mpf("1e-20"))
+    log(f"second |eig| of S: {mp.nstr(lam2, 20)}; uniform-limit rate |λ2/λ1| = {mp.nstr(lam2 / rho, 15)}")
     check("K2_rho_S_at_least_n_minus_2", rho >= NV - mp.mpf("1e-30"), "V(s) fixes |0...0>")
     rho_J = {}
     for J in subsets:
@@ -258,11 +261,11 @@ def main() -> int:
 
     # ---------------------------------------------------------------- rule (3∞): weight-free limit
     # tr(x S_{-J}^L) / count_L by repeated multiplication; report L = 2^j.
-    # successive squaring: L = 1, 2, 4, ..., 128
+    # successive squaring: L = 1, 2, 4, ..., LPOW
     lim_rows = {}
     powJ = {J: {k: SJ[J][0][k] for k in STATES} for J in subsets}
     L = 1
-    while L <= 128:
+    while L <= LPOW:
         num, cnt = ZERO, ZERO
         for J in subsets:
             sgn = (-1) ** len(J)
@@ -271,7 +274,7 @@ def main() -> int:
         if cnt == 0:          # no bond word of this length (A >= 3, L < A - 1)
             lim_rows[L] = {"count": "0", "ratio": None, "minus_ln_r": None}
             log(f"rule 3inf L={L}: no bond words")
-            if L < 128:
+            if L < LPOW:
                 powJ = {J: {k: powJ[J][k] * powJ[J][k] for k in STATES} for J in subsets}
             L *= 2
             continue
@@ -279,7 +282,7 @@ def main() -> int:
         lim_rows[L] = {"count": mp.nstr(cnt, 12), "ratio": mp.nstr(rL, 25),
                        "minus_ln_r": mp.nstr(-mp.log(rL), 20) if rL > 0 else None}
         log(f"rule 3inf L={L}: {lim_rows[L]}")
-        if L < 128:
+        if L < LPOW:
             powJ = {J: {k: powJ[J][k] * powJ[J][k] for k in STATES} for J in subsets}
         L *= 2
     # spectral projector at n-2 on the blocks that carry it (|0..0>, |1..1> plus any interior copies)
@@ -309,9 +312,9 @@ def main() -> int:
     lcP = level_chars_from_diag({k: (Pblocks[k] * X[k]).apply(mp.re) for k in STATES})
     negP = [kk for kk, v in lcP.items() if v < -TOL]
     log(f"rule 3inf limit element: reading 3 {'PASS' if not negP else 'FAIL'} ({len(negP)} negative)")
-    rL_last = mp.mpf(lim_rows[128]["ratio"])
+    rL_last = mp.mpf(lim_rows[LPOW]["ratio"])
     check("K3_power_average_tends_to_spectral_limit", abs(rL_last - r_inf) < mp.mpf("1e-6"),
-          f"L=128 {mp.nstr(rL_last, 12)} vs projector {mp.nstr(r_inf, 12)}")
+          f"L={LPOW} {mp.nstr(rL_last, 12)} vs projector {mp.nstr(r_inf, 12)}")
 
     # ---------------------------------------------------------------- truncation tail bounds (3a)
     # truncate the weighted sum at length L0 and compare with the exact resolvent; bound:
@@ -368,7 +371,8 @@ def main() -> int:
           .add_parameter("A", A).add_parameter("n_strands", N).add_parameter("E0_tower_MeV", mp.nstr(E0, 20))
           .add_data("norms", {"V": mp.nstr(vnorm, 20), "S": mp.nstr(snorm, 20), "x": mp.nstr(xnorm, 20),
                               "q_squared": mp.nstr(Q ** 2, 20)})
-          .add_data("spectrum", {"rho_S": mp.nstr(rho, 25), "n_minus_2": NV, "n_eigs_at_rho": n_at_rho,
+          .add_data("spectrum", {"rho_S": mp.nstr(rho, 25), "n_minus_2": NV, "n_eigs_at_rho": n_at_rho, "second_abs_eig": mp.nstr(lam2, 25),
+                                 "uniform_limit_rate": mp.nstr(lam2 / rho, 20),
                                  "top": [[k, mp.nstr(mp.re(e), 15), mp.nstr(mp.im(e), 15)] for k, e in top],
                                  "rho_by_dropped_junctions": {str(J): mp.nstr(v, 20) for J, v in rho_J.items()},
                                  "t_star": mp.nstr(t_star, 25)})
