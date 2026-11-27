@@ -1310,3 +1310,45 @@ output, against a symlink overlay of the restored cache, `fr/out`, `b1sbuild`, `
 not work: Lean resolves a module under the first root containing a `QOU/` directory.)
 `#print axioms` on all seven theorems shows only `propext`, `Classical.choice`, `Quot.sound`.
 No `lake build` was run.
+
+## 17g. The compatibility hypothesis dropped: Prop. 5.5 at one degree (bean `qou-3fdg`)
+
+**Result.** `rational_associator_compatible_of_groupLikeTower`
+(`RationalAssociator/AssociatorRealign.lean`, sorry-free): from `ε(E) = 1` and
+`GroupLikeKAssociatorTower K E` alone (one group-like `K`-associator per level `N ≥ 2`, no
+relation between levels) there is one sequence `Φ : ℕ → ℚ⟨X,Y⟩` with `Φ N` an associator in
+`U4 N` for `E`, group-like modulo `FF2 N` (`N ≥ 2`), and `Φ (N+1) − Φ N ∈ FF N` (`N ≥ 1`). This
+is the conclusion of `rational_associator_compatible_of_tower` (§17e) without
+`CompatibleGroupLikeKAssociatorTower`; `rational_associator_compatible_of_tower_via_groupLike`
+re-derives §17e's theorem through the new one.
+
+**How.** Only the degree-by-degree form of Drinfeld's Prop. 5.5 is needed:
+
+- `primDef_mem_of_GL_add`: if `A ≡ 1 (FF 1)` and `A`, `A + y` (`y ∈ FF d`, `d ≥ 1`) are both
+  group-like modulo `FF2 (d+1)`, then `Δy − y⊗1 − 1⊗y ∈ FF2 (d+1)`.
+- `exists_grt_layer` (**Prop. 5.5 at one degree**): two rational group-like associators
+  `Φ + x`, `Φ + x'` in `U4 (d+1)` (`x, x' ∈ FF d`, `ε(Φ) = ε(E) = 1`) differ at degree `d` by a
+  homogeneous primitive `h`, with `x' − x − h ∈ FF (d+1)` and `GrtU4 M h` for every `M`. The
+  linear equations of `x' − x` cancel by `assocU4_add_iff`; primitivity comes from the previous
+  lemma and `exists_primitive_layer`; `grtU4_of_lin_primitive` concludes.
+- `realign`: a group-like `K`-associator at level `N ≥ d+1` agreeing with `1⊗Φ` modulo `FFK d`
+  can be replaced, inside the group-like `K`-associators at level `N`, by one agreeing with
+  `1⊗(Φ+x)` modulo `FFK (d+1)` for **any** prescribed rational group-like associator `Φ + x` in
+  `U4 (d+1)`: `inductionStep_of_groupLike` gives some `x'`, then one shift by `exp(h)`
+  (`assocK_shiftK`, `GLK.compKK_GK`, `compKK_congr`) with `h` from `exists_grt_layer` replaces
+  `x'` by `x`.
+- `LevelInv` / `levelStep`: the invariant only asks, at each level, for *some* `K`-associator
+  agreeing with `1⊗Φ` modulo `FFK d`. The correction `x` is chosen at level `d+1` and every
+  higher level is re-aligned onto it, so no cross-level relation between the `Ψ_N` is needed.
+
+**Not proved.** Prop. 5.5 in its full form (for two group-like associators modulo `N`, a single
+`g ∈ GRT₁` modulo `N` with `Φ' = Φ ∘ g`) is not stated; the composite of the per-degree shifts
+would give it but the composition law of the truncated `GRT₁` action is not used here. The
+analytic input `GroupLikeKAssociatorTower K E` itself is still a hypothesis; nothing constructs
+it. `quasiYBE_compatible_of_tower` (§17f) still states the compatible-tower hypothesis; it can
+now be restated on `GroupLikeKAssociatorTower` by composing with the new theorem (not done here).
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on `AssociatorRealign.lean` exits 0 with
+no output against the symlink overlay holding every module up to `QuasiYBE`. `#print axioms` on
+`rational_associator_compatible_of_groupLikeTower`, `exists_grt_layer`, `realign` and the
+corollary shows only `propext`, `Classical.choice`, `Quot.sound`. No `lake build` was run.
