@@ -150,7 +150,12 @@ export)
   ;;
 accuracy)
   python3 -c "import mpmath" >/dev/null 2>&1 || python3 -m pip install --quiet mpmath
-  python3 scripts/generate-accuracy-scorecard.py --check --qa-report --html-out "$DIR/accuracy/index.html"
+  # Owner ruling 2026-11-27: no red gates except JSON-LD KG publication. The page is
+  # rendered from the current witnesses; the strict --check (ACCURACY.md drift,
+  # stale witnesses) is reported to QA and never stops the publish.
+  python3 scripts/generate-accuracy-scorecard.py --html-out "$DIR/accuracy/index.html"
+  python3 scripts/generate-accuracy-scorecard.py --check --qa-report \
+    || echo "::warning::site-step accuracy: --check failed (reported, not gated; see test/results/compute-qa/accuracy-scorecard.json)"
   ;;
 beans)
   BOARD="$TOOLS/beans-board.ts"
