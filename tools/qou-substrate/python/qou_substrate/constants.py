@@ -943,7 +943,10 @@ try:
                     w = qq
                 else:
                     w = _mp.mpf(1)
-                return qcd_term + w * tr_conn_p_abs - mp_me
+                tot = qcd_term + w * tr_conn_p_abs
+                if _SHADOW_DERIVED_WE:
+                    tot = tot / (3 + 4 * q2 * (q2 - 1) / ((q2 ** 2 + 1) * (q2 + 1)))
+                return tot - mp_me
 
             q = q_at(work_dps)
             eps = _mp.mpf(10) ** (-(work_dps // 2))
