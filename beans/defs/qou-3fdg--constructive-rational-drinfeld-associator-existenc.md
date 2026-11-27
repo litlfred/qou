@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T23:07:39Z
+updated_at: 2026-11-27T23:10:26Z
 parent: qou-dk7p
 ---
 
@@ -179,3 +179,11 @@ Scope cut by Carl to "Furusho first". This PR contains part (0) and the obstruct
   - Obstruction.lean: GL_add_iff; obsLin/obstruction; lift_iff_obsLin, lift_iff_homog, lift_iff_primitive (a one-degree lift exists iff the obstruction is in the image of a linear map); field independence (liftSolvableOver_iff, lift_iff_liftSolvableOver); obstruction_mem_range_of_groupLikeK; compatible_of_obstructionVanishes.
 - STILL OPEN: AssociatorObstructionVanishes E, i.e. ∀ d ≥ 1, ∀ Φ with AssocU4 d E Φ and GL d Φ, the obstruction lies in obsLin d '' FF d. That is the H⁴-type vanishing, not attempted per scope. The converse (a compatible tower ⇒ vanishing) is also unformalized, because it needs AssocU4 level monotonicity (a map U4 M → U4 N).
 - Audit §17h. Bean left open.
+
+
+## 2026-11-27 Furusho route, PR #9820 (branch claude/grt-furusho-2026-11-27)
+Proved, sorry-free (RationalAssociator/FurushoReduction.lean):
+- hexagon_mu_iff: in degree 2 the hexagon holds iff mu^2 = 24c.
+- assocU4_of_pentagon / assocU4_iff_pentagon: assume GroupLikeKAssociatorTower and PentagonHexagonLie d for every d >= 3. Then a group-like Phi that is an associator mod degree 3 and satisfies the pentagon in U4 N is an associator in U4 N.
+Open: PentagonHexagonLie d for d >= 3, stated as a Prop. It is the Lie form of Furusho's theorem. By hand computation it fails at d=2 (h=[A,B]).
+NOT achieved: GroupLikeKAssociatorTower is not reduced to a pentagon-only tower, because each degree step compares against a K-associator taken from that tower. Audit §17i. Bean stays open.
