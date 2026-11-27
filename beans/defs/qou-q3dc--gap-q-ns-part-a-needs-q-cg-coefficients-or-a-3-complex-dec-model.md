@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-27T18:40:00Z
-updated_at: 2026-11-27T21:34:07Z
+updated_at: 2026-11-27T21:56:39Z
 parent: qou-pa7n
 ---
 
@@ -105,3 +105,5 @@ On the torus-invariant block K[ζ], ζ=βγ: Cartan field kills K[ζ] (cartanFie
 
 
 **2026-11-27 (thread 'Prove PBW spanning for the Haar algebra'), PR #9731.** PBW basis of O_q(SU(2)) over any comm ring, any unit q: `CompactQuantumMetrics/OqSU2PBW.lean` (mono_span, mono_linearIndependent, pbwBasis, pbwEquiv, monoRep_faithful). Whole-algebra Haar vanishing for q not a root of unity: `QOU/FluidDynamics/q_ns_haar_field_invariance_full.lean` (haarState_fieldPlus_eq_zero, haarState_fieldMinus_eq_zero, haarState_fieldZero_eq_zero). Closes #9713's open whole-algebra item. Still open: (id⊗h)Δ = h(·)1; roots of unity; ∇_q link.
+
+2026-11-27: PR #9758 (stacked on rename #9756) proves (id⊗h)Δ = h·1 and (h⊗id)Δ = h·1 for q not a root of unity. It also proves uniqueness: a functional killed by X±, X₀, or a left-invariant one, equals g(1)·h. Root-of-unity no-go: if g(1) ≠ 0 and g∘X₊ = 0 then every [n+1]_{q²} ≠ 0, so at a nontrivial root of unity no normalised invariant functional exists. Coassociativity is in OqSU2Coassoc.lean. Not covered: q = ±1; positivity remains in #9646.
