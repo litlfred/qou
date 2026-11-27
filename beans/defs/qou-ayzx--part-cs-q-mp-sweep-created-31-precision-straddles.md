@@ -1,13 +1,13 @@
 ---
 # qou-ayzx
 title: 'Part C''s Q_MP sweep created 31 PRECISION STRADDLES: mpmath side moved to 70 digits, sympy side left at 50'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - compute-accuracy
 created_at: 2026-11-21T04:30:36Z
-updated_at: 2026-11-27T17:30:00Z
+updated_at: 2026-11-27T17:25:00Z
 parent: qou-9nnz
 ---
 
@@ -187,3 +187,8 @@ The task is again: **close the 7 straddles at the producers** (owner ruling D, 2
 ## 2026-11-27 17:30 UTC — all 7 fixed at the producers: PR #9498
 
 Carl chose "fix all 7 in one PR". Branch `claude/close-q-straddles-2026-11-27` was cut from main `58be958dd`. Each of the seven producers now builds its sympy q from `Q_MP` using the verified pattern. All pass: 11/11, 11/11, 15/15, 11/11, 5/5, 8 PASS with no witness, and 23/23. Value gate: no `allPassed` flip, worst move 7.12e-49. The colour-weighting `k_minus_zD` residual went from 2.26e-48 to -1.16e-50. Provenance gate: 0 of 6 witnesses regress. Close this bean when #9498 merges.
+
+
+## 2026-11-27T17:25Z — closed
+
+PR #9498 merged to main. All 7 straddles now carry the same q on both layers. Mechanical task; no open conjecture.
