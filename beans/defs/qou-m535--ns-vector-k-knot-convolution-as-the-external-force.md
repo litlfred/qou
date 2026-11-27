@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T21:00:36Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-27T15:35:00Z
 parent: qou-vo9t
 ---
 
@@ -28,3 +28,7 @@ Verdict: (d) as stated. A narrow conditional (a) can be stated but adds nothing 
 
 Superseded-premise check (owner, 2026-11-21: photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean; its subject is surface topology / gerbes / NS and touches none of them.
 No change; the optional amplitude-budget lemma (audit §5c) was not written. Stays open.
+
+## 2026-11-27: excluded under the owner's no-OpenAI rule
+
+Owner rule (Carl, 2026-11-27): q-NS work uses only what is formalized in QOU and does not use any OpenAI-announced NS work. This bean was framed as "closer to the reported OpenAI construction" (forced NS, Fefferman C/D), so it is excluded as an attack vector for the q-NS classical gaps (qou-innq Part A, Part B). Do not work it as a route. Status unchanged; retiring or re-scoping it is the owner's call.

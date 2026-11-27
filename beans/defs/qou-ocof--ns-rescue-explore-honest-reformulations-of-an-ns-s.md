@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T20:26:55Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-27T15:35:00Z
 parent: qou-vo9t
 ---
 
@@ -54,3 +54,7 @@ The owner relayed a report that OpenAI published a 166-page paper, "Finite Time 
 
 Superseded-premise check (owner, 2026-11-21: photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean; its subject is surface topology / gerbes / NS and touches none of them.
 No change. The external forced-blowup report is still unverified and not held in library/. Stays open.
+
+## 2026-11-27: OpenAI reliance flagged under the owner's no-OpenAI rule
+
+Owner rule (Carl, 2026-11-27): do not use any OpenAI-announced NS work. The 2026-10-12 section above relays such a report and draws conditional conclusions from it. Treat that section as out of bounds for q-NS reasoning; nothing here may rest on it. Not stripped yet: removing or re-scoping it is the owner's call. Status unchanged.
