@@ -1,7 +1,7 @@
 ---
 # qou-usft
 title: 'Light-nucleus regime: derive the Coulomb radius AND density shape from binding + q-CLT, not r0*A^(1/3)'
-status: todo
+status: in-progress
 pr: 8192
 type: task
 priority: normal
@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - 8f-mass
 created_at: 2026-08-09T10:35:13Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-27T20:05:00Z
 parent: qou-8lxd
 ---
 
@@ -377,3 +377,16 @@ NEXT IS THE NN SECTOR, not this bean. The live handles there:
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8192, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+
+## 2026-11-27 — claimed for the accuracy-scorecard Coulomb/mirror vector (epic qou-myts)
+
+Thread "Fix the 3H–3He Coulomb and mirror rows", branch `claude/coulomb-mirror-honest-labels-2026-11-27`.
+Done on the branch (no number moved):
+- `mirror_nuclei_coulomb_systematics.py` said `r₀ = 1.2 fm — NO free parameter` in its docstring, header,
+  witness description and assertion source. `coulomb_energy.R0_FM` has been `λ̄_π = ℏc/m_π` since 2026-08-09
+  (this bean), so the label was stale. Now it names λ̄_π, the selected coefficient 1 (GAP 1) and the assumed
+  `A^{1/3}` (GAP 2). `split_AME` and 8 trend fields were float64 in the witness; now mpf.
+- ACCURACY.md mirror row names the radius and the selection and quotes the A=3 ratio 0.901 beside the mean.
+Still open (this bean's goal): a radius that is derived, not selected. Ratio split/ΔE_C rises 0.90 (A=3) → 1.07
+(A=39), so `A^{1/3}` is the wrong shape for light nuclei. Paths put to the owner on a card.
