@@ -1,0 +1,1222 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-27T14:45:44.705181+00:00",
+  "commitSha": "b779d27c4d2a64311789a40b3c7ae7609d35679e",
+  "assertions": [
+    {
+      "name": "K0_markov_parameter_is_zD",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "tr(sigma_1) = q**3/(q**2 + 1)"
+    },
+    {
+      "name": "K1_reproduces_corpus_gg_deuteron_table",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "6 rows of PR #9426 results.md"
+    },
+    {
+      "name": "K2_q1_trace_is_2_pow_c_minus_n",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "126 words, exact Fraction at q = 1"
+    },
+    {
+      "name": "K3_pure_junction_merges_in_0_or_2",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "merge counts seen = [0, 2]"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "classical-log-binding-cycle-count",
+  "scriptFile": "classical_log_binding_cycle_count_probe.py",
+  "scriptHash": "9bfb38805a68",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/classical_log_binding_cycle_count/classical_log_binding_cycle_count_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/classical_log_binding_cycle_count/classical_log_binding_cycle_count_probe.py"
+  },
+  "description": "PROBE (brief C2, qou-myts / qou-brng): the q = 1 part of the ruled log binding law B = E0 ln(tr_free/tr_atom) is E0*ln2*(closure components merged). Verifies the trace (z_D, corpus gg deuteron table), the 2^(c-n) law at q = 1 exactly on all 126 pure-junction bond words up to six vertices, the 3-merge pure-junction ceiling, and tabulates the q0 departure. Nothing fitted, selected or wired.",
+  "auditOnly": "docs/audits/2026-11-27-classical-log-binding-cycle-count.md",
+  "parameters": {
+    "q0": "1.109978582751380807591669095610768879874",
+    "E0_tower_MeV": "4.2274833556290305503"
+  },
+  "data": {
+    "by_merges": {
+      "0": {
+        "count": 12,
+        "min_minus_ln_r": "-0.03524594873",
+        "max_minus_ln_r": "0.005902240384",
+        "classical": "0.0"
+      },
+      "2": {
+        "count": 114,
+        "min_minus_ln_r": "0.7894633488",
+        "max_minus_ln_r": "2.192308254",
+        "classical": "1.386294361"
+      }
+    },
+    "rows": [
+      {
+        "word": "V(1)",
+        "vertices": 1,
+        "merges": 2,
+        "minus_ln_r_q0": "1.38456000284243",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.85320436689",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)",
+        "vertices": 1,
+        "merges": 2,
+        "minus_ln_r_q0": "1.41290912107713",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.97304979237",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)",
+        "vertices": 2,
+        "merges": 2,
+        "minus_ln_r_q0": "1.25590139690553",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.30930225173",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)",
+        "vertices": 2,
+        "merges": 2,
+        "minus_ln_r_q0": "1.40030747413122",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.91977653965",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)",
+        "vertices": 2,
+        "merges": 2,
+        "minus_ln_r_q0": "1.39722674870975",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.90675282421",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)",
+        "vertices": 2,
+        "merges": 2,
+        "minus_ln_r_q0": "1.280785079961",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.41449760767",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(1)",
+        "vertices": 3,
+        "merges": 0,
+        "minus_ln_r_q0": "0.00150396976294658",
+        "classical_ln2_merges": "0.0",
+        "B_q0_MeV": "0.00635800714023",
+        "B_classical_MeV": "0.0"
+      },
+      {
+        "word": "V(1)V(1)V(2)",
+        "vertices": 3,
+        "merges": 2,
+        "minus_ln_r_q0": "1.70830830767218",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "7.22184493697",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(1)",
+        "vertices": 3,
+        "merges": 2,
+        "minus_ln_r_q0": "1.70830830767218",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "7.22184493697",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(2)",
+        "vertices": 3,
+        "merges": 2,
+        "minus_ln_r_q0": "1.05391486752036",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.45540756069",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(1)",
+        "vertices": 3,
+        "merges": 2,
+        "minus_ln_r_q0": "1.67760827015012",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "7.09206103933",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(2)",
+        "vertices": 3,
+        "merges": 2,
+        "minus_ln_r_q0": "1.05391486752036",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.45540756069",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(1)",
+        "vertices": 3,
+        "merges": 2,
+        "minus_ln_r_q0": "1.07906561302189",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.56173191868",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(2)",
+        "vertices": 3,
+        "merges": 0,
+        "minus_ln_r_q0": "0.00150396976294658",
+        "classical_ln2_merges": "0.0",
+        "B_q0_MeV": "0.00635800714023",
+        "B_classical_MeV": "0.0"
+      },
+      {
+        "word": "V(1)V(1)V(1)V(1)",
+        "vertices": 4,
+        "merges": 2,
+        "minus_ln_r_q0": "1.51758005246863",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "6.41554441265",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(1)V(2)",
+        "vertices": 4,
+        "merges": 2,
+        "minus_ln_r_q0": "1.40124461862216",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.92373830239",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(2)V(1)",
+        "vertices": 4,
+        "merges": 2,
+        "minus_ln_r_q0": "1.37252307869906",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.80231847042",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(2)V(2)",
+        "vertices": 4,
+        "merges": 2,
+        "minus_ln_r_q0": "1.39722674870975",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.90675282421",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(1)V(1)",
+        "vertices": 4,
+        "merges": 2,
+        "minus_ln_r_q0": "1.40124461862216",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.92373830239",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(1)V(2)",
+        "vertices": 4,
+        "merges": 0,
+        "minus_ln_r_q0": "-0.0352459487270219",
+        "classical_ln2_merges": "0.0",
+        "B_q0_MeV": "-0.149001661597",
+        "B_classical_MeV": "0.0"
+      },
+      {
+        "word": "V(1)V(2)V(2)V(1)",
+        "vertices": 4,
+        "merges": 2,
+        "minus_ln_r_q0": "1.39722674870975",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.90675282421",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(2)V(2)",
+        "vertices": 4,
+        "merges": 2,
+        "minus_ln_r_q0": "1.40253034550605",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.92917369139",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(1)V(1)",
+        "vertices": 4,
+        "merges": 2,
+        "minus_ln_r_q0": "1.40211234116622",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.927406585",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(1)V(2)",
+        "vertices": 4,
+        "merges": 2,
+        "minus_ln_r_q0": "1.39722674870975",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.90675282421",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(2)V(1)",
+        "vertices": 4,
+        "merges": 0,
+        "minus_ln_r_q0": "-0.0323688882299298",
+        "classical_ln2_merges": "0.0",
+        "B_q0_MeV": "-0.136838936232",
+        "B_classical_MeV": "0.0"
+      },
+      {
+        "word": "V(2)V(1)V(2)V(2)",
+        "vertices": 4,
+        "merges": 2,
+        "minus_ln_r_q0": "1.43200067484101",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "6.05375901814",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(1)V(1)",
+        "vertices": 4,
+        "merges": 2,
+        "minus_ln_r_q0": "1.38791980726247",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.86740788415",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(1)V(2)",
+        "vertices": 4,
+        "merges": 2,
+        "minus_ln_r_q0": "1.40253034550605",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.92917369139",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(2)V(1)",
+        "vertices": 4,
+        "merges": 2,
+        "minus_ln_r_q0": "1.4008582727741",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.92210503175",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(2)V(2)",
+        "vertices": 4,
+        "merges": 2,
+        "minus_ln_r_q0": "1.55147109016772",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "6.55881821042",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(1)V(1)V(1)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.1429489058544",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.83179747583",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(1)V(1)V(2)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.41191956759778",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.96886647151",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(1)V(2)V(1)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.41008691268261",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.96111895336",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(1)V(2)V(2)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.26497607526505",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.34766530345",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(2)V(1)V(1)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.41008691268261",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.96111895336",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(2)V(1)V(2)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.14872228854558",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.85620435507",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(2)V(2)V(1)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.24111504983846",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.24679321561",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(2)V(2)V(2)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.26609791926331",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.35240788028",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(1)V(1)V(1)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.41191956759778",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.96886647151",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(1)V(1)V(2)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.14872228854558",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.85620435507",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(1)V(2)V(1)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.14872228854558",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.85620435507",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(1)V(2)V(2)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.94962945348443",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "8.24202606425",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(2)V(1)V(1)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.26497607526505",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.34766530345",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(2)V(1)V(2)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.94962945348443",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "8.24202606425",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(2)V(2)V(1)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.26609791926331",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.35240788028",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(2)V(2)V(2)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.38228136101832",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.8435714465",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(1)V(1)V(1)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.407755337236",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.95126225696",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(1)V(1)V(2)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.26497607526505",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.34766530345",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(1)V(2)V(1)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.17332098766746",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.96019494617",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(1)V(2)V(2)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.29069614448161",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.45639646797",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(2)V(1)V(1)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.14365333585704",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.83477544195",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(2)V(1)V(2)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.94962945348443",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "8.24202606425",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(2)V(2)V(1)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.89582890852809",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "8.01458515592",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(2)V(2)V(2)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.37801631476612",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.82554103446",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(1)V(1)V(1)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.26667618731228",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.35485249883",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(1)V(1)V(2)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.26609791926331",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.35240788028",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(1)V(2)V(1)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.93827689278271",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "8.19403330284",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(1)V(2)V(2)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.37801631476612",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.82554103446",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(2)V(1)V(1)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.26558087863408",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.35022209963",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(2)V(1)V(2)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.38228136101832",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.8435714465",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(2)V(2)V(1)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.38083121382487",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.83744097338",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(2)V(2)V(2)",
+        "vertices": 5,
+        "merges": 2,
+        "minus_ln_r_q0": "1.16412180223765",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.92130554288",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(1)V(1)V(1)V(1)",
+        "vertices": 6,
+        "merges": 0,
+        "minus_ln_r_q0": "0.00587475172989821",
+        "classical_ln2_merges": "0.0",
+        "B_q0_MeV": "0.0248354151566",
+        "B_classical_MeV": "0.0"
+      },
+      {
+        "word": "V(1)V(1)V(1)V(1)V(1)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.70767762329239",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "7.21917872925",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(1)V(1)V(2)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.70605654656817",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "7.21232565438",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(1)V(1)V(2)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.05830856974823",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.47398186373",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(1)V(2)V(1)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.67710115975988",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "7.08991723859",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(1)V(2)V(1)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "0.967615801022098",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.09057969346",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(1)V(2)V(2)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.08445218232875",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.58450355077",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(1)V(2)V(2)V(2)",
+        "vertices": 6,
+        "merges": 0,
+        "minus_ln_r_q0": "0.00307906709518115",
+        "classical_ln2_merges": "0.0",
+        "B_q0_MeV": "0.0130167048957",
+        "B_classical_MeV": "0.0"
+      },
+      {
+        "word": "V(1)V(1)V(2)V(1)V(1)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.70605654656817",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "7.21232565438",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(2)V(1)V(1)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "2.19230825446833",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "9.26794665617",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(2)V(1)V(2)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "0.964635462696732",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.0779803628",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(2)V(1)V(2)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.4004423376707",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.92034667302",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(2)V(2)V(1)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.08445218232875",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.58450355077",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(2)V(2)V(1)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.39722674870975",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.90675282421",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(1)V(2)V(2)V(2)V(1)",
+        "vertices": 6,
+        "merges": 0,
+        "minus_ln_r_q0": "0.00306325250735337",
+        "classical_ln2_merges": "0.0",
+        "B_q0_MeV": "0.0129498489889",
+        "B_classical_MeV": "0.0"
+      },
+      {
+        "word": "V(1)V(1)V(2)V(2)V(2)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.71670192308987",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "7.25732880644",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(1)V(1)V(1)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.70767762329239",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "7.21917872925",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(1)V(1)V(1)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "0.967615801022098",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.09057969346",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(1)V(1)V(2)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "2.19230825446833",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "9.26794665617",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(1)V(1)V(2)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.39722674870975",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.90675282421",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(1)V(2)V(1)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "0.967615801022098",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.09057969346",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(1)V(2)V(1)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.73643604096868",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "7.34075446131",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(1)V(2)V(2)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.39722674870975",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.90675282421",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(1)V(2)V(2)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.51310280023944",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "6.39661690337",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(2)V(1)V(1)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.05830856974823",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.47398186373",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(2)V(1)V(1)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.39722674870975",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.90675282421",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(2)V(1)V(2)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.4004423376707",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.92034667302",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(2)V(1)V(2)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "0.789463348778343",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "3.33744316684",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(2)V(2)V(1)V(1)",
+        "vertices": 6,
+        "merges": 0,
+        "minus_ln_r_q0": "0.00307906709518115",
+        "classical_ln2_merges": "0.0",
+        "B_q0_MeV": "0.0130167048957",
+        "B_classical_MeV": "0.0"
+      },
+      {
+        "word": "V(1)V(2)V(2)V(2)V(1)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.51310280023944",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "6.39661690337",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(2)V(2)V(2)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.71670192308987",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "7.25732880644",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(1)V(2)V(2)V(2)V(2)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.05454594991397",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.45807545101",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(1)V(1)V(1)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.67728437523985",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "7.09069177898",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(1)V(1)V(1)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.05830856974823",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.47398186373",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(1)V(1)V(2)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "0.990106621373014",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.18565926215",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(1)V(1)V(2)V(2)",
+        "vertices": 6,
+        "merges": 0,
+        "minus_ln_r_q0": "0.00309190324864669",
+        "classical_ln2_merges": "0.0",
+        "B_q0_MeV": "0.0130709695209",
+        "B_classical_MeV": "0.0"
+      },
+      {
+        "word": "V(2)V(1)V(1)V(2)V(1)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "2.13534186152569",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "9.02712217818",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(1)V(2)V(1)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.39722674870975",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.90675282421",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(1)V(2)V(2)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.38805883255857",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.86799561128",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(1)V(2)V(2)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.68413265881195",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "7.1196427838",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(2)V(1)V(1)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "0.968143552975225",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.09281075606",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(2)V(1)V(1)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.4004423376707",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.92034667302",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(2)V(1)V(2)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.7145373327867",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "7.24817803696",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(2)V(1)V(2)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.50508029678026",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "6.36270190352",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(2)V(2)V(1)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.40014577174649",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.91909294551",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(2)V(2)V(1)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "0.789463348778343",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "3.33744316684",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(2)V(2)V(2)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.48987894257727",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "6.29843843165",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(1)V(2)V(2)V(2)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.05557731045311",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.46243551052",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(1)V(1)V(1)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.08321096954541",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.57925634439",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(1)V(1)V(1)V(2)",
+        "vertices": 6,
+        "merges": 0,
+        "minus_ln_r_q0": "0.00307906709518115",
+        "classical_ln2_merges": "0.0",
+        "B_q0_MeV": "0.0130167048957",
+        "B_classical_MeV": "0.0"
+      },
+      {
+        "word": "V(2)V(2)V(1)V(1)V(2)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.39486376132303",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.89676333436",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(1)V(1)V(2)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.68413265881195",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "7.1196427838",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(1)V(2)V(1)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.39777588484698",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "5.90907428809",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(1)V(2)V(1)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.51310280023944",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "6.39661690337",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(1)V(2)V(2)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "0.811038062614779",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "3.42864991049",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(1)V(2)V(2)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.07985081870453",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.56505136264",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(2)V(1)V(1)V(1)",
+        "vertices": 6,
+        "merges": 0,
+        "minus_ln_r_q0": "0.00306741320445083",
+        "classical_ln2_merges": "0.0",
+        "B_q0_MeV": "0.0129674382667",
+        "B_classical_MeV": "0.0"
+      },
+      {
+        "word": "V(2)V(2)V(2)V(1)V(1)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.71670192308987",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "7.25732880644",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(2)V(1)V(2)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.51401633089094",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "6.40047883899",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(2)V(1)V(2)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.05557731045311",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.46243551052",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(2)V(2)V(1)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.68523625128025",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "7.12430820259",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(2)V(2)V(1)V(2)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.05454594991397",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.45807545101",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(2)V(2)V(2)V(1)",
+        "vertices": 6,
+        "merges": 2,
+        "minus_ln_r_q0": "1.0797066791193",
+        "classical_ln2_merges": "1.38629436111989",
+        "B_q0_MeV": "4.56444201494",
+        "B_classical_MeV": "5.86053633764"
+      },
+      {
+        "word": "V(2)V(2)V(2)V(2)V(2)V(2)",
+        "vertices": 6,
+        "merges": 0,
+        "minus_ln_r_q0": "0.00590224038351759",
+        "classical_ln2_merges": "0.0",
+        "B_q0_MeV": "0.0249516229822",
+        "B_classical_MeV": "0.0"
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
