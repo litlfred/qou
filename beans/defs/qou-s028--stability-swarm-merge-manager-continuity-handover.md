@@ -7,8 +7,44 @@ priority: high
 tags:
     - stability
 created_at: 2026-11-24T08:06:16Z
-updated_at: 2026-11-27T14:28:28Z
+updated_at: 2026-11-27T23:36:14Z
 parent: qou-5vkl
+blocked_by:
+    - qou-10v9
+    - qou-rtxm
+    - b9cj
+    - qou-0uga
+    - qou-hksc
+    - qou-lpep
+    - qou-vo9t
+    - qou-yvgk
+    - qou-dke6
+    - qou-wsha
+    - qou-n4r9
+    - qou-kdh5
+    - qou-trd0
+    - qou-ziag
+    - qou-q1tk
+    - qou-cfwx
+    - qou-eggf
+    - qou-v6so
+    - qou-4f8t
+    - qou-4un2
+    - qou-qs0e
+    - qou-5bkr
+    - qou-w3dm
+    - qou-efxy
+    - qou-35a8
+    - qou-mm2j
+    - qou-u81q
+    - qou-e9pp
+    - qou-sogb
+    - qou-37kk
+    - qou-t3nx
+    - qou-7vh1
+    - qou-za1a
+    - qou-agvb
+    - qou-bes8
 ---
 
 ## 0. Swarm Work-Item Contract — `'Stability'` Epic Swarm (`qou-s028`)
@@ -125,3 +161,17 @@ If the prior coordinator has stalled (`last Heartbeat Refresh` > 20 min old and 
 5. **Coordinate Q3 Option 1 Landing + Open-PR Fixups:** As soon as `claude/q3-lean-reservoir-libs-*` passes sweeps and merges onto `main`, run `python3 scripts/apply-lean-reservoir-migration.py --fixup-branch` on each remaining open Lean PR branch before rebasing/merging it.
 
 2026-11-27 (thread 'Get QOU site running on harness'): owner asked that stability, eightfold+SM and accuracy show on the work-plan milestones dashboard (milestone-rollup.ts rolls up milestones only). Parented to milestone qou-5vkl (Platform, tooling and hygiene); it had no parent, so it was an orphan off the dashboard.
+
+
+## Linked workstreams (2026-11-27T23:40Z, Carl: "Make sure all the things that we're working on are linked under the stability epic. So if we restart the stability epic these all restart")
+
+Every open bean touched on 2026-11-27 (262 beans; 6 were already children of this epic) is now reachable from qou-s028. Its workstream root is recorded in `blocked_by` on this epic. Roots that are milestones or other epics cannot be made children of an epic, so the link is a blocked-by edge. Existing parents are unchanged.
+
+**To restart:** walk qou-s028's `blocked_by` list, then each root's children.
+
+Roots (number of beans active today under each):
+qou-10v9 (140, L2 1 ppQ program, includes qou-myts), qou-rtxm (28, Lean foundations; includes qou-dk7p, qou-3fdg, qou-e1uf and hkmt), b9cj (18, open conjectures), qou-0uga (14, SM/eightfold; includes qou-x08k), qou-hksc (9), qou-lpep (9, exposition), qou-vo9t (7, Bring/Yekutieli gerbes), qou-yvgk (4, knot volume).
+
+Single-bean roots: qou-dke6, qou-wsha, qou-n4r9, qou-kdh5, qou-trd0, qou-ziag, qou-q1tk, qou-cfwx, qou-eggf, qou-v6so, qou-4f8t, qou-4un2, qou-qs0e, qou-5bkr, qou-w3dm, qou-efxy, qou-35a8, qou-mm2j, qou-u81q, qou-e9pp, qou-sogb, qou-37kk, qou-t3nx, qou-7vh1, qou-za1a, qou-agvb, qou-bes8.
+
+Named in the request and covered through these roots: qou-jmgu, qou-swk4, qou-kdh5, qou-3fdg, qou-h0zz, qou-qvpl, qou-e1uf, qou-brng, qou-pvu4, qou-m45w, qou-ku91, qou-efxy, hkmt, qou-qexu, qou-0xk8, qou-h315, qou-sv7h, qou-za1a.
