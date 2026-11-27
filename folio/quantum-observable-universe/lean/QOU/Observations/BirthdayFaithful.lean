@@ -49,7 +49,7 @@
   -- Ref: [conway1976] Ch. 0
   -- Ref: [gonshor1986]
 -/
-import QOU.Observations.HyperrealLimitTransfer
+import QOU.Transcendental.HyperrealLimitTransfer
 
 namespace QOU.AppendixSurreals
 

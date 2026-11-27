@@ -4,6 +4,12 @@
 
   Bean `qou-hypr`.  Reads on from bean `qou-thmb`.
 
+  **Transcendental subgraph (moved 2026-11-27, bean `qou-134z`).** This module
+  is the analytic half of the surreal limit transfer: the ultrapower `ℝ*` and
+  `Filter.Tendsto`. It lives behind the boundary `QOU/Transcendental/`. The
+  limit theorems the corpus needs (uniqueness, comparison, squeeze) no longer
+  depend on it: they are order algebra on located cuts in `QOU.Core.CutLimit`.
+
   ═══ WHAT BEAN `hypr` CLAIMED, AND WHY IT WAS WRONG ═══
 
   Bean `hypr` argued that `SurrealField ℝ*` "looks close to free" because
