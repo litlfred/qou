@@ -107,6 +107,14 @@ Step A has landed (#9643). Step B starts with the part that does not depend on `
   `c ∈ k`, `c ^ N = 0`): the algebra map `U4 N → A^{⊗4}`, `tᵢⱼ ↦ c tᵢⱼ`, built through
   `UniversalDK.lift`. With `k = ℚ[h]/(h^N)` and `c = h`, this is the truncated h-adic evaluation.
 
-What is left is to apply `evalU4` to the stage-5 rational associator and transport its pentagon
-and hexagon. Before that, `R = exp(h t / 2)` truncated at `h^N` must be checked against the
-hexagon `(Δ ⊗ id)(R) = Φ₃₁₂ R₁₃ Φ₁₃₂⁻¹ R₂₃ Φ`.
+`QOU/BraidsAndKnots/HAdicDrinfeld/Hexagon.lean` plugs in the stage-5 associator (#9807, #9810):
+
+- `CasimirData.realize3`: the realisation `U4 N → A^{⊗3}`, `t₁₂, t₁₃, t₂₃ ↦ c t₁₂, c t₁₃, c t₂₃`,
+  `tᵢ₄ ↦ 0`. `QuasiYBE.lean` recorded that no such realisation was available; this is it.
+- `CasimirData.rMatrix`: `R = E(c t)`. For `E = exp(X/2)` this is `exp(h t / 2)` modulo `h^N`.
+- `CasimirData.hexagon`: for every rational associator `Φ` in `U4 N`,
+  `(Δ ⊗ id)(R) = Φ₃₁₂ R₁₃ Φ₁₃₂⁻¹ R₂₃ Φ₁₂₃`, with the associators realised by `realize3`.
+- `CasimirData.quasiYBE`: the quasi-Yang–Baxter equation, from `quasiYBE_of_hexagon`.
+
+Still open: the pentagon transported to `A^{⊗4}` through `CasimirData.evalU4`. It needs the four-strand
+coproduct identities `(Δ ⊗ id ⊗ id)`, `(id ⊗ Δ ⊗ id)` and `(id ⊗ id ⊗ Δ)` on `Φ`.

@@ -264,6 +264,7 @@ import MathlibExt.LaurentTwoValuation
 import QOU.Observations.collatz_vtwo_cycle_descent
 import QOU.BraidsAndKnots.HAdicDrinfeld.CasimirData
 import QOU.BraidsAndKnots.HAdicDrinfeld.FourStrand
+import QOU.BraidsAndKnots.HAdicDrinfeld.Hexagon
 import QOU.BraidsAndKnots.HeckeAlgebra
 -- `WedderburnConstruction` builds the block-diagonal embedding that
 -- `QOU/HeckeAlgebra/Wedderburn.lean` had left `opaque`.  On the natural index
