@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - compute-accuracy
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-11-27T14:18:46Z
+updated_at: 2026-11-27T17:40:00Z
 parent: qou-v2om
 ---
 
@@ -1046,3 +1046,17 @@ Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-fi
 ## 2026-11-23 — main sync (binding-leftovers thread)
 Main at 7836e3c2290. New: `computations/probes/light_nuclei_a2_a3/hecke_flint.py`, an exact Hecke engine over ℤ/ℚ[h, z]. Measured by its own probes (not re-run here): A = 3 bond-structure in about 1 s with z free; ⁴He all-pairs exact in about 25 min on 4 cores. That is the A ≥ 3 cost this bean said was unmeasured (deuteron row 817 s on the old producer, A = 3 never finished).
 What remains: the production binding producer still uses the old H_{3A} block sum and is not wired to flint. So this bean is SIMPLIFIED, not done: the job is now wiring flint into the producer and re-measuring, not designing a scalable path. The words are now the ruled γγ chain (#9053), so #7876 no longer blocks it.
+
+## 2026-11-27 — A = 2..4 end-to-end timing measured (thread "Measure tritium binding timing", PR #9483)
+The A = 3 row that died on a reboot on 2026-09-12 now exists. Main @ 22b1f41, `pyhecke_native` 0.9.0 built in-container, kernel asserted, `COMPUTE_DPS` 70, defaults `k_exact = k_max = 11`, one fresh process per isotope (`binding_scaling_endtoend_probe.py --iso X --out FILE`):
+
+| isotope | A | wall (s) | boot |
+|---|---|---|---|
+| 2H | 2 | 49.652 | 2810f9a9 |
+| 3H | 3 | 82.396 | 2810f9a9 |
+| 3He | 3 | 75.020 | 93c6c22a |
+| 4He | 4 | 112.754 | 93c6c22a |
+
+The container rebooted between 3H and 3He. Each row is one uninterrupted process, so every row is complete. 2H is 16.5x faster than the 816.811 s row of 2026-09-12. The likely cause is the 2026-11-21 LP-kernel speedup (`ffbcef8388`, 10-12x, byte-identical) plus the 2026-10-13 memoisation (`157032dffa`). The split between those and the container was NOT measured, so the September and November rows are not one scaling series.
+
+Timing only. The `value` field is not a binding number (2026-11-15 γγ ruling). Four points at A ≤ 4 do not settle the title claim, which is about large A, so the bean stays open. Raw checkpoint lines: `/mnt/project-files/qns-gaps-2026-11-27/sv7h-run/checkpoint.jsonl` (project folder).
