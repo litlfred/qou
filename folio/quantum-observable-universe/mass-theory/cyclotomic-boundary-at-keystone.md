@@ -77,7 +77,7 @@ bearing on the arithmetic mechanism is unproven.
 **Status — three tiers of correlation, not to be conflated.**
 
 1. *Arithmetic* (the substance): $D(n)$ is non-cyclotomic from $n=6$. This is
-   **proved for $6 \le n \le 20$** (finite Lean certificates) and for the families $n = T_j \pm 1$ but **not for all $n \geq 6$**; the
+   **proved for $6 \le n \le 20$** (finite Lean certificates) and for every triangular $n$ and the families $n = T_j \pm 1$, but **not for all $n \geq 6$**; the
    cofactor's non-$q$-holonomic degree growth is the structural reason, not
    yet a proof. Generic high-degree bar-even integer polynomials are
    non-cyclotomic, so non-cyclotomicity is the *expected* outcome — the
@@ -140,11 +140,44 @@ This agrees with the exact $P_n$ for $9 \le n \le 24$.
   **$D(n)$ is not cyclotomic.** (The exception $j = 5$ is $n = 16$, covered by the finite
   certificate.)
 
-Together with the finite certificates this settles $6 \le n \le 20$, and every
-$n \in \{T_j + 1, T_{j+1} - 1\}$ with $j \ge 4$. For other non-triangular $n$ the
-second coefficient can be divisible by the leading one (at $n = 16$ and $n = 18$), so a deeper
-coefficient is needed. At triangular $n$ ($6, 10, 15, 21, \dots$) the leading coefficient is
-$1$ and this test gives nothing.
+*The power-sum test.* If $P = c\,q^k\prod\Phi_{k_i}$ has degree $d$, then over $\mathbb C$
+every root of $P$ is $0$ or a root of unity. Writing $a_1, a_2$ for the coefficients of
+$q^{d-1}, q^{d-2}$, Vieta gives $a_1^2 - 2c\,a_2 = c^2\sum_z z^2$, so
+$$\bigl|a_1^2 - 2c\,a_2\bigr| \le c^2 d .$$
+This is sharper than divisibility when $c = 1$.
 
-*Open:* non-cyclotomicity for **every** $n \ge 6$: all triangular $n$, and the non-triangular
-$n$ outside the two families above $n = 20$.
+*Third coefficient at triangular $n$.* Let $n = T_{j+1}$ with $j \ge 3$. The minimiser of
+$\sum(i+j)$ is the staircase $\delta_{j+1}$ alone, so $c = 1$, and $a_1 = j(j+1)$ (the formula
+for $N_1$ at $r = j+1$). The top degrees of $S(n-1)$ and $[n-1]_qS(n-2)$ lie $T_j$ and
+$j(j-1)/2$ below the top, both $\ge 3$, so only $S(n)$ reaches $a_2$. Two kinds of term reach
+it. The staircase itself contributes the second coefficient of $g_{\delta_{j+1}}$, which is
+(corners $- 1$) $= j$. The shapes with $\sum(i+j)$ two above the minimum each contribute $1$.
+A shape that removes a cell from antidiagonal $j-1$ must also remove its two neighbours on
+antidiagonal $j$, which costs at least $4$. So these shapes remove two corners from antidiagonal
+$j$ and add two cells on antidiagonal $j+1$ that do not rest on a removed corner. Two adjacent
+corners block $3$ of the $j+2$ positions, and two non-adjacent corners block $4$. Hence
+$$a_2 = j + j\binom{j-1}{2} + \Bigl(\binom{j+1}{2} - j\Bigr)\binom{j-2}{2}
+      = j + \frac{j(j-1)^2(j-2)}{4}.$$
+The degree is $d = 2\bigl(\binom n2 - \sum_{k \le j} k(k+1)\bigr) = j(j+1)(j+2)(3j+1)/12$.
+Therefore
+$$a_1^2 - 2a_2 - d = \frac{j(j-1)(3j^2 + 41j + 14)}{12} > 0 ,$$
+and the power-sum test fails. **For every triangular $n \ge 10$, $D(n)$ is not cyclotomic.**
+The formulas for $c, a_1, a_2, d$ agree with the exact $P_n$ for $n = 10, 15, 21, 28$, and with
+the near-staircase partition count for every triangular $n \le 91$.
+
+*Lean.* `QOU.Mass.CyclotomicPowerSum` proves both tests for every cyclotomic product
+(`leadingCoeff_dvd_coeff`, `abs_powerSum_two_le`), sorry-free. It also proves the arithmetic
+of the three families for every $j$, taking the top coefficients of $P_n$ as hypotheses
+(`not_isCycloProduct_triangular_of_topCoeffs`, `…_rEqJ_of_topCoeffs`, `…_rEqOne_of_topCoeffs`).
+The partition count that supplies those coefficients for every $n$ is proved above on paper and
+is not yet formalised.
+
+Together with the finite certificates this settles $6 \le n \le 20$, every triangular $n$, and
+every $n \in \{T_j + 1, T_{j+1} - 1\}$ with $j \ge 4$. For the other $n$ the two tests
+together settle every $n \le 90$
+(`computations/cyclotomic_boundary_power_sum.py`): at each such $n$ either $c \nmid a_1$ or
+$(a_1^2 - 2c\,a_2)/c^2$ is not an integer (for example $n = 16, 18, 76$). No uniform argument for
+general $r$ is known.
+
+*Open:* non-cyclotomicity for **every** $n \ge 6$. What remains is the non-triangular $n$
+outside the two families, for $n > 90$.
