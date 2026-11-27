@@ -9,7 +9,7 @@ tags:
     - bring-foundations
     - lean
 created_at: 2026-11-18T19:26:09Z
-updated_at: 2026-11-27T22:05:45Z
+updated_at: 2026-11-27T22:16:42Z
 parent: qou-6qbv
 ---
 
@@ -152,3 +152,7 @@ PR #9726 adds `chi_le_neg_six_of_A5_map`, which uses the same map interface (`ex
  Split-out beans: , .
 
  (Beans: qou-gu23, qou-0nr6.)
+
+
+
+2026-11-27: owner ruling (map-first, docs/coordination/owner-rulings.md). The chain is restated on the finite Bring map: QOU/BringsSurface/BringMapChain.lean proves chi = 30 - 60 + 24 = -6 by counting cosets, plus connectedness, free S5 action on darts (cyclic stabilisers), free A5 action on edges, and agreement with BringRegularMap and HeckeMapFaceSize.bring_VEF (dual convention). Content block lem:bring-map-euler-characteristic. Radó/monodromy (qou-0nr6, qou-gu23) are now backup. Still open: why QOU selects this map (no axiom gives the extremality yet), and A5 is not free on faces of this map.

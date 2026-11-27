@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-15T06:16:39Z
-updated_at: 2026-11-23T17:32:53Z
+updated_at: 2026-11-27T22:16:42Z
 parent: qou-6qbv
 ---
 
@@ -574,3 +574,7 @@ Source: `quantum-observable-universes/qou-axioms-physical-reading.md`. Checked e
 - Measurability (c₁ = c₂ = 0 of the adjoint bundle): a vanishing condition on Ad, not on TΣ (c₁(TΣ₄) = χ = −6 ≠ 0), so it neither selects nor forbids a genus.
 - Categorical volume constraint: fixes a *unit* of volume (SL(2) not GL(2)). Closest in register: under Gauss–Bonnet the area of X/A₅ is 2π·|χ_orb|, and (0;2,5,5) gives the smallest such area (2π/10) with A₅ periods, a Siegel-type minimum. But the axiom fixes a unit, it does not say the area is minimal. Reading it as "minimal" would be choosing the reading because it gives 6, which is fitting.
 Verdict: no axiom supplies the principle on this reading. PR #9726 stays a side theorem; the chain text is unchanged.
+
+
+
+2026-11-27: owner ruling (map-first, docs/coordination/owner-rulings.md). The chain is restated on the finite Bring map: QOU/BringsSurface/BringMapChain.lean proves chi = 30 - 60 + 24 = -6 by counting cosets, plus connectedness, free S5 action on darts (cyclic stabilisers), free A5 action on edges, and agreement with BringRegularMap and HeckeMapFaceSize.bring_VEF (dual convention). Content block lem:bring-map-euler-characteristic. Radó/monodromy (qou-0nr6, qou-gu23) are now backup. Still open: why QOU selects this map (no axiom gives the extremality yet), and A5 is not free on faces of this map.

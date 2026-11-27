@@ -10,7 +10,7 @@ tags:
     - lean
     - mathlib-gap
 created_at: 2026-11-21T07:30:00Z
-updated_at: 2026-11-27T22:05:44Z
+updated_at: 2026-11-27T22:16:42Z
 parent: qou-6qbv
 ---
 
@@ -50,3 +50,7 @@ Correction to the entry above: the two split-out beans are  (monodromy as voltag
 
 
 Correction: the split-out beans are qou-gu23 (monodromy as voltages) and qou-0nr6 (Radó plus combinatorial chi = analytic chi).
+
+
+
+2026-11-27: owner ruling (map-first, docs/coordination/owner-rulings.md). The chain is restated on the finite Bring map: QOU/BringsSurface/BringMapChain.lean proves chi = 30 - 60 + 24 = -6 by counting cosets, plus connectedness, free S5 action on darts (cyclic stabilisers), free A5 action on edges, and agreement with BringRegularMap and HeckeMapFaceSize.bring_VEF (dual convention). Content block lem:bring-map-euler-characteristic. Radó/monodromy (qou-0nr6, qou-gu23) are now backup. Still open: why QOU selects this map (no axiom gives the extremality yet), and A5 is not free on faces of this map.
