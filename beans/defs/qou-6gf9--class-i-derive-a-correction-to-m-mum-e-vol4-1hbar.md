@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - compute-accuracy
 created_at: 2026-08-08T09:31:00Z
-updated_at: 2026-11-27T14:53:15Z
+updated_at: 2026-11-27T15:00:00Z
 parent: qou-2002
 ---
 
@@ -366,3 +366,7 @@ PR #9213 opened on claude/w6-joint-lepton-resolvent-20261123 (01ca9a6e9a9; Murak
 
 ## 2026-11-27 option 2: Borel resummation (PR #9459)
 The Ohtsuki series equals the q->1 expansion of (A/2-1)/(q(1-q)), where A is the LZ false theta (exact through order 11). The closed-form Borel transform has singularities at pi^2 j^2/30, j^2 = 1, 49 mod 120. At q0>1 the series is Borel summable with no ambiguity, I_B(q0)=0.6152261147. Sectors at q0: e^-c1=4.27e-2 (j=1) and 8.0e-68 (j=7), c1=3.153. Comparison only: t_res=2.11e-7 sits in this gap, so no single resummed quantity carries it (scope a). e^-5c1=1.42e-7 is not a sector (5 is not a square), so using it would be selection. Lean: PoincareSphereBorelSectors.lean dualSupport_action_gap. Audit: docs/audits/2026-11-27-sigma235-borel-resummation-mu-p.md.
+
+
+
+2026-11-27 (thread "Resolve the mu-p residual", PR #9445, head 9d87721ae0): owner card option 1, derive/refute -(3 alpha/4pi) w^2. Scope (a) NEGATIVE for the Hecke photon-projector insertion class on 4_1 (3-dim rep, SU(2) Markov, normalised by tr_M(4_1)). Exact Q(w): pair <e1>+<e2> = (s^4-6s^2+7)/(s^4-5s^2+5), s=[2]_q (Lean pairCorr_eq, generic field). O(1),O(w),O(w^2): pair (-1,20,-203), S1 (-4,80,-812), D (-11,217,-8811/4), C (-21,617,-41051/4). Radius |w*| = 2-2cos(pi/10) = 0.0979; pin at 0.111 of it. Rank 3, so the w^2 coefficient is NOT forced (Lean w2_coeff_not_forced). Candidate needs 3alpha/4pi = 1.74e-3 vs class min |w^2| coeff 203. Lean sorry-free, axioms clean. Audit docs/audits/2026-11-27-mu-p-projector-insertion-w-order.md. Sibling option 2 (Sigma(2,3,5) Borel, PR #9459) also scope (a). GAP still open: open-worldline non-Markov reduction; nonzero y111.
