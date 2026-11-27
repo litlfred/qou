@@ -427,3 +427,49 @@ induction. No `grt` predicate exists in the repo yet.
 
 **Still open (bean `qou-3fdg`):** (G), (A), (P), the induction, the `grt` predicate and
 `Φ ∘ g ≡ Φ + y`.
+
+## 11. Stage 4: the exponential, `grt`, and the induction in Lean (doubling hypothesis open)
+
+Lean: `RationalAssociator/GRTFlow.lean`, no `sorry`, axioms `propext`, `Classical.choice`,
+`Quot.sound` (checked with `#print axioms` on `grt1U4_expPoly_of_doubling` and
+`coeff_mem_of_doubling`; `lean -DautoImplicit=false -s 65536`, exit 0).
+
+**Proved.**
+
+- `leibD d`: the Leibniz map of `ℚ⟨A,B⟩` with prescribed values on `A, B`, built as the upper-right
+  entry of an algebra map into upper-triangular `2×2` matrices. Leibniz rule, linearity, scaling
+  `leibD (x•d) = x • leibD d`, and `ε ∘ leibD = 0`.
+- `Ly y z = D_y z + z·y` with `D_y(A) = [y,A]`, `D_y(B) = 0`; `expTerm y k = L_y^k(1)/k!`;
+  `expPoly y K = Σ_{k<K} expTerm y k`.
+- `expTerm_smul`: `expTerm (x•y) k = x^k • expTerm y k`, so `Exp(xy) = Σ_k x^k e_k` exactly. With
+  `expTerm_zero = 1`, `expTerm_one = y`, and `ε(Exp(y)) = 1` when `ε(y) = 0`.
+- **(G) is not needed.** `coeff_mem_of_doubling`: in a `ℚ`-module, if
+  `Σ_j (2^j − 2) x^j c_j ∈ F` for every `x ∈ ℚ`, then `c_j ∈ F` for `j ≠ 1` (dual functionals on
+  `M ⧸ F` and a polynomial vanishing on all of `ℚ`). So the induction runs on the filtration
+  `Fil N d` alone, with no grading of `U4 N` and no homogeneity assumption on `y`.
+- `eval_eq_zero_of_doubling`: the induction of §10, for any family of polynomials in `x` over a
+  `ℚ`-algebra with a filtration `F 0 = R ⊇ … ⊇ F N = 0`.
+- `GrtU4 N y`: the `x`-linear parts of the four `GRT1U4 N` conditions, i.e. Drinfeld (5.17),
+  (5.18) and (5.20) at the universal family, and the linearisation of (5.14) in the polynomial
+  form `TCompatPoly`: `y(v,w) v + v y(w,v) = y(u,w)(v+w) + (v+w) y(w,u)` for `DK3` triples. Given
+  (5.17) this is `[y(v,w), v] = [y(u,w), v+w]`; matching it to Drinfeld's (5.19) literally is a
+  paper step, not formalised (Prop. 5.7 makes (5.19) redundant anyway).
+- `defectPoly y K i`: the defect of each condition instance for `Exp(xy)` as a polynomial in `x`
+  over `U4 N`; `coeff_one_defectPoly`: its `x`-linear coefficient is the `GrtU4` expression, so it
+  vanishes for `y ∈ grt` (step 3 of §10).
+- `grt1U4_expPoly_of_doubling` (**conditional**): `GrtU4 N y`, `K ≥ 2` and the doubling
+  hypothesis `hdouble` give `GRT1U4 N (expPoly (x•y) K)` for every `x ∈ ℚ`. `hdouble` says: if
+  every defect of `Exp(xy)` lies in `Fil N d` for all `x`, then
+  `δ(Exp(2xy)) − 2 δ(Exp(xy)) ∈ Fil N (d+1)`. It is a named argument, not an axiom.
+
+**Still open (bean `qou-3fdg`).** The doubling hypothesis, which is (P) and (A) of §10 together:
+
+- **(P)** `Exp(2xy) = Exp(xy) ∘ Exp(xy)` in `U4 N`. Trap: `compPoly` writes the inverse through
+  (5.12), so (P) in `compPoly` form already presupposes (5.12) for `Exp(xy)`. State (P) with the
+  genuine inverse (`actEval` with a unit), or show `compPoly` and the unit form differ only in
+  `Fil N (d+1)` when the (5.12) defect is in `Fil N d` (true: the error is multiplied by a `t`).
+  The coefficient recursion of §10 needs `d/dx' (G ∘ Exp(x'y))|₀ = L_y(G)` as a polynomial identity,
+  i.e. a chain rule for substituting `G A G⁻¹` into `G`. Not attempted.
+- **(A)** top-defect additivity: error-carrying copies of `comp_inv512`, `comp_tcompat`,
+  `pentagon_act_U4` and `hexagon_act_U4_universal`. Not attempted; it is the bulk.
+- The congruence `Φ ∘ g ≡ Φ + y` (§9.2) is still not in Lean.
