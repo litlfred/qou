@@ -23,7 +23,7 @@ positives, which is the strongest form the claim admits.
 
 ## Transport to binding energy
 
-The binding of a channel is $B_T = -\alpha \log \mu_T$ with $\alpha > 0$ the energy
+The scalar $\mu_T$ is an element of $\mathbb{Q}(q)$; the binding of a channel is its comparison reading $B_T = -\alpha \log \mu_T$, taken after evaluation at a real $q$ ([mass identity](#def:mass-identity), comparison paragraph), with $\alpha > 0$ the energy
 scale. Since $\log$ is strictly increasing on the positive reals and $\mu_- > 0$, the
 inequality $\mu_- < \mu_+$ gives $\log \mu_- < \log \mu_+$, and multiplying by
 $-\alpha$ reverses it:

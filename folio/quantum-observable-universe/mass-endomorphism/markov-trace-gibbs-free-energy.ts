@@ -12,7 +12,7 @@ export default remark({
     "information",
     "channel-entropy",
   ],
-  uses: ["prop:categorical-mass-markov"],
+  uses: ["prop:categorical-mass-markov", "def:mass-identity"],
   cites: ["jones1987", "orellana1998"],
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): `QOU.Mass.FreeEnergyReadingIsSigned`;\n`the_free_energy_reading_has_no_energy_spectrum_probe.py`. The identification" },

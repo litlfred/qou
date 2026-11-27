@@ -26,6 +26,9 @@ $$
     \;=\; \sum_{\text{interfaces}} -\log \mathbb{E}_w[\lambda + d_i],
 $$
 
+*The ring quantity is the product $\prod_i (z + d_i) \in \mathbb{Q}(q)$; $L$ is its
+comparison reading, the logarithm taken after evaluation
+([mass identity](#def:mass-identity), comparison paragraph). Read that way, $L$ is*
 ***a free-energy difference in the standard sense*** *— dimensionless, in units
 of $kT$, per-interface additive, and positive because every factor $z + d$ lies
 in $(0,1)$ at $q_0$.*
