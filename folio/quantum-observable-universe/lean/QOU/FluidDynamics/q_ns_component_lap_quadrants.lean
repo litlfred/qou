@@ -506,4 +506,55 @@ theorem coeff_compPolyAG_ne_zero (hp : ∀ n : ℕ, ((q : K) * q) ^ (n + 1) ≠ 
 
 end ComponentAG
 
+/-! ## The component `δ^a β^m K[ζ]` -/
+
+section ComponentDB
+
+open Polynomial
+
+variable {K : Type*} [Field K] (q : Kˣ)
+
+local notation "qi" => (((q⁻¹ : Kˣ) : K))
+
+/-- `L` on `δ^a β^m K[ζ]`, transported to `K[X]`. -/
+noncomputable def LcDB (a m : ℕ) : K[X] →ₗ[K] K[X] := bidiag (cdiag q 0 (a + m)) (csub q m)
+
+/-- **`L` preserves the component.** `L(δ^a β^m Q(ζ)) = δ^a β^m (LcDB a m Q)(ζ)`. -/
+theorem lap_db_ev (a m : ℕ) (Q : K[X]) :
+    lap q (δ (R := K) q ^ a * β q ^ m * ev q Q) = δ q ^ a * β q ^ m * ev q (LcDB q a m Q) := by
+  refine bidiag_transport (lap q) (ev q) _ _ _ ?_ ?_ Q
+  · rw [ev_X_pow, pow_zero, mul_one, lap_delta_beta, cdiag]
+    simp
+  · intro k
+    rw [ev_X_pow, ev_X_pow, lap_db_zeta_pow, csub, cdiag,
+      show 0 + (k + 1) = k + 1 by omega, show a + m + (k + 1) + 1 = a + m + k + 2 by omega]
+
+/-- `LcDB a m` is lower triangular with diagonal `cdiag 0 (a+m)`. -/
+theorem LcDB_tri (a m n : ℕ) : LcDB q a m (X ^ n) - cdiag q 0 (a + m) n • X ^ n ∈ degreeLT K n :=
+  bidiag_tri _ _ n
+
+/-- `p^{(a,m),δβ}_n`: the degree-`n` eigenpolynomial of `L` on `δ^a β^m K[ζ]`. -/
+noncomputable def compPolyDB (a m n : ℕ) : K[X] := triPoly (LcDB q a m) (cdiag q 0 (a + m)) n
+
+/-- **Eigen-equation on the component.**
+`L(δ^a β^m p_n(ζ)) = [n]_{q⁻²} [a+m+n+1]_{q²} · δ^a β^m p_n(ζ)`. -/
+theorem lap_compPolyDB (a m n : ℕ) :
+    lap q (δ (R := K) q ^ a * β q ^ m * ev q (compPolyDB q a m n)) =
+      cdiag q 0 (a + m) n • (δ q ^ a * β q ^ m * ev q (compPolyDB q a m n)) := by
+  rw [lap_db_ev, compPolyDB, tri_triPoly _ _ (LcDB_tri q a m), map_smul, mul_smul_comm]
+
+theorem compPolyDB_mem (a m n : ℕ) : compPolyDB q a m n ∈ degreeLT K (n + 1) :=
+  triPoly_mem _ _ (LcDB_tri q a m) n
+
+/-- **The eigenpolynomials span `K[X]`.** -/
+theorem compPolyDB_span (hp : ∀ n : ℕ, ((q : K) * q) ^ (n + 1) ≠ 1) (a m : ℕ) :
+    Submodule.span K (Set.range (compPolyDB q a m)) = ⊤ :=
+  triPoly_span _ _ (LcDB_tri q a m) (cdiag_injective q hp 0 (a + m))
+
+theorem coeff_compPolyDB_ne_zero (hp : ∀ n : ℕ, ((q : K) * q) ^ (n + 1) ≠ 1) (a m n : ℕ) :
+    (compPolyDB q a m n).coeff n ≠ 0 :=
+  coeff_triPoly_ne_zero _ _ (LcDB_tri q a m) (cdiag_injective q hp 0 (a + m)) n
+
+end ComponentDB
+
 end QOU.FluidDynamics.ComponentLap
