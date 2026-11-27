@@ -81,6 +81,14 @@ lean_subkgs() {
   done
 }
 
+pages_pdf() {  # pages_pdf <slug> <dest>: the paper PDF paper-pdf.yml published on GitHub Pages
+  local repo owner name
+  repo=$(git config --get remote.origin.url | sed -E 's#^.*github\.com[:/]##; s#\.git$##')
+  owner=${repo%%/*}; name=${repo#*/}
+  [ -n "$owner" ] && [ -n "$name" ] || return 1
+  curl -fsSL --max-time 300 -o "$2" "https://$owner.github.io/$name/papers/$1/$1.pdf" 2>/dev/null \
+    && head -c 5 "$2" | grep -q '%PDF-' || { rm -f "$2"; return 1; }
+}
 papers() {  # every document the site builds: folio/<slug>/<slug>.ts
   for d in folio/*/; do s=$(basename "$d"); [ -f "folio/$s/$s.ts" ] && echo "$s"; done
 }
@@ -104,21 +112,39 @@ export)
   for s in $(papers); do
     out="$DIR/en/$s/export"; mkdir -p "$out"
     pdf="$s-public-comment-latest.pdf"; docx="$s-public-comment-latest.docx"
-    if [ ! -f "$PDFDIR/$s.pdf" ]; then
+    # A missing export is a QA finding, never a refused publish (owner ruling
+    # 2026-11-27: the only pre-publish red gate is the KG JSON-LD check). The
+    # site runner has no LaTeX, so the PDF comes from, in order: an earlier
+    # build in $PDFDIR, a local LaTeX build when latexmk exists, or the copy
+    # paper-pdf.yml published on GitHub Pages (papers/<slug>/<slug>.pdf).
+    mkdir -p "$PDFDIR"
+    if [ ! -f "$PDFDIR/$s.pdf" ] && command -v latexmk >/dev/null 2>&1; then
       echo "== site-step export: LaTeX PDF for $s"
-      bash scripts/build-paper-pdf.sh --paper "$s" --out-dir "$PDFDIR/$s" >"$PDFDIR.$s.log" 2>&1 \
-        || { echo "site-step export: build-paper-pdf.sh --paper $s failed; see $PDFDIR.$s.log" >&2; exit 1; }
-      cp "$PDFDIR/$s/main.pdf" "$PDFDIR/$s.pdf"
+      if bash scripts/build-paper-pdf.sh --paper "$s" --out-dir "$PDFDIR/$s" >"$PDFDIR.$s.log" 2>&1; then
+        cp "$PDFDIR/$s/main.pdf" "$PDFDIR/$s.pdf"
+      else
+        echo "::warning::site-step export: build-paper-pdf.sh --paper $s failed; see $PDFDIR.$s.log"
+      fi
     fi
-    cp "$PDFDIR/$s.pdf" "$out/$pdf"
+    if [ ! -f "$PDFDIR/$s.pdf" ] && pages_pdf "$s" "$PDFDIR/$s.pdf"; then
+      echo "== site-step export: PDF for $s from GitHub Pages (papers/$s/$s.pdf)"
+    fi
+    if [ -f "$PDFDIR/$s.pdf" ]; then
+      cp "$PDFDIR/$s.pdf" "$out/$pdf"
+    else
+      echo "::warning::site-step export: no PDF for $s (no LaTeX here and none on GitHub Pages); the export page lists the Word file only"
+    fi
     echo "== site-step export: Word for $s"
-    bun run "$PLAT/folio-assistant-core/scripts/document-export.ts" docx --document "$s" --repo "$ROOT" \
-      --out "$PDFDIR/docx-$s" --allow-dirty >"$PDFDIR.$s.docx.log" 2>&1 \
-      || { echo "site-step export: document-export docx --document $s failed; see $PDFDIR.$s.docx.log" >&2; exit 1; }
     # The Word file is document-export's editing copy (`docx`; Track Changes on, one
     # bookmark per block). Its `release` review copy needs LibreOffice for its PDF,
     # which this paper does not use (the PDF is LaTeX).
-    cp "$PDFDIR/docx-$s/$s-offline-latest.docx" "$out/$docx"
+    if bun run "$PLAT/folio-assistant-core/scripts/document-export.ts" docx --document "$s" --repo "$ROOT" \
+      --out "$PDFDIR/docx-$s" --allow-dirty >"$PDFDIR.$s.docx.log" 2>&1; then
+      cp "$PDFDIR/docx-$s/$s-offline-latest.docx" "$out/$docx"
+    else
+      echo "::warning::site-step export: document-export docx --document $s failed:"
+      tail -n 5 "$PDFDIR.$s.docx.log" | sed 's/^/  /'
+    fi
     python3 -I scripts/site-extras.py --export-index "$out" --paper "$s"
   done
   ;;
