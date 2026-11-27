@@ -112,7 +112,10 @@ vanishing `O(1)` and `O(w)` with a nonzero `w²`.
 This bars a derivation through this class. It is not a structural exclusion (b) of a `w²`
 dressing from every construction. The candidate stays an unwired working assumption.
 
-Still open: the open-worldline (non-closed, non-Markov) reduction, which is the sibling route.
+The sibling open-worldline route (PR #9492) closed in scope (a) the same day: with unknot
+normalisation the radius grows to 2, but the `w²` coefficient is still unforced. With both
+routes #9445 left open now run, the projector-insertion programme gives no derivation of the
+candidate.
 
 ## Corpus-grep note
 
