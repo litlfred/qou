@@ -45,6 +45,8 @@ import sympy as sp
 
 REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO / "tools" / "qou-substrate" / "python"))
+sys.path.insert(0, str(REPO / "computations"))
+import _path_bridge  # noqa: E402,F401
 
 q = sp.symbols("q", positive=True)
 h = q - 1 / q
@@ -260,6 +262,9 @@ def main():
         "assertions": checks,
     }
     out["allPassed"] = all(c["passed"] for c in checks)
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(out, script_path=__file__,
+                                            engine="sympy")
     print(json.dumps(out, indent=2))
     dest = REPO / "computations" / "intro-worked-miniature-h3.witness.json"
     dest.write_text(json.dumps(out, indent=2) + "\n")
