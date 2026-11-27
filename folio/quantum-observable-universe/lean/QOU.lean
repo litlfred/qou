@@ -1991,6 +1991,7 @@ import QOU.StandardModel.InfinitesimalPureBraid
 import QOU.StandardModel.AnomalyFreeHyperchargeUniqueness
 import QOU.StandardModel.HopfFramingAndHirzebruchDefect
 import QOU.StandardModel.DrinfeldKohnoAlgebra
+import QOU.StandardModel.OddExteriorAnomalyFreedom
 import QOU.StandardModel.BringKummerCarrierVacuity
 import QOU.Confinement.HopfElectronTwoTermMass
 import QOU.Nuclear.LeptonTwoTermStokesCovariance
