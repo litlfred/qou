@@ -1,0 +1,10 @@
+---
+# qou-za1a
+title: 'Triage the 19 ''superseded'' conjectures: 1 refuted (cpt-d6-d7-d8-closure), 4 carry a misplaced rho_q banner, 4 partial, 10 false positives'
+status: todo
+type: task
+created_at: 2026-11-27T21:30:49Z
+updated_at: 2026-11-27T21:30:49Z
+---
+
+Survey 2026-11-27 flagged 19 conjectures as superseded by keyword. Read each: only conj:cpt-d6-d7-d8-closure is refuted in its own text (Lean cpt_not_trace_preserving; replacement qcpt_law, no content block yet). The '> **Superseded.** The scalar aether density rho_q ...' banner is stamped on 10 blocks, including conj:kashaev-volume-conjecture whose statement has no rho_q; the banner is about prose, not the claim. Full table: project file quick-wins-2026-11-27/superseded-conjectures-triage.md. Retirement uses authorNotes kind 'deprecated' + jsonld regen. Owner decision card posted 2026-11-27.
