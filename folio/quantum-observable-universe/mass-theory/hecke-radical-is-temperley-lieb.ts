@@ -6,7 +6,7 @@ export default remark({
     "The radical is the Temperley--Lieb ideal: $\\sum \\dim^{2}$ over the surviving blocks is $C_n$",
   interprets: "prop:convention-d-kills-antisymmetriser",
   lean: {
-    ref: "qou:HeckeTemperleyLieb.TemperleyLiebTower.catalan_five",
+    ref: "qou:BraidKnotOctonion.TLKernelEquality.mem_tlKernelPulled_iff",
     validation: "not_checked",
   },
   uses: ["prop:convention-d-kills-antisymmetriser"],
