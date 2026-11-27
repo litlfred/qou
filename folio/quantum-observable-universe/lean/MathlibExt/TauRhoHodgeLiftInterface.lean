@@ -27,8 +27,9 @@ and DERIVES its consequences as genuine conditional theorems:
   conjugate pair, and the selected channel carries exactly half the doubled
   total (the ½ of the per-loop measure, derived — not assumed — from the
   class fields).
-* `half_a0_eq_inv_8pi` / `gauss_bonnet_bring_eq_inv_8pi` — the archimedean
-  identities with a genuine `Real.pi`: `½·(1/(4π)) = 1/(8π) = |χ|/(4·Area)`
+* `half_a0_eq_inv_8pi` / `gauss_bonnet_bring_eq_inv_8pi` (moved behind the
+  transcendental boundary, `QOU.Transcendental.MathlibExt.TauRhoHodgePiIdentities`,
+  owner ruling 2026-11-27) — the archimedean identities with a genuine `Real.pi`: `½·(1/(4π)) = 1/(8π) = |χ|/(4·Area)`
   on Bring (`χ = −6`, `Area = 12π`) — the rational shadow of #3982 upgraded
   to π-carrying real-number theorems.
 
@@ -50,7 +51,7 @@ weights.
 -/
 import Mathlib.Data.Matrix.Basic
 import Mathlib.LinearAlgebra.Matrix.Hermitian
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Analysis.Complex.Basic
 
 namespace QOU.Archimedean.TauRhoHodgeLiftInterface
 
@@ -106,22 +107,5 @@ theorem doubled_total [TauRhoHodgeLift g W Wbar] :
   ring
 
 end TauRhoHodgeLift
-
-/-- The measure identity with a genuine π: `½ · a₀ = 1/(8π)`. -/
-theorem half_a0_eq_inv_8pi :
-    (1 / 2 : ℝ) * (1 / (4 * Real.pi)) = 1 / (8 * Real.pi) := by
-  have h := Real.pi_ne_zero
-  field_simp
-  ring
-
-/-- The Gauss–Bonnet placement on Bring (`χ = −6`, `Area = 12π`):
-`|χ| / (4·Area) = 1/(8π)` — the merged GB identity's Bring instance, with the
-π carried honestly. -/
-theorem gauss_bonnet_bring_eq_inv_8pi :
-    |(-6 : ℝ)| / (4 * (12 * Real.pi)) = 1 / (8 * Real.pi) := by
-  have h := Real.pi_ne_zero
-  rw [abs_of_nonpos (by norm_num : (-6 : ℝ) ≤ 0)]
-  field_simp
-  ring
 
 end QOU.Archimedean.TauRhoHodgeLiftInterface
