@@ -43,8 +43,8 @@ counterpart of "the obstruction class is defined" in Yekutieli 2010, Thm 4.17
 * `exists_lift_iff`: `γ` lifts to a 1-**cocycle** of `𝓔` iff the obstruction is
   the coboundary `α_ij α_jk α_ik⁻¹` of some 1-cochain `α` of `𝒜`.
 
-The lifting criterion is **derived**, not carried as a structure field as in
-`QOU.YekutieliLifting`. This is the obstruction-to-lifting-torsors statement:
+The lifting criterion is **derived**, not carried as a structure field (as
+`QOU.YekutieliLifting` once did). This is the obstruction-to-lifting-torsors statement:
 one degree above the TODO recorded in Mathlib's `H1` file (lifting a global
 section, with obstruction in `H¹`). Gerbes proper (T3) and the general theorem
 (T4) remain.
