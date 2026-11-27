@@ -1,4 +1,4 @@
-import QCalculus.ComplexDilogarithmDeriv
+import QOU.Transcendental.QCalculus.ComplexDilogarithmDeriv
 import Mathlib.Analysis.SpecialFunctions.Integrability.Basic
 import Mathlib.Analysis.SpecialFunctions.Integrability.LogMeromorphic
 import QCalculus.ComplexDilogarithmBoundary

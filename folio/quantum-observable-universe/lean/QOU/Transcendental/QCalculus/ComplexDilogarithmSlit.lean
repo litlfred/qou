@@ -1,4 +1,4 @@
-import QCalculus.ComplexDilogarithm
+import QOU.Transcendental.QCalculus.ComplexDilogarithm
 
 /-!
 # `cLiTwoExt` on all of `ℂ ∖ [1,∞)`, and its derivative along rays

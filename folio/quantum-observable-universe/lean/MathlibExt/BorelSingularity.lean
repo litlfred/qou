@@ -23,7 +23,7 @@
   -- Ref: [costin2020] Asymptotics and Borel Summability, Ch. 3
 -/
 
-import MathlibExt.BorelResummation
+import QOU.Transcendental.MathlibExt.BorelResummation
 
 namespace QOU.Mathlib.Borel.BorelSingularity
 

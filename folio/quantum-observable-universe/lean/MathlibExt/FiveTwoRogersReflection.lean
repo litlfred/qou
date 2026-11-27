@@ -1,4 +1,4 @@
-import MathlibExt.DilogReflection
+import QOU.Transcendental.MathlibExt.DilogReflection
 
 /-!
 # Rogers reflection, from the corpus's real `LiTwo`

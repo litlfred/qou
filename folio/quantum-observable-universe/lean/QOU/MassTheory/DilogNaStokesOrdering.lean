@@ -1,4 +1,4 @@
-import MathlibExt.DilogPartBIteratedLimit
+import QOU.Transcendental.MathlibExt.DilogPartBIteratedLimit
 import QOU.MassTheory.DilogPartBEulerTail
 
 /-!

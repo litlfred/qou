@@ -1,5 +1,5 @@
-import MathlibExt.DilogPartBBranchPointSum
-import MathlibExt.DilogReflection
+import QOU.Transcendental.MathlibExt.DilogPartBBranchPointSum
+import QOU.Transcendental.MathlibExt.DilogReflection
 
 /-!
 # Part B of `conj:dilogarithm-archimedean-limit` — the INNER bulk-closure limit (W-P1)

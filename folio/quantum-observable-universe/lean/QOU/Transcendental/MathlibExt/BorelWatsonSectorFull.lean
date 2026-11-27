@@ -27,8 +27,8 @@
   -- Ref: [leitner2026] bean el8w tranche 5 — Watson uniqueness sector wiring
 -/
 
-import MathlibExt.BorelWatsonSectorTransport
-import MathlibExt.BorelWatsonShiftFull
+import QOU.Transcendental.MathlibExt.BorelWatsonSectorTransport
+import QOU.Transcendental.MathlibExt.BorelWatsonShiftFull
 
 namespace QOU.Mathlib.Borel
 

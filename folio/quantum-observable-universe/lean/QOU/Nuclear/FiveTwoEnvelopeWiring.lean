@@ -1,5 +1,5 @@
 import QOU.Nuclear.FiveTwoBranchPinned
-import QCalculus.ComplexDilogarithmDeriv
+import QOU.Transcendental.QCalculus.ComplexDilogarithmDeriv
 
 /-!
 # The envelope, wired: `d/dφ V(x φ, y φ) = ∂V/∂x · x′` along the curve

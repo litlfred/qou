@@ -30,7 +30,7 @@
   -- Ref: [sokal1980] https://doi.org/10.1063/1.524408
 -/
 
-import MathlibExt.BorelResummation
+import QOU.Transcendental.MathlibExt.BorelResummation
 import Mathlib.Analysis.SpecialFunctions.Gamma.Basic
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 

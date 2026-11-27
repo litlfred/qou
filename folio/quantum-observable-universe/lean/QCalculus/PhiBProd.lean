@@ -1,7 +1,7 @@
 import Mathlib.Topology.Algebra.InfiniteSum.NatInt
 import Mathlib.Topology.Algebra.InfiniteSum.Constructions
 import Mathlib.Analysis.SpecialFunctions.Log.Summable
-import QCalculus.FaddeevQuantumDilogarithm
+import QOU.Transcendental.QCalculus.FaddeevQuantumDilogarithm
 
 /-!
 # The modular-double product `phiBProd` — a `FaddeevPhi` inhabitant (Im b² > 0)

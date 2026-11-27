@@ -82,7 +82,7 @@
 
   -- Ref: [zagier1986], [milnor1982], [thurston1978]
 -/
-import MathlibExt.BlochWignerLobachevsky
+import QOU.Transcendental.MathlibExt.BlochWignerLobachevsky
 import Mathlib.Analysis.SpecialFunctions.Complex.Arg
 
 namespace QOU.Knot.Kummer

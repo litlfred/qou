@@ -1,5 +1,5 @@
-import MathlibExt.DilogReflection
-import MathlibExt.DilogPartARiemannSum
+import QOU.Transcendental.MathlibExt.DilogReflection
+import QOU.Transcendental.MathlibExt.DilogPartARiemannSum
 import Mathlib.Analysis.Convex.Slope
 import Mathlib.Analysis.Convex.SpecificFunctions.Basic
 

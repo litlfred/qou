@@ -1,4 +1,4 @@
-import MathlibExt.DilogPartAConvergence
+import QOU.Transcendental.MathlibExt.DilogPartAConvergence
 
 /-!
 # Dilog Part B — B3.3 / B3.4 in their bean-stated forms

@@ -24,9 +24,9 @@
   -- Ref: [leitner2026] bean el8w tranche 5 — Watson uniqueness brick 4b-ii assembly
 -/
 
-import MathlibExt.BorelWatsonUniqueness
+import QOU.Transcendental.MathlibExt.BorelWatsonUniqueness
 import MathlibExt.BorelWatsonBoundary
-import MathlibExt.BorelWatsonShift
+import QOU.Transcendental.MathlibExt.BorelWatsonShift
 
 namespace QOU.Mathlib.Borel
 

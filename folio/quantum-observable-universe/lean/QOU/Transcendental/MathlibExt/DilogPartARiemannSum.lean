@@ -1,4 +1,4 @@
-import MathlibExt.DilogarithmArchimedeanLimit
+import QOU.Transcendental.MathlibExt.DilogarithmArchimedeanLimit
 
 /-!
 # Part A of `conj:dilogarithm-archimedean-limit` — the Riemann-sum reduction

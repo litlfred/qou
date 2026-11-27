@@ -1,4 +1,4 @@
-import QCalculus.ComplexDilogarithmDeriv
+import QOU.Transcendental.QCalculus.ComplexDilogarithmDeriv
 import MathlibExt.AlternatingZetaTwo
 
 /-!

@@ -568,40 +568,6 @@
    "analysis",
    "transcendental-function"
   ],
-  "MathlibExt/BlochWignerLobachevsky.lean": [
-   "transcendental-function"
-  ],
-  "MathlibExt/BorelLaplace.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "MathlibExt/BorelResummation.lean": [
-   "analysis"
-  ],
-  "MathlibExt/BorelWatson.lean": [
-   "real-completion",
-   "transcendental-function"
-  ],
-  "MathlibExt/BorelWatsonSector.lean": [
-   "transcendental-function"
-  ],
-  "MathlibExt/BorelWatsonSectorFull.lean": [
-   "transcendental-function"
-  ],
-  "MathlibExt/BorelWatsonSectorTransport.lean": [
-   "transcendental-function"
-  ],
-  "MathlibExt/BorelWatsonShift.lean": [
-   "analysis"
-  ],
-  "MathlibExt/BorelWatsonShiftFull.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "MathlibExt/BorelWatsonUniqueness.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
   "MathlibExt/BoundedMeromorphicLiouville.lean": [
    "analysis"
   ],
@@ -639,38 +605,6 @@
    "analysis"
   ],
   "MathlibExt/CoshCosSeparation.lean": [
-   "transcendental-function"
-  ],
-  "MathlibExt/DilogPartAConvergence.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "MathlibExt/DilogPartARiemannSum.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "MathlibExt/DilogPartBBoundarySeed.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "MathlibExt/DilogPartBBranchPointSum.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "MathlibExt/DilogPartBIteratedLimit.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "MathlibExt/DilogPartBWP1Capstone.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "MathlibExt/DilogReflection.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "MathlibExt/DilogarithmArchimedeanLimit.lean": [
-   "analysis",
    "transcendental-function"
   ],
   "MathlibExt/DirichletL.lean": [
@@ -878,11 +812,6 @@
    "real-completion",
    "transcendental-function"
   ],
-  "MathlibExt/StokesJump.lean": [
-   "analysis",
-   "real-completion",
-   "transcendental-function"
-  ],
   "MathlibExt/StrictConcaveOnSegments.lean": [
    "analysis"
   ],
@@ -902,79 +831,6 @@
   ],
   "QCalculus/CanonicalProductGrowth.lean": [
    "analysis",
-   "transcendental-function"
-  ],
-  "QCalculus/ComplexDilogBridge.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QCalculus/ComplexDilogarithm.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QCalculus/ComplexDilogarithmDeriv.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QCalculus/ComplexDilogarithmInversion.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QCalculus/ComplexDilogarithmLanden.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QCalculus/ComplexDilogarithmOnCut.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QCalculus/ComplexDilogarithmSlit.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QCalculus/ComplexRogersDilog.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QCalculus/CyclicDilogPentagon.lean": [
-   "transcendental-function"
-  ],
-  "QCalculus/DilogPartBFaddeevScaling.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QCalculus/FaddeevCompactCurve.lean": [
-   "analysis"
-  ],
-  "QCalculus/FaddeevPhiBRealIntegral.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QCalculus/FaddeevPhiUniquenessAssembly.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QCalculus/FaddeevQuantumDilogarithm.lean": [
-   "transcendental-function"
-  ],
-  "QCalculus/FaddeevRatioPeriodic.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QCalculus/FaddeevRigidityMeromorphic.lean": [
-   "analysis"
-  ],
-  "QCalculus/FaddeevRigidityReduction.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QCalculus/FaddeevStripGrowthUniqueness.lean": [
-   "transcendental-function"
-  ],
-  "QCalculus/FaddeevUniquenessBoundedCapstone.lean": [
-   "transcendental-function"
-  ],
-  "QCalculus/FaddeevUniquenessCapstone.lean": [
    "transcendental-function"
   ],
   "QCalculus/FiveTwoComplexPentagon.lean": [
@@ -1032,9 +888,6 @@
    "transcendental-function"
   ],
   "QCalculus/PhiBProdZeroIsolation.lean": [
-   "transcendental-function"
-  ],
-  "QCalculus/RogersDilogInflection.lean": [
    "transcendental-function"
   ],
   "QOU/BraidsAndKnots/AssociatorKZ.lean": [

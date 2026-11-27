@@ -1,4 +1,4 @@
-import MathlibExt.DilogarithmArchimedeanLimit
+import QOU.Transcendental.MathlibExt.DilogarithmArchimedeanLimit
 import Mathlib.Analysis.Calculus.SmoothSeries
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Complex.AbelLimit

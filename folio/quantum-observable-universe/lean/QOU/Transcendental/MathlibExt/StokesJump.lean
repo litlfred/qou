@@ -1,7 +1,7 @@
 import Mathlib.Analysis.Complex.PhragmenLindelof
 import Mathlib.Analysis.SpecialFunctions.Gaussian.GaussianIntegral
-import MathlibExt.BorelWatson
-import MathlibExt.BorelWatsonUniqueness
+import QOU.Transcendental.MathlibExt.BorelWatson
+import QOU.Transcendental.MathlibExt.BorelWatsonUniqueness
 
 namespace QOU.Mathlib.Borel
 

@@ -1,4 +1,4 @@
-import QCalculus.ComplexDilogBridge
+import QOU.Transcendental.QCalculus.ComplexDilogBridge
 import MathlibExt.AlternatingZetaTwo
 import QCalculus.ComplexDilogarithmBoundary
 

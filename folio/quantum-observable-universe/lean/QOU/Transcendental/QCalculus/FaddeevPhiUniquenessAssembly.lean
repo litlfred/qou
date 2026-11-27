@@ -1,6 +1,6 @@
-import QCalculus.FaddeevRigidityMeromorphic
+import QOU.Transcendental.QCalculus.FaddeevRigidityMeromorphic
 import MathlibExt.PeriodLatticeBasis
-import QCalculus.CyclicDilogPentagon
+import QOU.Transcendental.QCalculus.CyclicDilogPentagon
 
 /-!
 # Route-B assembly for concrete `Φ_b`: proportionality modulo the entire ratio

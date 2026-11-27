@@ -1,4 +1,4 @@
-import QCalculus.ComplexDilogarithmSlit
+import QOU.Transcendental.QCalculus.ComplexDilogarithmSlit
 import Mathlib.Analysis.Calculus.ParametricIntervalIntegral
 
 /-!

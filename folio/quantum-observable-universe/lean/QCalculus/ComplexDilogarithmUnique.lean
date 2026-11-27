@@ -1,4 +1,4 @@
-import QCalculus.ComplexDilogarithmDeriv
+import QOU.Transcendental.QCalculus.ComplexDilogarithmDeriv
 import Mathlib.Analysis.Convex.PathConnected
 import Mathlib.Analysis.Analytic.IsolatedZeros
 

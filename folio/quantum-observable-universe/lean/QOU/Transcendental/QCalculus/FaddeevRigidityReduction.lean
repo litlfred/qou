@@ -1,4 +1,4 @@
-import QCalculus.CyclicDilogPentagon
+import QOU.Transcendental.QCalculus.CyclicDilogPentagon
 import MathlibExt.PeriodLatticeBasis
 import MathlibExt.DoublyPeriodicLiouville
 

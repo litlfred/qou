@@ -1,4 +1,4 @@
-import QCalculus.FaddeevStripGrowthUniqueness
+import QOU.Transcendental.QCalculus.FaddeevStripGrowthUniqueness
 import QCalculus.PhiBProdZeroIsolation
 
 /-!

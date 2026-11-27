@@ -1,7 +1,7 @@
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import QCalculus.FaddeevPhiBRealIntegral
+import QOU.Transcendental.QCalculus.FaddeevPhiBRealIntegral
 
 /-!
 # The S argument-identification keystone (bar-odd face of `conj:algebraic-geometric-dilog-equivalence`)

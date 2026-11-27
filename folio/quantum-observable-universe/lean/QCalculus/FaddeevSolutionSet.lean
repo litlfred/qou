@@ -43,7 +43,7 @@
 
   -- Ref: [faddeev1995] Faddeev, Lett. Math. Phys. 34 (1995) 249.
 -/
-import QCalculus.FaddeevQuantumDilogarithm
+import QOU.Transcendental.QCalculus.FaddeevQuantumDilogarithm
 
 namespace QOU.Mathlib.FaddeevSolutionSet
 

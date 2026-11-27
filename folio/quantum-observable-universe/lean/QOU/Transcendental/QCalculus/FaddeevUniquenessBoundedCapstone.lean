@@ -1,5 +1,5 @@
 import MathlibExt.BoundedMeromorphicLiouville
-import QCalculus.FaddeevPhiUniquenessAssembly
+import QOU.Transcendental.QCalculus.FaddeevPhiUniquenessAssembly
 
 /-!
 # A_ω uniqueness leg — the boundedness-route capstone

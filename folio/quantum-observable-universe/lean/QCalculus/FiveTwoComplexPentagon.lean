@@ -46,7 +46,7 @@ speaks to it.
 -- Ref: [neumann2004] library/0307092v2/0307092v2.pdf, Prop 2.5 and §2
 -- Ref: [neumann2004] library/0307092v2/0307092v2.pdf, Prop 2.5
 -/
-import QCalculus.ComplexRogersDilog
+import QOU.Transcendental.QCalculus.ComplexRogersDilog
 import MathlibExt.FiveTwoSaddleSumRule
 import MathlibExt.FiveTwoAbelFiveTerm
 

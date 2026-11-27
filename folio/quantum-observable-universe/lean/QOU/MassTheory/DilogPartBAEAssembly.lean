@@ -1,4 +1,4 @@
-import MathlibExt.DilogPartBBoundarySeed
+import QOU.Transcendental.MathlibExt.DilogPartBBoundarySeed
 import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Analysis.PSeries
 

@@ -1,4 +1,4 @@
-import MathlibExt.DilogPartAConvergence
+import QOU.Transcendental.MathlibExt.DilogPartAConvergence
 import QOU.MassTheory.ArchimedeanLimitDomain
 
 /-!

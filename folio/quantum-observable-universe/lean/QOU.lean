@@ -66,8 +66,8 @@ import HeckeTemperleyLieb.TemperleyLiebDeltaRule
 import HeckeTemperleyLieb.MacdonaldTelescope
 import QCalculus.MathlibExt.QuantumDilogarithm
 import QCalculus.QuantumDilogarithmInfinite
-import QCalculus.FaddeevQuantumDilogarithm
-import QCalculus.FaddeevPhiBRealIntegral
+import QOU.Transcendental.QCalculus.FaddeevQuantumDilogarithm
+import QOU.Transcendental.QCalculus.FaddeevPhiBRealIntegral
 import QCalculus.PhiBProd
 import QCalculus.PhiBFibreExtension
 import MathlibExt.YekutieliIntegration
@@ -78,16 +78,16 @@ import CompactQuantumMetrics.SDPRealUniqueness
 -- `ComplexDilogarithm` was ORPHANED from this root — `lake build` compiles only
 -- `QOU.lean`'s import closure, so a module nothing imports is never checked at
 -- all (bean qou-orph). Wiring the chain here puts every theorem below under CI.
-import QCalculus.ComplexDilogarithm
-import QCalculus.ComplexDilogarithmSlit
-import QCalculus.ComplexDilogarithmDeriv
+import QOU.Transcendental.QCalculus.ComplexDilogarithm
+import QOU.Transcendental.QCalculus.ComplexDilogarithmSlit
+import QOU.Transcendental.QCalculus.ComplexDilogarithmDeriv
 import QCalculus.ComplexDilogarithmUnique
-import QCalculus.ComplexDilogarithmLanden
+import QOU.Transcendental.QCalculus.ComplexDilogarithmLanden
 import MathlibExt.AlternatingZetaTwo
 import QCalculus.ComplexDilogarithmBoundary
-import QCalculus.ComplexDilogarithmOnCut
-import QCalculus.ComplexDilogarithmInversion
-import QCalculus.ComplexRogersDilog
+import QOU.Transcendental.QCalculus.ComplexDilogarithmOnCut
+import QOU.Transcendental.QCalculus.ComplexDilogarithmInversion
+import QOU.Transcendental.QCalculus.ComplexRogersDilog
 -- Scalar implicit function theorem, and two one-variable transport lemmas
 -- (a constant pinned off a single point; an integer branch index pinned by a
 -- window). All Mathlib gaps; all sorry-free.
@@ -123,7 +123,7 @@ import MathlibExt.LittlewoodRichardson
 -- (the prefactor cancels), and given an entire ratio that extends from the dense
 -- complement of the prefactor zeros to everywhere. Collapses the open input
 -- `hibinv` (qou-rp5f) into `hratio` (qou-cons). Sorry-free.
-import QCalculus.FaddeevRatioPeriodic
+import QOU.Transcendental.QCalculus.FaddeevRatioPeriodic
 -- The FaddeevPhi class has NO regularity field, so its solution set absorbs any
 -- doubly-periodic factor (lattice indicator included). Hence `hratio` (qou-cons)
 -- is not derivable from the class — it is a fact about the analytic Phi_b.
@@ -697,7 +697,7 @@ import QOU.BraidsAndKnots.RepresentationTheory
 import QOU.Core.GradedFrobeniusHopf
 import QOU.Confinement.ChannelSeparation
 import QOU.MassTheory.Archimedean
-import MathlibExt.DilogReflection
+import QOU.Transcendental.MathlibExt.DilogReflection
 import QOU.MassTheory.CatalanClausenBridge
 import MathlibExt.IdealTetrahedronConcavity
 import BraidKnotOctonion.LobachevskyDerivative
@@ -721,13 +721,13 @@ import QOU.MassTheory.OrthoschemeLambdaSum
 import QOU.MassTheory.OrthoschemeTiling
 import QOU.MassTheory.DilogPartBBranchPointLimit
 import QOU.MassTheory.DilogPartBBranchPhase
-import MathlibExt.DilogPartBBranchPointSum
+import QOU.Transcendental.MathlibExt.DilogPartBBranchPointSum
 import QOU.MassTheory.DilogPartBEulerTail
-import MathlibExt.DilogPartBIteratedLimit
-import MathlibExt.DilogPartBBoundarySeed
-import MathlibExt.DilogPartBWP1Capstone
+import QOU.Transcendental.MathlibExt.DilogPartBIteratedLimit
+import QOU.Transcendental.MathlibExt.DilogPartBBoundarySeed
+import QOU.Transcendental.MathlibExt.DilogPartBWP1Capstone
 import QOU.MassTheory.DilogPartBWP1Refutation
-import QCalculus.DilogPartBFaddeevScaling
+import QOU.Transcendental.QCalculus.DilogPartBFaddeevScaling
 import QOU.MassTheory.DilogPartBJointAssembly
 import QOU.MassTheory.DilogPartBBorelCantelli
 import QOU.MassTheory.DilogPartBWindowMeasure
@@ -973,7 +973,7 @@ import QOU.Nuclear.DilogTheoryArchimedean
 import QOU.Nuclear.ToddDilogExpansion
 import QOU.Nuclear.BarEvenJet
 import QOU.Nuclear.BarEvenJetArchimedean
-import QCalculus.FaddeevCompactCurve
+import QOU.Transcendental.QCalculus.FaddeevCompactCurve
 import QOU.MassTheory.IdealTetVolumeRigidity
 -- The Li₂-continuation / scalar-IFT chain this lane rests on is wired at the
 -- top of this file (with the other MathlibExt imports), not here — it is

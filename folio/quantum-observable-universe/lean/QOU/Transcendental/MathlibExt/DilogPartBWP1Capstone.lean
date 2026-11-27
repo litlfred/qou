@@ -1,5 +1,5 @@
-import MathlibExt.DilogPartBBranchPointSum
-import MathlibExt.DilogPartBBoundarySeed
+import QOU.Transcendental.MathlibExt.DilogPartBBranchPointSum
+import QOU.Transcendental.MathlibExt.DilogPartBBoundarySeed
 
 /-!
 # Capstone — the conditional W-P1 `Tendsto` (dilog Part B, V3)

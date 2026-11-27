@@ -1,7 +1,7 @@
 import QOU.Nuclear.FiveTwoRootLabelling
 import QOU.Nuclear.FiveTwoTransport
 import QOU.Nuclear.FiveTwoPairSaddle
-import QCalculus.ComplexDilogarithmInversion
+import QOU.Transcendental.QCalculus.ComplexDilogarithmInversion
 
 /-!
 # The transport's hypotheses, discharged at the *concrete* labelling — `qou-glbl`

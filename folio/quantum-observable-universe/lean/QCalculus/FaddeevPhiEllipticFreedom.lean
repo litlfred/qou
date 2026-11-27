@@ -1,4 +1,4 @@
-import QCalculus.FaddeevQuantumDilogarithm
+import QOU.Transcendental.QCalculus.FaddeevQuantumDilogarithm
 
 /-!
 # Elliptic freedom of the `FaddeevPhi` class — why same-divisor is not derivable

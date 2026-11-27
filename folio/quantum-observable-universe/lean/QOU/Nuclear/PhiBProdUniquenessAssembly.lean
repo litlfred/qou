@@ -1,4 +1,4 @@
-import QCalculus.FaddeevUniquenessBoundedCapstone
+import QOU.Transcendental.QCalculus.FaddeevUniquenessBoundedCapstone
 import QCalculus.PhiBProd
 
 /-!

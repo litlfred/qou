@@ -1,4 +1,4 @@
-import MathlibExt.BlochWignerLobachevsky
+import QOU.Transcendental.MathlibExt.BlochWignerLobachevsky
 
 /-!
 # QOU.Archimedean.BlochWignerSymmetry — the cyclic symmetry of `D`

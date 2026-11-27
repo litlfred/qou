@@ -1,5 +1,5 @@
 import MathlibExt.RatioEntireOfSameDivisor
-import QCalculus.FaddeevPhiUniquenessAssembly
+import QOU.Transcendental.QCalculus.FaddeevPhiUniquenessAssembly
 
 /-!
 # A_ω uniqueness leg — the conditional capstone (same divisor ⇒ proportional)
