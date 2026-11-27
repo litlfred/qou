@@ -57,3 +57,11 @@ Owner chose "Root-of-unity quotient" on the card. Goal: the semisimplified Hecke
 **still open (why the bean stays open)**: S, T and the fusion are identified with the corpus Hecke braiding / Jones–Wenzl tensor product by citation (Kirby–Melvin, Kauffman–Lins). Deriving that needs qou-pbjv / qou-ltwg.
 
 #9765 merged at its first commit only (twist). Verlinde commit re-landed as PR #9776.
+
+## 2026-11-27 — vacuum row derived from the corpus TL tower (PR #9784)
+
+`HeckeTemperleyLieb/TLVacuumRowFromJonesWenzl.lean`, sorry-free: the corpus Chebyshev `qint` at
+`δ = ζ+ζ⁻¹` equals `qInt ζ`, and for any `MarkovTower` with `δε = 1` the unnormalised Jones–Wenzl
+trace `δ^{n+1}τ_n(p_n)` equals `S_{0,n+1}` (n+1 ≤ k). Still open (stays cited): existence of a
+`MarkovTower` instance at a root of unity; off-vacuum rows (Hopf-link double braiding of JW
+projectors); twist eigenvalue on `p_n`. Bean stays open.
