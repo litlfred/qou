@@ -1,11 +1,11 @@
 ---
 # qou-pn77
 title: 'Lean: Lie derivatives of forms + Cartan''s magic formula L_x = d i_x + i_x d (Chevalley-Eilenberg, proved)'
-status: completed
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-27T17:48:59Z
-updated_at: 2026-11-27T19:10:20Z
+updated_at: 2026-11-27T19:15:45Z
 parent: qou-rtxm
 ---
 
@@ -18,3 +18,5 @@ Owner 2026-11-27: 'Dispatch sibling to do lie derivatives on manifolds'. Route p
 2026-11-27: analytic bridge done in PR #9576 (QOU/Transcendental/Calculus/LieDerivativeExtDeriv.lean): ceDAlt_toCE (Koszul d = Mathlib extDeriv), lieDerivAlt_toCE, cartan_constField. Sorry-free. Scope: constant vector fields only; non-constant fields (VectorField.lieBracket, C^inf(E)-linear cochains) not covered. Classical.choice from Mathlib analysis, not yet on Coev.
 
 2026-11-27: PR #9576 merged. All four items landed (#9532, #9540, #9576). Possible follow-up, not started: non-constant vector fields (C^inf(E)-linear cochains) and moving Classical.choice onto Coev.
+
+2026-11-27 (coordinator follow-up): non-constant vector fields. PR #9589: IsLieRinehart, FunLinear; d, i_X, L_X preserve tensors. Next: smooth vector fields instance + extDeriv bridge, then Coev routing.
