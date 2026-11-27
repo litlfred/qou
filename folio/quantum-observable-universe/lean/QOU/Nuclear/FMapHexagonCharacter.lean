@@ -1,7 +1,7 @@
 import Mathlib.Tactic
 import Mathlib.Algebra.Polynomial.Basic
 import QOU.Nuclear.FMapStructuralPaths
-import QOU.BraidsAndKnots.QBetaCategoricalPrecisionLadder
+import QOU.BraidsAndKnots.QBetaLadderPrimitives
 
 /-!
 # QOU.QBeta.FMapHexagonCharacter

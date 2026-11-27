@@ -1,4 +1,4 @@
-import QOU.BraidsAndKnots.QBetaCategoricalPrecisionLadder
+import QOU.BraidsAndKnots.QBetaLadderPrimitives
 
 /-!
 # The Hopf-link Jones value from the skein relation (c₃ input, bean `qou-cds1`)
