@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-03T04:57:50Z
-updated_at: 2026-10-04T15:11:42Z
+updated_at: 2026-11-27T15:30:00Z
 parent: qou-5vkl
 ---
 
@@ -282,3 +282,57 @@ reachable in this session by any method tried. Their producers are fixed on
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-09-27 — currency note (moved here 2026-11-27 from closed PR #7477; measured 2026-09-27, counts may have moved since) from a passing measurement. NOT a claim on this bean.
+
+Measured on clean `origin/main` (`1947491d5e`) with
+`computations/audits/q0_anchor_consistency_audit.py`. I am not taking this bean —
+it is `in-progress`, as is `qou-3ral` — so this is a `--body-append` only, no
+status touched. Recorded because the **count and the dominant spelling have both
+moved** since this bean was written.
+
+**`Q0_ANCHOR_UNRECOGNISED` is now 6, down from the 17 this bean's title names.**
+Alongside it, `Q0_FLIP` is **1** (`hadron-knot-table.witness.json`, anchor=muon
+but carrying the retired pin `1.10997859555733…` — the site AGENTS.md already
+records, and whose producer cannot practically be re-run: > 50 min for one bound
+atom of nineteen).
+
+**The composition has shifted, and the new majority is a DIFFERENT defect from
+the one this bean describes.** This bean is about *prose in the token slot*. Only
+**1 of the 6** is still that:
+
+| spelling | count | what it is |
+|---|---:|---|
+| `physical_proton` | **5** | the **manifest key** — `computations/q0_anchor_manifest.json` partitions producers into `ideal_muon` / `physical_proton`, and these producers write that key straight through as the anchor token |
+| `proton (experimental pin)` | 1 | prose in the token — the original class |
+
+So the residue is now mostly **manifest-key leakage**, not prose. The five are
+`b3-asym-over-sym-is-alpha-free`, `dressed-interleaved-cross-term-charge-parity`,
+`gamma-gamma-aggregator-convexity`, `gamma-gamma-bond-is-pair-independent`,
+`rho-pp-kind-weight-does-not-close-b3`; the sixth is
+`qbeta-derived-w-overdetermined-test`.
+
+`physical_proton` is written at module scope by a **family** of `deltalambda/rev_*`
+probes (`grep -rn physical_proton --include=*.py computations/` returns ~12+ live
+sites, e.g. `rev_edge_relaxation_window_probe.py:387`,
+`rev_sublinearity_closed_probe.py:328`), so whoever drains this should expect the
+*producer* population to exceed the *witness* count — a fix at six witnesses
+would not stop the seventh arriving, which is this bean's own stated lesson
+("13 more arrived within four days from the SAME producers").
+
+### 🛑 One thing NOT to conclude — I nearly filed it and it is false
+
+`tools/qou-substrate/python/qou_substrate/witness.py` mentions
+`'proton (experimental pin)'` at **:1317** and **:1822**, and
+`tools/qou-substrate/tests/test_q0_anchor.py:666` passes that exact string. That
+looks like `qou-substrate` **documenting and testing the string as legal** while
+`q0_anchor_consistency_audit.py` rejects it — i.e. two corpus artifacts
+contradicting each other.
+
+**It is not.** Both witness.py sites cite the string as *the example of the defect
+the `q0_anchor_reason` slot was added to fix* ("17 of them wrote prose into the
+token"), and the test asserts the value is stamped verbatim **and warned about**
+(`assert "not one of" in capsys.readouterr().err`) — a regression test for the
+warning, not a legality test. `w.Q0_ANCHOR_VOCABULARY` is the canonical set and
+the audit agrees with it. The two artifacts are consistent; only a grep for the
+string makes them look otherwise.
