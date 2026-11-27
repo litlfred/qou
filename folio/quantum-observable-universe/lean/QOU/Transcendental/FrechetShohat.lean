@@ -7,6 +7,11 @@ import Mathlib.Tactic
 /-!
 # QOU.MathlibExt.FrechetShohat
 
+**Transcendental subgraph (moved from `QOU/Core/` 2026-11-27, bean `qou-e1uf`).**
+Measures on `ℝ`, weak convergence and integrals are analytic, so this module
+lives behind the boundary `QOU/Transcendental/`. The algebraic side of the
+q-CLT uses finite moments in `ℤ[q]` (`QOU.Core.QGaussianMoments`) instead.
+
 Moment-problem infrastructure for the balanced q-Borel kernel-convergence
 theorem (`docs/audits/2026-07-25-kernel-convergence-mathlib-gap.md`): the
 Stieltjes-moment predicate, moment-sequence determinacy, the Carleman

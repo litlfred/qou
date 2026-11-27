@@ -1236,8 +1236,8 @@ import QOU.MassTheory.LiftFromReality
 import QOU.MassTheory.TauFunctorTargetSpec
 import QOU.MassTheory.DeckRealityEquivariance
 import QOU.MassTheory.BorelProperTimeMoment
-import QOU.Core.FrechetShohat
-import QOU.Core.StieltjesCompactDeterminacy
+import QOU.Transcendental.FrechetShohat
+import QOU.Transcendental.StieltjesCompactDeterminacy
 import QOU.MassTheory.BalancedKernelConfluence
 import QOU.MassTheory.BalancedMomentConfluence
 import QOU.MassTheory.BalancedKernelTightness

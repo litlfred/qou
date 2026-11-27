@@ -76,7 +76,7 @@ legs: Fréchet–Shohat (Trans. AMS 33, 1931), Simon (Adv. Math. 137,
 --      [divizio-zhang2009] q-summation and confluence.
 -/
 
-import QOU.Core.FrechetShohat
+import QOU.Transcendental.FrechetShohat
 import QOU.MassTheory.BorelProperTimeMoment
 
 namespace QOU.Archimedean.BalancedKernelConfluence
