@@ -50,3 +50,19 @@ Candidate scales already examined and excluded in §44 of the comparison file:
 `E = M_QCD` (§45) is one map applied to both terms, so it falls inside this class. It also makes the flavour term about 197 MeV. That point was not raised in §45.
 
 Nothing is adopted and nothing is wired.
+
+## Addendum: spin and colour do not change the n − p charge factor
+
+Owner question, 2026-11-27: *"are all repn and charatcters covered? all partiions"*.
+
+- **Partitions.** By Schur–Weyl, H₃ on (ℂᴺ)^⊗3 sees only shapes with ≤ N rows. The nucleon traces use ℂ² (isospin), so only (3) and (2,1) appear. The uud and udd weight spaces both decompose as (3) ⊕ (2,1), with equal spectra for every q (PREREGISTRATION-charge-operator, PA1). No block separates p from n.
+- **Colour.** The photon is colour-blind, so the colour singlet (1³ of ℂ³) multiplies every EM matrix element by the same factor. The 8-fold thread (#9651) puts ℂ³⊗ℂ² in the (1,1) channel of a strand *pair*, which convention D's three-row vanishing does not reach.
+- **Spin.** [`nucleon_em_spin_colour_factor_probe.py`](../../computations/probes/nucleon_split_scale_ratio/nucleon_em_spin_colour_factor_probe.py), exact rationals, on the S = ½ nucleon states, with the charges 2/3 and −1/3 of `prop:neutral-lepton-fixes-charges`:
+
+| | ⟨Σ qᵢqⱼ⟩ (Coulomb) | ⟨Σ qᵢqⱼ σᵢ·σⱼ⟩ (magnetic) |
+|---|---|---|
+| p | 0 | 4/3 |
+| n | −1/3 | 1 |
+| n − p | **−1/3** | **−1/3** |
+
+So the n − p charge structure is −1/3 in both channels. Adding spin or colour supplies no dimensionless factor, and the 27–44× gap is entirely spatial: an energy-to-length map. The q-Bessel thread reports that E_q(2) has a q^ℤ dilation symmetry, so it fixes shapes but not an absolute length. This is a scope (a) finding about representation content. The quark-model spin wavefunction is used for comparison only.
