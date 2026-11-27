@@ -22,6 +22,10 @@ of `Σ f k l · e_k ⊗ e_l`. The standard (Jimbo) braiding `braid q` acts by
   `FermiPairWedge.IsFermi`. So every Fermi-pair result there is a result about the
   `-q⁻¹` eigenspace of the braiding.
 
+* `sign_mirror_iff_rev` — the mirror `q ↦ q⁻¹` acts on pair states as index reversal and
+  keeps the strand count. It cannot exchange the even and odd exterior parts, so the photon's
+  handedness (a mirror datum) does not fix the even/odd choice (a complement datum).
+
 ## What stays an input
 
 That a matter strand pair lives in the `-q⁻¹` channel and not the `q` channel. The braiding
@@ -175,5 +179,31 @@ theorem sym_one_iff (f : Fin n → Fin n → ℚ) :
     · rw [ho j i hij, one_mul]
   · intro hs k l _
     rw [hs k l, one_mul]
+
+/-- **The mirror `q ↦ q⁻¹` is index reversal, and keeps the strand count.**  A pair state is in
+the `-q⁻¹` channel iff its index-reversed state is in the `-q` channel (the sign channel at
+`q⁻¹`).  So the mirror maps a two-strand wedge to a two-strand wedge: it does not move a state
+between degree `k` and degree `n - k`, and cannot exchange the even and odd exterior parts. -/
+theorem sign_mirror_iff_rev {q : K} (hq : q ≠ 0) (h2 : q ^ 2 + 1 ≠ 0)
+    (f : Fin n → Fin n → K) :
+    IsSignState q f ↔ IsSignState q⁻¹ (fun k l => f (Fin.rev k) (Fin.rev l)) := by
+  have hq' : q⁻¹ ≠ 0 := inv_ne_zero hq
+  have h2' : q⁻¹ ^ 2 + 1 ≠ 0 := by
+    intro h; apply h2
+    have : q ^ 2 * (q⁻¹ ^ 2 + 1) = q ^ 2 + 1 := by field_simp; ring
+    rw [← this, h, mul_zero]
+  rw [sign_iff hq h2, sign_iff hq' h2', inv_inv]
+  constructor
+  · rintro ⟨hd, ho⟩
+    refine ⟨fun k => hd _, fun k l hkl => ?_⟩
+    have hr : Fin.rev l < Fin.rev k := Fin.rev_lt_rev.mpr hkl
+    have := ho _ _ hr
+    rw [this]; field_simp
+  · rintro ⟨hd, ho⟩
+    refine ⟨fun k => by simpa using hd (Fin.rev k), fun k l hkl => ?_⟩
+    have hr : Fin.rev l < Fin.rev k := Fin.rev_lt_rev.mpr hkl
+    have := ho _ _ hr
+    simp only [Fin.rev_rev] at this
+    rw [this]; field_simp
 
 end QOU.EightfoldWay.HeckeSignChannelIsFermi

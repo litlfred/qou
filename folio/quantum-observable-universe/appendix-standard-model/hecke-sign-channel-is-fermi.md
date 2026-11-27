@@ -22,3 +22,7 @@ $(q + q^{-1}) f_{kk} = 0$, and $q(q + q^{-1}) = q^2 + 1 \neq 0$. $\square$
 between them: that a matter strand pair lies in the $-q^{-1}$ channel is still an input.
 With that input, every result of [`prop:fermi-pair-wedge`](fermi-pair-wedge.md) is a
 statement about the $-q^{-1}$ eigenspace of $\sigma$.
+
+**Mirror.** A pair state is in the $-q^{-1}$ channel if and only if its index-reversed
+state is in the sign channel at $q^{-1}$. So the mirror $q \mapsto q^{-1}$ is index reversal.
+It keeps the number of strands and does not map degree $k$ to degree $n - k$.

@@ -64,3 +64,16 @@ The photon is `γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁·σ₀σ₁⁻¹ ∈ 
 So the photon's chiral vertex does not fix the sign. This is a scope-(a) negative about
 the photon only. What remains is a P–C link: a statement that the mirror of the braid
 acts on strand states as complementation.
+
+## Follow-up: is the mirror a Hodge star? No (2026-11-27)
+
+`HeckeSignChannelIsFermi.sign_mirror_iff_rev` (Lean, sorry-free): a pair state is in the
+`-q⁻¹` channel iff its index-reversed state is in the sign channel at `q⁻¹`. The mirror
+`q ↦ q⁻¹` is therefore the longest permutation `w₀` acting on labels. It keeps the strand
+count. It cannot send degree `k` to degree `5 − k`, so it cannot exchange the even and odd
+parts.
+
+Complementation, the Hodge star, is the duality `Λ^k ≅ (Λ^{5−k})* ⊗ Λ^5`, i.e. charge
+conjugation. So P (the mirror) and C (the complement) are independent on strand states. The
+chirality sign is the choice of which relative orientation of P and C matter takes. The
+braid–Hecke structure examined here does not supply it. Scope (a).
