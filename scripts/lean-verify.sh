@@ -6,8 +6,10 @@
 # graph, rebuilds Mathlib from source (the `import Mathlib.Tactic`
 # closure is ~3000 modules), AND can wipe the restored oleans on a
 # remote-URL mismatch. `lean`-direct sidesteps lake entirely: exit 0
-# means the file checks and is sorry-free (a `sorry` emits a warning but
-# still exits 0 — grep the output if you need sorry-strictness).
+# means the file type-checks. It does NOT mean sorry-free: a `sorry` is a
+# warning and lean still exits 0. The verify line therefore reports the
+# count of `declaration uses 'sorry'` warnings, and LEAN_VERIFY_NO_SORRY=1
+# turns any such warning into a failure (bean qou-zf7n).
 #
 # Restores the olean cache first if it is missing.
 #
@@ -45,8 +47,17 @@ for f in "$@"; do
   echo "── lean-verify: $f ──"
   # -DautoImplicit=false -s 65536 mirror the lakefile leanOptions; a bare lean
   # auto-binds unbound identifiers and exits 0 on broken files (bean qou-zf7n).
-  if env LEAN_PATH="$LP" ELAN_NO_OVERRIDE_NOTICE=1 lean -DautoImplicit=false -s 65536 "$f"; then
-    echo "  ✓ exit 0 — checks"
+  out=$(env LEAN_PATH="$LP" ELAN_NO_OVERRIDE_NOTICE=1 lean -DautoImplicit=false -s 65536 "$f" 2>&1)
+  lrc=$?
+  [ -n "$out" ] && printf '%s\n' "$out"
+  nsorry=$(printf '%s\n' "$out" | grep -c "declaration uses 'sorry'")
+  if [ "$lrc" -eq 0 ] && [ "$nsorry" -eq 0 ]; then
+    echo "  ✓ exit 0 — checks, sorry-free"
+  elif [ "$lrc" -eq 0 ] && [ "${LEAN_VERIFY_NO_SORRY:-0}" != "1" ]; then
+    echo "  ⚠ exit 0 — checks, but $nsorry declaration(s) use sorry (NOT sorry-free)"
+  elif [ "$lrc" -eq 0 ]; then
+    echo "  ✗ FAILED — $nsorry declaration(s) use sorry (LEAN_VERIFY_NO_SORRY=1)" >&2
+    rc=1
   else
     echo "  ✗ FAILED (see diagnostics above)" >&2
     rc=1

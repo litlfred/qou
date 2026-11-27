@@ -146,7 +146,7 @@ COUNT=0
 echo "$TARGETS" | while IFS= read -r f; do
   COUNT=$((COUNT + 1))
   printf "\r[%d/%d] %s" "$COUNT" "$TOTAL" "$f"
-  DIAG=$(lake env lean "$f" 2>&1 | grep ': error:' | head -10 || true)
+  DIAG=$(lake env lean -DautoImplicit=false -s 65536 "$f" 2>&1 | grep ': error:' | head -10 || true)
   ENTRIES=""
   if [ -n "$DIAG" ]; then
     ENTRIES=$(echo "$DIAG" | while IFS= read -r line; do

@@ -54,7 +54,7 @@ for f in "$@" "$FRAGMENT"; do
 done
 
 OUT="$TMP/out.txt"
-timeout "${LEAN_TIMEOUT:-900}" lean "$COMBINED" > "$OUT" 2>&1
+timeout "${LEAN_TIMEOUT:-900}" lean -DautoImplicit=false -s 65536 "$COMBINED" > "$OUT" 2>&1
 rc=$?
 
 if grep -q 'error:' "$OUT"; then

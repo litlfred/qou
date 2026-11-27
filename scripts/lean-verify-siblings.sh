@@ -100,7 +100,7 @@ QOU_SRC_ROOT="$REPO_ROOT/folio/quantum-observable-universe/lean"
 
 fail=0; pass=0; skip=0
 for f in "$@"; do
-  out=$(env LEAN_PATH="$LP" ELAN_NO_OVERRIDE_NOTICE=1 lean "$f" 2>&1)
+  out=$(env LEAN_PATH="$LP" ELAN_NO_OVERRIDE_NOTICE=1 lean -DautoImplicit=false -s 65536 "$f" 2>&1)
   # Reclassify missing-object-file misses whose module provably does not exist
   # (removed/renamed Mathlib module, or QOU module with no source) → stale.
   stale=""
