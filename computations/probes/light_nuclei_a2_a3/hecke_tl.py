@@ -51,16 +51,17 @@ class Ring:
 
 
 # A diagram on m strands is a tuple `t` of length 2m: points 0..m-1 on top, m..2m-1 on the
-# bottom (bottom i is m+i); t[p] is the point p is joined to.
+# bottom (bottom i is m+i); t[p] is the point p is joined to. Stored as `bytes` (m ≤ 127) for
+# memory and hashing speed.
 
 def identity(m):
-    return tuple(list(range(m, 2 * m)) + list(range(m)))
+    return bytes(list(range(m, 2 * m)) + list(range(m)))
 
 
 def _mul_e(t, m, i):
     """D·e_i (e_i below D). Returns (new diagram, made_loop)."""
     a, b = m + i, m + i + 1
-    l = list(t)
+    l = bytearray(t)
     loop = l[a] == b
     if not loop:
         u, v = l[a], l[b]
@@ -68,7 +69,7 @@ def _mul_e(t, m, i):
         l[v] = u
     l[a] = b
     l[b] = a
-    return tuple(l), loop
+    return bytes(l), loop
 
 
 def _open(t, m):
@@ -76,7 +77,7 @@ def _open(t, m):
     def f(p):
         return p if p < m else p + 1
     l = [f(t[p]) for p in range(m)] + [2 * m + 1] + [f(t[p]) for p in range(m, 2 * m)] + [m]
-    return tuple(l)
+    return bytes(l)
 
 
 def _close(t, m, k=None):
@@ -84,7 +85,7 @@ def _close(t, m, k=None):
     Returns (diagram, made_loop). Only the two edge strands are closed, so the arc stays planar."""
     k = m - 1 if k is None else k
     top, bot = k, m + k
-    l = list(t)
+    l = bytearray(t)
     loop = l[top] == bot
     if not loop:
         u, v = l[top], l[bot]
@@ -92,7 +93,7 @@ def _close(t, m, k=None):
         l[v] = u
     keep = [p for p in range(2 * m) if p not in (top, bot)]
     pos = {p: k for k, p in enumerate(keep)}
-    return tuple(pos[l[p]] for p in keep), loop
+    return bytes(pos[l[p]] for p in keep), loop
 
 
 def _loops_full(t, m):
@@ -124,7 +125,7 @@ def sweep_trace(program, R, log=None, every=200):
     whenever the program is a valid sweep of it (see atom_program).
     """
     m = 0
-    x = {(): R.one}
+    x = {b"": R.one}
     peak = 1
     peak_m = 0
     t0 = time.time()

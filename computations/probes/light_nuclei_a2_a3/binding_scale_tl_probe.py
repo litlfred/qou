@@ -25,11 +25,12 @@ New rows (comparison with AME2020 is a comparison field only; nothing is chosen 
 Arithmetic: python-flint arb balls at 768 bits (certified enclosures, the radius is printed);
 exact fmpq for C1. No float anywhere. Long-compute discipline: run with
 `python3 -u binding_scale_tl_probe.py 2>&1 | tee /tmp/binding_scale_tl.log`.
-Usage: binding_scale_tl_probe.py [A_MAX] [--budget SECONDS]   (defaults 12, 7200)
+Usage: binding_scale_tl_probe.py [A_MAX] [--workers K]   (defaults 12, 2)
 """
 from __future__ import annotations
 
 import json
+import multiprocessing as mp_pool
 import os
 import random
 import sys
@@ -139,9 +140,72 @@ def artin_identity(A, bonds, variant, rng):
 
 # ---- main ---------------------------------------------------------------------------------------
 
+def _pin(prec=PREC):
+    flint.ctx.prec = prec
+    R = T.Ring(flint.arb(Q_50_DIGIT_STR), flint.arb)
+    tb = {k: T.sweep_trace(T.word_program(3, F.atom_word(k, [], "over")), R)[0] for k in "pn"}
+    return tb, R, flint.arb(E0_STR)
+
+
+def _cell(tb, R, order, bonds, variant, progress=False):
+    t = time.time()
+    atom, st = T.sweep_trace(T.atom_program(order, bonds, variant), R,
+                             log=log if progress else None, every=2000)
+    free = flint.arb(1)
+    for k in order:
+        free *= tb[k]
+    st["seconds"] = round(time.time() - t, 2)
+    return atom / free, st
+
+
+def _job(job):
+    name, Z, N, route, v = job
+    A = Z + N
+    order = "p" * Z + "n" * N
+    bonds = chain(A) if route == "gg chain" else sequential(A)
+    # The sequential sweep cancels heavily: at 768 bits the ball loses ~220 decimal digits at
+    # A = 8 and all of them by A = 9. Start where the measured loss says, and double until the
+    # certified relative radius is below 1e-40. The radius is checked, never assumed.
+    prec = PREC if route == "gg chain" or A <= 8 else (2048 if A <= 10 else 3072)
+    while True:
+        tb, R, E0 = _pin(prec)
+        ratio, st = _cell(tb, R, order, bonds, "over" if v == "-" else v, progress=A >= 10)
+        if ratio.mid() != 0 and ratio.rad() < abs(ratio.mid()) * flint.arb("1e-40"):
+            break
+        log(f"{name} {route} {v}: radius {ratio.rad().str(3)} at {prec} bits, doubling")
+        prec *= 2
+    Bd = E0 * 1000 * (1 - ratio)
+    Bl = E0 * 1000 * (-ratio.log())
+    return {"nucleus": name, "Z": Z, "N": N, "order": order, "route": route, "variant": v,
+            "bonds": len(bonds), "ratio_atom_over_free": ratio.str(40, radius=False),
+            "ratio_radius": ratio.rad().str(3), "B_diff_over_trfree_keV": Bd.str(20, radius=False),
+            "B_log_keV": Bl.str(20, radius=False), "peak_width": st["peak_width"],
+            "peak_terms": st["peak_terms"], "prec_bits": prec, "letters": st["steps"], "seconds": st["seconds"]}
+
+
+def _write(checks, rows):
+    names = [n for n, _, _ in NUCLEI]
+    rows = sorted(rows, key=lambda r: (names.index(r["nucleus"]), r["route"] != "gg chain", r["variant"]))
+    out = {"q0Anchor": "proton",
+           "q0AnchorReason": "arb balls (768 bits, more where the sweep cancels; see prec_bits) around the 50-digit proton pin",
+           "bean": "qou-sv7h",
+           "rulings": ["γγ bond: photon vertex σ_iσ_{i+1}⁻¹, right-hand closure (owner-rulings 2026-11-22)",
+                       "convention D: z = q³/(q²+1)",
+                       "log law B = E₀·ln(tr_free/tr_atom) (owner-rulings 2026-11-25)"],
+           "notChosen": ["nucleon order Z p then N n is the production order, not derived "
+                         "(owner-rulings 2026-11-21)",
+                         "routes and variants are all reported; none is selected"],
+           "E0_MeV": E0_STR, "checks": checks, "rows": rows,
+           "note": "PROBE, adopts nothing. AME values are comparison fields only. "
+                   "B_diff_over_trfree = E0(1 - tr_atom/tr_free) is the retired linear form, kept "
+                   "for comparison with he4-all-pairs-exact (which reports E0(tr_free - tr_atom))."}
+    with open(os.path.join(HERE, "binding-scale-tl.witness.json"), "w") as fh:
+        json.dump(out, fh, indent=1, ensure_ascii=False)
+
+
 def main():
     a_max = int(sys.argv[1]) if len(sys.argv) > 1 and not sys.argv[1].startswith("-") else 12
-    budget = float(sys.argv[sys.argv.index("--budget") + 1]) if "--budget" in sys.argv else 7200.0
+    workers = int(sys.argv[sys.argv.index("--workers") + 1]) if "--workers" in sys.argv else 2
     checks = {}
 
     # C1
@@ -173,81 +237,42 @@ def main():
     checks["C3_braid_identity_artin"] = bool(ok)
     log(f"C3 {n} braid identities in the free group: {ok}")
 
-    # pin
-    flint.ctx.prec = PREC
-    qpin = flint.arb(Q_50_DIGIT_STR)
-    R = T.Ring(qpin, flint.arb)
-    E0 = flint.arb(E0_STR)
-    tb = {k: T.sweep_trace(T.word_program(3, F.atom_word(k, [], "over")), R)[0] for k in "pn"}
-
-    def cell(order, bonds, variant):
-        t = time.time()
-        atom, st = T.sweep_trace(T.atom_program(order, bonds, variant), R,
-                                 log=log if len(order) >= 8 else None, every=500)
-        free = flint.arb(1)
-        for k in order:
-            free *= tb[k]
-        ratio = atom / free
-        st["seconds"] = round(time.time() - t, 2)
-        return ratio, st
-
+    tb, R, E0 = _pin()
     # C2
     W = json.load(open(os.path.join(HERE, "he4-all-pairs-exact.witness.json")))
     ok = True
     for r in W["rows"]:
         v = "over" if r["variant"] == "-" else r["variant"]
-        ratio, _ = cell("ppnn", HE4_ROUTES[r["route"]], v)
+        ratio, _ = _cell(tb, R, "ppnn", HE4_ROUTES[r["route"]], v)
         ok &= bool(abs(ratio - flint.arb(r["ratio_atom_over_free"])) < flint.arb("1e-28"))
     checks["C2_he4_all_pairs_witness_1e-28"] = bool(ok)
     log(f"C2 nine ⁴He cells reproduced: {ok}")
     assert all(checks.values()), checks
 
     from codata_constants import _ame_binding_mev  # comparison only
-    rows = []
-    spent = {}
+    jobs = []
     for name, Z, N in NUCLEI:
         A = Z + N
         if A > a_max:
             break
-        order = "p" * Z + "n" * N
-        for route, bonds in (("gg chain", chain(A)), ("sequential capture", sequential(A))):
-            for v in ("over", "under"):
-                key = (route, v)
-                if spent.get(key, 0) > budget:
-                    log(f"{name} {route} {v}: skipped, previous cell exceeded the budget")
-                    continue
-                ratio, st = cell(order, bonds, v)
-                spent[key] = st["seconds"]
-                Bd = E0 * 1000 * (1 - ratio)           # keV, B_diff / tr_free
-                Bl = E0 * 1000 * (-ratio.log())        # keV, log law
-                ame = _ame_binding_mev(Z, A) * 1000
-                row = {"nucleus": name, "Z": Z, "N": N, "order": order, "route": route,
-                       "variant": v, "bonds": len(bonds),
-                       "ratio_atom_over_free": ratio.str(40, radius=False),
-                       "ratio_radius": ratio.rad().str(3),
-                       "B_diff_over_trfree_keV": (Bd).str(20, radius=False),
-                       "B_log_keV": Bl.str(20, radius=False),
-                       "AME_keV_comparison_only": mp.nstr(ame, 12),
-                       "peak_width": st["peak_width"], "peak_terms": st["peak_terms"],
-                       "letters": st["steps"], "seconds": st["seconds"]}
-                rows.append(row)
-                log(f"{name:4s} {route:18s} {v:5s} B_log={Bl.str(12, radius=False):>22s} keV "
-                    f"(AME {mp.nstr(ame, 8)}) width {st['peak_width']} terms {st['peak_terms']} "
-                    f"{st['seconds']}s")
-                out = {"q0Anchor": "proton",
-                       "q0AnchorReason": "arb balls at 768 bits around the 50-digit proton pin",
-                       "bean": "qou-sv7h",
-                       "rulings": ["γγ bond: photon vertex σ_iσ_{i+1}⁻¹, right-hand closure "
-                                   "(owner-rulings 2026-11-22)",
-                                   "convention D: z = q³/(q²+1)",
-                                   "log law B = E₀·ln(tr_free/tr_atom) (owner-rulings 2026-11-25)"],
-                       "notChosen": ["nucleon order Z p then N n is the production order, not "
-                                     "derived (owner-rulings 2026-11-21)",
-                                     "routes and variants are all reported; none is selected"],
-                       "E0_MeV": E0_STR, "checks": checks, "rows": rows,
-                       "note": "PROBE, adopts nothing. AME values are comparison fields only."}
-                with open(os.path.join(HERE, "binding-scale-tl.witness.json"), "w") as fh:
-                    json.dump(out, fh, indent=1, ensure_ascii=False)
+        # the chain has no transports, so "over" and "under" are the same word: computed once
+        jobs.append((name, Z, N, "gg chain", "-"))
+        for v in ("over", "under"):
+            jobs.append((name, Z, N, "sequential capture", v))
+    rows = []
+    if "--only" in sys.argv:  # rerun named nuclei, keep the other rows of the existing witness
+        only = set(sys.argv[sys.argv.index("--only") + 1].split(","))
+        jobs = [j for j in jobs if j[0] in only]
+        prev = json.load(open(os.path.join(HERE, "binding-scale-tl.witness.json")))["rows"]
+        rows = [r for r in prev if r["nucleus"] not in only]
+    with mp_pool.Pool(workers) as pool:
+        for row in pool.imap_unordered(_job, jobs):
+            row["AME_keV_comparison_only"] = mp.nstr(_ame_binding_mev(row["Z"], row["Z"] + row["N"]) * 1000, 12)
+            rows.append(row)
+            log(f"{row['nucleus']:4s} {row['route']:18s} {row['variant']:5s} B_log={row['B_log_keV'][:16]:>17s} keV "
+                f"(AME {row['AME_keV_comparison_only'][:9]}) width {row['peak_width']} terms {row['peak_terms']} "
+                f"{row['seconds']}s")
+            _write(checks, rows)
     log("done")
 
 
