@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-27T17:48:59Z
-updated_at: 2026-11-27T19:15:45Z
+updated_at: 2026-11-27T19:32:15Z
 parent: qou-rtxm
 ---
 
@@ -20,3 +20,6 @@ Owner 2026-11-27: 'Dispatch sibling to do lie derivatives on manifolds'. Route p
 2026-11-27: PR #9576 merged. All four items landed (#9532, #9540, #9576). Possible follow-up, not started: non-constant vector fields (C^inf(E)-linear cochains) and moving Classical.choice onto Coev.
 
 2026-11-27 (coordinator follow-up): non-constant vector fields. PR #9589: IsLieRinehart, FunLinear; d, i_X, L_X preserve tensors. Next: smooth vector fields instance + extDeriv bridge, then Coev routing.
+
+
+2026-11-27 (PR #9589, head c6d95ea4c5b): non-constant fields done. Core: FunLinear.eq_of_span. Transcendental/Calculus/SmoothVectorFields.lean: SFun/SVF Lie-Rinehart instance, toCEv, span_const, ceDAlt_toCEv (d toCEv phi = toCEv (extDeriv phi), finite-dim E, arbitrary smooth fields), cartan_smoothField. lean-direct exit 0, 0 sorry, axioms propext/Classical.choice/Quot.sound. Coev routing: nothing to route; the choice is Mathlib's (already in the merged algebraic cartan_formula), and the bridge has no Archimedean hypothesis. Awaiting merge.
