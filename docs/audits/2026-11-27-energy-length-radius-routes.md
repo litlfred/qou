@@ -53,3 +53,29 @@ The value 4.00 is a known coincidence. No route was tuned toward it, and a route
 - The next derivation target is therefore `ε`, from the model's own spectrum (for example the first Hecke / Casimir gap in units of the nucleon rest energy). It is not a new length scale.
 
 Nothing is adopted and nothing is wired.
+
+## 7. First derived ε: the isospin block gap (added the same day)
+
+Probe: [`isospin_gap_radius_probe.py`](../../computations/probes/energy_length_map/isospin_gap_radius_probe.py) (mpmath 50 dps, proton pin).
+
+The gap is taken blind to any radius from corpus definitions only:
+- **Block weights.** Convention D on `V^{⊗3}`, `V = ℂ²` (isospin), gives `y_(3) = [4]/[2]³` and `y_(2,1) = [2]/[2]³`. Clebsch–Gordan, `[2]³ = [4] + 2[2]`, is checked in the probe.
+- **Energies.** The `β = ln q` dictionary (`QBetaEnergyDictionary`) turns weights into energies, in the unit of the quantum temperature `k_B T_q = E₀ = m_e/(q(q−1))` (`def:quantum-temperature`, `SpectatorEnergyMap.e0`).
+- **The gap.** `E₁ = E₀ · ln([4]/[2]) = E₀ · ln(q² + q⁻²)`, and `ε = E₁ / M` with `M` the model proton mass.
+
+| quantity | value |
+|---|---|
+| `q² + q⁻²` | 2.04370620853 |
+| `|E₁| / m_e` | 5.85518358785 |
+| `ε` | 0.00318883265 |
+| `D_C = √(q/2)/√ε` | **13.1925** |
+
+**The sign is reversed.** The symmetric block `(3)` has the larger weight, so the dictionary puts it *below* `(2,1)`. If `(3)` is read as the isospin-3/2 state, the order is opposite to the nucleon being the ground state.
+
+**Comparison boundary:** `|E₁| = 2.99 MeV` against `Δ − N ≈ 293 MeV`, and `r_rms = 2.77 fm` against `r_p = 0.8409 fm`.
+
+**Scope (a):** this gap, alone and in this energy unit, does not give the radius. It is too small by about 98×, which makes the radius about 3.3× too large, and the sign is reversed. Two things could change the result:
+- a different energy unit, which is the open "which multiple of `E₀`" question recorded in `SpectatorEnergyMap`;
+- a different gap operator, such as the Casimir insertion `h²C` on the charge sectors (`BlockChargeSectorTrace`).
+
+Choosing among those to match would be selection. Each needs its own derivation.
