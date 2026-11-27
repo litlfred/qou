@@ -130,3 +130,21 @@ transcendental and is stated here, not in Lean. Verified 2026-11-27: `lean -Daut
 * **Coulomb (G3), T(T+1) (G2).** These subtract from or reshape Ra and Rb. Neither changes the split.
 * **Nucleus 3D word (T3).** Rb agreeing with T3 supports T3 as the inter-nucleon count. The open half
   is per nucleon, not more bonds.
+
+## 7. After the owner card (2026-11-27 21:27Z: keep open, record both): does `s` depend on size?
+
+The one size dependence the corpus already fixes is the T3 degree. Under T3 a nucleon has `deg = 1, 2, 3`
+bonded strands at `A = 2, 3, ≥ 4`. A reading in which only bonded strands relax (`s/3` per bonded
+strand, on top of T3 bonds at the ruled value `b`) gives the following against AME, scope (a). It was
+computed in this session and **is not adopted**. It mixes two bond values (`b` from the ruled bond
+letter, `s` from the trivial block) with no derivation joining them:
+
+| ²H | ³H | ⁴He | ⁶Li | ¹⁶O | ⁵⁶Fe | ²⁰⁸Pb | mean A ≥ 16 (sd) |
+|---|---|---|---|---|---|---|---|
+| 2.15 | 1.69 | 1.01 | 1.35 | 0.90 | 0.82 | 0.91 | 0.881 (0.058) |
+
+What it shows is a limit, not a candidate. **Every inter-nucleon reading already over-binds ²H**: T3
+gives ×1.29 and Rb gives ×1.51 before any `s` is added. So no size-dependent per-nucleon term that is
+non-negative can bring the deuteron down. The light-nucleus excess comes from the bond value at
+`A = 2`, not from the per-nucleon term. That makes it a separate open item: the A = 2 bond value, which
+belongs to the bond-rule line (#9659, rule (1) gives 6 keV and rule (2) 5.83 MeV).
