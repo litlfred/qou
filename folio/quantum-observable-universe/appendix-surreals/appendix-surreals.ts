@@ -213,6 +213,7 @@ export default chapter({
       label: "sec:surreals-archimedean-algebraic",
       blocks: [
         "algebraic-core-survives",
+        "tarski-sign-decision-depth",
         "ecalle-borel-resummation",
         "analytic-obstructions",
         "analytic-obstructions-table1-data",
