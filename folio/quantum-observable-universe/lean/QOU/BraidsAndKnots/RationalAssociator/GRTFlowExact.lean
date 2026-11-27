@@ -566,4 +566,163 @@ theorem evD_EP (hy : GrtU4 N y) {K : ℕ} (hK : 1 ≤ K) (hNK : N ≤ K) (x : �
 
 end Flow
 
+/-! ### The four universal defects under the flow -/
+
+section Conditions
+
+variable {N : ℕ} {y : FreeAlgebra ℚ (Fin 2)}
+
+theorem DK3.map' {R S : Type*} [Ring R] [Ring S] (f : R →+* S) {a b c : R} (h : DK3 a b c) :
+    DK3 (f a) (f b) (f c) :=
+  ⟨by simpa [map_add] using h.n12_3.map f, by simpa [map_add] using h.n13_2.map f,
+    by simpa [map_add] using h.n23_1.map f⟩
+
+theorem DK4.map' {R S : Type*} [Ring R] [Ring S] (f : R →+* S) {a b c d e g : R}
+    (h : DK4 a b c d e g) : DK4 (f a) (f b) (f c) (f d) (f e) (f g) :=
+  ⟨h.f12_34.map f, h.f13_24.map f, h.f14_23.map f,
+    by simpa [map_add] using h.n12_3.map f, by simpa [map_add] using h.n13_2.map f,
+    by simpa [map_add] using h.n23_1.map f, by simpa [map_add] using h.n12_4.map f,
+    by simpa [map_add] using h.n14_2.map f, by simpa [map_add] using h.n24_1.map f,
+    by simpa [map_add] using h.n13_4.map f, by simpa [map_add] using h.n14_3.map f,
+    by simpa [map_add] using h.n34_1.map f, by simpa [map_add] using h.n23_4.map f,
+    by simpa [map_add] using h.n24_3.map f, by simpa [map_add] using h.n34_2.map f⟩
+
+theorem goodAt_conj {P Q c : DualNumber (U4 N)} (hP : GoodAt 0 P) (hc : GoodAt 1 c)
+    (hQ : GoodAt 0 Q) : GoodAt 1 (P * c * Q) :=
+  (hP.mul (show 0 + 1 = 1 by norm_num) hc).mul (show 1 + 0 = 1 by norm_num) hQ
+
+theorem sandwich {R : Type*} [Ring R] (A B v : R) :
+    ((1 + inr A) * inl v * (1 + inr B) : DualNumber R) = inl v + inr (A * v + v * B) := by
+  ext
+  · simp
+  · simp [snd_mul, add_comm]
+
+/-- (5.14) for the values `Ĥ`, exactly: this is (5.19), i.e. `GrtU4.lin514`. -/
+theorem tc_gam (hy : GrtU4 N y) {u v w : U4 N} (hu : u ∈ Fil N 1) (hv : v ∈ Fil N 1)
+    (hw : w ∈ Fil N 1) (h : DK3 u v w) :
+    gam y v w * inl v * gam y w v = gam y u w * (inl v + inl w) * gam y w u - inl w := by
+  have h514 := hy.lin514 u v w hu hv hw h
+  rw [gam, gam, gam, gam, ← inl_add, sandwich, sandwich]
+  ext
+  · simp
+  · simpa using h514
+
+theorem goodAt_val_Hh (hy : GrtU4 N y) {a b : U4 N} (ha : a ∈ Fil N 1) (hb : b ∈ Fil N 1) :
+    GoodAt 0 (Hh hy a b ha hb : DualNumber (U4 N)) := goodAt_gam hy ha hb
+
+theorem goodAt_inv_Hh (hy : GrtU4 N y) {a b : U4 N} (ha : a ∈ Fil N 1) (hb : b ∈ Fil N 1) :
+    GoodAt 0 (↑(Hh hy a b ha hb)⁻¹ : DualNumber (U4 N)) := goodAt_gam hy hb ha
+
+theorem dk3_013 : DK3 (t N 0) (t N 1) (t N 3) :=
+  ⟨(dk4 N).n12_3, (dk4 N).n13_2, (dk4 N).n23_1⟩
+
+theorem dk3_310 : DK3 (t N 3) (t N 1) (t N 0) :=
+  ⟨by rw [add_comm]; exact (dk4 N).n23_1, by rw [add_comm]; exact (dk4 N).n13_2,
+    by rw [add_comm]; exact (dk4 N).n12_3⟩
+
+theorem dk3_543 : DK3 (t N 5) (t N 4) (t N 3) :=
+  ⟨by rw [add_comm]; exact (dk4 N).n34_2, by rw [add_comm]; exact (dk4 N).n24_3,
+    by rw [add_comm]; exact (dk4 N).n23_4⟩
+
+local notation "τ" i => (inl (t N i) : DualNumber (U4 N))
+
+variable (hy : GrtU4 N y) {K : ℕ} (hK : 1 ≤ K) (hNK : N ≤ K) (x : ℚ)
+include hy hK hNK
+
+/-- **(5.12) under the flow.** -/
+theorem goodAt_inv {d : ℕ}
+    (hz : evq x (defectPoly y K (.inv (t N 0) (t N 3) (t_mem_Fil_one 0) (t_mem_Fil_one 3))) ∈
+      Fil N d) :
+    GoodAt d (evD x (defectPoly y K (.inv (t N 0) (t N 3) (t_mem_Fil_one 0)
+      (t_mem_Fil_one 3)))) := by
+  have h0 := t_mem_Fil_one (N := N) 0
+  have h3 := t_mem_Fil_one (N := N) 3
+  set G := expPoly (x • y) K
+  set H := Hh hy (t N 0) (t N 3) h0 h3
+  simp only [defectPoly, map_sub, map_mul, map_one] at hz ⊢
+  rw [evD_EP hy hK hNK x h0 h3, evD_EP hy hK hNK x h3 h0, ← Hh_inv hy _ _ h0 h3, inv_actV]
+  set s0 := (H : DualNumber (U4 N)) * (τ 0) * ↑H⁻¹
+  have hs0 : GoodAt 1 s0 := goodAt_conj (goodAt_val_Hh hy h0 h3) (goodAt_inl h0)
+    (goodAt_inv_Hh hy h0 h3)
+  have h3' : GoodAt 1 (τ 3) := goodAt_inl h3
+  have hDK : DK3 s0 (-s0 - τ 3) (τ 3) :=
+    ⟨by rw [show -s0 - (τ 3) + (τ 3) = -s0 by abel]; exact (Commute.refl s0).neg_right,
+      by rw [show -s0 - (τ 3) = -(s0 + τ 3) by abel]; exact (Commute.refl _).neg_left,
+      by rw [show s0 + (-s0 - (τ 3)) = -(τ 3) by abel]; exact (Commute.refl _).neg_right⟩
+  have key := goodAt_liftD3 s0 (-s0 - τ 3) (τ 3) hDK hs0 (hs0.neg.sub h3') h3' hz
+  simp only [evq_EP, map_sub, map_mul, map_one, map_eval, liftD3_t0, liftD3_t3] at key
+  exact key
+
+/-- **(5.14) under the flow.** -/
+theorem goodAt_tc {d : ℕ}
+    (hz : evq x (defectPoly y K (.tc (t N 0) (t N 1) (t N 3) (t_mem_Fil_one 0)
+      (t_mem_Fil_one 1) (t_mem_Fil_one 3) dk3_013)) ∈ Fil N d) :
+    GoodAt d (evD x (defectPoly y K (.tc (t N 0) (t N 1) (t N 3) (t_mem_Fil_one 0)
+      (t_mem_Fil_one 1) (t_mem_Fil_one 3) dk3_013))) := by
+  have h0 := t_mem_Fil_one (N := N) 0
+  have h1 := t_mem_Fil_one (N := N) 1
+  have h3 := t_mem_Fil_one (N := N) 3
+  set G := expPoly (x • y) K
+  simp only [defectPoly, map_sub, map_mul, evD_C, evq_C] at hz ⊢
+  rw [evD_EP hy hK hNK x h1 h3, evD_EP hy hK hNK x h3 h1, evD_EP hy hK hNK x h0 h3,
+    evD_EP hy hK hNK x h3 h0, ← Hh_inv hy _ _ h1 h3, ← Hh_inv hy _ _ h0 h3, inl_add]
+  have hDK : DK3 (τ 0) (τ 1) (τ 3) := by
+    simpa using (dk3_013 (N := N)).map' (inlHom (U4 N) (U4 N))
+  obtain ⟨heq, hdk⟩ := tc_actV G (gamD y) (commProp_gamD y) hDK
+    (Hh hy _ _ h0 h3) (Hh hy _ _ h1 h3) rfl rfl rfl rfl (tc_gam hy h0 h1 h3 dk3_013)
+  rw [heq]
+  have g0 := goodAt_conj (goodAt_val_Hh hy h0 h3) (goodAt_inl h0) (goodAt_inv_Hh hy h0 h3)
+  have g1 := goodAt_conj (goodAt_val_Hh hy h1 h3) (goodAt_inl h1) (goodAt_inv_Hh hy h1 h3)
+  have key := goodAt_liftD3 _ _ _ hdk g0 g1 (goodAt_inl h3) hz
+  simp only [evq_EP, map_sub, map_mul, map_add, map_eval, liftD3_t0, liftD3_t1,
+    liftD3_t3] at key
+  simpa [tcDefect] using key
+
+/-- **(5.13) under the flow.** -/
+theorem goodAt_hex {d : ℕ} (hz : evq x (defectPoly (N := N) y K .hex) ∈ Fil N d) :
+    GoodAt d (evD x (defectPoly (N := N) y K .hex)) := by
+  have h0 := t_mem_Fil_one (N := N) 0
+  have h1 := t_mem_Fil_one (N := N) 1
+  have h3 := t_mem_Fil_one (N := N) 3
+  set G := expPoly (x • y) K
+  simp only [defectPoly, map_sub, map_mul, map_one] at hz ⊢
+  rw [evD_EP hy hK hNK x h1 h0, evD_EP hy hK hNK x h3 h1, evD_EP hy hK hNK x h0 h3]
+  set G1 := Hh hy _ _ h1 h0
+  set G2 := Hh hy _ _ h3 h1
+  set G3 := Hh hy _ _ h0 h3
+  have hZ : G2 * G3 = G1⁻¹ := by
+    apply Units.ext
+    rw [Units.val_mul, val_Hh, val_Hh, val_inv_Hh, gam_mul]
+    congr 2
+    have e1 := hy.lin513
+    have e2 := hy.lin512 _ _ h0 h1
+    calc eval (t N 3) (t N 1) y + eval (t N 0) (t N 3) y
+        = (eval (t N 1) (t N 0) y + eval (t N 3) (t N 1) y + eval (t N 0) (t N 3) y) -
+            eval (t N 1) (t N 0) y := by abel
+      _ = eval (t N 0) (t N 1) y := by rw [e1, zero_sub, eq_neg_of_add_eq_zero_left e2]
+  have hDK : DK3 (τ 0) (τ 1) (τ 3) := by
+    simpa using (dk3_013 (N := N)).map' (inlHom (U4 N) (U4 N))
+  have htc : TCompat (τ 1) (τ 0) G3⁻¹ G1 := by
+    unfold TCompat
+    rw [inv_inv]
+    exact tc_gam hy h3 h1 h0 dk3_310
+  have hsum := transported3_sumV (gamD y) (commProp_gamD y) hDK G1 G3 rfl htc
+  have hdk := transported3_dk3V (gamD y) (commProp_gamD y) hDK G1 G3 rfl rfl hsum
+  have hx := hexagon_actV (t12 := τ 0) G 1 G1 G2 G3 hZ hsum
+  simp only [map_one, mul_one] at hx
+  rw [show actEval G (τ 1) (τ 0) G1 * actEval G (τ 3) (τ 1) G2 * actEval G (τ 0) (τ 3) G3 - 1 =
+      -(1 - actEval G (τ 1) (τ 0) G1 * actEval G (τ 3) (τ 1) G2 *
+        actEval G (τ 0) (τ 3) G3) by abel, hx]
+  have g1 := goodAt_conj (goodAt_val_Hh hy h1 h0) (goodAt_inl h1) (goodAt_inv_Hh hy h1 h0)
+  have g3 := goodAt_conj (goodAt_inv_Hh hy h0 h3) (goodAt_inl h3) (goodAt_val_Hh hy h0 h3)
+  have key := goodAt_liftD3 _ _ _ hdk (goodAt_inl h0) g1 g3 hz
+  simp only [evq_EP, map_sub, map_mul, map_one, map_eval, liftD3_t0, liftD3_t1,
+    liftD3_t3] at key
+  simp only [hexDefect, map_one, mul_one]
+  rw [show -(1 - eval _ _ G * eval _ _ G * eval _ _ G) =
+      eval _ _ G * eval _ _ G * eval _ _ G - (1 : DualNumber (U4 N)) by abel]
+  exact key
+
+end Conditions
+
 end QOU.BraidsAndKnots.RationalAssociator
