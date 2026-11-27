@@ -7,7 +7,7 @@ priority: normal
 tags:
     - constructive
 created_at: 2026-11-27T19:01:13Z
-updated_at: 2026-11-27T19:24:23Z
+updated_at: 2026-11-27T19:28:40Z
 parent: qou-dk7p
 ---
 
@@ -26,4 +26,4 @@ Overlaps: Coev strangler thread (QCalculus/HabiroBracket, HabiroCyclotomicOddLoc
 A then C: cyclotomic-series constructor + 3_1, 4_1, then twist knots via Masbaum (P1-P2) now; the general cyclotomic expansion for every knot (Habiro's theorem, quantum-group setup) is the long-run goal, added as P6.
 
 ## Progress
-- 2026-11-27: P1, P2 and P3 step 1 in PR #9592. P3 step 1 = QOU/Transcendental/BraidKnotOctonion/FigureEightKashaevHabiroReading (kashaev N = evalRoot zeta_N figureEight). Consumer moves wait for #9567/#9569 and the knot-volume thread (coordinate via coordinator). Next: P4 Ohtsuki series q=1+h.
+- 2026-11-27: P1, P2 and P3 step 1 in PR #9592. P3 step 1 = QOU/Transcendental/BraidKnotOctonion/FigureEightKashaevHabiroReading (kashaev N = evalRoot zeta_N figureEight). Consumer moves wait for #9567/#9569 and the knot-volume thread (coordinate via coordinator). P4 (HabiroOhtsukiExpansion, trivial-connection expansion q=1+h) also in #9592. Next: P5 bar involution.
