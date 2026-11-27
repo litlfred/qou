@@ -48,6 +48,7 @@
   -- Ref: [neumann-zagier1985]
 -/
 import QOU.Transcendental.BraidKnotOctonion.IdealTriangulation
+import BraidKnotOctonion.ShapeParameter
 
 namespace QOU.Knot.FlatTet
 
@@ -96,61 +97,12 @@ theorem BlochWigner_lob_eq_zero_of_im_eq_zero {z : ℂ} (hz : z.im = 0) :
 `Shape` is `IdealTetrahedron` minus `im_pos`: any `z ∈ ℂ ∖ {0, 1}`.  Flat shapes are
 allowed, which is the entire point. -/
 
-/-- A **shape parameter**: any `z ∈ ℂ ∖ {0,1}`.  Unlike `IdealTetrahedron` this does
-**not** require `0 < Im z`, so flat (real) shapes are permitted. -/
-structure Shape where
-  /-- The shape parameter. -/
-  z : ℂ
-  /-- Excluded so the edge parameters are genuine units. -/
-  ne_zero : z ≠ 0
-  /-- Excluded so `1/(1−z)` is a genuine unit. -/
-  ne_one : z ≠ 1
-
 namespace Shape
 
 variable (S : Shape)
 
-theorem one_sub_ne_zero : (1 : ℂ) - S.z ≠ 0 := sub_ne_zero.mpr (Ne.symm S.ne_one)
-
-/-- The three edge parameters, same convention as `IdealTetrahedron.param`. -/
-noncomputable def param : Fin 3 → ℂ
-  | 0 => S.z
-  | 1 => 1 / (1 - S.z)
-  | 2 => 1 - 1 / S.z
-
-@[simp] theorem param_zero : S.param 0 = S.z := rfl
-@[simp] theorem param_one : S.param 1 = 1 / (1 - S.z) := rfl
-@[simp] theorem param_two : S.param 2 = 1 - 1 / S.z := rfl
-
-/-- **Every edge parameter is nonzero** — from `z ≠ 0, 1` alone.
-
-`IdealTriangulation.param_ne_zero` proves the same thing from `param_im_pos`, i.e. from
-positivity.  Positivity is not what makes the parameters units. -/
-theorem param_ne_zero : ∀ i, S.param i ≠ 0
-  | 0 => S.ne_zero
-  | 1 => by
-      simp only [param_one]
-      exact one_div_ne_zero S.one_sub_ne_zero
-  | 2 => by
-      simp only [param_two]
-      intro h
-      have h1 : (1 : ℂ) = 1 / S.z := sub_eq_zero.mp h
-      rw [eq_div_iff S.ne_zero, one_mul] at h1
-      exact S.ne_one h1
-
-/-- **`z · z′ · z″ = −1`** — pure algebra, no positivity. -/
-theorem param_prod : S.param 0 * S.param 1 * S.param 2 = -1 := by
-  simp only [param_zero, param_one, param_two]
-  have h0 := S.ne_zero
-  have h1 := S.one_sub_ne_zero
-  field_simp
-  ring
-
 /-- The volume contributed by this shape.  Defined for flat shapes too, where it is `0`. -/
 noncomputable def volume : ℝ := BlochWigner_lob S.z
-
-/-- A shape is **flat** when it is real — the degenerate tetrahedron. -/
-def IsFlat : Prop := S.z.im = 0
 
 /-- **A flat shape has zero volume.** -/
 theorem volume_eq_zero_of_flat (h : S.IsFlat) : S.volume = 0 :=
@@ -173,20 +125,9 @@ theorem toShape_param (T : IdealTetrahedron) : ∀ i, T.toShape.param i = T.para
   | 1 => rfl
   | 2 => rfl
 
-/-! ## §3 — the gluing equations, over shapes that may be flat -/
+/-! ## §3 — volume of a shaped triangulation (gluing equations: `BraidKnotOctonion/ShapeParameter.lean`) -/
 
-/-- A collection of `n` shapes, flat ones allowed. -/
-structure ShapedTriangulation (n : ℕ) where
-  /-- The shapes. -/
-  tet : Fin n → Shape
-
-variable {n e : ℕ}
-
-/-- **The edge gluing equations**, stated over possibly-flat shapes.  Same formula as
-`MathlibExt.SatisfiesEdgeEquations`, without the positivity requirement. -/
-def ShapedTriangulation.SatisfiesEdgeEquations
-    (T : ShapedTriangulation n) (G : GluingData n e) : Prop :=
-  ∀ k, (∏ i, ∏ j, (T.tet i).param j ^ G.exp k i j) = 1
+variable {n : ℕ}
 
 /-- Total volume — well defined with flat shapes present, which contribute `0`. -/
 noncomputable def ShapedTriangulation.volume (T : ShapedTriangulation n) : ℝ :=
@@ -204,17 +145,7 @@ SnapPy's `3₁` triangulation has two tetrahedra with shapes `−1` and `2`, and
 exponent rows `[1,2,2, 2,1,2]` and `[1,0,0, 0,1,0]`.  Both edge equations hold, both
 shapes are flat, and the volume is `0`. -/
 
-/-- The trefoil's first shape, `z₀ = −1`.  **Rational**, hence flat. -/
-noncomputable def trefoilShape₀ : Shape :=
-  ⟨-1, by norm_num, by norm_num⟩
-
-/-- The trefoil's second shape, `z₁ = 2`.  **Rational**, hence flat. -/
-noncomputable def trefoilShape₁ : Shape :=
-  ⟨2, by norm_num, by norm_num⟩
-
-/-- The trefoil's two-tetrahedron shape data. -/
-noncomputable def trefoilTriangulation : ShapedTriangulation 2 :=
-  ⟨![trefoilShape₀, trefoilShape₁]⟩
+-- `trefoilShape₀`, `trefoilShape₁`, `trefoilTriangulation`: `BraidKnotOctonion/ShapeParameter.lean`.
 
 /-- **Trefoil edge equation 0**, exponents `[1,2,2, 2,1,2]`:
 `z₀ · (z₀′)² · (z₀″)² · (z₁)² · z₁′ · (z₁″)² = 1`. -/

@@ -51,6 +51,7 @@
   -- Ref: [neumann-zagier1985] eq. (37)–(39)
 -/
 import QOU.Transcendental.BraidKnotOctonion.KummerRadial
+import BraidKnotOctonion.GluingData
 import Mathlib.Analysis.Complex.UpperHalfPlane.Basic
 
 namespace QOU.MathlibExt
@@ -282,12 +283,6 @@ Two conditions are recorded, and they are **not equivalent**:
 ⚠ Neither condition, alone or together, certifies that a triangulation **is** a
 triangulation of a given manifold.  That is topology, and is not modelled here —
 see the module header. -/
-
-/-- Edge-gluing exponent data: `exp k i j` is the multiplicity with which the
-`j`-th edge-pair of tetrahedron `i` meets edge class `k`. -/
-structure GluingData (n e : ℕ) where
-  /-- The exponents. -/
-  exp : Fin e → Fin n → Fin 3 → ℕ
 
 variable {n e : ℕ}
 
