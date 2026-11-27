@@ -1,4 +1,3 @@
-import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Tactic
 
 /-!
@@ -29,8 +28,9 @@ numerically by `casimir-n-unknot-construction.witness.json`; it
 diverges in `n` and is inadmissible for the same reason as the Jones
 value.
 
-The file is archimedean (`ℝ`, `Real.sqrt`, ordering) per the §7c
-base-ring convention.
+The file is stated over `ℝ` because it uses ordering. The square root
+`√q` is a symbol `s` (`s > 0`, `s² = q`) rather than `Real.sqrt` (bean
+`qou-dk7p`).
 -/
 
 namespace QOU.AppendixSurreals
@@ -53,9 +53,11 @@ def CountsModes (F : ℕ → ℝ → ℝ) : Prop :=
 def bareCount (n : ℕ) (_q : ℝ) : ℝ := n
 
 /-- The Jones value of the `n`-unlink: `δ^{n−1}` with quantum dimension
-`δ = √q + (√q)⁻¹`. -/
-noncomputable def unlinkJones (n : ℕ) (q : ℝ) : ℝ :=
-  (Real.sqrt q + (Real.sqrt q)⁻¹) ^ (n - 1)
+`δ = √q + (√q)⁻¹`. The function takes the square root `s = √q` itself as its
+argument (`s > 0`, `s² = q`), so no `Real.sqrt` is needed; `s = 1` is the
+classical point `q = 1` (bean `qou-dk7p`). -/
+noncomputable def unlinkJones (n : ℕ) (s : ℝ) : ℝ :=
+  (s + s⁻¹) ^ (n - 1)
 
 /-- The normalised Markov trace of any identity braid: constant `1`. -/
 def normalizedTrace (_n : ℕ) (_q : ℝ) : ℝ := 1
@@ -81,48 +83,36 @@ theorem normalizedTrace_not_countsModes : ¬ CountsModes normalizedTrace := by
   have h2 := h 2
   norm_num [normalizedTrace] at h2
 
-/-- The quantum dimension at the classical point: `δ(1) = 2`. -/
-theorem quantumDim_one : Real.sqrt 1 + (Real.sqrt 1)⁻¹ = 2 := by
-  rw [Real.sqrt_one]
+/-- The quantum dimension at the classical point: `δ = 1 + 1⁻¹ = 2` at `s = √1 = 1`. -/
+theorem quantumDim_one : (1 : ℝ) + (1 : ℝ)⁻¹ = 2 := by
   norm_num
 
-/-- `δ(q) = 2` forces the classical point: for `0 < q`,
-`√q + (√q)⁻¹ = 2 ↔ q = 1` (since `δ − 2 = (√q − 1)²/√q`). -/
-theorem quantumDim_eq_two_iff (q : ℝ) (hq : 0 < q) :
-    Real.sqrt q + (Real.sqrt q)⁻¹ = 2 ↔ q = 1 := by
-  have hs : 0 < Real.sqrt q := Real.sqrt_pos.mpr hq
-  have hs0 : Real.sqrt q ≠ 0 := ne_of_gt hs
+/-- `δ = 2` forces the classical point: for `0 < s` (the square root of `q`),
+`s + s⁻¹ = 2 ↔ s = 1`, since `δ − 2 = (s − 1)²/s`. With `s² = q`, `s = 1` is `q = 1`. -/
+theorem quantumDim_eq_two_iff (s : ℝ) (hs : 0 < s) :
+    s + s⁻¹ = 2 ↔ s = 1 := by
+  have hs0 : s ≠ 0 := ne_of_gt hs
   constructor
   · intro h
-    have hmul : (Real.sqrt q + (Real.sqrt q)⁻¹) * Real.sqrt q
-        = 2 * Real.sqrt q := by rw [h]
-    have hinv : (Real.sqrt q)⁻¹ * Real.sqrt q = 1 := inv_mul_cancel₀ hs0
-    have hexp : Real.sqrt q * Real.sqrt q + 1 = 2 * Real.sqrt q := by
-      calc Real.sqrt q * Real.sqrt q + 1
-          = (Real.sqrt q + (Real.sqrt q)⁻¹) * Real.sqrt q := by
-            rw [add_mul, hinv]
-        _ = 2 * Real.sqrt q := hmul
-    have hsq : (Real.sqrt q - 1) ^ 2 = 0 := by linear_combination hexp
-    have hone : Real.sqrt q = 1 := by
-      have := sq_eq_zero_iff.mp hsq
-      linarith [this]
-    calc q = Real.sqrt q ^ 2 := (Real.sq_sqrt hq.le).symm
-      _ = 1 ^ 2 := by rw [hone]
-      _ = 1 := one_pow 2
+    have hexp : s * s + 1 = 2 * s := by
+      have := congrArg (· * s) h
+      simp only [add_mul, inv_mul_cancel₀ hs0] at this
+      linarith
+    have hsq : (s - 1) ^ 2 = 0 := by linear_combination hexp
+    have := sq_eq_zero_iff.mp hsq
+    linarith
   · rintro rfl
-    rw [Real.sqrt_one]
     norm_num
 
 /-- The Jones value of the n-unlink fails n-stability away from the
-classical point: comparing cutoffs `1` and `2` forces `δ(q) = 2`,
-i.e. `q = 1`. -/
-theorem unlinkJones_not_nStable (q : ℝ) (hq : 0 < q) (hq1 : q ≠ 1) :
-    ¬ NStable unlinkJones q := by
+classical point: comparing cutoffs `1` and `2` forces `δ = 2`, i.e. `s = 1`. -/
+theorem unlinkJones_not_nStable (s : ℝ) (hs : 0 < s) (hs1 : s ≠ 1) :
+    ¬ NStable unlinkJones s := by
   intro h
   have h12 := h 1 2
-  simp only [unlinkJones, Real.sqrt_one, inv_one] at h12
+  simp only [unlinkJones, inv_one] at h12
   norm_num at h12
-  exact hq1 ((quantumDim_eq_two_iff q hq).mp h12.symm)
+  exact hs1 ((quantumDim_eq_two_iff s hs).mp h12.symm)
 
 /-- **Uniqueness.** An n-stable, mode-counting functional whose
 single-mode value is `1` (the Hoefsmit normalisation: one unknot
@@ -138,14 +128,16 @@ theorem nStable_unique (F : ℕ → ℝ → ℝ) (q : ℝ)
 /-- **The selection, packaged.** Among the three concrete candidates,
 the bare count is the unique one that both counts modes and is
 n-stable; the Jones value fails stability and the normalised trace
-fails counting. (The Wenzl-sum candidate is covered numerically by
+fails counting. The parameter is the square root `s = √q` (`s > 0`,
+`s ≠ 1`, i.e. `q ≠ 1`); the bare count and the normalised trace do not depend on
+it. (The Wenzl-sum candidate is covered numerically by
 the witness; see the module docstring.) -/
-theorem bareCount_unique_admissible (q : ℝ) (hq : 0 < q) (hq1 : q ≠ 1) :
-    (CountsModes bareCount ∧ NStable bareCount q)
-      ∧ ¬ NStable unlinkJones q
+theorem bareCount_unique_admissible (s : ℝ) (hs : 0 < s) (hs1 : s ≠ 1) :
+    (CountsModes bareCount ∧ NStable bareCount s)
+      ∧ ¬ NStable unlinkJones s
       ∧ ¬ CountsModes normalizedTrace :=
-  ⟨⟨bareCount_countsModes, bareCount_nStable q⟩,
-    unlinkJones_not_nStable q hq hq1,
+  ⟨⟨bareCount_countsModes, bareCount_nStable s⟩,
+    unlinkJones_not_nStable s hs hs1,
     normalizedTrace_not_countsModes⟩
 
 end QOU.AppendixSurreals
