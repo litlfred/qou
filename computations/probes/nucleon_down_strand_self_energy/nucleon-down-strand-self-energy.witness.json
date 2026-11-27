@@ -1,0 +1,100 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-27T19:10:48.824761+00:00",
+  "commitSha": "3c0d3e1838abb16964fe83a6ebad4ac230d89772",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 190,
+  "computation": "nucleon-down-strand-self-energy",
+  "scriptFile": "nucleon_down_strand_self_energy_probe.py",
+  "scriptHash": "29cf28264a87",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/nucleon_down_strand_self_energy/nucleon_down_strand_self_energy_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/nucleon_down_strand_self_energy/nucleon_down_strand_self_energy_probe.py"
+  },
+  "description": "Per-down-strand self term of the categorical Lagrangian: exact full-tower checks (n = 2..5, symbolic q) that the Leibniz Cartan self term is n - 2n_d on every weight space and commutes with the Hecke action, Weyl-even self terms are flavour-blind; then the pre-registered Legendre variants in MeV at the proton q0 (QOU.Nuclear.NucleonDownStrandSelfEnergy).",
+  "data": {
+    "lean_module": "QOU.Nuclear.NucleonDownStrandSelfEnergy",
+    "beans_referenced": [
+      "qou-myts",
+      "qou-99qc"
+    ],
+    "exact_checks": {
+      "hecke_relation": true,
+      "n2_Htot_commutes_with_all_sigma": true,
+      "n2_Htot_equals_n_minus_2nd": true,
+      "n2_weyl_even_self_flavour_blind": true,
+      "n3_Htot_commutes_with_all_sigma": true,
+      "n3_Htot_equals_n_minus_2nd": true,
+      "n3_weyl_even_self_flavour_blind": true,
+      "n4_Htot_commutes_with_all_sigma": true,
+      "n4_Htot_equals_n_minus_2nd": true,
+      "n4_weyl_even_self_flavour_blind": true,
+      "n5_Htot_commutes_with_all_sigma": true,
+      "n5_Htot_equals_n_minus_2nd": true,
+      "n5_weyl_even_self_flavour_blind": true
+    },
+    "anchor": {
+      "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+      "h_1_minus_qinv": "0.0990817160442585078391771175189060639852583733894458193088818",
+      "E0_order_zero": "4.18598136329447589694506215875900841014348689087960498278367",
+      "E0_tower": "4.22748335562903055026805602658721115361518419806561475207637"
+    },
+    "variants": {
+      "V0_velocity|E0_order_zero": {
+        "MeV": "0.0",
+        "ratio_to_codata": "0.0"
+      },
+      "V0_velocity|E0_tower": {
+        "MeV": "0.0",
+        "ratio_to_codata": "0.0"
+      },
+      "V1_canonical_cartan|E0_order_zero": {
+        "MeV": "0.829508433609002748343947590800200628542895857097274975814755",
+        "ratio_to_codata": "0.641372908509817593886932905444556271567700603998019794472463"
+      },
+      "V1_canonical_cartan|E0_tower": {
+        "MeV": "0.837732610848529423144162971693154883190315328766894396639708",
+        "ratio_to_codata": "0.647731812485351832023586085911622899814306321556004493105727"
+      },
+      "V2_canonical_charge_extension|E0_order_zero": {
+        "MeV": "0.373659657266918938738882762807712653170274124845218588978253",
+        "ratio_to_codata": "0.288912290055183827969253446515245064991271366746374131566718"
+      },
+      "V2_canonical_charge_extension|E0_tower": {
+        "MeV": "0.377364313089710058249087618018374698123460357197437429027154",
+        "ratio_to_codata": "0.291776716483922652071189038631971524572177001255027161597564"
+      },
+      "Vref_gibbs_cell_2logq|E0_order_zero": {
+        "MeV": "0.873536621380459821746434074984571553678259416295994588435349",
+        "ratio_to_codata": "0.675415343406514865806964115503886586503774977632004772257174"
+      },
+      "Vref_gibbs_cell_2logq|E0_tower": {
+        "MeV": "0.882197316930225041262327987588075186486589880651820588341200",
+        "ratio_to_codata": "0.682111761754310994055448267969445217523055908222565740917778"
+      }
+    },
+    "codata_comparison_only": {
+      "dm_np_MeV": "1.29333251000000000000000000000000000000000000000000000000000"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
