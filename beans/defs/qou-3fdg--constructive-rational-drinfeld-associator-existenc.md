@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T22:38:53Z
+updated_at: 2026-11-27T22:46:43Z
 parent: qou-dk7p
 ---
 
@@ -155,3 +155,7 @@ STILL OPEN, which is why this bean stays open:
 (1) the existence of group-like K-associators (the KZ analytic input) is assumed, not derived;
 (2) Φ is chosen separately for each N, with no compatibility across N, so there is no rational associator in the completion yet;
 (3) N ∈ {0,1} is not stated.
+
+
+
+**2026-11-27 (PR #9806, stacked on #9801):** `AssociatorTower.lean`, sorry-free. `rational_associator_compatible_of_tower`: one sequence Φ : ℕ → ℚ⟨X,Y⟩ with AssocU4 N E (Φ N) ∧ GL N (Φ N) for N ≥ 2 and Φ (N+1) − Φ N ∈ FF N for N ≥ 1. Hypothesis STRENGTHENED to `CompatibleGroupLikeKAssociatorTower` (Ψ_{N+1} − Ψ_N ∈ FFK K N; route b). Route (a) — removing the strengthening via GRT₁ transitivity (Drinfeld Prop 5.5) — not done. Remaining unproved input: existence of a compatible group-like K-tower (KZ truncations). Audit §17e. Bean stays open.
