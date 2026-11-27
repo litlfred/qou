@@ -124,7 +124,18 @@ theorem mass_formula_shape
 
     Header comment at the top of this file documents the planned
     split into `BorromeanCommonScale` + `BorromeanMassFormula` (this
-    class). -/
+    class).
+
+    **No measured value appears in this class** (owner ruling 2026-11-27:
+    no empirical predictions in formal statements). Two former fields,
+    `proton_matches_codata` and `neutron_matches_codata`, bounded the
+    predicted ratios against CODATA `m_p/m_e = 1836.152673426` and
+    `m_n/m_e = 1838.68366200`. They were removed; nothing consumed them.
+    The comparison is made in the block prose, at the comparison boundary.
+    With them gone the class records the predicted ratios and the residual
+    band but asserts no relation between them, so it carries no
+    mathematical claim yet. Tying `proton_mass_over_me` to
+    `baryonMassOverMe q₀ 2` is the open step. -/
 -- Ref: [leitner2026] Ch. 4, Borromean baryon section
 class MassFormula where
   /-- Predicted proton mass over m_e at the substrate parameter
@@ -134,20 +145,10 @@ class MassFormula where
       (k = 1 / orientation partition (1, 2)). -/
   neutron_mass_over_me : ℝ
   /-- The maximal admissible relative residual (the substrate Q_β
-      formula's 1015 ppm floor); the CODATA-agreement claims are
-      stated to within this band. -/
+      formula's 1015 ppm floor). -/
   qbeta_residual : ℝ
   /-- The residual band is strictly positive. -/
   qbeta_residual_pos : qbeta_residual > 0
-  /-- The predicted proton mass matches the CODATA proton/electron mass
-      ratio (≈ 1836.15267) to within the Q_β residual band.  This is the
-      conjectural content; consumers see it as a hypothesis. -/
-  proton_matches_codata :
-    |proton_mass_over_me - 1836.152673426| ≤ qbeta_residual * 1836.152673426
-  /-- The predicted neutron mass matches the CODATA neutron/electron
-      mass ratio (≈ 1838.68366) to within the Q_β residual band. -/
-  neutron_matches_codata :
-    |neutron_mass_over_me - 1838.68366200| ≤ qbeta_residual * 1838.68366200
 
 end Borromean
 end QOU
