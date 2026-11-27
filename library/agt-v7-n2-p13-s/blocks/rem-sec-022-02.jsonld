@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/agt-v7-n2-p13-s/blocks/rem-sec-022-02",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 64,
+  "pageEnd": 71,
+  "text": "rem-sec-022-02.md",
+  "derivedFrom": "library/agt-v7-n2-p13-s/sections/sec-022",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v7-n2-p13-s/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "6.15",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Cites external source [28], [18], [11] in sections/sec-022-64-example-the-figure-eight-knot-complement.md",
+    "claim_id": "agt-v7-n2-p13-s#remark:6.15"
+  }
+}

@@ -1,1 +1,0 @@
-With that in mind, we note that it becomes clear in [4] that traverse to the left is, unsurprisingly, also seen to be solitonic, which implies that Equation (A-13) should really be expressed explicitly as 0 R R R m a F  

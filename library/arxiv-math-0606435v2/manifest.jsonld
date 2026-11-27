@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0606435v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0606435v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -55,6 +55,18 @@
     "library/arxiv-math-0606435v2/sections/sec-040"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "arXiv:math/0606435v2 [math.GT] 10 Oct 2007 — We show that 3-braid links with given (non-zero) Alexander or Jones polynomial are ﬁnitely many, and can be effectively determined.\n\n**arXiv:math/0606435v2 [math.GT] 10 Oct 2007**\n\n*AND OTHER LINK BRAID REPRESENTATIONS*\n\n68 pp, 42 sections.\n\n**Abstract.** We show that 3-braid links with given (non-zero) Alexander or Jones polynomial are ﬁnitely many, and can be effectively determined. We classify among closed 3-braids strongly quasi-positive and ﬁbered ones, and show that 3-braid links have a unique incompressible Seifert surface. We also classify the positive braid words with Morton-Williams-Franks bound 3 and show that closed positive braids of braid index 3 are closed positive 3-braids. For closed braids on more strings, we study the alternating links occurring. In particular we classify those of braid index 4, and show that their Morton-Williams-Franks inequality is exact. Finally, we use the Burau representation to obtain new braid index criteria, including an efﬁcient 4-braid test.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries, basic definitions and convent; 2.1 Links and link diagrams; 2.2 Polynomial link invariants; 2.3 Semiadequacy; 2.4 Braids and braid words; 2.5 Braid representations of links; 2.6 Gau sum invariants; 3 Xu's form and Seifert surfaces; 3.1 Strongly quasi-positive links among links ; 3.2 Uniqueness of minimal genus Seifert surfac; 3.3 Fiberedness; 4 Polynomial invariants; 4.1 Alexander polynomial; 4.2 Jones polynomial; 4.3 Q polynomial; 5 Positivity of 3-braid links",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
@@ -81,8 +93,8 @@
       "stamp_date": "10 Oct 2007"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

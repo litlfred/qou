@@ -92,6 +92,15 @@
       "command": "python3 computations/q0_value_drift_audit.py --strict"
     },
     {
+      "id": "accuracy-scorecard",
+      "node": "Task_Staleness",
+      "title": "Observational accuracy scorecard drift & witness gate",
+      "mode": "strict",
+      "diff": false,
+      "setup": null,
+      "command": "python3 scripts/generate-accuracy-scorecard.py --check"
+    },
+    {
       "id": "qou-mass-vendor-drift",
       "node": "Task_Staleness",
       "title": "qou-mass vendored _internal/ vs computations/ (warn)",

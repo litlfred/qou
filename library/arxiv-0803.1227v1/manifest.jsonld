@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0803.1227v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0803.1227v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -20,6 +20,18 @@
     "library/arxiv-0803.1227v1/sections/sec-005"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Linear programming bounds for unitary space time codes — The linear programming method is applied to the space Un(C) of uni- tary matrices in order to obtain bounds for codes relative to the\n\n**Linear programming bounds for unitary space time codes**\n\n*Jean Creignou*\n\n11 pp, 7 sections.\n\n**Abstract.** The linear programming method is applied to the space Un(C) of uni- tary matrices in order to obtain bounds for codes relative to the diversity sum and the diversity product. Theoretical and numerical results improv- ing previously known bounds are derived.\n\n**Outline.** Front matter; Introduction; The linear programming method on homogeneous s; The case of unitary codes; Analytic bounds of low degree; Numerical bounds; Conclusions",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -43,8 +55,8 @@
       "stamp_date": "8 Mar 2008"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

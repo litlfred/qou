@@ -70,7 +70,7 @@ Determine the scope and check the user's role:
 1. What is the target? (block | chapter | paper | branch-diff)
 2. What is the user's role? (reader | collaborator | owner)
 3. Which specialists are allowed for that role?
-4. Is there prior review data in proof-objects.json or from the
+4. Is there prior review data in `<block>.qa.json` sidecars or from the
    agent-review pipeline? (avoid re-running expensive analyses)
 ```
 
@@ -159,7 +159,7 @@ If the author says "apply all" or "go ahead":
 ### Findings (in dependency order)
 
 #### 1. `prop:q-hodge-decomp` — 2 critical, 1 major
-**GitHub**: <repo-url>/blob/<branch>/content/.../q-hodge-decomp.md
+**GitHub**: <repo-url>/blob/<branch>/folio/.../q-hodge-decomp.md
 
 - [critical, proof-gap-audit] Existence of harmonic representative
   asserted but not constructed. Proof says "choose $h \in \ker \Delta_q$"
@@ -206,7 +206,7 @@ If the author says "apply all" or "go ahead":
   `collaborator`-only fixers.
 - **Idempotence**: running the editor twice on an unchanged branch
   should produce the same report. Cache specialist outputs via
-  `proof-objects.json` review entries when possible.
+  per-block `<block>.qa.json` sidecars when possible.
 - **No silent edits**: the editor never writes to `.ts`, `.md`, or
   `.lean` files. Dispatch skills do that, under author approval.
 - **Honest confidence**: if a specialist reports low confidence
@@ -219,7 +219,7 @@ If the author says "apply all" or "go ahead":
   **per-isotope binding**, **confinement-SDP**, or **Q_β** branch
   of the canonical chain (Steps 9a, 9b, 10, 11), include in the
   action plan a check that the matching `alg:`-block under
-  [`folio/quantum-observable-universe/appendix-mass-binding-algorithms/`](../../../folio/quantum-observable-universe/appendix-mass-binding-algorithms/)
+  [`folio/quantum-observable-universe/appendix-mass-binding-algorithms/`](../../folio/quantum-observable-universe/appendix-mass-binding-algorithms/)
   still cites the (possibly-modified) proposition correctly. If
   the proof edit changes the proposition statement or its name,
   the algorithm block's `uses[]` and *Correctness conditions*

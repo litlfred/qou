@@ -1,4 +1,4 @@
-*Archived values. The corrected tower $936.994$ MeV is not the current pipeline value (the current Lean pin is $938.7228$ MeV, which gives a residual of $-0.451$ MeV). Entries are $m_e$-scaled realizations of the dimensionless proton-mass ratio (CAL-1 sets the MeV scale by fiat); absolute mass in MeV is not a framework prediction. The residual is the quantity of interest.*
+*Archived values retained for comparison. No current computation reproduces the corrected tower $936.994$ MeV or the literal $938.7228$ MeV (residual $-0.451$ MeV). The $z = q^3/(q^2+1)$ Borromean tower evaluates to $944.404$ MeV, with residual $-12\,m_e$ at the proton-mass anchor (by construction) and $-11.99955\,m_e$ at the muon-mass anchor. Entries are $m_e$-scaled realizations of the dimensionless proton-mass ratio ($m_e$ fixes the MeV unit by definition); absolute mass in MeV is not an independent prediction, and the dimensionless residual is the quantity of interest.*
 
 | quantity | value |
 |---|---|

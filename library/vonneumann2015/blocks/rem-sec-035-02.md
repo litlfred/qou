@@ -1,0 +1,1 @@
+Note that it was very important in (i) to establish that D(A∗A) contained a core for A and hence was dense. It was not clear a priori that D(A∗A) contained any elements other than 0. Exercise 12.3.3. (i) Let T be a positive operator. Show that T 1/2T 1/2 = T. (ii) Show that a positive operator has a unique positive square-root. 12.4

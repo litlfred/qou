@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-0911.4494v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "1ba1c79686b12d984c69492e90a923ed7ca108d283c813d9b5d1a78791349226",
   "file": "0911.4494v2.pdf"
@@ -16,76 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
-  "by_kind": {
-   "recommendation": 4
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In the course of our proof, we must show the following result, which is of some independent interest: \\begin{theorem*} Any simple $B\\! \\times \\!B$-equivariant perverse sheaf on $G$ is $\\BD$-equivariantly formal.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The generalization of this theorem is due to Geck and Lambropoulou \\cite{GL}, but one must give more information to obtain a uniqueness statement.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-2-hecke-algebras.md",
-   "section_title": "Hecke algebras",
-   "pages": "3-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "What we must use is the weight grading on cohomology.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-4-a-categorified-trace.md",
-   "section_title": "A categorified trace",
-   "pages": "5-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Finally, we must establish our claim that \\begin{equation*} \\Tr_{B_{n+1}}(T_{n}\\iota(a)) = -t \\cdot \\Tr_{B_n}(a) \\end{equation*} This follows from Corollary~\\ref{final}, which shows that our trace coincides with that considered by Gomi and from \\cite[\\S 4.4 \\& 4.5]{Gomi} where Gomi shows that his trace corresponds to that constructed by Geck and Lambropoulou, which has this property by \\cite[Proposition 4.5]{GL}. \\end{proof}",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-4-a-categorified-trace.md",
-   "section_title": "A categorified trace",
-   "pages": "5-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

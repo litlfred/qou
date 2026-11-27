@@ -9,4 +9,5 @@ export default corollary({
     "thm:ugb-main",
     "thm:ugb-buchberger",
   ],
+  cites: ["bokutchen2015pbw"],
 });

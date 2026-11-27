@@ -1,1 +1,0 @@
-(8), containing two (!,1,15)’s, without the (1,1,6), and of course the desired matter sector, should be possible, but construc- tion of a single such solution is not yet in hand ( I thank Mirjam Cvetic for discussion in this respect). [89] See e.g.

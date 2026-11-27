@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:q-birch-swinnerton-dyer",
   title:
     "The $q$-deformed Birch and Swinnerton-Dyer conjecture",
-  lean: { ref: "qou:QOU.AppendixSurreals.QBirchSwinnertonDyer", validation: "stub" },
+  lean: { ref: "qou:QOU.Observations.QBirchSwinnertonDyer", validation: "stub" },
   uses: [
     "def:categorical-mordell-weil",
     "conj:tannaka-krein-isomorphism",

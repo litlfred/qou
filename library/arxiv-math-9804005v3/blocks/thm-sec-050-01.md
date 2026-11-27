@@ -1,1 +1,1 @@
-AssumeA is a noetherian connected gradedk-algebra and satisﬁes
+AssumeA is a noetherian connected gradedk-algebra and satisﬁes one of the following: (i) A is a PI algebra. (ii) A is graded-FBN. (iii) A has enough normal elements. Then A has a balanced dualizing complex, and the similar submodule condition holds.

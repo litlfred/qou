@@ -1,4 +1,3 @@
-**Remark (numerical cross-check of CAL-2 at 50 dps: $\mathrm{Vol}(4_1)/\hbar_q^2 = m_\mu/m_e$).**
 *The CAL-2 identity*
 
 $$
@@ -7,7 +6,7 @@ $$
   \frac{\mathrm{Vol}(4_1)}{\hbar_q^2}
 $$
 
-*is the substrate-side anchor that fixes $q_0$. We evaluate both sides at 50-decimal precision and record the residual in the witness file:*
+*is the substrate-side anchor that fixes $q_0$. One evaluates both sides at 50-decimal precision and records the residual in the witness file:*
 
 | Quantity | 50-dps value | Source |
 |----------|-------------|--------|

@@ -4,7 +4,7 @@ export default proof({
   label: "prf:q-bessel-second-order-qdifference",
   of: "prop:q-beta-c-k-recursion-from-habiro-q-difference",
   lean: {
-    ref: "qou:QOU.QBeta.qbessel_second_order_recurrence",
+    ref: "qou:QOU.Nuclear.QBeta.qbessel_second_order_recurrence",
     validation: "validated",
   },
   computation: {

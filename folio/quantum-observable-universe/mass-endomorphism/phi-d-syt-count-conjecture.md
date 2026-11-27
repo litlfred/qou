@@ -1,6 +1,6 @@
 # Conjecture: per-irrep character differences factor via $\Phi_{4 f_\lambda}(q)$
 
-The closed-form data from [`rem:chi-per-irrep-cyclotomic-closed-forms`](#rem:chi-per-irrep-cyclotomic-closed-forms) exposes a specific pattern for the per-irrep character differences:
+The closed-form data from [All three $V_\lambda$ per-irrep character difference closed forms with **cyclotomic factor pattern**](#rem:chi-per-irrep-cyclotomic-closed-forms) exposes a specific pattern for the per-irrep character differences:
 
 $$
   \boxed{\,
@@ -28,7 +28,7 @@ $$
   m_\lambda \cdot \varphi(d_\lambda) \;=\; 4
 $$
 
-This total cyclotomic degree is fixed at 4 by the typed-$B_3$ word length. We verify this for each representation:
+This total cyclotomic degree is fixed at 4 by the typed-$B_3$ word length. One verifies this for each representation:
 
 - $V_{(3)}$: $\varphi(4) = 2$, $m_{(3)} = 4/2 = 2$.
 - $V_{(2,1)}$: $\varphi(8) = 4$, $m_{(2,1)} = 4/4 = 1$.
@@ -53,16 +53,8 @@ If the conjecture holds at all $n$, it provides a structural prediction for the 
 
 This cyclotomic structure also provides a literature bridge to Ariki-Koike cyclotomic Hecke algebras, where Specht modules decompose along $\Phi_d(q)$ factors.
 
-## Lean theorems exported
+## Verified cases
 
-| Theorem | Content |
-|---|---|
-| `chi_V3_numerator_matches` | Conjecture's $V_{(3)}$ numerator equals proved closed-form numerator |
-| `chi_V21_numerator_matches` | Conjecture's $V_{(2,1)}$ numerator equals proved closed-form numerator |
-| `chi_V111_numerator_matches` | Conjecture's $V_{(1,1,1)}$ numerator equals proved closed-form numerator |
-| `class PhiD4FConjecture (n λ_syt_count q)` | Abstract conjecture class with $d_\lambda$ field and residual |
-| `instance phiDConj_V3, phiDConj_V21, phiDConj_V111` | $n=3$ discharges |
-
-These theorems are closed by `ring` after unfolding.
+For the three irreducibles $V_{(3)}$, $V_{(2,1)}$ and $V_{(1,1,1)}$ of $H_3(q)$, the conjectured numerator is proved to equal the proved closed-form numerator. The general statement remains conjectural.
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs, physical observables, and numerical evaluation at the substrate parameter $q_0$. Generic categorical or $q$-deformation identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

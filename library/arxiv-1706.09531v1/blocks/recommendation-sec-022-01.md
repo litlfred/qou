@@ -1,1 +1,0 @@
-I should add (as mentioned before) that low-energy supersymmetry is motivated independently of gauge coupling uniﬁcation in that it provides a natural resolution of the gauge-hierarchy problem as well as a viable candidate for cold dark matter.

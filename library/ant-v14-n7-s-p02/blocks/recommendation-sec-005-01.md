@@ -1,1 +1,0 @@
-By the main result of Appendix A of [Jarossay 2019], this would imply that, for any word w, the multiple harmonic sums functions m 7→harm(w) restricted to classes of congruences modulo N should be continuous as a function m ∈N ⊂lim ←−−Z/NplZ.

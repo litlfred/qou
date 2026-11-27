@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-q-alg-9608020v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "727268098db7f23d90cf3ec2ef0b566f2cfc4d722338046429e9cc2934b684e5",
   "file": "9608020v2.pdf"
  },
  "provenance": {
-  "title": "arXiv:q-alg/9608020v2 8 Sep 1997",
+  "title": "Shifted Jack polynomials, binomial formula, and applications",
   "authors": "FORMULA, AND APPLICATIONS",
   "arxiv": {
    "id": "q-alg/9608020",
@@ -16,13 +19,78 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 2,
+  "by_kind": {
+   "proposition": 1,
+   "lemma": 1
+  },
+  "formalization_candidates": 2,
+  "by_domain": {
+   "math": 2
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 2
+  },
+  "by_evidence_location": {
+   "in-paper": 2
+  },
+  "by_lean_status": {
+   "unformalized": 2
+  },
+  "needs_lean_proof": 2
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "(5.2) \u03b8-dim \u03bb/\u00b5 \u03b8-dim \u03bb = P \u2217 \u00b5(\u03bb; \u03b8) |\u03bb|(|\u03bb| \u22121) \u00b7 \u00b7 \u00b7(|\u03bb| \u2212|\u00b5| + 1) . This proposition can be deduced from (3.8) and [La,K] (see the remark above), but it easier to give a direct proof, which uses the very same argument as in [OO], section 9. First one proves that",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/page-006.md (p. 6-6)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/page-006.md",
+   "section_title": "Page 6",
+   "pages": "6-6",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/page-006.md (p. 6-6)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-page-006-01",
+   "block_iri": "library/arxiv-q-alg-9608020v2/blocks/prop-page-006-01",
+   "claim_id": "arxiv-q-alg-9608020v2#prop-page-006-01",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "(5.3) ( X xi \u2212|\u00b5|)P \u2217 \u00b5(x; \u03b8) = X |\u03bb|=|\u00b5|+1 \u03b8-dim \u03bb/\u00b5 P \u2217 \u03bb(x; \u03b8) .",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/page-007.md (p. 7-7)",
+   "external_refs": [],
+   "proof_excerpt": "Let f be the di\ufb00erence of the LHS and RHS in (5.3). By (2.3) and (5.1) we have deg f \u2264|\u00b5|. One easily checks that f(\u03bd) = 0 for all |\u03bd| \u2264|\u00b5|. It follows that f = 0.",
+   "section_file": "sections/page-007.md",
+   "section_title": "Page 7",
+   "pages": "7-7",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/page-007.md (p. 7-7)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-page-007-01",
+   "block_iri": "library/arxiv-q-alg-9608020v2/blocks/lem-page-007-01",
+   "claim_id": "arxiv-q-alg-9608020v2#lem-page-007-01",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
 }

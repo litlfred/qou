@@ -1,1 +1,0 @@
-Now, to compute $L(\gamma)$ we must sum the contributions from both two-way streets --- call them $p^1$ and $p^2$ --- so we obtain \begin{equation} L(\gamma) = - p^1_\Sigma - p^2_\Sigma. \end{equation}

@@ -1,5 +1,3 @@
-*Proof.*
-
 **Step 1: Frobenius pairing.** The Markov trace
 $\tau : H_n(R,q) \to R$ satisfies
 $\tau(ab) = \tau(ba)$ for all $a,b \in H_n$, and
@@ -10,7 +8,7 @@ y_\lambda \operatorname{tr}(a_\lambda b_\lambda)$ is the
 non-degenerate matrix-trace pairing; on a block with $y_\lambda = 0$
 it vanishes identically. So the radical of $\langle a,b\rangle_\tau
 := \tau(ab)$ is $I_n = \bigoplus_{y_\lambda = 0} \mathrm{End}(V_\lambda)$.
-Under convention D, $z = q^3/(q^2+1)$, the weights are
+At the Markov parameter $z = q^3/(q^2+1)$, the weights are
 $y_{(3)} = (q^4+1)/(q^2+1)^2$, $y_{(2,1)} = q^2/(q^2+1)^2$ and
 $y_{(1^3)} = 0$ at $n = 3$, and in general every shape with three or
 more rows has $y_\lambda = 0$; so $\tau$ is degenerate on $H_n$ for
@@ -68,11 +66,11 @@ identified with the dual objective $u \mapsto \langle u, \Theta
 dimensional LP regularity conditions are met** — primal
 feasibility and primal boundedness (or, equivalently for the
 canonical operator-selection LP of
-[`prop:operator-selection-lp`](#prop:operator-selection-lp),
+[Knot operator selection as linear program with LP duality](#prop:operator-selection-lp),
 existence of a strictly feasible point, i.e. Slater's
 condition). For the per-atom operator-selection LP these
 hypotheses are verified by direct construction in
-[`prop:operator-selection-lp`](#prop:operator-selection-lp);
+[Knot operator selection as linear program with LP duality](#prop:operator-selection-lp);
 the proposition above adds *structurally* that the primal-
 dual identification itself does not require additional
 analytic argument because the Frobenius pairing is non-

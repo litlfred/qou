@@ -1,17 +1,18 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/thm-topological-charge-quantization",
+  "@id": "papers/quantum-observable-universe/blocks/conj-topological-charge-quantization",
   "@type": [
-    "folio-assistant-core:Theorem",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
-  "label": "thm:topological-charge-quantization",
-  "kind": "theorem",
+  "label": "conj:topological-charge-quantization",
+  "kind": "conjecture",
   "title": "Quantization of topological charge",
   "uses": [
     "papers/quantum-observable-universe/blocks/def-unit-particle-state",
@@ -26,7 +27,7 @@
     "quantization",
     "algebraic-residue"
   ],
-  "leanRef": "qou:QOU.AlgebraicSubstrate.topological_charge_quantization",
+  "leanRef": "qou:QOU.Core.AlgebraicSubstrate.topological_charge_quantization",
   "text": "topological-charge-quantization.md",
   "leanSource": "topological-charge-quantization.lean",
   "provenance": "authored"

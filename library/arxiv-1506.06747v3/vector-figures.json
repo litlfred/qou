@@ -1,0 +1,1066 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-1506.06747v3",
+  "figures": [
+    {
+      "id": "vfig-p009",
+      "file": "figures/vfig-p009.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 9
+      },
+      "page": 9,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": [
+        37.62,
+        61.13,
+        557.38,
+        276.65
+      ],
+      "assembly": {
+        "drawings": 249,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              37.62,
+              61.13,
+              557.38,
+              276.65
+            ],
+            "drawings": 249,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "9",
+              "1.1",
+              "1.15",
+              "1.2",
+              "1.25",
+              "1.3",
+              "0",
+              "100",
+              "200",
+              "300",
+              "400",
+              "500",
+              "600",
+              "W",
+              "p",
+              "Q2 = 0",
+              "σT MAID",
+              "¯σL MAID",
+              "PDG",
+              "1.1",
+              "1.15",
+              "1.2",
+              "1.25",
+              "1.3",
+              "-45",
+              "-40",
+              "-35",
+              "-30",
+              "-25",
+              "-20",
+              "-15",
+              "-10",
+              "-5",
+              "0",
+              "W",
+              "p −n",
+              "Q2 = 0",
+              "σT MAID",
+              "¯σL MAID",
+              "Fig. 1 Cross sections σT and ¯σL ≡ν2/Q2σL in the ∆-region, for Q2 = 0."
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              37.62,
+              61.13,
+              311.03,
+              266.2
+            ],
+            "parent": null,
+            "labels": [
+              "1.1",
+              "1.15",
+              "1.2",
+              "1.25",
+              "1.3",
+              "0",
+              "100",
+              "200",
+              "300",
+              "400",
+              "500",
+              "600",
+              "W",
+              "-45",
+              "-40",
+              "-35",
+              "-30",
+              "-25",
+              "-20",
+              "-15",
+              "-10",
+              "-5",
+              "0"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              58.13,
+              91.89,
+              273.45,
+              245.69
+            ],
+            "parent": "b0",
+            "labels": [
+              "p",
+              "Q2 = 0"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              88.89,
+              102.14,
+              145.4,
+              142.83
+            ],
+            "parent": "b1",
+            "labels": [
+              "σT MAID",
+              "¯σL MAID",
+              "PDG"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              270.21,
+              61.27,
+              557.38,
+              276.65
+            ],
+            "parent": null,
+            "labels": [
+              "9",
+              "1.1",
+              "1.15",
+              "1.2",
+              "1.25",
+              "1.3",
+              "W"
+            ]
+          },
+          {
+            "id": "b4",
+            "bbox": [
+              302.52,
+              93.58,
+              517.9,
+              244.35
+            ],
+            "parent": "b3",
+            "labels": [
+              "p −n",
+              "Q2 = 0"
+            ]
+          },
+          {
+            "id": "b5",
+            "bbox": [
+              324.06,
+              104.35,
+              383.42,
+              135.43
+            ],
+            "parent": "b4",
+            "labels": [
+              "σT MAID",
+              "¯σL MAID"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 21,
+        "connectors": [],
+        "between": [],
+        "outside": 74
+      }
+    },
+    {
+      "id": "vfig-p010",
+      "file": "figures/vfig-p010.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 10
+      },
+      "page": 10,
+      "rotation": 0,
+      "captionLabels": [
+        "2"
+      ],
+      "region": [
+        45.83,
+        83.29,
+        543.26,
+        272.52
+      ],
+      "assembly": {
+        "drawings": 108,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              45.83,
+              83.29,
+              543.26,
+              272.52
+            ],
+            "drawings": 108,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "0",
+              "0.5",
+              "1",
+              "1.5",
+              "2",
+              "-60",
+              "-40",
+              "-20",
+              "0",
+              "20",
+              "Q2",
+              "p −n",
+              "σT",
+              "BC",
+              "MAID",
+              "DMT",
+              "0",
+              "0.5",
+              "1",
+              "1.5",
+              "2",
+              "-8",
+              "-6",
+              "-4",
+              "-2",
+              "0",
+              "2",
+              "4",
+              "Q2",
+              "p −n",
+              "σL",
+              "BC",
+              "MAID",
+              "DMT"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              45.83,
+              83.73,
+              297.54,
+              272.52
+            ],
+            "parent": null,
+            "labels": [
+              "0",
+              "0.5",
+              "1",
+              "1.5",
+              "2",
+              "-60",
+              "-40",
+              "-20",
+              "0",
+              "20",
+              "Q2",
+              "σT"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              68.48,
+              100.34,
+              281.81,
+              232.02
+            ],
+            "parent": "b0",
+            "labels": [
+              "p −n"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              206.3,
+              140.36,
+              257.57,
+              174.2
+            ],
+            "parent": "b1",
+            "labels": [
+              "BC",
+              "MAID",
+              "DMT"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              291.11,
+              83.29,
+              543.26,
+              272.41
+            ],
+            "parent": null,
+            "labels": [
+              "0",
+              "0.5",
+              "1",
+              "1.5",
+              "2",
+              "-8",
+              "-6",
+              "-4",
+              "-2",
+              "0",
+              "2",
+              "4",
+              "Q2",
+              "σL"
+            ]
+          },
+          {
+            "id": "b4",
+            "bbox": [
+              313.8,
+              131.44,
+              527.51,
+              188.39
+            ],
+            "parent": "b3",
+            "labels": [
+              "p −n"
+            ]
+          },
+          {
+            "id": "b5",
+            "bbox": [
+              451.86,
+              168.39,
+              503.23,
+              202.29
+            ],
+            "parent": "b3",
+            "labels": [
+              "BC",
+              "MAID",
+              "DMT"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 6,
+        "connectors": [],
+        "between": [],
+        "outside": 85
+      }
+    },
+    {
+      "id": "vfig-p011",
+      "file": "figures/vfig-p011.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 11
+      },
+      "page": 11,
+      "rotation": 0,
+      "captionLabels": [
+        "3"
+      ],
+      "region": [
+        45.83,
+        83.29,
+        543.26,
+        272.52
+      ],
+      "assembly": {
+        "drawings": 116,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              45.83,
+              83.29,
+              543.26,
+              272.52
+            ],
+            "drawings": 116,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "0",
+              "0.5",
+              "1",
+              "1.5",
+              "2",
+              "-5",
+              "0",
+              "5",
+              "10",
+              "15",
+              "Q2",
+              "p −n",
+              "σT",
+              "BC",
+              "AI",
+              "CS",
+              "0",
+              "0.5",
+              "1",
+              "1.5",
+              "2",
+              "-2",
+              "-1",
+              "0",
+              "1",
+              "2",
+              "3",
+              "Q2",
+              "p −n",
+              "σL",
+              "BC",
+              "AI",
+              "CS"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              45.83,
+              83.73,
+              297.54,
+              272.52
+            ],
+            "parent": null,
+            "labels": [
+              "0",
+              "0.5",
+              "1",
+              "1.5",
+              "2",
+              "-5",
+              "0",
+              "5",
+              "10",
+              "15",
+              "Q2",
+              "σT"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              68.48,
+              93.17,
+              281.81,
+              235.21
+            ],
+            "parent": "b0",
+            "labels": [
+              "p −n"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              225.18,
+              102.61,
+              267.18,
+              136.74
+            ],
+            "parent": "b1",
+            "labels": [
+              "BC",
+              "AI",
+              "CS"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              291.11,
+              83.29,
+              543.26,
+              272.41
+            ],
+            "parent": null,
+            "labels": [
+              "0",
+              "0.5",
+              "1",
+              "1.5",
+              "2",
+              "-2",
+              "-1",
+              "0",
+              "1",
+              "2",
+              "3",
+              "Q2",
+              "σL"
+            ]
+          },
+          {
+            "id": "b4",
+            "bbox": [
+              313.8,
+              92.75,
+              527.51,
+              247.83
+            ],
+            "parent": "b3",
+            "labels": [
+              "p −n"
+            ]
+          },
+          {
+            "id": "b5",
+            "bbox": [
+              470.77,
+              96.53,
+              509.07,
+              130.72
+            ],
+            "parent": "b4",
+            "labels": [
+              "BC",
+              "AI",
+              "CS"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 6,
+        "connectors": [
+          {
+            "from": "b0",
+            "to": "b1",
+            "bbox": [
+              68.48,
+              93.17,
+              68.48,
+              247.97
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b1",
+            "bbox": [
+              281.81,
+              93.17,
+              281.81,
+              247.97
+            ]
+          },
+          {
+            "from": "b4",
+            "to": "b5",
+            "bbox": [
+              474.08,
+              92.75,
+              474.08,
+              96.53
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 89
+      }
+    },
+    {
+      "id": "vfig-p012",
+      "file": "figures/vfig-p012.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 12
+      },
+      "page": 12,
+      "rotation": 0,
+      "captionLabels": [
+        "4",
+        "5"
+      ],
+      "region": [
+        41.64,
+        81.13,
+        543.47,
+        270.09
+      ],
+      "assembly": {
+        "drawings": 231,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              41.64,
+              81.13,
+              285.7,
+              264.18
+            ],
+            "drawings": 128,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "0",
+              "0.01",
+              "0.02",
+              "0.03",
+              "0.04",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "Q2",
+              "p",
+              "Σ",
+              "ΣT(Q2)",
+              "Σ2(Q2)",
+              "ΣF1(Q2)",
+              "˜ΣF1(Q2)",
+              "χPT",
+              "(αE + βM)p = 13.8(4) exp",
+              "ΣT(0) = Σ2(0) = ΣF1(0)"
+            ]
+          },
+          {
+            "bbox": [
+              295.19,
+              83.88,
+              543.47,
+              270.09
+            ],
+            "drawings": 103,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1",
+              "-2",
+              "-1.5",
+              "-1",
+              "-0.5",
+              "0",
+              "0.5",
+              "Q2",
+              "p −n",
+              "Σ",
+              "ΣT(Q2)",
+              "Σ2(Q2)",
+              "ΣF1(Q2)",
+              "˜ΣF1(Q2)",
+              "(αE + βM)p−n = −1.4(6) exp",
+              "ΣT(0) = Σ2(0) = ΣF1(0)"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              41.64,
+              81.13,
+              285.7,
+              264.18
+            ],
+            "parent": null,
+            "labels": [
+              "0",
+              "0.01",
+              "0.02",
+              "0.03",
+              "0.04",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "Q2",
+              "Σ"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              59.95,
+              90.28,
+              272.28,
+              245.87
+            ],
+            "parent": "b0",
+            "labels": [
+              "p",
+              "ΣT(Q2)",
+              "Σ2(Q2)",
+              "ΣF1(Q2)",
+              "˜ΣF1(Q2)",
+              "χPT",
+              "(αE + βM)p = 13.8(4) exp",
+              "ΣT(0) = Σ2(0) = ΣF1(0)"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              295.19,
+              83.88,
+              543.47,
+              270.09
+            ],
+            "parent": null,
+            "labels": [
+              "0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1",
+              "-2",
+              "-1.5",
+              "-1",
+              "-0.5",
+              "0",
+              "0.5",
+              "Q2",
+              "Σ"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              313.81,
+              93.19,
+              533.55,
+              251.47
+            ],
+            "parent": "b2",
+            "labels": [
+              "p −n",
+              "ΣT(Q2)",
+              "Σ2(Q2)",
+              "ΣF1(Q2)",
+              "˜ΣF1(Q2)",
+              "(αE + βM)p−n = −1.4(6) exp",
+              "ΣT(0) = Σ2(0) = ΣF1(0)"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 8,
+        "connectors": [],
+        "between": [],
+        "outside": 87
+      }
+    },
+    {
+      "id": "vfig-p014",
+      "file": "figures/vfig-p014.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 14
+      },
+      "page": 14,
+      "rotation": 0,
+      "captionLabels": [
+        "6"
+      ],
+      "region": [
+        40.01,
+        83.96,
+        284.9,
+        267.63
+      ],
+      "assembly": {
+        "drawings": 76,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              40.01,
+              83.96,
+              284.9,
+              267.63
+            ],
+            "drawings": 76,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "0",
+              "0.02",
+              "0.04",
+              "0.06",
+              "0.08",
+              "0.1",
+              "-2.5",
+              "-2",
+              "-1.5",
+              "-1",
+              "-0.5",
+              "0",
+              "0.5",
+              "1",
+              "Q2",
+              "p −n",
+              "Σ",
+              "ΣT(Q2)",
+              "ΣL",
+              "1 (Q2)",
+              "(αE + βM)p−n = −1.4(6) exp",
+              "αp−n",
+              "E",
+              "= −0.9(1.6) exp",
+              "ΣL",
+              "1 (0) = −1.6(4)"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              40.01,
+              83.96,
+              284.9,
+              267.63
+            ],
+            "parent": null,
+            "labels": [
+              "0",
+              "0.02",
+              "0.04",
+              "0.06",
+              "0.08",
+              "0.1",
+              "-2.5",
+              "-2",
+              "-1.5",
+              "-1",
+              "-0.5",
+              "0",
+              "0.5",
+              "1",
+              "Q2",
+              "Σ"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              58.38,
+              93.14,
+              275.11,
+              249.26
+            ],
+            "parent": "b0",
+            "labels": [
+              "p −n",
+              "ΣT(Q2)",
+              "ΣL",
+              "1 (Q2)",
+              "(αE + βM)p−n = −1.4(6) exp",
+              "αp−n",
+              "E",
+              "= −0.9(1.6) exp",
+              "ΣL",
+              "1 (0) = −1.6(4)"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 8,
+        "connectors": [],
+        "between": [],
+        "outside": 114
+      }
+    },
+    {
+      "id": "vfig-p015",
+      "file": "figures/vfig-p015.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 15
+      },
+      "page": 15,
+      "rotation": 0,
+      "captionLabels": [
+        "7"
+      ],
+      "region": [
+        295.56,
+        83.42,
+        559.35,
+        281.28
+      ],
+      "assembly": {
+        "drawings": 104,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              295.56,
+              83.42,
+              559.35,
+              281.28
+            ],
+            "drawings": 104,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "0",
+              "0.5",
+              "1",
+              "1.5",
+              "2",
+              "-2",
+              "-1",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "Q2",
+              "p −n",
+              "WCM",
+              "ESTY",
+              "This work",
+              "NSinel",
+              "1",
+              "Prediction at Q2 = 0",
+              "βp−n",
+              "M",
+              "= −0.5(1.6) exp"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              295.56,
+              83.42,
+              559.35,
+              281.28
+            ],
+            "parent": null,
+            "labels": [
+              "0",
+              "0.5",
+              "1",
+              "1.5",
+              "2",
+              "-2",
+              "-1",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "Q2",
+              "NSinel",
+              "1"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              329.19,
+              93.32,
+              532.98,
+              257.53
+            ],
+            "parent": "b0",
+            "labels": [
+              "p −n"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              406.35,
+              99.25,
+              526.29,
+              156.45
+            ],
+            "parent": "b1",
+            "labels": [
+              "WCM",
+              "ESTY",
+              "This work",
+              "Prediction at Q2 = 0",
+              "βp−n",
+              "M",
+              "= −0.5(1.6) exp"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 16,
+        "connectors": [],
+        "between": [],
+        "outside": 106
+      }
+    }
+  ]
+}

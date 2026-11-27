@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0710.4405v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0710.4405v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -19,6 +19,18 @@
     "library/arxiv-0710.4405v1/sections/sec-004"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Chiral Low-Energy Constants : Status and Prospects ∗ — 6 sections: Front matter; Introduction; Tools : Large-NC and QCD asymptoti\n\n**Chiral Low-Energy Constants : Status and Prospects ∗**\n\n*J. Portolés*\n\n8 pp, 6 sections.\n\n**Outline.** Front matter; Introduction; Tools : Large-NC and QCD asymptotic constraint; Status and Prospects; O(p4); O(p6)",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
@@ -45,8 +57,8 @@
       "stamp_date": "24 Oct 2007"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9201302v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9201302v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -25,6 +25,18 @@
     "library/arxiv-math-9201302v1/sections/sec-010"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The Quantum G_2 Link Invariant — We derive an inductive, combinatorial deﬁnition of a polynomial-valued regular isotopy invariant of links and tangled graphs.\n\n**The Quantum G_2 Link Invariant**\n\n*October 7, 1991*\n\n17 pp, 12 sections.\n\n**Abstract.** We derive an inductive, combinatorial deﬁnition of a polynomial-valued regular isotopy invariant of links and tangled graphs. We show that the invariant equals the Reshetikhin-Turaev invariant corre- sponding to the exceptional simple Lie algebra G2. It is therefore related to G2 in the same way that the HOMFLY polynomial is related to An and the Kauﬀman polynomial is related to Bn, Cn, and Dn. We give parallel constructions for the other rank 2 Lie algebras and present some combinatorial conjectures motivated by the new inductive deﬁnitions. This paper is divided into two parts. In the ﬁrst part we derive from ﬁrst principles some variants of the link invariant known as the Jones polynomial. In the second part we show that these invariants are the same known invariants constructed using rank 2 Lie algebras, and we discuss some of their properties.\n\n**Outline.** Front matter; 1 Invariants of links and graphs; 2 Acknowledgments; 2.1 Topological preliminaries; 2.2 Linearly recurrent invariants; 2.3 Constructing a freeway invariant; 2.4 Two other polynomial invariants; 2.5 A few calculations; 3 Invariants of Lie algebra representations; 3.1 Invariants of colored ribbon graphs; 3.3 Questions open to the author; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "arxiv-math-9201302v1",
@@ -48,8 +60,8 @@
       "stamp_date": "7 Oct 1991"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

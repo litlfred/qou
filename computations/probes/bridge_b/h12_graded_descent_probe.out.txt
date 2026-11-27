@@ -1,0 +1,7 @@
+grading: -q^-1 line odd
+  1. tr(P b^k) = q^{2k} + (-q^-2)^k, k=1..6: True
+  2. mixed lines off-diagonal under P (traceless): True
+  3. two-letter factorisation, k1,k2 = 0..3: True
+grading: q line odd
+  4. criterion 1 must fail; it holds: False
+PASS

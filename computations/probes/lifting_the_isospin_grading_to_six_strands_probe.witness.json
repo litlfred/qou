@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
-  "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-09-03T04:47:31.863799+00:00",
-  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
+  "engineVersion": "numpy 2.5.0",
+  "computedAt": "2026-11-24T13:49:44.161833+00:00",
+  "commitSha": "acb646cc6fe482bb452007b31eba2d1d358cefe0",
   "assertions": [
     {
       "name": "A1_block_swap_permutation_is_correct",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 15,
   "computation": "lifting_the_isospin_grading_to_six_strands_probe",
   "scriptFile": "lifting_the_isospin_grading_to_six_strands_probe.py",
-  "scriptHash": "55064d8ea616",
-  "scriptCommitSha": "de5c18f5882ad02d08b3e2b1e7b34fedd8a52cbb",
+  "scriptHash": "5d198ce9b556",
+  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -66,14 +66,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "56872bc54313b172"
   },
   "invocation": {
     "argv": [
@@ -212,8 +212,8 @@
     "targets": {
       "QCD_colour_ratio": 2,
       "QCD_short_by": "1.333333",
-      "nuclear_ratio": "33.705545",
-      "nuclear_short_by": "22.470364"
+      "nuclear_ratio": "33.705548",
+      "nuclear_short_by": "22.470366"
     },
     "parity_structure": {
       "both_parities_at_q_pow": [

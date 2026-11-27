@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/sigma12-065",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/sigma12-065/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -32,6 +32,18 @@
     "library/sigma12-065/sections/sec-017"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Bring's Curve: its Period Matrix and the Vector of Riemann Constants — Bring’s curve is the genus 4 Riemann surface with automorphism group of maximal size, S5.\n\n**Bring's Curve: its Period Matrix and the Vector of Riemann Constants**\n\n*SIGMA 8 (2012), 065, 20 pages*\n\n20 pp, 19 sections.\n\n**Abstract.** Bring’s curve is the genus 4 Riemann surface with automorphism group of maximal size, S5. Riera and Rodr´ıguez have provided the most detailed study of the curve thus far via a hyperbolic model. We will recover and extend their results via an algebraic model based on a sextic curve given by both Hulek and Craig and implicit in work of Ramanujan. In particular we recover their period matrix; further, the vector of Riemann constants will be identified.\n\n**Outline.** Front matter; 1 Introduction; 2 Two sextics; 2.1 Dye's sextic; 2.2 The Hulek–Craig sextic; 3 Details of the Hulek-Craig curve; 3.1 Special points of the Hulek–Craig represen; 3.2 Branched covers of P1; 3.3 Real paths on the Hulek-Craig curve; 4 The Riera and Rodríguez hyperbolic model; 4.1 Introduction to H; 4.2 Riera and Rodríguez basis; 4.3 Understanding the isomorphism f; 4.4 Riera and Rodríguez basis algebraically; 5 Vector of Riemann constants; 5.1 The vector of Riemann constants; 5.2 Symmetries and the vector of Riemann const; 5.3 Application to Bring's curve",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "sigma12-065",
@@ -41,8 +53,8 @@
     "pages": 20,
     "arxiv": null,
     "doi": "10.3842/SIGMA.2012.065",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,0 +1,1 @@
+Collecting the various contributions and using the experimental value of the proton-neutron mass diﬀerence, the parts due to the e.m. interaction and to the diﬀerence between mu and md become mQED = 0.58 ± 0.16 MeV , mQCD = −1.87 ∓0.16 MeV .

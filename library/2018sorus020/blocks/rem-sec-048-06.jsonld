@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/2018sorus020/blocks/rem-sec-048-06",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 91,
+  "pageEnd": 96,
+  "text": "rem-sec-048-06.md",
+  "derivedFrom": "library/2018sorus020/sections/sec-048",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.3.6",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-048-331-the-split-case.md (p. 91-96)",
+    "claim_id": "2018sorus020#remark:3.3.6"
+  }
+}

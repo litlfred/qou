@@ -1,3 +1,5 @@
+**Conditional on [the substrate flavor split conjecture](#conj:flavor-split-substrate-mass).** The closed form for $\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}$ is [derived](#prop:flavor-dressed-mass-from-substrate-split) from that conjecture and the nucleon form of the pair Skein mass formula, with $M_N = (m_{\mathfrak{p}} + m_{\mathfrak{n}})/2$.
+
 *For substrate parameter $q > 1$, the down-up splitting satisfies the two-sided bound:*
 
 $$
@@ -7,4 +9,4 @@ $$
 
 *where $\hbar_q = (q - 1)/q$, $h_q = q - q^{-1}$, and $[2]_q = q + q^{-1}$.*
 
-We bound the difference rather than the individual masses to isolate the substrate-derivable quantity from the CODATA-anchored mean. 
+The bound is on the difference rather than the individual masses, which isolates the substrate-derivable quantity from the CODATA-anchored mean. 

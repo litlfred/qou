@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1609.08719v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "f61ff2111e9a97f9e87191e3936bfc998db9efad44cec9d4fc485f5c65145efa",
   "file": "1609.08719v1.pdf"
@@ -16,106 +19,54 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 6,
+  "candidates": 1,
   "by_kind": {
-   "recommendation": 6
+   "theorem": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "elsewhere": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since the meridian and the longitude of a torus are homotopically circles, it should be possible to require that any path following a meridian or longitude winds exactly once.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-24-gluing-equations.md",
-   "section_title": "Gluing Equations",
-   "pages": "4-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In other words, it should be possible to construct a system of equations, with variables representing various angles of each $\\Delta_i$, such that certain sums are $2 \\pi$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-24-gluing-equations.md",
-   "section_title": "Gluing Equations",
-   "pages": "4-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For every consecutive pair of edges that $p$ crosses, those edges must meet at an angle, which is associated to some $z_i$, $\\frac{z_i - 1}{z_i}$, or $\\frac{1}{1-z_i}$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-24-gluing-equations.md",
-   "section_title": "Gluing Equations",
-   "pages": "4-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "If two triangulations of $M$ are both composed of non-degenerate, geometrically viable simplices, by Mostow rigidity they must yield the same volume.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-24-gluing-equations.md",
-   "section_title": "Gluing Equations",
-   "pages": "4-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This also includes some degree $2$ polynomials such as $x^2 + 13$, $x^2 + 22$, and $x^2 - x + 17$, even though it is known that all fields with one complex place must be exhibited by some manifold.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-018-51-examples-of-missing-fields.md",
-   "section_title": "Examples of missing fields",
-   "pages": "12-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For the concrete number field associated to root $0.850\\dotsc \\pm 0.654\\dotsc i$, we only observed one volume: $9.054\\dotsc$, though the lattice should be of dimension $2$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-018-51-examples-of-missing-fields.md",
-   "section_title": "Examples of missing fields",
-   "pages": "12-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.3",
+   "name": "[Neu11, Theorem 2.7]",
+   "statement": "If M has cusps then [M] is de\ufb01ned in B(F), for F the invariant trace \ufb01eld of M, while if M is closed 2[M] is de\ufb01ned in B(F).",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "External attribution ([Neu11, Theorem 2.7])",
+   "external_refs": [
+    "[Neu11, Theorem 2.7]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-016-4-a-counter-example-to-conjecture-13.md",
+   "section_title": "A counter-example to conjecture 1.3",
+   "pages": "11-12",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, External attribution ([Neu11, Theorem 2.7])). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-016-01",
+   "block_iri": "library/arxiv-1609.08719v1/blocks/thm-sec-016-01",
+   "claim_id": "arxiv-1609.08719v1#theorem:4.3",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

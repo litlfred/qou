@@ -2,10 +2,11 @@
 name: formalizer
 roles: [collaborator, owner]
 description: >
-  Lean 4 Formalizer — translates the logical skeleton of narrative mathematical
-  proofs into Lean 4 tactic blocks.  Uses the Ontologist's glossary to resolve
-  types, maps narrative proof phrases to Lean tactics, and generates sorry-bridged
-  partial proofs that compile.
+  Lean 4 Formalizer — translates narrative mathematical statements and proofs
+  into zero-sorry, Mathlib4/Reservoir-compliant Lean 4 modules and content-block
+  siblings. Enforces §7c base-ring generality, Two-Tier Reservoir vs QOU
+  subgraph placement, single-threaded `lean-overlay-env.sh` verification, and
+  `scripts/lean-best-practices-lint.py --diff` pre-commit hygiene.
 allowed-tools: Read Write Edit Bash Grep Glob
 ---
 
@@ -48,6 +49,41 @@ When generating Lean theorems, ALWAYS edit the `.md` in the same
 diff to add the narrative proof. Don't split into separate
 commits — Lean and narrative must move together.
 
+## Anti-laundering & Honest Failure / Handoff Discipline (MANDATORY)
+
+1. **NO Fake Lean (`Int`/`Bool` Wrappers or `X - X = 0` Tautologies):**
+   - Every `.lean` module in `QOU` or a content block MUST import the actual
+     `QOU.*` and `Mathlib.*` modules defining the mathematical objects under study.
+   - **Never** drop `import` lines so a file compiles with raw `lean` without `.lake`.
+     If `.olean` imports fail, run `bash scripts/lean-cache-restore.sh` (which
+     supports both GNU `tar --transform` and macOS BSD `tar -s`) and verify via
+     `bash scripts/lean-verify.sh <file.lean>`.
+   - **Never** replace mathematical objects (categories, morphisms, matrices,
+     Hecke algebras, operators, differential forms, trace functionals) with
+     stand-alone `Int`, `Nat`, or `Bool` record fields (`structure FooDatum where trA : Int ...`),
+     and **never** write definitional-subtraction tautologies of the form
+     `f d - (<body of f d>) = 0 := by dsimp [f]; omega`. Both
+     `scripts/lean-borrowed-name-audit.py` (`no-import-wrapper`) and
+     `scripts/lean-definition-collapsed-audit.py` (`sub-zero-tautology`) flag
+     these as `CRITICAL`.
+2. **It Is OK for a Formalization Attempt to Fail — Document the Blocker for Handoff:**
+   - If you cannot close a proof over the real `QOU.*` / `Mathlib.*` types after
+     bounded attempts, **do not weaken or fake the statement**.
+   - Keep the true mathematical statement over the real imported types (or leave
+     an annotated `sorry` with `-- Ref: [<bibkey>] <Claim ID>` at the exact
+     stuck sub-goal).
+   - Record a structured **Handoff & Blocker Note** on the bean (and PR/commit
+     report) so the next agent or human can pick up immediately:
+     - **File & declaration** (over the real imported types),
+     - **Exact remaining Lean goal state** (copy-pasted from `lean_goal` or
+       `scripts/lean-verify.sh` output),
+     - **What lemmas were proved vs. where the proof stopped**,
+     - **Tactics / lemmas tried and why they failed** (e.g., missing Mathlib API,
+       non-commutativity, typeclass diamond),
+     - **Exact bridge lemma or mathematical input needed to close it**,
+     - Close the step via `Process_BeanClose` (`blocked` → `Close_RecordBlocker`,
+       returning the bean to `todo` with `--blocked-by`).
+
 ## Overview
 
 This skill translates the **logical skeleton** of the paper into Lean 4
@@ -67,17 +103,22 @@ cd content && bun run migrate-lean-refs
 
 When authoring the `.ts` manifest for a new block, set
 `lean: { ref: "<pkg>:<Decl>" }` (never the legacy `decl:` / `file:`
-shape).  Use `<pkg>` from `LEAN_PACKAGES` in
-`folio-assistant/schemas/lean-packages.ts` (`qou`, `ugb`, `fred2005`,
-…).  See AGENTS.md §0a for the URI grammar and §0b for the rebase
-workflow.
+shape). Use `<pkg>` from `LEAN_PACKAGES` in
+[`schemas/lean-packages.ts`](../../schemas/lean-packages.ts) (`qou`, `ugb`, `fred2005`,
+…).
+
+### Subgraph placement & Two-Tier Reservoir rule (MANDATORY)
+
+Before creating any `.lean` library file, apply the placement gate from
+[`lean-mathlibext-curator.md`](lean-mathlibext-curator.md) and [`content-graph.md`](content-graph.md):
+- **Pure non-QOU mathematics (`0` QOU physics/axiom coupling):** place in the isolated top-level `[[lean_lib]]` root under `folio/quantum-observable-universe/lean/<Lib>/` — Tier-A (`MathlibExt/` for small general `mathlib4` core PR lemmas) or the appropriate Tier-B Lean Reservoir library (`QCalculus/`, `TwistedFrobeniusHopf/`, `ToricConicOpt/`, `CompactQuantumMetrics/`, `HeckeTemperleyLieb/`, `BraidKnotOctonion/`) — with **strictly zero `QOU.*` model imports** (`BP008`), `set_option autoImplicit false` (`BP001`), and zero `sorry`/`axiom` (`BP007`).
+- **QOU model / physics formalizations:** place in one of the **12 canonical chapter subgraphs** under `folio/quantum-observable-universe/lean/QOU/<Chapter>/` (`QOU.Core`, `QOU.LiftingDescent`, `QOU.BraidsAndKnots`, `QOU.BringsSurface`, `QOU.Confinement`, `QOU.EightfoldWay`, `QOU.MassTheory`, `QOU.Nuclear`, `QOU.StandardModel`, `QOU.FluidDynamics`, `QOU.InformationTheory`, `QOU.Observations`). **Never** create loose `QOU/*.lean` files or new synonym directories under `lean/QOU/` (`BP009`); if rebasing a pre-Option-1 branch, run `nice -n 10 python3 scripts/apply-lean-reservoir-migration.py --fixup-branch`.
 
 ## When to Use This Skill
 
-- After the Ontologist has produced `glossary.json` and `Glossary.lean`
-- When translating theorem statements from LaTeX to Lean
-- When filling `sorry` placeholders with actual proofs
-- When `lake build` succeeds but there are remaining `sorry` warnings
+- When formalizing definitions, lemmas, propositions, or theorems into Lean 4 alongside `.md` narrative proofs
+- When discharging remaining `sorry` obligations over real `Mathlib.*` / `QOU.*` types
+- When refactoring QOU helpers into §7c-generic Tier-A / Tier-B Reservoir modules
 
 ## Lean MCP Tools (paper-assistant)
 
@@ -112,103 +153,46 @@ Instead of the Python script for import synthesis:
 3. **`lean_leansearch`** for each unknown identifier → find the right import
 4. **`lean_completions`** at the import line → auto-complete module paths
 
-## Important: Generation is agent-only
+## Workflow (Zero-Sorry First; Honest Blocker Handoff on Failure)
 
-The scripts below are **proof-writing tools**. They create or modify Lean
-files. They must only be run when the author has requested formalization.
+### 1. Minimal targeted Mathlib imports (`BP002`, `BP003`)
 
-- **Do not** run them during setup, session start, or routine builds.
-- **`lake build`** = compile-only. Never precede it with generation scripts.
-- CI workflows run them automatically — that is CI-only behavior.
+- Place all `import` lines at the **very top** of the file (after any Apache-2.0 copyright block and **before** `/-! ... -/` module docstrings — Lean 4.24+ hard requirement, `BP002a`).
+- Add `set_option autoImplicit false` immediately after the module docstring (`BP001`).
+- **Never** write bare `import Mathlib` or `import QOU` (`BP003a`), and avoid broad `import Mathlib.Tactic` (`BP003b`); use `lean_leansearch` / `lean_loogle` or `grep -rn` under `.lake/packages/mathlib/Mathlib/` to import exact submodules (`Mathlib.Tactic.Ring`, `Mathlib.Tactic.FieldSimp`, etc.).
 
-## Workflow (invoke only on author request)
-
-### 1. Library synthesis
-
-The Formalizer identifies required Mathlib imports from the glossary:
-
-```bash
-PYTHONPATH=.github/scripts python .github/scripts/formalizer.py synthesize-imports
-```
-
-Reads `glossary.json` and outputs the import block for each chapter file.
-
-### 2. Generate theorem stubs
-
-```bash
-PYTHONPATH=.github/scripts python .github/scripts/formalizer.py generate-theorems
-```
-
-Creates Lean theorem declarations with `sorry` bodies, using the glossary
-types for the statement signatures.
-
-**Witnessed values in narrative.**  Whenever the narrative statement
+**Witnessed values in narrative.** Whenever the narrative statement
 of a theorem, lemma, proposition, conjecture, corollary, or its proof
 quotes a substrate-derived numerical literal (`q_0`, `\hbar_q`,
 `Vol(4_1)`, CODATA inputs, binding energies, etc.), the **`.md`
 narrative** must use the `:val[name]` directive — not a hard-coded
 number — so the rendered statement tracks the canonical witness JSON.
-The `.lean` file is unaffected (Lean uses its own numerical
-constants); the rule is about the LaTeX render of the narrative
-sibling.  See [`witnessed-values.md`](./witnessed-values.md).
+See [`witnessed-values.md`](./witnessed-values.md).
 
-### 3. Tactic translation
+### 2. Tactic translation
 
 The Formalizer maps narrative proof phrases to Lean tactics:
 
 | Narrative Phrase                    | Primary Tactic          | Fallbacks                       |
 |-------------------------------------|-------------------------|---------------------------------|
-| "By calculation"                    | `ring`                  | `field_simp`, `polyrith`        |
+| "By calculation"                    | `ring`                  | `field_simp`, `linear_combination` |
 | "Clearly follows from..."          | `aesop`                 | `linarith`, `omega`             |
 | "By induction on n..."             | `induction n with`      | `cases n`                       |
 | "By the universal property of..."  | `Limits.IsLimit.lift`   | `Limits.IsLimit.hom_ext`        |
 | "Diagram commutes" / "naturality"  | `aesop_cat`             | `slice_lhs`, `slice_rhs`        |
 | "By contradiction"                 | `by_contra`             | `exfalso`                       |
-| "By definition"                    | `rfl`                   | `unfold`, `simp only`           |
+| "By definition"                    | `rfl`                   | `simp only`                     |
 
-### 4. The "Sorry" Bridge
+### 3. Zero-Sorry Policy & Citation Rule for Genuinely Blocked Subgoals
 
-When a narrative step is too complex for immediate formalization:
+- **Tier-A (`MathlibExt`) and Tier-B (6 Reservoir `lean_lib` packages):** **strictly zero `sorry` and zero custom `axiom`s** (`BP007c`). Do not merge partial stubs into community libraries.
+- **QOU domain / sibling blocks:** Always target a complete, `sorry`-free proof. Only when a genuine mathematical subgoal remains blocked after bounded attempts (see §Anti-laundering item 2 above) may an intermediate lemma retain an annotated `-- Ref: [key] url` + `sorry` paired with a full **Handoff & Blocker Note** on the bean, AND run the small-instance check from [`lean-proof-vacuity-audit.md`](lean-proof-vacuity-audit.md) §9 so no `sorry` ever stands in front of a false statement!
+- Never rely on the frozen legacy `proof-objects.json` (broken since the content-object migration:
+  [`docs/audits/2026-06-03-proof-objects-json-extractor-broken.md`](../../docs/audits/2026-06-03-proof-objects-json-extractor-broken.md)); use [`scripts/lean-static-census.py`](../../scripts/lean-static-census.py) and [`scripts/lean-best-practices-lint.py`](../../scripts/lean-best-practices-lint.py).
+- Every `-- Ref: [key]` key must match `folio/references/` / `folio/schema/references.ts` exactly.
 
-1. Extract the logical structure of the proof
-2. Create a `lemma` for each non-trivial step
-3. Fill each lemma body with `sorry`
-4. **Add a `-- Ref: [key] url` comment** before each `sorry` linking
-   to the foundational reference that would resolve the gap
-5. Ensure the file remains syntactically correct
-6. Do **NOT** trust `proof-objects.json` for the sorry count — the
-   extractor has been broken since the content-object migration
-   (reads `chapters/*.tex` which are generated artefacts; produces
-   0 objects in the current repo). Use direct grep instead. Full
-   root cause:
-   [`docs/audits/2026-06-03-proof-objects-json-extractor-broken.md`](../../../docs/audits/2026-06-03-proof-objects-json-extractor-broken.md).
-
-```lean
-/-- Intermediate step: torsion lifts through jet prolongation.
-    TODO: formalize using the Frobenius-Hopf structure. -/
-lemma torsion_lifts_jet (A : FrobeniusHopfAlgebra) :
-    JetProlongation A → TorsionLifting A := by
-  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
-  sorry
-```
-
-**Rule**: Every `sorry` must have a `-- Ref:` annotation.  The `key`
-must match a citation key in `folio/schema/references.ts` exactly (case-sensitive).
-(`references.bib` is auto-generated from this file — never edit `.bib` directly.)  If no
-published reference exists, use `[leitner2026]` and cite the chapter/section.
-This is enforced by the axiom report's Theoretical Gap Report (§8).
-
-**§3b-cond carve-out.** Class-body sorries are NOT missing proofs — they
-are conjectural inputs per AGENTS.md §3b-cond, permanent by design.
-The catalogue
-[`docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md`](../../../docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md)
-lists **194 classes / 219 class-body sorries** as of 2026-06-04
-(corrected from 202 / 227 after fixing the `\bsorry\b` regex to
-`\bsorry\b(?!-)`). Before
-adding a `-- Ref:` to a `sorry`, check whether you are inside a `class`
-body — if yes, the `sorry` is the conjectural axiomatisation and no
-external citation is required (the conjecture itself IS the reference).
-Only `theorem | lemma | def | instance` body sorries need `-- Ref:`.
+**§3b-cond carve-out.** Class-body sorries inside registered conjectural classes are governed by AGENTS.md §3b-cond; see
+[`docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md`](../../docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md).
 
 ## Base ring convention — generic `R` vs archimedean `ℝ` (STRICT)
 
@@ -237,14 +221,12 @@ silently. When in doubt, start generic.
 `lake build` / `lean`-direct passing says **nothing** about §7c — a
 gratuitous `(q : ℝ)` compiles fine.
 
-> **Quickest path — run [`scripts/check-sidecars.sh`](../../../scripts/check-sidecars.sh)
-> on your changed files.** It maps each changed file to the QA sidecar
+> **Quickest path — run [`scripts/check-sidecars.sh`](../../scripts/check-sidecars.sh) and [`scripts/lean-best-practices-lint.py`](../../scripts/lean-best-practices-lint.py) `--diff`
+> on your changed files.** They map each changed file to the QA sidecar
 > criteria that apply (`q-usage-*`, `wall-side-correct`, one-voice, …)
-> and runs the §7c base-ring check on standalone library Lean that has
+> and run `BP001`–`BP009` (including §7c `BP005` base-ring generality and `BP008` zero upward `QOU.*` leaks) on standalone library Lean that has
 > no sidecar. **This is an agent-owned MANUAL pre-commit gate; CI is a
-> *backup*, not the primary check** (owner directive 2026-06-25 — agents
-> run the relevant checks for their own PRs by hand; CI catches only what
-> the agent missed).
+> *backup*, not the primary check** (owner directive 2026-06-25).
 
 **Before committing any new or edited `.lean`, run the base-ring pass:**
 
@@ -348,7 +330,7 @@ Mathlib, so narrow `import Mathlib.Tactic` to the specific tactic modules
 
 A hypothesis-carrying constraint lemma proves the **implication**, never the
 **premise**. Two rules, added after the a₁ parity-shadow incident
-([investigation audit](../../../docs/audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md)),
+([investigation audit](../../docs/audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md)),
 in which a conditional lemma's modelling hypothesis (`c₃` exactly bar-odd)
 was propagated as established fact by prose shorthand for a month:
 
@@ -360,7 +342,7 @@ was propagated as established fact by prose shorthand for a month:
 2. **Cite conditionals as conditionals.** Prose citing a conditional lemma
    in a constraint list / audit / ledger must say "conditional" (and name
    the hypothesis on first use). The kernel/f-map constraint registry
-   ([`ck-dk-canonical-registry.md` §9](../../../docs/coordination/ck-dk-canonical-registry.md))
+   ([`ck-dk-canonical-registry.md` §9](../../docs/coordination/ck-dk-canonical-registry.md))
    is authoritative for tiers; its validator
    (`kernel_constraints_registry_validate.py --lint-docs`) flags violations,
    and enforces the fixed-point rule **exactly-bar-odd ⇒ zero q=1 shadow**
@@ -393,35 +375,29 @@ Based on the glossary types, import the correct Mathlib modules:
 | `FundamentalGroupoid`     | `Mathlib.Topology.AlgebraicTopology.FundamentalGroupoid` |
 | `ModuleCat`               | `Mathlib.Algebra.Category.ModuleCat`                 |
 
-## Proof State Export
+## Proof State Inspection & CPU-Throttled Overlay Verification
 
-**Preferred (MCP):** Use `lean_goal` with the file path and line/column of the
-sorry position. Returns structured goal state directly — no Python needed.
-
-**Fallback (no MCP):** The Formalizer can export the current goal state via:
-
-```bash
-PYTHONPATH=.github/scripts python .github/scripts/formalizer.py export-proof-state \
-  --file lean/QOU/Torsion.lean --line 42
-```
-
-Output follows the `ProofStateExport` schema in `folio-assistant/schemas/qou-types.ts`.
+- **Preferred (MCP):** Use `lean_goal` and `lean_diagnostic_messages` directly on the file.
+- **CLI (single-threaded, NEVER bare `lake build` — see [`lean-build-hygiene.md`](lean-build-hygiene.md)):**
+  ```bash
+  export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 \
+         OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1
+  nice -n 15 bash scripts/lean-overlay-env.sh init
+  nice -n 15 bash scripts/lean-overlay-env.sh build QOU/<Subgraph>/<Module>.lean
+  nice -n 15 bash scripts/lean-overlay-env.sh check folio/quantum-observable-universe/<chapter>/<block>.lean
+  ```
 
 ## Integration with Ontologist
 
-1. **Before formalization**: Ontologist runs, produces resolved `glossary.json`
-2. **During formalization**: Formalizer checks every term against the glossary
-3. **On type mismatch**: Formalizer reports back to Ontologist for re-evaluation
-4. **After `lake build`**: If build fails, Ontologist re-scans for type conflicts
+1. **Before formalization**: Ontologist resolves ambiguous mathematical terms against Mathlib4 / Ch 8 `glossary/` blocks (`ontologist.md`).
+2. **During formalization**: Formalizer binds every term to its real `Mathlib.*` or `QOU.*` type (never `Int`/`Bool` proxy wrappers).
+3. **On type mismatch**: Formalizer checks `lean_hover_info` / `lean_declaration_file` and updates the glossary mapping if needed.
 
 ## Lean Output Structure
 
-The Lean source tree lives **per paper** under `content/<paper>/lean/`,
-with the repo's root `/lakefile.toml` aggregating every package into a
-single Lake workspace. See [Root Lake workspace
-(standardized)](#root-lake-workspace-standardized) below for the
-canonical layout, package registry, and build commands. Do **not**
-create a top-level `lean/` directory — that layout is deprecated.
+The Lean source tree lives **per paper** under `folio/<paper>/lean/` (e.g. `folio/quantum-observable-universe/lean/`),
+with the repo's root [`/lakefile.toml`](../../lakefile.toml) aggregating every package (`qou`, `ugb`, `fred2005`). Do **not**
+create a top-level `lean/` directory.
 
 ## Proven Patterns
 
@@ -635,72 +611,53 @@ lake update
 Using `mv` to `/tmp` is safer than `rm -rf` — you can recover if
 the new resolution also fails.
 
-### Root Lake workspace (standardized)
+### Root Lake workspace & CPU-throttled `lean`-direct verification
 
-The repo is a **single Lake workspace** rooted at `/lakefile.toml`
-with one `lean-toolchain` at the root.  Every paper is a Lake
-**package** (`qou`, `ugb`, `fred2005`) declared via `[[require]]`.
-Prefer running `lake` from the **repo root**:
+The repo is a **single Lake workspace** rooted at [`/lakefile.toml`](../../lakefile.toml)
+with one [`/lean-toolchain`](../../lean-toolchain) at the root. Every paper is a Lake
+**package** (`qou`, `ugb`, `fred2005`) mapped in [`schemas/lean-packages.ts`](../../schemas/lean-packages.ts).
 
-```bash
-lake build           # build all papers
-lake build QOU       # just the QOU library
-lake build UGB       # just the UGB library
-lake exe cache get   # Mathlib cache for the workspace
-```
-
-Per-paper `cd content/<paper>/lean && lake build` still works as a
-standalone build path, but CI, the MCP `lean_build` tool, and the
-skills here all prefer the root workspace.  The registry mapping
-short-form package names to paper directories lives in
-`folio-assistant/schemas/lean-packages.ts`.
-
-## Blueprint Synchronization
-
-The Formalizer must keep Lean declarations in sync with the blueprint:
-
-1. Every Lean declaration referenced by `\lean{}` in
-   `blueprint/src/content.tex` must exist in the Lean source
-2. When a `sorry` is resolved, update the blueprint entry to add `\leanok`
-3. When adding new theorems, add a corresponding entry to
-   `blueprint/src/content.tex` with `\lean{}` and `\uses{}` edges
-4. The `-- Ref: [key]` in Lean must match `\cite{key}` in the blueprint
-   where applicable, ensuring bibliography consistency across both systems
+> **CRITICAL (`lean-build-hygiene.md`):** Bare `lake build` at the root builds **0 targets**, and running `lake build` against a restored `.olean` tree can evict cached Mathlib `.olean`s! Always verify single-threaded via `scripts/lean-overlay-env.sh`, `scripts/lean-direct-cone.sh -j 1`, or `scripts/lean-verify.sh` with `LEAN_NUM_THREADS=1 nice -n 15`.
 
 ## Content Object Integration
 
-The authoritative source of truth is the **content object** triple, not raw
-LaTeX. Every formalizable block is defined by three sibling files:
+The authoritative source of truth is the **content object** triple under `folio/`, not raw
+LaTeX:
 
 ```
-content/<paper>/<chapter>/
-  <block-name>.ts    ← Manifest: kind, label, lean.ref, uses[]
-  <block-name>.md    ← Narrative (markdown + TeX snippets)
-  <block-name>.lean  ← Lean formalization (when required by kind)
+folio/<paper>/<chapter>/
+  <block-name>.ts       ← Manifest: kind, label, lean.ref, uses[]
+  <block-name>.md       ← Narrative (markdown + TeX snippets)
+  <block-name>.lean     ← Lean formalization (when required by kind)
+  <block-name>.qa.json  ← QA sidecar verdicts
 ```
 
 ### Block kind determines Lean requirements
 
 | Block kind | Lean required? | Completeness criteria |
 |-----------|---------------|----------------------|
-| `definition` | **Yes** (enforced) | `.ts` has `lean.ref` (URI form `pkg:Decl`), sibling `.lean` exists, compiles |
-| `theorem`, `lemma`, `proposition`, `corollary` | **Expected** (warning) | Same as definition |
-| `example`, `remark`, `conjecture` | Optional | `.lean` only if author requests |
-| `prose`, `equation`, `diagram` | N/A | No Lean needed |
+| `definition` | **Yes** (enforced) | `.ts` has `lean.ref` (URI form `pkg:Decl`), target declaration compiles |
+| `theorem`, `lemma`, `proposition`, `corollary` | **Expected** (warning) | Same as definition + matching `**Proof.**` in `.md` |
+| `example`, `remark`, `conjecture` | Optional | `.lean` only if author requests or §3b-cond class |
+| `prose`, `equation`, `diagram`, `table` | N/A | No Lean needed |
 
 ### Workflow with content objects
 
 1. **Read the `.ts` manifest** to get `lean.ref` (parse with
-   `parseLeanRef()` from `folio-assistant/schemas/lean-packages.ts`
+   `parseLeanRef()` from [`schemas/lean-packages.ts`](../../schemas/lean-packages.ts)
    to extract `{ package, decl, module, name }`) and `uses[]`
 2. **Check `uses[]`** to understand upstream dependencies — ensure they're
    formalized first (dependency DAG ordering)
-3. **Write/update the sibling `.lean` file** in `content/<paper>/<chapter>/`
+3. **Write/update the `.lean` file** in the appropriate library subgraph or `folio/<paper>/<chapter>/` sibling
 4. **Update the `.ts` manifest**: set `lean.ref` to the package-qualified
-   URI `"<pkg>:<Decl.Path>"` (per AGENTS.md §0a; legacy `lean.decl` /
-   `lean.file` shape is removed)
-5. **Run validation**: `bun run content/pipeline/validate.ts` to check
-   cross-references and constraint rules
+   URI `"<pkg>:<Decl.Path>"` (per AGENTS.md §0a)
+5. **Run validation & hygiene gates**:
+   ```bash
+   export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 \
+          OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1
+   nice -n 15 python3 scripts/lean-best-practices-lint.py --diff
+   nice -n 15 bun run scripts/run-validate.ts
+   ```
 
 ### Glossary terms in narrative `.md`
 
@@ -777,16 +734,13 @@ iterative proof development.
 
 ## Checklist
 
-- [ ] All theorem statements match the `.md` narrative originals
-- [ ] Import blocks are minimal and correct
-- [ ] Every `sorry` is tracked in `proof-objects.json`
-- [ ] Every `sorry` has a `-- Ref: [key] url` comment (citation-linked)
-- [ ] All `-- Ref:` keys exist in `folio/schema/references.ts`
-- [ ] `lake build` succeeds (sorry warnings are expected)
-- [ ] Tactic choices match the narrative proof strategy
-- [ ] Proof state can be exported at every sorry site
-- [ ] `blueprint/src/content.tex` entries match Lean declarations
-- [ ] `\leanok` only on sorry-free declarations
+- [ ] All theorem statements match the `.md` narrative originals + carry `**Proof.**` blocks
+- [ ] `import` blocks precede `/-! ... -/` docstrings, are minimal/targeted (`BP002`, `BP003`), and `set_option autoImplicit false` is set (`BP001`)
+- [ ] Pure non-QOU math is placed in Tier-A (`MathlibExt`) or one of the 6 Tier-B Reservoir subgraphs with **zero** `QOU.*` upward imports (`BP008`); zero new synonym dirs (`BP009`)
+- [ ] §7c base-ring generality verified (`[CommRing R]` / `[Field R]` / `[LinearOrderedField R]` vs justified `ℝ`, `BP005`)
+- [ ] Single-threaded verification (`LEAN_NUM_THREADS=1 nice -n 15`) passed via `scripts/lean-overlay-env.sh` or `scripts/lean-verify.sh` (never bare `lake build`)
+- [ ] `nice -n 15 python3 scripts/lean-best-practices-lint.py --diff` exits 0 (`critical=0`)
+- [ ] Zero `sorry` / custom `axiom` in community libraries; any genuinely blocked QOU subgoal carries `-- Ref: [key]`, small-instance check, and structured bean blocker handoff note
 
 ---
 
@@ -849,13 +803,14 @@ fin_cases i <;> fin_cases j <;>
 
 Authority: `7113099d` (`transferMatrix_comm`).
 
-### MathlibExt promotion
+### Two-Tier Community Promotion (`MathlibExt` + 6 Reservoir `lean_lib`s)
 
-When a proof body inlines a general-purpose helper (no QOU types,
-no `substrate_q`), promote it via the `lean-mathlibext-curator`
-skill before continuing.  The promotion removes the lemma from
-the proof body and adds a `-- TODO upstream: <module>` tag in
-`QOU/MathlibExt.lean`.
+When a proof body inlines a general-purpose mathematical helper or theorem (zero QOU types,
+zero `substrate_q`), promote it via [`lean-mathlibext-curator.md`](lean-mathlibext-curator.md)
+into either Tier-A (`MathlibExt` with `-- TODO upstream: Mathlib.<Module>`) or the matching
+Tier-B Lean Reservoir community subgraph (`HeckeTemperleyLieb`, `TwistedFrobeniusHopf`,
+`ToricConicOpt`, `CompactQuantumMetrics`, `QCalculus`, `BraidKnotOctonion`), enforcing zero
+`QOU.*` upward imports (`BP008`).
 
 ## Proof-authoring patterns — step-9 binding session (2026-06-05)
 

@@ -1,1 +1,0 @@
-The change in Z may be given explicitly, provided one simultaneously transforms the external field O(x) [5, 54, 23]): ~O(x) = -2 !f /3(x) , ~z = -f dx tr {/3(x)O(x)}, ~la~v~13a t, + ~aaa~a~a~] , a(X) = 1---~ E [Va~V~+~Vaa~V~a~+~I{Va~, a.a~}+ ~' v.~ = ~v~ - aov. - i[v~, v~], V ,~a~ = ~ ,a~ - i[ v,,, as].

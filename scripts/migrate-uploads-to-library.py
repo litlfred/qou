@@ -190,7 +190,7 @@ def move_files(mapping: dict[str, str], apply: bool
 
     REFUSES to create a `library/<doc-id>/` that holds no `structure.json`.
     Such a directory is a document the corpus has on disk and cannot read:
-    no INDEX row (tier 1), no summary.json (tier 2), no sections/ (tier 3),
+    no INDEX row (tier 1), no manifest.jsonld summary (tier 2), no sections/ (tier 3),
     no ocr/ (tier 4) — invisible at EVERY tier of the corpus-grep path-5
     checklist, which is strictly worse than not holding the paper at all,
     because a "has the corpus got this?" check comes back clean.

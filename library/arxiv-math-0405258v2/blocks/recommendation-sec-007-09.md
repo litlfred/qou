@@ -1,1 +1,0 @@
-This implies that, in order to get a non-vanishing contribution, $\gamma\pi^{-1}$ must contain no singletons, which, however, means that we must have $$\#(\gamma\pi^{-1})=\frac{m+n}2,\qquad\text{and thus also}\qquad \#(\pi)=\frac{m+n}2$$ i.e., all cycles of $\gamma\pi^{-1}$ and of $\pi$ contain exactly two elements.

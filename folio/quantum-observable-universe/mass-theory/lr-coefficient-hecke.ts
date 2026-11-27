@@ -14,7 +14,7 @@ export default proposition({
     "wedderburn",
     "non-negative-integer",
   ],
-  lean: { ref: "qou:QOU.BraidKnot.LRCoefficientHecke" },
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.LRCoefficientHecke" },
   authorNotes: [
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring." },
     {

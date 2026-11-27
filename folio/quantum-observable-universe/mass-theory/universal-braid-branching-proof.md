@@ -1,4 +1,3 @@
-*Proof.*
 The braid $K$ lives in $H_3(R, q)$ (generators $T_1, T_2$).  The
 representation $\rho_\lambda$ of $H_k(R, q)$ restricts to $H_3(R, q)$
 via the standard inclusion $H_3(R, q) \hookrightarrow H_k(R, q)$
@@ -77,5 +76,4 @@ $\square$
 
 *Formal asymptotic content. The per-level q-deformed Wedderburn
 weight has $\ordw(\text{per-level weight}) = -2\,\ordw([2]_q)$ in the surreal
-valuation; see [Big-O via $\ordw$](#rem:conway-normal-form) and the
-[body asymptotics catalog](#rem:body-asymptotics-catalog).*
+valuation.*

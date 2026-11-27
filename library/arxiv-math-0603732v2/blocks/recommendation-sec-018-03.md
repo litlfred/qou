@@ -1,1 +1,0 @@
-Parallel results to those stated in ([\[xxsec2.2\]](#xxsec2.2){reference-type="ref" reference="xxsec2.2"}), ([\[xxsec2.3\]](#xxsec2.3){reference-type="ref" reference="xxsec2.3"}) and ([\[xxsec2.4\]](#xxsec2.4){reference-type="ref" reference="xxsec2.4"}) can be derived for $R(-).$ We shall omit most of the statements.

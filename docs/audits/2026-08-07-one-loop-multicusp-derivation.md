@@ -153,9 +153,38 @@ That is **exactly the shape of the per-cusp factor `2^{(c−1)/2}`** that
 * PR #4697's finding still stands independently — the ambiguity group is the
   trace-field unit group, which no universal constant can absorb.
 
-Pinning the constant needs an external multi-cusp reference value. Nothing in
-`library/` supplies one: Garoufalidis–Yoon (2411.03801) prove 1-loop = adjoint
-torsion for **two-bridge knots**, which is one-cusped.
+Pinning the constant needs an external multi-cusp reference value. *(Historical
+note from 2026-08-07, reconciled 2026-11-24 under `qou-lnkT` — the original text
+wrote "Nothing in `library/` supplies one: Garoufalidis–Yoon (2411.03801) prove
+1-loop = adjoint torsion for two-bridge knots, which is one-cusped." Both halves
+needed separating and correcting:)*
+
+* **$\tau_{\mathrm{DG}} =$ adjoint Reidemeister torsion IS theorem-backed on
+  links:** Pandey–Wong (`arXiv:2308.06643`, `[pandey-wong-2023]`) prove the
+  Dimofte–Garoufalidis 1-loop conjecture for all **fundamental shadow link**
+  complements (including the 3-cusped Borromean rings `L6a4`, confirming the
+  `THEOREM BACKING` scope in `computations/probes/borromean_jones_1loop_torsion.py:50`
+  and `borromean_nz_adjoint_torsion.py:82`), and Dubois–Yamaguchi
+  (`arXiv:0906.1500v4`, `[dubois-yamaguchi2012]`, Theorem 5 eq. (15) & Theorem 14
+  eq. (32)) express the non-abelian $\mathrm{SL}_2(\mathbb{C})$-adjoint torsion
+  of knots and 2-component links directly via a single Wirtinger Fox-derivative
+  determinant — cross-checked to 80 dps against `one_loop_torsion.py` on `4_1`
+  (`|T_\mu(4_1)| = \sqrt{3}/2`) and the 2-cusped Whitehead link `L5a1`
+  (`|T_\mu(L5a1)| = \sqrt{2}`) in `computations/whitehead_c_sigma_torsion.py`
+  (commit `fe3b4d75ff5`, bean `qou-1el8`).
+* **Multi-cusp colored-Jones reference data IS in `library/`:** van der Veen
+  (`library/arxiv-math-0611181v2/0611181v2.pdf`, `[van-der-veen-2009]`) proves
+  the $N$-power $D = 3\pi$ for Whitehead chains (covering `L5a1` and `L6a4`),
+  and Lemma 4's Gaussian integral evaluates in closed form
+  (`computations/probes/one_loop_vdv_constant_closed_form_probe.py`,
+  `docs/audits/2026-08-08-vdv-constant-closed-form-and-the-open-bridge.md`) to
+  $c_\sigma(W_{a,1,c,d}) = 2^{1/2-n}(n^2+m^2)^{-1/4}$ ($2^{-3/4}$ on `L5a1`,
+  $2^{-3/2}$ on `L6a4`).
+* **What still lacks a general theorem** is the 1-loop Chern–Simons saddle-point
+  bridge $c_\sigma = k\,|\tau_{\mathrm{DG}}|^{-1/2}$ (Dimofte–Gukov–Lenells–Zagier
+  `arXiv:0903.2472v1` eq. (2.3)) — a rigour gap at *all* cusp numbers (including
+  general $c = 1$ knots beyond proven families such as Ohtsuki's `5_2`), not a
+  failure of theorem coverage specific to links.
 
 ## What is now unblocked
 
@@ -184,10 +213,15 @@ than measurement:
   the observed `k` was 2.
 * `edge_rows_hypotheses_satisfiable` — non-vacuity witness.
 
-What is *not* formalized: that the construction computes the adjoint torsion, or
-that it is a topological invariant. Those stay numerical (and, at `c = 1`, a
-theorem of Garoufalidis–Yoon). The shapes are free complex numbers in the Lean
-file; no gluing equation is imposed.
+What is *not* formalized in Lean: that the construction computes the adjoint
+torsion, or that it is a topological invariant. Outside Lean, $\tau_{\mathrm{DG}} =$
+adjoint torsion is a theorem of Garoufalidis–Yoon (`2411.03801`) for two-bridge
+knots ($c = 1$), a theorem of Pandey–Wong (`2308.06643`) for fundamental shadow
+links (including `L6a4`, $c = 3$), and cross-checked at 80 dps against the
+Dubois–Yamaguchi (`0906.1500v4` Thm 5 & Thm 14) Fox-derivative adjoint torsion
+on `4_1` and `L5a1` ($c = 2$) in `computations/whitehead_c_sigma_torsion.py`.
+The shapes are free complex numbers in the Lean file; no gluing equation is
+imposed.
 
 ## Reproduce
 

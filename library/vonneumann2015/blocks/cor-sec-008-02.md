@@ -1,0 +1,1 @@
+Let p and q be non-zero projections in a factor M. Then there is a partial isometry u (̸= 0) in M with uu∗≤p and u∗u ≤q. p and q had been swapped around in the proof, so we interchanged uu∗and u∗u in the statement.

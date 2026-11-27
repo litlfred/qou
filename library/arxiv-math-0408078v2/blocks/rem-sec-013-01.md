@@ -1,0 +1,1 @@
+Similar determinants are used by Koike [8] in giving universal formulae for the irreducible characters of rational representations of GL(N), along with interpretations in terms of skew Schur functions.

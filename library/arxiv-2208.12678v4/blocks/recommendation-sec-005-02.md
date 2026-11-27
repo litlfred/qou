@@ -1,1 +1,0 @@
-That is, the following conditions on the parameters must hold: \begin{enumerate} \item $\omega > 1$ \item $|B - A|^2 < C(\alpha,\beta) \omega$ \item $|A + B| < 2$. \end{enumerate} \end{theorem} \begin{remark} We only prove the case when $\alpha = \beta = 1$.

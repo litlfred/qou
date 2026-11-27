@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-24T10:51:56.620313+00:00",
-  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
+  "computedAt": "2026-11-24T21:05:32.706515+00:00",
+  "commitSha": "dd5f163edbddf8601e4c32f0a7557244ca9c33df",
   "assertions": [
     {
       "name": "Bare H_2 molecular braid projects onto (3,1) [T_{3,5}] and (2,1,1) [T_{2,9}]; (2,2) zero",
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "prop:force-carrier-intertwining-correspondence (round-18)"
+      "source": "conj:force-carrier-intertwining-correspondence (round-18)"
     },
     {
       "name": "α_EM = h² / [q · δ_q(T_{2,9}) · δ_q(T_{3,5})] within 10⁻¹²",
@@ -51,8 +51,8 @@
   "durationMs": 0,
   "computation": "delta-q-decoration",
   "scriptFile": "delta_q_decoration.py",
-  "scriptHash": "8e0c192d490f",
-  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+  "scriptHash": "c6db946fe436",
+  "scriptCommitSha": "e78fcf72cf2a10d34f0c07635a9affb64e504bc8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,13 +60,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -74,7 +76,7 @@
     ],
     "reproduce": "python3 -u computations/delta_q_decoration.py"
   },
-  "description": "δ_q Wedderburn decomposition for H_n(q), n=2,3,4. Tests the round-18 force-carrier intertwining correspondence (prop:force-carrier-intertwining-correspondence): does the bare H_2 molecular braid project onto the (3,1) and (2,1,1) Wedderburn channels matching T_{3,5} and T_{2,9} strand counts? Verifies the algebraic identity α_EM = h²/[q·δ_q(T_29)·δ_q(T_35)] (prop:alpha-em-categorical-trace-ratio).",
+  "description": "δ_q Wedderburn decomposition for H_n(q), n=2,3,4. Tests the round-18 force-carrier intertwining correspondence (conj:force-carrier-intertwining-correspondence): does the bare H_2 molecular braid project onto the (3,1) and (2,1,1) Wedderburn channels matching T_{3,5} and T_{2,9} strand counts? Verifies the algebraic identity α_EM = h²/[q·δ_q(T_29)·δ_q(T_35)] (prop:alpha-em-categorical-trace-ratio).",
   "contentBlock": "def:delta-q-decoration",
   "parameters": {
     "q0": 1.1099785827513808,
@@ -352,9 +354,9 @@
       "lambda_31_contribution": -0.13626929699471543,
       "lambda_211_contribution": 0.1106034865105433,
       "lambda_22_contribution": 6.1450456621442864e-18,
-      "total_trM": -0.017233390031691415,
+      "total_trM": -0.017233390031691418,
       "supported": true,
-      "reference": "prop:force-carrier-intertwining-correspondence",
+      "reference": "conj:force-carrier-intertwining-correspondence",
       "all_lambdas": {
         "(4,)": 0.018122652093182777,
         "(3, 1)": -0.13626929699471543,
@@ -364,7 +366,7 @@
       }
     },
     "alpha_em_identity": {
-      "alpha_em_definition": 0.0073087015600556545,
+      "alpha_em_definition": 0.007308701560055658,
       "alpha_em_via_delta_q": 0.007308701560055655,
       "delta_q_T29": 2.166600083551419,
       "delta_q_T35_B2": 2.4866207331650996,

@@ -43,6 +43,27 @@
 
 set -uo pipefail
 
+# --- qou as a platform layer (owner ruling 2026-11-24) --------------------
+# index.config.json + index.lock.json mount the platform layers at the repository
+# root (`bash .github/mount-from-lock.sh`, or any `bun run cat ...`). When they
+# are mounted, `folio-assistant/` is made a directory of links to THEM
+# (scripts/lib/platform-root.sh, qou_platform_shim) and no clone is made: one
+# platform, the one index.lock.json pins. A clone beside the root mounts would
+# be a second platform, and the registry's checkout scan makes the two collide.
+# Set FOLIO_ASSISTANT_CLONE=1 to clone anyway (the legacy route, pinned by
+# .folio-assistant-pin).
+_QOU_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+if [ "${FOLIO_ASSISTANT_CLONE:-0}" != 1 ] && [ -f "$_QOU_ROOT/index.lock.json" ]; then
+  . "$_QOU_ROOT/scripts/lib/platform-root.sh"
+  if [ ! -f "$_QOU_ROOT/cat-harness-tools/package.json" ]; then
+    echo "setup-folio-assistant: mounting the platform layers from index.lock.json" >&2
+    bash "$_QOU_ROOT/.github/mount-from-lock.sh" --root "$_QOU_ROOT" || { echo "setup-folio-assistant: mount-from-lock failed" >&2; exit 1; }
+  fi
+  [ -d "$_QOU_ROOT/node_modules" ] || (cd "$_QOU_ROOT" && bun install) || exit 1
+  qou_platform_shim "$_QOU_ROOT"
+  exit 0
+fi
+
 REPO_URL="${FOLIO_ASSISTANT_REPO:-https://github.com/litlfred/folio-assistant.git}"
 
 # --- resolve the platform ref (PINNED by default) ------------------------
@@ -147,9 +168,28 @@ elif printf '%s' "$REF" | grep -Eq '^[0-9a-f]{40}$' && ! git -C "$CLONE_DIR" rev
   info "platform clone exists at $CLONE_DIR — fetching only the pinned commit $REF"
   git_retry git -C "$CLONE_DIR" fetch --quiet --depth 1 origin "$REF" \
     || info "fetch failed (offline?) — using existing clone as-is"
+elif printf '%s' "$REF" | grep -Eq '^[0-9a-f]{40}$'; then
+  # The pinned commit is already in the clone, and a SHA cannot move, so there
+  # is nothing to fetch. This branch used to fall through to the `fetch --tags
+  # origin` below, which in a cloud session is a disaster: the session's own
+  # shallow checkout of litlfred/folio-assistant sits at ../folio-assistant
+  # (the default CLONE_DIR) and usually already contains the pin, and a
+  # refspec-wide fetch from a shallow clone pulls the FULL history of all
+  # ~4,200 branches. Measured 2026-11-17: 10.7 million objects, the pack past
+  # 4.9 GB and still growing after 6 minutes, so the agent's timeout killed
+  # setup before the layer mount and the symlink were made, and no
+  # folio-assistant/ link was left behind.
+  info "platform clone exists at $CLONE_DIR and already has $REF — no fetch needed"
 else
+  # A branch or tag name. Fetch only that ref, shallow if the clone is shallow,
+  # never every branch: see the SHA case above for what a full fetch costs.
   info "platform clone exists at $CLONE_DIR — fetching $REF"
-  git_retry git -C "$CLONE_DIR" fetch --tags origin \
+  _depth=""
+  [ "$(git -C "$CLONE_DIR" rev-parse --is-shallow-repository 2>/dev/null)" = true ] && _depth="--depth 1"
+  # shellcheck disable=SC2086
+  git_retry git -C "$CLONE_DIR" fetch --quiet $_depth origin \
+      "+refs/heads/$REF:refs/remotes/origin/$REF" 2>/dev/null \
+    || git_retry git -C "$CLONE_DIR" fetch --quiet $_depth origin "refs/tags/$REF:refs/tags/$REF" \
     || info "fetch failed (offline?) — using existing clone as-is"
 fi
 [ -d "$CLONE_DIR/.git" ] || die "clone directory $CLONE_DIR not present after setup"

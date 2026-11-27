@@ -1,0 +1,3 @@
+In the [Yekutieli lifting triple](#def:yekutieli-triple), the $1$-morphisms $g_{ij}^{(n)}$ encode the patching data of the comultiplication $\Delta_n$, and the $2$-morphisms $a_{ij}^{(n)}$ implement the lift of transition automorphisms from level $n$ to level $n{+}1$.
+
+The assignment $n \mapsto (x^{(n)}, g^{(n)}, a^{(n)})$ is functorial. The jet prolongation ([jet prolongation](#prop:jet-prolongation)) sends the triple at level $n$ to the triple at level $n{+}1$. The :refterm[descent]{#descent} homomorphism $\mathfrak{d}_{n+1}$ ([:refterm[descent]{#descent}](#lem:descent)) reverses this assignment. In the archimedean realisation, $g_{ij}^{(n)} \in \Gamma(U_i \cap U_j, \mathrm{SU}_{q_n}(2))$ are gauge transition functions and $a_{ij}^{(n)} \in \mathcal{O}_M^{\times}$.

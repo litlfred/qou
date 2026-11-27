@@ -1,1 +1,1 @@
-Let A and B be weak Hopf algebras, and let α : A → B an algebra
+Let A and B be weak Hopf algebras, and let α : A → B an algebra isomorphism which intertwines the corresponding coproducts and antipodes. Then α is automatically an isomorphism of weak quasi-Hopf algebras. Semisimple bialgebras are described via Tannaka-Krein duality by semisimple tensor categories endowed with a tensor functor to Vec. This characterization extends to weak bialgebras, and is based on the simple observation that they have a weak tensor furgetful functor.

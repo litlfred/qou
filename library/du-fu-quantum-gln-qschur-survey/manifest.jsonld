@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/du-fu-quantum-gln-qschur-survey",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/du-fu-quantum-gln-qschur-survey/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -36,6 +36,18 @@
     "library/du-fu-quantum-gln-qschur-survey/sections/page-023"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Quantum gl_n, q-Schur algebras and their infinite/infinitesimal counterparts — We present a survey of recent developments of the Beilinson–Lusztig–MacPherson approach in the study of quantum gln\n\n**Quantum gl_n, q-Schur algebras and their infinite/infinitesimal counterparts**\n\n*INFINITE/INFINITESIMAL COUNTERPARTS*\n\n23 pp, 23 sections.\n\n**Abstract.** We present a survey of recent developments of the Beilinson–Lusztig–MacPherson approach in the study of quantum gln, inﬁnitesimal quantum gln, quantum gl∞and their associated q-Schur algebras, little q-Schur algebras and inﬁnite q-Schur algebras. We also use the relationship between quantum gl∞and inﬁnite q-Schur algebras to discuss their representations.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17; Page 18",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "du-fu-quantum-gln-qschur-survey",
@@ -54,8 +66,8 @@
     "pages": 23,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

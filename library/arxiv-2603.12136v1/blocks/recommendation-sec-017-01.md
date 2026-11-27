@@ -1,1 +1,0 @@
-To achieve such a reduction, we need to balance two conditions: we would like the partition $\MQ$ to be as coarse as possible, but [\[thm_milp_folding_condition\]](#thm_milp_folding_condition){reference-type="eqref" reference="thm_milp_folding_condition"} must also hold.

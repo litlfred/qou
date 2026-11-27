@@ -69,7 +69,11 @@ def main():
         print(json.dumps(r, ensure_ascii=False), flush=True)
     res = {"producer": "computations/probes/coulomb_in_decay_epsilon_probe.py", "bean": "qou-99qc",
            "preregistration": "ε-EM1", "arithmetic": "exact (sympy over Q(q, Y)); q0, Y=1/3 display only",
-           "q0_anchor": "proton (display only)", "rows": rows}
+           "q0_anchor": "proton (display only)",
+           "q0Anchor": "proton",
+           "q0AnchorReason": "algebra is exact over Q(q, Y); the only numeric column (d_eps_over_eps_q0_Y_third) substitutes Q0 from word_level_epsilon_probe, a 16-digit rational of the proton pin",
+           "q0Value": "1.109978582751381",
+           "rows": rows}
     pathlib.Path(__file__).with_name("coulomb-in-decay-epsilon.witness.json").write_text(
         json.dumps(res, indent=1, ensure_ascii=False) + "\n")
 

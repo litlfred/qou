@@ -26,14 +26,9 @@ nonnegative, and it vanishes only when every block with $y_\lambda > 0$ vanishes
 Positivity of the whole form is thus equivalent to nonnegativity of the weights, and
 the degeneracy locus is exactly the set of blocks the trace kills.
 
-Two consequences follow for $H_3(q)$ without any numerical input.
+For $H_3(q)$ at the Markov parameter $z = q^3/(q^2+1)$, the weights of $(3)$ and $(2,1)$ are strictly positive for $q > 0$ while the weight of $(1^{3})$ vanishes identically, so $S$ acquires a one-dimensional kernel and nothing else: signature $(5,0,1)$.
 
-- Under convention C every weight is strictly positive, so $S$ is positive definite:
-  signature $(6,0,0)$.
-- Under convention D the weight of $(1^{3})$ is zero, so $S$ acquires a
-  one-dimensional kernel and nothing else: signature $(5,0,1)$.
-
-The kernel under convention D is the row cap seen through the pairing. Quotienting by
+That kernel is the row cap seen through the pairing. Quotienting by
 it leaves a genuine inner product, which is what a Rieffel Lipschitz seminorm
 requires.
 
@@ -44,8 +39,7 @@ sends the basis element of a word to the basis element of its inverse, which on 
 normal-form basis swaps $L_+ \leftrightarrow L_-$ and fixes the remaining four
 vectors. That single swap flips the sign of the one antisymmetric direction in the
 mixed-symmetry block, and the sign it flips is the whole difference between the two
-pairings. The contrast is drawn in
-[two pairings, two signatures](#rem:markov-gram-bilinear-vs-star), and no signature
+pairings. No signature
 claim about the Markov--Gram form is meaningful until the pairing is named.
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the
@@ -53,9 +47,7 @@ substrate wall: it invokes real- or complex-analytic constructs --- real-valued
 physical observables, real-analytic bounds, transcendental constants, or numerical
 evaluation at the substrate parameter $q_0$. Any generic categorical or
 $q$-deformation identities it draws on remain valid over an abstract coefficient ring;
-only their archimedean realisation is specialised here. At $q_0$ the star form has
-eigenvalues $0.855067$ (fourfold), $0.101797$ and $3.476950$ under convention C, and
-$0$, $0.752702$ (threefold) and $4.230339$ under convention D. The repeated magnitude
-under convention D is $\mu_+ = 0.75270211325196540159$, the $T = 1$ isospin projector
-scalar; the isolated $0.101797$ under convention C is the $(1^{3})$ block, small
-because $y_{(1^{3})} = 0.0227449$ is small.
+only their archimedean realisation is specialised here. At $q_0$ for $z = q^3/(q^2+1)$, the star form has
+eigenvalues $0$, $0.752702$ (threefold) and $4.230339$. The repeated magnitude
+is $\mu_+ = 0.75270211325196540159$, the $T = 1$ isospin projector
+scalar, and the single zero eigenvalue is the $(1^{3})$ block.

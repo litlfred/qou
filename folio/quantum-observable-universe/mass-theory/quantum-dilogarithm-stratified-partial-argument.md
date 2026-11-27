@@ -1,18 +1,20 @@
 **Partial argument for [the stratified quantum dilogarithm conjecture](#conj:quantum-dilogarithm-stratified).** Steps 1, 2 and 4 below are argued; Step 3 is not established, and as written it cannot be: $F_n(z)$ in (d) is a single power of $z$, so the product expansion $F_n(z) = \prod_k (1 - q^{-k}z)^{-c_k(n)}\, u_n(q)$ fails for it. What is proved is Step 1, the mutual orthogonality of the depth strata under the Frobenius pairing.
 
-*Step 1 (Frobenius dual decomposition of $Z(A)$).* By
-[curvature-rank stratification](#prop:curvature-rank-gb-stratification)
-— **together with the partition-vs-word identification this proof itself
-flags as unestablished at Step 3 below, and which is not supplied by that
-proposition** —
+*Step 1 (Frobenius dual decomposition of $Z(A)$).* Partitioning the
+primitive central idempotents $e_\lambda$ ($\lambda \vdash n$) by the
+max-hook statistic $\mathrm{depth}_{\mathrm{GB}}(\lambda) := \max_{\square \in \lambda} h(\square)$,
 the centre $Z(A) = \bigoplus_{\lambda \vdash n} R \cdot e_\lambda$
-admits the GB-depth grading
-$Z(A) = \bigoplus_{k \geq 0} Z^{(k)}(A)$. The Frobenius pairing
+decomposes directly into vector-space strata
+$Z(A) = \bigoplus_{k \geq 0} Z^{(k)}(A)$, where
+$Z^{(k)}(A) := \bigoplus_{\mathrm{depth}_{\mathrm{GB}}(\lambda) = k} R \cdot e_\lambda$
+(this partition-level grading is definitional and does not rely on the
+word-level filtration of
+[curvature-rank stratification](#conj:curvature-rank-gb-stratification),
+whose relation to partition hook length is examined in Step 3(b) below).
+The Frobenius pairing
 $\langle a, b \rangle = \int_A a \cdot b$ restricts to $Z(A)$ as a
 non-degenerate bilinear form, and the depth strata $Z^{(k)}(A)$ are
-mutually orthogonal under this pairing
-([Frobenius duality of strata](#prf:spectral-sequence-collapse)
-"§Frobenius duality of strata"):
+mutually orthogonal under this pairing:
 
 $$
   \langle Z^{(k)}(A),\, Z^{(\ell)}(A) \rangle \;=\; 0
@@ -63,34 +65,33 @@ as the depth-$k$ projection of the Frobenius dual.
 
 *Step 3 (cyclotomic factors $\leftrightarrow$ depth-$k$ partitions).*
 The cyclotomic factor $(1 - q^{-k} z_i)^{-1}$ in $\Phi_q(z_i)$ has its
-pole locus at $z_i = q^k$. We identify this locus with the
+pole locus at $z_i = q^k$. This locus is identified with the
 depth-$k$ centre stratum $Z^{(k)}(A)$ via the $q$-content / hook-length
 structure:
 
 (a) The q-deformed Wedderburn-block weight is
 $w_\lambda(q) = \dim_q^2 V_\lambda / [n]_q!$ (distinct from the
 classical Plancherel measure $w_\lambda(1) = (\dim V_\lambda)^2/n!$ —
-the two coincide at $q = 1$; see
-[`prop:plancherel-weight-boundedness`](#prop:plancherel-weight-boundedness)),
+the two coincide at $q = 1$),
 where
 $\dim_q V_\lambda = [n]_q! \,/\, \prod_{\square \in \lambda} [h(\square)]_q$
 and $[h]_q = (q^h - q^{-h})/(q - q^{-1})$ is the symmetric quantum
 integer
 ([Hoefsmit pipeline](#conj:hoefsmit-scattering-pipeline)).
 
-(b) The hook lengths $h(\square)$ for $\square \in \lambda$ encode
-the partition's depth in the GB filtration. Here
+(b) The hook lengths $h(\square)$ for $\square \in \lambda$ define
+the partition's max-hook depth in $Z(A)$. Here
 $\mathrm{depth}_{\mathrm{GB}}(\lambda) = \max_{\square \in \lambda} h(\square)$
-(the partition's **maximum hook length**) is a *definition* — it is
-`QOU.BraidKnot.gbDepth`, the supremum of the hook length over the
+(the partition's **maximum hook length**) is a *definition* — the
+supremum of the hook length over the
 cells of $\lambda$ — not a consequence of
-[curvature-rank stratification](#prop:curvature-rank-gb-stratification),
-which stratifies $J^{\,r}/J^{\,r+1}$ by the curvature rank $r(T_w)$ of
-**words** and mentions no partition. The two are different indexings of
-depth, and the reading of $\mathrm{depth}_{\mathrm{GB}}(\lambda)$ as
-the minimal number of $R_H, R_{YB}$ rewrites needed to put any element
-of the $\lambda$-isotypic component in NF is the identification of the
-partition grading with the word filtration, which that proposition does
+[curvature-rank stratification](#conj:curvature-rank-gb-stratification),
+which is a conjecture stratifying $J^{\,r}/J^{\,r+1}$ by the curvature
+rank $r(T_w)$ of **words** and mentions no partition. The two are
+different indexings of depth, and reading $\mathrm{depth}_{\mathrm{GB}}(\lambda)$
+as the minimal number of $R_H, R_{YB}$ rewrites needed to put any element
+of the $\lambda$-isotypic component in NF requires an identification of
+the partition grading with the word filtration that that conjecture does
 not supply.
 
 (c) Therefore $\dim_q V_\lambda$ has a factor of $[k]_q$ in its
@@ -98,7 +99,7 @@ hook-length expansion exactly when $\lambda$ contains a box with
 $h(\square) = k$, equivalently $\mathrm{depth}_{\mathrm{GB}}(\lambda) \geq k$.
 Under the substitution $z_i \to q^k$, the factor $[k]_q$ vanishes —
 $\dim_q V_\lambda(q)\big|_{z_i = q^k}$ has a zero, and the
-corresponding $w_\lambda^{-1}$ specialisation has a pole.
+corresponding $w_\lambda(q)^{-1}$ specialisation has a pole.
 
 (d) The Markov-trace generating function for the centre is the
 formal series
@@ -110,7 +111,7 @@ and $u_n(q) \in \mathbb{Z}[q^{\pm 1/2}]$ is a unit. The exponent
 $c_k(n)$ counts depth-exactly-$k$ partitions; the factor
 $(1 - q^{-k} z)^{-c_k(n)}$ contributes the depth-$k$ stratum of $Z(A)$.
 
-> **Status (2026-11-16): the product expansion in (d) is false as written.** Every $\lambda \vdash n$ has $|\lambda| = n$, so $F_n(z) = \bigl(\sum_{\lambda \vdash n} \dim_q^{-1}(V_\lambda)\bigr)\, z^n$ is a single monomial in $z$. A product $\prod_{k \geq 1}(1-q^{-k}z)^{-c_k(n)}\, u_n(q)$ with some $c_k(n) > 0$ has the nonzero $z^1$ coefficient $u_n(q)\sum_k c_k(n)\, q^{-k}$ when $n \geq 2$, so the two sides cannot agree. Steps (e)–(f) inherit this. The proved truncation statement is [`prop:cell-depth-truncation`](#prop:cell-depth-truncation).
+> **Scope of (d): the multi-factor product expansion does not hold for a homogeneous monomial.** Every $\lambda \vdash n$ has $|\lambda| = n$, so $F_n(z) = \bigl(\sum_{\lambda \vdash n} \dim_q^{-1}(V_\lambda)\bigr)\, z^n$ is a single monomial in $z$. A product $\prod_{k \geq 1}(1-q^{-k}z)^{-c_k(n)}\, u_n(q)$ with some $c_k(n) > 0$ has the nonzero $z^1$ coefficient $u_n(q)\sum_k c_k(n)\, q^{-k}$ when $n \geq 2$, so the two sides cannot agree. Steps (e)–(f) inherit this. The proved truncation statement is [Cell-depth truncation of a trace](#prop:cell-depth-truncation).
 
 (e) The single-stratum factor $(1 - q^{-k}z)^{-1}$ in $\Phi_q$ is
 the $c_k = 1$ specialisation of (d) — applicable when each depth-$k$
@@ -175,24 +176,22 @@ product. Establishing this uniform bound is the conjectural target of
 needed for [$\Phi_q$ categorical truncation](#conj:phi-q-categorical-truncation):
 the level-wise $\Phi_q$ identity that the bound was meant to regularise is
 false algebraically, and the centre-projection truncation is proved without
-it ([`prop:cell-depth-truncation`](#prop:cell-depth-truncation)). Note also
+it ([Cell-depth truncation of a trace](#prop:cell-depth-truncation)). Note also
 that with $\Phi_q(z_i)$ a scalar the equality
 $\mathrm{tr}_M(\Phi_q(z_i)T_w)=\mathrm{tr}_M(\Phi_q^{[\le k_\star]}(z_i)T_w)$
 fails at $w=e$ unless $\prod_{j>k_\star}(1-q^{-j}z_i)^{-1}=1$, which is false
 for $z_i\ne0$; the statement above needs $\Phi_q(z_i)$ read as a central
 element, and that reading is not fixed here.
 
-The argument above is solid as a **categorical (Frobenius-paired)
-identity** but does not by itself rule out that the infinite analytic
-product diverges at $|z_i| = q$ in a way that the finite Frobenius
-truncation does not capture in real-valued terms. Step 3's
-identification (a)–(f) reduces the cyclotomic-factor / depth-stratum
-correspondence to the standard $q$-content / hook-length formula plus
-[curvature-rank stratification §Step 3](#prop:curvature-rank-gb-stratification)
-(GB-depth = max hook length), so the structural identification is now
-explicit — **but "explicit" here means *written down*, not *established*.
-The citation does not supply the identification; the passage above, at
-"not a consequence of [curvature-rank stratification] ... which ... mentions no
-partition", states the position of this proof.** The product expansion in **(d)** is false (see the status note under (d)); what this paragraph called the remaining open piece is the
-expansion $F_n(z) = \prod_k (1 - q^{-k}z)^{-c_k(n)} \cdot u_n(q)$.
-No such expansion exists for $n \geq 2$, because $F_n$ is a monomial in $z$. The earlier claim that unique factorisation in $\mathbb{Z}[q^{\pm 1/2}][z]$ supplies one is withdrawn.
+The argument above establishes Step 1's **categorical (Frobenius-paired)
+orthogonality** of the partition strata $Z^{(k)}(A)$, while leaving two
+independent gaps in Step 3 and the analytic limit: first, Step 3(a)–(c)
+uses the definitional max-hook statistic
+$\mathrm{depth}_{\mathrm{GB}}(\lambda) = \max_{\square \in \lambda} h(\square)$,
+whereas [curvature-rank stratification](#conj:curvature-rank-gb-stratification)
+filters $H_n(R, q)$ by word curvature rank $r(T_w)$ without establishing
+the word-to-partition identification; second, the product expansion
+$F_n(z) = \prod_k (1 - q^{-k}z)^{-c_k(n)} \cdot u_n(q)$ asserted in **(d)**
+is false for $n \geq 2$ because $F_n(z)$ is a single homogeneous monomial
+in $z$ (see the scope note under (d)), so unique factorisation in
+$\mathbb{Z}[q^{\pm 1/2}][z]$ supplies no such infinite-product identity.

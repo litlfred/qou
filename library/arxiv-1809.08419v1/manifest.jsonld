@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1809.08419v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1809.08419v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -19,6 +19,18 @@
     "library/arxiv-1809.08419v1/sections/sec-004"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "GRÖBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER GROUPS — For the noncrystallographic Coxeter groups of type H, we construct their Gr¨obner- Shirshov bases and the corresponding standard\n\n**GRÖBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER GROUPS**\n\n*JEONG-YUP LEE AND DONG-IL LEE∗*\n\n14 pp, 6 sections.\n\n**Abstract.** For the noncrystallographic Coxeter groups of type H, we construct their Gr¨obner- Shirshov bases and the corresponding standard monomials.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 3 Coxeter groups of types H2 and H3; 4 Main results for H4; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -40,8 +52,8 @@
       "stamp_date": "22 Sep 2018"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

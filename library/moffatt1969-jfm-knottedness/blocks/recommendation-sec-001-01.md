@@ -1,0 +1,1 @@
+It would therefore appear that the value of I may then change accord- ing to (171, and this is at first sight surprising in view of the interpretation given above of the invariance of I in terms of the conservation of linkages of vortex lines; vortex lines are still frozen in the fluid when rigid boundaries are present, so these should not affect the invariance of I.

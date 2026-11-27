@@ -16,7 +16,7 @@ The critical saddle point of the continuous action sits at $\theta = \pi/3$, whe
 
 ## The asymptotic bound (scope-limited)
 
-The full non-perturbative Kashaev invariant (calculated via high-precision [Borel–Padé extrapolation](#def:ecalle-borel-resummation) across $N \in [1000, 2050]$) pins the topological action of the geometric envelope:
+The full non-perturbative Kashaev invariant (calculated via high-precision Borel–Padé extrapolation across $N \in [1000, 2050]$) pins the topological action of the geometric envelope:
 $$ A = \frac{\text{Vol}(4_1)}{\pi} \approx 0.6461318 $$
 
 The candidate identification
@@ -25,4 +25,4 @@ is **scope-limited, not exact**: $-\text{Vol}(4_1)$ is anchor-blind, missing bot
 
 What stands is the hyperbolic geometry: $\text{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$, with the Lobachevsky saddle at $\theta = \pi/3$, supplies the geometric envelope that anchor-sensitive corrections (the precision ladder) refine — not a rigorous continuum evaluation of $c_3$.
 
-Every $c_3$ figure quoted above is stated in the **convention-C frame**, $z = \sqrt{q}/(q+1)$. The canonical Markov parameter is convention D, $z = q^3/(q^2+1)$, under which the $\mathfrak{Q}_\beta$ precision ladder has not been re-derived; the figures are correct as recorded and are scoped, not corrected. The hyperbolic geometry — $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$, with the saddle at $\theta = \pi/3$ — is convention-independent and is unaffected.
+Every $c_3$ figure quoted above was extracted using the half-argument phase weight $z = \sqrt{q}/(q+1)$ on the retired $z = 1$ base. Under the canonical Markov parameter $z = q^3/(q^2+1)$, the $\mathfrak{Q}_\beta$ precision ladder has not been re-derived; the figures are scoped to that extraction rather than altered. The hyperbolic geometry — $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$, with the saddle at $\theta = \pi/3$ — is independent of $z$ and is unaffected.

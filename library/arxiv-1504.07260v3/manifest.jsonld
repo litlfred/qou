@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1504.07260v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1504.07260v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -46,6 +46,18 @@
     "library/arxiv-1504.07260v3/sections/sec-031"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Fricke S-duality in CHL models — We consider four dimensional CHL models with sixteen spacetime supersym- metries obtained from orbifolds of type IIA superstring on K3×T 2 by a ZN symmetry acting\n\n**Fricke S-duality in CHL models**\n\n56 pp, 33 sections.\n\n**Abstract.** We consider four dimensional CHL models with sixteen spacetime supersym- metries obtained from orbifolds of type IIA superstring on K3×T 2 by a ZN symmetry acting (possibly) non-geometrically on K3. We show that most of these models (in particular, for geometric symmetries) are self-dual under a weak-strong duality acting on the heterotic axio-dilaton modulus S by a “Fricke involution” S →−1/NS. This is a novel symmetry of CHL models that lies outside of the standard SL(2, Z)-symmetry of the parent theory, heterotic strings on T 6. For self-dual models this implies that the lattice of purely electric charges is N-modular, i.e. isometric to its dual up to a rescaling of its quadratic form by N. We verify this prediction by determining the lattices of electric and magnetic charges in all relevant examples.\n\n**Outline.** Front matter; 1 Introduction and Summary; 1.1 Fricke S-duality; 1.2 Black hole microstate counting; 1.3 Connection with moonshine; 1.4 Outline; 2 Non-geometric CHL models; 2.1 Heterotic-type II duality; 2.2 Generalities on CHL models; 2.3 Consistency and level matching; 2.4 Classification; 3 Fricke S-duality and N-modularity; 3.1 String-string duality and Fricke S-duality; 3.2 Self-duality and the Witten index; 3.3 Heterotic T-duality; 3.4 Atkin-Lehner dualities; 4 Lattice of electric-magnetic charges; 4.1 Purely electric charges",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -69,8 +81,8 @@
       "stamp_date": "21 Nov 2016"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,4 +1,4 @@
-The strategy is constructive. We define the specific endomorphism $L_q = D^2 + \psi^* \otimes D \psi$ in $\mathrm{End}(A)$ and verify that it correctly encapsulates both the kinetic and interaction terms, satisfying the requirements for the categorical Lagrangian.
+The strategy is constructive. Define the endomorphism $L_q = D^2 + \psi^* \otimes D \psi$ in $\mathrm{End}(A)$ and check that it encapsulates both the kinetic and interaction terms, satisfying the requirements for the categorical Lagrangian.
 
 $\mathcal{D}_\nabla$ exists by
 ([existence of Dirac operator](#prop:categorical-dirac-operator-exists)),

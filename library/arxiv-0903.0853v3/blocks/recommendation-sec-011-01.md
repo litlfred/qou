@@ -1,1 +1,0 @@
-We shall also use specific results proved in appendix [\[chapter:ISOGRAD\]](#chapter:ISOGRAD){reference-type="ref" reference="chapter:ISOGRAD"}.\ We call *difference field*[^1] a pair $(K,\sigma)$, where $K$ is a (commutative) field and $\sigma$ a field automorphism of $K$.

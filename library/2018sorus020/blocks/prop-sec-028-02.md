@@ -1,0 +1,1 @@
+Let ¯X be a component of irreducible type, with function ring k[ ¯X] ≃¯B[Γ]/p. Let ρ : Γ →SL2(k( ¯X)) the tautological representation, and H∗(M, Ad ◦ρ) the twisted homology with adjoint action on sl2(k( ¯X)) coeﬃcients. Then there are isomorphisms Ω¯B[Γ]/k ⊗¯B[Γ] k( ¯X) ≃H1(M, Ad ◦ρ) ≃Ωk( ¯ X)/k

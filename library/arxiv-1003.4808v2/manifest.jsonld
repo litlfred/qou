@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1003.4808v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1003.4808v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -28,6 +28,18 @@
     "library/arxiv-1003.4808v2/sections/sec-013"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Quantum Field Theory and the Volume Conjecture — 15 sections: Front matter; Preliminaries; The many dimensions of the volume\n\n**Quantum Field Theory and the Volume Conjecture**\n\n*Tudor Dimofte and Sergei Gukov*\n\n32 pp, 15 sections.\n\n**Outline.** Front matter; 1 Preliminaries; 2 The many dimensions of the volume conjecture; 2.1 Parametrized VC; 2.2 Quantum VC; 2.3 Groups and representations; 2.4 Links and 3-manifolds; 3 TQFT; 3.1 Cutting and gluing; 3.2 Quantization; 3.2.1 Methods; 3.2.2 Simple examples; 3.3 Chern-Simons theory; 3.3.1 Quantization of Chern-Simons theory; 3.3.2 Synthesis",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -51,8 +63,8 @@
       "stamp_date": "26 Mar 2010"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,0 +1,1 @@
+The ﬂat connection Υnθn,τ commutes with the action ρ : sl2(C) →End(M⊗n λ ), i.e. for any vector ﬁeld Y on the conﬁguration space ˆCn(C): ρ(v)(Υnθn,τ(Y )(x)) = Υnθn,τ(Y )(ρ(v)(x)), for any v ∈sl2(C) and x ∈M⊗n λ . The vector space N[nλ −2m] is a representation µn,m,λ,τ : Bn →Aut(N[nλ −2m]) of the braid group Bn.

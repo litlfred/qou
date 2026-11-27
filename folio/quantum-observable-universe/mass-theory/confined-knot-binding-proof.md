@@ -1,4 +1,3 @@
-*Proof.*
 The equality $W_{\mathrm{sym}} = W_{\mathrm{alt}}$ follows from
 $\dim_q(\lambda_{\mathrm{sym}}) = \dim_q(\lambda_{\mathrm{alt}}) = 1$
 for the one-dimensional representations of $H_3(R, q)$.
@@ -42,5 +41,3 @@ $$
 Each factor is determined by the Hecke algebra multiplication
 rules applied to the crossing parameters at that level.
 $\square$
-
-**Witness**: `confined-knot-binding.witness.json`.

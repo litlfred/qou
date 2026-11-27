@@ -1,1 +1,0 @@
-Since $M((p,q),(1,0)) \cong L(p,q),$ this gives $\volt(L(p,q)) \le \volh M((p,q), \infty)$ (note that other filling slopes may result in a homeomorphic lens space, which must be addressed in the proof of \Cref{prop:lens-space-limit}).

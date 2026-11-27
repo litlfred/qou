@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1105.2919v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1105.2919v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -83,6 +83,18 @@
     "library/arxiv-1105.2919v1/sections/sec-068"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Chiral eﬀective ﬁeld theory and nuclear forces — We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist.\n\n**Chiral eﬀective ﬁeld theory and nuclear forces**\n\n*R. Machleidta,∗, D. R. Entemb*\n\n93 pp, 70 sections.\n\n**Abstract.** We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist. At the same time, we also provide considerable detailed information (mostly in appendices) for the beneﬁt of researchers who wish to start working in this ﬁeld.\n\n**Outline.** Front matter; 1 Introduction and historical perspective; 2 Effective field theory for low-energy QCD; 2.1 Symmetries of low-energy QCD; 2.1.1 Chiral symmetry; 2.1.2 Explicit symmetry breaking; 2.1.3 Spontaneous symmetry breaking; 2.2 Chiral effective Lagrangians; 2.2.1 Relativistic formulation; 2.2.2 Heavy baryon formalism; 2.3 Nucleon contact Lagrangians; 2.4 Summary: Effective Lagrangians organized b; 3 Nuclear forces from EFT: Overview; 3.1 Chiral perturbation theory and power count; 3.2 The hierarchy of nuclear forces; 4 Two-nucleon interactions; 4.1.1 One-pion exchange; 4.1 Pion-exchange contributions in ChPT",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -106,8 +118,8 @@
       "stamp_date": "15 May 2011"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

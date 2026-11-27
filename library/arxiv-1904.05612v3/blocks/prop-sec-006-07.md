@@ -1,0 +1,1 @@
+Let P := NM(N)′′ and {ug : g ∈G} be an orthonormal system for M/R as in Proposition 3.6. If p denotes the support of {ug : g ∈G}, then p = eP. In particular, if N ⊂M is regular, then {ug : g ∈G} forms a two-sided orthonormal basis for M over R.

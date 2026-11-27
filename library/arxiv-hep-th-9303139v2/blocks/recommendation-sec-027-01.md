@@ -1,1 +1,0 @@
-Second, GKM is not yet generalized enough to fulfil its main purpose of incorporating infromation about {\it all} the models of $2d$ gravity (in fact it should include even more: the entire theory of integrable hierarchies and geometrical quantization).

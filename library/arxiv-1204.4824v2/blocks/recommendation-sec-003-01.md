@@ -1,1 +1,0 @@
-In particular $(ij) = (ji)$.} Second, it can end on a \ti{junction} where an $ij$-string, $jk$-string and $ki$-string meet (all oriented into the junction.) In the latter case, for the combined web of strings to be BPS, all three strings must be BPS strings with the \ti{same} phase $\vartheta$.

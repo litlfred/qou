@@ -4,7 +4,6 @@
 
 At the particle-mass scale, the formula $\mathfrak{m} = \mathrm{Vol}/\hbar_q^2$ applies the universal categorical density $\rho_q$. At the much lower nuclear-binding scale, the formula refines to use the physical Frobenius packing density $\rho_F$.
 
-**Conjecture.**
 *Let $\mathcal{K}$ be the atomic braid of a derived atom. The categorical mass endomorphism factorizes as:*
 
 $$

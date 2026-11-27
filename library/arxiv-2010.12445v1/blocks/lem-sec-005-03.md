@@ -1,0 +1,1 @@
+Let K∗: I →P(N) be a map and ni ∈Ki for all i. Then the map Spec R → D(K∗) given by the constant function (ni)i : Spec R →Q i∈I Ki is a closed immersion and representable by localizations of aﬃne schemes. In particular if E∗: I →Vect(X) is a collection of vector bundles then the locus X ′ →X where the sheaves Ei have rank ni enjoys the same property.

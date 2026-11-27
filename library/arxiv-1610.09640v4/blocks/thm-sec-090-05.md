@@ -1,0 +1,1 @@
+Suppose R is a dualizing complex over the noetherian com- mutative ring A, with associated duality functor D. Then for every complex M ∈ Df(A) the following hold: (1) The complex D(M) belongs to Df(A). (2) The morphism evR,R M : M →D(D(M)) in D(A) is an isomorphism.

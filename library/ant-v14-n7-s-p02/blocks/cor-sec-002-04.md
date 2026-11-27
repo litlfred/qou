@@ -1,0 +1,1 @@
+A.7. The isomorphism K⟨⟨e0∪µN ⟩⟩ ∫1,0 har ∼ −→K⟨⟨e0∪µN ⟩⟩∫ har, f 7→ X w∈Wdhar(e0∪µN ) f [w] 1 −e0 w induces, for all m ∈N, an isomorphism of continuous maps between (τ(pα)φα) ∫1,0 har and the m = 1 term of (τ(pα)φα)har.

@@ -1,1 +1,0 @@
-Proposition [\[prop:horosize\]](#prop:horosize){reference-type="ref" reference="prop:horosize"} should be compared to previous work of Jørgensen [@jorgensen Lemma 4.3], which was carefully written down by Akiyoshi, Sakuma, Wada, and Yamashita [@aswy-book Lemma 8.1.1].

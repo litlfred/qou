@@ -1,1 +1,0 @@
-Because of how the 3d index transforms under $Sp(2N,{\mathbb Z})$, it is fairly clear that the index at magnetic charge $m$ and electric charge $e$ must "count" the possible ways a bulk 't Hooft-Wilson loop of the same charge can end (supersymmetrically) at the boundary.

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2304.04367v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2304.04367v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -24,6 +24,18 @@
     "library/arxiv-2304.04367v1/sections/sec-010"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Angle-dependent pair production in the polarized two-photon Breit-Wheeler process — 11 sections: Angle-dependent pair production in; I Introduction; II Methods of theory and numerical\n\n**Angle-dependent pair production in the polarized two-photon Breit-Wheeler process**\n\n*Qian Zhao,1 Yan-Xi Wu,1, 2 Mamutjan Ababekri,1 Zhong-Peng Li,1 Liang Tang,3, ∗and Jian-Xing Li1, †*\n\n12 pp, 11 sections.\n\n**Outline.** Angle-dependent pair production in the polariz; I Introduction; II Methods of theory and numerical simulation; A Calculation of completely spin-dependent LBW; B Constructing polarized LBW process with MC s; III Theoretical and numerical analysis of pola; A Analytical calculation of pair polarization ; B Angle dependence of LBW pairs induced by lin; VI ACKNOWLEDGEMENT; A The expressions of the total cross section a; B The expressions of the coefficients in Eq. (",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "arxiv-2304.04367v1",
@@ -40,8 +52,8 @@
       "stamp_date": "10 Apr 2023"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

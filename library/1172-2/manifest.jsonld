@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1172-2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1172-2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -27,6 +27,18 @@
     "library/1172-2/sections/sec-012"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "L^2-torsion of 3-manifolds — 14 sections: Front matter; 序章; お礼の言葉\n\n**L^2-torsion of 3-manifolds**\n\n26 pp, 14 sections.\n\n**Outline.** Front matter; 1 序章; 12 お礼の言葉; 2.1 諸定義; 2.2 基本的性質; 2.3 $L^{2}$-torsion の計算例; 3 $S^{1}$ 上の曲面束の $L^{2}$-torsion; 3.3 L\\\"uck の公式; 3.2 動機; 34 写像類群のMagnus 表現; 4 具体例; 4.1 $S^{1}$ 上のトーラス束; 43 第二近似; 5 今後の課題",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "1172-2",
@@ -36,8 +48,8 @@
     "pages": 26,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

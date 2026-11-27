@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-ph-0010012v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-ph-0010012v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -30,6 +30,18 @@
     "library/arxiv-math-ph-0010012v1/sections/sec-015"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "arXiv:math-ph/0010012v1 10 Oct 2000 — We review some recent results on random polynomials and their generalizations in complex and symplectic geometry.\n\n**arXiv:math-ph/0010012v1 10 Oct 2000**\n\n*Steve Zelditch*\n\n7 pp, 17 sections.\n\n**Abstract.** We review some recent results on random polynomials and their generalizations in complex and symplectic geometry. The main theme is the universality of statistics of zeros and critical points of (generalized) polynomials of degree N on length scales of order D √ N (complex case), resp. D N (real case).\n\n**Outline.** Front matter; 1 Introduction; 2 Mathematical Tools; 2.1 Vector spaces of large dimension; 2.1.1 Spherical harmonics and real eigenfuncti; 2.1.2 Holomorphic sections of positive line bu; 2.1.3 Almost holomorphic sections; 2.2 Gaussian measures and spherical measures; 2.3 Sequences of random polynomials; 3 Distribution of zeros and critical points; 3.1 Statement of results; 3.2 Almost sure distribution of zeros; 3.3 Universality and scaling of correlations; 3.3.1 Step One: Relating correlations and join; 3.3.2 Step two: scaling asymptotics of the JPD; 3.4 Hole probabilities; 4 Quantum ergodicity and random waves",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -51,8 +63,8 @@
       "stamp_date": "10 Oct 2000"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

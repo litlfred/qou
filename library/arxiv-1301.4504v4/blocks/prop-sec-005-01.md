@@ -1,0 +1,1 @@
+Then $$|P_1(a)-P_2(a)|=|\mathrm{Tr}\left\{(\rho_1-\rho_2)\Pi_a\right\}|\leq||(\rho_1-\rho_2)||_1,$$ so if the trace norm of the difference of two density operators is less than $\epsilon$ then the probabilities they predict for any experimental result will differ by at most $\epsilon$.

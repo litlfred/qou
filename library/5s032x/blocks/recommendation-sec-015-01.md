@@ -1,1 +1,0 @@
-However, some ambiguity still exists about the coordinates {x1, x2, x9}: if we view the octonionic spinor as spanning the 9-dimensional heavenly sphere, these coordinates should be interpreted as the spatial coordinates upon dimensional reduction by means of singling out a special complex direction; yet, they are acted upon by the SU(2)-part of the Standard Model symmetry.

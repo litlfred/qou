@@ -1,4 +1,3 @@
-*Proof.*
 Let $s_0$ be a root of $s^2 + s - 1 = 0$. Multiplying by $-s_0^{-2}$ yields $-1 - s_0^{-1} + s_0^{-2} = 0$. Substituting $u = s_0^{-1}$ gives $u^2 - u - 1 = 0$. Thus, $s_0 = 1/\varphi \Leftrightarrow s_0^{-1} = \varphi$. Squaring gives $1/\varphi^2 \leftrightarrow \varphi^2$ on the $q$-line. $\square$
 
 **Two-sided stability margin.**
@@ -21,4 +20,4 @@ The fixed points $\{1/\varphi, -\varphi\}$ of the baryon integration-limit Möbi
 
 **Falsifiability.**
 
-We predict that any observable monotone in $q - q_{\mathrm{gold}}$ on the sub-classical side has a bar-paired analogue monotone in $\varphi^2 - q$ on the super-classical side. The same Hecke skew-symmetry that exchanges $L_+$ and $L_-$ in the Skein relation relates their sensitivities. At $q = q_0$, the super-classical margin $\approx 1.508$ dominates. This aligns with the empirical observation that nuclear physics is more robust against substrate compression than rarefaction.
+The prediction is that any observable monotone in $q - q_{\mathrm{gold}}$ on the sub-classical side has a bar-paired analogue monotone in $\varphi^2 - q$ on the super-classical side. The same Hecke skew-symmetry that exchanges $L_+$ and $L_-$ in the Skein relation relates their sensitivities. At $q = q_0$, the super-classical margin $\approx 1.508$ dominates. This aligns with the empirical observation that nuclear physics is more robust against substrate compression than rarefaction.

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0203003v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203003v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -21,6 +21,18 @@
     "library/arxiv-math-0203003v2/sections/sec-006"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "arXiv:math/0203003v2 [math.QA] 24 Apr 2002 — 8 sections: Front matter; Introduction; Representations of Quantum Dynamic\n\n**arXiv:math/0203003v2 [math.QA] 24 Apr 2002**\n\n*Pavel I. Etingof*\n\n13 pp, 8 sections.\n\n**Outline.** Front matter; Introduction; 1 Representations of Quantum Dynamical R-Matri; 2 Exchange Representations; 3 Gauge Transformations; 4 Evaluation Representations; 5 Comparison of $\\mathcal F$ with the classica; A Appendix : Meromorphicity of the R-matrix",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -42,8 +54,8 @@
       "stamp_date": "24 Apr 2002"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

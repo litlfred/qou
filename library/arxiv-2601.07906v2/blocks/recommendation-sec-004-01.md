@@ -1,1 +1,0 @@
-Just like level repulsion, the intuition behind typicality stems from random matrix universality: if the Hamiltonian in a narrow energy band resembles a random matrix, then the relative basis change between the eigenbasis of simple operators and that of the Hamiltonian should be a random unitary.

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2109.00379v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2109.00379v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -29,6 +29,18 @@
     "library/arxiv-2109.00379v1/sections/sec-014"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "TWISTED NEUMANN–ZAGIER MATRICES — The Neumann–Zagier matrices of an ideal triangulation are integer matrices with symplectic properties whose entries encode the number of tetrahedra that wind around\n\n**TWISTED NEUMANN–ZAGIER MATRICES**\n\n*STAVROS GAROUFALIDIS AND SEOKBEOM YOON*\n\n23 pp, 16 sections.\n\n**Abstract.** The Neumann–Zagier matrices of an ideal triangulation are integer matrices with symplectic properties whose entries encode the number of tetrahedra that wind around each edge of the triangulation. They can be used as input data for the construction of a number of quantum invariants that include the loop invariants, the 3D-index and state- integrals. We deﬁne a twisted version of Neumann–Zagier matrices, describe their symplectic properties, and show how to compute them from the combinatorics of an ideal triangulation. As a sample application, we use them to deﬁne a twisted version of the 1-loop invariant (a topological invariant) which determines the 1-loop invariant of the cyclic covers of a hyperbolic knot complement, and conjecturally equals to the adjoint twisted Alexander polynomial.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Motivation; 1.2 Torsion and its twisted version; 1.3 Neumann–Zagier matrices and their twisted ; 1.4 The 1-loop invariant and its twisted versi; 2 Proofs: twisted NZ matrices; 3 Examples; 3.1 The knot 41; 3.2 The knot 63; 4 Proofs: twisted 1-loop invariant; 5 Examples, continued; 5.1 The knot 41; 5.2 The knot 63; Acknowledgments; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -50,8 +62,8 @@
       "stamp_date": "1 Sep 2021"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0601023v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0601023v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-ph-0601023v3",
+  "title": "Proton Stability in Grand Unified Theories, in Strings and in Branes",
   "contains": [
     "library/arxiv-hep-ph-0601023v3/sections/sec-front-matter",
     "library/arxiv-hep-ph-0601023v3/sections/sec-000",
@@ -75,6 +75,18 @@
     "library/arxiv-hep-ph-0601023v3/sections/sec-060"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes\n\n**Proton Stability in Grand Unified Theories, in Strings and in Branes**\n\n*Grand Unified Theories*\n\n258 pp, 62 sections.\n\n**Abstract.** A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation, SUSY and SUGRA uniﬁed models, uniﬁ- cation based on extra dimensions, and string-M-theory models. The extra dimensional uniﬁcation includes 5D and 6D and universal extra dimensional (UED) models, and models based on warped geometry. Proton stability in a wide array of string theory and M theory models is reviewed. These include Calabi-Yau models, grand uniﬁed models with Kac-Moody levels k > 1, a new class of heterotic string models, models based on intersecting D branes, and string landscape models. The destabilizing eﬀect of quantum gravity on the proton is discussed. The possibility of testing grand uniﬁed models, models based on extra dimensions and string-M-theory models via their distinctive modes is investigated.\n\n**Outline.** Front matter; 1 Introduction; 2 Experimental bounds and future searches; 3 Nucleon decay in non-supersymmetric scenario; 3.1 Baryon number violation in the Standard Mo; 3.2 Grand unification and gauge contributions ; 3.3 Proton decay induced by scalar leptoquarks; 4 Nucleon decay in SUSY and SUGRA unified theo; 4.1 R-parity violation and the decay of the pr; 4.2 Supersymmetry breaking and SUGRA unificati; 4.3 Effect of CP violating phases on proton li; 4.4 Doublet-triplet splitting problem; 4.5 Proton decay in $SU(5)$ supersymmetric gra; 4.6 Nucleon decay in SO(10) theories; 4.7 Proton decay in models with unified symmet; 5 Testing grand unification; 5.1 Textures, Planck scale effects and proton ; 5.2 Gravitational smearing effects",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
@@ -90,7 +102,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-ph-0601023v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0601023v3.pdf",
     "source_sha256": "875ab040b50487a16a60aa5340395bbc110ab3551b601df3419ab433759e699d",
     "pages": 258,
@@ -101,8 +115,8 @@
       "stamp_date": "23 Apr 2007"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

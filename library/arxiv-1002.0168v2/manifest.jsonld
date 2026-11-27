@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1002.0168v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1002.0168v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -25,6 +25,18 @@
     "library/arxiv-1002.0168v2/sections/sec-010"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Non-cyclotomic fusion categories Introduction — Etingof, Nikshych and Ostrik ask in [7, §2] if every fusion category can be completely deﬁned over a cyclotomic ﬁeld.\n\n**Non-cyclotomic fusion categories Introduction**\n\n*Scott Morrison*\n\n22 pp, 12 sections.\n\n**Abstract.** Etingof, Nikshych and Ostrik ask in [7, §2] if every fusion category can be completely deﬁned over a cyclotomic ﬁeld. We show that this is not the case: in particular one of the fusion categories coming from the Haagerup subfactor [1] and one coming from the newly constructed extended Haagerup subfactor [2] can not be completely deﬁned over a cyclotomic ﬁeld. On the other hand, we show that the Drinfel’d center of the even part of the Haagerup subfactor is completely deﬁned over a cyclotomic ﬁeld. We identify the minimal ﬁeld of deﬁnition for each of these fusion categories, compute the Galois groups, and identify their Galois conjugates.\n\n**Outline.** Front matter; 1 Introduction; 2 Background; 2.1 Fusion categories and fields of definition; 2.2 Subfactors and category theory; 2.3 Shaded planar algebras; 2.4 Principal graphs; 2.5 The lopsided normalization; 3 The shaded planar algebras H0 and H1; 4 Rational forms and twisted moments; 5 The Drinfel'd center; 6 Galois conjugates",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -48,8 +60,8 @@
       "stamp_date": "2 May 2010"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

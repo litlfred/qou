@@ -1,1 +1,0 @@
-This gives an exact sequence of pointed sets: $$H^{1}(V,\Lambda_{I}^{t+1}(M_{0})) \rightarrow H^{1}(V,\Lambda_{I}^{t}(M_{0})) \rightarrow H^{1}(V,\lambda_{I}^{t}(M_{0})).$$ If the extreme terms are trivial, so must be the central one (this, by the very definition of an exact sequence of pointed sets).

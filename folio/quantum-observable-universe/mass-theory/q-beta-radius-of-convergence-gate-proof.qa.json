@@ -1,33 +1,35 @@
 {
   "$schema": "block-qa/v1",
   "label": "rem:q-beta-radius-of-convergence-gate-evidence",
-  "kind": "proof",
+  "kind": "remark",
   "paths": {
     "ts": "folio/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate-proof.ts",
     "md": "folio/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate-proof.md"
   },
   "source_hashes": {
-    "md": "f02192bb71b9",
-    "ts": "18b2be0cba08"
+    "md": "ba779139f718",
+    "ts": "4a1adf110fb0"
   },
   "criteria": {
     "bib-cite-resolves": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "9b284af269a5",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
-          "deps_hash": "c6456bf489a8"
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -97,6 +99,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-vacuous": [
@@ -125,6 +143,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-circular": [
@@ -153,6 +187,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-overclaim": [
@@ -181,6 +231,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-hidden-dof": [
@@ -209,6 +275,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-non-sequitur": [
@@ -253,6 +335,22 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "evidence": "S↔L: the ref `qbeta_g_simple_pole_at_u_substrate` returns the class field `pole_location_is_u_substrate : qBetaCandidatePoleLocation = u_substrate` (lean:91-92, 105), a self-assuming projection. Its subject is an unconditional `axiom qBetaCandidatePoleLocation : ℝ` (lean:66), alongside `axiom qBetaLadderCoefficients : ℕ → ℝ` (lean:57), which is never used. Nothing links the pole to the series g(u) = Σ c_k u^k, and \"simple pole\" is not formalised at all. `u_substrate : ℝ := 0.008517234550156142` (lean:75) is a numerical anchor; `gate_satisfied_at_exact_match` is `x = x := rfl` (lean:136-138). The ts says the class is \"over `CommRing R`\" (ts:46), but the file is ℝ throughout. S↔P: Steps 1-2 (rational generating function, ratio and flatness signatures) are correct mathematics. The load-bearing Step 3, though, infers an exact simple pole at u_substrate from finitely many numerically pinned coefficients: \"c_2, …, c_10 exhibit exactly the simple-pole signature … within the resolution of the k ≤ 10 window\" (prf:47-59). Finite data cannot determine the dominant pole, so the statement's exact claim (md:1) exceeds what is proved. The c_k come from \"canonical SDP extraction\" at a proton-pinned q_0 (prf:3-5, 86) and the anchor is a \"proton–muon re-pin\" (prf:60-62, 75-76): data-anchored inputs. The 10⁻⁶ tolerance is \"calibrated\" from that swing (prf:74-79), a chosen threshold presented as part of the proposition (md:3).",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: exposition"
+      },
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -281,6 +379,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-citation-misuse": [
@@ -309,6 +423,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-definitional-ambiguity": [
@@ -337,6 +467,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-empirical-fragility": [
@@ -365,6 +511,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-physical-implausibility": [
@@ -393,6 +555,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-reproducibility": [
@@ -421,6 +599,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-referee-verdict": [
@@ -449,6 +643,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
+        "notes": "block has no .lean sibling"
       }
     ],
     "expo-milnor-clarity": [
@@ -485,163 +695,181 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "bbc03dd9670f",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "f93c058febd4",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "voice-probe-narrative": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "cite-named-theorem": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
         },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "voice-agent-speak": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
           "script_hash": "d3230d986a2b",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
           "script_hash": "6d35011108e2",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
           "script_hash": "4dc9ee1f7d79",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
           "script_hash": "c35d809edf9a",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "5a542b9ddb77",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "voice-scholarly-default": [
@@ -651,22 +879,6 @@
           "ts": "18b2be0cba08"
         },
         "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "d57f31bc95cf",
-          "script_commit_sha": "3157bb0064d2a3a253ef3ae7bea19b5bbe12e591"
-        },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
-      },
-      {
-        "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
-        },
-        "result": "pass",
         "notes": "Agentic heuristic check: pass.",
         "reviewed_at": "2026-07-19T17:19:09.000Z",
         "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
@@ -675,24 +887,44 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "7d0b29018b00",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "voice-title-scholarly": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "dbe50250022f",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "d8b8f090555d",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "voice-ai-slop": [
@@ -702,22 +934,6 @@
           "ts": "18b2be0cba08"
         },
         "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "d57f31bc95cf",
-          "script_commit_sha": "3157bb0064d2a3a253ef3ae7bea19b5bbe12e591"
-        },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
-      },
-      {
-        "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
-        },
-        "result": "pass",
         "notes": "Agentic heuristic check: pass.",
         "reviewed_at": "2026-07-19T17:19:09.000Z",
         "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
@@ -726,78 +942,104 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "voice-status-section": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "c5ea8e77a0b3",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "cf3d4ea0ab0a",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "5c1ec1e16bd8",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
         },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -917,249 +1159,281 @@
     "proof-no-trivial-skeleton": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "78239d5e66a5",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
-          "deps_hash": "21d9ff417741"
+          "script_hash": "d83daee37fd8",
+          "script_commit_sha": "unknown",
+          "deps_hash": "21d9ff417741",
+          "def_hash": "83422bec2bb4"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
         "notes": "block has no .lean sibling"
       }
     ],
     "canonical-calibration-count": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "c58bf6bca27b",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "canonical-witness-pinned": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "3050ae1775d6",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "canonical-script-not-deprecated": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "89bcd82bd3ff",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "e81239fd83a2",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "canonical-dilogarithm-context": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "a065b3633f0f",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "canonical-no-hardcoded-observable": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "96a346415fd2",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "compute-witness-exists": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "47384e4fd1b4",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "13ec1960e3ad",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "compute-lp-dual-present": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "772b3e8dc930",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "6c278b93ad12",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "detangler-no-forward-ref": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0",
+          "graph": "e549f59e2cb1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "f6f0b2cd1afb",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "9555791a2758",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "detangler-section-band": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0",
+          "graph": "e549f59e2cb1"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "696ee4c80040",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "detangler-no-xchapter-fwd": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0",
+          "graph": "e549f59e2cb1"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "b01f61430d2a",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-archimedean-wall": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0",
+          "graph": "e549f59e2cb1"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "3edb7220507a",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
         "notes": "block has no .lean sibling"
       }
     ],
     "detangler-block-tanglement": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0",
+          "graph": "e549f59e2cb1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "ac7512959351",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "c94bd6f761f1",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
         "metrics": {
           "fwd_emitted": 0,
           "fwd_received": 0,
           "tanglement_score": 0,
-          "out_degree": 1,
+          "out_degree": 2,
           "in_degree": 0,
-          "cone_size": 133,
-          "depth": 47,
+          "cone_size": 137,
+          "depth": 34,
           "pagerank": 0.000074,
-          "edge_span_max": 1,
-          "edge_span_mean": 1,
+          "edge_span_max": 17,
+          "edge_span_mean": 9,
           "worst_target": ""
         }
       }
@@ -1167,19 +1441,22 @@
     "detangler-graph-energy": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0",
+          "graph": "e549f59e2cb1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "aacb0bf5d4b9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "858efa00043a",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
         "metrics": {
           "graph_energy": 0,
           "fwd_edge_count": 0,
@@ -1190,96 +1467,108 @@
     "detangler-topic-coherence": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0",
+          "graph": "e549f59e2cb1"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "280aea9a61d8",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "detangler-no-dependency-cycle": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0",
+          "graph": "e549f59e2cb1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "39dfc0abf653",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "aa75d0ebd53e",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "a730f195e37d",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
-          "deps_hash": "c6456bf489a8"
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
         "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-metadata-ok": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "b7cc0ee7d062",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
-          "deps_hash": "c6456bf489a8"
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
         "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-screenshot": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "d3202b194d13",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
-          "deps_hash": "c6456bf489a8"
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1298,67 +1587,89 @@
     "uses-editorial-hygiene": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-uses.ts",
+          "id": "pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "1d50b09b0497",
-          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
-          "deps_hash": "c7f602946422"
+          "script_hash": "63814f2a6677",
+          "script_commit_sha": "unknown",
+          "deps_hash": "03b88f610b1f",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
         "metrics": {
-          "uses_count": 1,
+          "uses_count": 2,
           "broken_edges": 0,
-          "redundant_edges": 0
+          "redundant_edges": 1
         }
       }
     ],
     "uses-formal-coverage": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-uses.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "b7b208d4a0c4",
-          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
-          "deps_hash": "f9b547e15cfd"
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
         "notes": "block has no .lean sibling"
       }
     ],
     "lean-ref-owns-decl": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-uses.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "b1c323c3439c",
-          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
-          "deps_hash": "c7f602946422"
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
       }
     ],
     "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "f02192bb71b9",
+          "ts": "18b2be0cba08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.334Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proof block, read in full (four steps plus a data table). All ten categories clean: no triples, no warmth, no meta-commentary, no aphorism; the italic on 'decisive' places emphasis rather than narrating it; em-dash density is two in the body, both appositive. RIGOR PASS, and this block is the most accurate in the batch. Every figure recomputed and confirmed: u(proton) = 0.0085172345501561411 against the printed 0.008517234550156142 (17-significant-digit agreement); u(muon) agrees to 12 digits; the relative shift is 2.10149e-7 = 210.15 ppb, exactly the printed 2.10e-7 (210 ppb) -- and I verified the 18.2x amplification from q_0's 11.54 ppb is real, since d(ln u)/d(ln q) = 2/(q*hbar_q) = 18.19; the mu >= 2 growth floor is ((k+1)/k)^{mu-1} = 9/8 - 1 = 12.5 percent at k = 8, as printed; the ratio-test limit 1/u_0 = 117.409 matches the printed 117.4; the 0.02 percent spread is the same 2e-4 the text quotes per step; and the tolerance calibration 1e-6 / 2.10e-7 = 4.76 is the printed 'nearly 5x'. Step 2's partial-fraction asymptotic c_k = C k^{mu-1} r^k and the beta = mu identification are internally consistent with the flat-asymptote criterion.",
+        "notes": "THREE FINDINGS, none arithmetic. (1) PIN ATTRIBUTION MISMATCH. The data section reads 'From the canonical SDP extraction at q_0 = 1.10997858...' -- the PROTON prefix -- but the cited producer computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json records parameters.q_0_50dps = 1.1099785955573347198997632204832250266562084087802, the MUON pin. So the c_2..c_10 the whole gate rests on were extracted at the muon anchor while the section attributes them to the proton one. The table's own two rows correctly distinguish the pins, which makes the header the odd one out. Under the 2026-08-07 owner directive new compute defaults to proton; proposed fix: state that the extraction is muon-pinned and the proton u is the comparison, or re-extract. (2) CONVENTION: the producing witness is in the qbeta-decay trace channel, which AGENTS.md records as registered 'disputed' (PR #5111) and superseded by the 2026-08-15 R1 ruling making convention D canonical. The gate's LOGIC (rationality of g, simple-pole signature, pole-location tolerance) is convention-independent, but the specific pole location u_0 = 0.008517... and the c_k it is fitted to are C-frame, so the numeric anchor moves under the pending re-derivation while the argument does not. (3) SWEEP-DAMAGE CANDIDATE, low-to-moderate confidence: the section heading 'canonical anchor (verified)' reads as the documented substitution of 'canonical' for 'numerical' -- 'Numerical anchor (verified)' is the reading that matches a section consisting entirely of computed values. Not fixed, since 'canonical SDP extraction' in the same block is plausibly genuine and I could not separate them with confidence."
+      },
       {
         "field_hash": {
           "md": "f02192bb71b9",
@@ -1375,7 +1686,9 @@
         "reviewed_at": "2026-08-15T10:31:00.564Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
-      },
+      }
+    ],
+    "trap-rhetorical-pivot": [
       {
         "field_hash": {
           "md": "f02192bb71b9",
@@ -1387,13 +1700,11 @@
           "id": "agent:f00",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T02:40:04.334Z",
+        "reviewed_at": "2026-08-22T02:40:04.377Z",
         "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
         "evidence": "Proof block, read in full (four steps plus a data table). All ten categories clean: no triples, no warmth, no meta-commentary, no aphorism; the italic on 'decisive' places emphasis rather than narrating it; em-dash density is two in the body, both appositive. RIGOR PASS, and this block is the most accurate in the batch. Every figure recomputed and confirmed: u(proton) = 0.0085172345501561411 against the printed 0.008517234550156142 (17-significant-digit agreement); u(muon) agrees to 12 digits; the relative shift is 2.10149e-7 = 210.15 ppb, exactly the printed 2.10e-7 (210 ppb) -- and I verified the 18.2x amplification from q_0's 11.54 ppb is real, since d(ln u)/d(ln q) = 2/(q*hbar_q) = 18.19; the mu >= 2 growth floor is ((k+1)/k)^{mu-1} = 9/8 - 1 = 12.5 percent at k = 8, as printed; the ratio-test limit 1/u_0 = 117.409 matches the printed 117.4; the 0.02 percent spread is the same 2e-4 the text quotes per step; and the tolerance calibration 1e-6 / 2.10e-7 = 4.76 is the printed 'nearly 5x'. Step 2's partial-fraction asymptotic c_k = C k^{mu-1} r^k and the beta = mu identification are internally consistent with the flat-asymptote criterion.",
         "notes": "THREE FINDINGS, none arithmetic. (1) PIN ATTRIBUTION MISMATCH. The data section reads 'From the canonical SDP extraction at q_0 = 1.10997858...' -- the PROTON prefix -- but the cited producer computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json records parameters.q_0_50dps = 1.1099785955573347198997632204832250266562084087802, the MUON pin. So the c_2..c_10 the whole gate rests on were extracted at the muon anchor while the section attributes them to the proton one. The table's own two rows correctly distinguish the pins, which makes the header the odd one out. Under the 2026-08-07 owner directive new compute defaults to proton; proposed fix: state that the extraction is muon-pinned and the proton u is the comparison, or re-extract. (2) CONVENTION: the producing witness is in the qbeta-decay trace channel, which AGENTS.md records as registered 'disputed' (PR #5111) and superseded by the 2026-08-15 R1 ruling making convention D canonical. The gate's LOGIC (rationality of g, simple-pole signature, pole-location tolerance) is convention-independent, but the specific pole location u_0 = 0.008517... and the c_k it is fitted to are C-frame, so the numeric anchor moves under the pending re-derivation while the argument does not. (3) SWEEP-DAMAGE CANDIDATE, low-to-moderate confidence: the section heading 'canonical anchor (verified)' reads as the documented substitution of 'canonical' for 'numerical' -- 'Numerical anchor (verified)' is the reading that matches a section consisting entirely of computed values. Not fixed, since 'canonical SDP extraction' in the same block is plausibly genuine and I could not separate them with confidence."
-      }
-    ],
-    "trap-rhetorical-pivot": [
+      },
       {
         "field_hash": {
           "md": "f02192bb71b9",
@@ -1410,7 +1721,9 @@
         "reviewed_at": "2026-08-15T10:31:00.564Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
-      },
+      }
+    ],
+    "trap-em-dash": [
       {
         "field_hash": {
           "md": "f02192bb71b9",
@@ -1422,13 +1735,11 @@
           "id": "agent:f00",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T02:40:04.377Z",
+        "reviewed_at": "2026-08-22T02:40:04.420Z",
         "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
         "evidence": "Proof block, read in full (four steps plus a data table). All ten categories clean: no triples, no warmth, no meta-commentary, no aphorism; the italic on 'decisive' places emphasis rather than narrating it; em-dash density is two in the body, both appositive. RIGOR PASS, and this block is the most accurate in the batch. Every figure recomputed and confirmed: u(proton) = 0.0085172345501561411 against the printed 0.008517234550156142 (17-significant-digit agreement); u(muon) agrees to 12 digits; the relative shift is 2.10149e-7 = 210.15 ppb, exactly the printed 2.10e-7 (210 ppb) -- and I verified the 18.2x amplification from q_0's 11.54 ppb is real, since d(ln u)/d(ln q) = 2/(q*hbar_q) = 18.19; the mu >= 2 growth floor is ((k+1)/k)^{mu-1} = 9/8 - 1 = 12.5 percent at k = 8, as printed; the ratio-test limit 1/u_0 = 117.409 matches the printed 117.4; the 0.02 percent spread is the same 2e-4 the text quotes per step; and the tolerance calibration 1e-6 / 2.10e-7 = 4.76 is the printed 'nearly 5x'. Step 2's partial-fraction asymptotic c_k = C k^{mu-1} r^k and the beta = mu identification are internally consistent with the flat-asymptote criterion.",
         "notes": "THREE FINDINGS, none arithmetic. (1) PIN ATTRIBUTION MISMATCH. The data section reads 'From the canonical SDP extraction at q_0 = 1.10997858...' -- the PROTON prefix -- but the cited producer computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json records parameters.q_0_50dps = 1.1099785955573347198997632204832250266562084087802, the MUON pin. So the c_2..c_10 the whole gate rests on were extracted at the muon anchor while the section attributes them to the proton one. The table's own two rows correctly distinguish the pins, which makes the header the odd one out. Under the 2026-08-07 owner directive new compute defaults to proton; proposed fix: state that the extraction is muon-pinned and the proton u is the comparison, or re-extract. (2) CONVENTION: the producing witness is in the qbeta-decay trace channel, which AGENTS.md records as registered 'disputed' (PR #5111) and superseded by the 2026-08-15 R1 ruling making convention D canonical. The gate's LOGIC (rationality of g, simple-pole signature, pole-location tolerance) is convention-independent, but the specific pole location u_0 = 0.008517... and the c_k it is fitted to are C-frame, so the numeric anchor moves under the pending re-derivation while the argument does not. (3) SWEEP-DAMAGE CANDIDATE, low-to-moderate confidence: the section heading 'canonical anchor (verified)' reads as the documented substitution of 'canonical' for 'numerical' -- 'Numerical anchor (verified)' is the reading that matches a section consisting entirely of computed values. Not fixed, since 'canonical SDP extraction' in the same block is plausibly genuine and I could not separate them with confidence."
-      }
-    ],
-    "trap-em-dash": [
+      },
       {
         "field_hash": {
           "md": "f02192bb71b9",
@@ -1446,7 +1757,9 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "7 stylistic spaced dashes in 544 words (1.29/100w) — restructure into sentences"
-      },
+      }
+    ],
+    "trap-triples": [
       {
         "field_hash": {
           "md": "f02192bb71b9",
@@ -1458,13 +1771,11 @@
           "id": "agent:f00",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T02:40:04.420Z",
+        "reviewed_at": "2026-08-22T02:40:04.459Z",
         "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
         "evidence": "Proof block, read in full (four steps plus a data table). All ten categories clean: no triples, no warmth, no meta-commentary, no aphorism; the italic on 'decisive' places emphasis rather than narrating it; em-dash density is two in the body, both appositive. RIGOR PASS, and this block is the most accurate in the batch. Every figure recomputed and confirmed: u(proton) = 0.0085172345501561411 against the printed 0.008517234550156142 (17-significant-digit agreement); u(muon) agrees to 12 digits; the relative shift is 2.10149e-7 = 210.15 ppb, exactly the printed 2.10e-7 (210 ppb) -- and I verified the 18.2x amplification from q_0's 11.54 ppb is real, since d(ln u)/d(ln q) = 2/(q*hbar_q) = 18.19; the mu >= 2 growth floor is ((k+1)/k)^{mu-1} = 9/8 - 1 = 12.5 percent at k = 8, as printed; the ratio-test limit 1/u_0 = 117.409 matches the printed 117.4; the 0.02 percent spread is the same 2e-4 the text quotes per step; and the tolerance calibration 1e-6 / 2.10e-7 = 4.76 is the printed 'nearly 5x'. Step 2's partial-fraction asymptotic c_k = C k^{mu-1} r^k and the beta = mu identification are internally consistent with the flat-asymptote criterion.",
         "notes": "THREE FINDINGS, none arithmetic. (1) PIN ATTRIBUTION MISMATCH. The data section reads 'From the canonical SDP extraction at q_0 = 1.10997858...' -- the PROTON prefix -- but the cited producer computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json records parameters.q_0_50dps = 1.1099785955573347198997632204832250266562084087802, the MUON pin. So the c_2..c_10 the whole gate rests on were extracted at the muon anchor while the section attributes them to the proton one. The table's own two rows correctly distinguish the pins, which makes the header the odd one out. Under the 2026-08-07 owner directive new compute defaults to proton; proposed fix: state that the extraction is muon-pinned and the proton u is the comparison, or re-extract. (2) CONVENTION: the producing witness is in the qbeta-decay trace channel, which AGENTS.md records as registered 'disputed' (PR #5111) and superseded by the 2026-08-15 R1 ruling making convention D canonical. The gate's LOGIC (rationality of g, simple-pole signature, pole-location tolerance) is convention-independent, but the specific pole location u_0 = 0.008517... and the c_k it is fitted to are C-frame, so the numeric anchor moves under the pending re-derivation while the argument does not. (3) SWEEP-DAMAGE CANDIDATE, low-to-moderate confidence: the section heading 'canonical anchor (verified)' reads as the documented substitution of 'canonical' for 'numerical' -- 'Numerical anchor (verified)' is the reading that matches a section consisting entirely of computed values. Not fixed, since 'canonical SDP extraction' in the same block is plausibly genuine and I could not separate them with confidence."
-      }
-    ],
-    "trap-triples": [
+      },
       {
         "field_hash": {
           "md": "f02192bb71b9",
@@ -1481,7 +1792,9 @@
         "reviewed_at": "2026-08-15T10:31:00.564Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 544 words)"
-      },
+      }
+    ],
+    "trap-closing-aphorism": [
       {
         "field_hash": {
           "md": "f02192bb71b9",
@@ -1493,13 +1806,11 @@
           "id": "agent:f00",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T02:40:04.459Z",
+        "reviewed_at": "2026-08-22T02:40:04.506Z",
         "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
         "evidence": "Proof block, read in full (four steps plus a data table). All ten categories clean: no triples, no warmth, no meta-commentary, no aphorism; the italic on 'decisive' places emphasis rather than narrating it; em-dash density is two in the body, both appositive. RIGOR PASS, and this block is the most accurate in the batch. Every figure recomputed and confirmed: u(proton) = 0.0085172345501561411 against the printed 0.008517234550156142 (17-significant-digit agreement); u(muon) agrees to 12 digits; the relative shift is 2.10149e-7 = 210.15 ppb, exactly the printed 2.10e-7 (210 ppb) -- and I verified the 18.2x amplification from q_0's 11.54 ppb is real, since d(ln u)/d(ln q) = 2/(q*hbar_q) = 18.19; the mu >= 2 growth floor is ((k+1)/k)^{mu-1} = 9/8 - 1 = 12.5 percent at k = 8, as printed; the ratio-test limit 1/u_0 = 117.409 matches the printed 117.4; the 0.02 percent spread is the same 2e-4 the text quotes per step; and the tolerance calibration 1e-6 / 2.10e-7 = 4.76 is the printed 'nearly 5x'. Step 2's partial-fraction asymptotic c_k = C k^{mu-1} r^k and the beta = mu identification are internally consistent with the flat-asymptote criterion.",
         "notes": "THREE FINDINGS, none arithmetic. (1) PIN ATTRIBUTION MISMATCH. The data section reads 'From the canonical SDP extraction at q_0 = 1.10997858...' -- the PROTON prefix -- but the cited producer computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json records parameters.q_0_50dps = 1.1099785955573347198997632204832250266562084087802, the MUON pin. So the c_2..c_10 the whole gate rests on were extracted at the muon anchor while the section attributes them to the proton one. The table's own two rows correctly distinguish the pins, which makes the header the odd one out. Under the 2026-08-07 owner directive new compute defaults to proton; proposed fix: state that the extraction is muon-pinned and the proton u is the comparison, or re-extract. (2) CONVENTION: the producing witness is in the qbeta-decay trace channel, which AGENTS.md records as registered 'disputed' (PR #5111) and superseded by the 2026-08-15 R1 ruling making convention D canonical. The gate's LOGIC (rationality of g, simple-pole signature, pole-location tolerance) is convention-independent, but the specific pole location u_0 = 0.008517... and the c_k it is fitted to are C-frame, so the numeric anchor moves under the pending re-derivation while the argument does not. (3) SWEEP-DAMAGE CANDIDATE, low-to-moderate confidence: the section heading 'canonical anchor (verified)' reads as the documented substitution of 'canonical' for 'numerical' -- 'Numerical anchor (verified)' is the reading that matches a section consisting entirely of computed values. Not fixed, since 'canonical SDP extraction' in the same block is plausibly genuine and I could not separate them with confidence."
-      }
-    ],
-    "trap-closing-aphorism": [
+      },
       {
         "field_hash": {
           "md": "f02192bb71b9",
@@ -1516,7 +1827,9 @@
         "reviewed_at": "2026-08-15T10:31:00.564Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
-      },
+      }
+    ],
+    "trap-meta-commentary": [
       {
         "field_hash": {
           "md": "f02192bb71b9",
@@ -1528,13 +1841,11 @@
           "id": "agent:f00",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T02:40:04.506Z",
+        "reviewed_at": "2026-08-22T02:40:04.550Z",
         "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
         "evidence": "Proof block, read in full (four steps plus a data table). All ten categories clean: no triples, no warmth, no meta-commentary, no aphorism; the italic on 'decisive' places emphasis rather than narrating it; em-dash density is two in the body, both appositive. RIGOR PASS, and this block is the most accurate in the batch. Every figure recomputed and confirmed: u(proton) = 0.0085172345501561411 against the printed 0.008517234550156142 (17-significant-digit agreement); u(muon) agrees to 12 digits; the relative shift is 2.10149e-7 = 210.15 ppb, exactly the printed 2.10e-7 (210 ppb) -- and I verified the 18.2x amplification from q_0's 11.54 ppb is real, since d(ln u)/d(ln q) = 2/(q*hbar_q) = 18.19; the mu >= 2 growth floor is ((k+1)/k)^{mu-1} = 9/8 - 1 = 12.5 percent at k = 8, as printed; the ratio-test limit 1/u_0 = 117.409 matches the printed 117.4; the 0.02 percent spread is the same 2e-4 the text quotes per step; and the tolerance calibration 1e-6 / 2.10e-7 = 4.76 is the printed 'nearly 5x'. Step 2's partial-fraction asymptotic c_k = C k^{mu-1} r^k and the beta = mu identification are internally consistent with the flat-asymptote criterion.",
         "notes": "THREE FINDINGS, none arithmetic. (1) PIN ATTRIBUTION MISMATCH. The data section reads 'From the canonical SDP extraction at q_0 = 1.10997858...' -- the PROTON prefix -- but the cited producer computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json records parameters.q_0_50dps = 1.1099785955573347198997632204832250266562084087802, the MUON pin. So the c_2..c_10 the whole gate rests on were extracted at the muon anchor while the section attributes them to the proton one. The table's own two rows correctly distinguish the pins, which makes the header the odd one out. Under the 2026-08-07 owner directive new compute defaults to proton; proposed fix: state that the extraction is muon-pinned and the proton u is the comparison, or re-extract. (2) CONVENTION: the producing witness is in the qbeta-decay trace channel, which AGENTS.md records as registered 'disputed' (PR #5111) and superseded by the 2026-08-15 R1 ruling making convention D canonical. The gate's LOGIC (rationality of g, simple-pole signature, pole-location tolerance) is convention-independent, but the specific pole location u_0 = 0.008517... and the c_k it is fitted to are C-frame, so the numeric anchor moves under the pending re-derivation while the argument does not. (3) SWEEP-DAMAGE CANDIDATE, low-to-moderate confidence: the section heading 'canonical anchor (verified)' reads as the documented substitution of 'canonical' for 'numerical' -- 'Numerical anchor (verified)' is the reading that matches a section consisting entirely of computed values. Not fixed, since 'canonical SDP extraction' in the same block is plausibly genuine and I could not separate them with confidence."
-      }
-    ],
-    "trap-meta-commentary": [
+      },
       {
         "field_hash": {
           "md": "f02192bb71b9",
@@ -1551,7 +1862,9 @@
         "reviewed_at": "2026-08-15T10:31:00.564Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
-      },
+      }
+    ],
+    "trap-thesis-restatement": [
       {
         "field_hash": {
           "md": "f02192bb71b9",
@@ -1563,13 +1876,11 @@
           "id": "agent:f00",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T02:40:04.550Z",
+        "reviewed_at": "2026-08-22T02:40:04.593Z",
         "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
         "evidence": "Proof block, read in full (four steps plus a data table). All ten categories clean: no triples, no warmth, no meta-commentary, no aphorism; the italic on 'decisive' places emphasis rather than narrating it; em-dash density is two in the body, both appositive. RIGOR PASS, and this block is the most accurate in the batch. Every figure recomputed and confirmed: u(proton) = 0.0085172345501561411 against the printed 0.008517234550156142 (17-significant-digit agreement); u(muon) agrees to 12 digits; the relative shift is 2.10149e-7 = 210.15 ppb, exactly the printed 2.10e-7 (210 ppb) -- and I verified the 18.2x amplification from q_0's 11.54 ppb is real, since d(ln u)/d(ln q) = 2/(q*hbar_q) = 18.19; the mu >= 2 growth floor is ((k+1)/k)^{mu-1} = 9/8 - 1 = 12.5 percent at k = 8, as printed; the ratio-test limit 1/u_0 = 117.409 matches the printed 117.4; the 0.02 percent spread is the same 2e-4 the text quotes per step; and the tolerance calibration 1e-6 / 2.10e-7 = 4.76 is the printed 'nearly 5x'. Step 2's partial-fraction asymptotic c_k = C k^{mu-1} r^k and the beta = mu identification are internally consistent with the flat-asymptote criterion.",
         "notes": "THREE FINDINGS, none arithmetic. (1) PIN ATTRIBUTION MISMATCH. The data section reads 'From the canonical SDP extraction at q_0 = 1.10997858...' -- the PROTON prefix -- but the cited producer computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json records parameters.q_0_50dps = 1.1099785955573347198997632204832250266562084087802, the MUON pin. So the c_2..c_10 the whole gate rests on were extracted at the muon anchor while the section attributes them to the proton one. The table's own two rows correctly distinguish the pins, which makes the header the odd one out. Under the 2026-08-07 owner directive new compute defaults to proton; proposed fix: state that the extraction is muon-pinned and the proton u is the comparison, or re-extract. (2) CONVENTION: the producing witness is in the qbeta-decay trace channel, which AGENTS.md records as registered 'disputed' (PR #5111) and superseded by the 2026-08-15 R1 ruling making convention D canonical. The gate's LOGIC (rationality of g, simple-pole signature, pole-location tolerance) is convention-independent, but the specific pole location u_0 = 0.008517... and the c_k it is fitted to are C-frame, so the numeric anchor moves under the pending re-derivation while the argument does not. (3) SWEEP-DAMAGE CANDIDATE, low-to-moderate confidence: the section heading 'canonical anchor (verified)' reads as the documented substitution of 'canonical' for 'numerical' -- 'Numerical anchor (verified)' is the reading that matches a section consisting entirely of computed values. Not fixed, since 'canonical SDP extraction' in the same block is plausibly genuine and I could not separate them with confidence."
-      }
-    ],
-    "trap-thesis-restatement": [
+      },
       {
         "field_hash": {
           "md": "f02192bb71b9",
@@ -1586,7 +1897,9 @@
         "reviewed_at": "2026-08-15T10:31:00.564Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
-      },
+      }
+    ],
+    "trap-performed-warmth": [
       {
         "field_hash": {
           "md": "f02192bb71b9",
@@ -1598,13 +1911,11 @@
           "id": "agent:f00",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T02:40:04.593Z",
+        "reviewed_at": "2026-08-22T02:40:04.635Z",
         "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
         "evidence": "Proof block, read in full (four steps plus a data table). All ten categories clean: no triples, no warmth, no meta-commentary, no aphorism; the italic on 'decisive' places emphasis rather than narrating it; em-dash density is two in the body, both appositive. RIGOR PASS, and this block is the most accurate in the batch. Every figure recomputed and confirmed: u(proton) = 0.0085172345501561411 against the printed 0.008517234550156142 (17-significant-digit agreement); u(muon) agrees to 12 digits; the relative shift is 2.10149e-7 = 210.15 ppb, exactly the printed 2.10e-7 (210 ppb) -- and I verified the 18.2x amplification from q_0's 11.54 ppb is real, since d(ln u)/d(ln q) = 2/(q*hbar_q) = 18.19; the mu >= 2 growth floor is ((k+1)/k)^{mu-1} = 9/8 - 1 = 12.5 percent at k = 8, as printed; the ratio-test limit 1/u_0 = 117.409 matches the printed 117.4; the 0.02 percent spread is the same 2e-4 the text quotes per step; and the tolerance calibration 1e-6 / 2.10e-7 = 4.76 is the printed 'nearly 5x'. Step 2's partial-fraction asymptotic c_k = C k^{mu-1} r^k and the beta = mu identification are internally consistent with the flat-asymptote criterion.",
         "notes": "THREE FINDINGS, none arithmetic. (1) PIN ATTRIBUTION MISMATCH. The data section reads 'From the canonical SDP extraction at q_0 = 1.10997858...' -- the PROTON prefix -- but the cited producer computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json records parameters.q_0_50dps = 1.1099785955573347198997632204832250266562084087802, the MUON pin. So the c_2..c_10 the whole gate rests on were extracted at the muon anchor while the section attributes them to the proton one. The table's own two rows correctly distinguish the pins, which makes the header the odd one out. Under the 2026-08-07 owner directive new compute defaults to proton; proposed fix: state that the extraction is muon-pinned and the proton u is the comparison, or re-extract. (2) CONVENTION: the producing witness is in the qbeta-decay trace channel, which AGENTS.md records as registered 'disputed' (PR #5111) and superseded by the 2026-08-15 R1 ruling making convention D canonical. The gate's LOGIC (rationality of g, simple-pole signature, pole-location tolerance) is convention-independent, but the specific pole location u_0 = 0.008517... and the c_k it is fitted to are C-frame, so the numeric anchor moves under the pending re-derivation while the argument does not. (3) SWEEP-DAMAGE CANDIDATE, low-to-moderate confidence: the section heading 'canonical anchor (verified)' reads as the documented substitution of 'canonical' for 'numerical' -- 'Numerical anchor (verified)' is the reading that matches a section consisting entirely of computed values. Not fixed, since 'canonical SDP extraction' in the same block is plausibly genuine and I could not separate them with confidence."
-      }
-    ],
-    "trap-performed-warmth": [
+      },
       {
         "field_hash": {
           "md": "f02192bb71b9",
@@ -1621,7 +1932,9 @@
         "reviewed_at": "2026-08-15T10:31:00.564Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
-      },
+      }
+    ],
+    "trap-superlative": [
       {
         "field_hash": {
           "md": "f02192bb71b9",
@@ -1633,13 +1946,11 @@
           "id": "agent:f00",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T02:40:04.635Z",
+        "reviewed_at": "2026-08-22T02:40:04.680Z",
         "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
         "evidence": "Proof block, read in full (four steps plus a data table). All ten categories clean: no triples, no warmth, no meta-commentary, no aphorism; the italic on 'decisive' places emphasis rather than narrating it; em-dash density is two in the body, both appositive. RIGOR PASS, and this block is the most accurate in the batch. Every figure recomputed and confirmed: u(proton) = 0.0085172345501561411 against the printed 0.008517234550156142 (17-significant-digit agreement); u(muon) agrees to 12 digits; the relative shift is 2.10149e-7 = 210.15 ppb, exactly the printed 2.10e-7 (210 ppb) -- and I verified the 18.2x amplification from q_0's 11.54 ppb is real, since d(ln u)/d(ln q) = 2/(q*hbar_q) = 18.19; the mu >= 2 growth floor is ((k+1)/k)^{mu-1} = 9/8 - 1 = 12.5 percent at k = 8, as printed; the ratio-test limit 1/u_0 = 117.409 matches the printed 117.4; the 0.02 percent spread is the same 2e-4 the text quotes per step; and the tolerance calibration 1e-6 / 2.10e-7 = 4.76 is the printed 'nearly 5x'. Step 2's partial-fraction asymptotic c_k = C k^{mu-1} r^k and the beta = mu identification are internally consistent with the flat-asymptote criterion.",
         "notes": "THREE FINDINGS, none arithmetic. (1) PIN ATTRIBUTION MISMATCH. The data section reads 'From the canonical SDP extraction at q_0 = 1.10997858...' -- the PROTON prefix -- but the cited producer computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json records parameters.q_0_50dps = 1.1099785955573347198997632204832250266562084087802, the MUON pin. So the c_2..c_10 the whole gate rests on were extracted at the muon anchor while the section attributes them to the proton one. The table's own two rows correctly distinguish the pins, which makes the header the odd one out. Under the 2026-08-07 owner directive new compute defaults to proton; proposed fix: state that the extraction is muon-pinned and the proton u is the comparison, or re-extract. (2) CONVENTION: the producing witness is in the qbeta-decay trace channel, which AGENTS.md records as registered 'disputed' (PR #5111) and superseded by the 2026-08-15 R1 ruling making convention D canonical. The gate's LOGIC (rationality of g, simple-pole signature, pole-location tolerance) is convention-independent, but the specific pole location u_0 = 0.008517... and the c_k it is fitted to are C-frame, so the numeric anchor moves under the pending re-derivation while the argument does not. (3) SWEEP-DAMAGE CANDIDATE, low-to-moderate confidence: the section heading 'canonical anchor (verified)' reads as the documented substitution of 'canonical' for 'numerical' -- 'Numerical anchor (verified)' is the reading that matches a section consisting entirely of computed values. Not fixed, since 'canonical SDP extraction' in the same block is plausibly genuine and I could not separate them with confidence."
-      }
-    ],
-    "trap-superlative": [
+      },
       {
         "field_hash": {
           "md": "f02192bb71b9",
@@ -1656,7 +1967,9 @@
         "reviewed_at": "2026-08-15T10:31:00.564Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
-      },
+      }
+    ],
+    "trap-nonspeakable": [
       {
         "field_hash": {
           "md": "f02192bb71b9",
@@ -1668,13 +1981,11 @@
           "id": "agent:f00",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T02:40:04.680Z",
+        "reviewed_at": "2026-08-22T02:40:04.726Z",
         "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
         "evidence": "Proof block, read in full (four steps plus a data table). All ten categories clean: no triples, no warmth, no meta-commentary, no aphorism; the italic on 'decisive' places emphasis rather than narrating it; em-dash density is two in the body, both appositive. RIGOR PASS, and this block is the most accurate in the batch. Every figure recomputed and confirmed: u(proton) = 0.0085172345501561411 against the printed 0.008517234550156142 (17-significant-digit agreement); u(muon) agrees to 12 digits; the relative shift is 2.10149e-7 = 210.15 ppb, exactly the printed 2.10e-7 (210 ppb) -- and I verified the 18.2x amplification from q_0's 11.54 ppb is real, since d(ln u)/d(ln q) = 2/(q*hbar_q) = 18.19; the mu >= 2 growth floor is ((k+1)/k)^{mu-1} = 9/8 - 1 = 12.5 percent at k = 8, as printed; the ratio-test limit 1/u_0 = 117.409 matches the printed 117.4; the 0.02 percent spread is the same 2e-4 the text quotes per step; and the tolerance calibration 1e-6 / 2.10e-7 = 4.76 is the printed 'nearly 5x'. Step 2's partial-fraction asymptotic c_k = C k^{mu-1} r^k and the beta = mu identification are internally consistent with the flat-asymptote criterion.",
         "notes": "THREE FINDINGS, none arithmetic. (1) PIN ATTRIBUTION MISMATCH. The data section reads 'From the canonical SDP extraction at q_0 = 1.10997858...' -- the PROTON prefix -- but the cited producer computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json records parameters.q_0_50dps = 1.1099785955573347198997632204832250266562084087802, the MUON pin. So the c_2..c_10 the whole gate rests on were extracted at the muon anchor while the section attributes them to the proton one. The table's own two rows correctly distinguish the pins, which makes the header the odd one out. Under the 2026-08-07 owner directive new compute defaults to proton; proposed fix: state that the extraction is muon-pinned and the proton u is the comparison, or re-extract. (2) CONVENTION: the producing witness is in the qbeta-decay trace channel, which AGENTS.md records as registered 'disputed' (PR #5111) and superseded by the 2026-08-15 R1 ruling making convention D canonical. The gate's LOGIC (rationality of g, simple-pole signature, pole-location tolerance) is convention-independent, but the specific pole location u_0 = 0.008517... and the c_k it is fitted to are C-frame, so the numeric anchor moves under the pending re-derivation while the argument does not. (3) SWEEP-DAMAGE CANDIDATE, low-to-moderate confidence: the section heading 'canonical anchor (verified)' reads as the documented substitution of 'canonical' for 'numerical' -- 'Numerical anchor (verified)' is the reading that matches a section consisting entirely of computed values. Not fixed, since 'canonical SDP extraction' in the same block is plausibly genuine and I could not separate them with confidence."
-      }
-    ],
-    "trap-nonspeakable": [
+      },
       {
         "field_hash": {
           "md": "f02192bb71b9",
@@ -1691,44 +2002,301 @@
         "reviewed_at": "2026-08-15T10:31:00.564Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
-      },
-      {
-        "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:f00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T02:40:04.726Z",
-        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
-        "evidence": "Proof block, read in full (four steps plus a data table). All ten categories clean: no triples, no warmth, no meta-commentary, no aphorism; the italic on 'decisive' places emphasis rather than narrating it; em-dash density is two in the body, both appositive. RIGOR PASS, and this block is the most accurate in the batch. Every figure recomputed and confirmed: u(proton) = 0.0085172345501561411 against the printed 0.008517234550156142 (17-significant-digit agreement); u(muon) agrees to 12 digits; the relative shift is 2.10149e-7 = 210.15 ppb, exactly the printed 2.10e-7 (210 ppb) -- and I verified the 18.2x amplification from q_0's 11.54 ppb is real, since d(ln u)/d(ln q) = 2/(q*hbar_q) = 18.19; the mu >= 2 growth floor is ((k+1)/k)^{mu-1} = 9/8 - 1 = 12.5 percent at k = 8, as printed; the ratio-test limit 1/u_0 = 117.409 matches the printed 117.4; the 0.02 percent spread is the same 2e-4 the text quotes per step; and the tolerance calibration 1e-6 / 2.10e-7 = 4.76 is the printed 'nearly 5x'. Step 2's partial-fraction asymptotic c_k = C k^{mu-1} r^k and the beta = mu identification are internally consistent with the flat-asymptote criterion.",
-        "notes": "THREE FINDINGS, none arithmetic. (1) PIN ATTRIBUTION MISMATCH. The data section reads 'From the canonical SDP extraction at q_0 = 1.10997858...' -- the PROTON prefix -- but the cited producer computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json records parameters.q_0_50dps = 1.1099785955573347198997632204832250266562084087802, the MUON pin. So the c_2..c_10 the whole gate rests on were extracted at the muon anchor while the section attributes them to the proton one. The table's own two rows correctly distinguish the pins, which makes the header the odd one out. Under the 2026-08-07 owner directive new compute defaults to proton; proposed fix: state that the extraction is muon-pinned and the proton u is the comparison, or re-extract. (2) CONVENTION: the producing witness is in the qbeta-decay trace channel, which AGENTS.md records as registered 'disputed' (PR #5111) and superseded by the 2026-08-15 R1 ruling making convention D canonical. The gate's LOGIC (rationality of g, simple-pole signature, pole-location tolerance) is convention-independent, but the specific pole location u_0 = 0.008517... and the c_k it is fitted to are C-frame, so the numeric anchor moves under the pending re-derivation while the argument does not. (3) SWEEP-DAMAGE CANDIDATE, low-to-moderate confidence: the section heading 'canonical anchor (verified)' reads as the documented substitution of 'canonical' for 'numerical' -- 'Numerical anchor (verified)' is the reading that matches a section consisting entirely of computed values. Not fixed, since 'canonical SDP extraction' in the same block is plausibly genuine and I could not separate them with confidence."
       }
     ],
     "wall-base-ring-minimal": [
       {
         "field_hash": {
-          "md": "f02192bb71b9",
-          "ts": "18b2be0cba08"
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "f20ae4311d21",
-          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+          "script_hash": "c3dab60e46d6",
+          "script_commit_sha": "unknown",
+          "def_hash": "10db4d17cd96"
         },
-        "reviewed_at": "2026-08-15T21:15:41.696Z",
-        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
         "notes": "block has no .lean sibling"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
+      }
+    ],
+    "acronym-in-glossary": [
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
+        "notes": "1 acronym(s) are candidates for the glossary: SDP. Run glossary:acronyms for the folio-wide list with expansions."
+      }
+    ],
+    "canonical-no-numerology": [
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "52b4ba95f5c3",
+          "script_commit_sha": "unknown",
+          "def_hash": "bfbb93c220cc"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
+      }
+    ],
+    "canonical-ck-tiered-not-binary": [
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "852b0645c90b",
+          "script_commit_sha": "unknown",
+          "def_hash": "c8836d721722"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
+      }
+    ],
+    "canonical-no-negative-result-in-paper": [
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "ee603ee4f369",
+          "script_commit_sha": "unknown",
+          "def_hash": "791b80875ca1"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
+      }
+    ],
+    "foreshadows-point-forward": [
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0",
+          "graph": "e549f59e2cb1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
+      }
+    ],
+    "da-arity-conflation": [
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "dak-companion-present": [
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      }
+    ],
+    "dak-bpmn-has-process": [
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      }
+    ],
+    "dak-dmn-has-decision-table": [
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      }
+    ],
+    "dak-fsh-declares-kind": [
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      }
+    ],
+    "dak-label-prefix-matches-kind": [
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
+        "notes": "criterion applies to dak; block kind \"remark\" is document"
+      }
+    ],
+    "id-unique": [
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08"
+      }
+    ],
+    "id-stable": [
+      {
+        "field_hash": {
+          "md": "ba779139f718",
+          "ts": "4a1adf110fb0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_at": "2026-11-24T09:06:11.012Z",
+        "reviewed_tree": "2299eed37df0972d06d2ff53978dc353a1ad1a08",
+        "notes": "unchanged since origin/main"
       }
     ]
   },
-  "updated_at": "2026-11-15T21:57:27.754Z",
+  "updated_at": "2026-11-24T09:06:11.012Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

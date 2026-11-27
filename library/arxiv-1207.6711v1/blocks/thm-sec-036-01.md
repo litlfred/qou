@@ -1,0 +1,1 @@
+Let D be a generic PGL(n, C)/B-decoration of ∆3 n. The natural cocycle Lαβγ(D) is given by (10.22) αv0v1v2 = q1, βv0v1v2 = n−1 Y k=1 n−k Y i=1 xi(1) n−k−1 Y i=1 Hi(X εv0v1v2 ⟲ k,i ) ! d±1 γv0v1v2 = n−1 Y i=1 Hi(z −εv0v1v2 ⟲ i ). Moreover, if eD is any SL(n, C)/N-decoration lifting D, L(D) = τLαβ( eD). □ Before embarking on the proof, we give some examples.

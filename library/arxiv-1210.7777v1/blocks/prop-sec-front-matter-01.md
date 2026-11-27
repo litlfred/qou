@@ -1,0 +1,1 @@
+A technical oversight in the literature is uncovered: the application of the Cottingham Formula requires the use of a subtracted dispersion integral; an argument to evade the subtraction function was presented; the argument was based on false assumptions about the scaling violations of the parton model, a point ﬁrst mentioned by J.

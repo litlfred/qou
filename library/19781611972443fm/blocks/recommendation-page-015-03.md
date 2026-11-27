@@ -1,1 +1,0 @@
-A course based on these lectures should be suitable for advanced undergraduates with a solid math- ematical background (i.e., very comfortable with proofs in linear algebra and real analysis) or for graduate students who have already taken an introductory linear programming class.

@@ -1,1 +1,0 @@
-After collapsing the sections of the exchange annulus to the long edges of the hexagons, we obtain a connected, orientable, bounded surface $\mathcal{S}$ decomposed into two hexagons, nine edges and six vertices -- and thus of Euler characteristic $-1.$ As can be deduced from the vertex labels, the surface has three boundary components and thus must be a 3--punctured sphere.

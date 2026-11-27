@@ -1,0 +1,1 @@
+The complex C′′ ∗is acyclic. Proof of the claim. Write down the long exact sequence in homology associated to the short exact sequence (18) : · · · →Hi(C′ ∗) →Hi(C∗) →Hi(C′′ ∗) →Hi−1(C′ ∗) →Hi−1(C∗) →· · · . Observe that Hi(C′ ∗) ≃Hi(C∗) by deﬁnition of C′ ∗. Thus Hi(C′′ ∗) = 0. □

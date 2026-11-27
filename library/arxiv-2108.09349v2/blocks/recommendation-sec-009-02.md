@@ -1,1 +1,0 @@
-In fact, if a 3-manifold has a complete hyperbolic structure of finite volume, Mostow-Prasad rigidity ensures that the structure is unique up to isometry \cite{MostowRigidity} \cite{PrasadRigidity}, so one should not expect completeness for an arbitrary point in~$\mathcal A(\tau)$.

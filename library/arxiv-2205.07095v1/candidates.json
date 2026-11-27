@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2205.07095v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "2ec6916399150e2d1cf3e406b98e7cc316a40d790eb048fe5659774482ff0354",
   "file": "2205.07095v1.pdf"
@@ -16,46 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
-  "by_kind": {
-   "recommendation": 2
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "$$\\label{kern2} \\widehat{T}(\\eta|n):=\\int_{\\Gamma^{(n)}} T(\\eta|\\gamma)d\\gamma =\\int_{\\Bbb R^{dn}} (dy)^nT(\\eta|\\{y\\}_1^n),$$ especially since this is the value that must be substituted into the formula for the solution [\\[SSCA-2\\]](#SSCA-2){reference-type=\"eqref\" reference=\"SSCA-2\"}. $$\\begin{aligned} \\label{final2} \\widehat{T}(\\eta|n)&=\\varrho e^{-\\beta W(x_1; \\eta^{(\\hat{x}_1)})}\\sum_{k=0}^n {n \\choose k} \\int (dy)^k K(x_1;\\{y\\}_1^k)\\widehat{T}(\\eta^{(\\hat{x}_1)}\\cup\\{y\\}_1^k)|n-k)-\\notag \\\\ &-\\sum_{k=1}^n {n \\choose k}\\sum_{l=1}^k {k \\choose l}\\int (dy)^l K(x_1;\\{y\\}_1^l)\\widehat{T}(\\eta|n-k)\\widehat{T}(\\{y\\}_1^l|k-l). \\end{aligned}$$ For $k=0$ in the first line of formula [\\[final2\\]](#final2){reference-type=\"eqref\" reference=\"final2\"}, the term $\\widehat{T}(\\eta^{(\\hat{x}_1)}|n)$ corresponds to the analytical contribution of all graphs $\\mathcal{D}(\\eta; \\gamma)$, in which the vertex $x_1$ has no edges.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-42-graphic-interpretation-of-solutions.md",
-   "section_title": "Graphic interpretation of solutions.",
-   "pages": "10-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "If the vertex did not have edges, then operation $\\int (dy)^l K(x_1;\\{y\\}_1^l)$ does not ensure that it belongs to the set $\\mathcal{D}(\\eta; \\gamma)$, and such a diagram should be reduced.This is ensured by the presence of a similar contribution in the second line of the formula [\\[final2\\]](#final2){reference-type=\"eqref\" reference=\"final2\"}.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-42-graphic-interpretation-of-solutions.md",
-   "section_title": "Graphic interpretation of solutions.",
-   "pages": "10-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

@@ -1,4 +1,4 @@
-*Let $\sigma_i$ be the symmetric Hecke generators with parameter $z = q^{3}/(q^{2}+1)$ (**convention D**), and $\check{q} = q^{1/2}$, so that $z = \check{q}^{6}/(\check{q}^{4}+1)$. For every $\lambda \,\vdash\, n$ at $n \in \{2, 3, 4\}$, the Jones-Markov coefficient admits the closed form:*
+*Let $\sigma_i$ be the symmetric Hecke generators with Markov parameter $z = q^{3}/(q^{2}+1)$, and $\check{q} = q^{1/2}$, so that $z = \check{q}^{6}/(\check{q}^{4}+1)$. For every $\lambda \,\vdash\, n$ at $n \in \{2, 3, 4\}$, the Jones-Markov coefficient admits the closed form:*
 
 
 $$

@@ -1,1 +1,0 @@
-We shall treat [\[eq:kumulantyklas\]](#eq:kumulantyklas){reference-type="eqref" reference="eq:kumulantyklas"} as a definition of the left-hand side and we shall verify that so defined cumulants fulfill the defining relation of cumulants [\[eq:moment-cumulant\]](#eq:moment-cumulant){reference-type="eqref" reference="eq:moment-cumulant"}.

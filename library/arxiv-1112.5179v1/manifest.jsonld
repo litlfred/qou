@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1112.5179v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1112.5179v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -45,6 +45,18 @@
     "library/arxiv-1112.5179v1/sections/sec-030"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "3-Manifolds and 3d Indices — We identify a large class R of three-dimensional N = 2 superconformal ﬁeld the- ories.\n\n**3-Manifolds and 3d Indices**\n\n79 pp, 32 sections.\n\n**Abstract.** We identify a large class R of three-dimensional N = 2 superconformal ﬁeld the- ories. This class includes the eﬀective theories TM of M5-branes wrapped on 3-manifolds M, discussed in previous work by the authors, and more generally comprises theories that admit a UV description as abelian Chern-Simons-matter theories with (possibly non-perturbative) superpotential. Mathematically, class R might be viewed as an extreme quantum general- ization of the Bloch group; in particular, the equivalence relation among theories in class R is a quantum-ﬁeld-theoretic “2–3 move.” We proceed to study the supersymmetric index of theories in class R, uncovering its physical and mathematical properties, including relations to algebras of line operators and to 4d indices.\n\n**Outline.** Front matter; 1 Introduction; 2 Actions on the 3d index; 2.1 The Sp(2N,Z) action; 2.2 Affine shifts; 2.3 Adding a superpotential; 2.4 A discrete symmetry; 2.5 An operator algebra; 3 The tetrahedron index; 3.1 Parity and symmetry; 3.2 Triality; 3.3 Difference equations; 4 The index of TM; 4.1 Gluing rules; 4.2 The bipyramid; 4.3 Some knot complements; 4.4 Mapping tori and T[SU(2)]; 4.5 Quantum Lagrangian operators",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -68,8 +80,8 @@
       "stamp_date": "21 Dec 2011"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

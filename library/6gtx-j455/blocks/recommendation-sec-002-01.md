@@ -1,1 +1,0 @@
-We should further note that these matter fields would probably end up being confined to the UV, together with all the degrees of freedom of QQG, in a similar fashion to quarks and gluons in QCD. [65] Here, we ignore the impact of the running of the coupling to Gauss-Bonnet’s invariant G, which is not widely studied due to its topological nature.

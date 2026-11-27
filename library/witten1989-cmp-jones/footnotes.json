@@ -1,0 +1,327 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "witten1989-cmp-jones",
+ "status": "determined",
+ "body_size": 9.6,
+ "footnotes": [
+  {
+   "id": "fn-p011-1",
+   "page": 11,
+   "mark": "4",
+   "text": "The crucial factor of 1/12 in (2.22) reflects the discrepancy between the Chern character e",
+   "marks": [
+    {
+     "page": 11,
+     "context": "alization of the tangent bundle, but not on the metric of M."
+    }
+   ],
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-000"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "*",
+   "text": "An expanded version of a lecture at the IAMP Congress, Swansea, July,",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p001-2",
+   "page": 1,
+   "mark": "**",
+   "text": "Research supported in part by NSF Grant No. 86-20266, and NSF Waterman Grant 88-17521",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "1",
+   "text": "In what follows, the symbol",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "2",
+   "text": "The reader may wish to bear in mind that the discussion in this section and the next contains a number of technicalities which are part of the logical story but perhaps not essential on a first reading",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p009-1",
+   "page": 9,
+   "mark": "e",
+   "text": "i(k + c2( G ) / 2 ) I ( A W )",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "3",
+   "text": "(2.20) is not the integral of an intrinsic local functional, so it would not usually arise as a counterterm. Whether or not \"counterterm\" is the right word, we will have to view (2.20) as a",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p010-2",
+   "page": 10,
+   "mark": "l",
+   "text": "= 0",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p011-2",
+   "page": 11,
+   "mark": "x",
+   "text": "= 1 + Λ-",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p011-3",
+   "page": 11,
+   "mark": "2",
+   "text": "/2 4- ... that appears in gauge theory index theorems and the A genus (x/2)/sinh(jc/2) = 1 — x",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p011-4",
+   "page": 11,
+   "mark": "2",
+   "text": "/24 + ... that appears in gravitational index theorems",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p014-1",
+   "page": 14,
+   "mark": "6",
+   "text": "The discussion should make it clear that the need to frame knots is analogous to the need to frame three manifolds, as found in the last section. This hopefully justifies the use of the same word \"framing\" in each case",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p016-1",
+   "page": 16,
+   "mark": "7",
+   "text": "It is conventional in physics to call vector spaces obtained in this fashion 'Ήilbert spaces\", and we will follow this terminology. In fact, the claim that comes most naturally from path integrals and that we will actually use is only that /fΣ is a vector space canonically associated with Σ, and exchanged with its dual when the orientation of Σ is reversed. However, a Hubert space structure is natural in the Hamiltonian viewpoint, and in the particular problem we are considering here, an inner product on j4fΣ is important in more delicate aspects of conformal field theory; such an inner product gives a \"metric on the flat vector bundle\" in the language of Friedan and Shenker [31]. According to Segal [16], Jfj in fact has a canonical projective Hubert space structure",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p017-1",
+   "page": 17,
+   "mark": "8",
+   "text": "This is a typical problem in which it is not appropriate to \"introduce canonical momenta\". The purpose of introducing such variables is to reexpress a given Lagrangian in a form which is first order in time derivatives, but (3.1) is already first order in time derivatives. The variables in (3.1) are already canonic-ally conjugate, as indicated in the following equation",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p019-1",
+   "page": 19,
+   "mark": "9",
+   "text": "This description is valid for the gauge group G = SU(N). but in general the following modification is needed. For groups other than SU(N) the determinant line bundle L is not the fundamental line bundle on =.// but a tensor power thereof. For instance, for G — E8, there is a line bundle L' with (A')® 10 ~ L. It is then L' whose first Chern class corresponds to (3.1) or (3.2) with",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p021-1",
+   "page": 21,
+   "mark": "0",
+   "text": "π & = i",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p025-1",
+   "page": 25,
+   "mark": "f",
+   "text": ") .",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p029-1",
+   "page": 29,
+   "mark": "10",
+   "text": "This is the only point at which (4.7) has to be used. The induction sketched in the previous",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p029-2",
+   "page": 29,
+   "mark": "3",
+   "text": "to this special case without using (4.7)",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p031-1",
+   "page": 31,
+   "mark": "11",
+   "text": "For this representation, hR = (N",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p031-2",
+   "page": 31,
+   "mark": "2",
+   "text": "— 1)/(2N(N + k)}. In the decomposition of R(χ)R, the symmetric piece is an irreducible representation with HEl =(N",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p031-3",
+   "page": 31,
+   "mark": "2",
+   "text": "-f N— 2)/N(N + k), and the antisymmetric piece is an irreducible representation with hE2 = (N",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p031-4",
+   "page": 31,
+   "mark": "2",
+   "text": "— N — 2)/N(N + k)",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p036-1",
+   "page": 36,
+   "mark": "l",
+   "text": "is more tractable than",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p036-2",
+   "page": 36,
+   "mark": "*",
+   "text": "Or on any desired three manifold; we will see that S",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p038-1",
+   "page": 38,
+   "mark": "14",
+   "text": "Implicit in (4.34) and subsequent formulas is the use of the standard framing of the Wilson line",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p038-2",
+   "page": 38,
+   "mark": "15",
+   "text": "This transformation, which acts on the upper half plane as τ -> — 1/τ, is indeed usually called S in the theory of the modular group SL (2, Z) (which can be identified, via the basis α, έ>, with the mapping class group of Σ)",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p041-1",
+   "page": 41,
+   "mark": "16",
+   "text": "We give this Wilson line the framing described in the footnote after (4.34); after surgery this turns into the standard framing on S",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p047-1",
+   "page": 47,
+   "mark": "1",
+   "text": "Atiyah, M.F.: New invariants of three and four dimensional manifolds. In: The mathemati- cal heritage of Hermann Weyl. Proc. Symp. Pure Math., vol. 48. Wells R. (ed.). Providence, RI: American Mathematical Society 1988, pp. 285-299",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p047-2",
+   "page": 47,
+   "mark": "2",
+   "text": "Donaldson, S.: An application of gauge theory to the topology of four manifolds. J. Diff. Geom. 18, 269 (1983), Polynomial invariants for smooth four-manifolds. Oxford preprint",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p047-3",
+   "page": 47,
+   "mark": "3",
+   "text": "Floer, A.: An instanton invariant for three manifolds. Courant Institute preprint (1987). Morse theory for fixed points of symplectic diffeomorphisms. Bull. AMS 16, 279 (1987)",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p047-4",
+   "page": 47,
+   "mark": "4",
+   "text": "Witten, F.: Topological quantum field theory. Commun. Math. Phys. 117, 353 (1988)",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p048-1",
+   "page": 48,
+   "mark": "20",
+   "text": "Jackiw, R., Templeton, S.: How superrenormalizable theories cure their infrared divergences. Phys. Rev. D23, 2291 (1981)",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p048-2",
+   "page": 48,
+   "mark": "21",
+   "text": "Deser, S., Jackiw, R., Templeton, S.: Three dimensional massive gauge theories. Phys. Rev. Lett. 48, 975 (1983). Topologically massive gauge theory. Ann. Phys. NY 140, 372 (1984)",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p048-3",
+   "page": 48,
+   "mark": "22",
+   "text": "Zuckerman, G.: Action principles and global geometry. In: The proceedings of the 1986 San Diego Summer Workshop, Yau, S.-T. (ed.)",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p048-4",
+   "page": 48,
+   "mark": "23",
+   "text": "Polyakov, A.M.: Fermi-bose transmutations induced by gauge fields. Mod. Phys. Lett. A3,",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p048-5",
+   "page": 48,
+   "mark": "325",
+   "text": "(1988)",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p048-6",
+   "page": 48,
+   "mark": "24",
+   "text": "Hagen, C.R.: Ann. Phys. 157, 342 (1984)",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p048-7",
+   "page": 48,
+   "mark": "25",
+   "text": "Arovas, D., Schrieffer, R., Wilczek, F., Zee, A.: Statistical mechanics of anyons. Nucl. Phys. B251[FS13], 117(1985)",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p048-8",
+   "page": 48,
+   "mark": "26",
+   "text": "Witten, E.: Non-Abelian bosonization in two dimensions. Commun. Math. Phys. 92, 455 (1984)",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p048-9",
+   "page": 48,
+   "mark": "27",
+   "text": "Ray, D., Singer, I.: Adv. Math. 7, 145 (1971), Ann. Math. 98 154 (1973)",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p048-10",
+   "page": 48,
+   "mark": "28",
+   "text": "Deser, S., Jackiw, R., Templeton, S.: In [21]; Affleck, L, Harvey, J., Witten, E.: Nucl. Phys. B 206, 413 (1982) Redlich, A.N.: Gauge invariance and parity conservation of three-dimensional fermions. Phys. Rev. Lett. 52, 18 (1984) Alvarez-Gaume, L., Witten, E.: Gravitational anomalies. Nucl. Phys. B234, 269 (1983) Alvarez-Gaume, Delia Pietra, S., Moore, G.: Anomalies and odd dimensions. Ann. Phys. (NY) 163, 288 (1985)",
+   "block": "library/witten1989-cmp-jones/blocks/prose-sec-009"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "generalized from S"
+  },
+  {
+   "page": 36,
+   "mark": "29",
+   "context": "4"
+  },
+  {
+   "page": 38,
+   "mark": "5",
+   "context": "1"
+  }
+ ]
+}

@@ -1,0 +1,1 @@
+Let (Γ, Zp, Ωp) be a framed, miniversal variation of ﬁnite, uncoupled, integral BPS structures over a complex manifold M. Given a ray r ⊂C∗, the function τr(p; t) = Y Zp(γ)∈iHr Υ Z(γ) 2πit Ω(γ) (32) is a τ-function for the family of solutions of Theorem 5.3.

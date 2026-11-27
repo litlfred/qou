@@ -1,1 +1,0 @@
-One can develop all the theory using the $p\SL(n,\C)$-Ptolemy varieties, but since our main interest here is in the shape coordinates (and for clarity of exposition), we shall not do this here. \end{remark}

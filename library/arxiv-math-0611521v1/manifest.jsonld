@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0611521v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0611521v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0611521v1",
+  "title": "The q-analogue of the wild fundamental group",
   "contains": [
     "library/arxiv-math-0611521v1/sections/sec-front-matter",
     "library/arxiv-math-0611521v1/sections/sec-000",
@@ -22,6 +22,18 @@
     "library/arxiv-math-0611521v1/sections/sec-007"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The q-analogue of the wild fundamental group — We describe an explicit construction of galoisian Stokes operators for irregular linear q-difference equations.\n\n**The q-analogue of the wild fundamental group**\n\n*J.-P. Ramis∗, J. Sauloy †*\n\n22 pp, 9 sections.\n\n**Abstract.** We describe an explicit construction of galoisian Stokes operators for irregular linear q-difference equations. These operators are parameterized by the points of an elliptic curve minus a ﬁnite set of singularities. Taking residues at these singularities, one gets q-analogues of alien derivations which freely generate the Lie algebra of the Stokes subgroup of the Galois group.\n\n**Outline.** Front matter; 1 Introduction; 2.1 General facts; 2.2 Filtration by the slopes; 2.3 Stokes operators; 3 Stokes operators and alien derivations; 3.1 Stokes operators are galois; 3.2 Alien derivations and $q$-Borel transform; 4 Conclusion",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
@@ -37,7 +49,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0611521v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0611521v1.pdf",
     "source_sha256": "65fcd77b7b0a208e272563e93a17b681ab2075b426d28ff6d771b4e976182913",
     "pages": 22,
@@ -48,8 +62,8 @@
       "stamp_date": "17 Nov 2006"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,1 +1,0 @@
-For all the knots we consider the first difference is easily treated since, as shown in Lemma [\[extra_terms\]](#extra_terms){reference-type="ref" reference="extra_terms"}, the neglected terms are much smaller than the main terms (for other knots, such as $7_2$, a treatment as in [@Ohtsuki7 Section 8] should be possible).

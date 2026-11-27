@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-gr-qc-0407051v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "2de07e909b17c5a5117b4021c0a42d2ed3deeedad318a446c233de63d2cbf9f3",
   "file": "0407051v2.pdf"
  },
  "provenance": {
-  "title": "arXiv:gr-qc/0407051v2 23 Aug 2004",
+  "title": "Black hole entropy from quantum geometry",
   "authors": "Marcin Domagala1 and Jerzy Lewandowski1,2,3",
   "arxiv": {
    "id": "gr-qc/0407051",
@@ -16,76 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
-  "by_kind": {
-   "recommendation": 4
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In view of our correction, the meaning of that observation of [@Dre] should be understood again.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction-and-results.md",
-   "section_title": "Introduction and results",
-   "pages": "2-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The quantum consistency condition between the bulk and the horizon implies that the quantum degrees of freedom of the horizon should be described by a union of the Chern-Simons theories on arbitrarily punctured $S$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-the-horizon-quantum-states.md",
-   "section_title": "The horizon quantum states",
-   "pages": "4-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For large values of $k$, the number of the paths corresponding to the random walk distance $\\delta$ should be given by the Gaussian function $\\frac{C}{\\sqrt{k}} e^{-\\frac{\\delta^2}{\\beta k}}\\, \\ \\, N^-_k$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-4-the-entropy-calculations.md",
-   "section_title": "The entropy calculations",
-   "pages": "9-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Also, the conjectured relation be- tween Quantum Geometry and the black hole quasi-normal modes should be understood again.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

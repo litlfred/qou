@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1206.5522v6",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1206.5522v6/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -32,6 +32,18 @@
     "library/arxiv-1206.5522v6/sections/sec-017"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS — Factorization homology theories of topological manifolds, after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds\n\n**FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS**\n\n*DAVID AYALA & JOHN FRANCIS*\n\n37 pp, 19 sections.\n\n**Abstract.** Factorization homology theories of topological manifolds, after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds whose coeﬃcient systems are n-disk algebras or n-disk stacks. In this work we prove a precise formulation of this idea, giving an axiomatic characterization of factorization homology with coeﬃcients in n-disk algebras in terms of a generalization of the Eilenberg–Steenrod axioms for singular homology. Each such theory gives rise to a kind of topological quantum ﬁeld theory, for which observables can be deﬁned on general n-manifolds and not only closed n-manifolds. For n-disk algebra coeﬃcients, these ﬁeld theories are characterized by the condition that global observables are determined by local observables in a strong sense. Our axiomatic point of view has a number of applications.\n\n**Outline.** Front matter; 1 Introduction; 2 B-framed disks and manifolds; 2.1 B-framings; 2.2 Disks; 2.3 Manifolds with boundary; 2.4 Localizing with respect to isotopy equival; 3 Homology theories for topological manifolds; 3.1 Disk algebras; 3.2 Factorization homology over oriented 1-man; 3.3 Homology theories; 3.4 Pushforward; 3.5 Homology theories; 4 Nonabelian Poincaré duality; 5 Commutative algebras, free algebras, and Lie; 5.1 Factorization homology with coefficients i; 5.2 Factorization homology with coefficients i; 5.3 Factorization homology from Lie algebras",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -53,8 +65,8 @@
       "stamp_date": "23 Jun 2024"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

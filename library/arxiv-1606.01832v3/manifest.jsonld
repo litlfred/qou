@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1606.01832v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1606.01832v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -22,6 +22,18 @@
     "library/arxiv-1606.01832v3/sections/sec-007"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "FLATNESS AND COMPLETION REVISITED — We continue investigating the interaction between ﬂatness and a- adic completion for inﬁnitely generated A-modules.\n\n**FLATNESS AND COMPLETION REVISITED**\n\n*AMNON YEKUTIELI*\n\n21 pp, 9 sections.\n\n**Abstract.** We continue investigating the interaction between ﬂatness and a- adic completion for inﬁnitely generated A-modules. Here A is a commutative ring and a is a ﬁnitely generated ideal in it. We introduce the concept of a-adic ﬂatness, which is weaker than ﬂatness. We prove that a-adic ﬂatness is preserved under completion when the ideal a is weakly proregular. We also prove that when A is noetherian, a-adic ﬂatness coincides with ﬂatness (for complete modules). An example is worked out of a non-noetherian ring A, with a weakly proregular ideal a, for which the completion b A is not ﬂat. We also study a-adic systems, and prove that if the ideal a is ﬁnitely generated, then the limit of every a-adic system is a complete module.\n\n**Outline.** Front matter; 0 Introduction; 1 a-Adic Systems; 2 Free Resolutions of a-Adic Systems; 3 a-Adic Flatness; 4 Weakly Proregular Ideals; 5 Modules of Decaying Functions; 6 The Non-Noetherian Example; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -43,8 +55,8 @@
       "stamp_date": "6 Sep 2017"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

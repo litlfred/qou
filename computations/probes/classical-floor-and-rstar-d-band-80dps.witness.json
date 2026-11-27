@@ -1,0 +1,204 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-24T03:08:58.630212+00:00",
+  "commitSha": "0da72b8b68b83bbb754358eefda5260fd58ccc4c",
+  "assertions": [
+    {
+      "name": "zrx2_interface_parity_and_convention_invariance_exact",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "ClassicalTraceFloorParity.numCycles_applyInterfaceChain_add_odd & classicalTraceFloor_eq_parity"
+    },
+    {
+      "name": "hoefsmit_1x1_2x2_block_evaluator_matches_dense_80dps",
+      "computed": "2.10843958864610e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-72",
+      "source": "80-dps self-test of trace_word_blocks_mp against hoefsmit_mpmath.chi_lambda_of_word_mp on H_6"
+    },
+    {
+      "name": "zrx2_deuteron_borromean_floor_share_85pct_vs_grouped_22pct",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "80-dps Convention-D deuteron c_0=1/8 share on canonical borromean (85.007%) vs grouped (22.460%)"
+    },
+    {
+      "name": "cds5_pr4766_door_band_provenance_2_04_to_2_16_reproduced",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "80-dps reproduction of PR #4766 uncabled door ratio * r*_C = [2.043411, 2.155251]"
+    },
+    {
+      "name": "cds5_cabled_rstar_D_strictly_outside_door_band_both_orderings",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "DeltaLambdaRStarOrderBounds.rStarD_lt_doorScaled_band & doorScaled_lt_rStarD_of_cluster_drop"
+    },
+    {
+      "name": "cds5_rboth_D_diverges_opposite_to_rstar_D_refuting_near_miss",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "DeltaLambdaRStarOrderBounds.rBoth_increases_while_rStar_decreases (r_both^D = 2.871237)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 23,
+  "computation": "classical-floor-and-rstar-d-band-80dps",
+  "scriptFile": "classical_floor_and_rstar_d_band_80dps_probe.py",
+  "scriptHash": "cad6ea946cff",
+  "scriptCommitSha": "0da72b8b68b83bbb754358eefda5260fd58ccc4c",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/classical_floor_and_rstar_d_band_80dps_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/classical_floor_and_rstar_d_band_80dps_probe.py"
+  },
+  "description": "80-dps (50-dps serialized) Q-Drain-9 verification for beans qou-zrx2 and qou-cds5: (A) exact q=1 cycle-merge & interface-multiplicity parity law floor(A,O) = 2^(-A)*(1 - 2^(-O)) across A=1..12 plus 80-dps Convention-D canonical Borromean vs grouped classical floor shares (2H: 85.007% Borromean vs 22.460% grouped), and (B) pure-mpmath 80-dps Convention-D verification of the PR #4766 [2.04, 2.16] uncabled-door band provenance ([2.043411, 2.155251]) against the actual #4364 cabled-Borromean r*_D(grouped)=1.549361, r*_D(borromean)=2.458116, and r_both^D=2.871237.",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0_pin": "proton (qou_substrate.constants.q_at)",
+    "work_dps": 80,
+    "output_dps": 50,
+    "m_e_MeV": "0.51099895069000000000000000000000000000000000000000",
+    "E0_unit_cell_MeV": "4.1859813632944758969450621587590084101434868908796",
+    "free_parameters": 0
+  },
+  "data": {
+    "lean_modules": [
+      "folio/quantum-observable-universe/lean/QOU/MassTheory/ClassicalTraceFloorParity.lean",
+      "folio/quantum-observable-universe/lean/QOU/MassTheory/DeltaLambdaRStarOrderBounds.lean"
+    ],
+    "part_a_qou_zrx2_interface_parity_and_floor_shares": {
+      "parity_checks": 280,
+      "parity_mismatches": 0,
+      "invariance_checks": 70,
+      "invariance_mismatches": 0,
+      "hoefsmit_block_selftest_max_err": "2.10843958864610e-81",
+      "floor_shares_convention_D_80dps": {
+        "2H": {
+          "c0_exact": "1/8",
+          "c0_decimal": "0.12500000000000000000000000000000000000000000000000",
+          "borromean": {
+            "tr_free": "0.29901501718464007670216042677098383227494947439700",
+            "tr_atom": "0.15196833920423160759266569775106614127124096465525",
+            "delta_tr": "0.14704667798040846910949472901991769100370850974175",
+            "floor_share_pct": "85.007020707162236416"
+          },
+          "grouped": {
+            "tr_free": "1.1317169043222100827313075681159639985201502826416",
+            "tr_atom": "0.57517224391777187082653534398618088915249435289270",
+            "delta_tr": "0.55654466040443821190477222412978310936765592974885",
+            "floor_share_pct": "22.460012447008857702"
+          }
+        },
+        "3H": {
+          "c0_exact": "3/32",
+          "c0_decimal": "0.093750000000000000000000000000000000000000000000000",
+          "borromean": {
+            "tr_free": "0.14207205679730479747049860425505585620688877446832",
+            "tr_atom": "0.029144042360972065357254218791869844065838803564737",
+            "delta_tr": "0.11292801443633273211324438546318601214104997090358",
+            "floor_share_pct": "83.017487262077884145"
+          },
+          "grouped": {
+            "tr_free": "1.1178462289782265773283413848251415843676477632295",
+            "tr_atom": "0.22931010210455650733209081026890887960280163645597",
+            "delta_tr": "0.88853612687367006999625057455623270476484612677353",
+            "floor_share_pct": "10.551062265736005304"
+          }
+        },
+        "3He": {
+          "c0_exact": "3/32",
+          "c0_decimal": "0.093750000000000000000000000000000000000000000000000",
+          "borromean": {
+            "tr_free": "0.18817864299948877926347903714586689992069257358941",
+            "tr_atom": "0.058596253654436380218956715452130256830877107284173",
+            "delta_tr": "0.12958238934505239904452232169373664308981546630524",
+            "floor_share_pct": "72.347793920022728878"
+          },
+          "grouped": {
+            "tr_free": "1.2966756122449440177378992952302995978655080144945",
+            "tr_atom": "0.40376703685142817036867025333340254115508707059171",
+            "delta_tr": "0.89290857539351584736922904189689705671042094390279",
+            "floor_share_pct": "10.499395188212098429"
+          }
+        }
+      }
+    },
+    "part_b_qou_cds5_convention_d_rstar_band": {
+      "door_band_provenance_pr4766": {
+        "per_isotope": {
+          "3H": {
+            "c3_door_C_MeV": "-1.7687752752067307716646938569426314772079746604349",
+            "c3_door_D_MeV": "-1.3723314283506129787121137749667162028274084982101",
+            "abs_vs_raw_diff_under_D": "0.0",
+            "door_C_to_D_ratio": "1.2888834567700591228271262055214462418716028203126"
+          },
+          "3He": {
+            "c3_door_C_MeV": "-1.4054244334325361129939445788402064891284565086192",
+            "c3_door_D_MeV": "-1.0338362638975350470625079516615042513245046104915",
+            "abs_vs_raw_diff_under_D": "0.0",
+            "door_C_to_D_ratio": "1.3594265189867915943833682545723700992297015828924"
+          }
+        },
+        "r_star_C_grouped": "1.5854119698850814569854255744749592350250152743126",
+        "door_extrapolated_band_lo": "2.0434112601501126619702227105640772541217469204763",
+        "door_extrapolated_band_hi": "2.1552510753808683507334400128881207138018703309813"
+      },
+      "cabled_cluster_grouped_80dps": {
+        "c3_y_C_MeV": "0.29695751573903275439881862224241231802330043118394",
+        "c3_y_D_MeV": "0.30386716339524293957251708017425299281306391882277",
+        "c3_W_raw_MeV": "15.626690631574596952395263126200274164059356971099",
+        "c3_W_geom_MeV": "14.066401301629076877725093701584109193654719221899",
+        "r_star_C": "1.5854119698850814569854255744749592350250152743126",
+        "r_star_D": "1.5493612233040985598092316107682248286394378331486",
+        "r_geom_C": "47.368396339867945282400304087646491707851799807041",
+        "r_geom_D": "46.291284469367864955729133069927622949301055273338",
+        "sum_y_C": "0.031751754337232431401840436485303564773509001032808",
+        "sum_y_D": "0.062025436960613858621424680111913139277521809828714",
+        "sum_W_geom": "1.0000000000000000000000000000000000000000000000000",
+        "r_both_C": "1.5040296839321468603919414522963728223332450725863",
+        "r_both_D": "2.8712371466806198629297143962567392717255003535020"
+      },
+      "cabled_cluster_borromean_D_80dps": {
+        "c3_y_D_3H_MeV": "0.17040060967419706243345351816289440934060720787439",
+        "c3_y_D_3He_MeV": "0.21265703930891150164852681660932206325639838486380",
+        "c3_y_D_mean_MeV": "0.19152882449155428204099016738610823629850279636909",
+        "r_star_D_borromean": "2.4581156452550595142949551125007599898351770194999"
+      }
+    }
+  },
+  "caveats": [
+    "1. Bean qou-zrx2: c_0(A,O) = 2^(-A)*(1 - 2^(-O)) is an exact q=1 cycle-count property invariant under intra_order and pn_convention; zeroing it via even interface multiplicity would be selection against the target (forbidden by NO FITTING), and the E_0 scale-index pairing between the hbar_q^0 floor and hbar_q^1 deformation remains recorded without changing production constants. 2. Bean qou-cds5: [2.04, 2.16] in PR #4766 is the C-frame cabled ratio r*_C=1.585412 multiplied by the uncabled pairwise door ratios (1.288883, 1.359427); direct 80-dps Convention-D evaluation of the #4364 cabled-Borromean cluster gives r*_D(grouped)=1.549361 and r*_D(borromean)=2.458116, while r_both^D=2.871237 overshoots both, confirming none of the six pruned Delta_lambda ansaetze is rescued."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

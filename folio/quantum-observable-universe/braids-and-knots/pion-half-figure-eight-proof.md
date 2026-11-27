@@ -1,4 +1,4 @@
-**Proof.** Both $\mathfrak{M}_+$ and $\sigma_1\sigma_2^{-1}$ have
+Both $\mathfrak{M}_+$ and $\sigma_1\sigma_2^{-1}$ have
 determinant $+1$ on $V_{(2,1)}$ (even number of Hecke generators,
 each with $\det = -1$; the product of an even number of $(-1)$
 factors is $+1$).  Both have real trace on $V_{(2,1)}$:

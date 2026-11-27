@@ -1,0 +1,1 @@
+The 10 Figure 8: Finding the pure twist-word for a braid [ 1 2, 3 2, −1 2]σ1σ2σ−1 1 σ−1 1 σ−1 2 left-most generator in a product is equated with the top end, and this is why we shall always work from left to right when we resolve a braid word to ﬁnd the associated pure twist-word.

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2411.04021v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2411.04021v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -17,6 +17,18 @@
     "library/arxiv-2411.04021v1/sections/sec-002"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On the Gram determinants of the Specht modules — For every partition λ of a positive integer n, let Sλ be the corresponding Specht module of the symmetric group Sn, and let det(λ) ∈Z denote the Gram\n\n**On the Gram determinants of the Specht modules**\n\n*Linda Hoyer*\n\n19 pp, 4 sections.\n\n**Abstract.** For every partition λ of a positive integer n, let Sλ be the corresponding Specht module of the symmetric group Sn, and let det(λ) ∈Z denote the Gram determinant of the canonical bilinear form with respect to the standard basis of Sλ. Writing det(λ) = m · 2a(2) λ for integers a(2) λ and m with m odd, we show that if the dimension of Sλ is even, then a(2) λ is also even. This confirms a conjecture posed by Richard Parker in the special case of the symmetric groups.\n\n**Outline.** Front matter; Introduction; Preliminaries; Proof of Theorem 1.1",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -40,8 +52,8 @@
       "stamp_date": "6 Nov 2024"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

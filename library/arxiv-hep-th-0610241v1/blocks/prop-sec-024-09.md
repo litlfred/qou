@@ -1,0 +1,1 @@
+Let N be the number of generations. 1. If N = 1, or if kR is a scalar multiple of a partial isometry, the quadratic term (5.44) is positive and its size of the order of f2 Λ2 f0 . 2. If N ≥2, the quadratic term (5.44) can vanish and have arbitrary sign, provided one chooses kR, kν appropriately.

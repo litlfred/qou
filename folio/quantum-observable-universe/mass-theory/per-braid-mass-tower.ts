@@ -26,7 +26,7 @@ export default proposition({
     witness: "docs/audits/2026-05-01-per-braid-tower.witness.json",
     status: "verified",
   },
-  lean: { ref: "qou:QOU.BraidKnot.perBraidMassTower" },
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.perBraidMassTower" },
   authorNotes: [
     {
       kind: "note",

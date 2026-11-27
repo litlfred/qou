@@ -1,4 +1,3 @@
-**Conjecture (closed forms for categorical resummation).**
 *At the substrate level, the categorical resummation $\mathcal{F}(\hbar_q^2)$ of the mass tower provides a dimensionless factor. This factor admits exactly one of the following closed forms:*
 
 1. *(Geometric)* $1/(1-x) = \sum_{k\geq 0} x^k$.

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2505.00799v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2505.00799v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -29,6 +29,18 @@
     "library/arxiv-2505.00799v2/sections/sec-014"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Quantum Modular Forms and Resurgence — In 2010, Zagier described a new phenomenon which he called quantum mod- ularity.\n\n**Quantum Modular Forms and Resurgence**\n\n*ELEANOR MCSPIRIT AND LARRY ROLEN*\n\n32 pp, 16 sections.\n\n**Abstract.** In 2010, Zagier described a new phenomenon which he called quantum mod- ularity. This connected various examples coming from disparate fields which exhibit near- modular behavior. In the fifteen years since, Zagier’s philosophy has informed new devel- opments in areas such as knot theory, 3-dimensional topology, combinatorics, and physics. More recently, the concept of holomorphic quantum modularity has emerged, pointing to a clearer structure for Zagier’s original examples. These new developments suggest connec- tions to perturbative quantum field theory, like the theory of resurgence. In 2024, Fantini and Rella proposed a means of codifying some of these connections under their program of “modular resurgence.” Inspired by their work, we unify all of the examples of quantum modular forms in Zagier’s original paper under the umbrella of resurgence.\n\n**Outline.** Front matter; 1 Introduction and statement of results; 1.1 Statement of Main Results; 2.1 Resurgence; Acknowledgements; 2 Preliminaries; 2.2 Eichler Integrals of Cusp Forms of Integer; 2.3 Maass Waveforms; 3 Intermediate results; 3.1 Asymptotics; 3.2 Median Resummation; 3.3 Discontinuity Calculations; 4 Proof of Theorem 1.5; 5 Proofs of Corollaries; 6 Generalizations and Open Questions; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {
@@ -51,8 +63,8 @@
       "stamp_date": "29 May 2025"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

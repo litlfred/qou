@@ -1,0 +1,70 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/proctor1988",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "proctor1988",
+  "contains": [
+    "library/proctor1988/sections/page-001",
+    "library/proctor1988/sections/page-002",
+    "library/proctor1988/sections/page-003",
+    "library/proctor1988/sections/page-004",
+    "library/proctor1988/sections/page-005",
+    "library/proctor1988/sections/page-006",
+    "library/proctor1988/sections/page-007",
+    "library/proctor1988/sections/page-008",
+    "library/proctor1988/sections/page-009",
+    "library/proctor1988/sections/page-010",
+    "library/proctor1988/sections/page-011",
+    "library/proctor1988/sections/page-012",
+    "library/proctor1988/sections/page-013",
+    "library/proctor1988/sections/page-014",
+    "library/proctor1988/sections/page-015",
+    "library/proctor1988/sections/page-016",
+    "library/proctor1988/sections/page-017",
+    "library/proctor1988/sections/page-018",
+    "library/proctor1988/sections/page-019",
+    "library/proctor1988/sections/page-020",
+    "library/proctor1988/sections/page-021",
+    "library/proctor1988/sections/page-022",
+    "library/proctor1988/sections/page-023",
+    "library/proctor1988/sections/page-024",
+    "library/proctor1988/sections/page-025",
+    "library/proctor1988/sections/page-026"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Proctor, Odd symplectic groups (Invent. Math. 92, 307–332, 1988) — symplectic groups on odd-dimensional spaces (not reductive), with a Weyl-type character formula whose denominator is a product over the positive roots of type BC_n.\n\n**Odd symplectic groups** — Robert A. Proctor. Inventiones mathematicae 92, 307–332 (1988).\n\nDefines symplectic groups Sp_{2n+1} on odd-dimensional vector spaces; they are neither simple nor reductive. For certain tensor representations it proves a character formula of the same shape as the Weyl character formula, and shows that the odd symplectic groups fill the gaps left by the even symplectic and the odd and even orthogonal groups. The opening section (§0) treats the classical Vandermonde/denominator identities independently of Lie theory; the denominator of the new character formula is a product over the positive roots of type BC_n. Later sections: main results (§2), character identities (§3), combinatorial identities (§4), the complete decomposition of the tensor space and Schensted's algorithm (§5), other occurrences (§6), three connections with orthogonal characters (§7), proofs (§8), and the Gelfand–Zelevinsky definition (§9).\n\n**Why it may bear here.** Added on the owner's request from the same Inventiones vol. 92 scan as wenzl1988 and turaev1988. A source on BC_n-type character and denominator identities and on Schensted-type decompositions of tensor space; no use in the corpus is asserted.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01Qmmkt5hLUvnWio7T8h6yz9",
+        "date": "2026-11-15"
+      },
+      "drafted_at": "2026-11-15"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "proctor1988",
+    "title_source": "slug",
+    "source_file": "proctor1988.pdf",
+    "source_sha256": "6604537cf1556c055dc17ae8304e8acd1763bca3684235f813a00c55831c6218",
+    "pages": 26,
+    "arxiv": null,
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

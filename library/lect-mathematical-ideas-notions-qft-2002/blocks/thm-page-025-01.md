@@ -1,0 +1,1 @@
+N2-28(P) a) |Aut(P)| InZw = SOT 9") SO n TeGt(n) Here the genus g of a (possibly non-orientable) surface is defined by g = 1— x/2, where y is the Euler characteristic. Thus the genus of RP? is 1/2, the genus of the Klein bottle is 1, and so on. In particular, we have the analog of t’Hooft’s theorem.

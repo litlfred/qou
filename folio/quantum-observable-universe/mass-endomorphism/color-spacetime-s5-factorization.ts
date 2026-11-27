@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Color and spacetime are orthogonal $S_2\\times S_3$ factors of the Bring Galois group $S_5$",
   lean: {
-    ref: "qou:QOU.MassEndomorphism.colorSpacetimeEmbed_injective",
+    ref: "qou:QOU.MassTheory.MassEndomorphism.colorSpacetimeEmbed_injective",
     validation: "validated",
   },
   uses: [

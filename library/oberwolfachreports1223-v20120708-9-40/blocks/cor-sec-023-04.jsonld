@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/oberwolfachreports1223-v20120708-9-40/blocks/cor-sec-023-04",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "pageStart": 46,
+  "pageEnd": 48,
+  "text": "cor-sec-023-04.md",
+  "derivedFrom": "library/oberwolfachreports1223-v20120708-9-40/sections/sec-023",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4",
+    "source_kind": "corollary",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-023-torus-bundles-and-the-lower-central-series-of-me.md (p. 46-48)",
+    "claim_id": "oberwolfachreports1223-v20120708-9-40#corollary:4",
+    "lean_status": "unformalized"
+  }
+}

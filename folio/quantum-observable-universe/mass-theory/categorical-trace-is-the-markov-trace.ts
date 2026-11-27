@@ -4,7 +4,7 @@ export default remark({
   label: "rem:categorical-trace-is-the-markov-trace",
   title: "The rigid trace of the tensor representation is the Markov trace",
   interprets: "prop:markov-trace-frobenius-selection",
-  lean: { ref: "qou:QOU.MassTheory.qtrace_rHecke_div", validation: "not_checked" },
+  lean: { ref: "qou:QOU.MassTheory.TensorPictureGenerator.qtrace_rHecke_div", validation: "not_checked" },
   uses: [
     "prop:markov-trace-frobenius-selection",
     "rem:trace-ledger",
@@ -14,6 +14,7 @@ export default remark({
   cites: ["jones1987", "reshetikhin-turaev1990", "kassel1995"],
   tags: ["markov-trace", "quantum-trace", "rigid-trace", "convention-d", "hecke-algebra", "trace"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): this is the identity `qtrace_rHecke_div` of the Lean file named in the manifest." },
     {
       kind: "status",
       date: "2026-09-15",

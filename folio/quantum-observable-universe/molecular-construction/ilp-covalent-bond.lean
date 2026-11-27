@@ -15,7 +15,7 @@
   Ref: [leitner2026] Ch 12 §1, prop:ilp-covalent-bond; bean qou-ales
 -/
 
-import QOU.QBeta.GammaGammaSelectedDeltaVanishes
+import QOU.Nuclear.GammaGammaSelectedDeltaVanishes
 
 namespace QOU.Molecular
 

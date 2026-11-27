@@ -1,1 +1,0 @@
-To see this, the first thing to notice is that since the singularity is preceded by the appearance of a pair of digon-crossing arcs of name 11 and 44, the leaves μn and /Z34 which are closest to the pierce-points 1 and 4 in H^ must be deformable in dΎ - L U Ω to arcs which are on opposite sides of the same digon.

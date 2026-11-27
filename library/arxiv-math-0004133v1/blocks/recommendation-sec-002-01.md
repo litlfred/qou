@@ -1,1 +1,0 @@
-Before forming their union, we must use some trick to ensure that they are disjoint, such as replacing the elements $s \in S$ by ordered pairs $(s,0)$ and replacing the elements $t \in T$ by ordered pairs $(t,1)$.

@@ -1,0 +1,52 @@
+# Audit of `hecke_core.z` Importer Constants (`qou-5pgl`)
+
+**Date:** 2026-11-24  
+**Scope:** Complete 8-file (+ 1 sibling copy) first-principles 80-dps audit of hardcoded numeric literals in files that imported `z` from `hecke_core` / `pyhecke.gram` across the migration from the historical single-row parameter $z_{\text{1-row}} = \sqrt{q}/(q+1) \approx 0.499320334183694452$ to the canonical two-row $SU(2)$ Markov parameter $z = q^3/(q^2+1) \approx 0.612688037146465244$ ($+22.7044\%$ at the canonical proton anchor $q_0 = 1.10997858275138080759\ldots$).
+
+---
+
+## 1. Executive Summary
+
+Value-based binding detectors (`scripts/convention-c-value-audit.py`) evaluate right-hand-side expressions for $z$ and therefore cannot see a bare decimal literal whose value was computed under $z_{\text{1-row}}$ before `hecke_core.z` moved to $z = q^3/(q^2+1)$. Closing `qou-5pgl` requires deriving the exact mathematical formula behind every candidate literal in the 8 listed files (plus the sibling file `computations/multiterm_cost_he3_l6a4_probe.py`) and measuring its $z$-dependence at 80-dps working precision.
+
+### Headline Outcomes Across the 8+1 Files
+
+1. **Three live probe scripts carried genuinely stale pre-migration $z_{\text{1-row}}$ Markov trace literals — all three are remediated inline at 80 dps (`0` `float64`, `0` magic trace literals) with fresh proton-anchored witnesses:**
+   - `computations/multiterm_cost_he3_l6a4_probe_algebraic.py` (`TRM_L6A4 = 0.998367` $\to$ derived $1 - h^4 + h^4 z^2 - h^5 z = 0.99856216383678726595\ldots$, $+195.86\text{ ppm}$; witness `computations/multiterm-cost-he3-l6a4-probe-algebraic.witness.json`).
+   - `computations/multiterm_cost_he3_l6a4_probe.py` (`TRM_L6A4 = 0.998367` $\to$ $0.99856216383678726595\ldots$ and `trm_alt = 1.617533` on $\sigma_0^6 \sigma_1^2 \in H_3(q_0)$ $\to$ derived $(1+hz)\operatorname{tr}_M(\sigma_0^6) = 1.73718092983869756684\ldots$, $+7.3969\%$; witness `computations/multiterm-cost-he3-l6a4-probe.witness.json`).
+   - `computations/multiterm_cost_deuteron_hopf_probe.py` (**eye-triage correction #1**: `TRM_COMPOSITE = 1.1007832370743025`, previously assumed to be a "$q$-like input", is proven to be the pre-migration $H_6(q_0)$ Markov trace $(1+hz)(1 - h^4 + h^4 z^2 - h^5 z)^2$ of $((\sigma_1\sigma_2^{-1})^3 \otimes (\sigma_4\sigma_5^{-1})^3)\sigma_3^2$ from retired `binding-k-enumerator.witness.json`; replaced with exact 80-dps two-row trace $1.12484706271117401763\ldots$, $+2.1861\%$, verified to $< 10^{-70}$ against the 80-dps $H_6(q_0)$ Hoefsmit–Wenzl character sum; witness `computations/multiterm-cost-deuteron-hopf-probe.witness.json`).
+2. **One candidate file is already excised from the live tree:**
+   - `computations/alpha/alpha_high_precision.py` was retired in commit `f62425070e7` (2026-08-25) as an inadmissible empirical fit and its dead manifest entry removed in `36b5fdd1a31`.
+3. **Three candidate files carry only $z$-independent constants on their flagged lines and are already current under $z = q^3/(q^2+1)$:**
+   - `computations/proton_residual_rootcause.py` (`1.0` product/radius constants; witness regenerated 2026-08-30 at $z = 0.6126880371464652$).
+   - `computations/mass_formula_6term.py` (`0.0` divergent-tower sentinels; witness regenerated 2026-11-20).
+   - `computations/hh-trefoil-corrected.py` (`1.0` multiplicative/Hecke unit; binds $z = q_0^3/(q_0^2+1)$ directly on line 25 with Ocneanu weight $h z^2 + z$; witness regenerated 2026-08-30).
+4. **Two non-remediated findings are documented with exact 80-dps provenance and blast-radius bounds:**
+   - `computations/sweeps/paper_six_term_isotope_sweep.py:1199` (`ALPHA_BORROMEAN_MEV = 3.74446989`, `# m_e · 8G`): **strictly $z$-independent** ($m_e$ and Catalan's constant $G$ contain no Markov parameter), so off the $z$-migration queue; carries a $+2.73205\text{ ppm}$ transcription offset against $m_e \cdot 8G = 3.74445965994161032480\ldots$ tracked separately in the `qou-3nva` transcription ledger.
+   - `computations/pn_alpha_lp_dual.py:71` (**detector-blindness correction #2**: the original scan flagged `B_AME_D_MEV = 2.22452` on line 72, which is an experimental AME2020 input and $z$-independent, but missed `1178995.5254` on line 71 in `E_0_CAL_MEV = float(M_P_MEV_VALIDATION) / 1178995.5254`): we prove at 80 dps that `1178995.5254` equals the pre-migration muon-pin ($q_0 = 1.1099785955573347$, $z_{\text{1-row}}$) proton tower `1178995.52540365069...` to all 11 digits, whereas under $z = q_0^3/(q_0^2+1)$ generator-0 volume crosses unity ($V_0 = 1.08021519 > 1$), moving the legacy product tower $14.95\times$ ($+1395.02\%$) to `17626227.5807200013...`. Left untouched here because `pn_alpha_lp_dual.py` is an acknowledged-anchor diagnostic whose qualitative stability verdicts (monotone $\partial B/\partial\alpha$ with zero critical points, invariant LP active set across $\alpha \in [0, 1]$) are invariant under positive rescaling of `E_0_CAL_MEV`, and its sole importer (`computations/nucleus_operator_selection_sdp.py:57`) imports only `(build_gram, TR_M_BASIS, NF_NAMES)`, none of which reference `E_0_CAL_MEV`.
+
+---
+
+## 2. Complete 8+1 Candidate Audit Table (80-dps Measurements)
+
+Here $q_0 = 1.10997858275138080759166909561076887987449912187358\ldots$, $h = q_0 - q_0^{-1} = 0.20906029879563947110\ldots$, $z_{\text{1-row}} = \sqrt{q_0}/(q_0+1) = 0.49932033418369445241\ldots$, and $z = q_0^3/(q_0^2+1) = 0.61268803714646524365\ldots$.
+
+| # | File & Line(s) | Literal(s) Examined | Exact Mathematical Identity | $z$-Dep? | Pre-Migration / Literal Value | Live 80-dps Value ($z = q_0^3/(q_0^2+1)$) | Disposition |
+|---|---|---|---|---|---|---|---|
+| 1a | `computations/multiterm_cost_he3_l6a4_probe_algebraic.py` (`:37, :39`) | `0.998367`, `1.2999219630934102` | `0.998367`: $\operatorname{tr}_M((\sigma_0\sigma_1^{-1})^3) = 1 - h^4 + h^4 z^2 - h^5 z$; `1.29992...`: $m_e \sum_{\lambda \vdash 9} 1/\dim_q(\lambda)$ | **YES** (`0.998367`); No (`T4`) | `0.998366622585715967` ($z_{\text{1-row}}$); `1.2999219630934102` | `0.99856216383678726595` ($+195.86\text{ ppm}$); `1.29992197648476779702` | **FIXED** (derived 80-dps + proton witness) |
+| 1b | `computations/multiterm_cost_he3_l6a4_probe.py` (`:58, :61, :85`) *(sibling copy)* | `0.998367`, `1.2999219630934102`, `1.617533` | `0.998367`: $\operatorname{tr}_M((\sigma_0\sigma_1^{-1})^3)$; `1.617533`: $\operatorname{tr}_M(\sigma_0^6\sigma_1^2) = (1+hz)\operatorname{tr}_M(\sigma_0^6)$ | **YES** (`0.998367`, `1.617533`); No (`T4`) | `0.998366622585715967`, `1.617533204540642958` ($z_{\text{1-row}}$) | `0.99856216383678726595` ($+195.86\text{ ppm}$), `1.73718092983869756684` ($+7.397\%$) | **FIXED** (derived 80-dps + refreshed witness) |
+| 2 | `computations/multiterm_cost_deuteron_hopf_probe.py` (`:34, :38, :42`) | `2.224566`, `1.1007832370743025`, `1.636` | `2.224566`: AME $B({}^2\text{H})$; `1.100783...`: $\operatorname{tr}_M^{(H_6)}((\beta_{\text{Bor}}\otimes\beta_{\text{Bor}})\sigma_3^2) = (1+hz)\operatorname{tr}_M(\beta_{\text{Bor}})^2$; `1.636`: $m_e\sum_{\lambda\vdash 6}1/\dim_q(\lambda)$ | **YES** (`1.100783...`); No (`B_AME`, `T4`) | `1.1007832370743025` (pre-migration `binding-k-enumerator`) | `1.12484706271117401763` ($+2.186\%$, matches $H_6$ Hoefsmit–Wenzl to $<10^{-70}$); `T4`: `1.63628711459308350910` | **FIXED** (derived 80-dps + proton witness) |
+| 3 | `computations/alpha/alpha_high_precision.py` | `0.30`, `0.32` | Root-finding bracket around empirical $\alpha^*$ | **YES** (functional moved) | `[0.30, 0.32]` around `0.305807` | Coherent root `0.283762164004797872` | **EXCISED** (`f62425070e7`, `36b5fdd1a31`) |
+| 4 | `computations/sweeps/paper_six_term_isotope_sweep.py` (`:1199`) | `3.74446989` | `ALPHA_BORROMEAN_MEV` $= m_e \cdot 8G$ (`prop:binding-scale-catalan`) | **NO** | `3.74446989` | $m_e \cdot 8G = 3.74445965994161032480$ (literal $+2.732\text{ ppm}$ high, $z$-free) | **PRUNED** ($z$-independent; tracked in `qou-3nva`) |
+| 5 | `computations/proton_residual_rootcause.py` (`:196, :241, :246`) | `1.0` | Unit radius threshold $|v| \ge 1$ and product identity `prod = 1.0` | **NO** | `1.0` | `1` (exact integer/unit; witness already at $z = 0.61268804$) | **CLEAN** |
+| 6 | `computations/pn_alpha_lp_dual.py` (`:71, :72`) | `2.22452` (`:72`); **hidden `1178995.5254` (`:71`)** | `:72` AME $B({}^2\text{H})$; `:71` $|V_0 V_1| + \Phi_q(|V_0|) + \Phi_q(|V_1|) + z^2\Phi_q(|V_0 V_1|)$ for proton | No (`:72`); **YES (`:71`)** | `1178995.52540365069` ($q_0^{\text{muon}}, z_{\text{1-row}}$, $V_0 = 0.9890 < 1$) | `17626227.5807200013` ($q_0^{\text{proton}}, z$, $V_0 = 1.0802 > 1$, $+1395.02\%$) | **DOCUMENTED** (scale-only factor in diagnostic; 0 downstream readers) |
+| 7 | `computations/mass_formula_6term.py` (`:180-184, :344`) | `0.0` | Zero fallback when $|V_i| \ge 1.05$ puts $\Phi_q$ outside convergence | **NO** | `0.0` | `0` (exact zero; witness regenerated 2026-11-20) | **CLEAN** |
+| 8 | `computations/hh-trefoil-corrected.py` (`:32, :39, :41, :56, :94, :110`) | `1.0` | Identity element in $q$-factorial and $H_3$ normal-form basis `[1, 0, 0, 0, 0, 0]` | **NO** | `1.0` | `1` (computes $z = q_0^3/(q_0^2+1)$ on `:25`, $h z^2 + z$ on `:56`) | **CLEAN** |
+
+---
+
+## 3. Impact on Qualitative Conclusions of Remediated Probes
+
+- **`multiterm_cost_he3_l6a4_probe_algebraic.py`:** Replacing `TRM_L6A4 = 0.998367` with $0.998562163836787266\ldots$ moves $B_{\text{desc}}(L6a4)$ from $1.53049\text{ MeV}$ to $1.53079\text{ MeV}$, giving $B_{\text{pred}}(n=9) = 6.38150\text{ MeV}$ (`rel_resid = 0.173171`) and $B_{\text{pred}}(n=3) = 3.28637\text{ MeV}$ (`rel_resid = 0.574197`) vs $B_{\text{AME}}({}^3\text{He}) = 7.71804\text{ MeV}$. Both strand counts still fail to recover ${}^3\text{He}$ binding.
+- **`multiterm_cost_he3_l6a4_probe.py`:** $L6a4$'s $T_1 + T_4$ prediction moves $2.83042 \to 2.83071\text{ MeV}$ (`cost = 0.158309`), while $\sigma_0^6\sigma_1^2$'s prediction moves $4.60615 \to 4.85071\text{ MeV}$ (`cost = 0.092878`), widening $L6a4$'s loss margin from $0.05752$ to $0.06543$.
+- **`multiterm_cost_deuteron_hopf_probe.py`:** Replacing `TRM_COMPOSITE = 1.1007832370743025` with $1.124847062711174018\ldots$ and `M_E_SIGMA_6 = 1.636` with $1.636287114593083509\ldots$ moves $B_{\text{pred}}$ from $3.87769\text{ MeV}$ to $3.89027\text{ MeV}$ against $B_{\text{AME}}({}^2\text{H}) = 2.224566\text{ MeV}$ (`rel_resid = 0.748776`, $+74.88\%$ overshoot), strengthening the refutation of the uncalibrated additive formula.

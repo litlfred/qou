@@ -1,4 +1,4 @@
-**Proposition.** *Let $K$ be a linearly ordered field, $\nu > 0$ a viscosity, $\delta \geq 0$ a time step, and $(k_n)_{n \geq 0}$ positive wavenumbers with $\delta\,\nu k_n^2 \leq 1$.*
+*Let $K$ be a linearly ordered field, $\nu > 0$ a viscosity, $\delta \geq 0$ a time step, and $(k_n)_{n \geq 0}$ positive wavenumbers with $\delta\,\nu k_n^2 \leq 1$.*
 
 1. *(Per-rung equilibrium.) A rung $u : \mathbb{N} \to K$ with $u(0) = 0$, forced by a constant $F \geq 0$ and damped at its own dissipation rate,*
    $$
@@ -14,5 +14,3 @@
    $$
 
 4. *(Stability under nonlocal transfer.) The equilibrium and the collapse persist when each rung is forced by its two predecessors with weight $\gamma \geq 0$ (pairwise maxima decay at rate $\theta$ per pair), and when every pair of rungs is coupled with geometric weight $\lambda^{\,n-m-1}$, $0 \leq \lambda < 1$ (every rung beyond the band is uniformly $\theta$-suppressed under $B \leq \theta(1-\lambda)\nu k_n$).*
-
-The six Lean declarations, in `QOU.FluidDynamics.PhysicalLayerLeray`: `rung_equilibrium_forced` (1), `trajectory_ladder_bounds` (2), `trajectory_tail_collapse` (3), and `rung_equilibrium_two_source`, `two_source_ladder_collapse`, `trajectory_two_source_bounds`, `multi_source_ladder_uniform` (4).

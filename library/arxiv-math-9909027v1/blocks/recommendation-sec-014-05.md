@@ -1,1 +1,0 @@
-Since we must show isotopy invariance eventually, we might as well suppose that the tangles are in a convenient standard form, since any two ways of arriving at that standard form from a given T will only diﬀer by an isotopy.

@@ -19,7 +19,7 @@ export default remark({
   title:
     "The $pn$ bond constant is a convex combination of the $pp$ and $nn$ constants, so it can never be extremal",
   lean: {
-    ref: "qou:QOU.Mass.ChainTraceFactor.L_strict_mono",
+    ref: "qou:QOU.MassTheory.ChainTraceFactor.L_strict_mono",
     sorryFree: true,
     validation: "not_checked",
   },
@@ -35,5 +35,9 @@ export default remark({
     "open-problem",
     "lean-formalised",
     "draft",
+  ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): in\n[the free-energy reading](#rem:bond-log-ratio-is-a-free-energy)" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): ## What is formalised\n\n`QOU.Mass.ChainTraceFactor`: the convex-combination identity\n, the strict betweenness of the offsets\nfor $0 < \\delta < 2$, its transport through the affine\ntrace, and the ordering $L_{pp} < L_{pn} < L_{nn}$\nitself. Not formalised, because it is empirical input: that\nonly $pn$ binds. The measurement, the $\\delta$ bound and the Wigner reading are\n`the_pn_bond_is_an_average_and_cannot_be_extremal_probe.py`." },
   ],
 });

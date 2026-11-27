@@ -1,0 +1,1 @@
+A tilting DG B-A-bimodule T, with quasi-inverse T ∨, and an isomorphism T ∨⊗L B T ∼= A in D(Aen), induce a group isomorphism DPicK(A) ≃ −→DPicK(B). We don’t know much about the structure of the derived Picard group DPicK(A) in general. However, when A is either a ring or a commutative DG ring, there are a few strong structural results – see next subsection.

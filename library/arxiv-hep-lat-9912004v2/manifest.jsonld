@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-lat-9912004v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-lat-9912004v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -24,6 +24,18 @@
     "library/arxiv-hep-lat-9912004v2/sections/sec-009"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "arXiv:hep-lat/9912004v2 9 Mar 2000 — 11 sections: Front matter; Chiral Random Matrix Theory; Introduction\n\n**arXiv:hep-lat/9912004v2 9 Mar 2000**\n\n*F. Farchioni*\n\n9 pp, 11 sections.\n\n**Outline.** Front matter; 1.1 Chiral Random Matrix Theory; 1 Introduction; 1.2 Temperature transition; 2 Expectations from chRMT; 3 Gauge field configurations and analysis; 4 Reporting the results; 4.1 Eigenvalue density; 4.2 Level spacing distribution; 4.3 Soft inner edge; 5 Summary and conclusions",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -45,8 +57,8 @@
       "stamp_date": "9 Mar 2000"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

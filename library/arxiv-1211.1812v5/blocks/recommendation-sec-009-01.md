@@ -1,1 +1,0 @@
-To illustrate the way in which $\EuFrak{G}$ should behave like a gauge group, we give a class of examples in which an action of the type ([\[eq.GA00\]](#eq.GA00){reference-type="ref" reference="eq.GA00"}) is implemented and representations of the type defined in §[\[sec.back.nets\]](#sec.back.nets){reference-type="ref" reference="sec.back.nets"} appear.

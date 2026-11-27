@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1408.3518v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1408.3518v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -26,6 +26,18 @@
     "library/arxiv-1408.3518v3/sections/sec-011"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On Augmentation Algorithms for Linear and Integer-Linear Programming: From Edmonds-Karp to Bland and Beyond — 13 sections: Front matter; Introduction.; Our Contributions\n\n**On Augmentation Algorithms for Linear and Integer-Linear Programming: From Edmonds-Karp to Bland and Beyond**\n\n*From Edmonds-Karp to Bland and Beyond*\n\n15 pp, 13 sections.\n\n**Outline.** Front matter; 1 Introduction.; 1.1 Our Contributions; 2 Proofs; 2.1.1 Proof of Lemma ??: Discrete deepest desc; 2.1.2 Proof of part (a) of Theorem ??: Discret; 2.1.3 Proof of part (b) of of Theorem ??: Disc; 2.2 Proof of Lemma ?? and Theorem ??; 2.2.1 Proof of Lemma ?? for Discrete deepest d; 2.2.2 Proof of part (a) of Theorem ??: Discret; 2.2.3 Proof of part (b) of Theorem ??: Discret; 2.3 Proof of Theorem ??.; 3 Concluding remarks",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -49,8 +61,8 @@
       "stamp_date": "15 Jan 2015"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

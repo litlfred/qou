@@ -43,14 +43,17 @@ solve that convention D removes. Carrying them forward would describe a
 computation that no longer happens. The verification this producer *does* run is
 recorded instead, under ``verification``.
 
-## Anchor: deliberately unchanged
+## Anchor: proton (re-pinned 2026-11-20)
 
-The committed witness is pinned at the **muon** ``q₀ = 1.1099785955541805``, and
-this regeneration keeps it there. The 2026-08-07 directive defaults *new* compute
-to the proton pin, but moving the convention and the anchor in one commit would
-make the diff unreadable and conflate two independent axes — the exact failure
-AGENTS.md §"q₀ anchor convention" warns about. One axis at a time; the anchor
-migration is tracked separately (bean ``tnjb``).
+Until 2026-11-20 this producer held the **muon** ``q₀ = 1.1099785955541805``
+(CODATA 2018) fixed, so that the convention-D migration moved one axis at a
+time. That left a layer straddle: the live consumer
+``binding_a3plus_joint_ji_combiner.py`` pins ``q₀`` from
+``q_parameter.Q_50_DIGIT_STR`` (proton, ``physical_proton`` in the manifest)
+while reading these weights at the muon value. On owner instruction
+(bean ``qou-w8cg``) the producer now takes ``q₀`` from the same
+``q_parameter.Q_50_DIGIT_STR``, so the two layers agree by construction.
+Values are serialised as ``_precision.fmt`` strings, not ``float``.
 
 Usage:
     python3 computations/regenerate_y_lambda_jones_markov_conventionD.py [--check]
@@ -65,15 +68,21 @@ from pathlib import Path
 
 import mpmath as mp
 
+HERE_DIR = Path(__file__).resolve().parent
+if str(HERE_DIR) not in sys.path:
+    sys.path.insert(0, str(HERE_DIR))
+import _path_bridge  # noqa: F401, E402
+from _precision import fmt  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "y-lambda-jones-markov-witness.json"
 
 N_MIN, N_MAX = 2, 12
 DPS = 50
 
-#: Muon-pinned q₀, as committed in the witness being replaced. See the module
-#: docstring: the anchor is held fixed so that only the convention moves.
-Q0_STR = "1.1099785955541805"
+#: Proton-pinned q₀, the same string the consumer reads (see module docstring).
+Q0_STR = Q_50_DIGIT_STR
 
 
 def qint(q, m: int):
@@ -196,18 +205,19 @@ def main() -> int:
             "thm:jones-markov-trace",
             "wenzl1988",
         ],
-        "q0Anchor": "muon",
-        "q0Layer": "ideal / canonical 3-CAL",
+        "q0Anchor": "proton",
+        "q0Layer": "experimental / Physical-Observations",
+        "q0Value": Q0_STR,
         "dps": DPS,
         "tables_by_n": {
             str(n): {
                 "n": n,
                 "num_partitions": len(rows),
-                "q_0": float(q),
-                "z_markov": float(z_D),
+                "q_0": fmt(q),
+                "z_markov": fmt(z_D),
                 "weights": [
                     {"partition": list(lam), "depth": depth,
-                     "y_lambda": float(y)}
+                     "y_lambda": fmt(y)}
                     for lam, depth, y in rows
                 ],
             }

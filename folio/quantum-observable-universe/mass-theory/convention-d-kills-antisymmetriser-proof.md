@@ -50,4 +50,4 @@ the Bratteli diagram, degenerate to $\mu_+ = 1$ and $\mu_- = 0$. A trace that as
 weight zero to one of the two nucleon-pair channels cannot separate them, so the whole
 selection question it was meant to answer disappears with it.
 
-What remains is the single root $z(q^{2}+1) = q^{3}$, which is convention D.
+What remains is the single root $z(q^{2}+1) = q^{3}$, i.e. $z = q^{3}/(q^{2}+1)$.

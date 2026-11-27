@@ -1,1 +1,0 @@
-Building upon the topological-mass theorem and its conjectural extension, this sub-section unfolds the associated family of variants—eigenspace decomposition, holonomy, transient localisation, and quantum dilogarithm—providing an independent proof for each. The $\mathrm{SU}(2)$ instance anchors this family, supplying the input for the downstream mechanics.

@@ -1,0 +1,3 @@
+The automorphism group of the configuration of the 120 tritangent planes of Bring's curve is $W(E_8)/\{\pm 1\}$, of order $2^{13}\cdot 3^5\cdot 5^2\cdot 7$; Yang records this as a consequence of his construction of the $E_8$ root lattice from the modular curve $X(13)$ and attributes it to Coble \cite[\S 1, p. 7]{yang2017}.
+
+This is a classical, citable link between Bring's curve and $E_8$, through the Weyl group acting on tritangent planes. The [cyclotomic boundary conjecture](#conj:cyclotomic-boundary-at-keystone) uses $E_8$ in a different way, through quantum dimensions equal to the $E_8$ Coxeter marks. The two appearances of $E_8$ are not shown to be related, so this fact is not evidence for the conjecture and should not be read as one.

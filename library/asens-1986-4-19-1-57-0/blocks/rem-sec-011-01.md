@@ -1,0 +1,1 @@
+— In (ii) of the preceding lemma the condition that B is a factor is in fact superfluous. However the proof of the general case requires a much more careful analysis. Like the constant ^ considered in Section 2, the relative entropy H behaves well with respect to inductive limits:

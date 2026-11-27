@@ -1,1 +1,0 @@
-(One could wonder whether there should be a $\pm$ sign on the right side of \eqref{eq:composition}; this amounts to asking whether our rules for fixing the signs of $F(\wp, \vartheta)$, $F(\wp', \vartheta)$ and $F(\wp\wp', \vartheta)$ are compatible with one another.

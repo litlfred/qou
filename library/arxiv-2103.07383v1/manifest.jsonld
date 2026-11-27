@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2103.07383v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2103.07383v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -28,6 +28,18 @@
     "library/arxiv-2103.07383v1/sections/sec-013"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case — We prove the analyticity of smooth critical points for generalized integral Menger cur- vature\n\n**On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case**\n\n*Daniel Steenebrügge*\n\n31 pp, 15 sections.\n\n**Abstract.** We prove the analyticity of smooth critical points for generalized integral Menger cur- vature energies intM(p,2), with p ∈( 7 3, 8 3), subject to a ﬁxed length constraint. This implies, together with already well-known regularity results, that ﬁnite-energy, critical C1-curves γ : R/Z →Rn of generalized integral Menger curvature intM(p,2) subject to a ﬁxed length constraint are not only C∞but also analytic. Our approach is inspired by analyticity results on critical points for O’Hara’s knot energies based on Cauchy’s method of majorants and a decomposition of the ﬁrst variation. The main new idea is an additional iteration in the recursive estimate of the derivatives to obtain a suﬃcient diﬀerence in the order of regularity.\n\n**Outline.** Front matter; 1 Introduction; 2 Decomposition of the first variation; 3 Estimate of the main term Q(p); 4 The remainder term R(p); 4.1 Representation of the remainder term R(p); 4.2 A fractional Leibniz rule; 4.3 Estimate of the remainder term R(p); 5 Proof of the main statement; 5.1 Recursive estimate and iteration; 5.2 Proof of Theorem 1.2; 6 A few simple consequences concerning critica; A Properties of analytic functions; B Faà di Bruno's formula; C An inequality for Sobolev Norms",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -51,8 +63,8 @@
       "stamp_date": "12 Mar 2021"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

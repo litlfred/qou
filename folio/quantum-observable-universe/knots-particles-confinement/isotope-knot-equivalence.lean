@@ -1,5 +1,5 @@
-import QOU.Basic
-import QOU.ParticleInteractions.AtomKnot
+import QOU.Core.Basic
+import QOU.Confinement.AtomKnot
 
 
 /-!

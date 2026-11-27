@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0711.4229v2/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Examples",
+  "pageStart": 11,
+  "pageEnd": 15,
+  "contains": [
+    "library/arxiv-0711.4229v2/blocks/prose-sec-005",
+    "library/arxiv-0711.4229v2/blocks/lem-sec-005-01",
+    "library/arxiv-0711.4229v2/blocks/prop-sec-005-02",
+    "library/arxiv-0711.4229v2/blocks/lem-sec-005-03",
+    "library/arxiv-0711.4229v2/blocks/lem-sec-005-04",
+    "library/arxiv-0711.4229v2/blocks/cor-sec-005-05",
+    "library/arxiv-0711.4229v2/blocks/prop-sec-005-06",
+    "library/arxiv-0711.4229v2/blocks/rem-sec-005-07",
+    "library/arxiv-0711.4229v2/blocks/rem-sec-005-08",
+    "library/arxiv-0711.4229v2/blocks/lem-sec-005-09",
+    "library/arxiv-0711.4229v2/blocks/cor-sec-005-10",
+    "library/arxiv-0711.4229v2/blocks/lem-sec-005-11",
+    "library/arxiv-0711.4229v2/blocks/lem-sec-005-12",
+    "library/arxiv-0711.4229v2/blocks/lem-sec-005-13",
+    "library/arxiv-0711.4229v2/blocks/prop-sec-005-14",
+    "library/arxiv-0711.4229v2/blocks/thm-sec-005-15"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0711.4229v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0711.4229v2/manifest.jsonld",
+  "provenance": "ingested"
+}

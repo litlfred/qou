@@ -411,7 +411,7 @@ def main() -> int:
             "a third value or a computation error. Residual after the edition is "
             "5.0e-9, the corpus literal's own 9-sig-fig rounding. Prices the "
             "whole c_3 target against the CAL-1/2/3 published uncertainties."),
-        "contentBlock": "prop:three-calibration-inputs",
+        "contentBlock": "def:three-calibration-discipline",
         "assertions": a,
         "allPassed": all_passed,
         "parameters": {

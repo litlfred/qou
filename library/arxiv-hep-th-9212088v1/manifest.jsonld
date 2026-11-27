@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9212088v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9212088v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -24,6 +24,18 @@
     "library/arxiv-hep-th-9212088v1/sections/sec-009"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "arXiv:hep-th/9212088v1 14 Dec 1992 — We construct a random matrix model that, in the large N limit, reduces to the low energy limit of the QCD partition function put forward by Leutwyler and Smilga.\n\n**arXiv:hep-th/9212088v1 14 Dec 1992**\n\n*E.V. Shuryak and J.J.M. Verbaarschot*\n\n18 pp, 11 sections.\n\n**Abstract.** We construct a random matrix model that, in the large N limit, reduces to the low energy limit of the QCD partition function put forward by Leutwyler and Smilga. This equivalence holds for an arbitrary number of ﬂavors and any value of the QCD vacuum angle. In this model, moments of the inverse squares of the eigenvalues of the Dirac operator obey sum rules, which we conjecture to be universal. In other words, the validity of the sum rules depends only on the symmetries of the theory but not on its details. To illustrate this point we show that the sum rules hold for an interacting liquid of instantons. The physical interpretation is that the way the thermodynamic limit of the spectral density near zero is approached is universal. However, its value, i.e. the chiral condensate, is not. SUNY-NTG-92/45 December 1992 1Dedicated to Hans Weidenm¨uller’s 60th birthday.\n\n**Outline.** Front matter; Abstract; 1 Introduction; 2 Random matrix model; 3 Calculation of the partition function; 4 Sum rules for one and two ﬂavors; 5 Sum rules in the instanton liquid; 6 Discussion and conclusions; Acknowledgements; Appendix A; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -45,8 +57,8 @@
       "stamp_date": "14 Dec 1992"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,0 +1,1 @@
+4.2. For all β ∈Br+ W , there is a commutative diagram G(β) B × Aℓ X0(β, B) G × B G {1} (fβ,B(⃗z),⃗z) fβ,B id ×{B} where the middle vertical map sends (b,⃗z) 7→b−1fβ,B(⃗z) and both squares are carte- sian. In particular, X0(β, B) is isomorphic to the ﬁber G(β)1,B = X(β)B.

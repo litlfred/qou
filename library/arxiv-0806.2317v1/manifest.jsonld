@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0806.2317v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0806.2317v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -25,6 +25,18 @@
     "library/arxiv-0806.2317v1/sections/sec-010"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Bounds for codes and designs in complex subspaces — We introduce the concepts of complex Grassmannian codes and designs.\n\n**Bounds for codes and designs in complex subspaces**\n\n*Aidan Roy∗*\n\n33 pp, 12 sections.\n\n**Abstract.** We introduce the concepts of complex Grassmannian codes and designs. Let Gm,n denote the set of m-dimensional subspaces of Cn: then a code is a ﬁnite subset of Gm,n in which few distances occur, while a design is a ﬁnite subset of Gm,n that polynomially approximates the entire set. Using Delsarte’s linear programming techniques, we ﬁnd upper bounds for the size of a code and lower bounds for the size of a design, and we show that association schemes can occur when the bounds are tight. These results are motivated by the bounds for real subspaces recently found by Bachoc, Coulangeon and Nebe, and the bounds generalize those of Delsarte, Goethals and Seidel for codes and designs on the complex unit sphere.\n\n**Outline.** Front matter; Introduction; Orbitals; Representations; Symmetric spaces; Zonal polynomials; Bounds; Other bounds; Examples; Designs; Association schemes; Acknowledgements",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -48,8 +60,8 @@
       "stamp_date": "13 Jun 2008"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

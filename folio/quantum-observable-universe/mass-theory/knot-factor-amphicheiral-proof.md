@@ -1,4 +1,3 @@
-*Proof.*
 By trace cyclicity,
 $\chi_\lambda(\beta_\mathcal{K}^*) = \chi_\lambda(w\,\beta_\mathcal{K}\, w^{-1}) = \chi_\lambda(\beta_\mathcal{K})$
 for every $\lambda$.  Substituting in

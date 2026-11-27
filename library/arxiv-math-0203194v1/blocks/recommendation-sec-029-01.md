@@ -1,1 +1,0 @@
-\bigskip When one deals with refined moduli problems for abelian schemes with PEL decoration as in \ref{para:1.1.4}, one should work with the group $G_{\R}$ of $B$-{\it linear} symplectic similitudes of $V_{\R}$ (notation as in \ref{para:1.1.4}).

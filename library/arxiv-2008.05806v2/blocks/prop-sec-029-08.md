@@ -1,0 +1,1 @@
+On the other hand, quite apart from the sensitivity to the pre- cise form of the assumptions underlying those models, the uncertainties in the result for mQED are much larger than ours, because the experimental determination of βp−n M , which plays a key role in that approach, is subject to large uncertainties.

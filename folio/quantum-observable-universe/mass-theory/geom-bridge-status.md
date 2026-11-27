@@ -1,5 +1,3 @@
-**Remark (logical status of the geometric bridge).**
-
 The $\mathrm{Geom}$ functional conjectures a three-layer pathway linking the algebraic $Q_8$ trace to the boundary Markov trace. This remark tracks the precise status of each connecting step.
 
 1. **Algebraic trace:** $\mathrm{tr}(h^2\text{ curvature}) = -12$. (Proved).

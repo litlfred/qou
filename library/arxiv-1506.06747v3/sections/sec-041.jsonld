@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1506.06747v3/sections/sec-041",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "E Errata in the literature",
+  "pageStart": 28,
+  "pageEnd": 30,
+  "contains": [
+    "library/arxiv-1506.06747v3/blocks/prose-sec-041",
+    "library/arxiv-1506.06747v3/blocks/prop-sec-041-01",
+    "library/arxiv-1506.06747v3/blocks/prop-sec-041-02",
+    "library/arxiv-1506.06747v3/blocks/prop-sec-041-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1506.06747v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1506.06747v3/manifest.jsonld",
+  "provenance": "ingested"
+}

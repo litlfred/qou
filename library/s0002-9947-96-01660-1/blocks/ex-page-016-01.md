@@ -1,0 +1,1 @@
+Figure 7 shows a bistellar move of order 2 in a 3-manifold. On the left-hand side there are two tetrahedra with a common horizontal face. On the right there are three tetrahedra with a common vertical edge. The bistellar move of order 3 is drawn in Figure 8.

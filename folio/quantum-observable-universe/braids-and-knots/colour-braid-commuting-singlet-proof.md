@@ -1,0 +1,3 @@
+Both braidings act on $\varepsilon_q$ by $-q^{-1}$. By linearity and commutation, $\check R_{12}\Phi(\varepsilon_q) = \Phi(\check R_{12}\varepsilon_q) = -q^{-1}\Phi(\varepsilon_q)$, and likewise for $\check R_{23}$. When $q \neq 0$ and $q^2 + 1 \neq 0$, the tensors on which both braidings act by $-q^{-1}$ are exactly the multiples of $\varepsilon_q$. So $\Phi(\varepsilon_q) = c\,\varepsilon_q$ with $c$ its $(0,1,2)$ entry.
+
+For the last claim, the colour swap $s$ is linear. If it commuted with both braidings, then $s \cdot \varepsilon_q$ would be a multiple of $\varepsilon_q$, and by [the colour-relabel proposition](#prop:colour-relabel-singlet) that forces $q^2 = 1$. $\blacksquare$

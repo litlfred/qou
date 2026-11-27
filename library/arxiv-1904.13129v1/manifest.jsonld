@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1904.13129v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1904.13129v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -24,6 +24,18 @@
     "library/arxiv-1904.13129v1/sections/sec-009"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On the regularity of critical points for O’Hara’s knot energies: From smoothness to analyticity — We prove the analyticity of smooth critical points for O’Hara’s knot energies Eα,p, with p = 1 and 2\n\n**On the regularity of critical points for O’Hara’s knot energies: From smoothness to analyticity**\n\n*Nicole Vorderobermeier*\n\n24 pp, 11 sections.\n\n**Abstract.** We prove the analyticity of smooth critical points for O’Hara’s knot energies Eα,p, with p = 1 and 2 < α < 3, subject to a ﬁxed length constraint. This implies, together with the main result in [BR13], that bounded energy critical points of Eα,1 subject to a ﬁxed length constraint are not only C∞but also analytic. Our approach is based on Cauchy’s method of majorants and a decomposition of the gradient that was adapted from the Möbius energy case E2,1 in [BV19].\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 Fractional Sobolev spaces; 2.2 Properties of analytic functions; 3 Decomposition of the first variation of E; 4 An estimate for the Q term; 5 A fractional leibniz rule and the form of PT; 6 The form of the lower order remainder terms ; 7 Proof of the main theorem by Cauchy's method; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -47,8 +59,8 @@
       "stamp_date": "30 Apr 2019"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

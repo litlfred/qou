@@ -1,0 +1,45 @@
+{
+ "q0Anchor": "independent",
+ "q0AnchorReason": "symbolic or exact rational q; never reads q0",
+ "A_det_trace_form": "-(-q + z)**5*(q*z + 1)**5*(-q**3 + q**2*z + z)*(q**3*z + q*z + 1)/q**8",
+ "A_rank_at_zD": 5,
+ "A_radical_dim_at_zD": 1,
+ "A_radical_vector": [
+  "1",
+  "-1/q",
+  "-1/q",
+  "q**(-2)",
+  "q**(-2)",
+  "-1/q**3"
+ ],
+ "A_radical_is_sign_idempotent_direction": true,
+ "B_n4_ranks_at_q=7/5": [
+  1,
+  6,
+  15,
+  22,
+  24
+ ],
+ "B_n4_dim_F3_chosen": 22,
+ "B_n4_annihilator_dim": 2,
+ "B_n4_products_checked": 156,
+ "B_n4_annihilator_failures": 0,
+ "C_n5_ranks_at_q=7/5": [
+  1,
+  8,
+  29,
+  64,
+  98,
+  116,
+  120
+ ],
+ "C_n5_ranks_at_q=11/3": [
+  1,
+  8,
+  29,
+  64,
+  98,
+  116,
+  120
+ ]
+}

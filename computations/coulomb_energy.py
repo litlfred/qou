@@ -78,6 +78,10 @@ if str(HERE) not in sys.path:
 
 import _path_bridge  # noqa: F401, E402
 import mpmath as mp  # noqa: E402
+from qou_substrate.precision import set_compute_dps  # noqa: E402
+from canonical_mass import _as_formattable_mpf  # noqa: E402
+
+set_compute_dps()
 
 # ── α_EM: DERIVED, not CODATA (fixed 2026-08-09, bean qou-usft) ──────────
 # This module used to hard-code `ALPHA_HBAR_C_MEV_FM = 1.43996`, the CODATA
@@ -187,16 +191,18 @@ def coulomb_energy_mev(Z: int, A: int) -> "mp.mpf":
     Returns an `mpf`, not a float — strictly more precise than the previous
     float64 return, so callers that wrap it in `mp.mpf(str(...))` are unaffected."""
     if Z < 2 or A < 1:
-        return mp.mpf(0)
-    return (UNIFORM_SPHERE_FACTOR * Z * (Z - 1)
-            * alpha_em_hbar_c_mev_fm() / nuclear_radius_fm(A))
+        return _as_formattable_mpf(mp.mpf(0))
+    return _as_formattable_mpf(
+        UNIFORM_SPHERE_FACTOR * Z * (Z - 1)
+        * alpha_em_hbar_c_mev_fm() / nuclear_radius_fm(A)
+    )
 
 
 def mirror_displacement_mev(Z_hi: int, Z_lo: int, A: int) -> "mp.mpf":
     """Coulomb displacement energy ΔE_C = E_C(Z_hi, A) − E_C(Z_lo, A) for a mirror
     pair at fixed A (Z_hi > Z_lo). Positive: the higher-Z member is less bound by ΔE_C.
     On a charge-symmetric strong core this equals the mirror binding split B(lo) − B(hi)."""
-    return coulomb_energy_mev(Z_hi, A) - coulomb_energy_mev(Z_lo, A)
+    return _as_formattable_mpf(coulomb_energy_mev(Z_hi, A) - coulomb_energy_mev(Z_lo, A))
 
 
 if __name__ == "__main__":

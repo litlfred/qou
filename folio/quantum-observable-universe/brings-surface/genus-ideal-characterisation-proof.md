@@ -1,4 +1,3 @@
-**Proof.**
 At genus $g = 4$ (taken as given; the cited
 [genus from Hecke completeness](#lem:genus-from-hecke-completeness)
 proves a count, not the spanning condition that would fix $g$ --

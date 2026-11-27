@@ -1,1 +1,0 @@
-The first example of this is Schur- Weyl duality in the type A case, and works in the literature that we shall recall greatly extend this first classical example to to other Lie types and to the quantum cases.

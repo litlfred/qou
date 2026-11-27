@@ -1,4 +1,3 @@
-**Proof.**
 At $q = 1$ the $q$-Hodge star reduces to the classical Hodge star,
 and the comultiplication $\Delta$ becomes cocommutative.  The
 [Frobenius pairing](#def:frobenius-pairing) $\int_A \circ \mu$ on $A \otimes A$ reduces to

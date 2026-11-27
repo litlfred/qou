@@ -1,1 +1,0 @@
-First, the web w must be connected, for if a connected component meets ¢ but not s, it may be discarded to produce a smaller counterexample; if it meets s but not ¢, then it is a smaller counterexample; and if all components meet both s and ¢, then one of them must be a smaller counterexample.

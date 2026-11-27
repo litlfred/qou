@@ -1,0 +1,195 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-registry",
+    "path": "folio/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-registry"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed. All four citation URLs had the authoring-platform segment `folio-assistant/` in the path, so none resolved; the segment is removed from canonical_mass_table_extended.py, canonical-mass-table-extended.witness.json, m-p-borromean-verification-50dps.witness.json and canonical_isotope_witness.py, which now point at `computations/` where the scripts and witnesses actually live. No prose or numbers changed.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9cdcb19e6bf5",
+          "ts": "3405c8563a6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:04.164Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "'rendered against the m_e scale ..., not an independent absolute-mass prediction' (x3)",
+        "notes": "load-bearing compliance with the 2026-08-11 absolute-mass excision ruling; kept"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9cdcb19e6bf5",
+          "ts": "3405c8563a6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:04.208Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "full-block read; no rhetorical pivot construction present"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9cdcb19e6bf5",
+          "ts": "3405c8563a6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:04.251Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "full-block read; no em dash construction present"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9cdcb19e6bf5",
+          "ts": "3405c8563a6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:04.293Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "full-block read; no triples construction present"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9cdcb19e6bf5",
+          "ts": "3405c8563a6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:04.336Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "full-block read; no closing aphorism construction present"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9cdcb19e6bf5",
+          "ts": "3405c8563a6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:04.381Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "'We detail the precise identification mechanics below'",
+        "notes": "standard scholarly signposting for a 4700-line registry, not emphasis-narration; pass"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9cdcb19e6bf5",
+          "ts": "3405c8563a6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:04.424Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "full-block read; no thesis restatement construction present"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9cdcb19e6bf5",
+          "ts": "3405c8563a6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:04.468Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "full-block read; no performed warmth construction present"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9cdcb19e6bf5",
+          "ts": "3405c8563a6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:04.510Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "full-block read; no superlative construction present"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9cdcb19e6bf5",
+          "ts": "3405c8563a6f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:04.552Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "full-block read; no nonspeakable construction present"
+      }
+    ]
+  }
+}

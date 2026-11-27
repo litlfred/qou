@@ -5,15 +5,24 @@ export default proposition({
   title:
     "The self-dual Higgs ($4_1$) has a real complex volume ($\\mathrm{CS}=0$)",
   cites: [
+    "rolfsen",
+    "witten2011",
+    "neumann-zagier1985",
+    "neumann-reid",
     "nguyen-tran-2021",
     "koelink-stokman-2003",
     "kashaev1997",
     "murakami-murakami2001",
   ],
   lean: {
-    ref: "qou:QOU.Knot.SelfDuality.higgs_complex_volume_real",
+    ref: "qou:QOU.BraidsAndKnots.FigureEightSelfDuality.higgs_complex_volume_real",
   },
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Bean qou-njry (and Finding F6 in `docs/audits/2026-11-21-expo-cite-xcheck-findings.md`): `rolfsen` and `witten2011` (§5.3) source that 4₁ is amphichiral, whereas `neumann-reid` (§3.2, Prop. 3.4) is cited strictly for the necessary arithmetic consequence that an amphicheiral hyperbolic orbifold has conjugation-closed trace field and invariant quaternion algebra.",
+    },
     {
       kind: "note",
       date: "2026-07-05",

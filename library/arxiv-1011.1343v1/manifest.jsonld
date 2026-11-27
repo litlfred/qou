@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1011.1343v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1011.1343v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -24,6 +24,18 @@
     "library/arxiv-1011.1343v1/sections/sec-009"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Chiral symmetry, nuclear forces and all that — 11 sections: Front matter; The early days at Stony Brook; A first step: Studying pion-nucleo\n\n**Chiral symmetry, nuclear forces and all that**\n\n*Ulf-G. Meißner*\n\n19 pp, 11 sections.\n\n**Outline.** Front matter; 1 The early days at Stony Brook; 2 A first step: Studying pion-nucleon scatteri; 3 Flashback: The Texas revolution; 4 The chiral theory of nuclear forces as a pre; 4.1 The nucleon-nucleon interaction; 4.2 Three-nucleon interactions; 4.3 The nuclear matter problem; 4.4 Back to square one - meson-exchange curren; 5 Flash forward: Combining nuclear EFT with la; 6 Some final words",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -46,8 +58,8 @@
       "stamp_date": "5 Nov 2010"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

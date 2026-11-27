@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.05082v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.05082v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -33,6 +33,18 @@
     "library/arxiv-1610.05082v3/sections/sec-018"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL — Weighted dependency graphs have been recently introduced by the second author, as a toolbox to prove central limit theorems.\n\n**WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL**\n\n*JEHANNE DOUSSE AND VALENTIN FÉRAY*\n\n24 pp, 20 sections.\n\n**Abstract.** Weighted dependency graphs have been recently introduced by the second author, as a toolbox to prove central limit theorems. In this paper, we prove that spins in the d-dimensional Ising model display such a weighted dependency structure. We use this to obtain various central limit theorems for the number of occurrences of local and global patterns in a growing box.\n\n**Outline.** Front matter; 1 Introduction and statement of results; 1.1 Cumulants in the Ising model; 1.2 Weighted dependency graphs; 1.3 Central limit theorems; 2.1 The Ising model; 1.4 Outline of the paper; 2 Preliminaries; 2.2 Joint cumulants; 2.3 Spanning trees of maximal weight and tree ; 2.4 Weighted dependency graphs; 3 Cluster expansions and bounds on joint cumul; 3.1 At very high temperature, without magnetic; 3.2 At very low temperature, without magnetic ; 4.1 Weighted dependency graph for the i's and ; 3.3 With a strong magnetic field; 4 Weighted dependency graphs and central limit; 4.2 Central limit theorem for occurrences of g",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -54,8 +66,8 @@
       "stamp_date": "27 Jun 2017"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

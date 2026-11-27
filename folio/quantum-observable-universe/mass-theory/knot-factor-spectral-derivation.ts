@@ -5,10 +5,13 @@ export default proposition({
   title:
     "Knot factor $a_K$ as a central Gram pairing",
   lean: {
-    ref: "qou:QOU.BraidKnot.knot_factor_spectral_form",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.knot_factor_spectral_form",
     validation: "not_checked",
   },
-  uses: ["rem:gram-matrix-spectral-connection"],
+  // rem:gram-matrix-spectral-connection dropped from uses[] 2026-11-20 (owner choice, bean qou-tm3c):
+  // not cited in the statement or proof. A remark carries no premise; the edge only put this block
+  // downstream of a conjecture.
+  uses: [],
   tags: [
     "knot-factor",
     "chirality",

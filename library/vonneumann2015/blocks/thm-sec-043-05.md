@@ -1,0 +1,1 @@
+(Connes-van Daele) S(M) \ {0} is a closed subgroup of the positive real numbers. There are only three kinds of closed subgroups of R+. Deﬁnition 14.2.4. A factor M is called type IIIλ for 0 ≤λ ≤1 if λ = 0 : S(M) = {0} ∪{1} 0 < λ < 1 : S(M) = {0} ∪{λn : n ∈Z} λ = 1 : S(M) = {0} ∪R+

@@ -3,7 +3,7 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Fintype.BigOperators
 import Mathlib.Data.Fintype.Card
 import Mathlib.Tactic.Linarith
-import QOU.BraidKnot.KnotFactorAmphicheiral
+import BraidKnotOctonion.KnotFactorAmphicheiral
 
 
 /-!

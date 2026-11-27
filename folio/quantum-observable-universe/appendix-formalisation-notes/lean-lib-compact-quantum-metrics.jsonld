@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-lean-lib-compact-quantum-metrics",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:lean-lib-compact-quantum-metrics",
+  "kind": "remark",
+  "title": "Community Library 4 (CompactQuantumMetrics): Ordered-field Rieffel Lipschitz seminorms and Kantorovich duality",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/tbl-lean-community-libraries-dag",
+    "papers/quantum-observable-universe/blocks/rem-lean-lib-twisted-frobenius-hopf"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/tbl-lean-community-libraries-dag",
+  "cites": [
+    "references/rieffel1999",
+    "references/rieffel2004",
+    "references/connes1994"
+  ],
+  "tags": [
+    "lean-infrastructure",
+    "reservoir",
+    "noncommutative-geometry",
+    "quantum-metrics",
+    "appendix"
+  ],
+  "text": "lean-lib-compact-quantum-metrics.md",
+  "provenance": "authored"
+}

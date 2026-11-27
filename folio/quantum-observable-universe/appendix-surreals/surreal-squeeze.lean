@@ -55,6 +55,7 @@
 -/
 
 import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Analysis.Real.Hyperreal
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Positivity
@@ -63,6 +64,48 @@ import Mathlib.Tactic.FieldSimp
 namespace QOU.AlgebraicSubstrate
 
 variable {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+
+/-- **Non-Archimedean ordered-field squeeze.**  Given a strictly monotone ring
+embedding `ι : ℝ →+* F` of the standard reals into a linearly ordered field `F`
+and a positive infinitesimal `ε : F` (`0 < ε` and `∀ r : ℝ, 0 < r → ε < ι r`),
+for every standard real `δ > 0`, the size domination `ε < (ι δ)²` and `ε < 1`
+are **derived** from infinitesimality (`δ² > 0` in `ℝ`), yielding
+`ε³ < (ι δ)² · ε⁻¹`. -/
+theorem surreal_squeeze_nonarchimedean
+    {F : Type*} [Field F] [LinearOrder F] [IsStrictOrderedRing F]
+    (ι : ℝ →+* F) (hι : StrictMono ι) {ε : F}
+    (hε_pos : 0 < ε) (hε_inf : ∀ r : ℝ, 0 < r → ε < ι r)
+    (δ : ℝ) (hδ : 0 < δ) :
+    ε ^ 3 < (ι δ) ^ 2 * ε⁻¹ := by
+  have hι_pos : 0 < ι δ := by simpa only [map_zero] using hι hδ
+  have hε1 : ε < 1 := by simpa only [map_one] using hε_inf 1 zero_lt_one
+  have hεδ : ε < (ι δ) ^ 2 := by
+    have hδ2 : 0 < δ ^ 2 := sq_pos_of_pos hδ
+    have h := hε_inf (δ ^ 2) hδ2
+    rwa [map_pow] at h
+  have _ : 0 < (ι δ) ^ 2 := sq_pos_of_pos hι_pos
+  rw [← div_eq_mul_inv]
+  exact (pow_lt_one₀ hε_pos.le hε1 (by norm_num)).trans ((one_lt_div hε_pos).mpr hεδ)
+
+/-- Canonical ordered-field embedding `ℝ →+* ℝ*` into Mathlib's hyperreals. -/
+noncomputable def hyperrealStandardEmbedding : ℝ →+* ℝ* where
+  toFun r := (r : ℝ*)
+  map_one' := Hyperreal.coe_one
+  map_mul' := Hyperreal.coe_mul
+  map_zero' := Hyperreal.coe_zero
+  map_add' := Hyperreal.coe_add
+
+theorem hyperrealStandardEmbedding_strictMono : StrictMono hyperrealStandardEmbedding := by
+  intro a b hab
+  exact Hyperreal.coe_lt_coe.mpr hab
+
+/-- Concrete non-vacuous instantiation on `ℝ*` with `ε = Hyperreal.epsilon`:
+for every standard real `δ > 0`, `Hyperreal.epsilon ^ 3 < (δ : ℝ*) ^ 2 * Hyperreal.epsilon⁻¹`. -/
+theorem surreal_squeeze_hyperreal (δ : ℝ) (hδ : 0 < δ) :
+    Hyperreal.epsilon ^ 3 < (hyperrealStandardEmbedding δ) ^ 2 * Hyperreal.epsilon⁻¹ :=
+  surreal_squeeze_nonarchimedean hyperrealStandardEmbedding
+    hyperrealStandardEmbedding_strictMono Hyperreal.epsilon_pos
+    (fun r hr => Hyperreal.epsilon_lt_pos r hr) δ hδ
 
 /-- **Surreal squeeze.**  In any linearly ordered field, if `ε` is a positive
 infinitesimal (`0 < ε < 1`) dominated by the standard-scale deviation

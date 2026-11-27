@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.0853v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.0853v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -127,6 +127,18 @@
     "library/arxiv-0903.0853v3/sections/sec-112"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Local analytic classification of q-difference equations — 114 sections: Front matter; The problem; The generalized Riemann problem an\n\n**Local analytic classification of q-difference equations**\n\n*Jacques Sauloy*\n\n176 pp, 114 sections.\n\n**Outline.** Front matter; 1 The problem; 1.1 The generalized Riemann problem and the al; 1.2 The Birkhoff-Guenther program; 1.3 What this paper could contain but does not; 1.3.1 About the asumption that the slopes are ; 2 Contents of the paper; 2.1 About the wealth of summation processes; 3 General notations; 3.1 Theta Functions; Acknowledgements; 4 The category of $q$-difference modules; 4.1 Some general facts about difference module; 4.1.1 Unity; 4.1.2 Internal Hom; 4.1.3 Tensor product; 4.1.4 Extension of scalars; 4.2.1 The functor of solutions",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -148,8 +160,8 @@
       "stamp_date": "30 Jan 2012"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

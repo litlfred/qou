@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/gt-v10-n3-p07-p/blocks/thm-sec-007-01",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 24,
+  "pageEnd": 26,
+  "text": "thm-sec-007-01.md",
+  "derivedFrom": "library/gt-v10-n3-p07-p/sections/sec-007",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gt-v10-n3-p07-p/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-007-31-the-failure-of-transversal-simplicity-for-cer.md (p. 24-26)",
+    "claim_id": "gt-v10-n3-p07-p#theorem:3",
+    "lean_status": "unformalized"
+  }
+}

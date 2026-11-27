@@ -1,0 +1,1 @@
+Suppose Γ is a Kleinian or Fuchsian group which is derived from a quaternion algebra and γ ∈Γ is a loxodromic or hyperbolic element. Then there is a group Γ0 commensurable with Γ containing an element γ0 with γ2 0 = γ in PSL2C.

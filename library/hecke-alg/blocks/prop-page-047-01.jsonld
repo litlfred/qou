@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/hecke-alg/blocks/prop-page-047-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 47,
+  "pageEnd": 47,
+  "text": "prop-page-047-01.md",
+  "derivedFrom": "library/hecke-alg/sections/page-047",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hecke-alg/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.15",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/page-047.md (p. 47-47)",
+    "claim_id": "hecke-alg#proposition:4.15",
+    "lean_status": "doc-cited-in-lean-unlinked-claim"
+  }
+}

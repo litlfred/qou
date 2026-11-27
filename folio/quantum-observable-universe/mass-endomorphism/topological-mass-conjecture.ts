@@ -12,7 +12,7 @@ export default proposition({
   authorNotes: [
     {
       kind: "status",
-      body: "The holonomy form of the :refterm[descent]{#descent} piece is the main gap:\n[thm:topological-mass](#thm\\:topological-mass) identifies the :refterm[descent]{#descent}\ntrace categorically but does not express it as a gauge holonomy.\nBridging these two formulations is the core proof obligation.",
+      body: "The holonomy form of the :refterm[descent]{#descent} piece is the main gap:\n[conj:topological-mass](#thm\\:topological-mass) conjectures the :refterm[descent]{#descent}\ntrace decomposition categorically (only its upper bound is proved) but does not express it as a gauge holonomy.\nBridging these two formulations is the core proof obligation.",
     },
   ],
 });

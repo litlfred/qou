@@ -1,0 +1,1024 @@
+{
+ "preregistration": "PREREGISTRATION-hydrogen-from-photons.md (ddf883a5d25)",
+ "element": "W = gamma(0,0,q h).gamma(0,0,-q^-1 h) . g . K on C^2^4, h = q - 1/q",
+ "arms": {
+  "proton_left|G0|C-cable": {
+   "O+": {
+    "B1": {
+     "exact": "-(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/q**10",
+     "q=1": "3",
+     "q0": "1.9725151702387932439",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "-(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/q**8",
+     "q=1": "3",
+     "q0": "2.4302421563738773664",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "(q - 1)*(q + 1)*(q**12 - 3*q**10 + 2*q**8 - 5*q**6 + 3*q**4 - 2*q**2 + 1)/(2*q**8)",
+     "q=1": "0",
+     "q0": "-0.33595851442665551365",
+     "zero_identically": false
+    }
+   },
+   "O-": {
+    "B1": {
+     "exact": "-(2*q**10 - 3*q**8 + 4*q**6 - 2*q**4 + 3*q**2 - 1)/q**10",
+     "q=1": "-3",
+     "q0": "-2.0804885424860175509",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "-(2*q**10 - 3*q**8 + 4*q**6 - 2*q**4 + 3*q**2 - 1)/q**12",
+     "q=1": "-3",
+     "q0": "-1.688636336423720087",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "-(q - 1)*(q + 1)*(q**12 - 2*q**10 + 3*q**8 - 5*q**6 + 2*q**4 - 3*q**2 + 1)/(2*q**10)",
+     "q=1": "0",
+     "q0": "0.17487680694392990776",
+     "zero_identically": false
+    }
+   },
+   "S_B1": {
+    "exact": "-(q - 1)**2*(q + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/q**6",
+    "q=1": "0",
+    "q0": "-0.107973372247224307"
+   },
+   "S_B2": {
+    "exact": "-(q - 1)*(q + 1)*(q**14 - 2*q**12 + q**10 - 2*q**8 - 2*q**6 - q**4 - 2*q**2 + 1)/q**12",
+    "q=1": "0",
+    "q0": "0.74160581995015727946"
+   }
+  },
+  "proton_left|G0|C-adj": {
+   "O+": {
+    "B1": {
+     "exact": "-(q**14 - 3*q**12 + 3*q**10 - 2*q**8 - 3*q**6 + 3*q**4 - 3*q**2 + 1)/q**8",
+     "q=1": "3",
+     "q0": "2.6162348951660533947",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "-(q**14 - 3*q**12 + 3*q**10 - 2*q**8 - 3*q**6 + 3*q**4 - 3*q**2 + 1)/q**6",
+     "q=1": "3",
+     "q0": "3.2233386232660624387",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "-(q - 1)*(q + 1)*(q**10 - 3*q**8 + 6*q**6 - 5*q**4 + 3*q**2 - 1)/(2*q**6)",
+     "q=1": "0",
+     "q0": "-0.139831308527516768",
+     "zero_identically": false
+    }
+   },
+   "O-": {
+    "B1": {
+     "exact": "(q**14 - 3*q**12 + 2*q**10 - 4*q**6 + 3*q**4 - 3*q**2 + 1)/q**8",
+     "q=1": "-3",
+     "q0": "-2.6599411036985753841",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "(q**14 - 3*q**12 + 2*q**10 - 4*q**6 + 3*q**4 - 3*q**2 + 1)/q**10",
+     "q=1": "-3",
+     "q0": "-2.1589511832087468878",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "(q - 1)*(q + 1)*(q**10 - 4*q**8 + 6*q**6 - 4*q**4 + 3*q**2 - 1)/(2*q**8)",
+     "q=1": "0",
+     "q0": "0.073904348155717529341",
+     "zero_identically": false
+    }
+   },
+   "S_B1": {
+    "exact": "-(q - 1)**2*(q + 1)**2/q**2",
+    "q=1": "0",
+    "q0": "-0.043706208532521989402"
+   },
+   "S_B2": {
+    "exact": "-(q - 1)*(q + 1)*(q**16 - 2*q**14 + q**10 - 4*q**8 - q**6 - 2*q**2 + 1)/q**10",
+    "q=1": "0",
+    "q0": "1.0643874400573155509"
+   }
+  },
+  "proton_left|GV|C-cable": {
+   "O+": {
+    "B1": {
+     "exact": "(q - 1)**2*(q + 1)**2*(q**4 + 1)*(q**8 - 2*q**6 - 2*q**2 + 1)/q**12",
+     "q=1": "0",
+     "q0": "-0.11243216069033702375",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "(q - 1)**2*(q + 1)**2*(q**4 + 1)*(q**8 - 2*q**6 - 2*q**2 + 1)/q**10",
+     "q=1": "0",
+     "q0": "-0.13852231950580169331",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "-(q - 1)**2*(q + 1)**2*(q**14 - 3*q**12 + 3*q**10 - 4*q**8 + 6*q**6 - 2*q**4 + 3*q**2 - 1)/(2*q**10)",
+     "q=1": "0",
+     "q0": "-0.03791446402451521513",
+     "zero_identically": false
+    }
+   },
+   "O-": {
+    "B1": {
+     "exact": "-(q - 1)**2*(q + 1)**2*(q**12 - q**10 + 2*q**8 - 3*q**6 + q**4 - 2*q**2 + 1)/q**12",
+     "q=1": "0",
+     "q0": "0.0044587884431127167486",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "-(q - 1)**2*(q + 1)**2*(q**12 - q**10 + 2*q**8 - 3*q**6 + q**4 - 2*q**2 + 1)/q**14",
+     "q=1": "0",
+     "q0": "0.0036189923797750897967",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "(q - 1)**2*(q + 1)**2*(q**14 - 3*q**12 + 2*q**10 - 6*q**8 + 4*q**6 - 3*q**4 + 3*q**2 - 1)/(2*q**12)",
+     "q=1": "0",
+     "q0": "-0.067031765531344488283",
+     "zero_identically": false
+    }
+   },
+   "S_B1": {
+    "exact": "-(q - 1)**2*(q + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/q**6",
+    "q=1": "0",
+    "q0": "-0.107973372247224307"
+   },
+   "S_B2": {
+    "exact": "(q - 1)**2*(q + 1)**2*(q**16 - 2*q**14 - 3*q**10 - q**8 + q**6 + 2*q**2 - 1)/q**14",
+    "q=1": "0",
+    "q0": "-0.13490332712602660352"
+   }
+  },
+  "proton_left|GV|C-adj": {
+   "O+": {
+    "B1": {
+     "exact": "(q - 1)**2*(q + 1)**2*(q**14 - 2*q**12 + q**10 - 2*q**8 - 3*q**6 + q**4 - 2*q**2 + 1)/q**10",
+     "q=1": "0",
+     "q0": "-0.18991429128773180465",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "(q - 1)**2*(q + 1)**2*(q**14 - 2*q**12 + q**10 - 2*q**8 - 3*q**6 + q**4 - 2*q**2 + 1)/q**8",
+     "q=1": "0",
+     "q0": "-0.23398436866239164383",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "(q - 1)**2*(q + 1)**2*(q**12 - 3*q**10 + 5*q**8 - 7*q**6 + 4*q**4 - 3*q**2 + 1)/(2*q**8)",
+     "q=1": "0",
+     "q0": "-0.037552967689057411508",
+     "zero_identically": false
+    }
+   },
+   "O-": {
+    "B1": {
+     "exact": "-(q - 1)**2*(q + 1)**2*(q**14 - 2*q**12 + q**10 - q**8 - 3*q**6 + q**4 - 2*q**2 + 1)/q**10",
+     "q=1": "0",
+     "q0": "0.14620808275520981524",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "-(q - 1)**2*(q + 1)**2*(q**14 - 2*q**12 + q**10 - q**8 - 3*q**6 + q**4 - 2*q**2 + 1)/q**12",
+     "q=1": "0",
+     "q0": "0.11867033928688549403",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "-(q - 1)**3*(q + 1)**3*(q**10 - 2*q**8 + 4*q**6 - 2*q**4 + 2*q**2 - 1)/(2*q**10)",
+     "q=1": "0",
+     "q0": "-0.0091102511761186422631",
+     "zero_identically": false
+    }
+   },
+   "S_B1": {
+    "exact": "-(q - 1)**2*(q + 1)**2/q**2",
+    "q=1": "0",
+    "q0": "-0.043706208532521989402"
+   },
+   "S_B2": {
+    "exact": "(q - 1)**2*(q + 1)**2*(q**18 - 2*q**16 - 4*q**10 + 2*q**8 + q**6 + 2*q**2 - 1)/q**12",
+    "q=1": "0",
+    "q0": "-0.1153140293755061498"
+   }
+  },
+  "proton_left|Gs1|C-cable": {
+   "O+": {
+    "B1": {
+     "exact": "(q**10 - 2*q**8 + 3*q**6 - 2*q**4 + 2*q**2 - 1)/q**9",
+     "q=1": "1",
+     "q0": "0.88728024698050759406",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "(q**10 - 2*q**8 + 3*q**6 - 2*q**4 + 2*q**2 - 1)/q**7",
+     "q=1": "1",
+     "q0": "1.0931758058260268136",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "-(q - 1)*(q + 1)*(q**10 - q**8 + 3*q**6 - 2*q**4 + q**2 - 1)/(2*q**7)",
+     "q=1": "0",
+     "q0": "-0.18676112963976031173",
+     "zero_identically": false
+    }
+   },
+   "O-": {
+    "B1": {
+     "exact": "-(q**12 - 2*q**8 + 2*q**6 - q**4 + 2*q**2 - 1)/q**9",
+     "q=1": "-1",
+     "q0": "-1.0071283776823689034",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "-(q**12 - 2*q**8 + 2*q**6 - q**4 + 2*q**2 - 1)/q**11",
+     "q=1": "-1",
+     "q0": "-0.81743952887418985978",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "-(q - 1)*(q + 1)*(2*q**2 - 1)*(q**6 - q**4 - 1)/(2*q**9)",
+     "q=1": "0",
+     "q0": "0.043023714071828955067",
+     "zero_identically": false
+    }
+   },
+   "S_B1": {
+    "exact": "-(q - 1)**2*(q + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/q**5",
+    "q=1": "0",
+    "q0": "-0.11984813070186130936"
+   },
+   "S_B2": {
+    "exact": "(q - 1)*(q + 1)*(q**12 - 2*q**10 + q**8 + q**6 + q**4 + q**2 - 1)/q**11",
+    "q=1": "0",
+    "q0": "0.27573627695183695377"
+   }
+  },
+  "proton_left|Gs1|C-adj": {
+   "O+": {
+    "B1": {
+     "exact": "(q**12 - 2*q**10 + q**8 + 2*q**6 - 2*q**4 + 2*q**2 - 1)/q**7",
+     "q=1": "1",
+     "q0": "1.1044333561864925003",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "(q**12 - 2*q**10 + q**8 + 2*q**6 - 2*q**4 + 2*q**2 - 1)/q**5",
+     "q=1": "1",
+     "q0": "1.360719826953203815",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "(q - 1)*(q + 1)*(q**8 - 4*q**6 + 3*q**4 - 2*q**2 + 1)/(2*q**5)",
+     "q=1": "0",
+     "q0": "-0.14370619488136850416",
+     "zero_identically": false
+    }
+   },
+   "O-": {
+    "B1": {
+     "exact": "-(q**4 + q**2 - 1)*(q**8 - 2*q**6 + 2*q**4 - q**2 + 1)/q**7",
+     "q=1": "-1",
+     "q0": "-1.1529463115908575653",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "-(q**4 + q**2 - 1)*(q**8 - 2*q**6 + 2*q**4 - q**2 + 1)/q**9",
+     "q=1": "-1",
+     "q0": "-0.93579320238487265901",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "-(q - 1)*(q + 1)*(2*q**8 - 4*q**6 + 2*q**4 - 2*q**2 + 1)/(2*q**7)",
+     "q=1": "0",
+     "q0": "0.072695333704231748711",
+     "zero_identically": false
+    }
+   },
+   "S_B1": {
+    "exact": "-(q - 1)**2*(q + 1)**2/q",
+    "q=1": "0",
+    "q0": "-0.048512955404365064944"
+   },
+   "S_B2": {
+    "exact": "(q - 1)*(q + 1)*(q**14 - q**12 - q**10 + 2*q**8 + q**6 + q**2 - 1)/q**9",
+    "q=1": "0",
+    "q0": "0.424926624568331156"
+   }
+  },
+  "proton_left|GLm|C-cable": {
+   "O+": {
+    "B1": {
+     "exact": "(q - 1)*(q + 1)*(q**10 - q**8 + 2*q**6 - q**4 + q**2 - 1)/q**10",
+     "q=1": "0",
+     "q0": "0.24433921103501660608",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "(q - 1)*(q + 1)*(q**10 - q**8 + 2*q**6 - q**4 + q**2 - 1)/q**8",
+     "q=1": "0",
+     "q0": "0.30103872460486305684",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "-(q - 1)**2*(q + 1)**2*(q**10 + 3*q**6 + q**2 - 1)/(2*q**8)",
+     "q=1": "0",
+     "q0": "-0.10144281655282266001",
+     "zero_identically": false
+    }
+   },
+   "O-": {
+    "B1": {
+     "exact": "-(q - 1)*(q + 1)*(q**12 + q**10 - q**8 + q**6 - q**4 + q**2 - 1)/q**10",
+     "q=1": "0",
+     "q0": "-0.37736806929687087223",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "-(q - 1)*(q + 1)*(q**12 + q**10 - q**8 + q**6 - q**4 + q**2 - 1)/q**12",
+     "q=1": "0",
+     "q0": "-0.30629221022256279613",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "-(q - 1)**2*(q + 1)**2*(2*q**8 - q**6 + q**4 - q**2 + 1)/(2*q**10)",
+     "q=1": "0",
+     "q0": "-0.038164672346003907695",
+     "zero_identically": false
+    }
+   },
+   "S_B1": {
+    "exact": "-(q - 1)**2*(q + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/q**4",
+    "q=1": "0",
+    "q0": "-0.13302885826185426616"
+   },
+   "S_B2": {
+    "exact": "(q - 1)**2*(q + 1)**2*(q**12 - q**10 - 1)/q**12",
+    "q=1": "0",
+    "q0": "-0.005253485617699739285"
+   }
+  },
+  "proton_left|GLm|C-adj": {
+   "O+": {
+    "B1": {
+     "exact": "(q - 1)*(q + 1)*(q**12 - q**10 + 2*q**6 - q**4 + q**2 - 1)/q**8",
+     "q=1": "0",
+     "q0": "0.31353436439922505601",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "(q - 1)*(q + 1)*(q**12 - q**10 + 2*q**6 - q**4 + q**2 - 1)/q**6",
+     "q=1": "0",
+     "q0": "0.38629078312368168915",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "(q - 1)**2*(q + 1)**2*(q**8 - 3*q**6 + q**4 - q**2 + 1)/(2*q**6)",
+     "q=1": "0",
+     "q0": "-0.029088143708539123671",
+     "zero_identically": false
+    }
+   },
+   "O-": {
+    "B1": {
+     "exact": "-(q - 1)*(q + 1)*(q**12 - q**8 + 2*q**6 - q**4 + q**2 - 1)/q**8",
+     "q=1": "0",
+     "q0": "-0.36738270588404313102",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "-(q - 1)*(q + 1)*(q**12 - q**8 + 2*q**6 - q**4 + q**2 - 1)/q**10",
+     "q=1": "0",
+     "q0": "-0.29818755251983468108",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "-(q - 1)**2*(q + 1)**2*(2*q**8 - 2*q**6 + q**4 - q**2 + 1)/(2*q**8)",
+     "q=1": "0",
+     "q0": "-0.025167773960103547664",
+     "zero_identically": false
+    }
+   },
+   "S_B1": {
+    "exact": "-(q - 1)**2*(q + 1)**2",
+    "q=1": "0",
+    "q0": "-0.053848341484818075008"
+   },
+   "S_B2": {
+    "exact": "(q - 1)**2*(q + 1)**2*(q**14 - q**10 + q**8 + q**6 - 1)/q**10",
+    "q=1": "0",
+    "q0": "0.088103230603847008068"
+   }
+  },
+  "proton_right|G0|C-cable": {
+   "O+": {
+    "B1": {
+     "exact": "(2*q**10 - 3*q**8 + 4*q**6 - 2*q**4 + 3*q**2 - 1)/q**10",
+     "q=1": "3",
+     "q0": "2.0804885424860175509",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "(2*q**10 - 3*q**8 + 4*q**6 - 2*q**4 + 3*q**2 - 1)/q**8",
+     "q=1": "3",
+     "q0": "2.5632710146357316326",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "(q - 1)*(q + 1)*(q**12 - 2*q**10 + 3*q**8 - 5*q**6 + 2*q**4 - 3*q**2 + 1)/(2*q**10)",
+     "q=1": "0",
+     "q0": "-0.17487680694392990776",
+     "zero_identically": false
+    }
+   },
+   "O-": {
+    "B1": {
+     "exact": "(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/q**10",
+     "q=1": "-3",
+     "q0": "-1.9725151702387932439",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/q**12",
+     "q=1": "-3",
+     "q0": "-1.6009993434677289311",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "-(q - 1)*(q + 1)*(q**12 - 3*q**10 + 2*q**8 - 5*q**6 + 3*q**4 - 2*q**2 + 1)/(2*q**8)",
+     "q=1": "0",
+     "q0": "0.33595851442665551365",
+     "zero_identically": false
+    }
+   },
+   "S_B1": {
+    "exact": "(q - 1)**2*(q + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/q**6",
+    "q=1": "0",
+    "q0": "0.107973372247224307"
+   },
+   "S_B2": {
+    "exact": "(q - 1)*(q + 1)*(2*q**12 + q**8 + 2*q**6 + 2*q**2 - 1)/q**12",
+    "q=1": "0",
+    "q0": "0.96227167116800270144"
+   }
+  },
+  "proton_right|G0|C-adj": {
+   "O+": {
+    "B1": {
+     "exact": "-(q**12 - 5*q**10 + 8*q**8 - 11*q**6 + 7*q**4 - 4*q**2 + 1)/q**8",
+     "q=1": "3",
+     "q0": "2.6638450580543229995",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "-(q**12 - 5*q**10 + 8*q**8 - 11*q**6 + 7*q**4 - 4*q**2 + 1)/q**6",
+     "q=1": "3",
+     "q0": "3.281996841295834391",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "(q - 1)*(q + 1)*(q**10 - 3*q**8 + 5*q**6 - 6*q**4 + 3*q**2 - 1)/(2*q**6)",
+     "q=1": "0",
+     "q0": "-0.070368041372986168572",
+     "zero_identically": false
+    }
+   },
+   "O-": {
+    "B1": {
+     "exact": "(q**12 - 4*q**10 + 6*q**8 - 10*q**6 + 7*q**4 - 4*q**2 + 1)/q**8",
+     "q=1": "-3",
+     "q0": "-2.62013884952180101",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "(q**12 - 4*q**10 + 6*q**8 - 10*q**6 + 7*q**4 - 4*q**2 + 1)/q**10",
+     "q=1": "-3",
+     "q0": "-2.1266455341739477923",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "-(q - 1)*(q + 1)*(q**10 - 3*q**8 + 4*q**6 - 6*q**4 + 4*q**2 - 1)/(2*q**4)",
+     "q=1": "0",
+     "q0": "0.13547439307716602172",
+     "zero_identically": false
+    }
+   },
+   "S_B1": {
+    "exact": "(q - 1)**2*(q + 1)**2/q**2",
+    "q=1": "0",
+    "q0": "0.043706208532521989402"
+   },
+   "S_B2": {
+    "exact": "-(q - 1)*(q + 1)*(q**14 - 4*q**12 + 3*q**10 - 4*q**8 - 3*q**6 + 3*q**4 - 3*q**2 + 1)/q**10",
+    "q=1": "0",
+    "q0": "1.1553513071218865987"
+   }
+  },
+  "proton_right|GV|C-cable": {
+   "O+": {
+    "B1": {
+     "exact": "(q - 1)**2*(q + 1)**2*(q**12 - q**10 + 2*q**8 - 3*q**6 + q**4 - 2*q**2 + 1)/q**12",
+     "q=1": "0",
+     "q0": "-0.0044587884431127167486",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "(q - 1)**2*(q + 1)**2*(q**12 - q**10 + 2*q**8 - 3*q**6 + q**4 - 2*q**2 + 1)/q**10",
+     "q=1": "0",
+     "q0": "-0.0054934612439474271582",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "-(q - 1)**2*(q + 1)**2*(q**14 - 3*q**12 + 2*q**10 - 6*q**8 + 4*q**6 - 3*q**4 + 3*q**2 - 1)/(2*q**12)",
+     "q=1": "0",
+     "q0": "0.067031765531344488283",
+     "zero_identically": false
+    }
+   },
+   "O-": {
+    "B1": {
+     "exact": "-(q - 1)**2*(q + 1)**2*(q**4 + 1)*(q**8 - 2*q**6 - 2*q**2 + 1)/q**12",
+     "q=1": "0",
+     "q0": "0.11243216069033702375",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "-(q - 1)**2*(q + 1)**2*(q**4 + 1)*(q**8 - 2*q**6 - 2*q**2 + 1)/q**14",
+     "q=1": "0",
+     "q0": "0.091255985335766245617",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "(q - 1)**2*(q + 1)**2*(q**14 - 3*q**12 + 3*q**10 - 4*q**8 + 6*q**6 - 2*q**4 + 3*q**2 - 1)/(2*q**10)",
+     "q=1": "0",
+     "q0": "0.03791446402451521513",
+     "zero_identically": false
+    }
+   },
+   "S_B1": {
+    "exact": "(q - 1)**2*(q + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/q**6",
+    "q=1": "0",
+    "q0": "0.107973372247224307"
+   },
+   "S_B2": {
+    "exact": "(q - 1)**2*(q + 1)**2*(q**16 - q**14 + q**12 - q**10 + 2*q**6 + 2*q**2 - 1)/q**14",
+    "q=1": "0",
+    "q0": "0.085762524091818818458"
+   }
+  },
+  "proton_right|GV|C-adj": {
+   "O+": {
+    "B1": {
+     "exact": "(q - 1)**2*(q + 1)**2*(q**12 - 3*q**10 + 4*q**8 - 7*q**6 + 4*q**4 - 3*q**2 + 1)/q**10",
+     "q=1": "0",
+     "q0": "-0.10466622295732089602",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "(q - 1)**2*(q + 1)**2*(q**12 - 3*q**10 + 4*q**8 - 7*q**6 + 4*q**4 - 3*q**2 + 1)/q**8",
+     "q=1": "0",
+     "q0": "-0.12895427686293289802",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "-(q - 1)**2*(q + 1)**2*(q**12 - 3*q**10 + 4*q**8 - 7*q**6 + 5*q**4 - 3*q**2 + 1)/(2*q**8)",
+     "q=1": "0",
+     "q0": "0.046739984309209348139",
+     "zero_identically": false
+    }
+   },
+   "O-": {
+    "B1": {
+     "exact": "-(q - 1)**2*(q + 1)**2*(q**12 - 3*q**10 + 3*q**8 - 7*q**6 + 4*q**4 - 3*q**2 + 1)/q**10",
+     "q=1": "0",
+     "q0": "0.14837243148984288543",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "-(q - 1)**2*(q + 1)**2*(q**12 - 3*q**10 + 3*q**8 - 7*q**6 + 4*q**4 - 3*q**2 + 1)/q**12",
+     "q=1": "0",
+     "q0": "0.12042704106310720325",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "(q - 1)**3*(q + 1)**3*(q**10 - 2*q**8 + 2*q**6 - 4*q**4 + 2*q**2 - 1)/(2*q**6)",
+     "q=1": "0",
+     "q0": "-0.0088088373672073835001",
+     "zero_identically": false
+    }
+   },
+   "S_B1": {
+    "exact": "(q - 1)**2*(q + 1)**2/q**2",
+    "q=1": "0",
+    "q0": "0.043706208532521989402"
+   },
+   "S_B2": {
+    "exact": "(q - 1)**2*(q + 1)**2*(q**16 - 3*q**14 + 3*q**12 - 4*q**10 + q**8 + 4*q**6 - 3*q**4 + 3*q**2 - 1)/q**12",
+    "q=1": "0",
+    "q0": "-0.0085272357998256947753"
+   }
+  },
+  "proton_right|Gs1|C-cable": {
+   "O+": {
+    "B1": {
+     "exact": "(q**12 - 2*q**8 + 2*q**6 - q**4 + 2*q**2 - 1)/q**9",
+     "q=1": "1",
+     "q0": "1.0071283776823689034",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "(q**12 - 2*q**8 + 2*q**6 - q**4 + 2*q**2 - 1)/q**7",
+     "q=1": "1",
+     "q0": "1.2408349893845541275",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "(q - 1)*(q + 1)*(2*q**2 - 1)*(q**6 - q**4 - 1)/(2*q**9)",
+     "q=1": "0",
+     "q0": "-0.043023714071828955067",
+     "zero_identically": false
+    }
+   },
+   "O-": {
+    "B1": {
+     "exact": "-(q**10 - 2*q**8 + 3*q**6 - 2*q**4 + 2*q**2 - 1)/q**9",
+     "q=1": "-1",
+     "q0": "-0.88728024698050759406",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "-(q**10 - 2*q**8 + 3*q**6 - 2*q**4 + 2*q**2 - 1)/q**11",
+     "q=1": "-1",
+     "q0": "-0.7201643436363060537",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "(q - 1)*(q + 1)*(q**10 - q**8 + 3*q**6 - 2*q**4 + q**2 - 1)/(2*q**7)",
+     "q=1": "0",
+     "q0": "0.18676112963976031173",
+     "zero_identically": false
+    }
+   },
+   "S_B1": {
+    "exact": "(q - 1)**2*(q + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/q**5",
+    "q=1": "0",
+    "q0": "0.11984813070186130936"
+   },
+   "S_B2": {
+    "exact": "(q - 1)*(q + 1)*(q**14 + q**12 - q**10 + q**6 + q**2 - 1)/q**11",
+    "q=1": "0",
+    "q0": "0.52067064574824807385"
+   }
+  },
+  "proton_right|Gs1|C-adj": {
+   "O+": {
+    "B1": {
+     "exact": "(3*q**10 - 7*q**8 + 9*q**6 - 6*q**4 + 3*q**2 - 1)/q**7",
+     "q=1": "1",
+     "q0": "1.3524700235598980114",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "(3*q**10 - 7*q**8 + 9*q**6 - 6*q**4 + 3*q**2 - 1)/q**5",
+     "q=1": "1",
+     "q0": "1.6663140117139533789",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "-(q - 1)*(q + 1)*(q**6 - 4*q**4 + 4*q**2 - 2)/(2*q**3)",
+     "q=1": "0",
+     "q0": "0.10803860723262038195",
+     "zero_identically": false
+    }
+   },
+   "O-": {
+    "B1": {
+     "exact": "-(2*q**10 - 5*q**8 + 8*q**6 - 6*q**4 + 3*q**2 - 1)/q**7",
+     "q=1": "-1",
+     "q0": "-1.3039570681555329464",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "-(2*q**10 - 5*q**8 + 8*q**6 - 6*q**4 + 3*q**2 - 1)/q**9",
+     "q=1": "-1",
+     "q0": "-1.058361649900204977",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "(q - 1)*(q + 1)*(q**6 - 3*q**4 + 4*q**2 - 3)/(2*q)",
+     "q=1": "0",
+     "q0": "-0.078967500601111124964",
+     "zero_identically": false
+    }
+   },
+   "S_B1": {
+    "exact": "(q - 1)**2*(q + 1)**2/q",
+    "q=1": "0",
+    "q0": "0.048512955404365064944"
+   },
+   "S_B2": {
+    "exact": "(q - 1)*(q + 1)*(3*q**12 - 4*q**10 + 3*q**8 + 2*q**6 - 3*q**4 + 2*q**2 - 1)/q**9",
+    "q=1": "0",
+    "q0": "0.60795236181374840197"
+   }
+  },
+  "proton_right|GLm|C-cable": {
+   "O+": {
+    "B1": {
+     "exact": "(q - 1)*(q + 1)*(q**12 + q**10 - q**8 + q**6 - q**4 + q**2 - 1)/q**10",
+     "q=1": "0",
+     "q0": "0.37736806929687087223",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "(q - 1)*(q + 1)*(q**12 + q**10 - q**8 + q**6 - q**4 + q**2 - 1)/q**8",
+     "q=1": "0",
+     "q0": "0.46493725590138319543",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "(q - 1)**2*(q + 1)**2*(2*q**8 - q**6 + q**4 - q**2 + 1)/(2*q**10)",
+     "q=1": "0",
+     "q0": "0.038164672346003907695",
+     "zero_identically": false
+    }
+   },
+   "O-": {
+    "B1": {
+     "exact": "-(q - 1)*(q + 1)*(q**10 - q**8 + 2*q**6 - q**4 + q**2 - 1)/q**10",
+     "q=1": "0",
+     "q0": "-0.24433921103501660608",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "-(q - 1)*(q + 1)*(q**10 - q**8 + 2*q**6 - q**4 + q**2 - 1)/q**12",
+     "q=1": "0",
+     "q0": "-0.19831883797533848913",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "(q - 1)**2*(q + 1)**2*(q**10 + 3*q**6 + q**2 - 1)/(2*q**8)",
+     "q=1": "0",
+     "q0": "0.10144281655282266001",
+     "zero_identically": false
+    }
+   },
+   "S_B1": {
+    "exact": "(q - 1)**2*(q + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/q**4",
+    "q=1": "0",
+    "q0": "0.13302885826185426616"
+   },
+   "S_B2": {
+    "exact": "(q - 1)**2*(q + 1)**2*(q**14 + 2*q**12 + q**10 + q**8 + q**6 - 1)/q**12",
+    "q=1": "0",
+    "q0": "0.2666184179260447063"
+   }
+  },
+  "proton_right|GLm|C-adj": {
+   "O+": {
+    "B1": {
+     "exact": "(q - 1)*(q + 1)*(q**4 - q**2 + 1)*(3*q**6 - 2*q**4 + q**2 - 1)/q**8",
+     "q=1": "0",
+     "q0": "0.3634787515282955157",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "(q - 1)*(q + 1)*(q**4 - q**2 + 1)*(3*q**6 - 2*q**4 + q**2 - 1)/q**6",
+     "q=1": "0",
+     "q0": "0.44782488785790788609",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "-(q - 1)**2*(q + 1)**2*(q**6 - 3*q**4 + 2*q**2 - 1)/(2*q**4)",
+     "q=1": "0",
+     "q0": "0.021631467177372186895",
+     "zero_identically": false
+    }
+   },
+   "O-": {
+    "B1": {
+     "exact": "-(q - 1)*(q + 1)*(2*q**10 - 4*q**8 + 6*q**6 - 4*q**4 + 2*q**2 - 1)/q**8",
+     "q=1": "0",
+     "q0": "-0.30963041004347744069",
+     "zero_identically": false
+    },
+    "B2": {
+     "exact": "-(q - 1)*(q + 1)*(2*q**10 - 4*q**8 + 6*q**6 - 4*q**4 + 2*q**2 - 1)/q**10",
+     "q=1": "0",
+     "q0": "-0.25131268477759758547",
+     "zero_identically": false
+    },
+    "B3_electron": {
+     "exact": "(q - 1)**2*(q + 1)**2*(q**6 - 2*q**4 + 3*q**2 - 1)/(2*q**2)",
+     "q=1": "0",
+     "q0": "0.03344505915888986995",
+     "zero_identically": false
+    }
+   },
+   "S_B1": {
+    "exact": "(q - 1)**2*(q + 1)**2",
+    "q=1": "0",
+    "q0": "0.053848341484818075008"
+   },
+   "S_B2": {
+    "exact": "(q - 1)**2*(q + 1)**2*(3*q**12 - 2*q**10 + 2*q**8 + 2*q**6 - 2*q**4 + q**2 - 1)/q**10",
+    "q=1": "0",
+    "q0": "0.19651220308031030062"
+   }
+  }
+ },
+ "reading3_nucleon_diagnostic": {
+  "G0": {
+   "chi_(3)": "1",
+   "chi_(3)_q0": "1",
+   "chi_(2,1)": "-(q**4 - q**2 + 1)*(q**8 - 2*q**6 - 2*q**2 + 1)/q**6",
+   "chi_(2,1)_q0": "1.9941858129799640867",
+   "reading3_pass_at_q0": true
+  },
+  "GV": {
+   "chi_(3)": "1",
+   "chi_(3)_q0": "1",
+   "chi_(2,1)": "(q**16 - 4*q**14 + 6*q**12 - 8*q**10 + 9*q**8 - 8*q**6 + 6*q**4 - 4*q**2 + 1)/q**8",
+   "chi_(2,1)_q0": "-1.1706667637039955701",
+   "reading3_pass_at_q0": false
+  },
+  "Gs1": {
+   "chi_(3)": "q",
+   "chi_(3)_q0": "1.1099785827513808076",
+   "chi_(2,1)": "(q - 1)*(q + 1)*(q**8 - q**6 + q**4 - q**2 + 1)/q**5",
+   "chi_(2,1)_q0": "0.23687135165230532007",
+   "reading3_pass_at_q0": true
+  },
+  "GLm": {
+   "chi_(3)": "q**2",
+   "chi_(3)_q0": "1.2320524541667639313",
+   "chi_(2,1)": "(q**12 - 2*q**10 + 2*q**8 - 3*q**6 + 2*q**4 - 2*q**2 + 1)/q**6",
+   "chi_(2,1)_q0": "-0.86115695471810982057",
+   "reading3_pass_at_q0": false
+  }
+ },
+ "arm_Phi": {
+  "proton_left": {
+   "O+_B1": "(2*phi0*psi0*q**6 + phi0*psi0*q**2 - phi0*psi01*q**7 + 2*phi0*psi01*q**5 - phi0*psi01*q**3 + phi0*psi01*q + phi0*psi1*q**6 - phi0*psi1*q**4 + 2*phi0*q**5 - phi0*q**3 - phi01*psi0*q**7 + 2*phi01*psi0*q**5 - phi01*psi0*q**3 + phi01*psi0*q + phi01*psi01*q**8 - 2*phi01*psi01*q**6 + 2*phi01*psi01*q**4 - 2*phi01*psi01*q**2 + phi01*psi01 + 2*phi01*psi1*q**5 - phi01*psi1*q**3 - phi01*q**6 + 2*phi01*q**4 - phi01*q**2 + phi1*psi0*q**6 - phi1*psi0*q**4 + 2*phi1*psi01*q**5 - phi1*psi01*q**3 + 2*phi1*psi1*q**6 + phi1*psi1*q**2 + 2*phi1*q**5 - phi1*q**3 + 2*psi0*q**5 - psi0*q**3 - psi01*q**6 + 2*psi01*q**4 - psi01*q**2 + 2*psi1*q**5 - psi1*q**3 + 3*q**4)/q**8",
+   "O-_B1": "-(phi0*psi0*q**12 - phi0*psi0*q**10 + phi0*psi0*q**6 + phi0*psi0*q**4 + phi0*psi0*q**2 + phi0*psi01*q**11 - phi0*psi01*q**9 - phi0*psi01*q**7 + phi0*psi01*q**5 + phi0*psi01*q + phi0*psi1*q**12 - phi0*psi1*q**10 + phi0*q**11 - phi0*q**9 + phi0*q**5 + phi01*psi0*q**11 - phi01*psi0*q**9 - phi01*psi0*q**7 + phi01*psi0*q**5 + phi01*psi0*q + phi01*psi01*q**10 - 2*phi01*psi01*q**6 + phi01*psi01*q**4 - phi01*psi01*q**2 + phi01*psi01 + phi01*psi1*q**11 - phi01*psi1*q**9 + phi01*psi1*q**5 + phi01*q**10 - phi01*q**8 - phi01*q**6 + phi01*q**4 + phi1*psi0*q**12 - phi1*psi0*q**10 + phi1*psi01*q**11 - phi1*psi01*q**9 + phi1*psi01*q**5 + phi1*psi1*q**12 - phi1*psi1*q**10 + phi1*psi1*q**6 + phi1*psi1*q**4 + phi1*psi1*q**2 + phi1*q**11 - phi1*q**9 + phi1*q**5 + psi0*q**11 - psi0*q**9 + psi0*q**5 + psi01*q**10 - psi01*q**8 - psi01*q**6 + psi01*q**4 + psi1*q**11 - psi1*q**9 + psi1*q**5 + q**10 - q**8 + 2*q**4 + q**2)/q**8",
+   "S_B1": "-(q - 1)**2*(q + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)*(phi0*q + phi01 + phi1*q + 1)*(psi0*q + psi01 + psi1*q + 1)/q**6",
+   "S_B1_identically_zero": false,
+   "O+_B1_identically_zero": false,
+   "O-_B1_identically_zero": false,
+   "S_B1_at_q=1": "0",
+   "S_B1_poly_terms_in_phi_psi": 16
+  },
+  "proton_right": {
+   "O+_B1": "(phi0*psi0*q**12 - phi0*psi0*q**10 + phi0*psi0*q**6 + phi0*psi0*q**4 + phi0*psi0*q**2 + phi0*psi01*q**11 - phi0*psi01*q**9 - phi0*psi01*q**7 + phi0*psi01*q**5 + phi0*psi01*q + phi0*psi1*q**12 - phi0*psi1*q**10 + phi0*q**11 - phi0*q**9 + phi0*q**5 + phi01*psi0*q**11 - phi01*psi0*q**9 - phi01*psi0*q**7 + phi01*psi0*q**5 + phi01*psi0*q + phi01*psi01*q**10 - 2*phi01*psi01*q**6 + phi01*psi01*q**4 - phi01*psi01*q**2 + phi01*psi01 + phi01*psi1*q**11 - phi01*psi1*q**9 + phi01*psi1*q**5 + phi01*q**10 - phi01*q**8 - phi01*q**6 + phi01*q**4 + phi1*psi0*q**12 - phi1*psi0*q**10 + phi1*psi01*q**11 - phi1*psi01*q**9 + phi1*psi01*q**5 + phi1*psi1*q**12 - phi1*psi1*q**10 + phi1*psi1*q**6 + phi1*psi1*q**4 + phi1*psi1*q**2 + phi1*q**11 - phi1*q**9 + phi1*q**5 + psi0*q**11 - psi0*q**9 + psi0*q**5 + psi01*q**10 - psi01*q**8 - psi01*q**6 + psi01*q**4 + psi1*q**11 - psi1*q**9 + psi1*q**5 + q**10 - q**8 + 2*q**4 + q**2)/q**8",
+   "O-_B1": "-(2*phi0*psi0*q**6 + phi0*psi0*q**2 - phi0*psi01*q**7 + 2*phi0*psi01*q**5 - phi0*psi01*q**3 + phi0*psi01*q + phi0*psi1*q**6 - phi0*psi1*q**4 + 2*phi0*q**5 - phi0*q**3 - phi01*psi0*q**7 + 2*phi01*psi0*q**5 - phi01*psi0*q**3 + phi01*psi0*q + phi01*psi01*q**8 - 2*phi01*psi01*q**6 + 2*phi01*psi01*q**4 - 2*phi01*psi01*q**2 + phi01*psi01 + 2*phi01*psi1*q**5 - phi01*psi1*q**3 - phi01*q**6 + 2*phi01*q**4 - phi01*q**2 + phi1*psi0*q**6 - phi1*psi0*q**4 + 2*phi1*psi01*q**5 - phi1*psi01*q**3 + 2*phi1*psi1*q**6 + phi1*psi1*q**2 + 2*phi1*q**5 - phi1*q**3 + 2*psi0*q**5 - psi0*q**3 - psi01*q**6 + 2*psi01*q**4 - psi01*q**2 + 2*psi1*q**5 - psi1*q**3 + 3*q**4)/q**8",
+   "S_B1": "(q - 1)**2*(q + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)*(phi0*q + phi01 + phi1*q + 1)*(psi0*q + psi01 + psi1*q + 1)/q**6",
+   "S_B1_identically_zero": false,
+   "O+_B1_identically_zero": false,
+   "O-_B1_identically_zero": false,
+   "S_B1_at_q=1": "0",
+   "S_B1_poly_terms_in_phi_psi": 16
+  }
+ },
+ "post_hoc_observations": {
+  "G0|C-cable": {
+   "S_B1_equals_chi3(gluon)*S_B1(G0)": true,
+   "mirror_Oplus_right_eq_minus_Ominus_left": true
+  },
+  "G0|C-adj": {
+   "S_B1_equals_chi3(gluon)*S_B1(G0)": true,
+   "mirror_Oplus_right_eq_minus_Ominus_left": false
+  },
+  "GV|C-cable": {
+   "S_B1_equals_chi3(gluon)*S_B1(G0)": true,
+   "mirror_Oplus_right_eq_minus_Ominus_left": true
+  },
+  "GV|C-adj": {
+   "S_B1_equals_chi3(gluon)*S_B1(G0)": true,
+   "mirror_Oplus_right_eq_minus_Ominus_left": false
+  },
+  "Gs1|C-cable": {
+   "S_B1_equals_chi3(gluon)*S_B1(G0)": true,
+   "mirror_Oplus_right_eq_minus_Ominus_left": true
+  },
+  "Gs1|C-adj": {
+   "S_B1_equals_chi3(gluon)*S_B1(G0)": true,
+   "mirror_Oplus_right_eq_minus_Ominus_left": false
+  },
+  "GLm|C-cable": {
+   "S_B1_equals_chi3(gluon)*S_B1(G0)": true,
+   "mirror_Oplus_right_eq_minus_Ominus_left": true
+  },
+  "GLm|C-adj": {
+   "S_B1_equals_chi3(gluon)*S_B1(G0)": true,
+   "mirror_Oplus_right_eq_minus_Ominus_left": false
+  },
+  "Phi|C-cable": {
+   "S_B1_equals_chi3(gamma_phi)chi3(gamma_psi)*S_B1(G0)": true,
+   "mirror_Oplus_right_eq_minus_Ominus_left": true
+  }
+ },
+ "verdict": {
+  "G0|C-cable": {
+   "neutral_at_q0": {
+    "left": [],
+    "right": []
+   },
+   "orientation_fixed": false
+  },
+  "G0|C-adj": {
+   "neutral_at_q0": {
+    "left": [],
+    "right": []
+   },
+   "orientation_fixed": false
+  },
+  "GV|C-cable": {
+   "neutral_at_q0": {
+    "left": [],
+    "right": []
+   },
+   "orientation_fixed": false
+  },
+  "GV|C-adj": {
+   "neutral_at_q0": {
+    "left": [],
+    "right": []
+   },
+   "orientation_fixed": false
+  },
+  "Gs1|C-cable": {
+   "neutral_at_q0": {
+    "left": [],
+    "right": []
+   },
+   "orientation_fixed": false
+  },
+  "Gs1|C-adj": {
+   "neutral_at_q0": {
+    "left": [],
+    "right": []
+   },
+   "orientation_fixed": false
+  },
+  "GLm|C-cable": {
+   "neutral_at_q0": {
+    "left": [],
+    "right": []
+   },
+   "orientation_fixed": false
+  },
+  "GLm|C-adj": {
+   "neutral_at_q0": {
+    "left": [],
+    "right": []
+   },
+   "orientation_fixed": false
+  }
+ },
+ "checks": [
+  {
+   "name": "C1 gamma(0,0,qh).gamma(0,0,-h/q) == (V)^3 on C2^4, side L",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C1 gamma(0,0,qh).gamma(0,0,-h/q) == (V)^3 on C2^4, side R",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "element expansion: collision = 1 + h^2 V - h^2 V^2 (3 words)",
+   "pass": true,
+   "detail": "coefficients a+b = h^2, ab = -h^2 with a = qh, b = -h/q"
+  },
+  {
+   "name": "P2 G0/C-cable equals \u00a743 arm 2, proton left",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "P2 G0/C-cable equals \u00a743 arm 2, proton right",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C2 arm Phi at derived weights reproduces G0/C-cable, proton_left",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C2 arm Phi at derived weights reproduces G0/C-cable, proton_right",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "checks_passed": "7/7"
+}

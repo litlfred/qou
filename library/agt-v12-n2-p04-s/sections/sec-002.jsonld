@@ -13,9 +13,12 @@
   "pageStart": 3,
   "pageEnd": 6,
   "contains": [
-    "library/agt-v12-n2-p04-s/blocks/prose-sec-002"
+    "library/agt-v12-n2-p04-s/blocks/prose-sec-002",
+    "library/agt-v12-n2-p04-s/blocks/rem-sec-002-01",
+    "library/agt-v12-n2-p04-s/blocks/rem-sec-002-02",
+    "library/agt-v12-n2-p04-s/blocks/rem-sec-002-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/agt-v12-n2-p04-s",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/agt-v12-n2-p04-s",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v12-n2-p04-s/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v12-n2-p04-s/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,393 @@
+{
+  "engine": "mpmath (80 dps) + sympy Q(q)",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-23T20:30:18.028282+00:00",
+  "commitSha": "fd42ffcfdefff5eda78987229eb7aedbe3951e71",
+  "assertions": [
+    {
+      "name": "q0_at_80_matches_Q_MP",
+      "computed": "7.7371835869339141800537452711683021760592669107032849756987107952944826886127401e-72",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-65",
+      "source": "qou_substrate.constants"
+    },
+    {
+      "name": "left_lepton_right_quark_C1_pos_beta_minus_projection_zero",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "ChargedCurrentChiralitySelection.betaMinusProj_pos_eq_zero"
+    },
+    {
+      "name": "left_lepton_right_quark_C2_neg_beta_minus_projection_eq_neg_h_FE",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "ChargedCurrentChiralitySelection.betaMinusProj_neg_eq"
+    },
+    {
+      "name": "direct_512_state_nine_strand_C2_neg_factorization_exact",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "Exact Q[q, q^-1] identity on 9-strand pair_std + C2_neg and pair_refl + C2_neg"
+    },
+    {
+      "name": "covariant_allpairs_connected_ppos_jet_identically_zero",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "NucleonWeightSpaceTwoTerm.QPairP / QPairN scalarity"
+    },
+    {
+      "name": "su6_constituent_breit_fermi_np_diff_equals_plus_one_third",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "ChargedCurrentChiralitySelection.breitFermi_np_diff_eq_pos_third"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3499,
+  "computation": "qbeta-chirality-and-compton",
+  "scriptFile": "qbeta_chirality_and_compton_probe.py",
+  "scriptHash": "28e2732a0d8c",
+  "scriptCommitSha": "fd42ffcfdefff5eda78987229eb7aedbe3951e71",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_chirality_and_compton_polarizability/qbeta_chirality_and_compton_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_chirality_and_compton_polarizability/qbeta_chirality_and_compton_probe.py"
+  },
+  "description": "Pre-registered 80-dps evaluation of ChargedCurrentW left-coupled crossing chirality selection (C2_neg vs C1_pos), signed logarithmic vs linear 9-strand Q_beta readouts, and k >= 1 Ppos transient jet + magnetic spin-spin channels in QOU's two-term action (qou-gtv6 / L2 Gate 1).",
+  "parameters": {
+    "workdps": 80,
+    "q0_proton_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "alpha_FormB_inv_q0": "137.03541544437177808907128375560483097764260804073",
+    "preregistration_commit": "5be409c2671"
+  },
+  "data": {
+    "c2_neg_closed_forms_Qq": {
+      "bare_spectator": {
+        "tau_left": "1",
+        "d0_cond": "q/(q**2 + 1)",
+        "d1_cond": "-(q**4 - q**2 - 1)/(q*(q**2 + 1))",
+        "ratio_plain_n_over_p": "-(q**16 - 4*q**14 + 6*q**12 - 7*q**10 + 7*q**8 - 2*q**4 + 3*q**2 - 1)/(q**14 - 3*q**12 + 5*q**10 - 8*q**8 + 4*q**6 - q**4 - 2*q**2 + 1)",
+        "F2_signed_over_me": "(q + 1)*(2*q**14 - 5*q**12 + 6*q**10 - 9*q**8 + 2*q**6 + q**4 - 3*q**2 + 1)/(q**4*(2*q - 1)*(q**2 + 1)**4)"
+      },
+      "pair_std": {
+        "tau_left": "(q**4 + 1)/(q**2*(q**2 + 1)**3)",
+        "d0_cond": "q**3/(q**2 + 1)",
+        "d1_cond": "-(q**6 - q**2 - 1)/(q*(q**2 + 1))",
+        "ratio_plain_n_over_p": "-(q**18 - 3*q**16 + 3*q**14 - 4*q**12 + 3*q**10 + 2*q**8 + q**6 - 2*q**4 + 3*q**2 - 1)/(q**16 - 3*q**14 + 5*q**12 - 6*q**10 + q**8 - 2*q**2 + 1)",
+        "F2_signed_over_me": "(q + 1)*(2*q**16 - 4*q**14 + 4*q**12 - 6*q**10 - 2*q**8 + q**4 - 3*q**2 + 1)/(q**4*(2*q - 1)*(q**2 + 1)**4)"
+      },
+      "pair_refl": {
+        "tau_left": "(q**4 + 1)/(q**2*(q**2 + 1)**3)",
+        "d0_cond": "(2*q**6 - q**4 + 1)/(q*(q**2 + 1)*(q**4 + 1))",
+        "d1_cond": "-(2*q**8 - 2*q**6 - q**4 - 1)/(q*(q**2 + 1)*(q**4 + 1))",
+        "ratio_plain_n_over_p": "-(2*q**20 - 8*q**18 + 13*q**16 - 17*q**14 + 16*q**12 - 2*q**10 - 4*q**8 + 8*q**6 - 4*q**4 + 3*q**2 - 1)/(2*q**18 - 7*q**16 + 13*q**14 - 18*q**12 + 10*q**10 - 2*q**8 - 6*q**6 + 4*q**4 - 3*q**2 + 1)",
+        "F2_signed_over_me": "(q + 1)*(4*q**18 - 11*q**16 + 15*q**14 - 20*q**12 + 6*q**10 + 2*q**8 - 8*q**6 + 4*q**4 - 3*q**2 + 1)/(q**4*(2*q - 1)*(q**2 + 1)**4*(q**4 + 1))"
+      }
+    },
+    "nine_strand_signed_readouts": [
+      {
+        "left_block": "bare_spectator",
+        "coupling": "C0_uncoupled",
+        "F2_signed_limit_q1_over_me": "-3/4",
+        "F2_signed_MeV_q0": "-0.32543392873469170729096564389970043230872396757454",
+        "F2_abs_MeV_q0": "0.32543392873469170729096564389970043230872396757454",
+        "F3C_signed_limit_q1_over_me": "0",
+        "F3C_signed_MeV_q0": "0.0",
+        "F3C_abs_MeV_q0": "0.0",
+        "F3B_signed_MeV_q0": "0.37119836624022504126232798758807518648658988065182"
+      },
+      {
+        "left_block": "bare_spectator",
+        "coupling": "C1_pos",
+        "F2_signed_limit_q1_over_me": "-5/8",
+        "F2_signed_MeV_q0": "-0.30288617020067000158648167301866592217694343700499",
+        "F2_abs_MeV_q0": "0.30288617020067000158648167301866592217694343700499",
+        "F3C_signed_limit_q1_over_me": "4/3",
+        "F3C_signed_MeV_q0": "0.48077271806430319484368367517106284433114401658785",
+        "F3C_abs_MeV_q0": "0.48077271806430319484368367517106284433114401658785",
+        "F3B_signed_MeV_q0": "0.85197108430452823610601166275913803081773389723967"
+      },
+      {
+        "left_block": "bare_spectator",
+        "coupling": "C2_neg",
+        "F2_signed_limit_q1_over_me": "-5/8",
+        "F2_signed_MeV_q0": "-0.23485085582115656204566272025281382683931269018143",
+        "F2_abs_MeV_q0": "0.23485085582115656204566272025281382683931269018143",
+        "F3C_signed_limit_q1_over_me": "4/3",
+        "F3C_signed_MeV_q0": "0.73771884102337469896318556487626396835683320437003",
+        "F3C_abs_MeV_q0": "0.73771884102337469896318556487626396835683320437003",
+        "F3B_signed_MeV_q0": "1.1089172072635997402255135524643391548434230850219"
+      },
+      {
+        "left_block": "bare_spectator",
+        "coupling": "C3_clasp",
+        "F2_signed_limit_q1_over_me": "-3/4",
+        "F2_signed_MeV_q0": "-0.38875540197791064273422782727614734850501436465173",
+        "F2_abs_MeV_q0": "0.38875540197791064273422782727614734850501436465173",
+        "F3C_signed_limit_q1_over_me": "0",
+        "F3C_signed_MeV_q0": "0.053676423563451326056801621233081895183164689035510",
+        "F3C_abs_MeV_q0": "0.053676423563451326056801621233081895183164689035510",
+        "F3B_signed_MeV_q0": "0.42487478980367636731912960882115708166975456968733"
+      },
+      {
+        "left_block": "bare_spectator",
+        "coupling": "C4_vertex",
+        "F2_signed_limit_q1_over_me": "-3/8",
+        "F2_signed_MeV_q0": "-0.12876338423726831151709988293449896680022568138581",
+        "F2_abs_MeV_q0": "0.12876338423726831151709988293449896680022568138581",
+        "F3C_signed_limit_q1_over_me": "4",
+        "F3C_signed_MeV_q0": "1.9033616243802938006578082797846439242402942537858",
+        "F3C_abs_MeV_q0": "1.9033616243802938006578082797846439242402942537858",
+        "F3B_signed_MeV_q0": "2.2745599906205188419201362673727191107268841344377"
+      },
+      {
+        "left_block": "pair_std",
+        "coupling": "C0_uncoupled",
+        "F2_signed_limit_q1_over_me": "-3/4",
+        "F2_signed_MeV_q0": "-0.32543392873469170729096564389970043230872396757454",
+        "F2_abs_MeV_q0": "0.32543392873469170729096564389970043230872396757454",
+        "F3C_signed_limit_q1_over_me": "0",
+        "F3C_signed_MeV_q0": "0.0",
+        "F3C_abs_MeV_q0": "0.0",
+        "F3B_signed_MeV_q0": "0.37119836624022504126232798758807518648658988065182"
+      },
+      {
+        "left_block": "pair_std",
+        "coupling": "C1_pos",
+        "F2_signed_limit_q1_over_me": "-7/8",
+        "F2_signed_MeV_q0": "-0.43039952749946473548569667567409048092465572338496",
+        "F2_abs_MeV_q0": "0.43039952749946473548569667567409048092465572338496",
+        "F3C_signed_limit_q1_over_me": "8/3",
+        "F3C_signed_MeV_q0": "1.1024247983209280677313475323352192766874469252051",
+        "F3C_abs_MeV_q0": "1.1024247983209280677313475323352192766874469252051",
+        "F3B_signed_MeV_q0": "1.4736231645611531089936755199232944631740368058569"
+      },
+      {
+        "left_block": "pair_std",
+        "coupling": "C2_neg",
+        "F2_signed_limit_q1_over_me": "-7/8",
+        "F2_signed_MeV_q0": "-0.36236421311995129594487772290823838558702497656140",
+        "F2_abs_MeV_q0": "0.36236421311995129594487772290823838558702497656140",
+        "F3C_signed_limit_q1_over_me": "8/3",
+        "F3C_signed_MeV_q0": "1.7236075963194222581276106696033196957284046278028",
+        "F3C_abs_MeV_q0": "1.7236075963194222581276106696033196957284046278028",
+        "F3B_signed_MeV_q0": "2.0948059625596472993899386571913948822149945084547"
+      },
+      {
+        "left_block": "pair_std",
+        "coupling": "C3_clasp",
+        "F2_signed_limit_q1_over_me": "-3/4",
+        "F2_signed_MeV_q0": "-0.41541338255523178515353035721817680983772469235454",
+        "F2_abs_MeV_q0": "0.41541338255523178515353035721817680983772469235454",
+        "F3C_signed_limit_q1_over_me": "0",
+        "F3C_signed_MeV_q0": "0.12011218931464820069996495589641208439708580604521",
+        "F3C_abs_MeV_q0": "0.12011218931464820069996495589641208439708580604521",
+        "F3B_signed_MeV_q0": "0.49131055555487324196229294348448727088367568669703"
+      },
+      {
+        "left_block": "pair_std",
+        "coupling": "C4_vertex",
+        "F2_signed_limit_q1_over_me": "-5/8",
+        "F2_signed_MeV_q0": "-0.23292482692797296766048681262098778505556126610851",
+        "F2_abs_MeV_q0": "0.23292482692797296766048681262098778505556126610851",
+        "F3C_signed_limit_q1_over_me": "8",
+        "F3C_signed_MeV_q0": "5.1593052897257538382485748812311738092641056987569",
+        "F3C_abs_MeV_q0": "5.1593052897257538382485748812311738092641056987569",
+        "F3B_signed_MeV_q0": "5.5305036559659788795109028688192489957506955794087"
+      },
+      {
+        "left_block": "pair_refl",
+        "coupling": "C0_uncoupled",
+        "F2_signed_limit_q1_over_me": "-3/4",
+        "F2_signed_MeV_q0": "-0.32543392873469170729096564389970043230872396757454",
+        "F2_abs_MeV_q0": "0.32543392873469170729096564389970043230872396757454",
+        "F3C_signed_limit_q1_over_me": "0",
+        "F3C_signed_MeV_q0": "0.0",
+        "F3C_abs_MeV_q0": "0.0",
+        "F3B_signed_MeV_q0": "0.37119836624022504126232798758807518648658988065182"
+      },
+      {
+        "left_block": "pair_refl",
+        "coupling": "C1_pos",
+        "F2_signed_limit_q1_over_me": "-5/8",
+        "F2_signed_MeV_q0": "-0.32417586238202474579081601486562281680853406747930",
+        "F2_abs_MeV_q0": "0.32417586238202474579081601486562281680853406747930",
+        "F3C_signed_limit_q1_over_me": "4/3",
+        "F3C_signed_MeV_q0": "0.58211157972757050308730470655465039349648023074328",
+        "F3C_abs_MeV_q0": "0.58211157972757050308730470655465039349648023074328",
+        "F3B_signed_MeV_q0": "0.95330994596779554434963269414272557998307011139510"
+      },
+      {
+        "left_block": "pair_refl",
+        "coupling": "C2_neg",
+        "F2_signed_limit_q1_over_me": "-5/8",
+        "F2_signed_MeV_q0": "-0.25614054800251130624999706209977072147090332065574",
+        "F2_abs_MeV_q0": "0.25614054800251130624999706209977072147090332065574",
+        "F3C_signed_limit_q1_over_me": "4/3",
+        "F3C_signed_MeV_q0": "0.89560754479999560723192299515870835750920849759056",
+        "F3C_abs_MeV_q0": "0.89560754479999560723192299515870835750920849759056",
+        "F3B_signed_MeV_q0": "1.2668059110402206484942509827467835439957983782424"
+      },
+      {
+        "left_block": "pair_refl",
+        "coupling": "C3_clasp",
+        "F2_signed_limit_q1_over_me": "-3/4",
+        "F2_signed_MeV_q0": "-0.39320623138661185171420626538007596345636776446475",
+        "F2_abs_MeV_q0": "0.39320623138661185171420626538007596345636776446475",
+        "F3C_signed_limit_q1_over_me": "0",
+        "F3C_signed_MeV_q0": "0.064745020881381558373820538700007165731575783689963",
+        "F3C_abs_MeV_q0": "0.064745020881381558373820538700007165731575783689963",
+        "F3B_signed_MeV_q0": "0.43594338712160659963614852628808235221816566434178"
+      },
+      {
+        "left_block": "pair_refl",
+        "coupling": "C4_vertex",
+        "F2_signed_limit_q1_over_me": "-3/8",
+        "F2_signed_MeV_q0": "-0.14615422939284391319185718122994867754107115849541",
+        "F2_abs_MeV_q0": "0.14615422939284391319185718122994867754107115849541",
+        "F3C_signed_limit_q1_over_me": "4",
+        "F3C_signed_MeV_q0": "2.3509025834100831291071126170825574516395691631937",
+        "F3C_abs_MeV_q0": "2.3509025834100831291071126170825574516395691631937",
+        "F3B_signed_MeV_q0": "2.7221009496503081703694406046706326381261590438455"
+      }
+    ],
+    "two_term_ppos_transient_jets": {
+      "allpairs_static_k0": {
+        "closed_form_Qq": "(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(3*q**4*(q**2 + 1)**3)",
+        "trace_diff_at_q0": "-0.11057921491325448145626873074558283953996524854987",
+        "sign_at_q0": "-",
+        "shift_me_scale_MeV": {
+          "unit_1": "-0.056505862788797039397093384533650972357392884328049",
+          "alpha_FormB": "-0.00041234495918856141455409039058244250955692628715028",
+          "jackson_step_1_minus_q_inv2": "-0.010642667112593538579640860403730203867408598370330",
+          "hecke_h_sq": "-0.0024696570223572379388412938171331044627422436727413"
+        },
+        "shift_E0_full_scale_MeV": {
+          "unit_1": "-0.46747179052430879364062631336710999395846646258862",
+          "alpha_FormB": "-0.0034113210005487560642202299646405433681360347997714",
+          "jackson_step_1_minus_q_inv2": "-0.088046556685170358693239953416738663479784210463469",
+          "hecke_h_sq": "-0.020431419559726877070415261216494813956457112061377"
+        }
+      },
+      "adj_full_static_k0": {
+        "closed_form_Qq": "2*(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(9*q**4*(q**2 + 1)**3)",
+        "trace_diff_at_q0": "-0.073719476608836320970845820497055226359976832366580",
+        "sign_at_q0": "-",
+        "shift_me_scale_MeV": {
+          "unit_1": "-0.037670575192531359598062256355767314904928589552033",
+          "alpha_FormB": "-0.00027489663945904094303606026038829500637128419143352",
+          "jackson_step_1_minus_q_inv2": "-0.0070951114083956923864272402691534692449390655802198",
+          "hecke_h_sq": "-0.0016464380149048252925608625447554029751614957818276"
+        },
+        "shift_E0_full_scale_MeV": {
+          "unit_1": "-0.31164786034953919576041754224473999597231097505908",
+          "alpha_FormB": "-0.0022742140003658373761468199764270289120906898665142",
+          "jackson_step_1_minus_q_inv2": "-0.058697704456780239128826635611159108986522806975646",
+          "hecke_h_sq": "-0.013620946373151251380276840810996542637638074707585"
+        }
+      },
+      "adj_full_connected_ppos_k4": {
+        "closed_form_Qq": "(q - 1)**4*(q + 1)**4*(q**2 + 2)*(2*q**4 + 1)/(9*q**4*(q**2 + 1)**3)",
+        "trace_diff_at_q0": "0.00024897174601261241330307844929730116151847374274715",
+        "sign_at_q0": "+",
+        "shift_me_scale_MeV": {
+          "unit_1": "0.00012722430096390213470354168453767326138485828959411",
+          "alpha_FormB": "0.00000092840453361158764189976393365569169675289562027236",
+          "jackson_step_1_minus_q_inv2": "0.000023962219439991835315013087971914127929709998617530",
+          "hecke_h_sq": "0.0000055604918283326450405754221302779239825157664137300"
+        },
+        "shift_E0_full_scale_MeV": {
+          "unit_1": "0.0010525239122902174317006569849090360759780882499682",
+          "alpha_FormB": "0.0000076806707877459567428843001467448817808337920358977",
+          "jackson_step_1_minus_q_inv2": "0.00019823892732012661348758861676132344909627435218090",
+          "hecke_h_sq": "0.000046001829596022127101117803894271634861309310592482"
+        }
+      },
+      "adj_e21_static_k0": {
+        "closed_form_Qq": "2*(q**4 - q**2 + 1)*(q**8 - 2*q**6 - 2*q**2 + 1)/(9*q**4*(q**2 + 1)**3)",
+        "trace_diff_at_q0": "-0.049098600947326524517783935058161310231234697584796",
+        "sign_at_q0": "-",
+        "shift_me_scale_MeV": {
+          "unit_1": "-0.025089333564430893989392149058859533648916491728950",
+          "alpha_FormB": "-0.00018308649251780952949397557445574148817357630934777",
+          "jackson_step_1_minus_q_inv2": "-0.0047254817823257320849683316614683586382128202816349",
+          "hecke_h_sq": "-0.0010965596447090198768279195927736800497425910473592"
+        },
+        "shift_E0_full_scale_MeV": {
+          "unit_1": "-0.20756351828949463412021948757271943894813528823949",
+          "alpha_FormB": "-0.0015146706244981835935818315968275402289887426714005",
+          "jackson_step_1_minus_q_inv2": "-0.039093809400460626185030840349371492735491971839592",
+          "hecke_h_sq": "-0.0090718144141045943805463180296373086818393234916576"
+        }
+      },
+      "adj_e21_connected_ppos_k2": {
+        "closed_form_Qq": "(q - 1)**2*(q + 1)**2*(2*q**14 + 2*q**12 - 3*q**10 + q**8 - 5*q**6 + 3*q**4 - q**2 + 2)/(9*q**4*(q**2 + 1)**3*(q**2 - q + 1)*(q**2 + q + 1))",
+        "trace_diff_at_q0": "0.00050778475336209862131929736277107374108349586020326",
+        "sign_at_q0": "+",
+        "shift_me_scale_MeV": {
+          "unit_1": "0.00025947747614441284511045661582410295237827912824082",
+          "alpha_FormB": "0.0000018935066917044175018130144551260326976039815953989",
+          "jackson_step_1_minus_q_inv2": "0.000048871608458448735447105420800254305878128732299210",
+          "hecke_h_sq": "0.000011340776681860207647707141924375841752068987454257"
+        },
+        "shift_E0_full_scale_MeV": {
+          "unit_1": "0.0021466515930804643323208677496806414278863858960533",
+          "alpha_FormB": "0.000015664940235481513929964107320443831941456790832514",
+          "jackson_step_1_minus_q_inv2": "0.00040431376824146991475799587760742684266239773519151",
+          "hecke_h_sq": "0.000093822002173845311745219919280115094755382487262536"
+        }
+      }
+    },
+    "magnetic_spin_spin_channels": {
+      "pointlike_nucleon_dipole_mu_n_sq_minus_mu_p_sq": {
+        "SU6_ratio_mu_n2_over_mu_p2_minus_1": "-0.55555555555555555555555555555555555555555555555556",
+        "SUq6_ratio_at_q0": "-0.56351016479630521951455944248273054886862866699035",
+        "CODATA_mu_n2_minus_mu_p2_muN2_comparison": "-4.1402636888184255325252594218514295285517837716366",
+        "sign": "- (shifts pointlike magnetic self-energy m_n - m_p < 0)",
+        "pion_recoil_scale_shift_MeV_SU6": "-0.0070427047468720446142842687109264413779973041952566"
+      },
+      "constituent_quark_breit_fermi_hyperfine": {
+        "proton_56plet_matrix_element": "-4/3",
+        "neutron_56plet_matrix_element": "-1",
+        "np_difference_matrix_element": "+1/3 (exact opposite of static electric Q_pair = -1/3)",
+        "sign": "+ (shifts m_n - m_p > 0, reinforcing Q_beta > 0)",
+        "compton_ho_contact_shift_MeV": "0.026098677586654161559158445509097543033141267201138",
+        "pion_recoil_scale_shift_MeV": "0.0018780545991658785638091383229137177007992811187351"
+      }
+    },
+    "comparison_only_CODATA": {
+      "Q_beta_MeV": "0.78233355931000000000000000000000000000000000000000",
+      "Delta_m_np_MeV": "1.2933325100000000000000000000000000000000000000000"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

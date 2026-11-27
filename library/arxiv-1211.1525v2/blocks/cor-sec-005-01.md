@@ -1,0 +1,1 @@
+For an arbitrary integer p ≥1 the expected value of the corresponding moment of mnρΓ is given by EZ(p) n = F(lmn, p) X α∈Sp l−|α| mp−1−|πα| np−1−|π−1α| (2.10) = F(lmn, p) X α∈Sp mn l |α| m−2g(1) p n−2g(2) p , (2.11) where π, as usual, is given by (2.1), g(i) p := g(i) p (α) were deﬁned in Section 2.1.4.

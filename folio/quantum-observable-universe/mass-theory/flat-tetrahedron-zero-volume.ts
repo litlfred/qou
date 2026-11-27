@@ -12,7 +12,7 @@ export default theorem({
     "degenerate",
   ],
   lean: {
-    ref: "qou:QOU.Knot.FlatTet.BlochWigner_lob_ofReal",
+    ref: "qou:BraidKnotOctonion.FlatTetrahedra.BlochWigner_lob_ofReal",
     validation: "leanok",
   },
   uses: ["prop:thurston-volume-additivity"],

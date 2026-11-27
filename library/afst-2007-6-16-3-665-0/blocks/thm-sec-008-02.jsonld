@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/afst-2007-6-16-3-665-0/blocks/thm-sec-008-02",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 21,
+  "pageEnd": 25,
+  "text": "thm-sec-008-02.md",
+  "derivedFrom": "library/afst-2007-6-16-3-665-0/sections/sec-008",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/afst-2007-6-16-3-665-0/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.2",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-008-3-moduli-spaces-for-q-diﬀerence-equations.md (p. 21-25)",
+    "claim_id": "afst-2007-6-16-3-665-0#theorem:3.2",
+    "lean_status": "doc-cited-in-lean-unlinked-claim"
+  }
+}

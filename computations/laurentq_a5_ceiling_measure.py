@@ -84,11 +84,22 @@ def _bench_one(Z: int, N: int) -> dict:
         result["speedup"] = result["slow_s"] / result["fast_s"]
     if slow_result is not None and fast_result is not None:
         try:
-            slow_v = float(slow_result.subs(q_sym, float(Q0)).evalf())
-            fast_v = float(fast_result.subs(q_sym, float(Q0)).evalf())
-            result["agree_at_q0"] = abs(slow_v - fast_v) < 1e-10
-            result["slow_value_q0"] = slow_v
-            result["fast_value_q0"] = fast_v
+            # Exact rational q₀ and full-precision evaluation. Until
+            # 2026-11-21 both sides went through float(Q0) and float(...),
+            # so the agreement below could resolve no further than float64
+            # (f64_into_mpmath_audit F64_CAST).
+            import mpmath as mp
+            import sympy as sp
+            from q_parameter import Q_50_DIGIT_STR
+            from _precision import set_compute_dps, fmt
+            set_compute_dps()
+            q0x = sp.Rational(Q_50_DIGIT_STR)
+            slow_v = mp.mpf(str(sp.sympify(slow_result.subs(q_sym, q0x)).evalf(mp.mp.dps)))
+            fast_v = mp.mpf(str(sp.sympify(fast_result.subs(q_sym, q0x)).evalf(mp.mp.dps)))
+            result["agree_at_q0"] = bool(abs(slow_v - fast_v) < mp.mpf("1e-10"))
+            result["abs_diff_q0"] = fmt(abs(slow_v - fast_v))
+            result["slow_value_q0"] = fmt(slow_v)
+            result["fast_value_q0"] = fmt(fast_v)
         except Exception as e:
             result["agree_check_error"] = str(e)[:200]
     return result

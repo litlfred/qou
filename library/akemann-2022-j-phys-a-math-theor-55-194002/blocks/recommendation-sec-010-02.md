@@ -1,1 +1,0 @@
-It can be seen, that for the transition fromthe hard edgeto the bulk region of the spectrum,the deviation between the level spacing and the bulk spacing decreases, as it should, and increases again when reaching the upper edge at k = n −1 = 49 which is a soft edge and, thence, has to follow the Airy statistics.

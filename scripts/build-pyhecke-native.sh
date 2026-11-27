@@ -27,30 +27,58 @@
 set -euo pipefail
 ROOT="$(git rev-parse --show-toplevel)"
 
-command -v maturin >/dev/null 2>&1 || pip install --user maturin
-export PATH="$HOME/.local/bin:$PATH"
-# Use the git CLI (honours HTTPS_PROXY + the proxy CA bundle) for the fork fetch,
-# instead of cargo's bundled libgit2 (which 403s against the proxy).
-export CARGO_NET_GIT_FETCH_WITH_CLI=true
-
-# Detect the github->mirror `insteadOf` rewrite by VALUE (the key name embeds a
-# per-session mirror port, so match on the rewritten target rather than the key).
-KEY="$(git config --global --get-regexp 'url\..*\.insteadof' 2>/dev/null \
-        | awk '$2=="https://github.com/"{print $1; exit}' || true)"
-OLD=""
-restore() { [ -n "${KEY:-}" ] && [ -n "${OLD:-}" ] && git config --global "$KEY" "$OLD" || true; }
-trap restore EXIT
-if [ -n "${KEY:-}" ]; then
-  OLD="https://github.com/"
-  git config --global --unset "$KEY" 2>/dev/null || true
-  echo "[pyhecke-native] temporarily disabled github->mirror rewrite: $KEY"
+# ── Wheel cache first (bean qou-dgkf) ───────────────────────────────────────
+# A wheel built from these exact sources, for this CPython and platform, may
+# already be on a `cat/qou/wheel-cache/<member>` branch. Restoring it takes
+# seconds; building takes ~2.5 min. The trace-convention gate below runs on the
+# installed binary either way, so a cached wheel is checked as hard as a fresh
+# one. Set PYHECKE_NATIVE_NO_CACHE=1 to force a build.
+#
+# Restoring is on by default; SEEDING IS OPT-IN. A fresh build writes a new
+# member to origin only when PYHECKE_NATIVE_PUSH=1, the same `<ENV>_PUSH=1`
+# convention computations/_branch_cache.py uses (PR #9044). This script runs at
+# every SessionStart, so a default seed would push from every container that
+# misses the cache. PYHECKE_NATIVE_NO_SEED=1 is kept for back-compat and
+# overrides PYHECKE_NATIVE_PUSH=1 (owner approval 2026-11-22, issue #9054).
+BUILT=0
+WHL=""
+if [ "${PYHECKE_NATIVE_NO_CACHE:-0}" != 1 ]; then
+  CACHE_DIR="${TMPDIR:-/tmp}/qou-wheel-cache"
+  if WHL="$("$ROOT/scripts/wheel-cache.sh" restore pyhecke-native "$CACHE_DIR")"; then
+    echo "[pyhecke-native] restored from the wheel cache: $WHL"
+  else
+    WHL=""
+    echo "[pyhecke-native] wheel cache miss or unusable; building"
+  fi
 fi
 
-echo "[pyhecke-native] maturin build --release (fetches Clarabel.rs fork direct from github)"
-( cd "$ROOT/tools/pyhecke-native" && maturin build --release )
+if [ -z "$WHL" ]; then
+  command -v maturin >/dev/null 2>&1 || pip install --user maturin
+  export PATH="$HOME/.local/bin:$PATH"
+  # Use the git CLI (honours HTTPS_PROXY + the proxy CA bundle) for the fork fetch,
+  # instead of cargo's bundled libgit2 (which 403s against the proxy).
+  export CARGO_NET_GIT_FETCH_WITH_CLI=true
 
-WHL="$(find "$ROOT/tools/pyhecke-native/target/wheels" -name 'pyhecke_native*.whl' 2>/dev/null | head -1)"
-[ -n "$WHL" ] || { echo "[pyhecke-native] ERROR: no wheel produced" >&2; exit 1; }
+  # Detect the github->mirror `insteadOf` rewrite by VALUE (the key name embeds a
+  # per-session mirror port, so match on the rewritten target rather than the key).
+  KEY="$(git config --global --get-regexp 'url\..*\.insteadof' 2>/dev/null \
+          | awk '$2=="https://github.com/"{print $1; exit}' || true)"
+  OLD=""
+  restore() { [ -n "${KEY:-}" ] && [ -n "${OLD:-}" ] && git config --global "$KEY" "$OLD" || true; }
+  trap restore EXIT
+  if [ -n "${KEY:-}" ]; then
+    OLD="https://github.com/"
+    git config --global --unset "$KEY" 2>/dev/null || true
+    echo "[pyhecke-native] temporarily disabled github->mirror rewrite: $KEY"
+  fi
+
+  echo "[pyhecke-native] maturin build --release (fetches Clarabel.rs fork direct from github)"
+  ( cd "$ROOT/tools/pyhecke-native" && maturin build --release )
+
+  WHL="$(find "$ROOT/tools/pyhecke-native/target/wheels" -name 'pyhecke_native*.whl' 2>/dev/null | head -1)"
+  [ -n "$WHL" ] || { echo "[pyhecke-native] ERROR: no wheel produced" >&2; exit 1; }
+  BUILT=1
+fi
 pip install --user --force-reinstall "$WHL"
 python3 -c "import pyhecke_native; print('[pyhecke-native] import OK:', pyhecke_native.__file__)"
 
@@ -93,6 +121,23 @@ if d > 1e-15:
     sys.exit(1)
 print("  -> convention D confirmed.")
 PYGATE
+
+# A fresh build that passed the gate can be kept, but only on request: seeding
+# pushes to origin, so it needs PYHECKE_NATIVE_PUSH=1 (opt-in, see the header).
+# PYHECKE_NATIVE_NO_SEED=1 still wins over it. Seeding is best-effort: a dirty
+# source tree has no key and is refused, and a member that already exists is
+# never overwritten (scripts/wheel-cache.sh).
+if [ "$BUILT" = 1 ]; then
+  if [ "${PYHECKE_NATIVE_NO_SEED:-0}" = 1 ]; then
+    echo "[pyhecke-native] not seeding the wheel cache (PYHECKE_NATIVE_NO_SEED=1)"
+  elif [ "${PYHECKE_NATIVE_PUSH:-0}" = 1 ]; then
+    restore  # put the github->mirror rewrite back first: the seed pushes to origin
+    "$ROOT/scripts/wheel-cache.sh" seed pyhecke-native "$WHL" \
+      || echo "[pyhecke-native] (wheel not cached; the build itself is fine)"
+  else
+    echo "[pyhecke-native] built wheel not pushed to the wheel cache (set PYHECKE_NATIVE_PUSH=1 to seed origin)"
+  fi
+fi
 
 echo "[pyhecke-native] done — Hecke-dependent producers now run at full precision."
 echo "[pyhecke-native] smoke test: cd computations && python3 -c \"import sys; sys.path[:0]=['.','../tools/pyhecke/python','../tools/qou-substrate/python']; import canonical_mass as c; print(c.proton_mass_mev())\""

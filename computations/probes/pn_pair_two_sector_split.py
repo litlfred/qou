@@ -51,7 +51,10 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _bridge
 
-import math  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
+
+from decimal import Decimal as _Dec  # noqa: E402
 import time  # noqa: E402
 from pathlib import Path  # noqa: E402
 
@@ -72,8 +75,9 @@ def main() -> int:
     t0 = time.monotonic()
     from mass_binding_dashboard import _ame_table, _constants
     ame = _ame_table()
-    _, _, alpha = _constants()
-    alpha = float(alpha)
+    _, _, alpha_raw = _constants()
+    alpha = mp.mpf(str(alpha_raw))
+    _d = lambda x: _Dec(mp.nstr(x, 20))  # noqa: E731
 
     # exchange-sector reference magnitude g (structural form)
     q0 = mp.mpf(str(Q0))
@@ -84,38 +88,40 @@ def main() -> int:
     z = q0 ** 3 / (q0 ** 2 + 1)
     g = z / mp.sqrt(1 + z * z)
     E0 = alpha  # α = E₀ in this convention
-    B_exch = float(-mp.mpf(str(E0)) * mp.log(1 - g * g))
+    B_exch = -E0 * mp.log(1 - g * g)
 
     rows = []
     for name, Z, N in ISOTOPES:
         n = 3 * (Z + N)
-        y = y_lambda_at(n, q_val=float(Q0))
+        y = y_lambda_at(n, q_val=q0)
         w_atom = atom_braid_word_3A(Z, N, include_inter=True)
         w_free = atom_braid_word_3A(Z, N, include_inter=False)
         Ga, Ta, _, _ = _gram_and_trace(w_atom, n, y)
         Gf, Tf, _, _ = _gram_and_trace(w_free, n, y)
+        Ta_mp, Tf_mp = mp.mpf(str(Ta)), mp.mpf(str(Tf))
+        Ga_mp, Gf_mp = mp.mpf(str(Ga)), mp.mpf(str(Gf))
 
         # scalar-channel collapse (Term-1-like). Guard against sign/zero.
-        B_scalar = alpha * math.log(Tf / Ta) if (Ta > 0 and Tf > 0) else None
+        B_scalar = alpha * mp.log(Tf_mp / Ta_mp) if (Ta_mp > 0 and Tf_mp > 0) else None
         # genuine total-norm loss (quadratic ⇒ /2). G indefinite at q₀ ⇒ guard.
-        B_norm = (alpha / 2) * math.log(Gf / Ga) if (Ga > 0 and Gf > 0) else None
+        B_norm = (alpha / 2) * mp.log(Gf_mp / Ga_mp) if (Ga_mp > 0 and Gf_mp > 0) else None
         B_redist = (B_scalar - B_norm) if (B_scalar is not None
                                            and B_norm is not None) else None
         # AME table is keyed (Z, A) → (B, B_err, M, M_err).
-        b_ame = float(ame[(Z, Z + N)][0])
+        b_ame = mp.mpf(str(ame[(Z, Z + N)][0]))
 
         def err(x):
-            return None if (x is None or not b_ame) else round(100 * (x - b_ame) / b_ame, 3)
+            return None if (x is None or not b_ame) else str(round(_d(100 * (x - b_ame) / b_ame), 3))
 
         rows.append({
             "iso": name, "n": n,
-            "T_free": f"{Tf:.6g}", "T_atom": f"{Ta:.6g}",
-            "G_free": f"{Gf:.6g}", "G_atom": f"{Ga:.6g}",
-            "B_scalar_MeV": None if B_scalar is None else round(B_scalar, 5),
-            "B_norm_MeV": None if B_norm is None else round(B_norm, 5),
-            "B_redist_MeV": None if B_redist is None else round(B_redist, 5),
-            "B_exch_MeV": round(B_exch, 5),
-            "B_AME_MeV": round(b_ame, 5),
+            "T_free": f"{_d(Tf_mp):.6g}", "T_atom": f"{_d(Ta_mp):.6g}",
+            "G_free": f"{_d(Gf_mp):.6g}", "G_atom": f"{_d(Ga_mp):.6g}",
+            "B_scalar_MeV": None if B_scalar is None else str(round(_d(B_scalar), 5)),
+            "B_norm_MeV": None if B_norm is None else str(round(_d(B_norm), 5)),
+            "B_redist_MeV": None if B_redist is None else str(round(_d(B_redist), 5)),
+            "B_exch_MeV": str(round(_d(B_exch), 5)),
+            "B_AME_MeV": str(round(_d(b_ame), 5)),
             "err_scalar_pct": err(B_scalar),
             "err_norm_pct": err(B_norm),
             "err_exch_pct": err(B_exch),
@@ -133,7 +139,7 @@ def main() -> int:
 
     result = {
         "constants": {"q0": mp.nstr(q0, 12), "z": mp.nstr(z, 10),
-                      "g_exch": mp.nstr(g, 10), "alpha_E0_MeV": f"{alpha:.6g}"},
+                      "g_exch": mp.nstr(g, 10), "alpha_E0_MeV": f"{_d(alpha):.6g}"},
         "sectors": {
             "B_scalar": "α·ln(T_free/T_atom) — scalar-channel collapse (Term-1-like)",
             "B_norm": "(α/2)·ln(G_free/G_atom) — genuine total ♯-norm loss",
@@ -167,7 +173,7 @@ def main() -> int:
     wb.save(extra={"auditOnly": True})
 
     print("=== deuteron pn-pair two-sector split ===")
-    print(f"  q0={float(q0):.6f}  g_exch={float(g):.6f}  E0=α={alpha:.4f} MeV")
+    print(f"  q0={_d(q0):.6f}  g_exch={_d(g):.6f}  E0=α={_d(alpha):.4f} MeV")
     print(f"  {'iso':>4} {'B_scalar':>9} {'B_norm':>8} {'B_redist':>9} "
           f"{'B_exch':>7} {'AME':>7}")
     for r in rows:

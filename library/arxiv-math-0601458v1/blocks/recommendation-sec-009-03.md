@@ -1,1 +1,0 @@
-In principle, for instance, we should be able to describe $\Psi \circ \Phi ( Z_0 )$ as "$\Psi$-stuffed, $\Phi ( Z_0 )$-coloured finite sets" - a set with $G$-stuff, whose elements are labelled by finite sets with $F$-stuff and elements labelled with objects of $Z_0$.

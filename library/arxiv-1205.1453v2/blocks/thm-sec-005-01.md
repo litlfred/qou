@@ -1,0 +1,1 @@
+For any x ∈C∗\ [−λ; q] (−π < arg x < π), we have lim q→1−0 (q; q)∞ (q1−α; q)∞ θ(qα+1λ) θ(qλ) θ  qαx (1 −q)λ  θ  x (1 −q)λ   (1 −q) q−α x ; q  ∞ = Γ(1 −α) xα e x, where 1 < |x|. We give the proof of theorem 2.

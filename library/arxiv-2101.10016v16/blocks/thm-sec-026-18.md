@@ -1,0 +1,1 @@
+Let C be a tensor category with generalised coboundary c and right duality (ρ ∨ , bρ, dρ). There is a bijective correspondence between pivotal structures ω ∈ (1, D2) and balancing structures z ∈ (1, 1) for c2 given by ω = uz−1, where u ∈ (1, D2) is Drinfeld isomorphism associated to c.

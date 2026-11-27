@@ -1,0 +1,1 @@
+Under the notation in the proof of Theorem 1.1, VttVss −V 2 ts = −4π2(−2y0 −1) ( 1 −2C3ℏ+ O(ℏ2) ) , (VttVss −V 2 ts)−1/2 = 2π√−1 ( −2y0 −1 )−1/2( 1 + C3ℏ+ O(ℏ2) ) , where we put C3 = ( 8y2 0 −17y0 + 9 ) .

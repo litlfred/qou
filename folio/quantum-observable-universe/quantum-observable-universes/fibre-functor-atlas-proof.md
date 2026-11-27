@@ -1,4 +1,3 @@
-*Proof.*
 (1) A fibre functor $\tau'$ assigns to each object $X$ in
 $\mathbf{C}$ an $R$-module $\tau'(X)$ and to each morphism
 $f$ a linear map $\tau'(f)$, preserving the tensor product.

@@ -9,7 +9,15 @@ export default remark({
     "cor:gauge-coupling-uniqueness",
     "prop:em-coupling-bring-zero-mode",
   ],
+  cites: [
+    "alvarez-gaume-moore-vafa1986",
+  ],
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Bean qou-d8up: promoted the Quillen holomorphic-anomaly classification from `docs/audits/2026-07-25-quillen-anomaly-classification.md` (`alvarez-gaume-moore-vafa1986` §2, §4, §5; verified in `computations/probes/quillen_anomaly_classification_probe.py`) to an explicit remark paragraph distinguishing anomaly-free weight-0 holomorphic gates from frame-dependent Quillen determinant norms.",
+    },
     {
       kind: "deprecated",
       date: "2026-06-10",

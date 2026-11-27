@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hal-01215114",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hal-01215114/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -34,6 +34,18 @@
     "library/hal-01215114/sections/sec-019"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "FPSAC 2011, Reykjavík, Iceland — In this paper we establish a new combinatorial formula for zonal polynomials in terms of power-sums. The proof relies on the sign-reversing involution principle.\n\n**FPSAC 2011, Reykjavík, Iceland**\n\n*DMTCS proc. AO, 2011, 317–328*\n\n12 pp, 21 sections.\n\n**Abstract.** In this paper we establish a new combinatorial formula for zonal polynomials in terms of power-sums. The proof relies on the sign-reversing involution principle. We deduce from it formulas for zonal characters, which are deﬁned as suitably normalized coefﬁcients in the expansion of zonal polynomials in terms of power-sum symmetric functions. These formulas are analogs of recent developments on irreducible character values of symmetric groups. The existence of such formulas could have been predicted from the work of M. Lassalle who formulated two positivity conjectures for Jack characters, which we prove in the special case of zonal polynomials. Résumé. Dans cet article, nous établissons une nouvelle formule combinatoire pour les polynômes zonaux en fonction des fonctions puissance. La preuve utilise le principe de l’involution changeant les signes.\n\n**Outline.** Front matter; Introduction; Symmetric functions; Notations; Jack symmetric functions and zonal polynomials; Pair partitions; The main result; Zonal polynomials in terms of pair-partition; Application; Combinatorial interpretation; Links between pair-partitions and zonal charac; Proof of Theorem 3; Combinatorial lemmas; Triangularity; Orthogonality; Normalization; Combinatorial formulas for zonal characters; Via numbers of embeddings",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "hal-01215114",
@@ -43,8 +55,8 @@
     "pages": 12,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

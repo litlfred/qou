@@ -1,13 +1,14 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/conj-schwinger-measure-computational-time",
   "@type": [
-    "folio-assistant-core:Conjecture",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
   "label": "conj:schwinger-measure-computational-time",
@@ -15,7 +16,7 @@
   "title": "Computational-time identification: the binding Borel variable is the loop proper time",
   "uses": [
     "papers/quantum-observable-universe/blocks/conj-qdifference-kernel-prolongation-symbol",
-    "papers/quantum-observable-universe/blocks/prop-boltzmann-constant",
+    "papers/quantum-observable-universe/blocks/def-boltzmann-constant",
     "papers/quantum-observable-universe/blocks/prop-em-coupling-fixed-point"
   ],
   "tags": [
@@ -29,7 +30,7 @@
     "binding",
     "open-problem"
   ],
-  "leanRef": "qou:QOU.Archimedean.SchwingerMeasureComputationalTime.BorelProperTimeIdentification",
+  "leanRef": "qou:QOU.MassTheory.Archimedean.SchwingerMeasureComputationalTime.BorelProperTimeIdentification",
   "text": "schwinger-measure-computational-time.md",
   "leanSource": "schwinger-measure-computational-time.lean",
   "provenance": "authored"

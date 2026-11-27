@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/quaternioms",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/quaternioms/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -58,6 +58,18 @@
     "library/quaternioms/sections/sec-043"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 45 sections: Front matter; Introduction; Extended Related Work\n\n**Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations**\n\n*Computation: Mathematical*\n\n41 pp, 45 sections.\n\n**Outline.** Front matter; Introduction; Extended Related Work; Introduction: Bridging Theory and Experiment—A; Materials and Methods; Standard Quantum Computation over C; Normed Division Algebras; Quaternionic and Octonionic Preliminaries; Structure of Octonions and the Fano Plane; Geometric and Group-Theoretic Side Notes; Quaternionic Formalism; Octonionic Formalism; Hybrid Architectures and Embeddings—Additional; The Quaternionic-to-Complex Embedding Protocol; Simulating Octonionic Dynamics via Associative; Mitigation Palette: Constructions and Workflow; Cayley–Dickson Product; Associative Subalgebras and Confinement",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "quaternioms",
@@ -68,8 +80,8 @@
     "pages": 41,
     "arxiv": null,
     "doi": "10.3390/quantum7040055",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

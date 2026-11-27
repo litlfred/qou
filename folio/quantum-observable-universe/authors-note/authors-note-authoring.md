@@ -1,0 +1,9 @@
+The paper was written with [folio-assistant-sci](https://github.com/litlfred/folio-assistant-sci), the scientific-publication layer of the Folio Assistant platform, whose knowledge-graph tooling and validation rules are documented at [folio-assistant-core](https://github.com/litlfred/folio-assistant-core). The paper is held as a knowledge graph of atomic blocks (definitions, propositions, proofs, remarks) joined by explicit dependency edges, from which the typeset text is generated. Each mathematical result is a triple: a narrative statement, a narrative proof, and a Lean declaration with its proof. Mechanical validators check the structure of the graph, the references, the rendering, and that the Lean compiles without unproved steps; separate language-model reviewers, each blind to the others' conclusions, check in both directions that the narrative statement and the Lean statement say the same thing and that the proof proves it.
+
+> *In mathematics the art of proposing a question must be held of higher value than solving it.*
+>
+> — Georg Cantor, doctoral thesis (1867): *In re mathematica ars proponendi quaestionem pluris facienda est quam solvendi.*
+
+Open-access articles and books cited by the paper are ingested into a library that forms part of the same knowledge graph. The library is used to verify that a citation says what the paper claims it says, and to extract the statements of prior results so that they can be formalised in Lean and cross-referenced.
+
+Every numerical value carries a witness: a record of the script that produced it, its inputs, and its precision, so that a figure in the text can be traced to a computation and recomputed. Mathematics and measurement are kept apart: quantities inside the model are mathematical objects, and the empirical claims of the paper are located only at the points where a model quantity is compared with a measured one, against three declared calibration inputs.

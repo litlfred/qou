@@ -26,7 +26,7 @@ $\pi_{n_\star}^{(z)}$ uniformly across atoms.
 ## References
 - [leitner2026] conj:brane-tower-z-habiro
 - [leitner2026] def:z-habiro-ring
-- [leitner2026] prop:atom-knot-mass-derivation
+- [leitner2026] conj:atom-knot-mass-derivation
 -/
 
 namespace QOU.BraidKnot

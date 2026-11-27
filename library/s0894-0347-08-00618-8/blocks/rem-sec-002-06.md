@@ -1,0 +1,1 @@
+As explained in [65], one has the following subordination relations: CNA ⇒h-NLC and CNA+ ⇒Rayleigh/h-NLC+. In §4.2 and §7 below we show that PHR ⇒CNA+ and that this implication is strict. We note that NA can fail to imply NLC even for symmetric measures:

@@ -1,1 +1,0 @@
-The Γ-action is now free on objects, hence can be made strict on A+; on the other hand, starting from the equivalence in characteristic zero H∗(CC∗(A+, A+)Γ) = HH∗(A+, A+)Γ, a deformation theory argument shows that there must be some Γ-invariant structure on A itself.

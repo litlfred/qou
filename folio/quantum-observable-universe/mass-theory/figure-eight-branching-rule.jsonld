@@ -1,13 +1,14 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-figure-eight-branching-rule",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:figure-eight-branching-rule",
@@ -27,7 +28,7 @@
     "frobenius-character",
     "combinatorial"
   ],
-  "leanRef": "qou:QOU.BraidKnot.figure_eight_branching_rule",
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.figure_eight_branching_rule",
   "text": "figure-eight-branching-rule.md",
   "leanSource": "figure-eight-branching-rule.lean",
   "provenance": "authored"

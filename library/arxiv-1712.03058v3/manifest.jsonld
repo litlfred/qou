@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1712.03058v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1712.03058v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -35,6 +35,18 @@
     "library/arxiv-1712.03058v3/sections/sec-020"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Iterated ﬁltering methods for Markov process epidemic models — Dynamic epidemic models have proven valuable for public health decision makers as they provide useful insights into the understanding\n\n**Iterated ﬁltering methods for Markov process epidemic models**\n\n*Theresa Stocks1*\n\n29 pp, 22 sections.\n\n**Abstract.** Dynamic epidemic models have proven valuable for public health decision makers as they provide useful insights into the understanding and prevention of infectious diseases. However, inference for these types of models can be diﬃcult because the disease spread is typically only partially observed e.g. in form of reported incidences in given time periods. This chapter discusses how to perform likelihood- based inference for partially observed Markov epidemic models when it is relatively easy to generate samples from the Markov transmission model while the likelihood function is intractable. The ﬁrst part of the chapter reviews the theoretical back- ground of inference for partially observed Markov processes (POMP) via iterated ﬁltering. In the second part of the chapter the performance of the method and as- sociated practical diﬃculties are illustrated on two examples.\n\n**Outline.** Front matter; 1.1 Introduction; 1 Iterated filtering methods for POMP; 1.2 Likelihood-based inference; 1.2.1 The likelihood approach; 1.2.2 Practical challenges; 1.3 Inference for partially observed Markov pr; 1.3.1 Likelihood of a POMP; 1.3.2 Evaluation of the likelihood; 1.3.3 Particle filter; 1.4 Iterated filtering methods; 1.4.1 Algorithm; 1.5 Iterated filtering for SIR model given inc; 1.5.1 The problem of interest; 1.5.2 Formulation of a POMP model; 1.5.3 Inference; 1.5.4 Practical advice; 1.6 Extensions",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -58,8 +70,8 @@
       "stamp_date": "28 Oct 2018"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

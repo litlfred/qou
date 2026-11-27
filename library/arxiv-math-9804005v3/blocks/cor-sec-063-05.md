@@ -1,0 +1,1 @@
+Assume A has an Auslander rigid dualizing complex, and a noe- therian connected ﬁltration such that grA has a balanced dualizing complex. Then Cdim is weakly symmetric. RINGS WITH AUSLANDER DUALIZING COMPLEXES 37

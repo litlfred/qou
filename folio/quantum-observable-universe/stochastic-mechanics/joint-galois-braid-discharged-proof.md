@@ -1,5 +1,3 @@
-### Proof
-
 **Step 1 (decompose the bi-filtration cell).**  Every element
 $\alpha \in \mathcal{H}_q^{(n, K)}$ admits a canonical factorisation:
 
@@ -9,7 +7,7 @@ $$
 
 where $e_{\lambda_K} \in Z(H_{n_K}(q))$ is the central primitive
 idempotent of the dominant cell
-([`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent))
+([Explicit central primitive idempotents $e_\lambda$ via Jucys–Murphy elements](#prop:explicit-central-idempotent))
 and $g(z_K)$ is a depth-$n$ grouplike at the shape parameter $z_K \in F^\times$.
 
 By centrality of $e_{\lambda_K}$ in $H_{n_K}(q)$, the action of

@@ -1,0 +1,1 @@
+Let V be a VOA such that every admissible module is a direct sum of simple admissible modules. Then A(V ) is a semisimple associative algebra that can be identified with the Zhu’s algebra of V . Moreover, there is an equivalence EV : Rep(V ) → Rep(A(V )) which, after composition with the forgetful functor : Rep(A(V )) → Vec is isomorphic to FV .

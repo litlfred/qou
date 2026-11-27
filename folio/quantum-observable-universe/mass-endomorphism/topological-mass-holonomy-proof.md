@@ -1,4 +1,3 @@
-**Proof.**
 The projection $\hat{\tau}_n(\alpha)$ lies in
 $\mathcal{A}_{n+1}^{\mathrm{desc}} = \mathrm{im}\hat{\tau}_n$, which is
 isomorphic to the level-$n$ section algebra via the ascent embedding

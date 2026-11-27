@@ -31,9 +31,9 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:magic-shell-coupling-kappa",
   title:
-    "The expression $\\kappa_{\\mathrm{closed}} = -E_0 \\log(1/h) / [3]_q!$ and its proved properties",
+    "The expression $\\kappa_{\\mathrm{closed}} = -E_0 \\log(1/h) / [3]_q!$",
   lean: {
-    ref: "qou:QOU.BraidKnot.MagicShellCouplingKappa",
+    ref: "qou:QOU.BraidsAndKnots.MagicShellCouplingKappa",
     validation: "not_checked",
   },
   uses: [],
@@ -46,6 +46,7 @@ export default definition({
     "withdrawn-identification",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): $[n]_q$ as written here equals `QOU.QInteger.qIntBal`, unconditionally and including on the degenerate locus." },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). The bracket content is generic; `Real.log` and the ordering are what force $\\mathbb{R}$." },
     {
       kind: "status",

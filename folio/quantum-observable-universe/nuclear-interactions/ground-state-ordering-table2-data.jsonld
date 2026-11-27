@@ -1,8 +1,9 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/tbl-ground-state-ordering-table2-data",
@@ -12,12 +13,13 @@
   ],
   "label": "tbl:ground-state-ordering-table2-data",
   "kind": "table",
-  "title": "Table 2 from prop:ground-state-ordering",
+  "title": "Nucleon-ordering ansatz sequences vs. $\\Phi_q$ minimality status",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-ground-state-ordering"
   ],
   "tags": [
-    "extracted-table"
+    "extracted-table",
+    "nucleon-ordering"
   ],
   "text": "ground-state-ordering-table2-data.md",
   "provenance": "authored"

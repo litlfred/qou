@@ -1,1 +1,0 @@
-After corollary [\[coro:complexedessolutions\]](#coro:complexedessolutions){reference-type="ref" reference="coro:complexedessolutions"}, we must consider the cokernel of ${{\mathbf C}(\{z\})}^{r} \overset{\Phi_{z^{\mu} A} - \text{Id}}{\longrightarrow} {{\mathbf C}(\{z\})}^{r}$.

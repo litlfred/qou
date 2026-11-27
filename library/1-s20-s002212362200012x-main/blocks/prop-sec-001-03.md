@@ -1,0 +1,1 @@
+Suppose that ∇2 log dν dμ(x) ⪯βIn, ∀x ∈[−1, 1]n. (4) Then ν is (β + 3)-semi-log-concave. Thus, a corollary to Theorem 2 is that the condition (4) implies that every 1-Lipschitz function ϕ satisﬁes Varν[ϕ] ≤C(β + 3)n2−c/(β+3). R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392

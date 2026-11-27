@@ -18,8 +18,8 @@ $$
   \;\;}
 $$
 
-*and the first root forces $y_{(3)} = 1$, $y_{(2,1)} = y_{(1^3)} = 0$. Convention D is
-therefore the unique non-trivial Markov trace on $H_3(q)$ whose radical contains the
+*and the first root forces $y_{(3)} = 1$, $y_{(2,1)} = y_{(1^3)} = 0$. The parameter $z = q^{3}/(q^{2}+1)$ therefore defines
+the unique non-trivial Markov trace on $H_3(q)$ whose radical contains the
 three-strand antisymmetriser.*
 
 ## Three normalisations, three unknowns
@@ -62,7 +62,7 @@ isospin weights degenerate to $1$ and $0$ and no nucleon-pair structure survives
 a Markov trace only in the empty sense, which is what "non-trivial" excludes in the
 statement above.
 
-The second root is convention D, $z\,(q^{2}+1) = q^{3}$. Reading the closed forms off
+The second root is $z\,(q^{2}+1) = q^{3}$, i.e. $z = q^{3}/(q^{2}+1)$. Reading the closed forms off
 the same system recovers, now derived rather than tabulated,
 
 $$
@@ -76,14 +76,11 @@ $y_{(n-k,k)} = [n-2k+1]_q/[2]_q^{\,n}$.
 
 ## What the characterisation replaces
 
-The selection criterion for the Markov trace is not non-degeneracy. Convention D
+The selection criterion for the Markov trace is not non-degeneracy. The trace at $z = q^{3}/(q^{2}+1)$
 violates non-degeneracy by construction --- the pairing has a radical, and the radical
 is exactly the block killed above --- so a non-degeneracy criterion could never have
 selected it. What this proposition supplies in its place is a *derivation*: impose the
-row cap $y_\lambda = 0$ for $\ell(\lambda) \ge 3$, and $z$ is forced. Convention C is
-then excluded by the same computation rather than by fiat, since
-$z = 1/(q^{1/2}+q^{-1/2})$ is neither root; that is precisely why the antisymmetric
-weight is nonzero there.
+row cap $y_\lambda = 0$ for $\ell(\lambda) \ge 3$ together with faithfulness on the two-row blocks, and $z = q^{3}/(q^{2}+1)$ is forced uniquely.
 
 The pinning first becomes available at three strands. On $H_2(q)$ there is no
 three-row partition whose weight can be asked to vanish, the algebra is commutative
@@ -96,8 +93,6 @@ physical observables, real-analytic bounds, transcendental constants, or numeric
 evaluation at the substrate parameter $q_0$. Any generic categorical or
 $q$-deformation identities it draws on remain valid over an abstract coefficient ring;
 only their archimedean realisation is specialised here. At
-$q_0 = 1.10997858275138080759$ the two conventions give
-$z_{\mathrm{D}} = 0.61268803714646525160$ with weights
-$(0.5054042,\, 0.2472979,\, 0)$, against
-$z_{\mathrm{C}} = 0.49932033418369445241$ with
-$(0.4153958,\, 0.2809296,\, 0.0227449)$.
+$q_0 = 1.10997858275138080759$ the Markov parameter evaluates to
+$z = 0.61268803714646525160$ with weights
+$(0.5054042,\, 0.2472979,\, 0)$.

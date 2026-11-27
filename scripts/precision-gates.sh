@@ -428,6 +428,9 @@ GATES=(
   # count 32,883 -> 44,937. The copies were smaller only because they were
   # stale, and were also missing the q0 anchor (8 -> 128 of 140 recorded).
   "qou-mass raw-float64|computations/witness_raw_float64_audit.py|--scan-root qou-mass/src --strict|no|yes"
+  # BLOCKING, green on arrival (0 defects across 128 .py files in tools/ + qou-mass/).
+  # Closes bean qou-4w77 without dirtying contended computations/ audit witnesses.
+  "tools/qou-mass precision|computations/audits/tools_qou_mass_precision_audit.py|--strict --no-witness|yes|yes"
   # ADVISORY, and it starts red on purpose — same terms as the audits-tree
   # entry above. `witness_provenance_audit.py` was written, works (27/27
   # self-test), ships --strict/--list, and was in NO array, so nothing ran it.

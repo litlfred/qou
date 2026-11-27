@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-hep-ph-9308276v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "498931b15afb3f650b39794aa3624328e154dd4ae3ee83e68564ee4b11000aff",
   "file": "9308276v1.pdf"
  },
  "provenance": {
-  "title": "arXiv:hep-ph/9308276v1 14 Aug 1993",
+  "title": "The Electroweak Chiral Lagrangian for the Standard Model with a heavy Higgs",
   "authors": "Maria J. Herrero\u2217and Ester Ruiz Morales\u2020",
   "arxiv": {
    "id": "hep-ph/9308276",
@@ -16,151 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 9,
-  "by_kind": {
-   "recommendation": 9
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The final result for $\\Gamma_{\\rm R}^{\\rm EChL}$ must be expressed in terms of the renormalized parameters.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-the-electroweak-chiral-lagrangian.md",
-   "section_title": "The electroweak chiral Lagrangian",
-   "pages": "3-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "When computing the renormalized Green's functions to one loop in the standard model and in the large $\\mh$ limit,care must be taken since clearly the operations of making loop integrals and taking the large $\\mh$ limit do not commute.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-effective-lagrangian-parameters-for-a-heavy-hi.md",
-   "section_title": "Effective Lagrangian parameters for a heavy Higgs",
-   "pages": "8-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Thus, one must first regulate the loop integrals by dimensional regularization, then perform the renormalization operation with some fixed prescription and at the end take the large $\\mh$ limit, with $\\mh$ being the renormalized Higgs mass.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-effective-lagrangian-parameters-for-a-heavy-hi.md",
-   "section_title": "Effective Lagrangian parameters for a heavy Higgs",
-   "pages": "8-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The large $\\mh$ values must be bounded in practice to the range m$^2$, p$^2 \\ll \\mh^2 \\lsim 1$ TeV$^2$ where p$^2$ represent the available external momenta and m$^2$ the light (renormalized) particle masses (m = M$_{\\rm W}$ or M$_{\\rm Z}$).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-effective-lagrangian-parameters-for-a-heavy-hi.md",
-   "section_title": "Effective Lagrangian parameters for a heavy Higgs",
-   "pages": "8-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This matching procedure is summarized in the following simple condition: $$\\Gamma_{\\rm R}^{\\rm SM}(\\mu ) =\\Gamma_{\\rm R}^{\\rm EChL}(\\mu ) \\; , \\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\mu\\leq \\mh$$ where the large Higgs mass limit in the left-hand side must be understood throughout.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-effective-lagrangian-parameters-for-a-heavy-hi.md",
-   "section_title": "Effective Lagrangian parameters for a heavy Higgs",
-   "pages": "8-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The matching conditions are summarized by the following system of six tensorial equations: $$\\begin{aligned} \\Pi^{ab}_{0 \\mu\\nu} + \\Pi^{ab}_{{\\rm C} \\mu\\nu} + \\Pi^{ab}_{{\\rm L} \\mu\\nu} & = & \\widehat{\\Pi}^{ab}_{0 \\mu\\nu} + \\widehat{\\Pi}^{ab}_{{\\rm C} \\mu\\nu} + \\widehat{\\Pi}^{ab}_{{\\rm L} \\mu\\nu} \\label{PM}\\\\[2mm] V^{abc}_{0 \\lambda\\mu\\nu} + V^{abc}_{{\\rm C} \\lambda\\mu\\nu} + V^{abc}_{{\\rm L}\\lambda\\mu\\nu} & = & \\widehat{V}^{abc}_{0 \\lambda\\mu\\nu} + \\widehat{V}^{abc}_{{\\rm C} \\lambda\\mu\\nu} +\\widehat{V}^{abc}_{{\\rm L} \\lambda\\mu\\nu} \\label{VM} \\end{aligned}$$ where $ab = WW, ZZ, \\gamma\\gamma , \\gamma Z$ and $abc = \\gamma WW, ZWW$ and the large Higgs mass limit in the left-hand side must be understood throughout.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-effective-lagrangian-parameters-for-a-heavy-hi.md",
-   "section_title": "Effective Lagrangian parameters for a heavy Higgs",
-   "pages": "8-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "A completely analogous computation of the whole set of four point 1LPI functions must be performed to extract the values of $a_4, a_5, a_6, a_7$ and $a_{10}$ as well as the corresponding counterterms [@HR1].",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-effective-lagrangian-parameters-for-a-heavy-hi.md",
-   "section_title": "Effective Lagrangian parameters for a heavy Higgs",
-   "pages": "8-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We get the following relations: $$\\begin{aligned} \\Delta Z_W & = & - \\frac{g^2} {16\\pi^2} \\frac{1}{12} \\left(\\Delta_\\epsilon + \\frac{5}{6} - \\log\\frac{M_H^2}{\\mu^2} \\right)\\nonumber\\\\[2mm] \\Delta Z_B & = & - \\frac{g'^2} {16\\pi^2} \\frac{1}{12} \\left(\\Delta_\\epsilon + \\frac{5}{6} - \\log\\frac{M_H^2}{\\mu^2} \\right)\\nonumber\\\\[2mm] \\Delta\\xi_W & = &\\Delta Z_W\\nonumber\\\\[2mm] \\Delta\\xi_B & = &\\Delta Z_B\\nonumber\\\\[2mm] \\frac{\\Delta g}{g} & = & 0\\nonumber\\\\[2mm] \\frac{\\Delta g'}{g'} & = & 0\\label{Zs} \\end{aligned}$$ where we have defined the differences of the conterterms as, $$\\Delta Q \\equiv \\delta Q- \\widehat{\\delta Q},\\;\\;\\;\\;\\;Q=Z_W,Z_B,\\xi_W, \\xi_B,g,g'\\nonumber$$ The wave function renormalization constants are not the same in the two theories, a result that accounts for the fact that the effective theory must incorporate the additional logarithmic divergences that arise in the standard model only when $\\mh\\rightarrow \\infty$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-effective-lagrangian-parameters-for-a-heavy-hi.md",
-   "section_title": "Effective Lagrangian parameters for a heavy Higgs",
-   "pages": "8-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "These equations tell us the way one must fix the wave functions and coupling constants renormalizations in the effective theory, once a particular prescription for the standard model counterterms has been assumed.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-effective-lagrangian-parameters-for-a-heavy-hi.md",
-   "section_title": "Effective Lagrangian parameters for a heavy Higgs",
-   "pages": "8-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

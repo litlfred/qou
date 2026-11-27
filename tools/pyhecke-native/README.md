@@ -68,7 +68,8 @@ crates.io release.
 `MpfrFloat` scalar, **not** the netlib SDP cone backend, so it needs only system
 GMP + MPFR (already required by `rug`) — **not** OpenBLAS/LAPACK/gfortran. The
 f64 SDP solver (`hecke-engine`'s `clarabel-sdp`, which *does* need BLAS) stays
-opt-in and is mutually exclusive with `clarabel-mpfr`.
+opt-in. Since fork rev 37f06c3 it combines with `clarabel-mpfr` as
+`hecke-engine`'s `clarabel-mpfr-sdp` (MPFR SDPs at 50+ digits; needs gfortran).
 
 ### Restricted-network / egress-blocked builds
 

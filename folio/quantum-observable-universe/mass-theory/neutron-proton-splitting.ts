@@ -6,6 +6,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:neutron-proton-splitting",
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): the Lean formalization states only the model value." },
     {
       kind: "status",
       date: "2026-11-15",
@@ -51,7 +52,13 @@ export default proposition({
         "traced-volumes to Lean so the pins become theorems.",
     },
   ],
-  lean: { ref: "qou:QOU.Torsion.neutron_proton_splitting", validation: "not_checked" },
+  lean: { ref: "qou:QOU.LiftingDescent.neutron_proton_splitting", validation: "not_checked" },
+  computation: {
+    engine: "python",
+    script: "computations/markov_free_energy_qvalues.py",
+    witness: "computations/markov-free-energy-qvalues.witness.json",
+    status: "verified",
+  },
   title: "Neutron--proton mass splitting",
   uses: ["thm:wedderburn-mass-formula"],
 });

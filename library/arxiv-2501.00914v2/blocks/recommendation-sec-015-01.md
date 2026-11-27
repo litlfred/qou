@@ -1,1 +1,0 @@
-In fact, the sum cannot be $2$, because this would imply that $\nu(K)=\tau(K)+1$ and $\nu(\mirror{K})=\tau(\mirror{K})+1$, and these cannot both be true by \cite[\S3]{hom-smooth-concordance}, so the sum must be either $0$ or $1$.

@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2302.08363v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "c2244e03b17048fb95c7aebc7d093ef2c83b41e07ca0db4ec8ec11f0162d7655",
   "file": "2302.08363v2.pdf"
@@ -16,106 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 6,
-  "by_kind": {
-   "recommendation": 6
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In particular, its singularity structure must be qualitatively different from what is found in e.g. typical two-point functions.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "According to the strong version, all the non-perturbative corrections appearing in the trans-series should be obtained from the analysis of the Borel singularities of the perturbative series, perhaps up to overall multiplicative constants.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-the-large-n-sigma-model-revisited.md",
-   "section_title": "The large N sigma model, revisited",
-   "pages": "5-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In principle, in our result, we should also incorporate exponential corrections arising from the poles of $G_-(\\omega)$ as we deform the contour upwards for the term $\\re^{2\\ri B \\omega}$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-trans-series-computation.md",
-   "section_title": "Trans-series computation",
-   "pages": "15-20",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "(5.110) The exact solution F(h) is expected to be singular around its zero at h = m, hence one could conjecture that the radius of convergence of the trans-series in the h-plane should be m.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-012-numerical-analysis.md",
-   "section_title": "Numerical analysis",
-   "pages": "29-31",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Lastly, assuming the form (2.8), we can estimate b0 by evaluating the auxiliary series on the l.h.s. of (5.63) for n = 0, where we must plug in the estimate for the radius in table 3.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-012-numerical-analysis.md",
-   "section_title": "Numerical analysis",
-   "pages": "29-31",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Like in the case of bosonic models, one must account for the error both from the convergence of the sequence and from the estimate of R. \u2013 29 \u2013",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-012-numerical-analysis.md",
-   "section_title": "Numerical analysis",
-   "pages": "29-31",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

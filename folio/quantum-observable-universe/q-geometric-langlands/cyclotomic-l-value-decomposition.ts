@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Cyclotomic depth-$n$ generators decompose into Dirichlet $L$-values: $\\beta(3) = \\pi^3/32$ as a corollary",
   lean: {
-    ref: "qou:QOU.BraidKnot.CyclotomicLValueDecomposition.beta_3_from_jonquiere",
+    ref: "qou:BraidKnotOctonion.CyclotomicLValueDecomposition.beta_3_from_jonquiere",
     validation: "not_checked",
   },
   computation: {
@@ -28,11 +28,11 @@ export default proposition({
     "analytic-number-theory-bridge",
   ],
   // The constructive proof of β(3)=π³/32 invokes Theorem A
-  // (prop:jonquiere-cyclotomic-tate-rationality) alongside Theorem G
-  // (prop:cyclotomic-dimension-synthesis-all-depths). Both live in mass-theory
-  // (an earlier chapter) — genuine backward dependencies, no forward-ref.
+  // (prop:jonquiere-cyclotomic-tate-rationality) only. The edge to the
+  // dimension count (now conj:cyclotomic-dimension-synthesis-all-depths) was
+  // cut 2026-11-21: the proof never uses it, and keeping it would make this
+  // proposition downstream of a conjecture.
   uses: [
-    "prop:cyclotomic-dimension-synthesis-all-depths",
     "prop:jonquiere-cyclotomic-tate-rationality",
   ],
   authorNotes: [

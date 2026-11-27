@@ -2,11 +2,12 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:mi-sw-abelianisation",
-  lean: { ref: "qou:QOU.BringsSurface.mi_sw_abelianisation",
+  lean: { ref: "qou:QOU.BringsSurface.BringsSurfaceRoot.mi_sw_abelianisation",
     validation: "stub",
   },
   title: "Abelianisation of the MI integral on exceptional divisors",
   authorNotes: [
+    { kind: "note", date: "2026-11-24", body: "Relocated from the block prose by the reading-order drain (qou-d4kh): of the ([mass identity](#def:mass-identity))" },
     {
       kind: "status",
       date: "2026-08-08",
@@ -70,7 +71,7 @@ export default proposition({
         "`validation: \"stub\"` is unchanged and still accurate.",
     },
   ],
-  cites: ["seiberg-witten1994b", "donagi1997"],
+  cites: ["seiberg-witten1994b", "donagi1997", "arxiv-1204.4824v2", "blanes-casas-oteo-ros2009"],
   uses: [
     "rem:brings-smoothness",
     "def:mass-identity",

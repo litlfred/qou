@@ -1,1 +1,0 @@
-Finally, the 1-forms $a_{ij}$ must obey a consistency condition on triple intersections: \begin{equation} \label{compatibility} h_{ijk}^{-1} \, \dalpha(A_i)(h_{ijk}) \, + \, h_{ijk}^{-1} \, dh_{ijk} \, + \, \alpha(g_{ij})(a_{jk}) \, + \, a_{ij} = h_{ijk}^{-1}\, a_{ik}\, h_{ijk} \end{equation} Where does this consistency condition come from?

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1108.4389v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.4389v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -41,6 +41,18 @@
     "library/arxiv-1108.4389v1/sections/sec-026"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Gauge Theories Labelled by Three-Manifolds — We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories.\n\n**Gauge Theories Labelled by Three-Manifolds**\n\n*Tudor Dimofte1 and Davide Gaiotto1 and Sergei Gukov2,3*\n\n58 pp, 28 sections.\n\n**Abstract.** We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories. Under this duality, standard operations on triangulated 3-manifolds and various invariants thereof (classical as well as quantum) ﬁnd a natural interpretation in ﬁeld theory. For example, independence of the SL(2) Chern-Simons partition function on the choice of triangulation translates to a statement that S3 b partition functions of two mirror 3d N = 2 gauge theories are equal. Three-dimensional N = 2 ﬁeld theories associated to 3-manifolds can be thought of as theories that describe boundary conditions and duality walls in four-dimensional N = 2 SCFTs, thus making the whole construction functorial with respect to cobordisms and gluing. CALT-68-2847 arXiv:1108.4389v1 [hep-th] 22 Aug 2011\n\n**Outline.** Front matter; 1 Introduction; 2 Geometry of 3-manifolds; 2.1 Building blocks; 2.2 Gluing; 2.3 Geodesic boundaries; 2.4 Torus cusps; 2.5 Changing the triangulation; 3 Operations on 3d abelian theories; 3.1 An $Sp(2N,{\\mathbb Z})$ action on 3d CFTs ; 3.1.1 Generalities; 3.1.2 Adding supersymmetry; 3.2 A ${\\mathbb Z}_2$ action on 3d $\\mathcal{N; 3.3 Useful $\\mathcal{N}=2$ mirror symmetries; 4 Construction of $T_M$; 4.1 Definition; 4.2 The bipyramid and the 2--3 move; 4.3 The flip",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -64,8 +76,8 @@
       "stamp_date": "22 Aug 2011"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

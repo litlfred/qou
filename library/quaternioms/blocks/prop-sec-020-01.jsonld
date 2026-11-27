@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/quaternioms/blocks/prop-sec-020-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "title": "Conﬁnement ⇒associativity",
+  "pageStart": 18,
+  "pageEnd": 19,
+  "text": "prop-sec-020-01.md",
+  "derivedFrom": "library/quaternioms/sections/sec-020",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/quaternioms/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-020-mitigation-strategies-correctness-guarantees-and.md (p. 18-19)",
+    "claim_id": "quaternioms#proposition:4",
+    "lean_status": "unformalized"
+  }
+}

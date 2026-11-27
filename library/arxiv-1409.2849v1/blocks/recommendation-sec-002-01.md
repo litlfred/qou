@@ -1,1 +1,0 @@
-In Section \ref{sec:cumulantspin}, we shall apply this method to a case where $G$ is the complete graph on $n$ vertices, but where one can still find correct bounds (and in fact exact formulas) for the joint cumulants $\kappa(Y_{i_1},\ldots,Y_{i_r})$: the one-dimensional Ising model. \medskip

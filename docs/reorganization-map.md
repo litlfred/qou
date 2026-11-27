@@ -434,3 +434,61 @@ The colocated per-block `.lean` files are **not** in the Lake source path —
 `folio/quantum-observable-universe/lean/` — so on inspection no move can
 affect compilation. Not confirmed by a build: the orchestrator held a QOU build
 in this checkout and `lake` was not run.
+
+---
+
+## 2026-11-24 — Compact 9-Block $\mathcal{L}_0\text{--}\mathcal{L}_4$ Algorithms Annex Overhaul (`qou-mba8`, `qou-nmjd`)
+
+Rebuilt `folio/quantum-observable-universe/appendix-mass-binding-algorithms/` from 22 sprawling blocks (4 sections, 1,527 `.md` lines) and 5 scattered procedural blocks in Chapters 7 and 12 into a single cohesive 9-block section (`sec:mba-canonical-chain`, `"Multi-Layer Computational and Dual-Certificate Procedures"`) organized across the five discrete confinement layers $\mathcal{L}_0\text{--}\mathcal{L}_4$:
+
+- **Retained/standardized 9 blocks in `appendix-mass-binding-algorithms/`:**
+  1. `mba-intro` (`prose:mba-intro`, absorbing `mba-chain-map`): 2-paragraph scope, $\mathcal{L}_0\text{--}\mathcal{L}_4$ architecture, and 80-dps certification contract.
+  2. `hecke-gs-monotone-transfer` (`alg:hecke-gs-monotone-transfer`, consolidating `mba-step01..05`): Kang–Lee–Lee–Oh completed Hecke Gröbner–Shirshov reduction (`NotAGSBasis.hecke_not_gs_basis_four` for $n \ge 4$) + QOU monotone fine-Bratteli $2\times 2$ transfer sweep.
+  3. `twisted-star-gram-radical-quotient` (`alg:twisted-star-gram-radical-quotient`, replacing `mba-step06-frobenius-pairing`): involution-twisted $\ast$-Gram radical projection onto $TL_n(q) = H_n(q)/\mathrm{rad}\,\tau_q$ and Nakayama-twisted Frobenius verification on non-involutory Hopf models.
+  4. `ecat-radical-shadow-price` (`alg:ecat-radical-shadow-price`, replacing `mba-step10-confinement-sdp`): solver-free algebraic $(1^3)$ radical shadow-price extraction on $H_3(q_0)$.
+  5. `confinement-tower-chamber-gs` (`alg:confinement-tower-chamber-gs`, replacing `mba-step07-gb-filtration`): five-layer `ConfinementLayer` ($\mathcal{L}_0 \to \mathcal{L}_4$) promotion, 11-rule physical nuclear cluster chamber $\mathcal{G}_{\mathrm{phys}}$, Mayer–Jensen shells, and chemical toric stoichiometry.
+  6. `substrate-period-mass-resolvent` (`alg:substrate-period-mass-resolvent`, renamed from `alg:mass-identity` in `mba-step09a-mass-identity`): 80-dps Clausen/Borromean ratio root (marking $q^{-3}$ asserted) and inhomogeneous $4_1$ lepton loop resolvent from $(m_e, \mathfrak{D}_\beta, m_\pi)$.
+  7. `q-beta-chirality-jet-evaluation` (`alg:q-beta-chirality-jet-evaluation`, consolidating `mba-step08-jet-prefix`, `mba-step11-q-beta-truncation`, `mba-sidecar-ck-truncation-ladder`): two-term chiral trace and tiered $\mathfrak{Q}_\beta$ jet evaluation.
+  8. `rationalized-dual-slack-certificate` (`alg:rationalized-dual-slack-certificate`, replacing `mba-sidecar-lp-sdp-dual-emission` and retiring `mba-sidecar-witness-json-pipeline`): solver-external rationalized dual-slack optimality and support-uniqueness certification.
+  9. `lp-sdp-bootstrap-prior-art` (`rem:lp-sdp-bootstrap-prior-art`): retained intact alongside `alg:rationalized-dual-slack-certificate`.
+- **Relocated 4 non-algorithmic mathematical/physics blocks to body chapters (labels preserved):**
+  - `mba-sidecar-delta-lambda-closure` + scope note of `mba-step09b-per-isotope-binding` $\to$ `mass-theory/delta-lambda-value-vs-magnitude` (`rem:delta-lambda-value-vs-magnitude`, `sec:phi-q-markov-residue-habiro`).
+  - `mba-remark-tjon-universality-external` $\to$ `mass-theory/tjon-universality-external` (`rem:tjon-universality-external`, `sec:phi-q-markov-residue-habiro`).
+  - `mba-sidecar-mirror-cancellation` $\to$ `nuclear-interactions/mirror-baseline-cancellation` (`prop:mirror-baseline-cancellation`, `sec:atomic-braid-mass-crossing-locality-cpt`).
+  - `mba-sidecar-isovector-chiral-residue` $\to$ `nuclear-interactions/isovector-chiral-residue` (`prop:isovector-chiral-residue`, `sec:atomic-braid-mass-crossing-locality-cpt`).
+- **Chapter 7 & Chapter 12 procedural cleanup:**
+  - Replaced `knots-particles-confinement/universal-ilp-algorithm` (`def:universal-ilp-algorithm`, `status: "error"`) with forward-clean `knots-particles-confinement/confinement-layer-operator-selection` (`rem:confinement-layer-operator-selection`, `sec:nucleon-derivation`).
+  - Retired zero-caller procedural remarks in `nuclear-interactions/`: `nuclear-reduction-algorithm`, `groebner-reduction-methods`, `atomic-nf-witness-procedure`, and `step-lp-verification`.
+
+---
+
+## 2026-11-24 — Back-Matter Consolidation (`14 -> 6` Annexes `A–F`) and 80-dps Jacobian Master Atlas (`qou-anx0`, `qou-lanx`)
+
+Consolidated the 14 back-matter appendices (`glossary`, `notation`, `appendix-knot-operations`, `appendix-knot-operations-archimedean`, `appendix-knot-periodic-table`, `appendix-transfer-matrices`, `appendix-nf-witnesses`, `appendix-qvalues`, `appendix-mass-binding-algorithms`, `appendix-standard-model`, `appendix-surreals`, `appendix-surreals-archimedean`, `appendix-formalisation-notes`, `index-of-definitions`) into six crisp, non-overlapping Annexes `A–F`:
+
+| Annex (`tabLabel`) | Directory & Manifest Label | Consolidated Sources | Summary |
+|---|---|---|---|
+| **Annex A** (`A`) | `appendix-knot-periodic-table/` (`app:knot-periodic-table`) | `appendix-knot-operations/` (12) + `appendix-knot-operations-archimedean/` (3, tagged `archimedean-bridge`) + `appendix-knot-periodic-table/` (16) + 6 new 80-dps Fréchet–Jacobian Master Atlas tables | Knot Operations, Periodic Atlas, and 80-dps Master Empirical Reference Tables (`computations/master_atlas_jacobian_80dps.py` + `master-atlas-80dps.witness.json`, uniform 6-column schema with propagated $(m_e, \mathfrak{D}_\beta, m_\pi)$ uncertainties). |
+| **Annex B** (`B`) | `appendix-mass-binding-algorithms/` (`app:mass-binding-algorithms`) | `appendix-mass-binding-algorithms/` (9 $\mathcal{L}_0\text{--}\mathcal{L}_4$ algorithms) + `appendix-transfer-matrices/` (45) + `appendix-nf-witnesses/` (4) + `appendix-qvalues/` (11 Lean-backed $5_2$/Habiro blocks; 7 stale/duplicate blocks retired) | Computational Procedures, Transfer Matrices, and Normal-Form Certificates. |
+| **Annex C** (`C`) | `appendix-standard-model/` (`app:standard-model`) | `appendix-standard-model/` (22 blocks; eight 1-block parameter micro-sections consolidated into `sec:sm-parameters`, preserving `sec:sm-open-problems`) | Standard Model Correspondence and Open Structural Problems. |
+| **Annex D** (`D`) | `appendix-surreals/` (`app:surreals`) | `appendix-surreals/` (100) + `appendix-surreals-archimedean/` (21, tagged `archimedean-bridge` with Archimedean specialisation banners) | Surreal Numbers, Ordered Realisations, and Archimedean Limits. |
+| **Annex E** (`E`) | `appendix-formalisation-notes/` (`app:formalisation-notes`) | `appendix-formalisation-notes/` (24) + `mathlib-upstreaming-laurent-pl-links` (1) + `lean-community-libraries-dag` & 6 Reservoir library specs (`qou-lanx`, 7) | Lean 4 Formalisation Architecture, `Mathlib4` Upstreaming, and Standalone Community Libraries. |
+| **Annex F** (`F`) | `notation/` (`chap:notation`) | `notation/` (13) + `glossary/` (31, consolidated into `sec:glossary-categorical-foundations` and `sec:glossary-homological-geometric`) + `index-of-definitions/` (1) | Notation Register, Categorical Glossary, and Index of Definitions. |
+
+---
+
+## 2026-11-24 — Q3 Option 1 Lean 4 Multi-`lean_lib` Isolation & `83 -> 12` `QOU.<Chapter>` Consolidation (`qou-lref`)
+
+- **Owner Decision (`2026-11-24`):** Selected **Option 1** (`Process_GraphDetanglement` Stage 3 `Isolate in-place`) from [`docs/audits/2026-11-23-lean-kg-detangler-and-reservoir-options.md`](audits/2026-11-23-lean-kg-detangler-and-reservoir-options.md).
+- **Authoritative Module Map:** [`docs/audits/2026-11-24-lean-reservoir-module-map.json`](audits/2026-11-24-lean-reservoir-module-map.json) (`3,890` library modules mapped bijectively; automated via [`scripts/apply-lean-reservoir-migration.py`](../scripts/apply-lean-reservoir-migration.py)).
+- **7 Top-Level Pure-Math `[[lean_lib]]` Roots (`folio/quantum-observable-universe/lean/<Lib>/`):**
+  1. `MathlibExt` (L1 — Tier-A `leanprover-community/mathlib4` core PR staging; `0` Tier-B and `0` `QOU.*` imports)
+  2. `QCalculus` (L2 — $q$-numbers, Gaussian binomials, $q$-Pochhammer, Thomae–Jackson $q$-calculus, dilogarithms, Habiro rings)
+  3. `TwistedFrobeniusHopf` (L3 — Nakayama-twisted Frobenius algebras, Sweedler $H_4$ & Taft Hopf algebras, Higman norm map)
+  4. `ToricConicOpt` (L4 — Sturmfels–Thomas toric Gröbner chambers, Graver bases, LP/SDP dual certificates)
+  5. `CompactQuantumMetrics` (L5 — Finite-dimensional Rieffel–Connes compact quantum metric spaces, Woronowicz $\mathcal{O}_q(\mathrm{SU}(2))$)
+  6. `HeckeTemperleyLieb` (L6 — Iwahori–Hecke $H_n(q)$, Temperley–Lieb $TL_n(q)$, Jones/Markov/Ocneanu traces, Hoefsmit/Young/SYT/Schur–Weyl)
+  7. `BraidKnotOctonion` (L7 — Artin braid groups, Burau/Krammer/Alexander invariants, PL knot topology, Kashaev/Whitehead/Borromean volume bounds, octonions/$\mathfrak{g}_2$, Bring's curve)
+- **12 Canonical Monograph `QOU/<Chapter>/` Subgraphs (`83 dirs + 106 loose -> 12 dirs + 0 loose`):**
+  `QOU/Core/`, `QOU/LiftingDescent/`, `QOU/BraidsAndKnots/`, `QOU/BringsSurface/`, `QOU/Confinement/`, `QOU/EightfoldWay/`, `QOU/MassTheory/`, `QOU/Nuclear/`, `QOU/StandardModel/`, `QOU/FluidDynamics/`, `QOU/InformationTheory/`, `QOU/Observations/`.
+- **Open-PR Fixup Command:** Run `nice -n 10 python3 scripts/apply-lean-reservoir-migration.py --fixup-branch` on any branch authored against legacy `QOU/<OldSynonym>/` paths.

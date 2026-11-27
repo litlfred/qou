@@ -3,6 +3,13 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`): `2026-08-24-undecided-carrier-witnesses.lean` exhibits an unconditional real witness (`s := eps`, `s0 := 1`) inhabiting `QOU.AlgebraicSubstrate.PvsNPQou`.",
+      see: "docs/audits/2026-08-24-undecided-carrier-witnesses.lean",
+    },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): It is formulated in the Reeb--surreal framework but lacks a Lean formalisation. A formal proof would ..." },
+    {
       kind: "note",
       date: "2026-08-08",
       body:
@@ -15,12 +22,13 @@ export default conjecture({
         "Over a generic ring there is no `0 <` to quantify, so `ℝ` is " +
         "load-bearing rather than gratuitous.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): See [Surreal bound for P vs NP](#rem:p-vs-np-surreal-bound) for the squeeze-inequality statement implied by this conjecture." },
   ],
   label: "conj:p-vs-np-qou",
   title:
     "P vs NP in the QOU: classical-limit separation of BQP-width classes",
   lean: {
-    ref: "qou:QOU.AlgebraicSubstrate.PvsNPQou",
+    ref: "qou:QOU.BringsSurface.PvsNPQou",
     validation: "not_checked",
   },
   uses: [

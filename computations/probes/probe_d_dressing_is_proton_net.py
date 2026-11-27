@@ -73,7 +73,8 @@ def symbolic_identities() -> dict:
     h = q - 1 / q
     net_p = 1 - h / 2
     net_n = 1 - 3 * h / 2 + h ** 2 / 2
-    E0 = 1 / (q * (q - 1))                       # per m_e
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    E0 = _qbeta_e0.order_zero_scaled(1, q)                       # per m_e
     delta_net = sp.simplify(net_n - net_p)
     return {
         "delta_net_eq_neg_h_net_p":
@@ -95,7 +96,8 @@ def numerical_chain(q: mp.mpf) -> dict:
     m_e = mp.mpf(str(M_E_MEV))
     B_AME = mp.mpf(str(AME_B_DEUTERON_MEV_VALIDATION))
     h = q - 1 / q
-    E0 = m_e / (q * (q - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    E0 = _qbeta_e0.order_zero_scaled(m_e, q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
     net_p = 1 - h / 2
     net_n = 1 - 3 * h / 2 + h ** 2 / 2
     delta_net = net_n - net_p
@@ -107,25 +109,37 @@ def numerical_chain(q: mp.mpf) -> dict:
 
     B_cand = E0 * net_p * dtr                     # the derived-shape candidate
     B_via_qbeta = Qb_kashiwara * dtr / h          # production-Q_β route
+    # The corpus's live binding law, exactly as binding_log_free_energy.py:95
+    # (owner ruling relayed 2026-11-25, AGENTS.md exemption 2, bean qou-xj4p):
+    # B = E_0 . log(|tr_free| / |tr_atom|). B_cand above is a RAW trace
+    # difference = tr_free . (1 - r); tr_free is a per-nucleon self-trace that
+    # the 2026-09-05 intra reordering moved 3.785x, so B_cand is not a function
+    # of the bond ratio r = prod(z + d_e). The log law is.
+    B_law = E0 * mp.log(abs(mp.mpf(tf)) / abs(mp.mpf(ta)))
     return {
         "h": mp.nstr(h, 20), "net_p": mp.nstr(net_p, 20),
         "net_n": mp.nstr(net_n, 20),
         "abs_delta_net": mp.nstr(abs_delta, 20),
         "h_times_net_p": mp.nstr(h * net_p, 20),
         "abs_delta_eq_h_net_p_reldiff":
-            float(abs((abs_delta - h * net_p) / (h * net_p))),
+            mp.nstr(abs((abs_delta - h * net_p) / (h * net_p)), 20),
         "Qbeta_ansatz_MeV": mp.nstr(Qb_ansatz, 18),
         "Qbeta_kashiwara_MeV": mp.nstr(Qb_kashiwara, 18),
         "Qbeta_ansatz_vs_kashiwara_rel":
-            float((Qb_ansatz - Qb_kashiwara) / Qb_kashiwara),
+            mp.nstr((Qb_ansatz - Qb_kashiwara) / Qb_kashiwara, 20),
         "Delta_tr": mp.nstr(dtr, 20),
         "B_cand_E0_netp_dtr_MeV": mp.nstr(B_cand, 18),
-        "B_cand_err_vs_AME_pct": float((B_cand / B_AME - 1) * 100),
+        "B_cand_err_vs_AME_pct": mp.nstr((B_cand / B_AME - 1) * 100, 20),
         "B_via_kashiwara_qbeta_MeV": mp.nstr(B_via_qbeta, 18),
-        "B_via_qbeta_err_vs_AME_pct": float((B_via_qbeta / B_AME - 1) * 100),
+        "B_via_qbeta_err_vs_AME_pct": mp.nstr((B_via_qbeta / B_AME - 1) * 100, 20),
+        "tr_free": mp.nstr(mp.mpf(tf), 20),
+        "tr_atom": mp.nstr(mp.mpf(ta), 20),
+        "B_canonical_log_law_MeV": mp.nstr(B_law, 18),
+        "B_canonical_log_law_err_vs_AME_pct":
+            mp.nstr((B_law / B_AME - 1) * 100, 20),
         "consistency_cand_vs_ansatz_route_rel":
-            float(abs((B_cand - abs_delta * E0 * dtr / h)
-                      / (abs_delta * E0 * dtr / h))),
+            mp.nstr(abs((B_cand - abs_delta * E0 * dtr / h)
+                        / (abs_delta * E0 * dtr / h)), 20),
     }
 
 
@@ -145,14 +159,17 @@ def main() -> int:
     print("\n[numerical @ 50 dps, q₀]")
     print(f"  net(p) = 1 − h/2 = {nc['net_p'][:14]}   |Δ(net)| = "
           f"{nc['abs_delta_net'][:14]}   h·net(p) = {nc['h_times_net_p'][:14]}")
-    print(f"  |Δ(net)| = h·net(p) reldiff = {nc['abs_delta_eq_h_net_p_reldiff']:.2e}")
+    print(f"  |Δ(net)| = h·net(p) reldiff = {nc['abs_delta_eq_h_net_p_reldiff']}")
     print(f"  Q_β(ansatz=E₀·h·net_p) = {nc['Qbeta_ansatz_MeV'][:12]}  "
           f"vs Kashiwara {nc['Qbeta_kashiwara_MeV'][:12]}  "
-          f"(rel {nc['Qbeta_ansatz_vs_kashiwara_rel']:+.3e})")
+          f"(rel {nc['Qbeta_ansatz_vs_kashiwara_rel']})")
     print(f"  B_D = E₀·net(p)·Δtr = {nc['B_cand_E0_netp_dtr_MeV'][:12]} MeV  "
-          f"err {nc['B_cand_err_vs_AME_pct']:+.3f}%")
+          f"err {nc['B_cand_err_vs_AME_pct'][:8]}%")
+    print(f"  B_D canonical law E₀·log(tr_free/tr_atom) = "
+          f"{nc['B_canonical_log_law_MeV'][:12]} MeV  "
+          f"err {nc['B_canonical_log_law_err_vs_AME_pct'][:8]}%")
     print(f"  B_D via Kashiwara Q_β·Δtr/h = {nc['B_via_kashiwara_qbeta_MeV'][:12]} "
-          f"MeV  err {nc['B_via_qbeta_err_vs_AME_pct']:+.3f}%")
+          f"MeV  err {nc['B_via_qbeta_err_vs_AME_pct'][:8]}%")
 
     wb = (WitnessBuilder("probe-d-dressing-is-proton-net",
                          engine="mpmath+sympy")
@@ -163,25 +180,45 @@ def main() -> int:
               "|Δ(net)| = h·net(p); Q_β = E₀·h·net(p); hence "
               "B_D = E₀·net(p)·Δtr = Q_β·Δtr/h. Ties the binding "
               "dressing to the β-decay (bar-odd) sector via the single "
-              "factor h. Structural identification; magnitude match "
-              "(+0.12%) observation-tier, conditional on borromean-"
-              "quark, NOT wired.")
+              "factor h. The exact identities are the probe's content. "
+              "The binding magnitude B_D vs AME is recorded as a NEGATIVE "
+              "(owner ruling 2026-11-25, bean qou-xj4p): the 2026-07-04 "
+              "+0.29% hit came only from the superseded grouped word under "
+              "the excised Markov convention C (attribution: "
+              "probes/probe_d_dressing_is_proton_net/attribution/); on the "
+              "ruled inputs the raw-difference B_D misses AME by about -75%, "
+              "because it is not normalised by tr_free. The binding magnitude "
+              "is now reported on the corpus's live law, exactly "
+              "binding_log_free_energy.py: B = E_0*log(|tr_free|/|tr_atom|) "
+              "(about +27% for the deuteron, on the superseded single-crossing p-n "
+              "interface letter: a record, not a current prediction). NOT wired.")
           .set_audit_only(
               "docs/audits/2026-07-04-deuteron-dressing-is-proton-net.md")
           .add_parameter("q0", Q_50_DIGIT_STR)
           .add_parameter("compute_dps", DPS)
           .add_data("symbolic", si)
-          .add_data("numerical", nc))
+          .add_data("numerical", nc)
+          .add_data("binding_candidate_status", {
+              "verdict": "negative",
+              "B_cand_err_vs_AME_pct": nc["B_cand_err_vs_AME_pct"],
+              "B_cand_defect": "raw trace difference tr_free*(1-r); tr_free is a "
+                               "per-nucleon self-trace, not bond data",
+              "reported_binding_form": "B = E_0*log(|tr_free|/|tr_atom|), "
+                                       "computations/binding_log_free_energy.py:95",
+              "B_canonical_log_law_err_vs_AME_pct":
+                  nc["B_canonical_log_law_err_vs_AME_pct"],
+              "B_canonical_log_law_scope": "evaluated on the single-crossing interface letter of atom_braid_word_3A, superseded by the 2026-11-15 owner ruling that the gamma-gamma rule covers bond letters: a record on a superseded word, not a current prediction",
+              "ruling": "owner 2026-11-25 (qou-xj4p): keep the exact identities; "
+                        "record the binding match as a negative; the sub-percent "
+                        "assertion is removed",
+              "attribution": "probes/probe_d_dressing_is_proton_net/attribution/RESULTS.md",
+          }))
     wb.add_assertion(
         "abs_delta_net_eq_h_net_p",
-        computed=nc["abs_delta_eq_h_net_p_reldiff"], expected=0.0,
-        tolerance=1e-45,
+        computed=nc["abs_delta_eq_h_net_p_reldiff"], expected="0",
+        tolerance="1e-45",
         source="|Δ(net)| = h·net(p) — exact ℚ(q), the identity tying the "
                "binding dressing to Q_β")
-    wb.add_assertion(
-        "binding_candidate_subpercent",
-        computed=abs(nc["B_cand_err_vs_AME_pct"]) < 1.0, expected=True,
-        source="B_D = E₀·net(p)·Δtr vs AME2020")
     wb.save()
     print("\nwitness → probe-d-dressing-is-proton-net.witness.json (audit-only)")
     return 0

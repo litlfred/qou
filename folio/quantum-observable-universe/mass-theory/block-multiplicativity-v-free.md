@@ -1,5 +1,3 @@
-**Conjecture (Block-Multiplicativity of $\hat V^{\text{free}}$ on the Disjoint Hecke Product).**
-
 *Let $\mathcal{B}_K^{\mathrm{vac}} = \mathcal{B}_p^{(1)} \cdots \mathcal{B}_n^{(N)} \in H_{3A}(q)$ denote the constituent vacuum—the disjoint Hecke product of $Z$ proton braids and $N$ neutron braids on disjoint 3-strand blocks, with no interface crossings. For each generator $\sigma_g$ acting only inside the $k$-th nucleon block, the Wedderburn-weighted per-generator character ratio*
 
 $$
@@ -39,7 +37,7 @@ The right-hand side depends only on the $H_3$ character data of $\sigma_g$, prov
 
 ### $q$-deformation: the open structural step
 
-For $q \ne 1$, the LR identity generalises to a $q$-Schur duality. We conjecture that this identity yields an $A$-independent residual after factoring out $[3A]_q! / [3A-3]_q!$. A structural proof via the $q$-Schur–Weyl duality remains pending.
+For $q \ne 1$, the LR identity generalises to a $q$-Schur duality. The conjecture is that this identity yields an $A$-independent residual after factoring out $[3A]_q! / [3A-3]_q!$. A structural proof via the $q$-Schur–Weyl duality remains pending.
 
 ### Significance
 

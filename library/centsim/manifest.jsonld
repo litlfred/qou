@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/centsim",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/centsim/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -35,6 +35,18 @@
     "library/centsim/sections/page-022"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Centers and Simple Modules for Iwahori-Hecke Algebras — 22 sections: Page 1; Page 2; Page 3\n\n**Centers and Simple Modules for Iwahori-Hecke Algebras**\n\n22 pp, 22 sections.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17; Page 18",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "centsim",
@@ -44,8 +56,8 @@
     "pages": 22,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

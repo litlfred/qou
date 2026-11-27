@@ -17,7 +17,7 @@ export default remark({
   title:
     "The canonical mass trace factorises over the chain: the bond constants are $-\\log(z+d)$ and the canonical closure carries no many-body binding",
   lean: {
-    ref: "qou:QOU.Mass.ChainTraceFactor.twoStrandTrace_eq",
+    ref: "qou:QOU.MassTheory.ChainTraceFactor.twoStrandTrace_eq",
     sorryFree: true,
     validation: "not_checked",
   },
@@ -34,5 +34,9 @@ export default remark({
     "binding-energy",
     "lean-formalised",
     "draft",
+  ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): , recorded in\n[the free-energy reading](#rem:bond-log-ratio-is-a-free-energy)" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): which the Lean\nformalisation of that result took as its *named structural input*\n\nThe corpus's live builder\n`atom_braid_word_3A` does assemble it that way\n\nidentified against its Lean closed form to\n\n`QOU.Mass.IntraOrderingInvariance` proves the split. Given the\n\nartefact. Not formalised, as ever, is the connected-sum multiplicativity itself.\nMeasured in\n`the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py`; which\nword is $\\beta_{\\mathrm{Bor}}$ is measured in\n`nf_vs_canonical_word_order_probe.py`.\n\n## What is formalised, what is checked, what is cited\n\n`QOU.Mass.ChainTraceFactor` proves the factor algebra: the\naffine law $\\mathrm{tr}_2(\\sigma + d) = z + d$ from the level-2 Wenzl weights\n; the mirror\n\nand not formalised. Nothing here says" },
   ],
 });

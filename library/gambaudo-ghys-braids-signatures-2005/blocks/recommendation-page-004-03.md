@@ -1,1 +1,0 @@
-We shall give more motivation and background for this cocycle in Subsection 3.2 but for the time being we only mention the following “computational” deﬁnition (see [9]): Let γ1 and γ2 be two elements in Sp(2g, R) and denote by Eγ1,γ2 the inter- section of the images of γ−1 1 −id and γ2 −id.

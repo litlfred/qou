@@ -1,0 +1,1 @@
+Let W ⊆Rn be a linear space with κW = 1, and let z ∈W ∩Zn. Then, for every maximal conformal circuit decomposition z = Ph k=1 gk, we have gk ∈F(W) ∩Zn. We formulate a conjecture asserting that this property generalizes for arbitrary ˙κW values.

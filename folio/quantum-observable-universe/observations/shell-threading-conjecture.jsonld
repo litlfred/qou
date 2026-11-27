@@ -1,8 +1,9 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-shell-threading-energy",
@@ -14,6 +15,7 @@
   "kind": "remark",
   "title": "Shell energy from the Skein smoothing at the beta-decay vertex",
   "uses": [
+    "papers/quantum-observable-universe/blocks/lem-pair-skein-mass-formula",
     "papers/quantum-observable-universe/blocks/def-molecular-hopf-ring",
     "papers/quantum-observable-universe/blocks/ex-half-life-shell-worked"
   ],

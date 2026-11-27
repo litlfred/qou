@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Chirality $a_K = \\prod_{pn} (1 + \\mathrm{sign}\\cdot h)$ from symmetric-channel trace duality",
   lean: {
-    ref: "qou:QOU.BraidKnot.chirality_dual_space_derivation",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.chirality_dual_space_derivation",
     validation: "not_checked",
   },
   uses: ["prop:chirality-writhe-ribbon-derivation"],

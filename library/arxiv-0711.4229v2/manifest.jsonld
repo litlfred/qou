@@ -1,0 +1,54 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0711.4229v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0711.4229v2",
+  "contains": [
+    "library/arxiv-0711.4229v2/sections/sec-front-matter",
+    "library/arxiv-0711.4229v2/sections/sec-000",
+    "library/arxiv-0711.4229v2/sections/sec-001",
+    "library/arxiv-0711.4229v2/sections/sec-002",
+    "library/arxiv-0711.4229v2/sections/sec-003",
+    "library/arxiv-0711.4229v2/sections/sec-004",
+    "library/arxiv-0711.4229v2/sections/sec-005",
+    "library/arxiv-0711.4229v2/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "MODIFIED QUANTUM DIMENSIONS AND RE-NORMALIZED LINK INVARIANTS — In this paper we give a re-normalization of the Reshetikhin-Turaev quantum invariants of links, by modiﬁed quantum dimensions.\n\n**MODIFIED QUANTUM DIMENSIONS AND RE-NORMALIZED LINK INVARIANTS**\n\n*NATHAN GEER, BERTRAND PATUREAU-MIRAND, AND VLADIMIR TURAEV*\n\n15 pp, 8 sections.\n\n**Abstract.** In this paper we give a re-normalization of the Reshetikhin-Turaev quantum invariants of links, by modiﬁed quantum dimensions. In the case of simple Lie algebras these modiﬁed quantum dimensions are proportional to the usual quantum dimensions. More interestingly we will give two examples where the usual quantum dimensions vanish but the modiﬁed quantum dimensions are non-zero and lead to non-trivial link invariants. The ﬁrst of these examples is a class of invariants arising from Lie superalgebras previously deﬁned by the ﬁrst two authors. These link invariants are multivariable and generalize the multivariable Alexander polynomial. The second example, is a hierarchy of link invariants arising from nilpotent representations of quantized sl(2) at a root of unity. These invariants contain Kashaev’s quantum dilogarithm invariants of knots.\n\n**Outline.** Front matter; 1 Introduction; 2 Ribbon Ab-categories; 3 The invariant F' of closed ribbon graphs; 4 The quasi-functor F'; 5 Properties of dJ and F'; 6 Examples; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3: Let L ∈LA(J) and V be the color of an edge of L belonging to A(J). Cutting this edge, we obtain a colored (1,1)-ribbon graph TV whose closure is L.\n- Theorem 10: The invariant F ′ : LA →F extends naturally to a F-bilinear monoidal quasi- functor F ′ : RibA →HC by the formula F ′(T )(g) = F ′(trRibC(T ◦cg)) where T ∈RibA(V, W), g\n- Theorem 36: The invariant F ′ restricted to framed links colored with typical modules is equal to the colored Alexander invariant ΦN L .\n- Proposition 18: Let U, V, W ∈Ob(C) be such that W ∼= U ⊗V . Let L be a C-colored link, such that a component of L is colored by W.\n- Proposition 19: Let L be an element of LA(J) with a circle component colored by W ∈Ob(C). If W is the only color of L in A(J), then we additionally assume that W ∗∈A(J) and S′(W, W ∗)̸ = 0.\n- Proposition 20: If L ∈LA(J), L+ ∈LOb(C), then the disjoint union L ⊔L+ belongs to LA(J) and F ′(L ⊔L+) = F ′(L) F(L+).",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-0711.4229v2",
+    "title_source": "slug",
+    "source_file": "0711.4229v2.pdf",
+    "source_sha256": "2e6cc61069016627af179cdde2a109e8d6d1fbd58c8085b8c3d69a8f5eec5c22",
+    "pages": 15,
+    "arxiv": {
+      "id": "0711.4229",
+      "version": "2",
+      "primary_class": "math.QA",
+      "stamp_date": "25 Sep 2013"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

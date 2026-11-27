@@ -1,1 +1,0 @@
-A realistic prediction must therefore combine the initial nuclear state, the relevant interaction mechanisms, the transport of produced hadrons through the nucleus, and the de-excitation of the remnant, while providing a consistent description across kinematic regimes and target nuclei.

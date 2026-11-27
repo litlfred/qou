@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2011.12932v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2011.12932v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -28,6 +28,18 @@
     "library/arxiv-2011.12932v2/sections/sec-013"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY — Vladimir Turaev discovered in the early years of quantum topol- ogy that the notion of modular category was an appropriate structure for build\n\n**MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY**\n\n*CHRISTIAN BLANCHET AND MARCO DERENZI*\n\n26 pp, 15 sections.\n\n**Abstract.** Vladimir Turaev discovered in the early years of quantum topol- ogy that the notion of modular category was an appropriate structure for build- ing 3-dimensional Topological Quantum Field Theories (TQFTs for short) con- taining invariants of links in 3-manifolds such as Witten–Reshetikhin–Turaev ones. In recent years, generalized notions of modular categories, which relax the semisimplicity requirement, have been successfully used to extend Turaev’s construction to various non-semisimple settings. We report on these recent de- velopments in the domain, showing the richness of Vladimir’s lineage.\n\n**Outline.** Front matter; 1 Introduction; 2 Historical overview; Definition of TQFT; Semisimple constructions; Early non-semisimple constructions; Renormalized non-semisimple constructions; 3 Turaev's notion of modular category; 4 Semisimple quantum invariants and TQFTs; 5 T-modular categories from small quantum sl(2; 6 Lyubashenko's notion of modular category; 7 Non-semisimple quantum invariants and TQFTs; 8 L-modular categories from small quantum sl(2; Appendix A. Ends; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -49,8 +61,8 @@
       "stamp_date": "22 May 2021"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

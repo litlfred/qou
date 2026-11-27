@@ -1,1 +1,0 @@
-$$\label{thesum} F_{0}+ 3 F_{2}+ \sum_{e\in E(F_{3})} \delta(e).$$ If we want the flow through $N_{1}$ to be $F$, we must have $$F_{0}+ 3 F_{2}+ \sum_{e\in E(F_{3})} \delta(e) \geq F,$$ Or, noting that $F_{1} = F - F_{0}$, $$3 F_{2}+ \sum_{e\in E(F_{3})} \delta(e) \geq F_{1}.$$

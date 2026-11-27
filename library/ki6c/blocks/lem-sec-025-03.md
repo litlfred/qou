@@ -1,0 +1,1 @@
+1. ˆ∆is a compact convex domain in the interior of ∆, and the boundary of ˆ∆is a smooth closed surface whose Gaussian curvature is positive everywhere. We show a proof of the lemma later in this section. Before showing it, we show some lemmas.

@@ -1,4 +1,3 @@
-**Remark (mass generation pipeline).**
 *Mass is not an intrinsic property of torus knots. It is created strictly by topological linking.*
 
 Every bare torus knot $T_{m,n}$ is non-hyperbolic and carries zero volume. Bare generators have zero mass. Mass appears only when generators link.

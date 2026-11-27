@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "First substrate correction to the Casimir force is carried by the figure-eight knot $4_1$",
   lean: {
-    ref: "qou:QOU.AppendixSurreals.FirstInteractingCasimirCorrection",
+    ref: "qou:QOU.Observations.AppendixSurreals.FirstInteractingCasimirCorrection",
   },
   uses: [
     "conj:casimir-epsilon-vacuum",

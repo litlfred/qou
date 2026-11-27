@@ -1,1 +1,0 @@
-However, we should emphasize that this simple behavior is not expected for all non-hyperbolic knots or manifolds, but only for those for which *all* solutions of the Neumann--Zagier equations are torsion in the Bloch group, so that all volumes $v(\sigma)$ are rational multiples of $2\pi {\rm i}$.

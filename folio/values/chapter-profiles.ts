@@ -104,39 +104,23 @@ export const CHAPTER_EXPECTED_REGIMES: Record<string, ReadonlySet<QRegime>> = {
     "mod-lt-1", "mod-gt-1",
   ]),
 
-  // ── Appendices ────────────────────────────────────────────────
-  "appendix-qvalues": new Set<QRegime>([
-    "na", "symbolic", "generic-R", "real-positive", "real-gt-1", "fixed-q0",
-  ]),
-  "appendix-atomic-mass-calculations": new Set<QRegime>([
-    "na", "symbolic", "generic-R", "real-positive", "real-gt-1", "fixed-q0",
-  ]),
-  "appendix-knot-operations": new Set<QRegime>([
-    "na", "symbolic", "generic-R", "mod-lt-1", "mod-gt-1",
-  ]),
+  // ── Consolidated Back-Matter Annexes (A–F, qou-anx0 & qou-lanx) ──
   "appendix-knot-periodic-table": new Set<QRegime>([
-    "na", "symbolic", "generic-R", "real-positive", "fixed-q0",
+    "na", "symbolic", "generic-R", "real-positive", "real-gt-1",
+    "mod-lt-1", "mod-gt-1", "fixed-q0",
   ]),
-  "appendix-nf-witnesses": new Set<QRegime>([
-    "na", "symbolic", "generic-R", "fixed-q0",
+  "appendix-mass-binding-algorithms": new Set<QRegime>([
+    "na", "symbolic", "generic-R", "real-positive", "real-gt-1", "fixed-q0",
+  ]),
+  "appendix-standard-model": new Set<QRegime>([
+    "na", "symbolic", "generic-R", "real-positive", "real-gt-1", "fixed-q0",
   ]),
   "appendix-surreals": new Set<QRegime>([
-    "na", "symbolic", "generic-R",
+    "na", "symbolic", "generic-R", "real-positive", "real-gt-1", "fixed-q0",
   ]),
-  "appendix-transfer-matrices": new Set<QRegime>([
-    "na", "symbolic", "generic-R", "real-positive", "fixed-q0",
-  ]),
-
-  // Glossary and notation entries are register tables — allow any.
-  glossary: new Set<QRegime>([
+  "appendix-formalisation-notes": new Set<QRegime>([
     "na", "symbolic", "generic-R", "real-positive", "real-gt-1",
-    "real-lt-1", "mod-gt-1", "mod-lt-1", "unit-circle",
-    "root-of-unity", "fixed-q0",
-  ]),
-  "index-of-definitions": new Set<QRegime>([
-    "na", "symbolic", "generic-R", "real-positive", "real-gt-1",
-    "real-lt-1", "mod-gt-1", "mod-lt-1", "unit-circle",
-    "root-of-unity", "fixed-q0",
+    "unit-circle", "root-of-unity", "fixed-q0",
   ]),
 };
 
@@ -145,8 +129,6 @@ export const CATEGORICAL_CHAPTERS: ReadonlySet<string> = new Set([
   "quantum-universes",
   "lifting-and-descent",
   "braids-and-knots",
-  "appendix-knot-operations",
-  "appendix-surreals",
 ]);
 
 /** Chapters whose narrative-expected profile is "archimedean / fixed q_0". */
@@ -161,8 +143,8 @@ export const ARCHIMEDEAN_CHAPTERS: ReadonlySet<string> = new Set([
   "molecular-construction",
   "organic-chemistry",
   "fluid-dynamics",
-  "appendix-qvalues",
-  "appendix-atomic-mass-calculations",
+  "appendix-knot-periodic-table",
+  "appendix-mass-binding-algorithms",
 ]);
 
 /**

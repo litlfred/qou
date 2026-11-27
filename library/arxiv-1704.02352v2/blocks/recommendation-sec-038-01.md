@@ -1,1 +1,0 @@
-In general, it might happen that the measure $P_{\Lambda_\infty}$ is not unique; it turns out, however, that in the setup which we consider *the measure $P_{\Lambda_\infty}$ is uniquely determined by its moments*; we shall prove it in the following.

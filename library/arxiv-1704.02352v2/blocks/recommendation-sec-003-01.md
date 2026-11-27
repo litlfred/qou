@@ -1,1 +1,0 @@
-The class of random Young diagrams considered in the current paper as well as the classes from [@Moll2015; @BorodinGorinGuionnet2015] are of quite distinct flavors and it is not obvious why they should contain any elements in common, except for the trivial example given by the Jack--Plancherel measure.

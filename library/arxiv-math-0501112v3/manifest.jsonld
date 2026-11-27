@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0501112v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0501112v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -52,6 +52,18 @@
     "library/arxiv-math-0501112v3/sections/sec-037"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "arXiv:math/0501112v3 [math.CO] 31 May 2005 — We study asymptotics of reducible representations of the symmetric groups Sq for large q.\n\n**arXiv:math/0501112v3 [math.CO] 31 May 2005**\n\n*PIOTR ŚNIADY*\n\n37 pp, 39 sections.\n\n**Abstract.** We study asymptotics of reducible representations of the symmetric groups Sq for large q. We decompose such a representation as a sum of irreducible components (or, alternatively, Young diagrams) and we ask what is the character of a randomly chosen component (or, what is the shape of a randomly chosen Young diagram). Our main result is that for a large class of representations the ﬂuctuations of characters (and ﬂuctuations of the shape of the Young diagrams) are asymptoti- cally Gaussian; in this way we generalize Kerov’s central limit theorem. The considered class consists of representations for which the characters almost factorize and this class includes, for example, left-regular repre- sentation (Plancherel measure), tensor representations. This class is also closed under induction, restriction, outer product and tensor product of representations.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Representations of large symmetric groups; 1.2 Genus expansion, random matrices and free ; 1.3 Higher-order free probability; 1.4 Factorization of characters; 1.5 Fluctuations of Young diagrams; 1.6 Overview of this article; 2 Preliminaries; 2.2 Disjoint product; 2.3 Classical cumulants; 2.4 Elements of the group algebra as random va; 2.5 Canonical probability measure on Young dia; 2.6 Generalized Young diagrams; 2.7 Functionals of the shape of Young diagrams; 2.8 Transition measure of a Young diagram; 2.9 Free cumulants of the transition measure; 3 Representations with character factorization",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
@@ -78,8 +90,8 @@
       "stamp_date": "31 May 2005"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

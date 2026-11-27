@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1208.2521v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1208.2521v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -33,6 +33,18 @@
     "library/arxiv-1208.2521v1/sections/page-020"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "ON q-ANALOGUES OF THE FOURIER AND HANKEL TRANSFORMS — For the third q-Bessel function (ﬁrst introduced by F. H. Jackson, later rediscovered by W. Hahn in a special case and by H.\n\n**ON q-ANALOGUES OF THE FOURIER AND HANKEL TRANSFORMS**\n\n*TOM H. KOORNWINDER and RENÉ F. SWARTTOUW*\n\n20 pp, 20 sections.\n\n**Abstract.** For the third q-Bessel function (ﬁrst introduced by F. H. Jackson, later rediscovered by W. Hahn in a special case and by H. Exton) we derive Hansen- Lommel type orthogonality relations, which, by a symmetry, turn out to be equivalent to orthogonality relations which are q-analogues of the Hankel integral transform pair. These results are implicit, in the context of quantum groups, in a paper by Vaksman and Korogodski˘ı. As a specialization we get q-cosines and q-sines which admit q- analogues of the Fourier-cosine and Fourier-sine transforms. We get also a formula which is both an analogue of Graf’s addition formula and of the Weber-Schafheitlin discontinuous integral. This is a corrected version of a paper which appeared in Trans. Amer. Math. Soc. 333 (1992), 445–461.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17; Page 18",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -54,8 +66,8 @@
       "stamp_date": "13 Aug 2012"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

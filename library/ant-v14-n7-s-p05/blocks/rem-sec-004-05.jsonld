@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/ant-v14-n7-s-p05/blocks/rem-sec-004-05",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 21,
+  "pageEnd": 26,
+  "text": "rem-sec-004-05.md",
+  "derivedFrom": "library/ant-v14-n7-s-p05/sections/sec-004",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p05/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.6",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-004-4-projective-pushforward-in-twisted-cohomology.md (p. 21-26)",
+    "claim_id": "ant-v14-n7-s-p05#remark:4.6"
+  }
+}

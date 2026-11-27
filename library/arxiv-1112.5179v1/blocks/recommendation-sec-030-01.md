@@ -1,1 +1,0 @@
-If the tentacle is directly on the negative Re P axis (as we would expect for character varieties of 3-manifolds, cf. [62]), then the root must actually be on the unit circle; i.e. a0(x) = 0 for some |x| = 1.

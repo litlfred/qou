@@ -40,7 +40,7 @@ exactly two electrons -- the DEFINITION of a covalent bond, not a fit).  So
 leg 2 adds nothing beyond the (2,2)=EM conditional already at the heart of the
 conjecture.
 
-CIRCULARITY CAVEAT.  prop:force-carrier-intertwining-correspondence (which
+CIRCULARITY CAVEAT.  conj:force-carrier-intertwining-correspondence (which
 routes T_{2,9} -> (2,1,1), T_{3,5} -> (3,1) on the n=4 molecular braid) is
 itself CONDITIONAL ON conj:e-hartree.  It therefore cannot be used to PROVE the
 (2,2)=EM identification -- doing so would be circular.  Leg 2 must remain part
@@ -60,7 +60,7 @@ experimental number.
 
 Refs: prop:em-coupling-projection (cplx = q[9]_q[10]_q = 1/alpha_EM, forced &
 ring-invariant); prop:force-carrier-bring-uniqueness (genus-4 => {(2,9),(3,5)});
-prop:force-carrier-intertwining-correspondence (conditional on conj:e-hartree --
+conj:force-carrier-intertwining-correspondence (conditional on conj:e-hartree --
 circularity caveat); e_hartree_round23_normalization.py (the round-23 framing
 this refines).
 """
@@ -208,7 +208,7 @@ def main() -> None:
             "the covalent pair gives cplx^2') is NOT separate: it is the "
             "conjecture's own (2,2)=EM identification (absent from the 2-strand "
             "em-coupling-projection) plus the covalent Pauli-2 count.  Circularity "
-            "caveat: prop:force-carrier-intertwining-correspondence is itself "
+            "caveat: conj:force-carrier-intertwining-correspondence is itself "
             "conditional on conj:e-hartree, so cannot prove the (2,2)=EM bridge.  "
             "NET: molecular-reuse is not a third gap; the residual is exactly (a) "
             "the (2,2)=EM dressed identification (core conditional) and (b) the "

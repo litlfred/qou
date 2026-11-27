@@ -1,1 +1,0 @@
-More precisely, for each $u \in {{\mathbf C}(\{z\})}$, there exists a unique $u_0 \in {\mathbf C}$ such that the equation $z \sigma_qf - f = u - u_0$ admits a solution; and $u_0$ can be explicitly computed, as we shall now see.

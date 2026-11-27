@@ -1,1 +1,1 @@
-Let c be a generalised coboundary and (bρ, dρ) a right duality. Consider
+Let c be a generalised coboundary and (bρ, dρ) a right duality. Consider the left duality (b ′ ρ , d′ ρ ) described in (27.7). The natural isomorphism u ∈ (1, D2) associated to this pair as in (27.3), (27.4) is called Drinfeld isomorphism.

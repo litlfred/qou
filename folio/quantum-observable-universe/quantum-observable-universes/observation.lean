@@ -1,7 +1,7 @@
-import QOU.Basic
-import QOU.Glossary
-import QOU.QuantumObservableUniverse.CategoricalFoundations
-import QOU.QuantumObservableUniverse.CRRealisation
+import QOU.Core.Basic
+import QOU.Core.Glossary
+import QOU.Core.CategoricalFoundations
+import QOU.Core.CRRealisation
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans

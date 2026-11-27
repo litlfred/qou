@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2603.12136v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2603.12136v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -37,6 +37,18 @@
     "library/arxiv-2603.12136v1/sections/sec-022"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the\n\n**Folding Mixed-Integer Linear Programs and Reflection Symmetries**\n\n*Rolf van der Hulst*\n\n70 pp, 24 sections.\n\n**Abstract.** For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the performance of branch- and-bound and linear optimization algorithms. A common strategy to handle symmetries in linear programs is to reduce the dimension of the linear program by aggregating symmetric variables and solving a linear program of reduced dimen- sion. In their work Dimension Reduction via Color Refinement (DRCR), Grohe, Kersting, Mladenov and Selman show that it is sufficient to run a fast color refinement algorithm to detect permutation symmetries and reduce the dimen- sion of the linear program. We extend DRCR in two directions. First, we show that DRCR can be extended to reflection symmetries, which generalize permuta- tion symmetries.\n\n**Outline.** Front matter; Introduction; Contribution; Outline; Dimension Reduction via Color Refinement; Equitable partitions and fractional automorphi; Dimension Reduction of a Linear Program; Extending DRCR to reflection symmetries; Centering the linear program; Split reformulations of linear programs; Equitable partitions of split reformulations; Reducing the split reformulation; Choosing the affine offset; Comparison with reflection symmetries; Detecting reflection reductions; Dimension Reduction for Mixed-Integer Linear P; Affine TU decompositions for mixed-integer lin; Example: Generalized Assignment problem",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -59,8 +71,8 @@
       "stamp_date": "12 Mar 2026"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

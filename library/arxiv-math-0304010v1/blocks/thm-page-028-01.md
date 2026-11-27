@@ -1,0 +1,1 @@
+Let λ range over Yn, and let us view ¯λ( · ) as a random function deﬁned on the probability space (Yn, Mn), where Mn is the Plancherel measure. Let Ωbe as above. Then we have lim n→∞sup x∈R |¯λ(x) −Ω(x)| = 0 in probability. (5.5) We need two lemmas.

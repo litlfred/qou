@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.07308v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1608.07308v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -93,6 +93,18 @@
     "library/arxiv-1608.07308v1/sections/sec-078"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Flag Hilbert schemes, colored projectors and Khovanov–Rozansky homology — We construct a categoriﬁcation of the maximal commutative subalgebra of the type A Hecke algebra.\n\n**Flag Hilbert schemes, colored projectors and Khovanov–Rozansky homology**\n\n*KHOVANOV-ROZANSKY HOMOLOGY*\n\n77 pp, 80 sections.\n\n**Abstract.** We construct a categoriﬁcation of the maximal commutative subalgebra of the type A Hecke algebra. Speciﬁcally, we propose a monoidal functor from the (symmetric) monoidal category of coherent sheaves on the ﬂag Hilbert scheme to the (non-symmetric) monoidal cat- egory of Soergel bimodules. The adjoint of this functor allows one to match the Hochschild homology of any braid with the Euler characteristic of a sheaf on the ﬂag Hilbert scheme. The categoriﬁed Jones-Wenzl projectors studied by Abel, Elias and Hogancamp are idempotents in the category of Soergel bimodules, and they correspond to the renormalized Koszul complexes of the torus ﬁxed points on the ﬂag Hilbert scheme. As a consequence, we conjecture that the endomorphism algebras of the categoriﬁed projectors correspond to the dg algebras of functions on afﬁne charts of the ﬂag Hilbert schemes.\n\n**Outline.** Front matter; 1 Introduction; 1.1.; 1.2.; 1.3.; 1.4.; 1.5.; 1.6.; 1.7.; 1.8.; 1.9.; 1.10.; 1.11.; Acknowledgments; 2 The flag Hilbert scheme; 2.1 Definition; 2.2 The matrix presentation; 2.3 DG schemes",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -114,8 +126,8 @@
       "stamp_date": "25 Aug 2016"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

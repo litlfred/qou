@@ -1,0 +1,1 @@
+Thus following two observations are in order: (i) All three cases ({Case (a)}--{(c)}) yield comparable lifetimes (within a factor of ten) even though they significantly defer in decay pattern predictions; (ii) Using the most stringent experimental limit on partial proton lifetime as if it represents the limit on the total proton lifetime.

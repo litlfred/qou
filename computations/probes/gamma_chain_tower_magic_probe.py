@@ -74,7 +74,7 @@ three places this probe did not reach:
   * `bond-order-eq-jet-degree-proof.md` -- adding a nucleon "rais[es] the
     Groebner-Shirshov normal-form length by a fixed increment", placing the
     n-nucleon cluster sub-word at JET VERTICAL DEGREE n.
-  * `prop:gb-spectral-sequence` (E_2 collapse) + `prop:jet-prefix-gb-filtration`
+  * `prop:gb-spectral-sequence` (E_2 collapse) + `conj:jet-prefix-gb-filtration`
     -- the associated graded gr_n IS the n-nucleon cluster contribution.
 
 So the NF is 6 LAURENT POLYNOMIALS IN q graded by GS filtration length, and

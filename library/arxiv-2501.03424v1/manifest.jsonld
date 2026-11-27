@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2501.03424v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2501.03424v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -68,6 +68,18 @@
     "library/arxiv-2501.03424v1/sections/sec-053"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Soergel bimodules and Kazhdan-Lusztig polynomials — This paper presents an exposition of Soergel bimodules, the categoriﬁcation of Hecke alge- bras, and their applications to various topics in\n\n**Soergel bimodules and Kazhdan-Lusztig polynomials**\n\n*University of California, Berkeley*\n\n23 pp, 55 sections.\n\n**Abstract.** This paper presents an exposition of Soergel bimodules, the categoriﬁcation of Hecke alge- bras, and their applications to various topics in Kazhdan-Lusztig theory. We ultimately exposit a few of Soergel’s main results, which allowed him to give alternative proofs, using his theory, of the Kazhdan-Lusztig conjectures. This paper should be viewed as a (very) condensed exposition following the work of primarily Elias, Makisumi, Thiel, and Williamson in their lovely book Intro- duction to Soergel Bimodules2. It is also important to note that much of Soergel’s theory has been omitted from this paper in light of brevity, as well as the depth of proofs and lead-up information. Many proofs concerning covered material are left out of this paper, again, due to their length, as well as their residence in many of the texts listed in the references section. 5 1\n\n**Outline.** Front matter; Coxeter Systems, Hecke algebras, and Kazhdan-L; Remark:; Example; Kazhdan-Lusztig polynomials, and a basis for t; Lemma:; Soergel Bimodules; Easing into it; Theorem (Chevalley-Shephard-Todd); Example; Bott-Samelson bimodules; Example of Soergel bimodule; Lemma; Remark; Grothendieck groups, Soergel's categorization; Definition; Soergel's Categorification theorem; Soergel's Hom formula",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {
@@ -91,8 +103,8 @@
       "stamp_date": "6 Jan 2025"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

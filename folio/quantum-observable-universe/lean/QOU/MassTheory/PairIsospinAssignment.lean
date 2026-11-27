@@ -63,7 +63,7 @@ irrep-isospin assignment"*.
 import Mathlib.Algebra.Ring.Defs
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.LinearCombination
-import QOU.BraidKnot.ShellSchurWeylSelfDuality
+import QOU.BraidsAndKnots.ShellSchurWeylSelfDuality
 
 namespace QOU.MassTheory.PairIsospinAssignment
 

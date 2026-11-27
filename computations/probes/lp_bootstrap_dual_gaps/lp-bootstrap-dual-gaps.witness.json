@@ -1,0 +1,278 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-23T19:55:05.000071+00:00",
+  "commitSha": "88d27fdcc7a36a5e8963c70d9bbdbed5dd9ca927",
+  "assertions": [
+    {
+      "name": "sym3_gl4_weight_space_dim_eq_2_and_q1_hw_dim_eq_1",
+      "computed": "2,1",
+      "expected": "2,1",
+      "passed": true,
+      "source": "Classical q=1 SU(4) symmetric cube Sym^3(C^4) has 2D (uud,up-up-dn) weight space and unique 1D (I=1/2,S=1/2) nucleon state"
+    },
+    {
+      "name": "gl4_braiding_incompatibility_forces_factorised_doublet_for_q_ne_1",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "source": "Jimbo U_q(gl_4) braiding mixes spin-flavour ordering and has 0D intersection with factorised U_q(sl_2)_iso x U_q(sl_2)_spin highest-weight for q != 1"
+    },
+    {
+      "name": "exact_identity_one_plus_wsymD_times_gAcross_eq_one",
+      "computed": "true",
+      "expected": "true",
+      "passed": true,
+      "source": "Exact algebraic identity (1 + w_(3)(z_D)) * g_A^cross(q) = 1 over Q(q)"
+    },
+    {
+      "name": "pdg_gA_strictly_inside_64d_dq_positivity_interval",
+      "computed": "true",
+      "expected": "true",
+      "passed": true,
+      "source": "Verstichel-van Aggelen (D,Q) positivity interval [g_A^diag - g_A^cross, g_A^diag + g_A^cross] strictly brackets PDG g_A = 1.2754"
+    },
+    {
+      "name": "he4_suboptimal_arrangements_have_strictly_positive_dual_slack_and_singleton_joint_face",
+      "computed": "true",
+      "expected": "true",
+      "passed": true,
+      "source": "SymmetryReducedDualCertificate.unique_support_of_strict_dual_slack on C(4,2)=6 He-4 orderings; S_nuc cap S_atom = {'nppn'}"
+    },
+    {
+      "name": "meson_a_plus_b_eq_7_singleton_unique_at_3_4",
+      "computed": "true",
+      "expected": "true",
+      "passed": true,
+      "source": "SymmetryReducedDualCertificate.simplex_unique_optimal_of_strict_dual_slack on a+b=7 meson stratum"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 452,
+  "computation": "lp-bootstrap-dual-gaps",
+  "scriptFile": "lp_bootstrap_dual_gaps_probe.py",
+  "scriptHash": "8429144e14c5",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/lp_bootstrap_dual_gaps/lp_bootstrap_dual_gaps_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/lp_bootstrap_dual_gaps/lp_bootstrap_dual_gaps_probe.py"
+  },
+  "description": "Pre-registered 80-dps mpmath + exact SymPy probe (PREREGISTRATION.md, 88d27fdcc7a) testing (1) 64D skew-Howe colour-singlet (#9130) + Verstichel-van Aggelen (D,Q) positivity on Gamow-Teller g_A(q_0) (hadron-half-life-verification.md Open Item 3), and (2) extremal-functional strict dual-slack uniqueness on A=4 He-4 ordering strata and m_K^2/m_pi^2 a+b=7 meson fusion strata.",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+    "workdps": 80
+  },
+  "data": {
+    "preregistration": "computations/probes/lp_bootstrap_dual_gaps/PREREGISTRATION.md",
+    "preregistration_commit": "88d27fdcc7a",
+    "q0_proton_80dps": "1.10997858275138080759166909561076887987449912187357873607281",
+    "test1_64d_gamow_teller": {
+      "dim_sym3_gl4_in_9d_weight_space": 2,
+      "dim_sym3_gl4_intersect_factorised_hw_generic_q": 0,
+      "dim_sym3_gl4_intersect_factorised_hw_at_q1": 1,
+      "dim_factorised_Ihalf_Shalf_doublet_generic_q": 4,
+      "arm_1a_gl4_rational_formula": "NONE (dim = 0: U_q(gl_4) braiding incompatible with factorised U_q(sl_2)_iso x U_q(sl_2)_spin coproduct for q != 1)",
+      "arm_1a_gl4_value_80dps": null,
+      "arm_1b_gA_diag_80dps": "0.988102452184026383213412180647204944041519916695386174918719",
+      "arm_1b_gA_cross_80dps": "0.664273410685411591648581898380920681870518816466714622103617",
+      "arm_1b_pure_rank1_SW_c_eq_1_80dps": "1.65237586286943797486199407902812562591203873316210079702234",
+      "arm_1b_pure_rank1_SW_rel_pct_vs_PDG": "29.5574614136300748676489006608221441047544874676259053647746",
+      "arm_1b_centralizer_decohered_c_eq_0_80dps": "0.988102452184026383213412180647204944041519916695386174918719",
+      "arm_1b_centralizer_decohered_rel_pct_vs_PDG": "-22.5260740015660668642455558532848561987204079743307060593760",
+      "arm_1b_dq_positivity_interval_min_80dps": "0.323829041498614791564830282266284262171001100228671552815102",
+      "arm_1b_dq_positivity_interval_max_80dps": "1.65237586286943797486199407902812562591203873316210079702234",
+      "pdg_gA": "1.2754",
+      "pdg_gA_err": "0.0013",
+      "pdg_inside_dq_positivity_interval": true,
+      "required_cross_coherence_c_for_pdg_80dps": "0.432498942746381837039753479820433330949932526760103307926864",
+      "convD_z_D_80dps": "0.612688037146465251595829863945899248026308391545064759724287",
+      "convD_w_sym_D_80dps": "0.505404226503930803187558703240472275660351197749809362652056",
+      "convD_two_w_mix_D_80dps": "0.494595773496069196812441296759527724339648802250190637347944",
+      "convD_wsym_weighted_gA_80dps": "1.32382904149861479156483028226628426217100110022867155281510",
+      "convD_wsym_weighted_rel_pct_vs_PDG": "3.79716492854122562057631192302683567280861692242994768818426",
+      "convD_2wmix_weighted_gA_80dps": "1.31664927355484956651057597740904630778255754962881541912595",
+      "convD_2wmix_weighted_rel_pct_vs_PDG": "3.23422248352278238282703288451045223322546257086525161721437",
+      "exact_identity_1_plus_wsymD_times_gAcross_eq_1": true
+    },
+    "test2_extremal_functional_strata": {
+      "stratum_2a_he4_bare_nuclear_phi": {
+        "dual_shadow_price_u0_star_80dps": "-1.51128096079157591449657759509598876248566650342182966514647",
+        "active_support_S": [
+          "npnp",
+          "nppn"
+        ],
+        "active_support_cardinality": 2,
+        "singleton_unique_primal": false,
+        "min_positive_dual_slack_80dps": "0.135853888340142428904374564144815974859511025017979996229645",
+        "candidates": [
+          {
+            "candidate": "nnpp",
+            "cost_80dps": "-1.37542707245143348559220303095117278762615547840384966891682",
+            "dual_slack_80dps": "0.135853888340142428904374564144815974859511025017979996229645",
+            "in_optimal_support_S": false
+          },
+          {
+            "candidate": "npnp",
+            "cost_80dps": "-1.51128096079157591449657759509598876248566650342182966514647",
+            "dual_slack_80dps": "0.0",
+            "in_optimal_support_S": true
+          },
+          {
+            "candidate": "nppn",
+            "cost_80dps": "-1.51128096079157591449657759509598876248566650342182966514647",
+            "dual_slack_80dps": "0.0",
+            "in_optimal_support_S": true
+          },
+          {
+            "candidate": "pnnp",
+            "cost_80dps": "-1.19910234679571941737684934001524700163319387381293953376719",
+            "dual_slack_80dps": "0.312178613995856497119728255080741760852472629608890131379278",
+            "in_optimal_support_S": false
+          },
+          {
+            "candidate": "pnpn",
+            "cost_80dps": "-1.19910234679571941737684934001524700163319387381293953376719",
+            "dual_slack_80dps": "0.312178613995856497119728255080741760852472629608890131379278",
+            "in_optimal_support_S": false
+          },
+          {
+            "candidate": "ppnn",
+            "cost_80dps": "-1.37542707245143348559220303095117278762615547840384966891682",
+            "dual_slack_80dps": "0.135853888340142428904374564144815974859511025017979996229645",
+            "in_optimal_support_S": false
+          }
+        ]
+      },
+      "stratum_2a_he4_atomic_phi1_with_ee": {
+        "dual_shadow_price_u0_star_80dps": "-2.60732294975677776972570773991908990512519747427338447264244",
+        "active_support_S": [
+          "nppn+ee",
+          "pnpn+ee"
+        ],
+        "active_support_cardinality": 2,
+        "singleton_unique_primal": false,
+        "min_positive_dual_slack_80dps": "0.236476994974576397933957596780289837883491290529110934237029",
+        "candidates": [
+          {
+            "candidate": "nnpp+ee",
+            "cost_80dps": "-2.37084595478220137179175014313880006724170618374427353840541",
+            "dual_slack_80dps": "0.236476994974576397933957596780289837883491290529110934237029",
+            "in_optimal_support_S": false
+          },
+          {
+            "candidate": "npnp+ee",
+            "cost_80dps": "-2.19452122912648730357639645220287428124874457915336340325578",
+            "dual_slack_80dps": "0.412801720630290466149311287716215623876452895120021069386662",
+            "in_optimal_support_S": false
+          },
+          {
+            "candidate": "nppn+ee",
+            "cost_80dps": "-2.60732294975677776972570773991908990512519747427338447264244",
+            "dual_slack_80dps": "0.0",
+            "in_optimal_support_S": true
+          },
+          {
+            "candidate": "pnnp+ee",
+            "cost_80dps": "-2.19452122912648730357639645220287428124874457915336340325578",
+            "dual_slack_80dps": "0.412801720630290466149311287716215623876452895120021069386662",
+            "in_optimal_support_S": false
+          },
+          {
+            "candidate": "pnpn+ee",
+            "cost_80dps": "-2.60732294975677776972570773991908990512519747427338447264244",
+            "dual_slack_80dps": "0.0",
+            "in_optimal_support_S": true
+          },
+          {
+            "candidate": "ppnn+ee",
+            "cost_80dps": "-2.37084595478220137179175014313880006724170618374427353840541",
+            "dual_slack_80dps": "0.236476994974576397933957596780289837883491290529110934237029",
+            "in_optimal_support_S": false
+          }
+        ]
+      },
+      "stratum_2a_he4_joint_active_intersection": [
+        "nppn"
+      ],
+      "stratum_2b_meson_a_plus_b_eq_7_casimir_imbalance": {
+        "dual_shadow_price_u0_star_80dps": "1.13630526467030633267369091555890720849375022901557406251446",
+        "active_support_S": [
+          "[3]_q*[4]_q"
+        ],
+        "active_support_cardinality": 1,
+        "singleton_unique_primal": true,
+        "min_positive_dual_slack_80dps": "9.16487004623216097002055593880794751659480682985785272923185",
+        "candidates": [
+          {
+            "candidate": "[1]_q*[6]_q",
+            "cost_80dps": "29.0314771247808765160110861971992894425544725915478752727434",
+            "dual_slack_80dps": "27.8951718601105701833373952816403822340607223625323012102290",
+            "in_optimal_support_S": false
+          },
+          {
+            "candidate": "[2]_q*[5]_q",
+            "cost_80dps": "10.3011753109024673026942468543668547250885570588734267917463",
+            "dual_slack_80dps": "9.16487004623216097002055593880794751659480682985785272923185",
+            "in_optimal_support_S": false
+          },
+          {
+            "candidate": "[3]_q*[4]_q",
+            "cost_80dps": "1.13630526467030633267369091555890720849375022901557406251446",
+            "dual_slack_80dps": "0.0",
+            "in_optimal_support_S": true
+          }
+        ]
+      },
+      "stratum_2b_meson_a_plus_b_eq_7_max_product": {
+        "dual_shadow_price_u0_star_80dps": "-12.5086658700905155463763159458381157798694720794787453547092",
+        "active_support_S": [
+          "[3]_q*[4]_q"
+        ],
+        "active_support_cardinality": 1,
+        "singleton_unique_primal": true,
+        "min_positive_dual_slack_80dps": "2.01089686670712229975249197809186281588924074848413291676393",
+        "candidates": [
+          {
+            "candidate": "[1]_q*[6]_q",
+            "cost_80dps": "-6.38808659217545208486325517864992272061590325240822942051032",
+            "dual_slack_80dps": "6.12057927791506346151306076718819305925356882707051593419883",
+            "in_optimal_support_S": false
+          },
+          {
+            "candidate": "[2]_q*[5]_q",
+            "cost_80dps": "-10.4977690033833932466238239677462529639802313309946124379452",
+            "dual_slack_80dps": "2.01089686670712229975249197809186281588924074848413291676393",
+            "in_optimal_support_S": false
+          },
+          {
+            "candidate": "[3]_q*[4]_q",
+            "cost_80dps": "-12.5086658700905155463763159458381157798694720794787453547092",
+            "dual_slack_80dps": "0.0",
+            "in_optimal_support_S": true
+          }
+        ]
+      }
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "preregistration": "PREREGISTRATION.md"
+}

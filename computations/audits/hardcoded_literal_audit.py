@@ -54,6 +54,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import ast
 import re
 import sys
 from pathlib import Path
@@ -62,7 +63,9 @@ from typing import Any
 import mpmath as mp
 
 HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent))
+from _source_normalise import code_and_numeric_strings_only  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
@@ -120,22 +123,23 @@ ANCHOR_BANNER_PATTERNS = (
 )
 
 
-def _classify_script(path: Path,
+def _classify_source(text: str, rel_path: str,
                      registry: dict[str, mp.mpf]) -> dict[str, Any] | None:
-    """Audit one script for hardcoded literals matching the registry."""
-    try:
-        text = path.read_text(encoding="utf-8")
-    except (OSError, UnicodeDecodeError):
-        return None
+    """Audit Python source text for hardcoded literals matching the registry."""
     if "import" not in text:
         return None
 
-    rel = path.relative_to(REPO_ROOT)
-
     # Check the module docstring for a CLASS-A acknowledged-anchor
     # banner (mirror of the I11 audit's banner detection per PR #765).
-    doc_match = re.search(r'^"""(.*?)"""', text, re.DOTALL)
-    docstring = doc_match.group(1) if doc_match else ""
+    # Use ast.get_docstring so leading shebang/comment lines do not hide the
+    # module docstring (the prior `^"""` regex without MULTILINE missed every
+    # file starting with `#!/usr/bin/env python3`).
+    docstring = ""
+    try:
+        docstring = ast.get_docstring(ast.parse(text), clean=False) or ""
+    except (SyntaxError, ValueError):
+        doc_match = re.search(r'^\s*"""(.*?)"""', text, re.DOTALL | re.MULTILINE)
+        docstring = doc_match.group(1) if doc_match else ""
     has_banner = any(
         re.search(p, docstring, re.IGNORECASE) for p in ANCHOR_BANNER_PATTERNS
     )
@@ -144,26 +148,28 @@ def _classify_script(path: Path,
     # those constants — they're sourced via the import).
     imported_names: set[str] = set()
     for m in re.finditer(
-        r'from\s+codata_constants\s+import\s+(.*)', text
+        r'from\s+(?:codata_constants|codata_2022_source)\s+import\s+(?:\((.*?)\)|([^\n]+))',
+        text,
+        re.DOTALL,
     ):
-        for name in re.split(r'[\s,]+', m.group(1)):
+        body = m.group(1) or m.group(2) or ""
+        for name in re.split(r'[\s,]+', body):
             name = name.strip().rstrip(",)")
             if name and name.upper() == name:
                 imported_names.add(name.split(" as ")[0].strip())
-        # Handle multi-line imports — the regex hits only one line.
 
-    # Strip block docstrings (best-effort).  The text-replacement
-    # is rough, but adequate: zap content inside `"""..."""`.
-    code = re.sub(r'""".*?"""', "", text, flags=re.DOTALL)
-    code = re.sub(r"'''.*?'''", "", code, flags=re.DOTALL)
+    # Blank comments, docstrings, and non-numeric prose strings in place
+    # while preserving line numbers and keeping numeric string constants
+    # (`mp.mpf("0.78233341")`) intact. Replaces the old `re.sub(r'""".*?"""', "")`
+    # which deleted ~19k lines and shifted reported line numbers (bean qou-5li4).
+    code = code_and_numeric_strings_only(text)
 
     lines = code.splitlines()
     hits: list[dict[str, Any]] = []
     for i, line in enumerate(lines, start=1):
         if EXCLUSION_LINE_RX.match(line):
             continue
-        # Strip inline comments
-        code_part = re.sub(r"#.*$", "", line)
+        code_part = line
         # Filter out assertion-style usage (closure tests are OK).
         if ASSERTION_KW_RX.search(code_part):
             continue
@@ -211,7 +217,7 @@ def _classify_script(path: Path,
         return None
 
     row: dict[str, Any] = {
-        "path": str(rel),
+        "path": str(rel_path),
         "imported_codata_names": sorted(imported_names),
         "hit_count": len(hits),
         "hits": hits[:15],
@@ -229,7 +235,71 @@ def _classify_script(path: Path,
     return row
 
 
+def _classify_script(path: Path,
+                     registry: dict[str, mp.mpf]) -> dict[str, Any] | None:
+    """Audit one script for hardcoded literals matching the registry."""
+    try:
+        text = path.read_text(encoding="utf-8")
+    except (OSError, UnicodeDecodeError):
+        return None
+    rel = path.relative_to(REPO_ROOT)
+    return _classify_source(text, str(rel), registry)
+
+
+def _selftest() -> int:
+    """Verify prose strings are ignored, line numbers are preserved, and real literals fire."""
+    registry = _load_registry()
+    fails: list[str] = []
+
+    # 1. Prose denial string after multi-line docstring (the canonical_tower.py case)
+    prose_src = (
+        "#!/usr/bin/env python3\n"
+        '"""Module docstring\n'
+        "spanning three lines.\n"
+        '"""\n'
+        "import os\n"
+        'note = ("this module does NOT use the β-decay Q-value 0.78233341 "\n'
+        '        "MeV as E_0")\n'
+    )
+    if _classify_source(prose_src, "test_prose.py", registry) is not None:
+        fails.append("prose denial string mentioning 0.78233341 was falsely flagged")
+
+    # 2. Real hardcoded literal after multi-line docstring must report exact 1-based line number
+    code_src = (
+        "#!/usr/bin/env python3\n"
+        '"""Docstring line 1\n'
+        "line 2\n"
+        "line 3\n"
+        '"""\n'
+        "import mpmath as mp\n"
+        'X = mp.mpf("0.78233341")\n'
+    )
+    res = _classify_source(code_src, "test_code.py", registry)
+    if res is None or res["result"] != "i9_violation":
+        fails.append("real hardcoded mpf literal was not flagged as i9_violation")
+    elif res["hits"][0]["line_number"] != 7:
+        fails.append(f"line_number corrupted after docstring: got {res['hits'][0]['line_number']}, want 7")
+
+    # 3. CLASS-A banner after shebang line is recognised
+    banner_src = (
+        "#!/usr/bin/env python3\n"
+        '"""CLASS-A acknowledged-anchor banner."""\n'
+        "import mpmath as mp\n"
+        'X = mp.mpf("0.78233341")\n'
+    )
+    bres = _classify_source(banner_src, "test_banner.py", registry)
+    if bres is None or bres["result"] != "ok_acknowledged_anchor":
+        fails.append("CLASS-A banner after shebang was not recognised")
+
+    for f in fails:
+        print(f"  FAIL  {f}")
+    print("self-test:", "PASS" if not fails else f"FAIL ({len(fails)})")
+    return 1 if fails else 0
+
+
 def main() -> int:
+    if "--self-test" in sys.argv or "--selftest" in sys.argv:
+        return _selftest()
     strict = "--strict" in sys.argv
 
     print("Loading codata_constants registry ...")
@@ -246,7 +316,7 @@ def main() -> int:
             continue
         if py.name.startswith("_"):
             continue
-        if py.name == "codata_constants.py":
+        if py.name in ("codata_constants.py", "codata_2022_source.py"):
             continue
         if py.name == "hardcoded_literal_audit.py":
             continue

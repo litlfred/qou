@@ -18,7 +18,7 @@ export default proposition({
     "categorical-density",
   ],
   lean: {
-    ref: "qou:QOU.BraidKnot.atomicMassGBNF",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.atomicMassGBNF",
     validation: "not_checked",
   },
   computation: {

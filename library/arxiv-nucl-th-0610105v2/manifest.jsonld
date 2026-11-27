@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0610105v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-nucl-th-0610105v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "Universal Properties of the Four-Body System with Large Scattering Length Abstract",
+  "title": "Universal Properties of the Four-Body System with Large Scattering Length",
   "contains": [
     "library/arxiv-nucl-th-0610105v2/sections/sec-front-matter",
     "library/arxiv-nucl-th-0610105v2/sections/sec-000",
@@ -24,6 +24,18 @@
     "library/arxiv-nucl-th-0610105v2/sections/sec-009"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Universal Properties of the Four-Body System with Large Scattering Length — Few-body systems with large scattering length have universal properties that do not depend on the details of their\n\n**Universal Properties of the Four-Body System with Large Scattering Length**\n\n*H.-W. Hammer∗*\n\n14 pp, 11 sections.\n\n**Abstract.** Few-body systems with large scattering length have universal properties that do not depend on the details of their interactions at short distances. We study the universal bound state properties of the four-boson system with large scattering length in an eﬀective quantum mechanics approach. We compute the four-body binding energies using the Yakubovsky equations for positive and negative scattering length. Moreover, we study the correlation between three- and four-body energies and present a generalized Eﬁmov plot for the four-body system. These results are useful for understanding the cluster structure of nuclei and for the creation of weakly-bound tetramers with cold atoms close to a Feshbach resonance. PACS numbers: 03.65.Ge, 36.40.-c, 21.45.+v ∗Electronic address: hammer@itkp.uni-bonn.de †Electronic address: lplatter@phy.ohiou.edu\n\n**Outline.** Front matter; Introduction; Few-Body Bound State Equations in Effective Th; The Two-Body Sector; The Three-Body Sector; The Four-Body Sector; Four-Body Universality; Bound State Spectrum; Universal Correlations; Summary and Outlook; Acknowledgments",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
@@ -52,8 +64,8 @@
       "stamp_date": "29 Mar 2007"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

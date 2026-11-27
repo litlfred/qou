@@ -1,0 +1,1 @@
+The QH triangulation (TCφ,˜b, w) determines a sequence of standard local repre- sentations ρj : Tq λj →End((CN)⊗2m) associated to the triangulated surfaces (S, λj), with parameters ({xj(e)}e∈λ(1) j , h), h = Q e∈λ(1) j xj(e), and belonging to a local representation ρ of Tq S. Moreover, Hred N (TCφ,˜b, w)T intertwins the represen- tations ρ0 and ρk.

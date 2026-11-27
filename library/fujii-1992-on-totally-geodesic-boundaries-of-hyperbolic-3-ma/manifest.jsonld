@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -16,6 +16,18 @@
     "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/sections/sec-001"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On totally geodesic boundaries of hyperbolic 3-manifolds — 3 sections: Front matter; An ideal tetrahedral decomposition; UdC\n\n**On totally geodesic boundaries of hyperbolic 3-manifolds**\n\n*KODAI MATH. J*\n\n14 pp, 3 sections.\n\n**Outline.** Front matter; 1 An ideal tetrahedral decomposition of a hype; F UdC",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma",
@@ -25,8 +37,8 @@
     "pages": 14,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

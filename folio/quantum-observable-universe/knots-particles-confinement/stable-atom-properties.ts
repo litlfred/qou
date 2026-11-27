@@ -57,5 +57,6 @@ export default remark({
         "reproduces it, so it cannot be checked. Probe: " +
         "`qbeta_nl84_provenance_probe.py`.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The proton derivation in [mass-endomorphism-tower](#prop:mass-endomorphism-tower) shows that the $9$-crossing element $\\mathcal{B}_3 \\times \\Delta_3(\\mathfrak{u}\\mathfrak{u}\\mathfrak{d})$ violates Frobenius positivity (it is LP-infeasible at integer values). An ILP search adjoining $\\{\\sigma_0, \\sigma_1, L_+, L_-\\}$ finds the unique integer solution $\\sigma_0 \\to \\sigma_0$ ($2$ gluon crossings) that restores stability." },
   ],
 });

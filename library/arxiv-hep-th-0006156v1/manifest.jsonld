@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0006156v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0006156v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-th-0006156v1",
+  "title": "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality",
   "contains": [
     "library/arxiv-hep-th-0006156v1/sections/sec-front-matter",
     "library/arxiv-hep-th-0006156v1/sections/sec-000",
@@ -45,6 +45,18 @@
     "library/arxiv-hep-th-0006156v1/sections/sec-030"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality — The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well\n\n**Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality**\n\n*THEORY. I: ALGEBRAIC APPROACH AND DUALITY*\n\n20 pp, 32 sections.\n\n**Abstract.** The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well deﬁned quantum me- chanical problem with unitary evolution operator. The theory is self- dual: there are two exponential ﬁelds related by Hermitean conjugation, satisfying two discrete quantum Liouville equations, and living in mu- tually commuting subalgebras of the quantum algebra of observables.\n\n**Outline.** Front matter; Introduction; 1 Recollecting the facts; 1.1 Liouville formula and M\"obius-invariance; 1.2 Magri bracket; 1.3 Volterra model; 1.4 Bi-hamiltonity; 1.5 Quantization; 1.6 Proof; 1.7 It has to do with braids; 1.8 Lattice Virasoro algebra; 2 Difference-difference Liouville equation; 2.1 Liouville formula; 2.2 Discrete Liouville equation; 2.3 Poisson bracket; 3 Formal quantization; 3.1 Algebra of observables; 3.2 Quantum lattice Liouville equation",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -55,7 +67,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-th-0006156v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0006156v1.pdf",
     "source_sha256": "b799d4ef150291cf7c6aeca96ff9eae2abbba976c49fc668d36e3141653f0217",
     "pages": 20,
@@ -66,8 +80,8 @@
       "stamp_date": "20 Jun 2000"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

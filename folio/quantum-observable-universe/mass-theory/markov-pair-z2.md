@@ -2,9 +2,9 @@ Let $H_n(R, q)$ be the Iwahori--Hecke algebra with Markov trace
 $\mathrm{tr}_M$ normalised by $\mathrm{tr}_M(1_k) = 1$ for all $k$
 and Markov axiom $\mathrm{tr}_M(x\sigma_{k-1}) = z\,\mathrm{tr}_M(x)$
 for $x \in H_{k-1}(q)$, where
-$z = q^{3}/(q^{2}+1)$ (**convention D**, [Jones--Markov trace](#thm:jones-markov-trace)).
+$z = q^{3}/(q^{2}+1)$ ([Jones--Markov trace](#thm:jones-markov-trace)).
 
-**Proposition.** For every pair of braid generators
+For every pair of braid generators
 $\sigma_i, \sigma_j$ with $0 \le i < j$, embedded in any
 $H_n(R, q)$ with $n > j$,
 
@@ -38,7 +38,7 @@ $$
   \qquad t = q^{-2},
 $$
 
-with **no square roots anywhere**. The reason is that under convention D the
+with **no square roots anywhere**. The reason is that the
 element $e_i := q - \sigma_i$ is a Temperley–Lieb generator,
 
 $$
@@ -46,7 +46,7 @@ $$
        \;=\; [2]_q\,e_i ,
 $$
 
-and convention D is *precisely* the statement that $\mathrm{tr}_M(e_i) = 1/\delta$:
+and $z = q^{3}/(q^{2}+1)$ is *precisely* the condition $\mathrm{tr}_M(e_i) = 1/\delta$:
 
 $$
   \mathrm{tr}_M(e_i) = q - z, \qquad (q-z)\,[2]_q = 1 .
@@ -94,29 +94,26 @@ checks are algebra, with no knot theory in them:
 (The negative row uses $\sigma^{-1} = \sigma - h$, which follows from the
 quadratic relation alone: $\sigma(\sigma - h) = \sigma^2 - h\sigma = 1$.)
 
-Each stabilisation condition is not merely *satisfied by* convention D — each
+Each stabilisation condition is not merely *satisfied by* $z = q^{3}/(q^{2}+1)$ — each
 one, on its own, **forces** it, needing only $q \neq 0$. Hence:
 
-> **Convention D is the unique Markov parameter for which
+> **The parameter $z = q^{3}/(q^{2}+1)$ is the unique Markov parameter for which
 > $q^{-2e}[2]_q^{\,n-1}\mathrm{tr}_M$ is a link invariant.**
 
 That the two stabilisations independently pin the *same* $z$ is a genuine
 consistency check on the normalisation, not a restatement — and it passes.
 
-Under this statement the retracted prefactor $q^{1/2}+q^{-1/2}$ is not a
+Under this statement the alternative prefactor $q^{1/2}+q^{-1/2}$ is not a
 near-miss. With it the quantity fails to survive a stabilisation move, so it is
 not an invariant of anything at all.
 
-Proved in
-[`JonesNormalisation.lean`](../lean/QOU/QBeta/JonesNormalisation.lean) —
-`tl_generator_sq`, `sigma_inv`, `stab_pos_iff_conventionD`,
-`stab_neg_iff_conventionD`, `jonesV_stabilise_pos`, `jonesV_stabilise_neg`,
-`conventionD_iff_markov_invariant`, plus the four closure values
-(`unknot_two_strand`, `unknot_three_strand`, `hopf_link`,
-`two_component_unlink`) and `kauffman_loop`. Every hypothesis is
-`IsConventionD` plus $q \neq 0$, and $q^2+1 \neq 0$ is *derived* rather than
-assumed (`q_sq_add_one_ne_zero`) — in a general field it can vanish, so assuming
-it would have been a hidden hypothesis.
+All of the above holds over a general field under $z(q^{2}+1) = q^{3}$ and
+$q \neq 0$ alone: the Temperley–Lieb relation for $e_i$, the inverse
+$\sigma^{-1} = \sigma - h$, the equivalence of each stabilisation condition
+with $z(q^{2}+1) = q^{3}$, the invariance under both stabilisations, the four closure
+values, and the Kauffman loop value. The condition $q^2+1 \neq 0$ is *derived*
+rather than assumed — in a general field it can vanish, so assuming it would
+have been a hidden hypothesis.
 
 The four closure rows are retained as sanity checks — they confirm the invariant
 is normalised so the unknot is $1$ — but they are no longer load-bearing.

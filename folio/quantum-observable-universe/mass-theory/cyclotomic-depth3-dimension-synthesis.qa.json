@@ -1310,6 +1310,24 @@
         "reviewed_sha": "06a3439cc5ff0cdc91182a4199f03868f80ab9b8",
         "severity": "major",
         "evidence": "lean.ref dimension_synthesis_upper_bound no longer exists (dangling). The file now only defines the predicate dimensionSynthesisHolds; its docstring says the upper bound is upstream and the lower bound Beilinson-conditional. The md says the equality holds unconditionally, which nothing in Lean supports; the block reads as a conjecture."
+      },
+      {
+        "field_hash": {
+          "md": "db37bef4d832",
+          "ts": "b1f0388b8e38",
+          "lean": "7d475bdf8980",
+          "lean_statement": "7e62e8a014f2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T18:12:00.707Z",
+        "reviewed_sha": "677b0a1284456bd582792110bdc22f48ab47322d",
+        "severity": "major",
+        "evidence": "Re-read 2026-11-17. lean.ref dimension_synthesis_upper_bound does not exist (only mentioned in a docstring); the file defines just the predicate dimensionSynthesisHolds and says the upper bound is upstream and the lower bound Beilinson-conditional. The md says the equality holds unconditionally, which nothing in Lean supports. The ref is dangling, so this verdict cannot carry a lean hash."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2723,6 +2741,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-16T07:07:16.841Z",
+  "updated_at": "2026-11-17T18:12:00.707Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1,1 +1,0 @@
-A *rational form* of $\cC$ over $k$ is a semisimple abelian category $\cC_k$ over $k$ (again with the same structure) together with an equivalence between the idempotent completion of $\cC_k \otimes_k K$ is and $\cC_K$ (this equivalence should preserve the additional structure).

@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/vonneumann2015/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Classiﬁcation of all type I factors",
+  "pageStart": 26,
+  "pageEnd": 27,
+  "contains": [
+    "library/vonneumann2015/blocks/prose-sec-009",
+    "library/vonneumann2015/blocks/thm-sec-009-01",
+    "library/vonneumann2015/blocks/rem-sec-009-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "provenance": "ingested"
+}

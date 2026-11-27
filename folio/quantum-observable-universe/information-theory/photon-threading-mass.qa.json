@@ -76,6 +76,24 @@
         "reviewed_sha": "d452093fabf877690aeba624197ad015c6b9aa74",
         "severity": "major",
         "evidence": "PhotonThreadingMassContext carries mass_energy_equiv and crossing_energy_eq as fields; the headline is a composition of assumptions (the claimed value is taken as a definition). The Hecke steps are not constructed."
+      },
+      {
+        "field_hash": {
+          "md": "13ccd68d1c61",
+          "ts": "ee5fa7e079d0",
+          "lean": "7dfcbcd55bec",
+          "lean_statement": "4785c3315cdf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T18:10:54.320Z",
+        "reviewed_sha": "677b0a1284456bd582792110bdc22f48ab47322d",
+        "severity": "major",
+        "evidence": "Re-read 2026-11-17. photon_threading_mass rewrites with two context fields, crossing_energy_eq and mass_energy_equiv, so the headline formula is assumed, not derived. The Hecke steps of threading the photon strand through the braid are never constructed; n_steps and c_w_abs are free parameters."
       }
     ],
     "proof-statement-integrity": [
@@ -2124,6 +2142,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-16T07:05:16.484Z",
+  "updated_at": "2026-11-17T18:10:54.320Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

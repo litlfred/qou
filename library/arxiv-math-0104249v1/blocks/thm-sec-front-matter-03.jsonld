@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-math-0104249v1/blocks/thm-sec-front-matter-03",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 1,
+  "pageEnd": 9,
+  "text": "thm-sec-front-matter-03.md",
+  "derivedFrom": "library/arxiv-math-0104249v1/sections/sec-front-matter",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0104249v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-front-matter.md (p. 1-9)",
+    "claim_id": "arxiv-math-0104249v1#theorem:4",
+    "lean_status": "unformalized"
+  }
+}

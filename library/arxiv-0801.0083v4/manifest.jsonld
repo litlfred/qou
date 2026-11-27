@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0801.0083v4",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0801.0083v4/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -23,6 +23,18 @@
     "library/arxiv-0801.0083v4/sections/sec-008"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "CENTRAL EXTENSIONS OF GERBES — We introduce the notion of central extension of gerbes on a topo- logical space X.\n\n**CENTRAL EXTENSIONS OF GERBES**\n\n*AMNON YEKUTIELI*\n\n36 pp, 10 sections.\n\n**Abstract.** We introduce the notion of central extension of gerbes on a topo- logical space X. We show that there are obstruction classes to lifting objects and isomorphisms in a central extension. We also discuss pronilpotent gerbes. These results are used in the paper [Ye] to study twisted deformation quanti- zation on algebraic varieties.\n\n**Outline.** Front matter; 0 Introduction; 1 Recalling some Facts on 2-Categories; 2 Prestacks on a Topological Space; 3 Extensions of Gerbes; 4 Obstruction Classes; 5 Sufficient Conditions for Existence of Obstr; 6 Pronilpotent Gerbes; 7 Fake Global Objects of Gerbes; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -44,8 +56,8 @@
       "stamp_date": "18 Feb 2010"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

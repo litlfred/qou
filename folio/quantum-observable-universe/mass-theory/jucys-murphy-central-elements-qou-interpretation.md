@@ -1,2 +1,1 @@
-**Remark.**
 The Jucys-Murphy elements are the Hecke-algebraic shadow of commuting Casimirs in $U_q(\mathfrak{sl}_n)$. They are the natural commuting operators that read off the highest weight of an irreducible representation. The cell content $c(\square)$ is the magnetic quantum number $m_j$ of the corresponding $\mathrm{SU}_q(2)$ weight space, making $c_\ell(\lambda)$ a $q$-deformation of the $\ell$-th Casimir eigenvalue on $V_\lambda$. The crystal limit $q \to 0$ recovers the classical content combinatorics of the Kashiwara crystal.

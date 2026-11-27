@@ -104,7 +104,8 @@ def main() -> int:
     ok = True
     for name, q in ANCHORS.items():
         h = q - 1 / q
-        E0 = M_E / (q * (q - 1))
+        import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+        E0 = _qbeta_e0.order_zero_scaled(M_E, q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
         eps = h**2 / 2 - h                      # Frobenius counit on Delta
         qa_counit = eps * E0
         qa_closed = M_E * abs(q**2 - 2 * q - 1) * (q + 1) / (2 * q**3)

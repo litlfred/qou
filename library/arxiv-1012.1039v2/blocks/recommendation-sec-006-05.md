@@ -1,1 +1,0 @@
-In fact we must have λ′ = λ, since both λ[z∞,R] and λ′[zk,R] restrict to the orientation cycle at x0, and the set of simplices in the supports of zk,R and z∞,R which intersect a small neighborhood of x0 is the same.

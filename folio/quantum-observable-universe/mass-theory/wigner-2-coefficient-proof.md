@@ -1,4 +1,3 @@
-*Proof.*
 The argument has three steps: a pairing identity, a counting
 argument, and an algebraic simplification.
 

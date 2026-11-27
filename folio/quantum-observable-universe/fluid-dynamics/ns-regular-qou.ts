@@ -16,7 +16,7 @@ export default definition({
   // the real declaration went unchecked. A sibling stub MASKS a broken library
   // ref — see bean `qou-2u26`.
   lean: {
-    ref: "qou:QOU.GaugeFieldFluidDynamics.BoundaryObservability",
+    ref: "qou:QOU.FluidDynamics.GaugeFieldFluidDynamics.BoundaryObservability",
     validation: "not_checked",
   },
   uses: ["def:q-navier-stokes"],
@@ -28,6 +28,8 @@ export default definition({
     "categorical",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-24", body: "Relocated from the block prose by the reading-order drain (qou-d4kh): ([Descartes theorem](#thm:ns-singularity-descartes), item 1)" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The global-surface definition $\\deg e(\\xi) = \\chi(A)$ is (matching `QOU.FluidDynamics.qou_ns_in_qou`)." },
     {
       kind: "refined-framing",
       date: "2026-11-15",
@@ -43,5 +45,6 @@ export default definition({
         "audit `docs/audits/2026-10-12-ns-v3-tao-barrier.md`).",
       see: "../../../../docs/audits/2026-10-12-ns-v3-tao-barrier.md",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([Descartes theorem](#thm:ns-singularity-descartes), item 3)" },
   ],
 });

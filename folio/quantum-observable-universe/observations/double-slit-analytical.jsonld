@@ -1,8 +1,9 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/sim-double-slit-analytical",
@@ -16,6 +17,9 @@
     "papers/quantum-observable-universe/blocks/prop-local-substrate-q",
     "papers/quantum-observable-universe/blocks/def-categorical-dirac-operator",
     "papers/quantum-observable-universe/blocks/prop-variational-equations"
+  ],
+  "cites": [
+    "references/bach2013"
   ],
   "tags": [
     "double-slit",

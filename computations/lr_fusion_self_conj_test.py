@@ -99,18 +99,15 @@ def count_lr_tableaux(nu: List[int], lam: List[int], mu: List[int]) -> int:
             # Weight constraint: at most mu[letter-1]
             if used_per_letter[letter - 1] >= mu[letter - 1]:
                 continue
-            # Row weakly increasing: cell to left must have <= letter
-            if j > 1 and filling.get((i, j - 1), 0) > letter:
-                # Note: filling.get returns 0 for empty/uninserted cells;
-                # but cell (i, j-1) is in the skew shape only if it's not
-                # in lam. If j-1 <= lam_{i-1} then cell is in lam and we
-                # don't constrain.
-                pass
-            lam_i = lam[i - 1] if i - 1 < len(lam) else 0
-            if j > lam_i + 1:
-                left_letter = filling.get((i, j - 1))
-                if left_letter is not None and left_letter > letter:
-                    continue
+            # Row weakly increasing. Cells are filled right-to-left within a
+            # row (reading order), so the already-filled neighbour is the one
+            # to the RIGHT, which must be >= letter. (Until 2026-11-25 this
+            # checked the left neighbour, which is never filled yet, so the
+            # row condition was never enforced and every coefficient was
+            # overcounted: e.g. max c 11 instead of 2 at lam = [3, 3, 2].)
+            right_letter = filling.get((i, j + 1))
+            if right_letter is not None and right_letter < letter:
+                continue
             # Column strictly increasing: cell above must have < letter
             if i > 1:
                 above_letter = filling.get((i - 1, j))
@@ -136,19 +133,49 @@ def count_lr_tableaux(nu: List[int], lam: List[int], mu: List[int]) -> int:
     return count[0]
 
 
+def _bounded_partitions(n: int, lower: List[int], upper: List[int]) -> Iterator[List[int]]:
+    """Partitions nu of n with lower[i] <= nu[i] <= upper[i] (missing entries are 0)."""
+    L = len(upper)
+    lo = list(lower) + [0] * (L - len(lower))
+
+    def rec(i: int, remaining: int, cap: int, acc: List[int]) -> Iterator[List[int]]:
+        if i == L:
+            if remaining == 0:
+                yield [x for x in acc if x > 0]
+            return
+        top = min(cap, upper[i], remaining)
+        # the remaining rows can absorb at most top * (L - i - 1)
+        for v in range(top, lo[i] - 1, -1):
+            rest = remaining - v
+            if rest > v * (L - i - 1):
+                break
+            if rest < sum(lo[i + 1:]):
+                continue
+            yield from rec(i + 1, rest, v, acc + [v])
+
+    yield from rec(0, n, upper[0] if upper else 0, [])
+
+
 def lr_decomposition(lam: List[int], mu: List[int],
-                      max_partitions: int = 200
+                      max_partitions: Optional[int] = None
                      ) -> List[Tuple[List[int], int]]:
     """All (nu, c) with c = c^nu_{lam, mu} > 0.
-    Returns list sorted by c descending."""
+    Returns list sorted by c descending.
+
+    Every nu with c > 0 contains lam and mu, has nu_1 <= lam_1 + mu_1 and at
+    most len(lam) + len(mu) rows, so exactly those nu are enumerated. (Until 2026-11-25 the candidate list was
+    truncated to the first 200 partitions containing lam, which dropped terms:
+    112 of 257 at lam = mu = [4, 4, 2, 2].) `max_partitions` is kept for
+    signature compatibility and ignored."""
     n = sum(lam) + sum(mu)
+    L = len(lam) + len(mu)
+    lam_p = list(lam) + [0] * (L - len(lam))
+    mu_p = list(mu) + [0] * (L - len(mu))
+    lower = [max(a, b) for a, b in zip(lam_p, mu_p)]
+    top = (lam[0] if lam else 0) + (mu[0] if mu else 0)
+    upper = [top] * L
     out = []
-    parts = partitions_of(n, max_first=lam[0] + mu[0] if lam and mu else n)
-    if len(parts) > max_partitions:
-        # Trim to nu's that contain lam (most lr coeffs are zero anyway)
-        parts = [p for p in parts if is_subdiagram(lam, p)]
-        parts = parts[:max_partitions]
-    for nu in parts:
+    for nu in _bounded_partitions(n, lower, upper):
         c = count_lr_tableaux(nu, lam, mu)
         if c > 0:
             out.append((nu, c))

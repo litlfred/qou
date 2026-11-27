@@ -1,0 +1,1 @@
+In the situation of Proposition 8.2.11, the following two con- ditions are equivalent: (i) The multiplicatively closed sets S ⊆C and T ⊆D are left (resp. right) denominator sets. (ii) The multiplicatively closed set S × T ⊆C × D is a left (resp. right) denom- inator set. Exercise 8.2.14. Prove Proposition 8.2.13.

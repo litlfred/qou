@@ -1,0 +1,242 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2003.13612v3",
+ "source": {
+  "file": "2003.13612v3.pdf",
+  "sha256": "98a3287428a46e57411409818c073cc0e103e57767062116e81edfb4f9aaec83",
+  "bytes": 149248,
+  "pages": 11,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-18T18:23:09Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2003.13612",
+   "version": "3",
+   "primary_class": "hep-ph",
+   "stamp_date": "22 Jan 2021"
+  },
+  "doi": null,
+  "title": "On the mass difference between proton and neutron",
+  "authors_raw": "J. Gasser, H. Leutwyler",
+  "title_lines": [
+   "On the mass difference between proton and neutron"
+  ],
+  "abstract": "The Cottingham formula expresses the electromagnetic part of the mass of a particle in terms of the virtual Compton scattering amplitude. At large photon momenta, this amplitude is dominated by short distance singularities associated with operators of spin 0 and spin 2. In the di\ufb00erence between proton and neutron, chiral symmetry suppresses the spin 0 term. Although the angular integration removes the spin 2 singularities altogether, the various pieces occurring in the standard decomposition of the Cottingham formula do pick up such contributions. These approach asymp- totics extremely slowly because the relevant Wilson coe\ufb03cients only fall o\ufb00logarithmically. We rewrite the formula in such a way that the leading spin 2 contributions are avoided ab initio. Using a sum rule that follows from Reggeon dominance, the numerical evaluation of the e.m. part of the mass di\ufb00erence between proton and neutron yields mQED = 0.58 \u00b1 0.16 MeV. The result indicates that the inelastic contributions are small compared to the elastic ones.",
+  "docinfo": {
+   "Title": "On the mass difference between proton and neutron",
+   "Author": "J. Gasser; H. Leutwyler; A. Rusetsky; ",
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20210124205015-05'00'"
+  },
+  "title_raw": "On the mass difference between proton and neutron",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "On the mass difference between proton and neutron",
+   "heading": "On the mass di \ufb00 erence between proton and neutron",
+   "text": "On the mass difference between proton and neutron",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 10,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 10,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": null
+  }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 476,
+   "n_words": 62,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 10,
+   "n_chars": 28057,
+   "n_words": 4866,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 162,
+   "n_words": 26,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 6076,
+   "n_words": 1034,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 3,
+  "toc_inferred_entries": 3,
+  "toc_inferred_mean_confidence": 0.7,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 4,
+  "chars_total": 34771,
+  "furniture_lines_stripped": 0
+ }
+}

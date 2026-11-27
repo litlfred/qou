@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0611941v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0611941v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -23,6 +23,18 @@
     "library/arxiv-math-0611941v3/sections/sec-008"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR — Let H be the one-parameter Hecke algebra associated to a ﬁnite Weyl group W, deﬁned over a ground ring in which “bad” primes for W are invertible.\n\n**HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR**\n\n*MEINOLF GECK*\n\n16 pp, 10 sections.\n\n**Abstract.** Let H be the one-parameter Hecke algebra associated to a ﬁnite Weyl group W, deﬁned over a ground ring in which “bad” primes for W are invertible. Using deep properties of the Kazhdan–Lusztig basis of H and Lusztig’s a-function, we show that H has a natural cellular structure in the sense of Graham and Lehrer. Thus, we obtain a general theory of “Specht modules” for Hecke algebras of ﬁnite type. Previously, a general cellular structure was only known to exist in types An and Bn.\n\n**Outline.** Front matter; 1 Introduction; 2 Kazhdan–Lusztig theory and the asymptotic ri; 2.1 Irreducible representations of W and H; 2.3 The Kazhdan–Lusztig basis of H; 2.4 Lusztig's conjectures and the asymptotic r; 2.5 Representations of J; 3 A cell datum for H; 4 Examples and applications to modular represe; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
@@ -49,8 +61,8 @@
       "stamp_date": "19 Mar 2007"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

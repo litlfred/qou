@@ -1,0 +1,1 @@
+Suppose we are given a copointed linear functor (F, σ) on M(A, gr). Then there is a unique morphism σR : RF →IdD(A,gr) of triangu- lated functors from D(A, gr) to itself, satisfying this condition: for every complex M ∈D(A, gr) there is equality σR M ◦ηR M = σM of morphisms F(M) →M in D(A, gr). In a commutative diagram: (16.2.6) F(M) ηR M / σM % RF(M) σR M  M

@@ -1,0 +1,543 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-23T19:54:56.419820+00:00",
+  "commitSha": "d3c0b0d4a506f95bc47c2b175659ecd3741b626c",
+  "assertions": [
+    {
+      "name": "open_shell_heavy_gamow_accuracy_under_0p41_dex",
+      "computed": "0.404980039403",
+      "expected": "0.399",
+      "passed": true,
+      "tolerance": "2e-2",
+      "source": "Zero-parameter Gamow-Gurney-Condon WKB with Form-B alpha_q and r_0^{FCC}"
+    },
+    {
+      "name": "Po210_magic_N126_empirical_S_alpha",
+      "computed": "0.05529696180",
+      "expected": "0.05530",
+      "passed": true,
+      "tolerance": "1e-4",
+      "source": "NUBASE2020 + AME2020 WKB ratio at magic N=126"
+    },
+    {
+      "name": "mayer_jensen_1h9_2_x_3p1_2_joint_overlap_matches_Po210_within_0p05_dex",
+      "computed": "0.04373126601",
+      "expected": "0.0438",
+      "passed": true,
+      "tolerance": "1e-2",
+      "source": "S_MJ^(pi*nu) = 1/((2*9/2+1)*(2*1/2+1)) = 1/20 = 0.05 vs 0.05530"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "alpha_decay_n126_qalpha_probe",
+  "scriptFile": "alpha_decay_n126_qalpha_probe.py",
+  "scriptHash": "683772c004eb",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/alpha_decay_n126_and_derived_qalpha/alpha_decay_n126_qalpha_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/alpha_decay_n126_and_derived_qalpha/alpha_decay_n126_qalpha_probe.py"
+  },
+  "description": "80-dps (50-dps serialized) evaluation of zero-parameter Gamow-Gurney-Condon alpha-decay half-lives (open-shell 0.14-0.40 dex vs magic N=126 210Po S_alpha = 0.05530), side-by-side zero-parameter tests of Mayer-Jensen 1h_{9/2}^2 x 3p_{1/2}^{-2} seniority overlap (1/20 = 0.0500, +0.0438 dex) and Perdew-Parr / Goeppert-Mayer shell-kink internal WKB attenuation across r_pi, plus honest derived-Q_alpha^{QOU} benchmark and d(log10 T_{1/2})/dQ_alpha sensitivity across heavy alpha emitters (Bean qou-i2jl).",
+  "contentBlock": "prop:alpha-decay-gamow-tunneling",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0_pin": "proton (qou_substrate.constants.q_at)",
+    "work_dps": 80,
+    "output_dps": 50,
+    "alpha_EM_inv_FormB": "137.03599912695091242017270049642000673995567550572",
+    "r_pi_CAL3_fm": "1.4138169310790238094570807398605500665195994008728",
+    "r0_FCC_fm": "1.1720601536921894095766601617671131844318515584697",
+    "E0_MeV": "4.1859813632944759699483604493380500149783894381461",
+    "E_osc_MeV": "42.247768109149954507265600449278963647193460857746",
+    "B_alpha_QOU_MeV": "29.955677279532883120519394501883424275214581063419"
+  },
+  "data": {
+    "part_a_baseline_gamow_emitters": {
+      "emitters": [
+        {
+          "nuclide": "8Be",
+          "Z": "4",
+          "N": "4",
+          "A": "8",
+          "regime": "81.9 as (resonance)",
+          "Q_alpha_AME_MeV": "0.091840260000000000000",
+          "R_touch_FCC_fm": "3.7210590418819820489",
+          "R_turn_fm": "62.716048381935337030",
+          "two_G_WKB": "12.801679997312548832",
+          "T_half_exp_s": "8.19000000000000e-17",
+          "T_half_WKB_s": "6.28862278926321e-16",
+          "log10_T_WKB_over_T_exp_dex": "0.885271643444",
+          "log10_T_WKB_screened_over_T_exp_dex": "0.885271643444",
+          "S_alpha_empirical": "7.67841610410648"
+        },
+        {
+          "nuclide": "212Po",
+          "Z": "84",
+          "N": "128",
+          "A": "212",
+          "regime": "294.4 ns (open shell, N=128)",
+          "Q_alpha_AME_MeV": "8.9541951300000000000",
+          "R_touch_FCC_fm": "8.8049767154410901228",
+          "R_turn_fm": "26.373580466338390695",
+          "two_G_WKB": "33.052673459164313196",
+          "T_half_exp_s": "2.94400000000000e-7",
+          "T_half_WKB_s": "1.31640956729885e-7",
+          "log10_T_WKB_over_T_exp_dex": "-0.349546775700",
+          "log10_T_WKB_screened_over_T_exp_dex": "-0.425357709504",
+          "S_alpha_empirical": "0.447149988892273"
+        },
+        {
+          "nuclide": "214Po",
+          "Z": "84",
+          "N": "130",
+          "A": "214",
+          "regime": "163.6 us (open shell, N=130)",
+          "Q_alpha_AME_MeV": "7.8335411300000000000",
+          "R_touch_FCC_fm": "8.8271635984309235402",
+          "R_turn_fm": "30.146543160149380220",
+          "two_G_WKB": "39.788659574574765530",
+          "T_half_exp_s": "0.000163600000000000",
+          "T_half_WKB_s": "0.000118839007545328",
+          "log10_T_WKB_over_T_exp_dex": "-0.138824283092",
+          "log10_T_WKB_screened_over_T_exp_dex": "-0.233169653341",
+          "S_alpha_empirical": "0.726399801621809"
+        },
+        {
+          "nuclide": "222Rn",
+          "Z": "86",
+          "N": "136",
+          "A": "222",
+          "regime": "3.8215 d (open shell, N=136)",
+          "Q_alpha_AME_MeV": "5.5903891300000000000",
+          "R_touch_FCC_fm": "8.9145286130639908018",
+          "R_turn_fm": "43.273203051952819526",
+          "two_G_WKB": "61.686482625794677785",
+          "T_half_exp_s": "330177.600000000",
+          "T_half_WKB_s": "459989.108458983",
+          "log10_T_WKB_over_T_exp_dex": "0.143999942255",
+          "log10_T_WKB_screened_over_T_exp_dex": "-0.0269510030083",
+          "S_alpha_empirical": "1.39315661770812"
+        },
+        {
+          "nuclide": "210Po",
+          "Z": "84",
+          "N": "126",
+          "A": "210",
+          "regime": "138.3763 d (magic N=126)",
+          "Q_alpha_AME_MeV": "5.4075301300000000000",
+          "R_touch_FCC_fm": "8.7826471490808483610",
+          "R_turn_fm": "43.671358290212679202",
+          "two_G_WKB": "62.048009697907007388",
+          "T_half_exp_s": "11955712.3200000",
+          "T_half_WKB_s": "661114.567411730",
+          "log10_T_WKB_over_T_exp_dex": "-1.25729872966",
+          "log10_T_WKB_screened_over_T_exp_dex": "-1.42717173978",
+          "S_alpha_empirical": "0.0552969617967297"
+        },
+        {
+          "nuclide": "226Ra",
+          "Z": "88",
+          "N": "138",
+          "A": "226",
+          "regime": "1600 y (open shell, N=138)",
+          "Q_alpha_AME_MeV": "4.8707031300000000000",
+          "R_touch_FCC_fm": "8.9574111198025259909",
+          "R_turn_fm": "50.849722420156900059",
+          "two_G_WKB": "73.654802822431072144",
+          "T_half_exp_s": "50492160000.0000",
+          "T_half_WKB_s": "78091356912.7081",
+          "log10_T_WKB_over_T_exp_dex": "0.189379019439",
+          "log10_T_WKB_screened_over_T_exp_dex": "-0.0347853523558",
+          "S_alpha_empirical": "1.54660360960411"
+        },
+        {
+          "nuclide": "238U",
+          "Z": "92",
+          "N": "146",
+          "A": "238",
+          "regime": "4.468 Gy (open shell, N=146)",
+          "Q_alpha_AME_MeV": "4.2698581300000000000",
+          "R_touch_FCC_fm": "9.0830456555999090689",
+          "R_turn_fm": "60.703098472882617653",
+          "two_G_WKB": "88.913477990560575551",
+          "T_half_exp_s": "1.40999356800000e+17",
+          "T_half_WKB_s": "3.58259050815747e+17",
+          "log10_T_WKB_over_T_exp_dex": "0.404980039403",
+          "log10_T_WKB_screened_over_T_exp_dex": "0.0987165278781",
+          "S_alpha_empirical": "2.54085592265444"
+        }
+      ],
+      "open_shell_heavy_abs_dex_range_unscreened": [
+        "0.138824283092",
+        "0.404980039403"
+      ],
+      "open_shell_heavy_abs_dex_range_screened": [
+        "0.0269510030083",
+        "0.425357709504"
+      ],
+      "Po210_empirical_S_alpha": "0.055296961796729689657",
+      "U238_exterior_q0_vs_q1_shift_dex": "-3.8260040880022029776",
+      "U238_exterior_q0_abs_miss_dex": "3.4210240485992788587"
+    },
+    "part_b_n126_preformation_mechanisms": {
+      "mayer_jensen_combinatorial": {
+        "proton_1h9_2_degeneracy": "10",
+        "neutron_closed_3p1_2_degeneracy": "2",
+        "neutron_open_2g9_2_degeneracy": "10",
+        "S_MJ_proton_1_over_10": "0.10000000000000000000000000000000000000000000000000",
+        "S_MJ_neutron_ratio_2_over_10": "0.20000000000000000000000000000000000000000000000000",
+        "S_MJ_joint_1_over_20": "0.050000000000000000000000000000000000000000000000000",
+        "log10_S_MJ_joint_over_S_emp_dex": "-0.0437312660073277",
+        "Po210_T_half_with_S_MJ_joint_s": "13222291.3482346",
+        "Po210_T_half_S_MJ_joint_dex_err": "0.0437312660073277"
+      },
+      "perdew_parr_shell_kink_wkb": {
+        "hbar_omega_QOU_210_MeV": "7.1077259164734464930",
+        "G1_QOU_HO_1quantum_MeV": "7.1077259164734464930",
+        "G2_QOU_MJ_1i13_2_spin_orbit_MeV": "9.1551938526937081720",
+        "S2n_Po210_N126_AME_MeV": "14.6264876000000",
+        "S2n_Po212_N128_AME_MeV": "10.5589836000000",
+        "G3_AME2020_Perdew_Parr_S2n_kink_MeV": "4.06750400000000",
+        "grid_3x2": {
+          "G1_QOU_HO_1quantum__M1_intra_alpha_2n_2p": {
+            "Delta_shell_MeV": "7.1077259164734464930",
+            "mu_int_MeV": "938.91831030328532412",
+            "two_kappa_r_pi": "1.6555066970635603503",
+            "S_alpha_kink": "0.19099525444849637862",
+            "log10_S_kink_over_S_emp_dex": "0.538321306368",
+            "T_half_corrected_s": "3461418.81546071",
+            "log10_T_corr_over_T_exp_dex": "-0.538321306368"
+          },
+          "G1_QOU_HO_1quantum__M2_alpha_206Pb": {
+            "Delta_shell_MeV": "7.1077259164734464930",
+            "mu_int_MeV": "3656.3315505469080469",
+            "two_kappa_r_pi": "3.2669299524367020476",
+            "S_alpha_kink": "0.038123287906374851298",
+            "log10_S_kink_over_S_emp_dex": "-0.161510921451",
+            "T_half_corrected_s": "17341488.7256139",
+            "log10_T_corr_over_T_exp_dex": "0.161510921451"
+          },
+          "G2_QOU_MJ_1i13_2_spin_orbit__M1_intra_alpha_2n_2p": {
+            "Delta_shell_MeV": "9.1551938526937081720",
+            "mu_int_MeV": "938.91831030328532412",
+            "two_kappa_r_pi": "1.8788814468731786549",
+            "S_alpha_kink": "0.15276088138980367248",
+            "log10_S_kink_over_S_emp_dex": "0.441310885129",
+            "T_half_corrected_s": "4327773.97850140",
+            "log10_T_corr_over_T_exp_dex": "-0.441310885129"
+          },
+          "G2_QOU_MJ_1i13_2_spin_orbit__M2_alpha_206Pb": {
+            "Delta_shell_MeV": "9.1551938526937081720",
+            "mu_int_MeV": "3656.3315505469080469",
+            "two_kappa_r_pi": "3.7077313469979461913",
+            "S_alpha_kink": "0.024533117316259622767",
+            "log10_S_kink_over_S_emp_dex": "-0.352948534724",
+            "T_half_corrected_s": "26947841.9268622",
+            "log10_T_corr_over_T_exp_dex": "0.352948534724"
+          },
+          "G3_AME2020_Perdew_Parr_S2n_kink__M1_intra_alpha_2n_2p": {
+            "Delta_shell_MeV": "4.0675040000000000000",
+            "mu_int_MeV": "938.91831030328532412",
+            "two_kappa_r_pi": "1.2523611884561957327",
+            "S_alpha_kink": "0.28582910307530942627",
+            "log10_S_kink_over_S_emp_dex": "0.713405176160",
+            "T_half_corrected_s": "2312971.49345055",
+            "log10_T_corr_over_T_exp_dex": "-0.713405176160"
+          },
+          "G3_AME2020_Perdew_Parr_S2n_kink__M2_alpha_206Pb": {
+            "Delta_shell_MeV": "4.0675040000000000000",
+            "mu_int_MeV": "3656.3315505469080469",
+            "two_kappa_r_pi": "2.4713740422154811583",
+            "S_alpha_kink": "0.084468715645716169216",
+            "log10_S_kink_over_S_emp_dex": "0.183994620404",
+            "T_half_corrected_s": "7826738.72045856",
+            "log10_T_corr_over_T_exp_dex": "-0.183994620404"
+          }
+        }
+      }
+    },
+    "part_c_derived_qalpha_benchmark": {
+      "B_alpha_QOU_magicA_MeV": "29.955677279532883121",
+      "B_alpha_AME2020_MeV": "28.295662400000000000",
+      "heavy_emitters": [
+        {
+          "nuclide": "212Po",
+          "Z": "84",
+          "N": "128",
+          "A": "212",
+          "Q_alpha_AME_MeV": "8.95419513000000",
+          "B_parent_AME_MeV": "1655.77168560000",
+          "B_daughter_AME_MeV": "1636.43022400000",
+          "d_log10_T_d_Qalpha_dex_per_MeV": "-2.39048562671539",
+          "models": {
+            "H1_L4_qclt": {
+              "B_parent_QOU_MeV": "-68.4410876360330",
+              "B_daughter_QOU_MeV": "-50.4681098978198",
+              "Q_alpha_QOU_MeV": "47.9286550177461",
+              "delta_Q_alpha_MeV": "38.9744598877461",
+              "linearised_delta_log10_T_dex": "-93.1678861707",
+              "subbarrier_tunneling_regime": false,
+              "T_half_WKB_at_Q_QOU_s": null,
+              "log10_T_QOU_over_T_exp_dex": null
+            },
+            "H2_FCC_k12_std": {
+              "B_parent_QOU_MeV": "2543.09586666133",
+              "B_daughter_QOU_MeV": "2515.23388656153",
+              "Q_alpha_QOU_MeV": "2.09369717972592",
+              "delta_Q_alpha_MeV": "-6.86049795027408",
+              "linearised_delta_log10_T_dex": "16.3999217422",
+              "subbarrier_tunneling_regime": true,
+              "T_half_WKB_at_Q_QOU_s": "5.11344347273277e+41",
+              "log10_T_QOU_over_T_exp_dex": "48.2397756537"
+            },
+            "H2_FCC_k12_pauli": {
+              "B_parent_QOU_MeV": "652.936181267173",
+              "B_daughter_QOU_MeV": "656.097661728898",
+              "Q_alpha_QOU_MeV": "33.1171577412574",
+              "delta_Q_alpha_MeV": "24.1629626112574",
+              "linearised_delta_log10_T_dex": "-57.7612148211",
+              "subbarrier_tunneling_regime": false,
+              "T_half_WKB_at_Q_QOU_s": null,
+              "log10_T_QOU_over_T_exp_dex": null
+            }
+          }
+        },
+        {
+          "nuclide": "214Po",
+          "Z": "84",
+          "N": "130",
+          "A": "214",
+          "Q_alpha_AME_MeV": "7.83354113000000",
+          "B_parent_AME_MeV": "1666.01488820000",
+          "B_daughter_AME_MeV": "1645.55277600000",
+          "d_log10_T_d_Qalpha_dex_per_MeV": "-2.97595452733950",
+          "models": {
+            "H1_L4_qclt": {
+              "B_parent_QOU_MeV": "-58.6753586533622",
+              "B_daughter_QOU_MeV": "-40.7531276558260",
+              "Q_alpha_QOU_MeV": "47.8779082770691",
+              "delta_Q_alpha_MeV": "40.0443671470691",
+              "linearised_delta_log10_T_dex": "-119.170215706",
+              "subbarrier_tunneling_regime": false,
+              "T_half_WKB_at_Q_QOU_s": null,
+              "log10_T_QOU_over_T_exp_dex": null
+            },
+            "H2_FCC_k12_std": {
+              "B_parent_QOU_MeV": "2586.88470964312",
+              "B_daughter_QOU_MeV": "2558.93954318999",
+              "Q_alpha_QOU_MeV": "2.01051082640588",
+              "delta_Q_alpha_MeV": "-5.82303030359412",
+              "linearised_delta_log10_T_dex": "17.3290733948",
+              "subbarrier_tunneling_regime": true,
+              "T_half_WKB_at_Q_QOU_s": "4.37565631292256e+43",
+              "log10_T_QOU_over_T_exp_dex": "47.4272599036"
+            },
+            "H2_FCC_k12_pauli": {
+              "B_parent_QOU_MeV": "665.538303517510",
+              "B_daughter_QOU_MeV": "668.537450950852",
+              "Q_alpha_QOU_MeV": "32.9548247128756",
+              "delta_Q_alpha_MeV": "25.1212835828756",
+              "linearised_delta_log10_T_dex": "-74.7597976110",
+              "subbarrier_tunneling_regime": false,
+              "T_half_WKB_at_Q_QOU_s": null,
+              "log10_T_QOU_over_T_exp_dex": null
+            }
+          }
+        },
+        {
+          "nuclide": "222Rn",
+          "Z": "86",
+          "N": "136",
+          "A": "222",
+          "Q_alpha_AME_MeV": "5.59038913000000",
+          "B_parent_AME_MeV": "1708.17880020000",
+          "B_daughter_AME_MeV": "1685.47354000000",
+          "d_log10_T_d_Qalpha_dex_per_MeV": "-5.22259357123216",
+          "models": {
+            "H1_L4_qclt": {
+              "B_parent_QOU_MeV": "-57.5471400249130",
+              "B_daughter_QOU_MeV": "-39.2228099634789",
+              "Q_alpha_QOU_MeV": "48.2800073409669",
+              "delta_Q_alpha_MeV": "42.6896182109669",
+              "linearised_delta_log10_T_dex": "-222.950525627",
+              "subbarrier_tunneling_regime": false,
+              "T_half_WKB_at_Q_QOU_s": null,
+              "log10_T_QOU_over_T_exp_dex": null
+            },
+            "H2_FCC_k12_std": {
+              "B_parent_QOU_MeV": "2701.96211776233",
+              "B_daughter_QOU_MeV": "2674.42759859868",
+              "Q_alpha_QOU_MeV": "2.42115811588309",
+              "delta_Q_alpha_MeV": "-3.16923101411691",
+              "linearised_delta_log10_T_dex": "16.5516055201",
+              "subbarrier_tunneling_regime": true,
+              "T_half_WKB_at_Q_QOU_s": "3.77269578553165e+36",
+              "log10_T_QOU_over_T_exp_dex": "31.0579041805"
+            },
+            "H2_FCC_k12_pauli": {
+              "B_parent_QOU_MeV": "686.817036678382",
+              "B_daughter_QOU_MeV": "690.131767583608",
+              "Q_alpha_QOU_MeV": "33.2704081847585",
+              "delta_Q_alpha_MeV": "27.6800190547585",
+              "linearised_delta_log10_T_dex": "-144.561489567",
+              "subbarrier_tunneling_regime": false,
+              "T_half_WKB_at_Q_QOU_s": null,
+              "log10_T_QOU_over_T_exp_dex": null
+            }
+          }
+        },
+        {
+          "nuclide": "210Po",
+          "Z": "84",
+          "N": "126",
+          "A": "210",
+          "Q_alpha_AME_MeV": "5.40753013000000",
+          "B_parent_AME_MeV": "1645.21270200000",
+          "B_daughter_AME_MeV": "1622.32457200000",
+          "d_log10_T_d_Qalpha_dex_per_MeV": "-5.36527223439642",
+          "models": {
+            "H1_L4_qclt": {
+              "B_parent_QOU_MeV": "-78.2338863334011",
+              "B_daughter_QOU_MeV": "-60.2100340816123",
+              "Q_alpha_QOU_MeV": "47.9795295313217",
+              "delta_Q_alpha_MeV": "42.5719994013217",
+              "linearised_delta_log10_T_dex": "-228.410366351",
+              "subbarrier_tunneling_regime": false,
+              "T_half_WKB_at_Q_QOU_s": null,
+              "log10_T_QOU_over_T_exp_dex": null
+            },
+            "H2_FCC_k12_std": {
+              "B_parent_QOU_MeV": "2499.29497027055",
+              "B_daughter_QOU_MeV": "2471.51676109620",
+              "Q_alpha_QOU_MeV": "2.17746810518004",
+              "delta_Q_alpha_MeV": "-3.23006202481996",
+              "linearised_delta_log10_T_dex": "17.3301620971",
+              "subbarrier_tunneling_regime": true,
+              "T_half_WKB_at_Q_QOU_s": "7.56697200635937e+39",
+              "log10_T_QOU_over_T_exp_dex": "32.8013466709"
+            },
+            "H2_FCC_k12_pauli": {
+              "B_parent_QOU_MeV": "640.123245204188",
+              "B_daughter_QOU_MeV": "643.445697438603",
+              "Q_alpha_QOU_MeV": "33.2781295139477",
+              "delta_Q_alpha_MeV": "27.8705993839477",
+              "linearised_delta_log10_T_dex": "-149.533353031",
+              "subbarrier_tunneling_regime": false,
+              "T_half_WKB_at_Q_QOU_s": null,
+              "log10_T_QOU_over_T_exp_dex": null
+            }
+          }
+        },
+        {
+          "nuclide": "226Ra",
+          "Z": "88",
+          "N": "138",
+          "A": "226",
+          "Q_alpha_AME_MeV": "4.87070313000000",
+          "B_parent_AME_MeV": "1731.60377360000",
+          "B_daughter_AME_MeV": "1708.17880020000",
+          "d_log10_T_d_Qalpha_dex_per_MeV": "-6.63447207320527",
+          "models": {
+            "H1_L4_qclt": {
+              "B_parent_QOU_MeV": "-76.3705099404401",
+              "B_daughter_QOU_MeV": "-57.5471400249130",
+              "Q_alpha_QOU_MeV": "48.7790471950600",
+              "delta_Q_alpha_MeV": "43.9083440650600",
+              "linearised_delta_log10_T_dex": "-291.308682480",
+              "subbarrier_tunneling_regime": false,
+              "T_half_WKB_at_Q_QOU_s": null,
+              "log10_T_QOU_over_T_exp_dex": null
+            },
+            "H2_FCC_k12_std": {
+              "B_parent_QOU_MeV": "2728.92563327384",
+              "B_daughter_QOU_MeV": "2701.96211776233",
+              "Q_alpha_QOU_MeV": "2.99216176802537",
+              "delta_Q_alpha_MeV": "-1.87854136197463",
+              "linearised_delta_log10_T_dex": "12.4631302044",
+              "subbarrier_tunneling_regime": true,
+              "T_half_WKB_at_Q_QOU_s": "7.85618654097215e+28",
+              "log10_T_QOU_over_T_exp_dex": "18.1919878373"
+            },
+            "H2_FCC_k12_pauli": {
+              "B_parent_QOU_MeV": "682.865909143419",
+              "B_daughter_QOU_MeV": "686.817036678382",
+              "Q_alpha_QOU_MeV": "33.9068048144962",
+              "delta_Q_alpha_MeV": "29.0361016844962",
+              "linearised_delta_log10_T_dex": "-192.639205741",
+              "subbarrier_tunneling_regime": false,
+              "T_half_WKB_at_Q_QOU_s": null,
+              "log10_T_QOU_over_T_exp_dex": null
+            }
+          }
+        },
+        {
+          "nuclide": "238U",
+          "Z": "92",
+          "N": "146",
+          "A": "238",
+          "Q_alpha_AME_MeV": "4.26985813000000",
+          "B_parent_AME_MeV": "1801.69003560000",
+          "B_daughter_AME_MeV": "1777.66423380000",
+          "d_log10_T_d_Qalpha_dex_per_MeV": "-8.52156885230282",
+          "models": {
+            "H1_L4_qclt": {
+              "B_parent_QOU_MeV": "-95.7514208290890",
+              "B_daughter_QOU_MeV": "-76.0400173309637",
+              "Q_alpha_QOU_MeV": "49.6670807776583",
+              "delta_Q_alpha_MeV": "45.3972226476583",
+              "linearised_delta_log10_T_dex": "-386.855558495",
+              "subbarrier_tunneling_regime": false,
+              "T_half_WKB_at_Q_QOU_s": null,
+              "log10_T_QOU_over_T_exp_dex": null
+            },
+            "H2_FCC_k12_std": {
+              "B_parent_QOU_MeV": "2869.28866486368",
+              "B_daughter_QOU_MeV": "2843.29860455745",
+              "Q_alpha_QOU_MeV": "3.96561697330758",
+              "delta_Q_alpha_MeV": "-0.304241156692418",
+              "linearised_delta_log10_T_dex": "2.59261196446",
+              "subbarrier_tunneling_regime": true,
+              "T_half_WKB_at_Q_QOU_s": "1.98531100222342e+20",
+              "log10_T_QOU_over_T_exp_dex": "3.14861141784"
+            },
+            "H2_FCC_k12_pauli": {
+              "B_parent_QOU_MeV": "698.158187381323",
+              "B_daughter_QOU_MeV": "703.054993433919",
+              "Q_alpha_QOU_MeV": "34.8524833321286",
+              "delta_Q_alpha_MeV": "30.5826252021286",
+              "linearised_delta_log10_T_dex": "-260.611946344",
+              "subbarrier_tunneling_regime": false,
+              "T_half_WKB_at_Q_QOU_s": null,
+              "log10_T_QOU_over_T_exp_dex": null
+            }
+          }
+        }
+      ]
+    }
+  },
+  "caveats": [
+    "Because |d(log10 T_{1/2})/dQ_alpha| is ~3 to 8.5 dex/MeV across heavy alpha emitters, sub-dex half-life accuracy from internally predicted Q_alpha^{QOU} requires ~0.05 MeV relative mass-difference precision (~30 ppm of total B); smooth macroscopic FCC+TL / q-CLT binding laws without exact shell-closure terms miss Q_alpha by several MeV and shift log10 T_{1/2} by many dex."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

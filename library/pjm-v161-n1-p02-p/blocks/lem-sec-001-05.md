@@ -1,0 +1,1 @@
+(I) Let T be a degenerately foliated region on Δ. Sup- pose that each nondegenerate leaf in T has name 24 (respectively 46, 62, 13, 35, 51). Then within a small φ-neighborhood of the instant of degeneracy a braiding of type b^

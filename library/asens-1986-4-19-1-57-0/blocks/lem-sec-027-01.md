@@ -1,0 +1,1 @@
+—Suppose {^Jiei ^ a partition of ^f1 (^e.^yi=ekfl) each y^ being a i positive multiple of a minimal projection in M. Then ^ T (T| (EN (Yi))) - T (r| 0^)) ^ - ^ a^ ti In ^ + n^ a^ ^ In s^ + ^ a^ ^ In fc^ i ie\ where b^=mm[a^ nj.

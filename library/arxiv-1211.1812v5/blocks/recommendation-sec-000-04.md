@@ -1,1 +1,0 @@
-In this setting, we expect that some invariant of $Z^{1,\bullet}(\EuFrak{A})$, beside ([\[eq.01\]](#eq.01){reference-type="ref" reference="eq.01"}), should allow us to pick a unique \"physical\" field *C\**-precosheaf in which $\EuFrak{F}$ would collapse, carrying a $\mathcal G_{phys}$-action.

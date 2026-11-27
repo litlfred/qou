@@ -1,0 +1,1 @@
+Let (Xn)n∈N be a sequence that converges mod-φ with parameters tn, where φ is either a non-constant lattice distribution, or a non-lattice distribution that is absolutely continuous with respect to the Lebesgue measure. We assume lim n→∞ tn (log n)3 = +∞. Then, lim sup n→∞ Xn −tnη′(0) p 2η′′(0) tn log n ≤1 almost surely. MOD-φ CONVERGENCE, I

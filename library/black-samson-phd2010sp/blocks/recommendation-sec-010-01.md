@@ -1,1 +1,0 @@
-H,-:I on Xc from Theorem IV.1.3 are pictured in (IV.14). r r+1 Cr Cr+l C,'+I Cr a,,(c) I + br(c) X Cr cr+l Cr cr+l (IV.14) Cr c,'+1 cr+1 C" ar(c) I + br(c) X Cr C,'+I Cr Cr+l Moreover, if r = 1, the second term on the right hand side should be omitted.

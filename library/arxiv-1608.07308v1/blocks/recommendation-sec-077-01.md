@@ -1,1 +1,0 @@
-Our main Example [\[ex:proj dg\]](#ex:proj dg){reference-type="ref" reference="ex:proj dg"} should be interpreted as a dg version of the familiar notion of projective bundles $\mathrm{Proj}\ S_X\mathcal{V}\stackrel{\pi}\longrightarrow X$, where $\mathcal{V}$ is a rank $n$ locally free sheaf of $X$.

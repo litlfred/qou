@@ -1,1 +1,0 @@
-This bundle is the tensor product of a line bundle of degree $\mu - \nu$ (corresponding to the "theta" factor $\sigma_qf = z^{\mu - \nu} f$) and of a flat bundle (corresponding to the "fuchsian" factor $\sigma_qF = B F C^{-1}$); we shall say that it is *pure (isoclinic)*.

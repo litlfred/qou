@@ -1,1 +1,0 @@
-So, we should use this unitary operator: $$\begin{array}{ccl} {\mathbb C}^2 \otimes {\mathbb C}& \stackrel{\sim}{\longrightarrow} & \Lambda^{\rm odd}{\mathbb C}^2 \\ u_L & \mapsto & u \\ d_L & \mapsto & d . \end{array}$$

@@ -1,1 +1,0 @@
-We require that the natural isomporphism satisfy the coherence condition $\tau ( g h ) = \tau ( g ) \circ \tau ( h )$, and that the weak quotient should be "weakly initial" among all groupoids with these properties.

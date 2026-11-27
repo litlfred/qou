@@ -1,0 +1,1 @@
+2.2. Let L be an oriented link, and let a E Ed represent a braid in Ed such that 0: = L. Then, A(a) is a polynomial in v - V-I, and A(a) = \1(L), where \7(L) is the Conway-normalized Alexander polynomial with z = v - V-I.

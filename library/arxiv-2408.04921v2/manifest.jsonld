@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2408.04921v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2408.04921v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -21,6 +21,18 @@
     "library/arxiv-2408.04921v2/sections/sec-006"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP — The paper studies how to compute irreducible characters of the generalized symmetric group Ck ≀Sn by iterative algorithms.\n\n**IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP**\n\n*HUIMIN GAO AND NAIHUAN JING*\n\n24 pp, 8 sections.\n\n**Abstract.** The paper studies how to compute irreducible characters of the generalized symmetric group Ck ≀Sn by iterative algorithms. Af- ter reproving the Ariki-Koike version of the Murnaghan-Nakayama rule by vertex algebraic methods, we formulate a new iterative formula for characters of the generalized symmetric group. As applications, we ﬁnd a numerical relation between the character values of Ck≀Sn and modular characters of Skn.\n\n**Outline.** Front matter; 1 Introduction; 2 Irreducible characters of CkSn; 3 Two Iterative Formulas; 4 Further examples; References; Appendix A. The source code for Theorem 3.5; Appendix B. Theorem 3.9",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -42,8 +54,8 @@
       "stamp_date": "25 Sep 2024"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

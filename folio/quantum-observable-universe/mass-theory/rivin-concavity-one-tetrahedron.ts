@@ -12,7 +12,7 @@ export default theorem({
     "concavity",
   ],
   lean: {
-    ref: "qou:QOU.Knot.Rivin.strictConcaveOn_tetVolLine",
+    ref: "qou:BraidKnotOctonion.RivinConcavity.strictConcaveOn_tetVolLine",
     validation: "leanok",
   },
   uses: ["thm:kummer-bloch-wigner-identity"],

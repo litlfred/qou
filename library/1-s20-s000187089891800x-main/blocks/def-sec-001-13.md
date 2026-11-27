@@ -1,0 +1,1 @@
+The set of reduced iterated functors is the smallest set of iterated functors which satisfies: (1) The iterates e, 1, and V are reduced. (2) If F and G are reduced then F G is reduced. Define two iterated functors, F and G, to be equivalent if there is an iterated natural transformation from F to G. This is obviously an equiv- alence relation.

@@ -1,0 +1,695 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/information-theory/toffoli-lp-stability",
+    "path": "folio/quantum-observable-universe/information-theory/toffoli-lp-stability"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "b1669d9fc22a",
+          "ts": "cc4bffbb32f6",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "b1669d9fc22a",
+          "ts": "cc4bffbb32f6",
+          "lean": "a6e1884a5a96"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote blocks linearly, resolved forward references, cleaned mathematical notation and integrated tables smoothly. Removed index-style bullet points in favor of connected prose. Tightened terminology around Reeb derivation and Toffoli matrix.",
+        "reviewed_at": "2026-07-07T14:26:55.609271Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.609271Z"
+        },
+        "field_hash": {
+          "md": "6ec9d59c2b9a",
+          "ts": "cc4bffbb32f6",
+          "lean": "a6e1884a5a96"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "96d85535344f",
+          "ts": "cc4bffbb32f6",
+          "lean": "b66a79f0d780"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:09.897Z",
+        "reviewed_sha": "9eadb3469d2a5f65d0a3a82e57e332a81ca29d22",
+        "severity": "major",
+        "evidence": "Lean ref `toffoli_lp_stable` is about the retired convention-C diagonal q + √q − 1 (its own docstring says it \"must not be cited\"). Statement keeps item 3's bound with κ = λ_max/\\|λ_min\\|while saying the Gram is singular, so the claim is undefined; the proof states its reduction step is open. Exact checks (sympy): (G t)₅ = z² + 2hz + 3h²z² + h³z + h⁴z² ✓; the degree-4 relation ✓; the alternative representative ✓; P₆,₇ + P₇,₆ = q(q−1)²(q+1)²/(2(q²+1)) ✓; positive root of the numerator 0.894480292911 ✓. Warn: the block is a long research log (probe scripts, measurements) inside a proposition",
+        "notes": "Hand review 2026-11-15 (statement vs Lean); issue #8020. "
+      },
+      {
+        "field_hash": {
+          "md": "4b4a540f1975",
+          "ts": "a31a6187bfde",
+          "lean": "b66a79f0d780",
+          "lean_statement": "81bda0b8b13c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:51:52.808Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: probe script names, Lean declaration names and the Lean theorem table removed from the prose; the mathematics is unchanged. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Lean ref `toffoli_lp_stable` is about the retired convention-C diagonal q + √q − 1 (its own docstring says it \"must not be cited\"). Statement keeps item 3's bound with κ = λ_max/\\|λ_min\\|while saying the Gram is singular, so the claim is undefined; the proof states its reduction step is open. Exact checks (sympy): (G t)₅ = z² + 2hz + 3h²z² + h³z + h⁴z² ✓; the degree-4 relation ✓; the alternative representative ✓; P₆,₇ + P₇,₆ = q(q−1)²(q+1)²/(2(q²+1)) ✓; positive root of the numerator 0.894480292911 ✓. Warn: the block is a long research log (probe scripts, measurements) inside a proposition"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound linear analysis explicitly mapping Gram matrix boundedness identically with physical operation subsets.",
+        "reviewed_at": "2026-07-08T13:47:45.000Z",
+        "reviewed_sha": "2c4cdd3133b0e84ad95d723065be263606f8cbc2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound linear analysis explicitly mapping Gram matrix boundedness identically with physical operation subsets.",
+        "reviewed_at": "2026-07-08T13:47:45.000Z",
+        "reviewed_sha": "2c4cdd3133b0e84ad95d723065be263606f8cbc2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound linear analysis explicitly mapping Gram matrix boundedness identically with physical operation subsets.",
+        "reviewed_at": "2026-07-08T13:47:45.000Z",
+        "reviewed_sha": "2c4cdd3133b0e84ad95d723065be263606f8cbc2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound linear analysis explicitly mapping Gram matrix boundedness identically with physical operation subsets.",
+        "reviewed_at": "2026-07-08T13:47:45.000Z",
+        "reviewed_sha": "2c4cdd3133b0e84ad95d723065be263606f8cbc2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound linear analysis explicitly mapping Gram matrix boundedness identically with physical operation subsets.",
+        "reviewed_at": "2026-07-08T13:47:45.000Z",
+        "reviewed_sha": "2c4cdd3133b0e84ad95d723065be263606f8cbc2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound linear analysis explicitly mapping Gram matrix boundedness identically with physical operation subsets.",
+        "reviewed_at": "2026-07-08T13:47:45.000Z",
+        "reviewed_sha": "2c4cdd3133b0e84ad95d723065be263606f8cbc2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound linear analysis explicitly mapping Gram matrix boundedness identically with physical operation subsets.",
+        "reviewed_at": "2026-07-08T13:47:45.000Z",
+        "reviewed_sha": "2c4cdd3133b0e84ad95d723065be263606f8cbc2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound linear analysis explicitly mapping Gram matrix boundedness identically with physical operation subsets.",
+        "reviewed_at": "2026-07-08T13:47:45.000Z",
+        "reviewed_sha": "2c4cdd3133b0e84ad95d723065be263606f8cbc2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound linear analysis explicitly mapping Gram matrix boundedness identically with physical operation subsets.",
+        "reviewed_at": "2026-07-08T13:47:45.000Z",
+        "reviewed_sha": "2c4cdd3133b0e84ad95d723065be263606f8cbc2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound linear analysis explicitly mapping Gram matrix boundedness identically with physical operation subsets.",
+        "reviewed_at": "2026-07-08T13:47:45.000Z",
+        "reviewed_sha": "2c4cdd3133b0e84ad95d723065be263606f8cbc2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound linear analysis explicitly mapping Gram matrix boundedness identically with physical operation subsets.",
+        "reviewed_at": "2026-07-08T13:47:45.000Z",
+        "reviewed_sha": "2c4cdd3133b0e84ad95d723065be263606f8cbc2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound linear analysis explicitly mapping Gram matrix boundedness identically with physical operation subsets.",
+        "reviewed_at": "2026-07-08T13:47:45.000Z",
+        "reviewed_sha": "2c4cdd3133b0e84ad95d723065be263606f8cbc2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound linear analysis explicitly mapping Gram matrix boundedness identically with physical operation subsets.",
+        "reviewed_at": "2026-07-08T13:47:45.000Z",
+        "reviewed_sha": "2c4cdd3133b0e84ad95d723065be263606f8cbc2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound linear analysis explicitly mapping Gram matrix boundedness identically with physical operation subsets.",
+        "reviewed_at": "2026-07-08T13:47:45.000Z",
+        "reviewed_sha": "2c4cdd3133b0e84ad95d723065be263606f8cbc2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound linear analysis explicitly mapping Gram matrix boundedness identically with physical operation subsets.",
+        "reviewed_at": "2026-07-08T13:47:45.000Z",
+        "reviewed_sha": "2c4cdd3133b0e84ad95d723065be263606f8cbc2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ac50a5bfab1c",
+          "ts": "cc4bffbb32f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:32.865Z",
+        "reviewed_sha": "8e47117bbb5ff870fa9c5597b1456fdab3141d7e",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ac50a5bfab1c",
+          "ts": "cc4bffbb32f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:32.905Z",
+        "reviewed_sha": "8e47117bbb5ff870fa9c5597b1456fdab3141d7e",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ac50a5bfab1c",
+          "ts": "cc4bffbb32f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:32.943Z",
+        "reviewed_sha": "8e47117bbb5ff870fa9c5597b1456fdab3141d7e",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ac50a5bfab1c",
+          "ts": "cc4bffbb32f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:32.983Z",
+        "reviewed_sha": "8e47117bbb5ff870fa9c5597b1456fdab3141d7e",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ac50a5bfab1c",
+          "ts": "cc4bffbb32f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:33.021Z",
+        "reviewed_sha": "8e47117bbb5ff870fa9c5597b1456fdab3141d7e",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ac50a5bfab1c",
+          "ts": "cc4bffbb32f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:33.062Z",
+        "reviewed_sha": "8e47117bbb5ff870fa9c5597b1456fdab3141d7e",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ac50a5bfab1c",
+          "ts": "cc4bffbb32f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:33.100Z",
+        "reviewed_sha": "8e47117bbb5ff870fa9c5597b1456fdab3141d7e",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ac50a5bfab1c",
+          "ts": "cc4bffbb32f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:33.140Z",
+        "reviewed_sha": "8e47117bbb5ff870fa9c5597b1456fdab3141d7e",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ac50a5bfab1c",
+          "ts": "cc4bffbb32f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:33.178Z",
+        "reviewed_sha": "8e47117bbb5ff870fa9c5597b1456fdab3141d7e",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ac50a5bfab1c",
+          "ts": "cc4bffbb32f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:33.216Z",
+        "reviewed_sha": "8e47117bbb5ff870fa9c5597b1456fdab3141d7e",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ]
+  }
+}

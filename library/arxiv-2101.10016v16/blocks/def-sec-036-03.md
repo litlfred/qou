@@ -1,0 +1,1 @@
+Fix z ∈ C ×, and let W1, W2, W3 be V -modules. A P(z)-intertwining map of type W3 W1 W2  is a linear map F : W1 ⊗ W2 → W3 (37.4) satisfying for w (1) ∈ W1, w(2) ∈ W2, v ∈ V , a) (lower truncation) P W3 r−nF(w (1) ⊗ w(2)) = 0 for n ∈ Z large,

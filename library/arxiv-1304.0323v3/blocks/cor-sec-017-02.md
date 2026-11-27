@@ -1,1 +1,1 @@
-For any a,j ∈J, the R(N + 1)-module homomorphism
+The functor F′ :A/S→ U′ q(ˆslN )-mod sends simple objects in A/S to simple objects in U′ q(ˆslN )-mod. 4.5. The categoryT′ J . Since all the images of L(a,a +N−1) underF′ are isomorphic to the trivial representation of U′ q(ˆslN ), we can localize A/S one step further by using Appendix A.6. Set (4.5.1) La :=L(a,a +N− 1) and ua :=u(a,a +N− 1)∈La for a∈ Z. ThenF (La) is isomorphic to the trivial representation of U′ q(ˆslN ). The following proposition will play a central role in the rest of this sect ion.

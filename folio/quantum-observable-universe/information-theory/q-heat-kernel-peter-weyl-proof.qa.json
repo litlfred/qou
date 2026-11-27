@@ -266,6 +266,22 @@
         "severity": "major",
         "evidence": "Lean ref is `def … : Prop` (a `Summable` claim) never asserted. Statement indexes Rep(SU_q(2)) Peter–Weyl components by partitions λ ⊢ n of H_n(q) (SU_q(2) isotypics are spins j; Schur–Weyl gives only ℓ(λ) ≤ 2). Proof never addresses item 1 (the spectral decomposition). Item 2 rests on \"the Casimir value equals Σ[c][c+1] (Jucys–Murphy, q-deformed by Ram)\" with no reference or computation; JM eigenvalues in H_n(q) are q-powers of contents, and the proof then mixes Jackson [c] = (1−q^c)/(1−q) with the symmetric q^c − q^{−c}. The shift identity [c][c+1] = q[c]² + [c] checks (since [c+1] = 1 + q[c])",
         "notes": "Hand review 2026-11-15 (statement vs narrative proof); issue #8020. "
+      },
+      {
+        "field_hash": {
+          "md": "790ae715b5fc",
+          "ts": "28d2b8b6d780"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:51:52.833Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[full review 2026-11-21] Rewritten on 2026-11-16 (issue #8091). Item 2 is now correctly derived for the Hecke operator. On a Jucys-Murphy weight vector H_k acts by q^(2c); then q H + q^-1 H^-1 - (q + q^-1) = q^(2c+1) + q^(-2c-1) - q - q^-1 = (q^c - q^-c)(q^(c+1) - q^(-c-1)) = (q - q^-1)^2 [c][c+1], so after the (q - q^-1)^-2 prefactor each cell contributes [c][c+1] in symmetric integers. I checked this by hand, and also the classical limit: with q = e^h the summand is 2cosh((2c+1)h) - 2cosh h ~ 4h^2 c(c+1). The earlier mixing of Jackson and symmetric integers is gone. Still open: (1) item 1, the spectral decomposition of a solution u, is not addressed at all; (2) the statement says 'Peter-Weyl isotypic component of Rep(SU_q(2))' but sums over partitions of n, which index H_n(q) blocks, not SU_q(2) spins; (3) the identification of Delta_k^2 with the Reeb rotation holonomy (Bridge A) is unproved, and the weight-1 argument for the Reeb part is marked unchecked. The scope note states (3) honestly."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1733,6 +1749,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:55:09.466Z",
+  "updated_at": "2026-11-21T07:51:52.833Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

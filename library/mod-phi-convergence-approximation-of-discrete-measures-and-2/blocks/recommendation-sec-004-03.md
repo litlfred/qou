@@ -1,1 +1,0 @@
-ANNALES DE L’INSTITUT FOURIER APPROXIMATION OF DISCRETE MEASURES 1127 Remark 1.13. — Our notion of approximation scheme should be com- pared to the one of [34], which is the particular case where the reference inﬁnitely divisible law is Poissonian, and the residues χn are constant equal to one.

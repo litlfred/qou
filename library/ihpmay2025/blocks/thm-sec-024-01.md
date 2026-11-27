@@ -1,0 +1,1 @@
+(Thurston [75], Canary[25]) Let N be a geometrically tame hyperbolic 3-manifold. If h : N →(0, ∞) is a positive superharmonic function, i.e. div(grad h) ≥0, then infC(N)h = inf∂C(N)h. In particular, if C(N) = N, then h is constant.

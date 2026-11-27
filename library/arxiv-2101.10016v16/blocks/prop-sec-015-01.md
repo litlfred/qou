@@ -1,1 +1,1 @@
-Let C be a rigid semisimple tensor category admitting a weak dimension
+Let C be a rigid semisimple tensor category admitting a weak dimension function. The operator Λρ extends to a bounded linear operator on ℓ (Irr(C)). We have ∥Λρ∥ ≤ D(ρ) for ρ ∈ Irr(C) and for every weak dimension function D.

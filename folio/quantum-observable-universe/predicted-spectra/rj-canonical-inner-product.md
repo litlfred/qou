@@ -2,7 +2,6 @@ The Markov trace on the Iwahori–Hecke algebra $H_r(q)$ induces a canonical bil
 
 ## Statement
 
-**Proposition.**
 *Let $H_r(q)$ be the Iwahori–Hecke algebra on $r$ strands with parameter $q \neq 0, 1$. Let $R(H_r(q)) = \bigoplus_{\lambda \vdash r} \mathbb{Z} \cdot [\lambda]$ be its representation ring.*
 
 **(i)** *The Markov trace $\mathrm{tr}_M \colon H_r(q) \to \mathbb{Q}(q)$ uses the canonical Markov parameter $z = q^3/(q^2+1) = q^2/[2]_q$. It descends to a bilinear form on $R(H_r(q))$:*

@@ -1,0 +1,128 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T00:45:13.664917+00:00",
+  "commitSha": "9f4ec266a1ebe4134525dfc7e975e73a539faa23",
+  "assertions": [
+    {
+      "name": "layer1_convex_and_circuit_identities_exact",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "UnifiedClockScaleLayers: q^-1 + hbar_q = 1, hbar_q * t_P = 1, q^-1 / hbar_q = c_q, and Jackson geometric UV sum at 80 dps."
+    },
+    {
+      "name": "jackson_uv_partial_sum_strictly_below_t_P",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "UnifiedClockScaleLayers.jackson_uv_sum_lt_planckTick: finite Jackson UV sum is strictly bounded above by t_P(q_0) = hbar_{q_0}^-1."
+    },
+    {
+      "name": "h3_convention_d_star_gram_kills_antisymmetriser",
+      "computed": "1.526712123486896961585500070918880903052001430516435505069630238007957e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "GramSignature / FiniteRieffelQuantumMetric: S * r_{[1^3]} = 0 while chi_{(1^3)}(r_{[1^3]}) > 0 forces unbounded Connes sup on unquotiented H_3."
+    },
+    {
+      "name": "tl3_quotient_gns_gram_strictly_positive_definite",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "5D Temperley-Lieb quotient TL_3(q_0) = R_{(3)} (+) M_2(R)_{(2,1)} has det(G^{TL}) > 0, y_{(3)} + 2*y_{(2,1)} = 1, and exact Wedderburn inner-product agreement."
+    },
+    {
+      "name": "tl3_rieffel_kantorovich_duality_and_triangle_exact",
+      "computed": "6.747006683667534863583087392812812164934375284715844832049768336069212e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-74",
+      "source": "FiniteRieffelQuantumMetric: ker(L) = R*1 on 5D TL_3(q_0), unit-Lip dual witness attainment across all 10 state pairs, triangle inequality, and exact Kantorovich-Rubinstein primal=dual W_1 transport on 3-vertex spectrum."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "finite-rieffel-tl3-metric",
+  "scriptFile": "finite_rieffel_tl3_metric_probe.py",
+  "scriptHash": "cc71742599b6",
+  "scriptCommitSha": "a62506a5c91c21c997c6b47e3619321ce4e955a3",
+  "precisionMetadata": {
+    "compute_dps": 80,
+    "output_dps": 70,
+    "guard_digits": 10,
+    "truncation_bound": "1e-70"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/finite_rieffel_tl3_metric_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/finite_rieffel_tl3_metric_probe.py"
+  },
+  "description": "Explicit 80-dps Rieffel-Kantorovich quantum metric on the 5D Temperley-Lieb quotient TL_3(q_0) = H_3(q_0)/rad(tau_D) at the proton substrate anchor (closes beans qou-5uj7 and qou-adwi Part 2). Verifies: (1) Layer-I exact identities q_0^-1 + hbar_{q_0} = 1, hbar_{q_0} * t_P(q_0) = 1, anisotropy ratio q_0^-1 / hbar_{q_0} = c_{q_0} = 1/(q_0 - 1), and Thomae-Jackson UV ceiling < t_P(q_0); (2) rank-5 Convention-D star-Gram degeneracy on 6D H_3(q_0) along the 3-strand q-antisymmetriser r_{[1^3]} driving d_L = +inf prior to quotienting; (3) strict GNS faithfulness det(G^{TL}) > 0 on 5D TL_3(q_0) = R_{(3)} (+) M_2(R)_{(2,1)}; (4) exact 5x5 Rieffel-Kantorovich state-space distances across {omega_3, omega_21_+, omega_21_-, omega_e2, tau_D} with explicit unit-Lip dual witnesses attaining zero duality gap (< 1e-76); and (5) exact Kantorovich-Rubinstein primal=dual transport cost between tau_D and omega_21_- on the 3-vertex abelian spectrum.",
+  "parameters": {
+    "workdps": "80",
+    "q0_proton_80dps": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "grad_weight_q0_inv": "0.9009182839557414921608228824810939360147416266105541806911181857228231",
+    "reeb_weight_hbar_q0": "0.09908171604425850783917711751890606398525837338944581930888181427717694",
+    "planck_tick_t_P_q0": "10.09267945615024539110397035565738256371514636866790226479990530084936"
+  },
+  "data": {
+    "layer1_clock_grain_identities": {
+      "grad_weight_q0_inv": "0.9009182839557414921608228824810939360147416266105541806911181857228231",
+      "reeb_weight_hbar_q0": "0.09908171604425850783917711751890606398525837338944581930888181427717694",
+      "planck_tick_t_P": "10.09267945615024539110397035565738256371514636866790226479990530084936",
+      "info_speed_c_q0_eq_grad_over_reeb": "9.092679456150245391103970355657382563715146368667902264799905300849357",
+      "jackson_uv_partial_sum_N25": "9.349418185539001214948798599307644648267688551070241417906542533666757",
+      "jackson_uv_headroom_below_t_P": "0.7432612706112441761551717563497379154474578175976608468933627671825999"
+    },
+    "h3_radical_and_tl3_faithfulness": {
+      "h3_star_gram_on_radical_sup_norm": "1.526712123486896961585500070918880903052001430516435505069630238007957e-81",
+      "chi_111_on_radical": "4.475573877740067446028690606364431134424399491818633755727340422066710",
+      "tau_D_on_radical": "0.0",
+      "tl3_planar_gram_det": "0.1622300906303838245260179643307612865298220516931035282960819865918973",
+      "y_3_convention_D": "0.5054042265039308031875587032404722756603511977498093626520563142046496",
+      "y_21_convention_D": "0.2472978867480345984062206483797638621698244011250953186739718428976752",
+      "jw_cup_cos_theta": "0.4972905456049155559958392316648696318481907303285139763485275550776078",
+      "jw_cup_sin_theta": "0.8675840669652511556511628915360523957049793773943141885959498219116076"
+    },
+    "tl3_rieffel_kantorovich_distances_5d": {
+      "lip_singular_values_on_traceless_4d": [
+        "0.9009182839557414921608228824810939360147416266105541806911181857228231",
+        "0.9009182839557414921608228824810939360147416266105541806911181857228231",
+        "0.9009182839557414921608228824810939360147416266105541806911181857228231",
+        "0.09908171604425850783917711751890606398525837338944581930888181427717694"
+      ],
+      "pairwise_distances": {
+        "d(omega_3,omega_21_plus)": "14.52167854035903808459867952659756622818577668755069625308587084896154",
+        "d(omega_3,omega_21_minus)": "14.52167854035903808459867952659756622818577668755069625308587084896154",
+        "d(omega_3,omega_e2)": "7.706499231755134142110462281261896103477136516891293629006955729206149",
+        "d(omega_3,tau_D)": "1.098045571573563212304437988987023782709473845612712062760490590100454",
+        "d(omega_21_plus,omega_21_minus)": "28.70194153844155462894023006836179797379249211447220965835942956508998",
+        "d(omega_21_plus,omega_e2)": "7.227402022076307330723514126028486595062893409753001842981929353430859",
+        "d(omega_21_plus,tau_D)": "14.39476775234454284256039142182640101871074697428520587987834282744392",
+        "d(omega_21_minus,omega_e2)": "21.64689524265409751675587359851325870025408759599325833770807774368249",
+        "d(omega_21_minus,tau_D)": "14.39476775234454284256039142182640101871074697428520587987834282744392",
+        "d(omega_e2,tau_D)": "7.464604572477810209884667959785032722909084456217453371456547794438433"
+      },
+      "kr_3vertex_primal_w1_tauD_to_singlet": "8.157769022070377549897666915843642454092853555003457277520242262865066",
+      "kr_3vertex_dual_w1_tauD_to_singlet": "8.157769022070377549897666915843642454092853555003457277520242262865066",
+      "kr_3vertex_duality_gap": "0.0"
+    }
+  },
+  "q0Anchor": "proton",
+  "workdps": 80,
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

@@ -1,0 +1,1 @@
+3 Let Z(x, w) = {A1(x, w), A2(x, w), b1(x, w), b2(x, w)}, which is the variety of roots of Q2(x, w; ·). Then, as meromorphic function on C∪{∞}, we have the partial fraction decomposition of Q1(x; ·)/Q2(x, w; ·): ∀z ∈C ∪{∞} \ Z(x, w) , Q1(x; z) Q2(x, w; z) = 1 + X ρ∈Z(x,w) z −ρ · w2ρ2 x2 Y σ∈Z(x,w)\{ρ} ρ −σ . (261)

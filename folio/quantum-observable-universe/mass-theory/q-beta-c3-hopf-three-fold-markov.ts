@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:q-beta-c3-hopf-three-fold-markov",
   lean: {
-    ref: "qou:QOU.BraidKnot.q_beta_c3_hopf_three_fold_markov",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.q_beta_c3_hopf_three_fold_markov",
     validation: "not_checked",
   },
   title:

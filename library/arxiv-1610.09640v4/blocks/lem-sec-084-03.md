@@ -1,0 +1,1 @@
+Let D be a triangulated category, let F, G : D →D(N) be trian- gulated functors, and let ζ : F →G be a a morphism of triangulated functors. The following conditions are equivalent for M ∈D : (i) ζM is an isomorphism. (ii) ζM[i] is an isomorphism for every integer i. (iii) The morphism Hj(ζM) : Hj(F(M)) →Hj(G(M)) is an isomorphism for every integer j.

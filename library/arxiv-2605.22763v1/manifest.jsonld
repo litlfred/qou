@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2605.22763v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2605.22763v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -42,6 +42,18 @@
     "library/arxiv-2605.22763v1/sections/sec-027"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Advancing Mathematics Research with AI-Driven Formal Proof Search — 29 sections: Front matter; Introduction; AlphaProof Nexus\n\n**Advancing Mathematics Research with AI-Driven Formal Proof Search**\n\n*AI-Driven Formal Proof Search*\n\n59 pp, 29 sections.\n\n**Outline.** Front matter; Introduction; AlphaProof Nexus; Systematic Evaluation on Open Problems; Deployment in Mathematics Research; Impact of Agent Architecture and Model; Discussion; Materials and Methods; Further Details on AlphaProof Nexus Agents; Prompts; Supplementary Text; Related Work; Selection of Erdős and OEIS Problems; Details on Comparisons across Agent Architectu; Deformalized Lean Proofs; Erdős #12-(ii); Erdős #125; Erdős #138, Differences Variant",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
   "licenceRecord": {
@@ -64,8 +76,8 @@
       "stamp_date": "21 May 2026"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

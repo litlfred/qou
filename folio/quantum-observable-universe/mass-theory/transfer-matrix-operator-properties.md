@@ -76,11 +76,13 @@ the two strands at the crossing:
 
 ### Nuclear interactions (quark-level, Level 1)
 
+Each quark is an unknot strand of $\mathcal{B}_3$ ([up quark](#def:up-quark)); the strands are distinguished by crossing orientation, not knot type.
+
 | Interaction | $K_1$ | $K_2$ | $T(q)$ | Physical |
 |-------------|-------|-------|--------|----------|
-| $\mathfrak{u}\mathfrak{u}$ | $T_{2,3}$ | $T_{2,3}$ | $T_{pp}$ | proton-proton repulsion |
-| $\mathfrak{d}\mathfrak{d}$ | $T_{2,3}^{\sigma}$ | $T_{2,3}^{\sigma}$ | $T_{nn}$ | neutron-neutron |
-| $\mathfrak{u}\mathfrak{d}$ | $T_{2,3}$ | $T_{2,3}^{\sigma}$ | $T_{\mathrm{mix}}$ | proton-neutron binding |
+| $\mathfrak{u}\mathfrak{u}$ | unknot, $\sigma_i$ | unknot, $\sigma_i$ | $T_{pp}$ | proton-proton repulsion |
+| $\mathfrak{d}\mathfrak{d}$ | unknot, $\sigma_i^{-1}$ | unknot, $\sigma_i^{-1}$ | $T_{nn}$ | neutron-neutron |
+| $\mathfrak{u}\mathfrak{d}$ | unknot, $\sigma_i$ | unknot, $\sigma_i^{-1}$ | $T_{\mathrm{mix}}$ | proton-neutron binding |
 
 ### Electromagnetic interactions (electron-level)
 

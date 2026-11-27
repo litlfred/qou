@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bq28-r2r7",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bq28-r2r7/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -25,6 +25,18 @@
     "library/bq28-r2r7/sections/sec-010"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Classical and Quantum Algorithms for Characters of the Symmetric Group — 12 sections: Front matter; I.. INTRODUCTION; II.. GROUP THEORY REFRESHER\n\n**Classical and Quantum Algorithms for Characters of the Symmetric Group**\n\n*Classical and Quantum Algorithms for Characters of the Symmetric Group*\n\n15 pp, 12 sections.\n\n**Outline.** Front matter; I.. INTRODUCTION; II.. GROUP THEORY REFRESHER; III.. BUILDING THE CHARACTER; IV.. CLASSICAL MPS ALGORITHMS; V.. QUANTUM ALGORITHM; VI.. CLASSICAL COMPLEXITY OF SAMPLING; A.. Granularity and quantum advantage; B.. Row and column sampling; VII.. CLASSICAL MPS ALGORITHM FOR KOSTKA NUMBE; . ACKNOWLEDGMENTS; . DATA AVAILABILITY",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "bq28-r2r7",
@@ -35,8 +47,8 @@
     "pages": 15,
     "arxiv": null,
     "doi": "10.1103/bq28-r2r7",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

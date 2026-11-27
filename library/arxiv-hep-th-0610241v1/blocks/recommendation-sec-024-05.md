@@ -1,1 +1,0 @@
-The only known experimental constraints on the values of the coeﬃcients of the quadratic curvature terms RµνRµν and R2 at low energy are very weak and predict that their value should not exceed 1074 (cf. e.g. [21]).

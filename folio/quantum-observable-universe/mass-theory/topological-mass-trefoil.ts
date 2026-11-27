@@ -3,9 +3,9 @@ import { example } from "../../schema/builders";
 export default example({
   label: "ex:topological-mass-trefoil",
   title: "Topological mass of the trefoil knot (electron)",
-  interprets: "prop:topological-mass-formula",
+  interprets: "conj:topological-mass-formula",
   uses: [
-    "prop:topological-mass-formula",
+    "conj:topological-mass-formula",
     "rem:torus-knot-zero-volume-via-reeb",
   ],
   cites: ["murakami2004a"],

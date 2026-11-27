@@ -1,0 +1,1 @@
+Let F : C(A, M) →C(B, N) be a DG functor. Then the collection τF := {τF,M}M∈C(A,M) is an isomorphism τF : F ◦TA,M ≃ −→TB,N ◦F of functors Cstr(A, M) →Cstr(B, N). The slogan summarizing this theorem is “A DG functor commutes with transla- tions”.

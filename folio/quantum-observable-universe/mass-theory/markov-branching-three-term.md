@@ -1,5 +1,5 @@
-*Let $y_{(n-k,k)} = [n-2k+1]_q/[2]_q^{\,n}$ be the two-row Markov weights of
-convention D. Then adding a box to a two-row Young diagram is coherent with the
+*Let $y_{(n-k,k)} = [n-2k+1]_q/[2]_q^{\,n}$ be the two-row Markov weights at
+$z = q^3/(q^2+1)$. Then adding a box to a two-row Young diagram is coherent with the
 trace,*
 
 $$

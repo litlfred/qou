@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0003017v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0003017v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -59,6 +59,18 @@
     "library/arxiv-hep-ph-0003017v2/sections/sec-044"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "arXiv:hep-ph/0003017v2 26 Jun 2000 — Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems.\n\n**arXiv:hep-ph/0003017v2 26 Jun 2000**\n\n*J.J.M. Verbaarschot*\n\n61 pp, 46 sections.\n\n**Abstract.** Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems. It also may serve as a schematic model for disorder in quantum systems. In this review, we discuss both types of applications of chiral random matrix theory to the QCD partition function. We show that constraints imposed by chiral symmetry and its spontaneous breaking determine the structure of low-energy eﬀective partition functions for the Dirac spectrum. We thus derive exact results for the low-lying eigenvalues of the QCD Dirac operator. We argue that the statistical properties of these eigenvalues are universal and can be described by a random matrix theory with the global symmetries of the QCD partition function. The total number of such eigenvalues increases with the square root of the Euclidean four-volume.\n\n**Outline.** Front matter; 2.3 Dirac Spectrum; 1.2 Random Matrix Theory; 3 CHIRAL RANDOM MATRIX THEORY; 1 INTRODUCTION; 2.2 Global Symmetries; 2.2.3 ANTI-UNITARY SYMMETRIES; 3.2 Sigma Model Representation of Chiral Rando; 3.4 Spectral Correlation Functions; 3.4.1 BULK CORRELATIONS; 3.4.2 MICROSCOPIC CORRELATIONS; 3.5 Universality Proofs; 4 EFFECTIVE THEORIES AT LOW ENERGIES; 4.1 Finite-Volume Partition Function; 4.2 Leutwyler-Smilga Sum Rules; 4.3 Spectral Mass and Partially Quenched Parti; 4.4 Domains of the Partially Quenched Effectiv; 4.5 QCD in Three Euclidean Dimensions",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -80,8 +92,8 @@
       "stamp_date": "26 Jun 2000"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

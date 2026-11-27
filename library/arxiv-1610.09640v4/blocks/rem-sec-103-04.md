@@ -1,0 +1,1 @@
+In the situation of Proposition 15.2.6, one can show that P is a graded-ﬂat A-module if and only if Ungr(P) is a ﬂat Ungr(A)-module. The proof is not easy. See [111, Proposition 3.4.5]. For injectives things are much more complicated, as the next theorem and ex- ample show.

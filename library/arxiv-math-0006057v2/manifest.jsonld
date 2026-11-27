@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0006057v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0006057v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0006057v2",
+  "title": "Finite Quantum Groupoids and Their Applications",
   "contains": [
     "library/arxiv-math-0006057v2/sections/sec-front-matter",
     "library/arxiv-math-0006057v2/sections/sec-000",
@@ -42,6 +42,18 @@
     "library/arxiv-math-0006057v2/sections/sec-027"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Finite Quantum Groupoids and Their Applications — We give a survey of the theory of ﬁnite quantum groupoids (weak Hopf algebras), including foundations of the theory and applications to ﬁnite depth\n\n**Finite Quantum Groupoids and Their Applications**\n\n*DMITRI NIKSHYCH AND LEONID VAINERMAN*\n\n44 pp, 29 sections.\n\n**Abstract.** We give a survey of the theory of ﬁnite quantum groupoids (weak Hopf algebras), including foundations of the theory and applications to ﬁnite depth subfactors, dynamical deformations of quantum groups, and invariants of knots and 3-manifolds.\n\n**Outline.** Front matter; 0.1 Definition of the quantum groupoid; 0.2 Counital maps and subalgebras; 0.3 Properties of the antipode; 0.4 The dual quantum groupoid; 0.5 Examples : groupoid algebras and their dua; 0.6 Examples : quantum transformation groupoid; 0.7 Examples : Temperley-Lieb algebras; 0.8 Other versions of a quantum groupoid; 0.9 Integrals in quantum groupoids; 0.10 Hopf modules; 0.13 Smash products; 0.12 Module and comodule algebras; 0.14 Duality for actions; 0.16 Quasitriangular quantum groupoids; 0.17 The Drinfeld double; 0.18 Ribbon quantum groupoids; 0.19 Towards modular categories",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -52,7 +64,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0006057v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0006057v2.pdf",
     "source_sha256": "c881434fe9f4b04fb71fe64491e955051c9dd270b93ca6f80fce3eb25f3485d2",
     "pages": 44,
@@ -63,8 +77,8 @@
       "stamp_date": "10 Jun 2000"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

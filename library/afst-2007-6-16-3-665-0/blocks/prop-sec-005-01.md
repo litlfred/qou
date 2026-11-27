@@ -1,0 +1,1 @@
+— (1) E depends only on t, n, cn. (2) E is irreducible of dimension n and has slope t/n. The algebra of the K-linear endomorphisms of E, commuting with Φ, is C. (3) For any irreducible diﬀerence module I there are unique t, n and cn with n ⩾1, g.c.d.(t, n) = 1 and |q| < |cn| ⩽1, such that I ∼= Res(E(czt/n)).

@@ -1,1 +1,0 @@
-Indeed, identifying $C$ with $1\otimes C$, every prime ideal of $C_{R'}\otimes_{C_K}C$ must contain some $g_i(a\otimes 1)$; on the other hand, each $g_i(a\otimes 1)$ generates a maximal ideal of $C_{R'}\otimes_{C_K}C$.

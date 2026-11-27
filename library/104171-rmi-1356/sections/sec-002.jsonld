@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/104171-rmi-1356/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Handlebody braid and Coxeter groups",
+  "pageStart": 14,
+  "pageEnd": 20,
+  "contains": [
+    "library/104171-rmi-1356/blocks/prose-sec-002",
+    "library/104171-rmi-1356/blocks/def-sec-002-01",
+    "library/104171-rmi-1356/blocks/rem-sec-002-02",
+    "library/104171-rmi-1356/blocks/rem-sec-002-03",
+    "library/104171-rmi-1356/blocks/prop-sec-002-04",
+    "library/104171-rmi-1356/blocks/prop-sec-002-05",
+    "library/104171-rmi-1356/blocks/def-sec-002-06",
+    "library/104171-rmi-1356/blocks/rem-sec-002-07",
+    "library/104171-rmi-1356/blocks/def-sec-002-08",
+    "library/104171-rmi-1356/blocks/rem-sec-002-09",
+    "library/104171-rmi-1356/blocks/lem-sec-002-10",
+    "library/104171-rmi-1356/blocks/def-sec-002-11",
+    "library/104171-rmi-1356/blocks/lem-sec-002-12",
+    "library/104171-rmi-1356/blocks/lem-sec-002-13",
+    "library/104171-rmi-1356/blocks/lem-sec-002-14",
+    "library/104171-rmi-1356/blocks/prop-sec-002-15",
+    "library/104171-rmi-1356/blocks/thm-sec-002-16"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-rmi-1356/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-rmi-1356/manifest.jsonld",
+  "provenance": "ingested"
+}

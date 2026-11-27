@@ -1,1 +1,0 @@
-However, as the singularity structure shown in Fig.~\ref{fg:sings-Z1F0} illustrates the correct leading contribution should be instead $\exp(-\frac{\CV_{\IF_0}}{g_s})$.} We want to point out that this in fact provides a very efficient way to compute the series $\Phi(g_s)$, and we are able to compute 400 terms of $\Phi(g_s)$.

@@ -1,1 +1,1 @@
-For each number ﬁeld K, there exists a constant CK such that Gal(K∞((x p−x)/p, α)/K)
+For each number ﬁeld K, there exists a constant CK such that Gal(K∞((x p−x)/p, α)/K) is nonabelian over K for all α ∈K and all primes p ≥CK. In particular, Gal(K∞((x p −x)/p, α)/Q) is nonabelian for all α ∈Q and all p ≥29.

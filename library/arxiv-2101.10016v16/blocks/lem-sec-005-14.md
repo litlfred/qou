@@ -1,1 +1,1 @@
-Let B be a algebra, p an idempotent in B, f : A → B a homomorphism
+We have: a) γ = V ((Φ ⊗ I)(∆ ⊗ 1 ⊗ 1(Φ−1))), δ = V ′ ((1 ⊗ 1 ⊗ ∆(Φ−1))(I ⊗ Φ)), (6.19) b) for a ∈ A, (S ⊗ S(∆op(a(1))))γ∆(a(2)) = ε(a)γ∆(a(1))δ(S ⊗ S(∆op(a(2)))) = ε(a)δ (6.20) c) ∆(x)δ(S ⊗ S(∆op(y)))γ∆(z) = ∆(I) = (6.21) ∆(I)(S ⊗ S(∆op(p)))γ∆(q)δ(S ⊗ S(∆op(r))) (6.22)

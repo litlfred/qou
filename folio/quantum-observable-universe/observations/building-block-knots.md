@@ -1,4 +1,4 @@
-Every particle is built from knots and links embeddable on Bring's surface. We catalog the building blocks.
+Every particle is built from knots and links embeddable on Bring's surface. The building blocks are catalogued here.
 
 ## Visual convention
 
@@ -9,6 +9,8 @@ Every particle is built from knots and links embeddable on Bring's surface. We c
 The mirror operation $\sigma$ reverses all crossings. For chiral knots, it produces a distinct knot. For amphichiral knots, it returns the same knot.
 
 ## Table 1: Fundamental knots
+
+Throughout Tables 1, 3, and 5, $J(q)$ denotes the unknot-normalized Jones polynomial determined by $J(0_1) = 1$ and the skein relation $q^{-1} J(L_+) - q J(L_-) = (q^{1/2} - q^{-1/2}) J(L_0)$ (specializing the two-variable HOMFLY polynomial at $v = q$, $z = q^{1/2} - q^{-1/2}$).
 
 See [Table 1](#tbl:building-block-knots-table1-data).
 
@@ -45,7 +47,7 @@ $$
 
 See [Table 5](#tbl:building-block-knots-table5-data).
 
-At $q = q_0$, the polynomial encodes the $q$-deformation of the knot's categorical action.
+Evaluating the exact polynomials $J(q)$ of Tables 1--3 at the proton-anchored substrate parameter $q_0 \approx 1.10997858$ yields the numerical values in Table 5, encoding the $q$-deformation of each knot's categorical action.
 
 ## Table 5: Categorical action at $q = q_0$
 

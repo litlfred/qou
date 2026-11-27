@@ -1,1 +1,0 @@
-Back to the q-Euler equation. — To ﬁt this equation with the convention of this paper, we shall put z := λ, f(z) := X(qλ) and take q−2 as the new dilatation coeﬃcient, that we shall denote by q, so that |q| > 1 indeed.

@@ -92,14 +92,17 @@ def main() -> int:
     set_compute_dps()
     import fr_pullback_k3_test as k3
 
-    # ---- c_n from the k3 module's OWN dim_q/qfac, not a reimplementation
+    # ---- c_n from the k3 module's OWN dim_q/qfac, not a reimplementation.
+    # k3 replaced its float64 `dim_q(shape, Q0_PROTON)` by the MPFR
+    # `dim_q_mp(shape)` / `_qfactorial_mp(n)` at the 50-digit q0 on 2026-09-05
+    # (bean qou-u6zt), which left this probe calling a removed name (#9104).
     @lru_cache(maxsize=None)
     def c_of_n(n: int) -> mp.mpf:
         tot = mp.mpf(0)
         for lam in partitions(n):
-            dq = k3.dim_q(lam, k3.Q0_PROTON)
-            tot += mp.mpf(str(dq)) * mp.mpf(str(dq))
-        return tot / k3.qfac(n, k3.Q0_PROTON)
+            dq = k3.dim_q_mp(tuple(lam))
+            tot += dq * dq
+        return tot / k3._qfactorial_mp(n)
 
     for n in sorted(set(ATOM_N.values())):
         print(f"  c_{n} = {mp.nstr(c_of_n(n), 16)}")

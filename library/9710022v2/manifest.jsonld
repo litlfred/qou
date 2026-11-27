@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/9710022v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/9710022v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -73,6 +73,18 @@
     "library/9710022v2/sections/page-060"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Harmonic Analysis on the quantum Lorentz group — This w ork b egins with a review of complexi cation and reali cation of Hopf algebras.\n\n**Harmonic Analysis on the quantum Lorentz group**\n\n60 pp, 60 sections.\n\n**Abstract.** This w ork b egins with a review of complexi cation and reali cation of Hopf algebras. W e emphasize the notion of m ultiplier Hopf algebras for the description of di eren t classes of functions (compact supp orted, b ounded, un b ounded) on complex quan tum groups and the construction of the asso ciated left and righ t Haar measure. Using a con tin uation of \u0006j sym b ols of S U q (\u0002) with complex spins, w e giv e a new description of the unitary represen- tations of S L q (\u0002; C ) R and nd explicit expressions for the c haracters of S L q (\u0002; C ) R . The ma jor theorem of this article is the Planc herel theorem for the Quan tum Loren tz Group. \u0003 e-mail:bu enoi@lpm.univ-mon tp\u0002.fr y Lab oratoire du CNRS ESA \u00050\u0003\u0002 z e-mail:philipp e.ro c he@CERN.CH x Lab oratoire Propre du CNRS UPR \u0001\u0004 \u0001\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17; Page 18",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "9710022v2",
@@ -83,8 +95,8 @@
     "pages": 60,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/210811825v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/210811825v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -39,6 +39,18 @@
     "library/210811825v1/sections/sec-024"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Properties of Eigenvalues on Riemann Surfaces with Large Symmetry Groups — 26 sections: Front matter; Introduction; Background\n\n**Properties of Eigenvalues on Riemann Surfaces with Large Symmetry Groups**\n\n*Joseph Cook*\n\n163 pp, 26 sections.\n\n**Outline.** Front matter; Introduction; Background; Spectral theory; Hyperbolic geometry; Harmonic analysis on H; Representation theory; Selberg's trace formula; Symmetry group of the Bolza surface; The Bolza Surface; Length spectrum of the Bolza surface; Upper bounds on eigenvalues of the Bolza surfa; First eigenspace of the Bolza surface; Second eigenspace of Bolza surface; The Klein Quartic; Systole of the Klein quartic; Fenchel-Nielsen parameters of the Klein quarti; Spectral theory of the Klein quartic",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "210811825v1",
@@ -50,8 +62,8 @@
     "pages": 163,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

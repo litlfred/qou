@@ -1,0 +1,1 @@
+Let (E, π) be an exact Lefschetz ﬁbration over a compact surface S, ∂S̸ = ∅, with a Lagrangian boundary condition Q. Assume that (E, π) has nonnegative curvature, and that the boundary condition satisﬁes R ∂S κQ < 0. Then Φ1(E, π, Q) = 0.

@@ -1,0 +1,1 @@
+The diﬀerential form tor(M, Ad ◦ρ) vanishes at v with order the length of the torsion part in the Ov-module H1(M, Ad ◦ρ)v. In particular tor(M, Ad ◦ρ) has no poles nor zeros if v projects on a smooth point of X(M). Deﬁnition 2.3.1. Let M be a torsion Ov-module, then M = L i Ov/(tn i ) and we deﬁne its length to be equal to P i ni.

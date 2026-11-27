@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2406.05311v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2406.05311v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -39,6 +39,18 @@
     "library/arxiv-2406.05311v1/sections/sec-024"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A quantum Murnaghan–Nakayama rule for the flag manifold — In this paper, we give a rule for the multiplication of a Schubert class by a tautological class in the (small) quantum cohomology ring of\n\n**A quantum Murnaghan–Nakayama rule for the flag manifold**\n\n*C. BENEDETTI, N. BERGERON, L. COLMENAREJO, F. SALIOLA, AND F. SOTTILE*\n\n34 pp, 26 sections.\n\n**Abstract.** In this paper, we give a rule for the multiplication of a Schubert class by a tautological class in the (small) quantum cohomology ring of the ﬂag manifold. As an inter- mediate step, we establish a formula for the multiplication of a Schubert class by a quantum Schur polynomial indexed by a hook partition. This entails a detailed analysis of chains and intervals in the quantum Bruhat order. This analysis allows us to use results of Leung–Li and of Postnikov to reduce quantum products by hook Schur polynomials to the (known) classical product.\n\n**Outline.** Front matter; 1 Introduction; 2 A Murnaghan–Nakayama rule for (classic) coho; 2.1 Cohomology of the flag manifold; 2.2 k-Bruhat order; 2.3 Grassmannian–Bruhat order; 2.4 Minimal permutations; 2.5 A Murnaghan–Nakayama rule for H*Fn; 3 A Murnaghan–Nakayama rule for quantum cohomo; 3.1 Quantum cohomology ring of the flag manifo; 3.2 Quantum k-Bruhat order; 3.3 Minimal intervals; 3.4 The Murnaghan–Nakayama rule for qH*Fn; 4 Quantum equals classical; 5 Left operators; 5.1 Definition of the left operators; 5.3 Diagrammatic notation; 5.4 Symmetries of the quantum k-Bruhat order",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
   "licenceRecord": {
@@ -60,8 +72,8 @@
       "stamp_date": "8 Jun 2024"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

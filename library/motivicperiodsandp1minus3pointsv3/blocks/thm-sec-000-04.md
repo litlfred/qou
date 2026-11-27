@@ -1,0 +1,1 @@
+There is an ind-object (direct limit of objects) O(πmot (X, → 10, − → 11)) ∈Ind (MT (Z)) (2.3) whose Betti and de Rham realisations are the aﬃne rings O(πB 1 (X, → 10, − → 11)), and O(πdR 1 (X)), respectively.

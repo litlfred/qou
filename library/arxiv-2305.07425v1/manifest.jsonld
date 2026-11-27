@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2305.07425v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2305.07425v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -28,6 +28,18 @@
     "library/arxiv-2305.07425v1/sections/sec-013"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS — The set of equivalence classes of cobounded actions of a group G on diﬀerent hyperbolic metric spaces carries a natural partial order.\n\n**LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS**\n\n*CAROLYNABBOTT, HOANG THANH NGUYEN, AND ALEXANDER J. RASMUSSEN*\n\n20 pp, 15 sections.\n\n**Abstract.** The set of equivalence classes of cobounded actions of a group G on diﬀerent hyperbolic metric spaces carries a natural partial order. Following Abbott–Balasubramanya– Osin, the group G is H–accessible if the resulting poset has a largest element. In this paper, we prove that every non-geometric 3-manifold has a ﬁnite cover with H–inaccessible fundamental group and give conditions under which the fundamental group of the original manifold is H– inaccessible. We also prove that every Croke-Kleiner admissible group (a class of graphs of groups that generalizes fundamental groups of 3–dimensional graph manifolds) has a ﬁnite index subgroup that is H–inaccessible.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Acknowledgments; 2 Preliminaries; 2.1 H–accessibility; 2.2 Projection axioms; 2.3 Croke-Kleiner admissible groups; 3 Croke-Kleiner admissible groups and H–inacce; 3.1 Construction of group actions; 4 H–accessibility of 3-manifold groups; 4.1 Seifert fibered manifolds; 4.2 H–accessibility of non-elementary graph ma; 4.3 Theorem 1.1; 4.4 H–accessibility of finitely generated 3-ma; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {
@@ -49,8 +61,8 @@
       "stamp_date": "12 May 2023"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

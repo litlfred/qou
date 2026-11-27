@@ -1,1 +1,0 @@
-A resurgent analysis, like the one we will perform in this paper, unveils additional asymptotic series which are invisible in perturbation theory, and should be regarded as the ``hidden" sectors of topological string theory (a similar resurgent analysis of topological string theory, albeit with very different tools, was performed in \cite{cesv1,cesv2}).

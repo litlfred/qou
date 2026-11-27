@@ -168,7 +168,7 @@ def main() -> int:
         "m_p_borromean_verification_50dps.py (see "
         "docs/canonical-derivation-cheat-sheet.md §5 fix #1)."
     )
-    w.set_content_block("prop:three-calibration-inputs")
+    w.set_content_block("def:three-calibration-discipline")
     w.add_data("total_issues", total_issues)
     w.add_data("flagged_script_count", len(rows))
     w.add_data("scripts_scanned", len(py_files))

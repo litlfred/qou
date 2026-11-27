@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2510.21576v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2510.21576v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -29,6 +29,18 @@
     "library/arxiv-2510.21576v1/sections/sec-015"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Relativistic corrections for lepton-nucleus scattering in the short-time approximation — 16 sections: Relativistic corrections for lepto; Introduction; Electron-nucleus scattering cross\n\n**Relativistic corrections for lepton-nucleus scattering in the short-time approximation**\n\n*L. Andreoli1,2,∗R. Weiss3,† G. Chambers-Wall3,‡ A. Gnech1,2,§ S. Pastore3,4,¶ M. Piarulli3,4,∗∗and S. Gandolfi5*\n\n17 pp, 16 sections.\n\n**Outline.** Relativistic corrections for lepton-nucleus sc; Introduction; Electron-nucleus scattering cross section; One-Body Electromagnetic Current; Low-momentum transfer nonrelativistic reductio; High-momentum transfer nonrelativistic reducti; Comparing low- and high-momentum transfer nonr; Short-time approximation; Relativistic Final-States Kinematics; Results; High-q expansion scheme and relativistic final; Convergence of the high-q expansion scheme; Cross Sections; Conclusions; Acknowledgments; Comparison with the Rosenbluth cross section",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -51,8 +63,8 @@
       "stamp_date": "24 Oct 2025"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

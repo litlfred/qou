@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-06T03:40:45.596489+00:00",
-  "commitSha": "d42eee9ec973d19476ce04952474228484d35379",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-21T04:33:48.740525+00:00",
+  "commitSha": "37a281c359874db2715c3fddd74a2aa775d5fe24",
   "assertions": [
     {
       "name": "closed_form_shift_consistent_D",
@@ -139,11 +139,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 44,
+  "durationMs": 168,
   "computation": "compound-shift-nf",
   "scriptFile": "compound_shift_nf.py",
-  "scriptHash": "3e13d70a5751",
-  "scriptCommitSha": "a6828212478f37e2f09c98417bf89680459b4640",
+  "scriptHash": "9af3b7b98d75",
+  "scriptCommitSha": "615b5553363a7e159ec40fa99bb156e48be9b1c6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -151,14 +151,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [

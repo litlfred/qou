@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2209.06973v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "cc3393a17c48b9dfeb51bc64550d586086665f6a8f72511236bce9b186c70c48",
   "file": "2209.06973v1.pdf"
@@ -16,61 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 3,
-  "by_kind": {
-   "recommendation": 3
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should be noted that the graphs $G\\mathcal{K}$ and $G(\\overline{\\mathcal{K}})$ are usually very different as oriented graphs and thus give rise to very different state-sums calculating the same link polynomial, up to $t\\mapsto t^{-1}$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-6-proving-the-garoufalidis-loebl-state-sum.md",
-   "section_title": "Proving the Garoufalidis-Loebl state-sum",
-   "pages": "23-38",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "\\(d\\) It should have become clear by now that the arc graph is just an equivalent representation of exactly the data necessary to be taken from the part arc-graph necessary to define either of the two state-sums.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-6-proving-the-garoufalidis-loebl-state-sum.md",
-   "section_title": "Proving the Garoufalidis-Loebl state-sum",
-   "pages": "23-38",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should be interesting to translate this work into the state model considered here.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-11-questions-and-projects.md",
-   "section_title": "Questions and projects",
-   "pages": "64-66",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

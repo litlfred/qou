@@ -1,1 +1,0 @@
-We must show that if $\omega$ is any $C^\infty$ exact differential $k$-form on $T^3$, then the $(k-1)$-form $\alpha=\delta(\varphi*\omega)$ is $C^\infty$ and satisfies $d\alpha=\omega$, and that if $d\widetilde\alpha=\omega$ as well, then $|\alpha|_{L^2} \le|\widetilde\alpha|_{L^2}$, with equality if and only if $\widetilde\alpha=\alpha$.

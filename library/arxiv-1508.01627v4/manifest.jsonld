@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1508.01627v4",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1508.01627v4/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -33,6 +33,18 @@
     "library/arxiv-1508.01627v4/sections/sec-018"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS\n\n**REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS**\n\n23 pp, 20 sections.\n\n**Abstract.** We derive a Murnaghan–Nakayama type formula for the values of unipotent characters of ﬁnite classical groups on regular semisimple elements. This relies on Asai’s explicit decomposition of Lusztig restriction. We use our formula to show that most complex irreducible characters vanish on some ℓ-singular element for certain primes ℓ. As an application we classify the simple endotrivial modules of the ﬁnite quasi-simple classical groups. As a further application we show that for ﬁnite simple classical groups and primes ℓ≥3 the ﬁrst Cartan invariant in the principal ℓ-block is larger than 2 unless Sylow ℓ-subgroups are cyclic.\n\n**Outline.** Front matter; 1 Introduction; 2 Maximal tori in classical groups; 2.1 Weyl groups and maximal tori in symplectic; 2.2 Regular semisimple elements; 2.3 Maximal connected reductive subgroups; 3 A Murnaghan–Nakayama rule; 3.1 Lusztig restriction; 3.2 Symbols; 3.3 Unipotent characters of symplectic and ort; 3.4 Values of unipotent characters at regular ; 4 Vanishing of characters; 4.1 Non-unipotent characters; 4.2 Unipotent characters; 5 Simple endotrivial modules; 5.1 On certain unipotent characters; 5.2 Simple endotrivial modules in classical ty; 6 Zeroes of characters of quasi-simple groups",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -54,8 +66,8 @@
       "stamp_date": "25 Oct 2016"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

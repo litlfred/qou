@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/disssubmission/blocks/lem-sec-047-04",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 165,
+  "pageEnd": 171,
+  "text": "lem-sec-047-04.md",
+  "derivedFrom": "library/disssubmission/sections/sec-047",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/disssubmission/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "B",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-047-appendix-b-irreducible-subgroups-with-bounded-de.md (p. 165-171)",
+    "claim_id": "disssubmission#lemma:B",
+    "lean_status": "unformalized"
+  }
+}

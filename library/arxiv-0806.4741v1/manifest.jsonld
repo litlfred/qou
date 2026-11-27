@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0806.4741v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0806.4741v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -32,6 +32,18 @@
     "library/arxiv-0806.4741v1/sections/sec-017"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The deformation quantizations of the hyperbolic plane — We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order\n\n**The deformation quantizations of the hyperbolic plane**\n\n*P. Bieliavsky*\n\n26 pp, 19 sections.\n\n**Abstract.** We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order hyperbolic diﬀerential operator. The construction is entirely explicit and relies on non-commutative harmonic analytical techniques on symplectic symmetric spaces. The present work presents a uniﬁed method producing every quantization of D, and provides, in the 2-dimensional context, an exact solution to Weinstein’s WKB quantization program within geometric terms. The construction reveals the existence of a metric of Lorentz signature canonically attached (or ‘dual’) to the geometry of the hyperbolic plane through the quantization process.\n\n**Outline.** Front matter; Introduction; Motivations; What is done in the present work; Symplectic symmetric spaces; Definitions and elementary properties; Group type symplectic symmetric surfaces, curv; Admissible functions on symplectic symmetric s; Deformation Quantization; The space of star products on the Poincaré orb; sl2(R)- triplets of derivations and an unexpec; The de-contraction procedure: evolution of the; Finding solutions of the Dalembertian evolutio; Normalizations and asymptotic expansions; The case k=24 and Zagier type deformations; Unterberger type solutions and Weinstein's asy; Complements; On D and M",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -55,8 +67,8 @@
       "stamp_date": "30 Jun 2008"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

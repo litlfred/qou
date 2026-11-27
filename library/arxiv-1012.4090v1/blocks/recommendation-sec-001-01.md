@@ -1,1 +1,0 @@
-The coupling constants $\lambda_2$ and $\lambda_4$ can be scaled as desired, by changing the units of energy and length; in what follows, we shall use the 'geometrical' choice $\lambda_2=1/[4\pi^2(3-\alpha)]$ and $\lambda_4=1/[4\pi^2(3-2\alpha)]$ as in [@W04].

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/qt2pf5d0mn",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/qt2pf5d0mn/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -32,6 +32,18 @@
     "library/qt2pf5d0mn/sections/sec-017"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "UC Santa Barbara — 19 sections: Front matter; Abstract; Introduction\n\n**UC Santa Barbara**\n\n*UC Santa Barbara Electronic Theses and Dissertations*\n\n106 pp, 19 sections.\n\n**Outline.** Front matter; Abstract; Introduction; Higher Categories; Ribbon Fusion Categories; G-crossed Braided Spherical Fusion Categories ; Monoidal 2-categories with Duals; Invariants of 4-manifolds; Partition Function; A Formula for the Partition Function; Examples; Variation: Trivial G-grading; Proof of Invariance; Invariance under Choice of Representatives; Invariance under change of ordering; Pachner Moves; Invariance under Pachner Moves; Future Directions and Open Questions",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "qt2pf5d0mn",
@@ -43,8 +55,8 @@
     "pages": 106,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

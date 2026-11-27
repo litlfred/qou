@@ -1,0 +1,1 @@
+The cross section for exclusively produced e+e−pairs was measured in a ﬁdu- cial phase space deﬁned by the acceptance for daughter particles, corresponding to pairs with an invariant mass of 0.4 < Mee < 2.6 GeV and with transverse momentum of P⊥< 0.1 GeV.

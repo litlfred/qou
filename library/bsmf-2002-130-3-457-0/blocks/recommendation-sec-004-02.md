@@ -1,1 +1,0 @@
-In other words, any inﬁnitesimal deformation of Φ(P) in (RP3)V which inﬁnitesimally respects the dihedral angles %Θe for all e ∈E ∪E′ must come from composition by an inﬁnitesimal element of PO(3, 1).

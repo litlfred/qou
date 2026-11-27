@@ -1,5 +1,3 @@
-**Conjecture (archimedean remainder exponential decay).**
-
 *Fix a free-neutron sector $K \subset H_3(q)$. Let $\mathfrak{Q}_\beta^{(N)}$ be the depth-$N$ brane-tower truncation of the $\beta$-decay $Q$-value. Let $\mathfrak{Q}_\beta^{\mathrm{exact}}$ be the value of the full spectral decomposition. Then there exist constants $C(K), c(K) > 0$ such that the truncation remainder $R_N(K) \;:=\; \mathfrak{Q}_\beta^{(N)} - \mathfrak{Q}_\beta^{\mathrm{exact}}$ decays exponentially in the truncation depth:*
 
 $$

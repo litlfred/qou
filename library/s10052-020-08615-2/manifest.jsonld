@@ -1,0 +1,79 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10052-020-08615-2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Sum rule for the Compton amplitude and implications for the proton–neutron mass difference",
+  "contains": [
+    "library/s10052-020-08615-2/sections/sec-front-matter",
+    "library/s10052-020-08615-2/sections/sec-000",
+    "library/s10052-020-08615-2/sections/sec-001",
+    "library/s10052-020-08615-2/sections/sec-002",
+    "library/s10052-020-08615-2/sections/sec-003",
+    "library/s10052-020-08615-2/sections/sec-004",
+    "library/s10052-020-08615-2/sections/sec-005",
+    "library/s10052-020-08615-2/sections/sec-006",
+    "library/s10052-020-08615-2/sections/sec-007",
+    "library/s10052-020-08615-2/sections/sec-008",
+    "library/s10052-020-08615-2/sections/sec-009",
+    "library/s10052-020-08615-2/sections/sec-010",
+    "library/s10052-020-08615-2/sections/sec-011",
+    "library/s10052-020-08615-2/sections/sec-012",
+    "library/s10052-020-08615-2/sections/sec-013",
+    "library/s10052-020-08615-2/sections/sec-014",
+    "library/s10052-020-08615-2/sections/sec-015",
+    "library/s10052-020-08615-2/sections/sec-016",
+    "library/s10052-020-08615-2/sections/sec-017",
+    "library/s10052-020-08615-2/sections/sec-018",
+    "library/s10052-020-08615-2/sections/sec-019",
+    "library/s10052-020-08615-2/sections/sec-020",
+    "library/s10052-020-08615-2/sections/sec-021",
+    "library/s10052-020-08615-2/sections/sec-022",
+    "library/s10052-020-08615-2/sections/sec-023",
+    "library/s10052-020-08615-2/sections/sec-024",
+    "library/s10052-020-08615-2/sections/sec-025",
+    "library/s10052-020-08615-2/sections/sec-026",
+    "library/s10052-020-08615-2/sections/sec-027",
+    "library/s10052-020-08615-2/sections/sec-028",
+    "library/s10052-020-08615-2/sections/sec-029",
+    "library/s10052-020-08615-2/sections/sec-030",
+    "library/s10052-020-08615-2/sections/sec-031",
+    "library/s10052-020-08615-2/sections/sec-032",
+    "library/s10052-020-08615-2/sections/sec-033",
+    "library/s10052-020-08615-2/sections/sec-034",
+    "library/s10052-020-08615-2/sections/sec-035"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Sum rule for the Compton amplitude and implications for the proton–neutron mass difference — The Cottingham formula expresses the leading contribution of the electromagnetic interaction to the\n\n**Sum rule for the Compton amplitude and implications for the proton–neutron mass difference**\n\n*J. Gasser1, H. Leutwyler1, A. Rusetsky2,a*\n\n26 pp, 37 sections.\n\n**Abstract.** The Cottingham formula expresses the leading contribution of the electromagnetic interaction to the proton- neutron mass difference as an integral over the forward Compton amplitude. Since quarks and gluons reggeize, the dispersive representation of this amplitude requires a sub- traction. We assume that the asymptotic behaviour is dom- inated by Reggeon exchange. This leads to a sum rule that expresses the subtraction function in terms of measurable quantities. The evaluation of this sum rule leads to m p−n QED = 0.58 ± 0.16 MeV.\n\n**Outline.** Front matter; Sum rule for the Compton amplitude and implica; Abstract; 1 Introduction; 2 Lorentz invariance, kinematic zeros; 3 Dispersion relations; 4 Reggeon dominance; 5 Sum rule for the subtraction function; 6 Wick rotation; 7 Decomposition of the mass shift; 8 Operator product expansion; 9 Leading Wilson coefficients; 10 Difference between proton and neutron; 11 Perturbation theory; 12 Moments of the structure functions; 13 Prediction for the constant C; 14 Renormalization; 15 Subleading divergence",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "s10052-020-08615-2",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "s10052-020-08615-2.pdf",
+    "source_sha256": "23becb0b1a2e7f1b3d8a6a6099bfbd3e2109fdbc0804effbaa141066b20bf9fa",
+    "pages": 26,
+    "arxiv": null,
+    "doi": "10.1140/epjc/s10052-020-08615-2",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

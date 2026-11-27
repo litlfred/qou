@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0903.2472v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.2472v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -32,6 +32,18 @@
     "library/arxiv-0903.2472v1/sections/sec-017"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group — We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with\n\n**Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group**\n\n*Tudor Dimofte,1 Sergei Gukov,1,2 Jonatan Lenells,3 and Don Zagier4,5*\n\n61 pp, 19 sections.\n\n**Abstract.** We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with complex gauge group GC, sometimes in multiple ways. In the background of a non-abelian irreducible ﬂat connection, per- turbative GC invariants turn out to be interesting topological invariants, which are very diﬀerent from ﬁnite type (Vassiliev) invariants obtained in a theory with compact gauge group G. We explore various aspects of these invariants and present an example where we compute them explicitly to high loop order. We also introduce a notion of “arithmetic TQFT” and conjecture (with supporting numerical evidence) that SL(2, C) Chern-Simons theory is an example of such a theory. CALT-68-2716\n\n**Outline.** Front matter; 2 Perturbation theory around a non-trivial fla; 2.1 Feynman diagrams and arithmetic TQFT; 2.2.1 Analytic continuation; 2.2.2 A hierarchy of differential equations; 2.3 Classical and quantum symmetries; 2.4 Brane quantization; 3 A state integral model for perturbative $SL(; 3.1 Ideal triangulations of hyperbolic 3-manif; 3.2 Hikami's invariant; 3.3 Quantum dilogarithm; 4 Examples and computations; 4.1 Numerical verification of the arithmeticit; 4.2 Perturbative $SL(2,{\\mathbb{C}})$ invarian; 4.2.1 Quantization; Geometric branch; Conjugate branch; Abelian branch",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -55,8 +67,8 @@
       "stamp_date": "13 Mar 2009"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

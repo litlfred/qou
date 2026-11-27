@@ -1,0 +1,1 @@
+The surjection ϕ in Theorem 7 restricts to a surjection from the set of critical points (x, y) of Ψa,b n , a, b, n ∈Z, with (x, y) ∈S onto the set of representations ρ(s,u) : π1(Mp/q) →SL(2, C), (s, u) ∈˜ N , which are equivalent to SU(2)–representations of π1(Mp/q).

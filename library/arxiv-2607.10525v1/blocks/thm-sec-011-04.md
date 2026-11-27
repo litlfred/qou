@@ -1,0 +1,1 @@
+Let p be an odd prime, and let Hp be Nikshych’s semisimple Hopf algebra of dimension 4p2, so that Rep(Hp) ≃CC2 p as tensor categories. Then Rep(Hp) has one equivalence class of fiber functors if p ≡3 (mod 4), and two equivalence classes of fiber functors if p ≡1 (mod 4).

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1501.04614v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1501.04614v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -20,6 +20,18 @@
     "library/arxiv-1501.04614v1/sections/sec-005"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "KNOT CABLING AND THE DEGREE OF THE COLORED JONES — We continue our study of the degree of the colored Jones polynomial under knot cabling started in [8].\n\n**KNOT CABLING AND THE DEGREE OF THE COLORED JONES**\n\n*POLYNOMIAL II*\n\n14 pp, 7 sections.\n\n**Abstract.** We continue our study of the degree of the colored Jones polynomial under knot cabling started in [8]. Under certain hypothesis on this degree, we determine how the Jones slopes and the linear term behave under cabling. As an application we verify Garoufalidis’ Slope Conjecture and a conjecture of [8] for cables of a two-parameter family of closed 3-braids called 2-fusion knots.\n\n**Outline.** Front matter; 1 Introduction; 2 Jones slopes of cable knots; 3 Two-fusion knots; 3.1 The highest degree and the Jones slope.; 3.2 Calculating the linear term; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -41,8 +53,8 @@
       "stamp_date": "19 Jan 2015"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

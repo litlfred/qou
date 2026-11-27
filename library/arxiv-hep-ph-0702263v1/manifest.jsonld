@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0702263v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0702263v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -20,6 +20,18 @@
     "library/arxiv-hep-ph-0702263v1/sections/sec-005"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Chiral Low-Energy Constants ∗ — The progress in determining the coupling constants of mesonic chi- ral Lagrangians is reviewed, with emphasis on the work performed in three successive European\n\n**Chiral Low-Energy Constants ∗**\n\n*Gerhard Ecker*\n\n12 pp, 7 sections.\n\n**Abstract.** The progress in determining the coupling constants of mesonic chi- ral Lagrangians is reviewed, with emphasis on the work performed in three successive European Networks (Eurodaphne I and II, Euridice). Reliable estimates of those constants are essential for making full use of next-to-next-to-leading-order calculations in chiral perturbation the- ory. The precision in the values of the strong coupling constants of O(p4) has been increasing steadily over the years. The situation is less satisfactory in the nonleptonic weak sector where further phe- nomenological input and more theoretical work are needed. A lot of progress has recently been achieved for electromagnetic coupling con- stants occurring in radiative corrections for mesonic processes at low energies. ∗Presented at The Final Euridice Meeting, Kazimierz, Poland, Aug. 2006 Supported in part by EU contract No.\n\n**Outline.** Front matter; Introduction; Strong interactions; Nonleptonic weak interactions; Dynamical photons; Dynamical photons and leptons; Outlook",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
@@ -48,8 +60,8 @@
       "stamp_date": "26 Feb 2007"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

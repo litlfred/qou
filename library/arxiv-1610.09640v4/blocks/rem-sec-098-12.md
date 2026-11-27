@@ -1,0 +1,1 @@
+The category D(Aen), with the tensor operation (−⊗L A −), is a monoidal category. Moreover, D(Aen) is a biclosed monoidal category: the two internal Hom operations are RHomA(−, −) and RHomAop(−, −). If A is weakly commutative, then D(Aen) is a symmetric monoidal category. See [157, Section 5], [102] and [115].

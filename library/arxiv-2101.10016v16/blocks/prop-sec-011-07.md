@@ -1,1 +1,1 @@
-Let A be an Ω-involutive weak quasi bialgebra. The forgetful functor
+Let A be an Ω-involutive weak quasi bialgebra. The forgetful functor F : Reph(A) → Herm (or F : Rep+(A) → Hilb in the C ∗ -case) is a ∗-functor. The natural transformations satisfy F ∗ ρ,σ = ρ ⊗ σ(Ω) ◦ Gρ,σ, G∗ρ,σ = Fρ,σ ◦ ρ ⊗ σ(Ω−1 ). (12.1)

@@ -1,0 +1,1 @@
+It seems likely that the partial orders ′ and  on SRn deﬁned above are actually the same. However, since it is irrelevant for the present purposes, we do not further pursue this issue here. As we noted in §2.5, the stochastic domination relation ≼deﬁnes a partial order on Pn (cf. [61]). The anti-symmetry of  follows from our next result.

@@ -1,1 +1,0 @@
-It should be remarked that there is another *analytic* approach to "unify" the WRT invariants by realizing the radial limiting values of a holomorphic function defined on the unit disk $\{z\in \C;\;|z|<1\}$, studied in [@Lawrence:integrality; @Lawrence:holomorphic; @Lawrence-Rozansky; @Lawrence-Zagier; @Hikami1; @Hikami3; @Hikami4; @Hikami5].

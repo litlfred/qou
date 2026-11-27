@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/4geo-dedi-rev",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/4geo-dedi-rev/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -39,6 +39,18 @@
     "library/4geo-dedi-rev/sections/sec-024"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On the quantum Teichmüller invariants of fibred cusped 3-manifolds — 26 sections: Front matter; ON THE QUANTUM TEICHM ¨ULLER INVAR; ON THE QUANTUM TEICHM ¨ULLER INVAR\n\n**On the quantum Teichmüller invariants of fibred cusped 3-manifolds**\n\n*The documents may come from teaching and research*\n\n26 pp, 26 sections.\n\n**Outline.** Front matter; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB; ON THE QUANTUM TEICHM ¨ULLER INVARIANTS OF FIB",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "4geo-dedi-rev",
@@ -49,8 +61,8 @@
     "pages": 26,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

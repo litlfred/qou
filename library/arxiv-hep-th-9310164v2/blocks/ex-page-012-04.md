@@ -1,0 +1,1 @@
+This is an example of a ﬁnite dimensional Hopf algebra over C which satisﬁes all the conditions for a spherical Hopf algebra except that the left and right traces are distinct. This example is the quantised enveloping algebra of the Borel subalgebra of SL2(C).

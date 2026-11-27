@@ -109,7 +109,7 @@ def build_index(root: Path) -> tuple[set[str], set[str]]:
     """(relative posix paths, bare basenames) of every .py in the tree."""
     paths, names = set(), set()
     for p in root.rglob("*.py"):
-        if any(part in (".git", "node_modules", ".lake") for part in p.parts):
+        if any(part in (".git", ".claude", "node_modules", ".lake") for part in p.parts):
             continue
         paths.add(p.relative_to(root).as_posix())
         names.add(p.name)
@@ -138,7 +138,7 @@ def index_scripts(root: Path):
     producers: dict[str, list[str]] = collections.defaultdict(list)
     basenames = set()
     for p in root.rglob("*.py"):
-        if any(part in (".git", "node_modules", ".lake") for part in p.parts):
+        if any(part in (".git", ".claude", "node_modules", ".lake") for part in p.parts):
             continue
         basenames.add(p.name)
         try:

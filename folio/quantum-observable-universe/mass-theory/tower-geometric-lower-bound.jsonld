@@ -1,13 +1,14 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-tower-geometric-lower-bound",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:tower-geometric-lower-bound",
@@ -20,7 +21,7 @@
     "gap-a-3",
     "plancherel"
   ],
-  "leanRef": "qou:QOU.Mass.WStd.wStd_geometric_from_three",
+  "leanRef": "qou:QOU.MassTheory.WStdSuperExponential.wStd_geometric_from_three",
   "text": "tower-geometric-lower-bound.md",
   "provenance": "authored"
 }

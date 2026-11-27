@@ -10,17 +10,14 @@ and for $q^n \neq r_0$ this solves for $B_n$ in terms of $B_{n-1},\dots,B_{n-d}$
 with coefficients $r_j/(q^n - r_0)$, rational in $q$ and $q^n$. A Laurent $R$
 shifts the indices but leaves the factor $q^n$ on the $B_n$ coefficient. This is
 the standard fact that a $q$-holonomic series has $q$-recursive coefficients; it
-fixes every term from $R$ and the first $d$ terms. (An earlier version of this
-proof wrote the recurrence with coefficients independent of $n$; the factor
-$q^n$ makes them depend on $n$.)
+fixes every term from $R$ and the first $d$ terms. (Note that the factor $q^n$ makes the recurrence coefficients $r_j/(q^n - r_0)$ depend explicitly on the index $n$, rather than being constant in $n$.)
 
 For the Archimedean image, apply $\tau$ at $q=q_0$ and let $q\to q_0$ act on the
 shift operator $x\mapsto qx$: the multiplicative $q$-shift degenerates to the
 infinitesimal generator $x\,\partial_x$ (the confluent limit of a $q$-difference
 operator), so $G(qx;q)=R(q,x)G(x;q)$ passes to a linear differential equation
 $x\,\partial_x \widehat{G} = \rho(x)\,\widehat{G}$ on the realised
-$\widehat{G}=\tau G$ — the Dirac-type equation. The Lean witness
-[`QOU.Mass.binding_qdifference_recurrence`](#prop:binding-genfun-qdifference)
-packages the depth-$d$ recurrence, with position-dependent coefficients, as
-a structure and extracts the term identity; the existence of $R$ for the binding $G$ is the conjectural input
-(carried as the structure hypothesis). $\qquad\blacksquare$
+$\widehat{G}=\tau G$ — the Dirac-type equation. Given the depth-$d$
+recurrence, with position-dependent coefficients, the term identity follows;
+the existence of $R$ for the binding $G$ is the conjectural input
+(carried as a hypothesis). $\qquad\blacksquare$

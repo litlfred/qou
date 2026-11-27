@@ -1,0 +1,1 @@
+During this program, the bright (V = 11.7), very metal-poor halo giant CS 31082-001 , discovered during medium-resolution spectroscopic follow-up of candidate metal-poor stars from the HK survey of Beers and colleagues (Beers, Preston, & Shectman [@beers92]; Beers [@beers99]; Beers et al. [@beers02b]) was found to be strongly enhanced in heavy neutron-capture elements.

@@ -1,0 +1,1 @@
+The proof of Theorem 17.3.19 provided here is not the original proof from [153]. Our proof, which relies on the NC MGM Equivalence, seems to allow a generalization to the case of a base ring K that is not a ﬁeld (as long as the ring A is ﬂat over K). See [157] for some results in this direction.

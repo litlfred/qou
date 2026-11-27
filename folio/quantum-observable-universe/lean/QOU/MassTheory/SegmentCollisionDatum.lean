@@ -68,8 +68,8 @@ angle, with the two clauses that make the selection well posed (minimiser, uniqu
 -/
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
-import QOU.MathlibExt.DisjointBlockTraceLaw
-import QOU.Brings.BringUTContactChirality
+import HeckeTemperleyLieb.DisjointBlockTraceLaw
+import QOU.BringsSurface.BringUTContactChirality
 
 namespace QOU.MassTheory.SegmentCollision
 

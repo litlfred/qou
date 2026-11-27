@@ -1,1 +1,0 @@
-Correspondingly, we should restrict to a subalgebra of the operator algebra that is invariant under $(\mb x,\bar{\mb x},\mb y,\bar{\mb y})\to(\mb x^{-1},\bar{\mb x}^{-1},\mb y^{-1},\bar{\mb y}^{-1})$.

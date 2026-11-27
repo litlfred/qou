@@ -1,0 +1,1 @@
+Let A and B be DG rings, let M and N be abelian categories, and let F : C(A, M) →C(B, N) be a DG functor. (1) The T-additive functor ( ¯F, ¯τF ) : K(A, M) →K(B, N) is a triangulated functor. (2) Suppose G : C(A, M) →C(B, N) is another DG functor, and η : F →G is a strict morphism of DG functors. Then ¯η : ( ¯F, ¯τF ) →( ¯G, ¯τG) is a morphism of triangulated functors.

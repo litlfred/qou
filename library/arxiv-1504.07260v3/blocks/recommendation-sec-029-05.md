@@ -1,1 +1,0 @@
-In general, it is known that, in type IIA, a NS5-brane wrapping a non-trivial 4-manifold (such as K3) times a circles S1, must carry also a ‘geometrically induced’ momentum charge along S1 (by a chain of dualities, this is related to the D1-brane charge geometrically induced on a type IIB D5 brane wrapping K3).

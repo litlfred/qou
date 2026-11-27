@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1412.4229v4",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1412.4229v4/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -23,6 +23,18 @@
     "library/arxiv-1412.4229v4/sections/sec-008"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS — Let A →B be a homomorphism of commutative rings.\n\n**THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS**\n\n*AMNON YEKUTIELI*\n\n44 pp, 10 sections.\n\n**Abstract.** Let A →B be a homomorphism of commutative rings. The squar- ing operation is a functor SqB/A from the derived category D(B) of complexes of B-modules into itself. This operation is needed for the deﬁnition of rigid complexes (in the sense of Van den Bergh), that in turn leads to a new approach to Grothendieck duality for rings, schemes and even DM stacks. In our paper with J.J. Zhang from 2008 we introduced the squaring oper- ation, and explored some of its properties. Unfortunately some of the proofs in that paper had severe gaps in them. In the present paper we reproduce the construction of the squaring opera- tion. This is done in a more general context than in the ﬁrst paper: here we consider a homomorphism A →B of commutative DG rings. Our ﬁrst main result is that the square SqB/A(M) of a DG B-module M is independent of the resolutions used to present it.\n\n**Outline.** Front matter; 0 Introduction; 1 Some Facts on DG Rings and Modules; 2 Resolutions of DG Modules; 3 Central Pairs of DG Rings and their Resoluti; 4 DG Ring Homotopies; 5 Pairs of DG Modules, Compound Resolutions, a; 6 The Rectangle Operation; 7 The Squaring Operation; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -44,8 +56,8 @@
       "stamp_date": "24 Oct 2015"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

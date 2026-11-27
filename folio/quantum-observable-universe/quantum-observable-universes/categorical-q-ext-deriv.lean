@@ -1,7 +1,7 @@
 import Mathlib.CategoryTheory.Linear.Basic
 import Mathlib.CategoryTheory.Preadditive.Basic
-import QOU.Basic
-import QOU.Glossary
+import QOU.Core.Basic
+import QOU.Core.Glossary
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
@@ -11,7 +11,7 @@ import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
-import QOU.QuantumObservableUniverse.CategoricalFoundations
+import QOU.Core.CategoricalFoundations
 
 
 /-!

@@ -1,1 +1,0 @@
-It should now be clear that the transformations [\[Ts\]](#Ts){reference-type="eqref" reference="Ts"}--[\[Ss2\]](#Ss2){reference-type="eqref" reference="Ss2"} coincide with the $Sp(2,{\mathbb Z})$ action on the index, described in [@KW-index] and in Section [\[sec:Sp\]](#sec:Sp){reference-type="ref" reference="sec:Sp"} above.

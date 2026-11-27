@@ -1,1 +1,0 @@
-Some authors publish their results directly as masses, but this is not a recommended practice for high-precision mass measure- ments since the mass values could be modiﬁed due to change of the reference mass.

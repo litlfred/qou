@@ -1,0 +1,1 @@
+The condition H2(M; Z) = 0 is imposed for analytic reasons: it rules out closed normal surfaces that would cause squared Dirac δ-factors when the kine- matical kernel is multiplied by the pushed-forward dynamical content, see [1, Proof of Theorem 7] and [6]. It does not imply the existence of a globally balanced angle structure on any given triangulation.

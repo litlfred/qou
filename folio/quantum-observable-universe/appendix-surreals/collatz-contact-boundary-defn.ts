@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:collatz-contact-boundary",
   lean: {
-    ref: "qou:QOU.AlgebraicSubstrate.CollatzContactBoundary",
+    ref: "qou:QOU.Core.AlgebraicSubstrate.CollatzContactBoundary",
     validation: "not_checked",
   },
   title:

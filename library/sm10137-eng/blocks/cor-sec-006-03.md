@@ -1,0 +1,1 @@
+There exists a constant C such that for any kernel K of an integral operator on L2(R+) with the estimates |K(x, y)| ⩽ A (x + y)2 and |∂yK(x, y)| ⩽ A (x + y)2 , x, y > 0, for some constant A, for any R > 0 we have ∥χ[R,∞)Kχ[R,∞)∥J1 ⩽AC  1 R + √ R  . (7.4)

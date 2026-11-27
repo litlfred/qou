@@ -1,4 +1,4 @@
-We evaluate the crossing energy ([crossing energy](#def:crossing-energy)) for the trefoil knot and then detail how binding arises in hadrons.
+Evaluate the crossing energy ([crossing energy](#def:crossing-energy)) for the trefoil knot and then detail how binding arises in hadrons.
 
 **Single crossing energy.**
 Each crossing in a knot diagram carries Skein weight $q$ (positive crossing) or $-q^{-1}$ (negative crossing). For a positive crossing, the energy contribution is

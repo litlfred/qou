@@ -7,7 +7,7 @@ export default definition({
     "observable-subcategory", "bundle-category",
     "degree-zero", "frobenius-pairing",
   ],
-  lean: { ref: "qou:QOU.ObservableSubcategory",
+  lean: { ref: "qou:QOU.Core.ObservableSubcategory",
     validation: "not_checked",
   },
   uses: [

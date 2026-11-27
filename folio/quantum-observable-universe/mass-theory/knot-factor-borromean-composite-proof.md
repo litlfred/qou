@@ -1,4 +1,4 @@
-*Proof.* Brunnian-ness decouples the Hecke pairings of distinct
+Brunnian-ness decouples the Hecke pairings of distinct
 components: $\chi_\lambda(\beta_{\mathrm{Bor}_k}) =
 \prod_{i=1}^{k}\chi_\lambda(\beta_{4_1}^{(i)})$ on each Wedderburn
 block.  Substituting in

@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/disssubmission/blocks/conj-sec-024-01",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "kind": "conjecture",
+  "pageStart": 77,
+  "pageEnd": 81,
+  "text": "conj-sec-024-01.md",
+  "derivedFrom": "library/disssubmission/sections/sec-024",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/disssubmission/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.1",
+    "source_kind": "conjecture",
+    "claim_domain": "math",
+    "evidence_kind": "conjectural",
+    "evidence_location": "none",
+    "evidence_locator": "Open conjecture stated in sections/sec-024-4-the-tannaka-group-of-the-theta-divisor.md",
+    "claim_id": "disssubmission#conjecture:4.1"
+  }
+}

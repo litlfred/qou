@@ -23,6 +23,12 @@ export default theorem({
   lean: { ref: "qou:QOU.su2_emergence_rank_forced", validation: "not_checked" },
   title: "Emergence of the gauge group",
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-20",
+      body:
+        "Lean pointers moved out of the prose (voice drain, epic `qou-d4kh`). [`SU2EmergenceRankForced.lean`](../lean/QOU/QuantumObservableUniverse/SU2EmergenceRankForced.lean) carries the statement above as `QOU.su2_emergence_rank_forced`, together with the rank-free subgroup half `QOU.mem_specialUnitary_of_unitary_of_det_one` and the non-vacuity check `QOU.su2_emergence_rank_hypothesis_is_load_bearing`. The rank is sourced from `QOU.BraidsAndKnots.exteriorSquareDim_eq_one_iff`; the subgroup half composes `QOU.su2_emergence_combined`.",
+    },
     { kind: "note", date: "2026-10-11", body: "Relocated from the block prose by the paper-voice commentary audit: stating the two conclusions as one conjunction is deliberate — an earlier formulation derived \"which subgroup\" and reported it as though it had also derived \"which rank\". `QOU.su2_emergence_rank_forced` is sorry-free." },
     {
       kind: "note",

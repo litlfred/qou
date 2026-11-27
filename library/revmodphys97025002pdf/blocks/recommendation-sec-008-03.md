@@ -1,1 +1,0 @@
-If the final adjustment used to obtain the 2022 recommended values is rerun without the muonic Lamb- shift data in Tables XIVand XV, the resulting values of rp=fm and rd=fm are 0.8529ð13Þ ½51 × 10−4 and 2.1326ð17Þ ½8.1 × 10−4 and arise from the electronic H and D transition frequency data alone.

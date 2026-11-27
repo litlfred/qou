@@ -5,7 +5,7 @@ export default remark({
   title:
     "$\\mathfrak{Q}_\\beta$ precision-ladder $\\S 4(d)$ formalize-first gate — any candidate Habiro element $F(q_0)$ must have magnitude consistent with the target observable's order of magnitude; the $z(q_0) \\approx 0.6127 < 1$ direction obstruction is the canonical refutation precedent",
   lean: {
-    ref: "qou:QOU.QBeta.DirectionSanityGate.qbeta_direction_sanity_magnitude_match",
+    ref: "qou:QOU.Nuclear.QBeta.DirectionSanityGate.qbeta_direction_sanity_magnitude_match",
     validation: "not_checked",
   },
   interprets: "prop:q-beta-q-eq-one-shadow-gate",
@@ -33,6 +33,7 @@ export default remark({
     "no-fit",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The additive band $|m-t|\\le10t$ used by the Lean siblings is not this window" },
     { kind: "status", date: "2026-11-16", body: "Demoted from proposition on owner ruling 2026-11-16 (card \"Demote all six\"): the claim is not proved from established results, so it is stated as a remark (a screening policy, not a theorem). Label renamed rem:q-beta-direction-sanity-gate -> rem:q-beta-direction-sanity-gate." },
     {
       kind: "caveat",

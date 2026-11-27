@@ -1,1 +1,0 @@
-The same idea applied to $\Gamma_2 = \{u \in \R_+\}$ yields the affine coordinate $$\xi = \frac{1}{2\pi} \int_{\Gamma_2 \cap T_b} \log|u|\,d\arg(w)$$ To arrive at the second formula for $\xi$, we must solve for $|u|$ in terms of $R,\lambda$, and $\theta = \arg(w)$.

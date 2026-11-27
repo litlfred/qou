@@ -1,6 +1,6 @@
 import Mathlib.Tactic
-import QOU.BraidKnot.BraidLinkTypes
-import QOU.BraidKnot.F3_eps6_leading_eq_neg_2b_cubed
+import BraidKnotOctonion.BraidLinkTypes
+import BraidKnotOctonion.F3_eps6_leading_eq_neg_2b_cubed
 
 /-!
 # QOU.BraidKnot.typed_b3_sub_braid_extraction

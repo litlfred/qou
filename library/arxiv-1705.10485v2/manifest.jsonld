@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1705.10485v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1705.10485v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -40,6 +40,18 @@
     "library/arxiv-1705.10485v2/sections/sec-025"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Mod-φ convergence, II: Estimates on the speed of convergence — In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-φ\n\n**Mod-φ convergence, II: Estimates on the speed of convergence**\n\n*Valentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali*\n\n53 pp, 27 sections.\n\n**Abstract.** In this paper, we give estimates for the speed of convergence towards a limiting stable law in the recently introduced setting of mod-φ convergence. Namely, we deﬁne a notion of zone of control, closely related to mod-φ convergence, and we prove estimates of Berry–Esseen type under this hypothesis. Applications include: • the winding number of a planar Brownian motion; • classical approximations of stable laws by compound Poisson laws; • examples stemming from determinantal point processes (characteristic polynomials of random matri- ces and zeroes of random analytic functions); • sums of variables with an underlying dependency graph (for which we recover a result of Rinott, obtained by Stein’s method); • the magnetization in the d-dimensional Ising model; • and functionals of Markov chains.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Mod-$\\phi$ convergence; 1.2 Results and outline of the paper; 1.3 Stable distributions and mod-stable conver; 2 Speed of convergence estimates; 2.1 The notion of zone of control; 2.2 Spaces of test functions; 2.3 Estimates for test functions; 2.4 Smoothing techniques; 2.5 Bounds on the Kolmogorov distance; 3 Examples with an explicit Fourier transform; 3.1 Sums of independent random variables; 3.2 Winding number of a planar Brownian motion; 3.3 Approximation of a stable law by compound ; 3.4 Convergence of Ornstein--Uhlenbeck process; 3.5 Logarithms of characteristic polynomials o; 4 Cumulants and dependency graphs",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -63,8 +75,8 @@
       "stamp_date": "20 Feb 2018"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

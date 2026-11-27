@@ -1,1 +1,0 @@
-Instead of the $\Q$-algebra $B$ of \ref{para:1.1.4}, we shall consider a finite-dimensional semi-simple $\Q_p$-algebra $B_p$, since the category of $p$-divisible groups up to isogeny is $\Q_p$-linear.

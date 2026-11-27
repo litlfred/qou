@@ -1,0 +1,1 @@
+3. — 1. If f(x) is an analytic function over the disk D(0, r−), then F(x) is also analytic over D(0, r−). 2. If F(x) is analytic over the disk D(0, r−) and if G(x) is another analytic function over D(0, r−) such that dqG(x) = f(x), then Z x f(t)dqt = G(x) −G(0).

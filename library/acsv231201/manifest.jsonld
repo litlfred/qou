@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -113,6 +113,18 @@
     "library/acsv231201/sections/sec-098"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Analytic Combinatorics in Several Variables Expanded Second Edition — 100 sections: Front matter; Preface to the second edition; Preface to the first edition\n\n**Analytic Combinatorics in Several Variables Expanded Second Edition**\n\n*Expanded Second Edition*\n\n589 pp, 100 sections.\n\n**Outline.** Front matter; Preface to the second edition; Preface to the first edition; List of Symbols; Introduction; Generating functions and asymptotics; New multivariate methods; Outline of the remaining chapters; Generating functions; Power series; Rational operations on generating functions; Algebraic generating functions; D-finite generating functions and diagonals; Labeled classes; Univariate asymptotics; An explicit formula for rational functions; Meromorphic asymptotics; Darboux's method",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "acsv231201",
@@ -124,8 +136,8 @@
     "pages": 589,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

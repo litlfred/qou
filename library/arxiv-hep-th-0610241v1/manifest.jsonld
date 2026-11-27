@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0610241v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0610241v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -39,6 +39,18 @@
     "library/arxiv-hep-th-0610241v1/sections/sec-024"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Gravity and the standard model with neutrino mixing — We present an eﬀective uniﬁed theory based on noncommutative geometry for the standard model with neutrino mixing, minimally coupled to gravity.\n\n**Gravity and the standard model with neutrino mixing**\n\n*ALI H. CHAMSEDDINE, ALAIN CONNES, AND MATILDE MARCOLLI*\n\n71 pp, 26 sections.\n\n**Abstract.** We present an eﬀective uniﬁed theory based on noncommutative geometry for the standard model with neutrino mixing, minimally coupled to gravity. The uniﬁcation is based on the symplectic unitary group in Hilbert space and on the spectral action. It yields all the detailed structure of the standard model with several predictions at uniﬁcation scale. Besides the familiar predictions for the gauge couplings as for GUT theories, it predicts the Higgs scattering parameter and the sum of the squares of Yukawa couplings. From these relations one can extract predictions at low energy, giving in particular a Higgs mass around 170 GeV and a top mass compatible with present experimental value. The geometric picture that emerges is that space-time is the product of an ordinary spin manifold (for which the theory would deliver Einstein gravity) by a ﬁnite noncommutative geometry F.\n\n**Outline.** Front matter; 1 Introduction; 2 The ﬁnite geometry; 2.1 The left-right symmetric algebra; 2.3 Real spectral triples; 2.4 The subalgebra and the order one condition; 2.5 Unimodularity and hypercharges; 2.6 The classiﬁcation of Dirac operators; 2.7 The moduli space of Dirac operators and th; 2.8 Dimension, KO-theory, and Poincar´e dualit; 3 The spectral action and the standard model; 3.1 Riemannian geometry and spectral triples; 3.2 The product geometry; 3.3 The real part of the product geometry; 3.4 The adjoint representation and the gauge s; 3.5 Inner ﬂuctuations and bosons; 3.6 The Dirac operator and its square; 3.7 The spectral action and the asymptotic exp",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "arxiv-hep-th-0610241v1",
@@ -61,8 +73,8 @@
       "stamp_date": "23 Oct 2006"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

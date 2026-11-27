@@ -1,0 +1,1 @@
+Let M be the 3-manifold obtained by surgery along a framed link L, and let W be the 4-manifold associated to the surgery presen- tation. Then, 24Acwri(M) — 3|Hi(M; Z)|signW can be presented by a formula of Alexander polynomial coefficients and linking numbers of L [251, Formula 6.3.1], which might be helpful.

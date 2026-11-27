@@ -1,0 +1,1 @@
+The reader is referred to [8, 10] for a more thorough discussion of geodesics on spherical cone manifold, but suﬃce it to say that the contribution of the face Fi to the geodesic curvature is 0 if the two edges are (hyper)parallel, and equal to the angle of intersection if they intersect.

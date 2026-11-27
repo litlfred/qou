@@ -2,7 +2,7 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:flavor-dressing-functor",
-  lean: { ref: "qou:QOU.FlavorDressing.FlavorDressingFunctor",
+  lean: { ref: "qou:QOU.EightfoldWay.FlavorDressingFunctor",
     validation: "not_checked",
   },
   title: "Flavor dressing functor",

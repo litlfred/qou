@@ -1,1 +1,0 @@
-For higher Cayley-Dickson (n > 3) algebras Aut(An) = Aut(O) × (n −3)S3, indicating the higher Cayley- Dickson algebras only add additional trialities, and perhaps no new fundamental physics should be expected beyond C⊗S.

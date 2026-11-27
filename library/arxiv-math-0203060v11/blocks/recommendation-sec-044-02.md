@@ -1,1 +1,0 @@
-Further, any object $X$ in ${\mathcal C}_j$, $j\ne 0$, must be invariant under tensoring (on either side) with invertibles from ${\mathcal C}_0$, since otherwise the dimension of ${\mathcal C}_j$ would be greater than $p$ (as the dimension of $X$ is greater than $1$).

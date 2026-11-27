@@ -1,4 +1,4 @@
-**Proposition (conditional on primitive rigidity).**
+**Conditional on primitive rigidity.**
 Let $H$ be an additive abelian group whose coproduct $\Delta_q$ and
 counit $\epsilon$ are additive, and suppose primitives are *rigid* on
 $H$: a primitive element with vanishing counit is zero.  Then any two

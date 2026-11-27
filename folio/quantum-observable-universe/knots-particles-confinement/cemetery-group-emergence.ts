@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:cemetery-group-emergence",
   title:
     "Cemetery group as the kernel of the observation functor",
-  lean: { ref: "qou:QOU.BraidKnot.CemeteryGroupEmergence", validation: "stub" },
+  lean: { ref: "qou:QOU.BraidsAndKnots.CemeteryGroupEmergence", validation: "stub" },
   uses: [
     "def:cemetery-group",
     "conj:crystal-graph-realization",

@@ -1,0 +1,1 @@
+Assume that the base ﬁeld k is a ﬁeld of characteristic 0. Assume that M ∈R-gmod has a socle qcS with a self-dual simple module S and c ∈Z. Then we have the equality in K(R-gmod) [M] = qc[S] + X k qck[Sk] with self-dual simple modules Sk and ck < c. Applying this theorem to convolution products, we obtain the following corollary.

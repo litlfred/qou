@@ -148,7 +148,7 @@ def main(argv=None) -> int:
 
     off_hits = []
     for p in sorted(REPO.rglob("*.py")):
-        if ".git" in p.parts:
+        if {".git", ".claude", ".lake", "node_modules"} & set(p.parts):
             continue
         if not args.include_deprecated and ("_deprecated" in p.parts or "fsh-guts" in p.parts):
             continue

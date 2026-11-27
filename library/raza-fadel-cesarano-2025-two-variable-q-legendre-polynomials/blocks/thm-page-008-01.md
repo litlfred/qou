@@ -1,0 +1,1 @@
+The 2VqLP Sn,q(x, y) are quasi monomials with respect to the following q-multi- plicative and q-derivative operators: ˆMq,S = y + D−1 q,x ˆDq,yTy(1 + qTx), (43) or, alternatively, ˆMq,S := yTx + D−1 q,x ˆDq,y(1 + qTx) (44) and ˆPq,qS = ˆDq,y. (45)

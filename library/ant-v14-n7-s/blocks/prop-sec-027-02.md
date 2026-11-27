@@ -1,1 +1,1 @@
-A.3 [Ghate 1999, §5.2]. We have
+Let F ∈Skk(U ∗ F,1(n)), and let N = n ∩Z. Then we have

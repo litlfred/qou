@@ -1,0 +1,1 @@
+By replacing n-twist (n ≥2) by (n+ 2)-twist in the Conway symbol of an alternating knot K, the signature changes by −2 if the replacement is made in a parallel twist with positive crossings, the signature changes by +2 if the replacement is made in a parallel twist with negative crossings, and remains unchanged if the replacement is made in an anti-parallel twist.

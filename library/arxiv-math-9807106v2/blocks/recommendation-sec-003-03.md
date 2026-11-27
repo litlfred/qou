@@ -1,1 +1,0 @@
-Furthermore in full analogy with the representation theory of g we shall introduce ‘ﬁnite dimensional modules’ obtained factorising maximal ‘Verma submodules’ of reducible ‘Verma modules’ by an analog of the BGG resolution in which the role of W is replaced by the action of the KW group, equivalent according to (2.3) to the right action of W on ˜W.

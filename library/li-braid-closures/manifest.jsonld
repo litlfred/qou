@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/li-braid-closures",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/li-braid-closures/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -25,6 +25,18 @@
     "library/li-braid-closures/sections/sec-010"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Knot polynomials on braid closures — We explore properties of the Jones and Alexander polynomials of braid closures of braids of index 3.\n\n**Knot polynomials on braid closures**\n\n*January 29, 2025*\n\n16 pp, 12 sections.\n\n**Abstract.** We explore properties of the Jones and Alexander polynomials of braid closures of braids of index 3. We analyze how the evaluations of these polynomials at t = −1 force implications regarding the topological structure of the braid closure, such as its number of circles or the existence of splittings. As a consequence, we construct an infinite number of pairs of distinct non-split links that have the same HOMFLYPT polynomial.\n\n**Outline.** Front matter; Introduction; Preliminaries; The braid group; Young diagrams; Specht modules of the Hecke algebra; The HOMFLYPT polynomial; Closures of 3-braids; Split Links; Knots; 4-braids and beyond; Acknowledgments",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "li-braid-closures",
@@ -36,8 +48,8 @@
     "pages": 16,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

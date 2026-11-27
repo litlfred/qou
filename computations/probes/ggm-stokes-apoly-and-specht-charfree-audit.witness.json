@@ -1,0 +1,741 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T09:01:59.584359+00:00",
+  "commitSha": "10cba35854221a25f5fde79fafe1b446934cbb3e",
+  "assertions": [
+    {
+      "name": "ggm_52_splus_sminus_reconstructed_from_eq98",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "GGM 2012.00062v3 eqs (96)/(97)/(98) in GGM_peacock_20v4.tex:2077-2110"
+    },
+    {
+      "name": "ggm_eq17_inversion_41_and_52",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "GGM 2012.00062v3 eq (17) S^+(0)^T S^-(0) = I on both 4_1 (eq 60) and 5_2"
+    },
+    {
+      "name": "a41_nz_gluing_resultant_and_bezout_exact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Neumann-Zagier 2-tetrahedron gluing of S^3 \\ 4_1 + Bezout certificate"
+    },
+    {
+      "name": "a41_four_way_agreement_census_aj_routea_monomials",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "library/A_census.tgz:apolys/K2_1.apoly == AJFigureEight == -RouteANewtonPolygonDT"
+    },
+    {
+      "name": "a41_deformed_hyperbolic_80dps_residual_lt_1e75",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "80-dps mpmath evaluation of A41(L(z0), M=11/10) on the deformed gluing branch"
+    },
+    {
+      "name": "a52_derived_mirror_matches_culler_census_K3_2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "library/A_census.tgz:apolys/K3_2.apoly == L^3 * FiveTwoAPolynomialFromFareyWord.A(1/L, M)"
+    },
+    {
+      "name": "specht_standard_basis_rank_equals_num_syt_all_chars",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "rank_{F_p}(S^mu) == #SYT(mu) for all mu |- n (n=2..5) and p in {2,3,5,7}"
+    },
+    {
+      "name": "specht_gram_degenerates_for_p_le_n",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "James modular degeneracy: for every n in 2..5, some mu |- n has rank_{F_p}(G^mu) < #SYT(mu)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 304,
+  "computation": "ggm-stokes-apoly-and-specht-charfree-audit",
+  "scriptFile": "ggm_stokes_apoly_and_specht_charfree_audit_probe.py",
+  "scriptHash": "dfefc4221993",
+  "scriptCommitSha": "10cba35854221a25f5fde79fafe1b446934cbb3e",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "56872bc54313b172"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/ggm_stokes_apoly_and_specht_charfree_audit_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/ggm_stokes_apoly_and_specht_charfree_audit_probe.py"
+  },
+  "description": "Verification witness for beans qou-m1tr and qou-73kb: (1) GGM 2012.00062v3 eqs (17)/(60)/(96)/(97)/(98) Stokes reconstruction and inversion, Neumann-Zagier elimination + 80-dps hyperbolic curve check for A_{4_1} and A_{5_2} across Culler's A_census, AJFigureEight, and RouteANewtonPolygonDT; (2) characteristic-free Specht standard-basis rank == #SYT(mu) vs prime-characteristic Gram degeneracy for all partitions of n = 2..5.",
+  "parameters": {
+    "dps": 80
+  },
+  "data": {
+    "a41_deformed_80dps_abs_residual": "4.7146142466643837641e-81",
+    "a41_monomials_m_l": [
+      [
+        4,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        6,
+        1
+      ],
+      [
+        8,
+        1
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    "ggm_52_dt_matrix_eq98": [
+      [
+        0,
+        4,
+        3
+      ],
+      [
+        -4,
+        0,
+        -3
+      ],
+      [
+        -3,
+        3,
+        0
+      ]
+    ],
+    "ggm_52_splus0_recon": [
+      [
+        1,
+        4,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        -3,
+        -9,
+        1
+      ]
+    ],
+    "ggm_52_sminus0_recon": [
+      [
+        1,
+        0,
+        3
+      ],
+      [
+        -4,
+        1,
+        -3
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "specht_modular_table_n2_to_n5": [
+      {
+        "n": 2,
+        "partition": [
+          2
+        ],
+        "num_syt": 1,
+        "num_tabloids": 1,
+        "gram_det_int": "1",
+        "ranks_mod_p": {
+          "2": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          },
+          "3": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          },
+          "5": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          },
+          "7": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          }
+        }
+      },
+      {
+        "n": 2,
+        "partition": [
+          1,
+          1
+        ],
+        "num_syt": 1,
+        "num_tabloids": 2,
+        "gram_det_int": "2",
+        "ranks_mod_p": {
+          "2": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 0
+          },
+          "3": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          },
+          "5": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          },
+          "7": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          }
+        }
+      },
+      {
+        "n": 3,
+        "partition": [
+          3
+        ],
+        "num_syt": 1,
+        "num_tabloids": 1,
+        "gram_det_int": "1",
+        "ranks_mod_p": {
+          "2": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          },
+          "3": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          },
+          "5": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          },
+          "7": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          }
+        }
+      },
+      {
+        "n": 3,
+        "partition": [
+          2,
+          1
+        ],
+        "num_syt": 2,
+        "num_tabloids": 3,
+        "gram_det_int": "3",
+        "ranks_mod_p": {
+          "2": {
+            "span_all_polytabloids_rank": 2,
+            "syt_polytabloids_rank": 2,
+            "gram_rank": 2
+          },
+          "3": {
+            "span_all_polytabloids_rank": 2,
+            "syt_polytabloids_rank": 2,
+            "gram_rank": 1
+          },
+          "5": {
+            "span_all_polytabloids_rank": 2,
+            "syt_polytabloids_rank": 2,
+            "gram_rank": 2
+          },
+          "7": {
+            "span_all_polytabloids_rank": 2,
+            "syt_polytabloids_rank": 2,
+            "gram_rank": 2
+          }
+        }
+      },
+      {
+        "n": 3,
+        "partition": [
+          1,
+          1,
+          1
+        ],
+        "num_syt": 1,
+        "num_tabloids": 6,
+        "gram_det_int": "6",
+        "ranks_mod_p": {
+          "2": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 0
+          },
+          "3": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 0
+          },
+          "5": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          },
+          "7": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          }
+        }
+      },
+      {
+        "n": 4,
+        "partition": [
+          4
+        ],
+        "num_syt": 1,
+        "num_tabloids": 1,
+        "gram_det_int": "1",
+        "ranks_mod_p": {
+          "2": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          },
+          "3": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          },
+          "5": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          },
+          "7": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          }
+        }
+      },
+      {
+        "n": 4,
+        "partition": [
+          3,
+          1
+        ],
+        "num_syt": 3,
+        "num_tabloids": 4,
+        "gram_det_int": "4",
+        "ranks_mod_p": {
+          "2": {
+            "span_all_polytabloids_rank": 3,
+            "syt_polytabloids_rank": 3,
+            "gram_rank": 2
+          },
+          "3": {
+            "span_all_polytabloids_rank": 3,
+            "syt_polytabloids_rank": 3,
+            "gram_rank": 3
+          },
+          "5": {
+            "span_all_polytabloids_rank": 3,
+            "syt_polytabloids_rank": 3,
+            "gram_rank": 3
+          },
+          "7": {
+            "span_all_polytabloids_rank": 3,
+            "syt_polytabloids_rank": 3,
+            "gram_rank": 3
+          }
+        }
+      },
+      {
+        "n": 4,
+        "partition": [
+          2,
+          2
+        ],
+        "num_syt": 2,
+        "num_tabloids": 6,
+        "gram_det_int": "12",
+        "ranks_mod_p": {
+          "2": {
+            "span_all_polytabloids_rank": 2,
+            "syt_polytabloids_rank": 2,
+            "gram_rank": 0
+          },
+          "3": {
+            "span_all_polytabloids_rank": 2,
+            "syt_polytabloids_rank": 2,
+            "gram_rank": 1
+          },
+          "5": {
+            "span_all_polytabloids_rank": 2,
+            "syt_polytabloids_rank": 2,
+            "gram_rank": 2
+          },
+          "7": {
+            "span_all_polytabloids_rank": 2,
+            "syt_polytabloids_rank": 2,
+            "gram_rank": 2
+          }
+        }
+      },
+      {
+        "n": 4,
+        "partition": [
+          2,
+          1,
+          1
+        ],
+        "num_syt": 3,
+        "num_tabloids": 12,
+        "gram_det_int": "128",
+        "ranks_mod_p": {
+          "2": {
+            "span_all_polytabloids_rank": 3,
+            "syt_polytabloids_rank": 3,
+            "gram_rank": 0
+          },
+          "3": {
+            "span_all_polytabloids_rank": 3,
+            "syt_polytabloids_rank": 3,
+            "gram_rank": 3
+          },
+          "5": {
+            "span_all_polytabloids_rank": 3,
+            "syt_polytabloids_rank": 3,
+            "gram_rank": 3
+          },
+          "7": {
+            "span_all_polytabloids_rank": 3,
+            "syt_polytabloids_rank": 3,
+            "gram_rank": 3
+          }
+        }
+      },
+      {
+        "n": 4,
+        "partition": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "num_syt": 1,
+        "num_tabloids": 24,
+        "gram_det_int": "24",
+        "ranks_mod_p": {
+          "2": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 0
+          },
+          "3": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 0
+          },
+          "5": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          },
+          "7": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          }
+        }
+      },
+      {
+        "n": 5,
+        "partition": [
+          5
+        ],
+        "num_syt": 1,
+        "num_tabloids": 1,
+        "gram_det_int": "1",
+        "ranks_mod_p": {
+          "2": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          },
+          "3": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          },
+          "5": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          },
+          "7": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          }
+        }
+      },
+      {
+        "n": 5,
+        "partition": [
+          4,
+          1
+        ],
+        "num_syt": 4,
+        "num_tabloids": 5,
+        "gram_det_int": "5",
+        "ranks_mod_p": {
+          "2": {
+            "span_all_polytabloids_rank": 4,
+            "syt_polytabloids_rank": 4,
+            "gram_rank": 4
+          },
+          "3": {
+            "span_all_polytabloids_rank": 4,
+            "syt_polytabloids_rank": 4,
+            "gram_rank": 4
+          },
+          "5": {
+            "span_all_polytabloids_rank": 4,
+            "syt_polytabloids_rank": 4,
+            "gram_rank": 3
+          },
+          "7": {
+            "span_all_polytabloids_rank": 4,
+            "syt_polytabloids_rank": 4,
+            "gram_rank": 4
+          }
+        }
+      },
+      {
+        "n": 5,
+        "partition": [
+          3,
+          2
+        ],
+        "num_syt": 5,
+        "num_tabloids": 10,
+        "gram_det_int": "162",
+        "ranks_mod_p": {
+          "2": {
+            "span_all_polytabloids_rank": 5,
+            "syt_polytabloids_rank": 5,
+            "gram_rank": 4
+          },
+          "3": {
+            "span_all_polytabloids_rank": 5,
+            "syt_polytabloids_rank": 5,
+            "gram_rank": 1
+          },
+          "5": {
+            "span_all_polytabloids_rank": 5,
+            "syt_polytabloids_rank": 5,
+            "gram_rank": 5
+          },
+          "7": {
+            "span_all_polytabloids_rank": 5,
+            "syt_polytabloids_rank": 5,
+            "gram_rank": 5
+          }
+        }
+      },
+      {
+        "n": 5,
+        "partition": [
+          3,
+          1,
+          1
+        ],
+        "num_syt": 6,
+        "num_tabloids": 20,
+        "gram_det_int": "8000",
+        "ranks_mod_p": {
+          "2": {
+            "span_all_polytabloids_rank": 6,
+            "syt_polytabloids_rank": 6,
+            "gram_rank": 0
+          },
+          "3": {
+            "span_all_polytabloids_rank": 6,
+            "syt_polytabloids_rank": 6,
+            "gram_rank": 6
+          },
+          "5": {
+            "span_all_polytabloids_rank": 6,
+            "syt_polytabloids_rank": 6,
+            "gram_rank": 3
+          },
+          "7": {
+            "span_all_polytabloids_rank": 6,
+            "syt_polytabloids_rank": 6,
+            "gram_rank": 6
+          }
+        }
+      },
+      {
+        "n": 5,
+        "partition": [
+          2,
+          2,
+          1
+        ],
+        "num_syt": 5,
+        "num_tabloids": 30,
+        "gram_det_int": "49152",
+        "ranks_mod_p": {
+          "2": {
+            "span_all_polytabloids_rank": 5,
+            "syt_polytabloids_rank": 5,
+            "gram_rank": 0
+          },
+          "3": {
+            "span_all_polytabloids_rank": 5,
+            "syt_polytabloids_rank": 5,
+            "gram_rank": 4
+          },
+          "5": {
+            "span_all_polytabloids_rank": 5,
+            "syt_polytabloids_rank": 5,
+            "gram_rank": 5
+          },
+          "7": {
+            "span_all_polytabloids_rank": 5,
+            "syt_polytabloids_rank": 5,
+            "gram_rank": 5
+          }
+        }
+      },
+      {
+        "n": 5,
+        "partition": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "num_syt": 4,
+        "num_tabloids": 60,
+        "gram_det_int": "162000",
+        "ranks_mod_p": {
+          "2": {
+            "span_all_polytabloids_rank": 4,
+            "syt_polytabloids_rank": 4,
+            "gram_rank": 0
+          },
+          "3": {
+            "span_all_polytabloids_rank": 4,
+            "syt_polytabloids_rank": 4,
+            "gram_rank": 0
+          },
+          "5": {
+            "span_all_polytabloids_rank": 4,
+            "syt_polytabloids_rank": 4,
+            "gram_rank": 1
+          },
+          "7": {
+            "span_all_polytabloids_rank": 4,
+            "syt_polytabloids_rank": 4,
+            "gram_rank": 4
+          }
+        }
+      },
+      {
+        "n": 5,
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "num_syt": 1,
+        "num_tabloids": 120,
+        "gram_det_int": "120",
+        "ranks_mod_p": {
+          "2": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 0
+          },
+          "3": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 0
+          },
+          "5": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 0
+          },
+          "7": {
+            "span_all_polytabloids_rank": 1,
+            "syt_polytabloids_rank": 1,
+            "gram_rank": 1
+          }
+        }
+      }
+    ],
+    "verified_source_sha256": {
+      "library/arxiv-2012.00062v3/source/files/GGM_peacock_20v4.tex": "18c03589d1a9c1198829d0e46479fa257dc8b7c1a3045c654395d5daf576155b",
+      "library/arxiv-2012.00062v3/2012.00062v3.pdf": "2aacb7fa43f5e0da2657c6b7f7e58947baea6c3c4b37810c529e9b13b6b35039",
+      "library/A_census.tgz": "2debc2802fc2bd159f7bbcc6e641ed1ca19a0e58c1ed1f5690bb29ffa573e3dc",
+      "computations/probes/two-bridge-cusp-rows-apoly.witness.json": "f43698d7abac337af312c66fbf19bf074074027de3b785f5080277b080be0a55"
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Pure knot-complement A-polynomial / GGM Stokes integer algebra and Specht modular rank/Gram determinant check; no substrate q_0 is read."
+}

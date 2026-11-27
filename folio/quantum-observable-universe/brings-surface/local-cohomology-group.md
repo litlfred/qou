@@ -1,1 +1,1 @@
-The **local cohomology group** $H^1_{\mathfrak{m}_1}(A) = R^1\Gamma_{\mathfrak{m}_1}(A)$ measures the algebraic obstruction to extending sections across the defect at $z = 1$. In this non-commutative setting, the derived category framework generalizes the commutative concept of principal parts supported at the singularity.
+Let $\mathfrak{m}_1 \subset A$ be the [maximal ideal at the unit coordinate](#def:maximal-ideal-defect). The **local cohomology group** at the unit defect is $H^1_{\mathfrak{m}_1}(A) = R^1\Gamma_{\mathfrak{m}_1}(A)$.

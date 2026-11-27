@@ -1,0 +1,1 @@
+The function V can be continuously extended by 0 to all nonnegative triples (x, y, z) such that x + y + z = π. If d dt(xt, yt, zt) = (X, Y, Z) then (5) exp −d dt V(xt, yt, zt)  = sinX xt sinY yt sinZ zt. Proof Straightforward. We will always apply this formula exactly in the form it is stated, because it will usually make the right hand side simplest.

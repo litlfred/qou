@@ -1,1 +1,0 @@
-We must stress, that one can see the elements of the dualization idea in papers [@babelon; @gervais2; @curtho; @teschner] devoted to the Liouville model itself, and in [@BLZ1; @BLZ2; @BLZ3; @BPZ] within the framework of conformal field theory.

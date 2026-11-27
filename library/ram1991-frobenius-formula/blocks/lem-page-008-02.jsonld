@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/ram1991-frobenius-formula/blocks/lem-page-008-02",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 8,
+  "pageEnd": 8,
+  "text": "lem-page-008-02.md",
+  "derivedFrom": "library/ram1991-frobenius-formula/sections/page-008",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ram1991-frobenius-formula/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.6",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/page-008.md (p. 8-8)",
+    "claim_id": "ram1991-frobenius-formula#lemma:3.6",
+    "lean_status": "doc-cited-in-lean-unlinked-claim"
+  }
+}

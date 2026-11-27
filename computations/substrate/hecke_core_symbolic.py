@@ -331,8 +331,9 @@ def _chain_V_full_sym(chain: Iterable[tuple[sp.Expr, sp.Expr]]) -> sp.Expr:
 
     Mirror of ``hecke_core._chain_V_full`` with sympy arithmetic.
     """
-    s, v, a = _vertex_channels_sym(chain)
-    return w_sym * s + w_std * v + w_alt * a
+    # Convention D (owner, 2026-11-18): the trace of a*sigma+b is z*a+b alone.
+    _s, v, _a = _vertex_channels_sym(chain)
+    return v
 
 
 def vertex_volume_sym(chain: Iterable[tuple[sp.Expr, sp.Expr]]) -> sp.Expr:
@@ -536,6 +537,8 @@ def evalf_at_q0(expr: sp.Expr, dps: int = 50) -> mp.mpf:
 
     Returns ``mpmath.mpf``; complex outputs raise ``ValueError``.
     """
+    if isinstance(expr, mp.mpf):
+        return +expr
     if isinstance(expr, (int, float, sp.Integer, sp.Float, sp.Rational)):
         return mp.mpf(sp.Float(expr, dps))
     with mp.workdps(dps + 5):

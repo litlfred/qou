@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/pjm-v161-n1-p02-p",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/pjm-v161-n1-p02-p/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -72,6 +72,18 @@
     "library/pjm-v161-n1-p02-p/sections/sec-057"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Studying links via closed braids. III. Classifying links which are closed 3-braids — 59 sections: Front matter; STUDYING LINKS VIA CLOSED BRAIDS I; it\n\n**Studying links via closed braids. III. Classifying links which are closed 3-braids**\n\n*JOAN BIRMAN AND WILLIAM W. MENASCO*\n\n93 pp, 59 sections.\n\n**Outline.** Front matter; STUDYING LINKS VIA CLOSED BRAIDS III: CLASSIFY; it; (resp. b^ (page 32); (resp. b^ (page 33); (resp. b^ (page 34); (resp. b^ (page 35); (resp. b^ (page 36); (resp. b^ (page 37); (resp. b^ (page 38); (resp. b^ (page 39); (resp. b^ (page 40); (resp. b^ (page 41); (resp. b^ (page 42); (resp. b^ (page 43); (resp. b^ (page 44); (resp. b^ (page 45); (resp. b^ (page 46)",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "pjm-v161-n1-p02-p",
@@ -82,8 +94,8 @@
     "pages": 93,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

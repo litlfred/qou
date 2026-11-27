@@ -1,4 +1,4 @@
-import QOU.QGeometricLanglands
+import QOU.InformationTheory.QGeometricLanglands
 
 
 /-!

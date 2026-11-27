@@ -20,7 +20,7 @@ the irreducible adjoint representation $\mathfrak{su}(2)$
 (dimension $3$).  By Schur's lemma, the only intertwining morphism
 from the trivial representation $\mathbf{1}$ to an irreducible
 non-trivial representation is the zero morphism.  Therefore
-$f = 0$, contradicting our assumption.
+$f = 0$, contradicting the assumption.
 
 Hence $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$.  The
 non-degeneracy of $\int_A$ excludes any hidden global symmetry:

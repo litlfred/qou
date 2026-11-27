@@ -15,7 +15,7 @@ export default proposition({
     "muon",
     "tau",
   ],
-  lean: { ref: "qou:QOU.Archimedean.lepton_continuant_recurrence",
+  lean: { ref: "qou:QOU.MassTheory.lepton_continuant_recurrence",
     validation: "not_checked",
   },
   uses: [

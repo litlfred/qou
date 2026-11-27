@@ -1,1 +1,1 @@
-(Gabber’s Maximality Principle) LetA andB bek-algebras, with
+(Gabber’s Maximality Principle) LetA andB bek-algebras, with A left noetherian and B right noetherian, and let R ∈ D(Mod(A ⊗B◦)) be an Aus- lander dualizing complex. Suppose N is a CdimR-pureA-module with CdimRN = n, and M is a ﬁnitely generated submodule. Then there is a unique maxi mal module ˜M such that M ⊂ ˜M ⊂N , ˜M is ﬁnitely generated, and CdimR ˜M/M ≤n − 2.

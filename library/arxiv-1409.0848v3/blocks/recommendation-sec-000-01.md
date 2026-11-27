@@ -1,1 +1,0 @@
-Namely, there should be a commutative diagram below (subject to a suitable construction of the dashed functors, which we do not provide in the present work): \[\xymatrix{ \Alg_{\disk_n}(\cV)^{\sim}\ar[d]_{\int}\ar[r]&\bigl(\Alg_{n}(\cV)^{\sim}\bigr)^{\sO(n)}\ar@{-->}[d]^Z\\ \bcH(\mfld(\cB), \cV)^{\sim} \ar@{-->}[r]& \Fun^\ot({\sf Bord}_n, \Alg_{n}(\cV))\\ }\] \noindent

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/crmath-2011-349-19-20-1037-0",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/crmath-2011-349-19-20-1037-0/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -21,6 +21,18 @@
     "library/crmath-2011-349-19-20-1037-0/sections/sec-006"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières — Van der Put and Reversat described the form of a pure q-difference module with non\n\n**Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières**\n\n*C. R. Acad. Sci. Paris, Ser. I*\n\n3 pp, 8 sections.\n\n**Abstract.** Van der Put and Reversat described the form of a pure q-difference module with non integral slopes. We deduce from this explicit matricial descriptions of the isoformal analytic classes and of the Galois group of pure q-difference modules with non integral slopes. © 2011 Académie des sciences. Publié par Elsevier Masson SAS. Tous droits réservés. Notations Le corps des séries de Laurent convergentes sera noté K = C({z}) = C{z}[z~'] et RK désignera le corps des séries formelles C((z)) = C[[z]][z~!]. Soit q € C* tel que |g| > 1, on définit l’opérateur o, automorphisme de K (ou R) par o(f(z)) = f (qz). Un module aux q-différences sera un couple M = (K\", ®,) ot! ®4 est un automorphisme o-linéaire de K\" défini par @4(X) = A~'a(X), A € GL,(K). Un morphisme de modules aux q-différences de (K\", ®,) dans (K?, g) est une matrice F €Mpn(K) telle que o(F)A = BF.\n\n**Outline.** Front matter; Classiﬁcation analytique et théorie de Galois ; Notations; 1 Introduction; 2 Classiﬁcation analytique isoformelle à deux ; 3 Opérateurs de Stokes; 4 Groupe de Galois formel; Références",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "crmath-2011-349-19-20-1037-0",
@@ -30,9 +42,9 @@
     "source_sha256": "fd5bd0558dfe892ff754e9644533d840342740970953c355d70ae60f7afa6a30",
     "pages": 3,
     "arxiv": null,
-    "doi": "10.1016/j.crma.201",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "doi": "10.1016/j.crma.2011.09.002",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,0 +1,103 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-24T13:53:08.261799+00:00",
+  "commitSha": "f9b2cff97d107bb9647616e8d9e3d5f66df455f4",
+  "assertions": [
+    {
+      "name": "eta_equals_sinh_ln_q0_at_80dps",
+      "computed": "1.31777474290381540304357175640875237596374517279606344375972e-82",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "eta = (q_0 - q_0^{-1})/2 = sinh(ln q_0) = 0.10453015... (distinct from ln q_0 = 0.10434072...)"
+    },
+    {
+      "name": "strict_subadditivity_diminishing_returns",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "[bujack2022] strict triangle inequality Delta E(A,B) + Delta E(B,C) > Delta E(A,C)"
+    },
+    {
+      "name": "table1_small_d_cubic_subadditive_expansion",
+      "computed": "8.95421561385139664220269341240686455053173895911790740456080e-66",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1.79084312277027932844053869402490849191734248964387057513547e-65",
+      "source": "arsinh(eta*d)/eta = d - (eta^2/6)d^3 + O(eta^4 d^5) at d = 1e-12"
+    },
+    {
+      "name": "table1_large_d_second_order_weber_fechner_asymptote",
+      "computed": "7.51213563792277589475577711858771031256894722372751682784644e-45",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "arsinh(eta*d)/eta = ln(2*eta*d)/eta + 1/(4*eta^3*d^2) + O(d^{-4}) at d = 1e12"
+    },
+    {
+      "name": "proton_pin_eta_lies_in_table2_confirmation_band",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "eta(q_0) = 0.10453015... lies inside [0.08, 0.13] protocol confirmation band"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "schrodinger-color-bujack-q0",
+  "scriptFile": "schrodinger_color_bujack_q0_probe.py",
+  "scriptHash": "aee3799337ef",
+  "scriptCommitSha": "f9b2cff97d107bb9647616e8d9e3d5f66df455f4",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/schrodinger_color_bujack_q0_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/schrodinger_color_bujack_q0_probe.py"
+  },
+  "description": "80-dps evaluation of eta = (q_0 - q_0^{-1})/2 and crossover scale d* = 1/eta at the canonical proton-pinned substrate parameter q_0 = q_at(80), together with asymptotic and Bujack et al. (2022) [bujack2022] cross-checks for rem:schrodinger-color-falsifiability (bean qou-fls0).",
+  "contentBlock": "rem:schrodinger-color-falsifiability",
+  "data": {
+    "proton_pin_80dps": {
+      "pin": "proton (q_parameter.Q / qou_substrate.constants.q_at(80))",
+      "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+      "ln_q0": "0.104340720319519512315906279973072397053744280828984303250862",
+      "eta": "0.104530149397819657715423106564837471929878747631512277690848",
+      "d_star": "9.56661791608286462051900934576165103582464440398973327352919",
+      "two_eta_q_minus_qinv": "0.209060298795639315430846213129674943859757495263024555381696"
+    },
+    "muon_pin_diagnostic_comparison": {
+      "q0_muon_50dps": "1.10997859555733471989976322048322502665620840878015368660798",
+      "eta_muon": "0.104530160997796839490931318232983675130811650823739913394872",
+      "d_star_muon": "9.56661685445100187360389983856755919494897666064507733439095",
+      "abs_diff_eta_proton_vs_muon": "0.0000000115999771817755082116681462032009329031922276357040240912639"
+    },
+    "bujack2022_published_table1_summary": {
+      "source": "[bujack2022] PNAS 119(18) e2119753119, Results Table 1 & Eq. (18)",
+      "beta_0": "0.161 (t(60) = 8.894, p < 0.001)",
+      "beta_Delta_d_5": "0.048 (t(60) = 2.815, p = 0.010)",
+      "beta_Delta_d_10": "0.119 (t(60) = 6.632, p < 0.001)",
+      "beta_d_bar": "-0.005 (t(60) = -5.566, p < 0.001)",
+      "model_fit": "R^2 = 0.556, F(3, 60) = 25.00, P < 0.001, 75896 training trials",
+      "crossover_d_star_empirical_status": "not measured in [bujack2022]; neither corroborated nor refuted"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

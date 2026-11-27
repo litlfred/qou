@@ -1,0 +1,1 @@
+For any x, y ∈Z, (i) (3.30) lim M→∞Kα Ch,M(M + x, M + y) = Bα(x, y). (ii) (3.31) Bα(x, y) = ∞ X k=1 Jx+k(2√α)Jy+k(2√α). ENSEMBLES AND THE PLANCHEREL MEASURE Furthermore, there is a constant C = C(α, L), such that (iii) (3.32) ∞ X x=−L Kα Ch,M(M + x, M + x) ≤C if M is large enough, and (iv) (3.33) ∞ X x=−L Bα(x, x) ≤C. (In (3.33) we can take C(α, L) = α/ √ 2 + L.)

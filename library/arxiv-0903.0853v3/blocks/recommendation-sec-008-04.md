@@ -1,1 +1,0 @@
-Indeed, in section [\[section:QuadForms\]](#section:QuadForms){reference-type="ref" reference="section:QuadForms"}, we shall even use the "classical" forms $\theta_{i,j}$, $i,j \in \{0,1\}$ to be found in the standard theory of special functions.

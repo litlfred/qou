@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1108.5365v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.5365v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL +",
+  "title": "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R)",
   "contains": [
     "library/arxiv-1108.5365v2/sections/sec-front-matter",
     "library/arxiv-1108.5365v2/sections/sec-000",
@@ -55,6 +55,18 @@
     "library/arxiv-1108.5365v2/sections/sec-040"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R) — We give complete detail of the description of the GNS representation of the quantum plane A and its dual\n\n**Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R)**\n\n*Double and Harmonic Analysis on GL+*\n\n92 pp, 42 sections.\n\n**Abstract.** We give complete detail of the description of the GNS representation of the quantum plane A and its dual ˆ A as a von Neumann algebra. In particu- lar we obtain a rather surprising result that the multiplicative unitary W is manageable in this quantum semigroup context. We study the quantum dou- ble group construction introduced by Woronowicz, and using Baaj and Vaes’ construction of the multiplicative unitary Wm, we give the GNS description of the quantum double D(A) which is equivalent to GL+ q (2, R). Furthermore we study the fundamental corepresentation T λ,t and its matrix coeﬃcients, and show that it can be expressed by the b-hypergeometric function.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 Mellin transform; 2.2 Weight and multiplier algebra of a C*-alge; 2.3 GNS representation and Tomita-Takesaki's t; 2.4 The multiplicative unitary; 2.5 q-commuting operators; 3 The quantum dilogarithm; 3.1 Definition and properties; 3.2 Integral transformations; 4 The quantum plane; 4.1 Motivations from classical ax+b group; 4.2 The quantum plane algebra and its modular ; 4.3 The Haar functional; 4.4 The GNS description; 4.5 Modular maps and the right picture; 4.6 The multiplicative unitary",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -78,8 +90,8 @@
       "stamp_date": "6 Sep 2012"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,0 +1,1 @@
+Let M and N be abelian categories. Recall that Mop is also an abelian category. (1) The functor Op : M →Mop is an exact contravariant functor. (2) If F : M →N is an exact contravariant functor, then F ◦Op : Mop →N is an exact functor; and vice versa. Likewise for left exactness and right exactness. Exercise 2.5.25. Prove Proposition 2.5.24.

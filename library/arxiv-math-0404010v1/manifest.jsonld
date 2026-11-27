@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0404010v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0404010v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -22,6 +22,18 @@
     "library/arxiv-math-0404010v1/sections/sec-007"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "YANG–BAXTER OPERATORS ARISING FROM ALGEBRA STRUCTURES AND THE ALEXANDER POLYNOMIAL OF KNOTS — In this paper, we consider the problem of constructing knot invariants from Yang–Baxter operators\n\n**YANG–BAXTER OPERATORS ARISING FROM ALGEBRA STRUCTURES AND THE ALEXANDER POLYNOMIAL OF KNOTS**\n\n*GWÉNAËL MASSUYEAU AND FLORIN F. NICHITA*\n\n9 pp, 9 sections.\n\n**Abstract.** In this paper, we consider the problem of constructing knot invariants from Yang–Baxter operators associated to algebra structures. We ﬁrst compute the enhancements of these operators. Then, we conclude that Turaev’s procedure to derive knot invariants from these enhanced operators, as modiﬁed by Murakami, invariably produces the Alexander polynomial of knots.\n\n**Outline.** Front matter; 1 Introduction; 2 Yang--Baxter operators arising from algebra ; 3 Invariants of oriented links derived from Ya; 3.2 Redundant Yang--Baxter operators; 4 Invariants of oriented links derived from al; 4.1 Enhancements of Rx,y; 4.2 Connection with the Alexander polynomial; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "arxiv-math-0404010v1",
@@ -36,8 +48,8 @@
       "stamp_date": "1 Apr 2004"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

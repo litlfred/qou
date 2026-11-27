@@ -1,0 +1,1 @@
+Let K be a field. For any choice of q 2 K and G  g such that Œkq ¤ 0 for all 1 k, there exist a triple .cG; qG; aG/ and an algebra homomorphism (explicitly given in the proof below) GW BMWg;n.cG; qG; aG/ ! BMWGCn.Qc; Qq; Qa/: Moreover, the parameters .cG; qG; aG/ are weakly admissible. If q is not a root of unity, then there is always a corresponding triple .cG; qG; aG/.

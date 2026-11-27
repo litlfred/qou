@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-lat-0003021v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-lat-0003021v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -19,6 +19,18 @@
     "library/arxiv-hep-lat-0003021v3/sections/sec-004"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "arXiv:hep-lat/0003021v3 19 May 2000 — We compute the low-lying spectrum of the staggered Dirac operator above and below the ﬁnite temperature phase transition in both quenched QCD and in dynamical\n\n**arXiv:hep-lat/0003021v3 19 May 2000**\n\n*P.H. Damgaarda, U.M. Hellerb, R. Niclasena and K. Rummukainenc,d*\n\n21 pp, 6 sections.\n\n**Abstract.** We compute the low-lying spectrum of the staggered Dirac operator above and below the ﬁnite temperature phase transition in both quenched QCD and in dynamical four ﬂavor QCD. In both cases we ﬁnd, in the high temperature phase, a density with close to square root behavior, ρ(λ) ∼ (λ −λ0)1/2. In the quenched simulations we ﬁnd, in addition, a volume independent tail of small eigenvalues extending down to zero. In the dynamical simulations we also ﬁnd a tail, decreasing with decreasing mass, at the small end of the spectrum. However, the tail falls oﬀquite quickly and does not seem to extend to zero at these couplings. We ﬁnd that the distribution of the smallest Dirac operator eigenvalues provides an eﬃcient observable for an accurate determination of the location of the chiral phase transition, as ﬁrst suggested by Jackson and Verbaarschot. NBI-HE-00-12 NORDITA-2000/30 HE hep-lat/0003021\n\n**Outline.** Front matter; 1 Introduction; 2 Quenched QCD at high temperature; 3 QCD with four dynamical fermions at high tem; 4 Random Matrix Theory; 5 Conclusions",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -40,8 +52,8 @@
       "stamp_date": "19 May 2000"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

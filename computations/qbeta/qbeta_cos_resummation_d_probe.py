@@ -55,6 +55,9 @@ from codata_constants import M_E_MEV, Q_BETA_MEV               # noqa: E402
 from witness_base import WitnessBuilder                        # noqa: E402
 
 # Values as printed in the block .md / table-data (10 sig. figs, ppm to 0.1).
+# The ppm figures are against the CODATA-2022 reference 0.78233355931 MeV
+# (owner ruling 2026-11-20, a887b738d50); against the former AME2020 value
+# 0.78233341 every eps_Q read 0.19 ppm higher (bean qou-h1h5).
 PUBLISHED = {
     "z_D": "0.6126880371",
     "h": "0.2090602988",
@@ -66,10 +69,10 @@ PUBLISHED = {
     "Q_formA_cos_D_MeV": "0.7830036789",
 }
 PUBLISHED_PPM = {
-    "ruled": "-431571.8",
-    "ruled_cos": "-432037.5",
-    "formA": "1677.6",
-    "formA_cos_D": "856.8",
+    "ruled": "-431571.9",
+    "ruled_cos": "-432037.7",
+    "formA": "1677.4",
+    "formA_cos_D": "856.6",
 }
 PPM = mp.mpf(10) ** 6
 
@@ -84,7 +87,8 @@ def main() -> int:
     alpha_D = (z_D - 1) * h / 2
     cos_D = mp.cos(alpha_D)
 
-    E0 = m_e / (q * (q - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    E0 = _qbeta_e0.order_zero_scaled(m_e, q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
     Q_ruled = abs(h**2 / 2 - h * z_D) * E0
     Q_formA = m_e * abs(q**2 - 2 * q - 1) * (q + 1) / (2 * q**3)
 

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9804005v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9804005v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -78,7 +78,19 @@
     "library/arxiv-math-9804005v3/sections/sec-064"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "narrative": [
+    {
+      "text": "RINGS WITH AUSLANDER DUALIZING COMPLEXES — A ring with an Auslander dualizing complex is a generalizati on of an Auslander-Gorenstein ring.\n\n**RINGS WITH AUSLANDER DUALIZING COMPLEXES**\n\n*AMNON YEKUTIELI AND JAMES J. ZHANG*\n\n39 pp, 65 sections.\n\n**Abstract.** A ring with an Auslander dualizing complex is a generalizati on of an Auslander-Gorenstein ring. W e show that many results w hich hold for Auslander-Gorenstein rings also hold in the more general se tting. On the other hand we give criteria for existence of Auslander duali zing complexes which show these occur quite frequently. The most powerful tool we use is the Local Duality Theorem for connected graded algebras over a ﬁeld. Filtrations allow the transfer of results to non- graded algebras. W e also prove some results of a categorical nature, most nota bly the func- toriality of rigid dualizing complexes.\n\n**Outline.** 2 AMNON YEKUTIELI AND JAMES J. ZHANG; 2.15 It follows that if the algebra A has an A; 1 Dualizing complexes; 4 AMNON YEKUTIELI AND JAMES J. ZHANG; 3.1 We now give a complete proof of [SZ] Lemma; 3 The existence of an Auslander rigid dualizin; 6 AMNON YEKUTIELI AND JAMES J. ZHANG; 2 The functors D and D◦ determine a duality, i; 2 Immediate from part 1, together with the fac; 1 For every nonzero A-module M there is a nonz; 1 There is a function d : SpecA → Z such that; 8 AMNON YEKUTIELI AND JAMES J. ZHANG; 1 There are functions d,r : SpecA → Z, with r ; 3 A is catenary, and (if A ⁄= 0) its Krull dim; 2 Auslander Dualizing Complexes; 2 Choose a ∈ q − p, so in the exact sequence; 4 Pick a prime ideal p ⊂A. Since Rp is a duali; 10 AMNON YEKUTIELI AND JAMES J. ZHANG\n\n**Extracted claims (proposals, not verified).**\n- Theorem: and the No-Holes Theorem for Bass numbers (see [Jo1] Th eorems 3.2, 4.5,\n- Theorem 0.1: Assume A is a normally separated ﬁltered k-algebra such that grA\n- Theorem 0.2: Assume A is a noetherian k-algebra with an Auslander dualizing\n- Theorem 0.3: Let A be an Auslander-Gorenstein noetherian k-algebra. Assume\n- Theorem 0.4: AssumeA is a ﬁltered k-algebra\n- Theorem 0.5: Let A be a noetherian k-algebra. A rigid dualizing complex RA",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",

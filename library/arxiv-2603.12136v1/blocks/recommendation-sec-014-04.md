@@ -1,1 +1,0 @@
-It is implicit in [\[thm_integer_unit_partition\]](#thm_integer_unit_partition){reference-type="ref" reference="thm_integer_unit_partition"} that all bipolar parts must consist of continuous variables only by the condition that each $w\in W_I$ has $\{w\}\in \MQ$.

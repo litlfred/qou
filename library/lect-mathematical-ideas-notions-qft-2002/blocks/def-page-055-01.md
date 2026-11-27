@@ -1,0 +1,1 @@
+The Hamiltonian (or energy function) of the system with La- grangian £ is the function H : T*X — R, which is the Legendre transform of £ along fibers; that is, H(q,p) = po — L(q, vo), where vo is the (unique) critical point of pu — L(q,v). The manifold T*X is called the phase space (or space of states). The variable p is called the momentum variable.

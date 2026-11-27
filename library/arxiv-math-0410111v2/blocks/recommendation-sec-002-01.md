@@ -1,1 +1,0 @@
-The purpose of this section is to present an algorithm to generate lower and upper bounds $L_k,U_k$ to the integer global optimum value of $$\hbox{maximize} \ f(x_1,\dots,x_d) \ \hbox {subject to} \ (x_1,\dots,x_d) \in P \cap \mathbb Z^d.$$ We should also remark that in our algorithm the polynomial objective function $f$ can be arbitrary (e.g. non-convex).

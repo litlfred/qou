@@ -1,0 +1,495 @@
+import MassEndomorphism.MarkovTraceRecursiveReducer
+import Mathlib.Tactic.FieldSimp
+import MassEndomorphism.MarkovTraceHeckeFunctional
+
+/-!
+# The A = 2 γγ bond on the four-strand tail
+
+By `towerTr_disjoint` the first nucleon factors out of the A = 2 trace, so a single bond
+(nucleon 0 into nucleon 1) acts on a four-strand tail: the receiving nucleon's word on
+`σ_1, σ_2`, followed by the bond `V³ = (σ_0 σ_1⁻¹)³` on `σ_0, σ_1`.
+
+Letters are `σ_i + b` with `b = 0` (`σ`), `b = -h` (`σ⁻¹ = σ - h`) and `b = -h/2`.
+The trace is `trWord`, which equals every Markov trace (`isMarkovTrace_eq_trWord`); the
+Markov parameter `z` and `h = q - q⁻¹` are free elements of a field with `2 ≠ 0`.
+
+Main results, all exact identities in `z` and `h`:
+* `proton_free`, `neutron_free`: the free tail traces.
+* `bond_into_proton`: the bond changes the trace by
+  `h⁴ (z² - h z - 1)(-h⁷ + h⁶ z - 4h⁵ + 3h⁴ z - 6h³ + 2h² z - 3h - 2z) / 4`.
+* `bond_into_neutron`: by `h⁵ (h² + 1)(h² + 4)(h z - h² - 1)(z² - h z - 1) / 4`.
+* `bond_into_proton_vanishes`, `bond_into_neutron_vanishes`: both changes vanish when
+  `z² - h z - 1 = 0`.
+* `a2_reduce`: on the Hecke tower, the full A = 2 γγ chain `ggChain N₀ [N]` and the free
+  product `freeTail [N₀, N]` have traces `tr N₀ · tail(N↑¹ V³)` and `tr N₀ · tail(N↑¹)`, for
+  any first nucleon `N₀ ∈ H₃` and any receiving word `N` on `σ_0, σ_1`.
+* `a2_bond_into_proton`, `a2_bond_into_neutron`: the two bond identities above, stated on
+  the full A = 2 words (`ggChain` minus `freeTail`), times `tr N₀`.
+* `towerTr_shift_commutator`: the h² step. For every `Y` on strands `≥ 1`,
+  `tr(Y↑ (σ₀σ₁ − σ₁σ₀)) = 0`, at every `z` and `h`, over any commutative ring. The h² part of
+  `V³ − 1` is this commutator (the two 3-cycles), so it never reaches the trace.
+
+Method: `ME` is a merging evaluator (it collects like basis terms after each letter);
+`ME_eq_P` proves it equals the plain expansion `P`, and `tail_eq_trWord` writes `P` as a sum of
+`trWord` over the positive-word expansion of the letters.
+
+Ref: [jones1987] Hecke algebra representations of braid groups, Ann. Math. 126 (1987).
+-/
+
+open QOU.BraidKnot
+namespace QOU.LightNucleiBond
+
+variable {R : Type*} [CommRing R] (z h : R)
+
+/-- Trace functional on a formal sum of basis elements `T_w` of `H_N`. -/
+def tsum (N : ℕ) (e : List (R × List ℕ)) : R :=
+  (e.map fun p => p.1 * trBasis z h N p.2).sum
+
+/-- Trace of `e · ∏ (σ_i + b)`, expanded letter by letter (no merging). -/
+def P (N : ℕ) : List (R × List ℕ) → List (R × ℕ) → R
+  | e, [] => tsum z h N e
+  | e, (b, i) :: L => P N (mulGen h e i) L + b * P N e L
+
+/-- Add `c · T_w` to a formal sum, merging with an equal basis element. -/
+def addTerm (c : R) (w : List ℕ) : List (R × List ℕ) → List (R × List ℕ)
+  | [] => [(c, w)]
+  | (d, v) :: rest => if v = w then (d + c, v) :: rest else (d, v) :: addTerm c w rest
+
+def collect (e : List (R × List ℕ)) : List (R × List ℕ) :=
+  e.foldr (fun p acc => addTerm p.1 p.2 acc) []
+
+/-- One letter `σ_i + b`, then merge like terms. -/
+def stepL (e : List (R × List ℕ)) (bi : R × ℕ) : List (R × List ℕ) :=
+  collect (mulGen h e bi.2 ++ e.map fun p => (bi.1 * p.1, p.2))
+
+/-- The merging evaluator. -/
+def ME (N : ℕ) (e : List (R × List ℕ)) (L : List (R × ℕ)) : R :=
+  tsum z h N (L.foldl (stepL h) e)
+
+section Lemmas
+
+theorem mulGen_cons (e : List (R × List ℕ)) (p : R × List ℕ) (i : ℕ) :
+    mulGen h (p :: e) i = mulGen h [p] i ++ mulGen h e i := by
+  simp [mulGen, List.flatMap_cons]
+
+theorem mulGen_append (e₁ e₂ : List (R × List ℕ)) (i : ℕ) :
+    mulGen h (e₁ ++ e₂) i = mulGen h e₁ i ++ mulGen h e₂ i := by
+  simp [mulGen, List.flatMap_append]
+
+theorem mulGen_scale (b : R) (i : ℕ) : ∀ e : List (R × List ℕ),
+    mulGen h (e.map fun p => (b * p.1, p.2)) i = (mulGen h e i).map fun p => (b * p.1, p.2)
+  | [] => by simp [mulGen]
+  | p :: e => by
+    rw [List.map_cons, mulGen_cons, mulGen_cons h e p, mulGen_scale b i e, List.map_append]
+    congr 1
+    simp only [mulGen, List.flatMap_cons, List.flatMap_nil, List.append_nil]
+    split_ifs <;> simp [mul_assoc]
+
+theorem P_append (N : ℕ) : ∀ (L : List (R × ℕ)) (e₁ e₂ : List (R × List ℕ)),
+    P z h N (e₁ ++ e₂) L = P z h N e₁ L + P z h N e₂ L
+  | [], e₁, e₂ => by
+    simp only [P, tsum, List.map_append]
+    induction e₁ with
+    | nil => simp
+    | cons p e ih => simp only [List.map_cons, List.cons_append, List.sum_cons] at ih ⊢; rw [ih]; ring
+  | (b, i) :: L, e₁, e₂ => by
+    simp only [P]; rw [mulGen_append, P_append N L, P_append N L]; ring
+
+theorem P_scale (N : ℕ) (b : R) : ∀ (L : List (R × ℕ)) (e : List (R × List ℕ)),
+    P z h N (e.map fun p => (b * p.1, p.2)) L = b * P z h N e L
+  | [], e => by
+    simp only [P, tsum]
+    induction e with
+    | nil => simp
+    | cons p e ih => simp only [List.map_cons, List.sum_cons] at ih ⊢; rw [ih]; ring
+  | (c, i) :: L, e => by
+    simp only [P]; rw [mulGen_scale, P_scale N b L, P_scale N b L]; ring
+
+theorem P_single (N : ℕ) (L : List (R × ℕ)) (c : R) (w : List ℕ) :
+    P z h N [(c, w)] L = c * P z h N [(1, w)] L := by
+  have := P_scale z h N c L [(1, w)]; simpa using this
+
+theorem P_cons (N : ℕ) (L : List (R × ℕ)) (p : R × List ℕ) (e : List (R × List ℕ)) :
+    P z h N (p :: e) L = P z h N [p] L + P z h N e L := by
+  rw [← P_append]; rfl
+
+theorem P_nil (N : ℕ) : ∀ L : List (R × ℕ), P z h N [] L = 0
+  | [] => by simp [P, tsum]
+  | (b, i) :: L => by simp [P, mulGen, P_nil N L]
+
+theorem P_addTerm (N : ℕ) (L : List (R × ℕ)) (c : R) (w : List ℕ) :
+    ∀ acc : List (R × List ℕ), P z h N (addTerm c w acc) L = P z h N [(c, w)] L + P z h N acc L
+  | [] => by simp [addTerm, P_nil]
+  | (d, v) :: rest => by
+    by_cases hv : v = w
+    · subst hv
+      simp only [addTerm, if_true]
+      rw [P_cons z h N L (d + c, v) rest, P_cons z h N L (d, v) rest, P_single z h N L (d + c), P_single z h N L d,
+        P_single z h N L c]; ring
+    · simp only [addTerm, hv, if_false]
+      rw [P_cons z h N L (d, v) (addTerm c w rest), P_addTerm N L c w rest,
+        P_cons z h N L (d, v) rest]; ring
+
+theorem P_collect (N : ℕ) (L : List (R × ℕ)) :
+    ∀ e : List (R × List ℕ), P z h N (collect e) L = P z h N e L
+  | [] => rfl
+  | p :: e => by
+    have := P_collect N L e
+    simp only [collect, List.foldr_cons] at this ⊢
+    rw [P_addTerm, this, P_cons z h N L p e]
+
+/-- The merging evaluator computes the expanded trace. -/
+theorem ME_eq_P (N : ℕ) : ∀ (L : List (R × ℕ)) (e : List (R × List ℕ)),
+    ME z h N e L = P z h N e L
+  | [], e => rfl
+  | (b, i) :: L, e => by
+    simp only [ME, List.foldl_cons] at *
+    have := ME_eq_P N L (stepL h e (b, i))
+    simp only [ME] at this
+    rw [this, stepL, P_collect, P_append, P_scale, P]
+
+
+/-- Expansion of `∏ (σ_i + b)` into positive words: each letter is either kept (`σ_i`) or
+replaced by its scalar `b`. -/
+def subwords : List (R × ℕ) → List (R × List ℕ)
+  | [] => [(1, [])]
+  | (b, i) :: L => (subwords L).map (fun p => (p.1, i :: p.2)) ++ (subwords L).map (fun p => (b * p.1, p.2))
+
+theorem sum_map_append' (f : R × List ℕ → R) (a b : List (R × List ℕ)) :
+    ((a ++ b).map f).sum = (a.map f).sum + (b.map f).sum := by
+  induction a with
+  | nil => simp
+  | cons p a ih => simp only [List.cons_append, List.map_cons, List.sum_cons, ih]; ring
+
+theorem sum_map_mul' (b : R) (f : R × List ℕ → R) (a : List (R × List ℕ)) :
+    (a.map fun p => b * f p).sum = b * (a.map f).sum := by
+  induction a with
+  | nil => simp
+  | cons p a ih => simp only [List.map_cons, List.sum_cons, ih]; ring
+
+/-- `P` is the sum over subwords of the trace of the prefix followed by the subword. -/
+theorem P_subwords (N : ℕ) (init : List (R × List ℕ)) :
+    ∀ (L : List (R × ℕ)) (pre : List ℕ),
+      P z h N (mulGens h init pre) L =
+        ((subwords L).map fun p => p.1 * tsum z h N (mulGens h init (pre ++ p.2))).sum
+  | [], pre => by simp [P, subwords]
+  | (b, i) :: L, pre => by
+    simp only [P, subwords]
+    have h1 : mulGen h (mulGens h init pre) i = mulGens h init (pre ++ [i]) := by
+      simp [mulGens, List.foldl_append]
+    rw [h1, P_subwords N init L (pre ++ [i]), P_subwords N init L pre, sum_map_append']
+    simp only [List.map_map, Function.comp_def, List.append_assoc, List.singleton_append]
+    rw [← sum_map_mul']
+    congr 1
+    apply congrArg; apply List.map_congr_left; intro p _; ring
+
+end Lemmas
+
+
+section Tail
+variable {K : Type*} [Field K] (z h : K)
+
+def lS (i : ℕ) : K × ℕ := (0, i)
+def lI (i : ℕ) : K × ℕ := (-h, i)
+def lA (i : ℕ) : K × ℕ := (-h / 2, i)
+def V3w (k : ℕ) : List (K × ℕ) := [lS k, lI h (k+1), lS k, lI h (k+1), lS k, lI h (k+1)]
+def protonW (k : ℕ) : List (K × ℕ) := V3w h k ++ [lS k, lA h k, lA h (k+1), lS k, lS k]
+def neutronW (k : ℕ) : List (K × ℕ) := V3w h k ++ [lA h k, lA h k, lI h (k+1), lS k, lS k]
+theorem trB_zero (w : List ℕ) : trBasis z h 0 w = 1 := rfl
+
+theorem trB_cons (m a : ℕ) (l : List ℕ) : trBasis z h (m + 1) (a :: l) =
+    if (a :: l).getD m 0 = m then trBasis z h m ((a :: l).take m)
+    else z * ((mulGens h [(1, ((List.range' ((a :: l).idxOf m) (m - (a :: l).idxOf m)).foldl swapAt
+        (a :: l)).take m)] (List.range' ((a :: l).idxOf m) (m - 1 - (a :: l).idxOf m)).reverse).map
+          fun p => p.1 * trBasis z h m p.2).sum := by
+  rw [trBasis]
+
+def tail (L : List (K × ℕ)) : K := ME z h 4 [(1, [0,1,2,3])] L
+
+/-- `tail L` is the Markov trace `trWord` (which equals every Markov trace,
+`isMarkovTrace_eq_trWord`) summed over the positive-word expansion of the letters. -/
+theorem tail_eq_trWord (L : List (K × ℕ)) :
+    tail z h L = ((subwords L).map fun p => p.1 * trWord z h 3 (p.2.map Int.ofNat)).sum := by
+  have := P_subwords z h 4 [(1, [0,1,2,3])] L []
+  simp only [mulGens, List.foldl_nil, List.nil_append] at this
+  rw [tail, ME_eq_P, this]
+  congr 1; apply List.map_congr_left; intro p _
+  simp [trWord, tsum, mulGens, List.map_map, Function.comp_def, List.range, List.range.loop]
+
+/-- Expand a tail trace to a rational function of `z, h`: run the merging evaluator on the
+concrete word, then the recursive trace on each concrete basis permutation. -/
+macro "tail_eval" : tactic => `(tactic| (
+  simp only [tail, ME, protonW, neutronW, V3w, lS, lI, lA, List.cons_append, List.nil_append,
+    List.foldl_cons, List.foldl_nil]
+  simp (config := {decide := true}) only [stepL, collect, addTerm, mulGen, swapAt, List.flatMap_cons,
+    List.flatMap_nil, List.map_cons, List.map_nil, List.cons_append, List.nil_append, List.foldr_cons,
+    List.foldr_nil, List.getD_cons_zero, List.getD_cons_succ, List.set_cons_zero, List.set_cons_succ,
+    List.append_nil, ite_true, ite_false, mul_zero, zero_mul, add_zero, zero_add, mul_one, one_mul]
+  simp only [tsum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, mul_zero, zero_mul, add_zero, zero_add, mul_one, one_mul]
+  simp (config := {decide := true}) only [trB_zero, trB_cons, mulGens, mulGen, swapAt, List.range', List.idxOf,
+    List.take, List.foldl_cons, List.foldl_nil, List.flatMap_cons, List.flatMap_nil, List.map_cons,
+    List.map_nil, List.sum_cons, List.sum_nil, List.getD_cons_zero, List.getD_cons_succ,
+    List.set_cons_zero, List.set_cons_succ, List.reverse_cons, List.reverse_nil, List.cons_append,
+    List.nil_append, List.append_nil, ite_true, ite_false, List.findIdx_cons, List.findIdx_nil,
+    List.take_succ_cons, List.take_zero, cond_true, cond_false, Nat.reduceBEq, beq_self_eq_true, Nat.reduceSub, Nat.reduceAdd]
+  field_simp
+  ring))
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+theorem proton_free (h2 : (2 : K) ≠ 0) : 4 * tail z h (protonW h 1) =
+    -(-h^10*z + h^9*z^2 - h^9 - 5*h^8*z + 5*h^7*z^2 - 5*h^7 - 9*h^6*z + 9*h^5*z^2 - 9*h^5
+      - 5*h^4*z + 4*h^3*z^2 - 5*h^3 + h^2*z - 6*h*z^2 + 2*h - 4*z) := by
+  tail_eval
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+theorem neutron_free (h2 : (2 : K) ≠ 0) : 4 * tail z h (neutronW h 1) =
+    -(h^2+4)*(-h^8*z + h^7*z^2 - h^7 - 3*h^6*z + 3*h^5*z^2 - 3*h^5 - 2*h^4*z + 2*h^3*z^2
+      - 2*h^3 + h^2*z - h*z^2 + h - z) := by
+  tail_eval
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+theorem bond_into_proton (h2 : (2 : K) ≠ 0) :
+    4 * (tail z h (protonW h 1 ++ V3w h 0) - tail z h (protonW h 1)) =
+      h^4*(z^2-h*z-1)*(-h^7+h^6*z-4*h^5+3*h^4*z-6*h^3+2*h^2*z-3*h-2*z) := by
+  tail_eval
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+theorem bond_into_neutron (h2 : (2 : K) ≠ 0) :
+    4 * (tail z h (neutronW h 1 ++ V3w h 0) - tail z h (neutronW h 1)) =
+      h^5*(h^2+1)*(h^2+4)*(h*z-h^2-1)*(z^2-h*z-1) := by
+  tail_eval
+
+
+theorem four_ne_zero_of_two (h2 : (2 : K) ≠ 0) : (4 : K) ≠ 0 := by
+  have : (4 : K) = 2 * 2 := by norm_num
+  rw [this]; exact mul_ne_zero h2 h2
+
+/-- The bond into a proton leaves the trace unchanged when `z² - h z - 1 = 0`
+(that is `z = q` or `z = -q⁻¹`). -/
+theorem bond_into_proton_vanishes (h2 : (2 : K) ≠ 0) (hz : z ^ 2 - h * z - 1 = 0) :
+    tail z h (protonW h 1 ++ V3w h 0) = tail z h (protonW h 1) := by
+  have e := bond_into_proton z h h2
+  rw [hz, mul_zero, zero_mul] at e
+  exact sub_eq_zero.mp ((mul_eq_zero.mp e).resolve_left (four_ne_zero_of_two h2))
+
+/-- The bond into a neutron leaves the trace unchanged when `z² - h z - 1 = 0`. -/
+theorem bond_into_neutron_vanishes (h2 : (2 : K) ≠ 0) (hz : z ^ 2 - h * z - 1 = 0) :
+    tail z h (neutronW h 1 ++ V3w h 0) = tail z h (neutronW h 1) := by
+  have e := bond_into_neutron z h h2
+  rw [hz, mul_zero] at e
+  exact sub_eq_zero.mp ((mul_eq_zero.mp e).resolve_left (four_ne_zero_of_two h2))
+
+end Tail
+end QOU.LightNucleiBond
+
+open QOU.BraidKnot QOU.BraidKnot.HeckeFunctional QOU.MathlibExt.HeckeTowerWitness
+
+namespace QOU.LightNucleiBond
+
+section Bridge
+
+variable {R : Type*} [CommRing R] (z h : R)
+
+/-- The letter `σ_i + b` as an element of the Hecke tower. -/
+noncomputable def letterEl (bi : R × ℕ) : HeckeTower R h := twGen h bi.2 + bi.1 • 1
+
+/-- A word of letters `σ_i + b` as an element of the Hecke tower. -/
+noncomputable def wordEl (L : List (R × ℕ)) : HeckeTower R h := (L.map (letterEl h)).prod
+
+theorem wordEl_append (L M : List (R × ℕ)) :
+    wordEl h (L ++ M) = wordEl h L * wordEl h M := by
+  simp [wordEl, List.prod_append]
+
+theorem twWord_mul_letter (pre : List ℕ) (b : R) (i : ℕ) (Y : HeckeTower R h) :
+    twWord h pre * (letterEl h (b, i) * Y) = twWord h (pre ++ [i]) * Y + b • (twWord h pre * Y) := by
+  rw [twWord_append]
+  simp only [letterEl, twWord, List.map_cons, List.map_nil, List.prod_cons, List.prod_nil, mul_one,
+    add_mul, mul_add, smul_mul_assoc, one_mul, mul_smul_comm, mul_assoc]
+
+theorem towerTr_twWord_mul_wordEl : ∀ (L : List (R × ℕ)) (pre : List ℕ),
+    towerTr z h (twWord h pre * wordEl h L) =
+      ((subwords L).map fun p => p.1 * G z h (pre ++ p.2)).sum
+  | [], pre => by simp [wordEl, subwords]
+  | (b, i) :: L, pre => by
+    have e : twWord h pre * wordEl h ((b, i) :: L) =
+        twWord h (pre ++ [i]) * wordEl h L + b • (twWord h pre * wordEl h L) := by
+      rw [wordEl, List.map_cons, List.prod_cons, ← wordEl, twWord_mul_letter]
+    rw [e, map_add, map_smul, towerTr_twWord_mul_wordEl L (pre ++ [i]),
+      towerTr_twWord_mul_wordEl L pre, subwords, sum_map_append', smul_eq_mul]
+    simp only [List.map_map, Function.comp_def, List.append_assoc, List.singleton_append]
+    rw [← sum_map_mul']
+    congr 1
+    apply congrArg; apply List.map_congr_left; intro p _; ring
+
+theorem subwords_letters : ∀ (L : List (R × ℕ)) (p : R × List ℕ), p ∈ subwords L →
+    ∀ a ∈ p.2, ∃ x ∈ L, x.2 = a
+  | [], p, hp, a, ha => by simp [subwords] at hp; subst hp; simp at ha
+  | (b, i) :: L, p, hp, a, ha => by
+    simp only [subwords, List.mem_append, List.mem_map] at hp
+    rcases hp with ⟨q, hq, rfl⟩ | ⟨q, hq, rfl⟩
+    · rcases List.mem_cons.mp ha with rfl | ha'
+      · exact ⟨(b, a), by simp, rfl⟩
+      · obtain ⟨x, hx, hxa⟩ := subwords_letters L q hq a ha'
+        exact ⟨x, List.mem_cons_of_mem _ hx, hxa⟩
+    · obtain ⟨x, hx, hxa⟩ := subwords_letters L q hq a ha
+      exact ⟨x, List.mem_cons_of_mem _ hx, hxa⟩
+
+theorem shift_wordEl (k : ℕ) (L : List (R × ℕ)) :
+    shift h k (wordEl h L) = wordEl h (L.map fun x => (x.1, x.2 + k)) := by
+  induction L with
+  | nil => simp [wordEl]
+  | cons x L ih =>
+    simp only [wordEl, List.map_cons, List.prod_cons, map_mul] at ih ⊢
+    rw [ih]; simp [letterEl, shift_twGen]
+
+theorem wordEl_mem (n : ℕ) : ∀ L : List (R × ℕ), (∀ x ∈ L, x.2 < n) → wordEl h L ∈ twH h n
+  | [], _ => by simp [wordEl]
+  | x :: L, hL => by
+    rw [wordEl, List.map_cons, List.prod_cons, ← wordEl]
+    refine Subalgebra.mul_mem _ (Subalgebra.add_mem _ ?_ ?_) (wordEl_mem n L fun y hy => hL y (by simp [hy]))
+    · exact twH_mono h (hL x (by simp)) (twGen_mem h x.2)
+    · exact Subalgebra.smul_mem _ (Subalgebra.one_mem _) _
+
+end Bridge
+
+section A2
+
+theorem flatMap_single_cast (l : List ℕ) :
+    List.flatMap (fun a : ℕ => [(a : ℤ)]) l = l.map Int.ofNat := by
+  induction l with
+  | nil => rfl
+  | cons a l ih => simp [List.flatMap_cons, ih]
+
+variable {K : Type*} [Field K] (z h : K)
+
+theorem towerTr_wordEl_eq_tail (L : List (K × ℕ)) (hL : ∀ x ∈ L, x.2 < 3) :
+    towerTr z h (wordEl h L) = tail z h L := by
+  have := towerTr_twWord_mul_wordEl z h L []
+  simp only [twWord, List.map_nil, List.prod_nil, one_mul, List.nil_append] at this
+  rw [this, tail_eq_trWord]
+  congr 1; apply List.map_congr_left; intro p hp
+  have hw : ∀ a ∈ p.2, a < 3 := fun a ha => by
+    obtain ⟨x, hx, rfl⟩ := subwords_letters L p hp a ha; exact hL x hx
+  rw [G_eq z h hw]
+  simp [zw, flatMap_single_cast]
+  exact Or.inl rfl
+
+theorem letterEl_inv (i : ℕ) : letterEl h ((-h, i) : K × ℕ) = twGenInv h i := by
+  rw [letterEl, twGenInv, sub_eq_add_neg]
+  show twGen h i + (-h) • 1 = _
+  simp [Algebra.smul_def]
+
+theorem letterEl_zero (i : ℕ) : letterEl h ((0, i) : K × ℕ) = twGen h i := by
+  simp [letterEl]
+
+theorem vertexCube_eq_wordEl : vertexCube h = wordEl h (V3w h 0) := by
+  simp only [vertexCube, wordEl, V3w, lS, lI, List.map_cons, List.map_nil, List.prod_cons,
+    List.prod_nil, letterEl_inv, letterEl_zero, mul_one, zero_add, mul_assoc]
+
+theorem protonW_shift (k : ℕ) : (protonW h k).map (fun x => (x.1, x.2 + 1)) = protonW h (k + 1) := by
+  simp [protonW, V3w, lS, lI, lA]
+
+theorem neutronW_shift (k : ℕ) : (neutronW h k).map (fun x => (x.1, x.2 + 1)) = neutronW h (k + 1) := by
+  simp [neutronW, V3w, lS, lI, lA]
+
+/-- The A = 2 γγ chain reduces to the four-strand tail: bonded and free traces are
+`tr N₀ · tail(N↑¹ V³)` and `tr N₀ · tail(N↑¹)`. -/
+theorem a2_reduce (N₀ : HeckeTower K h) (hN₀ : N₀ ∈ twH h 2) (L : List (K × ℕ))
+    (hL : ∀ x ∈ L, x.2 < 2) :
+    towerTr z h (ggChain h N₀ [wordEl h L]) =
+        towerTr z h N₀ * tail z h (L.map (fun x => (x.1, x.2 + 1)) ++ V3w h 0) ∧
+      towerTr z h (freeTail h [N₀, wordEl h L]) =
+        towerTr z h N₀ * tail z h (L.map (fun x => (x.1, x.2 + 1))) := by
+  have hN : wordEl h L ∈ twH h 2 := wordEl_mem h 2 L hL
+  have hS : ∀ x ∈ L.map (fun x => (x.1, x.2 + 1)), x.2 < 3 := by
+    intro x hx; obtain ⟨y, hy, rfl⟩ := List.mem_map.mp hx; have := hL y hy; simp; omega
+  have hSV : ∀ x ∈ L.map (fun x => (x.1, x.2 + 1)) ++ V3w h 0, x.2 < 3 := by
+    intro x hx
+    rcases List.mem_append.mp hx with hx | hx
+    · exact hS x hx
+    · have hV : ∀ y ∈ V3w h 0, y.2 < 3 := by simp [V3w, lS, lI]
+      exact hV x hx
+  constructor
+  · rw [towerTr_ggChain z h N₀ hN₀ [wordEl h L] (by simpa using hN)]
+    simp only [List.map_cons, List.map_nil, List.prod_cons, List.prod_nil, mul_one, ggBondFactor]
+    rw [towerTr_mul_comm, shift_wordEl, vertexCube_eq_wordEl, ← wordEl_append,
+      towerTr_wordEl_eq_tail z h _ hSV]
+  · simp only [freeTail, map_one, mul_one]
+    rw [towerTr_disjoint z h 3 (twH_mono h (by norm_num) hN₀), ← towerTr_shift z h 1 (wordEl h L),
+      shift_wordEl, towerTr_wordEl_eq_tail z h _ hS]
+
+/-- **A = 2, bond into a proton.** For any first nucleon `N₀ ∈ H₃`, the γγ bond into a
+production proton changes the trace by `tr N₀ · h⁴ (z² − hz − 1) P(h, z) / 4`. -/
+theorem a2_bond_into_proton (h2 : (2 : K) ≠ 0) (N₀ : HeckeTower K h) (hN₀ : N₀ ∈ twH h 2) :
+    4 * (towerTr z h (ggChain h N₀ [wordEl h (protonW h 0)])
+        - towerTr z h (freeTail h [N₀, wordEl h (protonW h 0)])) =
+      towerTr z h N₀ * (h^4*(z^2-h*z-1)*(-h^7+h^6*z-4*h^5+3*h^4*z-6*h^3+2*h^2*z-3*h-2*z)) := by
+  have hL : ∀ x ∈ protonW h 0, x.2 < 2 := by
+    simp [protonW, V3w, lS, lI, lA]
+  obtain ⟨e1, e2⟩ := a2_reduce z h N₀ hN₀ _ hL
+  rw [e1, e2, protonW_shift]
+  linear_combination (towerTr z h N₀) * bond_into_proton z h h2
+
+/-- **A = 2, bond into a neutron.** -/
+theorem a2_bond_into_neutron (h2 : (2 : K) ≠ 0) (N₀ : HeckeTower K h) (hN₀ : N₀ ∈ twH h 2) :
+    4 * (towerTr z h (ggChain h N₀ [wordEl h (neutronW h 0)])
+        - towerTr z h (freeTail h [N₀, wordEl h (neutronW h 0)])) =
+      towerTr z h N₀ * (h^5*(h^2+1)*(h^2+4)*(h*z-h^2-1)*(z^2-h*z-1)) := by
+  have hL : ∀ x ∈ neutronW h 0, x.2 < 2 := by
+    simp [neutronW, V3w, lS, lI, lA]
+  obtain ⟨e1, e2⟩ := a2_reduce z h N₀ hN₀ _ hL
+  rw [e1, e2, neutronW_shift]
+  linear_combination (towerTr z h N₀) * bond_into_neutron z h h2
+
+end A2
+
+end QOU.LightNucleiBond
+
+/-! ### The h² step: the commutator `σ₀σ₁ − σ₁σ₀` after a shifted word has trace zero -/
+
+namespace QOU.LightNucleiBond
+open QOU.BraidKnot.HeckeFunctional QOU.MathlibExt.HeckeTowerWitness
+
+section HSquared
+variable {R : Type*} [CommRing R] (z h : R)
+
+theorem towerTr_twGen0_shift (Y : HeckeTower R h) :
+    towerTr z h (twGen h 0 * shift h 1 Y) = towerTr z h (twGen h 0) * towerTr z h Y :=
+  towerTr_disjoint z h 1 (twGen_mem h 0) Y
+
+theorem twGen_one_eq_shift : twGen h 1 = shift h 1 (twGen h 0) := by
+  rw [shift_twGen]
+
+/-- `tr(Y↑ σ₀σ₁) = tr σ₀ · tr(σ₀ Y)`. -/
+theorem towerTr_shift_s0s1 (Y : HeckeTower R h) :
+    towerTr z h (shift h 1 Y * (twGen h 0 * twGen h 1)) =
+      towerTr z h (twGen h 0) * towerTr z h (twGen h 0 * Y) := by
+  have key : shift h 1 Y * (twGen h 0 * twGen h 1) =
+      (shift h 1 Y * twGen h 0) * shift h 1 (twGen h 0) := by
+    rw [← twGen_one_eq_shift, mul_assoc]
+  rw [key, towerTr_mul_comm, ← mul_assoc, ← map_mul (shift h 1), towerTr_mul_comm,
+    towerTr_twGen0_shift]
+
+/-- `tr(Y↑ σ₁σ₀) = tr σ₀ · tr(Y σ₀)`. -/
+theorem towerTr_shift_s1s0 (Y : HeckeTower R h) :
+    towerTr z h (shift h 1 Y * (twGen h 1 * twGen h 0)) =
+      towerTr z h (twGen h 0) * towerTr z h (Y * twGen h 0) := by
+  have key : shift h 1 Y * (twGen h 1 * twGen h 0) =
+      shift h 1 (Y * twGen h 0) * twGen h 0 := by
+    rw [twGen_one_eq_shift, map_mul, mul_assoc]
+  rw [key, towerTr_mul_comm, towerTr_twGen0_shift]
+
+/-- **The h² step.** For any `Y` on strands `≥ 1`, the commutator `σ₀σ₁ − σ₁σ₀` placed
+after `Y↑` has Markov trace zero, for every `z` and `h`. -/
+theorem towerTr_shift_commutator (Y : HeckeTower R h) :
+    towerTr z h (shift h 1 Y * (twGen h 0 * twGen h 1 - twGen h 1 * twGen h 0)) = 0 := by
+  rw [mul_sub, map_sub, towerTr_shift_s0s1, towerTr_shift_s1s0, towerTr_mul_comm z h Y,
+    sub_self]
+
+end HSquared
+
+end QOU.LightNucleiBond

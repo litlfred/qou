@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/agt-v12-n2-p04-s",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v12-n2-p04-s/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -21,6 +21,18 @@
     "library/agt-v12-n2-p04-s/sections/sec-006"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The twisted Alexander polynomial for finite abelian covers over three manifolds — 8 sections: Front matter; Introduction; Preliminaries\n\n**The twisted Alexander polynomial for finite abelian covers over three manifolds**\n\n*JÉRÔME DUBOIS*\n\n14 pp, 8 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 The Reidemeister torsion; 3 Definition of the polynomial torsion; 4 Torsion for finite sheeted abelian coverings; 4.1 Statement of the result; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "agt-v12-n2-p04-s",
@@ -31,8 +43,8 @@
     "pages": 14,
     "arxiv": null,
     "doi": "10.2140/agt.2012.12.791",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

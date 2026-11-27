@@ -25,3 +25,5 @@ $$
   =  n^2.
 $$
 The energy of mode $\ell$ at shell $n$ is $E_\ell = \frac{[\ell]_q  [\ell + 1]_q}{[n]_q^2} \cdot E_{\mathrm{ion}}$. The mode fits within shell $n$ exactly when $\ell \leq n - 1$.
+
+**Scope relative to the two-component electron closure.** This normal-bundle conjecture is formulated on the single-component trefoil model $T_{2,3} \hookrightarrow \Sigma_4$ ($\sigma_0^{2n+1} \in B_2$, where the closed curve is homeomorphic to $S^1$). In the primary three-strand model the electron word is $\sigma_0\sigma_1\sigma_0 \in B_3$ and its higher-shell Markov stabilisations $e_n \in B_{n+2}$ close to the two-component positive Hopf link $T(2,2)$; extending the normal-bundle mode count $\sum_{\ell=0}^{n-1}(2\ell + 1) = n^2$ and the $1/n^2$ energy law to that two-component link closure remains open.

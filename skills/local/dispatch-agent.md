@@ -27,6 +27,35 @@ user blind. Do not dispatch without both.
 
 ---
 
+## 0a. Interactive child session vs background agent — choose FIRST (owner directive 2026-11-25, STRICT)
+
+Owner, verbatim: *"If you are swarming a process around research that might require interaction with the author or owner then that should be a proper child sibling that is interactive not a spawning process that you can't engage in. ... This should be a general practice unless it's known that the swarm activities very mechanical and does not need any human attraction."*
+
+A background `Agent` (this skill's default) cannot be steered: the owner cannot see it, talk to it, or answer its questions. So before dispatching, classify each front:
+
+| front | how to launch |
+|---|---|
+| **Research / derivation / open question** — a route choice, a modelling or convention choice, a definition the corpus leaves open, anything whose next step may need the owner | **Interactive child session**: `mcp__claude-code-remote__create_session` (with `source_url` of the repo and a self-contained prompt). It appears in the owner's session list; the owner can read and steer it, and it asks the owner directly (`AskUserQuestion`, chat-mirrored). Tell it to send progress to the parent with `send_message`. |
+| **Mechanical** — a known procedure with one right answer: re-run a producer, attribute a measured change, refresh witnesses, apply a ruled fix, a lint/audit drain | Background `Agent` is fine. Any owner decision it surfaces is framed in its report and relayed by the parent. |
+| **Unsure** | Treat as research → interactive child session. |
+
+Rules for an interactive research child:
+- Its prompt must say it is interactive, must ask the owner at forks rather than guess, and must post its pre-registered plan to the owner before computing.
+- It inherits every repository discipline (anti-fit, NO-FLOAT64, Strict Lean, no `lake build`, fences); put the essentials in the prompt, because it starts with no context.
+- The parent records the child's session id on the bean and in its progress report, so the owner can find it.
+- If a background agent turns out to need owner input, stop it, check its worktree for unpushed work, and relaunch the front as an interactive child session with that context.
+
+## 0b. Handoff envelope — open every prompt and message with it (owner directive 2026-11-25, STRICT)
+
+Owner, verbatim: *"(improve swarm managem,etc. process, when passing to child sibling, then give them the porcess/task they are enging in , their role, your role. this should be a part of general agent to agenet communication use by swarm/merge managers, etc. .)"*
+
+Every dispatched agent prompt, child-session prompt and `send_message` opens
+with **PROCESS / TASK** (process or skill by name, task, done-criteria),
+**YOUR ROLE** (what it decides, where it escalates: owner or sender) and
+**MY ROLE** (sender's role, session id, reply route), in four to six lines,
+before the §1 contract and the body. The canonical rule and template are in
+the platform skill `folio-assistant/cat-harness/sdlc/skills/sdlc-core/agent-handoff.md` §0 (litlfred/cat-harness#1405). This copy points to it and does not restate it.
+
 ## 0. When to use
 
 - Launching **≥ 2 background `Agent` calls** on independent fronts
@@ -102,11 +131,9 @@ guessing. Deviating from the marker or the four keys breaks the monitor.
 1. **Scope each front** to one independent agent (no shared files between
    agents — worktree isolation makes parallel file writes safe; use
    `isolation: "worktree"` whenever agents mutate the tree).
-2. **Assign each a `<LABEL>`** and paste the §1 contract block into its
-   prompt, plus the task-specific brief (verification recipe, discipline,
-   git/branch/PR rules — do not re-derive these; reuse the project's
-   standing lean-direct recipe and "push branch, parent PRs+merges"
-   convention).
+2. **Assign each a `<LABEL>`** and paste **both**:
+   - the §1 progress contract block above, **AND**
+   - the **Mandatory Sibling Launch Briefing** from [`swarm-sibling-launch.md`](swarm-sibling-launch.md) (Template A for the single `merge-steward`, Template B for every `Coding / Proof / Prose / Compute Sibling` — injecting `.claude/skills/local/*.md`, `continual-progress.md`, `idle-backlog.md`, `merge-queue.md` sibling-side submission with zero self-merging, `one-voice` external-reader hygiene, two-step witness SHA stamping, reverting the 9 `qou-v0t8` contended audit witnesses, CPU throttling, and branch/public-release fences).
 3. **Launch all agents in a single message** (multiple `Agent` tool calls)
    so they run concurrently. Record each returned `agentId` ↔ `<LABEL>`
    mapping in a scratch note (`/tmp/<session>-dispatch-map.txt`) so the

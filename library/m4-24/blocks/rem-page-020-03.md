@@ -1,0 +1,1 @@
+The inequality is non-trivial only for L of k+1,k— 1,... components. It is also trivial for k = 0, easy for k = 1 (Vj is just the linking number of 2 component links) and proved by Polyak-Viro [331] for knots and k = 2. There are constants C, with

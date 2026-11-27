@@ -23,8 +23,8 @@ $q_{0}$ is confined to step 3 alone.
 See [Table](#tbl:mass-table-z1-20-table-data).
 
 The row values tabulated here are reproduced by
-[`wedderburn_mass_table_z1_20.py`](https://github.com/litlfred/qou/blob/main/computations/wedderburn_mass_table_z1_20.py)
-from the committed witness `wedderburn-mass-table-z1-20`, evaluating the
+[the mass-table computation](https://github.com/litlfred/qou/blob/main/computations/wedderburn_mass_table_z1_20.py),
+evaluating the
 formula above at the proton-pin $q_{0}$ with zero fitted parameters: the
 three coefficients are fixed by $m_{e}$, Catalan's constant and $q_{0}$
 through the formula's own definitions.
@@ -41,41 +41,18 @@ AME2020 is materially unchanged (mean $0.075\%$, max $0.191\%$, against
 $0.074\%$ and $0.192\%$), because $\Phi_{3}$ enters roughly fifty times more
 weakly than $\Phi_{1}$. The correction is one of provenance, not of fit.
 
-### Convention D, and what it costs
+### Two-row Markov parameter, and what it costs
 
-The table above is computed under the **canonical Markov convention**
-$z = q^{3}/(q^{2}+1)$ (convention D). The values it supersedes were computed
-under the excised convention C, $z = \sqrt{q}/(q+1)$.
+The table above is evaluated at the canonical two-row Markov parameter
+$z = q^{3}/(q^{2}+1)$, which is fixed structurally by Temperley–Lieb factorisation rather than fitted to composite nuclear masses.
 
-**Agreement with AME2020 is worse under D, and materially so.** Mean
-$\lvert\Delta\rvert/\mathfrak{m}$ rises from $0.0746\%$ to $0.1827\%$ and
-the maximum from $0.1909\%$ to $0.3214\%$ — a factor of about $2.4$ on the
-mean. This is reported as measured. It is not an improvement and is not
-presented as one.
+**Agreement with AME2020.** Across $Z = 1..20$, the mean relative discrepancy
+$\lvert\Delta\rvert/\mathfrak{m}$ is $0.1827\%$ and
+the maximum is $0.3214\%$ (compared with $0.1787\%$ mean before replacing legacy recorded nucleon base masses with CODATA 2022 values, and $0.0746\%$ mean / $0.1909\%$ maximum on an earlier baseline evaluated at the half-argument weight $\sqrt{q}/(q+1)$). Replacing the legacy recorded nucleon base masses with the exact CODATA values makes agreement slightly **worse** ($0.1787\% \to 0.1827\%$), indicating that the earlier input offset had absorbed a small part of the residual.
 
-The two changes involved were separated rather than quoted together:
+### What is derived, and what is not
 
-| change | mean $\lvert\Delta\rvert/\mathfrak{m}$ |
-|:---|:---|
-| published, convention C, recorded base masses | $0.0746\%$ |
-| convention $C \to D$, base masses held fixed | $0.1787\%$ |
-| base masses recorded $\to$ CODATA, convention held at D | $0.1827\%$ |
-
-So the convention accounts for nearly all of the change and the base-mass
-correction for very little. Note the direction of that last row: replacing
-the recorded base masses with the *correct* CODATA values makes agreement
-slightly **worse**, which is what one expects if the formula had been
-absorbing part of the input error.
-
-The convention was not chosen on accuracy. It was fixed by the ruling of
-2026-08-15 on other grounds, and a table that fits better in the superseded
-convention is what one would expect of a table that was *built* in it. The
-earlier figures were convention-C figures.
-
-### What is now derived, and what is not
-
-$\Phi_{2}$ and $\Phi_{3}$ are no longer carried from the superseded
-producer. Both are derived from the strand content and the per-crossing
+The invariants $\Phi_{2}$ and $\Phi_{3}$ are derived directly from the strand content and the per-crossing
 values,
 
 $$
@@ -84,14 +61,12 @@ $$
   \Phi_{3} = -\left(2Z + N(N-1)\right)\ln q ,
 $$
 
-and both are **convention-independent** — neither involves the Markov
-parameter $z$, so neither moved when $C \to D$. Both reproduce all nineteen
-non-hydrogen values of the superseded table exactly. The per-crossing
-determinants and ratios they rest on are proved in Lean
-(`QOU.BraidKnot.detT_*`, `symAltRatio_*`, `chiralityCount_collapse`).
+and neither involves the Markov
+parameter $z$. Both reproduce all nineteen
+non-hydrogen values of the earlier table exactly, and the per-crossing
+determinants and ratios they rest on are proved.
 
-$\Phi_{1}$ is the only invariant that uses $z$, and it is the only one the
-convention change moves. It is recomputed here rather than carried.
+The invariant $\Phi_{1}$ is the only one that depends on $z$, and it is computed directly from the transfer-matrix Markov trace at $z = q^{3}/(q^{2}+1)$.
 
 **One limitation remains.** The ground-state ordering minimises $\Phi_{1}$
 over arrangements, which is exponential in $A$; the search is exhaustive

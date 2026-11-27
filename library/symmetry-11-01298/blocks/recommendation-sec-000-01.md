@@ -1,1 +1,0 @@
-Here, there is a unique opinion in the community about the relation between geometry and quantum theory: the geometry as used in GR is classical and should emerge from a quantum gravity in the usual limit that Planck’s constant tends to zero.

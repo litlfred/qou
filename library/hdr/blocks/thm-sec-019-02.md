@@ -1,0 +1,1 @@
+Let C[V ] be the set of regular functions on V (that is, the symmetric algebra Sym(V ∗) of the dual space of V ). There is an isomorphism of algebras grF(Ht,c(W)) ∼= C[V ] ⋊W, given by σ(v) 7→v, σ(w) 7→w, where σ(h) denotes the image of h ∈Ht,c(W) in grF(Ht,c(W)). In particular, there is an isomorphism of vector spaces Ht,c(W) ∼= C[V ] ⊗C[W]. 5.1

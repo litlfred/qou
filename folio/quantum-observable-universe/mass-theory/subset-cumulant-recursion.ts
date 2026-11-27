@@ -16,7 +16,7 @@ export default proposition({
   title:
     "Subset cumulants of the bond model: reconstruction, the $c_k$-only recursion, and vanishing across a split",
   lean: {
-    ref: "qou:QOU.Mass.SubsetCumulantRecursion.cum_eq_sizeCum",
+    ref: "qou:QOU.MassTheory.SubsetCumulantRecursion.cum_eq_sizeCum",
     sorryFree: true,
     validation: "not_checked",
   },
@@ -33,5 +33,8 @@ export default proposition({
     "many-body",
     "lean-formalised",
     "draft",
+  ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): are proved as `sum_powerset_cum`, `cum_eq_sizeCum` and `cum_eq_zero_of_additive_split` in `QOU.Mass.SubsetCumulantRecursion`. ... they are **not** formalised: the corpus's `MarkovTrace.lean` carries cyclicity and single-generator conjugation, not the split-link tensor rule" },
   ],
 });

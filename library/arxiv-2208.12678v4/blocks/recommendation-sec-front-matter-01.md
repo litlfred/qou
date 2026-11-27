@@ -1,1 +1,0 @@
-By analyzing the Euler-Lagrange equations, we show that screw-like solutions are plentiful, whilst ribbon-like solutions impose strong constraints on their parameters: they must have high frequency (equivalently, low pitch), thin width in comparison to the frequency, and remain close to the axis.

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/blocks/cor-page-009-01",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "pageStart": 9,
+  "pageEnd": 9,
+  "text": "cor-page-009-01.md",
+  "derivedFrom": "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-009",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.4",
+    "source_kind": "corollary",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/page-009.md (p. 9-9)",
+    "claim_id": "neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co#corollary:2.4",
+    "lean_status": "unformalized"
+  }
+}

@@ -1,0 +1,1 @@
+Let θ be a real number satisfying the following: O<0<τr/4. Let a and b be the lengths of edges of the triangles in Fig. 3.4. Then a=b by Pro- position 1.1, because __ cos θ cos (πβ)+ cos θ sin θ sin (τr/2) cosfl ~~ sin θ __ cos θ cos (ττ/4)+cos (πβ) sin θ sin (τr/4) Fig. 3.4.

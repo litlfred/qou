@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2302.08363v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2302.08363v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -29,6 +29,18 @@
     "library/arxiv-2302.08363v2/sections/sec-014"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On the structure of trans-series in quantum field theory — Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the perturbative series a typically\n\n**On the structure of trans-series in quantum field theory**\n\n*Marcos Mariñoa, Ramon Miravitllasa and Tomás Reisb*\n\n35 pp, 16 sections.\n\n**Abstract.** Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the perturbative series a typically infinite sum of exponentially small corrections, due to instantons or to renormalons. Even after Borel resummation of the series in the coupling constant, one has to sum this infinite series of small exponential corrections. It has been argued that this leads to a new divergence, which is sometimes called the divergence of the OPE. We show that, in some interesting examples in quantum field theory, the series of small exponential corrections is convergent, order by order in the coupling constant. In particular, we give numerical evidence for this convergence property in the case of the free energy of integrable asymptotically free theories, which has been intensively studied recently in the framework of resurgence.\n\n**Outline.** Front matter; Introduction; Trans-series and their structure; The large N sigma model, revisited; Complex Chern–Simons theory; Integrable models; The free energy of integrable models; Bosonic models; Trans-series computation; Numerical analysis; The Gross–Neveu model; Summary of the recursive problem; Leading orders in alpha; Numerical analysis; Large N solution; Conclusions and open problems",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by-sa/4.0/",
   "licenceRecord": {
@@ -52,8 +64,8 @@
       "stamp_date": "5 Mar 2025"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

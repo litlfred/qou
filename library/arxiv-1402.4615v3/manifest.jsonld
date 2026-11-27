@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1402.4615v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1402.4615v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -65,6 +65,18 @@
     "library/arxiv-1402.4615v3/sections/sec-050"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials.\n\n**GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS**\n\n*MACIEJ DOŁ ˛EGA AND VALENTIN FÉRAY*\n\n71 pp, 52 sections.\n\n**Abstract.** In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials. Our main result is the description of the ﬁrst and second-order asymptotics of the bulk of a random Young diagram under this dis- tribution, which extends celebrated results of Vershik-Kerov and Logan-Shepp (for the ﬁrst order asymptotics) and Kerov (for the second order asymptotics). This gives more evidence of the connection with Gaussian β-ensemble, already suggested by some work of Matsumoto. Our main tool is a polynomiality result for the structure constant of some quantities that we call Jack characters, recently introduced by Lassalle. We be- lieve that this result is also interested in itself and we give several other applica- tions of it.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Jack deformation of Plancherel measure and; 1.2 Main result; 1.3 Jack polynomials and Jack measure; 1.4 Ingredients of the proof; 1.5 Second main result: polynomiality of struc; 1.6 An open problem: edge fluctuations of Jack; 1.7 Outline of the paper; 2 Jack characters and Kerov polynomials; 2.1 Polynomial functions on the set of Young d; 2.2 Transition measure and free cumulants; 2.3 Generalized Young diagrams; 2.4 Continuous Young diagrams; 2.5 -polynomial functions; 3 Polynomiality in Kerov's expansion; 3.1 Notations; 3.2 How to compute Jack character polynomials?",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -86,8 +98,8 @@
       "stamp_date": "3 Feb 2015"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

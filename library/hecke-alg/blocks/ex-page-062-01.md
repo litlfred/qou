@@ -1,0 +1,1 @@
+Suppose that \ = (3,2). In the diagrams below, using the notation of Theorem 5.27, we label the nodes (a,b) and (a,c) by 6 and ¢ respectively and we mark the other nodes in the various rim hooks with a cross; in the right hand

@@ -1,0 +1,1 @@
+If Γ acts non-transitively, freely and ergodically, preserv- ing the ﬁnite measure µ then L∞(X, µ) ⋊Γ is a II1 factor. If Γ preserves the inﬁnite σ-ﬁnite measure µ then L∞(X, µ) ⋊Γ is a II∞factor unless Γ acts transitively in which case L∞(X, µ) ⋊Γ is type I.

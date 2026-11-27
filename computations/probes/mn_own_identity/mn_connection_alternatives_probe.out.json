@@ -1,0 +1,25 @@
+{
+  "det_hol_p": "1",
+  "candidates": {
+    "hol - 1": {
+      "tr_p_F": "-(q - 1)**4*(q + 1)**4*(q**2 - q + 1)*(q**2 + q + 1)/q**6",
+      "equals -h^4[3]_q": true,
+      "Delta_F": "2*(q - 1)**5*(q + 1)**4*(q**2 - q + 1)*(q**2 + q + 1)/q**8"
+    },
+    "(hol - hol^-1)/2  (odd under hol -> hol^-1)": {
+      "tr_p_F": "0",
+      "equals -h^4[3]_q": false,
+      "Delta_F": "0"
+    },
+    "(hol + hol^-1)/2 - 1  (even under hol -> hol^-1)": {
+      "tr_p_F": "-(q - 1)**4*(q + 1)**4*(q**2 - q + 1)*(q**2 + q + 1)/q**6",
+      "equals -h^4[3]_q": true,
+      "Delta_F": "2*(q - 1)**5*(q + 1)**4*(q**2 - q + 1)*(q**2 + q + 1)/q**8"
+    },
+    "log hol  (principal branch, elliptic range)": {
+      "tr_p_F": "0 (eigenvalues 0, i theta, -i theta; det hol = 1)",
+      "Delta_F": "0"
+    }
+  },
+  "note": "Only the part of F even under hol -> hol^-1 (not the q -> q^-1 bar) reaches Delta. hol - 1 and its inversion-even symmetrisation give the same Delta; log hol and the inversion-odd part give Delta = 0."
+}

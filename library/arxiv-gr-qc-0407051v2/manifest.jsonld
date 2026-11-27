@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-gr-qc-0407051v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-gr-qc-0407051v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-gr-qc-0407051v2",
+  "title": "Black hole entropy from quantum geometry",
   "contains": [
     "library/arxiv-gr-qc-0407051v2/sections/sec-front-matter",
     "library/arxiv-gr-qc-0407051v2/sections/sec-000",
@@ -19,6 +19,18 @@
     "library/arxiv-gr-qc-0407051v2/sections/sec-004"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Black hole entropy from quantum geometry — Quantum Geometry (the modern Loop Quantum Gravity using graphs and spin-networks instead of the loops) provides microscopic degrees of freedom that account\n\n**Black hole entropy from quantum geometry**\n\n*Marcin Domagala1 and Jerzy Lewandowski1,2,3*\n\n14 pp, 6 sections.\n\n**Abstract.** Quantum Geometry (the modern Loop Quantum Gravity using graphs and spin-networks instead of the loops) provides microscopic degrees of freedom that account for the black-hole entropy. However, the procedure for state counting used in the literature contains an error and the number of the rel- evant horizon states is underestimated. In our paper a correct method of counting is presented. Our results lead to a revision of the literature of the subject. It turns out that the contribution of spins greater then 1/2 to the entropy is not negligible. Hence, the value of the Barbero-Immirzi parameter involved in the spectra of all the geometric and physical operators in this theory is diﬀerent than previously derived. Also, the conjectured relation be- tween Quantum Geometry and the black hole quasi-normal modes should be understood again. Pacs 04.60Pp, 04.60.Ds, 04.60.Nc, 03.65.Sq 1\n\n**Outline.** Front matter; 1 Introduction and results; 2 The horizon quantum states; 3 The combinatoric formulation of the problem; 4 The entropy calculations; 5 The spin probability distribution",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
@@ -34,7 +46,9 @@
   },
   "meta": {
     "doc_id": "arxiv-gr-qc-0407051v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0407051v2.pdf",
     "source_sha256": "2de07e909b17c5a5117b4021c0a42d2ed3deeedad318a446c233de63d2cbf9f3",
     "pages": 14,
@@ -45,8 +59,8 @@
       "stamp_date": "23 Aug 2004"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

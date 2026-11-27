@@ -1,1 +1,0 @@
-Thus the usual missing energy signals in the decay of the chargino and in other sparticle decays would not work as in the usual SUGRA scenario which implies that one must look for alternative signals to search for supersymmetry on the hyperbolic branch in this region.

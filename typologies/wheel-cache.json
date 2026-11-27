@@ -1,0 +1,16 @@
+{
+  "$schema": "folio-graph-typology/v1",
+  "kind": "wheel-cache",
+  "title": "Built wheel cache",
+  "perInstance": true,
+  "renderable": false,
+  "holds": "derived",
+  "validatorNotApplicable": "a member branch holds ONE built Python wheel and a `manifest.json` (`wheel-cache-member/v1`: package, version, CPython tag, platform, source key, sha256), not graph nodes. `scripts/wheel-cache.sh restore` checks the wheel's sha256 against the manifest and the manifest's key against the one it asked for, and `scripts/build-pyhecke-native.sh` then runs its trace-convention gate on the installed binary, so a bad member is a miss or a failed gate, never a silent install.",
+  "summary": "Built wheels of this repository's native Python extensions, one branch per package, version, CPython tag, platform and source tree, restored so a session does not recompile Rust it has compiled before.",
+  "avatar": {
+    "glyph": "M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 8a4 4 0 1 0 0 8a4 4 0 1 0 0-8M12 3v5M12 16v5M3 12h5M16 12h5",
+    "tone": 40,
+    "reads": "a wheel: a compiled extension kept so the next session installs it instead of building it"
+  },
+  "rationale": "Bean qou-dgkf (owner, 2026-11-21: \"Cache wheel on a branch\", then \"Use cat-harness infra for repo branch cache\"). Modelled on `lake-cache` (folio-assistant-sci): the directory is declared in qou.json with `storage: { branchPrefix, keyedBy: \"family\", keyFrom }`, one orphan branch per member. The kind is declared HERE, in qou's own `typologies/` graph, because qou builds `pyhecke-native` and no platform layer does; there is no central registry for subgraph types (owner, 2026-10-04). `derived`: cargo and maturin compute it from `tools/pyhecke-native` and `tools/hecke-engine`, and it is rebuilt, never edited."
+}

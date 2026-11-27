@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2106.07444v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2106.07444v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -29,6 +29,18 @@
     "library/arxiv-2106.07444v2/sections/sec-014"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "FROM THE HECKE CATEGORY TO THE UNIPOTENT LOCUS — Let W be the Weyl group of a split semisimple group G. Its Hecke category HW can be built from pure perverse sheaves on the double ﬂag variety of G.\n\n**FROM THE HECKE CATEGORY TO THE UNIPOTENT LOCUS**\n\n*MINH-TÂM QUANG TRINH*\n\n88 pp, 16 sections.\n\n**Abstract.** Let W be the Weyl group of a split semisimple group G. Its Hecke category HW can be built from pure perverse sheaves on the double ﬂag variety of G. By developing a formalism of generalized realization functors, we construct a monoidal trace from HW to a category of bigraded modules over a certain graded ring: namely, the endomorphisms of the equivariant Springer sheaf over the unipotent locus of G. We prove that: (1) On objects attached to positive braids β, the output is the weight-graded, equivariant Borel–Moore homology of a generalized Steinberg scheme Z(β). (2) Our functor contains, as a summand, one used by Webster–Williamson to construct the Khovanov– Rozansky link invariant. In particular, the Khovanov–Rozansky homology of the link closure of β is fully encoded in the Springer theory of Z(β).\n\n**Outline.** Front matter; Introduction; 1 Purity, Mixedness, and Realization; 2 Mixed Categories in Representation Theory; 3 The AW Trace; 4 Steinberg Schemes; 5 Steinberg Schemes of Braids; 6 Khovanov–Rozansky Homology; 7 The Decategorified Trace; 8 Deligne–Lusztig Theory; 9 Periodic Braids; 10 The Rational DAHA; Appendix A. Coxeter Groups and Their Character; Appendix B. Braid Varieties in the Literature; Appendix C. Examples of the Decategorified Tra; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {
@@ -50,8 +62,8 @@
       "stamp_date": "21 Jun 2021"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

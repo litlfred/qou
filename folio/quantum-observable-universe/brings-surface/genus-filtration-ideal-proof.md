@@ -1,4 +1,3 @@
-**Proof.**
 The argument decomposes into four steps.  By
 ([genus from Hecke completeness](#lem:genus-from-hecke-completeness)),
 $g = 4$ is the least genus at which the embeddable

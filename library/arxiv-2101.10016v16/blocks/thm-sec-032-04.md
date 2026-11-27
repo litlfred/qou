@@ -1,1 +1,1 @@
-For any pair λ1, λ2 of dominant weights in the open Weyl alcove, the
+For any pair λ1, λ2 of dominant weights in the open Weyl alcove, the bilinear map F0 : Vλ1 ⊗ Vλ2 → Vλ1 ⊠ Vλ2 of Theorem 2.8 intertwines the action of U(g) and satisfies the following universality property. For any U(g)-intertwining map fF Z : Vλ1 ⊗ Vλ2 → Vλ3 satisfying Frenkel-Zhu condition of Theorem 3.2.3 in [61], there is a unique η ∈ HomA(Vgk )(Vλ1 ⊠ Vλ2 , Vλ3) such that the following diagram commutes Vλ1 ⊗ Vλ2 Vλ1 ⊠ Vλ2 Vλ3 F0 fF Z η

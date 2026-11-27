@@ -1,1 +1,0 @@
-We must show that there is a disjoint union of basics $U\hookrightarrow X$ openly embedding into $X$ as a surjection on components so that $S$ belongs to the image of the map $\Ran_{\leq i}(U) \to \Ran_{\leq i}(X)$ and this image lies in $O$.

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2207.07246v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2207.07246v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -86,6 +86,18 @@
     "library/arxiv-2207.07246v2/sections/sec-071"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Path Integral Quantum Monte Carlo Method for Light Nuclei — 73 sections: Front matter; ABSTRACT; ACKNOWLEDGEMENTS\n\n**Path Integral Quantum Monte Carlo Method for Light Nuclei**\n\n*Rong Chen*\n\n165 pp, 73 sections.\n\n**Outline.** Front matter; ABSTRACT; ACKNOWLEDGEMENTS; LIST OF TABLES; LIST OF FIGURES; CHAPTER; 1 INTRODUCTION; 1.1 Background; 1.1.1 Evolution of the Nucleon-Nucleon Interac; Meson exchange theory; Chiral effective field theory; 1.1.2 Methods of Solving the Many-Body Problem; Phenomenological approaches; First principle approaches; 1.2 Motivation; 1.3 Outline; 2 PATH INTEGRAL QUANTUM MONTE CARLO; 2.1 Theoretical Framework",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -108,8 +120,8 @@
       "stamp_date": "18 Jul 2022"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

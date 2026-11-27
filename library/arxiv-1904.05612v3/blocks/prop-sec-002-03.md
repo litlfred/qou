@@ -1,0 +1,1 @@
+Let N ⊂M be a subfactor of type II1 with [M : N] < ∞, {λi : 1 ≤ i ≤n} be a ﬁnite subset of M and f be a projection in M1 satisfying the following three conditions: (1) f ≥e1, (2) P i λie1λ∗ i = f and (3) {λi : 1 ≤i ≤n} ⊆{f}′ ∩M. Then, {λi : 1 ≤i ≤n} is a Pimsner-Popa system for M/N. ON ORTHOGONAL SYSTEMS, TWO-SIDED BASES AND REGULAR SUBFACTORS

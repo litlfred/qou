@@ -1,4 +1,4 @@
-## Proof sketch
+**Sketch.**
 
 Three ingredients close the conditional statement.
 

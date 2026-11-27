@@ -1,1 +1,0 @@
-The question of how many bits can be lost without losing the ability to error correct with high probability of success has been studied in the literature, and as discussed in the previous subsection for the erasure channel the number of bits which are lost must be less than $\frac{n-k}{2}$.

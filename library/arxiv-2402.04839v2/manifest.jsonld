@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2402.04839v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2402.04839v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -36,6 +36,21 @@
     "library/arxiv-2402.04839v2/sections/sec-021"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On a volume invariant of 3-manifolds (Kegel, Ray, Spreer, Thompson, Tillmann) — defines topological volume vol_t(M), the smallest volume of a hyperbolic-link complement in M; bounds and a…\n\n**On a volume invariant of 3-manifolds** — Marc Kegel, Arunima Ray, Jonathan Spreer, Em Thompson, Stephan Tillmann.\n\nIntroduces the **topological volume** vol_t(M): for a 3-manifold M, the smallest volume of the complement of a (possibly empty) hyperbolic link in M. Gives refinements of the invariant, asymptotically tight upper and lower bounds, and classifies all non-hyperbolic closed 3-manifolds with topological volume at most 3.07.\n\n**Why it may bear here.** A volume invariant defined for *non-hyperbolic* manifolds is exactly the gap this corpus hits when a knot is non-hyperbolic and its hyperbolic volume is zero (the trefoil case). Whether that gap is the one this invariant fills is unexamined.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01AWgkrPkXGZ1Hb2UmMmFMcP",
+        "date": "2026-08-15"
+      },
+      "drafted_at": "2026-08-15"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {
@@ -58,8 +73,8 @@
       "stamp_date": "8 Jun 2026"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

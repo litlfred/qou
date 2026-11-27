@@ -1,1 +1,0 @@
-More generally, a full triangulated subcategory of a triangulated category is called a thick subcategory if it has the following property: For any morphism f : K →L which factors over an object of the subcategory and has its cone in the subcategory, the objects K and L must both belong to the subcategory as well.

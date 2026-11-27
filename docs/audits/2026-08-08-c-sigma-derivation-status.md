@@ -138,8 +138,17 @@ on a **cubic** trace field (discriminant −23), so not a quadratic coincidence.
 > Feynman-diagram derivation (Witten 1989, Bar-Natan–Witten 1991,
 > Gukov–Murakami 2006), not a theorem. And the gap is not link-shaped: the
 > formula already covers links, and the missing proof is missing for `4_1` too.
-> Wherever this document says "no theorem covers the link case", read it as a
-> statement about proof status, not about the formula's reach.
+> *(Reconciled 2026-11-24, `qou-lnkT`: keep the two hops distinct — on the
+> topological side, $\tau_{\mathrm{DG}} =$ adjoint Reidemeister torsion IS
+> theorem-backed for links via Pandey–Wong `arXiv:2308.06643` on fundamental
+> shadow links including `L6a4`, and verified at 80 dps against Dubois–Yamaguchi
+> `arXiv:0906.1500v4` Thm 5 & Thm 14 Fox-derivative adjoint torsion on `4_1` and
+> `L5a1` in `computations/whitehead_c_sigma_torsion.py`, commit `fe3b4d75ff5`; on
+> the colored-Jones side, van der Veen `library/arxiv-math-0611181v2/0611181v2.pdf`
+> Lemma 4 gives $c_\sigma(L5a1) = 2^{-3/4}$ and $c_\sigma(L6a4) = 2^{-3/2}$ in
+> closed form via `one_loop_vdv_constant_closed_form_probe.py`. Only the general
+> saddle-point bridge $c_\sigma = k\,|\tau_{\mathrm{DG}}|^{-1/2}$ lacks a theorem,
+> and it lacks one at every cusp number.)*
 >
 > Machine-checked:
 > `computations/probes/one_loop_dglz_prefactor_identification_probe.py`.
@@ -168,15 +177,32 @@ So the honest statement of the upgraded claim is:
 > invariant of `L5a1` together with a single `c = 1` calibration, assuming the
 > 1-loop prefactor form `c_σ ∝ |τ|^{−1/2}`.**
 
-Do not cite it as derived *without* that clause. The `c = 1` leg is now
-theorem-backed on both sides for two-bridge knots (Garoufalidis–Yoon prove
-1-loop = adjoint torsion; `4_1` and `5_2` are two-bridge), but `L5a1` is a
-2-cusped **link**, and no such theorem covers it.
+Do not cite it as derived *without* that clause. Keep the two sides of the chain
+separate (`qou-lnkT`):
+
+* **Topological side ($\tau_{\mathrm{DG}} =$ adjoint Reidemeister torsion):**
+  theorem-backed for two-bridge knots (`4_1`, `5_2`) by Garoufalidis–Yoon
+  (`arXiv:2411.03801`, `[garoufalidis-yoon-2024]`), theorem-backed for
+  fundamental shadow links (including 3-cusped `L6a4`) by Pandey–Wong
+  (`arXiv:2308.06643`, `[pandey-wong-2023]`), and matched to 80 dps on both
+  `4_1` (`|T_\mu| = \sqrt{3}/2`) and the 2-cusped Whitehead link `L5a1`
+  (`|T_\mu| = \sqrt{2}`) by the Wirtinger Fox-derivative theorem of
+  Dubois–Yamaguchi (`arXiv:0906.1500v4`, `[dubois-yamaguchi2012]`, Theorem 5
+  eq. (15) & Theorem 14 eq. (32); `computations/whitehead_c_sigma_torsion.py`,
+  commit `fe3b4d75ff5`).
+* **Asymptotic saddle-point bridge ($c_\sigma = k\,|\tau_{\mathrm{DG}}|^{-1/2}$):**
+  while the colored-Jones prefactor $c_\sigma$ is evaluated on Whitehead chains
+  via van der Veen (`library/arxiv-math-0611181v2/0611181v2.pdf`,
+  `one_loop_vdv_constant_closed_form_probe.py`), the general Chern–Simons
+  saddle-point identification (DGLZ `0903.2472v1` eq. (2.3)) has no general
+  proof at *any* cusp number (including `4_1` at `c = 1`, outside proven special
+  cases such as Ohtsuki's `5_2`), rather than failing because `L5a1` is a link.
 
 ## What remains open
 
-* **The prefactor form itself**, above. Proving it for links is the real
-  remaining gap, and it is a research problem, not a computation.
+* **The general saddle-point prefactor theorem ($c_\sigma = k\,|\tau_{\mathrm{DG}}|^{-1/2}$)**,
+  above — open across general hyperbolic knots and links alike (not a link-only
+  obstruction), and a mathematical analysis problem rather than a computation.
 * **The overall constant at `c ≥ 2`** is pinned only *through* the prefactor
   form. Invariance and the change-of-curve law cannot see it (they are blind to
   a factor depending only on `c`); the Jones side can, and does, but only under

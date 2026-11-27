@@ -1,0 +1,1 @@
+Using a variety of diﬀerent methods to include QED eﬀects in lattice QCD simulations, several collaborations have recently obtained remarkably accurate results for the hadron spectrum, such as the determination of the charged-neutral mass splittings of light pseudoscalar (PS) mesons and baryons [4–14] (see Ref. [15] for a recent review).

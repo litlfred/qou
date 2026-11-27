@@ -1,0 +1,1 @@
+A commutative example. Let X be a set and A = Fy(X) the set of functions on X which are equal to zero except on a finite subset of X. If X is infinite, A does not admit a unit element. It is easy to show that L(A) = R(A) = M(A) = F(X) where F(X) is the algebra of functions on X.

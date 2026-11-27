@@ -1,13 +1,14 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/lem-surreal-squeeze",
   "@type": [
-    "folio-assistant-core:Lemma",
+    "folio-assistant-sci:Lemma",
     "doco:Section"
   ],
   "label": "lem:surreal-squeeze",
@@ -20,7 +21,7 @@
     "millennium-problem",
     "classical-limit"
   ],
-  "leanRef": "qou:QOU.AlgebraicSubstrate.surreal_squeeze",
+  "leanRef": "qou:QOU.Core.AlgebraicSubstrate.surreal_squeeze",
   "text": "surreal-squeeze.md",
   "leanSource": "surreal-squeeze.lean",
   "provenance": "authored"

@@ -1,1 +1,0 @@
-It follows that under the assumption of $\mathcal{T}$ minimal and $e$ an edge of degree two, there must be an obstruction to such a re-identification, that is, some of the faces to be identified must already be identical.

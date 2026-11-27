@@ -1,1 +1,0 @@
-The space $\tilde S$ is the \emph{singularity} of $\overline X$ and should be interpreted as lying in $\overline X$ with infinite cone angle: the space $\overline X$ looks like a book with infinitely many pages (it is not locally compact at $\tilde S$).

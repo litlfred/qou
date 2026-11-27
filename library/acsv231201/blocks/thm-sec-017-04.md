@@ -1,0 +1,1 @@
+Let f(z) = P∞ n=0 anzn be analytic in a ∆- domain ∆(1, ε). If g(z) = P∞ n=0 bnzn is in alg-log then the following statements hold. (i) If f(z) = O(g(z)) as z →1 then an = O(bn) as n →∞. Univariate asymptotics ε ε R Figure 3.1 A ∆-domain. (ii) If f(z) = o(g(z)) as z →1 then an = o(bn) as n →∞. (iii) If f(z) ∼g(z) as z →1 then an ∼bn as n →∞.

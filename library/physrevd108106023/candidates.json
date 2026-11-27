@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "physrevd108106023",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "50c7980e88cd21a07f420b53a6dc0d9397e6334cad2c6c39eb27b5745817e209",
   "file": "PhysRevD.108.106023.pdf"
@@ -11,76 +14,52 @@
   "arxiv": null,
   "doi": "10.1103/PhysRevD.108.106023"
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
+  "candidates": 1,
   "by_kind": {
-   "recommendation": 4
+   "proposition": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "proposition",
    "number": null,
    "name": null,
-   "statement": "Further distribution of this work must maintain attribution to the author(s) and the published article\u2019s title, journal citation, and DOI.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-i-introduction.md",
-   "section_title": "INTRODUCTION",
-   "pages": "1-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The set fdig \u2261d must obey r \u00bc d1 \u00fe d2\u2026 \u00fe dn with di \u22650.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-ii-double-twist-knots.md",
-   "section_title": "DOUBLE TWIST KNOTS",
-   "pages": "3-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The term within parentheses represents the q-Pochhammer, while square brackets correspond to the q-binomials, which are defined as \u0004 r \u0005 Y k\u22121 \u00bc \u00f0q;q\u00der \u00f0q;q\u00dek\u00f0q;q\u00der\u2212k \u00f01 \u2212xqi\u00de: ; \u00f0x;q\u00dek \u00bc k q i\u00bc0 q\u2212deformation \u02dccK (iv) Further, the coefficient k!ck\u27f6 k depends on the knot K and must be written in terms of q-Pochhammers, q-binomials, and \u00f0q; A\u00de- dependent powers so that II.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-ii-double-twist-knots.md",
-   "section_title": "DOUBLE TWIST KNOTS",
-   "pages": "3-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The exact expression is Jr\u00f083; q\u00de \u00bc X r\u2265k8\u2265\u2026\u2265k1\u22650 \u00f0\u22121\u00dek2\u00fek4\u00fek6\u00f0q2; q2\u00dek8 \u0004 r k8 \u0005 Y 6 i\u00bc0 \u0004 k8\u2212i k7\u2212i \u0005 q2k1\u00fe3k2\u00fe2rk2\u22122k1k2\u22122k3k8\u00fe2k5k8 \u00d7 q\u2212k4\u22122rk4\u00fe2k1k4\u22122k3k4\u00fek2 4\u00fe2k5\u22122k1k5\u00fe2k3k5\u00fe3k6q\u00fe2rk6\u22122k1k6\u00fe2k3k6\u22122k5k6\u00fek2 6\u22122k7\u00fe2k1k7\u22122k3k7 \u00d7 q\u00fe2k5k7\u22122k8\u22122rk8\u00fe2k1k8\u00fek2 2\u22122k3\u00fe2k1k3\u22122k7k8: Using the q-binomial and q-Pochhammer identities discussed in Ref. [1], we could rewrite the r-colored Jones polynomial as Jr\u00f083; q\u00de \u00bc X r;k;\u03b1 \u00f0\u22121\u00dek2\u00fek4\u00fek6\u00fe\u03b18 Q6 i\u00bc0\u00f0q2; q2\u00dek8\u2212i\u2212\u03b18\u2212i\u2212k8\u2212i\u22121\u00fe\u03b18\u2212i\u22121 \u00f0q2; q2\u00der \u00f0q2; q2\u00der\u2212k8 Q6 i\u00bc0\u00f0q2; q2\u00de\u03b18\u2212i\u2212\u03b18\u2212i\u22121\u00f0q2; q2\u00dek1\u2212\u03b11 \u00d7 1 \u00f0q; q\u00de\u03b11 q\u00f03k2\u00fe2rk2\u00fek2 2\u2212k4\u22122rk4\u00de\u00fe2\u00f0k1\u2212k3\u00fek5\u2212k7\u00deq2\u00f0\u2212k1k2\u00fek1k3\u00fek1k4\u2212k3k4\u2212k1k5\u00fek3k5\u2212k1k6\u00fek3k6\u2212k5k6\u00de \u00d7 q P6 i\u00bc0 2\u00f0\u03b18\u2212i\u2212\u03b17\u2212i\u00de\u00f0k7\u2212i\u2212\u03b17\u2212i\u00de\u00fe\u03b18\u00f0\u03b18\u00fe1\u00de\u00fek2 4\u00fe3k6q\u00f0\u00fe2rk6\u00fek2 6\u22122k8\u2212k2 8\u22122rk8\u00fe2\u00f0\u00fek1k7\u2212k3k7\u00de\u00deq2\u00f0k5k7\u00fek1k8\u2212k3k8\u00fek5k8\u2212k7k8\u00de; \u00f0A1\u00de where the summation variables in the first line must obey r \u2265k8 \u2265\u03b18 \u2265k7 \u2265\u03b17\u2026 \u2265k1 \u2265\u03b11 \u22650.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-appendix-quiver-matrix.md",
-   "section_title": "APPENDIX: QUIVER MATRIX",
-   "pages": "8-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "The r-colored Jones polynomial for double twist knots K\u00f0p; \u2212m\u00de, with p \u2265m, can be expressed in the quiver representation, Jr\u00f0K\u00f0p; \u2212m\u00de; q\u00de \u00bc X d1\u00fed2\u00fe\u0002\u0002\u0002\u00fed4pm\u00fe1\u00bcr \u00f0\u22121\u00de\u039b\u00f0p;\u2212m\u00deq\u039e\u00f0p;\u2212m\u00de \u00d7 \u00f0q2; q2\u00der Q4pm\u00fe1 i\u00bc1 \u00f0q2; q2\u00dedi q P i;j CK\u00f0p;\u2212m\u00dedidj; \u00f08\u00de where the linear term \u039e\u00f0p;\u2212m\u00de \u2261P i \u03beidi, phase factor \u039b\u00f0p;\u2212m\u00de \u2261P i \u03b3idi. The block structure of the matrix CK\u00f0p;\u2212m\u00de for some examples lead to the following conjecture:",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-004-iii-knot-quiver-correspondence.md (p. 4-7)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-004-iii-knot-quiver-correspondence.md",
+   "section_title": "KNOT-QUIVER CORRESPONDENCE",
+   "pages": "4-7",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-004-iii-knot-quiver-correspondence.md (p. 4-7)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-004-01",
+   "block_iri": "library/physrevd108106023/blocks/prop-sec-004-01",
+   "claim_id": "physrevd108106023#prop-sec-004-01",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

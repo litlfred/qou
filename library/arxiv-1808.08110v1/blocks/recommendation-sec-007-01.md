@@ -1,1 +1,0 @@
-Nevertheless one should not forget that there is another possibility, namely the one suggested in Section 4 of [13], which is based on the same basic princi- ples within this exceptional quantum geometry.

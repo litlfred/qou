@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2302.05903v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2302.05903v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials Introduction",
+  "title": "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials",
   "contains": [
     "library/arxiv-2302.05903v2/sections/sec-front-matter",
     "library/arxiv-2302.05903v2/sections/sec-000",
@@ -28,6 +28,18 @@
     "library/arxiv-2302.05903v2/sections/sec-013"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials — We elaborate on the recent suggestion to consider averaging of Cauchy identities\n\n**On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials**\n\n*A. Mironovb,c,d 1, A. Morozova,c,d 2*\n\n15 pp, 15 sections.\n\n**Abstract.** We elaborate on the recent suggestion to consider averaging of Cauchy identities for the Schur functions over power sum variables. This procedure has apparent parallels with the Borel transform, only it changes the number of combinatorial factors like dR in the sums over Young diagrams instead of just factorials in ordinary sums over numbers. It provides a universal view on a number of previously known, but seemingly random identities.\n\n**Outline.** Front matter; Introduction; Basic example of averaging method; Simple generalizations; Derivation of various sum formulas by the aver; Extension to skew functions; A collection of sum formulas; The Gaussian measure; Calculating various sums; Strong superintegrability and W-operators; Strong integrability in Gaussian Hermitian mat; Strong superintegrability in the p-Gaussian mo; Relation of sum formulas to Ramanujan sums; Hurwitz tau-functions; Conclusion",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -51,8 +63,8 @@
       "stamp_date": "30 Jun 2023"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/black-samson-phd2010sp",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/black-samson-phd2010sp/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -29,6 +29,18 @@
     "library/black-samson-phd2010sp/sections/sec-014"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "REPRESENTATIONS OF HECKE — 16 sections: Front matter; INTRODUCTION; ILL Links and Braids\n\n**REPRESENTATIONS OF HECKE**\n\n*ALGEBRAS AND THE*\n\n58 pp, 16 sections.\n\n**Outline.** Front matter; I INTRODUCTION; ILL Links and Braids; II 2. Representations of the Braid Group and t; II 3. The Temperley-Lieb Algebra; IIA. Diagram Algebras; III SCHUR-WEYL DUALITY AND QUOTIENTS OF THE HE; III 2. Representations of the Iwahori-Hecke Al; IlI.3. The Quantum Group Uv (.6'[(2)); IlIA. The Quantum Supergroup Uv (g[(111)); IV A STATE-SUM FORMULA FOR THE ALEXANDER POLYN; IV 2. Construction of the State-sum; IV 3. An Example; V COMBINATORIAL PROOF; V.l. Braid Group Invariance; V.2. Markov JVloves",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "black-samson-phd2010sp",
@@ -38,8 +50,8 @@
     "pages": 58,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

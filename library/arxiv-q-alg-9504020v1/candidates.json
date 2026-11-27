@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-q-alg-9504020v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "0baef40fa9934c9119af2c67252f8032e288c884da72eeaecf405bf91569cda9",
   "file": "9504020v1.pdf"
  },
  "provenance": {
-  "title": "arXiv:q-alg/9504020v1 24 Apr 1995",
+  "title": "A link invariant from quantum dilogarithm",
   "authors": "R.M. Kashaev\u2217",
   "arxiv": {
    "id": "q-alg/9504020",
@@ -16,31 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
-  "by_kind": {
-   "recommendation": 1
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For any non-negative integer $n<N$ define the symbol: $$(\\omega)_n=\\cases{1, &if $n=0$;\\cr \\prod_{j=1}^n(1-\\omega^j), &$0<n<N$,\\cr}$$ Under complex conjugation we have the following properties: $$(\\omega)_n^*=(\\omega^*)_n,\\quad \\omega^*\\omega=1.$$ It will be convenient to use the \"theta\"-function, defined on integers: $$\\theta(n)=\\cases{1, &$0\\le n< N$;\\cr 0,&otherwise,\\cr}\\quad n\\in Z.$$ For any $n\\in Z$ denote by $[n]$ the coresponding integer residue modulo $N$, lying in the interval $\\{0,\\ldots,N-1\\}$: $$=n\\pmod N,\\quad 0\\le [n]<N,\\quad n,[n]\\in Z.\\label{brac}$$ The evident property of this function is its' periodicity: $$=[n],\\quad n\\in Z. \\label{periodicity}$$ It should be stressed however that the \"bracketing\" is a map from $Z$ to $Z$ rather than to $Z_N$, the ring of residues modulo $N$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-the-r-matrix.md",
-   "section_title": "The $R$-Matrix",
-   "pages": "2-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

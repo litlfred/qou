@@ -4,12 +4,12 @@ export default conjecture({
   label: "conj:qou-infra-discharges-goncharov-zeta5",
   title:
     "QOU's Hecke-NF + Bring-$S_5$ infrastructure discharges Goncharov's depth-3 conjecture at $F = \\mathbb{Q}(\\zeta_5)$",
-  lean: { ref: "qou:QOU.AppendixSurreals.QouInfraDischargesGoncharovZeta5", validation: "stub" },
+  lean: { ref: "qou:QOU.Observations.QouInfraDischargesGoncharovZeta5", validation: "stub" },
   uses: [
     "prop:depth-2-identification-bloch-suslin",
     "rem:conway-kt-vol-injectivity-test",
   ],
-  cites: ["deligne-goncharov2005", "bloch2000", "kontsevich1995", "zagier1986"],
+  cites: ["deligne-goncharov2005", "bloch2000", "kontsevich1995", "zagier1986", "malkin2021"],
   tags: [
     "tier:famous",
     "goncharov-conjecture",

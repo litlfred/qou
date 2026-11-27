@@ -1,18 +1,19 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/conj-lepton-mass-tower-canonical",
   "@type": [
-    "folio-assistant-core:Conjecture",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
   "label": "conj:lepton-mass-tower-canonical",
   "kind": "conjecture",
-  "title": "Canonical operator-level lepton-mass-tower formula: there exists a categorical formula $\\mathfrak{m}(K_\\ell) = m_e \\cdot \\mathcal{F}_\\ell(q)$ for each lepton $\\ell \\in \\{\\mathfrak{e}, \\mu, \\tau\\}$ expressed as a per-braid Markov-trace-weighted sum over $K_\\ell$'s braid representative, **without** invoking the superseded scalar substrate density $\\rho_q = 1/\\hbar_q^2$ as a dimensional factor.",
+  "title": "Canonical operator-level lepton-mass-tower formula: there exists a categorical formula $\\mathfrak{m}(K_\\ell) = m_e \\cdot \\mathcal{F}_\\ell(q)$ for each lepton $\\ell \\in \\{\\mathfrak{e}, \\mu, \\tau\\}$ expressed as a per-braid Markov-trace-weighted sum over $K_\\ell$'s braid representative, without invoking the superseded scalar substrate density $\\rho_q = 1/\\hbar_q^2$ as a dimensional factor.",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-rho-k-graded-expansion",
     "papers/quantum-observable-universe/blocks/prop-per-braid-mass-tower",
@@ -34,7 +35,7 @@
     "open-conjecture",
     "phase-3"
   ],
-  "leanRef": "qou:QOU.BraidKnot.LeptonMassTowerCanonical.lepton_mass_ratio",
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.LeptonMassTowerCanonical.lepton_mass_ratio",
   "text": "lepton-mass-tower-canonical.md",
   "leanSource": "lepton-mass-tower-canonical.lean",
   "provenance": "authored"

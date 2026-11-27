@@ -15,7 +15,7 @@ export default remark({
   title:
     "The torsion half is not an invariant: the Frenet self-linking of $T(2,q)$ jumps by $q$ at $r = 4/(q^2+4)$",
   lean: {
-    ref: "qou:QOU.Mass.TorusInflection.inflection_iff",
+    ref: "qou:QOU.MassTheory.TorusInflection.inflection_iff",
     sorryFree: true,
     validation: "not_checked",
   },
@@ -31,5 +31,9 @@ export default remark({
     "framing",
     "lean-formalised",
     "draft",
+  ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): differentiation behind $\\gamma'(\\pi/q)$, $\\gamma''(\\pi/q)$ is symbolic, not\nformalised." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The factorisation is exact (sympy) and the algebra is formalised\n(`QOU.Mass.TorusInflection`: `cross_vel_acc`, `inflection_iff`,\n`inflection_radius_three_five_seven`, `cos_q_mul_inflection`,\n`inflection_params_injective`)." },
   ],
 });

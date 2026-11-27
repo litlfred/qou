@@ -9,7 +9,7 @@ export default proposition({
     "normal-form",
     "hecke-algebra",
   ],
-  lean: { ref: "qou:QOU.Interactions.inductiveGBReduction",
+  lean: { ref: "qou:QOU.Confinement.inductiveGBReduction",
     validation: "not_checked",
   },
   uses: ["def:derived-atom"],

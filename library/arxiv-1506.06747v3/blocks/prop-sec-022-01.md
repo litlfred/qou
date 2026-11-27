@@ -1,0 +1,1 @@
+In this normalization, the ansatz proposed in [31] (WCM) represents a broad band of nearly constant width, determined by the experimental value of the diﬀerence between the magnetic polarizabilities of proton and neutron.

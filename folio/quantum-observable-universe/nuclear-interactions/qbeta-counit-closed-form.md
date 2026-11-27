@@ -22,17 +22,15 @@ $$
 $$
 The two therefore coincide exactly on elements whose $e^-$ coordinate vanishes, which both nucleon models happen to satisfy. The identity must not be quoted in general.
 
-## Scope: $\varepsilon$ is not a counit, and is inadmissible under convention D
+## Scope: $\varepsilon$ is not a counit and does not descend to the Temperley–Lieb quotient
 
-**This statement is a construction in a non-canonical frame.** Three separate points, each measured; none of them moves a number above.
+**Three structural distinctions apply; none alters the algebraic identity above.**
 
-**It is not a counit.** A unital algebra map into a commutative ring is automatically cyclic, hence a class function. The functional here is the coordinate sum $\sigma \mapsto 1$, which is not multiplicative: pushing the Hecke relation $\sigma^2 = h\sigma + 1$ through such a map forces $h = 0$. Formalized as `QOU.QBeta.CounitSigmaOne.h_eq_zero_of_image_one`. The multiplicative functional the name suggests is the augmentation $\sigma \mapsto q$, which is a different map and gives a different value on the same vector.
+**It is not a counit.** A unital algebra homomorphism into a commutative ring is automatically cyclic, hence a class function. The functional $\varepsilon$ here is the coordinate sum $\sigma \mapsto 1$, which is not multiplicative: applying an algebra homomorphism to $\sigma^2 = h\sigma + 1$ forces $h = 0$ if $\sigma \mapsto 1$. The multiplicative augmentation $\sigma \mapsto q$ is a distinct functional and takes a different value on $\Delta$.
 
-**It does not descend to the algebra the canonical convention places the theory in.** Under convention D the trace ideal is the Temperley–Lieb radical, and the GNS space is $H_\infty(q)/\mathcal{N} \cong \mathrm{TL}_\infty(q)$, not $H_\infty(q)$. A functional descends to a quotient exactly when it annihilates the ideal. The augmentation annihilates $J_{(1^3)}$; the coordinate sum does not. Since $\Delta$ has a non-zero $(1^3)$ component, $\varepsilon$ assigns different values to two representatives of the same class.
+**It does not descend to $\mathrm{TL}_\infty(q)$.** At $z = q^3/(q^2+1)$, the trace ideal is the Temperley–Lieb radical, and the GNS quotient is $H_\infty(q)/\mathcal{N} \cong \mathrm{TL}_\infty(q)$. A linear functional descends to that quotient if and only if it annihilates the three-row ideal $J_{(1^3)}$. The augmentation $\sigma \mapsto q$ annihilates $J_{(1^3)}$, whereas the coordinate sum does not; because $\Delta$ has a non-zero $(1^3)$ component, $\varepsilon$ depends on the lift in $H_3(q)$.
 
-**The admissible set is closed at two, and both miss.** The descent condition $y_{(1^3)}(z) = 0$ is quadratic with roots $z = q$ and $z = z_D = q^3/(q^2+1)$; at $z = q$ the Markov trace *is* the augmentation, so the two roots give two functionals, not three. Evaluated on the same vector against the measured $Q$-value, the augmentation gives $+12.470\%$ and the Markov trace at $z_D$ gives $-43.157\%$, while the coordinate sum used here gives $+0.168\%$ at $z = 1$ — a loop value that is neither root. **The functional that reproduces the measurement is the one the canonical convention forbids.** The two admissible values bracket the target, so some convex combination reproduces it exactly; that is one parameter against one anchor, and any such weight must be derived from the representation rather than fitted.
-
-None of this shows the $Q$-value wrong. It records which functional the construction evaluates, and that the canonical convention excludes it.
+**Two-row faithfulness admits exactly two roots, and neither equals $z = 1$.** The condition $y_{(1^3)}(z) = 0$ is quadratic with roots $z = q$ (the augmentation) and $z = q^3/(q^2+1)$ (the Jones–Markov trace). Evaluated on $\Delta$ against the measured $Q$-value, the augmentation gives $+12.470\%$ and the Markov trace at $z = q^3/(q^2+1)$ gives $-43.157\%$, whereas the coordinate sum ($z = 1$) gives $+0.168\%$ at a loop value outside the root set. Although the two descending functionals bracket the measured value, choosing a convex combination to match experiment is forbidden without a representation-theoretic derivation.
 
 ## Factorization of the energy scale
 

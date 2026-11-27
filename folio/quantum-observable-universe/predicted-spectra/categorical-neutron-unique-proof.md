@@ -1,2 +1,1 @@
-**Proof.** 
 The argument is identical to that for the [uniqueness of the categorical proton](#prop:categorical-proton-unique), applying the partition $(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})$. The Hecke normal form in $H_3(q)$ is unique. The $S_3$-colour symmetry relates the three position assignments via inner automorphisms. Furthermore, the LP-optimal two-gluon stabiliser uniquely minimizes $|\mathrm{tr}_M|$.

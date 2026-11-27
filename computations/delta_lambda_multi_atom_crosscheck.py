@@ -85,7 +85,8 @@ T_parts, T_chi, T_n = load_chi('atom-chi-rust-t.witness.json')
 He_parts, He_chi, He_n = load_chi('atom-chi-rust-3he.witness.json')
 
 # AME binding energies (validation targets)
-B_AME = {'D': mpf('2.22452'), 'T': mpf('8.48180'), '3He': AME_B_HE3_MEV_VALIDATION}
+from codata_constants import AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
+B_AME = {'D': mpf('2.22452'), 'T': AME_B_TRITIUM_MEV_VALIDATION, '3He': AME_B_HE3_MEV_VALIDATION}
 
 # CODATA masses
 M_P = mpf(M_P_MEV_VALIDATION)

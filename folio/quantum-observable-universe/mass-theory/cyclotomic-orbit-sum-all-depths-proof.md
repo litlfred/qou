@@ -1,5 +1,3 @@
-### Proof
-
 **Step 1 (multiplication formula).** The classical $N$-th
 roots-of-unity multiplication identity:
 
@@ -24,8 +22,8 @@ The RHS is real ($\zeta(n) \in \mathbb{R}$).
 ### Verifications
 
 Verified at 50 dps for $n \in \{2, 3, 4, 5\}$, $N \in \{3, 4, 5, 6, 7\}$
-(20 combinations), max residual $8.0 \times 10^{-51}$. Witness:
-[`jonquiere-cyclotomic-general.witness.json`](https://github.com/litlfred/qou/blob/main/computations/jonquiere-cyclotomic-general.witness.json).
+(20 combinations), max residual $8.0 \times 10^{-51}$. Computation record:
+[general cyclotomic Jonquière check](https://github.com/litlfred/qou/blob/main/computations/jonquiere-cyclotomic-general.witness.json).
 
 Sample values:
 

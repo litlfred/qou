@@ -1,1 +1,1 @@
-A.6.1. LetT be a tensor category and let {(Pi,RPi)}i∈I be a commuting
+6.1. LetT be a tensor category and let {(Pi,RPi)}i∈I be a commuting family of central objects of T . Let C be another tensor category and Ψ : T → Ca tensor functor. Assume that Ψ(Pi) is invertible for any i∈ I. Then the functor Ψ factors throughT Υ −→T[P⊗− 1 i |i∈I] Ψ ′ − − →Cwith a tensor functor Ψ′. Moreover, such a Ψ′ is unique up to a unique isomorphism.

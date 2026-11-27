@@ -286,6 +286,96 @@ def _is_stale(script_name: str) -> tuple[bool, str]:
     return False, "current"
 
 
+# ── Witness-less dependency modules (owner ruling 2026-11-25) ────
+#
+# A local module that writes no witness (``_path_bridge.py``, a shared helper)
+# is reported by ``_is_stale`` as "no witness file". It used to propagate that
+# verdict to every importer, so one sys.path bridge that had not changed since
+# 2026-10-10 marked 591 producers stale. Such a module now propagates
+# staleness ONLY when its own source changed after the dependent's witness was
+# computed: its last commit is newer than the witness's ``computedAt``, or it
+# has uncommitted edits. Commit time, not mtime, so a fresh clone sees what a
+# warm checkout sees (the rule ``witness_import_cone_staleness_audit`` uses).
+# In a shallow clone a module whose last commit predates the history boundary
+# cannot be dated; it propagates (conservatively) only when the witness is
+# older than that boundary too.
+
+_GIT_TIME_CACHE: dict[str, Optional[float]] = {}
+_DIRTY: Optional[set[str]] = None
+_SHALLOW_FLOOR: Optional[float] = None
+
+
+def _git(*args: str) -> str:
+    try:
+        return subprocess.run(["git", *args], cwd=str(COMP_DIR), capture_output=True,
+                              text=True, timeout=60).stdout
+    except (OSError, subprocess.SubprocessError):
+        return ""
+
+
+def _module_last_commit(name: str) -> Optional[float]:
+    if name not in _GIT_TIME_CACHE:
+        out = _git("log", "-1", "--format=%ct", "--", name).strip()
+        _GIT_TIME_CACHE[name] = float(out) if out else None
+    return _GIT_TIME_CACHE[name]
+
+
+def _module_dirty(name: str) -> bool:
+    global _DIRTY
+    if _DIRTY is None:
+        out = _git("status", "--porcelain", "--", ".")
+        _DIRTY = {Path(l[3:].strip()).name for l in out.splitlines() if l.strip()}
+    return name in _DIRTY
+
+
+def _shallow_floor() -> Optional[float]:
+    """Commit time of the oldest fetched commit, if the clone is shallow."""
+    global _SHALLOW_FLOOR
+    if _SHALLOW_FLOOR is None:
+        if _git("rev-parse", "--is-shallow-repository").strip() != "true":
+            _SHALLOW_FLOOR = 0.0
+        else:
+            times = [float(t) for t in _git("log", "--format=%ct").split() if t]
+            _SHALLOW_FLOOR = min(times) if times else 0.0
+    return _SHALLOW_FLOOR or None
+
+
+def _witness_computed_at(script_name: str) -> Optional[float]:
+    """Oldest ``computedAt`` across the producer's witnesses (epoch seconds)."""
+    from datetime import datetime
+    paths = list(_witnesses_by_producer().get(script_name, ()))
+    primary = _witness_path(script_name)
+    if primary is not None and primary not in paths:
+        paths.append(primary)
+    times = []
+    for wp in paths:
+        try:
+            ca = json.loads(wp.read_text(encoding="utf-8")).get("computedAt")
+            times.append(datetime.fromisoformat(str(ca).replace("Z", "+00:00")).timestamp())
+        except Exception:
+            continue
+    return min(times) if times else None
+
+
+def _witnessless_dep_changed(dep: str, script: str) -> Optional[str]:
+    """Reason string if witness-less ``dep`` changed since ``script``'s witness."""
+    if _module_dirty(dep):
+        return f"dependency {dep} has uncommitted edits"
+    computed = _witness_computed_at(script)
+    if computed is None:
+        return None  # the script itself is stale on its own account
+    t = _module_last_commit(dep)
+    if t is None:
+        floor = _shallow_floor()
+        if floor is not None and computed < floor:
+            return (f"dependency {dep} predates the shallow-history boundary and "
+                    f"the witness is older still (undecidable; conservative)")
+        return None
+    if t > computed:
+        return f"dependency {dep} changed after the witness was computed"
+    return None
+
+
 _INFRA_HASH_FILE = COMP_DIR / ".infra-hashes.json"
 
 
@@ -456,12 +546,22 @@ def main():
                 stale[script] = f"infra dependency changed: {dep_names}"
                 continue
 
-        # Propagate: if any dependency is stale, this is stale too
+        # Propagate: if any dependency is stale, this is stale too -- except
+        # a dependency that is "stale" only because it writes no witness: that
+        # propagates only when its own source changed after this script's
+        # witness was computed (owner ruling 2026-11-25).
         deps = graph.get(script, set())
-        for dep in deps:
-            if dep in stale:
-                stale[script] = f"dependency {dep} is stale"
-                break
+        for dep in sorted(deps):
+            if dep not in stale:
+                continue
+            if stale[dep] == "no witness file":
+                why = _witnessless_dep_changed(dep, script)
+                if why:
+                    stale[script] = why
+                    break
+                continue
+            stale[script] = f"dependency {dep} is stale"
+            break
 
     # Filter content-only
     if args.content_only:

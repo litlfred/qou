@@ -124,6 +124,7 @@ No float64 anywhere, per AGENTS.md "PROBES ARE NOT EXEMPT".
 """
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import json
 import sys
 from pathlib import Path
@@ -158,7 +159,7 @@ def main() -> int:
     # Both are (real >= 0 modulus factor) * (unprojected rational function).
     # Im(Q_beta) = 0  <=>  the rational function is real (or the modulus factor is 0).
     g1 = (q + 1) / (2 * q**3)          # E1: printed closed form
-    g2 = 1 / (q * (q - 1))             # E2: E_0 / m_e, from the derivation
+    g2 = _qbeta_e0.order_zero_scaled(1, q)             # E2: E_0 / m_e, from the derivation
 
     im1 = sp.factor(sp.simplify(sp.im(sp.expand(sp.simplify(sp.expand(g1))))))
     im2 = sp.factor(sp.simplify(sp.im(sp.expand(sp.simplify(sp.expand(g2))))))

@@ -1,0 +1,1389 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1406.4088v2",
+  "pages": [
+    {
+      "page": 8,
+      "rotation": 0,
+      "drawings": 49,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: Finite-volume behavior of kaon masses. (A) The neutral kaon mass, MK0, shows no signiﬁcant ﬁnite volume dependence; L denotes the linear size of the system. (B) The mass-squared difference of the charged kaon mass, MK+, and MK0 indicates that MK+ is strongly dependent on volume. This ﬁnite-volume dependence is well described by an asymptotic expansion in 1/L whose ﬁrst two terms are ﬁxed by QED Ward-Takahashi identities (17). The solid curve depicts a ﬁt of the lattice results (points) to the expansion up to and including a ﬁtted O(1/L3) term. The dashed and dotted curves show the contributions of the leading and leading plus next-to-leading order terms, respectively. The computation was performed by using the following parameters: bare α ∼1/10, Mπ = 290 MeV, and MK0 = 450 MeV. The mass difference is negative because a larger-than-physical value of α was used. The lattice spacing a is ∼0.10 fm."
+      ],
+      "labels": [
+        {
+          "text": "0.238",
+          "bbox": [
+            126.26,
+            82.85,
+            162.4,
+            95.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.0
+          ]
+        },
+        {
+          "text": "aMK0",
+          "bbox": [
+            94.23,
+            102.76,
+            110.55,
+            132.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.32,
+            10.4,
+            13.0
+          ]
+        },
+        {
+          "text": "0.237",
+          "bbox": [
+            126.26,
+            133.0,
+            162.4,
+            146.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.0
+          ]
+        },
+        {
+          "text": "χ2/dof= 0.86",
+          "bbox": [
+            398.45,
+            134.72,
+            469.56,
+            153.08
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica",
+            "Symbol"
+          ],
+          "sizes": [
+            10.4,
+            13.0
+          ]
+        },
+        {
+          "text": "(A)",
+          "bbox": [
+            495.0,
+            143.05,
+            512.33,
+            156.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.0
+          ]
+        },
+        {
+          "text": "LO",
+          "bbox": [
+            191.86,
+            165.1,
+            209.2,
+            178.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.0
+          ]
+        },
+        {
+          "text": "NLO",
+          "bbox": [
+            182.47,
+            178.1,
+            209.2,
+            191.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.0
+          ]
+        },
+        {
+          "text": "NNLO",
+          "bbox": [
+            173.09,
+            191.1,
+            209.2,
+            204.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.0
+          ]
+        },
+        {
+          "text": "-0.003",
+          "bbox": [
+            125.55,
+            201.7,
+            162.4,
+            214.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.0
+          ]
+        },
+        {
+          "text": "(aMK0)2-(aMK+)2",
+          "bbox": [
+            91.05,
+            202.18,
+            111.85,
+            294.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.32,
+            10.4,
+            13.0
+          ]
+        },
+        {
+          "text": "-0.004",
+          "bbox": [
+            125.55,
+            256.4,
+            162.4,
+            269.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.0
+          ]
+        },
+        {
+          "text": "χ2/dof= 0.90",
+          "bbox": [
+            398.45,
+            291.52,
+            469.56,
+            309.88
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica",
+            "Symbol"
+          ],
+          "sizes": [
+            10.4,
+            13.0
+          ]
+        },
+        {
+          "text": "-0.005",
+          "bbox": [
+            125.55,
+            311.1,
+            162.4,
+            324.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.0
+          ]
+        },
+        {
+          "text": "(B)",
+          "bbox": [
+            495.0,
+            316.6,
+            512.33,
+            329.6
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.0
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            164.78,
+            343.0,
+            175.62,
+            356.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.0
+          ]
+        },
+        {
+          "text": "0.01",
+          "bbox": [
+            227.9,
+            343.0,
+            256.81,
+            356.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.0
+          ]
+        },
+        {
+          "text": "0.02",
+          "bbox": [
+            300.1,
+            343.0,
+            329.01,
+            356.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.0
+          ]
+        },
+        {
+          "text": "0.03",
+          "bbox": [
+            372.25,
+            343.0,
+            401.16,
+            356.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.0
+          ]
+        },
+        {
+          "text": "0.04",
+          "bbox": [
+            444.45,
+            343.0,
+            473.36,
+            356.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.0
+          ]
+        },
+        {
+          "text": "a/L",
+          "bbox": [
+            337.97,
+            362.5,
+            356.04,
+            375.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.0
+          ]
+        },
+        {
+          "text": "Figure 1: Finite-volume behavior of kaon masses. (A) The neutral kaon mass, MK0, shows no signiﬁcant",
+          "bbox": [
+            42.52,
+            394.65,
+            569.48,
+            407.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR6",
+            "NimbusRomNo9L-Medi",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "ﬁnite volume dependence; L denotes the linear size of the system. (B) The mass-squared difference of the",
+          "bbox": [
+            42.52,
+            409.1,
+            569.49,
+            421.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "NimbusRomNo9L-Medi",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "charged kaon mass, MK+, and MK0 indicates that MK+ is strongly dependent on volume. This ﬁnite-volume",
+          "bbox": [
+            42.52,
+            423.36,
+            569.48,
+            436.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR6",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "dependence is well described by an asymptotic expansion in 1/L whose ﬁrst two terms are ﬁxed by QED",
+          "bbox": [
+            42.52,
+            438.1,
+            569.48,
+            450.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Ward-Takahashi identities (17). The solid curve depicts a ﬁt of the lattice results (points) to the expansion up to",
+          "bbox": [
+            42.52,
+            452.34,
+            569.48,
+            464.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "and including a ﬁtted O(1/L3) term. The dashed and dotted curves show the contributions of the leading and",
+          "bbox": [
+            42.52,
+            465.49,
+            569.48,
+            479.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "leading plus next-to-leading order terms, respectively. The computation was performed by using the following",
+          "bbox": [
+            42.52,
+            481.44,
+            569.48,
+            493.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "parameters: bare α ∼1/10, Mπ = 290 MeV, and MK0 = 450 MeV. The mass difference is negative because a",
+          "bbox": [
+            42.52,
+            495.45,
+            569.48,
+            509.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMSY10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "larger-than-physical value of α was used. The lattice spacing a is ∼0.10 fm.",
+          "bbox": [
+            42.52,
+            509.9,
+            406.52,
+            522.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "8",
+          "bbox": [
+            303.01,
+            756.13,
+            308.99,
+            768.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "rotation": 0,
+      "drawings": 70,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2: Mass splittings in channels that are stable under the strong and electromagnetic interactions. Both of these interactions are fully unquenched in our 1+1+1+1 ﬂavor calculation. The horizontal lines are the experimental values and the grey shaded regions represent the experimental error (2). Our results are shown by red dots with their uncertainties. The error bars are the squared sums of the statistical and systematic errors. The results for the ∆MN, ∆MΣ, and ∆MD mass splittings are post-dictions, in the sense that their values are known experimentally with higher precision than from our calculation. On the other hand, our calculations yield ∆MΞ, ∆MΞcc splittings, and the Coleman-Glashow difference ∆CG, which have either not been measured in experiment or are measured with less precision than obtained here. This feature is represented by a blue shaded region around the label."
+      ],
+      "labels": [
+        {
+          "text": "10",
+          "bbox": [
+            101.27,
+            64.79,
+            116.6,
+            86.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.79
+          ]
+        },
+        {
+          "text": "experiment",
+          "bbox": [
+            421.35,
+            92.7,
+            503.18,
+            119.22
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            16.55
+          ]
+        },
+        {
+          "text": "ΔΣ",
+          "bbox": [
+            212.67,
+            97.46,
+            232.59,
+            116.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            16.55
+          ]
+        },
+        {
+          "text": "QCD+QED",
+          "bbox": [
+            421.35,
+            112.59,
+            503.63,
+            139.11
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            16.55
+          ]
+        },
+        {
+          "text": "8",
+          "bbox": [
+            108.87,
+            114.93,
+            116.54,
+            137.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.79
+          ]
+        },
+        {
+          "text": "ΔΞ",
+          "bbox": [
+            281.02,
+            122.53,
+            301.81,
+            141.16
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            16.55
+          ]
+        },
+        {
+          "text": "prediction",
+          "bbox": [
+            421.35,
+            129.57,
+            493.07,
+            156.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            16.55
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            108.87,
+            165.08,
+            116.54,
+            187.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.79
+          ]
+        },
+        {
+          "text": "ΔD",
+          "bbox": [
+            348.88,
+            175.77,
+            370.99,
+            202.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica",
+            "Symbol"
+          ],
+          "sizes": [
+            16.55
+          ]
+        },
+        {
+          "text": "ΔM [MeV]",
+          "bbox": [
+            75.22,
+            176.98,
+            101.75,
+            248.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica",
+            "Symbol"
+          ],
+          "sizes": [
+            16.55
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            108.87,
+            215.35,
+            116.54,
+            237.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.79
+          ]
+        },
+        {
+          "text": "ΔΞcc",
+          "bbox": [
+            412.01,
+            235.02,
+            444.51,
+            259.6
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica",
+            "Symbol"
+          ],
+          "sizes": [
+            11.7,
+            16.55
+          ]
+        },
+        {
+          "text": "ΔN",
+          "bbox": [
+            143.74,
+            257.52,
+            165.84,
+            284.04
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica",
+            "Symbol"
+          ],
+          "sizes": [
+            16.55
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            108.95,
+            265.45,
+            116.62,
+            287.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.79
+          ]
+        },
+        {
+          "text": "ΔCG",
+          "bbox": [
+            483.07,
+            286.72,
+            510.76,
+            312.66
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica",
+            "Symbol"
+          ],
+          "sizes": [
+            11.7,
+            16.55
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            108.95,
+            315.49,
+            116.62,
+            337.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.79
+          ]
+        },
+        {
+          "text": "BMW 2014    HCH",
+          "bbox": [
+            528.07,
+            351.08,
+            530.46,
+            351.49
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            0.27
+          ]
+        },
+        {
+          "text": "Figure 2: Mass splittings in channels that are stable under the strong and electromagnetic interactions.",
+          "bbox": [
+            42.52,
+            368.55,
+            569.48,
+            380.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Both of these interactions are fully unquenched in our 1+1+1+1 ﬂavor calculation. The horizontal lines are the",
+          "bbox": [
+            42.52,
+            383.11,
+            569.48,
+            395.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "experimental values and the grey shaded regions represent the experimental error (2). Our results are shown by",
+          "bbox": [
+            42.52,
+            397.34,
+            569.48,
+            409.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu",
+            "NimbusRomNo9L-ReguItal"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "red dots with their uncertainties. The error bars are the squared sums of the statistical and systematic errors.",
+          "bbox": [
+            42.52,
+            412.0,
+            569.48,
+            423.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The results for the ∆MN, ∆MΣ, and ∆MD mass splittings are post-dictions, in the sense that their values",
+          "bbox": [
+            42.52,
+            426.44,
+            569.48,
+            440.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "are known experimentally with higher precision than from our calculation. On the other hand, our calculations",
+          "bbox": [
+            42.52,
+            440.89,
+            569.48,
+            452.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "yield ∆MΞ, ∆MΞcc splittings, and the Coleman-Glashow difference ∆CG, which have either not been measured",
+          "bbox": [
+            42.52,
+            455.34,
+            569.48,
+            470.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMR12",
+            "CMR8",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "in experiment or are measured with less precision than obtained here. This feature is represented by a blue",
+          "bbox": [
+            42.52,
+            469.78,
+            569.48,
+            481.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "shaded region around the label.",
+          "bbox": [
+            42.52,
+            484.23,
+            192.08,
+            496.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "9",
+          "bbox": [
+            303.01,
+            756.13,
+            308.99,
+            768.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 10,
+      "rotation": 0,
+      "drawings": 43,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3: Contour lines for the neutron-proton mass splitting. The contours are shown as a function of the quark mass difference and the ﬁne structure constant, both normalized with their real world, physical value. Because these two effects compete, by increasing α at ﬁxed quark mass difference one can decrease the mass difference between the neutron and the proton to 0.511 MeV, at which inverse β-decay sets in, as depicted by the blue region. The blue cross shows the physical point. The shaded bands around the contours represent the total statistical and systematic uncertainties on these predictions. A constraint on the neutron-proton mass difference obtained from other considerations leads to a constraint on md −mu and/or α, which can be directly read off from the ﬁgure."
+      ],
+      "labels": [
+        {
+          "text": "2",
+          "bbox": [
+            102.13,
+            65.38,
+            108.55,
+            83.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            11.54
+          ]
+        },
+        {
+          "text": "4 MeV",
+          "bbox": [
+            140.14,
+            78.28,
+            176.81,
+            103.84
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            11.54
+          ]
+        },
+        {
+          "text": "3 MeV",
+          "bbox": [
+            150.42,
+            118.95,
+            187.1,
+            144.5
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            11.54
+          ]
+        },
+        {
+          "text": "(md-mu)/(md-mu)phys",
+          "bbox": [
+            75.56,
+            129.37,
+            101.37,
+            249.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.79,
+            13.85
+          ]
+        },
+        {
+          "text": "physical point",
+          "bbox": [
+            303.79,
+            144.38,
+            387.69,
+            166.58
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            13.85
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            104.09,
+            161.61,
+            110.5,
+            180.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            11.54
+          ]
+        },
+        {
+          "text": "2 MeV",
+          "bbox": [
+            161.73,
+            162.9,
+            198.41,
+            188.46
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            11.54
+          ]
+        },
+        {
+          "text": "Inverse β decay region",
+          "bbox": [
+            256.61,
+            187.48,
+            397.96,
+            240.49
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica",
+            "Symbol"
+          ],
+          "sizes": [
+            13.84
+          ]
+        },
+        {
+          "text": "1 MeV",
+          "bbox": [
+            168.49,
+            204.85,
+            205.16,
+            230.4
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            11.54
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            102.13,
+            257.64,
+            108.55,
+            276.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            11.54
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            108.37,
+            303.57,
+            114.78,
+            322.07
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            11.54
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            526.35,
+            303.57,
+            532.77,
+            322.07
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            11.54
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            318.33,
+            303.68,
+            324.74,
+            322.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            11.54
+          ]
+        },
+        {
+          "text": "α/αphys",
+          "bbox": [
+            299.47,
+            314.67,
+            341.55,
+            340.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica",
+            "Symbol"
+          ],
+          "sizes": [
+            9.79,
+            13.85
+          ]
+        },
+        {
+          "text": "Figure 3: Contour lines for the neutron-proton mass splitting. The contours are shown as a function of the",
+          "bbox": [
+            42.52,
+            355.69,
+            569.48,
+            367.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Medi",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "quark mass difference and the ﬁne structure constant, both normalized with their real world, physical value.",
+          "bbox": [
+            42.52,
+            370.25,
+            569.48,
+            382.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Because these two effects compete, by increasing α at ﬁxed quark mass difference one can decrease the mass",
+          "bbox": [
+            42.52,
+            384.69,
+            569.48,
+            396.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "difference between the neutron and the proton to 0.511 MeV, at which inverse β-decay sets in, as depicted",
+          "bbox": [
+            42.52,
+            399.14,
+            569.47,
+            411.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "by the blue region. The blue cross shows the physical point. The shaded bands around the contours represent",
+          "bbox": [
+            42.52,
+            413.58,
+            569.48,
+            425.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the total statistical and systematic uncertainties on these predictions. A constraint on the neutron-proton mass",
+          "bbox": [
+            42.52,
+            428.03,
+            569.48,
+            439.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "difference obtained from other considerations leads to a constraint on md −mu and/or α, which can be directly",
+          "bbox": [
+            42.52,
+            442.04,
+            569.48,
+            456.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMSY10",
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "read off from the ﬁgure.",
+          "bbox": [
+            42.52,
+            456.92,
+            157.42,
+            468.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            300.02,
+            756.13,
+            311.98,
+            768.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "NimbusRomNo9L-Regu"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    }
+  ]
+}

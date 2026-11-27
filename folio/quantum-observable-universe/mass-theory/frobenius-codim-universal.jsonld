@@ -1,21 +1,19 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/thm-frobenius-codim-universal",
   "@type": [
-    "folio-assistant-core:Theorem",
+    "folio-assistant-sci:Theorem",
     "doco:Section"
   ],
   "label": "thm:frobenius-codim-universal",
   "kind": "theorem",
   "title": "Universal Frobenius co-dimension trace: $\\tau(C_{\\dim_q}) = \\sum_\\lambda 1/\\dim_q(\\lambda)$",
-  "uses": [
-    "papers/quantum-observable-universe/blocks/prop-hook-weight-derivation"
-  ],
   "cites": [
     "references/kassel1995"
   ],
@@ -28,7 +26,7 @@
     "tqft",
     "theorem"
   ],
-  "leanRef": "qou:QOU.BraidKnot.frobenius_codim_universal",
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.frobenius_codim_universal",
   "text": "frobenius-codim-universal.md",
   "leanSource": "frobenius-codim-universal.lean",
   "provenance": "authored"

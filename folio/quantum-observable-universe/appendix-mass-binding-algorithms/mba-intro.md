@@ -1,19 +1,3 @@
-**Purpose.**
-This appendix bridges the categorical derivation chain to the executable compute layer that generates every numerical prediction. For each step of the substrate-to-observable chain, we detail the algorithm, its justifying propositions, the canonical Python API entry point, and the corresponding witness-JSON record.
+The pre-Archimedean derivation chain ([Pre-Archimedean derivation chain](#prose:pre-archimedean-derivation-chain)) reduces physical observables to algebraic invariants of braid closures, Temperley--Lieb trace quotients, and hyperbolic periods on the genus-four Bring surface $\Sigma_4$ ($\chi(\Sigma_4) = -6$). This annex specifies the non-standard computational and machine-certification procedures that evaluate those invariants across the five discrete confinement layers $\mathcal{L}_0 \to \mathcal{L}_4$: three-strand quark--gluon normal forms in $H_3(q)$ ($\mathcal{L}_0$), nucleon braids, radical shadow prices, and Archimedean lepton/baryon resolvents ($\mathcal{L}_1$), multi-nucleon monotone Bratteli transfer sweeps and physical cluster-chamber reductions in $H_{3A}(q)$ ($\mathcal{L}_2$), capacitated atomic shell promotions ($\mathcal{L}_3$), and molecular toric stoichiometry ($\mathcal{L}_4$).
 
-**Layered compute stack.**
-The Python API provides a facade over a layered stack:
-
-1. **Layer 1 — Rust core** (`hecke-engine` crate): the Gröbner–Shirshov reducer, Hoefsmit representation, Markov trace, and Clarabel SDP backend.
-2. **Layer 2a — `qou-substrate`** (Python): substrate constant $q_0$, mpmath precision discipline, and the `WitnessBuilder` schema.
-3. **Layer 2b — `pyhecke` / `pyhecke-native`** (Python / PyO3): bindings invoking the Rust core directly.
-4. **Layer 3 — `qou-mass`** (Python facade): external-researcher API exposing `predict()`, `compute_tr_M()`, and `canonical_braid()`.
-
-**Conventions.**
-*Precision* reports in two legs: L1 (internal compute agreement, target $10^{-15}$) and L2 (per-observable absolute accuracy, target $\sigma_{\mathrm{pred}} \leq \sigma_{\mathrm{exp}} / 100$). *Status flags* mirror the canonical derivation table: *proved* (Lean), *derived* (categorical, no fit), *conditional* (conjecture-conditional), *open* (open question, no derivation yet). *Witness JSON* paths are relative to `computations/`.
-
-**Reading order.**
-A chain-map table maps each step to its propositions and API call. Subsequent sections expand each step into a per-algorithm block in dependency order. Sidecar algorithms appear after the eleven canonical steps.
-
-**Maintenance contract.**
-This appendix is the bridge between the theoretical propositions and the executable compute. A proposition (Steps 9a, 9b, 10, 11), its canonical script, its witness JSON and the algorithm block below are kept in step with one another, so that the algorithm stated here is the algorithm that was run.
+Throughout this annex, standard external algorithms—completed Coxeter/Hecke Gröbner--Shirshov reduction, Young--Hoefsmit seminormal matrix representations, toric binomial Gröbner/Graver bases, and primal--dual interior-point conic solvers—are cited directly from the literature together with their exact parameter pins in this model: unimodular skein parameter $h = q - q^{-1}$ ($\sigma_i^2 = h\sigma_i + 1$) and Markov trace weight $z = q^3/(q^2+1)$ on the faithful Temperley--Lieb quotient $TL_n(q) = H_n(q)/\mathrm{rad}\,\tau_q$. Symbolic stages operate exactly over $\mathbb{Q}(q)$ or linearly ordered commutative rings, while every Archimedean evaluation past the comparison boundary is executed in 80-decimal-place arbitrary-precision arithmetic (truncation bound $\le 10^{-60}$, with zero IEEE-754 binary64 intermediates) from the three physical calibration observables $(m_e, \mathfrak{D}_\beta, m_\pi)$ ([Three-calibration discipline](#def:three-calibration-discipline)).

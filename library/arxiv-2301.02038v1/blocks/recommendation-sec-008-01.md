@@ -1,1 +1,0 @@
-\label{Subsec:LR} Examples \ref{exmpl:var_prin} and \ref{exmpl:cons_law} suggest that the horizontal cohomology $\overline H{}^\bullet (\mathscr E)$ should be interpreted as ``smooth functions on the space of solutions of the PDE $\mathscr E_0$''.

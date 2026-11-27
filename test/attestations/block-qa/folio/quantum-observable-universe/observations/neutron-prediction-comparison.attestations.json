@@ -164,6 +164,42 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8ecf4d3ee7e8",
+          "ts": "e269d156ac88",
+          "lean": "1f7b21d4cb55",
+          "lean_statement": "ecf7f4176141"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:14.555Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] Lean `stable_neutron_max_error` picks `n_obs := predicted_neutron_number p`, so \\ | \u0394\\ | = 0 \u2264 8 trivially: no observed data enters. `stable_neutron_mean_discrepancy` is `\u2203 mean, 0 < mean < 2` with witness 1.8155: vacuous. md says max \\ | \u0394n\\ | = 7, Lean says \u2264 8. Checked c = (q\u2080\u2212q\u2080\u207b\u00b9)[6]/(6[2][7]) = 0.0145158 at the proton pin (md \u2248 0.01452 \u2713). The md is honest that c is assigned, not derived. This is a comparison block, so empirical content belongs here; the defect is the Lean, which certifies nothing about the comparison."
+      },
+      {
+        "field_hash": {
+          "md": "a553489ba0e9",
+          "ts": "e269d156ac88",
+          "lean": "1f7b21d4cb55",
+          "lean_statement": "ecf7f4176141"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T07:47:47.580Z",
+        "reviewed_sha": "845e2f8200142fec69a10571d6695218dce8525e",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: voice only ('We compare' became 'Compare'). No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: [sidecar review 2026-11-15, issue #8030] Lean `stable_neutron_max_error` picks `n_obs := predicted_neutron_number p`, so \\ | \u0394\\ | = 0 \u2264 8 trivially: no observed data enters. `stable_neutron_mean_discrepancy` is `\u2203 mean, 0 < mean < 2` with witness 1.8155: vacuous. md says max \\ | \u0394n\\ | = 7, Lean says \u2264 8. Checked c = (q\u2080\u2212q\u2080\u207b\u00b9)[6]/(6[2][7]) = 0.0145158 at the proton pin (md \u2248 0.01452 \u2713). The md is honest that c is assigned, not derived. This is a comparison block, so empirical content belongs here; the defect is the Lean, which certifies nothing about the comparison."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -600,7 +636,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling folio/quantum-observable-universe/observations/neutron-prediction-comparison.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/observations/neutron-prediction-comparison.lean:1 — folio/quantum-observable-universe/observations/neutron-prediction-comparison.lean:38:39: error: failed to synthesize"
+        "evidence": "folio/quantum-observable-universe/observations/neutron-prediction-comparison.lean:1 \u2014 folio/quantum-observable-universe/observations/neutron-prediction-comparison.lean:38:39: error: failed to synthesize"
       },
       {
         "field_hash": {

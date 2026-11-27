@@ -1,0 +1,1 @@
+The experimental data (in Figure 8) suggest that there might exists an additional invariant(s) which together with vg, v3, and n satisfy an algebraic equation(s) such that the set (9) is the projection of the algebraic set defined by the equation(s).

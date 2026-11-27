@@ -310,6 +310,9 @@ def main():
         )
         .set_content_block("prop:demazure-fiber-markov-trace")
     )
+    ylam_upstream = Path(__file__).parent / "y-lambda-macdonald-telescope.witness.json"
+    if ylam_upstream.exists():
+        builder.add_upstream(ylam_upstream)
 
     # Scope: defaults to {2, 3} for sandbox (n=4 is 5·24=120 chars,
     # exceeds local 50 s wall-clock); CI sets QOU_EXTEND_SCOPE=1
@@ -366,9 +369,15 @@ def main():
     )
     builder.add_data("tables_by_n", tables)
     builder.add_data("precision", "symbolic_q")
-    builder.add_data("truncation_eps", 0.0)
+    builder.add_data("truncation_eps", "0")
 
-    out_path = builder.save()
+    out_path = builder.save(extra={
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "Exact symbolic Demazure characters D_w(lambda) and rational "
+            "Markov-trace functionals T^Dem(lambda; w) in Q(q); no numerical q0 evaluation."
+        ),
+    })
     print(f"\nWitness: {out_path}")
 
 

@@ -32,5 +32,6 @@
   "volume": "50",
   "page": "367-403",
   "publisher": "American Mathematical Society",
-  "URL": "https://arxiv.org/abs/0905.0731"
+  "URL": "https://arxiv.org/abs/0905.0731",
+  "note": "CRM Proc. Lecture Notes 50 (2010), 367-403; arXiv:0905.0731. Constructs extended 2d/3d TQFTs from compact Lie groups (anchored in prose at rem:tqft-context). Contains no p-adic or F-isocrystal material; an earlier `-- Ref: [freed2010]` miscitation on QOU.Glossary.FIsocrystal was retired when QOU/Glossary.lean replaced FIsocrystal with Mathlib's WittVector.Isocrystal, while p-adic F-crystal / connection structure is cited to andre-baldassarri2002 at ex:p-adic-realisation (bean qou-ffkf)."
 }

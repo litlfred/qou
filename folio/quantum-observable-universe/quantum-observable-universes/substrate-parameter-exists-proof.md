@@ -1,4 +1,3 @@
-
 The braiding $c_{V,V} \colon V \otimes V \to V \otimes V$ of the QOU
 provides the substrate parameter categorically — no external choice is
 needed.

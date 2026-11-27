@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-0805.1447v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "b7ee20b0a7f5f3da02f7c5c82a1b49f8036b4a9abe215c8c7597e3d16c97f4f6",
   "file": "0805.1447v2.pdf"
  },
  "provenance": {
-  "title": "BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID",
+  "title": "Braid ordering and the geometry of closed braid",
   "authors": "TETSUYA ITO",
   "arxiv": {
    "id": "0805.1447",
@@ -16,76 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
-  "by_kind": {
-   "recommendation": 4
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We must be careful that when we think about Dehornoy floor, which $B_{n}$ a braid $\\beta$ belongs to is very important.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-21-dehornoy-ordering-dehornoy-floor.md",
-   "section_title": "Dehornoy ordering, Dehornoy floor",
-   "pages": "4-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "If $\\alpha \\neq \\beta$, these graphs must be different, so at some puncture point two graphs will diverge.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-22-the-geometric-meaning-of-dehornoy-ordering-an.md",
-   "section_title": "The geometric meaning of Dehornoy ordering and Dehornoy floor",
-   "pages": "6-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This is because the c-circle boundary of bc-annuli must be attached to c-circle boundary of another bc-annuli, since there is no cc-regions and boundary of bb-tile are all b-arcs.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-42-mixed-foliated-surface.md",
-   "section_title": "Mixed foliated surface",
-   "pages": "12-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Note that there might exist be-tile which has no singular point or two singular points, but from construction of be-tile, be-tile with zero singularity and be-tile with two singularity must occur in pairs in each neighbor of vertex, so the notion of vertex and valance defined in section 3 coincide with the usual meaning of vertex and valance in this cellular decomposition.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-42-mixed-foliated-surface.md",
-   "section_title": "Mixed foliated surface",
-   "pages": "12-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

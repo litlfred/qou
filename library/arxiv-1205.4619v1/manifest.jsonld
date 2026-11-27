@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1205.4619v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1205.4619v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -24,6 +24,18 @@
     "library/arxiv-1205.4619v1/sections/sec-009"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators — An attempt has been made to investigate the global SU(2) and SU(3) unitary ﬂavor symmetries systematically in terms of\n\n**Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators**\n\n*Pushpa(1), P. S. Bisht(1), Tianjun Li(2) and O. P. S. Negi(1.2)∗*\n\n17 pp, 11 sections.\n\n**Abstract.** An attempt has been made to investigate the global SU(2) and SU(3) unitary ﬂavor symmetries systematically in terms of quaternion and octonion respectively. It is shown that these symmetries are suitably handled with quaternions and octonions in order to obtain their generators, commu- tation rules and symmetry properties. Accordingly, Casimir operators for SU(2) and SU(3) ﬂavor symmetries are also constructed for the proper testing of these symmetries in terms of quaternions and octonions.\n\n**Outline.** Front matter; 1 Introduction; 2 Quaternion Gauge Theory and Isospin; 3 Quaternions and Dirac spinors; 4 Flavor SU(3)f and Octonions; 5 Generators and Casimir Invariants; 6 Casimir Operator for Quaternion SU(2) group; 7 Split Octonions; 8 Split Octonions and SU(3)f Symmetry; 9 Casimir Operators for split Octonion SU(3) g; 10 Conclusion",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -47,8 +59,8 @@
       "stamp_date": "3 Apr 2012"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

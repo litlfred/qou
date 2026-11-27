@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1001.2180v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1001.2180v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -44,6 +44,18 @@
     "library/arxiv-1001.2180v2/sections/sec-029"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "ASYMPTOTICS OF q-PLANCHEREL MEASURES — In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure\n\n**ASYMPTOTICS OF q-PLANCHEREL MEASURES**\n\n*VALENTIN FÉRAY AND PIERRE-LOÏC MÉLIOT*\n\n27 pp, 31 sections.\n\n**Abstract.** In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure coming from Hecke algebras. The ﬁrst lines of such diagrams are typically of order n, so it does not ﬁt in the context of the work of P. Biane and P. Śniady. Using the theory of polynomial functions on Young diagrams of Kerov and Olshanski, we are able to compute explicitly the ﬁrst- and second-order asymptotics of the length of the ﬁrst rows. Our method also works for other measures, for example those coming from Schur-Weyl representations.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Background; 1.2 Results; 1.3 Tools; 1.4 Some open questions; 2 The q-Plancherel measure; 1.5 Outline of the paper; 2.1 Definition; 2.2 Link with representation of the Hecke alge; 2.3 Interpretation in the representation theor; 3 Observables of diagrams; 3.1 Power sums of Frobenius coordinates; 3.2 Normalized characters; 3.3 Normalized conjugacy classes in symmetric ; 3.4 Products of normalized characters; 3.5 Another product; 3.6 q-characters",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -65,8 +77,8 @@
       "stamp_date": "27 Oct 2010"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

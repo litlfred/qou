@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0505170v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0505170v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -18,6 +18,18 @@
     "library/arxiv-math-0505170v2/sections/sec-003"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "AN AVERAGING PROCESS FOR UNIPOTENT GROUP ACTIONS — We present an averaging process for sections of a torsor under a unipotent group.\n\n**AN AVERAGING PROCESS FOR UNIPOTENT GROUP ACTIONS**\n\n*AMNON YEKUTIELI*\n\n11 pp, 5 sections.\n\n**Abstract.** We present an averaging process for sections of a torsor under a unipotent group. This process allows one to integrate local sections of such a torsor into a global simplicial section. The results of this paper have applica- tions to deformation quantization of algebraic varieties. 0. Introduction Let K be a ﬁeld of characteristic 0. For any natural number q let K[t0, . . . , tq] be the polynomial algebra, and let ∆q K be the geometric q-dimensional simplex ∆q K := Spec K[t0, . . . , tq]/(t0 + · · · + tq −1). Our main result is the following theorem. Theorem 0.1. Let G be a unipotent algebraic group over K, let X be a K-scheme, let Z be a G-torsor over X, and let Y be any X-scheme. Suppose f = (f0, . . . , fq) is a sequence of X-morphisms fi : Y →Z.\n\n**Outline.** Front matter; 0 Introduction; 1 The Averaging Process; 2 Simplicial Sections; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
@@ -44,8 +56,8 @@
       "stamp_date": "12 Jan 2006"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

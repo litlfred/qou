@@ -7,7 +7,7 @@ export default definition({
   defines: ["quantum-flatness"],
   uses: ["def:categorical-connection", "def:quantum-gauge-group"],
   lean: {
-    ref: "qou:QOU.QuantumObservableUniverse.IsQuantumFlat",
+    ref: "qou:QOU.Core.QuantumObservableUniverse.IsQuantumFlat",
     validation: "not_checked",
   },
 });

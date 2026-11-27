@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0809.4303v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0809.4303v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -15,6 +15,18 @@
     "library/arxiv-0809.4303v2/sections/sec-000"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Exact vortex solutions in an extended Skyrme-Faddeev model — We construct exact vortex solutions in 3 + 1 dimensions to a theory which is an extension, due to Gies, of the Skyrme-Faddeev model, and\n\n**Exact vortex solutions in an extended Skyrme-Faddeev model**\n\n*Instituto de F´ısica de São Carlos; IFSC/USP;*\n\n12 pp, 2 sections.\n\n**Abstract.** We construct exact vortex solutions in 3 + 1 dimensions to a theory which is an extension, due to Gies, of the Skyrme-Faddeev model, and that is believed to describe some aspects of the low energy limit of the pure SU(2) Yang-Mills theory. Despite the eﬀorts in the last decades those are the ﬁrst exact analytical solutions to be constructed for such type of theory. The exact vortices appear in a very parti- cular sector of the theory characterized by special values of the coupling constants, and by a constraint that leads to an inﬁnite number of conserved charges. The theory is scale invariant in that sector, and the solutions satisfy Bogomolny type equations. The energy of the static vortex is proportional to its topological charge, and waves can travel with the speed of light along them, adding to the energy a term proportional to a U(1) Noether charge they create.\n\n**Outline.** Front matter; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -38,8 +50,8 @@
       "stamp_date": "5 May 2009"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

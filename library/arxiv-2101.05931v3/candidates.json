@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2101.05931v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "41eaa81b97ede8e9829c407206e09f24f0bcbf0bc86d7c11656d566e368afe03",
   "file": "2101.05931v3.pdf"
@@ -16,61 +19,54 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 3,
+  "candidates": 1,
   "by_kind": {
-   "recommendation": 3
+   "theorem": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "elsewhere": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "7.3",
    "name": null,
-   "statement": "In fact, the third author and Bezrukavnikov formulated a principle that suitable categorical braid group representations should have a ``crystal limit'' \\cite[Section 9]{BLet}.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since this is an isomorphism of perverse equivalences, they must induce the same bijections by Lemma \\ref{lem:LosLem}.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-021-72-the-cactus-group-action-arising-from-rickard.md",
-   "section_title": "The cactus group action arising from Rickard complexes",
-   "pages": "18-20",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For further details we recommend the exposition in \\cite{Rhoad}.",
-   "strength": null,
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-024-82-type-a-combinatorics.md",
-   "section_title": "Type A combinatorics",
-   "pages": "23-24",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "([21, Theorem 5.19]) For any g-crystal B, the assignment cJ 7\u2192\u03beJ de\ufb01nes a (set- theoretic) action of C on B.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [21, Theorem 5.19] in sections/sec-020-7-crystalising-the-braid-group-action.md",
+   "external_refs": [
+    "[21, Theorem 5.19]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-020-7-crystalising-the-braid-group-action.md",
+   "section_title": "Crystalising the braid group action",
+   "pages": "17-18",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, Cites external source [21, Theorem 5.19] in sections/sec-020-7-crystalising-the-braid-group-action.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-020-01",
+   "block_iri": "library/arxiv-2101.05931v3/blocks/thm-sec-020-01",
+   "claim_id": "arxiv-2101.05931v3#theorem:7.3",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

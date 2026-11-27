@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1704.06561v2/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "V Determination of 0",
+  "pageStart": 19,
+  "pageEnd": 22,
+  "contains": [
+    "library/arxiv-1704.06561v2/blocks/prose-sec-006",
+    "library/arxiv-1704.06561v2/blocks/prop-sec-006-01",
+    "library/arxiv-1704.06561v2/blocks/figure-img-p020-91",
+    "library/arxiv-1704.06561v2/blocks/figure-img-p020-136",
+    "library/arxiv-1704.06561v2/blocks/figure-img-p020-181",
+    "library/arxiv-1704.06561v2/blocks/figure-img-p020-226",
+    "library/arxiv-1704.06561v2/blocks/figure-img-p022-1",
+    "library/arxiv-1704.06561v2/blocks/figure-img-p022-46",
+    "library/arxiv-1704.06561v2/blocks/figure-img-p022-91",
+    "library/arxiv-1704.06561v2/blocks/figure-img-p022-136",
+    "library/arxiv-1704.06561v2/blocks/figure-img-p022-181",
+    "library/arxiv-1704.06561v2/blocks/figure-img-p022-226"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1704.06561v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1704.06561v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,1 @@
+For σ ∈Sn, let ℓ(σ) = {(a, b) | 1 ≤a < b ≤n, σ(a) > σ(b)} be its length. For τ = (i i + 1) ∈Sn, define Tτ = gi ∈Hn(q) for all i < n, and define for all σ Tστ := ( TσTτ if ℓ(στ) = ℓ(σ) + 1 q−1(TσTτ + (1 −q)Tσ) otherwise.

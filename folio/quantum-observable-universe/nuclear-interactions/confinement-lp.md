@@ -1,8 +1,7 @@
-We recast the confinement operator selection as a linear program over the NF basis of $H_3(q)$. This connects the categorical minimum-action principle to standard LP duality theory, providing a rigorous proof of uniqueness.
+Recast the confinement operator selection as a linear program over the NF basis of $H_3(q)$. This connects the categorical minimum-action principle to standard LP duality theory, providing a rigorous proof of uniqueness.
 
 ## Primal program (operator selection)
 
-**Proposition.**
 *The confinement operator $\Phi = \sum_{i=1}^{6} x_i b_i \in H_3(q)$ for quark types $(f_1, f_2, f_3)$ is the solution of:*
 
 $$
@@ -77,4 +76,4 @@ $$
   Gx \geq 0
 $$
 
-When $y$ is fixed, $x^T G y$ is linear in $x$, reducing to a standard LP. When both $x$ and $y$ vary, the objective is bilinear with **degenerate** $G$ — under convention D the Markov–Gram form has a one-dimensional radical (the $(1^3)$ block), so the quadratic program is posed on the quotient, not on the full NF span. On the star pairing $\mathrm{tr}_M(b_i b_j^*)$ the form is positive semidefinite, $(5,0,1)$; the older reading as indefinite quoted the bilinear pairing without naming it and is withdrawn (2026-08-09). **Open (2026-08-09).** Whether the cone constraint $G x \geq 0$ above is to be taken in the full six-dimensional NF span or in the radical quotient is not settled here; it is the same question as Term 4 of the six-term mass identity and is reserved for the owner. The nuclear assembly step fixes $y = \mathrm{NF}(\mathfrak{N}_{k+1})$ and solves the resulting LP.
+When $y$ is fixed, $x^T G y$ is linear in $x$, reducing to a standard LP. When both $x$ and $y$ vary, the objective is bilinear with **degenerate** $G$ — at $z = q^3/(q^2+1)$ the Markov–Gram form has a one-dimensional radical (the $(1^3)$ block), so the quadratic program is posed on the quotient rather than on the full NF span (on the star pairing $\mathrm{tr}_M(b_i b_j^*)$ the form is positive semidefinite with signature $(5,0,1)$, whereas the bilinear pairing $\mathrm{tr}_M(b_i b_j)$ is indefinite). **Open scope.** Whether the cone constraint $G x \geq 0$ above is imposed on the full six-dimensional NF span or on the radical quotient matches the open boundary of Term 4 of the six-term mass identity. The nuclear assembly step fixes $y = \mathrm{NF}(\mathfrak{N}_{k+1})$ and solves the resulting LP.

@@ -92,7 +92,9 @@ def check(ok: bool, label: str, detail: str = "") -> None:
 def hits(root: Path, needle: str, suffixes: tuple[str, ...]) -> list[Path]:
     out = []
     for p in root.rglob("*"):
-        if p.suffix not in suffixes or not p.is_file():
+        if (p.suffix not in suffixes
+                or not p.is_file()
+                or ({".git", ".claude", ".lake", "node_modules"} & set(p.parts))):
             continue
         try:
             if needle in p.read_text(encoding="utf-8"):

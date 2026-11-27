@@ -1,0 +1,1 @@
+Comparing the lower bound on volume of Theorem 3.2 to that of Proposition 3.2, we get that v8 · (s −1) ≥4v3 · s −276.6 is equivalent to the condition that s ≤276.6 −v8 4v3 −v8 ≈690. Therefore, the lower bound found in Theorem 3.2 is sharper than the lower bound provided by Proposition 3.2 unless the parameter s from the Schreier normal form is very large.

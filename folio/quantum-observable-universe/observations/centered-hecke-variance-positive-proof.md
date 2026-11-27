@@ -1,4 +1,4 @@
-*Proof.* Apply the Hecke quadratic relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ and the Markov property:
+Apply the Hecke quadratic relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ and the Markov property:
 
 $$
   \mathrm{tr}_M(\sigma_i^2)
@@ -20,7 +20,7 @@ $$
 
 This is the variance. Both steps are convention-independent: they use only the quadratic relation and $\mathrm{tr}_M(\sigma_i) = z$.
 
-**Closed form.** Substituting the production convention D, $z = q^3/(q^2+1)$, and $q - q^{-1} = (q^2-1)/q$:
+**Closed form.** Substituting $z = q^3/(q^2+1)$ and $q - q^{-1} = (q^2-1)/q$:
 
 $$
   (q - q^{-1})\,z \;=\; \frac{q^2(q^2-1)}{q^2+1},
@@ -60,6 +60,4 @@ $$
   \;=\; \frac{q^4+q^2+1}{(q^2+1)^2},
 $$
 
-so $\mathrm{Var}(\sigma_i) = y_{(3)} + y_{(2,1)} = \mu_+$ identically in $q$ — the centred second moment of a single Hecke generator is exactly the isospin-triplet Wenzl weight.
-
-**Withdrawn 2026-08-09.** The positivity argument previously given here was specific to the excised convention C. It set $u = q^{1/2}$, used the C-only collapse $(q-q^{-1})z = (u^2-u^{-2})/(u+u^{-1}) = u - u^{-1}$, bounded $z^2 = 1/(q+2+q^{-1}) < 1/4$ by the Wenzl inequality $u + u^{-1} > 2$, and concluded $\mathrm{Var} > 3/4$ *in the Wenzl regime only*, with the proposition declared vacuous outside it. Every step of that chain depends on $z$ being the reciprocal of $q^{1/2}+q^{-1/2}$ and none of it survives the convention change. The replacement above is unconditional and sharp. What is *not* re-derived here is the separate question of when $\mathrm{tr}_M$ is a positive functional under convention D — see the open note on the statement.
+so $\mathrm{Var}(\sigma_i) = y_{(3)} + y_{(2,1)} = \mu_+$ identically in $q$ — the centred second moment of a single Hecke generator is the isospin-triplet Wenzl weight.

@@ -1,1 +1,0 @@
-However, we must note that in the physical applications the actual moduli space $\CM$ of the physical theory $S[\fg, C, D]$ compactified on $S^1$ is not quite $\CM(C, GL(K); \fm)$; it is more closely related to the space of $SL(K)$ connections (but even this is a slight oversimplification, see \cite{Gaiotto:2010be}).

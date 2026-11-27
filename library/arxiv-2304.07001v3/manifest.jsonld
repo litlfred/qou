@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2304.07001v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2304.07001v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -20,6 +20,18 @@
     "library/arxiv-2304.07001v3/sections/sec-005"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES — We prove resurgence properties for the Borel transform of a formal power series associated to elements in the Habiro ring that come from radial\n\n**RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES**\n\n*SAMUEL CREW, VERONICA FANTINI, ANKUSH GOSWAMI, ROBERT OSBURN*\n\n20 pp, 7 sections.\n\n**Abstract.** We prove resurgence properties for the Borel transform of a formal power series associated to elements in the Habiro ring that come from radial limits of partial theta series via strange identities. As an application, we prove a conjecture in quantum topology due to Costin and Garoufalidis for two families of torus knots.\n\n**Outline.** Front matter; 1 Introduction; 2 Proof of Theorem 1.2; 3 Proof of Theorem 1.4 and Corollary 1.5; 4 Concluding Remarks; Acknowledgements; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -41,8 +53,8 @@
       "stamp_date": "10 Apr 2025"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

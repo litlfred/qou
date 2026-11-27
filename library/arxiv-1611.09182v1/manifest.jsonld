@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1611.09182v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1611.09182v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -90,6 +90,18 @@
     "library/arxiv-1611.09182v1/sections/sec-075"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Standard model physics from an algebra? — 77 sections: Front matter; Abstract; Acknowledgements\n\n**Standard model physics from an algebra?**\n\n*C. Furey*\n\n97 pp, 77 sections.\n\n**Outline.** Front matter; 0.1 Abstract; 0.2 Acknowledgements; 1 Introduction; 1.1 Towards conceptual parsimony; 1.2 Outline; 2 What lies in an algebra?; 2.1 Causality; 2.2 Irreversible time; 2.3 Particles; 2.4 Summary and outlook; 3 Complex quaternions; 3.1 Preamble; 3.2 Introduction to CH; 3.3 Conjugation; 3.4 Generalized ideals; 3.5 Complex invariant-action, mc; 3.5.1 Preliminaries",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -112,8 +124,8 @@
       "stamp_date": "16 Nov 2016"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

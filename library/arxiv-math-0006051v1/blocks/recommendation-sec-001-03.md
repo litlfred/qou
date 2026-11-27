@@ -1,1 +1,0 @@
-Now if we have coefficients in $\mathbb{Q}$ satisfying the theorem, then we may clear denominators not dividing $(n+1)!$ and using only independence of $w$ we obtain that these must be a rational multiple of our $a_k$.

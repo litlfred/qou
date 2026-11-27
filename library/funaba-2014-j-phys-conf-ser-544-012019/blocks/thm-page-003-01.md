@@ -1,0 +1,1 @@
+Let TR be a torus of revolution whose generating circle has radius 1 and center at distance R (R > 1) from the axis of revolution. Then the renormalized potential energy is given by E(TR) = π3 √ R2 −1  R2 (3 log 2 −1) + 2 −2 R2  .

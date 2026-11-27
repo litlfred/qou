@@ -1,1 +1,0 @@
-This example means that either one must consider "splitting fields" with subfields of constants that are not necessarily algebraically closed or consider "splitting rings" that are not necessarily domains.

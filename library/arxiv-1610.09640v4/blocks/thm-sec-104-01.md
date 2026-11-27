@@ -1,0 +1,1 @@
+Let A be a graded ring, and let M ∈C(A, gr). (1) There exists a quasi-isomorphism ρ : P →M in Cstr(A, gr), where P is a semi-graded-free complex, and sup(P) = sup(H(M)). (2) There exists a quasi-isomorphism ρ : M →I in Cstr(A, gr), where I is a semi-graded-cofree complex, and inf(I) = inf(H(M)).

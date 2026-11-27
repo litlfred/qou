@@ -1,4 +1,3 @@
-**Proof.**
 Under the hypothesis, $\beta_{\mathfrak{H}}$ is (up to cyclic rotation)
 a product $w_0 w_1 \cdots w_{N-2}$ with $w_i$ a word in
 $\sigma_i^{\pm 1}$, and the letters grouped at generator $\sigma_i$ are

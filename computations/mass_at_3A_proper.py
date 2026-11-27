@@ -318,6 +318,21 @@ def _q_cache_key(q):
     return (type(q).__name__, repr(q))
 
 
+def _q_disk_tag(q) -> str:
+    """Exact identity of a numeric q for a disk-cache filename: 16 hex of
+    sha256 over its type and exact binary value. A float is keyed by
+    `float.hex`; an mpf by its `_mpf_` tuple and the current `mp.prec`, since
+    the matrices built at q also carry that precision."""
+    import hashlib
+    if hasattr(q, "_mpf_"):
+        from mpmath import mp as _mp
+        sign, man, exp, bc = q._mpf_
+        exact = f"mpf:{sign}:{int(man):x}:{exp}:{bc}:prec{_mp.prec}"
+    else:
+        exact = f"{type(q).__name__}:{float(q).hex()}"
+    return hashlib.sha256(exact.encode()).hexdigest()[:16]
+
+
 def _cached_seminormal(shape: tuple[int, ...], q):
     """Seminormal (Young orthogonal) matrices for `shape`, built AT `q`.
 
@@ -339,9 +354,8 @@ def _cached_seminormal(shape: tuple[int, ...], q):
     bit. A q-sweep through that path returned the q0 answer at every point
     with no error and no warning. Bean `qou-v6vp`.
 
-    The disk cache is used for NUMERIC q only. Its filename already carried
-    `q{...:.10f}`, so no cache format changes and no existing archive is
-    invalidated — the q was simply never allowed to vary. A symbolic build is
+    The disk cache is used for NUMERIC q only. Its filename carries the
+    exact q (`_q_disk_tag`, since 2026-11-22; it was `q{...:.10f}` before). A symbolic build is
     held in memory only: it is cheap (the block values depend on the content
     distance rho, of which there are only a few per shape) and it has no
     sensible npz representation.
@@ -389,8 +403,16 @@ def _cached_seminormal(shape: tuple[int, ...], q):
     # load the truncated float64 .npz and report it as full precision — the exact
     # class of error that flag exists to remove. The two are orthogonal: one names
     # WHICH q, the other names AT WHAT PRECISION.
+    #
+    # 2026-11-22 (issue #8996, P7; owner approval): the q in the stem is now
+    # the EXACT value, not `q` to 10 dp. Ten decimals separate the proton and
+    # muon pins but not two q that agree to ten digits. `_q_disk_tag` hashes
+    # the q's type and exact binary value (and, for an mpf, the working
+    # precision the build ran at). The `_mpf` tag stays: it names the build
+    # route, which the q alone does not. Entries written under the old stem
+    # are simply not read; they are regenerable.
     _prec_tag = "_mpf" if _H3A_MPF else ""
-    stem_name = f"n{n}_q{float(q):.10f}{_prec_tag}_shape{'-'.join(map(str, shape))}"
+    stem_name = f"n{n}_q{_q_disk_tag(q)}{_prec_tag}_shape{'-'.join(map(str, shape))}"
     npz_path = _SEMINORMAL_DISK / (stem_name + ".npz")
     json_path = _SEMINORMAL_DISK / (stem_name + ".json")
     if npz_path.exists() and json_path.exists():
@@ -862,6 +884,27 @@ def chi_lambda_of_word(sigmas, dim, word, n_gens_required: int) -> float:
     return _chi_of_word_structured(sigmas, dim, word)
 
 
+def chi_lambda_of_word_mpfr(shape, word, q, dps: int | None = None) -> mpf:
+    """Full-precision twin of `chi_lambda_of_word`: χ_λ(Π_k (c_k σ_{g_k} + d_k I)).
+
+    Same `(c, d, gen_idx)` word (0-based generators), but evaluated by the
+    native MPFR kernel `pyhecke_native.chi_q_atomic_mpfr`, so no float64
+    enters. `q` must be an mpf or a decimal string (a float is refused: it
+    would cap the result at ~1e-16 before the kernel sees it). Agrees with the
+    float64 kernel to 3e-15..5e-15 relative on the deuteron word (measured
+    2026-11-21, λ ⊢ 6), i.e. to the float floor.
+    """
+    import pyhecke_native as _pyn
+    if isinstance(q, float):
+        raise TypeError("chi_lambda_of_word_mpfr: q must be mpf or str, not float")
+    if dps is None:
+        dps = _mpm.mp.dps
+    q_str = q if isinstance(q, str) else _mpm.nstr(q, dps + 5)
+    factors = [(_mpm.nstr(_mpm.mpf(c), dps + 5), _mpm.nstr(_mpm.mpf(d), dps + 5),
+                int(g) + 1) for (c, d, g) in word]
+    return _mpm.mpf(_pyn.chi_q_atomic_mpfr(list(shape), factors, q_str, dps))
+
+
 def _chi_of_word_structured(sigmas, dim, word) -> float:
     """`tr(Π_k (c_k·σ_{g_k} + d_k·I))` in O(|word|·dim²) instead of O(|word|·dim³).
 
@@ -1010,27 +1053,16 @@ def markov_trace_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
 
 def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
                              include_inter: bool = True,
-                             weight_scheme: str = "normalized_plancherel",
-                             # NOT changed to "jones_wenzl", and the attempt
-                             # is recorded here so nobody repeats it. That
-                             # scheme's weights DO NOT SUM TO 1 — measured
-                             # Sigma_lambda omega_lambda = -0.8230 at A=1,
-                             # +0.0547 at A=2, -0.0009 at A=3 — against the
-                             # "normalized to Sigma = 1 for the Markov identity
-                             # tr_M(1) = 1" three lines below. It appears to fix
-                             # the Phi_q pole (max|V_hat| 1.08837 -> 0.06979,
-                             # binding_3A_tower 1e7 -> 0.331) only because the
-                             # near-cancelling weights drive every V_hat toward
-                             # zero, not because the volumes become right.
-                             #
-                             # So the Phi_q-pole problem documented on bean
-                             # qou-2tuv is REAL and still OPEN: normalized_
-                             # plancherel puts V_hat at 1.08837 against a cap of
-                             # 1.087779, and docs/audits/2026-05-11-plancherel-
-                             # usage-audit.md marked this scheme DEPRECATED in
-                             # May. Both schemes are wrong for the tower; that
-                             # is the finding, and picking between them is not
-                             # the fix.
+                             weight_scheme: str = "jones_wenzl",  # convention D, owner 2026-11-18
+                             # Switched to "jones_wenzl" (convention D) on owner
+                             # instruction 2026-11-18. The earlier finding that this
+                             # scheme's weights "do not sum to 1" was right for the old
+                             # weight formula (replaced 2026-08-23, qou-bsec) and for
+                             # the w*chi/d collapse below, which this change also fixes.
+                             # With both fixed, V_hat_i = z*a_i + b_i, the Markov trace
+                             # of the generator's word, which can exceed the Phi_q pole
+                             # cap (1.087779). That is the qou-2tuv pole problem and it
+                             # is still open.
                              verbose: bool = False):
     """Per-generator V̂_i at H_{3A}(q) via the full H_{3A} character sum.
 
@@ -1134,8 +1166,9 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
         for i in range(n_gens):
             w_i_steps = word_by_gen[i]
             if not w_i_steps:
-                # Empty word at gen i → trace = dim → contrib = w_lam
-                V_hat[i] += w_lam
+                # Empty word at gen i → trace = dim → contrib = w_lam (or
+                # d_lam * w_lam under jones_wenzl, see the collapse below)
+                V_hat[i] += w_lam * dim if weight_scheme == "jones_wenzl" else w_lam
                 continue
             if i >= len(sigmas):
                 # Shouldn't happen (len(sigmas) = n_strands - 1)
@@ -1147,7 +1180,13 @@ def per_generator_V_hat_3A(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
                 _s = np.trace(sigmas[i])
             _t = _a * _s + _b * dim
             tr = _t if _H3A_MPF else float(_t)
-            V_hat[i] += w_lam * tr / dim
+            # jones_wenzl weights are normalised by sum_lam d_lam w_lam = 1, so
+            # the Markov trace is sum_lam w_lam * chi_lam, NOT w_lam * chi_lam / d_lam.
+            # The old /dim here is what made that scheme "not sum to 1".
+            if weight_scheme == "jones_wenzl":
+                V_hat[i] += w_lam * tr
+            else:
+                V_hat[i] += w_lam * tr / dim
     out = []
     for i, V in enumerate(V_hat):
         out.append({"full": V, "gen_word": list(word_by_gen[i])})
@@ -1323,7 +1362,7 @@ def mass_from_tower_safe(vols, *, cap_frac: float = 0.98,
 
 def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1, q=None,
                        E_0: float = E_0_CALIBRATION_MEV,
-                       weight_scheme: str = "normalized_plancherel",
+                       weight_scheme: str = "jones_wenzl",  # convention D, owner 2026-11-18
                        cap_frac: float = 0.98,
                        use_safe_phi_q: bool = True,
                        cross_mode: str = "full",

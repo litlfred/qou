@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0911.3569v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0911.3569v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -42,6 +42,18 @@
     "library/arxiv-0911.3569v1/sections/sec-027"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting\n\n**MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS**\n\n*DAVID G. WAGNER*\n\n30 pp, 29 sections.\n\n**Abstract.** Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting conclusions in diverse areas. Due mainly to the recent work of two young mathematicians, Julius Borcea and Petter Br¨and´en, a very successful multivariate generaliza- tion of this method has been developed. The ﬁrst part of this paper surveys some of the main results of this theory of “multivariate stable” polynomials – the most central of these results is the characterization of linear transfor- mations preserving stability of polynomials. The second part presents various applications of this theory in complex analysis, matrix theory, probability and statistical mechanics, and combinatorics.\n\n**Outline.** Front matter; 1 Introduction.; 2 Stable polynomials.; 2.1 Examples.; 2.2 Elementary properties.; 2.3 Univariate stable polynomials.; 2.4 Multivariate analogues of the HKO and HB T; 3 Multiaffine stable polynomials.; 3.1 A criterion for real stability.; 3.2 Linear transformations preserving stabilit; 4 The Grace-Walsh-Szego Coincidence Theorem.; 4.1 Reduction to the case of stable polynomial; 4.2 Partial symmetrization.; 4.3 Convergence to the polarization.; 5 Polarization arguments and stability preserv; 5.1 The real stability criterion revisited.; 5.2 Linear transformations preserving stabilit; 6 Johnson's Conjectures.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -63,8 +75,8 @@
       "stamp_date": "18 Nov 2009"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

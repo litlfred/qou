@@ -1,0 +1,1 @@
+(cf. [6]) Let λ be a partition of n. The Gram determinant of the canonical bilinear form with respect to the standard basis of the Specht module Sλ is given by det(λ) := Y µ∈Pλ h1 λ(µ) h2 λ(µ) εµfµ ∈Z, where εµ ∈{−1, 1}. For any prime p, we define the integer a(p) λ such that det(λ) = m · pa(p) λ , where m is coprime to p.

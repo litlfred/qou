@@ -1,0 +1,1 @@
+Let C be an additive spherical category. Deﬁne the additive subcat- egory J to have the same set of objects and morphisms deﬁned by HomJ (c1, c2) = {f ∈HomC(c1, c2) : trL(fg) = 0 for all g ∈HomC(c2, c1)}. Then C/J is a non-degenerate additive spherical category.

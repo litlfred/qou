@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0907.4143v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0907.4143v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -23,6 +23,18 @@
     "library/arxiv-0907.4143v1/sections/sec-008"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Soft and Supersoft X-ray Sources in Symbiotic Stars 1 — Assuming that soft X-ray sources in symbiotic stars result from strong thermonu- clear runaways, and supersoft X-ray sources from weak\n\n**Soft and Supersoft X-ray Sources in Symbiotic Stars 1**\n\n*Chunhua Zhua,b, Guoliang Lüb, Zhaojun Wanga,b and*\n\n14 pp, 10 sections.\n\n**Abstract.** Assuming that soft X-ray sources in symbiotic stars result from strong thermonu- clear runaways, and supersoft X-ray sources from weak thermonuclear runaways or steady hydrogen burning symbiotic stars, we investigate the Galactic soft and supersoft X-ray sources in symbiotic stars by means of population synthesis. The Galactic occurrence rates of soft X-ray sources and supersoft X-ray sources are from ∼2 to 20 yr−1, and ∼2 to 17 yr−1, respectively. The numbers of X-ray sources in symbiotic stars range from 2390 to 6120. We simulate the distribution of X-ray sources over orbital periods, masses and mass-accretion rates of white dwarfs. The agreement with observations is reasonable.\n\n**Outline.** Front matter; Introduction; The model; Symbiotic stars; X-ray sources; Basic parameters of the Monte Carlo simulation; Results; Population of X-ray sources; Properties of X-ray sources; Conclusions",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -46,8 +58,8 @@
       "stamp_date": "23 Jul 2009"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

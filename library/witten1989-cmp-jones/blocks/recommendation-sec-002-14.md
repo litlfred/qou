@@ -1,0 +1,1 @@
+Quantum Field Theory and the Jones Polynomial 373 One should use the theorem to replace the Wilson lines (1.5) that appear in (1.6) with a functional integral over maps of the circle 5 into G/T(or actually an integral over sections of a G/T bundle, twisted by the restriction to S of the G-bundle E).

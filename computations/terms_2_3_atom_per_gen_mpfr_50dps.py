@@ -70,6 +70,13 @@ ATOMS = [
 ]
 
 
+
+VHAT_WEIGHTS_LABEL = (
+    "pre-convention-D mixture (q-Plancherel W_sym/W_std/W_alt), kept by owner "
+    "ruling 2026-11-20 until the Phi_q pole (qou-2tuv) is resolved; "
+    "convention-D z*a+b gives m_p/m_e = inf (PR #8590)"
+)
+
 def _load_q0_50dps(pin: str = "experimental",
                    ) -> tuple[mp.mpf, mp.mpf, mp.mpf, mp.mpf]:
     """Read q_0, q_inv, h, z at 50 dps for the requested substrate layer.
@@ -294,6 +301,11 @@ def atom_per_generator_volumes_mpfr(
     def qint(n: int) -> mp.mpf:
         return (q0 ** n - qi ** n) / (q0 - qi)
 
+    # OWNER RULING 2026-11-20 (PR #8590): this V-hat deliberately keeps the
+    # pre-convention-D W_sym/W_std/W_alt (q-Plancherel) mixture. The 11-18 ruling
+    # moved pyhecke.atom to the convention-D Markov trace z*a+b, but here that puts
+    # the proton V-hat (1.2824) past the Phi_q pole at q0 and m_p/m_e = inf
+    # (qou-2tuv). Kept, labelled, until the pole is resolved. No number moves.
     nf3_val = qint(1) * qint(2) * qint(3)
     w_sym = mp.mpf(1) / nf3_val
     w_std = qint(2) ** 2 / nf3_val
@@ -386,6 +398,7 @@ def main() -> int:
                 "z_markov_50dps": mp.nstr(z_mark, 50, strip_zeros=False),
                 "atoms_covered": [a[0] for a in ATOMS],
                 "precision_dps": 50,
+                "vhat_weights": VHAT_WEIGHTS_LABEL,
             },
             "results": results,
         },

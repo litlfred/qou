@@ -1,0 +1,1 @@
+Let the notations be as given in Theorem 3.19 and assume that &K = af), that L is a k-laced standard tableau, and that the sequence ((,,... ,4m) is such that ¢; is divisible by + for all i. Let w = ©? = 7/7, and let F;(L) denote the factor defined in (3.26). Let 1 < j <n and suppose that k is such that (k-1)y <j < ky.

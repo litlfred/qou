@@ -3,7 +3,7 @@ import Mathlib.Analysis.SpecialFunctions.Log.Basic
 -- The channel definitions and `pair_cancellation` were relocated to the Lake
 -- tree so the content-block resolver finds `pair_cancellation`; the theorems
 -- remaining below still use the definitions.
-import QOU.Braiding.crossing_energy_channels
+import BraidKnotOctonion.crossing_energy_channels
 
 
 /-!

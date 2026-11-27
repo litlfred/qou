@@ -1,4 +1,3 @@
-**Proof.**
 The transition functions at level $n+1$ relate to those at level $n$ via $g_{ij}^{(n+1)} = a_{ij}^{(n)} \cdot g_{ij}^{(n)}$, where $a_{ij}^{(n)} \in \mathcal{O}_M^{\times}$ is the local lift datum ([Yekutieli triple](#def:yekutieli-triple)). Computing the cocycle deviation at level $n+1$:
 
 ```tex

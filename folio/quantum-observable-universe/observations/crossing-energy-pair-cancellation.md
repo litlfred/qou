@@ -1,4 +1,3 @@
-**Proposition.**
 *Let $\mathfrak{H}$ be a knot composite carrying $p$ positive and $m$ negative crossings, and let $\mathfrak{H}^{\sigma}$ be its mirror. Then*
 
 $$

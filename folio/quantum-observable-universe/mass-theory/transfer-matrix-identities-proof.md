@@ -1,5 +1,3 @@
-## Proof
-
 **(i)** Direct multiplication.  With $h = q - q^{-1}$:
 
 $$

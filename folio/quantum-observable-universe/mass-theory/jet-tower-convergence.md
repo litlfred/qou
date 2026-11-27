@@ -22,7 +22,6 @@ $A_{n+1} = A_n \otimes \Omega^1(A_n)$: each jet-up step pairs a
 Kähler form with its Frobenius dual, contributing $\hbar_q^2$ to
 the weight.
 
-**Proposition.**
 *Assume $q > 1/2$ and $q \neq 1$, so that $0 < \hbar_q^2 < 1$, and assume there exists $\Delta_{\max}(\varrho) < \infty$ with
 $|\Delta^{(n)}(\varrho)| \leq \Delta_{\max}(\varrho)$ for all
 $n \geq 1$.  Then the brane-tower sum

@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The quasi-functor F'",
+  "pageStart": 6,
+  "pageEnd": 10,
+  "contains": [
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prose-sec-003",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/def-sec-003-01",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/ex-sec-003-02",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/ex-sec-003-03",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/def-sec-003-04",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/ex-sec-003-05",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/def-sec-003-06",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/thm-sec-003-07",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p009-1",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p009-750",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p009-751",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p009-1500",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p010-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modified-quantum-dimensions-and-re-normalized-link-invariant/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modified-quantum-dimensions-and-re-normalized-link-invariant/manifest.jsonld",
+  "provenance": "ingested"
+}

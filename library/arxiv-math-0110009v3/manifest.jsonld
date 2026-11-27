@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0110009v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0110009v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -27,6 +27,18 @@
     "library/arxiv-math-0110009v3/sections/sec-012"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "arXiv:math/0110009v3 [math.MG] 3 Sep 2003 — We develop an analogue for sphere packing of the linear programming bounds for error-correcting codes, and use it to prove upper bounds for the density of\n\n**arXiv:math/0110009v3 [math.MG] 3 Sep 2003**\n\n*By Henry Cohn and Noam Elkies**\n\n26 pp, 14 sections.\n\n**Abstract.** We develop an analogue for sphere packing of the linear programming bounds for error-correcting codes, and use it to prove upper bounds for the density of sphere packings, which are the best bounds known at least for di- mensions 4 through 36. We conjecture that our approach can be used to solve the sphere packing problem in dimensions 8 and 24.\n\n**Outline.** Front matter; Abstract; Contents; 1 Introduction; 2 Lattices, Fourier transforms, and Poisson su; 3 Principal theorems; 4 Homogeneous spaces; 5 Conditions for a sharp bound; 6 Stationary points; 7 Numerical results; 8 Uniqueness; Appendix A Technicalities about density; Appendix B Other convex bodies; Appendix C Numerical data",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -48,8 +60,8 @@
       "stamp_date": "3 Sep 2003"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

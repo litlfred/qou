@@ -1,0 +1,1 @@
+Let A be a ring and P a bounded above complex of ﬂat A-modules. Then P is a K-ﬂat complex. Exercise 11.3.24. Prove this proposition. (Hint: see the proofs of Proposition 11.3.5 and Theorem 11.3.2.) Derived Categories | Amnon Yekutieli |

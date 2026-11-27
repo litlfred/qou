@@ -1,5 +1,3 @@
-## Proof
-
 1. **The pre-$\tau$ object.** By definition
    $\mathrm{Vol}_q(\beta) = \mathrm{tr}_M(\beta)$. The
    [cleared mass trace](#prop:full-pole-structure-mass-trace) writes it as a
@@ -9,7 +7,7 @@
    No absolute value, logarithm or limit is used at this stage.
 2. **The specialisation.** $\tau_{\mathrm{arch}}$ evaluates this element at
    $q = q_0$, which is defined because $q_0^{2} + 1 \neq 0$. Only then are the
-   archimedean operations applied: the absolute value and the logarithm give
+   archimedean operations applied: the absolute value and, since $\mathrm{Vol}_{q_0}(\beta)\neq0$ by hypothesis, the logarithm give
    $\Phi_1(\beta) = \ln\lvert\mathrm{Vol}_{q_0}(\beta)\rvert$, and dividing by
    $\hbar_{q_0}^{2}$ gives $\mathfrak{m}_{\mathrm{alg}}(\beta)$.
 
@@ -22,5 +20,5 @@ contain an absolute value and are themselves archimedean.
 The identification of $\Phi_1(\beta)$ with the hyperbolic volume
 $\mathrm{Vol}(K)$ is not proved here. It is conditional on the volume
 conjecture and is recorded separately in
-[`prop:topological-mass-formula`](#prop:topological-mass-formula).
+[Topological mass formula (Archimedean)](#conj:topological-mass-formula).
 $\square$

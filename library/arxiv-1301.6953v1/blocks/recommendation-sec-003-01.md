@@ -1,1 +1,0 @@
-One thus expects that by heavily using current algebra it should be possible to obtain chiral logarithms for almost any process. one can always expand in soft momenta over hard momenta/large masses in a way which is analogous to the treatment of infrared divergences in QED.

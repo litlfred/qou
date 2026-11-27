@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0603732v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0603732v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -57,6 +57,18 @@
     "library/arxiv-math-0603732v2/sections/sec-042"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "DUALISING COMPLEXES AND TWISTED HOCHSCHILD (CO)HOMOLOGY FOR NOETHERIAN HOPF ALGEBRAS — We show that many noetherian Hopf algebras A have a rigid du- alising complex R with R ∼ = νA1[d].\n\n**DUALISING COMPLEXES AND TWISTED HOCHSCHILD (CO)HOMOLOGY FOR NOETHERIAN HOPF ALGEBRAS**\n\n*K.A. BROWN AND J.J. ZHANG*\n\n31 pp, 44 sections.\n\n**Abstract.** We show that many noetherian Hopf algebras A have a rigid du- alising complex R with R ∼ = νA1[d]. Here, d is the injective dimension of the algebra and ν is a certain k-algebra automorphism of A, unique up to an inner automorphism. In honour of the ﬁnite dimensional theory which is hereby gen- eralised we call ν the Nakayama automorphism of A. We prove that ν = S2ξ, where S is the antipode of A and ξ is the left winding automorphism of A de- termined by the left integral of A. The Hochschild homology and cohomology groups with coeﬃcients in a suitably twisted free bimodule are shown to be non-zero in the top dimension d, when A is an Artin-Schelter regular noether- ian Hopf algebra of global dimension d. (Twisted) Poincar´e duality holds in this setting, as is deduced from a theorem of Van den Bergh.\n\n**Outline.** Front matter; 0 Introduction; 0.1.; 0.2 Rigid dualising complexes; 0.3 Nakayama automorphisms; 0.4 Twisted Hochschild groups; 0.5 Classes of examples; 0.6 The antipode; 0.7.; 1 General preparations; 1.1 Standard notation; 1.2 Artin-Schelter Gorenstein algebras; 1.3 Homological integrals; 2 Hopf algebra Preparations; 2.1 Restriction via; 2.2 The left adjoint action; 2.3 Twisted (bi)modules; 2.4 Homological properties of the adjoint acti",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
@@ -83,8 +95,8 @@
       "stamp_date": "6 Jul 2006"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

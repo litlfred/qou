@@ -1,0 +1,1 @@
+[11] 1) The Lie bialgebra structure (g,(5) induces a unique co-Poisson Hopf algebra structure on (7(g); 2) The Poisson Lie group structure (G, π) induces a unique Poisson Hopf algebra structure on C[G], and on C f(G); C f(G) is dual to l/(g). This gives the quasiclassical limit of our quantum groups.

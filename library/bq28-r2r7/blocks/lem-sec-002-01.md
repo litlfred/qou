@@ -1,0 +1,1 @@
+Suppose that x, y ∈{0, 1}Z are bit strings and that i∗is an integer such that xi = yi for i ≤i∗. Let x′, y′ be bit strings obtained from x, y, respectively, by setting to zero all bits i ≤i∗. Then ⟨y| c(g)  j =1 Jνj |x⟩= ⟨y′| c(g)  j =1 Jνj |x′⟩. (10)

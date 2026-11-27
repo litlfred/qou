@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Only the logarithmic binding functional is extensive; the linear rival fails by $-\\alpha(1-x)(1-y)$ and carries a ceiling",
   lean: {
-    ref: "qou:QOU.QBeta.InterfaceScalar.linearForm_extensivity_defect",
+    ref: "qou:QOU.Nuclear.InterfaceScalar.linearForm_extensivity_defect",
     validation: "not_checked",
   },
   uses: ["prop:markov-stabilisation-needs-a-fresh-generator"],

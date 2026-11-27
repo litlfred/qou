@@ -1,0 +1,1 @@
+— With the assumptions of Theorem 5.3, for any r ⩾ ⌊d 2⌋, there exists a positive constant C3(r, d, c, φ) such that, if ε > 0 is ﬁxed and λ ⩾2 is suﬃciently large (chosen according to ε), then ∥bµ −bν∥A ⩽C3(r, d, c, φ) (∥ψ −χ∥A + βr+1(ε)) (log λ)r+1 λ r 2 + 1 . ANNALES DE L’INSTITUT FOURIER APPROXIMATION OF DISCRETE MEASURES

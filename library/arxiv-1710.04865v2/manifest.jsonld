@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1710.04865v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1710.04865v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -19,7 +19,19 @@
     "library/arxiv-1710.04865v2/sections/sec-005"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "narrative": [
+    {
+      "text": "THE COLORED JONES POL YNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS — Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(−m,−p)\n\n**THE COLORED JONES POL YNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS**\n\n*JEREMY LOVEJOY AND ROBERT OSBURN*\n\n24 pp, 6 sections.\n\n**Abstract.** Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(−m,−p) and K(−m,p) where m and p are positive integers. In the ( −m, −p) case, this leads to new families of q-hypergeometric series generalizing the Kontsevich-Zagier series. Comparing with the cyclotomic expansion of the colored Jones polynomials of K(m,p) gives a generalization of a duality at roots of unity between the Kontsevich-Zagier function and the generating function for strongly unimodal sequences.\n\n**Outline.** 1 Introduction; 2 Preliminaries; 3 Proofs of Theorems 1.1 and 1.2; 4 Concluding remarks and questions; Acknowledgements; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: For positive integers m and p, we have\n- Theorem 1.2: For positive integers m and p, we have\n- Corollary 1.3: If ζN is any Nth root of unity, then we have\n- Corollary 1.4: If ζN is any Nth root of unity, then we have\n- Corollary 1.3: as a key illustration. Furthermore, we suspect that the generalized Kontsevich-\n- Lemma 2.2: Forl = 4mp− 1 and t = 4mp− 2p− 1, we have",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",

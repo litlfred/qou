@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1704.02352v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1704.02352v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -60,6 +60,18 @@
     "library/arxiv-1704.02352v2/sections/sec-045"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS — We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal\n\n**GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS**\n\n*MACIEJ DOŁ ˛EGA AND PIOTR ŚNIADY*\n\n43 pp, 47 sections.\n\n**Abstract.** We introduce a large class of random Young diagrams which can be regarded as a natural one-parameter deformation of some classi- cal Young diagram ensembles; a deformation which is related to Jack polynomials and Jack characters. We show that each such a random Young diagram converges asymptotically to some limit shape and that the ﬂuctuations around the limit are asymptotically Gaussian.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Random partitions…; 1.2 …and random matrices; 1.3 Random Young diagrams related to log-gases; 1.4 Random Young diagrams and characters; 1.5 Irreducible characters of symmetric groups; 1.6 Irreducible Jack characters; 1.7 Probability measures P(); 1.8 Random Young diagrams related to Thoma's c; 1.9 Cumulants; 1.10 Asymptotics; 1.11 Hypothesis: asymptotics of; 1.12 Hypothesis: approximate factorization of ; 1.13 Drawing Young diagrams; 1.14 The first main result: Law of Large Numbe; 1.15 The second main result: Central Limit The; 1.16 Example",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -81,8 +93,8 @@
       "stamp_date": "15 May 2018"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

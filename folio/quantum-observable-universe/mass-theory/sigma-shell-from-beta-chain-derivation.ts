@@ -3,9 +3,9 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:sigma-shell-from-beta-chain-derivation",
   title:
-    "Staircase-partition closed form for the $\\sigma_{\\mathrm{shell}}$ magnitude (convention C; identically zero under convention D)",
+    "Staircase-partition closed form for the $\\sigma_{\\mathrm{shell}}$ magnitude (identically zero at $z = q^3/(q^2+1)$)",
   lean: {
-    ref: "qou:QOU.BraidKnot.SigmaShellFromBetaChainDerivation",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.SigmaShellFromBetaChainDerivation",
     validation: "not_checked",
   },
   uses: [
@@ -22,10 +22,10 @@ export default conjecture({
     "magic-numbers",
     "1ppb",
     "derivation",
-    "convention-c",
     "scope-b-excluded",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): (`QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`, general $n$)" },
     {
       kind: "caveat",
       body: "This block previously reported 12 % agreement with B(D)/(2m_p); that figure was computed in convention C, on the superseded grouped deuteron word.",

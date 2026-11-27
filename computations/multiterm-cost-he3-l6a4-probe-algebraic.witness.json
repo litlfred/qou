@@ -1,0 +1,78 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-24T12:08:15.852512+00:00",
+  "commitSha": "7c94ebd0bebe6071124416b4a43f81f665429ff2",
+  "assertions": [
+    {
+      "name": "l6a4_closed_form_matches_h3_normal_form_basis_trace",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "H_3(q_0) 6-basis reduction of (sigma_0 sigma_1^-1)^3 equals 1 - h^4 + h^4 z^2 - h^5 z"
+    },
+    {
+      "name": "algebraic_t23_fails_to_recover_he3_binding_for_n9_and_n3",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Both n=9 (rel_resid > 15%) and n=3 (rel_resid > 55%) miss B_AME(3He) = 7.71804 MeV"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "multiterm-cost-he3-l6a4-probe-algebraic",
+  "scriptFile": "multiterm_cost_he3_l6a4_probe_algebraic.py",
+  "scriptHash": "8da66edcc09e",
+  "scriptCommitSha": "7c94ebd0bebe6071124416b4a43f81f665429ff2",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "56872bc54313b172"
+  },
+  "invocation": {
+    "argv": [
+      "computations/multiterm_cost_he3_l6a4_probe_algebraic.py"
+    ],
+    "reproduce": "python3 -u computations/multiterm_cost_he3_l6a4_probe_algebraic.py"
+  },
+  "description": "Evaluates the R-side algebraic T2 + T3 multi-term formula for 3He (L6a4) at 80-dps precision under the two-row SU(2) Markov parameter z = q_0^3 / (q_0^2 + 1), replacing the stale pre-migration literal 0.998367 with the derived H_3(q_0) trace 1 - h^4 + h^4 z^2 - h^5 z = 0.998562163836787266... and exact hook-length T4. Both strand choices fail to recover B_AME(3He) = 7.71804 MeV (n=9 leaves a >15% deficit; n=3 leaves a >57% deficit).",
+  "auditOnly": "docs/audits/2026-11-24-hecke-core-z-importer-audit-5pgl.md",
+  "data": {
+    "derived_inputs_60dps": {
+      "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+      "h": "0.209060298795639315430846213129674943859757495263024555381696",
+      "z_two_row": "0.612688037146465251595829863945899248026308391545064759724287",
+      "trm_l6a4_derived": "0.998562163836787265951213135146650202094025880059411079206022",
+      "trm_l6a4_single_row_historical": "0.998366622585715966895476011367594374512065638962757302777202",
+      "m_e_sigma_9_MeV": "1.29992197648476779701688507422956969504559795075167570838449",
+      "b_ame_he3_MeV": "7.71804132000000000000000000000000000000000000000000000000000"
+    },
+    "predictions_60dps": {
+      "b_desc_MeV": "1.53079265375800247196547163037745023761557099628418856900091",
+      "n9_t2_hecke": "3.00309304689910707199497842703207929162645775904243267448136",
+      "n9_t3_hecke": "3.94562343364602109718152059652127897485651084637461933647852",
+      "n9_t23_MeV": "3.55078683020087029364075180244357566939843435412432622743365",
+      "n9_b_pred_MeV": "6.38150146044364056262310850705059560205960330116019050481906",
+      "n9_rel_resid": "0.173170860862449935338891330650378585682461298204064226904261",
+      "n3_t23_MeV": "0.455651828747862225934468048907823255833515173714217070089405",
+      "n3_b_pred_MeV": "3.28636645899063249491682475351484318849468412075008134747481",
+      "n3_rel_resid": "0.574196830162781184110475226956307200944774921113005735051596"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

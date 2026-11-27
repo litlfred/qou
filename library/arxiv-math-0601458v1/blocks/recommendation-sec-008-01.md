@@ -1,1 +1,0 @@
-This should suggest the idea that a stuff type gives us a collection of objects which correspond to finite sets $S$, but which possibly have extra information associated with them (the "stuff" forgotten by $\Phi$).

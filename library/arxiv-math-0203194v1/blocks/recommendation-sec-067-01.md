@@ -1,1 +1,0 @@
-\begin{para}\label{para::3.2.4} We know turn to $p$-adic slopes\footnote{which should not be confused with the so-called slopes of Frobenius which measure the $p$-adic size of a fixed Frobenius structure (when it exists); a unit-root $F$-crystal corresponding to the case of Frobenius slope zero.}, as defined by G.

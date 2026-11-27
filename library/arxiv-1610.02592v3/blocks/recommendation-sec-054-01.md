@@ -1,1 +1,0 @@
-Before constructing this fibration we list some simple examples that should hopefully help the reader to familiarise with the notation (\ref{Seifert:notation:eqn}), that will be used extensively in the whole chapter.

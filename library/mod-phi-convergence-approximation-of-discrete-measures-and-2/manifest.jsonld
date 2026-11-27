@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/mod-phi-convergence-approximation-of-discrete-measures-and-2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/mod-phi-convergence-approximation-of-discrete-measures-and-2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -40,6 +40,18 @@
     "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-025"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "ANNALES DE L’INSTITUT FOURIER — 27 sections: Front matter; Introduction; Poisson approximation of lattice-v\n\n**ANNALES DE L’INSTITUT FOURIER**\n\n*L’INSTITUT FOURIER*\n\n84 pp, 27 sections.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Poisson approximation of lattice-valued ra; 1.2 Infinitely divisible distributions and dis; 1.3 Mod-phi convergent sequences of random var; 1.4 The Wiener algebra and the general scheme ; 1.5 Outline of the paper; 2 Concentration inequalities in the Wiener alg; 2.1 Deconvolution residues in the Wiener algeb; 2.2 Estimates of norms in the Wiener algebra; 3 Asymptotics of distances for a general schem; 3.1 The local distance; 3.2 The Kolmogorov distance; 3.3 The total variation distance; 3.4 Derived scheme of approximation with const; 4 One-dimensional applications; 4.1 Poisson approximation of a sum of independ; 4.2 Poisson approximation schemes and formal a",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "mod-phi-convergence-approximation-of-discrete-measures-and-2",
@@ -50,8 +62,8 @@
     "pages": 84,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

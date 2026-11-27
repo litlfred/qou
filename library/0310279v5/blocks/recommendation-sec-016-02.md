@@ -1,1 +1,0 @@
-The move is a push downward of s1 along ∆. several singularities s1, s2, . . . sk, with associated neighborhoods, and if the conditions are met for each of them in turn then the disc ∆may be used to push s1 past many singularities, one at a time.

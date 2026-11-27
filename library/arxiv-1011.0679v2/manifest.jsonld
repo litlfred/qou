@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1011.0679v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1011.0679v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -25,6 +25,18 @@
     "library/arxiv-1011.0679v2/sections/sec-010"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS — Let π, π′ be tempered representations of an aﬃne Hecke algebra with positive parameters.\n\n**A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS**\n\n*ERIC OPDAM AND MAARTEN SOLLEVELD*\n\n22 pp, 12 sections.\n\n**Abstract.** Let π, π′ be tempered representations of an aﬃne Hecke algebra with positive parameters. We study their Euler–Poincar´e pairing EP(π, π′), the alter- nating sum of the dimensions of the Ext-groups. We show that EP(π, π′) can be expressed in a simple formula involving an analytic R-group, analogous to a for- mula of Arthur in the setting of reductive p-adic groups. Our proof applies equally well to aﬃne Hecke algebras and to reductive groups over nonarchimedean local ﬁelds of arbitrary characteristic.\n\n**Outline.** Front matter; Introduction; 1.1 Affine Hecke algebras; 1 Preliminaries; 1.2 Parabolic induction; 1.3 The Schwartz algebra; 1.4 Analytic R-groups for tempered representat; 2 The Euler-Poincaré pairing; 3 The Arthur formula; 4 Algebras of invariants; 5 Analytic R-groups for non-tempered represent; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -46,8 +58,8 @@
       "stamp_date": "17 Nov 2010"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

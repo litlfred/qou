@@ -96,7 +96,7 @@ def main(argv: list[str] | None = None) -> int:
     args = ap.parse_args(argv)
 
     witnesses = sorted(REPO.rglob("*.witness.json"))
-    witnesses = [w for w in witnesses if ".git" not in w.parts]
+    witnesses = [w for w in witnesses if not ({".git", ".claude", ".lake", "node_modules"} & set(w.parts))]
 
     counts: Counter = Counter()
     mismatches: list[tuple[str, str]] = []

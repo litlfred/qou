@@ -1,13 +1,14 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-knot-operator-energy-unique",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:knot-operator-energy-unique",
@@ -21,7 +22,7 @@
     "knot-operator",
     "shadow-price"
   ],
-  "leanRef": "qou:QOU.BraidKnot.KnotOperatorEnergy.shadowPrice_unique",
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.KnotOperatorEnergy.shadowPrice_unique",
   "text": "knot-operator-energy-unique.md",
   "leanSource": "knot-operator-energy-unique.lean",
   "provenance": "authored"

@@ -1,1 +1,0 @@
-Finally, the $\cK$-transformation \eqref{eq:holonomy-jump}, in the simplest case where there is only a single $\Omega(\gamma) = 1$ contributing, should be identified with the action of a mutation on cluster variables.

@@ -1,5 +1,5 @@
 {
-  "count": 110,
+  "count": 108,
   "note": "Witnesses committed with a recorded assertion failure. This baseline DRAINS, never grows: fix the producer, the tolerance, or the schema misuse (see the module docstring's three categories) and re-run. Adding a file here to silence it defeats the mechanism.",
   "witnesses": {
     "computations/all-nuclides-wedderburn-spectral-v2.witness.json": 1,
@@ -17,7 +17,6 @@
     "computations/audits/validation-as-input-audit.witness.json": 1,
     "computations/audits/witness-provenance-audit.witness.json": 1,
     "computations/binding-a3plus-full-theta-assembly.witness.json": 1,
-    "computations/binding-a3plus-joint-ji-combiner.witness.json": 1,
     "computations/binding-color-vs-charge-tn3he.witness.json": 1,
     "computations/binding-depth-stratified.witness.json": 1,
     "computations/binding-factor-f-pair-count.witness.json": 2,
@@ -70,7 +69,6 @@
     "computations/phase5/phase3-deuteron-tritium-h-expansion.witness.json": 1,
     "computations/probe-4c-li6-large-d-scan.witness.json": 1,
     "computations/probe-4e-transpose-pair-asymmetry.witness.json": 1,
-    "computations/probe-9b-perlambda-brane-tower.witness.json": 1,
     "computations/probes/ak-lp-dual-quotient-probe.witness.json": 1,
     "computations/probes/binding-color-vs-charge-tn3he-perknot-rerun.witness.json": 1,
     "computations/probes/canonical-ordering-dof.witness.json": 1,

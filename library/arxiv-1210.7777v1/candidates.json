@@ -1,0 +1,262 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1210.7777v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "5643300d6b571a0a28652b401ef596d03b89eafa202f34588fe6fd399b32b726",
+  "file": "1210.7777v1.pdf"
+ },
+ "provenance": {
+  "title": "Cottingham formula for the electromagnetic self-energy contribution to Mp \u2212 Mn",
+  "authors": "Andr\u00e9 Walker-Loud\u2217",
+  "arxiv": {
+   "id": "1210.7777",
+   "version": "1",
+   "primary_class": "hep-lat",
+   "stamp_date": "29 Oct 2012"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 11,
+  "by_kind": {
+   "proposition": 11
+  },
+  "formalization_candidates": 8,
+  "by_domain": {
+   "science": 11
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 3,
+   "analytic-derivation": 8
+  },
+  "by_evidence_location": {
+   "in-paper": 7,
+   "elsewhere": 3,
+   "both": 1
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "At LO, lattice QCD can be used to reliably compute the contribution from md \u2212mu.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-000-1-introduction.md (p. 2-2)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-000-1-introduction.md (p. 2-2)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "(1.3) Calculating \u03b4M\u03b3 with lattice QCD and QED is much more challenging, due to the disparate length scales relevant for the two theories.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "External scientific/empirical source cited in sections/sec-000-1-introduction.md",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: elsewhere \u2014 External scientific/empirical source cited in sections/sec-000-1-introduction.md). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "(1.4) If we instead subtract the lattice QCD determination from experiment, we arrive at \u03b4Mp\u2212n \u2212\u03b4Mmd\u2212mu LQCD = 1.24(40) MeV.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-001-2-the-cottingham-formula.md (p. 2-6)",
+   "external_refs": [],
+   "quantitative_values": [
+    "1.24(40) MeV"
+   ],
+   "section_file": "sections/sec-001-2-the-cottingham-formula.md",
+   "section_title": "The Cottingham Formula",
+   "pages": "2-6",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-001-2-the-cottingham-formula.md (p. 2-6)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "theoretical-claim",
+   "number": null,
+   "name": null,
+   "statement": "We report on an effort to improve the electromagnetic self-energy contribution using the Cottingham Formula [1].",
+   "claim_domain": "science",
+   "evidence_kind": "analytic-derivation",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper result in sections/sec-001-2-the-cottingham-formula.md combined with [1]",
+   "external_refs": [
+    "[1]"
+   ],
+   "quantitative_values": [],
+   "section_file": "sections/sec-001-2-the-cottingham-formula.md",
+   "section_title": "The Cottingham Formula",
+   "pages": "2-6",
+   "formalization_candidate": true,
+   "formalization_note": "Science claim (analytic-derivation, evidence: both \u2014 In-paper result in sections/sec-001-2-the-cottingham-formula.md combined with [1]). Analytic theoretical derivation; candidate for model formalization.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "theoretical-claim",
+   "number": null,
+   "name": null,
+   "statement": "The Cottingham Formula The Cottingham Formula intuitively relates the electromagnetic self-energy to forward Comp- ton Scattering (see Fig.",
+   "claim_domain": "science",
+   "evidence_kind": "analytic-derivation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper analytic derivation in sections/sec-001-2-the-cottingham-formula.md (p. 2-6)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-001-2-the-cottingham-formula.md",
+   "section_title": "The Cottingham Formula",
+   "pages": "2-6",
+   "formalization_candidate": true,
+   "formalization_note": "Science claim (analytic-derivation, evidence: in-paper \u2014 In-paper analytic derivation in sections/sec-001-2-the-cottingham-formula.md (p. 2-6)). Analytic theoretical derivation; candidate for model formalization.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "theoretical-claim",
+   "number": null,
+   "name": null,
+   "statement": "2 Cottingham Formula Andr\u00e9 Walker-Loud \u00b5 \u03bd p p q q (a) (b) Figure 1: The Cottingham Formula intuitively relates the forward Compton Scattering (a) to the O(\u03b1f.s.) electromagnetic self-energy (b).",
+   "claim_domain": "science",
+   "evidence_kind": "analytic-derivation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper analytic derivation in sections/sec-001-2-the-cottingham-formula.md (p. 2-6)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-001-2-the-cottingham-formula.md",
+   "section_title": "The Cottingham Formula",
+   "pages": "2-6",
+   "formalization_candidate": true,
+   "formalization_note": "Science claim (analytic-derivation, evidence: in-paper \u2014 In-paper analytic derivation in sections/sec-001-2-the-cottingham-formula.md (p. 2-6)). Analytic theoretical derivation; candidate for model formalization.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "theoretical-claim",
+   "number": null,
+   "name": null,
+   "statement": "3 Cottingham Formula Andr\u00e9 Walker-Loud Figure 2: Analytic structure of scalar functions Ti(\u03bd,Q2) in the complex \u03bd plane for \ufb01xed Q2, and the contour used to evaluate them.",
+   "claim_domain": "science",
+   "evidence_kind": "analytic-derivation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper analytic derivation in sections/sec-001-2-the-cottingham-formula.md (p. 2-6)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-001-2-the-cottingham-formula.md",
+   "section_title": "The Cottingham Formula",
+   "pages": "2-6",
+   "formalization_candidate": true,
+   "formalization_note": "Science claim (analytic-derivation, evidence: in-paper \u2014 In-paper analytic derivation in sections/sec-001-2-the-cottingham-formula.md (p. 2-6)). Analytic theoretical derivation; candidate for model formalization.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "theoretical-claim",
+   "number": null,
+   "name": null,
+   "statement": "However, it is known in QCD that the corrections are only suppressed by the strong coupling constant [13]; 2xF1(x,Q2)\u2212F2(x,Q2) = \u221232 9 \u03b1S(Q2) 4\u03c0 F2(x,Q2) (2.11) In the Regge limit (\ufb01xed Q2, \u03bd \u2192\u221e,x \u21920), it is known emperically [11] lim x\u21920F p\u2212n 2 \u221d\u221ax \u21d2lim x\u21920Imt p\u2212n 1 \u221d\u221a\u03bd , (2.12) 4 Cottingham Formula Andr\u00e9 Walker-Loud such that in the unsubtracted dispersion integral for t p\u2212n 1 , the contour at in\ufb01nity does not vanish but in fact diverges, see Fig.",
+   "claim_domain": "science",
+   "evidence_kind": "analytic-derivation",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [13], [11] in sections/sec-001-2-the-cottingham-formula.md",
+   "external_refs": [
+    "[13]",
+    "[11]"
+   ],
+   "quantitative_values": [],
+   "section_file": "sections/sec-001-2-the-cottingham-formula.md",
+   "section_title": "The Cottingham Formula",
+   "pages": "2-6",
+   "formalization_candidate": true,
+   "formalization_note": "Science claim (analytic-derivation, evidence: elsewhere \u2014 Cites external source [13], [11] in sections/sec-001-2-the-cottingham-formula.md). Analytic theoretical derivation; candidate for model formalization.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "theoretical-claim",
+   "number": null,
+   "name": null,
+   "statement": "5 Cottingham Formula Andr\u00e9 Walker-Loud Ref. [17].",
+   "claim_domain": "science",
+   "evidence_kind": "analytic-derivation",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [17] in sections/sec-001-2-the-cottingham-formula.md",
+   "external_refs": [
+    "[17]"
+   ],
+   "quantitative_values": [],
+   "section_file": "sections/sec-001-2-the-cottingham-formula.md",
+   "section_title": "The Cottingham Formula",
+   "pages": "2-6",
+   "formalization_candidate": true,
+   "formalization_note": "Science claim (analytic-derivation, evidence: elsewhere \u2014 Cites external source [17] in sections/sec-001-2-the-cottingham-formula.md). Analytic theoretical derivation; candidate for model formalization.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "theoretical-claim",
+   "number": null,
+   "name": null,
+   "statement": "A technical oversight in the literature is uncovered: the application of the Cottingham Formula requires the use of a subtracted dispersion integral; an argument to evade the subtraction function was presented; the argument was based on false assumptions about the scaling violations of the parton model, a point \ufb01rst mentioned by J.",
+   "claim_domain": "science",
+   "evidence_kind": "analytic-derivation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper analytic derivation in sections/sec-front-matter.md (p. 1-2)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-2",
+   "formalization_candidate": true,
+   "formalization_note": "Science claim (analytic-derivation, evidence: in-paper \u2014 In-paper analytic derivation in sections/sec-front-matter.md (p. 1-2)). Analytic theoretical derivation; candidate for model formalization.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "theoretical-claim",
+   "number": null,
+   "name": null,
+   "statement": "We elucidate this point and utilize low-energy effective theory to relate the unknown subtraction function to the nucleon isovector magnetic polarizability.",
+   "claim_domain": "science",
+   "evidence_kind": "analytic-derivation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper analytic derivation in sections/sec-front-matter.md (p. 1-2)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-2",
+   "formalization_candidate": true,
+   "formalization_note": "Science claim (analytic-derivation, evidence: in-paper \u2014 In-paper analytic derivation in sections/sec-front-matter.md (p. 1-2)). Analytic theoretical derivation; candidate for model formalization.",
+   "route_to": "formalizer"
+  }
+ ]
+}

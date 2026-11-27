@@ -1,4 +1,3 @@
-**Proof.**
 *Since $p_\lambda$ is central and primitive in $Z(A)$, and each
 $p_\lambda$ is $\tau$-dual to itself up to the scalar
 $\tau(p_\lambda)$, linearity of $\tau$ gives*
@@ -15,7 +14,7 @@ $$
 *$\square$*
 
 **$C_{\dim_q}$ is not forced by its trace.**
-*An earlier version claimed that $C_{\dim_q}$ is the unique central element with trace $\sum_\lambda 1/\dim_q(\lambda)$. That is false whenever $A$ has at least two blocks: $\tau$ is one linear functional on $Z(A)$, which has dimension $|\widehat{A}| = p(n) \geq 2$ for $n \geq 2$, so every $z = \sum_\lambda c_\lambda p_\lambda$ with $\sum_\lambda c_\lambda\,\tau(p_\lambda) = \sum_\lambda 1/\dim_q(\lambda)$ has the same trace. The coefficients $c_\lambda = 1/(\dim_q(\lambda)\,\tau(p_\lambda))$ are a choice, not a consequence.*
+*The element $C_{\dim_q}$ is not the unique central element with trace $\sum_\lambda 1/\dim_q(\lambda)$ whenever $A$ has at least two blocks: $\tau$ is a single linear functional on $Z(A)$, which has dimension $|\widehat{A}| = p(n) \geq 2$ for $n \geq 2$, so every $z = \sum_\lambda c_\lambda p_\lambda$ with $\sum_\lambda c_\lambda\,\tau(p_\lambda) = \sum_\lambda 1/\dim_q(\lambda)$ has the same trace. The coefficients $c_\lambda = 1/(\dim_q(\lambda)\,\tau(p_\lambda))$ are a block-by-block definition, not forced by the trace.*
 
 *$C_{\dim_q}$ is categorical in three distinct senses:*
 
@@ -108,7 +107,7 @@ $$
 *Middle levels carry all the $q$-dependence.  For $n = 3$ only
 one middle level exists (level $1$, $\lambda = (2,1)$), giving
 $\tau(C_{\dim_q}) = 2 + 1/[2]_q$ when every block is included.
-Under convention D the block $(1^n)$ has $\tau(p_{(1^n)}) = 0$ for $n \geq 3$
+At the Markov parameter $z = q^3/(q^2+1)$, the block $(1^n)$ has $\tau(p_{(1^n)}) = 0$ for $n \geq 3$
 and must be dropped, so the bound $\geq 2$ does not hold there; at $n = 3$
 the sum over $\widehat{A}^{\circ} = \{(3), (2,1)\}$ is $1 + 1/[2]_q$.*
 
@@ -122,7 +121,7 @@ $\sigma_w$ representing $\varrho$.  This is both a **feature** and a
 * *Feature (universality):* *Every vortex on $H_3(R, q)$ —
   proton $(uud)$, neutron $(udd)$, any nucleon-like trefoil —
   inherits the same additive offset, $(2 + 1/[2]_q) \cdot m_e$ with
-  every block included (not available under convention D, see above).  Mass differences between nucleons come entirely
+  every block included (not available at $z = q^3/(q^2+1)$, see above).  Mass differences between nucleons come entirely
   from the descended $|\mathrm{tr}_M|$ and brane-tower pieces,
   not from the Frobenius correction.*
 * *Limitation (vortex-blind):* *The Frobenius correction cannot
@@ -130,7 +129,7 @@ $\sigma_w$ representing $\varrho$.  This is both a **feature** and a
   $\varrho_{\mathfrak{n}}$ or any other trefoil-like vortex.
   Vortex-dependent corrections — e.g. chirality factors
   $\{1+h, 1-h^2, (1-h^2)^2\}$ per
-  ([figure-eight BW coefficients](#thm:six-term-mass-formula-complete))
+  ([figure-eight BW coefficients](#conj:six-term-mass-formula-complete))
   or knot-factor Frobenius pairings per
   ([knot-factor Frobenius pairing](#conj:knot-factor-frobenius-pairing))
   — are separate structural terms beyond $\tau(C_{\dim_q})$.*
@@ -145,7 +144,7 @@ three tiers:*
    co-Casimir $\tau(C_{\dim_q}^{(A)})$.*
 3. *Isotope-specific (vortex-dependent but structural):
    chirality / knot-factor coefficients from
-   `thm:six-term-mass-formula-complete`.*
+   the [six-term mass formula](#conj:six-term-mass-formula-complete).*
 
 **Consistency.**
 
@@ -157,7 +156,7 @@ three tiers:*
 2. *In the "single-vortex" case $A = H_3(R, q)$, three blocks
    $\{(3), (2,1), (1,1,1)\}$ with $q$-dims $\{1, [2]_q, 1\}$
    give $\tau(C_{\dim_q}) = 2 + 1/[2]_q$ when all three blocks are
-   included. Under convention D, $\tau(p_{(1,1,1)}) = 0$, so the
+   included. At $z = q^3/(q^2+1)$, $\tau(p_{(1,1,1)}) = 0$, so the
    $(1,1,1)$ term is undefined and the sum over the surviving blocks
    is $1 + 1/[2]_q$.*
 3. *The self-duality $\lambda \leftrightarrow \lambda'$ is the
@@ -167,47 +166,35 @@ three tiers:*
    two eigenvalues $(q, -q^{-1})$ — the source of all
    $q$-deformation structure in the paper.*
 
-## Explicit Lean closures by partition count $n$
+## Explicit closures by partition count $n$
 
 For each $n$, the Frobenius co-Casimir trace
 $\tau(C_{\dim_q}^{(n)}) = \sum_{\lambda \vdash n} 1/\dim_q(\lambda)$
-admits an explicit closed form via $\mathrm{Fin}\,p(n)$ enumeration
-once a Lean definition of $\dim_q(\lambda)$ for each partition is
-available. The convention used throughout is the **quantum
+admits an explicit closed form by enumerating the $p(n)$ partitions
+once $\dim_q(\lambda)$ is written out for each partition. The convention used throughout is the **quantum
 hook-length formula** $\dim_q(\lambda) = [n]_q!\,/\,\prod_{x \in \lambda} [h_x]_q$,
 which reduces to the classical $S_n$-irrep dimension at $q = 1$.
 
 The status table:
 
-| $n$ | $p(n)$ | conj. pairs | self-conj. | Lean theorem | nucleus covered |
-|----:|-------:|------------:|-----------:|-------------|-------------------|
-| $3$ | $3$ | $1$ | $1$ ((2,1)) | inline at $\sigma_w$-trace | $\mathfrak{p}, \mathfrak{n}$ (single-vortex) |
-| $6$ | $11$ | $5$ | $1$ ((3,2,1)) | `hecke_n6_frobenius_codim` | ${}^{4}$He (H_{12} block; ) |
-| $7$ | $15$ | $7$ | $1$ ((4,2,1)) | `hecke_n7_frobenius_codim` | A $\ge$ 5 nuclei |
-| $8$ | $22$ | $10$ | $2$ ((4,2,1,1), (3,3,2)) | `hecke_n8_frobenius_codim` | ${}^4$He / ${}^{16}$O / ${}^{20}$Ne |
+| $n$ | $p(n)$ | conj. pairs | self-conj. | nucleus covered |
+|----:|-------:|------------:|-----------:|-------------------|
+| $3$ | $3$ | $1$ | $1$ ((2,1)) | $\mathfrak{p}, \mathfrak{n}$ (single-vortex) |
+| $6$ | $11$ | $5$ | $1$ ((3,2,1)) | ${}^{4}$He (H_{12} block; ) |
+| $7$ | $15$ | $7$ | $1$ ((4,2,1)) | A $\ge$ 5 nuclei |
+| $8$ | $22$ | $10$ | $2$ ((4,2,1,1), (3,3,2)) | ${}^4$He / ${}^{16}$O / ${}^{20}$Ne |
 
-Each closure follows the same proof scheme: (i) a `Fin.sum_univ_*`
-decomposition lemma extending Mathlib's `Fin.sum_univ_eight` to
-$p(n)$ summands via a sequence of `Fin.sum_univ_castSucc` peels;
-(ii) per-partition `@[simp]` lemmas unfolding $\dim_q(\lambda)$ to
-its product-of-$q$-integers form; (iii) the trace identity itself,
-discharged by `simp + ring` after the conjugate-pair grouping.
+Each closure follows the same proof scheme: (i) a decomposition of the
+sum into its $p(n)$ summands, one per partition; (ii) per-partition
+expansion of $\dim_q(\lambda)$ into its product-of-$q$-integers form;
+(iii) the trace identity itself, an identity of rational functions after
+the conjugate-pair grouping.
 
 The $n = 8$ closure introduces partitions whose hook-product
 cancellation against $[8]_q!$ leaves residual $/[2]_q$ factors
-(specifically (5,1,1,1), (4,4), (4,1,1,1,1), (2,2,2,2)). These are
-encoded as $(q + q^{-1})^{-1}$ in the explicit `dim_q` expressions;
-the `ring` discharge handles them via real-arithmetic field
-identities. Self-conjugates at $n = 8$ are (4,2,1,1) and (3,3,2).
-The complete index map and the conjugate-symmetric `Fin 22`
-ordering are documented in
-[`frobenius-codim-universal.lean`](frobenius-codim-universal.lean).
-
-The generator that produces the per-partition $\dim_q$ table and
-the Lean source is
-the canonical formalism;
-the JSON output and per-partition factor signatures are committed
-under `phase5-n8-dim-q-table.json`.
+(specifically (5,1,1,1), (4,4), (4,1,1,1,1), (2,2,2,2)). These appear
+as factors $(q + q^{-1})^{-1}$ in the explicit $\dim_q$ expressions
+and are handled by field identities. Self-conjugates at $n = 8$ are (4,2,1,1) and (3,3,2).
 
 Beyond $n = 8$, the same scheme extends mechanically to $n = 9$
 (partitions of $9$, $p(9) = 30$, needed for triton and ${}^{3}$He at

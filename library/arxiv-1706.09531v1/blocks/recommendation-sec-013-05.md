@@ -1,1 +1,0 @@
-I should add that the multiplet (1, 1, 6) has in fact been utilized in these works to give GUT-scale masses to the dc and dc-like components lying within the multiplets SH ∼ (1, 2, 4)H and SH ∼(1, 2, 4)H, which are used to break the symmetry G(2, 2, 4) to the Stan- dard Model.

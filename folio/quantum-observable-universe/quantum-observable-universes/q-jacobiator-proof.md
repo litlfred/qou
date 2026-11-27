@@ -1,4 +1,3 @@
-
 For horizontal $V, W$, the bracket reduces to $[V,W]_q = q^{-1}[V,W]$.
 The mixed term $\varTheta([V,W]_q) = -q^{-1}d\varTheta(V,W)$ is in general
 non-zero. Substituting into the next bracket:

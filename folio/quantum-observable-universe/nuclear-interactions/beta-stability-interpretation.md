@@ -1,5 +1,5 @@
 **Derivation.**
-At fixed $A$, beta decay converts $\mathfrak{n} \to \mathfrak{p}$ (or vice versa) while preserving $A$. We minimize the mass $M(p, A) = p \cdot m_{\mathfrak{p}} + (A-p) \cdot m_{\mathfrak{n}} - \mathcal{L}_{\mathrm{bind}}(p, A-p)$ by setting $\partial M / \partial p \big|_A = 0$:
+At fixed $A$, beta decay converts $\mathfrak{n} \to \mathfrak{p}$ (or vice versa) while preserving $A$. Minimize the mass $M(p, A) = p \cdot m_{\mathfrak{p}} + (A-p) \cdot m_{\mathfrak{n}} - \mathcal{L}_{\mathrm{bind}}(p, A-p)$ by setting $\partial M / \partial p \big|_A = 0$:
 
 $$
   (m_{\mathfrak{p}} - m_{\mathfrak{n}})
@@ -25,7 +25,7 @@ At $q = q_0$, with $a_C = (q - q^{-1}) \times 3.334 \approx 0.697$ MeV and $a_A 
 | Regime | $q$ | $a_C$ | $n^*/p$ | Physics |
 |--------|-----|-------|---------|---------|
 | Classical | $q \to 1$ | $0$ | $1.00$ | No Coulomb; all nuclei symmetric |
-| Our universe | $q = q_0$ | $0.70$ | $1.0$--$1.6$ | Valley of stability |
+| Observed universe | $q = q_0$ | $0.70$ | $1.0$--$1.6$ | Valley of stability |
 | Deep quantum | $q \to \infty$ | $\to \infty$ | $\to \infty$ | Coulomb overwhelms; no heavy nuclei |
 
 The entire nuclear chart follows from the single parameter $q$.

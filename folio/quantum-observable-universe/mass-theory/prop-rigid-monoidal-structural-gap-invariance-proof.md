@@ -1,5 +1,3 @@
-## Proof
-
 Recall the definition from the statement block: for a confined
 particle $\mathfrak{H}$,
 
@@ -27,7 +25,7 @@ The proof factors into three steps.
 generic $q$, the functional satisfying M1 (cyclicity), M2 (the
 Markov axiom
 $\mathrm{tr}^{(n)}(x \cdot \sigma_{n-1}) = z \cdot \mathrm{tr}^{(n-1)}(x)$
-with the framework parameter $z = q^{3}/(q^{2}+1)$, **convention D**), and M3
+with the framework parameter $z = q^{3}/(q^{2}+1)$), and M3
 ($\mathrm{tr}(1) = 1$) is unique
 ([Markov-trace uniqueness](#prop:markov-trace-frobenius-selection);
 Jones \cite{jones1987}, Wenzl \cite{wenzl1988}). Consequently any
@@ -39,7 +37,7 @@ $\beta$, and in particular the same magnitude $|\tau(\beta)|$.
 **Step 2: every probed convention factors through the same
 categorical trace.**  Each of the six brane-tower convention
 families probed in
-[`conj:brane-tower-z-habiro`](#conj:brane-tower-z-habiro)
+[Brane tower lives in the $z$-Habiro ring](#conj:brane-tower-z-habiro)
 §"Surviving claims after closure attempts" is, by its defining
 prescription, a regularization of the divergent analytic $\Phi_q$
 tower. Case by case:
@@ -94,8 +92,8 @@ $\square$
 
 1. **Convention-independence of $\Delta_{\mathrm{cat}}({}^3\mathrm{He})$.**
    Compute $|\tau(\beta_{{}^3\mathrm{He}})|$ via Hoefsmit seminormal
-   (per-eigenvalue), via `markov_peel` (recursive symbolic), and via
-   `tr_M_via_wenzl_bridge_mpfr` (50 dps Wenzl bridge).  All three
+   (per-eigenvalue), via the recursive symbolic Markov peel, and via
+   the Wenzl bridge at 50 dps.  All three
    should give the same $|\tau|$ to 50 dps; the resulting
    $\Delta_{\mathrm{cat}}$ should be atom-dependent but
    convention-independent.
@@ -113,4 +111,4 @@ $\square$
    $\Delta_{\mathrm{cat}}(Z, N) = \Delta_0(A) + \mathbb{1}_{Z \in \mathrm{magic}} \cdot \Delta_p + \mathbb{1}_{N \in \mathrm{magic}} \cdot \Delta_n$
    with $\Delta_p = \Delta_n$ (the Z$\leftrightarrow$N symmetry constraint).  This
    is the precise content of
-   `conj:magic-shell-stabilization`.
+   the magic-shell stabilization conjecture.

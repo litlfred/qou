@@ -1,1 +1,0 @@
-FROM HOPF ALGEBRAS TO TENSOR CATEGORIES 21 Let W be another braided vector space of diagonal type with matrix (q−1 ij )i,j∈I, with respect to a basis w1, . . . , wθ; we shall consider the Λ-grading on the Nichols algebra B(W) determined by deg wi = −αi, i ∈I.

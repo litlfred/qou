@@ -1,0 +1,1 @@
+Assume n ∈N and let γ ∈C∞(R/Z, Rn) be a simple, closed, and by arc-length parametrized curve. Recall that the orthogonal projection of Rn onto the normal vector plane to γ at γ (x) P⊥ ˙γ (x) : Rn →Rn for every g ∈Rn is given by (P⊥ ˙γ g)(x) := P⊥ ˙γ (x)(g) := g −⟨g, ˙γ (x)⟩Rn ˙γ (x). Then we get by [10, Lemma 6.4.] and [38, Theorem 2.24] the following

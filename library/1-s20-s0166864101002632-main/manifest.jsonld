@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1-s20-s0166864101002632-main",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-s0166864101002632-main/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -18,6 +18,18 @@
     "library/1-s20-s0166864101002632-main/sections/sec-003"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "PII: S0166-8641(01)00263-2 — The Möbius energy of a knot is an energy functional for smooth curves based on an idea of self- repelling.\n\n**PII: S0166-8641(01)00263-2**\n\n*Eric J. Rawdon a,1, Jonathan Simon b,∗*\n\n13 pp, 5 sections.\n\n**Abstract.** The Möbius energy of a knot is an energy functional for smooth curves based on an idea of self- repelling. If a knot has a thick tubular neighborhood, we would intuitively expect the energy to be low. In this paper, we give explicit bounds for energy in terms of the ropelength of the knot, i.e., the ratio of the length of a thickest tube to its radius. 2001 Elsevier Science B.V. All rights reserved.\n\n**Outline.** Front matter; 1 Introduction; 2 The lemmas; 3 Thick knots have bounded energy; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "1-s20-s0166864101002632-main",
@@ -28,8 +40,8 @@
     "pages": 13,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

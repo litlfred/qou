@@ -1,1 +1,0 @@
-This means that one should investigate physical observables, regularization schemes, etc. at least in the range from 1 fm to 2 fm for systematic errors and see whether or not they depend on the cutoﬀ/ lattice spacing in this area.

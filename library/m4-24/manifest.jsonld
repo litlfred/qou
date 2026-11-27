@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/m4-24",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/m4-24/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -213,6 +213,18 @@
     "library/m4-24/sections/page-200"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3\n\n**Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface**\n\n*The workshop and seminars on “Invariants of knots and 3-manifolds” was held at*\n\n200 pp, 200 sections.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17; Page 18",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "m4-24",
@@ -223,8 +235,8 @@
     "pages": 200,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

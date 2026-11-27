@@ -1,20 +1,20 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/conj-reidemeister-mass-invariance",
   "@type": [
-    "folio-assistant-core:Conjecture",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
   "label": "conj:reidemeister-mass-invariance",
   "kind": "conjecture",
   "title": "Reidemeister invariance of mass and binding energy",
   "uses": [
-    "papers/quantum-observable-universe/blocks/rem-hydrogen-orbitals",
     "papers/quantum-observable-universe/blocks/conj-borromean-quark"
   ],
   "tags": [
@@ -26,7 +26,7 @@
     "shell-transition",
     "writhe"
   ],
-  "leanRef": "qou:QOU.Braiding.reidemeister_mass_invariance",
+  "leanRef": "qou:identity_preserved_by_shell_transition",
   "text": "reidemeister-mass-invariance.md",
   "leanSource": "reidemeister-mass-invariance.lean",
   "provenance": "authored"

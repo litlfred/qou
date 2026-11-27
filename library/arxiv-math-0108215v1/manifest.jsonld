@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0108215v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0108215v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -17,6 +17,18 @@
     "library/arxiv-math-0108215v1/sections/sec-002"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "arXiv:math/0108215v1 [math.GT] 30 Aug 2001 — The M¨obius energy of a knot is an energy functional for smooth curves based on an idea of self-repelling.\n\n**arXiv:math/0108215v1 [math.GT] 30 Aug 2001**\n\n*Department of Mathematics and Computer Science*\n\n16 pp, 4 sections.\n\n**Abstract.** The M¨obius energy of a knot is an energy functional for smooth curves based on an idea of self-repelling. If a knot has a thick tubular neighborhood, we would intuitively expect the energy to be low. In this paper, we give explicit bounds for energy in terms of the ropelength of the knot, i.e. the ratio of the length of a thickest tube to its radius.\n\n**Outline.** Front matter; 1 Introduction; 2 The Lemmas; 3 Thick knots have bounded energy",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -38,8 +50,8 @@
       "stamp_date": "30 Aug 2001"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

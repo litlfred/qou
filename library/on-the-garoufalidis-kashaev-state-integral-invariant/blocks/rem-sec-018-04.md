@@ -1,0 +1,1 @@
+• The function ⟨·⟩generalizes the Gauss character (quadratic expo- nential), serving as a quadratic refinement of the Fourier kernel. • The symmetric bicharacter ⟨x; y⟩captures the failure of ⟨·⟩to be additive, encoding it in a bilinear form.

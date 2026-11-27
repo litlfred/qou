@@ -1,86 +1,58 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "thurston",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "6010919ed83edd813af6b0c7cae19072e144a6bd94538c4b29dc60b099227c9e",
   "file": "Thurston.pdf"
  },
  "provenance": {
-  "title": "William P. Thurston The Geometry and Topology of Three-Manifolds",
+  "title": "The Geometry and Topology of Three-Manifolds",
   "authors": "The Geometry and Topology of Three-Manifolds",
   "arxiv": null,
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
+  "candidates": 1,
   "by_kind": {
-   "recommendation": 4
+   "example": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "explanatory": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "example",
+   "source_kind": "example",
    "number": null,
    "name": null,
-   "statement": "We must therefore resort to distorted pictures of hyperbolic space.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-019.md",
-   "section_title": "Page 19",
-   "pages": "19-19",
+   "statement": "Here is one of the simplest possible gluing diagrams for a three- manifold. Begin with two tetrahedra with edges labeled: There is a unique way to glue the faces of one tetrahedron to the other so that arrows are matched. For instance, A is matched with A0. All the 6\u2212! arrows are identi\ufb01ed and all the 6 6\u2212! arrows are identi\ufb01ed, so the resulting complex has 2 tetrahedra, 4 triangles, 2 edges and 1 vertex. Its Euler characteristic is +1, and (it follows that) a neighborhood of the vertex is the cone on a torus. Let M be the manifold obtained by removing the vertex. It turns out that this manifold is homeomorphic with the complement of a \ufb01gure-",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/page-012.md (p. 12-12)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/page-012.md",
+   "section_title": "Page 12",
+   "pages": "12-12",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Thus, hyperbolic space should be a sphere of radius i.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-025.md",
-   "section_title": "Page 25",
-   "pages": "25-25",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall later see how this is related to three-dimensional topology, giving a measure of the \u201csize\u201d of manifolds.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-026.md",
-   "section_title": "Page 26",
-   "pages": "26-26",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since any geodesic must lie in a two-dimensional subspace, \u00a8Xt must be a linear combination of Xt and \u02d9Xt, and we have 2.6.1. \u00a8Xt = \u2212 \u21e3s r \u23182 Xt.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-027.md",
-   "section_title": "Page 27",
-   "pages": "27-27",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "ex-page-012-01",
+   "block_iri": "library/thurston/blocks/ex-page-012-01",
+   "claim_id": "thurston#ex-page-012-01"
   }
  ]
 }

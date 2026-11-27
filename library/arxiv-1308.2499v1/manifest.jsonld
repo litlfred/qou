@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1308.2499v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1308.2499v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -21,6 +21,18 @@
     "library/arxiv-1308.2499v1/sections/sec-006"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Towards a regularity theory for integral Menger curvature — We generalize the notion of integral Menger curvature introduced by Gonzalez and Maddocks [14] by decoupling the powers in the integrand.\n\n**Towards a regularity theory for integral Menger curvature**\n\n*Simon Blatt∗*\n\n32 pp, 8 sections.\n\n**Abstract.** We generalize the notion of integral Menger curvature introduced by Gonzalez and Maddocks [14] by decoupling the powers in the integrand. This leads to a new two-parameter family of knot energies intM(p,q). We classify ﬁnite-energy curves in terms of Sobolev-Slobodecki˘ı spaces. More- over, restricting to the range of parameters leading to a sub-critical Euler-Lagrange equation, we prove existence of minimizers within any knot class via a uniform bi- Lipschitz bound. Consequemtly, intM(p,q) is a knot energy in the sense of O’Hara. Restricting to the non-degenerate sub-critical case, a suitable decomposition of the ﬁrst variation allows to establish a bootstrapping argument that leads to C∞- smoothness of critical points.\n\n**Outline.** Front matter; Introduction; 1 Classification of finite-energy curves; 2 Existence of minimizers within knot classes; 3 Differentiability; 4 Regularity of stationary points; A Product and chain rule; B Equivalence of fractional seminorms",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -44,8 +56,8 @@
       "stamp_date": "12 Aug 2013"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

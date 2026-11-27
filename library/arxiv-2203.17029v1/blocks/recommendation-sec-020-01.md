@@ -1,1 +1,0 @@
-Then we have \be (q^{2k}-q^{k})\alpha_{k}(q)-(1-q^k)\alpha_{k-1}(q)=0 \quad\text{so}\quad -q^{k}a_{k}=a_{k-1}. \ee Therefore, normalising so that $\alpha_{0}(q)=1$, \be \hat{f}^{(0)}(t,q)=\sum_{k=0}^{\infty}(-1)^{k}q^{-k(k+1)/2}t^{k}. \ee This is of course divergent for $|q|<1$ so we must $q$-Borel resum.

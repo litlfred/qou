@@ -1,1 +1,0 @@
-One can in fact argue, within a class of well-motivated models of grand uniﬁcation that proton decay should occur at accessible rates, with a lifetime bounded above by about 1035 years, for proton decaying into e+π0, and a lifetime of less than about (1−8) × 1034 years for proton decaying into νK+.

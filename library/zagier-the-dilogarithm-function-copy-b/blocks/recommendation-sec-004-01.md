@@ -1,1 +1,0 @@
-(13) This example should make it clear why non-trivial elements of BC can only arise from algebraic numbers: the key relations 1+β = α and 1−β−1 = α2/β in the calculation above forced α and β to be algebraic.

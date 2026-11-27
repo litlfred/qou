@@ -1,0 +1,1147 @@
+{
+ "q0Anchor": "independent",
+ "q0AnchorReason": "exact fmpq_poly arithmetic in Q(q), leading order read off at q = 1 (y = q^2 - 1); q0 is never read",
+ "description": "bond_leading_order_probe.py: leading order at q = 1 of ratio - 1 = tr_atom/tr_free - 1,\nper bond and per bond set (exploratory, measured after he4_all_pairs_exact_probe; not\npreregistered). Exact in Q(q) via hecke_flint. y = q^2 - 1.\n\nTwo candidate rules, both \"bonds act additively to leading order\" (conjectures, not theorems):\n  rule A (written first): a like-proton pair bond gives (3/8) y^4, any other bond (3/2) y^5.\n  rule B (written after rule A failed on the CASES below): a bond entering a PROTON block\n         (block j of bond (i, j), right closure) gives (3/8) y^4; a bond entering a neutron\n         block gives (3/2) y^5. So ratio - 1 = (3/8) n_into_p y^4 + O(y^5) if n_into_p > 0,\n         else (3/2) n_bonds y^5 + O(y^6).\nRule B was read off CASES, so CASES cannot test it. HOLDOUT was written down with rule B\nbefore it was run; only HOLDOUT tests rule B. Nothing is fitted; every case is printed.",
+ "engine": "python-flint exact Q(q)",
+ "exploratory": true,
+ "tally_agreeing_over_total": {
+  "rule_A_cases": "24/28",
+  "rule_B_cases": "28/28",
+  "rule_A_holdout": "2/16",
+  "rule_B_holdout": "16/16"
+ },
+ "rows": [
+  {
+   "set": "cases",
+   "order": "pp",
+   "bonds": [
+    [
+     0,
+     1
+    ]
+   ],
+   "variant": "over",
+   "y_power": 4,
+   "coefficient": "3/8",
+   "rule_A": [
+    4,
+    "3/8"
+   ],
+   "rule_B": [
+    4,
+    "3/8"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "pp",
+   "bonds": [
+    [
+     0,
+     1
+    ]
+   ],
+   "variant": "under",
+   "y_power": 4,
+   "coefficient": "3/8",
+   "rule_A": [
+    4,
+    "3/8"
+   ],
+   "rule_B": [
+    4,
+    "3/8"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "pn",
+   "bonds": [
+    [
+     0,
+     1
+    ]
+   ],
+   "variant": "over",
+   "y_power": 5,
+   "coefficient": "3/2",
+   "rule_A": [
+    5,
+    "3/2"
+   ],
+   "rule_B": [
+    5,
+    "3/2"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "pn",
+   "bonds": [
+    [
+     0,
+     1
+    ]
+   ],
+   "variant": "under",
+   "y_power": 5,
+   "coefficient": "3/2",
+   "rule_A": [
+    5,
+    "3/2"
+   ],
+   "rule_B": [
+    5,
+    "3/2"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "np",
+   "bonds": [
+    [
+     0,
+     1
+    ]
+   ],
+   "variant": "over",
+   "y_power": 4,
+   "coefficient": "3/8",
+   "rule_A": [
+    5,
+    "3/2"
+   ],
+   "rule_B": [
+    4,
+    "3/8"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "np",
+   "bonds": [
+    [
+     0,
+     1
+    ]
+   ],
+   "variant": "under",
+   "y_power": 4,
+   "coefficient": "3/8",
+   "rule_A": [
+    5,
+    "3/2"
+   ],
+   "rule_B": [
+    4,
+    "3/8"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "nn",
+   "bonds": [
+    [
+     0,
+     1
+    ]
+   ],
+   "variant": "over",
+   "y_power": 5,
+   "coefficient": "3/2",
+   "rule_A": [
+    5,
+    "3/2"
+   ],
+   "rule_B": [
+    5,
+    "3/2"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "nn",
+   "bonds": [
+    [
+     0,
+     1
+    ]
+   ],
+   "variant": "under",
+   "y_power": 5,
+   "coefficient": "3/2",
+   "rule_A": [
+    5,
+    "3/2"
+   ],
+   "rule_B": [
+    5,
+    "3/2"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "ppn",
+   "bonds": [
+    [
+     0,
+     1
+    ]
+   ],
+   "variant": "over",
+   "y_power": 4,
+   "coefficient": "3/8",
+   "rule_A": [
+    4,
+    "3/8"
+   ],
+   "rule_B": [
+    4,
+    "3/8"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "ppn",
+   "bonds": [
+    [
+     0,
+     1
+    ]
+   ],
+   "variant": "under",
+   "y_power": 4,
+   "coefficient": "3/8",
+   "rule_A": [
+    4,
+    "3/8"
+   ],
+   "rule_B": [
+    4,
+    "3/8"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "ppn",
+   "bonds": [
+    [
+     0,
+     2
+    ]
+   ],
+   "variant": "over",
+   "y_power": 5,
+   "coefficient": "3/2",
+   "rule_A": [
+    5,
+    "3/2"
+   ],
+   "rule_B": [
+    5,
+    "3/2"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "ppn",
+   "bonds": [
+    [
+     0,
+     2
+    ]
+   ],
+   "variant": "under",
+   "y_power": 5,
+   "coefficient": "3/2",
+   "rule_A": [
+    5,
+    "3/2"
+   ],
+   "rule_B": [
+    5,
+    "3/2"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "ppn",
+   "bonds": [
+    [
+     1,
+     2
+    ]
+   ],
+   "variant": "over",
+   "y_power": 5,
+   "coefficient": "3/2",
+   "rule_A": [
+    5,
+    "3/2"
+   ],
+   "rule_B": [
+    5,
+    "3/2"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "ppn",
+   "bonds": [
+    [
+     1,
+     2
+    ]
+   ],
+   "variant": "under",
+   "y_power": 5,
+   "coefficient": "3/2",
+   "rule_A": [
+    5,
+    "3/2"
+   ],
+   "rule_B": [
+    5,
+    "3/2"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "pnp",
+   "bonds": [
+    [
+     0,
+     2
+    ]
+   ],
+   "variant": "over",
+   "y_power": 4,
+   "coefficient": "3/8",
+   "rule_A": [
+    4,
+    "3/8"
+   ],
+   "rule_B": [
+    4,
+    "3/8"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "pnp",
+   "bonds": [
+    [
+     0,
+     2
+    ]
+   ],
+   "variant": "under",
+   "y_power": 4,
+   "coefficient": "3/8",
+   "rule_A": [
+    4,
+    "3/8"
+   ],
+   "rule_B": [
+    4,
+    "3/8"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "pnn",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "variant": "over",
+   "y_power": 5,
+   "coefficient": "3",
+   "rule_A": [
+    5,
+    "3"
+   ],
+   "rule_B": [
+    5,
+    "3"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "pnn",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "variant": "under",
+   "y_power": 5,
+   "coefficient": "3",
+   "rule_A": [
+    5,
+    "3"
+   ],
+   "rule_B": [
+    5,
+    "3"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "pnn",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "variant": "over",
+   "y_power": 5,
+   "coefficient": "9/2",
+   "rule_A": [
+    5,
+    "9/2"
+   ],
+   "rule_B": [
+    5,
+    "9/2"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "pnn",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "variant": "under",
+   "y_power": 5,
+   "coefficient": "9/2",
+   "rule_A": [
+    5,
+    "9/2"
+   ],
+   "rule_B": [
+    5,
+    "9/2"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "ppn",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "variant": "over",
+   "y_power": 4,
+   "coefficient": "3/8",
+   "rule_A": [
+    4,
+    "3/8"
+   ],
+   "rule_B": [
+    4,
+    "3/8"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "ppn",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "variant": "under",
+   "y_power": 4,
+   "coefficient": "3/8",
+   "rule_A": [
+    4,
+    "3/8"
+   ],
+   "rule_B": [
+    4,
+    "3/8"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "pnp",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "variant": "over",
+   "y_power": 4,
+   "coefficient": "3/4",
+   "rule_A": [
+    4,
+    "3/8"
+   ],
+   "rule_B": [
+    4,
+    "3/4"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "pnp",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "variant": "under",
+   "y_power": 4,
+   "coefficient": "3/4",
+   "rule_A": [
+    4,
+    "3/8"
+   ],
+   "rule_B": [
+    4,
+    "3/4"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "ppp",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "variant": "over",
+   "y_power": 4,
+   "coefficient": "3/4",
+   "rule_A": [
+    4,
+    "3/4"
+   ],
+   "rule_B": [
+    4,
+    "3/4"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "ppp",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "variant": "under",
+   "y_power": 4,
+   "coefficient": "3/4",
+   "rule_A": [
+    4,
+    "3/4"
+   ],
+   "rule_B": [
+    4,
+    "3/4"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "ppp",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "variant": "over",
+   "y_power": 4,
+   "coefficient": "9/8",
+   "rule_A": [
+    4,
+    "9/8"
+   ],
+   "rule_B": [
+    4,
+    "9/8"
+   ]
+  },
+  {
+   "set": "cases",
+   "order": "ppp",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "variant": "under",
+   "y_power": 4,
+   "coefficient": "9/8",
+   "rule_A": [
+    4,
+    "9/8"
+   ],
+   "rule_B": [
+    4,
+    "9/8"
+   ]
+  },
+  {
+   "set": "holdout",
+   "order": "npp",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "variant": "over",
+   "y_power": 4,
+   "coefficient": "9/8",
+   "rule_A": [
+    4,
+    "3/8"
+   ],
+   "rule_B": [
+    4,
+    "9/8"
+   ]
+  },
+  {
+   "set": "holdout",
+   "order": "npp",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "variant": "under",
+   "y_power": 4,
+   "coefficient": "9/8",
+   "rule_A": [
+    4,
+    "3/8"
+   ],
+   "rule_B": [
+    4,
+    "9/8"
+   ]
+  },
+  {
+   "set": "holdout",
+   "order": "nnp",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "variant": "over",
+   "y_power": 4,
+   "coefficient": "3/4",
+   "rule_A": [
+    5,
+    "3"
+   ],
+   "rule_B": [
+    4,
+    "3/4"
+   ]
+  },
+  {
+   "set": "holdout",
+   "order": "nnp",
+   "bonds": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "variant": "under",
+   "y_power": 4,
+   "coefficient": "3/4",
+   "rule_A": [
+    5,
+    "3"
+   ],
+   "rule_B": [
+    4,
+    "3/4"
+   ]
+  },
+  {
+   "set": "holdout",
+   "order": "npn",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "variant": "over",
+   "y_power": 4,
+   "coefficient": "3/8",
+   "rule_A": [
+    5,
+    "3"
+   ],
+   "rule_B": [
+    4,
+    "3/8"
+   ]
+  },
+  {
+   "set": "holdout",
+   "order": "npn",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "variant": "under",
+   "y_power": 4,
+   "coefficient": "3/8",
+   "rule_A": [
+    5,
+    "3"
+   ],
+   "rule_B": [
+    4,
+    "3/8"
+   ]
+  },
+  {
+   "set": "holdout",
+   "order": "nnn",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "variant": "over",
+   "y_power": 5,
+   "coefficient": "9/2",
+   "rule_A": [
+    5,
+    "9/2"
+   ],
+   "rule_B": [
+    5,
+    "9/2"
+   ]
+  },
+  {
+   "set": "holdout",
+   "order": "nnn",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "variant": "under",
+   "y_power": 5,
+   "coefficient": "9/2",
+   "rule_A": [
+    5,
+    "9/2"
+   ],
+   "rule_B": [
+    5,
+    "9/2"
+   ]
+  },
+  {
+   "set": "holdout",
+   "order": "pnpn",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "over",
+   "y_power": 4,
+   "coefficient": "3/8",
+   "rule_A": [
+    5,
+    "9/2"
+   ],
+   "rule_B": [
+    4,
+    "3/8"
+   ]
+  },
+  {
+   "set": "holdout",
+   "order": "pnpn",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "under",
+   "y_power": 4,
+   "coefficient": "3/8",
+   "rule_A": [
+    5,
+    "9/2"
+   ],
+   "rule_B": [
+    4,
+    "3/8"
+   ]
+  },
+  {
+   "set": "holdout",
+   "order": "nnpp",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "over",
+   "y_power": 4,
+   "coefficient": "3/4",
+   "rule_A": [
+    4,
+    "3/8"
+   ],
+   "rule_B": [
+    4,
+    "3/4"
+   ]
+  },
+  {
+   "set": "holdout",
+   "order": "nnpp",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "under",
+   "y_power": 4,
+   "coefficient": "3/4",
+   "rule_A": [
+    4,
+    "3/8"
+   ],
+   "rule_B": [
+    4,
+    "3/4"
+   ]
+  },
+  {
+   "set": "holdout",
+   "order": "npnp",
+   "bonds": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "variant": "over",
+   "y_power": 4,
+   "coefficient": "3/8",
+   "rule_A": [
+    5,
+    "3"
+   ],
+   "rule_B": [
+    4,
+    "3/8"
+   ]
+  },
+  {
+   "set": "holdout",
+   "order": "npnp",
+   "bonds": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "variant": "under",
+   "y_power": 4,
+   "coefficient": "3/8",
+   "rule_A": [
+    5,
+    "3"
+   ],
+   "rule_B": [
+    4,
+    "3/8"
+   ]
+  },
+  {
+   "set": "holdout",
+   "order": "pnnp",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "over",
+   "y_power": 4,
+   "coefficient": "9/8",
+   "rule_A": [
+    4,
+    "3/8"
+   ],
+   "rule_B": [
+    4,
+    "9/8"
+   ]
+  },
+  {
+   "set": "holdout",
+   "order": "pnnp",
+   "bonds": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "variant": "under",
+   "y_power": 4,
+   "coefficient": "9/8",
+   "rule_A": [
+    4,
+    "3/8"
+   ],
+   "rule_B": [
+    4,
+    "9/8"
+   ]
+  }
+ ]
+}

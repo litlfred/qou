@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2002.04901v5",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "f1320c4b872292153272c76a2047a215d3aa89508c7bf47f7297b3c752ad701a",
   "file": "2002.04901v5.pdf"
  },
  "provenance": {
-  "title": "WEAK PROREGULARITY, DERIVED COMPLETION, ADIC FLATNESS",
+  "title": "Weak Proregularity, Derived Completion, Adic Flatness, and Prisms",
   "authors": "AND PRISMS",
   "arxiv": {
    "id": "2002.04901",
@@ -16,136 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 8,
-  "by_kind": {
-   "recommendation": 8
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It looks at $\\a$-adic completion (plain and derived) from another perspective, and we recommend reading it.",
-   "strength": null,
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-0-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The next concept we shall introduce had a pivotal role in our study of adic flatness in the paper \\cite{Ye2}, and we hope some readers might also find it useful.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-4-weak-proregularity-and-adic-flatness.md",
-   "section_title": "Weak Proregularity and Adic Flatness",
-   "pages": "13-15",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We must prove that given $i$, there exists some $j \\geq i$ such that the homomorphism \\[ \\opn{mult}(a^{j - i}) : \\opn{Ann}_A(a^j) \\to \\opn{Ann}_A(a^i) \\] is the zero homomorphism.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-5-weak-proregularity-and-quotient-rings.md",
-   "section_title": "Weak Proregularity and Quotient Rings",
-   "pages": "15-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Given some $j \\geq l' + l''$ and some $m \\in M$ s.t.\\ $b^j \\cd m = 0$, we must prove that $b^{l' + l''} \\cd m = 0$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-5-weak-proregularity-and-quotient-rings.md",
-   "section_title": "Weak Proregularity and Quotient Rings",
-   "pages": "15-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall prove that \\begin{equation} \\label{eqn:120} \\opn{tb}_{A_k}(b) \\leq (k + 1) \\cd l \\end{equation} for all $k \\geq 0$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-5-weak-proregularity-and-quotient-rings.md",
-   "section_title": "Weak Proregularity and Quotient Rings",
-   "pages": "15-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall now prove (\\ref{eqn:120}), by induction on $k$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-5-weak-proregularity-and-quotient-rings.md",
-   "section_title": "Weak Proregularity and Quotient Rings",
-   "pages": "15-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall use the fact that \\begin{equation} \\label{eqn:134} \\opn{K}(A; \\aa^i) = \\opn{K}(A; a^i) \\ot_A \\opn{K}(A; b^i) \\end{equation} as complexes.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-5-weak-proregularity-and-quotient-rings.md",
-   "section_title": "Weak Proregularity and Quotient Rings",
-   "pages": "15-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since perfectoid ring theory makes heavy use of derived completion and adic \ufb02atness, we anticipate that our results shall help simplify and improve some of the more technical aspects of this theory.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-1",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

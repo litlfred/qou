@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0507033v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-nucl-th-0507033v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -28,6 +28,18 @@
     "library/arxiv-nucl-th-0507033v2/sections/sec-013"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Cluster Formation and The Virial Equation of State of Low-Density Nuclear Matter — 15 sections: Front matter; Introduction; Formalism\n\n**Cluster Formation and The Virial Equation of State of Low-Density Nuclear Matter**\n\n*C.J. Horowitz∗and A. Schwenk†*\n\n15 pp, 15 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Formalism; 2.1 Nuclear Statistical Equilibrium; 2.2 Virial Equation of State; 2.3 Virial Coefficients; 3 Results; 3.1 Virial Coefficients; 2.4 Entropy and Energy; 3.2 Composition; 3.3 Pressure; 3.4 Entropy and Energy; 3.5 Symmetry Energy; 4 Conclusions; Acknowledgements",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
@@ -56,8 +68,8 @@
       "stamp_date": "2 Jun 2006"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,1 +1,0 @@
-In no sense the set of particular formulas (\ref{measmumamo}) for $p>3$ is distinguished among other scalar-product models, and from now on we shall not consider conventional multimatrix models with $p-1 > 2$ as a separate class of theories.

@@ -1,1 +1,0 @@
-Now we know that when q = 1, the intertwiner is an irreducible representation of u(n), hence by deforming the enveloping algebra, the representation of Uq(u(n)) carried by the Uq(su(2)) intertwiner must stay an irreducible representation.

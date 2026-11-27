@@ -1,1 +1,1 @@
-A quantum observable universe is **strictly commutative** if its multiplication and comultiplication are respectively commutative and cocommutative. This isolates the classical limit $q \to 1$, restricting the gauge group to $\mathrm{SU}(2)$ and turning $\mathrm{Rep}(\mathbf{C})$ into a symmetric category. It hosts the classical hyperelliptic quintic, but cannot support anyonic structure.
+A quantum observable universe is **strictly commutative** if its multiplication and comultiplication are respectively commutative and cocommutative.

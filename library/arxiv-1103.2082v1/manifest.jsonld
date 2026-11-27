@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1103.2082v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1103.2082v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -33,7 +33,19 @@
     "library/arxiv-1103.2082v1/sections/sec-019"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "narrative": [
+    {
+      "text": "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St) — Deligne has deﬁned a category which interpolates among the representations of the various symmetric groups.\n\n**MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St)**\n\n*JONATHAN COMES AND JONATHAN R. KUJAWA*\n\n17 pp, 20 sections.\n\n**Abstract.** Deligne has deﬁned a category which interpolates among the representations of the various symmetric groups. In this paper we show Deligne’s category admits a unique nontrivial family of modiﬁed trace functions. Such modiﬁed trace functions have already proven to be interesting in both low-dimensional topology and representation theory. We also introduce a graded variant of Deligne’s category, lift the modiﬁed trace functions to the graded setting, and use them to recover the well-known invariant of framed knots known as the writhe.\n\n**Outline.** 1 Introduction; 1.1.; 1.2.; 1.3.; 1.4.; 1.5.; 1.6 Acknowledgements; 2 Ribbon Categories and Traces; 2.3 Traces in Ribbon Categories; 2.4 Tensor Ideals in a Ribbon Category; 2.5.; 2.6.; 4 A trace on the ideal of negligibles in Rep(S; 4.2 Dimensions in the Non-Semisimple Block; 5 A trace on the ideal of negligibles in Rep(S; 5.1 Notation; 5.2 The Object Mn; 5.3 An Ambidextrous Trace on Mn",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -54,8 +66,8 @@
       "stamp_date": "10 Mar 2011"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

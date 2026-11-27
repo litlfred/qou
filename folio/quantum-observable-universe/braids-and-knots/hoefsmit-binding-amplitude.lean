@@ -33,7 +33,7 @@
 import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.LinearCombination
-import QOU.MathlibExt.QIntegerCanonical
+import HeckeTemperleyLieb.QIntegerCanonical
 
 namespace QOU.BraidsAndKnots
 

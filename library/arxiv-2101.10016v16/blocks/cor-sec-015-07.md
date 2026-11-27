@@ -1,0 +1,1 @@
+Let C and C ′ be rigid tensor C ∗ -categories such that Gr(C) admits the amenable dimension function D. Then every weak tensor ∗-functor F : C → C ′ defined by F and G satisfies D(ρ) ≤ d ′ (F(ρ)) ≤ ∥Fρ,ρ∥∥Gρ,ρ∥d(ρ), ρ ∈ C,

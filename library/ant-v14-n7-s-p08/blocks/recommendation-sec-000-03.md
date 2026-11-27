@@ -1,1 +1,0 @@
-Conjecturally, under the generalized Riemann hypothesis, a bound as strong as |S(0, H)| ≪ε H1/2qε should hold for all ε > 0, thus leading to a nontrivial upper bound in any range H ≫ε q3ε (see, e.g., [Iwaniec and Kowalski 2004, Equation (12.54)], or [Friedlander et al.

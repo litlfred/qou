@@ -1,0 +1,1 @@
+Green’s function Monte Carlo was used to calculate light and medium-mass nuclei mainly up to oxygen-16 [29, 30] and for the calculation of the Hoyle state, where the theoretical prediction is 10.4(5) MeV, which is far oﬀfrom the experimental value of 7.65 MeV [31].

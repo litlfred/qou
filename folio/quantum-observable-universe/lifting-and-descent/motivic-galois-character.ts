@@ -27,5 +27,7 @@ export default definition({
         "local realization $\\rho_p$; the `sorry` in any concrete instance " +
         "is the substrate axiom.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([adelic substrate](#def:adelic-substrate))" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): Working directly with $\\chi^{\\mathrm{mot}}_A$ replaces per-level Čech-cocycle non-vanishing arguments with a single non-vanishing theorem about the character ([motivic perpetual obstruction](#thm:motivic-perpetual-obstruction), proved via Route A: prime-ideal collapse, $C = a_0(-1) + 2 \\cdot a_1(-1)$)." },
   ],
 });

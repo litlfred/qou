@@ -1,1 +1,0 @@
-(Note that in this case we must have $i \neq k$; otherwise the two walls would obey the \ti{same} differential equation, and it would be impossible for them to intersect transversely.) In this case the joint $z$ supports both $\bar a$ and $\bar b$, which are \ti{composable} since $z^{(j)}$ is both the end of $\bar a$ and the start of $\bar{b}$.

@@ -1,0 +1,1 @@
+Cottingham and Mp −Mn André Walker-Loud 2.1 Subtraction function and renormalization Collins ﬁrst worked out the renormalization of the Cottingham formula [2], which we sum- marize here.

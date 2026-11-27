@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2507.19896v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.19896v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -26,6 +26,18 @@
     "library/arxiv-2507.19896v1/sections/sec-011"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Generalized Markov traces and Jucys-Murphy elements — We give a simple construction of Markov traces for Iwahori-Hecke algebras associated with infinite series of crystallographic Coxeter groups.\n\n**Generalized Markov traces and Jucys-Murphy elements**\n\n*Kostiantyn Tolmachov, Heorhii Zhylinskyi*\n\n12 pp, 13 sections.\n\n**Abstract.** We give a simple construction of Markov traces for Iwahori-Hecke algebras associated with infinite series of crystallographic Coxeter groups. In types B and D it is new, and generalizes a known construction in type A employing symmetric polynomials in multiplicative Jucys-Murphy elements.\n\n**Outline.** Front matter; Introduction.; Acknowledgments.; Iwahori-Hecke algebras and multiplicative Jucy; Coxeter groups.; Iwahori-Hecke algebras.; Trace functional and a pairing on H(W,S).; ``Full twist'' and Jucys-Murphy elements.; Some central elements in the classical Iwahori; Markov traces.; Markov traces via Jucys-Murphy elements.; General Markov traces in types B, D.; Geometric Markov traces.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -48,8 +60,8 @@
       "stamp_date": "26 Jul 2025"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

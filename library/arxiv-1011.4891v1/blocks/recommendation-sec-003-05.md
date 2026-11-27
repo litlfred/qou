@@ -1,1 +1,0 @@
-The Whitney trick It should be understood that, in the process depicted in the ﬁgure, here again the device was constrained from above by a pane of glass placed just above the table and parallel to it (otherwise the loops would have forced the knot to jump up oﬀthe table and each would have self-annihilated itself independently of the other one).

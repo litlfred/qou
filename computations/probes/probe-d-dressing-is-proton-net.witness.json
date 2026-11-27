@@ -1,31 +1,24 @@
 {
   "engine": "mpmath+sympy",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-04T13:24:19.598668+00:00",
-  "commitSha": "4dfe838c398126a960003b0092b87838bf3818a1",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-25T11:27:02.080164+00:00",
+  "commitSha": "ec3d0642447888cfcad5acb47a3ae91f5ddaaaeb",
   "assertions": [
     {
       "name": "abs_delta_net_eq_h_net_p",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-45",
       "source": "|Δ(net)| = h·net(p) — exact ℚ(q), the identity tying the binding dressing to Q_β"
-    },
-    {
-      "name": "binding_candidate_subpercent",
-      "computed": true,
-      "expected": true,
-      "passed": true,
-      "source": "B_D = E₀·net(p)·Δtr vs AME2020"
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 20,
   "computation": "probe-d-dressing-is-proton-net",
   "scriptFile": "probe_d_dressing_is_proton_net.py",
-  "scriptHash": "909123d5e1a4",
-  "scriptCommitSha": "4dfe838c398126a960003b0092b87838bf3818a1",
+  "scriptHash": "066c753d4952",
+  "scriptCommitSha": "87f8d54f92b7d8906fa7b8c7792bbacc1ad3890a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,13 +26,23 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "1.9.3",
+    "pyhecke_native_build": "248f1a54d4f699f2"
   },
-  "description": "The deuteron binding dressing (1−h/2) is the proton single-wrap NF net coefficient net(p) (conj:borromean-quark). Exact ℚ(q) chain: Δ(net) = −h·net(p); |Δ(net)| = h·net(p); Q_β = E₀·h·net(p); hence B_D = E₀·net(p)·Δtr = Q_β·Δtr/h. Ties the binding dressing to the β-decay (bar-odd) sector via the single factor h. Structural identification; magnitude match (+0.12%) observation-tier, conditional on borromean-quark, NOT wired.",
+  "invocation": {
+    "argv": [
+      "computations/probes/probe_d_dressing_is_proton_net.py"
+    ],
+    "reproduce": "python3 -u computations/probes/probe_d_dressing_is_proton_net.py"
+  },
+  "description": "The deuteron binding dressing (1−h/2) is the proton single-wrap NF net coefficient net(p) (conj:borromean-quark). Exact ℚ(q) chain: Δ(net) = −h·net(p); |Δ(net)| = h·net(p); Q_β = E₀·h·net(p); hence B_D = E₀·net(p)·Δtr = Q_β·Δtr/h. Ties the binding dressing to the β-decay (bar-odd) sector via the single factor h. The exact identities are the probe's content. The binding magnitude B_D vs AME is recorded as a NEGATIVE (owner ruling 2026-11-25, bean qou-xj4p): the 2026-07-04 +0.29% hit came only from the superseded grouped word under the excised Markov convention C (attribution: probes/probe_d_dressing_is_proton_net/attribution/); on the ruled inputs the raw-difference B_D misses AME by about -75%, because it is not normalised by tr_free. The binding magnitude is now reported on the corpus's live law, exactly binding_log_free_energy.py: B = E_0*log(|tr_free|/|tr_atom|) (about +27% for the deuteron, on the superseded single-crossing p-n interface letter: a record, not a current prediction). NOT wired.",
   "auditOnly": "docs/audits/2026-07-04-deuteron-dressing-is-proton-net.md",
   "parameters": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
@@ -60,16 +63,30 @@
       "net_n": "0.70826265607280202155",
       "abs_delta_net": "0.18720719452937832073",
       "h_times_net_p": "0.18720719452937832073",
-      "abs_delta_eq_h_net_p_reldiff": 0.0,
+      "abs_delta_eq_h_net_p_reldiff": "0.0",
       "Qbeta_ansatz_MeV": "0.783645827374621213",
-      "Qbeta_kashiwara_MeV": "0.782334386518171885",
-      "Qbeta_ansatz_vs_kashiwara_rel": 0.0016763175427913603,
-      "Delta_tr": "0.59516889262234348652",
-      "B_cand_E0_netp_dtr_MeV": "2.23094304357897479",
-      "B_cand_err_vs_AME_pct": 0.28665559959396997,
-      "B_via_kashiwara_qbeta_MeV": "2.2272095331670547",
-      "B_via_qbeta_err_vs_AME_pct": 0.11882465745702253,
-      "consistency_cand_vs_ansatz_route_rel": 0.0
+      "Qbeta_kashiwara_MeV": "0.782804713582601608",
+      "Qbeta_ansatz_vs_kashiwara_rel": "0.0010744873880104078365",
+      "Delta_tr": "0.14704667798040846911",
+      "B_cand_E0_netp_dtr_MeV": "0.55119272426415506",
+      "B_cand_err_vs_AME_pct": "-75.222462506885384646",
+      "B_via_kashiwara_qbeta_MeV": "0.550601110315296747",
+      "B_via_qbeta_err_vs_AME_pct": "-75.249057082891183602",
+      "tr_free": "0.2990150171846400767",
+      "tr_atom": "0.15196833920423160759",
+      "B_canonical_log_law_MeV": "2.83316257200452377",
+      "B_canonical_log_law_err_vs_AME_pct": "27.357979816672741424",
+      "consistency_cand_vs_ansatz_route_rel": "0.0"
+    },
+    "binding_candidate_status": {
+      "verdict": "negative",
+      "B_cand_err_vs_AME_pct": "-75.222462506885384646",
+      "B_cand_defect": "raw trace difference tr_free*(1-r); tr_free is a per-nucleon self-trace, not bond data",
+      "reported_binding_form": "B = E_0*log(|tr_free|/|tr_atom|), computations/binding_log_free_energy.py:95",
+      "B_canonical_log_law_err_vs_AME_pct": "27.357979816672741424",
+      "B_canonical_log_law_scope": "evaluated on the single-crossing interface letter of atom_braid_word_3A, superseded by the 2026-11-15 owner ruling that the gamma-gamma rule covers bond letters: a record on a superseded word, not a current prediction",
+      "ruling": "owner 2026-11-25 (qou-xj4p): keep the exact identities; record the binding match as a negative; the sub-percent assertion is removed",
+      "attribution": "probes/probe_d_dressing_is_proton_net/attribution/RESULTS.md"
     }
   },
   "q0Anchor": "proton",

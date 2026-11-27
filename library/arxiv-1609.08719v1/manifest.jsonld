@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1609.08719v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1609.08719v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -36,6 +36,18 @@
     "library/arxiv-1609.08719v1/sections/sec-021"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "AN EXPERIMENTAL INVESTIGATION OF NEUMANN’S CONJECTURE — We use a large census of hyperbolic 3-manifolds to experimentally investigate a conjecture of Neumann regarding the Bloch Group.\n\n**AN EXPERIMENTAL INVESTIGATION OF NEUMANN’S CONJECTURE**\n\n*STEPHEN GILLES AND PETER HUSTON*\n\n17 pp, 23 sections.\n\n**Abstract.** We use a large census of hyperbolic 3-manifolds to experimentally investigate a conjecture of Neumann regarding the Bloch Group. We present an augmented census including, for feasible invariant trace ﬁelds, explicit man- ifolds (associated to that ﬁeld) that appear to generate the Bloch group of that ﬁeld. We also make use of Ptolemy coordinates to compute “exotic volumes” of representations, and attempt to realize these volumes as linear combinations of generator volumes. We thus present a large body of empirical support for Neumann’s conjecture.\n\n**Outline.** Front matter; 1.1 Neumann's conjecture; 1 Introduction; 1.3 A stronger, false conjecture; 1.4 Exotic volumes; Acknowledgments; 2 Background; 2.1 Cross-ratios; 2.2 The invariant trace field; 2.3 The Bloch group; 2.4 Gluing Equations; 2.5 Ptolemy coordinates; 2.6 Lattice matching; 3 Experimentation; 3.1 Manifold generation; 3.2 Lattice matching; 3.3 Linear combinations for exotic volumes; 4 A counter-example to conjecture 1.3",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -57,8 +69,8 @@
       "stamp_date": "28 Sep 2016"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

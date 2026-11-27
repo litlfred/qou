@@ -1,0 +1,364 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T12:10:31.816299+00:00",
+  "commitSha": "7c94ebd0bebe6071124416b4a43f81f665429ff2",
+  "assertions": [
+    {
+      "name": "CONTROL_A_borromean_mellor_melvin_type1_and_type2_match_wirtinger",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "bool",
+      "source": "Mellor-Melvin Theorem (1)-(3): F^(-,-,-) gives (m=0, t=1) and F^(+,-,-) gives (m=-1, t=0), both m - t = -1 == eps_01(l_2)"
+    },
+    {
+      "name": "CONTROL_B_yang_baxter_unlink_cancels_m_minus_t_to_zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "bool",
+      "source": "On s0 s1 s0 s1^-1 s0^-1 s1^-1 = 1 in B_3, m_012(F) = 1 and t_012(F) = 1 cancel to 0, matching Wirtinger 0"
+    },
+    {
+      "name": "CONTROL_C_delta_2_positive_and_null_controls_agree_mod_2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "bool",
+      "source": "Both 3-strand (t=1 and t=0 surfaces) and 12-strand 4He cyclic-square Delta=2 controls agree between Mellor-Melvin and Wirtinger on mubar === 1 and 0 (mod 2)"
+    },
+    {
+      "name": "mellor_melvin_matches_wirtinger_on_all_606_carrier_triples",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "mismatches",
+      "source": "Exact Q^3 triangulated Seifert surface m_{ijk}(F) - t_{ijk}(F) (mod Delta) matches Wirtinger eps_{ij}(l_k^(3)) (mod Delta) on all 606 triples"
+    },
+    {
+      "name": "carrier_delta_2_triples_all_vanish_and_have_zero_triple_points",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "bool",
+      "source": "All 173 Delta = 2 carrier triples have t_{ijk}(F) = 0 and m_{ijk}(F) === 0 (mod 2), and all 606 carrier triples vanish"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "milnor-mubar-delta2-mellor-melvin",
+  "scriptFile": "milnor_mubar_delta2_mellor_melvin_probe.py",
+  "scriptHash": "6f53e29f75bb",
+  "scriptCommitSha": "7c94ebd0bebe6071124416b4a43f81f665429ff2",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "56872bc54313b172"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/milnor_mubar_delta2_mellor_melvin_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/milnor_mubar_delta2_mellor_melvin_probe.py"
+  },
+  "description": "Cross-checks Mellor & Melvin's (2003, Alg. Geom. Topol. 3, 557-568; library/0110001v3/) geometric formula mubar_{ijk} === m_{ijk}(F) - t_{ijk}(F) (mod Delta) on explicit Q^3 triangulated Seifert surfaces against the exact Artin/Wirtinger nilpotent-class-2 longitude Magnus expansion eps_{ij}(l_k^(3)) (mod Delta) across Borromean surface-choice controls, the Yang-Baxter identity unlink, explicit Delta = 2 positive/null controls, and all 606 triples (including all 173 Delta = 2 residual triples) of the canonical nuclear carrier across 2H..10B. Zero discrepancies; all 173 Delta = 2 carrier triples have t_{ijk}(F) = 0 and m_{ijk}(F) === 0 (mod 2).",
+  "auditOnly": "docs/audits/2026-11-24-milnor-delta2-mellor-melvin-2g9j.md",
+  "data": {
+    "controls": {
+      "borromean_surface_independence": {
+        "all_down_type2": {
+          "delta": 0,
+          "m_ijk": 0,
+          "t_ijk": 1,
+          "diff": -1,
+          "mod_delta": -1
+        },
+        "split_height_type1": {
+          "delta": 0,
+          "m_ijk": -1,
+          "t_ijk": 0,
+          "diff": -1,
+          "mod_delta": -1
+        },
+        "wirtinger_longitude": {
+          "delta": 0,
+          "mubar": -1
+        }
+      },
+      "yang_baxter_unlink_guard": {
+        "mellor_melvin": {
+          "delta": 0,
+          "m_ijk": 1,
+          "t_ijk": 1,
+          "diff": 0,
+          "mod_delta": 0
+        },
+        "wirtinger_longitude": {
+          "delta": 0,
+          "mubar": 0
+        }
+      },
+      "delta_2_controls": {
+        "b3_borromean_s0_4_all_down": {
+          "delta": 2,
+          "m_ijk": 0,
+          "t_ijk": 1,
+          "diff": -1,
+          "mod_delta": 1
+        },
+        "b3_borromean_s0_4_split": {
+          "delta": 2,
+          "m_ijk": -1,
+          "t_ijk": 0,
+          "diff": -1,
+          "mod_delta": 1
+        },
+        "b3_wirtinger": {
+          "delta": 2,
+          "mubar": 1
+        },
+        "he4_cyclic_square_nonzero_mod2": {
+          "mellor_melvin": {
+            "delta": 2,
+            "m_ijk": 2,
+            "t_ijk": 1,
+            "diff": 1,
+            "mod_delta": 1
+          },
+          "wirtinger": {
+            "delta": 2,
+            "mubar": 1
+          }
+        },
+        "he4_cyclic_square_zero_mod2": {
+          "mellor_melvin": {
+            "delta": 2,
+            "m_ijk": 1,
+            "t_ijk": 1,
+            "diff": 0,
+            "mod_delta": 0
+          },
+          "wirtinger": {
+            "delta": 2,
+            "mubar": 0
+          }
+        }
+      }
+    },
+    "canonical_carrier_sweep": {
+      "rows": [
+        {
+          "isotope": "2H",
+          "A": 2,
+          "branch": "pos_branch",
+          "components_mu": 3,
+          "triples": 1,
+          "delta_0": 0,
+          "delta_1": 0,
+          "delta_2": 1,
+          "delta_other": 0,
+          "nonzero_mubar": 0,
+          "delta_2_nonzero_t_ijk": 0
+        },
+        {
+          "isotope": "2H",
+          "A": 2,
+          "branch": "neg_branch",
+          "components_mu": 3,
+          "triples": 1,
+          "delta_0": 0,
+          "delta_1": 1,
+          "delta_2": 0,
+          "delta_other": 0,
+          "nonzero_mubar": 0,
+          "delta_2_nonzero_t_ijk": 0
+        },
+        {
+          "isotope": "3H",
+          "A": 3,
+          "branch": "pos_branch",
+          "components_mu": 4,
+          "triples": 4,
+          "delta_0": 0,
+          "delta_1": 0,
+          "delta_2": 4,
+          "delta_other": 0,
+          "nonzero_mubar": 0,
+          "delta_2_nonzero_t_ijk": 0
+        },
+        {
+          "isotope": "3H",
+          "A": 3,
+          "branch": "neg_branch",
+          "components_mu": 4,
+          "triples": 4,
+          "delta_0": 2,
+          "delta_1": 2,
+          "delta_2": 0,
+          "delta_other": 0,
+          "nonzero_mubar": 0,
+          "delta_2_nonzero_t_ijk": 0
+        },
+        {
+          "isotope": "3He",
+          "A": 3,
+          "branch": "pos_branch",
+          "components_mu": 4,
+          "triples": 4,
+          "delta_0": 0,
+          "delta_1": 0,
+          "delta_2": 4,
+          "delta_other": 0,
+          "nonzero_mubar": 0,
+          "delta_2_nonzero_t_ijk": 0
+        },
+        {
+          "isotope": "3He",
+          "A": 3,
+          "branch": "neg_branch",
+          "components_mu": 4,
+          "triples": 4,
+          "delta_0": 1,
+          "delta_1": 3,
+          "delta_2": 0,
+          "delta_other": 0,
+          "nonzero_mubar": 0,
+          "delta_2_nonzero_t_ijk": 0
+        },
+        {
+          "isotope": "4He",
+          "A": 4,
+          "branch": "pos_branch",
+          "components_mu": 5,
+          "triples": 10,
+          "delta_0": 1,
+          "delta_1": 0,
+          "delta_2": 9,
+          "delta_other": 0,
+          "nonzero_mubar": 0,
+          "delta_2_nonzero_t_ijk": 0
+        },
+        {
+          "isotope": "4He",
+          "A": 4,
+          "branch": "neg_branch",
+          "components_mu": 5,
+          "triples": 10,
+          "delta_0": 5,
+          "delta_1": 5,
+          "delta_2": 0,
+          "delta_other": 0,
+          "nonzero_mubar": 0,
+          "delta_2_nonzero_t_ijk": 0
+        },
+        {
+          "isotope": "6Li",
+          "A": 6,
+          "branch": "pos_branch",
+          "components_mu": 7,
+          "triples": 35,
+          "delta_0": 10,
+          "delta_1": 0,
+          "delta_2": 25,
+          "delta_other": 0,
+          "nonzero_mubar": 0,
+          "delta_2_nonzero_t_ijk": 0
+        },
+        {
+          "isotope": "6Li",
+          "A": 6,
+          "branch": "neg_branch",
+          "components_mu": 7,
+          "triples": 35,
+          "delta_0": 22,
+          "delta_1": 13,
+          "delta_2": 0,
+          "delta_other": 0,
+          "nonzero_mubar": 0,
+          "delta_2_nonzero_t_ijk": 0
+        },
+        {
+          "isotope": "8Be",
+          "A": 8,
+          "branch": "pos_branch",
+          "components_mu": 9,
+          "triples": 84,
+          "delta_0": 35,
+          "delta_1": 0,
+          "delta_2": 49,
+          "delta_other": 0,
+          "nonzero_mubar": 0,
+          "delta_2_nonzero_t_ijk": 0
+        },
+        {
+          "isotope": "8Be",
+          "A": 8,
+          "branch": "neg_branch",
+          "components_mu": 9,
+          "triples": 84,
+          "delta_0": 59,
+          "delta_1": 25,
+          "delta_2": 0,
+          "delta_other": 0,
+          "nonzero_mubar": 0,
+          "delta_2_nonzero_t_ijk": 0
+        },
+        {
+          "isotope": "10B",
+          "A": 10,
+          "branch": "pos_branch",
+          "components_mu": 11,
+          "triples": 165,
+          "delta_0": 84,
+          "delta_1": 0,
+          "delta_2": 81,
+          "delta_other": 0,
+          "nonzero_mubar": 0,
+          "delta_2_nonzero_t_ijk": 0
+        },
+        {
+          "isotope": "10B",
+          "A": 10,
+          "branch": "neg_branch",
+          "components_mu": 11,
+          "triples": 165,
+          "delta_0": 124,
+          "delta_1": 41,
+          "delta_2": 0,
+          "delta_other": 0,
+          "nonzero_mubar": 0,
+          "delta_2_nonzero_t_ijk": 0
+        }
+      ],
+      "totals_by_delta": {
+        "0": 343,
+        "1": 90,
+        "2": 173,
+        "other": 0
+      },
+      "total_triples": 606,
+      "mellor_melvin_vs_wirtinger_mismatches": 0,
+      "nonzero_mubar_total": 0,
+      "delta_2_triples_with_nonzero_t_ijk": 0
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Purely topological integer/rational computation on closed braids: Z^3/Q^3 triangulated Seifert surfaces, rational segment-triangle piercing words, 3x3 Cramer triple-point determinants, and nilpotent-class-2 Wirtinger longitudes. No q_0 value is read on any path."
+}

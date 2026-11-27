@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-borromean-photon-factorisations",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:borromean-photon-factorisations",
+  "kind": "proposition",
+  "title": "Linking neutrality selects the photon factorisation of the Borromean core",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-photon",
+    "papers/quantum-observable-universe/blocks/prop-borromean-two-photon-factorisation"
+  ],
+  "cites": [
+    "references/iwahori1964",
+    "references/kassel2008"
+  ],
+  "tags": [
+    "photon",
+    "borromean",
+    "gamma-gamma",
+    "linking-neutrality",
+    "hecke-algebra"
+  ],
+  "leanRef": "qou:QOU.StandardModel.PhotonNeutralSelection.neutral_selects_corpus",
+  "text": "borromean-photon-factorisations.md",
+  "provenance": "authored"
+}

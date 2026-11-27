@@ -1,1 +1,0 @@
-Given the calculation of the *Koszul dual* operad $\mathbb D\mathcal E_{n} \simeq \mathcal E_n[-n]$, computed at the level of homology by Getzler and Jones [@getzlerjones] and computed in chain complexes by Fresse [@fressekoszul], these functors should be equivalent to restriction and induction along the Koszul dual of the map $\mathcal E_{n-1} \rightarrow\mathcal E_{n}$.

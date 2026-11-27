@@ -1,0 +1,77 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T02:19:55.989344+00:00",
+  "commitSha": "0d7c8d3e77ea4ebb63f1f2e7f88f87715302de23",
+  "assertions": [
+    {
+      "name": "qou_24w9_wenzl_reconstructs_borromean_trM_and_qschur_identities",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "QOU.MassTheory.PlancherelNormalisationAndScaleBounds.wenzl_reconstructs_borromean_trM"
+    },
+    {
+      "name": "qou_r0dn_vol_6_2_census_agreement_and_linear_scaling",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "QOU.MassTheory.PlancherelNormalisationAndScaleBounds.perKnotMass_ratio_and_rel_err"
+    },
+    {
+      "name": "qou_hgm6_saddle_quad_root_and_berezinian_lift_exact",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "QOU.MassTheory.PlancherelNormalisationAndScaleBounds.saddleQuadPoly_at_qQuadRoot_and_bounds"
+    },
+    {
+      "name": "qou_cuur_zufe_linking_weight_bound_and_me_ratio_cancellation",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "QOU.MassTheory.PlancherelNormalisationAndScaleBounds.dimensionless_mass_ratio_cancels_me"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 348,
+  "computation": "plancherel-normalisation-and-scale-bounds-probe",
+  "scriptFile": "plancherel_normalisation_and_scale_bounds_probe.py",
+  "scriptHash": "6c8767cb2a99",
+  "scriptCommitSha": "0d7c8d3e77ea4ebb63f1f2e7f88f87715302de23",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/plancherel_normalisation_and_scale_bounds_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/plancherel_normalisation_and_scale_bounds_probe.py"
+  },
+  "description": "80-dps mpmath + SymPy verification of q-Schur vs Convention-D Wenzl Plancherel identities (qou-24w9), Vol(6_2) volume-ratio scaling (qou-r0dn), 5_2 Stokes quadratic root & Berezinian lift (qou-hgm6), linking_weight_family_a bar-symmetry and lower bound > 5/2 (qou-cuur), and CODATA m_e relative uncertainty floor vs dimensionless ratio cancellation (qou-zufe).",
+  "parameters": {
+    "workdps": 80,
+    "q0_proton_pin": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "trM_borromean_q0": "0.99856216383678726595121313514665020209402588005941",
+    "q_quad_80dps": "0.087365071240175080507724054304081329094953452898709",
+    "lambda_A_q0_80dps": "2.5081726500303417248143689835688971119169305613631",
+    "me_effective_decimal_digits": "9.5043000256783756347"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

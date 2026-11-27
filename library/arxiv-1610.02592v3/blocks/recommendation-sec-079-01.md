@@ -1,1 +1,0 @@
-The manifold Def(M,7) is often empty, but since M is hyperbolic we expect that there should be some ideal triangulation 7 for which Def(M, 7) is not empty and contains a solution z that also satisfies the completeness equations (we are unfortunately not able to prove this in general, and this will be a technical issue).

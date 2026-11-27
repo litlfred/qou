@@ -11,8 +11,8 @@ Uses ℝ-specific analysis (trig, norms, real powers).
 NOT part of the formal proof chain.
 See `GroundRingAnnotations.lean`.
 -/
-import QOU.QuantumObservableUniverse
-import QOU.MathConstants
+import QOU.Core.QuantumObservableUniverse
+import QOU.Core.MathConstants
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith

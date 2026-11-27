@@ -1,1 +1,0 @@
-This should be achieved in a manner consistent with octonionic theories where it has recently been proposed that algebraic symmetry breaking on a physical system described by a tensor product of division algebras can be induced via the identification of certain complex structures within the (tensor product of) division algebras [@furey231].

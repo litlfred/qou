@@ -1,1 +1,0 @@
-We consider the complement of (some components of) the anticanonical divisor in $\CP^2$, and on the Landau--Ginzburg side, we must change the superpotential $W$ and consider a certain form of wrapped Floer cohomology.

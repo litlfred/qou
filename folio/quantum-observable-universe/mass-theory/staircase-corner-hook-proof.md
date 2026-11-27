@@ -1,4 +1,3 @@
-**Proof.**
 *The corner cell $(0, 0)$ has arm length $k - 1$ (the row $0$ of
 $\rho_k$ has $k$ cells, so $k - 1$ cells lie strictly to the right
 of the corner) and leg length $k - 1$ (the column $0$ has $k$

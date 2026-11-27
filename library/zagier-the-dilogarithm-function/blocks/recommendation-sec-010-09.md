@@ -1,1 +1,0 @@
-As to the new value Q0 and Q4 = 1 −Q0 and the corresponding A-values A0 = 0.133871736816761609695060406707385 · · · and A4 = A−1 0 , we ﬁnd that indeed c2(A0, B) and c3(A0, B) have a (simple) common root at B = B0 = −0.397053221675466369 . . . , as they must since their resultant vanishes.

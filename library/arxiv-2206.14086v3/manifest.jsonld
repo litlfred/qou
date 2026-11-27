@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2206.14086v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2206.14086v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -38,6 +38,18 @@
     "library/arxiv-2206.14086v3/sections/sec-023"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "KPZ limit theorems — One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds.\n\n**KPZ limit theorems**\n\n*Jinho Baik∗*\n\n19 pp, 25 sections.\n\n**Abstract.** One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds. The KPZ universality conjecture posits that an appropriately scaled height function converges to a model-independent universal random ﬁeld for a large class of mod- els. We survey limit theorems for a few models and discuss changes that arise in diﬀerent domains. In particular, we present recent results on periodic domains. We also comment on integrable probability models, integrable diﬀerential equations, and universality.\n\n**Outline.** Front matter; 1 Introduction; 2.1 TASEP; 2 TASEP, corner growth model, and exponential ; 2.2 Corner growth model; 2.3 Exponential DLPP; 2.4 Hydrodynamic limit and KPZ limit; 3.1 Poisson DLPP; 3 One-point distribution; 3.2 Longest increasing subsequence; 3.3 Exponential DLPP; 3.4 Integrable method; 4 Multi-point distributions; 5 Half-infinite space; 6 Ring domain; 7 Formula of multi-point distribution function; 7.1 Formula for KPZ fixed point; 7.2 Periodic case",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {
@@ -61,8 +73,8 @@
       "stamp_date": "20 Jul 2022"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

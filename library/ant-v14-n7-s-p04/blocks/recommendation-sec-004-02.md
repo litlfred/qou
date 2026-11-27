@@ -1,1 +1,0 @@
-To conclude that x = c∞it is now enough to check that t ◦µ is a formal immersion at c∞,F3, and for this we shall use the formal immersion criterion due to Derickx, Kamienny, Stein and Stoll [Derickx et al.

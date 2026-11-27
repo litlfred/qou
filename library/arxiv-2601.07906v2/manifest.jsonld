@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2601.07906v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2601.07906v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -47,6 +47,18 @@
     "library/arxiv-2601.07906v2/sections/sec-032"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A universal sum over topologies in 3d gravity — We explore the sum over topologies in AdS3 quantum gravity and its relationship with the statistical interpretation of the boundary theory.\n\n**A universal sum over topologies in 3d gravity**\n\n*Alexandre Belin1,2, Scott Collier3,4, Lorenz Eberhardt5, Diego Liska6,7, Boris*\n\n117 pp, 34 sections.\n\n**Abstract.** We explore the sum over topologies in AdS3 quantum gravity and its relationship with the statistical interpretation of the boundary theory. We formulate a statistical version of the conformal bootstrap that systematizes the universal sta- tistical properties of high-energy CFT2 data. We identify a series of surgery moves on bulk manifolds that precisely reflect the requirements of typicality and crossing symmetry of the boundary ensemble. These surgery moves generate a large num- ber of bulk manifolds that have to be included in any reasonable definition of the gravitational path integral. We show that this procedure generates only on-shell (hyperbolic) manifolds, although it does not produce all of them. These proofs rely on structure theorems of 3-manifolds, which non-trivially interact with the require- ments of the statistical boundary ensemble.\n\n**Outline.** Front matter; Introduction; The statistical bootstrap; Kinematic constraints; Crossing symmetry and modular invariance; Typicality and index contractions; Spectral statistics; Summing over handlebodies; The mapping class group; Handlebodies as conformal blocks; Fixed-P partition functions; The handlebody sum is crossing symmetric; Minimal completion of the handlebody sum; Handlebodies are not sufficient; The gravitational machine; The gravitational machine is hyperbolic; What 3-manifolds are generated?; The gravitational machine at work",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -69,8 +81,8 @@
       "stamp_date": "25 Mar 2026"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

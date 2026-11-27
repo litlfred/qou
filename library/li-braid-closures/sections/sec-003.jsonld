@@ -13,9 +13,11 @@
   "pageStart": 3,
   "pageEnd": 4,
   "contains": [
-    "library/li-braid-closures/blocks/prose-sec-003"
+    "library/li-braid-closures/blocks/prose-sec-003",
+    "library/li-braid-closures/blocks/def-sec-003-01",
+    "library/li-braid-closures/blocks/ex-sec-003-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/li-braid-closures",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/li-braid-closures",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/li-braid-closures/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/li-braid-closures/manifest.jsonld",
   "provenance": "ingested"
 }

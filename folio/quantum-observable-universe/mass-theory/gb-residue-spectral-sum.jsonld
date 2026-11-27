@@ -1,13 +1,14 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-gb-residue-spectral-sum",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:gb-residue-spectral-sum",
@@ -26,7 +27,7 @@
     "quantum-dilogarithm",
     "cohomology"
   ],
-  "leanRef": "qou:QOU.BraidKnot.gb_residue_spectral_sum",
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.gb_residue_spectral_sum",
   "text": "gb-residue-spectral-sum.md",
   "leanSource": "gb-residue-spectral-sum.lean",
   "provenance": "authored"

@@ -2,6 +2,28 @@
   "name": "qou",
   "private": true,
   "type": "module",
+  "scripts": {
+    "cat": "bun .github/cat.ts",
+    "site:document": "bash scripts/site-step.sh document",
+    "site:export": "bash scripts/site-step.sh export",
+    "site:accuracy": "bash scripts/site-step.sh accuracy",
+    "site:beans": "bash scripts/site-step.sh beans",
+    "site:qa": "bash scripts/site-step.sh qa",
+    "site:lean": "bash scripts/site-step.sh lean",
+    "site:papers": "bash scripts/site-step.sh papers",
+    "site:repo-files": "bash scripts/site-step.sh repo-files",
+    "site:build": "bash scripts/build-site.sh",
+    "site:landing": "bash scripts/site-step.sh landing",
+    "site:relink": "bash scripts/site-step.sh relink"
+  },
+  "_workspaces_comment": "The layers mounted at the root from index.lock.json (gitignored), as dth-hrh lists them: they import each other by package name (@litlfred/cat-harness-tools, ...), which only one hoisted root node_modules resolves (bunfig.toml).",
+  "workspaces": [
+    "bootstrap-tools",
+    "cat-harness",
+    "cat-harness-tools",
+    "folio-assistant-core",
+    "folio-assistant-sci"
+  ],
   "devDependencies": {
     "typescript": "^5.9.3"
   },

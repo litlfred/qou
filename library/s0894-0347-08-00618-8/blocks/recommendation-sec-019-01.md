@@ -1,1 +1,0 @@
-The analog of (25) that we must check is (28)  i<j  k,ℓ (fj −fi)cicjdkdℓ * (hk −hℓ)ak+iaℓ+j + (gk −gℓ)bk+ibℓ+j + (hk −gℓ)ak+ibℓ+j + (gk −hℓ)aℓ+jbk+i + ≥0, where now the fk’s, gk’s and hk’s are obtained by symmetrizing F and G with respect to the ﬁeld on the set of coordinates {X1, . . . , Xm} in the case of F and {Xm+1, . . . , Xn} in the case of G.

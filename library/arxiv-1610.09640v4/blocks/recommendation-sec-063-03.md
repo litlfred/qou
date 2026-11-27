@@ -1,1 +1,0 @@
-The pair (RF, ηR) must have this universal property: (R) Given any pair (G, θ), consisting of a triangulated functor G : KS →E and a morphism of triangulated functors θ : F ⇒G ◦Q, there is a unique morphism of triangulated functors µ : RF ⇒G such that θ = (µ◦idQ)∗ηR.

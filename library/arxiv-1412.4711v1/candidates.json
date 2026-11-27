@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1412.4711v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "4fb1d6ee062cca8ca97ebab1608c56fd4f1fa21980d6cedd0178b98fb73fb719",
   "file": "1412.4711v1.pdf"
@@ -16,91 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 5,
-  "by_kind": {
-   "recommendation": 5
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "A precise statement and proof should appear elsewhere.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "A proof should appear elsewhere.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-3-the-deformation-variety-for-the-figure-eight-k.md",
-   "section_title": "The deformation variety for the figure eight knot complement",
-   "pages": "10-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For ease of exposition, we shall assume that $\\mathcal{V}$ has dimension $2$; in advance we might not know this dimension, but usually with experimentation it quickly becomes evident.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-019-5-deforming-representations-another-way-to-param.md",
-   "section_title": "Deforming representations: another way to parametrize the components",
-   "pages": "22-24",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This is always possible, owing to the fact that $\\mathcal{V}$ is an algebraic set; in practice we desire that the degrees of these algebraic numbers should be as small as possible. \\item[\\bf (iii)] So far, for each group generator $g_k$ we have a two-dimensional array of matrices $\\alpha'_{ij}$ whose entries are numerical approximations to elements of a number field $\\mathcal{F}_{ij}$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-019-5-deforming-representations-another-way-to-param.md",
-   "section_title": "Deforming representations: another way to parametrize the components",
-   "pages": "22-24",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall see shortly that these varieties are related via precomposition with an outer automorphism of the knot group.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-021-52-the-other-two-components-r2-and-r3.md",
-   "section_title": "The other two components, R2 and R3",
-   "pages": "25-26",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

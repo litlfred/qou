@@ -1,4 +1,3 @@
-*Proof.*
 The $e_\lambda$ are orthogonal central idempotents, so
 $e_\lambda x = x e_\lambda$ and $\chi_\mu(e_\lambda x) = \delta_{\lambda\mu}\,\chi_\lambda(x)$
 for every $x \in A$. Hence
@@ -19,11 +18,10 @@ $$
 
 Since $\chi_\lambda(\pi(x)) = \chi_\lambda(x)$, the same computation with $\pi(\beta_\mathcal{K}^*)$
 in place of $\beta_\mathcal{K}^*$ gives the same sum. For $\beta_\mathcal{K} = \mathbf{1}$ every ratio is
-$1$ and the sum is $\sum_\lambda w_\lambda = 1$. Under convention D, $y_\lambda = 0$ for three-row
+$1$ and the sum is $\sum_\lambda w_\lambda = 1$. At $z = q^3/(q^2+1)$, $y_\lambda = 0$ for three-row
 $\lambda$, so $w_\lambda = 0$ there. $\square$
 
 **Scope.** The projection $\pi$ is essential. The uncentred entry $\tau(\beta_\mathcal{K}\,\beta_\mathcal{K}^*)$
 equals $\sum_\lambda y_\lambda\,\chi_\lambda(\beta_\mathcal{K}\beta_\mathcal{K}^*)$, the character of a product,
-which is not the product of characters unless one factor is central. The earlier statement of this
-block used that uncentred entry with weights $\dim_q^2 V_\lambda / [n]_q!$; at $\beta_\mathcal{K} = \mathbf{1}$
-it gave $1 = \sum_\lambda \dim_q^2 V_\lambda/[n]_q!$, which is false for $q \neq 1$.
+which is not the product of characters unless one factor is central. Weighting that uncentred entry by $\dim_q^2 V_\lambda / [n]_q!$ would at $\beta_\mathcal{K} = \mathbf{1}$
+require $1 = \sum_\lambda \dim_q^2 V_\lambda/[n]_q!$, which fails for $q \neq 1$.

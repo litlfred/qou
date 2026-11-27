@@ -1,1 +1,0 @@
-To accomplish this, we must show that for each $p$, $q$ and $r$, the associated characteristic map $h_{L_{pqr}}$ is homotopic to the base map $f_{pqr}:T^3\to S^2$ used in Section [\[sec:pontryagin\]](#sec:pontryagin){reference-type="ref" reference="sec:pontryagin"} to convert the relative Pontryagin $\nu$-invariant to an absolute $\nu$-invariant.

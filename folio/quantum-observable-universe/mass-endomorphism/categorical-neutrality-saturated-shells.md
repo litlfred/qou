@@ -1,5 +1,3 @@
-## Statement
-
 **Proposition (Conjecture — categorical neutrality of saturated
 shells).**
 *Let $\mathbf{C}$ be a rigid :refterm[braided monoidal category]{#braided-monoidal-category} satisfying the

@@ -1,1 +1,1 @@
-By a pre-tensor category we mean a linear category C endowed with a
+By a pre-tensor category we mean a linear category C endowed with a tensor product operation ⊗, which is a bilinear bifunctor C×C → C, a distinguished tensor unit object ι satisfying the unit axioms, that is the functors ρ → ρ ⊗ ι and ρ → ι ⊗ ρ are autoequivalences of C.

@@ -1,1 +1,0 @@
-Then, just as above, for any pleated surface $T_\beta$ that shares an edge with $T_\alpha$, the letters $\alpha$ and $\beta$ must come from the same syllable, neighboring syllables, or syllables that share a neighbor.

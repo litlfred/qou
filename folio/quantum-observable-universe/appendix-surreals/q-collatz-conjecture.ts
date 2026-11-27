@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:q-collatz",
   title:
     "The $q$-Collatz conjecture: Skein-module crossing resolution",
-  lean: { ref: "qou:QOU.AppendixSurreals.QCollatz", validation: "stub" },
+  lean: { ref: "qou:QOU.Observations.QCollatz", validation: "stub" },
   // Two entries removed 2026-08-15 to break editorial cycles.
   //
   // `rem:skein-filtration-trichotomy` synthesises across three problems of
@@ -40,6 +40,7 @@ export default conjecture({
     "razborovrudich1997",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Lean references formerly in the prose: is **not** established, and the Lean carrier is explicit that it is not claimed ([`collatz_obstruction_link.lean`](../lean/QOU/AlgebraicSubstrate/collatz_obstruction_link.lean) links $\\kappa_C$ only to the Kummer-removability leg, a divisibility fact about $\\chi(A)$). | proved outright ([`collatz_obstruction_link.lean`](../lean/QOU/AlgebraicSubstrate/collatz_obstruction_link.lean)) without settling | has cofinite non-vanishing locus, is [`ObstructionGenericity`](../lean/QOU/Information/ObstructionGenericity.lean); it is | equivalent to itself ([`SkeinCounterfactual`](../lean/QOU/Information/SkeinCounterfactual.lean)). | refuted by the pair just described ([`ObstructionVerdictCap`](../lean/QOU/Information/ObstructionVerdictCap.lean)). | one shared object, `QOU.Information.SkeinObservationSystem` (this convergence question is `Halts` / `halts_of_len_descent`)." },
     {
       kind: "note",
       date: "2026-07-18",

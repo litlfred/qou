@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2212.04436v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "0f98a851d030ec05262ee046de574af7467facf7b8ea5b6f6440457f44e6c02b",
   "file": "2212.04436v1.pdf"
@@ -16,76 +19,71 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
+  "candidates": 2,
   "by_kind": {
-   "recommendation": 4
+   "proposition": 2
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 2
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 2
+  },
+  "by_evidence_location": {
+   "in-paper": 2
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "For instance, the super\ufb02uid phase must be assumed a pri- ori by using pfa\ufb03an wave functions [24].",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-001.md",
-   "section_title": "Page 1",
-   "pages": "1-1",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Arguments based on the expansion around the unitary limit [36], and Brueckner-Hartree-Fock calculations of in\ufb01nite nu- clear matter [37], indicate that /\u03c0EFT should provide ac- curate energies of dilute neutron matter.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-001.md",
-   "section_title": "Page 1",
-   "pages": "1-1",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "To respect the Pauli principle, the coordinates of the hidden nucleons must be permutation-invariant functions of the visible ones.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "slightly larger than the experimental value of \u221218.9(4) fm, see [41] and references therein, while the e\ufb00ective range is well reproduced.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/page-002.md (p. 2-2)",
+   "external_refs": [
+    "[41]"
+   ],
+   "quantitative_values": [
+    "18.9(4) fm"
+   ],
    "section_file": "sections/page-002.md",
    "section_title": "Page 2",
    "pages": "2-2",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/page-002.md (p. 2-2)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-page-002-01",
+   "block_iri": "library/arxiv-2212.04436v1/blocks/prop-page-002-01",
+   "claim_id": "arxiv-2212.04436v1#prop-page-002-01"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "Rosenbluth, Mar- shall N.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-005.md",
-   "section_title": "Page 5",
-   "pages": "5-5",
+   "statement": "These minor di\ufb00er- ences are likely because model \u201co\u201d yields a slightly larger nn scattering length than the experimental value and, therefore, more attraction in neutron matter.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/page-003.md (p. 3-3)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/page-003.md",
+   "section_title": "Page 3",
+   "pages": "3-3",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/page-003.md (p. 3-3)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-page-003-01",
+   "block_iri": "library/arxiv-2212.04436v1/blocks/prop-page-003-01",
+   "claim_id": "arxiv-2212.04436v1#prop-page-003-01"
   }
  ]
 }

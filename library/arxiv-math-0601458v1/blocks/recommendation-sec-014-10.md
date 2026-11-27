@@ -1,1 +1,0 @@
-We could, of course, define a weak over category of sets "weakly over $M$", as we did with groupoid-coloured sets, for which strands of morphisms are also labelled by elements of $M$, but as we shall see, this is not what we want to do.

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2605.20846v1/blocks/prop-sec-001-05",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 13,
+  "pageEnd": 22,
+  "text": "prop-sec-001-05.md",
+  "derivedFrom": "library/arxiv-2605.20846v1/sections/sec-001",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2605.20846v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.0.11",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-001-generators.md (p. 13-22)",
+    "claim_id": "arxiv-2605.20846v1#proposition:2.0.11",
+    "lean_status": "unformalized"
+  }
+}

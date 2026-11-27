@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1202.6268v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1202.6268v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -63,6 +63,18 @@
     "library/arxiv-1202.6268v2/sections/sec-048"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "THE QUANTUM CONTENT OF THE GLUING EQUATIONS — The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that\n\n**THE QUANTUM CONTENT OF THE GLUING EQUATIONS**\n\n*TUDOR DIMOFTE AND STAVROS GAROUFALIDIS*\n\n53 pp, 50 sections.\n\n**Abstract.** The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that describe the complete hyperbolic structure of M and its deformations. Given a Neumann-Zagier datum (comprising the shapes together with the gluing equations in a particular canonical form) we deﬁne a formal power series with coeﬃcients in the invariant trace ﬁeld of M that should (a) agree with the asymptotic expansion of the Kashaev invariant to all orders, and (b) contain the nonabelian Reidemeister-Ray-Singer torsion of M as its ﬁrst subleading “1-loop” term. As a case study, we prove topological invariance of the 1-loop part of the constructed series and extend it into a formal power series of rational functions on the PSL(2, C) character variety of M.\n\n**Outline.** Front matter; 1.1 The Kashaev invariant and perturbative Che; 1 Introduction; 1.2 The Neumann-Zagier datum; 1.3 The 1-loop invariant; 1.4 Expectations; 1.5 The higher-loop invariants; 1.6 Feynman diagrams; 1.7 The 2-loop invariant; 1.8 The 3-loop invariant; 1.9 Generalizations; Acknowledgment; 2 Mechanics of triangulations; 2.1 Ideal tetrahedra; 2.2 The gluing matrices; 2.3 The Neumann-Zagier matrices; 2.4 Combinatorial flattenings; 2.5 The shape solutions to the gluing equation",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -84,8 +96,8 @@
       "stamp_date": "25 Oct 2012"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

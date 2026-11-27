@@ -31,5 +31,8 @@ export default proposition({
   title: "The $\\mathrm{SU}(N)$ framing reproduces the one-gluon color factors",
   uses: ["prop:color-su3-from-g2"],
   cites: ["kassel1995", "jimbo1986"],
-  lean: { ref: "qou:QOU.Braiding.SlNFraming.forced_framing_eq_inv" },
+  lean: { ref: "qou:BraidKnotOctonion.SlNFramingColourFactor.forced_framing_eq_inv" },
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The arithmetic of items 1--4 is machine-checked." },
+  ],
 });

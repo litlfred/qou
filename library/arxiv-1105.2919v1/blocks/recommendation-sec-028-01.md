@@ -1,1 +1,0 @@
-Therefore, Lepage suggests to take the following three steps when building an effective theory: \begin{enumerate} \item Incorporate the correct long-range behavior: The long-range behavior of the underlying theory must be known, and it must be built into the effective theory.

@@ -1,0 +1,1 @@
+A categorical connection generalizes the classical de Rham connection $d$; the $\mathrm{SU}(2)$ instance in [Example](#ex:categorical-connection-su2) gives a concrete picture. Its curvature $F_\nabla = \nabla^2$ is $A$-linear, a standard consequence of the Leibniz rule.

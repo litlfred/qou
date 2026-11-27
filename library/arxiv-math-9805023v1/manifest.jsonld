@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9805023v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9805023v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-9805023v1",
+  "title": "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations",
   "contains": [
     "library/arxiv-math-9805023v1/sections/sec-front-matter",
     "library/arxiv-math-9805023v1/sections/sec-000",
@@ -20,6 +20,18 @@
     "library/arxiv-math-9805023v1/sections/sec-005"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations — The q-Laguerre polynomials correspond to an indetermined moment problem.\n\n**q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations**\n\n*FUNCTIONS AND THEIR ORTHOGONALITY RELATIONS*\n\n20 pp, 7 sections.\n\n**Abstract.** The q-Laguerre polynomials correspond to an indetermined moment problem. For explicit discrete non-N-extremal measures corresponding to Ramanujan’s 1ψ1-summation we complement the orthogonal q-Laguerre polynomials into an explicit orthogonal basis for the corresponding L2-space. The dual orthogonal system consists of so-called big q-Bessel functions, which can be obtained as a rigorous limit of the orthogonal system of big q-Jacobi polynomials. Interpretations on the SU(1, 1) and E(2) quantum groups are discussed.\n\n**Outline.** Front matter; 1 Introduction.; 2 Solutions to a symmetric operator.; 3 Spectral resolution.; 4 Basis for L2-space.; 5 Direct proof of the orthogonality relations ; 6 Proof of the dual orthogonality relations.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -30,7 +42,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-9805023v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9805023v1.pdf",
     "source_sha256": "ea8758b2a2bf9d8504d6715dba6f905440e513e5c0e0118ae3a60485457d3411",
     "pages": 20,
@@ -41,8 +55,8 @@
       "stamp_date": "6 May 1998"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

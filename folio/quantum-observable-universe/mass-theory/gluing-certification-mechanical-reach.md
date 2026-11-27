@@ -28,7 +28,7 @@ $$
 
 and both sides now carry **natural** exponents. Clearing denominators reduces the whole thing to the edge case, and no integer-power machinery appears anywhere.
 
-## ⚠ Two predicted ceilings, neither of which exists
+## Two predicted ceilings, neither of which exists
 
 The obvious worries about scaling this up are that the certificates grow with the field degree, and that the product over tetrahedra outruns the available finite-product lemmas. Both were expected to bite; both were measured, and neither did.
 
@@ -38,7 +38,7 @@ The obvious worries about scaling this up are that the certificates grow with th
 
 Net reach: shape-field degrees $2$ through $14$, triangulations of $2$ through $14$ tetrahedra, with each manifold's identities assembled into a certificate that the triangulation satisfies its gluing system — not merely a pile of separate equations.
 
-## ⚠ What this does not establish
+## What this does not establish
 
 The identities hold at an **arbitrary root**, so flat shapes are permitted throughout and **hyperbolicity is not established anywhere** — that needs $\mathrm{Im} z > 0$, which is a genuinely separate condition and is exactly the gap the trefoil exhibits: its flat shapes satisfy the edge equations exactly.
 

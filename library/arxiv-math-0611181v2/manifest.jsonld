@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0611181v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0611181v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -17,6 +17,18 @@
     "library/arxiv-math-0611181v2/sections/sec-002"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Proof of the volume conjecture for Whitehead chains — We prove the volume conjecture for an inﬁnite family of links called White- head chains that generalizes both the Whitehead link and the\n\n**Proof of the volume conjecture for Whitehead chains**\n\n*Roland van der Veen*\n\n13 pp, 4 sections.\n\n**Abstract.** We prove the volume conjecture for an inﬁnite family of links called White- head chains that generalizes both the Whitehead link and the Borromean rings.\n\n**Outline.** Front matter; Introduction; Proof of the main theorem; Proof of the lemmas",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
@@ -45,8 +57,8 @@
       "stamp_date": "30 Jul 2007"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

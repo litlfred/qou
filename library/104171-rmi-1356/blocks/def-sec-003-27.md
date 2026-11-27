@@ -1,0 +1,1 @@
+We let the topological handlebody Temperley–Lieb algebra (in n strands and of genus g) TLtop g;n.c/ be the algebra whose underlying free K-module is the K-linear span of all handlebody tangle diagrams of 2n points of genus g, and with multiplication given by concatenation of diagrams modulo circle evaluation and (4.2).

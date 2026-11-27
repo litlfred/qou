@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1911.04486v4",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "53a34938c0e63bad6df81120d02fdf2e66716b71c608f25c3ddf8ce0419db5ba",
   "file": "1911.04486v4.pdf"
@@ -16,61 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 3,
-  "by_kind": {
-   "recommendation": 3
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "To this end, the canonical basis $\\{ dx^i \\}$ on $\\mathbb{R}^3$ must be extended to the corresponding basis on $\\mathbb{R}^{1,3}$, denoted by $\\{ d x^{\\mu} \\} = \\{ dx^0 = dt, dx^i \\}$, by including the time-like 1-form $dx^0$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-22-maxwell-equations-in-covariant-formulation.md",
-   "section_title": "Maxwell equations in covariant formulation",
-   "pages": "7-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In order to see that, we note that $\\phi$ and $\\theta$ should be chosen such that the electromagnetic field and the observables constructed from it, e. g. energy, linear momentum, and angular momentum, be finite.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-32-electromagnetic-knot-fields.md",
-   "section_title": "Electromagnetic knot fields",
-   "pages": "12-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "That implies that the functions $\\alpha$ and $\\beta$ must obey the following constraint \\begin{equation} \\nabla \\alpha \\times \\nabla \\beta = \\pm i \\left( \\partial_0 \\alpha \\nabla \\beta - \\partial_0 \\beta \\nabla \\alpha \\right) \\, . \\label{alpha-beta-constraint} \\end{equation} In order to understand the geometry of the electric and magnetic fields on $\\mathbf{R}^3$, it is useful to introduce the Riemann-Silberstein vector \\begin{equation} \\mathbf{F} = \\mathbf{B} \\pm i \\mathbf{E} \\, , \\label{F-vector-field-Bateman} \\end{equation} where $\\mathbf{E}$ and $\\mathbf{B}$ can be complex.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-4-electric-and-magnetic-knots-in-bateman-paramet.md",
-   "section_title": "Electric and magnetic knots in Bateman parametrization",
-   "pages": "16-19",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

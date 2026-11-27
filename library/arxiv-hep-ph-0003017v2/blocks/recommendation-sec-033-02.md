@@ -1,1 +1,0 @@
-To lowest nontrivial order in $\mu$, we can write two invariant combinations, $$\Tr U B_L U^{-1} B_R \qquad {\rm and} \qquad \Tr BB\:.$$ The coefficients follow from the conditions that the critical chemical potential is equal to one third of the mass of the lightest baryon and that the baryon density should vanish below $\mu_c$.

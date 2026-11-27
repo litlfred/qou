@@ -1,4 +1,3 @@
-*Proof.*
 The constituent baseline $Z \mathfrak{m}_{\mathfrak{p}} + N \mathfrak{m}_{\mathfrak{n}} + Z m_e$ uses CODATA inputs.
 
 The Wedderburn 3-term correction is the paper's
@@ -22,8 +21,6 @@ canonical evaluation at $q_0 = 1.1099785955541805\ldots$ (50 dps; the CODATA-201
 the formal derivation.
 $\square$
 
-**Witness:** `derived-only-formula.witness.json`.
-
 **Scope.** The formula is derived from Hecke partition theory and the
 paper's atomic-mass framework; no continuous parameters are fitted, and
 no choices were made by selecting from a menu of variants. The atomic
@@ -34,8 +31,7 @@ calibrated.
 The systematic binding under-prediction is the formula's principal
 limitation. Closed-form patches that improve specific isotopes (D, T,
 $^3$He, $^4$He) to within 7% can be constructed from $H_q((2,1))$ and
-$[3]_q^2$ candidates (see witnesses
-the formal derivation, the formal derivation, the formal derivation),
+$[3]_q^2$ candidates,
 but each such patch involves a discrete choice between several
 algebraically-natural variants — hence is technically fitted (model
 selection).

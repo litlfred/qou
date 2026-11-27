@@ -1,0 +1,1 @@
+It is worth remarking that Proposition2.9 can be generalized to imply an inequality: span (K) < 4V, for an arbitrary (not necessarily alternating) diagram K. This result has been observed by Kunio Murasugi and (independently) Morwen Thistlethwaite (see [14] and [17]), each using the ideas of an early version of this paper. We give here our short proof via the:

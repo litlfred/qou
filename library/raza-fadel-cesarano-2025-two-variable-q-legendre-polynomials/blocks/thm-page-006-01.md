@@ -1,0 +1,1 @@
+The 2VqLP Sn,q(x, y) and Rn,q(x, y)/[n]q! satisfy the following q-partial differential equations: L ˆDq,xSn,q(x, y) = ˆD2 q,ySn,q(x, y), (28) or, alternatively, (qx ˆD2 q,x −ˆD2 q,y + ˆDq,x)Sn,q(x, y) = 0 (29) and L ˆDq,xRn,q(x, y) = −L ˆDq,yRn,q(x, y), (30) or, alternatively, (q(x ˆD2 q,x + y ˆD2 q,y) + ˆDq,x + ˆDq,y)Rn,q(x, y) = 0, (31) where L ˆDq,x := ˆDq,xx ˆDq,x. (32)

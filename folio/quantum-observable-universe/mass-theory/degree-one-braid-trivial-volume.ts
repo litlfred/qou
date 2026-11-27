@@ -5,7 +5,7 @@ export default lemma({
   title:
     "Braid words of a degree-one element have non-hyperbolic closures",
   lean: {
-    ref: "qou:QOU.Photon.linearVol_eq_zero_of_mem_span",
+    ref: "qou:QOU.StandardModel.Photon.linearVol_eq_zero_of_mem_span",
     validation: "not_checked",
   },
   cites: ["kashaev1997"],

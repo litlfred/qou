@@ -1,1 +1,0 @@
-They showed that even if we allow $G$ to be equipped with two products, say $gg'$ for vertical composition and $g \circ g'$ for horizontal, so long as both products share the same unit and satisfy this `{\bf interchange law}': \[ (g_1 g_1') \circ (g_2 g_2') = (g_1 \circ g_2) (g_1' \circ g_2') \] then in fact they must agree --- so by the previous argument, both are abelian.

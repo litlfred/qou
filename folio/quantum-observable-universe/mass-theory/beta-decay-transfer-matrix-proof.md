@@ -54,8 +54,7 @@ $$
   z \cdot (\Delta M_i)_{11} + (\Delta M_i)_{21}
 $$
 
-The $Q$-value
-([transition energy](#def:Q-value-transition)) in **eigenfunction-basis
+The $Q$-value in **eigenfunction-basis
 (log-ratio) form**:
 
 $$
@@ -70,26 +69,10 @@ $$
 
 where the sum runs only over generators affected by the
 converting nucleon (generators $\sigma_i$ with $i > p$ cancel
-exactly), $z = 1/(\sqrt q + 1/\sqrt q)$ is the Markov–Jones
-parameter (Hecke–Skein normalization), and the $1/z$ factor is
+exactly), $z = q^3/(q^2 + 1) = q^2/[2]_q$ is the Markov--Jones
+parameter, and the $1/z$ factor is
 **not a calibration knob** — it is the normalization required to
 map the eigenfunction observable $\ln V_{\mathrm{pp}}/V_{\mathrm{nn}}$
-onto MeV.
+onto the energy scale $E_0$.
 
-Form B is **not a separate observable** from the NF-counit form
-$\mathfrak{Q}_\beta^{\mathrm{A}} = |\Delta(\mathrm{net})| \cdot E_0$ of
-[prop:neutron-qvalue-symbolic](#prop:neutron-qvalue-symbolic);
-the two are basis-change equivalent at leading order, with the
-explicit bridge identity given in
-[prop:q-beta-spectral-bridge](#prop:q-beta-spectral-bridge):
-
-$$
-  \mathfrak{Q}_\beta^{\mathrm{A}}
-  \;=\;
-  \mathfrak{Q}_\beta^{\mathrm{B}} \cdot \bigl(1 + \tfrac{(z - 1)\,h}{2} + O(h^2)\bigr).
-$$
-
-Form B is the natural basis for $N \geq 1$ brane-tower truncation
-analysis (where it composes additively across generators); Form A
-is canonical at $N = 0$ free neutron (where the NF counit is a
-closed combinatorial datum).
+Form B provides an additive log-ratio decomposition across generators for $N \geq 1$ brane-tower truncation analysis (whereas the historical $z = 1$ counit expression Form A is not an admissible specialization at $z = q^3/(q^2 + 1)$).

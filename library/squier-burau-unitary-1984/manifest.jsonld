@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/squier-burau-unitary-1984",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/squier-burau-unitary-1984/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -15,6 +15,18 @@
     "library/squier-burau-unitary-1984/sections/sec-000"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The Burau representation is unitary — A slight modification of the Burau representation of the braid group is shown to be unitary relative to an explicitly defined Hermitian form.\n\n**The Burau representation is unitary**\n\n*CRAIG C. SQUIEr'*\n\n4 pp, 2 sections.\n\n**Abstract.** A slight modification of the Burau representation of the braid group is shown to be unitary relative to an explicitly defined Hermitian form. This gives a partial answer to the problem of identifying the image of the Burau representation and provides a tool for attacking the question of whether or not the Burau representation is faithful. In [2, problem 14, p. 217], Birman asked for a characterization of the image of the Burau representation /J:5„-GL„_,(Z[M-']) of the braid group Bn. We contribute the following partial answer to Birman's question, where, for M a matrix over Z[t, t~l], M* denotes the conjugate-transpose of M and the conjugate of p(t) in Z[t, i\"1] is defined to bep(r_l). Theorem. There exists a nonsingular (n — 1) X (w — 1) matrix J0 over Z[t, t']] such that for each w in Bn it follows that ß(w)*J0ß(w) — J0.\n\n**Outline.** Front matter; /J:5„-GL„_,(Z[M-'])",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "squier-burau-unitary-1984",
@@ -24,8 +36,8 @@
     "pages": 4,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

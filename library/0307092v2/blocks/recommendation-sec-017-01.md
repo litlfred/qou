@@ -1,1 +1,0 @@
-On the other hand, if we use Theorem 14.7, the Dehn ﬁlling condition αu+βv = 2πi gives the ﬂattening condition α(−p −q −r −s) + β(2 + 4p + 2q) = −2 while the parity condition says p + q + r + s must be even.

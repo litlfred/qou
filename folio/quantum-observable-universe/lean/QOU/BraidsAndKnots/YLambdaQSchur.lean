@@ -2,7 +2,7 @@ import Mathlib.Algebra.Field.Basic
 import Mathlib.Data.Nat.Factorial.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
-import QOU.MathlibExt.QIntegerCanonical
+import HeckeTemperleyLieb.QIntegerCanonical
 
 /-!
 # QOU.BraidsAndKnots.YLambdaQSchur

@@ -254,6 +254,16 @@ class KnotPartitionAtomCell:
 
 # ── Catalogue container ────────────────────────────────────────────
 
+_TIER_RANK: dict[str, int] = {
+    "extracted": 0,
+    "cal-anchored": 1,
+    "derived": 2,
+}
+_QCONV_RANK: dict[str, int] = {
+    "kassel": 0,
+    "kauffman": 1,
+}
+
 
 @dataclass
 class DerivedChiCatalogue:
@@ -289,31 +299,17 @@ class DerivedChiCatalogue:
         self._index[key] = len(self.cells)
         self.cells.append(cell)
 
-    def upsert(self, cell: KnotPartitionAtomCell) -> str:
-        """Insert `cell`, or replace an existing one with the same key.
+    def upsert(self, cell: KnotPartitionAtomCell, *, allow_downgrade: bool = False) -> str:
+        """Insert `cell`, or replace an existing one with the same key when
+        its provenance tier (and q_convention at equal tier) is at least as
+        strong as the stored cell's (bean `qou-5cyl` / `qou-4sqq`).
 
-        Returns `"added"`, `"unchanged"`, or `"replaced"` — and the caller is
-        expected to act on the difference. `"replaced"` means a re-derivation
-        produced a DIFFERENT cell for a key already in the catalogue; that is
-        a finding, not routine, and a builder should surface it rather than
-        overwrite quietly.
-
-        WHY THIS EXISTS (bean qou-4sqq)
-        -------------------------------
-        `derived_chi_catalogue_build.py` states in its own comment that it
-        "merges into existing catalogue if present so Phase 2 sympy cells
-        coexist with Phase 3 Rust production cells in a single witness" — it
-        is a re-runnable merging builder by design. But it merged with
-        `add()`, which refuses a repeat, so from the moment it first wrote its
-        own cells it could no longer run against its own output. Measured: the
-        committed witness is dated 2026-06-07 and the builder had been unable
-        to run for three months, dying on a raw `ValueError` for
-        `('borromean', (3,), 'borromean-baryon')`.
-
-        The fix is not to relax `add()`. Foreign cells — Phase 3 Rust
-        production cells living in the same witness — must still be protected
-        from an accidental clobber. Only cells a caller is knowingly
-        re-deriving may be replaced, and only with a report.
+        Returns `"added"`, `"unchanged"`, `"replaced"`, or `"kept_higher_tier"`.
+        `"kept_higher_tier"` means an incoming cell of weaker provenance (e.g. a
+        `cal-anchored` / `extracted` cell or a legacy `kassel` sympy cell
+        colliding with a `derived` `kauffman` Rust production cell) was refused
+        unless `allow_downgrade=True`, so re-running a Phase-2 builder can never
+        silently downgrade Phase-3 production cells in `tier_counts()`.
         """
         key = (cell.knot, cell.partition, cell.atom)
         idx = self._index.get(key)
@@ -321,8 +317,20 @@ class DerivedChiCatalogue:
             self._index[key] = len(self.cells)
             self.cells.append(cell)
             return "added"
-        if self.cells[idx] == cell:
+        existing = self.cells[idx]
+        if existing == cell:
             return "unchanged"
+        if not allow_downgrade:
+            old_rank = (
+                _TIER_RANK.get(existing.tier, 0),
+                _QCONV_RANK.get(existing.q_convention, 0),
+            )
+            new_rank = (
+                _TIER_RANK.get(cell.tier, 0),
+                _QCONV_RANK.get(cell.q_convention, 0),
+            )
+            if new_rank < old_rank:
+                return "kept_higher_tier"
         self.cells[idx] = cell
         return "replaced"
 
@@ -538,3 +546,43 @@ def load_catalogue() -> DerivedChiCatalogue:
             notes=c.get("notes", ""),
         ))
     return cat
+
+
+def _selftest() -> int:
+    """Fast self-test (bean qou-5cyl): verify upsert idempotency and tier
+    preservation (higher-tier cell is never silently downgraded)."""
+    cat = DerivedChiCatalogue()
+    c_rust = KnotPartitionAtomCell(
+        knot="borromean", partition=(2, 1), atom="borromean-baryon",
+        braid_word="(s1 s2^-1)^3", strand_count=3,
+        chi_lambda_q_laurent=[(0, "4")], mu_eigenvalues=["1"],
+        k_lambda=1, y_lambda_at_zero="0.25", y_star_shadow_price=None,
+        tier="derived", q_convention="kauffman", derivation_ref="rust-phase3",
+    )
+    assert cat.upsert(c_rust) == "added"
+    assert cat.upsert(c_rust) == "unchanged"
+    c_weaker = KnotPartitionAtomCell(
+        knot="borromean", partition=(2, 1), atom="borromean-baryon",
+        braid_word="(s1 s2^-1)^3", strand_count=3,
+        chi_lambda_q_laurent=[(0, "99")], mu_eigenvalues=["1"],
+        k_lambda=1, y_lambda_at_zero="0.25", y_star_shadow_price=None,
+        tier="cal-anchored", q_convention="kauffman", derivation_ref="codata-fit",
+    )
+    assert cat.upsert(c_weaker) == "kept_higher_tier"
+    assert cat.lookup("borromean", (2, 1), "borromean-baryon") == c_rust
+    c_kassel = KnotPartitionAtomCell(
+        knot="borromean", partition=(2, 1), atom="borromean-baryon",
+        braid_word="(s1 s2^-1)^3", strand_count=3,
+        chi_lambda_q_laurent=[(0, "4")], mu_eigenvalues=["1"],
+        k_lambda=1, y_lambda_at_zero="0.25", y_star_shadow_price=None,
+        tier="derived", q_convention="kassel", derivation_ref="sympy-phase2",
+    )
+    assert cat.upsert(c_kassel) == "kept_higher_tier"
+    print("self-test: ok (upsert added/unchanged/kept_higher_tier)")
+    return 0
+
+
+if __name__ == "__main__":
+    import sys as _sys
+    if "--self-test" in _sys.argv or "--selftest" in _sys.argv:
+        raise SystemExit(_selftest())

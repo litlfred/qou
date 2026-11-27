@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203194v1/blocks/cor-sec-090-05",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "pageStart": 220,
+  "pageEnd": 222,
+  "text": "cor-sec-090-05.md",
+  "derivedFrom": "library/arxiv-math-0203194v1/sections/sec-090",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.8",
+    "source_kind": "corollary",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-090-d-topology-of-rigid-analytic-space.md (p. 220-222) citing [GvdP80, III,2.6]",
+    "claim_id": "arxiv-math-0203194v1#corollary:4.8",
+    "lean_status": "unformalized"
+  }
+}

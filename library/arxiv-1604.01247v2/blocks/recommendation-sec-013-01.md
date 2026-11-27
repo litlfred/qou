@@ -1,1 +1,0 @@
-Since the mass scales of the 3 generations are very diﬀerent this latter factor SU(3) must be strongly broken, however there could remain some unbroken ﬁnite subgroup of this SU(3) which should then play a role in this approach for the see-saw mechanism and the structure of the fermion mass matrices.

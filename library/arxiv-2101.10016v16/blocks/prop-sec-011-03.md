@@ -1,1 +1,1 @@
-Let A be a complex ∗-algebra either unital or a discrete. If S ∈ (ρ, σ)
+Let A be a complex ∗-algebra either unital or a discrete. If S ∈ (ρ, σ) is an isometry in Reph(A), then E = SS∗is a selfadjoint idempotent with range SVρ, defining an orthogonal summand of σ. Conversely, every submodule W of Vσ (i.e. a subspace of Vσ invariant under all the σ(a), a ∈ A) for which the restricted Hermitian form is nondegenerate, is a ∗–representation and an orthogonal summand.

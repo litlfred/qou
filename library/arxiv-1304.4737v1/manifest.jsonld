@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1304.4737v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1304.4737v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -18,6 +18,18 @@
     "library/arxiv-1304.4737v1/sections/sec-003"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Toroidal domain walls as Hopﬁons Abstract — We construct stable domain walls in a shape of a torus in the Faddeev-Skyrme model with a quadratic potential term admitting two discrete vacua.\n\n**Toroidal domain walls as Hopﬁons Abstract**\n\n*Michikazu Kobayashi1, 2 and Muneto Nitta3*\n\n18 pp, 5 sections.\n\n**Abstract.** We construct stable domain walls in a shape of a torus in the Faddeev-Skyrme model with a quadratic potential term admitting two discrete vacua. The phase modulus of the domain wall is twisted P and Q times along the toroidal and poloidal cycles of the torus, respectively, where Q represents the constituent lump charge. We ﬁnd that these solutions carry the Hopf charge PQ and can be regarded as Hopﬁons. The toroidal domain walls are characterized by the two topological charges (P, Q), unlike the conventional Hopﬁons characterized by only the Hopf charge. We explicitly construct stable solutions of the toroidal domain walls with 1 ≤P ≤3, and 1 ≤Q ≤3, yielding the Hopf charges 1, 2, 3, 4, 6, 9. arXiv:1304.4737v1 [hep-th] 17 Apr 2013\n\n**Outline.** Front matter; I Introduction; II The model and solitons in 1+1 and 2+1 dimen; III Toroidal domain walls in 3+1 dimensions; Acknowledgements",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -41,8 +53,8 @@
       "stamp_date": "17 Apr 2013"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

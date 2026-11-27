@@ -1,0 +1,1 @@
+- Let feeK and leL be fixed. There exist [ P a i S i e [ l , n^, a e A^ orthogonal projections in M, p^ f\ ^p^e^1 and such that a, i ^ ^ (EN (A,,)) = t, In ^, for every i e [1, nj, a 6 A,,, ANNALES SCIENTIFIQUES DE L-ECOLE NORMALE SUPERIEURE M. PIMSNER AND POPA \vhere fc^=min{a^, n^}.

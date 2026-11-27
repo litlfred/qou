@@ -29,7 +29,7 @@ minimises backward edges, then optionally applies the changes.
 
 **Not all backward edges are equal.** The same logical-vs-storytelling
 distinction that governs cross-chapter forward references
-([`docs/forward-ref-logical-analysis.md`](../../../docs/forward-ref-logical-analysis.md))
+([`docs/forward-ref-logical-analysis.md`](../../docs/forward-ref-logical-analysis.md))
 applies intra-chapter:
 
 - A **logical / expository backward edge** is a genuine defect: the
@@ -48,10 +48,10 @@ When computing energy, **weight logical backward edges heavily and
 storytelling backward edges at zero (or near-zero)**. Reordering to
 chase a storytelling backward edge churns the manifest for no
 expository gain, and can *worsen* a logical edge. The classifier
-[`computations/forward_ref_classifier.py`](../../../computations/forward_ref_classifier.py)
+[`computations/forward_ref_classifier.py`](../../computations/forward_ref_classifier.py)
 is the authoritative source for the source/target-kind sets
 (`LOGICAL_SRC`, `LOGICAL_TGT`, `NARRATIVE_SRC`); reuse them rather
-than re-deriving the kind lists here.
+than re-deriving the kind lists here. For Lean-side import DAG back-edges and directory-level SCCs, pair with [`scripts/lean-kg-detangler.py`](../../scripts/lean-kg-detangler.py).
 
 The headline metric is the **logical backward-edge count**, not the
 raw backward-edge count. Storytelling and structural (appendix /

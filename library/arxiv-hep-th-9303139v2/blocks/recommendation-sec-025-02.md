@@ -1,1 +1,0 @@
-(We shall touch this problem in the next subsection, devoted to Kac-Schwarz operators.) Alternatively, if there is nothing special, it is an (unsolved) problem of matrix model theory to find models, associated with {\it any} points $G$ in the universal module space (or explain what is an obstacle, if any).

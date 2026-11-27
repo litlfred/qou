@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1-s20-s000187089891800x-main",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-s000187089891800x-main/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -20,6 +20,18 @@
     "library/1-s20-s000187089891800x-main/sections/sec-005"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Spherical Categories — 7 sections: Front matter; INTRODUCTION; MONOIDAL CATEGORIES WITH DUALS\n\n**Spherical Categories**\n\n*Spherical Categories*\n\n19 pp, 7 sections.\n\n**Outline.** Front matter; INTRODUCTION; 1 MONOIDAL CATEGORIES WITH DUALS; 2 SPHERICAL CATEGORIES; FIG. 1; 3 SPHERICAL HOPF ALGEBRAS; REFERENCES",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "1-s20-s000187089891800x-main",
@@ -30,8 +42,8 @@
     "pages": 19,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

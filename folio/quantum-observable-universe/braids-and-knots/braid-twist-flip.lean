@@ -1,4 +1,4 @@
-import QOU.Basic
+import QOU.Core.Basic
 import Mathlib.Data.Fin.Basic
 
 

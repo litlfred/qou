@@ -8,12 +8,62 @@ roles:
 
 # /prepare-merge-auto — Autonomous merge pipeline
 
+> **🟥 FAST MERGES override (owner ruling 2026-11-27, AGENTS.md §"FAST MERGES").**
+> Before a merge only two things block: `bun run cat merge:guard <pr>` run by
+> the merging agent (never `--full-tier`), and the JSON-LD KG publication check
+> (`gen-block-jsonld --check` on the head). The Phase 1 build, Phase 1b checks
+> (lean-direct, precision gates, sidecars, producer re-runs, review waits) and
+> the Phase 4 verification gate below are NOT pre-merge gates any more: run them
+> in Phase 5, on `main`, after the merge, and file a bean + follow-up PR for
+> anything red. Owner, verbatim: *"no red gates (excpet json(ld) KG
+> publication). all QA runs after."*
+
 Runs the full `/prepare-merge` workflow PLUS:
 
 1. **Sibling coordination** (before starting)
 2. **Review-comment resolution** (after reviews land)
 3. **Structured user questions** (only when genuinely blocked)
-4. **Merge** (after all comments resolved)
+4. **Merge** (after all comments resolved, strictly through `Process_MergeToMain` / `Process_MergeTrain`)
+
+---
+
+## 🛑 Role Split: Active `merge-steward` vs Sibling Sessions (`Process_MergeTrain` & `Process_MergeToMain`) — STRICT
+
+This skill composes directly with the platform SDLC merge architecture; read these alongside this file:
+
+- **Merge Steward Watch Loop (`merge-manager-watch.bpmn`):** [`folio-assistant/cat-harness/sdlc/skills/sdlc-core/merge-manager-watcher.md`](../../folio-assistant/cat-harness/sdlc/skills/sdlc-core/merge-manager-watcher.md)
+- **Merge Queue & Merge Train (`Process_MergeTrain` + `merge-overlap`):** [`folio-assistant/cat-harness/sdlc/skills/sdlc-core/merge-queue.md`](../../folio-assistant/cat-harness/sdlc/skills/sdlc-core/merge-queue.md) and [`folio-assistant/cat-harness-tools/scripts/merge-overlap.ts`](../../folio-assistant/cat-harness-tools/scripts/merge-overlap.ts) (`bun run cat merge:overlap`)
+- **Merge to `main` Gate (`Process_MergeToMain`):** [`folio-assistant/cat-harness/sdlc/skills/sdlc-core/merge-to-main.md`](../../folio-assistant/cat-harness/sdlc/skills/sdlc-core/merge-to-main.md)
+- **Declared Conflict Patterns & Refusal Hand-Back (`Process_MergeRefusal`):** [`folio-assistant/cat-harness/sdlc/skills/sdlc-core/merge-conflict-patterns.md`](../../folio-assistant/cat-harness/sdlc/skills/sdlc-core/merge-conflict-patterns.md)
+- **Mandatory Swarm Launch Briefing:** [`swarm-sibling-launch.md`](swarm-sibling-launch.md)
+
+### 1. Only the Active `merge-steward` Merges onto `main`
+
+- **Siblings NEVER self-merge onto `main` when a `merge-steward` is active.** Only the single session holding the `merge-steward` lane writes to `main` (under explicit owner release recorded per `merge-to-main.md`).
+- **Sibling handoff contract (`sibling-session` lane):** When a sibling finishes its branch and passes local verification (`lean-direct-cone.sh -j 1` / `lean-library-sweep.py`, `precision-gates.sh --changed`, `check-sidecars.sh`, `voice-leak-audit.ts`, two-step witness SHA stamp, `0` dirtied `qou-v0t8` contended audit witnesses), it:
+  1. Opens a Ready PR (`--base main`, using `--body-file` / `shell=False` so backticks survive intact) with a linked GitHub issue (`Closes #<issue>`) and zero unticked `- [ ]` boxes;
+  2. Applies the `ready-to-merge` label (when authorized by the owner per `merge-queue.md` §"Ask the user before submitting") and posts a signed `ready: <full head sha>` comment on the PR;
+  3. Sends the **6-line merge request** (`PR #<n> + URL`, `Closes #<issue> + bean IDs`, `branch + ready: <full head sha>`, `authored files touched`, `local gate verdicts`, `overlap / ordering constraints`) to the active `merge-steward`, then monitors status (never fire-and-forget, and never churn unnecessary rebases while queued far back).
+
+### 2. Overlap-Partitioned Merge Trains (`>= 2` Ready PRs Queued, `Process_MergeTrain`)
+
+When `>= 2` Ready PRs are queued, the `merge-steward` MUST NOT rebase, sweep, and rebuild `main` $N$ separate times sequentially. Instead, execute `Process_MergeTrain`:
+
+1. **Overlap Partition (`merge-overlap`):** Run `bun run cat merge:overlap` (`folio-assistant/cat-harness-tools/scripts/merge-overlap.ts`) over the open Ready PRs to classify authored vs generated/additive paths and partition admissible PRs into mutually independent batches of **`4–8` PRs** on **`merge-train/<base>-<n>`** (broadcasting `hold` to pushing siblings before assembling/landing the train, and `done` when finished per `merge-manager-watcher.md`).
+2. **Stack Members & Regenerate Shared Additive Regions ONCE:** Merge each admitted member onto `merge-train/<base>-<n>` in priority/PR order (`--no-regen`), then reconcile and regenerate additive/generated regions **once** across the combined train:
+   - `computations/q0_anchor_manifest.json` (additive union of producer entries, `+0` removals),
+   - `folio/quantum-observable-universe/lean/QOU.lean` (sorted module umbrella imports),
+   - `folio/schema/references.ts` + `folio/references/*.json` (`ORDER` union + `references.bib` regeneration when bibliography entries were added),
+   - `folio/**/*.qa.json` via `python3 scripts/qa-sidecar-agent-union.py --against <pre-rebase-ref> --apply` (mechanically preserving all agent verdicts whose `field_hash` still certifies the merged block).
+3. **Run the Combined Gate Suite ONCE on `merge-train/<base>-<n>`:**
+   - `python3 scripts/lean-library-sweep.py` (plus `bash scripts/lean-content-sweep.sh <changed content-block .lean>` if any content sibling `.lean` changed — require `VERDICT: GREEN`, exit `0`; exit `8` `INCOMPLETE` is NOT green),
+   - `bun run scripts/run-validate.ts folio/quantum-observable-universe` (and `bash scripts/check-sidecars.sh`),
+   - `bun run folio/pipeline/voice-leak-audit.ts` (L1–L4 clean on touched blocks),
+   - `python3 scripts/compute-qa.py --all --base origin/main` (diff/ratchet gates clean; revert any dirtied `qou-v0t8` tree-measuring audit witnesses via `git checkout -- computations/audits/ computations/*.witness.json`).
+4. **Bisect & Eject ONLY Red Culprits (`Process_MergeRefusal`):** If the combined train fails a gate, attribute (`Task_Attribute`) or bisect (`Task_Bisect`) to isolate ONLY the red culprit PR(s). Eject ONLY the culprit(s) — never abort the green members and never edit authored code inside the train — handing each culprit back via `Process_MergeRefusal` (`Merge refused: #<n> <cause>` blocking bean + in-place PR status comment), re-assemble the remaining green members on `merge-train/<base>-<n>`, and re-verify once.
+5. **Land in Train Order & Verify Replay (`Process_MergeToMain`):** Land each green member in train order under recorded owner authorisation (`merge-to-main.md`), **NEVER passing `--delete-branch` (`delete_branch_on_merge` is strictly forbidden — preserve every local and remote branch)**, verify EVERY landed member with `python3 scripts/verify-merge-replay.py --branch origin/<branch> --merged <merge-sha>` (`MISSING: 0`), run `post-merge-rebuild` (`bash scripts/publish-main-local.sh --deploy`) once on the new `main` tip, and post `done`.
+
+---
 
 ## Workflow
 
@@ -47,8 +97,11 @@ and broken at once. That is not hypothetical — `descartesWtrace` recorded
 `exit 0` and landed on `main` red (#6751).
 
 ```bash
+# If rebasing a pre-Q3 branch that still places/imports modules under legacy `QOU/<OldSynonym>/`:
+nice -n 10 python3 scripts/apply-lean-reservoir-migration.py --fixup-branch
+
 scripts/lean-content-sweep.sh <changed content-block .lean ...>   # or no args
-scripts/lean-library-sweep.py                                     # dirty closure
+scripts/lean-library-sweep.py                                     # unified dirty closure across MathlibExt + 6 Tier-B libs + QOU
 ```
 
 Both rebuild from source only the modules whose own olean predates their own
@@ -61,7 +114,9 @@ evicted. Library sweep is 122 s on a 74-module closure; the content sweep is
 verification gate's evidence and the distinction it turns on:
 
 - *"`lean-library-sweep.py`: N/N dirty modules rebuilt from source, exit 0"* —
-  source-verified.
+  source-verified.  Quote its `VERDICT:` line.  Exit **8** (`INCOMPLETE`) means
+  no RED but some module TIMEOUT / UNVERIFIED / BLOCKED: that is **not** a
+  green, so do not write "exit 0" for it (bean `qou-tpdg`).
 - *"`lean`-direct against the restored cache, exit 0"* — snapshot-conditional.
   Say so, and say why the sweep was not run.
 
@@ -85,7 +140,25 @@ way (`qou-tqr9`). The script is additive and skips any entry whose
 
 ### Phase 1b: Wait for reviews + status briefing
 
-**Wait for the Copilot review to land** before proceeding.
+> **🟧 OWNER RULING 2026-11-22: Copilot review is no longer required; audit checks
+> replace it.** Verbatim: *"co-pilot review is no longer required. We are using audit
+> checks."* Do not request Copilot or wait for it. Phase 1b is now: run the audit checks
+> (lean-direct on changed `.lean`, `scripts/precision-gates.sh --changed`,
+> `scripts/check-sidecars.sh`, run-validate, producer re-runs) and record what ran in
+> the PR. The text below is history.
+
+> **🟥 BLOCKING (owner 2026-11-25): the block knowledge-graph nodes.** Verbatim:
+> *"how can coding agent avoid before sending to merge PR - day's photon PRs left 11
+> knowledge-graph nodes stale or missing,? improive process"*. Before the PR goes to the
+> merge manager, and again after the rebase onto `main`, run
+> `scripts/gen-block-jsonld.sh --check --paper <paper>` for every paper the branch
+> touches (`scripts/check-sidecars.sh` does this and exits 1 on a failure). On a stale
+> or missing node, run `scripts/gen-block-jsonld.sh --paper <paper>` and commit the
+> regenerated `.jsonld` in the same PR. Exit 3 means the root layer mounts are absent:
+> run `bash .github/mount-from-lock.sh && bun install`, never the light platform, and
+> never mark the check as passed. Record the check's last line in the PR.
+
+~~Wait for the Copilot review to land before proceeding.~~
 Do NOT skip ahead — the review is the input to Phase 2.
 
 > **Gemini is sunset — never wait on it (2026-08-07).** The consumer
@@ -242,12 +315,14 @@ architectural decision, multiple valid approaches), use
   `AskUserQuestion` call (up to 4 questions) rather than asking
   one at a time.
 
-### Phase 4: Merge
+### Phase 4: Merge (`Process_MergeToMain` — Active `merge-steward` Only)
+
+> **Reminder:** Only the active `merge-steward` executes Phase 4 (or runs it across `4–8` PRs simultaneously via `Process_MergeTrain` when `>= 2` Ready PRs are queued). A sibling session stops after Phase 2/3, applies `ready-to-merge` + signed `ready: <full head sha>`, and sends the 6-line merge request to the `merge-steward`.
 
 After all review comments are resolved (or the user has answered
 all escalated questions):
 
-1. Run `bun run scripts/run-validate.ts content/<paper>` one final time.
+1. Run `bun run scripts/run-validate.ts folio/<paper>` (and `bun run folio/pipeline/voice-leak-audit.ts` if `folio/` prose changed) one final time.
 2. **If the branch touches any `.lean`, the sweep from Phase 1 must have run on
    the FINAL head, and its result must be in the PR.** A sweep on an earlier
    commit is not evidence about what is being merged — the final rebase in
@@ -304,6 +379,13 @@ Then coordinate:
   Phase 0: "PR #<N> merged; <files> updated on main. Please rebase
   if needed."
 - Unsubscribe from the merged PR's activity.
+
+**Then rebuild the published site (owner, 2026-11-23).** GitHub Actions is
+dispatch-only here, so nothing rebuilds the site on a merge. After every merge
+to main, follow [`post-merge-rebuild`](post-merge-rebuild.md): check out the
+merged `main` and run `bash scripts/publish-main-local.sh --deploy`. If it
+cannot run (no platform checkout, a failed build), say so in the merge report;
+do not skip it silently.
 
 ## Error handling
 

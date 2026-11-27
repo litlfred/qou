@@ -1,4 +1,4 @@
-**Proof of (a).**
+**Part (a).**
 
 The argument adapts the classical Rellich--Kondrachov
 compactness theorem to the $q$-deformed setting.

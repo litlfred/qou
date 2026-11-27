@@ -1,1 +1,0 @@
-Thus, by Lemma [\[lemma:determinant\]](#lemma:determinant){reference-type="ref" reference="lemma:determinant"}, any generic braid $w$ that also represents $K$ must have normal form $C^k \sigma_1^{2} \sigma_2^{-1}$ or $C^k \sigma_1 \sigma_2^{-2}$.

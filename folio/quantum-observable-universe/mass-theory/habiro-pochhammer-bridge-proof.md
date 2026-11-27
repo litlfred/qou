@@ -1,4 +1,4 @@
-**Proof.** The identity $1 - q^k = 1 - u^{2k} = (1 - u^k)(1 + u^k)$ is
+The identity $1 - q^k = 1 - u^{2k} = (1 - u^k)(1 + u^k)$ is
 immediate from $q = u^2$. Applying it to each factor of the
 Pochhammer product gives
 

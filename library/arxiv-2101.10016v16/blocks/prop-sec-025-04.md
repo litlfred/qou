@@ -1,0 +1,1 @@
+Let F : C + → C satisfy a) and assume that C admits a weak dimension function. Let G : C → Hilb be a faithful functor such that G + = GF is a ∗ -functor and the morphisms G(αρ,σ,τ ) are unitary. Then every weak quasi-tensor structure on G induces the structure of a tensor C ∗ -category on C + s.t. F is a tensor equivalence (C∗ -transportability).

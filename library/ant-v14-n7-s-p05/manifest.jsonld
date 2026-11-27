@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p05",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p05/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -25,6 +25,18 @@
     "library/ant-v14-n7-s-p05/sections/sec-010"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Motivic Gauss–Bonnet formulas — 12 sections: Front matter; Introduction; X+ ∈SH(k) is dualizable. In partic\n\n**Motivic Gauss–Bonnet formulas**\n\n*Marc Levine and Arpon Raksit*\n\n52 pp, 12 sections.\n\n**Outline.** Front matter; 1 Introduction; T X+ ∈SH(k) is dualizable. In particular, we c; 2 Duality and Euler characteristics; 3 SL-oriented motivic spectra; 4 Projective pushforward in twisted cohomology; 5 Motivic Gauss–Bonnet; 6 SL-oriented cohomology theories; 7 Comparison isomorphisms; 8 Applications; Acknowledgements; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "ant-v14-n7-s-p05",
@@ -34,8 +46,8 @@
     "pages": 52,
     "arxiv": null,
     "doi": "10.2140/ant.2020.14.1801",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -201,7 +201,7 @@ def main():
         "in Irr(H₃(q)). This coincides with dim V_(2,1) at n=3 but "
         "is categorically the orbit size, not the standard-rep dimension."
     )
-    w.set_content_block("prop:proton-mass-substrate-identity")
+    w.set_content_block("conj:proton-mass-substrate-identity")
     w.add_data("categorical_statement", {
         "factor_2": "|Orb_bar(triv)| = |{(3),(1,1,1)}| = 2",
         "coincidence": "equals dim V_(2,1) = n-1 = 2 at n=3 only",

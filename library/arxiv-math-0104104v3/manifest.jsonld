@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0104104v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0104104v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0104104v3",
+  "title": "Geometry of Four-Vector Fields on Quaternionic Flag Manifolds",
   "contains": [
     "library/arxiv-math-0104104v3/sections/sec-front-matter",
     "library/arxiv-math-0104104v3/sections/sec-000",
@@ -22,6 +22,18 @@
     "library/arxiv-math-0104104v3/sections/sec-007"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Geometry of Four-Vector Fields on Quaternionic Flag Manifolds — The purpose of this paper is to describe certain natural 4-vector ﬁelds on quaternionic ﬂag manifolds, which geometrically determine\n\n**Geometry of Four-Vector Fields on Quaternionic Flag Manifolds**\n\n*Philip Foth*\n\n13 pp, 9 sections.\n\n**Abstract.** The purpose of this paper is to describe certain natural 4-vector ﬁelds on quaternionic ﬂag manifolds, which geometrically determine the Bruhat cell decomposition. These structures naturally descend from the sym- plectic group Sp(n), and are related to the dressing action given by the Iwasawa decomposition of the general linear group over the quaternions, GLn(H).\n\n**Outline.** Front matter; 1 Introduction; 2 Quaternionic matrices and flags; 3 Quatrisson and tetraplectic structures; 4 Quatrisson structures on ${\\bf HP}^1$.; 5 Quatrisson structures on flag manifolds; 6 Quatrisson action and intrinsic derivative; 7 Dressing action; 8 Further remarks.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -32,7 +44,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0104104v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0104104v3.pdf",
     "source_sha256": "e2154399f783aa9beacf7ce1fb96a17c579387895a4d0d3f61a4331c846acaab",
     "pages": 13,
@@ -43,8 +57,8 @@
       "stamp_date": "29 Mar 2002"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

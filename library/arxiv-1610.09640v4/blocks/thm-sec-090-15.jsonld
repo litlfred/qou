@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/blocks/thm-sec-090-15",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 253,
+  "pageEnd": 263,
+  "text": "thm-sec-090-15.md",
+  "derivedFrom": "library/arxiv-1610.09640v4/sections/sec-090",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "13.1.34",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-090-13-dualizing-complexes-over-commutative-rings.md (p. 253-263) citing [105, Theorem 19.5]",
+    "claim_id": "arxiv-1610.09640v4#theorem:13.1.34",
+    "lean_status": "unformalized"
+  }
+}

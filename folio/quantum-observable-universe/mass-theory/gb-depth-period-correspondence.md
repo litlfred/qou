@@ -1,5 +1,3 @@
-**Conjecture (GS-depth $\leftrightarrow$ Goncharov period-depth correspondence).**
-
 *Let $\mathcal{H}_q$ be the substrate convolution Hopf algebra
 ([Frobenius–Hopf substrate](#def:frobenius-hopf-substrate)) and let
 $G(\mathcal{H}_q)$ be its sub-Hopf-algebra of grouplikes. Filter
@@ -47,7 +45,7 @@ in the $\omega$-realisation (§6.2 of the same reference).
 The classical Mikusiński operational calculus on $C[0,\infty)$ takes
 $f * g \mapsto \tilde f \cdot \tilde g$ under Laplace, turning ODEs
 into algebra. The categorical analog already in this paper —
-[`prop:categorical-laplace-unique`](#prop:categorical-laplace-unique),
+[Uniqueness of the categorical Laplace transform](#prop:categorical-laplace-unique),
 [`q-resolvent`](#def:q-resolvent) — does exactly this for $\mathcal{H}_q$.
 What it does *not* yet pin down is **which algebraic relations on
 $\mathcal{H}_q$ survive $\tau_{\mathrm{arch}}$ and which do not**. The
@@ -77,21 +75,16 @@ Surreal infinitesimals $1/\omega^k$ sit at depth $k$ as *literal*
 infinitesimal scaling factors — there is no recourse to distributions
 or limits. The "delta at depth $n$" of graded Mikusiński is the
 surreal element $1/\omega^n$, and $\mathrm{std}$ collapses each layer
-to its archimedean image. This makes the *algebraic core survives*
-mechanism ([algebraic core survives](#rem:algebraic-core-survives))
-into a quantitative statement: it survives **at the depth at which it
-lives**.
+to its archimedean image.
 
 ### Existing depth-2 evidence
 
 The paper already records a depth-2 instance in
-[`rem:figure-8-archimedean-illustration`](#rem:figure-8-archimedean-illustration):
+[Figure-8 knot $4_1$ as illustration of the algebraic / archimedean dichotomy](#rem:figure-8-archimedean-illustration):
 the figure-8 knot, embedded in Bring's surface, has hyperbolic
 volume $2\,\mathrm{Cl}_2(\pi/3) = 2\,\mathrm{Im}\,\mathrm{Li}_2(e^{i\pi/3})$.
 One $\mathrm{Li}_2$ factor $\Rightarrow$ iterated-integral depth $2$,
-matching the Bloch-regulator class of the archimedean image. See the
-explicit canonical witness in
-[`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness).
+matching the Bloch-regulator class of the archimedean image.
 
 ### Discharge targets
 
@@ -103,26 +96,26 @@ period theory:
    reduces to showing $\tau_{\mathrm{arch}}$ commutes with iterated
    integration; for the categorical Laplace transform this is the
    monoidality result already proved
-   ([`prop:categorical-laplace-unique`](#prop:categorical-laplace-unique)).
+   ([Uniqueness of the categorical Laplace transform](#prop:categorical-laplace-unique)).
 2. **Sharpness ($\mathcal{P}_n / \mathcal{P}_{n-1}$ non-trivial in
    image):** depth-2 case is the Bloch–Wigner regulator
-   ([bloch2000], [suslin1991]) realised by hyperbolic 3-manifolds.
+   \cite{bloch2000,suslin1991} realised by hyperbolic 3-manifolds.
    Higher depths reduce to Goncharov's motivic-Galois action on
-   multiple polylogs ([kontsevich1995], Goncharov 2001).
+   multiple polylogs \cite{kontsevich1995,deligne-goncharov2005}.
 
 **Two related open questions:**
 
-- *Cellular vs iterated-integral depth.* The cellular GB-depth on
-  $Z(H_n(q))$ — attributed here to
-  [`prop:curvature-rank-gb-stratification`](#prop:curvature-rank-gb-stratification),
-  though **that proposition stratifies by the curvature rank of *words* and
-  mentions no partition**; the max-hook statistic is
-  `QOU.BraidKnot.gbDepth`, a definition, and the step joining them is
-  unestablished
-  — (max hook of partition) is a **separate** filtration from the
-  iterated-integral depth used here. Their precise relationship —
-  e.g. whether amphichiral self-conjugate cells correspond to
-  *even* iterated-integral depths — is open.
+- *Cellular vs iterated-integral depth.* Defining cellular depth on
+  $Z(H_n(q))$ directly by the partition maximum hook length
+  $\max_{\square \in \lambda} h(\square)$ gives a filtration on central
+  idempotents that is separate both from the word-level curvature-rank
+  filtration of
+  [curvature-rank stratification of the GB spectral sequence](#conj:curvature-rank-gb-stratification)
+  (which mentions no partition, leaving the word-to-partition bridge
+  unestablished) and from the iterated-integral depth $G^{(n)}$ used
+  here. Their precise relationship — e.g. whether amphichiral
+  self-conjugate cells correspond to *even* iterated-integral depths —
+  remains open.
 - *Graded Titchmarsh.* At which iterated-integral depth does the
   $*_q$-product on $\mathcal{H}_q$ first acquire zero divisors?
   This bounds where the graded field-of-fractions tower

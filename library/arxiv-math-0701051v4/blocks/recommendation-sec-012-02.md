@@ -1,1 +1,0 @@
-We shall not follow this idea in this article and we will prove all estimates from scratch, but it is worth noticing that the above Corollary shows that the asymptotics of characters of symmetric groups can be deduced from the corresponding asymptotics of random matrices.

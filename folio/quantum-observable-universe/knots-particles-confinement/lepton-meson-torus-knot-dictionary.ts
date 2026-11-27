@@ -4,9 +4,39 @@ export default proposition({
   label: "prop:lepton-meson-torus-knot-dictionary",
   lean: { ref: "qou:QOU.ParticleInteractions.lepton_meson_crossing_match" },
   title:
-    "Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$",
+    "Generation dictionary: leptons vs mesons at $H_3$",
   uses: ["def:categorical-meson"],
   authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-11-21",
+      body:
+        "Electron row brought in line with the owner ruling of 2026-11-21: " +
+        "the electron is $\\sigma_0\\sigma_1\\sigma_0 \\in B_3$, whose closure is the " +
+        "Hopf link, and the trefoil $T(2,3)$ in $H_2(q)$ is the backup reading. " +
+        "The generation label $3$ is unchanged, because the ruled word also has " +
+        "three crossings. The muon and tau rows keep their two-strand labels " +
+        "$T(2,5)$, $T(2,7)$: no three-strand word has been derived for them, so " +
+        "the table does not claim one. The Lean is unchanged except for comments.",
+    },
+    {
+      kind: "refined-framing",
+      date: "2026-11-21",
+      body:
+        "Quark indices re-read as **lepton-partner generation labels** " +
+        "(owner ruling 2026-11-21, option 1, on top of the 2026-11-20 " +
+        "ruling that a quark is an unknot strand of $\\mathcal{B}_3$ and " +
+        "$T(2,n)$ is its lepton partner). The $3, 5, 7$ attached to quarks " +
+        "are the crossing counts of their partners, not crossings carried by " +
+        "the quark strands; the sign of the quark's crossing letter is its own " +
+        "orientation. The meson column is therefore a **sum of labels** " +
+        "($\\pi = 3+3$, $K = 3+5$), not a crossing count of a braid word " +
+        "made of the two quarks. Every Lean statement is unchanged " +
+        "(`lepton_meson_crossing_match`, `meson_crossing_is_sum` are integer " +
+        "arithmetic). Whether the Hecke reduction of the meson word " +
+        "$\\mathfrak{M}_+$ (6 crossings) still matches the pion's label sum " +
+        "by more than coincidence is no longer implied by the table.",
+    },
     {
       kind: "refined-framing",
       date: "2026-08-02",

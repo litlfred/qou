@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1172-5",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1172-5/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -18,6 +18,18 @@
     "library/1172-5/sections/sec-003"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Optimistic calculations about the Witten-Reshetikhin-Turaev invariants of closed three-manifolds obtained from the figure-eight knot by integral Dehn surgeries — I calculate optimistically asymptotic\n\n**Optimistic calculations about the Witten-Reshetikhin-Turaev invariants of closed three-manifolds obtained from the figure-eight knot by integral Dehn surgeries**\n\n10 pp, 5 sections.\n\n**Abstract.** I calculate optimistically asymptotic behaviors of the WRT $SU(2)$ invariants for the three-manifolds obtained from the ﬁgure-eight knot by p- surgeries with $p=0,1,2,$ $\\ldots,$ $10$ , from which one can extract volumes and the Chern-Simons invariants of these closed manifolds. I conjecture that this also holds for general closed three-manifolds.\n\n**Outline.** Front matter; 2 THE; 3 AN OPTIMISTIC LIMIT; 4 DEHN SURGERY ALONG THE FIGURE-EIGHT KNOT; 5 VOLUME CONJECTURE FOR CLOSED THREE-MANIFOLDS",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "1172-5",
@@ -27,8 +39,8 @@
     "pages": 10,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

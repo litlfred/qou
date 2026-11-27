@@ -1,4 +1,3 @@
-*Proof.*
 Each nucleon—proton $\mathfrak{p} = \mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$ or neutron $\mathfrak{n} = \mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})$—is a knot (a single-component link closure of the Borromean braid). Knots carry half-integral spin; links carry integral spin.
 
 The nuclear link $\mathcal{N}(Z, N)$ is a satellite of $A$ Borromean knots joined by Hopf links. In $\mathrm{SU}_q(2)$ representation theory, the tensor product of $A$ spin-$\tfrac{1}{2}$ representations decomposes as:
@@ -36,4 +35,4 @@ See [Table](#tbl:nuclear-spin-parity-table-data).
 
 The integer spin ($J = 1$) of ${}^{14}\mathrm{N}$ ruled out the pre-1932 proton-electron nuclear model, which predicted 21 fermions (14 protons, 7 electrons) and half-integer spin. Neutrons as spin-$\tfrac{1}{2}$ particles resolved this, giving 14 nucleons and integer spin.
 
-In our framework, this is automatic. Both the proton and neutron are spin-$\tfrac{1}{2}$ knots. They share the Borromean topology but differ in quark colouring. Thus, 14 half-integer spins couple to an integer total spin.
+In this framework, this is automatic. Both the proton and neutron are spin-$\tfrac{1}{2}$ knots. They share the Borromean topology but differ in quark colouring. Thus, 14 half-integer spins couple to an integer total spin.

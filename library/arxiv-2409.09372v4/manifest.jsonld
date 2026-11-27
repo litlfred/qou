@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2409.09372v4",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2409.09372v4/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -22,6 +22,18 @@
     "library/arxiv-2409.09372v4/sections/sec-007"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Markov traces on degenerate cyclotomic Hecke algebras — Let Hn(u) be the degenerate cyclotomic Hecke algebra with parameter u = {u1, . . . , um}.\n\n**Markov traces on degenerate cyclotomic Hecke algebras**\n\n*DEKE ZHAO*\n\n16 pp, 9 sections.\n\n**Abstract.** Let Hn(u) be the degenerate cyclotomic Hecke algebra with parameter u = {u1, . . . , um}. The paper aims to define and construct the (non-)normalized Markov traces on the sequence {Hn(u)}∞ n=1. This allows us to provide the Brou´e–Malle–Michel symmetrizing trace on Hn(u) and show that the Brundan–Kleshchev trace is a specialization of the non-normalized Markov traces on Hn(u).\n\n**Outline.** Front matter; 1 Introduction; 2 Inductive basis; 3 Normalized Markov traces; 4 Non-normalized Markov traces; 5 Specializations; Acknowledgements; Declaration; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -44,8 +56,8 @@
       "stamp_date": "8 Jul 2026"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

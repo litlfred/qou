@@ -1,1 +1,0 @@
-Then, an equality tp* fl/* = x[ s) gives: (αjα^ m — ^— Σ n/A = ^ + ~ for a certain m, ^ i τ Complex Simple Lie Algebra 587 As the left-hand side belongs to Z, the right-hand side must also, and as there is at most an integer m such that y\ s) + ra/τeZ.

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1401.5542v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1401.5542v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -39,6 +39,18 @@
     "library/arxiv-1401.5542v1/sections/sec-024"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS — The Ptolemy coordinates for boundary-unipotent SL(n, C)-representations of a 3-manifold group were introduced in [7] inspired by the A-coordinates on\n\n**THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS**\n\n*STAVROS GAROUFALIDIS, MATTHIAS GOERNER, AND CHRISTIAN K. ZICKERT*\n\n21 pp, 26 sections.\n\n**Abstract.** The Ptolemy coordinates for boundary-unipotent SL(n, C)-representations of a 3-manifold group were introduced in [7] inspired by the A-coordinates on higher Teichm¨uller space due to Fock and Goncharov. In this paper, we deﬁne the Ptolemy ﬁeld of a (generic) PSL(2, C)-representation and prove that it coincides with the trace ﬁeld of the represen- tation. This gives an eﬃcient algorithm to compute the trace ﬁeld of a cusped hyperbolic manifold.\n\n**Outline.** Front matter; 1 Introduction; 1.1 The Ptolemy coordinates; 1.2 Decorated SL(2,C)-representations; 1.3 Obstruction classes and PSL(2,C)-represent; 1.4 Our results; 2 Notation; 2.1 Triangulations; 2.2 Miscellaneous; 3 The Ptolemy varieties; 3.1 The SL(2,C)-Ptolemy variety; 3.2 Obstruction classes; 4 The diagonal action; 4.1 The reduced Ptolemy varieties; 4.2 Shapes and gluing equations; 5 The Ptolemy field and the trace field; 5.1 Explicit description of the Ptolemy field; 5.2 The setup of the proof",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -60,8 +72,8 @@
       "stamp_date": "22 Jan 2014"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

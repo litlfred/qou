@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Leading-bias correction identity for joint-fit extraction of the $c_k$ ladder — $\\hat c_k - \\hat c_{k+1} \\cdot u_0 = c_k^{\\mathrm{alg}}$ when the extraction bias is $\\hat c_k = c_k^{\\mathrm{alg}} + c_{k+1}^{\\mathrm{alg}} \\cdot u_0$ (one-line ring)",
   lean: {
-    ref: "qou:QOU.QBeta.CkLeadingBiasCorrection.bias_correction_recovers_alg",
+    ref: "qou:QOU.Nuclear.QBeta.CkLeadingBiasCorrection.bias_correction_recovers_alg",
     validation: "not_checked",
   },
   uses: [

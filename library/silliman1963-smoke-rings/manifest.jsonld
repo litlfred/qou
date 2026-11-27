@@ -1,0 +1,59 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/silliman1963-smoke-rings",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "silliman1963-smoke-rings",
+  "contains": [
+    "library/silliman1963-smoke-rings/sections/page-001",
+    "library/silliman1963-smoke-rings/sections/page-002",
+    "library/silliman1963-smoke-rings/sections/page-003",
+    "library/silliman1963-smoke-rings/sections/page-004",
+    "library/silliman1963-smoke-rings/sections/page-005",
+    "library/silliman1963-smoke-rings/sections/page-006",
+    "library/silliman1963-smoke-rings/sections/page-007",
+    "library/silliman1963-smoke-rings/sections/page-008",
+    "library/silliman1963-smoke-rings/sections/page-009",
+    "library/silliman1963-smoke-rings/sections/page-010",
+    "library/silliman1963-smoke-rings/sections/page-011",
+    "library/silliman1963-smoke-rings/sections/page-012",
+    "library/silliman1963-smoke-rings/sections/page-013",
+    "library/silliman1963-smoke-rings/sections/page-014",
+    "library/silliman1963-smoke-rings/sections/page-015"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "William Thomson: smoke rings and nineteenth-century atomism (Silliman, Isis 54 (1963) 461–474) — the vortex-atom theory, 1867 to about 1906, in its historical setting\n\n**William Thomson: Smoke Rings and Nineteenth-Century Atomism** — Robert H. Silliman. Isis 54(4) (1963) 461–474 (JSTOR 228151).\n\nHistorical study of Thomson's 'Vortex Atoms' (read 18 February 1867 to the Royal Society of Edinburgh), prompted by Tait's smoke-ring experiments after Helmholtz's 1858 vortex theorems. Traces the mathematical development, Maxwell's and others' support, the view of matter as 'a mode of motion', and the theory's persistence in some circles until about 1906, then its eclipse by the work associated with J. J. Thomson, Rutherford and Bohr.\n\n**Why it may bear here.** Not cited yet. A peer-reviewed primary-history source for the dates and claims the knotted-particles history and `intro-particles-as-knots` attribute to `thomson1867vortexatoms` and `kragh2002vortexatom` (the 1867 reading, the 1906 survival). JSTOR scan with a text layer; page granularity, 15 pages; the first page is the JSTOR cover sheet.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01Qmmkt4f9V7M6GLoG8XeAZz",
+        "date": "2026-11-22"
+      },
+      "drafted_at": "2026-11-22"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "silliman1963-smoke-rings",
+    "title_source": "slug",
+    "source_file": "silliman1963-smoke-rings.pdf",
+    "source_sha256": "c07f93df2630398691dfaf7162687820873244190f78eb42e1ea4bfddb6cc5bf",
+    "pages": 15,
+    "arxiv": null,
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

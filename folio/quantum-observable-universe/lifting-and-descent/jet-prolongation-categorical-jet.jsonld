@@ -1,32 +1,34 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/lem-jet-prolongation-categorical-jet",
   "@type": [
-    "folio-assistant-core:Lemma",
+    "folio-assistant-sci:Lemma",
     "doco:Section"
   ],
   "label": "lem:jet-prolongation-categorical-jet",
   "kind": "lemma",
-  "title": "Categorical jet object $J^1(A)$ inherits the Frobenius--Hopf structure",
+  "title": "The base object is a direct summand of the jet object $J^1(S)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-jet"
+  ],
   "proofs": [
     "papers/quantum-observable-universe/blocks/prf-jet-prolongation-categorical-jet"
   ],
-  "cites": [
-    "references/fred2005"
+  "examples": [
+    "papers/quantum-observable-universe/blocks/rem-jet-comul-does-not-restrict"
   ],
   "tags": [
     "kahler-differential",
-    "frobenius-hopf",
     "jet-bundle",
-    "deformation"
+    "direct-summand"
   ],
-  "leanRef": "qou:QOU.LiftingDescent.jp_categorical_jet",
+  "leanRef": "qou:QOU.LiftingDescent.LiftingDescentRoot.jetRetract_comp_jetSection",
   "text": "jet-prolongation-categorical-jet.md",
-  "leanSource": "jet-prolongation-categorical-jet.lean",
   "provenance": "authored"
 }

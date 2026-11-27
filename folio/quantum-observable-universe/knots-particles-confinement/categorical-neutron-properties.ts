@@ -146,7 +146,7 @@ export default remark({
         "$0.408267$ with no gluon at all; the min-$|\\mathrm{tr}_M|$ optimum " +
         "is a **single $\\sigma_0$ at one crossing** ($0.217525$), and under " +
         "the minimum-crossing objective that " +
-        "[`def:universal-ilp-algorithm`](#def:universal-ilp-algorithm) " +
+        "[`rem:confinement-layer-operator-selection`](#rem:confinement-layer-operator-selection) (formerly `def:universal-ilp-algorithm`) " +
         "actually states it is **zero** crossings. The same holds for the " +
         "proton ($\\sigma_0 . \\sigma_0$ ranks 10/41 at $0.615273$ against " +
         "bare $0.544370$). So the selection sentence, the 11-crossing total " +
@@ -157,5 +157,10 @@ export default remark({
         "rather than patching \u2014 and that judgement is not revisited " +
         "here. Flagged, not resolved. Scope-(a).",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): See [Table](#tbl:categorical-neutron-table-data)." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The crossing pairs appear in [Table: Neutron crossing pairs](#tbl:categorical-neutron-table-data)." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  ([energy scale](#rem:beta-decay-energy-scale))" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  ([formation chain](#rem:meson-to-proton-via-borromean))" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  ([local substrate](#prop:local-substrate-q))" },
   ],
 });

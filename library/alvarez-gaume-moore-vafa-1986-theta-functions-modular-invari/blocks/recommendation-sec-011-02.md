@@ -1,1 +1,0 @@
-We believe this result is very powerful and should allow one to apply arguments similar to those used in the next section to obtain useful expressions for the functional determinants appearing in string theory in terms of "canonical" or "natural" functions associated to a Riemann surface.

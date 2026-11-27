@@ -1,0 +1,569 @@
+{
+  "engine": "mpmath-80dps",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-23T20:40:37.479896+00:00",
+  "commitSha": "9c096e0e921138647c46bc57e8072687d51852ab",
+  "assertions": [
+    {
+      "name": "diophantine_genus4_uniqueness_T29_T35",
+      "computed": 2,
+      "expected": 2,
+      "passed": true,
+      "tolerance": "0",
+      "source": "AlphaEmT35Linchpin.genus_four_coprime_torus_knot_iff"
+    },
+    {
+      "name": "delta_T35_q0_sq_quotient_eq_laurent",
+      "computed": "6.32531876593831e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "AlphaEmT35Linchpin.deltaT35_at_q_sq"
+    },
+    {
+      "name": "delta_T35_q0_fourth_quotient_eq_laurent",
+      "computed": "4.21687917729221e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "AlphaEmT35Linchpin.deltaT35_at_q_fourth"
+    },
+    {
+      "name": "burau_det_T35_identity_at_q0",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-65",
+      "source": "AlphaEmT35Linchpin.burau_det_T35_from_hecke"
+    },
+    {
+      "name": "cyclotomic_q10_q2_identity_at_q0",
+      "computed": "6.74700668366753e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "AlphaEmT35Linchpin.qIntBal_9_10_laurent_and_cyclotomic"
+    },
+    {
+      "name": "clebsch_gordan_q9_mul_q10_at_q0",
+      "computed": "1.34940133673351e-79",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "AlphaEmT35Linchpin.qIntBal_nine_mul_ten_clebsch_gordan"
+    },
+    {
+      "name": "homfly_sl3_T35_schur_eq_laurent_at_q0",
+      "computed": "5.27109897161526e-82",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "AlphaEmT35Linchpin.homflySl3_T35_exact"
+    },
+    {
+      "name": "jones_markov_numerator_identity_at_q0",
+      "computed": "1.68675167091688e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-65",
+      "source": "WeakVertexT35.weakVertexTrace_numerator_eq_jones"
+    },
+    {
+      "name": "vol_4_1_clausen_matches_substrate_50str",
+      "computed": "4.15965021786447e-52",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-48",
+      "source": "Vol(4_1) = 2 * Cl_2(pi/3)"
+    },
+    {
+      "name": "hadron_line_two_ln_t_eq_neg_alpha_B",
+      "computed": "9.47150596462117e-82",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "AlphaEmT35Linchpin.two_log_hadronLineParam_eq_neg_alpha"
+    },
+    {
+      "name": "hadron_line_jet_bounds_hold_strictly",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "AlphaEmT35Linchpin.hadronLine_jet_bounds"
+    },
+    {
+      "name": "weak_vertex_t2_uniform_charges_vanish",
+      "computed": "5.44040851336536e-83",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "WeakVertexTwoTerm.twoTerm_eq_of_uniform"
+    },
+    {
+      "name": "weak_vertex_t2_lepton_first_closed_form",
+      "computed": "2.63554948580763e-82",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "WeakVertexTwoTerm.tTwo_lepton_first"
+    },
+    {
+      "name": "inner_deriv_hilbert_schmidt_eq_P3_variance",
+      "computed": "2.63554948580763e-82",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "AlphaEmT35Linchpin.innerDeriv_P3_hilbert_schmidt_variance"
+    },
+    {
+      "name": "gatermann_parrilo_dressed_kernel_psd_all_normalizations",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "AlphaEmT35Linchpin.dressedKernel_posSemidef_iff"
+    },
+    {
+      "name": "codata2022_implied_abs_c2_near_9p40e_minus_4",
+      "computed": "0.00093986506",
+      "expected": "0.0009399",
+      "passed": true,
+      "tolerance": "2e-6",
+      "source": "CODATA-2022 implied |Delta_2^emp / alpha_B^2| diagnostic"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 96,
+  "computation": "alpha-em-t35-linchpin",
+  "scriptFile": "alpha_em_t35_linchpin_probe.py",
+  "scriptHash": "47539afce174",
+  "scriptCommitSha": "9c096e0e921138647c46bc57e8072687d51852ab",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/alpha_em_t35_linchpin/alpha_em_t35_linchpin_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/alpha_em_t35_linchpin/alpha_em_t35_linchpin_probe.py"
+  },
+  "description": "80-dps pre-registered verification of QOU/StandardModel/AlphaEmT35Linchpin.lean (beans qou-15sj, qou-ha6c, qou-itdn, qou-006b): exact T(3,5) Alexander, Burau, Jones, and U_q(sl_3) HOMFLY-PT invariants vs q[9]_q[10]_q; zero-parameter weight-3 two-loop Delta_2 candidate tests against CODATA-2022; hadron charge-line coupling 2 ln t = -alpha_EM(q_0); and Gatermann-Parrilo / Verstichel-van Aggelen positivity bounds on E(Q)^conn.",
+  "parameters": {
+    "work_dps": 80,
+    "out_dps": 50,
+    "q0_proton": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "part_a_t35_invariants_and_linchpin": {
+      "diophantine_genus4_coprime_knots": [
+        "T(2,9)",
+        "T(3,5)"
+      ],
+      "exact_rational_checks": {
+        "delta_T35_q=2": "49981/256",
+        "delta_T35_q=3/2": "26678941/1679616"
+      },
+      "q9_q0": "10.363517588144814615476005235618123336048773635113",
+      "q10_q0": "11.894275228200169785047407772380922449380112813919",
+      "tree_q_q9_q10_q0": "136.82320885358258430804610540444147849492999517975",
+      "clebsch_gordan_abs_diff": "1.34940133673351e-79",
+      "delta_T35_at_q0_sq": "1.3769809977392409364356225645042946045866961738499",
+      "delta_T35_at_q0_fourth": "2.8907927408228366492608232361008151878506905637794",
+      "burau_det_1_plus_q10_plus_q20": "11.898074062091408906441576895670692497930450035477",
+      "jones_T35_q0_sq": "-2.2573781616934074243805187935672207324121339974940",
+      "jones_T35_q0_inv_sq": "0.59581871623234212431003196081826645669682238650528",
+      "weak_vertex_convD_W_q0": "1.1874806131459626461071158300792049240880255765815",
+      "homfly_sl3_T35_q0": "0.32132553600018791815547435002583384750188986833480",
+      "q1_selectivity": {
+        "V_knot_c1_at_q1": 1,
+        "V_hopf_c2_at_q1": -2,
+        "V_borromean_c3_at_q1": 4,
+        "tree_alpha_inv_at_q1": 90,
+        "hadron_line_t_tree_at_q1": "0.994459848004896750879547339473"
+      }
+    },
+    "part_b_two_loop_delta2_candidates": {
+      "alpha_inv_formB_q0": "137.03599912695091242017270049642000673995567550572",
+      "alpha_inv_formA_q0": "137.03599931316900750220365786491819837150744268553",
+      "alpha_inv_codata2022": "137.03599917700000000",
+      "sigma_alpha_inv_codata2022": "2.100000000e-8",
+      "sigma_rel_ppb": "0.1532444039",
+      "formB_residual_vs_codata2022_ppb": "-0.365225837593",
+      "formB_residual_vs_codata2018_hist_ppb": "0.313427951102",
+      "delta2_emp_codata2022": "5.0049087579827299504e-8",
+      "c2_plus_emp_codata2022": "0.00093986506187362247279",
+      "c2_minus_emp_codata2022": "-0.00093986506187362247279",
+      "passes_1sigma": [
+        "C3c_habiro_hbar0sq_zeta3_pi2_plus"
+      ],
+      "passes_2sigma": [
+        "C2d_bring_area_vol41_144pi2_plus",
+        "C3c_habiro_hbar0sq_zeta3_pi2_plus"
+      ],
+      "candidates": [
+        {
+          "id": "C1a_schwinger_broadhurst_zeta3_pi3_plus",
+          "c2_signed_at_q0": "0.038768179602916798941",
+          "alpha_inv_q0": "137.0360011914001346900098",
+          "residual_vs_codata2022_ppb": "14.6997879885",
+          "abs_sigma": "95.92381594",
+          "d_ln_alpha_inv_d_ln_q": "6.83338998414",
+          "window_slope_ppm_per_q": "6430086.918",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C1a_schwinger_broadhurst_zeta3_pi3_minus",
+          "c2_signed_at_q0": "-0.038768179602916798941",
+          "alpha_inv_q0": "137.0359970625015657467685",
+          "residual_vs_codata2022_ppb": "-15.4302405715",
+          "abs_sigma": "100.6904016",
+          "d_ln_alpha_inv_d_ln_q": "6.83339060181",
+          "window_slope_ppm_per_q": "6430087.275",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C1b_bring_b1_zeta3_8pi3_plus",
+          "c2_signed_at_q0": "0.0048460224503645998676",
+          "alpha_inv_q0": "137.0359993850070720072220",
+          "residual_vs_codata2022_ppb": "1.51790094031",
+          "abs_sigma": "9.905098667",
+          "d_ln_alpha_inv_d_ln_q": "6.83339025437",
+          "window_slope_ppm_per_q": "6430087.074",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C1b_bring_b1_zeta3_8pi3_minus",
+          "c2_signed_at_q0": "-0.0048460224503645998676",
+          "alpha_inv_q0": "137.0359988688947508893177",
+          "residual_vs_codata2022_ppb": "-2.24835262968",
+          "abs_sigma": "14.67167853",
+          "d_ln_alpha_inv_d_ln_q": "6.83339033158",
+          "window_slope_ppm_per_q": "6430087.119",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C1c_bring_jacobian_zeta3_64pi2_plus",
+          "c2_signed_at_q0": "0.0019030285661495794238",
+          "alpha_inv_q0": "137.0359992282893295484921",
+          "residual_vs_codata2022_ppb": "0.374276320504",
+          "abs_sigma": "2.442349026",
+          "d_ln_alpha_inv_d_ln_q": "6.83339027781",
+          "window_slope_ppm_per_q": "6430087.088",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C1c_bring_jacobian_zeta3_64pi2_minus",
+          "c2_signed_at_q0": "-0.0019030285661495794238",
+          "alpha_inv_q0": "137.0359990256124949920940",
+          "residual_vs_codata2022_ppb": "-1.10472799788",
+          "abs_sigma": "7.208928810",
+          "d_ln_alpha_inv_d_ln_q": "6.83339030813",
+          "window_slope_ppm_per_q": "6430087.105",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C1d_jost_luttinger_1_4pi2_plus",
+          "c2_signed_at_q0": "0.025330295910584442861",
+          "alpha_inv_q0": "137.0360004758177092163178",
+          "residual_vs_codata2022_ppb": "9.47793074095",
+          "abs_sigma": "61.84846234",
+          "d_ln_alpha_inv_d_ln_q": "6.83339009119",
+          "window_slope_ppm_per_q": "6430086.980",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C1d_jost_luttinger_1_4pi2_minus",
+          "c2_signed_at_q0": "-0.025330295910584442861",
+          "alpha_inv_q0": "137.0359977780840625157102",
+          "residual_vs_codata2022_ppb": "-10.2083828037",
+          "abs_sigma": "66.61504464",
+          "d_ln_alpha_inv_d_ln_q": "6.83339049476",
+          "window_slope_ppm_per_q": "6430087.213",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C1e_petermann_sommerfield_3zeta3_4pi2_plus",
+          "c2_signed_at_q0": "0.091345371175179812341",
+          "alpha_inv_q0": "137.0360039911945964510837",
+          "residual_vs_codata2022_ppb": "35.1308752836",
+          "abs_sigma": "229.2473617",
+          "d_ln_alpha_inv_d_ln_q": "6.83338956530",
+          "window_slope_ppm_per_q": "6430086.677",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C1e_petermann_sommerfield_3zeta3_4pi2_minus",
+          "c2_signed_at_q0": "-0.091345371175179812341",
+          "alpha_inv_q0": "137.0359942627065377438905",
+          "residual_vs_codata2022_ppb": "-35.8613319987",
+          "abs_sigma": "234.0139744",
+          "d_ln_alpha_inv_d_ln_q": "6.83339102065",
+          "window_slope_ppm_per_q": "6430087.516",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C2a_bloch_wigner_vol41_pi2_plus",
+          "c2_signed_at_q0": "0.20567016977856363503",
+          "alpha_inv_q0": "137.0360100791176459803306",
+          "residual_vs_codata2022_ppb": "79.5565961605",
+          "abs_sigma": "519.1484593",
+          "d_ln_alpha_inv_d_ln_q": "6.83338865457",
+          "window_slope_ppm_per_q": "6430086.152",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C2a_bloch_wigner_vol41_pi2_minus",
+          "c2_signed_at_q0": "-0.20567016977856363503",
+          "alpha_inv_q0": "137.0359881747806775978653",
+          "residual_vs_codata2022_ppb": "-80.2870733857",
+          "abs_sigma": "523.9152058",
+          "d_ln_alpha_inv_d_ln_q": "6.83339193138",
+          "window_slope_ppm_per_q": "6430088.041",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C2b_single_tetra_D41_pi2_plus",
+          "c2_signed_at_q0": "0.10283508488928181751",
+          "alpha_inv_q0": "137.0360046030347168578367",
+          "residual_vs_codata2022_ppb": "39.5956883552",
+          "abs_sigma": "258.3826056",
+          "d_ln_alpha_inv_d_ln_q": "6.83338947377",
+          "window_slope_ppm_per_q": "6430086.624",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C2b_single_tetra_D41_pi2_minus",
+          "c2_signed_at_q0": "-0.10283508488928181751",
+          "alpha_inv_q0": "137.0359936508662326669713",
+          "residual_vs_codata2022_ppb": "-40.3261464179",
+          "abs_sigma": "263.1492270",
+          "d_ln_alpha_inv_d_ln_q": "6.83339111218",
+          "window_slope_ppm_per_q": "6430087.569",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C2c_bring_jacobian_vol41_64pi2_plus",
+          "c2_signed_at_q0": "0.0032135964027900567973",
+          "alpha_inv_q0": "137.0359992980785445582529",
+          "residual_vs_codata2022_ppb": "0.883552827618",
+          "abs_sigma": "5.765644979",
+          "d_ln_alpha_inv_d_ln_q": "6.83339026737",
+          "window_slope_ppm_per_q": "6430087.082",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C2c_bring_jacobian_vol41_64pi2_minus",
+          "c2_signed_at_q0": "-0.0032135964027900567973",
+          "alpha_inv_q0": "137.0359989558232794272922",
+          "residual_vs_codata2022_ppb": "-1.61400450904",
+          "abs_sigma": "10.53222479",
+          "d_ln_alpha_inv_d_ln_q": "6.83339031857",
+          "window_slope_ppm_per_q": "6430087.111",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C2d_bring_area_vol41_144pi2_plus",
+          "c2_signed_at_q0": "0.0014282650679066919099",
+          "alpha_inv_q0": "137.0359992030076379204059",
+          "residual_vs_codata2022_ppb": "0.189786903271",
+          "abs_sigma": "1.238458949",
+          "d_ln_alpha_inv_d_ln_q": "6.83339028160",
+          "window_slope_ppm_per_q": "6430087.090",
+          "verdict": "CONSISTENT_2SIGMA"
+        },
+        {
+          "id": "C2d_bring_area_vol41_144pi2_minus",
+          "c2_signed_at_q0": "-0.0014282650679066919099",
+          "alpha_inv_q0": "137.0359990508941867510900",
+          "residual_vs_codata2022_ppb": "-0.920238579689",
+          "abs_sigma": "6.005038726",
+          "d_ln_alpha_inv_d_ln_q": "6.83339030435",
+          "window_slope_ppm_per_q": "6430087.103",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C3a_habiro_h0sq_zeta3_plus",
+          "c2_signed_at_q0": "0.052537349677450818478",
+          "alpha_inv_q0": "137.0360019246239172397274",
+          "residual_vs_codata2022_ppb": "20.0503804383",
+          "abs_sigma": "130.8392342",
+          "d_ln_alpha_inv_d_ln_q": "6.83339026720",
+          "window_slope_ppm_per_q": "6430087.197",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C3a_habiro_h0sq_zeta3_minus",
+          "c2_signed_at_q0": "-0.052537349677450818478",
+          "alpha_inv_q0": "137.0359963292776791363233",
+          "residual_vs_codata2022_ppb": "-20.7808337807",
+          "abs_sigma": "135.6058248",
+          "d_ln_alpha_inv_d_ln_q": "6.83339031875",
+          "window_slope_ppm_per_q": "6430086.996",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C3b_habiro_h0sq_zeta3_8pi_plus",
+          "c2_signed_at_q0": "0.0020903947245284226973",
+          "alpha_inv_q0": "137.0359992382667887524262",
+          "residual_vs_codata2022_ppb": "0.447085358011",
+          "abs_sigma": "2.917466131",
+          "d_ln_alpha_inv_d_ln_q": "6.83339029195",
+          "window_slope_ppm_per_q": "6430087.100",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C3b_habiro_h0sq_zeta3_8pi_minus",
+          "c2_signed_at_q0": "-0.0020903947245284226973",
+          "alpha_inv_q0": "137.0359990156350357262274",
+          "residual_vs_codata2022_ppb": "-1.17753703584",
+          "abs_sigma": "7.684045918",
+          "d_ln_alpha_inv_d_ln_q": "6.83339029400",
+          "window_slope_ppm_per_q": "6430087.092",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C3c_habiro_hbar0sq_zeta3_pi2_plus",
+          "c2_signed_at_q0": "0.0011956727207489387121",
+          "alpha_inv_q0": "137.0359991906218331546836",
+          "residual_vs_codata2022_ppb": "0.0994033191022",
+          "abs_sigma": "0.6486587217",
+          "d_ln_alpha_inv_d_ln_q": "6.83339029190",
+          "window_slope_ppm_per_q": "6430087.098",
+          "verdict": "PASS_1SIGMA"
+        },
+        {
+          "id": "C3c_habiro_hbar0sq_zeta3_pi2_minus",
+          "c2_signed_at_q0": "-0.0011956727207489387121",
+          "alpha_inv_q0": "137.0359990632799915673286",
+          "residual_vs_codata2022_ppb": "-0.829854995152",
+          "abs_sigma": "5.415238497",
+          "d_ln_alpha_inv_d_ln_q": "6.83339029405",
+          "window_slope_ppm_per_q": "6430087.095",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C3d_theta_weight3_q3_zeta3_64pi2_plus",
+          "c2_signed_at_q0": "0.0057922598618042181066",
+          "alpha_inv_q0": "137.0359994353952808641794",
+          "residual_vs_codata2022_ppb": "1.88560146543",
+          "abs_sigma": "12.30453718",
+          "d_ln_alpha_inv_d_ln_q": "6.83339024745",
+          "window_slope_ppm_per_q": "6430087.070",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C3d_theta_weight3_q3_zeta3_64pi2_minus",
+          "c2_signed_at_q0": "-0.0057922598618042181066",
+          "alpha_inv_q0": "137.0359988185065411991518",
+          "residual_vs_codata2022_ppb": "-2.61605316088",
+          "abs_sigma": "17.07111709",
+          "d_ln_alpha_inv_d_ln_q": "6.83339033849",
+          "window_slope_ppm_per_q": "6430087.123",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C4a_penrose_theta_q3_64pi2_on_formB_plus",
+          "c2_signed_at_q0": "0.0048186236829382388259",
+          "alpha_inv_q0": "137.0359993835480567539074",
+          "residual_vs_codata2022_ppb": "1.50725399161",
+          "abs_sigma": "9.835621750",
+          "d_ln_alpha_inv_d_ln_q": "6.83339025510",
+          "window_slope_ppm_per_q": "6430087.075",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C4a_penrose_theta_q3_64pi2_on_formB_minus",
+          "c2_signed_at_q0": "-0.0048186236829382388259",
+          "alpha_inv_q0": "137.0359988703537661645502",
+          "residual_vs_codata2022_ppb": "-2.23770568082",
+          "abs_sigma": "14.60220161",
+          "d_ln_alpha_inv_d_ln_q": "6.83339033084",
+          "window_slope_ppm_per_q": "6430087.118",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        },
+        {
+          "id": "C4b_penrose_theta_replace_formB_h0sq",
+          "c2_on_formA_at_q0": "-0.0048186236829382388259",
+          "effective_delta_c2_vs_formB_at_q0": "-0.0013216443047688134056",
+          "alpha_inv_q0": "137.0359990565718626413367",
+          "residual_vs_codata2022_ppb": "-0.878806576972",
+          "abs_sigma": "5.734673208",
+          "d_ln_alpha_inv_d_ln_q": "6.83339032927",
+          "verdict": "MISS_OUTSIDE_2SIGMA"
+        }
+      ]
+    },
+    "part_c_hadron_line_and_two_term_positivity": {
+      "t_hadron_q0": "0.99635797204748542135841101122612198927453625016803",
+      "two_ln_t_q0": "-0.0072973525669966067337392953197430139234843218192128",
+      "one_minus_t_sq_q0": "0.0072707915374222597492813741829578860369599103999386",
+      "jet2_lower_alpha_minus_half_alpha2": "0.0072707268897530807508550533817755881970311052214338",
+      "jet3_upper_alpha_minus_half_alpha2_plus_sixth_alpha3": "0.0072707916554044744400108264691425100010495860323269",
+      "jet_lower_slack": "6.4647669178998426321e-8",
+      "jet_upper_slack": "1.1798221469072945229e-10",
+      "weak_vertex_t1_q0": "1.1874806131459626461071158300792049240880255765815",
+      "weak_vertex_t2_uniform_q0": "-5.4404085133653571401e-83",
+      "weak_vertex_t2_lepton_first_q0": "-0.038152199383152817076569937568061550824247874589088",
+      "W_two_term_N1_monodromy": "1.1872022030958574295414397795401058761736669882348",
+      "W_two_term_N2_chordal_jet": "1.1872032164575535718461917331888495674796247563320",
+      "W_two_term_N3_lagrangian_reeb": "1.1846707097528799664094209458060445339948488579043",
+      "kappa_Wplus_lepton_first": "-0.0476357228301858487906838878488",
+      "kappa_Wminus_lepton_first": "-0.0444447148551790820999041968012",
+      "var_P3_Wplus": "0.107081986193696886982610311457",
+      "var_P3_Wminus": "0.0869134961190563487886966029955",
+      "cauchy_schwarz_slack_Wplus": "0.00056728944378505887772",
+      "cauchy_schwarz_slack_Wminus": "0.00086111885478117199283",
+      "gatermann_parrilo_psd_checks": {
+        "N1_monodromy_alpha": {
+          "c_em": "0.007297352566996606733739295",
+          "c_em_mul_kappa_plus": "-0.00034761466427559556807",
+          "c_em_mul_kappa_minus": "-0.00032432875403787329526",
+          "dressed_eig_Wplus_3": "0.99965238533572440443",
+          "dressed_eig_Wplus_21": "1.0001738073321377978",
+          "dressed_eig_Wminus_3": "0.99967567124596212670",
+          "dressed_eig_Wminus_21": "1.0001621643770189366",
+          "gatermann_parrilo_psd_holds": true
+        },
+        "N2_chordal_jet_1_minus_t2": {
+          "c_em": "0.007270791537422259749281374",
+          "c_em_mul_kappa_plus": "-0.00034634941043270760590",
+          "c_em_mul_kappa_minus": "-0.00032314825665218146490",
+          "dressed_eig_Wplus_3": "0.99965365058956729239",
+          "dressed_eig_Wplus_21": "1.0001731747052163538",
+          "dressed_eig_Wminus_3": "0.99967685174334781854",
+          "dressed_eig_Wminus_21": "1.0001615741283260907",
+          "gatermann_parrilo_psd_holds": true
+        },
+        "N3_lagrangian_alpha_over_hbarq": {
+          "c_em": "0.07364984033721190999377382",
+          "c_em_mul_kappa_plus": "-0.0035083633807908680132",
+          "c_em_mul_kappa_minus": "-0.0032733461529168497534",
+          "dressed_eig_Wplus_3": "0.99649163661920913199",
+          "dressed_eig_Wplus_21": "1.0017541816903954340",
+          "dressed_eig_Wminus_3": "0.99672665384708315025",
+          "dressed_eig_Wminus_21": "1.0016366730764584249",
+          "gatermann_parrilo_psd_holds": true
+        }
+      }
+    }
+  },
+  "caveats": [
+    "1. In H_3(q), standard N=2 Jones and N=3 sl_3 HOMFLY-PT quantum-dimension traces of T(3,5) yield 3-term and 6-term Laurent polynomials and do NOT collapse to (q - q^-1)[10]_q; the clean binomial q^10 - q^-10 arises uniquely from the partition-conjugation antisymmetric (w_3, w_21, w_111) = (1, 0, -1) top-channel difference and from the 5-fold strand-period denominator of the symmetrized Alexander / 3-strand reduced Burau invariant. 2. All 15 pre-registered zero-parameter two-loop Delta_2 candidates (29 signed variants) are reported verbatim without post-hoc selection: 27/29 miss outside 2*sigma_CODATA, while C3c (+hbar_q^2*zeta(3)/pi^2, +0.0994 ppb, 0.65 sigma) and C2d (+Vol(4_1)/(12*pi)^2, +0.1898 ppb, 1.24 sigma) lie within 1 sigma and 2 sigma respectively; because 2*sigma_CODATA/alpha^2 spans ~7.89e-4 around c_2^(+,emp) = +9.40e-4 and every candidate shares the steep tree q-slope (~6.43e6 ppm/q across q_0 +- 0.05), neither C3c nor C2d is promoted to production (Rule 14). 3. On WeakVertexTwoTerm, strand charge assignments (e.g. C-lep) and covariance-group choices enter as explicit hypotheses per owner rulings (#8743, #8838)."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

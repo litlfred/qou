@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2301.08311v4",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2301.08311v4/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -22,6 +22,18 @@
     "library/arxiv-2301.08311v4/sections/sec-007"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "FLOER COHOMOLOGY AND HIGHER MUTATIONS — We extend the construction of higher mutation as introduced in [PT20] to local higher mutation, which is applicable to a larger class of monotone Lagrangians.\n\n**FLOER COHOMOLOGY AND HIGHER MUTATIONS**\n\n*SOHAM CHANDA*\n\n73 pp, 9 sections.\n\n**Abstract.** We extend the construction of higher mutation as introduced in [PT20] to local higher mutation, which is applicable to a larger class of monotone Lagrangians. In two-dimensional Lagrangians, local higher mutation is the same as performing a Lagrangian anti-surgery in the sense of [Hau20] followed by a Lagrangian surgery. We prove that up to a change of local systems, the Lagrangian intersection Floer cohomology of a pair of Lagrangians is invariant under local mutation. This result generalizes the wall-crossing formula in [PT20]. For two-dimensional Lagrangians, this result agrees with the invariance result in [PW19].\n\n**Outline.** Front matter; 1 Introduction; 2 Local Mutation; 3 SFT Compactness; 4 Constructing Moduli Space of Broken Maps; 5 Regularity; 6 Classifying Rigid Broken Maps; 7 Floer Cohomology and Mutations; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {
@@ -43,8 +55,8 @@
       "stamp_date": "17 Sep 2024"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

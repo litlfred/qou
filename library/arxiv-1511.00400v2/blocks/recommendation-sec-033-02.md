@@ -1,1 +1,0 @@
-After all those preliminaries, to establish the lemma one must prove the following equality $$\label{eqn:pairing} \langle \dot\rho, a\cap[\gamma]\rangle = \left.\frac{d\phantom{t}}{dt} a^\star\log\rho_t(\gamma)\right\vert_{t=0} \, .$$

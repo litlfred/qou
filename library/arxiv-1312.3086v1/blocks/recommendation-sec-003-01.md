@@ -1,1 +1,0 @@
-The entanglement generation procedure described above cannot be applied simultaneously on all pairs $\left(R_{k},L_{k+1}\right)$ : indeed, the pair of nodes to be entangled must be isolated from the others for the photon exchange.

@@ -1,1 +1,1 @@
-A.1.1. The Lie bracket of Lie(Ad ˜V ω(e1)) is { f, g}Ad = d f (g) −dg( f ) where d f is the
+1.1. The Lie bracket of Lie(Ad ˜V ω(e1)) is { f, g}Ad = d f (g) −dg( f ) where d f is the derivation sending e0 7→0, eξ 7→f (ξ) for all ξ ∈µN(K). Let the product . ∫1,0 Ad on Ad ˜51,0(K)(e1) be deﬁned by (g−1e1g). ∫1,0 Ad ( f −1e1 f ) = (g f )−1e1(g f ), and its Lie version be [g, e1]. ∫1,0 Ad [ f, e1] = [g f, e1]. Then, { · , · }Ad is a Poisson bracket, namely, it satisﬁes {a. ∫1,0 Ad b, c} = {a, c}. ∫1,0 Ad b + a. ∫1,0 Ad {b, c}.

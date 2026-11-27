@@ -1,1 +1,0 @@
-(B.11) To get the desired transformation formulas one should use the following asymptotic formulas when some of the parameters go to inﬁnity lim u→∞e πi 2 B2,2(u)Sb(u) = 1, for arg b < arg u < arg 1/b + π, lim u→∞e−πi 2 B2,2(u)Sb(u) = 1, for arg b −π < arg u < arg 1/b.

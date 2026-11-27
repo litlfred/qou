@@ -1,0 +1,1 @@
+The special max proposed in Conjecture 7.9 is certainly needed, as shown by the example of the mapping torus of the diffeo- morphism —Jd of a torus. The quantum SU(2) invariant of this manifold is easily seen to be r—1, since —Id is represented trivially for all levels, however, there are flat SU(2) connections for which (h, — h9) > 2.

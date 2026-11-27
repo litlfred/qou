@@ -1,1 +1,0 @@
-However, things are not just so trivial, because operators involved do not commute (and in particular, the exponential operator in (\ref{hrtf}) should still be defined less symbolically, see next subsection).

@@ -2,7 +2,7 @@ import { lemma } from "../../schema/builders";
 
 export default lemma({
   label: "lem:volume-from-rigidity",
-  lean: { ref: "qou:QOU.volume_from_rigidity",
+  lean: { ref: "qou:QOU.Core.volume_from_rigidity",
     validation: "not_checked",
   },
   title: "Volume form from rigidity and symplectic self-duality",

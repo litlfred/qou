@@ -1,1 +1,0 @@
-We must verify (1) 휓commutes with the action of GL2(O), (2) 휓commutes with the coproduct, (3) 휓respects the double shuﬄe relations, and the images of the double shuﬄe and anticommutation relations are all relations in 퐵•.

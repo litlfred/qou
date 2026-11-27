@@ -1,1 +1,0 @@
-We shall call it *Birkhoff-Guenther program*.\ *Up to the present time, the theory of $q$-difference equations has lagged noticeabely behind the sister theories of linear difference and $q$-difference equations.

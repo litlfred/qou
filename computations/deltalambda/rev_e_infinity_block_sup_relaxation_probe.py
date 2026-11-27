@@ -152,7 +152,12 @@ TOL = mp.mpf(10) ** (-(TARGET_DIGITS - 6))
 TMAX = int(os.environ.get("REV_BLOCK_SUP_TMAX", "12"))
 UMAX = mp.mpf(30)
 
-E_INF_7335 = mp.mpf("2.43929645512078402706542884314")
+# #7335's searched e_inf, READ from the witness that measures it
+# (rev-e-infinity-edge-limit, e_infinity.value) rather than typed (witness-value
+# copy ratchet, issue #9104). That producer reads none of this probe's output.
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                       "rev-e-infinity-edge-limit.witness.json"), encoding="utf-8") as _fh:
+    E_INF_7335 = mp.mpf(json.load(_fh)["e_infinity"]["value"])
 # #7349's enumerated max (at [4,3,2,2,1,1,1]), READ from the witness that
 # measures it (rev-e-infinity-search-reduction, coercivity_S3.measured_B) rather
 # than typed (witness-value copy ratchet).

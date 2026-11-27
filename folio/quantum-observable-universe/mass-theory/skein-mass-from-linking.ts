@@ -2,7 +2,7 @@ import { lemma } from "../../schema/builders";
 
 export default lemma({
   label: "lem:skein-mass-from-linking",
-  lean: { ref: "qou:QOU.BraidsKnots.skein_mass_from_linking",
+  lean: { ref: "qou:BraidKnotOctonion.skein_mass_from_linking",
     validation: "not_checked",
   },
   title: "Mass functional on a Skein resolution: linking-energy plus constituent volume",
@@ -10,6 +10,12 @@ export default lemma({
   uses: ["def:hadron"],
   proofs: ["prf:skein-mass-from-linking"],
   authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-hand-adjudicated.lean` inhabits unparameterised `SkeinMassFromLinkingContext` at `n = 0` constituents and zero mass.",
+      see: "docs/audits/2026-08-30-context-classes-hand-adjudicated.lean",
+    },
     {
       kind: "note",
       date: "2026-08-08",

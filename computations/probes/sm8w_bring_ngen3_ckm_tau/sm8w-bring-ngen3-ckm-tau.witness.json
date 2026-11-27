@@ -1,0 +1,601 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-23T23:20:09.207107+00:00",
+  "commitSha": "ca66dd80f508073e30277f9426dbfdcad6fbe71c",
+  "assertions": [
+    {
+      "name": "proton_pin_80dps_roundtrip",
+      "computed": "6.4771264163208334690397638971002996783370002733272e-78",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "q_at(80) solves proton Borromean substrate equation at 80 dps"
+    },
+    {
+      "name": "s5_s4_s3_s3xs2_character_branching",
+      "computed": "S4:(1,1);S3:(1,2);S3xS2:(1,1,1)",
+      "expected": "S4:(1,1);S3:(1,2);S3xS2:(1,1,1)",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Exact brute-force 120-element S_5 branching matches Lean theorems"
+    },
+    {
+      "name": "v_std_idempotent_projectors_80dps",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "Exact idempotency and mutual annihilation of P_sing1, P_gen3, P_doublet2"
+    },
+    {
+      "name": "conjugate_s3_in_s4_tetrahedral_gram",
+      "computed": "-0.33333333333333333333333333333333333333333333333333",
+      "expected": "-0.33333333333333333333333333333333333333333333333333",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "Normalized overlap cosine of conjugate S_3 ⊂ S_4 fixed lines in V_gen3 is -1/3"
+    },
+    {
+      "name": "morgan_voyce_b9_harmonic_and_bezout_80dps",
+      "computed": "2.1084395886461046448697148102540038015419922764737e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "b_9 = b_3(h^6+6h^4+9h^2+1) and Bezout coprimality of (b_3, b_5), (b_3, b_7)"
+    },
+    {
+      "name": "hoefsmit_h3_doublet_angle_unitarity",
+      "computed": "6.3253187659383139346091444307620114046259768294211e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "cos^2(theta_H) + sin^2(theta_H) = (1 + [3]_q) / [2]_q^2 = 1"
+    },
+    {
+      "name": "ckm_c2_hermitian_eigensolver_80dps",
+      "computed": "1.8448857772638433539457904068002624352776187622203e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "80-dps Hermitian eigendecomposition reconstructs Y_d and unitarity to < 1e-70"
+    },
+    {
+      "name": "ckm_unitarity_and_jarlskog_plaquette_80dps",
+      "computed": "2.1084395886461046448697148102540038015419922764737e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "All CKM candidate matrices satisfy V^H V = I_3 and J_{us,cb} = -J_{ud,cb} to < 1e-70"
+    },
+    {
+      "name": "cabibbo_two_gen_lean_identity_80dps",
+      "computed": "2.6355494858076308060871435128175047519274903455921e-82",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "([3]_q0^2 + 4 h^2) sin^2(2 theta_12) = 4 h^2 matches Lean `cabibbo_hecke_qThree_relation`"
+    },
+    {
+      "name": "pmns_reactor_h_sq_half_identity",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "U_PMNS = R_12(arcsin h, delta)^H U_TBM gives exact sin^2(theta_13) = (q0 - q0^-1)^2 / 2"
+    },
+    {
+      "name": "five_two_hyperbolic_volume_80dps",
+      "computed": "2.8281220883307831627638988092766349427709813173006",
+      "expected": "2.828122088330783",
+      "passed": true,
+      "tolerance": "1e-14",
+      "source": "Vol(5_2) = 3 D(y_1) on X^3 - 2 X^2 + 3 X - 1 = 0 at 80 dps"
+    },
+    {
+      "name": "cabled_burau_alexander_factorisation_80dps",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "Matches Lean `cabled_burau_alexander_factorisation` at t = q0, 2n+1 = 7"
+    },
+    {
+      "name": "cabled_alexander_golden_node_sign_flip",
+      "computed": "sign(w=3)=+1, sign(w=5)=-1",
+      "expected": "sign(w=3)=+1, sign(w=5)=-1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Delta_{4_1}(q0^{2w}) crosses its golden-ratio root phi^2 between w=3 and w=5"
+    },
+    {
+      "name": "h6_hoefsmit_and_markov_axioms_80dps",
+      "computed": "1.9771511014205276032378992219784967786113270403102e-79",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "Exact 80-dps H_6(q0) two-row Hoefsmit quadratic, braid, M1, and M2 stabilization axioms"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 125,
+  "computation": "sm8w-bring-ngen3-ckm-tau",
+  "scriptFile": "sm8w_bring_ngen3_ckm_tau_probe.py",
+  "scriptHash": "5129ac87a8ba",
+  "scriptCommitSha": "ca66dd80f508073e30277f9426dbfdcad6fbe71c",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/sm8w_bring_ngen3_ckm_tau/sm8w_bring_ngen3_ckm_tau_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/sm8w_bring_ngen3_ckm_tau/sm8w_bring_ngen3_ckm_tau_probe.py"
+  },
+  "description": "Pre-registered 80-dps evaluation for Standard Model Package 1 (`qou-gen3` / `Q-Gap-7`): (a) S_5 ⊃ S_4 ⊃ S_3 and S_5 ⊃ S_3 × S_2 canonical differential branching, conjugate S_3 vs Z_5 T(3,5) Bloch overlaps, and parameter-free CKM/PMNS candidate matrices vs PDG-2024; (b) Seifert-Torres cabled figure-eight Alexander/Burau factorisation, H_6(q0) two-row Markov traces of cable_2(4_1)*sigma_1^w, and satellite vs bare 5_2/T(2,7) tau/e mass-ratio candidates vs CODATA-2022 m_tau/m_e = 3477.23(23). Zero fitting; honest misses reported.",
+  "parameters": {
+    "work_dps": 80,
+    "q0_proton_80dps": "1.109978582751380807591669095610768879874499121873578736072814240181798963574483",
+    "hecke_defect_h": "0.20906029879563931543084621312967494385975749526302",
+    "hbar_q0": "0.099081716044258507839177117518906063985258373389446",
+    "q2_sym": "2.0108968667071222997524919780918628158892407484841",
+    "q3_sym": "3.0437062085325219894020193356773883097682139607135"
+  },
+  "data": {
+    "companion_lean_module": "folio/quantum-observable-universe/lean/QOU/StandardModel/BringGenerationSplitAndCKMTexture.lean",
+    "preregistration_file": "computations/probes/sm8w_bring_ngen3_ckm_tau/PREREGISTRATION.md",
+    "selected": "none (scope-(a) pre-registered exploratory comparison; zero fitting)",
+    "honest_generation_scope": {
+      "owner_guardrail": "Bring's generation count is not established unconditionally (2026-10-10 owner ruling)",
+      "canonical_h0_dim": 4,
+      "s4_branching": "4 -> 3 + 1",
+      "s3_branching": "4 -> 2 + 1 + 1 (3 -> 2 + 1 on V_gen3)",
+      "s3xs2_branching": "4 -> (2 x 1) + (1 x 1) + (1 x sgn)",
+      "filter_counts": {
+        "seifert_genus_le_4": [
+          3,
+          5,
+          7,
+          9
+        ],
+        "primitive_morgan_voyce_continuant": [
+          3,
+          5,
+          7
+        ],
+        "s5_equivariant_odd_order": [
+          3,
+          5
+        ]
+      },
+      "conditional_lean_class": "BringChiralGenerationSelectionHypothesis (0 instances, Rule 13a)",
+      "conjugate_s3_z5_overlap_singular_values": [
+        "0.35895116599395740898287058697615630296354491588027",
+        "0.92863142653489715436538566729788709515030567879068",
+        "1.1547005383792515290182975610039149112952035025403"
+      ],
+      "hoefsmit_h3_cos_theta": "0.49729054560491555599583923166486963184819073032851",
+      "hoefsmit_h3_sin_theta": "0.86758406696525115565116289153605239570497937739431"
+    },
+    "ckm_candidates": [
+      {
+        "candidate": "CKM-C0_unperturbed_identity",
+        "rationale": "Unbroken S_3 alignment V = I_3 (baseline miss)",
+        "unitarity_residual": "0.0",
+        "plaquette_antisymmetry_residual": "0.0",
+        "signed_J_CP": "0.0",
+        "comparison_vs_pdg2024": {
+          "V_us": {
+            "computed": "0.0",
+            "pdg2024": "0.2243",
+            "pdg2024_err": "0.0008",
+            "signed_rel_err_pct": "-100.0",
+            "pull_sigma": "-280.375"
+          },
+          "V_cb": {
+            "computed": "0.0",
+            "pdg2024": "0.0422",
+            "pdg2024_err": "0.0008",
+            "signed_rel_err_pct": "-100.0",
+            "pull_sigma": "-52.75"
+          },
+          "V_ub": {
+            "computed": "0.0",
+            "pdg2024": "0.00394",
+            "pdg2024_err": "0.00036",
+            "signed_rel_err_pct": "-100.0",
+            "pull_sigma": "-10.94444444"
+          },
+          "J_CP": {
+            "computed": "0.0",
+            "pdg2024": "0.0000308",
+            "pdg2024_err": "0.0000015",
+            "signed_rel_err_pct": "-100.0",
+            "pull_sigma": "-20.53333333"
+          }
+        }
+      },
+      {
+        "candidate": "CKM-C1a_hecke_hierarchy_z5_phase",
+        "rationale": "sin(theta_12)=h, sin(theta_23)=h^2, sin(theta_13)=h^3/[3]_q0, delta=2*pi/5 (Bring Z_5 phase)",
+        "unitarity_residual": "2.1084395886461046448697148102540038015419922764737e-81",
+        "plaquette_antisymmetry_residual": "0.0",
+        "signed_J_CP": "0.000025486462019323511236364236093852725489731153134722",
+        "comparison_vs_pdg2024": {
+          "V_us": {
+            "computed": "0.2090593567618298487600011686687301792178819086771",
+            "pdg2024": "0.2243",
+            "pdg2024_err": "0.0008",
+            "signed_rel_err_pct": "-6.79475846552",
+            "pull_sigma": "-19.05080405"
+          },
+          "V_cb": {
+            "computed": "0.043706011590652306705456125996354017427728289010584",
+            "pdg2024": "0.0422",
+            "pdg2024_err": "0.0008",
+            "signed_rel_err_pct": "3.56874784515",
+            "pull_sigma": "1.882514488"
+          },
+          "V_ub": {
+            "computed": "0.0030020088632138216872183383078916546690488482421778",
+            "pdg2024": "0.00394",
+            "pdg2024_err": "0.00036",
+            "signed_rel_err_pct": "-23.8068816443",
+            "pull_sigma": "-2.605530936"
+          },
+          "J_CP": {
+            "computed": "0.000025486462019323511236364236093852725489731153134722",
+            "pdg2024": "0.0000308",
+            "pdg2024_err": "0.0000015",
+            "signed_rel_err_pct": "-17.2517466905",
+            "pull_sigma": "-3.542358654"
+          }
+        }
+      },
+      {
+        "candidate": "CKM-C1b_hecke_hierarchy_s3_phase",
+        "rationale": "sin(theta_12)=h, sin(theta_23)=h^2, sin(theta_13)=h^3/[3]_q0, delta=pi/3 (S_3 Weyl phase)",
+        "unitarity_residual": "2.1084395886461046448697148102540038015419922764737e-81",
+        "plaquette_antisymmetry_residual": "0.0",
+        "signed_J_CP": "0.000023207793841004018871541270332365693792596080187904",
+        "comparison_vs_pdg2024": {
+          "V_us": {
+            "computed": "0.2090593567618298487600011686687301792178819086771",
+            "pdg2024": "0.2243",
+            "pdg2024_err": "0.0008",
+            "signed_rel_err_pct": "-6.79475846552",
+            "pull_sigma": "-19.05080405"
+          },
+          "V_cb": {
+            "computed": "0.043706011590652306705456125996354017427728289010584",
+            "pdg2024": "0.0422",
+            "pdg2024_err": "0.0008",
+            "signed_rel_err_pct": "3.56874784515",
+            "pull_sigma": "1.882514488"
+          },
+          "V_ub": {
+            "computed": "0.0030020088632138216872183383078916546690488482421778",
+            "pdg2024": "0.00394",
+            "pdg2024_err": "0.00036",
+            "signed_rel_err_pct": "-23.8068816443",
+            "pull_sigma": "-2.605530936"
+          },
+          "J_CP": {
+            "computed": "0.000023207793841004018871541270332365693792596080187904",
+            "pdg2024": "0.0000308",
+            "pdg2024_err": "0.0000015",
+            "signed_rel_err_pct": "-24.6500199967",
+            "pull_sigma": "-5.061470773"
+          }
+        }
+      },
+      {
+        "candidate": "CKM-C2_democratic_yukawa_svd_overlap",
+        "rationale": "V = U_u^H U_d from Jacobi-basis Hermitian Yukawas Y_u = diag(0,h^2,[3]_q0) and Hecke-perturbed Y_d",
+        "unitarity_residual": "1.0542197943230523224348574051270019007709961382369e-81",
+        "plaquette_antisymmetry_residual": "2.6518472341931147700383671124462851385627582975937e-87",
+        "signed_J_CP": "1.3124093528066661114810244707370364287498310431607e-87",
+        "comparison_vs_pdg2024": {
+          "V_us": {
+            "computed": "0.20185788868500433427617829192185339129433498117716",
+            "pdg2024": "0.2243",
+            "pdg2024_err": "0.0008",
+            "signed_rel_err_pct": "-10.0053996054",
+            "pull_sigma": "-28.05263914"
+          },
+          "V_cb": {
+            "computed": "0.046785720425153434646940320216431535839659037507162",
+            "pdg2024": "0.0422",
+            "pdg2024_err": "0.0008",
+            "signed_rel_err_pct": "10.8666360786",
+            "pull_sigma": "5.732150531"
+          },
+          "V_ub": {
+            "computed": "0.0006704487768573688169518925423008478888357845046699",
+            "pdg2024": "0.00394",
+            "pdg2024_err": "0.00036",
+            "signed_rel_err_pct": "-82.9835335823",
+            "pull_sigma": "-9.082086731"
+          },
+          "J_CP": {
+            "computed": "1.3124093528066661114810244707370364287498310431607e-87",
+            "pdg2024": "0.0000308",
+            "pdg2024_err": "0.0000015",
+            "signed_rel_err_pct": "-100.0",
+            "pull_sigma": "-20.53333333"
+          }
+        }
+      }
+    ],
+    "ckm_c3_cabibbo_two_gen_comparison": {
+      "tan2theta_eq_2h_over_q3": {
+        "sin_theta12": "0.068205868805251802250040371446012635130865082601259",
+        "rel_err_vs_Vus_pct": "-69.59167686"
+      },
+      "tantheta_eq_h": {
+        "sin_theta12": "0.20463618622207349578022835250774022082289245560913",
+        "rel_err_vs_Vus_pct": "-8.766747115"
+      },
+      "sintheta_eq_h": {
+        "sin_theta12": "0.20906029879563931543084621312967494385975749526302",
+        "rel_err_vs_Vus_pct": "-6.794338477"
+      },
+      "sintheta_eq_h_over_sqrt_q3": {
+        "sin_theta12": "0.11983128092251392648679320271132635557777750972495",
+        "rel_err_vs_Vus_pct": "-46.57544319"
+      }
+    },
+    "pmns_candidates": [
+      {
+        "candidate": "PMNS-P0_exact_tribimaximal",
+        "rationale": "Exact S_3 tribimaximal U_TBM (refuted on theta_13 > 0)",
+        "unitarity_residual": "2.1084395886461046448697148102540038015419922764737e-81",
+        "J_PMNS": "0.0",
+        "comparison_vs_pdg2024": {
+          "sin2_theta12": {
+            "computed": "0.33333333333333333333333333333333333333333333333333",
+            "pdg2024": "0.307",
+            "pdg2024_err": "0.013",
+            "signed_rel_err_pct": "8.5776330076",
+            "pull_sigma": "2.025641026"
+          },
+          "sin2_theta23": {
+            "computed": "0.5",
+            "pdg2024": "0.546",
+            "pdg2024_err": "0.021",
+            "signed_rel_err_pct": "-8.42490842491",
+            "pull_sigma": "-2.19047619"
+          },
+          "sin2_theta13": {
+            "computed": "0.0",
+            "pdg2024": "0.022",
+            "pdg2024_err": "0.0007",
+            "signed_rel_err_pct": "-100.0",
+            "pull_sigma": "-31.42857143"
+          }
+        }
+      },
+      {
+        "candidate": "PMNS-P1a_hecke_charged_lepton_tbm_maximal_cp",
+        "rationale": "U_PMNS = R_12(arcsin h, delta=pi/2)^H U_TBM => sin^2(theta_13) = h^2 / 2",
+        "unitarity_residual": "2.1084395886461046448697148102540038015419922764737e-81",
+        "J_PMNS": "-0.034073440238302297025074250339473754194953844333521",
+        "comparison_vs_pdg2024": {
+          "sin2_theta12": {
+            "computed": "0.34078044390591193298881876007691556090750828720348",
+            "pdg2024": "0.307",
+            "pdg2024_err": "0.013",
+            "signed_rel_err_pct": "11.0034019237",
+            "pull_sigma": "2.598495685"
+          },
+          "sin2_theta23": {
+            "computed": "0.48882933414113210051677185988462665863873756919479",
+            "pdg2024": "0.546",
+            "pdg2024_err": "0.021",
+            "signed_rel_err_pct": "-10.4708179229",
+            "pull_sigma": "-2.72241266"
+          },
+          "sin2_theta13": {
+            "computed": "0.021853104266260994701009667838694154884106980356753",
+            "pdg2024": "0.022",
+            "pdg2024_err": "0.0007",
+            "signed_rel_err_pct": "-0.667707880632",
+            "pull_sigma": "-0.2098510482"
+          }
+        }
+      },
+      {
+        "candidate": "PMNS-P1b_hecke_charged_lepton_tbm_z5_cp",
+        "rationale": "U_PMNS = R_12(arcsin h, delta=2*pi/5)^H U_TBM",
+        "unitarity_residual": "2.1084395886461046448697148102540038015419922764737e-81",
+        "J_PMNS": "-0.032405767371230889964095224019217499799791713400378",
+        "comparison_vs_pdg2024": {
+          "sin2_theta12": {
+            "computed": "0.29772240370201708858385427258481484558411496393446",
+            "pdg2024": "0.307",
+            "pdg2024_err": "0.013",
+            "signed_rel_err_pct": "-3.02201833811",
+            "pull_sigma": "-0.7136612537"
+          },
+          "sin2_theta23": {
+            "computed": "0.48882933414113210051677185988462665863873756919479",
+            "pdg2024": "0.546",
+            "pdg2024_err": "0.021",
+            "signed_rel_err_pct": "-10.4708179229",
+            "pull_sigma": "-2.72241266"
+          },
+          "sin2_theta13": {
+            "computed": "0.021853104266260994701009667838694154884106980356753",
+            "pdg2024": "0.022",
+            "pdg2024_err": "0.0007",
+            "signed_rel_err_pct": "-0.667707880632",
+            "pull_sigma": "-0.2098510482"
+          }
+        }
+      },
+      {
+        "candidate": "PMNS-P1c_hecke_charged_lepton_tbm_real",
+        "rationale": "U_PMNS = R_12(arcsin h, delta=0)^T U_TBM (CP-conserving real rotation)",
+        "unitarity_residual": "3.1626593829691569673045722153810057023129884147106e-81",
+        "J_PMNS": "0.0",
+        "comparison_vs_pdg2024": {
+          "sin2_theta12": {
+            "computed": "0.20144169882818931149303696370178045057898552193215",
+            "pdg2024": "0.307",
+            "pdg2024_err": "0.013",
+            "signed_rel_err_pct": "-34.3838114566",
+            "pull_sigma": "-8.119869321"
+          },
+          "sin2_theta23": {
+            "computed": "0.48882933414113210051677185988462665863873756919479",
+            "pdg2024": "0.546",
+            "pdg2024_err": "0.021",
+            "signed_rel_err_pct": "-10.4708179229",
+            "pull_sigma": "-2.72241266"
+          },
+          "sin2_theta13": {
+            "computed": "0.021853104266260994701009667838694154884106980356753",
+            "pdg2024": "0.022",
+            "pdg2024_err": "0.0007",
+            "signed_rel_err_pct": "-0.667707880632",
+            "pull_sigma": "-0.2098510482"
+          }
+        }
+      }
+    ],
+    "satellite_tau_analysis": {
+      "vol_4_1_80dps": "2.0298832128193072500424051085490405718833786150606",
+      "vol_5_2_80dps": "2.8281220883307831627638988092766349427709813173006",
+      "golden_ratio_phi": "1.6180339887498948482045868343656381177203091798058",
+      "cabled_alexander_winding_scaled_q0w": {
+        "w=3": "1.6723752174745673390847711490227158941143773662447",
+        "w=5": "-2.9462025026008748671589727510289240807991077736504",
+        "w=7": "-360.87247947134811854578091036984534903688096336666"
+      },
+      "h6_cabled_4_1_markov_traces": {
+        "w=3": "0.079818518558016876880467335877096503968994962013168",
+        "w=5": "0.10298980760100533704952750894208769755678765524667",
+        "w=7": "0.13066239065172765472060301213315161920659469925094"
+      },
+      "h6_cabled_4_1_bend": "1.0170310935144358315656646207767290901296190292644",
+      "observed_charged_lepton_bend": "12.295166765128311699254866661106685493913258542",
+      "tau_over_e_candidates": [
+        {
+          "candidate": "TAU-B0_bare_T27_volume",
+          "computed_m_tau_over_m_e": "0.0",
+          "codata2022_target": "3477.23",
+          "signed_rel_err_vs_codata2022_pct": "-100.0",
+          "abs_rel_err_vs_codata2022_pct": "100.0",
+          "pull_vs_codata2022_sigma": "-15118.3913",
+          "signed_rel_err_vs_belle2_3477_228_pct": "-100.0",
+          "rationale": "Vol(T(2,7)) = 0 (torus knot has zero hyperbolic volume)"
+        },
+        {
+          "candidate": "TAU-B1_bare_5_2_vol_k2",
+          "computed_m_tau_over_m_e": "288.07867727715669026057367912101077782398778175995",
+          "codata2022_target": "3477.23",
+          "signed_rel_err_vs_codata2022_pct": "-91.7152826452",
+          "abs_rel_err_vs_codata2022_pct": "91.7152826452",
+          "pull_vs_codata2022_sigma": "-13865.87532",
+          "signed_rel_err_vs_belle2_3477_228_pct": "-91.71527788",
+          "rationale": "Vol(5_2) / hbar_q0^2 (CAL-2 exponent k=2)"
+        },
+        {
+          "candidate": "TAU-B2_bare_5_2_vol_k3",
+          "computed_m_tau_over_m_e": "2907.4857479100958394220681228692417134997291038564",
+          "codata2022_target": "3477.23",
+          "signed_rel_err_vs_codata2022_pct": "-16.385003353",
+          "abs_rel_err_vs_codata2022_pct": "16.385003353",
+          "pull_vs_codata2022_sigma": "-2477.148922",
+          "signed_rel_err_vs_belle2_3477_228_pct": "-16.38495526",
+          "rationale": "Vol(5_2) / hbar_q0^3 (exponent k=3, -16.4% miss)"
+        },
+        {
+          "candidate": "TAU-S1_pure_cable_C27_4_1_jsj_vol_k2",
+          "computed_m_tau_over_m_e": "206.76832637067389028960958640990267593845820455103",
+          "codata2022_target": "3477.23",
+          "signed_rel_err_vs_codata2022_pct": "-94.0536482668",
+          "abs_rel_err_vs_codata2022_pct": "94.0536482668",
+          "pull_vs_codata2022_sigma": "-14219.39858",
+          "signed_rel_err_vs_belle2_3477_228_pct": "-94.0536448467",
+          "rationale": "Vol_JSJ(C_{2,7}(4_1)) / hbar_q0^2 = Vol(4_1)/hbar_q0^2 (Seifert cable piece has Vol=0; recovers muon)"
+        },
+        {
+          "candidate": "TAU-S2a_whitehead_satellite_jsj_vol_k2",
+          "computed_m_tau_over_m_e": "579.97733016965745978357714104219008304602025832198",
+          "codata2022_target": "3477.23",
+          "signed_rel_err_vs_codata2022_pct": "-83.3207084326",
+          "abs_rel_err_vs_codata2022_pct": "83.3207084326",
+          "pull_vs_codata2022_sigma": "-12596.75074",
+          "signed_rel_err_vs_belle2_3477_228_pct": "-83.3206988391",
+          "rationale": "(Vol(4_1) + 4*Catalan) / hbar_q0^2 (Whitehead hyperbolic pattern JSJ sum at k=2)"
+        },
+        {
+          "candidate": "TAU-S2b_whitehead_satellite_jsj_vol_k3",
+          "computed_m_tau_over_m_e": "5853.5252852361697597176319482599350838657406260988",
+          "codata2022_target": "3477.23",
+          "signed_rel_err_vs_codata2022_pct": "68.3387433456",
+          "abs_rel_err_vs_codata2022_pct": "68.3387433456",
+          "pull_vs_codata2022_sigma": "10331.71863",
+          "signed_rel_err_vs_belle2_3477_228_pct": "68.3388401691",
+          "rationale": "(Vol(4_1) + 4*Catalan) / hbar_q0^3 (Whitehead hyperbolic pattern JSJ sum at k=3)"
+        },
+        {
+          "candidate": "TAU-S3a_cabled_alexander_q0sq_dressed_k2",
+          "computed_m_tau_over_m_e": "614.62892390872056876465913653109902299887354074174",
+          "codata2022_target": "3477.23",
+          "signed_rel_err_vs_codata2022_pct": "-82.3241797664",
+          "abs_rel_err_vs_codata2022_pct": "82.3241797664",
+          "pull_vs_codata2022_sigma": "-12446.09164",
+          "signed_rel_err_vs_belle2_3477_228_pct": "-82.3241695998",
+          "rationale": "(Vol(4_1)/hbar_q0^2) * Delta_{C_{2,7}(4_1)}(q0^2)"
+        },
+        {
+          "candidate": "TAU-S3b_cabled_alexander_ratio_k3",
+          "computed_m_tau_over_m_e": "2390.7405277070327246483188931347170025988959025086",
+          "codata2022_target": "3477.23",
+          "signed_rel_err_vs_codata2022_pct": "-31.2458328121",
+          "abs_rel_err_vs_codata2022_pct": "31.2458328121",
+          "pull_vs_codata2022_sigma": "-4723.867271",
+          "signed_rel_err_vs_belle2_3477_228_pct": "-31.2457932667",
+          "rationale": "(Vol(4_1)/hbar_q0^3) * (Delta_{C_{2,7}(4_1)}(q0) / Delta_{C_{2,5}(4_1)}(q0))"
+        },
+        {
+          "candidate": "TAU-S4a_h6_cabled_markov_mul_k3",
+          "computed_m_tau_over_m_e": "272.67234473998049977960066846027346409221264373682",
+          "codata2022_target": "3477.23",
+          "signed_rel_err_vs_codata2022_pct": "-92.1583460185",
+          "abs_rel_err_vs_codata2022_pct": "92.1583460185",
+          "pull_vs_codata2022_sigma": "-13932.85937",
+          "signed_rel_err_vs_belle2_3477_228_pct": "-92.1583415082",
+          "rationale": "(Vol(4_1)/hbar_q0^3) * |tr_M(cable_2(4_1) * sigma_1^7)| in H_6(q0)"
+        },
+        {
+          "candidate": "TAU-S4b_h6_cabled_markov_div_k2",
+          "computed_m_tau_over_m_e": "1582.4624464571584170215921679791883770861427445156",
+          "codata2022_target": "3477.23",
+          "signed_rel_err_vs_codata2022_pct": "-54.4907168506",
+          "abs_rel_err_vs_codata2022_pct": "54.4907168506",
+          "pull_vs_codata2022_sigma": "-8238.119798",
+          "signed_rel_err_vs_belle2_3477_228_pct": "-54.490690675",
+          "rationale": "(Vol(4_1)/hbar_q0^2) / |tr_M(cable_2(4_1) * sigma_1^7)| in H_6(q0)"
+        }
+      ]
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

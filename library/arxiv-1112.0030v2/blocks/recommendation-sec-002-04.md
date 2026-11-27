@@ -1,1 +1,0 @@
-Moreover, the fact that the adjoint representation of $sl(2)$ is identical to the vector representation of $so(3)$ implies that \be \boxed{\phantom{\int} \CH^{sl(2), \tableau{2}} (K) \; \cong \; \CH^{so(3),V} (K) \phantom{\int}} \label{sl2so3} \ee should hold for every knot $K$.

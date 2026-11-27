@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-9502366v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9502366v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-ph-9502366v1",
+  "title": "Chiral Perturbation Theory",
   "contains": [
     "library/arxiv-hep-ph-9502366v1/sections/sec-front-matter",
     "library/arxiv-hep-ph-9502366v1/sections/sec-000",
@@ -38,6 +38,18 @@
     "library/arxiv-hep-ph-9502366v1/sections/sec-023"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Chiral Perturbation Theory — An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented.\n\n**Chiral Perturbation Theory**\n\n*Departament de F´ısica Teòrica and Institut de F´ısica Corpuscular*\n\n57 pp, 25 sections.\n\n**Abstract.** An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented. Several phenomenological applica- tions of the eﬀective Lagrangian technique to strong, electromagnetic and weak interactions are discussed. To be published in Reports on Progress in Physics February 1995\n\n**Outline.** Front matter; 1 Introduction; 2 Chiral symmetry; 3 Eﬀective chiral Lagrangian at lowest order; 4.2 Chiral loops; 4.3 The chiral anomaly; 5.1 Decay constants; 5.2 Electromagnetic form factors; 5.4 Meson and quark masses; 6 The role of resonances in ChPT; 7 Short-distance estimates of ChPT parameters; 8 ∆S = 1 non-leptonic weak interactions; 8.2 Radiative K Decays; 8.3 The chiral anomaly in non-leptonic K decay; 9 Baryons; 9.1 Loops; 9.2 Heavy baryon ChPT; 9.3 Non-leptonic hyperon decays",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -48,7 +60,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-ph-9502366v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9502366v1.pdf",
     "source_sha256": "56df064956ca03f86dd15324904fb90bb0a26ef0e7b1f422f10f9f6644b7304c",
     "pages": 57,
@@ -59,8 +73,8 @@
       "stamp_date": "22 Feb 1995"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -8,7 +8,7 @@ export default proposition({
   title:
     "Discrete Fourier transform diagonalises $C_5$ on the Bring's surface",
   tags: ["lagrange", "resolvent", "fourier", "c5", "brings-surface"],
-  lean: { ref: "qou:QOU.BringsSurface.lagrange_resolvent_transform",
+  lean: { ref: "qou:BraidKnotOctonion.lagrange_resolvent_transform",
     validation: "not_checked",
   },
   uses: [

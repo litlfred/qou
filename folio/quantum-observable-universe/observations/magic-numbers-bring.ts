@@ -5,12 +5,12 @@ export default conjecture({
   title:
     "Magic numbers $\\mathfrak{M} = \\{2, 8, 20, 28, 50, 82, 126\\}$ as ranks of $S_5$-stable Bring period sub-lattices",
   lean: {
-    ref: "qou:QOU.Conjectures.MagicNumbersBring",
+    ref: "qou:QOU.Core.MagicNumbersBring",
     validation: "not_checked",
   },
   uses: [
     "def:brings-coordinate-ring",
-    "prop:homological-shell-condensation",
+    "conj:homological-shell-condensation",
   ],
   cites: [
     "klein1888",

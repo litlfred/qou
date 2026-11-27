@@ -1,0 +1,1 @@
+Let C be a DG category, and for i = 0, 1, 2 let φi : Mi →Mi+1 be a morphism in C of degree ki. (1) The morphism φ1 ◦φ0 has degree k0 + k1, and dC(φ1 ◦φ0) = dC(φ1) ◦φ0 + (−1)k1 ·φ1 ◦dC(φ0). (2) If φ0 and φ1 are cocycles, then so is φ1 ◦φ0. Derived Categories | Amnon Yekutieli |

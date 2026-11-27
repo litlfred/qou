@@ -1,17 +1,14 @@
 {
   "$schema": "block-qa/v1",
-  "label": "prop:four-term-pair-nucleon",
-  "kind": "proposition",
+  "label": "conj:four-term-pair-nucleon",
+  "kind": "conjecture",
   "paths": {
     "ts": "folio/quantum-observable-universe/knots-particles-confinement/four-term-pair-nucleon.ts",
-    "md": "folio/quantum-observable-universe/knots-particles-confinement/four-term-pair-nucleon.md",
-    "lean": "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean"
+    "md": "folio/quantum-observable-universe/knots-particles-confinement/four-term-pair-nucleon.md"
   },
   "source_hashes": {
-    "md": "e30ec8cb3e64",
-    "ts": "797878064d80",
-    "lean": "7d1b3043b9b1",
-    "lean_statement": "366036490ad9"
+    "md": "992492ce1f10",
+    "ts": "87938a1b57dc"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -29,121 +26,121 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "bbc03dd9670f",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "f93c058febd4",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
           "script_hash": "d3230d986a2b",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
           "script_hash": "6d35011108e2",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
           "script_hash": "4dc9ee1f7d79",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
           "script_hash": "c35d809edf9a",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_commit_sha": "unknown",
+          "def_hash": "63a6e57fead9"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "5a542b9ddb77",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "63a23ee6bec2",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "voice-scholarly-default": [
@@ -154,23 +151,6 @@
           "lean": "1a9318072b3d"
         },
         "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "d57f31bc95cf",
-          "script_commit_sha": "3157bb0064d2a3a253ef3ae7bea19b5bbe12e591"
-        },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
-      },
-      {
-        "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "b8539569a318",
-          "lean": "1a9318072b3d"
-        },
-        "result": "pass",
         "notes": "Agentic heuristic check: pass.",
         "reviewed_at": "2026-07-19T17:19:09.000Z",
         "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
@@ -179,26 +159,44 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "7d0b29018b00",
+          "script_commit_sha": "unknown",
+          "def_hash": "90af5388e1e9"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "voice-title-scholarly": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "dbe50250022f",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "d8b8f090555d",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "voice-ai-slop": [
@@ -209,23 +207,6 @@
           "lean": "1a9318072b3d"
         },
         "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "d57f31bc95cf",
-          "script_commit_sha": "3157bb0064d2a3a253ef3ae7bea19b5bbe12e591"
-        },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
-      },
-      {
-        "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "b8539569a318",
-          "lean": "1a9318072b3d"
-        },
-        "result": "pass",
         "notes": "Agentic heuristic check: pass.",
         "reviewed_at": "2026-07-19T17:19:09.000Z",
         "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
@@ -234,86 +215,105 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "2f6a4616badd",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T11:32:54.315Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "voice-status-section": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "c5ea8e77a0b3",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T11:32:54.315Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "cf3d4ea0ab0a",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "ba466a97a2d7",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "7d1b3043b9b1",
-          "lean_statement": "366036490ad9"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "5c1ec1e16bd8",
-          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+          "script_hash": "8cef557a37d4",
+          "script_commit_sha": "unknown",
+          "def_hash": "2ff53167ead5"
         },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "block has no .lean sibling"
       }
     ],
     "q-usage-regime-detected": [
@@ -439,161 +439,161 @@
     "canonical-calibration-count": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "c58bf6bca27b",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "f12b2babd290",
+          "script_commit_sha": "unknown",
+          "def_hash": "e7148867194b"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "canonical-no-numerology": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "3871b924cf65",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "52b4ba95f5c3",
+          "script_commit_sha": "unknown",
+          "def_hash": "bfbb93c220cc"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "canonical-witness-pinned": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "3050ae1775d6",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "359b3756c129",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "canonical-script-not-deprecated": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "89bcd82bd3ff",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "e81239fd83a2",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "canonical-dilogarithm-context": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "a065b3633f0f",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "38f0bc84dae6",
+          "script_commit_sha": "unknown",
+          "def_hash": "5d8325c49fea"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "canonical-no-hardcoded-observable": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "96a346415fd2",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "ac1833be5944",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "canonical-cal4-acknowledged": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "2ca3d3131a21",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "da489d748555",
+          "script_commit_sha": "unknown",
+          "def_hash": "b5e2fdf9d66a"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "canonical-ck-tiered-not-binary": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "5fb9d70acf54",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "852b0645c90b",
+          "script_commit_sha": "unknown",
+          "def_hash": "c8836d721722"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "canonical-no-negative-result-in-paper": [
@@ -663,150 +663,157 @@
     "compute-witness-exists": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "47384e4fd1b4",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "13ec1960e3ad",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "compute-lp-dual-present": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "772b3e8dc930",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "6c278b93ad12",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "detangler-no-forward-ref": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc",
+          "graph": "d69043f9fd47"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "f6f0b2cd1afb",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "9555791a2758",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "detangler-section-band": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc",
+          "graph": "d69043f9fd47"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "696ee4c80040",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "819473f60bdc",
+          "script_commit_sha": "unknown",
+          "def_hash": "a88562c76c07"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "detangler-no-xchapter-fwd": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc",
+          "graph": "d69043f9fd47"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "b01f61430d2a",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "b8703f487cf4",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "not implemented: stub checker"
       }
     ],
     "detangler-archimedean-wall": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc",
+          "graph": "d69043f9fd47"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "3edb7220507a",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "c17b282a7de7",
+          "script_commit_sha": "unknown",
+          "def_hash": "19a5005a8bb6"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "block has no .lean sibling"
       }
     ],
     "detangler-block-tanglement": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc",
+          "graph": "d69043f9fd47"
         },
         "result": "warn",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "ac7512959351",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "c94bd6f761f1",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
         "metrics": {
           "fwd_emitted": 1,
           "fwd_received": 0,
           "tanglement_score": 1,
           "out_degree": 2,
-          "in_degree": 8,
-          "cone_size": 3,
-          "depth": 2,
-          "pagerank": 0.002059,
+          "in_degree": 6,
+          "cone_size": 13,
+          "depth": 9,
+          "pagerank": 0.000348,
           "edge_span_max": 2,
           "edge_span_mean": 2,
           "worst_target": "emits fwd-ref to quantum-observable-universe/nuclear-interactions: prop:confinement-operator-selection"
@@ -816,21 +823,22 @@
     "detangler-graph-energy": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc",
+          "graph": "d69043f9fd47"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "aacb0bf5d4b9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "858efa00043a",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
         "metrics": {
           "graph_energy": 0,
           "fwd_edge_count": 0,
@@ -841,125 +849,131 @@
     "detangler-topic-coherence": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc",
+          "graph": "d69043f9fd47"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "280aea9a61d8",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "97bd77959d5e",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "detangler-no-dependency-cycle": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc",
+          "graph": "d69043f9fd47"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "39dfc0abf653",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "aa75d0ebd53e",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "bib-cite-resolves": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "9b284af269a5",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
-          "deps_hash": "c6456bf489a8"
+          "script_hash": "43a01cf4178f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e703243fe06f"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "a730f195e37d",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
-          "deps_hash": "c6456bf489a8"
+          "script_hash": "49c66f46cf1f",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-metadata-ok": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "b7cc0ee7d062",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
-          "deps_hash": "c6456bf489a8"
+          "script_hash": "b61cdc0271cf",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "e08cc9c741f6"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-screenshot": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "d3202b194d13",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
-          "deps_hash": "c6456bf489a8"
+          "script_hash": "98acb8ffc477",
+          "script_commit_sha": "unknown",
+          "deps_hash": "3b50a96e80ae",
+          "def_hash": "17f40a4ba0f4"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "block has no .lean sibling"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -981,6 +995,25 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "da7e327f70e6",
+          "ts": "5f1028d392b2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d83daee37fd8",
+          "script_commit_sha": "unknown",
+          "deps_hash": "21d9ff417741",
+          "def_hash": "83422bec2bb4"
+        },
+        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276",
+        "notes": "block has no .lean sibling"
       }
     ],
     "proof-no-bare-sorries": [
@@ -1001,6 +1034,24 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "da7e327f70e6",
+          "ts": "5f1028d392b2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "2d2fc456ab53",
+          "script_commit_sha": "unknown",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276",
+        "notes": "block has no .lean sibling"
       }
     ],
     "proof-no-axiom-growth": [
@@ -1124,6 +1175,25 @@
         },
         "reviewed_at": "2026-08-09T13:00:52.835Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      },
+      {
+        "field_hash": {
+          "md": "da7e327f70e6",
+          "ts": "5f1028d392b2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "e8d0b02f4cef",
+          "script_commit_sha": "unknown",
+          "deps_hash": "16d8c7a8984e",
+          "def_hash": "a1e400281510"
+        },
+        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276",
+        "notes": "block has no .lean sibling"
       }
     ],
     "proof-no-placeholder-stub": [
@@ -1143,6 +1213,21 @@
         "reviewed_at": "2026-07-07T14:26:57.245751Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
         "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest — real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
+      },
+      {
+        "field_hash": {
+          "md": "da7e327f70e6",
+          "ts": "5f1028d392b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read of the .md and .ts at da84b06 (.ts change since the last review: kind prop→conj with renamedFrom ['prop:four-term-pair-nucleon']; .md opens '**Conjecture.**'). Photon is 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹, matching the 2026-11-20 ruling; σ₀σ₁⁻¹ = σ₀σ₁ − hσ₀ checked from σ₁⁻¹ = σ₁ − h. Conjecture block; the Lean carrier FourTermPairNucleonContext is content-bearing (two net equations) with no instance."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1162,6 +1247,22 @@
         "reviewed_at": "2026-07-07T14:26:57.245751Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "da7e327f70e6",
+          "ts": "5f1028d392b2"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read of the .md and .ts at da84b06 (.ts change since the last review: kind prop→conj with renamedFrom ['prop:four-term-pair-nucleon']; .md opens '**Conjecture.**'). Photon is 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹, matching the 2026-11-20 ruling; σ₀σ₁⁻¹ = σ₀σ₁ − hσ₀ checked from σ₁⁻¹ = σ₁ − h. 'This extra deficit drives beta decay.' (Neutron NF section) is an interpretive physical claim inside the conjecture statement block, with no separate remark."
       }
     ],
     "fit-section-chapter": [
@@ -1196,6 +1297,21 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "da7e327f70e6",
+          "ts": "5f1028d392b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read of the .md and .ts at da84b06 (.ts change since the last review: kind prop→conj with renamedFrom ['prop:four-term-pair-nucleon']; .md opens '**Conjecture.**'). Photon is 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹, matching the 2026-11-20 ruling; σ₀σ₁⁻¹ = σ₀σ₁ − hσ₀ checked from σ₁⁻¹ = σ₁ − h. Nucleon-from-pair-production conjecture sits in knots-particles-confinement."
       }
     ],
     "wall-side-statement": [
@@ -1215,6 +1331,21 @@
         "reviewed_at": "2026-07-07T14:26:57.245751Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "da7e327f70e6",
+          "ts": "5f1028d392b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read of the .md and .ts at da84b06 (.ts change since the last review: kind prop→conj with renamedFrom ['prop:four-term-pair-nucleon']; .md opens '**Conjecture.**'). Photon is 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹, matching the 2026-11-20 ruling; σ₀σ₁⁻¹ = σ₀σ₁ − hσ₀ checked from σ₁⁻¹ = σ₁ − h. Statement is about braid words and NF nets; the ℝ in the Lean is forced by the decimal net targets (see .ts §7c note)."
       }
     ],
     "wall-side-proof": [
@@ -1234,9 +1365,37 @@
         "reviewed_at": "2026-07-07T14:26:57.245751Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "da7e327f70e6",
+          "ts": "5f1028d392b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read of the .md and .ts at da84b06 (.ts change since the last review: kind prop→conj with renamedFrom ['prop:four-term-pair-nucleon']; .md opens '**Conjecture.**'). Photon is 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹, matching the 2026-11-20 ruling; σ₀σ₁⁻¹ = σ₀σ₁ − hσ₀ checked from σ₁⁻¹ = σ₁ − h. No proof in the block (conjecture)."
       }
     ],
     "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
       {
         "field_hash": {
           "ts": "b8539569a318",
@@ -1250,19 +1409,6 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (folio/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean); stale agent flag refreshed (sorry discharged after prior review)."
-      },
-      {
-        "result": "pass",
-        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        }
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1347,6 +1493,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "da7e327f70e6",
+          "ts": "5f1028d392b2"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read of the .md and .ts at da84b06 (.ts change since the last review: kind prop→conj with renamedFrom ['prop:four-term-pair-nucleon']; .md opens '**Conjecture.**'). Photon is 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹, matching the 2026-11-20 ruling; σ₀σ₁⁻¹ = σ₀σ₁ − hσ₀ checked from σ₁⁻¹ = σ₁ − h. Lean `four_term_pair_nucleon` is still ⟨ctx.proton_net_match, ctx.neutron_net_match⟩, a bare projection of two class fields (scripts/lean-self-assuming-audit.py: conjunction-is-conclusion). Since the block is now a conjecture and the .ts status note says nothing in Lean computes the nets, the projection is disclosed, not laundered. The two targets 0.999 / 0.811 are GS-reduction outputs written as decimal literals in the class, not experimental values; the 2026-08-08 .ts note calls them 'measured', which is the wrong word."
       }
     ],
     "proof-no-trivial-true": [
@@ -1428,6 +1590,22 @@
         "notes": "No false claims identified in 'Nucleon derivation from 4-term photon pair production': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/particle-interactions/four-term-pair-nucleon.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-vacuous": [
@@ -1448,6 +1626,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Nucleon derivation from 4-term photon pair production' presents substantial mathematical content: The proton and neutron are derived — not asserted — from three independent $\\gamma\\gamma$ pair productions using the ...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-circular": [
@@ -1469,6 +1663,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Nucleon derivation from 4-term photon pair production'.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/particle-interactions/four-term-pair-nucleon.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-overclaim": [
@@ -1489,6 +1699,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Nucleon derivation from 4-term photon pair production' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-hidden-dof": [
@@ -1510,6 +1736,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Nucleon derivation from 4-term photon pair production'.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/particle-interactions/four-term-pair-nucleon.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-non-sequitur": [
@@ -1531,6 +1773,22 @@
         "notes": "The argument flow in 'Nucleon derivation from 4-term photon pair production' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/particle-interactions/four-term-pair-nucleon.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1552,6 +1810,22 @@
         "notes": "The referenced Lean file folio/quantum-observable-universe/particle-interactions/four-term-pair-nucleon.lean is missing, leading to complete divergence.",
         "severity": "minor",
         "evidence": "The referenced Lean file folio/quantum-observable-universe/particle-interactions/four-term-pair-nucleon.lean is missing, leading to complete divergence."
+      },
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-citation-misuse": [
@@ -1573,6 +1847,22 @@
         "notes": "No citations are present in 'Nucleon derivation from 4-term photon pair production', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/particle-interactions/four-term-pair-nucleon.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1594,6 +1884,22 @@
         "notes": "Key terms and symbols in 'Nucleon derivation from 4-term photon pair production' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/particle-interactions/four-term-pair-nucleon.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-empirical-fragility": [
@@ -1615,6 +1921,22 @@
         "notes": "The algebraic and logical relations in 'Nucleon derivation from 4-term photon pair production' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/particle-interactions/four-term-pair-nucleon.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-physical-implausibility": [
@@ -1636,6 +1958,22 @@
         "notes": "The physical concepts described in 'Nucleon derivation from 4-term photon pair production' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/particle-interactions/four-term-pair-nucleon.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-reproducibility": [
@@ -1657,6 +1995,22 @@
         "notes": "The derivation steps and formal definitions in 'Nucleon derivation from 4-term photon pair production' are reproducible.",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/particle-interactions/four-term-pair-nucleon.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "block has no .lean sibling"
       }
     ],
     "da-referee-verdict": [
@@ -1680,6 +2034,22 @@
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file folio/quantum-observable-universe/particle-interactions/four-term-pair-nucleon.lean is missing entirely, preventing formal verification of the claims in 'Nucleon derivation from 4-term photon pair production'.",
         "evidence": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/particle-interactions/four-term-pair-nucleon.lean is missing."
+      },
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "block has no .lean sibling"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1691,61 +2061,61 @@
     "voice-probe-narrative": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "6bbdba8de441",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T11:32:54.315Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "cite-named-theorem": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "0d3f002d7926",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
         },
-        "reviewed_at": "2026-08-09T11:32:54.315Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "voice-agent-speak": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "pipeline/qa-checkers-voice.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "b7748b7ab714",
+          "script_commit_sha": "unknown",
+          "def_hash": "2cfefc829099"
         },
-        "reviewed_at": "2026-08-09T11:32:54.315Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ],
     "expo-milnor-clarity": [
@@ -1847,22 +2217,22 @@
     "uses-editorial-hygiene": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-uses.ts",
+          "id": "pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "1d50b09b0497",
-          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
-          "deps_hash": "c7f602946422"
+          "script_hash": "63814f2a6677",
+          "script_commit_sha": "unknown",
+          "deps_hash": "03b88f610b1f",
+          "def_hash": "f0a866b13629"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
         "metrics": {
           "uses_count": 2,
           "broken_edges": 0,
@@ -1873,53 +2243,80 @@
     "uses-formal-coverage": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-uses.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "b7b208d4a0c4",
-          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
-          "deps_hash": "f9b547e15cfd"
+          "script_hash": "82fd1e2e6831",
+          "script_commit_sha": "unknown",
+          "deps_hash": "794eb6c16a59",
+          "def_hash": "ce2b8102b97f"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "metrics": {
-          "formal_only_count": 0,
-          "editorial_only_count": 2
-        }
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "block has no .lean sibling"
       }
     ],
     "lean-ref-owns-decl": [
       {
         "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80",
-          "lean": "1a9318072b3d",
-          "lean_statement": "173dec05affc"
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-uses.ts",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-uses.ts",
+          "actor": "local-sweep",
           "version": "v1",
-          "script_hash": "b1c323c3439c",
-          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
-          "deps_hash": "c7f602946422"
+          "script_hash": "926f3fa820ec",
+          "script_commit_sha": "unknown",
+          "deps_hash": "c378066449c5",
+          "def_hash": "d292915cbf8a"
         },
-        "reviewed_at": "2026-08-09T13:00:52.835Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
         "metrics": {
           "decl_claimants": 1
         }
       }
     ],
     "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "e30ec8cb3e64",
+          "ts": "797878064d80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:11.938Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no assert-by-denial construction."
+      },
+      {
+        "field_hash": {
+          "md": "da7e327f70e6",
+          "ts": "5f1028d392b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read of the .md and .ts at da84b06 (.ts change since the last review: kind prop→conj with renamedFrom ['prop:four-term-pair-nucleon']; .md opens '**Conjecture.**'). Photon is 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹, matching the 2026-11-20 ruling; σ₀σ₁⁻¹ = σ₀σ₁ − hσ₀ checked from σ₁⁻¹ = σ₁ − h. 'the sweep is a consistency check of the construction, not a test of a physical decoupling' is a scope statement that removes a reading the numbers would otherwise invite; kept."
+      },
       {
         "field_hash": {
           "md": "e30ec8cb3e64",
@@ -1936,7 +2333,9 @@
         "reviewed_at": "2026-08-15T10:30:59.102Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
-      },
+      }
+    ],
+    "trap-rhetorical-pivot": [
       {
         "field_hash": {
           "md": "e30ec8cb3e64",
@@ -1948,12 +2347,25 @@
           "id": "agent:kp-b2",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-15T12:14:11.938Z",
+        "reviewed_at": "2026-08-15T12:14:11.978Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
-        "evidence": "Full read; no assert-by-denial construction."
-      }
-    ],
-    "trap-rhetorical-pivot": [
+        "evidence": "Full read; no setup-then-reframe pivot."
+      },
+      {
+        "field_hash": {
+          "md": "da7e327f70e6",
+          "ts": "5f1028d392b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read of the .md and .ts at da84b06 (.ts change since the last review: kind prop→conj with renamedFrom ['prop:four-term-pair-nucleon']; .md opens '**Conjecture.**'). Photon is 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹, matching the 2026-11-20 ruling; σ₀σ₁⁻¹ = σ₀σ₁ − hσ₀ checked from σ₁⁻¹ = σ₁ − h. No instance."
+      },
       {
         "field_hash": {
           "md": "e30ec8cb3e64",
@@ -1970,7 +2382,9 @@
         "reviewed_at": "2026-08-15T10:30:59.102Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
-      },
+      }
+    ],
+    "trap-em-dash": [
       {
         "field_hash": {
           "md": "e30ec8cb3e64",
@@ -1982,12 +2396,25 @@
           "id": "agent:kp-b2",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-15T12:14:11.978Z",
+        "reviewed_at": "2026-08-15T12:14:12.016Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
-        "evidence": "Full read; no setup-then-reframe pivot."
-      }
-    ],
-    "trap-em-dash": [
+        "evidence": "Full read; em-dash use absent or true parenthetical/range only, low density."
+      },
+      {
+        "field_hash": {
+          "md": "da7e327f70e6",
+          "ts": "5f1028d392b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read of the .md and .ts at da84b06 (.ts change since the last review: kind prop→conj with renamedFrom ['prop:four-term-pair-nucleon']; .md opens '**Conjecture.**'). Photon is 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹, matching the 2026-11-20 ruling; σ₀σ₁⁻¹ = σ₀σ₁ − hσ₀ checked from σ₁⁻¹ = σ₁ − h. No instance."
+      },
       {
         "field_hash": {
           "md": "e30ec8cb3e64",
@@ -2004,7 +2431,9 @@
         "reviewed_at": "2026-08-15T10:30:59.102Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 174 words)"
-      },
+      }
+    ],
+    "trap-triples": [
       {
         "field_hash": {
           "md": "e30ec8cb3e64",
@@ -2016,12 +2445,25 @@
           "id": "agent:kp-b2",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-15T12:14:12.016Z",
+        "reviewed_at": "2026-08-15T12:14:12.059Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
-        "evidence": "Full read; em-dash use absent or true parenthetical/range only, low density."
-      }
-    ],
-    "trap-triples": [
+        "evidence": "Full read; no reflex three-item lists; enumerations are substantive."
+      },
+      {
+        "field_hash": {
+          "md": "da7e327f70e6",
+          "ts": "5f1028d392b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read of the .md and .ts at da84b06 (.ts change since the last review: kind prop→conj with renamedFrom ['prop:four-term-pair-nucleon']; .md opens '**Conjecture.**'). Photon is 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹, matching the 2026-11-20 ruling; σ₀σ₁⁻¹ = σ₀σ₁ − hσ₀ checked from σ₁⁻¹ = σ₁ − h. No instance."
+      },
       {
         "field_hash": {
           "md": "e30ec8cb3e64",
@@ -2038,7 +2480,9 @@
         "reviewed_at": "2026-08-15T10:30:59.102Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 174 words)"
-      },
+      }
+    ],
+    "trap-closing-aphorism": [
       {
         "field_hash": {
           "md": "e30ec8cb3e64",
@@ -2050,12 +2494,26 @@
           "id": "agent:kp-b2",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-15T12:14:12.059Z",
+        "reviewed_at": "2026-08-15T12:14:12.099Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
-        "evidence": "Full read; no reflex three-item lists; enumerations are substantive."
-      }
-    ],
-    "trap-closing-aphorism": [
+        "evidence": "Closer 'The strong interaction erases the initial electromagnetic conditions.' interprets the phi_01 sweep result physically.",
+        "notes": "pass-with-note: plain physical interpretation of the stated sweep invariance, not manufactured quotability."
+      },
+      {
+        "field_hash": {
+          "md": "da7e327f70e6",
+          "ts": "5f1028d392b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read of the .md and .ts at da84b06 (.ts change since the last review: kind prop→conj with renamedFrom ['prop:four-term-pair-nucleon']; .md opens '**Conjecture.**'). Photon is 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹, matching the 2026-11-20 ruling; σ₀σ₁⁻¹ = σ₀σ₁ − hσ₀ checked from σ₁⁻¹ = σ₁ − h. No instance."
+      },
       {
         "field_hash": {
           "md": "e30ec8cb3e64",
@@ -2072,7 +2530,9 @@
         "reviewed_at": "2026-08-15T10:30:59.102Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
-      },
+      }
+    ],
+    "trap-meta-commentary": [
       {
         "field_hash": {
           "md": "e30ec8cb3e64",
@@ -2084,13 +2544,25 @@
           "id": "agent:kp-b2",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-15T12:14:12.099Z",
+        "reviewed_at": "2026-08-15T12:14:12.135Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
-        "evidence": "Closer 'The strong interaction erases the initial electromagnetic conditions.' interprets the phi_01 sweep result physically.",
-        "notes": "pass-with-note: plain physical interpretation of the stated sweep invariance, not manufactured quotability."
-      }
-    ],
-    "trap-meta-commentary": [
+        "evidence": "Full read; no narrated emphasis (no 'we emphasize'/'note the framing')."
+      },
+      {
+        "field_hash": {
+          "md": "da7e327f70e6",
+          "ts": "5f1028d392b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read of the .md and .ts at da84b06 (.ts change since the last review: kind prop→conj with renamedFrom ['prop:four-term-pair-nucleon']; .md opens '**Conjecture.**'). Photon is 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹, matching the 2026-11-20 ruling; σ₀σ₁⁻¹ = σ₀σ₁ − hσ₀ checked from σ₁⁻¹ = σ₁ − h. No instance."
+      },
       {
         "field_hash": {
           "md": "e30ec8cb3e64",
@@ -2107,7 +2579,9 @@
         "reviewed_at": "2026-08-15T10:30:59.102Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
-      },
+      }
+    ],
+    "trap-thesis-restatement": [
       {
         "field_hash": {
           "md": "e30ec8cb3e64",
@@ -2119,12 +2593,25 @@
           "id": "agent:kp-b2",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-15T12:14:12.135Z",
+        "reviewed_at": "2026-08-15T12:14:12.171Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
-        "evidence": "Full read; no narrated emphasis (no 'we emphasize'/'note the framing')."
-      }
-    ],
-    "trap-thesis-restatement": [
+        "evidence": "Full read; no block-final restatement of established content."
+      },
+      {
+        "field_hash": {
+          "md": "da7e327f70e6",
+          "ts": "5f1028d392b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read of the .md and .ts at da84b06 (.ts change since the last review: kind prop→conj with renamedFrom ['prop:four-term-pair-nucleon']; .md opens '**Conjecture.**'). Photon is 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹, matching the 2026-11-20 ruling; σ₀σ₁⁻¹ = σ₀σ₁ − hσ₀ checked from σ₁⁻¹ = σ₁ − h. No instance."
+      },
       {
         "field_hash": {
           "md": "e30ec8cb3e64",
@@ -2141,7 +2628,9 @@
         "reviewed_at": "2026-08-15T10:30:59.102Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
-      },
+      }
+    ],
+    "trap-performed-warmth": [
       {
         "field_hash": {
           "md": "e30ec8cb3e64",
@@ -2153,12 +2642,25 @@
           "id": "agent:kp-b2",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-15T12:14:12.171Z",
+        "reviewed_at": "2026-08-15T12:14:12.207Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
-        "evidence": "Full read; no block-final restatement of established content."
-      }
-    ],
-    "trap-performed-warmth": [
+        "evidence": "Full read; institutional register throughout, no personal warmth."
+      },
+      {
+        "field_hash": {
+          "md": "da7e327f70e6",
+          "ts": "5f1028d392b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read of the .md and .ts at da84b06 (.ts change since the last review: kind prop→conj with renamedFrom ['prop:four-term-pair-nucleon']; .md opens '**Conjecture.**'). Photon is 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹, matching the 2026-11-20 ruling; σ₀σ₁⁻¹ = σ₀σ₁ − hσ₀ checked from σ₁⁻¹ = σ₁ − h. No instance."
+      },
       {
         "field_hash": {
           "md": "e30ec8cb3e64",
@@ -2175,7 +2677,9 @@
         "reviewed_at": "2026-08-15T10:30:59.102Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
-      },
+      }
+    ],
+    "trap-superlative": [
       {
         "field_hash": {
           "md": "e30ec8cb3e64",
@@ -2187,12 +2691,25 @@
           "id": "agent:kp-b2",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-15T12:14:12.207Z",
+        "reviewed_at": "2026-08-15T12:14:12.243Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
-        "evidence": "Full read; institutional register throughout, no personal warmth."
-      }
-    ],
-    "trap-superlative": [
+        "evidence": "Full read; no unqualified maximum-strength claims."
+      },
+      {
+        "field_hash": {
+          "md": "da7e327f70e6",
+          "ts": "5f1028d392b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read of the .md and .ts at da84b06 (.ts change since the last review: kind prop→conj with renamedFrom ['prop:four-term-pair-nucleon']; .md opens '**Conjecture.**'). Photon is 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹, matching the 2026-11-20 ruling; σ₀σ₁⁻¹ = σ₀σ₁ − hσ₀ checked from σ₁⁻¹ = σ₁ − h. 'the unique minimum-action confinement operator' rests on prop:confinement-operator-selection, which is in uses[]; acceptable in a conjecture block."
+      },
       {
         "field_hash": {
           "md": "e30ec8cb3e64",
@@ -2209,7 +2726,9 @@
         "reviewed_at": "2026-08-15T10:30:59.102Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
-      },
+      }
+    ],
+    "trap-nonspeakable": [
       {
         "field_hash": {
           "md": "e30ec8cb3e64",
@@ -2221,12 +2740,25 @@
           "id": "agent:kp-b2",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-15T12:14:12.243Z",
+        "reviewed_at": "2026-08-15T12:14:12.280Z",
         "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
-        "evidence": "Full read; no unqualified maximum-strength claims."
-      }
-    ],
-    "trap-nonspeakable": [
+        "evidence": "Full read; prose parses aloud; no stalling noun chains."
+      },
+      {
+        "field_hash": {
+          "md": "da7e327f70e6",
+          "ts": "5f1028d392b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-refresh-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T19:30:00.000Z",
+        "reviewed_sha": "da84b0638b865e5ad2fb78f8eb09caff44827982",
+        "evidence": "Full read of the .md and .ts at da84b06 (.ts change since the last review: kind prop→conj with renamedFrom ['prop:four-term-pair-nucleon']; .md opens '**Conjecture.**'). Photon is 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹, matching the 2026-11-20 ruling; σ₀σ₁⁻¹ = σ₀σ₁ − hσ₀ checked from σ₁⁻¹ = σ₁ − h. No instance."
+      },
       {
         "field_hash": {
           "md": "e30ec8cb3e64",
@@ -2243,21 +2775,6 @@
         "reviewed_at": "2026-08-15T10:30:59.102Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
-      },
-      {
-        "field_hash": {
-          "md": "e30ec8cb3e64",
-          "ts": "797878064d80"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:kp-b2",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-15T12:14:12.280Z",
-        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
-        "evidence": "Full read; prose parses aloud; no stalling noun chains."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2278,9 +2795,235 @@
         },
         "reviewed_at": "2026-08-15T21:15:41.696Z",
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5"
+      },
+      {
+        "field_hash": {
+          "md": "da7e327f70e6",
+          "ts": "5f1028d392b2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-wall.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "c3dab60e46d6",
+          "script_commit_sha": "unknown",
+          "def_hash": "10db4d17cd96"
+        },
+        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-sci/pipeline/qa-checkers-render.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "unknown",
+          "def_hash": "440226b73b33"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
+      }
+    ],
+    "acronym-in-glossary": [
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "folio-assistant-core/pipeline/qa-checkers-acronyms.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "d3960b611468",
+          "script_commit_sha": "unknown",
+          "def_hash": "340b4b0dd5c5"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "1 acronym(s) are candidates for the glossary: NF. Run glossary:acronyms for the folio-wide list with expansions."
+      }
+    ],
+    "foreshadows-point-forward": [
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc",
+          "graph": "d69043f9fd47"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-extended.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "a5e024fc97a0",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
+      }
+    ],
+    "da-arity-conflation": [
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "dak-companion-present": [
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      }
+    ],
+    "dak-bpmn-has-process": [
+      {
+        "field_hash": {
+          "md": "da7e327f70e6",
+          "ts": "5f1028d392b2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      }
+    ],
+    "dak-dmn-has-decision-table": [
+      {
+        "field_hash": {
+          "md": "da7e327f70e6",
+          "ts": "5f1028d392b2"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_tree": "c652e7378e41837ae58d95798a5ca1caaebb2276",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      }
+    ],
+    "dak-fsh-declares-kind": [
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      }
+    ],
+    "dak-label-prefix-matches-kind": [
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-sweep.ts",
+          "actor": "local-sweep",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408",
+        "notes": "criterion applies to dak; block kind \"conjecture\" is mathpaper"
+      }
+    ],
+    "id-unique": [
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "bcd452a1177c"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
+      }
+    ],
+    "id-stable": [
+      {
+        "field_hash": {
+          "md": "992492ce1f10",
+          "ts": "87938a1b57dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-ids.ts",
+          "actor": "local-sweep",
+          "version": "v1",
+          "script_hash": "6d28aad375e8",
+          "script_commit_sha": "unknown",
+          "def_hash": "f0a866b13629"
+        },
+        "reviewed_at": "2026-11-24T10:09:22.199Z",
+        "reviewed_tree": "b3ab725b5a6d6393be5ecef6fc4de085d51b3408"
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-24T10:09:22.199Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

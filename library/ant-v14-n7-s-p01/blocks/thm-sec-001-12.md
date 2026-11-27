@@ -1,0 +1,1 @@
+There is a canonical, Hecke-equivariant injection Sk,k(UF,1(n)) ,→H1 c(YF,1(n), Vkk(C)). Moreover, if 9 ∈Sk,k(UF,1(n)) is a normalised eigenform, this map induces isomorphisms of 1-dimensional C-vector spaces Sk,k(UF,1(n))[9] ∼= −→H1 c(YF,1(n), Vkk(C))[9] ∼= −→H1(YF,1(n), Vkk(C))[9].

@@ -1,0 +1,69 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0108011v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The Homfly polynomial of the decorated Hopf link",
+  "contains": [
+    "library/arxiv-math-0108011v1/sections/sec-front-matter",
+    "library/arxiv-math-0108011v1/sections/sec-000",
+    "library/arxiv-math-0108011v1/sections/sec-001",
+    "library/arxiv-math-0108011v1/sections/sec-002",
+    "library/arxiv-math-0108011v1/sections/sec-003",
+    "library/arxiv-math-0108011v1/sections/sec-004",
+    "library/arxiv-math-0108011v1/sections/sec-005",
+    "library/arxiv-math-0108011v1/sections/sec-006",
+    "library/arxiv-math-0108011v1/sections/sec-007",
+    "library/arxiv-math-0108011v1/sections/sec-008",
+    "library/arxiv-math-0108011v1/sections/sec-009",
+    "library/arxiv-math-0108011v1/sections/sec-010",
+    "library/arxiv-math-0108011v1/sections/sec-011",
+    "library/arxiv-math-0108011v1/sections/sec-012"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The Homfly polynomial of the decorated Hopf link — The main goal is to ﬁnd the Homﬂy polynomial of a link formed by decorating each component of the Hopf link with the closure of a directly oriented\n\n**The Homfly polynomial of the decorated Hopf link**\n\n*HUGH R. MORTON and SASCHA G. LUKAC 1*\n\n25 pp, 14 sections.\n\n**Abstract.** The main goal is to ﬁnd the Homﬂy polynomial of a link formed by decorating each component of the Hopf link with the closure of a directly oriented tangle. Such decorations are spanned in the Hom- ﬂy skein of the annulus by elements Qλ, depending on partitions λ. We show how the 2-variable Homﬂy invariant ⟨λ, µ⟩of the Hopf link arising from decorations Qλ and Qµ can be found from the Schur symmetric function sµ of an explicit power series depending on λ. We show also that the quantum invariant of the Hopf link coloured by irreducible sl(N)q modules Vλ and Vµ, which is a 1-variable speciali- sation of ⟨λ, µ⟩, can be expressed in terms of an N × N minor of the Vandermonde matrix (qij).\n\n**Outline.** Front matter; 1 The skein models.; 1.1 The plane; 1.2 The Hecke algebras; 1.3 The annulus.; 1.4 Interrelations; 1.5 The Hopf link; 2 Symmetric functions and the skein of the ann; 2.1 Formal Schur functions; 2.2 Applications in the skein of the annulus; 3 The Hopf link decorated with columns and row; 4 The Hopf link decorated with any Young diagr; 4.2 An explicit example; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 4.4: We have Eλ(t) = l(λ) Y j=1 1 + v−1s2λj−2j+1t 1 + v−1s−2j+1t E∅(t) for any Young diagram λ.\n- Corollary 1.2: For any elements X and Y of C and any Young diagram λ we have ⟨Qλ, X⟩⟨Qλ, Y ⟩= ⟨Qλ⟩⟨Qλ, XY ⟩.\n- Lemma 1.1: We can write tλ(Y ) = ⟨Qλ, Y ⟩/ ⟨Qλ⟩.\n- Lemma 2.1: We have sµ(Eλ(t)) = ⟨λ⟩⟨λ, µ⟩ for any Young diagrams λ and µ.\n- Lemma 2.2: We have Eλ(t)Hλ(−t) = 1 for any Young diagram λ.\n- Lemma 3.1: We have ⟨ci, dj⟩= ⟨ci⟩⟨dj⟩v−1(s2j −s2(j−i) + s−2i) −v v−1 −v for any integers i ≥0 and j ≥0.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-math-0108011v1",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "The Homfly polynomial of the decorated Hopf link",
+      "basis": "Printed title on page 1 (H. R. Morton and S. G. Lukac); the extracted title was the arXiv stamp",
+      "extracted_title": "arXiv:math/0108011v1 [math.GT] 2 Aug 2001",
+      "corrected_on": "2026-11-18",
+      "extracted": "The Homfly polynomial of the decorated Hopf link"
+    },
+    "source_file": "0108011v1.pdf",
+    "source_sha256": "e4af4b5d3c5ff6cd74aade171241729533beefc5d0c937407d3b050ab26bde44",
+    "pages": 25,
+    "arxiv": {
+      "id": "math/0108011",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "2 Aug 2001"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

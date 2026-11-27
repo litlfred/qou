@@ -17,4 +17,7 @@ export default remark({
     "prop:hoefsmit-seminormal-form",
     "def:birthday-grading",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): It refines the Jones polynomial ([Jones polynomial birthday refinement](#conj:jones-birthday)) and places knot complexity on a transfinite scale." },
+  ],
 });

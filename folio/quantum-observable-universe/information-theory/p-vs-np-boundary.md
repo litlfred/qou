@@ -1,4 +1,3 @@
-**Conjecture ($\mathrm{P}$ versus $\mathrm{NP}$ as boundary emptiness).**
 Let $L = \hat{\beta}$ be the closure of a braid $\beta$ encoding a decision problem. Let $\mathcal{H}_c(L, q)$ denote its computational boundary.
 $$
   \mathrm{P} = \mathrm{NP} \Longleftrightarrow \mathcal{H}_c(L, q) = \varnothing \text{ for every NP link } L

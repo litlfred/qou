@@ -1,0 +1,169 @@
+{
+  "engine": "mpmath (chi_general_word)",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T23:30:09.169322+00:00",
+  "commitSha": "005005c454ac11e2979de03ae089714f0b701a47",
+  "assertions": [
+    {
+      "name": "cable_crossing_moves_letters",
+      "computed": "1.4935e-59",
+      "expected": 0,
+      "passed": true,
+      "tolerance": "1.0e-50"
+    },
+    {
+      "name": "relabelled_word_equals_W_in_every_character",
+      "computed": "2.1781e-60",
+      "expected": 0,
+      "passed": true,
+      "tolerance": "1.0e-50"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "he4-order-conjugation",
+  "scriptFile": "order_conjugation_probe.py",
+  "scriptHash": "cfd7bca5bc08",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "db052d35b0334597"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/he4_order_conjugation/order_conjugation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/he4_order_conjugation/order_conjugation_probe.py"
+  },
+  "description": "PROBE (issue #8960, step 2). Tests whether nucleon order is an independent input: swapping neighbouring nucleons is conjugation by the cable crossing P_k (BlockRelabelConjugation.lean). Checks the braid identity P s_g P^-1 = s_{g'} per letter in every irrep of H_9, and that the relabelled 3H/3He word equals W in every character. Bond letters are the superseded single-crossing production letters; the question is order only. The naive new-order chain is reported for contrast; nothing is selected.",
+  "data": {
+    "braid_identity": [
+      {
+        "k": 0,
+        "g": 0,
+        "image": 3,
+        "worst_chi_gap": "9.9568e-60"
+      },
+      {
+        "k": 0,
+        "g": 1,
+        "image": 4,
+        "worst_chi_gap": "9.9568e-60"
+      },
+      {
+        "k": 0,
+        "g": 3,
+        "image": 0,
+        "worst_chi_gap": "6.223e-60"
+      },
+      {
+        "k": 0,
+        "g": 4,
+        "image": 1,
+        "worst_chi_gap": "1.2446e-59"
+      },
+      {
+        "k": 0,
+        "g": 7,
+        "image": 7,
+        "worst_chi_gap": "1.4935e-59"
+      },
+      {
+        "k": 1,
+        "g": 3,
+        "image": 6,
+        "worst_chi_gap": "9.9568e-60"
+      },
+      {
+        "k": 1,
+        "g": 4,
+        "image": 7,
+        "worst_chi_gap": "1.4935e-59"
+      },
+      {
+        "k": 1,
+        "g": 6,
+        "image": 3,
+        "worst_chi_gap": "9.9568e-60"
+      },
+      {
+        "k": 1,
+        "g": 7,
+        "image": 4,
+        "worst_chi_gap": "9.9568e-60"
+      },
+      {
+        "k": 1,
+        "g": 0,
+        "image": 0,
+        "worst_chi_gap": "9.9568e-60"
+      },
+      {
+        "k": 1,
+        "g": 1,
+        "image": 1,
+        "worst_chi_gap": "9.9568e-60"
+      }
+    ],
+    "atoms": [
+      {
+        "atom": "3H",
+        "order": "pnn",
+        "swap_k": 0,
+        "new_order": "npn",
+        "tr_W": "0.02914404236097206535725421879186984406584",
+        "relabelled_vs_W_worst_chi_gap": "1.5558e-60",
+        "PWP_vs_W_worst_chi_gap": "9.3345e-61",
+        "naive_chain_new_order_tr": "0.03669685976296649046244552551212280986474",
+        "naive_minus_W_tr": "0.007552817402"
+      },
+      {
+        "atom": "3H",
+        "order": "pnn",
+        "swap_k": 1,
+        "new_order": "pnn",
+        "tr_W": "0.02914404236097206535725421879186984406584",
+        "relabelled_vs_W_worst_chi_gap": "1.7113e-60",
+        "PWP_vs_W_worst_chi_gap": "9.7235e-61",
+        "naive_chain_new_order_tr": "0.02914404236097206535725421879186984406584",
+        "naive_minus_W_tr": "0.0"
+      },
+      {
+        "atom": "3He",
+        "order": "ppn",
+        "swap_k": 0,
+        "new_order": "ppn",
+        "tr_W": "0.05859625365443638021895671545213025683088",
+        "relabelled_vs_W_worst_chi_gap": "1.2446e-60",
+        "PWP_vs_W_worst_chi_gap": "7.7788e-61",
+        "naive_chain_new_order_tr": "0.05859625365443638021895671545213025683088",
+        "naive_minus_W_tr": "0.0"
+      },
+      {
+        "atom": "3He",
+        "order": "ppn",
+        "swap_k": 1,
+        "new_order": "pnp",
+        "tr_W": "0.05859625365443638021895671545213025683088",
+        "relabelled_vs_W_worst_chi_gap": "2.1781e-60",
+        "PWP_vs_W_worst_chi_gap": "9.3345e-61",
+        "naive_chain_new_order_tr": "0.0486060765797865105206697506620928519107",
+        "naive_minus_W_tr": "-0.009990177075"
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

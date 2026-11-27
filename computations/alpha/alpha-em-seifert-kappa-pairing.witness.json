@@ -1,0 +1,351 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-11-24T15:39:48.884132+00:00",
+  "commitSha": "047a37a1204b3409d108331c727da2364e8c3573",
+  "assertions": [
+    {
+      "name": "alexander_poly_T29_symbolic_diff_zero",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "det(t V_{2,9} - V_{2,9}^T) - (t^2 - t + 1)(t^6 - t^3 + 1) == 0"
+    },
+    {
+      "name": "alexander_poly_T35_symbolic_diff_zero",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "det(t V_{3,5} - V_{3,5}^T) - (t^8 - t^7 + t^5 - t^4 + t^3 - t + 1) == 0"
+    },
+    {
+      "name": "seifert_classical_unimodular_det_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "det(V_{2,9} - V_{2,9}^T) == 1 and det(V_{3,5} - V_{3,5}^T) == 1"
+    },
+    {
+      "name": "kappa_seifert_closed_form_symbolic_diff_zero",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "kappa_Seifert(q) - q^8 / (Delta_{T(2,9)}(q) * Delta_{T(3,5)}(q)) == 0"
+    },
+    {
+      "name": "kappa_det_equals_closed_form_proton",
+      "computed": "1.9051553282321711009351923340603365529264177567741775680790058315307591678368915",
+      "expected": "1.9051553282321711009351923340603365529264177567741775680790058315307591678368915",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "80-dps matrix det ratio vs q^8/(Delta_T29*Delta_T35) at proton pin"
+    },
+    {
+      "name": "kappa_seifert_proton_inside_100ppb_window",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "kappa_Seifert(q_p) in [1.8739, 1.9567] 100-ppb window"
+    },
+    {
+      "name": "kappa_det_equals_closed_form_muon",
+      "computed": "1.9051554269341712281879516681303383925398556901158067331552056606644273381778519",
+      "expected": "1.9051554269341712281879516681303383925398556901158067331552056606644273381778519",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "80-dps matrix det ratio vs q^8/(Delta_T29*Delta_T35) at muon pin"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 29,
+  "computation": "alpha-em-seifert-kappa-pairing",
+  "scriptFile": "alpha_em_seifert_kappa_pairing_probe.py",
+  "scriptHash": "14b6aa150898",
+  "scriptCommitSha": "047a37a1204b3409d108331c727da2364e8c3573",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha/alpha_em_seifert_kappa_pairing_probe.py"
+    ],
+    "reproduce": "python3 -u computations/alpha/alpha_em_seifert_kappa_pairing_probe.py"
+  },
+  "description": "80-dps SymPy + mpmath verification of the 8x8 homological Milnor/Seifert pairing ratio kappa_Seifert(q) = det(V_{2,9} - V_{2,9}^T) det(V_{3,5} - V_{3,5}^T) / [det(V_{2,9} - q^-1 V_{2,9}^T) det(V_{3,5} - q^-1 V_{3,5}^T)] = q^{b_1(Sigma_4)} / (Delta_{T(2,9)}(q) Delta_{T(3,5)}(q)) on H_1(Sigma_4; Z) ~= Z^8 (b_1 = 8) at both registered substrate pins (q_proton default and q_muon comparison), contrasted against Witten's 2x2 ansatz and Form B Bring zero-mode.",
+  "contentBlock": "rem:em-coupling-chern-simons",
+  "data": {
+    "symbolic_identities": {
+      "homology_rank_b1_Sigma4": 8,
+      "V29_shape": [
+        8,
+        8
+      ],
+      "V35_shape": [
+        8,
+        8
+      ],
+      "V29_entries": [
+        [
+          1,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          -1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "V35_entries": [
+        [
+          1,
+          -1,
+          0,
+          0,
+          -1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          -1,
+          0,
+          0,
+          -1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          -1,
+          0,
+          0,
+          -1,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "det_tV29_minus_V29T": "t**8 - t**7 + t**6 - t**5 + t**4 - t**3 + t**2 - t + 1",
+      "det_tV35_minus_V35T": "t**8 - t**7 + t**5 - t**4 + t**3 - t + 1",
+      "det_V29_minus_V29T_at_1": 1,
+      "det_V35_minus_V35T_at_1": 1,
+      "Delta_T29_at_1": 1,
+      "Delta_T35_at_1": 1,
+      "kappa_Seifert_closed_form": "q^8 / ((q - 1 + q^-1)*(q^3 - 1 + q^-3)*(q^4 - q^3 + q - 1 + q^-1 - q^-3 + q^-4))",
+      "symbolic_diff_poly_29": "0",
+      "symbolic_diff_poly_35": "0",
+      "symbolic_diff_kappa_identity": "0"
+    },
+    "pins": {
+      "proton": {
+        "q0": "1.1099785827513808075916690956107688798744991218736",
+        "bare_q_9_10": "136.82320885358258430804610540444147849492999517976529920261742558022304433872362",
+        "delta_CS": "0.0015506021328500969307743096925413766328411056191015546011305681467732198220851174",
+        "Delta_T29": "1.1107588641189570831998644638975712078681202236368090254265879381660602531592292",
+        "Delta_T35": "1.0888463890006796933028290844039085298783877598915606526733112008408786657632009",
+        "det_V29_minus_qinv_V29T": "0.73174774272651811467636999756244321920925281124635576691376647482524744880395842",
+        "det_V35_minus_qinv_V35T": "0.71731220255365728091015391596808892021163773732007676823877468135057433908393821",
+        "kappa_Seifert_from_matrix_det": "1.9051553282321711009351923340603365529264177567741775680790058315307591678368915",
+        "kappa_Seifert_closed_form": "1.9051553282321711009351923340603365529264177567741775680790058315307591678368915",
+        "kappa_opposite_orientation_u_eq_q": "0.3588366590584057414972708148465941085681746945936319216696025744891998299348438",
+        "kappa_exact_codata2022_closure_diagnostic": "1.9153142960596912811354858855602428983283251014713167136665561968322193592281216",
+        "kappa_rel_diff_vs_exact_closure_pct": "-0.53040735133757771821295660754041149117640963898405915524780694035561057652428219",
+        "window_100ppb_low": "1.8739030153240805446704135244296378120101983226986051086910540580751055884373064",
+        "window_100ppb_high": "1.9567202434035308727434294336440860284688188107894218547009591004637194855138948",
+        "inside_100ppb_window": true,
+        "tower_geometric_ratio_delta_CS_mul_kappa_Seifert": "0.0029541379153675309972773876436107590940435145958426199513560979594972732255281256",
+        "alpha_inv_resummed_Seifert": "137.03599581508521450004392753415482224003914075741935910223596069138298033126577",
+        "residual_Seifert_vs_codata2022_ppb": "-24.533077481031837176764114351242206210885580084478505274777626760929398545121702",
+        "residual_Seifert_vs_codata2022_sigma": "-160.09118026190267011742119894095051710678955432846495425279128665089210641830488",
+        "alpha_inv_resummed_Witten_2x2": "137.03593509397560465879568999422684958038686715112228899895458229676141207834306",
+        "residual_Witten_2x2_vs_codata2022_ppb": "-467.63642240145640522493647399619319909889284983062743241418032826988577534376684",
+        "alpha_inv_Form_B_Bring_zero_mode_hHecke_sq": "137.03599912695091242017270049642000673995567550573598485754846968667091323678451",
+        "residual_Form_B_vs_codata2022_ppb": "-0.36522583759310081907456410985734104109033897632593265878726513430875603312174562",
+        "abs_residual_improvement_factor_over_Witten_2x2": "19.0614660049485188336593983873641060220154781726362724570621867663663079353455",
+        "abs_residual_ratio_over_Form_B": "67.172349148978367259768769576043086069630540336969277691024768800730965119365049",
+        "status_note": "Conditional/unproved: kappa_Seifert(q) is an exact parameter-free homological Seifert determinant ratio on H_1(Sigma_4; Z) ~= Z^8, but its derivation as the Chern-Simons J^2 Gram Jacobian remains open."
+      },
+      "muon": {
+        "q0": "1.1099785956427390466817951293800017527000655610290115569740457699990950814290311",
+        "bare_q_9_10": "136.82321972927285444860024853788777424902113350046792393479271792880874078437942",
+        "delta_CS": "0.0015506023389656229921175510802812320018727448460973140686813246971936392496443408",
+        "Delta_T29": "1.1107588891991552444780192485963996730039138241273903326015577634311922677308426",
+        "Delta_T35": "1.0888464091718837190157490832203475601137358954492757853722895198570236679973266",
+        "det_V29_minus_qinv_V29T": "0.73174772525464709053625317182742822350117140093673097699572555610024369049215106",
+        "det_V35_minus_qinv_V35T": "0.71731218251845124996722555739866798922412863992428333219993776701577502411907625",
+        "kappa_Seifert_from_matrix_det": "1.9051554269341712281879516681303383925398556901158067331552056606644273381778519",
+        "kappa_Seifert_closed_form": "1.9051554269341712281879516681303383925398556901158067331552056606644273381778519",
+        "kappa_opposite_orientation_u_eq_q": "0.35883661096815464019228735784344716032228244141682546800705781581754157404844743",
+        "kappa_exact_codata2022_closure_diagnostic": "1.8823123511011323272339618657827461183308170046433103875366950336125590080454529",
+        "kappa_rel_diff_vs_exact_closure_pct": "1.2135645723025697162592404302246706064994625314926906990022764081873242861590379",
+        "window_100ppb_low": "1.8408968335605354918088685302056860786201473032343059688866869282691566312726555",
+        "window_100ppb_high": "1.9237225344316831963425951503603599898354255834569790446967505753657357265794718",
+        "inside_100ppb_window": true,
+        "tower_geometric_ratio_delta_CS_mul_kappa_Seifert": "0.002954138461097175962325734246976831019708711407080553399200356265262660301028869",
+        "alpha_inv_resummed_Seifert": "137.03600673609073475780038000569034601187659459086011991508690848402789359514073",
+        "residual_Seifert_vs_codata2022_ppb": "55.161350157298750397432513522715455966210925451025121535054313588727347647357542",
+        "residual_Seifert_vs_codata2022_sigma": "359.95670165513335142884239742913698069480286285309937659447751874262574898479434",
+        "alpha_inv_resummed_Witten_2x2": "137.03594601504214932727751441357718864698472461218062421514210964970242932453345",
+        "residual_Witten_2x2_vs_codata2022_ppb": "-387.94154944648572404363943561741637809423435117297446587545085222986308662995493",
+        "alpha_inv_Form_B_Bring_zero_mode_hHecke_sq": "137.03601000259553745778754993825799322105921206063535055134429335917855110534104",
+        "residual_Form_B_vs_codata2022_ppb": "78.998187355682417347739918491571646360256431193572398243302944520736626761185592",
+        "abs_residual_improvement_factor_over_Witten_2x2": "7.032850870042648891922237576087189573907506380601587963465660764576451297647362",
+        "abs_residual_ratio_over_Form_B": "0.69826096020329686974676851932955935381068847584230612432503373164241873967097944",
+        "status_note": "Conditional/unproved: kappa_Seifert(q) is an exact parameter-free homological Seifert determinant ratio on H_1(Sigma_4; Z) ~= Z^8, but its derivation as the Chern-Simons J^2 Gram Jacobian remains open."
+      }
+    },
+    "references": {
+      "codata_2022_alpha_inv": "137.035999177",
+      "codata_2022_uncertainty": "0.000000021",
+      "codata_2022_sigma_ppb": "0.15324440385095992563516170055852534778938644758067257041137748802186047930464385",
+      "working_dps": 80
+    }
+  },
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029",
+    "proton": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "q0AnchorReason": "evaluates the parameter-free 8x8 homological Seifert determinant ratio kappa_Seifert(q) = q^8 / (Delta_{T(2,9)}(q) * Delta_{T(3,5)}(q)) and its resummed Chern-Simons 1/alpha_EM residual at both registered pins (proton default q_p and muon CAL-2 comparison q_mu)"
+}

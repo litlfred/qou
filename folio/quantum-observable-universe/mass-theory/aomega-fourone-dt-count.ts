@@ -5,7 +5,7 @@ export default theorem({
   title:
     "The figure-eight Stokes integer $A_\\omega(4_1) = 3$ is a BPS/DT count (conditional on the Stokes--DT--BPS bridge)",
   lean: {
-    ref: "qou:QOU.QBeta.aomega_fourOne_dt_count",
+    ref: "qou:QOU.Nuclear.QBeta.aomega_fourOne_dt_count",
     validation: "not_checked",
   },
   computation: {
@@ -29,6 +29,7 @@ export default theorem({
     "g3-keystone",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): $W_{-1}(0)$ in [`QOU.QBeta.StokesQZeroDTCount`](#conj:im-q-physical-role). Composing," },
     {
       kind: "status",
       date: "2026-08-02",

@@ -1,1 +1,0 @@
-In fact, rex moves of the form $\b$ inside $\phi_k$ can be viewed instead as part of $\a$ inside $\phi_{k-1}$, so we shall assume that $\b$ is always trivial, and the location of the rex move is specified by which $\phi_k$ it appears in.

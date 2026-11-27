@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0309051v5",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-nucl-th-0309051v5/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -16,6 +16,18 @@
     "library/arxiv-nucl-th-0309051v5/sections/sec-001"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Reinterpretation of Faddeev-Niemi Knot in Skyrme Theory — 3 sections: Front matter; Reinterpretation of Faddeev-Niemi ; ACKNOWLEDGEMENT\n\n**Reinterpretation of Faddeev-Niemi Knot in Skyrme Theory**\n\n*Y. M. Cho∗*\n\n4 pp, 3 sections.\n\n**Outline.** Front matter; Reinterpretation of Faddeev-Niemi Knot in Skyr; ACKNOWLEDGEMENT",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
@@ -44,8 +56,8 @@
       "stamp_date": "24 Sep 2004"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

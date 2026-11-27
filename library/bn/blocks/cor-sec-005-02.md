@@ -1,0 +1,1 @@
+Provided qn̸ = 1, the period map gives M∗ 0,n the structure of a (G, X)-manifold, where G = U(r, s) and X = Hr,s. Note: When q = −1, the structure group can be reduced from U(g, g) to Sp2g(R) (see §12).

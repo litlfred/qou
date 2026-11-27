@@ -1,1 +1,0 @@
-Based on new experimental mass information, the order- ing of several ground and excited isomeric states was reversed in the present work, when compared to the recommendations in ENSDF, and such cases are ﬂagged with the symbol ‘&’ in Table I.

@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-particle-nf-table",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:particle-nf-table",
+  "kind": "remark",
+  "title": "Particle normal forms in $H_3(q)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hecke-normal-form"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-knot-particle-dictionary",
+  "tags": [
+    "archimedean-bridge",
+    "hecke",
+    "normal-form",
+    "particle-dictionary",
+    "appendix"
+  ],
+  "text": "particle-nf-table.md",
+  "provenance": "authored"
+}

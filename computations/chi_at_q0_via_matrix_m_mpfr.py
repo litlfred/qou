@@ -89,7 +89,11 @@ from derived_chi_catalogue_matrix_m_mpfr import (  # noqa: E402
     chi_via_numerical_matrix_m_mpfr,
     chi_rust_at_q_mpf,
 )
-from derived_chi_catalogue_matrix_m import _word_for_braid_word_3a  # noqa: E402
+from derived_chi_catalogue_matrix_m import (  # noqa: E402
+    ISOSPIN_DEGENERACY_NOTE,
+    _word_for_braid_word_3a,
+)
+from chi_via_rust_lossless import PN_SPLIT_NOTE  # noqa: E402
 
 
 def _save_partial(out_path: Path, payload: dict) -> None:
@@ -312,6 +316,9 @@ def build_chi_cache_at_q0_matrix_m(
                 ),
                 "producer": "matrix-m-chi-q-via-gp",
                 "convention": "sign-only-crossings",
+                "pn_split_carried": False,
+                "pn_split_note": PN_SPLIT_NOTE,
+                "isospinDegeneracyNote": ISOSPIN_DEGENERACY_NOTE,
                 f"q_0_{dps}dps": str(q),
                 "dps": dps,
                 "n_strands": n,
@@ -348,6 +355,9 @@ def build_chi_cache_at_q0_matrix_m(
         ),
         "producer": "matrix-m-chi-q-via-gp",
         "convention": "sign-only-crossings",
+        "pn_split_carried": False,
+        "pn_split_note": PN_SPLIT_NOTE,
+        "isospinDegeneracyNote": ISOSPIN_DEGENERACY_NOTE,
         f"q_0_{dps}dps": str(q),
         "dps": dps,
         "n_strands": n,
@@ -402,9 +412,16 @@ def save_witness(record: dict, start_time: float) -> Path:
     wb.add_data("n_strands", record["n_strands"])
     wb.add_data("n_partitions", record["n_partitions"])
     wb.add_data("tr_M_at_q0", record["tr_M_at_q0"])
+    wb.add_data("pn_split_carried", False)
+    wb.add_data("pn_split_note", PN_SPLIT_NOTE)
+    wb.add_data("isospinDegeneracyNote", ISOSPIN_DEGENERACY_NOTE)
     wb.add_data("compute_time_sec", record["compute_time_sec"])
     wb.add_data("cache_path", record["out_path"])
-    return wb.save()
+    return wb.save({
+        "pn_split_carried": False,
+        "pn_split_note": PN_SPLIT_NOTE,
+        "isospinDegeneracyNote": ISOSPIN_DEGENERACY_NOTE,
+    })
 
 
 def main() -> int:
@@ -467,6 +484,7 @@ def main() -> int:
     print("  " + "-" * 70)
 
     last_record = None
+    any_mismatch = False
     q_mpf = mp.mpf(q_str)
     for atom_name in atoms:
         if atom_name not in ATOMS:
@@ -485,6 +503,7 @@ def main() -> int:
             )
         except Exception as exc:  # noqa: BLE001
             print(f"  {atom_name:>10}  ERROR  {type(exc).__name__}: {exc}")
+            any_mismatch = True
             continue
         save_witness(record, start_time=atom_start)
         n_parts = record["n_partitions"]
@@ -514,13 +533,15 @@ def main() -> int:
             n_total += 1
             if abs(chi_mpf - chi_rust) < tol:
                 n_match += 1
+        if n_match < n_total:
+            any_mismatch = True
         cap_note = (f"dim > {args.max_dim}" if args.max_dim is not None
                     else "lossless: none")
         print(f"  {'':>10}     cross-check vs chi_q_via_gp at q_0: "
               f"{n_match}/{n_total} match (tol 1e-{args.dps-5}), "
               f"{n_skipped} skipped ({cap_note})")
 
-    return 0 if last_record is not None else 1
+    return 0 if (last_record is not None and not any_mismatch) else 1
 
 
 if __name__ == "__main__":

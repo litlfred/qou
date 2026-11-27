@@ -1,0 +1,1 @@
+The set Γ+ max(γλ) is stable under the action of the root operators fα. Moreover, it only contains one dominant gallery, that is γλ. References [1] S. Gaussent and P. Littelmann. LS galleries, the path model, and MV cycles. Duke Math. J., 127(1):35–88, 2005. [2] P. Littelmann. Paths and root operators in representation theory. Ann. of Math. (2), 142(3):499–525, 1995.

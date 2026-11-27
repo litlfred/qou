@@ -16,7 +16,9 @@ export default remark({
     "comparison",
   ],
   uses: [
+    "def:quantum-observable-universe",
     "def:categorical-dirac-operator",
+    "rem:rieffel-metric-quotient-faithfulness",
     "def:categorical-instanton",
     "prop:reeb-u1-chart-swap",
     "def:contact-affine-chart",
@@ -29,7 +31,11 @@ export default remark({
   ],
   cites: [
     "ashtekar1986",
+    "barbour-bertotti1982",
+    "earman1989",
+    "leibniz-clarke1717",
     "rovelli1995",
+    "rovelli1996",
     "rovelli2004",
     "thiemann2007",
   ],

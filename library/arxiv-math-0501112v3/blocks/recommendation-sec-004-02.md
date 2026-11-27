@@ -1,1 +1,0 @@
-The result of Biane can be viewed as an analogue of the law of large numbers while the results presented in this article are an analogue of the central limit theorem; one can ask therefore which condition should replace [\[eq:approximate\]](#eq:approximate){reference-type="eqref" reference="eq:approximate"} in order to prove such stronger results.

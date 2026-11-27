@@ -1,0 +1,125 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T09:35:38.369993+00:00",
+  "commitSha": "d4d960b5a1a2bb0b07a753cc2382fdc707354719",
+  "assertions": [
+    {
+      "name": "framed_braid_monoid_associativity_and_total_twist_hom",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "FramedBraidWord.instMonoid and FramedBraidWord.totalTwist_mul"
+    },
+    {
+      "name": "framing_slide_coboundary_ranks_match_components",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "rank(I - P_{pi^{-1}}) = 3 - components(w) on unknot(2), trefoil(2), Hopf(1), Borromean(0)"
+    },
+    {
+      "name": "unit_cube_sign_coherent_multisets_unique_and_80dps_ribbon_invariant",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "framedBraid3_firstGen_multisets_determined + 80-dps ribbonScalarWeight invariance"
+    },
+    {
+      "name": "content_sum_equals_row_halftwist_minus_col_halftwist_k0_to_10",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "diagramContentSum_eq_rowHalfTwist_sub_colHalfTwist across all 195 partitions of k <= 10"
+    },
+    {
+      "name": "srow3_and_temperley_lieb_split_exact_k0_to_8",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "sRow3NatPartition_eq_sRow3 + sTotalDerived_eq_sRowLe2_add_sRow3 + sRow3NatPartition_six_seven_eight"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 74,
+  "computation": "framed-braid-twist-and-srow3-audit",
+  "scriptFile": "framed_braid_twist_and_srow3_audit_probe.py",
+  "scriptHash": "4048a3a83ea5",
+  "scriptCommitSha": "d4d960b5a1a2bb0b07a753cc2382fdc707354719",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "56872bc54313b172"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/framed_braid_twist_and_srow3_audit_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/framed_braid_twist_and_srow3_audit_probe.py"
+  },
+  "description": "Verification witness for beans qou-kebu and qou-jkmh: (1) FramedBraidWord 3 semidirect monoid associativity, Markov-I framing-slide coboundary ranks across unknot/trefoil/Hopf/Borromean closures, and 80-dps ribbon scalar-twist cancellation; (2) all-partition verification (k = 0..10) of c(lam) = sum C(lam_i,2) - sum C(lam'_j,2), (-1)^{n(lam)} = (-1)^{sum C(lam'_j,2)}, and Temperley-Lieb <=2-row vs >=3-row sRow3 table.",
+  "parameters": {
+    "dps": 80
+  },
+  "data": {
+    "coboundary_ranks_fin3": {
+      "unknot": 2,
+      "trefoil": 2,
+      "hopf_electron": 1,
+      "borromean": 0
+    },
+    "ribbon_weight_80dps_abs_diff": "0.0",
+    "sRow3_k0_to_10": [
+      0,
+      0,
+      0,
+      -1,
+      -2,
+      4,
+      16,
+      -15,
+      -132,
+      14,
+      1216
+    ],
+    "sRowLe2_temperley_lieb_k0_to_10": [
+      1,
+      1,
+      0,
+      -1,
+      0,
+      2,
+      0,
+      -5,
+      0,
+      14,
+      0
+    ],
+    "sTotal_k0_to_10": [
+      1,
+      1,
+      0,
+      -2,
+      -2,
+      6,
+      16,
+      -20,
+      -132,
+      28,
+      1216
+    ]
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Pure framed-braid semidirect algebra, Young-diagram hook/content/half-twist identities, and substrate-free exp(1/7) 80-dps ribbon identity check."
+}

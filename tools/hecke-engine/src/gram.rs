@@ -909,33 +909,12 @@ pub fn atom_per_generator_volumes(
         }
     }
 
-    // Wedderburn weights for H_3(q). Match Python byte-for-byte:
-    //   q_int(n) = (q^n - q^{-n}) / (q - q^{-1})   (symmetric q-integer)
-    //   nf3_val = [1]_q · [2]_q · [3]_q = [3]_q!
-    //   qdim_sym=1, qdim_std=[2]_q, qdim_alt=1
-    //   w_* = qdim_*^2 / nf3_val, then renormalise so Σ w_* = 1.
-    // Symmetric q-integer with graceful handling of q = 1 (classical
-    // limit, where q - q^{-1} = 0 and [n]_q → n). Gemini review
-    // r3106... flagged the unguarded division.
-    let denom = q - 1.0 / q;
-    let qint = |n: i32| -> f64 {
-        if denom.abs() < 1e-12 {
-            n as f64
-        } else {
-            (q.powi(n) - q.powi(-n)) / denom
-        }
-    };
-    let qint2 = qint(2);
-    let qint3 = qint(3);
-    let nf3_val = qint(1) * qint2 * qint3;
-    let (qdim_sym, qdim_std, qdim_alt): (f64, f64, f64) = (1.0, qint2, 1.0);
-    let (mut w_sym, mut w_std, mut w_alt): (f64, f64, f64) =
-        (qdim_sym.powi(2) / nf3_val, qdim_std.powi(2) / nf3_val, qdim_alt.powi(2) / nf3_val);
-    let wt = w_sym + w_std + w_alt;
-    w_sym /= wt;
-    w_std /= wt;
-    w_alt /= wt;
-
+    // Convention D (owner ruling 2026-11-18, PR #8521): the per-generator
+    // volume is the Markov trace of the generator's word a*sigma_i + b,
+    // i.e. z*a + b with z = q^3/(q^2+1). It is the same in every H_n by the
+    // Markov property. The q-Plancherel block mixture
+    // W_SYM*sym + W_STD*(z*a+b) + W_ALT*alt that stood here is retired;
+    // `sym` and `alt` are still reported per block.
     let z_mark = markov_z(q);
     let mut out = Vec::with_capacity(n_gens_total);
     for s in states.iter() {
@@ -944,7 +923,7 @@ pub fn atom_per_generator_volumes(
             sym: s.sp,
             std: v_std,
             alt: s.ap,
-            full: w_sym * s.sp + w_std * v_std + w_alt * s.ap,
+            full: v_std,
         });
     }
     out

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2404.02087v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2404.02087v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -28,6 +28,18 @@
     "library/arxiv-2404.02087v1/sections/sec-014"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Extreme plasmons — 15 sections: Extreme plasmons; Introduction; Quantum framework\n\n**Extreme plasmons**\n\n10 pp, 15 sections.\n\n**Outline.** Extreme plasmons; Introduction; Quantum framework; Quantum system: Degeneracy and Correlation; Wigner quantum phase-space; Modified independent electron approximation; Small-amplitude plasmons: Quantum model; Quantum coherence limit; Relativistic quantum dynamics; Controlled excitation; Surface crunch-in plasmon; Quantum kinetic equation using FQ(k,p); Fields of the extreme plasmon; Conclusion; Acknowledgments",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
   "licenceRecord": {
@@ -51,8 +63,8 @@
       "stamp_date": "2 Apr 2024"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,4 +1,3 @@
-**Conjecture (isospin-Z/2-anti-symmetric closure).**
 *Let $\beta_A$ be an atomic braid using the canonical operator-valued interface $\bowtie_K$. The regularised crystal functional leaves the canonical isospin swap invariant up to a single isospin-Z/2-anti-symmetric residue.*
 
 *This residue resolves precisely to the substrate flavor split evaluated at $q_0$:*

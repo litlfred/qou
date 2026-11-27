@@ -1,0 +1,1 @@
+With notation as in Section 2A, X f ∈Qn,q ma( f ) = (q −1)|Xa n(Fq)|. 2The somewhat artiﬁcial special treatment of ∞in this deﬁnition, as in [Ellenberg et al. 2016], stems from the need to compare with topology, where branched covers of the disc are technically easier to handle than branched covers of the sphere. Nonvanishing of hyperelliptic zeta functions over ﬁnite ﬁelds

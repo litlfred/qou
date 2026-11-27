@@ -1,1 +1,0 @@
-It should be, however, noticed that the anti-symmetric combination of the covariant derivatives of ˆαµ⊥,∥can be expressed in terms of other operators: Dµˆαν⊥−Dν ˆαµ⊥= i[ˆαµ∥, ˆαν⊥] + i[ˆαµ⊥, ˆαν∥] −ˆ Aµν, (9a) Dµˆαν∥−Dν ˆαµ∥= i[ˆαµ∥, ˆαν∥] + i[ˆαµ⊥, ˆαν⊥] + ˆVµν −Vµν.

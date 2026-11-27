@@ -1,0 +1,324 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T04:08:14.619172+00:00",
+  "commitSha": "390bd49834006b8995f310b9553f2a2204564ea3",
+  "assertions": [
+    {
+      "name": "S1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Tr(K^3 V^3)/[2]^3 = J_Bor(q^2)/[2]^2"
+    },
+    {
+      "name": "H1-s1^2-changes",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "colourings changed: ['udu', 'duu', 'udd', 'dud']"
+    },
+    {
+      "name": "H1-s1^2-classsum-invariant",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "class sums unchanged"
+    },
+    {
+      "name": "H1-s2^2-changes",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "colourings changed: ['uud', 'udu', 'dud', 'ddu']"
+    },
+    {
+      "name": "H1-s2^2-classsum-invariant",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "class sums unchanged"
+    },
+    {
+      "name": "H2-p-not-constant",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "tau_uud != tau_udu"
+    },
+    {
+      "name": "H2-n-not-constant",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "tau_udd != tau_dud"
+    },
+    {
+      "name": "H3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "<flip c|V^3|flip c>(q) = <c|mirror|c>(1/q) for all six"
+    },
+    {
+      "name": "H4-fV3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "sum_n tau - sum_p tau = fV3 (FlavourWeightSplit)"
+    },
+    {
+      "name": "H4-qsq",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "eps_p = q^2 eps_n"
+    },
+    {
+      "name": "H5-pure",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "V^3 is a pure braid"
+    },
+    {
+      "name": "H5-lk0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "signed crossing sums per pair: {(0, 1): 0, (0, 2): 0, (1, 2): 0}"
+    },
+    {
+      "name": "H5-amp1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "W-free amplitude = 1"
+    },
+    {
+      "name": "H5-diff",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "strict n-p = -3*q**2*(q - 1)*(q + 1)/(q**2 + 1)**3"
+    },
+    {
+      "name": "T2-allpairs-scalar",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "all-pairs insertion is 0 on W_p and -1/3 on W_n: connected part 0 per colouring"
+    },
+    {
+      "name": "T2-adjacent-matches-QTrace",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "per-colouring adjacent connected sums to deltaT_adjacent_connected_eq"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11424,
+  "computation": "borromean-ring-coloured-trace",
+  "scriptFile": "borromean_ring_coloured_trace_probe.py",
+  "scriptHash": "f9065a005c85",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "ae1028699afd20c5"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/borromean_ring_coloured_trace/borromean_ring_coloured_trace_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/borromean_ring_coloured_trace/borromean_ring_coloured_trace_probe.py"
+  },
+  "description": "qou-99qc: ring-coloured trace of the Borromean nucleon V^3. Per-colouring values are not link invariants (pure-braid conjugation moves them); class sums equal the scored eps_flavour; the W-free strict colouring is lk-determined (lk = 0). Pre-registered at 390bd49834.",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "dps": 70,
+    "convention": "D (z = q^3/(q^2+1))"
+  },
+  "data": {
+    "tau_closed_forms": {
+      "uud": "-q**4*(q**2 - 2)*(q**4 - q**2 + 1)/(q**2 + 1)**3",
+      "udu": "q**4/(q**2 + 1)**3",
+      "duu": "(2*q**2 - 1)*(q**4 - q**2 + 1)/(q**2*(q**2 + 1)**3)",
+      "udd": "(q**6 - 2*q**4 + 3*q**2 - 1)/(q**2*(q**2 + 1)**3)",
+      "dud": "-(q**4 - q**2 + 1)*(q**8 - 3*q**6 + 3*q**4 - 3*q**2 + 1)/(q**4*(q**2 + 1)**3)",
+      "ddu": "-(q**6 - 3*q**4 + 2*q**2 - 1)/(q**2 + 1)**3"
+    },
+    "diag_closed_forms": {
+      "uud": "-(q**2 - 2)*(q**4 - q**2 + 1)",
+      "udu": "1",
+      "duu": "(2*q**2 - 1)*(q**4 - q**2 + 1)/q**6",
+      "udd": "(q**6 - 2*q**4 + 3*q**2 - 1)/q**4",
+      "dud": "-(q**4 - q**2 + 1)*(q**8 - 3*q**6 + 3*q**4 - 3*q**2 + 1)/q**6",
+      "ddu": "-(q**6 - 3*q**4 + 2*q**2 - 1)/q**2"
+    },
+    "conjugation_changes_of_diagonal": {
+      "s1^2": {
+        "uud": "0",
+        "udu": "-(q - 1)**3*(q + 1)**3*(q**4 + 1)*(q**4 - q**2 + 1)/q**8",
+        "duu": "(q - 1)**3*(q + 1)**3*(q**4 + 1)*(q**4 - q**2 + 1)/q**8",
+        "udd": "(q - 1)**3*(q + 1)**3*(q**4 + 1)*(q**4 - q**2 + 1)/q**6",
+        "dud": "-(q - 1)**3*(q + 1)**3*(q**4 + 1)*(q**4 - q**2 + 1)/q**6",
+        "ddu": "0"
+      },
+      "s2^2": {
+        "uud": "-(q - 1)**3*(q + 1)**3*(q**4 + 1)*(q**4 - q**2 + 1)/q**6",
+        "udu": "(q - 1)**3*(q + 1)**3*(q**4 + 1)*(q**4 - q**2 + 1)/q**6",
+        "duu": "0",
+        "udd": "0",
+        "dud": "(q - 1)**3*(q + 1)**3*(q**4 + 1)*(q**4 - q**2 + 1)/q**8",
+        "ddu": "-(q - 1)**3*(q + 1)**3*(q**4 + 1)*(q**4 - q**2 + 1)/q**8"
+      }
+    },
+    "eps_p": "-(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(q**2*(q**2 + 1)**3)",
+    "eps_n": "-(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(q**4*(q**2 + 1)**3)",
+    "strict_n_minus_p": "-3*q**2*(q - 1)*(q + 1)/(q**2 + 1)**3",
+    "crossings_by_strand": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        2,
+        -1
+      ],
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        1,
+        0,
+        -1
+      ],
+      [
+        2,
+        0,
+        1
+      ],
+      [
+        2,
+        1,
+        -1
+      ]
+    ],
+    "two_term_per_colouring": {
+      "uud": {
+        "all_pairs_raw_coeff": "0",
+        "adjacent_raw_coeff": "2/9",
+        "all_pairs_raw": "0",
+        "adjacent_raw": "-2*q**4*(q**2 - 2)*(q**4 - q**2 + 1)/(9*(q**2 + 1)**3)"
+      },
+      "udu": {
+        "all_pairs_raw_coeff": "0",
+        "adjacent_raw_coeff": "-4/9",
+        "all_pairs_raw": "0",
+        "adjacent_raw": "-4*q**4/(9*(q**2 + 1)**3)"
+      },
+      "duu": {
+        "all_pairs_raw_coeff": "0",
+        "adjacent_raw_coeff": "2/9",
+        "all_pairs_raw": "0",
+        "adjacent_raw": "2*(2*q**2 - 1)*(q**4 - q**2 + 1)/(9*q**2*(q**2 + 1)**3)"
+      },
+      "udd": {
+        "all_pairs_raw_coeff": "-1/3",
+        "adjacent_raw_coeff": "-1/9",
+        "all_pairs_raw": "-(q**6 - 2*q**4 + 3*q**2 - 1)/(3*q**2*(q**2 + 1)**3)",
+        "adjacent_raw": "-(q**6 - 2*q**4 + 3*q**2 - 1)/(9*q**2*(q**2 + 1)**3)"
+      },
+      "dud": {
+        "all_pairs_raw_coeff": "-1/3",
+        "adjacent_raw_coeff": "-4/9",
+        "all_pairs_raw": "(q**4 - q**2 + 1)*(q**8 - 3*q**6 + 3*q**4 - 3*q**2 + 1)/(3*q**4*(q**2 + 1)**3)",
+        "adjacent_raw": "4*(q**4 - q**2 + 1)*(q**8 - 3*q**6 + 3*q**4 - 3*q**2 + 1)/(9*q**4*(q**2 + 1)**3)"
+      },
+      "ddu": {
+        "all_pairs_raw_coeff": "-1/3",
+        "adjacent_raw_coeff": "-1/9",
+        "all_pairs_raw": "(q**6 - 3*q**4 + 2*q**2 - 1)/(3*(q**2 + 1)**3)",
+        "adjacent_raw": "(q**6 - 3*q**4 + 2*q**2 - 1)/(9*(q**2 + 1)**3)"
+      }
+    },
+    "numbers": {
+      "q0": "1.1099785827513808075916690956107688798744991218736",
+      "E0_canonical_tower_MeV": "4.227483355629030550268056026587211153615",
+      "E0_order_zero_MeV": "4.185981363294475896945062158759008410143",
+      "tau_at_q0": {
+        "uud": "0.1347982421281261491634684273098697517338",
+        "udu": "0.1365039462712405143674421639047412395905",
+        "duu": "0.1374159909417609532701582968345822786593",
+        "udd": "0.1117059851473145229414946174048636616482",
+        "dud": "0.110361405990279261750531231174377901914",
+        "ddu": "0.1096702536021696596767803436575069550577"
+      },
+      "class_sum_n_minus_p": "-0.07698053460136417243226269581244475136371",
+      "strict_n_minus_p": "-0.07713001738333929098599103828915585103344",
+      "qbeta_table": [
+        {
+          "functional": "class_sum (= scored eps_flavour)",
+          "E0": "canonical_tower",
+          "Q_MeV": "0.3254339287346917072909656439",
+          "vs_codata_pct": "-58.4021515"
+        },
+        {
+          "functional": "class_sum (= scored eps_flavour)",
+          "E0": "order_zero",
+          "Q_MeV": "0.322239083177755972151417132303",
+          "vs_codata_pct": "-58.81052534"
+        },
+        {
+          "functional": "W-free strict colouring",
+          "E0": "canonical_tower",
+          "Q_MeV": "0.326065864707444644237605293582",
+          "vs_codata_pct": "-58.32137573"
+        },
+        {
+          "functional": "W-free strict colouring",
+          "E0": "order_zero",
+          "Q_MeV": "0.322864815317237229823339454282",
+          "vs_codata_pct": "-58.73054256"
+        }
+      ],
+      "codata_Q_beta_MeV": "0.78233355931"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

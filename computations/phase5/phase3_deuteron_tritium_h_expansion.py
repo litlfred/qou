@@ -212,7 +212,7 @@ def main():
         "H₃ (proton) extends to heavier isotopes. Complete partition "
         "enumeration (not just trace-dominant)."
     )
-    w.set_content_block("prop:proton-mass-substrate-identity")
+    w.set_content_block("conj:proton-mass-substrate-identity")
 
     for Z, N, name in atoms:
         w.add_data(f"atom_{name.split()[0].lower()}", {

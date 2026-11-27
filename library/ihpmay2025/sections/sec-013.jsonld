@@ -13,9 +13,11 @@
   "pageStart": 19,
   "pageEnd": 20,
   "contains": [
-    "library/ihpmay2025/blocks/prose-sec-013"
+    "library/ihpmay2025/blocks/prose-sec-013",
+    "library/ihpmay2025/blocks/thm-sec-013-01",
+    "library/ihpmay2025/blocks/lem-sec-013-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ihpmay2025",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ihpmay2025",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ihpmay2025/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ihpmay2025/manifest.jsonld",
   "provenance": "ingested"
 }

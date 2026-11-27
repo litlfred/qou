@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p02",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p02/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -23,6 +23,18 @@
     "library/ant-v14-n7-s-p02/sections/sec-008"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values — 10 sections: Front matter; Introduction; Preliminaries\n\n**Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values**\n\n*David Jarossay*\n\n36 pp, 10 sections.\n\n**Outline.** Front matter; 0 Introduction; 1 Preliminaries; 2 Iteration of the harmonic Frobenius of integ; 3 Iteration of the harmonic Frobenius of serie; 4 Comparison between equations on integrals an; 5 Iteration of the Frobenius on P1 \\ S; Appendix: A Poisson bracket corresponding to t; Acknowledgments; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "ant-v14-n7-s-p02",
@@ -32,8 +44,8 @@
     "pages": 36,
     "arxiv": null,
     "doi": "10.2140/ant.2020.14.1711",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

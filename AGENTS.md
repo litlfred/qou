@@ -9,6 +9,126 @@ When the user asks you to perform a task (e.g., "run prepare-merge", "set up lea
 
 **Required Action:** Before executing any multi-step task or slash command, run `ls .claude/skills/local/` and `view_file` on the relevant `.md` file. Follow its instructions exactly. NEVER guess.
 
+## FIRST: did the session-start hook run?
+
+The hooks in `.claude/settings.json` run only when the session **starts inside
+this checkout**. If qou was attached or cloned partway through the session, or
+the session opened in another directory, none of them ran: the platform clone
+(`folio-assistant/`), the beans mount and the Lean cache are all missing, and
+nothing says so. Run each command from the repo root, in order:
+
+```bash
+jq -r '.hooks.SessionStart[].hooks[].command' .claude/settings.json
+```
+
+Never report qa-sweep, the validator, beans or Lean as unavailable before doing
+this. Rule: cat-harness skill `remote-mount`, section "When the session-start
+hook did not run"; requirement `req:session-start` statement
+`session-start-hook-ran`.
+
+## 🟥 THE PHOTON IS `1 + φ₀σ₀ + φ₁σ₁ + φ₀₁·σ₀σ₁⁻¹` (owner ruling 2026-11-20) — STRICT
+
+**The fourth term is the chiral vertex `σ₀σ₁⁻¹`. The form with `σ₀σ₁` (`L₊`) as the
+fourth term is OLD AND WRONG.** Verbatim, owner 2026-11-20: *"1 + φ₀σ₀ + φ₁σ₁ +
+φ₀₁σ₀σ₁ is old and wrong. 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁^-1 is correct"*, and earlier the
+same day: *"That was already decided. Why did it get changed back to the wrong form?"*
+
+    γ(φ₀, φ₁, φ₀₁) = 1 + φ₀·σ₀ + φ₁·σ₁ + φ₀₁·σ₀σ₁⁻¹      ∈ H₃(R, q)
+
+- **This is a ruling, not a working assumption.** It was first recorded on
+  2026-11-18 as "a working assumption, not a ruling to edit def:photon"; that
+  classification was the recording agent's, and it is why the wrong form kept
+  coming back (bean `qou-99qc`, entry 2026-11-20T14:50:40Z).
+- **`def:photon` (`brings-surface/photon.md`) and `QOU/Photon.lean` state the
+  correct form as of PR #8583 (merged 2026-11-20).** Copies of the old `σ₀σ₁` form
+  survive in older branches, beans, audits and probes: do not copy from them, and do
+  not quote, compute, formalise or propose anything on the `σ₀σ₁` form. Do not call
+  the correct form "switched", "γ′" or "the qou-99qc variant" — it is simply *the
+  photon*.
+- **Every agent repeats this to its subagents.** A subagent does not see this file
+  if it was edited mid-session (see §Subagents); put the photon form in the
+  subagent's prompt whenever photons are in scope.
+- Worked consequence: the Borromean core factors as
+  `V³ = (σ₀σ₁⁻¹)³ = γ(0,0,qh)·γ(0,0,−q⁻¹h)`, `h = q − q⁻¹`
+  (`borromeanV3A_eq_switched_photon_product` and its `B` twin, sorry-free).
+
+## 🟥 OWNER RULINGS LIVE IN THE REPO — NO PROJECT MEMORY (owner directive 2026-11-21) — STRICT
+
+Verbatim: *"No use of PROJECT MEMORY allowed. It all needs to be in repo."*
+Every owner ruling and working instruction is recorded in
+[`docs/coordination/owner-rulings.md`](docs/coordination/owner-rulings.md).
+Read it at session start. When the owner rules on something, add a dated row
+there (verbatim words where available) in the same session, and pass the
+ruling to every running subagent. Do not store rulings or preferences in
+chat-app / project memory. Current headline rulings: the photon form above;
+**the electron is σ₀σ₁σ₀ ∈ B₃ with Hopf-link closure (trefoil σ₀³ ∈ B₂ kept as
+backup)**; the up quark is an unknot strand; Q_β from γγ pair production;
+two-term Lagrangian trace on the scoreboard and all β-decay routes.
+
+## 🟥 FAST MERGES: ONE PRE-MERGE GATE, QA AFTER (owner ruling 2026-11-27) — STRICT
+
+Verbatim: *"i dont want to have slow merge times, no red gates (excpet
+json(ld) KG publication). all QA runs after. can be agent, does not need to be
+github action w/ runner queue issues."* (and: *"current harness merge/CI
+workflow WAY TOO SLOW"*). Recorded in
+[`docs/coordination/owner-rulings.md`](docs/coordination/owner-rulings.md), 2026-11-27.
+
+- **Before a merge, only two things can block it:** the merge guard run by the
+  merging agent, `bun run cat merge:guard <pr>` (never `--full-tier`; CI is
+  advisory on a non-release merge), and the JSON-LD KG publication check
+  (`gen-block-jsonld --check` on the PR head). Nothing else is a red gate.
+- **Everything else runs after the merge, on `main`:** the Lean sweep,
+  `scripts/precision-gates.sh`, `scripts/check-sidecars.sh`, producer re-runs,
+  and the site + QA publish (`site-publish.yml` on push to main;
+  `scripts/publish-main-local.sh --deploy` when Actions cannot run). A
+  post-merge failure becomes a bean and a follow-up PR, never a revert by
+  default.
+- **No GitHub Actions merge gating on qou:** no `harness-pr-checks.yml`, no
+  Actions merge-guard callers, no required status checks.
+- **This supersedes** the Phase 1b / Phase 4 "verification gate" in §Branch +
+  PR workflow rule 10 and in `prepare-merge-auto`, wherever they make the
+  listed checks pre-merge. Those checks still run; they run after.
+
+## 🟥 REBUILD THE SITE AFTER EVERY MERGE TO MAIN (owner directive 2026-11-23) — STRICT
+
+Verbatim: *"agents should rebuild when merge to main if github actions not
+enabled"*. Actions is dispatch-only here, so a merge does not rebuild the
+site. The agent that merges runs `bash scripts/publish-main-local.sh --deploy`
+on the merged `main` and reports in the merge report whether it pushed and
+whether the Lean render (`lean/`) was rebuilt or skipped. Skill:
+[`post-merge-rebuild`](.claude/skills/local/post-merge-rebuild.md). The
+dispatchable route is `build.yml`, which calls the platform's
+`folio-staging.yml` with `build_command: bash scripts/build-site.sh`.
+
+## 🟥 CONTRIBUTION POLICY AND ATTRIBUTION (owner directive 2026-11-23) — STRICT
+
+The repository is being prepared for public release. The policy is in
+[`CONTRIBUTING.md`](CONTRIBUTING.md) §"Contribution policy"; agents enforce it
+and must not weaken it.
+
+- **Issues need evidence.** From anyone other than the owner (`litlfred`), an
+  issue must carry a Lean counterexample, a failing Python test, or a pinpoint
+  citation (theorem/equation number and page). Otherwise it is closed
+  (`issue-policy.yml` does this automatically). Do not open evidence-free
+  issues on behalf of others, and do not reopen one the check closed.
+- **A non-owner's merged PR earns authorship.** When an agent merges (or
+  prepares the merge of) a PR whose author is not `litlfred`, it must, in the
+  same PR or an immediate follow-up: add the contributor to
+  `paperIdentity.authors` in
+  [`folio/quantum-observable-universe/identity.ts`](folio/quantum-observable-universe/identity.ts)
+  and a row to [`CONTRIBUTORS.md`](CONTRIBUTORS.md) naming the PR. Ask the
+  contributor how they want to be named; default to their GitHub login.
+- **Agent attribution is not authorship.** Commits and PRs written by agents
+  carry their `Co-Authored-By` / session trailers as now; an agent is never
+  added to the paper's author list. The authors' note records the use of
+  language models.
+- **License.** Everything in the repository is CC BY 4.0 ([`LICENSE`](LICENSE)).
+  Do not add files under another license without asking the owner, and keep
+  third-party code's own notice beside it.
+- **KG validation** rules and tooling are documented in
+  [litlfred/folio-assistant-core](https://github.com/litlfred/folio-assistant-core);
+  point contributors there rather than restating its rules.
+
 ## User accessibility
 
 The repo owner is physically disabled and types with difficulty.
@@ -19,6 +139,7 @@ Adapt ALL responses accordingly:
 - **Offer choices as numbered lists** so the user can reply "1" or "2".
 - **Run commands proactively** — don't ask "shall I run X?", just run it.
 - **Branch/commit/push without asking** unless destructive.
+- **Files attached in chat are not in the repo (owner directive 2026-11-22).** When the owner attaches a file to a chat message, decide by context, or ask once with numbered options, whether it goes into `library/` (fully ingested), into `uploads/` (parked), or is used for the task only. Papers default to `library/`. Ingest fully and verify each section holds real text. The procedure lives in folio-assistant core, `skills/library/ingestion/document-intake.md` §Files attached in the agent chat (litlfred/folio-assistant-core#866); in qou the ingested-document directory is `library/`.
 - **Interpret terse/misspelled input charitably** — infer intent, don't ask for clarification on typos.
 - **Mirror every `AskUserQuestion` to chat BEFORE calling the tool (STRICT, 2026-06-09).** Write the question text, every option label, and every option description (with full evidence + trade-offs + math context) as plain chat prose *immediately above* the `AskUserQuestion` tool call. The structured tool call must mirror what is already in the chat — it does not replace it. Reasons:
   - **Cancellation/dismissal safety.** If the user dismisses the structured UI, accidentally cancels, or the question component fails to render, the full context survives in the transcript. No round-trip needed to re-state options.
@@ -441,6 +562,33 @@ Concretely:
   assessment — is a source of robustness. The cheapest way to catch a
   wrong turn is a second agent walking in from a different direction.
 
+## Handoff envelope (owner directive 2026-11-25)
+
+Verbatim: *"(improve swarm managem,etc. process, when passing to child sibling, then give them the porcess/task they are enging in , their role, your role. this should be a part of general agent to agenet communication use by swarm/merge managers, etc. .)"*
+
+Every agent-to-agent handoff opens with four to six lines before the body.
+That covers an `Agent`-tool subagent, a child session created with
+`create_session`, and a `send_message` to a sibling, swarm or merge-manager
+session:
+
+```
+PROCESS / TASK: <process or skill by name, e.g. "merge (prepare-merge-auto)",
+                "research swarm front", "library intake (document-intake)">
+                — <the task>; done when <criteria>.
+YOUR ROLE:      <merge manager | research child | verifier | …>. You decide <…>;
+                escalate <…> to <the owner directly | me>.
+MY ROLE:        <coordinator | swarm manager | …>, session <id>; reply by
+                <send_message to <id> | the PR>.
+```
+
+Then the existing body: the owner's words verbatim, constraints, fences and
+the reporting format. The rules on questions to the owner are unchanged.
+The canonical rule is the platform skill
+`folio-assistant/cat-harness/sdlc/skills/sdlc-core/agent-handoff.md` §0 (litlfred/cat-harness#1405). `dispatch-agent`, `swarm-management`, `swarm-monitor` and
+`merge-manager-watcher` point to it. Since AGENTS.md edits do not reach
+subagents in the session that makes them (§Subagents below), put the
+envelope in the prompt itself.
+
 ## Subagents with persistent memory (`.claude/agents/`)
 
 Five subagents are defined under [`.claude/agents/`](.claude/agents/), each
@@ -527,7 +675,7 @@ as it works.
 | agent | owns |
 |---|---|
 | `lean-verifier` | olean cache restore, `lean`-direct verification, sorry/axiom status |
-| `corpus-grepper` | the six-path checklist before anything is declared open / refuted |
+| `corpus-grepper` | the seven-path checklist before anything is declared open / refuted |
 | `compute-precision-auditor` | the NO-FLOAT64 gate family, witness staleness, producer health |
 | `convention-auditor` | convention C vs D, the muon/proton q₀ pin, Λ vs Cl₂, layer straddles |
 | `merge-coordinator` | branch/PR policy, sibling coordination, drive-to-green |
@@ -567,6 +715,15 @@ procedure. Memory summarises; the skill governs. Where the two disagree, the
 skill wins and the memory entry is wrong — fix it.
 
 ## Agent work-plan policy (STRICT)
+
+> **🟥 BEANS ARE THE TRACKER; GITHUB ISSUES ARE INTAKE ONLY (owner ruling 2026-11-27).**
+> Every work item an agent plans, claims, works or closes is a **bean** on the beans
+> branch, managed with the `beans` CLI and pushed with `branch-store.ts push --id beans`.
+> Do **not** open a GitHub issue to track your own work, and do not make a session epic
+> an issue. GitHub issues are the **submission channel** for the owner and for reviewers:
+> when one arrives, mirror it into a bean that cites the issue number (check before you
+> create), work the bean, and close the issue from the bean's result. Ledger row:
+> [`owner-rulings.md`](docs/coordination/owner-rulings.md), 2026-11-27.
 
 Every session must run from a **prioritized work-plan** maintained
 as **beans** — the [`beans`](https://github.com/hmans/beans) CLI
@@ -750,6 +907,8 @@ user's last message, not the most recently mentioned file.
    parallel tool calls. Use background `Agent(run_in_background=true)`
    for independent research / triage that does not block the
    foreground task.
+
+   **Research fronts are interactive child sessions, not background agents (owner directive 2026-11-25, STRICT).** A background `Agent` cannot be steered by the owner. Any research / derivation / open-question front that may need the owner's input is launched as an interactive child session (`mcp__claude-code-remote__create_session`) that the owner can see, talk to, and that asks the owner at forks. Background agents are only for mechanical work with one right answer. When unsure, launch interactive. Procedure: [`dispatch-agent.md` §0a](.claude/skills/local/dispatch-agent.md).
 
 5. **Work the queue while idle.** When you are waiting on a
    long-running script, a background agent, a Lean build, or a CI
@@ -1229,7 +1388,8 @@ ephemeral.
 7. **ALWAYS `/prepare-merge` before merging.** Never call
    `mcp__github__merge_pull_request` directly — always run the
    `/prepare-merge` skill first (rebase, integrate, one-voice
-   review, Lean check, request Gemini + Copilot reviews). Only
+   review, Lean check; Copilot review is **no longer required**,
+   owner ruling 2026-11-22: audit checks replace it). Only
    merge after `/prepare-merge` completes AND the author gives
    **explicit** merge permission. Interpret that permission
    **strictly**: "looks good" is NOT merge permission; "merge it"
@@ -1432,7 +1592,10 @@ ephemeral.
 
     - **Phase 0:** sibling coordination (notify overlapping PRs)
     - **Phase 1:** rebase onto main, build, push
-    - **Phase 1b:** request review; wait for **Copilot** (up to 15 min)
+    - **Phase 1b:** run the audit checks (lean-direct, `scripts/precision-gates.sh`,
+      `scripts/check-sidecars.sh`, run-validate, producer re-runs). **Copilot review is
+      no longer required** (owner ruling 2026-11-22, verbatim: *"co-pilot review is no
+      longer required. We are using audit checks."*); do not request or wait for it.
     - **Phase 2:** resolve review comments
     - **Phase 3:** escalate to user if blocked
     - **Phase 4:** merge only after reviews resolved + the
@@ -1475,7 +1638,15 @@ ephemeral.
     >   content-block siblings only) — nothing but the agent checks it.
     > - **Content blocks changed** → [`scripts/check-sidecars.sh`](scripts/check-sidecars.sh)
     >   clean + `qa-sweep` on the touched criteria; math-bearing `.md`
-    >   also needs the render-QA gate.
+    >   also needs the render-QA gate. **Its knowledge-graph step is
+    >   BLOCKING** (owner, 2026-11-25, after the photon PRs left 11 block
+    >   nodes stale): it runs `scripts/gen-block-jsonld.sh --check --paper
+    >   <paper>` for every paper the branch touches and exits 1 on a stale
+    >   or missing `<block>.jsonld`. Regenerate with
+    >   `scripts/gen-block-jsonld.sh --paper <paper>`. The wrapper refuses
+    >   (exit 3) on the light platform, which would rewrite every node; the
+    >   session-start hook now replays `index.lock.json` so the root mounts
+    >   are there.
     > - **Compute changed** → the producer re-run + witness refreshed.
     >
     > Do **not** write "CI green" in a PR or merge rationale unless a
@@ -1784,6 +1955,29 @@ corpus — run the **corpus-grep checklist**:
    corpus_search  query: "<topic>", direction: "in"   # what depends on it
    ```
 
+   **If the MCP server is not connected, use the CLI. Never skip this step.**
+   `bun scripts/corpus-search.ts "<topic>" [--direction in|out] [--hops N]
+   [--limit N] [--search-text] [--provenance authored|ingested]` calls the same
+   function the MCP tool calls, over the same roots. It runs on the light
+   platform that the SessionStart hook installs.
+
+   The MCP server does not start by itself: call `mcp__paper-assistant__start`
+   first, then RefreshMcpTools (see §"MCP servers start on demand").
+
+   The MCP route reported "paper-assistant: Connection closed" in every
+   session from at least 2026-10-12 to 2026-11-20 (bean `qou-q261`). Two causes:
+   - `.mcp.json` named `folio-assistant/cat-harness/src/index.ts`, which the
+     platform restructure removed. The launcher is now
+     `scripts/paper-assistant-mcp.sh`.
+   - The MCP server needs the full platform (`scripts/setup-folio-assistant.sh`).
+     The light one has no `@modelcontextprotocol/sdk`.
+
+   A run that reports step 0 as "unavailable" has skipped it; the CLI was
+   available. The default `--limit` is 20 seeds. At that limit, "Plancherel" returned 20
+   authored seeds and 0 ingested; at `--limit 200` it returned 49 ingested
+   (measured 2026-11-20). Raise `--limit` before reading "no ingested hits" as
+   "not held".
+
    Read three things in its answer. **`why`** says whether a hit MATCHED
    or was REACHED, and by which edge — a `~` prefix means the edge ran
    backwards, so that node depends on the seed rather than the reverse.
@@ -1821,7 +2015,7 @@ corpus — run the **corpus-grep checklist**:
 
    ```sh
    grep -in <topic> library/INDEX.md              # ~513 briefs (527 lines); re-count, do not trust
-   cat library/<doc-id>/summary.json              # ~300 tokens: is it worth opening?
+   scripts/summarize-library.py --show <doc-id>   # ~300 tokens: is it worth opening?
    grep -rln <topic> library/<doc-id>/sections/   # the text itself
    ```
 
@@ -1848,8 +2042,23 @@ corpus — run the **corpus-grep checklist**:
    document's own abstract, section titles and extracted claims, nothing
    written by a model — so a brief is only as good as the abstract it came
    from. Regenerate with `scripts/summarize-library.py --apply`; a
-   hand-written summary marked `provenance.kind: "agent"` survives
-   regeneration.
+   hand-written summary (`narrative.drafted_by.kind` `agent` or `human`)
+   survives regeneration.
+
+   **The tier-2 summary is the `narrative` of the entry's KG node,
+   `library/<doc-id>/manifest.jsonld` (since 2026-11-24).** It was
+   `library/<doc-id>/summary.json`, a file the platform's library gate
+   (`check:l1-complete`) does not allow in an entry. The owner ruled that
+   summaries are held as library components are elsewhere in the harness
+   (PR #9399), so each is now a platform narrative record: the brief, a
+   blank line, then the extended summary as `text`, with `state` and
+   `drafted_by` (`script` for the extractive ones, `agent` for the
+   hand-written ones). Read one with
+   `scripts/summarize-library.py --show <doc-id>` or
+   `jq -r ".narrative[0].text" library/<doc-id>/manifest.jsonld`; grep them all
+   with `grep -il <topic> library/*/manifest.jsonld` (that also matches
+   titles). Audit docs dated before the move cite the old path; read them
+   through this note.
 
    The full-text grep, for when you want it directly:
    `grep -rln <topic> library/*/sections/` — the **ingested sources**.
@@ -1971,10 +2180,34 @@ corpus — run the **corpus-grep checklist**:
    The trail to it ran `qou-8pl3` → `qou-8p1i` (scrapped) → `qou-dwsh`,
    i.e. through exactly the two statuses this note says to read.
 
-Only after **all six** grep paths return empty (modulo the
-originating file itself) may you declare the item open. Step 0 is not a
-seventh gate — it is the step that most often stops you needing the other
-six, and an empty result from it is not by itself a licence to declare
+7. **The block's own QA sidecar — read it before any grep (owner-approved
+   2026-11-22, bean `qou-tv74`).** When the item is about a specific content
+   block, open `<block>.qa.json` beside its `.md` and read every entry whose
+   `reviewer.kind` is `"agent"`:
+
+   ```sh
+   jq -r '.criteria | to_entries[] | .key as $k | .value[]
+          | select(.reviewer.kind=="agent")
+          | "\($k) [\(.result)] \(.reviewed_at): \(.evidence // .notes // "")"' \
+     folio/<paper>/<chapter>/<block>.qa.json
+   ```
+
+   Paths 1–6 cannot reach these verdicts. The sidecar sits under `folio/`,
+   but its analysis is one escaped JSON string keyed by a criterion name
+   (`trap-superlative`, `voice-branch-jargon`), not by the topic, and an
+   agent verdict is filed under whichever criterion invoked it, not the one
+   its content belongs to. Worked case: the sidecar of
+   `unified-iterative-correction-table-data` held, under the voice criterion
+   `trap-superlative`, a numerical analysis of that table's unexplained
+   fourth column, written four weeks before a hunt for the table's producer
+   ran paths 1–6 to completion and came back empty. Treat a verdict as a
+   prior agent's analysis: check its `field_hash` against the current block
+   before relying on it, since a changed block may have outdated it.
+
+Only after **all seven** paths return empty (modulo the
+originating file itself) may you declare the item open. Step 0 is not an
+eighth gate — it is the step that most often stops you needing the other
+seven, and an empty result from it is not by itself a licence to declare
 anything, because a graph that was never generated is silently empty. The source
 file's `## Status`, `Open math`, or `Phase 3 open` notes are
 **not authoritative**: the corpus is the source of truth.
@@ -3041,7 +3274,7 @@ but KL multiplicities `n^w_λ` are non-negative (KL positivity), so a
 `Σ_w n^w_λ·X_w` sum supplies at most the magnitude `|Δ_λ| = dim`,
 never the chirality sign — engine-verified at S₄ (PR #2381) and the
 mixed-sign premise Lean-proved sorry-free (PR #2416,
-`PartitionOf5.deltaSign_mixed`). Full context:
+`QOU.BraidsAndKnots.deltaSign_mixed`). Full context:
 [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](docs/audits/2026-05-18-delta-lambda-gating-context.md);
 Option-E ledger
 [`docs/coordination/option-e.md`](docs/coordination/option-e.md);
@@ -5566,7 +5799,35 @@ $$
 `` ```tex `` blocks is not escaped (it's a column separator in matrices
 and alignments). Only `&` in prose text causes LaTeX errors.
 
-## Lean MCP server (lean-lsp-mcp)
+## MCP servers start on demand (owner directive, 2026-11-20)
+
+Owner, verbatim: *"MCP should only start up if an agent needs the tools. The
+agent should look at the process and what it needs and then make a decision."*
+
+Every server in `.mcp.json` runs through
+[`scripts/mcp-lazy.py`](scripts/mcp-lazy.py). At session start it connects in
+under 0.1 s and exposes **one** tool, `start`; the real server is not running.
+Its description says what the server provides, when it is worth starting, what
+it costs, and the cheaper route that needs no MCP. The commands and those texts
+live in [`scripts/mcp-lazy.json`](scripts/mcp-lazy.json).
+
+**Decide before you start one.** Look at the task. If it needs the tools, call
+`mcp__<server>__start` (pass a one-line `reason`), then call `RefreshMcpTools`
+to load the real tools. If a cheaper route covers it, use that instead:
+
+| server | provides | cheaper route without MCP |
+|---|---|---|
+| `paper-assistant` | `corpus_search` and the platform tools (~74) | `bun scripts/corpus-search.ts "<topic>"` |
+| `lean-lsp` | goal states, diagnostics, Mathlib search | `lean -DautoImplicit=false -s 65536 <file>` (lean-direct) |
+| `paper-search-mcp` | external paper search and PDF download | `library/INDEX.md` and `library/*/sections` |
+| `openalex-paper-search` | OpenAlex author and work metadata | `folio/references/` for cited works |
+
+Why. Measured 2026-11-20 on a fresh container: all four eager servers hit the
+30 s connect timeout at session start. Run by hand, two of them could never
+start: `paper-search-mcp` was unpinned and broke on mcp 2.x (now pinned
+`mcp<2`), and `alex-mcp` needs `OPENALEX_MAILTO`, which is not set here. A
+failed `start` now returns the backend's stderr tail as the tool result.
+
 
 The [lean-lsp-mcp](https://github.com/oOo0oOo/lean-lsp-mcp) server is
 configured via `.mcp.json`. It provides Claude Code with:
@@ -5687,6 +5948,14 @@ git fetch --depth=1 origin "$BR" \
 # Note the disk reads deceptively: `df` shows 252G nominal at 100% with only 38G
 # used, because the real limit is a per-session quota near 38G.
 
+# 🟩 RESEEDED 2026-11-21, head `7c61a1ba876` (bean qou-56qy): an incremental
+# `lake build QOU UGB Fred2005` at main 9428c3511c, 7464 jobs green. 24 parts,
+# 2.1 GB, 61436 tar entries: 7478 oleans / 7479 traces (mathlib 3697, QOU 3466,
+# UGB 35, Fred2005 2). Paper paths are stored as `folio/...`, so the
+# content->folio transform below is a no-op on this seed. Checked: a clean
+# restore plus scripts/lake-restore-package-git.sh, then `lake build`, rebuilds
+# 0 modules. The figures below (a792c46d01b, 2026-09-06) are history.
+#
 # 🛑 MEASURE the traces; do NOT assume them either way. This block used to state
 # flatly that "a RESTORED tree has oleans but NO .trace files". That WAS true and
 # is now FALSE for this branch: `lake-cache/qou-v4-24-0` was RESEEDED AGAIN
@@ -5937,6 +6206,23 @@ re-restore the cache branch before `lean`-direct. Full recipe + recovery:
 > **A source-change count is the wrong population.** Six of those 74 have no
 > olean at all — a *new* file inherits its dependencies' staleness without ever
 > appearing in a drift count keyed on changed sources. Use the closure.
+>
+> **Check your own module before you trust a `lean`-direct green on it (owner
+> approval 2026-11-21, bean `qou-56qy` item 3).** The census is cheap and
+> prints whether the module you touched sits in the dirty closure:
+>
+> ```bash
+> scripts/lean-library-sweep.py --report --only-exact QOU.Your.Module   # one module
+> scripts/lean-library-sweep.py --report --only QOU.Your.Chapter        # a prefix
+> ```
+>
+> It exits 0 and builds nothing. Its last line reads `selection <X>: N of them
+> are dirty`. Measured on `QOU.BringConeGauge` after the 2026-11-21 reseed:
+> 35 modules in its graph, 0 dirty, about 30 s. If N is above 0, rebuild that
+> module's cone with `scripts/lean-direct-cone.sh QOU.Your.Module` (it never
+> calls `lake`, so the restored cache survives), then re-run `lean`-direct. A
+> green from a module with N above 0 is a claim about the snapshot, not about
+> your source.
 >
 > This block is an owner-reviewable wording change to the repo's primary
 > verification guidance, added on the evidence above; revert the wording if you

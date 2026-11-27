@@ -1,5 +1,3 @@
-**Proposition ("Core Levi form").**
-
 Let $D$ be the three-dimensional flow domain, $\mathbb{R}^3$ or $\mathbb{T}^3$ with the Euclidean metric. This is a statement on $D$, not on the [state bundle](#ex:c-quantum-observable-universe) $\mathcal{S}$: the chapter also uses $\mathcal{S}$ as a surface, where a contact structure cannot exist. Let $u$ be a smooth velocity field on $D$ with vorticity $\omega = \mathrm{curl}\,u$, and on the open set $D_\omega = \{\omega \neq 0\}$ let $\xi = \omega/|\omega|$ be the vorticity direction. For a smooth scalar $f > 0$ on $D_\omega$ set
 
 $$
@@ -32,6 +30,6 @@ For (d), write $\omega = |\omega|\,\xi$. Then $\mathrm{curl}\,\omega = |\omega|\
 
 **Examples.** For the Beltrami flow $u = e^{-\nu t}(\sin z, \cos z, 0)$ on $\mathbb{T}^3$, $\xi\cdot\mathrm{curl}\,\xi = 1$ everywhere, so $\ker\varTheta$ is contact on all of $\mathbb{T}^3$. For a straight anti-parallel vortex pair, $\xi = \pm e_z$ is constant on each core, so $\xi\cdot\mathrm{curl}\,\xi = 0$ there and $\ker\varTheta$ is integrable. This holds whatever the cross-sectional shape of the cores, so the core aspect ratio carries no Levi information.
 
-**Relation to the regularity criteria.** The Constantin–Fefferman condition \cite{constantin1993} and its $\tfrac{1}{2}$-Hölder improvement by Beirão da Veiga and Berselli \cite{beiraodaveiga2002} bound the variation of the line field $[\xi]$ on the high-vorticity set. Such a bound controls all of $\nabla\xi$, and so gives an *upper* bound on $|\xi\cdot\mathrm{curl}\,\xi|$. The Levi scalar is one component of $\nabla\xi$. Neither its vanishing nor its non-vanishing implies either criterion. What the criteria do give is stated in [`conj:levi-degeneracy`](#conj:levi-degeneracy).
+**Relation to the regularity criteria.** The Constantin–Fefferman condition \cite{constantin1993} and its $\tfrac{1}{2}$-Hölder improvement by Beirão da Veiga and Berselli \cite{beiraodaveiga2002} bound the variation of the line field $[\xi]$ on the high-vorticity set. Such a bound controls all of $\nabla\xi$, and so gives an *upper* bound on $|\xi\cdot\mathrm{curl}\,\xi|$. The Levi scalar is one component of $\nabla\xi$. Neither its vanishing nor its non-vanishing implies either criterion.
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

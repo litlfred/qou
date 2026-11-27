@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1108.5286v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.5286v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "Hochschild homology of aﬃne Hecke algebras Maarten Solleveld Contents",
+  "title": "Hochschild homology of affine Hecke algebras",
   "contains": [
     "library/arxiv-1108.5286v3/sections/sec-front-matter",
     "library/arxiv-1108.5286v3/sections/sec-000",
@@ -30,6 +30,18 @@
     "library/arxiv-1108.5286v3/sections/sec-015"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Hochschild homology of affine Hecke algebras — Let H = H(R, q) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not roots of unity.\n\n**Hochschild homology of affine Hecke algebras**\n\n*Maarten Solleveld*\n\n39 pp, 17 sections.\n\n**Abstract.** Let H = H(R, q) be an aﬃne Hecke algebra with complex, possibly unequal parameters q, which are not roots of unity. We compute the Hochschild and the cyclic homology of H. It turns out that these are independent of q and that they admit an easy description in terms of the extended quotient of a torus by a Weyl group, both of which are canonically associated to the root datum R. For positive q we also prove that the representations of the family of algebras H(R, qǫ), ǫ ∈C come in families which depend analytically on ǫ. Analogous results are obtained for graded Hecke algebras and for Schwartz completions of aﬃne Hecke algebras. Correction: in 2021 some problems with the construction of families of representations surfaced, these are discussed on pages 16, 18, 19 and 22.\n\n**Outline.** Front matter; Introduction; 1.1 Affine Hecke algebras; 1 Preliminaries; 1.2 Graded Hecke algebras; 1.3 Parabolic subalgebras; 1.4 Lusztig's reduction theorems; 1.5 Schwartz algebras; 2 Analytic families of representations; 2.1 Positive parameters; 2.2 Complex parameters; 3 Hochschild homology; 3.1 Graded Hecke algebras; 3.2 Affine Hecke algebras; 3.3 Schwartz algebras; 3.4 Comparison of different parameters; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -53,8 +65,8 @@
       "stamp_date": "10 Feb 2022"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,8 +1,8 @@
 import Mathlib.Algebra.Module.Basic
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.CategoryTheory.Monoidal.Category
-import QOU.QuantumObservableUniverse.CategoricalFoundations
-import QOU.Torsion.MassTraceIdentity
+import QOU.Core.CategoricalFoundations
+import QOU.LiftingDescent.MassTraceIdentity
 
 
 /-!

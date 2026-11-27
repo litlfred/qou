@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1907.00949v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "865defaa34bf42be66c3820cffe668c7a6baefcd5fe7ab32a3a7407ab7d1d42e",
   "file": "1907.00949v2.pdf"
@@ -16,61 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 3,
-  "by_kind": {
-   "recommendation": 3
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "So for example, every one-parameter subgroup of $\\mathop{\\mathrm{SO}}(n)$ must take the form $\\gamma(t) =\\exp (ta)$ for some skew-symmetric matrix $a\\in \\mathfrak{so}(n)$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-23-geodesic-orbit-spaces.md",
-   "section_title": "Geodesic orbit spaces",
-   "pages": "6-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since the metric expressed in Stiefel coordinates [\\[eq:g2\\]](#eq:g2){reference-type=\"eqref\" reference=\"eq:g2\"} and expressed in orthogonal coordinates [\\[eq:metric1\\]](#eq:metric1){reference-type=\"eqref\" reference=\"eq:metric1\"} must be equal, $$\\label{eq:tmp1} g_{\\llbracket Y \\rrbracket} \\bigl( \\nabla f (\\llbracket Y \\rrbracket),X \\bigr) = g_{\\llbracket Q \\rrbracket} \\bigl(\\nabla f (\\llbracket Y \\rrbracket)_a, X_a\\bigr) = \\frac{1}{2} \\mathop{\\mathrm{tr}}( \\nabla f (\\llbracket Y \\rrbracket)_a^{\\scriptscriptstyle\\mathsf{T}}X_a).$$ By definition of Riemannian gradient [\\[eq:gH\\]](#eq:gH){reference-type=\"eqref\" reference=\"eq:gH\"}, we also have $$\\label{eq:tmp2} g_{\\llbracket Y \\rrbracket}(\\nabla f(\\llbracket Y\\rrbracket), X) = \\mathop{\\mathrm{tr}}(f_Y^{\\scriptscriptstyle\\mathsf{T}}X_a).$$ Comparing [\\[eq:tmp1\\]](#eq:tmp1){reference-type=\"eqref\" reference=\"eq:tmp1\"} and [\\[eq:tmp2\\]](#eq:tmp2){reference-type=\"eqref\" reference=\"eq:tmp2\"}, we see that $\\nabla f(\\llbracket Y\\rrbracket)$ is the projection of $f_Y$ onto $T_{\\llbracket Y \\rrbracket} \\mathop{\\mathrm{Flag}}(n_1,\\dots,n_d;n)$, i.e., $f_Y = \\nabla f(\\llbracket Y\\rrbracket) + Z$ for some $Z$ orthogonal to $T_{\\llbracket Y \\rrbrac",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-017-6-riemannian-gradient-and-hessian-over-the-flag.md",
-   "section_title": "Riemannian Gradient and Hessian over the flag manifold",
-   "pages": "19-21",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We seek the solution to $$\\label{eq:dis} \\begin{tabular}{rl} maximize & $ \\mathop{\\mathrm{tr}}(Y^{\\scriptscriptstyle\\mathsf{T}}MY)$ \\\\[1ex] subject to & $\\llbracket Y \\rrbracket\\in \\mathop{\\mathrm{Flag}}(n_1,\\dots,n_d; n)$. \\end{tabular}$$ Here $Y \\in \\mathbb{R}^{n \\times n_d}$, $Y^{\\scriptscriptstyle\\mathsf{T}}Y = 1$, and the objective function is well-defined as a function on the flag manifold: If we have $Y$ and $Y'$ with $\\llbracket Y \\rrbracket= \\llbracket Y'\\rrbracket$, then they must be related as in [\\[eq:rep\\]](#eq:rep){reference-type=\"eqref\" reference=\"eq:rep\"} and thus $\\mathop{\\mathrm{tr}}(Y^{\\scriptscriptstyle\\mathsf{T}}MY) = \\mathop{\\mathrm{tr}}(Y^{\\prime{\\scriptscriptstyle\\mathsf{T}}} MY')$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-023-81-principal-flags.md",
-   "section_title": "Principal flags",
-   "pages": "23-25",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

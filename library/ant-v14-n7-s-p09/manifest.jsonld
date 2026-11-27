@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p09",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p09/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -20,6 +20,18 @@
     "library/ant-v14-n7-s-p09/sections/sec-005"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Galois action on the principal block and cyclic Sylow subgroups — 7 sections: Front matter; Introduction; Blocks with normal defect group\n\n**Galois action on the principal block and cyclic Sylow subgroups**\n\n*Noelia Rizo, A. A. Schaeffer Fry and Carolina Vallejo*\n\n28 pp, 7 sections.\n\n**Outline.** Front matter; Introduction; 1 Blocks with normal defect group; 2 Reducing to simple groups; 3 Simple groups; Acknowledgements; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "ant-v14-n7-s-p09",
@@ -29,8 +41,8 @@
     "pages": 28,
     "arxiv": null,
     "doi": "10.2140/ant.2020.14.1953",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

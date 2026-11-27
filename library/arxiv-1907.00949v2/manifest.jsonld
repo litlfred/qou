@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1907.00949v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1907.00949v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -41,6 +41,18 @@
     "library/arxiv-1907.00949v2/sections/sec-026"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "OPTIMIZATION ON FLAG MANIFOLDS — A ﬂag is a sequence of nested subspaces.\n\n**OPTIMIZATION ON FLAG MANIFOLDS**\n\n*KE YE, KEN SZE-WAI WONG, AND LEK-HENG LIM*\n\n27 pp, 28 sections.\n\n**Abstract.** A ﬂag is a sequence of nested subspaces. Flags are ubiquitous in numerical analysis, arising in ﬁnite elements, multigrid, spectral, and pseudospectral methods for numerical pde; they arise in the form of Krylov subspaces in matrix computations, and as multiresolution analysis in wavelets constructions. They are common in statistics too — principal component, canonical cor- relation, and correspondence analyses may all be viewed as methods for extracting ﬂags from a data set. The main goal of this article is to develop the tools needed for optimizing over a set of ﬂags, which is a smooth manifold called the ﬂag manifold, and it contains the Grassmannian as the simplest special case.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Flags in numerical analysis; 1.2 Flags in statistics; 1.3 Prior work and our contributions; 1.4 Outline; 2 Basic differential geometry of homogeneous s; 2.1 Lie groups and Lie algebras; 2.2 Homogeneous spaces; 2.3 Geodesic orbit spaces; 2.4 Riemannian notions; 3 Basic differential geometry of flag manifold; 4 Flag manifolds as matrix homogeneous spaces; 4.1 Orthogonal coordinates for the flag manifo; 4.2 Stiefel coordinates for the flag manifold; 5 Flag manifolds as matrix manifolds; 5.1 Projection coordinates for the flag manifo; 5.2 Refined projection coordinates for the fla",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -62,8 +74,8 @@
       "stamp_date": "7 Aug 2019"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -30,6 +30,19 @@ generation, so 9 is not available as a constituent winding.
 
 => the maximum meson braid in this framework is t-bar t = 7 + 7 = 14 crossings.
 
+NOTE (2026-11-21), owner rulings 2026-11-20 and 2026-11-21: a quark is an
+unknot strand of B_3 carrying ONE crossing letter, and T(2,n) is its LEPTON
+PARTNER. The 3/5/7 above are the partners' crossing counts -- generation
+labels -- and the sign of signedWrithe is the quark strand's orientation. So
+"meson crossing number = sum of constituent windings" now reads "sum of the
+constituents' partner labels". That sum is no longer the crossing count of a
+braid word built from the two quarks, so the 14-crossing CAP below is a
+premise this probe takes as given and the ruling does not supply. The
+measurement (which Dehornoy floors are reachable at each length) is
+unaffected. The emitted witness strings still use the older wording; they
+were not edited and the producer was not re-run, so scriptHash drifts on this
+comment-only change.
+
 WHAT THIS PROBE MEASURES
 ========================
 Whether a B_3 word of at most 14 crossings can reach Dehornoy floor 3.

@@ -1,0 +1,1 @@
+In fact, according to the proof of [1, Proposition 3.1], a bijective k–linear map f : A →A′ is such that Rx′,y′ ◦(f ⊗f) = (f ⊗f) ◦Rx,y if and only if x = x′, y = y′ and f is, up to multiplication by a scalar, an isomorphism of k–algebras. (Note that the assumption char(k)̸ = 2 is used here.)

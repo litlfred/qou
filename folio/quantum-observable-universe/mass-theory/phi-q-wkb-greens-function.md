@@ -1,4 +1,3 @@
-**Conjecture (WKB Green's function).**
 *Under joint Faddeev scaling, the partial product admits a stationary-phase expansion where the sub-leading term represents the half-log-determinant of the categorical Dirac operator:*
 
 $$

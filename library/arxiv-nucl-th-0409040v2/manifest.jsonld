@@ -5,16 +5,28 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0409040v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-nucl-th-0409040v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "On the correlation between the binding energies of the triton and the α -particle Abstract",
+  "title": "On the correlation between the binding energies of the triton and the alpha-particle",
   "contains": [
     "library/arxiv-nucl-th-0409040v2/sections/sec-front-matter",
     "library/arxiv-nucl-th-0409040v2/sections/sec-000"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On the correlation between the binding energies of the triton and the alpha-particle — We consider the correlation between the binding energies of the triton and the α-particle which is empirically\n\n**On the correlation between the binding energies of the triton and the alpha-particle**\n\n*L. Platter∗*\n\n7 pp, 2 sections.\n\n**Abstract.** We consider the correlation between the binding energies of the triton and the α-particle which is empirically observed in calculations employing diﬀerent phenomenological nucleon-nucleon in- teractions. Using an eﬀective quantum mechanics approach for short-range interactions with large scattering length |a| ≫ℓ, where ℓis the natural low-energy length scale, we construct the eﬀective interaction potential at leading order in ℓ/|a|. In order to renormalize the four-nucleon system, it is suﬃcient to include a SU(4)-symmetric one-parameter three-nucleon interaction in addition to the S-wave nucleon-nucleon interactions. The absence of a four-nucleon force at this order explains the empirically observed correlation between the binding energies of the triton and the α-particle. We calculate this correlation and obtain a prediction for the α-particle binding energy.\n\n**Outline.** Front matter; Acknowledgments",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
@@ -43,8 +55,8 @@
       "stamp_date": "22 Nov 2004"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

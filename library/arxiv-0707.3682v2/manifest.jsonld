@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.3682v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0707.3682v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -21,6 +21,18 @@
     "library/arxiv-0707.3682v2/sections/sec-006"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS — We formulate a conjectural p-adic analogue of Borel’s theorem re- lating regulators for higher K-groups of number ﬁelds to special values of the\n\n**ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS**\n\n*AMNON BESSER, PAUL BUCKINGHAM, ROB DE JEU*\n\n44 pp, 8 sections.\n\n**Abstract.** We formulate a conjectural p-adic analogue of Borel’s theorem re- lating regulators for higher K-groups of number ﬁelds to special values of the corresponding ζ-functions, using syntomic regulators and p-adic L-functions. We also formulate a corresponding conjecture for Artin motives, and state a conjecture about the precise relation between the p-adic and classical situa- tions. Parts of the conjectures are proved when the number ﬁeld (or Artin motive) is Abelian over the rationals, and all conjectures are veriﬁed numeri- cally in some other cases.\n\n**Outline.** Front matter; 1 Introduction; 2 The p-adiccomingchar Beilinson conjecture fo; 3 A motivic version of the conjecture; 4 More explicit K -groups and regulators; 5 Computing K -groups in practice; 7 Examples; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
@@ -47,8 +59,8 @@
       "stamp_date": "19 Nov 2007"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

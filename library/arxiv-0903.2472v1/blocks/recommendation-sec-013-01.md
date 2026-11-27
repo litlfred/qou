@@ -1,1 +1,0 @@
-[^1]: Note that [@garoufalidis-2004; @garoufalidis-2006] look at asymptotics of the colored Jones polynomial normalized by its value at the unknot, while the $SL(2,{\mathbb{C}})$ Chern-Simons partition function should agree with the unnormalized colored Jones polynomial.

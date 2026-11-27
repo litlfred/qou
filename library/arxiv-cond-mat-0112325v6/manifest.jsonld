@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-cond-mat-0112325v6",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-cond-mat-0112325v6/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -19,6 +19,18 @@
     "library/arxiv-cond-mat-0112325v6/sections/sec-004"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Knots in Condensed Matters — 6 sections: Front matter; Introduction; Knot in Skyrme theory\n\n**Knots in Condensed Matters**\n\n*Y. M. Cho∗*\n\n9 pp, 6 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Knot in Skyrme theory; 3 Knot in Two-component Bose-Einstein Condensa; 4 Knot in Two-gap Superconductors; 5 Discussion",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
@@ -47,8 +59,8 @@
       "stamp_date": "19 Jul 2006"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,1 +1,0 @@
-For this, replacing U by a suitable open neigh- borhood V of p(o), U by the connected component of p'^V) containing o and F by the stabilizer of o, we may and shall assume that U — Ui e S, that p induces an iso- ^/ /^ morphism S -> S and that 9 embeds S in Y.

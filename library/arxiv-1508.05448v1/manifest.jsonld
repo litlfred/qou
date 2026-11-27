@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1508.05448v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1508.05448v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -49,6 +49,18 @@
     "library/arxiv-1508.05448v1/sections/sec-034"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Concentration of Measure Techniques and Applications — 36 sections: Front matter; Biographical Sketch; Acknowledgments\n\n**Concentration of Measure Techniques and Applications**\n\n*Meg Walters*\n\n134 pp, 36 sections.\n\n**Outline.** Front matter; Biographical Sketch; Acknowledgments; Abstract; Contributors and Funding Sources; List of Figures; 1 Introduction; 2 Concentration of Measure Results and other N; 2.1 Talagrand's Gaussian Concentration of Meas; 2.2 Talagrand's Isoperimetric Inequality; 2.3 Ledoux's Concentration of Measure on Rever; 2.4 The Euler-Maclaurin Formula; 3 Random Operator Compressions; 3.1 Background for First Result; 3.2 Kac's Walk on SO(n); 3.3 Main Result; 3.4 Kac's Model Coupled to a Thermostat; 3.5 An Additional Application: The Length of t",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -72,8 +84,8 @@
       "stamp_date": "22 Aug 2015"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

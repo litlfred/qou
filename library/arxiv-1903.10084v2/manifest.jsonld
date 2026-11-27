@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1903.10084v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1903.10084v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -17,6 +17,18 @@
     "library/arxiv-1903.10084v2/sections/sec-002"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Probing the linear polarization of photons in ultraperipheral heavy ion collisions — 4 sections: Front matter; I Introduction; II Azimuthal asymmetries in di-lep\n\n**Probing the linear polarization of photons in ultraperipheral heavy ion collisions**\n\n*Cong Li,1 Jian Zhou,1 and Ya-jin Zhou1*\n\n7 pp, 4 sections.\n\n**Outline.** Front matter; I Introduction; II Azimuthal asymmetries in di-lepton producti; Acknowledgments",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "arxiv-1903.10084v2",
@@ -33,8 +45,8 @@
       "stamp_date": "9 Jul 2019"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

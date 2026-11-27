@@ -1,0 +1,1 @@
+For m ≥0 we have: fm,p(q) = ∞ X k,i=0 (−1)iqi(i+1)/2+k (q; q)m+k+i (q; q)m(q; q)i(q; q)k hk,p(q), f−1−m,p(q) = m X k=0 m−k X i=0 (−1)iqi(i+1)/2+k (q−1; q−1)m (q−1; q−1)m−i−k(q; q)i(q; q)k hk,p(q) . (268)

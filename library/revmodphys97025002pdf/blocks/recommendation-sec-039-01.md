@@ -1,1 +1,0 @@
-In the least-squares adjustment that determines the 2022 recommended values of the constants, the theoretical and experimental muonic data in Tables XIV and XV of this section are used as input data together with the theoretical and experimental hydrogen and deuterium transition energies data discussed in Sec.

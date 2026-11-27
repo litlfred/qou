@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "The depth correspondence conditionally reduces to the Volume Conjecture at Borromean rings, the Whitehead link, and twist knots",
   lean: {
-    ref: "qou:QOU.AppendixSurreals.B1HyperbolicRowsTheorem.b1_hyperbolic_rows",
+    ref: "qou:QOU.Observations.B1HyperbolicRowsTheorem.b1_hyperbolic_rows",
     validation: "not_checked",
   },
   uses: ["prop:b1-torus-knot-rows-theorem"],

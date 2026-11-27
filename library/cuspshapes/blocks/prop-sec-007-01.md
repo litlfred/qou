@@ -1,0 +1,1 @@
+Let [T0] denote the Euclidean similarity structure on the torus that includes the 1 × 2 rectangle. Let U denote a neighborhood of [T0]. Then there exists a sequence of hyperbolic Berge knots, all with cusp shape lying in the neighborhood U of [T0]. Moreover, maximal cusps for these Berge knots limit to a 2 × 4 rectangle.

@@ -1,1 +1,0 @@
-We shall see that as $t = e^{-\Lambda} \to 0$, the amoebas $A(W^{-1}(t^{-\epsilon}))$ move farther away from the singularity, where the approximations $\xi \approx \log|u|$ and $\psi \approx \log|v|$ hold with increasing accuracy, while $\eta = \log|w|$ holds exactly everywhere.

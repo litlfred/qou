@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0505170v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "0846b74f9c7c55cb6348ae4029e0098646a6ad6d09e92126e25213c46e7d7803",
   "file": "math0505170.pdf"
@@ -16,46 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
-  "by_kind": {
-   "recommendation": 2
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall usually refer to the cosimplicial object as $C = \\set{C^p}_{p \\in \\mbb{N}}$, and for any $\\alpha \\in \\bsym{\\Delta}_p^q$ the corresponding morphism in $\\cat{C}$ will be denoted by $\\alpha^* : C^p \\to C^q$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-1-the-averaging-process.md",
-   "section_title": "The Averaging Process",
-   "pages": "2-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "From now on we shall write $\\opn{exp}_{G}$ instead of $\\opn{exp}_{G \\times X}$, for the sake of brevity.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-1-the-averaging-process.md",
-   "section_title": "The Averaging Process",
-   "pages": "2-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

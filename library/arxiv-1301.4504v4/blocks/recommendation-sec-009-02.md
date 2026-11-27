@@ -1,1 +1,0 @@
-Since each state $|i\rangle$ must have its own distinct $U_R(i)$, the vast majority of initial microstates must be decoded by generic $U_R$'s which necessarily take time of order $2^{n+k+m}$ to implement.

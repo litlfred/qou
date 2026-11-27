@@ -1,1 +1,0 @@
-Also, as pointed out in section [\[propagator\]](#propagator){reference-type="ref" reference="propagator"} and by Eq.([\[Oextrapolation\]](#Oextrapolation){reference-type="ref" reference="Oextrapolation"}), for the AV6' interaction, our PIMC results should contain even orders of $\Delta \tau$ error comparing with the true ground state results for small time step $\Delta \tau$.

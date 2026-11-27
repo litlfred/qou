@@ -1,0 +1,1 @@
+Suppose that S is countable and the initial distribution η0 of a symmetric exclusion process on {0, 1}S is strongly Rayleigh. Then the distribution of ηt is strongly Rayleigh, and hence CNA+, for all t > 0. NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS

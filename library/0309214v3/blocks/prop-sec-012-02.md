@@ -1,0 +1,1 @@
+The colored Jones function of a long knot K′ is a multisum of a q–proper hypergeometric function: JK′(n) = X k≥0 Fw(n, k). Geometry & Topology, Volume 9 (2005) The colored Jones function is q–holonomic

@@ -1,6 +1,5 @@
 The canonical trace decomposes as a sum of generator volumes. A transfer matrix product computes each generator's volume. These terms organize as a jet expansion in the nucleon count.
 
-**Proposition.**
 At each generator $\sigma_i$, nucleon $i$ crosses with subsequent nucleons. These crossings act on $\sigma_i$ and reduce via the Hecke relation to a linear combination:
 
 $$

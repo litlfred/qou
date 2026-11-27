@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2209.06973v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2209.06973v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -25,6 +25,18 @@
     "library/arxiv-2209.06973v1/sections/sec-010"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On the geometry of two state models for the colored Jones polynomial — Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of\n\n**On the geometry of two state models for the colored Jones polynomial**\n\n*September 16, 2022*\n\n66 pp, 12 sections.\n\n**Abstract.** Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of states on the part arc-graph of a link projection and the set of states on a corresponding bichromatic digraph, called arc-graph, as deﬁned by Garoufalidis and Loebl [7]. We use this to give a new and essentially elementary proof for the knot state-sum formula in [7]. We will show that the state-sum contributions of states on the part arc-graph de- ﬁned by the universal R-matrix of Uq(sl(2, C)) correspond, under our bijection of sets of states, to the contributions in [7]. This will show that the two state models are in fact not essentially distinct. Our ap- proach will also extend the formula of Garoufalidis and Loebl to links. This requires some additional non-trivial observations concerning the geometry of states on the part arc-graphs.\n\n**Outline.** Front matter; 1 Introduction; 2 State models; 3 Graphs and colorings for state-sums of the c; 4 The flow lemma; 5 The R-matrix state model; 6 Proving the Garoufalidis-Loebl state-sum; 7 Evaluation of the Garoufalidis-Loebl state-s; 8 Working with cyclic ordering; 9 Weaving links; 10 Vertex ordering by braids; 11 Questions and projects",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -46,8 +58,8 @@
       "stamp_date": "14 Sep 2022"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

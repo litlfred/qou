@@ -1,1 +1,0 @@
-In order to illustrate how this axiomatic formulation works we shall briefly review a corresponding formulation in a more familiar setting, namely the one of connections on fibre bundles; see \cite{schreiber3}.

@@ -1,30 +1,35 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/conj-borromean-bloch-group-element",
   "@type": [
-    "folio-assistant-core:Conjecture",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
   "label": "conj:borromean-bloch-group-element",
   "kind": "conjecture",
-  "title": "Borromean rings represent a non-trivial element of $K_3(\\mathbb{C})$ / Bloch group with regulator $r_2 = 8G$",
+  "title": "Next-order regulator shadow $r_2^{(2)}[\\mathcal{B}_3] = -6G$ ($h^4 = -3/4$) of the Borromean Bloch class",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-vol-through-tau",
     "papers/quantum-observable-universe/blocks/rem-vol-as-motivic-period",
-    "papers/quantum-observable-universe/blocks/prop-binding-scale-catalan",
+    "papers/quantum-observable-universe/blocks/conj-binding-scale-catalan",
     "papers/quantum-observable-universe/blocks/conj-dilogarithm-archimedean-limit"
   ],
   "cites": [
+    "references/neumann2004",
+    "references/arxiv-2304.12545v1",
+    "references/kirillov1995",
     "references/bloch2000",
     "references/neumann-zagier1985",
     "references/suslin1991",
     "references/zagier1986",
-    "references/kashaev1997"
+    "references/kashaev1997",
+    "references/kegel2024"
   ],
   "tags": [
     "bloch-group",

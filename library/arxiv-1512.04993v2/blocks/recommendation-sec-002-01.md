@@ -1,1 +1,0 @@
-Moore's ``law'' predicts we will run up against the fundamental limits at the start of the twenty-third century.} This is required by unitarity---if an object can be forced to undergo gravitational collapse by adding mass, then the second law of thermodynamics insists it must have less entropy than the resulting black hole.

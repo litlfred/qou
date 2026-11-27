@@ -1,1 +1,0 @@
-We turn now to their specification and indeed we shall find some interesting identities between them, which will then be summarised in §[\[subsec: summarising quotients\]](#subsec: summarising quotients){reference-type="ref" reference="subsec: summarising quotients"}.

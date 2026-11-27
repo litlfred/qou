@@ -1,0 +1,1 @@
+With notation as in 19.6.1, any normal trace on P is de- termined by its restriction to all commutative subalgebras of the form AI = {ei|i ∈I}′′ where I is a subset of N with the property that i, j ∈I =⇒|i −j| ≥2 .

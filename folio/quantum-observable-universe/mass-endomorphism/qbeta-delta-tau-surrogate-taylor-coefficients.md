@@ -1,35 +1,42 @@
 **Catalogue (Taylor coefficients of the surrogate $\Delta\mathrm{tr}_M$).**
 *The Taylor coefficients $c_n$ of*
-[`delta_tau_M_surrogate`](qbeta-per-block-chi-closed-forms.md)
+[the surrogate trace difference](qbeta-per-block-chi-closed-forms.md)
 *expanded around the classical point $q = 1$ in the variable
 $w = q - 1$, to order 7, are read off the closed form*
 
 $$
-  \Delta\mathrm{tr}_M^{\text{surr}}(q) = \frac{
-    2q^{17} - 2q^{16} - 5q^{15} + 4q^{14} + 8q^{13} - 9q^{12} - 8q^{11}
-    + 9q^{10} + 11q^{9} - 11q^{8} - 9q^{7} + 8q^{6} + 9q^{5} - 8q^{4}
-    - 4q^{3} + 5q^{2} + 2q - 2
-  }{4 q^{8} (q^2 + q + 1)}
+  \Delta\mathrm{tr}_M^{\text{surr}}(q) = \frac{N(q)}{4 q^{8} (q^2 + q + 1)},
 $$
+
+*where*
+
+```tex
+\[
+\begin{aligned}
+  N(q) ={}& 2q^{17} - 2q^{16} - 5q^{15} + 4q^{14} + 8q^{13} - 9q^{12} - 8q^{11} \\
+  &+ 9q^{10} + 11q^{9} - 11q^{8} - 9q^{7} + 8q^{6} + 9q^{5} - 8q^{4} \\
+  &- 4q^{3} + 5q^{2} + 2q - 2,
+\end{aligned}
+\]
+```
 
 *by substituting $q = 1 + w$ and extracting the coefficient of $w^n$:*
 
-| Order $n$ | Coefficient $c_n$ | Status in Lean |
+| Order $n$ | Coefficient $c_n$ | Status |
 |---|---|---|
-| 0 | $0$ | proved (`delta_tau_M_surrogate_vanish_at_one`) |
-| 1 | $-5/6$ | proved (`delta_tau_M_surrogate_hasDerivAt_one`) |
-| 2 | $5/6$ | proved (`delta_tau_M_surrogate_taylor_coeff_2`) |
-| 3 | $-23/9$ | proved (`delta_tau_M_surrogate_taylor_coeff_3`) |
-| 4 | $77/18$ | proved (`delta_tau_M_surrogate_taylor_coeff_4`) |
-| 5 | $1349/108$ | proved (`delta_tau_M_surrogate_taylor_coeff_5`) |
-| 6 | $-191/4$ | proved (`delta_tau_M_surrogate_taylor_coeff_6`) |
-| 7 | $26285/162$ | proved (`delta_tau_M_surrogate_taylor_coeff_7`) |
+| 0 | $0$ | proved |
+| 1 | $-5/6$ | proved |
+| 2 | $5/6$ | proved |
+| 3 | $-23/9$ | proved |
+| 4 | $77/18$ | proved |
+| 5 | $1349/108$ | proved |
+| 6 | $-191/4$ | proved |
+| 7 | $26285/162$ | proved |
 
-Every order is now formally proved, orders 2 and 3 by explicit quotient-rule
+Every order is now proved, orders 2 and 3 by explicit quotient-rule
 derivative towers and orders 4 to 7 by an iterated-Leibniz recurrence on the
-polynomial identity $f \cdot D = N$. The witness independently reproduces all
-eight coefficients by direct series expansion, which shares no machinery with
-the Lean route.
+polynomial identity $f \cdot D = N$. A direct series expansion independently reproduces all
+eight coefficients, sharing no machinery with the proof.
 
 **Dependence on the intra-nucleon ordering.** The closed form above is the one
 induced by the canonical borromean $\chi_{(2,1)}$; the grouped ordering gives
@@ -43,7 +50,5 @@ above move.
 ## Cross-references
 
 - Parent block:
-  [`prop:qbeta-per-block-chi-closed-forms`](qbeta-per-block-chi-closed-forms.md)
-  (`delta_tau_M_surrogate` definition + order-0/order-1 proofs).
-- Witness JSON:
-  [`qbeta-c3-multiblock-recursion-attack.witness.json`](../../../computations/qbeta/qbeta-c3-multiblock-recursion-attack.witness.json).
+  [Per-block character closed forms for $\chi_\lambda(\Delta_{T_\beta})(q)$ over $H_3(q)$](qbeta-per-block-chi-closed-forms.md)
+  (definition of the surrogate and the order-0/order-1 proofs).

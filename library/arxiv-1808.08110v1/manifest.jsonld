@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1808.08110v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1808.08110v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -22,6 +22,18 @@
     "library/arxiv-1808.08110v1/sections/sec-007"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Exceptional quantum geometry and particle physics II — We continue the study undertaken in [13] of the relevance of the exceptional Jordan algebra J8 3 of hermitian 3 × 3 octonionic matrices for the\n\n**Exceptional quantum geometry and particle physics II**\n\n*AND PARTICLE PHYSICS II*\n\n18 pp, 9 sections.\n\n**Abstract.** We continue the study undertaken in [13] of the relevance of the exceptional Jordan algebra J8 3 of hermitian 3 × 3 octonionic matrices for the description of the internal space of the fundamental fermions of the Standard Model with 3 generations. By using the suggestion of [30] (properly justiﬁed here) that the Jordan algebra J8 2 of hermitian 2× 2 octonionic matrices is relevant for the description of the internal space of the fundamental fermions of one generation, we show that, based on the same principles and the same framework as in [13], there is a way to describe the internal space of the 3 generations which avoids the introduction of new fundamental fermions and where there is no problem with respect to the electroweak symmetry. LPT-ORSAY 18-78 1Laboratoire de Physique Th´eorique, CNRS, Universit´e Paris-Sud, Universit´e Paris- Saclay, Bˆatiment 210, F-91 405 Orsay.\n\n**Outline.** Front matter; 1 Introduction; 2 Unimodularity of SU(3)c and the quark-lepton; 3 The 3 generations and the triality in J83; 4 The factor J82=JSpin9 for one generation; 5 W2-triality and the 3 generations; 6 The extended electroweak symmetry SU(3)ew; 7 The internal symmetry SU(3)cSU(3)ew/Z3; 8 Discussion",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -43,8 +55,8 @@
       "stamp_date": "24 Aug 2018"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

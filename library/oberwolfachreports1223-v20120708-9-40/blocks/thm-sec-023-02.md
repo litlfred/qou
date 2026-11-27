@@ -1,0 +1,1 @@
+There is a ﬁltration by subgroups G = G1 ⊂G2 ⊂· · · ⊂∪kGk = G such that; (1) Each group Gk ∼= G. (2) The inclusion of any Gk ⊂Gℓis a para-equivalence, k < ℓ. (3) H is para-G if and only if G ∼= H. This has many corollaries, a few enumerated below.

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2308.16266v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2308.16266v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -15,6 +15,18 @@
     "library/arxiv-2308.16266v1/sections/sec-001"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Distilling the essential elements of nuclear binding via neural-network quantum states — 2 sections: Distilling the essential elements ; Appendix: Wigner-Eckart\n\n**Distilling the essential elements of nuclear binding via neural-network quantum states**\n\n*Alex Gnech,1, 2 Bryce Fore,3 and Alessandro Lovato2, 3, 4*\n\n7 pp, 2 sections.\n\n**Outline.** Distilling the essential elements of nuclear b; Appendix: Wigner-Eckart",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -38,8 +50,8 @@
       "stamp_date": "30 Aug 2023"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

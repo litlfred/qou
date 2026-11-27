@@ -1,1 +1,0 @@
-First, note that since $\MQ$ is an equitable partition of $\ell$ and $u$, that for any $Q\in \MQ$ we have $\ell'_Q = |Q| \ell_w$ for all $w\in Q$ and $u'_Q = |Q| u_w$, since the $l_w$ and $u_w$ entries must be identical for all $w\in Q$ and are summed by definition of $\transpose{\Pi_\MQ}$.

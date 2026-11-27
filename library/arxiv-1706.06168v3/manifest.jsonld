@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1706.06168v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1706.06168v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -43,6 +43,18 @@
     "library/arxiv-1706.06168v3/sections/sec-028"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨and´en characterized all linear operators on multivariate polynomials which preserve the\n\n**A Representation Theoretic Explanation of the Borcea-Brändén Characterization**\n\n*Jonathan Leake*\n\n36 pp, 30 sections.\n\n**Abstract.** In 2009, Borcea and Br¨and´en characterized all linear operators on multivariate polynomials which preserve the property of being non-vanishing (stable) on products of prescribed open circular regions. We give a representation theoretic interpretation of their ﬁndings, which generalizes and simpliﬁes their result and leads to a conceptual uniﬁcation of many related results in polynomial stability theory. At the heart of this uniﬁcation is a generalized Grace’s theorem which addresses polynomials whose roots are all contained in some real interval or ray. This generalization allows us to extend the Borcea-Br¨and´en result to characterize a certain subclass of the linear operators which preserve such polynomials.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 Notation; 2.2 Homogeneous Polynomials; 3 Homogeneous Polynomials as Representations; 3.1 The Action of SL2(C); 3.2 An Important Invariant Map, and Apolarity; 3.3 The Symbol of an Operator; 4 Polynomial Stability Theory; 4.1 Polar Derivatives; 4.2 Projective Convexity and Laguerre's Theore; 4.3 Real Stable Polynomials; 5 Grace's Theorem; 5.1 Other Regions; 5.2 Evaluation Symbols; 6 Stability Properties of Complex Linear Opera; 6.1 Weak Stability Preservation",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -64,8 +76,8 @@
       "stamp_date": "6 Aug 2021"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

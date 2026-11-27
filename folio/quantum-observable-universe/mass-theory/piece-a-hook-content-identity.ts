@@ -24,7 +24,7 @@ export default lemma({
   title:
     "Piece A — the hook–content identity $\\sum_{\\square} h(\\square)^2 = \\sum_{\\square} c(\\square)^2 + n^2$",
   lean: {
-    ref: "qou:QOU.BraidKnot.PieceA.pieceA",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.PieceA.pieceA",
     validation: "not_checked",
   },
   uses: [],

@@ -1,18 +1,19 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-skein-generation",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:skein-generation",
   "kind": "proposition",
-  "title": "Skein generation of hadrons from mass-zero fundamentals",
+  "title": "The skein module of the 3-sphere is free on the unknot",
   "uses": [
     "papers/quantum-observable-universe/blocks/rem-hadron-operations",
     "papers/quantum-observable-universe/blocks/def-hadron-fibre-embedding"
@@ -20,14 +21,15 @@
   "proofs": [
     "papers/quantum-observable-universe/blocks/prf-skein-generation"
   ],
+  "cites": [
+    "references/lickorish1997"
+  ],
   "tags": [
     "skein",
     "generation",
-    "mass",
-    "hadron",
-    "torus-knot"
+    "homflypt"
   ],
-  "leanRef": "qou:QOU.Torsion.skein_generation",
+  "leanRef": "qou:QOU.LiftingDescent.skein_generation",
   "text": "skein-generation.md",
   "provenance": "authored"
 }

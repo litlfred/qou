@@ -1,1 +1,1 @@
-Let C be a slN,ℓ-type tensor category with N + 1 < ℓ ≤ ∞, ϕC : RN,ℓ →
+Let C be a slN,ℓ-type tensor category with N + 1 < ℓ ≤ ∞, ϕC : RN,ℓ → Gr(C) an isomorphism and let X, qC and τC be defined as above. Then there is a N-th root of unity w such that τC = (−1)N w −1 q N−1 , where q is a complex square root of qC. The pair (qC, τC) is unique up to the pair with reciprocal values and determines the pair (C, ϕC) up to equivalence. Furthermore, there is an equivalence of (C, ϕC) with (C w q,N,ℓ, ϕq).

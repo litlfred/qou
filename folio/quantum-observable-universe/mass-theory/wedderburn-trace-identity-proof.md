@@ -1,4 +1,3 @@
-*Proof.*
 The Markov trace $\mathrm{tr}_M$ on $H_n(R, q)$ decomposes over
 the Wedderburn blocks as
 $\mathrm{tr}_M = \sum_{\lambda \vdash n} y_\lambda(q)\, \chi^\lambda$,
@@ -18,7 +17,7 @@ decomposition exists because $H_n(R, q)$ is semisimple under the
 hypothesis $[k]_q \neq 0$ for $2 \le k \le n$.
 
 The weights $y_\lambda$ are *not* the Plancherel weights
-$d_\lambda / n!$ at $q = 1$. Under convention D, $q = 1$ gives
+$d_\lambda / n!$ at $q = 1$. At $z = q^3/(q^2+1)$, setting $q = 1$ gives
 $z = 1/2$; at $n = 2$ the conditions
 $y_{(2)} + y_{(1,1)} = 1$ and $y_{(2)} - y_{(1,1)} = \mathrm{tr}_M(\sigma) = 1/2$
 give $y_{(2)} = 3/4$, $y_{(1,1)} = 1/4$. The Plancherel weights belong to

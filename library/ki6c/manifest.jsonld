@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki6c",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings Tomotada Ohtsuki and Yoshiyuki Yokota Introduction",
+  "title": "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings",
   "contains": [
     "library/ki6c/sections/sec-front-matter",
     "library/ki6c/sections/sec-000",
@@ -41,6 +41,18 @@
     "library/ki6c/sections/sec-026"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings — We give presentations of the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings.\n\n**On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings**\n\n*Tomotada Ohtsuki*\n\n72 pp, 28 sections.\n\n**Abstract.** We give presentations of the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings. In particular, we show the volume conjecture for these knots, which states that the leading terms of the expansions present the hyperbolic volume and the Chern-Simons invariant of the complements of the knots. As higher coeﬃcients of the expansions, we obtain a new series of invariants of these knots. A non-trivial part of the proof is to apply the saddle point method to calculate the asymptotic expansion of an integral which presents the Kashaev invariant. A key step of this part is to give a concrete homotopy of the (real 3-dimensional) domain of the integral in C3 in such a way that the boundary of the domain always stays in a certain domain in C3 given by the potential function of the hyperbolic structure. Mathematics Subject Classiﬁcation (2010). Primary: 57M27.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.2 Some behaviors of the dilogarithm function; 2.3 Deﬁnition of the Kashaev invariant; 2.4 The Poisson summation formula; 2.5 The saddle point method; 3.1 Proof of Theorem 1.1 for the 61 knot; 3.2 Estimate of the range of ∆′; 3.3 Calculation of the critical value; 3.4 Verifying the assumption of the Poisson su; 3.5 Verifying the assumption of the saddle poi; 4.1 Proof of Theorem 1.1 for the 62 knot; 4.2 Estimate of the range of ∆′; 4.3 Calculation of the critical value; 4.4 Verifying the assumption of the Poisson su; 4.5 Verifying the assumption of the saddle poi; 5.1 Proof of Theorem 1.1 for the 63 knot",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "ki6c",
@@ -52,8 +64,8 @@
     "pages": 72,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

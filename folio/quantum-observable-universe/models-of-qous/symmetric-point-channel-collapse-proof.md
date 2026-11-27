@@ -3,7 +3,7 @@ $\sigma^{-1}$ become indistinguishable — their eigenvalues merge — so
 their symmetric average carries no more information than a single
 generator.
 
-**Proof.** From $s^2 = 1$ the element $s$ is invertible with
+From $s^2 = 1$ the element $s$ is invertible with
 $s^{-1} = s$.  Substituting, $(s + s^{-1})/2 = (s + s)/2 = s$. $\square$
 
 At $q \neq 1$ the eigenvalues of a Hecke generator are

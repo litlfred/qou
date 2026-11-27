@@ -1,0 +1,1 @@
+If C is a hyperelliptic curve of genus g = 2n, then the above monodromy group G(dn) is isomorphic to the symmetric group S2n, and its action on the N points of a general ﬁbre of dn can be identiﬁed with the action of S2n on the set of all n-element subsets of {1,2,...,2n}.

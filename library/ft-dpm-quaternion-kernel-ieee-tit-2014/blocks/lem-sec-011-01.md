@@ -1,0 +1,1 @@
+Let K = Kr +i Ki + j K j +kKk be a quaternion kernel, then (a) K is Hermitian iff Kr is symmetric positive deﬁnite and Ki = −K T i , K j = −K T j and Kk = −K T k . (b) If K is Hermitian, K is positive deﬁnite iff the real-valued matrix representation4 of its Gram matrix is positive deﬁnite.

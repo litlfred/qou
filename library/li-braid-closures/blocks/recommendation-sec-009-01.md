@@ -1,1 +1,0 @@
-Substituting t = −1, it must then be the case that χ(1,1,1,1)(α) −χ(2,1,1)(α) + χ(2,2)(α) = 0 for all α ∈B4 upon specialization to t = −1, which can also seen to be true as, applying categorification, we have the long exact sequence 0 −→S(1,1,1,1) −1 −→S(2,1,1) −1 −→S(2,2) −1 −→0 due to one of the main results developed in [4].

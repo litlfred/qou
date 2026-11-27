@@ -1,0 +1,220 @@
+{
+ "producer": "computations/probes/qcd_octonion_colour_strand/g2_hecke_search_probe.py",
+ "prereg": "computations/probes/qcd_octonion_colour_strand/PREREG.md (S1)",
+ "arithmetic": "sympy exact rationals for the commutant and idempotents; braid-relation coefficient matrices mod p = 67108859 (exact in F_p; a nonzero residue is a proof of failure over Q)",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "exact rational sample points q in {2, 3}; q0 never read",
+ "results": [
+  {
+   "q": 2,
+   "commutant_dim": 4,
+   "idempotent_ranks": [
+    27,
+    14,
+    7,
+    1
+   ],
+   "splits": [
+    {
+     "S": [
+      "27"
+     ],
+     "Sc": [
+      "14",
+      "7",
+      "1"
+     ],
+     "nonzero_entries": 5518,
+     "gcd_degree": 1,
+     "common_roots_modp_excluding_0_1": []
+    },
+    {
+     "S": [
+      "14"
+     ],
+     "Sc": [
+      "27",
+      "7",
+      "1"
+     ],
+     "nonzero_entries": 5518,
+     "gcd_degree": 1,
+     "common_roots_modp_excluding_0_1": []
+    },
+    {
+     "S": [
+      "7"
+     ],
+     "Sc": [
+      "27",
+      "14",
+      "1"
+     ],
+     "nonzero_entries": 4822,
+     "gcd_degree": 1,
+     "common_roots_modp_excluding_0_1": []
+    },
+    {
+     "S": [
+      "1"
+     ],
+     "Sc": [
+      "27",
+      "14",
+      "7"
+     ],
+     "nonzero_entries": 678,
+     "gcd_degree": 3,
+     "common_roots_modp_excluding_0_1": []
+    },
+    {
+     "S": [
+      "27",
+      "14"
+     ],
+     "Sc": [
+      "7",
+      "1"
+     ],
+     "nonzero_entries": 4830,
+     "gcd_degree": 1,
+     "common_roots_modp_excluding_0_1": []
+    },
+    {
+     "S": [
+      "27",
+      "7"
+     ],
+     "Sc": [
+      "14",
+      "1"
+     ],
+     "nonzero_entries": 5518,
+     "gcd_degree": 1,
+     "common_roots_modp_excluding_0_1": []
+    },
+    {
+     "S": [
+      "27",
+      "1"
+     ],
+     "Sc": [
+      "14",
+      "7"
+     ],
+     "nonzero_entries": 5518,
+     "gcd_degree": 1,
+     "common_roots_modp_excluding_0_1": []
+    }
+   ],
+   "any_two_eigenvalue_braiding": false
+  },
+  {
+   "q": 3,
+   "commutant_dim": 4,
+   "idempotent_ranks": [
+    27,
+    14,
+    7,
+    1
+   ],
+   "splits": [
+    {
+     "S": [
+      "27"
+     ],
+     "Sc": [
+      "14",
+      "7",
+      "1"
+     ],
+     "nonzero_entries": 5518,
+     "gcd_degree": 1,
+     "common_roots_modp_excluding_0_1": []
+    },
+    {
+     "S": [
+      "14"
+     ],
+     "Sc": [
+      "27",
+      "7",
+      "1"
+     ],
+     "nonzero_entries": 5518,
+     "gcd_degree": 1,
+     "common_roots_modp_excluding_0_1": []
+    },
+    {
+     "S": [
+      "7"
+     ],
+     "Sc": [
+      "27",
+      "14",
+      "1"
+     ],
+     "nonzero_entries": 4822,
+     "gcd_degree": 1,
+     "common_roots_modp_excluding_0_1": []
+    },
+    {
+     "S": [
+      "1"
+     ],
+     "Sc": [
+      "27",
+      "14",
+      "7"
+     ],
+     "nonzero_entries": 678,
+     "gcd_degree": 3,
+     "common_roots_modp_excluding_0_1": [
+      33759284,
+      23418954
+     ]
+    },
+    {
+     "S": [
+      "27",
+      "14"
+     ],
+     "Sc": [
+      "7",
+      "1"
+     ],
+     "nonzero_entries": 4830,
+     "gcd_degree": 1,
+     "common_roots_modp_excluding_0_1": []
+    },
+    {
+     "S": [
+      "27",
+      "7"
+     ],
+     "Sc": [
+      "14",
+      "1"
+     ],
+     "nonzero_entries": 5518,
+     "gcd_degree": 1,
+     "common_roots_modp_excluding_0_1": []
+    },
+    {
+     "S": [
+      "27",
+      "1"
+     ],
+     "Sc": [
+      "14",
+      "7"
+     ],
+     "nonzero_entries": 5518,
+     "gcd_degree": 1,
+     "common_roots_modp_excluding_0_1": []
+    }
+   ],
+   "any_two_eigenvalue_braiding": true
+  }
+ ]
+}

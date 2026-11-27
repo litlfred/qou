@@ -1,4 +1,3 @@
-*Proof.*
 Define the **diagonal function**:
 
 $$

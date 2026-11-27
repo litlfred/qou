@@ -1,1 +1,0 @@
-For any reasonable definition of $D^b_G(X)$, there should be an equivalence $D^b_G(X) \cong D^b(X/G)$ if $G$ acts topologically freely as well as notions of pullback and pushforward for equivariant maps.

@@ -1,1 +1,0 @@
-In subsequent sections, this approximation scheme will yield the main hypotheses of our Theorems (Sections 2 and 3), and we shall apply it to various one-dimensional and multi-dimensional examples coming from probability, analytic number theory, combinatorics, etc.

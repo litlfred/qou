@@ -1,4 +1,3 @@
-**Proof.**
 The braiding on $V_1^{\otimes n}$ in $\mathrm{Rep}(\mathrm{SU}_q(2))$ gives $H_n(q)$. For $n = 2$: $2$ irreps. For $n = 3$: $3$ irreps. For $n \geq 4$: the embeddability constraint $(m-1)(s-1) \leq 2g$ with $m \geq 4$, $m < s$, $\gcd(m,s) = 1$ contributes no new torus knots at genus $g \leq 5$ beyond $T_{3,4}$ (which equals $T_{4,3}$). So the relevant Iwahori--Hecke algebra is $H_2(q) \oplus H_3(q)$, with $5$ irreps total.
 
 A torus knot $T_{r,s}$ with $\gcd(r,s) = 1$ has Seifert genus $(r-1)(s-1)/2$, so $T_{2,s}$ has genus $(s-1)/2$ for odd $s$ and $T_{3,s}$ has genus $s-1$ for $s$ prime to $3$. Counting those of genus at most $g$:
@@ -17,4 +16,4 @@ $$
 \mathrm{rank}(M) \leq 2 + 2 = 4 < 5
 $$
 
-independently of $q$. See [the block-rank remark](#rem:torus-evaluation-block-rank).
+independently of $q$.

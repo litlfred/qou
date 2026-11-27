@@ -1,0 +1,1 @@
+A non commutative example. Let X be a set and n a map from X to N. We define Ay = Maty(2)(C) and A = @yex Ae: A is an algebra with unity if and only if X is finite. When n is the constant map n(z) = 1 we recover the example 1.

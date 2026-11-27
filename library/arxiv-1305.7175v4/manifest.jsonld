@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1305.7175v4",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1305.7175v4/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -38,6 +38,18 @@
     "library/arxiv-1305.7175v4/sections/sec-023"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "NONLINEAR TRACES — We combine the theory of traces in homotopical algebra with sheaf theory in de- rived algebraic geometry to deduce general ﬁxed point and character formulas.\n\n**NONLINEAR TRACES**\n\n*DAVID BEN-ZVI AND DAVID NADLER*\n\n37 pp, 25 sections.\n\n**Abstract.** We combine the theory of traces in homotopical algebra with sheaf theory in de- rived algebraic geometry to deduce general ﬁxed point and character formulas. The formalism of dimension (or Hochschild homology) of a dualizable object in the context of higher algebra provides a unifying framework for classical notions such as Euler characteristics, Chern char- acters, and characters of group representations. Moreover, the simple functoriality properties of dimensions clarify celebrated identities and extend them to new contexts. We observe that it is advantageous to calculate dimensions, traces and their functoriality directly in the nonlinear geometric setting of correspondence categories, where they are directly identiﬁed with (derived versions of) loop spaces, ﬁxed point loci and loop maps, respectively.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Summary; 1.2 Inspirations and motivations; 1.3 Acknowledgements; 2 Overview; 2.1 Traces in category theory; 2.2 Traces in geometry; 2.3 Trace formulas via sheaf theories; 3 Traces in category theory; 3.1 Preliminaries; 3.2 Dualizability; 3.3 Traces and dimensions; 3.4 Functoriality of dimension; 3.5 Functoriality of traces; 4 Traces in Geometry; 4.1 Categories of correspondences; 4.2 Traces of correspondences",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -59,8 +71,8 @@
       "stamp_date": "5 Jun 2019"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

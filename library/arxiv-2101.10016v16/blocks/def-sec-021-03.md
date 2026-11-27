@@ -1,1 +1,1 @@
-(The category Rep(V )) Given V -modules M1 and M2, a morphism T ∈
+(The category Rep(V )) Given V -modules M1 and M2, a morphism T ∈ HomV (M1, M2) is is a linear map satisfying T YM1(a, x) = YM2(a, x)T for all a ∈ V . In particular, for a = ν this condition shows that T preserves the gradings of the modules. This defines the category Rep(V ) of V -modules. We wish to define a canonical functor FV : Rep(V ) → Vec. When the assumption in

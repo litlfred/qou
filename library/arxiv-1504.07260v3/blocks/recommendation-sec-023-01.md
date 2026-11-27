@@ -1,1 +1,0 @@
-Integrating $B^{\text{CHL}[g]}_{4, \text{het}}$ against the fundamental domain of $SL(2,\mathbb{Z})$ should now yield the heterotic topological 1-loop amplitude [@Antoniadis:1997zt] $$\tilde{F}_1=\frac{2}{3}\int_{\mathcal{F}} B^{\text{CHL}[g]}_{4, \text{het}},$$ which in particular depends on $(T_{\text{het}}, U_{\text{het}})$ but is independent of $S_{\text{het}}$.

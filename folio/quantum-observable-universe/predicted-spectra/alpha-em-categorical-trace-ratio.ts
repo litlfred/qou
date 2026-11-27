@@ -23,7 +23,7 @@ import { proposition } from "../../schema/builders";
  * into "h²/(force-carrier categorical-trace product)" — moving it from
  * the operator-selection LP layer into the q-dimension layer.
  *
- * Combined with prop:force-carrier-intertwining-correspondence, this
+ * Combined with conj:force-carrier-intertwining-correspondence, this
  * provides the post-round-18 closure path for
  * conj:e-hartree-categorical-derivation.
  */
@@ -31,7 +31,7 @@ export default proposition({
   label: "prop:alpha-em-categorical-trace-ratio",
   title:
     "Algebraic identity: $\\alpha_{EM} = h^2 / [q \\cdot \\delta^{\\mathrm{top}}_q(T_{2,9}) \\cdot \\delta^{\\mathrm{top}}_q(T_{3,5})]$",
-  lean: { ref: "qou:QOU.ArchimedeanUniverse.alpha_em_categorical_trace_ratio" },
+  lean: { ref: "qou:QOU.MassTheory.ArchimedeanUniverse.alpha_em_categorical_trace_ratio" },
   // All three are named in the proposition's own setup sentence: the
   // q-dimension decoration it applies, the result identifying T_{2,9} and
   // T_{3,5} as the genus-4-saturating pair, and the 1/alpha_EM value the

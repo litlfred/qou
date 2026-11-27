@@ -1,1 +1,0 @@
-\begin{prop} \label{riflessione:prop} Every ideal triangle in $\matH^3$ is the face of precisely two regular ideal tetrahedra. \end{prop} \begin{proof} Pick the line $l$ orthogonal to the barycenter of the triangle: the vertex of a regular ideal tetrahedron must be an endpoint of $l$.

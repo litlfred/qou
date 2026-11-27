@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/vonneumann2015/sections/sec-038",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "If T = u|T| is the polar decomposition of T then u ∈M and f(|T|) ∈M for any bounded Borel function of |T|.",
+  "pageStart": 91,
+  "pageEnd": 94,
+  "contains": [
+    "library/vonneumann2015/blocks/prose-sec-038"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,13 +1,14 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/conj-root-of-unity-mtc-truncation",
   "@type": [
-    "folio-assistant-core:Conjecture",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
   "label": "conj:root-of-unity-mtc-truncation",
@@ -33,7 +34,7 @@
     "klr",
     "crystal-truncation"
   ],
-  "leanRef": "qou:QOU.BraidKnot.RootOfUnityMTCTruncation",
+  "leanRef": "qou:QOU.BraidsAndKnots.RootOfUnityMTCTruncation",
   "text": "root-of-unity-mtc-truncation.md",
   "provenance": "authored"
 }

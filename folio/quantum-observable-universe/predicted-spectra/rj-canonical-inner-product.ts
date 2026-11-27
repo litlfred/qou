@@ -13,7 +13,7 @@ export default proposition({
     "markov-trace",
     "uniqueness",
   ],
-  lean: { ref: "qou:QOU.Archimedean.rj_canonical_inner_product",
+  lean: { ref: "qou:QOU.MassTheory.rj_canonical_inner_product",
     validation: "not_checked",
   },
   uses: [
@@ -23,6 +23,12 @@ export default proposition({
     "rosso-jones1993",
   ],
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Formalisation regression guard (`qou-x60n`): `2026-08-29-rosso-jones-index-set-probe.lean` proves universally quantifying `partitions_of_r : Finset P` collapsed `jonesPoly` to zero at `∅` and verifies the data-carried repair.",
+      see: "docs/audits/2026-08-29-rosso-jones-index-set-probe.lean",
+    },
     {
       kind: "note",
       date: "2026-10-10",

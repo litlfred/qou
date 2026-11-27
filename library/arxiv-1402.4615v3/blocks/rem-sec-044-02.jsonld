@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1402.4615v3/blocks/rem-sec-044-02",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 62,
+  "pageEnd": 63,
+  "text": "rem-sec-044-02.md",
+  "derivedFrom": "library/arxiv-1402.4615v3/sections/sec-044",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1402.4615v3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Cites external source [Las09, Theorems 10.2 and 10.3], [Las09, p. 2257], [Las09] in sections/sec-044-a3-high-degree-terms-of-kerov-polynomials-for-de.md",
+    "claim_id": "arxiv-1402.4615v3#rem-sec-044-02"
+  }
+}

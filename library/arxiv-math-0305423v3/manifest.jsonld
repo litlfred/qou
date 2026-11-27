@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0305423v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0305423v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -21,6 +21,18 @@
     "library/arxiv-math-0305423v3/sections/sec-006"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Stein's method and Plancherel measure of the symmetric group — We initiate a Stein’s method approach to the study of the Plancherel measure of the symmetric group.\n\n**Stein's method and Plancherel measure of the symmetric group**\n\n*By Jason Fulman*\n\n19 pp, 8 sections.\n\n**Abstract.** We initiate a Stein’s method approach to the study of the Plancherel measure of the symmetric group. A new proof of Kerov’s central limit theorem for character ratios of random representations of the symmet- ric group on transpositions is obtained; the proof gives an error term. The construction of an exchangeable pair needed for applying Stein’s method arises from the theory of harmonic functions on Bratelli diagrams. We also ﬁnd the spectrum of the Markov chain on partitions underlying the construc- tion of the exchangeable pair. This yields an intriguing method for studying the asymptotic decomposition of tensor powers of some representations of the symmetric group. To appear in Trans. AMS. Submitted 5/28/03, Minor Revisions: 7/7/03, 11/8/03\n\n**Outline.** Front matter; 1 Introduction; 2 Harmonic functions and exchangeable pairs; 3 Irreducible characters of the symmetric grou; 4 Stein's method and Kerov's central limit the; 5 Asymptotic multiplicities in tensor products; 6 Acknowledgements; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -42,8 +54,8 @@
       "stamp_date": "11 Nov 2003"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

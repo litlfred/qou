@@ -1,0 +1,1 @@
+I review the present understanding of the Cottingham Formula, including a discussion on the development of the formula, its renormalization which induces the mixing of QED and QCD effects, and the necessary modeling of the subtraction function that must be done to arrive a numerical prediction.

@@ -1,1 +1,0 @@
-However, all of the $S^1\times D^2$ fillings of the Berge manifold are pairwise distance one from each other, and so if a manifold admits $S^1\times D^2$ fillings along slopes $\{\frac{1}{0}, -\frac{1}{1}, \frac{2}{1}\}$ then it must be $T^2\times I$ or Seifert fibred over the annulus.

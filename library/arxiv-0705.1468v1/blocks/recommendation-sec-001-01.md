@@ -1,1 +1,0 @@
-Strictly speaking, in order to have two-dimensional solitons with a finite size in this model then a potential term must also be included, upon which the two-dimensional solitons are known as baby Skyrmions [@PSZ], but this aspect is not crucial for the discussion here.

@@ -342,8 +342,8 @@ def _chi_lambda_of_word_mpf(sigmas: list, dim: int,
         # value (rounded to 9 dp to avoid float-eq pitfalls).
         snap = {
             round(0.0, 9): zero,
-            round(float(-h_mp), 9): -h_mp,
-            round(float(-h_mp / 2), 9): -h_mp / 2,
+            round(float(-h_mp), 9): -h_mp,          # float64-ok: legacy 3-tuple snap key only; substitutes exact -h_mp
+            round(float(-h_mp / 2), 9): -h_mp / 2,  # float64-ok: legacy 3-tuple snap key only; substitutes exact -h_mp/2
         }
 
     # P starts as the identity, stored as a dict-of-dicts for sparsity.
@@ -362,8 +362,8 @@ def _chi_lambda_of_word_mpf(sigmas: list, dim: int,
         c_mp = c if isinstance(c, mp.mpf) else mp.mpf(str(c))
         if isinstance(d, mp.mpf):
             d_mp = d
-        elif snap is not None and round(float(d), 9) in snap:
-            d_mp = snap[round(float(d), 9)]
+        elif snap is not None and round(float(d), 9) in snap:  # float64-ok: legacy 3-tuple snap lookup only
+            d_mp = snap[round(float(d), 9)]                    # float64-ok: returns exact mpf from snap
         else:
             d_mp = mp.mpf(str(d))
         M_coo = _hecke_factor_coo(sigmas[g], c_mp, d_mp, dim)
@@ -631,16 +631,16 @@ def tr_M_via_wenzl_bridge_mpfr(
             # where it is safe: it never has to separate two averaged variants.
             # (It could not — colour-blind and colour-weighted d differ by
             # ~7e-5 today, but nothing pins δ above 1e-9.)
-            h_f64 = float(q - mp.mpf(1) / q)
+            h_f64 = float(q - mp.mpf(1) / q)  # float64-ok: exact-crossing sign classifier only (line 630)
 
             def _translate(factor: tuple[float, float, int]):
                 """-> (sign, gen1, shift_str). shift_str is "" unless averaged."""
                 c, d, g = factor
-                if abs(float(c) - 1.0) > 1e-9:
+                if abs(float(c) - 1.0) > 1e-9:  # float64-ok: c==1 assertion guard only
                     raise ValueError(
                         f"Rust path requires c == 1.0; got c={c}"
                     )
-                d_f = float(d)
+                d_f = float(d)  # float64-ok: exact-crossing sign classifier only; averaged shift serialises from mpf below
                 if abs(d_f) < 1e-9:
                     return (1, int(g) + 1, "")
                 if abs(d_f + h_f64) < 1e-9:
@@ -656,16 +656,28 @@ def tr_M_via_wenzl_bridge_mpfr(
             avg_shifts = [sh for _, _, sh in _translated]
             # All-empty => the native default h/2 everywhere, bit-identical to
             # the previous four-argument call.
-            rust_results = _rust_chi_all(
-                n, word_signed, q_str, dps,
-                None if not any(avg_shifts) else avg_shifts,
-            )
+            try:
+                rust_results = _rust_chi_all(
+                    n, word_signed, q_str, dps,
+                    None if not any(avg_shifts) else avg_shifts,
+                )
+            except TypeError:
+                # Older 4-arg `pyhecke_native` build: safe to call with 4 args
+                # iff every averaged crossing uses the native default shift h/2.
+                h_half_mp = (q - mp.mpf(1) / q) / 2
+                if all(
+                    not sh or abs(mp.mpf(sh) - h_half_mp) <= mp.mpf(10) ** (-(dps - 5))
+                    for sh in avg_shifts
+                ):
+                    rust_results = _rust_chi_all(n, word_signed, q_str, dps)
+                else:
+                    raise
             rust_chi_by_partition = {
                 tuple(lam): mp.mpf(chi_str)
                 for lam, chi_str in rust_results
             }
         except (ImportError, ValueError, RuntimeError, KeyError,
-                AssertionError):
+                AssertionError, TypeError):
             # ImportError: pyhecke_native wheel not built.
             # ValueError: unsupported factor encoding (c != 1.0 or
             #   unrecognised d); ValueError is also raised by the

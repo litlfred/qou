@@ -1,4 +1,4 @@
-**Proof.** By the standard $S_n$ branching rule (remove one box from
+By the standard $S_n$ branching rule (remove one box from
 the Young diagram of $\lambda \vdash 4$ to obtain the restriction
 $\lambda \downarrow S_3$):
 

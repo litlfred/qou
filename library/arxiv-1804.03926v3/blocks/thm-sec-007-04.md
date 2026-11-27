@@ -1,0 +1,1 @@
+Assume that v has a finite first moment and a density p with respect to the Lebesgue measure that has a connected support. Assume also that the Stein kernel 7, is sub-linear, that is T(x) < ala — pl +6, where p is the mean value of v. Then for any 1-Lipschitz function g and any r>0,

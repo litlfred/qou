@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Markov stabilisation at the interface requires a generator the word does not already use",
   lean: {
-    ref: "qou:QOU.QBeta.InterfaceScalar.markov_stabilisation_fails_on_repeat",
+    ref: "qou:QOU.Nuclear.InterfaceScalar.markov_stabilisation_fails_on_repeat",
     validation: "not_checked",
   },
   uses: ["prop:content-keyed-interface-refuted"],

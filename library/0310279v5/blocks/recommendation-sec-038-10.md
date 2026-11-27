@@ -1,1 +1,0 @@
-Notice that if B and B are related amalgamating blocks then the angular support of every Ni component that intersects B (or B) must overlap, ie if each component of the subcollection {Nj1, . . . , NjR} ⊂{N1, . . . , Nr} intersects B then ∠Nj1 ∩· · · ∩∠NjR̸ = ∅.

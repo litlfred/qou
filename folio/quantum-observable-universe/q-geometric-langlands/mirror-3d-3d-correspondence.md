@@ -17,7 +17,7 @@ dressing as the value of that partition function at $q_0$:
 
 The middle row is not $m_p \leftrightarrow Z_{T[\mathcal{B}_3]}(q_0)$,
 an **absolute** proton mass in MeV as the value of the partition function.
-That form is excluded for two independent reasons. The framework the framework no longer claims, targets, or scores an absolute
+That form is excluded for two independent reasons. The framework no longer claims, targets, or scores an absolute
 nucleon mass as a prediction: absolute mass is $\mathfrak{m}_e$ times a
 dimensionless ratio, and $\mathfrak{m}_e$ is the calibration that fixes the MeV
 scale, so the MeV figure carries no content beyond the ratio. Independently of
@@ -48,10 +48,18 @@ spacetime are two computations of the same hyperbolic invariant.
   bar-symmetry corresponds to the parity-reversal of the squashed
   3-sphere $S^3_b \to S^3_{1/b}$.
 
+## Which theory the DGG construction produces (literature)
+
+The construction cited in Open Question 1 does not by itself produce the theory the dictionary above assumes. For a knot complement $N$ the theory $T^{DGG}[N]$ built from an ideal triangulation has as its vacua only a subset of the irreducible flat $SL(2,\mathbb{C})$ connections on $N$, because a triangulation captures only part of the character variety; it therefore describes a subsector of the six-dimensional theory $T^{6d}[N]$, not all of it, and generically carries only a $U(1)$ flavour symmetry where $T^{6d}$ carries $su(2)$ \cite[§2.3]{arxiv-1803.04009v2}. The same source gives a topological criterion for when that $U(1)$ enhances to $SU(2)$ or $SO(3)$ \cite[§3]{arxiv-1803.04009v2}, and identifies the field-theoretic operation that corresponds to Dehn filling, which builds theories for closed $3$-manifolds \cite[§4.1]{arxiv-1803.04009v2}. All three statements are made for a $3$-manifold with a single torus boundary. The Borromean complement $\mathbf{S}^3 \setminus \mathcal{B}_3$ has three cusps, so whether the criterion or the filling operation transfers to it has not been checked, and the equality of partition functions stated at the top of this block should be read as holding at most for the subsector that $T^{DGG}$ realises.
+
 ## Open questions
 
 1. Identify the 3d $\mathcal{N}{=}2$ theory $T[\mathcal{B}_3]$
    explicitly (Dimofte–Gaiotto–Gukov 2014 provides the construction).
+   The DGG theory realises only part of the flat $SL(2,\mathbb{C})$
+   connections as vacua, and the closing (Dehn-filling) operation on it is
+   identified in \cite{arxiv-1803.04009v2} (§2.3, §4.1); both are stated for a
+   single torus boundary, while $\mathcal{B}_3$ has three cusps.
 2. Cross-check the $h^4 = -3/4$ coefficient as a 4-loop contribution
    in $T[\mathcal{B}_3]$ partition function.
 3. Closing the conjecture remains distant: the QFT-side
@@ -59,8 +67,8 @@ spacetime are two computations of the same hyperbolic invariant.
 
 ## Cross-references
 
-- [`conj:borromean-bloch-group-element`](../mass-theory/borromean-bloch-group-element.md)
+- [Borromean rings represent a non-trivial element of $K_3(\mathbb{C})$ / Bloch group with regulator $r_2 = 8G$](../mass-theory/borromean-bloch-group-element.md)
   — K-theoretic regulator parallel
-- [`conj:kashaev-volume-conjecture`](../mass-theory/kashaev-volume-conjecture.md)
+- [Kashaev–Murakami–Murakami volume conjecture](../mass-theory/kashaev-volume-conjecture.md)
   — Volume Conjecture is the leading-order 3d–3d statement
 - [Dimofte–Gaiotto–Gukov 2014; Terashima–Yamazaki 2011]

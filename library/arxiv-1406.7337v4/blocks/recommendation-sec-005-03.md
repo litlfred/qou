@@ -1,1 +1,0 @@
-Finally, since a wandering circle (which is always essential in the case that $n=3$) ``uses up'' a braid string from the braid closure and since a wandering circle must wander from braid string position 1 to braid string position 3 and back before closing up, then the existence of a second such wandering circle is impossible.

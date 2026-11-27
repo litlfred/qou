@@ -1,29 +1,25 @@
 {
   "$schema": "folio-reference/v1",
   "id": "faddeev1994",
-  "type": "article-journal",
+  "type": "chapter",
   "title": "Current-like variables in massive and massless integrable models",
   "author": [
     {
       "family": "Faddeev",
       "given": "Ludwig D."
-    },
-    {
-      "family": "Kashaev",
-      "given": "Rinat M."
     }
   ],
-  "container-title": "Communications in Mathematical Physics",
+  "container-title": "Quantum Groups and Their Applications in Physics (Proceedings of the International School of Physics \"Enrico Fermi\", Course CXXVII, Varenna, 1994)",
+  "publisher": "IOS Press",
+  "publisher-place": "Amsterdam",
   "issued": {
     "date-parts": [
       [
-        1994
+        1996
       ]
     ]
   },
-  "volume": "169",
-  "page": "1-20",
-  "DOI": "10.1007/BF02101594",
-  "note": "Introduces the quantum dilogarithm",
+  "page": "117-135",
+  "note": "arXiv:hep-th/9408041 (1994 Varenna Course CXXVII lectures; IOS Press 1996, pp. 117-135), treating the compact q-Pochhammer dilogarithm S(w) = (w; q)_infty in integrable lattice models. Disambiguated 2026-11-24 (bean qou-1buz): the earlier record grafted co-author R. M. Kashaev from faddeev_kashaev1994 and DOI 10.1007/BF02101594 (Commun. Math. Phys. 169, 1-23, 1995, which is Krob-Leclerc on quasideterminants). Four works were conflated across inline Lean `-- Ref: [faddeev1994]` comments: (1) compact pentagon (x;q)_infty: faddeev_kashaev1994 (Mod. Phys. Lett. A 9(5), 427-434, 1994, DOI 10.1142/S0217732394000447; note 10.1142/S0217732394002793 on QOU/Archimedean/DilogPart* is spurious); (2) compact S(w) Varenna lectures: this entry (faddeev1994, hep-th/9408041); (3) modular double and noncompact integral quantum dilogarithm Phi_b: faddeev1995 (Lett. Math. Phys. 34, 249-254, 1995, DOI 10.1007/BF01872779, hep-th/9504111 — the true source for QOU/Archimedean/DilogPart* and QOU/MathlibExt/*Dilogarithm*); (4) Liouville modular-double Phi_b: faddeev-kashaev-volkov2000 (Commun. Math. Phys. 219, 199-219, 2001, hep-th/0006107).",
   "URL": "https://arxiv.org/abs/hep-th/9408041"
 }

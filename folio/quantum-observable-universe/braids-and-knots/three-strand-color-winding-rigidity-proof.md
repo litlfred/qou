@@ -1,4 +1,4 @@
-*Proof.* Write $M = \rho_{(2,1)}(\sigma_1)\,\rho_{(2,1)}(\sigma_2)$ with
+Write $M = \rho_{(2,1)}(\sigma_1)\,\rho_{(2,1)}(\sigma_2)$ with
 $\rho_{(2,1)}(\sigma_1) = \mathrm{diag}(q, -q^{-1})$ and the axial-distance-$2$
 Hoefsmit block for $\sigma_2$, so that
 

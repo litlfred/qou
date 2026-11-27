@@ -95,17 +95,35 @@ if pgrep -f 'lake build' >/dev/null 2>&1; then
   echo "  so the counts below are a snapshot of a MOVING target.  Prefer to let it" >&2
   echo "  finish, or pass OLEANS=<dir> explicitly." >&2
 fi
+QOU_LIBS=()
+for _lb in QOU MathlibExt QCalculus TwistedFrobeniusHopf ToricConicOpt CompactQuantumMetrics HeckeTemperleyLieb BraidKnotOctonion; do
+  [ -d "$PKG/$_lb" ] && QOU_LIBS+=("$_lb")
+done
+[ "${#QOU_LIBS[@]}" -gt 0 ] || QOU_LIBS=("QOU")
+
 if [ -z "${OLEANS:-}" ]; then
   _best_n=-1
   for cand in "$PKG/.lake/build/lib/lean" "$ROOT/.lake/build/lib/lean"; do
-    [ -d "$cand/QOU" ] || continue
-    _n=$(find "$cand/QOU" -name '*.olean' -size +0 2>/dev/null | wc -l)
+    _has_any=0
+    _n=0
+    for _lb in "${QOU_LIBS[@]}"; do
+      if [ -d "$cand/$_lb" ]; then
+        _has_any=1
+        _c_lb=$(find "$cand/$_lb" -name '*.olean' -size +0 2>/dev/null | wc -l)
+        _n=$((_n + _c_lb))
+      fi
+    done
+    [ "$_has_any" -eq 1 ] || continue
     if [ "$_n" -gt "$_best_n" ]; then _best_n=$_n; OLEANS="$cand"; fi
   done
-  [ -n "${OLEANS:-}" ] && echo "olean tree chosen by count: $_best_n QOU oleans"
+  [ -n "${OLEANS:-}" ] && echo "olean tree chosen by count: $_best_n oleans across ${QOU_LIBS[*]}"
 fi
-[ -n "${OLEANS:-}" ] && [ -d "$OLEANS/QOU" ] || {
-  echo "no restored olean tree with a QOU/ dir — looked in:" >&2
+_oleans_ok=0
+if [ -n "${OLEANS:-}" ]; then
+  for _lb in "${QOU_LIBS[@]}"; do [ -d "$OLEANS/$_lb" ] && _oleans_ok=1; done
+fi
+[ "$_oleans_ok" -eq 1 ] || {
+  echo "no restored olean tree with any of (${QOU_LIBS[*]}) — looked in:" >&2
   echo "  $PKG/.lake/build/lib/lean" >&2
   echo "  $ROOT/.lake/build/lib/lean" >&2
   echo "restore lake-cache first (AGENTS.md §'Agents building Lean in a sandbox')," >&2
@@ -127,19 +145,17 @@ fi
 # `qou-tpdg`.
 mkdir -p "$SHADOW"
 
-if [ ! -d "$SHADOW/QOU" ]; then
-  # HARDLINK, not copy.  The tree is ~2.3 GB and a container here has a
-  # per-session disk quota (AGENTS.md §Disk space), so `cp -a` simply fails
-  # with ENOSPC and the sweep judges nothing -- measured on a container with
-  # 1.1 GB free.  `cp -al` costs no blocks (`du` reports 2.3 GB, `df` does not
-  # move) and is safe because the rebuild below removes its target first, so it
-  # never writes through a shared inode into the real olean tree.  Falls back
-  # to a real copy if the shadow is on another filesystem.  Bean `qou-tpdg`.
-  echo "linking olean tree into shadow ($SHADOW) ..."
-  cp -al "$OLEANS/QOU" "$SHADOW/QOU" 2>/dev/null ||
-    { echo "  hardlink failed; falling back to a real copy" >&2
-      rm -rf "$SHADOW/QOU"; cp -a "$OLEANS/QOU" "$SHADOW/QOU"; }
-fi
+for _lb in "${QOU_LIBS[@]}"; do
+  if [ -d "$OLEANS/$_lb" ] && [ ! -d "$SHADOW/$_lb" ]; then
+    echo "linking $_lb olean tree into shadow ($SHADOW) ..."
+    cp -al "$OLEANS/$_lb" "$SHADOW/$_lb" 2>/dev/null ||
+      { echo "  hardlink failed; falling back to a real copy" >&2
+        rm -rf "$SHADOW/$_lb"; cp -a "$OLEANS/$_lb" "$SHADOW/$_lb"; }
+  fi
+  if [ -f "$OLEANS/$_lb.olean" ] && [ ! -e "$SHADOW/$_lb.olean" ]; then
+    ln "$OLEANS/$_lb.olean" "$SHADOW/$_lb.olean" 2>/dev/null || cp -a "$OLEANS/$_lb.olean" "$SHADOW/$_lb.olean"
+  fi
+done
 
 # Every paper package's build dir, not just qou's: a file may import across
 # packages (`folio/.../lean/QOU.lean` imports `UGB`), and a missing entry
@@ -173,8 +189,9 @@ SIBLINGS=$(ls -d "$ROOT"/folio/*/lean/.lake/build/lib/lean 2>/dev/null |
 # is NOT changed here", and an earlier version of this file reordered anyway.
 # Reverted -- their fix removes the asymmetry, ordering only re-aims it.
 #
-# So this block only DIAGNOSES.  It is worth diagnosing because the union script
-# has no callers: nothing runs it, so until an agent does by hand, an incomplete
+# So this block DIAGNOSES, and since 2026-11-21 also runs the union script when
+# it finds an imbalance.  Before that the union script had no callers, so until
+# an agent ran it by hand, an incomplete
 # paper `Mathlib/` still shadows a complete root one and every `import
 # Mathlib.Tactic` still fails naming a path for a file that exists in the other
 # tree.  Measured here 2026-09-08: paper mathlib 2352 oleans with NO
@@ -201,30 +218,38 @@ if [ -n "$_mlfirst" ] && [ -n "$_mlbest" ] && [ "$_mlfirst" -lt "$_mlbest" ]; th
   echo "  but another location has $_mlbest.  Lean resolves a package from the first" >&2
   echo "  root holding that PACKAGE dir, so the smaller one answers for all of" >&2
   echo "  Mathlib and you will see MISSING-OLEAN errors naming files that exist." >&2
-  echo "  Fix: scripts/lean-sync-olean-trees.sh   (bean qou-4h26)" >&2
+  if [ "${LEAN_NO_TREE_SYNC:-0}" = 1 ]; then
+    echo "  Fix: scripts/lean-sync-olean-trees.sh   (bean qou-4h26; LEAN_NO_TREE_SYNC=1 set, not run)" >&2
+  else
+    # Wired 2026-11-21 (bean qou-4h26): the union script had no callers, so
+    # this diagnosis fired and nothing fixed it.  It hardlinks (no disk cost),
+    # is idempotent, and the trees agree afterwards whichever one wins.
+    echo "  Running scripts/lean-sync-olean-trees.sh (set LEAN_NO_TREE_SYNC=1 to skip)." >&2
+    "$ROOT/scripts/lean-sync-olean-trees.sh" >&2 || echo "  WARNING: tree sync failed; results may show phantom MISSING-OLEAN." >&2
+  fi
 fi
 LP="$SHADOW:$PKGROOTS$SIBLINGS$OLEANS"
 
-ORDER=$(OLEANS="$OLEANS" ROOT="$ROOT" python3 - "$@" <<'PY'
+ORDER=$(OLEANS="$OLEANS" ROOT="$ROOT" QOU_LIBS_STR="${QOU_LIBS[*]}" python3 - "$@" <<'PY'
 import os, re, pathlib, subprocess, sys
 root = pathlib.Path(os.environ["ROOT"])
 pkg = root / "folio/quantum-observable-universe/lean"
 oleans = pathlib.Path(os.environ["OLEANS"])
+libs = os.environ.get("QOU_LIBS_STR", "QOU").split()
 mod2path = {}
-for p in pkg.glob("QOU/**/*.lean"):
-    mod2path[str(p.relative_to(pkg).with_suffix("")).replace("/", ".")] = p
+for lb in libs:
+    for p in [*pkg.glob(f"{lb}/**/*.lean"), *pkg.glob(f"{lb}.lean")]:
+        if p.is_file():
+            mod2path[str(p.relative_to(pkg).with_suffix("")).replace("/", ".")] = p
 imports = {m: [i for i in re.findall(r"^import\s+(\S+)", p.read_text(), re.M) if i in mod2path]
            for m, p in mod2path.items()}
 
-# Staleness is PER MODULE, not against one snapshot date.  The restored tree is
-# mixed-age (oleans carry the mtime of whichever build wrote them), so taking
-# the newest olean as "the" build time silently declares older modules current.
-# Compare each module's own olean mtime against the commit date of its source.
-# Source mtimes are useless here — a fresh clone stamps every file with the
-# checkout time — so the source side comes from git, in one pass.
 lastcommit, ts = {}, None
+git_paths = [str(pkg / lb) for lb in libs if (pkg / lb).exists()] + [
+    str(pkg / f"{lb}.lean") for lb in libs if (pkg / f"{lb}.lean").exists()
+]
 log = subprocess.run(["git", "log", "--format=%ct", "--name-only", "--",
-                      str(pkg / "QOU")], cwd=root, capture_output=True, text=True).stdout
+                      *git_paths], cwd=root, capture_output=True, text=True).stdout
 for line in log.splitlines():
     if not line:
         continue

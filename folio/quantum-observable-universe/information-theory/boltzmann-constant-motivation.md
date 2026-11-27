@@ -7,6 +7,11 @@ $$
   k_B \;=\; 1.
 $$
 
-The constant can be set to unity because the temperature is defined in energy units. We require no separate conversion factor for a "degrees of freedom" temperature scale.
+The constant can be set to unity because the temperature is defined in energy units. One requires no separate conversion factor for a "degrees of freedom" temperature scale.
 
 In SI units, physical temperature $T_{\mathrm{phys}}$ is measured in kelvin, and $k_B = 1.381 \times 10^{-23}$ J/K provides the energy conversion. At the comparison with measurement, the reading is $k_B T_{\mathrm{phys}} = \hbar_q$. The thermal energy per degree of freedom precisely equals the quantum Planck constant.
+
+With the [quantum temperature](#def:quantum-temperature) $T_q = \hbar_q$, the thermal energy is
+$$
+  k_B \, T_q = T_q = \hbar_q = \frac{q-1}{q}.
+$$

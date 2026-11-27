@@ -1,0 +1,571 @@
+{
+  "engine": "mpmath (80 dps)",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-23T22:13:33.933069+00:00",
+  "commitSha": "2768aad4ac783a1b7495c75bd846606426db4cb7",
+  "assertions": [
+    {
+      "name": "q0_at_80_matches_Q_MP",
+      "computed": "7.7371835869339141800537452711683021760592669107032849756987107952944826886127401e-72",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-65",
+      "source": "qou_substrate.constants"
+    },
+    {
+      "name": "lean_discretePairSum_toeplitz_matches_double_sum",
+      "computed": "3.0361530076503906886123893267657654742204688781221301744223957512311455557992908e-79",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-73",
+      "source": "ContinuumECatIntraNucleonEM.discretePairSum"
+    },
+    {
+      "name": "lean_riemann_and_dyadic_bounds_satisfied_all_N",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "ContinuumECatIntraNucleonEM.subdivision_riemann_error_bound & regPairKernel_dyadic_step_bound"
+    },
+    {
+      "name": "ecat_box_richardson_delta_half_lt_1e_12",
+      "computed": "0.0000000000000000143014508937581126",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "0.000000000001",
+      "source": "N=16..256 Romberg-Richardson vs exact closed form"
+    },
+    {
+      "name": "ecat_periodic_S1_poisson_identity_and_shanks_lt_1e_12",
+      "computed": "0.000000000000000306520156945330935",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "0.000000000001",
+      "source": "Exact finite-N Poisson identity + Shanks/N=256 periodic S^1 convergence < 10^-12"
+    },
+    {
+      "name": "lean_schurH3_duality_molien_and_sign_k_minus3_exact",
+      "computed": "8.4337583545844185794788592410160152061679691058948060400622104200865154327758077e-81",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-73",
+      "source": "ContinuumECatIntraNucleonEM.schurH3_conj_duality, schurH3_molien_sum_eq_one, schurH3_balanced_forms"
+    },
+    {
+      "name": "non_circular_qmu_grid_selects_k_minus3_2_12",
+      "computed": "243.86021199327662104807586966537416340290156534603789751391851745260882564586421",
+      "expected": "244.4",
+      "passed": true,
+      "tolerance": "5.0",
+      "source": "Independent muon-pin evaluation of k2*(Vol(4_1)/hbar_q^2)*tr_M*q^{k1}*[3]_q! - k3"
+    },
+    {
+      "name": "lean_quark_charge_pair_and_self_identities_exact",
+      "computed": "5.2710989716152616121742870256350095038549806911842537750388815125540721454848798e-82",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-75",
+      "source": "ContinuumECatIntraNucleonEM.pn_pair_charge_diff_eq_third & pn_self_charge_diff_eq_third"
+    },
+    {
+      "name": "route1_compton_ho_ratio_me_cancellation_exact",
+      "computed": "2.6355494858076308060871435128175047519274903455921268875194407562770360727424399e-82",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-74",
+      "source": "Exact cancellation of m_e in sqrt(E_osc(q_0) / m_model(q_0))"
+    },
+    {
+      "name": "lean_strong_md_sub_mu_gt_np_split_all_route1_candidates",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "ContinuumECatIntraNucleonEM.strong_md_sub_mu_decomposition & route1_self_consistent_em_pos"
+    },
+    {
+      "name": "lean_o2_h3_green_positivity_window_holds_at_intrabaryon_scales",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.0e-70",
+      "source": "ContinuumECatIntraNucleonEM.o2_neutralized_h3_green_positivity_window"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1973,
+  "computation": "w10-continuum-ecat-intranuc-em",
+  "scriptFile": "w10_continuum_ecat_intranuc_em_probe.py",
+  "scriptHash": "96133fe0364e",
+  "scriptCommitSha": "2768aad4ac783a1b7495c75bd846606426db4cb7",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/w10_continuum_ecat_intranuc_em/w10_continuum_ecat_intranuc_em_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/w10_continuum_ecat_intranuc_em/w10_continuum_ecat_intranuc_em_probe.py"
+  },
+  "description": "Pre-registered 80-dps W10 / Q-Gap-6 + L_cal Route-1 probe (qou-mjo7, qou-pzsi, qou-37y0, qou-17mq, qou-zp6a, qou-awxv item 1): verifies discrete-to-continuum E_cat subdivision bounds and N=16..256 Richardson convergence (< 10^-12), H_3(q^2) Schur self-duality and non-circular muon-anchor tests of proton (k = -3, 2, 12), and evaluates self-consistent Charge-Unit Route 1 Delta_EM(p - n) = alpha_q(q_0) * m_model(q_0) * f across all ten pre-registered Borromean 6_3^3 / 3-strand shape factors f (NO m_pi unit) alongside secondary CAL-3/O2 diagnostics.",
+  "parameters": {
+    "workdps": 80,
+    "preregistration_commit": "68df40f7a41",
+    "lean_companion_commit": "406133dcc7c",
+    "q0_proton_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "q_muon_comparison_50dps": "1.1099785956427390466817951293800017527000655610290",
+    "inv_alpha_form_b_q0": "137.03541544437177808907128375560483097764260804073",
+    "m_model_q0_MeV": "938.27208942732426372735667041702356527821393683553",
+    "Vol_B3_8Catalan": "7.3277247534177521204368281194590728861931949942534",
+    "R_B3_ball_radius": "1.1104271075825964069784937246539789882941841972178",
+    "c0_B3_zero_mean": "1.5699369195585186921248287282996555217637582221299"
+  },
+  "data": {
+    "part_a_continuum_ecat_subdivision": {
+      "regulated_kernels": {
+        "delta_eq_half": {
+          "delta": "0.50000000000000000000000000000000000000000000000000",
+          "I_exact_box": "2.8191569587422616374675025074879605207545892273372",
+          "richardson_N16_to_256": "2.8191569587422616517689534012460730985399875321864",
+          "richardson_abs_err": "1.43014508937581126e-17",
+          "grid_rows": [
+            {
+              "N": 16,
+              "S_N": "2.8212447495483863531588169394608589401864895058509",
+              "abs_err_vs_I_exact": "0.002087790806124716",
+              "lean_riemann_bound_2_over_delta3_N": "1.0",
+              "dyadic_step_abs_diff": "0.001566680311283289",
+              "lean_dyadic_bound_1_over_2_delta3_N": "0.25"
+            },
+            {
+              "N": 32,
+              "S_N": "2.8196780692371030645854836677058473042117830099854",
+              "abs_err_vs_I_exact": "0.0005211104948414271",
+              "lean_riemann_bound_2_over_delta3_N": "0.5",
+              "dyadic_step_abs_diff": "0.0003908848609117599",
+              "lean_dyadic_bound_1_over_2_delta3_N": "0.125"
+            },
+            {
+              "N": 64,
+              "S_N": "2.8192871843761913046394915925249987500155152435726",
+              "abs_err_vs_I_exact": "0.0001302256339296672",
+              "lean_riemann_bound_2_over_delta3_N": "0.25",
+              "dyadic_step_abs_diff": "9.767246965143616e-5",
+              "lean_dyadic_bound_1_over_2_delta3_N": "0.0625"
+            },
+            {
+              "N": 128,
+              "S_N": "2.8191895119065398684796909454190922848157558093041",
+              "abs_err_vs_I_exact": "3.255316427823101e-5",
+              "lean_riemann_bound_2_over_delta3_N": "0.125",
+              "dyadic_step_abs_diff": "2.441507589118594e-5",
+              "lean_dyadic_bound_1_over_2_delta3_N": "0.03125"
+            },
+            {
+              "N": 256,
+              "S_N": "2.8191650968306486825391413105745295719410050933093",
+              "abs_err_vs_I_exact": "8.138088387045072e-6",
+              "lean_riemann_bound_2_over_delta3_N": "0.0625",
+              "dyadic_step_abs_diff": null,
+              "lean_dyadic_bound_1_over_2_delta3_N": null
+            }
+          ],
+          "I_exact_periodic_S1": "0.97014250014533189407562584846448871179934099420556",
+          "S_256_periodic_S1": "0.97014250014533189407562584846448871179934099420556",
+          "periodic_S1_N256_abs_err": "1.82610753621977391e-55",
+          "periodic_S1_shanks_abs_err": "4.21687917729220929e-81",
+          "poisson_finite_N_identity_max_err": "4.21687917729220929e-81"
+        },
+        "delta_eq_hbar_q0": {
+          "delta": "0.099081716044258507839177117518906063985258373389446",
+          "I_exact_box": "25.080204122457239297728942719923649550545997647820",
+          "richardson_N16_to_256": "25.080204126552804716718774238899006427181979753550",
+          "richardson_abs_err": "4.09556541898983152e-9",
+          "grid_rows": [
+            {
+              "N": 16,
+              "S_N": "25.152304954981297401551370137901495418908259733710",
+              "abs_err_vs_I_exact": "0.0721008325240581",
+              "lean_riemann_bound_2_over_delta3_N": "128.5077896701657",
+              "dyadic_step_abs_diff": "0.05550892229426519",
+              "lean_dyadic_bound_1_over_2_delta3_N": "32.12694741754142"
+            },
+            {
+              "N": 32,
+              "S_N": "25.096796032687032209704051066159773929571869742187",
+              "abs_err_vs_I_exact": "0.01659191022979291",
+              "lean_riemann_bound_2_over_delta3_N": "64.25389483508284",
+              "dyadic_step_abs_diff": "0.01247698627206533",
+              "lean_dyadic_bound_1_over_2_delta3_N": "16.06347370877071"
+            },
+            {
+              "N": 64,
+              "S_N": "25.084319046414966878280735651672211853917633207228",
+              "abs_err_vs_I_exact": "0.004114923957727581",
+              "lean_riemann_bound_2_over_delta3_N": "32.12694741754142",
+              "dyadic_step_abs_diff": "0.003088155603530854",
+              "lean_dyadic_bound_1_over_2_delta3_N": "8.031736854385354"
+            },
+            {
+              "N": 128,
+              "S_N": "25.081230890811436024496311060975680164815257455757",
+              "abs_err_vs_I_exact": "0.001026768354196727",
+              "lean_riemann_bound_2_over_delta3_N": "16.06347370877071",
+              "dyadic_step_abs_diff": "0.0007701975409765036",
+              "lean_dyadic_bound_1_over_2_delta3_N": "4.015868427192677"
+            },
+            {
+              "N": 256,
+              "S_N": "25.080460693270459520856375792949969055895746415201",
+              "abs_err_vs_I_exact": "0.0002565708132202231",
+              "lean_riemann_bound_2_over_delta3_N": "8.031736854385354",
+              "dyadic_step_abs_diff": null,
+              "lean_dyadic_bound_1_over_2_delta3_N": null
+            }
+          ],
+          "I_exact_periodic_S1": "5.0401584964300601295613474671825550122212775200269",
+          "S_256_periodic_S1": "5.0401584965282644864663501968799758037553319106293",
+          "periodic_S1_N256_abs_err": "9.82043569050027297e-11",
+          "periodic_S1_shanks_abs_err": "3.06520156945330935e-16",
+          "poisson_finite_N_identity_max_err": "9.27713419004286044e-80"
+        }
+      },
+      "bring_cusp_torus_ohara": {
+        "primitive_single_component_0_1": {
+          "winding_m_l": [
+            0,
+            1
+          ],
+          "E_N_16_to_256": [
+            "4.9548330333183459154e-80",
+            "-9.5775868314249303493e-79",
+            "1.5019996519617687964e-78",
+            "5.1449220399822212873e-78",
+            "-5.077992260790136503e-77"
+          ],
+          "E_512_ref": "1.0797492091391708012149459012103782116445887689376e-76",
+          "richardson_extrap": "-7.6084269890229789572844545750413457060025727560864e-77",
+          "N256_vs_512_diff": "1.587548435218184e-76"
+        },
+        "primitive_dressed_writhe2_2_3": {
+          "winding_m_l": [
+            2,
+            3
+          ],
+          "E_N_16_to_256": [
+            "119.73489743184095344",
+            "121.6405653045284855",
+            "122.10469179105669318",
+            "122.18443480687061281",
+            "122.19650755198024032"
+          ],
+          "E_512_ref": "122.20361539369550038957009402022603009481958393133",
+          "richardson_extrap": "122.19967800422051444031650703162937347625182468053",
+          "N256_vs_512_diff": "0.007107841715260069"
+        }
+      }
+    },
+    "part_b_proton_k_integers_schur_test": {
+      "schur_q0_sq": {
+        "sym3": "8.3702094347193277556331602765220295630394186725043",
+        "std21": "3.0437062085325219894020193356773883097682139607135",
+        "sign111": "4.4755738777400674460286906063644311344243994918186"
+      },
+      "classical_q1_values": {
+        "c_3": 6,
+        "c_21": 3,
+        "c_111": 6,
+        "dim_21_times_c_111": 12
+      },
+      "muon_anchor_selected_grid_rows": [
+        {
+          "triple_k1_k2_k3": [
+            -3,
+            1,
+            6
+          ],
+          "pred_mp_over_me_at_q_mu": "918.0761128307099",
+          "rel_err_vs_codata_ppb": "-500000121.9",
+          "rel_err_percent": "-50.000012"
+        },
+        {
+          "triple_k1_k2_k3": [
+            -3,
+            2,
+            0
+          ],
+          "pred_mp_over_me_at_q_mu": "1848.15222566142",
+          "rel_err_vs_codata_ppb": "6535160.398",
+          "rel_err_percent": "0.65351604"
+        },
+        {
+          "triple_k1_k2_k3": [
+            -3,
+            2,
+            6
+          ],
+          "pred_mp_over_me_at_q_mu": "1842.15222566142",
+          "rel_err_vs_codata_ppb": "3267458.269",
+          "rel_err_percent": "0.32674583"
+        },
+        {
+          "triple_k1_k2_k3": [
+            -3,
+            2,
+            12
+          ],
+          "pred_mp_over_me_at_q_mu": "1836.15222566142",
+          "rel_err_vs_codata_ppb": "-243.860212",
+          "rel_err_percent": "-2.4386021e-5"
+        },
+        {
+          "triple_k1_k2_k3": [
+            -3,
+            2,
+            18
+          ],
+          "pred_mp_over_me_at_q_mu": "1830.15222566142",
+          "rel_err_vs_codata_ppb": "-3267945.989",
+          "rel_err_percent": "-0.3267946"
+        },
+        {
+          "triple_k1_k2_k3": [
+            -3,
+            3,
+            18
+          ],
+          "pred_mp_over_me_at_q_mu": "2754.22833849213",
+          "rel_err_vs_codata_ppb": "499999634.2",
+          "rel_err_percent": "49.999963"
+        },
+        {
+          "triple_k1_k2_k3": [
+            -2,
+            2,
+            12
+          ],
+          "pred_mp_over_me_at_q_mu": "2039.409411973665",
+          "rel_err_vs_codata_ppb": "110697079.5",
+          "rel_err_percent": "11.069708"
+        },
+        {
+          "triple_k1_k2_k3": [
+            -1,
+            2,
+            12
+          ],
+          "pred_mp_over_me_at_q_mu": "2265.020538190826",
+          "rel_err_vs_codata_ppb": "233568739.1",
+          "rel_err_percent": "23.356874"
+        },
+        {
+          "triple_k1_k2_k3": [
+            0,
+            2,
+            12
+          ],
+          "pred_mp_over_me_at_q_mu": "2515.444059230727",
+          "rel_err_vs_codata_ppb": "369953651.3",
+          "rel_err_percent": "36.995365"
+        },
+        {
+          "triple_k1_k2_k3": [
+            3,
+            2,
+            12
+          ],
+          "pred_mp_over_me_at_q_mu": "3444.410886421738",
+          "rel_err_vs_codata_ppb": "875884797.7",
+          "rel_err_percent": "87.58848"
+        }
+      ],
+      "best_grid_triple_at_q_mu": [
+        -3,
+        2,
+        12
+      ],
+      "scope_note": "k1=-3 = sign Schur exponent c_{(1^3)}(q^2) = [3]_q!/q^3; k2=2 = dim S^{(2,1)} (unique Molien multiplicity and self-dual Specht dim); k3=12 = 2*c_{(1^3)}(1). Algebraic characterization proved in Lean; linear assembly subtraction remains conditional on ProtonBorromeanAssembly."
+    },
+    "part_c_intranucleon_borromean_em_and_route1": {
+      "em_scale_alpha_times_m_model_MeV": "6.8469314037159020637418472703764114582825155739584",
+      "codata_np_mass_diff_MeV_comparison": "1.29333251",
+      "empirical_benchmarks_comparison_only": {
+        "cottingham_0p76_MeV_f_emp": "0.110998629194",
+        "bmw_2015_1p00_MeV_f_emp": "0.146050827887",
+        "pdg_md_sub_mu_MSbar_2GeV_MeV": "2.52(17)"
+      },
+      "primary_route1_no_mpi_candidates": [
+        {
+          "id": "f_R1_1a",
+          "description": "3-strand equal-partition constituent Compton (1/3) * pairwise (+1/3) = 1/9",
+          "f_dimensionless": "0.11111111111111111111111111111111111111111111111111",
+          "Delta_EM_p_minus_n_MeV_at_q0": "0.76077015596843356263798303004182349536472395266204",
+          "Delta_EM_p_minus_n_MeV_at_q_mu": "0.7607699100690548",
+          "implied_md_sub_mu_MeV": "2.0541026659684334978842340005637652764087303003183",
+          "diff_vs_BMW_1p00_MeV": "-0.239229844",
+          "diff_vs_PDG_md_mu_2p52_MeV": "-0.465897334",
+          "within_0p76_to_1p04_MeV_band": true
+        },
+        {
+          "id": "f_R1_1b",
+          "description": "q-deformed (2,1) Schur [3]_{q0} constituent Compton 1 / (3 * [3]_{q0})",
+          "f_dimensionless": "0.10951560712360772776572126558728045458034587764448",
+          "Delta_EM_p_minus_n_MeV_at_q0": "0.74984584961164270304432408281293989132718611632836",
+          "Delta_EM_p_minus_n_MeV_at_q_mu": "0.7498456072432649",
+          "implied_md_sub_mu_MeV": "2.0431783596116426382905750533348816723711924639846",
+          "diff_vs_BMW_1p00_MeV": "-0.2501541504",
+          "diff_vs_PDG_md_mu_2p52_MeV": "-0.4768216404",
+          "within_0p76_to_1p04_MeV_band": false
+        },
+        {
+          "id": "f_R1_1c",
+          "description": "3-strand constituent Compton (1/3) * coherent (1s)^3 self+pair (+1/2) = 1/6",
+          "f_dimensionless": "0.16666666666666666666666666666666666666666666666667",
+          "Delta_EM_p_minus_n_MeV_at_q0": "1.1411552339526503439569745450627352430470859289931",
+          "Delta_EM_p_minus_n_MeV_at_q_mu": "1.141154865103582",
+          "implied_md_sub_mu_MeV": "2.4344877439526502792032255155846770240910922766493",
+          "diff_vs_BMW_1p00_MeV": "0.141155234",
+          "diff_vs_PDG_md_mu_2p52_MeV": "-0.08551225605",
+          "within_0p76_to_1p04_MeV_band": false
+        },
+        {
+          "id": "f_R1_2a",
+          "description": "O2-neutralized H^3 Green on S^3\\B_3 at half-ball alpha=R_{B3}/2: (1/9)*(coth(R_{B3}/2) - c0(B_3))",
+          "f_dimensionless": "0.045838665932796895928838263786160993235000638649233",
+          "Delta_EM_p_minus_n_MeV_at_q0": "0.31385420127970934989654796798085657543101920429080",
+          "Delta_EM_p_minus_n_MeV_at_q_mu": "0.3138540998344141",
+          "implied_md_sub_mu_MeV": "1.6071867112797092851427989385027983564750255519470",
+          "diff_vs_BMW_1p00_MeV": "-0.6861457987",
+          "diff_vs_PDG_md_mu_2p52_MeV": "-0.9128132887",
+          "within_0p76_to_1p04_MeV_band": false
+        },
+        {
+          "id": "f_R1_2b",
+          "description": "Inverse Borromean hyperbolic volume (1/3) / Vol(B_3) = 1 / (24 G)",
+          "f_dimensionless": "0.045489335987662754227256644722245513541085421725344",
+          "Delta_EM_p_minus_n_MeV_at_q0": "0.31146236310811204200388856732239509732702388452639",
+          "Delta_EM_p_minus_n_MeV_at_q_mu": "0.3114622624359169",
+          "implied_md_sub_mu_MeV": "1.6047948731081119772501395378443368783710302321826",
+          "diff_vs_BMW_1p00_MeV": "-0.6885376369",
+          "diff_vs_PDG_md_mu_2p52_MeV": "-0.9152051269",
+          "within_0p76_to_1p04_MeV_band": false
+        },
+        {
+          "id": "f_R1_2c",
+          "description": "Carrier-to-baryon hyperbolic volume ratio (1/3) * Vol(4_1) / Vol(B_3)",
+          "f_dimensionless": "0.092338039483653806697897281260874704316823744066738",
+          "Delta_EM_p_minus_n_MeV_at_q0": "0.63223222229818814728854856666909221187288504008463",
+          "Delta_EM_p_minus_n_MeV_at_q_mu": "0.6322320179453892",
+          "implied_md_sub_mu_MeV": "1.9255647322981880825347995371910339929168913877409",
+          "diff_vs_BMW_1p00_MeV": "-0.3677677777",
+          "diff_vs_PDG_md_mu_2p52_MeV": "-0.5944352677",
+          "within_0p76_to_1p04_MeV_band": false
+        },
+        {
+          "id": "f_R1_3a",
+          "description": "Self-consistent Compton-HO bare pairwise (1/3) * sqrt(E_osc / m_model) [m_e & m_pi free]",
+          "f_dimensionless": "0.070732047810331165542282166256385449188504412255100",
+          "Delta_EM_p_minus_n_MeV_at_q0": "0.48429747940169106418114637914885480408914251804672",
+          "Delta_EM_p_minus_n_MeV_at_q_mu": "0.4842973228649915",
+          "implied_md_sub_mu_MeV": "1.7776299894016909994273973496707965851331488657030",
+          "diff_vs_BMW_1p00_MeV": "-0.5157025206",
+          "diff_vs_PDG_md_mu_2p52_MeV": "-0.7423700106",
+          "within_0p76_to_1p04_MeV_band": false
+        },
+        {
+          "id": "f_R1_3b",
+          "description": "Self-consistent (1s)^2 spherical HO Slater pairwise (1/3) * sqrt(2/pi) * sqrt(E_osc / m_model)",
+          "f_dimensionless": "0.056436008901833356210346043000482127756463397747805",
+          "Delta_EM_p_minus_n_MeV_at_q0": "0.38641348165035300615167915866475395251388592120121",
+          "Delta_EM_p_minus_n_MeV_at_q_mu": "0.3864133567521372",
+          "implied_md_sub_mu_MeV": "1.6797459916503529413979301291866957335578922688575",
+          "diff_vs_BMW_1p00_MeV": "-0.6135865183",
+          "diff_vs_PDG_md_mu_2p52_MeV": "-0.8402540083",
+          "within_0p76_to_1p04_MeV_band": false
+        },
+        {
+          "id": "f_R1_3c",
+          "description": "Self-consistent (1s)^3 spherical HO Slater coherent self+pair (1/2) * sqrt(2/pi) * sqrt(E_osc / m_model)",
+          "f_dimensionless": "0.084654013352750034315519064500723191634695096621707",
+          "Delta_EM_p_minus_n_MeV_at_q0": "0.57962022247552950922751873799713092877082888180181",
+          "Delta_EM_p_minus_n_MeV_at_q_mu": "0.5796200351282059",
+          "implied_md_sub_mu_MeV": "1.8729527324755294444737697085190727098148352294581",
+          "diff_vs_BMW_1p00_MeV": "-0.4203797775",
+          "diff_vs_PDG_md_mu_2p52_MeV": "-0.6470472675",
+          "within_0p76_to_1p04_MeV_band": false
+        },
+        {
+          "id": "f_R1_3d",
+          "description": "Pure Hecke O(hbar_q^4) connected Borromean trace |tr_conn(p, V^3)| on W_p",
+          "f_dimensionless": "0.00043068052000266024235560236898394814154521611023594",
+          "Delta_EM_p_minus_n_MeV_at_q0": "0.0029488399773749091300074809543361104249498402646544",
+          "Delta_EM_p_minus_n_MeV_at_q_mu": "0.002948839024238258",
+          "implied_md_sub_mu_MeV": "1.2962813499773748443762584514762778914689561879209",
+          "diff_vs_BMW_1p00_MeV": "-0.99705116",
+          "diff_vs_PDG_md_mu_2p52_MeV": "-1.22371865",
+          "within_0p76_to_1p04_MeV_band": false
+        },
+        {
+          "id": "f_R1_3e",
+          "description": "Planck-defect O(hbar_q) scale hbar_q / 3 = (1 - q_0^-1) / 3",
+          "f_dimensionless": "0.033027238681419502613059039172968687995086124463149",
+          "Delta_EM_p_minus_n_MeV_at_q0": "0.22613523770583177338971728175941060426736392918623",
+          "Delta_EM_p_minus_n_MeV_at_q_mu": "0.2261351646134345",
+          "implied_md_sub_mu_MeV": "1.5194677477058317086359682522813523853113702768425",
+          "diff_vs_BMW_1p00_MeV": "-0.7738647623",
+          "diff_vs_PDG_md_mu_2p52_MeV": "-1.000532252",
+          "within_0p76_to_1p04_MeV_band": false
+        }
+      ],
+      "secondary_diagnostic_scales": [
+        {
+          "id": "D1a_pion_bare_pair",
+          "description": "[SECONDARY: uses CAL-3 m_pi] (1/3) * alpha_q(q0) * m_pi",
+          "Delta_EM_p_minus_n_MeV": "0.33949956062430511060409033402377343275167236739020",
+          "implied_md_sub_mu_MeV": "1.6328320706243050458503413045457152137956787150465"
+        },
+        {
+          "id": "D1b_pion_O2_H3_2lnq0",
+          "description": "[SECONDARY: uses CAL-3 m_pi] (1/3) * alpha_q(q0) * m_pi * (coth(2 ln q0) - c0(B_3))",
+          "Delta_EM_p_minus_n_MeV": "1.1174340935312782698421519217206871644973971578092",
+          "implied_md_sub_mu_MeV": "2.4107666035312782050884028922426289455414035054654"
+        },
+        {
+          "id": "D1c_pion_O2_H3_lnq0",
+          "description": "[SECONDARY: uses CAL-3 m_pi] (1/3) * alpha_q(q0) * m_pi * (coth(ln q0) - c0(B_3))",
+          "Delta_EM_p_minus_n_MeV": "2.7325654475768827752190435015913370798200768027712",
+          "implied_md_sub_mu_MeV": "4.0258979575768827104652944721132788608640831504275"
+        },
+        {
+          "id": "D2a_codata_rp_uniform_born",
+          "description": "[COMPARISON-ONLY: uses CODATA r_p] (3/5) * alpha_q(q0) * hbar*c / (sqrt(5/3) * r_p)",
+          "Delta_EM_p_minus_n_MeV": "0.79600106553872833818317354183614873664496758430054",
+          "implied_md_sub_mu_MeV": "2.0893335755387282734294245123580905176889739319568"
+        },
+        {
+          "id": "D2b_codata_rp_pairwise",
+          "description": "[COMPARISON-ONLY: uses CODATA r_p] (1/3) * alpha_q(q0) * hbar*c / r_p",
+          "Delta_EM_p_minus_n_MeV": "0.57090719822126915433613080610508054493779187346923",
+          "implied_md_sub_mu_MeV": "1.8642397082212690895823817766270223259817982211255"
+        }
+      ]
+    }
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "Canonical proton pin q_0 = q_at(80) held fixed per owner gate qou-eic1; muon pin q_muon_at(80) recorded strictly as a labelled non-circular comparison datum.",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

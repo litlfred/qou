@@ -1,0 +1,1 @@
+Assume ℓ| q + 1. Then Dn(1, 1) is the square part of decomposition matrix of the unipotent blocks of GUn(q), up to multiplication by the diagonal matrix (−1)A(λ) on both sides. In other words [∆(λ) : L(µ)] = (−1)A(λ)+A(µ)Dn(1, 1)λ,µ.

@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Graded-trace residue split on the confinement filtration",
   lean: {
-    ref: "qou:QOU.BraidKnot.graded_trace_residue_split",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.graded_trace_residue_split_of_section",
     validation: "not_checked",
   },
   uses: ["prop:schur-weyl-mass-decomposition"],

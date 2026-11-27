@@ -1,0 +1,305 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-24T02:15:28.200997+00:00",
+  "commitSha": "416fedde5b2711d60d87686c4214a100f8189755",
+  "assertions": [
+    {
+      "name": "q0_proton_anchor_80dps_stability",
+      "computed": "2.7240788363573228965594554371210013137017549493944e-82",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "q_at(80) agrees with q_at(90) to >75 digits (proton anchor)"
+    },
+    {
+      "name": "genus4_kummer_riemann_roch_and_spin_contrast",
+      "computed": "K:(4, 1);KL:(3, 0);KL2:(3, 0);sum=10;indK=[3, 3, 3];indSpin=[0, 0, 0]",
+      "expected": "K:(4, 1);KL:(3, 0);KL2:(3, 0);sum=10;indK=[3, 3, 3];indSpin=[0, 0, 0]",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Riemann-Roch + Serre duality on g=4: (4,1)+(3,0)+(3,0), sum=10, Dolbeault index [3,3,3], spinor index [0,0,0]"
+    },
+    {
+      "name": "chevalley_weil_ascending_vs_descending_dichotomy",
+      "computed": "desc=[(0, 6), (1, 3), (2, 0)];any_3_3=False;asc_unique_g0=[4];asc_bring=(4, 3, 3)",
+      "expected": "desc=[(0, 6), (1, 3), (2, 0)];any_3_3=False;asc_unique_g0=[4];asc_bring=(4, 3, 3)",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Exhaustive Hurwitz + Chevalley-Weil check: no descending Z_3 cover gives (*,3,3); ascending etale Z_3 over g=4 uniquely gives (4,3,3)"
+    },
+    {
+      "name": "s5_c3_centralizer_and_normalizer_exact",
+      "computed": "ord3=20;cent=6;norm=12;eq_S3xS2=True",
+      "expected": "ord3=20;cent=6;norm=12;eq_S3xS2=True",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Exact S_5 group census: 20 order-3 elements, |C_{S_5}(C_3)|=6, N_{S_5}(C_3)=S_3 x S_2 of order 12"
+    },
+    {
+      "name": "f3_s5_simplicity_and_6561_pic3_stabilizers",
+      "computed": "simple=True;orb81=[1, 5, 5, 10, 10, 20, 30];sum6561=6561;fix(S5,A5,F20,C5)=(1,1,1,1);fix(S4,S3xS2,C3)=(9,9,81)",
+      "expected": "simple=True;orb81=[1, 5, 5, 10, 10, 20, 30];sum6561=6561;fix(S5,A5,F20,C5)=(1,1,1,1);fix(S4,S3xS2,C3)=(9,9,81)",
+      "passed": true,
+      "tolerance": "0",
+      "source": "V_std(F_3) is simple; Pic^0(B)[3] has 0 non-trivial S_5/A_5/F_20/C_5-fixed classes and 8 non-trivial S_4- and (S_3xS_2)-fixed classes"
+    },
+    {
+      "name": "f3_s5_ext1_cocycle_and_universal_c5_vanishing",
+      "computed": "dimZ1=15;dimB1=15;dimExt1=0;all_c5_inv=True",
+      "expected": "dimZ1=15;dimB1=15;dimExt1=0;all_c5_inv=True",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Every 1-cocycle extension 0 -> D^(4,1) -> M -> D^(4,1) -> 0 over F_3[S_5] has det(c_5 - I_8) != 0 mod 3 (M^{C_5}=M^{A_5}=M^{S_5}=0)"
+    },
+    {
+      "name": "bring_tau0_x0_5_modular_j_lock_80dps",
+      "computed": "3.5439339340314593410271842969510015559886006853254e-77",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "tau_0 from j(tau_0)=-121945/32 independently satisfies X_0(5) relation j(5*tau_0)=-25/2 to >70 digits"
+    },
+    {
+      "name": "bring_period_matrix_1_plus_3_spectral_and_mod3_isogeny_80dps",
+      "computed": "5.2710989716152616121742870256350095038549806911843e-82",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "det(M)=125 == 2 mod 3 (invertible on 3-torsion!), spec(M)={1:1, 5:3}, and 80-dps P_1 (+) P_5 spectral split"
+    },
+    {
+      "name": "elliptic_s4_factor_8_nontrivial_3torsion_theta_quasiperiod_80dps",
+      "computed": "6.1398687601012217498259827351253404810372353698565e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-72",
+      "source": "theta_3(z + tau_0 | tau_0) = exp(-i*pi*tau_0 - 2*pi*i*z)*theta_3(z | tau_0) to >72 digits across all 8 S_4-invariant 3-torsion classes"
+    },
+    {
+      "name": "exterior_su5_anomaly_matching_33_vs_34_refutation_80dps",
+      "computed": "8.4337583545844185794788592410160152061679691058948e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "At (N_q, N_l)=(3,3) all 4 anomalies vanish to >75 digits; naive H^0-only (3,4) violates [SU(2)]^2 U(1)_Y and [U(1)_Y]^3"
+    },
+    {
+      "name": "s5_reynolds_protection_vs_s4_lepton_pairing_80dps",
+      "computed": "8.4337583545844185794788592410160152061679691058948e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "Reynolds average of H^0 -> H^1 pairing vanishes under S_5 (chiral protection) and equals (-1,-1,-1,-1) of rank 1 (ker dim 3) under S_4"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 795,
+  "computation": "gap3-ngen3-bring-prym-riemann-roch",
+  "scriptFile": "gap3_ngen3_bring_prym_riemann_roch_probe.py",
+  "scriptHash": "f3847d340cf4",
+  "scriptCommitSha": "5fce852e66b3c5cf3e0892d2eca1a1888ce6eab0",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gap3_ngen3_bring_prym_riemann_roch/gap3_ngen3_bring_prym_riemann_roch_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gap3_ngen3_bring_prym_riemann_roch/gap3_ngen3_bring_prym_riemann_roch_probe.py"
+  },
+  "description": "Pre-registered exact + 80-dps verification for Closing Open Gap 3 (Option 3A Primary): Riemann-Roch + Serre duality + Chevalley-Weil zero-mode count on Bring's genus-4 curve twisted by a non-trivial Z_3 colour Kummer 3-torsion line bundle (10 = 4 + 3 + 3), complete Hurwitz/Chevalley-Weil no-go for descending Z_3 covers from genus 4, exact S_5 subgroup normalizer N_{S_5}(C_3) = S_3 x S_2 and F_3[S_5] 6561-element 3-torsion stabilizer + Ext^1 cocycle census, 80-dps Bring period matrix X_0(5) j-invariant and mod-3 isogeny lock, and Lambda^1 F (+) Lambda^2 F* gauge anomaly matching + S_4 vector-like lepton pairing. Zero fitting; honest conditional scope recorded.",
+  "parameters": {
+    "work_dps": 80,
+    "q0_proton_80dps": "1.109978582751380807591669095610768879874499121873578736072814240181798963574483",
+    "hecke_defect_h": "0.20906029879563931543084621312967494385975749526302",
+    "q2_sym": "2.0108968667071222997524919780918628158892407484841",
+    "q3_sym": "3.0437062085325219894020193356773883097682139607135",
+    "ocneanu_z2": "0.61268803714646525159582986394589924802630839154506",
+    "ocneanu_z3": "0.44930480909020786055515120160900762414255594456971",
+    "ocneanu_z5": "0.32274965047101579085923938253703611859674419578238"
+  },
+  "data": {
+    "companion_lean_module": "folio/quantum-observable-universe/lean/QOU/StandardModel/BringPrymRiemannRochGenerations.lean",
+    "preregistration_file": "computations/probes/gap3_ngen3_bring_prym_riemann_roch/PREREGISTRATION.md",
+    "selected": "none (exact mathematical verification + honest conditional scope; zero fitting)",
+    "case_i_ascending_prym_riemann_roch": {
+      "base_curve_genus": 4,
+      "base_euler_characteristic": -6,
+      "etale_z3_cover_genus": 10,
+      "etale_z3_cover_euler_characteristic": -18,
+      "prym_complex_dimension": 6,
+      "untwisted_sector_t0_h0_h1": [
+        4,
+        1
+      ],
+      "twisted_sector_t1_h0_h1": [
+        3,
+        0
+      ],
+      "twisted_sector_t2_h0_h1": [
+        3,
+        0
+      ],
+      "dolbeault_chiral_indices_t0_t1_t2": [
+        3,
+        3,
+        3
+      ],
+      "untwisted_spin_structure_indices_t0_t1_t2": [
+        0,
+        0,
+        0
+      ],
+      "central_su3_holonomy_preserves_su3": true,
+      "noncentral_split_bundle_breaks_su3_to_u1_sq": true
+    },
+    "case_ii_descending_z3_covers_from_genus4": {
+      "diophantine_equation": "3 * g0 + r = 6",
+      "solutions_g0_r": [
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "chevalley_weil_triples_d0_d1_d2": {
+        "g0=0,r=6": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            2,
+            2
+          ],
+          [
+            0,
+            3,
+            1
+          ]
+        ],
+        "g0=1,r=3": [
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            2,
+            1
+          ]
+        ],
+        "g0=2,r=0": [
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      },
+      "any_descending_cover_gives_3_3": false,
+      "bring_actual_c3_quotient": "g0=2, r=0 (unramified B -> C_2), giving (2, 1, 1)"
+    },
+    "s5_and_f3_pic3_census": {
+      "s5_order": 120,
+      "order3_elements_count": 20,
+      "centralizer_c3_order": 6,
+      "normalizer_c3_order": 12,
+      "normalizer_c3_group": "S_3 x S_2",
+      "v_std_f3_card": 81,
+      "v_std_f3_s5_simple": true,
+      "v_std_f3_s5_orbit_sizes": [
+        1,
+        5,
+        5,
+        10,
+        10,
+        20,
+        30
+      ],
+      "pic0_3torsion_card": 6561,
+      "pic0_cyclic_z3_subgroups": 3280,
+      "pic0_s5_orbit_size_histogram": {
+        "1": 1,
+        "5": 8,
+        "10": 8,
+        "20": 28,
+        "30": 28,
+        "60": 56,
+        "120": 14
+      },
+      "pic0_fixed_point_counts": {
+        "S5": 1,
+        "A5": 1,
+        "F20": 1,
+        "C5": 1,
+        "S4": 9,
+        "A4": 9,
+        "S3xS2": 9,
+        "S3": 81,
+        "C3": 81
+      },
+      "ext1_f3_s5_d41_d41": {
+        "dim_Z1": 15,
+        "dim_B1": 15,
+        "dim_Ext1": 0,
+        "all_extensions_have_zero_c5_a5_s5_fixed_points": true
+      }
+    },
+    "bring_period_matrix_80dps": {
+      "re_tau0_exact": "-1/2",
+      "im_tau0_50digits": "0.18667646246280992320616288136312402946369525221883",
+      "j_tau0_exact_rational": "-121945/32",
+      "j_5tau0_exact_rational": "-25/2",
+      "j_5tau0_abs_residual": "8.2312464002552626368996393233091475418020995825104e-79",
+      "polarization_multiplier_det": 125,
+      "polarization_multiplier_det_mod3": 2,
+      "polarization_multiplier_spectrum": {
+        "1": 1,
+        "5": 3
+      },
+      "im_omega_covolume_det_50digits": "0.15179877346831409854323086297268078215885484079262",
+      "theta3_origin_abs_50digits": "1.6373166434585747736348564411011710191012237128371",
+      "min_s4_3torsion_theta3_separation": "0.015688113932665688655732957002886640609051962735274"
+    },
+    "anomaly_matching_and_lepton_scope": {
+      "unimodular_condition": "2 * y_2 + 3 * y_3 = 0",
+      "anom_su3_sq_u1_formula": "0",
+      "anom_grav_sq_u1_formula": "0",
+      "anom_su2_sq_u1_formula": "(N_l - N_q) * y_2 / 2",
+      "anom_u1_cubic_formula": "6 * (N_q - N_l) * y_2^3",
+      "h0_only_3_4_anom_su2_abs": "0.66067377366117294703651789400176125573194317730387",
+      "h0_only_3_4_anom_u1_cubic_abs": "1.7302643195326111491410021852342970574195577445257",
+      "h0_only_3_4_witten_su2_doublets": 13,
+      "dolbeault_3_3_max_anom_abs": "8.4337583545844185794788592410160152061679691058948e-81",
+      "dolbeault_3_3_witten_su2_doublets": 12,
+      "conditional_lean_class": "BringKummerGenerationClosureHypothesis (0 instances, Rule 13a)"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

@@ -1,1 +1,0 @@
-Moreover, the number of elements $(h_1,h_2,\ldots,h_n;g)$ conjugate to $(h,1,\ldots,1;g)$ is $m!^{n-1} |h^{S_m}|$, since $h_2, \ldots, h_n$ may be chosen arbitrarily, and then $h_1$ must be chosen so that $h_{x_n} h_{x_{n-1}}\cdots h_{x_1} \in h^{S_m}$.

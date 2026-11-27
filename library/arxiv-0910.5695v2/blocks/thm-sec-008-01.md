@@ -1,0 +1,1 @@
+Suppose e is an idempotent in FPn(t). Then there exists an idempo- tent ε ∈KPn(T) of the form ε = P π∈Pn,n aππ with aπ ∈F[[T −t]] for all π ∈Pn,n such that ε|T =t = e (we say ε is a lift of e). Moreover, if ([n1], e1) and ([n2], e2) are isomorphic objects in Rep(St; F) and ε1, ε2 are lifts of e1, e2 respectively, then ([n1], ε1) and ([n2], ε2) are isomorphic in Rep(ST ; K).

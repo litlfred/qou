@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2510.04782v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2510.04782v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -39,6 +39,18 @@
     "library/arxiv-2510.04782v2/sections/sec-024"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "$q$-Hodge complexes over the Habiro ring — — Peter Scholze has raised the question whether some variant of the q-de Rham complex is already defined over the Habiro ring H := limm∈N Z[q]∧ (qm−1).\n\n**$q$-Hodge complexes over the Habiro ring**\n\n*Ferdinand Wagner*\n\n82 pp, 26 sections.\n\n**Abstract.** — Peter Scholze has raised the question whether some variant of the q-de Rham complex is already defined over the Habiro ring H := limm∈N Z[q]∧ (qm−1). Such a variant should then be called (algebraic) Habiro cohomology. We show that algebraic Habiro cohomology exists whenever the q-de Rham complex can be equipped with a q-Hodge filtration: a q-deformation of the Hodge filtration, subject to some reasonable conditions. To any such q-Hodge filtration we associate a small modification of the q-de Rham complex, which we call the q-Hodge complex, and show that it descends canonically to the Habiro ring. This construction recovers and generalises the Habiro ring of a number field from [GSWZ24] and is closely related to the q-de Rham–Witt complexes from [Wag24] as well as, conjecturally, to Scholze’s analytic Habiro stack [Sch25].\n\n**Outline.** Front matter; 1 Introduction; 1.1 Habiro cohomology; 1.2 q-Hodge filtrations and Habiro descent; 1.3 Existence results for q-Hodge filtrations; 1.4 Organisation of this paper; 2 Habiro rings of étale extensions; 2.1 A general descent principle; 2.2 Habiro rings of étale extensions; 3 Habiro descent for q-Hodge complexes; 3.1 q-Hodge filtrations and the q-Hodge comple; 3.2 The main result; 3.3 Deformations of q-de Rham–Witt complexes; 3.4 The Nygaard filtration on q-de Rham–Witt c; 3.5 The twisted q-Hodge filtration; 3.6 Habiro descent for q-Hodge complexes; 3.7 Habiro descent for q-de Rham complexes; 3.8 Habiro descent in derived commutative alge",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -61,8 +73,8 @@
       "stamp_date": "8 Oct 2025"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

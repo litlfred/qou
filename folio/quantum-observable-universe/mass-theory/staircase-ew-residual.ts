@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Staircase EW-residual: $q^{1/(2k-1)}$ as pairwise eigenvalue ratio of $\\beta_{\\mathrm{EW}}$ on $V_{\\rho_k}$",
   lean: {
-    ref: "qou:QOU.StaircaseCornerHook.StaircaseEWResidual",
+    ref: "qou:BraidKnotOctonion.StaircaseCornerHook.StaircaseEWResidual",
     validation: "not_checked",
   },
   uses: [
@@ -31,5 +31,8 @@ export default conjecture({
     "hecke-eigenvalue",
     "open-conjecture",
     "tier-a",
+  ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Lean status.** We axiomatise the conjecture as a hypothesis-only `class`. We state the spectral content explicitly using `HoefsmitRepresentation.HasEigenvalueRatio`. Downstream Lean theorems take this class as an instance hypothesis and remain rigorous-conditional results." },
   ],
 });

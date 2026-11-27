@@ -1,1 +1,0 @@
-(The reader should not confuse “pretriangulated cate- gory”, as used here, with the “pretriangulated DG category” from [25]; see Remark 5.5.4.) It is not known whether the octahedral axiom is a consequence of the other axioms; there was a recent paper by A.

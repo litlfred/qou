@@ -1,0 +1,80 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-24T02:19:54.591401+00:00",
+  "commitSha": "0d7c8d3e77ea4ebb63f1f2e7f88f87715302de23",
+  "assertions": [
+    {
+      "name": "triangular_pochhammer_and_symbolic_habiro_polynomials",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "QOU.QBeta.QHeatKernelHabiroExpansion.triangular_solve_order3_unique"
+    },
+    {
+      "name": "root_of_unity_exact_finite_truncation",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "QOU.QBeta.QHeatKernelHabiroExpansion.habiroPartialSum_eq_of_pow_eq_one"
+    },
+    {
+      "name": "archimedean_q0_optimal_truncation_and_tail_growth",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "QOU.QBeta.QHeatKernelHabiroExpansion.habiroTerm_abs_ge_of_one_lt"
+    },
+    {
+      "name": "q_borel_reflection_regularization_converges",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "QOU.QBeta.QHeatKernelHabiroExpansion.habiroTerm_reflection"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 26,
+  "computation": "q-heat-kernel-habiro-cyclotomic-expansion",
+  "scriptFile": "q_heat_kernel_habiro_cyclotomic_expansion_probe.py",
+  "scriptHash": "a7cb3de7262f",
+  "scriptCommitSha": "0d7c8d3e77ea4ebb63f1f2e7f88f87715302de23",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/q_heat_kernel_habiro_cyclotomic_expansion_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/q_heat_kernel_habiro_cyclotomic_expansion_probe.py"
+  },
+  "description": "80-dps mpmath + exact Q[eps] verification of the Habiro cyclotomic-basis expansion of exp(-alpha*(q-1)), root-of-unity finite termination, and archimedean q_0 > 1 optimal truncation vs q-Borel reflection regularization (qou-8ex3).",
+  "parameters": {
+    "workdps": 80,
+    "q0": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "archimedean_evaluation": {
+      "exact_exp_one_minus_q0": "0.89585332180438582672960917041616101091134442835556",
+      "optimal_truncation_N_star": 8,
+      "min_truncation_error_at_q0": "0.00000634723566154157208357954997852",
+      "abs_term_at_n30": "64135243095.6150426919639767757",
+      "q_borel_abs_term_at_n30": "5.44262204559975567221711589115e-11"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

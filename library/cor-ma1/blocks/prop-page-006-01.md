@@ -1,0 +1,1 @@
+There exists a bijection between overpartitions whose Frobenius representation has N columns and whose bottom line has j overlined parts and overpartitions with generalized Durfee square of size N and N −j overlined parts.

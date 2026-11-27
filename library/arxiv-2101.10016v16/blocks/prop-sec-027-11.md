@@ -1,1 +1,1 @@
-Let A be a Hermitian coboundary weak quasi-Hopf algebra with trivial
+Let A be a Hermitian coboundary weak quasi-Hopf algebra with trivial involution Ω = ∆(I) ∗∆(I), Ω−1 = ∆(I)∆(I)∗ . Then the twist T (or T ′ ) defined in Remark 11.10 making the Ω-involution strongly trivial turns A into another Hermitian coboundary weak quasi-Hopf algebra AT .

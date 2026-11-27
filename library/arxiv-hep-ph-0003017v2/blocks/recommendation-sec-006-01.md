@@ -1,1 +1,0 @@
-In the sum over $\nu$, we should therefore add weight factors $P(\nu)$ that take into account the distribution of topological charge of the quenched gauge fields (i.e. gauge fields generated without the fermion determinant).

@@ -1,0 +1,1 @@
+If (A, E, E +) is a compatible triple for F : C+ → C then for any twist F ∈ A ⊗ A of the (quasitriangular) weak quasi bialgebra structure and any positive twist t ∈ A of the ∗-involution, the twisted (quasitriangular) algebra AF,t is part of another compatible triple with the same weak dimension function and they are all of this form.

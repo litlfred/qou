@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2006.02042v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2006.02042v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -28,6 +28,18 @@
     "library/arxiv-2006.02042v1/sections/sec-013"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The Strong AJ Conjecture for the Figure 8 Knot — Motivated by the theory of quantum A-ideals of Frohman-Gelca-LoFaro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and the AJ\n\n**The Strong AJ Conjecture for the Figure 8 Knot**\n\n*HOANG-AN NGUYEN AND ANH T. TRAN*\n\n11 pp, 15 sections.\n\n**Abstract.** Motivated by the theory of quantum A-ideals of Frohman-Gelca-LoFaro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and the AJ conjecture of Garoufalidis, Sikora formulated the strong AJ conjecture which relates the A-ideal and recurrence ideal of a knot in the 3-sphere. This conjecture has been veriﬁed for all torus knots and most of their cables. In this paper, we verify the strong AJ conjecture for the ﬁgure eight knot.\n\n**Outline.** Front matter; 1.2 The AJ conjecture; 1 Introduction; 1.1 The colored Jones polynomial and recurrenc; 1.3 Main result; 2 Proof of Theorem ??; 2.1 Step 1: Applying symmetric conditions; 2.2 Step 2: Applying polynomial conditions; 2.4 Step 4: Finding solutions of equation (??); 2.5 Step 5: Imposing condition (??) on solutio; 2.6 Step 6: Applying initial conditions; 2.7 Step 7: Explicit solution; 2.8 Double-checking the recurrence relation; Acknowledgements; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -49,8 +61,8 @@
       "stamp_date": "3 Jun 2020"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

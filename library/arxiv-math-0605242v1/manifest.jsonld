@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0605242v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0605242v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -21,6 +21,18 @@
     "library/arxiv-math-0605242v1/sections/sec-006"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "N-Fold Integer Programming — In this article we study a broad class of integer programming problems in variable dimension.\n\n**N-Fold Integer Programming**\n\n16 pp, 8 sections.\n\n**Abstract.** In this article we study a broad class of integer programming problems in variable dimension. We show that these so-termed n-fold integer programming problems are polynomial time solvable. Our proof involves two heavy ingredients discovered recently: the equivalence of linear optimization and so-called directed augmentation, and the stabilization of certain Graver bases. We discuss several applications of our algorithm to multiway transportation problems and to packing problems. One important consequence of our results is a polynomial time algorithm for the d-dimensional integer transportation problem for long multiway tables. Another interesting application is a new algorithm for the classical cutting stock problem.\n\n**Outline.** Front matter; Introduction; Applications; High dimensional transportation problems; Some packing problems; Graver bases and directed augmentation; Graver bases of n-fold matrices; The polynomial time algorithm for n-fold integ",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
@@ -49,8 +61,8 @@
       "stamp_date": "9 May 2006"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

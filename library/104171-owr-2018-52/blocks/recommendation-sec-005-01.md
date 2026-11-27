@@ -1,1 +1,0 @@
-The equivalence should be perverse with respect to the dominance order and the A-function, and should send the cohomology of a Deligne–Lusztig variety X(w) to the cohomology of X(ww0), where w0 = 3096 Oberwolfach Report 52/2018 (1, n)(2, n −1) · · · .

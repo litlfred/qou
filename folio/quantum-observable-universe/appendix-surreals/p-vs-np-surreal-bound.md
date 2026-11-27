@@ -1,4 +1,4 @@
-We express the Reeb-period complexity argument of [P vs NP in the QOU](#conj:p-vs-np-qou) as a literal surreal inequality.
+Express the Reeb-period complexity argument of [P vs NP in the QOU](#conj:p-vs-np-qou) as a literal surreal inequality.
 
 Let $\varepsilon \in \mathrm{Der}(A)$ be the Reeb infinitesimal ([Reeb infinitesimal](#def:reeb-epsilon)), and let $q = 1 + \varepsilon$ ([$q$ from $\varepsilon$](#def:q-from-epsilon)). A $q$-substrate computation accesses the Reeb-period budget $\Omega_q \asymp \varepsilon^{-1}$ ([surreal rate calculus](#prop:surreal-rate-calculus)). A classical computation accesses the mass-gap budget $\Delta_q \asymp \varepsilon^3$ per elementary step.
 
@@ -16,4 +16,4 @@ This remark does not prove $\mathbf{P} \neq \mathbf{NP}$ classically. It shows t
 
 The classical NP-completeness structure is preserved by the standard part. Any Cook--Levin reduction on the $q$-substrate descends to a classical Cook--Levin reduction. Combined with the surreal squeeze above, the separation $\mathbf{P} \neq \mathbf{NP}$ follows from the strict inclusion at positive $\varepsilon$ and the non-compressibility witness of [P vs NP in the QOU](#conj:p-vs-np-qou).
 
-Unlike the RH, NS, and Collatz bounds, the P-vs-NP squeeze is conditional on an independent conjecture (non-compressibility of $\mathrm{BQP}_q \to \mathbf{P}$ as $\varepsilon \to 0$). This places P-vs-NP in the conditional millennium-problem column (see [millennium unification](#rem:millennium-unification)).
+Unlike the RH, NS, and Collatz bounds, the P-vs-NP squeeze is conditional on an independent conjecture (non-compressibility of $\mathrm{BQP}_q \to \mathbf{P}$ as $\varepsilon \to 0$). This places P-vs-NP in the conditional millennium-problem column.

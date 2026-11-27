@@ -1,1 +1,0 @@
-By definition, if $\shT_{*}\colon\odi U^{m}\to\odi U^{q}\to0$ or $\shT_{*}\colon\odi U^{n}\arr\odi U^{m}\arr\odi U^{q}\arr0$ is an exact sequence on $U$, we must show that $\alpha_{|\shC}^{*}$ is exact on $\shT_{*}$.

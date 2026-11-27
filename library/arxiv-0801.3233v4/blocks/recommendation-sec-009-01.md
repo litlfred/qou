@@ -1,1 +1,0 @@
-(This should be compared to the L∞quasi-isomorphism (B.2) in the local case.) Using the isomorphisms (C.2) and (C.3), and twisting Υ by the element ω (in the sense of [Ye3, Theorem 3.2]), we then obtain an A-multilinear L∞quasi-isomorphism Υω : A b⊗A0 πb∗(PX ⊗OX Tpoly,X) →A b⊗A0 πb∗(PX ⊗OX Dpoly,X).

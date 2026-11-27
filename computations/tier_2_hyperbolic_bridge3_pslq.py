@@ -44,6 +44,7 @@ Ref: [manuscript] tier-1-hyperbolic-3braid-pslq.witness.json (negative)
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+import json
 import sys
 from pathlib import Path
 
@@ -94,7 +95,7 @@ def _tier1_basis() -> tuple[mpf, ...]:
 # Precision must be raised BEFORE the module-scope constants below: at
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
 # literal rounded there cannot be recovered by raising dps afterwards.
-mp.dps = 50
+mp.dps = 80
 
 # CORRECTED 2026-08-30 (bean qou-ckbv). This table was labelled
 # "Literature values (KnotInfo, ~15 dps)". It was not 15 dps and it was
@@ -122,14 +123,30 @@ mp.dps = 50
 # Provenance: snappy 3.3.2 `Manifold(k).volume(bits_prec=2000)` at 50 dps,
 # each confirmed against a randomized re-triangulation of the same
 # manifold.
-TIER2_LITERATURE = {
-    "8_5":  mpf("6.9971891477922154788005778791455176889638409556479"),
-    "8_10": mpf("8.6511485580170819661711202663143702421843667756045"),
-    "8_15": mpf("9.9306482937961829810021321555831152804819325499403"),
-    "8_16": mpf("10.579021916899270325808684550088672898504885279597"),
-    "8_17": mpf("10.985907606284820303688439759183069403959794127785"),
-    "8_18": mpf("12.350906209158200174736304438426152014199256704120"),
-}
+def _load_tier2_literature() -> dict[str, mpf]:
+    """Load 8-crossing 3-braid hyperbolic volumes from the committed census
+    witness (80 dps), keeping only the 4-braid 8_15 fallback inline."""
+    census_path = (
+        Path(__file__).resolve().parent
+        / "probes"
+        / "gap2_mtau_hyperbolic_census_torsion"
+        / "gap2-mtau-hyperbolic-census-torsion.witness.json"
+    )
+    census_rows = json.loads(census_path.read_text(encoding="utf-8"))["data"][
+        "control_eight_crossing_three_braids"
+    ]
+    by_knot = {r["knot"]: mpf(r["vol_80dps"]) for r in census_rows}
+    return {
+        "8_5": by_knot["8_5"],
+        "8_10": by_knot["8_10"],
+        "8_15": mpf("9.9306482937961829810021321555831152804819325499403"),
+        "8_16": by_knot["8_16"],
+        "8_17": by_knot["8_17"],
+        "8_18": by_knot["8_18"],
+    }
+
+
+TIER2_LITERATURE = _load_tier2_literature()
 
 
 def _tier2_basis() -> tuple[tuple[mpf, ...], str]:
@@ -147,9 +164,9 @@ def _tier2_basis() -> tuple[tuple[mpf, ...], str]:
             for name in keys:
                 m = snappy.Manifold(name)
                 m.set_peripheral_curves("shortest")
-                hp = m.high_precision(bits=200)
+                hp = m.high_precision(bits=300)
                 vals.append(mpf(str(hp.volume())))
-            return tuple(vals), "snappy.high_precision(bits=200)"
+            return tuple(vals), "snappy.high_precision(bits=300)"
         except Exception:
             return (tuple(TIER2_LITERATURE[k] for k in keys),
                     "snappy-3.3.2-verified-50dps table (snappy HP failed)")
@@ -159,11 +176,12 @@ def _tier2_basis() -> tuple[tuple[mpf, ...], str]:
 
 
 def main() -> int:
-    # 50 dps suffices when the basis is at literature precision (~15 dps);
-    # if SnapPy promotes to 100+ dps, raise this.
-    mp.dps = 50
+    # Working arithmetic precision is 80 dps; PSLQ tolerance is capped by
+    # the serialized 50-digit precision of the fallback census table when
+    # SnapPy high_precision(bits=300) is unavailable.
+    mp.dps = 80
 
-    target = 2 / (3 * mp_pi)
+    target = mpmath.mpf(2) / (mpmath.mpf(3) * mp_pi)
     tier1 = _tier1_basis()
     tier2, tier2_source = _tier2_basis()
 
@@ -177,10 +195,11 @@ def main() -> int:
         "Vol(8_16)", "Vol(8_17)", "Vol(8_18)",
     )
 
-    # Per Gemini review on #585: tie tol to mp.eps so the search
-    # actually runs at the configured 50 dps. Hardcoded `1e-12`
-    # truncated PSLQ to f64-grade precision.
-    pslq_tol = mp.eps * mpf("1e3")
+    pslq_tol = (
+        mp.eps * mpf("1e3")
+        if tier2_source.startswith("snappy.high_precision")
+        else mpf("1e-47")
+    )
     relation = pslq(list(basis), tol=pslq_tol, maxcoeff=10**4)
 
     has_snappy = False
@@ -195,9 +214,9 @@ def main() -> int:
         "(17 BW values) inhabits BringHyperbolicDecomposition"
         if relation
         else (
-            "NO non-trivial small relation at 50 dps with max "
-            "coeff 10^4. Bridge-3 hyperbolic knots through 8 "
-            "crossings do not bring 2/(3π) into the integer "
+            "NO non-trivial small relation at 80 dps working precision "
+            "(50-dps census floor) with max coeff 10^4. Bridge-3 hyperbolic "
+            "knots through 8 crossings do not bring 2/(3π) into the integer "
             "lattice. Tier-3 extension (9-crossing bridge-3 "
             "+ 5-braid hyperbolic knots) is the next target."
         )
@@ -208,19 +227,19 @@ def main() -> int:
         "description": (
             "Tier-2 PSLQ extension over bridge-3 hyperbolic knots "
             "(KnotInfo through 8 crossings, 4-braid hyperbolic) "
-            "for BringHyperbolicDecomposition. Extends Tier-1 with "
-            "6 additional knot volumes."
+            "for BringHyperbolicDecomposition at 80 dps working precision. "
+            "Extends Tier-1 with 6 additional knot volumes."
         ),
         "contentBlock": "conj:bring-hyperbolic-knot-bloch-decomposition",
-        "precision_dps": 50,
-        "tolerance": str(pslq_tol),
+        "precision_dps": 80,
+        "tolerance": mpmath.nstr(pslq_tol, 20),
         "maxcoeff": 10**4,
         "snappy_available": has_snappy,
         "tier2_volume_source": tier2_source,
         "basis_labels": list(labels),
-        # Per Copilot review on #585: use mpmath.nstr for stable
-        # 30-decimal formatting (str(b)[:35] truncated mid-digit).
         "basis_values_30dp": [mpmath.nstr(b, 30, strip_zeros=False)
+                              for b in basis],
+        "basis_values_50dp": [mpmath.nstr(b, 50, strip_zeros=False)
                               for b in basis],
         "tier_1_baseline": "tier-1-hyperbolic-3braid-pslq.witness.json (negative)",
         "relation_found": relation is not None,
@@ -231,19 +250,23 @@ def main() -> int:
     out = (WitnessBuilder.wrap_legacy(
         "tier-2-hyperbolic-bridge3-pslq", result,
         script_path=__file__, engine="mpmath")
-        # Per Copilot review on #585: mark as audit-only so
-        # audit-wiring.ts doesn't bucket it as orphan.
         .set_audit_only("docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md")
         .add_assertion(
             "no_small_relation_found",
-            computed=0.0 if relation is None else 1.0,
-            expected=0.0,
-            tolerance=0.0,
+            computed=0 if relation is None else 1,
+            expected=0,
+            tolerance=0,
             source=("Tier-2 negative result expected per "
                     "v3 §3 #1 framing (positive would be a "
                     "structural surprise)"),
         )
-        .save())
+        .save({
+            "q0Anchor": "independent",
+            "q0AnchorReason": (
+                "Pure hyperbolic knot-volume PSLQ over Q-linear combinations "
+                "of Bloch-Wigner dilogarithms and 2/(3*pi); q_0 does not enter."
+            ),
+        }))
 
     print(f"Result: {result['interpretation']}")
     print(f"SnapPy available: {has_snappy}")

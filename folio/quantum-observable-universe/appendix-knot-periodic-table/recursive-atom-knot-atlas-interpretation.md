@@ -1,29 +1,6 @@
-## Provenance of the atlas entries
+**Archimedean specialisation and table provenance.** The quantitative benchmark rows in the five [Master Reference Tables](#tbl:master-atlas-particles) and the bounded summary and per-element tables of the [atlas registry](#rem:recursive-atom-knot-atlas-registry) are generated deterministically from four mathematical and empirical inputs, whereas the narrative closure gallery and quarantined historical light-nuclide knot labels are static records:
 
-Every entry is computed from a single reproducible chain of sources, so the
-table never drifts from the witnesses it summarizes. The atlas
-is auto-rendered by
-[`recursive_atom_knot_atlas_render.py`](../../../computations/recursive_atom_knot_atlas_render.py).
-
-**Sources of truth** (in order):
-
-1. [`confined-particle.md`](#def:confined-particle) — GB-NF particle registry (canonical $T_w$).
-2. [`mass-table-ppb.witness.json`](../../../computations/mass-table-ppb.witness.json) — D..${}^{40}$Ca (manual-historical, recursive, magic-A).
-3. [`methodology-deprecation.witness.json`](../../../computations/methodology-deprecation.witness.json) — per-particle methodology record.
-4. [`hp_volume.py`](../../../computations/hp_volume.py) — $\geq 50$-digit symbolic-$q$ Markov-closure $\to$ $\mathrm{Vol}_{\mathrm{hyp}}$.
-5. [`y_lambda_wenzl_bridge_extended.py`](../../../computations/y_lambda_wenzl_bridge_extended.py) — symbolic-$q$ Wenzl bridge for $y_\lambda$.
-
-These compose in that order: the particle registry fixes the canonical $T_w$,
-the mass-table witness supplies the tabulated masses, the methodology record
-tags each particle's derivation method, `hp_volume.py` supplies
-$\mathrm{Vol}_{\mathrm{hyp}}$, and the Wenzl bridge supplies $y_\lambda$.
-
-For `principled-derivation` entries (electron, proton, neutron) the
-hyperbolic volume of the Markov closure is computed from the
-$\sigma$-braid word at $\geq 50$ decimal digits via
-`hp_volume_of_link_closure(braid_word, digits=50)` which calls
-SnapPy's `Link(braid_closure=...).exterior.high_precision`
-inside `mpmath.workdps(50)`. When any input changes,
-[`witness_staleness_tracker.py`](../../../computations/witness_staleness_tracker.py)
-marks the affected entries stale and the atlas is recomputed from the sources
-above; no entry is maintained by hand.
+1. **Canonical motif registry ([Confined particle](#def:confined-particle)).** Fixes the normal-form braid or Hecke element $T_w$ for each elementary constituent; for the proton and neutron, the Borromean closure $\widehat{(\sigma_1\sigma_2^{-1})^3} = \mathcal{B}_3$ is a genuine three-strand braid closure (`principled-derivation`).
+2. **Hyperbolic period evaluation.** For cusped hyperbolic link closures ($\mathcal{B}_3$ and $4_1$), evaluates exact Clausen dilogarithm volumes $\mathrm{Vol}_{\mathrm{hyp}}$ at $\ge 80$ decimal digits inside arbitrary-precision arithmetic.
+3. **Hook--content Schur and Markov weights.** Evaluates exact rational central weights $y_\lambda(q) \in \mathbb{Q}(q)$ of Hans Wenzl \cite{wenzl1988} at the canonical loop parameter $z = q^3/(q^2+1)$.
+4. **Methodology provenance and empirical reference tables.** Attaches each row's epistemic methodology tag (`principled-derivation`, `principled-gb-nf`, or `manual-historical-volume-match`) and propagates $(m_e, \mathfrak{D}_\beta, m_{\pi^\pm})$ calibration uncertainties via the $80$-digit Fréchet--Jacobian determinant ([calibration and Jacobian protocol](#prose:master-atlas-calibration-jacobian)) against CODATA 2022 \cite{codata2022}, S. Navas and the Particle Data Group \cite{pdg2024}, and the AME 2020 atomic mass tables of Meng Wang, W. J. Huang, F. G. Kondev, Georges Audi, and Sarah Naimi \cite{ame2020tables}. Outside the generated tables, the three light-nuclide identifications tagged `manual-historical-volume-match` (${}^2\mathrm{H} \leftrightarrow 6_2$, ${}^3\mathrm{H} \leftrightarrow 8_{11}$, ${}^3\mathrm{He} \leftrightarrow L_{6a4}$) are hand-recorded historical volume matches rather than closures derived from the multi-nucleon Hecke element (whose averaged inter-nucleon crossings lie outside the braid-group image), and carry no binding prediction in the canonical tables.

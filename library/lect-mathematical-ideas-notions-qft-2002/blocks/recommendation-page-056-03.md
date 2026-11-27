@@ -1,1 +1,0 @@
-Since the role of Poisson brackets of functions is played in quantum mechanics by commutators of operators, this relation expresses the condition that classical mechanics should be the limit of quantum mechanics as h — 0.

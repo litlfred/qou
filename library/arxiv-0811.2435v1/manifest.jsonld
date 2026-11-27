@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0811.2435v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0811.2435v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -64,6 +64,18 @@
     "library/arxiv-0811.2435v1/sections/sec-049"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 51 sections: Front matter; Introduction; Counting problems for 3-dimensiona\n\n**Stability structures, motivic Donaldson-Thomas invariants and cluster transformations**\n\n*Donaldson-Thomas invariants and cluster*\n\n148 pp, 51 sections.\n\n**Outline.** Front matter; Introduction; Counting problems for 3-dimensional Calabi-Yau; Non-commutative varieties with polarization; Donaldson-Thomas invariants for non-commutativ; Multiplicative wall-crossing formula; Some analogies and speculations; About the content of the paper; Stability conditions for graded Lie algebras; Stability data; Reformulation of the stability data; Topology and the wall-crossing formula; Crossing the wall of second kind; Invariants () and the dilogarithm; Symplectic double torus; Complex integrable systems and stability data; Relation with the works of Joyce, and of Bridg; Stability data on gl(n)",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -87,8 +99,8 @@
       "stamp_date": "16 Nov 2008"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2301.02038v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2301.02038v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -28,6 +28,18 @@
     "library/arxiv-2301.02038v1/sections/sec-013"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Vinogradov's Cohomological Geometry of Partial Differential Equations — Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly\n\n**Vinogradov's Cohomological Geometry of Partial Differential Equations**\n\n*Vinogradov’s Cohomological Geometry*\n\n26 pp, 15 sections.\n\n**Abstract.** Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly non-linear partial dif- ferential equations and it is essentially due to Alexandre M. Vinogradov and his collaborators. Many coordinate free properties of PDEs ﬁnd their natu- ral place in Secondary Calculus including: symmetries and conservation laws, variational principles and the coordinate free aspects of the calculus of vari- ations, recursion operators and Hamiltonian structures, etc. The building blocks of this language are horizontal cohomologies of diﬃeties, i.e. inﬁnite prolongations of PDEs, and their versions with local coeﬃcients. The main paradigm of Secondary Calculus is the principle, due to A. M.\n\n**Outline.** Front matter; Introduction; 1 Geometry of PDEs; 1.1 jet spaces; 1.2 the Cartan distribution; 1.3 diffieties; 2 Cohomology of PDEs; 2.1 horizontal cohomology; 2.2 interpreting horizontal cohomologies; 2.3 algebraic structures on horizontal cohomol; 3 Homotopy of PDEs; 3.1 homotopy algebras; 3.2 the LR-algebra of secondary vector fields; 3.3 the A-algebra of secondary differential op; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -49,8 +61,8 @@
       "stamp_date": "5 Jan 2023"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

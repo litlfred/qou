@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9901120v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9901120v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -18,6 +18,18 @@
     "library/arxiv-math-9901120v3/sections/sec-003"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A table of boundary slopes of Montesinos knots — This note corrects errors in Hatcher and Oertel’s table of boundary slopes of Montesinos knots which have projec- tions with 10 or fewer crossings.\n\n**A table of boundary slopes of Montesinos knots**\n\n*Nathan M. Dunfield1*\n\n4 pp, 5 sections.\n\n**Abstract.** This note corrects errors in Hatcher and Oertel’s table of boundary slopes of Montesinos knots which have projec- tions with 10 or fewer crossings.\n\n**Outline.** Front matter; 1 Introduction; 2 Revised table; 3 Preparing the table; 4 Getting the program",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -32,10 +44,15 @@
     "source_file": "9901120v3.pdf",
     "source_sha256": "782034b674f958af57632cf8cab5c42015ed7cd01702930740b8d541141c0051",
     "pages": 4,
-    "arxiv": null,
+    "arxiv": {
+      "id": "math/9901120",
+      "version": "3",
+      "primary_class": null,
+      "stamp_date": "18 Jun 2010"
+    },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

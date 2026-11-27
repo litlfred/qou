@@ -1,1 +1,0 @@
-By identifying T ∼= T Sn and using the interpretation of σ as normalized geodesic ﬂow, one sees that y must be a positive multiple of c′(1), where c : [0; 1] →Sn is the minimal geodesic from c(0) = y0 to c(1) = y1.

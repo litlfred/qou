@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-two-row-projection-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:two-row-projection-remark",
+  "kind": "remark",
+  "title": "Idempotence and the two-row splitting of the Markov trace",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-two-row-projection",
+    "papers/quantum-observable-universe/blocks/def-two-row-stratum",
+    "papers/quantum-observable-universe/blocks/prop-wedderburn-weight-canonical"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-two-row-projection",
+  "text": "two-row-projection-remark.md",
+  "provenance": "authored"
+}

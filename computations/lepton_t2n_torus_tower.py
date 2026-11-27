@@ -2,6 +2,12 @@
 """lepton_t2n_torus_tower.py — group-action map of the lepton T(2,n) torus
 tower (EXPLORATORY, audit-only).
 
+SUPERSEDED PREMISE (2026-11-21, docs/coordination/owner-rulings.md): the
+electron is sigma_0 sigma_1 sigma_0 in B_3 with Hopf-link closure; the trefoil
+T(2,3) is kept only as a backup candidate, and the T(2,n_s) lepton tower is
+withdrawn. The "electron=T(2,3)" labels below are this script's historical
+assignment, not the current one. The numbers it computes are unchanged.
+
 Maps the 2-strand T(2,n) torus-knot tower that the framework attaches to the
 charged leptons (electron=T(2,3), muon=T(2,5), tau=T(2,7), T(2,9) saturation),
 following the merged census

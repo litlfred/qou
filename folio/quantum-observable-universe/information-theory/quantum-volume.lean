@@ -8,13 +8,13 @@ The substrate field `q = sp.field p : ℝ`; the combinatorial `q`-integer
 content is generic to any field with the same `q`-data, but the
 positivity statements below are archimedean and so live over `ℝ`.
 -/
-import QOU.QuantumObservableUniverse
+import QOU.Core.QuantumObservableUniverse
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Positivity
-import QOU.MathlibExt.QIntegerCanonical
+import HeckeTemperleyLieb.QIntegerCanonical
 
 namespace QOU.Information
 

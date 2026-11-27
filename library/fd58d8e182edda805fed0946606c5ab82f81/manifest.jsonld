@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fd58d8e182edda805fed0946606c5ab82f81",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fd58d8e182edda805fed0946606c5ab82f81/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -20,6 +20,18 @@
     "library/fd58d8e182edda805fed0946606c5ab82f81/sections/page-007"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "GRÖBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS — For Temperley-Lieb algebras of type B, we construct their Gröbner-Shirshov bases and the corresponding standard monomials, which give another\n\n**GRÖBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS**\n\n*Sungsoon Kim† and Dong-il Lee**\n\n7 pp, 7 sections.\n\n**Abstract.** For Temperley-Lieb algebras of type B, we construct their Gröbner-Shirshov bases and the corresponding standard monomials, which give another combinatorial interpretation for the fully commutative elements.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "fd58d8e182edda805fed0946606c5ab82f81",
@@ -31,8 +43,8 @@
     "pages": 7,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

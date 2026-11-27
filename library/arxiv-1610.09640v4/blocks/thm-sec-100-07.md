@@ -1,0 +1,1 @@
+we know that T and S are algebraically perfect complexes on both sides. By Lemma 14.1.27 we know that con(H(T)) = [i0, i1] and con(H(S)) = [j0, j1] for some integers i0 ≤i1 and j0 ≤j1; and also that P := Hi1(T) and Q := Hj1(S) are ﬁnitely presented modules on both sides.

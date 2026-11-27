@@ -1,0 +1,1 @@
+Note that the n-loop invariant for n ≥3 is independent of the combinatorial ﬂattening and in fact depends only on (B−1A, B−1ν, z). Figure 2. Diagrams with three loops contributing to S3. TUDOR DIMOFTE AND STAVROS GAROUFALIDIS Figure 3. Diagrams with 1-vertices and 2-vertices contributing to S3.

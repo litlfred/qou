@@ -5,7 +5,7 @@ export default corollary({
   title:
     "Borromean-$k$ composite knot factor is $a = (1 - h^2)^k$",
   lean: {
-    ref: "qou:QOU.BraidKnot.knot_factor_borromean",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.knot_factor_borromean",
     validation: "not_checked",
   },
   uses: ["cor:knot-factor-amphicheiral"],
@@ -23,4 +23,7 @@ export default corollary({
     witness: "computations/probes/knot-factor-borromean-composite-probe.witness.json",
     status: "verified",
   },
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3):  Both forms of the composite are stated in the Lean sibling." },
+  ],
 });

@@ -1,5 +1,5 @@
-import QOU.QuantumObservableUniverse.CategoricalFoundations
-import QOU.QuantumObservableUniverse.TrivialWitness
+import QOU.Core.CategoricalFoundations
+import QOU.Core.TrivialWitness
 
 
 /-!

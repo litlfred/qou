@@ -1,4 +1,3 @@
-**Proof.**
 For $q \neq 1$, the braiding $\check{R} = \sigma \circ \mathcal{R}$
 is non-trivial, and the categorical mass acquires a singular
 contribution from non-adjacent strand proximity.  Concretely,

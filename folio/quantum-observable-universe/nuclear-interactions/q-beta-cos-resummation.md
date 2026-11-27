@@ -1,13 +1,13 @@
-**$\mathfrak{Q}_\beta$ cos-resummation (conditional on the $\beta$-decay transfer matrix; convention D).**
-*Let $z = z_D = q^3/(q^2+1)$ be the convention-D Markov parameter and $h = q - q^{-1}$. The cos-resummation dresses a $\mathfrak{Q}_\beta$ base by the classical cosine of the half eigenphase:*
+**$\mathfrak{Q}_\beta$ cos-resummation (conditional on the $\beta$-decay transfer matrix).**
+*Let $z = q^3/(q^2+1)$ be the Markov parameter and $h = q - q^{-1}$. The cos-resummation dresses a $\mathfrak{Q}_\beta$ base by the classical cosine of the half eigenphase:*
 $$
   \mathfrak{Q}_\beta^{\mathrm{cos}}
   \;:=\;
   \mathfrak{Q}_\beta^{\mathrm{base}} \cdot \cos\alpha,
   \qquad
-  \alpha = \tfrac{(z_D-1)\,h}{2},
+  \alpha = \tfrac{(z-1)\,h}{2},
   \quad
-  z_D = \tfrac{q^3}{q^2+1},
+  z = \tfrac{q^3}{q^2+1},
   \quad
   h = q - q^{-1}.
 $$
@@ -19,11 +19,10 @@ $$
   \;=\;
   \cos\alpha
   \;=\;
-  \cos\!\bigl(\tfrac{(z_D-1)\,h}{2}\bigr).
+  \cos\!\bigl(\tfrac{(z-1)\,h}{2}\bigr).
 $$
 
-Its evaluation at the proton pin and the comparison with CODATA are recorded in [the comparison remark](#rem:q-beta-cos-resummation-comparison).
+Its numerical evaluation at the proton-anchored $q_0$ and comparison with CODATA are recorded in [the comparison remark](#rem:q-beta-cos-resummation-comparison).
 
-**Status of the structural justification under D.** The original argument for the cosine was Markov cyclicity: the bar involution $q \mapsto q^{-1}$ was taken to send $\alpha \mapsto -\alpha$, forcing an even resummation. That step used the bar-invariance $z(q^{-1}) = z(q)$, which holds for convention C and **fails** for $z_D$, since $z_D(q^{-1}) = 1/(q^3+q) \neq z_D(q)$. Under D the bar involution therefore does not map $\alpha$ to $-\alpha$, and evenness of the resummation is no longer derived; the cosine form is retained here as the definition being tested, not as a consequence.
+**Non-invariance under the bar involution.** Deriving an even resummation factor from $q \mapsto q^{-1}$ would require $z(q^{-1}) = z(q)$ so that $\alpha \mapsto -\alpha$. For $z(q) = q^3/(q^2+1)$, however, $z(q^{-1}) = 1/(q^3+q) \neq z(q)$ whenever $q \neq 1$ (unlike bar-symmetric expressions such as $1/(q^{1/2}+q^{-1/2})$). Consequently, the bar involution does not negate $\alpha$ at $z = q^3/(q^2+1)$, and the cosine factor is stated as a tested definition rather than a consequence of bar symmetry.
 
-The resummation lives in the real-$q$ (archimedean) regime of the framework's dilogarithm context-sorting, fixed once by the [$\Phi_q$/AJ machinery identification](#prop:phi-q-aj-machinery-identification).

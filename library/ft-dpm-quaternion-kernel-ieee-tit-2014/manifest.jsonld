@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ft-dpm-quaternion-kernel-ieee-tit-2014",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ft-dpm-quaternion-kernel-ieee-tit-2014/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -39,6 +39,18 @@
     "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-024"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions — The existence and uniqueness conditions of quater- nion reproducing kernel Hilbert spaces (QRKHS) are established\n\n**Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions**\n\n*Felipe A. Tobar and Danilo P. Mandic, Fellow, IEEE*\n\n14 pp, 26 sections.\n\n**Abstract.** The existence and uniqueness conditions of quater- nion reproducing kernel Hilbert spaces (QRKHS) are established in order to provide a mathematical foundation for the develop- ment of quaternion-valued kernel learning algorithms. This is achieved through a rigorous account of left quaternion Hilbert spaces, which makes it possible to generalise standard RKHS to quaternion RKHS. Quaternion versions of the Riesz repre- sentation and Moore–Aronszajn theorems are next introduced, thus underpinning kernel estimation algorithms operating on quaternion-valued feature spaces. The difference between the proposed quaternion kernel concept and the existing real and vector approaches is also established in terms of both theoretical advantages and computational complexity.\n\n**Outline.** Front matter; I INTRODUCTION; S INCE; II QUATERNION VECTOR SPACES; A The Quaternion Division Ring; B Quaternion-Valued Hilbert Spaces; III QUATERNION REPRODUCING KERNEL; A Riesz Representation Theorem; B Moore-Aronszajn Theorem; IV COMPARISON TO OTHER; A Vector-Valued RKHS (Matrix-Valued Kernels); B Multikernel Learning; C Quaternion Kernels; D Connections Between High-Dimensional Kernels; E Computational Complexity; V DESIGN OF QUATERNION-VALUED MERCER KERNELS; A Polynomial Kernel: The Quaternion Cubic Exam; B Real-Valued Gaussian Kernel",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "ft-dpm-quaternion-kernel-ieee-tit-2014",
@@ -50,8 +62,8 @@
     "pages": 14,
     "arxiv": null,
     "doi": "10.1109/TIT.2014.2333734",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

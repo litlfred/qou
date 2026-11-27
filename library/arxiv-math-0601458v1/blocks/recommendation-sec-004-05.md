@@ -1,1 +1,0 @@
-Now, we should remark here that in representing the quantum harmonic oscillator, like any quantum system, the two essential formal entities we need are a Hilbert space and an algebra of operators on this space, including self-adjoint operators corresponding to the physical observables of the system.

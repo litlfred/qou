@@ -1,2 +1,1 @@
-**Remark (Finiteness via Diamond Lemma).**
 Kontsevich-Soibelman must assume ind-constructibility to measure their $3$CY moduli stacks. The QOU framework avoids this assumption completely. The Gröbner-Shirshov confluent normal forms guarantee a finite basis of standard monomials at every length. The length slices construct finite-dimensional schemes immediately. The topological structure extracts rigorous finiteness directly from the Diamond Lemma.

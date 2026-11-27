@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1001.2937v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1001.2937v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -15,6 +15,18 @@
     "library/arxiv-1001.2937v3/sections/sec-000"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Microscopic Spectrum of the Wilson Dirac Operator — 2 sections: Front matter; Microscopic Spectrum of the Wilson\n\n**Microscopic Spectrum of the Wilson Dirac Operator**\n\n*P.H. Damgaard,1 K. Splittorff,2 and J.J.M. Verbaarschot3*\n\n4 pp, 2 sections.\n\n**Outline.** Front matter; Microscopic Spectrum of the Wilson Dirac Opera",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -38,8 +50,8 @@
       "stamp_date": "20 Sep 2010"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,0 +1,1 @@
+In the situation of Theorem 4.5.5, the diagram F(M0) F (φ) / id  F(M1) F (eφ) / id  F(ConeA,M(φ)) τF,M0 ◦F (pφ) / cone(F,φ)  TB,N(F(M0)) id  F(M0) F (φ) / F(M1) eF (φ) / ConeB,N(F(φ)) pF (φ) / TB,N(F(M0)) is an isomorphism of triangles in Cstr(B, N).

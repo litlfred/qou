@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0401084v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0401084v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -20,6 +20,18 @@
     "library/arxiv-math-0401084v3/sections/sec-005"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Some limits of the colored Jones polynomials of the figure-eight knot — We calculate limits of the colored Jones polynomials of the ﬁgure- eight knot and conclude that in most cases they determine\n\n**Some limits of the colored Jones polynomials of the figure-eight knot**\n\n*FIGURE-EIGHT KNOT AND ITS DEHN SURGERY SPACES*\n\n17 pp, 7 sections.\n\n**Abstract.** We calculate limits of the colored Jones polynomials of the ﬁgure- eight knot and conclude that in most cases they determine the volumes and the Chern–Simons invariants of the three-manifolds obtained by Dehn surgeries along it.\n\n**Outline.** Front matter; 1 Introduction; 2 Main result; 3 Limits of the colored Jones polynomials; 4 Proof of the main theorem; Appendix. Optimistic limit; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
@@ -46,8 +58,8 @@
       "stamp_date": "9 Mar 2006"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

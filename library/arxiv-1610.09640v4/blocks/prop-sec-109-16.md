@@ -1,0 +1,1 @@
+With Notation 16.3.28, let M ∈D⋆(A ⊗Bop, gr). The following conditions are equivalent: (i) M ∈D⋆ tor(A ⊗Bop, gr). (ii) The morphism σR M : RΓm(M) →M in D(A ⊗Bop, gr) is an isomorphism. Derived Categories | Amnon Yekutieli |

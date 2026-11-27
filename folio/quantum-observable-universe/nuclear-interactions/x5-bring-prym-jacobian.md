@@ -1,4 +1,3 @@
-**Remark (Jacobian-level parallel).**
 *Let $H^{1}(\,\cdot\,, \mathbb{Q})$ denote rational first cohomology. Both $H^{1}(\mathcal{X}_5, \mathbb{Q})$ and $H^{1}(\mathcal{B}_{\mathrm{Br}}, \mathbb{Q})$ carry natural $\mathbb{Z}_5$-actions. The non-trivial $\mathbb{Z}_5$-isotypical decomposition is identical:*
 
 $$

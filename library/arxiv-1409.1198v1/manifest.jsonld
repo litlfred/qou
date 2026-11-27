@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.1198v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1409.1198v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -43,6 +43,18 @@
     "library/arxiv-1409.1198v1/sections/sec-028"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR — Categoriﬁcation is a process of lifting structures to a higher categorical level.\n\n**TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR**\n\n*ANNA BELIAKOVA, ZAUR GULIYEV, KAZUO HABIRO, AND AARON D. LAUDA*\n\n47 pp, 30 sections.\n\n**Abstract.** Categoriﬁcation is a process of lifting structures to a higher categorical level. The original structure can then be recovered by means of the so-called “decategoriﬁcation” functor. Algebras are typically categoriﬁed to additive categories with additional structure and decategoriﬁcation is usually given by the (split) Grothendieck group. In this article we study an alternative decategoriﬁcation functor given by the trace or the zeroth Hochschild–Mitchell homology. We show that this form of decategoriﬁcation endows any 2-representation of the categoriﬁed quantum sln with an action of the current algebra U(sln[t]) on its center.\n\n**Outline.** Front matter; 1 Introduction; 1.1 What is categorification?; 1.2 The Grothendieck group; 1.3 The trace decategorification map; 1.4 Comparing Grothendieck group and trace; 1.5 Quantum group categorifications; 1.6 Traces of categorified quantum groups; 2 Elementary notions of trace; 2.1 Traces of linear maps; 2.2 Hochschild homology and the trace of a rin; 3 Trace of a linear category; 3.1 Hochschild–Mitchell homology and the trace; 3.2 The trace and direct sums; 3.3 The trace and idempotent completions; 3.4 The trace and categories of complexes; 3.5 The trace and split Grothendieck groups; 3.6 The trace of a graded linear category",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -64,8 +76,8 @@
       "stamp_date": "3 Sep 2014"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

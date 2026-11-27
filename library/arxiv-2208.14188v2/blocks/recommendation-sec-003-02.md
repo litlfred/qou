@@ -1,1 +1,0 @@
-Furthermore, given two rays $\rho_{\theta^+}$ and $\rho_{\theta^-}$ whose arguments satisfy $0<\theta^+-\theta^- \leq \pi$, we define the \emph{global Stokes automorphism} \begin{equation} s_{\theta^+}[F](\tau) = \mf{S}_{\theta^-\rightarrow \theta^+} s_{\theta^-}[F](\tau) \end{equation} where both sides should be analytically continued to the same value of $\tau$.

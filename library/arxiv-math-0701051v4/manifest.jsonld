@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0701051v4",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0701051v4/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -39,6 +39,18 @@
     "library/arxiv-math-0701051v4/sections/sec-024"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "VALENTIN FÉRAY AND PIOTR ŚNIADY Tr ρλ(π) a max Tr ρλ(e) — We prove an upper bound for characters of the symmetric groups.\n\n**VALENTIN FÉRAY AND PIOTR ŚNIADY Tr ρλ(π) a max Tr ρλ(e)**\n\n20 pp, 26 sections.\n\n**Abstract.** We prove an upper bound for characters of the symmetric groups. Namely, we show that there exists a constant a > 0 with a property that for every Young diagram λ with n boxes, r(λ) rows and c(λ) columns \u0013\u0015|π| \u0012r(λ) n , |π| n , c(λ) , n where |π| is the minimal number of factors needed to write π ∈Sn as a product of transpositions. We also give uniform estimates for the error term in the Vershik-Kerov’s and Biane’s character formulas and give a new formula for free cumulants of the transition measure. 1.1. Normalized characters. For a Young diagram λ having n boxes and a permutation π ∈Sl (where l ≤n) we deﬁne the normalized character where (n)l = n(n −1) · · ·(n −l + 1) denotes the falling power and where Tr ρλ(e) 1.2. Short history of the problem.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Normalized characters; 1.2 Short history of the problem; 1.3 The main result; 1.4 Young diagrams; 1.5 The main tool: reformulation of Stanley ch; 1.6 Overview of the paper; 2 Stanley character formula; 2.1 Young symmetrizer; 2.2 Forgetting injectivity; 2.3 Generalization to Young diagrams on R+2; 3 Characters of symmetric groups, random matri; 3.1 Stanley character formula and random matri; 3.2 Free cumulants of the transition measure; 3.3 Generalized circular operators; 4 Technical estimates; 4.1 Estimates for the number of colorings N(1,",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -60,8 +72,8 @@
       "stamp_date": "21 Mar 2011"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -3,13 +3,16 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:q-beta-cos-resummation",
   lean: {
-    ref: "qou:QOU.Interactions.q_beta_cos_resummation",
+    ref: "qou:QOU.Confinement.Interactions.q_beta_cos_resummation",
     validation: "not_checked",
   },
   title:
-    "$\\mathfrak{Q}_\\beta$ cos-resummation in convention D: $\\mathfrak{Q}_\\beta^{\\cos} = \\mathfrak{Q}_\\beta^{\\mathrm{base}} \\cdot \\cos((z_D-1)h/2)$ (conditional on the transfer-matrix eigenphase identification)",
+    "$\\mathfrak{Q}_\\beta$ cos-resummation at $z = q^3/(q^2+1)$: $\\mathfrak{Q}_\\beta^{\\cos} = \\mathfrak{Q}_\\beta^{\\mathrm{base}} \\cdot \\cos((z-1)h/2)$ (conditional on the transfer-matrix eigenphase identification)",
   uses: [
-    "prop:q-beta-spectral-bridge",
+    // conj:q-beta-spectral-bridge was listed here until 2026-11-21. The
+    // bridge was demoted to a conjecture that day (PR #8912), and neither
+    // this block's .md nor its Lean uses it, so the edge was dropped rather
+    // than carried as a §3b-cond hypothesis (QA of #8912).
     // NOTE: the Φ_q/AJ hub (prop:phi-q-aj-machinery-identification) is
     // linked narratively in the .md only — a uses[] edge would pull the
     // hub's conj:quantum-langlands-dual cone into this proposition's
@@ -62,7 +65,7 @@ export default proposition({
       kind: "status",
       date: "2026-10-10",
       body:
-        "**Restated in convention D (bean `qou-zuva`).**  The block previously used $z_C = 1/(\\sqrt q + 1/\\sqrt q) \\approx 0.4993203342$ (excised) and Form A as base.  Recomputed at the proton pin, mpmath 50 dps, with $z_D = q^3/(q^2+1) \\approx 0.6126880371$: $\\alpha \\approx -0.0404857773$, $\\cos\\alpha \\approx 0.9991805629$.  On the **ruled** $z_D$ base ($0.4447004085$ MeV, $-431571.8$ ppm) the cos factor gives $0.4443360045$ MeV, $-432037.5$ ppm --- it moves the residual *away* from zero, as it must: $F_{\\mathrm{required}} > 1$ there while $\\cos\\alpha \\le 1$ (docs/audits/2026-09-13-formb-probe-adjudication-and-cds1-state.md \\S5.1).  On the **retired** Form A base the D-phase gives $+1677.6 \\to +856.8$ ppm ($1.96\\times$), against the convention-C $+1677.5 \\to +305.7$ ppm ($5.49\\times$; $+306.05$ at the current pin).  Neither base is selected by residual.  The downstream $\\varepsilon_{\\Delta S}$ figures ($1015 \\to 185$ ppm) above are convention-C; the convention-D recomputation is recorded beside them.  The Markov-cyclicity evenness argument relied on $z(1/q) = z(q)$, which fails for $z_D$, so evenness is no longer derived.",
+        "**Restated in convention D (bean `qou-zuva`).**  The block previously used $z_C = 1/(\\sqrt q + 1/\\sqrt q) \\approx 0.4993203342$ (excised) and Form A as base.  Recomputed at the proton pin, mpmath 50 dps, with $z_D = q^3/(q^2+1) \\approx 0.6126880371$: $\\alpha \\approx -0.0404857773$, $\\cos\\alpha \\approx 0.9991805629$.  On the **ruled** $z_D$ base ($0.4447004085$ MeV, $-431571.9$ ppm) the cos factor gives $0.4443360045$ MeV, $-432037.7$ ppm --- it moves the residual *away* from zero, as it must: $F_{\\mathrm{required}} > 1$ there while $\\cos\\alpha \\le 1$ (docs/audits/2026-09-13-formb-probe-adjudication-and-cds1-state.md \\S5.1).  On the **retired** Form A base the D-phase gives $+1677.4 \\to +856.6$ ppm ($1.96\\times$), against the convention-C $+1677.5 \\to +305.7$ ppm ($5.49\\times$; $+305.86$ at the current pin, against CODATA 2022 $0.78233355931$ MeV).  Neither base is selected by residual.  The downstream $\\varepsilon_{\\Delta S}$ figures ($1015 \\to 185$ ppm) above are convention-C; the convention-D recomputation is recorded beside them.  The Markov-cyclicity evenness argument relied on $z(1/q) = z(q)$, which fails for $z_D$, so evenness is no longer derived.",
     },
     {
       kind: "status",
@@ -70,5 +73,6 @@ export default proposition({
       body:
         "**Lean sibling restated in convention D and producer replaced (bean `qou-zuva`).**  `eigenphase` now uses `markovZD q = q^3/(q^2+1)`, and the class `TransferMatrixEigenphase` and theorem `q_beta_cos_resummation` are stated with it.  The convention-C declarations are kept and labelled C-historical (`markovZC`, `eigenphaseC`, `eigenphaseC_bar_involution`, plus a deprecated legacy alias `eigenphase_bar_involution`).  New sorry-free D facts: `markovZD_bar_ne` ($z_D(q^{-1}) \\neq z_D(q)$ for $q > 0$, $q \\neq 1$), `eigenphase_bar_even_sum` ($\\alpha_D(q^{-1}) + \\alpha_D(q) = (q^2-1)^2/(2q^2)$), `eigenphase_not_bar_odd`.  The computation now points at the mpmath producer `computations/qbeta/qbeta_cos_resummation_d_probe.py`, which reproduces every number in the block and its table (max deviation $4.7 \\times 10^{-11}$ on values, $0.05$ ppm on residuals); the former producer `probe_q_beta_tightening_landscape.py` is convention C.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The resummation lives in the real-$q$ (archimedean) regime of the framework's dilogarithm context-sorting, fixed once by the [$\\Phi_q$/AJ machinery identification](#prop:phi-q-aj-machinery-identification)." },
   ],
 });

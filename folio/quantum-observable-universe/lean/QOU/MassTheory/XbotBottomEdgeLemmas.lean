@@ -45,25 +45,34 @@ here all of `ε`, `W`, `a`, `c` are abstract.
    when `a > 0`.  The numeric fact that the probe measures (`ε(1)/ln q₀ ≈ 16.0002`, so the
    condition first holds at `pe + 1 = 17`) is **not** asserted here; it enters only as the
    hypothesis `ε(1) < a·(pe + 1)`.
-3. **Tail lemma, structural half** (the probe's M7).
+3. **Tail lemma, structural half and per-row bracket bound** (the probe's M7; bean `qou-xbl8`).
    `pairObjective_move_gain` derives, for an arbitrary two-body objective, that the gain of a
    `+χ_H` move is `Σ_{j∈H}` (one-body change of `j` + the change of every pair with exactly one
    end, `j`, in `H`); pairs inside `H` cancel because their difference is unchanged.
    `tail_never_helps` then gives, for disjoint `L, H`:
    `gain(L ∪ H) ≤ gain(L) + |H|·β`, hence `< 0` when `H ≠ ∅`, `β < 0`, `gain(L) ≤ 0`.
-   `antisymm_double_sum_eq_zero` is the finite half of the lattice cancellation (the `x ∈ H`
-   part of `Σ_{j∈H} Σ_x sgn(j − x) P(|j − x|)` is antisymmetric, hence zero).
+   For the per-row bracket bound `hrow` itself (`qou-xbl8`):
+   - **(i) Gap-2 lattice cancellation**: `latticeKernel_antisymm`, `latticeKernel_sum_self_eq_zero`,
+     `latticeKernel_sum_sdiff_eq`, and `symmetric_gap2_lattice_sum_eq_zero` prove that on the
+     signed lattice kernel `sgn(j − x) P(|j − x|)`, the `H × H` part vanishes by antisymmetry and
+     symmetric lower/upper gap-2 steps `±P(2(m+1))` around row `j` cancel identically.
+   - **(ii) Frame comparison below `N`**: `crossChange_framePsi_of_lt`, `crossChange_framePsi_of_gt`,
+     `activeCross_le_cbarAt`, and `rowGain_le_rowBracket` decompose row `j`'s gain at a zero-padded
+     base point (`j ≥ N ≥ pe`) into the one-body piece `ε(b_j + 1) − c`, the wall/displaced rows
+     `x < N` (`≤ c̄_N(j) = Σ_{x<N : x<pe ∨ w_x>0} p⁻(b_j − b_x − w_x)`), and the undisplaced
+     gap-2 lattice rows plus upper tail (`≤ 0` after lattice cancellation), yielding
+     `rowGain j ≤ rowBracket eps pe w c N j`.
+   - **(iii) Monotonicity in `j ≥ N`**: `rowBase_strictMono_of_ge`, `cbarAt_antitone`, and
+     `rowBracket_antitone` prove that `rowBracket eps pe w c N j ≤ rowBracket eps pe w c N N` for
+     every `j ≥ N ≥ pe`, making row `N` the worst case and discharging `hrow` in
+     `frame_tail_never_helps` and `frame_tail_move_lt_zero`.
 
 ## What is NOT proved here (honest scope)
 
-* The **per-row bracket bound** of the tail lemma — that each high row's contribution is at most
-  `ε(b_N + 1) + c̄_N − (ln q₀)/2` — is the hypothesis `hrow` of `tail_never_helps`.  Deriving it
-  needs the *infinite* gap-2 lattice cancellation (a convergent bi-infinite sum), the comparison
-  of this frame's rows below `N` with the lattice's, and the monotonicity in `j` that makes row
-  `N` the worst case.  None of that is formalised; only its finite antisymmetric piece is.
-  The sign `bracket < 0` is the probe's numerical check M7 and is likewise a hypothesis.
-* The L♮-concave optimality criterion itself (Murota 2003, Ch. 7) is not formalised; the tail
-  lemma is stated for `+χ_S` moves, which is what that criterion reduces the certificate to.
+* The numeric sign `rowBracket eps pe w c N N < 0` at `c = (ln q₀)/2` is the probe's numerical
+  check M7 and enters as the hypothesis `hβ : rowBracket eps pe w c N N < 0`.
+* The L♮-concave optimality criterion itself (Murota 2003, Ch. 7) is proved in
+  `QOU/BraidKnot/LNaturalOptimality.lean` (`global_of_local_boxDiffDomain`, bean `qou-r9a6`).
 
 -- Ref: [murota2003] Discrete Convex Analysis, SIAM, 2003, Ch. 7 (L♮ optimality criterion)
 -/
@@ -456,6 +465,404 @@ theorem antisymm_double_sum_eq_zero [LinearOrder R] [IsStrictOrderedRing R]
     simp only [← sum_neg_distrib]
     exact sum_congr rfl fun i _ => sum_congr rfl fun j _ => hf j i
   linarith
+
+/-! ## The per-row bracket bound of the tail lemma (bean `qou-xbl8`)
+
+Derives the hypothesis `hrow` of `tail_never_helps` / `tail_move_lt_zero` for the bottom-edge
+frame objective in three steps matching `rev_e_infinity_xbot_lnatural_probe.py` (check M7):
+
+1. **Gap-2 lattice cancellation**: on the signed lattice kernel `sgn(j − x) P(|j − x|)`, the
+   `H × H` sum vanishes (`latticeKernel_sum_self_eq_zero`), so summing over `x ∈ U \ H` equals
+   summing over all `x ∈ U` (`latticeKernel_sum_sdiff_eq`), and on a symmetric gap-2 window around
+   `j` the lower `+P(2(m+1))` and upper `−P(2(m+1))` steps cancel (`symmetric_gap2_lattice_sum_eq_zero`).
+2. **Frame comparison below `N`**: decomposing a high row `j ∈ H` (`N ≤ j < n`, `pe ≤ N`) into
+   its one-body piece `ε(b_j + 1) − c`, the wall/displaced rows `x < N` (`x < pe ∨ 0 < w_x`), and
+   the undisplaced gap-2 lattice rows plus upper tail bounds `rowGain j` by
+   `rowBracket eps pe w c N j = ε(b_j + 1) + c̄_N(j) − c` (`rowGain_le_rowBracket`).
+3. **Monotonicity in `j ≥ N`**: `b_j = 2j − pe` is strictly increasing for `j ≥ pe`, so with `ε`
+   and `p⁻` antitone, both `ε(b_j + 1)` and `c̄_N(j)` decrease with `j` (`cbarAt_antitone`,
+   `rowBracket_antitone`), making row `N` the worst case (`rowGain_le_rowBracket_N`) and discharging
+   `hrow` in `frame_tail_never_helps` and `frame_tail_move_lt_zero`. -/
+
+/-- Above the wall (`pe ≤ j`), `b_j = 2j − pe`. -/
+theorem rowBase_of_ge (pe j : ℕ) (h : pe ≤ j) : rowBase pe j = 2 * j - pe := by
+  unfold rowBase
+  rw [if_neg (not_lt.mpr h)]
+
+/-- Above the wall (`pe ≤ j`), the wall weight `w_j = pe − j` vanishes. -/
+theorem wallWeight_eq_zero_of_ge (pe j : ℕ) (h : pe ≤ j) : wallWeight pe j = 0 := by
+  unfold wallWeight
+  omega
+
+/-- `b_j` is monotone in the row index `j`. -/
+theorem rowBase_mono (pe : ℕ) {i j : ℕ} (hij : i ≤ j) : rowBase pe i ≤ rowBase pe j := by
+  unfold rowBase
+  split_ifs <;> omega
+
+/-- Above the wall (`pe ≤ i`), `b_j` is strictly increasing with gap `2(j − i)`. -/
+theorem rowBase_strictMono_of_ge (pe : ℕ) {i j : ℕ} (hpe : pe ≤ i) (hij : i < j) :
+    rowBase pe i < rowBase pe j := by
+  rw [rowBase_of_ge pe i hpe, rowBase_of_ge pe j (le_trans hpe (le_of_lt hij))]
+  omega
+
+/-- On the gap-2 lattice (`pe ≤ i ≤ j`), the gap `b_j − b_i` is `2(j − i)`. -/
+theorem rowBase_gap_two_of_ge (pe i j : ℕ) (hpe : pe ≤ i) (hij : i ≤ j) :
+    (rowBase pe j : ℤ) - rowBase pe i = 2 * ((j : ℤ) - i) := by
+  rw [rowBase_of_ge pe i hpe, rowBase_of_ge pe j (le_trans hpe hij)]
+  omega
+
+/-- Signed pair-step kernel `sgn(j − x) · P(|j − x|)` on the 1D lattice `ℕ`:
+rows `x < j` below `j` contribute `+P(j − x)`, rows `x > j` above `j` contribute
+`−P(x − j)`, and the diagonal `x = j` contributes `0`. -/
+def latticeKernel (P : ℕ → R) (j x : ℕ) : R :=
+  if x < j then P (j - x) else if j < x then - P (x - j) else 0
+
+/-- The signed lattice kernel is antisymmetric: `K(j, x) = −K(x, j)`. -/
+theorem latticeKernel_antisymm (P : ℕ → R) (j x : ℕ) :
+    latticeKernel P j x = - latticeKernel P x j := by
+  unfold latticeKernel
+  rcases lt_trichotomy x j with h | rfl | h
+  · have hnot : ¬ j < x := not_lt_of_gt h
+    simp [h, hnot]
+  · simp
+  · have hnot : ¬ x < j := not_lt_of_gt h
+    simp [h, hnot]
+
+/-- On any finite move set `H`, the internal `H × H` sum of the signed lattice kernel vanishes. -/
+theorem latticeKernel_sum_self_eq_zero [LinearOrder R] [IsStrictOrderedRing R]
+    (P : ℕ → R) (H : Finset ℕ) :
+    ∑ j ∈ H, ∑ x ∈ H, latticeKernel P j x = 0 :=
+  antisymm_double_sum_eq_zero H (latticeKernel P) (latticeKernel_antisymm P)
+
+/-- **Ambient lattice reduction (piece i)**: for `H ⊆ U`, the cross-sum of the signed lattice
+kernel over `j ∈ H, x ∈ U \ H` equals the full sum over `j ∈ H, x ∈ U`, because the internal
+`H × H` part is antisymmetric and vanishes. -/
+theorem latticeKernel_sum_sdiff_eq [LinearOrder R] [IsStrictOrderedRing R]
+    (P : ℕ → R) (U H : Finset ℕ) (hH : H ⊆ U) :
+    ∑ j ∈ H, ∑ x ∈ U \ H, latticeKernel P j x
+      = ∑ j ∈ H, ∑ x ∈ U, latticeKernel P j x := by
+  have hsplit : ∀ j ∈ H, ∑ x ∈ U, latticeKernel P j x
+      = ∑ x ∈ U \ H, latticeKernel P j x + ∑ x ∈ H, latticeKernel P j x := by
+    intro j _
+    exact (sum_sdiff hH).symm
+  rw [sum_congr rfl hsplit, sum_add_distrib, latticeKernel_sum_self_eq_zero P H, add_zero]
+
+/-- **Symmetric gap-2 lattice cancellation around row `j` (piece i)**: when `K` lower gap-2 steps
+`+P(2(m+1))` are paired against `K` upper gap-2 steps `−P(2(m+1))`, the net lattice contribution
+vanishes identically. -/
+theorem symmetric_gap2_lattice_sum_eq_zero (P : ℕ → R) (K : ℕ) :
+    (∑ m ∈ range K, P (2 * (m + 1))) + (∑ m ∈ range K, - P (2 * (m + 1))) = 0 := by
+  rw [sum_neg_distrib, add_neg_cancel]
+
+/-- `p⁻(g) = ε(g − 1) − ε(g)`: what a pair at gap `g` loses when it closes by `1`
+(`pminus` in `rev_e_infinity_xbot_lnatural_probe.py`). -/
+def pminus (eps : ℤ → R) (g : ℤ) : R := eps (g - 1) - eps g
+
+/-- `p⁺(g) = ε(g) − ε(g + 1)`: what a pair at gap `g` gains when it opens by `1`. -/
+def pplus (eps : ℤ → R) (g : ℤ) : R := eps g - eps (g + 1)
+
+/-- `p⁺(g − 1) = p⁻(g)`: shifting the gap down by `1` turns `p⁺` into `p⁻`. -/
+@[simp] theorem pplus_sub_one_eq_pminus (eps : ℤ → R) (g : ℤ) :
+    pplus eps (g - 1) = pminus eps g := by
+  unfold pplus pminus
+  have h : g - 1 + 1 = g := by ring
+  rw [h]
+
+/-- `p⁻(g) ≥ 0` when `ε` is antitone on the positive integers and `1 < g`. -/
+theorem pminus_nonneg [LinearOrder R] [IsStrictOrderedRing R]
+    (eps : ℤ → R) (heps : AntitoneOn eps (Set.Ioi 0)) {g : ℤ} (hg : 1 < g) :
+    0 ≤ pminus eps g := by
+  unfold pminus
+  have hle : eps g ≤ eps (g - 1) := by
+    apply heps
+    · show (0 : ℤ) < g - 1; omega
+    · show (0 : ℤ) < g; omega
+    · omega
+  linarith
+
+/-- For `x < j` and `v j = 0`, the cross-pair change of `{x, j}` when `j` moves up by `1` is
+`p⁺(b_j − b_x − v_x)`. -/
+theorem crossChange_framePsi_of_lt (eps : ℤ → R) (pe : ℕ) (v : ℕ → ℕ)
+    {j x : ℕ} (hxj : x < j) (hvj : v j = 0) :
+    crossChange (framePsi eps pe) v j x
+      = pplus eps ((rowBase pe j : ℤ) - rowBase pe x - v x) := by
+  unfold crossChange framePsi pplus
+  rw [if_pos hxj, hvj]
+  push_cast
+  have h1 : (rowBase pe j : ℤ) - rowBase pe x + (1 - (v x : ℤ))
+      = (rowBase pe j : ℤ) - rowBase pe x - v x + 1 := by ring
+  have h2 : (rowBase pe j : ℤ) - rowBase pe x + (0 - (v x : ℤ))
+      = (rowBase pe j : ℤ) - rowBase pe x - v x := by ring
+  rw [h1, h2]
+  ring
+
+/-- For `j < x` and `v j = 0`, `v x = 0`, the cross-pair change of `{j, x}` when `j` moves up
+by `1` is `−p⁻(b_x − b_j)` (the upper pair closes by `1`). -/
+theorem crossChange_framePsi_of_gt (eps : ℤ → R) (pe : ℕ) (v : ℕ → ℕ)
+    {j x : ℕ} (hjx : j < x) (hvj : v j = 0) (hvx : v x = 0) :
+    crossChange (framePsi eps pe) v j x
+      = - pminus eps ((rowBase pe x : ℤ) - rowBase pe j) := by
+  have hnot : ¬ x < j := not_lt_of_gt hjx
+  unfold crossChange framePsi pminus
+  rw [if_neg hnot, if_pos hjx, hvj, hvx]
+  push_cast
+  have h1 : (rowBase pe x : ℤ) - rowBase pe j + -1
+      = (rowBase pe x : ℤ) - rowBase pe j - 1 := by ring
+  have h2 : (rowBase pe x : ℤ) - rowBase pe j + 0
+      = (rowBase pe x : ℤ) - rowBase pe j := by ring
+  rw [h1, h2]
+  ring
+
+/-- For any lower row `x < j` at `v = moveBy w L` (with `v j = 0`), the cross-pair change of
+`{x, j}` is at most `p⁻(b_j − b_x − w_x)` whenever `p⁺(g) ≤ p⁻(g)` at `g = b_j − b_x − w_x`
+(discrete convexity of `ε`): if `x ∉ L` it is `p⁺(g) ≤ p⁻(g)`, and if `x ∈ L` it is
+`p⁺(g − 1) = p⁻(g)` exactly. -/
+theorem crossChange_moveBy_le_pminus [LinearOrder R] [IsStrictOrderedRing R]
+    (eps : ℤ → R) (pe : ℕ) (w : ℕ → ℕ) (L : Finset ℕ)
+    {j x : ℕ} (hxj : x < j) (hvj : moveBy w L j = 0)
+    (hconv : pplus eps ((rowBase pe j : ℤ) - rowBase pe x - w x)
+      ≤ pminus eps ((rowBase pe j : ℤ) - rowBase pe x - w x)) :
+    crossChange (framePsi eps pe) (moveBy w L) j x
+      ≤ pminus eps ((rowBase pe j : ℤ) - rowBase pe x - w x) := by
+  rw [crossChange_framePsi_of_lt eps pe (moveBy w L) hxj hvj]
+  unfold moveBy
+  by_cases hxL : x ∈ L
+  · simp only [if_pos hxL, Nat.cast_add, Nat.cast_one]
+    have hsub : (rowBase pe j : ℤ) - rowBase pe x - ((w x : ℤ) + 1)
+        = (rowBase pe j : ℤ) - rowBase pe x - w x - 1 := by ring
+    rw [hsub, pplus_sub_one_eq_pminus]
+  · simp only [if_neg hxL]
+    exact hconv
+
+/-- The active lower rows below `N`: wall rows (`x < pe`) or rows displaced by the certified
+optimum `w` (`0 < w x`), matching the filter in `tail_bound` of
+`rev_e_infinity_xbot_lnatural_probe.py`. -/
+def activeLowerRows (pe : ℕ) (w : ℕ → ℕ) (N : ℕ) : Finset ℕ :=
+  (range N).filter (fun x => x < pe ∨ 0 < w x)
+
+/-- The wall-and-displaced-row correction `c̄_N(j)` at row `j ≥ N`:
+`∑_{x ∈ activeLowerRows pe w N} p⁻(b_j − b_x − w_x)`. -/
+def cbarAt (eps : ℤ → R) (pe : ℕ) (w : ℕ → ℕ) (N j : ℕ) : R :=
+  ∑ x ∈ activeLowerRows pe w N, pminus eps ((rowBase pe j : ℤ) - rowBase pe x - w x)
+
+/-- The per-row bracket `ε(b_j + 1) + c̄_N(j) − c` at row `j ≥ N`; at `j = N` and `c = (ln q₀)/2`
+this is the probe's M7 bracket `eps(b_N + 1) + cbar_N - (ln q0)/2`. -/
+def rowBracket (eps : ℤ → R) (pe : ℕ) (w : ℕ → ℕ) (c : R) (N j : ℕ) : R :=
+  eps ((rowBase pe j : ℤ) + 1) + cbarAt eps pe w N j - c
+
+/-- **Active lower-row bound (piece ii)**: for `N ≤ j` and `moveBy w L j = 0`, the sum of
+`crossChange` over `activeLowerRows pe w N` is at most `cbarAt eps pe w N j`. -/
+theorem activeCross_le_cbarAt [LinearOrder R] [IsStrictOrderedRing R]
+    (eps : ℤ → R) (pe : ℕ) (w : ℕ → ℕ) (L : Finset ℕ) {N j : ℕ}
+    (hNj : N ≤ j) (hvj : moveBy w L j = 0)
+    (hconv : ∀ x ∈ activeLowerRows pe w N,
+      pplus eps ((rowBase pe j : ℤ) - rowBase pe x - w x)
+        ≤ pminus eps ((rowBase pe j : ℤ) - rowBase pe x - w x)) :
+    ∑ x ∈ activeLowerRows pe w N, crossChange (framePsi eps pe) (moveBy w L) j x
+      ≤ cbarAt eps pe w N j := by
+  unfold cbarAt
+  refine sum_le_sum fun x hx => ?_
+  have hxj : x < j := lt_of_lt_of_le (mem_range.mp (mem_filter.mp hx).1) hNj
+  exact crossChange_moveBy_le_pminus eps pe w L hxj hvj (hconv x hx)
+
+/-- **Matched lower/upper gap-2 lattice domination (piece i → ii)**: when each undisplaced lower
+lattice row `x ∈ U_low` is matched injectively to an upper lattice row `σ x ∈ U_high` with
+`lowTerm x + highTerm (σ x) ≤ 0` (`p⁺(2m) − p⁻(2m) ≤ 0`), every unmatched upper step satisfies
+`highTerm y ≤ 0` (`−p⁻(2m) ≤ 0`), and the above-block tail step satisfies `tailDiff ≤ 0`, the
+combined undisplaced-lattice + tail sum is non-positive. -/
+theorem matched_lower_upper_sum_nonpos [LinearOrder R] [IsStrictOrderedRing R]
+    (U_low U_high : Finset ℕ) (σ : ℕ → ℕ) (lowTerm highTerm : ℕ → R) (tailDiff : R)
+    (hinj : Set.InjOn σ U_low)
+    (hmaps : ∀ x ∈ U_low, σ x ∈ U_high)
+    (hmatch : ∀ x ∈ U_low, lowTerm x + highTerm (σ x) ≤ 0)
+    (hhigh : ∀ y ∈ U_high, highTerm y ≤ 0)
+    (htail : tailDiff ≤ 0) :
+    tailDiff + (∑ x ∈ U_low, lowTerm x + ∑ y ∈ U_high, highTerm y) ≤ 0 := by
+  have hsub : U_low.image σ ⊆ U_high := image_subset_iff.mpr hmaps
+  have himg : ∑ y ∈ U_low.image σ, highTerm y = ∑ x ∈ U_low, highTerm (σ x) :=
+    sum_image hinj
+  have hsdiff := (sum_sdiff hsub (f := highTerm)).symm
+  have hrem : ∑ y ∈ U_high \ U_low.image σ, highTerm y ≤ 0 :=
+    sum_nonpos fun y hy => hhigh y (mem_sdiff.mp hy).1
+  have hpaired : ∑ x ∈ U_low, lowTerm x + ∑ x ∈ U_low, highTerm (σ x) ≤ 0 := by
+    rw [← sum_add_distrib]
+    exact sum_nonpos hmatch
+  rw [hsdiff, himg]
+  linarith
+
+/-- **Per-row bracket bound at row `j` (piece ii)**: for a tail row `j ∈ H` (`pe ≤ N ≤ j < n`)
+where `moveBy w L j = 0` and all rows of `H` lie at or above `N`, if the undisplaced gap-2
+lattice rows `(range n \ H) \ activeLowerRows pe w N` plus the above-block tail change
+`W(h_j) − W(h_j − 1)` have net contribution `≤ 0` (by gap-2 lattice cancellation against the
+upper lattice steps), then `rowGain j ≤ rowBracket eps pe w c N j`. -/
+theorem rowGain_le_rowBracket [LinearOrder R] [IsStrictOrderedRing R]
+    (eps : ℤ → R) (W : ℕ → ℤ → R) (a c : R) (pe N n : ℕ) (w : ℕ → ℕ) (L H : Finset ℕ)
+    {j : ℕ} (hpeN : pe ≤ N) (hNj : N ≤ j) (hjn : j < n)
+    (hvj : moveBy w L j = 0)
+    (hH_ge : ∀ y ∈ H, N ≤ y)
+    (hconv : ∀ x ∈ activeLowerRows pe w N,
+      pplus eps ((rowBase pe j : ℤ) - rowBase pe x - w x)
+        ≤ pminus eps ((rowBase pe j : ℤ) - rowBase pe x - w x))
+    (hlattice :
+      (W (pe - n) ((rowBase pe n : ℤ) - rowBase pe j)
+        - W (pe - n) ((rowBase pe n : ℤ) - rowBase pe j - 1))
+      + ∑ x ∈ (range n \ H) \ activeLowerRows pe w N,
+          crossChange (framePsi eps pe) (moveBy w L) j x ≤ 0) :
+    rowGain (framePhi eps W a c pe n) (framePsi eps pe) n (moveBy w L) H j
+      ≤ rowBracket eps pe w c N j := by
+  have hpej : pe ≤ j := le_trans hpeN hNj
+  -- one-body difference at v j = 0 above the wall (wallWeight pe j = 0)
+  have hphi : framePhi eps W a c pe n j (moveBy w L j + 1)
+      - framePhi eps W a c pe n j (moveBy w L j)
+      = eps ((rowBase pe j : ℤ) + 1)
+        + (W (pe - n) ((rowBase pe n : ℤ) - rowBase pe j)
+            - W (pe - n) ((rowBase pe n : ℤ) - rowBase pe j - 1)) - c := by
+    rw [hvj]
+    simp only [framePhi, zero_add, range_one, sum_singleton, range_zero, sum_empty,
+      wallWeight_eq_zero_of_ge pe j hpej, Nat.cast_zero, Nat.cast_one, add_zero, sub_zero,
+      one_pow, mul_zero, mul_one, zero_pow (by decide : 2 ≠ 0)]
+    ring
+  -- activeLowerRows pe w N sits inside range n \ H
+  have hsub : activeLowerRows pe w N ⊆ range n \ H := by
+    intro x hx
+    have hxN : x < N := mem_range.mp (mem_filter.mp hx).1
+    refine mem_sdiff.mpr ⟨mem_range.mpr (lt_trans (lt_of_lt_of_le hxN hNj) hjn), ?_⟩
+    intro hxH
+    exact not_le_of_gt hxN (hH_ge x hxH)
+  have hsplit := (sum_sdiff hsub (f := fun x => crossChange (framePsi eps pe) (moveBy w L) j x)).symm
+  have hact := activeCross_le_cbarAt eps pe w L hNj hvj hconv
+  unfold rowGain rowBracket
+  rw [hphi, hsplit]
+  linarith
+
+/-- **Monotonicity of `c̄_N(j)` in `j` (piece iii)**: when `p⁻` is antitone on `(1, ∞)` (discrete
+convexity of `ε`) and every active lower row has gap `> 1` at row `N`, `c̄_N(j)` is antitone for
+`N ≤ j₁ ≤ j₂`. -/
+theorem cbarAt_antitone [LinearOrder R] [IsStrictOrderedRing R]
+    (eps : ℤ → R) (pe : ℕ) (w : ℕ → ℕ) (N : ℕ)
+    (hpminus : AntitoneOn (pminus eps) (Set.Ioi 1))
+    (hdom : ∀ x ∈ activeLowerRows pe w N,
+      1 < (rowBase pe N : ℤ) - rowBase pe x - w x)
+    {j₁ j₂ : ℕ} (hNj₁ : N ≤ j₁) (hj : j₁ ≤ j₂) :
+    cbarAt eps pe w N j₂ ≤ cbarAt eps pe w N j₁ := by
+  unfold cbarAt
+  refine sum_le_sum fun x hx => ?_
+  have hdomN := hdom x hx
+  have hb1 : (rowBase pe N : ℤ) ≤ rowBase pe j₁ := by exact_mod_cast rowBase_mono pe hNj₁
+  have hb2 : (rowBase pe j₁ : ℤ) ≤ rowBase pe j₂ := by exact_mod_cast rowBase_mono pe hj
+  apply hpminus
+  · show (1 : ℤ) < (rowBase pe j₁ : ℤ) - rowBase pe x - w x; linarith
+  · show (1 : ℤ) < (rowBase pe j₂ : ℤ) - rowBase pe x - w x; linarith
+  · linarith
+
+/-- **Monotonicity of the per-row bracket in `j` (piece iii)**: for `N ≤ j₁ ≤ j₂`, when `ε` is
+antitone on `(0, ∞)` and `p⁻` is antitone on `(1, ∞)`, `rowBracket` decreases with `j`; in
+particular, row `N` is the worst case for all `j ≥ N`. -/
+theorem rowBracket_antitone [LinearOrder R] [IsStrictOrderedRing R]
+    (eps : ℤ → R) (pe : ℕ) (w : ℕ → ℕ) (c : R) (N : ℕ)
+    (heps : AntitoneOn eps (Set.Ioi 0))
+    (hpminus : AntitoneOn (pminus eps) (Set.Ioi 1))
+    (hdom : ∀ x ∈ activeLowerRows pe w N,
+      1 < (rowBase pe N : ℤ) - rowBase pe x - w x)
+    {j₁ j₂ : ℕ} (hNj₁ : N ≤ j₁) (hj : j₁ ≤ j₂) :
+    rowBracket eps pe w c N j₂ ≤ rowBracket eps pe w c N j₁ := by
+  unfold rowBracket
+  have hcbar := cbarAt_antitone eps pe w N hpminus hdom hNj₁ hj
+  have hb : (rowBase pe j₁ : ℤ) ≤ rowBase pe j₂ := by exact_mod_cast rowBase_mono pe hj
+  have he : eps ((rowBase pe j₂ : ℤ) + 1) ≤ eps ((rowBase pe j₁ : ℤ) + 1) := by
+    apply heps
+    · show (0 : ℤ) < (rowBase pe j₁ : ℤ) + 1; positivity
+    · show (0 : ℤ) < (rowBase pe j₂ : ℤ) + 1; positivity
+    · linarith
+  linarith
+
+/-- **Worst-case bracket bound at row `N` (pieces i–iii combined)**: every tail row `j ∈ H`
+(`pe ≤ N ≤ j < n`) satisfies `rowGain j ≤ rowBracket eps pe w c N N`, discharging the hypothesis
+`hrow` of `tail_never_helps`. -/
+theorem rowGain_le_rowBracket_N [LinearOrder R] [IsStrictOrderedRing R]
+    (eps : ℤ → R) (W : ℕ → ℤ → R) (a c : R) (pe N n : ℕ) (w : ℕ → ℕ) (L H : Finset ℕ)
+    (hpeN : pe ≤ N) (hH : H ⊆ range n) (hH_ge : ∀ y ∈ H, N ≤ y)
+    (heps : AntitoneOn eps (Set.Ioi 0))
+    (hpminus : AntitoneOn (pminus eps) (Set.Ioi 1))
+    (hdom : ∀ x ∈ activeLowerRows pe w N,
+      1 < (rowBase pe N : ℤ) - rowBase pe x - w x)
+    (hvH : ∀ j ∈ H, moveBy w L j = 0)
+    (hconv : ∀ j ∈ H, ∀ x ∈ activeLowerRows pe w N,
+      pplus eps ((rowBase pe j : ℤ) - rowBase pe x - w x)
+        ≤ pminus eps ((rowBase pe j : ℤ) - rowBase pe x - w x))
+    (hlattice : ∀ j ∈ H,
+      (W (pe - n) ((rowBase pe n : ℤ) - rowBase pe j)
+        - W (pe - n) ((rowBase pe n : ℤ) - rowBase pe j - 1))
+      + ∑ x ∈ (range n \ H) \ activeLowerRows pe w N,
+          crossChange (framePsi eps pe) (moveBy w L) j x ≤ 0) :
+    ∀ j ∈ H,
+      rowGain (framePhi eps W a c pe n) (framePsi eps pe) n (moveBy w L) H j
+        ≤ rowBracket eps pe w c N N := by
+  intro j hj
+  have hNj : N ≤ j := hH_ge j hj
+  have hjn : j < n := mem_range.mp (hH hj)
+  have h1 := rowGain_le_rowBracket eps W a c pe N n w L H hpeN hNj hjn
+    (hvH j hj) hH_ge (hconv j hj) (hlattice j hj)
+  have h2 := rowBracket_antitone eps pe w c N heps hpminus hdom (le_refl N) hNj
+  exact le_trans h1 h2
+
+/-- **Frame tail lemma (`hrow` discharged)**: for any move `S = L ∪ H` with `H` at or above row
+`N ≥ pe`, the objective change satisfies
+`G(moveBy w (L ∪ H)) − G(w) ≤ (G(moveBy w L) − G(w)) + |H| · rowBracket eps pe w c N N`. -/
+theorem frame_tail_never_helps [LinearOrder R] [IsStrictOrderedRing R]
+    (eps : ℤ → R) (W : ℕ → ℤ → R) (a c : R) (pe N n : ℕ) (w : ℕ → ℕ) (L H : Finset ℕ)
+    (hd : Disjoint L H) (hpeN : pe ≤ N) (hH : H ⊆ range n) (hH_ge : ∀ y ∈ H, N ≤ y)
+    (heps : AntitoneOn eps (Set.Ioi 0))
+    (hpminus : AntitoneOn (pminus eps) (Set.Ioi 1))
+    (hdom : ∀ x ∈ activeLowerRows pe w N,
+      1 < (rowBase pe N : ℤ) - rowBase pe x - w x)
+    (hvH : ∀ j ∈ H, moveBy w L j = 0)
+    (hconv : ∀ j ∈ H, ∀ x ∈ activeLowerRows pe w N,
+      pplus eps ((rowBase pe j : ℤ) - rowBase pe x - w x)
+        ≤ pminus eps ((rowBase pe j : ℤ) - rowBase pe x - w x))
+    (hlattice : ∀ j ∈ H,
+      (W (pe - n) ((rowBase pe n : ℤ) - rowBase pe j)
+        - W (pe - n) ((rowBase pe n : ℤ) - rowBase pe j - 1))
+      + ∑ x ∈ (range n \ H) \ activeLowerRows pe w N,
+          crossChange (framePsi eps pe) (moveBy w L) j x ≤ 0) :
+    frameObjective eps W a c pe n (moveBy w (L ∪ H)) - frameObjective eps W a c pe n w
+      ≤ (frameObjective eps W a c pe n (moveBy w L) - frameObjective eps W a c pe n w)
+        + (H.card : R) * rowBracket eps pe w c N N := by
+  unfold frameObjective
+  exact tail_never_helps n (framePhi eps W a c pe n) (framePsi eps pe) w L H hd hH
+    (rowBracket eps pe w c N N)
+    (rowGain_le_rowBracket_N eps W a c pe N n w L H hpeN hH hH_ge heps hpminus hdom hvH hconv
+      hlattice)
+
+/-- **Strict frame tail lemma (`hrow` discharged)**: when the worst-case bracket at row `N` is
+negative (`rowBracket eps pe w c N N < 0`, the probe's check M7) and the lower move `L` does not
+improve `w` (`G(moveBy w L) − G(w) ≤ 0`, the probe's check M5), any move with `H ≠ ∅` at or above
+`N` strictly lowers the frame objective. -/
+theorem frame_tail_move_lt_zero [LinearOrder R] [IsStrictOrderedRing R]
+    (eps : ℤ → R) (W : ℕ → ℤ → R) (a c : R) (pe N n : ℕ) (w : ℕ → ℕ) (L H : Finset ℕ)
+    (hd : Disjoint L H) (hpeN : pe ≤ N) (hH : H ⊆ range n) (hH_ge : ∀ y ∈ H, N ≤ y)
+    (hne : H.Nonempty)
+    (heps : AntitoneOn eps (Set.Ioi 0))
+    (hpminus : AntitoneOn (pminus eps) (Set.Ioi 1))
+    (hdom : ∀ x ∈ activeLowerRows pe w N,
+      1 < (rowBase pe N : ℤ) - rowBase pe x - w x)
+    (hvH : ∀ j ∈ H, moveBy w L j = 0)
+    (hconv : ∀ j ∈ H, ∀ x ∈ activeLowerRows pe w N,
+      pplus eps ((rowBase pe j : ℤ) - rowBase pe x - w x)
+        ≤ pminus eps ((rowBase pe j : ℤ) - rowBase pe x - w x))
+    (hlattice : ∀ j ∈ H,
+      (W (pe - n) ((rowBase pe n : ℤ) - rowBase pe j)
+        - W (pe - n) ((rowBase pe n : ℤ) - rowBase pe j - 1))
+      + ∑ x ∈ (range n \ H) \ activeLowerRows pe w N,
+          crossChange (framePsi eps pe) (moveBy w L) j x ≤ 0)
+    (hβ : rowBracket eps pe w c N N < 0)
+    (hL : frameObjective eps W a c pe n (moveBy w L) - frameObjective eps W a c pe n w ≤ 0) :
+    frameObjective eps W a c pe n (moveBy w (L ∪ H)) - frameObjective eps W a c pe n w < 0 := by
+  unfold frameObjective at hL ⊢
+  exact tail_move_lt_zero n (framePhi eps W a c pe n) (framePsi eps pe) w L H hd hH hne
+    (rowBracket eps pe w c N N) hβ hL
+    (rowGain_le_rowBracket_N eps W a c pe N n w L H hpeN hH hH_ge heps hpminus hdom hvH hconv
+      hlattice)
 
 end Tail
 

@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2104.01786v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2104.01786v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "Spin(11 , 3), particles and octonions",
+  "title": "Spin(11, 3), particles and octonions",
   "contains": [
     "library/arxiv-2104.01786v1/sections/sec-front-matter",
     "library/arxiv-2104.01786v1/sections/sec-000",
@@ -49,6 +49,18 @@
     "library/arxiv-2104.01786v1/sections/sec-034"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a single real\n\n**Spin(11, 3), particles and octonions**\n\n*Kirill Krasnov*\n\n27 pp, 36 sections.\n\n**Abstract.** The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a single real 64-dimensional semi- spinor representation S+ of the group Spin(11, 3). We describe an octonionic model for Spin(11, 3) in which the semi-spinor representation gets identiﬁed with S+ = O⊗˜O, where O, ˜O are the usual and split octonions respectively. It is then well-known that choosing a unit imaginary octonion u ∈Im(O) equips O with a complex structure J. Similarly, choosing a unit imaginary split octonion ˜u ∈Im(˜O) equips ˜O with a complex structure ˜J, except that there are now two inequivalent complex structures, one parametrised by a choice of a timelike and the other of a spacelike unit ˜u. In either case, the identiﬁcation S+ = O ⊗˜O implies that there are two natural commuting complex structures J, ˜J on S+.\n\n**Outline.** Front matter; 1 Introduction; 2.1 Octonions; 2 Spin(7) and octonions; 2.2 Clifford algebra Cliff7; 2.3 Lie algebra so(7); 2.4 Complex structure; 2.5 A different complex structure; 2.6 Parametrisation; 2.7 The group of automorphisms of the octonion; 2.8 The group SU(3); 3 Spin(4,3) and the split octonions; 3.2 The Clifford algebra Cliff4,3; 3.3 Lie algebra so(4,3); 3.4 Complex structures; 3.5 Decomposition of under so(3)so(1,3); 3.6 Parametrisation; 3.7 Some useful formulas",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {
@@ -72,8 +84,8 @@
       "stamp_date": "5 Apr 2021"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

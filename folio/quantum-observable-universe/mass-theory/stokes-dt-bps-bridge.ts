@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Resurgent Stokes constants are Donaldson--Thomas / BPS degeneracies (the closed-sector state-integral bridge, GGM Conjecture 3(d) + GPPV)",
   lean: {
-    ref: "qou:QOU.QBeta.StokesDTBPSBridge",
+    ref: "qou:QOU.Nuclear.StokesDTBPSBridge",
     validation: "not_checked",
   },
   computation: {
@@ -26,6 +26,9 @@ export default conjecture({
     "gukov-stosic2012",
     "kucharski-reineke-stosic-sulkowski2017",
     "singh-physrevd108106023",
+    "garoufalidis-kashaev2015",
+    "garoufalidis-zagier2023",
+    "mario2023",
   ],
   tags: [
     "tier:famous",
@@ -39,6 +42,8 @@ export default conjecture({
     "open-problem",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): , and A_ω=3 is made\nconditional on it downstream\n([The figure-eight Stokes integer $A_\\omega(4_1) = 3$ is a BPS/DT count](#thm:aomega-fourone-dt-count)) — conditional for\nevery knot, $4_1$ included, since GGM's Conjecture 3(d) is not proved for $4_1$" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): and the field `dt_eq_bps` below stays an assumption\nrather than a citation.\n\n$S^+(0)_{01} = 3$ is machine-checked\nunconditionally.\n\n### Lean axiomatisation\n\nThe bridge is a Lean typeclass `QOU.QBeta.StokesDTBPSBridge` carrying the two\nidentifications as fields:\n\n```lean\nclass StokesDTBPSBridge (Knot : Type*) where\n  stokesConstant : Knot → ℤ\n  dtInvariant    : Knot → ℤ\n  bpsDim         : Knot → ℤ\n  stokes_eq_dt : ∀ K, stokesConstant K = dtInvariant K   -- GGM Conj 3(d)\n  dt_eq_bps    : ∀ K, dtInvariant K   = bpsDim K          -- GPPV\n```\n\nThe fields are the conjecture's *inputs*; no field asserts a value of $A_\\omega$.\nAny instance is the conjecture holding; none is supplied (the general statement is\nopen for every knot, $4_1$ included). Downstream results take\n`[StokesDTBPSBridge Knot]` as an explicit hypothesis and are then fully verified\nby Lean modulo that class instance, following the same pattern as\n[`conj:kashaev-volume-conjecture`](kashaev-volume-conjecture.md)." },
     {
       kind: "status",
       date: "2026-08-02",
@@ -59,16 +64,16 @@ export default conjecture({
       kind: "caveat",
       date: "2026-08-02",
       body:
-        "**This is the CLOSED / state-integral BPS sector, NOT the open-HOMFLY " +
+        "**This is the CLOSED / state-integral BPS sector, NOT the open-HOMFLY-PT " +
         "Gukov–Stošić bridge.** Non-degeneracy check (this PR, witness " +
         "`aomega-bps-sector-nondegeneracy`): the *open* BPS-states bridge of " +
         "Gukov–Stošić (`gukov-stosic2012`, 1112.0030 — knot homology = open " +
         "BPS states on the conormal Lagrangian) gives, via the knots–quivers " +
         "correspondence (`kucharski-reineke-stosic-sulkowski2017`), a 4₁ count " +
-        "of det(4₁)=5 (five HOMFLY generators / five quiver nodes; trefoil " +
-        "calibration = 3 = det 3₁). 5 ∉ {3,4}, so the open-HOMFLY bridge does " +
+        "of det(4₁)=5 (five HOMFLY-PT generators / five quiver nodes; trefoil " +
+        "calibration = 3 = det 3₁). 5 ∉ {3,4}, so the open-HOMFLY-PT bridge does " +
         "NOT reproduce the GGM resurgent-Stokes spectrum {3,4} and does NOT " +
-        "license A_ω=3. The two BPS sectors (open HOMFLY vs closed Ẑ / " +
+        "license A_ω=3. The two BPS sectors (open HOMFLY-PT vs closed Ẑ / " +
         "state-integral) are distinct. Only the closed-sector bridge above " +
         "reproduces {3,4}/reduced-3.",
     },

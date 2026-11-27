@@ -1,0 +1,1 @@
+For any u ∈R, a ∈Z′, we have: (1 −ξ)−1 2ψa(u; z, z′, ξ) = hz,z′(u, a)(1 −ξ) z′−z (1 + O(1 −ξ)) + hz′,z(u, a)(1 −ξ) z−z′ (1 + O(1 −ξ)) and (1 −ξ)−1 2φa(u; z, z′, ξ) = h′ z,z′(u, a)(1 −ξ) z′−z (1 + O(1 −ξ)) + h′ z′,z(u, a)(1 −ξ) z−z′ (1 + O(1 −ξ)) as ξ tends to 1.

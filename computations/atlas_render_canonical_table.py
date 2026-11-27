@@ -167,17 +167,12 @@ def render_table(witness_data: dict) -> str:
         "paper_hard_floor_ppb", 780
     )
     lines.append(
-        f"_Computed via [`canonical_mass_table_extended.py`]"
-        f"(https://github.com/litlfred/qou/blob/main/"
-        f"computations/canonical_mass_table_extended.py) "
-        f"(method=`{method}`). Witness: "
-        f"[`canonical-mass-table-extended.witness.json`]"
-        f"(https://github.com/litlfred/qou/blob/main/"
-        f"computations/canonical-mass-table-extended.witness.json). "
-        f"Nucleon masses (m_p, m_n) via "
-        f"[`canonical_mass.nucleon_mass_mev()`]"
-        f"(https://github.com/litlfred/qou/blob/main/"
-        f"computations/canonical_mass.py). "
+        # Reader-facing caption: no script, witness or function names
+        # (voice-leak drain, qou-d4kh item 4a); provenance is in the block's
+        # .ts authorNotes.
+        f"_Computed by the extended canonical mass-table computation "
+        f"(method: {method}); nucleon masses (m_p, m_n) from the canonical "
+        f"nucleon-mass routine. "
         f"Paper hard floor (CAL-2 propagation): ~{int(paper_floor)} ppb._"
     )
     lines.append("")

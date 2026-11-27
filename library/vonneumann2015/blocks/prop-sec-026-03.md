@@ -1,0 +1,1 @@
+With notation as above, for x ∈M1,K let W(x) be the weak closure of the convex set of ﬁnite sums {P i λiuixu∗ i : P i λi = 1, λi > 0, ui unitary in L∞(X, µ)}. Then W(x) ⊆M1,K and if φ(y) = tr(y∗y) for y ∈W(x) then φ attains its minimum at a unique point E(x) of W(x).

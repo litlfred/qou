@@ -1,0 +1,1 @@
+Up to an automorphism of ALR, there exists a unique subalgebra AF ⊂ ALR of maximal dimension admitting an oﬀdiagonal Dirac operators, namely operators that intertwine the subspaces Hf and H ¯f of HF. The subalgebra is given by AF = {(λ, qL, λ, m) | λ ∈C , qL ∈H , m ∈M3(C)} ∼C ⊕H ⊕M3(C). (2.22) GRAVITY AND THE STANDARD MODEL WITH NEUTRINO MIXING

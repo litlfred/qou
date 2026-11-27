@@ -1,0 +1,1 @@
+If K is a knot, define WK to be the Laurent polynomial WK(t) = (l-VK(t))/(l-t3)(l-t). Amphicheirality is less obvious for W. In fact, WK~{t) = 1/£ 4WK(1/£). It is amusing that for W the unknot is 0 and the trefoil is 1. The connected sum is also less easy to see in the W picture. For the record the formula is ^ W K 2 = WKl + WK2 - (1 - t)(l - t*)WKlWK2.

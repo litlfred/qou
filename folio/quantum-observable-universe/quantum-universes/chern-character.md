@@ -1,6 +1,6 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum universe over $R$, with [Grothendieck group](#def:grothendieck-group-of-a-qou) $K_0(\mathbf{C})$ and degree-zero [Hochschild homology](#def:hochschild-homology) $HH_0(\mathbf{C})$, the direct sum of the endomorphism modules of the objects modulo the relations $fg = gf$.
 
-**Definition.** The **:defterm[Chern character]{#chern-character}** of $\mathbf{C}$ is the homomorphism
+The **:defterm[Chern character]{#chern-character}** of $\mathbf{C}$ is the homomorphism
 
 $$
   \mathrm{ch} \colon K_0(\mathbf{C}) \longrightarrow HH_0(\mathbf{C}), \qquad [X] \longmapsto [\mathrm{id}_X],
@@ -28,4 +28,4 @@ $$
   K_0(\mathbf{C}) \xrightarrow{\ \mathrm{ch}\ } HH_0(\mathbf{C}) \xrightarrow{\ \mathrm{ev}\ } R, \qquad \dim_q = \mathrm{ev} \circ \mathrm{ch}.
 $$
 
-This is the statement proved in the Lean carrier (`dimQK0_eq_evDimQ_chernCharacter`). Its content is a separation of roles: the Chern character records *which* simple constituents an object has and how many times, an integer datum independent of $q$; the evaluation records *what the trace assigns to each block*, which is where $q$ enters. A quantum dimension is one number obtained from the whole character by one evaluation — for the group $\mathrm{SU}(2)$, the evaluation at the pivotal element of a Laurent polynomial whose evaluation at $1$ is the ordinary dimension, as the next example makes explicit. It is not itself an Euler characteristic of anything, and the base curve's Euler characteristic, which is an alternating sum over *all* the Hochschild degrees of a different object, is not obtained from it.
+The factorisation holds on all of $K_0(\mathbf{C})$, because both sides are additive and they agree on each generator $[V_\lambda]$. Its content is a separation of roles: the Chern character records *which* simple constituents an object has and how many times, an integer datum independent of the deformation; the evaluation records *what the trace assigns to each block*, which is where the deformation enters. A quantum dimension is one number obtained from the whole character by one evaluation — for the group $\mathrm{SU}(2)$, the evaluation at the pivotal element of a Laurent polynomial whose evaluation at $1$ is the ordinary dimension, as the next example makes explicit. It is not itself an Euler characteristic of anything, and the base curve's Euler characteristic, which is an alternating sum over *all* the Hochschild degrees of a different object, is not obtained from it.

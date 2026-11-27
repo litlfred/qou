@@ -1,0 +1,1 @@
+In assumptions of 6.8.11 identify spaces /,, , with the corre- sponding spaces of differential forms. Define operators resy,, (resp., resy1): Ay. > @, as follows. For a form w=a(t));-; take its residue along the hyperplane t;=t; (resp., t;=z,) and then put t;=¢; (resp., t;=2,).

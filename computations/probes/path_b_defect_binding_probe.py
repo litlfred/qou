@@ -89,6 +89,7 @@ from codata_constants import (
     M_N_MEV_VALIDATION as _M_N_MEV_MP,
     M_H1_MEV_VALIDATION as _M_H1_MEV_MP,
 )
+from codata_constants import M_D_ATOMIC_MEV_VALIDATION, M_HE3_ATOMIC_MEV_VALIDATION, M_HE4_ATOMIC_MEV_VALIDATION, M_T_ATOMIC_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 Q0 = Q_MP
 M_E_MEV = _M_E_MEV_MP   # mpf; float() cast removed 2026-08-31 (qou-46ab)
@@ -177,10 +178,10 @@ TR_M = {
 M_AME = {
     "p":   _M_H1_MEV_MP,  # registry H-1 atomic mass; the typed 938.78308711 was 1.4e-5 MeV off
     "n":   _M_N_MEV_MP,
-    "D":   mp.mpf("1876.12393"),
-    "T":   mp.mpf("2809.43215"),
-    "3He": mp.mpf("2809.41347"),
-    "4He": mp.mpf("3728.40133"),
+    "D":   M_D_ATOMIC_MEV_VALIDATION,
+    "T":   M_T_ATOMIC_MEV_VALIDATION,
+    "3He": M_HE3_ATOMIC_MEV_VALIDATION,
+    "4He": M_HE4_ATOMIC_MEV_VALIDATION,
 }
 
 

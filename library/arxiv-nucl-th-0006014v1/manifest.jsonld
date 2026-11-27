@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-0006014v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-nucl-th-0006014v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-nucl-th-0006014v1",
+  "title": "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)",
   "contains": [
     "library/arxiv-nucl-th-0006014v1/sections/sec-front-matter",
     "library/arxiv-nucl-th-0006014v1/sections/sec-000",
@@ -69,6 +69,18 @@
     "library/arxiv-nucl-th-0006014v1/sections/sec-054"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn) — 56 sections: Front matter; Introduction; The model\n\n**The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)**\n\n*Department of Physics, University of Idaho, Moscow, Idaho 83844, U. S. A*\n\n69 pp, 56 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 The model; 3 Charge dependence; 3.1 Charge symmetry breaking; 3.2 Charge independence breaking; 4 Nucleon-nucleon scattering; 5 The deuteron; 6 Conclusions; A Two-nucleon scattering in momentum space; A.1 Scattering equation; A.2 R-matrix and partial wave decomposition; A.3 Phase shifts; A.4 Effective range expansion; B One-boson exchange potential; B.1 OBE amplitudes; B.2 Partial wave decomposition; B.3 Final potential expressions",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -79,7 +91,9 @@
   },
   "meta": {
     "doc_id": "arxiv-nucl-th-0006014v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0006014v1.pdf",
     "source_sha256": "208c7a6aaf628b3060d594ca7bbb5551bb90e867892358cac24c40bbce9298de",
     "pages": 69,
@@ -90,8 +104,8 @@
       "stamp_date": "9 Jun 2000"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

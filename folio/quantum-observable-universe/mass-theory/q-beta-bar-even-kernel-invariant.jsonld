@@ -1,13 +1,14 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-q-beta-bar-even-kernel-invariant",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:q-beta-bar-even-kernel-invariant",
@@ -31,7 +32,7 @@
     "no-fit",
     "formalize-first"
   ],
-  "leanRef": "qou:QOU.QBeta.BarEvenInvariant.bar_even_quadratic_term_in_t_squared",
+  "leanRef": "qou:QOU.Nuclear.QBeta.BarEvenInvariant.bar_even_quadratic_term_in_t_squared",
   "text": "q-beta-bar-even-kernel-invariant.md",
   "leanSource": "q-beta-bar-even-kernel-invariant.lean",
   "provenance": "authored"

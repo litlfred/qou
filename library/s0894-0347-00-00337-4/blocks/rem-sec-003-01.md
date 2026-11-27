@@ -1,0 +1,1 @@
+Notice that, in particular, Theorem 3 implies that, as n →∞, the shape of a typical partition λ near any point of the limit curve Ωis described by a stationary random process. For distinct points on the curve Ωthese random processes are independent. A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI

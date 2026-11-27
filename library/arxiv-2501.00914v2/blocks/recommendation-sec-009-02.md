@@ -1,1 +1,0 @@
-Since the boundary of V0 is a torus, any embedding V0 ⊂S3 would identify it as the complement of a knot: the image of the torus ∂V0 must bound a solid torus in S3, say with core circle γ, so either V0 is the solid torus ν(γ) (that is, an unknot complement) or it is the complement S3 \ ν(γ).

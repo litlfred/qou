@@ -1,0 +1,1 @@
+Let A and B be graded rings. (1) If P ∈C(A ⊗B, gr) is K-graded-projective, then it is K-graded-projective in C(A, gr). (2) If P ∈C(A ⊗B, gr) is K-graded-ﬂat, then it is K-graded-ﬂat in C(A, gr). (3) If I ∈C(A ⊗B, gr) is K-graded-injective, then it is K-graded-injective in C(A, gr).

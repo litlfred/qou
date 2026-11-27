@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1010.4386v5",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "168226dbb5a479ed751d2578e7c2f0c55ce3c217056c1cd75ff24dccb83446c4",
   "file": "1010.4386v5.pdf"
@@ -16,106 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 6,
-  "by_kind": {
-   "recommendation": 6
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "But in this paper we shall usually ignore this.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-2-the-derived-completion-and-torsion-functors.md",
-   "section_title": "The Derived Completion and Torsion Functors",
-   "pages": "7-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Therefore \\begin{equation} \\label{eqn:54} \\cat{D}(\\cat{Mod} A)_{\\a \\text{-} \\mrm{tors}} \\subset \\cat{D}_{\\a \\tup{-tor}}(\\cat{Mod} A) . \\end{equation} Later (in Corollary \\ref{cor:17}) we shall see that there is equality in (\\ref{eqn:54}) under some extra assumption.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-2-the-derived-completion-and-torsion-functors.md",
-   "section_title": "The Derived Completion and Torsion Functors",
-   "pages": "7-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall often write $P^{\\vee} := \\opn{Hom}_A(P, A)$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-3-koszul-complexes-and-weak-proregularity.md",
-   "section_title": "Koszul Complexes and Weak Proregularity",
-   "pages": "10-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "(This is the name used in \\cite{Sc}.) We shall use the fact that a pro-zero inverse system satisfies the Mittag-Leffler condition.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-3-koszul-complexes-and-weak-proregularity.md",
-   "section_title": "Koszul Complexes and Weak Proregularity",
-   "pages": "10-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Then \\begin{equation} \\label{eqn:tel.13} \\opn{tel}_{\\bsym{a}, M}(f) = \\sum_{(i_1, \\ldots, i_n) \\in \\N^n} \\ p(a_1, i_1) \\cdots p(a_n, i_n) f(i_1, \\ldots, i_n) \\in \\Lambda_{\\a} (M) . \\end{equation} We shall not require this formula. \\end{rem}",
-   "strength": "must-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-4-the-telescope-complex.md",
-   "section_title": "The Telescope Complex",
-   "pages": "16-22",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For the convenience of the reader we shall now give explicit formulas for the structure of the DG algebra $\\opn{C}(A; \\bsym{a})$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-7-derived-localization.md",
-   "section_title": "Derived Localization",
-   "pages": "28-32",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

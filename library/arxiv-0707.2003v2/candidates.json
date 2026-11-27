@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-0707.2003v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "0b8fe37aabeee412467f3f45b6af8a534c98a0da25ea47c6d914dd2c4b1b0203",
   "file": "0707.2003v2.pdf"
  },
  "provenance": {
-  "title": "A geometric model for Hochschild homology of Soergel bimodules Introduction",
+  "title": "A geometric model for Hochschild homology of Soergel bimodules",
   "authors": "BEN WEBSTER",
   "arxiv": {
    "id": "0707.2003",
@@ -16,76 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
-  "by_kind": {
-   "recommendation": 4
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This should associate to a pair $(G,X)$ a triangulated category $D^b_G(X)$ together with a \"forgetting $G$-equivariance\" functor $D^b_G(X) \\to D^b(X)$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-3-the-equivariant-derived-category-and-dg-module.md",
-   "section_title": "The equivariant derived category and dg-modules",
-   "pages": "7-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For any reasonable definition of $D^b_G(X)$, there should be an equivalence $D^b_G(X) \\cong D^b(X/G)$ if $G$ acts topologically freely as well as notions of pullback and pushforward for equivariant maps.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-3-the-equivariant-derived-category-and-dg-module.md",
-   "section_title": "The equivariant derived category and dg-modules",
-   "pages": "7-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "However, we must be careful about the difference between dg-modules and modules.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-4-hochschild-homology-and-dg-algebras.md",
-   "section_title": "Hochschild homology and dg-algebras",
-   "pages": "12-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since we have already described the geometric realization of indecomposable bimodules, as intersection cohomology of subvarieties of $G$, we know abstractly that the Bott-Samelson bimodule $\\S\\Bi$ must be the hypercohomology of a perverse sheaf obtained by taking a direct sum of $\\IC{}$-sheaves of these subvarieties with appropriate multiplicities.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-5-the-geometry-of-bott-samelson-bimodules.md",
-   "section_title": "The geometry of Bott-Samelson bimodules",
-   "pages": "14-15",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

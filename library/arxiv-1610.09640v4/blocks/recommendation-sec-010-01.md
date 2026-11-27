@@ -1,1 +1,0 @@
-There are several places in which we shall encounter set theoretical issues (regarding functor categories and localization of categories); but these problems can be solved by introducing a bigger universe V such that U ∈V.

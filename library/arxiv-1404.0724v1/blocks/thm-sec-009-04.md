@@ -1,0 +1,1 @@
+The Alexander-Conway polynomial is the unique invariant of oriented links ∇ with values in Z[s, s−1] which satisﬁes the following properties: • ∇(L) = 1 if L is the unknot. • For any Conway triple L+, L−, L0: ∇(L+) −∇(L−) = (s−1 −s)∇(L0).

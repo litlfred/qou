@@ -6,7 +6,7 @@ $$
   \mathrm{NF}\bigl(\mathcal{B}_3 \cdot C(f_1, f_2; \sigma_0) \cdot C(f_1, f_3; \sigma_0) \cdot C(f_2, f_3; \sigma_1)\bigr).
 $$
 
-*Let $\gamma_k = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1$ be a 4-term photon, and let $\mathfrak{N}(\varphi_0, \varphi_1, \varphi_{01})$ be the nucleon NF of the derivation chain $\gamma\gamma \to q\bar{q} \to \mathcal{B}_3 \cdot \mathrm{crossings}$ with the flavours $f$ supplied as input to the second stage. Then for all photon coefficients in any coefficient ring,*
+*Let $\gamma_k = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1^{-1}$ be a 4-term [photon](#def:photon), and let $\mathfrak{N}(\varphi_0, \varphi_1, \varphi_{01})$ be the nucleon NF of the derivation chain $\gamma\gamma \to q\bar{q} \to \mathcal{B}_3 \cdot \mathrm{crossings}$ with the flavours $f$ supplied as input to the second stage. Then for all photon coefficients in any coefficient ring,*
 
 $$
   \mathfrak{N}(\varphi_0, \varphi_1, \varphi_{01}) = \mathfrak{N}_f .

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2012.00062v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2012.00062v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -45,6 +45,18 @@
     "library/arxiv-2012.00062v3/sections/sec-030"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY — The partition function of complex Chern-Simons theory on a 3-manifold with torus boundary reduces to a ﬁnite dimensional\n\n**PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY**\n\n*CHERN-SIMONS THEORY*\n\n68 pp, 32 sections.\n\n**Abstract.** The partition function of complex Chern-Simons theory on a 3-manifold with torus boundary reduces to a ﬁnite dimensional state-integral which is a holomorphic function of a complexiﬁed Planck’s constant τ in the complex cut plane and an entire function of a complex parameter u. This gives rise to a vector of factorially divergent perturbative formal power series whose Stokes rays form a peacock-like pattern in the complex plane. We conjecture that these perturbative series are resurgent, their trans-series involve two non-perturbative variables, their Stokes automorphism satisﬁes a unique factorization prop- erty and that it is given explicitly in terms of a fundamental matrix solution to a (dual) linear q-diﬀerence equation. We further conjecture that a distinguished entry of the Stokes automorphism matrix is the 3D-index of Dimofte–Gaiotto–Gukov.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Chern–Simons theory with compact and compl; 1.2 Resurgence and the Stokes automorphism; 1.3 A q-holonomic module of the partition func; 1.4 Perturbative series and their resurgence; 1.5 Disclaimers; 1.6 Further directions; Acknowledgements; 2 Borel resummation and Stokes automorphisms; 2.2 Stokes automorphism; 3 A summary of the story when u=0; 3.1 The 41 knot when u=0; 3.2 The 52 knot when u=0; 4 Holonomic and elliptic functions inside and ; 5 The 41 knot; 5.1 Asymptotic series; 5.2 Holomorphic blocks",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -68,8 +80,8 @@
       "stamp_date": "7 Apr 2022"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

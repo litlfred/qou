@@ -45,6 +45,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import AME_B_HE4_MEV_VALIDATION
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 set_compute_dps()
 HERE = Path(__file__).parent
@@ -55,7 +56,7 @@ M_E_MEV = mp.mpf("0.51099895069")
 # AME2020 binding energies (MeV) for the four light isotopes whose
 # χ^λ caches exist. These are the *targets*, never inputs to Vol_λ.
 AME_B = {
-    "deuteron": mp.mpf("2.2245662"),
+    "deuteron": AME_B_DEUTERON_MEV_VALIDATION,
     "tritium": mp.mpf("8.4818"),
     "helium-3": mp.mpf("7.7180"),
     "helium-4": AME_B_HE4_MEV_VALIDATION,

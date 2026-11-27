@@ -1,0 +1,1 @@
+(1) The representation β of AC ⊗A0 C in H of (2.6) is the direct sum of two irreducible representations in the decomposition (2.10) H = e1H ⊕e2H = H1 ⊕H2 , β = β1 ⊕β2. (2) The representation β1 (resp β2) is the only irreducible representation of the reduced algebra of B by e1 ⊗e0 2 (resp. e2 ⊗e0 1). (3) The dimension of Hj is equal to k1k2.

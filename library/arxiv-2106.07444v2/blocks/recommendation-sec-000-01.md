@@ -1,1 +1,0 @@
-In particular, the retraction should transport the doubled weight filtration $\bm{w}_{\leq 2\ast}$ on the compactly-supported cohomology of $[\cal{Z}(\beta)/G]$ to the perverse filtration $\bm{p}_{\leq \ast}$ on the cohomology of $\cal{B}_\nu^\mathit{aff}$, up to a degree shift.

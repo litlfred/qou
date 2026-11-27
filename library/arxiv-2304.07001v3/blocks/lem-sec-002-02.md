@@ -1,0 +1,1 @@
+Let s and t be coprime positive integers and D(s, t) be the set given by (1.21). Then the integers in the set S = {±(nt ± ms) : (n, m) ∈D(s, t)} are distinct and thus |S| = 2(s −1)(t −1). 14 S. CREW, V. FANTINI, A. GOSWAMI, R. OSBURN, AND C. WHEELER,

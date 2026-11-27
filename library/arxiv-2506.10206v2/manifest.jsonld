@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2506.10206v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2506.10206v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -44,6 +44,18 @@
     "library/arxiv-2506.10206v2/sections/sec-029"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Analytic Dilogarithm Identities — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations\n\n**Analytic Dilogarithm Identities**\n\n*Cetin Hakimoglu-Brown*\n\n40 pp, 31 sections.\n\n**Abstract.** We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations, solving open problems given by both Bytsko and Campbell, and that we further apply to construct and prove new ladder relations with quartic and sextic bases. We also apply our method to introduce and prove two-term Li2-relations and ladder-like identities with arguments in algebraic number fields such as Q( √ 2), Q( √ 3), Q( √ 5), and Q(√−7). Moreover, single-term dilogarithm evaluations are introduced and derived.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Preliminaries; 2 Sextic integrals and dilogarithm identities; 3 Applications; 3.1 A full solution to a problem due to Sun; 3.2 On an identity attributed to Lima; 3.3 Zagier's four-term identity; 3.4 Identities related of an evaluation for th; 3.5 A series of convergence rate $\\frac{1}{243; 4 Elliptic ${}_{4}F_{3}$-series; 5 Hypergeometric series for $\\pi^2$; 6 A proof of Campbell's conjecture; 6.1 Related dilogarithm identities; 7 Higher-order fields; 7.1 A two-term ladder identity for the Plastic; 8 Applications of Roger's identity; 9 Derivation of the Loxton--Lewin $\\frac{\\pi}{",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {
@@ -66,8 +78,8 @@
       "stamp_date": "19 Jun 2025"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

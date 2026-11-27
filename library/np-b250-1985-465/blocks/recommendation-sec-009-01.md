@@ -1,1 +1,0 @@
-Under a chiral transformation of the external fields U(x) transforms according to the representation e °ttj~ U(x) = e iO~ ~ U(x) e '°~'7 (6.6) This property may be used to transform U(x) into the unit matrix" it suffices to choose the matrix/3(x) such that e -2~t~xl = U(x).

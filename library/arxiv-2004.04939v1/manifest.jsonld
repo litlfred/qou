@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2004.04939v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2004.04939v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -20,6 +20,18 @@
     "library/arxiv-2004.04939v1/sections/sec-005"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "BRAID GROUP ACTION ON THE MODULE CATEGORY OF — Let g0 be a simple Lie algebra of type ADE and let U ′ q(g) be the corre- sponding untwisted quantum aﬃne algebra.\n\n**BRAID GROUP ACTION ON THE MODULE CATEGORY OF**\n\n*QUANTUM AFFINE ALGEBRAS*\n\n10 pp, 7 sections.\n\n**Abstract.** Let g0 be a simple Lie algebra of type ADE and let U ′ q(g) be the corre- sponding untwisted quantum aﬃne algebra. We show that there exists an action of the braid group B(g0) on the quantum Grothendieck ring Kt(g) of Hernandez-Leclerc’s category C 0 g . Focused on the case of type AN−1, we construct a family of monoidal autofunctors {Si}i∈Z on a localization TN of the category of ﬁnite-dimensional graded modules over the quiver Hecke algebra of type A∞. Under an isomorphism between the Grothendieck ring K(TN) of TN and the quantum Grothendieck ring Kt(A(1) N−1), the functors {Si}1≤i≤N−1 recover the action of the braid group B(AN−1). We inves- tigate further properties of these functors.\n\n**Outline.** Front matter; 1 Introduction; 2 Braid group action on the quantum Grothendie; 3 The category TN and reflection functors; 4 Reflections by root modules; 5 Conjectures; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -41,8 +53,8 @@
       "stamp_date": "10 Apr 2020"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

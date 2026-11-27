@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-05T14:19:48.405382+00:00",
-  "commitSha": "2555dc4d140dd0f715c5c15d8b89c1171d7760ad",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T18:36:08.037217+00:00",
+  "commitSha": "cf9c86db5f7c58395baefaeb58e40f7ccaf8641e",
   "assertions": [
     {
       "name": "bar_even_invariant_holds_for_N2_factor",
@@ -10,15 +10,15 @@
       "expected": 1,
       "passed": true,
       "tolerance": 0,
-      "source": "Bar-even kernel invariant (§4(b) formalize-first gate from refuted-class map): the N=2 ladder factor (1 - b²·ℏ_q⁴) = (1 - u²) is the bar-even prototype. Verified: (1) PR #1786 anchor reproduces; (2) b² is bar-symmetric; (3) ℏ_q²(q⁻¹) = q²·ℏ_q²(q) formal scaling holds; (4) bar-asymmetry measure is b²·ℏ⁴·(q⁴-1), vanishing iff q⁴=1 (cyclotomic anchor — matches fibre-level framing); (5) α_EM kernel IS bar-symmetric (consistent with PR #1521 scalar Habiro success); (6) N=2 leading t-Taylor coefficients up to t^3 all vanish (bar-even prototype). Complements PR #1839's CFinite.recurrence_step: this gates the input kernel; that engine produces the next c_k from it."
+      "source": "Bar-even kernel invariant (§4(b) formalize-first gate from refuted-class map): the N=2 ladder factor (1 - b²·ℏ_q⁴) = (1 - u²) is the bar-even prototype. Verified: (1) PR #1786 anchor reproduces; (2) b² is bar-symmetric; (3) ℏ_q²(q⁻¹) = q²·ℏ_q²(q) formal scaling holds; (4) bar-asymmetry measure is b²·ℏ⁴·(q⁴-1), vanishing iff q⁴=1 (cyclotomic anchor — matches fibre-level framing); (5) α_EM kernel IS bar-symmetric (consistent with PR #1521 scalar Habiro success); (6) N=2 leading t-Taylor coefficients up to t^3 all vanish (bar-even prototype). Complements PR #1839's QOU.QBeta.recurrence_step: this gates the input kernel; that engine produces the next c_k from it."
     }
   ],
   "allPassed": true,
-  "durationMs": 574,
+  "durationMs": 334,
   "computation": "qbeta-bar-even-kernel-invariant-probe",
   "scriptFile": "qbeta_bar_even_kernel_invariant_probe.py",
-  "scriptHash": "3565fef8c0d9",
-  "scriptCommitSha": "2555dc4d140dd0f715c5c15d8b89c1171d7760ad",
+  "scriptHash": "4f95d33b2699",
+  "scriptCommitSha": "b21207b146d997ef0d46e0d10f21b038afcaa775",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -26,11 +26,20 @@
     "truncation_bound": "1e-50"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "8094096a28948d48"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_bar_even_kernel_invariant_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_bar_even_kernel_invariant_probe.py"
   },
   "description": "Verifies the bar-even kernel invariant from prop:q-beta-bar-even-kernel-invariant — the §4(b) formalize-first gate of the refuted-class map. Confirms (1) the N=2 factor (1 - b²·ℏ_q⁴) is the structural bar-even prototype (matches PR #1786); (2) the bar-asymmetry measure under q↦q⁻¹ is b²·ℏ_q⁴·(q⁴-1) — vanishes IFF q⁴=1 (cyclotomic anchor); (3) α_EM is Taylor-bar-even, Q_β trace-difference is not.",
   "contentBlock": "prop:q-beta-bar-even-kernel-invariant",

@@ -97,4 +97,16 @@ theorem s5_so3_fiber_action_unconditional :
         = bringFiberAction_icosahedral.irrepToRotation p.toA5Irrep) :=
   s5_so3_fiber_action_scaffold
 
+/-- **Weighted character orthogonality on the 5-fold class (`uer8`).**
+Weighting `reebCos l = χ_l(C₅)/dim_l` by `dim_l²` across the five irreps of `A₅`
+(`1, 3, 3, 4, 5`) recovers the column orthogonality relation `∑_l dim_l · χ_l(C₅) = 0`. -/
+theorem reebCos_dim_sq_weighted_sum_zero :
+    (1 : ℝ) ^ 2 * reebCos .A + (3 : ℝ) ^ 2 * reebCos .T₁ +
+      (3 : ℝ) ^ 2 * reebCos .T₂ + (4 : ℝ) ^ 2 * reebCos .G +
+      (5 : ℝ) ^ 2 * reebCos .H = 0 := by
+  have hA : reebCos .A = 1 := rfl
+  have hH : reebCos .H = 0 := rfl
+  dsimp [reebCos]
+  ring
+
 end QOU.BraidsAndKnots

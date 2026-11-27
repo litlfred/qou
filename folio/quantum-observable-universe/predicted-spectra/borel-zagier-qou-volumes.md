@@ -1,5 +1,3 @@
-**Conjecture (Borel--Zagier for QOU volumes).**
-
 The three QOU hyperbolic volumes are $\mathbb{Q}$-linearly independent:
 
 $$

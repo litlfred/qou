@@ -1,0 +1,1 @@
+Let γ ∈H 2 +β0,q(R/Z, Rn), α ≥2, and β0 ≥β ≥0, p, q ∈(1, ∞) be such that β0 −1/q > β −1 2p. Then for all τ1, τ2, s1 ∈[0, 1] the function g(u) := 1/2 Z −1/2 Gα γ(u + w) −γ(u) w ! |γ′(u + τ1w) −γ′(u + τ2w)|2 w2 γ′(u + s1w)dw is in Hβ,p. Furthermore, there is a constant C < ∞depending on ∥γ∥H3/2+β0,q and α, but not on τ1, τ2, and s1, such that ∥g∥Hβ,p ≤C.

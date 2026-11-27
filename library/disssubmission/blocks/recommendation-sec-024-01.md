@@ -1,1 +1,0 @@
-Intuitively, this conjecture says that in marked contrast with the singular situation for Jacobian varieties, for a smooth theta divisor Θ the Tannaka group G(δΘ) should be as large as possible — see lemma 4.6 below.

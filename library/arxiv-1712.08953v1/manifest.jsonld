@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1712.08953v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1712.08953v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -21,6 +21,18 @@
     "library/arxiv-1712.08953v1/sections/sec-006"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an oriented link, in the same\n\n**REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY**\n\n*JONATHAN BRUNDAN*\n\n57 pp, 8 sections.\n\n**Abstract.** The oriented skein category OS(z, t) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an oriented link, in the same way that the Temperley-Lieb category underpins the Jones polynomial. In this article, we develop its representation theory using a highest weight theory ap- proach. This allows us to determine the Grothendieck ring of its additive Karoubi envelope for all possible choices of parameters, including the (already well-known) semisimple case, and all non-semisimple situations. Then we construct a graded lift of OS(z, t) by realizing it as a 2-representation of a Kac-Moody 2-category. We also discuss the degenerate analog of OS(z, t), which is the oriented Brauer category OB(δ).\n\n**Outline.** Front matter; 1 Introduction; 2 Generators and relations; 4 The affine oriented skein category; 5 Shortest word theory; 6 Branching rules and characters; 7 Categorical action; 8 Modifications in the degenerate case",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -42,8 +54,8 @@
       "stamp_date": "24 Dec 2017"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

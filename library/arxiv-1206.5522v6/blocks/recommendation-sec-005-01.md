@@ -1,1 +1,0 @@
-To apply Quillen's Theorem B we must show that each morphism $(U\hookrightarrow M) \hookrightarrow (V\hookrightarrow M)$ in $\mathcal I$ induces an equivalence of spaces $\mathsf B\bigl((\mathcal I_M)_{/(U\hookrightarrow M)}\bigr) \simeq \mathsf B\bigl((\mathcal I_M)_{/(V\hookrightarrow M)}\bigr)$.

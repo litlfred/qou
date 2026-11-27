@@ -18,6 +18,7 @@ export default remark({
     "audit-forward-reference",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The Lean class scaffold encodes the abstract generators, formal signed words, defining relations, and Plancherel completeness as class hypotheses. Downstream Lean theorems take `[HeckeRelations n q]` and `[HeckeWedderburn n q]` as hypotheses. The per-$n$ instances plug in when the relation-quotient and Murphy seminormal-form infrastructure land." },
     {
       kind: "status",
       date: "2026-06-03",

@@ -1,13 +1,34 @@
 # Quantum Observable Universe
 
-[![Lean CI](https://github.com/litlfred/qou/actions/workflows/lean_ci.yml/badge.svg)](https://github.com/litlfred/qou/actions/workflows/lean_ci.yml)
-[![Build & Publish](https://github.com/litlfred/qou/actions/workflows/publish.yml/badge.svg)](https://github.com/litlfred/qou/actions/workflows/publish.yml)
-[![Blueprint](https://github.com/litlfred/qou/actions/workflows/blueprint.yml/badge.svg)](https://github.com/litlfred/qou/actions/workflows/blueprint.yml)
+[![Build site](https://github.com/litlfred/qou/actions/workflows/build.yml/badge.svg)](https://github.com/litlfred/qou/actions/workflows/build.yml)
 
 A formal mathematics paper exploring the Quantum Observable Universe (QOU)
 with machine-checked **Lean 4** formalization, **content-object architecture**
 (TypeScript + Markdown + Lean triples), and an interactive **Folio Assistant**
 platform for browsing, reviewing, and exploring the work.
+
+> **This is a work in progress.** Meaningful contributions are welcome.
+> Start with the [Authors' Note](folio/quantum-observable-universe/authors-note/authors-note-status.md),
+> which says where the open problems are and how the model's numbers compare
+> with experiment, then read [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Read the work
+
+| | |
+|---|---|
+| **Web view** | [litlfred.github.io/qou](https://litlfred.github.io/qou/) |
+| **PDF** | [Full paper](https://github.com/litlfred/qou/blob/gh-pages/papers/quantum-observable-universe/quantum-observable-universe.pdf) (per-chapter PDFs in [Contents](#contents)) |
+| **Lean library** | [Rendered declarations and source](https://litlfred.github.io/qou/lean/) |
+| **QA reports** | [`qa-reports` branch](https://github.com/litlfred/qou/tree/cat/cat-harness/qa-reports), one report per commit |
+| **Workplan** | [Plans and work](https://litlfred.github.io/qou/beans/): the open work items, rendered (source: the [`cat/cat-harness/beans`](../../tree/cat/cat-harness/beans) branch) |
+| **Status and accuracy** | [Authors' Note: a work in progress](folio/quantum-observable-universe/authors-note/authors-note-status.md) |
+| **How to contribute** | [CONTRIBUTING.md](CONTRIBUTING.md) · [Contributors](CONTRIBUTORS.md) |
+| **License** | [CC BY 4.0](LICENSE) |
+| **Observational scorecard** | [ACCURACY.md](ACCURACY.md) (`1 ppQ` floor & CODATA / PDG / AME2020 comparison) |
+
+The PDF was rebuilt from `main` on 2026-11-24. The web view's front page and
+the Lean library render still date from July 2026; a rebuild of both is pending.
+The source in this repository is current.
 
 ## Content-Object Architecture
 
@@ -525,7 +546,7 @@ The compute pipeline is layered into reusable packages so external researchers c
 |----------|---------|
 | `build-lean-mcp.yml` | Build Paper Assistant Image |
 | `build.yml` | build |
-| `compute-qa.yml` | compute-QA (all gates, publish to qa-reports) |
+| `compute-qa.yml` | QA publish: every writer `qou.json` declares under `qa` (accuracy, compute gates, Lean audit, rendered paper), to qa-reports, via the platform's `layer-qa-publish.yml` |
 | `kg-vocabulary-gate.yml` | kg-vocabulary-gate |
 | `lake-cache-refresh.yml` | Lake cache refresh (orphan-branch family) |
 | `lean-axiom-guard.yml` | lean-axiom-guard |
@@ -588,3 +609,9 @@ This work is licensed under a
 You are free to share and adapt this material for any purpose, provided
 appropriate credit is given, a link to the license is provided, and any
 changes made are indicated.
+
+The license covers the **whole repository**: the paper text, the Lean
+formalisation, the Python and Rust code, and the data and witnesses. Third-party
+material keeps the notice that ships beside it. Contributions are accepted under
+the same license; see [`CONTRIBUTING.md`](CONTRIBUTING.md) for the contribution
+policy and how a merged pull request earns authorship.

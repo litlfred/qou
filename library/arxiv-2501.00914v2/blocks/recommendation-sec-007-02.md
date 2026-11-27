@@ -1,1 +1,0 @@
-By the first claim, this must be a proper containment, and we can write \[\hat\Sigma_1=\hat\Sigma_0 \cup S_1\cup \dots \cup S_k,\] where $S_1,\dots,S_m$ are some components of $\Sigma\setminus \Gamma$ adjacent to $\Sigma_0$.

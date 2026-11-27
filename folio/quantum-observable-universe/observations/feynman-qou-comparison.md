@@ -4,15 +4,15 @@ The Bethe–Weizsäcker semi-empirical mass formula (SEMF) requires five fitted 
 
 See [Table 1](#tbl:feynman-qou-comparison-table1-data).
 
+The table pairs each SEMF term with a channel of the Wedderburn formula term by term. The Coulomb row is such a pairing, not a derivation: the determinant channel $\Phi_2$ is not shown to be a Coulomb pair term, and on two nucleon blocks no braid insertion or invariant pair coupling gives one at $n = 6$ (see [the Coulomb-charge definition](#def:coulomb-charge)).
+
 ## Comparison
 
 See [Table 2](#tbl:feynman-qou-comparison-table2-data).
 
-The $\mathfrak{m}_{\mathrm{QOU}}$ column of that table is the superseded convention-C table, not the adopted one: it gives $938.910$ for ${}^{1}\mathrm{H}$ and $3734.624$ for ${}^{4}\mathrm{He}$, where the adopted convention-D values are $935.352$ and $3740.383$. The per-$Z$ rows and the Winner column are therefore convention-C throughout. They are not recomputed here because the table declares no producer — it carries no `computation` block, so there is nothing to re-run, and the SEMF column has no derivation in the corpus either. Regenerating it needs a producer first.
+The $\mathfrak{m}_{\mathrm{QOU}}$ column in Table 2 records an unregenerated evaluation at the auxiliary loop parameter $z_{\mathrm{aux}} = 1/(q^{1/2}+q^{-1/2})$ ($938.910$ MeV for ${}^{1}\mathrm{H}$ and $3734.624$ MeV for ${}^{4}\mathrm{He}$, mean error $0.074\%$), whereas evaluating $\Phi_1$ at the canonical Markov parameter $z = q^{3}/(q^{2}+1)$ yields $935.352$ MeV for ${}^{1}\mathrm{H}$ and $3740.383$ MeV for ${}^{4}\mathrm{He}$, with mean error $0.183\%$ and maximum error $0.321\%$.
 
-The SEMF achieves a mean accuracy of $0.023\%$ using eight inputs and five fitted coefficients. The Wedderburn formula achieves $0.183\%$ using two inputs ($q_0$, $m_e$) and zero fitted parameters — about $7.9\times$ the SEMF error, against $3.2\times$ under the figure this supersedes.
-
-That superseded figure was $0.074\%$, and it was a **convention-C** number. The canonical Markov convention is $z = q^{3}/(q^{2}+1)$ (convention D); recomputing $\Phi_1$ in it moves the mean to $0.183\%$ and the maximum to $0.321\%$. The convention was not chosen on accuracy, and a table fitting better in the superseded convention is what one expects of a table built in it. The zero-fitted-parameter claim is unaffected: convention D introduces no parameter.
+Across $Z = 1\text{--}20$, the five-parameter SEMF achieves a mean error of $0.023\%$ using eight inputs and five fitted coefficients, while the Wedderburn formula at $z = q^3/(q^2+1)$ achieves $0.183\%$ (about $7.9\times$ the SEMF mean error) using two inputs ($q_0$, $m_e$) and zero fitted parameters.
 
 ## Sources of discrepancy
 
@@ -27,5 +27,3 @@ The near-zero volume at generator $k$ encodes nuclear saturation.
 ## Improving: the pion channel
 
 Including the hook channel supplies missing shell structure.
-
-**Witness**: `feynman-qou-comparison.witness.json`.

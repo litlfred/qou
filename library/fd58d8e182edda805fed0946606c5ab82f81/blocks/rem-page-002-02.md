@@ -1,0 +1,1 @@
+The term ∑βjuj in the expression (2.1) is called a normal form (or a remainder) of p with respect to the subset S (and with respect to the monomial order <). In general, a normal form is not unique. As an immediate corollary of Lemma 2.2, we obtain:

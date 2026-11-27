@@ -1,4 +1,4 @@
-**categorical scorecard at $q_0 = 1.1099785955541805\ldots$ (50 dps; CODATA-2018 muon pin, per the deprecated witness `derived-only-formula.witness.json`):**
+**categorical scorecard at $q_0 = 1.1099785955541805\ldots$ (50 dps; CODATA-2018 muon pin, per a deprecated computation record):**
 
 See [Table 1](#tbl:derived-mass-formula-light-isotopes-table1-data).
 

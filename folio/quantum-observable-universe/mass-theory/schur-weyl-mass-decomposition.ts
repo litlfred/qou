@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Schur–Weyl decomposition of the atomic mass trace",
   lean: {
-    ref: "qou:QOU.BraidKnot.schur_weyl_mass_decomposition",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.SchurWeylMassDecomposition",
     validation: "not_checked",
   },
   uses: [
@@ -29,6 +29,12 @@ export default proposition({
     requires: ["mpmath", "numpy", "scipy"],
   },
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-hand-adjudicated.lean` records the empty-partition witness that prompted retiring the `QOU.BraidKnot.schur_weyl_mass_decomposition` context wrapper.",
+      see: "docs/audits/2026-08-30-context-classes-hand-adjudicated.lean",
+    },
     {
       kind: "caveat",
       date: "2026-09-06",

@@ -22,4 +22,4 @@ $$
 \end{equation}
 ```
 
-The coordinate $Z$ takes values in the horizontal distribution $H$. The contact form and Reeb vector field thus supply the stereographic projection intrinsically, without external coordinates.
+The coordinate $Z$ takes values in the horizontal distribution $H$.

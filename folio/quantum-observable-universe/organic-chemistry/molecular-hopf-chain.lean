@@ -51,7 +51,7 @@ def MolecularHopfChain.linkingMatrix (c : MolecularHopfChain)
   if (i.val + 1 = j.val) ∨ (j.val + 1 = i.val) then c.bondOrder.order
   else 0
 
-/-- Alexander weight of a chain: (N-1) · Δ_{T(2,2)}(q) = N-1. -/
+/-- reduced Alexander weight (linking number) of a chain: (N-1) · Δ̃_{T(2,2)}(q) = N-1. -/
 def MolecularHopfChain.alexanderWeight (c : MolecularHopfChain) : ℕ :=
   c.length - 1
 

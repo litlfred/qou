@@ -1,5 +1,5 @@
 import Mathlib.Tactic
-import QOU.BraidKnot.KeystoneC8SuperExpBound
+import BraidKnotOctonion.KeystoneC8SuperExpBound
 
 /-!
 # QOU.Brings.classical_jet_period_zero — the classical-jet prolongation is exact

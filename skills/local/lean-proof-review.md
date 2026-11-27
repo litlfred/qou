@@ -2,228 +2,92 @@
 name: lean-proof-review
 roles: [collaborator, owner]
 description: >
-  Review Lean 4 proofs for correctness, style, and completeness.
-  Tracks review scores from multiple reviewers (human and agentic) in
-  proof-objects.json.  Integrates with the agent-review pipeline.
+  Review Lean 4 formalizations for mathematical soundness, statement integrity,
+  vacuity freedom, §7c base-ring generality, and Mathlib4 / Lean Reservoir
+  community style (`#lint`, `BP001`–`BP009`). Records structured verdicts in
+  per-block `.qa.json` sidecars and `docs/audits/lean-vacuity-review-ledger.json`.
 allowed-tools: Read Write Edit Bash Grep Glob
 ---
 
-# Lean Proof Review
+# Lean 4 Proof & Reservoir Style Review (`lean-proof-review`)
 
-## Overview
+## 1. Overview (Sidecar & Ledger Architecture)
 
-This skill defines how Lean proofs are reviewed by human and agentic reviewers.
-Reviews are stored as structured records in `proof-objects.json`, attached to
-individual proof objects.  The skill integrates with the existing agent-review
-workflow.
+Reviews of `.lean` library modules and content-block siblings record verdicts in per-block **`<block>.qa.json` sidecars** (via [`folio/pipeline/qa-agent-entry.ts`](../../folio/pipeline/qa-agent-entry.ts)) and the standalone library ledger `docs/audits/lean-vacuity-review-ledger.json` (via [`folio/pipeline/lean-vacuity-axiom-audit.ts`](../../folio/pipeline/lean-vacuity-axiom-audit.ts)).
 
-## When to Use This Skill
+> **Purged legacy artifacts:** Do **not** read or write `proof-objects.json`, `chapters/*.tex`, or `agent_review.py` (`proof-objects.json` has been frozen since the content-object migration; see [`docs/audits/2026-06-03-proof-objects-json-extractor-broken.md`](../../docs/audits/2026-06-03-proof-objects-json-extractor-broken.md)).
 
-- When reviewing a PR that modifies `lean/QOU/*.lean` files
-- When reviewing LaTeX changes that affect theorem statements
-- When running the agent-review pipeline with Lean content
-- When a Gemini code review touches files linked to proof objects
+---
 
-## Lean MCP Tools (paper-assistant)
+## 2. Five Mandatory Review Dimensions
 
-When the MCP server is available, **use MCP tools for all review checks**:
+### Review Type 1 — Compilation & Kernel Trust (`lean-proof-check`)
+- Type-checks cleanly under single-threaded `lean-overlay-env.sh` (`LEAN_NUM_THREADS=1 nice -n 15`; **never** bare `lake build` — see [`lean-build-hygiene.md`](lean-build-hygiene.md)).
+- Kernel axiom check (`lean_verify` MCP or [`scripts/lean-axiom-guard.py`](../../scripts/lean-axiom-guard.py)):
+  - **Tier-A / Tier-B Reservoir modules:** strictly `[propext, Classical.choice, Quot.sound]` ONLY (`0 sorry`, `0` custom `axiom`, `0` `Lean.ofReduceBool` / `native_decide`).
+  - **QOU modules:** zero uncited `sorry` or `axiom`; no hidden axiom-in-instance laundering (`proof-no-axiom-class-laundering`).
 
-| Review check | MCP tool | What it replaces |
-|-------------|----------|-----------------|
-| Type-checks (`lake build`) | `lean_diagnostic_messages` | Structured errors, no build needed |
-| Sorry audit | `lean_diagnostic_messages` | Filter warnings for sorry count |
-| Axiom dependencies | `lean_verify` | Returns axioms used + optional source scan |
-| Tactic quality | `lean_profile_proof` | Identifies slow tactics in a theorem |
-| Statement correctness | `lean_hover_info` | Check types of all symbols in statement |
-| Cross-references | `lean_references` | Find all uses of a declaration |
-| Declaration source | `lean_declaration_file` | Jump to where a symbol is defined |
+### Review Type 2 — Mathlib4 & Lean Reservoir Best-Practices (`BP001`–`BP009` + `#lint`)
+Run [`scripts/lean-best-practices-lint.py`](../../scripts/lean-best-practices-lint.py) (`--diff` or `--package <Pkg>`):
+- **`BP001`:** `set_option autoImplicit false` present; zero `autoImplicit true`.
+- **`BP002`:** `import`s precede `/-! ... -/` module docstring; Apache-2.0 copyright + `/-- ... -/` public declaration docstrings (`docBlame`).
+- **`BP003`:** Minimal targeted `import Mathlib.<Module>` (zero bare `import Mathlib`, avoid `import Mathlib.Tactic`).
+- **`BP004`:** `UpperCamelCase` structures/classes/inductives; `snake_case` theorems/lemmas (`_of_` suffix on conditional hypotheses).
+- **`BP008` & `BP009`:** Zero upward `QOU.*` imports inside Tier-A (`MathlibExt`) and Tier-B (`HeckeTemperleyLieb`, `TwistedFrobeniusHopf`, `ToricConicOpt`, `CompactQuantumMetrics`, `QCalculus`, `BraidKnotOctonion`) modules; zero new ad-hoc synonym directories under `lean/QOU/`.
+- **Mathlib4 `#lint` checks:** verify zero `docBlame`, `simpNF` (simp normal-form), `unusedArguments`, and `dupNamespace` warnings (`@[simp]` and `@[ext]` API completeness on new algebraic structures).
 
-### MCP-enhanced review workflow
+### Review Type 3 — §7c Base-Ring & Universe Generality (`BP005`, `BP006`)
+- Algebraic and $q$-combinatorial identities stated over `{R : Type*} [CommRing R]` / `[Field R]` / `[LinearOrderedField R]`, never gratuitously over `ℝ`.
+- Zero mixing of generic `[CommRing R]` and concrete `: ℝ` in the same file (`wall-side-correct`).
+- Zero decimal literals (`1.1097`), `Float`, `CODATA`, or `substrate_q` in community libraries or pre-wall chapters.
+- Category declarations universe-polymorphic: `(C : Type u) [Category.{v} C]`.
 
-1. **`lean_diagnostic_messages`** on the file under review → all errors/warnings
-2. **`lean_verify`** on each theorem → axiom audit (no `sorry`, no `Decidable.em` surprises)
-3. **`lean_profile_proof`** on complex theorems → flag tactics taking >1s
-4. **`lean_hover_info`** on key terms → verify types match LaTeX intent
-5. **`lean_references`** on modified declarations → check downstream impact
-6. **`git diff` + `lean_verify`** → statement integrity: no provable-kind
-   signature was weakened to pass, no axiom injection (see Review Type 4)
+### Review Type 4 — Statement Integrity (`proof-statement-integrity`)
+Adopted from AlphaProof Nexus `verify_integrity` + SafeVerify ([`docs/audits/2026-06-06-alphaproof-nexus-comparative-assessment.md`](../../docs/audits/2026-06-06-alphaproof-nexus-comparative-assessment.md)):
+- **Unweakened signature:** For any touched `theorem`/`lemma` backing a `proposition`/`corollary`/`theorem`/`lemma` block, verify via `git diff origin/main...HEAD -- '*.lean'` that binders, hypotheses, and conclusion were **not** weakened to make the proof pass (unless explicitly approved by the author and mirrored in `.md` + `.ts` in the same diff).
+- **Non-vacuity (`BP007` + [`lean-proof-vacuity-audit.md`](lean-proof-vacuity-audit.md)):** Confirm zero self-assuming projections (`:= d.claim_foo`), zero `: True` conclusions or fields, zero `Int`/`Bool` fake-Lean wrappers (`no-import-wrapper`), and zero `X - X = 0` definitional-subtraction tautologies (`sub-zero-tautology`).
 
-## Review Types
+### Review Type 5 — Content-Object Triple Equivalence (`proof-narrative-lean-equivalence`)
+- `.ts` `lean.ref` (`"<pkg>:<Decl>"` in [`schemas/lean-packages.ts`](../../schemas/lean-packages.ts)) resolves to the reviewed Lean declaration.
+- Sibling `.md` carries a substantive `**Proof.**` matching the Lean proof's mathematical structure (see [`proof-narrative-lean-equivalence.md`](proof-narrative-lean-equivalence.md)).
 
-### 1. Lean Proof Check (`lean-proof-check`)
+---
 
-Verifies:
-- Declaration type-checks (`lake build` passes)
-- No unexpected `sorry` usage
-- Correct use of mathlib tactics and lemmas
-- Style conformance (naming, documentation)
-
-### 2. Mathematical Rigor (`mathematical-rigor`)
-
-Verifies:
-- The Lean statement faithfully captures the LaTeX theorem
-- Proof strategy is sound (not just type-correct but mathematically meaningful)
-- Dependencies are correctly modeled
-
-### 3. Scientific Accuracy (`scientific-accuracy`)
-
-Existing review type — extended to cover Lean formalization:
-- Does the formal statement match the mathematical intent?
-- Are physical/mathematical assumptions correctly encoded?
-
-### 4. Statement integrity (`statement-integrity`)
-
-Guards against the *most dangerous* way a "proof" can pass: silently
-weakening or altering the **statement** until the compiler is satisfied.
-Adopted from AlphaProof Nexus's `verify_integrity` + SafeVerify gates
-(arXiv:2605.22763; see
-[`docs/audits/2026-06-06-alphaproof-nexus-comparative-assessment.md`](../../../docs/audits/2026-06-06-alphaproof-nexus-comparative-assessment.md)).
-
-Verifies:
-- **Signature unchanged.** For every provable-kind block touched on the
-  branch — content kinds `proposition`/`corollary`/`theorem`/`lemma` all
-  render to a Lean `theorem` or `lemma` declaration — the *signature* (name,
-  binders, hypotheses, conclusion type) is identical to its prior-commit
-  form — only the proof body changed. A signature change is permitted
-  **only** as an explicit, author-approved restatement, reflected in the
-  `.md` statement and `.ts` manifest in the same diff.
-- **No axiom injection.** `lean_verify` on the (sorry-free) declaration
-  shows no `sorryAx` and no axioms beyond the declared set — no laundering a
-  hole through a `Classical`-shaped placeholder or an axiomatised helper
-  that is not a registered conjecture class (AGENTS.md §3b-cond).
-- **No degenerate conditional-class projection.** A §3b-cond block must
-  *derive* its conclusion from class-axiomatised **hypotheses** — it must not
-  carry the conclusion itself as a class field and project it
-  (`theorem foo [Ctx] : claim := ctx.claim_foo`). That self-assuming
-  projection passes the conjectural-propagation audit (cone is
-  class-axiomatised) but **fails integrity** — the Lean asserts the `.md`
-  claim, it does not prove it. Fix: the class carries the genuine
-  sub-hypotheses / proof-chain steps; the theorem composes them (AGENTS.md
-  §3b-cond condition 5; exemplar `QOU/FluidDynamics/q_bkm_criterion.lean`
-  carries the two iff directions and derives the iff by `Iff.intro`).
-- **Base ring (§7c).** A statement-integrity fix stays over a generic
-  `{R : Type*} [CommRing R]`; reach for `ℝ` only when an archimedean
-  construct is genuinely required, *post-wall* — never via a chapter
-  `Shared` import that transitively pulls in `Mathlib.Data.Real.Basic`.
-  Verify the fixed declaration with `lake build -R <Module>` (the whole-lib
-  `lake build QOU` is red on ~50 pre-existing failures and is **not** the gate).
-
-Recipe:
+## 3. Standard CPU-Throttled Review Recipe
 
 ```bash
-# 1. signatures changed on this branch (provable kinds only)
-git diff origin/main...HEAD -- '*.lean' \
-  | grep -E '^[-+][[:space:]]*(theorem|lemma) '   # Lean keywords (content prop/cor render to these); heuristic — confirm multi-line signatures by hand
-# 2. for each decl now claimed proved, axiom audit (expect no sorryAx)
-#    lean_verify QOU.<Namespace>.<decl>
+export LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 \
+       OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1
+
+# 1. Inspect signature diffs on provable declarations:
+nice -n 15 git diff origin/main...HEAD -- '*.lean' | grep -E '^[-+][[:space:]]*(theorem|lemma|def|structure|class|axiom) ' || true
+
+# 2. Run static Mathlib4/Reservoir + vacuity + import-boundary linter:
+nice -n 15 python3 scripts/lean-best-practices-lint.py --diff
+
+# 3. Check KG DAG cut-edge invariant:
+nice -n 15 python3 scripts/lean-kg-detangler.py --summary-only
+
+# 4. Type-check via isolated overlay (never bare `lake build`):
+nice -n 15 bash scripts/lean-overlay-env.sh init
+nice -n 15 bash scripts/lean-overlay-env.sh build QOU/<Subgraph>/<Module>.lean
+
+# 5. Run vacuity & sidecar preflight:
+nice -n 15 bash scripts/check-sidecars.sh
 ```
 
-A weakened-statement or injected-axiom finding is **critical** →
-`REQUEST_CHANGES`. CI option: vendor
-[`GasStationManager/SafeVerify`](https://github.com/GasStationManager/SafeVerify)
-(Apache-2.0) into `lean_ci` to mechanise both checks.
+---
 
-## Review Record Schema
-
-Each review is stored in `proof-objects.json` under the object's `reviews` array:
-
-```json
-{
-  "reviewer_id": "claude-opus-4",
-  "reviewer_type": "agentic",
-  "review_type": "lean-proof-check",
-  "timestamp": "2026-03-19T12:00:00Z",
-  "verdict": "APPROVE",
-  "confidence": 0.85,
-  "severity_counts": { "critical": 0, "major": 0, "minor": 1 },
-  "issues": [],
-  "lean_status": {
-    "sorry_count": 0,
-    "type_checks": true
-  },
-  "commit_sha": "abc1234"
-}
-```
-
-### Verdicts
+## 4. Verdicts & Checklist
 
 | Verdict | Meaning |
-|---------|---------|
-| `APPROVE` | Proof is correct and complete |
-| `REQUEST_CHANGES` | Issues found that must be fixed |
-| `NEEDS_DISCUSSION` | Reviewer is uncertain; human input needed |
+|---|---|
+| `APPROVE` | Type-checks, axiom-clean, `lean-best-practices-lint.py --diff` clean, §7c-general, non-vacuous, `.md` equivalent |
+| `REQUEST_CHANGES` | Any critical/major defect (weakened statement, vacuity, `BP008` leak, gratuitous `ℝ`, compile failure) |
+| `NEEDS_DISCUSSION` | Mathematical restatement or conjecture-demotion requiring owner decision |
 
-### Confidence Scores
-
-For agentic reviewers:
-- **0.9–1.0**: High confidence (straightforward proof, well-known techniques)
-- **0.7–0.9**: Moderate confidence (complex proof, reviewer can follow the logic)
-- **0.5–0.7**: Low confidence (advanced techniques, reviewer may miss subtleties)
-- **< 0.5**: Very low confidence (flag for human review)
-
-## Integration with Agent Review Pipeline
-
-The `agent_review.py` script includes a `LEAN_REVIEW_SYSTEM` prompt for
-reviewing Lean proofs.  When a commit touches `lean/QOU/*.lean` files:
-
-1. The diff is sent to all configured LLMs with the Lean review prompt
-2. Each LLM produces a structured review
-3. Reviews are stored in `proof-objects.json`
-4. The coordinator synthesizes results
-
-## Integration with Gemini Code Review
-
-Google Gemini code review triggers on PRs.  To make it proof-aware:
-
-1. `proof-objects.json` is in the repo — Gemini sees it in diffs
-2. When `chapters/*.tex` changes, the JSON shows which Lean files are linked
-3. `.github/copilot-instructions.md` instructs Gemini to check linked Lean
-   declarations when reviewing LaTeX changes
-
-## Current Codebase State
-
-Live state — derived, not maintained in this skill file:
-
-- Sorry / admit / axiom counts: query `proof-objects.json` (built from
-  Lean diagnostics by CI) or run `lean_diagnostic_messages` per file via
-  the MCP server.
-- Per-file declaration inventory: `lean_file_outline`.
-- Axiom dependencies for any theorem: `lean_verify`.
-
-Do not rely on dated snapshots in this file — they go stale and mislead
-fresh agents. Always pull live counts before reporting.
-
-## Content Object Integration
-
-Each Lean file under review is part of a **content object triple**: the
-`.lean` sibling has a corresponding `.ts` manifest and `.md` narrative.
-Reviews must cross-check all three.
-
-**Manifest–Lean consistency.** Verify that:
-- The `lean.ref` URI in the `.ts` manifest (form `"<pkg>:<Decl>"`) names
-  the actual Lean declaration in the `.lean` file. Parse with
-  `parseLeanRef()` from `folio-assistant/schemas/lean-packages.ts`.
-- The block `kind` matches the Lean content: `definition` blocks should
-  contain `def` or `structure`; `theorem`/`lemma` blocks should contain
-  `theorem` or `lemma`.
-- The `label` prefix is correct for the kind (`def:`, `thm:`, `lem:`,
-  `prop:`, `cor:`).
-
-**Dependency satisfaction.** The `uses[]` array in the `.ts` manifest
-lists content object labels this block depends on. Verify that the `.lean`
-file imports or references the Lean declarations corresponding to those
-dependencies. Missing imports suggest incomplete formalization.
-
-**Status accuracy.** Formalization status is derived at build time from
-`.lean` file content — agents do not need to update any status field.
-
-## Checklist
-
-- [ ] All modified Lean files compile (`lake build`)
-- [ ] Review records include `reviewer_id`, `verdict`, `confidence`
-- [ ] Critical issues block merge
-- [ ] `sorry` count is accurately tracked (current: 0 active)
-- [ ] Linked LaTeX content is consistent with Lean statements
-- [ ] All sorry stubs have bibliographic citations or blocking-reason comments
-- [ ] Provable-kind signatures unchanged vs prior commit (or author-approved restatement)
-- [ ] `lean_verify` shows no `sorryAx` / unexpected axioms on declarations claimed proved
+- [ ] Compiled cleanly via `lean-overlay-env.sh` / `lean_diagnostic_messages` with `LEAN_NUM_THREADS=1 nice -n 15`
+- [ ] `lean-best-practices-lint.py --diff` reports `critical=0` (`BP001`–`BP009`)
+- [ ] Provable signatures unchanged vs `origin/main` (or author-approved restatement in `.md` + `.ts`)
+- [ ] Kernel axioms verified clean (`[propext, Classical.choice, Quot.sound]` on proved claims)
+- [ ] Verdict recorded in `.qa.json` sidecar / vacuity ledger

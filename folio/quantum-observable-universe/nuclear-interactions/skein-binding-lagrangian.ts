@@ -15,8 +15,14 @@ export default definition({
   lean: { ref: "qou:QOU.Braiding.SkeinBindingLagrangian",
     validation: "not_checked",
   },
-  uses: ["prop:qou-canonical-action"],
+  uses: ["def:categorical-hamiltonian", "prop:qou-canonical-action", "def:coulomb-charge", "conj:weinberg-angle-categorical"],
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-22",
+      body: "Coulomb item rewritten 2026-11-22 (issue #9102, PR #9103). The previous text said each proton–proton crossing's q-deformed wedge asymmetry \"evaluates directly to the electrostatic penalty\" via a U(1) sub-action; nothing in the corpus derives that, and audit `docs/audits/2026-11-21-neutron-heavier-sign.md` §26–§29 shows no braid element or invariant pair coupling gives a Q_A·Q_B term. Input table from audit §25. Bounded-degree statement: `QOU.Hecke.BoundedDegreeCoulomb`. Coulomb needs sin²θ_W and Z removal: `QOU/QBeta/NeutralExchangeSplit.lean`, `QOU/QBeta/CoulombNeedsZRemoval.lean` (sorry-free). α_EM: owner ruling 2026-11-21 (the canonical α_em form stays open, bean `qou-aemx`); conditional on the Gram matrix with no instance of `ChernSimonsCorrectionConjecture` (bean `qou-gbsa`). Producer: `computations/coulomb_energy.py`.",
+    },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): A witness now exists: [`mirror-split-continuum-em`](../../../computations/deltalambda/mirror-split-continuum-em.witness.json), computed by [`coulomb_energy.py`](../../../computations/coulomb_energy.py) with **zero fitted constants**." },
     {
       kind: "note",
       body:

@@ -1,1 +1,0 @@
-If a simplex $\Delta$ is decorated by the cosets $(N,g_0N,g_1N,g_2N)$, the simplex $\Delta^{\text{opp}}$ must be decorated by the cosets $(N,dg_0N,dg_1N,dg_2N)$, where $d$ is the image of the generator of $\pi_1(T)$ pairing the faces of $\Delta$ and $\Delta^{\text{opp}}$.

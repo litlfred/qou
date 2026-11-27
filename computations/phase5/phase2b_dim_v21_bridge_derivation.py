@@ -251,7 +251,7 @@ def main():
         "decomposes as 1 + q⁻³·χ^(2,1) + q⁻⁶ via Wedderburn, and "
         "the integer 2 divides both 2·m_μ and 12·m_e = 2·6·m_e."
     )
-    w.set_content_block("prop:proton-mass-substrate-identity")
+    w.set_content_block("conj:proton-mass-substrate-identity")
     w.add_data("wedderburn_decomposition", {
         "F_Bor": "1 + q⁻³·χ^(2,1)(β_Bor) + q⁻⁶",
         "F_Bor_at_q1": str(F_Bor_at_1),

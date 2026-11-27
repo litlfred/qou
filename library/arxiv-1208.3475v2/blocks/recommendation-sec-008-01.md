@@ -1,1 +1,0 @@
-For this reason we expect $\lambda_c$ to be renormalized in exactly the same way as the quark mass and the ratio of $\lambda_c a$ to the bare light quark mass $m\ensuremath _{\mbox{\scriptsize ud}} a$ should have a proper continuum limit.

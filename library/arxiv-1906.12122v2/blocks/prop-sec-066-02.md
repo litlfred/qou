@@ -1,0 +1,1 @@
+The average quark mass was then varied to produce predictions, with uncertainties determined via Bayesian techniques (Furn- stahl et al., 2015c,b; Wesolowski et al., 2016), for the polarizabilities at unphysical pion masses (Grießhammer et al., 2016b), to which lattice QCD results can be com- pared.

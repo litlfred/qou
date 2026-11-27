@@ -1,0 +1,1 @@
+Under Setup 17.2.1, the two properties below are equivalent: (i) The graded ring A satisﬁes the χ condition, and it has ﬁnite local cohomo- logical dimension. (ii) The graded ring A has a balanced dualizing complex.

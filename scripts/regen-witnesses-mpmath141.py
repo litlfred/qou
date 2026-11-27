@@ -85,7 +85,7 @@ def _py_index() -> dict[str, list[pathlib.Path]]:
         for p in REPO.rglob("*.py"):
             sp = str(p)
             if ("_deprecated" in sp or "fsh-guts" in sp) or ".lake" in sp or "/_internal/" in sp \
-                    or "/.git/" in sp:
+                    or "/.git/" in sp or "/.claude/" in sp:
                 continue
             idx.setdefault(p.name, []).append(p)
         _PY_INDEX = idx

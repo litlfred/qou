@@ -3,11 +3,11 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:lepton-bring-surface-h3-3channel",
   lean: {
-    ref: "qou:QOU.BraidKnot.LeptonBringSurfaceH3.lepton_V_hat_h3_3channel",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.LeptonBringSurfaceH3.lepton_V_hat_h3_3channel",
     validation: "not_checked",
   },
   title:
-    "Lepton Bring-surface representation: 3-sheet H_3 Wedderburn channels (analog of nucleon 3-quark color tubes); $\hat{V}_\ell$ for any torus-knot lepton σ_1^k is computed via the H_3 3-channel Plancherel-weighted character sum with Markov-traced std-channel; verifies $\hat{V}_e$ ≈ 0.594 against `mass-endomorphism-tower.md` paper convention",
+    "Lepton Bring-surface representation via three-sheet $H_3$ Wedderburn channels for $\hat{V}_\ell$",
   uses: [
     "def:bar-involution",
     "prop:per-braid-mass-tower",

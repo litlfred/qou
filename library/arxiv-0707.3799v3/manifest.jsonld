@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0707.3799v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0707.3799v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -37,6 +37,18 @@
     "library/arxiv-0707.3799v3/sections/sec-022"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Equivariant Satake category and Kostant-Whittaker reduction — 24 sections: Front matter; Introduction; Notation and statements of the res\n\n**Equivariant Satake category and Kostant-Whittaker reduction**\n\n*KOSTANT-WHITTAKER REDUCTION*\n\n32 pp, 24 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Notation and statements of the results; 2.2 Asymptotic ˇg-modules; 2.3 Kostant functor κℏ; 2.4 Equivariant cohomology of GrG; 2.5 Equivariant homology and quantum Toda latt; 2.6 Quasiclassical limit; 2.7 Equivalences; 3 Topology; 3.3 Levi-equivariant cohomology; 3.4 Transitivity for a pair of Levi subgroups; 3.5 Tensor structure on equivariant cohomology; 4 Algebra; 4.1 Some properties of the Kostant functor κℏ; 4.2 De-symmetrized Kostant functor κℏ; 4.3 Canonical filtration on φ(V ); 4.4 Whittaker modules for Levi subalgebras",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -59,8 +71,8 @@
       "stamp_date": "25 Feb 2026"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

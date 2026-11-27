@@ -1,7 +1,7 @@
 import Mathlib.Tactic
-import QOU.Archimedean.ClausenFunctionMathlibFiller
-import QOU.Archimedean.ThreeSubstantiveMathlibFillers
-import QOU.Archimedean.DilogarithmArchimedeanLimit
+import MathlibExt.ClausenFunctionMathlibFiller
+import QOU.MassTheory.ThreeSubstantiveMathlibFillers
+import MathlibExt.DilogarithmArchimedeanLimit
 
 
 /-!
@@ -28,6 +28,7 @@ requiring upstream Mathlib contributions.
 -- Ref: [leitner2026] rem:three-substantive-mathlib-fillers
 -- Ref: [zagier1986]
 -- Ref: [faddeev1994]
+-- Ref: [faddeev_kashaev1994] https://arxiv.org/abs/hep-th/9310070 (pentagon identity)
 -/
 
 namespace QOU.Archimedean.PartialClosures

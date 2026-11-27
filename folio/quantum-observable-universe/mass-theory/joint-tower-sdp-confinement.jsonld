@@ -1,20 +1,21 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-joint-tower-sdp-confinement",
+  "@id": "papers/quantum-observable-universe/blocks/conj-joint-tower-sdp-confinement",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
-  "label": "prop:joint-tower-sdp-confinement",
-  "kind": "proposition",
+  "label": "conj:joint-tower-sdp-confinement",
+  "kind": "conjecture",
   "title": "Joint mass-tower confinement SDP at $q_0$ with GB-filtration + jet-order tracking",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-atom-knot-mass-derivation"
+    "papers/quantum-observable-universe/blocks/conj-atom-knot-mass-derivation"
   ],
   "tags": [
     "sdp",
@@ -26,7 +27,7 @@
     "wedderburn",
     "cross-level-consistency"
   ],
-  "leanRef": "qou:QOU.BraidKnot.joint_tower_sdp_confinement",
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.JointTowerSdp",
   "text": "joint-tower-sdp-confinement.md",
   "leanSource": "joint-tower-sdp-confinement.lean",
   "provenance": "authored"

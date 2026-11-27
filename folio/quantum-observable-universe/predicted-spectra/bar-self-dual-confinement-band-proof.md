@@ -1,4 +1,3 @@
-*Proof.*
 The fixed point of $\iota$ on $\mathbb{R}_{>0}$ is $q = 1$, lying in $\mathcal{B}$. For $a > 0$, the interval $(a, 1/a)$ is $\iota$-invariant if and only if $a < 1$. Among intervals $(a, 1/a)$ contained in $\mathbb{R}_{>0} \setminus \{1/\varphi^2, \varphi^2\}$, the maximal one is $(1/\varphi^2, \varphi^2)$. Any larger choice $(a, 1/a)$ with $a < 1/\varphi^2$ contains the node $1/\varphi^2$. Hence $\mathcal{B}$ is maximal. $\square$
 
 The interval $\mathcal{B} = (1/\varphi^2, \varphi^2)$ unifies three disjoint phase regimes into a single bar-symmetric structure:
@@ -11,7 +10,7 @@ The interval $\mathcal{B} = (1/\varphi^2, \varphi^2)$ unifies three disjoint pha
 
 Both deconfined regimes are governed by the same algebraic threshold $s^2 - s - 1 = 0$, applied directly on the super-classical side and via $\iota$ on the sub-classical side.
 
-Our universe sits at $q_0 \approx 1.1100 \in \mathcal{B}$, with margins
+The observed universe sits at $q_0 \approx 1.1100 \in \mathcal{B}$, with margins
 
 $$
   d_-(q_0)  :=  q_0 - 1/\varphi^2 \approx 0.728,
@@ -27,4 +26,4 @@ $$
   d_+\bigl(\iota(q_0)\bigr) \approx 1.717.
 $$
 
-The pair $(q_0, \iota(q_0))$ defines a bar-orbit in $\mathcal{B}$. Confinement statements holding at $q_0$ automatically hold at $\iota(q_0)$. We state any phase-boundary argument once for $\mathcal{B}$ and apply it to both endpoints by bar symmetry.
+The pair $(q_0, \iota(q_0))$ defines a bar-orbit in $\mathcal{B}$. Confinement statements holding at $q_0$ automatically hold at $\iota(q_0)$. Any phase-boundary argument is stated once for $\mathcal{B}$ and applied to both endpoints by bar symmetry.

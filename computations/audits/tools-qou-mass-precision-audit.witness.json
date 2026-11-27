@@ -1,0 +1,37 @@
+{
+  "schema": "witness/v1",
+  "name": "tools-qou-mass-precision-audit",
+  "scriptFile": "tools_qou_mass_precision_audit.py",
+  "description": "Static precision audit extending mpf(<float>), module-const import-time dps, never-raises-dps, and mixed-arithmetic checks to tools/ and qou-mass/ (bean qou-4w77) without touching contended computations/ audit witnesses.",
+  "data": {
+    "scan_roots": [
+      "tools",
+      "qou-mass"
+    ],
+    "scanned_py_files": 128,
+    "mpf_float_source_defects": [],
+    "unparseable_or_unreadable": [],
+    "module_const_lossy": [],
+    "never_raises_dps_producers": [],
+    "qou_mass_mixed_arithmetic_candidates": [],
+    "blocking_total": 0
+  },
+  "assertions": [
+    {
+      "name": "tools_and_qou_mass_zero_blocking_precision_defects",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "source": "tools/ + qou-mass/ static precision scan (bean qou-4w77)"
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "dd5c679da56c",
+  "scriptCommitSha": "78857b5cb7945c9ab1e5677ece49eccd49b27780",
+  "commitSha": "78857b5cb7945c9ab1e5677ece49eccd49b27780",
+  "engine": "python-stdlib",
+  "computedAt": "2026-11-24T13:20:57.397048+00:00",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}

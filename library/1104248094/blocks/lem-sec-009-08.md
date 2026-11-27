@@ -1,0 +1,1 @@
+τ™(n1,n2, ..,nl) is a trace. It vanishes identically unless (6.17) When n1,n2,...,nl are thus fixed, τj > = τj >(«1,n2,...,nj) takes non-zero values only on Mλ. Different elements of Weyl group give linearly independent traces.

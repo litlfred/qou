@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-14T18:53:55.373823+00:00",
-  "commitSha": "1d16528eec8e1e9607b48a0a9fe3d4db6806961c",
+  "computedAt": "2026-11-24T21:05:31.359838+00:00",
+  "commitSha": "dd5f163edbddf8601e4c32f0a7557244ca9c33df",
   "assertions": [
     {
       "name": "naive_jm_central_form_refuted_at_q0",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1352,
+  "durationMs": 1628,
   "computation": "alpha-5-jucys-murphy-central",
   "scriptFile": "alpha_5_jucys_murphy_central.py",
-  "scriptHash": "ee10132fe148",
-  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
+  "scriptHash": "86da8e06535d",
+  "scriptCommitSha": "0c5e8aee3478411fa36af820cb192793013eaee8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,14 +39,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [

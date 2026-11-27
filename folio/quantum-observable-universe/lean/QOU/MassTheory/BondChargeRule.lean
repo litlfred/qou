@@ -183,4 +183,15 @@ theorem sumRule_mirror_difference (A Z W : R) :
     sumRuleTotal A Z - sumRuleTotal A W = (A - 1) * (Z - W) := by
   unfold sumRuleTotal; ring
 
+
+/-- **Pointwise and total discrepancy between the centred-sum rule and the Coulomb product rule (`qou-nial`).**
+For any charges `qi, qj : R`, `sumRule c qi qj - prodRule c qi qj = -(1 - qi) * (1 - qj) * c`
+(which vanishes whenever either nucleon has proton charge `1` and equals `-c` on `nn` where `qi = qj = 0`),
+and over a nucleus of mass number `A` and charge `Z`,
+`2 * sumRuleTotal A Z - prodRuleTotalDoubled Z = Z * (2 * A - Z - 1)`. -/
+theorem sumRule_sub_prodRule_and_total_deficit (c qi qj A Z : R) :
+    sumRule c qi qj - prodRule c qi qj = -(1 - qi) * (1 - qj) * c ∧
+      2 * sumRuleTotal A Z - prodRuleTotalDoubled Z = Z * (2 * A - Z - 1) := by
+  refine ⟨by unfold sumRule prodRule; ring, by unfold sumRuleTotal prodRuleTotalDoubled; ring⟩
+
 end QOU.MassTheory.BondChargeRule

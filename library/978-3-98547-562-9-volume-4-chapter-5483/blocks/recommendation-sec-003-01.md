@@ -1,1 +1,0 @@
-K/ and whose product ?X satisfies Ai ?X Aj D X ˇ2H2.XIZ/ k X lD1 GWX;ˇ 0;3 .Ai; Aj ; Al/ OAltˇ: (4.2) One should think of this product as the cup product which has additional “correction” terms coming from counts of nonconstant holomorphic maps (Figure 5).

@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-compact-closed-category",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-compact-closed-category",
+  "kind": "remark",
+  "title": "Compact closed category",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-glossary-symmetric-monoidal-category",
+    "papers/quantum-observable-universe/blocks/rem-glossary-rigid-category"
+  ],
+  "tags": [
+    "glossary",
+    "category-theory",
+    "monoidal",
+    "duality"
+  ],
+  "defines": [
+    "compact-closed-category"
+  ],
+  "text": "glossary-compact-closed-category.md",
+  "provenance": "authored"
+}

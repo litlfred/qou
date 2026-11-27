@@ -1,13 +1,14 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-q-beta-c-2-eq-neg-one-structural",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:q-beta-c-2-eq-neg-one-structural",
@@ -30,7 +31,7 @@
     "categorical-derivation",
     "no-fit"
   ],
-  "leanRef": "qou:QOU.QBeta.C2Structural.c_2_eq_neg_one_structural",
+  "leanRef": "qou:QOU.Nuclear.QBeta.C2Structural.c_2_eq_neg_one_structural",
   "text": "q-beta-c-2-eq-neg-one-structural.md",
   "leanSource": "q-beta-c-2-eq-neg-one-structural.lean",
   "provenance": "authored"

@@ -1,0 +1,1 @@
+The canonical divisor class on Bring’s curve B is [KB] = [a + 2b + 3c]. Proof This may be shown analytically or (as given in the accompanying note- book) entirely using computer algebra. To show this analytically we use div(dx) = −2(4c + d) + RF.

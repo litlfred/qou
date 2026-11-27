@@ -24,7 +24,7 @@ VOLATILE = {"timestamp","elapsed_seconds","measured_at","start_time_monotonic",
 def importers():
     out=set()
     for p in ROOT.rglob("*.py"):
-        if ("_deprecated" in p.parts or "fsh-guts" in p.parts): continue
+        if {"_deprecated", "fsh-guts", ".claude", ".git", "node_modules", ".lake"} & set(p.parts): continue
         try: tree=ast.parse(p.read_text(errors="ignore"))
         except Exception: continue
         for n in ast.walk(tree):
@@ -38,6 +38,7 @@ def importers():
 def witnesses(imp):
     hits=[]
     for w in ROOT.rglob("*.witness.json"):
+        if {"_deprecated", "fsh-guts", ".claude", ".git", "node_modules", ".lake"} & set(w.parts): continue
         try: d=json.loads(w.read_text())
         except Exception: continue
         sf=d.get("scriptFile") or (d.get("witness") or {}).get("scriptFile") or ""

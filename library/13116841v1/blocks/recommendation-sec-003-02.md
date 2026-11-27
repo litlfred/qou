@@ -1,1 +1,0 @@
-As we shall see, the braiding constructed using the R-matrix will allow to relate diﬀerent orderings. • The counit ϵ : Uq(su(2)) →Uq(su(2)) is deﬁned such that ϵ(I) = 1, ϵ(Jσ) = 0 for σ = +, −, z. • The antipode S : Uq(su(2)) →Uq(su(2)) encodes in some sense the notion of inverse angular momentum.

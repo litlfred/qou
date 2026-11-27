@@ -32,7 +32,9 @@ import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
     AME_B_TRITIUM_MEV_VALIDATION,
+    M_E_MEV,
 )
 
 
@@ -74,16 +76,14 @@ def parse_rows(chi_data):
 # Precision must be raised BEFORE the module-scope constants below: at
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
 # literal rounded there cannot be recovered by raising dps afterwards.
-mp.dps = 50
+mp.dps = 80
 
 # AME binding energies (MeV)
 AME_MeV = {
     "deuteron":  AME_B_DEUTERON_MEV_VALIDATION,
     "tritium":   AME_B_TRITIUM_MEV_VALIDATION,
-    "helium-3":  mpf("7.71806"),
+    "helium-3":  AME_B_HE3_MEV_VALIDATION,
 }
-
-M_E_MEV = mpf("0.51099895069")
 
 
 def evaluate_rule_per_atom(atom_name, rows, rule_fn):
@@ -110,7 +110,8 @@ def evaluate_rule_per_atom(atom_name, rows, rule_fn):
 
 
 def main() -> int:
-    set_compute_dps()
+    set_compute_dps(80)
+    mp.dps = 80
     repo_root = Path(__file__).resolve().parent.parent
 
     atom_data = {
@@ -205,7 +206,12 @@ def main() -> int:
             "f should depend on the knot K, not just λ."
         ),
         "scriptFile": "option_e_multi_isotope_delta_lambda_probe_v3.py",
-        "precisionMetadata": {"compute_dps": 50, "output_dps": 30},
+        "precisionMetadata": {
+            "compute_dps": 80,
+            "output_dps": 60,
+            "guard_digits": 20,
+            "truncation_bound": "1e-60",
+        },
         "atoms_tested": ["deuteron", "tritium", "helium-3"],
         "atom_substrate": {
             name: {k: str(v) if not isinstance(v, (int, str)) else v for k, v in s.items()}
@@ -218,21 +224,19 @@ def main() -> int:
         "candidate_offset_results": candidate_offset_results,
     }
 
-    # Find best offset family (smallest max rel_error across 3 atoms)
+    # Find best offset family (smallest max rel_error across 3 atoms) in exact mpf
     best_offset = None
-    best_max_err = float("inf")  # float64-ok: written to the witness as a JSON number
+    best_max_err = mpf("1e99")
     for offset_name, per_atom in candidate_offset_results.items():
-        # a percentage compared against a 10% threshold, then serialised as a
-        # JSON number — mpf is not JSON-serialisable there
-        max_err = max(float(per_atom[a]["rel_error_pct"]) for a in per_atom)  # float64-ok: JSON number, 2-dp threshold
+        max_err = max(mpf(per_atom[a]["rel_error_pct"]) for a in per_atom)
         if max_err < best_max_err:
             best_max_err = max_err
             best_offset = offset_name
 
     witness["best_offset"] = {
         "name": best_offset,
-        "max_rel_error_pct_across_atoms": best_max_err,
-        "uniform_closure_10pct": best_max_err <= 10.0,
+        "max_rel_error_pct_across_atoms": mp.nstr(best_max_err, 30),
+        "uniform_closure_10pct": bool(best_max_err <= mpf(10)),
     }
 
     out = (
@@ -282,7 +286,7 @@ def main() -> int:
         print(f"  {offset_name:30s}  errs D/T/³He = {errs[0]:6.2f}% / {errs[1]:6.2f}% / {errs[2]:6.2f}%  max={max(errs):6.2f}%")
 
     print(f"\nBest offset family: {witness['best_offset']['name']}")
-    print(f"  max rel error across atoms: {witness['best_offset']['max_rel_error_pct_across_atoms']:.2f}%")
+    print(f"  max rel error across atoms: {witness['best_offset']['max_rel_error_pct_across_atoms']}%")
     print(f"  uniform closure 10%? {witness['best_offset']['uniform_closure_10pct']}")
 
     return 0

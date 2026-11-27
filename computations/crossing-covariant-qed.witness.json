@@ -1,0 +1,50 @@
+{
+  "schema": "witness/v1-lite",
+  "producer": "computations/crossing_covariant_qed_probe.py",
+  "lean": "QOU.BraidsAndKnots.CrossingCovariantQED",
+  "q0Anchor": "proton",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "dps": 70,
+  "trace_V3_proton_weight_space": "2.9941858129799640867281993680187167000891395825118",
+  "first_order": {
+    "proton": {
+      "colored_writhe_exact": "0",
+      "dtr_scalar": "-9.0556790788267123675091192908877917806825311981391e-72",
+      "dtr_globalZ": "0.0",
+      "dtr_fixed_position_NONCOVARIANT": "1.6979398272800085689079598670414609588779745996511e-72"
+    },
+    "neutron": {
+      "colored_writhe_exact": "0",
+      "dtr_scalar": "-9.0556790788267123675091192908877917806825311981391e-72",
+      "dtr_globalZ": "-1.1319598848533390459386399113609739725853163997674e-72",
+      "dtr_fixed_position_NONCOVARIANT": "0.0042615761263751300140060267491803999243410396050688"
+    }
+  },
+  "hopf_control_colored_writhe": "8/9",
+  "commutant_classification_q2": {
+    "commutant_dims": [
+      5,
+      5
+    ],
+    "unknowns": 30,
+    "solution_dim": 6,
+    "nonscalar_solutions_central": true
+  },
+  "alpha_em_inv_derived": "137.0359350939756046587956899942268495804",
+  "alpha_em_status": "conditional on the Witten-kappa Gram-determinant sorry",
+  "E0_tower_MeV": "4.227483355629030550268056026587211153615",
+  "c_em_keV": "30.84945093219479069868208081483640603404",
+  "M_p_QED_keV": "-9.330173370968309067058936457674055783398e-71",
+  "Delta_m_QED_keV": "0.0",
+  "comparison_mu_p_gap_keV": "0.2288",
+  "diagnostic_even_term_kappa_needed_NOT_ADOPTED": "0.0500624793418364848669795583968",
+  "checks": {
+    "scalar_firstorder_zero_proton": true,
+    "scalar_firstorder_zero_neutron": true,
+    "globalZ_firstorder_zero_proton": true,
+    "globalZ_firstorder_zero_neutron": true,
+    "colored_writhe_exact_zero": true,
+    "hopf_control_nonzero": true,
+    "commutant_solutions_are_central": true
+  }
+}

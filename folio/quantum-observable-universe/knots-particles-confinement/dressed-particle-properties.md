@@ -23,3 +23,5 @@ $$
 $$
 
 *Here $\mathcal{S}^*(S, q)$ is the SDP active support and $w_\lambda$ are the block shadow prices. For $\mu(S, q) = 1$, this collapses to the scalar-LP product. For $\mu \ge 2$, the full matrix shadow contributes.*
+
+**Typical bare particle.** In the [dressing morphism](#def:dressed-particle) the bare particle $P_{\mathrm{bare}}$ is typically a bare nucleus, at level $\ell = 2$.

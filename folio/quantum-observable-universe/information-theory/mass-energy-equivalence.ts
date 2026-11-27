@@ -1,28 +1,38 @@
-import { definition } from "../../schema/builders";
+import { proposition } from "../../schema/builders";
 
-export default definition({
-  label: "def:mass-energy",
-  title: "Energy of a braid class ($\\mathfrak{E} = \\mathfrak{m} \\cdot c_q^2$)",
+export default proposition({
+  label: "prop:mass-energy",
+  title:
+    "Mass--energy equivalence from the causal-cone Legendre transform ($\\mathfrak{E} = \\mathfrak{m} \\cdot c_q^2$)",
   tags: [
     "mass-energy",
+    "legendre-transform",
     "speed-of-light",
     "information-theory",
   ],
-  lean: { ref: "qou:QOU.Information.energy",
-    validation: "not_checked",
+  lean: {
+    ref: "qou:QOU.Information.energy",
+    validation: "validated",
   },
-  uses: ["def:information-speed-of-light", "def:mass-identity"],
+  proofs: ["prf:mass-energy"],
+  uses: [
+    "def:categorical-hamiltonian",
+    "def:information-speed-of-light",
+    "def:mass-identity",
+    "conj:braid-boost-inertial-equivalence",
+  ],
   authorNotes: [
     {
       kind: "refined-framing",
-      date: "2026-11-15",
+      date: "2026-11-24",
       body:
-        "Until 2026-11-15 this block was `thm:mass-energy-equivalence`, claiming that the " +
-        "crossing energy equals mass times $c_q^2$. Its Lean proof held only because mass " +
-        "was defined there as $E\\,(q-1)^2$, and with the mass of `def:mass-identity` the " +
-        "claim is false (trivial braid: crossing energy $0$, mass nonzero). Owner ruling: " +
-        "energy is now defined as $\\mathfrak{m}\\,c_q^2$; crossing energy keeps its " +
-        "subscript. Open question on a crossing-additive energy: bean `qou-078y`.",
+        "Promoted from standalone definition (`def:mass-energy`) to derived proposition (`prop:mass-energy`) " +
+        "under the unified Legendre Hamiltonian (`def:categorical-hamiltonian`, `QOU.Core.CategoricalHamiltonianLegendre`): " +
+        "on the Dirac causal cone $|v| < c_q = 1/(q-1)$, the worldline Legendre transform yields " +
+        "$E(v) = m_{\\mathrm{in}} c_q^2 / \\sqrt{1 - v^2/c_q^2}$, rest value $E(0) = m_{\\mathrm{in}} c_q^2$, " +
+        "and mass-shell $E^2 - p^2 c_q^2 = (m_{\\mathrm{in}} c_q^2)^2$ unconditionally; equating boosted " +
+        "kinematic inertia $m_{\\mathrm{in}}(\\beta)$ with static Frobenius--Hopf holonomy mass $\\mathfrak{m}(\\beta)$ " +
+        "(`def:mass-identity`) is isolated explicitly in the §3b-cond class `BraidBoostInertialEquivalence`.",
     },
   ],
 });

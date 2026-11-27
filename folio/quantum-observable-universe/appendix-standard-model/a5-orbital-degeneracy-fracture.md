@@ -9,7 +9,7 @@ If the archimedean truncation of [the truncation conjecture](#conj:sm-gauge-trun
 | $g$ | $9$ | $\mathbf{4} \oplus \mathbf{5}$ |
 | $h$ | $11$ | $\mathbf{3} \oplus \mathbf{3}' \oplus \mathbf{5}$ |
 
-The $s$, $p$, $d$ degeneracies are *native* — they are exactly the dimensions $1, 3, 5$ of $A_5$ irreducibles and restrict irreducibly. Every degeneracy above five fractures: the group has no irreducible of dimension greater than $5$, so the $f$ orbital's seven states are, under the truncated symmetry, a composite of a $\mathbf{3}'$ and a $\mathbf{4}$ that a continuous rotation group would hold together. The branching arithmetic is standard finite-group representation theory, computed exactly and pinned in the witness `a5-so3-branching.witness.json`.
+The $s$, $p$, $d$ degeneracies are *native* — they are exactly the dimensions $1, 3, 5$ of $A_5$ irreducibles and restrict irreducibly. Every degeneracy above five fractures: the group has no irreducible of dimension greater than $5$, so the $f$ orbital's seven states are, under the truncated symmetry, a composite of a $\mathbf{3}'$ and a $\mathbf{4}$ that a continuous rotation group would hold together. The branching arithmetic is standard finite-group representation theory, computed exactly.
 
 The physical reading — that $f$-shell degeneracy is only approximate, with a fine-structure split along the $\mathbf{3}' \oplus \mathbf{4}$ seam — is conditional on the truncation conjecture and is recorded here as an interpretive consequence, not a prediction wired to any computation.
 

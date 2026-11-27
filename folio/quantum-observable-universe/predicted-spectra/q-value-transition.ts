@@ -17,12 +17,12 @@ export default definition({
     "kinetic-energy",
     "skein",
   ],
-  lean: { ref: "qou:QOU.Archimedean.QqValue.value",
+  lean: { ref: "qou:QOU.MassTheory.Archimedean.QqValue.value",
     validation: "not_checked",
   },
   defines: ["q-value"],
   uses: [
-    "def:categorical-action",
+    "def:categorical-hamiltonian",
     "conj:q-integer-mass-formula",
   ],
 });

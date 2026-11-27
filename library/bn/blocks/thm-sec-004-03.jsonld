@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/bn/blocks/thm-sec-004-03",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 22,
+  "pageEnd": 27,
+  "text": "thm-sec-004-03.md",
+  "derivedFrom": "library/bn/sections/sec-004",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bn/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "5.4",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-004-5-complex-reﬂection-groups.md (p. 22-27)",
+    "claim_id": "bn#theorem:5.4",
+    "lean_status": "unformalized"
+  }
+}

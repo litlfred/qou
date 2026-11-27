@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2208.14188v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2208.14188v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -36,6 +36,18 @@
     "library/arxiv-2208.14188v2/sections/sec-021"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Resurgence in complex Chern-Simons theory at generic levels — In this note we study the resurgent structure of sl(2, C) Chern-Simons state integral model on knot complements S3\\41, S3\\52 with generic\n\n**Resurgence in complex Chern-Simons theory at generic levels**\n\n*Zhihao Duana Jie Gub*\n\n46 pp, 23 sections.\n\n**Abstract.** In this note we study the resurgent structure of sl(2, C) Chern-Simons state integral model on knot complements S3\\41, S3\\52 with generic discrete level k ≥1 and with small boundary holonomy deformation. The coeﬃcients of the saddle point expansions are in the trace ﬁeld of the knot extended by the holonomy parameter. Despite increasing complication of the asymptotic series as the level k increases, the resurgent structure of the asymptotic series is universal: both the distribution of Borel plane singularities and the associated Stokes constants are independent of the level k.\n\n**Outline.** Front matter; 1 Introduction; 2 Resurgent structure of complex Chern-Simons ; 2.1 Perturbative complex Chern-Simons theory a; 2.2 Resurgent structure of complex Chern-Simon; 2.3 Stokes constants and BPS invariants; 3 Figure eight; 3.1 Asymptotic series; 3.2 Holomorphic blocks; 3.3 Resurgent structure; 4 Three twists; 4.1 Asymptotic series; 4.2 Holomorphic blocks; 4.3 Resurgent structure; 5 Conclusion and discussion; A Tetrahedron partition function at level k; A.1 Fundamental properties; A.2 Zeros and poles",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -59,8 +71,8 @@
       "stamp_date": "8 Feb 2023"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,0 +1,1 @@
+5, σ must also be in the support of ∂(zR,∞−zR,k), so any lift ˜σ of σ to Hn must have a vertex mapped to ˆΓ ∖ˆΓk. The diameter of the image of ˜σ is at most R + 2d. Thus the vertices lie in ˆΓ ∖ˆΓk′ for k′ = k −⌈R + 2d⌉> C, and no part of the image of ˜σ lies in a translate of the “fat piece” D0. Since ǫ(k′) < µ, σ has image in the part of V with injectivity radius less than µ. □

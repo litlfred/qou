@@ -1,0 +1,3 @@
+**:defterm[Pivotal category]{#pivotal-category}.** A rigid monoidal category equipped with a monoidal natural isomorphism $\delta_X \colon X \xrightarrow{\sim} X^{\vee\vee}$ between each object and its double dual.
+
+The pivotal structure is what makes a *left* trace definable alongside the right one: without $\delta$ there is no way to close the left-hand loop back onto $X$, since evaluation lands on $X^{\vee\vee}$. A pivotal category in which the two traces then **agree** on every object is called **spherical**; pivotal alone does not force that agreement. The left quantum dimension, defined through the inverse braiding, is in general a different morphism from the right one, so sphericality is an additional hypothesis rather than a consequence of the pivotal structure.

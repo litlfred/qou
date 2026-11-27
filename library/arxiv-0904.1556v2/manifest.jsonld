@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0904.1556v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0904.1556v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -35,6 +35,18 @@
     "library/arxiv-0904.1556v2/sections/sec-020"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The Algebra of Grand Uniﬁed Theories — The Standard Model is the best tested and most widely accepted theory of elementary particles we have today.\n\n**The Algebra of Grand Uniﬁed Theories**\n\n*John Baez and John Huerta*\n\n73 pp, 22 sections.\n\n**Abstract.** The Standard Model is the best tested and most widely accepted theory of elementary particles we have today. It may seem complicated and arbitrary, but it has hidden patterns that are revealed by the relationship between three ‘grand uniﬁed theories’: theories that unify forces and particles by extend- ing the Standard Model symmetry group U(1) × SU(2) × SU(3) to a larger group. These three are Georgi and Glashow’s SU(5) theory, Georgi’s theory based on the group Spin(10), and the Pati–Salam model based on the group SU(2)×SU(2)×SU(4). In this expository account for mathematicians, we ex- plain only the portion of these theories that involves ﬁnite-dimensional group representations. This allows us to reduce the prerequisites to a bare minimum while still giving a taste of the profound puzzles that physicists are struggling to solve.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Guide to Further Reading; 2 The Standard Model; 2.1 Isospin and SU(2); 2.2 The Fundamental Fermions; 2.2.1 Quarks; 2.2.2 Leptons; 2.3 The Fundamental Forces; 2.3.1 Isospin and SU(2), Redux; 2.3.2 Hypercharge and U(1); 2.3.3 Electroweak Symmetry Breaking; 2.3.4 Color and SU(3); 2.4 The Standard Model Representation; 2.5 Generations; 3 Grand Unified Theories; 3.1 The SU(5) GUT; 3.2 The Spin(10) Theory",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -58,8 +70,8 @@
       "stamp_date": "1 May 2010"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

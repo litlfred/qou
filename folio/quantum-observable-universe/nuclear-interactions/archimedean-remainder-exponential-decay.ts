@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Exponential decay of the archimedean brane-tower truncation remainder",
   lean: {
-    ref: "qou:QOU.Interactions.ArchimedeanRemainderExponentialDecay",
+    ref: "qou:QOU.Confinement.Interactions.ArchimedeanRemainderExponentialDecay",
     validation: "not_checked",
   },
   uses: [

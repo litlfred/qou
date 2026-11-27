@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1409.0435v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "0c6abbb9c5a720d99c94bd059f63fe790b12d001453b7b2b13923ea406193a9b",
+  "file": "1409.0435v2.pdf"
+ },
+ "provenance": {
+  "title": "Asymptotics for Toeplitz determinants: perturbation of symbols with a gap",
+  "authors": "Christophe Charlier\u2217and Tom Claeys\u2217",
+  "arxiv": {
+   "id": "1409.0435",
+   "version": "2",
+   "primary_class": "math-ph",
+   "stamp_date": "25 Feb 2015"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

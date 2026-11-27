@@ -1,1 +1,0 @@
-The fact that F is pierced non-trivially by the braid axis, and that the foliation is transverse to the boundary, shows that F cannot be foliated entirely by simple closed curves, so if we follow the sequence of arcs α(θ) as θ increases or decreases we must arrive at a singularity.

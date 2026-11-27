@@ -19,6 +19,7 @@ export default proposition({
         "`docs/audits/2026-08-08-narrative-lean-equivalence-nonempty-kernels.md`.",
       see: "docs/audits/2026-08-08-narrative-lean-equivalence-nonempty-kernels.md",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): A separate proposition establishes [uniqueness of the categorical proton](#prop:categorical-proton-unique) up to braid isotopy." },
   ],
   label: "prop:categorical-proton-exists",
   title: "Existence of the categorical proton",

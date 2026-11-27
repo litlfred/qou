@@ -1,1 +1,0 @@
-The material on Fukaya categories of blow-ups should be compared to the work of Abouzaid, Auroux and Katzarkov [@AAK], who derive closely related results from the "Strominger-Yau-Zaslow\" perspective of Lagrangian torus fibrations; similar techniques are also applied in Seidel's recent [@Seidel:Flux].

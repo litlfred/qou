@@ -1,1 +1,0 @@
-The closed two-form $\Omega \in \Omega^2(E)$ must be nondegenerate on $TE_x^v = \ker(D\pi_x)$ for each $x \in E$, and a Kähler form for $J_0$ in some neighbourhood of $E^\crit$. $\Theta \in \Omega^1(E)$ must satisfy $d\Theta = \Omega$.

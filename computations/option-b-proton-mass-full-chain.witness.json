@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-09-04T02:56:58.560640+00:00",
-  "commitSha": "8772a849efb4861f76f881c41a069254dc3de4e4",
+  "computedAt": "2026-11-24T18:02:00.358388+00:00",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "assertions": [
     {
       "name": "tr_M_proton_is_rational_in_sqrt_q",
@@ -33,11 +33,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 43,
+  "durationMs": 39,
   "computation": "option-b-proton-mass-full-chain",
   "scriptFile": "option_b_proton_mass_full_chain.py",
-  "scriptHash": "7af3af5f339c",
-  "scriptCommitSha": "be0795b0c101cbaab51379ce1d07aa3c2dee6815",
+  "scriptHash": "8563489c3d24",
+  "scriptCommitSha": "4db77890a72ec5ffaddefafa437fc483b33bc5b8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,14 +45,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -60,12 +60,12 @@
     ],
     "reproduce": "python3 -u computations/option_b_proton_mass_full_chain.py"
   },
-  "description": "Phase 1.6 of the 1ppb plan — Option B from the m_e-anomaly audit.  Full derivation of tr_M(σ_1^7 σ_2^4)(q) as a rational-in-q function via:  (A) braid roster, (B) Hecke quadratic recurrence (a_k, b_k), (C) Wedderburn-block characters χ^λ(β), (D) Markov-axiom y_λ(q), (E) γγ pair-production reduction at every σ-site, (F) SDP knot-operator selection per the prop:operator-selection-lp / §LP/SDP-duals contract, (G) per-step graded/filtered metadata, (H) closed-form symbolic tr_M.  Does NOT consume the placeholder literals M_HECKE_PIPELINE_AT_Q0; emits the rational-in-q anchors from which any downstream mass-formula assembly should derive m_p without algebraic +1 patches.  See docs/audits/2026-05-09-proton-m_e-anomaly.md for the audit; content/quantum-observable-universe/braids-and-knots/markov-trace-axiomatic-closed-form.md for the formal proposition.",
+  "description": "Phase 1.6 of the 1ppb plan — Option B from the m_e-anomaly audit.  Full derivation of tr_M(σ_1^7 σ_2^4)(q) as a rational-in-q function via:  (A) braid roster, (B) Hecke quadratic recurrence (a_k, b_k), (C) Wedderburn-block characters χ^λ(β), (D) Markov-axiom y_λ(q), (E) γγ pair-production reduction at every σ-site, (F) SDP knot-operator selection per the prop:operator-selection-lp / §LP/SDP-duals contract, (G) per-step graded/filtered metadata, (H) closed-form symbolic tr_M.  Does NOT consume the placeholder literals M_HECKE_PIPELINE_AT_Q0; emits the rational-in-q anchors from which any downstream mass-formula assembly should derive m_p without algebraic +1 patches.  See docs/audits/2026-05-09-proton-m_e-anomaly.md for the audit; folio/quantum-observable-universe/braids-and-knots/markov-trace-axiomatic-closed-form.md for the formal proposition.",
   "contentBlock": "prop:markov-trace-axiomatic-closed-form",
   "parameters": {
     "q_0": "1.10997858275138080759166909561076887987449912187360000000000",
-    "M_E_MEV_codata": "0.5109989506900000000000000000000000000000000000000005654434719000544678",
-    "M_P_MEV_codata": "938.2720894299999999999999999999999999999999999999994592249096324098442",
+    "M_E_MEV_codata": "0.51099895069",
+    "M_P_MEV_codata": "938.27208943",
     "electron_word": "σ_1^3",
     "proton_word": "σ_1^7 · σ_2^4"
   },
@@ -398,7 +398,7 @@
           "tr_M_proton_at_q0": "1.88431946725497502509029472310815626347249744177191389544517",
           "tr_M_electron_at_q0": "0.848526607059009556201749746812107080366428963274248507457824",
           "ratio_tr_M_p_over_e": "2.22069579383729655025050204852816916671751289831585955075095",
-          "codata_m_p_over_m_e": "1836.152673431236317280978642081602588349142819254501160322856296009831",
+          "codata_m_p_over_m_e": "1836.152673431236317280978642081602588349142819254504250379363924795225",
           "note": "The ratio tr_M(p)/tr_M(e) at q_0 is NOT m_p/m_e by itself — the mass-formula assembly (Terms 2-6 of mass-formula-6term-mpfr-50dps.witness.json) maps the trace to mass.  This phase emits the rational-in-q anchors from which any future mass-formula assembly should derive m_p; the placeholder literals in M_HECKE_PIPELINE_AT_Q0 are NOT consumed."
         },
         "jet_order": 0,
@@ -416,14 +416,14 @@
       "ratio_p_over_e": "2.22069579383729655025050204852816916671751289831585955075095"
     },
     "codata_reference": {
-      "m_p_over_m_e": "1836.152673431236317280978642081602588349142819254501160322856296009831",
-      "m_p_MeV": "938.2720894299999999999999999999999999999999999999994592249096324098442",
-      "m_e_MeV": "0.5109989506900000000000000000000000000000000000000005654434719000544678"
+      "m_p_over_m_e": "1836.152673431236317280978642081602588349142819254504250379363924795225",
+      "m_p_MeV": "938.27208943",
+      "m_e_MeV": "0.51099895069"
     },
     "lean_uniqueness_ref": {
       "nucleus": "proton",
       "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
-      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "framework_doc": "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
       "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   },

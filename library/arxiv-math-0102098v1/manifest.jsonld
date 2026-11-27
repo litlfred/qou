@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0102098v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Skein theory and the Murphy operators",
+  "contains": [
+    "library/arxiv-math-0102098v1/sections/sec-front-matter",
+    "library/arxiv-math-0102098v1/sections/sec-000",
+    "library/arxiv-math-0102098v1/sections/sec-001",
+    "library/arxiv-math-0102098v1/sections/sec-002",
+    "library/arxiv-math-0102098v1/sections/sec-003",
+    "library/arxiv-math-0102098v1/sections/sec-004",
+    "library/arxiv-math-0102098v1/sections/sec-005",
+    "library/arxiv-math-0102098v1/sections/sec-006",
+    "library/arxiv-math-0102098v1/sections/sec-007",
+    "library/arxiv-math-0102098v1/sections/sec-008",
+    "library/arxiv-math-0102098v1/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Skein theory and the Murphy operators — The Murphy operators in the Hecke algebra Hn of type A are ex- plicit commuting elements whose sum generates the centre.\n\n**Skein theory and the Murphy operators**\n\n*HUGH R. MORTON*\n\n22 pp, 11 sections.\n\n**Abstract.** The Murphy operators in the Hecke algebra Hn of type A are ex- plicit commuting elements whose sum generates the centre. They can be represented by simple tangles in the Homﬂy skein theory version of Hn. In this paper I present a single tangle which represents their sum, and which is obviously central. As a consequence it is possible to identify a natural basis for the Homﬂy skein of the annulus, C. Symmetric functions of the Murphy operators are also central in Hn. I deﬁne geometrically a homomorphism from C to the centre of each algebra Hn, and ﬁnd an element in C, independent of n, whose image is the mth power sum of the Murphy operators. Generating function techniques are used to describe images of other elements of C in terms of the Murphy operators, and to demonstrate relations among other natural skein elements.\n\n**Outline.** Front matter; 1 The skein models.; 1.1 Variants of the Hecke algebras.; 2 Geometric views of the Murphy operators.; 3 The skein of the annulus.; 3.1 Symmetric functions and the skein of the a; 3.2 Symmetric functions of the Murphy operator; 4 The annulus with two boundary points.; 4.1 Algebraic properties of A.; 4.2 Skein interaction between Hn, A and C.; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.1: The Murphy operator M(j) can be represented in Hn by a single braid T(j), up to linear combination with the identity.\n- Theorem 2.2: The sum M of the Murphy operators can be rep- resented in Hn by a single tangle T (n), again up to linear combination with the identity.\n- Theorem 3.1: The eigenvalues of ϕ|Cn are all distinct.\n- Theorem 3.6: Write A(t) = 1 + z P∞ m=1 Amtm, with z = s −s−1. Then A(t) = H(st) H(s−1t) = H(st)E(−s−1t).\n- Theorem 3.9: For any n we have ψn(Pm) −ψ0(Pm) = (sm −s−m)v−m n X j=1 T(j)m.\n- Theorem 4.1: The algebra A is commutative.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-math-0102098v1",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "Skein theory and the Murphy operators",
+      "basis": "Printed title on page 1 (H. R. Morton); the extracted title was the arXiv stamp",
+      "extracted_title": "arXiv:math/0102098v1 [math.GT] 13 Feb 2001",
+      "corrected_on": "2026-11-18",
+      "extracted": "Skein theory and the Murphy operators"
+    },
+    "source_file": "0102098v1.pdf",
+    "source_sha256": "f4bc5ca0ba1e47aae91c518726360de2d461cb594e6355e6dad5429d6659505b",
+    "pages": 22,
+    "arxiv": {
+      "id": "math/0102098",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "13 Feb 2001"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

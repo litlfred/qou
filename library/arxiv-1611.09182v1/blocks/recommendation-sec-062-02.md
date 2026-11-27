@@ -1,1 +1,0 @@
-However, in order to evade proton decay, the remaining triplet must acquire a large mass $\geq 10^{14}$ GeV, and there is no obvious reason for these two mass scales to be so far apart (doublet triplet splitting problem)~\cite{Lang}.

@@ -7,7 +7,7 @@ export default definition({
     "jet-horizon", "event-horizon", "degree-zero",
     "vanishing-ideal", "information-barrier",
   ],
-  lean: { ref: "qou:QOU.JetHorizon",
+  lean: { ref: "qou:QOU.InformationTheory.JetHorizon",
     validation: "not_checked",
   },
   uses: ["rem:jet-planck-steps"],

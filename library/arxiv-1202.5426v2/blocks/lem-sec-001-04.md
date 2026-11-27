@@ -1,0 +1,1 @@
+We have E(2) ε (γ) →E(2)(γ) for all γ ∈H3/2 ir ∩H1,∞. Furthermore, for any γ0 ∈H3/2 ir ∩H1,∞there is an open subset Y ⊂H3/2 ir ∩H1,∞and a constant C = C(γ0) < ∞such that lim sup ε1,ε2→0 lipXδ∩Y(E(2) ε1 −E(2) ε2 ) ≤Cδ (2.7) for all subsets Xδ ⊂H3/2 ∩H1,∞satisfying (2.6) with δ ∈[0, 1].

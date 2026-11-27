@@ -1,1 +1,0 @@
-Then, in ^(Σ ^r r' aErFr'kΛ) = 0, the component of β x β-degree (maximal, minimal) must be 0: relo Here αr is fixed, so αr/ also, (r',α) 2 by 2 distinct \r6/0,(r',α) fixed As the Fr,/cα are independent, V(r',α) fixed Σ λrtr,tΛErkΛ = 0, so /lr>r, α = 0. re/o III.

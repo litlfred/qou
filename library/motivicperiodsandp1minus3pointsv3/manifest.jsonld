@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/motivicperiodsandp1minus3pointsv3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/motivicperiodsandp1minus3pointsv3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -22,6 +22,18 @@
     "library/motivicperiodsandp1minus3pointsv3/sections/sec-007"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Motivic periods and P^1 minus 3 points — This is a review of the theory of the motivic fundamental group of the projective line minus three points, and its relation to multiple zeta values.\n\n**Motivic periods and P^1 minus 3 points**\n\n*Francis Brown∗*\n\n25 pp, 9 sections.\n\n**Abstract.** This is a review of the theory of the motivic fundamental group of the projective line minus three points, and its relation to multiple zeta values. Mathematics Subject Classiﬁcation (2010). Primary 11M32; Secondary 14C15.\n\n**Outline.** Front matter; 1 Introduction; 3 The main theorem and consequences; 3.2 Transcendence conjectures.; 4 Roots of unity; 5 Depth; 6 Multiple modular values; 1 −→UΓ −→GΓ −→S −→1; 7 References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "motivicperiodsandp1minus3pointsv3",
@@ -32,8 +44,8 @@
     "pages": 25,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

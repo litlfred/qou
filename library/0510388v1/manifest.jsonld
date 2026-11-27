@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0510388v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0510388v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -77,6 +77,18 @@
     "library/0510388v1/sections/sec-062"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS\n\n**Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space**\n\n*Dennis DeTurck and Herman Gluck*\n\n108 pp, 64 sections.\n\n**Outline.** Front matter; ORGANIZATION; A STATEMENTS OF RESULTS; 1 Linking integrals in R3 , S3 and H3 .; 2 The route to Gauss's linking integral.; 3 Magnetic fields in R3 , S3 and H3 .; 4 Left-invariant vector fields on S3 .; 5 Scalar-valued Green's operators in R3 , S3 a; 6 Vector-valued Green's operators in R3 , S3 a; 7 Classical electrodynamics and Maxwell's equa; B PROOFS ON S3 IN LEFT-TRANSLATION FORMAT; 8 Proof scheme for Theorem 3, formula (1).; 9 The calculus of vector convolutions in R3 .; 10 The calculus of vector convolutions in S3 .; 11 Proof of Theorem 3, formula (1).; 12 Proof of Theorem 2, formula (1).; C PROOFS ON S3 IN PARALLEL TRANSPORT FORMAT; 13 Parallel transport in S3 .",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "0510388v1",
@@ -87,8 +99,8 @@
     "pages": 108,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

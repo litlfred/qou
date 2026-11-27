@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1806.09450v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "8556b67d97856446c79d3dfc2e3a9601902b4b097312e31d2528b43976b4182a",
   "file": "1806.09450v1.pdf"
@@ -16,76 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
-  "by_kind": {
-   "recommendation": 4
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall consider (in Sect.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Sixteen years later, in 1949, Jordan noticed that the points of $P{\\mathbb O}_2$ are given by the one-dimensional (trace-one) idempotents of the exceptional Jordan algebra $J$ which are also the pure states of $J$.\\ A glimpse on the automorphism group $F_4 = \\{ g : J \\to J ; g(X \\circ Y) = g \\, X \\circ g \\, Y \\}$ is provided by displaying the stability subgroup of one such idempotent $$\\label{eq31} E_1 = \\begin{pmatrix} 1 &0 &0 \\\\ 0 &0 &0 \\\\ 0 &0 &0 \\end{pmatrix} \\left( {\\rm or} \\ E_2 = \\begin{pmatrix} 0 &0 &0 \\\\ 0 &1 &0 \\\\ 0 &0 &0 \\end{pmatrix} , \\ {\\rm or} \\ E_3 = \\begin{pmatrix} 0 &0 &0 \\\\ 0 &0 &0 \\\\ \\, 0 &0 &1 \\end{pmatrix} \\right).$$ Noting that $F_4$ should preserve the unit element ${\\rm 1\\mkern-4mu I}= E_1 + E_2 + E_3$ of $J$ we deduce that this stability subgroup should also preserve $E_2 + E_3$ and hence the square of any traceless element of $H_2 ({\\mathbb O})$, $$\\label{eq32} X^2 = (\\xi^2 + \\vert x \\vert^2) \\begin{pmatrix} 0 &0 &0 \\\\ 0 &1 &0 \\\\ 0 &0 &1 \\end{pmatrix} \\ \\mbox{for} \\quad X = \\begin{pmatrix} 0 &0 &0 \\\\ 0 &\\xi &x \\\\ 0 &\\bar x &-\\xi \\end{pmatrix}$$ and coincides with ${\\rm Spin} \\, (9)$ (the simply connected double covering of the orthogonal group $SO (9)$ in",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-31-the-automorphism-group-f4-of-the-exceptional.md",
-   "section_title": "The automorphism group F4 of the exceptional Jordan algebra and its Lie algebra f4",
-   "pages": "6-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall see that the Borel-de Siebenthal theory provides a purely deductive path to this gauge group.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-4-borel-de-siebenthal-theory-and-intersections-o.md",
-   "section_title": "Borel-de Siebenthal theory and intersections of maximal subgroups of compact exceptional Lie groups",
-   "pages": "12-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall therefore restrict the maximal subgroups of $G_2$ and of the higher rank groups under consideration.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-4-borel-de-siebenthal-theory-and-intersections-o.md",
-   "section_title": "Borel-de Siebenthal theory and intersections of maximal subgroups of compact exceptional Lie groups",
-   "pages": "12-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

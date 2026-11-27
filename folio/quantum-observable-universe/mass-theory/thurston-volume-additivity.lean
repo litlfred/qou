@@ -50,7 +50,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Data.List.Basic
 import Mathlib.Analysis.SpecialFunctions.Complex.Log
 import Mathlib.Topology.UnitInterval
-import QOU.Knot.FlatTetrahedra
+import BraidKnotOctonion.FlatTetrahedra
 
 namespace QOU.ParticleInteractions
 

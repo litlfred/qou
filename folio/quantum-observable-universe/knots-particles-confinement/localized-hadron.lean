@@ -1,4 +1,4 @@
-import QOU.ParticleInteractions.HadronDisplay
+import QOU.Confinement.HadronDisplay
 
 
 /-!

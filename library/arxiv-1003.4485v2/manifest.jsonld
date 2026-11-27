@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1003.4485v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1003.4485v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -32,6 +32,18 @@
     "library/arxiv-1003.4485v2/sections/sec-017"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "An Invitation to Higher Gauge Theory — In this easy introduction to higher gauge theory, we describe parallel trans- port for particles and strings in terms of 2-connections on 2-bundles.\n\n**An Invitation to Higher Gauge Theory**\n\n*John C. Baez and John Huerta*\n\n60 pp, 19 sections.\n\n**Abstract.** In this easy introduction to higher gauge theory, we describe parallel trans- port for particles and strings in terms of 2-connections on 2-bundles. Just as ordinary gauge theory involves a gauge group, this generalization in- volves a gauge ‘2-group’. We focus on 6 examples. First, every abelian Lie group gives a Lie 2-group; the case of U(1) yields the theory of U(1) gerbes, which play an important role in string theory and multisymplec- tic geometry. Second, every group representation gives a Lie 2-group; the representation of the Lorentz group on 4d Minkowski spacetime gives the Poincar´e 2-group, which leads to a spin foam model for Minkowski space- time. Third, taking the adjoint representation of any Lie group on its own Lie algebra gives a ‘tangent 2-group’, which serves as a gauge 2-group in 4d BF theory, which has topological gravity as a special case.\n\n**Outline.** Front matter; 1 Introduction; 2 Categories and Connections; 3 2-Categories and 2-Connections; 3.1 2-Categories; 3.2 Path 2-Groupoids; 3.3 2-Groups; 3.4 2-Connections; 4 Examples and Applications; 4.1 Shifted Abelian Groups; 4.2 The Poincaré 2-Group; 4.3 Tangent 2-Groups; 4.4 Inner Automorphism 2-Groups; 4.5 Automorphism 2-Groups; 4.6 String 2-Groups; 5 Further Topics; 5.1 Gauge Transformations; 5.2 Curvature",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -55,8 +67,8 @@
       "stamp_date": "18 Feb 2015"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:feynman-classical-limit",
-  lean: { ref: "qou:QOU.FeynmanPathIntegrals.ClassicalLimitDegeneration",
+  lean: { ref: "qou:QOU.StandardModel.FeynmanPathIntegrals.ClassicalLimitDegeneration",
     validation: "not_checked",
   },
   title: "Classical limit: recovery of the symmetric path integral",
@@ -14,6 +14,12 @@ export default proposition({
   ],
   proofs: [],
   authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`): `2026-08-24-undecided-carrier-witnesses.lean` inhabits the sibling `ClassicalLimitStpart` carrier via the constant function `fun _ => 1`.",
+      see: "docs/audits/2026-08-24-undecided-carrier-witnesses.lean",
+    },
     {
       kind: "caveat",
       date: "2026-11-16",

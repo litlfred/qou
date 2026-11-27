@@ -1,1 +1,0 @@
-Acting with crossing transformations on the VTQFT diagram gives an amplitude that is no longer of the factorized form \eqref{eq:factorizegenus2}; hence a new $\text{PSL}(2,\mathbb{Z})$-family of Dehn surgeries must be added for consistency with modular invariance of the lower moments $\overline{\rho_i}$.

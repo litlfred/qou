@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -20,6 +20,18 @@
     "library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/sections/sec-005"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The non-Riemannian nature of perceptual color space — 7 sections: Front matter; Experiment; Analysis\n\n**The non-Riemannian nature of perceptual color space**\n\n*PSYCHOLOGICAL AND COGNITIVE SCIENCEMS*\n\n10 pp, 7 sections.\n\n**Outline.** Front matter; Experiment; Analysis; Results; Limitations and Mitigations; Discussion; Materials and Methods",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co",
@@ -30,8 +42,8 @@
     "pages": 10,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

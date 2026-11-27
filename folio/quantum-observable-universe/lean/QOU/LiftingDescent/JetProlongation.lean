@@ -1,7 +1,7 @@
-import QOU.Basic
+import QOU.Core.Basic
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.Algebra.Module.LinearMap.Defs
-import QOU.Hecke.Generators
+import HeckeTemperleyLieb.Generators
 
 /-!
 # Jet prolongation chain — descent involution + transient/descended decomposition

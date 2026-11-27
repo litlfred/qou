@@ -1,1 +1,0 @@
-In fact, it was implicitly suggested already in [@FrRe92] that, since monodromy matrices of the quantized KZ equations are elliptic, the q-deformed KL functor should map the category of representations of the quantum affine algebra to the category of representations of an appropriate elliptic quantum group.

@@ -1,1 +1,0 @@
-If $W$ is another $\K$-module, then there is a unique $R$-module isomorphism \[ M \hot (V \ot W) \cong (M \hot V) \hot W \] that commutes with the canonical homomorphisms from $M \ot V \ot W$; hence we shall simply denote this complete $R$-module by $M \hot V \hot W$.

@@ -5,7 +5,7 @@ export default definition({
   title:
     "Frobenius self-pairing chirality factor $a_K(\\beta) = \\tau(\\beta\\beta^{\\ast})/\\tau(1)$",
   lean: {
-    ref: "qou:QOU.BraidKnot.chiralityFactor",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.chiralityFactor",
     validation: "not_checked",
   },
   uses: [],

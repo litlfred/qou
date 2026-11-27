@@ -5,7 +5,7 @@ export default proposition({
   title:
     "First-order contiguity recurrence for the Jackson first- and second-kind $q$-Bessel coefficients (fibre-level)",
   lean: {
-    ref: "qou:QOU.QBeta.qbessel_first_kind_coeff_closed_form",
+    ref: "qou:QOU.Nuclear.QBeta.qbessel_first_kind_coeff_closed_form",
     validation: "not_checked",
   },
   uses: ["rem:brings-curve"],

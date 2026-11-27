@@ -1,0 +1,3 @@
+In a two-strand subsystem the partner strand counter-rotates ($k^{(s)} = -1$) to preserve the centre-of-mass. The flow parameter $t \in [0,\pi]$ tracks the latitude, from $t=0$ at the south foundry to $t=\pi$ at the north foundry.
+
+The flow accumulates the color-twist factor $q t$ linearly. A strand at $\psi = 0$ on the south foundry arrives at $\psi = q\pi$ on the north foundry. Sequential flows compose additively: $\phi^q_{t_1} \circ \phi^q_{t_2} = \phi^q_{t_1 + t_2}$. A braid word acts as a concatenation of partial flows. This realizes the Heisenberg commutator $[\hat X,\hat P]_q = J\hbar_q$.

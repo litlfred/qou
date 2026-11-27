@@ -1,0 +1,1 @@
+Suppose given objects A, B, C ∈Acont, endomorphisms ΦA, ΦB, ΦC, a commutative diagram of continuous morphisms A ΨAC % ΨAB / B ΨBC / C and commuting structures sAB : ΨABΦA ∼ / ΦBΨAB sBC : ΨBCΦB ∼ / ΦCΨBC sAC : ΨACΦA ∼ / ΦCΨAC with an identiﬁcation sAC ≃sBCsAB. Then there is a canonical equivalence Tr(ΨAC, sAC) ≃Tr(ΨBC, sBC) ◦Tr(ΨAB, sAB) : Tr(ΦA) / Tr(ΦC)

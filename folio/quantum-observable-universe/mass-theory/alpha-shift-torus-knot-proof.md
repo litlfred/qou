@@ -1,4 +1,4 @@
-### Proof on $V_{(1^p)}$ (closed-form contribution)
+**On $V_{(1^p)}$ (closed-form contribution).**
 
 The single SYT of shape $(1^p)$ fills the column with entries
 $1, 2, \ldots, p$ from top to bottom, giving cell contents
@@ -43,7 +43,7 @@ maximum is realised uniquely at $V_{(1^p)}$.
 A general proof would establish that for the cyclic torus braid
 $\beta_{p,k}$, the rank of the $-q^{-1}$ eigenspace contribution
 strictly increases as $\lambda$ becomes more "column-like" in
-the dominance order. We conjecture this is straightforward via
+the dominance order. This is conjectured to follow directly via
 the Schur–Weyl pole-counting (each row of $\lambda$ contributes
 one $+q$ eigenvalue per Coxeter cycle, each column one $-q^{-1}$),
 but defer the categorical argument to a separate proposition.

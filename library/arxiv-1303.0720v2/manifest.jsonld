@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.0720v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1303.0720v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -66,6 +66,18 @@
     "library/arxiv-1303.0720v2/sections/sec-051"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS — We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight.\n\n**ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS**\n\n*ANTTI HAIMI AND HAAKAN HEDENMALM*\n\n41 pp, 53 sections.\n\n**Abstract.** We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight. This gives us a q-analytic Bergman kernel, which we use to extend the Bergman metric to this context. We recall that f is q-analytic if ¯∂q f = 0 for the given positive integer q. We also obtain asymptotic formulae for the q-analytic Bergman kernel in the setting of de- generating power weights e−2mQ, as the positive real parameter m tends to inﬁnity. This is only known for q = 1 in view of the work of Tian, Yau, Zelditch, and Catlin. We remark here that since a q-analytic function may be identiﬁed with a vector-valued holomorphic function, the Bergman space of q-analytic functions may be understood as a vector-valued holomorphic Bergman space supplied with a certain singular local metric on the vectors.\n\n**Outline.** Front matter; 1 Overview; 2 Weighted polyanalytic Bergman spaces and ker; 2.1 Basic notation; 2.2 The weighted Bergman spaces and kernels; 2.3 The weighted polyanalytic Bergman spaces a; 2.4 The polyanalytic Bergman space in the mode; 3 Musings on polyanalytic Bergman metrics; 3.3 The first polyanalytic Bergman metric; 3.4 The second polyanalytic Bergman metric; 3.5 The two polyanalytic Bergman metrics in th; 4 Interlude: a priori control on point evaluat; 4.1 Introductory comments; 4.2 The basic estimate; 4.3 Applications of the basic estimate; 4.4 The effective estimate of the point evalua; 5 Asymptotic expansion of polyanalytic Bergman; 5.1 The weighted polyanalytic Bergman space an",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -87,8 +99,8 @@
       "stamp_date": "9 Mar 2013"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

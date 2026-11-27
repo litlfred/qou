@@ -27,7 +27,7 @@ export default lemma({
   title:
     "Reeb quaternionic twist on the Bring-cone model: $[M_i, M_j] = 2M_k$ and cyclic",
   lean: {
-    ref: "qou:QOU.Tetraplectic.reeb_twist_ij",
+    ref: "qou:QOU.BringsSurface.BringCone.reeb_twist_ij",
     sorryFree: true,
     validation: "not_checked",
   },
@@ -86,6 +86,7 @@ export default lemma({
         "bundle (the gauge reading of `rem:tetraplectic-su2-gauge-reading`), not as " +
         "a Reeb triad. Addendum in the audit cited above.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): *The $\\mathfrak{su}(2)$ does survive in this layer, as the structure group of\nthe quaternionic resolvent bundle rather than as a Reeb triad — see*\n[the gauge reading](#rem:tetraplectic-su2-gauge-reading)." },
   ],
   tags: [
     "tetraplectic",

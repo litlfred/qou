@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2104.14491v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "1aea658f17283df1a147f8ef75ad961ec40d37d8b735c65e4a960d47aca45041",
   "file": "2104.14491v1.pdf"
@@ -16,151 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 9,
-  "by_kind": {
-   "recommendation": 9
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "One can chose *any* integers for $\\gamma$ and $\\delta$, but they must be knot invariants if one wishes the $\\mathfrak{H}$ to be a knot invariant too.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-21-coloured-decompositions-for-the-simplest-sate.md",
-   "section_title": "Coloured decompositions for the simplest satellites",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "One can chose any integers for \u03b3 and \u03b4, but they must be knot invariants if one wishes the H to be a knot invariant too.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-22-the-pattern-decomposition.md",
-   "section_title": "The pattern decomposition",
-   "pages": "5-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Then $k$ must be expressed via the number of the half-twists in the pattern, $w$, and the writhe number of the companion knot $\\mathcal{K}$, $\\nu$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-23-how-to-get-the-satellite-class-from-a-knot-di.md",
-   "section_title": "How to get the satellite class from a knot diagram",
-   "pages": "5-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Only one linear combination of $\\nu$ an $w$ must be a topological invariant, since the both numbers would be invariants otherwise.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-23-how-to-get-the-satellite-class-from-a-knot-di.md",
-   "section_title": "How to get the satellite class from a knot diagram",
-   "pages": "5-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Note that $n$ in ([\\[Jcol\\]](#Jcol){reference-type=\"ref\" reference=\"Jcol\"}) must be odd for torus knots and even for twist knots (see sec.[\\[app:coltor\\]](#app:coltor){reference-type=\"ref\" reference=\"app:coltor\"},[\\[app:coltw\\]](#app:coltw){reference-type=\"ref\" reference=\"app:coltw\"}).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-23-how-to-get-the-satellite-class-from-a-knot-di.md",
-   "section_title": "How to get the satellite class from a knot diagram",
-   "pages": "5-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Note that n in (12) must be odd for torus knots and even for twist knots (see sec.B.1,B.2).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-24-summary-of-jones-formulae.md",
-   "section_title": "Summary of Jones formulae",
-   "pages": "6-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In particular, one must extract an \"extra\" exceptional pair in ([\\[ppcd-u-tor-sat\\]](#ppcd-u-tor-sat){reference-type=\"ref\" reference=\"ppcd-u-tor-sat\"}), and our unreduced formulae are invalid for the unknot.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-015-432-reduced-vs-unreduced-polynomials.md",
-   "section_title": "Reduced vs unreduced polynomials",
-   "pages": "10-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Our evolution formulae for the Khovanov polynomials must give the positive Laurent polynomials in $q$ and $t$, but it is far from obvious that they do.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-021-5-eigenvalue-expressions-polynomiality-and-posit.md",
-   "section_title": "Eigenvalue expressions, polynomiality and positivity",
-   "pages": "11-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The used approach to the satellite polynomials is a good example of tangle calculus [40, 41], which one day should become a truly working formalism for 3d TQFTs far beyond knot and Chern-Simons theories.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-022-6-possible-applications-and-further-development.md",
-   "section_title": "Possible applications and further development",
-   "pages": "12-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

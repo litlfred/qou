@@ -1,4 +1,4 @@
-We construct the [direct limit algebra](#def:direct-limit-algebra) $A_\infty$ for $G = \mathrm{SU}(2)$ from the [brane tower for SU(2)](#ex:recursive-brane-tower-su2).
+One constructs the [direct limit algebra](#def:direct-limit-algebra) $A_\infty$ for $G = \mathrm{SU}(2)$ from the [brane tower for SU(2)](#ex:recursive-brane-tower-su2).
 
 **The tower.** The recursive brane tower yields a sequence of jet-level endomorphism algebras:
 $$

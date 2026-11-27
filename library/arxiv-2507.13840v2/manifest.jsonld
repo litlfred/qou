@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2507.13840v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.13840v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -50,6 +50,18 @@
     "library/arxiv-2507.13840v2/sections/sec-036"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Quantifying mixed-state entanglement via partial transpose and realignment moments — 37 sections: Front matter; Preliminaries; Quantitative\n\n**Quantifying mixed-state entanglement via partial transpose and realignment moments**\n\n*Poetri Sonya Tarabunga1,2 and Tobias Haug3*\n\n43 pp, 37 sections.\n\n**Outline.** Front matter; 2 Preliminaries; 3 Quantitative; 3.1 From the PT moments; 3.2 From the realignment moments; 3.3 Symmetry-resolved; 4 Quantifying; 5 Relation to operator space entanglement entr; 6 Entanglement testing; 7 Circuit depth certification; 8 Pseudorandom density matrices and pseudoenta; 9 Entanglement phase diagram; 9.1 Haar random states; 9.2 Stabilizer states; 10 Entanglement and noise; 11 Matrix product states and matrix product op; 11.1 Partial transpose moments; 11.2 Realignment moments",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "arxiv-2507.13840v2",
@@ -65,8 +77,8 @@
       "stamp_date": "11 Aug 2026"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

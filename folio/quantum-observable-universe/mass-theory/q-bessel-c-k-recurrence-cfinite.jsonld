@@ -1,18 +1,19 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prf-q-bessel-c-k-recurrence-cfinite",
   "@type": [
-    "folio-assistant-core:Proof",
+    "folio-assistant-sci:Proof",
     "doco:Section"
   ],
   "label": "prf:q-bessel-c-k-recurrence-cfinite",
   "kind": "proof",
-  "leanRef": "qou:QOU.QBeta.qbessel_coeff_closed_form",
+  "leanRef": "qou:QOU.Nuclear.QBeta.qbessel_coeff_closed_form",
   "text": "q-bessel-c-k-recurrence-cfinite.md",
   "provenance": "authored"
 }

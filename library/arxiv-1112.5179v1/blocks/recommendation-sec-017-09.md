@@ -1,1 +1,0 @@
-One way to check [\[volM\]](#volM){reference-type="eqref" reference="volM"}, up to a constant, is to note that the leading asymptotics of the index must be governed by the classical $\hbar\to 0$ ($q\to 1$) limit of the difference operators $\hat \mathcal{L}_M$.

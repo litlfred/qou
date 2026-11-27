@@ -1,0 +1,1 @@
+(a) The function B1 ˆf (0)(ξ, x, q) has simple poles at ξ ∈qZ with residue R(m, x, q) := Resξ=q−mB1 ˆf (0)(ξ, x, q) dξ 2πiξ = −(qx; q)∞(qx−1; q)∞ m X ℓ=0 qmx2ℓ−m (q; q)ℓ(q; q)m−ℓ . (314) MODULAR q-HOLONOMIC MODULES (b) The function f (0)(t, x, λ2, q) has simple poles at t ∈λ−1 2 qZ with residue Rest=q−mλ−1 2 f (0)(t, x, λ2, q) dt 2πit = f (−1)(q−mλ−1 2 , x, q) . (315)

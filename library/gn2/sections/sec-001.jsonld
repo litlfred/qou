@@ -14,10 +14,19 @@
   "pageEnd": 11,
   "contains": [
     "library/gn2/blocks/prose-sec-001",
-    "library/gn2/blocks/recommendation-sec-001-01",
-    "library/gn2/blocks/recommendation-sec-001-02"
+    "library/gn2/blocks/lem-sec-001-01",
+    "library/gn2/blocks/lem-sec-001-02",
+    "library/gn2/blocks/lem-sec-001-03",
+    "library/gn2/blocks/lem-sec-001-04",
+    "library/gn2/blocks/lem-sec-001-05",
+    "library/gn2/blocks/thm-sec-001-06",
+    "library/gn2/blocks/thm-sec-001-07",
+    "library/gn2/blocks/lem-sec-001-08",
+    "library/gn2/blocks/rem-sec-001-09",
+    "library/gn2/blocks/thm-sec-001-10",
+    "library/gn2/blocks/prop-sec-001-11"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/gn2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/gn2",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gn2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gn2/manifest.jsonld",
   "provenance": "ingested"
 }

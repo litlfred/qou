@@ -1,0 +1,1 @@
+Note that |MT (A3)| = C4 = 14. Explicitly, the bRT (A3)-standard monomials are as follows: 1, E1, E2,1, E2, E1E2, E3,1, E3,2, E3, E1E3,2, E1E3, E2,1E3,2, E2,1E3, E2E3, E1E2E3.

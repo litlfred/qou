@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2105.09342v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2105.09342v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -29,6 +29,18 @@
     "library/arxiv-2105.09342v1/sections/sec-014"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A Unitary Matrix Model for q-deformed Plancherel Growth — In this paper we construct a unitary matrix model that captures the asymptotic growth of Young diagrams under q-deformed Plancherel measure.\n\n**A Unitary Matrix Model for q-deformed Plancherel Growth**\n\n*Suvankar Duttaa, Debangshu Mukherjeeb, Neetua, Sanhita Parihara*\n\n31 pp, 16 sections.\n\n**Abstract.** In this paper we construct a unitary matrix model that captures the asymptotic growth of Young diagrams under q-deformed Plancherel measure. The matrix model is a q analog of Gross-Witten-Wadia (GWW) matrix model. In the large N limit the model exhibits a third order phase transition between no-gap and gapped phases, which is a q-deformed version of the GWW phase transition. We show that the no-gap phase of this matrix model captures the asymptotic growth of Young diagrams equipped with q-deformed Plancherel measure. The no-gap solutions also satisﬁes a diﬀerential equation which is the q-analogue of the automodel equation. We further provide a droplet description for these growing Young diagrams. Quantising these droplets we identify the Young diagrams with coherent states in the Hilbert space.\n\n**Outline.** Front matter; 1 Introduction; 2 q-deformed Plancherel growth; 3 A unitary matrix model for q-deformed Planch; 3.1 Solution class 1: No-gap solution; 3.2 q-deformed automodel class; 3.3 The unitary matrix model from the droplet ; 4 Asymptotic analysis of q-deformed Plancherel; 5 The Hilbert space; 5.1 Moments of Young diagrams and conserved ch; 6 Conclusion; Appendix A q analog of GWW phase transition; Appendix B Explicit computation of the partiti; Appendix C Calculation of automodel density fo; Appendix C.1 Computing Hconst(h), H(h) and Hse; Appendix D Droplet quantisation",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -51,8 +63,8 @@
       "stamp_date": "19 May 2021"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

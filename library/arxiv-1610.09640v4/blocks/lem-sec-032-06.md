@@ -1,0 +1,1 @@
+There is a unique morphism δi E : Hi(N) →Hi+1(L) in M with the following property: (†) For every U ∈M, every section ¯n ∈Γ(U, Hi(N)), and every covering V ↠ U that admits a connecting triple for ¯n, there is equality δi E(¯n) = δV (¯n) in Γ(U, Hi+1(L)). Derived Categories | Amnon Yekutieli |

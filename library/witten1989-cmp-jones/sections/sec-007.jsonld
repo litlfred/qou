@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/witten1989-cmp-jones/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Since we already know the partition function of S 2 xS",
+  "pageStart": 38,
+  "pageEnd": 40,
+  "contains": [
+    "library/witten1989-cmp-jones/blocks/prose-sec-007",
+    "library/witten1989-cmp-jones/blocks/recommendation-sec-007-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/witten1989-cmp-jones",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/witten1989-cmp-jones",
+  "provenance": "ingested"
+}

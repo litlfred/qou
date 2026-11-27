@@ -44,7 +44,7 @@ export default theorem({
     // the question. `_frobenius` supplies the missing link — the trace is the
     // image of the Frobenius family under a realization, and the conclusion is
     // about `hχ.frobenius_at p` itself.
-    ref: "qou:QOU.LiftingDescent.motivic_perpetual_obstruction_frobenius",
+    ref: "qou:QOU.LiftingDescent.LiftingDescentRoot.motivic_perpetual_obstruction_frobenius",
     validation: "not_checked",
   },
   authorNotes: [
@@ -54,5 +54,6 @@ export default theorem({
       body:
         "Re-scoped 2026-11-15 (owner decision, PR #7747, bean qou-lx8f): the previous text read: \"This theorem subsumes every prior argument for the non-vanishing of $\\kappa_n$ in the brane tower.\"",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): - [Bring's surface and $q$-flatness obstructions](#ex:archimedean-yekutieli) \"Motivic-Galois reading\"\n- [$\\chi_{\\mathrm{eu}}(M_0) = -6$: the derivation chain](#ex:chi-minus-six-derivation) Step 8" },
   ],
 });

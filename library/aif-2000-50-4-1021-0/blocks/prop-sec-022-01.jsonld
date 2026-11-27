@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/aif-2000-50-4-1021-0/blocks/prop-sec-022-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 25,
+  "pageEnd": 28,
+  "text": "prop-sec-022-01.md",
+  "derivedFrom": "library/aif-2000-50-4-1021-0/sections/sec-022",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2000-50-4-1021-0/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Cites external source [15], [17] in sections/sec-022-31-estimation-asymptotique-de-eqc-et-de-iq.md",
+    "claim_id": "aif-2000-50-4-1021-0#prop-sec-022-01",
+    "lean_status": "unformalized"
+  }
+}

@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2507.13873v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "fa1d38d08dc4976a3e03dc9c9a2ad31a0ccb4b37ac32b836b4a9e79573bda9ca",
   "file": "2507.13873v1.pdf"
  },
  "provenance": {
-  "title": "Probing the singularity at the holographic screen via $q$-holography",
+  "title": "Probing the singularity at the holographic screen via q-holography",
   "authors": "Department of Physics and Astronomy",
   "arxiv": {
    "id": "2507.13873",
@@ -16,106 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 6,
-  "by_kind": {
-   "recommendation": 6
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "As we shall see, it turns out that the most natural candidate is Liouville gravity [@Polyakov:1981rd; @Distler:1988jt; @David:1988hj; @Knizhnik:1988ak].",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-definition-and-classical-structure-of-sinh-dilat.md",
-   "section_title": "Definition and classical structure of sinh dilaton gravity",
-   "pages": "12-15",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "[^2]: One should make a distinction between physical quantization and $q$-deformed \"quantization\".",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-definition-and-classical-structure-of-sinh-dilat.md",
-   "section_title": "Definition and classical structure of sinh dilaton gravity",
-   "pages": "12-15",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For the probe approximation to be successful, the matter operator should be light enough not to disturb the saddle of the background geometry [\\[firstlaw\\]](#firstlaw){reference-type=\"eqref\" reference=\"firstlaw\"}.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-probe-regime-of-sinh-dilaton-gravity.md",
-   "section_title": "Probe regime of sinh dilaton gravity",
-   "pages": "15-21",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This emergent quantum hyperbolic disk geometry should be viewed as a $q$-deformation of the effective AdS$_2$ geometry that governed semi-classical physics [\\[eq:weylliou\\]](#eq:weylliou){reference-type=\"eqref\" reference=\"eq:weylliou\"}.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-probe-regime-of-sinh-dilaton-gravity.md",
-   "section_title": "Probe regime of sinh dilaton gravity",
-   "pages": "15-21",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We end by listing some possible directions for the future.\\ *Other boundary correlation functions in the probe regime*\\ It should in principle be possible to apply our probe calculational method to other sinh dilaton gravity boundary correlation functions.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-concluding-remarks.md",
-   "section_title": "Concluding remarks",
-   "pages": "21-24",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Correlation functions should be invariant under the global SL(2, R) conformal subgroup, which is implemented by the three Ward identities Ln \u27e8O(z1) . . .",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-corepresentations-of-quasi-primary-operators.md",
-   "section_title": "Corepresentations of (quasi)-primary operators",
-   "pages": "24-28",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

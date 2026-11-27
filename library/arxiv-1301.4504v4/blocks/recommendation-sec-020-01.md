@@ -1,1 +1,0 @@
-When we continue to Euclidean time we can set the $\tau$ periodicity of the AdS soliton [\[adssol\]](#adssol){reference-type="eqref" reference="adssol"} freely, but for the black brane [\[bb\]](#bb){reference-type="eqref" reference="bb"} we must choose $r_0$ to be consistent with the $\tau$ periodicity for the Euclidean geometry to be smooth.

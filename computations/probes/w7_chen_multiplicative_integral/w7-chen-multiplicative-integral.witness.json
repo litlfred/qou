@@ -1,0 +1,659 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-23T23:22:10.357324+00:00",
+  "commitSha": "15db38d02537a76aac65f3977a888e78a5c68e03",
+  "assertions": [
+    {
+      "name": "SuiteA_path_concat_multiplicativity_B3_21",
+      "computed": "1.1970373895465436278137308762747505171741884666849e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-76",
+      "source": "ChenMultiplicativeIntegralBridge.orderedProd_append"
+    },
+    {
+      "name": "SuiteA_inverse_path_reversal_B3_21",
+      "computed": "4.3898865636903158604413382992098037490676689888885e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-76",
+      "source": "KZ inverse-path parallel transport"
+    },
+    {
+      "name": "SuiteA_path_concat_multiplicativity_B4_22",
+      "computed": "1.5553070861105563344038579147789490139023199417662e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-76",
+      "source": "ChenMultiplicativeIntegralBridge.orderedProd_append"
+    },
+    {
+      "name": "SuiteA_inverse_path_reversal_B4_22",
+      "computed": "2.3523912200244355889199313212097323544739351102600e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-76",
+      "source": "KZ inverse-path parallel transport"
+    },
+    {
+      "name": "SuiteA_path_concat_multiplicativity_B4_31",
+      "computed": "2.4062537927351008552578952983923877240070560830554e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-76",
+      "source": "ChenMultiplicativeIntegralBridge.orderedProd_append"
+    },
+    {
+      "name": "SuiteA_inverse_path_reversal_B4_31",
+      "computed": "4.6260350635639254895927901919573668058928550998112e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-76",
+      "source": "KZ inverse-path parallel transport"
+    },
+    {
+      "name": "SuiteA_two_generator_conf3_lift_multiplicativity",
+      "computed": "1.2077421746231157833674349173639187892616428967732e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-76",
+      "source": "Deck-quotient Conf_3(C) -> UConf_3(C) transport concatenation"
+    },
+    {
+      "name": "SuiteA_chen_shuffle_group_like_le4",
+      "computed": "5.2710989716152616121742870256350095038549806911843e-82",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-76",
+      "source": "ChenMultiplicativeIntegralBridge.IsShuffleGroupLike"
+    },
+    {
+      "name": "SuiteA_chen_deconcatenation_le4",
+      "computed": "5.8932678083304797051133078476997767722251579112385e-82",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-76",
+      "source": "ChenMultiplicativeIntegralBridge.shuffleEval_chenSigMul"
+    },
+    {
+      "name": "SuiteA_discrete_gronwall_bound_holds_all_N",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "ChenMultiplicativeIntegralBridge.eulerOrderedProd_error_bound"
+    },
+    {
+      "name": "SuiteA_euler_O_1_over_N_richardson_scaling",
+      "computed": "0.0027745363815427034623759376234252385608624761891750",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "2e-2",
+      "source": "First-order O(1/N) asymptotic scaling of ordered Euler product"
+    },
+    {
+      "name": "SuiteB_yang_baxter_B3_21_yb01",
+      "computed": "1.1960843782321525822905477355779663669325169906996e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "Kohno-Drinfeld flat KZ braid relation"
+    },
+    {
+      "name": "SuiteB_yang_baxter_B4_22_yb01",
+      "computed": "3.4163584705377780959031845006615725750494206310059e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "Kohno-Drinfeld flat KZ braid relation"
+    },
+    {
+      "name": "SuiteB_yang_baxter_B4_22_yb12",
+      "computed": "3.4618217585125909159901936039114189805134851702943e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "Kohno-Drinfeld flat KZ braid relation"
+    },
+    {
+      "name": "SuiteB_yang_baxter_B4_31_yb01",
+      "computed": "4.2453986321658152442485313314839280675393411452774e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "Kohno-Drinfeld flat KZ braid relation"
+    },
+    {
+      "name": "SuiteB_yang_baxter_B4_31_yb12",
+      "computed": "4.4337767068673244978824072565451071305835576680578e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "Kohno-Drinfeld flat KZ braid relation"
+    },
+    {
+      "name": "SuiteB_far_commutation_B4_22_far02",
+      "computed": "3.1971476419841933476593954649449830954840626610362e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-76",
+      "source": "Artin far-commutation [P(sigma_0), P(sigma_2)] = 0 on B_4"
+    },
+    {
+      "name": "SuiteB_far_commutation_B4_31_far02",
+      "computed": "2.7693409921022937979465526465693959402756554840027e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-76",
+      "source": "Artin far-commutation [P(sigma_0), P(sigma_2)] = 0 on B_4"
+    },
+    {
+      "name": "SuiteB_hecke_quadratic_B3_21",
+      "computed": "1.1456047192115693890304743057148916214537027192673e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.kzLocalMonodromyReal_hecke_quad"
+    },
+    {
+      "name": "SuiteB_hecke_quadratic_B4_22",
+      "computed": "4.5735622652873338018595725975947175469073144457898e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.kzLocalMonodromyReal_hecke_quad"
+    },
+    {
+      "name": "SuiteB_hecke_quadratic_B4_31",
+      "computed": "5.1847506271427144353962937611425814867526315126835e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.kzLocalMonodromyReal_hecke_quad"
+    },
+    {
+      "name": "SuiteB_sl2_casimir_writhe_shift",
+      "computed": "1.6873219331297777321214876778208282336502548010825e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-76",
+      "source": "Traceless sl_2 KZ Casimir shift q_0^{-writhe/2}"
+    },
+    {
+      "name": "SuiteB_drinfeld_associator_nontrivial",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Non-trivial Drinfeld associator ||Phi_KZ - I_2||_inf = (1/2) eta_0^2 + O(eta_0^3) > 5e-3 at q_0"
+    },
+    {
+      "name": "SuiteB_drinfeld_associator_zeta2_leading_term",
+      "computed": "0.000034377662891801776397476627660715211041951143193601",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "5e-5",
+      "source": "Drinfeld zeta(2) expansion Re(Phi_KZ - I_2) = (eta_0^2 / 6) [Omega_01, Omega_12] + O(eta_0^4)"
+    },
+    {
+      "name": "SuiteB_klein4_symmetry_B4_22_P0_eq_P2",
+      "computed": "2.1086969508183962794430030879364343918754524129143e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-76",
+      "source": "Klein-four V_4 symmetry P_KZ^{[2,2]}(sigma_0) = P_KZ^{[2,2]}(sigma_2) on Conf_4(C)"
+    },
+    {
+      "name": "SuiteB_drinfeld_associator_conjugacy_sigma0",
+      "computed": "2.3197580124679543982104761545411327647152894954331e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "Mobius-equivariant cross-ratio G_0(1/2) R_0^{loc} G_0(1/2)^{-1} = P(sigma_0)"
+    },
+    {
+      "name": "SuiteB_drinfeld_associator_conjugacy_sigma1",
+      "computed": "1.8977500306014539418447892434918066766983512916996e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "Drinfeld associator P_asymp(sigma_1) = Phi_KZ^{-1} R_1^{loc} Phi_KZ"
+    },
+    {
+      "name": "SuiteB_trace_invariance_B3_21:sigma_0",
+      "computed": "3.1654035564858394281616152030395494897895560745179e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.trace_eq_of_units_intertwine"
+    },
+    {
+      "name": "SuiteB_trace_invariance_B3_21:sigma_1",
+      "computed": "3.1669461091403219420431218769803768239810884799761e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.trace_eq_of_units_intertwine"
+    },
+    {
+      "name": "SuiteB_trace_invariance_B3_21:3_1_torus32",
+      "computed": "6.3922263198762487907408713920486965716051726603147e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.trace_eq_of_units_intertwine"
+    },
+    {
+      "name": "SuiteB_trace_invariance_B3_21:3_1_sigma0_cubed",
+      "computed": "9.4948962319787321806675472211387751320289401968786e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.trace_eq_of_units_intertwine"
+    },
+    {
+      "name": "SuiteB_trace_invariance_B3_21:4_1",
+      "computed": "1.1633047931545474551742265696234708867116909801104e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.trace_eq_of_units_intertwine"
+    },
+    {
+      "name": "SuiteB_trace_invariance_B3_21:T_3_5",
+      "computed": "1.5990206921791391229353164145880450101148193473770e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.trace_eq_of_units_intertwine"
+    },
+    {
+      "name": "SuiteB_trace_invariance_B3_21:Borromean",
+      "computed": "4.2215094370407265791194167720929502390076428402599e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.trace_eq_of_units_intertwine"
+    },
+    {
+      "name": "SuiteB_trace_invariance_B4_22:sigma_0",
+      "computed": "1.3705659133830709322429233850597911819181304967314e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.trace_eq_of_units_intertwine"
+    },
+    {
+      "name": "SuiteB_trace_invariance_B4_22:sigma_1",
+      "computed": "9.4916379284645622617228251680702233070731640436665e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.trace_eq_of_units_intertwine"
+    },
+    {
+      "name": "SuiteB_trace_invariance_B4_22:sigma_2",
+      "computed": "1.4759821659180225180957085482100825401904484144348e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.trace_eq_of_units_intertwine"
+    },
+    {
+      "name": "SuiteB_trace_invariance_B4_22:3_1_stab",
+      "computed": "4.2251072420474759517236696618703681611770467304992e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.trace_eq_of_units_intertwine"
+    },
+    {
+      "name": "SuiteB_trace_invariance_B4_22:4_1_stab",
+      "computed": "9.4879781489074709019137166461430171069389652441317e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.trace_eq_of_units_intertwine"
+    },
+    {
+      "name": "SuiteB_trace_invariance_B4_22:T_3_5_stab",
+      "computed": "2.1176849222944964209452259898856656122309039034522e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.trace_eq_of_units_intertwine"
+    },
+    {
+      "name": "SuiteB_trace_invariance_B4_22:T_4_3",
+      "computed": "5.9435754278892924897090355319117025204832277490252e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.trace_eq_of_units_intertwine"
+    },
+    {
+      "name": "SuiteB_trace_invariance_B4_31:sigma_0",
+      "computed": "2.9529740104776197193499492412719583937163076894369e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.trace_eq_of_units_intertwine"
+    },
+    {
+      "name": "SuiteB_trace_invariance_B4_31:sigma_1",
+      "computed": "1.4768486797679145708327744489439675791815885179802e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.trace_eq_of_units_intertwine"
+    },
+    {
+      "name": "SuiteB_trace_invariance_B4_31:sigma_2",
+      "computed": "2.1101787458349893914082535313054113633621723079370e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.trace_eq_of_units_intertwine"
+    },
+    {
+      "name": "SuiteB_trace_invariance_B4_31:3_1_stab",
+      "computed": "5.4846190072467698018110640297935914292139463216416e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.trace_eq_of_units_intertwine"
+    },
+    {
+      "name": "SuiteB_trace_invariance_B4_31:4_1_stab",
+      "computed": "2.2089929984563009390449234111362629254432201699110e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.trace_eq_of_units_intertwine"
+    },
+    {
+      "name": "SuiteB_trace_invariance_B4_31:T_3_5_stab",
+      "computed": "1.3289861181896681377929961479422782350391234610088e-79",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.trace_eq_of_units_intertwine"
+    },
+    {
+      "name": "SuiteB_trace_invariance_B4_31:T_4_3",
+      "computed": "1.6696081183151563936548583294300641005050130107921e-79",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.trace_eq_of_units_intertwine"
+    },
+    {
+      "name": "SuiteB_closed_loop_gauge_invariance_d2",
+      "computed": "1.4008137665406472460235199428368953988825039332585e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-76",
+      "source": "ChenMultiplicativeIntegralBridge.trace_gaugeTransform_closed_loop"
+    },
+    {
+      "name": "SuiteB_closed_loop_gauge_invariance_d3",
+      "computed": "3.0763761129032859971146146087054789891424750212229e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-76",
+      "source": "ChenMultiplicativeIntegralBridge.trace_gaugeTransform_closed_loop"
+    },
+    {
+      "name": "SuiteC_masstrace_regular_eq_d_mul_trace_d2",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-76",
+      "source": "ChenMultiplicativeIntegralBridge.matFrobHopf_leftTrace_eq_dim_mul_trace"
+    },
+    {
+      "name": "SuiteC_masstrace_regular_eq_d_mul_trace_d3",
+      "computed": "8.4594569891797005144108453570094225483095015499324e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-76",
+      "source": "ChenMultiplicativeIntegralBridge.matFrobHopf_leftTrace_eq_dim_mul_trace"
+    },
+    {
+      "name": "SuiteC_nablaEndo_kzOmega01_nonzero",
+      "computed": "1.0000000000000000000000000000000000000000000000000",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "1e-76",
+      "source": "ChenMultiplicativeIntegralBridge.adEndo_kzOmega01_ne_zero"
+    },
+    {
+      "name": "SuiteC_nablaEndo_leibniz",
+      "computed": "1.3148372601248802343569505519175836623948095434886e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-76",
+      "source": "ChenMultiplicativeIntegralBridge.adEndo_leibniz"
+    },
+    {
+      "name": "SuiteC_spatial_reeb_cross_trace_zero",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-76",
+      "source": "ChenMultiplicativeIntegralBridge.evalTraceLin_cross_zero"
+    },
+    {
+      "name": "SuiteC_conventionD_markov_stabilization_B3_to_B4_3_1",
+      "computed": "1.0544005574847515354494842233242036104956039155889e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.conventionD_twoRow_generator_synthesis"
+    },
+    {
+      "name": "SuiteC_conventionD_markov_stabilization_B3_to_B4_4_1",
+      "computed": "1.8451379239753391745597870127881910124718959832047e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.conventionD_twoRow_generator_synthesis"
+    },
+    {
+      "name": "SuiteC_conventionD_markov_stabilization_B3_to_B4_T_3_5",
+      "computed": "2.2142940715187277823844033352133001917712158055237e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.conventionD_twoRow_generator_synthesis"
+    },
+    {
+      "name": "SuiteC_substrate_borromean_two_term_lagrangian_diff",
+      "computed": "1.3177747429038154030435717564087523759637451727961e-82",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "ChenMultiplicativeIntegralBridge.substrate_borromean_two_term_instantiation"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "w7-chen-multiplicative-integral",
+  "scriptFile": "w7_chen_multiplicative_integral_probe.py",
+  "scriptHash": "bcf16b06d6e0",
+  "scriptCommitSha": "15db38d02537a76aac65f3977a888e78a5c68e03",
+  "precisionMetadata": {
+    "compute_dps": 80,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/w7_chen_multiplicative_integral/w7_chen_multiplicative_integral_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/w7_chen_multiplicative_integral/w7_chen_multiplicative_integral_probe.py"
+  },
+  "description": "80-dps verification of Picard-Chen multiplicative integral multiplicativity, non-abelian KZ monodromy Yang-Baxter & Drinfeld associator conjugacy on B_3 ([2,1]) and B_4 ([2,2], [3,1]), knot/link trace invariance (3_1, 4_1, T(3,5), Borromean, T(4,3)), and MassTraceIdentity / nablaEndo substrate instantiation at proton-anchored q_0.",
+  "parameters": {
+    "work_dps": 80,
+    "output_dps": 50,
+    "n_subintervals": 16,
+    "gauss_legendre_nodes": 36,
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "eta0_ln_q0": "0.10434072031951951231590627997307239705374428082898"
+  },
+  "data": {
+    "drinfeld_associator_B3_21": {
+      "phi_kz_minus_I_inf_norm": "0.0054284086897648087107594030582178623916458613868099",
+      "phi_kz_zeta2_O_eta4_residual": "0.000034377662891801776397476627660715211041951143193601",
+      "b4_22_P_sigma0_minus_P_sigma2_inf_norm": "2.1086969508183962794430030879364343918754524129143e-81",
+      "b4_31_P_sigma0_minus_P_sigma2_inf_norm": "3.0331881882448053154255292242733504128629953672931",
+      "phi_kz_entries_re_im": [
+        [
+          [
+            "1.0017997739336145668263857620782787757483281269689",
+            "0.00017497384361675624402326826743077263996233183348515"
+          ],
+          [
+            "0.0036093413618917274173536493742697560259733331559507",
+            "0.000087486921808378122011634133715386319981165916742574"
+          ]
+        ],
+        [
+          [
+            "-0.0036093413618917274173536493742697560259733331559507",
+            "-0.000087486921808378122011634133715386319981165916742574"
+          ],
+          [
+            "0.99819043257172283940903211270400901972235479381298",
+            "-0.00017497384361675624402326826743077263996233183348515"
+          ]
+        ]
+      ]
+    },
+    "euler_gronwall_convergence": {
+      "M_bound": "0.23711428692610809173789702123880702230463387818387",
+      "gronwall_C": "0.090337963857194453698453211156751802165846165139318",
+      "errors_by_N": {
+        "16": "0.00039411272031748132102218935253767458364293088675281",
+        "32": "0.00020159450959066542704434987154861234605414338965706",
+        "64": "0.00010193567549162322495205145307828655500339993984990",
+        "128": "0.000051252843294677142248309131958360580339703645219371",
+        "256": "0.000025697720908923108919495775707083769138425319910931"
+      },
+      "N_times_error": {
+        "16": "0.0063058035250797011363550296406027933382868941880449",
+        "32": "0.0064510243069012936654191958895555950737325884690258",
+        "64": "0.0065238832314638863969312929970103395202175961503935",
+        "128": "0.0065603639417186742077835688906701542834820665880794",
+        "256": "0.0065786165526843158833909185810134448994368818971983"
+      }
+    },
+    "kz_monodromy_traces": {
+      "B3_21:sigma_0": {
+        "re": "0.20906029879563931543084621312967494385975749526302",
+        "im": "1.3177747429038154030435717564087523759637451727961e-82"
+      },
+      "B3_21:sigma_1": {
+        "re": "0.20906029879563931543084621312967494385975749526302",
+        "im": "1.6472184286297692538044646955109404699546814659951e-82"
+      },
+      "B3_21:3_1_torus32": {
+        "re": "-1.0000000000000000000000000000000000000000000000000",
+        "im": "9.2244232003267078213050022948612666317462162095724e-82"
+      },
+      "B3_21:3_1_sigma0_cubed": {
+        "re": "0.63631812940195151392537124881425457394710771144329",
+        "im": "3.6238805429854923583698223301240690339002992251892e-82"
+      },
+      "B3_21:4_1": {
+        "re": "-0.91067735027066772324562475403826347807219357991737",
+        "im": "9.2244232003267078213050022948612666317462162095724e-82"
+      },
+      "B3_21:T_3_5": {
+        "re": "-1.0000000000000000000000000000000000000000000000000",
+        "im": "2.3719945372268677254784291615357542767347413110329e-81"
+      },
+      "B3_21:Borromean": {
+        "re": "1.9941858129799640867281993680187167000891395825118",
+        "im": "-1.9766621143557231045653576346131285639456177591941e-82"
+      },
+      "B4_22:sigma_0": {
+        "re": "0.20906029879563931543084621312967494385975749526302",
+        "im": "1.4824965857667923284240182259598464229592133193956e-82"
+      },
+      "B4_22:sigma_1": {
+        "re": "0.20906029879563931543084621312967494385975749526302",
+        "im": "-2.6355494858076308060871435128175047519274903455921e-82"
+      },
+      "B4_22:sigma_2": {
+        "re": "0.20906029879563931543084621312967494385975749526302",
+        "im": "1.4824965857667923284240182259598464229592133193956e-82"
+      },
+      "B4_22:3_1_stab": {
+        "re": "-0.20906029879563931543084621312967494385975749526302",
+        "im": "2.6355494858076308060871435128175047519274903455921e-82"
+      },
+      "B4_22:4_1_stab": {
+        "re": "0.42725783060631219849452503568457963008735021618026",
+        "im": "0.0"
+      },
+      "B4_22:T_3_5_stab": {
+        "re": "-0.20906029879563931543084621312967494385975749526302",
+        "im": "1.9766621143557231045653576346131285639456177591941e-82"
+      },
+      "B4_22:T_4_3": {
+        "re": "-5.9429581881926287465697830633165343480377463941270e-80",
+        "im": "-8.5655358288748001197832164166568904437643436231744e-82"
+      },
+      "B4_31:sigma_0": {
+        "re": "1.3190388815470201230225153087404438237342566171366",
+        "im": "-8.2711598792270972160271450892364782308720519158726e-82"
+      },
+      "B4_31:sigma_1": {
+        "re": "1.3190388815470201230225153087404438237342566171366",
+        "im": "-5.2710989716152616121742870256350095038549806911843e-82"
+      },
+      "B4_31:sigma_2": {
+        "re": "1.3190388815470201230225153087404438237342566171366",
+        "im": "-8.5655358288748001197832164166568904437643436231744e-82"
+      },
+      "B4_31:3_1_stab": {
+        "re": "-1.1099785827513808075916690956107688798744991218736",
+        "im": "1.7131071657749600239566432833313780887528687246349e-81"
+      },
+      "B4_31:4_1_stab": {
+        "re": "-1.0780191298432160604897747051008318688976009832035",
+        "im": "6.5888737145190770152178587820437618798187258639803e-82"
+      },
+      "B4_31:T_3_5_stab": {
+        "re": "-1.4273223427162159397038543850359444279248406442042",
+        "im": "4.2168791772922092897394296205080076030839845529474e-81"
+      },
+      "B4_31:T_4_3": {
+        "re": "-1.3675518369513851879667240299093610007110975207728",
+        "im": "1.1464640263263194006479074280756145670884583003326e-80"
+      }
+    },
+    "borromean_two_term_substrate": {
+      "tau_diff_direct": "-0.071878732844444901293874640248761978356067609910972",
+      "tau_diff_closed": "-0.071878732844444901293874640248761978356067609910972",
+      "abs_diff": "1.3177747429038154030435717564087523759637451727961e-82"
+    }
+  },
+  "caveats": [
+    "Pre-registration order-of-magnitude note: PREREGISTRATION.md eyeball-estimated ||Phi_KZ - I_2||_inf > 1e-2 before evaluating (1/2) eta_0^2; at proton-pinned eta_0 = ln(q_0) = 0.10434072..., the O(eta_0) term vanishes identically by logarithmic regularization and the exact leading Drinfeld zeta(2) term +(eta_0^2 / 6)[Omega_01, Omega_12] has infinity norm (1/2) eta_0^2 = 0.00544349... (full all-orders norm = 0.0054284086897648..., verified analytically to O(eta_0^4) < 5e-5)."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

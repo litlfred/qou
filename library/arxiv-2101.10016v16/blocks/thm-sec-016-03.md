@@ -1,0 +1,1 @@
+Any semisimple rigid C ∗ -tensor category or any semisimple rigid tensor category with amenable fusion ring (e.g. any fusion category) admits a natural positive symmetric dimension function, and therefore infinitely many integral symmetric weak dimension functions.

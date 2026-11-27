@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9811173v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9811173v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-th-9811173v1",
+  "title": "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links",
   "contains": [
     "library/arxiv-hep-th-9811173v1/sections/sec-front-matter",
     "library/arxiv-hep-th-9811173v1/sections/sec-000",
@@ -42,6 +42,18 @@
     "library/arxiv-hep-th-9811173v1/sections/sec-027"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links — We identify 998 closed hyperbolic 3-manifolds whose volumes are rationally related to\n\n**Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links**\n\n*J. M. Borweina) and D. J. Broadhurstb)*\n\n54 pp, 29 sections.\n\n**Abstract.** We identify 998 closed hyperbolic 3-manifolds whose volumes are rationally related to Dedekind zeta values, with coprime integers a and b giving a b vol(M) = (−D)3/2 (2π)2n−4 ζK(2) 2ζ(2) for a manifold M whose invariant trace ﬁeld K has a single complex place, discriminant D, degree n, and Dedekind zeta value ζK(2). The largest numerator of the 998 invariants of Hodgson–Weeks manifolds is, astoundingly, a = 24×23×37×691 = 9, 408, 656; the largest denominator is merely b = 9. We also study the rational invariant a/b for single-complex- place cusped manifolds, complementary to knots and links, both within and beyond the Hildebrand–Weeks census. Within the censi, we identify 152 distinct Dedekind zetas rationally related to volumes. Moreover, 91 census manifolds have volumes reducible to pairs of these zeta values.\n\n**Outline.** Front matter; 1 Introduction; 2 Dedekind-zeta invariants of closed manifolds; 2.1 Examination of 1,200 single-complex-place ; 2.2 Examination of 44 fields found by Snap; 2.3 A special case: manifold ${\\rm v}3066(-1,2; 2.4 How may one derive/ the rational invariant; 3 Cusped manifolds and join fields; 4 Links whose volumes link Clausen values; 4.1 Signpost: integer sequence A003657; 4.2 Dirichlet character; 4.3 Figure-8 knot at $D=-3$; 4.4 Whitehead link at $D=-4$; 4.5 Link $6^3_1$ at $D=-7$; 4.6 Link $9^2_{40}$ at $D=-8$; 4.7 A 12-crossing 4-component link at $D=-11$; 4.9 A self-dual platonic link at $D=-20$; 4.10 A 48-crossing daisy-chain link at $D=-24$",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -52,7 +64,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-th-9811173v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9811173v1.pdf",
     "source_sha256": "986bf57947746523a0647891dc9e452d9b60bf99a7257d33140d146056e1bf7e",
     "pages": 54,
@@ -63,8 +77,8 @@
       "stamp_date": "19 Nov 1998"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

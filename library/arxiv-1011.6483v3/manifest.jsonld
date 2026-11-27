@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1011.6483v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1011.6483v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -33,6 +33,18 @@
     "library/arxiv-1011.6483v3/sections/sec-018"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "DERIVED HIGHER HOCHSCHILD HOMOLOGY, TOPOLOGICAL CHIRAL HOMOLOGY AND FACTORIZATION ALGEBRAS — We study the higher Hochschild chain functor, factorization alge- bras and their relationship with\n\n**DERIVED HIGHER HOCHSCHILD HOMOLOGY, TOPOLOGICAL CHIRAL HOMOLOGY AND FACTORIZATION ALGEBRAS**\n\n*GRÉGORY GINOT, THOMAS TRADLER, AND MAHMOUD ZEINALIAN*\n\n60 pp, 20 sections.\n\n**Abstract.** We study the higher Hochschild chain functor, factorization alge- bras and their relationship with topological chiral homology. To this end, we emphasize that the higher Hochschild complex is a (∞, 1)-functor sSet∞× CDGA∞where sSet∞and CDGA∞are the (∞, 1)-categories of simplicial sets and commutative diﬀerential graded algebras, and give an axiomatic char- acterization of this functor. From the axioms, we deduce several properties and computational tools for this functor. We study the relationship between the higher Hochschild functor and factorization algebras by showing that, in good cases, the Hochschild functor determines a constant commutative factoriza- tion algebra. Conversely, every constant commutative factorization algebra is naturally equivalent to a Hochschild chain factorization algebra.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminary definitions and notation; 2.1 Simplicial sets; 2.2 Commutative Differential Graded Algebras; 2.3 Dwyer-Kan localization and (,1)-categories; 3 Derived higher Hochschild functor; 3.1 Naive axiomatic approach to higher Hochsch; 3.2 Higher Hochschild as an (, 1)-functor; 3.3 Pointed simplicial sets and modules; 4 Factorization algebras and derived Hochschil; 4.2 (Pre)Factorization algebras; 4.3 Locally constant factorization algebras an; 5 Relationship with topological chiral homolog; 5.1 Review of topological chiral homology à la; 5.2 Locality axiom and the equivalence of topo; 5.3 Relation with the Blob complex; 5.4 Topological chiral homology as a factoriza",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -54,8 +66,8 @@
       "stamp_date": "31 May 2012"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

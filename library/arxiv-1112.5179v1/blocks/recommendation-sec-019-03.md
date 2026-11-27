@@ -1,1 +1,0 @@
-In order to make this notion more precise, we should identify a setup involving the half-BPS bundary condition and half-BPS straight line defects ending at a point (the origin) at the boundary, which preserves at least one supercharge $Q$, and one superconformal charge $S$.

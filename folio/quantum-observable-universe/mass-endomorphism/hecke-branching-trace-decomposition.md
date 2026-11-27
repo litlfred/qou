@@ -1,4 +1,4 @@
-*Let $H_{n+m}(q)$ act on its irreducible Hoefsmit seminormal module $V_\lambda$ ($\lambda \vdash n+m$) \cite{hoefsmit1974}, \cite[(2.3), Thm.~2.4]{halverson_ram_1998}. Let $I \in H_{n+m}(q)$ be an interface element (any product of generators bridging the index range $\{n, n+1\}$). For braid words $\beta_1 \in H_n(q)$ and $\beta_2 \in H_m(q)$ acting on the left and right $H_n \otimes H_m$ factors respectively, the trace of $\beta_1 \cdot I \cdot \beta_2$ on $V_\lambda$ admits the block decomposition:*
+*Let $H_{n+m}(q)$ act on its irreducible Hoefsmit seminormal module $V_\lambda$ ($\lambda \vdash n+m$) \cite{hoefsmit1974}, \cite[(2.3), Thm. 2.4]{halverson_ram_1998}. Let $I \in H_{n+m}(q)$ be an interface element (any product of generators bridging the index range $\{n, n+1\}$). For braid words $\beta_1 \in H_n(q)$ and $\beta_2 \in H_m(q)$ acting on the left and right $H_n \otimes H_m$ factors respectively, the trace of $\beta_1 \cdot I \cdot \beta_2$ on $V_\lambda$ admits the block decomposition:*
 
 $$
 \mathrm{tr}_{V_\lambda}\!\bigl(\rho_\lambda(\beta_1 \cdot I \cdot \beta_2)\bigr)
@@ -17,7 +17,7 @@ Taking $\beta_1 = \beta_2 = 1$ recovers the simpler sum:
 $$
 \chi^\lambda(I) \;=\; \sum_{\mu, \nu} \mathrm{tr}\,A^\lambda_{\mu,\nu}(I),
 $$
-This form supplies the scalar-vs-operator Frobenius budget in [`rem:operator-valued-magnitude-budget`](operator-valued-magnitude-budget.md). The Pythagorean orthogonality:
+This form supplies the scalar-vs-operator Frobenius budget in [Magnitude budget: operator-valued vs scalar approximation of $A^\lambda_{\mu\nu}(I)$](operator-valued-magnitude-budget.md). The Pythagorean orthogonality:
 $$
 \bigl\| A^\lambda_{\mu,\nu}(I) - A^{\lambda,\mu,\nu}_{\mathrm{scalar}} \bigr\|_F^2
 \;=\;

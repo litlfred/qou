@@ -1,0 +1,1 @@
+For the lightest 243 × 48 point, namely, (κl, κs) = (0.121040, 0.120620), MπL ∼3.4 (where L is the spatial lattice size, here 24a), and the mass ratio ˜ M has ﬁnite size error ∼1%, from comparing the 243 ×48 lattice result with the 323 ×64 lattice result.

@@ -11,5 +11,3 @@ $$
 $$
 
 where $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$ is the Lagrangian endomorphism. The evaluation $\mathrm{ev}_A \colon A^\vee \otimes A \to \mathbf{1}$ and coevaluation $\mathrm{coev}_A \colon \mathbf{1} \to A \otimes A^\vee$ are the structure maps of the rigid duality on $A$. Composing them with an inserted endomorphism produces the categorical trace $\mathfrak{S} = \mathrm{tr}(\Phi)$.
-
-As a string diagram, the action forms a single closed loop with $\Phi$ inserted. The rigid structure provides the integration; the Lagrangian endomorphism encodes the dynamics.

@@ -13,9 +13,17 @@
   "pageStart": 19,
   "pageEnd": 28,
   "contains": [
-    "library/ki52/blocks/prose-sec-005"
+    "library/ki52/blocks/prose-sec-005",
+    "library/ki52/blocks/prop-sec-005-01",
+    "library/ki52/blocks/prop-sec-005-02",
+    "library/ki52/blocks/rem-sec-005-03",
+    "library/ki52/blocks/rem-sec-005-04",
+    "library/ki52/blocks/prop-sec-005-05",
+    "library/ki52/blocks/prop-sec-005-06",
+    "library/ki52/blocks/rem-sec-005-07",
+    "library/ki52/blocks/rem-sec-005-08"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki52",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki52",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki52/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki52/manifest.jsonld",
   "provenance": "ingested"
 }

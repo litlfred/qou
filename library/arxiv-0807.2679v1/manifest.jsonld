@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0807.2679v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0807.2679v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -17,6 +17,18 @@
     "library/arxiv-0807.2679v1/sections/sec-002"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A cabling formula for the colored Jones polynomial — We prove an explicit cabling formula for the colored Jones polynomial.\n\n**A cabling formula for the colored Jones polynomial**\n\n*Roland van der Veen*\n\n12 pp, 4 sections.\n\n**Abstract.** We prove an explicit cabling formula for the colored Jones polynomial. As an application we prove the volume conjecture for all zero volume knots and links, i.e. all knots and links that are obtained from the unknot by repeated cabling and connected sum.\n\n**Outline.** Front matter; Introduction; Proof of the cabling formula; Proof of the volume conjecture for zero volume",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -40,8 +52,8 @@
       "stamp_date": "17 Jul 2008"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

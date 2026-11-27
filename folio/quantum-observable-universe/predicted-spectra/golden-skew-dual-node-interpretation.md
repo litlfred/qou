@@ -1,1 +1,1 @@
-**Remark (Stability margin).** The reciprocal node bar-duality ($\varphi^{-2}$ and $\varphi^2$) functions as a two-sided stability margin. This margin provides a boundary condition for bounding spectral gaps.
+The reciprocal node bar-duality ($\varphi^{-2}$ and $\varphi^2$) functions as a two-sided stability margin. This margin provides a boundary condition for bounding spectral gaps.

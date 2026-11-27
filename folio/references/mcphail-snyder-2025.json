@@ -1,0 +1,26 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "mcphail-snyder-2025",
+  "type": "article",
+  "_comment": [
+    "Cited from QOU/QBeta/McPhailSnyderBridgeExclusion.lean, which gave arXiv:2502.04286; that number is an unrelated cs.CL paper.",
+    "Identified as this work because the held paper arXiv:2601.05136 (library/arxiv-2601.05136v2) says the state sum Z_N(K, rho, mu) is defined in [McP25a], whose bibliography entry is arXiv:2509.02365. Metadata checked against arxiv.org/abs/2509.02365 on 2026-11-22. Not ingested into library/."
+  ],
+  "title": "A quantization of the SL₂(ℂ) Chern-Simons invariant of tangle exteriors",
+  "author": [
+    {
+      "family": "McPhail-Snyder",
+      "given": "Calvin"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2025
+      ]
+    ]
+  },
+  "publisher": "arXiv",
+  "number": "2509.02365",
+  "URL": "https://arxiv.org/abs/2509.02365"
+}

@@ -1,1 +1,0 @@
-The correct IR R-charge mixing should be determined by F-maximization, but the non-trivial appearance of the SU(3) in a particular choice strongly suggests that the choice gives the correct R-charge assignment.

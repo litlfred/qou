@@ -87,7 +87,7 @@ def _importers(module_stem: str) -> list[str]:
     for p in REPO.rglob("*.py"):
         rel = str(p.relative_to(REPO))
         if ("_deprecated" in rel or "fsh-guts" in rel) or rel.endswith(f"/{module_stem}.py") \
-                or ".lake" in rel or rel.startswith(".git"):
+                or ".lake" in rel or rel.startswith(".git") or ".claude" in p.parts:
             continue
         try:
             if pat.search(p.read_text()):

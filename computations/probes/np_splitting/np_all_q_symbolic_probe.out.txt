@@ -1,0 +1,47 @@
+§28: pp − nn over Q(q) for the U_q pair Casimir and the KZ monodromy
+  G-q(op=False): pp − nn = 0
+  G-q(op=False): pp − pn − np + nn = (x^2 + 1)/(x)
+  G-q(op=False): pn − np = ((-1)*x^14 + 4*x^12 + (-4)*x^10 + 8*x^8 + (-8)*x^6 + 4*x^4 + (-4)*x^2 + 1)/(x^13 + (-3)*x^11 + 3*x^9 + (-5)*x^7 + 3*x^5 + (-3)*x^3 + x)
+  G-q(op=True): pp − nn = (x^18 + (-2)*x^17 + (-5)*x^16 + 12*x^15 + 10*x^14 + (-32)*x^13 + (-10)*x^12 + 52*x^11 + 4*x^10 + (-60)*x^9 + 4*x^8 + 52*x^7 + (-10)*x^6 + (-32)*x^5 + 10*x^4 + 12*x^3 + (-5)*x^2 + (-2)*x + 1)/(x^15 + (-3)*x^13 + 3*x^11 + (-5)*x^9 + 3*x^7 + (-3)*x^5 + x^3)
+  G-q(op=True): pp − pn − np + nn = (x^2 + 1)/(x)
+  G-q(op=True): pn − np = (x^18 + (-2)*x^16 + (-10)*x^14 + 46*x^12 + (-92)*x^10 + 92*x^8 + (-46)*x^6 + 10*x^4 + 2*x^2 + (-1))/(x^15 + (-3)*x^13 + 3*x^11 + (-5)*x^9 + 3*x^7 + (-3)*x^5 + x^3)
+  M: pp − nn = 0
+  M: pp − pn − np + nn = (x^34 + (-6)*x^32 + 14*x^30 + (-23)*x^28 + 31*x^26 + (-24)*x^24 + 19*x^22 + (-3)*x^20 + (-22)*x^18 + 27*x^16 + (-27)*x^14 + 24*x^12 + (-15)*x^10 + 5*x^8 + (-1)*x^6)/(x^24 + (-6)*x^22 + 15*x^20 + (-28)*x^18 + 45*x^16 + (-54)*x^14 + 63*x^12 + (-54)*x^10 + 45*x^8 + (-28)*x^6 + 15*x^4 + (-6)*x^2 + 1)
+  M: pn − np = ((-1)*x^34 + 8*x^32 + (-26)*x^30 + 55*x^28 + (-105)*x^26 + 156*x^24 + (-189)*x^22 + 211*x^20 + (-196)*x^18 + 151*x^16 + (-103)*x^14 + 58*x^12 + (-25)*x^10 + 7*x^8 + (-1)*x^6)/(x^24 + (-6)*x^22 + 15*x^20 + (-28)*x^18 + 45*x^16 + (-54)*x^14 + 63*x^12 + (-54)*x^10 + 45*x^8 + (-28)*x^6 + 15*x^4 + (-6)*x^2 + 1)
+P3: pp = nn in Q(q): G-q True, M True; control G-q(op=True) pp ≠ nn: True
+    G-q interaction equals q + 1/q: True
+§27A: sector vectors of all 720 reduced words, over Q(q)
+sectors with T_1 != 0: 16
+  word 0/720, span dim so far 1
+  word 60/720, span dim so far 8
+  word 120/720, span dim so far 9
+  word 180/720, span dim so far 9
+  word 240/720, span dim so far 9
+  word 300/720, span dim so far 9
+  word 360/720, span dim so far 9
+  word 420/720, span dim so far 9
+  word 480/720, span dim so far 9
+  word 540/720, span dim so far 9
+  word 600/720, span dim so far 10
+  word 660/720, span dim so far 10
+P1: dim of span over Q(q) = 10 of 16  (predicted 10)
+  every one of the 720 vectors reduces to zero against the basis: True
+  T_1 in span: True
+  rank of the 16x3 system for (κ, κα, κβ): 2  (3 means only κ = α = β = 0)
+  α(q) = (x^14 + (-3)*x^12 + x^10 + (-5)*x^8 + 3*x^6 + (-2)*x^4 + x^2)/(x^14 + (-2)*x^12 + (-1)*x^10 + (-2)*x^8 + (-2)*x^6 + (-1)*x^4 + (-2)*x^2 + 1)
+  β(q) = (x^12 + (-2)*x^10 + 3*x^8 + (-5)*x^6 + x^4 + (-3)*x^2 + 1)/(x^14 + (-2)*x^12 + (-1)*x^10 + (-2)*x^8 + (-2)*x^6 + (-1)*x^4 + (-2)*x^2 + 1)
+P2: α + β − 1 = 0  (predicted 0 in Q(q))
+    Coulomb (α = β = 0) reachable: False
+    at q = 111/100: α = 110609758363583325280842433359/168580562532130253503343223359 ≈ (display) 0.656124, β ≈ 0.343876
+    at q = 7/5: α = 132690808369/125930290394 ≈ (display) 1.053685, β ≈ -0.053685
+    β(q) = α(1/q) exactly: True
+    exceptional at q = 111/100…: none
+    exceptional at q = 7/5…: none
+    exceptional at q = 2…: none
+    exceptional at q = 69373661421961…: none
+    α denominator (its roots are the q where the ray normalisation κ = 1 fails): x^14 + (-2)*x^12 + (-1)*x^10 + (-2)*x^8 + (-2)*x^6 + (-1)*x^4 + (-2)*x^2 + 1
+      positive real root (display only): [0.6028621560 +/- 2.71e-11]
+      positive real root (display only): [1.658753979 +/- 1.64e-10]
+  distinct denominators in the reduced basis: 1
+    1
+done

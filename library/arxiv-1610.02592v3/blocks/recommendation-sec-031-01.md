@@ -1,1 +1,0 @@
-The last three surfaces may be considered as some degenerated hyperbolic pairs-of-pants where one or more boundary lengths $a,b$, or $c$ are zero, and we get cusps instead of geodesic boundary components there.} \label{pantalone_degenere:fig} \end{center} \end{figure}

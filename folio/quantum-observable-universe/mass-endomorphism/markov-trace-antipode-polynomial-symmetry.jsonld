@@ -1,13 +1,14 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-markov-trace-antipode-polynomial-symmetry",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:markov-trace-antipode-polynomial-symmetry",
@@ -29,7 +30,7 @@
     "anti-self-reciprocal",
     "closed-form"
   ],
-  "leanRef": "qou:QOU.BraidKnot.markovTraceAntipodePolynomialSymmetry",
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.markovTraceAntipodePolynomialSymmetry",
   "text": "markov-trace-antipode-polynomial-symmetry.md",
   "leanSource": "markov-trace-antipode-polynomial-symmetry.lean",
   "provenance": "authored"

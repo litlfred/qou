@@ -17,7 +17,7 @@ export default proposition({
     "electromagnetic-signature",
     "falsifiability",
   ],
-  lean: { ref: "qou:QOU.Archimedean.strangelet_double_beta",
+  lean: { ref: "qou:QOU.MassTheory.Archimedean.strangelet_double_beta",
     validation: "not_checked",
   },
   uses: ["rem:strangelet-witten-stability"],

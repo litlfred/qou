@@ -1,0 +1,1 @@
+Let K ⊆K′ be full triangulated subcategories of K(A, M). Deﬁne S := K ∩S(A, M), S′ := K′ ∩S(A, M), D := KS and D′ := K′ S′. If K and K′ have enough K-injectives, then the canonical functor D →D′ is fully faithful.

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2605.19310v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2605.19310v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -22,6 +22,18 @@
     "library/arxiv-2605.19310v1/sections/sec-007"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A Fourier-Free Density-Increment Proof of Roth's Theorem — We give an elementary, Fourier-free proof of Roth’s theorem.\n\n**A Fourier-Free Density-Increment Proof of Roth's Theorem**\n\n*ROTH’S THEOREM*\n\n10 pp, 9 sections.\n\n**Abstract.** We give an elementary, Fourier-free proof of Roth’s theorem. The proof follows Roth’s original density-increment strategy, but replaces the usual Fourier-analytic step with a direct combinatorial argument involving averages over sub-progressions.\n\n**Outline.** Front matter; 1 Introduction; 2 Notation; 3 Preliminaries; 4 No progressions imply large energy; 5 Large energy implies a modular density incre; 6 Finding a genuine integer progression; 7 Proof of Roth's theorem and the quantitative; 8 Further remarks",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {
@@ -44,8 +56,8 @@
       "stamp_date": "19 May 2026"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

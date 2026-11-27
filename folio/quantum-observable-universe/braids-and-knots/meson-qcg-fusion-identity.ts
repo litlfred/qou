@@ -5,7 +5,7 @@ export default proposition({
   title:
     "q-Clebsch–Gordan fusion identity $[3]_q\\cdot[4]_q = [2]_q + [4]_q + [6]_q$",
   lean: {
-    ref: "qou:QOU.BraidKnot.meson_qCG_3x4",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.meson_qCG_3x4",
   },
   uses: [],
   cites: [

@@ -1,13 +1,14 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-horizon-conformal-invariance",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:horizon-conformal-invariance",
@@ -27,7 +28,7 @@
     "observability",
     "degree-zero"
   ],
-  "leanRef": "qou:QOU.horizon_conformal_invariance",
+  "leanRef": "qou:QOU.InformationTheory.JetHorizon.horizon_conformal_invariance",
   "text": "horizon-conformal-invariance.md",
   "provenance": "authored"
 }

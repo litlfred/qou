@@ -1,6 +1,6 @@
 *Let $I_n \subset H_n(R,q)$ be the radical of the Markov trace
 $\tau$, the sum of the Wedderburn blocks $V_\lambda$ with
-$y_\lambda = 0$. Under convention D these are the shapes with three
+$y_\lambda = 0$. At the Markov parameter $z = q^3/(q^2+1)$ these are the shapes with three
 or more rows, so $I_n = 0$ for $n \le 2$ and $H_n/I_n = TL_n(q)$.
 The trace descends to a non-degenerate symmetric bilinear pairing
 on $TL_n(q)$. This makes $(TL_n(q),\tau)$ a Frobenius algebra,

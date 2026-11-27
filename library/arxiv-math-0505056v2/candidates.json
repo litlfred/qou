@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0505056v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "1b6580406c3d35b59f8fb18e5fba40460fe574cab85d94edf705c6c4bb2d0cbe",
   "file": "0505056v2.pdf"
@@ -16,121 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 7,
-  "by_kind": {
-   "recommendation": 7
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The category $hmf_w$ of matrix factorizations up to chain homotopies has the same objects as $mf_w$ and the $\\Q$-vector space of morphisms from $M$ to $N$ is the quotient of the space of morphisms in $mf_w$ by null-homotopic morphisms (the homotopy maps must have bidegree $(-1,-1)$).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-matrix-factorizations-with-a-parameter.md",
-   "section_title": "Matrix factorizations with a parameter",
-   "pages": "1-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Of course, for the whole construction to be interesting, $H(D)$ should not depend on the choice of $D,$ given $L.$",
-   "strength": "should-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-matrix-factorizations-with-a-parameter.md",
-   "section_title": "Matrix factorizations with a parameter",
-   "pages": "1-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "These invariants should come from the physical theory of the BPS states and should be related to ranks of cohomology groups of suitable moduli spaces.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-matrix-factorizations-with-a-parameter.md",
-   "section_title": "Matrix factorizations with a parameter",
-   "pages": "1-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "On the other hand, it's been independently suggested by several people, including Oleg Viro \\[V\\], that there should exist a triply-graded link homology theory with the HOMFLYPT polynomial as the Euler characteristic.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-matrix-factorizations-with-a-parameter.md",
-   "section_title": "Matrix factorizations with a parameter",
-   "pages": "1-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The invariant of the empty link should be the ring of polynomials in $a_1, \\dots, a_n,$ and naturally isomorphic to the $U(n)$-equivariant cohomology ring of the point.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-matrix-factorizations-with-a-parameter.md",
-   "section_title": "Matrix factorizations with a parameter",
-   "pages": "1-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The invariant of the unknot should be the quotient of the polynomial ring $\\Q[x,a_1, \\dots, a_n]$ by the relation $x^{n+1}+a_n x^n + \\dots + a_1 x=0,$ isomorphic to the $U(n)$-equivariant cohomology ring of $\\mathbb{CP}^n.$ A certain version of Bar-Natan link homology \\[BN\\], \\[K\\] should correspond to the potential $x^3+ a x.$",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-matrix-factorizations-with-a-parameter.md",
-   "section_title": "Matrix factorizations with a parameter",
-   "pages": "1-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This map should have bidegree $(0,0).$ The following lemma establishes the contradiction.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-proofs.md",
-   "section_title": "Proofs",
-   "pages": "12-37",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

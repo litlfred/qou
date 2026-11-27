@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1702.00039v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1702.00039v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -63,6 +63,18 @@
     "library/arxiv-1702.00039v1/sections/sec-049"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules.\n\n**Gentle introduction to Soergel bimodules I: The basics**\n\n*NICOLAS LIBEDINSKY*\n\n47 pp, 50 sections.\n\n**Abstract.** This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules. It is combinatorial in nature and should be accessible to a broad audience. The objective of this paper is to help the reader feel comfortable calculating with Soergel bimodules and to explain some of the important open problems in the ﬁeld. The motiva- tions, history and relations to other ﬁelds will be developed in subsequent papers of this series.\n\n**Outline.** 1 Introduction; 1.1 Declaration of intent; 1.2 ...Bum! Explosion of the field; 1.3 Acknowledgements; 2 Classical level: Coxeter systems; 2.1 Some definitions; 2.2 Baby examples; 2.3 Generalizing the baby examples: (infinite); 2.4 Generalizing the baby examples: tesselatio; 2.4.1 Tesselations of the Euclidean plane; 2.4.2 Tesselations of the hyperbolic plane; 2.5 Generalizing the baby examples: more dimen; 2.6 More examples; 2.7 Bruhat order and an important property; 3 Quantum level: Hecke algebras; 3.1 Kazhdan-Lusztig's theory; 3.2 Calculations of KL bases in examples; 3.2.1 Baby example A",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -84,8 +96,8 @@
       "stamp_date": "31 Jan 2017"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

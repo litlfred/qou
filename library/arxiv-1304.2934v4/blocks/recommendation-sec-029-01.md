@@ -1,1 +1,0 @@
-In \cite{FMN14}, we shall use arguments of the perturbation theory of operators in order to prove that one also has mod-Gaussian convergence for such linear functionals of Markov chains. \end{remark} \bigskip

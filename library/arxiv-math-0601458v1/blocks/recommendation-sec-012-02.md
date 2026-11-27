@@ -1,1 +1,0 @@
-To get this more fully categorified inner product - now an inner product of stuff types - we should replace $\mathbbm{N}$, the "base space" by $\boldsymbol{\operatorname{{FinSet_0}}}$, which is the free symmetric monoidal category on one generator, just as $\mathbbm{N}$ is the free commutative monoid on one generator.

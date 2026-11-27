@@ -1,0 +1,1 @@
+Notice how the finite groups 13 and 112 in the exact sequence (2.29) are of different nature from the physical viewpoint, the first arising from the center of the color U(3), while the latter depends upon the presence of three generations.

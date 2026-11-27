@@ -10,12 +10,12 @@ export default proposition({
   label: "prop:linear-chain-bond-count",
   title: "The jet-filtration multiplicity is the linear-chain bond count $M_n = n-1$",
   lean: {
-    ref: "qou:QOU.Mass.linear_chain_cluster_measure",
+    ref: "qou:QOU.MassTheory.LinearChainBondCount.linear_chain_cluster_measure",
     validation: "not_checked",
   },
   uses: [
+    // conj:binding-manybody-eq-jet-filtration removed (qou-tm3c): the claim is the bond count n-1 and its sum C(A+1,3); the .md scopes out what the conjecture supplies.
     "prop:jet-filtration-binding-extensive",
-    "conj:binding-manybody-eq-jet-filtration",
   ],
   tags: [
     "binding",

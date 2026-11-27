@@ -110,6 +110,24 @@
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
         "severity": "minor",
         "evidence": "Lean (sibling) proves exactly q²⁰p(1/q) = −p(q) for the stated p (also checked in sympy). The statement additionally says p/(12q¹⁰) *is* tr_M(B_p) and \"equivalently\" tr_M(B_p)(1/q) = −tr_M(B_p)(q); neither is encoded, and it is false for the canonical trace: under convention D, tr_M(σ₁⁷σ₂⁴) = (q⁸+q⁴−q²+1)(q¹⁴+…−1)/(q⁷(q²+1)²) = 1.88432 at q₀, while p/(12q¹⁰) = 0.43313 at q₀, and the D trace is not anti-symmetric (tr(1/q)+tr(q) ≠ 0, sympy). prop:markov-trace-axiomatic-closed-form's own ts note says the anti-reciprocity \"does not hold, in convention C or D\". Proof covers only the polynomial identity. \"Categorical interpretation\" is wrong: H_n(q) is not a Hopf algebra with S(σᵢ)=σᵢ⁻¹ (σ group-like is incompatible with σ²=hσ+1: Δ(σ²)=σ²⊗σ² ≠ hσ⊗σ+1⊗1). Contains a \"Generalization conjecture\" inside a proposition"
+      },
+      {
+        "field_hash": {
+          "md": "3584d3d266b7",
+          "ts": "bf0a056ce150",
+          "lean": "525231f8dbee",
+          "lean_statement": "ebdb9bcf71d2"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:04:23.073Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "minor",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: two label refs became their titles. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: Lean (sibling) proves exactly q²⁰p(1/q) = −p(q) for the stated p (also checked in sympy). The statement additionally says p/(12q¹⁰) *is* tr_M(B_p) and \"equivalently\" tr_M(B_p)(1/q) = −tr_M(B_p)(q); neither is encoded, and it is false for the canonical trace: under convention D, tr_M(σ₁⁷σ₂⁴) = (q⁸+q⁴−q²+1)(q¹⁴+…−1)/(q⁷(q²+1)²) = 1.88432 at q₀, while p/(12q¹⁰) = 0.43313 at q₀, and the D trace is not anti-symmetric (tr(1/q)+tr(q) ≠ 0, sympy). prop:markov-trace-axiomatic-closed-form's own ts note says the anti-reciprocity \"does not hold, in convention C or D\". Proof covers only the polynomial identity. \"Categorical interpretation\" is wrong: H_n(q) is not a Hopf algebra with S(σᵢ)=σᵢ⁻¹ (σ group-like is incompatible with σ²=hσ+1: Δ(σ²)=σ²⊗σ² ≠ hσ⊗σ+1⊗1). Contains a \"Generalization conjecture\" inside a proposition"
       }
     ],
     "proof-statement-integrity": [
@@ -2674,6 +2692,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:55:58.190Z",
+  "updated_at": "2026-11-21T08:04:23.073Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

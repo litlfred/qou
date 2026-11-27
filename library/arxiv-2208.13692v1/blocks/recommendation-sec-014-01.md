@@ -1,1 +1,0 @@
-The label used corresponds to the list in §[\[subsec: relations between quotients\]](#subsec: relations between quotients){reference-type="ref" reference="subsec: relations between quotients"}, except where that label is ambiguous and the exact group must be specified.

@@ -1,4 +1,4 @@
-**Proof.** **(1)** From the cyclotomic factorisation
+**(1)** From the cyclotomic factorisation
 $X^8 - 1 \;=\; \prod_{k=0}^{7}\,(X - \zeta_8^k)$,
 dividing by $(X - 1)$ gives
 $X^7 + X^6 + \cdots + 1 \;=\; \prod_{k=1}^{7}\,(X - \zeta_8^k).$

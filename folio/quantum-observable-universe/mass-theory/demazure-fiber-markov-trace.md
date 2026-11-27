@@ -1,4 +1,4 @@
-*Let $D_w(\lambda)$ be the Demazure character of the irreducible $\mathrm{GL}_n$-module $V(\lambda)$ of highest weight $\lambda$ (Demazure characters are defined for highest-weight modules, not for $S_n$-modules). We define the Demazure-fiber functional via principal specialisation $x_i \mapsto q^{i-1}$:*
+*Let $D_w(\lambda)$ be the Demazure character of the irreducible $\mathrm{GL}_n$-module $V(\lambda)$ of highest weight $\lambda$ (Demazure characters are defined for highest-weight modules, not for $S_n$-modules). Define the Demazure-fiber functional via principal specialisation $x_i \mapsto q^{i-1}$:*
 
 $$
   \boxed{\;

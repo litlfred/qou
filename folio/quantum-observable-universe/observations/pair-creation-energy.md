@@ -14,9 +14,8 @@ $$
 The original electron is unchanged; a new pair appears from the
 photon's energy.
 
-**In the QOU: crossing energy of the trefoil.**
-The electron is the left trefoil $T_{2,3}$ with $n_c = 3$ positive
-crossings.  Its [crossing energy](#def:crossing-energy) is
+**In the QOU: crossing energy of the three-crossing electron braid.**
+In the primary model the electron is the three-strand braid $\sigma_0\sigma_1\sigma_0 \in B_3$, whose closure is the positive Hopf link $T(2,2)$ (with the two-strand left trefoil $\sigma_0^3 \in B_2$, closing to $T_{2,3}$, retained as the single-component alternative). Both presentations carry $n_c = 3$ positive crossings, so the [crossing energy](#def:crossing-energy) is identical in either model:
 
 $$
   \mathfrak{E}_{\mathrm{cross}}(e^-)
@@ -26,7 +25,7 @@ $$
   \quad (\text{in Skein units}).
 $$
 
-The positron is the mirror $T_{2,3}^{\sigma}$ with $3$ negative crossings:
+The positron is the mirror braid $(\sigma_0\sigma_1\sigma_0)^{-1} \in B_3$ (or $T_{2,3}^{\sigma}$ in the alternative model) with $3$ negative crossings:
 
 $$
   \mathfrak{E}_{\mathrm{cross}}(e^+)
@@ -61,15 +60,15 @@ $$
 
 | Process | Energy | QOU description |
 |---------|--------|-----------------|
-| Pair production ($\gamma \to e^- e^+$) | $2m_e c^2 \approx 1.022$ MeV | New pair from photon; trefoil + mirror created at exceptional divisor |
-| Crossing energy gap (one trefoil) | $3(q + q^{-1}) \approx 6.03$ Skein units | Full reversal of all 3 crossings; maps to $\Delta E = 6\cosh(\ln q)$ |
+| Pair production ($\gamma \to e^- e^+$) | $2m_e c^2 \approx 1.022$ MeV | New pair from photons; electron braid + mirror created at exceptional divisor |
+| Crossing energy gap (one electron) | $3(q + q^{-1}) \approx 6.03$ Skein units | Full reversal of all 3 crossings; maps to $\Delta E = 6\cosh(\ln q)$ |
 | Complex-$q$ barrier ($\theta = 0 \to \pi$) | Topological, not energetic | Continuous rotation in pre-observable sector; no energy cost in observable sector |
 
 **Physical interpretation of each route.**
 
-1. **Pair production at the exceptional divisor.**  When a photon
-   with $E \geq 2m_e$ encounters the blow-up locus, it can resolve
-   into a trefoil--mirror pair.  The energy $2m_e$ is *not* the
+1. **Pair production at the exceptional divisor.**  When photons
+   with total energy $E \geq 2m_e$ interact at the blow-up locus, they can resolve
+   into an electron--positron braid--mirror pair.  The energy $2m_e$ is *not* the
    crossing energy gap — it is the mass-energy of the two particles
    created.  The crossing energies of $e^-$ and $e^+$ have opposite
    sign and partially cancel in the pair:
@@ -98,13 +97,7 @@ $$
    coupling scale).
 
 2. **Direct chirality reversal (forbidden in observable sector).**
-   Flipping all 3 crossings of $T_{2,3}$ to produce $T_{2,3}^{\sigma}$
-   while keeping the same knot would require a topological transition
-   through the unknot, but the trefoil is
-   [topologically stable](#rem:trefoil-vortex-chirality-flip).  In the
-   observable sector ($q$ real, $\theta = 0$), no finite energy can
-   accomplish this: the trefoil and its mirror are in different
-   connected components of knot space.
+   Flipping all $3$ positive crossings of the electron braid $\sigma_0\sigma_1\sigma_0 \in B_3$ (closing to the positive Hopf link $T(2,2)$ with linking number $+1$, or $T_{2,3}$ in the single-component alternative) into its negative-crossing mirror $(\sigma_0\sigma_1\sigma_0)^{-1}$ (closing to the negative Hopf link, or $T_{2,3}^{\sigma}$) would require passing through a singular unlinking transition. In the observable sector ($q$ real, $\theta = 0$), no smooth ambient isotopy accomplishes this: the positive and negative closures lie in distinct oriented isotopy classes.
 
 3. **Complex-$q$ rotation (pre-observable).**  In the
    [complex substrate](#rem:complex-substrate-interpretation)

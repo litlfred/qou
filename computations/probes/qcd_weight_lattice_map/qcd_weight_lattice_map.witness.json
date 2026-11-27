@@ -1,0 +1,642 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "qcd_weight_lattice_map",
+ "issue": 9096,
+ "scriptHash": "703db6ba2cbe",
+ "arithmetic": "exact sympy over Q(sqrt2, sqrt3); no float; q0 not used",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "exact sympy over Q(sqrt2, sqrt3); q0 never read",
+ "source": "Chester-Arsiwalla-Kauffman arXiv:2501.03260v1 §2-3, §6 Eqs.(31)-(35), Tables 1-2; NOT held in library/, transcribed via a summarising fetch of the arXiv HTML",
+ "map": "t -> sum_c t_c eps_c (colour = position, K0); mu = t - (T/3)(1,1,1); Q = T/3; N3 = t3",
+ "L_w_from_mu": [
+  [
+   "-sqrt(2)/2",
+   "sqrt(2)/2",
+   "0"
+  ],
+  [
+   "-sqrt(6)/6",
+   "-sqrt(6)/6",
+   "sqrt(6)/3"
+  ]
+ ],
+ "lambek": {
+  "e-": {
+   "F": 1,
+   "a": [
+    -1,
+    -1,
+    -1
+   ],
+   "Q_sum_over_3": "-1",
+   "Q_std": "-1"
+  },
+  "nu": {
+   "F": 1,
+   "a": [
+    0,
+    0,
+    0
+   ],
+   "Q_sum_over_3": "0",
+   "Q_std": "0"
+  },
+  "u_r": {
+   "F": 1,
+   "a": [
+    0,
+    1,
+    1
+   ],
+   "Q_sum_over_3": "2/3",
+   "Q_std": "2/3"
+  },
+  "u_b": {
+   "F": 1,
+   "a": [
+    1,
+    0,
+    1
+   ],
+   "Q_sum_over_3": "2/3",
+   "Q_std": "2/3"
+  },
+  "u_g": {
+   "F": 1,
+   "a": [
+    1,
+    1,
+    0
+   ],
+   "Q_sum_over_3": "2/3",
+   "Q_std": "2/3"
+  },
+  "d_r": {
+   "F": 1,
+   "a": [
+    -1,
+    0,
+    0
+   ],
+   "Q_sum_over_3": "-1/3",
+   "Q_std": "-1/3"
+  },
+  "d_b": {
+   "F": 1,
+   "a": [
+    0,
+    -1,
+    0
+   ],
+   "Q_sum_over_3": "-1/3",
+   "Q_std": "-1/3"
+  },
+  "d_g": {
+   "F": 1,
+   "a": [
+    0,
+    0,
+    -1
+   ],
+   "Q_sum_over_3": "-1/3",
+   "Q_std": "-1/3"
+  },
+  "e+": {
+   "F": -1,
+   "a": [
+    1,
+    1,
+    1
+   ],
+   "Q_sum_over_3": "1",
+   "Q_std": "1"
+  },
+  "nubar": {
+   "F": -1,
+   "a": [
+    0,
+    0,
+    0
+   ],
+   "Q_sum_over_3": "0",
+   "Q_std": "0"
+  },
+  "ubar_r": {
+   "F": -1,
+   "a": [
+    0,
+    -1,
+    -1
+   ],
+   "Q_sum_over_3": "-2/3",
+   "Q_std": "-2/3"
+  },
+  "ubar_b": {
+   "F": -1,
+   "a": [
+    -1,
+    0,
+    -1
+   ],
+   "Q_sum_over_3": "-2/3",
+   "Q_std": "-2/3"
+  },
+  "ubar_g": {
+   "F": -1,
+   "a": [
+    -1,
+    -1,
+    0
+   ],
+   "Q_sum_over_3": "-2/3",
+   "Q_std": "-2/3"
+  },
+  "dbar_r": {
+   "F": -1,
+   "a": [
+    1,
+    0,
+    0
+   ],
+   "Q_sum_over_3": "1/3",
+   "Q_std": "1/3"
+  },
+  "dbar_b": {
+   "F": -1,
+   "a": [
+    0,
+    1,
+    0
+   ],
+   "Q_sum_over_3": "1/3",
+   "Q_std": "1/3"
+  },
+  "dbar_g": {
+   "F": -1,
+   "a": [
+    0,
+    0,
+    1
+   ],
+   "Q_sum_over_3": "1/3",
+   "Q_std": "1/3"
+  }
+ },
+ "states": [
+  {
+   "state": "d_0",
+   "twist_t": [
+    "0",
+    "0",
+    "-1"
+   ],
+   "T": "-1",
+   "Q_T_over_3": "-1/3",
+   "mu_sl3": [
+    "1/3",
+    "1/3",
+    "-2/3"
+   ],
+   "N3_raw": "-1",
+   "N3_traceless": "2",
+   "CAK_w1w2": [
+    "0",
+    "-sqrt(6)/3"
+   ],
+   "D_visible_t3_eq_0": false
+  },
+  {
+   "state": "d_1",
+   "twist_t": [
+    "0",
+    "-1",
+    "0"
+   ],
+   "T": "-1",
+   "Q_T_over_3": "-1/3",
+   "mu_sl3": [
+    "1/3",
+    "-2/3",
+    "1/3"
+   ],
+   "N3_raw": "0",
+   "N3_traceless": "-1",
+   "CAK_w1w2": [
+    "-sqrt(2)/2",
+    "sqrt(6)/6"
+   ],
+   "D_visible_t3_eq_0": true
+  },
+  {
+   "state": "d_2",
+   "twist_t": [
+    "-1",
+    "0",
+    "0"
+   ],
+   "T": "-1",
+   "Q_T_over_3": "-1/3",
+   "mu_sl3": [
+    "-2/3",
+    "1/3",
+    "1/3"
+   ],
+   "N3_raw": "0",
+   "N3_traceless": "-1",
+   "CAK_w1w2": [
+    "sqrt(2)/2",
+    "sqrt(6)/6"
+   ],
+   "D_visible_t3_eq_0": true
+  },
+  {
+   "state": "dbar_0",
+   "twist_t": [
+    "0",
+    "0",
+    "1"
+   ],
+   "T": "1",
+   "Q_T_over_3": "1/3",
+   "mu_sl3": [
+    "-1/3",
+    "-1/3",
+    "2/3"
+   ],
+   "N3_raw": "1",
+   "N3_traceless": "-2",
+   "CAK_w1w2": [
+    "0",
+    "sqrt(6)/3"
+   ],
+   "D_visible_t3_eq_0": false
+  },
+  {
+   "state": "dbar_1",
+   "twist_t": [
+    "0",
+    "1",
+    "0"
+   ],
+   "T": "1",
+   "Q_T_over_3": "1/3",
+   "mu_sl3": [
+    "-1/3",
+    "2/3",
+    "-1/3"
+   ],
+   "N3_raw": "0",
+   "N3_traceless": "1",
+   "CAK_w1w2": [
+    "sqrt(2)/2",
+    "-sqrt(6)/6"
+   ],
+   "D_visible_t3_eq_0": true
+  },
+  {
+   "state": "dbar_2",
+   "twist_t": [
+    "1",
+    "0",
+    "0"
+   ],
+   "T": "1",
+   "Q_T_over_3": "1/3",
+   "mu_sl3": [
+    "2/3",
+    "-1/3",
+    "-1/3"
+   ],
+   "N3_raw": "0",
+   "N3_traceless": "1",
+   "CAK_w1w2": [
+    "-sqrt(2)/2",
+    "-sqrt(6)/6"
+   ],
+   "D_visible_t3_eq_0": true
+  },
+  {
+   "state": "e+",
+   "twist_t": [
+    "1",
+    "1",
+    "1"
+   ],
+   "T": "3",
+   "Q_T_over_3": "1",
+   "mu_sl3": [
+    "0",
+    "0",
+    "0"
+   ],
+   "N3_raw": "1",
+   "N3_traceless": "0",
+   "CAK_w1w2": [
+    "0",
+    "0"
+   ],
+   "D_visible_t3_eq_0": false
+  },
+  {
+   "state": "e-",
+   "twist_t": [
+    "-1",
+    "-1",
+    "-1"
+   ],
+   "T": "-3",
+   "Q_T_over_3": "-1",
+   "mu_sl3": [
+    "0",
+    "0",
+    "0"
+   ],
+   "N3_raw": "-1",
+   "N3_traceless": "0",
+   "CAK_w1w2": [
+    "0",
+    "0"
+   ],
+   "D_visible_t3_eq_0": false
+  },
+  {
+   "state": "nu",
+   "twist_t": [
+    "0",
+    "0",
+    "0"
+   ],
+   "T": "0",
+   "Q_T_over_3": "0",
+   "mu_sl3": [
+    "0",
+    "0",
+    "0"
+   ],
+   "N3_raw": "0",
+   "N3_traceless": "0",
+   "CAK_w1w2": [
+    "0",
+    "0"
+   ],
+   "D_visible_t3_eq_0": true
+  },
+  {
+   "state": "u_0",
+   "twist_t": [
+    "1",
+    "1",
+    "0"
+   ],
+   "T": "2",
+   "Q_T_over_3": "2/3",
+   "mu_sl3": [
+    "1/3",
+    "1/3",
+    "-2/3"
+   ],
+   "N3_raw": "0",
+   "N3_traceless": "2",
+   "CAK_w1w2": [
+    "0",
+    "-sqrt(6)/3"
+   ],
+   "D_visible_t3_eq_0": true
+  },
+  {
+   "state": "u_1",
+   "twist_t": [
+    "1",
+    "0",
+    "1"
+   ],
+   "T": "2",
+   "Q_T_over_3": "2/3",
+   "mu_sl3": [
+    "1/3",
+    "-2/3",
+    "1/3"
+   ],
+   "N3_raw": "1",
+   "N3_traceless": "-1",
+   "CAK_w1w2": [
+    "-sqrt(2)/2",
+    "sqrt(6)/6"
+   ],
+   "D_visible_t3_eq_0": false
+  },
+  {
+   "state": "u_2",
+   "twist_t": [
+    "0",
+    "1",
+    "1"
+   ],
+   "T": "2",
+   "Q_T_over_3": "2/3",
+   "mu_sl3": [
+    "-2/3",
+    "1/3",
+    "1/3"
+   ],
+   "N3_raw": "1",
+   "N3_traceless": "-1",
+   "CAK_w1w2": [
+    "sqrt(2)/2",
+    "sqrt(6)/6"
+   ],
+   "D_visible_t3_eq_0": false
+  },
+  {
+   "state": "ubar_0",
+   "twist_t": [
+    "-1",
+    "-1",
+    "0"
+   ],
+   "T": "-2",
+   "Q_T_over_3": "-2/3",
+   "mu_sl3": [
+    "-1/3",
+    "-1/3",
+    "2/3"
+   ],
+   "N3_raw": "0",
+   "N3_traceless": "-2",
+   "CAK_w1w2": [
+    "0",
+    "sqrt(6)/3"
+   ],
+   "D_visible_t3_eq_0": true
+  },
+  {
+   "state": "ubar_1",
+   "twist_t": [
+    "-1",
+    "0",
+    "-1"
+   ],
+   "T": "-2",
+   "Q_T_over_3": "-2/3",
+   "mu_sl3": [
+    "-1/3",
+    "2/3",
+    "-1/3"
+   ],
+   "N3_raw": "-1",
+   "N3_traceless": "1",
+   "CAK_w1w2": [
+    "sqrt(2)/2",
+    "-sqrt(6)/6"
+   ],
+   "D_visible_t3_eq_0": false
+  },
+  {
+   "state": "ubar_2",
+   "twist_t": [
+    "0",
+    "-1",
+    "-1"
+   ],
+   "T": "-2",
+   "Q_T_over_3": "-2/3",
+   "mu_sl3": [
+    "2/3",
+    "-1/3",
+    "-1/3"
+   ],
+   "N3_raw": "-1",
+   "N3_traceless": "1",
+   "CAK_w1w2": [
+    "-sqrt(2)/2",
+    "-sqrt(6)/6"
+   ],
+   "D_visible_t3_eq_0": false
+  }
+ ],
+ "electron_braids": {
+  "corpus e = s0 s1 s0": {
+   "components": 2,
+   "writhe": 3,
+   "length": 3
+  },
+  "CAK e_L = s1^-1 s2": {
+   "components": 1,
+   "writhe": 0,
+   "length": 2
+  },
+  "CAK e_R = s2 s1^-1": {
+   "components": 1,
+   "writhe": 0,
+   "length": 2
+  }
+ },
+ "checks": [
+  {
+   "id": "P1",
+   "holds": true,
+   "predicted": true,
+   "verdict": "PASS",
+   "detail": "det M = sqrt(3); column sums [0, 0, 3]; M(w,Q) integral twist vectors {'e': [['-1', '-1', '-1']], 'ubar': [['-1', '-1', '0'], ['-1', '0', '-1'], ['0', '-1', '-1']], 'd': [['0', '0', '-1'], ['0', '-1', '0'], ['-1', '0', '0']], 'nu': [['0', '0', '0']]}; T = 3Q on every state"
+  },
+  {
+   "id": "P2",
+   "holds": true,
+   "predicted": true,
+   "verdict": "PASS",
+   "detail": "L = rows 1-2 of M^-1 = [['-sqrt(2)/2', 'sqrt(2)/2', '0'], ['-sqrt(6)/6', '-sqrt(6)/6', 'sqrt(6)/3']]; L(1,1,1)=0 so (w1,w2) = L·mu for every state, Q = T/3: one fixed linear map, no per-state fix"
+  },
+  {
+   "id": "P3a",
+   "holds": true,
+   "predicted": true,
+   "verdict": "PASS",
+   "detail": "Lambek (a_i+a_j+a_k)/3 = standard charge for all 16 states"
+  },
+  {
+   "id": "P3b",
+   "holds": false,
+   "predicted": false,
+   "verdict": "PASS",
+   "detail": "literal reading 'the three components sum to the charge' (fails: e- sums to -3, u_r to +2)"
+  },
+  {
+   "id": "P3c",
+   "holds": true,
+   "predicted": true,
+   "verdict": "PASS",
+   "detail": "Lambek (i,j,k) twist sets = M-image twist sets per flavour (CAK §3 vs §6 consistent)"
+  },
+  {
+   "id": "P4",
+   "holds": true,
+   "predicted": true,
+   "verdict": "PASS",
+   "detail": "15 no-mixed-sign configs = weights of Λ•C^3 ⊕ Λ•(C^3)* (each multiplicity 1); centre on Λ^k is ±k so Q = ±k/3; first-generation fermions use 15 of them"
+  },
+  {
+   "id": "P5",
+   "holds": true,
+   "predicted": true,
+   "verdict": "PASS",
+   "detail": "colour reps in eps-convention: {'u': 'antifund(eps)', 'd': 'antifund(eps)', 'ubar': 'fund(eps)', 'dbar': 'fund(eps)'}; leptons sl3 singlets: True. CAK names d '3' and ubar '3bar'; the eps-convention names are the conjugates — a label choice, consistent"
+  },
+  {
+   "id": "P6a",
+   "holds": true,
+   "predicted": true,
+   "verdict": "PASS",
+   "detail": "Q = N3_raw - mu_3 on every state (raw N3 = t3 carries the centre)"
+  },
+  {
+   "id": "P6b",
+   "holds": true,
+   "predicted": true,
+   "verdict": "PASS",
+   "detail": "traceless N3=<t,(1,1,-2)> differs inside the u colour triplet at fixed (Q,Y) [('u_0', 'u_1')]; nu and e- share traceless N3 = 0 but Q = 0 vs -1: N3 (traceless) is neither Q nor Y, and Q is not a function of it"
+  },
+  {
+   "id": "P7",
+   "holds": true,
+   "predicted": true,
+   "verdict": "PASS",
+   "detail": "twist centres T in [-3, -2, -1, 0, 1, 2, 3] (not constant) and negative entries occur; every weight of (C^3)^{⊗n} is non-negative with centre n, so no single strand module carries the twist lattice and Q = T/3 is invisible to the centre of the strand module (=n)"
+  },
+  {
+   "id": "P8",
+   "holds": true,
+   "predicted": true,
+   "verdict": "PASS",
+   "detail": "states with t3 = 0 (the only sector D's trace sees, if t is read as a colour weight): ['d_1', 'd_2', 'dbar_1', 'dbar_2', 'nu', 'u_0', 'ubar_0']"
+  },
+  {
+   "id": "P9",
+   "holds": true,
+   "predicted": true,
+   "verdict": "PASS",
+   "detail": "u_L and u_R carry the same twist vector (CAK Table 2: chirality lives in the braid) but Y = 1/3 vs 4/3: twist fixes Q, not Y (SM values, comparison only)"
+  },
+  {
+   "id": "P10",
+   "holds": false,
+   "predicted": false,
+   "verdict": "PASS",
+   "detail": "{'corpus e = s0 s1 s0': {'components': 2, 'writhe': 3, 'length': 3}, 'CAK e_L = s1^-1 s2': {'components': 1, 'writhe': 0, 'length': 2}, 'CAK e_R = s2 s1^-1': {'components': 1, 'writhe': 0, 'length': 2}}: corpus electron closes to a 2-component link (Hopf), writhe 3; CAK electron braid closes to 1 component, writhe 0"
+  },
+  {
+   "id": "P11",
+   "holds": true,
+   "predicted": true,
+   "verdict": "PASS",
+   "detail": "one strand, Q = t/3 = 2/3 needs t = 2 (outside CAK's {-1,0,1}); its colour weight 2eps_c has mu = ['4/3', '-2/3', '-2/3'], a weight of S^2C^3 (the 6), not of 3 or 3bar"
+  },
+  {
+   "id": "P12",
+   "holds": true,
+   "predicted": true,
+   "verdict": "PASS",
+   "detail": "strand twists (u,u,d) = (2,2,-1) at positions r,g,b: Q = 1 but mu = ['1', '1', '-2'] != 0, not a colour singlet (singlet needs t1=t2=t3, i.e. equal quark charges); CAK's three-braid sum u+u+d = (1,1,1) is a singlet: True"
+  }
+ ],
+ "summary": "15/15"
+}

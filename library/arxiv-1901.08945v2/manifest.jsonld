@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1901.08945v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1901.08945v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -21,6 +21,18 @@
     "library/arxiv-1901.08945v2/sections/sec-006"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Decompositions of derived categories of gerbes and families of Brauer–Severi varieties — It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group\n\n**Decompositions of derived categories of gerbes and families of Brauer–Severi varieties**\n\n*AND OF FAMILIES OF BRAUER–SEVERI VARIETIES*\n\n28 pp, 8 sections.\n\n**Abstract.** It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group decomposes according to the char- acters of the group. We establish the corresponding decomposition of the unbounded derived category of complexes of sheaves with quasi-coherent co- homology. This generalizes earlier work by Lieblich for gerbes over schemes whereas our gerbes may live over arbitrary algebraic stacks. By combining this decomposition with the semi-orthogonal decomposition for a projectivized vector bundle, we deduce a semi-orthogonal decomposition of the derived category of a family of Brauer–Severi varieties whose components can be described in terms of twisted sheaves on the base. This reproves and generalizes a result of Bernardara.\n\n**Outline.** Front matter; 1 Introduction; 2 Torsion pairs and decompositions of derived ; 3 Gerbes; 4 Twisted sheaves; 5 The derived category of a gerbe; 6 Semi-orthogonal decompositions for Brauer–Se; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -43,8 +55,8 @@
       "stamp_date": "19 Feb 2019"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

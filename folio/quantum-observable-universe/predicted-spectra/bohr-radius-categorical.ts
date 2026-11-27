@@ -20,7 +20,7 @@ import { conjecture } from "../../schema/builders";
  */
 export default conjecture({
   label: "conj:bohr-radius-categorical",
-  lean: { ref: "qou:QOU.Archimedean.bohr_radius_categorical", validation: "not_checked" },
+  lean: { ref: "qou:QOU.MassTheory.bohr_radius_categorical", validation: "not_checked" },
   title:
     "Categorical Bohr radius $a_0^{\\mathrm{cat}} = \\hbar/(m_e c\\,\\alpha_{EM})$ (transported from QED virial-balance; categorical derivation open)",
   tags: [

@@ -1,0 +1,1 @@
+For any a, b ∈Z + 1/2, and any x, y ∈R, we have: lim ξ→1(1 −ξ)−1 (ψa(x)ψb(y) −ψa(y)ψb(x)) = hz,z′(x, a)hz′,z(y, b) + hz′,z(x, a)hz,z′(y, b) −hz,z′(x, b)hz′,z(y, a) −hz′,z(x, b)hz,z′(y, a) and lim ξ→1(1 −ξ)−1(ψa(x)φb(x) −ψb(x)φa(x)) = hz,z′(x, a)h′ z′,z(x, b) + hz′,z(x, a)h′ z,z′(x, b) −hz,z′(x, b)h′ z′,z(x, a) −hz′,z(x, b)h′ z,z′(x, a).

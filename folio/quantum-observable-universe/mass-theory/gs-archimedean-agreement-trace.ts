@@ -6,7 +6,7 @@ export default conjecture({
     "Archimedean agreement: Habiro polynomial trace evaluates to GB mass",
   lean: {
     ref:
-      "qou:QOU.BraidKnot.HabiroResidueSumEquivalence.archimedean_agreement",
+      "qou:QCalculus.HabiroResidueSumEquivalence.archimedean_agreement",
     validation: "not_checked",
   },
   uses: [
@@ -23,5 +23,9 @@ export default conjecture({
     "equivalence",
     "noncomputable-opaque",
     "audit-flag-13a",
+  ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Conjectural status.** A Lean proof requires the spectral decomposition existence, the `tail_in_ideal` axiom for the Habiro completion, and the analytic identification of the residues." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Lean encoding.** Encoded as the class field axiom `archimedean_agreement`. Instances supply it as a substrate axiom." },
   ],
 });

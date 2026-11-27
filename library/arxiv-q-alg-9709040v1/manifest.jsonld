@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-q-alg-9709040v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-q-alg-9709040v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-q-alg-9709040v1",
+  "title": "Deformation quantization of Poisson manifolds",
   "contains": [
     "library/arxiv-q-alg-9709040v1/sections/sec-front-matter",
     "library/arxiv-q-alg-9709040v1/sections/sec-000",
@@ -88,6 +88,18 @@
     "library/arxiv-q-alg-9709040v1/sections/sec-073"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products\n\n**Deformation quantization of Poisson manifolds**\n\n*Maxim Kontsevich*\n\n46 pp, 75 sections.\n\n**Outline.** Front matter; 0.2 Plans; 1.1 Star-products; 0.3 Acknowledgements; 1 Deformation quantization; 1.2 First approximation: Poisson structures; 1.3 Description of quantizations; 1.4 Examples; 1.4.1 Moyal product; 1.4.2 Deformation quantization up to the secon; 1.5 Remarks; 2 Explicit universal formula; 3 Deformation theory via diﬀerential graded Li; 3.2 Maurer-Cartan equation in diﬀerential grad; 3.3 Remark; 3.4 Examples; 3.4.1 Tangent complex; 3.4.2 Hochschild complex",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -98,7 +110,9 @@
   },
   "meta": {
     "doc_id": "arxiv-q-alg-9709040v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9709040v1.pdf",
     "source_sha256": "8baf650d86c5b8ab0a8b6a70f0f04b0d66e16dca69846247c8869b864180d9e8",
     "pages": 46,
@@ -109,8 +123,8 @@
       "stamp_date": "29 Sep 1997"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

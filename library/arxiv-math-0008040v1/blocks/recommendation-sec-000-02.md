@@ -1,1 +1,0 @@
-In this paper we shall use the above rectangle combinatorics to calculate the vectors $c_j(\mathbf{j})$, $c_P(\mathbf{j})$ for the reduced expression $\mathbf{j}=(n,n-1,n,n-2,n-1,n,\ldots ,1,2,\ldots ,n)$ for $w_0$.

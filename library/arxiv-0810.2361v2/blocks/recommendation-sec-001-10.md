@@ -1,1 +1,0 @@
-Since it makes sense to speak of two objects of a groupoid being isomorphic, the weakest meaningful condition is that objects of groupoids $X$ and $X'$ should need only project to isomorphic objects on $A_2$.

@@ -135,6 +135,7 @@ from codata_constants import (
     AME_B_LI6_MEV_VALIDATION,
     AME_B_TRITIUM_MEV_VALIDATION,
 )
+from codata_constants import AME_B_HE3_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 mp.mp.dps = 30
 
@@ -144,7 +145,7 @@ A_D = {2: mp.mpf("1.0"), 3: mp.mpf("1.3370"), 4: mp.mpf("2.5328"),
 
 # (Z, N, B_AME in MeV). AME2020.
 ISO = {"D": (1, 1, AME_B_DEUTERON_MEV_VALIDATION), "T": (1, 2, AME_B_TRITIUM_MEV_VALIDATION),
-       "3He": (2, 1, mp.mpf("7.71805")), "4He": (2, 2, AME_B_HE4_MEV_VALIDATION),
+       "3He": (2, 1, AME_B_HE3_MEV_VALIDATION), "4He": (2, 2, AME_B_HE4_MEV_VALIDATION),
        "6Li": (3, 3, AME_B_LI6_MEV_VALIDATION)}
 
 E_ANCHOR = ISO["D"][2]   # B(D); M_2(D)·a_D^(2) = 1, so this is the single anchor

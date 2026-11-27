@@ -1,1 +1,0 @@
-As demonstrated in [57], one should really take the direct and inverse limits in equation (4.6) at the chain level in some appropriate homotopy- theoretic sense before taking homology, but we will not do this here for simplicity.

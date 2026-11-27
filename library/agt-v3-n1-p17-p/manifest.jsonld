@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/agt-v3-n1-p17-p",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v3-n1-p17-p/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "Skein-theoretical derivation of some formulas of Habiro Introduction",
+  "title": "Skein-theoretical derivation of some formulas of Habiro",
   "contains": [
     "library/agt-v3-n1-p17-p/sections/sec-front-matter",
     "library/agt-v3-n1-p17-p/sections/sec-000",
@@ -21,6 +21,18 @@
     "library/agt-v3-n1-p17-p/sections/sec-006"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Skein-theoretical derivation of some formulas of Habiro — We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his theory of sl2 invariants of integral homol\n\n**Skein-theoretical derivation of some formulas of Habiro**\n\n*Gregor Masbaum*\n\n20 pp, 8 sections.\n\n**Abstract.** We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his theory of sl2 invariants of integral homol- ogy 3-spheres. Habiro originally derived these formulas using the quantum group Uqsl2. As an application, we give a formula for the colored Jones polynomial of twist knots, generalizing formulas of Habiro and Le for the trefoil and the ﬁgure eight knot.\n\n**Outline.** Front matter; Introduction; 1 Habiro’s formula for ω; 2 A proof using orthogonal polynomials; 3 Graphical calculus and a formula for ωp; 4 Another formula for the coeﬃcients of ωp; 5 The colored Jones polynomial of twist knots; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "agt-v3-n1-p17-p",
@@ -32,8 +44,8 @@
     "pages": 20,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

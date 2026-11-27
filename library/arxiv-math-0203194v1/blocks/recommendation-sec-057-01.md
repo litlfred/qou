@@ -1,1 +1,0 @@
-(v) One should pay attention to the fact that unlike $\Cov^{\mathrm{top}}_S$, $\Cov^{\mathrm{et}}_S$ is not stable under arbitrary disjoint unions, nor under composition (in the sense that the composition of an \'etale covering $S'/S$ and an \'etale covering $S''/S'$ may not be an \'etale covering $S''/S$).

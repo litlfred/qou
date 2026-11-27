@@ -1,1 +1,0 @@
-46]. □ In particular, the super center Z(G) must act on any irreducible super representation of G by a character χ : Z(G) →Λ∗(recall that Z(G) is a classical commutative algebraic group and that each of its elements deﬁnes an endomorphism of any given super representation of G).

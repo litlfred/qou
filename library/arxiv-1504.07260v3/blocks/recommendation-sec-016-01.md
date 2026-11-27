@@ -1,1 +1,0 @@
-After projecting onto the $\hat g$ invariant subspace, we expect only a subset of these charges to survive, and this subset should form a translate of the lattice [\[untwproj\]](#untwproj){reference-type="eqref" reference="untwproj"}, in order to have a consistent OPE between untwisted and twisted states.

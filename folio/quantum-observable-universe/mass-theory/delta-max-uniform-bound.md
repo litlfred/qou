@@ -1,4 +1,4 @@
-**Proposition.**  Let $\varrho$ have braid representative
+Let $\varrho$ have braid representative
 $\beta \in B_n$ with Hecke image $\rho(\beta) \in H_n(R, q)$ in
 the standard representation.  Let
 
@@ -129,9 +129,6 @@ is bounded by $\approx 1.30 \times 10^{-6}$ in categorical
 units, i.e. **sub-ppm binding precision** when calibrated by
 $E_0 \approx m_e \cdot 8G \approx 3.744$ MeV.
 
-Until 2026-10-10 this section used the excised convention-C trace
-$z = 1/(q^{1/2} + q^{-1/2}) \approx 0.49932$, giving $1.109$ and
-$1.07 \times 10^{-6}$.
 
 ## Corollary for the binding energy
 
@@ -150,9 +147,7 @@ $$
 For light atoms ($A \le 16$) at $q_0$, canonical evaluation
 shows $N = 3$ is sufficient for sub-ppm precision on binding
 energies; the bound is saturated within a factor of 2 on the
-deuteron, tritium, and ${}^3\mathrm{He}$
-(cf. the formal derivation with
-`JET_TARGET_PPM`).
+deuteron, tritium, and ${}^3\mathrm{He}$.
 
 ## Remaining open items
 
@@ -170,7 +165,7 @@ subconjecture 1).  The two remaining pieces are:
 2. **Sharp constant.**  The factor $2\,L(\beta)\,\|\rho\|^2$
    is a worst-case bound; for stable atoms the effective
    $\Delta_{\max}$ is empirically within a factor of 2 of the
-   level-1 value $\Delta^{(1)}$ itself (i.e.\ near-monotone
+   level-1 value $\Delta^{(1)}$ itself (i.e. near-monotone
    decay).  A sharp constant would require a specific
    representation-theoretic analysis of the jet prolongation
    map on the Jones--Wenzl filtration.

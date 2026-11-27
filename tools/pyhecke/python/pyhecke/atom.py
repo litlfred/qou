@@ -386,7 +386,8 @@ def vertex_volume(chain):
       standard:   traced volume z·a + b (from 2×2 transfer matrix)
       alternating: eigenvalue -cq⁻¹ + d
 
-    Full volume = W_sym × λ_sym + W_std × V_std + W_alt × λ_alt.
+    Volume = the convention-D Markov trace z·a + b (the sym and alt channels
+    are kept for reference; they no longer enter the volume).
     """
     a, b = 0.0, 1.0
     sp, ap = 1.0, 1.0
@@ -395,7 +396,10 @@ def vertex_volume(chain):
         sp *= c*q0 + d
         ap *= -c*qi + d
     V_std = z * a + b
-    return W_SYM * sp + W_STD * V_std + W_ALT * ap
+    # Convention D (owner, 2026-11-18): the Markov trace has weights y_sym=(q^4+1)/(q^2+1)^2,
+    # y_std=q^2/(q^2+1)^2, y_alt=0, and on a single-generator element a*sigma+b it is exactly
+    # z*a+b. The old W_SYM/W_STD/W_ALT mixture is the q-Plancherel measure, not this trace.
+    return V_std
 
 
 
@@ -462,9 +466,21 @@ def reject_float64_q(q, *, allow_float64: bool = False, where: str = "") -> None
 def nucleon_gen_chains(quarks, *, q=None, allow_float64: bool = False):
     """Per-generator crossing chains for one nucleon.
 
-    Derives chains from the quark content, matching build_nucleon_nf:
-      B₃ = (σ₀σ₁⁻¹)³ contributes to both gen 0 and gen 1
-      Quark pairs: (0,1)→gen=0, (0,2)→gen=0, (1,2)→gen=1
+    Derives the 11-crossing multiset from the quark content and partitions it
+    by generator into ``(g0_chain, g1_chain)`` of lengths ``(7, 4)``:
+      * ``B₃ = (σ₀σ₁⁻¹)³`` contributes 3 crossings to ``gen 0`` and 3 to ``gen 1``
+      * Quark pairs: ``(0,1)→gen=0``, ``(0,2)→gen=0``, ``(1,2)→gen=1``
+      * Gluon self-coupling: ``2 × σ₀`` on ``gen 0`` (ILP-derived)
+
+    **Note on ordering vs ``build_nucleon_nf`` (bean ``qou-i3wb``).**
+    ``nucleon_gen_chains`` and ``build_nucleon_nf`` share the same 11-crossing
+    multiset (since ``qou-1qsw`` added the ``2 × σ₀`` gluon self-coupling to
+    ``build_nucleon_nf``), but they do **not** represent the same element of
+    ``H₃(q)`` when ``g0_chain`` and ``g1_chain`` are concatenated: splitting by
+    generator flattens ``B₃ = (σ₀σ₁⁻¹)³`` into ``σ₀³`` on ``g0`` and ``σ₁⁻³``
+    on ``g1`` (the grouped/monotone word; see ``grouped_word_from_chains``),
+    whereas ``build_nucleon_nf`` and ``nucleon_braid_word`` preserve the
+    alternating Borromean order.
 
     Returns (g0_chain, g1_chain) as lists of (c, d) tuples.
 
@@ -505,7 +521,9 @@ def nucleon_gen_chains(quarks, *, q=None, allow_float64: bool = False):
     # after h_loc itself was exact.
     if q is None:
         import mpmath as _mpm
-        with _mpm.workdps(max(_mpm.mp.dps, 60)):
+        # Use max(_mpm.mp.dps, 70) so import-time _PROTON_G0/_NEUTRON_G0 match
+        # calls made after set_compute_dps() (COMPUTE_DPS = 70; bean qou-qpj5).
+        with _mpm.workdps(max(_mpm.mp.dps, 70)):
             from q_parameter import Q_50_DIGIT_STR as _Q50
             _qx = _mpm.mpf(str(_Q50))
             h_loc = _qx - _mpm.mpf(1) / _qx
@@ -732,7 +750,7 @@ def _chain_V_full(chain):
     """Wedderburn-weighted traced volume from a crossing chain.
 
     chain: list of (c, d) tuples.
-    Returns V̂^full = w_sym·λ_sym + w_std·V_std + w_alt·λ_alt.
+    Returns V̂^full = z·a + b, the convention-D Markov trace of the chain.
     """
     lam_sym = 1.0
     for c, d in chain:
@@ -750,7 +768,10 @@ def _chain_V_full(chain):
         M00, M01, M10, M11 = n00, n01, n10, n11
     V_std = z * M10 + M11  # second row: [a,b] = [0,1] × M → (M₁₀, M₁₁)
 
-    return W_SYM * lam_sym + W_STD * V_std + W_ALT * lam_alt
+    # Convention D (owner, 2026-11-18): the Markov trace has weights y_sym=(q^4+1)/(q^2+1)^2,
+    # y_std=q^2/(q^2+1)^2, y_alt=0, and on a single-generator element a*sigma+b it is exactly
+    # z*a+b. The old W_SYM/W_STD/W_ALT mixture is the q-Plancherel measure, not this trace.
+    return V_std
 
 
 
@@ -835,19 +856,9 @@ def atom_per_generator_volumes(Z, N, include_inter=True, crossings_per_pair=1,
     if A < 1:
         return []
 
-    # H_3 vs H_{3A} legacy bug warning (audit 2026-05-25, PR #1238).
-    # For A > 1 the H_3 Wedderburn weights used below are systematically
-    # wrong. Callers should migrate to mass_at_3A_proper.per_generator_V_hat_3A.
-    if A > 1:
-        import warnings
-        warnings.warn(
-            f"atom_per_generator_volumes uses H_3 Wedderburn weights for "
-            f"A={A} atom (Z={Z}, N={N}); H_{{3A}}={3*A} weights are correct. "
-            "See docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md. "
-            "Migrate to mass_at_3A_proper.per_generator_V_hat_3A.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
+    # The H_3 vs H_{3A} DeprecationWarning that stood here (audit 2026-05-25,
+    # PR #1238) was removed on 2026-11-19. The volumes below are now the
+    # convention-D Markov trace z*a + b, which is the same in H_3 and H_{3A}.
 
     # Nucleon ordering (Z protons then N neutrons) — matches
     # atom_character_raw convention.
@@ -946,12 +957,23 @@ def atom_per_generator_volumes(Z, N, include_inter=True, crossings_per_pair=1,
     # constant that is imported three lines above is how the `z` fork happened
     # in the first place, so both now come from the single source.
     #
-    # NOTE: these remain the H_3 weights, which are wrong for A > 1 — see the
-    # DeprecationWarning above. Fixing the convention does not fix that.
+    # The old NOTE here said these were "the H_3 weights, wrong for A > 1".
+    # That no longer applies: see the convention-D note below.
+    #
+    # CONVENTION D (owner, 2026-11-18: "switch them to convention D"). The
+    # per-generator volume is now the convention-D Markov trace of the
+    # generator's word a*sigma_i + b, which is z*a + b with z = q^3/(q^2+1).
+    # It used to be the mixture W_SYM*sym + W_STD*(z*a+b) + W_ALT*alt. Those
+    # weights (0.165, 0.669, 0.165) are not the convention-D Markov weights,
+    # which are y_lambda*dim_lambda = (0.505, 0.495, 0) on (3), (2,1), (1^3).
+    # The Markov property tr(x*sigma_i) = z*tr(x) makes z*a + b the same in
+    # every H_n, so the H_3 vs H_{3A} question goes away for these volumes.
+    # Checked against mass_at_3A_proper.per_generator_V_hat_3A(weight_scheme=
+    # "jones_wenzl") for A = 1..4: agreement to 5.6e-16, the float64 floor.
     vols = []
     for i in range(n_gens_total):
         Vs = z * a_arr[i] + b_arr[i]
-        Vf = W_SYM * sp_arr[i] + W_STD * Vs + W_ALT * ap_arr[i]
+        Vf = Vs
         vols.append({"std": Vs, "sym": sp_arr[i], "alt": ap_arr[i], "full": Vf})
     return vols
 
@@ -996,6 +1018,13 @@ def build_nucleon_nf(quarks):
     The parity rule constrains k to be even; it does **not** force k > 0
     (k = 0 is PSD too). That the vertex is present at all rests on the SDP
     decomposition, not on parity.
+
+    **Ordering vs ``nucleon_gen_chains`` (bean ``qou-i3wb``).** This builder
+    multiplies ``B₃ = (σ₀σ₁⁻¹)³`` in alternating braid order before the 3 quark
+    and 2 gluon crossings (matching ``nucleon_braid_word``). By contrast,
+    ``nucleon_gen_chains`` partitions the same 11-crossing multiset by
+    generator into ``(g0_chain, g1_chain)`` of lengths ``(7, 4)``, which
+    corresponds to the grouped/monotone ordering ``grouped_word_from_chains``.
     """
     nf = [1.0, 0, 0, 0, 0, 0]
     # B₃ confinement: (σ₀·σ₁⁻¹)³
@@ -1149,6 +1178,97 @@ def build_nucleon_nf_mp(quarks, dps: int = 50):
     return nf
 
 
+
+def build_atom_nf_mp(Z, N, dps: int = 50):
+    """float64-free twin of `build_atom_nf`, at the TRUE substrate q_0.
+
+    Same ground-state ordering, same crossing sequence, same generator per
+    crossing, same colour-weighted p-n offset (`pn_interface_offset`, so the
+    R3 convention is read from the one place that defines it). Only the
+    arithmetic differs: every coefficient is `mpmath.mpf` at `dps` + 10 guard
+    digits, with `h` and the p-n offset evaluated at the 50-digit substrate
+    string rather than the float64 module `q0`.
+
+    The whole body runs inside one `workdps`, so derived coefficients such as
+    `-h/2` are formed at full precision rather than at the ambient `mp.dps`
+    (15 in a bare import), which would truncate them before `hm_mp` sees them.
+
+    Keep in lockstep with `build_atom_nf`: `build_nucleon_nf_mp` drifted from
+    its float twin for four days once (bean qou-1qsw) and nothing noticed.
+    `hadron_knot_table.py` asserts the two agree to float64 resolution on every
+    atom it writes, which is the check that would have caught that.
+    """
+    from pyhecke.gram import _q0_50dps_str  # type: ignore[import-not-found]
+    work = dps + 10
+    with _mp.workdps(work):
+        q = _mp.mpf(_q0_50dps_str())
+        hv = q - 1 / q
+        d_pn = pn_interface_offset(q)
+        one, zero = _mp.mpf(1), _mp.mpf(0)
+        half_h = hv / 2
+        A = Z + N
+        nf = [one] + [zero] * 5
+        if A == 0:
+            return nf
+
+        def mul(nf, c, d, gen):
+            return hm_mp(nf, c, d, gen, work)
+
+        ordering = []
+        pc, nc = 0, 0
+        for k in range(A):
+            if (k % 2 == 0 and pc < Z) or nc >= N:
+                ordering.append('p'); pc += 1
+            else:
+                ordering.append('n'); nc += 1
+
+        for k in range(A):
+            for _ in range(3):
+                nf = mul(nf, one, zero, 0)          # sigma_0
+                nf = mul(nf, one, -hv, 1)           # sigma_1^-1
+            if ordering[k] == 'p':
+                nf = mul(nf, one, zero, 0)          # uu -> sigma_0
+                nf = mul(nf, one, -half_h, 0)       # ud -> sigma_0 mixed
+                nf = mul(nf, one, -half_h, 1)       # ud -> sigma_1 mixed
+            else:
+                nf = mul(nf, one, -half_h, 0)       # ud -> sigma_0 mixed
+                nf = mul(nf, one, -half_h, 0)       # ud -> sigma_0 mixed
+                nf = mul(nf, one, -hv, 1)           # dd -> sigma_1^-1
+            nf = mul(nf, one, zero, 0)              # gluon 1
+            nf = mul(nf, one, zero, 0)              # gluon 2
+            for prev in range(k):
+                ti, tj = ordering[prev], ordering[k]
+                if ti == 'p' and tj == 'p':
+                    nf = mul(nf, one, zero, 0)      # pp: sigma_0
+                elif ti == 'n' and tj == 'n':
+                    nf = mul(nf, one, -hv, 0)       # nn: sigma_0^-1
+                else:
+                    nf = mul(nf, one, d_pn, 0)      # pn: colour-weighted
+        for _ in range(Z):
+            nf = mul(nf, one, -hv, 1)               # pe: sigma_1^-1
+    with _mp.workdps(dps):
+        return [+c for c in nf]
+
+
+def check_frobenius_mp(nf, dps: int = 50):
+    """float64-free twin of `check_frobenius`: Frobenius positivity G.x >= 0.
+
+    `G` is `gram.gram_matrix_mp`, the trace form at the 50-digit substrate q_0.
+    The `-1e-10` slack of the float twin is kept: under convention D the
+    trace form is singular, so a component that is zero in exact arithmetic
+    lands at rounding level and must not be read as a violation.
+    Returns (stable, Gx, violations) with Gx a list of mpf.
+    """
+    from pyhecke.gram import gram_matrix_mp  # type: ignore[import-not-found]
+    with _mp.workdps(dps + 10):
+        G_mp = gram_matrix_mp(dps + 10)
+        x = [_mp.mpf(v) for v in nf]
+        Gx = [_mp.fsum(G_mp[i][j] * x[j] for j in range(6)) for i in range(6)]
+        tol = _mp.mpf("1e-10")
+        violations = [(NF_NAMES[i], Gx[i]) for i in range(6) if Gx[i] < -tol]
+    with _mp.workdps(dps):
+        return len(violations) == 0, [+g for g in Gx], violations
+
 # Precomputed nucleon NFs
 PROTON_NF = build_nucleon_nf(['u', 'u', 'd'])
 
@@ -1163,6 +1283,7 @@ __all__ = [
     "PROTON_NF", "NEUTRON_NF",
     "build_atom_nf_exact", "nf_channel_exact", "check_frobenius",
     "build_atom_nf", "vertex_volume", "nucleon_gen_chains",
+    "build_atom_nf_mp", "check_frobenius_mp",
     "grouped_word_from_chains",
     "atom_gen_chains", "atom_V_full", "_chain_V_full",
     "atom_per_generator_volumes", "build_nucleon_nf",

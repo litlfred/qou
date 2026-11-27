@@ -1,0 +1,1 @@
+Parameter Experimental value Prediction ζ1 −0.47 ± 0.15 −0.47 ± 0.18 ξ1 −1.51 ± 0.30 −1.58 ± 0.19 ζ3 −0.21 ± 0.08 −0.011 ± 0.006 ξ3 −0.12 ± 0.17 0.092 ± 0.030 ξ′ 3 −0.21 ± 0.51 −0.033 ± 0.077 The O(p4) analysis of these decays has also clariﬁed the role of long-distance eﬀects (ππ rescattering) in the dynamical enhancement of ∆I = 1 2 amplitudes.

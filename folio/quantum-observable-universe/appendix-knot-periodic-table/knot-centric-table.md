@@ -1,8 +1,8 @@
 The standard periodic table organizes elements by electron
 configuration (rows = periods, columns = groups).  A
 **knot-centric periodic table** reorganizes by the underlying
-knot topology: nuclear Borromean shell structure and electron
-trefoil resonance modes.  Under this reorganization shell
+knot topology: nuclear Borromean shell structure and the electron
+level words $e_n = \sigma_0\sigma_1\sigma_0\sigma_2\cdots\sigma_n$.  Under this reorganization shell
 structure and magic numbers become *emergent*: they
 follow from the Borromean crossing count rather than being read
 off an empirical table.
@@ -97,8 +97,8 @@ Each element displays:
 - **Symbol** and atomic number
 - **Nuclear knot**: $Z\mathcal{B}_3 \oplus N\mathcal{B}_3$
   with $k_\alpha$ sub-links highlighted
-- **Electron knot**: trefoil writhe diagram showing occupied
-  shells and the current Fourier mode
+- **Electron knot**: the level word $e_n = \sigma_0\sigma_1\sigma_0\sigma_2\cdots\sigma_n$
+  of the outermost occupied shell, whose writhe $n + 2$ gives the shell $n$
 - **Transfer matrix data**: $\binom{A}{2}$ steps,
   $\deg P_{\mathcal{N}} \leq A^2 - 1$
 - **Shell eigenvalues**: dominant $\lambda_+^n$ and Chebyshev

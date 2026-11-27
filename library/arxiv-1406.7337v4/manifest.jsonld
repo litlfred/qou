@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1406.7337v4",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1406.7337v4/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -25,6 +25,18 @@
     "library/arxiv-1406.7337v4/sections/sec-010"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Semi-Adequate Closed Braids and Volume — In this paper, we show that the volumes for a family of A-adequate closed braids can be bounded above and below in terms of the twist number, the number of\n\n**Semi-Adequate Closed Braids and Volume**\n\n*Adam Giambrone*\n\n20 pp, 12 sections.\n\n**Abstract.** In this paper, we show that the volumes for a family of A-adequate closed braids can be bounded above and below in terms of the twist number, the number of braid strings, and a quantity that can be read from the combinatorics of a given closed braid diagram. We also show that the volumes for many of these closed braids can be bounded in terms of a single stable coeﬃcient of the colored Jones polynomial, thus showing that this collection of closed braids satisﬁes a Coarse Volume Conjecture. By expanding to a wider family of closed braids, we also obtain volume bounds in terms of the number of positive and negative twist regions in a given closed braid diagram. Furthermore, for a family of A-adequate closed 3-braids, we show that the volumes can be bounded in terms of the parameter s from the Schreier normal form of the 3-braid.\n\n**Outline.** Front matter; 1 Introduction; 2 Volume bounds for A-adequate closed braids; 2.1 Preliminaries; 2.2 Braids and A-adequacy; 2.3 A lemma for closed braids; 2.4 Diagrammatic volume bounds; 2.5 Volume bounds in terms of the colored Jone; 3 Volume bounds for A-adequate closed 3-braids; 3.1 The Schreier normal form for 3-braids and ; 3.2 Volume bounds in terms of the Schreier nor; 3.3 The proof of Theorem 3.1",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -48,8 +60,8 @@
       "stamp_date": "22 May 2015"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

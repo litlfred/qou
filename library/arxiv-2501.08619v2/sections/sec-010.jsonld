@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2501.08619v2/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Improved subtraction function",
+  "pageStart": 8,
+  "pageEnd": 9,
+  "contains": [
+    "library/arxiv-2501.08619v2/blocks/prose-sec-010",
+    "library/arxiv-2501.08619v2/blocks/prop-sec-010-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2501.08619v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2501.08619v2/manifest.jsonld",
+  "provenance": "ingested"
+}

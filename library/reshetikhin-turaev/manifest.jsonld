@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/reshetikhin-turaev",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/reshetikhin-turaev/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -30,6 +30,18 @@
     "library/reshetikhin-turaev/sections/sec-015"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Ribbon graphs and their invariants derived from quantum groups — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented.\n\n**Ribbon graphs and their invariants derived from quantum groups**\n\n*Ribbon Graphs and Their Invariants Derived*\n\n26 pp, 17 sections.\n\n**Abstract.** The generalization of Jones polynomial of links to the case of graphs in R 3 is presented. It is constructed as the functor from the category of graphs to the category of representations of the quantum group.\n\n**Outline.** Front matter; 1 Introduction; 2 Compact Braided Categories; 3 Quasitriangular and Ribbon Hopf Algebras; 4 Coloured Ribbon Graphs; I vl vl vl; 5 The Main Theorem; 5.3 Lemma. Figure 8 presents a generating set ; 6 Applications and Generalizations of Theorem ; 7 Examples; f V~ ~Va|; R=exp(~H|; Jm~,,~; In]q!; 24 N. Yu. Reshetikhin and V. G. Turaev sional ; 2 [j+m]![j_m]l[jl_ml]l[jz_m2]lUl +j2_j]![2j+ l; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "reshetikhin-turaev",
@@ -40,8 +52,8 @@
     "pages": 26,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

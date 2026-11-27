@@ -1,5 +1,5 @@
 import Mathlib.Tactic
-import QOU.MassTheory.OrbitQuotientCount
+import MathlibExt.OrbitQuotientCount
 
 /-!
 # The `q`-deformed permutation character: one `q`-factor per orbit

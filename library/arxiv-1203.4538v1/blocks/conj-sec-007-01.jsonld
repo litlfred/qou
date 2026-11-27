@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1203.4538v1/blocks/conj-sec-007-01",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "kind": "conjecture",
+  "pageStart": 13,
+  "pageEnd": 15,
+  "text": "conj-sec-007-01.md",
+  "derivedFrom": "library/arxiv-1203.4538v1/sections/sec-007",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1203.4538v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "5.2",
+    "source_kind": "conjecture",
+    "claim_domain": "math",
+    "evidence_kind": "conjectural",
+    "evidence_location": "none",
+    "evidence_locator": "Open conjecture stated in sections/sec-007-5-transseries-and-exp-log-series.md",
+    "claim_id": "arxiv-1203.4538v1#conjecture:5.2"
+  }
+}

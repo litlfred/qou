@@ -14,9 +14,12 @@
   "pageEnd": 19,
   "contains": [
     "library/phys-rep09/blocks/prose-sec-014",
-    "library/phys-rep09/blocks/recommendation-sec-014-01"
+    "library/phys-rep09/blocks/thm-sec-014-01",
+    "library/phys-rep09/blocks/lem-sec-014-02",
+    "library/phys-rep09/blocks/lem-sec-014-03",
+    "library/phys-rep09/blocks/thm-sec-014-04"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/phys-rep09/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/phys-rep09/manifest.jsonld",
   "provenance": "ingested"
 }

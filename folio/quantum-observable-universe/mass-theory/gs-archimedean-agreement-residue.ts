@@ -6,7 +6,7 @@ export default conjecture({
     "Archimedean agreement (proton instance): degree-48 Habiro trace at $u_0$",
   lean: {
     ref:
-      "qou:QOU.BraidKnot.HabiroResidueSumEquivalence.protonExample.archimedean_agreement",
+      "qou:QOU.BraidsAndKnots.HabiroResidueSumEquivalence.protonExample.archimedean_agreement",
     validation: "not_checked",
   },
   uses: ["conj:gs-archimedean-agreement-trace"],
@@ -29,5 +29,8 @@ export default conjecture({
     "concrete-instance",
     "noncomputable-opaque",
     "audit-flag-13a",
+  ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Lean encoding.** Sits as the `sorry` in the `protonExample` instance of `HabiroResidueSumEquivalence`. **Conjectural status.** Closing the Lean proof requires brute-force evaluation of the explicit polynomial via `native_decide` or applying the generic archimedean agreement conjecture." },
   ],
 });

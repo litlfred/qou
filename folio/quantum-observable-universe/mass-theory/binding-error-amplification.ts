@@ -7,5 +7,7 @@ export default proposition({
     ref: "qou:QOU.MassTheory.BindingErrorAmplification.binding_rel_error",
     validation: "not_checked",
   },
-  uses: ["conj:binding-scale-catalan"],
+  uses: [
+    // conj:binding-scale-catalan removed (qou-tm3c): the identity is pure algebra; the conjecture appears only in commentary after the proof.
+  ],
 });

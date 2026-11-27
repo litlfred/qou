@@ -1,5 +1,4 @@
-**Corollary** (of [Frobenius S-classification](#prop:frobenius-s-classification)
-applied in the [commutative QOU](#def:commutative-qou) limit).
+*(From [Frobenius S-classification](#prop:frobenius-s-classification) applied in the [commutative QOU](#def:commutative-qou) limit.)*
 *In the commutative specialisation $q \to 1$, the chirality term
 $h_{\mathrm{A}}^2 \Phi_3$ in the Wedderburn mass formula
 ([Wedderburn mass formula](#thm:wedderburn-mass-formula)) vanishes

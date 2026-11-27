@@ -1,1 +1,0 @@
-Even though the original work on chiral symmetry was obviously all performed by particle physicists, it must be stated---to the honor of nuclear physics---that there have been some far-sighted nuclear physicists who early on understood and appreciated the significance of chiral symmetry for low-energy hadron interactions.

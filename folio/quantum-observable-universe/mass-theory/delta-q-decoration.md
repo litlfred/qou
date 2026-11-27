@@ -1,4 +1,3 @@
-**Definition (q-dimension decoration of the NF basis).**
 *The :defterm[$\delta_q$-decoration]{#delta-q-decoration} maps an algebra element $b \in H_n(q)$ to the tuple of its $q$-characters across each irreducible representation $V_\lambda$:*
 
 $$
@@ -9,4 +8,4 @@ $$
   R^{|\,\mathrm{Par}(n)\,|}.
 $$
 
-The decoration lands in the $q$-dimension layer $R^{|\mathrm{Par}(n)|}$ ([`def:q-dimension-layer`](#def:q-dimension-layer)), the per-irrep coordinate structure that the Markov trace normally collapses.
+*Its codomain is the [$q$-dimension layer](#def:q-dimension-layer).*

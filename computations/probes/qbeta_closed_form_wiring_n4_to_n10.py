@@ -101,7 +101,22 @@ def qbeta_at_depth(N: int, Q_A_cos: mp.mpf, b: mp.mpf, hbar_q_sq: mp.mpf
     return Q_A_cos * factor
 
 
+REFUSAL = (
+    "REFUSED: no valid input. q-beta-operator-valued-N3.witness.json is now a "
+    "proton-pinned, z_D-substituted ladder, and the closed-form c_k below are "
+    "convention-C rungs; combining them gives a 6.0e11 ppQ straddle, not a "
+    "precision result (beans qou-5wuz / qou-54g5; re-derivation is qou-cds1). "
+    "The committed witness is the historical run at the retired muon pin and "
+    "is not rewritten."
+)
+
+
 def main() -> int:
+    print(REFUSAL)
+    return 2
+
+
+def _main_convention_c_historical() -> int:
     mp.mp.dps = 60
 
     # Load provenance witness — same as qbeta_decay_sdp_extended_ck.py,

@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/alg-rationalized-dual-slack-certificate",
+  "@type": [
+    "folio-assistant-core:Algorithm",
+    "doco:Section"
+  ],
+  "label": "alg:rationalized-dual-slack-certificate",
+  "kind": "algorithm",
+  "title": "Solver-External Rationalized Dual-Slack Optimality and Uniqueness Certification ($\\mathcal{L}_0\\text{--}\\mathcal{L}_4$)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-operator-selection-lp",
+    "papers/quantum-observable-universe/blocks/prop-nuclear-chamber-groebner-basis"
+  ],
+  "cites": [
+    "references/farkas1902",
+    "references/kantorovich1939",
+    "references/gatermann-parrilo2004",
+    "references/simmons-duffin2015",
+    "references/goulart-chen2024",
+    "references/dvorak-kolmogorov2024"
+  ],
+  "tags": [
+    "mba",
+    "lp-dual",
+    "dual-slack",
+    "strict-complementarity",
+    "formal-certificate"
+  ],
+  "leanRef": "qou:ToricConicOpt.SymmetryReducedDualCertificate.unique_primal_of_strict_dual_slack",
+  "text": "rationalized-dual-slack-certificate.md",
+  "provenance": "authored"
+}

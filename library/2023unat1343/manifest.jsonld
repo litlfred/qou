@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2023unat1343",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2023unat1343/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -18,6 +18,18 @@
     "library/2023unat1343/sections/page-005"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "2023-UNAT-1343, Ann-Christin Raschdorf UNAT Held or UNDT Pronouncements The UNAT dismissed the appeal. The UNAT held that the UNDT correctly found not receivable Ms. Raschdorf's application with respe\n\n**2023-UNAT-1343, Ann-Christin Raschdorf UNAT Held or UNDT Pronouncements The UNAT dismissed the appeal. The UNAT held that the UNDT correctly found not receivable Ms. Raschdorf's application with respect to the non-renewal decision and**\n\n5 pp, 5 sections.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "2023unat1343",
@@ -28,8 +40,8 @@
     "pages": 5,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

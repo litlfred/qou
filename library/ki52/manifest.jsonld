@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki52",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki52/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -26,6 +26,18 @@
     "library/ki52/sections/sec-011"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On the asymptotic expansion of the Kashaev invariant of the 5 2 knot Tomotada Ohtsuki — We give a presentation of the asymptotic expansion of the Kashaev invariant of the 5 2 knot.\n\n**On the asymptotic expansion of the Kashaev invariant of the 5 2 knot Tomotada Ohtsuki**\n\n52 pp, 18 sections.\n\n**Abstract.** We give a presentation of the asymptotic expansion of the Kashaev invariant of the 5 2 knot. As the volume conjecture states, the leading term of the expansion presents the hyperbolic volume and the Chern-Simons invariant of the complement of the 5 2 knot. Further, we obtain a method to compute the full Poincare asymptotics to all orders of the Kashaev invariant of the 5 2 knot.\n\n**Outline.** Abstract; 1 Introduction; 2 Calculation of the Kashaev invariant of the ; 2.2 Calculation of ⟨ 52 ⟩N toward its asymptot; 3 Calculation by the saddle point method; 2 (Nx 2)2 +b4Nx 2); 4 Calculation by the Poisson summation formula; 2 Re 1; 5 Proof of Theorem 1.1; 4.6 (Poisson summation formula) (see also Rema; 5.2 Calculation of the asymptotic expansion; 24 (x2; 2 (t0 +s0)2 + 1; 2 (2\u0019; 5 (\u0000Vts)3 + 3; 5.3 Verifying the assumption of the saddle poi; 5.4 Verifying the assumption of the Poisson su; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: The asymptotic expansion of the Kashaev invariant ⟨ 52 ⟩N of the 52 knot\n- Proposition 3.2: , and multi-variable cases in Propositions 3.4 and 3.5. We use Proposition\n- Proposition 3.1: For a non-zero a 2 C, the domain fz 2 C j Reaz2 < 0g has two\n- Proposition 3.2: Let a be a non-zero complex number, and let (z) and r(z) be holo-\n- Proposition 3.1: We put ^ r(z) = r(z)=z2. Since ^r(z) is analytic in a neighborhood of 0,\n- Proposition 3.1: , and obtain the second equality putting y =",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "ki52",
@@ -37,8 +49,8 @@
     "pages": 52,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

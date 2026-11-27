@@ -1,1 +1,1 @@
-Let S be a simple group of Lie type deﬁned in characteristic 2. Then Theorem C holds
+Let S be a ﬁnite nonabelian simple group with order divisible by 3. Then S has a cyclic Sylow 3-subgroup if and only if S is one of: the alternating group A5; the sporadic simple group J1; PSL2(q) for 3∤q; or PSLϵ 3(q) for 3 | (q + ϵ).

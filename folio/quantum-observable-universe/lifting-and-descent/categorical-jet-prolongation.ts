@@ -2,18 +2,29 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:categorical-jet-prolongation",
-  lean: { ref: "qou:QOU.categorical_jet_prolongation",
+  lean: { ref: "qou:QOU.LiftingDescent.LiftingDescentRoot.jet_polynomial_no_bialgebra",
     validation: "not_checked",
   },
-  title: "Jet prolongation",
+  title: "Jet object splitting and the failure of Hopf inheritance",
   proofs: ["prf:categorical-jet-prolongation"],
   tags: ["jet-bundle", "frobenius-hopf", "category-theory"],
-  uses: ["def:categorical-jet"],
+  uses: ["def:categorical-jet", "lem:jet-prolongation-categorical-jet", "prop:jet-prolongation"],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/categorical-jet-prolongation-0.svg", blockIndex: 0, hash: "4cae20680c94" },
   ],
 
   authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-11-23",
+      body:
+        "Restated to agree with the owner rulings of 2026-11-22 (tower level is $T(A)$; no Frobenius " +
+        "form required at $n \\ge 1$). The block previously asserted that $J^1(A)$ inherits a " +
+        "Frobenius–Hopf structure and is a quantum universe, which `jet_polynomial_no_bialgebra` refutes " +
+        "in the commutative characteristic-zero case. The vacuous sibling theorem " +
+        "`QOU.categorical_jet_prolongation` (discharged by the identity prolongation) is removed; the " +
+        "block now points at the sorry-free refutation.",
+    },
     {
       kind: "status",
       date: "2026-09-06",

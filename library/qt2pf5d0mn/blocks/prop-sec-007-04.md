@@ -1,0 +1,1 @@
+The partition function has the state sum model: ZD(M; T ) = X ˆF=(g,f,t) (D2/|G|)|T 0|( Q α∈T 2 df(α))( Q σ∈T 4 ˆZϵ(σ) ˆF (σ)) (D2)|T 1|( Q τ∈T 3 dt(τ)) (3.3) Section 3.1 Partition Function ¯ ¯ 34· ¯ ¯ ¯ ¯ ¯ ¯ ¯ ¯ ¯ 34· ¯ Figure 3.3: (Left): ˆZ+ ˆF (01234); (Right): ˆZ+ ˆF (01234)

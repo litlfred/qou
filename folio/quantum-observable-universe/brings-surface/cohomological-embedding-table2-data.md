@@ -2,7 +2,7 @@
 |:---:|:---:|:---:|:---|:---|
 | $H^0$ | $1$ | $0$ | Point (trivial knot) | $\gamma$ (photon) |
 | $H^2$ | $1$ | $0$ | $\tau(1,0)$ (unknot) | $\nu / \nu^{\sigma}$ (neutrino) |
-| $H^{1,0}$ | $1$ | $1$ | $\tau(2,3)$ (trefoil) | $e^- / e^+$; on divisor: $\mathfrak{u}/\mathfrak{d}$ |
+| $H^{1,0}$ | $1$ | $1$ | $\tau(2,2)$ from $\sigma_0\sigma_1\sigma_0 \in B_3$ (alt. $\tau(2,3)$ trefoil) | $e^- / e^+$; partner label for $\mathfrak{u}/\mathfrak{d}$ |
 | $H^{1,0}$ | $1$ | $1$ | $\tau(2,5)$ (cinquefoil) | $\mu$; on divisor: gen-$2$ quarks |
 | $H^{1,0}$ | $1$ | $1$ | $\tau(2,7)$ (septafoil) | $\tau$-lepton; on divisor: gen-$3$ quarks |
 | $H^{1,0}$ | $1$ | $1$ | $\tau(3,5)$ | Weak force ($\beta$-decay vertex) |

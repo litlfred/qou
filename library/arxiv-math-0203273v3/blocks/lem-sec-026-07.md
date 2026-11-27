@@ -1,0 +1,1 @@
+6. Let H be an afﬁne k-group, let k′ be an extension of k, and let V ′ be a representation of H over k′. (i) If H is proreductive then V ′ is a direct summand of some V ⊗k k′. (ii) If k′ is algebraic over k then V ′ is a direct summand of some V ⊗k k′. (iii) If k is algebraically closed and V ′ is a direct summand of V ⊗k k′, then V ′ ≃V0 ⊗k k′ for some direct summand V0 of V .

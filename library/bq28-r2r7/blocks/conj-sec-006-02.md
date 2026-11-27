@@ -1,0 +1,1 @@
+Assume that the polynomial hierarchy does not collapse. Then there exists a sampling problem that can be solved eﬃciently on a quantum computer and that is provably hard for classical randomized algorithms.

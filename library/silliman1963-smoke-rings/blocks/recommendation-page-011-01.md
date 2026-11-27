@@ -1,0 +1,1 @@
+The sole requirement imposed on the configuration of the vortex filament was that its ends must meet, and therefore it was possible to find the required variety in any number of linked and knotted rings.

@@ -1,0 +1,1 @@
+Let w be a positive integer such that w ≥2. Let (s|i) be any index set with the weight of s equal to w. Then every weight w MPV relation produced by (10) is called a regularized double shuﬄe relation (RDS) of weight w. This is obtained by formally setting T = 0 in (10).

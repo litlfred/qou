@@ -1,0 +1,1 @@
+1. The map W H± 1 (R) : f 7→Wf defines Banach algebra homo- morphisms H± 1 (R) ⊕C →B(L2(R+)). 2. For b± ∈H± 1 (R) ⊕C we have χ[0,R]Wb+ = χ[0,R]Wb+χ[0,R], Wb+χ[R,∞) = χ[R,∞)Wb+χ[R,∞), Wb−χ[0,R] = χ[0,R]Wb−χ[0,R], χ[R,∞)Wb−= χ[R,∞)Wb−χ[R,∞). 3. For b± ∈H± 1 (R) ⊕C we have Wb−Wb+ = Wb−b+ . In particular, Web± = exp(Wb±) and Web = exp(Wb−) exp(Wb+).

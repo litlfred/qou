@@ -43,6 +43,19 @@ export default proposition({
   //  - that the Günaydin–Gürsey triple IS complex type remains the cited
   //    literature input (gunaydin-gursey1973); the theorem says what complex
   //    type buys, not that this triple has it.
-  cites: ["gunaydin-gursey1973"],
-  lean: { ref: "qou:QOU.Eightfold.Sym2GateFSTrichotomy.gate_forces_complex_of_dim_three" },
+  cites: [
+    "gunaydin-gursey1973",
+    "greenberg1964",
+    "han-nambu1965",
+    "dixon1994",
+    "furey2016",
+    "furey2018",
+    "todorov2018",
+    "dubois-violette-todorov2018",
+    "boyle2020",
+  ],
+  lean: { ref: "qou:QOU.EightfoldWay.Sym2GateFSTrichotomy.gate_forces_complex_of_dim_three" },
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): and machine-verified in exact $\\mathbb{Z}[i]$ arithmetic\n(`s4_genus3_competitor_fermat.py`: element-order profile" },
+  ],
 });

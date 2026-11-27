@@ -2,7 +2,7 @@ import { conjecture } from "../../schema/builders";
 
 export default conjecture({
   label: "conj:brane-tower-z-habiro",
-  lean: { ref: "qou:QOU.BraidKnot.BraneTowerZHabiro" },
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.BraneTowerZHabiro" },
   title: "Brane tower lives in the $z$-Habiro ring",
   uses: [
     "def:z-habiro-ring",
@@ -23,6 +23,12 @@ export default conjecture({
     "algebraic-cauchy-limit-half-open",
   ],
   authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-context-classes-hand-adjudicated.lean` inhabits `ZHabiroConvergenceClass` (`MassTowerOpenProblemsClasses`) with the zero function and `M = 1`.",
+      see: "docs/audits/2026-08-30-context-classes-hand-adjudicated.lean",
+    },
     {
       kind: "status",
       date: "2026-06-07",

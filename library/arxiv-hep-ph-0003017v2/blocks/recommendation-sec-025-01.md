@@ -1,1 +1,0 @@
-To compute the Dirac spectrum beyond the Thouless energy, the calculation must include the kinetic terms in the low-energy effective theory, as discussed in Sec. [\[sec:effective\]](#sec:effective){reference-type="ref" reference="sec:effective"}.

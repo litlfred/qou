@@ -1,0 +1,1 @@
+In [3] Brylinsky defines a complex associated with any Poisson manifold. We remark that the complex (E.,d^\ which we have identified with the standard complex of the Lie algebra homology //^(g*, A0)9 is isomorphic to the Brylinsky complex associated with the Poisson Lie group (Kc,π). This is most evident if we use the standard complex for the Hochschild homology.

@@ -1,1 +1,0 @@
-(15) To take into account the eﬀects of linear polarization of photons, the Stokes parameters ξ(1) and ξ(2), which are deﬁned in the basis (ˆθ, ˆφ), must be transformed to the basis (o(1), o(2)) with a counter-clockwise rotation by an angle ϕ.

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1010.5321v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1010.5321v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -30,6 +30,18 @@
     "library/arxiv-1010.5321v3/sections/sec-015"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Formulas on hyperbolic volume ∗ — This paper collects some important formulas on hyperbolic volume.\n\n**Formulas on hyperbolic volume ∗**\n\n*Budapest University of Technology and Economics*\n\n16 pp, 17 sections.\n\n**Abstract.** This paper collects some important formulas on hyperbolic volume. To determine con- crete values of volume function is a very hard question requiring the knowledge of various methods. Our goal to give a non-elementary integral on the volume of the orthosceme (obtain it without using the Schl¨aﬂi diﬀerential formula), using edge-lengthes as the only parameters.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Notation; 2 General formulas; 2.1 Coordinate system based on paracycles (hor; 2.2 Volume in the Poincare half-space model; 2.3 Hyperbolic orthogonal coordinate system; 2.4 Coordinate system based on spherical hyper; 2.5 Volume in the projective model; 3 The three dimensional case; 3.1 Formulas of J. Bolyai; 3.2 Formulas of N.I.Lobachevsky; 3.3 Once more again on the volume of the ortho; 3.3.1 The 3-dimensional case; 3.3.2 The case of dimension two; 3.3.3 The case of dimension n; 3.4 Further results on concrete volumes",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -53,8 +65,8 @@
       "stamp_date": "16 Nov 2010"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,0 +1,1 @@
+The following relations hold in T (Dn). (a) For i > 2, we have Ei,0Ei = Ei−2,0Ei. (b) For i ≥2, we have E0Ei,0 = E0Ei,3. (c) For i ≥2, we have E0E1Ei,0 = E0E1Ei,3. (d) For i > j + 1 > 1, we have Ei,0E1,jEi = Ei−2,0E1,jEi.

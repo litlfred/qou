@@ -1,4 +1,3 @@
-**Definition.**
 *Let $\mathcal{A}(Z, N)$ be a nucleus with $A = Z + N$ nucleons in ordering $(t_0, \ldots, t_{A-1})$ where $t_i \in \{p, n\}$. The **typed Garside element** is the element $\mathcal{G}(t_0, \ldots, t_{A-1}) \in H_A(q)$ built by the Garside staircase with typed crossings.*
 
 **Construction.**
@@ -22,7 +21,4 @@ $$
   d(p, n) = d(n, p) = -\tfrac{1}{2}(q - q^{-1}).
 $$
 
-The product contains $\binom{A}{2}$ factors. The result is reduced to Gröbner–Shirshov normal form under the braiding-induced ordering.
-
-**Archimedean specialisation.**
-What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any generic categorical identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+The result is reduced to Gröbner–Shirshov normal form under the braiding-induced ordering.

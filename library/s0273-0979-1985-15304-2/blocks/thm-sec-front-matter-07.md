@@ -1,0 +1,1 @@
+V L I # L 2 =VLlVL2. As evidence for the power of the trace invariant, let us answer two questions posed in [4]. Both proofs are motivated by the fact, shown in [10], that rtiBn) is sometimes finite. V. F. R. JONES

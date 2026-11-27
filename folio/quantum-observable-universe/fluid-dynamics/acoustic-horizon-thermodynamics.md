@@ -48,4 +48,4 @@ $$
   \cdot (1 + O(\hbar_q)).
 $$
 
-At the fundamental level $j = 1/2$, the circulation evaluates to $[1/2]_q[3/2]_q = (q^2 + q^{-2} - q - q^{-1})/(q - q^{-1})^2 \approx 0.75$ using the physical anchor $q \approx 1.110$. The resulting horizon radius $r_H$ matches the scale of $\ell_q = (q-1)/q$.
+At the fundamental level $j = 1/2$, the circulation evaluates to $[1/2]_q[3/2]_q = (q^2 + q^{-2} - q - q^{-1})/(q - q^{-1})^2 \approx 0.75$ using the physical anchor $q \approx 1.110$. The resulting horizon radius $r_H$ matches the scale of $\hbar_q = 1 - q^{-1} = (q-1)/q$.

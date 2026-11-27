@@ -1,1 +1,0 @@
-But then we see that an open dense subset of $\mathcal{M}_l^*(X,\mathop{\mathrm{SL}}(2,\mathbb{C}))$ is connected, thus $\mathcal{M}_l^*(X,\mathop{\mathrm{SL}}(2,\mathbb{C}))$ it self must be connected.

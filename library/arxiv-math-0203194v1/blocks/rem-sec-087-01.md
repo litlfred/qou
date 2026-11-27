@@ -1,0 +1,1 @@
+Although the rigid analysis seems to provide the reasonable topological and analytical framework, one must not expect it to be as nice as the complex case. Firstly, in classical complex analysis, when we expand a holomorphic function centered at a point inside its region of convergence, the resulting Taylor expansion may have a diﬀerent region of convergence

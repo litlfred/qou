@@ -1,1 +1,0 @@
-CS(Z) should be defined such that, for appropriate?® knots K in any closed 3-manifold N, the function (43) on the family {JN, K:(p,q) tp. can extend to a holomorphic function of a complex parameter presented by p and q appropriately.

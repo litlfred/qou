@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2011.13340v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2011.13340v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -20,6 +20,18 @@
     "library/arxiv-2011.13340v1/sections/sec-005"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A Matrix Bernstein Inequality for Strong Rayleigh Distributions * — The Entropy method provides a powerful framework for proving scalar concentration in- equalities by establishing functional\n\n**A Matrix Bernstein Inequality for Strong Rayleigh Distributions ***\n\n*Tarun Kathuria*\n\n17 pp, 7 sections.\n\n**Abstract.** The Entropy method provides a powerful framework for proving scalar concentration in- equalities by establishing functional inequalities like Poincare and log-Sobolev inequalities. These inequalities are especially useful for deriving concentration for dependent distributions coming from stationary distributions of Markov chains. In contrast to the scalar case, the study of matrix concentration inequalities is fairly recent and there does not seem to be a general framework for proving matrix concentration inequalities using the Entropy method. In this paper, we initiate the study of Matrix valued functional inequalities and show how matrix valued functional inequalities can be used to establish a kind of iterative variance comparison argument to prove Matrix Bernstein like inequalities.\n\n**Outline.** Front matter; 1 Introduction; 2 Matrix Valued Poincare Inequality for Strong; 3 A Bernstein Inequality from Matrix valued Po; 4 Comparison with KyngSong18; 5 Conclusion and Open Questions; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -43,8 +55,8 @@
       "stamp_date": "26 Nov 2020"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

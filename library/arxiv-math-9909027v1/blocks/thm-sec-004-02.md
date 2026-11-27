@@ -1,0 +1,1 @@
+If P is a general planar algebra and u is bi-invertible, let P u k be {x ∈Pk s.t. = x y for some y∈Pk}. Then P u is a general planar subalgebra, P u is a (general) planar ∗-subalgebra if P is a planar ∗-algebra and u is bi-unitary. The properties of being planar, C∗and spherical are inherited from P.

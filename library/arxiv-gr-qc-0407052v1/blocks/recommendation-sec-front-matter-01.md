@@ -1,1 +1,0 @@
-(18) We see that apart from singularities at s = 4πin, the function G(s) has a well deﬁned limit when Re(s) ց 0 and in the domain Re(s) > 0 it is complex analytic so in the whole domain Re(s) ≥0 there can be no points of accumulation of zeroes – therefore all zeroes of the function G(s) −1 2 in the whole domain Re(s) ≥0 must be distinct and of ﬁnite order.

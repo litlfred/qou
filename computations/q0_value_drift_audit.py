@@ -168,6 +168,12 @@ def _walk(obj, path: str, out: list) -> None:
 def scan() -> list[dict]:
     rows: list[dict] = []
     for p in sorted(HERE.rglob("*.witness.json")):
+        # Same scope as q0_anchor_consistency_audit and q0_anchor_ratchet: a
+        # witness under `_deprecated/` (or the fsh-guts mount) is a retired
+        # record kept for history, not a live value. This audit was the one
+        # member of the q0 family that still scanned them (issue #9104).
+        if "_deprecated" in p.parts or "fsh-guts" in p.parts:
+            continue
         rel = p.relative_to(ROOT).as_posix()
         try:
             data = json.loads(p.read_text(encoding="utf-8"))

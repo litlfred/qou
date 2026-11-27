@@ -27,7 +27,7 @@ Scope: this is brick 2. The Brunnian word `ρ(w_n)` as a concrete operator, the 
 import Mathlib.Tactic
 import Mathlib.LinearAlgebra.Matrix.Kronecker
 import Mathlib.LinearAlgebra.Matrix.Trace
-import QOU.MathlibExt.MarkovTraceMultiplicative
+import HeckeTemperleyLieb.MarkovTraceMultiplicative
 
 namespace QOU.MassTheory.QuantumTraceTower
 

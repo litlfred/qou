@@ -1,1 +1,0 @@
-Eichelsbacher have shown how dependency graphs can be used to obtain some moderate deviation principles \cite[Section 2]{DE12}.\vspace{2mm} \end{itemize} Here, we shall see a link between dependency graphs and mod-Gaussian convergence.

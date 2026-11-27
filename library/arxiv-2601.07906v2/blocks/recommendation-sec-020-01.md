@@ -1,1 +1,0 @@
-In this paper we formulated a set of constraints that any consistent ensemble of 2d CFT data --- defined by a collection of statistical moments of the structure constants and density of primary states --- must obey.

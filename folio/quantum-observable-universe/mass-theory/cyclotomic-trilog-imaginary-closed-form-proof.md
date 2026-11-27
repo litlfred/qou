@@ -1,5 +1,3 @@
-### Proof
-
 **Step 1 (Kummer reflection).** For $z \notin (0, 1)$ (Lewin 1991,
 Eq. 6.10):
 
@@ -87,5 +85,5 @@ Substituting into the closed form:
 See [Table](#tbl:cyclotomic-trilog-imaginary-closed-form-table-data).
 
 The $n = 5$ row recovers
-[`prop:bring-trilog-imaginary-tate-rational`](#prop:bring-trilog-imaginary-tate-rational)'s
+[Trilogarithm imaginary part at $\zeta_5$](#prop:bring-trilog-imaginary-tate-rational)'s
 $4\pi^3/125$ as a special case.

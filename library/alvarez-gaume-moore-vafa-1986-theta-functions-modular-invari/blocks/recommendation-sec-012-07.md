@@ -1,1 +1,0 @@
-Vafa To preserve the normalization condition (3.6) we must redefine the basis of holomorphic differentials Thus leads to the modular transformation It can be shown [42] that the theta functions transform as l) = s(A)e~ iπφ(a' (7.3) where, \Ά- Λ = D - A B\ D)' a\ 1 ^(α, i, β) = [a&Ba + fcC^ft] - \2aBtCb + (α/) 1 - bC) (AB 1)^ .

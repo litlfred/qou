@@ -1,0 +1,1 @@
+By analogy with (5.17), we have: Ext1(1, FT k) ∼=  qk−1R 0→qk−1t 2R x−→· · · 0→qtk−3 2R x−→tk−1R 0→tk−1 2R | {z } 2k 1→tkR  ∼= FLAG HILBERT SCHEMES, COLORED PROJECTORS AND KHOVANOV-ROZANSKY HOMOLOGY (5.19) ∼= zk−1C[x] k−1 M i=1 wizk−1−iC[x] x = A k−1 and therefore: RHom  1, FT k ∼= Hom  1, FT k−1 This is precisely (3.25) for M = FT k and T 2 = ι∗(T 2) = ι∗(O(1)) = FT.

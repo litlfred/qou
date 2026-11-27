@@ -1,0 +1,1 @@
+As n →∞, the random measures bλ concentrate near the Dirac mass at the element µs-c ∈M0, the semi–circle distribution (8.4). In more detail, let c Mn stand for the push–forward of the measure Mn under the correspondence λ 7→bλ. Then lim n→∞⟨f, c Mn⟩= f[µs-c], ∀f ∈A.

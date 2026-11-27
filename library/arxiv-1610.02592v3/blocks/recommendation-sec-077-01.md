@@ -1,1 +1,0 @@
-The manifold $\Def(M,\calT)$ is often empty, but since $M$ is hyperbolic we expect that there should be some ideal triangulation $\calT$ for which $\Def(M,\calT)$ is not empty and contains a solution $z$ that also satisfies the completeness equations (we are unfortunately not able to prove this in general, and this will be a technical issue).

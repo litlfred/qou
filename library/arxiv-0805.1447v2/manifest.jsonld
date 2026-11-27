@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0805.1447v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0805.1447v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -25,6 +25,18 @@
     "library/arxiv-0805.1447v2/sections/sec-010"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Braid ordering and the geometry of closed braid — The relationships between braid ordering and the ge- ometry of its closure is studied.\n\n**Braid ordering and the geometry of closed braid**\n\n*TETSUYA ITO*\n\n21 pp, 12 sections.\n\n**Abstract.** The relationships between braid ordering and the ge- ometry of its closure is studied. We prove that if an essential closed surface F in the complements of closed braid has relatively small genus with respect to the Dehornoy ﬂoor of the braid, F is circular-foliated in a sense of Birman-Menasco’s Braid foliation theory. As an application of the result, we prove that if Dehornoy ﬂoor of braids are larger than three, Nielsen-Thurston classiﬁcation of braids and the geometry of their closure’s complements are in one-to-one correspondence. Using this result, we construct inﬁn- itely many hyperbolic knots explicitly from pseudo-Anosov element of mapping class groups.\n\n**Outline.** Front matter; 1 Introduction; 2 Braid ordering and Dehornoy floor; 2.1 Dehornoy ordering, Dehornoy floor; 2.2 The geometric meaning of Dehornoy ordering; 2.3 More precious estimation of Dehornoy floor; 3 Braid Foliation; 4 Proof of theorem ??; 4.1 Tiled essential surface; 4.2 Mixed foliated surface; 5 Nielsen-Thurston classification and the geom; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -46,8 +58,8 @@
       "stamp_date": "22 Oct 2008"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

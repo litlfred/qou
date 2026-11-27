@@ -4,7 +4,7 @@ export default definition({
   label: "def:spin-involution",
   title: "Spin involution on a Frobenius $*$-algebra",
   lean: {
-    ref: "qou:QOU.BraidKnot.SpinInvolution",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.SpinInvolution",
     validation: "not_checked",
   },
   uses: [],

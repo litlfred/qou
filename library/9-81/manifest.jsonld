@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/9-81",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/9-81/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -20,6 +20,21 @@
     "library/9-81/sections/page-007"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Kamei, Singular Euclidean structures on a simplicial complex with weighted edges (2003) — extends Rivin's geometric structures on a 2-simplicial complex to weighted-edge assignments.\n\n**Singular Euclidean Structures on a Simplicial Complex with Weighted Edges** — Satoshi Kamei, Graduate School of Mathematical Sciences, University of Tokyo. Received July 2002, final version January 2003.\n\nConsiders geometric structures on a simplicial complex. Rivin treated geometric structures on a 2-simplicial complex homeomorphic to an orientable surface when values are assigned to the edges; this extends that setting.\n\n**Why it may bear here.** Companion to the Rivin variational material also held (`arxiv-math-9907032v1`, combinatorial optimization in geometry). Weighted-edge singular Euclidean structures are the same family of objects.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01AWgkrPkXGZ1Hb2UmMmFMcP",
+        "date": "2026-08-15"
+      },
+      "drafted_at": "2026-08-15"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "9-81",
@@ -30,8 +45,8 @@
     "pages": 7,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

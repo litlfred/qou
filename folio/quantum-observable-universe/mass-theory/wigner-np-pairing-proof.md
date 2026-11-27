@@ -1,4 +1,3 @@
-*Proof.*
 The partition $(2,2)$ is self-conjugate ($\lambda = \lambda'$),
 with $q$-dimension $d_q((2,2)) = [2]_q$ and Wedderburn weight
 $w_{(2,2)} = [2]_q^2/[4]_q!$.
@@ -31,5 +30,3 @@ $\square$
 | ${}^{12}$C | $+0.010\%$ | $+0.006\%$ | $44\%$ better |
 | ${}^{16}$O | $+0.007\%$ | $+0.004\%$ | $47\%$ better |
 | ${}^{40}$Ca | $+0.002\%$ | $+0.001\%$ | $69\%$ better |
-
-**Witness**: `jet-knot-invariants.witness.json`.

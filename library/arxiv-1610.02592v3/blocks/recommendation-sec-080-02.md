@@ -1,1 +1,0 @@
-\begin{lemma} \label{B:surj:lemma} The $c$ rows in $B$ generate $\ker(A^\intercal)$. \end{lemma} \begin{proof} Since $BA=0$ implies $A^\intercal B^\intercal=0$, we already know that the rows in $B$ are contained in $\ker(A^\intercal)$, and we must prove that they generate it.

@@ -1,46 +1,46 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-15T23:29:49.429254+00:00",
-  "commitSha": "ec099b34f1fb89b4649120f3de90fa8c17835b11",
+  "computedAt": "2026-11-24T21:05:34.799344+00:00",
+  "commitSha": "dd5f163edbddf8601e4c32f0a7557244ca9c33df",
   "assertions": [
     {
-      "name": "trM_\ud835\udfcf",
+      "name": "trM_𝟏",
       "computed": "1.0",
       "expected": "1.0",
       "passed": true,
       "tolerance": "1.0e-40"
     },
     {
-      "name": "trM_\u03c3\u2080",
+      "name": "trM_σ₀",
       "computed": "0.61268803714646525159582986394589924802630839154509",
       "expected": "0.61268803714646525159582986394589924802630839154509",
       "passed": true,
       "tolerance": "1.0e-40"
     },
     {
-      "name": "trM_\u03c3\u2080\u03c3\u2081",
+      "name": "trM_σ₀σ₁",
       "computed": "0.37538663086238838399937230337900991145330721988033",
       "expected": "0.37538663086238838399937230337900991145330721988033",
       "passed": true,
       "tolerance": "1.0e-40"
     },
     {
-      "name": "trM_\u03c3\u2080\u03c3\u2081\u03c3\u2080",
+      "name": "trM_σ₀σ₁σ₀",
       "computed": "0.69116647835844452614771953097904620661424111867814",
       "expected": "0.69116647835844452614771953097904620661424111867814",
       "passed": true,
       "tolerance": "1.0e-40"
     },
     {
-      "name": "trM_\u03c3\u2081\u03c3\u2080\u03c3\u2081",
+      "name": "trM_σ₁σ₀σ₁",
       "computed": "0.69116647835844452614771953097904620661424111867814",
       "expected": "0.69116647835844452614771953097904620661424111867814",
       "passed": true,
       "tolerance": "1.0e-40"
     },
     {
-      "name": "trM_\u03c3\u2080\u00b2",
+      "name": "trM_σ₀²",
       "computed": "1.1280887441143537855931516549992460492834828187552",
       "expected": "1.1280887441143537855931516549992460492834828187552",
       "passed": true,
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 517,
+  "durationMs": 360,
   "computation": "markov-trace-canonical",
   "scriptFile": "markov_trace_canonical.py",
-  "scriptHash": "fed145cc8e30",
-  "scriptCommitSha": "fdc111342d6ed6cff17ce3c428710ced67733620",
+  "scriptHash": "cfc128cf4276",
+  "scriptCommitSha": "e9f3e2544e015ddc2be3002791dc0163dd6b6854",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,13 +60,21 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/markov/markov_trace_canonical.py"
+    ],
+    "reproduce": "python3 -u computations/markov/markov_trace_canonical.py"
   },
   "data": {
     "q0_50dps": "1.1099785827513808075916690956107688798744991218736",

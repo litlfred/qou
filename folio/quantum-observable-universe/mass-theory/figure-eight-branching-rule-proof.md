@@ -1,4 +1,3 @@
-*Proof.*
 The figure-eight braid $4_1$ lives in $H_3(R, q)$ (three strands).  Its
 character in an irreducible representation $\rho_\lambda$ of $H_k(R, q)$
 with $k \geq 3$ factors through the restriction $H_k(R, q) \downarrow H_3(R, q)$:
@@ -31,7 +30,7 @@ Collecting the constant and $h^2$ terms gives the result.
 **Combinatorial structure of $b_\lambda$.**
 Since $b_\lambda = -f^{\lambda/[2{,}1]}$ is always non-positive, and
 $f^{\lambda/[2{,}1]} = 0$ if and only if $\lambda$ does not contain the
-Young diagram of $[2{,}1]$ (i.e.\ $\lambda$ is a single row $[k]$ or
+Young diagram of $[2{,}1]$ (i.e. $\lambda$ is a single row $[k]$ or
 a single column $[1^k]$), the $q$-deformation correction vanishes
 precisely for the trivial and sign representations.
 

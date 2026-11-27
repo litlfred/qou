@@ -1,1 +1,0 @@
-The exis- tence of several roots of minimal modulus and maximum multiplicity means one must compute the terms in Proposition 3.1 coming from each, and po- tentially deal with cancellation in the powers of these roots.

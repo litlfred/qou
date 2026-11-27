@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.02592v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.02592v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "An Introduction to Geometric Topology Bruno Martelli",
+  "title": "An Introduction to Geometric Topology",
   "contains": [
     "library/arxiv-1610.02592v3/sections/sec-front-matter",
     "library/arxiv-1610.02592v3/sections/sec-000",
@@ -99,6 +99,18 @@
     "library/arxiv-1610.02592v3/sections/sec-084"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "An Introduction to Geometric Topology — 86 sections: Front matter; Introduction; Part 1. Hyperbolic geometry\n\n**An Introduction to Geometric Topology**\n\n*Bruno Martelli*\n\n494 pp, 86 sections.\n\n**Outline.** Front matter; Introduction; Part 1. Hyperbolic geometry; Chapter 1. Preliminaries; 1.1 Differential topology; 1.2 Riemannian geometry; 1.3 Measure theory; 1.4 Groups; 1.5 Group actions; 1.6 Homology; 1.7 Cells and handle decompositions; Chapter 2. Hyperbolic space; 2.1 The models of hyperbolic space; 2.2 Compactification and isometries of hyperbo; 2.3 Isometry groups in dimensions two and thre; 2.4 Geometry of hyperbolic space; Chapter 3. Hyperbolic manifolds; 3.1 Discrete groups of isometries",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
   "licenceRecord": {
@@ -122,8 +134,8 @@
       "stamp_date": "5 Apr 2022"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

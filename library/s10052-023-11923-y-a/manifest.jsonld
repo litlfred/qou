@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s10052-023-11923-y-a",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10052-023-11923-y-a/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -34,6 +34,18 @@
     "library/s10052-023-11923-y-a/sections/sec-019"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three genera- tions of fermions with SU(3)C color symmetry based on the\n\n**Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions**\n\n*Niels Gresnigta , Liam Gourlay, Abhinav Varma*\n\n13 pp, 16 sections.\n\n**Abstract.** An algebraic representation of three genera- tions of fermions with SU(3)C color symmetry based on the Cayley–Dickson algebra of sedenions S is constructed. Recent constructions based on division algebras convinc- ingly describe a single generation of leptons and quarks with Standard Model gauge symmetries. Nonetheless, an alge- braic origin for the existence of exactly three generations has proven difﬁcult to substantiate. We motivate S as a nat- ural algebraic candidate to describe three generations with SU(3)C gauge symmetry. We initially represent one genera- tion of leptons and quarks in terms of two minimal left ideals of C𝓁(6), generated from a subset of all left actions of the complex sedenions on themselves. Subsequently we employ the S3 automorphism of order three, which is an automor- phism of S but not of O, to generate two additional genera- tions.\n\n**Outline.** Three generations of colored fermions with S3 ; Abstract; 1 Introduction; 2 Normed division algebras; 4 The Cayley–Dickson construction and the alge; 4.1 Octonion subalgebras inside the sedenions; 4.3 Automorphisms of sedenions; 5.1 Why not sedenions?; 5.3 Two additional generations from an S3 auto; 5.4 SU(3)C color symmetries of three generatio; 5.5 Linear dependence of minimal ideal states; 6 Outlook; 7 Discussion; Acknowledgements; Appendix A: Sedenion multiplication table; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "s10052-023-11923-y-a",
@@ -44,8 +56,8 @@
     "pages": 13,
     "arxiv": null,
     "doi": "10.1140/epjc/s10052-023-11923-y",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

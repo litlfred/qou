@@ -1,0 +1,1 @@
+This consequence was observed in [35] and was also generalized there to the value of ζF(2) for HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP, AND THE WORK OF WALTER NEUMANN 13 arbitrary number ﬁelds F, with [F : Q] = r1+2r2 for any value of r2 ≥1.

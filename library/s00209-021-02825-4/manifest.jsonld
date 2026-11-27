@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s00209-021-02825-4",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00209-021-02825-4/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -46,6 +46,18 @@
     "library/s00209-021-02825-4/sections/sec-031"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A representation theoretic explanation of the Borcea–Brändén characterization — In 2009, Borcea and Brändén characterized all linear operators on multivariate polynomials which preserve the property\n\n**A representation theoretic explanation of the Borcea–Brändén characterization**\n\n*Mathematische Zeitschrift*\n\n42 pp, 33 sections.\n\n**Abstract.** In 2009, Borcea and Brändén characterized all linear operators on multivariate polynomials which preserve the property of being non-vanishing (stable) on products of prescribed open circular regions. We give a representation theoretic interpretation of their ﬁndings, which generalizes and simpliﬁes their result and leads to a conceptual uniﬁcation of many related results in polynomial stability theory. At the heart of this uniﬁcation is a generalized Grace’s theorem which addresses polynomials whose roots are all contained in some real interval or ray. This generalization allows us to extend the Borcea–Brändén result to characterize a certain subclass of the linear operators which preserve such polynomials.\n\n**Outline.** Front matter; A representation theoretic explanation of the ; Abstract; 1 Introduction; The main idea; A generalized Grace's theorem and interval- an; A roadmap; 2 Preliminaries; 2.1 Notation; 2.2 Homogeneous polynomials; 3 Homogeneous polynomials as representations; 3.1 The action of SL2(C); 3.2 An important invariant map, and apolarity; 3.3 The symbol of an operator; 4 Polynomial stability theory; 4.1 Polar derivatives; 4.2 Projective convexity and Laguerre's theore; 4.3 Real stable polynomials",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "s00209-021-02825-4",
@@ -56,8 +68,8 @@
     "pages": 42,
     "arxiv": null,
     "doi": "10.1007/s00209-021-02825-4",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

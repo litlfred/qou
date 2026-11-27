@@ -1,1 +1,0 @@
-- Now, one should substitute the letter $R$ with the expression $a^{-1}b$ and the letter $L$ with $b$.

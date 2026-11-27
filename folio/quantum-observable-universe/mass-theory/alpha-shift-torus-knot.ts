@@ -40,7 +40,10 @@ export default proposition({
   label: "prop:alpha-shift-torus-knot",
   title:
     "Pole order at $q=0$ of the torus-knot character: $\\alpha_{\\mathrm{shift}}(T_{p,k}) = k(p-1)$ on $V_{(1^p)}$",
-  uses: ["prop:force-carrier-intertwining-correspondence"],
+  uses: [
+    // conj:force-carrier-intertwining-correspondence removed (qou-tm3c): alpha_shift is a pole order of the seminormal characters; which channel a force carrier dominates is not used.
+    "def:delta-q-decoration",
+  ],
   computation: {
     engine: "sympy",
     script: "computations/alpha/alpha_shift_torus.py",
@@ -48,7 +51,7 @@ export default proposition({
     status: "verified",
     requires: ["sympy", "numpy"],
   },
-  lean: { ref: "qou:QOU.BraidKnot.AlphaShiftTorus.alpha_shift_torus_knot" },
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.AlphaShiftTorus.alpha_shift_torus_knot" },
   tags: [
     "alpha-shift",
     "torus-knot",
@@ -58,5 +61,10 @@ export default proposition({
     "hoefsmit",
     "delta-q",
     "force-carrier",
+  ],
+  authorNotes: [
+    { kind: "caveat", date: "2026-11-21", body: "Statement restated 2026-11-21: $\\alpha_{\\mathrm{shift}}$ is an invariant of the braid $\\beta_{p,k}$, not of the knot, because $T_{p,k} \\cong T_{k,p}$ gives $k(p-1)$ against $p(k-1)$; maximality of $V_{(1^p)}$ is claimed only for the six tested pairs (round-trip audit pass 2, C11). The Lean `alpha_shift_torus_knot` is `rfl` on the definition `alphaShift p k := k * (p - 1)`; it does not compute any character." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ### Cross-link\n\nThe two values $\\alpha_{\\mathrm{shift}}(T_{2,9}) = 9$ and\n$\\alpha_{\\mathrm{shift}}(T_{3,5}) = 10$ are precisely the\n$q$-integer indices appearing in\n[Electromagnetic coupling from the antisymmetric braiding and force-carrier crossings](#prop:em-coupling-projection)'s\nformula\n\n$$\n  \\alpha_{EM}^{-1} \\;=\\; q \\cdot [9]_q \\cdot [10]_q.\n$$\n\n[Multiplicative-chain form](#prop:alpha-em-shift-multiplicative-chain)\ncombines the two identities into the **shift-exponent form**\n\n$$\n  \\alpha_{EM}^{-1}\n  \\;=\\;\n  q \\cdot\n  \\bigl[\\alpha_{\\mathrm{shift}}(T_{2,9})\\bigr]_q \\cdot\n  \\bigl[\\alpha_{\\mathrm{shift}}(T_{3,5})\\bigr]_q,\n$$\n\nrecasting the $\\delta_q$-trace identity in the same combinatorial\nterms as the atomic-shift formula." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The canonical evidence ([`alpha-shift-torus.witness.json`](../../../computations/alpha/alpha-shift-torus.witness.json)) records" },
   ],
 });

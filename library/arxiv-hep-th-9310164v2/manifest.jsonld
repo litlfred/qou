@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9310164v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9310164v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-th-9310164v2",
+  "title": "SPHERICAL CATEGORIES",
   "contains": [
     "library/arxiv-hep-th-9310164v2/sections/page-001",
     "library/arxiv-hep-th-9310164v2/sections/page-002",
@@ -29,6 +29,18 @@
     "library/arxiv-hep-th-9310164v2/sections/page-016"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "SPHERICAL CATEGORIES — This paper is a study of monoidal categories with duals where the ten- sor product need not be commutative.\n\n**SPHERICAL CATEGORIES**\n\n*John W. Barrett & Bruce W. Westbury*\n\n16 pp, 16 sections.\n\n**Abstract.** This paper is a study of monoidal categories with duals where the ten- sor product need not be commutative. The motivating examples are categories of representations of Hopf algebras. We introduce the new notion of a spherical cate- gory. In the ﬁrst section we prove a coherence theorem for a monoidal category with duals following [MacLane 1963]. In the second section we give the deﬁnition of a spherical category, and construct a natural quotient which is also spherical. In the third section we deﬁne spherical Hopf algebras so that the category of representations is spherical. Examples of spherical Hopf algebras are involutory Hopf algebras and ribbon Hopf algebras. Finally we study the natural quotient in these cases and show it is semisimple.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -39,7 +51,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-th-9310164v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9310164v2.pdf",
     "source_sha256": "e0972e04667ccc47e526b1289acfeb7cfda6f852c08ed2431f1dffdebbd689e8",
     "pages": 16,
@@ -50,8 +64,8 @@
       "stamp_date": "22 Jul 1998"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""PRE-ARCHIMEDEAN derivation of the per-bond trace factor f_bond(q).
+r"""PRE-ARCHIMEDEAN derivation of the per-bond trace factor f_bond(q).
 
 Owner directive 2026-06-10: "do everything pre-archimedean where you can" +
 "derive it [f], no |·|"; cross-ref `claude/peaceful-brown-hrt19q` §3-bis
@@ -58,6 +58,11 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
+import mpmath as mp  # noqa: E402
+from _precision import fmt as _fmt, set_compute_dps  # noqa: E402
+
+set_compute_dps()
+
 from witness_base import WitnessBuilder  # noqa: E402
 
 
@@ -96,34 +101,41 @@ def main() -> int:
     print(f"  f_nn(q) = z - h = {f_nn}")
     print(f"  f_pn(q) (δ→0)   = {forms['f_pn_delta0']}")
 
-    # Archimedean realization: substitute q → q₀ (single step at the end).
-    from q_parameter import Q as Q0
-    from codata_constants import M_E_MEV as me
-    try:
-        from canonical_braid_crossings import _avg_color_delta
-        d0 = float(_avg_color_delta())
-    except Exception:
-        d0 = 0.0
-    q0 = float(Q0); me = float(me)
-    E0 = me / (q0 * (q0 - 1.0))
-    arch = {
-        "q0": q0, "E_0_MeV": round(E0, 4),
-        "f_pp_at_q0": float(f_pp.subs(q, q0)),
-        "f_nn_at_q0": float(f_nn.subs(q, q0)),
-        "f_pn_at_q0": float(f_pn.subs({q: q0, delta: d0})),
-    }
-    e_bond = {
-        "pp": E0 * float(sp.log(1 / f_pp.subs(q, q0))),
-        "nn": E0 * float(sp.log(1 / f_nn.subs(q, q0))),
-        "pn": E0 * float(sp.log(1 / f_pn.subs({q: q0, delta: d0}))),
-    }
-    print("\n  ── archimedean realization (q → q₀, Im q₀ = 0) ──")
-    print(f"  f_pp(q₀)={arch['f_pp_at_q0']:.6f}  f_pn(q₀)={arch['f_pn_at_q0']:.6f}  "
-          f"f_nn(q₀)={arch['f_nn_at_q0']:.6f}")
-    print(f"  per-bond E_0·log(1/f) [MeV]: pp={e_bond['pp']:.3f}  "
-          f"pn={e_bond['pn']:.3f}  nn={e_bond['nn']:.3f}")
+    # Archimedean realization: substitute q → q₀ at compute_dps=70 (bean qou-uc1n).
+    from q_parameter import Q_50_DIGIT_STR
+    from codata_constants import M_E_MEV as me_const
+    q0 = mp.mpf(Q_50_DIGIT_STR)
+    me = me_const if isinstance(me_const, mp.mpf) else mp.mpf(str(me_const))
+    # Canonical Bring color-weighted delta = (q_0 - 1)^2 * (1 - q_0^-4) / 3 at full precision.
+    d0 = (q0 - 1) ** 2 * (1 - q0 ** (-4)) / 3
+    E0 = me / (q0 * (q0 - 1))
 
-    w = WitnessBuilder("prearchimedean-bond-factor", engine="sympy",
+    q0_rat = sp.Rational(Q_50_DIGIT_STR)
+    d0_rat = (q0_rat - 1) ** 2 * (1 - q0_rat ** (-4)) / 3
+    f_pp_mp = mp.mpf(str(sp.N(f_pp.subs(q, q0_rat), mp.mp.dps + 5)))
+    f_nn_mp = mp.mpf(str(sp.N(f_nn.subs(q, q0_rat), mp.mp.dps + 5)))
+    f_pn_mp = mp.mpf(str(sp.N(f_pn.subs({q: q0_rat, delta: d0_rat}), mp.mp.dps + 5)))
+
+    arch = {
+        "q0": _fmt(q0),
+        "E_0_MeV": _fmt(E0),
+        "f_pp_at_q0": _fmt(f_pp_mp),
+        "f_nn_at_q0": _fmt(f_nn_mp),
+        "f_pn_at_q0": _fmt(f_pn_mp),
+    }
+    e_bond_mp = {
+        "pp": E0 * mp.log(1 / f_pp_mp),
+        "nn": E0 * mp.log(1 / f_nn_mp),
+        "pn": E0 * mp.log(1 / f_pn_mp),
+    }
+    e_bond = {k: _fmt(v) for k, v in e_bond_mp.items()}
+    print("\n  ── archimedean realization (q → q₀, Im q₀ = 0) ──")
+    print(f"  f_pp(q₀)={float(f_pp_mp):.6f}  f_pn(q₀)={float(f_pn_mp):.6f}  "  # float64-ok: stdout display only
+          f"f_nn(q₀)={float(f_nn_mp):.6f}")  # float64-ok: stdout display only
+    print(f"  per-bond E_0·log(1/f) [MeV]: pp={float(e_bond_mp['pp']):.3f}  "  # float64-ok: stdout display only
+          f"pn={float(e_bond_mp['pn']):.3f}  nn={float(e_bond_mp['nn']):.3f}")  # float64-ok: stdout display only
+
+    w = WitnessBuilder("prearchimedean-bond-factor", engine="sympy+mpmath",
                        start_time=t0)
     w.set_description(
         "Pre-archimedean (fibre / formal-q) derivation of the per-bond trace "
@@ -137,43 +149,41 @@ def main() -> int:
     )
     w.add_data("prearchimedean_forms", {k: str(v) for k, v in forms.items()})
     w.add_data("archimedean_eval", arch)
-    w.add_data("per_bond_energy_MeV", {k: round(v, 4) for k, v in e_bond.items()})
+    w.add_data("per_bond_energy_MeV", e_bond)
     w.add_data("z_closed_form", str(sp.simplify(z)))
     w.add_data("peaceful_brown_link",
                "tr_M = Σ_λ y_λ χ_λ is the Z_q heat trace; f_bond is the depth-1 "
                "bridge multiplier on the Wedderburn eigenbasis; binding is the "
                "q-heat free energy. See claude/peaceful-brown-hrt19q §3-bis + "
                "QBetaPreArchHeatDepthOneKernel.lean.")
-    # Sanity: symbolic eval at q₀ matches an INDEPENDENTLY SPELLED z(q₀).
-    # The comparand is deliberately a second spelling, so the check fails if
-    # only one of the two is migrated -- which is exactly what it did when the
-    # symbolic `z` above moved to convention D and this line still read
-    # `1/(√q₀ + 1/√q₀)` = z_C: computed went 5.55e-17 -> 0.1134, i.e. the whole
-    # C-D gap.  Both are now convention D.
-    #
-    # Deliberately NOT carried in mpmath.  A first attempt wrote the comparand
-    # as `mp.mpf(str(Q0))`, and `precision-gates.sh` was right to fail it on two
-    # counts at once: `q_parameter.Q` is a float64, so `mpf(str(<f64>))` is the
-    # LAUNDERING pattern the f64-into-mpmath tier exists to catch, and the mpf
-    # was built at the default dps=15, tripping the never-raises-dps ratchet.
-    # Every other number in this archimedean block is float64 already, so a
-    # lone mpf comparand would have bought no precision -- only a false claim
-    # of it.  The block's float64 is a PRE-EXISTING defect of this file, out of
-    # scope for a convention migration and tracked separately (bean `qou-uc1n`).
-    _z_d_at_q0 = float((q ** 3 / (q ** 2 + 1)).subs(q, q0))
+    # Sanity: symbolic eval at q₀ matches an INDEPENDENTLY SPELLED z(q₀)
+    # in mpmath at compute_dps=70 (bean qou-uc1n).
+    _z_d_at_q0 = q0 ** 3 / (q0 ** 2 + 1)
     w.add_assertion(
         name="symbolic_f_bond_matches_numeric_at_q0",
-        computed=abs(arch["f_pp_at_q0"] - _z_d_at_q0),
-        expected=0.0, tolerance=1e-12,
+        computed=_fmt(abs(f_pp_mp - _z_d_at_q0)),
+        expected="0", tolerance="1e-55",
         source="symbolic f_pp(q₀) == z_D(q₀) = q₀³/(q₀²+1) evaluated "
-               "independently; the fibre expression realizes correctly at the "
-               "archimedean anchor. Both sides float64, as is this whole "
-               "archimedean block (bean `qou-uc1n`).",
+               "independently at compute_dps=70 (bean `qou-uc1n`).",
     )
-    out = w.save()
+    out = w.save({"q0Anchor": "proton", "q0Value": Q_50_DIGIT_STR})
     print(f"\n Witness: {out}")
     return 0
 
 
+def _selftest() -> int:
+    from q_parameter import Q_50_DIGIT_STR
+    q0 = mp.mpf(Q_50_DIGIT_STR)
+    z_d = q0 ** 3 / (q0 ** 2 + 1)
+    q = sp.Symbol("q", positive=True)
+    f_pp = sp.simplify(q ** 3 / (q ** 2 + 1))
+    f_pp_mp = mp.mpf(str(sp.N(f_pp.subs(q, sp.Rational(Q_50_DIGIT_STR)), mp.mp.dps + 5)))
+    assert abs(f_pp_mp - z_d) < mp.mpf("1e-60")
+    print("self-test: ok (symbolic f_pp(q0) matches mpmath z_D(q0) to < 1e-60)")
+    return 0
+
+
 if __name__ == "__main__":
+    if "--self-test" in sys.argv[1:] or "--selftest" in sys.argv[1:]:
+        raise SystemExit(_selftest())
     raise SystemExit(main())

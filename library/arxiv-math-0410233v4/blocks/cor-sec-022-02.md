@@ -1,0 +1,1 @@
+Let K be as in the previous theorem, with at least c ≥145 crossings in each twist region. Then when the meridian of the cusp of S3−K is normalized to have length 1, the height of the cusp satisﬁes: H ≥n (0.81544)2.

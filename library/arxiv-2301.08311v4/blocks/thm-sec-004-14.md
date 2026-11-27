@@ -1,0 +1,1 @@
+There is a coherent family of perturbation data P satisfying the properties (P1-3) which makes moduli space of strips Mdd k (c Mout, Lout, K, D) or the moduli space of discs with Mdd k (c Mout, Lout, D) regular and the evaluation map at the cylindrical punctures transversely intersecting with the matching condition coming from the inside and neck pieces.

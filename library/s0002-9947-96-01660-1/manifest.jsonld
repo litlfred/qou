@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0002-9947-96-01660-1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0002-9947-96-01660-1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -39,6 +39,18 @@
     "library/s0002-9947-96-01660-1/sections/page-026"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Invariants of piecewise-linear 3-manifolds — This paper presents an algebraic framework for constructing in- variants of closed oriented 3-manifolds by taking a state sum model on a tri- angulation.\n\n**Invariants of piecewise-linear 3-manifolds**\n\n*JOHN W. BARRETT AND BRUCE W. WESTBURY*\n\n26 pp, 26 sections.\n\n**Abstract.** This paper presents an algebraic framework for constructing in- variants of closed oriented 3-manifolds by taking a state sum model on a tri- angulation. This algebraic framework consists of a tensor category with a condition on the duals which we have called a spherical category. A signiﬁcant feature is that the tensor category is not required to be braided. The main examples are constructed from the categories of representations of involutive Hopf algebras and of quantised enveloping algebras at a root of unity. 0. Introduction The purpose of this paper is to present an algebraic framework for constructing invariants of closed oriented 3-manifolds. The construction is in the spirit of topo- logical quantum ﬁeld theory and the invariant is calculated from a triangulation of the 3-manifold.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17; Page 18",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "s0002-9947-96-01660-1",
@@ -48,8 +60,8 @@
     "pages": 26,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2008.09788v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "460f4f5432cb1f0cb5f0a9426749b9426fc8b40abe17a5f46841c877800184b2",
   "file": "2008.09788v2.pdf"
@@ -16,106 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 6,
-  "by_kind": {
-   "recommendation": 6
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "On should mention a number of conjectures related to the theory of models and polynomial automorphisms expressed in the paper by Belov-Kontsevich \\cite{4}.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In any case we shall emphasize that we attract attention to the widely open important problem whether the finitely generated isotypic groups are isomorphic.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should be noted, however, that Tsuchimoto's thorough inquiry into $p$-cur\\-va\\-tur\\-es has exposed a multitude of problems of independent interest, in which certain statements from the present paper might appear.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In fact, it is easily seen that the subdominant terms are not affected by $\\Phi_N$ either, thanks to the commutation relations that define the Weyl algebra: for every $p$ participating in the ultraproduct decomposition, after one raises to the $p$-th power one should perform a reordering within the monomials -- a procedure which degrades the cardinality $|I|$ by an even number.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-23-on-the-independence-of-the-b-kk-isomorphism-o.md",
-   "section_title": "On the independence of the B-KK isomorphism of infinite prime and Plotkin conjecture for symplectomorphisms",
-   "pages": "13-23",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "\\begin{proof} Indeed, should there exist $\\lambda_0\\neq 1$, we may find an exceptional curve whose singularity changes under $\\Phi_N$, note that coefficients are products of normalization coordinates. \\end{proof}",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-23-on-the-independence-of-the-b-kk-isomorphism-o.md",
-   "section_title": "On the independence of the B-KK isomorphism of infinite prime and Plotkin conjecture for symplectomorphisms",
-   "pages": "13-23",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall use letters $a_1$, $a_2$, $a_3$ for nonzero colors and letter $a_0$ for color zero.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-31-finite-gr\u00f6bner-basis-algebras-with-unsolvable.md",
-   "section_title": "Finite Gr\u00f6bner basis algebras with unsolvable nilpotency problem and zero divisors problem",
-   "pages": "23-25",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

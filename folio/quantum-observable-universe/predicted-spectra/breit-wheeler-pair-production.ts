@@ -13,7 +13,8 @@ export default definition({
     "colored-photon",
     "normal-form",
   ],
-  lean: { ref: "qou:QOU.Archimedean.BreitWheelerPairProduction",
+  uses: ["def:photon"],
+  lean: { ref: "qou:QOU.MassTheory.BreitWheelerPairProduction",
     validation: "not_checked",
   },
 });

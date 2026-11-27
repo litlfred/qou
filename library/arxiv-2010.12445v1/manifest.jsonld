@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2010.12445v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2010.12445v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -28,6 +28,18 @@
     "library/arxiv-2010.12445v1/sections/sec-013"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect(X), we are\n\n**STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION**\n\n*FABIO TONINI*\n\n28 pp, 15 sections.\n\n**Abstract.** Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect(X), we are going to introduce the stack of ﬁber functors FibX,C with source C, which comes equipped with a map PC : X →FibX,C and a functor G : C →Vect(FibX,C). If C generates QCoh(X) and X is an fpqc stack with quasi-aﬃne diagonal, we show that PC : X →FibX,C is an equivalence, as it happens by Tannaka’s reconstruction when X is an aﬃne gerbe over a ﬁeld. In general, under mild assumption on C, e.g. C = Vect(X), we show that FibX,C is a quasi-compact fpqc stack with aﬃne diagonal and that the image G(C) generates QCoh(FibX,C).\n\n**Outline.** Front matter; Introduction; Notation; Acknowledgments; 1 Preliminaries; 1.1 Monoidal functors and their sheafification; 1.2 Generalized frame bundles; 2 Pseudo-affine stacks; 3 Tannaka Reconstruction; 4 Pseudo-Affine sheaves revisited; 5 The stack of fiber functors; 5.1 Proof of Theorem 5.1; 5.2 Comparing vector bundles; 5.3 The case C={OX}; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -49,8 +61,8 @@
       "stamp_date": "22 Oct 2020"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

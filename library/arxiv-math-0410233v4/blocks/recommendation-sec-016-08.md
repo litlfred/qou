@@ -1,1 +1,0 @@
-In the former case, $\{b_k=0\}$ must intersect any closed component an even number of times, and in the latter case $b_k$ has the same sign on both endpoints, so again $\{b_k=0\}$ intersects the arc an even number of times.

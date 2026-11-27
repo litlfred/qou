@@ -1,1 +1,0 @@
-Indeed, λ-colored homology of the unknot [58,79] 59using KnotTheory package for Mathematica – 72 – should be obtained by using the categoriﬁed Jones-Wenzl projectors [91, 92] instead of the naive cabling relations (B.1).

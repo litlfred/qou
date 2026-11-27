@@ -1,0 +1,1 @@
+Let K be a field. (1) A  2 ƒ is an apex if and only if  is e-restricted. (2) The simple Hd;b n;g-modules of apex  2 ƒ are parameterized by simple modules of Ld;b g;nH. (3) The simple Hd;b n;g-modules of apex  2 ƒ can be constructed as the simple heads of Ind Hd;b n;g Ld;b g;nH.K/, where K runs over (equivalence classes of ) simple Ld;b g;nH-modules.

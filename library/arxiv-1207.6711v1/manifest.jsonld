@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1207.6711v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1207.6711v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -57,6 +57,18 @@
     "library/arxiv-1207.6711v1/sections/sec-042"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were\n\n**GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS**\n\n*STAVROS GAROUFALIDIS, MATTHIAS GOERNER, AND CHRISTIAN K. ZICKERT*\n\n47 pp, 44 sections.\n\n**Abstract.** In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were inspired by A-coordinates on higher Teichm¨uller space due to Fock and Goncharov. In this paper, we parametrize rep- resentations into PGL(n, C) using shape coordinates which are a 3-dimensional analogue of Fock and Goncharov’s X-coordinates. These coordinates satisfy equations generalizing Thurston’s gluing equations. These equations are of Neumann-Zagier type and satisfy sym- plectic relations with applications in quantum topology. We also explore a duality between the Ptolemy coordinates and the shape coordinates.\n\n**Outline.** Front matter; 1.1 Thurston's gluing equations; 1 Introduction; 1.2 Our main results; 1.3 Computations and applications; 1.4 Overview of the Paper; 1.5 Acknowledgement; 2 Concrete triangulations; 2.1 Face pairing permutations; 3 Thurston's gluing equations; 3.1 Symplectic properties of the gluing equati; 4 Generalized gluing equations; 4.1 Simplex coordinates; 4.2 Symmetries of a simplex; 4.3 Shape assignments; 4.4 Gluing equations for oriented triangulatio; 4.5 The pullback of a shape assignment under a; 4.6 Gluing equations for general concrete tria",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -78,8 +90,8 @@
       "stamp_date": "28 Jul 2012"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

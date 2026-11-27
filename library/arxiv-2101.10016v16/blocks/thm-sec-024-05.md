@@ -1,1 +1,1 @@
-(b) [145] and replacing S with the morphism still denoted S of the appendix
+(b) [145] and replacing S with the morphism still denoted S of the appendix of [25], and derive in a similar way an N-th root of unity w such that τC takes the stated value. We then conclude following [110]: up to passing to C w−1 , we may assume with no loss of generality that τC = (−1)N q N−1 , by (25.2), and (25.3). We have thus reduced the

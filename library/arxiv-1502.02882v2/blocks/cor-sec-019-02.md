@@ -1,0 +1,1 @@
+The sphericalization ˜C of a fusion category C carries a canonical spherical structure, in which the quantum dimension of a simple object Xsi i in ˜C computes in terms of the fusion dimension di of Xi in C as dim(Xsi i ) = sidi . (39)

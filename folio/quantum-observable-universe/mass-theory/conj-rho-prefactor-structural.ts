@@ -17,10 +17,10 @@ export default conjecture({
     },
   ],
   label: "conj:rho-prefactor-structural",
-  lean: { ref: "qou:QOU.BraidKnot.RhoPrefactorStructural" },
+  lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.RhoPrefactorStructural" },
   title:
     "Structural prefactor rule: $\\rho(\\mathfrak{H}) = \\dim_q(\\lambda^*(T_w))$",
-  uses: ["prop:atom-knot-mass-derivation"],
+  uses: ["conj:atom-knot-mass-derivation"],
   tags: [
     "tier:E",
     "sdp-multiplicity",

@@ -1,1 +1,0 @@
-Further, \[ \|c'-c''\|_1\le n\|c'-c''\|_\infty\le n\left(\|c'-c\|_\infty+\|c''-c\|_\infty\right)\le n(\varepsilon'+\varepsilon'')\le 2n\varepsilon' \] We thus apply Theorem~\ref{thm:primal-fixing-upper} for $(x',y')$ for $c'$ and $(x'',y'')$ for $c''$, showing that every variable $j$ as in Claim~\ref{cl:largeindex} must be frozen. \end{proof}

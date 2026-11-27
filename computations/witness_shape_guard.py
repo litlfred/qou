@@ -170,12 +170,16 @@ def count_leaves(obj) -> int:
     return 1
 
 
-def _duration(w) -> float | None:
+def _is_num(v) -> bool:
+    return isinstance(v, (int, float)) and not isinstance(v, bool)
+
+
+def _duration(w) -> int | float | None:
     for holder in (w, w.get("witness") if isinstance(w, dict) else None):
         if isinstance(holder, dict):
             d = holder.get("durationMs")
-            if isinstance(d, (int, float)):
-                return float(d)
+            if _is_num(d):
+                return d  # wall-clock durationMs metadata (int/float from JSON)
     return None
 
 
@@ -186,9 +190,30 @@ def shape_of(w) -> dict:
         "leaves": count_leaves(w),
         "assertions": len(assertions) if isinstance(assertions, list) else 0,
         "data_keys": len(data) if isinstance(data, dict) else 0,
+        "top_keys": len(w) if isinstance(w, dict) else 0,
         "durationMs": _duration(w),
         "provenance": _has_provenance(w),
     }
+
+
+def _content_shrank(before: dict, after: dict) -> bool:
+    """True when any structural content count decreased (bean qou-500d)."""
+    return any(
+        after.get(f, 0) < before.get(f, 0)
+        for f in ("leaves", "assertions", "data_keys", "top_keys")
+    )
+
+
+def _speedup_note(before: dict, after: dict) -> str | None:
+    """Informational note when durationMs dropped >=90% with content intact (bean qou-500d)."""
+    b, a = before["durationMs"], after["durationMs"]
+    if _is_num(b) and _is_num(a) and b > DURATION_FLOOR_MS:
+        if a < b * (1.0 - DURATION_COLLAPSE) and not _content_shrank(before, after):
+            return (
+                f"speedup (content intact): durationMs {b:,.0f} -> {a:,.0f} "
+                f"(leaves {before['leaves']:,} -> {after['leaves']:,})"
+            )
+    return None
 
 
 def compare(before: dict, after: dict, tolerance: float) -> list[str]:
@@ -244,8 +269,14 @@ def compare(before: dict, after: dict, tolerance: float) -> list[str]:
     # it. Measured false positive: habiro-coefficients-oxygen-14 flagged
     # COLLAPSED on 1 -> 0 while GAINING content (34 -> 35 coefficients, no key
     # removed), which is the opposite of what the guard reports (qou-0ndb).
-    if isinstance(b, float) and isinstance(a, float) and b > DURATION_FLOOR_MS:
-        if a < b * (1.0 - DURATION_COLLAPSE):
+    #
+    # Likewise (bean qou-500d): a genuine producer speedup (e.g.
+    # block-swap-binding 37,731 -> 1,818 ms with top-level keys 18 -> 19,
+    # data keys 6 -> 6, assertions 1 -> 1) drops durationMs by >= 90% while
+    # every content measure holds or grows. Only flag durationMs collapse
+    # when some content count also shrank.
+    if _is_num(b) and _is_num(a) and b > DURATION_FLOOR_MS:
+        if a < b * (1.0 - DURATION_COLLAPSE) and _content_shrank(before, after):
             reasons.append(
                 f"durationMs collapsed: {b:,.0f} -> {a:,.0f} "
                 f"— the hallmark of a run that was interrupted mid-write"
@@ -326,11 +357,16 @@ def check(tolerance: float) -> tuple[list[dict], list[str]]:
             findings.append({"path": rel, "reasons": reasons,
                              "before": shape_of(before), "after": shape_of(after)})
             continue
-        reasons = compare(shape_of(before), shape_of(after), tolerance)
+        b_shape, a_shape = shape_of(before), shape_of(after)
+        reasons = compare(b_shape, a_shape, tolerance)
         reasons += _escape_regression(head_raw, path.read_text())
         if reasons:
             findings.append({"path": rel, "reasons": reasons,
-                             "before": shape_of(before), "after": shape_of(after)})
+                             "before": b_shape, "after": a_shape})
+        else:
+            sp_note = _speedup_note(b_shape, a_shape)
+            if sp_note:
+                skipped.append(f"{rel} ({sp_note})")
     return findings, skipped
 
 
@@ -385,6 +421,20 @@ def self_test() -> int:
         ("an empty-string scriptFile does not count as provenance",
          {"scriptFile": "   ", "data": {"k": [1] * 200}},
          {"data": {"k": [1] * 200}}, False),
+        # Speedup vs interrupted write (bean qou-500d): block-swap-binding
+        # dropped durationMs 37,731 -> 1,818 with content intact/growing.
+        ("producer speedup with intact content is NOT flagged (bean qou-500d)",
+         {"scriptFile": "p.py", "durationMs": 37731,
+          "assertions": [{"a": 1}], "data": {f"k{i}": i for i in range(6)}},
+         {"scriptFile": "p.py", "durationMs": 1818,
+          "assertions": [{"a": 1}], "data": {f"k{i}": i for i in range(6)}, "extra": 1},
+         False),
+        ("durationMs collapse WITH content shrink IS flagged (bean qou-500d)",
+         {"scriptFile": "p.py", "durationMs": 37731,
+          "assertions": [{"a": 1}], "data": {f"k{i}": i for i in range(6)}},
+         {"scriptFile": "p.py", "durationMs": 1818,
+          "assertions": [{"a": 1}], "data": {f"k{i}": i for i in range(5)}},
+         True),
     ]
 
     failed = 0
@@ -442,6 +492,10 @@ def main() -> int:
     checked = len(modified_witnesses())
     print(f"  witnesses modified vs HEAD : {checked}")
     print(f"  collapsed                  : {len(findings)}")
+    if _git("rev-parse", "-q", "--verify", "MERGE_HEAD"):
+        print("  note: uncommitted merge in progress (MERGE_HEAD present) — "
+              "HEAD is the pre-merge tip, so incoming branch edits appear as "
+              "modified vs HEAD until the merge is committed (bean qou-500d)")
     for s in skipped:
         print(f"  skipped: {s}")
 

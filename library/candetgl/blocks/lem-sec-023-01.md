@@ -1,0 +1,1 @@
+Let f(x) be a scalar-valued function with the property that NV~f!5maxyE Vuf~y2x!u d~volx! is ﬁnite, where the maximum is over all points yeR3. Then the operator Tf :VF(V)→VF(V) deﬁned by Tf~V!~y!5E VV~x! 3f~y2x! y2x uy2xu d~volx! is a bounded map with respect to the L2 norm, and furthermore, uTf~V!u < NV~f!uVu.

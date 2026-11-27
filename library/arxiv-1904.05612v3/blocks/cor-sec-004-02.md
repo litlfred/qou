@@ -1,0 +1,1 @@
+[12] Suppose [M : N] < ∞and G denotes the generalized Weyl group of the subfactor N ⊂M . Then, any set of coset representatives {ug : g = [ug] ∈G} of G in NM(N) forms a two-sided orthonormal system for M/N. Also, G is a ﬁnite group with order ≤[M : N].

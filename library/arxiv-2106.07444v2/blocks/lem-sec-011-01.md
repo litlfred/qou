@@ -1,0 +1,1 @@
+Postulate A.9.1. Let W be any ﬁnite Coxeter group. (1) If W = W1 × W2, then Uch(W) = Uch(W1) × Uch(W2) and {−, −} is similarly multiplicative. (2) For all φ ∈ˆW, we have Degφ(q) = X ψ∈ˆ W {φ, ψ}Fegψ(q). (3) For all φ, ψ ∈ˆW, we have {εφ, εψ} = {φ, ψ}.

@@ -1,1 +1,0 @@
-Without introducing large amounts of category theory for its own sake, some categorical terminology is useful because it guides us to what should be true and what arguments are predictable symbol manipulation – so-called diagram chases – that can be skipped.

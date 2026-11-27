@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/2018sorus020/blocks/prop-sec-004-04",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 19,
+  "pageEnd": 21,
+  "text": "prop-sec-004-04.md",
+  "derivedFrom": "library/2018sorus020/sections/sec-004",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "1.1.11",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-004-113-traces-and-skein-algebra.md (p. 19-21)",
+    "claim_id": "2018sorus020#proposition:1.1.11",
+    "lean_status": "unformalized"
+  }
+}

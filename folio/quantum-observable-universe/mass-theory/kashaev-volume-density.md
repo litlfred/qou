@@ -18,11 +18,11 @@ Physically, $\rho_q$ measures the categorical drag cost of transporting a closed
 
 ### The Kashaev bridge
 
-The [Kashaev volume conjecture](#conj:kashaev-volume-conjecture) bridges the archimedean continuous volume and the algebraic discrete Markov trace: it identifies the continuous hyperbolic volume $\mathrm{Vol}(K)$ with the Kashaev limit $2\pi \lim_{N \to \infty} \log\lvert J_{N}(K;\,e^{2\pi i/N})\rvert / N$, an asymptotic limit of colored Markov traces evaluated within the Hecke algebra.
+The [Kashaev–Murakami–Murakami volume conjecture](#conj:kashaev-volume-conjecture) bridges the archimedean continuous volume and the algebraic discrete Markov trace: it identifies the continuous hyperbolic volume $\mathrm{Vol}(K)$ with the Kashaev limit $2\pi \lim_{N \to \infty} \log\lvert J_{N}(K;\,e^{2\pi i/N})\rvert / N$, an asymptotic limit of colored Markov traces evaluated within the Hecke algebra.
 
 ### Inverting the ontology
 
-The QOU framework reverses the classical priority: the discrete trace is fundamental, while the continuous volume is emergent. The colored Jones polynomials are finite algebraic evaluations of Markov traces. The hyperbolic volume simply describes the asymptotic scaling of these exact categorical evaluations. The macroscopic continuum shadow emerges from the accumulated algebraic drag of discrete crossing resolutions.
+The QOU framework reverses the classical priority: the discrete trace is fundamental, while the continuous volume is emergent. The colored Jones polynomials are finite algebraic evaluations of Markov traces. The hyperbolic volume describes the asymptotic scaling of these exact categorical evaluations. The macroscopic continuum shadow emerges from the accumulated algebraic drag of discrete crossing resolutions.
 
 ### Consequences for the mass formula
 

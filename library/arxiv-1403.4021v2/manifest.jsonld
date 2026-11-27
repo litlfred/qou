@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1403.4021v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1403.4021v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -37,6 +37,18 @@
     "library/arxiv-1403.4021v2/sections/sec-022"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS — We classify the Markov traces factoring through the Birman-Wenzl-Murakami (BMW) algebras.\n\n**MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS**\n\n*Ivan Marin & Emmanuel Wagner*\n\n46 pp, 24 sections.\n\n**Abstract.** We classify the Markov traces factoring through the Birman-Wenzl-Murakami (BMW) algebras. For this purpose, we deﬁne a common ‘cover’ for the two variations of the BMW-algebra originating from the quantum orthogonal/symplectic duality, which are responsible for the so-called ‘Dubrovnik’ variation of the Kauﬀman polynomial. For generic values of the deﬁning parameters of the BMW algebra, this cover is isomorphic to the BMW algebra itself, and this fact provides a shorter deﬁning relation for it, in the generic case. For a certain 1-dimensional family of special values however, it is a non-trivial central extension of the BMW-algebra which induces a central extension of the Temperley-Lieb algebra. Inside this 1-dimensional family, exactly two values provide possibly additional Q-valued Markov traces. We describe both of these potential traces on the (extended) Temperley-Lieb subalgebra.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Context; 1.2 Presentation; 1.3 Organisation of the paper; 2 Preliminaries on the cubic Hecke algebras on; 3 Two BMW algebras as quotients of the braid g; 4 A universal cover for the two BMW algebras, ; 5.1 General inductive properties; 5.2 Restrictions to 3 strands, and the Ocneanu; 5.3 The Kauffman trace; 5.4 An additional trace when y=a2= 1; 6 A central extension of BMW; 6.1 Definition; 6.2 A genuine extension of BMWn; 6.3 The algebra Fn as a specialization of BMW\"; 6.4 Computations inside Fn; 6.5 A central extension of the Temperley-Lieb",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -58,8 +70,8 @@
       "stamp_date": "20 Jul 2014"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,4 +1,3 @@
-**Proof.**
 The crystal-limit character $\chi^\lambda_{\mathrm{crystal}}(\sigma)$
 on a single Hecke generator $\sigma$ is, by
 [crystal-graph realisation](#conj:crystal-graph-realization),
@@ -21,7 +20,7 @@ $$
 $$
 
 acting on the same SYT eigenline.  This is an input of the model
-(the `abs(i)` reduction in `term7_alpha5_crystal_derivation.py`),
+(the $\lvert i\rvert$ reduction in the crystal computation),
 not a consequence of the Hecke relation.  The relation
 $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$ cannot be specialised at
 $q = 0$, because $q^{-1}$ is undefined there.  At generic $q$ it
@@ -82,18 +81,18 @@ $$
   S_{\mathrm{crystal}}(\tilde\beta_T) \;=\; S_{\mathrm{crystal}}(\tilde\beta_{{}^3\mathrm{He}}),
 $$
 
-*matching the witness
-[`term7-alpha5-crystal-derivation.witness.json`](../../../computations/term7-alpha5-crystal-derivation.witness.json)
+*matching the
+[recorded crystal computation](../../../computations/term7-alpha5-crystal-derivation.witness.json)
 which records both values to fifty decimal digits as
 $0.0020612874779541296$.*
 
 **Caveat — this corollary is *not* a statement about physical
-${}^3\mathrm{H}$ vs.\ ${}^3\mathrm{He}$.** Under the canonical
+${}^3\mathrm{H}$ vs. ${}^3\mathrm{He}$.** Under the canonical
 $\bowtie_K$-coupled convention
 the canonical formalism,
 ${}^3\mathrm{H}$ has interface types $(pn{=}\bowtie_K,\;nn{=}\sigma^{-1})$
 while ${}^3\mathrm{He}$ has $(pp{=}\sigma,\;pn{=}\bowtie_K)$ — the
 words differ in *interface type*, not just generator signs, so the
 sign-flip proposition does not apply directly.  The legacy
-disjoint-product witness used by `term7_alpha5_crystal_derivation`
+disjoint-product computation
 artificially erases this isospin asymmetry.

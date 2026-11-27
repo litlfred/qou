@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1409.2799v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "2f2067b7b583e731e0baec27574c5f7cd189c7bcd3493cfbf9533aa0d44e48eb",
   "file": "1409.2799v2.pdf"
  },
  "provenance": {
-  "title": "Diagram categories for Uq-tilting modules at roots of unity",
+  "title": "DIAGRAM CATEGORIES FOR Uq-TILTING MODULES",
   "authors": "HENNING HAAHR ANDERSEN AND DANIEL TUBBENHAUER",
   "arxiv": {
    "id": "1409.2799",
@@ -16,166 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 10,
-  "by_kind": {
-   "recommendation": 10
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We should note here that there are two different types of $\\Uq$-modules known as \\textit{type} $1$ \\textit{and} $-1$, see for example~\\cite[Section 1]{apw}.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-22-weyl-modules-dual-weyl-modules-and-simple-mod.md",
-   "section_title": "Weyl modules, dual Weyl modules and simple modules",
-   "pages": "6-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Denote by $\\T_{\\lambda}$ for $\\lambda\\in\\mathcal A_0$ the $\\lambda$ \\textit{block of} $\\T$: all indecomposable summands of objects of $\\T_{\\lambda}$ should be of the form $\\Tn i$ for $i\\in W_l.\\lambda$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-24-the-linkage-principle-and-blocks.md",
-   "section_title": "The linkage principle and blocks",
-   "pages": "10-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Moreover, in the case $\\mu=-1$ we have $\\mu_i>\\lambda_i$ iff $i$ is odd whereas in the case $\\mu=l-1$ we have $\\mu_i>\\lambda_i$ iff $i$ is even as a look at~\\eqref{eq-alcove} should convince the reader.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-25-translation-functors.md",
-   "section_title": "Translation functors",
-   "pages": "14-17",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since the corresponding module categories should be semisimple, the quotient $\\At$ is rather trivial and we call it \\textit{KS trivial $m$-quiver algebra}.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-3-the-khovanov-seidel-quiver-algebra-and-grading.md",
-   "section_title": "The Khovanov-Seidel quiver algebra and gradings",
-   "pages": "17-19",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We denote by $\\ModgrA$ the category of \\textit{graded}, finitely generated $A$-modules whose morphisms from $M$ to $M^{\\prime}$ are given by \\begin{equation}\\label{eq-gradhom} \\Hom_{\\ModgrA}(M,M^{\\prime})=\\bigoplus_{s\\in\\bZ}\\Hom_{A}(M,M^{\\prime}\\langle s\\rangle)_{0}, \\end{equation} where the zero should mean \\textit{degree preserving} morphisms and $\\langle s\\rangle$ denotes a shift as below.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-32-combinatorics-of-the-graded-right-qm--and-ain.md",
-   "section_title": "Combinatorics of the graded, right Qm- and Ain-modules",
-   "pages": "19-20",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Now $\\End^{\\mathrm{fs}}_{\\Uq}(\\Tn{\\bbin})$ should be the (non-unital) subalgebra of $\\End_{\\Uq}(\\Tn{\\bbin})$ of all matrices with only finitely many non-zero rows, i.e. \\[ \\End^{\\mathrm{fs}}_{\\Uq}(\\Tn{\\bbin})\\cong \\bigoplus_{i,i^{\\prime}=0}^{\\infty} \\Hom_{\\Uq}(\\Tn{\\bbi},\\Tn{\\bbi^{\\prime}}). \\] Similarly, of course, in the ``trivial'' case.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-33-endofunctors-on-pmod-qm-and-pmod-qin.md",
-   "section_title": "Endofunctors on pMod-Qm and pMod-Qin",
-   "pages": "20-27",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "All appearing indices should be such that everything below $0$ or above $m$ is defined to be zero.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-33-endofunctors-on-pmod-qm-and-pmod-qin.md",
-   "section_title": "Endofunctors on pMod-Qm and pMod-Qin",
-   "pages": "20-27",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "As we mentioned above, we think that this should generalize in type $\\boldsymbol{\\mathrm{A}}$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-012-35-the-tilting-category-t-and-its-graded-counter.md",
-   "section_title": "The tilting category T and its graded counterpart Tgr",
-   "pages": "27-31",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We should note that only the first edge has to be green, but we allow possible color inversion of the rest of the picture (that is, after the rightmost dots).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-014-41-the-basics-diagrammatic-categories-additive-c.md",
-   "section_title": "The basics: diagrammatic categories, additive closures and Karoubi envelopes",
-   "pages": "31-46",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We note that \\textbf{Type 3} should also include the horizontal reflection (fixing the dead-end symbol) of the first diagram in~\\eqref{eq-type34}.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-014-41-the-basics-diagrammatic-categories-additive-c.md",
-   "section_title": "The basics: diagrammatic categories, additive closures and Karoubi envelopes",
-   "pages": "31-46",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

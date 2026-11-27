@@ -1,1 +1,0 @@
-(Basically, A+ is forcing the existence of a block and strand tree of arbitrarily high index as described in Section 5.5.) Since we cannot have an arbitrarily large number of such type (0, 2) vertices adjacent to strongly essential b–arcs, and they balance out P∞ β=5 Ve(0, βe), this sum must be bounded.

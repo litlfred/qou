@@ -1,1 +1,0 @@
-When the algebra law is non degenerate the mappings M(A) > L(A), (p1,p2) + pi and M(A) > R(A), (p1, p2) 4 pe are easily seen to be injections, so it will be convenient to identify M(A) with a subspace of L(A) or with a subspace of R(A) (this should create no confusion).

@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-colour-ratio-mobius-matrix",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:colour-ratio-mobius-matrix",
+  "kind": "lemma",
+  "title": "The colour-ratio Möbius matrix",
+  "tags": [
+    "brings-surface",
+    "color-tube",
+    "mobius-transformation",
+    "branch-point"
+  ],
+  "leanRef": "qou:QOU.BringsSurface.BringsSurfaceRoot.mobiusMatrix_eq_cayley_mul_diag",
+  "text": "colour-ratio-mobius-matrix.md",
+  "leanSource": "colour-ratio-mobius-matrix.lean",
+  "provenance": "authored"
+}

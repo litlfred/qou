@@ -12,16 +12,13 @@ export default remark({
       kind: "status",
       date: "2026-08-09",
       body:
-        "Resolves the FIRST of the two defects recorded in bean qou-adwi — the apparent " +
-        "factor-t_P (about 10.1) contradiction between planck-info-unit.md ('ell_P ~ hbar_q', " +
-        "local, proportionality) and discrete-planck-step.md ('ell_P(q) = hbar_q t_P = 1', " +
-        "global, normalised). Read as share versus total the two are consistent, so the defect " +
-        "is one symbol wearing two meanings and not a numerical disagreement. " +
-        "OPEN — the SECOND defect in qou-adwi is untouched by this block: " +
-        "lean/QOU/InformationTheory.lean:32-34 hardens the prose proportionality into " +
-        "`localPlanckLength := quantumPlanckConstant`, a definitional equality where the " +
-        "narrative asserts only a scaling. Repairing that is a Lean edit, not an exposition " +
-        "edit, and no bean state was changed here — the bean may be owned by another session.",
+        "Resolves both parts of bean qou-adwi: (1) separates the per-step Reeb share " +
+        "`\\hbar_q = 1 - q^{-1}` (`sec:planck-info-unit`) from the unit-normalised full Reeb " +
+        "circuit `\\ell_P(q) = \\hbar_q t_P = 1` (`rem:discrete-planck-step`), retiring the " +
+        "colliding auxiliary glyphs `\\ell_P^{\\mathrm{step}}` and `\\ell_q`; and (2) refactors " +
+        "`lean/QOU/InformationTheory.lean` so `reebStepShare := quantumPlanckConstant` and " +
+        "`normalisedReebCircuit := 1` (`reebStepShare_mul_planckCircuitTime`) name the share and " +
+        "circuit explicitly rather than equating `localPlanckLength` to `quantumPlanckConstant`.",
     },
     {
       kind: "note",
@@ -46,5 +43,6 @@ export default remark({
         "Re-homing the block beside rem:discrete-planck-step instead is the alternative and is " +
         "an owner call.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): After one Planck step, [the discrete Planck step](#rem:discrete-planck-step)\nrecords the displacement as" },
   ],
 });

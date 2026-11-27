@@ -55,6 +55,21 @@ doublet, where the writhe difference reproduces $\Delta I_3 = 1$
 scale-free --- that entry is derived.  Every $Y$ entry, and every quark
 row, is either open or conditional on $N = 3$.
 
+**Ordered meson content and 3-strand clasp injectivity.**  While unordered
+multiset content collides on the neutral charmed and strange mesons
+$\bar D^0$ and $K^0$, keeping the antiquark-first orientation maps
+$\bar D^0 = (-5, +3)$ to $(5, 3)$ and $K^0 = (+3, -5)$ to $(3, 5)$ inside
+the 3-strand gluon clasp $\beta_{\mathrm{clasp}}(n_1, n_2) =
+\sigma_1^{n_1}\sigma_2^{-n_2}\sigma_1\sigma_2^{-1} \in B_3$ ([the meson
+mass-splitting remark](#rem:meson-mass-splitting)).  Pairing $(n_1, n_2)$
+with the $(V_2, W_3^*)$-framed constituent strand charges
+([the flavour-charges remark](#rem:flavor-charge-assignments)) separates
+$\bar D^0$ ($((5,3), -\tfrac{2}{3}, +\tfrac{2}{3})$) from $K^0$
+($((3,5), +\tfrac{1}{3}, -\tfrac{1}{3})$) and separates $K^-$
+($((3,5), -\tfrac{2}{3}, -\tfrac{1}{3})$) from $K^0$, making the framed
+clasp invariant injective across all five dictionary meson families
+without fitted parameters.
+
 No entry in this table is a *fit* --- nothing here was tuned to
 match data --- but neither is the table a derivation of the flavour
 quantum numbers.  It is a consistency ledger, and will be updated as the

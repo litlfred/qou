@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-nucl-th-9605013v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-nucl-th-9605013v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -25,6 +25,18 @@
     "library/arxiv-nucl-th-9605013v1/sections/page-012"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Nuclear beta- and gamma- collective bands in the SU_q(2) rotator model — The SUq(2) rotator model is used for describing the β1- and γ1-bands of even- even rare earth and actinide collective nuclei.\n\n**Nuclear beta- and gamma- collective bands in the SU_q(2) rotator model**\n\n*N. MINKOV, S. B. DRENSKA, P. P. RAYCHEV, R. P. ROUSSEV*\n\n12 pp, 12 sections.\n\n**Abstract.** The SUq(2) rotator model is used for describing the β1- and γ1-bands of even- even rare earth and actinide collective nuclei. Good results are obtained in nuclei with valence pair number N > 10. It is shown that in the excited bands the violation of the exact SU(2) symmetry is generally stronger than in the ground state bands, indicating the presence of a nonadiabatic perturbation caused by the excited vibrational degrees of freedom. The physical content of the parameter q is discussed. Predictions of the SUq(2) model for B(E2) intraband transitions in excited bands are presented and the need for speciﬁc experimental data is pointed out.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -46,8 +58,8 @@
       "stamp_date": "9 May 1996"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,0 +1,1 @@
+1. (a) The xj, as a function of j, is increasing for j ∈[0, n/2] and decreasing for j ∈[n/2, n]. In particular, for j ≤l ≤n −j we have xj ≤xl. (b) For every 1 ≤j ≤n −1, one has 2 ≥xj. For n/4 ≤j ≤3n/4, one has 2 ≤(xj)2.

@@ -83,7 +83,7 @@ def main(argv: list[str] | None = None) -> int:
 
     losses = []
     for f in sorted(ROOT.rglob("*.witness.json")):
-        if ".git" in f.parts:
+        if {".git", ".claude", ".lake", "node_modules"} & set(f.parts):
             continue
         rel = str(f.relative_to(ROOT))
         before = _at_ref(a.against, rel)

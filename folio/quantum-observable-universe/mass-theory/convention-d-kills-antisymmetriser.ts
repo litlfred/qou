@@ -5,7 +5,7 @@ export default proposition({
   title:
     "$z = q^{3}/(q^{2}+1)$ is the unique non-trivial Markov trace on $H_3(q)$ whose radical contains the three-strand antisymmetriser",
   lean: {
-    ref: "qou:QOU.QBeta.TemperleyLiebTower.antisym_vanishes_only_at_two_roots",
+    ref: "qou:HeckeTemperleyLieb.TemperleyLiebTower.antisym_vanishes_only_at_two_roots",
     validation: "not_checked",
   },
   uses: [

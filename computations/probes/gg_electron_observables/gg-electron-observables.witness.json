@@ -1,0 +1,209 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-16T07:49:19.635773+00:00",
+  "commitSha": "43188f8280258b7cbeeb145308009a5d3d40a138",
+  "assertions": [
+    {
+      "name": "C1_trace_V_21_closed_form",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "tr=-1.0437062085325219894"
+    },
+    {
+      "name": "C2_det_V_21_is_1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "C3_chi21_closed_form_k0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "2.0"
+    },
+    {
+      "name": "C3_chi21_closed_form_k3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "1.99418581297996408672819936802"
+    },
+    {
+      "name": "C3_chi21_closed_form_k6",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "1.9767770566905603010061549713"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 26,
+  "computation": "gg-electron-observables",
+  "scriptFile": "gg_electron_observables_probe.py",
+  "scriptHash": "096427d6c9b6",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gg_electron_observables/gg_electron_observables_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gg_electron_observables/gg_electron_observables_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "via h2_one_rule (cf.Q, proton pin)",
+  "description": "PROBE (bean qou-a1hh): invariants of the gamma-gamma electron candidates V^0, V^3, V^6 (V = s0 s1^-1). Pre-registered. Nothing fitted, selected or compared with measurement.",
+  "results": {
+    "theta_over_2pi_div_3": "1.01213863625523640130904283285",
+    "V^0": {
+      "level_chars": {
+        "1:(1,)": "1.0",
+        "2:(2,)": "1.0",
+        "2:(1, 1)": "1.0",
+        "3:(3,)": "1.0",
+        "3:(2, 1)": "2.0"
+      },
+      "min_level_char": "1.0",
+      "chi21": "2.0",
+      "chi21_closed_form_2cos_k_theta": "2.0",
+      "eig21": [
+        "1.0",
+        "1.0"
+      ],
+      "dist_from_identity_21": "0.0",
+      "equals_nucleon_word": {
+        "V^3": false,
+        "V^6": false
+      },
+      "components": 3,
+      "linking_matrix": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "identify": "3-component unlink",
+      "hyperbolic": false,
+      "volume": "0 (not hyperbolic)",
+      "amphichiral": true
+    },
+    "V^3": {
+      "level_chars": {
+        "1:(1,)": "0.9985621638367872659512131",
+        "2:(2,)": "0.9944017266390692048254964",
+        "2:(1, 1)": "1.011225312365691376326592",
+        "3:(3,)": "1.0",
+        "3:(2, 1)": "1.994185812979964086728199"
+      },
+      "min_level_char": "0.9944017266390692048254964",
+      "chi21": "1.99418581297996408672819936802",
+      "chi21_closed_form_2cos_k_theta": "1.99418581297996408672819936802",
+      "eig21": [
+        "(0.9970929064899820433640997 - 0.07619537930452164071345998j)",
+        "(0.9970929064899820433640997 + 0.07619537930452164071345998j)"
+      ],
+      "dist_from_identity_21": "0.09724300021194414648405835",
+      "equals_nucleon_word": {
+        "V^3": true,
+        "V^6": false
+      },
+      "components": 3,
+      "linking_matrix": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "identify": [
+        "t12067(0,0)(0,0)(0,0)",
+        "6^3_2(0,0)(0,0)(0,0)",
+        "L6a4(0,0)(0,0)(0,0)",
+        "ooct02_00005(0,0)(0,0)(0,0)"
+      ],
+      "hyperbolic": true,
+      "volume": "7.327724753417752120436828119459072886193194994253377074131984957",
+      "amphichiral": true
+    },
+    "V^6": {
+      "level_chars": {
+        "1:(1,)": "0.9942570151955061535220586",
+        "2:(2,)": "0.986925770022159848357391",
+        "2:(1, 1)": "1.016571171645894387950124",
+        "3:(3,)": "1.0",
+        "3:(2, 1)": "1.976777056690560301006155"
+      },
+      "min_level_char": "0.986925770022159848357391",
+      "chi21": "1.9767770566905603010061549713",
+      "chi21_closed_form_2cos_k_theta": "1.9767770566905603010061549713",
+      "eig21": [
+        "(0.9883885283452801505030775 - 0.1519477444237042186508077j)",
+        "(0.9883885283452801505030775 + 0.1519477444237042186508077j)"
+      ],
+      "dist_from_identity_21": "0.1881064244142307444765662",
+      "equals_nucleon_word": {
+        "V^3": false,
+        "V^6": true
+      },
+      "components": 3,
+      "linking_matrix": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "identify": [
+        "L12a1882(0,0)(0,0)(0,0)"
+      ],
+      "hyperbolic": true,
+      "volume": "21.631598679192658969740248696338373013860600957783532564857495637",
+      "amphichiral": true
+    }
+  }
+}

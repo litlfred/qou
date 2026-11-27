@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1404.2541v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1404.2541v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -23,6 +23,18 @@
     "library/arxiv-1404.2541v1/sections/sec-008"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The Stokes phenomenon for the Ramanujan’s q -diﬀerence equation and its higher order extension — We show connection formulae of local solutions of the Ramanu- jan equation between the origin and the\n\n**The Stokes phenomenon for the Ramanujan’s q -diﬀerence equation and its higher order extension**\n\n*Takeshi MORITA∗*\n\n22 pp, 10 sections.\n\n**Abstract.** We show connection formulae of local solutions of the Ramanu- jan equation between the origin and the inﬁnity. These solutions are given by the Ramanujan function, the q-Airy function and the diver- gent basic hypergeometric series 2ϕ0(0, 0; −; q, x). We use two diﬀerent q-Borel-Laplace resummation methods to obtain our connection for- mulae. We also introduce the q-Borel-Laplace transformation of level r−1, which are higher order extension of these transformations. These methods are useful to obtain an asymptotic formula of a divergent se- ries rϕ0(0, 0, . . . , 0; −; q, x).\n\n**Outline.** Front matter; 1 Introduction; 2 Basic notations; 3 Two q-exponential functions; 4 Covering transformations; 5 The Ramanujan function and the q-Airy functi; 6 The q-Borel-Laplace transformations; 7 The connection formula of the series 20(0,0;; 8 The q-Airy equation around the infinity and ; 9 The q-Borel-Laplace transformations of level",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -46,8 +58,8 @@
       "stamp_date": "9 Apr 2014"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

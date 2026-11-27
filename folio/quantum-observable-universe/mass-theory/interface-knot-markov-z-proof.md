@@ -1,7 +1,7 @@
-### Proof (Markov axiom + Hecke skein)
+*(Markov axiom and Hecke skein.)*
 
 For a positive interface generator $\sigma_g$, the **Markov axiom**
-([`thm:jones-markov-trace`](#thm:jones-markov-trace)) gives
+([Existence and non-degeneracy of the Markov trace (Jones, 1987)](#thm:jones-markov-trace)) gives
 $$
   \mathrm{tr}_M(\alpha \cdot \sigma_g) \;=\; z \cdot \mathrm{tr}_M(\alpha)
   \qquad \forall\, \alpha \in H_{n}(q).
@@ -60,7 +60,7 @@ $z(z-h)$.
 
 The same single Markov input fixes a **third** interface factor. The
 canonical p-n boundary (`closed_form_tau_M.canonical_interface_kinds`,
-`prop:averaging-resonance-rule`) carries no preferred chirality, so it is
+the averaging-resonance rule) carries no preferred chirality, so it is
 the **bar-invariant** ($q \leftrightarrow q^{-1}$ symmetric) crossing
 $$
   \sigma_{\mathrm{bar}} \;:=\; \tfrac{1}{2}\bigl(\sigma_g + \sigma_g^{-1}\bigr)
@@ -78,9 +78,8 @@ Thus **all three** per-interface factors — $z$ (positive), $z-h$
 trace-linearity from the *single* Markov axiom $\mathrm{tr}_M(\alpha\sigma_g) =
 z\,\mathrm{tr}_M(\alpha)$ plus the skein $\sigma_g^{-1}=\sigma_g-h$; none is an
 independent input or a fit. The division-free form
-$\mathrm{tr}_M(\alpha(\sigma_g+\sigma_g^{-1})) = (2z-h)\,\mathrm{tr}_M(\alpha)$ is
-formalised over a generic commutative ring as
-`interface_knot_markov_z_bar_symmetric` (the $\tfrac12$ normalisation is
+$\mathrm{tr}_M(\alpha(\sigma_g+\sigma_g^{-1})) = (2z-h)\,\mathrm{tr}_M(\alpha)$ holds
+over any commutative ring (the $\tfrac12$ normalisation is
 deferred to the archimedean realisation, per the base-ring convention).
 
 ### The three factors are one bar-orbit
@@ -120,7 +119,7 @@ $$
 $$
 
 with $\delta$ the substrate flavour split of
-[`prop:flavor-split-substrate`](#prop:flavor-split-substrate). A like-flavour
+[the substrate flavor split conjecture](#conj:flavor-split-substrate-mass). A like-flavour
 bond has no mean to tilt — averaging $f_{pp}$ with itself returns $f_{pp}$ for
 any weights summing to one — which is why the weighting is defined at the p-n
 interface and nowhere else.
@@ -157,7 +156,7 @@ The colour weighting uses $\varepsilon = \delta/4$, and
 $\overline{\delta} = -q^{2}\delta$, so it misses bar-oddness by exactly a factor
 of $q^{2}$ and nothing else. That factor localises: in the factored form
 $\delta \sim \hbar_q^{2}\, h_q\, [2]_q$ of
-[`prop:flavor-split-substrate`](#prop:flavor-split-substrate), the Hecke
+[the closed and factored forms of the substrate flavor split](#prop:flavor-split-substrate), the Hecke
 crossing $h_q$ is already bar-odd and the doublet integer $[2]_q$ is bar-even,
 so the **entire** obstruction is the $\hbar_q^{2}$ prefactor — the two quanta of
 substrate Planck action.
@@ -172,20 +171,17 @@ by order $8 \times 10^{-6}$ in $f_{pn}$.
 leaves a whole bar-even function $E$ free, so it does not by itself determine
 the weighting; selecting $E$ requires re-deriving the colour weighting from the
 colour-tube geometry, and no particular $E$ is asserted here. All of the above
-is checked exactly in
-[`pn_interface_bar_structure_probe.py`](../../../computations/probes/pn_interface_bar_structure_probe.py)
+is checked in exact arithmetic
 (17 assertions), and the four identities that are field-theoretic rather than
 substrate-specific — $\overline{z} = z - h$, the bar-symmetriser form, the bar
 defect $-(\overline{\varepsilon} + \varepsilon)h$, and the bar-even-iff-offset-bar-odd
-equivalence — are formalised over an arbitrary characteristic-zero field in
-[`QOU/MassTheory/PnInterfaceBarStructure.lean`](../lean/QOU/MassTheory/PnInterfaceBarStructure.lean),
-using only the axioms `propext`, `Classical.choice` and `Quot.sound`.
+equivalence — are proved over an arbitrary characteristic-zero field.
 
-### Full-trace verification at convention D (4 atoms)
+### Full-trace verification at $z = q^3/(q^2+1)$ (4 atoms)
 
-$\mathrm{tr}_M$ is evaluated as $\sum_\lambda y_\lambda\,\chi_\lambda$ with the
-convention-D weights at $z = q^3/(q^2+1)$ and Hoefsmit characters in MPFR at the
-proton pin $q_0$, for $H_n$ with $n \in \{6, 9, 12\}$; averaged letters are expanded
+The Markov trace $\mathrm{tr}_M$ is evaluated as $\sum_\lambda y_\lambda\,\chi_\lambda$ with the
+two-row weights at $z = q^3/(q^2+1)$ and Hoefsmit characters in MPFR at
+$q_0$, for $H_n$ with $n \in \{6, 9, 12\}$; averaged letters are expanded
 by linearity, and the route is checked against the independent Markov-ascent trace
 before use. Census word ($p$-$n$ interface $=\sigma_g$, as listed below):
 
@@ -201,9 +197,9 @@ $\sigma_g - h(\tfrac12 - \tfrac{\delta}{4})$ instead of $\sigma_g$; with that fa
 place of $z$ the ratios are $\approx 0.50822979$, $0.20513564$, $0.31138631$ and
 $0.12568415$, again equal to the predicted product to $\le 5\times10^{-50}$ (and
 likewise for the colour-blind $\sigma_g - h/2$). The identity ($\star$) therefore holds
-at convention D on every word tested, at the $10^{-50}$ floor of the arithmetic.
+at $z = q^3/(q^2+1)$ on every word tested, at the $10^{-50}$ floor of the arithmetic.
 
-Per-atom interface census (from `atom_braid_word_3A`):
+Per-atom interface census (from the canonical atom braid word):
 
 - **D**: $p \cdot \sigma_3 \cdot n$ — 1 positive (p-n).
 - **T**: $p \cdot \sigma_3 \cdot n \cdot \sigma_6^{-1} \cdot n$ — 1 positive (p-n) + 1 negative (n-n).
@@ -245,17 +241,16 @@ $$
   \quad\text{at }q_0.
 $$
 This is the content of
-`conj:constit-factor-2q-minus-1`, whose $0.033\%$ agreement was measured at the
-excised convention-C weight on the earlier grouped intra-nucleon word.
+the conjectured constituent factor $2q - 1$, whose $0.033\%$ agreement was measured at the
+half-argument weight $\sqrt{q}/(q+1)$ on the grouped intra-nucleon word.
 
-**The step does not survive at convention D.** The constituent product is
-multiplicative over disjoint strand blocks (checked to $10^{-50}$), so the constit
+**The step does not survive at $z = q^3/(q^2+1)$.** The constituent product is
+multiplicative over disjoint strand blocks (checked to $10^{-50}$), so the constituent
 step is the single-proton trace $\mathrm{tr}_M(\beta_p)$. At $z = q^3/(q^2+1)$ and
 $q_0$ this is $\approx 0.62932840$ on the canonical (alternating) word and
 $\approx 1.14575969$ on the grouped word, against $2q_0 - 1 \approx 1.21995717$:
 misses of $48.4\%$ and $6.1\%$. The full per-$Z$ step on the canonical word is
 correspondingly $\approx 0.38558198$, not $q^3(2q-1)/(q^2+1) \approx 0.7475$. This is a
-scope-limited negative: the identification $(2q-1)$ for the constit factor does not
-hold at convention D for either intra-nucleon ordering; it says nothing about
-whether some other closed form describes the D-frame step. The C-era formula
-$\tfrac{2q-1}{q^{1/2}+q^{-1/2}}$ is kept only as a historical form.
+scope-limited negative: the identification $(2q-1)$ for the constituent factor does not
+hold at $z = q^3/(q^2+1)$ for either intra-nucleon ordering; it says nothing about
+whether some other closed form describes the per-$Z$ step.

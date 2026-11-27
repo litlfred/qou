@@ -20,7 +20,7 @@ namespace QOU.Archimedean
 /-- The lepton number of a particle.
 
     In the QOU framework, lepton number counts Skein smoothings:
-    - Charged leptons (trefoil components): L = +1 or -1
+    - Charged leptons (e⁻ = σ₀σ₁σ₀, e⁺ = σ₀⁻¹σ₁⁻¹σ₀⁻¹): L = +1 or -1
     - Neutrinos (unknot components): L = -1 or +1
     - Hadrons (no smoothing): L = 0
 

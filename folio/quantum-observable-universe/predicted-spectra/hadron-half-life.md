@@ -1,6 +1,5 @@
 A nucleus displaced from the valley of stability ([integer stability](#prop:integer-stability)) undergoes beta decay. The substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)) governs the half-life via the $q$-deformed transition amplitude.
 
-**Proposition.**
 Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with substrate parameter $q$, and let $\mathcal{N}(Z, N)$ ([stable nucleus](#def:stable-nucleus)) be a nucleus with proton displacement $\delta p = p - p_{\mathrm{stab}}(A)$ from the valley of stability. The beta-decay half-life is
 
 $$
@@ -10,7 +9,7 @@ $$
   \qquad
   \Gamma_\beta(p, A)
   = 
-  \frac{|\mathcal{W}(q)|^2 \cdot \mu_0}{2\pi^3}
+  \frac{|\mathcal{W}_2(q)|^2 \cdot \mu_0}{2\pi^3}
    \cdot 
   [2]_q
    \cdot 
@@ -19,4 +18,4 @@ $$
   f(Q),
 $$
 
-where $\mathcal{W}(q) = \mathrm{tr}_{\mathrm{Markov}}((\sigma_1\sigma_2)^5)$ in $H_3(q)$ is the weak vertex form factor of the mediating torus knot $T_{3,5}$ ([beta decay as crossing change](#def:beta-decay-skein)); $[2]_q = q + q^{-1}$ is the $\mathrm{SU}_q(2)$ fundamental dimension; $|\mathcal{M}_q|^2$ is the parent/daughter Markov-trace ratio ([trace ratio observable](#prop:trace-ratio-observable)); and $f(Q) \propto Q^5$ is the Sargent phase-space integral in the $Q$-value ([transition energy](#def:Q-value-transition)). The decay rate depends only on $q$ and the dimensional scale $\mu_0$ ([building blocks](#rem:building-block-knots)).
+where $\mathcal{W}_2(q) = t_1 + c_{\mathrm{em}}\,t_2$ is the weak vertex form factor of the mediating torus knot $T_{3,5}$ ([beta decay as crossing change](#def:beta-decay-skein)) under the two-term Lagrangian trace: $t_1 = \mathrm{tr}_{\mathrm{Markov}}((\sigma_1\sigma_2)^5)$ in $H_3(q)$, and $t_2$ is the trace of the same braid against the connected all-pairs charge insertion with coefficient $c_{\mathrm{em}}$; $[2]_q = q + q^{-1}$ is the $\mathrm{SU}_q(2)$ fundamental dimension; $|\mathcal{M}_q|^2$ is the parent/daughter Markov-trace ratio; and $f(Q) \propto Q^5$ is the Sargent phase-space integral in the $Q$-value ([transition energy](#def:Q-value-transition)). The decay rate depends on $q$, the dimensional scale $\mu_0$, and, through $c_{\mathrm{em}}\,t_2$, on the coefficient $c_{\mathrm{em}}$ and the charges on the three vertex strands. When the three vertex strands carry one charge type, $t_2 = 0$ and the rate depends only on $q$ and $\mu_0$.

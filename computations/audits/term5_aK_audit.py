@@ -83,6 +83,9 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
+
 import sys
 import time
 import json
@@ -123,7 +126,7 @@ def _classify(c: float, d: float, h_num: float) -> str:
     """
     from canonical_braid_crossings import classify_crossing
     try:
-        return classify_crossing(float(c), float(d), h_num)
+        return classify_crossing(float(c), float(d), h_num)  # float64-ok: classify_crossing takes float crossing tuples
     except ValueError:
         return "unknown"
 
@@ -217,16 +220,16 @@ def aK_via_gram_shared(
     # crashing the per-variant comparison.
     evald = tr_sym.subs(q_sym, Q0).evalf(30)
     try:
-        val_at_q0 = float(evald)
+        val_at_q0 = float(evald)  # float64-ok: legacy float-keyed audit table comparison (~2.2% effect)
     except (TypeError, ValueError):
         # One or more residual formal vars present.  Try forcing
         # them to 1 (their default trace contribution) and retry.
         free_left = [s for s in evald.free_symbols if s != q_sym]
         try:
             evald2 = evald.subs({s: 1 for s in free_left}).evalf(30)
-            val_at_q0 = float(evald2)
+            val_at_q0 = float(evald2)  # float64-ok: legacy float-keyed audit table comparison
         except (TypeError, ValueError):
-            val_at_q0 = float("nan")
+            val_at_q0 = float("nan")  # float64-ok: sentinel for unreduced symbolic residual
     try:
         sym_simp = sp.cancel(tr_sym)
         sym_form = str(sym_simp)
@@ -246,7 +249,7 @@ def aK_via_gram(Z: int, N: int, *, variant: str) -> dict:
     `aK_via_gram_shared` instead (~4× faster across the variant
     sweep).
     """
-    h_num = float(_h_num)
+    h_num = float(_h_num)  # float64-ok: crossing_from_cd API expects float h_num
     beta_reduced, div, word = _build_beta_reduced(Z, N, h_num)
     return aK_via_gram_shared(
         beta_reduced, div, word, Z, N,
@@ -284,7 +287,7 @@ def aK_closed_form(Z: int, N: int) -> float:
     a_K = mpf("1")
     for s in signs:
         a_K *= mpf("1") + s * h_val
-    return float(a_K)
+    return float(a_K)  # float64-ok: legacy return boundary after 50-dps product (see comment above)
 
 
 def main() -> int:
@@ -407,7 +410,7 @@ def main() -> int:
         # Build the reduced β prefix ONCE per atom — shared across
         # the four variant runs.  Cuts wall time ~4× vs the previous
         # rebuild-per-variant pattern.
-        h_num = float(_h_num)
+        h_num = float(_h_num)  # float64-ok: crossing_from_cd API expects float h_num
         try:
             t_build = time.time()
             beta_reduced, div, word = _build_beta_reduced(Z, N, h_num)

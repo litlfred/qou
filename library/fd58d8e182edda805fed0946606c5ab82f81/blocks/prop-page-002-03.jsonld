@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/fd58d8e182edda805fed0946606c5ab82f81/blocks/prop-page-002-03",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 2,
+  "pageEnd": 2,
+  "text": "prop-page-002-03.md",
+  "derivedFrom": "library/fd58d8e182edda805fed0946606c5ab82f81/sections/page-002",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fd58d8e182edda805fed0946606c5ab82f81/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.3",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/page-002.md (p. 2-2)",
+    "claim_id": "fd58d8e182edda805fed0946606c5ab82f81#proposition:2.3",
+    "lean_status": "doc-cited-in-lean-unlinked-claim"
+  }
+}

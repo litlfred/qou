@@ -1,1 +1,0 @@
-From this perspective, at least some of the BPS operators in $T[M]$ should come from M2 branes that end on the stack of M5 branes, such that their boundary $\pd$(M2)$=\Sigma\times\{0\} \subset M\times \BR^3$ wraps a surface in $M$.

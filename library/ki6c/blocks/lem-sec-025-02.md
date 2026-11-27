@@ -1,0 +1,1 @@
+2. Let F(x, y, z) be a smooth concave function whose maximal value is positive and Hesse matrix is negative deﬁnite. Then, the domain (96) is a convex domain and its boundary is a smooth surface whose Gaussian curvature is positive everywhere.

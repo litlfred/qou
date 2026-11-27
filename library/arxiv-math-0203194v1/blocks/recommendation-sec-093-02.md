@@ -1,1 +1,0 @@
-Next we discuss the analytic structure of Ω; viz. we show how to in- troduce an admissible covering to Ω; since we have constructed the rigid analytic space Ωfrom the formal model, we must have one such covering such that the associated formal model recovers bΩ.

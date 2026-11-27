@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2202.06733v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2202.06733v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -31,6 +31,18 @@
     "library/arxiv-2202.06733v1/sections/sec-016"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Received <day> <Month>, <year> — Diﬀerent ways of representing the group 푆푈(3) within a Geometric Algebra approach are explored.\n\n**Received <day> <Month>, <year>**\n\n*Revised <day> <Month>, <year>;*\n\n20 pp, 18 sections.\n\n**Abstract.** Diﬀerent ways of representing the group 푆푈(3) within a Geometric Algebra approach are explored. As part of this we consider characteristic multivectors for 푆푈(3), and how these are linked with decomposition of generators into commut- ing bivectors. The setting for this work is within a 6d Euclidean Cliﬀord Algebra. We then go on to consider whether the fundamental forces of particle physics might arise from symmetry considerations in just the 4d geometric algebra of spacetime — the STA. As part of this, a representation of 푆푈(3) is found wholly within the STA, involving preservation of a bivector norm. We also show how Octonions can be fully represented within the Spacetime Algebra, which we believe will be useful in making them understandable and accessible to a new community in Physics and Engineer- ing.\n\n**Outline.** Front matter; Some recent results for SU(3) and Octonions wi; Abstract; 1 Introduction; 2 Characteristic multivectors and SU(3); 2.1 Characteristic Multivectors; 2.2 The characteristic polynomial and the Cayl; 2.3 Application to generators of SU(3); 2.4 The characteristic polynomial and Cayley-H; 3 GA and the forces of nature; 3.1 Strong forces; 4 Octonions and the STA; 4.1 Explicit assignment of octonion units to S; 5 Octonions, the STA and particle physics; 5.1 An identification of the SU(8) subgroup of; 5.2 The group G2 and the representation of qua; 6 Future prospects; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -53,8 +65,8 @@
       "stamp_date": "9 Feb 2022"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

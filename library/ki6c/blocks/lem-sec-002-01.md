@@ -1,0 +1,1 @@
+Let t be a real number with 0 < t < 1. Then, there exists C > 0 such that ({ if X ≥0 2π ( t −1 ) X if X < 0 ) −C < Re ( 2π√−1 Li2 ( e2π√−1 (t+X√−1))) < ({ if X ≥0 2π ( t −1 ) X if X < 0 ) + C for any X ∈R.

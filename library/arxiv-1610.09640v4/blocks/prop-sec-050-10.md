@@ -1,0 +1,1 @@
+Let A be a category, let S be a right denominator set in A, and let (AS, Q) be the right Ore localization. For every two morphisms q1, q2 : M →N in AS there is a common right denominator. Namely we can write qi = Q(ai) ◦Q(s)−1 for suitable ai ∈A and s ∈S.

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1004.1533v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1004.1533v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -31,6 +31,18 @@
     "library/arxiv-1004.1533v3/sections/sec-016"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT — In this paper we show how one can extend Turaev-Viro invariants, deﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners.\n\n**TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT**\n\n*BENJAMIN BALSAM AND ALEXANDER KIRILLOV, JR*\n\n39 pp, 18 sections.\n\n**Abstract.** In this paper we show how one can extend Turaev-Viro invariants, deﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners. We demonstrate that this gives an extended TQFT which conjecturally coincides with the Reshetikhin-Turaev TQFT corresponding to the Drinfeld center Z(C). In the present paper we give a partial proof of this statement.\n\n**Outline.** Front matter; Introduction; Acknowledgments; 1 Preliminaries I: spherical categories; 2 Preliminaries II: Drinfeld Center; 3 Polytope decompositions; 4 TV invariants from polytope decompositions; 5 Proof of independence of polytope decomposit; Invariance under M1; Invariance under M2; Invariance under M3; 6 Surfaces with boundary; 7 Extended combinatorial surfaces; 8 Invariants of extended 3-manifolds; 9 Some computations; 9.1 Cylinder over an annulus; 9.2 Sphere with n holes; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -52,8 +64,8 @@
       "stamp_date": "14 Jun 2010"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

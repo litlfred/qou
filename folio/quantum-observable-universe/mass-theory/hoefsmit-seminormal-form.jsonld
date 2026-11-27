@@ -1,13 +1,14 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-hoefsmit-seminormal-form",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:hoefsmit-seminormal-form",
@@ -27,7 +28,7 @@
     "young-tableaux",
     "representation-theory"
   ],
-  "leanRef": "qou:QOU.BraidKnot.hoefsmit_seminormal_form",
+  "leanRef": "qou:QOU.BraidsAndKnots.hoefsmit_seminormal_form",
   "text": "hoefsmit-seminormal-form.md",
   "leanSource": "hoefsmit-seminormal-form.lean",
   "provenance": "authored"

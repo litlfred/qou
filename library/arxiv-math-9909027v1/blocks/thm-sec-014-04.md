@@ -1,0 +1,1 @@
+If P is a C∗-planar algebra with δ < 2 then the principal graph can be neither Dn with n odd nor E7. If the principal graph is D2n the chirality is −1, if it is E6 the chirality is e±2πi/3 and if it is E8 the chirality is e±2πi/5.

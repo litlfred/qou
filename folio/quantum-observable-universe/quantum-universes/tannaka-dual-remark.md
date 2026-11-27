@@ -1,0 +1,1 @@
+The gauge group emerges from the pair $(\mathbf{C}, \tau)$ alone. When $(\mathbf{C}, \tau)$ is neutral Tannakian in the algebraic Tannakian formalism of Neantro Saavedra Rivano \cite{saavedra-rivano1972} and Pierre Deligne \cite{deligne1990}, the Tannaka dual $G$ is an affine group scheme over $R$ and the reconstruction $\mathbf{C} \simeq \mathrm{Rep}(G)$ holds.

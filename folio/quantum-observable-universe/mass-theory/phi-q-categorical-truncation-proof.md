@@ -31,7 +31,7 @@ This sum is intrinsically finite (over partitions $\lambda \vdash n$)
 and supported on $\mathrm{supp}(T_w) = \{\lambda : \chi_\lambda(\rho(\beta)) \neq 0\}$.
 
 *Step 3 (curvature-rank stratification).*
-[Curvature-rank stratification](#prop:curvature-rank-gb-stratification)
+[Curvature-rank stratification](#conj:curvature-rank-gb-stratification)
 supplies the filtration of $H_n(R, q)$ by the curvature rank $r(T_w)$ of
 **words**. The grading of the centre by *partition* depth used below is a
 further step, not stated there and assumed here.
@@ -156,10 +156,10 @@ $k_\star(T_w)=n$; neither is $\le 2$ at the relevant $n$. The witness value
 $k_{\max}=9$ for tritium is a Coxeter-length quantity and is not compared with
 $k_\star$ here.
 
-*Status (2026-11-16).* Steps 4–5 together assert that the level-$K$ partial
+*Scope of Steps 4–5.* Steps 4–5 together assert that the level-$K$ partial
 sum equals $\sum_i\Phi_q^{[\le K]}(z_i)$ for every $K$ and is constant for
 $K\ge k_\star$. These cannot both hold, since
 $\Phi_q^{[\le K+1]}(z)\ne\Phi_q^{[\le K]}(z)$ for $z\ne0$
-([`prop:cell-depth-truncation`](#prop:cell-depth-truncation), item 5). The
+([Cell-depth truncation of a trace](#prop:cell-depth-truncation), item 5). The
 correct centre-projection statement, with its proof, is items 1–3 of that
 proposition; Step 1's spectral-sequence reduction is not needed for it.

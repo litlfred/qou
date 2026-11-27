@@ -127,6 +127,46 @@ Tiers (agent-confirmed):
 Do **not** flag an axiom that already carries a `-- Ref:` / citation — resting
 on a cited upstream result is sound.
 
+### 7. Import-free `Int`/`Bool` wrapper & `X - X = 0` definitional-subtraction laundering (CRITICAL — `no-import-wrapper` / `sub-zero-tautology`)
+
+A particularly destructive anti-pattern occurs when an agent cannot resolve
+`.olean` imports (or cannot prove a theorem over the actual library/Mathlib
+types) and instead writes a stand-alone `.lean` file that:
+
+1. **Drops `import` of `QOU.*` and `Mathlib.*`** so raw `lean` compiles it
+   without `.lake`,
+2. **Replaces mathematical objects** (categories, endomorphisms, matrices, Hecke
+   algebras, connections, differential forms, trace functionals) with ad-hoc
+   `Int`, `Nat`, or `Bool` record structures (`structure FooDatum where trA : Int ...`),
+3. **Defines a local arithmetic combination** `def total (d : FooDatum) : Int := d.a + d.b`
+   and states a "theorem" that merely subtracts the definition's body from
+   itself:
+   ```lean
+   theorem total_expansion (d : FooDatum) :
+       total d - (d.a + d.b) = 0 := by
+     dsimp [total]; omega
+   ```
+   or checks a boolean record flag (`s.isValid = true := rfl`).
+
+This is **fake Lean**: it is `X - X = 0` wrapped in borrowed mathematical names.
+Both `scripts/lean-borrowed-name-audit.py` (`no-import-wrapper`) and
+`scripts/lean-definition-collapsed-audit.py` (`sub-zero-tautology`) flag this
+shape as **CRITICAL**.
+
+**Mandatory rule — fail honestly and document for handoff:**
+- **Never** write an `Int`/`Bool` proxy structure for a mathematical object that
+  exists in `QOU` or `Mathlib`.
+- **Never** strip `import` lines to bypass a missing `.olean` cache; run
+  `scripts/lean-cache-restore.sh` and `scripts/lean-verify.sh <file.lean>`.
+- **If a proof over the real types fails or is blocked, it is 100% OK for the
+  process step to fail / remain `open` or `blocked`.** Keep the genuine theorem
+  statement over the real imported types (`QOU.*`, `Mathlib.*`), leave an
+  annotated `sorry` (`-- Ref:`) at the stuck sub-goal, and write a structured
+  **blocker & handoff note** on the bean (exact file/declaration, remaining
+  `lean_goal` state, lemmas proved so far, tactics/approaches tried and why they
+  failed, and what specific lemma or bridge is needed next) so another agent or
+  human can pick up where you left off.
+
 ## Why `proof-statement-integrity` misses all of these
 
 Per the QA registry, `proof-statement-integrity` is `automated: false`
@@ -217,16 +257,15 @@ projecting it. That converts a *visible* gap (`sorry`) into an *invisible* one.
 
 ## Detection heuristic (candidate grep → agent confirmation)
 
-0. **Runnable scanner (preferred).** `bun run
-   folio/pipeline/lean-vacuity-axiom-audit.ts` walks every `.lean` (library
+0. **Runnable scanners (preferred — run under `nice -n 15`):**
+   - **Pre-commit fast diff gate (`< 1s`):** [`scripts/lean-best-practices-lint.py`](../../scripts/lean-best-practices-lint.py) (`nice -n 15 python3 scripts/lean-best-practices-lint.py --diff`) checks `BP007a` (`: True` conclusions & carrier fields), `BP007b` (self-assuming `d.claim_*` projections, reflexive `x = x` tautologies, and `X - X = 0` `sub-zero-tautology`), and `BP007c` (`native_decide`, uncited `sorry`/`axiom`, and zero `sorry`/`axiom` inside Tier-A/Tier-B Reservoir packages).
+   - **Full corpus + review-ledger scanner:** `nice -n 15 bun run folio/pipeline/lean-vacuity-axiom-audit.ts` walks every `.lean` (library
    trees + content-block siblings), strips comments/docstrings, and emits a
    witness JSON (`docs/audits/<date>-lean-vacuity-axiom-audit.json`) keyed by
    path, with one entry per category (#1–#6 above). It exempts sibling-stub
    *shadows* (real formalisation resolvable via `lean.ref` / docstring) and
    field *compositions* that derive. `--write-sidecars` upserts
    `reviewer.kind="script"` candidate entries on the owning blocks' `.qa.json`.
-   This replaces the manual grep below in environments where the migrated
-   `qa-sweep.ts` / `qa-criteria-registry.ts` are unavailable.
 
 1. **Cheap candidate filter** (regex):
    - proof body `:=\s*\w+\.\w+\s*$`, `:=\s*⟨[^⟩]*\.\w+[^⟩]*⟩`, `:= by\s+exact\s+\w+\.\w+`, `:= ctx\.`, `:= d\.`, `:= h\.`
@@ -389,7 +428,7 @@ The detector is **high-recall by design**; the legit-vs-genuine call requires
 agent inspection (a `decide` on a true concrete fact is legit; a `: True` hiding
 a real theorem is not). For **content blocks** that verdict lands on the
 `<block>.qa.json` sidecar (above). But a **standalone library `.lean`**
-(`content/**/lean/QOU/**/*.lean` with no `.ts`/`.md` sibling) has **no sidecar**,
+(`folio/**/lean/QOU/**/*.lean` with no `.ts`/`.md` sibling) has **no sidecar**,
 so an agent verdict had nowhere durable to live — detection stayed purely
 machine, and a one-off triage doc could silently mis-call a candidate "legit"
 (as happened). The **review ledger** closes that gap:

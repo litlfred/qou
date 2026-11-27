@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1912.13486v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1912.13486v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -21,6 +21,18 @@
     "library/arxiv-1912.13486v2/sections/sec-006"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds — We consider the S2 ×q S1 supersymmetric index of a 3d N = 2 theory T[M3] when M3 is a plumbed 3-manifold.\n\n**Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds**\n\n*Hee-Joong Chung*\n\n21 pp, 8 sections.\n\n**Abstract.** We consider the S2 ×q S1 supersymmetric index of a 3d N = 2 theory T[M3] when M3 is a plumbed 3-manifold. We engineer an eﬀective description of T[M3] from the expression of the homological block for plumbed 3-manifolds as a D2 ×q S1 partition function of a 3d N = 2 theory T[M3] with a boundary condition. We check that the supersymmetric index for such a T[M3] is invariant under the 3d Kirby moves. arXiv:1912.13486v2 [hep-th] 22 Mar 2021\n\n**Outline.** Front matter; 1 Introduction; 2 Supersymmetric index on S2 q S1 and factoriz; 2.1 Supersymmetric index, factorization, and D; 2.2 Analysis on homological block and index of; 3 Supersymmetric index of a 3d N=2 theory on S; 3.1 Engineering a 3d N=2 theory T[M3] from hom; 3.2 Index for an effective description of T[M3",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -44,8 +56,8 @@
       "stamp_date": "22 Mar 2021"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

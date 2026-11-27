@@ -1,1 +1,0 @@
-If $\widetilde\alpha$ is any other 2-form satisfying $d\widetilde\alpha=\beta$, then $\widetilde\alpha$ differs from $\alpha$ by some closed 2-form, which must be $L^2$-orthogonal to $\alpha$ since $\alpha\in\mathrm{im\,}\delta$.

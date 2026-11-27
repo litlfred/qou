@@ -1,4 +1,4 @@
-import QOU.Shared.MarkovTraceClaim
+import QOU.Core.MarkovTraceClaim
 
 /-!
 # QOU.BraidsAndKnots.y_lambda_recipe_from_partition

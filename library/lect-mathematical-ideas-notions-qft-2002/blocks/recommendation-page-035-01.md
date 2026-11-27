@@ -1,1 +1,0 @@
-Namely, the problem of enumerating filling arc systems is essentially solved modulo one complication: because of conditions (A) and (B) on an arc system, the gluings we will get will be not arbitrary gluings, but gluings which also must satisfy some conditions.

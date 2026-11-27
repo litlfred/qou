@@ -12,6 +12,6 @@ export default proposition({
   label: "prop:q-exp-entire",
   title: "The $q$-exponential is entire",
   tags: ["q-exponential", "wick-rotation", "summability", "categorical"],
-  lean: { ref: "qou:QOU.QExp.qExpTerm_summable", validation: "not_checked" },
+  lean: { ref: "qou:QOU.Core.QExpEntire.qExpTerm_summable", validation: "not_checked" },
   uses: ["prop:braiding-eigenvalue-extraction"],
 });

@@ -1,0 +1,1 @@
+It was observed in [@rivid; @rvol] that this was a special case of the problem of characterizing the *Delaunay tessellations* of singular Euclidean surfaces -- there is a canonical way to associate ideal polyhedra to Delaunay triangulations of a convex flat disk with convex polygonal boundary.

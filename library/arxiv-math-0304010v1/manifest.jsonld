@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0304010v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0304010v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0304010v1",
+  "title": "Kerov's central limit theorem for the Plancherel measure on Young diagrams",
   "contains": [
     "library/arxiv-math-0304010v1/sections/page-001",
     "library/arxiv-math-0304010v1/sections/page-002",
@@ -62,6 +62,18 @@
     "library/arxiv-math-0304010v1/sections/page-049"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Kerov's central limit theorem for the Plancherel measure on Young diagrams — Consider random Young diagrams with ﬁxed number n of boxes, dis- tributed according to the Plancherel measure Mn.\n\n**Kerov's central limit theorem for the Plancherel measure on Young diagrams**\n\n*Vladimir Ivanov and Grigori Olshanski*\n\n49 pp, 49 sections.\n\n**Abstract.** Consider random Young diagrams with ﬁxed number n of boxes, dis- tributed according to the Plancherel measure Mn. That is, the weight Mn(λ) of a diagram λ equals dim2 λ/n!, where dim λ denotes the dimension of the irreducible representation of the symmetric group Sn indexed by λ. As n →∞, the boundary of the (appropriately rescaled) random shape λ concentrates near a curve Ω(Logan– Shepp 1977, Vershik–Kerov 1977). In 1993, Kerov announced a remarkable theorem describing Gaussian ﬂuctuations around the limit shape Ω. Here we propose a re- construction of his proof. It is largely based on Kerov’s unpublished work notes, 1999.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17; Page 18",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -72,7 +84,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0304010v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0304010v1.pdf",
     "source_sha256": "fc2296c027b3feb0ff6c894f9ab594d35b5d79e489795280ee70315235af1362",
     "pages": 49,
@@ -83,8 +97,8 @@
       "stamp_date": "1 Apr 2003"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

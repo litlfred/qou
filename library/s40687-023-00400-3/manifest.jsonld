@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s40687-023-00400-3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s40687-023-00400-3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -30,6 +30,18 @@
     "library/s40687-023-00400-3/sections/sec-015"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "bonn.mpg.de/stavros 2MaxPlanckInstitutefor Mathematics,Bonn,Germany Fulllistofauthorinformationis availableattheendofthearticle DedicatedtoWalterNeumann andDonZagier,withadmiration — TheNeumann–Zagier\n\n**bonn.mpg.de/stavros 2MaxPlanckInstitutefor Mathematics,Bonn,Germany Fulllistofauthorinformationis availableattheendofthearticle DedicatedtoWalterNeumann andDonZagier,withadmiration**\n\n23 pp, 13 sections.\n\n**Abstract.** TheNeumann–Zagiermatricesofanidealtriangulationareintegermatriceswith symplecticpropertieswhoseentriesencodethenumberoftetrahedrathatwind aroundeachedgeofthetriangulation.Theycanbeusedasinputdataforthe constructionofanumberofquantuminvariantsthatincludetheloopinvariants,the 3D-indexandstate-integrals.WedeﬁneatwistedversionofNeumann–Zagiermatrices, describetheirsymplecticproperties,andshowhowtocomputethemfromthe combinatoricsofanidealtriangulation.Asasampleapplication,weusethemtodeﬁne atwistedversionofthe1-loopinvariant(atopologicalinvariant)whichdeterminesthe 1-loopinvariantofthecycliccoversofahyperbolicknotcomplement,and conjecturallyisequaltotheadjointtwistedAlexanderpolynomial.\n\n**Outline.** Twisted Neumann–Zagier matrices; Abstract; 1 Introduction; 1.1 Motivation; 1.2 Torsion and its twisted version; 1.3 Neumann–Zagier matrices and their twisted ; 1.4 The 1-loop invariant and its twisted versi; 2 Proofs: twisted NZ matrices; 3 Examples; 3.1 The knot 41; 4 Proofs: twisted 1-loop invariant; 5 Examples, continued; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.5: With the above notation, there exists a lower triangular matrix P with 1’s\n- Theorem 1.6: τCS(T ,t) is invariant under Pachner 2–3 moves between ideal triangula-\n- Theorem 1.8: We have τCS(T ,1) = 0 and d",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "s40687-023-00400-3",
@@ -40,8 +52,8 @@
     "pages": 23,
     "arxiv": null,
     "doi": "10.1007/s40687-023-00400-3",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,0 +1,1 @@
+In particular, if h = IdM, then the identities (C1) and (C2) become (C′ 1) ρTa = dF sa + ωa b ∧sb, and (C′ 2) ρRa b = dF ωa b + ωa c ∧ωc b respectively. Moreover, if ρ = IdTM, then the identities (C′ 1) and (C′ 2) become: (C′′ 1 ) Ti = ddxi + ωi j ∧dxj = ωi j ∧dxj and (C′′ 2 ) Ri j = dωi j + ωi h ∧ωh j , respectively. q.e.d.

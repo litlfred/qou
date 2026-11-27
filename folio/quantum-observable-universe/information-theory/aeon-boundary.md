@@ -1,6 +1,6 @@
 Let $\mathcal{A}$ be an aeon —a connected component of $\mathrm{Bun}^{\circ}(\mathbb{P}(V))$.
 
-**Definition.** The **boundary** $\partial\mathcal{A}$ of an aeon is the set of objects $\mathcal{S} \in \mathrm{Bun}(\mathbb{P}(V))$ that are limits of diagrams in $\mathcal{A}$ but do not themselves lie in $\mathrm{Bun}^{\circ}$:
+The **boundary** $\partial\mathcal{A}$ of an aeon is the set of objects $\mathcal{S} \in \mathrm{Bun}(\mathbb{P}(V))$ that are limits of diagrams in $\mathcal{A}$ but do not themselves lie in $\mathrm{Bun}^{\circ}$:
 $$
   \partial\mathcal{A}
   = 
@@ -11,4 +11,4 @@ $$
   \bigr\}.
 $$
 
-Each boundary object represents a jet horizon or a big bang state . We define the boundary datum at $\mathcal{S} \in \partial\mathcal{A}$ as the colimit of the degree $\geq 1$ data over all diagrams in $\mathcal{A}$ approaching $\mathcal{S}$. This is the CMB boundary datum $\mathrm{CMB}(\partial\mathcal{A})$ .
+Each boundary object represents a jet horizon or a big bang state . One defines the boundary datum at $\mathcal{S} \in \partial\mathcal{A}$ as the colimit of the degree $\geq 1$ data over all diagrams in $\mathcal{A}$ approaching $\mathcal{S}$. This is the CMB boundary datum $\mathrm{CMB}(\partial\mathcal{A})$ .

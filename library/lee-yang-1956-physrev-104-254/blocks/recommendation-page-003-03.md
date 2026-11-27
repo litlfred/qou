@@ -1,1 +1,0 @@
-POSSIBLE EXPERIMENTAL TESTS OF PARITY CONSERVATION IN MESON AND HYPERON DECAYS To have a sensitive unequivocal test of whether parity is conserved in weak interactions, one must decide whether the weak interactions differentiate between the right and the left.

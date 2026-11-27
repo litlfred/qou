@@ -1,1 +1,0 @@
-Consequently, we obtain dTðz1; z2Þ  dTðz1; z0;z1ðsÞÞ þ dTðz0;z2ðsÞ; z2Þ  2ðt  sÞ  2 ObsDiamRðX; Þ: This completes the proof of the claim.  We shall consider the relation on C deﬁned by T 0 T 00 if and only if dTðT 0; T 00Þ  SepðX; =3; =3Þ.

@@ -1,1 +1,0 @@
-The nucleon form factors ${F}_1(Q^2)$ and $F_2(Q^2)$ appearing in the covariant expression of the electromagnetic current -- Eq. ([\[eq:relvector\]](#eq:relvector){reference-type="ref" reference="eq:relvector"}) -- must also be treated consistently since they depend on the nucleon momentum through $Q^2$.

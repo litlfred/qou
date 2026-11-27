@@ -1,8 +1,9 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-quantum-bloch-group-framework-connection",
@@ -18,6 +19,11 @@
     "papers/quantum-observable-universe/blocks/def-habiro-ring"
   ],
   "interprets": "papers/quantum-observable-universe/blocks/def-quantum-bloch-group",
+  "cites": [
+    "references/li-wang2006",
+    "references/neumann2004",
+    "references/wagner2025"
+  ],
   "tags": [
     "quantum-bloch-group",
     "regulator",

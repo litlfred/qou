@@ -1,8 +1,8 @@
 *Let $R \supseteq \mathbb{Q}(q)$ with $q$ generic; write $[m]_q = (q^m - q^{-m})/(q - q^{-1})$, so that $[2]_q = q + q^{-1}$. A **Markov trace** on the tower $H_1 \subset H_2 \subset \cdots$ is a compatible family of linear functionals $\tau_n \colon H_n(R,q) \to R$ satisfying M1 ($\tau(1) = 1$), M2 (cyclicity, $\tau(xy) = \tau(yx)$) and M3 ($\tau(x \sigma_{n-1}) = z \, \tau(x)$ for $x \in H_{n-1}$), for a parameter $z \in R$.*
 
-**(i) Uniqueness at a fixed parameter.** *For each $z$ there is exactly one Markov trace on the tower with that parameter, the Ocneanu–Jones trace $\mathrm{tr}^{z}_M$. This follows from M1–M3 alone. Non-degeneracy of the induced pairing is neither a hypothesis nor a conclusion of it, and cannot serve as the selection criterion: on the split semisimple $H_n(R,q)$ **every** weight vector $(w_\lambda)_{\lambda \vdash n}$ with all $w_\lambda \neq 0$ induces a non-degenerate associative form, so "non-degenerate" singles out nothing — and in particular does not fix $z$.*
+**(i) Uniqueness at a fixed parameter.** *For each $z$ there is exactly one Markov trace on the tower with that parameter, the Ocneanu–Jones trace $\mathrm{tr}^{z}_M$. This follows from M1–M3 alone. Non-degeneracy of the induced pairing is neither a hypothesis nor a conclusion of it, and cannot serve as the selection criterion: on the split semisimple $H_n(R,q)$ **every** weight vector $(w_\lambda)_{\lambda \vdash n}$ with all $w_\lambda \neq 0$ induces a non-degenerate associative form, so "non-degenerate" singles out nothing. In particular it leaves $z$ free.*
 
-**(ii) Selection of the parameter in the QOU mass channel.** *What fixes $z$ is not non-degeneracy but a prescribed degeneracy. The mass fibre is the fundamental $V$ of $\mathrm{SU}_q(2)$, of quantum dimension $[2]_q$, so $V^{\otimes n}$ carries no channel $\lambda$ with $\ell(\lambda) \geq 3$ ([eigenbasis decomposition](#lem:feynman-eigenbasis-decomposition)). A trace that is the categorical trace of the fibre action therefore puts weight $y_\lambda = 0$ on every such $\lambda$ (the **row cap**) and nonzero weight on the channels the fibre does supply (**faithfulness on the two-row blocks**). Imposed at level $3$ — the first level at which the row cap says anything — those two conditions, together with M1–M3 at an unknown $z$, determine everything:*
+**(ii) Selection of the parameter in the QOU mass channel.** *What fixes $z$ is not non-degeneracy but a prescribed degeneracy. The mass fibre is the fundamental $V$ of $\mathrm{SU}_q(2)$, of quantum dimension $[2]_q$, so $V^{\otimes n}$ carries no channel $\lambda$ with $\ell(\lambda) \geq 3$ ([eigenbasis decomposition](#lem:feynman-eigenbasis-decomposition)). A trace that is the categorical trace of the fibre action therefore puts weight $y_\lambda = 0$ on every such $\lambda$ (the **row cap**) and nonzero weight on the channels the fibre does supply (**faithfulness on the two-row blocks**). Imposed at level $3$, the first level at which the row cap says anything, those two conditions, together with M1–M3 at an unknown $z$, determine everything:*
 
 $$
   y_{(n-k,\,k)} \;=\; \frac{[\,n-2k+1\,]_q}{[2]_q^{\,n}},
@@ -12,15 +12,15 @@ $$
   z \, [2]_q \;=\; q^{2},
 $$
 
-*that is, $z = q^{3}/(q^{2}+1)$ — **convention D** of the [trace-convention registry](../../../docs/coordination/trace-convention-registry.md). Neither condition may be dropped: without the row cap $z$ is free (the whole Ocneanu family, convention C among it), and without faithfulness the trivial character $y = (1, 0, \ldots, 0)$ at $z = q$ satisfies M1–M3 and the row cap alike.*
+*that is, $z = q^{3}/(q^{2}+1)$. Neither condition may be dropped: without the row cap $z$ is free across the full one-parameter Ocneanu family, and without faithfulness the trivial character $y = (1, 0, \ldots, 0)$ at $z = q$ satisfies M1–M3 and the row cap alike.*
 
-**(iii) What the pairing then is.** *Consequently $\langle x, y \rangle_\tau := \mathrm{tr}_M(xy)$ is **degenerate** on $H_n(R,q)$ for $n \geq 3$, and the radical of the form (not the Jacobson radical — $H_n$ is split semisimple at generic $q$) is exactly the Temperley–Lieb ideal $I_n = \ker\bigl(H_n(q) \twoheadrightarrow \mathrm{TL}_n(q)\bigr)$, neither larger nor smaller. $\mathrm{tr}_M$ vanishes identically on $I_n$, so it is still determined on all of $H_n(R,q)$ — uniqueness is on the nose, not merely modulo the radical — and it descends to a non-degenerate pairing on the quotient. It is $(\mathrm{TL}_n(q), \mathrm{tr}_M)$, not $(H_n(R,q), \mathrm{tr}_M)$, that is a symmetric Frobenius algebra.*
+**(iii) What the pairing then is.** *Consequently $\langle x, y \rangle_\tau := \mathrm{tr}_M(xy)$ is **degenerate** on $H_n(R,q)$ for $n \geq 3$, and the radical of the form is exactly the Temperley–Lieb ideal $I_n = \ker\bigl(H_n(q) \twoheadrightarrow \mathrm{TL}_n(q)\bigr)$, neither larger nor smaller. (This radical is that of the form; the Jacobson radical of $H_n$ is zero, since $H_n$ is split semisimple at generic $q$.) $\mathrm{tr}_M$ vanishes identically on $I_n$, so it is determined on all of $H_n(R,q)$ and uniqueness holds on the nose. It descends to a non-degenerate pairing on the quotient. It is $(\mathrm{TL}_n(q), \mathrm{tr}_M)$, not $(H_n(R,q), \mathrm{tr}_M)$, that is a symmetric Frobenius algebra.*
 
-**Status.** *(i) and (iii) are unconditional. (ii) is an implication whose antecedent — that the mass-channel trace is the categorical trace of the fibre action on $V^{\otimes n}$ — is **open**; the implication itself is proved at $n = 3$ (`QOU.BraidsAndKnots.markovWeights_eq_jones_of_fibre_categorical`). Its extension to $n > 3$ rests on the restriction property together with the closed form above, which is verified against every partition of $n \leq 7$ to a worst residual of $1.34 \times 10^{-51}$ and proved in Lean only as fixed-$n$ instances of the recursion $[m+2]_q + [m]_q = [2]_q [m+1]_q$ (`QOU.QBeta.TemperleyLiebTower`), not by a general-$n$ induction.*
+**Status.** *(i) and (iii) are unconditional. (ii) is an implication. Its antecedent, that the mass-channel trace is the categorical trace of the fibre action on $V^{\otimes n}$, is **open**; the implication itself is proved at $n = 3$. Its extension to $n > 3$ rests on the restriction property together with the closed form above, which is verified against every partition of $n \leq 7$ to a worst residual of $1.34 \times 10^{-51}$ and proved only as fixed-$n$ instances of the recursion $[m+2]_q + [m]_q = [2]_q [m+1]_q$. A general-$n$ induction is still missing.*
 
 | form | $\tau(1)$ | $z = \tau(\sigma_i)$ | $y_\lambda$ | radical of $\langle \cdot, \cdot \rangle_\tau$ | non-degenerate? |
 |---|---:|---:|---|---|---|
-| Jones–Markov $\mathrm{tr}_M$, **convention D** | $1$ | $q^{3}/(q^{2}+1)$ | $y_{(n-k,k)} = [\,n-2k+1\,]_q / [2]_q^{\,n}$; $y_\lambda = 0$ for $\ell(\lambda) \geq 3$ | the Temperley–Lieb ideal $I_n$ (zero for $n \leq 2$) | **no** on $H_n(q)$; **yes** on $\mathrm{TL}_n(q) = H_n(q)/I_n$ |
+| Jones–Markov $\mathrm{tr}_M$ ($z = q^{3}/(q^{2}+1)$) | $1$ | $q^{3}/(q^{2}+1)$ | $y_{(n-k,k)} = [\,n-2k+1\,]_q / [2]_q^{\,n}$; $y_\lambda = 0$ for $\ell(\lambda) \geq 3$ | the Temperley–Lieb ideal $I_n$ (zero for $n \leq 2$) | **no** on $H_n(q)$; **yes** on $\mathrm{TL}_n(q) = H_n(q)/I_n$ |
 
 ## Proof
 
@@ -29,7 +29,7 @@ steps:
 
 ### Step 1: Cat-action of $\mathbf{C}$ on the state bundle
 
-A quantum observable universe specifies a rigid monoidal category $\mathbf{C}$ with a fibre functor $\tau \colon \mathbf{C} \to \mathbf{Vect}$. The category fixes the acting Frobenius–Hopf algebra $A$. We typically use $A = H_n(R, q)$.
+A quantum observable universe specifies a rigid monoidal category $\mathbf{C}$ with a fibre functor $\tau \colon \mathbf{C} \to \mathbf{Vect}$. The category fixes the acting Frobenius–Hopf algebra $A$. The typical case is $A = H_n(R, q)$.
 
 ### Step 2: Non-abelian Stokes at finite slice
 
@@ -52,25 +52,25 @@ $$
 
 Under the row cap this form is **not** non-degenerate on $A = H_n(R,q)$: its radical is the Temperley–Lieb ideal $I_n$, and it is the quotient $\mathrm{TL}_n(q) = A/I_n$ that is Frobenius relative to the induced integral.
 
-The QOU mass identity uses the Frobenius co-Casimir trace identity ([Frobenius co-Casimir universal](#thm:frobenius-codim-universal)):
+The QOU mass identity uses the Frobenius co-Casimir trace identity: for a self-dual Frobenius algebra $A = H_n(R, q)$ with Markov trace $\tau$ and $\tau(p_\lambda) \neq 0$ for every central idempotent $p_\lambda$, the quantum-co-dimension element $C_{\dim_q} := \sum_{\lambda \in \widehat{A}} \frac{1}{\dim_q(\lambda) \cdot \tau(p_\lambda)} \cdot p_\lambda \in Z(A)$ satisfies
 
 $$
   \tau(C_{\dim_q}) \;=\; \sum_\lambda \frac{1}{\dim_q(\lambda)}.
 $$
 
-> **Open.** As written, $C_{\dim_q}$ divides by $\tau(p_\lambda)$ and the sum runs over *every* Wedderburn block, so under convention D the element is **undefined**: $\tau(p_\lambda) = 0$ for every $\lambda$ with $\ell(\lambda) \geq 3$. Two ways out, with different costs.
+> **Open.** As written, $C_{\dim_q}$ divides by $\tau(p_\lambda)$ and the sum runs over *every* Wedderburn block, so at $z = q^{3}/(q^{2}+1)$ the element is **undefined**: $\tau(p_\lambda) = 0$ for every $\lambda$ with $\ell(\lambda) \geq 3$. Two ways out, with different costs.
 >
-> **(a) Restrict to the radical quotient.** Read $C_{\dim_q}$ and the identity on $\mathrm{TL}_n(q) = H_n(q)/I_n$, i.e. sum only over $\ell(\lambda) \leq 2$. The identity then holds verbatim with a smaller right-hand side. **Cost:** every published value computed through the co-Casimir — in particular Term 4 of the six-term mass identity, $\mathrm{tr}(G^{-1} \cdot D)$ in [Gram-matrix spectral connection](#rem:gram-matrix-spectral-connection) — is computed on a different index set and must be **republished**, regenerated by its producer.
+> **(a) Restrict to the radical quotient.** Read $C_{\dim_q}$ and the identity on $\mathrm{TL}_n(q) = H_n(q)/I_n$, i.e. sum only over $\ell(\lambda) \leq 2$. The identity then holds verbatim with a smaller right-hand side. **Cost:** every published value computed through the co-Casimir, in particular Term 4 of the six-term mass identity $\mathrm{tr}(G^{-1} \cdot D)$, is computed on a different index set and must be **republished**, regenerated by its producer.
 >
 > **(b) Retire the co-Casimir route.** Drop it alongside the refuted Frobenius / co-Casimir deuteron result. **Cost:** Term 4 loses its derivation and the six-term identity is reduced to five derived terms plus a gap.
 >
-> Until this is decided, no Term-4 number in the corpus is to be edited, and no block may assert that the co-Casimir identity holds on $H_n(R,q)$ under convention D.
+> Until this is decided, no Term-4 number in the corpus is to be edited, and no block may assert that the co-Casimir identity holds on $H_n(R,q)$ at $z = q^{3}/(q^{2}+1)$.
 
 The **Jones–Markov form** $\mathrm{tr}_M$ satisfies:
 - $\mathrm{tr}_M(1) = 1$.
-- $\mathrm{tr}_M(x \sigma_{n-1}) = z \cdot \mathrm{tr}_M(x)$ for $x \in H_{n-1}$, with $z = q^{3}/(q^{2}+1)$ (**convention D**; the value is derived in Step 3b of the proof, not stipulated).
+- $\mathrm{tr}_M(x \sigma_{n-1}) = z \cdot \mathrm{tr}_M(x)$ for $x \in H_{n-1}$, with $z = q^{3}/(q^{2}+1)$ (derived in Step 3b of the proof, not stipulated).
 
-Its block weights are $\mathrm{tr}_M(p_\lambda) = y_\lambda$, given by the Ocneanu hook–content product at framing ratio $a^2 = z / z_{-}$, where $z_{-} = z - (q - q^{-1})$. Under convention D that ratio is exactly $q^{4}$, since $z_{-} = 1/(q(q^{2}+1))$ and hence $z / z_{-} = q^{4}$ identically in $q$. The numerator factor $z \, q^{c(x)} - z_{-} \, q^{-c(x)}$ therefore vanishes precisely on cells of content $c(x) = -2$ — the cells in position $(r+2, r)$, the first of which is $(3,1)$ — and a Young diagram contains such a cell if and only if $\ell(\lambda) \geq 3$. Hence $y_\lambda = 0 \iff \ell(\lambda) \geq 3$: the row cap is not an extra input to the weight formula but a reading of it, and the vanishing set is *exactly* the Temperley–Lieb ideal. The Markov-trace uniqueness theorem then fixes $\mathrm{tr}_M$ among traces with this $z$; it says nothing about non-degeneracy.
+Its block weights are $\mathrm{tr}_M(p_\lambda) = y_\lambda$, given by the Ocneanu hook–content product at framing ratio $a^2 = z / z_{-}$, where $z_{-} = z - (q - q^{-1})$. At $z = q^{3}/(q^{2}+1)$ that ratio is exactly $q^{4}$, since $z_{-} = 1/(q(q^{2}+1))$ and hence $z / z_{-} = q^{4}$ identically in $q$. The numerator factor $z \, q^{c(x)} - z_{-} \, q^{-c(x)}$ therefore vanishes precisely on cells of content $c(x) = -2$, the cells in position $(r+2, r)$, the first of which is $(3,1)$; and a Young diagram contains such a cell if and only if $\ell(\lambda) \geq 3$. Hence $y_\lambda = 0 \iff \ell(\lambda) \geq 3$: the row cap is not an extra input to the weight formula but a reading of it, and the vanishing set is *exactly* the Temperley–Lieb ideal. The Markov-trace uniqueness theorem then fixes $\mathrm{tr}_M$ among traces with this $z$; it says nothing about non-degeneracy.
 
 ### Step 4: Wedderburn + Markov-trace formula
 
@@ -79,7 +79,7 @@ The trace $\mathrm{tr}_M$ admits the explicit form:
 $$
   \mathrm{tr}_M(x) \;=\; \sum_\lambda y_\lambda(q) \cdot \chi_\lambda(x),
 $$
-where the sum runs over $\lambda \vdash n$ with $\ell(\lambda) \leq 2$ — every other character is annihilated — and $y_{(n-k,k)} = [\,n-2k+1\,]_q / [2]_q^{\,n}$. Equivalently $\mathrm{tr}_M$ factors through $\mathrm{TL}_n(q)$, and the surviving blocks carry $\sum d_\lambda^2 = \mathrm{Catalan}(n)$ of the $n!$ dimensions of $H_n(q)$ (`QOU.QBeta.TemperleyLiebTower.catalan_three` / `catalan_four` / `catalan_five`).
+where the sum runs over $\lambda \vdash n$ with $\ell(\lambda) \leq 2$, every other character being annihilated, and $y_{(n-k,k)} = [\,n-2k+1\,]_q / [2]_q^{\,n}$. Equivalently $\mathrm{tr}_M$ factors through $\mathrm{TL}_n(q)$, whose dimension is $\mathrm{Catalan}(n)$ \cite{kimlee2018}, and the surviving blocks carry $\sum d_\lambda^2 = \mathrm{Catalan}(n)$ of the $n!$ dimensions of $H_n(q)$. For a geometric construction of a two-parameter trace on the Hecke algebra whose expansion in irreducible characters is given by Lusztig's Fourier transform and mixed Poincaré polynomials of character sheaves, see \cite{webster-williamson-2014-markov}, Cor. 13.
 
 ## Selection theorem
 
@@ -88,21 +88,21 @@ where the sum runs over $\lambda \vdash n$ with $\ell(\lambda) \leq 2$ — every
 1. *(**row cap**) $w_\lambda = 0$ whenever $\ell(\lambda) \geq 3$, and*
 2. *(**faithfulness on the quotient**) $w_\lambda \neq 0$ whenever $\ell(\lambda) \leq 2$.*
 
-*Then $z$ is forced to satisfy $z \, [2]_q = q^{2}$, and $\tau = \mathrm{tr}_M$, the convention-D Jones–Markov trace, at every level of the tower — **on all of** $H_n(R,q)$, not merely modulo the radical, because $\tau$ is identically zero on the radical. The radical of $\langle \cdot, \cdot \rangle_\tau$ is exactly $I_n$, and the descended pairing on $\mathrm{TL}_n(q)$ is non-degenerate.*
+*Then $z$ is forced to satisfy $z \, [2]_q = q^{2}$, and $\tau = \mathrm{tr}_M$, the Jones–Markov trace at $z = q^{3}/(q^{2}+1)$, at every level of the tower — **on all of** $H_n(R,q)$, not merely modulo the radical, because $\tau$ is identically zero on the radical. The radical of $\langle \cdot, \cdot \rangle_\tau$ is exactly $I_n$, and the descended pairing on $\mathrm{TL}_n(q)$ is non-degenerate.*
 
-*Level $3$ is where the hypotheses bite, and the statement is false if they are imposed lower: at $n \leq 2$ the row cap is vacuous and M1 + M3 leave one free parameter, so $z$ is genuinely undetermined there. Given level $3$, no higher level adds freedom — the restriction of a level-$n$ Markov trace to $H_3(R,q)$ is again a Markov trace with the same $z$.*
+*Level $3$ is where the hypotheses bite, and the statement is false if they are imposed lower: at $n \leq 2$ the row cap is vacuous and M1 + M3 leave one free parameter, so $z$ is genuinely undetermined there. Given level $3$, no higher level adds freedom: the restriction of a level-$n$ Markov trace to $H_3(R,q)$ is again a Markov trace with the same $z$.*
 
-*Both hypotheses are load-bearing and neither is redundant. Dropping 1 leaves $z$ free (the full Ocneanu family, convention C among it). Dropping 2 admits the trivial character $y = (1, 0, 0)$ at $z = q$, which satisfies M1–M3 and the row cap and makes the conclusion **false**, not merely unprovable (`markovWeights_degenerate_root`). Dropping M1 / M3 admits, at $n = 3$, the entire two-parameter family $\{(y_{(3)}, y_{(2,1)}, 0) : y_{(2,1)} \neq 0\}$ — so hypotheses 1 and 2 alone do **not** single out $\mathrm{tr}_M$; the Markov axioms are still required.*
+*Both hypotheses are load-bearing and neither is redundant. Dropping 1 leaves $z$ free across the full Ocneanu family. Dropping 2 admits the trivial character $y = (1, 0, 0)$ at $z = q$, which satisfies M1–M3 and the row cap and makes the conclusion **false**; the hypothesis is needed for the statement to hold, beyond its role in the proof. Dropping M1 / M3 admits, at $n = 3$, the entire two-parameter family $\{(y_{(3)}, y_{(2,1)}, 0) : y_{(2,1)} \neq 0\}$ — so hypotheses 1 and 2 alone do **not** single out $\mathrm{tr}_M$; the Markov axioms are still required.*
 
-*Formalised at $n = 3$, division-free, over a generic commutative domain: `QOU.BraidsAndKnots.markovWeights_eq_jones_of_threeRow_eq_zero` ([`MarkovTraceTLUniqueness.lean`](../lean/QOU/BraidsAndKnots/MarkovTraceTLUniqueness.lean)), with the fibre-side antecedent in `markovWeights_eq_jones_of_fibre_categorical` ([`FibreCategoricalTraceForcesJones.lean`](../lean/QOU/BraidsAndKnots/FibreCategoricalTraceForcesJones.lean)).*
+*Proved at $n = 3$, division-free, over a generic commutative domain, together with the corresponding statement from the fibre-side antecedent.*
 
 ## Discussion
 
-This proposition is a structural theorem about the representation theory of the Hecke algebra. We introduce no fitting or empirical input, and no numerical $q_0$: parts (i) and (iii) are unconditional, and part (ii) is division-free over a generic commutative domain. What it is **conditional** on is one named categorical premise — that the mass-channel trace is the categorical trace of the fibre action on $V^{\otimes n}$ — which is open. Conditional-proved is not premise-established.
+This proposition is a structural theorem about the representation theory of the Hecke algebra. No fitting or empirical input enters, and no numerical $q_0$: parts (i) and (iii) are unconditional, and part (ii) is division-free over a generic commutative domain. What it is **conditional** on is one named categorical premise, which is open: that the mass-channel trace is the categorical trace of the fibre action on $V^{\otimes n}$. Conditional-proved is not premise-established.
 
 ## Computational consequence
 
-The QOU production stack computes $\mathrm{tr}_M$ on the canonical atomic word — 11 letters on 3 strands for the two $A = 1$ atoms, 23 on 6 strands for the deuteron — through two independent colour-weighted paths: the Gröbner-Shirshov reduction (`markov_peel`) and the Frobenius combiner $\sum_\lambda y_\lambda \chi^\lambda$ (`canonical_tr_m_via_chi_cache`). At the proton-pinned $q_0$, in **production convention D** — SU(2)/Temperley–Lieb (Jones), $z = q^3/(q^2+1)$, [registry](../../../docs/coordination/trace-convention-registry.md) id **D**, `forcing_status: forced-given-premise`:
+The QOU production stack computes $\mathrm{tr}_M$ on the canonical atomic word (11 letters on 3 strands for the two $A = 1$ atoms, 23 on 6 strands for the deuteron) through two independent colour-weighted paths: the Gröbner-Shirshov reduction and the Frobenius combiner $\sum_\lambda y_\lambda \chi^\lambda$. At the proton-anchored $q_0$, for the SU(2)/Temperley–Lieb (Jones) Markov trace at $z = q^3/(q^2+1)$:
 
 | atom | $\mathrm{tr}_M(\beta_{\rm atom}, q_0)$ | peel vs combiner |
 |---|---:|---:|
@@ -112,4 +112,4 @@ The QOU production stack computes $\mathrm{tr}_M$ on the canonical atomic word �
 
 The agreement column is the residual between those two paths at 50 dps, and it sits at the serialization floor rather than at any tolerance the computation imposes; the L1 target is $1$ ppQ ($10^{-15}$), which it clears by 35 orders.
 
-> **Two scope notes on the cross-check, both material.** *(i)* Two **further** paths exist — Hoefsmit (Rust canonical-$\chi$) and Habiro — and the four-way cross-check compares all four, but those two legs are **colour-blind**: they carry no $\delta$ colour split, so they diverge from the colour-weighted pair by up to $3.24\times 10^{-9}$ (measured on a fresh gate run, worst case the deuteron), which the gate reports as its `(cb≠)` status rather than as a failure. The $1$ ppQ certification therefore rests on the **two** colour-weighted paths tabulated above, not on a four-way agreement. *(ii)* That gate is **muon-canonical** — it refuses to run off the ideal CAL-2 pin — so it certifies at $q_0^{(\mu)}$, while the table above is evaluated at the canonical proton pin. The two pins differ by $11.6$ ppb (measured against the CODATA-2022 muon pin), which is the $\mu$–p substrate tension and is far above the agreement column; do not read the two as one measurement.
+> **Two scope notes on the cross-check, both material.** *(i)* Two **further** paths exist, Hoefsmit (Rust canonical-$\chi$) and Habiro, and the four-way cross-check compares all four, but those two legs are **colour-blind**: they carry no $\delta$ colour split, so they diverge from the colour-weighted pair by up to $3.24\times 10^{-9}$ (measured on a fresh gate run, worst case the deuteron), which the gate reports as its `(cb≠)` status rather than as a failure. The $1$ ppQ certification therefore rests on the **two** colour-weighted paths tabulated above, and the four-way comparison does not enter it. *(ii)* That gate is **muon-canonical**: it refuses to run off the ideal CAL-2 pin, so it certifies at $q_0^{(\mu)}$, while the table above is evaluated at the canonical proton pin. The two pins differ by $11.6$ ppb (measured against the CODATA-2022 muon pin), which is the $\mu$–p substrate tension and is far above the agreement column; do not read the two as one measurement.

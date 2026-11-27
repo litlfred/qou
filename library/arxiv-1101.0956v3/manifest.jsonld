@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1101.0956v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1101.0956v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -24,6 +24,18 @@
     "library/arxiv-1101.0956v3/sections/sec-009"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "ALGEBRAIC CONSTRUCTIONS IN THE CATEGORY OF VECTOR BUNDLES — In this paper we present the category of generalized Lie algebroids.\n\n**ALGEBRAIC CONSTRUCTIONS IN THE CATEGORY OF VECTOR BUNDLES**\n\n*CONSTANTIN M. ARCUS¸*\n\n44 pp, 11 sections.\n\n**Abstract.** In this paper we present the category of generalized Lie algebroids. Important results (a theorem of Maurer-Cartan type, theorems of Cartan type,...) emphasize the importance and the utility of the objects of this new category.\n\n**Outline.** Front matter; 3.1 The pull-back Lie algebroid of a generaliz; 3.2 Interior Differential Systems; 4.1 Exterior Differential Systems; References; 1 Introduction; 2 The category of generalized Lie algebroids; 3 Interior Differential Systems; 4 Exterior differential calculus; 5 Exterior Differential Systems; 6 Torsion and curvature forms. Identities of C",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -45,8 +57,8 @@
       "stamp_date": "25 Jul 2011"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

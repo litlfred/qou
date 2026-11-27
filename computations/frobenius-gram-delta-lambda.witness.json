@@ -1,11 +1,17 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T18:00:50.490174+00:00",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T15:18:18.023009+00:00",
+  "commitSha": "d0a7dc717b790032016a0dd1e962c5fb9383d0b9",
   "assertions": [
     {
-      "name": "frobenius_variants_preserve_binding_sign",
+      "name": "y_weighted_frobenius_preserves_binding_sign",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "unweighted_frobenius_variants_violate_sign_on_borromean",
       "computed": "True",
       "expected": "True",
       "passed": true
@@ -15,14 +21,26 @@
       "computed": "True",
       "expected": "True",
       "passed": true
+    },
+    {
+      "name": "block_h3_matches_monotone_transfer_on_grouped_word",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "a71h_3he_move_reproduced_by_1ab204f8edb7_y_lambda",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 0,
+  "durationMs": 1,
   "computation": "frobenius-gram-delta-lambda",
   "scriptFile": "frobenius_gram_delta_lambda_probe.py",
-  "scriptHash": "771867065e9f",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptHash": "c1851ef4ba52",
+  "scriptCommitSha": "d0a7dc717b790032016a0dd1e962c5fb9383d0b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,14 +48,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
   },
   "invocation": {
     "argv": [
@@ -45,187 +63,434 @@
     ],
     "reproduce": "python3 -u computations/probes/frobenius_gram_delta_lambda_probe.py"
   },
-  "description": "Frobenius Gram norm ‖ρ_λ‖²_F (gram_transfer_quadratic) as a parameter-free Δ_λ weight in the sign-solved counit defect, on D/T/³He/⁴He. Every Frobenius variant explodes with A (≈d_λ² scale) — REFUTED as the closing weight (scope-(a)); brackets GAP-A between Option-E and the target. audit-only, no fit.",
-  "tier": "structural-exact (committed χ^λ atom/free + exact 50-dps Frobenius Gram norms)",
+  "description": "Frobenius Gram norm ‖ρ_λ‖²_F (80-dps block-H_3 doubled-Bratteli transfer) as a parameter-free Δ_λ weight in the sign-solved counit defect on D/T/³He/⁴He under canonical Borromean intra-ordering (plus grouped provenance control and exact qou-a71h bisect). REFUTED as the closing weight (scope-(a)): unweighted Frobenius variants break binding sign on Borromean, and Σ y·‖ρa‖²·dχ under-binds every isotope. audit-only, no fit.",
+  "data": {
+    "upstream_witness_hashes": [
+      {
+        "path": "atom-chi-rust-3he.witness.json",
+        "sha256": "6a0667b1138d136ba5d44f06349e07e0800813b4f87d30885e2323df1c06c621",
+        "size_bytes": 16171,
+        "commitSha": "2cf8025d65f4606e1523b59c623c34ad474b9e5d",
+        "scriptCommitSha": "2ae54ab401071cea1ddab17b6fc54465011fa29d",
+        "computedAt": "2026-11-21T12:55:46.252103+00:00"
+      },
+      {
+        "path": "atom-chi-rust-4he.witness.json",
+        "sha256": "fa85d56cdec91b4708857d08c6461872a5c6a916e104726279c30de9262d5164",
+        "size_bytes": 39151,
+        "commitSha": "dc60cf674c894341d6f77260ff3887cc632a2587",
+        "scriptCommitSha": "dc60cf674c894341d6f77260ff3887cc632a2587",
+        "computedAt": "2026-11-21T13:43:19.263772+00:00"
+      },
+      {
+        "path": "atom-chi-rust-d.witness.json",
+        "sha256": "3c1973b2780e038a17b0340d911b0b6ca4684e0efecb7b2afaa4b30a9fc75fc6",
+        "size_bytes": 7376,
+        "commitSha": "2cf8025d65f4606e1523b59c623c34ad474b9e5d",
+        "scriptCommitSha": "2ae54ab401071cea1ddab17b6fc54465011fa29d",
+        "computedAt": "2026-11-21T12:55:43.751315+00:00"
+      },
+      {
+        "path": "atom-chi-rust-t.witness.json",
+        "sha256": "4c33d25f5d1a19afb73ffa9883a32b054060704d8ddec33bda43d66fd5337ec5",
+        "size_bytes": 16161,
+        "commitSha": "2cf8025d65f4606e1523b59c623c34ad474b9e5d",
+        "scriptCommitSha": "2ae54ab401071cea1ddab17b6fc54465011fa29d",
+        "computedAt": "2026-11-21T12:55:45.043868+00:00"
+      },
+      {
+        "path": "rho-k-h3a-lp-dual.witness.json",
+        "sha256": "cf4da79b909aed4f1914be793ce66a268d0cc2c3621d92c568775653eeb894bc",
+        "size_bytes": 19526,
+        "commitSha": "d5e7b46038ca75c2b42438697ccf8a8793992a5c",
+        "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
+        "computedAt": "2026-10-13T11:51:35.465368+00:00"
+      },
+      {
+        "path": "wenzl-y-lambda-h12.witness.json",
+        "sha256": "f734b73b518fd182620b00c8a70c87890e1f74eda23000faf6c01664dcae4af7",
+        "size_bytes": 12627,
+        "commitSha": "e448ce97cc66edf6813ff7100c170e0f94e9b850",
+        "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+        "computedAt": "2026-09-04T02:42:55.533815+00:00"
+      },
+      {
+        "path": "wenzl-y-lambda-h9.witness.json",
+        "sha256": "43fcd21d7d2243bdc4a9e1cd0ce2100a023316936b49ae8b80aebace06bf9fb4",
+        "size_bytes": 5418,
+        "commitSha": "e448ce97cc66edf6813ff7100c170e0f94e9b850",
+        "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+        "computedAt": "2026-09-04T02:42:55.357445+00:00"
+      }
+    ]
+  },
+  "tier": "structural-exact (committed Borromean χ^λ atom/free + exact 80-dps Frobenius Gram norms)",
   "result": {
     "free_parameters": 0,
+    "intra_order": "borromean",
     "per_isotope": {
       "D": {
-        "target_minus_B_over_me": "-4.353277041",
+        "target_minus_B_over_me": "-4.353367452117419",
         "n": 6,
         "variants": {
           "ref_trM  Σ y·dχ": {
-            "S": "-0.5565446604",
-            "abs_miss": "3.79673",
+            "S": "-0.1470466779804085",
+            "abs_miss": "4.206320774",
             "within_tol": false,
             "sign_negative": true
           },
           "frob  Σ ‖ρa‖²·dχ": {
-            "S": "-1908.007187",
-            "abs_miss": "1903.65",
+            "S": "3.833864785434005",
+            "abs_miss": "8.187232238",
             "within_tol": false,
-            "sign_negative": true
+            "sign_negative": false
           },
           "frob  Σ y·‖ρa‖²·dχ": {
-            "S": "-22.53556008",
-            "abs_miss": "18.1823",
+            "S": "-1.534837800967782",
+            "abs_miss": "2.818529651",
             "within_tol": false,
             "sign_negative": true
           },
           "frobRatio  Σ (‖ρa‖²/‖ρf‖²)·dχ": {
-            "S": "-31.05123386",
-            "abs_miss": "26.698",
-            "within_tol": false,
+            "S": "-4.408936146525601",
+            "abs_miss": "0.05556869441",
+            "within_tol": true,
             "sign_negative": true
           },
           "frobDefect Σ (‖ρa‖²−‖ρf‖²)·dχ": {
-            "S": "-54.7193439",
-            "abs_miss": "50.3661",
+            "S": "1.360145031151553",
+            "abs_miss": "5.713512483",
             "within_tol": false,
-            "sign_negative": true
+            "sign_negative": false
           },
           "sqrtFrob  Σ ‖ρa‖·dχ": {
-            "S": "-236.2930949",
-            "abs_miss": "231.94",
-            "within_tol": false,
+            "S": "-4.791982016536543",
+            "abs_miss": "0.4386145644",
+            "within_tol": true,
             "sign_negative": true
           }
         }
       },
       "T": {
-        "target_minus_B_over_me": "-16.59846853",
+        "target_minus_B_over_me": "-16.59846108988494",
         "n": 9,
         "variants": {
           "ref_trM  Σ y·dχ": {
-            "S": "-0.8885361268",
-            "abs_miss": "15.7099",
+            "S": "-0.1129280151013503",
+            "abs_miss": "16.48553307",
             "within_tol": false,
             "sign_negative": true
           },
           "frob  Σ ‖ρa‖²·dχ": {
-            "S": "-1196189.729",
-            "abs_miss": "1.19617e+6",
+            "S": "-128.5862596837009",
+            "abs_miss": "111.9877986",
             "within_tol": false,
             "sign_negative": true
           },
           "frob  Σ y·‖ρa‖²·dχ": {
-            "S": "-297.776234",
-            "abs_miss": "281.178",
+            "S": "-5.35413247456692",
+            "abs_miss": "11.24432862",
             "within_tol": false,
             "sign_negative": true
           },
           "frobRatio  Σ (‖ρa‖²/‖ρf‖²)·dχ": {
-            "S": "-708.6170286",
-            "abs_miss": "692.019",
+            "S": "4.994054655541877",
+            "abs_miss": "21.59251575",
             "within_tol": false,
-            "sign_negative": true
+            "sign_negative": false
           },
           "frobDefect Σ (‖ρa‖²−‖ρf‖²)·dχ": {
-            "S": "-12923.96608",
-            "abs_miss": "12907.4",
+            "S": "-41.85134195427663",
+            "abs_miss": "25.25288086",
             "within_tol": false,
             "sign_negative": true
           },
           "sqrtFrob  Σ ‖ρa‖·dχ": {
-            "S": "-27880.87587",
-            "abs_miss": "27864.3",
+            "S": "12.86493687252463",
+            "abs_miss": "29.46339796",
             "within_tol": false,
-            "sign_negative": true
+            "sign_negative": false
           }
         }
       },
       "3He": {
-        "target_minus_B_over_me": "-15.10383008",
+        "target_minus_B_over_me": "-15.10383007553804",
         "n": 9,
         "variants": {
           "ref_trM  Σ y·dχ": {
-            "S": "-0.8929085749",
-            "abs_miss": "14.2109",
+            "S": "-0.1295823898653889",
+            "abs_miss": "14.97424769",
             "within_tol": false,
             "sign_negative": true
           },
           "frob  Σ ‖ρa‖²·dχ": {
-            "S": "-1588438.905",
-            "abs_miss": "1.58842e+6",
+            "S": "108.135170371312",
+            "abs_miss": "123.2390004",
             "within_tol": false,
-            "sign_negative": true
+            "sign_negative": false
           },
           "frob  Σ y·‖ρa‖²·dχ": {
-            "S": "-436.2405707",
-            "abs_miss": "421.137",
+            "S": "-10.02547357174073",
+            "abs_miss": "5.078356504",
             "within_tol": false,
             "sign_negative": true
           },
           "frobRatio  Σ (‖ρa‖²/‖ρf‖²)·dχ": {
-            "S": "-892.8819577",
-            "abs_miss": "877.778",
+            "S": "-1.779746483555758",
+            "abs_miss": "13.32408359",
             "within_tol": false,
             "sign_negative": true
           },
           "frobDefect Σ (‖ρa‖²−‖ρf‖²)·dχ": {
-            "S": "-105670.0934",
-            "abs_miss": "105655.0",
+            "S": "24.31818602137122",
+            "abs_miss": "39.4220161",
             "within_tol": false,
-            "sign_negative": true
+            "sign_negative": false
           },
           "sqrtFrob  Σ ‖ρa‖·dχ": {
-            "S": "-34993.31307",
-            "abs_miss": "34978.2",
+            "S": "-11.52430190239712",
+            "abs_miss": "3.579528173",
             "within_tol": false,
             "sign_negative": true
           }
         }
       },
       "4He": {
-        "target_minus_B_over_me": "-55.37322995",
+        "target_minus_B_over_me": "-55.37322994850082",
         "n": 12,
         "variants": {
           "ref_trM  Σ y·dχ": {
-            "S": "-1.119809007",
-            "abs_miss": "54.2534",
+            "S": "-0.07817256359030219",
+            "abs_miss": "55.29505738",
             "within_tol": false,
             "sign_negative": true
           },
           "frob  Σ ‖ρa‖²·dχ": {
-            "S": "-2752769946.0",
-            "abs_miss": "2.75277e+9",
+            "S": "-5811.081690437748",
+            "abs_miss": "5755.70846",
             "within_tol": false,
             "sign_negative": true
           },
           "frob  Σ y·‖ρa‖²·dχ": {
-            "S": "-5933.78778",
-            "abs_miss": "5878.41",
+            "S": "-36.84988301509306",
+            "abs_miss": "18.52334693",
             "within_tol": false,
             "sign_negative": true
           },
           "frobRatio  Σ (‖ρa‖²/‖ρf‖²)·dχ": {
-            "S": "-30266.79862",
-            "abs_miss": "30211.4",
+            "S": "-156.5278508397496",
+            "abs_miss": "101.1546209",
             "within_tol": false,
             "sign_negative": true
           },
           "frobDefect Σ (‖ρa‖²−‖ρf‖²)·dχ": {
-            "S": "-163011613.6",
-            "abs_miss": "1.63012e+8",
+            "S": "-743.8400670046432",
+            "abs_miss": "688.4668371",
             "within_tol": false,
             "sign_negative": true
           },
           "sqrtFrob  Σ ‖ρa‖·dχ": {
-            "S": "-8376270.15",
-            "abs_miss": "8.37621e+6",
+            "S": "-3442.324777714765",
+            "abs_miss": "3386.951548",
             "within_tol": false,
             "sign_negative": true
           }
         }
       }
     },
-    "verdict": "‖ρ_λ‖²_F REFUTED as the GAP-A closing weight (scope-(a)): every variant over-shoots and EXPLODES with A, amplifying high-dim partitions. Durable: brackets the answer — closing Δ_λ is a MILD dim-enhancement between Option-E (sgn·f^λ, −2.40 on D) and |target| (−4.35), NOT a d²-scale norm."
+    "grouped_ordering_control": {
+      "D": {
+        "n": 6,
+        "block_vs_monotone_max_rel_err": "5.78214e-79",
+        "variants": {
+          "ref_trM  Σ y·dχ": {
+            "S": "-0.5565446604044382",
+            "abs_miss": "3.796822792",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frob  Σ ‖ρa‖²·dχ": {
+            "S": "-1908.007186967872",
+            "abs_miss": "1903.65382",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frob  Σ y·‖ρa‖²·dχ": {
+            "S": "-22.53556008207329",
+            "abs_miss": "18.18219263",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frobRatio  Σ (‖ρa‖²/‖ρf‖²)·dχ": {
+            "S": "-31.05123386376052",
+            "abs_miss": "26.69786641",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frobDefect Σ (‖ρa‖²−‖ρf‖²)·dχ": {
+            "S": "-54.71934389614587",
+            "abs_miss": "50.36597644",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "sqrtFrob  Σ ‖ρa‖·dχ": {
+            "S": "-236.2930948916909",
+            "abs_miss": "231.9397274",
+            "within_tol": false,
+            "sign_negative": true
+          }
+        }
+      },
+      "T": {
+        "n": 9,
+        "block_vs_monotone_max_rel_err": "8.61057e-79",
+        "variants": {
+          "ref_trM  Σ y·dχ": {
+            "S": "-0.8885361268342942",
+            "abs_miss": "15.70992496",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frob  Σ ‖ρa‖²·dχ": {
+            "S": "-1196189.729437411",
+            "abs_miss": "1196173.131",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frob  Σ y·‖ρa‖²·dχ": {
+            "S": "-297.7762340258656",
+            "abs_miss": "281.1777729",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frobRatio  Σ (‖ρa‖²/‖ρf‖²)·dχ": {
+            "S": "-708.6170285731307",
+            "abs_miss": "692.0185675",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frobDefect Σ (‖ρa‖²−‖ρf‖²)·dχ": {
+            "S": "-12923.96607932067",
+            "abs_miss": "12907.36762",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "sqrtFrob  Σ ‖ρa‖·dχ": {
+            "S": "-27880.87587240467",
+            "abs_miss": "27864.27741",
+            "within_tol": false,
+            "sign_negative": true
+          }
+        }
+      },
+      "3He": {
+        "n": 9,
+        "block_vs_monotone_max_rel_err": "8.54677e-79",
+        "variants": {
+          "ref_trM  Σ y·dχ": {
+            "S": "-0.8929085748578211",
+            "abs_miss": "14.2109215",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frob  Σ ‖ρa‖²·dχ": {
+            "S": "-1588438.905367687",
+            "abs_miss": "1588423.802",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frob  Σ y·‖ρa‖²·dχ": {
+            "S": "-436.2405707310338",
+            "abs_miss": "421.1367407",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frobRatio  Σ (‖ρa‖²/‖ρf‖²)·dχ": {
+            "S": "-892.8819577387611",
+            "abs_miss": "877.7781277",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frobDefect Σ (‖ρa‖²−‖ρf‖²)·dχ": {
+            "S": "-105670.0933763556",
+            "abs_miss": "105654.9895",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "sqrtFrob  Σ ‖ρa‖·dχ": {
+            "S": "-34993.31307118191",
+            "abs_miss": "34978.20924",
+            "within_tol": false,
+            "sign_negative": true
+          }
+        }
+      },
+      "4He": {
+        "n": 12,
+        "block_vs_monotone_max_rel_err": "1.12678e-78",
+        "variants": {
+          "ref_trM  Σ y·dχ": {
+            "S": "-1.119809006889653",
+            "abs_miss": "54.25342094",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frob  Σ ‖ρa‖²·dχ": {
+            "S": "-2752769945.996594",
+            "abs_miss": "2752769891.0",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frob  Σ y·‖ρa‖²·dχ": {
+            "S": "-5933.787780270893",
+            "abs_miss": "5878.41455",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frobRatio  Σ (‖ρa‖²/‖ρf‖²)·dχ": {
+            "S": "-30266.79861599433",
+            "abs_miss": "30211.42539",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frobDefect Σ (‖ρa‖²−‖ρf‖²)·dχ": {
+            "S": "-163011613.591675",
+            "abs_miss": "163011558.2",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "sqrtFrob  Σ ‖ρa‖·dχ": {
+            "S": "-8376270.15031672",
+            "abs_miss": "8376214.777",
+            "within_tol": false,
+            "sign_negative": true
+          }
+        }
+      }
+    },
+    "a71h_bisect_attribution": {
+      "cause_commit": "1ab204f8edb7 (2026-08-11: wenzl-y-lambda-h9/h12 z_pre=sqrt(q)/(q+1) -> z=q^3/(q^2+1))",
+      "why_qou_a71h_missed_it": "qou-a71h reverted wenzl-y-lambda-h9 only to 852e64fb4e^ (2026-08-29, already on z=q^3/(q^2+1)), never to 1ab204f8edb7^ (2026-08-10), while all four y_lambda-free Frobenius variants stayed constant to 7-9 digits.",
+      "S_3He_grouped_z_pre_closed_form": "-842.1174640361874",
+      "S_3He_grouped_z_post_closed_form": "-436.2405723274871",
+      "S_3He_witness_2026_07_05": "-842.1174706",
+      "S_3He_witness_2026_09_04": "-436.2405707",
+      "rel_match_z_pre_vs_2026_07_05": "7.79441e-9",
+      "rel_match_z_post_vs_2026_09_04": "3.73071e-9",
+      "nonzero_y_partitions_n9_z_pre": 30,
+      "nonzero_y_partitions_n9_z_post": 5,
+      "tl_kernel_3row_max_abs_y_at_z_post": "0.0"
+    },
+    "verdict": "‖ρ_λ‖²_F REFUTED as the GAP-A closing weight (scope-(a)) on canonical Borromean: all four y_λ-free Frobenius variants break binding sign across {D,T,³He,⁴He}, while Σ y·‖ρa‖²·dχ preserves sign (-1.535, -5.354, -10.025, -36.850) but under-binds every isotope relative to -B_AME/m_e (-4.353, -16.598, -15.104, -55.373). Historical -842.117 -> -436.241 move on ³He grouped word (qou-a71h) is 100% explained by 1ab204f8edb7 (y_λ z=sqrt(q)/(q+1) -> q^3/(q^2+1) annihilating the 25 ≥3-row TL-kernel partitions of 9)."
   },
   "context": {
     "axis": "Δ_λ per-isotope binding closure (GAP-A) — Frobenius Gram weight",
     "sign_solved_by": "rho_k_counit_defect_form.py (defect ε(β_K)−ε(β_K^vac) < 0 all isotopes)",
-    "weight_source": "gram_transfer_quadratic.gram_norm_zn (exact doubled-Bratteli tr_M(W·W^♯))",
-    "chi_source": "atom-chi-rust-{d,t,3he,4he}.witness.json (data.atom + data.free)"
+    "weight_source": "gram_all_lambda_block_h3 (exact 80-dps block-H_3 doubled-Bratteli tr_M(W·W^♯))",
+    "chi_source": "atom-chi-rust-{d,t,3he,4he}.witness.json (canonical Borromean data.atom + data.free)",
+    "audit_doc": "docs/audits/2026-11-24-frobenius-gram-delta-lambda-bisect-a71h.md"
   },
-  "auditOnly": true
+  "auditOnly": true,
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669095610768879874499121873578736072814240181798963574483"
 }

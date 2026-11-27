@@ -1,1 +1,0 @@
-Though we can construct many Lagrangians this way, in order to compute Floer cohomology and identify the basis with $B(\frac{1}{d}\Z)$, we must choose a family of Lagrangians $\{L(d)\}_{d\in\Z}$ corresponding to the tensor powers of an ample line bundle.

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1206.6004v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1206.6004v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -32,6 +32,18 @@
     "library/arxiv-1206.6004v2/sections/sec-017"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Bring’s curve is the genus 4 Riemann surface with automorphism group of maximal size, S5. Riera and Rodr´ ıguez have provided the most detailed study of the curve thus far via a hyperbolic model.\n\n**arxiv-1206.6004v2**\n\n20 pp, 10 sections.\n\n**Abstract.** Bring’s curve is the genus 4 Riemann surface with automorphism group of maximal size, S5. Riera and Rodr´ ıguez have provided the most detailed study of the curve thus far via a hyperbolic model. We will recover and extend their results via an algebraic model based on a sextic curve given by both Hulek and Craig and implicit in work of Ramanujan. In particular we recover their period matrix; further, the vector of Riemann constants will be identified.\n\n**Outline.** 1 Introduction; 2 Two sextics; 2.2 The Hulek–Craig sextic; 3.1 Special points of the Hulek–Craig represen; 3.2 Branched covers of P1; 4.1 Introduction to H; 4.3 Understanding the isomorphism f; 5 Vector of Riemann constants; 5.2 Symmetries and the vector of Riemann const; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2: The homology cycles α1 and α2 for the Hulek–Craig branched cover reproduce the\n- Theorem 3: For the Riera and Rodr´ ıguez homology basis of Bring’s curve we have that the\n- Theorem 4: Bring’s curve has a unique invariant spin-structure.\n- Corollary 1: Assuming the conditions of Lemma 1 and that ψ ∈ Aut(C), then\n- Lemma 1: Suppose the automorphism σ has order N > 1. If L− Id is invertible and Q is",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
   "licenceRecord": {
@@ -53,8 +65,8 @@
       "stamp_date": "2 Oct 2012"
     },
     "doi": "10.3842/SIGMA.2012.065",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,1 +1,0 @@
-[]{#abvsrel label="abvsrel"} For the Donaldson--Thomas theory and cohomological Hall algebras associated to quivers, a vital role is always played by the grading by $\mathbb{N}^{Q_0}$, the semigroup of dimension vectors, which should be seen as a weight space decomposition in the language of Lie algebras and quantum groups.

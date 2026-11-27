@@ -1,1 +1,0 @@
-Lab F Reference 139Eu(β +)139Sm 6080 50 6982 17 18.0 C Dbn 95Ve08 ∗ ∗139Nd−u M −A=–81707(30) keV for mixture gs+m at 231.15 keV Nub211 ∗∗ ∗139Sm−u M −A=–71930(28) keV for 139Smm at 457.38 keV Nub211 ∗∗ ∗139Xe−133Cs1.045 Typo in original paper, ratio should read 1.045 245 4357(175) GAu ∗∗ ∗133Cs−139Cs.239 131Cs.

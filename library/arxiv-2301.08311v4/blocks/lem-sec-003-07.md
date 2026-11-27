@@ -1,0 +1,1 @@
+Let D = ∂s + A(t) be an operator of functions over the strip such that A is an unbounded self-adjoint and non-degenerate operator on W 1,p([0, 1], Cn, Rn−1 × λeR+, Rn−1 × R+), the Sobolev space of functions from [0, 1] to Cn with given boundary conditions.Then D : W 1,p(R × [0, 1], Cn, Rn−1 × λeR+, Rn−1 × R+) →Lp(R × [0, 1], Cn) is an isomorphism. Here λe = ekπ/n for some k.

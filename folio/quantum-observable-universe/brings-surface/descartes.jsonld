@@ -1,13 +1,14 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/thm-descartes",
   "@type": [
-    "folio-assistant-core:Theorem",
+    "folio-assistant-sci:Theorem",
     "doco:Section"
   ],
   "label": "thm:descartes",
@@ -25,7 +26,7 @@
     "terminal-object",
     "brings-surface"
   ],
-  "leanRef": "qou:QOU.Archimedean.descartes",
+  "leanRef": "qou:QOU.MassTheory.Archimedean.descartes",
   "text": "descartes.md",
   "leanSource": "descartes.lean",
   "provenance": "authored"

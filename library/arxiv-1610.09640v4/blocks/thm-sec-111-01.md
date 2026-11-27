@@ -1,0 +1,1 @@
+Let A be a noetherian con- nected graded K-ring of ﬁnite local cohomological dimension. If M ∈D(Aen, gr) has weakly symmetric derived m-torsion, then M has symmetric derived m-torsion. Moreover, the symmetry isomorphism ϵM is unique, and it is functorial in such complexes M.

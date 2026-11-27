@@ -1,1 +1,0 @@
-The terms (1) that have both factors of Tate type are in obvious bijection with the (1’): observe that the segment that is cut must have the same number of 휔and 휔factors on each side – see Figure 3.5, left.

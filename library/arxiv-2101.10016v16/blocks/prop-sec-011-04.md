@@ -1,1 +1,1 @@
-Let A be a complex ∗-algebra either unital or a discrete. A nonzero
+Let A be a complex ∗-algebra either unital or a discrete. A nonzero Hermitian form on the vector space of an irreducible representation ρ of A making it ∗ -invariant is nondegenerate. Any other ∗-representation structure on ρ is unitarily equivalent to ρ or ρ−.

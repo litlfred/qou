@@ -1,0 +1,1 @@
+The residue depends on Q j only via its gradient. The sign of the residue form depends on the order of the factors in the denominator, and we account for this when using residue forms to determine asymptotics. When the stratum S is a single point (meaning k = d) the residue at p is just a number, simplifying the conclusions of Theorem C.17 as follows.

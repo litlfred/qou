@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0611941v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "bf6f2d55c7adee5154d88e2f923c5598f9cf7f0439d1eb0be1c51706d3be1426",
   "file": "0611941v3.pdf"
@@ -16,46 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
-  "by_kind": {
-   "recommendation": 2
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In order to show that ${\\mathcal{H}}$ is \"cellular\" in the sense of Graham--Lehrer [@GrLe Definition 1.1], we must specify a quadruple $(\\Lambda,M,C,*)$ satisfying the following conditions.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-3-a-cell-datum-for-h.md",
-   "section_title": "A cell datum for H",
-   "pages": "7-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "20.6], the corresponding representation of $J$ is given by $$t_w \\mapsto \\left\\{\\begin{array}{cl} (-1)^{l(w)}\\,\\hat{n}_w \\hat{n}_{w^{-1}}\\, \\eta(w) & \\qquad \\mbox{if ${\\mathbf{a}}_\\lambda+m(w)=0$},\\\\ 0 & \\qquad \\mbox{otherwise}. \\end{array}\\right.$$ (Note that a factor $\\hat{n}_w\\hat{n}_{w^{-1}}$ should be inserted into the formula in [@Lusztig03 20.6].) Clearly, we can take $B^\\lambda=(1)$ in this case.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-4-examples-and-applications-to-modular-represent.md",
-   "section_title": "Examples and applications to modular representations",
-   "pages": "11-15",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

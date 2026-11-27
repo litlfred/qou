@@ -1,0 +1,1 @@
+The rigid residue complex KA is functorial in the ring A in two diﬀerent ways, that we brieﬂy explain here. As in Setup 13.5.1, we work in the category Rngc/feft K. The ﬂatness condition can be removed (at a price, see

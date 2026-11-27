@@ -1,1 +1,0 @@
-Note the unusual {\em mixed nature} of this definition: a morphism $\phi$ in $\cat{C}(A)_{\mrm{res} / \K}$ is literally is homomorphism of complexes, but the condition it must satisfy is in the derived category.

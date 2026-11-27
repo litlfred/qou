@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/asens-1986-4-19-1-57-0/sections/sec-014",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "COROLLARY.",
+  "pageStart": 23,
+  "pageEnd": 24,
+  "contains": [
+    "library/asens-1986-4-19-1-57-0/blocks/prose-sec-014",
+    "library/asens-1986-4-19-1-57-0/blocks/lem-sec-014-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/asens-1986-4-19-1-57-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/asens-1986-4-19-1-57-0/manifest.jsonld",
+  "provenance": "ingested"
+}

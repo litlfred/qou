@@ -1,1 +1,0 @@
-\begin{equation} \theta = \arg \zeta_1, \quad \theta_k = \arg a_{k,1}. \end{equation} Therefore, it should be possible to extract the coefficients $a_{k,1}$ from the large order behavior of the series $a_n$.

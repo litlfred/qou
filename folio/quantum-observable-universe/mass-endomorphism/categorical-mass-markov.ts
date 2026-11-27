@@ -12,7 +12,7 @@ export default proposition({
     "nakayama",
     "hecke-algebra",
   ],
-  lean: { ref: "qou:QOU.CategoricalMassMarkov",
+  lean: { ref: "qou:QOU.MassTheory.CategoricalMassMarkov",
     validation: "not_checked",
   },
   computation: {

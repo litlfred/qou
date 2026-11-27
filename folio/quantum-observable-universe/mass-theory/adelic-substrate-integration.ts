@@ -8,6 +8,12 @@ export default remark({
   uses: [
     "def:adelic-substrate",
     "def:archimedean-realization-functor",
+    "def:algebraic-quantum-volume",
+    "def:classical-limit-functor",
+  ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): of [classical Riemann zeta](#def:classical-riemann-zeta)" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): already noted in\n[classical limit (preamble)](#sec:classical-limit-preamble)" },
   ],
   cites: ["tate1967"],
 });

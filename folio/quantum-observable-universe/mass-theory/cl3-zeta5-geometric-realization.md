@@ -1,8 +1,5 @@
-**Conjecture (geometric realisation of the depth-3 Bring trilog
-$\mathrm{Cl}_3(2\pi/5)$ — candidates list).**
-
 The depth-3 canonical witness
-[`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness)
+[Bring trilog at $\zeta_5$ as depth-3 grouplike value (50-digit functional-equation cross-validated witness)](#conj:bring-trilog-depth-3-witness)
 established that
 
 $$
@@ -58,8 +55,7 @@ be expressible via $\mathrm{Cl}_3(2\pi/5)$ and its Galois conjugates.
 $\mathrm{CS}(K) \stackrel{?}{=} \alpha \cdot \mathrm{Cl}_3(2\pi/5) + \beta \cdot \zeta(3) + \cdots$
 for explicit $\alpha, \beta \in \mathbb{Q}$.
 
-> [!WARNING]
-> **Update (canonical refutation)**: A PSLQ canonical experiment on the CS invariants of the seven Bring-natural torus-knot generators $\{T(2, 3), T(2, 5), T(2, 7), T(2, 9), T(3, 4), T(3, 5), T(5, 2)\}$ reveals that their Chern-Simons invariants are exactly rational (e.g., $\mathrm{CS}(T(2,5)) = 1/20, \mathrm{CS}(T(2,3)) = -1/12$). Therefore, their CS invariants cannot be expressed as non-trivial $\mathbb{Q}$-linear combinations of transcendental numbers like $\zeta(3)$ and $\mathrm{Cl}_3(2\pi/5)$. This strictly rules out torus knots as direct geometric realisations for this depth-3 period under Candidate 2.
+> **Canonical refutation.** A PSLQ canonical experiment on the CS invariants of the seven Bring-natural torus-knot generators $\{T(2, 3), T(2, 5), T(2, 7), T(2, 9), T(3, 4), T(3, 5), T(5, 2)\}$ reveals that their Chern-Simons invariants are exactly rational (e.g., $\mathrm{CS}(T(2,5)) = 1/20, \mathrm{CS}(T(2,3)) = -1/12$). Therefore, their CS invariants cannot be expressed as non-trivial $\mathbb{Q}$-linear combinations of transcendental numbers like $\zeta(3)$ and $\mathrm{Cl}_3(2\pi/5)$. This strictly rules out torus knots as direct geometric realisations for this depth-3 period under Candidate 2.
 
 #### Candidate 3: iterated integral on $\overline{\mathcal{M}}_{0, 5}$
 
@@ -74,6 +70,16 @@ $$
   \mathrm{Li}_3(\zeta_5),\; \mathrm{Li}_3(\zeta_5^2),\;
   \mathrm{Li}_3(\zeta_5^3),\; \mathrm{Li}_3(\zeta_5^4) \;\in\; \mathcal{P}_3.
 $$
+
+These values lie in $\mathrm{MPV}(3,5)$, the $\mathbb{Q}$-span of the multiple
+polylogarithm values of weight $3$ and level $5$. Its dimension $d(3,5)$ obeys the
+Deligne–Goncharov motivic upper bound $D(3,5) = 3^3 = 27$, tightened by finite and
+regularized double-shuffle standard relations to $d(3,5) \le \mathrm{SR}(3,5) = 22$,
+with no unconditional lower bound known, so a $\mathbb{Q}$-linear identification of
+$\mathrm{Cl}_3(2\pi/5)$ inside this span comes with no proved independence of the
+spanning values; for prime levels $p \ge 5$, including $N = 5$, the standard
+relations are conjectured to generate all $\mathbb{Q}$-linear relations, attaining
+$d(3,5) = 22$ \cite[§1.1, §6, §7.4, §9 Table~2, Conj.~9.2]{zhao2010-standard-relations}.
 
 **Discharge target**: write down the explicit iterated integral
 $\int_\gamma \omega$ on $\overline{\mathcal{M}}_{0, 5}$ whose
@@ -102,7 +108,7 @@ Candidate 3 is most general.
 
 Identifying *any one* of the three candidates explicitly would:
 
-1. **Close the depth-3 row of the depth correspondence.** The correspondence ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence))
+1. **Close the depth-3 row of the depth correspondence.** The correspondence ([GS-depth $\leftrightarrow$ Goncharov period-depth correspondence](#conj:gb-depth-period-correspondence))
    currently has the figure-8 row at depth 2 verified and the trilog
    canonical witness at depth 3, but no geometric image for the
    trilog value. Identification would make the depth-3 prediction
@@ -111,7 +117,7 @@ Identifying *any one* of the three candidates explicitly would:
    on $\mathrm{Cl}_3(2\pi/5)$ via $\zeta_5 \mapsto \zeta_5^a$ should
    match the action on the geometric side (4-mfd cusps, knot CS,
    or marked-point permutations) — a sharp test of
-   [`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action).
+   [Joint motivic-Galois $\times$ braid-group action on the bi-filtration $\mathcal{H}_q^{(n, K)}$](#conj:joint-galois-braid-action).
 3. **Provide the Bring-natural depth-3 witness target.** The witness
    formalism
    (the canonical formalism)

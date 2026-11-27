@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:hecke-1d-irrep-closed-form-character",
   lean: {
-    ref: "qou:QOU.BraidKnot.Hecke1dIrrep.hecke_1d_irrep_closed_form_character",
+    ref: "qou:QOU.BraidsAndKnots.BraidKnot.Hecke1dIrrep.hecke_1d_irrep_closed_form_character",
     validation: "not_checked",
   },
   title:
@@ -40,4 +40,12 @@ export default proposition({
     ],
     status: "experimental",
   },
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`): `2026-09-04-borromean-quark-carriers-trivial.lean` (`T5`) inhabits the local `BorromeanQuark` `Prop` carrier with `pairLink := 0`.",
+      see: "docs/audits/2026-09-04-borromean-quark-carriers-trivial.lean",
+    },
+  ],
 });

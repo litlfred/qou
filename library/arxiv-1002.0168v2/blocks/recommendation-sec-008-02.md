@@ -1,1 +1,0 @@
-In particular, if $\cC_K$ is the even part of a $3$-supertransitive shaded planar algebra, $R$ is a $\Rational$-linear combination of projections in $\cC_K$ and if $\cC_k$ is a complete rational form of $\cC_K$ over $k$, then $k$ must contain the normalized third twisted moment of $R$.

@@ -41,12 +41,14 @@ from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402 — CAL-1
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
 set_compute_dps(30)                              # exploratory; ~%-level effect
 q0 = mp.mpf(str(Q0))
 E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))      # 𝔈₀ ≈ 4.186 MeV (CAL-3)
 
-ISO = {"d": (6, "2.2245662"), "t": (9, "8.4818"), "3he": (9, "7.7180")}
+ISO = {"d": (6, _ame_nstr(AME_B_DEUTERON_MEV_VALIDATION, 30)), "t": (9, "8.4818"), "3he": (9, "7.7180")}
 
 
 def _mpf(v):

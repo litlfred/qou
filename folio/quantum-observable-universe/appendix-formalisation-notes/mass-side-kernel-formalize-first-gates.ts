@@ -1,0 +1,63 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:mass-side-kernel-formalize-first-gates",
+  title:
+    "Mass-side $\\S 4$ formalize-first gates as parametric Lean classes — anchor-stability, $q=1$ shadow, and direction sanity for linking-weight candidates $w(q)$",
+  lean: {
+    ref: "qou:QOU.Mass.MassSideKernelFormalize.MassSideKernel",
+    validation: "not_checked",
+  },
+  uses: [
+    "prop:q-beta-bar-even-kernel-invariant",
+    "prop:q-beta-bar-even-kernel-typeclass",
+    "prop:q-beta-q-eq-one-shadow-gate",
+    "rem:q-beta-direction-sanity-gate",
+  ],
+  cites: ["jones1987", "wenzl1988", "habiro2004"],
+  tags: [
+    "mass-theory",
+    "linking-weight",
+    "structural",
+    "formalize-first",
+    "parametric-typeclass",
+    "kernel-invariant",
+    "no-fit",
+  ],
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-24",
+      body: "Formalisation audit (`qou-x60n`, `qou-z9ws`): `2026-08-30-gate-classes-admit-zero.lean` proves `MassDirectionSanityGateClass` is non-vacuous but its additive `10 * target` band `[-22.14, 27.06]` admits zero.",
+      see: "docs/audits/2026-08-30-gate-classes-admit-zero.lean",
+    },
+    {
+      kind: "note",
+      date: "2026-06-06",
+      body: [
+        "Authoring archaeology (moved out of prose per AGENTS.md §4d, \"Author notes vs. scholarly prose\").",
+        "",
+        "**Typeclass pattern.** The Lean typeclass mirrors the decay-side `BarEvenKernel` pattern introduced in PR #1893; the sympy companion `mass_theory_formalize_first_invariants_probe.py` (PR #1896, Track 3) runs the 4×3 verdict matrix on Family A / via-Jones / Bring color-tube candidates.",
+        "",
+        "**Direction-sanity form.** The additive direction-sanity form follows the decay-side `q-beta-direction-sanity-gate.lean` precedent from PR #1890.",
+        "",
+        "**Bar-even structural identity.** The §4(b) bar-even invariant is the CommRing R lemma from PR #1875.",
+        "",
+        "**§4(c) anchor candidate.** A `Σ f^λ / 4 = 5/2` value for the §4(c) anchor was surfaced by PR #1899's mass-side q=1 anchor hunt; the parametric class admits this via `MassQOneShadowGateClass w (some (5/2))` but does not assert it as the canonical anchor.",
+      ].join("\n"),
+    },
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** " +
+        "The gate constants in `mass-side-kernel-formalize-first-gates.lean` " +
+        "are **substrate and CODATA-implied decimal literals**: `q_substrate " +
+        ": ℝ := 1.10997858275138`, `anchorTolerance := 0.000001` (the 1 ppm " +
+        "fibre-level cross-anchor swing), and `directionTarget := 2.46` (the " +
+        "CODATA-implied near-match of the linking weight at `q₀`). Numerical " +
+        "anchors and tolerances are the §7c \"experimental value → `ℝ`\" row, " +
+        "so the `ℝ` is forced by the statement rather than chosen.",
+    },
+  ],
+});

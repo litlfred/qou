@@ -1,1 +1,0 @@
-For this purpose $\tau^{KP}$ should be represented in the form of (\ref{todatau}): \be \tau^{KP}\{t\mid G\} = {\rm Det}_{i,j<0} {\cal H}_{ij}^{KP}, \label{addkptau1} \ee where ${\cal H}_{ij}^{KP} = \sum_l T_{lj} P_{l-i}(t)$.

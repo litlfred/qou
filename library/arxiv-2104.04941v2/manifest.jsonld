@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2104.04941v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2104.04941v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -48,6 +48,18 @@
     "library/arxiv-2104.04941v2/sections/sec-033"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Fock–Goncharov Coordinates for Semisimple Lie Groups — Fock and Goncharov [FG06b] introduced cluster ensembles, providing a framework for coordi- nates on varieties of surface representations into\n\n**Fock–Goncharov Coordinates for Semisimple Lie Groups**\n\n*S. GILLES*\n\n55 pp, 35 sections.\n\n**Abstract.** Fock and Goncharov [FG06b] introduced cluster ensembles, providing a framework for coordi- nates on varieties of surface representations into Lie groups, as well as a complete construction for groups of type An. Later, Zickert [Zic19], Le [Le16b], [Le16a], and Ip [Ip18] described, using diﬀering methods, how to apply this framework for other Lie group types. Zickert also showed that this framework applies to triangulated 3-manifolds. We present a complete, general construction, based on work of Fomin and Zelevinsky. In particular, we complete the picture for the remaining cases: Lie groups of types F4, E6, E7, and E8.\n\n**Outline.** Front matter; Acknowledgements; 1 Introduction; 1.1 Classical Teichmüller space; 1.2 Cluster ensemble structures; 1.3 Higher Teichmüller spaces; 1.4 Results; 1.5 Historical context; 2 Ingredients; 2.1 Root spaces and Weyl groups; 2.2 Unipotent subgroups; 2.3 Coxeter elements; 2.4 Generalized minors; 2.5 Factorization coordinates; 2.6 Quivers; 2.7 Cluster ensembles; 3 Key identities; 3.2 Grid exchange relations",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {
@@ -70,8 +82,8 @@
       "stamp_date": "21 Jan 2022"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

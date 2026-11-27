@@ -11,109 +11,111 @@
   "n_crossings": 22,
   "n_partitions": 11,
   "trace_convention": "wenzl_ocneanu_markov",
-  "tr_M_in_r_coords_numerator": "q**80 + 2*q**79 + q**78 - 2*q**76 + 2*q**74 - 2*q**73 - q**72 + 3*q**70 - 4*q**68 + 5*q**66 + q**65 - 3*q**64 + q**63 + 6*q**62 + q**61 - 3*q**60 + 5*q**59 + 5*q**58 - 3*q**57 - 7*q**56 + 9*q**55 + 4*q**54 - 7*q**53 - 7*q**52 + 9*q**51 + 5*q**50 - 8*q**49 - 7*q**48 + 6*q**47 + 7*q**46 - 4*q**45 - 4*q**44 + 4*q**43 + 10*q**42 + 2*q**41 - 6*q**40 - 2*q**39 + 10*q**38 - 4*q**37 - 4*q**36 + 4*q**35 + 7*q**34 - 6*q**33 - 7*q**32 + 8*q**31 + 5*q**30 - 9*q**29 - 7*q**28 + 7*q**27 + 4*q**26 - 9*q**25 - 7*q**24 + 3*q**23 + 5*q**22 - 5*q**21 - 3*q**20 - q**19 + 6*q**18 - q**17 - 3*q**16 - q**15 + 5*q**14 - 4*q**12 + 3*q**10 - q**8 + 2*q**7 + 2*q**6 - 2*q**4 + q**2 - 2*q + 1",
-  "tr_M_in_r_coords_denominator": "16*q**42 + 32*q**40 + 16*q**38",
+  "tr_M_in_r_coords_numerator": "q**80 - 6*q**76 + 22*q**72 - 57*q**68 + 120*q**64 - 214*q**60 + 337*q**56 - 471*q**52 + 600*q**48 - 688*q**44 + 728*q**40 - 693*q**36 + 611*q**32 - 481*q**28 + 346*q**24 - 219*q**20 + 121*q**16 - 57*q**12 + 21*q**8 - 6*q**4 + 1",
+  "tr_M_in_r_coords_denominator": "16*q**44 + 32*q**40 + 16*q**36",
   "r_coord_note": "r = q^(1/2), the Wenzl Markov-parameter convention",
-  "pole_order_at_q0_in_r": 38,
+  "pole_order_at_q0_in_r": 36,
   "leading_coefficient_in_r": "1/16",
-  "value_at_q0": 0.9835260324047483,
+  "value_at_q0": "0.299015017184640076702160426771",
   "per_partition": {
     "(1, 1, 1, 1, 1, 1)": {
       "f_lambda": 1,
-      "chi_at_q0": -0.6769250916999121,
-      "compute_seconds": 0.0,
+      "chi_at_q0": "0.673256896370213551453563700939",
+      "compute_seconds": 0.05,
       "derived_from_conjugate": false,
-      "source": "cached"
+      "source": "computed"
     },
     "(6,)": {
       "f_lambda": 1,
-      "chi_at_q0": 1.5597586581034162,
-      "compute_seconds": 0.0,
-      "derived_from_conjugate": false,
+      "chi_at_q0": "1.55130646820047757334000417156",
+      "compute_seconds": 0.004,
+      "derived_from_conjugate": true,
       "conjugate_source": "(1, 1, 1, 1, 1, 1)",
-      "source": "cached"
+      "source": "derived q\u2192q\u207b\u00b9"
     },
     "(2, 1, 1, 1, 1)": {
       "f_lambda": 5,
-      "chi_at_q0": 2.1554157117076285,
-      "compute_seconds": 0.0,
+      "chi_at_q0": "1.20376960057611619902091919085",
+      "compute_seconds": 4.153,
       "derived_from_conjugate": false,
-      "source": "cached"
+      "source": "computed"
     },
     "(5, 1)": {
       "f_lambda": 5,
-      "chi_at_q0": 3.215890878473305,
-      "compute_seconds": 0.0,
-      "derived_from_conjugate": false,
+      "chi_at_q0": "0.722223195476633432513478936779",
+      "compute_seconds": 0.01,
+      "derived_from_conjugate": true,
       "conjugate_source": "(2, 1, 1, 1, 1)",
-      "source": "cached"
+      "source": "derived q\u2192q\u207b\u00b9"
     },
     "(2, 2, 2)": {
       "f_lambda": 5,
-      "chi_at_q0": -3.4975638908268736,
-      "compute_seconds": 0.0,
+      "chi_at_q0": "0.777625367919126600230106589658",
+      "compute_seconds": 3.623,
       "derived_from_conjugate": false,
-      "source": "cached"
+      "source": "computed"
     },
     "(3, 3)": {
       "f_lambda": 5,
-      "chi_at_q0": 4.2490694054099745,
-      "compute_seconds": 0.0,
-      "derived_from_conjugate": false,
+      "chi_at_q0": "1.65567493974939062211654706028",
+      "compute_seconds": 0.018,
+      "derived_from_conjugate": true,
       "conjugate_source": "(2, 2, 2)",
-      "source": "cached"
+      "source": "derived q\u2192q\u207b\u00b9"
     },
     "(2, 2, 1, 1)": {
       "f_lambda": 9,
-      "chi_at_q0": -0.8197156502925226,
-      "compute_seconds": 0.0,
+      "chi_at_q0": "1.30813807212502924779746207957",
+      "compute_seconds": 14.239,
       "derived_from_conjugate": false,
-      "source": "cached"
+      "source": "computed"
     },
     "(4, 2)": {
       "f_lambda": 9,
-      "chi_at_q0": 1.6737477222247328,
-      "compute_seconds": 0.0,
-      "derived_from_conjugate": false,
+      "chi_at_q0": "0.826591667025546481290021825498",
+      "compute_seconds": 0.021,
+      "derived_from_conjugate": true,
       "conjugate_source": "(2, 2, 1, 1)",
-      "source": "cached"
+      "source": "derived q\u2192q\u207b\u00b9"
     },
     "(3, 1, 1, 1)": {
       "f_lambda": 10,
-      "chi_at_q0": -0.4899877712745947,
-      "compute_seconds": 0.0,
+      "chi_at_q0": "-1.45373035478960665739290008362",
+      "compute_seconds": 27.812,
       "derived_from_conjugate": false,
-      "source": "cached"
+      "source": "computed"
     },
     "(4, 1, 1)": {
       "f_lambda": 10,
-      "chi_at_q0": -0.47019171015698125,
-      "compute_seconds": 0.0,
-      "derived_from_conjugate": false,
+      "chi_at_q0": "-2.81332633171935344578678080830",
+      "compute_seconds": 0.019,
+      "derived_from_conjugate": true,
       "conjugate_source": "(3, 1, 1, 1)",
-      "source": "cached"
+      "source": "derived q\u2192q\u207b\u00b9"
     },
     "(3, 2, 1)": {
       "f_lambda": 16,
-      "chi_at_q0": -1.9728207380214016,
-      "compute_seconds": 0.0,
+      "chi_at_q0": "-0.0898336254201153957060839674299",
+      "compute_seconds": 61.314,
       "derived_from_conjugate": false,
-      "source": "cached"
+      "source": "computed"
     }
   },
-  "total_compute_seconds": 0.03,
-  "generated_at": "2026-07-18T18:03:10.843208+00:00",
+  "total_compute_seconds": 0.13,
+  "generated_at": "2026-11-21T02:47:21.603072+00:00",
   "lean_uniqueness_ref": {
     "deuteron": "qou:QOU.BraidKnot.deuteron_uniqueness_closed",
-    "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+    "framework_doc": "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
     "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
   },
-  "scriptHash": "3a9c8232b957",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "8027514fec684d79b1cff2b42eaa059c5ff6a370",
+  "scriptFile": "deuteron_tr_M_symbolic.py",
+  "scriptHash": "b3fe1a47508b",
+  "scriptCommitSha": "9be0b99e7af8d5a8387f0e3fa784054a3b765e05",
+  "commitSha": "5a13eb512d7b8e6c2e672c799ea79327fe2e85ef",
   "engine": "sympy",
-  "computedAt": "2026-07-18T18:03:11.414392+00:00",
+  "computedAt": "2026-11-21T02:47:21.616990+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
-  "scriptFile": "deuteron_tr_M_symbolic.py"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,0 +1,1 @@
+Let φ(x) = x2 −1, let α ∈K, and assume that the pair (φ, α) is stable over K and that K∞= K∞(x2 −1, α) is an abelian extension of K. If p is a prime of K with residue characteristic not equal to 2, then p is unramiﬁed in K∞.

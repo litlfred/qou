@@ -1,4 +1,3 @@
-
 The projections are constructed from the torus averaging operator: for
 each weight $\lambda$ of the $T$-action, the $\lambda$-isotypic
 projector $e_\lambda$ is idempotent, and

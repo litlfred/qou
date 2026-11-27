@@ -1,0 +1,1 @@
+Let K be a full triangulated subcategory of K(A). Then Kﬂat is a full triangulated subcategory of K. Exercise 10.3.8. Prove Proposition 10.3.7. (Hint: The challenge is to show that Kﬂat is closed under distinguished triangles. Use Proposition 10.3.5.) In Theorem 12.3.1 on the left derived bifunctor (−⊗L A−) of the bifunctor (−⊗A−) we will use K-ﬂat resolutions.

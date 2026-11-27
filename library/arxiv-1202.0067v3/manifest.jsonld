@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1202.0067v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1202.0067v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -30,6 +30,18 @@
     "library/arxiv-1202.0067v3/sections/sec-015"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "CHARACTER DEFLATIONS AND A GENERALIZATION OF THE MURNAGHAN–NAKAYAMA RULE — Given natural numbers m and n, we deﬁne a deﬂation map from the characters of the symmetric group Smn to the characters of\n\n**CHARACTER DEFLATIONS AND A GENERALIZATION OF THE MURNAGHAN–NAKAYAMA RULE**\n\n*ANTON EVSEEV, ROWENA PAGET AND MARK WILDON*\n\n33 pp, 17 sections.\n\n**Abstract.** Given natural numbers m and n, we deﬁne a deﬂation map from the characters of the symmetric group Smn to the characters of Sn. This map is obtained by ﬁrst restricting a character of Smn to the wreath product Sm ≀Sn, and then taking the sum of the irreducible constituents of the restricted character on which the base group Sm × · · · × Sm acts trivially. We prove a combinatorial formula which gives the values of the images of the irreducible characters of Smn under this map. We also prove an analogous result for more general deﬂation maps in which the base group is not required to act trivially. These results generalize the Murnaghan–Nakayama rule and special cases of the Littlewood– Richardson rule. As a corollary we obtain a new combinatorial formula for the character multiplicities that are the subject of the long-standing Foulkes’ Conjecture.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Character deflations; 1.2 Some special cases; 1.3 Outline of the paper; 2 Deflation by averaging; 3 Skew characters; 3.1 Quotients of skew-partitions; 3.2 A model for induction from a Young subgrou; 3.3 Proof of Theorem 3.3; 3.4 Example; 4 Proof of Theorem 1.5; 5 An application to Foulkes' Conjecture; 6 Generalized deflations; 7 Symmetric functions; Acknowledgements; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -51,8 +63,8 @@
       "stamp_date": "16 Nov 2013"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

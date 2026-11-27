@@ -1,0 +1,1 @@
+Under Setup 16.3.1 the following hold. (1) The functor Γm commutes with graded ring homomorphisms C →B, in the sense that the diagram M(A ⊗Bop, gr) Γm / Rest  Mtor(A ⊗Bop, gr) Rest  M(A ⊗Cop, gr) Γm / Mtor(A ⊗Cop, gr) is commutative. Derived Categories | Amnon Yekutieli |

@@ -29,7 +29,7 @@ export default conjecture({
   // that the complement JSJ-splits into exactly Z proton and N neutron
   // pieces — is the conjectural half and is not separately formalised;
   // the axiom bundles it into the additivity statement.
-  lean: { ref: "qou:QOU.BraidsKnots.LinearJSJVolume.JSJ_volume_additivity" },
+  lean: { ref: "qou:QOU.BraidsAndKnots.LinearJSJVolume.JSJ_volume_additivity" },
   uses: [
     "def:atom-knot",
     "prop:thurston-volume-additivity",
@@ -64,6 +64,7 @@ export default conjecture({
         "into the prose now lives only in the referenced library file " +
         "`lean/QOU/BraidsKnots/LinearJSJVolume.lean`.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ; it is the same additivity principle as the per-tetrahedron decomposition of [Thurston volume additivity](#prop:thurston-volume-additivity)" },
   ],
   tags: [
     "jsj-decomposition",

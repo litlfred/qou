@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:spectrahedral-phase-collapse",
   title: "Spectrahedral collapse and conformal rigidity",
   lean: {
-    ref: "qou:QOU.Archimedean.spectrahedral_phase_collapse",
+    ref: "qou:QOU.MassTheory.spectrahedral_phase_collapse",
     validation: "not_checked",
   },
   computation: {
@@ -22,6 +22,7 @@ export default proposition({
     "convention-c",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): — convention D is a root of the determinant as a polynomial in $z$, which is `QOU.Interactions.GramMatrixH3Symbolic.gramMatrixD_det_eq_zero` (with" },
     {
       kind: "caveat",
       date: "2026-08-24",

@@ -1,0 +1,1 @@
+Note that in type A the properties (M1), (U1) and (M2) deﬁne the Markov trace uniquely, and thus the preceding theorem recovers, up to a change of variable, the classical result: a-coeﬃcients of the Markov trace in type A are represented by the elementary symmetric polynomials in Jucys–Murphy elements.

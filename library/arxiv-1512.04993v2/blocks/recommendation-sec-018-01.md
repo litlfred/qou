@@ -1,1 +1,0 @@
-Our complexity growth calculation for far from extremal charged black holes leads to the action growth estimate $d\CA/dt \sim TS$, so we must compare $TS$ with $(M - \mu Q) - (M - \mu Q)_{\text{gs}}$ to check the bound.

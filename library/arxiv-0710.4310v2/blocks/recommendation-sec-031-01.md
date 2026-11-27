@@ -1,1 +1,0 @@
-This can be done (and will appear in a future work), however, it will only be, a priori, defined up to multiplication by central elements of $E$, and thus it should not define holonomies $\Pc_2(M,*) \to \C(\Gc)$, unless we restrict to elements of $\pi_2^2(M,*)$, as in [@MP].

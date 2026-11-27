@@ -1,1 +1,0 @@
-It should be noted that the contributions of topologically nontrivial maps from the source circle to the target circle are, strictly speaking, beyond our usual setting of perturbation theory, since they are exponentially small in h.

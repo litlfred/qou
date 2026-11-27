@@ -1,0 +1,1 @@
+— For a complex number ^ e C , the above proof implies that the correspondence described in Theorem 1.2.8 holds true ^ ^(Yfc)? 2 < k ^ n, are diagonalizable. This condition is satisfied if (p is completely reducible.

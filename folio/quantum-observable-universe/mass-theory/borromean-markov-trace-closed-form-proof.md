@@ -1,4 +1,4 @@
-**Proof.** The Jones polynomial of the Borromean rings is
+The Jones polynomial of the Borromean rings is
 \cite{murasugi1996}:
 
 $$
@@ -84,9 +84,8 @@ Frobenius expansion $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi^\lambda$.
 >    convention of *the closed form above* — with weights
 >    $y_{(3)} = [4]_q/[2]_q^3$, $y_{(2,1)} = 1/[2]_q^2$,
 >    $y_{(1^3)} = 0$ identically
->    ([`prop:h3-markov-wenzl-weights`](h3-markov-wenzl-weights.md));
-> 2. the **Wenzl-bridge / Ocneanu** normalisation (producer
->    `y-lambda-wenzl-bridge-symbolic-witness.json`, used by
+>    ([Closed-form Jones/Temperley–Lieb weights on $H_3(q)$ (Borromean Jones polynomial)](h3-markov-wenzl-weights.md));
+> 2. the **Wenzl-bridge / Ocneanu** normalisation (used by
 >    the formal derivation), whose
 >    weights are all non-zero and whose trace value on
 >    $\beta_{\mathrm{Bor}}$ **differs** from the closed form above
@@ -195,7 +194,7 @@ The argument needs three conditions on $\beta \in B_n$:
 Conditions 1 and 2 alone do not suffice, even at $H_3$. The pure,
 writhe-zero braid $\sigma_1^2 \sigma_2^{-2}$ has
 $\chi^{(2,1)} = 2 + 3h^2 + h^4$ and
-$\mathrm{tr}_M = 1 + \tfrac34 h^2 + O(h^4)$ under convention D.
+$\mathrm{tr}_M = 1 + \tfrac34 h^2 + O(h^4)$ at $z = q^{3}/(q^{2}+1)$.
 
 Cross-isotope verification: the deuteron ($H_6$), tritium ($H_9$),
 and ${}^3\mathrm{He}$ ($H_9$) atom braids have $h^2 \ne 0$

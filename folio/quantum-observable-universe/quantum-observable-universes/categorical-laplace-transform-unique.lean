@@ -1,5 +1,5 @@
-import QOU.Basic
-import QOU.QuantumObservableUniverses.QIntegralTransforms
+import QOU.Core.Basic
+import QOU.Core.QIntegralTransforms
 
 
 /-!

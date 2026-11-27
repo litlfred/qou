@@ -1,0 +1,1 @@
+DJ(m) n (q), DJ(m)(x, q) and DJ(m)(q) are q-holonomic func- tions of (m, n), (m, x) and m, respectively. Linear q-diﬀerence equations for these functions can be obtained from one for the Habiro polynomials Hk(q).

@@ -20,7 +20,10 @@ export default definition({
   defines: ["octonion-algebra"],
   // Points at the canonical product in the library tree; no sibling .lean,
   // per the no-shadowing-stubs rule (AGENTS.md §0a).
-  lean: { ref: "qou:QOU.MathlibExt.OctonionDerivations.octMul" },
+  lean: { ref: "qou:BraidKnotOctonion.OctonionDerivations.octMul" },
   cites: ["baez2002", "albuquerque-majid1999"],
   tags: ["octonion", "division-algebra", "G2", "color", "eightfold"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): matching the\nmultiplication `octMul` fixed in the Lean sibling.\n\nThe Lean sibling realises the product over $\\mathbb{Q}$ in exact rational\narithmetic." },
+  ],
 });

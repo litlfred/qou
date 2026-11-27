@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1811.05376v4",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1811.05376v4/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -29,6 +29,18 @@
     "library/arxiv-1811.05376v4/sections/sec-014"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres — For a Seifert ﬁbered homology sphere X we show that the q-series invariant ˆZ0(X; q) introduced by\n\n**Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres**\n\n*Fibered Homology Spheres*\n\n40 pp, 16 sections.\n\n**Abstract.** For a Seifert ﬁbered homology sphere X we show that the q-series invariant ˆZ0(X; q) introduced by Gukov-Pei-Putrov-Vafa, is a resummation of the Ohtsuki series Z0(X). We show that for every even k ∈N there exists a full asymptotic expansion of ˆZ0(X; q) for q tending to e2πi/k, and in particular that the limit ˆZ0(X; e2πi/k) exists and is equal to the WRT quantum invariant τk(X). We show that the poles of the Borel transform of Z0(X) coincide with the classical complex Chern-Simons values, which we further show classiﬁes the corresponding components of the moduli space of ﬂat SL(2, C)-connections.\n\n**Outline.** Front matter; 1 Complex Chern-Simons theory on X; 1.1 The moduli space and complex Chern-Simons ; 2 The Borel transform and Complex Cherns-Simon; 2.1 Resummation of the WRT invariant; 2.2 Resurgence of the generating function; 3 A resurgence formula for the GPPV invariant; 3.1 Proof of Theorem 3; 4 The asymptotic expansion of the GPPV invaria; 4.1 Proof of Theorem 4; 4.1.1 The decomposition of the GPPV invariant; 4.1.2 Asymptotic expansions of q-series with p; 4.1.3 The asymptotic expansion of the GPPV inv; Appendix A Resurgence and resummation; A.1 Resurgent functions and the Borel transfor; A.2 Borel-Laplace resummation",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -52,8 +64,8 @@
       "stamp_date": "23 Oct 2020"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

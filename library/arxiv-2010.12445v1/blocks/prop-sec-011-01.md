@@ -1,0 +1,1 @@
+Let X and C be as in 5.1. The following conditions are equivalent: 1) (if X is quasi-separated (see [Ton20, Def 1.4])) the morphism OFibX,C →PC∗OX is an isomorphism; 2) the functor Vect(FibX ,C) →Vect(X) is fully faithful; 3) the functor G∗: C →Vect(FibX ,C) is fully faithful. 4) the functor G∗(C) →Vect(X) is faithful

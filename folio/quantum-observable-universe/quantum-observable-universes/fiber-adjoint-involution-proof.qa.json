@@ -1021,6 +1021,22 @@
         "severity": "major",
         "evidence": "The ref is a structure, never asserted. The statement is ill-typed: σ: P(V) ↪ Ad(A) cannot be an involution (the proof's involution is 2σ(ρ) ∈ End V), and ∫_A: Ad(A) ≅ A^∨ in the diagram does not typecheck. Observability is proved by Schur, not by the non-degeneracy the statement credits.",
         "notes": "Hand review 2026-11-15 (statement vs narrative proof); issue #8020. "
+      },
+      {
+        "field_hash": {
+          "md": "f61820cd3938",
+          "ts": "90a0f65ed5cf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:07:25.477Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "[re-stamp 2026-11-21] Diff read since the 2026-11-15 review: voice changes ('we' to impersonal) and label references replaced by descriptive pointers. No change to the mathematics or the Lean, so the earlier verdict stands. Earlier evidence: The ref is a structure, never asserted. The statement is ill-typed: σ: P(V) ↪ Ad(A) cannot be an involution (the proof's involution is 2σ(ρ) ∈ End V), and ∫_A: Ad(A) ≅ A^∨ in the diagram does not typecheck. Observability is proved by Schur, not by the non-degeneracy the statement credits."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1747,6 +1763,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:55:15.033Z",
+  "updated_at": "2026-11-21T08:07:25.477Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

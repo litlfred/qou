@@ -1,1 +1,0 @@
-If this intersection is only triangular discs then $S_{n+1}$ would descend to an embedded normal surface in $\T_n$, and so $S_{n+1}\cap \BThree$ must contain at least one connected component with at least one quad.

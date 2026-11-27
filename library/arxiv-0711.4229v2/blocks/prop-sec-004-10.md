@@ -1,0 +1,1 @@
+Let L be an element of LA(J) with a circle component colored by W ∈Ob(C). If W is the only color of L in A(J), then we additionally assume that W ∗∈A(J) and S′(W, W ∗)̸ = 0. Let L−be obtained from L by reversing the orientation of the W-colored component and changing its color to W ∗. Then F ′(L) = F ′(L−).

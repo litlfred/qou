@@ -1,0 +1,1 @@
+The pull-back homomorphisms i∗and j∗on characters are an epimorphism resp. an isomorphism Π(Xs)l Π(X)l oo ∼ / Π(Xη)l. In particular, for all open dense subsets Us ⊆Π(Xs)l and Uη ⊆Π(Xη)l one can ﬁnd χ ∈Π(X)l such that χs ∈Us and χη ∈Uη.

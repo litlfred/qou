@@ -991,6 +991,23 @@
         "reviewed_at": "2026-11-16T07:13:29.818Z",
         "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
         "evidence": "Conjecture block: statement-to-Lean equivalence is not applicable; the Lean carrier is a conjecture class, not a proof."
+      },
+      {
+        "field_hash": {
+          "md": "9ccd6a121b1b",
+          "ts": "96d6ea1aec0f",
+          "lean": "d8c972b7f2fe",
+          "lean_statement": "832571f8b269"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T18:13:36.918Z",
+        "reviewed_sha": "677b0a1284456bd582792110bdc22f48ab47322d",
+        "evidence": "Re-read 2026-11-17. Conjecture block; its Lean is a conjecture carrier, not a proof, so statement-to-Lean equivalence does not apply."
       }
     ],
     "proof-statement-integrity": [
@@ -1885,6 +1902,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-16T07:13:29.818Z",
+  "updated_at": "2026-11-17T18:13:36.918Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

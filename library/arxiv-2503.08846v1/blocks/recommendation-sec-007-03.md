@@ -1,1 +1,0 @@
-The axioms also instruct us about the inner product: If by gluing a pair of manifolds along a common appropriately oriented boundary we get a manifold with no boundary, the result should correspond to a C-number.

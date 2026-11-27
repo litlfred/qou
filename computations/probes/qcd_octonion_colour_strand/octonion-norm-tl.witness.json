@@ -1,0 +1,69 @@
+{
+ "producer": "computations/probes/qcd_octonion_colour_strand/octonion_norm_tl_probe.py",
+ "prereg": "computations/probes/qcd_octonion_colour_strand/PREREG.md (S1 follow-up)",
+ "arithmetic": "exact rationals (fractions.Fraction, sympy Rational); no floats",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "classical q = 1 octonions; no q0",
+ "hecke_parameter_qprime": "q' + 1/q' = 7, q' = phi^(+-4) = (7 +- 3 sqrt 5)/2",
+ "u_roots": [
+  "-7/2 - 3*sqrt(5)/2",
+  "-7/2 + 3*sqrt(5)/2"
+ ],
+ "checks": [
+  {
+   "check": "O: alternative and non-associative",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "T1 e^2 = 7 e",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "T1 e1 e2 e1 = e1 and e2 e1 e2 = e2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "T1 braid defect of 1+u e is u(u^2+delta u+1)(e1-e2) (TL relations)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "T1 Hecke parameter q' with q'+1/q' = 7 is phi^(+-4)",
+   "pass": true,
+   "detail": "[7/2 - 3*sqrt(5)/2, 3*sqrt(5)/2 + 7/2]"
+  },
+  {
+   "check": "T2 dim su(3)_e = Stab_{Der O}(e7) = 8",
+   "pass": true,
+   "detail": "8"
+  },
+  {
+   "check": "T2 primitive colour coproduct commutes with e (so with sigma = 1 + u e)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "T2 L_{e7} restricted to e7-perp squares to -1 (the 3 + 3bar complex structure)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "T3 e1 phi = 0 and e2 phi = 0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "T3 phi is su(3)_e-invariant (colour singlet in 7^(x)3)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "T3 hence sigma_1 phi = sigma_2 phi = phi for every u: phi spans the one-row character of H_3(q')",
+   "pass": true,
+   "detail": "follows from e1 phi = e2 phi = 0"
+  }
+ ]
+}

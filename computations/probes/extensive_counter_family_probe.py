@@ -96,6 +96,7 @@ Usage:
 from __future__ import annotations
 
 # Path bridge (subdirectory refactor — Phase 1, 2026-06-02).
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
@@ -210,7 +211,7 @@ def main() -> int:
         source=f"family maximum {mp.nstr(best, 8)} MeV/nucleon AT m_e vs the empirical B/A "
                f"plateau {B_OVER_A_PLATEAU} MeV/nucleon (independent: nuclear data). At "
                f"E_0 = m_e/(q0(q0-1)) the same maximum is "
-               f"{mp.nstr(best / (q * (q - 1)), 8)} MeV/nucleon and the statement is FALSE.",
+               f"{mp.nstr(_qbeta_e0.order_zero_scaled(best, q), 8)} MeV/nucleon and the statement is FALSE.",
     )
 
     w.add_parameter("q0", mp.nstr(q, 30))
@@ -251,7 +252,8 @@ def main() -> int:
                        "1.50x when for A1 it is 6.0-8.0x."),
     })
 
-    e0_ratio = 1 / (q * (q - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    e0_ratio = _qbeta_e0.order_zero_scaled(1, q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
     w.add_data("SCALE_CORRECTION_2026_08_31", {
         "scale_ratio_E0_over_me": mp.nstr(e0_ratio, 20),
         "corrected_grid_MeV_per_nucleon": {

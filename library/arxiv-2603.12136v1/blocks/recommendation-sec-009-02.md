@@ -1,1 +1,0 @@
-Thus, bipolar parts must always contain pairs of variables and [\[def_symmetric\]](#def_symmetric){reference-type="ref" reference="def_symmetric"}[\[def_symmetric_col_bipolar\]](#def_symmetric_col_bipolar){reference-type="ref" reference="def_symmetric_col_bipolar"} follows.

@@ -5,7 +5,7 @@ export default proposition({
   title:
     "$c_2 = -1$ in the $\\mathfrak{Q}_\\beta$ precision ladder is structural — the $(1 - b^2 \\cdot \\hbar_q^4)$ N=2 factor IS $(1 - u^2)$ with $u = b \\cdot \\hbar_q^2$, hence the $(1 + c_2 \\cdot u^2)$ coefficient is exactly $-1$ by ring identity",
   lean: {
-    ref: "qou:QOU.QBeta.C2Structural.c_2_eq_neg_one_structural",
+    ref: "qou:QOU.Nuclear.QBeta.C2Structural.c_2_eq_neg_one_structural",
     validation: "not_checked",
   },
   uses: [

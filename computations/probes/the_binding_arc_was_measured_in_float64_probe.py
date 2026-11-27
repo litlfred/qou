@@ -653,7 +653,7 @@ def main() -> int:
             "value is a no-op: a a' = -1/[rho]^2 exactly, and a branching swap "
             "forces |rho| >= 2, so the radicand is non-negative. It is retained "
             "to mirror `build_seminormal_matrices_mp` letter for letter.")
-        print(f"\nWitness: {wb.save()}")
+        print(f"\nWitness: {wb.save(extra={'q0Anchor': 'proton', 'q0Value': Q_50_DIGIT_STR, 'q0AnchorReason': 'q is MPF(Q_50_DIGIT_STR), the proton pin'})}")
     except Exception as e:  # pragma: no cover
         print(f"\n(witness emit skipped: {e})")
 

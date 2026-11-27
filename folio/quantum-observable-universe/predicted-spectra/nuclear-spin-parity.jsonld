@@ -1,13 +1,14 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-nuclear-spin-parity",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:nuclear-spin-parity",
@@ -23,7 +24,7 @@
     "nitrogen-14",
     "statistics"
   ],
-  "leanRef": "qou:QOU.Archimedean.nuclear_spin_parity",
+  "leanRef": "qou:QOU.MassTheory.nuclear_spin_parity",
   "text": "nuclear-spin-parity.md",
   "leanSource": "nuclear-spin-parity.lean",
   "provenance": "authored"

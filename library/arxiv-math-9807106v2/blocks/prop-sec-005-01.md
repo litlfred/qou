@@ -1,0 +1,1 @@
+Let x , y ∈W(+) p , µ ∈Ep . Then χ(p) x (µ) χ(p) y (µ) = X z∈W(+) p (p)N z x,y χ(p) z (µ) , (6.20) where (p)N z x,y = X w′∈W [z·kΛ0] det(w′) mx w′ z y−1 = X w∈W [p] det(w) mx zwy−1 = X w∈W [p] det(w) N zw x,y . (6.21) Furthermore the equality (1.4) holds true.

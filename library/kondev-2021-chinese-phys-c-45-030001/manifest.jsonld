@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kondev-2021-chinese-phys-c-45-030001",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kondev-2021-chinese-phys-c-45-030001/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "The NUBASE2020 evaluation of nuclear physics properties *",
+  "title": "The NUBASE2020 evaluation of nuclear physics properties",
   "contains": [
     "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-front-matter",
     "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-000",
@@ -132,6 +132,18 @@
     "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-117"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The NUBASE2020 evaluation of nuclear physics properties — 119 sections: Front matter; Introduction; Isomers\n\n**The NUBASE2020 evaluation of nuclear physics properties**\n\n*View the article online for updates and enhancements*\n\n181 pp, 119 sections.\n\n**Outline.** Front matter; 1 Introduction; 2.2 Isomers; 2.1 Mass excess; 2.3 Half-life; 2.4 Spin and parity; 2.5 Decay modes and their intensities; 2.6 Isotopic abundances; 2.7 Year of discovery; 2.8 References and Dissemination; 3.1 Trends in neighboring nuclei (TNN); 3.2 Averaging procedure and uncertainties; 3.3 Symmetrization of asymmetric uncertainties; 3.4 Rounding policy; 4 Conclusions and outlook; References; 5 Acknowledgments; 15 MMC12 J",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "kondev-2021-chinese-phys-c-45-030001",
@@ -143,8 +155,8 @@
     "pages": 181,
     "arxiv": null,
     "doi": "10.1088/1674-1137/abddae",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

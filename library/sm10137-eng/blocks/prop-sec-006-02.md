@@ -1,0 +1,1 @@
+Let the kernel K(x, y) of an integral operator K be absolutely con- tinuous with respect to y on [a, b]. Assume that K = Kχ[a,b]. Consider the operator ∂yK with kernel ∂K(x, y)/∂y and assume that ∂yK ∈J2. Then ∥K∥J1 ⩽∥K∥+ (b −a) √ ∥∂yK∥J2. (7.3)

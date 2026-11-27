@@ -1,1 +1,0 @@
-Before giving an outline on how the continuum limit analysis works, we briefly mention the results as derived in [39, Chapter 5]: 3In order to avoid confusion, we note that these masses should be considered as the “bare masses,” i.e. the masses on the Planck energy.

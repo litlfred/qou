@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1208.1663v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1208.1663v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -40,6 +40,18 @@
     "library/arxiv-1208.1663v2/sections/sec-025"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary\n\n**THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES**\n\n*STAVROS GAROUFALIDIS*\n\n29 pp, 27 sections.\n\n**Abstract.** The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary components. For a ﬁxed 2r tuple of integers, the index takes values in the set of q-series with integer coeﬃcients. Our goal is to give an axiomatic deﬁnition of the tetrahedron index, and a proof that the domain of the 3D index consists precisely of the set of ideal triangulations that support an index structure. The latter is a generalization of a strict angle structure. We also prove that the 3D index is invariant under 3-2 moves, but not in general under 2-3 moves.\n\n**Outline.** Front matter; 1 Introduction; 2 Index structures, angle structures and the 3; 2.2 Angle structures; 2.3 The Neumann-Zagier matrices; 2.4 On the topological invariance of the index; 3 Axioms for the tetrahedron index; 4 Properties of a tetrahedron index; 4.1 Part (d) of Theorem 3.2; 4.2 The rank of V: part (a) of Theorem 3.2; 4.3 The rank of V+: part (b) of Theorem 3.2; 4.4 Proof of triality: part (c) of Theorem 3.2; 4.6 The degree of I; 4.7 Proof of Theorem 3.7; 5 Convergence of the 3D index; 5.1 Proof of Theorem 2.4; 5.2 An independent proof of convergence for st; 6 Invariance of the 3D index under 23 moves an",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -61,8 +73,8 @@
       "stamp_date": "7 Oct 2015"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

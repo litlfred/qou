@@ -1,0 +1,283 @@
+{
+  "engine": "mpmath-80dps",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-24T00:06:11.715893+00:00",
+  "commitSha": "01a6d11bea83f0b4e5911ddb871003992eb92117",
+  "assertions": [
+    {
+      "name": "proton_anchor_self_consistency_80dps",
+      "computed": "1.07952106938681e-77",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "q_at(80) Borromean proton-electron anchor"
+    },
+    {
+      "name": "topological_writhe_cancellation_4_1_borromean_and_paired_T29",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "StrongCPWritheCancellationAndStringTension.substrate_and_gluon_writhe_identities"
+    },
+    {
+      "name": "su3_singlet_projector_sl3_invariance_and_balanced_parity",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "StrongCPWritheCancellationAndStringTension.{singletProj3_idempotent_and_trace_one,sl3_action_leviCivita3}"
+    },
+    {
+      "name": "hermitian_yukawa_im_det_Mu_Md_zero_below_1e_minus_78",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "StrongCPWritheCancellationAndStringTension.{det_mul_hermitian3_im_eq_zero,det_mul_gramDiag3_real_and_pos}"
+    },
+    {
+      "name": "nonzero_jarlskog_near_3p5e_minus_5_and_commutator_cube_identity",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "StrongCPWritheCancellationAndStringTension.{jarlskog_commutator_cube_trace,strong_cp_zero_coexists_with_jarlskog_cp}"
+    },
+    {
+      "name": "one_loop_chiral_dressing_im_det_zero_and_three_loop_ew_below_pdg",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "StrongCPWritheCancellationAndStringTension.{det_chiralDressed_im_eq_zero,abs_thetaBarEffective_le_of_tree_zero}"
+    },
+    {
+      "name": "su3_casimir_9_over_4_markov_z3_window_and_creutz_cancellation",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "StrongCPWritheCancellationAndStringTension.{su3_casimir_scaling_and_baryon_half_law,markovZ3_confinement_bounds,creutz_ratio_cancels_perimeter}"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "sm8w-strong-cp-string-tension",
+  "scriptFile": "sm8w_strong_cp_string_tension_probe.py",
+  "scriptHash": "f492cdf93395",
+  "scriptCommitSha": "01a6d11bea83f0b4e5911ddb871003992eb92117",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/sm8w_strong_cp_string_tension/sm8w_strong_cp_string_tension_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/sm8w_strong_cp_string_tension/sm8w_strong_cp_string_tension_probe.py"
+  },
+  "description": "80-dps pre-registered verification of QOU/StandardModel/StrongCPWritheCancellationAndStringTension.lean (bean qou-tcpx / Q-Gap-11): closed SU(3)_c colour-singlet & mirror-paired T(2,9) writhe cancellation (theta_top = 0), 3x3 Hermitian / Nelson-Barr quark mass-determinant reality (Im det(M_u M_d) = 0, Re det(M_u M_d) > 0) coexisting with non-zero CKM Jarlskog J_CP = 3.513e-5, 1-loop chiral dressing determinant reality, 3-loop Ellis-Gaillard radiative bounds, SU(3)_c Casimir 9/4 scaling, and zero-parameter rank-3 Markov z_3(q_0) Wilson string-tension candidates.",
+  "parameters": {
+    "bean": "qou-tcpx",
+    "parentEpic": "qou-sm8w",
+    "gapId": "Q-Gap-11",
+    "work_dps": 80,
+    "out_dps": 50,
+    "leanModule": "QOU.StandardModel.StrongCPWritheCancellationAndStringTension",
+    "preregistration": "computations/probes/sm8w_strong_cp_string_tension/PREREGISTRATION.md",
+    "selectedCandidate": "none",
+    "q0ProtonAnchor": "1.1099785827513808075916690956107688798744991218736",
+    "h0SkeinDefect": "0.20906029879563931543084621312967494385975749526302",
+    "mElectronMeVCAL1": "0.51099895069",
+    "mProtonQOUMeV": "938.27208942732424736394000000000000000000000000000",
+    "mPionChargedMeVCAL3": "139.57039"
+  },
+  "data": {
+    "armA_strongCP": {
+      "writheFigEight": 0,
+      "writheBorromean": 0,
+      "writheSingleT29": 9,
+      "writheMirrorT29": -9,
+      "writhePairedT29": 0,
+      "singleT29CPAsymmetryAtQ0": "2.1666000835514182499532437954221779175359042942099",
+      "pairedT29PhaseResidual": "0.0",
+      "singletProjectorTrace": "1",
+      "singletNormSquared": "6",
+      "jarlskogSubstrateBraiding": "0.000035127054758813659187506432349605148299943277618882",
+      "jarlskogFormulaResidual": "6.43444698683504e-86",
+      "maxOffdiagImMuRotated": "0.15954235790492512220",
+      "maxOffdiagImMdRotated": "0.031006580675139603152",
+      "nonHermiticityOfProductMuMd": "0.0070201497861686366233",
+      "reDetMuMd": "0.00000000000019119893622046557190456807168084253736340551545799",
+      "absImDetMuMd": "1.96049556630130e-86",
+      "thetaBarTreeRadians": "1.02536949475530e-73",
+      "imTrCommutatorCube": "2.9745038928085116166020771110573698288812233333705e-16",
+      "jarlskogCommutatorRelativeResidual": "1.89083434087251e-73",
+      "oneLoopDressedNonHermiticity": "3.8725643087303451670e-6",
+      "oneLoopDressedAbsImDet": "1.36983344055668e-86",
+      "threeLoopEllisGaillardEstimate": "2.5175784429076661176e-20",
+      "threeLoopConservativeEnvelope": "3.2028811161948873620e-22",
+      "inducedNeutronEdm3LoopEcm": "6.0421882629783986823e-36",
+      "inducedNeutronEdmEnvelopeEcm": "7.6869146788677296689e-38",
+      "pdg2024ThetaBarUpperBound": "1.000000000e-10",
+      "pdg2024NeutronEdmUpperBoundEcm": "1.800000000e-26",
+      "higherLoopCountertermStatus": "open_conditional_HigherLoopStrongCPFiniteHypothesis"
+    },
+    "armB_wilsonStringTension": {
+      "su3CasimirSinglet": "0",
+      "su3CasimirFundamental3": "4/3",
+      "su3CasimirSextet6": "10/3",
+      "su3CasimirAdjoint8": "3",
+      "su3CasimirDecuplet10": "6",
+      "casimirScalingRatioAdjOverFund": "9/4",
+      "baryonPairwiseOverMesonSingletRatio": "1/2",
+      "markovZ3AtQ0": "0.44930480909020786055515120160900762414255594456971",
+      "markovZ3SymAtQ0": "0.32854682137082318329716379676184136374103763293343",
+      "markovZ3NegAtQ0": "0.24024451029456854512430498847933268028279844930669",
+      "minusLnZ3AtQ0": "0.80005375944626103591038296040164745170039042910228",
+      "lnQInt3AtQ0": "1.1130759204048195728581018003208646428616232715892",
+      "creutzPerimeterCancellationMaxErr": "1.05421979432305e-81",
+      "latticeComparisonBandMeV": [
+        "420",
+        "440"
+      ],
+      "reggeReferenceSqrtSigmaMeV": "425.273899831",
+      "inBandZeroParamCandidates": [],
+      "near15PctZeroParamCandidates": [
+        "S2_pi_nc3",
+        "S3_pi_nc3_sym",
+        "S5b_rp_half"
+      ],
+      "missZeroParamCandidates": [
+        "S1_pi_bare",
+        "S4_mp_compton",
+        "S5a_rp_full",
+        "S6_rp_half_sym"
+      ],
+      "candidates": {
+        "S1_pi_bare": {
+          "isDiagnosticOnly": false,
+          "spacingNote": "a = lambda_pi = 1/m_pi (CAL-3)",
+          "aCalFm": "1.4138169310790237520357606522896518647491971868554",
+          "invACalMeV": "139.57039",
+          "sigmaHatDimensionless": "0.80005375944626103591038296040164745170039042910228",
+          "sqrtSigma3MeV": "124.83974623533843469868243392557885346609669668839",
+          "sqrtSigma8CasimirMeV": "187.25961935300765204802365088836828019914504503258",
+          "impliedReggeSlopeGeVInv2": "10.212083971711719369084715754827200195054668645476",
+          "pctDiffVs430MeV": "-70.9675008755",
+          "dLnSqrtSigmaDLnQAtQ0": "-1.70223479034",
+          "verdictVsLattice420To440": "MISS"
+        },
+        "S2_pi_nc3": {
+          "isDiagnosticOnly": false,
+          "spacingNote": "a = lambda_pi / 3 (N_c=3 pion subcell)",
+          "aCalFm": "0.47127231035967458401192021742988395491639906228515",
+          "invACalMeV": "418.71117000000000000000000000000000000000000000000",
+          "sigmaHatDimensionless": "0.80005375944626103591038296040164745170039042910228",
+          "sqrtSigma3MeV": "374.51923870601530409604730177673656039829009006516",
+          "sqrtSigma8CasimirMeV": "561.77885805902295614407095266510484059743513509774",
+          "impliedReggeSlopeGeVInv2": "1.1346759968568577076760795283141333550060742939417",
+          "pctDiffVs430MeV": "-12.9025026265",
+          "dLnSqrtSigmaDLnQAtQ0": "-1.70223479034",
+          "verdictVsLattice420To440": "NEAR_15PCT"
+        },
+        "S3_pi_nc3_sym": {
+          "isDiagnosticOnly": false,
+          "spacingNote": "a = lambda_pi / 3 with bar-sym [3]_q^-1",
+          "aCalFm": "0.47127231035967458401192021742988395491639906228515",
+          "invACalMeV": "418.71117000000000000000000000000000000000000000000",
+          "sigmaHatDimensionless": "1.1130759204048195728581018003208646428616232715892",
+          "sqrtSigma3MeV": "441.75038894641162044401685522433275345399638253989",
+          "sqrtSigma8CasimirMeV": "662.62558341961743066602528283649913018099457380983",
+          "impliedReggeSlopeGeVInv2": "0.81557940513940897518828548916747163047479101726774",
+          "pctDiffVs430MeV": "2.73264859219",
+          "dLnSqrtSigmaDLnQAtQ0": "0.124089160493",
+          "verdictVsLattice420To440": "NEAR_15PCT"
+        },
+        "S4_mp_compton": {
+          "isDiagnosticOnly": false,
+          "spacingNote": "a = lambda_p = 1/m_p(q_0)",
+          "aCalFm": "0.21030891005160483803878963611168156674071892804495",
+          "invACalMeV": "938.27208942732424736394000000000000000000000000000",
+          "sigmaHatDimensionless": "0.80005375944626103591038296040164745170039042910228",
+          "sqrtSigma3MeV": "839.24426623589666366801806220946688097291381701527",
+          "sqrtSigma8CasimirMeV": "1258.8663993538449955020270933142003214593707255229",
+          "impliedReggeSlopeGeVInv2": "0.22596613951279810030626971914222818096174204563799",
+          "pctDiffVs430MeV": "95.1730851711",
+          "dLnSqrtSigmaDLnQAtQ0": "-1.70223479034",
+          "verdictVsLattice420To440": "MISS"
+        },
+        "S5a_rp_full": {
+          "isDiagnosticOnly": false,
+          "spacingNote": "a = r_{p,QOU} = 4/m_p(q_0)",
+          "aCalFm": "0.84123564020641935215515854444672626696287571217979",
+          "invACalMeV": "234.56802235683106184098500000000000000000000000000",
+          "sigmaHatDimensionless": "0.80005375944626103591038296040164745170039042910228",
+          "sqrtSigma3MeV": "209.81106655897416591700451555236672024322845425382",
+          "sqrtSigma8CasimirMeV": "314.71659983846124887550677332855008036484268138073",
+          "impliedReggeSlopeGeVInv2": "3.6154582322047696049003155062756508953878727302078",
+          "pctDiffVs430MeV": "-51.2067287072",
+          "dLnSqrtSigmaDLnQAtQ0": "-1.70223479034",
+          "verdictVsLattice420To440": "MISS"
+        },
+        "S5b_rp_half": {
+          "isDiagnosticOnly": false,
+          "spacingNote": "a = r_{p,QOU}/2 = 2/m_p(q_0)",
+          "aCalFm": "0.42061782010320967607757927222336313348143785608989",
+          "invACalMeV": "469.13604471366212368197000000000000000000000000000",
+          "sigmaHatDimensionless": "0.80005375944626103591038296040164745170039042910228",
+          "sqrtSigma3MeV": "419.62213311794833183400903110473344048645690850764",
+          "sqrtSigma8CasimirMeV": "629.43319967692249775101354665710016072968536276146",
+          "impliedReggeSlopeGeVInv2": "0.90386455805119240122507887656891272384696818255195",
+          "pctDiffVs430MeV": "-2.41345741443",
+          "dLnSqrtSigmaDLnQAtQ0": "-1.70223479034",
+          "verdictVsLattice420To440": "NEAR_15PCT"
+        },
+        "S6_rp_half_sym": {
+          "isDiagnosticOnly": false,
+          "spacingNote": "a = r_{p,QOU}/2 with bar-sym [3]_q^-1",
+          "aCalFm": "0.42061782010320967607757927222336313348143785608989",
+          "invACalMeV": "469.13604471366212368197000000000000000000000000000",
+          "sigmaHatDimensionless": "1.1130759204048195728581018003208646428616232715892",
+          "sqrtSigma3MeV": "494.94984865352743353746200264252755625416519874745",
+          "sqrtSigma8CasimirMeV": "742.42477298029115030619300396379133438124779812117",
+          "impliedReggeSlopeGeVInv2": "0.64967737100636191393359421109575523695883552580080",
+          "pctDiffVs430MeV": "15.1046159659",
+          "dLnSqrtSigmaDLnQAtQ0": "0.124089160493",
+          "verdictVsLattice420To440": "MISS"
+        },
+        "S7_diag_codata_rp_half": {
+          "isDiagnosticOnly": true,
+          "spacingNote": "Diagnostic only: a = r_{p,CODATA}/2",
+          "aCalFm": "0.42037500000000000000000000000000000000000000000000",
+          "invACalMeV": "469.40703053060354657364117320659198032060113840337",
+          "sigmaHatDimensionless": "0.80005375944626103591038296040164745170039042910228",
+          "sqrtSigma3MeV": "419.86451834464536340825162612671868105523289534503",
+          "sqrtSigma8CasimirMeV": "629.79677751696804511237743919007802158284934301754",
+          "impliedReggeSlopeGeVInv2": "0.90282126828281656185641874917715631475830432717623",
+          "pctDiffVs430MeV": "-2.35708875706",
+          "dLnSqrtSigmaDLnQAtQ0": "-1.70223479034",
+          "verdictVsLattice420To440": "NEAR_15PCT"
+        }
+      }
+    }
+  },
+  "caveats": [
+    "1. Tree-level theta_bar_QCD = 0 rests on mirror-paired closed SU(3)_c colour-singlet writhe cancellation (theta_top = 0, excluding theta = pi at real q_0 > 1) and Hermiticity / positive congruence of tree-level Hecke mass operators (Im det(M_u M_d) = 1.96e-86 < 1e-78, Re det(M_u M_d) > 0 even with J_CP = 3.513e-5 != 0), plus exact determinant reality under factorized 1-loop chiral dressings (|Im det((I + Sigma_L) M_u M_d)| = 1.37e-86 < 1e-78); non-factorizable 3-loop+ electroweak-QCD shifts have finite Ellis-Gaillard magnitude 2.52e-20 (envelope 3.20e-22) << 1e-10, while UV counterterm finiteness remains open (HigherLoopStrongCPFiniteHypothesis). 2. The pre-registered substrate CKM angles (s12 = h0, s23 = h0^2, s13 = h0^3/[2]_q0, delta = pi/3) serve solely as a zero-parameter complex braiding test texture giving J_CP = 3.513e-5 (not a CKM angle derivation: s12 = 0.2091 differs from PDG |V_us| = 0.2243 by -6.79%). 3. All 7 zero-parameter Wilson string-tension candidates from z_3(q_0) = q_0^3/[3]_{q_0} = 0.449305 (and bar-symmetric 1/[3]_{q_0} = 0.328547) are reported verbatim without post-hoc selection (selectedCandidate = 'none', Rule 14): 0/7 lie strictly inside [420, 440] MeV; bare pion-Compton S1 (124.84 MeV, -70.97%), full proton-radius S5a (209.81 MeV, -51.21%), bare proton-Compton S4 (839.24 MeV, +95.17%), and S6_rp_half_sym (494.95 MeV, +15.10%) miss, while half-proton-radius Y-junction arm S5b_rp_half (419.62 MeV, -2.41% vs 430 MeV, -0.09% below 420 MeV), N_c=3 bar-symmetric pion-subcell S3_pi_nc3_sym (441.75 MeV, +2.73% vs 430 MeV, +0.40% above 440 MeV), and S2_pi_nc3 (374.52 MeV, -12.90%) bracket the 420-440 MeV lattice/Regge band pending a categorical derivation of a_cal."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

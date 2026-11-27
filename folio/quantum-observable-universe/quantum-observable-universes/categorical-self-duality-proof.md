@@ -1,4 +1,3 @@
-
 By the Bogomolny decomposition in the dagger category,
 
 $$

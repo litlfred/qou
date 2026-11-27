@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2601.15862v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2601.15862v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -18,6 +18,18 @@
     "library/arxiv-2601.15862v1/sections/sec-003"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Synthetic Differential Jet Bundles are Reduced — We have previously observed that the theory of solutions of par- tial differential equations, regarded as diffieties inside jet bundles, acquires a\n\n**Synthetic Differential Jet Bundles are Reduced**\n\n*GRIGORIOS GIOTOPOULOS, IGOR KHAVKINE, HISHAM SATI, AND URS SCHREIBER*\n\n16 pp, 5 sections.\n\n**Abstract.** We have previously observed that the theory of solutions of par- tial differential equations, regarded as diffieties inside jet bundles, acquires a powerful comonadic formulation after passage from the category of Fr´echet smooth manifolds to the Cahiers topos of formal smooth sets (a well-adapted model for Synthetic Differential Geometry). However, the tacit assumption that this passage preserves the projective limits that define infinite jet bundles had remained unproven. Here we provide a detailed proof.\n\n**Outline.** Front matter; 1 Introduction; 2 Statement and Proof; Appendix A. Background; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -40,8 +52,8 @@
       "stamp_date": "22 Jan 2026"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

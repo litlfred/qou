@@ -1,1 +1,0 @@
-This leads to the following rather telling reason for looking carefully at our special planar algebras among more general ones: if we introduce the generating function for the dimensions of a planar algebra, P∞ n=0 dim(Vn)zn, 10 we shall see that if the planar algebra satisﬁes reﬂection positivity, then this power series has non-zero radius of convergence.

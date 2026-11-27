@@ -1,4 +1,4 @@
-**Conjecture.** Fix a substrate datum: a candidate zeta function $\zeta$, its Chebyshev-type prime-counting function $\psi$, and the Reeb spectrum $\rho$ of the same substrate. The following are equivalent:
+Fix a substrate datum: a candidate zeta function $\zeta$, its Chebyshev-type prime-counting function $\psi$, and the Reeb spectrum $\rho$ of the same substrate. The following are equivalent:
 
 1. **Macroscopic stability.** $\psi(X) = X + O(X^{1/2 + \varepsilon})$ for every $\varepsilon > 0$.
 2. **Riemann hypothesis.** Every zero of $\zeta$ in the critical strip satisfies $\mathrm{Re}(s) = 1/2$.
@@ -6,30 +6,26 @@
 
 The three conditions are properties of **one** system. This is not a stylistic point: quantifying over them independently makes the statement false, as recorded below.
 
-The equivalence $(1) \Leftrightarrow (2)$ is classical in one direction — von Koch (1901) proved that the Riemann hypothesis implies the optimal Chebyshev error term, and the converse follows from the explicit formula, since a zero with $\mathrm{Re}(\rho) > 1/2$ makes the oscillatory contribution $X^{\rho}/\rho$ violate the bound. It is nonetheless carried here as a hypothesis rather than as an established input, because it is not available in the formal library. The equivalence $(2) \Leftrightarrow (3)$ is the framework's own claim and is **open**.
+The equivalence $(1) \Leftrightarrow (2)$ is classical in one direction — von Koch (1901) proved that the Riemann hypothesis implies the optimal Chebyshev error term, and the converse follows from the explicit formula, since a zero with $\mathrm{Re}(\rho) > 1/2$ makes the oscillatory contribution $X^{\rho}/\rho$ violate the bound. It is nonetheless carried here as a hypothesis rather than as an established input. The equivalence $(2) \Leftrightarrow (3)$ is the framework's own claim and is **open**.
 
 The algebraic substrate supplies a conditional framework: $q$-scale stability is proved, and macroscopic stability is what would require the Riemann hypothesis. The obstruction to extending the $q$-scale result is that the classical limit functor $\mathcal{L}$ is not full — the relative phases of the local spectra are lost in the adelic assembly.
 
-## Formalisation
+## Status
 
-The Lean sibling carries the statement as a conjecture class over a single datum, with **no instance**. The one theorem in the file is conditional on that class and derives the remaining equivalence $(1) \Leftrightarrow (3)$ by transitivity; it is a derivation from the hypotheses, not a restatement of one.
+The statement is carried as a single conjecture over one datum and is not established. The one result proved is conditional on it and derives the remaining equivalence $(1) \Leftrightarrow (3)$ by transitivity; it is a derivation from the hypotheses, not a restatement of one.
 
-## Two inconsistent axioms removed
+## Why independent quantification is inconsistent
 
-Until 2026-08-22 the Lean sibling asserted the two equivalences as axioms, each quantified over its two arguments **independently**:
+Quantifying the two equivalences over their arguments **independently** —
 
 $$
   \forall\, \psi\ \forall\, \zeta,\quad
   \mathrm{Stability}(\psi) \iff \mathrm{RH}(\zeta),
   \qquad
   \forall\, \zeta\ \forall\, \rho,\quad
-  \mathrm{RH}(\zeta) \iff \mathrm{Persistence}(\rho).
+  \mathrm{RH}(\zeta) \iff \mathrm{Persistence}(\rho)
 $$
 
-Both are inconsistent, and for the same reason. A statement of the form $\forall a\, \forall b,\ P(a) \iff Q(b)$ forces $P$ to be constant in $a$: fix any $b$ and the right-hand side no longer varies, so all values of $P$ agree. But $\mathrm{RH}$ is not constant in $\zeta$. It holds vacuously at $\zeta \equiv 1$, which is never zero, and fails at $\zeta \equiv 0$, for which every point of the strip is a zero and $s = 1/4$ would have to satisfy $1/4 = 1/2$. Substituting both into either axiom, with the other argument held fixed, yields a contradiction. This is machine-checked: a standalone file restating the second axiom derives $\bot$ from it in four lines, with the axiom audit confirming that the derivation rests on nothing else.
+— produces an inconsistent theory for a purely logical reason. Any axiom of the form $\forall a\, \forall b,\ P(a) \iff Q(b)$ forces $P$ to be constant in $a$: fixing $b$ freezes the right-hand side, so all values of $P$ must agree. Yet $\mathrm{RH}(\zeta)$ is not constant in $\zeta$: it holds vacuously at $\zeta \equiv 1$ (which has no zeros) and fails at $\zeta \equiv 0$ (for which every point of the strip is a zero, forcing $1/4 = 1/2$ at $s = 1/4$). Substituting both into either independently quantified biconditional with the second argument held fixed yields a contradiction.
 
-A second and independent route was available for the second axiom. The proposition it called *spectral persistence* read "if every level is $1/2$ then level $0$ is $1/2$", which is instantiation and is provable outright, so the axiom equated $\mathrm{RH}(\zeta)$ with a tautology for every $\zeta$. The replacement condition (3) constrains the whole family instead, and has content.
-
-Nothing downstream inherited the inconsistency. The containment was not by design: the file had never compiled at all, and content-block Lean siblings sit outside the paper package's build globs, so nothing had ever checked it.
-
-The removed axioms were headed as external results of von Koch and of Weil. The von Koch attribution is accurate for the direction it names and is retained as such above. The Weil attribution was not: the explicit formula is a duality between zeros and prime powers, and no formulation of it makes the Riemann hypothesis equivalent to a proposition in which $\zeta$ does not occur. It is withdrawn.
+Similarly, weakening condition (3) to the implication "if every level has real part $1/2$, then level $0$ has real part $1/2$" reduces the right-hand side to universal instantiation, a tautology, which again cannot be equivalent to $\mathrm{RH}(\zeta)$ across varying $\zeta$. Constraining the entire family $\rho(n, i)$ in condition (3) over a single bound datum $(\zeta, \psi, \rho)$ avoids both pathologies. Likewise, Weil's explicit formula establishes a duality between the zeros and prime-power coefficients of the *same* $\zeta$; no formulation of it equates $\mathrm{RH}(\zeta)$ to a predicate in which $\zeta$ does not occur.

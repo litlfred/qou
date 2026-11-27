@@ -1,13 +1,14 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-r-matrix-braiding-structure",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:r-matrix-braiding-structure",
@@ -27,7 +28,7 @@
     "quantum-group",
     "braiding"
   ],
-  "leanRef": "qou:QOU.Braiding.r_matrix_braiding_structure",
+  "leanRef": "qou:BraidKnotOctonion.r_matrix_braiding_structure",
   "text": "r-matrix-braiding-structure.md",
   "leanSource": "r-matrix-braiding-structure.lean",
   "provenance": "authored"

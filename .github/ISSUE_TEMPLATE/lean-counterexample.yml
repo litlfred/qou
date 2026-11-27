@@ -1,0 +1,23 @@
+name: Lean counterexample
+description: A stated result is false or vacuous, shown by a Lean snippet.
+labels: ["evidence:lean"]
+body:
+  - type: input
+    id: declaration
+    attributes:
+      label: Declaration or block
+      description: The Lean declaration (QOU.…) or block label (prop:…) it concerns.
+    validations: { required: true }
+  - type: textarea
+    id: snippet
+    attributes:
+      label: Lean snippet
+      description: Self-contained; compiles against this repo's Lake workspace with -DautoImplicit=false.
+      render: lean
+    validations: { required: true }
+  - type: textarea
+    id: output
+    attributes:
+      label: Command and output
+      description: The exact command you ran and what Lean printed.
+    validations: { required: true }

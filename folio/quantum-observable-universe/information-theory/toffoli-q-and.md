@@ -12,7 +12,7 @@ The $3$-strand Toffoli braid contains $\binom{3}{2} = 3$ crossings. A single cro
 At the Big Bang, each Planck step equals one unit of time and the Toffoli gate executes in the shortest possible time. Near the classical limit the Planck step diverges and the gate freezes: braiding ceases to operate, and the q-AND amplitude vanishes as $(q - 1) \to 0$.
 
 **Factor anatomy.**
-In the canonical convention $z_D = q^3/(q^2+1)$,
+With Markov parameter $z = q^3/(q^2+1)$,
 $$
   P_{7,6}(q) = -\,\frac{(q-1)(q+1)\bigl(q^{6} + q^{4} + 2q^{2} + 1\bigr)}{2q\,(q^{2}+1)^{2}} .
 $$

@@ -1,0 +1,15 @@
+left-closed crossing : [[(q**4 + q**2 - 1)/q**2, 0], [0, 1]]
+right-closed crossing: [[q**2, 0], [0, q**2]]
+spectator on the left: T_X/T_1 by block charge -1, 0, 1, 2 (before dividing by the spectator's own trace q + 1/q):
+   charge -1: 1
+   charge  0: q**4*(q**8 - 4*q**6 + 5*q**4 - 7*q**2 + 2)/(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)
+   charge  1: (q**14 - 2*q**12 - q**10 + 3*q**8 - 8*q**6 + 6*q**4 - 3*q**2 + 1)/(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)
+   charge  2: (q**4 + q**2 - 1)/q**2
+spectator on the right: T_X/T_1 by block charge -1, 0, 1, 2 (before dividing by the spectator's own trace q + 1/q):
+   charge -1: q**2
+   charge  0: q**2
+   charge  1: q**2
+   charge  2: q**2
+right: same in every charge sector: True
+left : same in every charge sector: False
+PASS

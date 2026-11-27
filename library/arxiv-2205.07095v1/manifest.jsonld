@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2205.07095v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2205.07095v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -25,6 +25,18 @@
     "library/arxiv-2205.07095v1/sections/sec-010"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Virial Expansions for Correlation Functions in Canonical Ensemble — The inﬁnite set of coupled integral nonlinear equations for correlation func- tions in the case of classical canonical ensemble is\n\n**Virial Expansions for Correlation Functions in Canonical Ensemble**\n\n*Institute of Mathematics, Ukrainian National Academy of Sciences, Kyiv, Ukraine*\n\n14 pp, 12 sections.\n\n**Abstract.** The inﬁnite set of coupled integral nonlinear equations for correlation func- tions in the case of classical canonical ensemble is considered. Some kind of graph expansions of correlation functions in the density parameter are constructed. Existing of unique solutions for small value of density and high temperature is discussed.\n\n**Outline.** Front matter; 1 Introduction.; 2 On some mathematical concepts; 2.1 Configuration spaces and Lebesgue-Poisson ; 2.2 Algebra of generating functionals.; 3 Description of the system of interacting par; 3.1 Interaction between particles; 3.2 Derivation of equations for correlation fu; 4 Construction of expansion for correlation fu; 4.1 Solution of equations for correlation func; 4.2 Graphic interpretation of solutions.; 4.3 Conclusion on the convergence of the expan",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {
@@ -48,8 +60,8 @@
       "stamp_date": "14 May 2022"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

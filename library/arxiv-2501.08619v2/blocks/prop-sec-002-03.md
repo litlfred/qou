@@ -1,0 +1,1 @@
+In this paper, we determine the Compton amplitude subtraction function over the range 1 ≲Q2 ≲16 GeV2 at the standard subtraction point using the Feynman- Hellmann technique, which has previously been used to determine the structure function moments for the for- ward [28–30] and off-forward [31, 32] Compton ampli- tudes.

@@ -1,1 +1,0 @@
-In order to account for the infinite cancellations between bosons and fermions in $\mathcal{H}_m$, the index should really be defined with a regulator as in [\[IH\]](#IH){reference-type="eqref" reference="IH"}.

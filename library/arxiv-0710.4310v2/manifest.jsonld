@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0710.4310v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0710.4310v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -51,6 +51,18 @@
     "library/arxiv-0710.4310v2/sections/sec-036"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On Two-Dimensional Holonomy — We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold (M, ∗) as the categorical group whose objects are rank-1 homotopy classes of based\n\n**On Two-Dimensional Holonomy**\n\n*João Faria Martins*\n\n46 pp, 38 sections.\n\n**Abstract.** We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold (M, ∗) as the categorical group whose objects are rank-1 homotopy classes of based loops on M, and whose morphisms are rank- 2 homotopy classes of homotopies between based loops on M. Here two maps are rank-n homotopic, when the rank of the diﬀerential of the homo- topy between them equals n. Let C(G) be a Lie categorical group coming from a Lie crossed module G = (∂: E →G, ⊲). We construct categorical holonomies, deﬁned to be smooth morphisms P2(M, ∗) →C(G), by using a notion of categorical connections, being a pair (ω, m), where ω is a con- nection 1-form on P, a principal G bundle over M, and m is a 2-form on P with values in the Lie algebra of E, with the pair (ω, m) satisfying suit- able conditions. As a further result, we are able to deﬁne Wilson spheres in this context.\n\n**Outline.** Front matter; Preliminaries; Resumé of results and notation from the theory; Connections on principal fibre bundles; Curvature; Parallel transport; The dependence of the parallel transport on a ; Crossed modules; Crossed modules and categorical groups; The thin fundamental categorical group of a ma; 1-Tracks; 2-Tracks; Horizontal and vertical compositions of 2-trac; Definition of the thin fundamental categorical; The thin fundamental crossed module of a smoot; Two exact sequences; Two-dimensional holonomies; Categorical connections",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -74,8 +86,8 @@
       "stamp_date": "20 Jul 2008"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

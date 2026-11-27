@@ -1,4 +1,4 @@
-*Proof.*  By
+By
 ([confinement = spectral collapse](#prop:confinement-categorical)),
 the Frobenius integral factors through the centre as
 $\int_A = \mu \circ \pi_Z$ with $\pi_Z(a) = \sum_\lambda e_\lambda
@@ -18,8 +18,5 @@ $$
        {\chi_{(3)}(\beta_\mathcal{K})}.
 $$
 
-*This recovers the working definition of $F_{\mathrm{Pauli}}$ in the
-certificate engine
-([mass-formula validation](#rem:mass-formula-validation)) and
-identifies it as a Wedderburn-block trace ratio rather than a
+*This identifies $F_{\mathrm{Pauli}}$ as a Wedderburn-block trace ratio rather than a
 posited statistical weight.*

@@ -1,1 +1,0 @@
-By unicity, this is a local question; we may and shall assume that $Z$ is a hypersurface, and that $\ovl{S}$ is (strictly) affinoid, and that there exists a finite covering $\ovl{T}\to \ovl{S}$ by a rigid-analytically smooth affinoid $\ovl{T}$, which restricts to a finite \'etale covering $T\to S$.

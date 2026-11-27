@@ -1,1 +1,0 @@
-The Quantum Modularity Conjecture asserts that the exact element of $F_{K,k}$ should to have the form: $$\label{eq.xe} x^{\mathrm{exact}}_{k,\ell} = \varepsilon_{K,k} \beta_{K,k}^k$$ for $\varepsilon_{K,k} \in \mathcal O_{F_K(\zeta_k)}^{\times}$ (an algebraic unit) and $\beta_{K,k} \in F_K(\zeta_k)^\times$.

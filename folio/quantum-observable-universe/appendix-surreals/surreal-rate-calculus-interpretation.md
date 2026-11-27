@@ -9,4 +9,4 @@ field.
 
 This is the algebraic content that replaces the informal
 "$O(\varepsilon^{-1})$ exceeds $O(\varepsilon^3)$ as $\varepsilon \to 0$":
-we do not need a limit, only an inequality inside $\mathbf{No}$.
+no limit is needed, only an inequality inside $\mathbf{No}$.

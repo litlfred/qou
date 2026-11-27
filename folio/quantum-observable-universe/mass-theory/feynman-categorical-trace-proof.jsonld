@@ -1,13 +1,14 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prf-feynman-categorical-trace",
   "@type": [
-    "folio-assistant-core:Proof",
+    "folio-assistant-sci:Proof",
     "doco:Section"
   ],
   "label": "prf:feynman-categorical-trace",
@@ -15,10 +16,10 @@
   "title": "Proof of Feynman transition amplitude as categorical trace",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-feynman-categorical-trace",
-    "papers/quantum-observable-universe/blocks/lem-feynman-trace-collapse",
-    "papers/quantum-observable-universe/blocks/lem-feynman-markov-identification"
+    "papers/quantum-observable-universe/blocks/lem-feynman-markov-identification",
+    "papers/quantum-observable-universe/blocks/prop-categorical-mass-markov"
   ],
-  "leanRef": "qou:QOU.FeynmanPathIntegrals.mass_eq_abs_amplitude",
+  "leanRef": "qou:QOU.StandardModel.FeynmanPathIntegrals.abs_amplitude_eq_abs_markovTrace",
   "text": "feynman-categorical-trace-proof.md",
   "provenance": "authored"
 }

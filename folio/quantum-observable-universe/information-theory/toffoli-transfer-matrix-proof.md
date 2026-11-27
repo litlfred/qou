@@ -1,4 +1,3 @@
-*Proof.*
 On $3$ strands, the chain reduction ([transfer matrix product](#prop:skein-polynomial-transfer-matrix)) produces two generators $\sigma_0, \sigma_1$ with traced volumes $\hat{V}_0(q), \hat{V}_1(q)$.
 
 **Single-crossing type-blindness (key lemma).**
@@ -41,24 +40,17 @@ $$
 
 The chain at $\sigma_0$ contains two crossings: $(0,1)$ and $(0,2)$. The target flip changes the $(0,2)$ crossing type but leaves the $(0,1)$ crossing unchanged. Chain reduction gives $\hat{V}_0 = z \cdot a_0 + b_0$, where $a_0, b_0$ depend on both crossings. The difference $\Delta_0$ factors. The unchanged $(0,1)$ crossing contributes its coefficient $c_{01}$ as a **prefactor**. The changing $(0,2)$ crossing contributes the same core difference regardless of the $(0,1)$ type.
 
-Therefore $P_{\mathrm{flip}} = c_{01} \cdot \Delta_{02}(q)$, where $c_{01}$ is the crossing coefficient of the control–control pair and $\Delta_{02}$ is the core difference at the changing crossing. **Open (2026-08-30).** This step used to name that core difference $\Phi(q)$ and call it universal. The identification is withdrawn: $\Phi$ is not in the image of the construction under any indexing or convention, and the derived flip amplitude is $P_{7,6}(q) = -(q-1)(q+1)(q^6+q^4+2q^2+1)/2q(q^2+1)^2$ under the canonical convention $D$. The factorisation itself — a prefactor from the unchanged crossing times a common core from the changing one — is what the argument above establishes and is unaffected; only the closed form assigned to the core is retired.
+Therefore $\Delta_0 = c_{01} \cdot \Delta_{02}(q)$, where $c_{01} = 1$ is the crossing coefficient of the control–control pair and $\Delta_{02}$ is the core difference at the changing crossing. However, in $P_{\mathrm{flip}} = \hat{V}_1^{(\mathrm{par})}\,\Delta_0$, the prefactor $\hat{V}_1^{(\mathrm{par})} = z + d_{01}$ varies across the three control pairs $\mathfrak{p}\mathfrak{p}$, mixed, and $\mathfrak{n}\mathfrak{n}$ through $d_{01} \in \{0, -\tfrac{q-q^{-1}}{2}, -(q-q^{-1})\}$, yielding the three distinct values of item 2 rather than a single control-independent amplitude.
 
-**The $S_3$ orbit.**
-The three choices of target strand in the ordering $[\mathfrak{p}, \mathfrak{p}, \mathfrak{n}]$ give:
-
-| Target | Control pair | $c$ | Amplitude |
-|:------:|:----------:|:---:|:---------:|
-| strand $2$ | $\mathfrak{p}\mathfrak{p}$ | $1$ | $\Phi$ |
-| strand $1$ | $\mathfrak{p}\mathfrak{n}$ | $1$ | $\Phi$ |
-| strand $0$ | $\mathfrak{p}\mathfrak{n}$ | $1$ | $\Phi$ |
-
-The Toffoli selects the governor: the target with $c = 1$ (unit weight). In the $(1, -(q - q^{-1}))$ convention, all crossing types share $c = 1$. The distinction moves to the $d$ coefficient.
-
-**Antisymmetry.**
-The reverse transition swaps parent and daughter, negating $\Delta_0$. Hence, $P_{6,7} = -P_{7,6}$.
+**All-proton q-AND and reverse flip.**
+For the all-proton control pair $(c_{01}, d_{01}) = (1, 0)$, substituting $z = q^3/(q^2+1)$ gives
+$$
+  P_{7,6}(q) = -\,\frac{(q-1)(q+1)\bigl(q^{6} + q^{4} + 2q^{2} + 1\bigr)}{2q\,(q^{2}+1)^{2}},
+$$
+establishing item 3. Evaluating the reverse transition from its own parent input column replaces the sextic factor by $2q^6 + q^4 + q^2 + 1$, giving $P_{6,7}(q) \neq -P_{7,6}(q)$ (item 4).
 
 **Classical limit.**
-At $q = 1$, $q - q^{-1} = 0$. All crossing types coincide, giving $\Delta_0 = 0$. The factor $(q - 1)$ in $\Phi$ confirms this.
+At $q = 1$, $q - q^{-1} = 0$, so all crossing types coincide and $\Delta_0 = 0$; every target-flip amplitude carries the factor $(q - 1)$ (item 5).
 
-**Golden ratio zero of $P_{7,7}$.**
-The numerator $q + q^{1/2} - 1$ vanishes when $q^{1/2} = (\sqrt{5} - 1)/2 = 1/\varphi$. This gives $q = 1/\varphi^2 = (3 - \sqrt{5})/2$. $\square$
+**Toffoli diagonals.**
+For the all-proton ordering every crossing has $(c, d) = (1, 0)$, so $\hat{V}_1 = z$ and $\hat{V}_0 = 1 + (q - q^{-1})z$, giving $P_{7,7}(q) = \hat{V}_0\hat{V}_1 = z + (q - q^{-1})z^2$. Substituting $z = q^3/(q^2+1)$ yields $P_{7,7}(q) = q^3(q^4+1)/(q^2+1)^2$, and the analogous product on the even parity sector yields $P_{6,6}(q) = (q^4+1)(q^4+q^2+2)/\bigl(4q(q^2+1)^2\bigr)$, both strictly positive on $(0,\infty)$ (item 6). $\square$

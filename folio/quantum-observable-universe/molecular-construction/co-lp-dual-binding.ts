@@ -5,7 +5,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:co-lp-dual-binding",
-  lean: { ref: "qou:QOU.Molecular.co_lp_dual_binding", validation: "not_checked" },
+  lean: { ref: "qou:QOU.Observations.co_lp_dual_binding", validation: "not_checked" },
   title: "LP dual for $CO$: covalent active-set $2$ ($+$ dative $=$ triple)",
   computation: {
     engine: "python",

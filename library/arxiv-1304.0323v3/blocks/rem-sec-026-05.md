@@ -1,0 +1,1 @@
+7.5. The commutativity of ( A.7.1) does not depend on the choice of an isomorphism gi (i∈I). Indeed, in a tensor category T , the diagram X⊗ 1 ∼ /d47/d47 X⊗ϕ /d15/d15 X ∼ /d47/d47 1⊗X ϕ⊗X /d15/d15 X⊗ 1 ∼ /d47/d47X ∼ /d47/d47 1⊗X is commutative for any ϕ∈ EndT (1).

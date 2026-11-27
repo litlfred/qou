@@ -1,0 +1,1 @@
+Let M be an abelian category with enough injectives. The following are equivalent for M ∈D+(M) : (i) M has ﬁnite injective dimension. (ii) M has ﬁnite injective dimension relative to M. (iii) There is a quasi-isomorphism M →I in Cstr(M) to a bounded complex of injective A-modules I.

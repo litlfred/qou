@@ -1,4 +1,4 @@
-| Alkali | $p$ | Shell $n$ | $E_{\mathrm{ion}}$ (eV) | Curls in residual |
+| Alkali | $p$ | Shell $n$ | $E_{\mathrm{ion}}$ (eV) | Electrons in residual |
 |--------|----:|----------:|------------------------:|:-----------------:|
 | Li | 3 | 2 | 5.39 | 1 |
 | Na | 11 | 3 | 5.14 | 1 |

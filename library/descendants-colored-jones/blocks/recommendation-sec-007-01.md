@@ -1,1 +1,0 @@
-The descendant colored Jones polynomials 2319 We should remark that for all values of the colors, this R-matrix of [Kas96] is over the same vector space CN and appears nontrivial even when the color is trivial.

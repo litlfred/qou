@@ -1,4 +1,4 @@
-import QOU.Archimedean.EmSpectralCompleteness
+import QOU.MassTheory.EmSpectralCompleteness
 
 /-!
 # QOU.Archimedean.gauge_coupling_uniqueness

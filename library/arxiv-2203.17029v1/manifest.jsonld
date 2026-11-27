@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2203.17029v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2203.17029v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -47,6 +47,18 @@
     "library/arxiv-2203.17029v1/sections/sec-032"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and sh ow that the generalised\n\n**MODULAR q-HOLONOMIC MODULES**\n\n*STA VROS GAROUF ALIDIS AND CAMPBELL WHEELER*\n\n65 pp, 30 sections.\n\n**Abstract.** We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and sh ow that the generalised q-hypergeometric equation, as well as three key q-holonomic modules of complex Chern– Simons theory are modular. This notion explains conceptually recent structural properties of quantum invariants of knots and 3-manifolds, and of exact and p erturbative Chern– Simons theory [ 22, 23, 24, 33], and in addition provides an eﬀective method to solve the corresponding linear q-diﬀerence equations. An alternative title of our paper, emphasisin g the equations rather than the modules, is: Modular linear q-diﬀerence equations\n\n**Outline.** 1 Introduction; 1.1 Summary; 1.2 Motivation; 1.4 The generalised q-hypergeometric equation ; 1.5 Modular q-holonomic modules in Chern–Simon; 2 A review of linear q-difference equations; 2.1 Preliminaries; 2.2 An algorithm for a fundamental matrix; 2.3 The q-Borel and the q-Laplace transforms; 2.4 The slash operator and proof of Theorem 1.; 2.5 Duality; 2.6 Categorical aspects; 3.1 Solutions; 3.2 Self duality; 3.3 State integral; 3.4 Resonance; 4 Proof of Theorems 1.5 and 1.6; 4.1 The q-Pochhammer symbol\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.2: (a) If Equation (6) for the monodromy holds for γ = S and γ = T , then it\n- Theorem 1.4: states that the generalised q-hypergeometric equation in modular. The the-\n- Theorem 1.2: The equation ( 28) has two important extensions, each containing important informa tion\n- Theorem 1.9: (a) The monodromy matrix is given by\n- Theorem 1.10: The N-th colored Jones polynomial JN (q) of 41 for |q| < 1 is given by\n- Proposition 2.5: The q-diﬀerence module M associated to Equation ( 28) satisﬁes",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -70,8 +82,8 @@
       "stamp_date": "31 Mar 2022"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

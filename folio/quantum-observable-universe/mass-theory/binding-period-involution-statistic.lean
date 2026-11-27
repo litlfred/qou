@@ -2,7 +2,7 @@ import Mathlib.Algebra.Group.Basic
 import Mathlib.Algebra.Ring.Units
 import Mathlib.Data.Multiset.Basic
 import Mathlib.Tactic.Ring
-import QOU.Mathlib.SchenstedInsertion
+import MathlibExt.SchenstedInsertion
 
 /-!
 # QOU.Mass — the balanced dimension sum as an involution statistic

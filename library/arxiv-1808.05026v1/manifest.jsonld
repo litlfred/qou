@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1808.05026v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1808.05026v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -20,6 +20,18 @@
     "library/arxiv-1808.05026v1/sections/sec-005"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "GR ¨OBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS OF — For Temperley-Lieb algebras of types B and D, we construct their Gr¨ obner-Shirshov bases and the corresponding standard monomials.\n\n**GR ¨OBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS OF**\n\n*TYPES B AND D*\n\n9 pp, 4 sections.\n\n**Abstract.** For Temperley-Lieb algebras of types B and D, we construct their Gr¨ obner-Shirshov bases and the corresponding standard monomials.\n\n**Outline.** 1 Introduction; 2 Preliminaries; 3 Review of results for the Temperley-Lieb alg; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.6: Let S be a subset of monic elements in F⟨X⟩. Then the following\n- Theorem 4.2: The algebra T (Bn) has a Gr¨ obner-Shirshov basis ˆRT (Bn) with respect to our\n- Theorem 5.2: The algebra T (Dn) has a Gr¨ obner-Shirshov basis ˆRT (Dn) with respect to our\n- Proposition 2.3: The set of S-standard monomials spans the algebra A = F⟨X⟩/I deﬁned by\n- Proposition 3.1: ([8, Proposition 6.2]) The Temperley-Lieb algebra T (An−1) has a Gr¨ obner-\n- Lemma: and his algorithm [11, 12] for Lie algebras and indepen dently from Buchberger’s algo-",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -41,8 +53,8 @@
       "stamp_date": "15 Aug 2018"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

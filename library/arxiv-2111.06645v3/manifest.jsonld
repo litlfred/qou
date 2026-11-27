@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2111.06645v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.06645v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "Part 0: Introduction and overview",
+  "title": "Knots, Perturbative Series and Quantum Modularity",
   "contains": [
     "library/arxiv-2111.06645v3/sections/sec-front-matter",
     "library/arxiv-2111.06645v3/sections/sec-000",
@@ -61,6 +61,18 @@
     "library/arxiv-2111.06645v3/sections/sec-046"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Knots, Perturbative Series and Quantum Modularity — We introduce an invariant of a hyperbolic knot which is a map α 7→Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns\n\n**Knots, Perturbative Series and Quantum Modularity**\n\n*SIGMA 20 (2024), 055, 87 pages*\n\n87 pp, 48 sections.\n\n**Abstract.** We introduce an invariant of a hyperbolic knot which is a map α 7→Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns indexed by the boundary parabolic SL2(C) representations of the fundamental group of the knot.\n\n**Outline.** Front matter; Part 0: Introduction and overview; Part I: The main story; 1 The original quantum modularity conjecture; 2 A collection of formal power series; 2.1 The indexing set P_K; 2.2 Four constructions of the power series Phi; 3 Interrelations among the power series Phi_a^; 3.1 The generalized quantum modularity conject; 3.2 Lifting the QMC from constant terms to pow; 3.3 Quadratic relations; 3.4 Asymptotics of the coefficients; 4 Refining the quantum modularity conjecture; 4.1 Improving the quantum modularity conjectur; 4.2 New elements of the Habiro ring; 4.3 Smoothed optimal truncation; 4.4 Strengthening the generalized quantum modu; 4.5 The refined quantum modularity conjecture",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by-sa/4.0/",
   "licenceRecord": {
@@ -84,8 +96,8 @@
       "stamp_date": "24 Jun 2024"
     },
     "doi": "10.3842/SIGMA.2024.055",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

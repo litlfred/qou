@@ -5,10 +5,10 @@ export default proposition({
   title:
     "Joint motivic-Galois $\\times$ braid action commutes on every bi-filtration cell — discharged",
   lean: {
-    ref: "qou:QOU.AlgebraicSubstrate.JointGaloisBraidDischarged.joint_action_discharged",
+    ref: "qou:QOU.BringsSurface.JointGaloisBraidDischarged.joint_action_discharged",
     validation: "not_checked",
   },
-  uses: ["prop:joint-galois-braid-figure-8-verified"],
+  uses: ["conj:joint-galois-braid-figure-8-verified"],
   cites: [],
   tags: [
     "joint-action",

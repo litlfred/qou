@@ -1,0 +1,281 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-21T02:30:36.931450+00:00",
+  "commitSha": "0d9159ee04bc8b1dbc44d7a9236dab52fcbb9672",
+  "assertions": [
+    {
+      "name": "commutant_diagonal",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "[K, E] = 0 forces E01 = E10 = 0 for q ≠ 1"
+    },
+    {
+      "name": "trace_one_idempotents",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "diagonal idempotents of trace 1 are exactly P_u, P_d"
+    },
+    {
+      "name": "trace_one_iff_weight_zero_n-3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "(q^-3 = 1) iff n = 0, at q = 11/10"
+    },
+    {
+      "name": "trace_one_iff_weight_zero_n-2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "(q^-2 = 1) iff n = 0, at q = 11/10"
+    },
+    {
+      "name": "trace_one_iff_weight_zero_n-1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "(q^-1 = 1) iff n = 0, at q = 11/10"
+    },
+    {
+      "name": "trace_one_iff_weight_zero_n0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "(q^0 = 1) iff n = 0, at q = 11/10"
+    },
+    {
+      "name": "trace_one_iff_weight_zero_n1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "(q^1 = 1) iff n = 0, at q = 11/10"
+    },
+    {
+      "name": "trace_one_iff_weight_zero_n2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "(q^2 = 1) iff n = 0, at q = 11/10"
+    },
+    {
+      "name": "trace_one_iff_weight_zero_n3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "(q^3 = 1) iff n = 0, at q = 11/10"
+    },
+    {
+      "name": "no_vev_on_bare_T3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "weights q, 1/q of q^{2T3}: neither weight projector has trace 1"
+    },
+    {
+      "name": "compress_vev_d",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "vev in d: [a, 0, 0, a + b*q]"
+    },
+    {
+      "name": "compress_vev_u",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "vev in u: [a + b*q, 0, 0, a + b*(q - 1/q)]"
+    },
+    {
+      "name": "R_commutes_KK",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Ř commutes with K⊗K"
+    },
+    {
+      "name": "typeblind_split_zero_vevu",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "same operator on quark and lepton strands ⇒ split 0"
+    },
+    {
+      "name": "typeblind_split_zero_vevd",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "same operator on quark and lepton strands ⇒ split 0"
+    },
+    {
+      "name": "split_general",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "split = -a_l + a_q + b_l - b_q"
+    },
+    {
+      "name": "selection_only_nu",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "only the ν slot may pair with the neutral vev"
+    },
+    {
+      "name": "split_neutral",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "split = y**2"
+    },
+    {
+      "name": "split_neutral_q_independent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "no q dependence"
+    },
+    {
+      "name": "split_neutral_nonzero_at_q1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "does not vanish at q → 1 (contrast #8676 Part D: (g_l − g_q)(q − 1/q))"
+    },
+    {
+      "name": "support_independent_of_other_higgs_slot",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "support of the vev pairing is the ν slot for every charge of the other Higgs slot"
+    },
+    {
+      "name": "opposite_to_SM",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "2-point pairing reaches exactly the one slot the SM leaves massless"
+    },
+    {
+      "name": "q0_is_proton_pin",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "q_at(70) is the proton pin"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 106,
+  "computation": "qbeta-yukawa-higgs-pairing",
+  "scriptFile": "qbeta_yukawa_higgs_pairing_probe.py",
+  "scriptHash": "cb791cfb5f52",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "ae1028699afd20c5"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_yukawa_higgs_pairing/qbeta_yukawa_higgs_pairing_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_yukawa_higgs_pairing/qbeta_yukawa_higgs_pairing_probe.py"
+  },
+  "description": "qou-99qc route Y: Higgs-vacuum Yukawa-type pairing with doublet strands; forced vs free. Exact sympy; q0 numbers comparison only.",
+  "parameters": {
+    "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799"
+  },
+  "data": {
+    "arms": {
+      "1_unbroken_grading": "forced: weight-diagonal; e_H on a doublet = P_u or P_d",
+      "2_trace_one": "forced: tr e_H = 1 ⇒ vev slot has grading weight 0; impossible on bare q^{2T3} (needs a hypercharge-shifted Higgs doublet)",
+      "3_type_blind": "split 0 for every type-blind pairing; compressed a+bŘ gives diag(a, a+bq) (vev d) / diag(a+bq, a+b(q-1/q)) (vev u)",
+      "4_charge_selection": "forced: quark and e⁻ couplings 0; free: y_ν; split = y_ν²"
+    },
+    "forced": [
+      "eq_diag_of_commute",
+      "idem_commute_trace_one",
+      "vev_charge_zero_of_trace_one",
+      "no_vev_on_bare_T3",
+      "split_typeBlind",
+      "compress_vev_d",
+      "compress_vev_u",
+      "pairing_quark_zero",
+      "pairing_lepton",
+      "split_neutral"
+    ],
+    "free": {
+      "arm3_general": [
+        "a_q",
+        "b_q",
+        "a_l",
+        "b_l"
+      ],
+      "arm3_compressed": [
+        "a",
+        "b"
+      ],
+      "arm4": [
+        "y_nu = B_l(vev, nu)"
+      ],
+      "energy_scale": "undetermined in every arm"
+    },
+    "split_formula": {
+      "general": "-a_l + a_q + b_l - b_q",
+      "type_blind": "0",
+      "charge_selection": "y_nu^2"
+    },
+    "q_to_1_order": "charge-selection split is order q^0 (does not vanish at q=1)",
+    "numbers": {
+      "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+      "gap_compress_vev_d_over_b": "1.109978582751380807591669095610768879874",
+      "gap_compress_vev_u_over_b": "-0.9009182839557414921608228824810939360147",
+      "split_neutral_idempotent_normalisation": "1 (exact, q-independent; unit undetermined)",
+      "codata_Qbeta_over_me_comparison_only": "1.53098828921980775193047392987"
+    },
+    "physics_note": "Arm 4 gives energy to ν, not e⁻ — opposite to the SM, where the 3-point vertex L̄Φe_R (right-handed singlet) makes e⁻ massive. The strand model has no right-handed singlet.",
+    "premise_L": "assumed for arms 3-4 (undecided by owner); under ¬L only the object-level selection rule (vev pairs with neutral objects only) survives",
+    "qbeta_number": "not produced: no magnitude forced (pre-registered)",
+    "scope": "(b) for arms 1, 2, 3 (type-blind ⇒ 0) and for the arm-4 support; the arm-4 magnitude is free",
+    "selected": "none"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

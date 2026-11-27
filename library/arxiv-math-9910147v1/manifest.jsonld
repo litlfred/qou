@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9910147v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9910147v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -29,6 +29,18 @@
     "library/arxiv-math-9910147v1/sections/sec-014"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "arXiv:math/9910147v1 [math.QA] 27 Oct 1999 — We study the tensor product of principal unitary representations of the quantum Lorentz Group, prove a decomposition theorem and compute the associated\n\n**arXiv:math/9910147v1 [math.QA] 27 Oct 1999**\n\n*Laboratoire de Physique Mathématique et Théorique†*\n\n34 pp, 16 sections.\n\n**Abstract.** We study the tensor product of principal unitary representations of the quantum Lorentz Group, prove a decomposition theorem and compute the associated intertwiners. We show that these intertwiners can be expressed in terms of complex continuations of 6j symbols of Uq(su(2)). These intertwiners are expressed in terms of q-Racah polynomials and Askey- Wilson polynomials. The orthogonality of these intertwiners imply some relation mixing these two families of polynomials. The simplest of these relations is the orthogonality of Askey-Wilson Polynomials. Work supported by CNRS. ∗e-mail:buﬀenoi@lpm.univ-montp2.fr †Laboratoire du CNRS UMR 5825 ‡e-mail:roche@math.mit.edu §Laboratoire Propre du CNRS UPR 14\n\n**Outline.** Front matter; 1 Introduction; 2 Definition and properties of various continu; 2.1 Intertwiners and 6j(0) of ${\\mathfrak U}_q; 2.2 Definitions and properties of continuation; 2.3 Quantum Lorentz group, Principal Unitary R; 3 Intertwiners associated to unitary represent; 4 Alternative Construction of Intertwiners in ; 5 Decomposition Theorem of the Tensor Product ; 5.2 R-matrix in the Tensor Product of Infinite; 5.3 Connection with Askey-Wilson Polynomials.; 6 Conclusion; 7 Appendix; 7.1 Formulae on Basic Hypergeometric Functions; 7.2 Asymptotics of Intertwiners; 7.3 Formulae on coefficients $\\Lambda^{BC}_{AD",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -50,8 +62,8 @@
       "stamp_date": "27 Oct 1999"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,18 +1,19 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-c5-involution-leibniz-decomposition",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:c5-involution-leibniz-decomposition",
   "kind": "proposition",
-  "title": "$c_5$ decomposes as $-b^2 - 1/2$: pure-$\\sigma$ Kashiwara contribution plus bar-invariant involution fingerprint from averaged-crossing structure. Interpretation of the unique averaging-resonant rung k = 5 identified in `thm:averaging-resonance-rule` (planned, not yet derived); involution supplies the $1/2$ magnitude, while the half-fill cyclic structure supplies the rung selection.",
+  "title": "Decomposition quantity $c_5^{\\mathrm{dec}} = -b^2 - 1/2 = -3/2 + 1/[2]_q^2$",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-silver-ratio-beta-decay-null"
   ],
@@ -29,7 +30,7 @@
     "bar-invariance",
     "leibniz-propagation"
   ],
-  "leanRef": "qou:QOU.BraidKnot.c5_decomposition_via_quantum_two",
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.c5_decomposition_via_quantum_two",
   "text": "c5-involution-leibniz-decomposition.md",
   "leanSource": "c5-involution-leibniz-decomposition.lean",
   "provenance": "authored"

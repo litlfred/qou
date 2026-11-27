@@ -1,0 +1,1 @@
+For an absolutely continuous function h ∈L1(F), F(z) Z R hdν − Z z −∞ hdν = Z R kν (z, y) h′(y)dy (9) and −(1 −F(z)) Z R hdν + Z (z,∞) hdν = Z R kν (z, y) h′(y)dy. (10) By combining Theorem 1 and Corollary 3, we get the following covariance identity.

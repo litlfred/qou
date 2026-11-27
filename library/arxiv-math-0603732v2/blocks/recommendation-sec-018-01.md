@@ -1,1 +1,0 @@
-The *right adjoint* $A$-module $R(M)$ [@Mo Definition 3.4.1(2)], which we shall often denote by $M'$ (see also [@FT; @HK1]), is $M$ as a $k$-vector space, with right $A$-action given by $$m \cdot a\; =\; \sum S(a_2)ma_1$$ for all $a\in A$ and $m\in M$.

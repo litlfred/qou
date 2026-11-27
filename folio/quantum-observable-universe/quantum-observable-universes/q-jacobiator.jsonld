@@ -1,13 +1,14 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-q-jacobiator",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:q-jacobiator",
@@ -24,7 +25,7 @@
     "lie-bracket",
     "leibniz-algebra"
   ],
-  "leanRef": "qou:QOU.q_jacobiator",
+  "leanRef": "qou:QOU.jacobiator_nonzero",
   "text": "q-jacobiator.md",
   "leanSource": "q-jacobiator.lean",
   "provenance": "authored"

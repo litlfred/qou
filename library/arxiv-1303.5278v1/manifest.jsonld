@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1303.5278v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1303.5278v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -47,6 +47,18 @@
     "library/arxiv-1303.5278v1/sections/sec-032"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD — In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifoldM (a collection\n\n**1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD**\n\n*STAVROS GAROUFALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN*\n\n60 pp, 22 sections.\n\n**Abstract.** In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifoldM (a collection ofq-series with integer coeﬃcients, intro- duced by Dimofte-Gaiotto-Gukov) to a topological invariant of oriented cusped hyperbolic 3-manifolds. To achieve our goal we show that (a)T admits an index structure if and only if T is 1-eﬃcient and (b) ifM is hyperbolic, it has a canonical set of 1-eﬃcient ideal triangu- lations related by 2-3 and 0-2 moves which preserve the 3D index. We illustrate our results with several examples.\n\n**Outline.** 1 Introduction; 1.1 The 3D index of Dimofte-Gaiotto-Gukov; 1.3 Regular ideal triangulations and topologic; 1.4 Plan of the paper; 2 Definitions; 3 Index structures and 1–efficiency; 4 A review of the index of an ideal triangulat; 4.1 The tetrahedron index and its properties; 4.2 The degree of the tetrahedron index; 4.3 Angle structure equations; 4.4 Peripheral equations; 4.5 The index of an ideal triangulation; 4.6 Choice of edges in the summation for index; 4.8 Invariance of index under isotopy of perip; 5 Invariance of index under the 0–2 move; 6.1 Subdivisions of the Epstein–Penner decompo; 6.2 Regular triangulations; 6.4 Moving paths in the 1–skeleton of the asso\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: (a) IT is well-deﬁned if and only ifT admits anindex structure.\n- Theorem 1.2: An ideal triangulation T of an oriented 3-manifold with cusps admits an\n- Theorem 1.5: Let T be an ideal triangulation of an oriented atoroidal 3–manifold with at\n- Theorem: s 1.1(a) and 1.2. We show that any two of these triangulations are related to each\n- Theorem 1.8: If M is a cusped hyperbolic 3-manifold, andT∈ XEP\n- Theorem 1.9: Fix a cusped hyperbolic 3-manifoldM.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -68,8 +80,8 @@
       "stamp_date": "21 Mar 2013"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,0 +1,1 @@
+There exists a constant B > 0 such that the fraction of permutations g ∈Sn with c(g) > B log (n) cycles is at most 1/n100 for all large enough n. If c(g) ≤B log n, use the MPS algorithm to compute χλ(g), which takes time nO(log n). Otherwise, if c(g) > B log n, output some ﬁxed integer (say zero). This gives the desired algorithm. ■ Next let us consider the row sampling problem.

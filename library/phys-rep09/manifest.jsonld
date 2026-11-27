@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/phys-rep09/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "Physics Reports The Magnus expansion and some of its applications",
+  "title": "The Magnus expansion and some of its applications",
   "contains": [
     "library/phys-rep09/sections/sec-front-matter",
     "library/phys-rep09/sections/sec-000",
@@ -96,6 +96,18 @@
     "library/phys-rep09/sections/sec-081"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The Magnus expansion and some of its applications — Article history: Accepted 13 November 2008 Available online 25 November 2008 editor: D.L.\n\n**The Magnus expansion and some of its applications**\n\n*The Magnus expansion and some of its applications*\n\n88 pp, 83 sections.\n\n**Abstract.** Article history: Accepted 13 November 2008 Available online 25 November 2008 editor: D.L. Mills Approximate resolution of linear systems of differential equations with varying coefficients is a recurrent problem, shared by a number of scientific and engineering areas, ranging from Quantum Mechanics to Control Theory. When formulated in operator or matrix form, the Magnus expansion furnishes an elegant setting to build up approximate exponential PACS: 03.65 02.30.Hq 02.60.Cb 02.20.Rt representations of the solution of the system. It provides a power series expansion for the corresponding exponent and is sometimes referred to as Time-Dependent Exponential Perturbation Theory. Every Magnus approximant corresponds in Perturbation Theory to a partial re-summation of infinite terms with the important additional property of preserving, at any order, certain symmetries of the exact solution.\n\n**Outline.** Front matter; The Magnus expansion and some of its applicati; Introduction; Motivation, overview and history; Mathematical preliminaries and notations; The Magnus expansion (ME); A proof of Magnus' Theorem; Formulae for the first terms in Magnus expansi; Magnus expansion generator; Magnus expansion and time-dependent perturbati; Graph theoretical analysis of Magnus expansion; Time-symmetry of the expansion; Convergence of the Magnus expansion; On the existence of Ω (t); Convergence of the Magnus series; An improved radius of convergence; Further discussion; Magnus expansion and the BCH formula",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "phys-rep09",
@@ -107,8 +119,8 @@
     "pages": 88,
     "arxiv": null,
     "doi": "10.1016/j.physrep.2008.11.001",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

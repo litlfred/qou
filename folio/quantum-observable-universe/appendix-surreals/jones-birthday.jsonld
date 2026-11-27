@@ -1,13 +1,14 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/conj-jones-birthday",
   "@type": [
-    "folio-assistant-core:Conjecture",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
   "label": "conj:jones-birthday",
@@ -28,7 +29,7 @@
     "refinement",
     "open-problem"
   ],
-  "leanRef": "qou:QOU.AppendixSurreals.JonesBirthday",
+  "leanRef": "qou:QOU.Observations.AppendixSurreals.JonesBirthday",
   "text": "jones-birthday.md",
   "provenance": "authored"
 }

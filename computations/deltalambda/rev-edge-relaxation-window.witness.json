@@ -1,9 +1,10 @@
 {
  "schema": "qou-witness/v1",
- "computedAt": "2026-09-13T19:34:09.474039+00:00",
+ "computedAt": "2026-11-21T17:45:19.304158+00:00",
  "computation": "rev_edge_relaxation_window_probe.py",
  "bean": "qou-hok7",
  "anchor": "physical_proton",
+ "q0Anchor": "proton",
  "q0Value": "1.1099785827513808075916690956107688798744991218736",
  "description": "Tests, and refutes, a WINDOW class for e_k: integer displacements confined to the two ends reproduce the true maximum for k <= 12 and fall short from k = 16 by a margin that grows, with a window already covering 18 of 23 rows.  Reconstructing the published heuristic's own maximisers from their committed gap profiles (exactly \u2014 they reproduce the published excess) shows why: a contiguous run of u = -1 sits between the two edges, its length forced by sum u = 0 and its position free, and a window pinning the middle has nowhere to put it.  Cost term from the Lean identity staircase_two_mul_hookSum_sub; search is exact integer arithmetic at scale 1e-40.",
  "windows": {
@@ -54,7 +55,7 @@
     7
    ],
    "leaves_wide": 2096,
-   "elapsed_sec": 0.34
+   "elapsed_sec": 0.21
   },
   {
    "k": 8,
@@ -88,7 +89,7 @@
     8
    ],
    "leaves_wide": 7984,
-   "elapsed_sec": 1.24
+   "elapsed_sec": 0.72
   },
   {
    "k": 9,
@@ -123,7 +124,7 @@
     9
    ],
    "leaves_wide": 30195,
-   "elapsed_sec": 4.64
+   "elapsed_sec": 2.94
   },
   {
    "k": 10,
@@ -162,7 +163,7 @@
     10
    ],
    "leaves_wide": 113287,
-   "elapsed_sec": 16.57
+   "elapsed_sec": 10.41
   },
   {
    "k": 11,
@@ -202,7 +203,7 @@
     11
    ],
    "leaves_wide": 421549,
-   "elapsed_sec": 46.78
+   "elapsed_sec": 28.75
   },
   {
    "k": 12,
@@ -247,7 +248,7 @@
     13
    ],
    "leaves_wide": 608311,
-   "elapsed_sec": 55.15
+   "elapsed_sec": 36.08
   },
   {
    "k": 16,
@@ -296,7 +297,7 @@
     17
    ],
    "leaves_wide": 608311,
-   "elapsed_sec": 55.16
+   "elapsed_sec": 33.65
   }
  ],
  "vs_exhaustive": [
@@ -323,6 +324,18 @@
    "window": "0.3497095515712960063409",
    "exhaustive": "0.3497095515712960063409",
    "difference": "0.0"
+  },
+  {
+   "k": 11,
+   "window": "0.495186974410724980916",
+   "exhaustive": "0.495186974410724980916",
+   "difference": "-2.0e-40"
+  },
+  {
+   "k": 12,
+   "window": "0.6911747508042809593457",
+   "exhaustive": "0.6911747508042809593457",
+   "difference": "3.0e-40"
   }
  ],
  "deficits_vs_heuristic": [
@@ -574,7 +587,7 @@
   {
    "name": "E1 the window class reproduces the exhaustive maximum at every k it can be checked at",
    "ok": true,
-   "detail": "4 overlapping k (7..12); max |window - exhaustive| = 2.0e-40.  So the search itself is correct and the class is adequate here \u2014 which is what makes its failure above k = 12 a statement about the SHAPE rather than about the code"
+   "detail": "6 overlapping k (7..12); max |window - exhaustive| = 3.0e-40.  So the search itself is correct and the class is adequate here \u2014 which is what makes its failure above k = 12 a statement about the SHAPE rather than about the code"
   },
   {
    "name": "E2 the window class falls short at k = 16 and the shortfall is not a width artefact",

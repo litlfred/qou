@@ -1,0 +1,1 @@
+The Hodge correlators in weight 3 satisfy the relations: CorH(1, 0, 0, 푥) + CorH(1, 0, 0, 1 −푥) + CorH(1, 0, 0, 1 −푥−1) = CorH(1, 0, 0, 1), (2.112) CorH(0, 푥, 1, 푦) = −CorH(1, 0, 0, 1 −푥−1) −CorH(1, 0, 0, 1 −푦−1) −CorH  1, 0, 0, 푦 푥  −CorH  1, 0, 0, 1 −푦 1 −푥  + CorH  1, 0, 0, 1 −푦−1 1 −푥−1  + CorH(1, 0, 0, 1). (2.113)

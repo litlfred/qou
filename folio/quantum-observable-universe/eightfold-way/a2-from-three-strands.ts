@@ -19,6 +19,9 @@ export default proposition({
     "def:braid-group",
     "rem:hecke-algebra-from-braiding",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): > ([Proposition](#prop:schur-weyl-eightfold), where the framework\n> supplies $\\dim V = 2$)" },
+  ],
   // The A₂ Cartan data this block states (fixed integer matrix, off-diagonal
   // −1, Serre exponent, root-angle ratio) is machine-checked in
   // WeylInvarianceQDeformation. There is no separate A2FromThreeStrands
@@ -31,5 +34,5 @@ export default proposition({
   // which the .md itself records as holding by construction. The theorems
   // built on the datum (`cartan_A2_offdiag`, `serre_exponent_A2`,
   // `root_angle_ratio_A2`) live in the same module.
-  lean: { ref: "qou:QOU.Eightfold.WeylInvarianceQDeformation.cartanMatrix_A2" },
+  lean: { ref: "qou:QOU.EightfoldWay.WeylInvarianceQDeformation.cartanMatrix_A2" },
 });

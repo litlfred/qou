@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-11-17T10:35:56.498230+00:00",
-  "commitSha": "05673b3989a5f5a6a2e5b76e7e51c0f07fed1f99",
+  "computedAt": "2026-11-24T00:42:12.486184+00:00",
+  "commitSha": "8c062ae7269528dc829214939da5027fd85bb3f2",
   "assertions": [
     {
       "name": "b_squared_three_forms_agree_symbolically",
@@ -58,7 +58,7 @@
   "computation": "qbeta-habiro-integrality-kill-test",
   "scriptFile": "qbeta_habiro_integrality_kill_test.py",
   "scriptHash": "3b1dc79780aa",
-  "scriptCommitSha": "05673b3989a5f5a6a2e5b76e7e51c0f07fed1f99",
+  "scriptCommitSha": "8c062ae7269528dc829214939da5027fd85bb3f2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

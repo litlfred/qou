@@ -1,0 +1,1 @@
+A test set S for IP4,-(b) is a finite subset of kerz A such that for all x feasible for IP4,-(b), there exists s € S with x —s feasible and x — s <, x if and only if x is not an optimal solution. We say that S is a test set for IP4.-(-) if S is a test set for all b.

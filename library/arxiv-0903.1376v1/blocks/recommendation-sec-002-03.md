@@ -1,0 +1,1 @@
+A trinion ﬂip may be used to eliminate crossing while creating twists (right). consist of n ribbons connecting one set of n points with a common z-coordinate, to another set of n points also with a common z-coordinate, as described above.

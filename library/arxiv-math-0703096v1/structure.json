@@ -1,0 +1,594 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0703096v1",
+ "source": {
+  "file": "arxiv-math-0703096v1.pdf",
+  "sha256": "337c26b7164ff942d1d12242abcc0b7a27c2624b3daaf17eb3b7e4fb83d8ce61",
+  "bytes": 966223,
+  "pages": 53,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-22T19:30:56Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0703096",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "3 Mar 2007"
+  },
+  "doi": null,
+  "title": "KNOTS From combinatorics of knot diagrams to combinatorial topology based on knots",
+  "authors_raw": "Warszawa, November 30, 1984 \u2013 Bethesda, March 3, 2007",
+  "title_lines": [
+   "KNOTS",
+   "From combinatorics of knot diagrams to combinatorial topology",
+   "based on knots"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20241126172947-05'00'"
+  },
+  "title_raw": "KNOTS From combinatorics of knot diagrams to combinatorial topology based on knots",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "KNOTS J\u00b4ozef H. Przytycki LIST OF CHAPTERS : Chapter I: Preliminaries Chapter II: History of Knot Theory Chapter III: Conway type invariants Chapter IV: Goeritz and Seifert matrices Chapter V: Graphs and links Chapter VI: Fox n -colorings, Rational moves, Lagrangian tangles and Burnside groups Chapt",
+   "outline": "History of Knot Theory",
+   "text": "KNOTS From combinatorics of knot diagrams to combinatorial topology based on knots",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "History of Knot Theory",
+   "page": 3,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "From Heraclas to D\u00fcrer",
+   "page": 7,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Dawn of Knot Theory",
+   "page": 12,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Algebraic topology in Knot Theory",
+   "page": 24,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Jones revolution",
+   "page": 28,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "3.7",
+   "title": "Knots and links of William Thomson (Kelvin) from 1867. There is an interesting letter from Maxwell to Tait dated Nov. 13, 1867, which shows that Tait was sharing his ideas of knots with his friend [Kno, Lom]. In one of his rhymes Maxwell wrote (clearly referring to Tait): Clear your coil of kinkings",
+   "page": 19,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3.8",
+   "title": "Perko corrected also the Conway\u2019s eleven crossing tables: 4 knots were missed [Per-0, Per-2]",
+   "page": 21,
+   "confidence": 0.7,
+   "evidence": [
+    "referenced"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 53,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 2241,
+   "n_words": 349,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-history-of-knot-theory",
+   "number": null,
+   "title": "History of Knot Theory",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 7,
+   "n_chars": 6097,
+   "n_words": 1042,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-from-heraclas-to-d\u00fcrer",
+   "number": null,
+   "title": "From Heraclas to D\u00fcrer",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 12,
+   "n_chars": 6036,
+   "n_words": 1005,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-dawn-of-knot-theory",
+   "number": null,
+   "title": "Dawn of Knot Theory",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 24,
+   "n_chars": 22835,
+   "n_words": 3811,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-algebraic-topology-in-knot-theory",
+   "number": null,
+   "title": "Algebraic topology in Knot Theory",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 28,
+   "n_chars": 5428,
+   "n_words": 912,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-jones-revolution",
+   "number": null,
+   "title": "Jones revolution",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 53,
+   "n_chars": 52394,
+   "n_words": 8148,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 5,
+  "toc_inferred_entries": 0,
+  "figure_entries": 2,
+  "figure_sequence_gaps": [
+   "figure 3.1",
+   "figure 3.2",
+   "figure 3.3",
+   "figure 3.4",
+   "figure 3.5",
+   "figure 3.6"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 95031,
+  "furniture_lines_stripped": 0
+ }
+}

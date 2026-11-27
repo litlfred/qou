@@ -1,0 +1,527 @@
+{
+ "source": "library/arxiv-1901.01312v1 sec 4.2 (pp.4-5), sec 4.3 (pp.5-6)",
+ "task_named_source_held": false,
+ "hecke_convention": "T^2 = (q - q^-1) T + 1",
+ "q_status": "zeta8 fixed by Gresnigt's construction; specialisation of formal q; NOT q0",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "zeta8 fixed by Gresnigt's construction; formal q specialisation only, q0 never read",
+ "C1_C2": {
+  "eigenvalues_sigma": [
+   "sqrt(2)*(1 + I)/2",
+   "sqrt(2)*(1 - I)/2"
+  ]
+ },
+ "C3_C4": {
+  "rescalings": [
+   {
+    "c": "-I",
+    "q_minus_qinv": "-sqrt(2)*I",
+    "q_solutions": [
+     {
+      "q": "sqrt(2)*(-1 - I)/2",
+      "zeta8_power": 5
+     },
+     {
+      "q": "sqrt(2)*(1 - I)/2",
+      "zeta8_power": 7
+     }
+    ]
+   },
+   {
+    "c": "I",
+    "q_minus_qinv": "sqrt(2)*I",
+    "q_solutions": [
+     {
+      "q": "sqrt(2)*(-1 + I)/2",
+      "zeta8_power": 3
+     },
+     {
+      "q": "sqrt(2)*(1 + I)/2",
+      "zeta8_power": 1
+     }
+    ]
+   }
+  ],
+  "one_dim": {
+   "note": "1-dim rep sigma=zeta8: for any c != 0, tau=c*zeta8 is the trivial rep with q = c*zeta8, or the sign rep with q = -1/(c*zeta8). With c=1: q = zeta8 (trivial) or q = zeta8^3 (sign). The quadratic s^2 - sqrt2 s + 1 is the minimal polynomial over R (C as the real algebra Cl(0,1))."
+  }
+ },
+ "C5_C6_C7": {
+  "qints_q=zeta8": {
+   "1": "1",
+   "2": "sqrt(2)",
+   "3": "1",
+   "4": "0"
+  },
+  "qfactorial_q=zeta8": {
+   "1": "1",
+   "2": "sqrt(2)",
+   "3": "sqrt(2)",
+   "4": "0"
+  },
+  "qints_q=zeta8^3": {
+   "1": "1",
+   "2": "-sqrt(2)",
+   "3": "1",
+   "4": "0"
+  },
+  "qfactorial_q=zeta8^3": {
+   "1": "1",
+   "2": "-sqrt(2)",
+   "3": "-sqrt(2)",
+   "4": "0"
+  },
+  "per_labelling": {
+   "q=zeta8,c=i": {
+    "n3 H(quaternion) dim2 specht-character solutions": [
+     {
+      "(3,)": "0",
+      "(2, 1)": "1",
+      "(1, 1, 1)": "0"
+     }
+    ],
+    "n3 H(quaternion) dim2 strands1-3 kills x_minus": true,
+    "n3 H(quaternion) dim2 strands1-3 kills x_plus": true,
+    "n3 H(quaternion) dim2 normalised-trace z=t(T_(n-1))": "sqrt(2)*I/2",
+    "n3 H(quaternion) dim2 Markov property on H_(n-1) subset H_n": true,
+    "n3 z_D=q^3/(q^2+1) at q=zeta8,c=i": "sqrt(2)*I/2",
+    "n3 z == z_D": true,
+    "n4 Cl4 dim4 specht-character solutions": [
+     {
+      "(4,)": "-a4 - 1",
+      "(3, 1)": "a4 + 1",
+      "(2, 2)": "1",
+      "(2, 1, 1)": "-a4",
+      "(1, 1, 1, 1)": "a4"
+     }
+    ],
+    "n4 Cl4 dim4 strands1-3 kills x_minus": true,
+    "n4 Cl4 dim4 strands1-3 kills x_plus": true,
+    "n4 Cl4 dim4 strands2-4 kills x_minus": true,
+    "n4 Cl4 dim4 strands2-4 kills x_plus": true,
+    "n4 Cl4 dim4 normalised-trace z=t(T_(n-1))": "sqrt(2)*I/2",
+    "n4 Cl4 dim4 Markov property on H_(n-1) subset H_n": true,
+    "n4 z_D=q^3/(q^2+1) at q=zeta8,c=i": "sqrt(2)*I/2",
+    "n4 z == z_D": true,
+    "Cl4 chirality halves": {
+     "gamma=+1": {
+      "specht_character_solutions": [
+       {
+        "(4,)": "-b4 - 1",
+        "(3, 1)": "b4 + 1",
+        "(2, 2)": "0",
+        "(2, 1, 1)": "-b4",
+        "(1, 1, 1, 1)": "b4"
+       }
+      ],
+      "tau3 == tau1": false,
+      "tau3 == -tau1^-1": true,
+      "irreducible(tau1,tau2 commute?)": true,
+      "trace tau1": "sqrt(2)*I",
+      "trace tau1 tau3": "-2"
+     },
+     "gamma=-1": {
+      "specht_character_solutions": [
+       {
+        "(4,)": "-b4",
+        "(3, 1)": "b4",
+        "(2, 2)": "1",
+        "(2, 1, 1)": "-b4",
+        "(1, 1, 1, 1)": "b4"
+       }
+      ],
+      "tau3 == tau1": true,
+      "tau3 == -tau1^-1": false,
+      "irreducible(tau1,tau2 commute?)": true,
+      "trace tau1": "sqrt(2)*I",
+      "trace tau1 tau3": "0"
+     }
+    },
+    "specht chi(T1), chi(T1T3)": {
+     "(4,)": [
+      "sqrt(2)*(1 + I)/2",
+      "I"
+     ],
+     "(3, 1)": [
+      "sqrt(2)*(1 + 3*I)/2",
+      "-2 + I"
+     ],
+     "(2, 2)": [
+      "sqrt(2)*I",
+      "0"
+     ],
+     "(2, 1, 1)": [
+      "sqrt(2)*(-1 + 3*I)/2",
+      "-2 - I"
+     ],
+     "(1, 1, 1, 1)": [
+      "sqrt(2)*(-1 + I)/2",
+      "-I"
+     ]
+    }
+   },
+   "q=zeta8^3,c=i": {
+    "n3 H(quaternion) dim2 specht-character solutions": [
+     {
+      "(3,)": "0",
+      "(2, 1)": "1",
+      "(1, 1, 1)": "0"
+     }
+    ],
+    "n3 H(quaternion) dim2 strands1-3 kills x_minus": true,
+    "n3 H(quaternion) dim2 strands1-3 kills x_plus": true,
+    "n3 H(quaternion) dim2 normalised-trace z=t(T_(n-1))": "sqrt(2)*I/2",
+    "n3 H(quaternion) dim2 Markov property on H_(n-1) subset H_n": true,
+    "n3 z_D=q^3/(q^2+1) at q=zeta8^3,c=i": "sqrt(2)*I/2",
+    "n3 z == z_D": true,
+    "n4 Cl4 dim4 specht-character solutions": [
+     {
+      "(4,)": "-a4 - 1",
+      "(3, 1)": "a4 + 1",
+      "(2, 2)": "1",
+      "(2, 1, 1)": "-a4",
+      "(1, 1, 1, 1)": "a4"
+     }
+    ],
+    "n4 Cl4 dim4 strands1-3 kills x_minus": true,
+    "n4 Cl4 dim4 strands1-3 kills x_plus": true,
+    "n4 Cl4 dim4 strands2-4 kills x_minus": true,
+    "n4 Cl4 dim4 strands2-4 kills x_plus": true,
+    "n4 Cl4 dim4 normalised-trace z=t(T_(n-1))": "sqrt(2)*I/2",
+    "n4 Cl4 dim4 Markov property on H_(n-1) subset H_n": true,
+    "n4 z_D=q^3/(q^2+1) at q=zeta8^3,c=i": "sqrt(2)*I/2",
+    "n4 z == z_D": true,
+    "Cl4 chirality halves": {
+     "gamma=+1": {
+      "specht_character_solutions": [
+       {
+        "(4,)": "-b4 - 1",
+        "(3, 1)": "b4 + 1",
+        "(2, 2)": "0",
+        "(2, 1, 1)": "-b4",
+        "(1, 1, 1, 1)": "b4"
+       }
+      ],
+      "tau3 == tau1": false,
+      "tau3 == -tau1^-1": true,
+      "irreducible(tau1,tau2 commute?)": true,
+      "trace tau1": "sqrt(2)*I",
+      "trace tau1 tau3": "-2"
+     },
+     "gamma=-1": {
+      "specht_character_solutions": [
+       {
+        "(4,)": "-b4",
+        "(3, 1)": "b4",
+        "(2, 2)": "1",
+        "(2, 1, 1)": "-b4",
+        "(1, 1, 1, 1)": "b4"
+       }
+      ],
+      "tau3 == tau1": true,
+      "tau3 == -tau1^-1": false,
+      "irreducible(tau1,tau2 commute?)": true,
+      "trace tau1": "sqrt(2)*I",
+      "trace tau1 tau3": "0"
+     }
+    },
+    "specht chi(T1), chi(T1T3)": {
+     "(4,)": [
+      "sqrt(2)*(1 + I)**3/4",
+      "-I"
+     ],
+     "(3, 1)": [
+      "sqrt(2)*(-2 + I)*(1 - I)/2",
+      "-2 - I"
+     ],
+     "(2, 2)": [
+      "sqrt(2)*I",
+      "0"
+     ],
+     "(2, 1, 1)": [
+      "sqrt(2)*(-1 + 2*I)*(1 - I)/2",
+      "-2 + I"
+     ],
+     "(1, 1, 1, 1)": [
+      "sqrt(2)*I*(1 - I)/2",
+      "I"
+     ]
+    }
+   }
+  }
+ },
+ "checks": [
+  {
+   "name": "Cl4 anticomm e1e2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "Cl4 anticomm e1e3",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "Cl4 anticomm e1e4",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "Cl4 e1^2=1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "Cl4 anticomm e2e1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "Cl4 anticomm e2e3",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "Cl4 anticomm e2e4",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "Cl4 e2^2=1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "Cl4 anticomm e3e1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "Cl4 anticomm e3e2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "Cl4 anticomm e3e4",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "Cl4 e3^2=1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "Cl4 anticomm e4e1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "Cl4 anticomm e4e2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "Cl4 anticomm e4e3",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "Cl4 e4^2=1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C1 C_real sigma1: s^2 - sqrt2 s + 1 = 0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C1 C_real sigma1: order 8 (s^4=-1)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C1 C_1d sigma1: order 8 (s^4=-1)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C1 H sigma1: s^2 - sqrt2 s + 1 = 0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C1 H sigma1: order 8 (s^4=-1)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C1 H sigma2: s^2 - sqrt2 s + 1 = 0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C1 H sigma2: order 8 (s^4=-1)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C1 H sigma3: s^2 - sqrt2 s + 1 = 0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C1 H sigma3: order 8 (s^4=-1)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C1 Cl4 sigma1: s^2 - sqrt2 s + 1 = 0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C1 Cl4 sigma1: order 8 (s^4=-1)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C1 Cl4 sigma2: s^2 - sqrt2 s + 1 = 0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C1 Cl4 sigma2: order 8 (s^4=-1)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C1 Cl4 sigma3: s^2 - sqrt2 s + 1 = 0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C1 Cl4 sigma3: order 8 (s^4=-1)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C1 Cl4 sigma4: s^2 - sqrt2 s + 1 = 0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C1 Cl4 sigma4: order 8 (s^4=-1)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C1 eigenvalues are zeta8^{+-1}",
+   "pass": true,
+   "detail": "['sqrt(2)*(1 + I)/2', 'sqrt(2)*(1 - I)/2']"
+  },
+  {
+   "name": "C2 H B3^c braid 12",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C2 H B3^c braid 23",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C2 H B3^c braid 31",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C2 Cl4 B4 braid 12",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C2 Cl4 B4 braid 23",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C2 Cl4 B4 far-commute 13",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C2 Cl4 B4^c braid 34",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C2 Cl4 B4^c braid 41",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C2 Cl4 B4^c far-commute 24",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C3 c=-I q=sqrt(2)*(-1 - I)/2: Hecke on all generators",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C3 c=-I q=sqrt(2)*(1 - I)/2: Hecke on all generators",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C3 c=I q=sqrt(2)*(-1 + I)/2: Hecke on all generators",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C3 c=I q=sqrt(2)*(1 + I)/2: Hecke on all generators",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C3 c=1 (no rescale) is NOT Hecke on 2-dim reps (eigenvalue product 1 != -1)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C3 c real impossible (c^2=-1 has no real root)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C4 c1^2 c2 = c1 c2^2 (nonzero) forces c2 = c1",
+   "pass": true,
+   "detail": "[c1]"
+  },
+  {
+   "name": "C4 tau=(-I)sigma keeps H B3^c braid relations",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C4 tau=(I)sigma keeps H B3^c braid relations",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C5 [4]_q = 0 at zeta8 (H_4 non-semisimple)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "C5 [3]_q! != 0 at zeta8 (H_3 semisimple)",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "n_pass": 54,
+ "n_fail": 0
+}

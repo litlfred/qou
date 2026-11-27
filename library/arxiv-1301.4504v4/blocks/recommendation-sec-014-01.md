@@ -1,1 +1,0 @@
-Moreover, only a statistically negligible amount of information should leak from the prover to the verifier. [QSZK]{.sans-serif} is the set of computational problems with yes/no answers for which such a prover can always convince the verifier of yes instances but will fail with high probability for no instances.

@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1704.06561v2/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "B Extraction of the e.m. and strong IB corrections",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "contains": [
+    "library/arxiv-1704.06561v2/blocks/prose-sec-004",
+    "library/arxiv-1704.06561v2/blocks/figure-img-p013-1",
+    "library/arxiv-1704.06561v2/blocks/figure-img-p013-16",
+    "library/arxiv-1704.06561v2/blocks/figure-img-p013-31"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1704.06561v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1704.06561v2/manifest.jsonld",
+  "provenance": "ingested"
+}

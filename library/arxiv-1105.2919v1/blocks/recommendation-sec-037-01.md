@@ -1,1 +1,0 @@
-A thorough comparison between various 2PE 3NFs is conducted in Ref.~\cite{FHK99} resulting in the recommendation to drop the so-called ``c-term'' from the TM force, since it does not have an equivalent in the ChPT derived force, Eqs.~(\ref{eq_3nf_nnloa}), (\ref{eq_3nf_nnlob}), giving rise to the construction of the TM' (or TM99) force~\cite{CH01}.

@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-ns-obstruction-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:ns-obstruction-remark",
+  "kind": "remark",
+  "title": "The NS obstruction, $\\chi(A)$ and the scope of the Navier--Stokes correspondence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-ns-obstruction",
+    "papers/quantum-observable-universe/blocks/def-ns-regular-qou"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-ns-obstruction",
+  "text": "ns-obstruction-remark.md",
+  "provenance": "authored"
+}

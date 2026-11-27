@@ -1,1 +1,1 @@
-Let A be a unitary coboundary weak quasi-Hopf algebra. If A has an
+Let A be a unitary coboundary weak quasi-Hopf algebra. If A has an antipode of Kac type S with associated unitary Drinfeld element u such that −1 ∈/ Sp(uv−1) then for any twist F of A, AF endowed with twisted involution ( ∗ , ΩF ) admits an antipode (S, ˜ α, ˜ β˜) such that S˜ commutes with ∗ and the corresponding element as in Prop. 11.16 is ω˜ = 1. In particular, S˜2 = 1.

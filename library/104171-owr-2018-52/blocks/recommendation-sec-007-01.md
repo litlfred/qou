@@ -1,1 +1,0 @@
-Lusztig independently conjectured a much stronger statement: they claimed that the polynomial Px,y(q) should only depend on the Enveloping Algebras and Geometric Representation Theory 3103 poset structure of the Bruhat interval [x, y].

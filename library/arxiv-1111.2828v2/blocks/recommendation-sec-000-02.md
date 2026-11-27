@@ -1,1 +1,0 @@
-When $n$ is even, we shall thus, more generally, be interested in boundary-unipotent representations in \begin{equation} p\SL(n,\C)=\SL(n,\C)\big/\langle \pm I\rangle. \end{equation} Such representations have a complex volume defined modulo $\pi^2i$, and our algorithm computes these as well.

@@ -1,1 +1,0 @@
-Theorems \ref{theor:LR_infty} and \ref{theor:CE} provide indications towards \emph{Vinogradov's conjecture} that the correct category where differential calculus on the space of solutions of a PDE $\mathscr E_0$ should be developed is the homotopy category of $DG$-modules over the horizontal De Rham algebra $(\overline \Omega{}^\bullet (\mathscr E), \overline d)$.

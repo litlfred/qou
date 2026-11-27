@@ -1,1 +1,0 @@
-In order to see that, we note that $\phi$ and $\theta$ should be chosen such that the electromagnetic field and the observables constructed from it, e. g. energy, linear momentum, and angular momentum, be finite.

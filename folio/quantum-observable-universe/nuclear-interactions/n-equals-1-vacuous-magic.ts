@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:n-equals-1-vacuous-magic",
   title: "Vacuous primality at $n = 1$",
   lean: {
-    ref: "qou:QOU.Interactions.AlgebraicPrimality.one_isAlgebraicallyPrime",
+    ref: "qou:QOU.Confinement.AlgebraicPrimality.one_isAlgebraicallyPrime",
     validation: "not_checked",
   },
   uses: ["def:algebraic-primality"],

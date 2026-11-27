@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2308.16266v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "59f0cbfb48d717bb4ef70dc7ceaa287a724d0a0ed30bbe659747b3b6bad14d09",
   "file": "2308.16266v1.pdf"
@@ -16,13 +19,45 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Meissner, \u201cAb initio calculation of the Hoyle state,\u201d Phys.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-000-distilling-the-essential-elements-of-nuclear-bin.md (p. 1-7)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-000-distilling-the-essential-elements-of-nuclear-bin.md",
+   "section_title": "Distilling the essential elements of nuclear binding via neural-network quantum states",
+   "pages": "1-7",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-000-distilling-the-essential-elements-of-nuclear-bin.md (p. 1-7)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-01",
+   "block_iri": "library/arxiv-2308.16266v1/blocks/prop-sec-000-01",
+   "claim_id": "arxiv-2308.16266v1#prop-sec-000-01"
+  }
+ ]
 }

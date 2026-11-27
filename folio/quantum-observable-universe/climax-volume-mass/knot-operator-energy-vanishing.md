@@ -1,5 +1,3 @@
-**Remark (vanishing locus and cheap/expensive operators).**
-
 **Vanishing locus.**
 The set $\{q \in Q : E(\lambda, q) = 0\}$ is the **LP boundary** for partition $\lambda$. At these $q$-values, the operator $\lambda$ becomes constraint-binding. Its inclusion or exclusion in the LP-dual basis switches. Crossing such a $q$-value marks a categorical phase transition for any atom whose NF includes operator $\lambda$.
 

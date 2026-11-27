@@ -1,1 +1,0 @@
-The first result was proved by Kronheimer-Mrowka [@KM2] using gauge theory; the second (which should generalise to higher genus fibres) appears to be new though closely related results are in the literature, cf.

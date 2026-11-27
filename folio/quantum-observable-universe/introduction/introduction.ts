@@ -18,7 +18,7 @@ import { chapter, section } from "../../schema/builders";
  *   1.4  Mathematics and measurement — where the empirical claims live;
  *                                    CAL-1/2/3 only, no fitting.
  *   2.   Chapter overview          — chapter-by-chapter walkthrough.
- *   3.   Author's note             — Lean/LLM authorship + Pascal.
+ *   (The authors' note is its own chapter, `authors-note/`, after this one.)
  */
 export default chapter({
   tabLabel: "I",
@@ -67,13 +67,6 @@ export default chapter({
       label: "sec:chapter-overview",
       blocks: [
         "chapter-overview",
-      ],
-    }),
-    section({
-      title: "Author's note",
-      label: "sec:authors-note",
-      blocks: [
-        "authors-note",
       ],
     }),
   ],

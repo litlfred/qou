@@ -1,5 +1,3 @@
-## Proof
-
 The argument is the routine identification "$T_q$-orbits on the
 projective quotient are unique up to reparameterisation".
 

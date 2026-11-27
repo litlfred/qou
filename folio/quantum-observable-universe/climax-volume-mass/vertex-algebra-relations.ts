@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): — [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean)" },
     {
       kind: "status",
       date: "2026-11-15",
@@ -15,6 +16,13 @@ export default proposition({
         "Re-scoped 2026-11-15 (owner decision, PR #7747, bean qou-lx8f): the previous text read: \"**Perpetual obstruction** (C-5a): When $\\chi(A) = -6$,\n\n$$\n  \\kappa_n  \\neq  0\n  \\qquad \\forall n \\geq 0.\n$$\n\nIn Hecke generators: at every brane level, there exist braid words $\\beta_{n+1} \\in H_{n+1}(q)$ that cannot be expressed as $L_{-1}(\\mathcal{B}_n)$ for any $\\mathcal{B}_n \\in H_n(R, q)$. The jet corrections and the base obstruction occupy complementary subgroups; cancellation is impossible.\"",
     },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([vertex operator](#def:vertex-operator))" },
+    {
+      kind: "note",
+      date: "2026-11-23",
+      body:
+        "C-5a Lean & cross-reference pointers relocated from prose: the torsion-free vanishing and jet-image vanishing (cf. JC-4 in `prop:vertex-algebra-jet-relations`) are proved in `QOU.KummerObstruction` and `QOU.JetObstruction` (`MathlibExt/KummerObstruction.lean`), and the trace-of-identity Kummer identification is `kummerObstruction_eq_trace_id_mod`.",
+    },
   ],
   label: "prop:vertex-algebra-relations",
   lean: { ref: "qou:QOU.VertexAlgebra.descartes_genus",

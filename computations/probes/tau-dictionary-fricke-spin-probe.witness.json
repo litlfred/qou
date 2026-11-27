@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-11-17T10:35:55.321544+00:00",
-  "commitSha": "05673b3989a5f5a6a2e5b76e7e51c0f07fed1f99",
+  "computedAt": "2026-11-24T00:42:15.286692+00:00",
+  "commitSha": "8c062ae7269528dc829214939da5027fd85bb3f2",
   "assertions": [
     {
       "name": "cusp_coefficients_exact",
@@ -53,11 +53,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1948,
+  "durationMs": 2324,
   "computation": "tau-dictionary-fricke-spin-probe",
   "scriptFile": "tau_dictionary_fricke_spin_probe.py",
   "scriptHash": "7860c4eaa900",
-  "scriptCommitSha": "05673b3989a5f5a6a2e5b76e7e51c0f07fed1f99",
+  "scriptCommitSha": "8c062ae7269528dc829214939da5027fd85bb3f2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

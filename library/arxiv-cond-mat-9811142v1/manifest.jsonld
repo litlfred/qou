@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-cond-mat-9811142v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-cond-mat-9811142v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -28,7 +28,19 @@
     "library/arxiv-cond-mat-9811142v1/sections/sec-013"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "narrative": [
+    {
+      "text": "Correlations for the orthogonal-unitary and symplectic-unitary transitions at the hard and soft edges — For the orthogonal-unitary and symplectic-unitary transitions in random matrix the- ory, the\n\n**Correlations for the orthogonal-unitary and symplectic-unitary transitions at the hard and soft edges**\n\n*P.J. Forrester†, T. Nagao∗and G. Honner†*\n\n37 pp, 9 sections.\n\n**Abstract.** For the orthogonal-unitary and symplectic-unitary transitions in random matrix the- ory, the general parameter dependent distribution between two sets of eigenvalues with two diﬀerent parameter values can be expressed as a quaternion determinant. For the parameter dependent Gaussian and Laguerre ensembles the matrix elements of the deter- minant are expressed in terms of corresponding skew-orthogonal polynomials, and their limiting value for inﬁnite matrix dimension are computed in the vicinity of the soft and hard edges respectively. A connection formula relating the distributions at the hard and soft edge is obtained, and a universal asymptotic behaviour of the two point correlation is identiﬁed.\n\n**Outline.** Abstract; Introduction; 2 (x, y; τx, τy) :=; 2 (x(1); 0 Ja; 0 Ja(; Discussion; 0 (4XY ) ρT hard; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -49,8 +61,8 @@
       "stamp_date": "10 Nov 1998"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

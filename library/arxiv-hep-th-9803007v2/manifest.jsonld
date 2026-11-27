@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9803007v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9803007v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -15,6 +15,18 @@
     "library/arxiv-hep-th-9803007v2/sections/sec-000"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "arXiv:hep-th/9803007v2 17 Jun 1998 — 2 sections: Front matter; Smallest Dirac Eigenvalue Distribu\n\n**arXiv:hep-th/9803007v2 17 Jun 1998**\n\n*Shinsuke M. Nishigaki1,∗, Poul H. Damgaard2,†, and Tilo Wettig3,‡*\n\n4 pp, 2 sections.\n\n**Outline.** Front matter; Smallest Dirac Eigenvalue Distribution from Ra",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -36,8 +48,8 @@
       "stamp_date": "17 Jun 1998"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

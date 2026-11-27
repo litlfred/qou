@@ -1,1 +1,0 @@
-I.e.\ $\tan$ and $\cot$ should be approximated by $\pm \I$ depending on the signs of $\ima(y)$ and $\ima(x)$ and $\bar{f}_{n,r}(x,y)$ by $\sum_{(a,b) \in F_{k,l}} \sin\left(\frac{\pi}{q}( x-2nd)\right) e^{2\pi ir\Phi_{n}^{a,b}(x,y)}$ for some deformation of the part of $C_r^1\times C_r^2$ which is contained in $\Omega_{k,l}$.

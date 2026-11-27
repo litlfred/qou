@@ -262,6 +262,18 @@ def main() -> int:
             f"the lightest {projected['n_atoms']} atoms."
         )
         .add_parameter("method", args.method)
+        .add_parameter(
+            "pn_convention",
+            src.get("parameters", {}).get(
+                "pn_convention", "bring_color_weighted"
+            ),
+        )
+        .add_parameter(
+            "intra_ordering_frame",
+            src.get("parameters", {}).get(
+                "intra_ordering_frame", "borromean"
+            ),
+        )
         .add_parameter("atoms_requested", ",".join(LOW_ISOTOPE_ATOMS))
         .add_parameter("A_max", LOW_ISOTOPE_A_MAX)
         # The value the projected DATA was built at, not the flag this process

@@ -1,1 +1,0 @@
-The inequalities \eqref{mq} show that we must rule out a braid representation $\bt''\in B_{n'}$ of $!K$ with $[\bt'']=w_{\min} (!K)+2+(n'-3)$, where (we set in the same \em{a posteriori} to be justified manner) $w_{\min}(!K)=-2g(K)-2$.

@@ -86,7 +86,8 @@ PINS = {
     "proton": str(_c.Q_50_DIGIT_STR),
     # the live CODATA-2022 muon pin, derived rather than typed (the literal
     # this replaced matched it to all 70 digits; reference-literal ratchet).
-    "muon-live": _c.q_muon_at(70),
+    # str(): the Rust engine takes q as a decimal string, not an mpf.
+    "muon-live": mp.nstr(_c.q_muon_at(70), 70, strip_zeros=False),
 }
 
 #: Sites that pass `intra_order="grouped"` deliberately, with the reason. A hit

@@ -1,1 +1,0 @@
-We shall now consider transport transformations \begin{equation*} A:\mathrm{tra} \to \mathrm{tra}^{\infty}_{\rho}\text{.} \end{equation*} Let $\pi:Y \to M$ be a surjective submersion for which $\mathrm{tra}$ admits a local trivialization with smooth descent data $(\mathrm{triv},g,\psi,f)$.

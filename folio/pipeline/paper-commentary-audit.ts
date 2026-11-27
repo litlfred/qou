@@ -47,6 +47,12 @@
  * "measured … <date>". Measured on chapters 1–2 (2026-10-11): those
  * checkers flagged 0 of the passages this audit finds.
  *
+ * Not covered here: prose about the Lean formalisation, backticked Lean or
+ * repository identifiers, first/second person, and reading-order
+ * anachronisms. Those are the four leak classes of epic `qou-d4kh` and live
+ * in `voice-leak-audit.ts` (the exemption above for naming a Lean
+ * declaration is the reason they needed a separate audit).
+ *
  * High-recall / agent-confirmed: a hit is a candidate, not a verdict.
  * Fenced code, inline math and the link-target half of markdown links are
  * stripped before matching.
@@ -59,6 +65,8 @@ import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, relative, resolve } from "node:path";
 
 export const BRIEF_STATUS_MAX = 3;
+/** Public-release / author-meta front-matter chapters exempt from commentary scan. */
+export const FENCED_CHAPTERS = new Set(["authors-note"]);
 
 export interface CommentaryHit {
   criterion: string;
@@ -174,13 +182,17 @@ function blockCtx(mdPath: string): BlockCtx {
   };
 }
 
-function walk(p: string, out: string[]) {
+export function walk(p: string, out: string[]) {
   if (statSync(p).isDirectory()) {
+    const base = p.split("/").filter(Boolean).pop() ?? "";
+    if (FENCED_CHAPTERS.has(base)) return;
     for (const e of readdirSync(p)) {
-      if (e === "lean" || e.startsWith(".")) continue;
+      if (e === "lean" || e.startsWith(".") || FENCED_CHAPTERS.has(e)) continue;
       walk(join(p, e), out);
     }
-  } else if (p.endsWith(".md")) out.push(p);
+  } else if (p.endsWith(".md")) {
+    if (!p.split("/").some((seg) => FENCED_CHAPTERS.has(seg))) out.push(p);
+  }
 }
 
 if (import.meta.main) {

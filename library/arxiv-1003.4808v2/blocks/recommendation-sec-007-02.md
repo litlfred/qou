@@ -1,1 +1,0 @@
-Then, given a 3-manifold $N$ that can be written as $N = M_1\cup_{\Sigma_2} M_2$, with $\partial M_1 = (-\Sigma_1)\sqcup \Sigma_2$ and $\partial M_2 = (-\Sigma_2)\sqcup \Sigma_3$ as illustrated below, the functoriality property $Z(N) = Z(M_2)\circ Z(M_1)$ must hold.\ $$\includegraphics[width=3.5in]{TQFTf} \nonumber$$

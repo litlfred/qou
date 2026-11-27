@@ -1,4 +1,4 @@
-*Proof.* (CCC-1) constitutes the content of [conformal invariance at the jet horizon](#prop:horizon-conformal-invariance).
+(CCC-1) constitutes the content of [conformal invariance at the jet horizon](#prop:horizon-conformal-invariance).
 
 (CCC-2) follows from the definition of aeon adjacency ([aeon](#def:aeon)). Adjacent aeons share the boundary $\mathcal{S}_b$. The CMB of the successor aeon is exactly the degree $\geq 1$ data at its past boundary, which is the shared locus $\mathcal{S}_b$.
 

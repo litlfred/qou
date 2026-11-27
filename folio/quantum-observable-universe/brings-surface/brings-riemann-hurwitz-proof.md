@@ -1,4 +1,3 @@
-**Proof.**
 The Reeb quotient $M_S \to \Sigma_4$ collapses the $\mathrm{U}(1)$-orbits
 of the circle bundle (weight-$0$ subalgebra $A_0 = A^{\mathrm{U}(1)}$).
 The covering $\pi \colon \Sigma_4 \to \mathbb{P}(V)$ is the map to the

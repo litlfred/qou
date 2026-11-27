@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/blocks/thm-sec-122-02",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "Van den Bergh Existence, [153]",
+  "pageStart": 435,
+  "pageEnd": 440,
+  "text": "thm-sec-122-02.md",
+  "derivedFrom": "library/arxiv-1610.09640v4/sections/sec-122",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "18.5.4",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-122-185-filtered-rings-and-existence-of-rigid-nc-dc.md (p. 435-440) citing Van den Bergh Existence, [153], [153]",
+    "claim_id": "arxiv-1610.09640v4#theorem:18.5.4",
+    "lean_status": "unformalized"
+  }
+}

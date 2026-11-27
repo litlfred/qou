@@ -5,7 +5,7 @@ export default proposition({
   title:
     "General Jonquière Tate-rationality: wrong-parity part of $\\mathrm{Li}_n(\\zeta_K)$ has closed form $-(2\\pi i)^n / n! \\cdot B_n(1/K)$ at every depth",
   lean: {
-    ref: "qou:QOU.BraidKnot.JonquiereCyclotomicTateRationality.jonquiere_tate_rationality",
+    ref: "qou:BraidKnotOctonion.JonquiereCyclotomicTateRationality.jonquiere_tate_rationality",
     validation: "not_checked",
   },
   computation: {

@@ -54,7 +54,8 @@ M_E = mpf(str(M_E_MEV))   # CAL-1 electron mass (codata_constants)
 q0 = mpf(str(Q0))         # substrate parameter (q_parameter)
 
 # Calibration-fixed energy scales (NOT fitted).
-E0_substrate = M_E / (q0 * (q0 - 1))        # 𝔈₀ ≈ 4.186 MeV
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+E0_substrate = _qbeta_e0.order_zero_scaled(M_E, q0)        # 𝔈₀ ≈ 4.186 MeV
 E0_qbeta = mpf(str(Q_NEUTRON_MEV))          # CAL-3 free-neutron β-decay Q-value
 
 AME_B = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION,

@@ -1,0 +1,1 @@
+Let A = L i∈Z Ai be a weakly commutative graded ring, and assume A has nonzero odd elements. Then, after we forget the grading, the ring A is no longer commutative (except in special cases, like in characteristic 2). This phenomenon will reappear often in the study of DG algebra.

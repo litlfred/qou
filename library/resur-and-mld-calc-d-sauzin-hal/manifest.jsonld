@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/resur-and-mld-calc-d-sauzin-hal",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/resur-and-mld-calc-d-sauzin-hal/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -31,6 +31,18 @@
     "library/resur-and-mld-calc-d-sauzin-hal/sections/sec-016"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Resurgence and Mould Calculus — 18 sections: Front matter; Introduction; ``Simple'' version of Resurgence T\n\n**Resurgence and Mould Calculus**\n\n*The documents may come from teaching and research*\n\n16 pp, 18 sections.\n\n**Outline.** Front matter; Introduction; ``Simple'' version of Resurgence Theory; Simple -resurgent series; Stability under product and nonlinear operatio; Alien operators. Alien derivations; Freeness of the alien derivations and first hi; Simple resurgent functions obtained by Borel-L; Borel-Laplace summation; The algebra R of general resurgent singulariti; Relaxing the constraint on the location of sin; Examples from mathematical physics.; Relaxing the constraint on the nature of singu; Mould Calculus; The mould algebra; The hyperlogarithmic mould.; Mould aspects of the MZV world; Applications",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "resur-and-mld-calc-d-sauzin-hal",
@@ -41,8 +53,8 @@
     "pages": 16,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-hep-th-9408045v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "a9786c0f44a4e659f489f2928f53c5ba3f1cf53f057f9b018ed14697c32c74ce",
   "file": "9408045v1.pdf"
  },
  "provenance": {
-  "title": "arXiv:hep-th/9408045v1 8 Aug 1994",
+  "title": "Constrained analysis of topologically massive gravity",
   "authors": "J. Barcelos-Neto \u2217and T.G. Dargam",
   "arxiv": {
    "id": "hep-th/9408045",
@@ -16,46 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
-  "by_kind": {
-   "recommendation": 2
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall consider the approximation of weak gravitational \ufb01elds [4].",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-i-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The Hilbert-Einstein Lagrangian reads L = 1 2\u03ba2 \u221a\u2212g R , (2.1) where \u03ba is the Einstein constant and we shall use the following \ufb02at metric convention diag. (+, \u2212, . . ., \u2212).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-ii-hilbert-einstein-theory-in-a-weak-gravitation.md",
-   "section_title": "Hilbert-Einstein theory in a weak gravitational \ufb01eld",
-   "pages": "3-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

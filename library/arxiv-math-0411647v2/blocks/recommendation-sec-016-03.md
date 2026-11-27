@@ -1,1 +1,0 @@
-By reverting the third step of the simplifying algorithm we see that the outcome of the first two steps of the simplifying algorithm must be a pair partition either of the form from Figure [1](#fig:krzyz){reference-type="ref" reference="fig:krzyz"} or Figure [2](#fig:gwiazdadawida){reference-type="ref" reference="fig:gwiazdadawida"}.

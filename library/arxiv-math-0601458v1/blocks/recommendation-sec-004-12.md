@@ -1,1 +1,0 @@
-This suggests what we must do next: we have recovered the basic structure of the Weyl algebra in a categorified form, but so far we are missing some concepts which, though quite natural in the decategorified setting, are difficult to see in this combinatorial picture.

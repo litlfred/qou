@@ -1,5 +1,5 @@
-import QOU.Basic
-import QOU.QuantumObservableUniverse.SubstrateParameter
+import QOU.Core.Basic
+import QOU.Core.SubstrateParameter
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Preadditive.Basic
 import Mathlib.Algebra.Order.Field.Basic

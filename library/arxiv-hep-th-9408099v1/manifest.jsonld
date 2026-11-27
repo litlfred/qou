@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9408099v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9408099v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-th-9408099v1",
+  "title": "Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD",
   "contains": [
     "library/arxiv-hep-th-9408099v1/sections/sec-front-matter",
     "library/arxiv-hep-th-9408099v1/sections/sec-000",
@@ -39,6 +39,21 @@
     "library/arxiv-hep-th-9408099v1/sections/sec-024"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Seiberg–Witten, Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD (1994) — exact metric on the moduli space of quantum vacua and exact stable-state spectrum for SU(2) with…\n\n**Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD** — N. Seiberg and E. Witten. arXiv:hep-th/9408099, RU-94-60, IASSNS-HEP-94/55, 17 Aug 1994.\n\nFour-dimensional N=2 supersymmetric gauge theories with matter multiplets. For all such models with gauge group SU(2), derives the **exact** metric on the moduli space of quantum vacua and the **exact** spectrum of stable massive states, including the monopole/dyon states whose condensation drives confinement and chiral symmetry breaking.\n\n**Why it may bear here.** This is the second Seiberg–Witten paper — the origin of the exact-moduli-space / BPS-spectrum technology that the Stokes-constant and DT/BPS material in this corpus refers back to. Registered as a foundational source; no specific result here is claimed to be in use.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01AWgkrPkXGZ1Hb2UmMmFMcP",
+        "date": "2026-08-15"
+      },
+      "drafted_at": "2026-08-15"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -49,7 +64,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-th-9408099v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9408099v1.pdf",
     "source_sha256": "b534faddd2e3aa71f6de260867887df3eb8b919f9097c7fcf821040d46618f11",
     "pages": 88,
@@ -60,8 +77,8 @@
       "stamp_date": "17 Aug 1994"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

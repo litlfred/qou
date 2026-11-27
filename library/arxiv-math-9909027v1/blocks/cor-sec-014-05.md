@@ -1,0 +1,1 @@
+If N ⊂M is an extremal II1 subfactor then, with the notation of §3.2, λ1(P N⊂M) = P M⊂M1, as planar algebras. (Note that P M⊂M1 k = M′ ∩Mk which is a subset of P N⊂M k+1 . We are saying that the identity map is an isomorphism of planar algebras.)

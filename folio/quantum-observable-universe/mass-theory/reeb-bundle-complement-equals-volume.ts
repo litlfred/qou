@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:reeb-bundle-complement-equals-volume",
   lean: {
-    ref: "qou:QOU.BraidsKnots.ReebBundleComplementEqualsVolume",
+    ref: "qou:QOU.BraidsAndKnots.ReebBundleComplementEqualsVolume",
     validation: "not_checked",
   },
   title:

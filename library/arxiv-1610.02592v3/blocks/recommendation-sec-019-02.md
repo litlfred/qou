@@ -1,1 +1,0 @@
-\begin{figure} \begin{center} \includegraphics[width = 11.5 cm] {\iftoggle{BW}{domini-BW}{domini}} \nota{A fundamental domain in $\matR^2$ for the torus (left) and the Klein bottle (centre): opposite sides should be identified as indicated by the arrows.

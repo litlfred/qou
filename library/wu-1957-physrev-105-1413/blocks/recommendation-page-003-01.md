@@ -1,1 +1,0 @@
-Their hypothesis, born out of the ~—0 puzzle, 4 was accom- panied by the suggestion that confirmation should be sought (among other places) in the study of the succes- sive reactions CA E- IN IT I AT I N G NTERS (4"X4") x+~p++ v, p+ +6++2 v.

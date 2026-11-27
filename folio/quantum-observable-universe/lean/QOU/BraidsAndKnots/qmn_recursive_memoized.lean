@@ -1,4 +1,4 @@
-import QOU.Shared.MarkovTraceClaim
+import QOU.Core.MarkovTraceClaim
 
 /-!
 # QOU.BraidsAndKnots.qmn_recursive_memoized

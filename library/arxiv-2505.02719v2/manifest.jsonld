@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2505.02719v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2505.02719v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -35,6 +35,18 @@
     "library/arxiv-2505.02719v2/sections/sec-021"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On the Palais-Smale condition in geometric knot theory — We prove that various families of energies relevant in geometric knot theory satisfy the Palais–Smale condition (PS) on submanifolds of\n\n**On the Palais-Smale condition in geometric knot theory**\n\n*Nicolas Freches, Henrik Schumacher, Daniel Steenebrügge, and Heiko von der Mosel*\n\n52 pp, 22 sections.\n\n**Abstract.** We prove that various families of energies relevant in geometric knot theory satisfy the Palais–Smale condition (PS) on submanifolds of arclength parametrized knots. These energies include linear combinations of the Euler-Bernoulli bending energy with a wide variety of non-local knot energies, such as O’Hara’s self-repulsive potentials 𝐸𝛼,𝑝, gen- eralized tangent-point energies TP( 𝑝,𝑞), and generalized integral Menger curvature func- tionals intM( 𝑝,𝑞). Even the tangent-point energies TP( 𝑝,2) for 𝑝∈(4, 5) alone are shown to fulfill the (PS)-condition. For all energies mentioned we can therefore prove existence of minimizing knots in any prescribed ambient isotopy class, and we provide long-time existence of their Hilbert-gradient flows, and subconvergence to critical knots as time goes to infinity.\n\n**Outline.** The Palais–Smale condition; Introduction; Three families of knot energies on curves; Main results; Outline of the paper; The Palais–Smale condition in an abstract sett; Energies on submanifolds of Hilbert spaces; Gradient flows on Riemannian manifolds; The submanifolds of arclength parametrized cur; The arclength manifolds N1+s and A1+s; The topology of arclength manifolds; Critical knots in arclength submanifolds; The Palais–Smale condition for bending energy ; Bending energy with self-avoidance term; Tangent-point energy; Regularity of critical points; Bending energy; Bending energy with tangent-point energy",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -57,8 +69,8 @@
       "stamp_date": "2 Mar 2026"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

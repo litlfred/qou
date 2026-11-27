@@ -1,1 +1,0 @@
-(This statement will become clearer in Section [\[sec:tent\]](#sec:tent){reference-type="ref" reference="sec:tent"}.) In particular, when using a refined, "easy" triangulation so that all operators $\mathcal{O}_I$ exist, the sum should always converge.

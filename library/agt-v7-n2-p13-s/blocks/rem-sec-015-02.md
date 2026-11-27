@@ -1,0 +1,1 @@
+Numerical computations with the example of Section 6.4 show that the QHFT amplitudes should depend strongly on the choice of weight, even asymptotically. In fact, it is natural to ask whether their growth rate is determined by this choice.

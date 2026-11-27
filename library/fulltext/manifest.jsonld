@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fulltext",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fulltext/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -27,6 +27,18 @@
     "library/fulltext/sections/sec-012"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The Dilogarithm Function — 14 sections: Front matter; The dilogarithm function in geomet; Special values\n\n**The Dilogarithm Function**\n\n*Don Zagier*\n\n63 pp, 14 sections.\n\n**Outline.** Front matter; I The dilogarithm function in geometry and num; 1 Special values; 2 Functional equations; 3 The Bloch-Wigner function D(z) and its gener; 4 Volumes of hyperbolic 3-manifolds; References; Notes on Chapter I; II Further aspects of the dilogarithm; 1 Variants of the dilogarithm function; 2 Dilogarithm identities; 3 Dilogarithms and modular functions: the Nahm; 4 Higher polylogarithms; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "fulltext",
@@ -38,8 +50,8 @@
     "pages": 63,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

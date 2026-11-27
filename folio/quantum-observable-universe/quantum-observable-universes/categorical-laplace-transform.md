@@ -9,5 +9,3 @@ defined by the Hopf pairing against the real exponential grouplike $\exp_q(-s\cd
 $$
   \mathcal{L}[f](s) \;=\; \mathrm{tr}_M\bigl(\exp_q(-s\cdot)  \cdot  f\bigr).
 $$
-
-$\mathcal{L}$ intertwines $q$-convolution with pointwise product, uniquely characterising it as the mate of the comultiplication $\Delta_q$ on $\mathcal{H}_q$.

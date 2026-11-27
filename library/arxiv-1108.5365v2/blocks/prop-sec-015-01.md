@@ -1,0 +1,1 @@
+The conjugation map T (cf. (2.20)) is given by T (f) = f(−s, −t)e2πist, (4.35) T ∗is given by T ∗(f) = f(−s, −t)e2πiste2πsQ. (4.36) Hence the modular operator ∇= T ∗T is given by ∇(f) = f(s, t)e2πsQ, (4.37) and the modular conjugation J = T ∇−1 2 = ∇

@@ -147,7 +147,10 @@ def main() -> int:
     shape_roots = mp.polyroots([1, -1, 0, 1])
     z52 = next(r for r in shape_roots if mp.im(r) < -1e-9)  # geometric branch
     vol52 = 3 * abs(bloch_wigner(z52))   # 5₂ = 3 tetrahedra, D(z1)=D(z2)=D(z)
-    vol52_ref = mp.mpf("2.828122088330783")
+    # Read the reference from the corpus registry instead of typing it in
+    # (witness-value copy audit): VOL_5_2_MPF is the SnapPy HP 50-dps value.
+    from knot_volumes import VOL_5_2_MPF
+    vol52_ref = mp.mpf(VOL_5_2_MPF)
     vol_ok = abs(vol52 - vol52_ref) < mp.mpf(10) ** -12
 
     # discriminant of the shape cubic z³ - z² + 1  (a,b,c,d = 1,-1,0,1)

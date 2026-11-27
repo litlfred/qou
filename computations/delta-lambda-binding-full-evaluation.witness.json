@@ -1,7 +1,7 @@
 {
   "engine": "python3/mpmath",
   "engineVersion": "50dps",
-  "computedAt": "2026-09-04T03:24:58.950044+00:00",
+  "computedAt": "2026-11-24T13:49:10.537874+00:00",
   "computation": "delta-lambda-binding-full-evaluation",
   "scriptFile": "delta_lambda_binding_full_evaluation.py",
   "description": "Full numerical evaluation of the \u0394_\u03bb binding formula B(K) = m_e \u00d7 |\u03a3 y_\u03bb \u00b7 \u03c7^\u03bb(\u03b2_K) \u00b7 sgn(w_0^{S_{\u03bb prime}}) \u00b7 f^\u03bb| for D, T, \u00b3He, \u2074He. Zero free parameters. All factors: y_\u03bb (Wenzl), \u03c7^\u03bb (Hoefsmit+interface), sgn (Macdonald), f^\u03bb (hook-length).",
@@ -10,41 +10,41 @@
       "A": 2,
       "Z": 1,
       "N": 1,
-      "sum": -0.717445421638373,
-      "B_pred_MeV": 0.36661385763455323,
+      "sum": 0.5315804087458691,
+      "B_pred_MeV": 0.2716370310765004,
       "B_AME_MeV": 2.22452,
-      "err_MeV": -1.8579061423654468,
-      "err_pct": -83.51941732892699
+      "err_MeV": -1.9528829689234997,
+      "err_pct": -87.78895981710659
     },
     "T": {
       "A": 3,
       "Z": 1,
       "N": 2,
-      "sum": -2.475140289653874,
-      "B_pred_MeV": 1.2647940908236723,
+      "sum": -0.6279118176203318,
+      "B_pred_MeV": 0.3208622799298402,
       "B_AME_MeV": 8.4818,
-      "err_MeV": -7.2170059091763274,
-      "err_pct": -85.08814059723558
+      "err_MeV": -8.160937720070159,
+      "err_pct": -96.21704968367752
     },
     "3He": {
       "A": 3,
       "Z": 2,
       "N": 1,
-      "sum": -3.0789912094012637,
-      "B_pred_MeV": 1.5733612771877798,
-      "B_AME_MeV": 7.71804,
-      "err_MeV": -6.144678722812221,
-      "err_pct": -79.61449698125716
+      "sum": -0.7870795746025694,
+      "B_pred_MeV": 0.4021968367314445,
+      "B_AME_MeV": "7.718041319999999999999999999999999999999999999999995711041411183331376",
+      "err_MeV": "-7.315844483268555481923982597436406649649143218994136336041411183331376",
+      "err_pct": "-94.78887427449734723529547775777399763453382520883083846326150041937116"
     },
     "4He": {
       "A": 4,
       "Z": 2,
       "N": 2,
-      "sum": -0.19093779392334528,
-      "B_pred_MeV": 0.0975690123418929,
-      "B_AME_MeV": 28.29567,
-      "err_MeV": -28.19810098765811,
-      "err_pct": -99.65518041332156
+      "sum": -1.9227951404465948,
+      "B_pred_MeV": 0.9825462991600412,
+      "B_AME_MeV": "28.2956623999999999999999999999999999999999999999999915823563342238137",
+      "err_MeV": "-27.3131161008399587856288803777715656906366348266601478323563342238137",
+      "err_pct": "-96.52757272379655895819876751770817597341928573002820374936140507520505"
     }
   },
   "assertions": [
@@ -66,9 +66,9 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "6da619aed511",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
-  "commitSha": "4f6818390285716ab5b58c6d1ec966ddae917a77",
+  "scriptHash": "5d33d962dc1b",
+  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+  "commitSha": "acb646cc6fe482bb452007b31eba2d1d358cefe0",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

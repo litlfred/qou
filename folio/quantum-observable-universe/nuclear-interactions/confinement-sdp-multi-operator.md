@@ -1,4 +1,4 @@
-**Remark.** Let $P_1$ and $P_2$ be confined particles whose composite satisfies the confinement SDP. Their **binding subword** is
+Let $P_1$ and $P_2$ be confined particles whose composite satisfies the confinement SDP. Their **binding subword** is
 
 $$
   W_{\mathrm{bind}}

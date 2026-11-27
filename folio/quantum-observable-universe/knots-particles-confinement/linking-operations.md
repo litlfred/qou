@@ -1,2 +1,1 @@
-**Definition.**
-*The two :defterm[linking operations]{#linking-operations} are the geometric operations that build composite knots from the [torus knot generators](#def:knot-particle-generation): $(i)$ Hopf linking on the exceptional divisor, and $(ii)$ color-tube threading of the color-tube fibration. Together with the generator family $\mathcal{G}$, they generate the full particle spectrum.*
+*The two :defterm[linking operations]{#linking-operations} are the geometric operations that build composite knots from the [torus knot generators](#def:knot-particle-generation): $(i)$ Hopf linking on the exceptional divisor, and $(ii)$ color-tube threading of the color-tube fibration.*

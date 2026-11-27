@@ -1,0 +1,1 @@
+It is easy to check that the formula for V(M ′) of Theorem 2 is invariant modulo iπ2/6 under “cocycle moves” to change the triangulation: replace two ideal simplices ⟨V0, V1, V2, V3⟩and ⟨V ′ 0, V1, V2, V3⟩which have a common face by three— ⟨V0, V ′ 0, V1, V2⟩, ⟨V0, V ′ 0, V2, V3⟩, and ⟨V0, V ′ 0, V3, V1⟩.

@@ -1,5 +1,3 @@
-## Proof
-
 Using $[n]_q = (q^n - q^{-n})/(q - q^{-1})$, multiply both sides by
 $(q - q^{-1})^2$ to clear denominators. The identity becomes the
 ring identity

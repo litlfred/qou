@@ -5,16 +5,28 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0005296v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0005296v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0005296v1",
+  "title": "An example concerning Ohtsuki’s invariant and the full SO(3) quautum invariant",
   "contains": [
     "library/arxiv-math-0005296v1/sections/sec-front-matter",
     "library/arxiv-math-0005296v1/sections/sec-000"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "An example concerning Ohtsuki’s invariant and the full SO(3) quautum invariant — Two lens spaces are given to show that Ohtsuki’s τ for rational homology spheres does not determine Kirby-Melvin’s {τ\n\n**An example concerning Ohtsuki’s invariant and the full SO(3) quautum invariant**\n\n*Bang-He Li & Tian-Jun Li*\n\n4 pp, 2 sections.\n\n**Abstract.** Two lens spaces are given to show that Ohtsuki’s τ for rational homology spheres does not determine Kirby-Melvin’s {τ ′ r, r odd ≥3} By using partial Kirby-Melvin’s quautum SO(3) invariants {τ ′ r(M), r odd prime > |H1(M, Z)|} [KM], Ohtsuki [O] deﬁned a topological invariant τ(M) = ∞ X n=0 λn(M)(t −1)n ∈Q[[t −1]] for rational homology 3-sphere M. R.Lawrence [La] conjectured that λn(M) ∈ ( Z, if |H1(M, Z)| = 1 Z[1 2, 1 |H1(M,Z)|], if |H1(M, Z)| > 1 and if r is an odd prime which does not divide |H1(M, Z)|, then {|H1(M, Z)|}rτ ′ r(M) is the r−adic limit of the series ∞ X n=0 λ √ n (M)hn where {·}r stands for the Jacobi symbol, and h = e 2πi r −1. Rozansky [R] has proved that this conjecture is true. So τ(M) and {τ ′ r, r odd prime not dividing |H1(M, Z)|} determine each other. A natural question arises: Does τ determine all {τ ′ r, r odd ≥3}?\n\n**Outline.** Front matter; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
@@ -25,7 +37,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0005296v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0005296v1.pdf",
     "source_sha256": "1714653ecfdf01bccb517050f0b4d41a1b56d2462c1d74cd86e2530ede75f004",
     "pages": 4,
@@ -36,8 +50,8 @@
       "stamp_date": "31 May 2000"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

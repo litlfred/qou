@@ -1,0 +1,1 @@
+If the theta divisor is smooth or has only isolated singularities, then there exists a Zariski-open dense subset U ⊂X such that for all x ∈U(C) the quotient morphism Yx −→Y + x = Yx/σx is an ´etale double covering between smooth varieties of dimension g−2.

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1103.4815v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1103.4815v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -35,6 +35,18 @@
     "library/arxiv-1103.4815v3/sections/sec-020"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non-abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal 2-bundles.\n\n**Four Equivalent Versions of Non-Abelian Gerbes**\n\n*Thomas Nikolaus a and Konrad Waldorf b*\n\n65 pp, 22 sections.\n\n**Abstract.** We recall and partially improve four versions of smooth, non-abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal 2-bundles. We prove that all these four ver- sions are equivalent, and so establish new relations between interesting recent developments. Prominent partial results that we prove are a bijection between the continuous and smooth non- abelian cohomology, and an explicit equivalence between bundle gerbes and principal 2-bundles as 2-stacks.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 Lie Groupoids and Groupoid Actions on Mani; 2.2 Principal Groupoid Bundles; 2.3 Anafunctors; 2.4 Lie 2-Groups and crossed Modules; 3 Version I: Groupoid-valued Cohomology; 4 Version II: Classifying Maps; 5 Version III: Groupoid Bundle Gerbes; 5.1 Definition via the Plus Construction; 5.2 Properties of Groupoid Bundle Gerbes; 5.3 Classification by Cech Cohomology; 6 Version IV: Principal 2-Bundles; 6.1 Definition of Principal 2-Bundles; 6.2 Properties of Principal 2-Bundles; 7 Equivalence between Bundle Gerbes and 2-Bund; 7.1 From Principal 2-Bundles to Bundle Gerbes",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -58,8 +70,8 @@
       "stamp_date": "17 Jul 2013"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,0 +1,540 @@
+import HeckeTemperleyLieb.HeckeH4AlgebraLaws
+import HeckeTemperleyLieb.HeckeH4BlockRep
+import Mathlib.Data.Matrix.Basic
+import Mathlib.Tactic
+
+/-!
+# QOU.Machinery.HeckeH4BlockMap31 — the $(3,1)$ coordinate block map of $H_4(q)$
+
+Wedderburn tranche **W2b** (bean `qou-308a`; design provenance: the H₄
+Wedderburn design doc §1/§3, session scratchpad `h4_wedderburn_iso/design.md`):
+the $(3,1)$ block map of the rank-4 Wedderburn picture
+$H_4(q) \cong K \times K \times M_2(K) \times M_3(K) \times M_3(K)$, on the
+**subscript** 24-word NF basis of `HeckeH4StabilizationRung` (H₃ Lean basis as
+prefix, then (length, canonical word) order).
+
+`blockOf31` is defined by its **explicit entries** — the `rho31_*` rows of
+the verified 24×24 coordinate matrix $A$ of
+`computations/h4_wedderburn/hecke-h4-wedderburn-seminormal.data.json`
+(sympy-exact over $\mathbb{Q}(q)$; row/entry provenance re-verified against the
+seminormal word products in the session cofactor derivation) — rather than as a
+$v$-weighted sum of seminormal word products.  At rank 4 the longest basis word
+is $\sigma_0\sigma_1\sigma_2\sigma_0\sigma_1\sigma_0$; unfolding 6-fold
+matrix products inside every lemma invites elaboration blowups, while the
+explicit-entry definition keeps every per-entry goal a small scalar identity.
+The word-product decomposition is *recovered as a theorem* inside
+`blockOf31_mulNF₄` (expansion + intertwiners + unit — nothing is trusted
+from the symbolic computation).
+
+Proved here (sorry-free):
+
+* `blockOf31_unit` — the unit $\gamma$ maps to $\mathbb{1}$ (column 0 of $A$);
+* the three right-action intertwiners `blockOf31_mulσ₀/₁/₂` —
+  `blockOf31 q (u·σₖ) = blockOf31 q u * Sₖ` against the proved seminormal
+  matrices `S0_31/S1_31/S2_31` of `HeckeH4BlockRep` (27 scalar goals, each
+  closed by `linear_combination` against `mul_inv_cancel₀` with sympy-derived,
+  exactly-verified cofactors — the SET-E payloads of the design doc);
+* `blockOf31_mulNF₄` — multiplicativity on the full NF product, by the
+  structured route (right-basis expansion + intertwiner peeling — no 6-fold
+  word product is ever elaborated);
+* `H4A.blockRep31` — the induced algebra homomorphism
+  `H4A K (q - q⁻¹) →ₐ[K] M_3(K)`.
+
+HONESTY (STRICT, §"Axiomatization is NOT a Proof"): every lemma below is
+discharged by computation — no axiom, no conditional class, no `native_decide`;
+the sympy cofactors are *payloads*, re-verified by Lean's `linear_combination`
+kernel check.  Nothing wired; `1/(8π)` stays phase-4.
+
+Base ring (§7c): generic `[Field K]` — inverses are genuinely used; no
+archimedean construct.  Genericity hypotheses per theorem, read off the
+cofactor atoms: `q ≠ 0`, `q ^ 2 + 1 ≠ 0`, `q ^ 4 + q ^ 2 + 1 ≠ 0`.
+
+-- Ref: [wenzl1988] https://doi.org/10.1007/BF01239526
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+-/
+
+namespace QOU.Machinery.H4
+
+set_option maxRecDepth 8000
+
+variable {K : Type*} [Field K]
+
+set_option maxHeartbeats 16000000 in
+/-- The $(3,1)$ block map on NF coordinates, by **explicit entries**:
+    row $r$, column $c$ is the `rho31_{rc}` row of the verified 24×24
+    coordinate matrix $A$ applied to $v$ (inverse atoms kept separated:
+    only `q⁻¹`, `(q ^ 2 + 1)⁻¹`, `(q ^ 4 + q ^ 2 + 1)⁻¹`, `(q ^ 4 + 1)⁻¹`). -/
+noncomputable def blockOf31 (q : K) (v : Fin 24 → K) :
+    Matrix (Fin 3) (Fin 3) K :=
+  Matrix.of ![![-q ^ 4*v 23*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 3*v 20*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 3*v 21*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 3*v 22*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 3*v 5 - q ^ 2*v 15*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*v 16*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*v 17*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*v 18*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*v 19*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*v 3 + q ^ 2*v 4 + q*v 1 - q*v 10*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*v 11*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*v 12*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*v 13*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*v 14*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*v 2 + v 0 - v 6*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - v 7*(q ^ 4 + q ^ 2 + 1)⁻¹ - v 8*(q ^ 4 + q ^ 2 + 1)⁻¹ - v 9*(q ^ 4 + q ^ 2 + 1)⁻¹,
+      q ^ 3*v 15 - q ^ 3*v 23*(q ^ 2 + 1)⁻¹ + q ^ 2*v 10 + q ^ 2*v 11 - q ^ 2*v 20*(q ^ 2 + 1)⁻¹ - q ^ 2*v 21*(q ^ 2 + 1)⁻¹ - q ^ 2*v 22*(q ^ 2 + 1)⁻¹ - q*v 16*(q ^ 2 + 1)⁻¹ - q*v 17*(q ^ 2 + 1)⁻¹ - q*v 18*(q ^ 2 + 1)⁻¹ - q*v 19*(q ^ 2 + 1)⁻¹ + q*v 7 + q*v 8 - v 12*(q ^ 2 + 1)⁻¹ - v 13*(q ^ 2 + 1)⁻¹ - v 14*(q ^ 2 + 1)⁻¹ + v 6 - v 9*(q ^ 2 + 1)⁻¹*q⁻¹,
+      q ^ 3*v 20 + q ^ 2*v 16 + q ^ 2*v 17 - q ^ 2*v 23 + q*v 12 + q*v 13 - q*v 21 - q*v 22 - v 14*q⁻¹ - v 18 - v 19 + v 9],
+    ![q ^ 11*v 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 10*v 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 10*v 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 9*v 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 9*v 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 9*v 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 9*v 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 8*v 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 8*v 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 8*v 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 8*v 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 8*v 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 8*v 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 7*v 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 7*v 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 7*v 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 7*v 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 7*v 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 7*v 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 7*v 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 7*v 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*v 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*v 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*v 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 6*v 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 6*v 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*v 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*v 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*v 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 6*v 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*v 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - q ^ 5*v 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*v 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*v 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*v 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 5*v 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*v 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 5*v 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 5*v 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*v 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*v 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*v 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 4*v 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 4*v 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*v 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*v 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*v 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 4*v 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*v 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - q ^ 3*v 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*v 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*v 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*v 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*v 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*v 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 3*v 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 3*v 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*v 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*v 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*v 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*v 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*v 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*v 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*v 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*v 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 2*v 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*v 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - q*v 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q*v 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q*v 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q*v 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*v 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*v 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - v 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - v 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - v 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + v 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - v 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹,
+      q ^ 9*v 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 8*v 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 8*v 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 7*v 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 7*v 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*v 15*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*v 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*v 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*v 19*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*v 23*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*v 8*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*v 10*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*v 11*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*v 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*v 13*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*v 14*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*v 20*(q ^ 4 + q ^ 2 + 1)⁻¹ + 2*q ^ 5*v 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*v 22*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*v 6*(q ^ 4 + q ^ 2 + 1)⁻¹ + 2*q ^ 4*v 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*v 17*(q ^ 4 + q ^ 2 + 1)⁻¹ + 2*q ^ 4*v 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*v 7*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*v 9*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + 2*q ^ 3*v 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 3*v 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*v 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*v 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*v 23*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*v 1 + q*v 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*v 20*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*v 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*v 5*(q ^ 2 + 1)⁻¹ + v 0 - v 17*(q ^ 4 + q ^ 2 + 1)⁻¹ - v 2*(q ^ 2 + 1)⁻¹*q⁻¹ - v 3*(q ^ 2 + 1)⁻¹ - v 4*(q ^ 2 + 1)⁻¹,
+      q ^ 7*v 16*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*v 12*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*v 13*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*v 20*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*v 21*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*v 17*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*v 18*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*v 19*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*v 23*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*v 9*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*v 14*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*v 20*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*v 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 3*v 17*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 3*v 23*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*v 10 + q ^ 2*v 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*v 15 + q*v 4 + q*v 7 - v 11 + v 2 - v 3*q⁻¹ - v 5],
+    ![q ^ 7*v 22*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*v 17*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*v 18*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*v 23*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*v 11*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*v 12*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*v 20*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*v 21*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*v 10*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - q ^ 4*v 15*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*v 16*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*v 7*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 3*v 22*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*v 17*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*v 18*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*v 23*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*v 11*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*v 12*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*v 20*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*v 21*(q ^ 4 + q ^ 2 + 1)⁻¹ - v 10*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - v 15*(q ^ 4 + q ^ 2 + 1)⁻¹ - v 16*(q ^ 4 + q ^ 2 + 1)⁻¹ + v 7*(q ^ 4 + q ^ 2 + 1)⁻¹,
+      q ^ 7*v 18*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*v 11*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*v 12*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*v 14*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*v 21*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*v 15*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*v 16*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*v 19*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*v 3*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*v 7*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*v 9*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*v 10*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*v 13*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*v 14*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*v 2*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*v 22*(q ^ 2 + 1)⁻¹ - q ^ 4*v 4*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - q ^ 4*v 5*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*v 17*(q ^ 2 + 1)⁻¹ - q ^ 3*v 19*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*v 23*(q ^ 2 + 1)⁻¹ + q ^ 3*v 3*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*v 9*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*v 13*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*v 14*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*v 2*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*v 20*(q ^ 2 + 1)⁻¹ - q ^ 2*v 4*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - q ^ 2*v 5*(q ^ 2 + 1)⁻¹ ^ 2 - q*v 19*(q ^ 2 + 1)⁻¹ ^ 2 + q*v 3*(q ^ 2 + 1)⁻¹ ^ 2 + q*v 9*(q ^ 2 + 1)⁻¹ ^ 2 - v 13*(q ^ 2 + 1)⁻¹ ^ 2 + v 2*(q ^ 2 + 1)⁻¹ ^ 2 - v 4*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - v 5*(q ^ 2 + 1)⁻¹ ^ 2,
+      q ^ 5*v 12*(q ^ 2 + 1)⁻¹ - q ^ 4*v 16*(q ^ 2 + 1)⁻¹ - q ^ 4*v 18*(q ^ 2 + 1)⁻¹ + q ^ 4*v 7*(q ^ 2 + 1)⁻¹ + q ^ 4*v 9*(q ^ 2 + 1)⁻¹ - q ^ 3*v 10*(q ^ 2 + 1)⁻¹ - q ^ 3*v 11*(q ^ 2 + 1)⁻¹ - q ^ 3*v 13*(q ^ 2 + 1)⁻¹ - q ^ 3*v 14*(q ^ 2 + 1)⁻¹ + q ^ 3*v 2*(q ^ 2 + 1)⁻¹ + q ^ 3*v 21*(q ^ 2 + 1)⁻¹ + q ^ 2*v 15*(q ^ 2 + 1)⁻¹ + q ^ 2*v 19*(q ^ 2 + 1)⁻¹ - q ^ 2*v 3*(q ^ 2 + 1)⁻¹ - q ^ 2*v 4*(q ^ 2 + 1)⁻¹ + q*v 5*(q ^ 2 + 1)⁻¹ + q*v 6 + v 0 - v 1*q⁻¹ - v 8]]
+
+set_option maxHeartbeats 6400000 in
+/-- The unit $\gamma$ maps to the identity matrix — column 0 of $A$ is the
+    identity block $(3,1)$-component (sorry-free). -/
+theorem blockOf31_unit (q : K) : blockOf31 q (unitNF₄ (R := K)) = 1 := by
+  ext i j
+  fin_cases i <;> fin_cases j
+  all_goals simp [blockOf31, unitNF₄]
+
+set_option maxHeartbeats 6400000 in
+/-- The block map intertwines the right `σ₀`-action with right
+    multiplication by `S0_31` (9 scalar goals; each closed by
+    `linear_combination` with the sympy-derived, exactly-verified SET-E
+    cofactors — sorry-free). -/
+theorem blockOf31_mulσ₀ (q : K) (hq : q ≠ 0)
+    (u : Fin 24 → K) :
+    blockOf31 q (mulσ₀ (q - q⁻¹) u) = blockOf31 q u * S0_31 q := by
+  ext r c
+  fin_cases r <;> fin_cases c
+  · show blockOf31 q (mulσ₀ (q - q⁻¹) u) 0 0 =
+        (blockOf31 q u * S0_31 q) 0 0
+    simp only [blockOf31, S0_31, mulσ₀, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue]
+    linear_combination (norm := ring1)
+        (q ^ 3*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 5 + q*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 3 - u 1 + u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 6*(q ^ 4 + q ^ 2 + 1)⁻¹) * mul_inv_cancel₀ hq
+  · show blockOf31 q (mulσ₀ (q - q⁻¹) u) 0 1 =
+        (blockOf31 q u * S0_31 q) 0 1
+    simp only [blockOf31, S0_31, mulσ₀, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue]
+    linear_combination (norm := ring1)
+        (-q ^ 2*u 15 + q ^ 2*u 23*(q ^ 2 + 1)⁻¹ - q*u 11 + q*u 21*(q ^ 2 + 1)⁻¹ + q*u 22*(q ^ 2 + 1)⁻¹ + u 18*(q ^ 2 + 1)⁻¹ + u 19*(q ^ 2 + 1)⁻¹ - u 8 + u 9*(q ^ 2 + 1)⁻¹) * mul_inv_cancel₀ hq
+  · show blockOf31 q (mulσ₀ (q - q⁻¹) u) 0 2 =
+        (blockOf31 q u * S0_31 q) 0 2
+    simp only [blockOf31, S0_31, mulσ₀, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue]
+    linear_combination (norm := ring1)
+        (q ^ 2*u 20 + q*u 16 + q*u 17 + u 12 + u 13 - u 14) * mul_inv_cancel₀ hq
+  · show blockOf31 q (mulσ₀ (q - q⁻¹) u) 1 0 =
+        (blockOf31 q u * S0_31 q) 1 0
+    simp only [blockOf31, S0_31, mulσ₀, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue]
+    linear_combination (norm := ring1)
+        (-q ^ 10*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 9*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 8*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 8*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 8*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 7*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 7*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 7*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 6*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 6*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 5*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 4*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 4*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 3*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 2*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2) * mul_inv_cancel₀ hq
+  · show blockOf31 q (mulσ₀ (q - q⁻¹) u) 1 1 =
+        (blockOf31 q u * S0_31 q) 1 1
+    simp only [blockOf31, S0_31, mulσ₀, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue]
+    linear_combination (norm := ring1)
+        (-q ^ 8*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 7*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 15*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 19*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 11*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 14*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - 2*q ^ 4*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - 2*q ^ 3*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 1 + u 2*(q ^ 2 + 1)⁻¹ + u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 5*(q ^ 2 + 1)⁻¹) * mul_inv_cancel₀ hq
+  · show blockOf31 q (mulσ₀ (q - q⁻¹) u) 1 2 =
+        (blockOf31 q u * S0_31 q) 1 2
+    simp only [blockOf31, S0_31, mulσ₀, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue]
+    linear_combination (norm := ring1)
+        (q ^ 6*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 3*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 10 - u 3 + u 4 + u 7) * mul_inv_cancel₀ hq
+  · show blockOf31 q (mulσ₀ (q - q⁻¹) u) 2 0 =
+        (blockOf31 q u * S0_31 q) 2 0
+    simp only [blockOf31, S0_31, mulσ₀, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue]
+    linear_combination (norm := ring1)
+        (-q ^ 6*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 21*(q ^ 4 + q ^ 2 + 1)⁻¹) * mul_inv_cancel₀ hq
+  · show blockOf31 q (mulσ₀ (q - q⁻¹) u) 2 1 =
+        (blockOf31 q u * S0_31 q) 2 1
+    simp only [blockOf31, S0_31, mulσ₀, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue]
+    linear_combination (norm := ring1)
+        (-q ^ 6*u 18*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*u 11*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*u 14*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 21*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 15*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 19*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*u 3*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 4*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*u 14*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 22*(q ^ 2 + 1)⁻¹ + q ^ 2*u 19*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 23*(q ^ 2 + 1)⁻¹ - q ^ 2*u 3*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 4*(q ^ 2 + 1)⁻¹ ^ 2 - q*u 14*(q ^ 2 + 1)⁻¹ ^ 2 + u 19*(q ^ 2 + 1)⁻¹ ^ 2 - u 3*(q ^ 2 + 1)⁻¹ ^ 2 + u 4*(q ^ 2 + 1)⁻¹ ^ 2) * mul_inv_cancel₀ hq
+  · show blockOf31 q (mulσ₀ (q - q⁻¹) u) 2 2 =
+        (blockOf31 q u * S0_31 q) 2 2
+    simp only [blockOf31, S0_31, mulσ₀, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue]
+    linear_combination (norm := ring1)
+        (q ^ 4*u 12*(q ^ 2 + 1)⁻¹ - q ^ 3*u 16*(q ^ 2 + 1)⁻¹ + q ^ 3*u 7*(q ^ 2 + 1)⁻¹ + q ^ 3*u 9*(q ^ 2 + 1)⁻¹ - q ^ 2*u 10*(q ^ 2 + 1)⁻¹ - q ^ 2*u 13*(q ^ 2 + 1)⁻¹ + q ^ 2*u 2*(q ^ 2 + 1)⁻¹ - q*u 4*(q ^ 2 + 1)⁻¹ - u 1 + u 6) * mul_inv_cancel₀ hq
+
+set_option maxHeartbeats 6400000 in
+/-- The block map intertwines the right `σ₁`-action with right
+    multiplication by `S1_31` (9 scalar goals; each closed by
+    `linear_combination` with the sympy-derived, exactly-verified SET-E
+    cofactors — sorry-free). -/
+theorem blockOf31_mulσ₁ (q : K) (hq : q ≠ 0) (h2 : q ^ 2 + 1 ≠ 0) (h3 : q ^ 4 + q ^ 2 + 1 ≠ 0)
+    (u : Fin 24 → K) :
+    blockOf31 q (mulσ₁ (q - q⁻¹) u) = blockOf31 q u * S1_31 q := by
+  ext r c
+  fin_cases r <;> fin_cases c
+  · show blockOf31 q (mulσ₁ (q - q⁻¹) u) 0 0 =
+        (blockOf31 q u * S1_31 q) 0 0
+    simp only [blockOf31, S1_31, mulσ₁, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue,
+      div_eq_mul_inv, mul_inv_rev, ← inv_pow]
+    linear_combination (norm := ring1)
+        (q ^ 3*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 5 + q*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 4 + u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 2 + u 6*(q ^ 4 + q ^ 2 + 1)⁻¹) * mul_inv_cancel₀ hq
+  · show blockOf31 q (mulσ₁ (q - q⁻¹) u) 0 1 =
+        (blockOf31 q u * S1_31 q) 0 1
+    simp only [blockOf31, S1_31, mulσ₁, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue,
+      div_eq_mul_inv, mul_inv_rev, ← inv_pow]
+    linear_combination (norm := ring1)
+        (q ^ 5*u 12*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 13*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 9*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 4*u 9*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 12*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 13*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 14*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 9*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 2*u 15*(q ^ 2 + 1)⁻¹ - q ^ 2*u 23*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 23*(q ^ 2 + 1)⁻¹ + q ^ 2*u 9*(q ^ 2 + 1)⁻¹ ^ 2 + q*u 10*(q ^ 2 + 1)⁻¹ + q*u 11*(q ^ 2 + 1)⁻¹ + q*u 12*(q ^ 2 + 1)⁻¹ ^ 2 + q*u 12*(q ^ 2 + 1)⁻¹ - q*u 12 + q*u 13*(q ^ 2 + 1)⁻¹ ^ 2 + q*u 13*(q ^ 2 + 1)⁻¹ - q*u 13 + q*u 14*(q ^ 2 + 1)⁻¹ ^ 2 - q*u 20*(q ^ 2 + 1)⁻¹ ^ 2 + q*u 20*(q ^ 2 + 1)⁻¹ - q*u 21*(q ^ 2 + 1)⁻¹ ^ 2 - q*u 22*(q ^ 2 + 1)⁻¹ ^ 2 + q*u 22*(q ^ 2 + 1)⁻¹ + q*u 9*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q*u 9*(q ^ 2 + 1)⁻¹*q⁻¹ - q*u 9*q⁻¹ - u 16*(q ^ 2 + 1)⁻¹ ^ 2 + u 16*(q ^ 2 + 1)⁻¹ - u 17*(q ^ 2 + 1)⁻¹ ^ 2 + u 17*(q ^ 2 + 1)⁻¹ - u 18*(q ^ 2 + 1)⁻¹ ^ 2 - u 19*(q ^ 2 + 1)⁻¹ ^ 2 + u 19*(q ^ 2 + 1)⁻¹ + u 7*(q ^ 2 + 1)⁻¹ + u 8*(q ^ 2 + 1)⁻¹ + u 9*(q ^ 2 + 1)⁻¹ ^ 2 - u 9) * mul_inv_cancel₀ hq
+        + (-q ^ 5*u 20*(q ^ 2 + 1)⁻¹ - q ^ 4*u 12*(q ^ 2 + 1)⁻¹*q⁻¹ - q ^ 4*u 13*(q ^ 2 + 1)⁻¹*q⁻¹ - q ^ 4*u 16*(q ^ 2 + 1)⁻¹ - q ^ 4*u 17*(q ^ 2 + 1)⁻¹ + q ^ 4*u 23*(q ^ 2 + 1)⁻¹ - q ^ 4*u 9*(q ^ 2 + 1)⁻¹*q⁻¹ ^ 2 - q ^ 3*u 20 + q ^ 3*u 21*(q ^ 2 + 1)⁻¹ + q ^ 3*u 22*(q ^ 2 + 1)⁻¹ - q ^ 2*u 12*q⁻¹ - q ^ 2*u 13*q⁻¹ - q ^ 2*u 16 - q ^ 2*u 17 + q ^ 2*u 18*(q ^ 2 + 1)⁻¹ + q ^ 2*u 19*(q ^ 2 + 1)⁻¹ - q ^ 2*u 9*q⁻¹ ^ 2 + q*u 14*(q ^ 2 + 1)⁻¹ - q*u 20*(q ^ 2 + 1)⁻¹ - u 12*(q ^ 2 + 1)⁻¹*q⁻¹ - u 13*(q ^ 2 + 1)⁻¹*q⁻¹ - u 16*(q ^ 2 + 1)⁻¹ - u 17*(q ^ 2 + 1)⁻¹ - u 9*(q ^ 2 + 1)⁻¹*q⁻¹ ^ 2) * mul_inv_cancel₀ h2
+  · show blockOf31 q (mulσ₁ (q - q⁻¹) u) 0 2 =
+        (blockOf31 q u * S1_31 q) 0 2
+    simp only [blockOf31, S1_31, mulσ₁, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue,
+      div_eq_mul_inv, mul_inv_rev, ← inv_pow]
+    linear_combination (norm := ring1)
+        (q ^ 3*u 9*(q ^ 2 + 1)⁻¹ + q ^ 2*u 14*(q ^ 2 + 1)⁻¹ - q ^ 2*u 20 - q*u 16 - q*u 17 + q*u 23 - q*u 9 - u 12 - u 13 + u 22) * mul_inv_cancel₀ hq
+        + (-q ^ 4*u 20 - q ^ 3*u 16 - q ^ 3*u 17 + q ^ 3*u 23 - q ^ 2*u 12 - q ^ 2*u 13 + q ^ 2*u 20 + q ^ 2*u 21 + q ^ 2*u 22 - q ^ 2*u 9*q⁻¹ + q*u 16 + q*u 17 + q*u 18 + q*u 19 + u 12 + u 13 + u 14 + u 9*q⁻¹) * mul_inv_cancel₀ h2
+  · show blockOf31 q (mulσ₁ (q - q⁻¹) u) 1 0 =
+        (blockOf31 q u * S1_31 q) 1 0
+    simp only [blockOf31, S1_31, mulσ₁, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue,
+      div_eq_mul_inv, mul_inv_rev, ← inv_pow]
+    linear_combination (norm := ring1)
+        (-q ^ 10*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 9*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 8*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 8*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 8*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 7*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 7*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 7*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 6*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 6*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 5*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 4*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 4*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 3*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 2*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2) * mul_inv_cancel₀ hq
+  · show blockOf31 q (mulσ₁ (q - q⁻¹) u) 1 1 =
+        (blockOf31 q u * S1_31 q) 1 1
+    simp only [blockOf31, S1_31, mulσ₁, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue,
+      div_eq_mul_inv, mul_inv_rev, ← inv_pow]
+    linear_combination (norm := ring1)
+        (-q ^ 9*u 17*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 8*u 21*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 7*u 16*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 7*u 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - 2*q ^ 7*u 17*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 7*u 18*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 12*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 21*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 15*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 16*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - 2*q ^ 5*u 17*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 17*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 18*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 19*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 19*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 2*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - q ^ 5*u 23*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 4*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 8*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 10*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 11*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 12*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 13*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 13*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 14*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 2*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*u 20*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ + 2*q ^ 4*u 21*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 22*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 6*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + 2*q ^ 3*u 16*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ - 2*q ^ 3*u 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 3*u 17*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ + 2*q ^ 3*u 18*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 3*u 2*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 3*u 3*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 4*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*u 7*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 3*u 9*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 3*u 9*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + 2*q ^ 2*u 12*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ - 2*q ^ 2*u 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 2*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 21*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 16*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 18*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 2*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q*u 2*(q ^ 2 + 1)⁻¹*q⁻¹ - q*u 2*q⁻¹ - q*u 23*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 3*(q ^ 2 + 1)⁻¹ ^ 2 + q*u 4*(q ^ 2 + 1)⁻¹ ^ 2 + q*u 4*(q ^ 2 + 1)⁻¹ - q*u 4 + u 1*(q ^ 2 + 1)⁻¹ + u 12*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 2*(q ^ 2 + 1)⁻¹ ^ 2 - u 2 - u 20*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 22*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 5*(q ^ 2 + 1)⁻¹ ^ 2 + u 5*(q ^ 2 + 1)⁻¹) * mul_inv_cancel₀ hq
+        + (-q ^ 9*u 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 8*u 10*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 8*u 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 8*u 13*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 8*u 17*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ + q ^ 8*u 20*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 8*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 7*u 15*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 7*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 7*u 19*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 7*u 23*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 7*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 7*u 7*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 7*u 9*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 10*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 11*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 14*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 17*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ + q ^ 6*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ + q ^ 6*u 20*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 22*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 15*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 23*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 7*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ - 2*q ^ 4*u 10*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 11*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 13*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 17*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - q ^ 4*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - q ^ 4*u 2*(q ^ 2 + 1)⁻¹*q⁻¹ ^ 2 + q ^ 4*u 20*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 22*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 4*(q ^ 2 + 1)⁻¹*q⁻¹ + q ^ 3*u 15*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 3*u 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 3*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 3*u 23*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 3*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ - 2*q ^ 3*u 7*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 3*u 9*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 10*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 11*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - q ^ 2*u 2*q⁻¹ ^ 2 + q ^ 2*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 22*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 4*q⁻¹ + q ^ 2*u 5*(q ^ 2 + 1)⁻¹ + q*u 15*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 3*(q ^ 2 + 1)⁻¹ - q*u 7*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 11*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 17*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - u 2*(q ^ 2 + 1)⁻¹*q⁻¹ ^ 2 - u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 4*(q ^ 2 + 1)⁻¹*q⁻¹) * mul_inv_cancel₀ h2
+        + (q ^ 6*u 10*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*u 15*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 7*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 10*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*u 11*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*u 15*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 7*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 10*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 11*(q ^ 2 + 1)⁻¹ ^ 2 - q*u 15*(q ^ 2 + 1)⁻¹ ^ 2 + q*u 7*(q ^ 2 + 1)⁻¹ ^ 2 - u 11*(q ^ 2 + 1)⁻¹ ^ 2) * mul_inv_cancel₀ h3
+  · show blockOf31 q (mulσ₁ (q - q⁻¹) u) 1 2 =
+        (blockOf31 q u * S1_31 q) 1 2
+    simp only [blockOf31, S1_31, mulσ₁, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue,
+      div_eq_mul_inv, mul_inv_rev, ← inv_pow]
+    linear_combination (norm := ring1)
+        (-q ^ 6*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 3*u 2*(q ^ 2 + 1)⁻¹ + q ^ 3*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 3*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 3*(q ^ 2 + 1)⁻¹ - q*u 2 - q*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 4) * mul_inv_cancel₀ hq
+        + (-q ^ 8*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 7*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 7*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 7*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 7*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 3*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 3*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 3*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 2*q⁻¹ - q ^ 2*u 4 - q*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 5 + u 2*q⁻¹ + u 3 + u 4) * mul_inv_cancel₀ h2
+        + (q ^ 5*u 10*(q ^ 2 + 1)⁻¹ - q ^ 4*u 15*(q ^ 2 + 1)⁻¹ + q ^ 4*u 7*(q ^ 2 + 1)⁻¹ - q ^ 3*u 11*(q ^ 2 + 1)⁻¹ - q ^ 2*u 16 - q*u 12 + q*u 20 + u 17) * mul_inv_cancel₀ h3
+  · show blockOf31 q (mulσ₁ (q - q⁻¹) u) 2 0 =
+        (blockOf31 q u * S1_31 q) 2 0
+    simp only [blockOf31, S1_31, mulσ₁, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue,
+      div_eq_mul_inv, mul_inv_rev, ← inv_pow]
+    linear_combination (norm := ring1)
+        (-q ^ 6*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 20*(q ^ 4 + q ^ 2 + 1)⁻¹) * mul_inv_cancel₀ hq
+  · show blockOf31 q (mulσ₁ (q - q⁻¹) u) 2 1 =
+        (blockOf31 q u * S1_31 q) 2 1
+    simp only [blockOf31, S1_31, mulσ₁, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue,
+      div_eq_mul_inv, mul_inv_rev, ← inv_pow]
+    linear_combination (norm := ring1)
+        (-q ^ 7*u 13*(q ^ 2 + 1)⁻¹ ^ 3 + q ^ 7*u 2*(q ^ 2 + 1)⁻¹ ^ 3 - q ^ 7*u 4*(q ^ 2 + 1)⁻¹ ^ 3*q⁻¹ + q ^ 6*u 18*(q ^ 2 + 1)⁻¹ ^ 3 - q ^ 6*u 4*(q ^ 2 + 1)⁻¹ ^ 3 + q ^ 5*u 11*(q ^ 2 + 1)⁻¹ ^ 3 + q ^ 5*u 12*(q ^ 2 + 1)⁻¹ ^ 3 - q ^ 5*u 12*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*u 13*(q ^ 2 + 1)⁻¹ ^ 3 + q ^ 5*u 13*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 14*(q ^ 2 + 1)⁻¹ ^ 3 + q ^ 5*u 2*(q ^ 2 + 1)⁻¹ ^ 3 - q ^ 5*u 2*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*u 21*(q ^ 2 + 1)⁻¹ ^ 3 - q ^ 5*u 4*(q ^ 2 + 1)⁻¹ ^ 3*q⁻¹ + q ^ 5*u 4*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 5*u 5*(q ^ 2 + 1)⁻¹ ^ 3 - q ^ 4*u 15*(q ^ 2 + 1)⁻¹ ^ 3 - q ^ 4*u 16*(q ^ 2 + 1)⁻¹ ^ 3 + q ^ 4*u 16*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*u 19*(q ^ 2 + 1)⁻¹ ^ 3 + q ^ 4*u 19*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 3*(q ^ 2 + 1)⁻¹ ^ 3 - q ^ 4*u 4*(q ^ 2 + 1)⁻¹ ^ 3 + q ^ 4*u 7*(q ^ 2 + 1)⁻¹ ^ 3 + q ^ 4*u 9*(q ^ 2 + 1)⁻¹ ^ 3 - q ^ 4*u 9*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*u 10*(q ^ 2 + 1)⁻¹ ^ 3 - q ^ 3*u 13*(q ^ 2 + 1)⁻¹ ^ 3 + q ^ 3*u 13*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 14*(q ^ 2 + 1)⁻¹ ^ 3 + q ^ 3*u 2*(q ^ 2 + 1)⁻¹ ^ 3 - q ^ 3*u 2*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*u 22*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 22*(q ^ 2 + 1)⁻¹ - q ^ 3*u 4*(q ^ 2 + 1)⁻¹ ^ 3*q⁻¹ + q ^ 3*u 4*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 3*u 5*(q ^ 2 + 1)⁻¹ ^ 3 - q ^ 2*u 17*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 17*(q ^ 2 + 1)⁻¹ - q ^ 2*u 19*(q ^ 2 + 1)⁻¹ ^ 3 + q ^ 2*u 19*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 23*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 23*(q ^ 2 + 1)⁻¹ + q ^ 2*u 3*(q ^ 2 + 1)⁻¹ ^ 3 - q ^ 2*u 4*(q ^ 2 + 1)⁻¹ ^ 3 + q ^ 2*u 9*(q ^ 2 + 1)⁻¹ ^ 3 - q ^ 2*u 9*(q ^ 2 + 1)⁻¹ ^ 2 + q*u 13*(q ^ 2 + 1)⁻¹ ^ 2 + q*u 14*(q ^ 2 + 1)⁻¹ ^ 3 - q*u 2*(q ^ 2 + 1)⁻¹ ^ 2 + q*u 20*(q ^ 2 + 1)⁻¹ ^ 2 - q*u 20*(q ^ 2 + 1)⁻¹ + q*u 4*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q*u 5*(q ^ 2 + 1)⁻¹ ^ 3 - u 19*(q ^ 2 + 1)⁻¹ ^ 3 + u 19*(q ^ 2 + 1)⁻¹ ^ 2 + u 3*(q ^ 2 + 1)⁻¹ ^ 3 + u 9*(q ^ 2 + 1)⁻¹ ^ 3 - u 9*(q ^ 2 + 1)⁻¹ ^ 2) * mul_inv_cancel₀ hq
+        + (-q ^ 7*u 12*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 13*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 6*u 16*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 18*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*u 2*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 6*u 4*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ ^ 2 - q ^ 6*u 7*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*u 9*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 10*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 11*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 14*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*u 21*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 22*(q ^ 2 + 1)⁻¹ - q ^ 4*u 15*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 17*(q ^ 2 + 1)⁻¹ + q ^ 4*u 18*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 18*(q ^ 2 + 1)⁻¹ - q ^ 4*u 19*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*u 23*(q ^ 2 + 1)⁻¹ + q ^ 4*u 3*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*u 5*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 3*u 11*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 11*(q ^ 2 + 1)⁻¹ + q ^ 3*u 14*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*u 20*(q ^ 2 + 1)⁻¹ - q ^ 3*u 21*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*u 21*(q ^ 2 + 1)⁻¹ - q ^ 3*u 22*(q ^ 2 + 1)⁻¹ - q ^ 2*u 15*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 15*(q ^ 2 + 1)⁻¹ - q ^ 2*u 17*(q ^ 2 + 1)⁻¹ - q ^ 2*u 19*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 23*(q ^ 2 + 1)⁻¹ + q ^ 2*u 3*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 5*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q*u 14*(q ^ 2 + 1)⁻¹ ^ 2 + q*u 20*(q ^ 2 + 1)⁻¹ - u 13*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - u 19*(q ^ 2 + 1)⁻¹ ^ 2 + u 2*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + u 3*(q ^ 2 + 1)⁻¹ ^ 2 - u 4*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ ^ 2 - u 5*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + u 9*(q ^ 2 + 1)⁻¹ ^ 2) * mul_inv_cancel₀ h2
+  · show blockOf31 q (mulσ₁ (q - q⁻¹) u) 2 2 =
+        (blockOf31 q u * S1_31 q) 2 2
+    simp only [blockOf31, S1_31, mulσ₁, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue,
+      div_eq_mul_inv, mul_inv_rev, ← inv_pow]
+    linear_combination (norm := ring1)
+        (-q ^ 5*u 4*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*u 12*(q ^ 2 + 1)⁻¹ + q ^ 3*u 16*(q ^ 2 + 1)⁻¹ + q ^ 3*u 4*(q ^ 2 + 1)⁻¹ - q ^ 3*u 9*(q ^ 2 + 1)⁻¹ + q ^ 2*u 1*(q ^ 2 + 1)⁻¹ + q ^ 2*u 13*(q ^ 2 + 1)⁻¹ - q ^ 2*u 2*(q ^ 2 + 1)⁻¹ - q*u 19*(q ^ 2 + 1)⁻¹ - u 5*(q ^ 2 + 1)⁻¹) * mul_inv_cancel₀ hq
+        + (-q ^ 6*u 12*(q ^ 2 + 1)⁻¹ + q ^ 5*u 16*(q ^ 2 + 1)⁻¹ - q ^ 5*u 7*(q ^ 2 + 1)⁻¹ - q ^ 5*u 9*(q ^ 2 + 1)⁻¹ + q ^ 4*u 10*(q ^ 2 + 1)⁻¹ + q ^ 4*u 13*(q ^ 2 + 1)⁻¹ - q ^ 4*u 2*(q ^ 2 + 1)⁻¹ + q ^ 4*u 4*(q ^ 2 + 1)⁻¹*q⁻¹ - q ^ 2*u 14*(q ^ 2 + 1)⁻¹ + q*u 19*(q ^ 2 + 1)⁻¹ - q*u 3*(q ^ 2 + 1)⁻¹ - q*u 9*(q ^ 2 + 1)⁻¹ - q*u 9 + u 13*(q ^ 2 + 1)⁻¹ + u 13 - u 2*(q ^ 2 + 1)⁻¹ - u 2 + u 4*(q ^ 2 + 1)⁻¹*q⁻¹ + u 4*q⁻¹ + u 5*(q ^ 2 + 1)⁻¹) * mul_inv_cancel₀ h2
+
+set_option maxHeartbeats 6400000 in
+/-- The block map intertwines the right `σ₂`-action with right
+    multiplication by `S2_31` (9 scalar goals; each closed by
+    `linear_combination` with the sympy-derived, exactly-verified SET-E
+    cofactors — sorry-free). -/
+theorem blockOf31_mulσ₂ (q : K) (hq : q ≠ 0) (h2 : q ^ 2 + 1 ≠ 0) (h3 : q ^ 4 + q ^ 2 + 1 ≠ 0)
+    (u : Fin 24 → K) :
+    blockOf31 q (mulσ₂ (q - q⁻¹) u) = blockOf31 q u * S2_31 q := by
+  ext r c
+  fin_cases r <;> fin_cases c
+  · show blockOf31 q (mulσ₂ (q - q⁻¹) u) 0 0 =
+        (blockOf31 q u * S2_31 q) 0 0
+    simp only [blockOf31, S2_31, mulσ₂, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue,
+      div_eq_mul_inv, mul_inv_rev, ← inv_pow]
+    linear_combination (norm := ring1)
+        (q ^ 9*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 9*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 9*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 8*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 7*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + 2*q ^ 7*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 7*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 6*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 5*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + 2*q ^ 5*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 5*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 4*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ + 2*q ^ 3*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + 2*q ^ 3*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 3*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 5*(q ^ 4 + q ^ 2 + 1)⁻¹ + 2*q ^ 2*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 3*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 4*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - q*u 6*q⁻¹ + q*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 7 + q*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 8 + q*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 1*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 2*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - u 6) * mul_inv_cancel₀ hq
+        + (q ^ 9*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 8*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 8*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 8*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 7*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 7*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 7*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 7*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 7*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 5*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 3*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹) * mul_inv_cancel₀ h2
+        + (-q ^ 7*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ ^ 2 - q ^ 6*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - q ^ 6*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - q ^ 5*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ ^ 2 - q ^ 4*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - q ^ 4*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - q ^ 3*u 15 + q ^ 3*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 3*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 3*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 3*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 10 - q ^ 2*u 11 + q ^ 2*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 6*q⁻¹ ^ 2 - q ^ 2*u 7*q⁻¹ - q ^ 2*u 8*q⁻¹ - q*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 6*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ ^ 2 - u 7*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - u 8*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹) * mul_inv_cancel₀ h3
+  · show blockOf31 q (mulσ₂ (q - q⁻¹) u) 0 1 =
+        (blockOf31 q u * S2_31 q) 0 1
+    simp only [blockOf31, S2_31, mulσ₂, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue,
+      div_eq_mul_inv, mul_inv_rev, ← inv_pow]
+    linear_combination (norm := ring1)
+        (q ^ 5*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 9*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 15 + q ^ 2*u 23*(q ^ 2 + 1)⁻¹ - q*u 10 - q*u 11 + q*u 20*(q ^ 2 + 1)⁻¹ + q*u 21*(q ^ 2 + 1)⁻¹ - q*u 6 + u 16*(q ^ 2 + 1)⁻¹ + u 18*(q ^ 2 + 1)⁻¹ - u 7 - u 8) * mul_inv_cancel₀ hq
+        + (-q ^ 4*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 3*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 3*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 3*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 9*(q ^ 4 + q ^ 2 + 1)⁻¹) * mul_inv_cancel₀ h2
+        + (-q ^ 4*u 15 + q ^ 4*u 23*(q ^ 2 + 1)⁻¹ - q ^ 3*u 10 - q ^ 3*u 11 + q ^ 3*u 20*(q ^ 2 + 1)⁻¹ + q ^ 3*u 21*(q ^ 2 + 1)⁻¹ + q ^ 3*u 22*(q ^ 2 + 1)⁻¹ + q ^ 2*u 15 + q ^ 2*u 16*(q ^ 2 + 1)⁻¹ + q ^ 2*u 17*(q ^ 2 + 1)⁻¹ + q ^ 2*u 18*(q ^ 2 + 1)⁻¹ + q ^ 2*u 19*(q ^ 2 + 1)⁻¹ - q ^ 2*u 6*q⁻¹ - q ^ 2*u 7 - q ^ 2*u 8 + q*u 10 + q*u 11 + q*u 12*(q ^ 2 + 1)⁻¹ + q*u 13*(q ^ 2 + 1)⁻¹ + q*u 14*(q ^ 2 + 1)⁻¹ + u 6*q⁻¹ + u 7 + u 8 + u 9*(q ^ 2 + 1)⁻¹) * mul_inv_cancel₀ h3
+  · show blockOf31 q (mulσ₂ (q - q⁻¹) u) 0 2 =
+        (blockOf31 q u * S2_31 q) 0 2
+    simp only [blockOf31, S2_31, mulσ₂, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue,
+      div_eq_mul_inv, mul_inv_rev, ← inv_pow]
+    linear_combination (norm := ring1)
+        (-q ^ 2*u 20 - q*u 16 + q*u 23 - u 12 + u 14 + u 21) * mul_inv_cancel₀ hq
+  · show blockOf31 q (mulσ₂ (q - q⁻¹) u) 1 0 =
+        (blockOf31 q u * S2_31 q) 1 0
+    simp only [blockOf31, S2_31, mulσ₂, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue,
+      div_eq_mul_inv, mul_inv_rev, ← inv_pow]
+    linear_combination (norm := ring1)
+        (q ^ 13*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 13*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 11*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 11*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + 2*q ^ 11*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + 2*q ^ 11*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 11*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3*q⁻¹ + q ^ 10*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 10*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 9*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 9*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + 4*q ^ 9*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 9*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 9*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 9*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + 2*q ^ 9*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 9*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 9*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3*q⁻¹ + 2*q ^ 8*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 8*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 8*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 8*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 8*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 8*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 8*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 7*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 7*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 7*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 7*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 5*q ^ 7*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 7*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 7*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + 2*q ^ 7*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 7*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 7*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 7*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 7*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 7*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + 2*q ^ 7*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 2*q ^ 7*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 7*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3*q⁻¹ + q ^ 7*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - q ^ 6*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 6*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 6*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 6*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 6*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 6*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 6*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 6*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + 2*q ^ 6*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 2*q ^ 6*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 6*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 5*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 5*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 5*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 4*q ^ 5*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 5*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 5*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + 2*q ^ 5*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 5*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 5*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 5*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 5*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 2*q ^ 5*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3*q⁻¹ + q ^ 5*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - q ^ 4*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 4*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 4*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 4*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 4*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 4*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 4*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 4*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + 2*q ^ 4*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 2*q ^ 4*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 4*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 3*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 3*q ^ 3*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 3*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 3*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + 2*q ^ 3*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 3*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 3*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 3*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 2*q ^ 3*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - q ^ 2*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 2*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 2*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 2*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 2*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 2*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 2*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 2*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 2*q ^ 2*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 2*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3) * mul_inv_cancel₀ hq
+        + (-q ^ 15*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 14*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 14*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 13*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 2*q ^ 13*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 12*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 2*q ^ 12*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 2*q ^ 12*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 12*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 11*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 11*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 2*q ^ 11*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 11*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 11*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 4*q ^ 11*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 10*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 4*q ^ 10*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 4*q ^ 10*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 10*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 10*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 10*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 9*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 9*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 4*q ^ 9*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 9*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 9*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 5*q ^ 9*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 8*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 5*q ^ 8*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 5*q ^ 8*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 8*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 8*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 8*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 7*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 7*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 5*q ^ 7*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 7*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 7*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 4*q ^ 7*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 7*u 5*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 4*q ^ 6*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 4*q ^ 6*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 6*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 6*u 2*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 6*u 3*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 4*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 6*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 5*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 5*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 4*q ^ 5*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 5*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 5*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 3*q ^ 5*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 5*u 5*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 3*q ^ 4*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 3*q ^ 4*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 4*u 2*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 4*u 3*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 4*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 4*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - 3*q ^ 3*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 3*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 3*u 5*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 - q ^ 2*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q ^ 2*u 2*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 2*u 3*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 4*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 3 + q*u 5*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 2*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + u 3*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 4*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2) * mul_inv_cancel₀ h2
+        + (-q ^ 11*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 10*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - q ^ 10*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 10*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 10*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 10*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - q ^ 10*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 9*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 9*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 9*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 8*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 8*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - q ^ 8*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 8*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 8*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 8*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 8*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 8*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 8*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 8*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 8*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ ^ 2 - q ^ 8*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 7*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 7*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 7*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 7*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 7*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 6*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - 2*q ^ 6*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 6*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 5*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 4*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - 2*q ^ 4*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 4*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - q ^ 2*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 2*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ ^ 2 + u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2) * mul_inv_cancel₀ h3
+  · show blockOf31 q (mulσ₂ (q - q⁻¹) u) 1 1 =
+        (blockOf31 q u * S2_31 q) 1 1
+    simp only [blockOf31, S2_31, mulσ₂, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue,
+      div_eq_mul_inv, mul_inv_rev, ← inv_pow]
+    linear_combination (norm := ring1)
+        (-q ^ 9*u 7*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 8*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 7*u 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 7*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 15*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 7*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 10*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 11*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 2*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ - 2*q ^ 4*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ - 2*q ^ 3*u 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - 2*q ^ 3*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - 2*q ^ 2*u 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 20*(q ^ 4 + q ^ 2 + 1)⁻¹) * mul_inv_cancel₀ hq
+        + (q ^ 11*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 10*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 10*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 9*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 9*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 8*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 8*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 8*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 7*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 7*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 7*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 7*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 7*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 6*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 6*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - q ^ 5*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 5*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 5*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 4*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 4*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - q ^ 3*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 3*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - q*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹) * mul_inv_cancel₀ h2
+        + (-q ^ 10*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 9*u 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 9*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 9*u 19*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 8*u 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 8*u 13*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 8*u 14*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 7*u 15*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 7*u 19*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 7*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 7*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 7*u 9*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 10*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 11*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 13*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 14*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 7*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ + q ^ 5*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ - 2*q ^ 5*u 19*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 9*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - 2*q ^ 4*u 13*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - 2*q ^ 4*u 14*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 3*u 15*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 3*u 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 3*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 3*u 19*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 3*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 3*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ - 2*q ^ 3*u 9*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 10*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 11*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 13*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 14*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 7*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ + q*u 15*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 15*(q ^ 2 + 1)⁻¹ + q*u 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 8*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 8 - q*u 9*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 10*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 10*(q ^ 2 + 1)⁻¹ + u 11*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 11*(q ^ 2 + 1)⁻¹ + u 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 6*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 6 + u 7*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ + u 7*(q ^ 2 + 1)⁻¹*q⁻¹) * mul_inv_cancel₀ h3
+  · show blockOf31 q (mulσ₂ (q - q⁻¹) u) 1 2 =
+        (blockOf31 q u * S2_31 q) 1 2
+    simp only [blockOf31, S2_31, mulσ₂, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue,
+      div_eq_mul_inv, mul_inv_rev, ← inv_pow]
+    linear_combination (norm := ring1)
+        (-q ^ 6*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 3*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 10 + u 15 + u 3 - u 7) * mul_inv_cancel₀ hq
+  · show blockOf31 q (mulσ₂ (q - q⁻¹) u) 2 0 =
+        (blockOf31 q u * S2_31 q) 2 0
+    simp only [blockOf31, S2_31, mulσ₂, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue,
+      div_eq_mul_inv, mul_inv_rev, ← inv_pow]
+    linear_combination (norm := ring1)
+        (-q ^ 9*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ - q ^ 9*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 9*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 9*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 8*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 5*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - q ^ 5*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ + q*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 21*(q ^ 4 + q ^ 2 + 1)⁻¹) * mul_inv_cancel₀ hq
+        + (-q ^ 13*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 12*u 11*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 12*u 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 12*u 14*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 12*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 11*u 15*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 11*u 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 11*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 11*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 11*u 19*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 11*u 3*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 11*u 7*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 11*u 9*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 10*u 10*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 10*u 11*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 10*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 10*u 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 10*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 10*u 13*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 10*u 14*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 10*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 10*u 2*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 10*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 10*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 10*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 10*u 4*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 10*u 5*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 9*u 15*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 9*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 9*u 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 9*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 9*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 9*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 9*u 19*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 9*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 9*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 9*u 3*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 9*u 3*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 9*u 7*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 9*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 9*u 9*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 9*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 8*u 10*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 8*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 8*u 11*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 8*u 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 8*u 13*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 8*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 3*q ^ 8*u 14*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 8*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 8*u 2*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 8*u 2*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 8*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 8*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 8*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 8*u 4*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 8*u 4*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + 2*q ^ 8*u 5*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 8*u 5*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 7*u 15*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 7*u 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 7*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 7*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 7*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 3*q ^ 7*u 19*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 7*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 7*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 3*q ^ 7*u 3*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 7*u 3*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 7*u 7*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 3*q ^ 7*u 9*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 7*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 10*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*u 11*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*u 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 3*q ^ 6*u 13*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 3*q ^ 6*u 14*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 6*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 3*q ^ 6*u 2*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*u 2*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 3*q ^ 6*u 4*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 6*u 4*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + 3*q ^ 6*u 5*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 5*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 15*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 3*q ^ 5*u 19*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 5*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 3*q ^ 5*u 3*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 5*u 3*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*u 7*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 3*q ^ 5*u 9*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 5*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 10*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 3*q ^ 4*u 13*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 4*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 4*u 14*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 3*q ^ 4*u 2*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 4*u 2*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 3*q ^ 4*u 4*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + 2*q ^ 4*u 4*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + 3*q ^ 4*u 5*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 4*u 5*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 3*u 19*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 3*u 3*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*u 3*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 3*u 9*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 2*u 13*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 14*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - 2*q ^ 2*u 2*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 2*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + 2*q ^ 2*u 4*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 2*u 4*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + 2*q ^ 2*u 5*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 5*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 19*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + q*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q*u 3*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q*u 3*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q*u 9*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - q*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 13*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - u 2*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 - u 2*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 4*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + u 4*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + u 5*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2 + u 5*(q ^ 4 + q ^ 2 + 1)⁻¹ ^ 2) * mul_inv_cancel₀ h2
+        + (-q ^ 7*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ ^ 2 - q ^ 6*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ + q ^ 6*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ + q ^ 6*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ + q ^ 5*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 3*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ ^ 2 + q ^ 4*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - q ^ 4*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - q ^ 4*u 2*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 4*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ + q ^ 4*u 5*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - q ^ 3*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ ^ 2 - q ^ 2*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 14*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ + q ^ 2*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ + q ^ 2*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ + q*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 19*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 3*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 9*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 10*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ ^ 2 + u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 13*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 15*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - u 16*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - u 2*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 4*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ + u 5*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 7*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹) * mul_inv_cancel₀ h3
+  · show blockOf31 q (mulσ₂ (q - q⁻¹) u) 2 1 =
+        (blockOf31 q u * S2_31 q) 2 1
+    simp only [blockOf31, S2_31, mulσ₂, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue,
+      div_eq_mul_inv, mul_inv_rev, ← inv_pow]
+    linear_combination (norm := ring1)
+        (-q ^ 9*u 10*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 8*u 4*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 18*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 4*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 10*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*u 11*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*u 12*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 21*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 15*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 16*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 4*(q ^ 2 + 1)⁻¹ ^ 2*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 7*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 23*(q ^ 2 + 1)⁻¹ - q*u 20*(q ^ 2 + 1)⁻¹) * mul_inv_cancel₀ hq
+        + (q ^ 8*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 7*u 11*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 7*u 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 7*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 7*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 10*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - q ^ 6*u 15*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 6*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 6*u 7*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 11*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 5*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 5*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 10*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - q ^ 4*u 10*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - q ^ 4*u 15*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 4*u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 7*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 4*u 7*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 3*u 11*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 3*u 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 3*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 3*u 22*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 10*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - q ^ 2*u 15*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 17*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 18*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 18*(q ^ 4 + q ^ 2 + 1)⁻¹ - q ^ 2*u 23*(q ^ 4 + q ^ 2 + 1)⁻¹ + q ^ 2*u 7*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 11*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 11*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 12*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + q*u 12*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 20*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 21*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - q*u 21*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 10*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - u 10*(q ^ 4 + q ^ 2 + 1)⁻¹*q⁻¹ - u 15*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 15*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 16*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ - u 16*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 7*(q ^ 2 + 1)⁻¹*(q ^ 4 + q ^ 2 + 1)⁻¹ + u 7*(q ^ 4 + q ^ 2 + 1)⁻¹) * mul_inv_cancel₀ h2
+        + (-q ^ 8*u 18*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 7*u 11*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 7*u 12*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 7*u 14*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 7*u 21*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 10*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 6*u 15*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 16*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 6*u 19*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*u 3*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*u 7*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 6*u 9*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 13*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 5*u 2*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 5*u 5*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 4*u 18*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 4*u 4*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*u 11*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*u 12*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 3*u 21*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 3*u 22*(q ^ 2 + 1)⁻¹ + q ^ 2*u 10*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + q ^ 2*u 15*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 16*(q ^ 2 + 1)⁻¹ ^ 2 - q ^ 2*u 17*(q ^ 2 + 1)⁻¹ - q ^ 2*u 18*(q ^ 2 + 1)⁻¹ ^ 2 + q ^ 2*u 23*(q ^ 2 + 1)⁻¹ - q ^ 2*u 7*(q ^ 2 + 1)⁻¹ ^ 2 - q*u 11*(q ^ 2 + 1)⁻¹ ^ 2 - q*u 12*(q ^ 2 + 1)⁻¹ ^ 2 + q*u 20*(q ^ 2 + 1)⁻¹ + q*u 21*(q ^ 2 + 1)⁻¹ ^ 2 + u 10*(q ^ 2 + 1)⁻¹ ^ 2*q⁻¹ + u 15*(q ^ 2 + 1)⁻¹ ^ 2 + u 16*(q ^ 2 + 1)⁻¹ ^ 2 - u 7*(q ^ 2 + 1)⁻¹ ^ 2) * mul_inv_cancel₀ h3
+  · show blockOf31 q (mulσ₂ (q - q⁻¹) u) 2 2 =
+        (blockOf31 q u * S2_31 q) 2 2
+    simp only [blockOf31, S2_31, mulσ₂, Matrix.mul_apply,
+      Fin.sum_univ_three, Matrix.of_apply, Matrix.cons_val, Fin.isValue,
+      div_eq_mul_inv, mul_inv_rev, ← inv_pow]
+    linear_combination (norm := ring1)
+        (-q ^ 4*u 12*(q ^ 2 + 1)⁻¹ + q ^ 3*u 16*(q ^ 2 + 1)⁻¹ + q ^ 3*u 18*(q ^ 2 + 1)⁻¹ - q ^ 3*u 7*(q ^ 2 + 1)⁻¹ + q ^ 2*u 10*(q ^ 2 + 1)⁻¹ + q ^ 2*u 11*(q ^ 2 + 1)⁻¹ - q ^ 2*u 21*(q ^ 2 + 1)⁻¹ - q*u 15*(q ^ 2 + 1)⁻¹ + u 1 - u 6) * mul_inv_cancel₀ hq
+
+/-- The NF product as a pointwise `Pi`-sum of the 24 right word composites
+    (the `mulNF₄` definition, re-read as a vector identity). -/
+private theorem mulNF₄_eq_pi_sum (h : K) (u v : Fin 24 → K) :
+    mulNF₄ h u v =
+        v 0 • u
+      + v 1 • (mulσ₀ h u)
+      + v 2 • (mulσ₁ h u)
+      + v 3 • (mulσ₀ h (mulσ₁ h u))
+      + v 4 • (mulσ₁ h (mulσ₀ h u))
+      + v 5 • (mulσ₀ h (mulσ₁ h (mulσ₀ h u)))
+      + v 6 • (mulσ₂ h u)
+      + v 7 • (mulσ₂ h (mulσ₁ h u))
+      + v 8 • (mulσ₀ h (mulσ₂ h u))
+      + v 9 • (mulσ₁ h (mulσ₂ h u))
+      + v 10 • (mulσ₂ h (mulσ₁ h (mulσ₀ h u)))
+      + v 11 • (mulσ₂ h (mulσ₀ h (mulσ₁ h u)))
+      + v 12 • (mulσ₁ h (mulσ₂ h (mulσ₁ h u)))
+      + v 13 • (mulσ₁ h (mulσ₀ h (mulσ₂ h u)))
+      + v 14 • (mulσ₀ h (mulσ₁ h (mulσ₂ h u)))
+      + v 15 • (mulσ₂ h (mulσ₀ h (mulσ₁ h (mulσ₀ h u))))
+      + v 16 • (mulσ₁ h (mulσ₂ h (mulσ₁ h (mulσ₀ h u))))
+      + v 17 • (mulσ₁ h (mulσ₂ h (mulσ₀ h (mulσ₁ h u))))
+      + v 18 • (mulσ₀ h (mulσ₁ h (mulσ₂ h (mulσ₁ h u))))
+      + v 19 • (mulσ₀ h (mulσ₁ h (mulσ₀ h (mulσ₂ h u))))
+      + v 20 • (mulσ₁ h (mulσ₂ h (mulσ₀ h (mulσ₁ h (mulσ₀ h u)))))
+      + v 21 • (mulσ₀ h (mulσ₁ h (mulσ₂ h (mulσ₁ h (mulσ₀ h u)))))
+      + v 22 • (mulσ₀ h (mulσ₁ h (mulσ₂ h (mulσ₀ h (mulσ₁ h u)))))
+      + v 23 • (mulσ₀ h (mulσ₁ h (mulσ₂ h (mulσ₀ h (mulσ₁ h (mulσ₀ h u)))))) := by
+  funext i
+  simp only [mulNF₄, Pi.add_apply, Pi.smul_apply, smul_eq_mul]
+
+set_option maxHeartbeats 6400000 in
+/-- `blockOf31` is additive in the coordinate vector (entries are linear). -/
+private theorem blockOf31_add (q : K) (a b : Fin 24 → K) :
+    blockOf31 q (a + b) = blockOf31 q a + blockOf31 q b := by
+  ext i j
+  fin_cases i <;> fin_cases j
+  · show blockOf31 q (a + b) 0 0 =
+        (blockOf31 q a + blockOf31 q b) 0 0
+    simp only [blockOf31, Matrix.add_apply, Matrix.of_apply,
+      Matrix.cons_val, Fin.isValue, Pi.add_apply]
+    ring
+  · show blockOf31 q (a + b) 0 1 =
+        (blockOf31 q a + blockOf31 q b) 0 1
+    simp only [blockOf31, Matrix.add_apply, Matrix.of_apply,
+      Matrix.cons_val, Fin.isValue, Pi.add_apply]
+    ring
+  · show blockOf31 q (a + b) 0 2 =
+        (blockOf31 q a + blockOf31 q b) 0 2
+    simp only [blockOf31, Matrix.add_apply, Matrix.of_apply,
+      Matrix.cons_val, Fin.isValue, Pi.add_apply]
+    ring
+  · show blockOf31 q (a + b) 1 0 =
+        (blockOf31 q a + blockOf31 q b) 1 0
+    simp only [blockOf31, Matrix.add_apply, Matrix.of_apply,
+      Matrix.cons_val, Fin.isValue, Pi.add_apply]
+    ring
+  · show blockOf31 q (a + b) 1 1 =
+        (blockOf31 q a + blockOf31 q b) 1 1
+    simp only [blockOf31, Matrix.add_apply, Matrix.of_apply,
+      Matrix.cons_val, Fin.isValue, Pi.add_apply]
+    ring
+  · show blockOf31 q (a + b) 1 2 =
+        (blockOf31 q a + blockOf31 q b) 1 2
+    simp only [blockOf31, Matrix.add_apply, Matrix.of_apply,
+      Matrix.cons_val, Fin.isValue, Pi.add_apply]
+    ring
+  · show blockOf31 q (a + b) 2 0 =
+        (blockOf31 q a + blockOf31 q b) 2 0
+    simp only [blockOf31, Matrix.add_apply, Matrix.of_apply,
+      Matrix.cons_val, Fin.isValue, Pi.add_apply]
+    ring
+  · show blockOf31 q (a + b) 2 1 =
+        (blockOf31 q a + blockOf31 q b) 2 1
+    simp only [blockOf31, Matrix.add_apply, Matrix.of_apply,
+      Matrix.cons_val, Fin.isValue, Pi.add_apply]
+    ring
+  · show blockOf31 q (a + b) 2 2 =
+        (blockOf31 q a + blockOf31 q b) 2 2
+    simp only [blockOf31, Matrix.add_apply, Matrix.of_apply,
+      Matrix.cons_val, Fin.isValue, Pi.add_apply]
+    ring
+
+set_option maxHeartbeats 6400000 in
+/-- `blockOf31` is homogeneous in the coordinate vector. -/
+private theorem blockOf31_smul (q c : K) (a : Fin 24 → K) :
+    blockOf31 q (c • a) = c • blockOf31 q a := by
+  ext i j
+  fin_cases i <;> fin_cases j
+  · show blockOf31 q (c • a) 0 0 =
+        (c • blockOf31 q a) 0 0
+    simp only [blockOf31, Matrix.smul_apply, Matrix.of_apply,
+      Matrix.cons_val, Fin.isValue, Pi.smul_apply, smul_eq_mul]
+    ring
+  · show blockOf31 q (c • a) 0 1 =
+        (c • blockOf31 q a) 0 1
+    simp only [blockOf31, Matrix.smul_apply, Matrix.of_apply,
+      Matrix.cons_val, Fin.isValue, Pi.smul_apply, smul_eq_mul]
+    ring
+  · show blockOf31 q (c • a) 0 2 =
+        (c • blockOf31 q a) 0 2
+    simp only [blockOf31, Matrix.smul_apply, Matrix.of_apply,
+      Matrix.cons_val, Fin.isValue, Pi.smul_apply, smul_eq_mul]
+    ring
+  · show blockOf31 q (c • a) 1 0 =
+        (c • blockOf31 q a) 1 0
+    simp only [blockOf31, Matrix.smul_apply, Matrix.of_apply,
+      Matrix.cons_val, Fin.isValue, Pi.smul_apply, smul_eq_mul]
+    ring
+  · show blockOf31 q (c • a) 1 1 =
+        (c • blockOf31 q a) 1 1
+    simp only [blockOf31, Matrix.smul_apply, Matrix.of_apply,
+      Matrix.cons_val, Fin.isValue, Pi.smul_apply, smul_eq_mul]
+    ring
+  · show blockOf31 q (c • a) 1 2 =
+        (c • blockOf31 q a) 1 2
+    simp only [blockOf31, Matrix.smul_apply, Matrix.of_apply,
+      Matrix.cons_val, Fin.isValue, Pi.smul_apply, smul_eq_mul]
+    ring
+  · show blockOf31 q (c • a) 2 0 =
+        (c • blockOf31 q a) 2 0
+    simp only [blockOf31, Matrix.smul_apply, Matrix.of_apply,
+      Matrix.cons_val, Fin.isValue, Pi.smul_apply, smul_eq_mul]
+    ring
+  · show blockOf31 q (c • a) 2 1 =
+        (c • blockOf31 q a) 2 1
+    simp only [blockOf31, Matrix.smul_apply, Matrix.of_apply,
+      Matrix.cons_val, Fin.isValue, Pi.smul_apply, smul_eq_mul]
+    ring
+  · show blockOf31 q (c • a) 2 2 =
+        (c • blockOf31 q a) 2 2
+    simp only [blockOf31, Matrix.smul_apply, Matrix.of_apply,
+      Matrix.cons_val, Fin.isValue, Pi.smul_apply, smul_eq_mul]
+    ring
+
+set_option maxHeartbeats 6400000 in
+/-- Expansion of `blockOf31 ∘ mulNF₄` along the right basis: the block map
+    of a product is the $v$-weighted sum of the block maps of the 24 word
+    composites (pure bilinearity — the generator actions stay opaque). -/
+private theorem blockOf31_mulNF₄_expand (q : K) (u v : Fin 24 → K) :
+    blockOf31 q (mulNF₄ (q - q⁻¹) u v) =
+        v 0 • blockOf31 q u
+      + v 1 • blockOf31 q (mulσ₀ (q - q⁻¹) u)
+      + v 2 • blockOf31 q (mulσ₁ (q - q⁻¹) u)
+      + v 3 • blockOf31 q (mulσ₀ (q - q⁻¹) (mulσ₁ (q - q⁻¹) u))
+      + v 4 • blockOf31 q (mulσ₁ (q - q⁻¹) (mulσ₀ (q - q⁻¹) u))
+      + v 5 • blockOf31 q (mulσ₀ (q - q⁻¹) (mulσ₁ (q - q⁻¹) (mulσ₀ (q - q⁻¹) u)))
+      + v 6 • blockOf31 q (mulσ₂ (q - q⁻¹) u)
+      + v 7 • blockOf31 q (mulσ₂ (q - q⁻¹) (mulσ₁ (q - q⁻¹) u))
+      + v 8 • blockOf31 q (mulσ₀ (q - q⁻¹) (mulσ₂ (q - q⁻¹) u))
+      + v 9 • blockOf31 q (mulσ₁ (q - q⁻¹) (mulσ₂ (q - q⁻¹) u))
+      + v 10 • blockOf31 q (mulσ₂ (q - q⁻¹) (mulσ₁ (q - q⁻¹) (mulσ₀ (q - q⁻¹) u)))
+      + v 11 • blockOf31 q (mulσ₂ (q - q⁻¹) (mulσ₀ (q - q⁻¹) (mulσ₁ (q - q⁻¹) u)))
+      + v 12 • blockOf31 q (mulσ₁ (q - q⁻¹) (mulσ₂ (q - q⁻¹) (mulσ₁ (q - q⁻¹) u)))
+      + v 13 • blockOf31 q (mulσ₁ (q - q⁻¹) (mulσ₀ (q - q⁻¹) (mulσ₂ (q - q⁻¹) u)))
+      + v 14 • blockOf31 q (mulσ₀ (q - q⁻¹) (mulσ₁ (q - q⁻¹) (mulσ₂ (q - q⁻¹) u)))
+      + v 15 • blockOf31 q (mulσ₂ (q - q⁻¹) (mulσ₀ (q - q⁻¹) (mulσ₁ (q - q⁻¹) (mulσ₀ (q - q⁻¹) u))))
+      + v 16 • blockOf31 q (mulσ₁ (q - q⁻¹) (mulσ₂ (q - q⁻¹) (mulσ₁ (q - q⁻¹) (mulσ₀ (q - q⁻¹) u))))
+      + v 17 • blockOf31 q (mulσ₁ (q - q⁻¹) (mulσ₂ (q - q⁻¹) (mulσ₀ (q - q⁻¹) (mulσ₁ (q - q⁻¹) u))))
+      + v 18 • blockOf31 q (mulσ₀ (q - q⁻¹) (mulσ₁ (q - q⁻¹) (mulσ₂ (q - q⁻¹) (mulσ₁ (q - q⁻¹) u))))
+      + v 19 • blockOf31 q (mulσ₀ (q - q⁻¹) (mulσ₁ (q - q⁻¹) (mulσ₀ (q - q⁻¹) (mulσ₂ (q - q⁻¹) u))))
+      + v 20 • blockOf31 q (mulσ₁ (q - q⁻¹) (mulσ₂ (q - q⁻¹) (mulσ₀ (q - q⁻¹) (mulσ₁ (q - q⁻¹) (mulσ₀ (q - q⁻¹) u)))))
+      + v 21 • blockOf31 q (mulσ₀ (q - q⁻¹) (mulσ₁ (q - q⁻¹) (mulσ₂ (q - q⁻¹) (mulσ₁ (q - q⁻¹) (mulσ₀ (q - q⁻¹) u)))))
+      + v 22 • blockOf31 q (mulσ₀ (q - q⁻¹) (mulσ₁ (q - q⁻¹) (mulσ₂ (q - q⁻¹) (mulσ₀ (q - q⁻¹) (mulσ₁ (q - q⁻¹) u)))))
+      + v 23 • blockOf31 q (mulσ₀ (q - q⁻¹) (mulσ₁ (q - q⁻¹) (mulσ₂ (q - q⁻¹) (mulσ₀ (q - q⁻¹) (mulσ₁ (q - q⁻¹) (mulσ₀ (q - q⁻¹) u)))))) := by
+  rw [mulNF₄_eq_pi_sum]
+  simp only [blockOf31_add, blockOf31_smul]
+
+set_option maxHeartbeats 6400000 in
+/-- **Multiplicativity of the $(3,1)$ block map on the full NF product
+    (sorry-free)** — expand along the right basis, peel every word composite
+    with the three intertwiners (both for general `u` and for `u = γ`, which
+    recovers the word-product decomposition of the explicit entries), and
+    collect with associativity. -/
+theorem blockOf31_mulNF₄ (q : K) (hq : q ≠ 0) (h2 : q ^ 2 + 1 ≠ 0) (h3 : q ^ 4 + q ^ 2 + 1 ≠ 0)
+    (u v : Fin 24 → K) :
+    blockOf31 q (mulNF₄ (q - q⁻¹) u v) = blockOf31 q u * blockOf31 q v := by
+  have hu := blockOf31_mulNF₄_expand q u v
+  have h1 := blockOf31_mulNF₄_expand q (unitNF₄ (R := K)) v
+  rw [mulNF₄_one_left] at h1
+  simp only [blockOf31_mulσ₀ q hq, blockOf31_mulσ₁ q hq h2 h3,
+    blockOf31_mulσ₂ q hq h2 h3, blockOf31_unit q, one_mul] at hu h1
+  rw [hu, h1]
+  simp only [Matrix.mul_add, Matrix.mul_smul, Matrix.mul_one, Matrix.mul_assoc]
+
+namespace H4A
+
+set_option maxHeartbeats 12800000 in
+/-- **The $(3,1)$ block representation (sorry-free).**  The algebra
+    homomorphism `H₄(q) →ₐ M_3(K)` induced by the explicit-entry block map;
+    with the two characters and the sibling blocks this is the block *data*
+    of $H_4(q) \cong K \times K \times M_2 \times M_3 \times M_3$. -/
+noncomputable def blockRep31 (q : K) (hq : q ≠ 0) (h2 : q ^ 2 + 1 ≠ 0) (h3 : q ^ 4 + q ^ 2 + 1 ≠ 0) :
+    H4A K (q - q⁻¹) →ₐ[K] Matrix (Fin 3) (Fin 3) K where
+  toFun x := blockOf31 q x.v
+  map_one' := by
+    show blockOf31 q (unitNF₄ (R := K)) = 1
+    exact blockOf31_unit q
+  map_mul' x y := blockOf31_mulNF₄ q hq h2 h3 x.v y.v
+  map_zero' := by
+    show blockOf31 q (0 : Fin 24 → K) = 0
+    ext i j
+    fin_cases i <;> fin_cases j
+    all_goals simp [blockOf31]
+  map_add' x y := by
+    show blockOf31 q (x.v + y.v) = blockOf31 q x.v + blockOf31 q y.v
+    ext i j
+    fin_cases i <;> fin_cases j
+    all_goals simp [blockOf31, Matrix.add_apply, Pi.add_apply]
+    all_goals try ring
+  commutes' c := by
+    show blockOf31 q ((c • (1 : H4A K (q - q⁻¹))).v) = _
+    rw [smul_v, one_v]
+    ext i j
+    fin_cases i <;> fin_cases j
+    all_goals simp [blockOf31, unitNF₄, Matrix.algebraMap_matrix_apply,
+      Pi.smul_apply, smul_eq_mul]
+
+end H4A
+
+end QOU.Machinery.H4

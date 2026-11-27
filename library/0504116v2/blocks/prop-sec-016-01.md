@@ -1,0 +1,1 @@
+Let X be any smooth manifold and let g: Ω(T ) →X be a smooth map. Suppose that there exists a small neighbourhood U of x0 in Ω(T ) such that for all x, x′ ∈U ∩IΩ(T ) with d(x) = −d(x′) we have g(x) = g(x′). Then dgx0 = 0. Proof Since d : U →Qk i=1 S2 deﬁnes a chart around x0, it is sufﬁcient to observe that U ∩IΩ(T ) accumulates to x0 along any direction in Tx0Ω(T ).

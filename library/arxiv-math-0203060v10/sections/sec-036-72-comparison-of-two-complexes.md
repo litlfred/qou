@@ -9,6 +9,7 @@ source_pdf: 0203060v10.pdf
 source_sha256: 2ccb480f4bd4a970
 toc_source: outline
 doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
+duplicate_of: "arxiv-math-0203060v11"
 ---
 categories and functors coming from weak Hopf algebras, the Yetter complex deﬁned
 here is the same as the complex deﬁned in the previous section.

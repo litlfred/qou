@@ -14,9 +14,11 @@
   "pageEnd": 24,
   "contains": [
     "library/hdr/blocks/prose-sec-007",
-    "library/hdr/blocks/recommendation-sec-007-01"
+    "library/hdr/blocks/thm-sec-007-01",
+    "library/hdr/blocks/ex-sec-007-02",
+    "library/hdr/blocks/thm-sec-007-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hdr",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hdr",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
   "provenance": "ingested"
 }

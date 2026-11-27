@@ -1,1 +1,0 @@
-The term within parentheses represents the q-Pochhammer, while square brackets correspond to the q-binomials, which are defined as  r  Y k−1 ¼ ðq;qÞr ðq;qÞkðq;qÞr−k ð1 −xqiÞ: ; ðx;qÞk ¼ k q i¼0 q−deformation ˜cK (iv) Further, the coefficient k!ck⟶ k depends on the knot K and must be written in terms of q-Pochhammers, q-binomials, and ðq; AÞ- dependent powers so that II.

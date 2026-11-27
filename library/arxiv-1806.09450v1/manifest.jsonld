@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1806.09450v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1806.09450v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -21,6 +21,18 @@
     "library/arxiv-1806.09450v1/sections/sec-006"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra ∗ — We continue the study undertaken in [DV] of the exceptional Jordan algebra\n\n**Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra ∗**\n\n*Ivan Todorov1, Michel Dubois-Violette2*\n\n16 pp, 8 sections.\n\n**Abstract.** We continue the study undertaken in [DV] of the exceptional Jordan algebra J = J8 3 as (part of) the ﬁnite-dimensional quantum algebra in an almost classical space-time approach to particle physics. Along with reviewing known properties of J and of the associated exceptional Lie groups we argue that the symmetry of the model can be deduced from the Borel-de Siebenthal theory of maximal connected subgroups of simple compact Lie groups. ∗Updated version of IHES/P/17/03 with minor corrections. 1 arXiv:1806.09450v1 [hep-th] 17 Jun 2018\n\n**Outline.** Front matter; 1 Introduction; 2 Exceptional finite quantum geometry; 3 The Lie algebra of derivations of J and its ; 3.1 The automorphism group F4 of the exception; 3.2 The magic square; 3.3 The exceptional Lie groups E6 and E7; 4 Borel-de Siebenthal theory and intersections",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -44,8 +56,8 @@
       "stamp_date": "17 Jun 2018"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

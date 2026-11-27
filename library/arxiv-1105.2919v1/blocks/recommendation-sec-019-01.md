@@ -1,1 +1,0 @@
-The above expansion suggests that it should be possible to describe the short distance part of the nuclear force simply in terms of powers of $Q/m_\omega$, which fits in well with our over-all power expansion since $Q/m_\omega \approx Q/\Lambda_\chi$.

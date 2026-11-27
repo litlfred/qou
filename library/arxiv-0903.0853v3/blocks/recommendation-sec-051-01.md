@@ -1,1 +1,0 @@
-Set $\ell := k \nu + r$ with $k \in {\mathbf Z}$ and $r \in {\mathbf Z}$, and write: $$c_\ell = \sum_{j=0}^{\nu - 1} \sum_{m \ge 0} a_{m \nu + j}\,\beta_{(k-m)\nu+(r-j)}.$$ As we shall see now, the above infinie series converges when the integer $-\ell$ is large enough.

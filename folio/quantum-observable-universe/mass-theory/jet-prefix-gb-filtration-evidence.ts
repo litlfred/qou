@@ -1,11 +1,11 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:jet-prefix-gb-filtration",
+  interprets: "conj:jet-prefix-gb-filtration",
   label: "rem:jet-prefix-gb-filtration-evidence",
   title:
     "Failed prefix conventions and structural-reformulation evidence for the GB-filtration prefix",
-  uses: ["prop:jet-prefix-gb-filtration"],
+  uses: ["conj:jet-prefix-gb-filtration"],
   tags: [
     "jet-level",
     "prefix-formula",

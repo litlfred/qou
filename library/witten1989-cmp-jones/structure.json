@@ -1,0 +1,901 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "witten1989-cmp-jones",
+ "source": {
+  "file": "witten1989-cmp-jones.pdf",
+  "sha256": "32f98ed8f7b235887c2d0bffbf3be412cfbd287836b2f389bc662466f9c47f5b",
+  "bytes": 6192059,
+  "pages": 50,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-22T19:30:56Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Commun. Math. Phys. 121, 351-399 (1989) Mathematical Physics \u00a9 Springer-Verlag 1989 Quantum Field Theory and the Jones Polynomial Edward Witten **",
+  "authors_raw": "School of Natural Sciences, Institute for Advanced Study, Olden Lane, Princeton",
+  "title_lines": [
+   "Commun. Math. Phys. 121, 351-399 (1989)",
+   "Mathematical",
+   "Physics",
+   "\u00a9 Springer-Verlag 1989",
+   "Quantum Field Theory and the Jones Polynomial",
+   "Edward Witten **"
+  ],
+  "abstract": "It is shown that 2+1 dimensional quantum Yang-Mills theory, with an action consisting purely of the Chern-Simons term, is exactly soluble and gives a natural framework for understanding the Jones polynomial of knot theory in three dimensional terms. In this version, the Jones polynomial can be generalized from S3 to arbitrary three manifolds, giving invariants of three manifolds that are computable from a surgery presentation. These results shed a surprising new light on conformal field theory in 1 -f-1 dimensions. In a lecture at the Hermann Weyl Symposium last year [1], Michael Atiyah proposed two problems for quantum field theorists. The first problem was to give a physical interpretation to Donaldson theory. The second problem was to find an intrinsically three dimensional definition of the Jones polynomial of knot theory. These two problems might roughly be described as follows. Donaldson theory is a key to understanding geometry in four dimensions. Four is the physical dimension at least macroscopically, so one may take a slight liberty and say that Donaldson theory is a key to understanding the geometry of space-time. Geometers have long known that (via de Rham theory) the self-dual and anti-self-dual Maxwell equations are related to natural topological invariants of a four manifold, namely the second homology group and its intersection form. For a simply connected four manifold, these are essentially the only classical invariants, but they leave many basic questions out of reach. Donaldson's great insight [2] was to realize that moduli spaces of solutions of the self-dual Yang- Mills equations can be powerful tools for addressing these questions. Donaldson theory has always been an intrinsically four dimensional theory, and it has always been clear that it was connected with mathematical physics at least at the level of classical nonlinear equations. The puzzle about Donaldson theory was whether this theory was tied to more central ideas in physics, whether ",
+  "docinfo": {
+   "Creator": "ABBYY FineReader",
+   "CreationDate": "D:20040921143814Z"
+  },
+  "title_raw": "Commun. Math. Phys. 121, 351-399 (1989) Mathematical Physics \u00a9 Springer-Verlag 1989 Quantum Field Theory and the Jones Polynomial Edward Witten **",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Physics Quantum Field Theory and the Jones Polynomial",
+   "text": "Commun. Math. Phys. 121, 351-399 (1989) Mathematical Physics \u00a9 Springer-Verlag 1989 Quantum Field Theory and the Jones Polynomial Edward Witten **",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "The Chern-Simons Action",
+   "page": 3,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "353"
+  },
+  {
+   "level": 3,
+   "title": "(Wy-+exp(2\u03c0it",
+   "page": 15,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "365"
+  },
+  {
+   "level": 1,
+   "title": "Canonical Quantization",
+   "page": 16,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "366"
+  },
+  {
+   "level": 1,
+   "title": "Calculability",
+   "page": 24,
+   "source": "inferred",
+   "number": "4",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "374"
+  },
+  {
+   "level": 2,
+   "title": "JJ+P",
+   "page": 29,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "379"
+  },
+  {
+   "level": 3,
+   "title": "; C)+\u03b2Z(S",
+   "page": 29,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "379"
+  },
+  {
+   "level": 3,
+   "title": "V^\u03a3K/VJ.",
+   "page": 35,
+   "source": "inferred",
+   "number": "K",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "385"
+  },
+  {
+   "level": 3,
+   "title": "Since we already know the partition function of S 2 xS",
+   "page": 38,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "388"
+  },
+  {
+   "level": 3,
+   "title": "Z(S*) = (TST",
+   "page": 40,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "390"
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 47,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": "397"
+  }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "A knot in three dimensional space",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "352"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Several linked but non-intersecting oriented knots in a three manifold M. Such a collection of knots is called a \"link\"",
+   "page": 5,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "355"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "A three sphere with 3 unlinked and unknotted circles Ch associated with representations R\u03bb ...R^. The figure can be cut in",
+   "page": 26,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "376"
+  },
+  {
+   "kind": "figure",
+   "number": "7c",
+   "title": "Once \u03c81 and \u03c82 are obtained in this way, (4.9) has the obvious consequence",
+   "page": 28,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "378"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "A recursion relation for links",
+   "page": 29,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "379"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "A plane projection of a knot, with four crossings",
+   "page": 29,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "379"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "A special case of the use of Fig. 8. The idea is that the three pictures are identical outside of the dotted lines, and look like figure (4.11) inside them",
+   "page": 29,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "379"
+  },
+  {
+   "kind": "figure",
+   "number": "15b",
+   "title": "Carrying out the same surgery as before turns S",
+   "page": 41,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "391"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "352",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "353",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "354",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "355",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "356",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "357",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "358",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "359",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "360",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "361",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "362",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "363",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "364",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "365",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "366",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "367",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "368",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "369",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "370",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "371",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "372",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "373",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "374",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "375",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "376",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "377",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "378",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "379",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "380",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "381",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "382",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "383",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "384",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "385",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "386",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "387",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "388",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "389",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "390",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "391",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "392",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "393",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "394",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "395",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "396",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "397",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "398",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "399",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 7089,
+   "n_words": 1110,
+   "label_start": null,
+   "label_end": "353"
+  },
+  {
+   "id": "sec-000-1-the-chern-simons-action",
+   "number": "1",
+   "title": "The Chern-Simons Action",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 15,
+   "n_chars": 32091,
+   "n_words": 5775,
+   "label_start": "353",
+   "label_end": "365"
+  },
+  {
+   "id": "sec-001-wy-exp2\u03c0it",
+   "number": null,
+   "title": "(Wy-+exp(2\u03c0it",
+   "level": 3,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 3156,
+   "n_words": 546,
+   "label_start": "365",
+   "label_end": "366"
+  },
+  {
+   "id": "sec-002-3-canonical-quantization",
+   "number": "3",
+   "title": "Canonical Quantization",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 24,
+   "n_chars": 27102,
+   "n_words": 4639,
+   "label_start": "366",
+   "label_end": "374"
+  },
+  {
+   "id": "sec-003-4-calculability",
+   "number": "4",
+   "title": "Calculability",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 29,
+   "n_chars": 11023,
+   "n_words": 2071,
+   "label_start": "374",
+   "label_end": "379"
+  },
+  {
+   "id": "sec-004-jjp",
+   "number": null,
+   "title": "JJ+P",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 310,
+   "n_words": 60,
+   "label_start": "379",
+   "label_end": "379"
+  },
+  {
+   "id": "sec-005-c\u03b2zs",
+   "number": null,
+   "title": "; C)+\u03b2Z(S",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 35,
+   "n_chars": 14757,
+   "n_words": 2754,
+   "label_start": "379",
+   "label_end": "385"
+  },
+  {
+   "id": "sec-006-k-v\u03c3kvj",
+   "number": "K",
+   "title": "V^\u03a3K/VJ.",
+   "level": 3,
+   "page_start": 35,
+   "page_end": 38,
+   "n_chars": 9252,
+   "n_words": 1760,
+   "label_start": "385",
+   "label_end": "388"
+  },
+  {
+   "id": "sec-007-3-since-we-already-know-the-partition-function-o",
+   "number": "3",
+   "title": "Since we already know the partition function of S 2 xS",
+   "level": 3,
+   "page_start": 38,
+   "page_end": 40,
+   "n_chars": 4421,
+   "n_words": 934,
+   "label_start": "388",
+   "label_end": "390"
+  },
+  {
+   "id": "sec-008-zs-tst",
+   "number": null,
+   "title": "Z(S*) = (TST",
+   "level": 3,
+   "page_start": 40,
+   "page_end": 47,
+   "n_chars": 18669,
+   "n_words": 3493,
+   "label_start": "390",
+   "label_end": "397"
+  },
+  {
+   "id": "sec-009-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 50,
+   "n_chars": 5845,
+   "n_words": 902,
+   "label_start": "397",
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 1,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "toc_inferred_entries": 12,
+  "toc_inferred_mean_confidence": 0.708,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 8,
+  "figure_sequence_gaps": [
+   "figure 3",
+   "figure 4",
+   "figure 5",
+   "figure 7"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
+  "chars_total": 133715,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "Le",
+    "page": 9,
+    "action": "dropped",
+    "why": "a single short word"
+   },
+   {
+    "title": "xS",
+    "page": 38,
+    "action": "rejoined",
+    "as": "Since we already know the partition function of S 2 xS",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "^=\u03adf",
+    "page": 46,
+    "action": "dropped",
+    "why": "opens in lower case"
+   }
+  ]
+ }
+}

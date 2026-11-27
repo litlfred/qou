@@ -1,1 +1,0 @@
-The only properties of $\boldsymbol{\operatorname{{FinSet_0}}}$ which were used in the original construction of stuff types and operators was that it should be a groupoid: groupoids $\boldsymbol{\operatorname{{X}}}$ with one or two functors into it were stuff types and operators respectively.

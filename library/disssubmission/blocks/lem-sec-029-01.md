@@ -1,0 +1,1 @@
+Let Y ⊂An+1(C) be a complex analytic hypersurface whose only singular point e is a singularity of type Ak. (a) If k or n is even, then δY = ΛY[n]. (b) Otherwise we have an exact sequence of perverse sheaves 0 −→δe(−n−1 2 ) −→ΛY[n] −→δY −→0.

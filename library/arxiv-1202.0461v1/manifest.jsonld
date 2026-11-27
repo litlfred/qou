@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1202.0461v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1202.0461v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -18,6 +18,18 @@
     "library/arxiv-1202.0461v1/sections/sec-003"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Draft version October 11, 2018 DOUBLE DEGENERATE MERGERS AS PROGENITORS OF HIGH-FIELD MAGNETIC WHITE DWARFS — High-ﬁeld magnetic white dwarfs have been long suspected to be the result of stellar\n\n**Draft version October 11, 2018 DOUBLE DEGENERATE MERGERS AS PROGENITORS OF HIGH-FIELD MAGNETIC WHITE DWARFS**\n\n*Enrique Garc´ıa–Berro1,2, Pablo Lorén–Aguilar1,2, Gabriela Aznar–Siguán1,2, Santiago Torres1,2*\n\n6 pp, 5 sections.\n\n**Abstract.** High-ﬁeld magnetic white dwarfs have been long suspected to be the result of stellar mergers. However, the nature of the coalescing stars and the precise mechanism that produces the magnetic ﬁeld are still unknown. Here we show that the hot, convective, diﬀerentially rotating corona present in the outer layers of the remnant of the merger of two degenerate cores is able to produce magnetic ﬁelds of the required strength that do not decay for long timescales. We also show, using an state-of-the-art Monte Carlo simulator, that the expected number of high-ﬁeld magnetic white dwarfs produced in this way is consistent with that found in the Solar neighborhood. Subject headings: stars: interiors — stars: evolution — stars: white dwarfs — stars: rotation — stars: magnetic ﬁeld — stars: binaries\n\n**Outline.** Front matter; 1 Introduction; 2 The stellar dynamo; 3 Magnetic white dwarfs in the solar neighborh; 4 Summary and conclusions",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
@@ -39,8 +51,8 @@
       "stamp_date": "2 Feb 2012"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

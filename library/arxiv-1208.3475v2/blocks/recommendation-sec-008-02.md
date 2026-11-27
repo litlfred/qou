@@ -1,1 +1,0 @@
-The splitting between members of the doublets, however, does not depend appreciably on the volume while the separation of the doublets (eventually quartets) should be inversely proportional to the spectral density and thus to the volume.

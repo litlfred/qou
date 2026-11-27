@@ -1,1 +1,0 @@
-The case n = 5 must be handled by a separate, but simpliﬁed, argument.) Note that by symmetries we can exchange the words of 1,2 and 3 left and right from ‘|’ and also (simultaneously) reverse both, and can also use the commutativity of 1 and 3.
