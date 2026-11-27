@@ -86,5 +86,8 @@ The electron mass fixes the unit, so the formula is evaluated through dimensionl
 
 The [Master Reference Atlas](#app:knot-periodic-table) and the [Notation, Glossary, and Index of Definitions](#chap:notation) supply the formal reference data. This paper's hardest results meet at the obstruction class $\kappa_n \in H^2(S, B)$. The programme is to translate each $q$-deformed millennium problem—Navier–Stokes, Yang–Mills, P vs NP, Riemann, BSD—into the vanishing of a drift read off that class; the translations, not the vanishing calculation, carry the open content, and each is open separately. Sharing a class does not by itself make the verdicts agree: the evaluation maps land in different groups, and at $\chi_{\mathrm{eu}}(M_0) = -6$ two of them already disagree.
 
+**Reading routes.**
+Readers mainly interested in particle and nuclear computations and their comparison with experiment can read [Braids and Knots](#chap:path-integrals-braiding), the [mass chapters](#chap:mass-theory) and [Physical Observations](#chap:observations) first, taking the axioms of Part I through the concrete dictionary $\mathcal{C} = \mathrm{Rep}(U_q(\mathfrak{sl}_2))$, $A = \mathcal{O}_q(\mathrm{SU}(2))$. Readers interested in the axiomatics read Part I in order.
+
 **Calibration.**
 The three calibration inputs and the standard against which every comparison is judged are stated in [Mathematics and measurement](#sec:introduction-mathematics-measurement) above; every other mass ratio, binding energy, and coupling is computed rather than fitted.
