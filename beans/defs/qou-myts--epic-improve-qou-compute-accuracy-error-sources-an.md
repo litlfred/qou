@@ -7,7 +7,7 @@ priority: high
 tags:
     - compute-accuracy
 created_at: 2026-11-27T14:17:38Z
-updated_at: 2026-11-27T14:23:39Z
+updated_at: 2026-11-27T15:30:00Z
 parent: qou-10v9
 ---
 
@@ -27,3 +27,5 @@ Merges are coordinated with the merge-manager thread; this epic does not merge.
 Doc: https://claude.ai/artifact/72rTbRRCwt1Nb6a5AdMxtF
 Root causes, by scorecard share: (1) nucleon split / Q_beta under D (-35% dm_np, m_n -486 ppm, 1009/1010 composite beta rows wrong sign); (2) no derived extensive binding term (A>=5 -69%, mass table 0.57%, Q_alpha); (3) K_A light-nuclei rows are the E_osc chart, 1 cell of 24, vs ruled gamma-gamma pipeline 2H -99.7%; (4) mu-p pin 11.6 ppb -> m_mu +211 ppb 9.7 sigma; (5) headline rows selected/conditional (m_K/m_pi Selected per docs/audits/2026-11-20-mk-mpi-derivation-status.md, labelled Derived on dashboard; Form C alpha, Koide, v_weak conditional); (6) compute infra (qou-sv7h, bare producers).
 Plan: A1 land K_A scope note (#9436); A2 Derived/Selected/Conditional column (owner); A3 ruled-pipeline binding row (owner); B1 qou-sv7h; B2 bare/stale producers (beta-decay-from-q, qou-syit, qou-53p1); B3 import-cone gate on scorecard witnesses; B4 drain #8290 #8307 #8560 #6025; C1 nucleon split thread; C2 extensive binding thread; C3 mu-p (coordinate knot-volume thread); C4 alpha conditionals (coordinate dilog-Bloch thread); C5 m_K/m_pi status.
+
+**2026-11-27 — C1 (nucleon split) thread, PR #9453.** Proved (Lean, `QOU.QBeta.NucleonSplitSingleElement`, no sorry): with one element X for both nucleons only K separates W_n from W_p, for every element of the free algebra on σ₁^{±1}, σ₂^{±1}; two-term traces τ_p = q·t, τ_n = (q⁻¹ − c/3)·t. Linear energy map ⇒ m_n < m_p for all X (q>1, c≥0), so C3 is not dischargeable by linear energy conservation. Gibbs map ⇒ m_n − m_p = E(2 log q − log(1 − cq/3)) > 0, word-independent. Open routes: nonlinear map with derived E, c; distinct nucleon elements (C2 replaced); non-scalar lepton factor. Audit docs/audits/2026-11-27-nucleon-split-single-element-theorem.md.
