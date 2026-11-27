@@ -5,7 +5,7 @@ import CompactQuantumMetrics.OqSU2PBW
 
 Bean `qou-q3dc`. `OqSU2Coproduct` builds the coproduct `Δ` and lists coassociativity as not
 established. This file proves it and draws the two consequences that the Haar invariance
-proof (`OqSU2HaarInvariance`) needs. Everything is over a commutative ring `R`, any unit `q`.
+proof (`QOU/FluidDynamics/q_ns_haar_coproduct_invariance.lean`) needs. Everything is over a commutative ring `R`, any unit `q`.
 
 ## Results (sorry-free)
 
