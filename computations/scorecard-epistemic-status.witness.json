@@ -1,8 +1,8 @@
 {
   "engine": "python (no arithmetic)",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-27T14:39:10.515166+00:00",
-  "commitSha": "e89e9b66f0eb3debe6e9aec79df67be755c38066",
+  "computedAt": "2026-11-27T14:42:15.673258+00:00",
+  "commitSha": "ea1c84fe1334c7180df1215dc0b9adfcc60ae981",
   "assertions": [
     {
       "name": "every_basis_present_and_quoting",
@@ -17,8 +17,8 @@
   "durationMs": 2,
   "computation": "scorecard-epistemic-status",
   "scriptFile": "scorecard_epistemic_status.py",
-  "scriptHash": "d540117132b2",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e23a83121f9b",
+  "scriptCommitSha": "8713cad503e55522b11169dfd8718063566f2e0c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -83,7 +83,7 @@
         "status": "Selected",
         "basis": "docs/audits/2026-11-20-mk-mpi-derivation-status.md",
         "basis_excerpt": "selected",
-        "gloss": "the (3,4) fusion pair and the EM factor were chosen from a scan against the target"
+        "gloss": "pair (3,4) and EM addend form are selected; channel premise (V2 x Sym2 W3*) not derived from meson braid words"
       },
       "m_k": {
         "status": "Selected",

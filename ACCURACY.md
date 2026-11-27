@@ -286,4 +286,4 @@ python3 scripts/compute-qa.py --gate accuracy-scorecard
 | [`computations/mirror-nuclei-coulomb-systematics.witness.json`](computations/mirror-nuclei-coulomb-systematics.witness.json) | `1b11035996c1` | `allPassed: true` | §2, §3.3a |
 | [`computations/beta-decay-from-q.witness.json`](computations/beta-decay-from-q.witness.json) | `6845cc311b6b` | Audit witness (`verified`) | §2, §3.4a, §5.1 |
 | [`computations/probes/alpha_decay_n126_and_derived_qalpha/alpha_decay_n126_qalpha_probe.witness.json`](computations/probes/alpha_decay_n126_and_derived_qalpha/alpha_decay_n126_qalpha_probe.witness.json) | `7b152b846217` | `allPassed: true` | §2, §3.5a–b |
-| [`computations/scorecard-epistemic-status.witness.json`](computations/scorecard-epistemic-status.witness.json) | `a2a646681748` | `allPassed: true` | §2, §3.1a, §3.2a, §3.3a, §3.4a (row labels) |
+| [`computations/scorecard-epistemic-status.witness.json`](computations/scorecard-epistemic-status.witness.json) | `b7acb6c50e3b` | `allPassed: true` | §2, §3.1a, §3.2a, §3.3a, §3.4a (row labels) |

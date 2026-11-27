@@ -62,7 +62,8 @@ ROWS: dict[str, tuple[str, str, str, str]] = {
     "m_tau_over_m_e": ("Conditional", KOIDE, "Koide",
                        "conditional on KoideTopologicalProtectionHypothesis"),
     "mk_over_mpi": ("Selected", MK_AUDIT, "selected",
-                    "the (3,4) fusion pair and the EM factor were chosen from a scan against the target"),
+                    "pair (3,4) and EM addend form are selected; channel premise (V2 x Sym2 W3*) not derived "
+                    "from meson braid words"),
     "m_k": ("Selected", MK_AUDIT, "selected", "m_K = (m_K/m_pi) x m_pi pin; inherits the selection"),
     "m_n": ("Conditional", PER_OBS, "INHERITS A CONDITIONAL Q_beta",
             "m_p + m_e + Q_beta; Q_beta conditional on C1-C3"),
