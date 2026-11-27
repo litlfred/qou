@@ -199,4 +199,13 @@ theorem no_traceFunctional_of_b3_ne_zero {M : BindingMap S} {i j k : Fin 4}
   intro hEq
   exact h (hEq ▸ b3_eq_zero_of_bondRule hf hT i j k)
 
+/-- **Sum of three-body and four-body cumulants under `SatisfiesBondRule` (`qou-5lsb`).**
+When `IsAdditiveOnProducts f` and `T.SatisfiesBondRule μ`,
+`(bindingOfTrace f T).b3 i j k + (bindingOfTrace f T).b4 = 0`. -/
+theorem b3_add_b4_eq_zero_of_bondRule {f : R → S} {T : ClusterTrace R}
+    {μ : Fin 4 → Fin 4 → R} (hf : IsAdditiveOnProducts f)
+    (hT : T.SatisfiesBondRule μ) (i j k : Fin 4) :
+    (bindingOfTrace f T).b3 i j k + (bindingOfTrace f T).b4 = 0 := by
+  rw [b3_eq_zero_of_bondRule hf hT i j k, b4_eq_zero_of_bondRule hf hT, add_zero]
+
 end QOU.Mass.MarkovBondRuleForcesPairwise
