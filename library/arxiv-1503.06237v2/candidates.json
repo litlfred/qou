@@ -1,0 +1,150 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1503.06237v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "55572e7133514f4adc54f5bfb025111fc3fcb911c87ca22bae0a9e30955d1e05",
+  "file": "1503.06237v2.pdf"
+ },
+ "provenance": {
+  "title": "Holographic quantum error-correcting codes: Toy models for the bulk/boundary correspondence",
+  "authors": null,
+  "arxiv": {
+   "id": "1503.06237",
+   "version": "2",
+   "primary_class": "hep-th",
+   "stamp_date": "22 Jul 2015"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 9,
+  "by_kind": {
+   "theorem": 8,
+   "lemma": 1
+  },
+  "formalization_candidates": 9
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "The pentagon-tiling tensor network is an isometric tensor from the bulk",
+   "section_file": "sections/sec-002-3-construction-of-holographic-quantum-states-and.md",
+   "section_title": "Construction of holographic quantum states and codes",
+   "pages": "8-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": null,
+   "statement": "Suppose that we have a holographic state associated to a simply-connected",
+   "section_file": "sections/sec-004-41-ryu-takayanagi-formula.md",
+   "section_title": "Ryu-Takayanagi formula",
+   "pages": "11-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3",
+   "name": null,
+   "statement": "For a holographic state or code, if A is a (not necessarily connected)",
+   "section_file": "sections/sec-005-42-bipartite-entanglement-of-disconnected-region.md",
+   "section_title": "Bipartite entanglement of disconnected regions",
+   "pages": "13-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4",
+   "name": null,
+   "statement": "Suppose the 2n indices of a perfect tensor state are partitioned into four",
+   "section_file": "sections/sec-007-44-negative-tripartite-information.md",
+   "section_title": "Negative tripartite information",
+   "pages": "21-23",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5",
+   "name": null,
+   "statement": "SupposeA is a connected boundary region. Then any bulk local operator",
+   "section_file": "sections/sec-012-54-connected-reconstruction-and-the-causal-wedge.md",
+   "section_title": "Connected reconstruction and the causal wedge",
+   "pages": "27-28",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "6",
+   "name": null,
+   "statement": "Consider a holographic code de\ufb01ned by a contracted network of perfect",
+   "section_file": "sections/sec-015-57-holographic-stabilizer-codes.md",
+   "section_title": "Holographic stabilizer codes",
+   "pages": "36-39",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "7",
+   "name": null,
+   "statement": "Consider a single qubit hexagon code with n layers and an i.i.d. erasure",
+   "section_file": "sections/sec-028-d1-analytic-bounds.md",
+   "section_title": "D.1 Analytic bounds",
+   "pages": "54-58",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "in of Ref. [64] precisely relates the number of independent logical",
+   "section_file": "sections/sec-031-e1-reconstruction-from-symmetry-guarantees.md",
+   "section_title": "E.1 Reconstruction from symmetry guarantees",
+   "pages": "58-61",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "1",
+   "name": null,
+   "statement": "Given a stabilizer code withk logical qubits,\ud835\udcc1(A)+\ud835\udcc1(Ac) = 2k. Furthermore",
+   "section_file": "sections/sec-031-e1-reconstruction-from-symmetry-guarantees.md",
+   "section_title": "E.1 Reconstruction from symmetry guarantees",
+   "pages": "58-61",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

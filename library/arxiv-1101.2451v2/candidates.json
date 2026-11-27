@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1101.2451v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "33a74704382d3589ee3802478b5601db8f699a1b3a1f3bea32c6b5e6ddf8d60c",
+  "file": "1101.2451v2.pdf"
+ },
+ "provenance": {
+  "title": "From Navier-Stokes To Einstein",
+  "authors": "Irene Bredberg, Cynthia Keeler, Vyacheslav Lysov and Andrew Strominger",
+  "arxiv": {
+   "id": "1101.2451",
+   "version": "2",
+   "primary_class": "hep-th",
+   "stamp_date": "14 Jan 2011"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

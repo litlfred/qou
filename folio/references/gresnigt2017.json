@@ -1,0 +1,32 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "gresnigt2017",
+  "library": {
+    "docId": "arxiv-1711.09011v1",
+    "dir": "library/arxiv-1711.09011v1",
+    "pdf": "library/arxiv-1711.09011v1/1711.09011v1.pdf",
+    "stage": "candidates",
+    "pages": 10,
+    "sections": 12,
+    "arxiv": "1711.09011v1"
+  },
+  "type": "paper-conference",
+  "title": "Quantum groups and braid groups as fundamental symmetries",
+  "author": [
+    {
+      "family": "Gresnigt",
+      "given": "Niels G."
+    }
+  ],
+  "container-title": "European Physical Society Conference on High Energy Physics (EPS-HEP 2017), Venice, Italy, 5-12 July 2017",
+  "publisher": "Proceedings of Science",
+  "issued": {
+    "date-parts": [
+      [
+        2017
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/1711.09011",
+  "note": "arXiv:1711.09011v1 [physics.gen-ph], 21 Nov 2017. Conference name, dates and the pos.sissa.it licence line read from page 1 of the PDF; the PoS article number is not printed on the arXiv copy and is not added. Ingested 2026-11-22 as library/arxiv-1711.09011v1/ from an owner chat upload. Reviews SU_q(3) as a flavour symmetry (q a root of unity chosen by fit to baryon masses) and uses the Kauffman-Lomonaco Clifford braiding theorem to show C and H represent B_2 and the circular B_3^c of the helon model. HUMAN-REVIEW: unreviewed."
+}

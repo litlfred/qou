@@ -1,0 +1,1378 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1507.06276v2",
+ "source": {
+  "file": "1507.06276v2.pdf",
+  "sha256": "f552aa5de7125b23f80086d6375a1fb7e5df0d33957be257d9a8c731031f4050",
+  "bytes": 674988,
+  "pages": 52,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "mtime": "2026-11-22T18:41:33Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1507.06276",
+   "version": "2",
+   "primary_class": "math.QA",
+   "stamp_date": "29 Jan 2016"
+  },
+  "doi": null,
+  "title": "UNIVERSAL K-MATRIX FOR QUANTUM SYMMETRIC PAIRS",
+  "authors_raw": "MARTINA BALAGOVI\u0106 AND STEFAN KOLB",
+  "title_lines": [
+   "UNIVERSAL K-MATRIX FOR QUANTUM SYMMETRIC PAIRS"
+  ],
+  "abstract": "Let g be a symmetrizable Kac-Moody algebra and let Uq(g) de- note the corresponding quantized enveloping algebra. In th e present paper we show that quantum symmetric pair coideal subalgebras Bc,s of Uq(g) have a universal K-matrix if g is of \ufb01nite type. By a universal K-matrix for Bc,s we mean an element in a completion of Uq(g) which commutes with Bc,s and provides solutions of the re\ufb02ection equation in all integra ble Uq(g)-modules in category O. The construction of the universal K-matrix for Bc,s bears sig- ni\ufb01cant resemblance to the construction of the universal R- matrix for Uq(g). Most steps in the construction of the universal K-matrix are performed in the general Kac-Moody setting. In the late nineties T. tom Dieck and R. H\u00a8 aring-Oldenburg de veloped a program of representations of categories of ribbons in a cyl inder. Our results show that quantum symmetric pairs provide a large class of ex amples for this program.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
+   "CreationDate": "D:20160131202201-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_raw": "UNIVERSAL K-MATRIX FOR QUANTUM SYMMETRIC PAIRS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "outline": "Introduction",
+   "text": "UNIVERSAL K-MATRIX FOR QUANTUM SYMMETRIC PAIRS",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Background",
+   "page": 1,
+   "source": "outline",
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Universal K-matrix for coideal subalgebras",
+   "page": 3,
+   "source": "outline",
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Main results",
+   "page": 4,
+   "source": "outline",
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Organization",
+   "page": 6,
+   "source": "outline",
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries on quantum groups",
+   "page": 7,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The root datum",
+   "page": 7,
+   "source": "outline",
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Quantized enveloping algebras",
+   "page": 8,
+   "source": "outline",
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The bilinear pairing <,>",
+   "page": 9,
+   "source": "outline",
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Lusztig's skew derivations ri and ir",
+   "page": 10,
+   "source": "outline",
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "The completion U of Uq(g)",
+   "page": 12,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The algebra U",
+   "page": 12,
+   "source": "outline",
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The coproduct on U",
+   "page": 13,
+   "source": "outline",
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Quasi R-matrix and commutativity isomorphisms",
+   "page": 14,
+   "source": "outline",
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Braided tensor categories with a cylinder twist",
+   "page": 16,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Cylinder twists and the reflection equation",
+   "page": 17,
+   "source": "outline",
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Twisted cylinder twists",
+   "page": 18,
+   "source": "outline",
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Cylinder-braided coideal subalgebras and the universal K-matrix",
+   "page": 19,
+   "source": "outline",
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Cylinder braided coideal subalgebras via characters",
+   "page": 21,
+   "source": "outline",
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Quantum symmetric pairs",
+   "page": 23,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Involutive automorphisms of the second kind",
+   "page": 23,
+   "source": "outline",
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The construction of quantum symmetric pairs",
+   "page": 25,
+   "source": "outline",
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The bar involution for quantum symmetric pairs",
+   "page": 26,
+   "source": "outline",
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Assumptions",
+   "page": 27,
+   "source": "outline",
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "The Quasi K-matrix X",
+   "page": 27,
+   "source": "outline",
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "A recursive formula for X",
+   "page": 28,
+   "source": "outline",
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Systems of equations given by skew derivations",
+   "page": 29,
+   "source": "outline",
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Three technical lemmas",
+   "page": 31,
+   "source": "outline",
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Constructing X",
+   "page": 33,
+   "source": "outline",
+   "number": "6.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Constructing X",
+   "page": 36,
+   "source": "outline",
+   "number": "6.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Construction of the universal K-matrix",
+   "page": 36,
+   "source": "outline",
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "A pseudo longest element of W",
+   "page": 37,
+   "source": "outline",
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The twisted universal K-matrix in the Kac-Moody case",
+   "page": 38,
+   "source": "outline",
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The universal K-matrix in the finite case",
+   "page": 41,
+   "source": "outline",
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "A special choice of",
+   "page": 42,
+   "source": "outline",
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Choosing",
+   "page": 42,
+   "source": "outline",
+   "number": "8.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The coproduct of",
+   "page": 43,
+   "source": "outline",
+   "number": "8.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The action of on Uq(g)",
+   "page": 44,
+   "source": "outline",
+   "number": "8.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Extending from Q to P",
+   "page": 45,
+   "source": "outline",
+   "number": "8.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "The coproduct of the universal K-matrix K",
+   "page": 45,
+   "source": "outline",
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Preliminary calculations with the quasi R-matrix",
+   "page": 46,
+   "source": "outline",
+   "number": "9.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The coproduct of the quasi K-matrix X",
+   "page": 47,
+   "source": "outline",
+   "number": "9.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The coproduct of K",
+   "page": 49,
+   "source": "outline",
+   "number": "9.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 51,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1078,
+   "n_words": 178,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-11-background",
+   "number": "1.1",
+   "title": "Background",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 6091,
+   "n_words": 1031,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-12-universal-k-matrix-for-coideal-subalgebras",
+   "number": "1.2",
+   "title": "Universal K-matrix for coideal subalgebras",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3319,
+   "n_words": 601,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-13-main-results",
+   "number": "1.3",
+   "title": "Main results",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 5456,
+   "n_words": 992,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-14-organization",
+   "number": "1.4",
+   "title": "Organization",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 4147,
+   "n_words": 717,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-2-preliminaries-on-quantum-groups",
+   "number": "2",
+   "title": "Preliminaries on quantum groups",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 143,
+   "n_words": 24,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-21-the-root-datum",
+   "number": "2.1",
+   "title": "The root datum",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2217,
+   "n_words": 499,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-22-quantized-enveloping-algebras",
+   "number": "2.2",
+   "title": "Quantized enveloping algebras",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 4870,
+   "n_words": 1035,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-24-lusztigs-skew-derivations-ri-and-ir",
+   "number": "2.4",
+   "title": "Lusztig's skew derivations ri and ir",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 3218,
+   "n_words": 670,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-3-the-completion-u-of-uqg",
+   "number": "3",
+   "title": "The completion U of Uq(g)",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 756,
+   "n_words": 131,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-31-the-algebra-u",
+   "number": "3.1",
+   "title": "The algebra U",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 3888,
+   "n_words": 739,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-011-32-the-coproduct-on-u",
+   "number": "3.2",
+   "title": "The coproduct on U",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 2247,
+   "n_words": 453,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-012-33-quasi-r-matrix-and-commutativity-isomorphisms",
+   "number": "3.3",
+   "title": "Quasi R-matrix and commutativity isomorphisms",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 4551,
+   "n_words": 920,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-013-4-braided-tensor-categories-with-a-cylinder-twis",
+   "number": "4",
+   "title": "Braided tensor categories with a cylinder twist",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 1644,
+   "n_words": 285,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-014-41-cylinder-twists-and-the-reflection-equation",
+   "number": "4.1",
+   "title": "Cylinder twists and the reflection equation",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 3514,
+   "n_words": 713,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-015-42-twisted-cylinder-twists",
+   "number": "4.2",
+   "title": "Twisted cylinder twists",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 2133,
+   "n_words": 445,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-016-43-cylinder-braided-coideal-subalgebras-and-the",
+   "number": "4.3",
+   "title": "Cylinder-braided coideal subalgebras and the universal K-matrix",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 4876,
+   "n_words": 914,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-017-44-cylinder-braided-coideal-subalgebras-via-char",
+   "number": "4.4",
+   "title": "Cylinder braided coideal subalgebras via characters",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 3128,
+   "n_words": 592,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-018-5-quantum-symmetric-pairs",
+   "number": "5",
+   "title": "Quantum symmetric pairs",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 2136,
+   "n_words": 361,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-019-51-involutive-automorphisms-of-the-second-kind",
+   "number": "5.1",
+   "title": "Involutive automorphisms of the second kind",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 3951,
+   "n_words": 790,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-020-52-the-construction-of-quantum-symmetric-pairs",
+   "number": "5.2",
+   "title": "The construction of quantum symmetric pairs",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 3041,
+   "n_words": 622,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-021-53-the-bar-involution-for-quantum-symmetric-pair",
+   "number": "5.3",
+   "title": "The bar involution for quantum symmetric pairs",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 1640,
+   "n_words": 319,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-022-54-assumptions",
+   "number": "5.4",
+   "title": "Assumptions",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 1778,
+   "n_words": 333,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-023-6-the-quasi-k-matrix-x",
+   "number": "6",
+   "title": "The Quasi K-matrix X",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 871,
+   "n_words": 172,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-024-61-a-recursive-formula-for-x",
+   "number": "6.1",
+   "title": "A recursive formula for X",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 2858,
+   "n_words": 620,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-025-62-systems-of-equations-given-by-skew-derivation",
+   "number": "6.2",
+   "title": "Systems of equations given by skew derivations",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 4033,
+   "n_words": 902,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-026-63-three-technical-lemmas",
+   "number": "6.3",
+   "title": "Three technical lemmas",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 3869,
+   "n_words": 859,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-027-64-constructing-x",
+   "number": "6.4",
+   "title": "Constructing X",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 36,
+   "n_chars": 6908,
+   "n_words": 1405,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-028-65-constructing-x",
+   "number": "6.5",
+   "title": "Constructing X",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 1346,
+   "n_words": 285,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-029-7-construction-of-the-universal-k-matrix",
+   "number": "7",
+   "title": "Construction of the universal K-matrix",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 908,
+   "n_words": 161,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-030-71-a-pseudo-longest-element-of-w",
+   "number": "7.1",
+   "title": "A pseudo longest element of W",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 4303,
+   "n_words": 845,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-031-72-the-twisted-universal-k-matrix-in-the-kac-moo",
+   "number": "7.2",
+   "title": "The twisted universal K-matrix in the Kac-Moody case",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 41,
+   "n_chars": 5358,
+   "n_words": 1065,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-032-73-the-universal-k-matrix-in-the-finite-case",
+   "number": "7.3",
+   "title": "The universal K-matrix in the finite case",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 1301,
+   "n_words": 254,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-033-8-a-special-choice-of",
+   "number": "8",
+   "title": "A special choice of",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 268,
+   "n_words": 53,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-034-81-choosing",
+   "number": "8.1",
+   "title": "Choosing",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 43,
+   "n_chars": 2050,
+   "n_words": 410,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-035-82-the-coproduct-of",
+   "number": "8.2",
+   "title": "The coproduct of",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 45,
+   "n_chars": 5178,
+   "n_words": 1117,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-036-9-the-coproduct-of-the-universal-k-matrix-k",
+   "number": "9",
+   "title": "The coproduct of the universal K-matrix K",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 46,
+   "n_chars": 706,
+   "n_words": 131,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-037-91-preliminary-calculations-with-the-quasi-r-mat",
+   "number": "9.1",
+   "title": "Preliminary calculations with the quasi R-matrix",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 47,
+   "n_chars": 2947,
+   "n_words": 682,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-038-92-the-coproduct-of-the-quasi-k-matrix-x",
+   "number": "9.2",
+   "title": "The coproduct of the quasi K-matrix X",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 49,
+   "n_chars": 3719,
+   "n_words": 861,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-039-93-the-coproduct-of-k",
+   "number": "9.3",
+   "title": "The coproduct of K",
+   "level": 2,
+   "page_start": 49,
+   "page_end": 51,
+   "n_chars": 2809,
+   "n_words": 657,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-040-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 51,
+   "page_end": 52,
+   "n_chars": 4847,
+   "n_words": 746,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 44,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 42,
+  "chars_total": 124101,
+  "furniture_lines_stripped": 0
+ }
+}

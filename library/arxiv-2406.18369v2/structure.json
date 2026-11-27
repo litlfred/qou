@@ -1,0 +1,734 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2406.18369v2",
+ "source": {
+  "file": "2406.18369v2.pdf",
+  "sha256": "20b3f8dbc40eacc3a331043d508ba50b4343352919973e717dc0bdb61d285de0",
+  "bytes": 933219,
+  "pages": 42,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "mtime": "2026-11-25T15:43:12Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2406.18369",
+   "version": "2",
+   "primary_class": "math.SP",
+   "stamp_date": "19 Sep 2024"
+  },
+  "doi": null,
+  "title": "112 years of listening to Riemannian manifolds",
+  "authors_raw": "GUSTAV M\u00c5RDBY AND JULIE ROWLETT",
+  "title_lines": [
+   "112 YEARS OF LISTENING TO RIEMANNIAN MANIFOLDS"
+  ],
+  "abstract": "In1910, HendrikAntoonLorentzdelvedintotheenigmaticLaplace eigenvalue equation, also known as the Helmholtz equation, pondering to what extent the geometry in which one solves the equation can be recovered from knowledge of the eigenvalues. Lorentz, inspired by physical and musical analo- gies, conjectured a fundamental relationship between eigenvalues, domain vol- ume, and dimensionality. While his conjecture initially seemed insurmount- able, Hermann Weyl\u2019s groundbreaking proof in 1912 illuminated the deep con- nection between eigenvalues and geometric properties. Over the ensuing 112 years, mathematicians and physicists have continued to decipher the intricate interplay between eigenvalues and geometry. From Weyl\u2019s law to Milnor\u2019s ex- ample of isospectral non-isometric flat tori, and Kac\u2019s inspiring question about hearing the shape of a drum, the field has witnessed remarkable progress, un- covering spectral invariants and advancing our understanding of geometric properties discernible through eigenvalues. We present an overview of this field amenable to both physicists and mathematicians.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20240920005541Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.25",
+   "Title": ""
+  },
+  "title_raw": "112 years of listening to Riemannian manifolds",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "outline": "Introduction",
+   "text": "112 years of listening to Riemannian manifolds",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 3,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Weyl's asymptotic law",
+   "page": 4,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Preliminaries",
+   "page": 4,
+   "source": "outline",
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Weyl's law",
+   "page": 5,
+   "source": "outline",
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Listening to flat tori",
+   "page": 12,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "One cannot hear the shape of a Riemannian manifold but can one hear the shape of a drum?",
+   "page": 15,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Geometric preliminaries",
+   "page": 16,
+   "source": "outline",
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "What could Kac hear?",
+   "page": 17,
+   "source": "outline",
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "One cannot hear...",
+   "page": 33,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "One cannot hear the shape of a drum, but one can hear...",
+   "page": 35,
+   "source": "outline",
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "We're still listening...",
+   "page": 37,
+   "source": "outline",
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 38,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "This domain \u2126 is a rectangle with side lengths l1 and l2",
+   "page": 6,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "A quarter ellipse whose radii are proportional to R. Each lattice point in its interior corresponds to a unit square. The total area of the squares and the area of the quarter ellipse both grow on the order R2 as R \u2192 \u221e, while the error is of the order R",
+   "page": 7,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The domain \u2126 has an inner and outer covering consisting of finitely many rectangles. The rectangles contained in the interior are marked with a cross",
+   "page": 9,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "An infinite sector with opening angle \u03b8 \u2208 (\u03c0/2, \u03c0). (32) hS(\u03b8)(r, \u03d5, r, \u03d5,t) =",
+   "page": 24,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The polygon is split up into sectors which are close to the vertices, and regions close to the boundary but away from the vertices",
+   "page": 27,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "We apply isometries so that one vertex is at the origin, one edge is parallel to the x-axis, and one edge is in the upper half plane. If the opening angle \u03b8 < \u03c0, then points on the left x-axis will have a positive distance to S(\u03b8)",
+   "page": 31,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "The polygons converge to the unit disc in the sense of Hausdorff, but the perimeter diverges. The left shows k = 7 and the right k = 10",
+   "page": 37,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1197,
+   "n_words": 160,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 8238,
+   "n_words": 1327,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 146,
+   "n_words": 25,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-2-weyls-asymptotic-law",
+   "number": "2",
+   "title": "Weyl's asymptotic law",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1167,
+   "n_words": 186,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-21-preliminaries",
+   "number": "2.1",
+   "title": "Preliminaries",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 12,
+   "n_chars": 17694,
+   "n_words": 3051,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-3-listening-to-flat-tori",
+   "number": "3",
+   "title": "Listening to flat tori",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 8535,
+   "n_words": 1523,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-4-one-cannot-hear-the-shape-of-a-riemannian-mani",
+   "number": "4",
+   "title": "One cannot hear the shape of a Riemannian manifold but can one hear the shape of a drum?",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1902,
+   "n_words": 325,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-41-geometric-preliminaries",
+   "number": "4.1",
+   "title": "Geometric preliminaries",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2307,
+   "n_words": 395,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-42-what-could-kac-hear",
+   "number": "4.2",
+   "title": "What could Kac hear?",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 33,
+   "n_chars": 29110,
+   "n_words": 5267,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-5-one-cannot-hear",
+   "number": "5",
+   "title": "One cannot hear...",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 35,
+   "n_chars": 7433,
+   "n_words": 1114,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-6-one-cannot-hear-the-shape-of-a-drum-but-one-ca",
+   "number": "6",
+   "title": "One cannot hear the shape of a drum, but one can hear...",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 37,
+   "n_chars": 7464,
+   "n_words": 1179,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-7-were-still-listening",
+   "number": "7",
+   "title": "We're still listening...",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 2742,
+   "n_words": 462,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-011-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 42,
+   "n_chars": 16649,
+   "n_words": 2366,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 13,
+  "toc_inferred_entries": 0,
+  "figure_entries": 7,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 13,
+  "chars_total": 104584,
+  "furniture_lines_stripped": 0
+ }
+}

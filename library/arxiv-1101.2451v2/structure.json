@@ -1,0 +1,581 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1101.2451v2",
+ "source": {
+  "file": "1101.2451v2.pdf",
+  "sha256": "33a74704382d3589ee3802478b5601db8f699a1b3a1f3bea32c6b5e6ddf8d60c",
+  "bytes": 629773,
+  "pages": 16,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "mtime": "2026-11-25T15:43:01Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1101.2451",
+   "version": "2",
+   "primary_class": "hep-th",
+   "stamp_date": "14 Jan 2011"
+  },
+  "doi": null,
+  "title": "From Navier-Stokes To Einstein",
+  "authors_raw": "Irene Bredberg, Cynthia Keeler, Vyacheslav Lysov and Andrew Strominger",
+  "title_lines": [
+   "FROM NAVIER-STOKES TO EINSTEIN"
+  ],
+  "abstract": "We show by explicit construction that for every solution of the incompressible Navier-Stokes equation in p + 1 dimensions, there is a uniquely associated \u201cdual\u201d solution of the vacuum Einstein equations in p + 2 dimensions. The dual geometry has an intrinsically \ufb02at timelike boundary segment \u03a3 c whose extrinsic curvature is given by the stress tensor of the Navier-Stokes \ufb02uid. We consider a \u201cnear-horizon\u201d limit in which \u03a3 c becomes highly accelerated. The near-horizon expansion in gravity is shown to be mathematically equivalent to the hydrodynamic expansion in \ufb02uid dynamics, and the Einstein equation reduces to the incompressible Navier-Stokes equation. For p = 2, we show that the full dual geometry is algebraically special Petrov type II. The construction is a mathematically precise realization of suggestions of a holographic duality relating \ufb02uids and horizons which began with the membrane paradigm in the 70\u2019s and resurfaced recently in studies of the AdS/CFT correspondence. arXiv:1101.2451v2 [hep-th] 14 Jan 2011",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20241126225430Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.10",
+   "Title": ""
+  },
+  "title_raw": "From Navier-Stokes To Einstein",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "outline": "Introduction",
+   "text": "From Navier-Stokes To Einstein",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 3,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
+  },
+  {
+   "level": 1,
+   "title": "Relation to previous work",
+   "page": 4,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
+  },
+  {
+   "level": 1,
+   "title": "The hydrodynamic limit and the -expansion",
+   "page": 5,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 1,
+   "title": "Characterizing the dual geometries",
+   "page": 5,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 1,
+   "title": "Nonlinear solution in the -expansion",
+   "page": 7,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
+  },
+  {
+   "level": 2,
+   "title": "The solution",
+   "page": 7,
+   "source": "outline",
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
+  },
+  {
+   "level": 2,
+   "title": "Forcing the fluid",
+   "page": 8,
+   "source": "outline",
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 2,
+   "title": "Singularities at r=",
+   "page": 9,
+   "source": "outline",
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 2,
+   "title": "Uniqueness",
+   "page": 10,
+   "source": "outline",
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
+  },
+  {
+   "level": 1,
+   "title": "Alternate presentation",
+   "page": 10,
+   "source": "outline",
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
+  },
+  {
+   "level": 1,
+   "title": "Petrov type",
+   "page": 11,
+   "source": "outline",
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
+  },
+  {
+   "level": 1,
+   "title": "Nonlinear solution in the near-horizon expansion",
+   "page": 12,
+   "source": "outline",
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 13,
+   "source": "outline",
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
+  },
+  {
+   "level": 1,
+   "title": "A Appendix",
+   "page": 13,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "This \ufb01gure depicts the Einstein geometry holographically dual to a \ufb02uid. The accelerated boundary hypersurface \u03a3c at radius r = rc is intrinsically \ufb02at but the extrinsic curvature is given by the \ufb02uid stress tensor. This extrinsic curvature leads to gravity waves which propagate radially inward. The",
+   "page": 6,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "On the \u03a3c surface, prior to \u03c4 = \u03c4\u2217, all initial data is trivial. At \u03c4 = \u03c4\u2217, a gravitational shock wave arrives. The shock forces the \ufb02uid on \u03a3c, and consequently the vi is nontrivial on \u03a3c after \u03c4\u2217",
+   "page": 9,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "8"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 1965,
+   "n_words": 421,
+   "label_start": null,
+   "label_end": "2"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 6158,
+   "n_words": 961,
+   "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-001-2-relation-to-previous-work",
+   "number": "2",
+   "title": "Relation to previous work",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2174,
+   "n_words": 338,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-002-3-the-hydrodynamic-limit-and-the--expansion",
+   "number": "3",
+   "title": "The hydrodynamic limit and the -expansion",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1681,
+   "n_words": 282,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-003-4-characterizing-the-dual-geometries",
+   "number": "4",
+   "title": "Characterizing the dual geometries",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 4070,
+   "n_words": 701,
+   "label_start": "4",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-004-5-nonlinear-solution-in-the--expansion",
+   "number": "5",
+   "title": "Nonlinear solution in the -expansion",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 341,
+   "n_words": 53,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-005-51-the-solution",
+   "number": "5.1",
+   "title": "The solution",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 3008,
+   "n_words": 580,
+   "label_start": "6",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-006-52-forcing-the-fluid",
+   "number": "5.2",
+   "title": "Forcing the fluid",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2972,
+   "n_words": 523,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-007-53-singularities-at-r",
+   "number": "5.3",
+   "title": "Singularities at r=",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1307,
+   "n_words": 231,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-008-54-uniqueness",
+   "number": "5.4",
+   "title": "Uniqueness",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1343,
+   "n_words": 208,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-009-6-alternate-presentation",
+   "number": "6",
+   "title": "Alternate presentation",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 3285,
+   "n_words": 647,
+   "label_start": "9",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-010-7-petrov-type",
+   "number": "7",
+   "title": "Petrov type",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 790,
+   "n_words": 132,
+   "label_start": "10",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-011-8-nonlinear-solution-in-the-near-horizon-expansi",
+   "number": "8",
+   "title": "Nonlinear solution in the near-horizon expansion",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 3450,
+   "n_words": 600,
+   "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-012-9-acknowledgements",
+   "number": "9",
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 379,
+   "n_words": 60,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-013-a-appendix",
+   "number": null,
+   "title": "A Appendix",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 8585,
+   "n_words": 1305,
+   "label_start": "12",
+   "label_end": "15"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 14,
+  "toc_inferred_entries": 0,
+  "figure_entries": 2,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 15,
+  "chars_total": 41508,
+  "furniture_lines_stripped": 15
+ }
+}

@@ -1,0 +1,1445 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1409.0902v1",
+ "source": {
+  "file": "1409.0902v1.pdf",
+  "sha256": "8f8af8974fd7792b9dbe8755a5f35447fa8ebbd9bc82a805025f4b1024d6adc8",
+  "bytes": 439942,
+  "pages": 31,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "mtime": "2026-11-25T15:43:18Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1409.0902",
+   "version": "1",
+   "primary_class": "math.RT",
+   "stamp_date": "2 Sep 2014"
+  },
+  "doi": null,
+  "title": "Cocenters and representations of affine Hecke algebra",
+  "authors_raw": "DAN CIUBOTARU AND XUHUAHE",
+  "title_lines": [
+   "COCENTERS AND REPRESENTATIONS OF AFFINE HECKE",
+   "ALGEBRA"
+  ],
+  "abstract": "In this paper, we study the relation between the cocenter and the representation theory of a\ufb03ne Hecke algebras. The appro ach is based on the interaction between the rigid cocenter, an important subspace of the cocenter, and the dual object in representation theory, the rigid quotient of the Grothendieck group of \ufb01nite dimensional representatio ns.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20180715052154-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_raw": "Cocenters and representations of affine Hecke algebra",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "outline": "Introduction",
+   "text": "Cocenters and representations of affine Hecke algebra",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "1.1.",
+   "page": 1,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "1.2.",
+   "page": 2,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "1.3.",
+   "page": 4,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "1.4.",
+   "page": 4,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "1.5.",
+   "page": 5,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 5,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "2.1.",
+   "page": 5,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "2.2.",
+   "page": 5,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "2.3.",
+   "page": 6,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "2.4.",
+   "page": 7,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Clifford Theory for H\"426830A \"526930B",
+   "page": 7,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "3.1.",
+   "page": 7,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "3.2.",
+   "page": 7,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "3.3.",
+   "page": 8,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "3.4.",
+   "page": 9,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Induction and restriction",
+   "page": 9,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "4.1.",
+   "page": 9,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "4.2.",
+   "page": 10,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "4.3.",
+   "page": 10,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "4.4.",
+   "page": 11,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "4.5.",
+   "page": 11,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Spanning set of the cocenter",
+   "page": 12,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "5.1.",
+   "page": 12,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "5.2.",
+   "page": 12,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "5.3.",
+   "page": 12,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "5.4.",
+   "page": 12,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "5.5.",
+   "page": 13,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "5.6.",
+   "page": 13,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "5.7.",
+   "page": 13,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Elliptic quotient and rigid quotient",
+   "page": 13,
+   "source": "outline",
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "6.1.",
+   "page": 13,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "6.2.",
+   "page": 14,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "6.3.",
+   "page": 14,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "6.4.",
+   "page": 15,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "6.5.",
+   "page": 17,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Duality between and R(H)",
+   "page": 17,
+   "source": "outline",
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "7.1.",
+   "page": 17,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "7.2.",
+   "page": 18,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "7.3.",
+   "page": 19,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Examples",
+   "page": 20,
+   "source": "outline",
+   "number": "7.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Some consequences",
+   "page": 23,
+   "source": "outline",
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "8.1.",
+   "page": 23,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Proofs of Theorems ?? and ??",
+   "page": 25,
+   "source": "outline",
+   "number": "8.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "8.3.",
+   "page": 25,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "8.4.",
+   "page": 26,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Applications to smooth representations of reductive p-adic groups",
+   "page": 26,
+   "source": "outline",
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "9.1.",
+   "page": 26,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "9.2.",
+   "page": 27,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "9.3.",
+   "page": 28,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "9.4.",
+   "page": 29,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 29,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "The rigid cocenter/quotient table for SL(2) SL(2) T0 T1 1",
+   "page": 21,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "The rigid cocenter/quotient table for P GL(2) P GL(2) St\u2212 St+ i\u2205(1) q \u2212 1 0 2",
+   "page": 21,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 484,
+   "n_words": 75,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1428,
+   "n_words": 226,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-11",
+   "number": null,
+   "title": "1.1.",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2334,
+   "n_words": 432,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-12",
+   "number": null,
+   "title": "1.2.",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 4919,
+   "n_words": 853,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-13",
+   "number": null,
+   "title": "1.3.",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1044,
+   "n_words": 179,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-14",
+   "number": null,
+   "title": "1.4.",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1917,
+   "n_words": 307,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-15",
+   "number": null,
+   "title": "1.5.",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1187,
+   "n_words": 203,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-21",
+   "number": null,
+   "title": "2.1.",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 444,
+   "n_words": 91,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-22",
+   "number": null,
+   "title": "2.2.",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 859,
+   "n_words": 176,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-23",
+   "number": null,
+   "title": "2.3.",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1578,
+   "n_words": 296,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-24",
+   "number": null,
+   "title": "2.4.",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1327,
+   "n_words": 268,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-011-31",
+   "number": null,
+   "title": "3.1.",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 403,
+   "n_words": 93,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-012-32",
+   "number": null,
+   "title": "3.2.",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 704,
+   "n_words": 114,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-013-33",
+   "number": null,
+   "title": "3.3.",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2485,
+   "n_words": 524,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-014-34",
+   "number": null,
+   "title": "3.4.",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 707,
+   "n_words": 150,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-015-4-induction-and-restriction",
+   "number": "4",
+   "title": "Induction and restriction",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 93,
+   "n_words": 15,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-016-41",
+   "number": null,
+   "title": "4.1.",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 665,
+   "n_words": 136,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-017-42",
+   "number": null,
+   "title": "4.2.",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 607,
+   "n_words": 122,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-018-43",
+   "number": null,
+   "title": "4.3.",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1841,
+   "n_words": 361,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-019-45",
+   "number": null,
+   "title": "4.5.",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 105,
+   "n_words": 22,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-020-44",
+   "number": null,
+   "title": "4.4.",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1647,
+   "n_words": 327,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-021-5-spanning-set-of-the-cocenter",
+   "number": "5",
+   "title": "Spanning set of the cocenter",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 101,
+   "n_words": 18,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-022-51",
+   "number": null,
+   "title": "5.1.",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 791,
+   "n_words": 166,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-023-52",
+   "number": null,
+   "title": "5.2.",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 817,
+   "n_words": 160,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-024-53",
+   "number": null,
+   "title": "5.3.",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 231,
+   "n_words": 36,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-025-54",
+   "number": null,
+   "title": "5.4.",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 330,
+   "n_words": 68,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-026-55",
+   "number": null,
+   "title": "5.5.",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 220,
+   "n_words": 47,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-027-56",
+   "number": null,
+   "title": "5.6.",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 907,
+   "n_words": 205,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-028-57",
+   "number": null,
+   "title": "5.7.",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 337,
+   "n_words": 83,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-029-6-elliptic-quotient-and-rigid-quotient",
+   "number": "6",
+   "title": "Elliptic quotient and rigid quotient",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 152,
+   "n_words": 24,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-030-61",
+   "number": null,
+   "title": "6.1.",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 608,
+   "n_words": 110,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-031-62",
+   "number": null,
+   "title": "6.2.",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 924,
+   "n_words": 170,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-032-63",
+   "number": null,
+   "title": "6.3.",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 1768,
+   "n_words": 360,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-033-64",
+   "number": null,
+   "title": "6.4.",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 3635,
+   "n_words": 660,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-034-65",
+   "number": null,
+   "title": "6.5.",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 437,
+   "n_words": 84,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-035-7-duality-between-and-rh",
+   "number": "7",
+   "title": "Duality between and R(H)",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 144,
+   "n_words": 26,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-036-71",
+   "number": null,
+   "title": "7.1.",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 2638,
+   "n_words": 547,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-037-72",
+   "number": null,
+   "title": "7.2.",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 1937,
+   "n_words": 350,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-038-73",
+   "number": null,
+   "title": "7.3.",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 3415,
+   "n_words": 706,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-039-74-examples",
+   "number": "7.4",
+   "title": "Examples",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 23,
+   "n_chars": 5821,
+   "n_words": 1227,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-040-8-some-consequences",
+   "number": "8",
+   "title": "Some consequences",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 828,
+   "n_words": 139,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-041-81",
+   "number": null,
+   "title": "8.1.",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 3494,
+   "n_words": 695,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-042-83",
+   "number": null,
+   "title": "8.3.",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 1525,
+   "n_words": 303,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-043-84",
+   "number": null,
+   "title": "8.4.",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 1482,
+   "n_words": 277,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-044-9-applications-to-smooth-representations-of-redu",
+   "number": "9",
+   "title": "Applications to smooth representations of reductive p-adic groups",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-045-91",
+   "number": null,
+   "title": "9.1.",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 1159,
+   "n_words": 207,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-046-92",
+   "number": null,
+   "title": "9.2.",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 2732,
+   "n_words": 476,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-047-93",
+   "number": null,
+   "title": "9.3.",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 2331,
+   "n_words": 402,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-048-94",
+   "number": null,
+   "title": "9.4.",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 1392,
+   "n_words": 295,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-049-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 6698,
+   "n_words": 1070,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 52,
+  "toc_inferred_entries": 0,
+  "figure_entries": 2,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 51,
+  "chars_total": 73632,
+  "furniture_lines_stripped": 0
+ }
+}

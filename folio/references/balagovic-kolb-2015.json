@@ -1,0 +1,34 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "balagovic-kolb-2015",
+  "library": {
+    "docId": "arxiv-1507.06276v2",
+    "dir": "library/arxiv-1507.06276v2",
+    "pdf": "library/arxiv-1507.06276v2/1507.06276v2.pdf",
+    "stage": "candidates",
+    "pages": 52,
+    "sections": 42,
+    "arxiv": "1507.06276v2"
+  },
+  "type": "article",
+  "title": "Universal K-matrix for quantum symmetric pairs",
+  "author": [
+    {
+      "family": "Balagović",
+      "given": "Martina"
+    },
+    {
+      "family": "Kolb",
+      "given": "Stefan"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2015
+      ]
+    ]
+  },
+  "URL": "https://arxiv.org/abs/1507.06276",
+  "note": "arXiv:1507.06276v2 [math.QA], 29 Jan 2016 (v1 2015, per the identifier). No journal reference is printed on the arXiv copy, so none is added. Ingested 2026-11-22 as library/arxiv-1507.06276v2/ from an owner chat upload. Constructs a universal K-matrix for quantum symmetric pair coideal subalgebras B_{c,s} of U_q(g) for g of finite type: it commutes with B_{c,s} and solves the reflection equation in integrable category-O modules (braids in a cylinder, tom Dieck-Haring-Oldenburg). HUMAN-REVIEW: unreviewed."
+}

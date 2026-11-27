@@ -1,0 +1,2143 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2010.12819v2",
+ "source": {
+  "file": "2010.12819v2.pdf",
+  "sha256": "ddc0493d60d48e7715c32d73c23542052966a2f5f3b4fc07094845ecb059fe63",
+  "bytes": 2066383,
+  "pages": 61,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "mtime": "2026-11-25T15:43:22Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2010.12819",
+   "version": "2",
+   "primary_class": "hep-th",
+   "stamp_date": "22 Feb 2021"
+  },
+  "doi": null,
+  "title": "The action of the Virasoro algebra in quantum spin chains. I. The non-rational case",
+  "authors_raw": "Linnea Grans-Samuelsson 1, Jesper Lykke Jacobsen 1,2,3,4, and Hubert Saleur 1,5",
+  "title_lines": [
+   "The action of the Virasoro algebra in quantum spin chains",
+   "I. The non-rational case"
+  ],
+  "abstract": "We investigate the action of discretized Virasoro generators, built out of generators of the lattice Temperley-Lieb algebra (\u201cKoo-Saleur generators\u201d [1]), in the critical XXZ quantum spin chain. We ex- plore the structure of the continuum-limit Virasoro modules at generic central charge for the XXZ vertex model, paralleling [2] for the loop model. We \ufb01nd again indecomposable modules, but this time not loga- rithmic ones. The limit of the Temperley-Lieb modules Wj,1 for j \u2044= 0 contains pairs of \u201cconjugate states\u201d with conformal weights ( hr,s, hr,\u2212s) and ( hr,\u2212s, hr,s) that give rise to dual structures: Verma or co-Verma modules. The limit of W0,q\u00b12 contains diagonal \ufb01elds (hr,1, hr,1) and gives rise to either only Verma or only co-Verma modules, depending on the sign of the exponent in q\u00b12. In order to obtain matrix elements of Koo-Saleur generators at large system size N we use Bethe ansatz and Quantum Inverse Scattering meth- ods, computing the form factors for relevant combinations of three neighbouring spin operators. Relations between form factors ensure that the above duality exists already at the lattice level. We also study in which sense Koo-Saleur generators converge to Virasoro generators. We consider convergence in the weak sense, investigating whether the commutator of limits is the same as the limit of the commutator? We \ufb01nd that it coincides only up to the central term. As a side result we compute the ground-state expectation value of two neighbouring Temperley-Lieb generators in the XXZ spin chain.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20210223021243Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.21",
+   "Title": ""
+  },
+  "title_raw": "The action of the Virasoro algebra in quantum spin chains. I. The non-rational case",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "outline": "Introduction",
+   "text": "The action of the Virasoro algebra in quantum spin chains. I. The non-rational case",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
+  },
+  {
+   "level": 1,
+   "title": "Discrete Virasoro algebra and the Koo-Saleur formulae",
+   "page": 5,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
+  },
+  {
+   "level": 2,
+   "title": "The Temperley-Lieb algebra in the periodic case",
+   "page": 5,
+   "source": "outline",
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
+  },
+  {
+   "level": 3,
+   "title": "The algebra TaN(m)",
+   "page": 6,
+   "source": "outline",
+   "number": "2.1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
+  },
+  {
+   "level": 3,
+   "title": "Standard modules",
+   "page": 6,
+   "source": "outline",
+   "number": "2.1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
+  },
+  {
+   "level": 2,
+   "title": "Physical systems and the Temperley-Lieb Hamiltonian",
+   "page": 8,
+   "source": "outline",
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 2,
+   "title": "Indecomposability",
+   "page": 9,
+   "source": "outline",
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
+  },
+  {
+   "level": 2,
+   "title": "Discrete Virasoro algebra",
+   "page": 10,
+   "source": "outline",
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
+  },
+  {
+   "level": 1,
+   "title": "Some features of the continuum limit",
+   "page": 11,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
+  },
+  {
+   "level": 2,
+   "title": "Modules in the continuum",
+   "page": 11,
+   "source": "outline",
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
+  },
+  {
+   "level": 2,
+   "title": "Bosonization and expected results",
+   "page": 12,
+   "source": "outline",
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
+  },
+  {
+   "level": 2,
+   "title": "The choices of metric",
+   "page": 15,
+   "source": "outline",
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
+  },
+  {
+   "level": 2,
+   "title": "Feigin-Fuchs modules and conjugate states",
+   "page": 16,
+   "source": "outline",
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
+  },
+  {
+   "level": 1,
+   "title": "Bethe Ansatz picture",
+   "page": 17,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
+  },
+  {
+   "level": 2,
+   "title": "Bethe-ansatz and the identification of scaling states",
+   "page": 17,
+   "source": "outline",
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
+  },
+  {
+   "level": 3,
+   "title": "Overlaps and mixing",
+   "page": 18,
+   "source": "outline",
+   "number": "4.1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
+  },
+  {
+   "level": 2,
+   "title": "Conjugate states and Bethe roots",
+   "page": 19,
+   "source": "outline",
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
+  },
+  {
+   "level": 2,
+   "title": "Some results about form factors",
+   "page": 20,
+   "source": "outline",
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
+  },
+  {
+   "level": 3,
+   "title": "Properties under conjugation and parity, implications for the modules",
+   "page": 21,
+   "source": "outline",
+   "number": "4.3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
+  },
+  {
+   "level": 1,
+   "title": "Lattice Virasoro in the non-degenerate case",
+   "page": 22,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
+  },
+  {
+   "level": 2,
+   "title": "Koo-Saleur generators and lattice momentum",
+   "page": 22,
+   "source": "outline",
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
+  },
+  {
+   "level": 2,
+   "title": "Numerical results for L-1",
+   "page": 23,
+   "source": "outline",
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
+  },
+  {
+   "level": 1,
+   "title": "Lattice Virasoro in the degenerate case",
+   "page": 25,
+   "source": "outline",
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
+  },
+  {
+   "level": 2,
+   "title": "Modules Wj,1 for j =0",
+   "page": 25,
+   "source": "outline",
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
+  },
+  {
+   "level": 2,
+   "title": "Modules W0,qpm2",
+   "page": 26,
+   "source": "outline",
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
+  },
+  {
+   "level": 1,
+   "title": "Anomalies, and the convergence of the Koo-Saleur generators",
+   "page": 27,
+   "source": "outline",
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
+  },
+  {
+   "level": 2,
+   "title": "``Scaling-weak'' convergence",
+   "page": 28,
+   "source": "outline",
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
+  },
+  {
+   "level": 2,
+   "title": "A closer look at limits and commutators",
+   "page": 28,
+   "source": "outline",
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
+  },
+  {
+   "level": 3,
+   "title": "The case of n =0",
+   "page": 29,
+   "source": "outline",
+   "number": "7.2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
+  },
+  {
+   "level": 3,
+   "title": "The case of n= 0",
+   "page": 32,
+   "source": "outline",
+   "number": "7.2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 36,
+   "source": "outline",
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
+  },
+  {
+   "level": 1,
+   "title": "A Some remarks on scalar products",
+   "page": 36,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
+  },
+  {
+   "level": 1,
+   "title": "B More on form factors",
+   "page": 38,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
+  },
+  {
+   "level": 2,
+   "title": "B.1 General framework, notations, conventions",
+   "page": 38,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
+  },
+  {
+   "level": 2,
+   "title": "B.2 Quantum Inverse Scattering Method",
+   "page": 39,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
+  },
+  {
+   "level": 2,
+   "title": "B.3 The expressions for the necessary FO1,\u2026,Oj",
+   "page": 40,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
+  },
+  {
+   "level": 3,
+   "title": "B.3.1 Fz,Fzz,F-+",
+   "page": 40,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
+  },
+  {
+   "level": 3,
+   "title": "B.3.2 Fz-+, F-z+",
+   "page": 41,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
+  },
+  {
+   "level": 3,
+   "title": "B.3.3 Scalar products and the homogeneous limit",
+   "page": 42,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "42"
+  },
+  {
+   "level": 1,
+   "title": "C Numerical results for the degenerate case",
+   "page": 42,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "42"
+  },
+  {
+   "level": 2,
+   "title": "C.1 The case of Wj,1",
+   "page": 43,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
+  },
+  {
+   "level": 3,
+   "title": "C.1.1 Considerations at level 2",
+   "page": 44,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "44"
+  },
+  {
+   "level": 3,
+   "title": "C.1.2 Form factor results for Wj,1",
+   "page": 45,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
+  },
+  {
+   "level": 2,
+   "title": "C.2 The case of W0,qpm2",
+   "page": 47,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "47"
+  },
+  {
+   "level": 2,
+   "title": "C.3 Relevant Bethe roots",
+   "page": 48,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
+  },
+  {
+   "level": 1,
+   "title": "D Proof of (133)",
+   "page": 49,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "49"
+  },
+  {
+   "level": 2,
+   "title": "D.1 The limit 0",
+   "page": 50,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "50"
+  },
+  {
+   "level": 1,
+   "title": "E Further numerical results for Section 7.2",
+   "page": 50,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "50"
+  },
+  {
+   "level": 1,
+   "title": "F The chiral-antichiral commutator",
+   "page": 53,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "53"
+  },
+  {
+   "level": 1,
+   "title": "G The ordinary XXZ case",
+   "page": 54,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "54"
+  },
+  {
+   "level": 2,
+   "title": "G.1 Algebraic description of the ordinary XXZ case",
+   "page": 55,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "55"
+  },
+  {
+   "level": 2,
+   "title": "G.2 Central charge and conformal weights for the ordinary XXZ case",
+   "page": 56,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "56"
+  },
+  {
+   "level": 2,
+   "title": "G.3 Numerical results for the ordinary XXZ case",
+   "page": 57,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "57"
+  },
+  {
+   "level": 2,
+   "title": "G.4 Interpolation between c=1 and c=1-6x(x+1)",
+   "page": 57,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "57"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Three examples of a\ufb03ne diagrams for N = 4, with the left and right sides of the framing rectangle identi\ufb01ed. The \ufb01rst diagram represents e4, the second e2e4, and expressing the last one is left as an exercise",
+   "page": 6,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Matrix elements ((cid:76)\u22121[N ])viuj for i = 1, j = 1 and i = 2, j = 1, where the scaling states |uj(cid:105) and |vi(cid:105) follow the patterns of Bethe integers shown in (102) and (103). The numerical values are given for the case of Sz = 1, e = 0, x = \u03c0, \u03c6 = 1/10 for system size N up to 80, aft",
+   "page": 24,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Finite-size estimates for the central charge c, obtained from (112) for various N , plotted against x",
+   "page": 27,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Absolute value of matrix elements, plotted with logarithmically scaled axes for sizes N = 10, 12, . . . , 24. A linear \ufb01t is performed, excluding the lowest two sizes. The \ufb01t indicates that the matrix elements decay as (cid:79)(1/N r), where the estimated slope r is shown on each curve. The ground s",
+   "page": 30,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "30"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Absolute value of matrix elements of (cid:82) as de\ufb01ned in (123), plotted using the same conventions as in",
+   "page": 31,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "31"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Absolute value of matrix elements, plotted using the same conventions as in Figure 3 but with the choice of |u(cid:105) = |v(cid:105). The operators are here normal ordered: :(cid:79): \u2261 O \u2212 O\u221e with O\u221e being the ground state expectation value as N \u2192 \u221e. This value is given for ej in (16), and for eje",
+   "page": 32,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "32"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Absolute value of matrix elements of (cid:82) as de\ufb01ned in (123), plotted using the same conventions as in Figure 3 but with the choice of |u(cid:105) = |v(cid:105)",
+   "page": 33,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "33"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Comparison of the numerical measures for (cid:69)p3, de\ufb01ned in (129a), and its conjectured value which is the right-hand side of (131). The agreement between the extrapolated values and the conjecture is seen to be excellent, with a precision of the order 10\u22126 for all values of x. The same conventio",
+   "page": 34,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "34"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Remake of Figure 2. (cid:76)\u22122(cid:76)2, and no cuto\ufb00 is taken. This commutator is denoted \u201cOriginal\u201d. We also show the result using a modi\ufb01ed version of the Koo-Saleur generators given by (137), labelled \u201cModi\ufb01ed\u201d. \u201cConj*\u201d refers to the result found by applying (136), while \u201cConj\u201d refers to the CFT",
+   "page": 35,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "35"
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "Matrix elements of (cid:76)\u00b11 and \u00af(cid:76)\u00b11 in the sector of Sz = 1, at x = \u03c0. We call |u\u2212(cid:105) the primary state at e = \u22121 and |u+(cid:105) the primary state at e = 1 (both in the N \u2192 \u221e limit), with charges given by (66). |v1(cid:105) and |v2(cid:105) are linear combinations of |a\u22121u\u2212(cid:105",
+   "page": 43,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "43"
+  },
+  {
+   "kind": "table",
+   "number": "4",
+   "title": "Matrix elements of (cid:76)\u00b11 and \u00af(cid:76)\u00b11 in the sector of Sz = 1, at x = \u03c0, with the same conventions as in Table 3. Having separated |\u00afa\u22121u+(cid:105) and |a\u22121u\u2212(cid:105) from each other we here obtain the full conjectured norm",
+   "page": 44,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "44"
+  },
+  {
+   "kind": "table",
+   "number": "5",
+   "title": "Norm at level 2 in the case of overlap. Shown is projection onto the four relevant states. In the right column is the full norm for comparison. The presence of parasitic couplings in the latter case leads to a di\ufb00erent result, which moreover cannot be reliably extrapolated. The conventions used for",
+   "page": 45,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "45"
+  },
+  {
+   "kind": "table",
+   "number": "6",
+   "title": "Matrix elements of (cid:76)\u00b11 and \u00af(cid:76)\u00b11 in the sector of Sz = 1, at x = \u03c0, with the same conventions as in",
+   "page": 45,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "45"
+  },
+  {
+   "kind": "table",
+   "number": "7",
+   "title": "Matrix elements of (cid:76)\u00b11 and \u00af(cid:76)\u00b11 in the sector of Sz = 1, at x = \u03c0, with the same conventions as in",
+   "page": 46,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "46"
+  },
+  {
+   "kind": "table",
+   "number": "8",
+   "title": "Values of |\u03c7|2, |\u03c7|\u2217\u2217",
+   "page": 46,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "46"
+  },
+  {
+   "kind": "table",
+   "number": "9",
+   "title": "Values of |\u03c7|2, |\u03c7|\u2217\u2217",
+   "page": 47,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "47"
+  },
+  {
+   "kind": "table",
+   "number": "10",
+   "title": "Matrix elements of (cid:76)\u00b11 and \u00af(cid:76)\u00b11 in the sector of Sz = 0, at x = \u03c0, |e| = 1 and twisted boundary conditions, with the same conventions as in Table 3. We call |uq2 (cid:105) the primary state at twisted boundary conditions e\u03c6 = \u03b1\u2212/\u03b1+, corresponding to the module (cid:87)0,q2, and |uq\u22122(c",
+   "page": 47,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "47"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Absolute value of matrix elements, plotted using the same conventions as in Figure 3 up to the choice of |u(cid:105): For each state |v(cid:105) the state |u(cid:105) corresponds to the same choice of lattice parameters up to a change in momentum sector, (cid:112) \u2192 (cid:112) + 2. To the left, the l",
+   "page": 51,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "51"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Absolute value of matrix elements of (cid:82) as de\ufb01ned in (123), plotted using the same conventions as in Figure 3 up to the choice of |u(cid:105): For each state |v(cid:105) the state |u(cid:105) corresponds to the same choice of lattice parameters up to a change in momentum sector, (cid:112) \u2192 (c",
+   "page": 51,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "51"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Absolute value of matrix elements, plotted using the same conventions as in Figure 3 up to the choice of |u(cid:105): For each state |v(cid:105) the state |u(cid:105) is taken to be the \ufb01rst excited energy state corresponding to the same choice of lattice parameters that were used for |v(cid:105). (",
+   "page": 52,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "52"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "Absolute value of matrix elements, plotted using the same conventions as in Figure 3 but with the choice of |u(cid:105) = |v(cid:105)",
+   "page": 54,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "54"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "Absolute value of matrix elements, plotted using the same conventions as in Figure 3. In case of choices of |v(cid:105) showing particularly strong \ufb01nite size e\ufb00ects (|Sz = 1, e = 1(cid:105) and |(cid:112) = 1(cid:105) in upper two plots) the linear \ufb01t is performed using only the two leftmost points",
+   "page": 54,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "54"
+  },
+  {
+   "kind": "table",
+   "number": "11",
+   "title": "",
+   "page": 57,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "57"
+  },
+  {
+   "kind": "table",
+   "number": "12",
+   "title": "Matrix elements of (cid:76)\u00b11, \u00af(cid:76)\u00b11, (cid:76)XXZ",
+   "page": 58,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "58"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "Finite-size estimate for the central charge c as a function of interpolation parameter t at x = \u03c0, using the same conventions as in Figure 2. The generators (cid:76)t",
+   "page": 59,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "59"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 7250,
+   "n_words": 2119,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 5,
+   "n_chars": 13473,
+   "n_words": 2239,
+   "label_start": "2",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-001-2-discrete-virasoro-algebra-and-the-koo-saleur-f",
+   "number": "2",
+   "title": "Discrete Virasoro algebra and the Koo-Saleur formulae",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 896,
+   "n_words": 139,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-002-21-the-temperley-lieb-algebra-in-the-periodic-ca",
+   "number": "2.1",
+   "title": "The Temperley-Lieb algebra in the periodic case",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 536,
+   "n_words": 94,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-003-211-the-algebra-tanm",
+   "number": "2.1.1",
+   "title": "The algebra TaN(m)",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 2160,
+   "n_words": 376,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-004-212-standard-modules",
+   "number": "2.1.2",
+   "title": "Standard modules",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 5639,
+   "n_words": 951,
+   "label_start": "6",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-005-22-physical-systems-and-the-temperley-lieb-hamil",
+   "number": "2.2",
+   "title": "Physical systems and the Temperley-Lieb Hamiltonian",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 4872,
+   "n_words": 869,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-006-23-indecomposability",
+   "number": "2.3",
+   "title": "Indecomposability",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 4176,
+   "n_words": 796,
+   "label_start": "9",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-007-24-discrete-virasoro-algebra",
+   "number": "2.4",
+   "title": "Discrete Virasoro algebra",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2177,
+   "n_words": 395,
+   "label_start": "10",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-008-3-some-features-of-the-continuum-limit",
+   "number": "3",
+   "title": "Some features of the continuum limit",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 254,
+   "n_words": 49,
+   "label_start": "11",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-009-31-modules-in-the-continuum",
+   "number": "3.1",
+   "title": "Modules in the continuum",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 4099,
+   "n_words": 691,
+   "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-010-32-bosonization-and-expected-results",
+   "number": "3.2",
+   "title": "Bosonization and expected results",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 7177,
+   "n_words": 1322,
+   "label_start": "12",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-011-33-the-choices-of-metric",
+   "number": "3.3",
+   "title": "The choices of metric",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 2932,
+   "n_words": 522,
+   "label_start": "15",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-012-34-feigin-fuchs-modules-and-conjugate-states",
+   "number": "3.4",
+   "title": "Feigin-Fuchs modules and conjugate states",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2087,
+   "n_words": 393,
+   "label_start": "16",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-013-4-bethe-ansatz-picture",
+   "number": "4",
+   "title": "Bethe Ansatz picture",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 192,
+   "n_words": 36,
+   "label_start": "17",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-014-41-bethe-ansatz-and-the-identification-of-scalin",
+   "number": "4.1",
+   "title": "Bethe-ansatz and the identification of scaling states",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 8072,
+   "n_words": 1404,
+   "label_start": "17",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-015-411-overlaps-and-mixing",
+   "number": "4.1.1",
+   "title": "Overlaps and mixing",
+   "level": 3,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 2847,
+   "n_words": 490,
+   "label_start": "18",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-016-42-conjugate-states-and-bethe-roots",
+   "number": "4.2",
+   "title": "Conjugate states and Bethe roots",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 4501,
+   "n_words": 815,
+   "label_start": "19",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-017-43-some-results-about-form-factors",
+   "number": "4.3",
+   "title": "Some results about form factors",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 2491,
+   "n_words": 440,
+   "label_start": "20",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-018-431-properties-under-conjugation-and-parity-impl",
+   "number": "4.3.1",
+   "title": "Properties under conjugation and parity, implications for the modules",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 4105,
+   "n_words": 676,
+   "label_start": "21",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-019-5-lattice-virasoro-in-the-non-degenerate-case",
+   "number": "5",
+   "title": "Lattice Virasoro in the non-degenerate case",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 434,
+   "n_words": 72,
+   "label_start": "22",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-020-51-koo-saleur-generators-and-lattice-momentum",
+   "number": "5.1",
+   "title": "Koo-Saleur generators and lattice momentum",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 2569,
+   "n_words": 434,
+   "label_start": "22",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-021-52-numerical-results-for-l-1",
+   "number": "5.2",
+   "title": "Numerical results for L-1",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 7171,
+   "n_words": 1242,
+   "label_start": "23",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-022-6-lattice-virasoro-in-the-degenerate-case",
+   "number": "6",
+   "title": "Lattice Virasoro in the degenerate case",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 1363,
+   "n_words": 241,
+   "label_start": "25",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-023-61-modules-wj1-for-j-0",
+   "number": "6.1",
+   "title": "Modules Wj,1 for j =0",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 2593,
+   "n_words": 478,
+   "label_start": "25",
+   "label_end": "26"
+  },
+  {
+   "id": "sec-024-62-modules-w0qpm2",
+   "number": "6.2",
+   "title": "Modules W0,qpm2",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 3640,
+   "n_words": 643,
+   "label_start": "26",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-025-7-anomalies-and-the-convergence-of-the-koo-saleu",
+   "number": "7",
+   "title": "Anomalies, and the convergence of the Koo-Saleur generators",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 3580,
+   "n_words": 622,
+   "label_start": "27",
+   "label_end": "28"
+  },
+  {
+   "id": "sec-026-71-scaling-weak-convergence",
+   "number": "7.1",
+   "title": "``Scaling-weak'' convergence",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 2639,
+   "n_words": 422,
+   "label_start": "28",
+   "label_end": "28"
+  },
+  {
+   "id": "sec-027-72-a-closer-look-at-limits-and-commutators",
+   "number": "7.2",
+   "title": "A closer look at limits and commutators",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 4071,
+   "n_words": 737,
+   "label_start": "28",
+   "label_end": "29"
+  },
+  {
+   "id": "sec-028-721-the-case-of-n-0",
+   "number": "7.2.1",
+   "title": "The case of n =0",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 32,
+   "n_chars": 5679,
+   "n_words": 1051,
+   "label_start": "29",
+   "label_end": "32"
+  },
+  {
+   "id": "sec-029-722-the-case-of-n-0",
+   "number": "7.2.2",
+   "title": "The case of n= 0",
+   "level": 3,
+   "page_start": 32,
+   "page_end": 36,
+   "n_chars": 11442,
+   "n_words": 2038,
+   "label_start": "32",
+   "label_end": "36"
+  },
+  {
+   "id": "sec-030-8-conclusions",
+   "number": "8",
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 3241,
+   "n_words": 537,
+   "label_start": "36",
+   "label_end": "36"
+  },
+  {
+   "id": "sec-031-a-some-remarks-on-scalar-products",
+   "number": null,
+   "title": "A Some remarks on scalar products",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 38,
+   "n_chars": 4674,
+   "n_words": 819,
+   "label_start": "36",
+   "label_end": "38"
+  },
+  {
+   "id": "sec-032-b-more-on-form-factors",
+   "number": null,
+   "title": "B More on form factors",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 125,
+   "n_words": 19,
+   "label_start": "38",
+   "label_end": "38"
+  },
+  {
+   "id": "sec-033-b1-general-framework-notations-conventions",
+   "number": null,
+   "title": "B.1 General framework, notations, conventions",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 2216,
+   "n_words": 420,
+   "label_start": "38",
+   "label_end": "39"
+  },
+  {
+   "id": "sec-034-b2-quantum-inverse-scattering-method",
+   "number": null,
+   "title": "B.2 Quantum Inverse Scattering Method",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 4677,
+   "n_words": 821,
+   "label_start": "39",
+   "label_end": "40"
+  },
+  {
+   "id": "sec-035-b3-the-expressions-for-the-necessary-fo1oj",
+   "number": null,
+   "title": "B.3 The expressions for the necessary FO1,\u2026,Oj",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 42,
+   "n_chars": 3151,
+   "n_words": 476,
+   "label_start": "40",
+   "label_end": "42"
+  },
+  {
+   "id": "sec-036-b33-scalar-products-and-the-homogeneous-limit",
+   "number": null,
+   "title": "B.3.3 Scalar products and the homogeneous limit",
+   "level": 3,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 2001,
+   "n_words": 336,
+   "label_start": "42",
+   "label_end": "42"
+  },
+  {
+   "id": "sec-037-c-numerical-results-for-the-degenerate-case",
+   "number": null,
+   "title": "C Numerical results for the degenerate case",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 43,
+   "n_chars": 372,
+   "n_words": 66,
+   "label_start": "42",
+   "label_end": "43"
+  },
+  {
+   "id": "sec-038-c1-the-case-of-wj1",
+   "number": null,
+   "title": "C.1 The case of Wj,1",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 5842,
+   "n_words": 930,
+   "label_start": "43",
+   "label_end": "44"
+  },
+  {
+   "id": "sec-039-c11-considerations-at-level-2",
+   "number": null,
+   "title": "C.1.1 Considerations at level 2",
+   "level": 3,
+   "page_start": 44,
+   "page_end": 45,
+   "n_chars": 2343,
+   "n_words": 394,
+   "label_start": "44",
+   "label_end": "45"
+  },
+  {
+   "id": "sec-040-c12-form-factor-results-for-wj1",
+   "number": null,
+   "title": "C.1.2 Form factor results for Wj,1",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 47,
+   "n_chars": 6218,
+   "n_words": 911,
+   "label_start": "45",
+   "label_end": "47"
+  },
+  {
+   "id": "sec-041-c2-the-case-of-w0qpm2",
+   "number": null,
+   "title": "C.2 The case of W0,qpm2",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 48,
+   "n_chars": 1291,
+   "n_words": 199,
+   "label_start": "47",
+   "label_end": "48"
+  },
+  {
+   "id": "sec-042-c3-relevant-bethe-roots",
+   "number": null,
+   "title": "C.3 Relevant Bethe roots",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 49,
+   "n_chars": 3205,
+   "n_words": 488,
+   "label_start": "48",
+   "label_end": "49"
+  },
+  {
+   "id": "sec-043-d-proof-of-133",
+   "number": null,
+   "title": "D Proof of (133)",
+   "level": 1,
+   "page_start": 49,
+   "page_end": 50,
+   "n_chars": 3647,
+   "n_words": 766,
+   "label_start": "49",
+   "label_end": "50"
+  },
+  {
+   "id": "sec-044-e-further-numerical-results-for-section-72",
+   "number": null,
+   "title": "E Further numerical results for Section 7.2",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 53,
+   "n_chars": 2992,
+   "n_words": 556,
+   "label_start": "50",
+   "label_end": "53"
+  },
+  {
+   "id": "sec-045-f-the-chiral-antichiral-commutator",
+   "number": null,
+   "title": "F The chiral-antichiral commutator",
+   "level": 1,
+   "page_start": 53,
+   "page_end": 55,
+   "n_chars": 3855,
+   "n_words": 708,
+   "label_start": "53",
+   "label_end": "55"
+  },
+  {
+   "id": "sec-046-g-the-ordinary-xxz-case",
+   "number": null,
+   "title": "G The ordinary XXZ case",
+   "level": 1,
+   "page_start": 55,
+   "page_end": 55,
+   "n_chars": 1775,
+   "n_words": 361,
+   "label_start": "55",
+   "label_end": "55"
+  },
+  {
+   "id": "sec-047-g1-algebraic-description-of-the-ordinary-xxz-cas",
+   "number": null,
+   "title": "G.1 Algebraic description of the ordinary XXZ case",
+   "level": 2,
+   "page_start": 55,
+   "page_end": 56,
+   "n_chars": 1829,
+   "n_words": 396,
+   "label_start": "55",
+   "label_end": "56"
+  },
+  {
+   "id": "sec-048-g2-central-charge-and-conformal-weights-for-the",
+   "number": null,
+   "title": "G.2 Central charge and conformal weights for the ordinary XXZ case",
+   "level": 2,
+   "page_start": 56,
+   "page_end": 57,
+   "n_chars": 1559,
+   "n_words": 296,
+   "label_start": "56",
+   "label_end": "57"
+  },
+  {
+   "id": "sec-049-g3-numerical-results-for-the-ordinary-xxz-case",
+   "number": null,
+   "title": "G.3 Numerical results for the ordinary XXZ case",
+   "level": 2,
+   "page_start": 57,
+   "page_end": 57,
+   "n_chars": 2698,
+   "n_words": 473,
+   "label_start": "57",
+   "label_end": "57"
+  },
+  {
+   "id": "sec-050-g4-interpolation-between-c1-and-c1-6xx1",
+   "number": null,
+   "title": "G.4 Interpolation between c=1 and c=1-6x(x+1)",
+   "level": 2,
+   "page_start": 57,
+   "page_end": 61,
+   "n_chars": 10354,
+   "n_words": 1735,
+   "label_start": "57",
+   "label_end": "61"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 54,
+  "toc_inferred_entries": 0,
+  "figure_entries": 25,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 14,
+    "items": [
+     "1 Introduction",
+     "2 Discrete Virasoro algebra and the Koo-Saleur formulae",
+     "3 Some features of the continuum limit",
+     "2 Discrete Virasoro algebra and the Koo-Saleur formulae",
+     "2.1 The Temperley-Lieb algebra in the periodic case",
+     "2.1.1 The algebra Ta",
+     "2.1.2 Standard modules",
+     "2.3 Indecomposability",
+     "2.4 Discrete Virasoro algebra",
+     "3 Some features of the continuum limit",
+     "3.1 Modules in the continuum",
+     "3.2 Bosonization and expected results",
+     "3.3 The choices of metric",
+     "3.4 Feigin-Fuchs modules and conjugate states"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 52,
+  "chars_total": 193182,
+  "furniture_lines_stripped": 2
+ }
+}

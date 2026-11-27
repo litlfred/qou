@@ -1,0 +1,54 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0103228v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0103228v2",
+  "contains": [
+    "library/arxiv-math-0103228v2/sections/sec-front-matter",
+    "library/arxiv-math-0103228v2/sections/sec-000",
+    "library/arxiv-math-0103228v2/sections/sec-001",
+    "library/arxiv-math-0103228v2/sections/sec-002",
+    "library/arxiv-math-0103228v2/sections/sec-003",
+    "library/arxiv-math-0103228v2/sections/sec-004",
+    "library/arxiv-math-0103228v2/sections/sec-005",
+    "library/arxiv-math-0103228v2/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "arXiv:math/0103228v2 [math.QA] 9 Apr 2002 — Coideal subalgebras of the quantized enveloping algebra ar e sur- veyed, with selected proofs included.\n\n**arXiv:math/0103228v2 [math.QA] 9 Apr 2002**\n\n*Mathematics Department*\n\n62 pp, 8 sections.\n\n**Abstract.** Coideal subalgebras of the quantized enveloping algebra ar e sur- veyed, with selected proofs included. The ﬁrst half of the pa per studies generators, Harish-Chandra modules, and associated quant um homo- geneous spaces. The second half discusses various well know n quan- tum coideal subalgebras and the implications of the abstrac t theory on these examples. The focus is on the locally ﬁnite part of th e quan- tized enveloping algebra, analogs of enveloping algebras o f nilpotent Lie subalgebras, and coideals used to form quantum symmetri c pairs. The last family of examples is explored in detail. Connectio ns are made to the construction of quantum symmetric spaces. The introduction of quantum groups in the early 1980’s has ha d a tremen- dous inﬂuence on the theory of Hopf algebras. Indeed, quantu m groups pro- vide a source of new and interesting examples.\n\n**Outline.** Front matter; 1 Background and Notation; 2 Harish-Chandra modules; 3 The Dual Picture; 4 Generators and Filtrations; 5 The locally ﬁnite part of U; 6 Nilpotent and parabolic coideal subalgebras; 7 Quantum symmetric pairs\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.1: The direct sum of all the ﬁnite-di-\n- Theorem 2.4: Every ﬁnite-dimensional unitary I module can be written as\n- Theorem 11.7: ]. Thus ([L1, Lemma 4.2]) S(w,w ) ⁄= 0 for any nonzero vector\n- Theorem 2.7: The sum of all the ﬁnite-dimensional simple unitary I mod-\n- Theorem 3.1: For any left coideal I ofU, Rq[G]I\n- Theorem 4.1: The set of (left) coideal subalgebras of U(L) is the set of en-",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-27"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-math-0103228v2",
+    "title_source": "slug",
+    "source_file": "0103228v2.pdf",
+    "source_sha256": "7d66dbbd4b87798fb9fa7e1ca5f4be67dba1cd9864dd87a5f8922d3bdbec03c8",
+    "pages": 62,
+    "arxiv": {
+      "id": "math/0103228",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "9 Apr 2002"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,1115 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1006.3501v5",
+ "source": {
+  "file": "1006.3501v5.pdf",
+  "sha256": "e939aec50387ce2d8a3c4e46d8120724047619032162850f19a3feb882d49103",
+  "bytes": 1042773,
+  "pages": 72,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "mtime": "2026-11-25T15:42:48Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1006.3501",
+   "version": "5",
+   "primary_class": "math.GT",
+   "stamp_date": "24 Jun 2013"
+  },
+  "doi": null,
+  "title": "On two approaches to 3-dimensional TQFTs",
+  "authors_raw": "VLADIMIR TURAEV AND ALEXIS VIRELIZIER",
+  "title_lines": [
+   "ON TWO APPROACHES TO 3-DIMENSIONAL TQFTS"
+  ],
+  "abstract": "W e prove that|M |C = \u03c4Z(C)(M ) for any closed oriented 3-manifold M and for any spherical fusion category C of non-zero dimension. Here |M |C is the Turaev-Viro-Barrett-W estbury state sum invariant of M derived from C, Z(C) is the Drinfeld-Joyal-Street center of C, and \u03c4Z(C)(M ) is the Reshetikhin- Turaev surgery invariant of M derived from Z(C).",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181022135706-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_raw": "On two approaches to 3-dimensional TQFTs",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "outline": "Introduction",
+   "text": "On two approaches to 3-dimensional TQFTs",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Pivotal and spherical categories",
+   "page": 3,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Multiplicities in pivotal categories",
+   "page": 5,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Invariants of colored graphs",
+   "page": 8,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Pre-fusion and fusion categories",
+   "page": 10,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "State sums on triangulated 3-manifolds",
+   "page": 13,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "State sums on skeletons of 3-manifolds",
+   "page": 14,
+   "source": "outline",
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Moves on skeletons and proof of Theorems 5.1 and 6.1",
+   "page": 16,
+   "source": "outline",
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Skeletons in the relative case",
+   "page": 22,
+   "source": "outline",
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "The state-sum TQFT",
+   "page": 26,
+   "source": "outline",
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Modular categories and categorical centers",
+   "page": 31,
+   "source": "outline",
+   "number": "10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Main theorems and applications",
+   "page": 34,
+   "source": "outline",
+   "number": "11",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "State sum invariants of links in 3-manifolds",
+   "page": 35,
+   "source": "outline",
+   "number": "12",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Deduction of Theorems 11.1 and 11.2 from Lemma 11.3",
+   "page": 55,
+   "source": "outline",
+   "number": "13",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "The coend of the center",
+   "page": 59,
+   "source": "outline",
+   "number": "14",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Proof of Lemma 11.3",
+   "page": 64,
+   "source": "outline",
+   "number": "15",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix. The 6j-symbols",
+   "page": 69,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 70,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "denoted FC(G)(\u2297v\u03b1v). By linear extension, this procedure de\ufb01nes a vector FC(G) \u2208",
+   "page": 9,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The graph \u0393x \u2282 S2 associated with a vertex x",
+   "page": 16,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Local moves on skeletons The orientation of the skeletons produced by the moves T1 \u2212 T4 on P is induced by the orientation of P except for the small disk regions created by T3, T4 whose orientation is chosen arbitrarily",
+   "page": 17,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The moves T \u2032",
+   "page": 18,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The move T m,n Any s-skeleton of M is a skeleton of M in the sense of Section 6.2. For example, the 2-skeleton of the cellular subdivision of M dual to a triangulation is a s-skeleton of M (the regions are provided with arbitrary orientation)",
+   "page": 19,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The move T 2,1",
+   "page": 21,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "The lune moves L\u00b11",
+   "page": 23,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "",
+   "page": 37,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Moves \u21261 \u2212 \u21268 on link diagrams",
+   "page": 39,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Proof of the Biedenharn-Elliot identity",
+   "page": 70,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "Proof of the orthonormality relation",
+   "page": 71,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 53,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 54,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 55,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 56,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 57,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 58,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 59,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 60,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 61,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 62,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 63,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 64,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 65,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 66,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 67,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 68,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 69,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 70,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 71,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 72,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 490,
+   "n_words": 78,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 7245,
+   "n_words": 1238,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-1-pivotal-and-spherical-categories",
+   "number": "1",
+   "title": "Pivotal and spherical categories",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 6266,
+   "n_words": 1245,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-2-multiplicities-in-pivotal-categories",
+   "number": "2",
+   "title": "Multiplicities in pivotal categories",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 6629,
+   "n_words": 1313,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-3-invariants-of-colored-graphs",
+   "number": "3",
+   "title": "Invariants of colored graphs",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 6649,
+   "n_words": 1283,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-4-pre-fusion-and-fusion-categories",
+   "number": "4",
+   "title": "Pre-fusion and fusion categories",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 7661,
+   "n_words": 1545,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-5-state-sums-on-triangulated-3-manifolds",
+   "number": "5",
+   "title": "State sums on triangulated 3-manifolds",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 5796,
+   "n_words": 1102,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-6-state-sums-on-skeletons-of-3-manifolds",
+   "number": "6",
+   "title": "State sums on skeletons of 3-manifolds",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 6891,
+   "n_words": 1379,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-7-moves-on-skeletons-and-proof-of-theorems-51-an",
+   "number": "7",
+   "title": "Moves on skeletons and proof of Theorems 5.1 and 6.1",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 22,
+   "n_chars": 16838,
+   "n_words": 3400,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-8-skeletons-in-the-relative-case",
+   "number": "8",
+   "title": "Skeletons in the relative case",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 26,
+   "n_chars": 16410,
+   "n_words": 3207,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-9-the-state-sum-tqft",
+   "number": "9",
+   "title": "The state-sum TQFT",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 31,
+   "n_chars": 14801,
+   "n_words": 2972,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-10-modular-categories-and-categorical-centers",
+   "number": "10",
+   "title": "Modular categories and categorical centers",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 34,
+   "n_chars": 5364,
+   "n_words": 1063,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-011-11-main-theorems-and-applications",
+   "number": "11",
+   "title": "Main theorems and applications",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 35,
+   "n_chars": 5631,
+   "n_words": 1031,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-012-12-state-sum-invariants-of-links-in-3-manifolds",
+   "number": "12",
+   "title": "State sum invariants of links in 3-manifolds",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 55,
+   "n_chars": 35609,
+   "n_words": 7317,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-013-13-deduction-of-theorems-111-and-112-from-lemma",
+   "number": "13",
+   "title": "Deduction of Theorems 11.1 and 11.2 from Lemma 11.3",
+   "level": 1,
+   "page_start": 55,
+   "page_end": 59,
+   "n_chars": 11945,
+   "n_words": 2205,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-014-14-the-coend-of-the-center",
+   "number": "14",
+   "title": "The coend of the center",
+   "level": 1,
+   "page_start": 59,
+   "page_end": 64,
+   "n_chars": 12239,
+   "n_words": 2553,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-015-15-proof-of-lemma-113",
+   "number": "15",
+   "title": "Proof of Lemma 11.3",
+   "level": 1,
+   "page_start": 64,
+   "page_end": 69,
+   "n_chars": 6813,
+   "n_words": 1400,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-016-appendix-the-6j-symbols",
+   "number": null,
+   "title": "Appendix. The 6j-symbols",
+   "level": 1,
+   "page_start": 69,
+   "page_end": 70,
+   "n_chars": 2891,
+   "n_words": 562,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-017-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 70,
+   "page_end": 72,
+   "n_chars": 4631,
+   "n_words": 705,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 18,
+  "toc_inferred_entries": 0,
+  "figure_entries": 11,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 19,
+  "chars_total": 180799,
+  "furniture_lines_stripped": 0
+ }
+}

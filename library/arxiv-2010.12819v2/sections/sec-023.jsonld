@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-2010.12819v2/sections/sec-023",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Modules Wj,1 for j =0",
+  "pageStart": 25,
+  "pageEnd": 26,
+  "contains": [
+    "library/arxiv-2010.12819v2/blocks/prose-sec-023"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2010.12819v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2010.12819v2",
+  "provenance": "ingested"
+}
