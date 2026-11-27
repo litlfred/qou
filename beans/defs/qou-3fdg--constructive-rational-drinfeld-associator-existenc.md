@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T21:13:35Z
+updated_at: 2026-11-27T21:22:39Z
 parent: qou-dk7p
 ---
 
@@ -102,3 +102,6 @@ STILL OPEN (this bean stays open): the bridge u = 0 in U4 N ⇒ cocycle(s) ∈ F
 
 
 2026-11-27 (Prop57Link, PR #9711): gap B2 CLOSED in Lean. lin514_of_lie: IsLieElt y + GrtU4-form lin512/lin513/lin515 => lin514 (GrtU4 form) at every DK3 triple of Fil N 1; grtU4_of_lie assembles GrtU4 N y. Route: central shift (lieSpan induction) -> S = sPoly at DK3 triples -> retraction U4 N -> End(Q<Y1,Y2,Y3>/FF3 N) (t_i4 = left mult Y_i, t12/t13/t23 Leibniz maps; all 15 DK4 relations proved) -> cocycle(sPoly y) in FF3 N -> vanishing_of_cocycle -> (5.19) -> zero-sum lin514 -> nonzero central sums by the shift. Sorry-free; lean-direct exit 0; axioms propext/Classical.choice/Quot.sound. Open: whether non-Lie y can satisfy the three conditions without (5.14) (untested). Bean stays open (B1 and downstream).
+
+
+2026-11-27 (B1 research child, PR #9719): step (1) of gap B1 closed sorry-free — assocK_compK: AssocK K N E Φ → GRT1U4 N g → AssocK K N E (compK Φ g) for RATIONAL g (BaseChangeAction.lean). Steps (2) β∈K coefficients, (3) K-congruence, (4) basis-by-basis shift NOT written; induction step NOT closed. Lie-ness input for grtU4_of_lie (#9711) is a real gap: group-likeness gives primitive h_i, primitive ⟹ lieSpan is Friedrichs, not in corpus. Options in audit §16b (recommend: prove Friedrichs for ℚ⟨X,Y⟩ via Dynkin–Specht–Wever). Bean stays open.
