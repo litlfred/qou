@@ -52,3 +52,5 @@ Probe `computations/probes/qbeta_m1_meridian_sum_pins_eq61_probe.py` (PR [#9739]
 They agree through q¹³: 1, −8, −9, 18, 46, 90, 62, 10, −170, −424, −702, −962, −1045, −774. The first 7 coefficients are the printed eq (61). The Stokes side comes out as −S⁺₁₁, a global sign of the transcribed q⁰ normalisation. That sign is recorded, not tuned.
 
 The earlier "substrate-point agreement vs coefficient disagreement" tension is probably the same cycle mix-up. That is not checked here. Route C M2 (qou-m3ad / gz37) is unblocked on the 4₁ side. Recommend `completed` once #9739 merges (owner card).
+
+**Credit, added the same day:** `qou-m3ad` Part 7 (2026-09-07) already used the convention e = meridian, m = longitude, and reproduced GGM (102) for 5₂ with it (`aomega_m3_rotated_index_three_knots_probe.py`). That finding was never carried back to this bean. #9739 adds the 4₁ case against the printed eq (61), and an independent Stokes-side computation from W₋₁(q), through q¹³.
