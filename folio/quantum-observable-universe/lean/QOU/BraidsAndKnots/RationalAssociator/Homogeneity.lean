@@ -193,4 +193,244 @@ theorem eq_zero_of_homog_mem_FF {d : ℕ} {w : FreeAlgebra ℚ (Fin 2)} (hw : Ho
 
 end ScaleF
 
+/-! ### Scaling in `U4 M` -/
+
+section ScaleU
+
+variable {M : ℕ}
+
+theorem dk4_smul (r : ℚ) : DK4 (r • t M 0) (r • t M 1) (r • t M 2) (r • t M 3) (r • t M 4)
+    (r • t M 5) := by
+  have h := dk4 M
+  refine ⟨?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩ <;>
+    (try simp only [← smul_add]) <;> apply Commute.smul_left <;> apply Commute.smul_right
+  exacts [h.f12_34, h.f13_24, h.f14_23, h.n12_3, h.n13_2, h.n23_1, h.n12_4, h.n14_2, h.n24_1,
+    h.n13_4, h.n14_3, h.n34_1, h.n23_4, h.n24_3, h.n34_2]
+
+theorem prod_map_smul (r : ℚ) (w : List (Fin 6)) :
+    (w.map fun i => r • t M i).prod = r ^ w.length • (w.map (t M)).prod := by
+  induction w with
+  | nil => simp
+  | cons i w ih =>
+    rw [List.map_cons, List.prod_cons, ih, List.map_cons, List.prod_cons, smul_mul_smul_comm,
+      List.length_cons, pow_succ, mul_comm]
+
+/-- The scaling `tᵢⱼ ↦ r tᵢⱼ` of `U4 M`. -/
+noncomputable def scU (M : ℕ) (r : ℚ) : U4 M →ₐ[ℚ] U4 M :=
+  lift M (fun i => r • t M i) (dk4_smul r) fun w hw => by
+    rw [prod_map_smul, word_eq_zero M w hw, smul_zero]
+
+@[simp] theorem scU_t (r : ℚ) (i : Fin 6) : scU M r (t M i) = r • t M i := by
+  simp [scU]
+
+theorem scU_word (r : ℚ) (w : List (Fin 6)) :
+    scU M r (w.map (t M)).prod = r ^ w.length • (w.map (t M)).prod := by
+  rw [map_list_prod, List.map_map]
+  simp only [Function.comp_def, scU_t]
+  exact prod_map_smul r w
+
+theorem decomp_Fil (k : ℕ) {X : U4 M} (hX : X ∈ Fil M k) :
+    Decomp (fun r => (scU M r).toLinearMap) (Fil M) k X := by
+  refine decomp_span _ (Fil M) k _ ?_ hX
+  rintro _ ⟨w, hw, rfl⟩
+  exact ⟨w.length, hw, word_mem_Fil w le_rfl, fun r => scU_word r w⟩
+
+/-- A degree-`d` element of `Fil M (d + 1)` is zero. -/
+theorem eq_zero_of_scU {d : ℕ} {X : U4 M} (hX : X ∈ Fil M (d + 1))
+    (hs : ∀ r : ℚ, scU M r X = r ^ d • X) : X = 0 :=
+  eq_zero_of_decomp _ (Fil M) (decomp_Fil (d + 1) hX) hs
+
+theorem scU_eval_of_homog {d : ℕ} {h : FreeAlgebra ℚ (Fin 2)} (hh : Homog d h) (r : ℚ)
+    (a b : U4 M) {a' b' : U4 M} (ha : scU M r a = r • a') (hb : scU M r b = r • b')
+    (ea : a = a') (eb : b = b') : scU M r (eval a b h) = r ^ d • eval a b h := by
+  rw [map_eval, ha, hb, eval_smul_of_homog hh, ea, eb]
+
+end ScaleU
+
+/-! ### Transfer from `U4 (d + 1)` to every `U4 M` -/
+
+section Transfer
+
+variable {M : ℕ}
+
+theorem fil_mul_left (d : ℕ) (a : U4 M) {q : U4 M} (hq : q ∈ Fil M (d + 1)) :
+    a * q ∈ Fil M (d + 1) := by
+  simpa using mul_mem_Fil (mem_Fil_zero a) hq
+
+theorem fil_mul_right (d : ℕ) {q : U4 M} (a : U4 M) (hq : q ∈ Fil M (d + 1)) :
+    q * a ∈ Fil M (d + 1) := by
+  simpa using mul_mem_Fil hq (mem_Fil_zero a)
+
+/-- `U4 (d + 1)` acts on `U4 M ⧸ Fil M (d + 1)` through left multiplication by the generators. -/
+noncomputable def toQuot (M d : ℕ) : U4 (d + 1) →ₐ[ℚ] Module.End ℚ (U4 M ⧸ Fil M (d + 1)) :=
+  lift (d + 1) (fun i => lmQ (Fil M (d + 1)) (fil_mul_left d) (t M i))
+    (DK4.map' (lmQ (Fil M (d + 1)) (fil_mul_left d)).toRingHom (dk4 M)) fun w hw => by
+      have : (w.map fun i => lmQ (Fil M (d + 1)) (fil_mul_left d) (t M i)).prod =
+          lmQ (Fil M (d + 1)) (fil_mul_left d) (w.map (t M)).prod := by
+        rw [map_list_prod, List.map_map]; rfl
+      rw [this]
+      exact lmQ_eq_zero _ (fil_mul_right d) (word_mem_Fil w hw.ge)
+
+@[simp] theorem toQuot_t (d : ℕ) (i : Fin 6) :
+    toQuot M d (t (d + 1) i) = lmQ (Fil M (d + 1)) (fil_mul_left d) (t M i) := by
+  simp [toQuot]
+
+/-- The map `U4 M → U4 (d + 1)`-images: an identity among generator evaluations in
+`U4 (d + 1)` holds in `U4 M` modulo `Fil M (d + 1)`. -/
+theorem mem_Fil_of_toQuot {d : ℕ} {X : U4 M} {Y : U4 (d + 1)} (hY : Y = 0)
+    (hXY : toQuot M d Y = lmQ (Fil M (d + 1)) (fil_mul_left d) X) : X ∈ Fil M (d + 1) := by
+  rw [hY, map_zero] at hXY
+  exact mem_of_lmQ_eq_zero _ hXY.symm
+
+theorem ff_mul_left (d : ℕ) (a : FreeAlgebra ℚ (Fin 2)) {q : FreeAlgebra ℚ (Fin 2)}
+    (hq : q ∈ FF (d + 1)) : a * q ∈ FF (d + 1) := by
+  simpa using mul_mem_FF (mem_FF_zero a) hq
+
+theorem ff_mul_right (d : ℕ) {q : FreeAlgebra ℚ (Fin 2)} (a : FreeAlgebra ℚ (Fin 2))
+    (hq : q ∈ FF (d + 1)) : q * a ∈ FF (d + 1) := by
+  simpa using mul_mem_FF hq (mem_FF_zero a)
+
+/-- The free pair: `t₁₂ ↦ X`, `t₁₃ ↦ −X − Y`, `t₂₃ ↦ Y`, the others `↦ 0`. -/
+noncomputable def pairVals : Fin 6 → FreeAlgebra ℚ (Fin 2) :=
+  ![FreeAlgebra.ι ℚ 0, -FreeAlgebra.ι ℚ 0 - FreeAlgebra.ι ℚ 1, 0, FreeAlgebra.ι ℚ 1, 0, 0]
+
+theorem pairVals_mem (i : Fin 6) : pairVals i ∈ FF 1 := by
+  fin_cases i <;> simp [pairVals, ι_mem_FF_one, zero_mem, sub_mem]
+
+theorem prod_pairVals_mem (w : List (Fin 6)) : (w.map pairVals).prod ∈ FF w.length := by
+  induction w with
+  | nil => simpa using mem_FF_zero (1 : FreeAlgebra ℚ (Fin 2))
+  | cons i w ih => simpa [Nat.add_comm] using mul_mem_FF (pairVals_mem i) ih
+
+theorem dk4_pairVals {S : Type*} [Ring S] [Algebra ℚ S] (f : FreeAlgebra ℚ (Fin 2) →ₐ[ℚ] S) :
+    DK4 (f (pairVals 0)) (f (pairVals 1)) (f (pairVals 2)) (f (pairVals 3)) (f (pairVals 4))
+      (f (pairVals 5)) := by
+  have h : DK3 (f (pairVals 0)) (f (pairVals 1)) (f (pairVals 3)) :=
+    dk3_of_sum_zero (by simp [pairVals, map_sub, map_neg]; abel)
+  have h4 := h.toDK4
+  simpa [pairVals] using h4
+
+/-- `U4 (d + 1)` maps the pair `(t₁₂, t₂₃)` onto `(X, Y)` acting on `ℚ⟨X, Y⟩ ⧸ FF (d + 1)`. -/
+noncomputable def toFree (d : ℕ) :
+    U4 (d + 1) →ₐ[ℚ] Module.End ℚ (FreeAlgebra ℚ (Fin 2) ⧸ FF (d + 1)) :=
+  lift (d + 1) (fun i => lmQ (FF (d + 1)) (ff_mul_left d) (pairVals i))
+    (dk4_pairVals (lmQ (FF (d + 1)) (ff_mul_left d))) fun w hw => by
+      have : (w.map fun i => lmQ (FF (d + 1)) (ff_mul_left d) (pairVals i)).prod =
+          lmQ (FF (d + 1)) (ff_mul_left d) (w.map pairVals).prod := by
+        rw [map_list_prod, List.map_map]; rfl
+      rw [this]
+      exact lmQ_eq_zero _ (ff_mul_right d) (hw ▸ prod_pairVals_mem w)
+
+theorem eval_ι_ι (p : FreeAlgebra ℚ (Fin 2)) :
+    eval (FreeAlgebra.ι ℚ 0) (FreeAlgebra.ι ℚ 1) p = p := by
+  have : eval (FreeAlgebra.ι ℚ 0) (FreeAlgebra.ι ℚ 1) = AlgHom.id ℚ (FreeAlgebra ℚ (Fin 2)) := by
+    apply FreeAlgebra.hom_ext; funext i; fin_cases i <;> simp [eval]
+  rw [this]; rfl
+
+/-- **The linearised (5.12) for a homogeneous element holds in `ℚ⟨X, Y⟩`** as soon as it holds
+at `(t₁₂, t₂₃)` in `U4 (d + 1)`. -/
+theorem add_swap_eq_zero {d : ℕ} {h : FreeAlgebra ℚ (Fin 2)} (hh : Homog d h)
+    (h512 : eval (t (d + 1) 0) (t (d + 1) 3) h + eval (t (d + 1) 3) (t (d + 1) 0) h = 0) :
+    h + swapPoly h = 0 := by
+  have e := congrArg (toFree d) h512
+  rw [map_zero, map_add, map_eval, map_eval] at e
+  simp only [toFree, lift_t, pairVals, Matrix.cons_val_zero, Matrix.cons_val] at e
+  rw [← map_eval, ← map_eval, ← map_add, eval_ι_ι, ← eval_swapPoly, eval_ι_ι] at e
+  exact eq_zero_of_homog_mem_FF (hh.add hh.swap) (mem_of_lmQ_eq_zero _ e)
+
+end Transfer
+
+/-! ### The kernel of the degree-`d` system is `grt`, given (B2) -/
+
+section Grt
+
+/-- The linearised (5.14), as it appears in `GrtU4`: the content of gap (B2). -/
+def Lin514 (M : ℕ) (y : FreeAlgebra ℚ (Fin 2)) : Prop :=
+  ∀ u v w : U4 M, u ∈ Fil M 1 → v ∈ Fil M 1 → w ∈ Fil M 1 → DK3 u v w →
+    eval v w y * v + v * eval w v y = eval u w y * (v + w) + (v + w) * eval w u y
+
+variable {M d : ℕ}
+
+theorem toQuot_eval {h : FreeAlgebra ℚ (Fin 2)} {a b : U4 (d + 1)} {a' b' : U4 M}
+    (ha : toQuot M d a = lmQ (Fil M (d + 1)) (fil_mul_left d) a')
+    (hb : toQuot M d b = lmQ (Fil M (d + 1)) (fil_mul_left d) b') :
+    toQuot M d (eval a b h) = lmQ (Fil M (d + 1)) (fil_mul_left d) (eval a' b' h) := by
+  rw [map_eval, ha, hb, ← map_eval]
+
+theorem toQuot_t_add (i j : Fin 6) :
+    toQuot M d (t (d + 1) i + t (d + 1) j) =
+      lmQ (Fil M (d + 1)) (fil_mul_left d) (t M i + t M j) := by
+  rw [map_add, toQuot_t, toQuot_t, map_add]
+
+theorem scU_t_add (r : ℚ) (i j : Fin 6) : scU M r (t M i + t M j) = r • (t M i + t M j) := by
+  rw [map_add, scU_t, scU_t, smul_add]
+
+/-- The three-term (5.18) expression. -/
+noncomputable def lin513Expr (M : ℕ) (y : FreeAlgebra ℚ (Fin 2)) : U4 M :=
+  eval (t M 1) (t M 0) y + eval (t M 3) (t M 1) y + eval (t M 0) (t M 3) y
+
+/-- The five-term (5.20) expression, in the form of `assocLin`. -/
+noncomputable def lin515Expr (M : ℕ) (y : FreeAlgebra ℚ (Fin 2)) : U4 M :=
+  eval (t M 3) (t M 5) y + eval (t M 0 + t M 1) (t M 4 + t M 5) y + eval (t M 0) (t M 3) y -
+    eval (t M 0) (t M 3 + t M 4) y - eval (t M 1 + t M 3) (t M 5) y
+
+theorem toQuot_lin513 (y : FreeAlgebra ℚ (Fin 2)) :
+    toQuot M d (lin513Expr (d + 1) y) =
+      lmQ (Fil M (d + 1)) (fil_mul_left d) (lin513Expr M y) := by
+  simp only [lin513Expr, map_add]
+  rw [toQuot_eval (toQuot_t d 1) (toQuot_t d 0), toQuot_eval (toQuot_t d 3) (toQuot_t d 1),
+    toQuot_eval (toQuot_t d 0) (toQuot_t d 3)]
+
+theorem toQuot_lin515 (y : FreeAlgebra ℚ (Fin 2)) :
+    toQuot M d (lin515Expr (d + 1) y) =
+      lmQ (Fil M (d + 1)) (fil_mul_left d) (lin515Expr M y) := by
+  simp only [lin515Expr, map_add, map_sub]
+  rw [toQuot_eval (toQuot_t d 3) (toQuot_t d 5),
+    toQuot_eval (toQuot_t_add 0 1) (toQuot_t_add 4 5),
+    toQuot_eval (toQuot_t d 0) (toQuot_t d 3),
+    toQuot_eval (toQuot_t d 0) (toQuot_t_add 3 4),
+    toQuot_eval (toQuot_t_add 1 3) (toQuot_t d 5)]
+
+theorem scU_lin513 {y : FreeAlgebra ℚ (Fin 2)} (hy : Homog d y) (r : ℚ) :
+    scU M r (lin513Expr M y) = r ^ d • lin513Expr M y := by
+  simp only [lin513Expr, map_add, map_eval, scU_t, eval_smul_of_homog hy, smul_add]
+
+theorem scU_lin515 {y : FreeAlgebra ℚ (Fin 2)} (hy : Homog d y) (r : ℚ) :
+    scU M r (lin515Expr M y) = r ^ d • lin515Expr M y := by
+  have e : ∀ a b : U4 M, scU M r a = r • a → scU M r b = r • b →
+      scU M r (eval a b y) = r ^ d • eval a b y := fun a b ha hb => by
+    rw [map_eval, ha, hb, eval_smul_of_homog hy]
+  rw [lin515Expr, map_sub, map_sub, map_add, map_add, e _ _ (scU_t r 3) (scU_t r 5),
+    e _ _ (scU_t_add r 0 1) (scU_t_add r 4 5), e _ _ (scU_t r 0) (scU_t r 3),
+    e _ _ (scU_t r 0) (scU_t_add r 3 4), e _ _ (scU_t_add r 1 3) (scU_t r 5)]
+  simp only [smul_add, smul_sub]
+
+/-- **Gap (B3), modulo (B2).** A homogeneous `y ∈ FF d` of degree `d ≥ 1` in the kernel of the
+degree-`d` system (`assocLin (d + 1) y = 0`: the linearised (5.12), (5.13), (5.15) in
+`U4 (d + 1)`) satisfies the linearised (5.12), (5.13), (5.15) in every `U4 M`; together with
+the linearised (5.14) in `U4 M` (the (B2) hypothesis `Lin514 M y`), `y ∈ grt` in `U4 M`. -/
+theorem grtU4_of_lin (hd : 1 ≤ d) {y : FreeAlgebra ℚ (Fin 2)} (hF : y ∈ FF d)
+    (hy : Homog d y) (hlin : assocLin (d + 1) y = 0) (h514 : Lin514 M y) : GrtU4 M y := by
+  have h1 := congrArg Prod.fst hlin
+  have h2 := congrArg (fun z => z.2.1) hlin
+  have h3 := congrArg (fun z => z.2.2) hlin
+  simp only [assocLin, LinearMap.coe_mk, AddHom.coe_mk, Prod.fst_zero, Prod.snd_zero] at h1 h2 h3
+  have hsw : y + swapPoly y = 0 :=
+    add_swap_eq_zero hy (congrFun h1 ⟨(t (d + 1) 0, t (d + 1) 3), t_mem_Fil_one 0,
+      t_mem_Fil_one 3⟩)
+  have h513 : lin513Expr (d + 1) y = 0 := neg_eq_zero.1 h2
+  have h515 : lin515Expr (d + 1) y = 0 := h3
+  have z513 : lin513Expr M y = 0 :=
+    eq_zero_of_scU (mem_Fil_of_toQuot h513 (toQuot_lin513 y)) (scU_lin513 hy)
+  have z515 : lin515Expr M y = 0 :=
+    eq_zero_of_scU (mem_Fil_of_toQuot h515 (toQuot_lin515 y)) (scU_lin515 hy)
+  refine ⟨algebraMapInv_eq_zero_of_mem_FF hd hF, fun a b _ _ => ?_, z513, h514, ?_⟩
+  · rw [← eval_swapPoly a b y, ← map_add, hsw, map_zero]
+  · rw [← sub_eq_zero]
+    rw [lin515Expr] at z515
+    rw [← neg_eq_zero, ← z515]
+    abel
+
+end Grt
+
 end QOU.BraidsAndKnots.RationalAssociator
