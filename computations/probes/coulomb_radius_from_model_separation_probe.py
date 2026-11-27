@@ -136,7 +136,7 @@ def main() -> int:
                          computed=str(int(out["model"]["primary_dEC_MeV"] > 0)),
                          expected="1", tolerance=0,
                          source="sanity only; no accuracy assertion (scope (a) probe)")
-        wb.write(HERE / "coulomb-radius-from-model-separation-probe.witness.json")
+        print(f"witness: {wb.save()}")
     return 0
 
 
